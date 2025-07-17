@@ -1,3 +1,7 @@
+# Regulatory Prompts Overview
+
+Prompts for medical device and IVD regulatory strategy and quality assurance.
+
 # Overview of Regulatory Prompts
 
 This folder contains prompts focused on regulatory and compliance workflows.
