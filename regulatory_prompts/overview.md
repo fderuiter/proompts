@@ -1,5 +1,7 @@
 # Regulatory Prompts
 
+This directory contains prompts tailored for FDA regulatory consulting, including device and drug submissions as well as quality system audits.
+
 This folder contains prompts focused on EU medical-device regulations. Use them to assess compliance gaps, plan performance evaluations, and coordinate MDR and IVDR submissions.
 
 # Regulatory Prompts Overview
