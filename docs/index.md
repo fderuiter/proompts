@@ -99,3 +99,9 @@
 - [Weekly Executive Status Report](../project_management/03_weekly_exec_status_report.md)
 - [Overview](../project_management/overview.md)
 
+## Market Research Prompts
+
+- [Market Landscape & Trend Analysis](../market_research_prompts/01_market_landscape_trend_analysis.md)
+- [Target Segment & User Needs Assessment](../market_research_prompts/02_target_segment_user_needs_assessment.md)
+- [Regulatory & Commercial Barrier Mapping](../market_research_prompts/03_regulatory_commercial_barrier_mapping.md)
+- [Overview](../market_research_prompts/overview.md)
