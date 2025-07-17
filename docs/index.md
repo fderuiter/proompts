@@ -20,6 +20,11 @@
 - [L4 “Worker Prompt”](../meta_prompts/L4_worker_prompt.md)
 - [Overview of Meta Prompts](../meta_prompts/overview.md)
 
+## Architecture Review
+
+- [Architecture Review Pipeline](../architecture_review/01_architecture_review_pipeline.md)
+- [Overview of Architecture Review Prompts](../architecture_review/overview.md)
+
 ## Documentation
 
 - [Repository Documentation Overview](overview.md)
