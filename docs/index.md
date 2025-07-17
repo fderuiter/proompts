@@ -99,3 +99,9 @@
 - [Weekly Executive Status Report](../project_management/03_weekly_exec_status_report.md)
 - [Overview](../project_management/overview.md)
 
+## Regulatory Prompts
+
+- [EU MDR Technical-Documentation Gap Assessment](../regulatory_prompts/01_eu_mdr_gap_assessment.md)
+- [IVDR Performance-Evaluation Plan Blueprint](../regulatory_prompts/02_ivdr_pep_blueprint.md)
+- [Dual MDR / IVDR Conformity-Assessment Roadmap](../regulatory_prompts/03_dual_mdr_ivdr_roadmap.md)
+- [Overview](../regulatory_prompts/overview.md)
