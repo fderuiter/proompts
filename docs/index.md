@@ -32,3 +32,8 @@
 ## Documentation
 
 - [Repository Documentation Overview](overview.md)
+
+## Project Starter Pack
+
+- [Starter Pack Prompts](../starter_pack/01_project_starter_pack.md)
+- [Overview](../starter_pack/overview.md)
