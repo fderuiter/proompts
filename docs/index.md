@@ -24,6 +24,7 @@
 - [L5 Comprehensive Task Template](../meta_prompts/L5_comprehensive_task_template.md)
 - [L5 README Generator](../meta_prompts/L5_readme-generator.md)
 - [L5 AGENTS.md Checklist](../meta_prompts/L5_agents-md-checklist.md)
+- [L5 Refactor and Re-index Prompts](../meta_prompts/L5_refactor-reindex-prompts.md)
 - [Overview of Meta Prompts](../meta_prompts/overview.md)
 
 ## Design Prompts
