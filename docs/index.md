@@ -18,6 +18,7 @@
 - [L2 Prompt Engineer](../meta_prompts/L2_prompt-engineer.md)
 - [L3 - Task Prototyper](../meta_prompts/L3_task-prototyper.md)
 - [L4 “Worker Prompt”](../meta_prompts/L4_worker_prompt.md)
+- [L5 AI Coding Agent](../meta_prompts/L5_ai_coding_agent.md)
 - [AGENTS.md best-practice checklist](../meta_prompts/L5_agents-md-checklist.md)
 - [Overview of Meta Prompts](../meta_prompts/overview.md)
 
