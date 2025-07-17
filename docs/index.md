@@ -59,3 +59,9 @@
 
 - [Starter Pack Prompts](../starter_pack/01_project_starter_pack.md)
 - [Overview](../starter_pack/overview.md)
+
+## Codex Prompts
+
+- [Codex Prompt Suite](../codex_prompts/01_codex_prompt_suite.md)
+- [Codebase Testing Plan Prompt](../codex_prompts/02_codebase_testing_plan.md)
+- [Overview](../codex_prompts/overview.md)
