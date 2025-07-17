@@ -25,6 +25,7 @@
 - [L5 README Generator](../meta_prompts/L5_readme-generator.md)
 - [L5 AGENTS.md Checklist](../meta_prompts/L5_agents-md-checklist.md)
 - [L5 Refactor and Re-index Prompts](../meta_prompts/L5_refactor-reindex-prompts.md)
+- [L5 Prompt Engineer and Fact-Checker](../meta_prompts/L5_prompt_engineer_fact_checker.md)
 - [Overview of Meta Prompts](../meta_prompts/overview.md)
 
 ## Design Prompts
