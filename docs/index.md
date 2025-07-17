@@ -9,6 +9,7 @@
 - [Project Review Guidelines](../agentic_coding/05_project_review.md)
 - [Project Memory](../agentic_coding/06_project_memory.md)
 - [To-do List](../agentic_coding/06_todo_generation.md)
+- [Folder & Module Organization](../agentic_coding/07_folder_module_organization.md)
 - [End-to-End Test Discovery Prompt](../agentic_coding/07_e2e_test_discovery.md)
 - [Overview of Prompts and When to Use Them](../agentic_coding/overview.md)
 
