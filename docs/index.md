@@ -85,6 +85,27 @@
 - [Red-Team Stress-Test](../communication_prompts/10_red_team_stress_test.md)
 - [Overview](../communication_prompts/overview.md)
 
+## Regulatory Prompts
+
+- [Regulatory-Change Impact Analysis](../regulatory_prompts/01_regulatory_change_impact_analysis.md)
+- [Compliance Gap Assessment](../regulatory_prompts/02_compliance_gap_assessment.md)
+- [Regulatory Filing Draft-Builder](../regulatory_prompts/03_regulatory_filing_draft_builder.md)
+- [Overview](../regulatory_prompts/overview.md)
+
+## Regulatory & Quality Prompts
+
+- [Regulatory Radar & Impact Report](../regulatory_quality_prompts/01_regulatory_radar.md)
+- [Compliance Gap & Risk Matrix](../regulatory_quality_prompts/02_compliance_gap_risk_matrix.md)
+- [Quality-Improvement RCA & Action Plan](../regulatory_quality_prompts/03_quality_improvement_rca_action_plan.md)
+- [Overview](../regulatory_quality_prompts/overview.md)
+
+## Executive Prompts
+
+- [Strategic Market Foresight & Action Plan](../executive_prompts/01_strategic_market_foresight.md)
+- [Crisis-Management Playbook Generator](../executive_prompts/02_crisis_management_playbook.md)
+- [Executive-Ready Brief & Talking Points Synthesizer](../executive_prompts/03_executive_brief_synthesizer.md)
+- [Overview](../executive_prompts/overview.md)
+
 ## Operations Prompts
 
 - [Rapid Process Diagnostic & Lean Improvement Plan](../operations_prompts/01_rapid_process_diagnostic.md)
@@ -106,3 +127,57 @@
 - [21 CFR 820 / QMSR Gap-Analysis & Remediation](../regulatory_prompts/03_qmsr_gap_analysis.md)
 - [Prompt-Writing Best-Practice Checklist](../regulatory_prompts/04_prompt_best_practices.md)
 - [Overview](../regulatory_prompts/overview.md)
+
+## Market Research Prompts
+
+- [Market Landscape & Trend Analysis](../market_research_prompts/01_market_landscape_trend_analysis.md)
+- [Target Segment & User Needs Assessment](../market_research_prompts/02_target_segment_user_needs_assessment.md)
+- [Regulatory & Commercial Barrier Mapping](../market_research_prompts/03_regulatory_commercial_barrier_mapping.md)
+- [Overview](../market_research_prompts/overview.md)
+
+## Leadership Prompts
+
+- [Strategic Alignment & Innovation](../leadership_prompts/01_strategic_alignment_innovation.md)
+- [Operational Excellence & Communication](../leadership_prompts/02_operational_excellence_communication.md)
+- [Leadership Reflection & Culture](../leadership_prompts/03_leadership_reflection_culture.md)
+- [Overview](../leadership_prompts/overview.md)
+
+## Biological Safety Prompts
+
+- [Risk Assessment Expert](../biological_safety_prompts/01_risk_assessment_expert.md)
+- [Biological Safety Plan Developer](../biological_safety_prompts/02_biological_safety_plan_developer.md)
+- [Regulatory Submission Support](../biological_safety_prompts/03_regulatory_submission_support.md)
+- [Overview](../biological_safety_prompts/overview.md)
+
+## GLP Prompts
+
+- [Protocol Design for GLP Preclinical Study](../glp_prompts/01_protocol_design_glp_study.md)
+- [Risk-based Gap Analysis](../glp_prompts/02_risk_based_gap_analysis.md)
+- [Final GLP-Compliant Study Report Outline](../glp_prompts/03_final_glp_study_report_outline.md)
+- [Overview](../glp_prompts/overview.md)
+
+## Regulatory Prompts
+
+- [EU MDR Technical-Documentation Gap Assessment](../regulatory_prompts/01_eu_mdr_gap_assessment.md)
+- [IVDR Performance-Evaluation Plan Blueprint](../regulatory_prompts/02_ivdr_pep_blueprint.md)
+- [Dual MDR / IVDR Conformity-Assessment Roadmap](../regulatory_prompts/03_dual_mdr_ivdr_roadmap.md)
+- [Overview](../regulatory_prompts/overview.md)
+
+- [Strategic Regulatory Pathway Plan](../regulatory_prompts/01_strategic_regulatory_pathway_plan.md)
+- [RA/QA Integrated Quality System Audit](../regulatory_prompts/02_raqa_integrated_quality_system_audit.md)
+- [IVD Performance Study Compliance Review](../regulatory_prompts/03_ivd_performance_study_compliance_review.md)
+- [Overview](../regulatory_prompts/overview.md)
+
+## Data Management Prompts
+
+- [Unified Data Cleansing & Consolidation](../data_management_prompts/01_unified_data_cleansing.md)
+- [Regulatory Data-Governance Gap Analysis](../data_management_prompts/02_regulatory_gap_analysis.md)
+- [Future-Proof Data-Architecture Blueprint](../data_management_prompts/03_data_architecture_blueprint.md)
+- [Overview](../data_management_prompts/overview.md)
+
+## Biostatistics Prompts
+
+- [Statistical Analysis-Plan (SAP) Generator](../biostatistics_prompts/01_statistical_analysis_plan_generator.md)
+- [Time-to-Event (Survival) Analysis Coach](../biostatistics_prompts/02_time_to_event_analysis_coach.md)
+- [Peer-Review Checklist for Manuscript Methods](../biostatistics_prompts/03_peer_review_methods_checklist.md)
+- [Overview](../biostatistics_prompts/overview.md)

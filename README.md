@@ -13,6 +13,7 @@ A curated set of Markdown prompts for AI‑assisted software development. Prompt
 - **`testing_prompts/`** – instructions for creating thorough test plans
 - **`codebase_analysis/`** – checklists for evaluating code quality
 - **`codex_prompts/`** – Codex/ChatGPT oriented scaffolding prompts
+- **`regulatory_quality_prompts/`** – templates for regulatory monitoring, compliance gaps, and quality improvement
 - **`starter_pack/`** – quick-start templates for new projects
 - **`docs/`** – additional documentation and a full [table of contents](docs/index.md)
 - **`scripts/`** – helper scripts such as `validate_markdown.sh`
