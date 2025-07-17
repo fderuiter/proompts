@@ -49,6 +49,13 @@
 - [Docs And Onboarding Codex](../codex_prompts/04_docs_and_onboarding_codex.md)
 - [Overview](../codex_prompts/overview.md)
 
+## Protocol Prompts
+
+- [Clinical-Trial Protocol Creator](../protocol_prompts/01_clinical_trial_protocol_creator.md)
+- [Ultimate SOP Architect](../protocol_prompts/02_ultimate_sop_architect.md)
+- [Protocol Reviewer & Gap-Analysis Coach](../protocol_prompts/03_protocol_reviewer_gap_analysis_coach.md)
+- [Overview](../protocol_prompts/overview.md)
+
 ## Communication Prompts
 
 - [Explain Like Im 5](../communication_prompts/01_explain_like_im_5.md)
@@ -169,3 +176,17 @@
 ## Documentation
 
 - [Repository Documentation Overview](overview.md)
+
+## Clinical Prompts
+
+- [CRF Shell Generator](../clinical_prompts/01_crf_shell_generator.md)
+- [CRF Quality Auditor](../clinical_prompts/02_crf_quality_auditor.md)
+- [CDASH Mapping & Completion-Guide Assistant](../clinical_prompts/03_cdash_mapping_completion_guide.md)
+- [Overview](../clinical_prompts/overview.md)
+
+## Biosafety Prompts
+
+- [Risk Assessment Expert](../biosafety_prompts/01_risk_assessment_expert.md)
+- [Biological Safety Plan Developer](../biosafety_prompts/02_biological_safety_plan_developer.md)
+- [Regulatory Submission Support](../biosafety_prompts/03_regulatory_submission_support.md)
+- [Overview](../biosafety_prompts/overview.md)
