@@ -120,6 +120,13 @@
 - [Weekly Executive Status Report](../project_management/03_weekly_exec_status_report.md)
 - [Overview](../project_management/overview.md)
 
+## Leadership Prompts
+
+- [Strategic Alignment & Innovation](../leadership_prompts/01_strategic_alignment_innovation.md)
+- [Operational Excellence & Communication](../leadership_prompts/02_operational_excellence_communication.md)
+- [Leadership Reflection & Culture](../leadership_prompts/03_leadership_reflection_culture.md)
+- [Overview](../leadership_prompts/overview.md)
+
 ## Biological Safety Prompts
 
 - [Risk Assessment Expert](../biological_safety_prompts/01_risk_assessment_expert.md)
