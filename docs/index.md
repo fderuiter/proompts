@@ -84,3 +84,10 @@
 - [Socratic-Coach](../communication_prompts/09_socratic_coach.md)
 - [Red-Team Stress-Test](../communication_prompts/10_red_team_stress_test.md)
 - [Overview](../communication_prompts/overview.md)
+
+## Regulatory & Quality Prompts
+
+- [Regulatory Radar & Impact Report](../regulatory_quality_prompts/01_regulatory_radar.md)
+- [Compliance Gap & Risk Matrix](../regulatory_quality_prompts/02_compliance_gap_risk_matrix.md)
+- [Quality-Improvement RCA & Action Plan](../regulatory_quality_prompts/03_quality_improvement_rca_action_plan.md)
+- [Overview](../regulatory_quality_prompts/overview.md)
