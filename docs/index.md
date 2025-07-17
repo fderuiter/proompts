@@ -91,3 +91,10 @@
 - [CRF Quality Auditor](../clinical_prompts/02_crf_quality_auditor.md)
 - [CDASH Mapping & Completion-Guide Assistant](../clinical_prompts/03_cdash_mapping_completion_guide.md)
 - [Overview](../clinical_prompts/overview.md)
+
+## Biosafety Prompts
+
+- [Risk Assessment Expert](../biosafety_prompts/01_risk_assessment_expert.md)
+- [Biological Safety Plan Developer](../biosafety_prompts/02_biological_safety_plan_developer.md)
+- [Regulatory Submission Support](../biosafety_prompts/03_regulatory_submission_support.md)
+- [Overview](../biosafety_prompts/overview.md)
