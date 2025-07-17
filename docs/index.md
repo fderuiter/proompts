@@ -122,6 +122,11 @@
 
 ## Regulatory Prompts
 
+- [EU MDR Technical-Documentation Gap Assessment](../regulatory_prompts/01_eu_mdr_gap_assessment.md)
+- [IVDR Performance-Evaluation Plan Blueprint](../regulatory_prompts/02_ivdr_pep_blueprint.md)
+- [Dual MDR / IVDR Conformity-Assessment Roadmap](../regulatory_prompts/03_dual_mdr_ivdr_roadmap.md)
+- [Overview](../regulatory_prompts/overview.md)
+
 - [Strategic Regulatory Pathway Plan](../regulatory_prompts/01_strategic_regulatory_pathway_plan.md)
 - [RA/QA Integrated Quality System Audit](../regulatory_prompts/02_raqa_integrated_quality_system_audit.md)
 - [IVD Performance Study Compliance Review](../regulatory_prompts/03_ivd_performance_study_compliance_review.md)

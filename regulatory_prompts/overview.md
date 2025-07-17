@@ -1,3 +1,7 @@
+# Regulatory Prompts
+
+This folder contains prompts focused on EU medical-device regulations. Use them to assess compliance gaps, plan performance evaluations, and coordinate MDR and IVDR submissions.
+
 # Regulatory Prompts Overview
 
 Prompts for medical device and IVD regulatory strategy and quality assurance.
