@@ -19,7 +19,15 @@
 - [L3 - Task Prototyper](../meta_prompts/L3_task-prototyper.md)
 - [L4 “Worker Prompt”](../meta_prompts/L4_worker_prompt.md)
 - [L5 AI Coding Agent](../meta_prompts/L5_ai_coding_agent.md)
+- [AGENTS.md best-practice checklist](../meta_prompts/L5_agents-md-checklist.md)
 - [Overview of Meta Prompts](../meta_prompts/overview.md)
+
+## Codebase Analysis
+
+- [DRY Codebase Analysis](../codebase_analysis/DRY_Codebase_Analysis.md)
+- [SOLID Codebase Analysis](../codebase_analysis/SOLID_Codebase_Analysis.md)
+- [Maintainability Codebase Analysis](../codebase_analysis/Maintainability_Codebase_Analysis.md)
+- [Overview of Codebase Analysis Prompts](../codebase_analysis/overview.md)
 
 ## Documentation
 
