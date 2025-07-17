@@ -31,6 +31,7 @@
 
 - [E2E Test Discovery Prompt](../testing_prompts/01_e2e_test_discovery.md)
 - [Overview of Testing Prompts](../testing_prompts/overview.md)
+
 ## Codebase Analysis
 
 - [DRY Codebase Analysis](../codebase_analysis/DRY_Codebase_Analysis.md)
