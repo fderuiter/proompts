@@ -85,6 +85,13 @@
 - [Red-Team Stress-Test](../communication_prompts/10_red_team_stress_test.md)
 - [Overview](../communication_prompts/overview.md)
 
+## Clinical Prompts
+
+- [CRF Shell Generator](../clinical_prompts/01_crf_shell_generator.md)
+- [CRF Quality Auditor](../clinical_prompts/02_crf_quality_auditor.md)
+- [CDASH Mapping & Completion-Guide Assistant](../clinical_prompts/03_cdash_mapping_completion_guide.md)
+- [Overview](../clinical_prompts/overview.md)
+
 ## Biosafety Prompts
 
 - [Risk Assessment Expert](../biosafety_prompts/01_risk_assessment_expert.md)
