@@ -14,6 +14,7 @@ Follow these steps when adding a new prompt:
 
 1. Create a Markdown file that contains the prompt text. Begin with a level-one heading describing the prompt.
 1. Place the file in the appropriate directory (`agentic_coding`, `meta_prompts`, etc.). Create new directories if needed using short, lowercase names separated by underscores.
+1. When you make a new directory, also add an `overview.md` file inside it that briefly explains the prompts in that folder.
 1. Append a link to the new file in `docs/index.md` under the matching category so the table of contents stays current.
 1. Verify the Markdown formatting by running `./scripts/validate_markdown.sh`.
 1. Commit the new file with a concise message, e.g. `Add data ingestion prompt`.
