@@ -84,3 +84,10 @@
 - [Socratic-Coach](../communication_prompts/09_socratic_coach.md)
 - [Red-Team Stress-Test](../communication_prompts/10_red_team_stress_test.md)
 - [Overview](../communication_prompts/overview.md)
+
+## Biosafety Prompts
+
+- [Risk Assessment Expert](../biosafety_prompts/01_risk_assessment_expert.md)
+- [Biological Safety Plan Developer](../biosafety_prompts/02_biological_safety_plan_developer.md)
+- [Regulatory Submission Support](../biosafety_prompts/03_regulatory_submission_support.md)
+- [Overview](../biosafety_prompts/overview.md)
