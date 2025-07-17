@@ -84,3 +84,10 @@
 - [Socratic-Coach](../communication_prompts/09_socratic_coach.md)
 - [Red-Team Stress-Test](../communication_prompts/10_red_team_stress_test.md)
 - [Overview](../communication_prompts/overview.md)
+
+## Operations Prompts
+
+- [Rapid Process Diagnostic & Lean Improvement Plan](../operations_prompts/01_rapid_process_diagnostic.md)
+- [Inventory & Demand-Planning Simulation](../operations_prompts/02_inventory_demand_planning_simulation.md)
+- [KPI Dashboard & Monthly Ops-Review Pack](../operations_prompts/03_kpi_dashboard_ops_review.md)
+- [Overview](../operations_prompts/overview.md)
