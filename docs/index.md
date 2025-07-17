@@ -20,6 +20,13 @@
 - [L4 “Worker Prompt”](../meta_prompts/L4_worker_prompt.md)
 - [Overview of Meta Prompts](../meta_prompts/overview.md)
 
+## Codebase Analysis
+
+- [DRY Codebase Analysis](../codebase_analysis/DRY_Codebase_Analysis.md)
+- [SOLID Codebase Analysis](../codebase_analysis/SOLID_Codebase_Analysis.md)
+- [Maintainability Codebase Analysis](../codebase_analysis/Maintainability_Codebase_Analysis.md)
+- [Overview of Codebase Analysis Prompts](../codebase_analysis/overview.md)
+
 ## Documentation
 
 - [Repository Documentation Overview](overview.md)
