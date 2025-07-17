@@ -85,6 +85,13 @@
 - [Red-Team Stress-Test](../communication_prompts/10_red_team_stress_test.md)
 - [Overview](../communication_prompts/overview.md)
 
+## Regulatory Prompts
+
+- [Regulatory-Change Impact Analysis](../regulatory_prompts/01_regulatory_change_impact_analysis.md)
+- [Compliance Gap Assessment](../regulatory_prompts/02_compliance_gap_assessment.md)
+- [Regulatory Filing Draft-Builder](../regulatory_prompts/03_regulatory_filing_draft_builder.md)
+- [Overview](../regulatory_prompts/overview.md)
+
 ## Regulatory & Quality Prompts
 
 - [Regulatory Radar & Impact Report](../regulatory_quality_prompts/01_regulatory_radar.md)
