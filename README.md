@@ -6,4 +6,7 @@ This repository is a collection of prompts for various agentic coding workflows.
 
 ## License
 
-This project is licensed under the [GNU Affero General Public License v3](LICENSE.md).
+This project is licensed under the [Proompts Personal Use License](LICENSE.md).
+Individuals may freely use, modify, and distribute the prompts for personal,
+non-commercial purposes. Commercial entities must obtain written permission
+from Frederick de Ruiter before using the material.
