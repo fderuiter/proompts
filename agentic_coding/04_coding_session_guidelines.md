@@ -6,8 +6,7 @@
 
 - **Write tests** first to cover the desired functionality clearly.
 - **Implement code** to fulfill test cases.
-- **Run tests** to confirm the implementation is correct:
-  - Use `dotnet test` or specific test filters (`dotnet test --filter "TestName"`).
+- **Run tests** to confirm the implementation is correct using `dotnet test` or specific filters (`dotnet test --filter "TestName"`).
 - Fix any errors that arise during testing immediately.
 
 ### Task Completion Checklist

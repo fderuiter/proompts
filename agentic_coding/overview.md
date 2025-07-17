@@ -27,21 +27,25 @@ Below are distinct prompts categorized into five separate markdown documents des
 **Filename:** `01_product_brief.md`
 
 ```markdown
+
 # Product Brief
 
 **Vision:**  
 [Briefly describe the overall vision of the product.]
 
 **Key Features and Roadmap:**  
+
 - Feature 1 (Phase 1)  
 - Feature 2 (Phase 2)  
 - (Add more as needed…)
 
 **Overall Architecture:**  
+
 - Chosen architectural style (e.g., Domain-Driven Design, Event-driven, Vertical Slice, CRUD)  
 - Brief description of key components and their interactions  
 
 **Additional Context:**  
+
 - Other relevant high-level details  
 - Considerations, constraints, or risks  
 - Stakeholder expectations or other non-technical considerations  
@@ -49,6 +53,7 @@ Below are distinct prompts categorized into five separate markdown documents des
 ---
 
 **When to use:**  
+
 - Before starting a new application/project  
 - When clarifying the vision and high-level scope for yourself or collaborators  
 
@@ -57,25 +62,33 @@ Below are distinct prompts categorized into five separate markdown documents des
 ## Prompt 2: Project Brief (Epic)
 
 ```markdown
+
 ### Project Brief
 
 ### Project Description
+
 - Briefly describe what this project or epic aims to accomplish.
 
 ### Key Features
+
 - List and describe key features or milestones to be achieved.
 
 ### Technical Entities & Data Models
+
 - Describe important data structures, entities, types, or objects relevant to this project.
 
 ### Business Rules & Logic
+
 - Clearly outline any critical business rules or logic specific to this project.
 
 ### Success Metrics
+
 - Define how the success of this project will be measured (performance, user engagement, etc.).
 
 ### Additional Implementation Details
+
 - List any other technical details relevant to this project, constraints, or special considerations.
+
 ```
 
 ---
@@ -83,27 +96,35 @@ Below are distinct prompts categorized into five separate markdown documents des
 ### Prompt 3: Technical Implementation Plan
 
 ```markdown
+
 # Technical Implementation Plan
 
 ## Architecture Breakdown
+
 - Clearly define modules, services, and architecture specifics.
 
 ## Libraries and Tools
+
 - List exact libraries, frameworks, and technologies to use.
 
 ## Data Models & Specifications
+
 - Detail all required data models, including fields, types, constraints, and relationships.
 
 ## Business Logic & Rules
+
 - Define the logic clearly and comprehensively.
 
 ## Dependencies & Risk Analysis
+
 - Identify potential dependencies, pitfalls, and solutions.
 
 ## Implementation Steps
+
 - Clearly outline step-by-step how you’ll implement each feature, component, or service.
 
 *Note: Iterate this plan at least 3-5 times to ensure robustness.*
+
 ```
 
 ---
@@ -111,17 +132,22 @@ Below are distinct prompts categorized into five separate markdown documents des
 ### Prompt 4: Coding Session Guidelines
 
 ```markdown
+
 # Development Guidelines
 
 ## Workflow (Per Task)
+
 - **Write tests** first to cover the desired functionality clearly.
 - **Implement code** to fulfill test cases.
 - **Run tests** to confirm the implementation is correct:
   - Use `dotnet test` or specific test filters (`dotnet test --filter "TestName"`).
+
 - Fix any errors that arise during testing immediately.
 
 ## Task Completion Checklist
+
 After completing each task:
+
 - [ ] Run tests (`dotnet test`) to confirm success.
 - [ ] Update the to-do list with completed items marked clearly.
 - [ ] Update `memory.md` with important project state changes or learnings.
@@ -129,7 +155,9 @@ After completing each task:
 - [ ] End the chat session clearly after each completed task.
 
 ## Memory Maintenance
+
 - Always refer to and update the `memory.md` file for context between sessions.
+
 ```
 
 ---
@@ -137,6 +165,7 @@ After completing each task:
 ### Prompt 5: Project Review Guidelines
 
 ```markdown
+
 # Project Review Guidelines
 
 Before considering your work complete:
@@ -148,6 +177,7 @@ Before considering your work complete:
 - [ ] Verify the **to-do list** ensuring all tasks are completed.
 - [ ] Cross-reference the current state of the project with details in `memory.md`.
 - [ ] Update development guidelines with insights from the completed project.
+
 ```
 
 ---
@@ -155,6 +185,7 @@ Before considering your work complete:
 ### Prompt 5: To-do List Generation
 
 ```markdown
+
 # To-do List
 
 - [ ] Task 1: Brief description of the task.
@@ -162,9 +193,11 @@ Before considering your work complete:
 - [ ] Task 3: Continue listing tasks derived from the technical plan.
 
 ## Completed Tasks
+
 - [X] Previously completed task.
 
 *Maintain clarity to support efficient AI task execution.*
+
 ```
 
 ---
@@ -172,18 +205,22 @@ Before considering your work complete:
 ### Prompt 6: Project Memory Management
 
 ```markdown
+
 # Project Memory (`memory.md`)
 
 ## Current Project State
+
 - Document current architectural decisions and justifications clearly.
 - Capture critical notes or insights from past sessions.
 
 ## Contextual Notes
+
 - Record important decisions or context needed for future reference.
 - Include issues encountered and resolutions found.
 - Do not mark task completions here; track them only in the to-do list.
 
 *Regularly updated for persistent context management between sessions.*
+
 ```
 
 ---

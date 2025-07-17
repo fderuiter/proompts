@@ -14,7 +14,7 @@ Design a complete L2 prompt that will instruct a “Prompt Engineer” (L2) to c
    • Target the *latest reasoning-optimized model* (“gpt-4o” or newer). :contentReference[oaicite:0]{index=0}  
    • Put instructions at the top and separate sections with `###` or triple quotes. :contentReference[oaicite:1]{index=1}  
 
-2. **Prompt structure you must output (L2)**  
+1. **Prompt structure you must output (L2)**  
    - **Role line**: “You are a Prompt Engineer for MODEL_Z.”  
    - **Instructions**: numbered, specific, ≤ 20 words each.  
    - **Context block**: use `"""` to delimit any background the Prompt Engineer needs.  
@@ -22,19 +22,19 @@ Design a complete L2 prompt that will instruct a “Prompt Engineer” (L2) to c
    - **Self-critique step**: instruct L2 to critique & revise its draft once (Self-Refine). :contentReference[oaicite:3]{index=3}  
    - **Variation mechanism**: have L2 generate **3 mutated variants** of the L3 template, rank them, and return the best (PromptBreeder style). :contentReference[oaicite:4]{index=4}  
 
-3. **Interface contract**  
+1. **Interface contract**  
    • Define all **input placeholders** (`{{VAR_NAME}}`).  
    • Specify maximum tokens **{{TOKEN_BUDGET_PER_LAYER}}** for the eventual L3 prompt.  
    • Require the Prompt Engineer to embed chain-of-thought tags (`<thinking>`, `<answer>`) so downstream models can keep reasoning separate. :contentReference[oaicite:5]{index=5}  
 
-4. **Guardrails**  
+1. **Guardrails**  
    • Insert the following policy & brand style guide verbatim so they cascade:
 
     ```policy
     {{POLICY_BLOCK}}
     ```
 
-5. **Economy**
+1. **Economy**
    • Keep the entire L2 prompt ≤ {{TOKEN\_LIMIT\_L2}} tokens; favour schemas over prose. ([Aakash News][1])
 
 ### DELIVERABLE
