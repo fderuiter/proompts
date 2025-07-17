@@ -66,3 +66,12 @@
 - [Codex Prompt Suite](../codex_prompts/01_codex_prompt_suite.md)
 - [Codebase Testing Plan Prompt](../codex_prompts/02_codebase_testing_plan.md)
 - [Overview](../codex_prompts/overview.md)
+
+## Utility Prompts
+
+- [Explain-Like-I’m-5](../utility_prompts/01_explain_like_im_five.md)
+- [TL;DR Summarizer](../utility_prompts/02_tldr_summarizer.md)
+- [80/20 Crash Course](../utility_prompts/03_80_20_crash_course.md)
+- [Smart Task Prioritizer](../utility_prompts/04_smart_task_prioritizer.md)
+- [Devil’s-Advocate Stress Test](../utility_prompts/05_devils_advocate_stress_test.md)
+- [Overview](../utility_prompts/overview.md)

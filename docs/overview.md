@@ -14,5 +14,6 @@ This directory stores general reference material for the repository. Use
 - [Codebase Analysis](../codebase_analysis/overview.md)
 - [Project Starter Pack](../starter_pack/overview.md)
 - [Codex Prompts](../codex_prompts/overview.md)
+- [Utility Prompts](../utility_prompts/overview.md)
 
 Add any new guidance here as the repository grows.
