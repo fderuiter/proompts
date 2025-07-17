@@ -18,6 +18,7 @@
 - [L2 Prompt Engineer](../meta_prompts/L2_prompt-engineer.md)
 - [L3 - Task Prototyper](../meta_prompts/L3_task-prototyper.md)
 - [L4 “Worker Prompt”](../meta_prompts/L4_worker_prompt.md)
+- [L5 README Generator](../meta_prompts/L5_readme-generator.md)
 - [Overview of Meta Prompts](../meta_prompts/overview.md)
 
 ## Documentation
