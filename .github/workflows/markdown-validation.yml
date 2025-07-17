@@ -1,0 +1,22 @@
+name: Markdown Validation
+
+on:
+  push:
+    paths:
+      - '**/*.md'
+      - '.github/workflows/markdown-validation.yml'
+      - 'scripts/validate_markdown.sh'
+  pull_request:
+    paths:
+      - '**/*.md'
+      - '.github/workflows/markdown-validation.yml'
+      - 'scripts/validate_markdown.sh'
+
+jobs:
+  markdown-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Validate Markdown format
+        run: |
+          ./scripts/validate_markdown.sh
