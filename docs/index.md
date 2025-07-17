@@ -9,6 +9,8 @@
 - [Project Review Guidelines](../agentic_coding/05_project_review.md)
 - [Project Memory](../agentic_coding/06_project_memory.md)
 - [To-do List](../agentic_coding/06_todo_generation.md)
+- [Folder & Module Organization](../agentic_coding/07_folder_module_organization.md)
+- [End-to-End Test Discovery Prompt](../agentic_coding/07_e2e_test_discovery.md)
 - [Overview of Prompts and When to Use Them](../agentic_coding/overview.md)
 
 ## Meta Prompts
@@ -18,6 +20,14 @@
 - [L2 Prompt Engineer](../meta_prompts/L2_prompt-engineer.md)
 - [L3 - Task Prototyper](../meta_prompts/L3_task-prototyper.md)
 - [L4 “Worker Prompt”](../meta_prompts/L4_worker_prompt.md)
+- [L5 README Generator](../meta_prompts/L5_readme-generator.md)
+- [L5 AGENTS.md Checklist](../meta_prompts/L5_agents-md-checklist.md)
+- [Overview of Meta Prompts](../meta_prompts/overview.md)
+
+## Design Prompts
+
+- [Design.md Template and Guidelines](../design_prompts/01_design_md_template.md)
+- [Overview of Design Prompts](../design_prompts/overview.md)
 - [L5 AI Coding Agent](../meta_prompts/L5_ai_coding_agent.md)
 - [AGENTS.md best-practice checklist](../meta_prompts/L5_agents-md-checklist.md)
 - [Overview of Meta Prompts](../meta_prompts/overview.md)
