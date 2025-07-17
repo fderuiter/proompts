@@ -99,3 +99,10 @@
 - [Weekly Executive Status Report](../project_management/03_weekly_exec_status_report.md)
 - [Overview](../project_management/overview.md)
 
+## Data Management Prompts
+
+- [Unified Data Cleansing & Consolidation](../data_management_prompts/01_unified_data_cleansing.md)
+- [Regulatory Data-Governance Gap Analysis](../data_management_prompts/02_regulatory_gap_analysis.md)
+- [Future-Proof Data-Architecture Blueprint](../data_management_prompts/03_data_architecture_blueprint.md)
+- [Overview](../data_management_prompts/overview.md)
+
