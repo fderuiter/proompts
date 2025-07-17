@@ -28,7 +28,32 @@
 
 - [Design.md Template and Guidelines](../design_prompts/01_design_md_template.md)
 - [Overview of Design Prompts](../design_prompts/overview.md)
+- [L5 AI Coding Agent](../meta_prompts/L5_ai_coding_agent.md)
+- [AGENTS.md best-practice checklist](../meta_prompts/L5_agents-md-checklist.md)
+- [Overview of Meta Prompts](../meta_prompts/overview.md)
+
+## Architecture Review
+
+- [Architecture Review Pipeline](../architecture_review/01_architecture_review_pipeline.md)
+- [Overview of Architecture Review Prompts](../architecture_review/overview.md)
+
+## Testing Prompts
+
+- [E2E Test Discovery Prompt](../testing_prompts/01_e2e_test_discovery.md)
+- [Overview of Testing Prompts](../testing_prompts/overview.md)
+
+## Codebase Analysis
+
+- [DRY Codebase Analysis](../codebase_analysis/DRY_Codebase_Analysis.md)
+- [SOLID Codebase Analysis](../codebase_analysis/SOLID_Codebase_Analysis.md)
+- [Maintainability Codebase Analysis](../codebase_analysis/Maintainability_Codebase_Analysis.md)
+- [Overview of Codebase Analysis Prompts](../codebase_analysis/overview.md)
 
 ## Documentation
 
 - [Repository Documentation Overview](overview.md)
+
+## Project Starter Pack
+
+- [Starter Pack Prompts](../starter_pack/01_project_starter_pack.md)
+- [Overview](../starter_pack/overview.md)

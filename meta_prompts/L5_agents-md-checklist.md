@@ -1,9 +1,13 @@
-# Best-practice checklist for an **AGENTS.md** file
+# L5 AGENTS.md best-practice checklist and generation meta-prompt
+
+## 1  Best-practice checklist for an **AGENTS.md** file
 
 | Goal                               | Why it matters                                                                                                                                                     | Concrete tips                                                                                                 |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
 | **Clarify purpose**                | Codex (and similar agents) read AGENTS.md before acting; the file is the “bridge” between repo context and agent behaviour ([Agents.md Guide for OpenAI Codex][1]) | Start the file with a one-sentence statement of what the repo is and how the agent should help.               |
 | **Place files hierarchically**     | Codex merges *\~/.codex/AGENTS.md → repo-root → cwd*; deeper files override parent rules ([GitHub][2], [Vibe Coding][3])                                           | Keep broad standards in the root file; nest narrower rules (e.g. `/tests/AGENTS.md`).                         |
+=======
+| **Place files hierarchically**     | Codex merges ~/.codex/AGENTS.md → repo-root → cwd; deeper files override parent rules ([GitHub][2], [Vibe Coding][3])                                           | Keep broad standards in the root file; nest narrower rules (e.g. `/tests/AGENTS.md`).                         |
 | **Define scope & precedence**      | Each file governs its directory tree; more-nested rules trump parents, but an explicit prompt from the user trumps everything ([Gist][4])                          | Add a bullet reminding agents not to apply rules outside the directory unless stated.                         |
 | **Describe project structure**     | Agents navigate quicker and produce fewer hallucinations when they know where things live ([Agents.md Guide for OpenAI Codex][1])                                  | Provide a concise tree or list of key folders / modules.                                                      |
 | **Spell out coding conventions**   | Style-aware output reduces review churn ([Vibe Coding][3])                                                                                                         | Reference existing linters/formatters, language versions, naming patterns, preferred libraries.               |
@@ -16,6 +20,7 @@
 ---
 
 ## Ready-to-use **meta-prompt** for generating an AGENTS.md from any GitHub repo
+
 
 ```
 # SYSTEM (not visible to user)
@@ -37,6 +42,8 @@ Analyse the GitHub repository at {{REPO_URL}} and output a complete **AGENTS.md*
 3. **Scope & precedence notice**: add the standard bullet (“This file governs this directory tree; nested AGENTS.md override; direct system prompts override all.”).
 4. **Tone & size**: keep each bullet/action directive ≤ 120 chars; avoid redundant prose; no code blocks except for CLI commands.
 5. **Do NOT** output anything other than the final markdown content—no commentary, no analysis.
+
+Return the markdown as the entire reply.
 ```
 
 **How to use**
