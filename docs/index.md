@@ -91,3 +91,24 @@
 - [Compliance Gap & Risk Matrix](../regulatory_quality_prompts/02_compliance_gap_risk_matrix.md)
 - [Quality-Improvement RCA & Action Plan](../regulatory_quality_prompts/03_quality_improvement_rca_action_plan.md)
 - [Overview](../regulatory_quality_prompts/overview.md)
+
+## Executive Prompts
+
+- [Strategic Market Foresight & Action Plan](../executive_prompts/01_strategic_market_foresight.md)
+- [Crisis-Management Playbook Generator](../executive_prompts/02_crisis_management_playbook.md)
+- [Executive-Ready Brief & Talking Points Synthesizer](../executive_prompts/03_executive_brief_synthesizer.md)
+- [Overview](../executive_prompts/overview.md)
+
+## Operations Prompts
+
+- [Rapid Process Diagnostic & Lean Improvement Plan](../operations_prompts/01_rapid_process_diagnostic.md)
+- [Inventory & Demand-Planning Simulation](../operations_prompts/02_inventory_demand_planning_simulation.md)
+- [KPI Dashboard & Monthly Ops-Review Pack](../operations_prompts/03_kpi_dashboard_ops_review.md)
+- [Overview](../operations_prompts/overview.md)
+
+## Project Management Prompts
+
+- [Project Charter & Scope Definition](../project_management/01_project_charter_scope.md)
+- [Comprehensive Risk Register & Mitigation Plan](../project_management/02_risk_register_mitigation.md)
+- [Weekly Executive Status Report](../project_management/03_weekly_exec_status_report.md)
+- [Overview](../project_management/overview.md)
