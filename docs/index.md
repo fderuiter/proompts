@@ -84,3 +84,10 @@
 - [Socratic-Coach](../communication_prompts/09_socratic_coach.md)
 - [Red-Team Stress-Test](../communication_prompts/10_red_team_stress_test.md)
 - [Overview](../communication_prompts/overview.md)
+
+## Executive Prompts
+
+- [Strategic Market Foresight & Action Plan](../executive_prompts/01_strategic_market_foresight.md)
+- [Crisis-Management Playbook Generator](../executive_prompts/02_crisis_management_playbook.md)
+- [Executive-Ready Brief & Talking Points Synthesizer](../executive_prompts/03_executive_brief_synthesizer.md)
+- [Overview](../executive_prompts/overview.md)
