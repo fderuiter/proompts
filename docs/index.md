@@ -20,6 +20,11 @@
 - [L4 “Worker Prompt”](../meta_prompts/L4_worker_prompt.md)
 - [Overview of Meta Prompts](../meta_prompts/overview.md)
 
+## Testing Prompts
+
+- [E2E Test Discovery Prompt](../testing_prompts/01_e2e_test_discovery.md)
+- [Overview of Testing Prompts](../testing_prompts/overview.md)
+
 ## Documentation
 
 - [Repository Documentation Overview](overview.md)
