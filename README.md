@@ -2,19 +2,33 @@
 
 [![Markdown Validation](https://github.com/fderuiter/proompts/actions/workflows/markdown-validation.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/markdown-validation.yml)
 
-A curated set of Markdown prompts for AI‑assisted software development. Prompts are organized by topic—ranging from product briefs to architecture reviews—so you can mix and match them in your own agentic workflows.
+A curated set of Markdown prompts for AI-assisted product development, regulatory workflows, and general operations. Prompts are organized by topic—ranging from code reviews to market research—so you can mix and match them in your own agentic workflows.
 
 ## Repository structure
 
 - **`agentic_coding/`** – guides for planning, implementing and reviewing code
-- **`meta_prompts/`** – templates that help you craft or refine other prompts
-- **`design_prompts/`** – documentation and design templates
 - **`architecture_review/`** – prompts for analyzing system architecture
-- **`testing_prompts/`** – instructions for creating thorough test plans
+- **`biological_safety_prompts/`** – biological risk assessment and planning
+- **`biosafety_prompts/`** – general biosafety support
+- **`biostatistics_prompts/`** – statistical analysis and peer review tools
+- **`clinical_prompts/`** – clinical data and CDASH guidance
 - **`codebase_analysis/`** – checklists for evaluating code quality
 - **`codex_prompts/`** – Codex/ChatGPT oriented scaffolding prompts
-- **`regulatory_quality_prompts/`** – templates for regulatory monitoring, compliance gaps, and quality improvement
+- **`communication_prompts/`** – summarization and presentation aids
+- **`data_management_prompts/`** – data cleansing and architecture templates
+- **`design_prompts/`** – documentation and design templates
+- **`executive_prompts/`** – strategic and crisis management prompts
+- **`glp_prompts/`** – good laboratory practice templates
+- **`leadership_prompts/`** – leadership coaching and culture reflections
+- **`market_research_prompts/`** – market and user research helpers
+- **`meta_prompts/`** – templates that help you craft or refine other prompts
+- **`operations_prompts/`** – process diagnostics and KPI tracking
+- **`project_management/`** – charters, risk registers, and status reports
+- **`protocol_prompts/`** – SOP and protocol creation aids
+- **`regulatory_prompts/`** – compliance and regulatory planning resources
+- **`regulatory_quality_prompts/`** – monitoring and quality improvement
 - **`starter_pack/`** – quick-start templates for new projects
+- **`testing_prompts/`** – instructions for creating thorough test plans
 - **`docs/`** – additional documentation and a full [table of contents](docs/index.md)
 - **`scripts/`** – helper scripts such as `validate_markdown.sh`
 
