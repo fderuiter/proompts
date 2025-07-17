@@ -99,3 +99,9 @@
 - [Weekly Executive Status Report](../project_management/03_weekly_exec_status_report.md)
 - [Overview](../project_management/overview.md)
 
+## Biostatistics Prompts
+
+- [Statistical Analysis-Plan (SAP) Generator](../biostatistics_prompts/01_statistical_analysis_plan_generator.md)
+- [Time-to-Event (Survival) Analysis Coach](../biostatistics_prompts/02_time_to_event_analysis_coach.md)
+- [Peer-Review Checklist for Manuscript Methods](../biostatistics_prompts/03_peer_review_methods_checklist.md)
+- [Overview](../biostatistics_prompts/overview.md)
