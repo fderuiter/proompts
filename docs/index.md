@@ -91,3 +91,11 @@
 - [Inventory & Demand-Planning Simulation](../operations_prompts/02_inventory_demand_planning_simulation.md)
 - [KPI Dashboard & Monthly Ops-Review Pack](../operations_prompts/03_kpi_dashboard_ops_review.md)
 - [Overview](../operations_prompts/overview.md)
+
+## Project Management Prompts
+
+- [Project Charter & Scope Definition](../project_management/01_project_charter_scope.md)
+- [Comprehensive Risk Register & Mitigation Plan](../project_management/02_risk_register_mitigation.md)
+- [Weekly Executive Status Report](../project_management/03_weekly_exec_status_report.md)
+- [Overview](../project_management/overview.md)
+
