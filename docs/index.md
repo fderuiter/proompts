@@ -24,6 +24,11 @@
 - [L5 AGENTS.md Checklist](../meta_prompts/L5_agents-md-checklist.md)
 - [Overview of Meta Prompts](../meta_prompts/overview.md)
 
+## Design Prompts
+
+- [Design.md Template and Guidelines](../design_prompts/01_design_md_template.md)
+- [Overview of Design Prompts](../design_prompts/overview.md)
+
 ## Documentation
 
 - [Repository Documentation Overview](overview.md)
