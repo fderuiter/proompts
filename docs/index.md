@@ -63,7 +63,10 @@
 
 ## Codex Prompts
 
-- [Codex Prompt Suite](../codex_prompts/01_codex_prompt_suite.md)
+- [Project Init & Skeleton](../codex_prompts/01_project_init_codex.md)
+- [Tooling, Linting & Quality Gates](../codex_prompts/02_tooling_and_quality_codex.md)
+- [Continuous Integration & Delivery](../codex_prompts/03_ci_cd_codex.md)
+- [Documentation & Developer Onboarding](../codex_prompts/04_docs_and_onboarding_codex.md)
 - [Codebase Testing Plan Prompt](../codex_prompts/02_codebase_testing_plan.md)
 - [Overview](../codex_prompts/overview.md)
 
