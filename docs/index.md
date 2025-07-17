@@ -71,6 +71,13 @@
 - [Codebase Testing Plan Prompt](../codex_prompts/02_codebase_testing_plan.md)
 - [Overview](../codex_prompts/overview.md)
 
+## Protocol Prompts
+
+- [Clinical-Trial Protocol Creator](../protocol_prompts/01_clinical_trial_protocol_creator.md)
+- [Ultimate SOP Architect](../protocol_prompts/02_ultimate_sop_architect.md)
+- [Protocol Reviewer & Gap-Analysis Coach](../protocol_prompts/03_protocol_reviewer_gap_analysis_coach.md)
+- [Overview](../protocol_prompts/overview.md)
+
 ## Communication Prompts
 
 - [Explain-Like-I’m-5 (ELI5)](../communication_prompts/01_explain_like_im_5.md)
