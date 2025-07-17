@@ -1,8 +1,4 @@
-Here are the six core prompts structured into separate markdown documents, each with clear titles, content, and usage guidelines. 
-
----
-
-## 📌 **Overview of Prompts and When to Use Them**
+# 📌 **Overview of Prompts and When to Use Them**
 
 Below are distinct prompts categorized into five separate markdown documents designed to optimize your agentic coding workflow:
 
@@ -26,7 +22,8 @@ Below are distinct prompts categorized into five separate markdown documents des
 
 ---
 
-# Prompt 1: Product Brief
+## Prompt 1: Product Brief
+
 **Filename:** `01_product_brief.md`
 
 ```markdown
@@ -57,27 +54,27 @@ Below are distinct prompts categorized into five separate markdown documents des
 
 ---
 
-### Prompt 2: Project Brief (Epic)
+## Prompt 2: Project Brief (Epic)
 
 ```markdown
-# Project Brief
+### Project Brief
 
-## Project Description
+### Project Description
 - Briefly describe what this project or epic aims to accomplish.
 
-## Key Features
+### Key Features
 - List and describe key features or milestones to be achieved.
 
-## Technical Entities & Data Models
+### Technical Entities & Data Models
 - Describe important data structures, entities, types, or objects relevant to this project.
 
-## Business Rules & Logic
+### Business Rules & Logic
 - Clearly outline any critical business rules or logic specific to this project.
 
-## Success Metrics
+### Success Metrics
 - Define how the success of this project will be measured (performance, user engagement, etc.).
 
-## Additional Implementation Details
+### Additional Implementation Details
 - List any other technical details relevant to this project, constraints, or special considerations.
 ```
 
