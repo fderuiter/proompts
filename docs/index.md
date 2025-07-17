@@ -84,3 +84,10 @@
 - [Socratic-Coach](../communication_prompts/09_socratic_coach.md)
 - [Red-Team Stress-Test](../communication_prompts/10_red_team_stress_test.md)
 - [Overview](../communication_prompts/overview.md)
+
+## Project Management Prompts
+
+- [Project Charter & Scope Definition](../project_management/01_project_charter_scope.md)
+- [Comprehensive Risk Register & Mitigation Plan](../project_management/02_risk_register_mitigation.md)
+- [Weekly Executive Status Report](../project_management/03_weekly_exec_status_report.md)
+- [Overview](../project_management/overview.md)
