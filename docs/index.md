@@ -85,6 +85,27 @@
 - [Red-Team Stress-Test](../communication_prompts/10_red_team_stress_test.md)
 - [Overview](../communication_prompts/overview.md)
 
+## Regulatory Prompts
+
+- [Regulatory-Change Impact Analysis](../regulatory_prompts/01_regulatory_change_impact_analysis.md)
+- [Compliance Gap Assessment](../regulatory_prompts/02_compliance_gap_assessment.md)
+- [Regulatory Filing Draft-Builder](../regulatory_prompts/03_regulatory_filing_draft_builder.md)
+- [Overview](../regulatory_prompts/overview.md)
+
+## Regulatory & Quality Prompts
+
+- [Regulatory Radar & Impact Report](../regulatory_quality_prompts/01_regulatory_radar.md)
+- [Compliance Gap & Risk Matrix](../regulatory_quality_prompts/02_compliance_gap_risk_matrix.md)
+- [Quality-Improvement RCA & Action Plan](../regulatory_quality_prompts/03_quality_improvement_rca_action_plan.md)
+- [Overview](../regulatory_quality_prompts/overview.md)
+
+## Executive Prompts
+
+- [Strategic Market Foresight & Action Plan](../executive_prompts/01_strategic_market_foresight.md)
+- [Crisis-Management Playbook Generator](../executive_prompts/02_crisis_management_playbook.md)
+- [Executive-Ready Brief & Talking Points Synthesizer](../executive_prompts/03_executive_brief_synthesizer.md)
+- [Overview](../executive_prompts/overview.md)
+
 ## Operations Prompts
 
 - [Rapid Process Diagnostic & Lean Improvement Plan](../operations_prompts/01_rapid_process_diagnostic.md)
@@ -105,3 +126,17 @@
 - [RA/QA Integrated Quality System Audit](../regulatory_prompts/02_raqa_integrated_quality_system_audit.md)
 - [IVD Performance Study Compliance Review](../regulatory_prompts/03_ivd_performance_study_compliance_review.md)
 - [Overview](../regulatory_prompts/overview.md)
+
+## Data Management Prompts
+
+- [Unified Data Cleansing & Consolidation](../data_management_prompts/01_unified_data_cleansing.md)
+- [Regulatory Data-Governance Gap Analysis](../data_management_prompts/02_regulatory_gap_analysis.md)
+- [Future-Proof Data-Architecture Blueprint](../data_management_prompts/03_data_architecture_blueprint.md)
+- [Overview](../data_management_prompts/overview.md)
+
+## Biostatistics Prompts
+
+- [Statistical Analysis-Plan (SAP) Generator](../biostatistics_prompts/01_statistical_analysis_plan_generator.md)
+- [Time-to-Event (Survival) Analysis Coach](../biostatistics_prompts/02_time_to_event_analysis_coach.md)
+- [Peer-Review Checklist for Manuscript Methods](../biostatistics_prompts/03_peer_review_methods_checklist.md)
+- [Overview](../biostatistics_prompts/overview.md)
