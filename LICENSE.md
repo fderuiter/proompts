@@ -18,7 +18,7 @@ To request commercial permission, contact:
 
 ```
 Frederick de Ruiter
-frederick@example.com
+fpderuiter+prompts@gmail.com
 ```
 
 ## 3. Disclaimer of Warranty
