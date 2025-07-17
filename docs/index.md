@@ -120,6 +120,13 @@
 - [Weekly Executive Status Report](../project_management/03_weekly_exec_status_report.md)
 - [Overview](../project_management/overview.md)
 
+## Biological Safety Prompts
+
+- [Risk Assessment Expert](../biological_safety_prompts/01_risk_assessment_expert.md)
+- [Biological Safety Plan Developer](../biological_safety_prompts/02_biological_safety_plan_developer.md)
+- [Regulatory Submission Support](../biological_safety_prompts/03_regulatory_submission_support.md)
+- [Overview](../biological_safety_prompts/overview.md)
+
 ## GLP Prompts
 
 - [Protocol Design for GLP Preclinical Study](../glp_prompts/01_protocol_design_glp_study.md)
