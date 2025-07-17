@@ -120,6 +120,13 @@
 - [Weekly Executive Status Report](../project_management/03_weekly_exec_status_report.md)
 - [Overview](../project_management/overview.md)
 
+## GLP Prompts
+
+- [Protocol Design for GLP Preclinical Study](../glp_prompts/01_protocol_design_glp_study.md)
+- [Risk-based Gap Analysis](../glp_prompts/02_risk_based_gap_analysis.md)
+- [Final GLP-Compliant Study Report Outline](../glp_prompts/03_final_glp_study_report_outline.md)
+- [Overview](../glp_prompts/overview.md)
+
 ## Regulatory Prompts
 
 - [EU MDR Technical-Documentation Gap Assessment](../regulatory_prompts/01_eu_mdr_gap_assessment.md)
