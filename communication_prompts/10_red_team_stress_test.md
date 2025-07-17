@@ -9,5 +9,3 @@ Scenario: “[IDEA / STRATEGY]”.
 1. Consolidate attacks into a ranked list by severity.
 1. For the top 3 attacks, propose a mitigation playbook (≤ 50 words each).
 1. End with one metric to track that signals the mitigation is working.”**
-
-*Why it rocks:* “Red-team your idea before the market does” is the rallying cry in recent AI-security circles; multi-persona attack prompts uncover blind spots far earlier than friendly chats.
