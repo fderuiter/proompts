@@ -22,6 +22,15 @@
 - [AGENTS.md best-practice checklist](../meta_prompts/L5_agents-md-checklist.md)
 - [Overview of Meta Prompts](../meta_prompts/overview.md)
 
+## Architecture Review
+
+- [Architecture Review Pipeline](../architecture_review/01_architecture_review_pipeline.md)
+- [Overview of Architecture Review Prompts](../architecture_review/overview.md)
+
+## Testing Prompts
+
+- [E2E Test Discovery Prompt](../testing_prompts/01_e2e_test_discovery.md)
+- [Overview of Testing Prompts](../testing_prompts/overview.md)
 ## Codebase Analysis
 
 - [DRY Codebase Analysis](../codebase_analysis/DRY_Codebase_Analysis.md)
