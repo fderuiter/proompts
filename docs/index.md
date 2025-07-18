@@ -80,6 +80,13 @@
 - [Clinical ETL Pipeline Review and Optimisation](../data_management_prompts/06_clinical_etl_pipeline_review.md)
 - [Overview](../data_management_prompts/overview.md)
 
+## eClinical Integration Prompts
+
+- [Architect the Integration Blueprint](../eclinical_integration_prompts/01_architect_integration_blueprint.md)
+- [Generate a Data-Mapping & Transformation Playbook](../eclinical_integration_prompts/02_data_mapping_transformation_playbook.md)
+- [Compile the Regulatory & Validation Checklist](../eclinical_integration_prompts/03_regulatory_validation_checklist.md)
+- [Overview](../eclinical_integration_prompts/overview.md)
+
 ## Design Prompts
 
 - [Design Md Template](../design_prompts/01_design_md_template.md)
@@ -135,11 +142,21 @@
 - [Kpi Dashboard Ops Review](../operations_prompts/03_kpi_dashboard_ops_review.md)
 - [Overview](../operations_prompts/overview.md)
 
+## Payment Prompts
+
+- [Build an Audit-Ready Site-Payment Schedule](../payment_prompts/01_audit_ready_site_payment_schedule.md)
+- [Sunshine Act + FMV Compliance Check](../payment_prompts/02_sunshine_act_fmv_compliance_check.md)
+- [Payment-Process Risk Assessment & Mitigation](../payment_prompts/03_payment_process_risk_assessment.md)
+- [Overview](../payment_prompts/overview.md)
+
 ## Project Management
 
 - [Project Charter Scope](../project_management/01_project_charter_scope.md)
 - [Risk Register Mitigation](../project_management/02_risk_register_mitigation.md)
 - [Weekly Exec Status Report](../project_management/03_weekly_exec_status_report.md)
+- [Detailed Project Blueprint & Timeline](../project_management/04_detailed_project_blueprint_timeline.md)
+- [Risk & Pre-Mortem Analysis](../project_management/05_risk_pre_mortem_analysis.md)
+- [Status Update & Task Prioritization](../project_management/06_status_update_task_prioritization.md)
 - [Overview](../project_management/overview.md)
 
 ## Regulatory Prompts
@@ -165,6 +182,13 @@
 - [Compliance Gap Risk Matrix](../regulatory_quality_prompts/02_compliance_gap_risk_matrix.md)
 - [Quality Improvement Rca Action Plan](../regulatory_quality_prompts/03_quality_improvement_rca_action_plan.md)
 - [Overview](../regulatory_quality_prompts/overview.md)
+
+## Rtsm Prompts
+
+- [Patient-Centered Randomization Scheme](../rtsm_prompts/01_patient_centered_randomization_scheme.md)
+- [Site-Level Supply Resupply Strategy](../rtsm_prompts/02_site_level_supply_resupply_strategy.md)
+- [Risk-Based Monitoring SOP](../rtsm_prompts/03_risk_based_monitoring_sop.md)
+- [Overview](../rtsm_prompts/overview.md)
 
 ## Starter Pack
 
@@ -207,3 +231,24 @@
 - [AI-Powered Site & Recruitment Strategy](../trial_execution_prompts/02_ai_powered_site_recruitment.md)
 - [Compliance, Data Quality & Monitoring Plan](../trial_execution_prompts/03_compliance_data_quality_monitoring_plan.md)
 - [Overview](../trial_execution_prompts/overview.md)
+
+## Adjudication Prompts
+
+- [Design a Real-Time Adjudication Visibility Dashboard](../adjudication_prompts/01_real_time_adjudication_dashboard.md)
+- [Build a Source-Document & Endpoint Checklist](../adjudication_prompts/02_source_document_endpoint_checklist.md)
+- [Analyze Adjudication KPIs & Recommend Fixes](../adjudication_prompts/03_analyze_adjudication_kpis.md)
+- [Overview](../adjudication_prompts/overview.md)
+
+## Imaging Prompts
+
+- [Generate a Study-Specific Imaging Charter Draft](../imaging_prompts/01_imaging_charter_draft.md)
+- [Automated Site Upload QC & Query Generator](../imaging_prompts/02_site_upload_qc.md)
+- [Design an Optimal Central Reading Paradigm](../imaging_prompts/03_central_reading_design.md)
+- [Overview](../imaging_prompts/overview.md)
+
+## ePRO Prompts
+
+- [Patient-Centric BYOD ePRO Workflow](../epro_prompts/01_patient-centric_byod_workflow.md)
+- [Optimize ePRO Form Design for Usability and Data Quality](../epro_prompts/02_optimize_epro_form_design.md)
+- [ePRO Adoption Plan for Sponsors](../epro_prompts/03_epro_adoption_plan_for_sponsors.md)
+- [Overview](../epro_prompts/overview.md)
