@@ -270,5 +270,5 @@
 [Risk-Based Monitoring & Quality Plan](../trial_execution_prompts/06_risk_based_monitoring_plan.md)
 [Patient Recruitment & Diversity Acceleration Plan](../trial_execution_prompts/07_recruitment_diversity_acceleration.md)
 [Interim Results Executive Brief](../vp_statistics_prompts/01_interim_results_executive_brief.md)
-[Statistical Analysis Plan First-Draft Builder](../vp_statistics_prompts/02_sap_first_draft_builder.md)
-[Data-Quality Risk Heat-Map & Mitigation Plan](../vp_statistics_prompts/03_data_quality_risk_heatmap.md)
+[Statistical Analysis Plan Draft Builder](../vp_statistics_prompts/02_sap_first_draft_builder.md)
+[Data-Quality Risk Heat Map](../vp_statistics_prompts/03_data_quality_risk_heatmap.md)
