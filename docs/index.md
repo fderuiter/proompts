@@ -158,6 +158,13 @@
 - [Regulatory Commercial Barrier Mapping](../market_research_prompts/03_regulatory_commercial_barrier_mapping.md)
 - [Overview](../market_research_prompts/overview.md)
 
+## Business Development Prompts
+
+- [Market-Intelligence Radar](../business_development_prompts/01_market_intelligence_radar.md)
+- [Rapid Proposal Builder](../business_development_prompts/02_rapid_proposal_builder.md)
+- [Competitor-Positioning Brief](../business_development_prompts/03_competitor_positioning_brief.md)
+- [Overview](../business_development_prompts/overview.md)
+
 ## Medical Director Prompts
 
 - [Clinical-Trial Protocol Quality & Compliance Review](../medical_director_prompts/01_clinical_trial_protocol_quality_compliance_review.md)
