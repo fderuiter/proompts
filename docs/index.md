@@ -157,6 +157,9 @@
 - [Rapid Process Diagnostic](../operations_prompts/01_rapid_process_diagnostic.md)
 - [Inventory Demand Planning Simulation](../operations_prompts/02_inventory_demand_planning_simulation.md)
 - [Kpi Dashboard Ops Review](../operations_prompts/03_kpi_dashboard_ops_review.md)
+- [Rolling Resource & Capacity Forecast](../operations_prompts/04_rolling_resource_capacity_forecast.md)
+- [Quarterly Cro Kpi Executive Brief](../operations_prompts/05_quarterly_kpi_executive_brief.md)
+- [Vendor Performance Improvement Plan](../operations_prompts/06_vendor_performance_improvement_plan.md)
 - [Overview](../operations_prompts/overview.md)
 
 ## Payment Prompts
