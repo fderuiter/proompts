@@ -52,6 +52,9 @@
 - [Emerging-Market Opportunity Scan](../business_development_prompts/01_emerging_market_opportunity_scan.md)
 - [RFP Executive-Summary Generator](../business_development_prompts/02_rfp_executive_summary_generator.md)
 - [90-Day Pipeline Health & Next-Best-Action Review](../business_development_prompts/03_90_day_pipeline_health_review.md)
+- [Market-Intelligence Radar](../business_development_prompts/01_market_intelligence_radar.md)
+- [Rapid Proposal Builder](../business_development_prompts/02_rapid_proposal_builder.md)
+- [Competitor-Positioning Brief](../business_development_prompts/03_competitor_positioning_brief.md)
 - [Overview](../business_development_prompts/overview.md)
 
 ## CFO Prompts
@@ -170,13 +173,6 @@
 - [Target Segment User Needs Assessment](../market_research_prompts/02_target_segment_user_needs_assessment.md)
 - [Regulatory Commercial Barrier Mapping](../market_research_prompts/03_regulatory_commercial_barrier_mapping.md)
 - [Overview](../market_research_prompts/overview.md)
-
-## Business Development Prompts
-
-- [Market-Intelligence Radar](../business_development_prompts/01_market_intelligence_radar.md)
-- [Rapid Proposal Builder](../business_development_prompts/02_rapid_proposal_builder.md)
-- [Competitor-Positioning Brief](../business_development_prompts/03_competitor_positioning_brief.md)
-- [Overview](../business_development_prompts/overview.md)
 
 ## Medical Director Prompts
 

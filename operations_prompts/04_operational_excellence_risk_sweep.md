@@ -14,6 +14,7 @@ Design a 90-day action plan to cut cycle time by 10 % and lower recruitment fail
 • Limit total output to 700 words
 
 **Output Format:**
+
 ```markdown
 ## 90-Day CRO Ops Optimization Plan
 | Initiative | ROI | Effort | Owner | Risk |
