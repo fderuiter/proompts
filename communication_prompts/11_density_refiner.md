@@ -1,16 +1,14 @@
 ---
-id: communication-density-refiner
+id: 11-density-refiner
 title: Density Refiner
 category: communication_prompts
-author: Frederick de Ruiter
+author: fderuiter
 created: 2025-07-18
 last_modified: 2025-07-18
-tested_model: gpt-4o
+tested_model: gpt-4
 temperature: 0.2
-tags: [communication, summary]
+tags: []
 ---
-
-<!-- markdownlint-disable MD029 -->
 
 # Density Refiner
 
@@ -23,6 +21,10 @@ Craft a concise yet information-rich summary of provided text.
 Use Chain-of-Density summarization to tighten coverage without length creep.
 
 ## Instructions
+
+<!-- markdownlint-disable MD029 -->
+
+
 
 1. Produce an entity-sparse gist in 120 words or fewer.
 1. List missing key nouns in 40 words or fewer.

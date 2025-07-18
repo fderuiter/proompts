@@ -1,16 +1,14 @@
 ---
-id: communication-rubber-duck-debugger
+id: 14-rubber-duck-debugger
 title: Rubber Duck Debugger
 category: communication_prompts
-author: Frederick de Ruiter
+author: fderuiter
 created: 2025-07-18
 last_modified: 2025-07-18
-tested_model: gpt-4o
+tested_model: gpt-4
 temperature: 0.2
-tags: [debugging, reflection]
+tags: []
 ---
-
-<!-- markdownlint-disable MD029 -->
 
 # Rubber Duck Debugger
 
@@ -23,6 +21,10 @@ Guide developers through self-explanation to uncover bugs before providing fixes
 Questioning the user’s logic helps reveal errors in their code.
 
 ## Instructions
+
+<!-- markdownlint-disable MD029 -->
+
+
 
 1. Ask up to five probing questions (≤ 20 words each) about the pasted code.
 1. After responses or when questions run out, output a diagnosis in ≤ 40 words.

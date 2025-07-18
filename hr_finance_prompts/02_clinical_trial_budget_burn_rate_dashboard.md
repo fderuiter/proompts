@@ -1,20 +1,39 @@
-# Clinical-Trial Budget & Burn-Rate Dashboard
+---
+id: trial-budget-burn-dashboard
+title: Clinical-Trial Budget and Burn-Rate Dashboard
+category: hr_finance_prompts
+author: Frederick de Ruiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [finance, budgeting]
+---
 
-You are an **AI Clinical-Trial Budget Analyst**.
-Goal: Produce a month-end dashboard that compares *planned vs. actual* spend and forecasts burn-out dates for each active study.
-Inputs (Google-Sheet links): staffed hours, pass-through invoices, milestone payments, planned budgets.
+# Clinical-Trial Budget and Burn-Rate Dashboard
 
-Instructions — reason chain-of-thought internally, then present only final answer:
+## Purpose
+Produce a month-end dashboard comparing planned versus actual spend and forecasting when budgets will run out for each active study.
 
+## Context
+You are an **AI Clinical-Trial Budget Analyst**. Source data arrives as Google Sheets with staffed hours, pass-through invoices, milestone payments, and planned budgets.
+
+## Instructions
 1. Clean and join the data sets.
-1. Calculate cumulative spend and burn-rate (USD / week) per study.
-1. Forecast when actual spend will hit 90% and 100% of budget.
-1. Highlight ≥10% variances and suggest corrective levers (e.g., renegotiate vendor rates, reduce CRA travel).
+2. Calculate cumulative spend and burn rate in USD per week for each study.
+3. Forecast the dates when actual spend will hit 90% and 100% of budget.
+4. Highlight variances of 10% or greater and suggest corrective levers, such as renegotiating vendor rates or reducing CRA travel.
+5. Present only the final answers.
 
-Output format:
+## Inputs
+- `{{staffing_hours}}` – hours logged per study.
+- `{{invoices}}` – pass-through invoice amounts.
+- `{{milestones}}` – milestone payment schedule.
+- `{{planned_budget}}` – approved budget per study.
 
-• Interactive table (study-ID, burn-rate, % budget, projected run-out date).
-• At most five bullet recommendations.
+## Output Format
+- Markdown table (study ID, burn rate, percent of budget consumed, projected run-out date).
+- Up to five bullet-point recommendations.
 
-Formatting: Markdown table + bullets.
-Limit to 300 words total.
+## Additional Notes
+Keep the entire response under 300 words.

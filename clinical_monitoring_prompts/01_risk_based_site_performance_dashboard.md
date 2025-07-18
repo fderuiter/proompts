@@ -1,10 +1,22 @@
+---
+id: 01-risk-based-site-performance-dashboard
+title: Risk-Based Site Performance Dashboard
+category: clinical_monitoring_prompts
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: []
+---
+
 # Risk-Based Site Performance Dashboard
+
+## Purpose
 
 You are an experienced **Clinical Monitoring Manager** at a global CRO overseeing several Phase II oncology trials.
 
-## Task
-
-Using the attached CSV file `Site_KRI_Q2_2025.csv`, which lists key risk indicators (KRIs) for 42 active investigational sites, identify the **10 highest-risk sites** this quarter and recommend targeted mitigation actions.
+## Context
 
 ## Instructions
 
@@ -18,3 +30,9 @@ Using the attached CSV file `Site_KRI_Q2_2025.csv`, which lists key risk indicat
 1. Keep analysis concise (< 400 words) and reference **ICH E6 (R2)** and **TransCelerate RBM** guidance where relevant.
    **Format**: Table + ≤ 5-sentence executive summary.
    **Reasoning**: Think step-by-step, but do **not** show your chain-of-thought. Ask follow-up questions if data is insufficient.
+
+## Inputs
+
+## Output Format
+
+## Additional Notes

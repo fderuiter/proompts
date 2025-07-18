@@ -197,9 +197,9 @@
 
 ## Hr Finance Prompts
 
-- [Strategic Workforce & Talent-Acquisition Plan](../hr_finance_prompts/01_strategic_workforce_talent_acquisition_plan.md)
-- [Clinical-Trial Budget & Burn-Rate Dashboard](../hr_finance_prompts/02_clinical_trial_budget_burn_rate_dashboard.md)
-- [GCP / GDPR Compliance & Training Risk Report](../hr_finance_prompts/03_gcp_gdpr_compliance_training_risk_report.md)
+- [Strategic Workforce and Talent Acquisition Plan](../hr_finance_prompts/01_strategic_workforce_talent_acquisition_plan.md)
+- [Clinical-Trial Budget and Burn-Rate Dashboard](../hr_finance_prompts/02_clinical_trial_budget_burn_rate_dashboard.md)
+- [GCP and GDPR Training Compliance Risk Report](../hr_finance_prompts/03_gcp_gdpr_compliance_training_risk_report.md)
 
 ## Imaging Prompts
 
@@ -233,29 +233,29 @@
 
 ## Medical Director Prompts
 
-- [Clinical-Trial Protocol Quality & Compliance Review](../medical_director_prompts/01_clinical_trial_protocol_quality_compliance_review.md)
-- [Pharmacovigilance Safety-Signal Prioritization & Medical Assessment](../medical_director_prompts/02_pharmacovigilance_safety_signal_prioritization.md)
-- [AI-Enhanced Risk-Based Monitoring (RBM) Action Plan](../medical_director_prompts/03_ai_enhanced_rbm_action_plan.md)
+- [Clinical Trial Protocol Compliance Review](../medical_director_prompts/01_clinical_trial_protocol_quality_compliance_review.md)
+- [Pharmacovigilance Safety Signal Prioritization](../medical_director_prompts/02_pharmacovigilance_safety_signal_prioritization.md)
+- [AI-Enhanced RBM Action Plan](../medical_director_prompts/03_ai_enhanced_rbm_action_plan.md)
 
 ## Meta Prompts
 
-- [“Ultrameta Prompt Architect” — Instruction Set](../meta_prompts/L0_master-ultrameta.md)
-- [L1 “Meta-Prompt Architect” template**](../meta_prompts/L1_meta-prompt-architect.md)
-- [L2 Prompt-Engineer](../meta_prompts/L2_prompt-engineer.md)
-- [L3 - Task Prototyper](../meta_prompts/L3_task-prototyper.md)
-- [L4 “Worker Prompt](../meta_prompts/L4_worker_prompt.md)
-- [L5 AGENTS.md best-practice checklist and generation meta-prompt](../meta_prompts/L5_agents-md-checklist.md)
-- [Prompt for an AI Coding Agent](../meta_prompts/L5_ai_coding_agent.md)
-- [L5 Comprehensive Task Template](../meta_prompts/L5_comprehensive_task_template.md)
-- [L5 Prompt Engineer and Fact-Checker](../meta_prompts/L5_prompt_engineer_fact_checker.md)
+- [Master Ultrameta Prompt Architect](../meta_prompts/L0_master-ultrameta.md)
+- [Meta Prompt Architect](../meta_prompts/L1_meta-prompt-architect.md)
+- [Prompt Engineer Template](../meta_prompts/L2_prompt-engineer.md)
+- [Task Prototyper](../meta_prompts/L3_task-prototyper.md)
+- [Worker Prompt](../meta_prompts/L4_worker_prompt.md)
+- [AGENTS.md Checklist Generator](../meta_prompts/L5_agents-md-checklist.md)
+- [AI Coding Agent Plan Generator](../meta_prompts/L5_ai_coding_agent.md)
+- [Comprehensive Task Template](../meta_prompts/L5_comprehensive_task_template.md)
+- [Prompt Engineer Fact Checker](../meta_prompts/L5_prompt_engineer_fact_checker.md)
 - [PromptCrafter GPT](../meta_prompts/L5_promptcrafter_gpt.md)
-- [L5 README Generator](../meta_prompts/L5_readme-generator.md)
+- [README Generator](../meta_prompts/L5_readme-generator.md)
 
 ## Microbiology Prompts
 
-- [Draft a Bioburden-Testing SOP (ISO 11737-1)](../microbiology_prompts/01_bioburden_testing_sop.md)
-- [Create an EO-Sterilization Validation Protocol (ISO 11135 + ISO 11737-2)](../microbiology_prompts/02_eo_sterilization_validation_protocol.md)
-- [Build an Endotoxin-Control & 510(k) Risk Plan (USP <85> / AAMI ST72)](../microbiology_prompts/03_endotoxin_control_510k_risk_plan.md)
+- [Bioburden Testing SOP](../microbiology_prompts/01_bioburden_testing_sop.md)
+- [EO Sterilization Validation Protocol](../microbiology_prompts/02_eo_sterilization_validation_protocol.md)
+- [Endotoxin Control & 510(k) Risk Plan](../microbiology_prompts/03_endotoxin_control_510k_risk_plan.md)
 
 ## Operations Prompts
 
@@ -332,18 +332,18 @@
 
 ## Regulatory Prompts
 
-- [510(k) / De Novo Regulatory-Pathway & Pre-Sub Strategy](../regulatory_prompts/01_510k_pre-sub_strategy.md)
+- [510(k)/De Novo Pre-Submission Strategy](../regulatory_prompts/01_510k_pre-sub_strategy.md)
 - [EU MDR Technical-Documentation Gap Assessment](../regulatory_prompts/01_eu_mdr_gap_assessment.md)
-- [Regulatory-Change Impact Analysis Prompt](../regulatory_prompts/01_regulatory_change_impact_analysis.md)
+- [Regulatory-Change Impact Analysis](../regulatory_prompts/01_regulatory_change_impact_analysis.md)
 - [Strategic Regulatory Pathway Plan](../regulatory_prompts/01_strategic_regulatory_pathway_plan.md)
-- [Compliance Gap Assessment Prompt](../regulatory_prompts/02_compliance_gap_assessment.md)
+- [Compliance Gap Assessment](../regulatory_prompts/02_compliance_gap_assessment.md)
 - [IND Readiness Gap Analysis & Filing Road-Map](../regulatory_prompts/02_ind_readiness_gap_analysis.md)
 - [IVDR Performance-Evaluation Plan Blueprint](../regulatory_prompts/02_ivdr_pep_blueprint.md)
 - [RA/QA Integrated Quality System Audit](../regulatory_prompts/02_raqa_integrated_quality_system_audit.md)
 - [Dual MDR / IVDR Conformity-Assessment Roadmap](../regulatory_prompts/03_dual_mdr_ivdr_roadmap.md)
 - [IVD Performance Study Compliance Review](../regulatory_prompts/03_ivd_performance_study_compliance_review.md)
 - [21 CFR 820 / QMSR Gap-Analysis & Remediation](../regulatory_prompts/03_qmsr_gap_analysis.md)
-- [Regulatory Filing Draft-Builder Prompt](../regulatory_prompts/03_regulatory_filing_draft_builder.md)
+- [Regulatory Filing Draft Builder](../regulatory_prompts/03_regulatory_filing_draft_builder.md)
 - [Prompt-Writing Best-Practice Checklist](../regulatory_prompts/04_prompt_best_practices.md)
 - [Literature & Regulatory Gap Analysis](../regulatory_prompts/05_literature_regulatory_gap_analysis.md)
 
@@ -421,5 +421,5 @@
 ## Vp Statistics Prompts
 
 - [Interim Results Executive Brief](../vp_statistics_prompts/01_interim_results_executive_brief.md)
-- [Statistical Analysis Plan First-Draft Builder](../vp_statistics_prompts/02_sap_first_draft_builder.md)
-- [Data-Quality Risk Heat-Map & Mitigation Plan](../vp_statistics_prompts/03_data_quality_risk_heatmap.md)
+- [Statistical Analysis Plan Draft Builder](../vp_statistics_prompts/02_sap_first_draft_builder.md)
+- [Data-Quality Risk Heat Map](../vp_statistics_prompts/03_data_quality_risk_heatmap.md)

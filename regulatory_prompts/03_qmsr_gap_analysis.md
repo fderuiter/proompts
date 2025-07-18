@@ -1,29 +1,44 @@
-<!-- markdownlint-disable MD033 -->
-
+---
+id: qmsr-gap-analysis
+title: 21 CFR 820 / QMSR Gap-Analysis & Remediation
+category: regulatory_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [QMSR, audit]
 # 21 CFR 820 / QMSR Gap-Analysis & Remediation
+---
 
-You are an MDSAP lead auditor specialising in medical-device quality systems.
+## Purpose
 
-## Mission
+Evaluate the quality-management system against current 21 CFR 820 and the proposed QMSR.
 
-Conduct a detailed gap-analysis of the company’s QMS against 21 CFR 820 (current) and the forthcoming Quality Management System Regulation (QMSR), aligned with ISO 13485:2016.
+## Context
 
-## Inputs provided
+You are an MDSAP lead auditor specializing in medical‑device quality systems. The organization provides QMS procedures, SOP lists, and the latest internal‑audit report. Site size is `{{employee_count}}` and device risk class is `{{device_class}}`.
 
-- QMS procedures, SOP list, and most recent internal-audit report (attachments).
-- Site size: <<< NUMBER >>> employees; device risk class: <<< I/II/III >>>.
-
-## Process
+## Instructions
 
 1. Ask clarifying questions if any documents or processes are unclear.
-1. Proceed with the analysis once questions are resolved.
+2. Once clarified, conduct the analysis and deliver:
+   - High‑level summary (≤120 words).
+   - Clause‑by‑clause gap checklist table (Regulation/Clause, Evidence Reviewed, Deficiency, Risk Rating, Recommended Action).
+   - Heat‑map snapshot using emoji scale (🟢/🟡/🔴) for each subpart.
+   - 90‑day remediation road‑map with quick wins versus long‑lead tasks.
+   - Top five supplier‑control and documentation hot spots.
+   - Inspection readiness score (0‑100) with justification.
+   - References to 21 CFR 820, ISO 13485, and draft QMSR sections.
 
-## Required output (Markdown)
+## Inputs
 
-1. **High-Level Summary (≤120 words).**
-1. **Clause-by-Clause Gap Checklist** – table with Regulation/Clause, Evidence Reviewed, Deficiency, Risk Rating, Recommended Action.
-1. **Heat-Map Snapshot** – emoji scale (🟢/🟡/🔴) for each subpart.
-1. **90-Day Remediation Road-Map** – timeline with quick wins vs long-lead tasks.
-1. **Supplier-Control & Documentation Hot-Spots** – top 5 issues.
-1. **Inspection Readiness Score** – 0-100 with justification.
-1. **References** – cite 21 CFR 820 clauses, ISO 13485 clauses, draft QMSR sections.
+- `{{qms_documents}}` — procedures, SOP list, audit reports.
+
+## Output Format
+
+Markdown sections and tables as listed above.
+
+## Additional Notes
+
+Ensure recommendations align with ISO 13485:2016 and proposed QMSR requirements.

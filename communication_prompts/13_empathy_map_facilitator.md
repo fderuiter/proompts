@@ -1,16 +1,14 @@
 ---
-id: communication-empathy-map-facilitator
+id: 13-empathy-map-facilitator
 title: Empathy-Map Facilitator
 category: communication_prompts
-author: Frederick de Ruiter
+author: fderuiter
 created: 2025-07-18
 last_modified: 2025-07-18
-tested_model: gpt-4o
+tested_model: gpt-4
 temperature: 0.2
-tags: [research, persona]
+tags: []
 ---
-
-<!-- markdownlint-disable MD029 -->
 
 # Empathy-Map Facilitator
 
@@ -23,6 +21,10 @@ Quickly capture a user persona’s voice and pain points.
 Empathy maps summarize what a persona says, thinks, does, and feels.
 
 ## Instructions
+
+<!-- markdownlint-disable MD029 -->
+
+
 
 1. Build a four-quadrant table with two concise bullets per quadrant.
 1. Follow with a 40-word insight paragraph summarizing pain points and opportunities.
