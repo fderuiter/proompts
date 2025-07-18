@@ -60,6 +60,7 @@
 - [Clinical-Trial Protocol Creator](../protocol_prompts/01_clinical_trial_protocol_creator.md)
 - [Ultimate SOP Architect](../protocol_prompts/02_ultimate_sop_architect.md)
 - [Protocol Reviewer & Gap-Analysis Coach](../protocol_prompts/03_protocol_reviewer_gap_analysis_coach.md)
+- [Protocol Section Refinement](../protocol_prompts/04_protocol_section_refinement.md)
 - [Overview](../protocol_prompts/overview.md)
 
 ## Communication Prompts
@@ -180,6 +181,7 @@
 - [Qmsr Gap Analysis](../regulatory_prompts/03_qmsr_gap_analysis.md)
 - [Regulatory Filing Draft Builder](../regulatory_prompts/03_regulatory_filing_draft_builder.md)
 - [Prompt Best Practices](../regulatory_prompts/04_prompt_best_practices.md)
+- [Literature & Regulatory Gap Analysis](../regulatory_prompts/05_literature_regulatory_gap_analysis.md)
 - [Overview](../regulatory_prompts/overview.md)
 
 ## Regulatory Quality Prompts
@@ -246,6 +248,7 @@
 - [Protocol Optimization & Risk Simulation](../trial_execution_prompts/01_protocol_optimization_risk_simulation.md)
 - [AI-Powered Site & Recruitment Strategy](../trial_execution_prompts/02_ai_powered_site_recruitment.md)
 - [Compliance, Data Quality & Monitoring Plan](../trial_execution_prompts/03_compliance_data_quality_monitoring_plan.md)
+- [Adaptive Recruitment & Retention Strategy](../trial_execution_prompts/04_adaptive_recruitment_retention_strategy.md)
 - [Overview](../trial_execution_prompts/overview.md)
 
 ## Adjudication Prompts
