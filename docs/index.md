@@ -34,6 +34,9 @@
 - [Universal Template-Table Prompt](../biostatistics_prompts/04_universal_template_table_prompt.md)
 - [Dual-Language Figure Prompt](../biostatistics_prompts/05_dual_language_figure_prompt.md)
 - [QC Listing & Cross-check Prompt](../biostatistics_prompts/06_qc_listing_cross_check_prompt.md)
+- [Study Design + Statistical Approach](../biostatistics_prompts/07_study_design_statistical_approach.md)
+- [Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive](../biostatistics_prompts/08_inclusion_exclusion_endpoints_sample_size.md)
+- [Adaptive Design & Interim Monitoring](../biostatistics_prompts/09_adaptive_design_interim_monitoring.md)
 - [Overview](../biostatistics_prompts/overview.md)
 
 ## Codebase Analysis
