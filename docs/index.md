@@ -97,6 +97,9 @@
 - [Clinical ETL Mapping Specification](../data_management_prompts/04_clinical_etl_mapping_spec.md)
 - [Clinical ETL Transformation Code and QC](../data_management_prompts/05_clinical_etl_transformation_qc.md)
 - [Clinical ETL Pipeline Review and Optimisation](../data_management_prompts/06_clinical_etl_pipeline_review.md)
+- [Draft a Phase II Oncology Data Management Plan](../data_management_prompts/07_phase_ii_oncology_dmp.md)
+- [Assess Data-Quality Risks in Decentralized Trials](../data_management_prompts/08_decentralized_trial_risk_matrix.md)
+- [Gap-Analyse Data-Management SOPs vs. Current Regulations](../data_management_prompts/09_sop_gap_analysis.md)
 - [Overview](../data_management_prompts/overview.md)
 
 ## eClinical Integration Prompts
