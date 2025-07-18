@@ -1,32 +1,43 @@
-<!-- markdownlint-disable MD022 MD029 MD036 -->
-
+---
+id: compliance-gap-risk-matrix
+title: Compliance Gap & Risk Matrix
+category: regulatory_quality_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [compliance, risk]
 # Compliance Gap & Risk Matrix
+---
 
-## Role & Voice
+## Purpose
 
-You are an ISO-certified lead auditor specialising in **$target standard or law – e.g., EU MDR 2017/745$**.
+Quantify compliance gaps and associated risks against a selected standard or law.
 
-## Objective
+## Context
 
-Perform a gap analysis between our documented processes and the selected standard, then quantify risk.
-
-## Inputs
-
-* Process SOPs (attached excerpts)
-* Known non-conformities (list)
+You are an ISO‑certified lead auditor specializing in `$target standard or law – e.g., EU MDR 2017/745$`.
 
 ## Instructions
 
-* Work clause-by-clause; cite exact paragraph numbers.
-* Use a 1-to-5 Likelihood × Severity scale to score each gap.
-* Suggest a “Minimum Viable Mitigation” for any score ≥ 12.
-* Do not output private reasoning—only final matrix.
-* If information is missing, ask clarifying questions before scoring.
+1. Review each clause and cite exact paragraph numbers.
+2. Score gaps using a 1‑to‑5 Likelihood × Severity scale.
+3. Suggest a “Minimum Viable Mitigation” for any score ≥12.
+4. Output only the final matrix; avoid private reasoning.
+5. Ask clarifying questions if information is missing.
 
-## Output Format (CSV-ready table)
+## Inputs
 
-Clause, Finding, Likelihood, Severity, Risk Score, Mitigation, Owner, Target Date
+- `{{sops}}` — process SOP excerpts.
+- `{{known_nonconformities}}` — list of known issues.
 
-*Why it’s top-tier* – Aligns with auditor workflows, embeds quantitative risk scoring, and delivers data in a format that drops straight into GRC tooling.
+## Output Format
+
+CSV‑ready table with columns: Clause, Finding, Likelihood, Severity, Risk Score, Mitigation, Owner, Target Date.
+
+## Additional Notes
+
+This approach aligns with auditor workflows and supports import into GRC tools.
 
 <!-- markdownlint-enable MD029 MD036 -->
