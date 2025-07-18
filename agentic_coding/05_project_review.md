@@ -1,11 +1,37 @@
-# Project Review Guidelines
+---
+id: agentic-project-review
+title: Project Review Checklist
+category: agentic_coding
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: [coding, review]
+---
 
-Before considering your work complete:
+# Project Review Checklist
 
-- [ ] **Run formatter:** Use `dotnet format` or equivalent tool.
-- [ ] **Execute tests** with `dotnet test` and fix any failures.
-- [ ] **Resolve warnings** identified by the compiler or static analysis tools.
-- [ ] **Code review** by running `git diff --name-only main` and verifying all changes.
-- [ ] Verify the **to-do list** ensuring all tasks are completed.
-- [ ] Cross-reference the current state of the project with details in `memory.md`.
-- [ ] Update development guidelines with insights from the completed project.
+## Purpose
+Verify completion of a coding project before finalizing.
+
+## Context
+Run this checklist at the end of a development cycle to ensure quality and documentation are complete.
+
+## Instructions
+1. Run the formatter (`dotnet format` or equivalent).
+2. Execute all tests with `dotnet test` and fix failures.
+3. Resolve compiler and static-analysis warnings.
+4. Review changes using `git diff --name-only main`.
+5. Confirm the to-do list shows all tasks complete.
+6. Cross-reference `memory.md` for project state accuracy.
+7. Update development guidelines with any lessons learned.
+
+## Inputs
+None
+
+## Output Format
+Markdown checklist confirming each step was completed.
+
+## Additional Notes
+Only mark the project finished when every checklist item passes.

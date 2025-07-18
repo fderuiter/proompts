@@ -1,30 +1,37 @@
-# Product Brief
-
-**Vision:**  
-[Briefly describe the overall vision of the product.]
-
-**Key Features and Roadmap:**  
-
-- Feature 1 (Phase 1)  
-- Feature 2 (Phase 2)  
-- (Add more as needed…)
-
-**Overall Architecture:**  
-
-- Chosen architectural style (e.g., Domain-Driven Design, Event-driven, Vertical Slice, CRUD)  
-- Brief description of key components and their interactions  
-
-**Additional Context:**  
-
-- Other relevant high-level details  
-- Considerations, constraints, or risks  
-- Stakeholder expectations or other non-technical considerations  
-
+---
+id: agentic-product-brief
+title: Product Brief Template
+category: agentic_coding
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: [coding, planning]
 ---
 
-**When to use:**  
+# Product Brief Template
 
-- Before starting a new application/project  
-- When clarifying the vision and high-level scope for yourself or collaborators  
+## Purpose
+Outline the high-level vision, features, and architecture for a new software project.
 
----
+## Context
+Use this brief when kicking off a new application or clarifying scope with collaborators.
+
+## Instructions
+1. Describe the overall product vision.
+2. List key features with associated phases or milestones.
+3. Summarize the chosen architectural style and component interactions.
+4. Capture additional context, constraints, or stakeholder expectations.
+
+## Inputs
+- `{{vision}}` – short statement of the desired end state
+- `{{features}}` – feature list organised by phase
+- `{{architecture}}` – overview of proposed architecture
+- `{{context_notes}}` – constraints or risks
+
+## Output Format
+Markdown sections titled **Vision**, **Key Features and Roadmap**, **Overall Architecture**, and **Additional Context**.
+
+## Additional Notes
+This template helps align teams before development begins.

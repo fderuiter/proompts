@@ -1,25 +1,41 @@
-<!-- markdownlint-disable MD029 -->
+---
+id: biostatistics-qc-cross-check
+title: QC Listing & Cross-check Prompt
+category: biostatistics_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [biostatistics, qc]
 # QC Listing & Cross-check Prompt
+---
 
-*Purpose — automate a Listing plus QC cross-check between independent R and SAS runs.*
+## Purpose
 
-```text
-**System:**  
-Act as Lead Programmer overseeing double-programming.
+Automate a listing and QC cross-check between independent R and SAS runs.
 
-**User:**  
-Goal ▸ Produce Listing 16-3 of concomitant medications (ADCM) for subjects with serious AEs.  
-Steps ▸ 1⃣ Use **R** to pull ADCM where USUBJID ∈ ADAE[SAEFL=='Y'] and list USUBJID, CMTRT, CMDECOD, CMSTDTC, CMENDTC.  
-    2⃣ Use **SAS** to replicate the same logic independently.  
-    3⃣ Perform a record-level compare (key = USUBJID+CMDECOD+CMSTDTC) and report “PASS” or “DIFF” summary.  
-Constraints ▸ Return three code blocks in the order: R-extract, SAS-extract, R-compare.  
-    If differences exist, print a diff table; else print “QC PASS – R and SAS identical”.  
-    No additional commentary.
+## Context
 
-```
+Act as the lead programmer overseeing double-programming for safety listings.
 
-Why it’s a “top” prompt
+## Instructions
 
-* ✔ Embeds self-QC inside the prompt, reflecting industry guidance that LLM outputs must be programmatically verifiable.
-* ✔ Leverages negative prompting to suppress unwanted chatty text.
-* ✔ Transforms the workflow into a double-programming simulator.
+1. Use **R** to extract ADCM records where `USUBJID` appears in `ADAE` with `SAEFL='Y'`; list `USUBJID`, `CMTRT`, `CMDECOD`, `CMSTDTC`, `CMENDTC`.
+2. Use **SAS** to replicate the same logic independently.
+3. Perform a record-level comparison keyed by `USUBJID`, `CMDECOD`, and `CMSTDTC`.
+4. Return three code blocks in order: R extract, SAS extract, R comparison.
+5. If differences exist, print a diff table; otherwise output “QC PASS – R and SAS identical.”
+6. Provide no additional commentary.
+
+## Inputs
+
+- `{{dataset_paths}}` — paths to ADAE and ADCM datasets
+
+## Output Format
+
+Three code blocks followed by a diff table or pass message.
+
+## Additional Notes
+
+Use concise code and avoid extra narrative text.

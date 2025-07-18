@@ -1,27 +1,42 @@
-<!-- markdownlint-disable MD029 -->
+---
+id: biostatistics-dual-language-figure
+title: Dual-Language Figure Prompt
+category: biostatistics_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [biostatistics, graphics]
 # Dual-Language Figure Prompt
+---
 
-*Purpose — generate a Kaplan-Meier Figure in both R and SAS from ADaM ADTTE, ready for shell insertion.*
+## Purpose
 
-```text
-**System:**  
-You are a bilingual (R & SAS) biostat programmer.  
-When asked for “dual”, output two separate code blocks: first R (survfit/ggplot2), then SAS (PROC LIFETEST/SGPLOT).
+Generate a Kaplan–Meier figure in both R and SAS from ADaM ADTTE data.
 
-**User:**  
-Create Figure 15-2 “Time-to-Progression” Kaplan-Meier plot.  
-Inputs ▸ ADTTE with variables TRT01P, AVALL=:time, CNSR.  
-Specifications ▸ • Stratify by TRT01P; risk table required.  
-    • Censor marks = vertical ticks.  
-    • X-axis: 0-1825 days, major every 180 days.  
-    • Y-axis: Survival probability (0-1).  
-    • Add HR (95% CI) using Cox model in plot subtitle.  
-Output ▸ dual = TRUE.  Return two pristine code blocks, labeled ```R``` and ```SAS``` only.
+## Context
 
-```
+You are a bilingual statistical programmer proficient in R and SAS.
 
-Why it’s a “top” prompt
+## Instructions
 
-* ✔ Demonstrates prompt chaining without losing determinism.
-* ✔ Mirrors real-world need to keep R & SAS graphics in sync for health-authority review.
-* ✔ Matches a successful KM-curve prompt pattern validated in recent studies.
+1. Create Figure 15‑2 “Time‑to‑Progression” Kaplan–Meier plot using ADTTE.
+2. Stratify by `TRT01P` with a risk table; censor marks are vertical ticks.
+3. X‑axis: 0–1825 days, major tick every 180 days.
+4. Y‑axis: Survival probability from 0 to 1.
+5. Add hazard ratio (95 % CI) from a Cox model in the subtitle.
+6. When `dual = TRUE`, output two code blocks labeled `R` and `SAS` only.
+
+## Inputs
+
+- `{{dual}}` — whether to output both languages
+- `{{dataset_path}}` — path to ADTTE dataset
+
+## Output Format
+
+Two pristine code blocks: first in R, then in SAS.
+
+## Additional Notes
+
+Follow the same aesthetic for both languages to keep outputs consistent.

@@ -1,28 +1,35 @@
+---
+id: ld-scenario-based-microlearning
+title: Scenario-Based Microlearning Series
+category: learning_development_prompts
+author: prompt-team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [training, compliance]
+---
+
 # Scenario-Based Microlearning Series to Reduce GCP Violations
 
-<!-- markdownlint-disable MD029 -->
+## Purpose
+Design short interactive modules that help CRO staff apply GCP principles correctly during site visits.
 
-You are a senior learning-experience designer specializing in compliance risk reduction for CROs.
+## Context
+Recent audits show increased protocol deviations linked to poor application of GCP guidelines. Scenario-based practice improves knowledge transfer.
 
-## Background
+## Instructions
+1. List three high-risk violation themes to target and explain why.
+2. Outline one complete sample module with scenario synopsis, branching decision points, feedback logic, and regulatory citations.
+3. After approval, create briefs for the remaining five modules.
+4. Incorporate adult-learning techniques such as retrieval practice, spaced repetition, and immediate feedback.
+5. Design for mobile-first LMS (SCORM 1.2) and specify metrics like completion and confidence ratings.
 
-Recent audits flagged a rise in protocol deviations linked to poor application of GCP principles during site visits. Research shows scenario-based practice improves transfer.
+## Inputs
+- `{{audience_role}}` – primary learner roles (e.g., CRAs, Study Coordinators).
 
-## Goal
+## Output Format
+Markdown sections titled **Violation Themes**, **Sample Module**, **Module Briefs**, and **Metrics**.
 
-Create a series of 6 interactive microlearning modules (≤ 7 minutes each) that immerse CRAs and Study Coordinators in common "gray-zone" decisions.
-
-## Requirements
-
-- For each module, provide: scenario synopsis, branching decision points, feedback logic, and regulatory citations.
-- Incorporate adult-learning theory: retrieval practice, spaced repetition, and immediate feedback.
-- Design for mobile-first LMS (SCORM 1.2).
-- Specify metrics to track (completion, decision-path analytics, confidence ratings).
-
-## Process Guidelines
-
-1. List three high-risk violation themes you will target and why.
-1. Outline one sample module end-to-end.
-1. THEN create the remaining five briefs.
-
-Ask clarifying questions before step 2 if needed.
+## Additional Notes
+Ask clarifying questions before step two if necessary.

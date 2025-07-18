@@ -1,6 +1,25 @@
+---
+id: 01-monitoring-visit-report-generator
+title: Monitoring-Visit Report Generator
+category: cra_prompts
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: []
+---
+
 # Monitoring-Visit Report Generator
 
+## Purpose
+
 ```
+
+## Context
+
+## Instructions
+
 **System (role):** You are a senior Clinical Quality Specialist with deep expertise in ICH-GCP and FDA 21 CFR Part 312/812.
 
 **User instruction:** Draft a concise Monitoring Visit Report summarizing today’s on-site activities, major findings, and required follow-ups.  
@@ -19,3 +38,9 @@ Context (insert between the triple quotes):
 3. **Follow-up Items for Next Visit** (bullet list)  
 4. **Attachments Logged** (TMF filenames)  
 ```
+
+## Inputs
+
+## Output Format
+
+## Additional Notes

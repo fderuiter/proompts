@@ -1,10 +1,34 @@
+<!-- markdownlint-disable MD029 -->
+---
+id: market-landscape-trend-analysis
+title: Market Landscape & Trend Analysis
+category: market_research_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [market research, analysis]
 # Market Landscape & Trend Analysis
+---
 
-You are a senior market analyst specializing in medical devices and IVD. Analyze the current global market landscape for [insert device or assay type—e.g., AI-enabled glucometers]. Provide:
+## Purpose
+Summarize the global market for `{{device_or_assay}}` and highlight key trends.
 
-- A synopsis of total market size, regional segmentation, and compound annual growth rates.
-- Top 5 emerging trends (e.g., AI diagnostics integration, regulatory shifts).
-- Key drivers and barriers (e.g., reimbursement frameworks, regulatory approval processes).
-- A brief competitor mapping: leading players, recent M&A or product launches.
+## Context
+You are a senior market analyst specializing in medical devices and IVD.
 
-Present your findings in a **concise bullet-pointed list**, using a **strategic tone**, citing quantitative data where available.
+## Instructions
+1. Provide market size, regional segmentation and CAGR.
+2. List the top five emerging trends.
+3. Identify key drivers and barriers.
+4. Map leading competitors and recent activity.
+
+## Inputs
+- `{{device_or_assay}}` – device or assay to analyze
+
+## Output Format
+Concise bullet list summarizing findings.
+
+## Additional Notes
+Include quantitative data where available and keep a strategic tone.

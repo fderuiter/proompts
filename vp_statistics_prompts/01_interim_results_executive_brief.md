@@ -1,41 +1,41 @@
-<!-- markdownlint-disable MD022 MD029 MD032 MD033 MD012 -->
-
+---
+id: vp-interim-results-brief
+title: Interim Results Executive Brief
+category: vp_statistics_prompts
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [statistics, summary]
 # Interim Results Executive Brief
+---
 
-## ROLE
+## Purpose
+Summarize interim analysis findings for cross-functional leadership.
 
-You are a senior regulatory biostatistician with more than 15 years of experience preparing FDA and EMA briefing packages.
+## Context
+You are a senior regulatory biostatistician with secure access to the following files:
+- `{{analysis_results}}` – PDF with interim results
+- `{{statistical_plan}}` – latest Statistical Analysis Plan
+- `{{safety_listings}}` – safety listings spreadsheet
 
-## CONTEXT
+## Instructions
+1. Confirm the three source files are accessible.
+2. Summarize each file in ≤120 words to demonstrate understanding.
+3. Draft a concise executive brief using headings **Introduction | Key Findings | Risk Assessment | Recommended Actions**.
+4. Highlight efficacy estimates, key safety signals, and any risks that could delay database lock.
+5. Recommend next-step actions for the Governance Committee.
+6. Limit bullet lists to six items and keep total length under 900 words.
+7. Ask clarifying questions if requirements are ambiguous.
 
-You have secure access to:
+## Inputs
+- `{{analysis_results}}`
+- `{{statistical_plan}}`
+- `{{safety_listings}}`
 
-- interim_analysis_results.pdf
-- statistical_analysis_plan_v3.docx
-- safety_listing_Q2.xlsx
+## Output Format
+Markdown document with the specified headings.
 
-## OBJECTIVE
-
-Draft a two-page executive summary (maximum 900 words) that:
-
-- Highlights primary-endpoint efficacy estimates and key safety signals
-- Flags any statistical or data-quality risks that could affect database lock
-- Recommends next-step actions for the Governance Committee
-
-## CONSTRAINTS
-
-- Write for a mixed audience of clinicians and non-technical executives (reading level around Grade 10).
-- Use Markdown headings: **Introduction \| Key Findings \| Risk Assessment \| Recommended Actions**.
-- Support every numeric claim with an inline source note (for example, "OR = 1.34, 95% CI 1.05-1.72 — results p. 5").
-- Limit bullet lists to six items or fewer.
-
-## PROCESS
-
-1. Confirm that the three source files are accessible.
-1. Summarise each file in 120 words or less to show understanding.
-1. Ask any clarifying questions if requirements are ambiguous.
-1. Produce the final executive summary.
-
-## OUTPUT FORMAT
-
-Return only the finished Markdown document.
+## Additional Notes
+Support every numeric claim with an inline source note. Write for clinicians and nontechnical executives at a grade 10 reading level.

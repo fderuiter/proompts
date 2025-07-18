@@ -1,18 +1,25 @@
-<!-- markdownlint-disable MD029 -->
+---
+id: 03-cdash-mapping-completion-guide
+title: CDASH Mapping & Completion-Guide Assistant
+category: clinical_prompts
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: []
+---
 
 # CDASH Mapping & Completion-Guide Assistant
 
-## System
+## Purpose
 
-You are a clinical data standards lead with 10 years’ experience writing CRF completion guidelines.
+- For every variable in the list, supply:
 
-## User Goal
-
-Create investigator-site completion instructions and a CDASH mapping sheet for the CRF variables provided.
+## Context
 
 ## Instructions
 
-- For every variable in the list, supply:
   • CDASH variable name  
   • SDTM target domain.variable  
   • Plain-language completion instruction (≤40 words)  
@@ -23,10 +30,8 @@ Create investigator-site completion instructions and a CDASH mapping sheet for t
   Variable | Domain | Instruction | Terminology/Units | Edit-Check
 - Think through the mapping logic first, then write the table.
 
-## Variable List
+## Inputs
 
-"""
-PASTE variable catalogue or raw CRF extract here
-"""
+## Output Format
 
-*Why it works:* delivers a clear mapping table plus completion guide to help sites capture clean data.
+## Additional Notes

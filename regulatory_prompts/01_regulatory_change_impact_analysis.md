@@ -1,36 +1,46 @@
-<!-- markdownlint-disable MD029 -->
-<!-- markdownlint-disable MD036 -->
+---
+id: regulatory-change-impact-analysis
+title: Regulatory-Change Impact Analysis
+category: regulatory_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [regulatory, compliance]
+# Regulatory-Change Impact Analysis
+---
 
-# Regulatory-Change Impact Analysis Prompt
+## Purpose
 
-## Role & Voice
+Assess how a new regulation affects company operations and outline a phased response plan.
 
-You are a senior regulatory-affairs analyst for {{COMPANY}}, operating in the {{INDUSTRY_AND_REGION}}.
+## Context
 
-## Background
+You are a senior regulatory‑affairs analyst for `{{COMPANY}}` operating in `{{INDUSTRY_AND_REGION}}`. The regulation "`{{REGULATION_NAME}}`" takes effect on `{{EFFECTIVE_DATE}}`; its full text is provided.
 
-A new regulation titled "{{REGULATION_NAME}}" (full text attached below) takes effect on {{EFFECTIVE_DATE}}. Executive leadership needs a concise but thorough picture of what it means for us.
+## Instructions
 
-## Task
+1. Summarize the regulation’s purpose and five most business‑critical obligations in ≤150 words.
+2. Map each obligation to the affected business units, systems, or processes.
+3. Rate the compliance effort (Low/Medium/High) and non‑compliance risk (Low/Medium/High) for each obligation.
+4. Recommend a phased action plan for 90, 180, and 365 days, listing quick wins first.
+5. Flag any ambiguities or information still needed.
 
-1. Summarize the regulation’s purpose and the five most business-critical obligations in ≤150 words.
-1. Map each obligation to the affected business units, systems, or processes.
-1. Rate the compliance effort (Low/Med/High) and risk of non-compliance (Low/Med/High) for every obligation.
-1. Recommend a phased action plan (90-day, 180-day, 365-day), listing quick wins first.
-1. Flag any obvious ambiguities or data you still need.
+## Inputs
 
-## Output Style
+- `{{regulation_text}}` — full regulation content.
+- `{{company_profile}}` — overview of operations and locations.
 
-Return a Markdown report with these headings:
+## Output Format
 
+Markdown report with sections:
 - Executive Summary
-- Obligation-to-Process Map (bullet list)
-- Effort & Risk Matrix (simple table)
-- Phased Action Plan (check-box list)
-- Open Questions / Info Gaps
+- Obligation‑to‑Process Map (bullet list)
+- Effort & Risk Matrix (table)
+- Phased Action Plan (check‑box list)
+- Open Questions / Information Gaps
 
-## Constraints
+## Additional Notes
 
-- Write for a time-pressed C-suite (plain English, no legal jargon).
-- Cite article/section numbers from the regulation where relevant.
-- If essential information is missing, ask up to three clarifying questions before producing the final output.
+Write in plain English for time‑pressed executives. Cite article or section numbers. Ask up to three clarifying questions if essential details are missing.
