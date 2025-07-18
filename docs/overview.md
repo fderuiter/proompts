@@ -11,6 +11,7 @@ This directory stores general reference material for the repository. Use
 - [Meta Prompts](../meta_prompts/overview.md)
 - [Design Prompts](../design_prompts/overview.md)
 - [Architecture Review](../architecture_review/overview.md)
+- [Prompt Tools](../prompt_tools/overview.md)
 - [Testing Prompts](../testing_prompts/overview.md)
 - [Codebase Analysis](../codebase_analysis/overview.md)
 - [Project Starter Pack](../starter_pack/overview.md)

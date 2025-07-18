@@ -19,10 +19,6 @@
 - [Folder & Module Organization](../agentic_coding/07_folder_module_organization.md)
 - [RequirementsBot Prompt](../agentic_coding/07_requirements_prompt.md)
 
-## Architecture Review
-
-- [Architecture Review Pipeline](../architecture_review/01_architecture_review_pipeline.md)
-
 ## Biological Safety Prompts
 
 - [Risk Assessment Expert](../biological_safety_prompts/01_risk_assessment_expert.md)
@@ -247,11 +243,8 @@
 - [Prompt for an AI Coding Agent](../meta_prompts/L5_ai_coding_agent.md)
 - [L5 Comprehensive Task Template](../meta_prompts/L5_comprehensive_task_template.md)
 - [L5 Prompt Engineer and Fact-Checker](../meta_prompts/L5_prompt_engineer_fact_checker.md)
-- [L5 Prompt-Sanitiser v1.1](../meta_prompts/L5_prompt_sanitiser.md)
 - [PromptCrafter GPT](../meta_prompts/L5_promptcrafter_gpt.md)
 - [L5 README Generator](../meta_prompts/L5_readme-generator.md)
-- [AI Agent Prompt: Refactor and Re-index Prompts in the *proompts* Repository](../meta_prompts/L5_refactor-reindex-prompts.md)
-- [Standardize Prompt Files](../meta_prompts/L5_standardize-prompt-files.md)
 
 ## Microbiology Prompts
 
@@ -313,6 +306,13 @@
 - [Sponsor-Ready Monthly Status Brief](../project_management/08_sponsor_ready_monthly_status_brief.md)
 - [Executive Sponsor Briefing Deck Outline (15 Slides)](../project_management/09_executive_sponsor_briefing_deck_outline.md)
 - [TMF Gap-Analysis & Audit Readiness Check](../project_management/09_tmf_gap_analysis_audit_readiness_check.md)
+
+## Prompt Tools
+
+- [Architecture Review Pipeline](../prompt_tools/01_architecture_review_pipeline.md)
+- [L5 Prompt-Sanitiser v1.1](../prompt_tools/L5_prompt_sanitiser.md)
+- [AI Agent Prompt: Refactor and Re-index Prompts in the *proompts* Repository](../prompt_tools/L5_refactor-reindex-prompts.md)
+- [Standardize Prompt Files](../prompt_tools/L5_standardize-prompt-files.md)
 
 ## Protocol Prompts
 
