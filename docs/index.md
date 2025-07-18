@@ -174,6 +174,9 @@
 ## Testing Prompts
 
 - [E2e Test Discovery](../testing_prompts/01_e2e_test_discovery.md)
+- [Design Verification Test Plan](../testing_prompts/02_design_verification_test_plan.md)
+- [Human Factors & Validation Study Protocol](../testing_prompts/03_human_factors_validation_study.md)
+- [Risk-Based Test-Case Suite](../testing_prompts/04_risk_based_test_case_suite.md)
 - [Overview](../testing_prompts/overview.md)
 
 ## Documentation
