@@ -1,10 +1,22 @@
+---
+id: 03-monitoring-visit-report-quality-critique
+title: Monitoring Visit Report (MVR) Quality Critique
+category: clinical_monitoring_prompts
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: []
+---
+
 # Monitoring Visit Report (MVR) Quality Critique
+
+## Purpose
 
 You are a **Senior Monitoring Oversight Lead** conducting quality review of a draft **Monitoring Visit Report (MVR)**.
 
-## Task
-
-Critically evaluate the attached draft MVR (`Site022_MVR_Draft.docx`) for completeness, clarity, and GCP compliance.
+## Context
 
 ## Instructions
 
@@ -16,3 +28,9 @@ Critically evaluate the attached draft MVR (`Site022_MVR_Draft.docx`) for comple
    • “Line-by-Line Redlines” – markdown table (`Section | Current Text | Recommended Edit`).
    **Format**: Summary block + markdown table.
    **Reasoning**: Think step-by-step, but hide your chain-of-thought.
+
+## Inputs
+
+## Output Format
+
+## Additional Notes

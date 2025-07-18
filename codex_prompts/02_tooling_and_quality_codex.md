@@ -1,10 +1,22 @@
+---
+id: 02-tooling-and-quality-codex
+title: Tooling, Linting & Quality Gates (OpenAI Codex)
+category: codex_prompts
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: []
+---
+
 # Tooling, Linting & Quality Gates (OpenAI Codex)
 
-## Goal
+## Purpose
 
 Add opinionated linters, formatters, type-checkers, commit hooks, and test frameworks so the repo “fails fast” on bad code.
 
-## Context / Background
+## Context
 
 - A repository already exists (created via `project-init.codex.prompt.md`).
 - The primary language(s) were specified by the caller.
@@ -24,9 +36,9 @@ Add opinionated linters, formatters, type-checkers, commit hooks, and test frame
    - Any new or patched files (triple-back-tick blocks).
    - A short “How to run locally” snippet (`pnpm test`, `pytest -q`, …).
 
-## References
+## Inputs
 
-- [Quality Gates Standard](../docs/quality/gates.md)
+## Output Format
 
 ## Additional Notes
 
@@ -37,3 +49,7 @@ Add opinionated linters, formatters, type-checkers, commit hooks, and test frame
 
 > Paste this prompt into ChatGPT from the root of your repo.
 > Tell ChatGPT the primary language if it can’t infer it (for polyglot repos).
+
+## References
+
+- [Quality Gates Standard](../docs/quality/gates.md)

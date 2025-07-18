@@ -1,10 +1,22 @@
+---
+id: 03-ci-cd-codex
+title: Continuous Integration & Delivery (OpenAI Codex)
+category: codex_prompts
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: []
+---
+
 # Continuous Integration & Delivery (OpenAI Codex)
 
-## Goal
+## Purpose
 
 Generate GitHub Actions workflows that build, test, version, and deploy the app (often a containerised service that calls the OpenAI API).
 
-## Context / Background
+## Context
 
 - Tooling & tests are in place.
 - Deployment targets could be Vercel, AWS ECS/Fargate, Fly.io, or plain Docker Compose on a VM.
@@ -28,9 +40,9 @@ Then scaffold:
 
 Return all workflow YAML and any helper shell scripts as code blocks.
 
-## References
+## Inputs
 
-- [CI/CD Best Practices](../docs/devops/ci-cd.md)
+## Output Format
 
 ## Additional Notes
 
@@ -40,3 +52,7 @@ Return all workflow YAML and any helper shell scripts as code blocks.
 ## Example Usage
 
 > Paste this prompt into ChatGPT after quality tooling is merged, answer the four questions, then commit the generated `.github/workflows/*`.
+
+## References
+
+- [CI/CD Best Practices](../docs/devops/ci-cd.md)

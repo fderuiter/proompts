@@ -1,28 +1,33 @@
-<!-- markdownlint-disable MD029 -->
+---
+id: 01-crf-shell-generator
+title: CRF Shell Generator
+category: clinical_prompts
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: []
+---
 
 # CRF Shell Generator
 
-## System
+## Purpose
 
-You are a senior clinical data manager and CDASH SME.
+- Read the protocol summary inside the triple quotes.
 
-## User Goal
-
-Produce a first-pass CRF shell for the study below.
+## Context
 
 ## Instructions
 
-- Read the protocol summary inside the triple quotes.
 - Working section-by-section, list the CRF pages you would create.
 - Under each page, list every field with: • CDASH variable • question text • data type • permitted values • SDTM mapping.
 - Flag any data the protocol requests that is not essential for primary/secondary endpoints.
 - Output a Markdown table grouped by CRF page.
 - Think step-by-step before writing the final table.
 
-## Protocol Summary
+## Inputs
 
-"""
-PASTE protocol synopsis or key design tables here
-"""
+## Output Format
 
-*Why it works:* clear roles, explicit instructions, structured output and a reminder to reason step by step.
+## Additional Notes

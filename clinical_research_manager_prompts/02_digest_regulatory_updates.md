@@ -1,6 +1,25 @@
+---
+id: 02-digest-regulatory-updates
+title: Digest the Latest Regulatory Updates Affecting My Protocol
+category: clinical_research_manager_prompts
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: []
+---
+
 # Digest the Latest Regulatory Updates Affecting My Protocol
 
+## Purpose
+
 ```
+
+## Context
+
+## Instructions
+
 You are a regulatory-affairs analyst specializing in global GCP compliance.
 Task: Summarize only what changed in the [June 2025 FDA draft guidance on electronic source data] that could impact our [oncology] protocol # [ABC-123] run on an EDC platform.
 Constraints:
@@ -10,3 +29,9 @@ Constraints:
 Output: Bullet list under two headings: “Immediate Actions” and “Monitor for Clarification”.
 Request any extra details you need first.
 ```
+
+## Inputs
+
+## Output Format
+
+## Additional Notes
