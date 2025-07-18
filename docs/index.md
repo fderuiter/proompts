@@ -42,6 +42,13 @@
 - [Adaptive Design & Interim Monitoring](../biostatistics_prompts/09_adaptive_design_interim_monitoring.md)
 - [Overview](../biostatistics_prompts/overview.md)
 
+## CFO Prompts
+
+- [Scenario-Based Clinical-Trial Cash-Flow Forecast](../cfo_prompts/01_scenario_cash_flow_forecast.md)
+- [Competitive-Bid Pricing & Margin Optimizer](../cfo_prompts/02_competitive_bid_pricing.md)
+- [Regulatory-Risk & ESG Impact Dashboard Builder](../cfo_prompts/03_regulatory_risk_dashboard.md)
+- [Overview](../cfo_prompts/overview.md)
+
 ## Codebase Analysis
 
 - [DRY Codebase Analysis](../codebase_analysis/DRY_Codebase_Analysis.md)
