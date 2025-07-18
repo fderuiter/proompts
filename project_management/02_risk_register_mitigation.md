@@ -1,9 +1,35 @@
-<!-- markdownlint-disable MD029 -->
+---
+id: pm-risk-register-mitigation
+title: Comprehensive Risk Register and Mitigation Plan
+category: project_management
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [project management, risk]
+---
 
-# Comprehensive Risk Register & Mitigation Plan
+# Comprehensive Risk Register and Mitigation Plan
 
-**"Role: Act as an enterprise risk-management analyst.
-Context: Here is the overview of [PROJECT NAME]: [paste summary]. We are in the [phase] phase with a budget of [amount].
-Task: Produce a risk register in Markdown that includes for each risk: ID, category, description, probability (1-5), impact (1-5), qualitative RAG score, owner, proposed mitigation actions, and residual risk score. Conclude with three overarching risk-response strategies.
-Output style: Use a Markdown table; wrap text in cells at 40 characters max; sort by highest combined risk score.
-Quality-check: If any project data are insufficient for a sound assessment, list the missing inputs and pause."**
+## Purpose
+Produce a risk register with mitigation actions and overall strategies.
+
+## Context
+You are an enterprise risk-management analyst. The user will supply a project overview including the current phase and budget.
+
+## Instructions
+1. List each risk with ID, category, description, probability (1–5), impact (1–5), qualitative RAG score, owner, proposed mitigation, and residual risk score.
+2. Sort the table by highest combined risk score.
+3. Conclude with three overarching risk-response strategies.
+4. Wrap text in table cells at roughly 40 characters for readability.
+5. If project data are insufficient, list missing inputs and pause.
+
+## Inputs
+- `{{project_overview}}`
+
+## Output Format
+Markdown table followed by a short list of overarching strategies.
+
+## Additional Notes
+Use concise language suitable for senior stakeholders.

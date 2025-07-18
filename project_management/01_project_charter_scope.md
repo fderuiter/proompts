@@ -1,9 +1,39 @@
-<!-- markdownlint-disable MD029 -->
+---
+id: pm-project-charter-scope
+title: Project Charter and Scope Definition
+category: project_management
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [project management, planning]
+---
 
-# Project Charter & Scope Definition
+# Project Charter and Scope Definition
 
-**"Role: You are a senior project-management consultant.
-Context: I'm kicking off [PROJECT NAME], a [brief description & industry] effort with a preliminary budget of [amount] and a deadline of [date]. Key stakeholders are [names/roles], and the high-level objective is [business outcome].
-Task: Draft a complete project charter that includes: background, objectives, in-scope/out-of-scope items, major deliverables, success criteria/KPIs, assumptions, constraints, top three risks, milestone schedule, high-level budget table, and required approval signatures.
-Output style: Return the charter as a Markdown document with H2 section headings and a two-column table for the milestone schedule. Keep each paragraph under 120 words.
-Quality-check: Ask any clarifying questions you need before you begin."**
+## Purpose
+Create a complete project charter summarizing background, objectives, scope, deliverables, and key risks.
+
+## Context
+You are a senior project-management consultant beginning a new initiative. The user will provide the project name, brief description, budget, deadline, stakeholders, and desired business outcome.
+
+## Instructions
+1. Draft the charter sections: Background, Objectives, In-Scope, Out-of-Scope, Major Deliverables, Success Criteria/KPIs, Assumptions, Constraints, Top Three Risks, Milestone Schedule, High-Level Budget Table, Approval Signatures.
+2. Use H2 section headings and a two-column table for the milestone schedule.
+3. Keep each paragraph under 120 words.
+4. Ask clarifying questions if any details are missing before you begin.
+
+## Inputs
+- `{{project_name}}`
+- `{{project_description}}`
+- `{{budget}}`
+- `{{deadline}}`
+- `{{stakeholders}}`
+- `{{business_outcome}}`
+
+## Output Format
+Markdown document with the sections listed above.
+
+## Additional Notes
+Ensure the charter is concise and ready for executive review.

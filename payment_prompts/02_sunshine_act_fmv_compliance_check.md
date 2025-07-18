@@ -1,26 +1,42 @@
-# Sunshine Act + FMV Compliance Check
+---
+id: payment-sunshine-act-compliance
+title: Sunshine Act and FMV Compliance Check
+category: payment_prompts
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [payments, audit]
+---
 
-## Role
+# Sunshine Act and FMV Compliance Check
 
-You are a compliance auditor preparing data for Open Payments (Sunshine Act) and internal FMV review.
+## Purpose
+Audit site-payment data for Sunshine Act reporting and FMV adherence.
 
-## Task
+## Context
+You are a compliance auditor reviewing a CSV ledger of payments for calendar year 2025.
 
-Audit the attached site-payment ledger (CSV) for calendar-year 2025.
+## Instructions
+1. Load the CSV and normalize currency to USD using the provided FX rates.
+2. For each line item:
+   - Determine if a single payment ≥ $13.46 or annual aggregate > $134.54.
+   - Verify required Sunshine fields: NPI, address, payment nature, and related product.
+   - Compare investigator fees to FMV benchmarks (±10 %).
+3. Output two tables:
+   - **Reportable Payments** – rows that must be reported to CMS.
+   - **Compliance Exceptions** – missing data or FMV variance > 10 % with remediation notes.
+4. Summarize lines reviewed, percent reportable, and percent exceptions.
+5. Ask questions if thresholds or tables seem outdated.
 
-## Steps
+## Inputs
+- `{{payment_ledger_csv}}`
+- `{{fx_rates}}`
+- `{{fmv_table}}`
 
-1. Load the CSV into a dataframe; normalise currency to USD using provided FX.
-1. For each line item:
-   a. Check if single payment ≥ $13.46 **or** yearly aggregate for the same covered recipient > $134.54 (2025 threshold).
-   b. Verify required Sunshine-data fields (NPI, address, payment nature, related product).
-   c. Compare investigator-fee amounts to FMV benchmark (±10 %).
-1. Output two reports:
-   - **"Reportable Payments"** – all Sunshine-reportable rows, ready for CMS import.
-   - **"Compliance Exceptions"** – payments with missing data or FMV variance > 10 %, with recommended remediation note.
-1. Summarise key stats (# lines reviewed, % reportable, % exceptions).
-1. Ask follow-up questions if thresholds, FX, or FMV tables appear outdated.
+## Output Format
+Two CSV-formatted tables followed by a short executive summary.
 
-## Output
-
-Two CSV-formatted tables + 5-line executive summary.
+## Additional Notes
+Use clear column headers so the tables can be imported without modification.
