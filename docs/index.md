@@ -157,6 +157,9 @@
 - [Rapid Process Diagnostic](../operations_prompts/01_rapid_process_diagnostic.md)
 - [Inventory Demand Planning Simulation](../operations_prompts/02_inventory_demand_planning_simulation.md)
 - [Kpi Dashboard Ops Review](../operations_prompts/03_kpi_dashboard_ops_review.md)
+- [CRO Trial-Performance KPI Dashboard Blueprint](../operations_prompts/04_cro_trial_performance_kpi_dashboard_blueprint.md)
+- [Multistudy Resource & Capacity Forecast Plan](../operations_prompts/05_multistudy_resource_capacity_forecast_plan.md)
+- [Fair-Market-Value Budget Negotiation Brief](../operations_prompts/06_fair_market_value_budget_negotiation_brief.md)
 - [Overview](../operations_prompts/overview.md)
 
 ## Payment Prompts
