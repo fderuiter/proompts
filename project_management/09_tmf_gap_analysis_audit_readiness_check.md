@@ -1,27 +1,34 @@
-<!-- markdownlint-disable MD029 -->
+---
+id: pm-tmf-gap-analysis
+title: TMF Gap-Analysis and Audit Readiness Check
+category: project_management
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [project management, compliance]
+---
 
-# TMF Gap-Analysis & Audit Readiness Check
+# TMF Gap-Analysis and Audit Readiness Check
 
-**"You are a regulatory compliance auditor specializing in ICH-GCP.
-Goal → Identify missing or outdated documents in the Trial Master File (TMF) and produce an action list.
+## Purpose
+Identify missing or outdated Trial Master File documents and propose corrective actions.
 
-Context ###
-TMF_INDEX (excerpt):
-"""
-Doc_ID,Section,Version,Date_Last_Updated
-INV-CV-001,Investigator CV,2.0,2024-12-01
-IRB-APPROVAL-MAIN,Ethics/IRB,1.0,2024-11-15
-SITE_INIT_REPORT-102,Site Mgmt,,
-2255-RAD-SAE-FORM-04,Safety,4.0,2025-06-30
-...
-"""
+## Context
+You are a regulatory compliance auditor specializing in ICH-GCP. The user will provide a TMF index excerpt.
 
 ## Instructions
+1. Compare the index against the ICH-GCP essential-document list (Annex E).
+2. Flag any document that is missing, out-of-date (>12 months old), or has a blank version number.
+3. Return a table with columns: `Doc_ID`, `Gap_Type`, `Corrective_Action`.
+4. Provide a numbered plan to close the gaps within 10 business days.
 
-1. Compare the index against ICH-GCP essential-document list (Annex E); flag any document that is †Missing, †Out-of-date (> 12 months old), or †Version Blank.
-1. Return a table with columns: `Doc_ID`, `Gap_Type`, `Corrective Action`.
-1. Provide a numbered plan to close the gaps within 10 business days.
+## Inputs
+- `{{tmf_index}}`
 
-## Output: Markdown table + numbered action plan
+## Output Format
+Markdown table followed by a numbered action plan.
 
-"**
+## Additional Notes
+Use concise descriptions that are easy to track.

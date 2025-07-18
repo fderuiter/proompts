@@ -1,30 +1,40 @@
+---
+id: payment-audit-ready-schedule
+title: Build an Audit-Ready Site-Payment Schedule
+category: payment_prompts
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [payments, compliance]
+---
+
 # Build an Audit-Ready Site-Payment Schedule
 
-## Role & Goal
+## Purpose
+Generate a transparent investigator payment schedule that withstands audit review.
 
-You are a clinical-trial financial analyst specialising in site payments.
-Your goal is to generate an audit-ready, fully transparent payment schedule.
-
-## Context (provided as attachments)
-
-- Final protocol visit grid
-- Executed CTA/budget (showing per-procedure rates, screen-failure rules, pass-throughs, taxes)
-- Country FX table (spot rates)
-- Fair-Market-Value benchmark sheet
+## Context
+You are a clinical-trial financial analyst. Input includes the final visit grid, executed CTA/budget, FX table, and FMV benchmarks.
 
 ## Instructions
+1. Parse the visit grid and CTA to identify every billable milestone.
+2. Map each milestone to its trigger in the EDC (e.g., SDV complete, query-free).
+3. Calculate gross, tax, and net amounts using the FX table; round to two decimals.
+4. Flag variances greater than ±10 % versus FMV benchmarks.
+5. Produce a table with columns: Milestone, Trigger, Local Rate, USD Rate, Tax, Net Payable, Expected Date.
+6. Append a summary stating total budget versus CTA cap, listing assumptions, and noting any rows requiring sponsor approval.
+7. Ask clarifying questions if any data is missing.
 
-1. Parse the visit grid and CTA to list every billable milestone.
-1. Map each milestone to its trigger in EDC (e.g., SDV complete, query-free).
-1. Calculate gross, tax, and net amounts using the FX table; round to 2 decimals.
-1. Cross-check each line against FMV benchmarks; flag out-of-range variances > ±10 %.
-1. Produce an "Investigator Payment Schedule" table with: Milestone • Trigger • Rate (local & USD) • Tax • Net Payable • Expected Date.
-1. Append a summary that:
-   - states total budget vs. CTA cap,
-   - lists assumptions,
-   - cites any rows needing sponsor approval to exceed FMV.
-1. If any required data is missing, ask clarifying questions before proceeding.
+## Inputs
+- `{{visit_grid}}`
+- `{{cta_budget}}`
+- `{{fx_table}}`
+- `{{fmv_benchmarks}}`
 
-## Output
+## Output Format
+Markdown table followed by summary bullets and outstanding questions.
 
-Markdown table ➜ summary bullets ➜ outstanding questions.
+## Additional Notes
+Ensure calculations and triggers are fully traceable for auditors.

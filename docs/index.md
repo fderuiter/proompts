@@ -287,16 +287,16 @@
 
 - [Design a Robust Preclinical Pathology Study Protocol](../pathology_prompts/01_study_protocol_outline.md)
 - [Evaluate Device–Tissue Interface Findings](../pathology_prompts/02_device_tissue_interface_evaluation.md)
-- [Prepare Pathology Slides & Reporting Plan](../pathology_prompts/03_slides_and_reporting_workflow.md)
+- [Prepare Pathology Slides and Reporting Plan](../pathology_prompts/03_slides_and_reporting_workflow.md)
 
 ## Payment Prompts
 
 - [Build an Audit-Ready Site-Payment Schedule](../payment_prompts/01_audit_ready_site_payment_schedule.md)
-- [Sunshine Act + FMV Compliance Check](../payment_prompts/02_sunshine_act_fmv_compliance_check.md)
-- [Payment-Process Risk Assessment & Mitigation](../payment_prompts/03_payment_process_risk_assessment.md)
+- [Sunshine Act and FMV Compliance Check](../payment_prompts/02_sunshine_act_fmv_compliance_check.md)
+- [Payment-Process Risk Assessment and Mitigation](../payment_prompts/03_payment_process_risk_assessment.md)
 - [Investigator-Site Payment Forecast](../payment_prompts/04_investigator_site_payment_forecast.md)
 - [Payment Reconciliation and Discrepancy Report](../payment_prompts/05_payment_reconciliation_discrepancy_report.md)
-- [Global Regulatory and Tax Requirements for Site Payments](../payment_prompts/06_global_regulatory_tax_matrix.md)
+- [Global Regulatory and Tax Matrix for Site Payments](../payment_prompts/06_global_regulatory_tax_matrix.md)
 
 ## Productivity Prompts
 
@@ -308,16 +308,18 @@
 
 ## Project Management
 
-- [Project Charter & Scope Definition](../project_management/01_project_charter_scope.md)
-- [Comprehensive Risk Register & Mitigation Plan](../project_management/02_risk_register_mitigation.md)
+- [Project Charter and Scope Definition](../project_management/01_project_charter_scope.md)
+- [Comprehensive Risk Register and Mitigation Plan](../project_management/02_risk_register_mitigation.md)
 - [Weekly Executive Status Report](../project_management/03_weekly_exec_status_report.md)
-- [Detailed Project Blueprint & Timeline](../project_management/04_detailed_project_blueprint_timeline.md)
-- [Risk & Pre-Mortem Analysis](../project_management/05_risk_pre_mortem_analysis.md)
-- [Status Update & Task Prioritization](../project_management/06_status_update_task_prioritization.md)
-- [Clinical-Trial Timeline & Risk Radar](../project_management/07_clinical_trial_timeline_risk_radar.md)
-- [Portfolio Resource & Budget Forecast (12-Month Outlook)](../project_management/07_portfolio_resource_budget_forecast.md)
-- [Cross-Study Operational Risk Heat Map & Mitigation Plan](../project_management/08_cross_study_risk_heat_map_mitigation_plan.md)
+- [Detailed Project Blueprint and Timeline](../project_management/04_detailed_project_blueprint_timeline.md)
+- [Risk and Pre-Mortem Analysis](../project_management/05_risk_pre_mortem_analysis.md)
+- [Status Update and Task Prioritization](../project_management/06_status_update_task_prioritization.md)
+- [Clinical-Trial Timeline and Risk Radar](../project_management/07_clinical_trial_timeline_risk_radar.md)
+- [Portfolio Resource and Budget Forecast](../project_management/07_portfolio_resource_budget_forecast.md)
+- [Cross-Study Operational Risk Heat Map and Mitigation Plan](../project_management/08_cross_study_risk_heat_map_mitigation_plan.md)
 - [Sponsor-Ready Monthly Status Brief](../project_management/08_sponsor_ready_monthly_status_brief.md)
+- [Executive Sponsor Briefing Deck Outline](../project_management/09_executive_sponsor_briefing_deck_outline.md)
+- [TMF Gap-Analysis and Audit Readiness Check](../project_management/09_tmf_gap_analysis_audit_readiness_check.md)
 - [Executive Sponsor Briefing Deck Outline (15 Slides)](../project_management/09_executive_sponsor_briefing_deck_outline.md)
 - [TMF Gap-Analysis & Audit Readiness Check](../project_management/09_tmf_gap_analysis_audit_readiness_check.md)
 - [Neutral Scrum Retrospective Facilitator](../project_management/10_neutral_scrum_retro.md)
@@ -335,7 +337,7 @@
 
 - [Clinical-Trial Protocol Creator](../protocol_prompts/01_clinical_trial_protocol_creator.md)
 - [Ultimate SOP Architect](../protocol_prompts/02_ultimate_sop_architect.md)
-- [Protocol Reviewer & Gap-Analysis Coach](../protocol_prompts/03_protocol_reviewer_gap_analysis_coach.md)
+- [Protocol Reviewer and Gap-Analysis Coach](../protocol_prompts/03_protocol_reviewer_gap_analysis_coach.md)
 - [Protocol Section Refinement](../protocol_prompts/04_protocol_section_refinement.md)
 
 ## Regulatory Prompts

@@ -1,29 +1,36 @@
-<!-- markdownlint-disable MD029 MD012 MD032 -->
+---
+id: pm-cross-study-risk-heatmap
+title: Cross-Study Operational Risk Heat Map and Mitigation Plan
+category: project_management
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [project management, risk]
+---
 
-# Cross-Study Operational Risk Heat Map & Mitigation Plan
+# Cross-Study Operational Risk Heat Map and Mitigation Plan
 
-**"You are: An enterprise risk-management AI for global clinical operations.
-Goal: Identify and prioritize the top 5 portfolio-level operational risks for Q4 2025, then propose mitigations.
-Context:
-"""
+## Purpose
+Identify and prioritize the top portfolio-level operational risks and propose mitigations.
 
-• Current risk register exported below.
-• 3 new sites in APAC entering activation; regional regulatory timelines often slip.
-• Two vendors (central lab & eCOA) recently merged—potential service disruptions.
+## Context
+You are an enterprise risk-management AI for global clinical operations. Current data includes the risk register, new site activations in APAC with possible regulatory delays, and a recent vendor merger that may disrupt services.
 
-"""
+## Instructions
+1. Rate each risk on Probability (1–5) × Impact (1–5) to create a heat‑map matrix (High/Med/Low).
+2. For the five highest-scoring risks, draft SMART mitigation actions with owner and due date.
+3. Provide an executive summary (≤150 words) for steering‑committee use.
+4. Outline the scoring logic applied.
 
-Instructions:
+## Inputs
+- `{{risk_register}}`
 
-1. Rate each risk on Probability (1-5) × Impact (1-5).
-1. Generate a heat-map matrix description (High/Med/Low).
-1. For the 5 highest-scoring risks, draft SMART mitigation actions, owner, and due date.
-1. Provide an executive summary (≤150 words) for steering-committee use.
-
-Output:
-
+## Output Format
 - Table "Risk-Heat-Map".
 - Table "Mitigation-Plan".
-- Executive Summary paragraph.
+- Executive summary paragraph.
 
-Reasoning: Briefly outline the scoring logic you applied."**
+## Additional Notes
+Use concise language and focus on cross-study themes.

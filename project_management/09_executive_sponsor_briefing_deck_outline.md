@@ -1,24 +1,36 @@
-<!-- markdownlint-disable MD029 MD012 MD032 -->
+---
+id: pm-sponsor-briefing-deck
+title: Executive Sponsor Briefing Deck Outline
+category: project_management
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [project management, communications]
+---
 
-# Executive Sponsor Briefing Deck Outline (15 Slides)
+# Executive Sponsor Briefing Deck Outline
 
-**"You are: A senior communications strategist preparing my quarterly sponsor briefing.
-Objective: Draft a slide-by-slide outline (max 15 slides) that tells a data-driven story of portfolio health and strategic value.
-Audience: C-suite at Top-10 pharma; they want clear ROI, timeline certainty, and next-step asks.
-Inputs:
-"""
+## Purpose
+Provide a slide-by-slide outline for a quarterly sponsor briefing.
 
-— KPI snapshot (cycle times, patient enrollment, risk scores, earned-value).
-— Strategic wins: first-patient-in ahead of plan for Study ABC-123.
-— Challenges: eCOA vendor merger, APAC regulatory delays.
+## Context
+You are a senior communications strategist preparing a briefing for C‑suite executives at a top-10 pharma. Inputs include KPI snapshots, strategic wins, and current challenges.
 
-"""
+## Instructions
+1. Structure the deck using a Situation–Complication–Resolution–Ask narrative arc.
+2. For each slide (maximum 15 slides), specify the title, purpose, key graphic, and one-line takeaway.
+3. Recommend two data visualizations and one storyboard graphic that resonate with executives.
+4. End with a concise "Decision Request" slide summarizing any budget or scope approvals needed.
 
-Instructions:
+## Inputs
+- `{{kpi_snapshot}}`
+- `{{strategic_wins}}`
+- `{{challenges}}`
 
-1. Structure the deck using a classic narrative arc (Situation-Complication-Resolution-Ask).
-1. Assign each slide: title, purpose, key graphic to include, and 1-line takeaway.
-1. Recommend 2 data visualizations and 1 storyboard graphic that resonate with executives.
-1. End with a concise "Decision-Request" slide summarizing budget or scope approvals needed.
+## Output Format
+Ordered list of slides in Markdown.
 
-Format: Ordered list of slides in Markdown."**
+## Additional Notes
+Keep the outline brief and focused on ROI and timeline certainty.

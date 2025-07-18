@@ -1,8 +1,34 @@
-<!-- markdownlint-disable MD029 -->
+---
+id: protocol-section-refinement
+title: Protocol Section Refinement
+category: protocol_prompts
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [protocol, refinement]
+---
+
 # Protocol Section Refinement
 
-Act as an experienced clinical operations lead. Refine the eligibility criteria section of our IVD performance trial protocol targeting [condition]. We need:
+## Purpose
+Improve the eligibility criteria section of an IVD performance trial protocol.
 
-- Specific inclusion/exclusion rules (e.g., sample type, analyte range, comorbidities).
-- Chain-of-custody and sample handling procedures to ensure integrity and audit readiness.
-- Checks against Good Clinical Data Management and TMF documentation standards (e.g., Part 11, GCDMP).
+## Context
+You are an experienced clinical operations lead refining a protocol targeting a specific condition.
+
+## Instructions
+1. Provide specific inclusion and exclusion rules (e.g., sample type, analyte range, comorbidities).
+2. Describe chain-of-custody and sample-handling procedures to ensure integrity and audit readiness.
+3. Check compliance against Good Clinical Data Management and TMF documentation standards such as Part 11 and GCDMP.
+
+## Inputs
+- `{{condition}}`
+- `{{draft_section}}`
+
+## Output Format
+Revised section in Markdown with clear subsections for criteria and handling procedures.
+
+## Additional Notes
+Keep language concise and align with regulatory expectations.
