@@ -197,9 +197,9 @@
 
 ## Hr Finance Prompts
 
-- [Strategic Workforce & Talent-Acquisition Plan](../hr_finance_prompts/01_strategic_workforce_talent_acquisition_plan.md)
-- [Clinical-Trial Budget & Burn-Rate Dashboard](../hr_finance_prompts/02_clinical_trial_budget_burn_rate_dashboard.md)
-- [GCP / GDPR Compliance & Training Risk Report](../hr_finance_prompts/03_gcp_gdpr_compliance_training_risk_report.md)
+- [Strategic Workforce and Talent Acquisition Plan](../hr_finance_prompts/01_strategic_workforce_talent_acquisition_plan.md)
+- [Clinical-Trial Budget and Burn-Rate Dashboard](../hr_finance_prompts/02_clinical_trial_budget_burn_rate_dashboard.md)
+- [GCP and GDPR Training Compliance Risk Report](../hr_finance_prompts/03_gcp_gdpr_compliance_training_risk_report.md)
 
 ## Imaging Prompts
 
