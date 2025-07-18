@@ -1,24 +1,40 @@
+---
+id: agentic-coding-session-guidelines
+title: Coding Session Guidelines
+category: agentic_coding
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: [coding, workflow]
+---
+
 # Coding Session Guidelines
 
-## Development Guidelines
+## Purpose
+Provide step-by-step guidance for running productive coding sessions.
 
-### Workflow (Per Task)
+## Context
+Use these guidelines while developing a project with automated testing and persistent memory.
 
-- **Write tests** first to cover the desired functionality clearly.
-- **Implement code** to fulfill test cases.
-- **Run tests** to confirm the implementation is correct using `dotnet test` or specific filters (`dotnet test --filter "TestName"`).
-- Fix any errors that arise during testing immediately.
+## Instructions
+1. Write tests first for each task.
+2. Implement code to satisfy the tests.
+3. Run `dotnet test` or filtered tests to verify success and fix failures immediately.
+4. After each task:
+   - run tests again
+   - update the to-do list
+   - update `memory.md` with key state changes
+   - capture lessons learned
+   - end the chat session cleanly
+5. Always reference `memory.md` to maintain context between sessions.
 
-### Task Completion Checklist
+## Inputs
+None
 
-After completing each task:
+## Output Format
+Clear Markdown checklist of steps completed during the session.
 
-- [ ] Run tests (`dotnet test`) to confirm success.
-- [ ] Update the to-do list with completed items marked clearly.
-- [ ] Update `memory.md` with important project state changes or learnings.
-- [ ] Note any lessons learned or insights in the development guidelines.
-- [ ] End the chat session clearly after each completed task.
-
-### Memory Maintenance
-
-- Always refer to and update the `memory.md` file for context between sessions.
+## Additional Notes
+Maintain the to-do list and memory file to ensure continuity across sessions.

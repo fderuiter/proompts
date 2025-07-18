@@ -1,25 +1,44 @@
-<!-- markdownlint-disable MD029 -->
-# Statistical Analysis-Plan (SAP) Generator
+---
+id: biostatistics-sap-generator
+title: Statistical Analysis Plan Generator
+category: biostatistics_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [biostatistics, SAP]
+# Statistical Analysis Plan Generator
+---
 
-**Prompt**
-*You are an experienced biostatistics consultant for Phase III clinical trials.*
+## Purpose
 
-**Context (fill-in):** The trial compares **$intervention$** vs **$control$** in **$population$** with a primary endpoint of **$endpoint$** measured at **$time-point$**. Randomisation is stratified by **$factors$**.
+Generate a comprehensive statistical analysis plan for a clinical trial.
 
-**Task:** Draft a complete SAP that my study team can review.
+## Context
 
-**Please include—in Markdown with H2 headings—the following sections:**
+You are an experienced biostatistics consultant. The study compares `{{intervention}}` versus `{{control}}` in `{{population}}` with primary endpoint `{{endpoint}}` at `{{time_point}}`. Randomisation is stratified by `{{factors}}`.
 
-1. Study objectives & hypotheses (null/alternative)
-1. Sample-size justification (show formula, inputs, and power curve image link placeholder)
-1. Primary, secondary, and safety endpoints with exact statistical tests chosen and assumptions checked
-1. Missing-data handling plan (imputation strategy + sensitivity analyses)
-1. Interim-analysis rules and alpha-spending function (use O’Brien-Fleming unless rationale differs)
-1. Shell tables/figures template (structured as Simple JSON so we can auto-format later)
-1. Reproducibility checklist (software, version control, random-seed policy)
+## Instructions
 
-**Output constraints:**
-• Keep total length ≤ 1 500 words.
-• Begin each subsection with a 1-sentence plain-English summary for clinicians.
-• After the plan, list any assumptions that need sponsor confirmation.
-**Think step-by-step** and show your reasoning internally before presenting the final SAP.
+1. Include sections for objectives and hypotheses, sample-size justification, endpoint analyses, missing-data handling, interim-analysis rules, shell tables/figures (Simple JSON), and a reproducibility checklist.
+2. Keep total length ≤ 1 500 words.
+3. Begin each subsection with a plain-English summary.
+4. List assumptions requiring sponsor confirmation.
+
+## Inputs
+
+- `{{intervention}}`
+- `{{control}}`
+- `{{population}}`
+- `{{endpoint}}`
+- `{{time_point}}`
+- `{{factors}}`
+
+## Output Format
+
+Markdown document using H2 headings for each section.
+
+## Additional Notes
+
+Think step-by-step internally, but present only the final SAP.

@@ -1,26 +1,42 @@
-# Analyze Adjudication KPIs & Recommend Fixes
+---
+id: adjudication-analyze-kpis
+title: Analyze Adjudication KPIs
+category: adjudication_prompts
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: [adjudication, analytics]
+---
 
-System
-You are a Clinical Data-Science Analyst specializing in adjudication performance metrics.
+# Analyze Adjudication KPIs
 
-User
-Context:
+## Purpose
+Calculate adjudication performance metrics and recommend improvements.
 
-• Attached is a CSV export (“adjudication_log.csv”) covering every event in our ongoing oncology trial.
-• Leadership wants a data-driven plan to shave 20 % off median cycle time.
+## Context
 
-Task:
+- CSV file `adjudication_log.csv` lists all events in an oncology trial.
+- Leadership expects a plan to reduce median cycle time by 20%.
 
-1. Load the CSV and calculate:
-   • Median and 90th-percentile cycle time (event-trigger → final decision)
-   • Reviewer disagreement rate
-   • Top three root causes of delays (missing docs, late site replies, tie-break meetings, etc., inferred from status fields)
+## Instructions
+1. Load the CSV and compute:
+   - median and 90th percentile cycle time from event trigger to final decision
+   - reviewer disagreement rate
+   - top three root causes of delays inferred from status fields
+1. Create bar charts for each metric and save them as PNGs.
+1. Recommend at least five concrete process changes tied to these metrics that would achieve the target reduction.
 
-1. Create simple bar charts (one per metric) and save them as PNGs.
-1. Recommend at least five concrete process changes (technology, staffing, training) that would yield the target 20 % reduction, citing any trends you observe.
+## Inputs
+
+- `{{adjudication_log.csv}}` – event log export
+
+## Output Format
 
 - **Metrics Summary Table**
-- Embedded charts (or provide download links)
-- Bullet-list Recommendations, each tied to a metric.
+- Embedded charts or download links for each PNG
+- Bullet list of recommendations
 
-If the data columns are ambiguous, ask for a data dictionary before analysis.
+## Additional Notes
+Request a data dictionary if any column in the CSV is ambiguous before starting the analysis.

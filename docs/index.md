@@ -2,21 +2,21 @@
 
 ## Adjudication Prompts
 
-- [Design a Real-Time Adjudication Visibility Dashboard](../adjudication_prompts/01_real_time_adjudication_dashboard.md)
-- [Build a Source-Document & Endpoint Checklist](../adjudication_prompts/02_source_document_endpoint_checklist.md)
-- [Analyze Adjudication KPIs & Recommend Fixes](../adjudication_prompts/03_analyze_adjudication_kpis.md)
+- [Real-Time Adjudication Visibility Dashboard](../adjudication_prompts/01_real_time_adjudication_dashboard.md)
+- [Source Document and Endpoint Checklist](../adjudication_prompts/02_source_document_endpoint_checklist.md)
+- [Analyze Adjudication KPIs](../adjudication_prompts/03_analyze_adjudication_kpis.md)
 
 ## Agentic Coding
 
-- [Product Brief](../agentic_coding/01_product_brief.md)
-- [Prompt 2: Project Brief (Epic)](../agentic_coding/02_project_brief_epic.md)
+- [Product Brief Template](../agentic_coding/01_product_brief.md)
+- [Project Brief for Epic](../agentic_coding/02_project_brief_epic.md)
 - [Technical Implementation Plan](../agentic_coding/03_technical_implementation_plan.md)
 - [Coding Session Guidelines](../agentic_coding/04_coding_session_guidelines.md)
-- [Project Review Guidelines](../agentic_coding/05_project_review.md)
-- [Project Memory (`memory.md`)](../agentic_coding/06_project_memory.md)
-- [To-do List](../agentic_coding/06_todo_generation.md)
-- [End-to-End Test Discovery Prompt](../agentic_coding/07_e2e_test_discovery.md)
-- [Folder & Module Organization](../agentic_coding/07_folder_module_organization.md)
+- [Project Review Checklist](../agentic_coding/05_project_review.md)
+- [Project Memory Notes](../agentic_coding/06_project_memory.md)
+- [To-Do List Template](../agentic_coding/06_todo_generation.md)
+- [E2E Test Discovery Template](../agentic_coding/07_e2e_test_discovery.md)
+- [Folder and Module Organization](../agentic_coding/07_folder_module_organization.md)
 - [RequirementsBot Prompt](../agentic_coding/07_requirements_prompt.md)
 
 ## Biological Safety Prompts
@@ -26,7 +26,7 @@
 - [Regulatory Submission Support](../biological_safety_prompts/03_regulatory_submission_support.md)
 - [Biological Evaluation Plan Builder](../biological_safety_prompts/04_bep_builder.md)
 - [Comprehensive Biocompatibility Test Matrix](../biological_safety_prompts/05_comprehensive_test_matrix.md)
-- [Chemical Characterization & Toxicological Risk-Assessment Work-Plan](../biological_safety_prompts/06_chemical_characterization_work_plan.md)
+- [Chemical Characterization & TRA Work Plan](../biological_safety_prompts/06_chemical_characterization_work_plan.md)
 
 ## Biosafety Prompts
 
@@ -42,13 +42,13 @@
 
 ## Biostatistics Prompts
 
-- [Statistical Analysis-Plan (SAP) Generator](../biostatistics_prompts/01_statistical_analysis_plan_generator.md)
-- [Time-to-Event (Survival) Analysis Coach](../biostatistics_prompts/02_time_to_event_analysis_coach.md)
+- [Statistical Analysis Plan Generator](../biostatistics_prompts/01_statistical_analysis_plan_generator.md)
+- [Time-to-Event Analysis Coach](../biostatistics_prompts/02_time_to_event_analysis_coach.md)
 - [Peer-Review Checklist for Manuscript Methods](../biostatistics_prompts/03_peer_review_methods_checklist.md)
 - [Universal Template-Table Prompt](../biostatistics_prompts/04_universal_template_table_prompt.md)
 - [Dual-Language Figure Prompt](../biostatistics_prompts/05_dual_language_figure_prompt.md)
 - [QC Listing & Cross-check Prompt](../biostatistics_prompts/06_qc_listing_cross_check_prompt.md)
-- [Study Design + Statistical Approach](../biostatistics_prompts/07_study_design_statistical_approach.md)
+- [Study Design and Statistical Approach](../biostatistics_prompts/07_study_design_statistical_approach.md)
 - [Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive](../biostatistics_prompts/08_inclusion_exclusion_endpoints_sample_size.md)
 - [Adaptive Design & Interim Monitoring](../biostatistics_prompts/09_adaptive_design_interim_monitoring.md)
 - [Phase II/III SAP Skeleton](../biostatistics_prompts/10_phase_ii_iii_sap_skeleton.md)
@@ -136,6 +136,11 @@
 - [Red-Team Stress-Test](../communication_prompts/10_red_team_stress_test.md)
 - [Negotiation Coach](../communication_prompts/11_negotiation_coach.md)
 - [Panel Debate](../communication_prompts/12_panel_debate.md)
+- [Density Refiner](../communication_prompts/11_density_refiner.md)
+- [SCAMPER Ideation Coach](../communication_prompts/12_scamper_ideation_coach.md)
+- [Empathy-Map Facilitator](../communication_prompts/13_empathy_map_facilitator.md)
+- [Rubber Duck Debugger](../communication_prompts/14_rubber_duck_debugger.md)
+- [Pitch-Deck Outliner](../communication_prompts/15_pitch_deck_outliner.md)
 
 ## Cra Prompts
 
@@ -158,41 +163,37 @@
 ## Design Prompts
 
 - [Design.md Template and Guidelines](../design_prompts/01_design_md_template.md)
+- [AI Email Assistant Go/No-Go Vote](../design_prompts/02_email_assistant_go_no_go_vote.md)
 
 ## Eclinical Integration Prompts
 
 - [Architect the Integration Blueprint](../eclinical_integration_prompts/01_architect_integration_blueprint.md)
-- [Generate a Data-Mapping & Transformation Playbook](../eclinical_integration_prompts/02_data_mapping_transformation_playbook.md)
-- [Compile the Regulatory & Validation Checklist](../eclinical_integration_prompts/03_regulatory_validation_checklist.md)
+- [Data Mapping and Transformation Playbook](../eclinical_integration_prompts/02_data_mapping_transformation_playbook.md)
+- [Regulatory and Validation Checklist](../eclinical_integration_prompts/03_regulatory_validation_checklist.md)
 
 ## Epro Prompts
 
 - [Patient-Centric BYOD ePRO Workflow](../epro_prompts/01_patient-centric_byod_workflow.md)
-- [Optimize ePRO Form Design for Usability and Data Quality](../epro_prompts/02_optimize_epro_form_design.md)
+- [Optimize ePRO Form Design](../epro_prompts/02_optimize_epro_form_design.md)
 - [ePRO Adoption Plan for Sponsors](../epro_prompts/03_epro_adoption_plan_for_sponsors.md)
 
 ## Executive Prompts
 
-- [Strategic Market Foresight & Action Plan](../executive_prompts/01_strategic_market_foresight.md)
+- [Strategic Market Foresight and Action Plan](../executive_prompts/01_strategic_market_foresight.md)
 - [Crisis-Management Playbook Generator](../executive_prompts/02_crisis_management_playbook.md)
-- [Executive-Ready Brief & Talking Points Synthesizer](../executive_prompts/03_executive_brief_synthesizer.md)
-- [Digital-Transformation Roadmap for Clinical Operations](../executive_prompts/04_digital_transformation_roadmap.md)
-- [Strategic Market & Competitor Radar](../executive_prompts/04_market_competitor_radar.md)
-- [Strategic Growth Road-Map](../executive_prompts/04_strategic_growth_roadmap.md)
+- [Executive-Ready Brief and Talking Points](../executive_prompts/03_executive_brief_synthesizer.md)
+- [Digital Transformation Roadmap for Clinical Operations](../executive_prompts/04_digital_transformation_roadmap.md)
+- [Strategic Market and Competitor Radar](../executive_prompts/04_market_competitor_radar.md)
+- [Strategic Growth Roadmap](../executive_prompts/04_strategic_growth_roadmap.md)
 - [Strategic Portfolio Prioritizer](../executive_prompts/04_strategic_portfolio_prioritizer.md)
 - [FDA-Aligned AI Governance Framework](../executive_prompts/05_ai_governance_framework.md)
 - [Emerging-Science Horizon Scan](../executive_prompts/05_emerging_science_horizon_scan.md)
 - [Executive Trial-Health Dashboard](../executive_prompts/05_executive_trial_health_dashboard.md)
-- [Investor & Board Narrative Builder](../executive_prompts/05_investor_board_narrative_builder.md)
-- [Quarterly Innovation Radar for Decentralized & Hybrid Trials](../executive_prompts/06_innovation_radar.md)
-- [Regulatory & Competitive Intelligence Briefing](../executive_prompts/06_regulatory_competitive_intel_briefing.md)
+- [Investor and Board Narrative Builder](../executive_prompts/05_investor_board_narrative_builder.md)
+- [Quarterly Innovation Radar for Decentralized and Hybrid Trials](../executive_prompts/06_innovation_radar.md)
+- [Regulatory and Competitive Intelligence Briefing](../executive_prompts/06_regulatory_competitive_intel_briefing.md)
 - [Trial-Design Optimisation Memo](../executive_prompts/06_trial_design_optimisation_memo.md)
-
-## Glp Prompts
-
-- [Protocol Design for GLP Preclinical Study](../glp_prompts/01_protocol_design_glp_study.md)
-- [Risk-based Gap Analysis](../glp_prompts/02_risk_based_gap_analysis.md)
-- [Final GLP-Compliant Study Report Outline](../glp_prompts/03_final_glp_study_report_outline.md)
+- [Hosting Cost Reduction ToT Plan](../executive_prompts/07_hosting_cost_reduction_tot.md)
 
 ## Hr Finance Prompts
 
@@ -221,12 +222,14 @@
 - [Competency-Based Onboarding Blueprint (ICH-GCP Focus)](../learning_development_prompts/01_competency_based_onboarding_blueprint.md)
 - [Scenario-Based Microlearning Series to Reduce GCP Violations](../learning_development_prompts/02_scenario_based_microlearning_series.md)
 - [Training-Impact Analytics & Targeted Intervention Planner](../learning_development_prompts/03_training_impact_analytics_targeted_intervention_planner.md)
+- [Net Present Value Socratic Tutor](../learning_development_prompts/04_npv_socratic_tutor.md)
 
 ## Market Research Prompts
 
 - [Market Landscape & Trend Analysis](../market_research_prompts/01_market_landscape_trend_analysis.md)
 - [Target Segment & User Needs Assessment](../market_research_prompts/02_target_segment_user_needs_assessment.md)
 - [Regulatory & Commercial Barrier Mapping](../market_research_prompts/03_regulatory_commercial_barrier_mapping.md)
+- [Market Report Executive Summary](../market_research_prompts/04_market_report_exec_summary.md)
 
 ## Medical Director Prompts
 
@@ -253,12 +256,6 @@
 - [Draft a Bioburden-Testing SOP (ISO 11737-1)](../microbiology_prompts/01_bioburden_testing_sop.md)
 - [Create an EO-Sterilization Validation Protocol (ISO 11135 + ISO 11737-2)](../microbiology_prompts/02_eo_sterilization_validation_protocol.md)
 - [Build an Endotoxin-Control & 510(k) Risk Plan (USP <85> / AAMI ST72)](../microbiology_prompts/03_endotoxin_control_510k_risk_plan.md)
-
-## Non Glp Prompts
-
-- [Design Study Objective & Endpoint](../non_glp_prompts/01_design_study_objectives_and_endpoints.md)
-- [Protocol Outline and Risk Mitigation](../non_glp_prompts/02_protocol_outline_and_risk_mitigation.md)
-- [Generate Report Template](../non_glp_prompts/03_poc_study_report_template.md)
 
 ## Operations Prompts
 
@@ -308,6 +305,7 @@
 - [Sponsor-Ready Monthly Status Brief](../project_management/08_sponsor_ready_monthly_status_brief.md)
 - [Executive Sponsor Briefing Deck Outline (15 Slides)](../project_management/09_executive_sponsor_briefing_deck_outline.md)
 - [TMF Gap-Analysis & Audit Readiness Check](../project_management/09_tmf_gap_analysis_audit_readiness_check.md)
+- [Rollout Risk Matrix](../project_management/10_rollout_risk_matrix.md)
 
 ## Prompt Tools
 
@@ -358,6 +356,14 @@
 - [Design a Patient-Centered Randomization Scheme](../rtsm_prompts/01_patient_centered_randomization_scheme.md)
 - [Forecast Site-Level Drug Supply & Resupply Strategy](../rtsm_prompts/02_site_level_supply_resupply_strategy.md)
 - [Create a Risk-Based Monitoring & Mitigation SOP for RTSM](../rtsm_prompts/03_risk_based_monitoring_sop.md)
+
+## Self Improvement Prompts
+
+- [Career Compass Advisor](../self_improvement_prompts/01_career_compass_advisor.md)
+- [Scenario-Based Financial Navigator](../self_improvement_prompts/02_financial_navigator.md)
+- [Micro-Habit Health Coach](../self_improvement_prompts/03_micro_habit_health_coach.md)
+- [Learning Path Mentor](../self_improvement_prompts/04_learning_path_mentor.md)
+- [Writing Clarity Mentor](../self_improvement_prompts/05_writing_clarity_mentor.md)
 
 ## Site Acquisition Prompts
 

@@ -1,27 +1,44 @@
-<!-- markdownlint-disable MD029 -->
+---
+id: biostatistics-fda-missing-data
+title: FDA Missing-Data Query Response
+category: biostatistics_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [biostatistics, regulatory]
 # FDA Missing-Data Query Response
+---
 
-You are acting as a senior regulatory statistician preparing a Type C meeting package.
+## Purpose
 
-Scenario  
-The FDA has issued a formal information request (IR) questioning the robustness of our Week 52 remission endpoint given 9 % missing data and potential MNAR bias.
+Draft a response letter to an FDA information request about missing data.
 
-Objective  
+## Context
 
-Produce a structured response letter that:  
-▪ Summarizes the agency’s concerns in plain English.  
-▪ Presents our planned sensitivity analyses (MI under MNAR, tipping-point, and δ-adjusted worst-case).  
-▪ Justifies the primary estimand choice (treatment-policy) per ICH E9(R1).  
-▪ References relevant guidance (FDA Missing Data 2019, EMA Guideline 07/2022).  
-▪ Includes an appendix table mapping each FDA question to specific text locations in the SAP where the answer resides.
+You are a senior regulatory statistician preparing a Type C meeting package. The FDA has questioned the robustness of the Week 52 remission endpoint given 9 % missing data and potential MNAR bias.
 
-Instructions  
+## Instructions
 
-1. Draft the response in formal but concise regulatory style (≤8 pages).  
-1. Use numbered sections that mirror the FDA’s IR bullets.  
-1. Highlight any additional data or simulations we propose to submit.  
-1. Close with an explicit request for the agency’s confirmation that the proposed approach is adequate.
+1. Summarize the agency’s concerns in plain English.
+2. Present planned sensitivity analyses (MI under MNAR, tipping point, δ-adjusted worst-case).
+3. Justify the primary estimand choice (treatment policy) per ICH E9(R1).
+4. Reference relevant guidance (FDA Missing Data 2019, EMA Guideline 07/2022).
+5. Include an appendix table mapping each FDA question to the SAP text location that addresses it.
+6. Draft in formal, concise regulatory style (≤8 pages) using numbered sections matching the FDA’s bullets.
+7. Highlight any additional data or simulations proposed.
+8. Conclude with a request for the agency’s confirmation that the approach is adequate.
 
-Output format ➜ Word-style outline in Markdown (H1/H2), followed by the appendix table.
+## Inputs
 
-Ask clarifying questions before drafting if any critical detail is missing.
+- `{{fda_questions}}`
+- `{{sap_references}}`
+
+## Output Format
+
+Word-style Markdown outline with H1/H2 sections plus the appendix table.
+
+## Additional Notes
+
+Ask clarifying questions before drafting if critical details are missing.

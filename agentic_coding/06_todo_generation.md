@@ -1,11 +1,33 @@
-# To-do List
+---
+id: agentic-todo-list
+title: To-Do List Template
+category: agentic_coding
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: [coding, organization]
+---
 
-- [ ] Task 1: Brief description of the task.
-- [ ] Task 2: Another clear, actionable task.
-- [ ] Task 3: Continue listing tasks derived from the technical plan.
+# To-Do List Template
 
-## Completed Tasks
+## Purpose
+Track pending and completed development tasks.
 
-- [X] Previously completed task.
+## Context
+Use this list to manage work derived from the technical implementation plan.
 
-*Maintain clarity to support efficient AI task execution.*
+## Instructions
+1. Maintain an up-to-date list of actionable tasks.
+2. Record completed tasks separately.
+3. Keep descriptions short and clear for efficient AI execution.
+
+## Inputs
+None
+
+## Output Format
+Markdown checklist under **To-Do** and **Completed Tasks** sections.
+
+## Additional Notes
+Update frequently to reflect current project priorities.

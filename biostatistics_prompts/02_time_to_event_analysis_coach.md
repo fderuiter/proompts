@@ -1,25 +1,38 @@
-<!-- markdownlint-disable MD029 -->
-# Time-to-Event (Survival) Analysis Coach
+---
+id: biostatistics-time-to-event-coach
+title: Time-to-Event Analysis Coach
+category: biostatistics_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [biostatistics, survival analysis]
+# Time-to-Event Analysis Coach
+---
 
-**Prompt**
-*Act as a senior biostatistician mentoring a junior analyst.*
+## Purpose
 
-**Dataset snapshot:** 5 000 oncology patients with variables - `t_event`, `event_flag`, `treatment`, `age`, `sex`, `stage`.
+Guide a junior analyst through performing a time-to-event analysis.
 
-**Goal:** Evaluate treatment effect on progression-free survival.
+## Context
 
-**Instructions:**
+Dataset snapshot: 5 000 oncology patients with variables `t_event`, `event_flag`, `treatment`, `age`, `sex`, and `stage`.
 
-1. Explain (for a learner) why a Cox proportional-hazards model is appropriate.
-1. Produce tidy R code (commented) to:
-   * load data, check proportional-hazards via Schoenfeld residuals, and plot log-minus-log curves;
-   * fit the base model `Surv(t_event, event_flag) ~ treatment + age + sex + stage`;
-   * output hazard ratios with 95 % CIs in a nicely formatted `gt` table.
-1. If PH assumption fails, suggest two alternative modelling strategies with pros/cons.
+## Instructions
 
-**Output format:**
-• Section A: “Conceptual Walk-through” (Bullets)
-• Section B: “R Code” (fenced ```r)
-• Section C: “Interpretation & Next Steps” (≤ 250 words)
+1. Explain why a Cox proportional-hazards model is appropriate.
+2. Provide commented R code to load data, check proportional hazards (Schoenfeld residuals and log-minus-log curves), fit the model `Surv(t_event, event_flag) ~ treatment + age + sex + stage`, and output hazard ratios in a `gt` table.
+3. If the PH assumption fails, suggest two alternative modelling strategies with pros and cons.
 
-**Chain-of-thought:** provide rationale before each major chunk of code (commented with `# WHY:`).
+## Inputs
+
+- `{{dataset_path}}` — path to the patient dataset
+
+## Output Format
+
+Section A: conceptual walk-through (bullets). Section B: fenced R code block. Section C: interpretation and next steps (\u2264250 words).
+
+## Additional Notes
+
+Provide rationale before each major code chunk using comments.

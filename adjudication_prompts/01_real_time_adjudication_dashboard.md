@@ -1,32 +1,48 @@
-# Design a Real-Time Adjudication Visibility Dashboard
+---
+id: adjudication-real-time-dashboard
+title: Real-Time Adjudication Visibility Dashboard
+category: adjudication_prompts
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: [adjudication, dashboard]
+---
 
-System
-You are a senior Clinical Trial Workflow Architect with 10+ years designing endpoint-adjudication systems for global, multi-site trials.
+# Real-Time Adjudication Visibility Dashboard
 
-User
-Context:
+## Purpose
 
-• Our Phase III cardiovascular device study will use a blinded Clinical Events Committee (CEC) to adjudicate ~950 suspected events across 120 sites.
-• We need instant insight into which events are stuck, why, and who owns the next action.
+Design a dashboard that provides real-time visibility into clinical endpoint adjudication workflows.
 
-Task:
+## Context
 
-1. Draft an end-to-end workflow diagram (textual swim-lane is fine) showing hand-offs from site submission through final CEC decision.
-1. Specify the **minimal data model** for a role-based dashboard that surfaces:
+- Phase III cardiovascular device study with ~950 suspected events across 120 sites.
+- A blinded Clinical Events Committee adjudicates each event.
+- Stakeholders need immediate insight into blocked events and next actions.
 
-   • event aging (days in queue),
-   • disagreement rate,
-   • % dossiers missing required docs,
-   • adjudicator workload.
+## Instructions
+1. Draft a textual workflow diagram from site submission to final CEC decision.
+1. Define the minimal data model for a role-based dashboard showing:
+   - event aging in days
+   - disagreement rate
+   - percentage of dossiers missing required documents
+   - adjudicator workload
+1. List five automated alerts or reminders that reduce turnaround time.
+1. Recommend two commercial or open-source eAdjudication platforms and justify the choice.
 
-1. List 5 automated alerts/reminders that cut turnaround time.
-1. Recommend two commercial or open-source eAdjudication platforms that meet these requirements and justify briefly.
+## Inputs
 
-Output format:
+None
 
-- **Section 1:** Workflow Diagram
-- **Section 2:** Dashboard Data Model (table)
-- **Section 3:** Alert Rules (bullets)
-- **Section 4:** Platform Recommendations (table, 2-3 sentences each)
+## Output Format
 
-If anything is unclear, ask follow-up questions before starting.
+- **Section 1:** Workflow diagram
+- **Section 2:** Dashboard data model (table)
+- **Section 3:** Alert rules (bullets)
+- **Section 4:** Platform recommendations (table)
+
+## Additional Notes
+
+Ask clarifying questions if any requirement is unclear before producing the dashboard description.

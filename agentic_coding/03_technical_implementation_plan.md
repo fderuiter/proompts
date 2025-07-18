@@ -1,27 +1,39 @@
+---
+id: agentic-technical-implementation-plan
+title: Technical Implementation Plan
+category: agentic_coding
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: [coding, planning]
+---
+
 # Technical Implementation Plan
 
-## Architecture Breakdown
+## Purpose
+Detail the architecture, dependencies, and steps required to implement a project.
 
-- Clearly define modules, services, and architecture specifics.
+## Context
+This plan guides developers in structuring modules, selecting libraries, and mitigating risks.
 
-## Libraries and Tools
+## Instructions
+1. Define modules, services, and overall architecture.
+2. List the libraries, frameworks, and tools to use.
+3. Describe all required data models with fields and constraints.
+4. Specify business logic and rules in clear terms.
+5. Identify dependencies, risks, and proposed solutions.
+6. Outline step-by-step implementation for each feature or service.
+   Iterate the plan at least three times for robustness.
 
-- List exact libraries, frameworks, and technologies to use.
+## Inputs
+- `{{architecture_overview}}` – proposed system structure
+- `{{technology_choices}}` – libraries and frameworks
+- `{{data_models}}` – entities and relationships
 
-## Data Models & Specifications
+## Output Format
+Markdown sections for Architecture Breakdown, Libraries and Tools, Data Models & Specifications, Business Logic & Rules, Dependencies & Risk Analysis, and Implementation Steps.
 
-- Detail all required data models, including fields, types, constraints, and relationships.
-
-## Business Logic & Rules
-
-- Define the logic clearly and comprehensively.
-
-## Dependencies & Risk Analysis
-
-- Identify potential dependencies, pitfalls, and solutions.
-
-## Implementation Steps
-
-- Clearly outline step-by-step how you’ll implement each feature, component, or service.
-
-*Note: Iterate this plan at least 3-5 times to ensure robustness.*
+## Additional Notes
+Revise the plan iteratively until all risks are addressed.
