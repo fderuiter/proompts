@@ -42,6 +42,13 @@
 - [Adaptive Design & Interim Monitoring](../biostatistics_prompts/09_adaptive_design_interim_monitoring.md)
 - [Overview](../biostatistics_prompts/overview.md)
 
+## Business Development Prompts
+
+- [Emerging-Market Opportunity Scan](../business_development_prompts/01_emerging_market_opportunity_scan.md)
+- [RFP Executive-Summary Generator](../business_development_prompts/02_rfp_executive_summary_generator.md)
+- [90-Day Pipeline Health & Next-Best-Action Review](../business_development_prompts/03_90_day_pipeline_health_review.md)
+- [Overview](../business_development_prompts/overview.md)
+
 ## Codebase Analysis
 
 - [DRY Codebase Analysis](../codebase_analysis/DRY_Codebase_Analysis.md)
