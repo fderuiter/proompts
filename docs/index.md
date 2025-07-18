@@ -351,6 +351,13 @@
 - [Slides & Reporting Workflow](../pathology_prompts/03_slides_and_reporting_workflow.md)
 - [Overview](../pathology_prompts/overview.md)
 
+## Study Director Prompts
+
+- [Draft a GLP-Compliant Study Protocol](../study_director_prompts/01_draft_glp_compliant_study_protocol.md)
+- [Audit Raw Data and Draft a CAPA Summary](../study_director_prompts/02_audit_raw_data_capa_summary.md)
+- [Generate an Executive Summary for the Final Report](../study_director_prompts/03_executive_summary_final_report.md)
+- [Overview](../study_director_prompts/overview.md)
+
 ## HR & Finance Prompts
 
 - [Strategic Workforce & Talent-Acquisition Plan](../hr_finance_prompts/01_strategic_workforce_talent_acquisition_plan.md)
