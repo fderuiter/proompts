@@ -224,6 +224,13 @@
 - [Regulatory Submission Support](../biosafety_prompts/03_regulatory_submission_support.md)
 - [Overview](../biosafety_prompts/overview.md)
 
+## Chemical Characterization Prompts
+
+- [Design the Study](../chemical_characterization_prompts/01_design_the_study.md)
+- [Interpret the Chemistry & Assess Risk](../chemical_characterization_prompts/02_interpret_the_chemistry_assess_risk.md)
+- [Write the Regulatory Summary](../chemical_characterization_prompts/03_write_the_regulatory_summary.md)
+- [Overview](../chemical_characterization_prompts/overview.md)
+
 ## Site Acquisition Prompts
 
 - [Site Landscape Mapping & Prioritization](../site_acquisition_prompts/01_site_landscape_mapping.md)
