@@ -160,37 +160,31 @@
 ## Eclinical Integration Prompts
 
 - [Architect the Integration Blueprint](../eclinical_integration_prompts/01_architect_integration_blueprint.md)
-- [Generate a Data-Mapping & Transformation Playbook](../eclinical_integration_prompts/02_data_mapping_transformation_playbook.md)
-- [Compile the Regulatory & Validation Checklist](../eclinical_integration_prompts/03_regulatory_validation_checklist.md)
+- [Data Mapping and Transformation Playbook](../eclinical_integration_prompts/02_data_mapping_transformation_playbook.md)
+- [Regulatory and Validation Checklist](../eclinical_integration_prompts/03_regulatory_validation_checklist.md)
 
 ## Epro Prompts
 
 - [Patient-Centric BYOD ePRO Workflow](../epro_prompts/01_patient-centric_byod_workflow.md)
-- [Optimize ePRO Form Design for Usability and Data Quality](../epro_prompts/02_optimize_epro_form_design.md)
+- [Optimize ePRO Form Design](../epro_prompts/02_optimize_epro_form_design.md)
 - [ePRO Adoption Plan for Sponsors](../epro_prompts/03_epro_adoption_plan_for_sponsors.md)
 
 ## Executive Prompts
 
-- [Strategic Market Foresight & Action Plan](../executive_prompts/01_strategic_market_foresight.md)
+- [Strategic Market Foresight and Action Plan](../executive_prompts/01_strategic_market_foresight.md)
 - [Crisis-Management Playbook Generator](../executive_prompts/02_crisis_management_playbook.md)
-- [Executive-Ready Brief & Talking Points Synthesizer](../executive_prompts/03_executive_brief_synthesizer.md)
-- [Digital-Transformation Roadmap for Clinical Operations](../executive_prompts/04_digital_transformation_roadmap.md)
-- [Strategic Market & Competitor Radar](../executive_prompts/04_market_competitor_radar.md)
-- [Strategic Growth Road-Map](../executive_prompts/04_strategic_growth_roadmap.md)
+- [Executive-Ready Brief and Talking Points](../executive_prompts/03_executive_brief_synthesizer.md)
+- [Digital Transformation Roadmap for Clinical Operations](../executive_prompts/04_digital_transformation_roadmap.md)
+- [Strategic Market and Competitor Radar](../executive_prompts/04_market_competitor_radar.md)
+- [Strategic Growth Roadmap](../executive_prompts/04_strategic_growth_roadmap.md)
 - [Strategic Portfolio Prioritizer](../executive_prompts/04_strategic_portfolio_prioritizer.md)
 - [FDA-Aligned AI Governance Framework](../executive_prompts/05_ai_governance_framework.md)
 - [Emerging-Science Horizon Scan](../executive_prompts/05_emerging_science_horizon_scan.md)
 - [Executive Trial-Health Dashboard](../executive_prompts/05_executive_trial_health_dashboard.md)
-- [Investor & Board Narrative Builder](../executive_prompts/05_investor_board_narrative_builder.md)
-- [Quarterly Innovation Radar for Decentralized & Hybrid Trials](../executive_prompts/06_innovation_radar.md)
-- [Regulatory & Competitive Intelligence Briefing](../executive_prompts/06_regulatory_competitive_intel_briefing.md)
+- [Investor and Board Narrative Builder](../executive_prompts/05_investor_board_narrative_builder.md)
+- [Quarterly Innovation Radar for Decentralized and Hybrid Trials](../executive_prompts/06_innovation_radar.md)
+- [Regulatory and Competitive Intelligence Briefing](../executive_prompts/06_regulatory_competitive_intel_briefing.md)
 - [Trial-Design Optimisation Memo](../executive_prompts/06_trial_design_optimisation_memo.md)
-
-## Glp Prompts
-
-- [Protocol Design for GLP Preclinical Study](../glp_prompts/01_protocol_design_glp_study.md)
-- [Risk-based Gap Analysis](../glp_prompts/02_risk_based_gap_analysis.md)
-- [Final GLP-Compliant Study Report Outline](../glp_prompts/03_final_glp_study_report_outline.md)
 
 ## Hr Finance Prompts
 
