@@ -1,20 +1,43 @@
-# Chemical Characterization & Toxicological Risk-Assessment Work-Plan
+<!-- markdownlint-disable MD029 -->
+---
+id: chemical-characterization-work-plan
+title: Chemical Characterization & TRA Work Plan
+category: biological_safety_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [chemical characterization, TRA]
+# Chemical Characterization & TRA Work Plan
+---
 
-You are a PhD toxicologist specializing in extractables/leachables. Prepare a **work-plan for chemical characterization and TRA** that meets FDA Draft Guidance "Chemical Analysis for Biocompatibility Assessment of Medical Devices" (Sept 2024) plus ISO 10993-18/-17.
+## Purpose
 
-Outline (numbered):
+Create a work plan for chemical characterization and toxicological risk assessment (TRA) for a medical device.
 
-1. Data gathering: bill-of-materials, manufacturing aids, sterilization residuals, cohort-of-concern screen.
-1. Extraction plan: solvents, time/temperature, ratio, surface-area basis, 3-batch requirement.
-1. Analytical suite: GC-MS, LC-MS, ICP-MS, HS-GC/MS; detection limits vs. analytical evaluation threshold.
-1. Data treatment & identification workflow (non-targeted → targeted).
-1. TRA methodology (dose-based TTC, margin-of-safety).
-1. Reporting package structure for FDA submission.
+## Context
 
-End with:
+You are a PhD toxicologist specializing in extractables and leachables. Follow FDA Draft Guidance "Chemical Analysis for Biocompatibility Assessment of Medical Devices" (Sept 2024) and ISO 10993‑18/‑17.
 
-- key assumptions,
-- open questions (e.g., maximum patient exposure duration), and
-- a proposed schedule.
+## Instructions
 
-Provide no hidden reasoning.
+1. Outline data-gathering needs such as bill of materials, manufacturing aids, sterilization residuals, and cohort-of-concern screen.
+2. Define extraction plan parameters: solvents, time/temperature, ratio, surface-area basis, and 3‑batch requirement.
+3. Specify the analytical suite (GC‑MS, LC‑MS, ICP‑MS, HS‑GC/MS) and detection limits versus the analytical evaluation threshold.
+4. Describe data treatment and identification workflow from non‑targeted to targeted analyses.
+5. Explain the TRA methodology (dose-based TTC, margin of safety).
+6. Outline the reporting package structure for FDA submission.
+7. Conclude with key assumptions, open questions, and a proposed schedule.
+
+## Inputs
+
+- `{{device_information}}` — materials, intended use, and patient exposure duration
+
+## Output Format
+
+Numbered work plan followed by a short summary paragraph.
+
+## Additional Notes
+
+Provide no hidden reasoning and highlight any missing information needed to complete the plan.

@@ -1,16 +1,39 @@
+---
+id: bioskills-scenario-feedback
+title: Simulated Clinical Scenario Debrief
+category: bioskills_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [bioskills, feedback]
 # Simulated Clinical Scenario Debrief
+---
 
-## Instruction
+## Purpose
 
-Simulate a training debrief after a bioskills session where a trainee performs an endoscopic device insertion on a cadaver model.
+Provide constructive feedback after a simulated clinical scenario.
 
 ## Context
 
-Trainee completed the procedure; now needs feedback.
+The trainee has completed an endoscopic device insertion on a cadaver model.
 
-## Provide
+## Instructions
 
-- A summary of performance (3 positives, 3 areas to improve).
-- Ask one follow-up reflective question.
-- Offer a corrective tip with rationale.
-- Use professional, supportive tone.
+1. Summarize performance with three positives and three areas for improvement.
+2. Ask one follow-up reflective question.
+3. Offer a corrective tip with brief rationale.
+4. Maintain a professional, supportive tone.
+
+## Inputs
+
+- `{{procedure_notes}}` — any notes from the session
+
+## Output Format
+
+Bullet points followed by a short reflective question.
+
+## Additional Notes
+
+Keep feedback concise and encouraging.

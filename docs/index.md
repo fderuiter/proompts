@@ -26,7 +26,7 @@
 - [Regulatory Submission Support](../biological_safety_prompts/03_regulatory_submission_support.md)
 - [Biological Evaluation Plan Builder](../biological_safety_prompts/04_bep_builder.md)
 - [Comprehensive Biocompatibility Test Matrix](../biological_safety_prompts/05_comprehensive_test_matrix.md)
-- [Chemical Characterization & Toxicological Risk-Assessment Work-Plan](../biological_safety_prompts/06_chemical_characterization_work_plan.md)
+- [Chemical Characterization & TRA Work Plan](../biological_safety_prompts/06_chemical_characterization_work_plan.md)
 
 ## Biosafety Prompts
 
@@ -42,13 +42,13 @@
 
 ## Biostatistics Prompts
 
-- [Statistical Analysis-Plan (SAP) Generator](../biostatistics_prompts/01_statistical_analysis_plan_generator.md)
-- [Time-to-Event (Survival) Analysis Coach](../biostatistics_prompts/02_time_to_event_analysis_coach.md)
+- [Statistical Analysis Plan Generator](../biostatistics_prompts/01_statistical_analysis_plan_generator.md)
+- [Time-to-Event Analysis Coach](../biostatistics_prompts/02_time_to_event_analysis_coach.md)
 - [Peer-Review Checklist for Manuscript Methods](../biostatistics_prompts/03_peer_review_methods_checklist.md)
 - [Universal Template-Table Prompt](../biostatistics_prompts/04_universal_template_table_prompt.md)
 - [Dual-Language Figure Prompt](../biostatistics_prompts/05_dual_language_figure_prompt.md)
 - [QC Listing & Cross-check Prompt](../biostatistics_prompts/06_qc_listing_cross_check_prompt.md)
-- [Study Design + Statistical Approach](../biostatistics_prompts/07_study_design_statistical_approach.md)
+- [Study Design and Statistical Approach](../biostatistics_prompts/07_study_design_statistical_approach.md)
 - [Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive](../biostatistics_prompts/08_inclusion_exclusion_endpoints_sample_size.md)
 - [Adaptive Design & Interim Monitoring](../biostatistics_prompts/09_adaptive_design_interim_monitoring.md)
 - [Phase II/III SAP Skeleton](../biostatistics_prompts/10_phase_ii_iii_sap_skeleton.md)

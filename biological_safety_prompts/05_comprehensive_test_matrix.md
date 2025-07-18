@@ -1,13 +1,40 @@
+---
+id: biological-safety-test-matrix
+title: Comprehensive Biocompatibility Test Matrix
+category: biological_safety_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [biological safety, testing]
 # Comprehensive Biocompatibility Test Matrix
+---
 
-Act as the lead biocompatibility scientist at an ISO 17025-accredited laboratory. For the materials and clinical use scenario provided, build a detailed **biocompatibility test matrix** aligned with the FDA-modified ISO 10993 endpoint matrix.
+## Purpose
 
-Include for each endpoint (row):
+Generate a detailed biocompatibility test matrix for a medical device.
 
-- Test type (in-vitro / in-vivo / NAM)
-- Standard & edition (ISO/ASTM/USP)
-- Sample-conditioning & extraction specifics per FDA guidance
-- Acceptance criteria & rationale
-- Potential NAM replacements to reduce animal use
+## Context
 
-Display the matrix as a two-level markdown table, followed by concise explanatory notes. Ask for missing information (e.g., device surface area or processing aids). Think step-by-step but show **only** the matrix and notes.
+You are the lead biocompatibility scientist at an ISO 17025-accredited lab. Follow the FDA-modified ISO 10993 endpoint matrix.
+
+## Instructions
+
+1. For each endpoint, specify test type (in vitro, in vivo, or NAM).
+2. List the relevant standard and edition (ISO/ASTM/USP).
+3. Provide sample conditioning and extraction details per FDA guidance.
+4. Note acceptance criteria and rationale.
+5. Suggest potential NAM replacements to reduce animal use.
+
+## Inputs
+
+- `{{device_materials}}` — materials and clinical-use scenario
+
+## Output Format
+
+Two-level markdown table followed by concise explanatory notes.
+
+## Additional Notes
+
+Request missing information such as device surface area if not provided.

@@ -1,31 +1,41 @@
-<!-- markdownlint-disable MD029 -->
+---
+id: biostatistics-phase-ii-iii-sap
+title: Phase II/III SAP Skeleton
+category: biostatistics_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [biostatistics, SAP]
 # Phase II/III SAP Skeleton
+---
 
-You are an expert biostatistician with 10+ years of CRO experience and deep knowledge of ICH E9(R1) estimands, CDISC standards, and adaptive-design methodologies.
+## Purpose
 
-Goal ➜ Deliver a first-pass Statistical Analysis Plan (SAP) skeleton for a randomized, double-blind, adaptive Phase II/III clinical trial of Drug X in moderate-to-severe Crohn’s disease.
+Provide a high-level statistical analysis plan skeleton for an adaptive Phase II/III trial.
 
-Context  
+## Context
 
-‣ Key study features: two interim looks for futility/efficacy; co-primary endpoints (clinical remission at Week 12 and Week 52).  
-‣ Target population: adults 18–65 y, CDAI ≥220 and < 450.  
-‣ Sample-size scenario table (attached) suggests ~420 total participants.  
-‣ Data standards: SDTM 3.4, ADaM 3.2.
+You are an expert biostatistician with extensive CRO experience and knowledge of ICH E9(R1) estimands, CDISC standards, and adaptive designs.
 
-Tasks  
+## Instructions
 
-1. Lay out an SAP table of contents covering all standard sections.  
-1. For each section, provide concise bullet points describing the essential content to include.  
-1. Insert “🔶 Placeholder” markers where study-specific detail is still needed.  
-1. Specify mock shells for at least three key TLFs.  
-1. Flag any information still required to finalize the SAP (e.g., multiplicity strategy for co-primary endpoints).
+1. List any clarifying questions required to finalize the design.
+2. Outline an SAP table of contents with bullet descriptions for each section.
+3. Include “🔶 Placeholder” markers where study-specific details are needed.
+4. Specify mock shells for at least three key tables, listings, or figures.
+5. Flag information still required to finalize the SAP.
+6. Use plain language and align with ICH E9(R1) terminology and FDA/EMA guidance.
 
-Output format ➜ Markdown document, max 2,500 words, H2 headings for major sections.
+## Inputs
 
-Quality bar  
+- `{{trial_overview}}`
 
-- Align terminology with ICH E9(R1) estimand framework.  
-- Ensure compliance with FDA & EMA guidelines on adaptive designs.  
-- Use plain language wherever possible; limit statistical jargon in section summaries.
+## Output Format
 
-Before you begin, list any clarifying questions you need answered.
+Markdown document with H2 headings, maximum 2,500 words.
+
+## Additional Notes
+
+Ensure compliance with adaptive design guidance and mention SDTM/ADaM standards.
