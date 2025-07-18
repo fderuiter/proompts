@@ -180,6 +180,9 @@
 - [Detailed Project Blueprint & Timeline](../project_management/04_detailed_project_blueprint_timeline.md)
 - [Risk & Pre-Mortem Analysis](../project_management/05_risk_pre_mortem_analysis.md)
 - [Status Update & Task Prioritization](../project_management/06_status_update_task_prioritization.md)
+- [Clinical-Trial Timeline & Risk Radar](../project_management/07_clinical_trial_timeline_risk_radar.md)
+- [Sponsor-Ready Monthly Status Brief](../project_management/08_sponsor_ready_monthly_status_brief.md)
+- [TMF Gap-Analysis & Audit Readiness Check](../project_management/09_tmf_gap_analysis_audit_readiness_check.md)
 - [Overview](../project_management/overview.md)
 
 ## Regulatory Prompts
