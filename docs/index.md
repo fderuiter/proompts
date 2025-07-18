@@ -80,6 +80,13 @@
 - [Clinical ETL Pipeline Review and Optimisation](../data_management_prompts/06_clinical_etl_pipeline_review.md)
 - [Overview](../data_management_prompts/overview.md)
 
+## eClinical Integration Prompts
+
+- [Architect the Integration Blueprint](../eclinical_integration_prompts/01_architect_integration_blueprint.md)
+- [Generate a Data-Mapping & Transformation Playbook](../eclinical_integration_prompts/02_data_mapping_transformation_playbook.md)
+- [Compile the Regulatory & Validation Checklist](../eclinical_integration_prompts/03_regulatory_validation_checklist.md)
+- [Overview](../eclinical_integration_prompts/overview.md)
+
 ## Design Prompts
 
 - [Design Md Template](../design_prompts/01_design_md_template.md)
@@ -166,6 +173,13 @@
 - [Quality Improvement Rca Action Plan](../regulatory_quality_prompts/03_quality_improvement_rca_action_plan.md)
 - [Overview](../regulatory_quality_prompts/overview.md)
 
+## Rtsm Prompts
+
+- [Patient-Centered Randomization Scheme](../rtsm_prompts/01_patient_centered_randomization_scheme.md)
+- [Site-Level Supply Resupply Strategy](../rtsm_prompts/02_site_level_supply_resupply_strategy.md)
+- [Risk-Based Monitoring SOP](../rtsm_prompts/03_risk_based_monitoring_sop.md)
+- [Overview](../rtsm_prompts/overview.md)
+
 ## Starter Pack
 
 - [Project Starter Pack](../starter_pack/01_project_starter_pack.md)
@@ -207,3 +221,10 @@
 - [Automated Site Upload QC & Query Generator](../imaging_prompts/02_site_upload_qc.md)
 - [Design an Optimal Central Reading Paradigm](../imaging_prompts/03_central_reading_design.md)
 - [Overview](../imaging_prompts/overview.md)
+
+## ePRO Prompts
+
+- [Patient-Centric BYOD ePRO Workflow](../epro_prompts/01_patient-centric_byod_workflow.md)
+- [Optimize ePRO Form Design for Usability and Data Quality](../epro_prompts/02_optimize_epro_form_design.md)
+- [ePRO Adoption Plan for Sponsors](../epro_prompts/03_epro_adoption_plan_for_sponsors.md)
+- [Overview](../epro_prompts/overview.md)
