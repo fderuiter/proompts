@@ -154,6 +154,9 @@
 - [Project Charter Scope](../project_management/01_project_charter_scope.md)
 - [Risk Register Mitigation](../project_management/02_risk_register_mitigation.md)
 - [Weekly Exec Status Report](../project_management/03_weekly_exec_status_report.md)
+- [Detailed Project Blueprint & Timeline](../project_management/04_detailed_project_blueprint_timeline.md)
+- [Risk & Pre-Mortem Analysis](../project_management/05_risk_pre_mortem_analysis.md)
+- [Status Update & Task Prioritization](../project_management/06_status_update_task_prioritization.md)
 - [Overview](../project_management/overview.md)
 
 ## Regulatory Prompts
