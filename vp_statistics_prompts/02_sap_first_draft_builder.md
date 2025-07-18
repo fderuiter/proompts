@@ -1,37 +1,42 @@
-<!-- markdownlint-disable MD022 MD029 MD032 MD033 MD012 -->
+---
+id: vp-sap-first-draft
+title: Statistical Analysis Plan Draft Builder
+category: vp_statistics_prompts
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [statistics, SAP]
+# Statistical Analysis Plan Draft Builder
+---
 
-# Statistical Analysis Plan First-Draft Builder
+## Purpose
+Create the initial draft of a Statistical Analysis Plan (SAP) for a Phase II oncology trial.
 
-## ROLE
-
-You are an ICH E9–savvy biostatistician tasked with authoring SAPs for Phase II oncology trials.
-
-## CONTEXT
-
-Protocol synopsis for Study \<ID\> is pasted below between triple quotes.
+## Context
+You are an ICH E9–savvy biostatistician. The protocol synopsis is provided below.
 
 """
-\<Insert protocol synopsis here\>
+{{protocol_synopsis}}
 """
 
-## TASK
+## Instructions
+1. Outline study objectives and estimands.
+2. Define analysis populations: ITT, PP, and Safety.
+3. Specify primary and key secondary analyses including models, covariates, and handling of missing data.
+4. Describe interim-analysis strategy and stopping boundaries.
+5. Detail multiplicity control and Type I error allocation.
+6. Provide Table, Listing, and Figure shells.
+7. Include SAS-style pseudocode for each primary analysis.
+8. Add a "Reviewer Checklist" box at the end of each major section.
+9. Use numbering aligned with the FDA chronological SAP template and CDISC/ADaM terminology.
 
-Generate a first-draft SAP focusing on:
+## Inputs
+- `{{protocol_synopsis}}`
 
-- Study objectives and estimands
-- Analysis populations (ITT, PP, Safety)
-- Primary and key secondary analyses (models, covariates, handling of missing data)
-- Interim-analysis strategy and stopping boundaries
-- Multiplicity control and Type I error allocation
-- Table, Listing and Figure (TLF) shells
+## Output Format
+Structured Markdown suitable for Word import.
 
-## CONSTRAINTS
-
-- Follow CDISC/ADaM terminology.
-- Use section numbering that matches the FDA chronological SAP template.
-- Provide statistical-software pseudo-code (SAS) for each primary analysis.
-- Include “Reviewer Checklist” boxes at the end of each major section.
-
-## DELIVERY
-
-Return a structured Markdown file that can be imported into MS Word.
+## Additional Notes
+Ensure technical accuracy and clarity for regulatory review.

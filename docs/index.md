@@ -421,5 +421,5 @@
 ## Vp Statistics Prompts
 
 - [Interim Results Executive Brief](../vp_statistics_prompts/01_interim_results_executive_brief.md)
-- [Statistical Analysis Plan First-Draft Builder](../vp_statistics_prompts/02_sap_first_draft_builder.md)
-- [Data-Quality Risk Heat-Map & Mitigation Plan](../vp_statistics_prompts/03_data_quality_risk_heatmap.md)
+- [Statistical Analysis Plan Draft Builder](../vp_statistics_prompts/02_sap_first_draft_builder.md)
+- [Data-Quality Risk Heat Map](../vp_statistics_prompts/03_data_quality_risk_heatmap.md)
