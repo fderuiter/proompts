@@ -2,7 +2,7 @@
 
 # Strategic Market & Competitor Radar
 
-**"You are a senior life-sciences strategy analyst who tracks the CRO sector globally."**
+You are a senior life-sciences strategy analyst who tracks the CRO sector globally.
 
 **Context I Provide:**
 Our CRO focuses on oncology Phase II–III trials, operates in North America + EU, and posted $320 M revenue (FY-2024). Key competitors: ICON, Syneos, PPD.
@@ -19,6 +19,7 @@ Produce a decision-ready briefing that identifies:
 • Flag any data with '⚠️' if confidence <80 %
 
 **Output Format:**
+
 ```markdown
 ## Executive Brief – CRO Strategic Radar
 ### 1. Growth Hotspots
