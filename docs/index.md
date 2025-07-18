@@ -107,6 +107,9 @@
 - [Strategic Market Foresight](../executive_prompts/01_strategic_market_foresight.md)
 - [Crisis Management Playbook](../executive_prompts/02_crisis_management_playbook.md)
 - [Executive Brief Synthesizer](../executive_prompts/03_executive_brief_synthesizer.md)
+- [Digital-Transformation Roadmap](../executive_prompts/04_digital_transformation_roadmap.md)
+- [AI Governance Framework](../executive_prompts/05_ai_governance_framework.md)
+- [Innovation Radar](../executive_prompts/06_innovation_radar.md)
 - [Overview](../executive_prompts/overview.md)
 
 ## Glp Prompts
