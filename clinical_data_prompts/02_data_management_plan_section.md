@@ -1,17 +1,29 @@
+---
+id: 02-data-management-plan-section
+title: Draft a Data Management Plan Section
+category: clinical_data_prompts
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: []
+---
+
 # Draft a Data Management Plan Section
 
+## Purpose
+
 Act as a Clinical Data Management subject-matter expert.
+
+## Context
+
+## Instructions
+
 **Objective**: Draft the "Data Validation & Cleaning" section for the DMP of a global, randomized, double-blind Phase II study (Protocol YY456) using Medidata Rave.
 
-## Include
+## Inputs
 
-- Scope & purpose (1–2 sentences).
-- Data-cleaning workflow outlining **who**, **what**, **when**, and **tools**.
-- Edit-check tiers (critical, important, informational) with example rules.
-- Query management process, including turnaround targets (e.g., 5 business days).
-- Risk-based data review strategy (how metrics trigger focused review).
-- Compliance references (ICH-E6(R3), FDA 21 CFR Part 11, CDISC SDTM/CDASH).
+## Output Format
 
-## Format
-
-Return as a numbered outline (max 400 words). Think internally before writing.
+## Additional Notes

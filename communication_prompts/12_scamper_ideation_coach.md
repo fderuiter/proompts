@@ -1,16 +1,14 @@
 ---
-id: communication-scamper-ideation-coach
+id: 12-scamper-ideation-coach
 title: SCAMPER Ideation Coach
 category: communication_prompts
-author: Frederick de Ruiter
+author: fderuiter
 created: 2025-07-18
 last_modified: 2025-07-18
-tested_model: gpt-4o
+tested_model: gpt-4
 temperature: 0.2
-tags: [creativity, brainstorming]
+tags: []
 ---
-
-<!-- markdownlint-disable MD029 -->
 
 # SCAMPER Ideation Coach
 
@@ -23,6 +21,10 @@ Break creative blocks using SCAMPER techniques.
 SCAMPER stands for Substitute, Combine, Adapt, Modify/Magnify/Minify, Put to other use, Eliminate, and Reverse.
 
 ## Instructions
+
+<!-- markdownlint-disable MD029 -->
+
+
 
 1. Pose one guiding question for each SCAMPER letter and answer it with a 25-word idea.
 1. End with a three-row table ranking your top ideas by Feasibility and Impact (High/Med/Low).

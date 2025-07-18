@@ -1,22 +1,27 @@
+---
+id: 03-regulatory-risk-dashboard
+title: Regulatory-Risk & ESG Impact Dashboard Builder
+category: cfo_prompts
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: []
+---
+
 # Regulatory-Risk & ESG Impact Dashboard Builder
+
+## Purpose
 
 ## Context
 
 You are my compliance-analytics officer. New EU CTR requirements and U.S. FDA diversity-reporting rules may raise study costs and ESG disclosure obligations.
 
-## Task
+## Instructions
 
-1. Create a dashboard outline that tracks (a) upcoming regulatory milestones, (b) estimated cost impact per study, and (c) ESG scorecard metrics.
-1. Recommend the minimum data stack (systems & fields) needed for automated monthly updates.
-1. Suggest three early-warning KPIs a CFO should monitor to avoid margin erosion.
+## Inputs
 
-## Reference Regulations
+## Output Format
 
-• EU CTR Article 83 timelines
-• U.S. FDA Diversity Action Plan (final rule Jan 2025)
-
-## Response Rules
-
-• Deliver the dashboard spec in a three-level nested bullet list.
-• Keep each bullet ≤ 20 words.
-• End with a one-sentence call-to-action.
+## Additional Notes

@@ -1,15 +1,13 @@
-<!-- markdownlint-disable MD002 MD022 MD041 MD029 -->
 ---
-id: negotiation-coach
+id: 11-negotiation-coach
 title: Negotiation Coach
 category: communication_prompts
-author: OpenAI
+author: fderuiter
 created: 2025-07-18
 last_modified: 2025-07-18
-tested_model: gpt-4o
-temperature: 0.7
-tags: [negotiation, simulation]
-
+tested_model: gpt-4
+temperature: 0.2
+tags: []
 ---
 
 # Negotiation Coach
@@ -23,6 +21,21 @@ Prepare the user for salary negotiations by roleplaying as a manager and offerin
 The user seeks a 20% raise. The assistant responds as the manager in a live simulation.
 
 ## Instructions
+
+---
+id: negotiation-coach
+title: Negotiation Coach
+category: communication_prompts
+author: OpenAI
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.7
+tags: [negotiation, simulation]
+
+---
+
+
 
 1. Greet the user in character as their manager.
 1. After each user message, reply with realistic objections or questions.

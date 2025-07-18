@@ -1,10 +1,34 @@
-# Operational Excellence & Communication
+---
+id: leadership-operational-excellence-communication
+title: Operational Excellence Communication Framework
+category: leadership_prompts
+author: prompt-team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [leadership, collaboration]
+---
 
-**"As a CRO executive leader, design a communication and governance framework to improve collaboration between business development, clinical operations, and data teams post-contract award. Include:**
+# Operational Excellence Communication Framework
 
-- Recommended communication channels and frequency
-- Defined roles/responsibilities
-- Escalation pathways for issues
-- Metrics to measure effectiveness of coordination
+## Purpose
+Improve collaboration between business development, clinical operations, and data teams after contract award.
 
-"**
+## Context
+The CRO requires a consistent governance structure across departments.
+
+## Instructions
+1. Recommend communication channels and frequency.
+2. Define roles and responsibilities.
+3. Outline escalation pathways for issues.
+4. Describe metrics to measure coordination effectiveness.
+
+## Inputs
+- `{{current_processes}}` – short description of existing communication practices.
+
+## Output Format
+Markdown sections titled **Channels**, **Roles**, **Escalation**, and **Metrics**.
+
+## Additional Notes
+Keep guidance practical and easy to implement.

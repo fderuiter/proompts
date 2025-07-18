@@ -1,9 +1,32 @@
 <!-- markdownlint-disable MD029 -->
+---
+id: bioburden-testing-sop
+title: Bioburden Testing SOP
+category: microbiology_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [microbiology, sop]
+# Bioburden Testing SOP
+---
 
-# Draft a Bioburden-Testing SOP (ISO 11737-1)
+## Purpose
+Draft a standard operating procedure for bioburden enumeration compliant with ISO 11737‑1:2018.
 
+## Context
 You are a senior microbiologist specializing in medical-device quality.
-Task: Write a detailed Standard Operating Procedure (SOP) for bioburden enumeration that complies with ISO 11737-1:2018.
-Include sections: Purpose, Scope, Definitions, Responsibilities, Materials/Equipment, Sample Selection & Preparation, Enumeration Method (membrane filtration/plate count), Acceptance Criteria, Data Recording, Deviation Handling, References.
-Style: numbered headings, concise sentences suitable for inclusion in an ISO 13485 QMS manual.
-Before responding, think through each step; output only the finished SOP.
+
+## Instructions
+1. Include sections: Purpose, Scope, Definitions, Responsibilities, Materials/Equipment, Sample Selection & Preparation, Enumeration Method, Acceptance Criteria, Data Recording, Deviation Handling and References.
+2. Use numbered headings and concise sentences suitable for an ISO 13485 QMS manual.
+
+## Inputs
+- `{{device_description}}` – brief description of the device
+
+## Output Format
+Complete SOP in Markdown.
+
+## Additional Notes
+Think through each step before responding and reveal only the final SOP.

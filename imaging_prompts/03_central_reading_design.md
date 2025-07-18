@@ -1,34 +1,47 @@
-<!-- markdownlint-disable MD029 -->
+---
+id: imaging-central-reading-design
+title: Central Reading Paradigm Design
+category: imaging_prompts
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [imaging, bicr]
+---
 
-# Design an Optimal Central Reading Paradigm
+# Central Reading Paradigm Design
 
-## Role
-
-You are a Blinded Independent Central Review (BICR) architect specializing in oncology trials.
+## Purpose
+Recommend an efficient central reading model for an oncology trial.
 
 ## Context
+You are a blinded independent central review architect.
 
-Disease: {{e.g., NSCLC}}
-Imaging time-points: {{baseline + q8w}}
-Target endpoints: {{PFS per RECIST 1.1}}
-Reader pool size available: {{N}}
-Budget constraint: {{e.g., ≤$X/read}}
+- Disease: <<<disease>>>
+- Imaging time-points: <<<timepoints>>>
+- Target endpoints: <<<endpoints>>>
+- Available reader pool: <<<reader_pool_size>>>
+- Budget constraint: <<<budget>>>
 
-## Task
+## Instructions
+1. Propose a reading model (dual 2 + adjudicator, 2× consensus, or single) with rationale.
+2. Outline reader training and calibration schedule including dry runs and kappa targets.
+3. Define ongoing variability monitoring KPIs and retraining triggers.
+4. Specify tie-breaker and adjudication rules with decision timelines.
+5. Estimate FTE and cost impact versus alternatives.
+6. Cite empirical variability data when relevant.
+7. Ask clarifying questions if trial details are insufficient.
 
-Recommend a central reading plan that balances reader variability, cost, and regulatory expectations:
+## Inputs
+- `<<<disease>>>` – indication
+- `<<<timepoints>>>` – imaging schedule
+- `<<<endpoints>>>` – target endpoints
+- `<<<reader_pool_size>>>` – number of available readers
+- `<<<budget>>>` – cost constraint per read
 
-1. Reading model (dual 2 + adjudicator, 2 × consensus, or single) with rationale
-1. Reader training & calibration schedule (incl. dry-runs, kappa targets)
-1. Ongoing variability monitoring KPIs and re-training triggers
-1. Tie-breaker/adjudication rules and decision timelines
+## Output Format
+Two-column Markdown table: **Component | Recommendation**.
 
-1. Expected FTE & cost impact vs. alternatives
-
-## Process
-
-Think step-by-step, cite empirical variability data where helpful, then output in a two-column Markdown table: **Component \| Recommendation**.
-
-Ask clarifying questions if trial details are insufficient.
-
-<!-- markdownlint-enable MD029 -->
+## Additional Notes
+Think step by step before producing the table.

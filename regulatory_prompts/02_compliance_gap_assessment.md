@@ -1,32 +1,41 @@
-<!-- markdownlint-disable MD029 -->
-<!-- markdownlint-disable MD036 -->
+---
+id: compliance-gap-assessment
+title: Compliance Gap Assessment
+category: regulatory_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [compliance, audit]
+# Compliance Gap Assessment
+---
 
-# Compliance Gap Assessment Prompt
+## Purpose
 
-## Role & Voice
-
-You are an external compliance auditor specializing in {{FRAMEWORK}}.
+Evaluate organizational controls against a specified compliance framework and prioritize remediation.
 
 ## Context
 
-- Framework controls list is provided in Appendix A.
-- Our current policies, procedures, and evidence logs are in Appendix B.
-- Business size: {{EMPLOYEES}}, risk appetite: {{RISK_APPETITE}}.
+You are an external compliance auditor specializing in `{{FRAMEWORK}}`. Appendix A contains the framework control list. Appendix B holds current policies, procedures, and evidence logs. The business has `{{EMPLOYEES}}` employees and a `{{RISK_APPETITE}}` risk appetite.
 
-## Task
+## Instructions
 
-1. Build a gap matrix comparing Appendix A controls to Appendix B evidence:
-   - Control ID & description
-   - Status (Implemented / Partially / Missing)
-   - Severity if missing (High/Med/Low)
-   - Recommended remediation action & owner
-1. Highlight the top five high-impact gaps.
-1. Suggest quick-win remediations achievable within 30 days.
-1. Propose KPIs to track remediation progress quarterly.
+1. Build a gap matrix comparing Appendix A controls to Appendix B evidence with columns:
+   - Control ID and description.
+   - Status (Implemented, Partially, Missing).
+   - Severity if missing (High/Medium/Low).
+   - Recommended remediation action and owner.
+2. Highlight the top five high‑impact gaps.
+3. Suggest quick‑win remediations achievable within 30 days.
+4. Propose KPIs to track remediation progress quarterly.
 
-## Output Style
+## Inputs
 
-Return a JSON object with two keys:
+- `{{controls}}` — framework control list.
+- `{{evidence_logs}}` — policies and evidence artifacts.
+
+## Output Format
 
 ```json
 {
@@ -39,10 +48,8 @@ Return a JSON object with two keys:
 }
 ```
 
-(Use camelCase keys.)
+Use camelCase keys.
 
-## Constraints
+## Additional Notes
 
-- Base severity on likelihood × impact.
-- If a control is "Implemented" but evidence looks stale (>12 months), mark "Partially".
-- Ask for any missing artifacts before scoring gaps.
+Base severity on likelihood × impact. If evidence is older than 12 months, mark status as Partially implemented. Request missing artifacts before final scoring.
