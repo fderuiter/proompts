@@ -284,3 +284,10 @@
 - [Optimize ePRO Form Design for Usability and Data Quality](../epro_prompts/02_optimize_epro_form_design.md)
 - [ePRO Adoption Plan for Sponsors](../epro_prompts/03_epro_adoption_plan_for_sponsors.md)
 - [Overview](../epro_prompts/overview.md)
+
+## Clinical Safety Prompts
+
+- [Clinical Safety Synopsis for EU MDR CER](../clinical_safety_prompts/01_eu_cer_clinical_safety_synopsis.md)
+- [FDA MDR/MDV Adverse-Event Narrative](../clinical_safety_prompts/02_fda_mdr_adverse_event_narrative.md)
+- [Post-Market Safety Signal Trending](../clinical_safety_prompts/03_post_market_safety_signal_trending.md)
+- [Overview](../clinical_safety_prompts/overview.md)
