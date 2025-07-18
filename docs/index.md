@@ -107,6 +107,9 @@
 - [Strategic Market Foresight](../executive_prompts/01_strategic_market_foresight.md)
 - [Crisis Management Playbook](../executive_prompts/02_crisis_management_playbook.md)
 - [Executive Brief Synthesizer](../executive_prompts/03_executive_brief_synthesizer.md)
+- [Strategic Growth Road-Map](../executive_prompts/04_strategic_growth_roadmap.md)
+- [Executive Trial-Health Dashboard](../executive_prompts/05_executive_trial_health_dashboard.md)
+- [Regulatory & Competitive Intelligence Briefing](../executive_prompts/06_regulatory_competitive_intel_briefing.md)
 - [Overview](../executive_prompts/overview.md)
 
 ## Glp Prompts
