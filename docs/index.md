@@ -24,6 +24,9 @@
 - [Risk Assessment Expert](../biological_safety_prompts/01_risk_assessment_expert.md)
 - [Biological Safety Plan Developer](../biological_safety_prompts/02_biological_safety_plan_developer.md)
 - [Regulatory Submission Support](../biological_safety_prompts/03_regulatory_submission_support.md)
+- [Biological Evaluation Plan Builder](../biological_safety_prompts/04_bep_builder.md)
+- [Comprehensive Biocompatibility Test Matrix](../biological_safety_prompts/05_comprehensive_test_matrix.md)
+- [Chemical Characterization & Toxicological Risk-Assessment Work-Plan](../biological_safety_prompts/06_chemical_characterization_work_plan.md)
 - [Overview](../biological_safety_prompts/overview.md)
 
 ## Biostatistics Prompts
@@ -34,6 +37,9 @@
 - [Universal Template-Table Prompt](../biostatistics_prompts/04_universal_template_table_prompt.md)
 - [Dual-Language Figure Prompt](../biostatistics_prompts/05_dual_language_figure_prompt.md)
 - [QC Listing & Cross-check Prompt](../biostatistics_prompts/06_qc_listing_cross_check_prompt.md)
+- [Study Design + Statistical Approach](../biostatistics_prompts/07_study_design_statistical_approach.md)
+- [Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive](../biostatistics_prompts/08_inclusion_exclusion_endpoints_sample_size.md)
+- [Adaptive Design & Interim Monitoring](../biostatistics_prompts/09_adaptive_design_interim_monitoring.md)
 - [Overview](../biostatistics_prompts/overview.md)
 
 ## Codebase Analysis
@@ -230,6 +236,13 @@
 - [Simulated Clinical Scenario Debrief](../bioskills_prompts/02_simulated_clinical_scenario_feedback.md)
 - [Objective Skills Assessment](../bioskills_prompts/03_objective_skills_assessment.md)
 - [Overview](../bioskills_prompts/overview.md)
+
+## Microbiology Prompts
+
+- [Bioburden Testing SOP](../microbiology_prompts/01_bioburden_testing_sop.md)
+- [EO Sterilization Validation Protocol](../microbiology_prompts/02_eo_sterilization_validation_protocol.md)
+- [Endotoxin Control & 510(k) Risk Plan](../microbiology_prompts/03_endotoxin_control_510k_risk_plan.md)
+- [Overview](../microbiology_prompts/overview.md)
 
 ## Site Acquisition Prompts
 
