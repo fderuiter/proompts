@@ -214,3 +214,10 @@
 - [Tailored Feasibility-Questionnaire Builder](../site_acquisition_prompts/02_tailored_feasibility_questionnaire.md)
 - [Personalized Investigator-Outreach Email Generator](../site_acquisition_prompts/03_investigator_outreach_email_generator.md)
 - [Overview](../site_acquisition_prompts/overview.md)
+
+## ePRO Prompts
+
+- [Patient-Centric BYOD ePRO Workflow](../epro_prompts/01_patient-centric_byod_workflow.md)
+- [Optimize ePRO Form Design for Usability and Data Quality](../epro_prompts/02_optimize_epro_form_design.md)
+- [ePRO Adoption Plan for Sponsors](../epro_prompts/03_epro_adoption_plan_for_sponsors.md)
+- [Overview](../epro_prompts/overview.md)
