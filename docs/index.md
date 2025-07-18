@@ -166,6 +166,13 @@
 - [Quality Improvement Rca Action Plan](../regulatory_quality_prompts/03_quality_improvement_rca_action_plan.md)
 - [Overview](../regulatory_quality_prompts/overview.md)
 
+## Rtsm Prompts
+
+- [Patient-Centered Randomization Scheme](../rtsm_prompts/01_patient_centered_randomization_scheme.md)
+- [Site-Level Supply Resupply Strategy](../rtsm_prompts/02_site_level_supply_resupply_strategy.md)
+- [Risk-Based Monitoring SOP](../rtsm_prompts/03_risk_based_monitoring_sop.md)
+- [Overview](../rtsm_prompts/overview.md)
+
 ## Starter Pack
 
 - [Project Starter Pack](../starter_pack/01_project_starter_pack.md)
