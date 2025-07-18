@@ -200,3 +200,10 @@
 - [Tailored Feasibility-Questionnaire Builder](../site_acquisition_prompts/02_tailored_feasibility_questionnaire.md)
 - [Personalized Investigator-Outreach Email Generator](../site_acquisition_prompts/03_investigator_outreach_email_generator.md)
 - [Overview](../site_acquisition_prompts/overview.md)
+
+## Imaging Prompts
+
+- [Generate a Study-Specific Imaging Charter Draft](../imaging_prompts/01_imaging_charter_draft.md)
+- [Automated Site Upload QC & Query Generator](../imaging_prompts/02_site_upload_qc.md)
+- [Design an Optimal Central Reading Paradigm](../imaging_prompts/03_central_reading_design.md)
+- [Overview](../imaging_prompts/overview.md)
