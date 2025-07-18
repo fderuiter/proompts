@@ -273,6 +273,9 @@
 - [Generate a Study-Specific Imaging Charter Draft](../imaging_prompts/01_imaging_charter_draft.md)
 - [Automated Site Upload QC & Query Generator](../imaging_prompts/02_site_upload_qc.md)
 - [Design an Optimal Central Reading Paradigm](../imaging_prompts/03_central_reading_design.md)
+- [Regulatory-Compliant Imaging Charter Generator](../imaging_prompts/04_regulatory_imaging_charter_generator.md)
+- [End-to-End Image-Acquisition & QC Workflow Blueprint](../imaging_prompts/05_image_acquisition_qc_workflow_blueprint.md)
+- [Regulatory Imaging-Data Package & Narrative for PMA / 510(k)](../imaging_prompts/06_regulatory_imaging_data_package.md)
 - [Overview](../imaging_prompts/overview.md)
 
 ## ePRO Prompts
