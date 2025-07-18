@@ -1,0 +1,46 @@
+name: Generate Overviews
+
+on:
+  push:
+    paths:
+      - '**/*.md'
+      - '.github/workflows/generate-overviews.yml'
+      - 'scripts/generate_overviews.py'
+  pull_request:
+    paths:
+      - '**/*.md'
+      - '.github/workflows/generate-overviews.yml'
+      - 'scripts/generate_overviews.py'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Generate missing overview files
+        run: python3 scripts/generate_overviews.py
+      - name: Update docs index
+        run: python3 scripts/update_docs_index.py
+      - name: Validate Markdown
+        run: ./scripts/validate_markdown.sh
+      - name: Check for changes
+        id: diff
+        run: |
+          if git diff --quiet; then
+            echo "changed=0" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=1" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Commit and push changes
+        if: steps.diff.outputs.changed == '1'
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git commit -am "Auto-generate overview files"
+          git push

@@ -1,0 +1,25 @@
+name: Repository Checks
+
+on:
+  push:
+    paths:
+      - '**/*.md'
+      - '.github/workflows/repo-checks.yml'
+      - 'scripts/check_prompts.py'
+  pull_request:
+    paths:
+      - '**/*.md'
+      - '.github/workflows/repo-checks.yml'
+      - 'scripts/check_prompts.py'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Run repository checks
+        run: python3 scripts/check_prompts.py

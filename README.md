@@ -2,6 +2,8 @@
 
 [![Deploy Jekyll site](https://github.com/fderuiter/proompts/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/deploy-pages.yml)
 [![Markdown Validation](https://github.com/fderuiter/proompts/actions/workflows/markdown-validation.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/markdown-validation.yml)
+[![Generate Overviews](https://github.com/fderuiter/proompts/actions/workflows/generate-overviews.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/generate-overviews.yml)
+[![Repository Checks](https://github.com/fderuiter/proompts/actions/workflows/repo-checks.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/repo-checks.yml)
 [![Update Docs Index](https://github.com/fderuiter/proompts/actions/workflows/update-docs.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/update-docs.yml)
 [![Deploy Jekyll site](https://github.com/fderuiter/proompts/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/deploy-pages.yml)
 
@@ -24,14 +26,13 @@ The script first runs `python3 scripts/update_docs_index.py --check` to ensure
 It requires both Python 3 and the `mdl` tool. Install the linter with
 `gem install mdl` if it isn't already available. The same check runs in GitHub
 Actions.
-This repository also runs `.github/workflows/update-docs.yml` to automatically commit the index if it changes.
+This repository also runs workflows to generate missing `overview.md` files, verify file naming, and commit the docs index when it changes.
 
 ## Contributing
 
 1. Add prompts as `.md` files in the appropriate folder.
-1. Include an `overview.md` when creating a new directory.
-1. Run `scripts/update_docs_index.py` to regenerate the index; the workflow will update it automatically.
-1. Run the validation script above before committing.
+1. If you create a new directory, an `overview.md` will be generated automatically by the workflow.
+1. The docs index and Markdown formatting are checked in CI, but you can run `scripts/validate_markdown.sh` locally.
 
 ## License
 
