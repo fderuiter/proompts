@@ -1,44 +1,56 @@
-<!-- markdownlint-disable MD029 -->
+---
+id: imaging-charter-draft
+title: Imaging Charter Draft
+category: imaging_prompts
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [imaging, charter]
+---
 
-# Generate a Study-Specific Imaging Charter Draft
+# Imaging Charter Draft
 
-## Role
-
-You are a senior Imaging Core Lab compliance specialist who has written 200+ FDA- and EMA-accepted Imaging Charters.
+## Purpose
+Create a study-specific imaging charter compliant with global regulations.
 
 ## Context
+You are a senior imaging core lab compliance specialist with extensive FDA and EMA experience.
 
-Trial synopsis ⟶ {{paste protocol synopsis}}
-Imaging modalities & sequences ⟶ {{list}}
-Primary/secondary imaging endpoints ⟶ {{list}}
-Participating regions/sites ⟶ {{list}}
-Key regulations to respect ⟶ 21 CFR Part 11, ICH E6(R2), ICH E17, GDPR/HIPAA
+- Trial synopsis: <<<protocol synopsis>>>
+- Imaging modalities & sequences: <<<list>>>
+- Primary and secondary imaging endpoints: <<<list>>>
+- Participating regions/sites: <<<list>>>
+- Key regulations: 21 CFR Part 11, ICH E6(R2), ICH E17, GDPR/HIPAA.
 
-## Task
+## Instructions
+1. Draft the charter in Markdown using H2 headings.
+2. Specify standardized acquisition parameters per modality and site.
+3. Outline the site QC workflow and checklists for pre-scan, real-time, and post-upload.
+4. Describe de-identification and secure transfer specifications.
+5. Define the central review paradigm with roles, blinding, and adjudication.
+6. Detail data storage and archiving plans.
+7. Document governance for version control, deviation handling, and audit trail.
+8. Include appendices for abbreviations, document history, and reference standards.
+9. Ask up to three clarifying questions if information is incomplete.
 
-Draft a complete Imaging Charter (v0.1) that includes:
+## Inputs
+- `<<<protocol_synopsis>>>` – study overview
+- `<<<modalities>>>` – imaging modalities and sequences
+- `<<<endpoints>>>` – imaging endpoints
+- `<<<sites>>>` – participating regions or sites
+- `<<<regulations>>>` – key regulations to follow
 
-1. Standardized acquisition parameters per modality & site
-1. Site QC workflow/checklists (pre-scan, real-time, post-upload)
-1. De-identification & secure transfer specs (DICOM tags to scrub, sFTP/S3 details)
-1. Central review paradigm (reader roles, blinding, adjudication rules)
-1. Data storage/archiving plan (format, retention, disaster recovery)
-1. Governance (version control, deviation handling, audit trail)
-1. Appendices: abbreviations, document history, reference standards
-
-## Process
-
-First reason step-by-step off-screen; then output the charter in **Markdown** with H2 section headings.
-
-## Output format
+## Output Format
+Markdown charter with numbered H2 sections, for example:
 
 ```markdown
-## 1 Purpose …
-## 2 Roles & Responsibilities …
-…
+## 1 Purpose
+## 2 Roles & Responsibilities
+...
 ## Appendix C – Revision History
 ```
 
-If any information is missing, ask up to three concise follow-up questions **before** drafting.
-
-<!-- markdownlint-enable MD029 -->
+## Additional Notes
+Reason step by step before writing the charter.
