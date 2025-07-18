@@ -9,3 +9,4 @@ Use these prompts to assess compliance gaps, plan performance evaluations, and c
 - **01_regulatory_change_impact_analysis.md** – Evaluate new regulations and map their impact on business operations.
 - **02_compliance_gap_assessment.md** – Identify gaps between required controls and existing evidence.
 - **03_regulatory_filing_draft_builder.md** – Draft structured filings for regulators based on provided data.
+- **05_literature_regulatory_gap_analysis.md** – Outline evidence gaps and design considerations for pivotal studies.

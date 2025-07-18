@@ -5,3 +5,4 @@ This folder contains prompts for creating and reviewing clinical-trial protocols
 - **Clinical-Trial Protocol Creator** – draft a complete protocol from a summary sheet.
 - **Ultimate SOP Architect** – develop detailed SOPs that meet regulatory standards.
 - **Protocol Reviewer & Gap-Analysis Coach** – score and improve existing protocols.
+- **Protocol Section Refinement** – fine-tune eligibility and data-handling requirements.

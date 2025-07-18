@@ -24,6 +24,9 @@
 - [Risk Assessment Expert](../biological_safety_prompts/01_risk_assessment_expert.md)
 - [Biological Safety Plan Developer](../biological_safety_prompts/02_biological_safety_plan_developer.md)
 - [Regulatory Submission Support](../biological_safety_prompts/03_regulatory_submission_support.md)
+- [Biological Evaluation Plan Builder](../biological_safety_prompts/04_bep_builder.md)
+- [Comprehensive Biocompatibility Test Matrix](../biological_safety_prompts/05_comprehensive_test_matrix.md)
+- [Chemical Characterization & Toxicological Risk-Assessment Work-Plan](../biological_safety_prompts/06_chemical_characterization_work_plan.md)
 - [Overview](../biological_safety_prompts/overview.md)
 
 ## Biostatistics Prompts
@@ -34,6 +37,9 @@
 - [Universal Template-Table Prompt](../biostatistics_prompts/04_universal_template_table_prompt.md)
 - [Dual-Language Figure Prompt](../biostatistics_prompts/05_dual_language_figure_prompt.md)
 - [QC Listing & Cross-check Prompt](../biostatistics_prompts/06_qc_listing_cross_check_prompt.md)
+- [Study Design + Statistical Approach](../biostatistics_prompts/07_study_design_statistical_approach.md)
+- [Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive](../biostatistics_prompts/08_inclusion_exclusion_endpoints_sample_size.md)
+- [Adaptive Design & Interim Monitoring](../biostatistics_prompts/09_adaptive_design_interim_monitoring.md)
 - [Overview](../biostatistics_prompts/overview.md)
 
 ## Codebase Analysis
@@ -57,6 +63,7 @@
 - [Clinical-Trial Protocol Creator](../protocol_prompts/01_clinical_trial_protocol_creator.md)
 - [Ultimate SOP Architect](../protocol_prompts/02_ultimate_sop_architect.md)
 - [Protocol Reviewer & Gap-Analysis Coach](../protocol_prompts/03_protocol_reviewer_gap_analysis_coach.md)
+- [Protocol Section Refinement](../protocol_prompts/04_protocol_section_refinement.md)
 - [Overview](../protocol_prompts/overview.md)
 
 ## Communication Prompts
@@ -177,6 +184,7 @@
 - [Qmsr Gap Analysis](../regulatory_prompts/03_qmsr_gap_analysis.md)
 - [Regulatory Filing Draft Builder](../regulatory_prompts/03_regulatory_filing_draft_builder.md)
 - [Prompt Best Practices](../regulatory_prompts/04_prompt_best_practices.md)
+- [Literature & Regulatory Gap Analysis](../regulatory_prompts/05_literature_regulatory_gap_analysis.md)
 - [Overview](../regulatory_prompts/overview.md)
 
 ## Regulatory Quality Prompts
@@ -231,6 +239,27 @@
 - [Write the Regulatory Summary](../chemical_characterization_prompts/03_write_the_regulatory_summary.md)
 - [Overview](../chemical_characterization_prompts/overview.md)
 
+## Sterility Prompts
+
+- [Sterility-Validation Protocol Builder](../sterility_prompts/01_sterility_validation_protocol_builder.md)
+- [Regulatory Gap-Analysis Comparator](../sterility_prompts/02_regulatory_gap_analysis_comparator.md)
+- [EtO Sterilization Process FMEA](../sterility_prompts/03_eto_sterilization_process_fmea.md)
+- [Overview](../sterility_prompts/overview.md)
+
+## Bioskills Prompts
+
+- [Hands-On Procedure Coaching](../bioskills_prompts/01_hands_on_procedure_coaching.md)
+- [Simulated Clinical Scenario Debrief](../bioskills_prompts/02_simulated_clinical_scenario_feedback.md)
+- [Objective Skills Assessment](../bioskills_prompts/03_objective_skills_assessment.md)
+- [Overview](../bioskills_prompts/overview.md)
+
+## Microbiology Prompts
+
+- [Bioburden Testing SOP](../microbiology_prompts/01_bioburden_testing_sop.md)
+- [EO Sterilization Validation Protocol](../microbiology_prompts/02_eo_sterilization_validation_protocol.md)
+- [Endotoxin Control & 510(k) Risk Plan](../microbiology_prompts/03_endotoxin_control_510k_risk_plan.md)
+- [Overview](../microbiology_prompts/overview.md)
+
 ## Site Acquisition Prompts
 
 - [Site Landscape Mapping & Prioritization](../site_acquisition_prompts/01_site_landscape_mapping.md)
@@ -243,6 +272,7 @@
 - [Protocol Optimization & Risk Simulation](../trial_execution_prompts/01_protocol_optimization_risk_simulation.md)
 - [AI-Powered Site & Recruitment Strategy](../trial_execution_prompts/02_ai_powered_site_recruitment.md)
 - [Compliance, Data Quality & Monitoring Plan](../trial_execution_prompts/03_compliance_data_quality_monitoring_plan.md)
+- [Adaptive Recruitment & Retention Strategy](../trial_execution_prompts/04_adaptive_recruitment_retention_strategy.md)
 - [Overview](../trial_execution_prompts/overview.md)
 
 ## Adjudication Prompts
@@ -257,6 +287,9 @@
 - [Generate a Study-Specific Imaging Charter Draft](../imaging_prompts/01_imaging_charter_draft.md)
 - [Automated Site Upload QC & Query Generator](../imaging_prompts/02_site_upload_qc.md)
 - [Design an Optimal Central Reading Paradigm](../imaging_prompts/03_central_reading_design.md)
+- [Regulatory-Compliant Imaging Charter Generator](../imaging_prompts/04_regulatory_imaging_charter_generator.md)
+- [End-to-End Image-Acquisition & QC Workflow Blueprint](../imaging_prompts/05_image_acquisition_qc_workflow_blueprint.md)
+- [Regulatory Imaging-Data Package & Narrative for PMA / 510(k)](../imaging_prompts/06_regulatory_imaging_data_package.md)
 - [Overview](../imaging_prompts/overview.md)
 
 ## ePRO Prompts
@@ -265,3 +298,10 @@
 - [Optimize ePRO Form Design for Usability and Data Quality](../epro_prompts/02_optimize_epro_form_design.md)
 - [ePRO Adoption Plan for Sponsors](../epro_prompts/03_epro_adoption_plan_for_sponsors.md)
 - [Overview](../epro_prompts/overview.md)
+
+## Clinical Safety Prompts
+
+- [Clinical Safety Synopsis for EU MDR CER](../clinical_safety_prompts/01_eu_cer_clinical_safety_synopsis.md)
+- [FDA MDR/MDV Adverse-Event Narrative](../clinical_safety_prompts/02_fda_mdr_adverse_event_narrative.md)
+- [Post-Market Safety Signal Trending](../clinical_safety_prompts/03_post_market_safety_signal_trending.md)
+- [Overview](../clinical_safety_prompts/overview.md)
