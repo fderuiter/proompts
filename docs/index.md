@@ -170,6 +170,9 @@
 - [Build an Audit-Ready Site-Payment Schedule](../payment_prompts/01_audit_ready_site_payment_schedule.md)
 - [Sunshine Act + FMV Compliance Check](../payment_prompts/02_sunshine_act_fmv_compliance_check.md)
 - [Payment-Process Risk Assessment & Mitigation](../payment_prompts/03_payment_process_risk_assessment.md)
+- [Investigator-Site Payment Forecast](../payment_prompts/04_investigator_site_payment_forecast.md)
+- [Payment Reconciliation and Discrepancy Report](../payment_prompts/05_payment_reconciliation_discrepancy_report.md)
+- [Global Regulatory & Tax Matrix](../payment_prompts/06_global_regulatory_tax_matrix.md)
 - [Overview](../payment_prompts/overview.md)
 
 ## Project Management
