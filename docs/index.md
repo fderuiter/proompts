@@ -218,6 +218,12 @@
 - [Leadership Reflection & Culture](../leadership_prompts/03_leadership_reflection_culture.md)
 - [90-Day Biostatistics Onboarding Plan](../leadership_prompts/04_biostatistics_onboarding_plan.md)
 
+## Learning Development Prompts
+
+- [Competency-Based Onboarding Blueprint (ICH-GCP Focus)](../learning_development_prompts/01_competency_based_onboarding_blueprint.md)
+- [Scenario-Based Microlearning Series to Reduce GCP Violations](../learning_development_prompts/02_scenario_based_microlearning_series.md)
+- [Training-Impact Analytics & Targeted Intervention Planner](../learning_development_prompts/03_training_impact_analytics_targeted_intervention_planner.md)
+
 ## Market Research Prompts
 
 - [Market Landscape & Trend Analysis](../market_research_prompts/01_market_landscape_trend_analysis.md)
