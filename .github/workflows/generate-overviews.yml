@@ -27,6 +27,8 @@ jobs:
         run: python3 scripts/generate_overviews.py
       - name: Update docs index
         run: python3 scripts/update_docs_index.py
+      - name: Install markdownlint (mdl)
+        run: sudo gem install mdl
       - name: Validate Markdown
         run: ./scripts/validate_markdown.sh
       - name: Check for changes
