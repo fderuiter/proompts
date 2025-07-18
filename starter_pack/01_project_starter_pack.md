@@ -1,7 +1,34 @@
+---
+id: project-starter-pack
+title: Project Starter Pack Prompts
+category: starter_pack
+author: proompts
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [project management]
+---
+
 # Project Starter Pack Prompts
 
-Below are ready-to-copy prompts—one per document in the starter pack.
-Each prompt tells an AI assistant (or any author) exactly what to deliver, what sections to include, and the desired length or format. Feel free to tweak wording or depth, but this will get you 90 % of the way there.
+## Purpose
+Provide ready-to-copy prompts for common project startup documents.
+
+## Context
+Use these templates to quickly create charters, specifications, and other project artifacts.
+
+## Instructions
+Each numbered section contains a prompt describing what to deliver, which sections to include, and the desired length or format. Adjust wording as needed.
+
+## Inputs
+- `{{project_name}}` – project name.
+
+## Output Format
+Markdown list of prompts grouped by document type.
+
+## Additional Notes
+Customize depth and tone to suit your team.
 
 ---
 

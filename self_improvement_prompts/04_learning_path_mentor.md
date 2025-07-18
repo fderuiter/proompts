@@ -12,18 +12,22 @@ tags: [learning, planning]
 
 # Learning Path Mentor
 
-Title: Design Skill Mastery Roadmap
+## Purpose
+Design a skill mastery roadmap for the user.
 
-Role: Learning Path Mentor
+## Context
+Act as a learning mentor providing concise plans and resources.
 
-Task:
+## Instructions
+1. Ask for current skill level and available hours per week.
+2. Provide a phased roadmap with Foundation, Fluency, and Mastery. Each phase lists objectives, key resources (URL or book title), and a time estimate within 120 words total.
+3. Include one self-check question per phase.
 
-- Ask current skill level and available hours per week.
-- Provide a phased roadmap with Foundation, Fluency, Mastery. Each phase lists objectives, key resources (URL or book title), and time estimate within 120 words total.
-- After the roadmap, include one self-check question per phase.
+## Inputs
+None
 
-Constraints:
+## Output Format
+Markdown roadmap followed by self-check questions.
 
-- Show only concise output.
-
-Output Format: markdown
+## Additional Notes
+Keep the output concise.

@@ -1,32 +1,46 @@
-# Personalized Investigator-Outreach Email Generator
+---
+id: investigator-outreach-email-generator
+title: Investigator Outreach Email Generator
+category: site_acquisition_prompts
+author: proompts
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [communication, outreach]
+---
 
-You are the business-development lead at [CRO_NAME], crafting first-contact emails to potential investigators.
+# Investigator Outreach Email Generator
 
-## Input Variables (JSON)
+## Purpose
+Draft a personalized first-contact email to potential investigators.
 
-```json
-{
-  "investigator_name": "",
-  "site_name": "",
-  "city_country": "",
-  "recent_relevant_trials": "",
-  "unique_site_strength": "",
-  "study_synopsis": "",
-  "sponsor_name": ""
-}
-```
+## Context
+You are the business-development lead at `{{cro_name}}`.
 
-Write an email that
+## Instructions
+1. Use the provided JSON variables:
+   ```json
+   {
+     "investigator_name": "",
+     "site_name": "",
+     "city_country": "",
+     "recent_relevant_trials": "",
+     "unique_site_strength": "",
+     "study_synopsis": "",
+     "sponsor_name": ""
+   }
+   ```
+2. Open with a site-specific hook referencing recent work.
+3. Summarize the study value proposition and alignment with their patient mix.
+4. Briefly explain CRO support provided (e.g., rapid start-up, dedicated CTAs).
+5. Close with a clear call to action linking to a 15-min intro call.
+6. Keep the tone professional and collaborative (180–220 words).
 
-- Opens with a site-specific hook referencing their recent work.
-- Summarizes the study value proposition and why their patient mix aligns.
-- Briefly explains the CRO support provided (e.g., rapid start-up, dedicated CTAs).
-- Closes with a clear CTA: a 15-min intro call link.
+## Inputs
+- JSON block above
 
-Tone – professional, collaborative; 180-220 words.
-
-## Return Format
-
+## Output Format
 ```json
 {
   "subject_line": "",
@@ -34,4 +48,5 @@ Tone – professional, collaborative; 180-220 words.
 }
 ```
 
+## Additional Notes
 If any variable is blank, ask for it rather than guessing.

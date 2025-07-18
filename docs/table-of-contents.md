@@ -247,7 +247,7 @@
 [Writing Clarity Mentor](../self_improvement_prompts/05_writing_clarity_mentor.md)
 [Site Landscape Mapping & Prioritization](../site_acquisition_prompts/01_site_landscape_mapping.md)
 [Tailored Feasibility-Questionnaire Builder](../site_acquisition_prompts/02_tailored_feasibility_questionnaire.md)
-[Personalized Investigator-Outreach Email Generator](../site_acquisition_prompts/03_investigator_outreach_email_generator.md)
+[Investigator Outreach Email Generator](../site_acquisition_prompts/03_investigator_outreach_email_generator.md)
 [Project Starter Pack Prompts](../starter_pack/01_project_starter_pack.md)
 [Sterility-Validation Protocol Builder](../sterility_prompts/01_sterility_validation_protocol_builder.md)
 [Regulatory Gap-Analysis Comparator](../sterility_prompts/02_regulatory_gap_analysis_comparator.md)
