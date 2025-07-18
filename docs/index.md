@@ -199,6 +199,7 @@
 - [Quarterly Innovation Radar for Decentralized and Hybrid Trials](../executive_prompts/06_innovation_radar.md)
 - [Regulatory and Competitive Intelligence Briefing](../executive_prompts/06_regulatory_competitive_intel_briefing.md)
 - [Trial-Design Optimisation Memo](../executive_prompts/06_trial_design_optimisation_memo.md)
+- [Hosting Cost Reduction ToT Plan](../executive_prompts/07_hosting_cost_reduction_tot.md)
 - [Strategic Consultant SWOT](../executive_prompts/07_strategic_consultant_swot.md)
 
 ## Hr Finance Prompts
