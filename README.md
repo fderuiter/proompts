@@ -6,6 +6,10 @@
 
 A curated set of Markdown prompts for AI-assisted product development, regulatory workflows, and general operations. Prompts are organized by topic—ranging from code reviews to market research—so you can mix and match them in your own agentic workflows.
 
+## Docs
+
+- **`docs/`** – additional docs and a full [table of contents](docs/index.md)
+
 ## Validation
 
 Check Markdown formatting and the docs index before committing:
