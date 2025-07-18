@@ -1,23 +1,44 @@
+---
+id: operations-rapid-process-diagnostic
+title: Rapid Process Diagnostic & Lean Improvement Plan
+category: operations_prompts
+author: Frederick de Ruiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [operations, lean]
+---
 
 # Rapid Process Diagnostic & Lean Improvement Plan
 
-You are a **senior Lean-Six-Sigma Black Belt** engaged to overhaul our [PROCESS NAME].
+## Purpose
+
+Create a concise process review and improvement roadmap.
 
 ## Context
 
-• Current volume: [units per month]
-• Avg. cycle-time: [days]
-• Pain points: [bullet list]
-• Target outcome: cycle-time ↓ 15 %, cost ↓ 10 %
+You are a senior Lean Six Sigma Black Belt working to overhaul **{{process_name}}**.
+Current volume, average cycle time, pain points and the target outcome are provided.
 
-## Tasks
+## Instructions
 
 1. Map the value stream and label wastes (TIMWOOD).
-1. List the **top-5 bottlenecks** with root cause and quantified business impact.
-1. Draft a **90-day action plan** (owner, milestone, KPI) in a Markdown table.
-1. Conclude with a ≤ 150-word executive summary.
+2. List the top five bottlenecks with root cause and business impact.
+3. Draft a 90‑day action plan with owner, milestone and KPI.
+4. Summarize findings in 150 words or fewer.
 
-## Constraints
+## Inputs
 
-* Think step-by-step, reflecting on Lean tools used.
-* Output **only** the table followed by the summary.
+- `{{current_volume}}` – units per month.
+- `{{avg_cycle_time}}` – days.
+- `{{pain_points}}` – bullet list.
+- `{{target_outcome}}` – cycle-time and cost targets.
+
+## Output Format
+
+Markdown table for the action plan followed by the summary paragraph.
+
+## Additional Notes
+
+Think step by step, referencing Lean tools. Return only the table and summary.

@@ -1,22 +1,42 @@
+---
+id: operations-quarterly-kpi-brief
+title: Quarterly CRO KPI Executive Brief
+category: operations_prompts
+author: Frederick de Ruiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [operations, kpi]
+---
+
 # Quarterly CRO KPI Executive Brief
 
-Act as the Business Operations lead preparing the Q3 Executive Brief for our CRO.
+## Purpose
 
-**Goal**  
-Transform raw operational data into a C-suite-ready dashboard narrative that instantly signals performance, risks, and required decisions.
+Present key operational KPIs and recommended actions for the quarterly review.
 
-**Inputs available**  
-• Operational dataset (Redshift): study start-up cycle time, enrollment rate, CRF completion lag, protocol deviations, revenue vs. forecast, EBITDA, employee turnover.  
-• Internal KPI definitions & thresholds (Excel).  
-• Commentary from functional heads (Word docs).
+## Context
 
-**Deliverables**  
-A. One-page written narrative that:  
-   ▸ Highlights 3 KPIs above target, 3 below target, root-cause hypotheses, and one actionable decision for each lagging KPI.  
-   ▸ Summarizes overall financial health in ≤ 75 words.  
-B. PowerPoint outline (slide titles + bullet points) for a 6-slide deck.  
-C. Suggested data-viz styles (e.g., bullet chart, sparkline) for each KPI.
+You are the Business Operations lead preparing the Q3 executive brief. Operational data, KPI thresholds and functional commentary are available.
 
-**Constraints** Avoid jargon; assume audience is time-pressed. Place any numbers in parentheses after the KPI name.  
-Invite follow-up questions if data anomalies appear. Use first-person plural (“we”, “our”).  
-Reason out loud internally before producing the final answer (but do not show that chain of thought).
+## Instructions
+
+1. Produce a one-page narrative highlighting three KPIs above target and three below, include root-cause hypotheses and an actionable decision for each lagging KPI.
+2. Summarize overall financial health in 75 words or fewer.
+3. Outline a six-slide PowerPoint deck with slide titles and bullets.
+4. Suggest appropriate data visualizations for each KPI.
+
+## Inputs
+
+- `{{operational_dataset}}` – metrics from Redshift.
+- `{{kpi_definitions}}` – thresholds and descriptions.
+- `{{functional_comments}}` – notes from department heads.
+
+## Output Format
+
+Narrative summary, slide outline and recommended visualization styles.
+
+## Additional Notes
+
+Keep language jargon-free and assume the audience is time pressed. Use first-person plural and offer to answer questions if data anomalies appear.
