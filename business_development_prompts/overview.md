@@ -1,3 +1,3 @@
-# Business Development Prompts
+# Overview of Business Development Prompts
 
-Prompts for CRO business development strategists covering market intelligence, proposal creation, and competitor positioning.
+Use these prompts to explore market opportunities, craft winning proposals, and manage the deal pipeline at a CRO.

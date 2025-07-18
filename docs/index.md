@@ -47,6 +47,13 @@
 - [FDA Missing-Data Query Response](../biostatistics_prompts/11_fda_missing_data_query_response.md)
 - [Overview](../biostatistics_prompts/overview.md)
 
+## Business Development Prompts
+
+- [Emerging-Market Opportunity Scan](../business_development_prompts/01_emerging_market_opportunity_scan.md)
+- [RFP Executive-Summary Generator](../business_development_prompts/02_rfp_executive_summary_generator.md)
+- [90-Day Pipeline Health & Next-Best-Action Review](../business_development_prompts/03_90_day_pipeline_health_review.md)
+- [Overview](../business_development_prompts/overview.md)
+
 ## CFO Prompts
 
 - [Scenario-Based Clinical-Trial Cash-Flow Forecast](../cfo_prompts/01_scenario_cash_flow_forecast.md)
