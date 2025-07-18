@@ -208,8 +208,6 @@
 [Sponsor-Ready Monthly Status Brief](../project_management/08_sponsor_ready_monthly_status_brief.md)
 [Executive Sponsor Briefing Deck Outline](../project_management/09_executive_sponsor_briefing_deck_outline.md)
 [TMF Gap-Analysis and Audit Readiness Check](../project_management/09_tmf_gap_analysis_audit_readiness_check.md)
-[Executive Sponsor Briefing Deck Outline (15 Slides)](../project_management/09_executive_sponsor_briefing_deck_outline.md)
-[TMF Gap-Analysis & Audit Readiness Check](../project_management/09_tmf_gap_analysis_audit_readiness_check.md)
 [Neutral Scrum Retrospective Facilitator](../project_management/10_neutral_scrum_retro.md)
 [Rollout Risk Matrix](../project_management/10_rollout_risk_matrix.md)
 [Architecture Review Pipeline](../prompt_tools/01_architecture_review_pipeline.md)
