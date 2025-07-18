@@ -80,6 +80,13 @@
 - [Clinical ETL Pipeline Review and Optimisation](../data_management_prompts/06_clinical_etl_pipeline_review.md)
 - [Overview](../data_management_prompts/overview.md)
 
+## eClinical Integration Prompts
+
+- [Architect the Integration Blueprint](../eclinical_integration_prompts/01_architect_integration_blueprint.md)
+- [Generate a Data-Mapping & Transformation Playbook](../eclinical_integration_prompts/02_data_mapping_transformation_playbook.md)
+- [Compile the Regulatory & Validation Checklist](../eclinical_integration_prompts/03_regulatory_validation_checklist.md)
+- [Overview](../eclinical_integration_prompts/overview.md)
+
 ## Design Prompts
 
 - [Design Md Template](../design_prompts/01_design_md_template.md)
