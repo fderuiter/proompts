@@ -68,8 +68,9 @@ Check Markdown formatting and the docs index before committing:
 
 The script first runs `python3 scripts/update_docs_index.py --check` to ensure
 `docs/index.md` and `docs/table-of-contents.md` are up to date, then runs `mdl`.
-It requires both Python 3 and the `mdl` tool and is executed automatically in
-GitHub Actions.
+It requires both Python 3 and the `mdl` tool. Install the linter with
+`gem install mdl` if it isn't already available. The same check runs in GitHub
+Actions.
 This repository also runs `.github/workflows/update-docs.yml` to automatically commit the index if it changes.
 
 ## Contributing
