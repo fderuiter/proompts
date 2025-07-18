@@ -1,26 +1,36 @@
-<!-- markdownlint-disable MD029 -->
+---
+id: ib-detailed-soc
+title: Investigator's Brochure Summary of Changes
+category: technical_writer_prompts
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [technical writing, regulatory]
+---
+
 # Investigator's Brochure Summary of Changes
 
-ROLE  
-Act as the lead medical writer preparing the annual Investigator’s Brochure (IB) update for **Drug Y**.
+## Purpose
+Produce a detailed summary of changes for the annual Investigator’s Brochure update.
 
-TASK  
-Generate a stand-alone “Detailed Summary of Changes” document suitable for submission to EU/US regulators and investigators.
+## Context
+You are the lead medical writer for **Drug Y**. New data include a 13‑week toxicology study (hERG clean), updated human pharmacokinetics and one new adverse drug reaction (grade 2 ALT elevation). The previous IB version is v4.0 (March 2024). French ANSM requires a line‑by‑line summary. Functional leads have supplied tracked‑change sections.
 
-CONTEXT
+## Instructions
+1. Present a matrix with columns: Section, Old text, New text and Rationale.
+2. Highlight substantial changes according to ANSM criteria.
+3. Keep narrative ≤ 1 300 words; tables may be longer.
+4. Deliver Markdown easily transferable to Word.
+5. Identify dependencies such as protocol or ICF updates.
+6. If information is missing, ask clarifying questions before writing.
 
-• New data: 13-week toxicology (hERG clean), revised human PK, 1 new ADR (grade 2 ALT elevation).  
-• Previous IB version: v4.0 (March 2024).  
-• French ANSM requires line-by-line SOC.  
-• Functional leads (Non-clinical, Clin Pharm, PV) have supplied tracked-change sections.
+## Inputs
+None
 
-OUTPUT REQUIREMENTS
+## Output Format
+Markdown table(s) followed by concise narrative explaining major changes.
 
-- Matrix format: “Section / Old text / New text / Rationale”.
-- Highlight substantial changes per ANSM criteria.
-- ≤1 300 words of narrative; tables unlimited.
-- Deliver as well-structured Markdown that can be dropped into Word.
-- Identify dependencies (e.g., need to update protocol or ICF) at the end.
-
-WHEN INFORMATION IS INSUFFICIENT
-Ask clarifying questions about data cut-offs, terminology, or outstanding functional-area input before writing.
+## Additional Notes
+Ensure regulators and investigators can quickly understand the revisions.

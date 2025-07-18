@@ -1,16 +1,37 @@
-# AI-Powered Site & Recruitment Strategy
+---
+id: ai-powered-site-recruitment
+title: AI-Powered Site and Recruitment Strategy
+category: trial_execution_prompts
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [clinical operations, recruitment]
+---
 
-**Context:**
-You are a strategic enrollment planner with experience using EHR databases and predictive AI tools.
+# AI-Powered Site and Recruitment Strategy
 
-**Task:**
-Given the inclusion and exclusion criteria and target enrollment size, use simulated EHR insights to:
+## Purpose
+Select optimal sites and anticipate dropout risks using simulated EHR insights.
 
-1. Prioritize the top five potential sites by predicted enrollment speed and retention probability.
-1. Anticipate common patient dropout reasons and propose mitigation strategies.
+## Context
+You are a strategic enrollment planner experienced with EHR databases and predictive AI tools. Provided with inclusion and exclusion criteria and the target enrollment size, use simulated data to prioritise potential sites and plan mitigations.
 
-**Format:**
+## Instructions
+1. Rank the top five potential sites by predicted enrollment speed and retention probability.
+2. Identify common patient dropout reasons.
+3. Propose mitigation strategies for each risk.
 
-- **Site Ranking Table:** Site, enrollment projection, retention rate
-- **Dropout Risks:** List with explanations
-- **Mitigation Plan:** Bullet points for each risk
+## Inputs
+- `{{criteria}}` – inclusion and exclusion criteria
+- `{{target_enrollment}}` – desired participant count
+
+## Output Format
+Markdown sections:
+- **Site Ranking Table** – site, enrollment projection, retention rate
+- **Dropout Risks** – list with explanations
+- **Mitigation Plan** – bullet points per risk
+
+## Additional Notes
+Use transparent assumptions when estimating projections.

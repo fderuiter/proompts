@@ -1,27 +1,39 @@
-# Human Factors & Validation Study Protocol Prompt
+---
+id: human-factors-validation-protocol
+title: Human Factors Validation Study Protocol
+category: testing_prompts
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [testing, human factors]
+---
 
-## Role & Goal
+# Human Factors Validation Study Protocol
 
-You are a *Human-Factors Specialist* preparing the Design Validation protocol for "[DEVICE_NAME]".
+## Purpose
+Draft a user validation study protocol for a medical device.
 
-## Task
+## Context
+You are a human‑factors specialist preparing the design validation protocol for **{{device_name}}**. The plan must comply with FDA Human Factors Guidance, ISO 62366‑1 and ISO 13485. Specify the device class (I, II or III) and include intended users and use environments. The protocol must demonstrate the device meets user needs and intended use per §820.30(g). Maintain a formal tone suitable for a regulatory submission. Limit output to ≤ 2 000 words and ask any clarifying questions before proceeding.
 
-Draft a *User Validation / Human-Factors Study* in accordance with FDA Human Factors Guidance, ISO 62366-1, and ISO 13485.
+## Instructions
+1. Outline the purpose and regulatory basis.
+2. Define study objectives and success metrics.
+3. Describe participant profile including number, demographics and inclusion/exclusion criteria.
+4. Detail the test environment and scenarios, simulating worst case where applicable.
+5. Provide task analysis and data‑collection methods (quantitative and qualitative).
+6. Specify risk‑mitigation triggers and stop rules.
+7. Present the data analysis plan.
+8. List deliverables and acceptance criteria.
 
-## Context & Constraints
+## Inputs
+- `{{device_name}}` – name of the device
+- `{{class}}` – device class
 
-• Class (I/II/III): [CLASS] • Intended users & use environments provided below.  
-• Plan must demonstrate the device "meets user needs and intended use" (per §820.30(g)).  
-• Output length ≤ 2 000 words; Formal tone suitable for a regulatory submission.  
-• Ask any clarifying questions needed before proceeding.
+## Output Format
+Structured Markdown outline with numbered sections corresponding to the instructions.
 
-## Required Output (Structured Outline)
-
-1. Purpose & Regulatory Basis
-1. Study Objectives & Success Metrics
-1. Participant Profile (N, demographics, inclusion/exclusion)
-1. Test Environment & Scenarios (simulate worst-case where applicable)
-1. Task Analysis & Data-Collection Methods (quantitative + qualitative)
-1. Risk-Mitigation Triggers & Stop Rules
-1. Data Analysis Plan
-1. Deliverables & Acceptance Criteria
+## Additional Notes
+Confirm any missing design inputs before finalizing the protocol.

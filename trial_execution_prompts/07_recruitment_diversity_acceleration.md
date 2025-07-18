@@ -1,15 +1,34 @@
-<!-- markdownlint-disable MD029 -->
-# Patient Recruitment & Diversity Acceleration Plan
+---
+id: recruitment-diversity-acceleration
+title: Patient Recruitment and Diversity Acceleration Plan
+category: trial_execution_prompts
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [clinical operations, recruitment]
+---
 
-Assume the role of a patient-engagement strategist.  
-Situation: Enrollment has stalled at 45 % of target in a Phase III rare-disease study (22 countries, 70 sites). The sponsor is pressing for recovery.  
-Goal: Produce a 6-month action plan that boosts monthly randomizations by ≥35 % while improving demographic diversity to match FDA 2024 guidance.  
-Deliverables:
+# Patient Recruitment and Diversity Acceleration Plan
 
-1. Data-driven root-cause analysis framework (site, startup, outreach, eligibility).
-1. Country-by-country recruitment tactics (e.g., community advocacy partnerships, telehealth pre-screening).
-1. Budget impact estimate (±15 %) and ROI projection.
-1. Metrics dashboard layout (leading & lagging indicators).  
+## Purpose
+Boost enrollment and improve demographic diversity in a stalled Phase III study.
 
-Constraints: Maintain current protocol and budget cap increase ≤8 %.  
-Output: Concise report (≤1,000 words) + a one-slide KPI dashboard sketch in text form. Ask clarifying questions first if required.
+## Context
+You are a patient‑engagement strategist. Enrollment has stalled at 45 % of target in a Phase III rare‑disease study spanning 22 countries and 70 sites. The sponsor seeks recovery. The goal is to increase monthly randomizations by ≥ 35 % while aligning diversity with FDA 2024 guidance. Maintain the current protocol and keep budget increases ≤ 8 %.
+
+## Instructions
+1. Provide a data‑driven root‑cause analysis framework covering site performance, startup, outreach and eligibility.
+2. Propose country‑by‑country recruitment tactics such as community partnerships and telehealth pre‑screening.
+3. Estimate budget impact (± 15 %) and ROI projection.
+4. Outline a metrics dashboard with leading and lagging indicators.
+
+## Inputs
+None
+
+## Output Format
+Concise report (≤ 1 000 words) plus a one‑slide KPI dashboard sketch in text form.
+
+## Additional Notes
+Ask clarifying questions first if any information is missing.
