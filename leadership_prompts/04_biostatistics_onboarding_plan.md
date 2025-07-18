@@ -1,27 +1,36 @@
-<!-- markdownlint-disable MD029 -->
+---
+id: leadership-biostatistics-onboarding-plan
+title: 90-Day Biostatistics Onboarding Plan
+category: leadership_prompts
+author: prompt-team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [biostatistics, onboarding]
+---
+
 # 90-Day Biostatistics Onboarding Plan
 
-You are a people manager overseeing a global team of CRO biostatisticians.
+## Purpose
+Design a structured program to move new statisticians from orientation to productive project work in 90 days.
 
-Goal ➜ Design a structured 90-day onboarding program that accelerates new MSc-level statisticians from orientation to productive project work.
+## Context
+You manage a global team of CRO biostatisticians. The plan must align with departmental goals and support remote hires.
 
-Deliverables  
+## Instructions
+1. Create a three-part table covering Days 1–30, 31–60, and 61–90.
+2. Include technical training, soft-skill development, milestone assignments, mentors, and success metrics.
+3. Keep total program length under 1,500 words.
+4. Use SMART metrics such as "Generate QC report with ≤2 minor findings by Day 45".
+5. Add a column for remote-friendly adaptation.
 
-A three-part plan in table form (Days 1–30, 31–60, 61–90) covering:  
-▪ Technical training (SOPs, CDISC, R/SAS QC workflows).  
-▪ Soft-skill development (stakeholder communication, presenting analyses).  
-▪ Milestone-based assignments tied to live study deliverables.  
-▪ Designated mentors and measurable success metrics.
+## Inputs
+- `{{cohort_size}}` – number of hires per onboarding cohort.
+- `{{therapeutic_focus}}` – dominant therapeutic areas.
 
-Constraints  
+## Output Format
+Markdown table with columns for **Timeline**, **Focus Areas**, **Assignments**, **Mentors**, **Metrics**, and **Remote Adaptation**.
 
-- Total program length ≤1,500 words.  
-- Use SMART metrics (e.g., “Generate QC report with ≤2 minor findings by Day 45”).  
-- Include a column for “Remote-friendly adaptation”.
-
-Quality check  
-Ensure alignment with departmental goals and individual development discussed in quarterly reviews.
-
-Before crafting the table, ask:  
-• How many hires per cohort?  
-• Which therapeutic areas dominate current workload?
+## Additional Notes
+Ask clarifying questions before drafting to confirm team size and therapeutic focus.

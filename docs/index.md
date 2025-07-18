@@ -212,16 +212,16 @@
 
 ## Leadership Prompts
 
-- [Strategic Alignment & Innovation](../leadership_prompts/01_strategic_alignment_innovation.md)
-- [Operational Excellence & Communication](../leadership_prompts/02_operational_excellence_communication.md)
-- [Leadership Reflection & Culture](../leadership_prompts/03_leadership_reflection_culture.md)
+- [Strategic Alignment and Innovation](../leadership_prompts/01_strategic_alignment_innovation.md)
+- [Operational Excellence Communication Framework](../leadership_prompts/02_operational_excellence_communication.md)
+- [Leadership Reflection and Culture](../leadership_prompts/03_leadership_reflection_culture.md)
 - [90-Day Biostatistics Onboarding Plan](../leadership_prompts/04_biostatistics_onboarding_plan.md)
 
 ## Learning Development Prompts
 
 - [Competency-Based Onboarding Blueprint (ICH-GCP Focus)](../learning_development_prompts/01_competency_based_onboarding_blueprint.md)
 - [Scenario-Based Microlearning Series to Reduce GCP Violations](../learning_development_prompts/02_scenario_based_microlearning_series.md)
-- [Training-Impact Analytics & Targeted Intervention Planner](../learning_development_prompts/03_training_impact_analytics_targeted_intervention_planner.md)
+- [Training-Impact Analytics and Targeted Intervention Planner](../learning_development_prompts/03_training_impact_analytics_targeted_intervention_planner.md)
 - [Net Present Value Socratic Tutor](../learning_development_prompts/04_npv_socratic_tutor.md)
 
 ## Market Research Prompts
