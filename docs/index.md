@@ -24,6 +24,9 @@
 - [Risk Assessment Expert](../biological_safety_prompts/01_risk_assessment_expert.md)
 - [Biological Safety Plan Developer](../biological_safety_prompts/02_biological_safety_plan_developer.md)
 - [Regulatory Submission Support](../biological_safety_prompts/03_regulatory_submission_support.md)
+- [Biological Evaluation Plan Builder](../biological_safety_prompts/04_bep_builder.md)
+- [Comprehensive Biocompatibility Test Matrix](../biological_safety_prompts/05_comprehensive_test_matrix.md)
+- [Chemical Characterization & Toxicological Risk-Assessment Work-Plan](../biological_safety_prompts/06_chemical_characterization_work_plan.md)
 - [Overview](../biological_safety_prompts/overview.md)
 
 ## Biostatistics Prompts
