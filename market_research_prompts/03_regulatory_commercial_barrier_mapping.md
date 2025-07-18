@@ -1,10 +1,35 @@
+<!-- markdownlint-disable MD029 -->
+---
+id: regulatory-commercial-barrier-mapping
+title: Regulatory & Commercial Barrier Mapping
+category: market_research_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [market entry, regulatory]
 # Regulatory & Commercial Barrier Mapping
+---
 
-As an expert in global medical device regulation, assess the key regulatory and commercial hurdles for launching a novel IVD device in the top three markets (e.g., US, EU, China). Address:
+## Purpose
+Assess hurdles for launching `{{device}}` in major markets.
 
-- A side-by-side comparison of approval pathways (FDA 510(k), CE marking, NMPA).
-- Typical timelines, costs, and risk factors for each region.
-- Common commercial entry barriers (e.g., reimbursement, local distributor dynamics, clinician adoption).
-- Strategic recommendations to mitigate each hurdle.
+## Context
+You are an expert in global medical device regulation.
 
-Answer in a **comparative table**, followed by **five prioritized strategic actions** to streamline market entry.
+## Instructions
+1. Compare approval pathways for the top three markets.
+2. Summarize typical timelines, costs and risks.
+3. Outline commercial entry barriers such as reimbursement or distributor dynamics.
+4. Recommend mitigation strategies for each hurdle.
+
+## Inputs
+- `{{device}}` – device to analyze
+- `{{markets}}` – markets of interest
+
+## Output Format
+Comparative table followed by five prioritized strategic actions.
+
+## Additional Notes
+Keep guidance concise and actionable.

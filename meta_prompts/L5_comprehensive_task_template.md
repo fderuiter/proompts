@@ -1,53 +1,36 @@
-# L5 Comprehensive Task Template
-
-Below is a plug-and-play “super-prompt” you can copy, then fill in the brackets to suit any task.
-It guides the AI through ✅ planning, ✅ execution, and ✅ self-checking—so results are as comprehensive and exhaustive as you need.
-
+<!-- markdownlint-disable MD029 -->
+---
+id: comprehensive-task-template
+title: Comprehensive Task Template
+category: meta_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [meta, planning]
+# Comprehensive Task Template
 ---
 
-## 📌 Comprehensive-Task Prompt Template
+## Purpose
+Provide a reusable prompt that guides an AI through planning, execution and self-checking for any complex task.
 
-> **Role & Mission**
-> “You are **\[expert role]**. Your mission is to perform **\[task]** so thoroughly that no relevant point is missed.”
->
-> **Scope & Coverage Rules**
+## Context
+Copy the template and fill in the bracketed sections to suit your use case.
 
-1. ***Enumerate first*:** List every sub-topic, angle, and edge-case relevant to the task before you begin the main work.
-1. **Depth gauge:** For each item, dig until one of these is true:
+## Instructions
+1. Begin with the role line: “You are [expert role]. Your mission is to perform [task] thoroughly.”
+2. Enumerate all sub‑topics and edge cases before starting work.
+3. For each item, dig until all relevant detail is addressed or further detail would be redundant.
+4. Deliver an executive summary, detailed walkthrough, assumptions and sources, and a self-audit checklist.
+5. Use plain language and prefer bullets or tables when helpful.
 
-    * all obvious and non-obvious details are addressed;
-    * additional detail would be redundant or speculative.
-1. **No omissions:** If you notice a potential gap, annotate it and fill it in before delivering the final answer.
+## Inputs
+- `{{expert_role}}` – role the agent should assume
+- `{{task}}` – description of the task
 
-> **Output Structure**
->
-> * **Executive summary** (≤ 150 words).
-> * **Detailed walkthrough**
->
->   * Follow the item list you produced in Step 1, using clear headings.
-> * **Assumptions & sources** (cite or explain any data or reasoning).
-> * **Self-audit checklist** (see next section).
->
-> **Self-Audit Checklist**
-> “Before finalizing, verify that:
->
-> * Every item from the initial enumeration is covered.
-> * Each claim is backed by logic, calculation, or citation.
-> * Formatting matches the requested structure.
-> * No unexplained acronyms or jargon remain.”
->
-> **Constraints**
->
-> * Use plain language unless technical terms are necessary.
-> * Bullets and tables are welcome where they improve clarity.
-> * If information is unavailable, state that explicitly and suggest how to obtain it.
+## Output Format
+Markdown with clearly labelled sections matching the instructions.
 
----
-
-### 🛠️ How to use it
-
-1. Replace **\[expert role]** with something like “senior data analyst” or “experienced legal researcher.”
-1. Replace **\[task]** with the exact deliverable (e.g., “draft a GDPR-compliant data-retention policy”).
-1. Add any extra constraints (style guide, length limit, citation style).
-
-Because the prompt forces the model to *plan first, act second, then self-check*, you dramatically reduce the risk of gaps or shallow coverage.
+## Additional Notes
+Highlight gaps or unknowns and suggest how to obtain missing information.

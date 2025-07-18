@@ -233,29 +233,29 @@
 
 ## Medical Director Prompts
 
-- [Clinical-Trial Protocol Quality & Compliance Review](../medical_director_prompts/01_clinical_trial_protocol_quality_compliance_review.md)
-- [Pharmacovigilance Safety-Signal Prioritization & Medical Assessment](../medical_director_prompts/02_pharmacovigilance_safety_signal_prioritization.md)
-- [AI-Enhanced Risk-Based Monitoring (RBM) Action Plan](../medical_director_prompts/03_ai_enhanced_rbm_action_plan.md)
+- [Clinical Trial Protocol Compliance Review](../medical_director_prompts/01_clinical_trial_protocol_quality_compliance_review.md)
+- [Pharmacovigilance Safety Signal Prioritization](../medical_director_prompts/02_pharmacovigilance_safety_signal_prioritization.md)
+- [AI-Enhanced RBM Action Plan](../medical_director_prompts/03_ai_enhanced_rbm_action_plan.md)
 
 ## Meta Prompts
 
-- [“Ultrameta Prompt Architect” — Instruction Set](../meta_prompts/L0_master-ultrameta.md)
-- [L1 “Meta-Prompt Architect” template**](../meta_prompts/L1_meta-prompt-architect.md)
-- [L2 Prompt-Engineer](../meta_prompts/L2_prompt-engineer.md)
-- [L3 - Task Prototyper](../meta_prompts/L3_task-prototyper.md)
-- [L4 “Worker Prompt](../meta_prompts/L4_worker_prompt.md)
-- [L5 AGENTS.md best-practice checklist and generation meta-prompt](../meta_prompts/L5_agents-md-checklist.md)
-- [Prompt for an AI Coding Agent](../meta_prompts/L5_ai_coding_agent.md)
-- [L5 Comprehensive Task Template](../meta_prompts/L5_comprehensive_task_template.md)
-- [L5 Prompt Engineer and Fact-Checker](../meta_prompts/L5_prompt_engineer_fact_checker.md)
+- [Master Ultrameta Prompt Architect](../meta_prompts/L0_master-ultrameta.md)
+- [Meta Prompt Architect](../meta_prompts/L1_meta-prompt-architect.md)
+- [Prompt Engineer Template](../meta_prompts/L2_prompt-engineer.md)
+- [Task Prototyper](../meta_prompts/L3_task-prototyper.md)
+- [Worker Prompt](../meta_prompts/L4_worker_prompt.md)
+- [AGENTS.md Checklist Generator](../meta_prompts/L5_agents-md-checklist.md)
+- [AI Coding Agent Plan Generator](../meta_prompts/L5_ai_coding_agent.md)
+- [Comprehensive Task Template](../meta_prompts/L5_comprehensive_task_template.md)
+- [Prompt Engineer Fact Checker](../meta_prompts/L5_prompt_engineer_fact_checker.md)
 - [PromptCrafter GPT](../meta_prompts/L5_promptcrafter_gpt.md)
-- [L5 README Generator](../meta_prompts/L5_readme-generator.md)
+- [README Generator](../meta_prompts/L5_readme-generator.md)
 
 ## Microbiology Prompts
 
-- [Draft a Bioburden-Testing SOP (ISO 11737-1)](../microbiology_prompts/01_bioburden_testing_sop.md)
-- [Create an EO-Sterilization Validation Protocol (ISO 11135 + ISO 11737-2)](../microbiology_prompts/02_eo_sterilization_validation_protocol.md)
-- [Build an Endotoxin-Control & 510(k) Risk Plan (USP <85> / AAMI ST72)](../microbiology_prompts/03_endotoxin_control_510k_risk_plan.md)
+- [Bioburden Testing SOP](../microbiology_prompts/01_bioburden_testing_sop.md)
+- [EO Sterilization Validation Protocol](../microbiology_prompts/02_eo_sterilization_validation_protocol.md)
+- [Endotoxin Control & 510(k) Risk Plan](../microbiology_prompts/03_endotoxin_control_510k_risk_plan.md)
 
 ## Operations Prompts
 
