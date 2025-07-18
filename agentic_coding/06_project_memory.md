@@ -1,14 +1,34 @@
-# Project Memory (`memory.md`)
+---
+id: agentic-project-memory
+title: Project Memory Notes
+category: agentic_coding
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: [coding, documentation]
+---
 
-## Current Project State
+# Project Memory Notes
 
-- Document current architectural decisions and justifications clearly.
-- Capture critical notes or insights from past sessions.
+## Purpose
+Maintain a running log of architectural decisions and contextual notes for the project.
 
-## Contextual Notes
+## Context
+Use `memory.md` to preserve important information between coding sessions.
 
-- Record important decisions or context needed for future reference.
-- Include issues encountered and resolutions found.
-- Do not mark task completions here; track them only in the to-do list.
+## Instructions
+1. Document current architectural decisions and justifications.
+2. Capture critical notes or insights from previous sessions.
+3. Record important context or issues encountered and how they were resolved.
+4. Avoid marking task completions here; track them only in the to-do list.
 
-*Regularly updated for persistent context management between sessions.*
+## Inputs
+None
+
+## Output Format
+Markdown file with sections **Current Project State** and **Contextual Notes**.
+
+## Additional Notes
+Update this document regularly to support persistent context management.
