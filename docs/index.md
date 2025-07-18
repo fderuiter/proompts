@@ -188,12 +188,6 @@
 - [Trial-Design Optimisation Memo](../executive_prompts/06_trial_design_optimisation_memo.md)
 - [Hosting Cost Reduction ToT Plan](../executive_prompts/07_hosting_cost_reduction_tot.md)
 
-## Glp Prompts
-
-- [Protocol Design for GLP Preclinical Study](../glp_prompts/01_protocol_design_glp_study.md)
-- [Risk-based Gap Analysis](../glp_prompts/02_risk_based_gap_analysis.md)
-- [Final GLP-Compliant Study Report Outline](../glp_prompts/03_final_glp_study_report_outline.md)
-
 ## Hr Finance Prompts
 
 - [Strategic Workforce & Talent-Acquisition Plan](../hr_finance_prompts/01_strategic_workforce_talent_acquisition_plan.md)
@@ -255,12 +249,6 @@
 - [Draft a Bioburden-Testing SOP (ISO 11737-1)](../microbiology_prompts/01_bioburden_testing_sop.md)
 - [Create an EO-Sterilization Validation Protocol (ISO 11135 + ISO 11737-2)](../microbiology_prompts/02_eo_sterilization_validation_protocol.md)
 - [Build an Endotoxin-Control & 510(k) Risk Plan (USP <85> / AAMI ST72)](../microbiology_prompts/03_endotoxin_control_510k_risk_plan.md)
-
-## Non Glp Prompts
-
-- [Design Study Objective & Endpoint](../non_glp_prompts/01_design_study_objectives_and_endpoints.md)
-- [Protocol Outline and Risk Mitigation](../non_glp_prompts/02_protocol_outline_and_risk_mitigation.md)
-- [Generate Report Template](../non_glp_prompts/03_poc_study_report_template.md)
 
 ## Operations Prompts
 
