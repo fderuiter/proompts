@@ -70,12 +70,13 @@ The script first runs `python3 scripts/update_docs_index.py --check` to ensure
 `docs/index.md` and `docs/table-of-contents.md` are up to date, then runs `mdl`.
 It requires both Python 3 and the `mdl` tool and is executed automatically in
 GitHub Actions.
+This repository also runs `.github/workflows/update-docs.yml` to automatically commit the index if it changes.
 
 ## Contributing
 
 1. Add prompts as `.md` files in the appropriate folder.
 1. Include an `overview.md` when creating a new directory.
-1. Update `docs/index.md` so the prompt appears in the table of contents.
+1. Run `scripts/update_docs_index.py` to regenerate the index; the workflow will update it automatically.
 1. Run the validation script above before committing.
 
 ## License

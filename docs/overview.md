@@ -1,11 +1,12 @@
 # Documentation Overview
 
 This directory stores general reference material for the repository. Use
-`index.md` for a complete table of contents that links to every prompt.
+`index.md` or `table-of-contents.md` for a complete table of contents that links to every prompt.
 
 ## Quick Links
 
-- [Table of Contents](index.md)
+- [Index](index.md)
+- [Table of Contents](table-of-contents.md)
 - [Agentic Coding Prompts](../agentic_coding/overview.md)
 - [Meta Prompts](../meta_prompts/overview.md)
 - [Design Prompts](../design_prompts/overview.md)
