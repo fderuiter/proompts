@@ -134,6 +134,8 @@
 - [Data-to-Insight Analyst](../communication_prompts/08_data_to_insight_analyst.md)
 - [Socratic-Coach](../communication_prompts/09_socratic_coach.md)
 - [Red-Team Stress-Test](../communication_prompts/10_red_team_stress_test.md)
+- [Negotiation Coach](../communication_prompts/11_negotiation_coach.md)
+- [Panel Debate](../communication_prompts/12_panel_debate.md)
 - [Density Refiner](../communication_prompts/11_density_refiner.md)
 - [SCAMPER Ideation Coach](../communication_prompts/12_scamper_ideation_coach.md)
 - [Empathy-Map Facilitator](../communication_prompts/13_empathy_map_facilitator.md)
@@ -308,6 +310,7 @@
 ## Prompt Tools
 
 - [Architecture Review Pipeline](../prompt_tools/01_architecture_review_pipeline.md)
+- [PromptOptimizer 1.0](../prompt_tools/L5_prompt_optimizer.md)
 - [L5 Prompt-Sanitiser v1.1](../prompt_tools/L5_prompt_sanitiser.md)
 - [AI Agent Prompt: Refactor and Re-index Prompts in the *proompts* Repository](../prompt_tools/L5_refactor-reindex-prompts.md)
 - [Standardize Prompt Files](../prompt_tools/L5_standardize-prompt-files.md)
