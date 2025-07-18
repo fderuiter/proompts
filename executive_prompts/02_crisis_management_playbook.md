@@ -1,24 +1,38 @@
-<!-- markdownlint-disable MD029 MD033 MD036 -->
+---
+id: crisis-management-playbook
+title: Crisis-Management Playbook Generator
+category: executive_prompts
+author: Frederick de Ruiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [executive, risk]
+---
 
 # Crisis-Management Playbook Generator
 
-**“Act as my Chief Risk Officer with a background in Fortune 100 crisis response.
+## Purpose
+Provide a concise playbook for handling critical incidents affecting customer data.
 
-**Scenario:**
-Last night we discovered a critical vulnerability in our flagship SaaS platform that could expose customer data.
+## Context
+Act as the Chief Risk Officer with experience in Fortune 100 crisis response. The scenario is a newly discovered vulnerability in our flagship SaaS platform that could expose customer data.
 
-**Deliverable:**
-Create a concise, 4-page Crisis-Management Playbook covering:
+## Instructions
+1. Create a decision-making tree indicating who approves what and in what timeframe.
+1. Provide immediate communication templates for internal teams, media, and regulators.
+1. Outline technical containment steps at a high level.
+1. Define after-action review criteria and timeline.
+Follow ISO 22361 terminology and maintain a calm, authoritative tone. Use bullet lists and tables for clarity.
 
- 1. Decision-making tree (who approves what, within what timeframe).
- 1. Immediate comms templates (internal, media, regulator).
- 1. Technical containment steps (high-level; engineers will fill details).
- 1. After-action review criteria and timeline.
+## Inputs
 
-**Constraints:**
-• Follow ISO 22361 terminology.
-• Tone: calm, authoritative.
-• Use bullet lists and tables where clarity improves speed of reading.
+- `{{incident_details}}` – short description of the security incident.
 
-**Reflection step:**
-After each main section, add one question to confirm assumptions before finalization.”**
+## Output Format
+
+Markdown with sections for decision tree, communication templates, containment steps, and after-action review.
+After each main section, add one question to confirm assumptions before finalization.
+
+## Additional Notes
+Limit the playbook to four pages and focus on actions that preserve customer trust.
