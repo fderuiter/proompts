@@ -1,27 +1,41 @@
+---
+id: operations-multistudy-capacity-plan
+title: Multistudy Resource & Capacity Forecast Plan
+category: operations_prompts
+author: Frederick de Ruiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [operations, capacity]
+---
+
 # Multistudy Resource & Capacity Forecast Plan
 
-Act as a senior CRO resource-planning consultant.
+## Purpose
+
+Outline a data-driven approach for forecasting resources across multiple upcoming trials.
 
 ## Context
 
-Over the next 9 months we expect 12 new Phase II/III trials. Each requires different FTE mixes (project management, data management, site monitoring) and technology costs.
+You are a senior CRO resource-planning consultant. Twelve new Phase II/III trials are expected over the next nine months with varying FTE mixes and technology costs.
 
-## Task
+## Instructions
 
-1. Show a step-by-step approach (with formulas) for forecasting head-count and spend using historical utilization data.
-1. Provide a sample RACI matrix for cross-functional collaboration (Ops, Finance, HR, IT).
-1. Suggest three automation opportunities to streamline capacity planning.
+1. Show a step-by-step methodology with formulas for forecasting headcount and spend using historical utilization data.
+2. Provide a sample RACI matrix for collaboration between Operations, Finance, HR and IT.
+3. Suggest three automation opportunities to streamline capacity planning.
 
-### Constraints
+## Inputs
 
-Use best-practice workflow-optimization principles and emphasize data-driven decision-making.
+- `{{historical_utilization}}` – past FTE and spend data.
 
-### Output Format
+## Output Format
 
-- Section A: numbered methodology steps (max 7).
-- Section B: Markdown RACI table.
-- Section C: bullet list of automation ideas (≤25 words each).
+Section A: numbered steps (max seven).
+Section B: markdown RACI table.
+Section C: bullet list of automation ideas (≤25 words each).
 
-## Why It Matters
+## Additional Notes
 
-Workflow optimization, resource allocation and cross-department collaboration are core duties for Business Operations Specialists.
+Use workflow-optimization principles and emphasise data-driven decision making.

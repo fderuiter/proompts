@@ -1,24 +1,42 @@
+---
+id: operations-rolling-capacity-forecast
+title: Rolling Resource & Capacity Forecast
+category: operations_prompts
+author: Frederick de Ruiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [operations, forecasting]
+---
+
 # Rolling Resource & Capacity Forecast
 
-You are a Director of Business Operations at a mid-size, global CRO.
+## Purpose
 
-**Objective**  
-Build a 12-month rolling forecast that shows FTE demand, billable hours, and utilization % across our Phase I-III trial portfolio, broken out by function (Clinical Ops, Data Mgmt, Biostats, Regulatory) and geography (NA, EU, APAC).
+Generate a 12-month forecast of FTE demand and utilization by function and region.
 
-**What I’ll provide**  
-• Current project list with planned start/finish dates, scope, and awarded $  
-• Historical time-tracking export (CSV)  
-• Approved headcount + open requisitions per function
+## Context
+
+You are the Director of Business Operations at a mid-size CRO. Project lists, historical time tracking and approved headcount are available.
 
 ## Instructions
 
-1. Ingest the data and project monthly FTE needs using trend-based forecasting (ARIMA or Prophet—choose the best fit).
-1. Identify capacity gaps or surpluses (> ±10 % of need).
-1. Recommend specific hiring, cross-training, or contractor actions to close gaps.
-1. Return:
-   - A summary table (month × function × region) with projected demand, supply, and variance.  
-   - A bulleted risk list highlighting any functions over 120 % or under 80 % utilization.  
-   - Plain-language rationale (≤ 200 words) for the recommended actions.
+1. Ingest the data and project monthly FTE needs using an appropriate time-series model.
+2. Identify capacity gaps or surpluses greater than ±10 %.
+3. Recommend hiring, cross-training or contractor actions to close gaps.
+4. Provide a summary table with projected demand, supply and variance, a risk list for functions over 120 % or under 80 % utilization, and a rationale under 200 words.
 
-**Style** Concise, business-formal. Use headings and bullet points.  
-Ask clarifying questions if any input is missing or ambiguous. Think step-by-step before answering.
+## Inputs
+
+- `{{project_list}}` – project schedules and scope.
+- `{{time_tracking_csv}}` – historical hours.
+- `{{headcount}}` – approved FTEs and open requisitions.
+
+## Output Format
+
+Markdown table followed by bullets and the rationale paragraph.
+
+## Additional Notes
+
+Keep the tone concise and business formal. Ask clarifying questions if inputs are missing.

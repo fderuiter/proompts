@@ -1,25 +1,41 @@
-
-<!-- markdownlint-disable MD012 -->
+---
+id: operations-inventory-demand-planning
+title: Inventory & Demand-Planning Simulation
+category: operations_prompts
+author: Frederick de Ruiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [operations, supply-chain]
+---
 
 # Inventory & Demand-Planning Simulation
 
-Act as a **supply-chain data scientist** specializing in inventory optimization.
+## Purpose
 
-Context supplied below:
+Create a forecast and inventory plan from historical demand data.
 
-```csv
-SKU, Monthly_Demand_24M, LeadTime_Days, HoldingCost_USD
-…
-```
+## Context
 
-**Goal**
-Generate a 12-month demand forecast, compute EOQ & safety-stock per SKU (95 % service level), and propose inventory-rebalancing moves.
+You are a supply-chain data scientist specializing in inventory optimization.
+A CSV file with SKU, demand, lead time and holding cost will be provided.
 
-**Deliverables**
-Return a **JSON object** with keys:
+## Instructions
 
-* `forecast`              – table of projected demand
-* `inventory_plan`        – recommended reorder point, EOQ, safety-stock
-* `risks`                 – top 3 forecast or supply risks + mitigation
+1. Generate a 12-month demand forecast.
+2. Compute EOQ and safety stock per SKU for a 95% service level.
+3. Recommend inventory rebalancing moves.
+4. Present results in a JSON object.
 
-Use chain-of-thought internally but **do not** expose it; present only the JSON plus a ≤ 120-word note on methodology.
+## Inputs
+
+- `{{inventory_csv}}` – CSV data with past demand and costs.
+
+## Output Format
+
+JSON with keys `forecast`, `inventory_plan` and `risks`, followed by a methodology note not exceeding 120 words.
+
+## Additional Notes
+
+Use chain-of-thought internally but do not expose it.

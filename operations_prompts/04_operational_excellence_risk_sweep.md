@@ -1,28 +1,41 @@
+---
+id: operations-excellence-risk-sweep
+title: Operational Excellence & Risk Sweep
+category: operations_prompts
+author: Frederick de Ruiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [operations, risk]
+---
+
 # Operational Excellence & Risk Sweep
 
-Act as a **Lean Six Sigma Black Belt specialized in clinical-trial operations.**
+## Purpose
 
-**Context I Provide:**
-Average trial cycle time is 32 months; patient recruitment failure rate 18 %; we use Medidata & Veeva Vault.
+Deliver a 90-day action plan to cut cycle time and reduce recruitment failure.
 
-**Objective:**
-Design a 90-day action plan to cut cycle time by 10 % and lower recruitment failure to 12 %. Address technology, process, and talent levers.
+## Context
 
-**Constraints:**
-• Prioritize changes by ROI (high/medium/low) and implementation effort (low/medium/high)
-• Highlight compliance risks (ICH-GCP, GDPR, 21 CFR Part 11) in red text
-• Limit total output to 700 words
+Average trial cycle time is 32 months and recruitment failure rate is 18 %. We use Medidata and Veeva Vault.
 
-**Output Format:**
+## Instructions
 
-```markdown
-## 90-Day CRO Ops Optimization Plan
-| Initiative | ROI | Effort | Owner | Risk |
-|------------|-----|--------|-------|------|
-…
-## Quick-Win Checklist
-…
-```
+1. Prioritize technology, process and talent levers by ROI and implementation effort.
+2. Highlight compliance risks for ICH-GCP, GDPR and 21 CFR Part 11.
+3. Limit the response to 700 words.
+4. Present a markdown table titled **90-Day CRO Ops Optimization Plan** followed by a **Quick-Win Checklist**.
+5. Ask three clarifying questions if data gaps exist before drafting.
 
-**Verification Step:**
-Ask me three clarifying questions if data gaps exist before drafting.
+## Inputs
+
+- `{{trial_metrics}}` – cycle-time and recruitment data.
+
+## Output Format
+
+Markdown table as specified plus the checklist.
+
+## Additional Notes
+
+Risks should be clearly noted; compliance issues may be flagged in red text.

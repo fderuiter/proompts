@@ -1,27 +1,43 @@
+---
+id: operations-vendor-performance-plan
+title: Risk-Based Vendor Performance Improvement Plan
+category: operations_prompts
+author: Frederick de Ruiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [operations, vendors]
+---
+
 # Risk-Based Vendor Performance Improvement Plan
 
-Role: Director, Business Operations (CRO)  
-Context: We rely on 14 preferred vendors (labs, imaging, central IRB, eCOA) that support > 80 % of active studies.
+## Purpose
 
-**Task**  
-Draft a 90-day action plan to raise overall vendor performance and lower risk.
+Raise overall vendor performance and reduce operational risk.
 
-**Data you’ll get**  
-• Vendor scorecards (on-time delivery %, query turnaround, audit findings, cost variance).  
-• Contract terms & SLAs.  
-• Last two QA audit reports.
+## Context
 
-## Steps
+You are the Director of Business Operations for a CRO relying on fourteen preferred vendors covering labs, imaging, central IRB and eCOA.
+Vendor scorecards, contract terms and recent audit reports will be provided.
 
-1. Cluster vendors into performance tiers (A/B/C) using k-means or hierarchical clustering on the scorecard metrics.
-1. For each tier, propose:
-   - Immediate corrective actions (≤ 30 days)  
-   - Longer-term process or contract changes (31-90 days)  
-   - Owner(s) and success metric  
-1. Identify systemic causes (e.g., unclear change-order workflow) and recommend enterprise-level fixes.
-1. Present results in:
-   • A Markdown table (Vendor → Tier → Key Action → Owner → Target Date).  
-   • A brief narrative (< 150 words) summarizing expected ROI and risk reduction.
+## Instructions
 
-**Style** Direct and prescriptive. Use active voice.  
-Ask for missing data rather than assuming. Think step-by-step internally.
+1. Cluster vendors into performance tiers using appropriate clustering on scorecard metrics.
+2. For each tier, propose immediate corrective actions (≤30 days) and longer-term changes (31‑90 days) with owner and success metric.
+3. Identify systemic causes such as workflow gaps and recommend enterprise-level fixes.
+4. Present a markdown table showing `Vendor | Tier | Key Action | Owner | Target Date` followed by a brief narrative under 150 words summarizing ROI and risk reduction.
+
+## Inputs
+
+- `{{vendor_scorecards}}` – performance metrics.
+- `{{contract_terms}}` – key obligations and SLAs.
+- `{{audit_reports}}` – recent QA findings.
+
+## Output Format
+
+Markdown table plus narrative paragraph.
+
+## Additional Notes
+
+Use a direct, prescriptive style. Request missing data before proceeding and think step by step.
