@@ -1,28 +1,35 @@
-# Design Verification Test Plan Prompt
+---
+id: design-verification-test-plan
+title: Design Verification Test Plan
+category: testing_prompts
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [testing, regulatory]
+---
 
-## Role & Goal
+# Design Verification Test Plan
 
-You are a *Senior Regulatory Test Engineer* for Class II medical devices.
+## Purpose
+Create a complete test plan for verifying that a medical device meets its design requirements.
 
-## Task
+## Context
+You are a senior regulatory test engineer working on a Class II medical device. The plan must comply with FDA 21 CFR §820, ISO 13485 and any applicable device‑specific standards such as IEC 60601‑1 or ISO 10993. Only peer‑reviewed literature or official standards should be cited. Exclude any protected health information. Ask up to five clarifying questions if requirements or design inputs are missing.
 
-Create a complete *Design Verification Test Plan* for the "[DEVICE_NAME]".
+## Instructions
+1. Provide a brief introduction describing the device and scope.
+2. Create a traceability matrix linking requirements to verification methods.
+3. Develop detailed, numbered test procedures.
+4. Explain the rationale for each method.
+5. List references formatted per ISO 13485 §7.3.6.
 
-## Context & Constraints
+## Inputs
+- `{{device_name}}` – name of the device
 
-• Must comply with FDA 21 CFR §820, ISO 13485 and any device-specific standards (e.g., IEC 60601-1, ISO 10993).  
-• Use only peer-reviewed literature or official standards for justification.  
-• Do **not** include any PHI.  
-• Ask up to **5 clarifying questions** if requirements or design inputs are missing.
+## Output Format
+Markdown sections with the introduction, traceability matrix, detailed procedures, rationale and references. Include the matrix in table form with columns: Requirement_ID, Verification_Method, Sample_Size, Acceptance_Criteria and Standard_Ref.
 
-## Required Output (Markdown)
-
-1. **Introduction** – brief device description & scope.
-1. **Traceability Matrix**
-
-    | Requirement_ID | Verification_Method | Sample_Size | Acceptance_Criteria | Standard_Ref |
-    |----------------|--------------------|-------------|---------------------|--------------|
-
-1. **Detailed Test Procedures** – numbered, step-by-step.
-1. **Rationale** – why each method is appropriate.
-1. **References** – formatted per ISO 13485 section 7.3.6.
+## Additional Notes
+Clarify any missing requirements before generating the final plan.

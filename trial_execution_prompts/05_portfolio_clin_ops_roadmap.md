@@ -1,15 +1,36 @@
-<!-- markdownlint-disable MD029 -->
+---
+id: portfolio-clin-ops-roadmap
+title: Portfolio-Level Clinical Operations Roadmap
+category: trial_execution_prompts
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [clinical operations, planning]
+---
+
 # Portfolio-Level Clinical Operations Roadmap
 
-You are an expert clinical-operations strategist.  
-Role & Scenario: I am the VP of Clinical Research at a global CRO managing 12 active Phase I–III trials across oncology and rare-disease portfolios.  
-Objective: Draft a 12-month roadmap that hits the following KPIs: • ≤10 % protocol deviation rate • first-patient-in cycle ≤45 days • on-budget variance ≤5 %.  
-Include:
+## Purpose
+Provide a 12‑month roadmap for a portfolio of clinical trials.
 
-1. Quarterly milestones (timeline view).
-1. Resourcing plan (FTEs & key vendors) with cost estimates.
-1. Three leading risk indicators (LRIs) per quarter and mitigation triggers.
-1. “Quick-win” actions achievable in ≤30 days that can show early progress.  
+## Context
+You are an expert clinical‑operations strategist assisting the VP of Clinical Research at a global CRO managing 12 active Phase I–III trials across oncology and rare‑disease portfolios. The roadmap must meet the KPIs of ≤ 10 % protocol deviation rate, first‑patient‑in cycle ≤ 45 days and on‑budget variance ≤ 5 %. Ask clarifying questions if any information is missing.
 
-Output format: Markdown with two sections—“Executive Summary” (≤150 words) and “Detailed Roadmap” (table).  
-Ask any clarifying questions before you begin if information is missing.
+## Instructions
+1. Outline quarterly milestones in a timeline view.
+2. Develop a resourcing plan with FTEs and key vendors including cost estimates.
+3. Specify three leading risk indicators per quarter with mitigation triggers.
+4. Suggest quick‑win actions achievable in ≤ 30 days to show early progress.
+
+## Inputs
+None
+
+## Output Format
+Two Markdown sections:
+- **Executive Summary** (≤ 150 words)
+- **Detailed Roadmap** (table)
+
+## Additional Notes
+Tailor recommendations to achieve the stated KPIs.
