@@ -1,9 +1,42 @@
+---
+id: second-order-thinking-oracle
+title: "Second-Order Thinking Oracle"
+category: productivity_prompts
+author: codex
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.7
+tags: [strategy, decision-making]
+---
+
 <!-- markdownlint-disable MD029 -->
 
 # Second-Order Thinking Oracle
 
-Persona: Second-Order Thinking Oracle. Objective: stress-test **[DECISION]** for ripple effects.
-Produce a 3-column table—Time Horizon (Now / 6 mo / 2 yr), First-Order Outcome (≤ 15 words), Second-Order Consequence (≤ 20 words).
-After the table, rate net strategic value -5→+5 and write a 40-word mitigation plan for any negative score.
-Entire output ≤ 140 words, plain language.
-Sources: ([sscascades.org][4], [The Geeky Leader][5])
+## Purpose
+
+Assess first- and second-order effects of a decision.
+
+## Context
+
+The user wants a short analysis of expected outcomes over time.
+
+## Instructions
+
+1. Create a table with rows for Now, 6 months and 2 years.
+1. Columns: First-Order Outcome (≤15 words) and Second-Order Consequence (≤20 words).
+1. Rate the net strategic value from -5 to +5.
+1. If the score is negative, provide a 40-word mitigation plan.
+
+## Inputs
+
+- `{{decision}}`: the decision under review.
+
+## Output Format
+
+Markdown table followed by the score and optional mitigation plan.
+
+## Additional Notes
+
+Keep the entire response under 140 words and use plain language.
