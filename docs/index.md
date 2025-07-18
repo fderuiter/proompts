@@ -160,6 +160,12 @@
 - [360° Operational KPI & Benchmark Review](../operations_prompts/04_operational_kpi_benchmark_review.md)
 - [Proactive Risk Heat-Map for Decentralized & Virtual Trials](../operations_prompts/05_proactive_risk_heat_map.md)
 - [Forward-Looking Resource & Capacity Forecast](../operations_prompts/06_forward_capacity_forecast.md)
+- [CRO Trial-Performance KPI Dashboard Blueprint](../operations_prompts/04_cro_trial_performance_kpi_dashboard_blueprint.md)
+- [Multistudy Resource & Capacity Forecast Plan](../operations_prompts/05_multistudy_resource_capacity_forecast_plan.md)
+- [Fair-Market-Value Budget Negotiation Brief](../operations_prompts/06_fair_market_value_budget_negotiation_brief.md)
+- [Study Start-Up Checklist & Timeline](../operations_prompts/04_study_startup_checklist.md)
+- [Weekly Operations KPI Snapshot](../operations_prompts/05_weekly_ops_kpi_snapshot.md)
+- [Action-Oriented Meeting Minutes & Tracker](../operations_prompts/06_action_oriented_meeting_minutes.md)
 - [Overview](../operations_prompts/overview.md)
 
 ## Payment Prompts
@@ -177,6 +183,9 @@
 - [Detailed Project Blueprint & Timeline](../project_management/04_detailed_project_blueprint_timeline.md)
 - [Risk & Pre-Mortem Analysis](../project_management/05_risk_pre_mortem_analysis.md)
 - [Status Update & Task Prioritization](../project_management/06_status_update_task_prioritization.md)
+- [Clinical-Trial Timeline & Risk Radar](../project_management/07_clinical_trial_timeline_risk_radar.md)
+- [Sponsor-Ready Monthly Status Brief](../project_management/08_sponsor_ready_monthly_status_brief.md)
+- [TMF Gap-Analysis & Audit Readiness Check](../project_management/09_tmf_gap_analysis_audit_readiness_check.md)
 - [Overview](../project_management/overview.md)
 
 ## Regulatory Prompts
@@ -202,6 +211,9 @@
 - [Regulatory Radar](../regulatory_quality_prompts/01_regulatory_radar.md)
 - [Compliance Gap Risk Matrix](../regulatory_quality_prompts/02_compliance_gap_risk_matrix.md)
 - [Quality Improvement Rca Action Plan](../regulatory_quality_prompts/03_quality_improvement_rca_action_plan.md)
+- [eTMF Compliance Gap Analysis](../regulatory_quality_prompts/04_etmf_compliance_gap_analysis.md)
+- [CAPA Plan Generator](../regulatory_quality_prompts/05_capa_plan_generator.md)
+- [Risk-Based Quality Management Plan](../regulatory_quality_prompts/06_risk_based_quality_management_plan.md)
 - [Overview](../regulatory_quality_prompts/overview.md)
 
 ## Rtsm Prompts
@@ -322,3 +334,10 @@
 - [Device–Tissue Interface Evaluation](../pathology_prompts/02_device_tissue_interface_evaluation.md)
 - [Slides & Reporting Workflow](../pathology_prompts/03_slides_and_reporting_workflow.md)
 - [Overview](../pathology_prompts/overview.md)
+
+## HR & Finance Prompts
+
+- [Strategic Workforce & Talent-Acquisition Plan](../hr_finance_prompts/01_strategic_workforce_talent_acquisition_plan.md)
+- [Clinical-Trial Budget & Burn-Rate Dashboard](../hr_finance_prompts/02_clinical_trial_budget_burn_rate_dashboard.md)
+- [GCP / GDPR Compliance & Training Risk Report](../hr_finance_prompts/03_gcp_gdpr_compliance_training_risk_report.md)
+- [Overview](../hr_finance_prompts/overview.md)
