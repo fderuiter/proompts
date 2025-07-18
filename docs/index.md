@@ -107,6 +107,8 @@
 - [Strategic Market Foresight](../executive_prompts/01_strategic_market_foresight.md)
 - [Crisis Management Playbook](../executive_prompts/02_crisis_management_playbook.md)
 - [Executive Brief Synthesizer](../executive_prompts/03_executive_brief_synthesizer.md)
+- [Market & Competitor Radar](../executive_prompts/04_market_competitor_radar.md)
+- [Investor & Board Narrative Builder](../executive_prompts/05_investor_board_narrative_builder.md)
 - [Overview](../executive_prompts/overview.md)
 
 ## Glp Prompts
@@ -157,6 +159,7 @@
 - [Rapid Process Diagnostic](../operations_prompts/01_rapid_process_diagnostic.md)
 - [Inventory Demand Planning Simulation](../operations_prompts/02_inventory_demand_planning_simulation.md)
 - [Kpi Dashboard Ops Review](../operations_prompts/03_kpi_dashboard_ops_review.md)
+- [Operational Excellence & Risk Sweep](../operations_prompts/04_operational_excellence_risk_sweep.md)
 - [Overview](../operations_prompts/overview.md)
 
 ## Payment Prompts
