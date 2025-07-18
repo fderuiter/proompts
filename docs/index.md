@@ -156,19 +156,19 @@
 
 ## Data Management Prompts
 
-- [Unified Data Cleansing & Consolidation](../data_management_prompts/01_unified_data_cleansing.md)
-- [Regulatory Data-Governance Gap Analysis](../data_management_prompts/02_regulatory_gap_analysis.md)
-- [Future-Proof Data-Architecture Blueprint](../data_management_prompts/03_data_architecture_blueprint.md)
-- [Clinical ETL Mapping Specification](../data_management_prompts/04_clinical_etl_mapping_spec.md)
-- [Clinical ETL Transformation Code and QC](../data_management_prompts/05_clinical_etl_transformation_qc.md)
-- [Clinical ETL Pipeline Review and Optimisation](../data_management_prompts/06_clinical_etl_pipeline_review.md)
-- [Draft a Phase II Oncology Data Management Plan](../data_management_prompts/07_phase_ii_oncology_dmp.md)
-- [Assess Data-Quality Risks in Decentralized Trials](../data_management_prompts/08_decentralized_trial_risk_matrix.md)
-- [Gap-Analyse Data-Management SOPs vs. Current Regulations](../data_management_prompts/09_sop_gap_analysis.md)
+- [Unified Data Cleansing](../data_management_prompts/01_unified_data_cleansing.md)
+- [Regulatory Gap Analysis](../data_management_prompts/02_regulatory_gap_analysis.md)
+- [Data Architecture Blueprint](../data_management_prompts/03_data_architecture_blueprint.md)
+- [Clinical ETL Mapping Spec](../data_management_prompts/04_clinical_etl_mapping_spec.md)
+- [Clinical ETL Transformation QC](../data_management_prompts/05_clinical_etl_transformation_qc.md)
+- [Clinical ETL Pipeline Review](../data_management_prompts/06_clinical_etl_pipeline_review.md)
+- [Phase II Oncology DMP](../data_management_prompts/07_phase_ii_oncology_dmp.md)
+- [Decentralized Trial Risk Matrix](../data_management_prompts/08_decentralized_trial_risk_matrix.md)
+- [SOP Gap Analysis](../data_management_prompts/09_sop_gap_analysis.md)
 
 ## Design Prompts
 
-- [Design.md Template and Guidelines](../design_prompts/01_design_md_template.md)
+- [Design.md Template](../design_prompts/01_design_md_template.md)
 - [AI Email Assistant Go/No-Go Vote](../design_prompts/02_email_assistant_go_no_go_vote.md)
 
 ## Eclinical Integration Prompts

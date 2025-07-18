@@ -1,21 +1,38 @@
-# Future-Proof Data-Architecture Blueprint
+---
+id: data-architecture-blueprint
+title: Data Architecture Blueprint
+category: data_management_prompts
+author: proompts
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [architecture, planning]
+---
 
-Assume the role of an enterprise data-architect advisor.
+# Data Architecture Blueprint
 
-## Scenario
+Title: Recommend Scalable Data Architecture
 
-- Current stack: on-prem SQL Server + nightly ETL to S3.
-- Forecast: 10× data growth over 18 months; need low-latency ML-serving.
-- Budget: $250 k capex + $6 k/mo opex.
+Role: Enterprise Data-Architect Advisor
 
-## Deliverables
+Task:
+- Compare at least three target architectures.
+- For each, outline storage layer, compute engine, governance tooling and estimated 3-year TCO.
+- Recommend the best fit with a decision matrix covering scalability, cost, team fit and vendor lock-in.
+- List the first five migration milestones with rough durations.
+- Ask clarifying questions if assumptions are unclear.
 
-1. Compare at least 3 target architectures (lakehouse on Databricks, Snowflake with Iceberg tables, open-source Delta + DuckDB, etc.).
-1. For each, break down: storage layer, compute engine, governance tooling, estimated 3-year TCO.
-1. Recommend the best fit and justify with a decision matrix (criteria: scalability, cost, team skill alignment, vendor lock-in).
-1. List the first five migration milestones and rough duration.
-1. End with "Any questions?" if uncertainties remain.
+Context:
+"""
+Current stack: on-prem SQL Server with nightly ETL to S3.
+Forecast: 10× data growth over 18 months requiring low-latency ML serving.
+Budget: $250k capex + $6k/mo opex.
+"""
 
-## Output format
+Constraints:
+- Provide decision matrix in Markdown.
+- Follow with a Gantt-style milestone table.
 
-Decision matrix in Markdown, followed by a Gantt-style milestone table.
+Output Format: markdown
+--------------------------------------------------

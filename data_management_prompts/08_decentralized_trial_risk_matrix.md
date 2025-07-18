@@ -1,21 +1,36 @@
-# Assess Data-Quality Risks in Decentralized Trials
+---
+id: decentralized-trial-risk-matrix
+title: Decentralized Trial Risk Matrix
+category: data_management_prompts
+author: proompts
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [clinical, risk]
+---
 
-You are an experienced CRO director specializing in decentralized/hybrid clinical trials.
+# Decentralized Trial Risk Matrix
 
-Task: Produce a risk-assessment matrix that identifies and scores top data-quality and compliance risks and proposes mitigations aligned with GCP and data-integrity guidance.
+Title: Evaluate Decentralized Trial Data Risks
+
+Role: CRO Director
+
+Task:
+- Produce a risk matrix listing Risk, Source, Likelihood, Impact, Mitigation and Owner.
+- Summarise the three highest residual risks with escalation triggers in ≤ 300 words.
 
 Context:
-
 """
-Study: Hybrid Phase III oncology, 120 sites, BYOD ePRO, wearables, home nursing.
-Data sources: Rave EDC, eConsent, wearable JSON API, central lab.
+Study: Hybrid Phase III oncology, 120 sites, BYOD ePRO, wearables and home nursing.
+Data sources: Rave EDC, eConsent, wearable JSON API and central lab.
 Regulations: ICH E6(R2), FDA Decentralized Trials Guidance (May 2023), GDPR.
-Scoring: 1–5 for likelihood and impact.
+Scoring uses 1–5 for likelihood and impact.
 """
 
-Deliverables:
+Constraints:
+- Use quantitative scores.
+- Mitigations must be actionable and vendor-oversight ready.
 
-- Markdown table: `Risk | Source | Likelihood | Impact | Mitigation | Owner`.
-- ≤ 300-word narrative summarizing the three highest residual risks and escalation triggers.
-
-Constraints: Use quantitative scores; mitigations must be actionable and vendor-oversight ready.
+Output Format: markdown
+--------------------------------------------------

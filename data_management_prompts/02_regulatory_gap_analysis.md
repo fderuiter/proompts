@@ -1,23 +1,38 @@
-# Regulatory Data-Governance Gap Analysis
+---
+id: regulatory-gap-analysis
+title: Regulatory Gap Analysis
+category: data_management_prompts
+author: proompts
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [compliance, governance]
+---
 
-You are the Chief Data Officer for a mid-size healthcare provider.
+# Regulatory Gap Analysis
 
-## Context
+Title: Audit Data Governance vs Regulations
 
-- Current data-governance policy excerpt (pasted below).
-- Target regulation: GDPR Art. 5 & EU AI Act Title IV.
-- Objective: find compliance gaps and draft a remediation roadmap.
+Role: Chief Data Officer
 
-## Instructions
+Task:
+- Map each policy clause to GDPR Art.5 and EU AI Act Title IV.
+- Flag partial or missing coverage.
+- Rate risk severity and business impact.
+- Recommend top five remediation actions in priority order.
+- Clarify any missing details.
 
-1. Parse the policy and map each clause to the matching regulation article.
-1. Flag any *partial* or *missing* coverage.
-1. Rate the risk severity (High/Med/Low) and business impact.
-1. Recommend the top 5 remediation actions, ordered by risk-reduction ROI.
-1. Ask clarifying questions if policy details are insufficient.
+Context:
+"""
+Current policy excerpt provided separately.
+Target regulations: GDPR Art.5 and EU AI Act Title IV.
+Objective: deliver a compliance gap analysis and remediation roadmap.
+"""
 
-## Output format
+Constraints:
+- Present findings in a table: Regulation article | Current coverage | Gap description | Risk | Recommended fix.
+- Follow with a numbered action list.
 
-| Regulation article | Current coverage | Gap description | Risk | Recommended fix |
-|--------------------|------------------|-----------------|------|-----------------|
-*(fill the table, then provide a numbered action list)*
+Output Format: markdown
+--------------------------------------------------

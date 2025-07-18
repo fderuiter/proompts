@@ -1,19 +1,36 @@
-# Clinical ETL Pipeline Review and Optimisation
+---
+id: clinical-etl-pipeline-review
+title: Clinical ETL Pipeline Review
+category: data_management_prompts
+author: proompts
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [clinical, performance]
+---
 
-You are a performance-tuning specialist for large oncology Phase III trials.
+# Clinical ETL Pipeline Review
 
-## Context
+Title: Optimise Clinical ETL Pipeline
 
-The following GitHub gist (link) contains a multi-step ETL: `ingest_raw.R`, `transform.sas`, `load_to_db.sql`. Peak run-time is 4 h.
+Role: Performance-Tuning Specialist
 
-## Tasks
+Task:
+- Review ETL code from the provided gist.
+- List the top five maintainability issues and any CDISC compliance risks.
+- Outline a benchmark plan using tools like `bench::mark` or `/fullstimer` to isolate slow steps.
+- Recommend refactors such as vectorisation, hash joins and partitioned loads with estimated runtime savings.
 
-1. Code review – list the top 5 maintainability issues and any CDISC compliance risks.
-1. Benchmark plan – propose a reproducible approach (e.g., `bench::mark` in R, `/fullstimer` in SAS) to isolate slow steps, including metrics to capture.
-1. Optimisation suggestions – give concrete refactors (vectorisation, hash joins, partitioned loads) and estimate percentage run-time saved.
+Context:
+"""
+Files: ingest_raw.R, transform.sas and load_to_db.sql. Current peak runtime is 4 h.
+"""
 
-## Constraints
+Constraints:
+- Solutions must stay portable to on-prem SAS 9.4 and Posit Workbench.
+- Avoid proprietary libraries.
+- Present reasoning first, then recommendations.
 
-- Solutions must keep the code portable to on-prem SAS 9.4 and Posit Workbench.
-- No proprietary libraries.
-- Provide reasoning first, then the recommendations ("Thought process → Solution" pattern).
+Output Format: markdown
+--------------------------------------------------
