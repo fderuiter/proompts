@@ -298,6 +298,9 @@
 - [AI-Powered Site & Recruitment Strategy](../trial_execution_prompts/02_ai_powered_site_recruitment.md)
 - [Compliance, Data Quality & Monitoring Plan](../trial_execution_prompts/03_compliance_data_quality_monitoring_plan.md)
 - [Adaptive Recruitment & Retention Strategy](../trial_execution_prompts/04_adaptive_recruitment_retention_strategy.md)
+- [Portfolio-Level Clinical Operations Roadmap](../trial_execution_prompts/05_portfolio_clin_ops_roadmap.md)
+- [Risk-Based Monitoring & Quality Plan](../trial_execution_prompts/06_risk_based_monitoring_plan.md)
+- [Patient Recruitment & Diversity Acceleration Plan](../trial_execution_prompts/07_recruitment_diversity_acceleration.md)
 - [Overview](../trial_execution_prompts/overview.md)
 
 ## Adjudication Prompts
