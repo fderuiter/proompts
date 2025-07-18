@@ -232,6 +232,13 @@
 - [CDASH Mapping & Completion-Guide Assistant](../clinical_prompts/03_cdash_mapping_completion_guide.md)
 - [Overview](../clinical_prompts/overview.md)
 
+## Clinical Data Prompts
+
+- [Discrepancy Detection & Query Log Generator](../clinical_data_prompts/01_discrepancy_detection_query_log.md)
+- [Draft a Data Management Plan Section](../clinical_data_prompts/02_data_management_plan_section.md)
+- [Edit-Check Specification Builder](../clinical_data_prompts/03_edit_check_specification_builder.md)
+- [Overview](../clinical_data_prompts/overview.md)
+
 ## Biosafety Prompts
 
 - [Risk Assessment Expert](../biosafety_prompts/01_risk_assessment_expert.md)
