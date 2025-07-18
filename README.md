@@ -34,6 +34,7 @@ This repository also runs workflows to generate missing `overview.md` files, ver
 ## Contributing
 
 1. Add prompts as `.md` files in the appropriate folder.
+1. Before committing, sanitize and standardize the file using `prompt_tools/L5_prompt_sanitiser.md` and `prompt_tools/L5_standardize-prompt-files.md`.
 1. If you create a new directory, an `overview.md` will be generated automatically by the workflow.
 1. The docs index and Markdown formatting are checked in CI, but you can run `scripts/validate_markdown.sh` locally.
 

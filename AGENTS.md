@@ -15,6 +15,10 @@ Follow these steps when adding a new prompt:
 1. Create a Markdown file that contains the prompt text. Begin with a level-one heading describing the prompt.
 1. Place the file in the appropriate directory (`agentic_coding`, `meta_prompts`, etc.). Create new directories if needed using short, lowercase names separated by underscores.
 1. When you make a new directory, also add an `overview.md` file inside it that briefly explains the prompts in that folder.
+1. Run the draft through `prompt_tools/L5_prompt_sanitiser.md`.
+1. Use `prompt_tools/L5_standardize-prompt-files.md` to ensure front-matter conforms to the schema.
+1. For large reorganizations, follow `prompt_tools/L5_refactor-reindex-prompts.md`.
+1. Optionally, run `prompt_tools/01_architecture_review_pipeline.md` for repository audits.
 1. Run `scripts/update_docs_index.py` to regenerate the docs index (or rely on `.github/workflows/update-docs.yml`).
 1. Verify the Markdown formatting by running `./scripts/validate_markdown.sh`.
 1. Commit the new file with a concise message, e.g. `Add data ingestion prompt`.
