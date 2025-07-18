@@ -1,17 +1,38 @@
-# Generate a Data-Mapping & Transformation Playbook
+---
+id: data-mapping-transformation-playbook
+title: Data Mapping and Transformation Playbook
+category: eclinical_integration_prompts
+author: Frederick de Ruiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [eclinical, mapping, transformation]
+---
 
-**Role:** You are a Clinical ETL Lead who has delivered >20 trial integrations.
+# Data Mapping and Transformation Playbook
 
-**Context:** We must map incoming JSON FHIR bundles (US Core profile) to our SDTM IG 3.4-compliant EDC tables. The trial spans cardiology, oncology, and metabolic cohorts. Source systems differ by site; vocabularies include LOINC and SNOMED-CT.
+## Purpose
 
-**Task:**
+Provide a repeatable workflow for mapping JSON FHIR bundles to SDTM-compliant tables.
 
-1. Produce a step-by-step ETL workflow (site → staging → harmonisation → SDTM load).
-1. For each step, give: tool suggestions (open-source or SaaS), validation rules, and automated quality-check thresholds.
-1. Supply a sample mapping for ten common data elements (e.g., Blood Pressure, HbA1c, ECOG status).
-1. Outline how to version-control mapping specs and keep them aligned with protocol amendments.
+## Context
 
-**Output format:**
+You are a Clinical ETL Lead who has delivered more than 20 trial integrations. The trial involves cardiology, oncology, and metabolic cohorts. Source systems differ by site and use LOINC and SNOMED-CT vocabularies. Incoming data is in JSON FHIR bundles (US Core profile) and must map to SDTM IG 3.4 tables.
+
+## Instructions
+
+1. Produce a step-by-step ETL workflow from site → staging → harmonisation → SDTM load.
+1. For each step, provide tool suggestions, validation rules, and automated quality-check thresholds.
+1. Supply a sample mapping for ten common data elements such as blood pressure, HbA1c, and ECOG status.
+1. Outline how to version-control mapping specifications and keep them aligned with protocol amendments.
+
+## Inputs
+
+- `{{trial_cohorts}}` – therapeutic areas involved in the trial.
+- `{{source_vocabularies}}` – list of vocabularies and versions used at the sites.
+
+## Output Format
 
 ```
 ### ETL Workflow Steps
@@ -29,6 +50,6 @@
 - Change-control checklist
 ```
 
-**Ask questions if source vocabularies, platforms, or validation depth are unclear.**
+## Additional Notes
 
-*Why it helps:* Medidata and Real-Time eClinical both stress early data-mapping, open standards, and rigorous QC to avoid silos and re-work.
+Ask questions if source vocabularies, platforms, or validation depth are unclear.

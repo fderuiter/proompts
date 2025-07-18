@@ -1,28 +1,38 @@
+---
+id: payment-reconciliation-discrepancy
+title: Payment Reconciliation and Discrepancy Report
+category: payment_prompts
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [payments, audit]
+---
+
 # Payment Reconciliation and Discrepancy Report
 
-## You are
+## Purpose
+Identify and categorize payment discrepancies before study close-out.
 
-A compliance auditor specializing in investigator payments.
-
-## Goal
-
-Identify and categorize all payment discrepancies for Study "Cardio-5678" before close-out.
-
-## Data Provided
-
-- `Payment_Ledger.xlsx` – actual payments made (date, site, currency, amount, invoice #).
-- `CTA_Budget.xlsx` – contract-agreed milestone amounts and payment terms.
-- `Site_Queries.csv` – open payment-related queries logged in the CTMS.
+## Context
+You are a compliance auditor reviewing payments for Study "Cardio-5678." Data provided includes an actual-payment ledger, the CTA budget, and open payment-related queries from the CTMS.
 
 ## Instructions
+1. Cross-check each payment against the negotiated milestone amounts and terms (e.g., NET30 after data entry).
+2. Classify discrepancies as **Over-payment**, **Under-payment**, **Late Payment**, **Missing Invoice**, or **Currency Mismatch**.
+3. Recommend a corrective action for each discrepancy (e.g., claw-back, manual top-up, FX true-up).
+4. Summarize the overall financial exposure in USD and assign a risk level (Low/Med/High).
+5. Confirm any data-quality questions before starting.
 
-1. Cross-check each payment against the negotiated milestone amounts and payment terms (e.g., NET30 after data entry).
-1. Classify discrepancies as **Over-payment, Under-payment, Late Payment, Missing Invoice, Currency Mis-match**.
-1. For each discrepancy, recommend a corrective action (e.g., claw-back, manual top-up, FX true-up).
-1. Summarize the overall financial exposure in USD and risk level (Low/Med/High).
-1. Confirm any data-quality questions before starting.
+## Inputs
+- `{{payment_ledger}}`
+- `{{cta_budget}}`
+- `{{site_queries}}`
 
-## Deliverable
+## Output Format
+- Markdown table with columns: `Site_ID | Issue_Type | Amount_USD | Root_Cause | Recommended_Action`.
+- Bullet list of systemic issues and preventative next steps.
 
-- A markdown table with columns: `Site_ID | Issue_Type | Amount_USD | Root_Cause | Recommended_Action`.
-- A bullet list of systemic issues and preventative next steps.
+## Additional Notes
+Keep recommendations actionable and concise.

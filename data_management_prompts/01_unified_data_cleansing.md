@@ -1,29 +1,37 @@
-# Unified Data Cleansing & Consolidation
+---
+id: unified-data-cleansing
+title: Unified Data Cleansing
+category: data_management_prompts
+author: proompts
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [data, cleansing]
+---
 
-You are a senior data engineer.
+# Unified Data Cleansing
 
-## Context
+Title: Clean and Merge Data Sources
 
-- Source-1: 2024-Q4 e-commerce CSV (schema below)
-- Source-2: CRM export (JSON)
-- Goal: build a single, analysis-ready table by close of business.
+Role: Senior Data Engineer
 
-## Task
+Task:
+- Detect schema mismatches, missing values and outliers.
+- Propose normalization rules for naming, types, units and time zones.
+- Provide Python pseudocode to load sources, apply rules and output one DataFrame.
+- List assumptions and ask clarifying questions for ambiguities.
 
-1. Identify schema mismatches, missing values, and outliers.
-1. Propose normalization rules (naming, data types, units, time-zones).
-1. Generate Python-pandas pseudocode for:
-   - loading both sources
-   - applying the rules
-   - returning a consolidated DataFrame
-1. List any assumptions; ask clarifying questions if something is ambiguous.
+Context:
+"""
+Source-1: 2024-Q4 e-commerce CSV.
+Source-2: CRM export (JSON).
+Goal: build an analysis-ready table by close of business.
+"""
 
-## Output format
+Constraints:
+- Use fenced `python` blocks for pseudocode.
+- End with bullet questions that remain open.
 
-Use fenced Markdown blocks:
-
-```python
-# step-by-step pseudocode here
-```
-
-Follow with a bullet list of remaining open questions.
+Output Format: markdown
+--------------------------------------------------

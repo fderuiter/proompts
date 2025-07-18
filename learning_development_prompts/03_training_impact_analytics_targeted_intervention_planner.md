@@ -1,33 +1,40 @@
-# Training-Impact Analytics & Targeted Intervention Planner
+---
+id: ld-training-impact-analytics
+title: Training Impact Analytics Planner
+category: learning_development_prompts
+author: prompt-team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [analytics, training]
+---
 
-<!-- markdownlint-disable MD029 -->
+# Training-Impact Analytics and Targeted Intervention Planner
 
-Act as a learning-data scientist for a mid-size global CRO.
+## Purpose
+Correlate training data with audit deviations and design interventions for high-risk learners.
 
-## Dataset Available
-
+## Context
+You are acting as a learning data scientist for a mid-size global CRO. Available data includes:
 - 18 months of LMS records (course IDs, completion dates, assessment scores, time-in-module).
-- Monthly audit findings (number & category of GCP deviations per study).
-- Employee metadata (role, tenure, geography).
+- Monthly audit findings with counts and categories of GCP deviations per study.
+- Employee metadata such as role, tenure, and geography.
 
-## Mission
+## Instructions
+1. Provide a data-prep checklist covering cleansing and feature engineering.
+2. Propose two predictive model options and explain their pros and cons.
+3. Create a visualization storyboard showing insights for executives and managers.
+4. Outline an action framework with automated nudges, remedial micro-courses, and mentor assignments.
+5. Emphasize privacy (GDPR) and small-sample precautions.
+6. Reference at least one open-source Python library for each step.
+7. Think through potential confounders before proposing models.
 
-Build a step-by-step plan to:
+## Inputs
+- `{{analysis_goal}}` – specific compliance or performance metric to improve.
 
-A. Correlate training data with audit deviations to identify leading indicators of non-compliance.
-B. Segment learners by risk and recommend precision interventions.
+## Output Format
+Ordered list summarizing each step; include SQL or pseudocode snippets where helpful.
 
-## Deliverable Structure
-
-1. Data-prep checklist (cleansing, feature engineering).
-1. Two predictive-model options (explain pros/cons of, e.g., logistic regression vs. gradient-boosted trees).
-1. Visualization storyboard: which insights go to whom (executive dashboard vs. manager drill-downs).
-1. Action framework: automated nudges, remedial micro-courses, mentor assignment.
-
-## Constraints
-
-- Emphasize privacy (GDPR) and small-sample precautions.
-- Reference at least one open-source Python library per step.
-- Think through potential confounders before proposing models.
-
-Return the plan as an ordered list; include SQL or pseudocode snippets where needed.
+## Additional Notes
+Keep recommendations concise and grounded in the provided dataset.

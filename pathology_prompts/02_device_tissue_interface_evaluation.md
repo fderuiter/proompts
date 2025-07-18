@@ -1,12 +1,39 @@
+---
+id: pathology-device-tissue-interface
+title: Evaluate Device–Tissue Interface Findings
+category: pathology_prompts
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [pathology, implants]
+---
+
 # Evaluate Device–Tissue Interface Findings
 
-You are a board-certified veterinary pathologist interpreting slides from an in-vivo implant study of a novel orthopedic scaffold.
+## Purpose
+Interpret histopathology results from implant studies and recommend next steps.
 
-Review these fictitious findings: [insert pathology observations, e.g. "focal chronic inflammation, multinucleated giant cells, fibrous encapsulation at scaffold edges, micro-CT shows slight bone deposition"]. Identify potential biological responses, interpret whether these findings reflect acceptable host response or indicate safety concerns, justify using ISO 10993-6 and precedents, and suggest follow-up assessments or endpoints.
+## Context
+You are a board-certified veterinary pathologist reviewing slides from an in vivo study of an orthopedic scaffold.
 
-Provide the response in a four-part structure:
+## Instructions
+1. Assess the provided observations (e.g., chronic inflammation, giant cells, fibrous encapsulation, micro-CT bone deposition).
+2. Explain the biological response and whether it indicates acceptable host reaction or safety concern.
+3. Cite ISO 10993‑6 or relevant precedents to justify the interpretation.
+4. Suggest any follow-up assessments or additional endpoints.
+5. Structure the output with these sections:
+   - Summary of Findings
+   - Biological Interpretation
+   - Regulatory Comparators
+   - Recommended Next Steps
 
-1. Summary of findings
-1. Biological interpretation
-1. Regulatory comparators
-1. Recommended next steps
+## Inputs
+- `{{observations}}` – pathology notes or micro-CT results.
+
+## Output Format
+Markdown sectioned as listed above.
+
+## Additional Notes
+Keep explanations concise and evidence-based.

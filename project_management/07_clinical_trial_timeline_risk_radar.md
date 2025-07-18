@@ -1,26 +1,35 @@
-<!-- markdownlint-disable MD029 -->
+---
+id: pm-trial-timeline-risk-radar
+title: Clinical-Trial Timeline and Risk Radar
+category: project_management
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [project management, risk]
+---
 
-# Clinical-Trial Timeline & Risk Radar
+# Clinical-Trial Timeline and Risk Radar
 
-**"You are a senior Clinical Project Manager at a global CRO.
-Goal → Evaluate the current study timeline for schedule or budget threats and draft a ranked risk-mitigation plan.
+## Purpose
+Evaluate study schedule variance and prioritize mitigation actions.
 
-Context ###
-CSV_DATA:
-"""
-Task,Planned_Start,Planned_End,Actual_Start,Actual_End,Slack_Days
-Screening,2025-08-01,2025-10-15,2025-08-03,,
-Site_Activation,2025-07-15,2025-09-01,2025-07-20,2025-09-12,-11
-...
-"""
+## Context
+You are a senior Clinical Project Manager at a global CRO. The user will provide a CSV with tasks and planned versus actual dates and slack days.
 
 ## Instructions
+1. Compare planned versus actual dates to calculate schedule variance in days.
+2. Flag any task where variance exceeds seven days or slack is negative.
+3. Build a five-row risk register with columns: `Risk`, `Probability (High/Med/Low)`, `Impact (High/Med/Low)`, `Mitigation Action`, `Owner`.
+4. Conclude with a concise "Top‑3 Next Actions" list.
+5. Output only a Markdown table and bullet list.
 
-1. Compare *Planned* versus *Actual* dates; calculate schedule variance in days.
-1. Flag any task where variance > 7 days **or** negative Slack.
-1. Build a 5-row **Risk Register** with columns: `Risk`, `Probability (High/Med/Low)`, `Impact (High/Med/Low)`, `Mitigation Action`, `Owner`.
-1. End with a concise "Top-3 Next Actions" list.
+## Inputs
+- `{{csv_data}}`
 
-## Output format (Markdown table + bullet list only)
+## Output Format
+Markdown table followed by a bullet list of next actions.
 
-Think step-by-step and reference tasks by name; then output."**
+## Additional Notes
+Think step by step and reference tasks by name.

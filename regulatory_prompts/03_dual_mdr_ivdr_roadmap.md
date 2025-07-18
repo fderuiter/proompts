@@ -1,31 +1,48 @@
+---
+id: dual-mdr-ivdr-roadmap
+title: Dual MDR / IVDR Conformity-Assessment Roadmap
+category: regulatory_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [MDR, IVDR]
 # Dual MDR / IVDR Conformity-Assessment Roadmap
+---
 
-You are an EU regulatory strategist experienced in simultaneous MDR & IVDR submissions.
+## Purpose
 
-**Scenario**  
-A start-up plans to launch:  
-• A Class IIa wearable ECG monitor (MDR)  
-• A companion Class B cloud-based algorithm that outputs diagnostic indices (IVDR software)
+Develop a coordinated roadmap for simultaneous MDR and IVDR submissions.
 
-**Need**
-Create a side-by-side roadmap from July 2025 to December 2028 that covers:
+## Context
 
-‣ Device-classification justification (Annex VIII MDR; Annex VIII IVDR)  
-‣ Applicable harmonised standards / common specs  
-‣ Conformity-assessment route & Notified-Body engagement points  
-‣ QMS milestones (ISO 13485 & 15189 where relevant)  
-‣ Verification, validation, and clinical / performance-evidence activities  
-‣ Post-market deliverables (PMS plan, PMCF/PMPF, PSURs)  
-‣ Key EU and national transition deadlines (show hard dates)
+You are an EU regulatory strategist. A start‑up plans to launch:
+• A Class IIa wearable ECG monitor (MDR)
+• A companion Class B cloud‑based algorithm producing diagnostic indices (IVDR software)
 
-**Output format**
-A two-part answer:
+## Instructions
 
-1. **Timeline table** – rows = calendar quarters, columns = deliverables, with responsible function codes (RA, QA, R&D).  
-1. **Narrative (≤ 250 words)** – highlight critical path, resource overlaps, and NB-capacity risks.
+1. Create a side‑by‑side roadmap covering July 2025 to December 2028 with:
+   - Device‑classification justification (Annex VIII MDR and IVDR).
+   - Applicable harmonised standards or common specs.
+   - Conformity‑assessment route and Notified Body engagement points.
+   - QMS milestones (ISO 13485 and 15189 as relevant).
+   - Verification, validation, and clinical or performance‑evidence activities.
+   - Post‑market deliverables such as PMS plan, PMCF/PMPF, PSURs.
+   - Key EU and national transition deadlines with dates.
+2. Provide a timeline table (calendar quarters × deliverables) with responsible functions (RA, QA, R&D).
+3. Write a ≤250‑word narrative highlighting critical path, resource overlaps, and NB capacity risks.
+4. Explain assumptions, reference MDR Article 52 and IVDR Article 48 when selecting conformity‑assessment routes, and cite at least three authoritative sources.
 
-## Guidance
+## Inputs
 
-- Explain any assumptions.  
-- Reference MDR Article 52 and IVDR Article 48 when choosing conformity-assessment routes.  
-- Cite at least three authoritative sources (regulation text, guidance or NB publications).
+- `{{startup_info}}` — any additional project details.
+
+## Output Format
+
+Timeline table followed by the narrative summary.
+
+## Additional Notes
+
+Focus on clear milestones and risk mitigation.

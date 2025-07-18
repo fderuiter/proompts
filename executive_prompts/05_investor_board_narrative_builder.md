@@ -1,28 +1,44 @@
-<!-- markdownlint-disable MD029 MD033 MD036 -->
+---
+id: investor-board-narrative-builder
+title: Investor and Board Narrative Builder
+category: executive_prompts
+author: Frederick de Ruiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [executive, investor]
+---
 
-# Investor & Board Narrative Builder
+# Investor and Board Narrative Builder
 
-You are a biotech investment banker turned communications strategist.
+## Purpose
 
-**Context I Provide:**
-We are raising a $150 M Series C to expand into Asia-Pacific decentralized trials. Current run-rate EBITDA margin: 22 %.
+Craft a concise two-slide narrative for investors and board members.
 
-**Objective:**
-Draft a compelling two-slide narrative (text only) that explains our growth thesis, defends margins, and addresses competitive moats.
+## Context
 
-**Constraints:**
-• Slide 1 = 'Vision & Market Opportunity'; Slide 2 = 'Execution & Financial Upside'
-• Each slide ≤ 130 words, punchy sentences, no jargon
-• Include one memorable data-driven soundbite per slide
+You are a biotech investment banker turned communications strategist. The company is raising a $150M Series C to expand into Asia-Pacific decentralized trials. Current run-rate EBITDA margin is 22%.
 
-**Output Format:**
+## Instructions
 
-```markdown
+1. Write Slide 1: “Vision & Market Opportunity.”
+1. Write Slide 2: “Execution & Financial Upside.”
+Each slide must be ≤130 words, use punchy sentences, and include one memorable data-driven soundbite. Avoid jargon.
+
+## Inputs
+
+- `{{financials}}` – key financial highlights to reference.
+
+## Output Format
+
+```
 ### Slide 1 – Vision & Market Opportunity
 …
 ### Slide 2 – Execution & Financial Upside
 …
 ```
 
-**Tone:**
-Confident, forward-looking, but evidence-based.
+## Additional Notes
+
+Tone should be confident and evidence-based.

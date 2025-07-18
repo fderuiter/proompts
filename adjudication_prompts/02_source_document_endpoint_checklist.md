@@ -1,24 +1,40 @@
-# Build a Source-Document & Endpoint Checklist
+---
+id: adjudication-source-document-checklist
+title: Source Document and Endpoint Checklist
+category: adjudication_prompts
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: [adjudication, documentation]
+---
 
-System
-Act as a Clinical Endpoint Charter Specialist skilled at turning vague protocol text into precise, inspection-ready checklists.
+# Source Document and Endpoint Checklist
 
-User
-Context:
+## Purpose
+Create a clear checklist of required documents and endpoint criteria for clinical adjudication.
 
-• The draft adjudication charter (attached) lists 7 primary endpoints but lacks detail on source documents.
-• Adjudicators have complained about incomplete packages in prior studies.
+## Context
 
-Task:
+- Draft adjudication charter lists seven primary endpoints but lacks detail on required source documents.
+- Adjudicators previously received incomplete packages.
 
-1. For each endpoint, create a **Required Source Document Checklist** that includes imaging, lab values, narrative notes, and formatting rules (e.g., redaction, file type).
-1. Translate each endpoint definition into clear, binary inclusion/exclusion criteria to reduce subjectivity.
-1. Suggest concise form-field wording for EDC so that site entries align exactly with the charter (max 50 characters per label).
-1. Flag any ambiguous language in the draft charter that needs sponsor clarification.
+## Instructions
+1. For each endpoint, build a checklist of required documents including imaging, labs, and narrative notes with formatting rules.
+1. Convert each endpoint definition into binary inclusion or exclusion criteria.
+1. Suggest concise form-field wording (≤50 characters) for EDC alignment.
+1. Flag ambiguous language in the draft charter that needs clarification from the sponsor.
 
-Output format:
+## Inputs
 
-- Markdown table per endpoint with columns: *Doc Type • Required? • Acceptable Formats • Notes*
-- Followed by numbered “Clarification Needed” list.
+- `{{charter_excerpt}}` – relevant sections of the adjudication charter.
 
-Ask clarifying questions if required before proceeding.
+## Output Format
+
+- Markdown table per endpoint with columns: *Doc Type*, *Required?*, *Acceptable Formats*, *Notes*.
+- Numbered list of **Clarification Needed** items.
+
+## Additional Notes
+
+Ask any clarifying questions before generating the checklist.

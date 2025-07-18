@@ -1,17 +1,38 @@
+---
+id: architect-integration-blueprint
+title: Architect the Integration Blueprint
+category: eclinical_integration_prompts
+author: Frederick de Ruiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [eclinical, integration, blueprint]
+---
+
 # Architect the Integration Blueprint
 
-**Role:** You are a Senior Clinical Data Architect experienced in eSource and real-world-data workflows.
+## Purpose
 
-**Context:** We are running a multicentre Phase III trial that must move structured patient data from site EHRs into our EDC and CTMS with minimal duplicate entry. We will use **HL7 FHIR R4 APIs** at the site side and must land data in **CDISC SDTM v1.8** domains. Our tech stack already supports RESTful APIs and message queues.
+Provide a structured plan for integrating site EHR systems with the sponsor's EDC and CTMS.
 
-**Task:**
+## Context
 
-1. Draw a high-level system architecture diagram (textual is fine) showing data flow between EHR → integration layer → EDC → CTMS, including key security checkpoints.
+You are a Senior Clinical Data Architect experienced in eSource and real-world-data workflows. The multicenter Phase III trial must transfer structured patient data from site EHRs using HL7 FHIR R4 APIs and land it in CDISC SDTM v1.8 domains. The tech stack already supports RESTful APIs and message queues.
+
+## Instructions
+
+1. Draw a high-level system architecture diagram showing data flow between EHR → integration layer → EDC → CTMS, including key security checkpoints.
 1. List the FHIR resources to invoke and which SDTM tables each maps to.
-1. Recommend middleware patterns (e.g., publish-subscribe, ETL, event streaming) and why each fits.
-1. Identify risks (site heterogeneity, terminology mismatches, 21 CFR Part 11 validation) and propose mitigations.
+1. Recommend middleware patterns (publish-subscribe, ETL, event streaming) and why each fits.
+1. Identify risks such as site heterogeneity, terminology mismatches, and 21 CFR Part 11 validation, and propose mitigations.
 
-**Output format:**
+## Inputs
+
+- `{{trial_phase}}` – summary of trial phase and objectives.
+- `{{tech_stack}}` – existing integration tools or platforms.
+
+## Output Format
 
 ```
 ## Architecture Overview
@@ -29,6 +50,6 @@
 ## Risk & Mitigation Table
 ```
 
-**If any assumption is unclear, ask follow-up questions before answering.**
+## Additional Notes
 
-*Why it helps:* It leverages proven standards (FHIR ↔ CDISC mappings) and forces the model to surface both design and risk controls.
+Ask clarifying questions if any assumption is unclear before answering.

@@ -1,27 +1,34 @@
-<!-- markdownlint-disable MD029 -->
+---
+id: pm-sponsor-monthly-brief
+title: Sponsor-Ready Monthly Status Brief
+category: project_management
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [project management, reporting]
+---
 
 # Sponsor-Ready Monthly Status Brief
 
-**"You are a communications specialist ghost-writing for a CRO Project Manager.
-Goal → Draft a sponsor-facing Monthly Status Report that is clear, data-driven, and escalation-ready.
+## Purpose
+Draft a concise, escalation-ready monthly status report for study sponsors.
 
-Context ###
-NOTES:
-"""
-• Patients enrolled this month: 14 (plan = 18)
-• Budget burned: 42 % (plan = 40 %)
-• Protocol amendment v2.1 approved IRB 2025-07-10
-• Two sites delayed SIV due to pharmacy renovations
-...
-"""
+## Context
+You are ghost-writing for a CRO Project Manager. The user will provide bullet notes and metrics for the month.
 
 ## Instructions
+1. Summarize overall study health in ≤75 words using a Green/Amber/Red signal.
+2. Create sections: **Enrollment**, **Budget**, **Milestones**, **Risks & Mitigations**, **Requests/Decisions Needed**.
+3. For any metric off-plan by more than 10 %, label it **bold red** and suggest one corrective action.
+4. Keep the tone professional and concise (max 450 words).
 
-1. Summarize overall study health in ≤ 75 words (Green/Amber/Red signal).
-1. Create sections: *Enrollment*, *Budget*, *Milestones*, *Risks & Mitigations*, *Requests/Decisions Needed*.
-1. For any metric off-plan >10 %, label it **BOLD RED** and suggest one corrective action.
-1. Keep tone professional and concise (max 450 words).
+## Inputs
+- `{{monthly_notes}}`
 
-## Output: Markdown with H2 section headers
+## Output Format
+Markdown document with H2 section headers as listed above.
 
-"**
+## Additional Notes
+Ask clarifying questions if metrics or context are incomplete.

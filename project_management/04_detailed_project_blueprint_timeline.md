@@ -1,9 +1,36 @@
-<!-- markdownlint-disable MD029 -->
+---
+id: pm-detailed-blueprint
+title: Detailed Project Blueprint and Timeline
+category: project_management
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [project management, planning]
+---
 
-# Detailed Project Blueprint & Timeline
+# Detailed Project Blueprint and Timeline
 
-**"Role: Act as an experienced project manager.
-Context: I am planning [TYPE OF STUDY OR PROJECT] and need a comprehensive roadmap.
-Task: Outline the project objectives and scope, key phases, milestones with deliverables, timeline with start and end dates, success metrics, and stakeholder roles.
-Output style: Present the information in a table with columns: Phase, Task, Start Date, End Date, Owner.
-Quality-check: Confirm any missing details before producing the final plan."**
+## Purpose
+Provide a comprehensive roadmap with phases, milestones, success metrics, and stakeholders.
+
+## Context
+You are an experienced project manager planning a study or project. The user will supply the project type and key objectives.
+
+## Instructions
+1. Outline objectives, scope, key phases, and milestones with deliverables.
+2. Include start and end dates, success metrics, and stakeholder roles for each phase.
+3. Present the information in a table with columns: Phase, Task, Start Date, End Date, Owner.
+4. Confirm any missing details before producing the final plan.
+
+## Inputs
+- `{{project_type}}`
+- `{{objectives}}`
+- `{{milestone_data}}`
+
+## Output Format
+Markdown table outlining the project roadmap.
+
+## Additional Notes
+Keep the plan concise and easy to translate into Gantt software.

@@ -1,25 +1,40 @@
-# Prompt 2: Project Brief (Epic)
+---
+id: agentic-project-brief-epic
+title: Project Brief for Epic
+category: agentic_coding
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: [coding, planning]
+---
 
-## Project Description
+# Project Brief for Epic
 
-- Briefly describe what this project or epic aims to accomplish.
+## Purpose
+Summarize a project epic with key features, rules, and success metrics.
 
-## Key Features
+## Context
+Use this brief to capture the high-level scope of a significant project milestone or epic.
 
-- List and describe key features or milestones to be achieved.
+## Instructions
+1. Describe the overall project goal.
+2. List key features or milestones to achieve.
+3. Outline important data models and entities.
+4. Specify critical business rules or logic.
+5. Define success metrics for performance or engagement.
+6. Add any additional technical details or constraints.
 
-## Technical Entities & Data Models
+## Inputs
+- `{{project_description}}` – summary of the epic
+- `{{key_features}}` – features or milestones
+- `{{data_models}}` – entities and types
+- `{{business_rules}}` – domain logic
+- `{{success_metrics}}` – measurements of success
 
-- Describe important data structures, entities, types, or objects relevant to this project.
+## Output Format
+Markdown sections titled **Project Description**, **Key Features**, **Technical Entities & Data Models**, **Business Rules & Logic**, **Success Metrics**, and **Additional Implementation Details**.
 
-## Business Rules & Logic
-
-- Clearly outline any critical business rules or logic specific to this project.
-
-## Success Metrics
-
-- Define how the success of this project will be measured (performance, user engagement, etc.).
-
-## Additional Implementation Details
-
-- List any other technical details relevant to this project, constraints, or special considerations.
+## Additional Notes
+Keep each list concise and focused on actionable information.

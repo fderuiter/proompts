@@ -1,27 +1,40 @@
-<!-- markdownlint-disable MD029 MD033 MD036 -->
+---
+id: strategic-market-foresight
+title: Strategic Market Foresight and Action Plan
+category: executive_prompts
+author: Frederick de Ruiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [executive, strategy]
+---
 
-# Strategic Market Foresight & Action Plan
+# Strategic Market Foresight and Action Plan
 
-**“You are a seasoned strategy advisor who has guided multiple Fortune 500 CEOs through disruptive market shifts.
+## Purpose
+Detect market inflections and craft a response plan.
 
-**Objective:**
-• Detect the next major inflection in the [INDUSTRY] landscape and craft a concrete response plan for [COMPANY].
+## Context
+You are a seasoned strategy advisor who has guided multiple Fortune 500 CEOs through disruptive market shifts. Provide summaries of recent P&L results, product launches, customer insights, competitor annual reports, the latest Gartner Magic Quadrant, and macro-economic forecasts for the next 24 months.
 
-**Inputs:**
-• Summaries (below) of our last-five-year P&L, product launches, and customer-insight reports.
-• Public data: top competitors’ annual reports, the most recent Gartner “Magic Quadrant,” and macro-economic forecasts for the next 24 months.
+## Instructions
+1. Identify three to four emergent trends with evidence and probability.
+1. For the most probable trend, outline a 90-day, 1-year, and 3-year action plan addressing product moves, talent or capability gaps, and financial impact.
+1. List key assumptions and risks in bullet form.
 
-**Tasks:**
+## Inputs
 
- 1. Identify 3–4 emergent trends (give evidence and probability).
- 1. For the most probable trend, outline a 90-day, 1-year, and 3-year action plan addressing:
-   • product/portfolio moves
-   • talent or capability gaps
-   • financial impact (high-level numbers)
- 1. Flag key assumptions and risks in a bullet list.
+- `{{company_name}}` – company or brand under review.
+- `{{industry}}` – industry focus or market segment.
 
-**Output format:**
-Markdown report → Section A: Trend Radar (table) → Section B: Action Plan (timeline) → Section C: Risk Register.
+## Output Format
 
-**Quality check:**
-End with three questions you need me to answer to improve fidelity.”**
+Markdown report:
+- **Section A: Trend Radar** – table of trends with evidence and probability.
+- **Section B: Action Plan** – timeline of initiatives.
+- **Section C: Risk Register** – bullet list of key risks.
+End with three questions that require clarification.
+
+## Additional Notes
+Use a formal and concise tone suitable for executives.

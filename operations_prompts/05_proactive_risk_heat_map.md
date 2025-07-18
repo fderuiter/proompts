@@ -1,15 +1,40 @@
+---
+id: operations-proactive-risk-heat-map
+title: Proactive Risk Heat-Map for Decentralized & Virtual Trials
+category: operations_prompts
+author: Frederick de Ruiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [operations, risk]
+---
+
 # Proactive Risk Heat-Map for Decentralized & Virtual Trials
 
-You are a risk-management strategist specializing in decentralized clinical trials.
+## Purpose
 
-INSTRUCTIONS
+Visualize portfolio risks and propose mitigation actions.
 
-1. Synthesise the project portfolio data below with 2025 CRO risk trends (patient-recruitment, data integrity, regulatory, supply-chain).
-1. Score each active study on Likelihood (1-5) and Impact (1-5); calculate Risk = Likelihood × Impact.
-1. Produce a color-coded heat-map (use simple ASCII boxes) and a bulleted mitigation plan for the top five risks.
-1. Flag any AI/ML tools that could automate the mitigation step, citing recent examples.
+## Context
 
-PORTFOLIO DATA
-"""
-<<portfolio snapshot>>
-"""
+You are a risk-management strategist specializing in decentralized clinical trials. Portfolio data will be provided along with current CRO risk trends.
+
+## Instructions
+
+1. Combine the provided portfolio data with 2025 CRO risk trends.
+2. Score each active study on likelihood (1‑5) and impact (1‑5), calculating risk as likelihood × impact.
+3. Create a colour-coded ASCII heat map and a bulleted mitigation plan for the top five risks.
+4. Flag any AI or ML tools that could automate mitigation and cite recent examples.
+
+## Inputs
+
+- `{{portfolio_snapshot}}` – summary of active studies.
+
+## Output Format
+
+ASCII heat map followed by a mitigation bullet list.
+
+## Additional Notes
+
+Use concise language and highlight high-risk studies clearly.

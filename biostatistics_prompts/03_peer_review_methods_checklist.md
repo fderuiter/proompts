@@ -1,21 +1,40 @@
-<!-- markdownlint-disable MD029 -->
+---
+id: biostatistics-peer-review-checklist
+title: Peer-Review Checklist for Manuscript Methods
+category: biostatistics_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [biostatistics, peer review]
 # Peer-Review Checklist for Manuscript Methods
+---
 
-**Prompt**
-*You are reviewing a biomedical journal submission as an expert statistical referee.*
+## Purpose
 
-**Manuscript excerpts provided below** (insert text or attach file).
+Provide a structured checklist for reviewing the statistical methods section of a manuscript.
 
-**Evaluate the statistical methods section using the CONSORT 2010 & ICH-E9 guidelines.**
+## Context
 
-**Deliver:**
+You are an expert statistical referee reviewing a biomedical journal submission. Manuscript excerpts are provided by the user.
 
-1. A table with two columns: **“Item”** (randomisation, sample-size, multiplicity, missing-data, model diagnostics…) and **“Assessment”** (Compliant / Minor Issue / Major Issue) with a one-sentence justification each.
-1. A prioritized list (max 5) of required revisions that the authors must address.
-1. Optional: commendable strengths (≤ 3 bullets) to encourage authors.
+## Instructions
 
-**Tone:** professional, constructive, and journal-editor friendly.
+1. Evaluate compliance with CONSORT 2010 and ICH‑E9 guidelines.
+2. Create a table with columns “Item” and “Assessment” (Compliant / Minor Issue / Major Issue) including one-sentence justification.
+3. List up to five prioritized revisions the authors must address.
+4. Optionally note commendable strengths (≤3 bullets).
+5. Maintain a professional, constructive tone.
 
-**Formatting:** output the table in GitHub-flavoured Markdown; bullet lists elsewhere.
+## Inputs
 
-**Do not rewrite the paper; focus on critique.**
+- `{{manuscript_excerpt}}` — text or file attachment with methods section
+
+## Output Format
+
+GitHub-flavored markdown table followed by bullet lists.
+
+## Additional Notes
+
+Focus on critique; do not rewrite the manuscript.

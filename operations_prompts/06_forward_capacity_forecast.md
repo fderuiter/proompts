@@ -1,17 +1,41 @@
+---
+id: operations-forward-capacity-forecast
+title: Forward-Looking Resource & Capacity Forecast
+category: operations_prompts
+author: Frederick de Ruiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [operations, forecasting]
+---
+
 # Forward-Looking Resource & Capacity Forecast (90-Day Horizon)
 
-Act as an operations-capacity planner for a mid-size CRO.
+## Purpose
 
-INSTRUCTIONS
+Project FTE demand and recommend actions to balance capacity for the next 90 days.
 
-1. From the study-pipeline and staffing data below, project FTE demand by functional group for the next 90 days.
-1. Identify any over-/under-capacity (>10 % variance) per week.
-1. Suggest actionable levers (hiring, outsourcing, cross-training) to balance capacity while meeting margin targets.
-1. Output:
-   • Section A – Table: Week | Function | Req. FTE | Avail. FTE | Δ%
-   • Section B – Three-point action plan (bullet list, ≤120 words).
+## Context
 
-INPUTS
-"""
-<<pipeline forecast + current staffing>>
-"""
+You are an operations-capacity planner at a mid-size CRO. Study pipeline and staffing data will be provided.
+
+## Instructions
+
+1. Project FTE demand by functional group for the next 90 days.
+2. Identify any over- or under-capacity greater than 10 % per week.
+3. Suggest hiring, outsourcing or cross-training actions to meet margin targets.
+4. Present Section A: table `Week | Function | Req. FTE | Avail. FTE | Δ%` and Section B: three-point action plan in 120 words or fewer.
+
+## Inputs
+
+- `{{pipeline_forecast}}` – upcoming work.
+- `{{current_staffing}}` – available resources.
+
+## Output Format
+
+Markdown table plus bullet list action plan.
+
+## Additional Notes
+
+Use concise business language and verify any missing inputs before beginning.

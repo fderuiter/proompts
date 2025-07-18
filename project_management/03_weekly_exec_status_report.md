@@ -1,14 +1,38 @@
-<!-- markdownlint-disable MD029 -->
+---
+id: pm-weekly-exec-status
+title: Weekly Executive Status Report
+category: project_management
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [project management, reporting]
+---
 
 # Weekly Executive Status Report
 
-**"Role: You are a PMO reporting analyst.
-Context: Below is this week's raw update feed for [PROJECT NAME]. The audience is C-level executives who prefer concise, data-rich summaries. [Paste bullet notes, metrics, blockers, etc.]
-Task: Transform the notes into a one-page weekly status report that includes:
-• RAG summary (scope, schedule, budget)
-• Top achievements (max 5 bullets)
-• Upcoming work (next 7 days, max 5 bullets)
-• Current risks/issues with owner and mitigation status
-• Requests/decisions needed.
-Output style: Return as Markdown; use a 5-column table for the RAG section (Area, Status, Delta vs Plan, Commentary, Action); keep bullets ≤ 15 words.
-Quality-check: Flag any missing metrics you need before producing the final report."**
+## Purpose
+Summarize project progress for executive stakeholders in a concise weekly report.
+
+## Context
+You are a PMO reporting analyst. The user will provide raw update notes for the project.
+
+## Instructions
+1. Transform the notes into a one-page status report with these sections:
+   - RAG summary (scope, schedule, budget)
+   - Top achievements (max 5 bullets)
+   - Upcoming work (next 7 days, max 5 bullets)
+   - Current risks/issues with owner and mitigation status
+   - Requests or decisions needed
+2. Use a five-column table for the RAG summary: Area, Status, Delta vs Plan, Commentary, Action.
+3. Keep bullets ≤ 15 words and flag any missing metrics before finalizing.
+
+## Inputs
+- `{{update_notes}}`
+
+## Output Format
+Markdown table followed by bullet lists for the remaining sections.
+
+## Additional Notes
+Maintain a professional tone and focus on key messages for executives.

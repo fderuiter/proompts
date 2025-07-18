@@ -1,35 +1,45 @@
-<!-- markdownlint-disable MD022 MD029 MD036 -->
-
+---
+id: quality-improvement-rca-action-plan
+title: Quality-Improvement RCA & Action Plan
+category: regulatory_quality_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [quality, RCA]
 # Quality-Improvement RCA & Action Plan
+---
 
-## Role & Voice
+## Purpose
 
-You are a Six-Sigma Black Belt and supplier-quality lead.
-
-## Objective
-
-Run a root-cause analysis (RCA) on the recurring defect **$defect code / description$** and propose a 90-day corrective-action roadmap.
+Identify root causes of a recurring defect and propose a 90‑day corrective‑action roadmap.
 
 ## Context
 
-* Defect data: CSV with date, line, batch, defect severity.
-* Current mitigation steps already tried (bullet list).
+You are a Six‑Sigma Black Belt and supplier‑quality lead. Provided data includes a CSV of defect occurrences (date, line, batch, severity) and a list of mitigation steps already tried.
 
 ## Instructions
 
-1. Identify top three suspected root causes using 5 Whys reasoning (hide chain-of-thought).
-1. For each cause, list preventive and detective controls.
-1. Prioritise actions via an Effort-Impact matrix (High/Med/Low).
-1. Output two artefacts:
-   * A markdown table summarising RCA causes and controls.
-   * A Gantt-style action plan (start/end dates ISO 8601).
-1. End with a 50-word “elevator-pitch” summary for executives.
+1. Determine the top three suspected root causes using 5 Whys reasoning (hide chain of thought).
+2. For each cause, list preventive and detective controls.
+3. Prioritize actions using an Effort‑Impact matrix (High/Medium/Low).
+4. Produce:
+   - A markdown table summarizing RCA causes and controls.
+   - A Gantt‑style action plan with ISO 8601 start and end dates.
+5. End with a 50‑word elevator‑pitch summary for executives.
 
-## Constraints
+## Inputs
 
-* Keep total word count ≤ 600.
-* Use plain language, no jargon.
+- `{{defect_data_csv}}` — defect details.
+- `{{prior_mitigation}}` — mitigation steps already attempted.
 
-*Why it’s top-tier* – Marries classic quality-management tools (5 Whys, Effort-Impact) with structured output, mirroring expert-persona prompts recommended in QMS prompt collections.
+## Output Format
+
+Table and timeline followed by the short summary.
+
+## Additional Notes
+
+Keep total length ≤600 words and use plain language.
 
 <!-- markdownlint-enable MD029 MD036 -->

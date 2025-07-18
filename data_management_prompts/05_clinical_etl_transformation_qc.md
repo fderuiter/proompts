@@ -1,37 +1,36 @@
-# Clinical ETL Transformation Code and QC
+---
+id: clinical-etl-transformation-qc
+title: Clinical ETL Transformation QC
+category: data_management_prompts
+author: proompts
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [clinical, qc]
+---
 
-You are a senior statistical-programming mentor.
+# Clinical ETL Transformation QC
 
-## Task
+Title: Produce Clinical ETL Code with QC
 
-Write production-ready code that transforms a raw Lab Results dataset into ADLB (analysis-ready), with identical logic in R and SAS.
+Role: Senior Statistical Programming Mentor
 
-## Detailed instructions
-
-1. R section: tidyverse pipeline with explicit factor handling and `vctrs::vec_c` type safety.
-1. SAS section: PROC SQL + DATA step macro; include LOG checks for uninitialized variables and unit mismatches.
-1. Create mirrored unit-test scripts using testthat (R) and `%assert_compare` macro (SAS) to confirm the two outputs are byte-for-byte identical on sample data.
-
-## Output format
-
-## R code
-
-```r
-...code...
-```
-
-## SAS code
-
-```sas
-...code...
-```
-
-## QC tests
-
-...tests...
-
-## Check list before finishing
-
-- Match column order to ADaM IG v2.2
-- Set all date variables to ISO-8601 (`YYYY-MM-DD`).
+Task:
+- Transform raw Lab Results into ADLB using identical logic in R and SAS.
+- Include unit tests confirming the outputs match byte-for-byte.
 - Add inline comments for regulatory traceability.
+
+Context:
+"""
+Write production-ready code with R tidyverse and Base SAS.
+"""
+
+Constraints:
+- R code uses tidyverse with `vctrs::vec_c` type safety.
+- SAS code employs PROC SQL and DATA step macros with log checks.
+- Provide testthat and `%assert_compare` examples.
+- Column order must match ADaM IG v2.2 and dates use ISO 8601.
+
+Output Format: markdown
+--------------------------------------------------

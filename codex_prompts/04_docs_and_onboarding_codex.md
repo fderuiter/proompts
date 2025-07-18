@@ -1,10 +1,22 @@
+---
+id: 04-docs-and-onboarding-codex
+title: Documentation & Developer Onboarding (OpenAI Codex)
+category: codex_prompts
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: []
+---
+
 # Documentation & Developer Onboarding (OpenAI Codex)
 
-## Goal
+## Purpose
 
 Create living docs that cut time-to-first-PR and capture architectural decisions.
 
-## Context / Background
+## Context
 
 - Repo is runnable and deployable.
 - Org favours Markdown docs plus ADRs.
@@ -26,9 +38,9 @@ Generate / update:
 
 Output each file as a fenced code block.
 
-## References
+## Inputs
 
-- [ADR Template](../docs/adr/template.md)
+## Output Format
 
 ## Additional Notes
 
@@ -37,3 +49,7 @@ Output each file as a fenced code block.
 ## Example Usage
 
 > Paste this prompt into ChatGPT once CI/CD is in place, then review & commit the generated docs.
+
+## References
+
+- [ADR Template](../docs/adr/template.md)

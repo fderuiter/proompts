@@ -1,23 +1,37 @@
-# Draft a Phase II Oncology Data Management Plan
+---
+id: phase-ii-oncology-dmp
+title: Phase II Oncology DMP
+category: data_management_prompts
+author: proompts
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [clinical, planning]
+---
 
-You are a senior clinical data-standards consultant.
+# Phase II Oncology DMP
 
-Task: Draft a comprehensive Data Management Plan (DMP) template for a Phase II oncology trial sponsored by our CRO.
+Title: Draft Phase II Oncology DMP
 
-## Context
+Role: Senior Clinical Data Standards Consultant
 
-- Trial uses Medidata Rave EDC plus ePRO and central-lab feeds.
-- Regulatory authorities: FDA (21 CFR Part 11), EMA, ICH E6(R3) draft.
-- Sponsor requires CDISC CDASH v2.0 and SDTM v3.4 compliance.
-- Stakeholders: Biostatistics, Clinical Ops, external lab vendors.
+Task:
+- Provide an outline of all DMP sections with two to three guiding sentences for each.
+- Include a checklist of critical QC and audit-trail items for pre-lock review.
+- Create a table of key milestones with typical timelines.
 
-## Deliverables
+Context:
+"""
+Trial uses Medidata Rave EDC, ePRO and central-lab feeds.
+Regulatory authorities: FDA 21 CFR Part 11, EMA, ICH E6(R3) draft.
+Sponsor requires CDISC CDASH v2.0 and SDTM v3.4 compliance.
+Stakeholders include Biostatistics, Clinical Ops and external lab vendors.
+"""
 
-1. Numbered outline of all DMP sections.
-1. 2–3 guiding sentences beneath each heading.
-1. Checklist of critical QC/audit-trail items for pre-lock review.
-1. Table of key milestones with typical timelines.
+Constraints:
+- Use plain language and omit proprietary SOP numbers.
+- Keep total output ≤ 1 500 words.
 
-Format: Markdown document.
-
-Constraints: Plain language, no proprietary SOP numbers, ≤ 1 500 words.
+Output Format: markdown
+--------------------------------------------------

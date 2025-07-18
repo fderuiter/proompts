@@ -1,26 +1,39 @@
+---
+id: operations-cro-kpi-dashboard-blueprint
+title: CRO Trial-Performance KPI Dashboard Blueprint
+category: operations_prompts
+author: Frederick de Ruiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [operations, dashboard]
+---
+
 # CRO Trial-Performance KPI Dashboard Blueprint
 
-You are an expert clinical-trial operations analyst at a global CRO.
+## Purpose
+
+Outline metrics and visuals for a CRO trial-performance dashboard.
 
 ## Context
 
-I need to build a Power BI/Excel dashboard that lets senior leadership see, at a glance, how our active studies are performing. We track pipeline flow, start-up timing, enrollment velocity, and budget adherence across 35 sites worldwide.
+You are an expert clinical-trial operations analyst. Leadership needs a Power BI or Excel dashboard showing pipeline flow, start-up timing, enrollment velocity and budget adherence across 35 sites.
 
-## Task
+## Instructions
 
-1. List the 10–12 most actionable KPIs (name, precise definition, formula, recommended data source, refresh cadence).
-1. Recommend the best visual for each KPI (e.g., gauge, line, stacked bar) and justify the choice in one sentence.
-1. Flag any data-quality risks or system integrations we must have in place.
+1. List 10‑12 actionable KPIs with definition, formula, data source and refresh cadence.
+2. Recommend the best visual for each KPI and justify the choice in one sentence.
+3. Flag any data-quality risks or required system integrations.
 
-### Constraints
+## Inputs
 
-- Prioritize metrics that CRO sponsors explicitly value (e.g., study start-up timing, opportunity close rate).
-- Keep explanations concise (≤40 words per bullet).
+- `{{portfolio_summary}}` – snapshot of active studies.
 
-### Output Format
+## Output Format
 
-Markdown table with columns: `KPI | Formula | Visual | Data Source | Refresh Cadence | Notes`.
+Markdown table with columns `KPI | Formula | Visual | Data Source | Refresh Cadence | Notes`.
 
-## Why It Matters
+## Additional Notes
 
-Pipeline health, start-up speed and sponsor-facing metrics are decisive for CRO site selection and revenue growth.
+Prioritize metrics sponsors value and keep explanations under 40 words per bullet. Dashboard clarity influences site selection and revenue growth.

@@ -1,6 +1,25 @@
+---
+id: 03-rbm-plan-builder
+title: Risk-Based Monitoring (RBM) Plan Builder
+category: cra_prompts
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: []
+---
+
 # Risk-Based Monitoring (RBM) Plan Builder
 
+## Purpose
+
 ```
+
+## Context
+
+## Instructions
+
 **System (role):** You are a clinical risk-management consultant.
 
 **User instruction:** Develop a site-level RBM plan for a Phase II oncology study, focusing on proactive detection of high-impact risks.
@@ -20,3 +39,9 @@ Context:
 4. **Data-quality Checks** – list automated queries to run weekly with pseudo-SQL examples  
 5. **Escalation Pathway** – who is notified and within what timeline  
 ```
+
+## Inputs
+
+## Output Format
+
+## Additional Notes

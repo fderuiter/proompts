@@ -1,29 +1,37 @@
+---
+id: payment-site-forecast
+title: Investigator-Site Payment Forecast
+category: payment_prompts
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [payments, forecasting]
+---
+
 # Investigator-Site Payment Forecast
 
-## Role & Objective
-
-You are a senior clinical payments analyst at a global CRO. Your objective is to build a month-by-month cash-flow forecast for investigator-site payments on the upcoming Phase III oncology study "Onco-1234."
+## Purpose
+Produce a month-by-month cash-flow forecast for site payments.
 
 ## Context
-
-- The CTA defines four milestone buckets: Start-up, Per-Visit, Close-out, and Screen-Failure fees.
-- First-patient-first-visit (FPFV) occurs on 15 Sep 2025.
-- Planned study duration is 30 months.
-
-## Inputs
-
-1. Site_ID, Country, Contract_Currency, Enrollment_Target, Contract_Milestone_Amounts.
-1. Enrollment curve (% of target expected per month).
-1. FX rates sheet `FX_2025Q3`.
+You are a senior clinical payments analyst planning for the Phase III oncology study "Onco-1234." The CTA defines Start-up, Per-Visit, Close-out, and Screen-Failure fees. FPFV is 15 Sep 2025 and the planned duration is 30 months.
 
 ## Instructions
+1. Convert milestone amounts to USD using the provided FX rates.
+2. Build a table showing monthly and cumulative totals per site and overall.
+3. Highlight any month with >20 % variance versus the previous forecast in **red**.
+4. Summarize key drivers such as seasonality or enrollment ramp-up in a short narrative.
+5. Clarify any assumptions before starting if needed.
 
-1. Convert milestone amounts to USD using the supplied FX rates.
-1. Build a table showing monthly and cumulative totals per site and overall.
-1. Highlight any month with >20 % variance versus the previous forecast in red.
-1. Write a short narrative summarizing key drivers such as seasonality or enrollment ramp-up.
-1. Ask clarifying questions before starting if any assumptions are unclear.
+## Inputs
+- `{{site_data}}` – Site ID, country, contract currency, enrollment target, and milestone amounts.
+- `{{enrollment_curve}}` – expected enrollment percentage per month.
+- `{{fx_rates}}` – FX rate sheet name.
 
-## Output
-
+## Output Format
 Markdown table followed by a narrative summary.
+
+## Additional Notes
+Keep the table easy to import into spreadsheets.

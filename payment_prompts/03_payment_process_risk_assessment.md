@@ -1,29 +1,39 @@
-# Payment-Process Risk Assessment & Mitigation
+---
+id: payment-process-risk-assessment
+title: Payment-Process Risk Assessment and Mitigation
+category: payment_prompts
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [payments, risk]
+---
 
-## You are
+# Payment-Process Risk Assessment and Mitigation
 
-A process-improvement lead engaged to cut payment errors and opacity.
+## Purpose
+Identify weak points in the site-payment workflow and propose mitigations.
+
+## Context
+You are a process‑improvement lead tasked with reducing payment errors and increasing transparency.
+
+## Instructions
+1. Review the current workflow, KPI metrics, and technology stack.
+2. List the top five accuracy or transparency risks and their root causes.
+3. For each risk, recommend one or two mitigations drawing on industry best practice (e.g., automated disbursements, real-time dashboards, milestone advances, blockchain audit trails).
+4. Prioritize mitigations using a RICE or effort-vs-impact matrix.
+5. Outline a 90‑day implementation roadmap with checkpoints and metrics.
+6. Use bullet lists and a text-based Gantt-style schedule.
+7. Ask clarifying questions if any workflow details are missing.
 
 ## Inputs
+- `{{workflow_description}}`
+- `{{kpi_metrics}}`
+- `{{technology_stack}}`
 
-- Current swim-lane diagram (or narrative) of the site-payment workflow
-- KPI metrics: average payment cycle time, % on-time payments, 90-day-delay rate
-- Technology stack description (EDC, CTMS, payment platform, manual steps)
+## Output Format
+Bullet lists for risks and mitigations, followed by a plain-text roadmap table.
 
-## Deliverables
-
-1. List the top 5 accuracy/transparency risks in the present workflow.
-   - Root-cause each risk (e.g., manual invoice matching → data entry errors).
-1. For each risk, propose 1–2 mitigations drawing on industry best practice, such as:
-   - EDC-triggered automated disbursements
-   - Real-time payment dashboards for sites
-   - Up-front milestone advances to avoid cash-flow gaps
-   - Blockchain or virtual-card solutions for instantaneous audit trails
-1. Prioritise mitigations via a RICE or effort-vs-impact matrix.
-1. Outline a 90-day implementation roadmap with checkpoints and metrics.
-
-## Constraints
-
-- Use bullet lists and a 1-page roadmap Gantt (text format).
-- Cite any external benchmarks or stats used.
-- Ask clarifying questions if the workflow description lacks detail.
+## Additional Notes
+Cite external benchmarks or stats where relevant.

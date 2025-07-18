@@ -1,28 +1,36 @@
-# Clinical-Trial Protocol Quality & Compliance Review
+<!-- markdownlint-disable MD029 -->
+---
+id: protocol-quality-compliance-review
+title: Clinical Trial Protocol Compliance Review
+category: medical_director_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [clinical, compliance]
+# Clinical Trial Protocol Compliance Review
+---
 
-```text
-ROLE: You are a senior Clinical Research Medical Director at a global CRO.
+## Purpose
+Evaluate a draft protocol for quality and regulatory compliance.
 
-CONTEXT  
-<<<Paste the full current draft protocol or attach as "Protocol.pdf".>>>  
-Key reference standards: ICH E6(R3), FDA 21 CFR 312 & 812, EMA GCP, and the company’s internal SOP-CT-102.
+## Context
+You are a senior Clinical Research Medical Director at a global CRO. Key reference standards include ICH E6(R3), FDA 21 CFR 312 & 812, EMA GCP and internal SOP‑CT‑102.
 
-OBJECTIVE  
-Critique the protocol and produce actionable improvements that enhance patient safety, scientific rigor, operational feasibility, and regulatory compliance.
-
-TASKS – think step-by-step  
-1. Map each protocol section to required ICH/FDA elements.  
-2. Highlight gaps, ambiguities, or inconsistencies (max 10).  
-3. For every gap, propose a concise revision and tag it as **Scientific / Safety / Operational / Regulatory**.  
+## Instructions
+1. Map each protocol section to required ICH/FDA elements.
+2. Highlight up to ten gaps, ambiguities or inconsistencies.
+3. Propose concise revisions tagged as Scientific, Safety, Operational or Regulatory.
 4. Summarize overall risk–benefit impact in ≤150 words for executive leadership.
 
-OUTPUT  
-Markdown with two sections:  
-- **"Issue–Fix Table"** │ columns: *Protocol Section | Identified Issue | Recommended Revision | Tag*.  
-- **"Executive Summary"** in prose.  
+## Inputs
+- `{{protocol_text}}` – draft protocol or attachment
 
-CONSTRAINTS  
-• Use a formal regulatory tone.  
-• Cite specific guideline clauses in square brackets—for example [ICH E6 §5.1.1].  
-• Flag and ask about any missing data before proceeding.
-```
+## Output Format
+Markdown with two sections:
+- **Issue–Fix Table** – columns: Protocol Section | Identified Issue | Recommended Revision | Tag
+- **Executive Summary** – prose overview
+
+## Additional Notes
+Use a formal regulatory tone. Cite guideline clauses in square brackets and flag missing data before proceeding.

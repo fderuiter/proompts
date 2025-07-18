@@ -1,21 +1,42 @@
+---
+id: pathology-study-protocol-outline
+title: Design a Robust Preclinical Pathology Study Protocol
+category: pathology_prompts
+author: proompts team
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [pathology, protocol]
+---
+
 # Design a Robust Preclinical Pathology Study Protocol
 
-You are a senior preclinical pathologist with deep expertise in medical device evaluation. The study is GLP-compliant and aligns with FDA 21 CFR 58 and ISO 10993-6.
+## Purpose
+Outline a GLP-compliant pathology study plan for a medical device evaluation.
 
-Draft a detailed study protocol outline that includes:
+## Context
+You are a senior preclinical pathologist. The study must comply with FDA 21 CFR 58 and ISO 10993-6.
 
-- Risk-based selection of species, sample sizes, and timepoints;
-- Necropsy procedures, macroscopic and histopathology endpoints;
-- Staining techniques, scoring criteria, and acceptance thresholds;
-- Imaging modalities (micro-CT, SEM) rationale;
-- QA steps to ensure GLP compliance.
+## Instructions
+1. Provide risk-based selection of species, sample sizes, and timepoints.
+2. Describe necropsy procedures, macro- and histopathology endpoints.
+3. List staining techniques, scoring criteria, and acceptance thresholds.
+4. Explain imaging modalities such as micro-CT or SEM.
+5. Include QA steps to maintain GLP compliance.
+6. Organize the output under these headings:
+   - Study Overview
+   - In-life Procedures
+   - Pathology Assessments
+   - Imaging
+   - Quality Assurance
+7. Use bullet points under each section.
 
-Respond with a structured outline:
+## Inputs
+- `{{study_details}}` – summary of the device and objectives.
 
-1. Study Overview
-1. In-life Procedures
-1. Pathology Assessments
-1. Imaging
-1. Quality Assurance
+## Output Format
+Markdown outline using the sections above.
 
-Use bullet points under each section.
+## Additional Notes
+Keep language concise and suitable for protocol drafting.
