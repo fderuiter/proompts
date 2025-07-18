@@ -17,9 +17,9 @@ tags: [risk, matrix, mitigation]
 **Instructions:**
 
 1. List all identified risks (maximum 10) as bullets.
-2. Convert them into a 3×3 risk-matrix table where rows represent Likelihood (Low/Med/High) and columns represent Impact (Low/Med/High). Mark each cell with the applicable risks’ short labels.
-3. After the matrix, propose the top two mitigation actions in 35 words or fewer each, citing which risks they address.
-4. Keep the total answer under 250 words and prioritize implementation.
+1. Convert them into a 3×3 risk-matrix table where rows represent Likelihood (Low/Med/High) and columns represent Impact (Low/Med/High). Mark each cell with the applicable risks’ short labels.
+1. After the matrix, propose the top two mitigation actions in 35 words or fewer each, citing which risks they address.
+1. Keep the total answer under 250 words and prioritize implementation.
 
 ## Output Format
 

@@ -19,9 +19,9 @@ tags: [summary, market, self-critique]
 **Workflow:**
 
 1. Produce a first-pass summary in 150 words or less.
-2. Critique that draft in no more than 75 words, focusing on clarity, missing insights, and bias.
-3. Rewrite completely, fixing every issue and marking additions **in bold**.
-4. Conclude with a 12-word reflection on what changed.
+1. Critique that draft in no more than 75 words, focusing on clarity, missing insights, and bias.
+1. Rewrite completely, fixing every issue and marking additions **in bold**.
+1. Conclude with a 12-word reflection on what changed.
 
 **Output Sections:** Numbered headings: 1. Initial Summary, 2. Critique, 3. Final Summary.
 

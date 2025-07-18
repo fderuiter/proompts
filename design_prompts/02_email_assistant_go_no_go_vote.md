@@ -19,9 +19,9 @@ tags: [ux, evaluation, decision]
 **Instructions:**
 
 1. Provide a table with columns: Role, Top Concern, Top Opportunity, Vote.
-2. Limit concerns and opportunities to 25 words each.
-3. After the table, write a 100-word consolidated recommendation and note the biggest open question.
-4. Use crisp, jargon-free language.
+1. Limit concerns and opportunities to 25 words each.
+1. After the table, write a 100-word consolidated recommendation and note the biggest open question.
+1. Use crisp, jargon-free language.
 
 ## Output Format
 
