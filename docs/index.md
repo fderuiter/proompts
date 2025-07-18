@@ -351,6 +351,13 @@
 - [Slides & Reporting Workflow](../pathology_prompts/03_slides_and_reporting_workflow.md)
 - [Overview](../pathology_prompts/overview.md)
 
+## CRA Prompts
+
+- [Monitoring-Visit Report Generator](../cra_prompts/01_monitoring_visit_report_generator.md)
+- [Investigator Follow-up Email & Action-Item Tracker](../cra_prompts/02_investigator_follow_up_email_tracker.md)
+- [Risk-Based Monitoring (RBM) Plan Builder](../cra_prompts/03_rbm_plan_builder.md)
+- [Overview](../cra_prompts/overview.md)
+
 ## Clinical Monitoring Prompts
 
 - [Risk-Based Site Performance Dashboard](../clinical_monitoring_prompts/01_risk_based_site_performance_dashboard.md)
