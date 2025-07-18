@@ -156,6 +156,7 @@
 ## Design Prompts
 
 - [Design.md Template and Guidelines](../design_prompts/01_design_md_template.md)
+- [AI Email Assistant Go/No-Go Vote](../design_prompts/02_email_assistant_go_no_go_vote.md)
 
 ## Eclinical Integration Prompts
 
@@ -185,6 +186,7 @@
 - [Quarterly Innovation Radar for Decentralized and Hybrid Trials](../executive_prompts/06_innovation_radar.md)
 - [Regulatory and Competitive Intelligence Briefing](../executive_prompts/06_regulatory_competitive_intel_briefing.md)
 - [Trial-Design Optimisation Memo](../executive_prompts/06_trial_design_optimisation_memo.md)
+- [Hosting Cost Reduction ToT Plan](../executive_prompts/07_hosting_cost_reduction_tot.md)
 
 ## Hr Finance Prompts
 
@@ -213,12 +215,14 @@
 - [Competency-Based Onboarding Blueprint (ICH-GCP Focus)](../learning_development_prompts/01_competency_based_onboarding_blueprint.md)
 - [Scenario-Based Microlearning Series to Reduce GCP Violations](../learning_development_prompts/02_scenario_based_microlearning_series.md)
 - [Training-Impact Analytics & Targeted Intervention Planner](../learning_development_prompts/03_training_impact_analytics_targeted_intervention_planner.md)
+- [Net Present Value Socratic Tutor](../learning_development_prompts/04_npv_socratic_tutor.md)
 
 ## Market Research Prompts
 
 - [Market Landscape & Trend Analysis](../market_research_prompts/01_market_landscape_trend_analysis.md)
 - [Target Segment & User Needs Assessment](../market_research_prompts/02_target_segment_user_needs_assessment.md)
 - [Regulatory & Commercial Barrier Mapping](../market_research_prompts/03_regulatory_commercial_barrier_mapping.md)
+- [Market Report Executive Summary](../market_research_prompts/04_market_report_exec_summary.md)
 
 ## Medical Director Prompts
 
@@ -245,12 +249,6 @@
 - [Draft a Bioburden-Testing SOP (ISO 11737-1)](../microbiology_prompts/01_bioburden_testing_sop.md)
 - [Create an EO-Sterilization Validation Protocol (ISO 11135 + ISO 11737-2)](../microbiology_prompts/02_eo_sterilization_validation_protocol.md)
 - [Build an Endotoxin-Control & 510(k) Risk Plan (USP <85> / AAMI ST72)](../microbiology_prompts/03_endotoxin_control_510k_risk_plan.md)
-
-## Non Glp Prompts
-
-- [Design Study Objective & Endpoint](../non_glp_prompts/01_design_study_objectives_and_endpoints.md)
-- [Protocol Outline and Risk Mitigation](../non_glp_prompts/02_protocol_outline_and_risk_mitigation.md)
-- [Generate Report Template](../non_glp_prompts/03_poc_study_report_template.md)
 
 ## Operations Prompts
 
@@ -300,6 +298,7 @@
 - [Sponsor-Ready Monthly Status Brief](../project_management/08_sponsor_ready_monthly_status_brief.md)
 - [Executive Sponsor Briefing Deck Outline (15 Slides)](../project_management/09_executive_sponsor_briefing_deck_outline.md)
 - [TMF Gap-Analysis & Audit Readiness Check](../project_management/09_tmf_gap_analysis_audit_readiness_check.md)
+- [Rollout Risk Matrix](../project_management/10_rollout_risk_matrix.md)
 
 ## Prompt Tools
 
