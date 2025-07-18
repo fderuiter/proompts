@@ -137,6 +137,13 @@
 - [Regulatory Commercial Barrier Mapping](../market_research_prompts/03_regulatory_commercial_barrier_mapping.md)
 - [Overview](../market_research_prompts/overview.md)
 
+## Medical Director Prompts
+
+- [Clinical-Trial Protocol Quality & Compliance Review](../medical_director_prompts/01_clinical_trial_protocol_quality_compliance_review.md)
+- [Pharmacovigilance Safety-Signal Prioritization & Medical Assessment](../medical_director_prompts/02_pharmacovigilance_safety_signal_prioritization.md)
+- [AI-Enhanced Risk-Based Monitoring (RBM) Action Plan](../medical_director_prompts/03_ai_enhanced_rbm_action_plan.md)
+- [Overview](../medical_director_prompts/overview.md)
+
 ## Meta Prompts
 
 - [L0 Master-ultrameta](../meta_prompts/L0_master-ultrameta.md)
