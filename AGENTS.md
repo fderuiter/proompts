@@ -30,3 +30,14 @@ The workflow in `.github/workflows/markdown-validation.yml` runs `scripts/valida
 
 Make sure the `markdownlint` tool (`mdl` command) is available. If it's missing, install it with `gem install mdl` or your package manager.
 The `.github/workflows/update-docs.yml` workflow will automatically commit the docs index if it becomes out of date.
+
+## Automation
+
+Several GitHub Actions take care of routine maintenance tasks:
+
+- **`generate-overviews.yml`** automatically creates an `overview.md` file in any new prompt directory and updates the docs index.
+- **`repo-checks.yml`** verifies file naming conventions, ensures all files use the `.md` extension, and checks that each directory contains `overview.md`.
+- **`markdown-validation.yml`** runs `scripts/validate_markdown.sh`.
+- **`update-docs.yml`** commits the documentation index if it changes.
+
+These workflows run on every push or pull request. When contributing, you can rely on them to handle the overview generation and docs update steps for you.
