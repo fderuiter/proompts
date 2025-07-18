@@ -75,6 +75,9 @@
 - [Unified Data Cleansing](../data_management_prompts/01_unified_data_cleansing.md)
 - [Regulatory Gap Analysis](../data_management_prompts/02_regulatory_gap_analysis.md)
 - [Data Architecture Blueprint](../data_management_prompts/03_data_architecture_blueprint.md)
+- [Clinical ETL Mapping Specification](../data_management_prompts/04_clinical_etl_mapping_spec.md)
+- [Clinical ETL Transformation Code and QC](../data_management_prompts/05_clinical_etl_transformation_qc.md)
+- [Clinical ETL Pipeline Review and Optimisation](../data_management_prompts/06_clinical_etl_pipeline_review.md)
 - [Overview](../data_management_prompts/overview.md)
 
 ## Design Prompts
