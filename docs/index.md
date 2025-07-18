@@ -160,6 +160,9 @@
 - [CRO Trial-Performance KPI Dashboard Blueprint](../operations_prompts/04_cro_trial_performance_kpi_dashboard_blueprint.md)
 - [Multistudy Resource & Capacity Forecast Plan](../operations_prompts/05_multistudy_resource_capacity_forecast_plan.md)
 - [Fair-Market-Value Budget Negotiation Brief](../operations_prompts/06_fair_market_value_budget_negotiation_brief.md)
+- [Study Start-Up Checklist & Timeline](../operations_prompts/04_study_startup_checklist.md)
+- [Weekly Operations KPI Snapshot](../operations_prompts/05_weekly_ops_kpi_snapshot.md)
+- [Action-Oriented Meeting Minutes & Tracker](../operations_prompts/06_action_oriented_meeting_minutes.md)
 - [Overview](../operations_prompts/overview.md)
 
 ## Payment Prompts
