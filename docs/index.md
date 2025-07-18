@@ -227,6 +227,13 @@
 - [Regulatory Submission Support](../biosafety_prompts/03_regulatory_submission_support.md)
 - [Overview](../biosafety_prompts/overview.md)
 
+## Microbiology Prompts
+
+- [Bioburden Testing SOP](../microbiology_prompts/01_bioburden_testing_sop.md)
+- [EO Sterilization Validation Protocol](../microbiology_prompts/02_eo_sterilization_validation_protocol.md)
+- [Endotoxin Control & 510(k) Risk Plan](../microbiology_prompts/03_endotoxin_control_510k_risk_plan.md)
+- [Overview](../microbiology_prompts/overview.md)
+
 ## Site Acquisition Prompts
 
 - [Site Landscape Mapping & Prioritization](../site_acquisition_prompts/01_site_landscape_mapping.md)
