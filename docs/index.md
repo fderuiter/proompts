@@ -244,6 +244,7 @@
 - [PromptCrafter GPT](../meta_prompts/L5_promptcrafter_gpt.md)
 - [L5 README Generator](../meta_prompts/L5_readme-generator.md)
 - [AI Agent Prompt: Refactor and Re-index Prompts in the *proompts* Repository](../meta_prompts/L5_refactor-reindex-prompts.md)
+- [Standardize Prompt Files](../meta_prompts/L5_standardize-prompt-files.md)
 
 ## Microbiology Prompts
 
