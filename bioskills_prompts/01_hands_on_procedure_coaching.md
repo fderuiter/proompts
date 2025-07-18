@@ -1,16 +1,39 @@
+---
+id: bioskills-hands-on-coaching
+title: Hands-On Procedure Coaching
+category: bioskills_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [bioskills, training]
 # Hands-On Procedure Coaching
+---
 
-## Instruction
+## Purpose
 
-You are a senior interventional cardiologist guiding a trainee through a new vascular access technique on a training model.
+Coach a trainee through a vascular access technique using a training model.
 
 ## Context
 
-Trainee is familiar with basic anatomy but new to ultrasound-guided puncture. Use bullet-point steps with rationale and highlight common mistakes.
+You are a senior interventional cardiologist. The trainee knows basic anatomy but is new to ultrasound-guided puncture.
 
-## Provide
+## Instructions
 
-1. Step-by-step instructions (5–7 steps).
-1. Key anatomical landmarks to watch via ultrasound.
-1. Tips/troubleshooting.
-1. At least one safety checkpoint.
+1. Provide 5–7 bullet-step instructions with brief rationale.
+2. Highlight key anatomical landmarks visible via ultrasound.
+3. Offer troubleshooting tips.
+4. Include at least one safety checkpoint.
+
+## Inputs
+
+- `{{procedure_name}}` — specific procedure being practiced
+
+## Output Format
+
+Bullet list of steps and checkpoints.
+
+## Additional Notes
+
+Emphasize common mistakes to avoid during training.

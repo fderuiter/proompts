@@ -1,17 +1,40 @@
-<!-- markdownlint-disable MD029 -->
-
+---
+id: biosafety-plan-developer
+title: Biological Safety Plan Developer
+category: biosafety_prompts
+author: proompts team
+created: 2024-01-01
+last_modified: 2024-01-01
+tested_model: gpt-4o
+temperature: 0.2
+tags: [biosafety, planning]
 # Biological Safety Plan Developer
+---
 
-**"You are leading a biological safety consulting team. Create a biological safety plan for the preclinical phase of a new [e.g., disposable catheter made of polyurethane].
+## Purpose
 
-1. Identification of key biological endpoints (e.g., irritation, sensitization, systemic toxicity).
-1. Proposed in vitro / in vivo tests aligned with ISO 10993-5, -10, -11.
-1. Pass/fail criteria and acceptance thresholds.
-1. Rationales for each test, including risk-based prioritization.
-1. Step-by-step workflow and timeline.
+Create a biological safety plan for the preclinical phase of a new medical device.
 
-Use bullet points and headings clearly.
+## Context
 
-"**
+You are leading a biological safety consulting team.
 
-*Why it works:* frames expert guidance and provides a structured list of deliverables and workflow.
+## Instructions
+
+1. Identify key biological endpoints (e.g., irritation, sensitization, systemic toxicity).
+2. Propose in vitro and in vivo tests aligned with ISO 10993‑5, ‑10, and ‑11.
+3. Define pass/fail criteria and acceptance thresholds.
+4. Provide rationale for each test, including risk prioritization.
+5. Outline a step-by-step workflow and timeline.
+
+## Inputs
+
+- `{{device_description}}` — description and materials of the device
+
+## Output Format
+
+Bullet points and headings forming a clear plan.
+
+## Additional Notes
+
+Keep instructions concise and actionable.
