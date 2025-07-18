@@ -305,3 +305,10 @@
 - [FDA MDR/MDV Adverse-Event Narrative](../clinical_safety_prompts/02_fda_mdr_adverse_event_narrative.md)
 - [Post-Market Safety Signal Trending](../clinical_safety_prompts/03_post_market_safety_signal_trending.md)
 - [Overview](../clinical_safety_prompts/overview.md)
+
+## Pathology Prompts
+
+- [Study Protocol Outline](../pathology_prompts/01_study_protocol_outline.md)
+- [Device–Tissue Interface Evaluation](../pathology_prompts/02_device_tissue_interface_evaluation.md)
+- [Slides & Reporting Workflow](../pathology_prompts/03_slides_and_reporting_workflow.md)
+- [Overview](../pathology_prompts/overview.md)
