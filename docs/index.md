@@ -208,6 +208,9 @@
 - [Regulatory Radar](../regulatory_quality_prompts/01_regulatory_radar.md)
 - [Compliance Gap Risk Matrix](../regulatory_quality_prompts/02_compliance_gap_risk_matrix.md)
 - [Quality Improvement Rca Action Plan](../regulatory_quality_prompts/03_quality_improvement_rca_action_plan.md)
+- [eTMF Compliance Gap Analysis](../regulatory_quality_prompts/04_etmf_compliance_gap_analysis.md)
+- [CAPA Plan Generator](../regulatory_quality_prompts/05_capa_plan_generator.md)
+- [Risk-Based Quality Management Plan](../regulatory_quality_prompts/06_risk_based_quality_management_plan.md)
 - [Overview](../regulatory_quality_prompts/overview.md)
 
 ## Rtsm Prompts
