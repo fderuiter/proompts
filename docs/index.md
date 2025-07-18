@@ -199,8 +199,23 @@
 - [Quarterly Innovation Radar for Decentralized and Hybrid Trials](../executive_prompts/06_innovation_radar.md)
 - [Regulatory and Competitive Intelligence Briefing](../executive_prompts/06_regulatory_competitive_intel_briefing.md)
 - [Trial-Design Optimisation Memo](../executive_prompts/06_trial_design_optimisation_memo.md)
+
+## General Prompts
+
+- [Retrieval-Augmented Answer Composer](../general_prompts/01_retrieval_augmented_answer_composer.md)
+- [Pixar Story Spine Outline](../general_prompts/02_story_spine_outline.md)
+- [Heuristic-Evaluation Coach](../general_prompts/03_heuristic_evaluation_coach.md)
+- [MECE Structuring Consultant](../general_prompts/04_mece_structuring_consultant.md)
+- [AI Risk Mapper](../general_prompts/05_ai_risk_mapper.md)
+
+## Glp Prompts
+
+- [Protocol Design for GLP Preclinical Study](../glp_prompts/01_protocol_design_glp_study.md)
+- [Risk-based Gap Analysis](../glp_prompts/02_risk_based_gap_analysis.md)
+- [Final GLP-Compliant Study Report Outline](../glp_prompts/03_final_glp_study_report_outline.md)
 - [Hosting Cost Reduction ToT Plan](../executive_prompts/07_hosting_cost_reduction_tot.md)
 - [Strategic Consultant SWOT](../executive_prompts/07_strategic_consultant_swot.md)
+
 
 ## Hr Finance Prompts
 

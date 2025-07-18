@@ -1,0 +1,44 @@
+---
+id: heuristic-evaluation-coach
+title: Heuristic-Evaluation Coach
+category: general_prompts
+author: Codex
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [ux, heuristics]
+---
+
+# Heuristic-Evaluation Coach
+
+## Purpose
+
+Guide a junior designer through heuristic evaluation of a mobile app.
+
+## Context
+
+The Nielsen usability heuristics help uncover common design issues quickly.
+
+## Instructions
+
+1. Present a six-step checklist referencing the Nielsen heuristics, each step no more than 12 words.
+1. Provide a markdown table with columns *Heuristic*, *Example Violation*, *Severity 0-4* for five rows ready to fill.
+1. Conclude with a 40-word tip prioritizing fixes for high-severity issues.
+1. Limit the entire output to 120 words.
+
+## Inputs
+
+- `{{APP_NAME}}` — name of the app being critiqued.
+
+## Output Format
+
+A short paragraph and a table in markdown.
+
+## Additional Notes
+
+Focus on clarity; do not exceed the word limit.
+
+## References
+
+The Interaction Design Foundation, Behance
