@@ -157,6 +157,9 @@
 - [Rapid Process Diagnostic](../operations_prompts/01_rapid_process_diagnostic.md)
 - [Inventory Demand Planning Simulation](../operations_prompts/02_inventory_demand_planning_simulation.md)
 - [Kpi Dashboard Ops Review](../operations_prompts/03_kpi_dashboard_ops_review.md)
+- [360° Operational KPI & Benchmark Review](../operations_prompts/04_operational_kpi_benchmark_review.md)
+- [Proactive Risk Heat-Map for Decentralized & Virtual Trials](../operations_prompts/05_proactive_risk_heat_map.md)
+- [Forward-Looking Resource & Capacity Forecast](../operations_prompts/06_forward_capacity_forecast.md)
 - [Overview](../operations_prompts/overview.md)
 
 ## Payment Prompts
