@@ -31,6 +31,9 @@
 - [Statistical Analysis Plan Generator](../biostatistics_prompts/01_statistical_analysis_plan_generator.md)
 - [Time To Event Analysis Coach](../biostatistics_prompts/02_time_to_event_analysis_coach.md)
 - [Peer Review Methods Checklist](../biostatistics_prompts/03_peer_review_methods_checklist.md)
+- [Universal Template-Table Prompt](../biostatistics_prompts/04_universal_template_table_prompt.md)
+- [Dual-Language Figure Prompt](../biostatistics_prompts/05_dual_language_figure_prompt.md)
+- [QC Listing & Cross-check Prompt](../biostatistics_prompts/06_qc_listing_cross_check_prompt.md)
 - [Overview](../biostatistics_prompts/overview.md)
 
 ## Codebase Analysis
