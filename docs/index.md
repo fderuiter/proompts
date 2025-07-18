@@ -357,6 +357,13 @@
 - [Slides & Reporting Workflow](../pathology_prompts/03_slides_and_reporting_workflow.md)
 - [Overview](../pathology_prompts/overview.md)
 
+## VP Statistics Prompts
+
+- [Interim Results Executive Brief](../vp_statistics_prompts/01_interim_results_executive_brief.md)
+- [Statistical Analysis Plan First-Draft Builder](../vp_statistics_prompts/02_sap_first_draft_builder.md)
+- [Data-Quality Risk Heat-Map & Mitigation Plan](../vp_statistics_prompts/03_data_quality_risk_heatmap.md)
+- [Overview](../vp_statistics_prompts/overview.md)
+
 ## Technical Writer Prompts
 
 - [CSR Results & Safety Section Draft](../technical_writer_prompts/01_csr_results_safety_section.md)
