@@ -40,6 +40,8 @@
 - [Study Design + Statistical Approach](../biostatistics_prompts/07_study_design_statistical_approach.md)
 - [Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive](../biostatistics_prompts/08_inclusion_exclusion_endpoints_sample_size.md)
 - [Adaptive Design & Interim Monitoring](../biostatistics_prompts/09_adaptive_design_interim_monitoring.md)
+- [Phase II/III SAP Skeleton](../biostatistics_prompts/10_phase_ii_iii_sap_skeleton.md)
+- [FDA Missing-Data Query Response](../biostatistics_prompts/11_fda_missing_data_query_response.md)
 - [Overview](../biostatistics_prompts/overview.md)
 
 ## Codebase Analysis
@@ -110,6 +112,14 @@
 - [Strategic Growth Road-Map](../executive_prompts/04_strategic_growth_roadmap.md)
 - [Executive Trial-Health Dashboard](../executive_prompts/05_executive_trial_health_dashboard.md)
 - [Regulatory & Competitive Intelligence Briefing](../executive_prompts/06_regulatory_competitive_intel_briefing.md)
+- [Digital-Transformation Roadmap](../executive_prompts/04_digital_transformation_roadmap.md)
+- [AI Governance Framework](../executive_prompts/05_ai_governance_framework.md)
+- [Innovation Radar](../executive_prompts/06_innovation_radar.md)
+- [Market & Competitor Radar](../executive_prompts/04_market_competitor_radar.md)
+- [Investor & Board Narrative Builder](../executive_prompts/05_investor_board_narrative_builder.md)
+- [Strategic Portfolio Prioritizer](../executive_prompts/04_strategic_portfolio_prioritizer.md)
+- [Emerging-Science Horizon Scan](../executive_prompts/05_emerging_science_horizon_scan.md)
+- [Trial-Design Optimisation Memo](../executive_prompts/06_trial_design_optimisation_memo.md)
 - [Overview](../executive_prompts/overview.md)
 
 ## Glp Prompts
@@ -131,6 +141,7 @@
 - [Strategic Alignment Innovation](../leadership_prompts/01_strategic_alignment_innovation.md)
 - [Operational Excellence Communication](../leadership_prompts/02_operational_excellence_communication.md)
 - [Leadership Reflection Culture](../leadership_prompts/03_leadership_reflection_culture.md)
+- [90-Day Biostatistics Onboarding Plan](../leadership_prompts/04_biostatistics_onboarding_plan.md)
 - [Overview](../leadership_prompts/overview.md)
 
 ## Market Research Prompts
@@ -139,6 +150,13 @@
 - [Target Segment User Needs Assessment](../market_research_prompts/02_target_segment_user_needs_assessment.md)
 - [Regulatory Commercial Barrier Mapping](../market_research_prompts/03_regulatory_commercial_barrier_mapping.md)
 - [Overview](../market_research_prompts/overview.md)
+
+## Medical Director Prompts
+
+- [Clinical-Trial Protocol Quality & Compliance Review](../medical_director_prompts/01_clinical_trial_protocol_quality_compliance_review.md)
+- [Pharmacovigilance Safety-Signal Prioritization & Medical Assessment](../medical_director_prompts/02_pharmacovigilance_safety_signal_prioritization.md)
+- [AI-Enhanced Risk-Based Monitoring (RBM) Action Plan](../medical_director_prompts/03_ai_enhanced_rbm_action_plan.md)
+- [Overview](../medical_director_prompts/overview.md)
 
 ## Meta Prompts
 
@@ -160,6 +178,19 @@
 - [Rapid Process Diagnostic](../operations_prompts/01_rapid_process_diagnostic.md)
 - [Inventory Demand Planning Simulation](../operations_prompts/02_inventory_demand_planning_simulation.md)
 - [Kpi Dashboard Ops Review](../operations_prompts/03_kpi_dashboard_ops_review.md)
+- [Rolling Resource & Capacity Forecast](../operations_prompts/04_rolling_resource_capacity_forecast.md)
+- [Quarterly Cro Kpi Executive Brief](../operations_prompts/05_quarterly_kpi_executive_brief.md)
+- [Vendor Performance Improvement Plan](../operations_prompts/06_vendor_performance_improvement_plan.md)
+- [Operational Excellence & Risk Sweep](../operations_prompts/04_operational_excellence_risk_sweep.md)
+- [360° Operational KPI & Benchmark Review](../operations_prompts/04_operational_kpi_benchmark_review.md)
+- [Proactive Risk Heat-Map for Decentralized & Virtual Trials](../operations_prompts/05_proactive_risk_heat_map.md)
+- [Forward-Looking Resource & Capacity Forecast](../operations_prompts/06_forward_capacity_forecast.md)
+- [CRO Trial-Performance KPI Dashboard Blueprint](../operations_prompts/04_cro_trial_performance_kpi_dashboard_blueprint.md)
+- [Multistudy Resource & Capacity Forecast Plan](../operations_prompts/05_multistudy_resource_capacity_forecast_plan.md)
+- [Fair-Market-Value Budget Negotiation Brief](../operations_prompts/06_fair_market_value_budget_negotiation_brief.md)
+- [Study Start-Up Checklist & Timeline](../operations_prompts/04_study_startup_checklist.md)
+- [Weekly Operations KPI Snapshot](../operations_prompts/05_weekly_ops_kpi_snapshot.md)
+- [Action-Oriented Meeting Minutes & Tracker](../operations_prompts/06_action_oriented_meeting_minutes.md)
 - [Overview](../operations_prompts/overview.md)
 
 ## Payment Prompts
@@ -167,6 +198,9 @@
 - [Build an Audit-Ready Site-Payment Schedule](../payment_prompts/01_audit_ready_site_payment_schedule.md)
 - [Sunshine Act + FMV Compliance Check](../payment_prompts/02_sunshine_act_fmv_compliance_check.md)
 - [Payment-Process Risk Assessment & Mitigation](../payment_prompts/03_payment_process_risk_assessment.md)
+- [Investigator-Site Payment Forecast](../payment_prompts/04_investigator_site_payment_forecast.md)
+- [Payment Reconciliation and Discrepancy Report](../payment_prompts/05_payment_reconciliation_discrepancy_report.md)
+- [Global Regulatory & Tax Matrix](../payment_prompts/06_global_regulatory_tax_matrix.md)
 - [Overview](../payment_prompts/overview.md)
 
 ## Project Management
@@ -177,6 +211,12 @@
 - [Detailed Project Blueprint & Timeline](../project_management/04_detailed_project_blueprint_timeline.md)
 - [Risk & Pre-Mortem Analysis](../project_management/05_risk_pre_mortem_analysis.md)
 - [Status Update & Task Prioritization](../project_management/06_status_update_task_prioritization.md)
+- [Portfolio Resource Budget Forecast](../project_management/07_portfolio_resource_budget_forecast.md)
+- [Cross-Study Risk Heat Map Mitigation Plan](../project_management/08_cross_study_risk_heat_map_mitigation_plan.md)
+- [Executive Sponsor Briefing Deck Outline](../project_management/09_executive_sponsor_briefing_deck_outline.md)
+- [Clinical-Trial Timeline & Risk Radar](../project_management/07_clinical_trial_timeline_risk_radar.md)
+- [Sponsor-Ready Monthly Status Brief](../project_management/08_sponsor_ready_monthly_status_brief.md)
+- [TMF Gap-Analysis & Audit Readiness Check](../project_management/09_tmf_gap_analysis_audit_readiness_check.md)
 - [Overview](../project_management/overview.md)
 
 ## Regulatory Prompts
@@ -202,6 +242,12 @@
 - [Regulatory Radar](../regulatory_quality_prompts/01_regulatory_radar.md)
 - [Compliance Gap Risk Matrix](../regulatory_quality_prompts/02_compliance_gap_risk_matrix.md)
 - [Quality Improvement Rca Action Plan](../regulatory_quality_prompts/03_quality_improvement_rca_action_plan.md)
+- [Regulatory Landscape Radar](../regulatory_quality_prompts/04_regulatory_landscape_radar.md)
+- [Inspection-Readiness Drill (CAPA Builder)](../regulatory_quality_prompts/05_inspection_readiness_drill_capa_builder.md)
+- [Integrated Submission Strategy Coach](../regulatory_quality_prompts/06_integrated_submission_strategy_coach.md)
+- [eTMF Compliance Gap Analysis](../regulatory_quality_prompts/04_etmf_compliance_gap_analysis.md)
+- [CAPA Plan Generator](../regulatory_quality_prompts/05_capa_plan_generator.md)
+- [Risk-Based Quality Management Plan](../regulatory_quality_prompts/06_risk_based_quality_management_plan.md)
 - [Overview](../regulatory_quality_prompts/overview.md)
 
 ## Rtsm Prompts
@@ -234,6 +280,13 @@
 - [CRF Quality Auditor](../clinical_prompts/02_crf_quality_auditor.md)
 - [CDASH Mapping & Completion-Guide Assistant](../clinical_prompts/03_cdash_mapping_completion_guide.md)
 - [Overview](../clinical_prompts/overview.md)
+
+## Clinical Data Prompts
+
+- [Discrepancy Detection & Query Log Generator](../clinical_data_prompts/01_discrepancy_detection_query_log.md)
+- [Draft a Data Management Plan Section](../clinical_data_prompts/02_data_management_plan_section.md)
+- [Edit-Check Specification Builder](../clinical_data_prompts/03_edit_check_specification_builder.md)
+- [Overview](../clinical_data_prompts/overview.md)
 
 ## Biosafety Prompts
 
@@ -283,6 +336,9 @@
 - [AI-Powered Site & Recruitment Strategy](../trial_execution_prompts/02_ai_powered_site_recruitment.md)
 - [Compliance, Data Quality & Monitoring Plan](../trial_execution_prompts/03_compliance_data_quality_monitoring_plan.md)
 - [Adaptive Recruitment & Retention Strategy](../trial_execution_prompts/04_adaptive_recruitment_retention_strategy.md)
+- [Portfolio-Level Clinical Operations Roadmap](../trial_execution_prompts/05_portfolio_clin_ops_roadmap.md)
+- [Risk-Based Monitoring & Quality Plan](../trial_execution_prompts/06_risk_based_monitoring_plan.md)
+- [Patient Recruitment & Diversity Acceleration Plan](../trial_execution_prompts/07_recruitment_diversity_acceleration.md)
 - [Overview](../trial_execution_prompts/overview.md)
 
 ## Adjudication Prompts
@@ -316,9 +372,58 @@
 - [Post-Market Safety Signal Trending](../clinical_safety_prompts/03_post_market_safety_signal_trending.md)
 - [Overview](../clinical_safety_prompts/overview.md)
 
+## Clinical Research Manager Prompts
+
+- [Accelerate Patient Recruitment & Retention](../clinical_research_manager_prompts/01_accelerate_patient_recruitment_retention.md)
+- [Digest the Latest Regulatory Updates Affecting My Protocol](../clinical_research_manager_prompts/02_digest_regulatory_updates.md)
+- [Portfolio KPI Dashboard Brief](../clinical_research_manager_prompts/03_portfolio_kpi_dashboard_brief.md)
+- [Overview](../clinical_research_manager_prompts/overview.md)
+
 ## Pathology Prompts
 
 - [Study Protocol Outline](../pathology_prompts/01_study_protocol_outline.md)
 - [Device–Tissue Interface Evaluation](../pathology_prompts/02_device_tissue_interface_evaluation.md)
 - [Slides & Reporting Workflow](../pathology_prompts/03_slides_and_reporting_workflow.md)
 - [Overview](../pathology_prompts/overview.md)
+
+## VP Statistics Prompts
+
+- [Interim Results Executive Brief](../vp_statistics_prompts/01_interim_results_executive_brief.md)
+- [Statistical Analysis Plan First-Draft Builder](../vp_statistics_prompts/02_sap_first_draft_builder.md)
+- [Data-Quality Risk Heat-Map & Mitigation Plan](../vp_statistics_prompts/03_data_quality_risk_heatmap.md)
+- [Overview](../vp_statistics_prompts/overview.md)
+
+## Technical Writer Prompts
+
+- [CSR Results & Safety Section Draft](../technical_writer_prompts/01_csr_results_safety_section.md)
+- [Investigator's Brochure Summary of Changes](../technical_writer_prompts/02_ib_detailed_soc.md)
+- [SAE and Unanticipated Problem Reporting SOP](../technical_writer_prompts/03_sae_reporting_sop.md)
+- [Overview](../technical_writer_prompts/overview.md)
+
+## CRA Prompts
+
+- [Monitoring-Visit Report Generator](../cra_prompts/01_monitoring_visit_report_generator.md)
+- [Investigator Follow-up Email & Action-Item Tracker](../cra_prompts/02_investigator_follow_up_email_tracker.md)
+- [Risk-Based Monitoring (RBM) Plan Builder](../cra_prompts/03_rbm_plan_builder.md)
+- [Overview](../cra_prompts/overview.md)
+
+## Clinical Monitoring Prompts
+
+- [Risk-Based Site Performance Dashboard](../clinical_monitoring_prompts/01_risk_based_site_performance_dashboard.md)
+- [CAPA Plan Builder for Monitoring Findings](../clinical_monitoring_prompts/02_capa_plan_builder_for_monitoring_findings.md)
+- [Monitoring Visit Report Quality Critique](../clinical_monitoring_prompts/03_monitoring_visit_report_quality_critique.md)
+- [Overview](../clinical_monitoring_prompts/overview.md)
+
+## Study Director Prompts
+
+- [Draft a GLP-Compliant Study Protocol](../study_director_prompts/01_draft_glp_compliant_study_protocol.md)
+- [Audit Raw Data and Draft a CAPA Summary](../study_director_prompts/02_audit_raw_data_capa_summary.md)
+- [Generate an Executive Summary for the Final Report](../study_director_prompts/03_executive_summary_final_report.md)
+- [Overview](../study_director_prompts/overview.md)
+
+## HR & Finance Prompts
+
+- [Strategic Workforce & Talent-Acquisition Plan](../hr_finance_prompts/01_strategic_workforce_talent_acquisition_plan.md)
+- [Clinical-Trial Budget & Burn-Rate Dashboard](../hr_finance_prompts/02_clinical_trial_budget_burn_rate_dashboard.md)
+- [GCP / GDPR Compliance & Training Risk Report](../hr_finance_prompts/03_gcp_gdpr_compliance_training_risk_report.md)
+- [Overview](../hr_finance_prompts/overview.md)
