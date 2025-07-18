@@ -199,6 +199,9 @@
 - [Regulatory Radar](../regulatory_quality_prompts/01_regulatory_radar.md)
 - [Compliance Gap Risk Matrix](../regulatory_quality_prompts/02_compliance_gap_risk_matrix.md)
 - [Quality Improvement Rca Action Plan](../regulatory_quality_prompts/03_quality_improvement_rca_action_plan.md)
+- [Regulatory Landscape Radar](../regulatory_quality_prompts/04_regulatory_landscape_radar.md)
+- [Inspection-Readiness Drill (CAPA Builder)](../regulatory_quality_prompts/05_inspection_readiness_drill_capa_builder.md)
+- [Integrated Submission Strategy Coach](../regulatory_quality_prompts/06_integrated_submission_strategy_coach.md)
 - [Overview](../regulatory_quality_prompts/overview.md)
 
 ## Rtsm Prompts
