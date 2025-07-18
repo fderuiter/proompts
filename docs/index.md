@@ -200,3 +200,10 @@
 - [Tailored Feasibility-Questionnaire Builder](../site_acquisition_prompts/02_tailored_feasibility_questionnaire.md)
 - [Personalized Investigator-Outreach Email Generator](../site_acquisition_prompts/03_investigator_outreach_email_generator.md)
 - [Overview](../site_acquisition_prompts/overview.md)
+
+## Adjudication Prompts
+
+- [Design a Real-Time Adjudication Visibility Dashboard](../adjudication_prompts/01_real_time_adjudication_dashboard.md)
+- [Build a Source-Document & Endpoint Checklist](../adjudication_prompts/02_source_document_endpoint_checklist.md)
+- [Analyze Adjudication KPIs & Recommend Fixes](../adjudication_prompts/03_analyze_adjudication_kpis.md)
+- [Overview](../adjudication_prompts/overview.md)
