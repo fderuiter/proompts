@@ -232,6 +232,13 @@
 - [Regulatory Submission Support](../biosafety_prompts/03_regulatory_submission_support.md)
 - [Overview](../biosafety_prompts/overview.md)
 
+## Sterility Prompts
+
+- [Sterility-Validation Protocol Builder](../sterility_prompts/01_sterility_validation_protocol_builder.md)
+- [Regulatory Gap-Analysis Comparator](../sterility_prompts/02_regulatory_gap_analysis_comparator.md)
+- [EtO Sterilization Process FMEA](../sterility_prompts/03_eto_sterilization_process_fmea.md)
+- [Overview](../sterility_prompts/overview.md)
+
 ## Bioskills Prompts
 
 - [Hands-On Procedure Coaching](../bioskills_prompts/01_hands_on_procedure_coaching.md)
