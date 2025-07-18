@@ -116,6 +116,13 @@
 - [Final Glp Study Report Outline](../glp_prompts/03_final_glp_study_report_outline.md)
 - [Overview](../glp_prompts/overview.md)
 
+## Non-Glp Prompts
+
+- [Design Study Objectives And Endpoints](../non_glp_prompts/01_design_study_objectives_and_endpoints.md)
+- [Protocol Outline And Risk Mitigation](../non_glp_prompts/02_protocol_outline_and_risk_mitigation.md)
+- [Poc Study Report Template](../non_glp_prompts/03_poc_study_report_template.md)
+- [Overview](../non_glp_prompts/overview.md)
+
 ## Leadership Prompts
 
 - [Strategic Alignment Innovation](../leadership_prompts/01_strategic_alignment_innovation.md)
