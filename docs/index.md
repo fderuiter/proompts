@@ -224,6 +224,13 @@
 - [Regulatory Submission Support](../biosafety_prompts/03_regulatory_submission_support.md)
 - [Overview](../biosafety_prompts/overview.md)
 
+## Bioskills Prompts
+
+- [Hands-On Procedure Coaching](../bioskills_prompts/01_hands_on_procedure_coaching.md)
+- [Simulated Clinical Scenario Debrief](../bioskills_prompts/02_simulated_clinical_scenario_feedback.md)
+- [Objective Skills Assessment](../bioskills_prompts/03_objective_skills_assessment.md)
+- [Overview](../bioskills_prompts/overview.md)
+
 ## Site Acquisition Prompts
 
 - [Site Landscape Mapping & Prioritization](../site_acquisition_prompts/01_site_landscape_mapping.md)
