@@ -60,13 +60,16 @@ A curated set of Markdown prompts for AI-assisted product development, regulator
 
 ## Validation
 
-Check Markdown formatting before committing:
+Check Markdown formatting and the docs index before committing:
 
 ```bash
 ./scripts/validate_markdown.sh
 ```
 
-The script requires the `mdl` tool and is executed automatically in GitHub Actions.
+The script first runs `python3 scripts/update_docs_index.py --check` to ensure
+`docs/index.md` and `docs/table-of-contents.md` are up to date, then runs `mdl`.
+It requires both Python 3 and the `mdl` tool and is executed automatically in
+GitHub Actions.
 
 ## Contributing
 
