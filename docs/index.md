@@ -319,3 +319,10 @@
 - [Device–Tissue Interface Evaluation](../pathology_prompts/02_device_tissue_interface_evaluation.md)
 - [Slides & Reporting Workflow](../pathology_prompts/03_slides_and_reporting_workflow.md)
 - [Overview](../pathology_prompts/overview.md)
+
+## Clinical Monitoring Prompts
+
+- [Risk-Based Site Performance Dashboard](../clinical_monitoring_prompts/01_risk_based_site_performance_dashboard.md)
+- [CAPA Plan Builder for Monitoring Findings](../clinical_monitoring_prompts/02_capa_plan_builder_for_monitoring_findings.md)
+- [Monitoring Visit Report Quality Critique](../clinical_monitoring_prompts/03_monitoring_visit_report_quality_critique.md)
+- [Overview](../clinical_monitoring_prompts/overview.md)
