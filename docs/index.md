@@ -357,6 +357,13 @@
 - [Slides & Reporting Workflow](../pathology_prompts/03_slides_and_reporting_workflow.md)
 - [Overview](../pathology_prompts/overview.md)
 
+## Technical Writer Prompts
+
+- [CSR Results & Safety Section Draft](../technical_writer_prompts/01_csr_results_safety_section.md)
+- [Investigator's Brochure Summary of Changes](../technical_writer_prompts/02_ib_detailed_soc.md)
+- [SAE and Unanticipated Problem Reporting SOP](../technical_writer_prompts/03_sae_reporting_sop.md)
+- [Overview](../technical_writer_prompts/overview.md)
+
 ## CRA Prompts
 
 - [Monitoring-Visit Report Generator](../cra_prompts/01_monitoring_visit_report_generator.md)
