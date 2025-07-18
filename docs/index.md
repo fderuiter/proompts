@@ -40,6 +40,9 @@
 - [Study Design + Statistical Approach](../biostatistics_prompts/07_study_design_statistical_approach.md)
 - [Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive](../biostatistics_prompts/08_inclusion_exclusion_endpoints_sample_size.md)
 - [Adaptive Design & Interim Monitoring](../biostatistics_prompts/09_adaptive_design_interim_monitoring.md)
+- [Sample-Size and Randomization Strategy](../biostatistics_prompts/10_sample_size_randomization_strategy.md)
+- [Submission-Ready SAP](../biostatistics_prompts/11_submission_ready_sap.md)
+- [Generate & QC Submission-Ready TLFs](../biostatistics_prompts/12_submission_ready_tlfs.md)
 - [Overview](../biostatistics_prompts/overview.md)
 
 ## Codebase Analysis
