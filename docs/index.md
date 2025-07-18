@@ -242,8 +242,10 @@
 - [L5 Comprehensive Task Template](../meta_prompts/L5_comprehensive_task_template.md)
 - [L5 Prompt Engineer and Fact-Checker](../meta_prompts/L5_prompt_engineer_fact_checker.md)
 - [L5 Prompt-Sanitiser v1.1](../meta_prompts/L5_prompt_sanitiser.md)
+- [PromptCrafter GPT](../meta_prompts/L5_promptcrafter_gpt.md)
 - [L5 README Generator](../meta_prompts/L5_readme-generator.md)
 - [AI Agent Prompt: Refactor and Re-index Prompts in the *proompts* Repository](../meta_prompts/L5_refactor-reindex-prompts.md)
+- [Standardize Prompt Files](../meta_prompts/L5_standardize-prompt-files.md)
 
 ## Microbiology Prompts
 
