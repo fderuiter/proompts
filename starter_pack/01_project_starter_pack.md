@@ -1,7 +1,34 @@
+---
+id: project-starter-pack
+title: Project Starter Pack Prompts
+category: starter_pack
+author: proompts
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [templates, project management]
+---
+
 # Project Starter Pack Prompts
 
-Below are ready-to-copy prompts—one per document in the starter pack.
-Each prompt tells an AI assistant (or any author) exactly what to deliver, what sections to include, and the desired length or format. Feel free to tweak wording or depth, but this will get you 90 % of the way there.
+## Purpose
+Provide ready-to-copy prompt templates for common project documentation.
+
+## Context
+Use these prompts to create standard deliverables without starting from a blank page.
+
+## Instructions
+Copy the relevant prompt below and replace the placeholders with your project details.
+
+## Inputs
+Variables such as `{{Project Name}}`, `{{Feature Area}}`, and similar placeholders appear in the subprompts.
+
+## Output Format
+Plain-text prompts grouped by deliverable.
+
+## Additional Notes
+Prompts marked with * may result in multi-page outputs.
 
 ---
 
