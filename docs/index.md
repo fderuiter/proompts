@@ -142,6 +142,13 @@
 - [Kpi Dashboard Ops Review](../operations_prompts/03_kpi_dashboard_ops_review.md)
 - [Overview](../operations_prompts/overview.md)
 
+## Payment Prompts
+
+- [Build an Audit-Ready Site-Payment Schedule](../payment_prompts/01_audit_ready_site_payment_schedule.md)
+- [Sunshine Act + FMV Compliance Check](../payment_prompts/02_sunshine_act_fmv_compliance_check.md)
+- [Payment-Process Risk Assessment & Mitigation](../payment_prompts/03_payment_process_risk_assessment.md)
+- [Overview](../payment_prompts/overview.md)
+
 ## Project Management
 
 - [Project Charter Scope](../project_management/01_project_charter_scope.md)
