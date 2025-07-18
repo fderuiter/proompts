@@ -319,3 +319,10 @@
 - [Device–Tissue Interface Evaluation](../pathology_prompts/02_device_tissue_interface_evaluation.md)
 - [Slides & Reporting Workflow](../pathology_prompts/03_slides_and_reporting_workflow.md)
 - [Overview](../pathology_prompts/overview.md)
+
+## HR & Finance Prompts
+
+- [Strategic Workforce & Talent-Acquisition Plan](../hr_finance_prompts/01_strategic_workforce_talent_acquisition_plan.md)
+- [Clinical-Trial Budget & Burn-Rate Dashboard](../hr_finance_prompts/02_clinical_trial_budget_burn_rate_dashboard.md)
+- [GCP / GDPR Compliance & Training Risk Report](../hr_finance_prompts/03_gcp_gdpr_compliance_training_risk_report.md)
+- [Overview](../hr_finance_prompts/overview.md)
