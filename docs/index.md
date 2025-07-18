@@ -325,6 +325,13 @@
 - [Post-Market Safety Signal Trending](../clinical_safety_prompts/03_post_market_safety_signal_trending.md)
 - [Overview](../clinical_safety_prompts/overview.md)
 
+## Clinical Research Manager Prompts
+
+- [Accelerate Patient Recruitment & Retention](../clinical_research_manager_prompts/01_accelerate_patient_recruitment_retention.md)
+- [Digest the Latest Regulatory Updates Affecting My Protocol](../clinical_research_manager_prompts/02_digest_regulatory_updates.md)
+- [Portfolio KPI Dashboard Brief](../clinical_research_manager_prompts/03_portfolio_kpi_dashboard_brief.md)
+- [Overview](../clinical_research_manager_prompts/overview.md)
+
 ## Pathology Prompts
 
 - [Study Protocol Outline](../pathology_prompts/01_study_protocol_outline.md)
