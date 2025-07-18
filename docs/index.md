@@ -40,6 +40,8 @@
 - [Study Design + Statistical Approach](../biostatistics_prompts/07_study_design_statistical_approach.md)
 - [Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive](../biostatistics_prompts/08_inclusion_exclusion_endpoints_sample_size.md)
 - [Adaptive Design & Interim Monitoring](../biostatistics_prompts/09_adaptive_design_interim_monitoring.md)
+- [Phase II/III SAP Skeleton](../biostatistics_prompts/10_phase_ii_iii_sap_skeleton.md)
+- [FDA Missing-Data Query Response](../biostatistics_prompts/11_fda_missing_data_query_response.md)
 - [Overview](../biostatistics_prompts/overview.md)
 
 ## Codebase Analysis
@@ -128,6 +130,7 @@
 - [Strategic Alignment Innovation](../leadership_prompts/01_strategic_alignment_innovation.md)
 - [Operational Excellence Communication](../leadership_prompts/02_operational_excellence_communication.md)
 - [Leadership Reflection Culture](../leadership_prompts/03_leadership_reflection_culture.md)
+- [90-Day Biostatistics Onboarding Plan](../leadership_prompts/04_biostatistics_onboarding_plan.md)
 - [Overview](../leadership_prompts/overview.md)
 
 ## Market Research Prompts
