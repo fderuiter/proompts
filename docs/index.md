@@ -291,6 +291,14 @@
 - [Payment Reconciliation and Discrepancy Report](../payment_prompts/05_payment_reconciliation_discrepancy_report.md)
 - [Global Regulatory and Tax Requirements for Site Payments](../payment_prompts/06_global_regulatory_tax_matrix.md)
 
+## Productivity Prompts
+
+- [Eisenhower Matrix Coach](../productivity_prompts/01_eisenhower_matrix_coach.md)
+- [Second-Order Thinking Oracle](../productivity_prompts/02_second_order_thinking_oracle.md)
+- [Fishbone Facilitator](../productivity_prompts/03_fishbone_facilitator.md)
+- [Hero's Journey Storyboarder](../productivity_prompts/04_heros_journey_storyboarder.md)
+- [RACI Mapper](../productivity_prompts/05_raci_mapper.md)
+
 ## Project Management
 
 - [Project Charter & Scope Definition](../project_management/01_project_charter_scope.md)
