@@ -107,6 +107,9 @@
 - [Strategic Market Foresight](../executive_prompts/01_strategic_market_foresight.md)
 - [Crisis Management Playbook](../executive_prompts/02_crisis_management_playbook.md)
 - [Executive Brief Synthesizer](../executive_prompts/03_executive_brief_synthesizer.md)
+- [Strategic Portfolio Prioritizer](../executive_prompts/04_strategic_portfolio_prioritizer.md)
+- [Emerging-Science Horizon Scan](../executive_prompts/05_emerging_science_horizon_scan.md)
+- [Trial-Design Optimisation Memo](../executive_prompts/06_trial_design_optimisation_memo.md)
 - [Overview](../executive_prompts/overview.md)
 
 ## Glp Prompts
