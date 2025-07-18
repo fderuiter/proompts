@@ -109,6 +109,9 @@
 - [Executive Brief Synthesizer](../executive_prompts/03_executive_brief_synthesizer.md)
 - [Market & Competitor Radar](../executive_prompts/04_market_competitor_radar.md)
 - [Investor & Board Narrative Builder](../executive_prompts/05_investor_board_narrative_builder.md)
+- [Strategic Portfolio Prioritizer](../executive_prompts/04_strategic_portfolio_prioritizer.md)
+- [Emerging-Science Horizon Scan](../executive_prompts/05_emerging_science_horizon_scan.md)
+- [Trial-Design Optimisation Memo](../executive_prompts/06_trial_design_optimisation_memo.md)
 - [Overview](../executive_prompts/overview.md)
 
 ## Glp Prompts
@@ -160,6 +163,9 @@
 - [Inventory Demand Planning Simulation](../operations_prompts/02_inventory_demand_planning_simulation.md)
 - [Kpi Dashboard Ops Review](../operations_prompts/03_kpi_dashboard_ops_review.md)
 - [Operational Excellence & Risk Sweep](../operations_prompts/04_operational_excellence_risk_sweep.md)
+- [360° Operational KPI & Benchmark Review](../operations_prompts/04_operational_kpi_benchmark_review.md)
+- [Proactive Risk Heat-Map for Decentralized & Virtual Trials](../operations_prompts/05_proactive_risk_heat_map.md)
+- [Forward-Looking Resource & Capacity Forecast](../operations_prompts/06_forward_capacity_forecast.md)
 - [CRO Trial-Performance KPI Dashboard Blueprint](../operations_prompts/04_cro_trial_performance_kpi_dashboard_blueprint.md)
 - [Multistudy Resource & Capacity Forecast Plan](../operations_prompts/05_multistudy_resource_capacity_forecast_plan.md)
 - [Fair-Market-Value Budget Negotiation Brief](../operations_prompts/06_fair_market_value_budget_negotiation_brief.md)
@@ -173,6 +179,9 @@
 - [Build an Audit-Ready Site-Payment Schedule](../payment_prompts/01_audit_ready_site_payment_schedule.md)
 - [Sunshine Act + FMV Compliance Check](../payment_prompts/02_sunshine_act_fmv_compliance_check.md)
 - [Payment-Process Risk Assessment & Mitigation](../payment_prompts/03_payment_process_risk_assessment.md)
+- [Investigator-Site Payment Forecast](../payment_prompts/04_investigator_site_payment_forecast.md)
+- [Payment Reconciliation and Discrepancy Report](../payment_prompts/05_payment_reconciliation_discrepancy_report.md)
+- [Global Regulatory & Tax Matrix](../payment_prompts/06_global_regulatory_tax_matrix.md)
 - [Overview](../payment_prompts/overview.md)
 
 ## Project Management
@@ -295,6 +304,9 @@
 - [AI-Powered Site & Recruitment Strategy](../trial_execution_prompts/02_ai_powered_site_recruitment.md)
 - [Compliance, Data Quality & Monitoring Plan](../trial_execution_prompts/03_compliance_data_quality_monitoring_plan.md)
 - [Adaptive Recruitment & Retention Strategy](../trial_execution_prompts/04_adaptive_recruitment_retention_strategy.md)
+- [Portfolio-Level Clinical Operations Roadmap](../trial_execution_prompts/05_portfolio_clin_ops_roadmap.md)
+- [Risk-Based Monitoring & Quality Plan](../trial_execution_prompts/06_risk_based_monitoring_plan.md)
+- [Patient Recruitment & Diversity Acceleration Plan](../trial_execution_prompts/07_recruitment_diversity_acceleration.md)
 - [Overview](../trial_execution_prompts/overview.md)
 
 ## Adjudication Prompts
@@ -328,12 +340,40 @@
 - [Post-Market Safety Signal Trending](../clinical_safety_prompts/03_post_market_safety_signal_trending.md)
 - [Overview](../clinical_safety_prompts/overview.md)
 
+## Clinical Research Manager Prompts
+
+- [Accelerate Patient Recruitment & Retention](../clinical_research_manager_prompts/01_accelerate_patient_recruitment_retention.md)
+- [Digest the Latest Regulatory Updates Affecting My Protocol](../clinical_research_manager_prompts/02_digest_regulatory_updates.md)
+- [Portfolio KPI Dashboard Brief](../clinical_research_manager_prompts/03_portfolio_kpi_dashboard_brief.md)
+- [Overview](../clinical_research_manager_prompts/overview.md)
+
 ## Pathology Prompts
 
 - [Study Protocol Outline](../pathology_prompts/01_study_protocol_outline.md)
 - [Device–Tissue Interface Evaluation](../pathology_prompts/02_device_tissue_interface_evaluation.md)
 - [Slides & Reporting Workflow](../pathology_prompts/03_slides_and_reporting_workflow.md)
 - [Overview](../pathology_prompts/overview.md)
+
+## CRA Prompts
+
+- [Monitoring-Visit Report Generator](../cra_prompts/01_monitoring_visit_report_generator.md)
+- [Investigator Follow-up Email & Action-Item Tracker](../cra_prompts/02_investigator_follow_up_email_tracker.md)
+- [Risk-Based Monitoring (RBM) Plan Builder](../cra_prompts/03_rbm_plan_builder.md)
+- [Overview](../cra_prompts/overview.md)
+
+## Clinical Monitoring Prompts
+
+- [Risk-Based Site Performance Dashboard](../clinical_monitoring_prompts/01_risk_based_site_performance_dashboard.md)
+- [CAPA Plan Builder for Monitoring Findings](../clinical_monitoring_prompts/02_capa_plan_builder_for_monitoring_findings.md)
+- [Monitoring Visit Report Quality Critique](../clinical_monitoring_prompts/03_monitoring_visit_report_quality_critique.md)
+- [Overview](../clinical_monitoring_prompts/overview.md)
+
+## Study Director Prompts
+
+- [Draft a GLP-Compliant Study Protocol](../study_director_prompts/01_draft_glp_compliant_study_protocol.md)
+- [Audit Raw Data and Draft a CAPA Summary](../study_director_prompts/02_audit_raw_data_capa_summary.md)
+- [Generate an Executive Summary for the Final Report](../study_director_prompts/03_executive_summary_final_report.md)
+- [Overview](../study_director_prompts/overview.md)
 
 ## HR & Finance Prompts
 
