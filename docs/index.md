@@ -200,3 +200,10 @@
 - [Tailored Feasibility-Questionnaire Builder](../site_acquisition_prompts/02_tailored_feasibility_questionnaire.md)
 - [Personalized Investigator-Outreach Email Generator](../site_acquisition_prompts/03_investigator_outreach_email_generator.md)
 - [Overview](../site_acquisition_prompts/overview.md)
+
+## Trial Execution Prompts
+
+- [Protocol Optimization & Risk Simulation](../trial_execution_prompts/01_protocol_optimization_risk_simulation.md)
+- [AI-Powered Site & Recruitment Strategy](../trial_execution_prompts/02_ai_powered_site_recruitment.md)
+- [Compliance, Data Quality & Monitoring Plan](../trial_execution_prompts/03_compliance_data_quality_monitoring_plan.md)
+- [Overview](../trial_execution_prompts/overview.md)
