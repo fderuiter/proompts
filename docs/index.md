@@ -157,6 +157,9 @@
 - [Rapid Process Diagnostic](../operations_prompts/01_rapid_process_diagnostic.md)
 - [Inventory Demand Planning Simulation](../operations_prompts/02_inventory_demand_planning_simulation.md)
 - [Kpi Dashboard Ops Review](../operations_prompts/03_kpi_dashboard_ops_review.md)
+- [Study Start-Up Checklist & Timeline](../operations_prompts/04_study_startup_checklist.md)
+- [Weekly Operations KPI Snapshot](../operations_prompts/05_weekly_ops_kpi_snapshot.md)
+- [Action-Oriented Meeting Minutes & Tracker](../operations_prompts/06_action_oriented_meeting_minutes.md)
 - [Overview](../operations_prompts/overview.md)
 
 ## Payment Prompts
