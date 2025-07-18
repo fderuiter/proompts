@@ -18,7 +18,7 @@
 - [End-to-End Test Discovery Prompt](../agentic_coding/07_e2e_test_discovery.md)
 - [Folder & Module Organization](../agentic_coding/07_folder_module_organization.md)
 - [RequirementsBot Prompt](../agentic_coding/07_requirements_prompt.md)
-- [Reflexion-Agent-Bug-Patch](../agentic_coding/08_reflexion_agent_bug_patch.md)
+- [Reflexion Agent Bug Patch](../agentic_coding/08_reflexion_agent_bug_patch.md)
 
 ## Biological Safety Prompts
 
@@ -60,7 +60,7 @@
 
 ## Brainstorming Prompts
 
-- [Reverse-Brainstorming](../brainstorming_prompts/01_reverse_brainstorming.md)
+- [Reverse Brainstorming](../brainstorming_prompts/01_reverse_brainstorming.md)
 
 ## Business Development Prompts
 
@@ -139,7 +139,7 @@
 - [Data-to-Insight Analyst](../communication_prompts/08_data_to_insight_analyst.md)
 - [Socratic-Coach](../communication_prompts/09_socratic_coach.md)
 - [Red-Team Stress-Test](../communication_prompts/10_red_team_stress_test.md)
-- [Analogy-Architect](../communication_prompts/11_analogy_architect.md)
+- [Analogy Architect](../communication_prompts/11_analogy_architect.md)
 
 ## Cra Prompts
 
@@ -191,7 +191,7 @@
 - [Quarterly Innovation Radar for Decentralized & Hybrid Trials](../executive_prompts/06_innovation_radar.md)
 - [Regulatory & Competitive Intelligence Briefing](../executive_prompts/06_regulatory_competitive_intel_briefing.md)
 - [Trial-Design Optimisation Memo](../executive_prompts/06_trial_design_optimisation_memo.md)
-- [Strategic-Consultant-SWOT](../executive_prompts/07_strategic_consultant_swot.md)
+- [Strategic Consultant SWOT](../executive_prompts/07_strategic_consultant_swot.md)
 
 ## Glp Prompts
 
@@ -313,7 +313,7 @@
 - [Sponsor-Ready Monthly Status Brief](../project_management/08_sponsor_ready_monthly_status_brief.md)
 - [Executive Sponsor Briefing Deck Outline (15 Slides)](../project_management/09_executive_sponsor_briefing_deck_outline.md)
 - [TMF Gap-Analysis & Audit Readiness Check](../project_management/09_tmf_gap_analysis_audit_readiness_check.md)
-- [Neutral-Scrum-Retrospective-Facilitator](../project_management/10_neutral_scrum_retro.md)
+- [Neutral Scrum Retrospective Facilitator](../project_management/10_neutral_scrum_retro.md)
 
 ## Prompt Tools
 

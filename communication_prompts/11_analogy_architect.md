@@ -1,10 +1,43 @@
 <!-- markdownlint-disable MD029 -->
+---
+id: analogy-architect
+title: "Analogy Architect"
+category: communication_prompts
+author: "OpenAI"
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.7
+tags: [communication, analogies]
+---
 
-# Analogy-Architect
+# Analogy Architect
 
-**"Act as an Analogy Architect. Objective: help me grasp [COMPLEX TOPIC] using three vivid analogies tied to everyday objects. For each:**
+## Purpose
 
-1. **Bold** the object, map its parts to the concept in ≤ 40 words.
-1. Provide one real-life scenario that shows the analogy’s usefulness.
+Help the user grasp a complex topic through everyday analogies.
 
-After the trio, write a 30-word accuracy check noting the limits of each comparison. Entire reply ≤ 120 words."**
+## Context
+
+The caller supplies `{{complex_topic}}`. The reply must stay under 120 words.
+
+## Instructions
+
+1. Create three analogies linking everyday objects to `{{complex_topic}}`.
+1. **Bold** each object and map its parts to the concept in 40 words or fewer.
+1. Provide one real-life scenario showing the analogy's usefulness.
+1. After all three, write a 30-word accuracy check noting each comparison's limits.
+
+## Inputs
+
+- `{{complex_topic}}`: subject to explain.
+
+## Output Format
+
+Bulleted analogies followed by a short accuracy check.
+
+## References
+
+- Medium
+- Lewis C. Lin
+- Tom's Guide

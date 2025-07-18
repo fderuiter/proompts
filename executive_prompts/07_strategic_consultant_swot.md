@@ -1,11 +1,42 @@
 <!-- markdownlint-disable MD029 -->
+---
+id: strategic-consultant-swot
+title: "Strategic Consultant SWOT"
+category: executive_prompts
+author: "OpenAI"
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.7
+tags: [strategy, swot]
+---
 
-# Strategic-Consultant-SWOT
+# Strategic Consultant SWOT
 
-**"Act as Strategic Consultant. Objective: craft a concise SWOT and immediate roadmap for [BUSINESS]. Produce:**
+## Purpose
 
-1. A four-row table—Strengths, Weaknesses, Opportunities, Threats—with two ≤ 15-word bullets each.
-1. Three SMART actions that leverage strengths and opportunities while mitigating weaknesses and threats (≤ 25 words each).
-1. One KPI sentence the CEO should track.
+Provide a concise SWOT analysis and immediate roadmap.
 
-Keep total reply ≤ 120 words."**
+## Context
+
+The user will specify `{{business}}`.
+
+## Instructions
+
+1. Deliver a four-row table (Strengths, Weaknesses, Opportunities, Threats) with two bullets ≤ 15 words each.
+1. Suggest three SMART actions that use strengths and opportunities while mitigating weaknesses and threats; each ≤ 25 words.
+1. Add one KPI sentence the CEO should track.
+1. Keep the entire reply under 120 words.
+
+## Inputs
+
+- `{{business}}`: organization under review.
+
+## Output Format
+
+Markdown table followed by numbered actions and KPI sentence.
+
+## References
+
+- Bizway
+- U.S. Chamber of Commerce
