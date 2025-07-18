@@ -1,27 +1,35 @@
-# Clinical ETL Mapping Specification
+---
+id: clinical-etl-mapping-spec
+title: Clinical ETL Mapping Spec
+category: data_management_prompts
+author: proompts
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4o
+temperature: 0.2
+tags: [clinical, etl]
+---
 
-You are a principal clinical-data engineer who has delivered multiple FDA-compliant Study Data Tabulation Model (SDTM) repositories. Think like a CDISC auditor.
+# Clinical ETL Mapping Spec
 
-## User task
+Title: Create Clinical ETL Mapping Spec
 
-1. Map raw Electronic Data Capture (EDC) tables to SDTM domains DM, AE, LB, VS.
-1. For each domain, list:
-   - source columns
-   - target variables
-   - derivation logic (pseudo-code)
-   - unit conversions
-   - codelist references.
-1. Flag any ambiguous or missing metadata.
+Role: Principal Clinical Data Engineer
 
-## Constraints
+Task:
+- Map raw EDC tables to SDTM domains DM, AE, LB and VS.
+- For each domain list source columns, target variables, derivation logic, unit conversions and codelist references.
+- Flag ambiguous or missing metadata.
 
-- Use R (tidyverse) and Base SAS syntax examples.
-- Follow CDISC naming conventions.
-- Output two artefacts:
-   - A Markdown table for the mapping spec.
-   - A "next-actions" bullet list for unresolved gaps.
+Context:
+"""
+You have delivered multiple FDA-compliant SDTM repositories. Think like a CDISC auditor.
+"""
 
-## Quality gates
+Constraints:
+- Provide R (tidyverse) and Base SAS syntax examples.
+- Output a mapping table and a bullet list of next actions.
+- Mark uncertain rules with "⚠ Needs SME review".
 
-- Double-check that all keys needed for merge() / PROC SORT are defined.
-- If a rule is uncertain, say "⚠ Needs SME review".
+Output Format: markdown
+--------------------------------------------------

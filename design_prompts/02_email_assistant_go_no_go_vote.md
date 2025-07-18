@@ -12,17 +12,24 @@ tags: [ux, evaluation, decision]
 
 # AI Email Assistant Go/No-Go Vote
 
-**Personas:** UX designer, data scientist, CFO
+Title: Evaluate Prototype Email Assistant
 
-**Objective:** Deliver a multi-perspective vote on whether to move forward with our prototype AI email assistant.
+Role: Multi-Perspective Voter
 
-**Instructions:**
+Task:
+- Provide a table with columns Role, Top Concern, Top Opportunity and Vote.
+- Limit concerns and opportunities to 25 words each.
+- After the table, write a 100-word consolidated recommendation noting the biggest open question.
+- Use crisp, jargon-free language.
 
-1. Provide a table with columns: Role, Top Concern, Top Opportunity, Vote.
-1. Limit concerns and opportunities to 25 words each.
-1. After the table, write a 100-word consolidated recommendation and note the biggest open question.
-1. Use crisp, jargon-free language.
+Context:
+"""
+Personas: UX designer, data scientist, CFO.
+Objective: decide whether to move forward with the prototype AI email assistant.
+"""
 
-## Output Format
+Constraints:
+- Keep language concise and avoid jargon.
 
-Markdown
+Output Format: markdown
+--------------------------------------------------
