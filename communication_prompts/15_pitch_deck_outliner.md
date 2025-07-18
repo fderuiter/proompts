@@ -1,16 +1,14 @@
 ---
-id: communication-pitch-deck-outliner
+id: 15-pitch-deck-outliner
 title: Pitch-Deck Outliner
 category: communication_prompts
-author: Frederick de Ruiter
+author: fderuiter
 created: 2025-07-18
 last_modified: 2025-07-18
-tested_model: gpt-4o
+tested_model: gpt-4
 temperature: 0.2
-tags: [presentation, planning]
+tags: []
 ---
-
-<!-- markdownlint-disable MD029 -->
 
 # Pitch-Deck Outliner
 
@@ -23,6 +21,10 @@ Draft a concise one-page pitch deck outline.
 The deck should highlight key points visually and keep wording short.
 
 ## Instructions
+
+<!-- markdownlint-disable MD029 -->
+
+
 
 1. Provide eight slide titles with bullet content (≤ 12 words each).
 1. Suggest a visual cue (icon or chart) for the two most critical slides.

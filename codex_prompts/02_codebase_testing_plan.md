@@ -1,12 +1,22 @@
+---
+id: 02-codebase-testing-plan
+title: codebase-testing-plan.prompt.md
+category: codex_prompts
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: []
+---
+
 # codebase-testing-plan.prompt.md
 
-<!-- Comprehensive “Testing Strategy & Roadmap” prompt -->
-
-## Goal
+## Purpose
 
 Generate a detailed analysis of an existing codebase **and** produce a step-by-step plan to introduce or improve automated testing, aligned with project priorities, team skills, and CI/CD constraints.
 
-## Context / Background
+## Context
 
 - **Codebase**  
    - Language(s) & framework(s) in use (e.g., TypeScript + React, Python +Django, Go micro-services).  
@@ -25,6 +35,9 @@ Generate a detailed analysis of an existing codebase **and** produce a step-by-s
 > **Attach or link** the repository root (or a representative subset) so Copilot Chat can inspect folder and file patterns.
 
 ## Instructions
+
+<!-- Comprehensive “Testing Strategy & Roadmap” prompt -->
+
 
 - **Inventory & Baseline**  
    - Parse the repository to map modules, layers, and key entry points.  
@@ -68,6 +81,10 @@ Generate a detailed analysis of an existing codebase **and** produce a step-by-s
    - Chaos engineering for resilience.  
    - Cross-browser/device matrix expansion.  
    - Progressive adoption of property-based and mutation testing.
+
+## Inputs
+
+## Output Format
 
 ## Additional Notes
 

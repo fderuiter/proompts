@@ -1,21 +1,27 @@
+---
+id: 02-competitive-bid-pricing
+title: Competitive-Bid Pricing & Margin Optimizer
+category: cfo_prompts
+author: fderuiter
+created: 2025-07-18
+last_modified: 2025-07-18
+tested_model: gpt-4
+temperature: 0.2
+tags: []
+---
+
 # Competitive-Bid Pricing & Margin Optimizer
+
+## Purpose
 
 ## Context
 
 Act as my strategic pricing manager. We are bidding on a multi-year oncology study against two top-10 CROs.
 
-## Task
+## Instructions
 
-1. Using the cost drivers below, craft three pricing options (Time & Materials, Fixed Fee with Change-Order triggers, and Risk-Share Milestones).
-1. For each option, calculate gross margin, probability-weighted downside, and upside.
-1. Recommend the option that keeps EBITDA ≥ 18% while remaining price-competitive (assume competitors’ quotes are 5% below industry median).
+## Inputs
 
-## Data Inputs
+## Output Format
 
-• Direct costs, indirect overhead % and historic change-order frequency here → `{Insert CSV}`
-• Regulatory/monitoring premiums = +12% (oncology)
-
-## Response Rules
-
-• Output a comparison table plus a 200-word rationale.
-• Use CFO-friendly language—no jargon.
+## Additional Notes
