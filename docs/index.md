@@ -354,6 +354,14 @@
 - [Forecast Site-Level Drug Supply & Resupply Strategy](../rtsm_prompts/02_site_level_supply_resupply_strategy.md)
 - [Create a Risk-Based Monitoring & Mitigation SOP for RTSM](../rtsm_prompts/03_risk_based_monitoring_sop.md)
 
+## Self Improvement Prompts
+
+- [Career Compass Advisor](../self_improvement_prompts/01_career_compass_advisor.md)
+- [Scenario-Based Financial Navigator](../self_improvement_prompts/02_financial_navigator.md)
+- [Micro-Habit Health Coach](../self_improvement_prompts/03_micro_habit_health_coach.md)
+- [Learning Path Mentor](../self_improvement_prompts/04_learning_path_mentor.md)
+- [Writing Clarity Mentor](../self_improvement_prompts/05_writing_clarity_mentor.md)
+
 ## Site Acquisition Prompts
 
 - [Site Landscape Mapping & Prioritization](../site_acquisition_prompts/01_site_landscape_mapping.md)
