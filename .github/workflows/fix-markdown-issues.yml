@@ -1,4 +1,5 @@
 name: Fix Markdown Issues
+# Auto-format documentation in Markdown
 
 on:
   push:

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Update docs index and table of contents for prompt files."""
+"""Update `docs/index.md` and `docs/table-of-contents.md` in Markdown."""
 
 import argparse
 import json
