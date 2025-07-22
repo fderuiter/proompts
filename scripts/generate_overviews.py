@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Create overview.md files for prompt directories if missing."""
+"""Create ``overview.md`` files for prompt directories if missing."""
 
 from pathlib import Path
 import sys
 import json
+
+OVERVIEW_NAME = "overview.md"  # documentation remains in Markdown
 
 ROOT = Path(__file__).resolve().parents[1]
 EXCLUDE_DIRS = {"docs", "scripts", ".github"}
@@ -34,7 +36,7 @@ def generate_overview(directory: Path) -> str:
 
 
 def ensure_overview(directory: Path) -> bool:
-    path = directory / "overview.md"
+    path = directory / OVERVIEW_NAME
     if path.exists():
         return False
     content = generate_overview(directory)

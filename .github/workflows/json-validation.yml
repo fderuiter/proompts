@@ -1,4 +1,5 @@
 name: JSON Validation
+# Ensure prompt JSON and Markdown docs remain valid
 
 on:
   push:

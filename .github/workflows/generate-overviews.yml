@@ -1,4 +1,5 @@
 name: Generate Overviews
+# Keep overview files as Markdown
 
 on:
   push:

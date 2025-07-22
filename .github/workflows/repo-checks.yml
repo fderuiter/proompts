@@ -1,4 +1,5 @@
 name: Repository Checks
+# Validate JSON prompts and overview.md presence
 
 on:
   push:

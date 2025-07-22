@@ -1,4 +1,5 @@
 name: Update Docs Index
+# Regenerate Markdown docs index files
 
 on:
   push:

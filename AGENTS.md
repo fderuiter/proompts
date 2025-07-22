@@ -5,6 +5,7 @@ This repository stores a collection of AI agent prompts. Each prompt is stored a
 ## File Format and Layout
 
 - **JSON only**: All prompts must be stored as `.json` files containing valid JSON. Use Markdown strictly for documentation such as `README.md` or `overview.md`.
+- **Markdown docs**: All documentation files—including `overview.md`, `docs/*.md`, and any additional guides—remain in Markdown format. Do not convert these files to JSON or other formats.
 - **Naming**: Follow the existing naming style in each directory. For example, prompts in `agentic_coding` use numeric prefixes (`01_product_brief.json`, `02_project_brief_epic.json`, etc.), while prompts in `meta_prompts` start with `L#_` (`L0_master-ultrameta.json`).
 - **Directory placement**: Add new prompts to the most relevant directory. Create new directories when necessary, using short, lowercase names separated by underscores.
 

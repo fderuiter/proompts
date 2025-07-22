@@ -1,4 +1,5 @@
 name: Deploy Jekyll site
+# Build site from Markdown documentation and prompts
 
 on:
   push:
