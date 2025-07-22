@@ -1,0 +1,24 @@
+{
+  "id": "emerging-science-horizon-scan",
+  "title": "Emerging-Science Horizon Scan",
+  "category": "executive_prompts",
+  "author": "Frederick de Ruiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "executive",
+    "horizon"
+  ],
+  "prompt": {
+    "purpose": "Highlight emerging therapeutic areas or technologies likely to disrupt CRO services in the next three years.",
+    "context": "You are a competitive-intelligence analyst for a CRO specializing in AI-enabled, patient-centric trials. Themes include decentralized and hybrid trial tech, generative AI for protocol drafting, CRISPR-based in vivo gene editing, radiopharmaceutical diagnostics, and real-world-data patient recruitment platforms.",
+    "instructions": "1. Analyze the provided themes.\n1. For each trend deliver:\n   - One-sentence summary (\u226425 words).\n   - Why it matters for CROs (scientific and commercial).\n   - Example companies or trials (maximum two).\n   - A recommended action for our CRO.\n1. Finish with a 50-word \u201cSo what?\u201d paragraph linking to our 2026\u20132030 strategic roadmap.\n\nUse a board-ready, bullet-heavy tone with minimal jargon.",
+    "inputs": "- `{{themes}}` \u2013 optional list of additional themes or notes.",
+    "output_format": "Structured bullet list for each trend followed by the summary paragraph.",
+    "additional_notes": "Keep the total length under 700 words.",
+    "example_usage": "",
+    "references": ""
+  }
+}

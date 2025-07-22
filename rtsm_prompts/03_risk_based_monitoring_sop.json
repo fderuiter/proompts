@@ -1,0 +1,24 @@
+{
+  "id": "risk-based-monitoring-sop",
+  "title": "Create a Risk-Based Monitoring & Mitigation SOP for RTSM",
+  "category": "rtsm_prompts",
+  "author": "proompts team",
+  "created": "2024-01-01",
+  "last_modified": "2024-01-01",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "RTSM",
+    "SOP"
+  ],
+  "prompt": {
+    "purpose": "Draft a standard operating procedure for risk\u2011based monitoring and mitigation in RTSM operations.",
+    "context": "You are a GxP compliance officer. Study portfolio includes five concurrent trials with IMPs that expire after 12\u00a0months. Integrated systems: RTSM\u00a0\u2194\u00a0EDC\u00a0\u2194\u00a0temperature\u2011monitoring IoT. Common risks include kit expiry, temperature excursions, inventory discrepancies, and mid\u2011study design changes.",
+    "instructions": "1. List the top ten RTSM operational risks ranked by severity \u00d7 likelihood.\n1. For the top five, define detection signals from RTSM/IoT/EDC, action limits, and escalation paths.\n1. Draft step\u2011by\u2011step mitigation procedures, mapping each to ICH\u00a0E6\u00a0R3 and 21\u00a0CFR \u00a7312 references.\n1. Include a one\u2011page flowchart description suitable for QA training handouts.",
+    "inputs": "- `{{existing_sop}}` \u2014 any current procedures.",
+    "output_format": "- Two\u2011column markdown table: Risk\u00a0\\| Detection & Escalation Path.\n- Numbered mitigation procedures (\u2264150\u00a0words each).\n- Text description of the flowchart for later diagramming.\n- Provide only the final SOP content.",
+    "additional_notes": "Avoid internal reasoning in the output.",
+    "example_usage": "",
+    "references": ""
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "csr-results-safety",
+  "title": "CSR Results and Safety Section",
+  "category": "technical_writer_prompts",
+  "author": "proompts team",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "technical writing",
+    "regulatory"
+  ],
+  "prompt": {
+    "purpose": "Draft Sections 11 and 12 of an ICH\u00a0E3 clinical study report.",
+    "context": "You are a senior regulatory medical writer preparing the final CSR for a completed Phase\u00a0II trial of **Drug\u00a0X** in moderate plaque psoriasis. The study enrolled 180 participants at 12 US sites between January\u00a02023 and May\u00a02024. Primary endpoint PASI\u201175 at Week\u00a016 showed 74\u00a0% vs 48\u00a0% for placebo (p\u00a0=\u00a00.032). Two SAEs were unrelated to the drug (appendicitis and a fracture). Appendix\u00a0A contains full statistical tables and figures.",
+    "instructions": "1. Follow ICH\u00a0E3 headings and numbering.\n1. Write concisely in past tense, third person (\u2264\u00a02\u00a0500\u00a0words).\n1. Embed Table\u00a011\u20111 (efficacy), Table\u00a012\u20111 (summary of AEs) and Figure\u00a012\u20111 (Kaplan\u2011Meier time\u2011to\u2011event).\n1. Cite data sources inline.\n1. List any missing information required to finalize the section.\n1. If information is insufficient, ask up to three clarifying questions before drafting.",
+    "inputs": "None",
+    "output_format": "Markdown sections for **Efficacy Evaluation** and **Safety Evaluation**, including the specified tables and figure.",
+    "additional_notes": "Ensure scientific style and note dependencies on Appendix\u00a0A.",
+    "example_usage": "",
+    "references": ""
+  }
+}

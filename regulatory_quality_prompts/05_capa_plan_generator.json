@@ -1,0 +1,24 @@
+{
+  "id": "capa-plan-generator",
+  "title": "CAPA Plan Generator",
+  "category": "regulatory_quality_prompts",
+  "author": "proompts team",
+  "created": "2024-01-01",
+  "last_modified": "2024-01-01",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "CAPA",
+    "quality"
+  ],
+  "prompt": {
+    "purpose": "Generate a Corrective and Preventive Action (CAPA) plan based on audit findings.",
+    "context": "You are a GxP audit consultant for a CRO. A draft sponsor audit report lists five major findings.",
+    "instructions": "1. For each finding, conduct root-cause analysis using the 5\u00a0Whys method.\n1. Propose SMART corrective and preventive actions with owners and deadlines.\n1. Describe effectiveness checks.\n1. Present results as a CAPA tracker table ready for Excel import.\n1. Conclude with one sentence on how the plan prevents recurrence.",
+    "inputs": "- `{{audit_findings}}` \u2014 list of major findings.",
+    "output_format": "Markdown table plus short concluding sentence.",
+    "additional_notes": "Ensure alignment with FDA 21\u00a0CFR\u00a0820.100 and ISO\u00a013485:2016.\n\n<!-- markdownlint-enable MD029 MD036 -->",
+    "example_usage": "",
+    "references": ""
+  }
+}

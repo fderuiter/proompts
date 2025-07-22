@@ -1,0 +1,24 @@
+{
+  "id": "recruitment-diversity-acceleration",
+  "title": "Patient Recruitment and Diversity Acceleration Plan",
+  "category": "trial_execution_prompts",
+  "author": "proompts team",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "clinical operations",
+    "recruitment"
+  ],
+  "prompt": {
+    "purpose": "Boost enrollment and improve demographic diversity in a stalled Phase\u00a0III study.",
+    "context": "You are a patient\u2011engagement strategist. Enrollment has stalled at 45\u00a0% of target in a Phase\u00a0III rare\u2011disease study spanning 22 countries and 70 sites. The sponsor seeks recovery. The goal is to increase monthly randomizations by \u2265\u00a035\u00a0% while aligning diversity with FDA\u00a02024 guidance. Maintain the current protocol and keep budget increases \u2264\u00a08\u00a0%.",
+    "instructions": "1. Provide a data\u2011driven root\u2011cause analysis framework covering site performance, startup, outreach and eligibility.\n1. Propose country\u2011by\u2011country recruitment tactics such as community partnerships and telehealth pre\u2011screening.\n1. Estimate budget impact (\u00b1\u00a015\u00a0%) and ROI projection.\n1. Outline a metrics dashboard with leading and lagging indicators.",
+    "inputs": "None",
+    "output_format": "Concise report (\u2264\u00a01\u00a0000\u00a0words) plus a one\u2011slide KPI dashboard sketch in text form.",
+    "additional_notes": "Ask clarifying questions first if any information is missing.",
+    "example_usage": "",
+    "references": ""
+  }
+}

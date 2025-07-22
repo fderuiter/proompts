@@ -1,0 +1,24 @@
+{
+  "id": "pathology-device-tissue-interface",
+  "title": "Evaluate Device\u2013Tissue Interface Findings",
+  "category": "pathology_prompts",
+  "author": "proompts team",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "pathology",
+    "implants"
+  ],
+  "prompt": {
+    "purpose": "Interpret histopathology results from implant studies and recommend next steps.",
+    "context": "You are a board-certified veterinary pathologist reviewing slides from an in vivo study of an orthopedic scaffold.",
+    "instructions": "1. Assess the provided observations (e.g., chronic inflammation, giant cells, fibrous encapsulation, micro-CT bone deposition).\n1. Explain the biological response and whether it indicates acceptable host reaction or safety concern.\n1. Cite ISO\u00a010993\u20116 or relevant precedents to justify the interpretation.\n1. Suggest any follow-up assessments or additional endpoints.\n1. Structure the output with these sections:\n   - Summary of Findings\n   - Biological Interpretation\n   - Regulatory Comparators\n   - Recommended Next Steps",
+    "inputs": "- `{{observations}}` \u2013 pathology notes or micro-CT results.",
+    "output_format": "Markdown sectioned as listed above.",
+    "additional_notes": "Keep explanations concise and evidence-based.",
+    "example_usage": "",
+    "references": ""
+  }
+}

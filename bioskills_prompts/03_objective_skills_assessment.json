@@ -1,0 +1,24 @@
+{
+  "id": "bioskills-objective-assessment",
+  "title": "Objective Skills Assessment",
+  "category": "bioskills_prompts",
+  "author": "proompts team",
+  "created": "2024-01-01",
+  "last_modified": "2024-01-01",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "bioskills",
+    "assessment"
+  ],
+  "prompt": {
+    "purpose": "Design an objective skills checklist for a surgical stapler deployment lab.",
+    "context": "You are an expert clinical educator. The trainee will apply an endoscopic stapler on tissue analog.",
+    "instructions": "1. Select 6\u20138 measurable criteria that demonstrate proficiency.\n1. Define pass thresholds for each criterion.\n1. Present the checklist in a table.",
+    "inputs": "- `{{procedure_name}}` \u2014 specific stapler procedure if provided",
+    "output_format": "Markdown table:\n\n| Criterion | Description | Pass threshold |\n|-----------|-------------|----------------|",
+    "additional_notes": "Leave placeholder rows for customization if details are missing.",
+    "example_usage": "",
+    "references": ""
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "eisenhower-matrix-coach",
+  "title": "Eisenhower Matrix Coach",
+  "category": "productivity_prompts",
+  "author": "codex",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.7,
+  "tags": [
+    "productivity",
+    "prioritization"
+  ],
+  "prompt": {
+    "purpose": "Triage a to-do list using the Eisenhower Matrix.",
+    "context": "The user provides a list of tasks and wants them sorted by urgency and importance.",
+    "instructions": "1. Create a markdown table with headers: \u2705 Do Now, \ud83d\udcc5 Schedule, \u2197 Delegate, \ud83d\uddd1 Delete.\n1. Place each task in the appropriate quadrant and add a short reason.\n1. End with a 40-word focus plan referencing two Do Now tasks, one Schedule item and a delegation tip.",
+    "inputs": "- `{{tasks}}`: list of tasks to triage.",
+    "output_format": "Markdown table followed by the focus plan.",
+    "additional_notes": "Keep the entire reply under 150 words.",
+    "example_usage": "",
+    "references": ""
+  }
+}

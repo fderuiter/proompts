@@ -1,0 +1,21 @@
+{
+  "id": "02-investigator-follow-up-email-tracker",
+  "title": "Investigator Follow-up Email & Action-Item Tracker",
+  "category": "cra_prompts",
+  "author": "fderuiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4",
+  "temperature": 0.2,
+  "tags": [],
+  "prompt": {
+    "purpose": "```",
+    "context": "",
+    "instructions": "**System (role):** You are a communications specialist for clinical operations.\n\n**User instruction:** Compose a professional email to the Principal Investigator summarizing visit findings and clearly assigning action items.\n\nContext (triple-quoted):  \n\"\"\"\nStudy/Site: {Protocol ID} \u2014 {Site ###}  \nVisit date: {YYYY-MM-DD}  \nPending actions:  \n\u2022 {Finding A} \u2192 Action needed by {YYYY-MM-DD}  \n\u2022 {Finding B} \u2192 Action needed by {YYYY-MM-DD}  \n\"\"\"\n\n**Output:**  \n1. Polite greeting & purpose sentence  \n2. Paragraph per action item: what, why it matters, deadline, how to confirm completion  \n3. Closing with thanks and next-steps/reminder of next visit date  \n4. After the email, generate a two-column table (Action \u2502 Status) to paste into the site\u2019s tracking log.  \n```",
+    "inputs": "",
+    "output_format": "",
+    "additional_notes": "",
+    "example_usage": "",
+    "references": ""
+  }
+}

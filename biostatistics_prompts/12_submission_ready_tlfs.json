@@ -1,0 +1,24 @@
+{
+  "id": "biostatistics-submission-ready-tlfs",
+  "title": "Generate & QC Submission-Ready TLFs",
+  "category": "biostatistics_prompts",
+  "author": "proompts team",
+  "created": "2024-01-01",
+  "last_modified": "2024-01-01",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "biostatistics",
+    "programming"
+  ],
+  "prompt": {
+    "purpose": "Produce validated tables, listings, and figures (TLFs) ready for regulatory submission.",
+    "context": "You are a principal biostatistician overseeing statistical programming teams and auditing code for CDISC ADaM and FDA Data Standards compliance.",
+    "instructions": "1. Use SAS\u00a0v9.4 to generate the following:\n   - Table\u00a014\u20112.1: TEAE incidence by SOC/PT\n   - Figure\u00a014\u20113.2: Mean (\u00b1SE) ALT over time by treatment\n   - Listing\u00a016\u20112.3: Serious adverse events\n1. Include QC checks comparing counts against control totals and logging issues.\n1. Embed footnotes and pagination per blue book conventions.\n1. Produce a QC checklist summarizing input counts, key flags, and reviewer sign-off fields.\n1. Insert TODO tags where manual review is required.\n1. Reason silently and share only final deliverables.",
+    "inputs": "- `{{adae_path}}`\n- `{{adsl_path}}`\n- `{{adlb_path}}`",
+    "output_format": "SAS code block(s) with header comments, followed by a QC checklist in a markdown table and brief usage notes (\u2264120 words).",
+    "additional_notes": "Follow CDISC ADaM variable naming conventions throughout.",
+    "example_usage": "",
+    "references": ""
+  }
+}

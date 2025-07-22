@@ -1,0 +1,24 @@
+{
+  "id": "regulatory-gap-analysis",
+  "title": "Regulatory Gap Analysis",
+  "category": "data_management_prompts",
+  "author": "proompts",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "compliance",
+    "governance"
+  ],
+  "prompt": {
+    "purpose": "",
+    "context": "",
+    "instructions": "",
+    "inputs": "",
+    "output_format": "Markdown",
+    "additional_notes": "",
+    "example_usage": "",
+    "references": ""
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "imaging-regulatory-data-package",
+  "title": "Regulatory Imaging Data Package",
+  "category": "imaging_prompts",
+  "author": "proompts team",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "imaging",
+    "regulatory"
+  ],
+  "prompt": {
+    "purpose": "Assemble the imaging section of a PMA or 510(k) submission.",
+    "context": "You are a medical writer on the imaging core lab submission team, expert in DICOM metadata and statistical imaging endpoints. The sponsor is preparing a PMA for an AI-guided cardiac mapping device. Data come from three blinded independent readers with adjudication. Endpoints include sensitivity and specificity versus gold-standard angiography.",
+    "instructions": "1. Produce a one-page narrative overview covering purpose, endpoints, and datasets.\n1. Provide a table summarizing image-quality metrics and reader agreement (\u03ba, ICC).\n1. Describe the imaging data-handling process from capture to lock.\n1. Include an appendix template for anticipated FDA questions.\n1. Cross-reference the ISO 13485 certification statement.\n1. Keep the narrative within 300 words.\n1. Present the table in Markdown format.\n1. Ask clarifying questions if details are missing.",
+    "inputs": "- `<<<study_summary>>>` \u2013 key trial details\n- `<<<metrics_data>>>` \u2013 image-quality metrics\n- `<<<reader_agreement>>>` \u2013 reader agreement statistics",
+    "output_format": "Narrative text followed by a Markdown table and an appendix template.",
+    "additional_notes": "Limit the narrative to 300 words.",
+    "example_usage": "",
+    "references": ""
+  }
+}

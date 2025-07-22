@@ -1,0 +1,24 @@
+{
+  "id": "prompt-writing-best-practice-checklist",
+  "title": "Prompt-Writing Best-Practice Checklist",
+  "category": "regulatory_prompts",
+  "author": "proompts team",
+  "created": "2024-01-01",
+  "last_modified": "2024-01-01",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "prompting",
+    "guidance"
+  ],
+  "prompt": {
+    "purpose": "Summarize key elements of effective prompt design.",
+    "context": "Use these tips when crafting regulatory prompts or other instructions for AI assistants.",
+    "instructions": "- **Clear role and expertise** \u2013 narrows style and vocabulary.\n- **Rich context placeholders** \u2013 `<<< \u2026 >>>` signals the user to supply project\u2011specific data.\n- **Explicit clarifying\u2011question step** \u2013 prevents hallucinations and promotes iterative accuracy.\n- **Structured output instructions** \u2013 headings, tables, word limits, risk registers, etc.\n- **Citation request** \u2013 encourages verifiable answers.\n- **Concise, actionable deliverables** \u2013 aligns with consultant workflows.",
+    "inputs": "None.",
+    "output_format": "N/A \u2013 this file is informational.",
+    "additional_notes": "Adapt these points to fit the specific regulatory context.",
+    "example_usage": "",
+    "references": ""
+  }
+}

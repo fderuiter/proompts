@@ -1,0 +1,21 @@
+{
+  "id": "09-socratic-coach",
+  "title": "Socratic-Coach",
+  "category": "communication_prompts",
+  "author": "fderuiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4",
+  "temperature": 0.2,
+  "tags": [],
+  "prompt": {
+    "purpose": "\u201cYou are my Socratic coach on \u201c[TOPIC]\u201d.",
+    "context": "",
+    "instructions": "Rule set:\n\u2022 Reply only with one probing question at a time\u2014no advice yet.\n\u2022 Continue until you\u2019ve uncovered my assumptions and knowledge gaps (up to 7 questions).\n\u2022 Then summarise my position in \u2264 75 words and give 3 concrete next actions.\u201d**",
+    "inputs": "",
+    "output_format": "",
+    "additional_notes": "",
+    "example_usage": "",
+    "references": ""
+  }
+}

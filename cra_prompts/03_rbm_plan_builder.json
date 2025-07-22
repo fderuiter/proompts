@@ -1,0 +1,21 @@
+{
+  "id": "03-rbm-plan-builder",
+  "title": "Risk-Based Monitoring (RBM) Plan Builder",
+  "category": "cra_prompts",
+  "author": "fderuiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4",
+  "temperature": 0.2,
+  "tags": [],
+  "prompt": {
+    "purpose": "```",
+    "context": "",
+    "instructions": "**System (role):** You are a clinical risk-management consultant.\n\n**User instruction:** Develop a site-level RBM plan for a Phase II oncology study, focusing on proactive detection of high-impact risks.\n\nContext:  \n\"\"\"\n\u2022 Study phase/indication: Phase II, metastatic NSCLC  \n\u2022 Enrollment goal: 150 participants, 10 sites  \n\u2022 Known risk factors: high AE rate, complex biomarker sampling, decentralized ePRO  \n\u2022 Regulatory expectation: ICH E6 (R3) & FDA guidance on risk-based monitoring (2019)  \n\"\"\"\n\n**Deliverables (markdown):**  \n1. **Risk Assessment Matrix** (table: Risk \u2502 Root Cause \u2502 Likelihood \u2502 Impact \u2502 Mitigation KPI)  \n2. **Key Risk Indicators (KRIs)** (\u2264 8, define calculation & alert threshold)  \n3. **Adaptive Monitoring Strategy** \u2013 outline trigger logic for remote vs. on-site, including minimum visit frequency  \n4. **Data-quality Checks** \u2013 list automated queries to run weekly with pseudo-SQL examples  \n5. **Escalation Pathway** \u2013 who is notified and within what timeline  \n```",
+    "inputs": "",
+    "output_format": "",
+    "additional_notes": "",
+    "example_usage": "",
+    "references": ""
+  }
+}

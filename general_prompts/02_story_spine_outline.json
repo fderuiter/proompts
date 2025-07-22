@@ -1,0 +1,24 @@
+{
+  "id": "pixar-story-spine-outline",
+  "title": "Pixar Story Spine Outline",
+  "category": "general_prompts",
+  "author": "Codex",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "storytelling",
+    "education"
+  ],
+  "prompt": {
+    "purpose": "Guide the model in creating a short Pixar-style story outline for middle-grade readers.",
+    "context": "The Pixar Story Spine provides a simple eight-sentence framework for tales with a clear emotional arc.",
+    "instructions": "1. Write eight numbered sentences following the structure: *Once upon a time\u2026 Every day\u2026 Until one day\u2026 Because of that\u2026 Because of that\u2026 Until finally\u2026 Ever since then\u2026*.\n1. Keep each sentence 18 words or fewer and total length under 120 words.\n1. Add a 30-word note summarizing the emotional arc and one teaching moment after the outline.",
+    "inputs": "- `{{TOPIC}}` \u2014 the subject of the story.",
+    "output_format": "Plain text with the numbered sentences followed by a short note.",
+    "additional_notes": "Designed for middle-grade readers; keep language age-appropriate.",
+    "example_usage": "",
+    "references": "Tame Your Book, Westside Excellence in Youth"
+  }
+}

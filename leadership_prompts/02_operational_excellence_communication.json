@@ -1,0 +1,24 @@
+{
+  "id": "leadership-operational-excellence-communication",
+  "title": "Operational Excellence Communication Framework",
+  "category": "leadership_prompts",
+  "author": "prompt-team",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "leadership",
+    "collaboration"
+  ],
+  "prompt": {
+    "purpose": "Improve collaboration between business development, clinical operations, and data teams after contract award.",
+    "context": "The CRO requires a consistent governance structure across departments.",
+    "instructions": "1. Recommend communication channels and frequency.\n1. Define roles and responsibilities.\n1. Outline escalation pathways for issues.\n1. Describe metrics to measure coordination effectiveness.",
+    "inputs": "- `{{current_processes}}` \u2013 short description of existing communication practices.",
+    "output_format": "Markdown sections titled **Channels**, **Roles**, **Escalation**, and **Metrics**.",
+    "additional_notes": "Keep guidance practical and easy to implement.",
+    "example_usage": "",
+    "references": ""
+  }
+}

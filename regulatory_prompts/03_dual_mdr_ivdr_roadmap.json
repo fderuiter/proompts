@@ -1,0 +1,24 @@
+{
+  "id": "dual-mdr-ivdr-roadmap",
+  "title": "Dual MDR / IVDR Conformity-Assessment Roadmap",
+  "category": "regulatory_prompts",
+  "author": "proompts team",
+  "created": "2024-01-01",
+  "last_modified": "2024-01-01",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "MDR",
+    "IVDR"
+  ],
+  "prompt": {
+    "purpose": "Develop a coordinated roadmap for simultaneous MDR and IVDR submissions.",
+    "context": "You are an EU regulatory strategist. A start\u2011up plans to launch:\n\u2022 A Class\u00a0IIa wearable ECG monitor (MDR)\n\u2022 A companion Class\u00a0B cloud\u2011based algorithm producing diagnostic indices (IVDR software)",
+    "instructions": "1. Create a side\u2011by\u2011side roadmap covering July\u00a02025 to December\u00a02028 with:\n   - Device\u2011classification justification (Annex\u00a0VIII MDR and IVDR).\n   - Applicable harmonised standards or common specs.\n   - Conformity\u2011assessment route and Notified Body engagement points.\n   - QMS milestones (ISO\u00a013485 and 15189 as relevant).\n   - Verification, validation, and clinical or performance\u2011evidence activities.\n   - Post\u2011market deliverables such as PMS plan, PMCF/PMPF, PSURs.\n   - Key EU and national transition deadlines with dates.\n1. Provide a timeline table (calendar quarters \u00d7 deliverables) with responsible functions (RA, QA, R&D).\n1. Write a \u2264250\u2011word narrative highlighting critical path, resource overlaps, and NB capacity risks.\n1. Explain assumptions, reference MDR Article\u00a052 and IVDR Article\u00a048 when selecting conformity\u2011assessment routes, and cite at least three authoritative sources.",
+    "inputs": "- `{{startup_info}}` \u2014 any additional project details.",
+    "output_format": "Timeline table followed by the narrative summary.",
+    "additional_notes": "Focus on clear milestones and risk mitigation.",
+    "example_usage": "",
+    "references": ""
+  }
+}
