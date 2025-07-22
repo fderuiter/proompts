@@ -4,6 +4,8 @@ name: Update Docs Index
 on:
   push:
     branches: ["main"]
+    paths:
+      - '**/*.json'
   pull_request:
     paths:
       - '**/*.json'
