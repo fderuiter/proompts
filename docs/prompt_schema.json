@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Proompts Prompt Schema",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "category",
+    "created",
+    "last_modified",
+    "prompt"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "title": {"type": "string"},
+    "category": {"type": "string"},
+    "author": {"type": "string"},
+    "created": {"type": "string", "format": "date"},
+    "last_modified": {"type": "string", "format": "date"},
+    "tested_model": {"type": "string"},
+    "temperature": {"type": "number"},
+    "tags": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "prompt": {
+      "type": "object",
+      "required": [
+        "purpose",
+        "context",
+        "instructions",
+        "inputs",
+        "output_format"
+      ],
+      "properties": {
+        "purpose": {"type": "string"},
+        "context": {"type": "string"},
+        "instructions": {"type": "string"},
+        "inputs": {"type": "string"},
+        "output_format": {"type": "string"},
+        "additional_notes": {"type": "string"},
+        "example_usage": {"type": "string"},
+        "references": {"type": "string"}
+      }
+    }
+  }
+}
