@@ -5,11 +5,11 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-EXCLUDE_DIRS = {"docs", "scripts", ".github"}
+EXCLUDE_DIRS = {"docs", "scripts", ".github", "prompt_tools"}
 
 
-NUMERIC_RE = re.compile(r"^\d\d_.*\.md$")
-LEVEL_RE = re.compile(r"^L\d+_.*\.md$")
+NUMERIC_RE = re.compile(r"^\d\d_.*\.json$")
+LEVEL_RE = re.compile(r"^L\d+_.*\.json$")
 
 
 def check_overview(directory: Path) -> bool:
@@ -25,10 +25,11 @@ def check_files(directory: Path) -> bool:
         if not file.is_file() or file.name.startswith('.'):
             continue
         name = file.name
-        if file.suffix.lower() != ".md":
-            print(f"{file} is not a Markdown file")
-            ok = False
         if name.lower() in {"overview.md", "readme.md"}:
+            continue
+        if file.suffix.lower() != ".json":
+            print(f"{file} is not a JSON file")
+            ok = False
             continue
         if directory.name == "agentic_coding" and not NUMERIC_RE.match(name):
             print(f"{file} does not follow numeric prefix naming")
