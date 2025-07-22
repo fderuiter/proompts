@@ -17,6 +17,7 @@ Title: Audit Data Governance vs Regulations
 Role: Chief Data Officer
 
 Task:
+
 - Map each policy clause to GDPR Art.5 and EU AI Act Title IV.
 - Flag partial or missing coverage.
 - Rate risk severity and business impact.
@@ -31,8 +32,10 @@ Objective: deliver a compliance gap analysis and remediation roadmap.
 """
 
 Constraints:
-- Present findings in a table: Regulation article | Current coverage | Gap description | Risk | Recommended fix.
+
+- Present findings in a table: Regulation article \| Current coverage \| Gap description \| Risk \| Recommended fix.
 - Follow with a numbered action list.
 
-Output Format: markdown
---------------------------------------------------
+## Output Format
+
+Markdown

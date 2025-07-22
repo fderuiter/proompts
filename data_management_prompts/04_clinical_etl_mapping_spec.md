@@ -17,6 +17,7 @@ Title: Create Clinical ETL Mapping Spec
 Role: Principal Clinical Data Engineer
 
 Task:
+
 - Map raw EDC tables to SDTM domains DM, AE, LB and VS.
 - For each domain list source columns, target variables, derivation logic, unit conversions and codelist references.
 - Flag ambiguous or missing metadata.
@@ -27,9 +28,11 @@ You have delivered multiple FDA-compliant SDTM repositories. Think like a CDISC 
 """
 
 Constraints:
+
 - Provide R (tidyverse) and Base SAS syntax examples.
 - Output a mapping table and a bullet list of next actions.
 - Mark uncertain rules with "⚠ Needs SME review".
 
-Output Format: markdown
---------------------------------------------------
+## Output Format
+
+Markdown

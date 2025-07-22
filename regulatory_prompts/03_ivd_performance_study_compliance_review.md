@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [IVDR, compliance]
-# IVD Performance Study Compliance Review
 ---
+
+# IVD Performance Study Compliance Review
 
 ## Purpose
 
@@ -22,9 +23,9 @@ You are advising on an EU IVDR performance study. The user needs guidance on adv
 ## Instructions
 
 1. Walk through MDCG 2024‑4 compliance steps for the study.
-2. Detail adverse‑event and event‑reporting procedures and required summary forms.
-3. Recommend risk‑mitigation strategies.
-4. Advise on harmonizing with Swissmedic and UK guidance.
+1. Detail adverse‑event and event‑reporting procedures and required summary forms.
+1. Recommend risk‑mitigation strategies.
+1. Advise on harmonizing with Swissmedic and UK guidance.
 
 ## Inputs
 

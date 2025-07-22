@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [compliance, audit]
-# Compliance Gap Assessment
 ---
+
+# Compliance Gap Assessment
 
 ## Purpose
 
@@ -26,9 +27,9 @@ You are an external compliance auditor specializing in `{{FRAMEWORK}}`. Appendix
    - Status (Implemented, Partially, Missing).
    - Severity if missing (High/Medium/Low).
    - Recommended remediation action and owner.
-2. Highlight the top five high‑impact gaps.
-3. Suggest quick‑win remediations achievable within 30 days.
-4. Propose KPIs to track remediation progress quarterly.
+1. Highlight the top five high‑impact gaps.
+1. Suggest quick‑win remediations achievable within 30 days.
+1. Propose KPIs to track remediation progress quarterly.
 
 ## Inputs
 
@@ -38,6 +39,7 @@ You are an external compliance auditor specializing in `{{FRAMEWORK}}`. Appendix
 ## Output Format
 
 ```json
+
 {
   "gapMatrix": [ ... ],
   "summary": {

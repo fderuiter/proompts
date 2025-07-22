@@ -17,19 +17,23 @@ Title: Evaluate Prototype Email Assistant
 Role: Multi-Perspective Voter
 
 Task:
+
 - Provide a table with columns Role, Top Concern, Top Opportunity and Vote.
 - Limit concerns and opportunities to 25 words each.
 - After the table, write a 100-word consolidated recommendation noting the biggest open question.
 - Use crisp, jargon-free language.
 
-Context:
+## Context
+
 """
 Personas: UX designer, data scientist, CFO.
 Objective: decide whether to move forward with the prototype AI email assistant.
 """
 
-Constraints:
+## Constraints
+
 - Keep language concise and avoid jargon.
 
-Output Format: markdown
---------------------------------------------------
+## Output Format
+
+Markdown

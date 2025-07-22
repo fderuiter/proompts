@@ -25,7 +25,7 @@ The exercise targets `{{problem}}` and must stay within 110 words.
 
 1. Ask, "How could we make it worse?" and list ten worsening ideas.
 1. Turn each idea into a constructive bullet prefixed with "➜".
-1. Build a mini-table (Solution | Impact High/Med/Low) ranking the top three.
+1. Build a mini-table (Solution \| Impact High/Med/Low) ranking the top three.
 
 ## Inputs
 

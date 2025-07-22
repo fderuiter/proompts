@@ -23,6 +23,7 @@ Design a dashboard that provides real-time visibility into clinical endpoint adj
 - Stakeholders need immediate insight into blocked events and next actions.
 
 ## Instructions
+
 1. Draft a textual workflow diagram from site submission to final CEC decision.
 1. Define the minimal data model for a role-based dashboard showing:
    - event aging in days

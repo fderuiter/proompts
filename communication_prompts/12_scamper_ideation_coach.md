@@ -24,8 +24,6 @@ SCAMPER stands for Substitute, Combine, Adapt, Modify/Magnify/Minify, Put to oth
 
 <!-- markdownlint-disable MD029 -->
 
-
-
 1. Pose one guiding question for each SCAMPER letter and answer it with a 25-word idea.
 1. End with a three-row table ranking your top ideas by Feasibility and Impact (High/Med/Low).
 1. Keep total output under 180 words.

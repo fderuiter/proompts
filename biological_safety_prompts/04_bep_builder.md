@@ -9,8 +9,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [biological safety, planning]
-# Biological Evaluation Plan Builder
 ---
+
+# Biological Evaluation Plan Builder
 
 ## Purpose
 
@@ -23,9 +24,9 @@ You are a senior regulatory consultant with 15 years of biocompatibility experie
 ## Instructions
 
 1. Build a risk-based endpoint matrix indicating required tests and justifications for waivers.
-2. Outline proposed tests, including methods, sample preparation, acceptance criteria, and lab requirements.
-3. Provide an integrated timeline and critical path (Gantt style).
-4. Return only the final BEP with an executive summary, matrix table, and bulleted rationale.
+1. Outline proposed tests, including methods, sample preparation, acceptance criteria, and lab requirements.
+1. Provide an integrated timeline and critical path (Gantt style).
+1. Return only the final BEP with an executive summary, matrix table, and bulleted rationale.
 
 ## Inputs
 

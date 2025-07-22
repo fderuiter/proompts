@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [biostatistics, SAP]
-# Submission-Ready Statistical Analysis Plan
 ---
+
+# Submission-Ready Statistical Analysis Plan
 
 ## Purpose
 
@@ -30,10 +31,10 @@ You are an expert CRO biostatistician writing FDA- and EMA-compliant SAPs. The s
    - Statistical methods (models, covariance structure, interim rules)
    - Missing-data strategy (MI with δ-adjustment sensitivity)
    - Mock TLF shells (summary stats and forest-plot layout)
-2. Use numbered H2 headings.
-3. Keep each subsection ≤250 words.
-4. Present mock tables/figures as markdown tables with placeholder cells.
-5. Do not include internal reasoning steps.
+1. Use numbered H2 headings.
+1. Keep each subsection ≤250 words.
+1. Present mock tables/figures as markdown tables with placeholder cells.
+1. Do not include internal reasoning steps.
 
 ## Inputs
 

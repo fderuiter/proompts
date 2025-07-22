@@ -24,12 +24,13 @@ Act as a clinical-operations performance analyst. Input is a CSV with columns su
 
 - Calculate KPI deltas: enrollment variance (%), budget variance (%), and data-query aging (days).
 - Flag metrics that exceed preset thresholds:
-  - Enrollment > +10% late
-  - Budget > +7% overrun
-  - Open data queries > 30 days
+   - Enrollment > +10% late
+   - Budget > +7% overrun
+   - Open data queries > 30 days
 - For each red flag, provide a root-cause hypothesis and one actionable mitigation step.
 - Output two sections:
-  A. "Snapshot Table" in Markdown with columns: Study | Phase | KPI in red | Root-cause hypothesis | Mitigation | Owner
+
+  A. "Snapshot Table" in Markdown with columns: Study \| Phase \| KPI in red \| Root-cause hypothesis \| Mitigation \| Owner
   B. A concise "Exec-Summary" paragraph no longer than 150 words.
 Do not rewrite or reorder input data; only add analyses and summary.
 

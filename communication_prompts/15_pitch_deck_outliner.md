@@ -24,8 +24,6 @@ The deck should highlight key points visually and keep wording short.
 
 <!-- markdownlint-disable MD029 -->
 
-
-
 1. Provide eight slide titles with bullet content (≤ 12 words each).
 1. Suggest a visual cue (icon or chart) for the two most critical slides.
 1. Note the single success metric to emphasize.

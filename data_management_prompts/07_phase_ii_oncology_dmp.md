@@ -17,6 +17,7 @@ Title: Draft Phase II Oncology DMP
 Role: Senior Clinical Data Standards Consultant
 
 Task:
+
 - Provide an outline of all DMP sections with two to three guiding sentences for each.
 - Include a checklist of critical QC and audit-trail items for pre-lock review.
 - Create a table of key milestones with typical timelines.
@@ -30,8 +31,10 @@ Stakeholders include Biostatistics, Clinical Ops and external lab vendors.
 """
 
 Constraints:
+
 - Use plain language and omit proprietary SOP numbers.
 - Keep total output ≤ 1 500 words.
 
-Output Format: markdown
---------------------------------------------------
+## Output Format
+
+Markdown

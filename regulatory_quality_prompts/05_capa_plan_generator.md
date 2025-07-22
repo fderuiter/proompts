@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [CAPA, quality]
-# CAPA Plan Generator
 ---
+
+# CAPA Plan Generator
 
 ## Purpose
 
@@ -22,10 +23,10 @@ You are a GxP audit consultant for a CRO. A draft sponsor audit report lists fiv
 ## Instructions
 
 1. For each finding, conduct root-cause analysis using the 5 Whys method.
-2. Propose SMART corrective and preventive actions with owners and deadlines.
-3. Describe effectiveness checks.
-4. Present results as a CAPA tracker table ready for Excel import.
-5. Conclude with one sentence on how the plan prevents recurrence.
+1. Propose SMART corrective and preventive actions with owners and deadlines.
+1. Describe effectiveness checks.
+1. Present results as a CAPA tracker table ready for Excel import.
+1. Conclude with one sentence on how the plan prevents recurrence.
 
 ## Inputs
 

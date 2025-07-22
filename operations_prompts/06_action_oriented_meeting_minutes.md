@@ -23,10 +23,10 @@ You are a senior project administrator. A full transcript of the weekly cross-fu
 ## Instructions
 
 1. Summarize attendees, key decisions and discussion highlights.
-2. Create an action-item register as a Markdown table with columns `Item # | Description | Owner | Due Date | Priority`.
-3. Assign IDs in the format `OPS-2025-MM-NN`.
-4. End with a one-sentence **Next Steps** section.
-5. Flag any action missing a due date with `TBD` and suggest one.
+1. Create an action-item register as a Markdown table with columns `Item # \| Description \| Owner \| Due Date \| Priority`.
+1. Assign IDs in the format `OPS-2025-MM-NN`.
+1. End with a one-sentence **Next Steps** section.
+1. Flag any action missing a due date with `TBD` and suggest one.
 
 ## Inputs
 

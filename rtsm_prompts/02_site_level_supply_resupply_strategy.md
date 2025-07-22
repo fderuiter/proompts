@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [RTSM, supply]
-# Forecast Site-Level Drug Supply & Resupply Strategy
 ---
+
+# Forecast Site-Level Drug Supply & Resupply Strategy
 
 ## Purpose
 
@@ -18,6 +19,7 @@ Plan site-level drug supply and resupply for an adaptive trial.
 ## Context
 
 You are a senior clinical supply planner specializing in RTSM forecasting algorithms. Key parameters:
+
 - Trial: 18‑month adaptive dose‑escalation
 - Sites: 28 across US/EU/APAC
 - Average enrollment: 10 patients/site/month (Poisson λ = 10)
@@ -30,9 +32,9 @@ You are a senior clinical supply planner specializing in RTSM forecasting algori
 ## Instructions
 
 1. Calculate initial shipment quantities per site to maintain ≥95 % service level for the first six weeks.
-2. Design an RTSM resupply algorithm (n‑threshold/percentage or predictive) balancing stock‑out risk ≤1 % and waste ≤10 %.
-3. Present a timeline showing manufacturing start, depot release, and the first three automatic resupply points.
-4. Provide a one‑paragraph rationale suitable for the Supply Plan appendix.
+1. Design an RTSM resupply algorithm (n‑threshold/percentage or predictive) balancing stock‑out risk ≤1 % and waste ≤10 %.
+1. Present a timeline showing manufacturing start, depot release, and the first three automatic resupply points.
+1. Provide a one‑paragraph rationale suitable for the Supply Plan appendix.
 
 ## Inputs
 

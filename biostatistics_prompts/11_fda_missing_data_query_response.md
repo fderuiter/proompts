@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [biostatistics, regulatory]
-# FDA Missing-Data Query Response
 ---
+
+# FDA Missing-Data Query Response
 
 ## Purpose
 
@@ -22,13 +23,13 @@ You are a senior regulatory statistician preparing a Type C meeting package. Th
 ## Instructions
 
 1. Summarize the agency’s concerns in plain English.
-2. Present planned sensitivity analyses (MI under MNAR, tipping point, δ-adjusted worst-case).
-3. Justify the primary estimand choice (treatment policy) per ICH E9(R1).
-4. Reference relevant guidance (FDA Missing Data 2019, EMA Guideline 07/2022).
-5. Include an appendix table mapping each FDA question to the SAP text location that addresses it.
-6. Draft in formal, concise regulatory style (≤8 pages) using numbered sections matching the FDA’s bullets.
-7. Highlight any additional data or simulations proposed.
-8. Conclude with a request for the agency’s confirmation that the approach is adequate.
+1. Present planned sensitivity analyses (MI under MNAR, tipping point, δ-adjusted worst-case).
+1. Justify the primary estimand choice (treatment policy) per ICH E9(R1).
+1. Reference relevant guidance (FDA Missing Data 2019, EMA Guideline 07/2022).
+1. Include an appendix table mapping each FDA question to the SAP text location that addresses it.
+1. Draft in formal, concise regulatory style (≤8 pages) using numbered sections matching the FDA’s bullets.
+1. Highlight any additional data or simulations proposed.
+1. Conclude with a request for the agency’s confirmation that the approach is adequate.
 
 ## Inputs
 

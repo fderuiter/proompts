@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [biostatistics, sample size]
-# Sample-Size & Randomization Strategy
 ---
+
+# Sample-Size & Randomization Strategy
 
 ## Purpose
 
@@ -22,11 +23,11 @@ You are a senior biostatistician at an international CRO following ICH E9(R1) an
 ## Instructions
 
 1. Review trial specifics such as indication, phase, and primary endpoint.
-2. Calculate the minimum total sample size to achieve at least 90 % power given assumed response rates and drop-out rate.
-3. Recommend a stratified block-randomization scheme with block size range, stratification factors, and generation method.
-4. Explain any sensitivity or re-estimation options.
-5. Provide R code using `pwr` or `power.prop.test` and `randomizeR` with inline comments.
-6. Summarize key references to statistical guidance.
+1. Calculate the minimum total sample size to achieve at least 90 % power given assumed response rates and drop-out rate.
+1. Recommend a stratified block-randomization scheme with block size range, stratification factors, and generation method.
+1. Explain any sensitivity or re-estimation options.
+1. Provide R code using `pwr` or `power.prop.test` and `randomizeR` with inline comments.
+1. Summarize key references to statistical guidance.
 
 ## Inputs
 

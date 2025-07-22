@@ -24,8 +24,6 @@ Use Chain-of-Density summarization to tighten coverage without length creep.
 
 <!-- markdownlint-disable MD029 -->
 
-
-
 1. Produce an entity-sparse gist in 120 words or fewer.
 1. List missing key nouns in 40 words or fewer.
 1. Rewrite a denser summary under 120 words using those nouns.

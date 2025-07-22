@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [business development, proposals]
-# RFP Executive-Summary Generator
 ---
+
+# RFP Executive-Summary Generator
 
 ## Purpose
 
@@ -22,11 +23,11 @@ You are an award-winning CRO proposal consultant with extensive success securing
 ## Instructions
 
 1. Review the provided RFP synopsis for a global randomized Phase III NASH trial (≈70 sites, 1 200 patients).
-2. Draft an executive summary (≤300 words) that addresses the sponsor’s top three pain points.
-3. Highlight five CRO differentiators such as clinical-data tech stack, recruitment speed, or risk-sharing pricing.
-4. Quantify at least two proof points (e.g., average site-activation time).
-5. Close with a clear next step and contact line.
-6. Maintain a board-level, confident tone supported by evidence.
+1. Draft an executive summary (≤300 words) that addresses the sponsor’s top three pain points.
+1. Highlight five CRO differentiators such as clinical-data tech stack, recruitment speed, or risk-sharing pricing.
+1. Quantify at least two proof points (e.g., average site-activation time).
+1. Close with a clear next step and contact line.
+1. Maintain a board-level, confident tone supported by evidence.
 
 ## Inputs
 

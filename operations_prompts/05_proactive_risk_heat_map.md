@@ -23,9 +23,9 @@ You are a risk-management strategist specializing in decentralized clinical tria
 ## Instructions
 
 1. Combine the provided portfolio data with 2025 CRO risk trends.
-2. Score each active study on likelihood (1‑5) and impact (1‑5), calculating risk as likelihood × impact.
-3. Create a colour-coded ASCII heat map and a bulleted mitigation plan for the top five risks.
-4. Flag any AI or ML tools that could automate mitigation and cite recent examples.
+1. Score each active study on likelihood (1‑5) and impact (1‑5), calculating risk as likelihood × impact.
+1. Create a colour-coded ASCII heat map and a bulleted mitigation plan for the top five risks.
+1. Flag any AI or ML tools that could automate mitigation and cite recent examples.
 
 ## Inputs
 

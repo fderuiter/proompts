@@ -17,6 +17,7 @@ Title: Document Software Design Decisions
 Role: Documentation Architect
 
 Task:
+
 - Provide a structure for a project design.md file.
 - Explain the purpose of each section.
 - Summarise formatting tips and triggers for updates.
@@ -46,8 +47,10 @@ Formatting tips: keep paragraphs short, use tables and diagrams, and add a "Last
 """
 
 Constraints:
+
 - Use consistent heading levels so the GitHub TOC works.
 - Encourage bullet lists and Mermaid diagrams when useful.
 
-Output Format: markdown
---------------------------------------------------
+## Output Format
+
+Markdown

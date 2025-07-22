@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [prompting, guidance]
-# Prompt-Writing Best-Practice Checklist
 ---
+
+# Prompt-Writing Best-Practice Checklist
 
 ## Purpose
 
