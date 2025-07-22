@@ -34,6 +34,7 @@ Each prompt begins with YAML front matter that includes these fields:
 The body of the prompt follows the template in `prompt_tools/L5_standardize-prompt-files.md` with **H2** sections for `Purpose`, `Context`, `Instructions`, `Inputs`, `Output Format`, `Additional Notes`, `Example Usage`, and `References`.
 
 You can also see the same structure in JSON form in `docs/template_prompt.json`.
+The machine-readable JSON schema is available in `docs/prompt_schema.json`.
 
 ## Validation
 
