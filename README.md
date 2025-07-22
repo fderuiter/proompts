@@ -17,6 +17,24 @@ A curated set of Markdown prompts for AI-assisted product development, regulator
 
 - **`docs/`** – additional docs and a full [table of contents](docs/index.md)
 
+## Prompt Schema
+
+Each prompt begins with YAML front matter that includes these fields:
+
+- `id` – unique kebab-case identifier.
+- `title` – short descriptive title.
+- `category` – directory or topical grouping.
+- `author` – optional author attribution.
+- `created` – date added (`YYYY-MM-DD`).
+- `last_modified` – most recent modification date.
+- `tested_model` – optional model/version used when testing.
+- `temperature` – optional sampling temperature.
+- `tags` – optional array of keywords.
+
+The body of the prompt follows the template in `prompt_tools/L5_standardize-prompt-files.md` with **H2** sections for `Purpose`, `Context`, `Instructions`, `Inputs`, `Output Format`, `Additional Notes`, `Example Usage`, and `References`.
+
+You can also see the same structure in JSON form in `docs/template_prompt.json`.
+
 ## Validation
 
 Check Markdown formatting and the docs index before committing:
@@ -28,8 +46,7 @@ Check Markdown formatting and the docs index before committing:
 The script first runs `python3 scripts/update_docs_index.py --check` to ensure
 `docs/index.md` and `docs/table-of-contents.md` are up to date, then runs `mdl`.
 It requires both Python 3 and the `mdl` tool. Install the linter with
-`gem install mdl` if it isn't already available. The same check runs in GitHub
-Actions.
+`gem install mdl` if it isn't already available. The same check runs in GitHub Actions.
 This repository also runs workflows to generate missing `overview.md` files, verify file naming, and commit the docs index when it changes.
 
 ## Contributing
