@@ -44,16 +44,15 @@ The body of the prompt mirrors the template in
 
 ## Validation
 
-Check JSON formatting and the docs index before committing:
+Run the helper script to verify JSON formatting and the docs index before committing:
 
 ```bash
 ./scripts/validate_json.sh
 ```
 
-The script first runs `python3 scripts/update_docs_index.py --check` to ensure
-`docs/index.md` and `docs/table-of-contents.md` are up to date, then checks every
-`*.json` file with `jq`. Install `jq` with your package manager if it isn't already
-available. The same check runs in GitHub Actions.
+The script requires `jq` and Python 3. It checks that
+`docs/index.md` and `docs/table-of-contents.md` are current and then runs `jq`
+against every `*.json` file. The same check runs in GitHub Actions.
 This repository also runs workflows to generate missing `overview.md` files, verify file naming, and commit the docs index when it changes.
 
 ## Contributing
