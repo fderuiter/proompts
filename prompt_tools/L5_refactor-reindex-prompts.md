@@ -40,7 +40,7 @@ You are an autonomous coding agent tasked with making every prompt in the GitHub
    ```
 
 1. **Enumerate prompt files**
-   ▸ Recursively collect all `*.md` files **excluding**:
+   ▸ Recursively collect all `*.json` files **excluding**:
 
    * any `overview.md`
    * any file inside `docs/`
@@ -61,7 +61,7 @@ You are an autonomous coding agent tasked with making every prompt in the GitHub
    For each oversize file:
 
    * Split at the highest-level Markdown heading that keeps every part ≤ `MAX_TOKENS_PER_PROMPT / 2`.
-   * Name parts `<originalStem>_part-01.md`, `…_part-NN.md`.
+   * Name parts `<originalStem>_part-01.json`, `…_part-NN.json`.
    * In each new part add a front-matter banner:
 
      ```md
