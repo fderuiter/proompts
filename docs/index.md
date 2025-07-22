@@ -1,5 +1,10 @@
 # Table of Contents
 
+## .git
+
+- [Fix-All-Files-In-Todo Fix](../.git/logs/refs/remotes/origin/slop/fix-all-files-in-todo_fix.md)
+- [Fix-All-Files-In-Todo Fix](../.git/refs/remotes/origin/slop/fix-all-files-in-todo_fix.md)
+
 ## Adjudication Prompts
 
 - [Real-Time Adjudication Visibility Dashboard](../adjudication_prompts/01_real_time_adjudication_dashboard.md)
