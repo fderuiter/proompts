@@ -4,7 +4,7 @@
 
 [![Generate Overviews](https://github.com/fderuiter/proompts/actions/workflows/generate-overviews.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/generate-overviews.yml)
 
-[![Markdown Validation](https://github.com/fderuiter/proompts/actions/workflows/markdown-validation.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/markdown-validation.yml)
+[![JSON Validation](https://github.com/fderuiter/proompts/actions/workflows/json-validation.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/json-validation.yml)
 
 [![Repository Checks](https://github.com/fderuiter/proompts/actions/workflows/repo-checks.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/repo-checks.yml)
 
@@ -38,16 +38,16 @@ The machine-readable JSON schema is available in `docs/prompt_schema.json`.
 
 ## Validation
 
-Check Markdown formatting and the docs index before committing:
+Check JSON formatting and the docs index before committing:
 
 ```bash
-./scripts/validate_markdown.sh
+./scripts/validate_json.sh
 ```
 
 The script first runs `python3 scripts/update_docs_index.py --check` to ensure
-`docs/index.md` and `docs/table-of-contents.md` are up to date, then runs `mdl`.
-It requires both Python 3 and the `mdl` tool. Install the linter with
-`gem install mdl` if it isn't already available. The same check runs in GitHub Actions.
+`docs/index.md` and `docs/table-of-contents.md` are up to date, then checks every
+`*.json` file with `jq`. Install `jq` with your package manager if it isn't already
+available. The same check runs in GitHub Actions.
 This repository also runs workflows to generate missing `overview.md` files, verify file naming, and commit the docs index when it changes.
 
 ## Contributing
@@ -56,7 +56,7 @@ This repository also runs workflows to generate missing `overview.md` files, ver
 1. Before committing, sanitize and standardize the file using `prompt_tools/L5_prompt_sanitiser.md` and `prompt_tools/L5_standardize-prompt-files.md`.
 1. Optionally, run `prompt_tools/01_architecture_review_pipeline.md` to audit the repository.
 1. If you create a new directory, an `overview.md` will be generated automatically by the workflow.
-1. The docs index and Markdown formatting are checked in CI, but you can run `scripts/validate_markdown.sh` locally.
+1. The docs index and JSON formatting are checked in CI, but you can run `scripts/validate_json.sh` locally.
 
 ## License
 
