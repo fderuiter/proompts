@@ -26,9 +26,9 @@ Role: Senior regulatory-affairs strategist briefing the CRO President. Regions i
 
 - Gather and synthesize newly issued or updated guidance documents, enforcement actions, and competitor announcements such as acquisitions or large DCT partnerships.
 - For each item include:
-  - “What changed” (≤25 words)
-  - “Why it matters to CROs” (≤35 words)
-  - “Action for {{company_name}}” (≤25 words)
+   - “What changed” (≤25 words)
+   - “Why it matters to CROs” (≤35 words)
+   - “Action for {{company_name}}” (≤25 words)
 - Group findings under the headers “Regulatory Shifts” and “Competitive Moves.”
 - End with a bulleted “Recommended Next Steps” list (max five bullets) prioritized by impact (High/Med/Low).
 - Write in a concise, executive tone without jargon.
@@ -42,15 +42,20 @@ Role: Senior regulatory-affairs strategist briefing the CRO President. Regions i
 Markdown sections:
 
 ```
+
 ## Regulatory Shifts
+
 - ...
 
 ## Competitive Moves
+
 - ...
 
 ### Recommended Next Steps
+
 - (High) ...
 - (Med) ...
+
 ```
 
 ## Additional Notes

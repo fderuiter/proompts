@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [quality, RCA]
-# Quality-Improvement RCA & Action Plan
 ---
+
+# Quality-Improvement RCA & Action Plan
 
 ## Purpose
 
@@ -22,12 +23,12 @@ You are a Six‑Sigma Black Belt and supplier‑quality lead. Provided data incl
 ## Instructions
 
 1. Determine the top three suspected root causes using 5 Whys reasoning (hide chain of thought).
-2. For each cause, list preventive and detective controls.
-3. Prioritize actions using an Effort‑Impact matrix (High/Medium/Low).
-4. Produce:
+1. For each cause, list preventive and detective controls.
+1. Prioritize actions using an Effort‑Impact matrix (High/Medium/Low).
+1. Produce:
    - A markdown table summarizing RCA causes and controls.
    - A Gantt‑style action plan with ISO 8601 start and end dates.
-5. End with a 50‑word elevator‑pitch summary for executives.
+1. End with a 50‑word elevator‑pitch summary for executives.
 
 ## Inputs
 

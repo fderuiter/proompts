@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [eTMF, quality]
-# eTMF Compliance Gap Analysis
 ---
+
+# eTMF Compliance Gap Analysis
 
 ## Purpose
 
@@ -22,8 +23,8 @@ You are a Clinical Quality Specialist at a global CRO. The task covers Study ID 
 ## Instructions
 
 1. Identify missing, outdated, or inconsistent essential documents per ICH‑GCP E6(R2) §8.
-2. Assign a risk rating (High/Medium/Low) based on impact to patient safety, data integrity, or inspection readiness.
-3. Propose a corrective action for every High‑ and Medium‑risk gap.
+1. Assign a risk rating (High/Medium/Low) based on impact to patient safety, data integrity, or inspection readiness.
+1. Propose a corrective action for every High‑ and Medium‑risk gap.
 
 ## Inputs
 
@@ -31,7 +32,7 @@ You are a Clinical Quality Specialist at a global CRO. The task covers Study ID 
 
 ## Output Format
 
-Markdown table `Artifact | Issue | Risk | Corrective Action` followed by the three most systemic issues and a preventive measure for each.
+Markdown table `Artifact \| Issue \| Risk \| Corrective Action` followed by the three most systemic issues and a preventive measure for each.
 
 ## Additional Notes
 

@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [regulatory, documentation]
-# Regulatory Filing Draft Builder
 ---
+
+# Regulatory Filing Draft Builder
 
 ## Purpose
 
@@ -22,19 +23,21 @@ You are a compliance‑documentation specialist writing for `{{REGULATOR}}` and 
 ## Instructions
 
 1. Draft the `{{DOCUMENT_TYPE}}` using the structure:
+
    I. Cover Page
    II. Business Overview
    III. Management’s Discussion & Analysis
    IV. Financial Statements (summarized tables)
    V. Risk Factors (ranked)
    VI. Compliance Declarations
-2. Cross‑check figures against Data Sheet 1 and flag discrepancies over 1 %.
-3. Insert `Reviewer-Comment` placeholders wherever data is missing.
-4. Conclude with a self‑assessment table rating Accuracy, Completeness, Clarity, and Timeliness on a 1‑5 scale.
-5. Deliver in GitHub‑Flavored Markdown so teams can redline easily.
-6. Do not fabricate numbers; leave blank if data is absent.
-7. Keep each section ≤400 words unless otherwise noted.
-8. Provide three follow‑up questions that would improve accuracy.
+
+1. Cross‑check figures against Data Sheet 1 and flag discrepancies over 1 %.
+1. Insert `Reviewer-Comment` placeholders wherever data is missing.
+1. Conclude with a self‑assessment table rating Accuracy, Completeness, Clarity, and Timeliness on a 1‑5 scale.
+1. Deliver in GitHub‑Flavored Markdown so teams can redline easily.
+1. Do not fabricate numbers; leave blank if data is absent.
+1. Keep each section ≤400 words unless otherwise noted.
+1. Provide three follow‑up questions that would improve accuracy.
 
 ## Inputs
 

@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [biosafety, planning]
-# Biological Safety Plan Developer
 ---
+
+# Biological Safety Plan Developer
 
 ## Purpose
 
@@ -22,10 +23,10 @@ You are leading a biological safety consulting team.
 ## Instructions
 
 1. Identify key biological endpoints (e.g., irritation, sensitization, systemic toxicity).
-2. Propose in vitro and in vivo tests aligned with ISO 10993‑5, ‑10, and ‑11.
-3. Define pass/fail criteria and acceptance thresholds.
-4. Provide rationale for each test, including risk prioritization.
-5. Outline a step-by-step workflow and timeline.
+1. Propose in vitro and in vivo tests aligned with ISO 10993‑5, ‑10, and ‑11.
+1. Define pass/fail criteria and acceptance thresholds.
+1. Provide rationale for each test, including risk prioritization.
+1. Outline a step-by-step workflow and timeline.
 
 ## Inputs
 

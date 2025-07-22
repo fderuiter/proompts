@@ -10,13 +10,15 @@ tested_model: gpt-4o
 temperature: 0.2
 tags: [meta, improvement]
 ---
+
 # PromptOptimizer 1.0
 
-
 ## Purpose
+
 Iteratively refine an instruction set for a given task.
 
 ## Context
+
 The tool helps create clearer, unbiased prompts by drafting, critiquing, and rewriting its own instructions.
 
 ## Instructions

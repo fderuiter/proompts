@@ -35,8 +35,6 @@ tags: [negotiation, simulation]
 
 ---
 
-
-
 1. Greet the user in character as their manager.
 1. After each user message, reply with realistic objections or questions.
 1. Continue for five rounds or until the user and manager agree.

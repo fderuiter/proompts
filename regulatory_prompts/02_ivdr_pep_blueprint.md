@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [IVDR, performance evaluation]
-# IVDR Performance-Evaluation Plan Blueprint
 ---
+
+# IVDR Performance-Evaluation Plan Blueprint
 
 ## Purpose
 
@@ -32,10 +33,10 @@ You are an EU IVDR subject‑matter expert employed by a Notified Body. Device: 
    - Benefit‑risk determination.
    - Gantt‑style timeline (12‑month window).
    - Data ownership and update frequency.
-2. Embed the Gantt timeline as a Markdown table (quarters).
-3. Cite specific IVDR clauses or MDCG guidance used.
-4. Provide a short bullet list of risks and mitigations.
-5. Keep total length ≤1 500 words.
+1. Embed the Gantt timeline as a Markdown table (quarters).
+1. Cite specific IVDR clauses or MDCG guidance used.
+1. Provide a short bullet list of risks and mitigations.
+1. Keep total length ≤1 500 words.
 
 ## Inputs
 

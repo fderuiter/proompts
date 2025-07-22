@@ -23,10 +23,10 @@ Average trial cycle time is 32 months and recruitment failure rate is 18 %. We 
 ## Instructions
 
 1. Prioritize technology, process and talent levers by ROI and implementation effort.
-2. Highlight compliance risks for ICH-GCP, GDPR and 21 CFR Part 11.
-3. Limit the response to 700 words.
-4. Present a markdown table titled **90-Day CRO Ops Optimization Plan** followed by a **Quick-Win Checklist**.
-5. Ask three clarifying questions if data gaps exist before drafting.
+1. Highlight compliance risks for ICH-GCP, GDPR and 21 CFR Part 11.
+1. Limit the response to 700 words.
+1. Present a markdown table titled **90-Day CRO Ops Optimization Plan** followed by a **Quick-Win Checklist**.
+1. Ask three clarifying questions if data gaps exist before drafting.
 
 ## Inputs
 

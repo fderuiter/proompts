@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [global strategy, regulatory]
-# Strategic Regulatory Pathway Plan
 ---
+
+# Strategic Regulatory Pathway Plan
 
 ## Purpose
 
@@ -22,10 +23,10 @@ You are a regulatory strategy consultant. The user is developing `{{device_name}
 ## Instructions
 
 1. Determine classification in each region.
-2. List applicable standards such as ISO 13485 and ISO 14971.
-3. Specify submission types (e.g., FDA 510(k), EU CE technical documentation).
-4. Provide key timelines for major milestones.
-5. Highlight potential pitfalls and mitigation strategies.
+1. List applicable standards such as ISO 13485 and ISO 14971.
+1. Specify submission types (e.g., FDA 510(k), EU CE technical documentation).
+1. Provide key timelines for major milestones.
+1. Highlight potential pitfalls and mitigation strategies.
 
 ## Inputs
 

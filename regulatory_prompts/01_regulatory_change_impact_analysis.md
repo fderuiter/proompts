@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [regulatory, compliance]
-# Regulatory-Change Impact Analysis
 ---
+
+# Regulatory-Change Impact Analysis
 
 ## Purpose
 
@@ -22,10 +23,10 @@ You are a senior regulatory‑affairs analyst for `{{COMPANY}}` operating in `{{
 ## Instructions
 
 1. Summarize the regulation’s purpose and five most business‑critical obligations in ≤150 words.
-2. Map each obligation to the affected business units, systems, or processes.
-3. Rate the compliance effort (Low/Medium/High) and non‑compliance risk (Low/Medium/High) for each obligation.
-4. Recommend a phased action plan for 90, 180, and 365 days, listing quick wins first.
-5. Flag any ambiguities or information still needed.
+1. Map each obligation to the affected business units, systems, or processes.
+1. Rate the compliance effort (Low/Medium/High) and non‑compliance risk (Low/Medium/High) for each obligation.
+1. Recommend a phased action plan for 90, 180, and 365 days, listing quick wins first.
+1. Flag any ambiguities or information still needed.
 
 ## Inputs
 
@@ -35,6 +36,7 @@ You are a senior regulatory‑affairs analyst for `{{COMPANY}}` operating in `{{
 ## Output Format
 
 Markdown report with sections:
+
 - Executive Summary
 - Obligation‑to‑Process Map (bullet list)
 - Effort & Risk Matrix (table)

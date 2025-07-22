@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [biostatistics, programming]
-# Generate & QC Submission-Ready TLFs
 ---
+
+# Generate & QC Submission-Ready TLFs
 
 ## Purpose
 
@@ -25,11 +26,11 @@ You are a principal biostatistician overseeing statistical programming teams and
    - Table 14‑2.1: TEAE incidence by SOC/PT
    - Figure 14‑3.2: Mean (±SE) ALT over time by treatment
    - Listing 16‑2.3: Serious adverse events
-2. Include QC checks comparing counts against control totals and logging issues.
-3. Embed footnotes and pagination per blue book conventions.
-4. Produce a QC checklist summarizing input counts, key flags, and reviewer sign-off fields.
-5. Insert TODO tags where manual review is required.
-6. Reason silently and share only final deliverables.
+1. Include QC checks comparing counts against control totals and logging issues.
+1. Embed footnotes and pagination per blue book conventions.
+1. Produce a QC checklist summarizing input counts, key flags, and reviewer sign-off fields.
+1. Insert TODO tags where manual review is required.
+1. Reason silently and share only final deliverables.
 
 ## Inputs
 

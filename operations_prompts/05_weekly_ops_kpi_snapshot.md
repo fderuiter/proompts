@@ -23,8 +23,8 @@ You are a data analyst supporting CRO operations leadership. A CSV with StudyID,
 ## Instructions
 
 1. Calculate portfolio on-time performance (percentage of milestones delivered on or before the planned date).
-2. Compute median slip days for late milestones.
-3. Identify the three highest-risk studies (Status="Behind" or slip > 10 days) and give a one-sentence cause for each.
+1. Compute median slip days for late milestones.
+1. Identify the three highest-risk studies (Status="Behind" or slip > 10 days) and give a one-sentence cause for each.
 
 ## Inputs
 

@@ -13,6 +13,7 @@ tags: [adjudication, documentation]
 # Source Document and Endpoint Checklist
 
 ## Purpose
+
 Create a clear checklist of required documents and endpoint criteria for clinical adjudication.
 
 ## Context
@@ -21,6 +22,7 @@ Create a clear checklist of required documents and endpoint criteria for clinica
 - Adjudicators previously received incomplete packages.
 
 ## Instructions
+
 1. For each endpoint, build a checklist of required documents including imaging, labs, and narrative notes with formatting rules.
 1. Convert each endpoint definition into binary inclusion or exclusion criteria.
 1. Suggest concise form-field wording (≤50 characters) for EDC alignment.

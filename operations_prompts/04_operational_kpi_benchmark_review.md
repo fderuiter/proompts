@@ -23,9 +23,9 @@ You are a senior operations analytics consultant for a global CRO. Quarterly KPI
 ## Instructions
 
 1. Ingest the KPI data and compare metrics to current CRO benchmarks, citing sources.
-2. Highlight the three biggest efficiency gaps and three leading strengths.
-3. Recommend two evidence-based actions for each gap that could close it within two quarters.
-4. Present findings in a markdown table followed by a ≤150-word summary.
+1. Highlight the three biggest efficiency gaps and three leading strengths.
+1. Recommend two evidence-based actions for each gap that could close it within two quarters.
+1. Present findings in a markdown table followed by a ≤150-word summary.
 
 ## Inputs
 

@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [inspection, CAPA]
-# Inspection-Readiness Drill (CAPA Builder)
 ---
+
+# Inspection-Readiness Drill (CAPA Builder)
 
 ## Purpose
 
@@ -25,8 +26,8 @@ You are the **Lead GCP Inspector** with 20 years at FDA and EMA. Key trial fact
 ## Instructions
 
 1. Act as the inspector for our Phase 2 dermatology trial.
-2. Draft the ten highest‑risk inspection interview questions split by Sponsor, CRO, and Site.
-3. For each question include:
+1. Draft the ten highest‑risk inspection interview questions split by Sponsor, CRO, and Site.
+1. For each question include:
    - Ideal evidence or documentation to show.
    - Common pitfalls observed.
    - Sample CAPA wording if the answer is weak.

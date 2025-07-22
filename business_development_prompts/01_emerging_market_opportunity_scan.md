@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [business development, market]
-# Emerging-Market Opportunity Scan
 ---
+
+# Emerging-Market Opportunity Scan
 
 ## Purpose
 
@@ -22,9 +23,9 @@ You are a senior life-sciences market-intelligence analyst. Our CRO specializes 
 ## Instructions
 
 1. Analyse recent clinical-trial start data, venture funding, and M&A activity from January 2024 onward.
-2. Highlight the top three opportunities expected to grow outsourcing spend by >30 % in the next 18 months.
-3. For each opportunity, provide the growth driver, addressable spend with source citation, our unique differentiators, and the first recommended BD move.
-4. Summarize findings in a one-page executive briefing.
+1. Highlight the top three opportunities expected to grow outsourcing spend by >30 % in the next 18 months.
+1. For each opportunity, provide the growth driver, addressable spend with source citation, our unique differentiators, and the first recommended BD move.
+1. Summarize findings in a one-page executive briefing.
 
 ## Inputs
 

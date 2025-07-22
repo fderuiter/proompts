@@ -23,8 +23,8 @@ You are an expert clinical-trial operations analyst. Leadership needs a Power BI
 ## Instructions
 
 1. List 10‑12 actionable KPIs with definition, formula, data source and refresh cadence.
-2. Recommend the best visual for each KPI and justify the choice in one sentence.
-3. Flag any data-quality risks or required system integrations.
+1. Recommend the best visual for each KPI and justify the choice in one sentence.
+1. Flag any data-quality risks or required system integrations.
 
 ## Inputs
 
@@ -32,7 +32,7 @@ You are an expert clinical-trial operations analyst. Leadership needs a Power BI
 
 ## Output Format
 
-Markdown table with columns `KPI | Formula | Visual | Data Source | Refresh Cadence | Notes`.
+Markdown table with columns `KPI \| Formula \| Visual \| Data Source \| Refresh Cadence \| Notes`.
 
 ## Additional Notes
 

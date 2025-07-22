@@ -24,8 +24,6 @@ Empathy maps summarize what a persona says, thinks, does, and feels.
 
 <!-- markdownlint-disable MD029 -->
 
-
-
 1. Build a four-quadrant table with two concise bullets per quadrant.
 1. Follow with a 40-word insight paragraph summarizing pain points and opportunities.
 1. End with a single next-step research question.

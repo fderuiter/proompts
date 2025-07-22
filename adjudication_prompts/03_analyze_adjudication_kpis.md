@@ -13,6 +13,7 @@ tags: [adjudication, analytics]
 # Analyze Adjudication KPIs
 
 ## Purpose
+
 Calculate adjudication performance metrics and recommend improvements.
 
 ## Context
@@ -21,6 +22,7 @@ Calculate adjudication performance metrics and recommend improvements.
 - Leadership expects a plan to reduce median cycle time by 20%.
 
 ## Instructions
+
 1. Load the CSV and compute:
    - median and 90th percentile cycle time from event trigger to final decision
    - reviewer disagreement rate
@@ -39,4 +41,5 @@ Calculate adjudication performance metrics and recommend improvements.
 - Bullet list of recommendations
 
 ## Additional Notes
+
 Request a data dictionary if any column in the CSV is ambiguous before starting the analysis.

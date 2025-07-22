@@ -23,8 +23,8 @@ You are a senior CRO resource-planning consultant. Twelve new Phase II/III tria
 ## Instructions
 
 1. Show a step-by-step methodology with formulas for forecasting headcount and spend using historical utilization data.
-2. Provide a sample RACI matrix for collaboration between Operations, Finance, HR and IT.
-3. Suggest three automation opportunities to streamline capacity planning.
+1. Provide a sample RACI matrix for collaboration between Operations, Finance, HR and IT.
+1. Suggest three automation opportunities to streamline capacity planning.
 
 ## Inputs
 

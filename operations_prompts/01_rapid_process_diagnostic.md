@@ -24,9 +24,9 @@ Current volume, average cycle time, pain points and the target outcome are provi
 ## Instructions
 
 1. Map the value stream and label wastes (TIMWOOD).
-2. List the top five bottlenecks with root cause and business impact.
-3. Draft a 90‑day action plan with owner, milestone and KPI.
-4. Summarize findings in 150 words or fewer.
+1. List the top five bottlenecks with root cause and business impact.
+1. Draft a 90‑day action plan with owner, milestone and KPI.
+1. Summarize findings in 150 words or fewer.
 
 ## Inputs
 

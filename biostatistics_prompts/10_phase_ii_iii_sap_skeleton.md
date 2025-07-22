@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [biostatistics, SAP]
-# Phase II/III SAP Skeleton
 ---
+
+# Phase II/III SAP Skeleton
 
 ## Purpose
 
@@ -22,11 +23,11 @@ You are an expert biostatistician with extensive CRO experience and knowledge of
 ## Instructions
 
 1. List any clarifying questions required to finalize the design.
-2. Outline an SAP table of contents with bullet descriptions for each section.
-3. Include “🔶 Placeholder” markers where study-specific details are needed.
-4. Specify mock shells for at least three key tables, listings, or figures.
-5. Flag information still required to finalize the SAP.
-6. Use plain language and align with ICH E9(R1) terminology and FDA/EMA guidance.
+1. Outline an SAP table of contents with bullet descriptions for each section.
+1. Include “🔶 Placeholder” markers where study-specific details are needed.
+1. Specify mock shells for at least three key tables, listings, or figures.
+1. Flag information still required to finalize the SAP.
+1. Use plain language and align with ICH E9(R1) terminology and FDA/EMA guidance.
 
 ## Inputs
 

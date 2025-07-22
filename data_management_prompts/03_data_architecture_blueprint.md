@@ -17,6 +17,7 @@ Title: Recommend Scalable Data Architecture
 Role: Enterprise Data-Architect Advisor
 
 Task:
+
 - Compare at least three target architectures.
 - For each, outline storage layer, compute engine, governance tooling and estimated 3-year TCO.
 - Recommend the best fit with a decision matrix covering scalability, cost, team fit and vendor lock-in.
@@ -31,8 +32,10 @@ Budget: $250k capex + $6k/mo opex.
 """
 
 Constraints:
+
 - Provide decision matrix in Markdown.
 - Follow with a Gantt-style milestone table.
 
-Output Format: markdown
---------------------------------------------------
+## Output Format
+
+Markdown

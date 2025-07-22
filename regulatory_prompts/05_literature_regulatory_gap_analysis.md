@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [clinical, gap analysis]
-# Literature & Regulatory Gap Analysis
 ---
+
+# Literature & Regulatory Gap Analysis
 
 ## Purpose
 
@@ -22,8 +23,8 @@ You are an expert clinical trial strategist. The user plans a pivotal study of `
 ## Instructions
 
 1. Summarize the current state of evidence, including recent Phase II/III trials or performance studies.
-2. Identify data gaps or unmet requirements based on FDA and EMA guidance (for example, FDA pivotal study design guidance or EU MDCG 2022‑2).
-3. Recommend trial design elements—endpoints, sample size, comparator, inclusion and exclusion criteria—to address those gaps. Provide references where appropriate.
+1. Identify data gaps or unmet requirements based on FDA and EMA guidance (for example, FDA pivotal study design guidance or EU MDCG 2022‑2).
+1. Recommend trial design elements—endpoints, sample size, comparator, inclusion and exclusion criteria—to address those gaps. Provide references where appropriate.
 
 ## Inputs
 

@@ -24,9 +24,9 @@ Latest KPI data for Q3 FY‑25 and strategic priorities are provided.
 ## Instructions
 
 1. Identify the three KPIs furthest off‑target and explain their root causes.
-2. Recommend corrective initiatives with RACI owner and due date.
-3. Draft three narrative slides titled **State of Operations**, **Key Risks & Mitigations**, and **Next Steps** (up to five bullets each).
-4. End with an **Ask** slide listing decisions needed from the executive team.
+1. Recommend corrective initiatives with RACI owner and due date.
+1. Draft three narrative slides titled **State of Operations**, **Key Risks & Mitigations**, and **Next Steps** (up to five bullets each).
+1. End with an **Ask** slide listing decisions needed from the executive team.
 
 ## Inputs
 

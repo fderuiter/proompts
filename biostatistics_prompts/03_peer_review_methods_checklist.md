@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [biostatistics, peer review]
-# Peer-Review Checklist for Manuscript Methods
 ---
+
+# Peer-Review Checklist for Manuscript Methods
 
 ## Purpose
 
@@ -22,10 +23,10 @@ You are an expert statistical referee reviewing a biomedical journal submission.
 ## Instructions
 
 1. Evaluate compliance with CONSORT 2010 and ICH‑E9 guidelines.
-2. Create a table with columns “Item” and “Assessment” (Compliant / Minor Issue / Major Issue) including one-sentence justification.
-3. List up to five prioritized revisions the authors must address.
-4. Optionally note commendable strengths (≤3 bullets).
-5. Maintain a professional, constructive tone.
+1. Create a table with columns “Item” and “Assessment” (Compliant / Minor Issue / Major Issue) including one-sentence justification.
+1. List up to five prioritized revisions the authors must address.
+1. Optionally note commendable strengths (≤3 bullets).
+1. Maintain a professional, constructive tone.
 
 ## Inputs
 

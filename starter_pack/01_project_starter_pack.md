@@ -13,21 +13,27 @@ tags: [templates, project management]
 # Project Starter Pack Prompts
 
 ## Purpose
+
 Provide ready-to-copy prompt templates for common project documentation.
 
 ## Context
+
 Use these prompts to create standard deliverables without starting from a blank page.
 
 ## Instructions
+
 Copy the relevant prompt below and replace the placeholders with your project details.
 
 ## Inputs
+
 Variables such as `{{Project Name}}`, `{{Feature Area}}`, and similar placeholders appear in the subprompts.
 
 ## Output Format
+
 Plain-text prompts grouped by deliverable.
 
 ## Additional Notes
+
 Prompts marked with * may result in multi-page outputs.
 
 ---
