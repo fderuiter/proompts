@@ -24,7 +24,7 @@ You are an autonomous coding agent tasked with making every prompt in the GitHub
 ## 3\u00B7 Success Criteria
 
 1. **No prompt file exceeds `MAX_TOKENS_PER_PROMPT`.**
-1. **All links resolve** (use the bundled `scripts/validate_markdown.sh`).
+1. **All links resolve** (use the bundled `scripts/validate_json.sh`).
 1. **`overview.md`, `docs/index.md`, and `docs/table-of-contents.md`** reflect the new file structure.
 1. **PR passes CI** and the validation script with zero warnings.
 
@@ -95,7 +95,7 @@ You are an autonomous coding agent tasked with making every prompt in the GitHub
 1. **Link rewriting**
 
    * Search the entire repo for occurrences of the old filename and replace with the new part-file names.
-   * Run `scripts/validate_markdown.sh` and fix any broken links.
+   * Run `scripts/validate_json.sh` and fix any broken links.
 
 1. **Commit & Push**
 

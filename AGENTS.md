@@ -42,13 +42,13 @@ Follow these steps when adding a new prompt:
 1. Commit the new file with a concise message, e.g. `Add data ingestion prompt`.
 1. Open a pull request for review.
 
-The workflow in `.github/workflows/markdown-validation.yml` runs `scripts/validate_markdown.sh` to lint the Markdown documentation files. You can run this script locally before committing:
+The workflow in `.github/workflows/json-validation.yml` runs `scripts/validate_json.sh` to verify JSON formatting. You can run this script locally before committing:
 
 ```bash
-./scripts/validate_markdown.sh
+./scripts/validate_json.sh
 ```
 
-Make sure the `markdownlint` tool (`mdl` command) is available. If it's missing, install it with `gem install mdl` or your package manager.
+Make sure the `jq` command-line tool is available. Install it with your package manager if it's missing.
 The `.github/workflows/update-docs.yml` workflow will automatically commit the docs index if it becomes out of date.
 
 ## Automation
@@ -57,7 +57,7 @@ Several GitHub Actions take care of routine maintenance tasks:
 
 - **`generate-overviews.yml`** automatically creates an `overview.md` file in any new prompt directory and updates the docs index.
 - **`repo-checks.yml`** verifies file naming conventions, ensures all prompt files use the `.json` extension, and checks that each directory contains `overview.md`.
-- **`markdown-validation.yml`** runs `scripts/validate_markdown.sh`.
+- **`json-validation.yml`** runs `scripts/validate_json.sh`.
 - **`update-docs.yml`** commits the documentation index if it changes.
 
 These workflows run on every push or pull request. When contributing, you can rely on them to handle the overview generation and docs update steps for you.
