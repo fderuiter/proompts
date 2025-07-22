@@ -1,0 +1,24 @@
+{
+  "id": "tailored-feasibility-questionnaire",
+  "title": "Tailored Feasibility-Questionnaire Builder",
+  "category": "site_acquisition_prompts",
+  "author": "proompts",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "operations",
+    "feasibility"
+  ],
+  "prompt": {
+    "purpose": "Draft a site-feasibility questionnaire to confirm patient availability and operational readiness.",
+    "context": "You are a clinical-feasibility specialist with 15 years of experience in Phase II oncology trials.",
+    "instructions": "1. Review the provided protocol summary and ask for missing details if needed.\n1. Create sections:\n   - **Section A \u2013 Patient Population** (\u2264 8 questions)\n   - **Section B \u2013 Facilities & Equipment** (\u2264 6)\n   - **Section C \u2013 Staffing & Experience** (\u2264 6)\n   - **Section D \u2013 Regulatory & Budget** (\u2264 5)\n   - **Section E \u2013 Open-ended Risk Questions** (\u2264 3)\n1. Phrase each question so it can be answered quantitatively when possible and list them in plain text.",
+    "inputs": "- `{{protocol_summary}}` \u2013 draft study synopsis.",
+    "output_format": "Numbered list of questions under each section.",
+    "additional_notes": "Keep medical acronyms consistent with the protocol. If key details are missing, list them and stop.",
+    "example_usage": "",
+    "references": ""
+  }
+}

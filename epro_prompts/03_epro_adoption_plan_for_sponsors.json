@@ -1,0 +1,24 @@
+{
+  "id": "epro-adoption-plan-for-sponsors",
+  "title": "ePRO Adoption Plan for Sponsors",
+  "category": "epro_prompts",
+  "author": "Frederick de Ruiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "epro",
+    "adoption"
+  ],
+  "prompt": {
+    "purpose": "Outline a six-month plan for rolling out ePRO across multiple sites.",
+    "context": "You are an eClinical program manager. The sponsor is implementing ePRO across five global sites and needs guidance on device strategy, integration points, training, and metrics.",
+    "instructions": "1. Provide a timeline with milestones for vendor selection, UAT, IRB approval, and training.\n1. List criteria for choosing between BYOD and provisioned devices.\n1. Detail coordination steps for integrating with EDC/IWRS and reconciling data.\n1. Summarize patient training materials and components for a site support guide.\n1. Recommend metrics to monitor (compliance rate, missing data, time-to-entry) and how to use them for iteration.",
+    "inputs": "- `{{sites}}` \u2013 list of participating sites and regions.",
+    "output_format": "Structured timeline followed by bullet points for each instruction.",
+    "additional_notes": "Highlight risks such as varying site readiness or device availability.",
+    "example_usage": "",
+    "references": ""
+  }
+}

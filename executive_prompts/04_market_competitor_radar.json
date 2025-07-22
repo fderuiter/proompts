@@ -1,0 +1,24 @@
+{
+  "id": "market-competitor-radar",
+  "title": "Strategic Market and Competitor Radar",
+  "category": "executive_prompts",
+  "author": "Frederick de Ruiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "executive",
+    "market"
+  ],
+  "prompt": {
+    "purpose": "Provide an executive briefing on growth areas, competitor moves, and regulatory shifts.",
+    "context": "You are a senior life-sciences strategy analyst tracking the CRO sector globally. Our CRO focuses on oncology Phase II\u2013III trials and operates in North America and the EU with $320M revenue (FY-2024). Competitors include ICON, Syneos, and PPD.",
+    "instructions": "1. Identify the three highest-growth therapeutic areas over the next 24 months.\n1. Summarize any M&A or partnership moves by top competitors in the past 12 months.\n1. Note upcoming FDA or EMA regulatory shifts that could affect trial timelines.\n\nUse bullet points (max 120 words per section) and cite at least two primary sources per finding. Flag data with '\u26a0\ufe0f' if confidence is below 80%.",
+    "inputs": "- `{{sources}}` \u2013 links or citations to industry reports.",
+    "output_format": "```",
+    "additional_notes": "Keep the tone concise and decision-ready.",
+    "example_usage": "",
+    "references": ""
+  }
+}

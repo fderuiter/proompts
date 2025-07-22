@@ -1,0 +1,24 @@
+{
+  "id": "compliance-data-quality-monitoring-plan",
+  "title": "Compliance and Data Quality Monitoring Plan",
+  "category": "trial_execution_prompts",
+  "author": "proompts team",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "clinical operations",
+    "monitoring"
+  ],
+  "prompt": {
+    "purpose": "Design an AI-assisted monitoring plan to ensure compliance and data integrity.",
+    "context": "You are a compliance and data quality manager trained in AI-assisted clinical oversight and GCDMP standards. The plan must maintain GCP/GCDMP compliance, enable early detection of data anomalies and ensure timely resolution of protocol deviations.",
+    "instructions": "1. List the types of automated alerts and their trigger conditions.\n1. Specify the frequency of human\u2013AI reviews.\n1. Define the reporting cadence to sponsors and regulators.",
+    "inputs": "None",
+    "output_format": "Markdown sections:\n\n- **Part A:** Alert list (type, trigger condition)\n- **Part B:** Review schedule (who and how often)\n- **Part C:** Reporting plan (frequency, content, recipients)",
+    "additional_notes": "Tailor the monitoring plan to the trial\u2019s risk profile.",
+    "example_usage": "",
+    "references": ""
+  }
+}

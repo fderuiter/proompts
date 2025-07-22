@@ -1,0 +1,25 @@
+{
+  "id": "hosting-cost-reduction-tot",
+  "title": "Hosting Cost Reduction ToT Plan",
+  "category": "executive_prompts",
+  "author": "prompt-team",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "cost",
+    "strategy",
+    "tree-of-thought"
+  ],
+  "prompt": {
+    "purpose": "",
+    "context": "",
+    "instructions": "",
+    "inputs": "",
+    "output_format": "Markdown",
+    "additional_notes": "",
+    "example_usage": "",
+    "references": ""
+  }
+}

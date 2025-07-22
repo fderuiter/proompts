@@ -1,16 +1,15 @@
 name: Fix Markdown Issues
+# Auto-format documentation in Markdown
 
 on:
   push:
     paths:
-      - '**/*.md'
-      - 'todo_fix.md'
+      - '**/*.json'
       - '.github/workflows/fix-markdown-issues.yml'
       - 'scripts/fix_markdown_issues.py'
   pull_request:
     paths:
-      - '**/*.md'
-      - 'todo_fix.md'
+      - '**/*.json'
       - '.github/workflows/fix-markdown-issues.yml'
       - 'scripts/fix_markdown_issues.py'
 
@@ -25,14 +24,14 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
-      - name: Install markdownlint (mdl)
-        run: sudo gem install mdl
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
       - name: Run markdown fixer
         run: python3 scripts/fix_markdown_issues.py
       - name: Update docs index
         run: python3 scripts/update_docs_index.py
-      - name: Validate Markdown
-        run: ./scripts/validate_markdown.sh
+      - name: Validate JSON
+        run: ./scripts/validate_json.sh
       - name: Check for changes
         id: diff
         run: |

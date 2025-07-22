@@ -1,0 +1,24 @@
+{
+  "id": "optimize-epro-form-design",
+  "title": "Optimize ePRO Form Design",
+  "category": "epro_prompts",
+  "author": "Frederick de Ruiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "epro",
+    "design"
+  ],
+  "prompt": {
+    "purpose": "Improve ePRO form usability and data quality.",
+    "context": "You are a user-experience researcher. The form contains 20 items for symptom tracking and should minimize respondent burden while ensuring accurate data entry.",
+    "instructions": "1. Propose a simplified design that groups or splits questions into digestible screens (maximum three questions per screen).\n1. Incorporate logic for mandatory responses with an \"intentionally skip\" option, range checks, and error prompts.\n1. Suggest onboarding content such as screenshots and tooltips.\n1. Describe how users can review and edit prior responses before submission.\n1. Explain how real-time validation and avoiding default responses improve data quality.",
+    "inputs": "- `{{form_items}}` \u2013 list of survey questions or data items.",
+    "output_format": "Bullet list or short paragraphs covering each instruction.",
+    "additional_notes": "Focus on clarity and ease of use to maximize patient compliance.",
+    "example_usage": "",
+    "references": ""
+  }
+}

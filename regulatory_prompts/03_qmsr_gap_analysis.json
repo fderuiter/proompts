@@ -1,0 +1,24 @@
+{
+  "id": "qmsr-gap-analysis",
+  "title": "21 CFR 820 / QMSR Gap-Analysis & Remediation",
+  "category": "regulatory_prompts",
+  "author": "proompts team",
+  "created": "2024-01-01",
+  "last_modified": "2024-01-01",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "QMSR",
+    "audit"
+  ],
+  "prompt": {
+    "purpose": "Evaluate the quality-management system against current 21\u00a0CFR\u00a0820 and the proposed QMSR.",
+    "context": "You are an MDSAP lead auditor specializing in medical\u2011device quality systems. The organization provides QMS procedures, SOP lists, and the latest internal\u2011audit report. Site size is `{{employee_count}}` and device risk class is `{{device_class}}`.",
+    "instructions": "1. Ask clarifying questions if any documents or processes are unclear.\n1. Once clarified, conduct the analysis and deliver:\n   - High\u2011level summary (\u2264120 words).\n   - Clause\u2011by\u2011clause gap checklist table (Regulation/Clause, Evidence Reviewed, Deficiency, Risk Rating, Recommended Action).\n   - Heat\u2011map snapshot using emoji scale (\ud83d\udfe2/\ud83d\udfe1/\ud83d\udd34) for each subpart.\n   - 90\u2011day remediation road\u2011map with quick wins versus long\u2011lead tasks.\n   - Top five supplier\u2011control and documentation hot spots.\n   - Inspection readiness score (0\u2011100) with justification.\n   - References to 21\u00a0CFR\u00a0820, ISO\u00a013485, and draft QMSR sections.",
+    "inputs": "- `{{qms_documents}}` \u2014 procedures, SOP list, audit reports.",
+    "output_format": "Markdown sections and tables as listed above.",
+    "additional_notes": "Ensure recommendations align with ISO\u00a013485:2016 and proposed QMSR requirements.",
+    "example_usage": "",
+    "references": ""
+  }
+}

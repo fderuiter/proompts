@@ -1,0 +1,24 @@
+{
+  "id": "audit-raw-data-capa-summary",
+  "title": "Audit Raw Data and Draft a CAPA Summary",
+  "category": "study_director_prompts",
+  "author": "proompts",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "quality assurance",
+    "glp"
+  ],
+  "prompt": {
+    "purpose": "Review study data for deviations and produce a corrective-action plan.",
+    "context": "Assume the role of a GLP Quality\u2011Assurance auditor examining raw body\u2011weight and clinical\u2011signs data from Day\u00a015 of dermal toxicity Study\u00a0ABC.",
+    "instructions": "1. Identify protocol deviations, data gaps, or statistical outliers that could affect study integrity.\n1. For each issue, rate the potential impact (Low/Med/High) and propose a corrective\u2011action/preventive\u2011action (CAPA).\n1. Draft a CAPA memo addressed to the Study Director in no more than 300 words.",
+    "inputs": "- `{{data_csv}}` \u2013 raw study data.",
+    "output_format": "Markdown table (Issue ID \\| Impact \\| CAPA) followed by the memo.",
+    "additional_notes": "- Ignore trivial rounding differences.\n- Cite the line numbers or record IDs inspected so the Study Director can cross\u2011verify.\n- Think silently first; output only the table and memo.",
+    "example_usage": "",
+    "references": ""
+  }
+}

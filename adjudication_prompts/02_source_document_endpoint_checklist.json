@@ -1,0 +1,24 @@
+{
+  "id": "adjudication-source-document-checklist",
+  "title": "Source Document and Endpoint Checklist",
+  "category": "adjudication_prompts",
+  "author": "fderuiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4",
+  "temperature": 0.2,
+  "tags": [
+    "adjudication",
+    "documentation"
+  ],
+  "prompt": {
+    "purpose": "Create a clear checklist of required documents and endpoint criteria for clinical adjudication.",
+    "context": "- Draft adjudication charter lists seven primary endpoints but lacks detail on required source documents.\n- Adjudicators previously received incomplete packages.",
+    "instructions": "1. For each endpoint, build a checklist of required documents including imaging, labs, and narrative notes with formatting rules.\n1. Convert each endpoint definition into binary inclusion or exclusion criteria.\n1. Suggest concise form-field wording (\u226450 characters) for EDC alignment.\n1. Flag ambiguous language in the draft charter that needs clarification from the sponsor.",
+    "inputs": "- `{{charter_excerpt}}` \u2013 relevant sections of the adjudication charter.",
+    "output_format": "- Markdown table per endpoint with columns: *Doc Type*, *Required?*, *Acceptable Formats*, *Notes*.\n- Numbered list of **Clarification Needed** items.",
+    "additional_notes": "Ask any clarifying questions before generating the checklist.",
+    "example_usage": "",
+    "references": ""
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "design-verification-test-plan",
+  "title": "Design Verification Test Plan",
+  "category": "testing_prompts",
+  "author": "proompts team",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "testing",
+    "regulatory"
+  ],
+  "prompt": {
+    "purpose": "Create a complete test plan for verifying that a medical device meets its design requirements.",
+    "context": "You are a senior regulatory test engineer working on a Class\u00a0II medical device. The plan must comply with FDA\u00a021\u00a0CFR\u00a0\u00a7820, ISO\u00a013485 and any applicable device\u2011specific standards such as IEC\u00a060601\u20111 or ISO\u00a010993. Only peer\u2011reviewed literature or official standards should be cited. Exclude any protected health information. Ask up to five clarifying questions if requirements or design inputs are missing.",
+    "instructions": "1. Provide a brief introduction describing the device and scope.\n1. Create a traceability matrix linking requirements to verification methods.\n1. Develop detailed, numbered test procedures.\n1. Explain the rationale for each method.\n1. List references formatted per ISO\u00a013485\u00a0\u00a77.3.6.",
+    "inputs": "- `{{device_name}}` \u2013 name of the device",
+    "output_format": "Markdown sections with the introduction, traceability matrix, detailed procedures, rationale and references. Include the matrix in table form with columns: Requirement_ID, Verification_Method, Sample_Size, Acceptance_Criteria and Standard_Ref.",
+    "additional_notes": "Clarify any missing requirements before generating the final plan.",
+    "example_usage": "",
+    "references": ""
+  }
+}

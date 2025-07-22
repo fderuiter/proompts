@@ -1,0 +1,21 @@
+{
+  "id": "01-risk-based-site-performance-dashboard",
+  "title": "Risk-Based Site Performance Dashboard",
+  "category": "clinical_monitoring_prompts",
+  "author": "fderuiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4",
+  "temperature": 0.2,
+  "tags": [],
+  "prompt": {
+    "purpose": "You are an experienced **Clinical Monitoring Manager** at a global CRO overseeing several Phase II oncology trials.",
+    "context": "",
+    "instructions": "1. Calculate a composite risk score per site. Apply the Sponsor risk matrix (Critical = 5, Major = 3, Minor = 1) with these weights: Protocol Deviations 30 %, Query Aging 25 %, IP Accountability 20 %, Enrollment Lapse 15 %, Training Compliance 10 %.\n1. Rank sites from highest to lowest risk.\n1. For each high-risk site, list:\n   \u2022 Primary risk drivers (\u2264 3 bullets)\n   \u2022 Recommended on-site vs. remote actions (e.g., focused SDV, retraining, CAPA)\n   \u2022 Target timeline to reduce risk to **Moderate**.\n1. Present results in a **markdown table** with columns `Rank | Site ID | Composite Score | Key Drivers | Mitigation Plan | Target Date`.\n1. Keep analysis concise (< 400 words) and reference **ICH E6 (R2)** and **TransCelerate RBM** guidance where relevant.\n   **Format**: Table + \u2264 5-sentence executive summary.\n   **Reasoning**: Think step-by-step, but do **not** show your chain-of-thought. Ask follow-up questions if data is insufficient.",
+    "inputs": "",
+    "output_format": "",
+    "additional_notes": "",
+    "example_usage": "",
+    "references": ""
+  }
+}

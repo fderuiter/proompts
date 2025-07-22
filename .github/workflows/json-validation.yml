@@ -1,0 +1,25 @@
+name: JSON Validation
+# Ensure prompt JSON and Markdown docs remain valid
+
+on:
+  push:
+    paths:
+      - '**/*.json'
+      - '.github/workflows/json-validation.yml'
+      - 'scripts/validate_json.sh'
+  pull_request:
+    paths:
+      - '**/*.json'
+      - '.github/workflows/json-validation.yml'
+      - 'scripts/validate_json.sh'
+
+jobs:
+  json-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+      - name: Validate JSON format
+        run: |
+          ./scripts/validate_json.sh

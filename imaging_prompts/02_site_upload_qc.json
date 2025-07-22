@@ -1,0 +1,24 @@
+{
+  "id": "imaging-site-upload-qc",
+  "title": "Site Upload QC and Query Generator",
+  "category": "imaging_prompts",
+  "author": "proompts team",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "imaging",
+    "qc"
+  ],
+  "prompt": {
+    "purpose": "Automate QC of imaging uploads and craft site queries.",
+    "context": "You are a clinical-trial imaging QC analyst at a central lab. You receive a CSV file named `<<<daily_upload_log.csv>>>` with columns:\nSite_ID, Subject_ID, Visit, Modality, SeriesUID, Upload_Timestamp, QC_Flag (pass/warn/fail), QC_Notes.",
+    "instructions": "1. Parse the file and find rows where QC_Flag is not \"pass\".\n1. For each Site_ID, summarise the counts of \"warn\" and \"fail\" and list the top three recurring issues from QC_Notes.\n1. Draft an email template for each site listing affected subjects/visits, describing each issue in plain language and requesting corrective action or a re-upload deadline.\n1. Conclude by flagging any systemic issues where \u226525% of uploads fail.\n1. Ask for correct column names if the schema differs.",
+    "inputs": "- `<<<upload_log.csv>>>` \u2013 daily upload log with QC results",
+    "output_format": "JSON object:\n\n```json\n\n{\n  \"summary_table\": [ { \"site\": \"\", \"warn\": 0, \"fail\": 0, \"common_issues\": [\"\", \"\"] } ],\n  \"emails\": { \"<Site_ID>\": \"Dear \u2026\" }\n}\n```",
+    "additional_notes": "Think step by step before producing the summary and emails.",
+    "example_usage": "",
+    "references": ""
+  }
+}

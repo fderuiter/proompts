@@ -1,0 +1,24 @@
+{
+  "id": "risk-based-monitoring-plan",
+  "title": "Risk-Based Monitoring and Quality Plan",
+  "category": "trial_execution_prompts",
+  "author": "proompts team",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "clinical operations",
+    "monitoring"
+  ],
+  "prompt": {
+    "purpose": "Develop a risk-based monitoring plan for a Phase\u00a0II oncology trial.",
+    "context": "You are a senior GCP compliance advisor. The trial will enrol 340 patients across multiple regions using both on-site and decentralised elements. The plan must identify the top 10 critical\u2011to\u2011quality factors, map each to ICH\u2011E6(R3) and FDA draft guidance and include detection and mitigation tactics.",
+    "instructions": "1. Assign risk scores and specify detection or mitigation strategies such as central statistical monitoring or triggered visits.\n1. Provide an escalation workflow and communication matrix.\n1. Recommend digital tools and metrics to track risk in real time.",
+    "inputs": "None",
+    "output_format": "Executive slide outline (bulleted) followed by an editable risk register in a Markdown table.",
+    "additional_notes": "Request any additional information needed before finalising the plan.",
+    "example_usage": "",
+    "references": ""
+  }
+}

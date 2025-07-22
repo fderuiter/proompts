@@ -1,0 +1,21 @@
+{
+  "id": "01-crf-shell-generator",
+  "title": "CRF Shell Generator",
+  "category": "clinical_prompts",
+  "author": "fderuiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4",
+  "temperature": 0.2,
+  "tags": [],
+  "prompt": {
+    "purpose": "- Read the protocol summary inside the triple quotes.",
+    "context": "",
+    "instructions": "- Working section-by-section, list the CRF pages you would create.\n- Under each page, list every field with: \u2022 CDASH variable \u2022 question text \u2022 data type \u2022 permitted values \u2022 SDTM mapping.\n- Flag any data the protocol requests that is not essential for primary/secondary endpoints.\n- Output a Markdown table grouped by CRF page.\n- Think step-by-step before writing the final table.",
+    "inputs": "",
+    "output_format": "",
+    "additional_notes": "",
+    "example_usage": "",
+    "references": ""
+  }
+}

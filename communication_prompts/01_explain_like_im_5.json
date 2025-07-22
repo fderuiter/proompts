@@ -1,0 +1,21 @@
+{
+  "id": "01-explain-like-im-5",
+  "title": "Explain-Like-I\u2019m-5 (ELI5)",
+  "category": "communication_prompts",
+  "author": "fderuiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4",
+  "temperature": 0.2,
+  "tags": [],
+  "prompt": {
+    "purpose": "\u201cExplain \u2018[TOPIC]\u2019 as if I\u2019m five:",
+    "context": "",
+    "instructions": "1. Start with a playful analogy I\u2019d know from kindergarten.\n1. Use plain words\u2014no sentence longer than 15 words.\n1. Give three everyday examples that show why it matters.\n   Finish with a one-sentence \u2018grown-up\u2019 summary (\u2264 20 words).\u201d**\n\n*Why it\u2019s better:* specifies tone, vocabulary ceiling, example count, and an executive summary so adults can share it onward.",
+    "inputs": "",
+    "output_format": "",
+    "additional_notes": "",
+    "example_usage": "",
+    "references": ""
+  }
+}

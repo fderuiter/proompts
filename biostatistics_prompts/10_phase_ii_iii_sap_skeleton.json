@@ -1,0 +1,24 @@
+{
+  "id": "biostatistics-phase-ii-iii-sap",
+  "title": "Phase II/III SAP Skeleton",
+  "category": "biostatistics_prompts",
+  "author": "proompts team",
+  "created": "2024-01-01",
+  "last_modified": "2024-01-01",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "biostatistics",
+    "SAP"
+  ],
+  "prompt": {
+    "purpose": "Provide a high-level statistical analysis plan skeleton for an adaptive Phase II/III trial.",
+    "context": "You are an expert biostatistician with extensive CRO experience and knowledge of ICH E9(R1) estimands, CDISC standards, and adaptive designs.",
+    "instructions": "1. List any clarifying questions required to finalize the design.\n1. Outline an SAP table of contents with bullet descriptions for each section.\n1. Include \u201c\ud83d\udd36 Placeholder\u201d markers where study-specific details are needed.\n1. Specify mock shells for at least three key tables, listings, or figures.\n1. Flag information still required to finalize the SAP.\n1. Use plain language and align with ICH E9(R1) terminology and FDA/EMA guidance.",
+    "inputs": "- `{{trial_overview}}`",
+    "output_format": "Markdown document with H2 headings, maximum 2,500 words.",
+    "additional_notes": "Ensure compliance with adaptive design guidance and mention SDTM/ADaM standards.",
+    "example_usage": "",
+    "references": ""
+  }
+}

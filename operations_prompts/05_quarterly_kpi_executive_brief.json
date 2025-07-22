@@ -1,0 +1,24 @@
+{
+  "id": "operations-quarterly-kpi-brief",
+  "title": "Quarterly CRO KPI Executive Brief",
+  "category": "operations_prompts",
+  "author": "Frederick de Ruiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "operations",
+    "kpi"
+  ],
+  "prompt": {
+    "purpose": "Present key operational KPIs and recommended actions for the quarterly review.",
+    "context": "You are the Business Operations lead preparing the Q3 executive brief. Operational data, KPI thresholds and functional commentary are available.",
+    "instructions": "1. Produce a one-page narrative highlighting three KPIs above target and three below, include root-cause hypotheses and an actionable decision for each lagging KPI.\n1. Summarize overall financial health in 75 words or fewer.\n1. Outline a six-slide PowerPoint deck with slide titles and bullets.\n1. Suggest appropriate data visualizations for each KPI.",
+    "inputs": "- `{{operational_dataset}}` \u2013 metrics from Redshift.\n- `{{kpi_definitions}}` \u2013 thresholds and descriptions.\n- `{{functional_comments}}` \u2013 notes from department heads.",
+    "output_format": "Narrative summary, slide outline and recommended visualization styles.",
+    "additional_notes": "Keep language jargon-free and assume the audience is time pressed. Use first-person plural and offer to answer questions if data anomalies appear.",
+    "example_usage": "",
+    "references": ""
+  }
+}

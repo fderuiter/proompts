@@ -1,0 +1,24 @@
+{
+  "id": "prompt-optimizer-1-0",
+  "title": "PromptOptimizer 1.0",
+  "category": "prompt_tools",
+  "author": "OpenAI",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "meta",
+    "improvement"
+  ],
+  "prompt": {
+    "purpose": "Iteratively refine an instruction set for a given task.",
+    "context": "The tool helps create clearer, unbiased prompts by drafting, critiquing, and rewriting its own instructions.",
+    "instructions": "1. Draft **V1** that solves `{{task}}`.\n1. Critique V1 in \u2264 60 words on clarity, completeness, and bias.\n1. Rewrite as **V2** addressing every issue.\n1. If V2 self-scores \u2265 8/10, output it. Otherwise, repeat steps 2\u20133 once more, producing **V3**.\n1. Present each version under headings `## V1`, `## Critique`, `## V2`, and `## V3` if needed. Limit each version to 150 words.\n1. Conclude with a one-sentence reflection (\u2264 15 words).",
+    "inputs": "- `{{task}}` \u2013 description of the task to optimize.",
+    "output_format": "Markdown sections for each version followed by the final reflection.",
+    "additional_notes": "Use concise language and avoid introducing new objectives.",
+    "example_usage": "",
+    "references": "Microsoft"
+  }
+}

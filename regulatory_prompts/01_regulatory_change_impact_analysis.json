@@ -1,0 +1,24 @@
+{
+  "id": "regulatory-change-impact-analysis",
+  "title": "Regulatory-Change Impact Analysis",
+  "category": "regulatory_prompts",
+  "author": "proompts team",
+  "created": "2024-01-01",
+  "last_modified": "2024-01-01",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "regulatory",
+    "compliance"
+  ],
+  "prompt": {
+    "purpose": "Assess how a new regulation affects company operations and outline a phased response plan.",
+    "context": "You are a senior regulatory\u2011affairs analyst for `{{COMPANY}}` operating in `{{INDUSTRY_AND_REGION}}`. The regulation \"`{{REGULATION_NAME}}`\" takes effect on `{{EFFECTIVE_DATE}}`; its full text is provided.",
+    "instructions": "1. Summarize the regulation\u2019s purpose and five most business\u2011critical obligations in \u2264150\u00a0words.\n1. Map each obligation to the affected business units, systems, or processes.\n1. Rate the compliance effort (Low/Medium/High) and non\u2011compliance risk (Low/Medium/High) for each obligation.\n1. Recommend a phased action plan for 90, 180, and 365\u00a0days, listing quick wins first.\n1. Flag any ambiguities or information still needed.",
+    "inputs": "- `{{regulation_text}}` \u2014 full regulation content.\n- `{{company_profile}}` \u2014 overview of operations and locations.",
+    "output_format": "Markdown report with sections:\n\n- Executive Summary\n- Obligation\u2011to\u2011Process Map (bullet list)\n- Effort & Risk Matrix (table)\n- Phased Action Plan (check\u2011box list)\n- Open Questions / Information Gaps",
+    "additional_notes": "Write in plain English for time\u2011pressed executives. Cite article or section numbers. Ask up to three clarifying questions if essential details are missing.",
+    "example_usage": "",
+    "references": ""
+  }
+}

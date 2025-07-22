@@ -1,0 +1,24 @@
+{
+  "id": "operations-kpi-dashboard-review",
+  "title": "KPI Dashboard & Monthly Ops-Review Pack",
+  "category": "operations_prompts",
+  "author": "Frederick de Ruiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "operations",
+    "kpi"
+  ],
+  "prompt": {
+    "purpose": "Summarize operational performance and highlight required actions for the monthly review.",
+    "context": "You are an operations-performance coach preparing the COO\u2019s monthly review.\nLatest KPI data for Q3 FY\u201125 and strategic priorities are provided.",
+    "instructions": "1. Identify the three KPIs furthest off\u2011target and explain their root causes.\n1. Recommend corrective initiatives with RACI owner and due date.\n1. Draft three narrative slides titled **State of Operations**, **Key Risks & Mitigations**, and **Next Steps** (up to five bullets each).\n1. End with an **Ask** slide listing decisions needed from the executive team.",
+    "inputs": "- `{{kpi_data}}` \u2013 CSV of recent KPIs.\n- `{{strategic_priorities}}` \u2013 bullet list.",
+    "output_format": "Markdown bullet lists for each slide.",
+    "additional_notes": "Keep the briefing concise and action oriented.",
+    "example_usage": "",
+    "references": ""
+  }
+}

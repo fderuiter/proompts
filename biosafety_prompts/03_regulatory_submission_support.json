@@ -1,0 +1,24 @@
+{
+  "id": "biosafety-regulatory-support",
+  "title": "Regulatory Submission Support",
+  "category": "biosafety_prompts",
+  "author": "proompts team",
+  "created": "2024-01-01",
+  "last_modified": "2024-01-01",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "biosafety",
+    "regulatory"
+  ],
+  "prompt": {
+    "purpose": "Draft regulatory-ready documentation for a medical device submission.",
+    "context": "You are a biological safety consultant assisting with FDA or CE submission.",
+    "instructions": "1. Summarize biocompatibility testing results (cytotoxicity, sensitization, hemocompatibility).\n1. Provide a comparison table against predicate devices.\n1. Identify data gaps and propose additional testing.\n1. Recommend steps to meet 21\u00a0CFR\u00a0820 and ISO\u00a010993.",
+    "inputs": "- `{{device_description}}` \u2014 short summary of the device",
+    "output_format": "Bullet points and tables suitable for submission documentation.",
+    "additional_notes": "Use formal regulatory language and clear section headings.",
+    "example_usage": "",
+    "references": ""
+  }
+}
