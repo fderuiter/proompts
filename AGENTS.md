@@ -4,7 +4,7 @@ This repository stores a collection of AI agent prompts. Each prompt is stored a
 
 ## File Format and Layout
 
-- **JSON only**: Every file in this repository should have the `.json` extension and contain valid JSON content.
+- **JSON only**: Every prompt file in this repository should have the `.json` extension and contain valid JSON content. Documentation files remain in Markdown.
 - **Naming**: Follow the existing naming style in each directory. For example, prompts in `agentic_coding` use numeric prefixes (`01_product_brief.json`, `02_project_brief_epic.json`, etc.), while prompts in `meta_prompts` start with `L#_` (`L0_master-ultrameta.json`).
 - **Directory placement**: Add new prompts to the most relevant directory. Create new directories when necessary, using short, lowercase names separated by underscores.
 
@@ -21,8 +21,7 @@ Each prompt is a JSON object that follows this schema:
 - `tested_model` *(string, optional)* — model name or version used for testing.
 - `temperature` *(number, optional)* — sampling temperature (0–2).
 - `tags` *(array of strings, optional)* — helpful keywords.
-
-The `prompt` object includes fields like `purpose`, `context`, `instructions`, `inputs`, `output_format`, `additional_notes`, `example_usage`, and `references`—see `prompt_tools/L5_standardize-prompt-files.md`.
+- `prompt` *(object, required)* — contains the text of the prompt. It must include `purpose`, `context`, `instructions`, `inputs`, and `output_format`. Optional keys are `additional_notes`, `example_usage`, and `references`. See `prompt_tools/L5_standardize-prompt-files.md` for details on these sections.
 
 For a machine-readable definition, see `docs/prompt_schema.json`. A filled-out example
 that conforms to this schema is provided in `docs/template_prompt.json`.
@@ -57,7 +56,7 @@ The `.github/workflows/update-docs.yml` workflow will automatically commit the d
 Several GitHub Actions take care of routine maintenance tasks:
 
 - **`generate-overviews.yml`** automatically creates an `overview.md` file in any new prompt directory and updates the docs index.
-- **`repo-checks.yml`** verifies file naming conventions, ensures all files use the `.json` extension, and checks that each directory contains `overview.md`.
+- **`repo-checks.yml`** verifies file naming conventions, ensures all prompt files use the `.json` extension, and checks that each directory contains `overview.md`.
 - **`markdown-validation.yml`** runs `scripts/validate_markdown.sh`.
 - **`update-docs.yml`** commits the documentation index if it changes.
 
