@@ -2,6 +2,7 @@
 """Update docs index and table of contents for prompt files."""
 
 import argparse
+import json
 import sys
 from pathlib import Path
 
@@ -10,20 +11,20 @@ DOCS_DIR = ROOT / "docs"
 EXCLUDE_DIRS = {"docs", "scripts", ".github"}
 
 
-def heading_from_file(path: Path) -> str:
-    """Return the first Markdown heading from the file or filename stem."""
+def title_from_json(path: Path) -> str:
+    """Return the prompt title from a JSON file."""
     try:
-        with path.open("r", encoding="utf-8") as f:
-            for line in f:
-                line = line.strip()
-                if line.startswith("#"):
-                    return line.lstrip("#").strip()
-    except FileNotFoundError:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        title = data.get("title")
+        if title:
+            return str(title).strip()
+    except Exception:
         pass
-    # Fallback to file name without extension and numeric prefix
     name = path.stem
-    name = name.split("_", 1)[-1] if "_" in name and name.split("_", 1)[0].isdigit() else name
-    return name.replace("_", " ").title()
+    if "_" in name and name.split("_", 1)[0].isdigit():
+        name = name.split("_", 1)[1]
+    name = name.replace("_", " ").replace("-", " ")
+    return " ".join(word.capitalize() for word in name.split())
 
 
 def category_title(directory: Path) -> str:
@@ -33,13 +34,10 @@ def category_title(directory: Path) -> str:
 
 
 def prompt_files(directory: Path):
-    """Yield all prompt files within directory recursively, skipping overview and readme."""
-    for path in sorted(directory.rglob("*.md")):
-        if not path.is_file():
-            continue
-        if path.name.lower() in {"overview.md", "readme.md"}:
-            continue
-        yield path
+    """Yield all JSON prompt files within directory."""
+    for path in sorted(directory.glob("*.json")):
+        if path.is_file():
+            yield path
 
 
 def generate():
@@ -54,7 +52,7 @@ def generate():
         index_lines.append(f"## {title}")
         index_lines.append("")
         for file in files:
-            heading = heading_from_file(file)
+            heading = title_from_json(file)
             rel = Path("..") / file.relative_to(ROOT)
             link = f"[{heading}]({rel.as_posix()})"
             index_lines.append(f"- {link}")
