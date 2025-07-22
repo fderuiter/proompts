@@ -3,6 +3,7 @@
 
 from pathlib import Path
 import sys
+import json
 
 OVERVIEW_NAME = "overview.md"  # documentation remains in Markdown
 
@@ -10,15 +11,14 @@ ROOT = Path(__file__).resolve().parents[1]
 EXCLUDE_DIRS = {"docs", "scripts", ".github"}
 
 
-def heading_from_file(path: Path) -> str:
-    """Return first Markdown heading or fallback to filename."""
+def title_from_json(path: Path) -> str:
+    """Return prompt title from a JSON file or fallback to filename."""
     try:
-        with path.open("r", encoding="utf-8") as f:
-            for line in f:
-                stripped = line.strip()
-                if stripped.startswith("#"):
-                    return stripped.lstrip("#").strip()
-    except FileNotFoundError:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        title = data.get("title")
+        if title:
+            return str(title).strip()
+    except Exception:
         pass
     name = path.stem
     if name.split("_", 1)[0].isdigit():
@@ -29,10 +29,8 @@ def heading_from_file(path: Path) -> str:
 def generate_overview(directory: Path) -> str:
     title = directory.name.replace("_", " ").title()
     lines = [f"# {title} Overview", ""]
-    for file in sorted(directory.glob("*.md")):
-        if file.name.lower() in {OVERVIEW_NAME, "readme.md"}:
-            continue
-        heading = heading_from_file(file)
+    for file in sorted(directory.glob("*.json")):
+        heading = title_from_json(file)
         lines.append(f"- [{heading}]({file.name})")
     return "\n".join(lines).rstrip() + "\n"
 

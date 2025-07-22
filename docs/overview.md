@@ -2,6 +2,7 @@
 
 This directory stores general reference material for the repository. Use
 `index.md` or `table-of-contents.md` for a complete table of contents that links to every prompt.
+All prompts are saved as `.json` files that conform to `prompt_schema.json`.
 
 ## Quick Links
 
