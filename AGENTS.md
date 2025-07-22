@@ -10,7 +10,13 @@ This repository stores a collection of AI agent prompts. Each prompt is stored a
 
 ## Prompt Metadata Schema
 
-Each prompt is a JSON object that follows this schema:
+Each prompt is stored as a JSON file. The required top-level fields are
+`id`, `title`, `category`, `created`, `last_modified`, and `prompt`.
+The `prompt` object itself must contain `purpose`, `context`, `instructions`,
+`inputs`, and `output_format`. Optional fields are described below.
+See `docs/template_prompt.json` for a complete example.
+
+The full schema is:
 
 - `id` *(string, required)* — unique kebab‑case identifier.
 - `title` *(string, required)* — short descriptive title.

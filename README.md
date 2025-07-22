@@ -19,22 +19,28 @@ A curated set of Markdown prompts for AI-assisted product development, regulator
 
 ## Prompt Schema
 
-Each prompt begins with YAML front matter that includes these fields:
+Prompts are stored as `.json` files that conform to `docs/prompt_schema.json`. Each
+file contains these top-level fields:
 
-- `id` – unique kebab-case identifier.
-- `title` – short descriptive title.
-- `category` – directory or topical grouping.
-- `author` – optional author attribution.
-- `created` – date added (`YYYY-MM-DD`).
-- `last_modified` – most recent modification date.
-- `tested_model` – optional model/version used when testing.
-- `temperature` – optional sampling temperature.
-- `tags` – optional array of keywords.
+- `id` – unique kebab-case identifier
+- `title` – short descriptive title
+- `category` – directory or topical grouping
+- `author` – optional author attribution
+- `created` – date added (`YYYY-MM-DD`)
+- `last_modified` – most recent modification date
+- `tested_model` – optional model/version used when testing
+- `temperature` – optional sampling temperature
+- `tags` – optional array of keywords
+- `prompt` – object holding the prompt text
 
-The body of the prompt follows the template in `prompt_tools/L5_standardize-prompt-files.md` with **H2** sections for `Purpose`, `Context`, `Instructions`, `Inputs`, `Output Format`, `Additional Notes`, `Example Usage`, and `References`.
+The `prompt` object must include `purpose`, `context`, `instructions`, `inputs`,
+and `output_format`. Optional keys are `additional_notes`, `example_usage`, and
+`references`. See `docs/template_prompt.json` for a filled-out example.
 
-You can also see the same structure in JSON form in `docs/template_prompt.json`.
-The machine-readable JSON schema is available in `docs/prompt_schema.json`.
+The body of the prompt mirrors the template in
+`prompt_tools/L5_standardize-prompt-files.md` with sections for `Purpose`,
+`Context`, `Instructions`, `Inputs`, `Output Format`, `Additional Notes`,
+`Example Usage`, and `References`.
 
 ## Validation
 
@@ -52,7 +58,7 @@ This repository also runs workflows to generate missing `overview.md` files, ver
 
 ## Contributing
 
-1. Add prompts as `.md` files in the appropriate folder.
+1. Add prompts as `.json` files in the appropriate folder.
 1. Before committing, sanitize and standardize the file using `prompt_tools/L5_prompt_sanitiser.md` and `prompt_tools/L5_standardize-prompt-files.md`.
 1. Optionally, run `prompt_tools/01_architecture_review_pipeline.md` to audit the repository.
 1. If you create a new directory, an `overview.md` will be generated automatically by the workflow.
