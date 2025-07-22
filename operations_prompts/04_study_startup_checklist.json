@@ -1,0 +1,24 @@
+{
+  "id": "operations-study-startup-checklist",
+  "title": "Study Start-Up Checklist & Timeline",
+  "category": "operations_prompts",
+  "author": "Frederick de Ruiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "operations",
+    "startup"
+  ],
+  "prompt": {
+    "purpose": "Provide an actionable checklist and timeline for Phase IIb study start-up.",
+    "context": "You are an experienced clinical-operations specialist. The therapeutic area, regions, target first-patient-in date and regulations are provided.",
+    "instructions": "1. Detail workstreams for regulatory submissions, site contracts, vendor onboarding, IMP supply and staff training.\n1. Include a Gantt-style timeline.\n1. List at least three common start-up risks with mitigations.",
+    "inputs": "- `{{therapeutic_area}}` \u2013 indication for the study.\n- `{{regions}}` \u2013 participating regions.\n- `{{fpi_date}}` \u2013 first-patient-in target date.\n- `{{regulations}}` \u2013 key regulatory references.",
+    "output_format": "Markdown table with columns `Workstream \\| Key Activities \\| Owner \\| Start \\| Finish \\| Dependencies \\| Notes/Risks`.",
+    "additional_notes": "All critical-path tasks should take no longer than 15 business days and align with the FPI date. Ask clarifying questions if information is missing.",
+    "example_usage": "",
+    "references": ""
+  }
+}

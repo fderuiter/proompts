@@ -1,0 +1,24 @@
+{
+  "id": "raqa-integrated-quality-system-audit",
+  "title": "RA/QA Integrated Quality System Audit",
+  "category": "regulatory_prompts",
+  "author": "proompts team",
+  "created": "2024-01-01",
+  "last_modified": "2024-01-01",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "quality system",
+    "audit"
+  ],
+  "prompt": {
+    "purpose": "Prepare for a combined FDA QSR and EU MDR/IVDR audit by identifying quality\u2011management gaps and recommending improvements.",
+    "context": "You are a global RA/QA consultant. The organization seeks a gap analysis against ISO\u00a013485 and 21\u00a0CFR\u00a0820 in preparation for upcoming inspections.",
+    "instructions": "1. Evaluate documentation, CAPA, supplier controls, post\u2011market surveillance, and risk management alignment.\n1. Identify gaps relative to ISO\u00a013485 and 21\u00a0CFR\u00a0820 requirements.\n1. Provide prioritized recommendations for quality\u2011management system improvements.",
+    "inputs": "- `{{qms_documents}}` \u2014 current procedures and records.",
+    "output_format": "Bulleted list of findings and a table prioritizing recommended actions.",
+    "additional_notes": "Keep advice concise and actionable for audit readiness.",
+    "example_usage": "",
+    "references": ""
+  }
+}

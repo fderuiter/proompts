@@ -1,0 +1,24 @@
+{
+  "id": "pm-cross-study-risk-heatmap",
+  "title": "Cross-Study Operational Risk Heat Map and Mitigation Plan",
+  "category": "project_management",
+  "author": "proompts team",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "project management",
+    "risk"
+  ],
+  "prompt": {
+    "purpose": "Identify and prioritize the top portfolio-level operational risks and propose mitigations.",
+    "context": "You are an enterprise risk-management AI for global clinical operations. Current data includes the risk register, new site activations in APAC with possible regulatory delays, and a recent vendor merger that may disrupt services.",
+    "instructions": "1. Rate each risk on Probability (1\u20135) \u00d7 Impact (1\u20135) to create a heat\u2011map matrix (High/Med/Low).\n1. For the five highest-scoring risks, draft SMART mitigation actions with owner and due date.\n1. Provide an executive summary (\u2264150 words) for steering\u2011committee use.\n1. Outline the scoring logic applied.",
+    "inputs": "- `{{risk_register}}`",
+    "output_format": "- Table \"Risk-Heat-Map\".\n- Table \"Mitigation-Plan\".\n- Executive summary paragraph.",
+    "additional_notes": "Use concise language and focus on cross-study themes.",
+    "example_usage": "",
+    "references": ""
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "human-factors-validation-protocol",
+  "title": "Human Factors Validation Study Protocol",
+  "category": "testing_prompts",
+  "author": "proompts team",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "testing",
+    "human factors"
+  ],
+  "prompt": {
+    "purpose": "Draft a user validation study protocol for a medical device.",
+    "context": "You are a human\u2011factors specialist preparing the design validation protocol for **{{device_name}}**. The plan must comply with FDA Human Factors Guidance, ISO\u00a062366\u20111 and ISO\u00a013485. Specify the device class (I,\u00a0II or\u00a0III) and include intended users and use environments. The protocol must demonstrate the device meets user needs and intended use per \u00a7820.30(g). Maintain a formal tone suitable for a regulatory submission. Limit output to \u2264\u00a02\u00a0000 words and ask any clarifying questions before proceeding.",
+    "instructions": "1. Outline the purpose and regulatory basis.\n1. Define study objectives and success metrics.\n1. Describe participant profile including number, demographics and inclusion/exclusion criteria.\n1. Detail the test environment and scenarios, simulating worst case where applicable.\n1. Provide task analysis and data\u2011collection methods (quantitative and qualitative).\n1. Specify risk\u2011mitigation triggers and stop rules.\n1. Present the data analysis plan.\n1. List deliverables and acceptance criteria.",
+    "inputs": "- `{{device_name}}` \u2013 name of the device\n- `{{class}}` \u2013 device class",
+    "output_format": "Structured Markdown outline with numbered sections corresponding to the instructions.",
+    "additional_notes": "Confirm any missing design inputs before finalizing the protocol.",
+    "example_usage": "",
+    "references": ""
+  }
+}

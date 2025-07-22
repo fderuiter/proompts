@@ -1,0 +1,24 @@
+{
+  "id": "ai-risk-mapper",
+  "title": "AI Risk Mapper",
+  "category": "general_prompts",
+  "author": "Codex",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "risk",
+    "compliance"
+  ],
+  "prompt": {
+    "purpose": "Create a quick-look risk register for a specified AI system.",
+    "context": "Regulatory frameworks such as the EU AI Act and NIST AI RMF guide responsible AI deployment.",
+    "instructions": "1. List up to six key risks, each no more than 12 words.\n1. Provide a table with columns *Risk*, *Likelihood H/M/L*, *Impact H/M/L*, and *Mitigation* (\u2264 15 words).\n1. Conclude with a 25-word compliance note referencing the EU AI Act and NIST AI RMF.\n1. Keep total response under 150 words.",
+    "inputs": "- `{{AI_SYSTEM}}` \u2014 the system being assessed.",
+    "output_format": "Markdown list, table, and concluding note.",
+    "additional_notes": "Focus on brevity and clarity.",
+    "example_usage": "",
+    "references": "Reuters, Osano"
+  }
+}

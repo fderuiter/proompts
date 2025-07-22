@@ -1,0 +1,24 @@
+{
+  "id": "biological-evaluation-plan-builder",
+  "title": "Biological Evaluation Plan Builder",
+  "category": "biological_safety_prompts",
+  "author": "proompts team",
+  "created": "2024-01-01",
+  "last_modified": "2024-01-01",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "biological safety",
+    "planning"
+  ],
+  "prompt": {
+    "purpose": "Draft a complete Biological Evaluation Plan (BEP) for a specified medical device.",
+    "context": "You are a senior regulatory consultant with 15 years of biocompatibility experience. Use ISO 10993\u20111 (2023) and the FDA guidance \"Use of ISO 10993\u20111\" (Sept\u00a08\u00a02023).",
+    "instructions": "1. Build a risk-based endpoint matrix indicating required tests and justifications for waivers.\n1. Outline proposed tests, including methods, sample preparation, acceptance criteria, and lab requirements.\n1. Provide an integrated timeline and critical path (Gantt style).\n1. Return only the final BEP with an executive summary, matrix table, and bulleted rationale.",
+    "inputs": "- `{{device_details}}` \u2014 materials, manufacturing method, contact category, duration, and use environment",
+    "output_format": "Executive-summary paragraph followed by a markdown table and bulleted notes.",
+    "additional_notes": "Ask for missing device information before drafting if not provided.",
+    "example_usage": "",
+    "references": ""
+  }
+}

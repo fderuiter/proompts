@@ -1,0 +1,24 @@
+{
+  "id": "operations-excellence-risk-sweep",
+  "title": "Operational Excellence & Risk Sweep",
+  "category": "operations_prompts",
+  "author": "Frederick de Ruiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "operations",
+    "risk"
+  ],
+  "prompt": {
+    "purpose": "Deliver a 90-day action plan to cut cycle time and reduce recruitment failure.",
+    "context": "Average trial cycle time is 32 months and recruitment failure rate is 18\u00a0%. We use Medidata and Veeva Vault.",
+    "instructions": "1. Prioritize technology, process and talent levers by ROI and implementation effort.\n1. Highlight compliance risks for ICH-GCP, GDPR and 21\u00a0CFR\u00a0Part\u00a011.\n1. Limit the response to 700 words.\n1. Present a markdown table titled **90-Day CRO Ops Optimization Plan** followed by a **Quick-Win Checklist**.\n1. Ask three clarifying questions if data gaps exist before drafting.",
+    "inputs": "- `{{trial_metrics}}` \u2013 cycle-time and recruitment data.",
+    "output_format": "Markdown table as specified plus the checklist.",
+    "additional_notes": "Risks should be clearly noted; compliance issues may be flagged in red text.",
+    "example_usage": "",
+    "references": ""
+  }
+}

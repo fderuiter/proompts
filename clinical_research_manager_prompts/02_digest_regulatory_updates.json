@@ -1,0 +1,21 @@
+{
+  "id": "02-digest-regulatory-updates",
+  "title": "Digest the Latest Regulatory Updates Affecting My Protocol",
+  "category": "clinical_research_manager_prompts",
+  "author": "fderuiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4",
+  "temperature": 0.2,
+  "tags": [],
+  "prompt": {
+    "purpose": "```",
+    "context": "",
+    "instructions": "You are a regulatory-affairs analyst specializing in global GCP compliance.\nTask: Summarize only what changed in the [June 2025 FDA draft guidance on electronic source data] that could impact our [oncology] protocol # [ABC-123] run on an EDC platform.\nConstraints:\n \u2022 Limit to 300 words.\n \u2022 Flag each change as **mandatory (\"must\")** or **recommended (\"should\")**.\n \u2022 Map each change to the affected protocol section (e.g., 6.2 Inclusion Criteria).\nOutput: Bullet list under two headings: \u201cImmediate Actions\u201d and \u201cMonitor for Clarification\u201d.\nRequest any extra details you need first.\n```",
+    "inputs": "",
+    "output_format": "",
+    "additional_notes": "",
+    "example_usage": "",
+    "references": ""
+  }
+}

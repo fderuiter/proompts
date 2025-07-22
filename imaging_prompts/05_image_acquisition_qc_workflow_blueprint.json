@@ -1,0 +1,24 @@
+{
+  "id": "imaging-acquisition-qc-workflow",
+  "title": "Image Acquisition QC Workflow Blueprint",
+  "category": "imaging_prompts",
+  "author": "proompts team",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "imaging",
+    "workflow"
+  ],
+  "prompt": {
+    "purpose": "Design a site-facing SOP for image acquisition and quality control.",
+    "context": "You are an imaging-operations director implementing an imaging core lab management system (ICTMS).\n\n- Study description: `<<<study_description>>>`\n- Modalities: MRI (3 T) and low-dose CT\n- Sites involved: 30\n- Standards: ISO 13485 documentation controls and decentralized-trial elements such as remote upload and eConsent",
+    "instructions": "1. Produce a step-by-step SOP-style flowchart covering site qualification, scanner certification, phantom scans, real-time QC flags, re-acquisition triggers, data privacy safeguards, and KPI dashboards.\n1. Present the flowchart as indented text with no more than 12 steps.\n1. Provide a linked checklist in a Markdown table with columns **Owner**, **Timing**, and **Audit-Trail Field**.\n1. Bold any automated ICTMS step.\n1. Ask clarifying questions if needed.",
+    "inputs": "- `<<<study_description>>>` \u2013 short trial overview\n- `<<<modalities>>>` \u2013 modality details if different",
+    "output_format": "Indented flowchart followed by a Markdown table checklist.",
+    "additional_notes": "Focus on practical steps that sites can follow.",
+    "example_usage": "",
+    "references": ""
+  }
+}

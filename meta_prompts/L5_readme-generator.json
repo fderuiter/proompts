@@ -1,0 +1,24 @@
+{
+  "id": "readme-generator",
+  "title": "README Generator",
+  "category": "meta_prompts",
+  "author": "proompts team",
+  "created": "2024-01-01",
+  "last_modified": "2024-01-01",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "meta",
+    "documentation"
+  ],
+  "prompt": {
+    "purpose": "Scan an entire repository and produce a polished README.md covering everything a new developer needs.",
+    "context": "You are an expert technical writer and software engineer.",
+    "instructions": "1. Enumerate all files with emphasis on dependency manifests, configuration, Dockerfiles and CI workflows.\n1. Extract package names, version constraints and commands.\n1. Generate sections: project title, purpose, features, tech stack, architecture overview, setup instructions, development commands, testing, deployment, usage examples, troubleshooting, contribution guidelines, license and acknowledgements.\n1. Use level\u20111 heading for the title and level\u20112 headings for main sections.\n1. Add `<!-- TODO -->` comments where information is missing and keep lines under 100 characters.",
+    "inputs": "- `{{repo_access}}` \u2013 repository path or URL",
+    "output_format": "Complete README.md between triple backticks.",
+    "additional_notes": "Return only the README content and mention how to give the agent repository access in the instructions.",
+    "example_usage": "",
+    "references": ""
+  }
+}

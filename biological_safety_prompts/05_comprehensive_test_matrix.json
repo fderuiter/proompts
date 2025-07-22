@@ -1,0 +1,24 @@
+{
+  "id": "biological-safety-test-matrix",
+  "title": "Comprehensive Biocompatibility Test Matrix",
+  "category": "biological_safety_prompts",
+  "author": "proompts team",
+  "created": "2024-01-01",
+  "last_modified": "2024-01-01",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "biological safety",
+    "testing"
+  ],
+  "prompt": {
+    "purpose": "Generate a detailed biocompatibility test matrix for a medical device.",
+    "context": "You are the lead biocompatibility scientist at an ISO\u00a017025-accredited lab. Follow the FDA-modified ISO\u00a010993 endpoint matrix.",
+    "instructions": "1. For each endpoint, specify test type (in\u00a0vitro, in\u00a0vivo, or NAM).\n1. List the relevant standard and edition (ISO/ASTM/USP).\n1. Provide sample conditioning and extraction details per FDA guidance.\n1. Note acceptance criteria and rationale.\n1. Suggest potential NAM replacements to reduce animal use.",
+    "inputs": "- `{{device_materials}}` \u2014 materials and clinical-use scenario",
+    "output_format": "Two-level markdown table followed by concise explanatory notes.",
+    "additional_notes": "Request missing information such as device surface area if not provided.",
+    "example_usage": "",
+    "references": ""
+  }
+}

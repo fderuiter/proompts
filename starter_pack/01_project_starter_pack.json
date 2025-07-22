@@ -1,0 +1,24 @@
+{
+  "id": "project-starter-pack",
+  "title": "Project Starter Pack Prompts",
+  "category": "starter_pack",
+  "author": "proompts",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "templates",
+    "project management"
+  ],
+  "prompt": {
+    "purpose": "Provide ready-to-copy prompt templates for common project documentation.",
+    "context": "Use these prompts to create standard deliverables without starting from a blank page.",
+    "instructions": "Copy the relevant prompt below and replace the placeholders with your project details.",
+    "inputs": "Variables such as `{{Project Name}}`, `{{Feature Area}}`, and similar placeholders appear in the subprompts.",
+    "output_format": "Plain-text prompts grouped by deliverable.",
+    "additional_notes": "Prompts marked with * may result in multi-page outputs.\n\n---",
+    "example_usage": "",
+    "references": ""
+  }
+}

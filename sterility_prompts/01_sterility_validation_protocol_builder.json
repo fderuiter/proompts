@@ -1,0 +1,24 @@
+{
+  "id": "sterility-validation-protocol-builder",
+  "title": "Sterility-Validation Protocol Builder",
+  "category": "sterility_prompts",
+  "author": "proompts",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "sterility",
+    "validation"
+  ],
+  "prompt": {
+    "purpose": "Draft a complete validation protocol for a single-use Class\u00a0II instrument sterilized by gamma irradiation.",
+    "context": "You are a senior sterility-assurance microbiologist.",
+    "instructions": "- Define worst-case product configuration and family grouping approach.\n- Design bioburden assessment, fractional/half-cycle verification, and VDmax method per **ISO\u00a011137\u20111:2025** and **ISO\u00a011737\u20112:2019**.\n- Calculate sample sizes and acceptance criteria to meet a PNSU \u2264 10^-6.\n- Map activities onto a Gantt-style timeline through Process Qualification (IQ \\| OQ \\| PQ).\n- List all required data outputs for a **510(k) sterility section** under FDA\u2019s 2024 guidance.",
+    "inputs": "- `{{device_description}}` \u2013 instrument details.",
+    "output_format": "Numbered sections: Overview, Materials, Methods, Acceptance Criteria, Timeline, and References.",
+    "additional_notes": "- Include all equations explicitly.\n- Cite each standard or guidance section by clause number.\n- Think through the solution step-by-step internally and reveal only the final protocol.",
+    "example_usage": "",
+    "references": ""
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "neutral-scrum-retro",
+  "title": "Neutral Scrum Retrospective Facilitator",
+  "category": "project_management",
+  "author": "OpenAI",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.7,
+  "tags": [
+    "scrum",
+    "retrospective"
+  ],
+  "prompt": {
+    "purpose": "Design a balanced 60-minute remote sprint retrospective for seven participants.",
+    "context": "The team meets online.",
+    "instructions": "1. Provide five ice-breaker questions.\n1. Present a Start / Stop / Continue board with placeholder bullets.\n1. Offer two probing questions per category.\n1. Describe a 10-minute closing ritual that locks concrete action items.\n1. Label sections with markdown headers and keep the response under 120 words.",
+    "inputs": "None.",
+    "output_format": "Markdown with headers for each section.",
+    "additional_notes": "",
+    "example_usage": "",
+    "references": "- DEV Community\n- Spinach AI"
+  }
+}

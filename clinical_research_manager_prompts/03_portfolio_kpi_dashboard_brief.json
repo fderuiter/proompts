@@ -1,0 +1,21 @@
+{
+  "id": "03-portfolio-kpi-dashboard-brief",
+  "title": "Portfolio KPI Dashboard Brief",
+  "category": "clinical_research_manager_prompts",
+  "author": "fderuiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4",
+  "temperature": 0.2,
+  "tags": [],
+  "prompt": {
+    "purpose": "```",
+    "context": "",
+    "instructions": "You are a data-driven clinical-project manager.\nTask: Produce a one-page executive dashboard summarizing operational KPIs for my live studies (IDs [XYZ-01, XYZ-02, XYZ-03]).\nMetrics: enrollment rate vs. plan, screen-failure %, protocol deviations/site, SDV completion %, query turnaround time, and budget burn %.\nConstraints & style:\n \u2022 Snapshot date \u2014 [EOD July 18 2025].\n \u2022 Traffic-light coding: Green \u2265 90 % target, Yellow 80-89 %, Red < 80 %.\n \u2022 Deliver in Markdown with a summary paragraph of top 3 risks.\n \u2022 Embed clarifying-questions section at top if data gaps exist.\nOutput: Markdown table + risk narrative only.\n```",
+    "inputs": "",
+    "output_format": "",
+    "additional_notes": "",
+    "example_usage": "",
+    "references": ""
+  }
+}
