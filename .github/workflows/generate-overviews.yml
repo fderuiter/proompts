@@ -4,12 +4,12 @@ name: Generate Overviews
 on:
   push:
     paths:
-      - '**/*.md'
+      - '**/*.json'
       - '.github/workflows/generate-overviews.yml'
       - 'scripts/generate_overviews.py'
   pull_request:
     paths:
-      - '**/*.md'
+      - '**/*.json'
       - '.github/workflows/generate-overviews.yml'
       - 'scripts/generate_overviews.py'
 
