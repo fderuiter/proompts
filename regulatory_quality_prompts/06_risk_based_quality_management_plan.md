@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [RBQM, monitoring]
-# Risk-Based Quality Management Plan
 ---
+
+# Risk-Based Quality Management Plan
 
 ## Purpose
 
@@ -22,10 +23,10 @@ You lead RBQM design and must align with ICH E6(R2)/E8(R1) and FDA risk‑based
 ## Instructions
 
 1. Include at least five Critical‑to‑Quality factors.
-2. Provide a risk‑assessment matrix (Severity × Likelihood) with mitigations.
-3. Define Key Risk Indicators with thresholds for centralized monitoring.
-4. Specify roles, data sources, and review frequency.
-5. Outline the escalation and communication pathway.
+1. Provide a risk‑assessment matrix (Severity × Likelihood) with mitigations.
+1. Define Key Risk Indicators with thresholds for centralized monitoring.
+1. Specify roles, data sources, and review frequency.
+1. Outline the escalation and communication pathway.
 
 ## Inputs
 

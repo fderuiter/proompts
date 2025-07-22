@@ -24,9 +24,9 @@ Vendor scorecards, contract terms and recent audit reports will be provided.
 ## Instructions
 
 1. Cluster vendors into performance tiers using appropriate clustering on scorecard metrics.
-2. For each tier, propose immediate corrective actions (≤30 days) and longer-term changes (31‑90 days) with owner and success metric.
-3. Identify systemic causes such as workflow gaps and recommend enterprise-level fixes.
-4. Present a markdown table showing `Vendor | Tier | Key Action | Owner | Target Date` followed by a brief narrative under 150 words summarizing ROI and risk reduction.
+1. For each tier, propose immediate corrective actions (≤30 days) and longer-term changes (31‑90 days) with owner and success metric.
+1. Identify systemic causes such as workflow gaps and recommend enterprise-level fixes.
+1. Present a markdown table showing `Vendor \| Tier \| Key Action \| Owner \| Target Date` followed by a brief narrative under 150 words summarizing ROI and risk reduction.
 
 ## Inputs
 

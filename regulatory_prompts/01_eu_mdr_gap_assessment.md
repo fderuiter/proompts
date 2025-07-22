@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [EU MDR, audit]
-# EU MDR Technical-Documentation Gap Assessment
 ---
+
+# EU MDR Technical-Documentation Gap Assessment
 
 ## Purpose
 
@@ -22,12 +23,12 @@ You are a senior EU MDR consultant and lead Notified Body auditor. The device i
 ## Instructions
 
 1. Review each section against Annex II and III requirements.
-2. List every deficiency in a table with columns:
+1. List every deficiency in a table with columns:
    - MDR clause or annex reference.
    - Gap description (≤40 words).
-   - Risk level (High | Medium | Low).
+   - Risk level (High \| Medium \| Low).
    - Recommended corrective action.
-3. Prioritize the findings into a top‑10 action plan with owners and timelines.
+1. Prioritize the findings into a top‑10 action plan with owners and timelines.
 
 ## Inputs
 

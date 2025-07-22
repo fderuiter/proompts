@@ -23,9 +23,9 @@ You are the Business Operations lead preparing the Q3 executive brief. Operation
 ## Instructions
 
 1. Produce a one-page narrative highlighting three KPIs above target and three below, include root-cause hypotheses and an actionable decision for each lagging KPI.
-2. Summarize overall financial health in 75 words or fewer.
-3. Outline a six-slide PowerPoint deck with slide titles and bullets.
-4. Suggest appropriate data visualizations for each KPI.
+1. Summarize overall financial health in 75 words or fewer.
+1. Outline a six-slide PowerPoint deck with slide titles and bullets.
+1. Suggest appropriate data visualizations for each KPI.
 
 ## Inputs
 

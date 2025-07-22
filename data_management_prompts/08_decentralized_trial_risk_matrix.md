@@ -17,6 +17,7 @@ Title: Evaluate Decentralized Trial Data Risks
 Role: CRO Director
 
 Task:
+
 - Produce a risk matrix listing Risk, Source, Likelihood, Impact, Mitigation and Owner.
 - Summarise the three highest residual risks with escalation triggers in ≤ 300 words.
 
@@ -29,8 +30,10 @@ Scoring uses 1–5 for likelihood and impact.
 """
 
 Constraints:
+
 - Use quantitative scores.
 - Mitigations must be actionable and vendor-oversight ready.
 
-Output Format: markdown
---------------------------------------------------
+## Output Format
+
+Markdown

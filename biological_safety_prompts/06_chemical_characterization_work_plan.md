@@ -9,8 +9,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [chemical characterization, TRA]
-# Chemical Characterization & TRA Work Plan
 ---
+
+# Chemical Characterization & TRA Work Plan
 
 ## Purpose
 
@@ -23,12 +24,12 @@ You are a PhD toxicologist specializing in extractables and leachables. Follow F
 ## Instructions
 
 1. Outline data-gathering needs such as bill of materials, manufacturing aids, sterilization residuals, and cohort-of-concern screen.
-2. Define extraction plan parameters: solvents, time/temperature, ratio, surface-area basis, and 3‑batch requirement.
-3. Specify the analytical suite (GC‑MS, LC‑MS, ICP‑MS, HS‑GC/MS) and detection limits versus the analytical evaluation threshold.
-4. Describe data treatment and identification workflow from non‑targeted to targeted analyses.
-5. Explain the TRA methodology (dose-based TTC, margin of safety).
-6. Outline the reporting package structure for FDA submission.
-7. Conclude with key assumptions, open questions, and a proposed schedule.
+1. Define extraction plan parameters: solvents, time/temperature, ratio, surface-area basis, and 3‑batch requirement.
+1. Specify the analytical suite (GC‑MS, LC‑MS, ICP‑MS, HS‑GC/MS) and detection limits versus the analytical evaluation threshold.
+1. Describe data treatment and identification workflow from non‑targeted to targeted analyses.
+1. Explain the TRA methodology (dose-based TTC, margin of safety).
+1. Outline the reporting package structure for FDA submission.
+1. Conclude with key assumptions, open questions, and a proposed schedule.
 
 ## Inputs
 

@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [MDR, IVDR]
-# Dual MDR / IVDR Conformity-Assessment Roadmap
 ---
+
+# Dual MDR / IVDR Conformity-Assessment Roadmap
 
 ## Purpose
 
@@ -31,9 +32,9 @@ You are an EU regulatory strategist. A start‑up plans to launch:
    - Verification, validation, and clinical or performance‑evidence activities.
    - Post‑market deliverables such as PMS plan, PMCF/PMPF, PSURs.
    - Key EU and national transition deadlines with dates.
-2. Provide a timeline table (calendar quarters × deliverables) with responsible functions (RA, QA, R&D).
-3. Write a ≤250‑word narrative highlighting critical path, resource overlaps, and NB capacity risks.
-4. Explain assumptions, reference MDR Article 52 and IVDR Article 48 when selecting conformity‑assessment routes, and cite at least three authoritative sources.
+1. Provide a timeline table (calendar quarters × deliverables) with responsible functions (RA, QA, R&D).
+1. Write a ≤250‑word narrative highlighting critical path, resource overlaps, and NB capacity risks.
+1. Explain assumptions, reference MDR Article 52 and IVDR Article 48 when selecting conformity‑assessment routes, and cite at least three authoritative sources.
 
 ## Inputs
 

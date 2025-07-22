@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [bioskills, training]
-# Hands-On Procedure Coaching
 ---
+
+# Hands-On Procedure Coaching
 
 ## Purpose
 
@@ -22,9 +23,9 @@ You are a senior interventional cardiologist. The trainee knows basic anatomy bu
 ## Instructions
 
 1. Provide 5–7 bullet-step instructions with brief rationale.
-2. Highlight key anatomical landmarks visible via ultrasound.
-3. Offer troubleshooting tips.
-4. Include at least one safety checkpoint.
+1. Highlight key anatomical landmarks visible via ultrasound.
+1. Offer troubleshooting tips.
+1. Include at least one safety checkpoint.
 
 ## Inputs
 

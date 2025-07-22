@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [biostatistics, qc]
-# QC Listing & Cross-check Prompt
 ---
+
+# QC Listing & Cross-check Prompt
 
 ## Purpose
 
@@ -22,11 +23,11 @@ Act as the lead programmer overseeing double-programming for safety listings.
 ## Instructions
 
 1. Use **R** to extract ADCM records where `USUBJID` appears in `ADAE` with `SAEFL='Y'`; list `USUBJID`, `CMTRT`, `CMDECOD`, `CMSTDTC`, `CMENDTC`.
-2. Use **SAS** to replicate the same logic independently.
-3. Perform a record-level comparison keyed by `USUBJID`, `CMDECOD`, and `CMSTDTC`.
-4. Return three code blocks in order: R extract, SAS extract, R comparison.
-5. If differences exist, print a diff table; otherwise output “QC PASS – R and SAS identical.”
-6. Provide no additional commentary.
+1. Use **SAS** to replicate the same logic independently.
+1. Perform a record-level comparison keyed by `USUBJID`, `CMDECOD`, and `CMSTDTC`.
+1. Return three code blocks in order: R extract, SAS extract, R comparison.
+1. If differences exist, print a diff table; otherwise output “QC PASS – R and SAS identical.”
+1. Provide no additional commentary.
 
 ## Inputs
 

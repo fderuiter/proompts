@@ -17,6 +17,7 @@ Title: Clean and Merge Data Sources
 Role: Senior Data Engineer
 
 Task:
+
 - Detect schema mismatches, missing values and outliers.
 - Propose normalization rules for naming, types, units and time zones.
 - Provide Python pseudocode to load sources, apply rules and output one DataFrame.
@@ -30,8 +31,10 @@ Goal: build an analysis-ready table by close of business.
 """
 
 Constraints:
+
 - Use fenced `python` blocks for pseudocode.
 - End with bullet questions that remain open.
 
-Output Format: markdown
---------------------------------------------------
+## Output Format
+
+Markdown

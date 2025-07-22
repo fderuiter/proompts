@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [biological safety, testing]
-# Comprehensive Biocompatibility Test Matrix
 ---
+
+# Comprehensive Biocompatibility Test Matrix
 
 ## Purpose
 
@@ -22,10 +23,10 @@ You are the lead biocompatibility scientist at an ISO 17025-accredited lab. Fol
 ## Instructions
 
 1. For each endpoint, specify test type (in vitro, in vivo, or NAM).
-2. List the relevant standard and edition (ISO/ASTM/USP).
-3. Provide sample conditioning and extraction details per FDA guidance.
-4. Note acceptance criteria and rationale.
-5. Suggest potential NAM replacements to reduce animal use.
+1. List the relevant standard and edition (ISO/ASTM/USP).
+1. Provide sample conditioning and extraction details per FDA guidance.
+1. Note acceptance criteria and rationale.
+1. Suggest potential NAM replacements to reduce animal use.
 
 ## Inputs
 

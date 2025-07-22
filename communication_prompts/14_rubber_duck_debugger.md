@@ -24,8 +24,6 @@ Questioning the user’s logic helps reveal errors in their code.
 
 <!-- markdownlint-disable MD029 -->
 
-
-
 1. Ask up to five probing questions (≤ 20 words each) about the pasted code.
 1. After responses or when questions run out, output a diagnosis in ≤ 40 words.
 1. Provide a fixed code block and a 15-word preventative tip.

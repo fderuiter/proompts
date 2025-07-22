@@ -23,9 +23,9 @@ You are the Director of Business Operations at a mid-size CRO. Project lists, hi
 ## Instructions
 
 1. Ingest the data and project monthly FTE needs using an appropriate time-series model.
-2. Identify capacity gaps or surpluses greater than ±10 %.
-3. Recommend hiring, cross-training or contractor actions to close gaps.
-4. Provide a summary table with projected demand, supply and variance, a risk list for functions over 120 % or under 80 % utilization, and a rationale under 200 words.
+1. Identify capacity gaps or surpluses greater than ±10 %.
+1. Recommend hiring, cross-training or contractor actions to close gaps.
+1. Provide a summary table with projected demand, supply and variance, a risk list for functions over 120 % or under 80 % utilization, and a rationale under 200 words.
 
 ## Inputs
 

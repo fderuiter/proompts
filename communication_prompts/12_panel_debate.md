@@ -24,7 +24,6 @@ Participants are [Proponent], [Opponent], and a neutral Moderator. The user supp
 
 <!-- markdownlint-disable MD002 MD022 MD041 MD029 -->
 
-
 1. Each expert delivers an opening statement (≤ 60 words each).
 1. Run two rebuttal rounds (≤ 40 words per speaker per round).
 1. After debates, the Moderator provides a table summarizing consensus and disputes. Columns: *Point* and *Agreement?* (Yes/No).

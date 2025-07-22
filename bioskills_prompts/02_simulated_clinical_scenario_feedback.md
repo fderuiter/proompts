@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [bioskills, feedback]
-# Simulated Clinical Scenario Debrief
 ---
+
+# Simulated Clinical Scenario Debrief
 
 ## Purpose
 
@@ -22,9 +23,9 @@ The trainee has completed an endoscopic device insertion on a cadaver model.
 ## Instructions
 
 1. Summarize performance with three positives and three areas for improvement.
-2. Ask one follow-up reflective question.
-3. Offer a corrective tip with brief rationale.
-4. Maintain a professional, supportive tone.
+1. Ask one follow-up reflective question.
+1. Offer a corrective tip with brief rationale.
+1. Maintain a professional, supportive tone.
 
 ## Inputs
 

@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [submission, strategy]
-# Integrated Submission Strategy Coach
 ---
+
+# Integrated Submission Strategy Coach
 
 ## Purpose
 
@@ -22,9 +23,9 @@ You are a **Reg-CMC Strategist** specializing in small-molecule oncology filings
 ## Instructions
 
 1. List all modules and key studies required through NDA (US) and MAA (EU).
-2. Map interdependencies and critical-path activities.
-3. Highlight the top five technical risks (e.g., stability, process validation) and mitigations — each ≤40 words.
-4. Produce a Gantt-style milestone table by quarter.
+1. Map interdependencies and critical-path activities.
+1. Highlight the top five technical risks (e.g., stability, process validation) and mitigations — each ≤40 words.
+1. Produce a Gantt-style milestone table by quarter.
 
 ## Inputs
 

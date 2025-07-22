@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [quality system, audit]
-# RA/QA Integrated Quality System Audit
 ---
+
+# RA/QA Integrated Quality System Audit
 
 ## Purpose
 
@@ -22,8 +23,8 @@ You are a global RA/QA consultant. The organization seeks a gap analysis against
 ## Instructions
 
 1. Evaluate documentation, CAPA, supplier controls, post‑market surveillance, and risk management alignment.
-2. Identify gaps relative to ISO 13485 and 21 CFR 820 requirements.
-3. Provide prioritized recommendations for quality‑management system improvements.
+1. Identify gaps relative to ISO 13485 and 21 CFR 820 requirements.
+1. Provide prioritized recommendations for quality‑management system improvements.
 
 ## Inputs
 

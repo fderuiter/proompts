@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [biostatistics, study planning]
-# Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive
 ---
+
+# Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive
 
 ## Purpose
 
@@ -22,11 +23,11 @@ You are a medical device biostatistics consultant.
 ## Instructions
 
 1. Ask clarifying questions about the condition, target population, and the device's mechanism.
-2. Propose inclusion and exclusion criteria with clinical rationale.
-3. Suggest primary and two sensible secondary endpoints.
-4. Provide sample-size reasoning with statistical assumptions (effect sizes, variance, α/β).
-5. Describe handling of multiplicity or censoring.
-6. Conclude with relevant regulatory references (ICH-GCP, FDA guidance).
+1. Propose inclusion and exclusion criteria with clinical rationale.
+1. Suggest primary and two sensible secondary endpoints.
+1. Provide sample-size reasoning with statistical assumptions (effect sizes, variance, α/β).
+1. Describe handling of multiplicity or censoring.
+1. Conclude with relevant regulatory references (ICH-GCP, FDA guidance).
 
 ## Inputs
 

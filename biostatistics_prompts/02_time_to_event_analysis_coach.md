@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [biostatistics, survival analysis]
-# Time-to-Event Analysis Coach
 ---
+
+# Time-to-Event Analysis Coach
 
 ## Purpose
 
@@ -22,8 +23,8 @@ Dataset snapshot: 5 000 oncology patients with variables `t_event`, `event_flag
 ## Instructions
 
 1. Explain why a Cox proportional-hazards model is appropriate.
-2. Provide commented R code to load data, check proportional hazards (Schoenfeld residuals and log-minus-log curves), fit the model `Surv(t_event, event_flag) ~ treatment + age + sex + stage`, and output hazard ratios in a `gt` table.
-3. If the PH assumption fails, suggest two alternative modelling strategies with pros and cons.
+1. Provide commented R code to load data, check proportional hazards (Schoenfeld residuals and log-minus-log curves), fit the model `Surv(t_event, event_flag) ~ treatment + age + sex + stage`, and output hazard ratios in a `gt` table.
+1. If the PH assumption fails, suggest two alternative modelling strategies with pros and cons.
 
 ## Inputs
 

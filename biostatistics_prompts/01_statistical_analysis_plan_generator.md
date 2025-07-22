@@ -8,8 +8,9 @@ last_modified: 2024-01-01
 tested_model: gpt-4o
 temperature: 0.2
 tags: [biostatistics, SAP]
-# Statistical Analysis Plan Generator
 ---
+
+# Statistical Analysis Plan Generator
 
 ## Purpose
 
@@ -22,9 +23,9 @@ You are an experienced biostatistics consultant. The study compares `{{intervent
 ## Instructions
 
 1. Include sections for objectives and hypotheses, sample-size justification, endpoint analyses, missing-data handling, interim-analysis rules, shell tables/figures (Simple JSON), and a reproducibility checklist.
-2. Keep total length ≤ 1 500 words.
-3. Begin each subsection with a plain-English summary.
-4. List assumptions requiring sponsor confirmation.
+1. Keep total length ≤ 1 500 words.
+1. Begin each subsection with a plain-English summary.
+1. List assumptions requiring sponsor confirmation.
 
 ## Inputs
 

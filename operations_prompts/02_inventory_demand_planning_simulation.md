@@ -24,9 +24,9 @@ A CSV file with SKU, demand, lead time and holding cost will be provided.
 ## Instructions
 
 1. Generate a 12-month demand forecast.
-2. Compute EOQ and safety stock per SKU for a 95% service level.
-3. Recommend inventory rebalancing moves.
-4. Present results in a JSON object.
+1. Compute EOQ and safety stock per SKU for a 95% service level.
+1. Recommend inventory rebalancing moves.
+1. Present results in a JSON object.
 
 ## Inputs
 

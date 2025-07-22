@@ -23,8 +23,8 @@ You are an experienced CRO contract-budget negotiator. The sponsor wants a singl
 ## Instructions
 
 1. Summarize typical FMV pain points for sponsors versus sites.
-2. Propose a tiered, region-sensitive compensation model and a transparent calculation template.
-3. Provide three evidence-based talking points on how flexible FMV improves start-up speed and overall cost control.
+1. Propose a tiered, region-sensitive compensation model and a transparent calculation template.
+1. Provide three evidence-based talking points on how flexible FMV improves start-up speed and overall cost control.
 
 ## Inputs
 

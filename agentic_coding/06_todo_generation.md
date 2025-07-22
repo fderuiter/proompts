@@ -13,21 +13,27 @@ tags: [coding, organization]
 # To-Do List Template
 
 ## Purpose
+
 Track pending and completed development tasks.
 
 ## Context
+
 Use this list to manage work derived from the technical implementation plan.
 
 ## Instructions
+
 1. Maintain an up-to-date list of actionable tasks.
-2. Record completed tasks separately.
-3. Keep descriptions short and clear for efficient AI execution.
+1. Record completed tasks separately.
+1. Keep descriptions short and clear for efficient AI execution.
 
 ## Inputs
+
 None
 
 ## Output Format
+
 Markdown checklist under **To-Do** and **Completed Tasks** sections.
 
 ## Additional Notes
+
 Update frequently to reflect current project priorities.

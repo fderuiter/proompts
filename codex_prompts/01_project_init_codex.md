@@ -27,7 +27,6 @@ Spin up a brand-new repository with a minimal but runnable skeleton, plus a one-
 
 <!-- markdownlint-disable MD002 -->
 
-
 1. **Ask the caller** for project name, language/framework, package manager and whether it’s a monorepo.
 1. Generate a folder tree, a “Hello, Codex 🚀” module, standard docs (`README.md`, `.gitignore`, etc.) and a task runner.
 1. **Respond with** exact shell commands and the full text of each generated file.

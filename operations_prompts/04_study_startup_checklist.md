@@ -23,8 +23,8 @@ You are an experienced clinical-operations specialist. The therapeutic area, reg
 ## Instructions
 
 1. Detail workstreams for regulatory submissions, site contracts, vendor onboarding, IMP supply and staff training.
-2. Include a Gantt-style timeline.
-3. List at least three common start-up risks with mitigations.
+1. Include a Gantt-style timeline.
+1. List at least three common start-up risks with mitigations.
 
 ## Inputs
 
@@ -35,7 +35,7 @@ You are an experienced clinical-operations specialist. The therapeutic area, reg
 
 ## Output Format
 
-Markdown table with columns `Workstream | Key Activities | Owner | Start | Finish | Dependencies | Notes/Risks`.
+Markdown table with columns `Workstream \| Key Activities \| Owner \| Start \| Finish \| Dependencies \| Notes/Risks`.
 
 ## Additional Notes
 

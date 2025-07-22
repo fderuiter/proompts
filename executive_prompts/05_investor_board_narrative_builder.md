@@ -24,6 +24,7 @@ You are a biotech investment banker turned communications strategist. The compan
 
 1. Write Slide 1: “Vision & Market Opportunity.”
 1. Write Slide 2: “Execution & Financial Upside.”
+
 Each slide must be ≤130 words, use punchy sentences, and include one memorable data-driven soundbite. Avoid jargon.
 
 ## Inputs
@@ -33,9 +34,13 @@ Each slide must be ≤130 words, use punchy sentences, and include one memorable
 ## Output Format
 
 ```
+
 ### Slide 1 – Vision & Market Opportunity
+
 …
+
 ### Slide 2 – Execution & Financial Upside
+
 …
 ```
 
