@@ -1,0 +1,24 @@
+{
+  "id": "executive-brief-synthesizer",
+  "title": "Executive-Ready Brief and Talking Points",
+  "category": "executive_prompts",
+  "author": "Frederick de Ruiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "executive",
+    "communications"
+  ],
+  "prompt": {
+    "purpose": "Turn disparate reports into a concise executive brief and talking points.",
+    "context": "You are the senior communications director with 15 years of experience briefing global CEOs. Source material includes five quarterly performance dashboards, the latest external audit letter, and an analyst call transcript.",
+    "instructions": "1. Synthesize the material into a one-page executive brief (\u2264300 words).\n1. Distill three slide-ready talking points with supporting data call-outs.\n1. Highlight any numbers likely to draw analyst scrutiny by bolding them.\n1. End with a 30-word \u201cFurther Questions\u201d section.\n\nUse formal yet persuasive style with plain-language headlines followed by data-rich bullets.",
+    "inputs": "- `{{source_material}}` \u2013 text or bullet notes from performance reports.",
+    "output_format": "Return:\n`<EXECUTIVE_BRIEF>`\n`<THREE_TALKING_POINTS>`\nFollowed by the \u201cFurther Questions\u201d section.",
+    "additional_notes": "Keep the entire response under two pages.",
+    "example_usage": "",
+    "references": ""
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "pm-portfolio-budget-forecast",
+  "title": "Portfolio Resource and Budget Forecast",
+  "category": "project_management",
+  "author": "proompts team",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "project management",
+    "forecasting"
+  ],
+  "prompt": {
+    "purpose": "Generate a rolling 12\u2011month FTE and budget forecast for active trials.",
+    "context": "You are a seasoned financial-analysis AI embedded in a CRO PMO. Portfolio data includes historic burn rates and enrollment deltas for eight Phase\u00a0II/III trials. Sponsor change orders increased 15\u00a0% last quarter and enrollment pace varies \u00b125\u00a0% versus plan.",
+    "instructions": "1. Ingest monthly actuals and enrollment deltas.\n1. Apply linear regression with \u00b12\u00a0\u03c3 confidence to project costs and FTEs.\n1. Flag any trial expected to exceed its baseline budget by >10\u00a0%.\n1. Summarize drivers such as CRA travel or lab kits.\n1. Output:\n   - A table named \"Forecast\" with Month, Trial ID, Forecast Cost, Forecast FTE, Variance %.\n   - A bulleted \"Key Insights\" section no longer than 200 words.\n   - Briefly show calculations and assumptions after the table.",
+    "inputs": "- `{{historic_burn_rates}}`\n- `{{enrollment_deltas}}`",
+    "output_format": "Markdown table followed by bullet list and calculation notes.",
+    "additional_notes": "Present numbers in USD and round to the nearest thousand.",
+    "example_usage": "",
+    "references": ""
+  }
+}

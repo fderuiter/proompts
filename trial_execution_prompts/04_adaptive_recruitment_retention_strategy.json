@@ -1,0 +1,24 @@
+{
+  "id": "adaptive-recruitment-retention-strategy",
+  "title": "Adaptive Recruitment and Retention Strategy",
+  "category": "trial_execution_prompts",
+  "author": "proompts team",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "clinical operations",
+    "recruitment"
+  ],
+  "prompt": {
+    "purpose": "Design an optimized recruitment and retention plan for a multi-site pivotal study.",
+    "context": "You are a clinical trial CRO strategist planning a study of **{{device_or_ivd}}** in **{{patient_population}}**. The strategy should incorporate AI\u2011enhanced pre\u2011screening, site\u2011level engagement tactics and metrics to monitor recruitment risk and retention performance.",
+    "instructions": "1. Outline an AI\u2011assisted pre\u2011screening workflow (e.g., tele\u2011calls, transportation support).\n1. Describe site\u2011level engagement tactics such as CRO\u2013site alignment and digital outreach.\n1. Define metrics to track recruitment risk and retention performance.",
+    "inputs": "- `{{device_or_ivd}}` \u2013 device or diagnostic under study\n- `{{patient_population}}` \u2013 target population",
+    "output_format": "Markdown list or table covering the workflow, engagement tactics and metrics.",
+    "additional_notes": "Ensure the plan is adaptable to varying enrollment rates.",
+    "example_usage": "",
+    "references": ""
+  }
+}

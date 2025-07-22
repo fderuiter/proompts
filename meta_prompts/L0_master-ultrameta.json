@@ -1,0 +1,24 @@
+{
+  "id": "master-ultrameta",
+  "title": "Master Ultrameta Prompt Architect",
+  "category": "meta_prompts",
+  "author": "proompts team",
+  "created": "2024-01-01",
+  "last_modified": "2024-01-01",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "meta",
+    "prompt design"
+  ],
+  "prompt": {
+    "purpose": "Construct a five-layer prompt stack (L0\u2013L4) that reliably executes `{{end_task}}`.",
+    "context": "You are ChatGPT acting as an Ultrameta Prompt Architect. Each outer layer designs the one beneath it while preserving the final objective.",
+    "instructions": "1. Restate `{{end_task}}` in \u226420 words and decide whether five layers are required.\n1. Draft L0 that outputs the full L1 prompt. Include guardrails from `{{policy_block}}` and token budgets for each layer.\n1. Specify interface contracts for L1\u2013L3 with placeholders and output schema examples.\n1. Embed self\u2011critique loops and variant generation where useful.\n1. Provide troubleshooting tips and a short checklist for best practice compliance.",
+    "inputs": "- `{{end_task}}` \u2013 final objective\n- `{{policy_block}}` \u2013 policy and style guide text",
+    "output_format": "Return only the complete L1 prompt inside a fenced block labelled `prompt`.",
+    "additional_notes": "Highlight token thrift, guardrail propagation and evolution mechanisms to maintain quality through recursion.",
+    "example_usage": "",
+    "references": ""
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "payment-site-forecast",
+  "title": "Investigator-Site Payment Forecast",
+  "category": "payment_prompts",
+  "author": "proompts team",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "payments",
+    "forecasting"
+  ],
+  "prompt": {
+    "purpose": "Produce a month-by-month cash-flow forecast for site payments.",
+    "context": "You are a senior clinical payments analyst planning for the Phase\u00a0III oncology study \"Onco-1234.\" The CTA defines Start-up, Per-Visit, Close-out, and Screen-Failure fees. FPFV is 15\u00a0Sep\u00a02025 and the planned duration is 30\u00a0months.",
+    "instructions": "1. Convert milestone amounts to USD using the provided FX rates.\n1. Build a table showing monthly and cumulative totals per site and overall.\n1. Highlight any month with >20\u00a0% variance versus the previous forecast in **red**.\n1. Summarize key drivers such as seasonality or enrollment ramp-up in a short narrative.\n1. Clarify any assumptions before starting if needed.",
+    "inputs": "- `{{site_data}}` \u2013 Site ID, country, contract currency, enrollment target, and milestone amounts.\n- `{{enrollment_curve}}` \u2013 expected enrollment percentage per month.\n- `{{fx_rates}}` \u2013 FX rate sheet name.",
+    "output_format": "Markdown table followed by a narrative summary.",
+    "additional_notes": "Keep the table easy to import into spreadsheets.",
+    "example_usage": "",
+    "references": ""
+  }
+}

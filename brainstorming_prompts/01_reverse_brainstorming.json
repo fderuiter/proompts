@@ -1,0 +1,23 @@
+{
+  "id": "reverse-brainstorming",
+  "title": "Reverse Brainstorming",
+  "category": "brainstorming_prompts",
+  "author": "OpenAI",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.7,
+  "tags": [
+    "brainstorming"
+  ],
+  "prompt": {
+    "purpose": "Flip negative ideas into constructive solutions.",
+    "context": "The exercise targets `{{problem}}` and must stay within 110 words.",
+    "instructions": "1. Ask, \"How could we make it worse?\" and list ten worsening ideas.\n1. Turn each idea into a constructive bullet prefixed with \"\u279c\".\n1. Build a mini-table (Solution \\| Impact High/Med/Low) ranking the top three.",
+    "inputs": "- `{{problem}}`: issue to address.",
+    "output_format": "Bulleted list plus markdown table.",
+    "additional_notes": "",
+    "example_usage": "",
+    "references": "- chrisgriffiths.com\n- Mural"
+  }
+}

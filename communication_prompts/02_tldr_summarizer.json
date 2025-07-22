@@ -1,0 +1,21 @@
+{
+  "id": "02-tldr-summarizer",
+  "title": "TL;DR Summarizer",
+  "category": "communication_prompts",
+  "author": "fderuiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4",
+  "temperature": 0.2,
+  "tags": [],
+  "prompt": {
+    "purpose": "\u201cHere\u2019s some text: \u2039PASTE\u203a",
+    "context": "",
+    "instructions": "Give me a TL;DR in exactly three bullet points (\u2264 15 words each).\nAfter the bullets, add one actionable next step I could take in \u2264 20 words.\u201d**\n\n*Why it\u2019s better:* locks down length, structure, and ends with a clear call-to-action instead of a passive abstract.",
+    "inputs": "",
+    "output_format": "",
+    "additional_notes": "",
+    "example_usage": "",
+    "references": ""
+  }
+}

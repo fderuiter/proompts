@@ -1,0 +1,21 @@
+{
+  "id": "04-docs-and-onboarding-codex",
+  "title": "Documentation & Developer Onboarding (OpenAI Codex)",
+  "category": "codex_prompts",
+  "author": "fderuiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4",
+  "temperature": 0.2,
+  "tags": [],
+  "prompt": {
+    "purpose": "Create living docs that cut time-to-first-PR and capture architectural decisions.",
+    "context": "- Repo is runnable and deployable.\n- Org favours Markdown docs plus ADRs.",
+    "instructions": "Generate / update:\n\n1. **`README.md`**\n   - Quick Start (`pnpm i && pnpm dev` / `poetry run uvicorn main:app --reload`).\n   - Env-vars table (`OPENAI_API_KEY`, `OPENAI_ORG` \u2026).\n   - Architecture diagram (ASCII or Mermaid link).\n   - Badges (build, test-coverage, licence).\n1. **`CONTRIBUTING.md`**\n   - Local setup, pre-commit, commit message style.\n1. `docs/` folder\n   - `architecture.md`, `troubleshooting.md`, `adr/0001-record-architecture-decisions.md`.\n1. `.vscode/extensions.json` suggesting \u201cOpenAI Code-Completion\u201d, Docker, and ESLint plugins.\n\nOutput each file as a fenced code block.",
+    "inputs": "",
+    "output_format": "",
+    "additional_notes": "- If Codespaces or Dev Containers are desired, also scaffold `.devcontainer/`.",
+    "example_usage": "> Paste this prompt into ChatGPT once CI/CD is in place, then review & commit the generated docs.",
+    "references": "- [ADR Template](../docs/adr/template.md)"
+  }
+}

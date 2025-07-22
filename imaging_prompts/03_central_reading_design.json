@@ -1,0 +1,24 @@
+{
+  "id": "imaging-central-reading-design",
+  "title": "Central Reading Paradigm Design",
+  "category": "imaging_prompts",
+  "author": "proompts team",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "imaging",
+    "bicr"
+  ],
+  "prompt": {
+    "purpose": "Recommend an efficient central reading model for an oncology trial.",
+    "context": "You are a blinded independent central review architect.\n\n- Disease: `<<<disease>>>`\n- Imaging time-points: `<<<timepoints>>>`\n- Target endpoints: `<<<endpoints>>>`\n- Available reader pool: `<<<reader_pool_size>>>`\n- Budget constraint: `<<<budget>>>`",
+    "instructions": "1. Propose a reading model (dual 2 + adjudicator, 2\u00d7 consensus, or single) with rationale.\n1. Outline reader training and calibration schedule including dry runs and kappa targets.\n1. Define ongoing variability monitoring KPIs and retraining triggers.\n1. Specify tie-breaker and adjudication rules with decision timelines.\n1. Estimate FTE and cost impact versus alternatives.\n1. Cite empirical variability data when relevant.\n1. Ask clarifying questions if trial details are insufficient.",
+    "inputs": "- `<<<disease>>>` \u2013 indication\n- `<<<timepoints>>>` \u2013 imaging schedule\n- `<<<endpoints>>>` \u2013 target endpoints\n- `<<<reader_pool_size>>>` \u2013 number of available readers\n- `<<<budget>>>` \u2013 cost constraint per read",
+    "output_format": "Two-column Markdown table: **Component \\| Recommendation**.",
+    "additional_notes": "Think step by step before producing the table.",
+    "example_usage": "",
+    "references": ""
+  }
+}

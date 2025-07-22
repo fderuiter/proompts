@@ -1,0 +1,24 @@
+{
+  "id": "agentic-product-brief",
+  "title": "Product Brief Template",
+  "category": "agentic_coding",
+  "author": "fderuiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4",
+  "temperature": 0.2,
+  "tags": [
+    "coding",
+    "planning"
+  ],
+  "prompt": {
+    "purpose": "Outline the high-level vision, features, and architecture for a new software project.",
+    "context": "Use this brief when kicking off a new application or clarifying scope with collaborators.",
+    "instructions": "1. Describe the overall product vision.\n1. List key features with associated phases or milestones.\n1. Summarize the chosen architectural style and component interactions.\n1. Capture additional context, constraints, or stakeholder expectations.",
+    "inputs": "- `{{vision}}` \u2013 short statement of the desired end state\n- `{{features}}` \u2013 feature list organised by phase\n- `{{architecture}}` \u2013 overview of proposed architecture\n- `{{context_notes}}` \u2013 constraints or risks",
+    "output_format": "Markdown sections titled **Vision**, **Key Features and Roadmap**, **Overall Architecture**, and **Additional Context**.",
+    "additional_notes": "This template helps align teams before development begins.",
+    "example_usage": "",
+    "references": ""
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "decentralized-trial-risk-matrix",
+  "title": "Decentralized Trial Risk Matrix",
+  "category": "data_management_prompts",
+  "author": "proompts",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "clinical",
+    "risk"
+  ],
+  "prompt": {
+    "purpose": "",
+    "context": "",
+    "instructions": "",
+    "inputs": "",
+    "output_format": "Markdown",
+    "additional_notes": "",
+    "example_usage": "",
+    "references": ""
+  }
+}

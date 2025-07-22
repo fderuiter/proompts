@@ -1,0 +1,24 @@
+{
+  "id": "eo-sterilization-validation-protocol",
+  "title": "EO Sterilization Validation Protocol",
+  "category": "microbiology_prompts",
+  "author": "proompts team",
+  "created": "2024-01-01",
+  "last_modified": "2024-01-01",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "sterilization",
+    "protocol"
+  ],
+  "prompt": {
+    "purpose": "Outline a protocol to achieve SAL 10^-6 using an ethylene\u2011oxide half\u2011cycle approach.",
+    "context": "You are the sterilization-validation lead at a Class III implantable-device manufacturer. Follow ISO 11135:2014 and ISO 11737\u20112:2019.",
+    "instructions": "1. Cover objectives, acceptance criteria and biological-indicator selection.\n1. Detail process parameters, equipment QA and sample-size rationale.\n1. Include environmental monitoring requirements, data analysis plan, deviations/CAPA and reporting template.\n1. Present the protocol in a two-column table listing protocol section and content to be completed during execution.",
+    "inputs": "- `{{device_name}}` \u2013 device under validation",
+    "output_format": "Markdown table with two columns: Protocol Section \\| Content to be completed during execution.",
+    "additional_notes": "Reason step by step internally and show only the final table.",
+    "example_usage": "",
+    "references": ""
+  }
+}

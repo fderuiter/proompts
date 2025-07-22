@@ -1,0 +1,21 @@
+{
+  "id": "03-ci-cd-codex",
+  "title": "Continuous Integration & Delivery (OpenAI Codex)",
+  "category": "codex_prompts",
+  "author": "fderuiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4",
+  "temperature": 0.2,
+  "tags": [],
+  "prompt": {
+    "purpose": "Generate GitHub Actions workflows that build, test, version, and deploy the app (often a containerised service that calls the OpenAI API).",
+    "context": "- Tooling & tests are in place.\n- Deployment targets could be Vercel, AWS ECS/Fargate, Fly.io, or plain Docker Compose on a VM.\n- Secrets will include `OPENAI_API_KEY`.",
+    "instructions": "**Ask the caller**:\n\n1. Environments (dev / staging / prod).\n1. Deployment platform and region.\n1. Secret-management preference (GitHub Encrypted Secrets, AWS Secrets Manager, Vault\u2026).\n1. Versioning scheme (SemVer via `release-please`, CalVer, etc.).\n\nThen scaffold:\n\n- `ci.yml` \u2192 lint + test + build.\n- `release.yml` \u2192 auto-tag & changelog.\n- `deploy-<env>.yml` files \u2192 fetch artifact, deploy, smoke-test endpoint that internally calls OpenAI with an `echo` prompt \"ping\".\n- Docs in `docs/deploy.md` describing how to add secrets.\n\nReturn all workflow YAML and any helper shell scripts as code blocks.",
+    "inputs": "",
+    "output_format": "",
+    "additional_notes": "- Cache deps with `actions/cache@v4`.\n- Matrix test on multiple Node/Python versions if applicable.",
+    "example_usage": "> Paste this prompt into ChatGPT after quality tooling is merged, answer the four questions, then commit the generated `.github/workflows/*`.",
+    "references": "- [CI/CD Best Practices](../docs/devops/ci-cd.md)"
+  }
+}

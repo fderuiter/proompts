@@ -1,0 +1,24 @@
+{
+  "id": "literature-regulatory-gap-analysis",
+  "title": "Literature & Regulatory Gap Analysis",
+  "category": "regulatory_prompts",
+  "author": "proompts team",
+  "created": "2024-01-01",
+  "last_modified": "2024-01-01",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "clinical",
+    "gap analysis"
+  ],
+  "prompt": {
+    "purpose": "Identify evidence and regulatory gaps for a planned pivotal clinical study.",
+    "context": "You are an expert clinical trial strategist. The user plans a pivotal study of `{{device_or_ivd}}` for `{{target_indication}}`.",
+    "instructions": "1. Summarize the current state of evidence, including recent Phase\u00a0II/III trials or performance studies.\n1. Identify data gaps or unmet requirements based on FDA and EMA guidance (for example, FDA pivotal study design guidance or EU MDCG\u00a02022\u20112).\n1. Recommend trial design elements\u2014endpoints, sample size, comparator, inclusion and exclusion criteria\u2014to address those gaps. Provide references where appropriate.",
+    "inputs": "- `{{device_or_ivd}}` \u2014 description of the medical device or IVD.\n- `{{target_indication}}` \u2014 proposed indication for use.",
+    "output_format": "Markdown bullet list or table summarizing findings and recommendations.",
+    "additional_notes": "Keep the analysis concise and reference authoritative guidance documents.",
+    "example_usage": "",
+    "references": ""
+  }
+}

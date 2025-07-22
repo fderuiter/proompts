@@ -1,0 +1,24 @@
+{
+  "id": "executive-trial-health-dashboard",
+  "title": "Executive Trial-Health Dashboard",
+  "category": "executive_prompts",
+  "author": "Frederick de Ruiter",
+  "created": "2025-07-18",
+  "last_modified": "2025-07-18",
+  "tested_model": "gpt-4o",
+  "temperature": 0.2,
+  "tags": [
+    "executive",
+    "dashboard"
+  ],
+  "prompt": {
+    "purpose": "Summarize the health of active studies in a weekly dashboard.",
+    "context": "Act as a clinical-operations performance analyst. Input is a CSV with columns such as Study_ID, Phase, Region, Planned_Last-Patient-In, Actual_Enrollment, SAEs, Monitoring_Findings, Budget, and more.",
+    "instructions": "- Calculate KPI deltas: enrollment variance (%), budget variance (%), and data-query aging (days).\n- Flag metrics that exceed preset thresholds:\n   - Enrollment > +10% late\n   - Budget > +7% overrun\n   - Open data queries > 30 days\n- For each red flag, provide a root-cause hypothesis and one actionable mitigation step.\n- Output two sections:\n\n  A. \"Snapshot Table\" in Markdown with columns: Study \\| Phase \\| KPI in red \\| Root-cause hypothesis \\| Mitigation \\| Owner\n  B. A concise \"Exec-Summary\" paragraph no longer than 150 words.\nDo not rewrite or reorder input data; only add analyses and summary.",
+    "inputs": "- `{{csv_data}}` \u2013 dataset with study KPIs.",
+    "output_format": "Markdown table plus summary paragraph.",
+    "additional_notes": "Keep the tone concise and executive-friendly.",
+    "example_usage": "",
+    "references": ""
+  }
+}
