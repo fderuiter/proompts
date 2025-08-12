@@ -1,0 +1,21 @@
+{
+  "id": "10-bug-fix-codex",
+  "title": "Bug Finder & Fixer (OpenAI Codex)",
+  "category": "codex_prompts",
+  "author": "openai",
+  "created": "2025-08-12",
+  "last_modified": "2025-08-12",
+  "tested_model": "gpt-4",
+  "temperature": 0.2,
+  "tags": [],
+  "prompt": {
+    "purpose": "Reproduce and resolve a bug within the specified package or module.",
+    "context": "- Caller provides a description or stack trace indicating the failing behaviour.\n- Project has scripts to run or compile the code.",
+    "instructions": "1. Use the provided info to reproduce the issue.\n2. Locate the faulty code in {{package_path}} or related files.\n3. Implement a fix with explanatory comments.\n4. Add or update tests demonstrating the resolved behaviour.\n5. Run linters and tests; include their output.",
+    "inputs": "- {{package_path}}: directory containing the bug.\n- {{bug_description}}: error message or reproduction steps.",
+    "output_format": "- Diff or code blocks showing the fix.\n- Test and linter command results confirming resolution.",
+    "additional_notes": "If unable to reproduce, request additional logs or environment details.",
+    "example_usage": "> Find and fix a bug in `packages/api`. It throws `TypeError: undefined is not a function` when posting new users.",
+    "references": ""
+  }
+}

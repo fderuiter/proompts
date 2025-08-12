@@ -1,0 +1,21 @@
+{
+  "id": "05-refactoring-suggestions-codex",
+  "title": "Refactoring Suggestions (OpenAI Codex)",
+  "category": "codex_prompts",
+  "author": "openai",
+  "created": "2025-08-12",
+  "last_modified": "2025-08-12",
+  "tested_model": "gpt-4",
+  "temperature": 0.2,
+  "tags": [],
+  "prompt": {
+    "purpose": "Suggest structural improvements for a complex file to increase readability and testability.",
+    "context": "- Caller supplies the path to the \u201chairiest\u201d file or a focused code snippet.\n- Repository is mounted so Codex can inspect surrounding modules.",
+    "instructions": "1. Analyse {{file_path}} and identify tightly coupled or overly long regions.\n2. Propose refactors: splitting files, extracting functions, and isolating side effects.\n3. Recommend accompanying tests or seams for dependency injection.\n4. Explain how each suggestion improves maintainability.\n5. If the file exceeds 400 lines, break the review into logical sections.",
+    "inputs": "- {{file_path}}: path to the target source file.\n- {{code_snippet}}: optional excerpt highlighting the problem area.",
+    "output_format": "- Summary table of issues and refactor ideas.\n- Inline code examples or diffs demonstrating the changes.",
+    "additional_notes": "Provide greppable identifiers and line numbers so the user can locate the discussed code quickly.",
+    "example_usage": "> Take a look at `src/utils/dataProcessor.ts`. Can you suggest better ways to split it up, test it, and isolate functionality?",
+    "references": ""
+  }
+}

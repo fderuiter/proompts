@@ -1,0 +1,21 @@
+{
+  "id": "09-add-tests-codex",
+  "title": "Targeted Test Generation (OpenAI Codex)",
+  "category": "codex_prompts",
+  "author": "openai",
+  "created": "2025-08-12",
+  "last_modified": "2025-08-12",
+  "tested_model": "gpt-4",
+  "temperature": 0.2,
+  "tags": [],
+  "prompt": {
+    "purpose": "Add unit or integration tests for specified files on the current branch.",
+    "context": "- Repository is already set up with a test framework.\n- Caller lists target files requiring coverage.",
+    "instructions": "1. For each file in {{files}}, outline behaviours to test.\n2. Generate test stubs or full tests following project conventions.\n3. Run the test suite and linters; report failures.\n4. Suggest follow-up refactors if code is hard to test.\n5. Provide commands for reproducing results locally.",
+    "inputs": "- {{files}}: array of file paths needing tests.",
+    "output_format": "- Fenced code blocks of new/updated test files.\n- Terminal commands and their outcomes.",
+    "additional_notes": "If test dependencies are missing, note required installations or configuration changes.",
+    "example_usage": "> From my branch, please add tests for the following files:\n`src/math/add.ts`, `src/math/subtract.ts`",
+    "references": ""
+  }
+}
