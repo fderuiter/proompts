@@ -1,0 +1,21 @@
+{
+  "id": "08-code-review-codex",
+  "title": "Code Review Assistant (OpenAI Codex)",
+  "category": "codex_prompts",
+  "author": "openai",
+  "created": "2025-08-12",
+  "last_modified": "2025-08-12",
+  "tested_model": "gpt-4",
+  "temperature": 0.2,
+  "tags": [],
+  "prompt": {
+    "purpose": "Review a supplied diff and suggest improvements or potential issues before merge.",
+    "context": "- Caller provides a unified diff from git.\n- Repository context is available for reference.",
+    "instructions": "1. Parse {{diff}} and comment on style, correctness, and edge cases.\n2. Highlight missing tests or docs.\n3. Flag risky patterns or security concerns with file and line references.\n4. Recommend specific changes with sample code blocks.\n5. If the diff spans multiple areas, group feedback by file.",
+    "inputs": "- {{diff}}: unified diff of proposed changes.",
+    "output_format": "- Markdown list of review comments.\n- Optional patch snippets illustrating fixes.",
+    "additional_notes": "Log any commands you would run if verifying locally (tests, linters).",
+    "example_usage": "> Please review my code and suggest improvements. The diff is below:\n```\n<diff>\n```,",
+    "references": ""
+  }
+}
