@@ -1,0 +1,15 @@
+---
+name: Smart Task Prioritizer
+description: 'Here’s my to-do list: ‹PASTE›'
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      Create a table with columns — Task, Urgency (1-5), Impact (1-5), Effort (1-5), Priority Score (Impact × Urgency ÷ Effort).
+      Sort by highest Score.
+      After the table, suggest the first three tasks I should do and explain why in two sentences each.
+  - role: user
+    content: |-
+      {{input}}

@@ -1,0 +1,13 @@
+---
+name: Design.md Template
+description: Generate a design.md template capturing problem, constraints, and 
+  decisions.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+  - role: user
+    content: |-
+      {{input}}

@@ -1,0 +1,12 @@
+---
+name: Post-Market Safety Signal Trending
+description: Analyze post-market data to identify emerging safety signals.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+  - role: user
+    content: |-
+      {{input}}
