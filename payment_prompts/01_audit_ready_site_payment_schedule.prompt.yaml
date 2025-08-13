@@ -25,11 +25,11 @@ messages:
       1. Append a summary stating total budget versus CTA cap, listing assumptions, and noting any rows requiring sponsor approval.
       1. Ask clarifying questions if any data is missing.
 
-      Inputs:
-      - `{{visit_grid}}`
-      - `{{cta_budget}}`
-      - `{{fx_table}}`
-      - `{{fmv_benchmarks}}`
+        Inputs:
+        - `{{visit_grid}}` – visit schedule with milestones and triggers
+        - `{{cta_budget}}` – executed clinical trial agreement budget
+        - `{{fx_table}}` – foreign-exchange rate table
+        - `{{fmv_benchmarks}}` – fair market value benchmarks
 
       Output format:
       Markdown table followed by summary bullets and outstanding questions.

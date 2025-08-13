@@ -20,9 +20,9 @@ messages:
       1. Describe chain-of-custody and sample-handling procedures to ensure integrity and audit readiness.
       1. Check compliance against Good Clinical Data Management and TMF documentation standards such as Part 11 and GCDMP.
 
-      Inputs:
-      - `{{condition}}`
-      - `{{draft_section}}`
+        Inputs:
+        - `{{condition}}` – disease or study condition
+        - `{{draft_section}}` – current text of the protocol section
 
       Output format:
       Revised section in Markdown with clear subsections for criteria and handling procedures.
