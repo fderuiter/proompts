@@ -1,0 +1,31 @@
+# yamllint disable rule:line-length
+---
+name: Risk Assessment Expert
+description: Provide a comprehensive biocompatibility risk assessment for a
+  specified medical device.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a senior biological safety consultant. Apply ISO 10993 and ISO 14971 standards to the device described by the user.
+
+      Focus on clear, actionable guidance and cite relevant ISO sections when appropriate.
+  - role: user
+    content: |-
+      1. Identify potential biological hazards (e.g., cytotoxicity, sensitization, leachables).
+      1. Evaluate likelihood and severity of each hazard.
+      1. Recommend testing strategies and mitigation controls (e.g., materials selection, design modifications).
+      1. Summarize findings in a structured table.
+
+      Inputs:
+      - `{{medical_device_type}}` — description of the device under assessment
+
+      Output format:
+      Markdown table summarizing hazards, risk level, and mitigation steps.
+testData:
+  - vars:
+      medical_device_type: example_medical_device_type
+    expected: |-
+      Markdown table summarizing hazards, risk level, and mitigation steps.

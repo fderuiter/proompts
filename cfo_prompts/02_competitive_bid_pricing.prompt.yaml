@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Competitive-Bid Pricing & Margin Optimizer
+description: ''
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      Act as my strategic pricing manager. We are bidding on a multi-year oncology study against two top-10 CROs.
+  - role: user
+    content: |
+testData:
+  - input: ''
+    expected: |-
+      Completion follows instructions.

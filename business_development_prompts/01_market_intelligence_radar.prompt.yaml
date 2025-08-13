@@ -1,0 +1,35 @@
+# yamllint disable rule:line-length
+---
+name: Market-Intelligence Radar
+description: Prioritize high-potential biotech or pharma companies for
+  partnership opportunities.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are an experienced CRO business-development strategist.
+
+      Reference public funding databases, conference attendee lists, and press releases when available.
+  - role: user
+    content: |-
+      1. Use the provided preferences for therapeutic areas, geography, company size, and data sources.
+      1. Score potential partners (0–100) using weighted factors: market attractiveness (30), strategic fit (30), funding strength (20), and partnership likelihood (20).
+      1. Present results in a markdown table sorted by total score.
+      1. Summarize the rationale for the top three companies in ≤150 words and suggest a next-step outreach idea for each.
+
+      Inputs:
+      - `{{preferred_areas}}`
+      - `{{geography_focus}}`
+      - `{{company_size}}`
+
+      Output format:
+      Markdown table followed by a short summary paragraph.
+testData:
+  - vars:
+      preferred_areas: example_preferred_areas
+      geography_focus: example_geography_focus
+      company_size: example_company_size
+    expected: |-
+      Markdown table followed by a short summary paragraph.
