@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -14,15 +15,20 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS_DIR = ROOT / "docs"
 EXCLUDE = {"docs", "scripts", ".github"}
 # Extensions for prompt files included in the generated index
-PROMPT_EXTENSIONS = (".prompt.yaml", ".prompt.yml")
+PROMPT_EXTENSIONS = (".prompt.yaml", ".prompt.yml", ".json")
 
 
 def read_meta(path: Path) -> tuple[str, str]:
     """Return category and title from a prompt file."""
     try:
         text = path.read_text(encoding="utf-8")
-        data = yaml.safe_load(text) or {}
-        title = str(data.get("name") or data.get("title") or "").strip()
+        lower = path.name.lower()
+        if lower.endswith(".json"):
+            data = json.loads(text)
+            title = str(data.get("title") or data.get("name") or "").strip()
+        else:
+            data = yaml.safe_load(text) or {}
+            title = str(data.get("name") or data.get("title") or "").strip()
         category = str(data.get("category") or path.parent.name)
     except Exception:
         category = path.parent.name

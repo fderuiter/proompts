@@ -21,7 +21,7 @@ This document outlines the tasks required to migrate existing JSON prompts to th
    - Ensure repository checks allow legacy `.json` files but flag new ones.
 6. **Validation**
    - Run `yamllint` on new YAML files.
-   - Run `scripts/validate_prompts.sh` to ensure legacy files remain valid during the transition.
+   - Run `scripts/validate_json.sh` to ensure legacy JSON files remain valid during the transition.
 7. **Documentation**
    - Update README, AGENTS, and other docs to reference YAML prompts and note the presence of legacy JSON files.
    - Provide guidance on the migration process for contributors.

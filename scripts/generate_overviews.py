@@ -3,6 +3,7 @@
 
 from pathlib import Path
 import sys
+import json
 
 import yaml
 
@@ -13,17 +14,21 @@ EXCLUDE_DIRS = {"docs", "scripts", ".github"}
 
 
 def title_from_prompt(path: Path) -> str:
-    """Return prompt title from a YAML file or fallback to filename."""
+    """Return prompt title from a JSON or YAML file or fallback to filename."""
     try:
         text = path.read_text(encoding="utf-8")
-        data = yaml.safe_load(text) or {}
-        title = data.get("name") or data.get("title")
+        if path.name.lower().endswith(".json"):
+            data = json.loads(text)
+            title = data.get("title") or data.get("name")
+        else:
+            data = yaml.safe_load(text) or {}
+            title = data.get("name") or data.get("title")
         if title:
             return str(title).strip()
     except Exception:
         pass
     name = path.name
-    for ext in (".prompt.yaml", ".prompt.yml"):
+    for ext in (".prompt.yaml", ".prompt.yml", ".json"):
         if name.lower().endswith(ext):
             name = name[: -len(ext)]
             break
@@ -36,7 +41,7 @@ def generate_overview(directory: Path) -> str:
     title = directory.name.replace("_", " ").title()
     lines = [f"# {title} Overview", ""]
     prompt_files = []
-    for pattern in ("*.prompt.yaml", "*.prompt.yml"):
+    for pattern in ("*.prompt.yaml", "*.prompt.yml", "*.json"):
         prompt_files.extend(directory.glob(pattern))
     for file in sorted(prompt_files):
         heading = title_from_prompt(file)
