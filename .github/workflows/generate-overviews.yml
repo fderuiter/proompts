@@ -4,15 +4,11 @@ name: Generate Overviews
 on:
   push:
     paths:
-      - '**/*.prompt.yaml'
-      - '**/*.prompt.yml'
       - '**/*.json'
       - '.github/workflows/generate-overviews.yml'
       - 'scripts/generate_overviews.py'
   pull_request:
     paths:
-      - '**/*.prompt.yaml'
-      - '**/*.prompt.yml'
       - '**/*.json'
       - '.github/workflows/generate-overviews.yml'
       - 'scripts/generate_overviews.py'
@@ -34,7 +30,7 @@ jobs:
         run: python3 scripts/update_docs_index.py
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
-      - name: Validate prompts
+      - name: Validate JSON
         run: ./scripts/validate_json.sh
       - name: Check for changes
         id: diff

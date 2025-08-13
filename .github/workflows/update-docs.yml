@@ -5,13 +5,9 @@ on:
   push:
     branches: ["main"]
     paths:
-      - '**/*.prompt.yaml'
-      - '**/*.prompt.yml'
       - '**/*.json'
   pull_request:
     paths:
-      - '**/*.prompt.yaml'
-      - '**/*.prompt.yml'
       - '**/*.json'
 
 jobs:
@@ -29,7 +25,7 @@ jobs:
         run: python3 scripts/update_docs_index.py
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
-      - name: Validate prompts
+      - name: Validate JSON
         run: ./scripts/validate_json.sh
       - name: Check for changes
         id: diff
@@ -47,3 +43,4 @@ jobs:
           git add docs/index.md docs/table-of-contents.md
           git commit -m "Update docs index"
           git push
+
