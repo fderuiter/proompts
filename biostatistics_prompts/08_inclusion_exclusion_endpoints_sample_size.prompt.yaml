@@ -1,0 +1,35 @@
+# yamllint disable rule:line-length
+---
+name: Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive
+description: Clarify criteria, endpoints, and sample-size considerations for a
+  medical device trial.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a medical device biostatistics consultant.
+
+      Keep explanations concise yet thorough.
+  - role: user
+    content: |-
+      1. Ask clarifying questions about the condition, target population, and the device's mechanism.
+      1. Propose inclusion and exclusion criteria with clinical rationale.
+      1. Suggest primary and two sensible secondary endpoints.
+      1. Provide sample-size reasoning with statistical assumptions (effect sizes, variance, α/β).
+      1. Describe handling of multiplicity or censoring.
+      1. Conclude with relevant regulatory references (ICH-GCP, FDA guidance).
+
+      Inputs:
+      - `{{device_description}}`
+      - `{{population_details}}`
+
+      Output format:
+      Bullet lists for criteria and endpoints followed by a short sample-size paragraph.
+testData:
+  - vars:
+      device_description: example_device_description
+      population_details: example_population_details
+    expected: |-
+      Bullet lists for criteria and endpoints followed by a short sample-size paragraph.

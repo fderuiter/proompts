@@ -3,8 +3,11 @@
 ## Adjudication Prompts
 
 - [Real-Time Adjudication Visibility Dashboard](../adjudication_prompts/01_real_time_adjudication_dashboard.json)
+- [Real-Time Adjudication Visibility Dashboard](../adjudication_prompts/01_real_time_adjudication_dashboard.prompt.yaml)
 - [Source Document and Endpoint Checklist](../adjudication_prompts/02_source_document_endpoint_checklist.json)
+- [Source Document and Endpoint Checklist](../adjudication_prompts/02_source_document_endpoint_checklist.prompt.yaml)
 - [Analyze Adjudication KPIs](../adjudication_prompts/03_analyze_adjudication_kpis.json)
+- [Analyze Adjudication KPIs](../adjudication_prompts/03_analyze_adjudication_kpis.prompt.yaml)
 
 ## Agentic Coding
 
@@ -23,65 +26,104 @@
 ## Biological Safety Prompts
 
 - [Risk Assessment Expert](../biological_safety_prompts/01_risk_assessment_expert.json)
+- [Risk Assessment Expert](../biological_safety_prompts/01_risk_assessment_expert.prompt.yaml)
 - [Biological Safety Plan Developer](../biological_safety_prompts/02_biological_safety_plan_developer.json)
+- [Biological Safety Plan Developer](../biological_safety_prompts/02_biological_safety_plan_developer.prompt.yaml)
 - [Regulatory Submission Support](../biological_safety_prompts/03_regulatory_submission_support.json)
+- [Regulatory Submission Support](../biological_safety_prompts/03_regulatory_submission_support.prompt.yaml)
 - [Biological Evaluation Plan Builder](../biological_safety_prompts/04_bep_builder.json)
+- [Biological Evaluation Plan Builder](../biological_safety_prompts/04_bep_builder.prompt.yaml)
 - [Comprehensive Biocompatibility Test Matrix](../biological_safety_prompts/05_comprehensive_test_matrix.json)
+- [Comprehensive Biocompatibility Test Matrix](../biological_safety_prompts/05_comprehensive_test_matrix.prompt.yaml)
 - [Chemical Characterization & TRA Work Plan](../biological_safety_prompts/06_chemical_characterization_work_plan.json)
+- [Chemical Characterization & TRA Work Plan](../biological_safety_prompts/06_chemical_characterization_work_plan.prompt.yaml)
 
 ## Biosafety Prompts
 
 - [Risk Assessment Expert](../biosafety_prompts/01_risk_assessment_expert.json)
+- [Risk Assessment Expert](../biosafety_prompts/01_risk_assessment_expert.prompt.yaml)
 - [Biological Safety Plan Developer](../biosafety_prompts/02_biological_safety_plan_developer.json)
+- [Biological Safety Plan Developer](../biosafety_prompts/02_biological_safety_plan_developer.prompt.yaml)
 - [Regulatory Submission Support](../biosafety_prompts/03_regulatory_submission_support.json)
+- [Regulatory Submission Support](../biosafety_prompts/03_regulatory_submission_support.prompt.yaml)
 
 ## Bioskills Prompts
 
 - [Hands-On Procedure Coaching](../bioskills_prompts/01_hands_on_procedure_coaching.json)
+- [Hands-On Procedure Coaching](../bioskills_prompts/01_hands_on_procedure_coaching.prompt.yaml)
 - [Simulated Clinical Scenario Debrief](../bioskills_prompts/02_simulated_clinical_scenario_feedback.json)
+- [Simulated Clinical Scenario Debrief](../bioskills_prompts/02_simulated_clinical_scenario_feedback.prompt.yaml)
 - [Objective Skills Assessment](../bioskills_prompts/03_objective_skills_assessment.json)
+- [Objective Skills Assessment](../bioskills_prompts/03_objective_skills_assessment.prompt.yaml)
 
 ## Biostatistics Prompts
 
 - [Statistical Analysis Plan Generator](../biostatistics_prompts/01_statistical_analysis_plan_generator.json)
+- [Statistical Analysis Plan Generator](../biostatistics_prompts/01_statistical_analysis_plan_generator.prompt.yaml)
 - [Time-to-Event Analysis Coach](../biostatistics_prompts/02_time_to_event_analysis_coach.json)
+- [Time-to-Event Analysis Coach](../biostatistics_prompts/02_time_to_event_analysis_coach.prompt.yaml)
 - [Peer-Review Checklist for Manuscript Methods](../biostatistics_prompts/03_peer_review_methods_checklist.json)
+- [Peer-Review Checklist for Manuscript Methods](../biostatistics_prompts/03_peer_review_methods_checklist.prompt.yaml)
 - [Universal Template-Table Prompt](../biostatistics_prompts/04_universal_template_table_prompt.json)
+- [Universal Template-Table Prompt](../biostatistics_prompts/04_universal_template_table_prompt.prompt.yaml)
 - [Dual-Language Figure Prompt](../biostatistics_prompts/05_dual_language_figure_prompt.json)
+- [Dual-Language Figure Prompt](../biostatistics_prompts/05_dual_language_figure_prompt.prompt.yaml)
 - [QC Listing & Cross-check Prompt](../biostatistics_prompts/06_qc_listing_cross_check_prompt.json)
+- [QC Listing & Cross-check Prompt](../biostatistics_prompts/06_qc_listing_cross_check_prompt.prompt.yaml)
 - [Study Design and Statistical Approach](../biostatistics_prompts/07_study_design_statistical_approach.json)
+- [Study Design and Statistical Approach](../biostatistics_prompts/07_study_design_statistical_approach.prompt.yaml)
 - [Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive](../biostatistics_prompts/08_inclusion_exclusion_endpoints_sample_size.json)
+- [Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive](../biostatistics_prompts/08_inclusion_exclusion_endpoints_sample_size.prompt.yaml)
 - [Adaptive Design & Interim Monitoring](../biostatistics_prompts/09_adaptive_design_interim_monitoring.json)
+- [Adaptive Design & Interim Monitoring](../biostatistics_prompts/09_adaptive_design_interim_monitoring.prompt.yaml)
 - [Phase II/III SAP Skeleton](../biostatistics_prompts/10_phase_ii_iii_sap_skeleton.json)
+- [Phase II/III SAP Skeleton](../biostatistics_prompts/10_phase_ii_iii_sap_skeleton.prompt.yaml)
 - [Sample-Size & Randomization Strategy](../biostatistics_prompts/10_sample_size_randomization_strategy.json)
+- [Sample-Size & Randomization Strategy](../biostatistics_prompts/10_sample_size_randomization_strategy.prompt.yaml)
 - [FDA Missing-Data Query Response](../biostatistics_prompts/11_fda_missing_data_query_response.json)
+- [FDA Missing-Data Query Response](../biostatistics_prompts/11_fda_missing_data_query_response.prompt.yaml)
 - [Submission-Ready Statistical Analysis Plan](../biostatistics_prompts/11_submission_ready_sap.json)
+- [Submission-Ready Statistical Analysis Plan](../biostatistics_prompts/11_submission_ready_sap.prompt.yaml)
 - [Generate & QC Submission-Ready TLFs](../biostatistics_prompts/12_submission_ready_tlfs.json)
+- [Generate & QC Submission-Ready TLFs](../biostatistics_prompts/12_submission_ready_tlfs.prompt.yaml)
 
 ## Brainstorming Prompts
 
 - [Reverse Brainstorming](../brainstorming_prompts/01_reverse_brainstorming.json)
+- [Reverse Brainstorming](../brainstorming_prompts/01_reverse_brainstorming.prompt.yaml)
 
 ## Business Development Prompts
 
 - [Emerging-Market Opportunity Scan](../business_development_prompts/01_emerging_market_opportunity_scan.json)
+- [Emerging-Market Opportunity Scan](../business_development_prompts/01_emerging_market_opportunity_scan.prompt.yaml)
 - [Market-Intelligence Radar](../business_development_prompts/01_market_intelligence_radar.json)
+- [Market-Intelligence Radar](../business_development_prompts/01_market_intelligence_radar.prompt.yaml)
 - [Rapid Proposal Builder](../business_development_prompts/02_rapid_proposal_builder.json)
+- [Rapid Proposal Builder](../business_development_prompts/02_rapid_proposal_builder.prompt.yaml)
 - [RFP Executive-Summary Generator](../business_development_prompts/02_rfp_executive_summary_generator.json)
+- [RFP Executive-Summary Generator](../business_development_prompts/02_rfp_executive_summary_generator.prompt.yaml)
 - [90-Day Pipeline Health & Next-Best-Action Review](../business_development_prompts/03_90_day_pipeline_health_review.json)
+- [90-Day Pipeline Health & Next-Best-Action Review](../business_development_prompts/03_90_day_pipeline_health_review.prompt.yaml)
 - [Competitor-Positioning Brief](../business_development_prompts/03_competitor_positioning_brief.json)
+- [Competitor-Positioning Brief](../business_development_prompts/03_competitor_positioning_brief.prompt.yaml)
 
 ## Cfo Prompts
 
 - [Scenario-Based Clinical-Trial Cash-Flow Forecast](../cfo_prompts/01_scenario_cash_flow_forecast.json)
+- [Scenario-Based Clinical-Trial Cash-Flow Forecast](../cfo_prompts/01_scenario_cash_flow_forecast.prompt.yaml)
 - [Competitive-Bid Pricing & Margin Optimizer](../cfo_prompts/02_competitive_bid_pricing.json)
+- [Competitive-Bid Pricing & Margin Optimizer](../cfo_prompts/02_competitive_bid_pricing.prompt.yaml)
 - [Regulatory-Risk & ESG Impact Dashboard Builder](../cfo_prompts/03_regulatory_risk_dashboard.json)
+- [Regulatory-Risk & ESG Impact Dashboard Builder](../cfo_prompts/03_regulatory_risk_dashboard.prompt.yaml)
 
 ## Chemical Characterization Prompts
 
 - [Design the Study](../chemical_characterization_prompts/01_design_the_study.json)
+- [Design the Study](../chemical_characterization_prompts/01_design_the_study.prompt.yaml)
 - [Interpret the Chemistry & Assess Risk](../chemical_characterization_prompts/02_interpret_the_chemistry_assess_risk.json)
+- [Interpret the Chemistry & Assess Risk](../chemical_characterization_prompts/02_interpret_the_chemistry_assess_risk.prompt.yaml)
 - [Write the Regulatory Summary](../chemical_characterization_prompts/03_write_the_regulatory_summary.json)
+- [Write the Regulatory Summary](../chemical_characterization_prompts/03_write_the_regulatory_summary.prompt.yaml)
 
 ## Clinical Data Prompts
 

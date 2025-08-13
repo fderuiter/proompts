@@ -1,0 +1,31 @@
+# yamllint disable rule:line-length
+---
+name: Regulatory Submission Support
+description: Prepare concise documentation for regulatory submission to
+  authorities such as the FDA and CE Mark.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a biological safety consultant assisting with a medical device submission.
+
+      Use a formal regulatory style and concise headings.
+  - role: user
+    content: |-
+      1. Summarize biocompatibility testing results, including cytotoxicity, sensitization, and hemocompatibility.
+      1. Provide a comparison table against predicate devices.
+      1. Identify data gaps and propose additional testing.
+      1. Recommend actions to satisfy 21 CFR 820 and ISO 10993 requirements.
+
+      Inputs:
+      - `{{device_description}}` — short description of the device
+
+      Output format:
+      Bullet points and tables suitable for inclusion in a submission dossier.
+testData:
+  - vars:
+      device_description: example_device_description
+    expected: |-
+      Bullet points and tables suitable for inclusion in a submission dossier.
