@@ -4,7 +4,7 @@
 
 [![Generate Overviews](https://github.com/fderuiter/proompts/actions/workflows/generate-overviews.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/generate-overviews.yml)
 
-[![YAML Validation](https://github.com/fderuiter/proompts/actions/workflows/json-validation.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/json-validation.yml)
+[![YAML Validation](https://github.com/fderuiter/proompts/actions/workflows/yaml-validation.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/yaml-validation.yml)
 
 [![Repository Checks](https://github.com/fderuiter/proompts/actions/workflows/repo-checks.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/repo-checks.yml)
 
@@ -53,7 +53,7 @@ yamllint **/*.prompt.yaml
 ```
 
 The linter helps ensure valid YAML syntax. The repository also runs workflows to
-generate missing `overview.md` files, verify file naming, validate JSON prompts,
+generate missing `overview.md` files, verify file naming, validate prompts,
 and commit the docs index when it changes.
 
 ## Contributing
