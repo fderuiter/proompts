@@ -1,14 +1,18 @@
 name: Repository Checks
-# Validate JSON prompts and overview.md presence
+# Validate prompt files and overview.md presence
 
 on:
   push:
     paths:
+      - '**/*.prompt.yaml'
+      - '**/*.prompt.yml'
       - '**/*.json'
       - '.github/workflows/repo-checks.yml'
       - 'scripts/check_prompts.py'
   pull_request:
     paths:
+      - '**/*.prompt.yaml'
+      - '**/*.prompt.yml'
       - '**/*.json'
       - '.github/workflows/repo-checks.yml'
       - 'scripts/check_prompts.py'
