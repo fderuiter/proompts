@@ -33,8 +33,8 @@ messages:
       1. Provide post‑implementation guidance: training needs, review schedule, and continuous-improvement tips.
       1. Exclude any illegal or unethical content and keep language concise.
 
-        Inputs:
-        - `{{process_information}}` – scope, audience, and regulatory context
+      Inputs:
+      - `{{process_information}}`
 
       Output format:
       Full SOP followed by a separate "Implementation Notes" section.
