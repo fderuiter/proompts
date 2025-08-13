@@ -12,8 +12,8 @@ messages:
   - role: user
     content: |-
       1. Ask, "How could we make it worse?" and list ten worsening ideas.
-      1. Turn each idea into a constructive bullet prefixed with "➜".
-      1. Build a mini-table (Solution \| Impact High/Med/Low) ranking the top three.
+      2. Turn each idea into a constructive bullet prefixed with "➜".
+      3. Build a mini-table (Solution \| Impact High/Med/Low) ranking the top three.
 
       Inputs:
       - `{{problem}}`: issue to address.

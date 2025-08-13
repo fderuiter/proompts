@@ -22,10 +22,10 @@ messages:
          - Statistical methods (models, covariance structure, interim rules)
          - Missing-data strategy (MI with δ-adjustment sensitivity)
          - Mock TLF shells (summary stats and forest-plot layout)
-      1. Use numbered H2 headings.
-      1. Keep each subsection ≤250 words.
-      1. Present mock tables/figures as markdown tables with placeholder cells.
-      1. Do not include internal reasoning steps.
+      2. Use numbered H2 headings.
+      3. Keep each subsection ≤250 words.
+      4. Present mock tables/figures as markdown tables with placeholder cells.
+      5. Do not include internal reasoning steps.
 
       Inputs:
       - `{{study_overview}}`

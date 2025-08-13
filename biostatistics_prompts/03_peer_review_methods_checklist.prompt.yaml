@@ -15,10 +15,10 @@ messages:
   - role: user
     content: |-
       1. Evaluate compliance with CONSORT 2010 and ICH‑E9 guidelines.
-      1. Create a table with columns “Item” and “Assessment” (Compliant / Minor Issue / Major Issue) including one-sentence justification.
-      1. List up to five prioritized revisions the authors must address.
-      1. Optionally note commendable strengths (≤3 bullets).
-      1. Maintain a professional, constructive tone.
+      2. Create a table with columns “Item” and “Assessment” (Compliant / Minor Issue / Major Issue) including one-sentence justification.
+      3. List up to five prioritized revisions the authors must address.
+      4. Optionally note commendable strengths (≤3 bullets).
+      5. Maintain a professional, constructive tone.
 
       Inputs:
       - `{{manuscript_excerpt}}` — text or file attachment with methods section

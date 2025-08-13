@@ -15,9 +15,9 @@ messages:
   - role: user
     content: |-
       1. Summarize biocompatibility testing results, including cytotoxicity, sensitization, and hemocompatibility.
-      1. Provide a comparison table against predicate devices.
-      1. Identify data gaps and propose additional testing.
-      1. Recommend actions to satisfy 21 CFR 820 and ISO 10993 requirements.
+      2. Provide a comparison table against predicate devices.
+      3. Identify data gaps and propose additional testing.
+      4. Recommend actions to satisfy 21 CFR 820 and ISO 10993 requirements.
 
       Inputs:
       - `{{device_description}}` — short description of the device

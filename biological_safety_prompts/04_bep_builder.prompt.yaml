@@ -15,9 +15,9 @@ messages:
   - role: user
     content: |-
       1. Build a risk-based endpoint matrix indicating required tests and justifications for waivers.
-      1. Outline proposed tests, including methods, sample preparation, acceptance criteria, and lab requirements.
-      1. Provide an integrated timeline and critical path (Gantt style).
-      1. Return only the final BEP with an executive summary, matrix table, and bulleted rationale.
+      2. Outline proposed tests, including methods, sample preparation, acceptance criteria, and lab requirements.
+      3. Provide an integrated timeline and critical path (Gantt style).
+      4. Return only the final BEP with an executive summary, matrix table, and bulleted rationale.
 
       Inputs:
       - `{{device_details}}` — materials, manufacturing method, contact category, duration, and use environment
