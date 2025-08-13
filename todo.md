@@ -4,9 +4,9 @@ Below is a list of improvements and tooling ideas that could help maintain and s
 
 1. **Add a `.gitignore` file** – Prevent accidental commits of temporary build files.
 1. **Create a `CONTRIBUTING.md` guide** – Summarize the workflow from `AGENTS.md` so contributors know to sanitize, standardize, and run validation scripts before opening PRs.
-1. **Include explicit setup and validation instructions in the README** – Document how to run `scripts/validate_json.sh` and install its dependencies.
+1. **Include explicit setup and validation instructions in the README** – Document how to run `scripts/validate_prompts.sh` and install its dependencies.
 1. **Provide issue and pull-request templates** – Ensure consistent bug reports and prompt submissions by adding templates under `.github/`.
-1. **Add a pre-commit configuration** – Automate `scripts/validate_json.sh` and `scripts/check_prompts.py`.
+1. **Add a pre-commit configuration** – Automate `scripts/validate_prompts.sh` and `scripts/check_prompts.py`.
 1. **Implement front-matter validation** – Create a script to verify required fields and detect duplicate IDs across prompts.
 1. **Automatically update the documentation index** – Extend `scripts/update_docs_index.py` or use a Git hook so `docs/index.md` stays synchronized.
 1. **Introduce search or catalog tooling** – Provide a CLI or web page that searches titles and tags within the prompts.

@@ -70,12 +70,12 @@ Links or relative paths to supporting docs/resources.
 ## Migration Workflow
 
 1. **Clone** the repo and create a new branch (default: `feat/standardize-prompt-format`).
-1. **Iterate** through every `*.json` file inside prompt directories:
+1. **Iterate** through every `*.prompt.yaml` file inside prompt directories:
 
    * Verify all required fields match `docs/prompt_schema.json`.
    * Add missing metadata values (preserve original dates unless instructed otherwise).
    * Move any unmapped text under **Additional Notes**.
-1. **Run** `./scripts/validate_json.sh` to ensure JSON linting passes.
+1. **Run** `./scripts/validate_prompts.sh` to ensure YAML linting passes.
 1. **Commit** changes in logical chunks and push the branch.
 1. **Open** a PR and request review from repository maintainers.
 
