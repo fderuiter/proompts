@@ -1,15 +1,17 @@
 # Repository Guidance for AI Agent Prompts
 
-This repository stores a collection of AI agent prompts. Each prompt is stored as
-YAML (`.prompt.yaml` or `.prompt.yml`) and placed in one of the categories under
-the repository root (e.g. `agentic_coding`, `meta_prompts`). Use this file for
-guidelines on adding or modifying prompts.
+This repository stores a collection of AI agent prompts. Prompts are primarily
+stored as YAML (`.prompt.yaml` or `.prompt.yml`) and placed in one of the
+categories under the repository root (e.g. `agentic_coding`, `meta_prompts`).
+Some legacy prompts remain as `.json` files for backward compatibility. Use this
+file for guidelines on adding or modifying prompts.
 
 ## File Format and Layout
 
-- **YAML only**: Store prompts as `.prompt.yaml` or `.prompt.yml` files containing
-  valid YAML. Use Markdown strictly for documentation such as `README.md` or
-  `overview.md`.
+- **Preferred YAML**: New prompts must be stored as `.prompt.yaml` or
+  `.prompt.yml` files containing valid YAML. Existing `.json` prompts may persist
+  temporarily but should eventually be converted. Use Markdown strictly for
+  documentation such as `README.md` or `overview.md`.
 - **Markdown docs**: All documentation files—including `overview.md`, `docs/*.md`,
   and any additional guides—remain in Markdown format.
 - **Naming**: Follow the existing naming style in each directory. For example,
@@ -66,7 +68,7 @@ The `.github/workflows/update-docs.yml` workflow will automatically commit the d
 Several GitHub Actions take care of routine maintenance tasks:
 
 - **`generate-overviews.yml`** automatically creates an `overview.md` file in any new prompt directory and updates the docs index.
-- **`repo-checks.yml`** verifies file naming conventions, ensures all prompt files use the `.prompt.yaml` extension, and checks that each directory contains `overview.md`.
+- **`repo-checks.yml`** verifies file naming conventions, ensures new prompt files use the `.prompt.yaml` extension, and checks that each directory contains `overview.md`.
 - **`yaml-validation.yml`** runs a YAML linter over prompt files.
 - **`update-docs.yml`** commits the documentation index if it changes.
 
