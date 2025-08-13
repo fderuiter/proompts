@@ -2,6 +2,7 @@
 
 This directory stores general reference material for the repository. Use
 `index.md` or `table-of-contents.md` for a complete table of contents that links to every prompt.
+
 Prompts are now primarily stored as `.prompt.yaml` files. Legacy `.json` prompts
 remain for backward compatibility and should be maintained until they are
 phased out.

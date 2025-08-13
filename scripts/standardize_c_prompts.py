@@ -1,5 +1,6 @@
-import json
 from pathlib import Path
+
+import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 TODAY = "2025-07-18"
@@ -15,8 +16,8 @@ REQUIRED_SECTIONS = [
 OPTIONAL_SECTIONS = ["additional_notes", "example_usage", "references"]
 
 for d in sorted([p for p in ROOT.iterdir() if p.is_dir() and p.name.startswith("c")]):
-    for path in sorted(d.glob("*.json")):
-        data = json.loads(path.read_text(encoding="utf-8"))
+    for path in sorted(d.glob("*.prompt.yaml")):
+        data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
         prompt = data.get("prompt", {})
         changed = False
 
@@ -40,6 +41,9 @@ for d in sorted([p for p in ROOT.iterdir() if p.is_dir() and p.name.startswith("
         data["prompt"] = prompt
 
         if changed:
-            path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+            path.write_text(
+                yaml.safe_dump(data, sort_keys=False),
+                encoding="utf-8",
+            )
             print("Standardized", path)
 
