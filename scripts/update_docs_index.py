@@ -14,6 +14,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 DOCS_DIR = ROOT / "docs"
 EXCLUDE = {"docs", "scripts", ".github"}
+# Extensions for prompt files included in the generated index
 PROMPT_EXTENSIONS = (".prompt.yaml", ".prompt.yml", ".json")
 
 
