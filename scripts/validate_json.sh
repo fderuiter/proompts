@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Validate JSON prompt files and documentation index.
-# Requires 'jq' and Python 3.
+# Validate prompt files and documentation index.
+# Requires 'jq', 'yamllint', and Python 3.
 
 command -v jq >/dev/null 2>&1 || { echo "Error: jq is not installed" >&2; exit 1; }
+command -v yamllint >/dev/null 2>&1 || { echo "Error: yamllint is not installed" >&2; exit 1; }
 
 # Ensure docs/index.md and docs/table-of-contents.md are current.
 python3 scripts/update_docs_index.py --check
@@ -14,4 +15,9 @@ while IFS= read -r -d '' file; do
     jq -e '.' "$file" >/dev/null
 done < <(find . -name '*.json' -not -path './.git/*' -print0)
 
-echo "All JSON files validated"
+# Validate YAML prompt files
+while IFS= read -r -d '' file; do
+    yamllint -s "$file"
+done < <(find . \( -name '*.prompt.yaml' -o -name '*.prompt.yml' \) -not -path './.git/*' -print0)
+
+echo "All prompt files validated"

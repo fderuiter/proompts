@@ -1,8 +1,17 @@
 #!/usr/bin/env python3
-"""Repository checks for prompt files."""
+"""Repository checks for prompt files.
 
+This utility originally handled only legacy JSON prompts. As the
+repository transitions to YAML-based prompts (``*.prompt.yaml`` and
+``*.prompt.yml``), the script now detects both formats and performs basic
+syntax validation using ``json`` and ``yaml`` parsers.
+"""
+
+import json
 import re
 from pathlib import Path
+
+import yaml
 
 OVERVIEW_NAME = "overview.md"  # documentation stays Markdown
 
@@ -10,8 +19,8 @@ ROOT = Path(__file__).resolve().parents[1]
 EXCLUDE_DIRS = {"docs", "scripts", ".github", "prompt_tools"}
 
 
-NUMERIC_RE = re.compile(r"^\d\d_.*\.json$")
-LEVEL_RE = re.compile(r"^L\d+_.*\.json$")
+NUMERIC_RE = re.compile(r"^\d\d_.*\.(json|prompt\.ya?ml)$", re.IGNORECASE)
+LEVEL_RE = re.compile(r"^L\d+_.*\.(json|prompt\.ya?ml)$", re.IGNORECASE)
 
 
 def check_overview(directory: Path) -> bool:
@@ -29,8 +38,26 @@ def check_files(directory: Path) -> bool:
         name = file.name
         if name.lower() in {OVERVIEW_NAME, "readme.md"}:
             continue
-        if file.suffix.lower() != ".json":
-            print(f"{file} is not a JSON file")
+
+        lower_name = name.lower()
+        is_json = lower_name.endswith(".json")
+        is_yaml = lower_name.endswith(".prompt.yaml") or lower_name.endswith(
+            ".prompt.yml"
+        )
+
+        if not (is_json or is_yaml):
+            print(f"{file} is not a recognised prompt file")
+            ok = False
+            continue
+
+        try:
+            text = file.read_text(encoding="utf-8")
+            if is_json:
+                json.loads(text)
+            else:
+                yaml.safe_load(text)
+        except Exception as exc:  # pragma: no cover - simple validation
+            print(f"Failed to parse {file}: {exc}")
             ok = False
             continue
         if directory.name == "agentic_coding" and not NUMERIC_RE.match(name):
