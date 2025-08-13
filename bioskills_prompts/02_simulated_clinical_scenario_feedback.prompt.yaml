@@ -14,9 +14,9 @@ messages:
   - role: user
     content: |-
       1. Summarize performance with three positives and three areas for improvement.
-      2. Ask one follow-up reflective question.
-      3. Offer a corrective tip with brief rationale.
-      4. Maintain a professional, supportive tone.
+      1. Ask one follow-up reflective question.
+      1. Offer a corrective tip with brief rationale.
+      1. Maintain a professional, supportive tone.
 
       Inputs:
       - `{{procedure_notes}}` — any notes from the session

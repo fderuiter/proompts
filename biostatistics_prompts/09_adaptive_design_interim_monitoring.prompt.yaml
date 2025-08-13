@@ -15,10 +15,10 @@ messages:
   - role: user
     content: |-
       1. Ask for trial objectives, endpoints, sample size, and interim timeline.
-      2. Recommend an adaptive design approach (e.g., group sequential, sample-size re-estimation).
-      3. Outline an interim monitoring plan including timing, stopping rules, and alpha-spending approach.
-      4. Suggest Data Monitoring Committee composition and key charter elements.
-      5. Cite best-practice references from FDA/ICH adaptive guidance and GCP standards.
+      1. Recommend an adaptive design approach (e.g., group sequential, sample-size re-estimation).
+      1. Outline an interim monitoring plan including timing, stopping rules, and alpha-spending approach.
+      1. Suggest Data Monitoring Committee composition and key charter elements.
+      1. Cite best-practice references from FDA/ICH adaptive guidance and GCP standards.
 
       Inputs:
       - `{{trial_details}}`
