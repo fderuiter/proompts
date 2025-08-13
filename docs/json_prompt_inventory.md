@@ -1,0 +1,290 @@
+# JSON Prompt Inventory
+
+- `cra_prompts/02_investigator_follow_up_email_tracker.json` — cra prompt: investigator follow up email tracker
+- `cra_prompts/03_rbm_plan_builder.json` — cra prompt: rbm plan builder
+- `cra_prompts/01_monitoring_visit_report_generator.json` — cra prompt: monitoring visit report generator
+- `business_development_prompts/01_emerging_market_opportunity_scan.json` — business development prompt: emerging market opportunity scan
+- `business_development_prompts/03_competitor_positioning_brief.json` — business development prompt: competitor positioning brief
+- `business_development_prompts/02_rfp_executive_summary_generator.json` — business development prompt: rfp executive summary generator
+- `business_development_prompts/03_90_day_pipeline_health_review.json` — business development prompt: 90 day pipeline health review
+- `business_development_prompts/02_rapid_proposal_builder.json` — business development prompt: rapid proposal builder
+- `business_development_prompts/01_market_intelligence_radar.json` — business development prompt: market intelligence radar
+- `biostatistics_prompts/08_inclusion_exclusion_endpoints_sample_size.json` — biostatistics prompt: inclusion exclusion endpoints sample size
+- `biostatistics_prompts/10_phase_ii_iii_sap_skeleton.json` — biostatistics prompt: phase ii iii sap skeleton
+- `biostatistics_prompts/09_adaptive_design_interim_monitoring.json` — biostatistics prompt: adaptive design interim monitoring
+- `biostatistics_prompts/12_submission_ready_tlfs.json` — biostatistics prompt: submission ready tlfs
+- `biostatistics_prompts/06_qc_listing_cross_check_prompt.json` — biostatistics prompt: qc listing cross check prompt
+- `biostatistics_prompts/01_statistical_analysis_plan_generator.json` — biostatistics prompt: statistical analysis plan generator
+- `biostatistics_prompts/11_fda_missing_data_query_response.json` — biostatistics prompt: fda missing data query response
+- `biostatistics_prompts/07_study_design_statistical_approach.json` — biostatistics prompt: study design statistical approach
+- `biostatistics_prompts/11_submission_ready_sap.json` — biostatistics prompt: submission ready sap
+- `biostatistics_prompts/05_dual_language_figure_prompt.json` — biostatistics prompt: dual language figure prompt
+- `biostatistics_prompts/04_universal_template_table_prompt.json` — biostatistics prompt: universal template table prompt
+- `biostatistics_prompts/02_time_to_event_analysis_coach.json` — biostatistics prompt: time to event analysis coach
+- `biostatistics_prompts/10_sample_size_randomization_strategy.json` — biostatistics prompt: sample size randomization strategy
+- `biostatistics_prompts/03_peer_review_methods_checklist.json` — biostatistics prompt: peer review methods checklist
+- `clinical_prompts/01_crf_shell_generator.json` — clinical prompt: crf shell generator
+- `clinical_prompts/03_cdash_mapping_completion_guide.json` — clinical prompt: cdash mapping completion guide
+- `clinical_prompts/02_crf_quality_auditor.json` — clinical prompt: crf quality auditor
+- `imaging_prompts/03_central_reading_design.json` — imaging prompt: central reading design
+- `imaging_prompts/01_imaging_charter_draft.json` — imaging prompt: imaging charter draft
+- `imaging_prompts/02_site_upload_qc.json` — imaging prompt: site upload qc
+- `imaging_prompts/06_regulatory_imaging_data_package.json` — imaging prompt: regulatory imaging data package
+- `imaging_prompts/04_regulatory_imaging_charter_generator.json` — imaging prompt: regulatory imaging charter generator
+- `imaging_prompts/05_image_acquisition_qc_workflow_blueprint.json` — imaging prompt: image acquisition qc workflow blueprint
+- `brainstorming_prompts/01_reverse_brainstorming.json` — brainstorming prompt: reverse brainstorming
+- `executive_prompts/02_crisis_management_playbook.json` — executive prompt: crisis management playbook
+- `executive_prompts/06_regulatory_competitive_intel_briefing.json` — executive prompt: regulatory competitive intel briefing
+- `executive_prompts/07_strategic_consultant_swot.json` — executive prompt: strategic consultant swot
+- `executive_prompts/04_digital_transformation_roadmap.json` — executive prompt: digital transformation roadmap
+- `executive_prompts/05_emerging_science_horizon_scan.json` — executive prompt: emerging science horizon scan
+- `executive_prompts/04_market_competitor_radar.json` — executive prompt: market competitor radar
+- `executive_prompts/05_executive_trial_health_dashboard.json` — executive prompt: executive trial health dashboard
+- `executive_prompts/05_ai_governance_framework.json` — executive prompt: ai governance framework
+- `executive_prompts/03_executive_brief_synthesizer.json` — executive prompt: executive brief synthesizer
+- `executive_prompts/04_strategic_portfolio_prioritizer.json` — executive prompt: strategic portfolio prioritizer
+- `executive_prompts/04_strategic_growth_roadmap.json` — executive prompt: strategic growth roadmap
+- `executive_prompts/01_strategic_market_foresight.json` — executive prompt: strategic market foresight
+- `executive_prompts/06_innovation_radar.json` — executive prompt: innovation radar
+- `executive_prompts/06_trial_design_optimisation_memo.json` — executive prompt: trial design optimisation memo
+- `executive_prompts/07_hosting_cost_reduction_tot.json` — executive prompt: hosting cost reduction tot
+- `executive_prompts/05_investor_board_narrative_builder.json` — executive prompt: investor board narrative builder
+- `site_acquisition_prompts/01_site_landscape_mapping.json` — site acquisition prompt: site landscape mapping
+- `site_acquisition_prompts/03_investigator_outreach_email_generator.json` — site acquisition prompt: investigator outreach email generator
+- `site_acquisition_prompts/02_tailored_feasibility_questionnaire.json` — site acquisition prompt: tailored feasibility questionnaire
+- `sterility_prompts/01_sterility_validation_protocol_builder.json` — sterility prompt: sterility validation protocol builder
+- `sterility_prompts/02_regulatory_gap_analysis_comparator.json` — sterility prompt: regulatory gap analysis comparator
+- `sterility_prompts/03_eto_sterilization_process_fmea.json` — sterility prompt: eto sterilization process fmea
+- `productivity_prompts/01_eisenhower_matrix_coach.json` — productivity prompt: eisenhower matrix coach
+- `productivity_prompts/02_second_order_thinking_oracle.json` — productivity prompt: second order thinking oracle
+- `productivity_prompts/05_raci_mapper.json` — productivity prompt: raci mapper
+- `productivity_prompts/03_fishbone_facilitator.json` — productivity prompt: fishbone facilitator
+- `productivity_prompts/04_heros_journey_storyboarder.json` — productivity prompt: heros journey storyboarder
+- `protocol_prompts/04_protocol_section_refinement.json` — protocol prompt: protocol section refinement
+- `protocol_prompts/03_protocol_reviewer_gap_analysis_coach.json` — protocol prompt: protocol reviewer gap analysis coach
+- `protocol_prompts/02_ultimate_sop_architect.json` — protocol prompt: ultimate sop architect
+- `protocol_prompts/01_clinical_trial_protocol_creator.json` — protocol prompt: clinical trial protocol creator
+- `chemical_characterization_prompts/02_interpret_the_chemistry_assess_risk.json` — chemical characterization prompt: interpret the chemistry assess risk
+- `chemical_characterization_prompts/01_design_the_study.json` — chemical characterization prompt: design the study
+- `chemical_characterization_prompts/03_write_the_regulatory_summary.json` — chemical characterization prompt: write the regulatory summary
+- `hr_finance_prompts/02_clinical_trial_budget_burn_rate_dashboard.json` — hr finance prompt: clinical trial budget burn rate dashboard
+- `hr_finance_prompts/03_gcp_gdpr_compliance_training_risk_report.json` — hr finance prompt: gcp gdpr compliance training risk report
+- `hr_finance_prompts/01_strategic_workforce_talent_acquisition_plan.json` — hr finance prompt: strategic workforce talent acquisition plan
+- `leadership_prompts/04_biostatistics_onboarding_plan.json` — leadership prompt: biostatistics onboarding plan
+- `leadership_prompts/03_leadership_reflection_culture.json` — leadership prompt: leadership reflection culture
+- `leadership_prompts/01_strategic_alignment_innovation.json` — leadership prompt: strategic alignment innovation
+- `leadership_prompts/02_operational_excellence_communication.json` — leadership prompt: operational excellence communication
+- `study_director_prompts/01_draft_glp_compliant_study_protocol.json` — study director prompt: draft glp compliant study protocol
+- `study_director_prompts/03_executive_summary_final_report.json` — study director prompt: executive summary final report
+- `study_director_prompts/02_audit_raw_data_capa_summary.json` — study director prompt: audit raw data capa summary
+- `epro_prompts/02_optimize_epro_form_design.json` — epro prompt: optimize epro form design
+- `epro_prompts/01_patient-centric_byod_workflow.json` — epro prompt: patient centric byod workflow
+- `epro_prompts/03_epro_adoption_plan_for_sponsors.json` — epro prompt: epro adoption plan for sponsors
+- `meta_prompts/L5_prompt_engineer_fact_checker.json` — meta prompt: prompt engineer fact checker
+- `meta_prompts/L4_worker_prompt.json` — meta prompt: worker prompt
+- `meta_prompts/L5_agents-md-checklist.json` — meta prompt: agents md checklist
+- `meta_prompts/L3_task-prototyper.json` — meta prompt: task prototyper
+- `meta_prompts/L5_readme-generator.json` — meta prompt: readme generator
+- `meta_prompts/L0_master-ultrameta.json` — meta prompt: master ultrameta
+- `meta_prompts/L5_comprehensive_task_template.json` — meta prompt: comprehensive task template
+- `meta_prompts/L5_ai_coding_agent.json` — meta prompt: ai coding agent
+- `meta_prompts/L1_meta-prompt-architect.json` — meta prompt: meta prompt architect
+- `meta_prompts/L5_promptcrafter_gpt.json` — meta prompt: promptcrafter gpt
+- `meta_prompts/L2_prompt-engineer.json` — meta prompt: prompt engineer
+- `codex_prompts/06_architecture_flow_codex.json` — codex prompt: architecture flow codex
+- `codex_prompts/10_bug_fix_codex.json` — codex prompt: bug fix codex
+- `codex_prompts/08_code_review_codex.json` — codex prompt: code review codex
+- `codex_prompts/02_tooling_and_quality_codex.json` — codex prompt: tooling and quality codex
+- `codex_prompts/01_project_init_codex.json` — codex prompt: project init codex
+- `codex_prompts/09_add_tests_codex.json` — codex prompt: add tests codex
+- `codex_prompts/02_codebase_testing_plan.json` — codex prompt: codebase testing plan
+- `codex_prompts/07_security_vulnerability_codex.json` — codex prompt: security vulnerability codex
+- `codex_prompts/04_docs_and_onboarding_codex.json` — codex prompt: docs and onboarding codex
+- `codex_prompts/03_ci_cd_codex.json` — codex prompt: ci cd codex
+- `codex_prompts/05_refactoring_suggestions_codex.json` — codex prompt: refactoring suggestions codex
+- `codex_prompts/11_ui_fix_codex.json` — codex prompt: ui fix codex
+- `cfo_prompts/03_regulatory_risk_dashboard.json` — cfo prompt: regulatory risk dashboard
+- `cfo_prompts/01_scenario_cash_flow_forecast.json` — cfo prompt: scenario cash flow forecast
+- `cfo_prompts/02_competitive_bid_pricing.json` — cfo prompt: competitive bid pricing
+- `biosafety_prompts/02_biological_safety_plan_developer.json` — biosafety prompt: biological safety plan developer
+- `biosafety_prompts/03_regulatory_submission_support.json` — biosafety prompt: regulatory submission support
+- `biosafety_prompts/01_risk_assessment_expert.json` — biosafety prompt: risk assessment expert
+- `data_management_prompts/09_sop_gap_analysis.json` — data management prompt: sop gap analysis
+- `data_management_prompts/03_data_architecture_blueprint.json` — data management prompt: data architecture blueprint
+- `data_management_prompts/02_regulatory_gap_analysis.json` — data management prompt: regulatory gap analysis
+- `data_management_prompts/06_clinical_etl_pipeline_review.json` — data management prompt: clinical etl pipeline review
+- `data_management_prompts/07_phase_ii_oncology_dmp.json` — data management prompt: phase ii oncology dmp
+- `data_management_prompts/08_decentralized_trial_risk_matrix.json` — data management prompt: decentralized trial risk matrix
+- `data_management_prompts/05_clinical_etl_transformation_qc.json` — data management prompt: clinical etl transformation qc
+- `data_management_prompts/04_clinical_etl_mapping_spec.json` — data management prompt: clinical etl mapping spec
+- `data_management_prompts/01_unified_data_cleansing.json` — data management prompt: unified data cleansing
+- `technical_writer_prompts/02_ib_detailed_soc.json` — technical writer prompt: ib detailed soc
+- `technical_writer_prompts/01_csr_results_safety_section.json` — technical writer prompt: csr results safety section
+- `technical_writer_prompts/03_sae_reporting_sop.json` — technical writer prompt: sae reporting sop
+- `microbiology_prompts/01_bioburden_testing_sop.json` — microbiology prompt: bioburden testing sop
+- `microbiology_prompts/02_eo_sterilization_validation_protocol.json` — microbiology prompt: eo sterilization validation protocol
+- `microbiology_prompts/03_endotoxin_control_510k_risk_plan.json` — microbiology prompt: endotoxin control 510k risk plan
+- `clinical_data_prompts/03_edit_check_specification_builder.json` — clinical data prompt: edit check specification builder
+- `clinical_data_prompts/01_discrepancy_detection_query_log.json` — clinical data prompt: discrepancy detection query log
+- `clinical_data_prompts/02_data_management_plan_section.json` — clinical data prompt: data management plan section
+- `bioskills_prompts/01_hands_on_procedure_coaching.json` — bioskills prompt: hands on procedure coaching
+- `bioskills_prompts/03_objective_skills_assessment.json` — bioskills prompt: objective skills assessment
+- `bioskills_prompts/02_simulated_clinical_scenario_feedback.json` — bioskills prompt: simulated clinical scenario feedback
+- `clinical_safety_prompts/01_eu_cer_clinical_safety_synopsis.json` — clinical safety prompt: eu cer clinical safety synopsis
+- `clinical_safety_prompts/03_post_market_safety_signal_trending.json` — clinical safety prompt: post market safety signal trending
+- `clinical_safety_prompts/02_fda_mdr_adverse_event_narrative.json` — clinical safety prompt: fda mdr adverse event narrative
+- `medical_director_prompts/01_clinical_trial_protocol_quality_compliance_review.json` — medical director prompt: clinical trial protocol quality compliance review
+- `medical_director_prompts/02_pharmacovigilance_safety_signal_prioritization.json` — medical director prompt: pharmacovigilance safety signal prioritization
+- `medical_director_prompts/03_ai_enhanced_rbm_action_plan.json` — medical director prompt: ai enhanced rbm action plan
+- `market_research_prompts/01_market_landscape_trend_analysis.json` — market research prompt: market landscape trend analysis
+- `market_research_prompts/02_target_segment_user_needs_assessment.json` — market research prompt: target segment user needs assessment
+- `market_research_prompts/03_regulatory_commercial_barrier_mapping.json` — market research prompt: regulatory commercial barrier mapping
+- `market_research_prompts/04_market_report_exec_summary.json` — market research prompt: market report exec summary
+- `prompt_tools/L5_prompt_optimizer.json` — prompt tools: prompt optimizer
+- `trial_execution_prompts/02_ai_powered_site_recruitment.json` — trial execution prompt: ai powered site recruitment
+- `trial_execution_prompts/01_protocol_optimization_risk_simulation.json` — trial execution prompt: protocol optimization risk simulation
+- `trial_execution_prompts/03_compliance_data_quality_monitoring_plan.json` — trial execution prompt: compliance data quality monitoring plan
+- `trial_execution_prompts/05_portfolio_clin_ops_roadmap.json` — trial execution prompt: portfolio clin ops roadmap
+- `trial_execution_prompts/07_recruitment_diversity_acceleration.json` — trial execution prompt: recruitment diversity acceleration
+- `trial_execution_prompts/06_risk_based_monitoring_plan.json` — trial execution prompt: risk based monitoring plan
+- `trial_execution_prompts/04_adaptive_recruitment_retention_strategy.json` — trial execution prompt: adaptive recruitment retention strategy
+- `clinical_research_manager_prompts/01_accelerate_patient_recruitment_retention.json` — clinical research manager prompt: accelerate patient recruitment retention
+- `clinical_research_manager_prompts/02_digest_regulatory_updates.json` — clinical research manager prompt: digest regulatory updates
+- `clinical_research_manager_prompts/03_portfolio_kpi_dashboard_brief.json` — clinical research manager prompt: portfolio kpi dashboard brief
+- `general_prompts/04_mece_structuring_consultant.json` — general prompt: mece structuring consultant
+- `general_prompts/02_story_spine_outline.json` — general prompt: story spine outline
+- `general_prompts/05_ai_risk_mapper.json` — general prompt: ai risk mapper
+- `general_prompts/03_heuristic_evaluation_coach.json` — general prompt: heuristic evaluation coach
+- `general_prompts/01_retrieval_augmented_answer_composer.json` — general prompt: retrieval augmented answer composer
+- `eclinical_integration_prompts/03_regulatory_validation_checklist.json` — eclinical integration prompt: regulatory validation checklist
+- `eclinical_integration_prompts/01_architect_integration_blueprint.json` — eclinical integration prompt: architect integration blueprint
+- `eclinical_integration_prompts/02_data_mapping_transformation_playbook.json` — eclinical integration prompt: data mapping transformation playbook
+- `adjudication_prompts/01_real_time_adjudication_dashboard.json` — adjudication prompt: real time adjudication dashboard
+- `adjudication_prompts/02_source_document_endpoint_checklist.json` — adjudication prompt: source document endpoint checklist
+- `adjudication_prompts/03_analyze_adjudication_kpis.json` — adjudication prompt: analyze adjudication kpis
+- `regulatory_prompts/01_strategic_regulatory_pathway_plan.json` — regulatory prompt: strategic regulatory pathway plan
+- `regulatory_prompts/02_ind_readiness_gap_analysis.json` — regulatory prompt: ind readiness gap analysis
+- `regulatory_prompts/01_510k_pre-sub_strategy.json` — regulatory prompt: 510k pre sub strategy
+- `regulatory_prompts/01_eu_mdr_gap_assessment.json` — regulatory prompt: eu mdr gap assessment
+- `regulatory_prompts/03_dual_mdr_ivdr_roadmap.json` — regulatory prompt: dual mdr ivdr roadmap
+- `regulatory_prompts/03_regulatory_filing_draft_builder.json` — regulatory prompt: regulatory filing draft builder
+- `regulatory_prompts/02_compliance_gap_assessment.json` — regulatory prompt: compliance gap assessment
+- `regulatory_prompts/02_raqa_integrated_quality_system_audit.json` — regulatory prompt: raqa integrated quality system audit
+- `regulatory_prompts/04_prompt_best_practices.json` — regulatory prompt: prompt best practices
+- `regulatory_prompts/03_ivd_performance_study_compliance_review.json` — regulatory prompt: ivd performance study compliance review
+- `regulatory_prompts/05_literature_regulatory_gap_analysis.json` — regulatory prompt: literature regulatory gap analysis
+- `regulatory_prompts/01_regulatory_change_impact_analysis.json` — regulatory prompt: regulatory change impact analysis
+- `regulatory_prompts/02_ivdr_pep_blueprint.json` — regulatory prompt: ivdr pep blueprint
+- `regulatory_prompts/03_qmsr_gap_analysis.json` — regulatory prompt: qmsr gap analysis
+- `project_management/01_project_charter_scope.json` — project management: project charter scope
+- `project_management/04_detailed_project_blueprint_timeline.json` — project management: detailed project blueprint timeline
+- `project_management/09_executive_sponsor_briefing_deck_outline.json` — project management: executive sponsor briefing deck outline
+- `project_management/07_clinical_trial_timeline_risk_radar.json` — project management: clinical trial timeline risk radar
+- `project_management/08_cross_study_risk_heat_map_mitigation_plan.json` — project management: cross study risk heat map mitigation plan
+- `project_management/07_portfolio_resource_budget_forecast.json` — project management: portfolio resource budget forecast
+- `project_management/06_status_update_task_prioritization.json` — project management: status update task prioritization
+- `project_management/05_risk_pre_mortem_analysis.json` — project management: risk pre mortem analysis
+- `project_management/02_risk_register_mitigation.json` — project management: risk register mitigation
+- `project_management/10_rollout_risk_matrix.json` — project management: rollout risk matrix
+- `project_management/10_neutral_scrum_retro.json` — project management: neutral scrum retro
+- `project_management/03_weekly_exec_status_report.json` — project management: weekly exec status report
+- `project_management/09_tmf_gap_analysis_audit_readiness_check.json` — project management: tmf gap analysis audit readiness check
+- `project_management/08_sponsor_ready_monthly_status_brief.json` — project management: sponsor ready monthly status brief
+- `starter_pack/01_project_starter_pack.json` — starter pack: project starter pack
+- `clinical_monitoring_prompts/02_capa_plan_builder_for_monitoring_findings.json` — clinical monitoring prompt: capa plan builder for monitoring findings
+- `clinical_monitoring_prompts/01_risk_based_site_performance_dashboard.json` — clinical monitoring prompt: risk based site performance dashboard
+- `clinical_monitoring_prompts/03_monitoring_visit_report_quality_critique.json` — clinical monitoring prompt: monitoring visit report quality critique
+- `codebase_analysis/SOLID_Codebase_Analysis.json` — codebase analysis: SOLID Codebase Analysis
+- `codebase_analysis/Maintainability_Codebase_Analysis.json` — codebase analysis: Maintainability Codebase Analysis
+- `codebase_analysis/DRY_Codebase_Analysis.json` — codebase analysis: DRY Codebase Analysis
+- `biological_safety_prompts/02_biological_safety_plan_developer.json` — biological safety prompt: biological safety plan developer
+- `biological_safety_prompts/04_bep_builder.json` — biological safety prompt: bep builder
+- `biological_safety_prompts/03_regulatory_submission_support.json` — biological safety prompt: regulatory submission support
+- `biological_safety_prompts/06_chemical_characterization_work_plan.json` — biological safety prompt: chemical characterization work plan
+- `biological_safety_prompts/05_comprehensive_test_matrix.json` — biological safety prompt: comprehensive test matrix
+- `biological_safety_prompts/01_risk_assessment_expert.json` — biological safety prompt: risk assessment expert
+- `pathology_prompts/02_device_tissue_interface_evaluation.json` — pathology prompt: device tissue interface evaluation
+- `pathology_prompts/01_study_protocol_outline.json` — pathology prompt: study protocol outline
+- `pathology_prompts/03_slides_and_reporting_workflow.json` — pathology prompt: slides and reporting workflow
+- `regulatory_quality_prompts/06_integrated_submission_strategy_coach.json` — regulatory quality prompt: integrated submission strategy coach
+- `regulatory_quality_prompts/05_inspection_readiness_drill_capa_builder.json` — regulatory quality prompt: inspection readiness drill capa builder
+- `regulatory_quality_prompts/04_regulatory_landscape_radar.json` — regulatory quality prompt: regulatory landscape radar
+- `regulatory_quality_prompts/03_quality_improvement_rca_action_plan.json` — regulatory quality prompt: quality improvement rca action plan
+- `regulatory_quality_prompts/05_capa_plan_generator.json` — regulatory quality prompt: capa plan generator
+- `regulatory_quality_prompts/06_risk_based_quality_management_plan.json` — regulatory quality prompt: risk based quality management plan
+- `regulatory_quality_prompts/04_etmf_compliance_gap_analysis.json` — regulatory quality prompt: etmf compliance gap analysis
+- `regulatory_quality_prompts/01_regulatory_radar.json` — regulatory quality prompt: regulatory radar
+- `regulatory_quality_prompts/02_compliance_gap_risk_matrix.json` — regulatory quality prompt: compliance gap risk matrix
+- `rtsm_prompts/01_patient_centered_randomization_scheme.json` — rtsm prompt: patient centered randomization scheme
+- `rtsm_prompts/02_site_level_supply_resupply_strategy.json` — rtsm prompt: site level supply resupply strategy
+- `rtsm_prompts/03_risk_based_monitoring_sop.json` — rtsm prompt: risk based monitoring sop
+- `testing_prompts/03_human_factors_validation_study_protocol.json` — testing prompt: human factors validation study protocol
+- `testing_prompts/01_e2e_test_discovery.json` — testing prompt: e2e test discovery
+- `testing_prompts/04_risk_based_test_case_suite.json` — testing prompt: risk based test case suite
+- `testing_prompts/02_design_verification_test_plan.json` — testing prompt: design verification test plan
+- `learning_development_prompts/04_npv_socratic_tutor.json` — learning development prompt: npv socratic tutor
+- `learning_development_prompts/03_training_impact_analytics_targeted_intervention_planner.json` — learning development prompt: training impact analytics targeted intervention planner
+- `learning_development_prompts/02_scenario_based_microlearning_series.json` — learning development prompt: scenario based microlearning series
+- `learning_development_prompts/01_competency_based_onboarding_blueprint.json` — learning development prompt: competency based onboarding blueprint
+- `payment_prompts/05_payment_reconciliation_discrepancy_report.json` — payment prompt: payment reconciliation discrepancy report
+- `payment_prompts/01_audit_ready_site_payment_schedule.json` — payment prompt: audit ready site payment schedule
+- `payment_prompts/03_payment_process_risk_assessment.json` — payment prompt: payment process risk assessment
+- `payment_prompts/04_investigator_site_payment_forecast.json` — payment prompt: investigator site payment forecast
+- `payment_prompts/02_sunshine_act_fmv_compliance_check.json` — payment prompt: sunshine act fmv compliance check
+- `payment_prompts/06_global_regulatory_tax_matrix.json` — payment prompt: global regulatory tax matrix
+- `communication_prompts/14_rubber_duck_debugger.json` — communication prompt: rubber duck debugger
+- `communication_prompts/11_analogy_architect.json` — communication prompt: analogy architect
+- `communication_prompts/11_negotiation_coach.json` — communication prompt: negotiation coach
+- `communication_prompts/02_tldr_summarizer.json` — communication prompt: tldr summarizer
+- `communication_prompts/03_80_20_crash_course.json` — communication prompt: 80 20 crash course
+- `communication_prompts/07_rapid_risk_matrix.json` — communication prompt: rapid risk matrix
+- `communication_prompts/05_devils_advocate_stress_test.json` — communication prompt: devils advocate stress test
+- `communication_prompts/12_scamper_ideation_coach.json` — communication prompt: scamper ideation coach
+- `communication_prompts/09_socratic_coach.json` — communication prompt: socratic coach
+- `communication_prompts/12_panel_debate.json` — communication prompt: panel debate
+- `communication_prompts/04_smart_task_prioritizer.json` — communication prompt: smart task prioritizer
+- `communication_prompts/13_empathy_map_facilitator.json` — communication prompt: empathy map facilitator
+- `communication_prompts/06_storyboard_my_idea.json` — communication prompt: storyboard my idea
+- `communication_prompts/11_density_refiner.json` — communication prompt: density refiner
+- `communication_prompts/01_explain_like_im_5.json` — communication prompt: explain like im 5
+- `communication_prompts/15_pitch_deck_outliner.json` — communication prompt: pitch deck outliner
+- `communication_prompts/08_data_to_insight_analyst.json` — communication prompt: data to insight analyst
+- `communication_prompts/10_red_team_stress_test.json` — communication prompt: red team stress test
+- `design_prompts/02_email_assistant_go_no_go_vote.json` — design prompt: email assistant go no go vote
+- `design_prompts/01_design_md_template.json` — design prompt: design md template
+- `agentic_coding/07_e2e_test_discovery.json` — agentic coding: e2e test discovery
+- `agentic_coding/01_product_brief.json` — agentic coding: product brief
+- `agentic_coding/05_project_review.json` — agentic coding: project review
+- `agentic_coding/03_technical_implementation_plan.json` — agentic coding: technical implementation plan
+- `agentic_coding/02_project_brief_epic.json` — agentic coding: project brief epic
+- `agentic_coding/07_requirements_prompt.json` — agentic coding: requirements prompt
+- `agentic_coding/07_folder_module_organization.json` — agentic coding: folder module organization
+- `agentic_coding/06_project_memory.json` — agentic coding: project memory
+- `agentic_coding/06_todo_generation.json` — agentic coding: todo generation
+- `agentic_coding/08_reflexion_agent_bug_patch.json` — agentic coding: reflexion agent bug patch
+- `agentic_coding/04_coding_session_guidelines.json` — agentic coding: coding session guidelines
+- `operations_prompts/04_operational_kpi_benchmark_review.json` — operations prompt: operational kpi benchmark review
+- `operations_prompts/04_study_startup_checklist.json` — operations prompt: study startup checklist
+- `operations_prompts/06_fair_market_value_budget_negotiation_brief.json` — operations prompt: fair market value budget negotiation brief
+- `operations_prompts/01_rapid_process_diagnostic.json` — operations prompt: rapid process diagnostic
+- `operations_prompts/05_proactive_risk_heat_map.json` — operations prompt: proactive risk heat map
+- `operations_prompts/04_rolling_resource_capacity_forecast.json` — operations prompt: rolling resource capacity forecast
+- `operations_prompts/03_kpi_dashboard_ops_review.json` — operations prompt: kpi dashboard ops review
+- `operations_prompts/04_operational_excellence_risk_sweep.json` — operations prompt: operational excellence risk sweep
+- `operations_prompts/06_action_oriented_meeting_minutes.json` — operations prompt: action oriented meeting minutes
+- `operations_prompts/02_inventory_demand_planning_simulation.json` — operations prompt: inventory demand planning simulation
+- `operations_prompts/04_cro_trial_performance_kpi_dashboard_blueprint.json` — operations prompt: cro trial performance kpi dashboard blueprint
+- `operations_prompts/05_multistudy_resource_capacity_forecast_plan.json` — operations prompt: multistudy resource capacity forecast plan
+- `operations_prompts/05_weekly_ops_kpi_snapshot.json` — operations prompt: weekly ops kpi snapshot
+- `operations_prompts/05_quarterly_kpi_executive_brief.json` — operations prompt: quarterly kpi executive brief
+- `operations_prompts/06_vendor_performance_improvement_plan.json` — operations prompt: vendor performance improvement plan
+- `operations_prompts/06_forward_capacity_forecast.json` — operations prompt: forward capacity forecast
+- `docs/prompt_schema.json` — documentation: prompt schema
+- `vp_statistics_prompts/03_data_quality_risk_heatmap.json` — vp statistics prompt: data quality risk heatmap
+- `vp_statistics_prompts/02_sap_first_draft_builder.json` — vp statistics prompt: sap first draft builder
+- `vp_statistics_prompts/01_interim_results_executive_brief.json` — vp statistics prompt: interim results executive brief
+- `self_improvement_prompts/04_learning_path_mentor.json` — self improvement prompt: learning path mentor
+- `self_improvement_prompts/01_career_compass_advisor.json` — self improvement prompt: career compass advisor
+- `self_improvement_prompts/05_writing_clarity_mentor.json` — self improvement prompt: writing clarity mentor
+- `self_improvement_prompts/03_micro_habit_health_coach.json` — self improvement prompt: micro habit health coach
+- `self_improvement_prompts/02_financial_navigator.json` — self improvement prompt: financial navigator
