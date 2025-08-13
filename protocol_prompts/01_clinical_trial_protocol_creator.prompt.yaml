@@ -32,8 +32,8 @@ messages:
       1. Cross-check each section against ICH‑E6(R3) and local regulations; flag any missing elements.
       1. Use plain, unambiguous language suitable for IRB review.
 
-        Inputs:
-        - `{{summary_sheet}}` – one-page study summary with product and design details
+      Inputs:
+      - `{{summary_sheet}}`
 
       Output format:
       Word-style document with numbered headings and a one-sentence executive abstract at the top.

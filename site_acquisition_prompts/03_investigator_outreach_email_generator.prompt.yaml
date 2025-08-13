@@ -20,14 +20,14 @@ messages:
       1. Briefly explain the CRO support provided, such as rapid start-up and dedicated CTAs.
       1. Close with a clear CTA linking to a 15‑minute introductory call.
 
-        Inputs:
-        - `{{investigator_name}}` – principal investigator's full name
-        - `{{site_name}}` – institution or site name
-        - `{{city_country}}` – site location
-        - `{{recent_relevant_trials}}` – notable recent trials at the site
-        - `{{unique_site_strength}}` – distinctive capability or resource
-        - `{{study_synopsis}}` – brief summary of the study
-        - `{{sponsor_name}}` – sponsoring company
+      Inputs:
+      - `{{investigator_name}}`
+      - `{{site_name}}`
+      - `{{city_country}}`
+      - `{{recent_relevant_trials}}`
+      - `{{unique_site_strength}}`
+      - `{{study_synopsis}}`
+      - `{{sponsor_name}}`
 
       Output format:
       JSON object with `subject_line` and `email_body` fields.

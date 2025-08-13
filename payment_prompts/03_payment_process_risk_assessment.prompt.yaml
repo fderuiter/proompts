@@ -23,10 +23,10 @@ messages:
       1. Use bullet lists and a text-based Gantt-style schedule.
       1. Ask clarifying questions if any workflow details are missing.
 
-        Inputs:
-        - `{{workflow_description}}` – description of current payment workflow
-        - `{{kpi_metrics}}` – key performance indicators and targets
-        - `{{technology_stack}}` – systems and tools in use
+      Inputs:
+      - `{{workflow_description}}`
+      - `{{kpi_metrics}}`
+      - `{{technology_stack}}`
 
       Output format:
       Bullet lists for risks and mitigations, followed by a plain-text roadmap table.

@@ -27,8 +27,8 @@ messages:
       1. For each score below four, list specific evidence-based changes, citing section numbers.
       1. Summarize the top three actionable improvements in a brief paragraph.
 
-        Inputs:
-        - `{{protocol_text_or_nct}}` – full protocol text or clinicaltrials.gov identifier
+      Inputs:
+      - `{{protocol_text_or_nct}}`
 
       Output format:
       - Table of scores with one-line rationales.

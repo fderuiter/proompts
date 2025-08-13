@@ -22,10 +22,10 @@ messages:
       1. Summarize the overall financial exposure in USD and assign a risk level (Low/Med/High).
       1. Confirm any data-quality questions before starting.
 
-        Inputs:
-        - `{{payment_ledger}}` – site payment ledger
-        - `{{cta_budget}}` – contracted budget amounts
-        - `{{site_queries}}` – outstanding site billing questions
+      Inputs:
+      - `{{payment_ledger}}`
+      - `{{cta_budget}}`
+      - `{{site_queries}}`
 
       Output format:
       - Markdown table with columns: `Site_ID \| Issue_Type \| Amount_USD \| Root_Cause \| Recommended_Action`.

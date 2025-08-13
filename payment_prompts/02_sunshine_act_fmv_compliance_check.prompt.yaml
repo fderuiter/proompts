@@ -26,10 +26,10 @@ messages:
       1. Summarize lines reviewed, percent reportable, and percent exceptions.
       1. Ask questions if thresholds or tables seem outdated.
 
-        Inputs:
-        - `{{payment_ledger_csv}}` – raw payment ledger CSV
-        - `{{fx_rates}}` – foreign-exchange rate table
-        - `{{fmv_table}}` – fair market value reference table
+      Inputs:
+      - `{{payment_ledger_csv}}`
+      - `{{fx_rates}}`
+      - `{{fmv_table}}`
 
       Output format:
       Two CSV-formatted tables followed by a short executive summary.
