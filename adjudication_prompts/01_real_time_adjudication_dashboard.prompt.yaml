@@ -17,13 +17,13 @@ messages:
   - role: user
     content: |-
       1. Draft a textual workflow diagram from site submission to final CEC decision.
-      1. Define the minimal data model for a role-based dashboard showing:
+      2. Define the minimal data model for a role-based dashboard showing:
          - event aging in days
          - disagreement rate
          - percentage of dossiers missing required documents
          - adjudicator workload
-      1. List five automated alerts or reminders that reduce turnaround time.
-      1. Recommend two commercial or open-source eAdjudication platforms and justify the choice.
+      3. List five automated alerts or reminders that reduce turnaround time.
+      4. Recommend two commercial or open-source eAdjudication platforms and justify the choice.
 
       Output format:
       - **Section 1:** Workflow diagram

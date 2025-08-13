@@ -15,11 +15,11 @@ messages:
   - role: user
     content: |-
       1. Ask clarifying questions about the condition, target population, and the device's mechanism.
-      1. Propose inclusion and exclusion criteria with clinical rationale.
-      1. Suggest primary and two sensible secondary endpoints.
-      1. Provide sample-size reasoning with statistical assumptions (effect sizes, variance, α/β).
-      1. Describe handling of multiplicity or censoring.
-      1. Conclude with relevant regulatory references (ICH-GCP, FDA guidance).
+      2. Propose inclusion and exclusion criteria with clinical rationale.
+      3. Suggest primary and two sensible secondary endpoints.
+      4. Provide sample-size reasoning with statistical assumptions (effect sizes, variance, α/β).
+      5. Describe handling of multiplicity or censoring.
+      6. Conclude with relevant regulatory references (ICH-GCP, FDA guidance).
 
       Inputs:
       - `{{device_description}}`
