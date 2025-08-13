@@ -4,15 +4,11 @@ name: Fix Markdown Issues
 on:
   push:
     paths:
-      - '**/*.prompt.yaml'
-      - '**/*.prompt.yml'
       - '**/*.json'
       - '.github/workflows/fix-markdown-issues.yml'
       - 'scripts/fix_markdown_issues.py'
   pull_request:
     paths:
-      - '**/*.prompt.yaml'
-      - '**/*.prompt.yml'
       - '**/*.json'
       - '.github/workflows/fix-markdown-issues.yml'
       - 'scripts/fix_markdown_issues.py'
@@ -34,7 +30,7 @@ jobs:
         run: python3 scripts/fix_markdown_issues.py
       - name: Update docs index
         run: python3 scripts/update_docs_index.py
-      - name: Validate prompts
+      - name: Validate JSON
         run: ./scripts/validate_json.sh
       - name: Check for changes
         id: diff
