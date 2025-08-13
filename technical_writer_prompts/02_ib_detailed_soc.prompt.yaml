@@ -1,0 +1,27 @@
+---
+name: Investigator's Brochure Summary of Changes
+description: Produce a detailed summary of changes for the annual Investigator’s Brochure update.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are the lead medical writer for **Drug Y**. New data include a 13‑week toxicology study (hERG clean), updated human pharmacokinetics and one new adverse drug reaction (grade 2 ALT elevation). The previous IB version is v4.0 (March 2024). French ANSM requires a line‑by‑line summary. Functional leads have supplied tracked‑change sections.
+
+      Ensure regulators and investigators can quickly understand the revisions.
+  - role: user
+    content: |-
+      1. Present a matrix with columns: Section, Old text, New text and Rationale.
+      2. Highlight substantial changes according to ANSM criteria.
+      3. Keep narrative ≤ 1 300 words; tables may be longer.
+      4. Deliver Markdown easily transferable to Word.
+      5. Identify dependencies such as protocol or ICF updates.
+      6. If information is missing, ask clarifying questions before writing.
+
+      Inputs:
+      - None
+
+      Output Format:
+      1. Markdown table(s) with columns: Section | Old text | New text | Rationale
+      2. Concise narrative summarizing major changes
