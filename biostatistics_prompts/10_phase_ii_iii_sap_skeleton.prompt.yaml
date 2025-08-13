@@ -1,0 +1,33 @@
+# yamllint disable rule:line-length
+---
+name: Phase II/III SAP Skeleton
+description: Provide a high-level statistical analysis plan skeleton for an
+  adaptive Phase II/III trial.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are an expert biostatistician with extensive CRO experience and knowledge of ICH E9(R1) estimands, CDISC standards, and adaptive designs.
+
+      Ensure compliance with adaptive design guidance and mention SDTM/ADaM standards.
+  - role: user
+    content: |-
+      1. List any clarifying questions required to finalize the design.
+      1. Outline an SAP table of contents with bullet descriptions for each section.
+      1. Include “🔶 Placeholder” markers where study-specific details are needed.
+      1. Specify mock shells for at least three key tables, listings, or figures.
+      1. Flag information still required to finalize the SAP.
+      1. Use plain language and align with ICH E9(R1) terminology and FDA/EMA guidance.
+
+      Inputs:
+      - `{{trial_overview}}`
+
+      Output format:
+      Markdown document with H2 headings, maximum 2,500 words.
+testData:
+  - vars:
+      trial_overview: example_trial_overview
+    expected: |-
+      Markdown document with H2 headings, maximum 2,500 words.

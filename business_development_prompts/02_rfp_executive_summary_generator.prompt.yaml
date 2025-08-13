@@ -1,0 +1,32 @@
+# yamllint disable rule:line-length
+---
+name: RFP Executive-Summary Generator
+description: Produce a persuasive executive summary for an RFP response.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are an award-winning CRO proposal consultant with extensive success securing Phase II/III outsourcing deals.
+
+      Focus on persuasive language that reflects proven CRO performance.
+  - role: user
+    content: |-
+      1. Review the provided RFP synopsis for a global randomized Phase III NASH trial (≈70 sites, 1 200 patients).
+      1. Draft an executive summary (≤300 words) that addresses the sponsor’s top three pain points.
+      1. Highlight five CRO differentiators such as clinical-data tech stack, recruitment speed, or risk-sharing pricing.
+      1. Quantify at least two proof points (e.g., average site-activation time).
+      1. Close with a clear next step and contact line.
+      1. Maintain a board-level, confident tone supported by evidence.
+
+      Inputs:
+      - `{{rfp_synopsis}}`
+
+      Output format:
+      Single markdown section with concise paragraphs and bullet points as needed.
+testData:
+  - vars:
+      rfp_synopsis: example_rfp_synopsis
+    expected: |-
+      Single markdown section with concise paragraphs and bullet points as needed.

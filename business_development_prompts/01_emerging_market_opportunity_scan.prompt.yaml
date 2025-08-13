@@ -1,0 +1,31 @@
+# yamllint disable rule:line-length
+---
+name: Emerging-Market Opportunity Scan
+description: Identify high-growth therapeutic areas or sponsor segments for CRO
+  services.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a senior life-sciences market-intelligence analyst. Our CRO specializes in fast-recruiting Phase II/III oncology trials.
+
+      Focus on actionable insights relevant to a mid-size CRO.
+  - role: user
+    content: |-
+      1. Analyse recent clinical-trial start data, venture funding, and M&A activity from January 2024 onward.
+      1. Highlight the top three opportunities expected to grow outsourcing spend by >30 % in the next 18 months.
+      1. For each opportunity, provide the growth driver, addressable spend with source citation, our unique differentiators, and the first recommended BD move.
+      1. Summarize findings in a one-page executive briefing.
+
+      Inputs:
+      - `{{market_data_sources}}`
+
+      Output format:
+      Concise executive summary with bullet points and a short table if helpful.
+testData:
+  - vars:
+      market_data_sources: example_market_data_sources
+    expected: |-
+      Concise executive summary with bullet points and a short table if helpful.

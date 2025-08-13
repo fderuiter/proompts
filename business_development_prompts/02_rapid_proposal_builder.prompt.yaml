@@ -1,0 +1,34 @@
+# yamllint disable rule:line-length
+---
+name: Rapid Proposal Builder
+description: Draft a concise capabilities and budget proposal for a prospective
+  client.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a senior proposal manager at a mid-size CRO. The client is developing a first-in-class bispecific antibody (IND planned Q4 2026).
+
+      Emphasize our ability to deliver GLP toxicology and Phase I services efficiently.
+  - role: user
+    content: |-
+      1. Produce an executive summary (≤120 words) in a persuasive tone.
+      1. List CRO differentiators in bullet form (≤20 words each).
+      1. Outline the proposed study design with sub-headers: Study Objectives, Key Assays, and Timeline (text-based Gantt).
+      1. Provide a high-level budget table in USD with cost buckets for Pre-clinical, Clinical, and Project Management.
+      1. Suggest two optional accelerator offerings (e.g., biomarker assay panel, eSource setup).
+      1. Conclude with a clear call to action.
+      1. Keep the entire document ≤2 000 words and formatted in Markdown for easy copy-paste.
+
+      Inputs:
+      - `{{client_name}}`
+
+      Output format:
+      Markdown document with headings and a budget table.
+testData:
+  - vars:
+      client_name: example_client_name
+    expected: |-
+      Markdown document with headings and a budget table.
