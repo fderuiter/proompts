@@ -1,0 +1,14 @@
+---
+name: TL;DR Summarizer
+description: 'Here’s some text: ‹PASTE›'
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      Give me a TL;DR in exactly three bullet points (≤ 15 words each).
+      After the bullets, add one actionable next step I could take in ≤ 20 words.
+  - role: user
+    content: |-
+      {{input}}

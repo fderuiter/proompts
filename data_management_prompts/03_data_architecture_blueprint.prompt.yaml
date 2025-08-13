@@ -1,0 +1,12 @@
+---
+name: Data Architecture Blueprint
+description: Draft a blueprint for clinical data architecture.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+  - role: user
+    content: |-
+      {{input}}

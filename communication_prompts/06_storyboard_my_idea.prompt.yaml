@@ -1,0 +1,15 @@
+---
+name: Storyboard-My-Idea
+description: 'Storyboard “[PROJECT OR MESSAGE]” for a 60-second explainer video:'
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      1. Generate exactly 6 frames.
+      2. For each frame give (a) scene description, (b) on-screen text ≤ 15 words, (c) suggested voice-over ≤ 20 words.
+      3. End with a one-sentence emotional takeaway for the viewer.
+  - role: user
+    content: |-
+      {{input}}

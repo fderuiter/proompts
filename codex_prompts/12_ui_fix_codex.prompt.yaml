@@ -1,0 +1,23 @@
+---
+name: UI Tweak & Verification (OpenAI Codex)
+description: Resolve a minor UI regression and confirm the fix with build or 
+  test steps.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      - Caller supplies path to the affected component or styles.
+      - Front-end build commands are available (e.g., `npm test`, `npm run build`).
+
+      1. Inspect {{component_path}} for layout issues.
+      2. Adjust styles or markup to achieve the requested change (e.g., centering a modal).
+      3. Run frontend linters and build/tests to verify.
+      4. Provide before/after snippets for the relevant CSS/HTML.
+      5. Mention any accessibility impacts introduced or resolved.
+
+      If visual confirmation is required, describe expected appearance in words or ASCII.
+  - role: user
+    content: |-
+      {{input}}

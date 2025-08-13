@@ -1,0 +1,12 @@
+---
+name: Regulatory Gap Analysis
+description: Assess regulatory compliance gaps in trial data processes.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+  - role: user
+    content: |-
+      {{input}}

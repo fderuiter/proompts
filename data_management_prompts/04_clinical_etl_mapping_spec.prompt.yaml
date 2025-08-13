@@ -1,0 +1,12 @@
+---
+name: Clinical ETL Mapping Spec
+description: Create an ETL mapping specification for clinical data.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+  - role: user
+    content: |-
+      {{input}}
