@@ -411,34 +411,54 @@
 ## Study Director Prompts
 
 - [Draft a GLP-Compliant Study Protocol](../study_director_prompts/01_draft_glp_compliant_study_protocol.json)
+- [Draft a GLP-Compliant Study Protocol](../study_director_prompts/01_draft_glp_compliant_study_protocol.prompt.yaml)
 - [Audit Raw Data and Draft a CAPA Summary](../study_director_prompts/02_audit_raw_data_capa_summary.json)
+- [Audit Raw Data and Draft a CAPA Summary](../study_director_prompts/02_audit_raw_data_capa_summary.prompt.yaml)
 - [Generate an Executive Summary for the Final Report](../study_director_prompts/03_executive_summary_final_report.json)
+- [Generate an Executive Summary for the Final Report](../study_director_prompts/03_executive_summary_final_report.prompt.yaml)
 
 ## Technical Writer Prompts
 
 - [CSR Results and Safety Section](../technical_writer_prompts/01_csr_results_safety_section.json)
+- [CSR Results and Safety Section](../technical_writer_prompts/01_csr_results_safety_section.prompt.yaml)
 - [Investigator's Brochure Summary of Changes](../technical_writer_prompts/02_ib_detailed_soc.json)
+- [Investigator's Brochure Summary of Changes](../technical_writer_prompts/02_ib_detailed_soc.prompt.yaml)
 - [SAE and Unanticipated Problem Reporting SOP](../technical_writer_prompts/03_sae_reporting_sop.json)
+- [SAE and Unanticipated Problem Reporting SOP](../technical_writer_prompts/03_sae_reporting_sop.prompt.yaml)
 
 ## Testing Prompts
 
 - [E2E Test Discovery Template](../testing_prompts/01_e2e_test_discovery.json)
+- [E2E Test Discovery Template](../testing_prompts/01_e2e_test_discovery.prompt.yaml)
 - [Design Verification Test Plan](../testing_prompts/02_design_verification_test_plan.json)
+- [Design Verification Test Plan](../testing_prompts/02_design_verification_test_plan.prompt.yaml)
 - [Human Factors Validation Study Protocol](../testing_prompts/03_human_factors_validation_study_protocol.json)
+- [Human Factors Validation Study Protocol](../testing_prompts/03_human_factors_validation_study_protocol.prompt.yaml)
 - [Risk-Based Test Case Suite](../testing_prompts/04_risk_based_test_case_suite.json)
+- [Risk-Based Test Case Suite](../testing_prompts/04_risk_based_test_case_suite.prompt.yaml)
 
 ## Trial Execution Prompts
 
 - [Protocol Optimization and Risk Simulation](../trial_execution_prompts/01_protocol_optimization_risk_simulation.json)
+- [Protocol Optimization and Risk Simulation](../trial_execution_prompts/01_protocol_optimization_risk_simulation.prompt.yaml)
 - [AI-Powered Site and Recruitment Strategy](../trial_execution_prompts/02_ai_powered_site_recruitment.json)
+- [AI-Powered Site and Recruitment Strategy](../trial_execution_prompts/02_ai_powered_site_recruitment.prompt.yaml)
 - [Compliance and Data Quality Monitoring Plan](../trial_execution_prompts/03_compliance_data_quality_monitoring_plan.json)
+- [Compliance and Data Quality Monitoring Plan](../trial_execution_prompts/03_compliance_data_quality_monitoring_plan.prompt.yaml)
 - [Adaptive Recruitment and Retention Strategy](../trial_execution_prompts/04_adaptive_recruitment_retention_strategy.json)
+- [Adaptive Recruitment and Retention Strategy](../trial_execution_prompts/04_adaptive_recruitment_retention_strategy.prompt.yaml)
 - [Portfolio-Level Clinical Operations Roadmap](../trial_execution_prompts/05_portfolio_clin_ops_roadmap.json)
+- [Portfolio-Level Clinical Operations Roadmap](../trial_execution_prompts/05_portfolio_clin_ops_roadmap.prompt.yaml)
 - [Risk-Based Monitoring and Quality Plan](../trial_execution_prompts/06_risk_based_monitoring_plan.json)
+- [Risk-Based Monitoring and Quality Plan](../trial_execution_prompts/06_risk_based_monitoring_plan.prompt.yaml)
 - [Patient Recruitment and Diversity Acceleration Plan](../trial_execution_prompts/07_recruitment_diversity_acceleration.json)
+- [Patient Recruitment and Diversity Acceleration Plan](../trial_execution_prompts/07_recruitment_diversity_acceleration.prompt.yaml)
 
 ## Vp Statistics Prompts
 
 - [Interim Results Executive Brief](../vp_statistics_prompts/01_interim_results_executive_brief.json)
+- [Interim Results Executive Brief](../vp_statistics_prompts/01_interim_results_executive_brief.prompt.yaml)
 - [Statistical Analysis Plan Draft Builder](../vp_statistics_prompts/02_sap_first_draft_builder.json)
+- [Statistical Analysis Plan Draft Builder](../vp_statistics_prompts/02_sap_first_draft_builder.prompt.yaml)
 - [Data-Quality Risk Heat Map](../vp_statistics_prompts/03_data_quality_risk_heatmap.json)
+- [Data-Quality Risk Heat Map](../vp_statistics_prompts/03_data_quality_risk_heatmap.prompt.yaml)
