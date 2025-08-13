@@ -1,0 +1,12 @@
+---
+name: Decentralized Trial Risk Matrix
+description: Build a risk matrix for decentralized trials.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+  - role: user
+    content: |-
+      {{input}}

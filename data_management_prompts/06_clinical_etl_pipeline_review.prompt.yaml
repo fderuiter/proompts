@@ -1,0 +1,12 @@
+---
+name: Clinical ETL Pipeline Review
+description: Review the clinical ETL pipeline for accuracy and efficiency.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+  - role: user
+    content: |-
+      {{input}}
