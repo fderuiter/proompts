@@ -15,9 +15,9 @@ messages:
   - role: user
     content: |-
       1. Identify potential biological hazards (e.g., cytotoxicity, sensitization, leachables).
-      2. Evaluate likelihood and severity of each hazard.
-      3. Recommend testing strategies and mitigation controls (e.g., materials selection, design modifications).
-      4. Summarize findings in a structured table.
+      1. Evaluate likelihood and severity of each hazard.
+      1. Recommend testing strategies and mitigation controls (e.g., materials selection, design modifications).
+      1. Summarize findings in a structured table.
 
       Inputs:
       - `{{medical_device_type}}` — description of the device under assessment

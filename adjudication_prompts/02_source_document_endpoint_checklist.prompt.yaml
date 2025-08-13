@@ -16,9 +16,9 @@ messages:
   - role: user
     content: |-
       1. For each endpoint, build a checklist of required documents including imaging, labs, and narrative notes with formatting rules.
-      2. Convert each endpoint definition into binary inclusion or exclusion criteria.
-      3. Suggest concise form-field wording (≤50 characters) for EDC alignment.
-      4. Flag ambiguous language in the draft charter that needs clarification from the sponsor.
+      1. Convert each endpoint definition into binary inclusion or exclusion criteria.
+      1. Suggest concise form-field wording (≤50 characters) for EDC alignment.
+      1. Flag ambiguous language in the draft charter that needs clarification from the sponsor.
 
       Inputs:
       - `{{charter_excerpt}}` – relevant sections of the adjudication charter.

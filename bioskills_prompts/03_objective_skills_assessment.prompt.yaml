@@ -15,8 +15,8 @@ messages:
   - role: user
     content: |-
       1. Select 6–8 measurable criteria that demonstrate proficiency.
-      2. Define pass thresholds for each criterion.
-      3. Present the checklist in a table.
+      1. Define pass thresholds for each criterion.
+      1. Present the checklist in a table.
 
       Inputs:
       - `{{procedure_name}}` — specific stapler procedure if provided

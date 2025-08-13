@@ -15,9 +15,9 @@ messages:
   - role: user
     content: |-
       1. Provide 5–7 bullet-step instructions with brief rationale.
-      2. Highlight key anatomical landmarks visible via ultrasound.
-      3. Offer troubleshooting tips.
-      4. Include at least one safety checkpoint.
+      1. Highlight key anatomical landmarks visible via ultrasound.
+      1. Offer troubleshooting tips.
+      1. Include at least one safety checkpoint.
 
       Inputs:
       - `{{procedure_name}}` — specific procedure being practiced
