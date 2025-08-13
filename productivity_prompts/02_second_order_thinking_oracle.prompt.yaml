@@ -1,0 +1,29 @@
+---
+name: Second-Order Thinking Oracle
+description: >-
+  Assess first- and second-order effects of a decision.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >-
+      The user wants a short analysis of expected outcomes over time.
+
+
+      Assess first- and second-order effects of a decision.
+  - role: user
+    content: |-
+      1. Create a table with rows for Now, 6 months and 2 years.
+      1. Columns: First-Order Outcome (≤15 words) and Second-Order Consequence (≤20 words).
+      1. Rate the net strategic value from -5 to +5.
+      1. If the score is negative, provide a 40-word mitigation plan.
+
+      Inputs:
+      - `{{decision}}`: the decision under review.
+
+      Output format:
+      Markdown table followed by the score and optional mitigation plan.
+
+      Additional notes:
+      Keep the entire response under 140 words and use plain language.
