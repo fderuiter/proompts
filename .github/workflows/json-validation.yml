@@ -1,0 +1,29 @@
+name: Prompt Validation
+# Ensure prompt YAML/JSON and Markdown docs remain valid
+
+on:
+  push:
+    paths:
+      - '**/*.prompt.yaml'
+      - '**/*.prompt.yml'
+      - '**/*.json'
+      - '.github/workflows/json-validation.yml'
+      - 'scripts/validate_json.sh'
+  pull_request:
+    paths:
+      - '**/*.prompt.yaml'
+      - '**/*.prompt.yml'
+      - '**/*.json'
+      - '.github/workflows/json-validation.yml'
+      - 'scripts/validate_json.sh'
+
+jobs:
+  prompt-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+      - name: Validate prompts
+        run: |
+          ./scripts/validate_json.sh
