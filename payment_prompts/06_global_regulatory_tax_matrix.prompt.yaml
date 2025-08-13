@@ -1,0 +1,29 @@
+---
+name: Global Regulatory and Tax Matrix for Site Payments
+description: >-
+  Summarize key payment compliance requirements across major regions.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: >-
+      You are a senior regulatory payments expert compiling rules for the
+      U.S., EU (CTR 536/2014), U.K., Japan, and Australia.
+
+
+      Summarize key payment compliance requirements across major regions.
+  - role: user
+    content: |-
+      1. Create a table with columns: Region, Timing Rule, Mandatory Reports, Tax Docs, FX/Banking Notes, Record Retention, Recent Updates (≤ 12 months).
+      2. Provide a short commentary (≤150 words) on emerging trends such as heightened scrutiny of cross-border payments.
+      3. Ask clarifying questions if any requirement is ambiguous.
+
+      Inputs:
+      - `{{regional_guidelines}}` – any additional region-specific documents.
+
+      Output format:
+      Markdown table plus a short commentary paragraph.
+
+      Additional notes:
+      Keep language concise and reference official guidance where possible.

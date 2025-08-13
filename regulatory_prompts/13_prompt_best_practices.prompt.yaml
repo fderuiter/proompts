@@ -1,0 +1,32 @@
+---
+name: Prompt-Writing Best-Practice Checklist
+description: >-
+  Summarize key elements of effective prompt design.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: >-
+      Use these tips when crafting regulatory prompts or other instructions
+      for AI assistants.
+
+
+      Summarize key elements of effective prompt design.
+  - role: user
+    content: |-
+      - **Clear role and expertise** – narrows style and vocabulary.
+      - **Rich context placeholders** – `<<< … >>>` signals the user to supply project‑specific data.
+      - **Explicit clarifying‑question step** – prevents hallucinations and promotes iterative accuracy.
+      - **Structured output instructions** – headings, tables, word limits, risk registers, etc.
+      - **Citation request** – encourages verifiable answers.
+      - **Concise, actionable deliverables** – aligns with consultant workflows.
+
+      Inputs:
+      None.
+
+      Output format:
+      N/A – this file is informational.
+
+      Additional notes:
+      Adapt these points to fit the specific regulatory context.

@@ -1,0 +1,29 @@
+---
+name: Hero's Journey Storyboarder
+description: >-
+  Craft a brief marketing narrative following the Hero's Journey structure.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >-
+      The user provides a product or service to feature. Keep the style
+      friendly.
+
+
+      Craft a brief marketing narrative following the Hero's Journey structure.
+  - role: user
+    content: |-
+      1. Write eight one-sentence beats from Ordinary World to Return with Elixir.
+      2. Bold each beat title.
+      3. After the beats, give a 25-word brand takeaway and one call to action.
+
+      Inputs:
+      - `{{product}}`: name of the product or service.
+
+      Output format:
+      Short paragraphs in markdown totalling no more than 140 words.
+
+      Additional notes:
+      Kid-friendly tone is optional.

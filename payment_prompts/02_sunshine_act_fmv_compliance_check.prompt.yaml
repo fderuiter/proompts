@@ -1,0 +1,38 @@
+---
+name: Sunshine Act and FMV Compliance Check
+description: >-
+  Audit site-payment data for Sunshine Act reporting and FMV adherence.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: >-
+      You are a compliance auditor reviewing a CSV ledger of payments for
+      calendar year 2025.
+
+
+      Audit site-payment data for Sunshine Act reporting and FMV adherence.
+  - role: user
+    content: |-
+      1. Load the CSV and normalize currency to USD using the provided FX rates.
+      2. For each line item:
+         - Determine if a single payment ≥ $13.46 or annual aggregate > $134.54.
+         - Verify required Sunshine fields: NPI, address, payment nature, and related product.
+         - Compare investigator fees to FMV benchmarks (±10 %).
+      3. Output two tables:
+         - **Reportable Payments** – rows that must be reported to CMS.
+         - **Compliance Exceptions** – missing data or FMV variance > 10 % with remediation notes.
+      4. Summarize lines reviewed, percent reportable, and percent exceptions.
+      5. Ask questions if thresholds or tables seem outdated.
+
+        Inputs:
+        - `{{payment_ledger_csv}}` – raw payment ledger CSV
+        - `{{fx_rates}}` – foreign-exchange rate table
+        - `{{fmv_table}}` – fair market value reference table
+
+      Output format:
+      Two CSV-formatted tables followed by a short executive summary.
+
+      Additional notes:
+      Use clear column headers so the tables can be imported without modification.
