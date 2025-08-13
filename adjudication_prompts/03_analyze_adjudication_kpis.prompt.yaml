@@ -19,8 +19,8 @@ messages:
          - median and 90th percentile cycle time from event trigger to final decision
          - reviewer disagreement rate
          - top three root causes of delays inferred from status fields
-      1. Create bar charts for each metric and save them as PNGs.
-      1. Recommend at least five concrete process changes tied to these metrics that would achieve the target reduction.
+      2. Create bar charts for each metric and save them as PNGs.
+      3. Recommend at least five concrete process changes tied to these metrics that would achieve the target reduction.
 
       Inputs:
       - `{{adjudication_log.csv}}` – event log export

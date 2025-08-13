@@ -15,9 +15,9 @@ messages:
   - role: user
     content: |-
       1. Identify potential biological hazards.
-      1. Evaluate likelihood and severity of each hazard.
-      1. Recommend testing strategies and mitigation controls.
-      1. Provide a structured summary table.
+      2. Evaluate likelihood and severity of each hazard.
+      3. Recommend testing strategies and mitigation controls.
+      4. Provide a structured summary table.
 
       Inputs:
       - `{{medical_device_type}}` — description of the device
