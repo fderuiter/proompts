@@ -2,6 +2,10 @@
 
 This document outlines the tasks required to migrate existing JSON prompts to the `.prompt.yaml` format while retaining the original JSON files for reference.
 
+Legacy JSON prompts remain in the repository for backward compatibility. Contributors
+should continue to update these JSON files alongside their YAML counterparts until
+the legacy format is fully phased out.
+
 ## Migration Tasks
 
 1. **Inventory all JSON prompts**
