@@ -22,5 +22,12 @@ messages:
       Output Format:
       1. Executive slide outline (bulleted)
       2. Editable risk register in a Markdown table
-testData: []
-evaluators: []
+testData:
+  - input: |
+      Create plan.
+    expected: |
+      risk register
+evaluators:
+  - name: Notes escalation workflow
+    string:
+      contains: "communication matrix"

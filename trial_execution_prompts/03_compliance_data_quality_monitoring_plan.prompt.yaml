@@ -26,5 +26,12 @@ messages:
       - **Part A:** Alert list (type, trigger condition)
       - **Part B:** Review schedule (who and how often)
       - **Part C:** Reporting plan (frequency, content, recipients)
-testData: []
-evaluators: []
+testData:
+  - input: |
+      Generate monitoring plan.
+    expected: |
+      Part A:
+evaluators:
+  - name: Mentions reporting plan
+    string:
+      contains: "Part C"
