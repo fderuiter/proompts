@@ -6,6 +6,20 @@
 - [Source Document and Endpoint Checklist](../adjudication_prompts/02_source_document_endpoint_checklist.prompt.yaml)
 - [Analyze Adjudication KPIs](../adjudication_prompts/03_analyze_adjudication_kpis.prompt.yaml)
 
+## Agentic Coding
+
+- [Product Brief Template](../agentic_coding/01_product_brief.prompt.yaml)
+- [Project Brief for Epic](../agentic_coding/02_project_brief_epic.prompt.yaml)
+- [Technical Implementation Plan](../agentic_coding/03_technical_implementation_plan.prompt.yaml)
+- [Coding Session Guidelines](../agentic_coding/04_coding_session_guidelines.prompt.yaml)
+- [Project Review Checklist](../agentic_coding/05_project_review.prompt.yaml)
+- [Project Memory Notes](../agentic_coding/06_project_memory.prompt.yaml)
+- [To-Do List Template](../agentic_coding/06_todo_generation.prompt.yaml)
+- [E2E Test Discovery Template](../agentic_coding/07_e2e_test_discovery.prompt.yaml)
+- [Folder and Module Organization](../agentic_coding/07_folder_module_organization.prompt.yaml)
+- [RequirementsBot Prompt](../agentic_coding/07_requirements_prompt.prompt.yaml)
+- [Reflexion Agent Bug Patch](../agentic_coding/08_reflexion_agent_bug_patch.prompt.yaml)
+
 ## Biological Safety Prompts
 
 - [Risk Assessment Expert](../biological_safety_prompts/01_risk_assessment_expert.prompt.yaml)
@@ -98,6 +112,12 @@
 - [Clinical Safety Synopsis for EU MDR CER](../clinical_safety_prompts/01_eu_cer_clinical_safety_synopsis.prompt.yaml)
 - [FDA MDR/MDV Adverse-Event Narrative](../clinical_safety_prompts/02_fda_mdr_adverse_event_narrative.prompt.yaml)
 - [Post-Market Safety Signal Trending](../clinical_safety_prompts/03_post_market_safety_signal_trending.prompt.yaml)
+
+## Codebase Analysis
+
+- [DRY Codebase Analysis](../codebase_analysis/DRY_Codebase_Analysis.prompt.yaml)
+- [Maintainability Codebase Analysis](../codebase_analysis/Maintainability_Codebase_Analysis.prompt.yaml)
+- [SOLID Codebase Analysis](../codebase_analysis/SOLID_Codebase_Analysis.prompt.yaml)
 
 ## Codex Prompts
 
@@ -317,6 +337,10 @@
 - [TMF Gap-Analysis and Audit Readiness Check](../project_management/09_tmf_gap_analysis_audit_readiness_check.prompt.yaml)
 - [Neutral Scrum Retrospective Facilitator](../project_management/10_neutral_scrum_retro.prompt.yaml)
 - [Rollout Risk Matrix](../project_management/10_rollout_risk_matrix.prompt.yaml)
+
+## Prompt Tools
+
+- [Prompt Optimizer 1.0](../prompt_tools/L5_prompt_optimizer.prompt.yaml)
 
 ## Protocol Prompts
 
