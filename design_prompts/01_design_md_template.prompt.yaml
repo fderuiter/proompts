@@ -1,6 +1,6 @@
 ---
 name: Design.md Template
-description: Generate a design.md template capturing problem, constraints, and 
+description: Generate a design.md template capturing problem, constraints, and
   decisions.
 model: gpt-4o
 modelParameters:
@@ -13,5 +13,15 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |
+      Design a microservice for processing image uploads.
+    expected: |
+      Template includes sections: Problem, Constraints, and Key Decisions.
+evaluators:
+  - name: Contains Problem section
+    string:
+      contains: "## Problem"
+  - name: Contains Key Decisions section
+    string:
+      contains: "## Key Decisions"
