@@ -1,6 +1,6 @@
 ---
 name: Monitoring-Visit Report Generator
-description: Draft a monitoring visit report summarizing on-site activities, 
+description: Draft a monitoring visit report summarizing on-site activities,
   findings, follow-ups, and attachments.
 model: gpt-4
 modelParameters:
@@ -29,5 +29,15 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      Study: P123 – Novel Therapy
+      Site No./PI: 101 – Dr. Greene
+      Visit Type: Interim on 2024-05-10
+      Key observations: IP storage temp deviation
+      Outstanding issues: Update delegation log
+    expected: 1. **High-level Summary**
+evaluators:
+  - name: Output starts with High-level Summary section
+    string:
+      startsWith: '1. **High-level Summary**'
