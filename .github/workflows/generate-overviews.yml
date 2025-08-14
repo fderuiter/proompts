@@ -15,6 +15,9 @@ on:
       - '.github/workflows/generate-overviews.yml'
       - 'scripts/generate_overviews.py'
 
+permissions:
+  contents: write
+
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -43,7 +46,7 @@ jobs:
             echo "changed=1" >> "$GITHUB_OUTPUT"
           fi
       - name: Commit and push changes
-        if: steps.diff.outputs.changed == '1'
+        if: github.event_name == 'push' && steps.diff.outputs.changed == '1'
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
