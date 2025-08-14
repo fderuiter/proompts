@@ -1,6 +1,6 @@
 ---
 name: Investigator Follow-up Email & Action-Item Tracker
-description: Compose a follow-up email to the PI summarizing visit findings and 
+description: Compose a follow-up email to the PI summarizing visit findings and
   action items, plus a tracking table.
 model: gpt-4
 modelParameters:
@@ -30,5 +30,15 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      Study/Site: ABC123 — Site 002
+      Visit date: 2024-06-15
+      Pending actions:
+      • Update safety log → Action needed by 2024-06-30
+      • Submit deviation report → Action needed by 2024-07-05
+    expected: Dear
+evaluators:
+  - name: Output starts with a greeting
+    string:
+      startsWith: 'Dear'
