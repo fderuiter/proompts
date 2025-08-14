@@ -17,5 +17,15 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |
+      Prepare validation checklist for integrating wearable device data.
+    expected: |
+      Checklist noting 21 CFR Part 11 and GDPR requirements with supporting evidence artifacts.
+evaluators:
+  - name: References 21 CFR Part 11
+    string:
+      contains: "21 CFR Part 11"
+  - name: Mentions GDPR
+    string:
+      contains: GDPR
