@@ -8,12 +8,14 @@ on:
       - '**/*.prompt.yml'
       - '.github/workflows/repo-checks.yml'
       - 'scripts/check_prompts.py'
+      - 'scripts/validate_prompt_schema.py'
   pull_request:
     paths:
       - '**/*.prompt.yaml'
       - '**/*.prompt.yml'
       - '.github/workflows/repo-checks.yml'
       - 'scripts/check_prompts.py'
+      - 'scripts/validate_prompt_schema.py'
 
 jobs:
   verify:
@@ -26,3 +28,5 @@ jobs:
           python-version: '3.x'
       - name: Run repository checks
         run: python3 scripts/check_prompts.py
+      - name: Validate prompt schema
+        run: python3 scripts/validate_prompt_schema.py
