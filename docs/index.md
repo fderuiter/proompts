@@ -6,6 +6,20 @@
 - [Source Document and Endpoint Checklist](../adjudication_prompts/02_source_document_endpoint_checklist.prompt.yaml)
 - [Analyze Adjudication KPIs](../adjudication_prompts/03_analyze_adjudication_kpis.prompt.yaml)
 
+## Agentic Coding
+
+- [Product Brief Template](../agentic_coding/01_product_brief.prompt.yaml)
+- [Project Brief for Epic](../agentic_coding/02_project_brief_epic.prompt.yaml)
+- [Technical Implementation Plan](../agentic_coding/03_technical_implementation_plan.prompt.yaml)
+- [Coding Session Guidelines](../agentic_coding/04_coding_session_guidelines.prompt.yaml)
+- [Project Review Checklist](../agentic_coding/05_project_review.prompt.yaml)
+- [Project Memory Notes](../agentic_coding/06_project_memory.prompt.yaml)
+- [To-Do List Template](../agentic_coding/06_todo_generation.prompt.yaml)
+- [E2E Test Discovery Template](../agentic_coding/07_e2e_test_discovery.prompt.yaml)
+- [Folder and Module Organization](../agentic_coding/07_folder_module_organization.prompt.yaml)
+- [RequirementsBot Prompt](../agentic_coding/07_requirements_prompt.prompt.yaml)
+- [Reflexion Agent Bug Patch](../agentic_coding/08_reflexion_agent_bug_patch.prompt.yaml)
+
 ## Biological Safety Prompts
 
 - [Risk Assessment Expert](../biological_safety_prompts/01_risk_assessment_expert.prompt.yaml)
@@ -156,7 +170,7 @@
 ## Design Prompts
 
 - [Design.md Template](../design_prompts/01_design_md_template.prompt.yaml)
-- [Email Assistant Go No Go Vote.prompt](../design_prompts/02_email_assistant_go_no_go_vote.prompt.yaml)
+- [AI Email Assistant Go/No-Go Vote](../design_prompts/02_email_assistant_go_no_go_vote.prompt.yaml)
 
 ## Eclinical Integration Prompts
 
