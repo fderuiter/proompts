@@ -11,5 +11,11 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      Draft key sections of the DMP for a Phase II trial.
+    expected: Includes data collection, cleaning, and storage plans.
+evaluators:
+  - name: Output mentions plan
+    string:
+      contains: "plan"

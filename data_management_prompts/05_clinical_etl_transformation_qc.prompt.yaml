@@ -12,5 +12,11 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      List QC checks for transforming lab results data.
+    expected: Mentions range validations and format consistency.
+evaluators:
+  - name: Output mentions validation
+    string:
+      contains: "validation"

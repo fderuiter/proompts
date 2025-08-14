@@ -12,5 +12,11 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      Review data workflow for GDPR compliance.
+    expected: Highlights missing consent records.
+evaluators:
+  - name: Output mentions compliance
+    string:
+      contains: "compliance"

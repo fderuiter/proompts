@@ -11,5 +11,11 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      Review SOPs for data entry processes.
+    expected: Identifies missing version controls.
+evaluators:
+  - name: Output mentions SOP
+    string:
+      contains: "SOP"
