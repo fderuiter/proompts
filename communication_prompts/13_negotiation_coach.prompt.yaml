@@ -1,6 +1,6 @@
 ---
 name: Negotiation Coach
-description: Prepare the user for salary negotiations by roleplaying as a 
+description: Prepare the user for salary negotiations by roleplaying as a
   manager and offering feedback.
 model: gpt-4
 modelParameters:
@@ -36,5 +36,18 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: I'd like a 20% raise for my performance.
+    expected: |-
+      Manager: Let's discuss your contributions first.
+      ---
+      Best move | Worst move
+      Data use | Weak timing
+      Tips:
+      - Present market data.
+      - Pick quieter moment.
+      - Rehearse responses.
+evaluators:
+  - name: Output contains markdown divider
+    string:
+      contains: '---'

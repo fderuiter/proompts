@@ -14,5 +14,13 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: Gravity
+    expected: |-
+      Imagine a magnet pulling toys to the floor.
+      Apples drop, rain falls, and we stay on the ground.
+      Grown-up summary: Gravity is Earth's pull on objects.
+evaluators:
+  - name: Output includes grown-up summary
+    string:
+      contains: 'Grown-up summary'

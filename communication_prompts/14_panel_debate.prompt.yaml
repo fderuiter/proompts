@@ -22,5 +22,19 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: Remote work
+    expected: |-
+      Proponent: boosts flexibility.
+      Opponent: lowers team cohesion.
+      Moderator: notes key points.
+      Rebuttal round 1...
+      Rebuttal round 2...
+      Moderator Table:
+      Point | Agreement?
+      Flex time | Yes
+      Takeaway: balance office days with remote options.
+evaluators:
+  - name: Output references moderator
+    string:
+      contains: 'Moderator'

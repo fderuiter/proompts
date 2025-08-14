@@ -20,5 +20,16 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: Busy parent using meal kits
+    expected: |-
+      Says: "I need quick dinners."
+      Thinks: "Am I a good cook?"
+      Does: orders kits weekly.
+      Feels: relieved but guilty.
+      Insight: Parents seek time-saving confidence.
+      Next-step research question: What recipes feel intimidating?
+evaluators:
+  - name: Output includes next-step question
+    string:
+      contains: 'Next-step'

@@ -14,5 +14,15 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: Backyard treehouse project
+    expected: |-
+      Risk | Likelihood | Impact | Raw-Score | Mitigation
+      Fall injuries | 3 | 4 | 12 | safety rails
+      Rotting wood | 2 | 5 | 10 | sealant
+      Storm damage | 4 | 3 | 12 | anchors
+      Monitor top risks: inspect rails weekly; check weather alerts.
+evaluators:
+  - name: Output shows raw-score
+    string:
+      contains: 'Raw-Score'

@@ -13,5 +13,16 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: Launch a new social app
+    expected: |-
+      Objection 1: crowded market; Example: many apps fail.
+      Mitigation: offer unique community.
+      Objection 2: privacy risk; Example: data leaks.
+      Mitigation: strong encryption.
+      Objection 3: low retention; Example: early churn.
+      Mitigation: gamified rewards.
+evaluators:
+  - name: Output lists mitigations
+    string:
+      contains: 'Mitigation'

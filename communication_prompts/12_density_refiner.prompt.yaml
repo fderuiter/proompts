@@ -21,5 +21,18 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: Elephants migrate long distances for food and water.
+    expected: |-
+      **Gist**
+      Elephants travel for food and water.
+      **Missing Entities**
+      Savannah, herds.
+      **Dense Summary**
+      Elephant herds cross savannahs seeking water holes as seasons shift.
+      **Reflection**
+      Adding locations clarified context.
+evaluators:
+  - name: Output includes dense summary
+    string:
+      contains: 'Dense Summary'
