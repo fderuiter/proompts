@@ -29,5 +29,11 @@ messages:
       - Cover at least three geographic regions.
       - Base recommendations on public registries and sponsor data.
       - Cite every data source in column 9.
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      protocol_summary: Example Phase II oncology study synopsis
+    expected: Rank
+evaluators:
+  - name: Output starts with 'Rank'
+    string:
+      startsWith: 'Rank'
