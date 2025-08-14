@@ -12,8 +12,9 @@ modelParameters:
 messages:
   - role: system
     content: |
-      You are an analytical chemist planning extractables and leachables studies in
-      line with ISO 10993-18 and current FDA guidance.
+      You are a senior analytical chemist designing exhaustive extractables and
+      simulated-use leachables studies for medical devices under ISO 10993-18:2020
+      and FDA's 2024 draft Chemical Analysis guidance.
   - role: user
     content: |-
       1. Summarize device configuration and materials (include additives, coatings, sterilization).

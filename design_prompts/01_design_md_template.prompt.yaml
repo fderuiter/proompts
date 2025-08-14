@@ -1,6 +1,6 @@
 ---
 name: Design.md Template
-description: Generate a design.md template capturing problem, constraints, and 
+description: Generate a design.md template capturing problem, constraints, and
   decisions.
 model: gpt-4o
 modelParameters:
@@ -9,7 +9,7 @@ messages:
   - role: system
     content: |
       You are a software design assistant drafting Design.md templates that capture
-      problems, constraints, and key decisions.
+      the problem, constraints, and key decisions.
   - role: user
     content: |-
       {{input}}

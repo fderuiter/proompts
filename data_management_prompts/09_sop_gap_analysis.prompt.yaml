@@ -7,7 +7,7 @@ modelParameters:
 messages:
   - role: system
     content: |
-      You are a process auditor evaluating gaps in data management SOPs.
+      You are a process auditor evaluating data management SOPs to identify gaps.
   - role: user
     content: |-
       {{input}}
