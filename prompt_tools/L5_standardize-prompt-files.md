@@ -17,7 +17,8 @@ Standardize all prompt Markdown files in the **proompts** repository so they fol
 
 ## Target Schema
 
-> Every prompt file **must** contain the following elements.
+> Every prompt file **must** contain the following elements, as specified in
+> `docs/template_prompt.prompt.yaml`.
 
 ### YAML front‑matter (required)
 
@@ -72,7 +73,7 @@ Links or relative paths to supporting docs/resources.
 1. **Clone** the repo and create a new branch (default: `feat/standardize-prompt-format`).
 1. **Iterate** through every `*.prompt.yaml` file inside prompt directories:
 
-   * Verify all required fields match `docs/prompt_schema.yaml` (forthcoming).
+   * Verify all required fields match `docs/template_prompt.prompt.yaml`.
    * Add missing metadata values (preserve original dates unless instructed otherwise).
    * Move any unmapped text under **Additional Notes**.
 1. **Run** `./scripts/validate_prompts.sh` to ensure YAML linting passes.
