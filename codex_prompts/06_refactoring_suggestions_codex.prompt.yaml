@@ -1,6 +1,6 @@
 ---
 name: Refactoring Suggestions (OpenAI Codex)
-description: Suggest structural improvements for a complex file to increase 
+description: Suggest structural improvements for a complex file to increase
   readability and testability.
 model: gpt-4
 modelParameters:

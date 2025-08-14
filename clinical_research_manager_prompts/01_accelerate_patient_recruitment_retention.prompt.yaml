@@ -1,6 +1,6 @@
 ---
 name: Accelerate Patient Recruitment & Retention
-description: Design a 3-step recruitment and retention plan for a Phase II 
+description: Design a 3-step recruitment and retention plan for a Phase II
   oncology study within budget and timeline constraints.
 model: gpt-4
 modelParameters:

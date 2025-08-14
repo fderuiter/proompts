@@ -1,6 +1,6 @@
 ---
 name: Negotiation Coach
-description: Prepare the user for salary negotiations by roleplaying as a 
+description: Prepare the user for salary negotiations by roleplaying as a
   manager and offering feedback.
 model: gpt-4
 modelParameters:

@@ -1,6 +1,6 @@
 ---
 name: Portfolio KPI Dashboard Brief
-description: Produce a one-page executive dashboard of enrollment, deviation, 
+description: Produce a one-page executive dashboard of enrollment, deviation,
   SDV, and budget KPIs for live studies.
 model: gpt-4
 modelParameters:
