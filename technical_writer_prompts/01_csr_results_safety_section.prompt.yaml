@@ -26,5 +26,15 @@ messages:
       1. **Efficacy Evaluation** section including Table 11‑1
       2. **Safety Evaluation** section including Table 12‑1 and Figure 12‑1
       3. Bullet list of missing information, if any
-testData: []
-evaluators: []
+testData:
+  - vars: {}
+    expected: |-
+      Efficacy Evaluation
+      Safety Evaluation
+evaluators:
+  - name: Includes Efficacy Evaluation heading
+    string:
+      contains: "Efficacy Evaluation"
+  - name: Includes Safety Evaluation heading
+    string:
+      contains: "Safety Evaluation"

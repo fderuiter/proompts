@@ -26,5 +26,12 @@ messages:
       Output Format:
       1. Markdown table(s) with columns: Section | Old text | New text | Rationale
       2. Concise narrative summarizing major changes
-testData: []
-evaluators: []
+testData:
+  - vars: {}
+    expected: |-
+      | Section | Old text | New text | Rationale |
+      | --- | --- | --- | --- |
+evaluators:
+  - name: Contains summary of changes table headers
+    string:
+      contains: "| Section | Old text | New text | Rationale |"
