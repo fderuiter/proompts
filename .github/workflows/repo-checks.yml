@@ -6,14 +6,12 @@ on:
     paths:
       - '**/*.prompt.yaml'
       - '**/*.prompt.yml'
-      - '**/*.json'
       - '.github/workflows/repo-checks.yml'
       - 'scripts/check_prompts.py'
   pull_request:
     paths:
       - '**/*.prompt.yaml'
       - '**/*.prompt.yml'
-      - '**/*.json'
       - '.github/workflows/repo-checks.yml'
       - 'scripts/check_prompts.py'
 

@@ -6,14 +6,12 @@ on:
     paths:
       - '**/*.prompt.yaml'
       - '**/*.prompt.yml'
-      - '**/*.json'
       - '.github/workflows/generate-overviews.yml'
       - 'scripts/generate_overviews.py'
   pull_request:
     paths:
       - '**/*.prompt.yaml'
       - '**/*.prompt.yml'
-      - '**/*.json'
       - '.github/workflows/generate-overviews.yml'
       - 'scripts/generate_overviews.py'
 
