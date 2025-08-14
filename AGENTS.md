@@ -1,16 +1,16 @@
 # Repository Guidance for AI Agent Prompts
 
-This repository stores a collection of AI agent prompts. Prompts are primarily
-stored as YAML (`.prompt.yaml` or `.prompt.yml`) and placed in one of the
-categories under the repository root (e.g. `agentic_coding`, `meta_prompts`).
-Some legacy prompts remain as `.json` files for backward compatibility. Use this
-file for guidelines on adding or modifying prompts.
+This repository stores a collection of AI agent prompts. Prompts are stored as
+YAML (`.prompt.yaml` or `.prompt.yml`) and placed in one of the categories
+under the repository root (e.g. `agentic_coding`, `meta_prompts`). The old JSON
+format has been deprecated; convert any remaining `.json` files to YAML. Use
+this file for guidelines on adding or modifying prompts.
 
 ## File Format and Layout
 
-- **Preferred YAML**: New prompts must be stored as `.prompt.yaml` or
-  `.prompt.yml` files containing valid YAML. Existing `.json` prompts may persist
-  temporarily but should eventually be converted. Use Markdown strictly for
+- **Preferred YAML**: Prompts must be stored as `.prompt.yaml` or
+  `.prompt.yml` files containing valid YAML. Convert any `.json` prompts you
+  encounter. Use Markdown strictly for
   documentation such as `README.md` or `overview.md`.
 - **Markdown docs**: All documentation files—including `overview.md`, `docs/*.md`,
   and any additional guides—remain in Markdown format.
