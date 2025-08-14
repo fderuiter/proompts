@@ -1,6 +1,6 @@
 ---
 name: Continuous Integration & Delivery (OpenAI Codex)
-description: Generate GitHub Actions workflows that build, test, version, and 
+description: Generate GitHub Actions workflows that build, test, version, and
   deploy the app (often a containerised service that calls the OpenAI API).
 model: gpt-4
 modelParameters:
@@ -33,5 +33,12 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      environments: [dev, prod]
+      platform: vercel
+    expected: CI/CD Workflow -
+evaluators:
+  - name: Output starts with 'CI/CD Workflow -'
+    string:
+      startsWith: 'CI/CD Workflow -'

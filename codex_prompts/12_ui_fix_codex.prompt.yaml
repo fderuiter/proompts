@@ -1,6 +1,6 @@
 ---
 name: UI Tweak & Verification (OpenAI Codex)
-description: Resolve a minor UI regression and confirm the fix with build or 
+description: Resolve a minor UI regression and confirm the fix with build or
   test steps.
 model: gpt-4
 modelParameters:
@@ -21,5 +21,11 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      component_path: src/components/button.tsx
+    expected: UI Fix -
+evaluators:
+  - name: Output starts with 'UI Fix -'
+    string:
+      startsWith: 'UI Fix -'
