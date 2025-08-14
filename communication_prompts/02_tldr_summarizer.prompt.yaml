@@ -12,5 +12,15 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      Eating vegetables boosts health and energy.
+    expected: |-
+      - Veggies give vitamins.
+      - Energy rises with greens.
+      - Health improves daily.
+      Next step: Add a salad to meals.
+evaluators:
+  - name: Output lists next step
+    string:
+      contains: 'Next step'

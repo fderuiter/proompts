@@ -19,5 +19,21 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: Coffee mug
+    expected: |-
+      Substitute: use bamboo; Idea: eco mug.
+      Combine: mug + warmer; Idea: self-heating cup.
+      Adapt: travel lid; Idea: spill-proof mug.
+      Modify: enlarge handle; Idea: two-finger grip.
+      Put to other use: plant pot idea.
+      Eliminate: remove handle for stackable design.
+      Reverse: cools drinks instead.
+      Idea | Feasibility | Impact
+      self-heating cup | Med | High
+      eco mug | High | Med
+      spill-proof mug | High | Med
+evaluators:
+  - name: Output ranks ideas with feasibility
+    string:
+      contains: 'Feasibility'

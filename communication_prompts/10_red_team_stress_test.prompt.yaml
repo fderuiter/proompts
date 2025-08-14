@@ -1,6 +1,6 @@
 ---
 name: Red-Team Stress-Test
-description: Form a red-team panel of 3 experts (Technical Hacker, Ruthless 
+description: Form a red-team panel of 3 experts (Technical Hacker, Ruthless
   Competitor CEO, Regulatory Officer).
 model: gpt-4
 modelParameters:
@@ -17,5 +17,16 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: New online payment platform
+    expected: |-
+      Technical Hacker: breach data; inject malware.
+      Competitor CEO: undercut fees; poach merchants.
+      Regulatory Officer: non-compliance fines; audit failures.
+      Ranked attacks: data breach, fee war, compliance gaps.
+      Mitigations: encryption, reserve fund, audit trail.
+      Metric: weekly fraud rate.
+evaluators:
+  - name: Output specifies metric
+    string:
+      contains: 'Metric'

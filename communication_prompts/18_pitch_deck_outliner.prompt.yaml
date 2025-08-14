@@ -20,5 +20,20 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: Time-tracking app for freelancers
+    expected: |-
+      Slide 1: Problem – freelancers lose billable hours.
+      Slide 2: Solution – simple timer.
+      Slide 3: Market size.
+      Slide 4: Business model.
+      Slide 5: Traction.
+      Slide 6: Competition.
+      Slide 7: Team.
+      Slide 8: Ask.
+      Visual cues: clock icon on slides 1 and 2.
+      Success metric: daily active users.
+evaluators:
+  - name: Output notes success metric
+    string:
+      contains: 'Success metric'

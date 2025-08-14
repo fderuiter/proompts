@@ -16,5 +16,14 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: Blockchain
+    expected: |-
+      1. **Ledger** like a shared notebook; each entry is a block.
+      2. **Chain** like linked train cars; break one and records stop.
+      3. **Vault** like a bank safe with codes.
+      Accuracy check: Analogies omit technical complexity.
+evaluators:
+  - name: Output uses bold analogies
+    string:
+      contains: '**'

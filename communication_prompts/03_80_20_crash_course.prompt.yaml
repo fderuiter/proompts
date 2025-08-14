@@ -13,5 +13,13 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: Time management
+    expected: |-
+      - Focus on high-value tasks — finish reports first.
+      - Batch small chores to save time.
+      Practice exercise: Plan tomorrow using these steps.
+evaluators:
+  - name: Output mentions practice exercise
+    string:
+      contains: 'Practice exercise'

@@ -13,5 +13,17 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: Eco-friendly water bottle
+    expected: |-
+      Frame 1: Plastic waste piles up.
+      Frame 2: Reusable bottle introduced.
+      Frame 3: People refill happily.
+      Frame 4: Bottle features shown.
+      Frame 5: Community cleanup.
+      Frame 6: Clean beach celebration.
+      Takeaway: Every refill protects the ocean.
+evaluators:
+  - name: Output includes frame 6
+    string:
+      contains: 'Frame 6'

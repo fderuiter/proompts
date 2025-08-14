@@ -14,5 +14,16 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: Improving public speaking
+    expected: |-
+      What situations make you most nervous?
+      Summary: Speaker fears forgetting words.
+      Next actions:
+      1. Practice key points.
+      2. Record rehearsals.
+      3. Join a speaking club.
+evaluators:
+  - name: Output asks a question
+    string:
+      contains: '?'

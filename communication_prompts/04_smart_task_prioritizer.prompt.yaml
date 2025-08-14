@@ -13,5 +13,18 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      Write report
+      Clean desk
+      Pay bills
+    expected: |-
+      Task | Urgency | Impact | Effort | Priority Score
+      Write report | 5 | 5 | 3 | 8.3
+      Pay bills | 4 | 4 | 2 | 8
+      Clean desk | 1 | 2 | 1 | 2
+      First tasks: Write report, Pay bills, Clean desk.
+evaluators:
+  - name: Output shows priority score
+    string:
+      contains: 'Priority Score'
