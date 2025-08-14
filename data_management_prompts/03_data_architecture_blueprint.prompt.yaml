@@ -7,6 +7,7 @@ modelParameters:
 messages:
   - role: system
     content: |
+      You are a data architect drafting blueprints for clinical data architectures.
   - role: user
     content: |-
       {{input}}

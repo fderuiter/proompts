@@ -9,6 +9,8 @@ modelParameters:
 messages:
   - role: system
     content: |
+      You are a regulatory affairs specialist summarizing chemical characterization
+      findings for 510(k) submissions.
   - role: user
     content: |-
       Produce a 2-3-page executive summary that:

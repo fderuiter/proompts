@@ -7,6 +7,8 @@ modelParameters:
 messages:
   - role: system
     content: |
+      You are a safety analyst trending post-market data to surface emerging
+      signals.
   - role: user
     content: |-
       {{input}}

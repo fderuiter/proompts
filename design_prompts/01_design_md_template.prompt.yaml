@@ -8,6 +8,8 @@ modelParameters:
 messages:
   - role: system
     content: |
+      You are a software design assistant drafting Design.md templates that capture
+      problems, constraints, and key decisions.
   - role: user
     content: |-
       {{input}}
