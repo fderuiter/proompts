@@ -25,4 +25,7 @@ testData:
   - vars: {}
     expected: |-
       Markdown file with sections **Current Project State** and **Contextual Notes**.
-evaluators: []
+evaluators:
+  - name: Output starts with 'Current Project State'
+    string:
+      startsWith: 'Current Project State'

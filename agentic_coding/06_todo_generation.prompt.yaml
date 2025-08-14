@@ -24,4 +24,7 @@ testData:
   - vars: {}
     expected: |-
       Markdown checklist under **To-Do** and **Completed Tasks** sections.
-evaluators: []
+evaluators:
+  - name: Output starts with 'To-Do'
+    string:
+      startsWith: 'To-Do'

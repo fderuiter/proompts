@@ -34,4 +34,7 @@ testData:
       technology_choices: example_technology_choices
     expected: |-
       Markdown sections for Architecture Breakdown, Libraries and Tools, Data Models & Specifications, Business Logic & Rules, Dependencies & Risk Analysis, and Implementation Steps.
-evaluators: []
+evaluators:
+  - name: Output starts with 'Architecture Breakdown'
+    string:
+      startsWith: 'Architecture Breakdown'
