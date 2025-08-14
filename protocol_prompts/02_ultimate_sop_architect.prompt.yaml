@@ -41,5 +41,11 @@ messages:
 
       Additional notes:
       Ensure terminology is consistent throughout.
-testData: []
-evaluators: []
+testData:
+  - input: |
+      process_information: basic lab procedure
+    expected: Purpose / Objective
+evaluators:
+  - name: Contains Purpose heading
+    string:
+      contains: Purpose / Objective

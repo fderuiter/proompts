@@ -40,5 +40,11 @@ messages:
 
       Additional notes:
       Ensure regulatory compliance throughout the draft.
-testData: []
-evaluators: []
+testData:
+  - input: |
+      summary_sheet: Phase I study of investigational hypertension drug
+    expected: Title Page
+evaluators:
+  - name: Includes Title Page heading
+    string:
+      contains: Title Page
