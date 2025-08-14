@@ -36,5 +36,20 @@ messages:
 
       Additional notes:
       Ensure calculations and triggers are fully traceable for auditors.
-testData: []
-evaluators: []
+testData:
+  - visit_grid: |-
+      Milestone,Trigger,Local Rate
+      V1,SDV complete,100
+    cta_budget: "1000 USD"
+    fx_table: |-
+      Currency,USD
+      USD,1
+    fmv_benchmarks: |-
+      Milestone,USD
+      V1,90
+    expected: |-
+      | Milestone | Trigger | Local Rate | USD Rate | Tax | Net Payable | Expected Date |
+evaluators:
+  - name: Contains payment schedule table
+    string:
+      contains: "| Milestone | Trigger |"

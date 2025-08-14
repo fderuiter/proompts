@@ -36,5 +36,19 @@ messages:
 
       Additional notes:
       Use clear column headers so the tables can be imported without modification.
-testData: []
-evaluators: []
+testData:
+  - payment_ledger_csv: |-
+      NPI,Amount
+      1234567890,150
+    fx_rates: |-
+      Currency,USD
+      USD,1
+    fmv_table: |-
+      Procedure,FMV
+      Consult,100
+    expected: |-
+      Reportable Payments
+evaluators:
+  - name: Generates reportable payments table
+    string:
+      contains: "Reportable Payments"

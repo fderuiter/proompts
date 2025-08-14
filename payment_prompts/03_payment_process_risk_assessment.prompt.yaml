@@ -33,5 +33,16 @@ messages:
 
       Additional notes:
       Cite external benchmarks or stats where relevant.
-testData: []
-evaluators: []
+testData:
+  - workflow_description: |-
+      Manual invoice tracking in spreadsheets
+    kpi_metrics: |-
+      error_rate: 5%
+    technology_stack: |-
+      Excel; Email
+    expected: |-
+      risk
+evaluators:
+  - name: Mentions risk in output
+    string:
+      contains: "risk"
