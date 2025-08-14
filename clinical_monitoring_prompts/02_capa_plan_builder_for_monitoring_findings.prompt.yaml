@@ -1,6 +1,6 @@
 ---
 name: CAPA Plan Builder for Monitoring Findings
-description: You are a **Regulatory Quality Advisor** specializing in ICH-GCP 
+description: You are a **Regulatory Quality Advisor** specializing in ICH-GCP
   compliance.
 model: gpt-4
 modelParameters:
@@ -18,5 +18,13 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      issues:
+        - Missing signatures on consent forms
+        - Late adverse event reporting
+    expected: Issue | Root Cause | Corrective Action | Preventive Action | Owner | Due Date | Effectiveness Check
+evaluators:
+  - name: Returns CAPA table
+    string:
+      contains: "Issue | Root Cause | Corrective Action | Preventive Action | Owner | Due Date | Effectiveness Check"

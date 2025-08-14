@@ -1,6 +1,6 @@
 ---
 name: Risk-Based Site Performance Dashboard
-description: You are an experienced **Clinical Monitoring Manager** at a global 
+description: You are an experienced **Clinical Monitoring Manager** at a global
   CRO overseeing several Phase II oncology trials.
 model: gpt-4
 modelParameters:
@@ -21,5 +21,23 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      sites:
+        - id: S101
+          protocol_deviations: 4
+          query_aging_days: 12
+          ip_accountability_issues: 2
+          enrollment_lapse_days: 5
+          training_compliance: 95
+        - id: S102
+          protocol_deviations: 1
+          query_aging_days: 8
+          ip_accountability_issues: 0
+          enrollment_lapse_days: 0
+          training_compliance: 98
+    expected: Rank | Site ID | Composite Score | Key Drivers | Mitigation Plan | Target Date
+evaluators:
+  - name: Contains dashboard table
+    string:
+      contains: "Rank | Site ID | Composite Score"
