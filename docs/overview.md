@@ -20,5 +20,6 @@ retired.
 - [Project Starter Pack](../starter_pack/overview.md)
 - [Codex Prompts](../codex_prompts/overview.md)
 - [GLP Prompts](../glp_prompts/overview.md)
+- [JSON to YAML Migration (historical)](json_to_yaml_migration.md)
 
 Add any new guidance here as the repository grows.
