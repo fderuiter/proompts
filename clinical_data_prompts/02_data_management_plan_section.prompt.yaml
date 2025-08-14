@@ -11,5 +11,14 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: Include handling of out-of-range lab values.
+    expected: |-
+      Data Validation & Cleaning includes automated edit checks in Medidata Rave to flag out-of-range lab values.
+evaluators:
+  - name: Mentions Data Validation & Cleaning
+    string:
+      contains: "Data Validation & Cleaning"
+  - name: References Medidata Rave
+    string:
+      contains: "Medidata Rave"
