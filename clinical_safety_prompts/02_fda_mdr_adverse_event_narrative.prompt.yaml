@@ -17,5 +17,16 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |
+      Event date: 2024-05-01
+      Patient: 34-year-old female
+      Device ID: 12345
+      Reporter: Physician
+      Device returned: No
+    expected: |-
+      Adverse Event Narrative: 34-year-old female experienced skin irritation; device not returned.
+evaluators:
+  - name: Output ends with boilerplate sentence
+    string:
+      endsWith: 'This information is submitted to comply with 21 CFR 803.52.'
