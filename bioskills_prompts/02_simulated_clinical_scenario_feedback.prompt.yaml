@@ -26,6 +26,8 @@ messages:
 testData:
   - vars:
       procedure_notes: example_procedure_notes
-    expected: |-
-      Bullet points followed by a short reflective question.
-evaluators: []
+    expected: "- "
+evaluators:
+  - name: Output starts with a bullet
+    string:
+      startsWith: "- "

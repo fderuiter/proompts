@@ -27,6 +27,8 @@ messages:
 testData:
   - vars:
       procedure_name: example_procedure_name
-    expected: |-
-      Bullet list of steps and checkpoints.
-evaluators: []
+    expected: "- "
+evaluators:
+  - name: Output starts with a bullet
+    string:
+      startsWith: "- "
