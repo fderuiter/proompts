@@ -37,4 +37,7 @@ testData:
       study_overview: example_study_overview
     expected: |-
       Markdown document with numbered sections and mock tables.
-evaluators: []
+evaluators:
+  - name: Output starts with '## 1'
+    string:
+      startsWith: '## 1'

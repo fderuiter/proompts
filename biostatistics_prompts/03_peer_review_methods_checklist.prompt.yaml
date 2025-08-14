@@ -30,4 +30,7 @@ testData:
       manuscript_excerpt: example_manuscript_excerpt
     expected: |-
       GitHub-flavored markdown table followed by bullet lists.
-evaluators: []
+evaluators:
+  - name: Output starts with '|'
+    string:
+      startsWith: '|'

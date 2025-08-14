@@ -31,4 +31,7 @@ testData:
       trial_overview: example_trial_overview
     expected: |-
       Markdown document with H2 headings, maximum 2,500 words.
-evaluators: []
+evaluators:
+  - name: Output starts with '##'
+    string:
+      startsWith: '##'

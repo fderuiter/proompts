@@ -30,4 +30,7 @@ testData:
       trial_details: example_trial_details
     expected: |-
       Bulleted recommendations followed by brief explanatory notes.
-evaluators: []
+evaluators:
+  - name: Output starts with '- '
+    string:
+      startsWith: '- '
