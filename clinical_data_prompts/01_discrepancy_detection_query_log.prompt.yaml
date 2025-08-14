@@ -1,6 +1,6 @@
 ---
 name: Discrepancy Detection & Query Log Generator
-description: Examine a CSV dataset to detect discrepancies and generate a query 
+description: Examine a CSV dataset to detect discrepancies and generate a query
   log.
 model: gpt-4
 modelParameters:
