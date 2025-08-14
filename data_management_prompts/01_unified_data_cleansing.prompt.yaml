@@ -1,6 +1,6 @@
 ---
 name: Unified Data Cleansing
-description: Outline a unified data cleansing approach for clinical trial 
+description: Outline a unified data cleansing approach for clinical trial
   datasets.
 model: gpt-4o
 modelParameters:
@@ -13,5 +13,11 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      Provide a brief plan for cleansing datasets collected from multiple sites.
+    expected: Includes steps for removing duplicates and aligning formats.
+evaluators:
+  - name: Output mentions cleansing
+    string:
+      contains: "cleansing"

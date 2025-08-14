@@ -11,5 +11,11 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      Design a high-level architecture for storing clinical trial data.
+    expected: Mentions staging, warehouse, and analytics layers.
+evaluators:
+  - name: Output mentions architecture
+    string:
+      contains: "architecture"

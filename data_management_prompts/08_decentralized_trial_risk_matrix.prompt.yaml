@@ -12,5 +12,11 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      List potential risks for remote patient monitoring.
+    expected: Includes mitigation strategies and risk levels.
+evaluators:
+  - name: Output mentions risk
+    string:
+      contains: "risk"
