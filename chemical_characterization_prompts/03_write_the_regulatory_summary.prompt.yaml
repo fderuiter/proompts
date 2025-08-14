@@ -26,4 +26,7 @@ testData:
   - input: ''
     expected: |-
       Completion follows instructions.
-evaluators: []
+evaluators:
+  - name: Output starts with an H2 heading
+    string:
+      startsWith: '##'

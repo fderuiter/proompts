@@ -28,4 +28,7 @@ testData:
   - input: ''
     expected: |-
       Completion follows instructions.
-evaluators: []
+evaluators:
+  - name: Output starts with a numbered list
+    string:
+      startsWith: '1.'
