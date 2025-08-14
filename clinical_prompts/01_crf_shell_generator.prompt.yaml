@@ -15,5 +15,13 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |
+      Study collects age and sex.
+    expected: |
+      | CRF Page | Field | CDASH Variable | Data Type | Permitted Values | SDTM Mapping |
+      | Demographics | Age | AGE | integer | >=0 | DM.AGE |
+evaluators:
+  - name: Output should include AGE mapping
+    string:
+      contains: DM.AGE
