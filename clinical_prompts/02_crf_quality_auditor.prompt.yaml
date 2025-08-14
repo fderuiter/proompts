@@ -15,5 +15,13 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |
+      Demographics form lists Age twice.
+    expected: |
+      | Issue | Recommended Fix |
+      | Duplicate field 'Age' | Remove one instance to avoid confusion. |
+evaluators:
+  - name: Should flag duplicate field
+    string:
+      contains: Duplicate field
