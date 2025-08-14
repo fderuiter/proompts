@@ -27,5 +27,15 @@ messages:
 
       Additional notes:
       Keep the entire response under 140 words and use plain language.
-testData: []
-evaluators: []
+testData:
+  - vars:
+      decision: adopt remote work policy
+    expected: |-
+      | Now | First-Order Outcome | Second-Order Consequence |
+      | 6 months | First-Order Outcome | Second-Order Consequence |
+      | 2 years | First-Order Outcome | Second-Order Consequence |
+      Net strategic value: 0
+evaluators:
+  - name: Includes three time horizons
+    string:
+      contains: '2 years'

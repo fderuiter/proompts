@@ -27,5 +27,17 @@ messages:
 
       Additional notes:
       Keep the entire reply under 150 words.
-testData: []
-evaluators: []
+testData:
+  - vars:
+      tasks: |-
+        Prepare presentation for Monday
+        Pay utility bill
+        Research vacation destinations
+        Organize desk
+    expected: |-
+      | ✅ Do Now | 📅 Schedule | ↗ Delegate | 🗑 Delete |
+      | --- | --- | --- | --- |
+evaluators:
+  - name: Includes all four quadrants
+    string:
+      contains: '🗑 Delete'
