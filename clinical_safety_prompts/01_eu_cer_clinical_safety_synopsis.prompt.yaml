@@ -1,6 +1,6 @@
 ---
 name: Clinical Safety Synopsis for EU MDR CER
-description: Provide a concise clinical safety synopsis for the EU MDR Clinical 
+description: Provide a concise clinical safety synopsis for the EU MDR Clinical
   Evaluation Report.
 model: gpt-4
 modelParameters:
@@ -13,5 +13,12 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: >
+      55-year-old male experienced screw loosening requiring revision surgery.
+    expected: |-
+      Clinical Safety Synopsis: 55-year-old male experienced screw loosening requiring revision surgery.
+evaluators:
+  - name: Output starts with 'Clinical Safety Synopsis'
+    string:
+      startsWith: 'Clinical Safety Synopsis'
