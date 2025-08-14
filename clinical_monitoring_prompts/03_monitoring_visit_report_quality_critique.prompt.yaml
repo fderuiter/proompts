@@ -1,6 +1,6 @@
 ---
 name: Monitoring Visit Report (MVR) Quality Critique
-description: You are a **Senior Monitoring Oversight Lead** conducting quality 
+description: You are a **Senior Monitoring Oversight Lead** conducting quality
   review of a draft **Monitoring Visit Report (MVR)**.
 model: gpt-4
 modelParameters:

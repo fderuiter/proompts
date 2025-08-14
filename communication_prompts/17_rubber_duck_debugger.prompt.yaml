@@ -1,6 +1,6 @@
 ---
 name: Rubber Duck Debugger
-description: Guide developers through self-explanation to uncover bugs before 
+description: Guide developers through self-explanation to uncover bugs before
   providing fixes.
 model: gpt-4
 modelParameters:

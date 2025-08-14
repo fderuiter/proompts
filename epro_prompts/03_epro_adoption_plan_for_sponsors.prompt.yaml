@@ -1,6 +1,6 @@
 ---
 name: ePRO Adoption Plan for Sponsors
-description: Outline a six-month plan for rolling out ePRO across multiple 
+description: Outline a six-month plan for rolling out ePRO across multiple
   sites.
 model: gpt-4o
 modelParameters:

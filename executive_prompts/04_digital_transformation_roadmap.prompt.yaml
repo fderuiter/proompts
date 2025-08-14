@@ -1,6 +1,6 @@
 ---
 name: Digital Transformation Roadmap for Clinical Operations
-description: Build a technology roadmap that shortens cycle times and enhances 
+description: Build a technology roadmap that shortens cycle times and enhances
   patient engagement.
 model: gpt-4o
 modelParameters:

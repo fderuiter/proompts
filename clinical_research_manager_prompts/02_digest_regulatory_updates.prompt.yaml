@@ -1,7 +1,7 @@
 ---
 name: Digest the Latest Regulatory Updates Affecting My Protocol
-description: Summarize June 2025 FDA e-source guidance changes affecting 
-  protocol ABC-123, flagging mandatory versus recommended items and mapping to 
+description: Summarize June 2025 FDA e-source guidance changes affecting
+  protocol ABC-123, flagging mandatory versus recommended items and mapping to
   protocol sections.
 model: gpt-4
 modelParameters:

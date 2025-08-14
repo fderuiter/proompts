@@ -1,6 +1,6 @@
 ---
 name: Red-Team Stress-Test
-description: Form a red-team panel of 3 experts (Technical Hacker, Ruthless 
+description: Form a red-team panel of 3 experts (Technical Hacker, Ruthless
   Competitor CEO, Regulatory Officer).
 model: gpt-4
 modelParameters:

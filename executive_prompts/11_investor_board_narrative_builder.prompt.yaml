@@ -1,6 +1,6 @@
 ---
 name: Investor and Board Narrative Builder
-description: Craft a concise two-slide narrative for investors and board 
+description: Craft a concise two-slide narrative for investors and board
   members.
 model: gpt-4o
 modelParameters:
