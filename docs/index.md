@@ -156,7 +156,7 @@
 ## Design Prompts
 
 - [Design.md Template](../design_prompts/01_design_md_template.prompt.yaml)
-- [Email Assistant Go No Go Vote.prompt](../design_prompts/02_email_assistant_go_no_go_vote.prompt.yaml)
+- [AI Email Assistant Go/No-Go Vote](../design_prompts/02_email_assistant_go_no_go_vote.prompt.yaml)
 
 ## Eclinical Integration Prompts
 
@@ -300,6 +300,10 @@
 - [Fishbone Facilitator](../productivity_prompts/03_fishbone_facilitator.prompt.yaml)
 - [Hero's Journey Storyboarder](../productivity_prompts/04_heros_journey_storyboarder.prompt.yaml)
 - [RACI Mapper](../productivity_prompts/05_raci_mapper.prompt.yaml)
+
+## Prompt Tools
+
+- [Prompt Optimizer 1.0](../prompt_tools/L5_prompt_optimizer.prompt.yaml)
 
 ## Protocol Prompts
 
