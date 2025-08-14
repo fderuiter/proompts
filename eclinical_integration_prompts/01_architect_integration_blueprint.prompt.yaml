@@ -19,5 +19,15 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |
+      Outline a blueprint for integrating cardiology EHR data.
+    expected: |
+      High-level architecture with FHIR resources mapped to SDTM domains and risk mitigations.
+evaluators:
+  - name: Mentions FHIR
+    string:
+      contains: FHIR
+  - name: Mentions SDTM
+    string:
+      contains: SDTM
