@@ -25,5 +25,12 @@ messages:
 
       - **Executive Summary** (≤ 150 words)
       - **Detailed Roadmap** (table)
-testData: []
-evaluators: []
+testData:
+  - input: |
+      Outline roadmap.
+    expected: |
+      Executive Summary
+evaluators:
+  - name: Provides detailed roadmap
+    string:
+      contains: "Detailed Roadmap"

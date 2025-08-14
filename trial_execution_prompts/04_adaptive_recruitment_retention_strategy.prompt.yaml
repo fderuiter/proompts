@@ -26,5 +26,13 @@ messages:
       1. Pre‑screening workflow
       2. Site-level engagement tactics
       3. Recruitment and retention metrics
-testData: []
-evaluators: []
+testData:
+  - input: |
+      device_or_ivd: glucose monitor
+      patient_population: adults with diabetes
+    expected: |
+      Pre‑screening workflow
+evaluators:
+  - name: Contains metrics section
+    string:
+      contains: "Recruitment and retention metrics"
