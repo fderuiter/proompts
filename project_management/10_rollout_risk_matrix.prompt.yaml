@@ -22,5 +22,12 @@ messages:
 
       Output Format:
       Markdown table followed by short mitigation actions.
-testData: []
-evaluators: []
+testData:
+  - vars:
+      risk_list: "Risk A; Risk B"
+    expected: |
+      3×3 risk matrix with mitigation actions.
+evaluators:
+  - name: Lists mitigation actions
+    string:
+      contains: "Mitigation"

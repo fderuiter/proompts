@@ -1,6 +1,6 @@
 ---
 name: Project Charter and Scope Definition
-description: Create a complete project charter summarizing background, 
+description: Create a complete project charter summarizing background,
   objectives, scope, deliverables, and key risks.
 model: gpt-4o
 modelParameters:
@@ -28,5 +28,17 @@ messages:
 
       Output Format:
       Markdown document with the sections listed above.
-testData: []
-evaluators: []
+testData:
+  - vars:
+      project_name: Example Project
+      project_description: Example description
+      budget: "100k USD"
+      deadline: "2024-12-31"
+      stakeholders: "CEO, CTO"
+      business_outcome: Increase efficiency
+    expected: |
+      Markdown document with sections including Background and Objectives.
+evaluators:
+  - name: Contains Background heading
+    string:
+      contains: "Background"

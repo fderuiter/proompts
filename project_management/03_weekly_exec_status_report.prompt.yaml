@@ -1,6 +1,6 @@
 ---
 name: Weekly Executive Status Report
-description: Summarize project progress for executive stakeholders in a concise 
+description: Summarize project progress for executive stakeholders in a concise
   weekly report.
 model: gpt-4o
 modelParameters:
@@ -27,5 +27,12 @@ messages:
 
       Output Format:
       Markdown table followed by bullet lists for the remaining sections.
-testData: []
-evaluators: []
+testData:
+  - vars:
+      update_notes: Example progress and issues
+    expected: |
+      Status report with RAG summary and bullet lists.
+evaluators:
+  - name: Includes RAG summary
+    string:
+      contains: "RAG summary"

@@ -1,6 +1,6 @@
 ---
 name: Detailed Project Blueprint and Timeline
-description: Provide a comprehensive roadmap with phases, milestones, success 
+description: Provide a comprehensive roadmap with phases, milestones, success
   metrics, and stakeholders.
 model: gpt-4o
 modelParameters:
@@ -25,5 +25,14 @@ messages:
 
       Output Format:
       Markdown table outlining the project roadmap.
-testData: []
-evaluators: []
+testData:
+  - vars:
+      project_type: Example project
+      objectives: Example objectives
+      milestone_data: Sample milestones
+    expected: |
+      Markdown table outlining phases, tasks, and owners.
+evaluators:
+  - name: Contains Phase column
+    string:
+      contains: "Phase"
