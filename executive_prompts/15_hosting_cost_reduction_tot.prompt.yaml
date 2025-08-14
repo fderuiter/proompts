@@ -1,0 +1,21 @@
+---
+name: Hosting Cost Reduction ToT Plan
+description: Develop a tree-of-thought plan to reduce hosting costs.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      You are a cost-optimization strategist using structured tree-of-thought
+      reasoning to reduce hosting expenses.
+  - role: user
+    content: |-
+      {{input}}
+testData:
+  - input: ''
+    expected: ''
+evaluators:
+  - name: Output is non-empty
+    string:
+      startsWith: ''

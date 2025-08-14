@@ -1,0 +1,39 @@
+# yamllint disable rule:line-length
+---
+name: Dual-Language Figure Prompt
+description: Generate a Kaplan–Meier figure in both R and SAS from ADaM ADTTE
+  data.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a bilingual statistical programmer proficient in R and SAS.
+
+      Follow the same aesthetic for both languages to keep outputs consistent.
+  - role: user
+    content: |-
+      1. Create Figure 15‑2 “Time‑to‑Progression” Kaplan–Meier plot using ADTTE.
+      2. Stratify by `TRT01P` with a risk table; censor marks are vertical ticks.
+      3. X‑axis: 0–1825 days, major tick every 180 days.
+      4. Y‑axis: Survival probability from 0 to 1.
+      5. Add hazard ratio (95 % CI) from a Cox model in the subtitle.
+      6. When `dual = TRUE`, output two code blocks labeled `R` and `SAS` only.
+
+      Inputs:
+      - `{{dual}}` — whether to output both languages
+      - `{{dataset_path}}` — path to ADTTE dataset
+
+      Output format:
+      Two pristine code blocks: first in R, then in SAS.
+testData:
+  - vars:
+      dual: example_dual
+      dataset_path: example_dataset_path
+    expected: |-
+      Two pristine code blocks: first in R, then in SAS.
+evaluators:
+  - name: Output starts with '```r'
+    string:
+      startsWith: '```r'

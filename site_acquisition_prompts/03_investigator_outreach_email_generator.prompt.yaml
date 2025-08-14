@@ -1,0 +1,50 @@
+---
+name: Personalized Investigator-Outreach Email Generator
+description: >-
+  Craft a tailored outreach email to potential investigators.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: >-
+      You are the business-development lead at `{{CRO_NAME}}` contacting
+      investigators for a new study.
+
+
+      Craft a tailored outreach email to potential investigators.
+  - role: user
+    content: |-
+      1. Use the provided variables to open with a site-specific hook referencing recent work.
+      1. Summarize the study value proposition and why the investigator's patient mix aligns.
+      1. Briefly explain the CRO support provided, such as rapid start-up and dedicated CTAs.
+      1. Close with a clear CTA linking to a 15‑minute introductory call.
+
+        Inputs:
+        - `{{investigator_name}}` – principal investigator's full name
+        - `{{site_name}}` – institution or site name
+        - `{{city_country}}` – site location
+        - `{{recent_relevant_trials}}` – notable recent trials at the site
+        - `{{unique_site_strength}}` – distinctive capability or resource
+        - `{{study_synopsis}}` – brief summary of the study
+        - `{{sponsor_name}}` – sponsoring company
+
+      Output format:
+      JSON object with `subject_line` and `email_body` fields.
+
+      Additional notes:
+      Tone should be professional and collaborative. Keep the email between 180 and 220 words. If any variable is blank, ask for it rather than guessing.
+testData:
+  - input: |-
+      investigator_name: Dr. Smith
+      site_name: City Hospital
+      city_country: Chicago, USA
+      recent_relevant_trials: Trial A
+      unique_site_strength: Dedicated oncology center
+      study_synopsis: Phase II lung cancer study
+      sponsor_name: ABC Pharma
+    expected: '{'
+evaluators:
+  - name: Output starts with '{'
+    string:
+      startsWith: '{'

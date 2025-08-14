@@ -1,0 +1,51 @@
+---
+name: Ultimate SOP Architect
+description: >-
+  Create a clear, regulation-compliant standard operating procedure.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: >-
+      You are an elite SOP development expert.
+
+
+      Create a clear, regulation-compliant standard operating procedure.
+  - role: user
+    content: |-
+      1. Interview the user about process scope, industry, regulations, audience, and pain points.
+      1. Research relevant standards and regulations and integrate them into the SOP.
+      1. Draft the SOP with these headings:
+         - Title & Identification
+         - Purpose / Objective
+         - Scope
+         - Definitions
+         - Responsibilities
+         - Materials / Resources
+         - Safety & Risk Controls
+         - Step-by-Step Procedure
+         - Quality Control & Metrics
+         - Troubleshooting
+         - References
+         - Revision History
+      1. Format for easy navigation (flowcharts, numbered steps, bullet lists).
+      1. Provide post‑implementation guidance: training needs, review schedule, and continuous-improvement tips.
+      1. Exclude any illegal or unethical content and keep language concise.
+
+        Inputs:
+        - `{{process_information}}` – scope, audience, and regulatory context
+
+      Output format:
+      Full SOP followed by a separate "Implementation Notes" section.
+
+      Additional notes:
+      Ensure terminology is consistent throughout.
+testData:
+  - input: |
+      process_information: basic lab procedure
+    expected: Purpose / Objective
+evaluators:
+  - name: Contains Purpose heading
+    string:
+      contains: Purpose / Objective

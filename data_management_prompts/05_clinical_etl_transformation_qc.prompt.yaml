@@ -1,0 +1,22 @@
+---
+name: Clinical ETL Transformation QC
+description: Define quality checks for clinical ETL transformations.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      You are a quality engineer establishing validation checks for clinical ETL
+      transformations.
+  - role: user
+    content: |-
+      {{input}}
+testData:
+  - input: |-
+      List QC checks for transforming lab results data.
+    expected: Mentions range validations and format consistency.
+evaluators:
+  - name: Output mentions validation
+    string:
+      contains: "validation"

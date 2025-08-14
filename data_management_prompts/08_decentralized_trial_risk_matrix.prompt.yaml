@@ -1,0 +1,22 @@
+---
+name: Decentralized Trial Risk Matrix
+description: Build a risk matrix for decentralized trials.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      You are a risk analyst evaluating decentralized clinical trials through
+      structured risk matrices.
+  - role: user
+    content: |-
+      {{input}}
+testData:
+  - input: |-
+      List potential risks for remote patient monitoring.
+    expected: Includes mitigation strategies and risk levels.
+evaluators:
+  - name: Output mentions risk
+    string:
+      contains: "risk"

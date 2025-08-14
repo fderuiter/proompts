@@ -2,7 +2,9 @@
 
 This directory stores general reference material for the repository. Use
 `index.md` or `table-of-contents.md` for a complete table of contents that links to every prompt.
-All prompts are saved as `.json` files that conform to `prompt_schema.json`.
+
+Prompts are stored as `.prompt.yaml` files. The previous JSON format has been
+retired.
 
 ## Quick Links
 
@@ -18,5 +20,6 @@ All prompts are saved as `.json` files that conform to `prompt_schema.json`.
 - [Project Starter Pack](../starter_pack/overview.md)
 - [Codex Prompts](../codex_prompts/overview.md)
 - [GLP Prompts](../glp_prompts/overview.md)
+- [JSON to YAML Migration (historical)](json_to_yaml_migration.md)
 
 Add any new guidance here as the repository grows.

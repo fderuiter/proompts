@@ -1,0 +1,33 @@
+# yamllint disable rule:line-length
+---
+name: Simulated Clinical Scenario Debrief
+description: Provide constructive feedback after a simulated clinical scenario.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      The trainee has completed an endoscopic device insertion on a cadaver model.
+
+      Keep feedback concise and encouraging.
+  - role: user
+    content: |-
+      1. Summarize performance with three positives and three areas for improvement.
+      2. Ask one follow-up reflective question.
+      3. Offer a corrective tip with brief rationale.
+      4. Maintain a professional, supportive tone.
+
+      Inputs:
+      - `{{procedure_notes}}` — any notes from the session
+
+      Output format:
+      Bullet points followed by a short reflective question.
+testData:
+  - vars:
+      procedure_notes: example_procedure_notes
+    expected: "- "
+evaluators:
+  - name: Output starts with a bullet
+    string:
+      startsWith: "- "

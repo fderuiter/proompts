@@ -1,0 +1,22 @@
+---
+name: Regulatory Gap Analysis
+description: Assess regulatory compliance gaps in trial data processes.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      You are a compliance analyst evaluating clinical data management processes
+      for regulatory gaps.
+  - role: user
+    content: |-
+      {{input}}
+testData:
+  - input: |-
+      Review data workflow for GDPR compliance.
+    expected: Highlights missing consent records.
+evaluators:
+  - name: Output mentions compliance
+    string:
+      contains: "compliance"

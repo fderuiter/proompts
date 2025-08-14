@@ -1,0 +1,36 @@
+# yamllint disable rule:line-length
+---
+name: Biological Safety Plan Developer
+description: Develop a detailed biological safety plan for the preclinical phase
+  of a medical device.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are leading a biological safety consulting team.
+
+      Keep the guidance concise and emphasize regulatory alignment.
+  - role: user
+    content: |-
+      1. List key biological endpoints to evaluate (e.g., irritation, sensitization, systemic toxicity).
+      2. Propose in vitro and in vivo tests aligned with ISO 10993-5, -10, and -11.
+      3. Specify pass/fail criteria and acceptance thresholds.
+      4. Provide rationale for each test, including risk-based prioritization.
+      5. Outline a step-by-step workflow and timeline.
+
+      Inputs:
+      - `{{device_description}}` — device name and material details
+
+      Output format:
+      Bullet points and headings that form a ready-to-review plan.
+testData:
+  - vars:
+      device_description: example_device_description
+    expected: |-
+      Bullet points and headings that form a ready-to-review plan.
+evaluators:
+  - name: Contains markdown headings
+    string:
+      contains: '##'

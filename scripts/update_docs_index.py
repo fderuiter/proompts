@@ -1,25 +1,29 @@
 #!/usr/bin/env python3
-"""Update `docs/index.md` and `docs/table-of-contents.md` from JSON metadata."""
+"""Update `docs/index.md` and `docs/table-of-contents.md` from prompt metadata."""
 
 from __future__ import annotations
 
 import argparse
-import json
 import sys
 from collections import defaultdict
 from pathlib import Path
 
+import yaml
+
 ROOT = Path(__file__).resolve().parents[1]
 DOCS_DIR = ROOT / "docs"
 EXCLUDE = {"docs", "scripts", ".github"}
+# Extensions for prompt files included in the generated index
+PROMPT_EXTENSIONS = (".prompt.yaml", ".prompt.yml")
 
 
 def read_meta(path: Path) -> tuple[str, str]:
     """Return category and title from a prompt file."""
     try:
-        data = json.loads(path.read_text(encoding="utf-8"))
+        text = path.read_text(encoding="utf-8")
+        data = yaml.safe_load(text) or {}
+        title = str(data.get("name") or data.get("title") or "").strip()
         category = str(data.get("category") or path.parent.name)
-        title = str(data.get("title") or "").strip()
     except Exception:
         category = path.parent.name
         title = ""
@@ -37,13 +41,14 @@ def read_meta(path: Path) -> tuple[str, str]:
 def collect_prompts() -> dict[str, list[tuple[Path, str]]]:
     """Group prompt file paths by category."""
     groups: dict[str, list[tuple[Path, str]]] = defaultdict(list)
-    for path in ROOT.rglob("*.json"):
-        if not path.is_file():
-            continue
-        if any(part in EXCLUDE for part in path.parts):
-            continue
-        category, title = read_meta(path)
-        groups[category].append((path, title))
+    for ext in PROMPT_EXTENSIONS:
+        for path in ROOT.rglob(f"*{ext}"):
+            if not path.is_file():
+                continue
+            if any(part in EXCLUDE for part in path.parts):
+                continue
+            category, title = read_meta(path)
+            groups[category].append((path, title))
     # sort files within each category
     for cat in groups:
         groups[cat].sort(key=lambda t: t[0])

@@ -1,0 +1,32 @@
+---
+name: Red-Team Stress-Test
+description: Form a red-team panel of 3 experts (Technical Hacker, Ruthless
+  Competitor CEO, Regulatory Officer).
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      Scenario: “[IDEA / STRATEGY]”.
+
+      1. Each expert lists their top 2 attack vectors.
+      2. Consolidate attacks into a ranked list by severity.
+      3. For the top 3 attacks, propose a mitigation playbook (≤ 50 words each).
+      4. End with one metric to track that signals the mitigation is working.
+  - role: user
+    content: |-
+      {{input}}
+testData:
+  - input: New online payment platform
+    expected: |-
+      Technical Hacker: breach data; inject malware.
+      Competitor CEO: undercut fees; poach merchants.
+      Regulatory Officer: non-compliance fines; audit failures.
+      Ranked attacks: data breach, fee war, compliance gaps.
+      Mitigations: encryption, reserve fund, audit trail.
+      Metric: weekly fraud rate.
+evaluators:
+  - name: Output specifies metric
+    string:
+      contains: 'Metric'

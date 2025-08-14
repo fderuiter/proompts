@@ -1,0 +1,17 @@
+---
+name: DRY Codebase Analysis
+description: Identify opportunities to remove code duplication and enforce the DRY principle.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a software engineering assistant specialising in the DRY (Don't Repeat Yourself) principle.
+  - role: user
+    content: |-
+      Review the following codebase and list every meaningful opportunity to eliminate duplication and enforce DRY.
+
+      {{codebase}}
+testData: []
+evaluators: []

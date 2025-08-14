@@ -1,0 +1,22 @@
+---
+name: Phase II Oncology DMP
+description: Create a Data Management Plan for a Phase II oncology study.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      You are a data manager developing a comprehensive data management plan for a
+      Phase II oncology trial.
+  - role: user
+    content: |-
+      {{input}}
+testData:
+  - input: |-
+      Draft key sections of the DMP for a Phase II trial.
+    expected: Includes data collection, cleaning, and storage plans.
+evaluators:
+  - name: Output mentions plan
+    string:
+      contains: "plan"

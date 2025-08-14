@@ -1,0 +1,21 @@
+---
+name: Data Architecture Blueprint
+description: Draft a blueprint for clinical data architecture.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      You are a data architect planning scalable clinical data architectures.
+  - role: user
+    content: |-
+      {{input}}
+testData:
+  - input: |-
+      Design a high-level architecture for storing clinical trial data.
+    expected: Mentions staging, warehouse, and analytics layers.
+evaluators:
+  - name: Output mentions architecture
+    string:
+      contains: "architecture"

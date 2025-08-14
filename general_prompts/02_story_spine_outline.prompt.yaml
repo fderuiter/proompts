@@ -1,0 +1,35 @@
+---
+name: Pixar Story Spine Outline
+description: Guide the model in creating a short Pixar-style story outline for middle-grade
+  readers.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: 'The Pixar Story Spine provides a simple eight-sentence framework for
+      tales with a clear emotional arc.
+
+
+      1. Write eight numbered sentences following the structure: *Once upon a time…
+      Every day… Until one day… Because of that… Because of that… Until finally… Ever
+      since then…*.
+
+      2. Keep each sentence 18 words or fewer and total length under 120 words.
+
+      3. Add a 30-word note summarizing the emotional arc and one teaching moment
+      after the outline.
+
+
+      Designed for middle-grade readers; keep language age-appropriate.
+
+
+      References: Tame Your Book, Westside Excellence in Youth'
+  - role: user
+    content: '- `{{TOPIC}}` — the subject of the story.
+
+
+      Output format: Plain text with the numbered sentences followed by a short note.'
+
+testData: []
+evaluators: []

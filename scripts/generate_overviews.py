@@ -3,7 +3,8 @@
 
 from pathlib import Path
 import sys
-import json
+
+import yaml
 
 OVERVIEW_NAME = "overview.md"  # documentation remains in Markdown
 
@@ -11,16 +12,21 @@ ROOT = Path(__file__).resolve().parents[1]
 EXCLUDE_DIRS = {"docs", "scripts", ".github"}
 
 
-def title_from_json(path: Path) -> str:
-    """Return prompt title from a JSON file or fallback to filename."""
+def title_from_prompt(path: Path) -> str:
+    """Return prompt title from a YAML file or fallback to filename."""
     try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-        title = data.get("title")
+        text = path.read_text(encoding="utf-8")
+        data = yaml.safe_load(text) or {}
+        title = data.get("name") or data.get("title")
         if title:
             return str(title).strip()
     except Exception:
         pass
-    name = path.stem
+    name = path.name
+    for ext in (".prompt.yaml", ".prompt.yml"):
+        if name.lower().endswith(ext):
+            name = name[: -len(ext)]
+            break
     if name.split("_", 1)[0].isdigit():
         name = name.split("_", 1)[1]
     return name.replace("_", " ").title()
@@ -29,8 +35,11 @@ def title_from_json(path: Path) -> str:
 def generate_overview(directory: Path) -> str:
     title = directory.name.replace("_", " ").title()
     lines = [f"# {title} Overview", ""]
-    for file in sorted(directory.glob("*.json")):
-        heading = title_from_json(file)
+    prompt_files = []
+    for pattern in ("*.prompt.yaml", "*.prompt.yml"):
+        prompt_files.extend(directory.glob(pattern))
+    for file in sorted(prompt_files):
+        heading = title_from_prompt(file)
         lines.append(f"- [{heading}]({file.name})")
     return "\n".join(lines).rstrip() + "\n"
 

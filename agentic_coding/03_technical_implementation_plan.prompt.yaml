@@ -1,0 +1,40 @@
+# yamllint disable rule:line-length
+---
+name: Technical Implementation Plan
+description: Detail the architecture, dependencies, and steps required to implement a project.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      This plan guides developers in structuring modules, selecting libraries, and mitigating risks.
+
+      Revise the plan iteratively until all risks are addressed.
+  - role: user
+    content: |-
+      1. Define modules, services, and overall architecture.
+      1. List the libraries, frameworks, and tools to use.
+      1. Describe all required data models with fields and constraints.
+      1. Specify business logic and rules in clear terms.
+      1. Identify dependencies, risks, and proposed solutions.
+      1. Outline step-by-step implementation for each feature or service.
+
+         Iterate the plan at least three times for robustness.
+      Inputs:
+      - `{{architecture_overview}}` – proposed system structure
+      - `{{technology_choices}}` – libraries and frameworks
+      - `{{data_models}}` – entities and relationships
+      Output format:
+      Markdown sections for Architecture Breakdown, Libraries and Tools, Data Models & Specifications, Business Logic & Rules, Dependencies & Risk Analysis, and Implementation Steps.
+testData:
+  - vars:
+      architecture_overview: example_architecture_overview
+      data_models: example_data_models
+      technology_choices: example_technology_choices
+    expected: |-
+      Markdown sections for Architecture Breakdown, Libraries and Tools, Data Models & Specifications, Business Logic & Rules, Dependencies & Risk Analysis, and Implementation Steps.
+evaluators:
+  - name: Output starts with 'Architecture Breakdown'
+    string:
+      startsWith: 'Architecture Breakdown'

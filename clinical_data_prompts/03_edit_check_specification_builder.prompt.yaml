@@ -1,0 +1,25 @@
+---
+name: Edit-Check Specification Builder for New eCRF Fields
+description: Create edit-check specifications for the new Concomitant Medication
+  module in Medidata Rave.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: "You are a Clinical Data Specialist configuring Medidata Rave.  \n**Goal**:
+      Create detailed edit-check specifications for the new Concomitant Medication
+      (CMED) module."
+  - role: user
+    content: |-
+      {{input}}
+testData:
+  - input: |-
+      Field: CMSTDTC, CMENDTC
+      Rule: End Date must be on or after Start Date.
+    expected: |-
+      IF CMENDTC < CMSTDTC THEN raise query "End Date precedes Start Date."
+evaluators:
+  - name: Validates date order
+    string:
+      contains: "CMENDTC < CMSTDTC"

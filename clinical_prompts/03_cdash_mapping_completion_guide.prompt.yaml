@@ -1,0 +1,27 @@
+---
+name: CDASH Mapping & Completion-Guide Assistant
+description: '- For every variable in the list, supply:'
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: "• CDASH variable name  \n  • SDTM target domain.variable  \n  • Plain-language
+      completion instruction (≤40 words)  \n  • Controlled terminology / units  \n\
+      \  • Allowed query logic (range checks, missing-data rules).\n- At the end,
+      provide a one-page “Top 10 data-entry tips” bullet list.\n- Output in CSV-ready
+      Markdown:\n  Variable | Domain | Instruction | Terminology/Units | Edit-Check\n\
+      - Think through the mapping logic first, then write the table."
+  - role: user
+    content: |-
+      {{input}}
+testData:
+  - input: |
+      HEIGHT
+    expected: |
+      Variable | Domain | Instruction | Terminology/Units | Edit-Check
+      HEIGHT | DM.HEIGHT | Record height in cm | cm | 30-250
+evaluators:
+  - name: Output should start with CSV header
+    string:
+      startsWith: 'Variable | Domain | Instruction'

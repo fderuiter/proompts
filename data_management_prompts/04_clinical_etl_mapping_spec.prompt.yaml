@@ -1,0 +1,22 @@
+---
+name: Clinical ETL Mapping Spec
+description: Create an ETL mapping specification for clinical data.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      You are an ETL specialist defining mapping specifications for clinical trial
+      data pipelines.
+  - role: user
+    content: |-
+      {{input}}
+testData:
+  - input: |-
+      Map source patient records to target schema fields.
+    expected: Includes field-to-field mappings.
+evaluators:
+  - name: Output mentions mapping
+    string:
+      contains: "mapping"
