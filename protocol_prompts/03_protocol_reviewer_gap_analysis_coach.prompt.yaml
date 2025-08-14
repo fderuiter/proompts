@@ -37,5 +37,11 @@ messages:
 
       Additional notes:
       Keep feedback constructive and reference best practice guidelines.
-testData: []
-evaluators: []
+testData:
+  - input: |
+      protocol_text_or_nct: NCT00000000
+    expected: Table of scores
+evaluators:
+  - name: Provides score table
+    string:
+      contains: Table of scores

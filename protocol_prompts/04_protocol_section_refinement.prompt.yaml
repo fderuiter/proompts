@@ -29,5 +29,12 @@ messages:
 
       Additional notes:
       Keep language concise and align with regulatory expectations.
-testData: []
-evaluators: []
+testData:
+  - input: |
+      condition: diabetes
+      draft_section: placeholder text
+    expected: Inclusion
+evaluators:
+  - name: Contains inclusion subsection
+    string:
+      contains: Inclusion
