@@ -13,5 +13,13 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      Field: CMSTDTC, CMENDTC
+      Rule: End Date must be on or after Start Date.
+    expected: |-
+      IF CMENDTC < CMSTDTC THEN raise query "End Date precedes Start Date."
+evaluators:
+  - name: Validates date order
+    string:
+      contains: "CMENDTC < CMSTDTC"

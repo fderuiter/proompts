@@ -24,5 +24,13 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      Subject_ID,Visit,Field,Value
+      001,Baseline,Age,34
+      002,Baseline,Age,28
+    expected: No data discrepancies detected.
+evaluators:
+  - name: Should report no discrepancies
+    string:
+      equals: "No data discrepancies detected."
