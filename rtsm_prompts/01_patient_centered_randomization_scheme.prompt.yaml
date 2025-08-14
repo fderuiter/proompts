@@ -50,5 +50,12 @@ messages:
 
       Additional notes:
       Ensure the scheme is ready for RTSM vendor implementation.
-testData: []
-evaluators: []
+testData:
+  - vars:
+      study_parameters: example_study_parameters
+    expected: |-
+      4-bullet executive summary and specification table.
+evaluators:
+  - name: Output starts with bullet list
+    string:
+      startsWith: '- '

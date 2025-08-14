@@ -36,5 +36,12 @@ messages:
 
       Additional notes:
       Avoid internal reasoning in the output.
-testData: []
-evaluators: []
+testData:
+  - vars:
+      existing_sop: example_sop
+    expected: |-
+      Markdown table, mitigation procedures, and flowchart description.
+evaluators:
+  - name: Output starts with markdown table
+    string:
+      startsWith: '|'
