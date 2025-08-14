@@ -33,5 +33,19 @@ messages:
 
       Additional notes:
       Keep the table easy to import into spreadsheets.
-testData: []
-evaluators: []
+testData:
+  - site_data: |-
+      Site_ID,Country,Currency,Enrollment,Start-up
+      S1,US,USD,10,1000
+    enrollment_curve: |-
+      Month,Percent
+      1,10
+    fx_rates: |-
+      Currency,USD
+      USD,1
+    expected: |-
+      | Site ID |
+evaluators:
+  - name: Contains site ID column
+    string:
+      contains: "| Site ID |"

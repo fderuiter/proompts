@@ -33,5 +33,18 @@ messages:
 
       Additional notes:
       Keep recommendations actionable and concise.
-testData: []
-evaluators: []
+testData:
+  - payment_ledger: |-
+      Site_ID,Milestone,Amount
+      S1,Start-up,1000
+    cta_budget: |-
+      Milestone,Amount
+      Start-up,1000
+    site_queries: |-
+      S1: none
+    expected: |-
+      Issue_Type
+evaluators:
+  - name: Contains issue type column
+    string:
+      contains: "Issue_Type"

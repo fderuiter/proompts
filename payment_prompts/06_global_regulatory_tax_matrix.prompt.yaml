@@ -27,5 +27,12 @@ messages:
 
       Additional notes:
       Keep language concise and reference official guidance where possible.
-testData: []
-evaluators: []
+testData:
+  - regional_guidelines: |-
+      US: 1099 reporting
+    expected: |-
+      | Region |
+evaluators:
+  - name: Contains region column
+    string:
+      contains: "| Region |"
