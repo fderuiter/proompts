@@ -36,3 +36,4 @@ testData:
       repository_url: example_repository_url
     expected: |-
       Return the finished `REQUIREMENTS.md` content only.
+evaluators: []

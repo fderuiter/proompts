@@ -28,3 +28,4 @@ testData:
       procedure_notes: example_procedure_notes
     expected: |-
       Bullet points followed by a short reflective question.
+evaluators: []

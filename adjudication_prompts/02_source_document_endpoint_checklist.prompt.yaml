@@ -32,3 +32,4 @@ testData:
     expected: |-
       - Markdown table per endpoint with columns: *Doc Type*, *Required?*, *Acceptable Formats*, *Notes*.
       - Numbered list of **Clarification Needed** items.
+evaluators: []

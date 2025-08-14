@@ -27,3 +27,4 @@ testData:
       dataset_path: example_dataset_path
     expected: |-
       Section A: conceptual walk-through (bullets). Section B: fenced R code block. Section C: interpretation and next steps (\u2264250 words).
+evaluators: []

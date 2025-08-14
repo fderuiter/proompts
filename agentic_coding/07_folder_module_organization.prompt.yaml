@@ -30,3 +30,4 @@ testData:
       repo_path: example_repo_path
     expected: |-
       Markdown plan detailing the checklist, migration steps, validation commands, and follow-up prompts.
+evaluators: []

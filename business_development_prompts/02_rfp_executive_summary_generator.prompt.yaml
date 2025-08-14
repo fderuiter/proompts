@@ -30,3 +30,4 @@ testData:
       rfp_synopsis: example_rfp_synopsis
     expected: |-
       Single markdown section with concise paragraphs and bullet points as needed.
+evaluators: []

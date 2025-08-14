@@ -32,3 +32,4 @@ testData:
       device_information: example_device_information
     expected: |-
       Numbered work plan followed by a short summary paragraph.
+evaluators: []

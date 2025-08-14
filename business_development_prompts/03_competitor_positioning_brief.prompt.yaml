@@ -29,3 +29,4 @@ testData:
       public_sources: example_public_sources
     expected: |-
       Markdown with two sections: a comparison table and a short narrative.
+evaluators: []

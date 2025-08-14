@@ -30,3 +30,4 @@ testData:
       device_description: example_device_description
     expected: |-
       Bullet points and headings forming a clear plan.
+evaluators: []

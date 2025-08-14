@@ -28,3 +28,4 @@ testData:
   - input: ''
     expected: |-
       Completion follows instructions.
+evaluators: []

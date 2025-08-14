@@ -30,3 +30,4 @@ testData:
       trial_details: example_trial_details
     expected: |-
       Bulleted recommendations followed by brief explanatory notes.
+evaluators: []

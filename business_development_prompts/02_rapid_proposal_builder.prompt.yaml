@@ -32,3 +32,4 @@ testData:
       client_name: example_client_name
     expected: |-
       Markdown document with headings and a budget table.
+evaluators: []
