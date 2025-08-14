@@ -1,6 +1,7 @@
 ---
 name: Detailed Project Blueprint and Timeline
-description: Provide a comprehensive roadmap with phases, milestones, success metrics, and stakeholders.
+description: Provide a comprehensive roadmap with phases, milestones, success 
+  metrics, and stakeholders.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -24,3 +25,5 @@ messages:
 
       Output Format:
       Markdown table outlining the project roadmap.
+testData: []
+evaluators: []

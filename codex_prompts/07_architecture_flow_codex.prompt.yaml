@@ -1,6 +1,6 @@
 ---
 name: Architecture Flow Q&A (OpenAI Codex)
-description: Trace a request from client endpoint to database and document the
+description: Trace a request from client endpoint to database and document the 
   flow with a Mermaid diagram.
 model: gpt-4
 modelParameters:
@@ -21,3 +21,5 @@ messages:
   - role: user
     content: |-
       {{input}}
+testData: []
+evaluators: []

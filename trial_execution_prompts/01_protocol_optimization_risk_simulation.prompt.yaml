@@ -1,6 +1,7 @@
 ---
 name: Protocol Optimization and Risk Simulation
-description: Evaluate a draft clinical protocol and simulate the effects of simplifying key elements.
+description: Evaluate a draft clinical protocol and simulate the effects of 
+  simplifying key elements.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -27,3 +28,5 @@ messages:
       - **Section B:** Scenario 1 – metrics and narrative
       - **Section C:** Scenario 2 – metrics and narrative
       - **Section D:** Recommendations
+testData: []
+evaluators: []

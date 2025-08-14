@@ -1,6 +1,6 @@
 ---
 name: Risk-Based Monitoring (RBM) Plan Builder
-description: Develop a site-level risk-based monitoring plan with risk matrix,
+description: Develop a site-level risk-based monitoring plan with risk matrix, 
   KRIs, and adaptive strategy.
 model: gpt-4
 modelParameters:
@@ -30,3 +30,5 @@ messages:
   - role: user
     content: |-
       {{input}}
+testData: []
+evaluators: []

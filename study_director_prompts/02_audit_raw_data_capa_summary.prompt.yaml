@@ -1,6 +1,7 @@
 ---
 name: Audit Raw Data and Draft a CAPA Summary
-description: Review study data for deviations and produce a corrective-action plan.
+description: Review study data for deviations and produce a corrective-action 
+  plan.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -24,3 +25,5 @@ messages:
       Output Format:
       1. Markdown table with columns: Issue ID | Impact | CAPA
       2. CAPA memo addressed to the Study Director (≤300 words)
+testData: []
+evaluators: []

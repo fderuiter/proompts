@@ -1,6 +1,7 @@
 ---
 name: TMF Gap-Analysis and Audit Readiness Check
-description: Identify missing or outdated Trial Master File documents and propose corrective actions.
+description: Identify missing or outdated Trial Master File documents and 
+  propose corrective actions.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -22,3 +23,5 @@ messages:
 
       Output Format:
       Markdown table followed by a numbered action plan.
+testData: []
+evaluators: []

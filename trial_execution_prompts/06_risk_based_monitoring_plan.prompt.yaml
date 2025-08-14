@@ -22,3 +22,5 @@ messages:
       Output Format:
       1. Executive slide outline (bulleted)
       2. Editable risk register in a Markdown table
+testData: []
+evaluators: []

@@ -1,6 +1,7 @@
 ---
 name: Adaptive Recruitment and Retention Strategy
-description: Design an optimized recruitment and retention plan for a multi-site pivotal study.
+description: Design an optimized recruitment and retention plan for a multi-site
+  pivotal study.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -25,3 +26,5 @@ messages:
       1. Pre‑screening workflow
       2. Site-level engagement tactics
       3. Recruitment and retention metrics
+testData: []
+evaluators: []

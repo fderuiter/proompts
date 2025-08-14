@@ -1,6 +1,7 @@
 ---
 name: AI-Powered Site and Recruitment Strategy
-description: Select optimal sites and anticipate dropout risks using simulated EHR insights.
+description: Select optimal sites and anticipate dropout risks using simulated 
+  EHR insights.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -26,3 +27,5 @@ messages:
       - **Site Ranking Table** – site, enrollment projection, retention rate
       - **Dropout Risks** – list with explanations
       - **Mitigation Plan** – bullet points per risk
+testData: []
+evaluators: []

@@ -1,6 +1,6 @@
 ---
 name: Trial-Design Optimisation Memo
-description: Rewrite a study synopsis to accelerate startup while maintaining
+description: Rewrite a study synopsis to accelerate startup while maintaining 
   statistical power and budget.
 model: gpt-4o
 modelParameters:
@@ -25,3 +25,5 @@ messages:
   - role: user
     content: |-
       {{input}}
+testData: []
+evaluators: []

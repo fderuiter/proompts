@@ -1,6 +1,6 @@
 ---
 name: Design.md Template
-description: Generate a design.md template capturing problem, constraints, and
+description: Generate a design.md template capturing problem, constraints, and 
   decisions.
 model: gpt-4o
 modelParameters:
@@ -13,3 +13,5 @@ messages:
   - role: user
     content: |-
       {{input}}
+testData: []
+evaluators: []

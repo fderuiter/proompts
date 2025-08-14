@@ -1,6 +1,7 @@
 ---
 name: Investigator's Brochure Summary of Changes
-description: Produce a detailed summary of changes for the annual Investigator’s Brochure update.
+description: Produce a detailed summary of changes for the annual Investigator’s
+  Brochure update.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -25,3 +26,5 @@ messages:
       Output Format:
       1. Markdown table(s) with columns: Section | Old text | New text | Rationale
       2. Concise narrative summarizing major changes
+testData: []
+evaluators: []

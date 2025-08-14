@@ -1,6 +1,7 @@
 ---
 name: Cross-Study Operational Risk Heat Map and Mitigation Plan
-description: Identify and prioritize the top portfolio-level operational risks and propose mitigations.
+description: Identify and prioritize the top portfolio-level operational risks 
+  and propose mitigations.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -24,3 +25,5 @@ messages:
       - Table "Risk-Heat-Map".
       - Table "Mitigation-Plan".
       - Executive summary paragraph.
+testData: []
+evaluators: []

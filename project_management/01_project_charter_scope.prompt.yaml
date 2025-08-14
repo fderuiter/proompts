@@ -1,6 +1,7 @@
 ---
 name: Project Charter and Scope Definition
-description: Create a complete project charter summarizing background, objectives, scope, deliverables, and key risks.
+description: Create a complete project charter summarizing background, 
+  objectives, scope, deliverables, and key risks.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -27,3 +28,5 @@ messages:
 
       Output Format:
       Markdown document with the sections listed above.
+testData: []
+evaluators: []
