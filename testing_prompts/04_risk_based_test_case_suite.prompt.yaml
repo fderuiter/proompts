@@ -24,3 +24,16 @@ messages:
       1. Markdown traceability matrix linking hazards, controls and test cases
       2. Detailed test-case catalog with objectives, setups, steps, expected results and sample size justification
       3. Summary of uncovered high-risk areas requiring additional controls
+
+testData:
+  - input: |
+      device_name: Cardiac Monitor
+      hazard_analysis_table: |
+        Hazard_ID | Hazard | Control
+        H1        | Battery failure | Backup battery
+    expected: |
+      Risk-Control Traceability Matrix
+evaluators:
+  - name: Output starts with 'Risk-Control Traceability Matrix'
+    string:
+      startsWith: 'Risk-Control Traceability Matrix'

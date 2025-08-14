@@ -34,3 +34,14 @@ messages:
       6. Risk-mitigation triggers and stop rules
       7. Data analysis plan
       8. Deliverables and acceptance criteria
+
+testData:
+  - input: |
+      device_name: Smart Inhaler
+      class: II
+    expected: |
+      Purpose and regulatory basis
+evaluators:
+  - name: Output starts with 'Purpose and regulatory basis'
+    string:
+      startsWith: 'Purpose and regulatory basis'

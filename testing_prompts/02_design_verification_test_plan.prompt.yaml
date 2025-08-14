@@ -27,3 +27,13 @@ messages:
       3. Detailed test procedures with numbered steps
       4. Rationale for each verification method
       5. Reference list formatted per ISO 13485 §7.3.6
+
+testData:
+  - input: |
+      device_name: Wearable Glucose Monitor
+    expected: |
+      Introduction
+evaluators:
+  - name: Output starts with 'Introduction'
+    string:
+      startsWith: 'Introduction'
