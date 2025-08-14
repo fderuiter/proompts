@@ -1,6 +1,6 @@
 ---
 name: Patient-Centric BYOD ePRO Workflow
-description: Design a streamlined ePRO workflow that supports a BYOD model and 
+description: Design a streamlined ePRO workflow that supports a BYOD model and
   maximizes patient compliance.
 model: gpt-4o
 modelParameters:
@@ -19,5 +19,11 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |
+      Design a BYOD workflow for 100 patients over 6 months.
+    expected: Plan outlines BYOD setup steps, UX flow, IWRS integration, and data security.
+evaluators:
+  - name: Includes BYOD workflow details
+    string:
+      contains: "BYOD"

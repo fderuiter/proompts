@@ -19,5 +19,11 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |
+      Need to improve ePRO form for fatigue tracking.
+    expected: Design groups items across screens with validation and onboarding tips.
+evaluators:
+  - name: Mentions validation
+    string:
+      contains: "validation"
