@@ -30,4 +30,8 @@ testData:
       crm_csv: example_crm_csv
     expected: |-
       Markdown summary tables followed by bullet-point recommendations.
-evaluators: []
+
+evaluators:
+  - name: Includes markdown table
+    string:
+      contains: "|"

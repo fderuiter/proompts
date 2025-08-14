@@ -33,4 +33,8 @@ testData:
       company_size: example_company_size
     expected: |-
       Markdown table followed by a short summary paragraph.
-evaluators: []
+
+evaluators:
+  - name: Includes markdown table
+    string:
+      contains: "|"
