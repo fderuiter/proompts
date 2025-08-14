@@ -29,9 +29,8 @@ messages:
 testData:
   - vars:
       procedure_name: example_procedure_name
-    expected: |-
-      Markdown table:
-
-      | Criterion | Description | Pass threshold |
-      |-----------|-------------|----------------|
-evaluators: []
+    expected: "Markdown table:"
+evaluators:
+  - name: Output starts with 'Markdown table:'
+    string:
+      startsWith: "Markdown table:"
