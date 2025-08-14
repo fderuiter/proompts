@@ -20,5 +20,12 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      package_path: src/module.py
+      bug_description: failing edge case
+    expected: Bug Fix -
+evaluators:
+  - name: Output starts with 'Bug Fix -'
+    string:
+      startsWith: 'Bug Fix -'

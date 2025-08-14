@@ -1,6 +1,6 @@
 ---
 name: Refactoring Suggestions (OpenAI Codex)
-description: Suggest structural improvements for a complex file to increase 
+description: Suggest structural improvements for a complex file to increase
   readability and testability.
 model: gpt-4
 modelParameters:
@@ -21,5 +21,11 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      file_path: src/app.js
+    expected: Refactor Plan -
+evaluators:
+  - name: Output starts with 'Refactor Plan -'
+    string:
+      startsWith: 'Refactor Plan -'

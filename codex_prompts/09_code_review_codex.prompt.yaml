@@ -21,5 +21,12 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      diff: |
+        @@ line @@
+    expected: Code Review -
+evaluators:
+  - name: Output starts with 'Code Review -'
+    string:
+      startsWith: 'Code Review -'
