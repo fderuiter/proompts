@@ -1,6 +1,6 @@
 ---
 name: Interim Results Executive Brief
-description: Summarize interim analysis findings for cross-functional 
+description: Summarize interim analysis findings for cross-functional
   leadership.
 model: gpt-4o
 modelParameters:
@@ -36,5 +36,14 @@ messages:
       - **Key Findings**
       - **Risk Assessment**
       - **Recommended Actions**
-testData: []
-evaluators: []
+testData:
+  - vars:
+      analysis_results: example_analysis_results
+      statistical_plan: example_statistical_plan
+      safety_listings: example_safety_listings
+    expected: |-
+      Markdown headings **Introduction**, **Key Findings**, **Risk Assessment**, and **Recommended Actions**.
+evaluators:
+  - name: Contains Key Findings section
+    string:
+      contains: "Key Findings"
