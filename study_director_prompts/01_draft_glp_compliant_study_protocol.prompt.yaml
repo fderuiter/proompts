@@ -1,6 +1,6 @@
 ---
 name: Draft a GLP-Compliant Study Protocol
-description: Produce a detailed study plan that satisfies OECD and FDA GLP 
+description: Produce a detailed study plan that satisfies OECD and FDA GLP
   regulations.
 model: gpt-4o
 modelParameters:
@@ -26,5 +26,16 @@ messages:
       Output Format:
       1. Numbered outline covering all requested sections
       2. CSV-ready risk-mitigation table with columns: Phase, Risk, Impact, Mitigation
-testData: []
-evaluators: []
+testData:
+  - input: |
+      protocol_basics: |
+        Test Article: Compound A
+        Species: Sprague-Dawley rats
+        Duration: 28 days
+    expected: |
+      1. Objectives and scientific rationale
+      Phase,Risk,Impact,Mitigation
+evaluators:
+  - name: Includes mitigation table headers
+    string:
+      contains: 'Phase,Risk,Impact,Mitigation'
