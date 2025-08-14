@@ -24,3 +24,4 @@ testData:
   - vars: {}
     expected: |-
       Markdown checklist under **To-Do** and **Completed Tasks** sections.
+evaluators: []

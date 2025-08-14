@@ -37,3 +37,4 @@ testData:
       - **Section 2:** Dashboard data model (table)
       - **Section 3:** Alert rules (bullets)
       - **Section 4:** Platform recommendations (table)
+evaluators: []

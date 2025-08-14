@@ -38,3 +38,4 @@ testData:
       adlb_path: example_adlb_path
     expected: |-
       SAS code block(s) with header comments, followed by a QC checklist in a markdown table and brief usage notes (≤120 words).
+evaluators: []

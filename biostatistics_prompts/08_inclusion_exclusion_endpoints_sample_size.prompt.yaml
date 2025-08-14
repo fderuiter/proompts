@@ -33,3 +33,4 @@ testData:
       population_details: example_population_details
     expected: |-
       Bullet lists for criteria and endpoints followed by a short sample-size paragraph.
+evaluators: []

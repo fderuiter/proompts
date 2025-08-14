@@ -34,3 +34,4 @@ testData:
       dataset_path: example_dataset_path
     expected: |-
       Code block followed by the generated table.
+evaluators: []

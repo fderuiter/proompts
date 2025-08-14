@@ -35,3 +35,4 @@ testData:
       regulatory_target: example_regulatory_target
     expected: |-
       Bullet summary followed by short explanatory paragraphs.
+evaluators: []

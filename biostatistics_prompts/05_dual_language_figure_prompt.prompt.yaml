@@ -33,3 +33,4 @@ testData:
       dataset_path: example_dataset_path
     expected: |-
       Two pristine code blocks: first in R, then in SAS.
+evaluators: []

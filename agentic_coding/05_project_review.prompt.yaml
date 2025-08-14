@@ -28,3 +28,4 @@ testData:
   - vars: {}
     expected: |-
       Markdown checklist confirming each step was completed.
+evaluators: []

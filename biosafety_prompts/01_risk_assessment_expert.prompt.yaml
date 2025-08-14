@@ -29,3 +29,4 @@ testData:
       medical_device_type: example_medical_device_type
     expected: |-
       Markdown table summarizing hazards and mitigations.
+evaluators: []

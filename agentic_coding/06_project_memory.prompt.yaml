@@ -25,3 +25,4 @@ testData:
   - vars: {}
     expected: |-
       Markdown file with sections **Current Project State** and **Contextual Notes**.
+evaluators: []

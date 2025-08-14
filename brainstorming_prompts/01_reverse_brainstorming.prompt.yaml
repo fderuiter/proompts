@@ -25,3 +25,4 @@ testData:
       problem: example_problem
     expected: |-
       Bulleted list plus markdown table.
+evaluators: []

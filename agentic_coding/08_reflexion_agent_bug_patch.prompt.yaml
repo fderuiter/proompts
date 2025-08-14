@@ -25,3 +25,4 @@ testData:
       code: example_code
     expected: |-
       Markdown with code fences for the patch and a short rationale. Entire reply ≤ 120 words.
+evaluators: []

@@ -32,3 +32,4 @@ testData:
       context_notes: example_context_notes
     expected: |-
       Markdown sections titled **Vision**, **Key Features and Roadmap**, **Overall Architecture**, and **Additional Context**.
+evaluators: []

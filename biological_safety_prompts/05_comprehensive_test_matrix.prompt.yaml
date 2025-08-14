@@ -30,3 +30,4 @@ testData:
       device_materials: example_device_materials
     expected: |-
       Two-level markdown table followed by concise explanatory notes.
+evaluators: []

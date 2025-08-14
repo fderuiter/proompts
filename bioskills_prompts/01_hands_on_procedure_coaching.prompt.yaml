@@ -29,3 +29,4 @@ testData:
       procedure_name: example_procedure_name
     expected: |-
       Bullet list of steps and checkpoints.
+evaluators: []
