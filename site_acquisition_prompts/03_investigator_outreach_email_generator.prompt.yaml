@@ -34,5 +34,17 @@ messages:
 
       Additional notes:
       Tone should be professional and collaborative. Keep the email between 180 and 220 words. If any variable is blank, ask for it rather than guessing.
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      investigator_name: Dr. Smith
+      site_name: City Hospital
+      city_country: Chicago, USA
+      recent_relevant_trials: Trial A
+      unique_site_strength: Dedicated oncology center
+      study_synopsis: Phase II lung cancer study
+      sponsor_name: ABC Pharma
+    expected: '{'
+evaluators:
+  - name: Output starts with '{'
+    string:
+      startsWith: '{'

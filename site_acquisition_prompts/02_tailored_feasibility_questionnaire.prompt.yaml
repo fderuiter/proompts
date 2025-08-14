@@ -34,5 +34,11 @@ messages:
 
       Additional notes:
       Keep medical acronyms consistent with the protocol. If key details are missing, list them and stop.
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      protocol_summary: Draft Phase II oncology protocol
+    expected: Section A
+evaluators:
+  - name: Output starts with 'Section A'
+    string:
+      startsWith: 'Section A'
