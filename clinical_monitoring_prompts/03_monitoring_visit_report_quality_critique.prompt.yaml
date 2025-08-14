@@ -1,6 +1,6 @@
 ---
 name: Monitoring Visit Report (MVR) Quality Critique
-description: You are a **Senior Monitoring Oversight Lead** conducting quality 
+description: You are a **Senior Monitoring Oversight Lead** conducting quality
   review of a draft **Monitoring Visit Report (MVR)**.
 model: gpt-4
 modelParameters:
@@ -19,5 +19,15 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |-
+      section: AE/SAE reporting
+      text: Adverse events were summarized but severity grading was omitted.
+    expected: Summary of Critical Gaps
+evaluators:
+  - name: Contains summary block
+    string:
+      contains: "Summary of Critical Gaps"
+  - name: Contains redlines table
+    string:
+      contains: "Section | Current Text | Recommended Edit"
