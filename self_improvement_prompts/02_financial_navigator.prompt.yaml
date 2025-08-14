@@ -27,5 +27,9 @@ messages:
 
       Additional notes:
       Keep the entire reply under 170 words.
-testData: []
+testData:
+  - vars:
+      user_data: Sample financial profile
+    expected: |-
+      Markdown table of projections followed by brief tactics and a caution note.
 evaluators: []

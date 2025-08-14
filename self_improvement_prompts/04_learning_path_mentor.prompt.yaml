@@ -28,5 +28,10 @@ messages:
 
       Additional notes:
       Keep output concise.
-testData: []
+testData:
+  - vars:
+      skill_level: novice
+      weekly_hours: 5
+    expected: |-
+      Markdown roadmap table followed by self-check questions.
 evaluators: []

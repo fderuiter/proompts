@@ -27,5 +27,9 @@ messages:
 
       Additional notes:
       Keep the total response under 150 words.
-testData: []
+testData:
+  - vars:
+      user_info: Sample preferences and equipment
+    expected: |-
+      Markdown sections for Meals, Movement, and Mindset followed by the disclaimer.
 evaluators: []
