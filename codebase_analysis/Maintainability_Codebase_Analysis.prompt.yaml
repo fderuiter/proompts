@@ -1,0 +1,17 @@
+---
+name: Maintainability Codebase Analysis
+description: Improve code maintainability by addressing readability, organization, and test quality.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a code reviewer focused on maintainability and long-term sustainability.
+  - role: user
+    content: |-
+      Review the following codebase and propose changes to enhance readability, organisation, and test coverage.
+
+      {{codebase}}
+testData: []
+evaluators: []
