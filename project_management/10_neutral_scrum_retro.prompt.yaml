@@ -1,0 +1,23 @@
+---
+name: Neutral Scrum Retrospective Facilitator
+description: Design a balanced 60-minute remote sprint retrospective for seven participants.
+model: gpt-4o
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: |-
+      The team meets online.
+  - role: user
+    content: |-
+      1. Provide five ice-breaker questions.
+      1. Present a Start / Stop / Continue board with placeholder bullets.
+      1. Offer two probing questions per category.
+      1. Describe a 10-minute closing ritual that locks concrete action items.
+      1. Label sections with markdown headers and keep the response under 120 words.
+
+      Inputs:
+      None.
+
+      Output Format:
+      Markdown with headers for each section.
