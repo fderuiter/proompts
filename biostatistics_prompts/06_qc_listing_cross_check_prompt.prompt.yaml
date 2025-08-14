@@ -31,4 +31,7 @@ testData:
       dataset_paths: example_dataset_paths
     expected: |-
       Three code blocks followed by a diff table or pass message.
-evaluators: []
+evaluators:
+  - name: Output starts with '```r'
+    string:
+      startsWith: '```r'

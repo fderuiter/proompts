@@ -35,4 +35,7 @@ testData:
       dropout_rate: example_dropout_rate
     expected: |-
       Executive summary (≤150 words) followed by two tables: sample-size scenarios and randomization parameters. Conclude with a fenced R code block.
-evaluators: []
+evaluators:
+  - name: Output starts with 'Executive summary'
+    string:
+      startsWith: 'Executive summary'
