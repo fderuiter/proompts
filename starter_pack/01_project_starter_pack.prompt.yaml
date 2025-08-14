@@ -1,0 +1,25 @@
+# yamllint disable rule:line-length
+---
+name: Project Starter Pack Prompts
+description: Provide ready-to-copy prompt templates for common project documentation.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      Use these prompts to create standard deliverables without starting from a blank page.
+  - role: user
+    content: |-
+      Copy the relevant prompt below and replace the placeholders with your project details.
+
+      Inputs:
+      Variables such as `{{Project Name}}`, `{{Feature Area}}`, and similar placeholders appear in the subprompts.
+
+      Output format:
+      Plain-text prompts grouped by deliverable.
+
+      Additional notes:
+      Prompts marked with * may result in multi-page outputs.
+
+      ---

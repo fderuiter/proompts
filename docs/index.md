@@ -398,6 +398,10 @@
 - [Tailored Feasibility-Questionnaire Builder](../site_acquisition_prompts/02_tailored_feasibility_questionnaire.prompt.yaml)
 - [Personalized Investigator-Outreach Email Generator](../site_acquisition_prompts/03_investigator_outreach_email_generator.prompt.yaml)
 
+## Starter Pack
+
+- [Project Starter Pack Prompts](../starter_pack/01_project_starter_pack.prompt.yaml)
+
 ## Sterility Prompts
 
 - [Sterility-Validation Protocol Builder](../sterility_prompts/01_sterility_validation_protocol_builder.prompt.yaml)
