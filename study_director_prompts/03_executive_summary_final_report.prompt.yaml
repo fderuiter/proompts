@@ -24,5 +24,19 @@ messages:
       Output Format:
       1. Two-page summary in formal language aligned with CTD headings
       2. Final four-item sign-off checklist for the Study Director
-testData: []
-evaluators: []
+testData:
+  - input: |
+      report_sections: |
+        Module 4.2.3: Study design and dose levels
+        Module 4.2.5: Results and discussion
+    expected: |
+      NOAEL: 50 mg/kg
+      Checklist:
+      - Sign protocol
+      - Review deviations
+      - Confirm NOAEL
+      - Approve submission
+evaluators:
+  - name: Mentions NOAEL
+    string:
+      contains: 'NOAEL'
