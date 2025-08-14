@@ -40,3 +40,15 @@ messages:
       7. Environment & Tooling
       8. Proposed E2E Test Suite
       9. Coverage Gaps & Risk Register
+
+testData:
+  - input: |
+      project_name: Cartify
+      languages_frameworks: Django, React
+      business_goal: Enable online shopping for users
+    expected: |
+      Repository Overview
+evaluators:
+  - name: Output starts with 'Repository Overview'
+    string:
+      startsWith: 'Repository Overview'
