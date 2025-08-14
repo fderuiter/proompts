@@ -40,5 +40,12 @@ messages:
       6. Table, Listing and Figure shells
       7. SAS-style pseudocode for primary analyses
       8. Reviewer Checklist boxes
-testData: []
-evaluators: []
+testData:
+  - vars:
+      protocol_synopsis: example_protocol_synopsis
+    expected: |-
+      Markdown sections for Objectives and estimands and Analysis populations.
+evaluators:
+  - name: Includes Objectives and estimands heading
+    string:
+      contains: "Objectives and estimands"
