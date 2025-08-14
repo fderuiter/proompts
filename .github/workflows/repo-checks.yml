@@ -17,6 +17,9 @@ on:
       - 'scripts/check_prompts.py'
       - 'scripts/validate_prompt_schema.py'
 
+permissions:
+  contents: read
+
 jobs:
   verify:
     runs-on: ubuntu-latest

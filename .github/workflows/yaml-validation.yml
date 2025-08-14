@@ -15,6 +15,9 @@ on:
       - '.github/workflows/yaml-validation.yml'
       - 'scripts/validate_prompts.sh'
 
+permissions:
+  contents: read
+
 jobs:
   prompt-lint:
     runs-on: ubuntu-latest
