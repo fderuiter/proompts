@@ -29,5 +29,15 @@ messages:
       Additional notes:
       - Use bold red text `**<text>**` for high‑risk gaps.
       - Do not expose your chain of thought.
-testData: []
-evaluators: []
+testData:
+  - vars:
+      device_description: example_device_description
+    expected: |-
+      Markdown table comparing sterility requirements with a brief executive summary.
+evaluators:
+  - name: Output starts with table row
+    string:
+      startsWith: '|'
+  - name: Contains summary section
+    string:
+      contains: 'Summary'

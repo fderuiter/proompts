@@ -30,5 +30,15 @@ messages:
 
       Additional notes:
       Think step-by-step internally and share only the finished FMEA table and summary.
-testData: []
-evaluators: []
+testData:
+  - vars:
+      process_description: example_process_description
+    expected: |-
+      Markdown table with FMEA columns followed by a bullet list summary.
+evaluators:
+  - name: Contains RPN column
+    string:
+      contains: "| RPN |"
+  - name: Contains bullet list
+    string:
+      contains: "- "
