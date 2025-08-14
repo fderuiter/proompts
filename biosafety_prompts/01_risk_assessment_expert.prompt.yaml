@@ -29,4 +29,7 @@ testData:
       medical_device_type: example_medical_device_type
     expected: |-
       Markdown table summarizing hazards and mitigations.
-evaluators: []
+evaluators:
+  - name: Output starts with a markdown table row
+    string:
+      startsWith: '|'
