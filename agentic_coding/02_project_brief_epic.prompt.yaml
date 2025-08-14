@@ -36,4 +36,7 @@ testData:
       project_description: example_project_description
     expected: |-
       Markdown sections titled **Project Description**, **Key Features**, **Technical Entities & Data Models**, **Business Rules & Logic**, **Success Metrics**, and **Additional Implementation Details**.
-evaluators: []
+evaluators:
+  - name: Output starts with 'Project Description'
+    string:
+      startsWith: 'Project Description'

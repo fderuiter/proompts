@@ -28,4 +28,7 @@ testData:
   - vars: {}
     expected: |-
       Markdown checklist confirming each step was completed.
-evaluators: []
+evaluators:
+  - name: Output starts with checklist item
+    string:
+      startsWith: '- [ ]'

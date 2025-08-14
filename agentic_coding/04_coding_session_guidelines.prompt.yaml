@@ -31,4 +31,7 @@ testData:
   - vars: {}
     expected: |-
       Clear Markdown checklist of steps completed during the session.
-evaluators: []
+evaluators:
+  - name: Output starts with checklist item
+    string:
+      startsWith: '- [ ]'

@@ -54,4 +54,7 @@ testData:
       1. Environment & Tooling
       1. Proposed E2E Test Suite
       1. Coverage Gaps & Risk Register
-evaluators: []
+evaluators:
+  - name: Output starts with 'Repository Overview'
+    string:
+      startsWith: 'Repository Overview'

@@ -36,4 +36,7 @@ testData:
       repository_url: example_repository_url
     expected: |-
       Return the finished `REQUIREMENTS.md` content only.
-evaluators: []
+evaluators:
+  - name: Output starts with Markdown heading
+    string:
+      startsWith: '#'
