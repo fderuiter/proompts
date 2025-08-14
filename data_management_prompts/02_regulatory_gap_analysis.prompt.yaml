@@ -7,8 +7,8 @@ modelParameters:
 messages:
   - role: system
     content: |
-      You are a compliance analyst identifying regulatory gaps in clinical data
-      management processes.
+      You are a compliance analyst evaluating clinical data management processes
+      for regulatory gaps.
   - role: user
     content: |-
       {{input}}

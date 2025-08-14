@@ -8,8 +8,8 @@ modelParameters:
 messages:
   - role: system
     content: |
-      You are a clinical safety specialist preparing concise summaries for EU MDR
-      clinical evaluation reports.
+      You are a clinical safety specialist distilling surveillance data into brief
+      synopses for EU MDR clinical evaluation reports.
   - role: user
     content: |-
       {{input}}

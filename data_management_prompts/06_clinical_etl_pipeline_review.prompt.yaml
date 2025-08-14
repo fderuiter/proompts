@@ -7,7 +7,7 @@ modelParameters:
 messages:
   - role: system
     content: |
-      You are a reviewer evaluating clinical ETL pipelines for accuracy and
+      You are a reviewer auditing clinical ETL pipelines for accuracy and
       efficiency.
   - role: user
     content: |-

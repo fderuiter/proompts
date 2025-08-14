@@ -7,7 +7,7 @@ modelParameters:
 messages:
   - role: system
     content: |
-      You are a quality engineer specifying validation checks for clinical ETL
+      You are a quality engineer establishing validation checks for clinical ETL
       transformations.
   - role: user
     content: |-
