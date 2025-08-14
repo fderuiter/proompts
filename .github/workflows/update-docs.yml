@@ -7,12 +7,10 @@ on:
     paths:
       - '**/*.prompt.yaml'
       - '**/*.prompt.yml'
-      - '**/*.json'
   pull_request:
     paths:
       - '**/*.prompt.yaml'
       - '**/*.prompt.yml'
-      - '**/*.json'
 
 jobs:
   update-docs:

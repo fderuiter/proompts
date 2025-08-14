@@ -6,14 +6,12 @@ on:
     paths:
       - '**/*.prompt.yaml'
       - '**/*.prompt.yml'
-      - '**/*.json'
       - '.github/workflows/fix-markdown-issues.yml'
       - 'scripts/fix_markdown_issues.py'
   pull_request:
     paths:
       - '**/*.prompt.yaml'
       - '**/*.prompt.yml'
-      - '**/*.json'
       - '.github/workflows/fix-markdown-issues.yml'
       - 'scripts/fix_markdown_issues.py'
 
