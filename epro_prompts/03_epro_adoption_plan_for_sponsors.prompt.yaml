@@ -1,6 +1,6 @@
 ---
 name: ePRO Adoption Plan for Sponsors
-description: Outline a six-month plan for rolling out ePRO across multiple 
+description: Outline a six-month plan for rolling out ePRO across multiple
   sites.
 model: gpt-4o
 modelParameters:
@@ -20,5 +20,11 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: |
+      Outline deployment plan for global trial.
+    expected: Timeline covers vendor selection, training, and metrics monitoring.
+evaluators:
+  - name: Provides timeline
+    string:
+      contains: "timeline"
