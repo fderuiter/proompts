@@ -1,6 +1,7 @@
 ---
 name: Interim Results Executive Brief
-description: Summarize interim analysis findings for cross-functional leadership.
+description: Summarize interim analysis findings for cross-functional 
+  leadership.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -35,3 +36,5 @@ messages:
       - **Key Findings**
       - **Risk Assessment**
       - **Recommended Actions**
+testData: []
+evaluators: []

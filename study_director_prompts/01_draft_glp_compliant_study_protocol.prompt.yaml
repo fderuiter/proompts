@@ -1,6 +1,7 @@
 ---
 name: Draft a GLP-Compliant Study Protocol
-description: Produce a detailed study plan that satisfies OECD and FDA GLP regulations.
+description: Produce a detailed study plan that satisfies OECD and FDA GLP 
+  regulations.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -25,3 +26,5 @@ messages:
       Output Format:
       1. Numbered outline covering all requested sections
       2. CSV-ready risk-mitigation table with columns: Phase, Risk, Impact, Mitigation
+testData: []
+evaluators: []

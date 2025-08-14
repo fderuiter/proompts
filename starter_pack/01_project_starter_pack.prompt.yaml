@@ -1,7 +1,7 @@
-# yamllint disable rule:line-length
 ---
 name: Project Starter Pack Prompts
-description: Provide ready-to-copy prompt templates for common project documentation.
+description: Provide ready-to-copy prompt templates for common project 
+  documentation.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -23,3 +23,5 @@ messages:
       Prompts marked with * may result in multi-page outputs.
 
       ---
+testData: []
+evaluators: []

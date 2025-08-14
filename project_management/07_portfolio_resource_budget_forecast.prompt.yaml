@@ -1,6 +1,7 @@
 ---
 name: Portfolio Resource and Budget Forecast
-description: Generate a rolling 12‑month FTE and budget forecast for active trials.
+description: Generate a rolling 12‑month FTE and budget forecast for active 
+  trials.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -27,3 +28,5 @@ messages:
 
       Output Format:
       Markdown table followed by bullet list and calculation notes.
+testData: []
+evaluators: []

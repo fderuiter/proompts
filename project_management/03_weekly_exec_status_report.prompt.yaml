@@ -1,6 +1,7 @@
 ---
 name: Weekly Executive Status Report
-description: Summarize project progress for executive stakeholders in a concise weekly report.
+description: Summarize project progress for executive stakeholders in a concise 
+  weekly report.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -26,3 +27,5 @@ messages:
 
       Output Format:
       Markdown table followed by bullet lists for the remaining sections.
+testData: []
+evaluators: []

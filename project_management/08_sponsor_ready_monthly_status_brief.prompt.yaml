@@ -1,6 +1,7 @@
 ---
 name: Sponsor-Ready Monthly Status Brief
-description: Draft a concise, escalation-ready monthly status report for study sponsors.
+description: Draft a concise, escalation-ready monthly status report for study 
+  sponsors.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -22,3 +23,5 @@ messages:
 
       Output Format:
       Markdown document with H2 section headers as listed above.
+testData: []
+evaluators: []

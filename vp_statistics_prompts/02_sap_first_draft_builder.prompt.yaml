@@ -1,6 +1,7 @@
 ---
 name: Statistical Analysis Plan Draft Builder
-description: Create the initial draft of a Statistical Analysis Plan (SAP) for a Phase II oncology trial.
+description: Create the initial draft of a Statistical Analysis Plan (SAP) for a
+  Phase II oncology trial.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -39,3 +40,5 @@ messages:
       6. Table, Listing and Figure shells
       7. SAS-style pseudocode for primary analyses
       8. Reviewer Checklist boxes
+testData: []
+evaluators: []

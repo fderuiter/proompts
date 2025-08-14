@@ -1,6 +1,6 @@
 ---
 name: Data Mapping and Transformation Playbook
-description: Provide a repeatable workflow for mapping JSON FHIR bundles to
+description: Provide a repeatable workflow for mapping JSON FHIR bundles to 
   SDTM-compliant tables.
 model: gpt-4o
 modelParameters:
@@ -19,3 +19,5 @@ messages:
   - role: user
     content: |-
       {{input}}
+testData: []
+evaluators: []

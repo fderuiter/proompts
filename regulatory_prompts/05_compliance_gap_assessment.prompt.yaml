@@ -49,3 +49,5 @@ messages:
 
       Additional notes:
       Base severity on likelihood × impact. If evidence is older than 12 months, mark status as Partially implemented. Request missing artifacts before final scoring.
+testData: []
+evaluators: []

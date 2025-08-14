@@ -36,3 +36,5 @@ messages:
       2. ASCII heat map (rows = sites, columns = risk deciles)
       3. Mitigation bullets (three per high-risk site)
       4. Python (pandas) code block used for calculations
+testData: []
+evaluators: []

@@ -34,3 +34,5 @@ messages:
 
       Additional notes:
       Keep medical acronyms consistent with the protocol. If key details are missing, list them and stop.
+testData: []
+evaluators: []

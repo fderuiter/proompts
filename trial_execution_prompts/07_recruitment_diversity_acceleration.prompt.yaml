@@ -1,6 +1,7 @@
 ---
 name: Patient Recruitment and Diversity Acceleration Plan
-description: Boost enrollment and improve demographic diversity in a stalled Phase III study.
+description: Boost enrollment and improve demographic diversity in a stalled 
+  Phase III study.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -22,3 +23,5 @@ messages:
 
       Output Format:
       Concise report (≤ 1 000 words) plus a one‑slide KPI dashboard sketch in text form.
+testData: []
+evaluators: []

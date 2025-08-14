@@ -29,3 +29,5 @@ messages:
       - Cover at least three geographic regions.
       - Base recommendations on public registries and sponsor data.
       - Cite every data source in column 9.
+testData: []
+evaluators: []

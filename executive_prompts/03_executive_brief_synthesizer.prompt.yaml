@@ -1,6 +1,6 @@
 ---
 name: Executive-Ready Brief and Talking Points
-description: Turn disparate reports into a concise executive brief and talking
+description: Turn disparate reports into a concise executive brief and talking 
   points.
 model: gpt-4o
 modelParameters:
@@ -21,3 +21,5 @@ messages:
   - role: user
     content: |-
       {{input}}
+testData: []
+evaluators: []
