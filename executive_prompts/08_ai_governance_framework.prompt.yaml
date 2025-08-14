@@ -1,6 +1,6 @@
 ---
 name: FDA-Aligned AI Governance Framework
-description: Draft an AI governance framework that satisfies regulators and 
+description: Draft an AI governance framework that satisfies regulators and
   sponsors.
 model: gpt-4o
 modelParameters:
@@ -21,5 +21,10 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: ''
+    expected: ''
+evaluators:
+  - name: Output is non-empty
+    string:
+      startsWith: ''
