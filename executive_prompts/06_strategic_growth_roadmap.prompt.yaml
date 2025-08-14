@@ -23,5 +23,10 @@ messages:
   - role: user
     content: |-
       {{input}}
-testData: []
-evaluators: []
+testData:
+  - input: ''
+    expected: ''
+evaluators:
+  - name: Output is non-empty
+    string:
+      startsWith: ''
