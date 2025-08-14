@@ -29,4 +29,8 @@ testData:
       market_data_sources: example_market_data_sources
     expected: |-
       Concise executive summary with bullet points and a short table if helpful.
-evaluators: []
+
+evaluators:
+  - name: Includes bullet points
+    string:
+      contains: "- "
