@@ -261,6 +261,7 @@
 [Site Landscape Mapping & Prioritization](../site_acquisition_prompts/01_site_landscape_mapping.prompt.yaml)
 [Tailored Feasibility-Questionnaire Builder](../site_acquisition_prompts/02_tailored_feasibility_questionnaire.prompt.yaml)
 [Personalized Investigator-Outreach Email Generator](../site_acquisition_prompts/03_investigator_outreach_email_generator.prompt.yaml)
+[Project Starter Pack Prompts](../starter_pack/01_project_starter_pack.prompt.yaml)
 [Sterility-Validation Protocol Builder](../sterility_prompts/01_sterility_validation_protocol_builder.prompt.yaml)
 [Regulatory Gap-Analysis Comparator](../sterility_prompts/02_regulatory_gap_analysis_comparator.prompt.yaml)
 [EtO Sterilization Process FMEA](../sterility_prompts/03_eto_sterilization_process_fmea.prompt.yaml)
