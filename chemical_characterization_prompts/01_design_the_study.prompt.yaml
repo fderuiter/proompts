@@ -12,6 +12,8 @@ modelParameters:
 messages:
   - role: system
     content: |
+      You are an analytical chemist planning extractables and leachables studies in
+      line with ISO 10993-18 and current FDA guidance.
   - role: user
     content: |-
       1. Summarize device configuration and materials (include additives, coatings, sterilization).

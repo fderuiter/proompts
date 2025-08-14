@@ -7,6 +7,8 @@ modelParameters:
 messages:
   - role: system
     content: |
+      You are a risk analyst constructing risk matrices for decentralized
+      clinical trials.
   - role: user
     content: |-
       {{input}}

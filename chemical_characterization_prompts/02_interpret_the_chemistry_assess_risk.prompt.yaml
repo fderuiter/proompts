@@ -8,6 +8,8 @@ modelParameters:
 messages:
   - role: system
     content: |
+      You are a board-certified toxicologist interpreting extractables and leachables
+      data to evaluate patient risk.
   - role: user
     content: |-
       I will supply the extractables/leachables results table that was generated per ISO 10993-18. Using those data:
