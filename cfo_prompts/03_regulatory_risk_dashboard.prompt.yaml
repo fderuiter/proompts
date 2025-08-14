@@ -29,6 +29,6 @@ testData:
       risk_tolerance: moderate
     expected: Risk Dashboard -
 evaluators:
-  - name: Output starts with 'Risk Dashboard -'
+  - name: Output should start with 'Risk Dashboard -'
     string:
       startsWith: 'Risk Dashboard -'

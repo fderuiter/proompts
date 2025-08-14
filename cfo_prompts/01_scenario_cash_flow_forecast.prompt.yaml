@@ -28,6 +28,6 @@ testData:
       notes: none
     expected: Scenario Forecast -
 evaluators:
-  - name: Output starts with 'Scenario Forecast -'
+  - name: Output should start with 'Scenario Forecast -'
     string:
       startsWith: 'Scenario Forecast -'

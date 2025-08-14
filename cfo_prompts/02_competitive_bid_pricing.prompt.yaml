@@ -28,6 +28,6 @@ testData:
       volume_adjustments: none
     expected: Bid Analysis -
 evaluators:
-  - name: Output starts with 'Bid Analysis -'
+  - name: Output should start with 'Bid Analysis -'
     string:
       startsWith: 'Bid Analysis -'
