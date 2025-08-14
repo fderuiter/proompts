@@ -99,6 +99,12 @@
 - [FDA MDR/MDV Adverse-Event Narrative](../clinical_safety_prompts/02_fda_mdr_adverse_event_narrative.prompt.yaml)
 - [Post-Market Safety Signal Trending](../clinical_safety_prompts/03_post_market_safety_signal_trending.prompt.yaml)
 
+## Codebase Analysis
+
+- [DRY Codebase Analysis](../codebase_analysis/DRY_Codebase_Analysis.prompt.yaml)
+- [Maintainability Codebase Analysis](../codebase_analysis/Maintainability_Codebase_Analysis.prompt.yaml)
+- [SOLID Codebase Analysis](../codebase_analysis/SOLID_Codebase_Analysis.prompt.yaml)
+
 ## Codex Prompts
 
 - [Project Init & Skeleton (OpenAI Codex)](../codex_prompts/01_project_init_codex.prompt.yaml)
@@ -156,7 +162,7 @@
 ## Design Prompts
 
 - [Design.md Template](../design_prompts/01_design_md_template.prompt.yaml)
-- [Email Assistant Go No Go Vote.prompt](../design_prompts/02_email_assistant_go_no_go_vote.prompt.yaml)
+- [AI Email Assistant Go/No-Go Vote](../design_prompts/02_email_assistant_go_no_go_vote.prompt.yaml)
 
 ## Eclinical Integration Prompts
 
