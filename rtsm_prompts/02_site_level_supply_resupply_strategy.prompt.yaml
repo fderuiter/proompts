@@ -47,5 +47,12 @@ messages:
 
       Additional notes:
       Omit internal reasoning; provide only the final deliverable.
-testData: []
-evaluators: []
+testData:
+  - vars:
+      trial_enrollment: example_enrollment
+    expected: |-
+      Markdown table, ASCII timeline, and rationale paragraph.
+evaluators:
+  - name: Output contains markdown table
+    string:
+      contains: '|'
