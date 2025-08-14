@@ -24,5 +24,14 @@ messages:
 
       Output Format:
       Ordered list of slides in Markdown.
-testData: []
-evaluators: []
+testData:
+  - vars:
+      kpi_snapshot: Example KPIs
+      strategic_wins: Example wins
+      challenges: Example challenges
+    expected: |
+      Slide outline following a Situation–Complication–Resolution–Ask arc.
+evaluators:
+  - name: Contains Decision Request slide
+    string:
+      contains: "Decision Request"

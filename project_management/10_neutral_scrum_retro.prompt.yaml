@@ -1,6 +1,6 @@
 ---
 name: Neutral Scrum Retrospective Facilitator
-description: Design a balanced 60-minute remote sprint retrospective for seven 
+description: Design a balanced 60-minute remote sprint retrospective for seven
   participants.
 model: gpt-4o
 modelParameters:
@@ -22,5 +22,11 @@ messages:
 
       Output Format:
       Markdown with headers for each section.
-testData: []
-evaluators: []
+testData:
+  - vars: {}
+    expected: |
+      Markdown sections for ice breakers, Start/Stop/Continue board, probing questions, and closing ritual.
+evaluators:
+  - name: Contains Start/Stop/Continue board
+    string:
+      contains: "Start / Stop / Continue"

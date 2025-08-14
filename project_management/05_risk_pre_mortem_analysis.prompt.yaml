@@ -1,6 +1,6 @@
 ---
 name: Risk and Pre-Mortem Analysis
-description: Identify early failure points and mitigation strategies for a 
+description: Identify early failure points and mitigation strategies for a
   project or study.
 model: gpt-4o
 modelParameters:
@@ -24,5 +24,13 @@ messages:
 
       Output Format:
       Markdown table summarizing each risk and mitigation.
-testData: []
-evaluators: []
+testData:
+  - vars:
+      project_name: Example Initiative
+      project_summary: Example summary
+    expected: |
+      Table listing potential failures with preventive steps.
+evaluators:
+  - name: Lists risks
+    string:
+      contains: "Risk"

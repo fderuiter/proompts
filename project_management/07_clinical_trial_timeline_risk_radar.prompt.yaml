@@ -23,5 +23,12 @@ messages:
 
       Output Format:
       Markdown table followed by a bullet list of next actions.
-testData: []
-evaluators: []
+testData:
+  - vars:
+      csv_data: "Task,Planned,Actual,Slack\nTask1,2024-01-01,2024-01-05,2"
+    expected: |
+      Table comparing planned versus actual dates and a next actions list.
+evaluators:
+  - name: Includes Next Actions list
+    string:
+      contains: "Next Actions"

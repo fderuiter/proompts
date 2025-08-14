@@ -28,5 +28,12 @@ messages:
 
       Output Format:
       Structured bullet lists using the format above.
-testData: []
-evaluators: []
+testData:
+  - vars:
+      status_notes: Example status details
+    expected: |
+      Bullet lists for Completed, Blockers, Next Actions, and Stakeholder Alerts.
+evaluators:
+  - name: Contains Blockers section
+    string:
+      contains: "Blockers"

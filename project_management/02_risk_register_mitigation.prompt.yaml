@@ -1,6 +1,6 @@
 ---
 name: Comprehensive Risk Register and Mitigation Plan
-description: Produce a risk register with mitigation actions and overall 
+description: Produce a risk register with mitigation actions and overall
   strategies.
 model: gpt-4o
 modelParameters:
@@ -24,5 +24,12 @@ messages:
 
       Output Format:
       Markdown table followed by a short list of overarching strategies.
-testData: []
-evaluators: []
+testData:
+  - vars:
+      project_overview: Example overview
+    expected: |
+      Markdown table sorted by highest combined risk score.
+evaluators:
+  - name: Mentions mitigation actions
+    string:
+      contains: "Mitigation"
