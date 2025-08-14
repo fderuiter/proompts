@@ -1,0 +1,63 @@
+---
+name: Docs Maintenance
+
+'on':
+  push:
+    paths:
+      - '**/*.prompt.yaml'
+      - '**/*.prompt.yml'
+      - '.github/workflows/docs-maintenance.yml'
+      - 'scripts/fix_markdown_issues.py'
+      - 'scripts/generate_overviews.py'
+      - 'scripts/update_docs_index.py'
+      - 'scripts/validate_prompts.sh'
+  pull_request:
+    paths:
+      - '**/*.prompt.yaml'
+      - '**/*.prompt.yml'
+      - '.github/workflows/docs-maintenance.yml'
+      - 'scripts/fix_markdown_issues.py'
+      - 'scripts/generate_overviews.py'
+      - 'scripts/update_docs_index.py'
+      - 'scripts/validate_prompts.sh'
+
+permissions:
+  contents: write
+
+jobs:
+  docs-maintenance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Fix markdown issues
+        run: python scripts/fix_markdown_issues.py
+      - name: Generate overviews
+        run: python scripts/generate_overviews.py
+      - name: Update docs index
+        run: python scripts/update_docs_index.py
+      - name: Install yamllint
+        run: pip install yamllint
+      - name: Validate prompts
+        run: ./scripts/validate_prompts.sh
+      - name: Check for changes
+        id: diff
+        run: |
+          if git diff --quiet; then
+            echo "changed=0" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=1" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Commit and push changes
+        if: github.event_name == 'push' && steps.diff.outputs.changed == '1'
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add -A
+          git commit -m "chore: update docs"
+          git push
