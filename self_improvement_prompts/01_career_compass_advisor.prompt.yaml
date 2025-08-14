@@ -27,5 +27,9 @@ messages:
 
       Additional notes:
       Keep the entire response within 150 words.
-testData: []
+testData:
+  - vars:
+      background: Sample background and goals
+    expected: |-
+      Markdown table followed by the action plan.
 evaluators: []

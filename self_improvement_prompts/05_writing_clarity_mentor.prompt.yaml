@@ -27,5 +27,9 @@ messages:
 
       Additional notes:
       Keep the entire reply within 180 words.
-testData: []
+testData:
+  - vars:
+      passage: Sample text needing improvement
+    expected: |-
+      Markdown with a summary, issue list, revised passage, and style tip.
 evaluators: []
