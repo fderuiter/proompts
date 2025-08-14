@@ -1,6 +1,6 @@
 ---
 name: SAE and Unanticipated Problem Reporting SOP
-description: Develop a standard operating procedure for reporting serious 
+description: Develop a standard operating procedure for reporting serious
   adverse events and unanticipated problems.
 model: gpt-4o
 modelParameters:
@@ -27,5 +27,15 @@ messages:
       1. Markdown SOP with sections: Purpose, Scope, Definitions, Responsibilities, Procedure, Timelines, Training, Record retention, Revision history
       2. ASCII or Markdown flowchart illustrating the reporting pathway
       3. Annex with template log examples
-testData: []
-evaluators: []
+testData:
+  - vars: {}
+    expected: |-
+      1. Purpose
+      2. Scope
+evaluators:
+  - name: Contains Purpose section heading
+    string:
+      contains: "1. Purpose"
+  - name: Contains Scope section heading
+    string:
+      contains: "2. Scope"
