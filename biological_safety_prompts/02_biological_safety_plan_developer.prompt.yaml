@@ -30,4 +30,7 @@ testData:
       device_description: example_device_description
     expected: |-
       Bullet points and headings that form a ready-to-review plan.
-evaluators: []
+evaluators:
+  - name: Contains markdown headings
+    string:
+      contains: '##'

@@ -29,4 +29,7 @@ testData:
       device_details: example_device_details
     expected: |-
       Executive-summary paragraph followed by a markdown table and bulleted notes.
-evaluators: []
+evaluators:
+  - name: Contains a markdown table
+    string:
+      contains: '|'
