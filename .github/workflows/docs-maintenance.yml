@@ -1,22 +1,29 @@
-name: Update Docs Index
-# Regenerate Markdown docs index files
+---
+name: Docs Maintenance
 
-on:
+'on':
   push:
-    branches: ["main"]
     paths:
       - '**/*.prompt.yaml'
       - '**/*.prompt.yml'
+      - 'scripts/fix_markdown_issues.py'
+      - 'scripts/generate_overviews.py'
+      - 'scripts/update_docs_index.py'
+      - '.github/workflows/docs-maintenance.yml'
   pull_request:
     paths:
       - '**/*.prompt.yaml'
       - '**/*.prompt.yml'
+      - 'scripts/fix_markdown_issues.py'
+      - 'scripts/generate_overviews.py'
+      - 'scripts/update_docs_index.py'
+      - '.github/workflows/docs-maintenance.yml'
 
 permissions:
   contents: write
 
 jobs:
-  update-docs:
+  maintain-docs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,16 +33,20 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      - name: Update documentation index
+      - name: Install dependencies
+        run: pip install pyyaml yamllint
+      - name: Fix markdown issues
+        run: python3 scripts/fix_markdown_issues.py
+      - name: Generate overviews
+        run: python3 scripts/generate_overviews.py
+      - name: Update docs index
         run: python3 scripts/update_docs_index.py
-      - name: Install jq
-        run: sudo apt-get update && sudo apt-get install -y jq
       - name: Validate prompts
-        run: ./scripts/validate_json.sh
+        run: ./scripts/validate_prompts.sh
       - name: Check for changes
         id: diff
         run: |
-          if git diff --quiet docs/index.md docs/table-of-contents.md; then
+          if git diff --quiet; then
             echo "changed=0" >> "$GITHUB_OUTPUT"
           else
             echo "changed=1" >> "$GITHUB_OUTPUT"
@@ -45,6 +56,5 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add docs/index.md docs/table-of-contents.md
-          git commit -m "Update docs index"
+          git commit -am "Run docs maintenance"
           git push
