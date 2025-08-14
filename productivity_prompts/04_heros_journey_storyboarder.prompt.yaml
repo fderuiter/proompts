@@ -27,5 +27,13 @@ messages:
 
       Additional notes:
       Kid-friendly tone is optional.
-testData: []
-evaluators: []
+testData:
+  - vars:
+      product: eco-friendly scooter
+    expected: |-
+      **Ordinary World** - ...
+      **Return with Elixir** - ...
+evaluators:
+  - name: Includes Return with Elixir beat
+    string:
+      contains: 'Return with Elixir'
