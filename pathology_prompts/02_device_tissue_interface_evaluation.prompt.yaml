@@ -28,7 +28,9 @@ messages:
          - Recommended Next Steps
 
       Inputs:
-      - `{{observations}}` – pathology notes or micro-CT results.
+      - `{{study_protocol}}` – The study protocol from the previous step.
+
+      Based on the provided study protocol, provide an interpretation of the expected findings and recommend next steps.
 
       Output format:
       Markdown sectioned as listed above.

@@ -1,0 +1,22 @@
+name: "Clinical ETL Pipeline Design and Review"
+description: "A workflow to create an ETL mapping spec, define QC transformations, and review the final pipeline. This follows the sequence in the data_management_prompts directory (04, 05, 06)."
+
+inputs:
+  - name: "etl_requirements"
+    description: "The initial business or technical requirements for the ETL process."
+
+steps:
+  - step_id: "create_mapping_spec"
+    prompt_file: "data_management_prompts/04_clinical_etl_mapping_spec.prompt.yaml"
+    map_inputs:
+      etl_requirements: "{{inputs.etl_requirements}}"
+
+  - step_id: "define_qc_checks"
+    prompt_file: "data_management_prompts/05_clinical_etl_transformation_qc.prompt.yaml"
+    map_inputs:
+      etl_mapping_spec: "{{steps.create_mapping_spec.output}}"
+
+  - step_id: "review_pipeline"
+    prompt_file: "data_management_prompts/06_clinical_etl_pipeline_review.prompt.yaml"
+    map_inputs:
+      etl_qc_plan: "{{steps.define_qc_checks.output}}"

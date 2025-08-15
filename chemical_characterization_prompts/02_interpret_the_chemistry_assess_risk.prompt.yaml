@@ -12,11 +12,13 @@ messages:
       leachables data to quantify patient risk and recommend follow-up actions.
   - role: user
     content: |-
-      I will supply the extractables/leachables results table that was generated per ISO 10993-18. Using those data:
+      Here are the extractables/leachables results:
+      {{study_results}}
 
+      Using those data, perform a risk assessment.
       - Calculate the Analytical Evaluation Threshold (AET) given:
-         - Patient body weight = {BW} kg
-         - Clinical dose = {DEVICE-DOSE} µg day⁻¹
+         - Patient body weight = {{body_weight}} kg
+         - Clinical dose = {{device_dose}} µg day⁻¹
          - Show equations and intermediate steps.
       - Tag each compound as:
          - “Below AET”

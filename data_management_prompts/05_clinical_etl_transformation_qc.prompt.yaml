@@ -11,7 +11,10 @@ messages:
       transformations.
   - role: user
     content: |-
-      {{input}}
+      Here is the ETL mapping specification:
+      {{etl_mapping_spec}}
+
+      Based on this specification, define a comprehensive set of quality checks for the clinical ETL transformations.
 testData:
   - input: |-
       List QC checks for transforming lab results data.

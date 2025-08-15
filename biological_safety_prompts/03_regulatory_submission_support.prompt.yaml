@@ -20,7 +20,9 @@ messages:
       4. Recommend actions to satisfy 21 CFR 820 and ISO 10993 requirements.
 
       Inputs:
-      - `{{device_description}}` — short description of the device
+      - `{{biological_safety_plan}}` — The biological safety plan from the previous step.
+
+      Based on the provided plan, prepare the regulatory submission documents.
 
       Output format:
       Bullet points and tables suitable for inclusion in a submission dossier.

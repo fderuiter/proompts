@@ -33,6 +33,15 @@ Top-level fields available in a prompt file include:
 
 See `docs/template_prompt.prompt.yaml` for a filled-out example.
 
+## Prompt Workflows
+
+In addition to individual prompts, this repository supports **Prompt Workflows**,
+which chain multiple prompts together to perform complex, multi-step tasks.
+Workflows are defined in `.workflow.yaml` files and can be executed with the
+included runner script.
+
+To learn more, see the [Prompt Workflows Documentation](docs/workflows.md).
+
 ## Validation
 
 Run a YAML linter to verify formatting and keep the docs index current before

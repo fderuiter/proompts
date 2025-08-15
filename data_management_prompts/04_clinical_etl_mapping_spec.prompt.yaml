@@ -11,7 +11,10 @@ messages:
       data pipelines.
   - role: user
     content: |-
-      {{input}}
+      Here are the requirements for the ETL process:
+      {{etl_requirements}}
+
+      Based on these requirements, create a detailed ETL mapping specification.
 testData:
   - input: |-
       Map source patient records to target schema fields.

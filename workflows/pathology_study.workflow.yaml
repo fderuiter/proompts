@@ -1,0 +1,22 @@
+name: "Preclinical Pathology Study Workflow"
+description: "A workflow to design a pathology study protocol, evaluate the device-tissue interface, and plan the slide reporting. This follows the sequence in the pathology_prompts directory."
+
+inputs:
+  - name: "study_details"
+    description: "A summary of the medical device and the objectives of the pathology study."
+
+steps:
+  - step_id: "design_protocol"
+    prompt_file: "pathology_prompts/01_study_protocol_outline.prompt.yaml"
+    map_inputs:
+      study_details: "{{inputs.study_details}}"
+
+  - step_id: "evaluate_interface"
+    prompt_file: "pathology_prompts/02_device_tissue_interface_evaluation.prompt.yaml"
+    map_inputs:
+      study_protocol: "{{steps.design_protocol.output}}"
+
+  - step_id: "plan_reporting"
+    prompt_file: "pathology_prompts/03_slides_and_reporting_workflow.prompt.yaml"
+    map_inputs:
+      interface_evaluation: "{{steps.evaluate_interface.output}}"
