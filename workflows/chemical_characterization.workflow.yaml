@@ -1,0 +1,28 @@
+name: "Chemical Characterization and Biocompatibility Assessment"
+description: "A workflow to design a chemical characterization study, assess the risks from the results, and write a regulatory summary. This follows the sequence in the chemical_characterization_prompts directory."
+
+inputs:
+  - name: "device_description"
+    description: "A detailed description of the medical device, its materials, and intended use."
+  - name: "body_weight_kg"
+    description: "The patient body weight in kilograms, used for the AET calculation."
+  - name: "device_dose_ug_day"
+    description: "The clinical dose in micrograms per day, used for the AET calculation."
+
+steps:
+  - step_id: "design_study"
+    prompt_file: "chemical_characterization_prompts/01_design_the_study.prompt.yaml"
+    map_inputs:
+      device_description: "{{inputs.device_description}}"
+
+  - step_id: "assess_risk"
+    prompt_file: "chemical_characterization_prompts/02_interpret_the_chemistry_assess_risk.prompt.yaml"
+    map_inputs:
+      study_results: "{{steps.design_study.output}}"
+      body_weight: "{{inputs.body_weight_kg}}"
+      device_dose: "{{inputs.device_dose_ug_day}}"
+
+  - step_id: "write_summary"
+    prompt_file: "chemical_characterization_prompts/03_write_the_regulatory_summary.prompt.yaml"
+    map_inputs:
+      risk_assessment_summary: "{{steps.assess_risk.output}}"

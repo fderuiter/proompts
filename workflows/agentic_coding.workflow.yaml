@@ -1,0 +1,17 @@
+name: "Agentic Coding: From Idea to Epics"
+description: "A workflow that takes a product concept, generates a product brief, and then creates project epics from that brief."
+
+inputs:
+  - name: "product_concept"
+    description: "A short description of the product idea to be developed."
+
+steps:
+  - step_id: "generate_product_brief"
+    prompt_file: "agentic_coding/01_product_brief.prompt.yaml"
+    map_inputs:
+      product_concept: "{{inputs.product_concept}}"
+
+  - step_id: "create_project_epics"
+    prompt_file: "agentic_coding/02_project_brief_epic.prompt.yaml"
+    map_inputs:
+      product_brief: "{{steps.generate_product_brief.output}}"

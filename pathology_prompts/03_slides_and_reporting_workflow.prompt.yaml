@@ -24,7 +24,9 @@ messages:
          - **Pathology Review Workflow** with timelines in days post‑necropsy.
 
       Inputs:
-      - `{{study_objectives}}` – brief description of study goals.
+      - `{{interface_evaluation}}` – The device-tissue interface evaluation from the previous step.
+
+      Based on the provided evaluation, create a detailed plan for slide preparation and reporting.
 
       Output format:
       Two Markdown tables as described above.

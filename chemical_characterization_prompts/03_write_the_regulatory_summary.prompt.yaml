@@ -13,8 +13,10 @@ messages:
       summaries for 510(k) submissions based on E&L study results.
   - role: user
     content: |-
-      Produce a 2-3-page executive summary that:
+      Based on the following risk assessment summary, produce a 2-3-page executive summary that:
+      {{risk_assessment_summary}}
 
+      The executive summary must accomplish the following:
       - Describes the E&L study design, extraction conditions, analytical methods, and AET calculation in reviewer-friendly language.
       - Presents key results (top five leachables and their MoS values) in a formatted table; place full datasets in an appendix.
       - Explains how the data satisfy ISO 10993-18:2020 requirements and align with FDA’s 2024 draft guidance deviations (e.g., AET vs LOQ, uncertainty factor rationale).

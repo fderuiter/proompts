@@ -21,7 +21,9 @@ messages:
       5. Outline a step-by-step workflow and timeline.
 
       Inputs:
-      - `{{device_description}}` — device name and material details
+      - `{{risk_assessment}}` — The risk assessment from the previous step.
+
+      Based on the provided risk assessment, create a detailed biological safety plan.
 
       Output format:
       Bullet points and headings that form a ready-to-review plan.
