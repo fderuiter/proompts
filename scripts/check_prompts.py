@@ -13,7 +13,7 @@ import yaml
 OVERVIEW_NAME = "overview.md"  # documentation stays Markdown
 
 ROOT = Path(__file__).resolve().parents[1]
-EXCLUDE_DIRS = {"docs", "scripts", ".github", "prompt_tools"}
+EXCLUDE_DIRS = {"docs", "scripts", ".github", "prompt_tools", "workflows"}
 
 
 NUMERIC_RE = re.compile(r"^\d\d_.*\.prompt\.ya?ml$", re.IGNORECASE)
