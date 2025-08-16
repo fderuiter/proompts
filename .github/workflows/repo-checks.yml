@@ -7,15 +7,13 @@ on:
       - '**/*.prompt.yaml'
       - '**/*.prompt.yml'
       - '.github/workflows/repo-checks.yml'
-      - 'scripts/check_prompts.py'
-      - 'scripts/validate_prompt_schema.py'
+      - 'scripts/**'
   pull_request:
     paths:
       - '**/*.prompt.yaml'
       - '**/*.prompt.yml'
       - '.github/workflows/repo-checks.yml'
-      - 'scripts/check_prompts.py'
-      - 'scripts/validate_prompt_schema.py'
+      - 'scripts/**'
 
 permissions:
   contents: read
@@ -30,8 +28,6 @@ jobs:
         with:
           python-version: '3.x'
       - name: Install dependencies
-        run: pip install pyyaml
+        run: pip install pyyaml yamllint
       - name: Run repository checks
-        run: python3 scripts/check_prompts.py
-      - name: Validate prompt schema
-        run: python3 scripts/validate_prompt_schema.py
+        run: python3 scripts/test_all.py
