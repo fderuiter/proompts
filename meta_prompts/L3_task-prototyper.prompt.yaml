@@ -6,7 +6,10 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: 'You are ChatGPT acting as a Task Prototyper for MODEL_A.
+    content: |
+      {{generated_prompt}}
+
+      You are ChatGPT acting as a Task Prototyper for MODEL_A.
 
 
       1. List required user inputs as placeholders.
