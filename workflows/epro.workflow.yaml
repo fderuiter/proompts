@@ -1,0 +1,26 @@
+name: "ePRO Workflow"
+description: "A workflow for designing a patient-centric BYOD workflow, optimizing ePRO form design, and creating an ePRO adoption plan."
+
+inputs:
+  - name: "byod_requirements"
+    description: "High-level requirements for the BYOD ePRO workflow."
+  - name: "form_details"
+    description: "Details about the ePRO form to be optimized."
+  - name: "rollout_details"
+    description: "Details about the ePRO rollout for the adoption plan."
+
+steps:
+  - step_id: "byod_workflow"
+    prompt_file: "epro_prompts/01_patient-centric_byod_workflow.prompt.yaml"
+    map_inputs:
+      input: "{{inputs.byod_requirements}}"
+
+  - step_id: "form_design"
+    prompt_file: "epro_prompts/02_optimize_epro_form_design.prompt.yaml"
+    map_inputs:
+      input: "{{inputs.form_details}}"
+
+  - step_id: "adoption_plan"
+    prompt_file: "epro_prompts/03_epro_adoption_plan_for_sponsors.prompt.yaml"
+    map_inputs:
+      input: "{{inputs.rollout_details}}"

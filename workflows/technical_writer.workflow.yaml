@@ -1,0 +1,12 @@
+name: "Technical Writer Workflow"
+description: "A workflow for drafting a CSR results and safety section, an Investigator's Brochure summary of changes, and an SAE reporting SOP."
+
+inputs: []
+
+steps:
+  - step_id: "csr_section"
+    prompt_file: "technical_writer_prompts/01_csr_results_safety_section.prompt.yaml"
+  - step_id: "ib_summary"
+    prompt_file: "technical_writer_prompts/02_ib_detailed_soc.prompt.yaml"
+  - step_id: "sae_sop"
+    prompt_file: "technical_writer_prompts/03_sae_reporting_sop.prompt.yaml"

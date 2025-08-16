@@ -1,0 +1,37 @@
+name: "Market Research Workflow"
+description: "A workflow for market landscape analysis, user needs assessment, barrier mapping, and executive summary generation."
+
+inputs:
+  - name: "device_or_assay"
+    description: "The device or assay to analyze."
+  - name: "application"
+    description: "The clinical application of the device or assay."
+  - name: "device"
+    description: "The device to analyze for barrier mapping."
+  - name: "markets"
+    description: "The markets of interest for barrier mapping."
+  - name: "market_report"
+    description: "The full market report text for the executive summary."
+
+steps:
+  - step_id: "landscape_analysis"
+    prompt_file: "market_research_prompts/01_market_landscape_trend_analysis.prompt.yaml"
+    map_inputs:
+      device_or_assay: "{{inputs.device_or_assay}}"
+
+  - step_id: "needs_assessment"
+    prompt_file: "market_research_prompts/02_target_segment_user_needs_assessment.prompt.yaml"
+    map_inputs:
+      device_or_assay: "{{inputs.device_or_assay}}"
+      application: "{{inputs.application}}"
+
+  - step_id: "barrier_mapping"
+    prompt_file: "market_research_prompts/03_regulatory_commercial_barrier_mapping.prompt.yaml"
+    map_inputs:
+      device: "{{inputs.device}}"
+      markets: "{{inputs.markets}}"
+
+  - step_id: "executive_summary"
+    prompt_file: "market_research_prompts/04_market_report_exec_summary.prompt.yaml"
+    map_inputs:
+      market_report: "{{inputs.market_report}}"

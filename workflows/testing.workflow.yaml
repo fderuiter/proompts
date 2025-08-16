@@ -1,0 +1,41 @@
+name: "Testing Workflow"
+description: "A workflow for end-to-end test discovery, design verification, human factors validation, and risk-based test case suite generation."
+
+inputs:
+  - name: "project_name"
+    description: "The name of the project for E2E test discovery."
+  - name: "languages_frameworks"
+    description: "The tech stack for E2E test discovery."
+  - name: "business_goal"
+    description: "The overall objective for E2E test discovery."
+  - name: "device_name"
+    description: "The name of the medical device."
+  - name: "device_class"
+    description: "The class of the medical device."
+  - name: "hazard_analysis_table"
+    description: "Hazard analysis data for the risk-based test case suite."
+
+steps:
+  - step_id: "e2e_test_discovery"
+    prompt_file: "testing_prompts/01_e2e_test_discovery.prompt.yaml"
+    map_inputs:
+      project_name: "{{inputs.project_name}}"
+      languages_frameworks: "{{inputs.languages_frameworks}}"
+      business_goal: "{{inputs.business_goal}}"
+
+  - step_id: "design_verification"
+    prompt_file: "testing_prompts/02_design_verification_test_plan.prompt.yaml"
+    map_inputs:
+      device_name: "{{inputs.device_name}}"
+
+  - step_id: "human_factors_validation"
+    prompt_file: "testing_prompts/03_human_factors_validation_study_protocol.prompt.yaml"
+    map_inputs:
+      device_name: "{{inputs.device_name}}"
+      class: "{{inputs.device_class}}"
+
+  - step_id: "risk_based_test_suite"
+    prompt_file: "testing_prompts/04_risk_based_test_case_suite.prompt.yaml"
+    map_inputs:
+      device_name: "{{inputs.device_name}}"
+      hazard_analysis_table: "{{inputs.hazard_analysis_table}}"

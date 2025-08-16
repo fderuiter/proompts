@@ -1,0 +1,24 @@
+name: "Sterility Workflow"
+description: "A workflow for building a sterility validation protocol, comparing regulatory gaps, and performing a process FMEA."
+
+inputs:
+  - name: "device_description"
+    description: "A brief description of the device for the validation protocol and gap analysis."
+  - name: "process_description"
+    description: "An overview of the EtO sterilization process for the FMEA."
+
+steps:
+  - step_id: "validation_protocol"
+    prompt_file: "sterility_prompts/01_sterility_validation_protocol_builder.prompt.yaml"
+    map_inputs:
+      device_description: "{{inputs.device_description}}"
+
+  - step_id: "gap_analysis"
+    prompt_file: "sterility_prompts/02_regulatory_gap_analysis_comparator.prompt.yaml"
+    map_inputs:
+      device_description: "{{inputs.device_description}}"
+
+  - step_id: "process_fmea"
+    prompt_file: "sterility_prompts/03_eto_sterilization_process_fmea.prompt.yaml"
+    map_inputs:
+      process_description: "{{inputs.process_description}}"

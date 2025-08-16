@@ -1,0 +1,26 @@
+name: "Study Director Workflow"
+description: "A workflow for drafting a GLP-compliant study protocol, auditing raw data, and generating an executive summary."
+
+inputs:
+  - name: "protocol_basics"
+    description: "Basic parameters for the study protocol."
+  - name: "data_csv"
+    description: "Raw study data for the audit and CAPA summary."
+  - name: "report_sections"
+    description: "Draft CTD modules and tables for the executive summary."
+
+steps:
+  - step_id: "draft_protocol"
+    prompt_file: "study_director_prompts/01_draft_glp_compliant_study_protocol.prompt.yaml"
+    map_inputs:
+      protocol_basics: "{{inputs.protocol_basics}}"
+
+  - step_id: "audit_data"
+    prompt_file: "study_director_prompts/02_audit_raw_data_capa_summary.prompt.yaml"
+    map_inputs:
+      data_csv: "{{inputs.data_csv}}"
+
+  - step_id: "executive_summary"
+    prompt_file: "study_director_prompts/03_executive_summary_final_report.prompt.yaml"
+    map_inputs:
+      report_sections: "{{inputs.report_sections}}"

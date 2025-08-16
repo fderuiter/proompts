@@ -1,0 +1,35 @@
+name: "VP Statistics Workflow"
+description: "A workflow for creating an interim results executive brief, a statistical analysis plan, and a data quality risk heat map."
+
+inputs:
+  - name: "analysis_results"
+    description: "Interim results PDF for the executive brief."
+  - name: "statistical_plan"
+    description: "The latest Statistical Analysis Plan for the executive brief."
+  - name: "safety_listings"
+    description: "Safety listings spreadsheet for the executive brief."
+  - name: "protocol_synopsis"
+    description: "Protocol synopsis text for the SAP draft builder."
+  - name: "raw_eds_dump"
+    description: "Patient-level dataset for the data quality risk heat map."
+  - name: "query_log"
+    description: "Query log with open and closed queries for the data quality risk heat map."
+
+steps:
+  - step_id: "executive_brief"
+    prompt_file: "vp_statistics_prompts/01_interim_results_executive_brief.prompt.yaml"
+    map_inputs:
+      analysis_results: "{{inputs.analysis_results}}"
+      statistical_plan: "{{inputs.statistical_plan}}"
+      safety_listings: "{{inputs.safety_listings}}"
+
+  - step_id: "sap_draft"
+    prompt_file: "vp_statistics_prompts/02_sap_first_draft_builder.prompt.yaml"
+    map_inputs:
+      protocol_synopsis: "{{inputs.protocol_synopsis}}"
+
+  - step_id: "data_quality_heatmap"
+    prompt_file: "vp_statistics_prompts/03_data_quality_risk_heatmap.prompt.yaml"
+    map_inputs:
+      raw_eds_dump: "{{inputs.raw_eds_dump}}"
+      query_log: "{{inputs.query_log}}"
