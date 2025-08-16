@@ -1,4 +1,4 @@
-name: Prompt Validation
+name: Validation
 # Ensure prompt YAML and Markdown docs remain valid
 
 on:
@@ -7,25 +7,27 @@ on:
       - '**/*.prompt.yaml'
       - '**/*.prompt.yml'
       - '.github/workflows/yaml-validation.yml'
-      - 'scripts/validate_prompts.sh'
+      - 'scripts/**'
   pull_request:
     paths:
       - '**/*.prompt.yaml'
       - '**/*.prompt.yml'
       - '.github/workflows/yaml-validation.yml'
-      - 'scripts/validate_prompts.sh'
+      - 'scripts/**'
 
 permissions:
   contents: read
 
 jobs:
-  prompt-lint:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install yamllint
-        run: pip install yamllint
-
-      - name: Validate prompts
-        run: |
-          ./scripts/validate_prompts.sh
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: pip install pyyaml yamllint
+      - name: Run all validation checks
+        run: python3 scripts/test_all.py
