@@ -1,0 +1,26 @@
+name: "Learning and Development Workflow"
+description: "A workflow for creating a competency-based onboarding blueprint, a scenario-based microlearning series, and a training impact analytics plan."
+
+inputs:
+  - name: "existing_modules"
+    description: "Reference to reusable SOP content for the onboarding blueprint."
+  - name: "audience_role"
+    description: "Primary learner roles for the microlearning series."
+  - name: "analysis_goal"
+    description: "Specific compliance or performance metric to improve for the analytics plan."
+
+steps:
+  - step_id: "onboarding_blueprint"
+    prompt_file: "learning_development_prompts/01_competency_based_onboarding_blueprint.prompt.yaml"
+    map_inputs:
+      existing_modules: "{{inputs.existing_modules}}"
+
+  - step_id: "microlearning_series"
+    prompt_file: "learning_development_prompts/02_scenario_based_microlearning_series.prompt.yaml"
+    map_inputs:
+      audience_role: "{{inputs.audience_role}}"
+
+  - step_id: "analytics_plan"
+    prompt_file: "learning_development_prompts/03_training_impact_analytics_targeted_intervention_planner.prompt.yaml"
+    map_inputs:
+      analysis_goal: "{{inputs.analysis_goal}}"

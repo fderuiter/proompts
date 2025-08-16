@@ -1,0 +1,42 @@
+name: "Site Acquisition Workflow"
+description: "A workflow for site landscape mapping, feasibility questionnaire building, and investigator outreach."
+
+inputs:
+  - name: "protocol_summary"
+    description: "The study synopsis for site mapping and the feasibility questionnaire."
+  - name: "investigator_name"
+    description: "The principal investigator's full name for the outreach email."
+  - name: "site_name"
+    description: "The institution or site name for the outreach email."
+  - name: "city_country"
+    description: "The site location for the outreach email."
+  - name: "recent_relevant_trials"
+    description: "Notable recent trials at the site for the outreach email."
+  - name: "unique_site_strength"
+    description: "Distinctive capability or resource of the site for the outreach email."
+  - name: "study_synopsis"
+    description: "A brief summary of the study for the outreach email."
+  - name: "sponsor_name"
+    description: "The sponsoring company for the outreach email."
+
+steps:
+  - step_id: "site_mapping"
+    prompt_file: "site_acquisition_prompts/01_site_landscape_mapping.prompt.yaml"
+    map_inputs:
+      protocol_summary: "{{inputs.protocol_summary}}"
+
+  - step_id: "feasibility_questionnaire"
+    prompt_file: "site_acquisition_prompts/02_tailored_feasibility_questionnaire.prompt.yaml"
+    map_inputs:
+      protocol_summary: "{{inputs.protocol_summary}}"
+
+  - step_id: "outreach_email"
+    prompt_file: "site_acquisition_prompts/03_investigator_outreach_email_generator.prompt.yaml"
+    map_inputs:
+      investigator_name: "{{inputs.investigator_name}}"
+      site_name: "{{inputs.site_name}}"
+      city_country: "{{inputs.city_country}}"
+      recent_relevant_trials: "{{inputs.recent_relevant_trials}}"
+      unique_site_strength: "{{inputs.unique_site_strength}}"
+      study_synopsis: "{{inputs.study_synopsis}}"
+      sponsor_name: "{{inputs.sponsor_name}}"

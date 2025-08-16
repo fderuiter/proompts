@@ -1,0 +1,26 @@
+name: "CRA Workflow"
+description: "A workflow for generating a monitoring visit report, tracking investigator follow-up emails, and building an RBM plan."
+
+inputs:
+  - name: "visit_info"
+    description: "Information about the monitoring visit for the report generator."
+  - name: "pending_actions"
+    description: "Pending actions from the visit for the email tracker."
+  - name: "study_info"
+    description: "Information about the study for the RBM plan builder."
+
+steps:
+  - step_id: "report_generator"
+    prompt_file: "cra_prompts/01_monitoring_visit_report_generator.prompt.yaml"
+    map_inputs:
+      input: "{{inputs.visit_info}}"
+
+  - step_id: "email_tracker"
+    prompt_file: "cra_prompts/02_investigator_follow_up_email_tracker.prompt.yaml"
+    map_inputs:
+      input: "{{inputs.pending_actions}}"
+
+  - step_id: "rbm_plan_builder"
+    prompt_file: "cra_prompts/03_rbm_plan_builder.prompt.yaml"
+    map_inputs:
+      input: "{{inputs.study_info}}"

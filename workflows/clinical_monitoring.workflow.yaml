@@ -1,0 +1,26 @@
+name: "Clinical Monitoring Workflow"
+description: "A workflow for creating a site performance dashboard, building a CAPA plan, and critiquing a monitoring visit report."
+
+inputs:
+  - name: "site_performance_data"
+    description: "Data on site performance metrics."
+  - name: "monitoring_findings"
+    description: "A list of findings from monitoring."
+  - name: "mvr_report"
+    description: "The Monitoring Visit Report to be critiqued."
+
+steps:
+  - step_id: "performance_dashboard"
+    prompt_file: "clinical_monitoring_prompts/01_risk_based_site_performance_dashboard.prompt.yaml"
+    map_inputs:
+      input: "{{inputs.site_performance_data}}"
+
+  - step_id: "capa_plan"
+    prompt_file: "clinical_monitoring_prompts/02_capa_plan_builder_for_monitoring_findings.prompt.yaml"
+    map_inputs:
+      input: "{{inputs.monitoring_findings}}"
+
+  - step_id: "mvr_critique"
+    prompt_file: "clinical_monitoring_prompts/03_monitoring_visit_report_quality_critique.prompt.yaml"
+    map_inputs:
+      input: "{{inputs.mvr_report}}"
