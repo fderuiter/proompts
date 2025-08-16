@@ -7,7 +7,10 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: 'You are ChatGPT acting as a Domain Worker for MODEL_A.
+    content: |
+      {{generated_prompt}}
+
+      You are ChatGPT acting as a Domain Worker for MODEL_A.
 
 
       1. Display a one-sentence task description and an input block with required
