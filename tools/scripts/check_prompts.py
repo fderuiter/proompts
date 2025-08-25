@@ -12,8 +12,8 @@ import yaml
 
 OVERVIEW_NAME = "overview.md"  # documentation stays Markdown
 
-ROOT = Path(__file__).resolve().parents[1]
-EXCLUDE_DIRS = {"docs", "scripts", ".github", "prompt_tools", "workflows"}
+ROOT = Path(__file__).resolve().parents[2]
+PROMPTS_DIR = ROOT / "prompts"
 
 
 NUMERIC_RE = re.compile(r"^\d\d_.*\.prompt\.ya?ml$", re.IGNORECASE)
@@ -56,7 +56,7 @@ def check_files(directory: Path) -> bool:
         if directory.name == "agentic_coding" and not NUMERIC_RE.match(name):
             print(f"{file} does not follow numeric prefix naming")
             ok = False
-        if directory.name == "meta_prompts" and not LEVEL_RE.match(name):
+        if directory.name == "meta" and not LEVEL_RE.match(name):
             print(f"{file} does not follow L#_ naming")
             ok = False
     return ok
@@ -64,15 +64,22 @@ def check_files(directory: Path) -> bool:
 
 def main() -> int:
     success = True
-    for d in ROOT.iterdir():
-        if not d.is_dir():
+    for category_dir in PROMPTS_DIR.iterdir():
+        if not category_dir.is_dir():
             continue
-        if d.name in EXCLUDE_DIRS or d.name.startswith('.'):
+        if not check_overview(category_dir):
+            success = False
+        if category_dir.name == "meta":
+            if not check_files(category_dir):
+                success = False
             continue
-        if not check_overview(d):
-            success = False
-        if not check_files(d):
-            success = False
+        for prompt_dir in category_dir.iterdir():
+            if not prompt_dir.is_dir():
+                continue
+            if not check_overview(prompt_dir):
+                success = False
+            if not check_files(prompt_dir):
+                success = False
     return 0 if success else 1
 
 

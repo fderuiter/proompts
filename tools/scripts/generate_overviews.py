@@ -8,8 +8,8 @@ import yaml
 
 OVERVIEW_NAME = "overview.md"  # documentation remains in Markdown
 
-ROOT = Path(__file__).resolve().parents[1]
-EXCLUDE_DIRS = {"docs", "scripts", ".github"}
+ROOT = Path(__file__).resolve().parents[2]
+PROMPTS_DIR = ROOT / "prompts"
 
 
 def title_from_prompt(path: Path) -> str:
@@ -55,14 +55,22 @@ def ensure_overview(directory: Path) -> bool:
 
 def main() -> int:
     changed = False
-    for d in ROOT.iterdir():
-        if not d.is_dir():
+    for category_dir in PROMPTS_DIR.iterdir():
+        if not category_dir.is_dir():
             continue
-        if d.name in EXCLUDE_DIRS or d.name.startswith('.'):
+        # For meta prompts, they are directly in the category dir
+        if category_dir.name == "meta":
+            if ensure_overview(category_dir):
+                print(f"Generated overview for {category_dir}")
+                changed = True
             continue
-        if ensure_overview(d):
-            print(f"Generated overview for {d}")
-            changed = True
+
+        for prompt_dir in category_dir.iterdir():
+            if not prompt_dir.is_dir():
+                continue
+            if ensure_overview(prompt_dir):
+                print(f"Generated overview for {prompt_dir}")
+                changed = True
     return 0 if changed else 0
 
 

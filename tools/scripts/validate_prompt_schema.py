@@ -8,7 +8,7 @@ from typing import Iterable, Tuple, Union
 
 import yaml
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 
 REQUIRED_PATHS: Tuple[Tuple[Union[str, int], ...], ...] = (
     ("name",),
