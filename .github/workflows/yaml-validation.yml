@@ -4,16 +4,16 @@ name: Validation
 on:
   push:
     paths:
-      - '**/*.prompt.yaml'
-      - '**/*.prompt.yml'
+      - 'prompts/**/*.prompt.yaml'
+      - 'prompts/**/*.prompt.yml'
       - '.github/workflows/yaml-validation.yml'
-      - 'scripts/**'
+      - 'tools/scripts/**'
   pull_request:
     paths:
-      - '**/*.prompt.yaml'
-      - '**/*.prompt.yml'
+      - 'prompts/**/*.prompt.yaml'
+      - 'prompts/**/*.prompt.yml'
       - '.github/workflows/yaml-validation.yml'
-      - 'scripts/**'
+      - 'tools/scripts/**'
 
 permissions:
   contents: read
@@ -30,4 +30,4 @@ jobs:
       - name: Install dependencies
         run: pip install pyyaml yamllint
       - name: Run all validation checks
-        run: python3 scripts/test_all.py
+        run: python3 tools/scripts/test_all.py

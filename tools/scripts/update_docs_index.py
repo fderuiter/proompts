@@ -10,9 +10,9 @@ from pathlib import Path
 
 import yaml
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 DOCS_DIR = ROOT / "docs"
-EXCLUDE = {"docs", "scripts", ".github"}
+PROMPTS_DIR = ROOT / "prompts"
 # Extensions for prompt files included in the generated index
 PROMPT_EXTENSIONS = (".prompt.yaml", ".prompt.yml")
 
@@ -23,7 +23,11 @@ def read_meta(path: Path) -> tuple[str, str]:
         text = path.read_text(encoding="utf-8")
         data = yaml.safe_load(text) or {}
         title = str(data.get("name") or data.get("title") or "").strip()
-        category = str(data.get("category") or path.parent.name)
+        # Use parent's parent name for category, e.g. "clinical" for "prompts/clinical/adjudication"
+        category = path.parent.parent.name
+        if category == "prompts": # a prompt in a top-level category dir
+            category = path.parent.name
+
     except Exception:
         category = path.parent.name
         title = ""
@@ -42,10 +46,8 @@ def collect_prompts() -> dict[str, list[tuple[Path, str]]]:
     """Group prompt file paths by category."""
     groups: dict[str, list[tuple[Path, str]]] = defaultdict(list)
     for ext in PROMPT_EXTENSIONS:
-        for path in ROOT.rglob(f"*{ext}"):
+        for path in PROMPTS_DIR.rglob(f"*{ext}"):
             if not path.is_file():
-                continue
-            if any(part in EXCLUDE for part in path.parts):
                 continue
             category, title = read_meta(path)
             groups[category].append((path, title))

@@ -26,7 +26,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Validate prompts
-        run: ./scripts/validate_prompts.sh
+        run: ./tools/scripts/validate_prompt_schema.py
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:

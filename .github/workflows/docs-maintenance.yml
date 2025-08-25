@@ -4,19 +4,19 @@ name: Docs Maintenance
 'on':
   push:
     paths:
-      - '**/*.prompt.yaml'
-      - '**/*.prompt.yml'
-      - 'scripts/fix_markdown_issues.py'
-      - 'scripts/generate_overviews.py'
-      - 'scripts/update_docs_index.py'
+      - 'prompts/**/*.prompt.yaml'
+      - 'prompts/**/*.prompt.yml'
+      - 'tools/scripts/fix_markdown_issues.py'
+      - 'tools/scripts/generate_overviews.py'
+      - 'tools/scripts/update_docs_index.py'
       - '.github/workflows/docs-maintenance.yml'
   pull_request:
     paths:
-      - '**/*.prompt.yaml'
-      - '**/*.prompt.yml'
-      - 'scripts/fix_markdown_issues.py'
-      - 'scripts/generate_overviews.py'
-      - 'scripts/update_docs_index.py'
+      - 'prompts/**/*.prompt.yaml'
+      - 'prompts/**/*.prompt.yml'
+      - 'tools/scripts/fix_markdown_issues.py'
+      - 'tools/scripts/generate_overviews.py'
+      - 'tools/scripts/update_docs_index.py'
       - '.github/workflows/docs-maintenance.yml'
 
 permissions:
@@ -36,13 +36,13 @@ jobs:
       - name: Install dependencies
         run: pip install pyyaml yamllint
       - name: Fix markdown issues
-        run: python3 scripts/fix_markdown_issues.py
+        run: python3 tools/scripts/fix_markdown_issues.py
       - name: Generate overviews
-        run: python3 scripts/generate_overviews.py
+        run: python3 tools/scripts/generate_overviews.py
       - name: Update docs index
-        run: python3 scripts/update_docs_index.py
+        run: python3 tools/scripts/update_docs_index.py
       - name: Validate prompts
-        run: ./scripts/validate_prompts.sh
+        run: ./tools/scripts/validate_prompt_schema.py
       - name: Check for changes
         id: diff
         run: |
