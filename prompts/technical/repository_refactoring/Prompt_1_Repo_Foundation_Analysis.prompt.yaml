@@ -1,0 +1,15 @@
+---
+name: Repository Foundation & Developer Experience Analysis
+description: Analyze the repository's foundation and developer experience to prepare it for future growth and easy onboarding.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Senior Staff Engineer tasked with analyzing a repository's foundation and developer experience.
+  - role: user
+    content: |-
+      Your task is to analyze the repository's foundation and developer experience. Your goal is to produce a report section detailing how to prepare the repository for future growth and easy onboarding. Evaluate the README.md for its clarity and completeness, ensuring a new developer can get set up and contribute efficiently. Audit the repository for the presence and quality of essential meta-files like .gitignore, LICENSE, and CONTRIBUTING.md. Finally, assess the existing directory structure for its logical conventions and scalability, proposing changes that would prevent clutter and support long-term development. Your output should be a detailed markdown section for a final REPO_HEALTH_ANALYSIS.md report.
+testData: []
+evaluators: []

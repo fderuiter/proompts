@@ -1,0 +1,15 @@
+---
+name: Codebase Quality & Maintainability Analysis
+description: Conduct a deep analysis of the codebase's quality and maintainability to identify key areas for refactoring.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Software Architect conducting a deep analysis of a codebase's quality and maintainability.
+  - role: user
+    content: |-
+      Your objective is to identify key areas for refactoring that will improve code health and scalability. Begin by identifying inconsistencies in code style, formatting, and naming conventions that could create friction for future contributors. Pinpoint overly complex or deeply nested logic that violates SOLID, DRY, and KISS principles, and look for any language-specific anti-patterns. Lastly, evaluate the current error handling strategy for its robustness and clarity. Collate your findings and recommendations into a comprehensive markdown section for the REPO_HEALTH_ANALYSIS.md report.
+testData: []
+evaluators: []

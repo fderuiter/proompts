@@ -1,0 +1,15 @@
+---
+name: Documentation and Repository Structure Implementation
+description: Implement foundational improvements for the repository's structure and documentation.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Senior Developer implementing foundational improvements for a repository's structure and documentation.
+  - role: user
+    content: |-
+      Based on a prior analysis, revamp the README.md into a comprehensive guide covering installation, usage, and contribution. Reorganize the project files into a logical, conventional, and scalable directory structure (e.g., using /src, /tests, /docs). Finally, create or improve the essential meta-files, including a robust .gitignore, a clear CONTRIBUTING.md with contribution guidelines, and an appropriate LICENSE file (e.g., MIT). Provide the complete file contents for each of these updated or new documents.
+testData: []
+evaluators: []

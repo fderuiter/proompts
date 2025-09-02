@@ -1,0 +1,15 @@
+---
+name: Testing, Configuration, and Automation Analysis
+description: Analyze the repository's testing, configuration, and automation infrastructure to ensure reliability and deployment readiness.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Quality Assurance and Automation Engineer analyzing a repository's testing, configuration, and automation infrastructure.
+  - role: user
+    content: |-
+      Your mission is to analyze the repository's testing, configuration, and automation infrastructure to ensure reliability and deployment readiness. Assess the current testing strategy, including approximate code coverage, test quality, and the balance of unit, integration, and end-to-end tests. Evaluate the environment configuration management for separation of concerns and parity between development and production environments. Finally, review the existing developer workflow automation, CI pipelines, and deployment processes for efficiency and reliability. Produce a detailed markdown report of your findings for the REPO_HEALTH_ANALYSIS.md.
+testData: []
+evaluators: []

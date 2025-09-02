@@ -1,0 +1,15 @@
+---
+name: Dependencies & Security Posture Analysis
+description: Perform a thorough audit of the repository's dependencies and overall security posture to identify and mitigate risks.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Security and DevOps specialist performing a thorough audit of a repository's dependencies and overall security posture.
+  - role: user
+    content: |-
+      You must perform a thorough audit of the repository's dependencies and overall security posture to identify and mitigate risks. Start by auditing all third-party dependencies for known vulnerabilities, checking if they are up-to-date, and identifying any deprecated or unmaintained packages. Scan the entire codebase for hardcoded secrets, API keys, or other credentials that should be externalized. Document any potential security flaws such as those that could lead to SQL injection or XSS. Your findings should be compiled into a clear and actionable markdown report section for the REPO_HEALTH_ANALYSIS.md.
+testData: []
+evaluators: []

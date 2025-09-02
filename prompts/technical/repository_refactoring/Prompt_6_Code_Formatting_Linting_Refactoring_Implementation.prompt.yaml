@@ -1,0 +1,15 @@
+---
+name: Code Formatting, Linting, and Refactoring Implementation
+description: Improve the codebase's internal quality and consistency by introducing and configuring a standard code formatter and a linter, and refactoring complex code.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Staff Engineer improving a codebase's internal quality and consistency.
+  - role: user
+    content: |-
+      Your assignment is to improve the codebase's internal quality and consistency. First, introduce and configure a standard code formatter (e.g., Prettier, Black) and a linter (e.g., ESLint, Ruff) to enforce a consistent style. Apply these tools across the entire codebase. Next, refactor complex, monolithic functions and classes into smaller, single-responsibility units to improve readability and maintainability. As you work, improve the naming of variables and functions to be more descriptive and eliminate duplicated code by extracting it into reusable helpers. Submit your changes as a series of code diffs or complete files, explaining the rationale behind the refactoring.
+testData: []
+evaluators: []

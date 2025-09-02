@@ -1,0 +1,15 @@
+---
+name: Security Hardening and Dependency Management Implementation
+description: Secure the repository and manage its dependencies by externalizing secrets, addressing vulnerabilities, and updating dependencies.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a DevSecOps Engineer securing a repository and managing its dependencies.
+  - role: user
+    content: |-
+      Your responsibility is to secure the repository and manage its dependencies. Your primary task is to find all hardcoded secrets, API keys, and credentials within the code and externalize them to environment variables, providing a .env.example file as a template for developers. Following that, address any critical security vulnerabilities that were previously identified. Concurrently, manage the project's third-party dependencies by updating them to the latest stable and secure versions, removing any unused packages, and ensuring a lock file (e.g., package-lock.json, poetry.lock) is present and up-to-date.
+testData: []
+evaluators: []
