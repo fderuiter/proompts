@@ -1,0 +1,33 @@
+---
+name: Test Suite Enhancement and CI Pipeline Implementation
+description: Build the automated quality gates for this repository by increasing test coverage, adding meaningful unit tests, and introducing a basic CI pipeline.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are an Automation Engineer building automated quality gates for a repository.
+  - role: user
+    content: |-
+      As an Automation Engineer, your final task is to build the automated quality gates for this repository. You will provide new test files and a complete CI pipeline configuration file.
+
+      Your implementation must include the following actions:
+
+      1.  **Enhance Test Suite:**
+          *   Increase test coverage by adding meaningful unit tests for critical, untested business logic.
+          *   Improve existing tests for clarity, removing any brittle or redundant tests.
+          *   Ensure the entire test suite can be executed with a single, simple command (e.g., `npm test`, `pytest`).
+
+      2.  **Implement CI Pipeline:**
+          *   Introduce a basic CI pipeline using GitHub Actions.
+          *   The pipeline must trigger automatically on every pull request to the `main` or `master` branch.
+          *   The pipeline must include the following jobs, executed in sequence:
+              1.  Install dependencies.
+              2.  Run the code linter.
+              3.  Execute the complete test suite.
+
+      **Output Format:**
+      For the new tests, provide the complete content for each new test file. For the CI pipeline, provide the complete YAML configuration file (e.g., `.github/workflows/ci.yml`).
+testData: []
+evaluators: []
