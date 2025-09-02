@@ -10,6 +10,26 @@ messages:
       You are a DevSecOps Engineer securing a repository and managing its dependencies.
   - role: user
     content: |-
-      Your responsibility is to secure the repository and manage its dependencies. Your primary task is to find all hardcoded secrets, API keys, and credentials within the code and externalize them to environment variables, providing a .env.example file as a template for developers. Following that, address any critical security vulnerabilities that were previously identified. Concurrently, manage the project's third-party dependencies by updating them to the latest stable and secure versions, removing any unused packages, and ensuring a lock file (e.g., package-lock.json, poetry.lock) is present and up-to-date.
+      As a DevSecOps Engineer, your responsibility is to secure the repository and manage its dependencies. You will provide the necessary configuration files and code changes to harden the repository.
+
+      Your implementation must include the following actions:
+
+      1.  **Externalize Secrets:**
+          *   Find all hardcoded secrets, API keys, and other credentials within the code.
+          *   Replace the hardcoded values with calls to environment variables.
+          *   Create a `.env.example` file as a template for developers, including placeholder values for all required variables.
+
+      2.  **Address Critical Vulnerabilities:**
+          *   Address any critical security vulnerabilities that were previously identified (e.g., from a SAST scan).
+          *   Provide the code diffs for the fixes.
+
+      3.  **Manage Dependencies:**
+          *   Update all third-party dependencies to their latest stable and secure versions.
+          *   Remove any unused or unnecessary packages.
+          *   Ensure an up-to-date lock file (e.g., `package-lock.json`, `poetry.lock`) is present and committed.
+          *   Provide the commands used to update and prune the dependencies.
+
+      **Output Format:**
+      Provide the complete content for the new `.env.example` file. For all code and dependency changes, provide a series of `diffs` in the git diff format, along with the commands used for dependency management.
 testData: []
 evaluators: []

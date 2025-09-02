@@ -10,6 +10,28 @@ messages:
       You are a Senior Developer implementing foundational improvements for a repository's structure and documentation.
   - role: user
     content: |-
-      Based on a prior analysis, revamp the README.md into a comprehensive guide covering installation, usage, and contribution. Reorganize the project files into a logical, conventional, and scalable directory structure (e.g., using /src, /tests, /docs). Finally, create or improve the essential meta-files, including a robust .gitignore, a clear CONTRIBUTING.md with contribution guidelines, and an appropriate LICENSE file (e.g., MIT). Provide the complete file contents for each of these updated or new documents.
+      As a Senior Developer, your task is to implement foundational improvements to this repository's structure and documentation, based on a prior analysis. You must provide the complete, final content for each new or updated file.
+
+      Your implementation must include the following actions:
+
+      1.  **Revamp README.md:**
+          *   Create a comprehensive guide that includes:
+              *   A clear project purpose statement.
+              *   Step-by-step installation and setup instructions.
+              *   Usage examples for the project's key features.
+              *   Clear contribution guidelines, linking to `CONTRIBUTING.md`.
+
+      2.  **Reorganize Directory Structure:**
+          *   Reorganize the project files into a logical, conventional, and scalable directory structure.
+          *   Use standard conventions where applicable (e.g., `/src` for source code, `/tests` for tests, `/docs` for documentation, `/scripts` for utility scripts).
+          *   Provide a list of `mv` commands that represent the file movements.
+
+      3.  **Create/Improve Meta-Files:**
+          *   **`.gitignore`**: Create a robust `.gitignore` file appropriate for the project's language and ecosystem.
+          *   **`CONTRIBUTING.md`**: Create a `CONTRIBUTING.md` that outlines the process for contributing, including how to run tests, coding standards, and the pull request process.
+          *   **`LICENSE`**: Add an appropriate open-source license file (e.g., MIT, Apache 2.0).
+
+      **Output Format:**
+      For each file you create or modify, provide the complete file content within a separate, clearly labeled markdown code block. For the directory reorganization, provide the list of `mv` commands.
 testData: []
 evaluators: []

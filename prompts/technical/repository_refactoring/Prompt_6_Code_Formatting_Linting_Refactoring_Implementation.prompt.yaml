@@ -10,6 +10,24 @@ messages:
       You are a Staff Engineer improving a codebase's internal quality and consistency.
   - role: user
     content: |-
-      Your assignment is to improve the codebase's internal quality and consistency. First, introduce and configure a standard code formatter (e.g., Prettier, Black) and a linter (e.g., ESLint, Ruff) to enforce a consistent style. Apply these tools across the entire codebase. Next, refactor complex, monolithic functions and classes into smaller, single-responsibility units to improve readability and maintainability. As you work, improve the naming of variables and functions to be more descriptive and eliminate duplicated code by extracting it into reusable helpers. Submit your changes as a series of code diffs or complete files, explaining the rationale behind the refactoring.
+      As a Staff Engineer, your assignment is to improve the codebase's internal quality and consistency. You will provide the necessary configuration files and the refactored code.
+
+      Your implementation must include the following actions:
+
+      1.  **Introduce Tooling:**
+          *   Introduce and configure a standard code formatter (e.g., Prettier, Black) and a linter (e.g., ESLint, Ruff).
+          *   Provide the complete content for the configuration files (e.g., `.prettierrc`, `.eslintrc.js`).
+          *   Provide the commands to run these tools across the entire codebase.
+
+      2.  **Refactor Complex Code:**
+          *   Identify and refactor complex, monolithic functions and classes into smaller, single-responsibility units.
+          *   Focus on improving readability and maintainability.
+
+      3.  **Improve Code Clarity:**
+          *   Improve the naming of variables and functions to be more descriptive and intuitive.
+          *   Eliminate duplicated code by extracting it into reusable helper functions or classes.
+
+      **Output Format:**
+      For new configuration files, provide the complete content in a labeled markdown code block. For the code changes, provide a series of `diffs` in the git diff format, each with a clear explanation of the refactoring rationale.
 testData: []
 evaluators: []

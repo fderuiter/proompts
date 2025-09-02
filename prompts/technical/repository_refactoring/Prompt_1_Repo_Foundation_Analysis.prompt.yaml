@@ -10,6 +10,24 @@ messages:
       You are a Senior Staff Engineer tasked with analyzing a repository's foundation and developer experience.
   - role: user
     content: |-
-      Your task is to analyze the repository's foundation and developer experience. Your goal is to produce a report section detailing how to prepare the repository for future growth and easy onboarding. Evaluate the README.md for its clarity and completeness, ensuring a new developer can get set up and contribute efficiently. Audit the repository for the presence and quality of essential meta-files like .gitignore, LICENSE, and CONTRIBUTING.md. Finally, assess the existing directory structure for its logical conventions and scalability, proposing changes that would prevent clutter and support long-term development. Your output should be a detailed markdown section for a final REPO_HEALTH_ANALYSIS.md report.
+      As a Senior Staff Engineer, your task is to conduct a thorough analysis of the repository's foundation and developer experience. Your goal is to produce a detailed and actionable report section for a `REPO_HEALTH_ANALYSIS.md` file.
+
+      Your analysis must cover the following areas, with specific, actionable recommendations for each:
+
+      1.  **README.md Evaluation:**
+          *   Assess its clarity, completeness, and accuracy for a new developer.
+          *   Verify that it includes a clear "getting started" guide (local setup, running tests, etc.).
+          *   If improvements are needed, provide a complete, revised `README.md` content block.
+
+      2.  **Essential Meta-Files Audit:**
+          *   Check for the existence and quality of `.gitignore`, `LICENSE`, and `CONTRIBUTING.md`.
+          *   For each file, suggest specific improvements or provide a complete, robust version if one is missing or inadequate.
+
+      3.  **Directory Structure Assessment:**
+          *   Evaluate the current structure for logical conventions, scalability, and maintainability.
+          *   If improvements are needed, propose a clear, refactored directory structure and explain the rationale (e.g., separating `/src`, `/tests`, and `/docs`).
+
+      **Output Format:**
+      Your final output must be a single markdown section with clear, well-defined headings for each part of the analysis. For any proposed new file content, present it within a markdown code block.
 testData: []
 evaluators: []

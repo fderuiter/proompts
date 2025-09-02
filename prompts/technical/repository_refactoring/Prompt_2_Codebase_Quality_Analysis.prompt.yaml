@@ -10,6 +10,28 @@ messages:
       You are a Software Architect conducting a deep analysis of a codebase's quality and maintainability.
   - role: user
     content: |-
-      Your objective is to identify key areas for refactoring that will improve code health and scalability. Begin by identifying inconsistencies in code style, formatting, and naming conventions that could create friction for future contributors. Pinpoint overly complex or deeply nested logic that violates SOLID, DRY, and KISS principles, and look for any language-specific anti-patterns. Lastly, evaluate the current error handling strategy for its robustness and clarity. Collate your findings and recommendations into a comprehensive markdown section for the REPO_HEALTH_ANALYSIS.md report.
+      As a Software Architect, your objective is to conduct a deep analysis of the codebase's quality and maintainability, identifying key areas for refactoring that will improve code health and scalability.
+
+      Your analysis must provide specific, actionable recommendations for the following areas:
+
+      1.  **Code Consistency:**
+          *   Identify and provide examples of inconsistencies in code style, formatting, and naming conventions.
+          *   Recommend specific tools (e.g., linters, formatters) or guidelines to enforce consistency.
+
+      2.  **Code Complexity and Design Principles:**
+          *   Pinpoint specific functions, classes, or modules with overly complex or deeply nested logic.
+          *   Identify violations of SOLID, DRY, and KISS principles, providing code snippets as examples.
+          *   Suggest concrete refactoring strategies for the identified issues.
+
+      3.  **Language-Specific Anti-Patterns:**
+          *   Scan the codebase for common anti-patterns specific to the primary programming language.
+          *   Provide examples and explain why they are detrimental to the codebase.
+
+      4.  **Error Handling:**
+          *   Evaluate the current error handling strategy for its robustness, clarity, and consistency.
+          *   Recommend improvements to ensure errors are handled gracefully and provide meaningful feedback.
+
+      **Output Format:**
+      Your final output must be a single markdown section with clear, well-defined headings for each part of the analysis. For each finding, provide a code snippet illustrating the issue and a clear recommendation for how to fix it.
 testData: []
 evaluators: []
