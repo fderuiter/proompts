@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain how to create a static typing adoption and null-safety migration strategy. This is a plan to move a codebase towards stricter programming language features. Static typing helps catch bugs at compile-time rather than runtime. Null-safety is a feature that eliminates null reference errors (a very common source of bugs).
+testData: []
+evaluators: []

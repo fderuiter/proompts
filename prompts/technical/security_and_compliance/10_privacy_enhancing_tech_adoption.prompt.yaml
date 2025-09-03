@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain the use of advanced privacy-enhancing technologies to protect data while it's being processed. Examples include Multi-Party Computation (MPC), Homomorphic Encryption (allows computation on encrypted data), and Trusted Execution Environments (TEEs) which are secure hardware areas.
+testData: []
+evaluators: []

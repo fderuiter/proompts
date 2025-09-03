@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain the following techniques for visualizing and organizing work: story mapping, impact mapping, and scope slicing heuristics. Story mapping arranges user stories to create a holistic view of the user journey. Impact mapping links business goals to deliverables. Scope slicing is about breaking large projects into small, valuable, deliverable pieces.
+testData: []
+evaluators: []

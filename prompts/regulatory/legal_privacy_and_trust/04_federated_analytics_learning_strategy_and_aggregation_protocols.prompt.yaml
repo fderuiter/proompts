@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Outline a strategy for adopting federated analytics and learning, which would allow us to gain insights and train machine learning models on decentralized data without that data ever leaving the user's device. The strategy should describe the overall architecture, including how computations or model training would occur locally on-device. It must also detail the secure aggregation protocols that will be used to combine the encrypted results from many devices on a central server in a way that protects individual contributions and ensures user privacy.
+testData: []
+evaluators: []

@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Develop an in-depth strategic plan for migrating a legacy monolithic application to a modern microservices architecture using the Strangler-Fig pattern. The plan should outline how to identify logical "seams" within the monolith that can be carved out into new services. Describe the role of an intercepting facade or proxy that incrementally routes traffic from the old system to the new services. Provide a phased approach, explaining how to build momentum by starting with high-value, low-risk functionality and gradually "strangling" the monolith until it can be safely decommissioned.
+testData: []
+evaluators: []

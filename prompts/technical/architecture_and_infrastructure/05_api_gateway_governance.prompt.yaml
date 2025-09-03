@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Create a comprehensive governance policy for our external API platform, intended to be enforced via our API gateway. This policy must include three key components: 1) A mandatory API style guide to ensure consistency in naming conventions, error handling, and data formats across all endpoints; 2) A defined version lifecycle policy that outlines our process for deprecating old API versions with clear timelines; and 3) A framework for tiered quotas and rate limiting that are tied to different customer subscription plans.
+testData: []
+evaluators: []

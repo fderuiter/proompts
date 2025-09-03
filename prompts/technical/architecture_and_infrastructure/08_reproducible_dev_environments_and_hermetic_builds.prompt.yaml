@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Design a strategy to create highly reproducible developer environments and guarantee hermetic builds. The strategy should evaluate and recommend a specific technology—such as Nix or version-pinned containers—to ensure that every developer works with the exact same set of tools, libraries, and dependencies, eliminating "it works on my machine" issues. Furthermore, it must define standards for a hermetic build process, where builds are completely self-contained and not influenced by the host system, guaranteeing that a given commit always produces the exact same binary artifact.
+testData: []
+evaluators: []

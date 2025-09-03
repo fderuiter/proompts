@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Please provide a comprehensive guide on implementing dual-track agile, a methodology that separates product discovery from product delivery into two parallel tracks. Explain how the discovery track (focused on research, validation, and prototyping) continuously informs the delivery track (focused on building and shipping production-ready features). Detail the key roles and responsibilities involved, the typical artifacts produced in the discovery phase (e.g., prototypes, user journey maps), and how this approach helps teams validate ideas, reduce uncertainty, and ensure they are building the right product for their customers.
+testData: []
+evaluators: []

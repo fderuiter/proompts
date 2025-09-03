@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Create a security strategy tailored for applications that leverage Large Language Models (LLMs). The strategy must detail multiple layers of defense against prompt injection, including input filtering, instructional defense for the model, and output validation. It should also outline a process for developing and maintaining a suite of adversarial "jailbreak" tests to probe for model weaknesses. Finally, describe the architecture of an evaluation harness to continuously and automatically test new model versions against this test suite to prevent security regressions.
+testData: []
+evaluators: []

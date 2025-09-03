@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain quota and rate-limit exhaustion resilience with adaptive shedding. This is about designing systems to handle being overwhelmed by traffic. This includes being resilient when hitting usage limits (quotas) on other services and gracefully degrading performance (adaptive shedding) by dropping less-critical traffic when overloaded.
+testData: []
+evaluators: []

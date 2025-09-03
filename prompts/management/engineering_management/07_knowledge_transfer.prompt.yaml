@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain techniques for knowledge transfer to prevent knowledge from being siloed in one person. This includes having engineers pair program with different teammates, rotating ownership of systems, and generally reducing the "bus factor" (the risk to the project if a key person gets "hit by a bus").
+testData: []
+evaluators: []

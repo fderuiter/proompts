@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Develop a systematic program for conducting win–loss analysis for our sales process and instrumenting the drivers of customer churn. The program should outline a repeatable process for interviewing recent wins, competitive losses, and churned customers to gather qualitative insights. It must also specify the product analytics and telemetry needed to identify in-app behaviors that are leading indicators of churn. The final part of the program should be a formal feedback loop for synthesizing these quantitative and qualitative findings into prioritized inputs for the product roadmap.
+testData: []
+evaluators: []

@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain how to create a plan for managing long-term support (LTS) versions of software. This defines which bug fixes get backported (applied to older versions) and for how long security vulnerabilities (CVEs) will be patched. This is also known as an LTS release strategy, backport rules, and CVE support windows.
+testData: []
+evaluators: []

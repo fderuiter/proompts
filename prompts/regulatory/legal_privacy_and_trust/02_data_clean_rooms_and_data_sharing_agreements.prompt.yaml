@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Propose a strategy for leveraging data clean rooms to enable secure, privacy-preserving data collaboration with strategic partners. This strategy must outline the technical architecture and security controls that will be used to ensure that raw data from each party is never exposed to the other. Additionally, detail the legal and compliance workflow that must accompany any clean room initiative, including the execution of Data Processing Agreements (DPAs) and the incorporation of Standard Contractual Clauses (SCCs) to govern data handling and meet regulatory requirements.
+testData: []
+evaluators: []

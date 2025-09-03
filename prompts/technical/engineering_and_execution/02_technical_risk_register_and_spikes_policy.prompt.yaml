@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Draft a standardized process for creating and maintaining a technical risk register and a corresponding "spike" investigation policy. Your process should define how to identify, categorize (e.g., by probability and impact), and prioritize technical risks such as using unproven technology, complex third-party integrations, or significant architectural refactoring. Explain how to use time-boxed, outcome-oriented investigation tasks, known as spikes, to de-risk these uncertainties early in the development cycle before committing to a full implementation.
+testData: []
+evaluators: []

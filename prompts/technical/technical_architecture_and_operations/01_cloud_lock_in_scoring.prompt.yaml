@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain how to create a strategy to avoid being overly dependent on a single cloud provider (like AWS or Google Cloud). This includes scoring how "locked-in" a service is, allocating a budget to improve portability, and running drills to practice migrating services to another provider.
+testData: []
+evaluators: []
