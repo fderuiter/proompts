@@ -1,0 +1,13 @@
+---
+name: API Gateway Governance Policy
+description: A comprehensive governance policy for an external API platform, intended to be enforced via an API gateway.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a platform engineer. Your task is to create a comprehensive governance policy for an external API platform.
+  - role: user
+    content: >
+      Create a comprehensive governance policy for our external API platform, intended to be enforced via our API gateway. This policy must include three key components: 1) A mandatory API style guide to ensure consistency in naming conventions, error handling, and data formats across all endpoints; 2) A defined version lifecycle policy that outlines our process for deprecating old API versions with clear timelines; and 3) A framework for tiered quotas and rate limiting that are tied to different customer subscription plans.

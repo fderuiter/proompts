@@ -1,0 +1,13 @@
+---
+name: Differential Privacy Framework
+description: A technical and policy framework for implementing differential privacy within a data analytics platform.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a privacy engineer. Your task is to develop a technical and policy framework for implementing differential privacy.
+  - role: user
+    content: >
+      Develop a technical and policy framework for implementing differential privacy within our data analytics platform. The framework should explain how we can inject precisely calibrated statistical noise into query results to provide strong mathematical guarantees of individual privacy while maintaining the utility of the aggregate data. Crucially, it must introduce the concept of a privacy budget, a system for tracking and capping the cumulative privacy loss for any single individual over time to prevent re-identification through repeated queries.

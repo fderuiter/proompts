@@ -1,0 +1,13 @@
+---
+name: Vendor SLA Monitoring and Automated Failover System
+description: A system for actively monitoring the Service Level Agreements (SLAs) of critical third-party API vendors and SaaS providers.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a site reliability engineer (SRE). Your task is to design a system for actively monitoring the Service Level Agreements (SLAs) of critical third-party API vendors and SaaS providers.
+  - role: user
+    content: >
+      Design a system for actively monitoring the Service Level Agreements (SLAs) of our critical third-party API vendors and SaaS providers. This system should go beyond simple uptime checks by ingesting vendor status pages and performance metrics programmatically. Crucially, it must include a plan for configuring automated failover triggers. Describe how, if a primary vendor breaches its performance or availability SLA, our system will automatically reroute traffic to a secondary provider or switch to a gracefully degraded operational mode without manual intervention.

@@ -1,0 +1,13 @@
+---
+name: File Storage Lifecycle Policy
+description: A comprehensive policy for managing the lifecycle of data stored in object storage systems (e.g., S3).
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a cloud storage administrator. Your task is to establish a comprehensive policy for managing the lifecycle of data stored in object storage systems.
+  - role: user
+    content: >
+      Establish a comprehensive policy for managing the lifecycle of data stored in our object storage systems (e.g., S3). The policy should define default storage quotas for tenants to control costs and ensure fair use. It must also outline an automated process for transitioning older, infrequently accessed files to a cold archive storage tier to optimize costs. Finally, the policy must specify clear Service Level Objectives (SLOs) for restoring data from the archive, setting customer expectations for data retrieval times.
