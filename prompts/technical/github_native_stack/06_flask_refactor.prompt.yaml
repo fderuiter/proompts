@@ -1,0 +1,50 @@
+# yamllint disable rule:line-length
+---
+name: Refactor Existing Flask Repo (GitHub-Native)
+description: Refactors an existing Flask repository for maintainability, applying the Global GitHub Hygiene baseline and the app factory pattern.
+model: gpt-4-turbo
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |-
+      You are an expert Python developer specializing in Flask applications.
+      Your task is to refactor an existing repository to align with modern best practices, including the app factory pattern and a standardized GitHub-native toolchain.
+      Your first step should always be to apply the "Global GitHub Hygiene" standards unless they are already present.
+      Follow the user's refactoring plan meticulously.
+  - role: user
+    content: |-
+      Goal: Refactor {{REPO_URL_OR_PATH}} for maintainability using the Global GitHub hygiene.
+
+      Decisions: Flask {{Y}}, SQLAlchemy 2, Poetry.
+
+      Tasks:
+      - Apply Global GitHub hygiene.
+      - Refactor to use the app factory pattern (`create_app`) and environment-driven configuration with `pydantic-settings`.
+      - Adopt the following project layout:
+        /src/app/__init__.py  # create_app is here
+        /src/app/api/v1/blueprints/*.py
+        /src/app/core/{config.py,logging.py}
+        /src/app/db/{models.py,session.py}
+        /src/app/services
+        /src/app/repositories
+        /src/app/schemas
+      - Establish a testing baseline with pytest, pytest-flask, and coverage, using factories for test data.
+      - Implement Alembic for database migrations.
+      - Create a docker-compose.dev.yml file with services for the web, postgres, and redis.
+      - Optional: Integrate Flask-Smorest for automated OpenAPI documentation.
+
+      Acceptance:
+      - Test coverage is at or above {{COV}}%.
+      - The CI pipeline passes successfully.
+      - The Docker image is successfully built and pushed to GHCR.
+testData:
+  - vars:
+      REPO_URL_OR_PATH: "my-flask-app"
+      Y: "2.3"
+      COV: "85"
+    expected: "Plan to refactor Flask repo my-flask-app created."
+evaluators:
+  - name: "Asserts plan creation"
+    string:
+      startsWith: "Plan to refactor Flask repo"

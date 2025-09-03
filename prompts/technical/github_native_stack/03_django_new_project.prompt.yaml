@@ -1,0 +1,39 @@
+# yamllint disable rule:line-length
+---
+name: New Django Project (GitHub-Native)
+description: Creates a new, production-ready Django project from scratch using the GitHub-Native stack.
+model: gpt-4-turbo
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |-
+      You are an expert Django developer tasked with bootstrapping a new, production-ready project.
+      Your goal is to create a repository that is maintainable, scalable, and secure from day one.
+      Start by applying the "Global GitHub Hygiene" standards and then proceed with the Django-specific setup.
+  - role: user
+    content: |-
+      Goal: Create production-ready Django repo {{REPO_NAME}} on GitHub.
+
+      Tasks:
+      - Apply Global GitHub hygiene.
+      - Bootstrap tree:
+        /src/config/{asgi.py,wsgi.py,urls.py}
+        /src/config/settings/{base,local,test,prod}.py
+        /src/apps/core  /src/libs  /tests  /scripts  /infra/docker
+      - Implement a healthcheck endpoint at /healthcheck and a version endpoint at /__version__.
+      - Configure Poetry + pyproject.toml with ruff, black, mypy[django], pytest, coverage, and bandit.
+      - Enable pre-commit.
+      - Create a multi-stage Dockerfile and a docker-compose.dev.yml with postgres and redis services.
+
+      Acceptance:
+      - `pytest` and `pre-commit run --all-files` pass.
+      - CI is green and the Docker image is successfully pushed to GHCR.
+testData:
+  - vars:
+      REPO_NAME: "my-new-django-app"
+    expected: "Plan to create new Django project my-new-django-app created."
+evaluators:
+  - name: "Asserts plan creation"
+    string:
+      startsWith: "Plan to create new Django project"

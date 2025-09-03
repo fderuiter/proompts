@@ -1,0 +1,43 @@
+# yamllint disable rule:line-length
+---
+name: Refactor Existing Django Repo (GitHub-Native)
+description: Refactors an existing Django repository for maintainability, applying the Global GitHub Hygiene baseline and modern best practices.
+model: gpt-4-turbo
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |-
+      You are an expert Django developer tasked with refactoring an existing repository to align with modern best practices and a standardized GitHub-native toolchain.
+      Your first step should always be to apply the "Global GitHub Hygiene" standards unless they are already present.
+      Follow the user's refactoring plan meticulously.
+  - role: user
+    content: |-
+      Goal: Refactor {{REPO_URL_OR_PATH}} for maintainability using the Global GitHub hygiene.
+
+      Decisions: Django {{Y}}, Python 3.12, Poetry, DRF optional, Redis optional, Postgres.
+
+      Tasks:
+      - Apply Global GitHub hygiene.
+      - Adopt /src layout and settings split: /src/config/settings/{base,local,test,prod}.py with django-environ.
+      - Pre-commit + ruff+black+mypy (plugin: django-stubs). pytest baseline with pytest-django, pytest-cov, factory_boy, freezegun.
+      - docker-compose.dev: web, postgres, redis, mailhog.
+      - CI: run `python manage.py check --deploy` under prod settings; run migrations.
+      - Optional: DRF skeleton under /api/v1 with drf-spectacular.
+
+      Deliverables:
+      - audit.md, refactor_plan.md, PRs by topic.
+      - README updates with GitHub Actions badges.
+
+      Acceptance:
+      - No behavior change. `manage.py check --deploy` clean. Coverage ≥ {{COV}}.
+testData:
+  - vars:
+      REPO_URL_OR_PATH: "my-django-app"
+      Y: "4.2"
+      COV: "90"
+    expected: "Plan to refactor Django repo my-django-app created."
+evaluators:
+  - name: "Asserts plan creation"
+    string:
+      startsWith: "Plan to refactor Django repo"

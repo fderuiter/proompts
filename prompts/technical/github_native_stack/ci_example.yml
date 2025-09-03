@@ -1,0 +1,23 @@
+name: CI
+on:
+  pull_request:
+  push: { branches: [main] }
+permissions: { contents: read, packages: write }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    concurrency: ci-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12', cache: poetry }
+      - run: pipx install poetry
+      - run: poetry install --no-interaction --no-root
+      - run: poetry run ruff check .
+      - run: poetry run black --check .
+      - run: poetry run mypy .
+      - run: poetry run pytest -q --cov --cov-fail-under={{COV}}
+      - uses: docker/login-action@v3
+        with: { registry: ghcr.io, username: ${{ github.actor }}, password: ${{ secrets.GITHUB_TOKEN }} }
+      - run: docker build -t ghcr.io/${{ github.repository }}:${{ github.sha }} .
+      - run: docker push ghcr.io/${{ github.repository }}:${{ github.sha }}
