@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Dataset Versioning and Reproducible Data Pipelines
+description: A governance framework for managing core analytical and ML datasets.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Design a governance framework for managing our core analytical and ML datasets to ensure reliability and reproducibility. The framework must mandate dataset versioning, treating datasets as immutable artifacts that can be uniquely identified and retrieved. It should also establish standards for our data processing pipelines, requiring that they are fully reproducible—meaning that running the same version of the pipeline code against the same version of an input dataset must always produce the exact same output dataset.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

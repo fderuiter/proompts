@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: SRE Org Design, Toil Budgets, and Automation Targets
+description: A proposal for an organizational design and charter for a new Site Reliability Engineering (SRE) team.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Propose an organizational design and charter for a new Site Reliability Engineering (SRE) team. The proposal should define the team's mission, its engagement model with development teams (e.g., consulting, embedded), and its primary areas of focus. It must incorporate core SRE principles, including a strict toil budget that caps operational work at 50% of the team's time. The charter should also establish explicit quarterly targets for identifying and eliminating manual work through automation and tooling.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

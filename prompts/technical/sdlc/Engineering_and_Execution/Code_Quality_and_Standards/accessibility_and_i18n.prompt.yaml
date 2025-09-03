@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Accessibility and i18n
+description: Produce an accessibility and internationalization plan.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Produce an accessibility and internationalization plan for <project>. Set WCAG targets, screen reader testing, keyboard nav, and color contrast checks. Define locale strategy, pluralization, RTL, time zones, and formatting. Provide test checklist and CI gates.
+testData:
+  - input:
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

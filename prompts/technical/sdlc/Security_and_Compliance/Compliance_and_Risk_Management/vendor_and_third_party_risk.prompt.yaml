@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Vendor and Third-party Risk
+description: Build a third-party risk program.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Build a third-party risk program for <project>. Provide due diligence questionnaire, SOC2/ISO evidence mapping, and DPA requirements. Diagram data flows and least-privilege access. Define monitoring, renewal reviews, and exit plans with data return and key rotation.
+testData:
+  - input:
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

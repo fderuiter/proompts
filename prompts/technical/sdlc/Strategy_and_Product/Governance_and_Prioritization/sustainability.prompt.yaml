@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Sustainability
+description: Write a sustainability plan.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Write a sustainability plan for <project>. Set energy and carbon targets, region selection rules, and build cache policy. Add workload efficiency checks, autoscaling, and cleanup jobs. Provide dashboards for grams CO₂ per request and cost-energy tradeoffs.
+testData:
+  - input:
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Reliability Drills
+description: Plan reliability drills.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Plan reliability drills for <project>. Define chaos experiments, failure hypotheses, and safety checks. Schedule game days, list roles, and success criteria. Provide templates for findings, action items, and follow-up verification.
+testData:
+  - input:
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Eventing Standards
+description: A set of engineering standards for an organization's event-driven architecture.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Draft a set of engineering standards for our organization's event-driven architecture to ensure reliability and scalability. The standards must address four key areas: 1) Schema definition and the benefits of a schema registry; 2) Event versioning strategies that ensure backward and forward compatibility; 3) The importance of designing idempotent consumers to safely handle duplicate message delivery; and 4) A robust strategy for handling processing failures using Dead-Letter Queues (DLQs), including monitoring and replay procedures.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: ResearchOps and Continuous Discovery Cadence
+description: A proposal for establishing a ResearchOps function to operationalize and scale product discovery efforts.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Create a proposal for establishing a ResearchOps function to operationalize and scale our product discovery efforts. The proposal should define the core mission and services of ResearchOps, including managing participant recruitment and scheduling, maintaining a centralized insights repository, and standardizing research tools and templates. It must also recommend a sustainable, weekly cadence for continuous discovery habits (like user interviews and prototype testing) that product teams can adopt to ensure a constant flow of customer feedback informs their priorities.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

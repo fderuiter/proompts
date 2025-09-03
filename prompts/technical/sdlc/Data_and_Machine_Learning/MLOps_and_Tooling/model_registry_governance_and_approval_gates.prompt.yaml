@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Model Registry Governance and Approval Gates
+description: A governance policy for a machine learning model registry.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Create a governance policy for our machine learning model registry. This policy should define the mandatory metadata, documentation (model cards), and artifacts that must accompany every registered model version. It must also establish a formal, multi-stage approval workflow with automated gates. This ensures that a model cannot be promoted from development to production without passing a series of checkpoints, including performance validation, bias assessments, and an operational readiness review.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

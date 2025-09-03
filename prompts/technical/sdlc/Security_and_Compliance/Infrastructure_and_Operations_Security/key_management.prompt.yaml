@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Key Management
+description: Draft a key and secret management plan.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Draft a key and secret management plan for <project>. Define KMS usage, key hierarchy, and rotation cadence. Include HSM use, per-tenant keys if relevant, and break-glass access with alerts. Add secret scanning and sprawl detection.
+testData:
+  - input:
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Implementation Plan and Scaffolding
+description: Break the work into milestones and tasks.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Break the work for <project> into milestones and tasks. Identify critical path, sequencing, and owners. Propose language, framework, libraries, and repo layout. Generate starter code, a Makefile or task runner, pre commit hooks, and environment files. Include a risk burn down plan.
+testData:
+  - input:
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

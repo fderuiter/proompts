@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Browser Security
+description: A comprehensive browser security policy that mandates a defense-in-depth approach for all front-end applications.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Establish a comprehensive browser security policy that mandates a defense-in-depth approach for all our front-end applications. The policy must require the implementation of: a strict Content Security Policy (CSP) to prevent XSS; Subresource Integrity (SRI) to validate third-party scripts; COOP/COEP headers to create a secure, cross-origin isolated context; and a Permissions-Policy header to explicitly disable sensitive browser features that are not required by the application.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

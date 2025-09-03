@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Portfolio Governance with WSJF/RICE Prioritization
+description: A portfolio governance framework to guide strategic investment decisions across product and engineering.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Design a portfolio governance framework to guide our strategic investment decisions across product and engineering. This framework should detail a quarterly process for reviewing and prioritizing large-scale initiatives (epics). It must provide a practical guide on using a quantitative prioritization model, comparing the merits of Weighted Shortest Job First (WSJF) and RICE. For your recommended method, explain how each variable is estimated, how the final score is calculated, and how this score will be used as a key input to facilitate objective, data-driven decisions in leadership review meetings.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

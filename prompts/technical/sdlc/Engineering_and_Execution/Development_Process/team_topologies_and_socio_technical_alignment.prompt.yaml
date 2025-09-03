@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Team Topologies and Socio-technical Alignment
+description: A strategic whitepaper that explains how an engineering organization can adopt the Team Topologies framework.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Develop a strategic whitepaper that explains how our engineering organization can adopt the Team Topologies framework to improve software delivery and reduce cognitive load. Describe the four fundamental team types: stream-aligned, enabling, complicated subsystem, and platform. For each type, provide examples relevant to our business. Explain how to define team interaction modes (collaboration, X-as-a-Service, facilitating) and how this socio-technical approach helps align our organizational structure with our software architecture to create empowered teams with clear ownership and purpose.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

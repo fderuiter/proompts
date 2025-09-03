@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Open-source Compliance
+description: Create an open-source policy.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Create an open-source policy for <project>. Define allowed licenses, attribution rules, and dependency scanning with SBOM generation. Add CLA handling, contribution workflow, and upstreaming guidelines. Include third-party review gates and an exception process.
+testData:
+  - input:
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

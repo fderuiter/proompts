@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Attack Simulation
+description: Create an attack simulation program.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Create an attack simulation program for <project>. Define pen test scope, bug bounty policy, and red-team tabletop scenarios. Set disclosure rules, SLAs for remediation, and retest plans. Provide reporting templates and evidence collection steps.
+testData:
+  - input:
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

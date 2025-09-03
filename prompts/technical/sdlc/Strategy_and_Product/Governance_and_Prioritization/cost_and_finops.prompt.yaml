@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Cost and FinOps
+description: Build a FinOps guide for a project.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Build a FinOps guide for <project>. Define cost allocation tags, budgets, alerts, unit economics, and showback/chargeback. Propose rightsizing, autoscaling, and idle-kill rules. Add monthly review cadence, anomaly detection steps, and a savings backlog. Output dashboards to track cost per KPI.
+testData:
+  - input:
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

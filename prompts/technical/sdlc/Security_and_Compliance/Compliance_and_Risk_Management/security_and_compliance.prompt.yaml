@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Security and Compliance
+description: Perform a lightweight threat model using STRIDE for a project.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Perform a lightweight threat model using STRIDE for <project>. List assets, trust boundaries, threats, mitigations, and residual risk. Define auth, authz, secrets handling, dependency policy, SAST, DAST, and supply chain controls. Map to OWASP ASVS and produce a security checklist.
+testData:
+  - input:
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

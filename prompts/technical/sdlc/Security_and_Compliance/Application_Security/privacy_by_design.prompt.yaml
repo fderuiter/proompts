@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Privacy by Design
+description: Produce a privacy-by-design plan.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Produce a privacy-by-design plan for <project>. Perform a DPIA using LINDDUN. Define data minimization, purpose limitation, and consent capture. Map DSAR and RTBF flows, retention limits, and pseudonymization. Add PII classification, lawful bases, and cross-border transfer controls.
+testData:
+  - input:
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

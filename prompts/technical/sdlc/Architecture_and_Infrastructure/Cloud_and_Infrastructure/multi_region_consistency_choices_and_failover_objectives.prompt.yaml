@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Multi-region Consistency Choices and Failover Objectives
+description: A whitepaper defining a strategy for multi-region disaster recovery.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Write a whitepaper defining our strategy for multi-region disaster recovery, focusing on clear business objectives and technical trade-offs. The paper must establish our official Recovery Time Objective (RTO) and Recovery Point Objective (RPO). Based on these objectives, analyze different data replication strategies (e.g., synchronous vs. asynchronous), their associated consistency models, and their cost implications. Conclude with a recommendation on the appropriate failover architecture for our critical services.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

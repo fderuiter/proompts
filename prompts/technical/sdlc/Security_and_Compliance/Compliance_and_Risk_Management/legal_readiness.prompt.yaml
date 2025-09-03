@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Legal Readiness
+description: Draft a legal readiness package for a project.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Draft a legal readiness package for <project>. List ToS, Privacy Policy, DPA needs, and data residency statements. Identify export controls, IP ownership, and acceptable use. Provide template clauses, record of processing activities, and compliance mapping to SOC2 and GDPR.
+testData:
+  - input:
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

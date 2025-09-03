@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: IaC Standards
+description: Establish IaC standards for Terraform or Pulumi.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Establish IaC standards for Terraform or Pulumi for <project>. Define module patterns, versioning, naming, state backends, and environment parity. Add code review gates, static checks, and drift remediation. Provide starter modules and a folder layout.
+testData:
+  - input:
+      project: A new e-commerce website
+    expected: ""
+evaluators: []
