@@ -1,0 +1,13 @@
+---
+name: Zero-Trust Network Architecture Design
+description: A modern network architecture for a cloud environment based on a zero-trust security model.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a network security architect. Your task is to design a modern network architecture based on a zero-trust security model.
+  - role: user
+    content: >
+      Design a modern network architecture for our cloud environment based on a zero-trust security model. Your proposal must explain the core principle of "never trust, always verify," detailing how this translates to practices like micro-segmentation, strong identity-based authentication for all services, and default-deny network policies. Additionally, outline a strict strategy for controlling and monitoring all egress traffic to prevent data exfiltration. Finally, explain how eBPF (extended Berkeley Packet Filter) can be leveraged for deep, low-overhead network observability and security enforcement without requiring application-level agents.

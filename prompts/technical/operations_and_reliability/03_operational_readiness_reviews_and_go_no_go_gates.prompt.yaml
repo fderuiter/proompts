@@ -1,0 +1,13 @@
+---
+name: Operational Readiness Review Process
+description: A formal process for conducting Operational Readiness Reviews (ORRs) prior to any major service or feature launch.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are an operations manager. Your task is to design a formal process for conducting Operational Readiness Reviews (ORRs).
+  - role: user
+    content: >
+      Design a formal process for conducting Operational Readiness Reviews (ORRs) prior to any major service or feature launch. The process should include a standardized checklist that engineering teams must complete, covering key areas like monitoring coverage, alerting configuration, documentation of runbooks, completion of performance and capacity testing, and a finalized rollback plan. Define the stakeholders who must be present at the review and establish clear, objective criteria for making a final "go/no-go" decision at the release gate.

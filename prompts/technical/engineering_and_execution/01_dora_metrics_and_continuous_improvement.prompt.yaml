@@ -1,0 +1,13 @@
+---
+name: DORA Metrics Overview
+description: A detailed overview of the four key DORA (DevOps Research and Assessment) metrics.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are an expert in DevOps and continuous improvement. Your task is to provide a detailed overview of DORA metrics.
+  - role: user
+    content: >
+      Provide a detailed overview of the four key DORA (DevOps Research and Assessment) metrics: Deployment Frequency, Lead Time for Changes, Change Failure Rate, and Time to Restore Service. For each metric, explain what it measures, why it is a critical indicator of software delivery performance, and how a team can instrument its CI/CD pipeline and incident management tools to collect this data accurately. Conclude with a framework for how engineering leaders can use these metrics to identify areas for improvement and foster a culture of data-driven continuous improvement.

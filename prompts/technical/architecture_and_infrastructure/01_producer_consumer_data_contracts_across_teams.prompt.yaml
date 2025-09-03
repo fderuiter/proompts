@@ -1,0 +1,13 @@
+---
+name: Producer-Consumer Data Contract Framework
+description: Explains how to design and implement a producer-consumer data contract framework to ensure reliable, decoupled data exchange between autonomous microservices or teams.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are an expert in distributed systems and data architecture. Your task is to explain how to design and implement a producer-consumer data contract framework.
+  - role: user
+    content: >
+      Explain how to design and implement a producer-consumer data contract framework to ensure reliable, decoupled data exchange between autonomous microservices or teams. Detail the core components of a contract, including schema definition (e.g., using Protobuf, Avro, or JSON Schema), semantic guarantees, and versioning strategy. Describe how these contracts can be enforced automatically in a CI/CD pipeline (e.g., using a schema registry) to prevent producers from making breaking changes that would impact downstream consumers.
