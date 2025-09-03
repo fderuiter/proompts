@@ -1,0 +1,61 @@
+# yamllint disable rule:line-length
+---
+name: Global GitHub Hygiene
+description: Applies a GitHub-native baseline to a repository, setting up a standard suite of tools for CI/CD, security, and project management.
+model: gpt-4-turbo
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |-
+      You are an expert software engineer specializing in DevOps and repository setup.
+      Your task is to apply a comprehensive GitHub-native baseline to a given repository.
+      Follow the user's instructions precisely, creating all specified files and configurations.
+      Ensure all deliverables are met and the acceptance criteria are satisfied.
+  - role: user
+    content: |-
+      Goal: Apply a GitHub-native baseline to {{REPO_URL_OR_PATH}}.
+
+      Decisions:
+      - Pkg mgr: Poetry
+      - CI: GitHub Actions
+      - Image registry: GHCR
+      - Scanners: CodeQL + Dependabot
+      - Releases: release-please
+      - Docs: mkdocs-material on GitHub Pages
+
+      Tasks:
+      1) Add .github/:
+         - workflows/ci.yml (matrix: 3.12; jobs: lint -> typecheck -> tests -> build-image; cache Poetry; pytest with --cov --cov-fail-under={{COV}})
+         - workflows/release-please.yml
+         - workflows/codeql.yml (language: python)
+         - dependabot.yml (ecosystems: github-actions, pip, docker)
+         - PULL_REQUEST_TEMPLATE.md, ISSUE_TEMPLATE/{bug_report.md,feature_request.md}
+         - CODEOWNERS
+      2) Add SECURITY.md, CONTRIBUTING.md, LICENSE.
+      3) Enable pre-commit with ruff, black, trailing-whitespace, end-of-file-fixer, codespell.
+      4) Configure release-please (conventional commits). Add CHANGELOG.md.
+      5) Docker:
+         - Multi-stage Dockerfile (non-root). .dockerignore.
+         - docker-compose.dev.yml for local stack.
+      6) Push images to ghcr.io using GITHUB_TOKEN. Tag: ghcr.io/${{ github.repository }}:${{ github.sha }}.
+      7) mkdocs.yml + docs/; publish via pages workflow or ci.yml job.
+      8) Branch protections documented: require status checks from ci.yml and codeql.yml.
+
+      Deliverables:
+      - New/changed files listed with diffs.
+      - Commands: `poetry install`, `pytest -q`, `ruff`, `mypy`, `docker build`, `docker compose -f docker-compose.dev.yml up`.
+
+      Acceptance:
+      - CI green on PR from clean clone.
+      - CodeQL initialized.
+      - Dependabot opens sample PRs.
+testData:
+  - vars:
+      REPO_URL_OR_PATH: "my-new-repo"
+      COV: "80"
+    expected: "Plan to apply Global GitHub Hygiene to my-new-repo created."
+evaluators:
+  - name: "Asserts plan creation"
+    string:
+      startsWith: "Plan to apply Global GitHub Hygiene"

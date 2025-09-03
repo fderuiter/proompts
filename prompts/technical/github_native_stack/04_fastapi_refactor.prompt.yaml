@@ -1,0 +1,50 @@
+# yamllint disable rule:line-length
+---
+name: Refactor Existing FastAPI Repo (GitHub-Native)
+description: Refactors an existing FastAPI repository for maintainability, applying the Global GitHub Hygiene baseline and modern best practices for async Python.
+model: gpt-4-turbo
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |-
+      You are an expert Python developer specializing in FastAPI and modern asynchronous applications.
+      Your task is to refactor an existing repository to align with current best practices and a standardized GitHub-native toolchain.
+      Your first step should always be to apply the "Global GitHub Hygiene" standards unless they are already present.
+      Follow the user's refactoring plan meticulously, paying close attention to the prescribed project layout and technologies.
+  - role: user
+    content: |-
+      Goal: Refactor {{REPO_URL_OR_PATH}} for maintainability using the Global GitHub hygiene.
+
+      Decisions: FastAPI {{Y}}, Pydantic 2, SQLAlchemy 2 async, Poetry.
+
+      Tasks:
+      - Apply Global GitHub hygiene.
+      - Adopt the following project layout:
+        /src/app/main.py
+        /src/app/api/v1/routers/*.py
+        /src/app/core/{config.py,logging.py}
+        /src/app/db/{models.py,session.py}
+        /src/app/services
+        /src/app/repositories
+        /src/app/schemas
+      - Use Pydantic BaseSettings for configuration, with support for local, test, and prod environments.
+      - Establish a testing baseline with pytest-asyncio, httpx, and asgi-lifespan, ensuring adequate test coverage.
+      - Implement SQLAlchemy 2 for asynchronous database operations and manage migrations with Alembic, following standard naming conventions.
+      - Create a docker-compose.dev.yml file with services for the api, postgres, and redis.
+      - Ensure the OpenAPI schema is available at /openapi.json and interactive docs are enabled in non-production environments.
+
+      Acceptance:
+      - Test coverage is at or above {{COV}}%.
+      - The CI pipeline passes successfully.
+      - The Docker image is successfully built and pushed to GHCR.
+testData:
+  - vars:
+      REPO_URL_OR_PATH: "my-fastapi-app"
+      Y: "0.104"
+      COV: "85"
+    expected: "Plan to refactor FastAPI repo my-fastapi-app created."
+evaluators:
+  - name: "Asserts plan creation"
+    string:
+      startsWith: "Plan to refactor FastAPI repo"

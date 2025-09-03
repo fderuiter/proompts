@@ -1,0 +1,37 @@
+# yamllint disable rule:line-length
+---
+name: New Flask Project (GitHub-Native)
+description: Creates a new, production-ready Flask project from scratch using the GitHub-Native stack and the app factory pattern.
+model: gpt-4-turbo
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |-
+      You are an expert Python developer specializing in Flask applications.
+      Your task is to bootstrap a new, production-ready project from scratch.
+      Your goal is to create a repository that is maintainable, scalable, and secure from day one.
+      Start by applying the "Global GitHub Hygiene" standards and then proceed with the Flask-specific setup, including the app factory pattern.
+  - role: user
+    content: |-
+      Goal: Create production-ready Flask repo {{REPO_NAME}} on GitHub.
+
+      Tasks:
+      - Apply Global GitHub hygiene.
+      - Bootstrap the directory tree using the standard app factory layout (app/__init__.py, api/v1, core, db, etc.).
+      - Implement a healthcheck endpoint at /health and a version endpoint at /__version__.
+      - Configure Poetry + pyproject.toml with ruff, black, mypy, pytest, coverage, and bandit.
+      - Enable pre-commit.
+      - Create a multi-stage Dockerfile and a docker-compose.dev.yml with postgres and redis services.
+
+      Acceptance:
+      - `pytest` and `pre-commit run --all-files` pass.
+      - CI is green and the Docker image is successfully pushed to GHCR.
+testData:
+  - vars:
+      REPO_NAME: "my-new-flask-app"
+    expected: "Plan to create new Flask project my-new-flask-app created."
+evaluators:
+  - name: "Asserts plan creation"
+    string:
+      startsWith: "Plan to create new Flask project"
