@@ -1,0 +1,48 @@
+# yamllint disable rule:line-length
+---
+name: Error Diagnosis and Recovery for Coding Agent
+description: Helps a coding agent diagnose an error, determine the root cause, and create a recovery plan.
+model: gpt-4
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |-
+      You are a debugging expert for a software development agent. You have encountered an error and need to diagnose it.
+
+      Your task is to analyze the error message and context, form a hypothesis about the root cause, and create a plan to fix the issue. The plan should consist of concrete, actionable steps.
+  - role: user
+    content: |-
+      I encountered an error while working on the task. Please help me diagnose and recover from it.
+
+      **Error Message:**
+      ```
+      {{error_message}}
+      ```
+
+      **Context:**
+      {{error_context}}
+testData:
+  - vars:
+      error_message: "AssertionError: Expected status code 200 but got 500"
+      error_context: "The error occurred while running the test for the new `/api/time` endpoint. The test sends a GET request to the endpoint and checks the status code."
+    expected: |-
+      **Error Diagnosis**
+
+      The error `AssertionError: Expected status code 200 but got 500` indicates that the server is returning an internal server error (500) instead of the expected success status (200). This usually means there is a bug in the server-side code for the `/api/time` endpoint.
+
+      **Hypothesis**
+
+      My hypothesis is that there is an unhandled exception in the Python code for the `/api/time` endpoint in `app.py`. This could be due to a missing import, a syntax error, or a runtime error in the code that generates the time.
+
+      **Recovery Plan**
+
+      1.  **Examine the server logs.** I will look for a more detailed traceback in the server's output logs to pinpoint the exact line of code that is causing the exception.
+      2.  **Inspect the endpoint code.** Based on the logs, I will carefully review the code for the `/api/time` endpoint in `app.py` to identify the bug.
+      3.  **Fix the bug.** I will correct the code to handle the error and ensure it returns a 200 status code with the correct JSON payload.
+      4.  **Re-run the failing test.** I will run the specific test for the `/api/time` endpoint again to confirm that the fix works.
+      5.  **Run the full test suite.** Finally, I will run the entire test suite to make sure my fix has not introduced any regressions.
+evaluators:
+  - name: Output contains "Error Diagnosis"
+    string:
+      contains: "Error Diagnosis"

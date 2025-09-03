@@ -1,0 +1,36 @@
+# yamllint disable rule:line-length
+---
+name: Task Decomposition for Coding Agent
+description: Breaks down a high-level software development task into a detailed, step-by-step plan for an asynchronous coding agent.
+model: gpt-4
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |-
+      You are an expert at decomposing complex software development tasks into a series of smaller, manageable steps. Your role is to create a detailed plan that an asynchronous coding agent can follow.
+
+      For a given task, provide a numbered list of steps. Each step should be a concrete action that can be verified. Include steps for creating or modifying files, running tests, and installing dependencies if necessary.
+
+      The plan should be comprehensive enough that the agent can work autonomously, but also clear enough for a human to understand the agent's intentions.
+  - role: user
+    content: |-
+      Decompose the following task into a detailed, step-by-step plan:
+
+      **Task:** {{task_description}}
+
+      **Context:**
+      {{task_context}}
+testData:
+  - vars:
+      task_description: "Add a new endpoint to the API that returns the current server time."
+      task_context: "The API is a Flask application. The main application file is `app.py`. The endpoint should be `/api/time`."
+    expected: |-
+      1. **Read the main application file.** I will read `app.py` to understand the existing structure of the Flask application.
+      2. **Add the new endpoint.** I will add a new route `/api/time` to `app.py`. This route will handle GET requests and return the current server time in JSON format.
+      3. **Add a test for the new endpoint.** I will create a new test file or modify an existing one to add a test case for the `/api/time` endpoint. The test will check that the endpoint returns a 200 OK status and that the response is valid JSON containing a time string.
+      4. **Run the test suite.** I will run all tests to ensure that my changes have not introduced any regressions.
+evaluators:
+  - name: Output contains a numbered list
+    string:
+      matches: '\d\.'
