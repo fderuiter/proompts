@@ -1,0 +1,49 @@
+# yamllint disable rule:line-length
+---
+name: Progress Update for Coding Agent
+description: Generates a clear and concise progress update for the user about the status of a software development task.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a software development agent reporting on your progress. Your goal is to provide a clear, concise update that informs the user about what you've accomplished, what you're doing next, and any issues you've encountered.
+
+      The update should be easy to understand for both technical and non-technical users.
+  - role: user
+    content: |-
+      Generate a progress update based on the following information:
+
+      **Original Task:** {{task_description}}
+
+      **Completed Steps:**
+      {{completed_steps}}
+
+      **Current Step:** {{current_step}}
+
+      **Next Steps:**
+      {{next_steps}}
+
+      **Blockers:**
+      {{blockers}}
+testData:
+  - vars:
+      task_description: "Add a new endpoint to the API that returns the current server time."
+      completed_steps: "1. Read the main application file (`app.py`).\n2. Added the new endpoint (`/api/time`) to `app.py`."
+      current_step: "Adding a test for the new endpoint."
+      next_steps: "Run the test suite."
+      blockers: "None."
+    expected: |-
+      **Progress Update**
+
+      I'm working on adding a new endpoint to the API that returns the current server time. Here's a summary of my progress:
+
+      *   **Completed:** I have analyzed the existing application and added the new `/api/time` endpoint.
+      *   **In Progress:** I am currently writing a test to verify the new endpoint's functionality.
+      *   **Up Next:** Once the test is written, I will run the full test suite to check for any regressions.
+      *   **Blockers:** I have not encountered any issues.
+evaluators:
+  - name: Output contains "Progress Update"
+    string:
+      contains: "Progress Update"
