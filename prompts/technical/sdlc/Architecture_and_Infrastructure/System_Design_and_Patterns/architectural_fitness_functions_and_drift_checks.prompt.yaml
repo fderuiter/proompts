@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Architectural Fitness Functions and Drift Checks
+description: A technical guide for engineering teams on how to use architectural fitness functions.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Author a technical guide for our engineering teams on how to use architectural fitness functions to protect our system's architectural integrity. Explain how these functions are essentially automated tests that continuously verify adherence to architectural principles (e.g., enforcing that a domain service does not call a service in a different domain). Describe how to integrate these checks into the CI/CD pipeline to provide immediate feedback, prevent unintended architectural drift, and ensure our codebase evolves in alignment with its intended design.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: CI and CD Pipeline
+description: Create a CI/CD pipeline for a project.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Create a CI/CD pipeline for <project>. Include build, cache, lint, type check, test, artifact packaging, SBOM, image scan, and provenance. Add environment promotion, feature flags, canary, and rollback. Output a full YAML for GitHub Actions or GitLab plus secrets layout.
+testData:
+  - input:
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

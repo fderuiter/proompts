@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Maintenance, Support, and Roadmap
+description: Define triage rules, SLAs, and issue templates.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      For <project>, define triage rules, SLAs, and issue templates. Create a tech debt log and a deprecation policy. Propose a 90 day roadmap with outcomes, risks, and review cadence. Add KPIs and a post release review template. Output as markdown with tables for tracking.
+testData:
+  - input:
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

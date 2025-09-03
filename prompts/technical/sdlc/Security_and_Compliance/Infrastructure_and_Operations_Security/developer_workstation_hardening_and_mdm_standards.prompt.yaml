@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Developer Workstation Hardening and MDM Standards
+description: A security standard for hardening all developer workstations.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Create a security standard for hardening all developer workstations to protect our source code and infrastructure access. The standard must specify mandatory configurations, including full-disk encryption, firewall settings, required security software (EDR), and the principle of least privilege for user accounts. It must also require the enrollment of all company-owned devices into our Mobile Device Management (MDM) solution to enable centralized policy enforcement, automated patching, and remote wipe capabilities in case of loss or theft.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

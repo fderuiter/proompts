@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: ML Golden Datasets and Regression Benchmarks
+description: A process for creating and managing "golden datasets" for machine learning model evaluation and benchmarking.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Develop a process for creating and managing "golden datasets" to be used for machine learning model evaluation and benchmarking. This process should describe how to curate high-quality, labeled datasets that represent our most critical business use cases and known edge cases. It must also outline a framework for establishing regression benchmarks, where every new model candidate is automatically evaluated against these golden datasets to ensure its performance does not regress on key segments before it can be approved for production.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

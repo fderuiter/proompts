@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Value-stream Mapping and Flow Efficiency
+description: A step-by-step tutorial on conducting a value-stream mapping exercise for a typical software development lifecycle.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Create a step-by-step tutorial on conducting a value-stream mapping exercise for a typical software development lifecycle, from idea conception to production deployment. The guide should explain how to identify all the key process steps and, crucially, the wait times between them. Provide a clear formula and example for calculating flow efficiency (value-added time vs. total lead time) and explain how the resulting map can be used to identify bottlenecks, eliminate waste, and guide targeted process improvements for a faster, more predictable delivery pipeline.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

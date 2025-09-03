@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Consumer-driven Contracts
+description: Set up consumer-driven contract testing.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Set up consumer-driven contract testing for <project>. Use Pact or equivalent. Define version negotiation, compatibility policy, and deprecation timelines. Integrate contract tests into CI with verification gates and rollback guidance.
+testData:
+  - input:
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

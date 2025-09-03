@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Data Model and Schema
+description: Design the domain model for a project.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Design the domain model for <project>. Provide conceptual, logical, and physical schemas with keys and indexes. Define migrations, seed data, retention, deletion, GDPR needs, and PII handling. Include sample records and a data dictionary.
+testData:
+  - input:
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Incident Command System Roles and Run-of-Show
+description: A standardized runbook for major incident response based on the Incident Command System (ICS).
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Develop a standardized runbook for major incident response based on the Incident Command System (ICS). The runbook must clearly define the primary incident roles (Incident Commander, Communications Lead, Operations Lead, etc.) and their specific responsibilities. It should also include a detailed "run-of-show" checklist—a timeline of key actions and decision points from initial triage and role assignment to stakeholder communication, mitigation, and scheduling the post-mortem—to ensure a structured and effective response.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

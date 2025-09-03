@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: User Stories and Acceptance Criteria
+description: Generate epics and user stories for a project.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Generate epics and user stories for <project>. Add personas, BDD style acceptance criteria, edge cases, and negative paths. Map each story to the PRD goals and to a test idea. Deliver a traceability table and a prioritized backlog with effort estimates.
+testData:
+  - input:
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

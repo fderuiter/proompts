@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: OKR Alignment and Roadmap Operations
+description: An operational playbook that creates a clear, predictable link between a company's quarterly OKRs and its product roadmap.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Develop an operational playbook that creates a clear, predictable link between our company's quarterly Objectives and Key Results (OKRs) and our product roadmap. This playbook should outline a top-down and bottom-up planning cadence, showing how company-level OKRs cascade to departments and teams. It must specify how product initiatives on the roadmap are explicitly tied to contributing to one or more Key Results and define the operational rhythm (e.g., check-ins, reporting) for tracking the progress of this work and its ultimate impact.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

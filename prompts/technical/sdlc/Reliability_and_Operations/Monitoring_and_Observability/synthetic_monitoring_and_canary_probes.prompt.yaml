@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Synthetic Monitoring and Canary Probes
+description: A strategy for proactive, end-to-end application health monitoring using synthetic tests and canary probes.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Develop a strategy for proactive, end-to-end application health monitoring using synthetic tests and canary probes. The strategy should outline how to create automated scripts that simulate critical user journeys (e.g., login, search, purchase) and run them 24/7 against our production environment from various geographic locations. These probes will serve as our earliest warning system for user-facing issues, with alerts configured to fire when the synthetic success rate or latency breaches the thresholds defined in our SLOs.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

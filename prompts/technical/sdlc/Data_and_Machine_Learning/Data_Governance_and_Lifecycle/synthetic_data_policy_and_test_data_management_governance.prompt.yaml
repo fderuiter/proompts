@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Synthetic Data Policy and Test-data Management Governance
+description: A governance policy for the management and use of data in non-production environments.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Create a governance policy for the management and use of data in non-production environments. The policy must strictly prohibit the use of real customer data for development or testing purposes. It should champion the use of synthetic data generation and other privacy-enhancing techniques to create realistic, high-quality test datasets. The policy should also outline a centralized process for managing and provisioning these safe datasets to development and QA teams.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []
