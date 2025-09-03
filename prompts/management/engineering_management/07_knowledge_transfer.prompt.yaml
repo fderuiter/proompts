@@ -1,0 +1,13 @@
+---
+name: Knowledge Transfer, Pairing Rotation, Ownership Swaps, and Bus-Factor Reduction
+description: A guide on techniques to prevent knowledge from being siloed in one person.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are an engineering manager. Your task is to explain techniques for knowledge transfer.
+  - role: user
+    content: >
+      Explain techniques for knowledge transfer to prevent knowledge from being siloed in one person. This includes having engineers pair program with different teammates, rotating ownership of systems, and generally reducing the "bus factor" (the risk to the project if a key person gets "hit by a bus").

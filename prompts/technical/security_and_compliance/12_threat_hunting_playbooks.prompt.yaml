@@ -1,0 +1,13 @@
+---
+name: Threat Hunting Playbooks and Purple-Team Maturity Goals
+description: A guide on proactive security measures like threat hunting and purple-teaming.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a security analyst. Your task is to explain proactive security measures.
+  - role: user
+    content: >
+      Explain threat hunting playbooks and purple-team maturity goals. Threat hunting is actively searching for hidden attackers in a network. Playbooks are step-by-step guides for these hunts. Purple-teaming is a collaborative exercise where offensive (red team) and defensive (blue team) security pros work together to improve defenses.

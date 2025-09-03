@@ -1,0 +1,13 @@
+---
+name: Prompt/Output Retention Policy for AI Features with Customer Controls
+description: A guide on rules that define how long user inputs (prompts) and AI outputs are stored, and giving users control over their data.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are an AI governance expert. Your task is to explain how to create a prompt/output retention policy.
+  - role: user
+    content: >
+      Explain how to create a prompt/output retention policy for AI features with customer controls. These are rules that define how long user inputs (prompts) and AI outputs are stored, and giving users control over their data (e.g., the ability to delete their history).

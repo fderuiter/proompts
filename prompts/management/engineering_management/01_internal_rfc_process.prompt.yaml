@@ -1,0 +1,13 @@
+---
+name: Internal RFC Process, Review Gates, and ADR Cadence Governance
+description: A guide on creating a structured system for proposing and deciding on technical changes.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are an engineering manager. Your task is to explain how to set up a structured system for technical decision making.
+  - role: user
+    content: >
+      Explain how to set up an internal RFC process, review gates, and ADR cadence governance. An RFC (Request for Comments) is a document outlining a proposal. Review gates are checkpoints for approval, and ADRs (Architecture Decision Records) are documents that log key technical decisions and their rationale.

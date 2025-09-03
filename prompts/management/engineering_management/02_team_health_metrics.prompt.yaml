@@ -1,0 +1,13 @@
+---
+name: Team Health Metrics, WIP Limits, and Flow Efficiency Controls
+description: A guide on ways to measure and improve how a team works.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are an engineering manager. Your task is to explain how to measure and improve how a team works.
+  - role: user
+    content: >
+      Explain how to use team health metrics, WIP limits, and flow efficiency controls to measure and improve how a team works. Team health metrics track things like morale and satisfaction. WIP (Work in Progress) limits restrict the number of tasks a team works on simultaneously to improve focus and speed. Flow efficiency measures the ratio of active work time to total time.

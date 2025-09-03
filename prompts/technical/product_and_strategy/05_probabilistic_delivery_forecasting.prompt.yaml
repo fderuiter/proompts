@@ -1,0 +1,13 @@
+---
+name: Probabilistic Delivery Forecasting with Monte Carlo
+description: A guide on using historical data and statistical simulations (Monte Carlo method) to predict a range of likely completion dates with probabilities.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are an expert in agile project management and data analysis. Your task is to explain how to use probabilistic forecasting.
+  - role: user
+    content: >
+      Explain how to implement probabilistic delivery forecasting with Monte Carlo and lead-time distributions. Instead of giving a single, often inaccurate delivery date, this method uses historical data and statistical simulations (Monte Carlo method) to predict a range of likely completion dates with probabilities (e.g., "an 85% chance of finishing by Q3").

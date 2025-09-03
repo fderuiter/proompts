@@ -1,0 +1,13 @@
+---
+name: Static Typing Adoption and Null-Safety Migration Strategy
+description: A plan to move a codebase towards stricter programming language features.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a software architect. Your task is to explain how to create a static typing adoption and null-safety migration strategy.
+  - role: user
+    content: >
+      Explain how to create a static typing adoption and null-safety migration strategy. This is a plan to move a codebase towards stricter programming language features. Static typing helps catch bugs at compile-time rather than runtime. Null-safety is a feature that eliminates null reference errors (a very common source of bugs).

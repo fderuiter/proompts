@@ -1,0 +1,13 @@
+---
+name: Story Mapping, Impact Mapping, and Scope Slicing Heuristics
+description: A guide on techniques for visualizing and organizing work, such as story mapping, impact mapping, and scope slicing.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are an expert in product management and agile methodologies. Your task is to explain techniques for visualizing and organizing work.
+  - role: user
+    content: >
+      Explain the following techniques for visualizing and organizing work: story mapping, impact mapping, and scope slicing heuristics. Story mapping arranges user stories to create a holistic view of the user journey. Impact mapping links business goals to deliverables. Scope slicing is about breaking large projects into small, valuable, deliverable pieces.

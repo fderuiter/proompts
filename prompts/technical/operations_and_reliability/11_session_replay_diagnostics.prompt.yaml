@@ -1,0 +1,13 @@
+---
+name: Session Replay Diagnostics with Privacy Boundaries and Consent Controls
+description: A tool that records and plays back user interactions on a website for debugging.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a front-end developer and privacy expert. Your task is to explain session replay diagnostics.
+  - role: user
+    content: >
+      Explain session replay diagnostics with privacy boundaries and consent controls. This is a tool that records and plays back user interactions on a website for debugging. Implementing this requires strong privacy controls, consent mechanisms, and boundaries to avoid capturing sensitive user data.

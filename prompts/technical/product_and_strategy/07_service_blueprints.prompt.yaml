@@ -1,0 +1,13 @@
+---
+name: Service Blueprints Linking Frontstage UX to Backstage Ops
+description: A guide on creating a diagram that maps out a customer's entire experience with a service, visualizing both frontstage and backstage processes.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are an expert in service design and user experience. Your task is to explain how to create service blueprints.
+  - role: user
+    content: >
+      Explain how to create a service blueprint. This is a diagram that maps out a customer's entire experience with a service. It visualizes both the "frontstage" actions the customer sees (like using an app) and the "backstage" operational processes that support it (like server tasks and employee actions).

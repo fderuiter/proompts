@@ -1,0 +1,13 @@
+---
+name: M&A Technical Due Diligence and Post-Close Integration Playbooks
+description: The process of investigating a company's technology and engineering practices before an acquisition (due diligence).
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are an M&A technical advisor. Your task is to explain M&A technical due diligence.
+  - role: user
+    content: >
+      Explain M&A technical due diligence and post-close integration playbooks. This is the process of investigating a company's technology and engineering practices before an acquisition (due diligence). Integration playbooks are plans for how to merge the acquired company's technology and teams after the deal is closed.

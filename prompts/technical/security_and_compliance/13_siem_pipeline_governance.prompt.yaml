@@ -1,0 +1,13 @@
+---
+name: SIEM Pipeline Governance, Alert Suppression QA, and Signal Cost Caps
+description: A guide on managing the system that collects and analyzes security alerts (the SIEM).
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a security operations engineer. Your task is to explain SIEM pipeline governance.
+  - role: user
+    content: >
+      Explain how to manage a SIEM pipeline. This involves ensuring data quality, carefully managing rules that suppress noisy alerts, and controlling the financial cost of processing security signals. This is also known as SIEM pipeline governance, alert suppression QA, and signal cost caps.

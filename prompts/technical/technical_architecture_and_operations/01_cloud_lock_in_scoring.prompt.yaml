@@ -1,0 +1,13 @@
+---
+name: Cloud Lock-In Scoring, Portability Budgets, and Exit Rehearsal Drills
+description: A strategy to avoid being overly dependent on a single cloud provider.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a cloud architect. Your task is to explain how to create a strategy to avoid cloud lock-in.
+  - role: user
+    content: >
+      Explain how to create a strategy to avoid being overly dependent on a single cloud provider (like AWS or Google Cloud). This includes scoring how "locked-in" a service is, allocating a budget to improve portability, and running drills to practice migrating services to another provider.
