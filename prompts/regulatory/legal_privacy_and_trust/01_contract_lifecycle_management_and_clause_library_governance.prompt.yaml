@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Design a comprehensive process for Contract Lifecycle Management (CLM) that will be used by our legal, finance, and sales teams. Your design should detail all stages of the contract lifecycle: authoring, negotiation, execution, compliance, and renewal. A critical component of this design must be a governance framework for a centralized clause library. Explain the process for creating, approving, updating, and retiring pre-approved legal clauses to ensure consistency, accelerate negotiations, and reduce contractual risk across the organization.
+testData: []
+evaluators: []

@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Design a multi-layered Data Loss Prevention (DLP) strategy to protect our sensitive data from unauthorized exfiltration. The strategy must address three critical environments: 1) SaaS applications (like Google Workspace and Salesforce), to prevent sharing of sensitive data with external parties; 2) Employee endpoints (laptops), to block transfers to unapproved devices or cloud storage; and 3) Our CI/CD pipeline, to detect and prevent accidental inclusion of secrets or sensitive data in build artifacts.
+testData: []
+evaluators: []

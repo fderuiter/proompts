@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain license compliance for training data and models. This is about ensuring that the data used to train AI models and the licenses of any pre-built models are legally compliant and don't create legal risks.
+testData: []
+evaluators: []

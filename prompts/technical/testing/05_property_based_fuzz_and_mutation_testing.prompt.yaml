@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain property-based, fuzz, and mutation testing programs. Property-based testing checks that code satisfies certain properties for a wide range of inputs. Fuzz testing bombards a program with random data to find crashes. Mutation testing modifies the source code in small ways to check if the tests are good enough to "kill" (fail for) the broken versions.
+testData: []
+evaluators: []

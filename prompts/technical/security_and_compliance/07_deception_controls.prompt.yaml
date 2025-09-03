@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Propose a plan for implementing deception technology to create a high-fidelity early warning system for security breaches. The plan should describe how to strategically deploy various deception controls, such as honeytokens (e.g., fake user accounts), canary credentials (e.g., fake AWS keys placed in source code), and other tripwires throughout our infrastructure. It must also detail how to configure the associated telemetry so that any interaction with these decoys triggers an immediate, high-priority security alert indicating active adversary presence.
+testData: []
+evaluators: []

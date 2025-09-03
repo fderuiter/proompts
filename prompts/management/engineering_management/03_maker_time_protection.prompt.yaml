@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain how to implement maker-time protection. This includes having a meeting operating system and focus quotas. This is a deliberate strategy to protect engineers' time for deep work ("maker time"). This involves scheduling fewer meetings, having "no-meeting" days, and ensuring engineers have large, uninterrupted blocks of time to code.
+testData: []
+evaluators: []

@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Outline a practical guide for a software development team on how to use the Event Storming workshop to kickstart a Domain-Driven Design (DDD) approach. Your explanation should detail the different phases of the workshop, from chaotic exploration of domain events to identifying commands, aggregates, and bounded contexts. Describe the roles of the participants (domain experts, developers, etc.) and explain how the visual, collaborative output of an Event Storming session directly translates into a shared understanding of the business domain and serves as a blueprint for the software architecture.
+testData: []
+evaluators: []

@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain how to create a customer trust center. This is a public-facing website where a company provides documentation, security reports (like SOC 2), and other evidence to prove its commitment to security and compliance. It should also cover evidence publishing and attestation upkeep.
+testData: []
+evaluators: []

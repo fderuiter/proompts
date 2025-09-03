@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Create a detailed, standardized checklist and runbook for decommissioning a production system or service. This process guide should cover all phases of the end-of-life cycle, including: stakeholder communication plans, traffic migration and redirection strategies, data archival procedures to meet retention policies, a step-by-step technical guide for dismantling the infrastructure and removing code, and a final verification phase to ensure no dependencies or ghost assets remain.
+testData: []
+evaluators: []

@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain session replay diagnostics with privacy boundaries and consent controls. This is a tool that records and plays back user interactions on a website for debugging. Implementing this requires strong privacy controls, consent mechanisms, and boundaries to avoid capturing sensitive user data.
+testData: []
+evaluators: []

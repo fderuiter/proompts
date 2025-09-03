@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain M&A technical due diligence and post-close integration playbooks. This is the process of investigating a company's technology and engineering practices before an acquisition (due diligence). Integration playbooks are plans for how to merge the acquired company's technology and teams after the deal is closed.
+testData: []
+evaluators: []

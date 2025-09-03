@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain browser storage hardening and cookie lifetime policy. These are security measures for web applications that define how long cookies and other data are stored in a user's browser, aiming to minimize the window of opportunity for data theft.
+testData: []
+evaluators: []

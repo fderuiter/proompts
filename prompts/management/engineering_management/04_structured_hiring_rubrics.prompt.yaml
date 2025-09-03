@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain how to implement a disciplined approach to hiring using structured hiring rubrics, bar calibration, and candidate-feedback SLAs. Rubrics provide clear, objective criteria for evaluating candidates. Bar calibration ensures all interviewers maintain the same high standard. SLAs (Service-Level Agreements) set deadlines for submitting feedback to keep the process moving.
+testData: []
+evaluators: []

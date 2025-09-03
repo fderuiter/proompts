@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain source-code escrow readiness for enterprise contracts. This is an arrangement where the source code of a product is held by a neutral third party. If the vendor goes out of business, the customer can get the source code to maintain the product themselves. This is often a requirement for large enterprise deals.
+testData: []
+evaluators: []

@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Establish a comprehensive policy for managing the lifecycle of data stored in our object storage systems (e.g., S3). The policy should define default storage quotas for tenants to control costs and ensure fair use. It must also outline an automated process for transitioning older, infrequently accessed files to a cold archive storage tier to optimize costs. Finally, the policy must specify clear Service Level Objectives (SLOs) for restoring data from the archive, setting customer expectations for data retrieval times.
+testData: []
+evaluators: []

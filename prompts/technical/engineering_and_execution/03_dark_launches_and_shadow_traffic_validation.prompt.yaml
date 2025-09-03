@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Create a technical implementation guide on using dark launches and shadow traffic validation to de-risk the deployment of new services. Explain the architectural patterns and infrastructure required to deploy a new feature into production while keeping it hidden from end-users. Then, detail the process of "shadowing" or "mirroring" a percentage of live production traffic to this new service. The guide must cover how to compare the performance, output, and error rates between the old and new systems to validate correctness and stability under real-world conditions without impacting customers.
+testData: []
+evaluators: []

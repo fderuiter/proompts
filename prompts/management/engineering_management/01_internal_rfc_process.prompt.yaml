@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain how to set up an internal RFC process, review gates, and ADR cadence governance. An RFC (Request for Comments) is a document outlining a proposal. Review gates are checkpoints for approval, and ADRs (Architecture Decision Records) are documents that log key technical decisions and their rationale.
+testData: []
+evaluators: []

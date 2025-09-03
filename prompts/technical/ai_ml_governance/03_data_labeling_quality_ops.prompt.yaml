@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain data labeling quality ops and inter-annotator agreement targets. This is the operational process for ensuring the data used to train AI models is accurately labeled. Inter-annotator agreement is a metric that measures the level of consistency among human data labelers.
+testData: []
+evaluators: []

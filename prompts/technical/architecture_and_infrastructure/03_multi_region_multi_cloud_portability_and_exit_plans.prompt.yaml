@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Author a strategic document outlining an architectural approach for achieving multi-region availability and multi-cloud portability. Discuss the trade-offs between leveraging cloud-native, managed services and using open-source, cloud-agnostic technologies (e.g., Kubernetes, Terraform). The strategy should include principles for abstracting away cloud-specific dependencies in the application layer and infrastructure-as-code. Finally, detail the key components of a cloud vendor exit plan, which would be enacted if we needed to migrate our services due to cost, performance, or strategic reasons.
+testData: []
+evaluators: []

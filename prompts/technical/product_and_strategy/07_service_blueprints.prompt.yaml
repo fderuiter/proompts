@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain how to create a service blueprint. This is a diagram that maps out a customer's entire experience with a service. It visualizes both the "frontstage" actions the customer sees (like using an app) and the "backstage" operational processes that support it (like server tasks and employee actions).
+testData: []
+evaluators: []

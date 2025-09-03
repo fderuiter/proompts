@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain how to manage a SIEM pipeline. This involves ensuring data quality, carefully managing rules that suppress noisy alerts, and controlling the financial cost of processing security signals. This is also known as SIEM pipeline governance, alert suppression QA, and signal cost caps.
+testData: []
+evaluators: []

@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain threat hunting playbooks and purple-team maturity goals. Threat hunting is actively searching for hidden attackers in a network. Playbooks are step-by-step guides for these hunts. Purple-teaming is a collaborative exercise where offensive (red team) and defensive (blue team) security pros work together to improve defenses.
+testData: []
+evaluators: []

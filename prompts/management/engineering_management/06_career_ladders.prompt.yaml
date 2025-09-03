@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain how to set up a formal system for career growth using career ladders, promotion packets, and calibration committees. Career ladders define the roles, responsibilities, and expectations at each level. Promotion packets are documents where employees make their case for promotion, which are then reviewed by calibration committees to ensure fairness across the organization.
+testData: []
+evaluators: []

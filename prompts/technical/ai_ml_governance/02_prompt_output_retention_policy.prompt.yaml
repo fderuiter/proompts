@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain how to create a prompt/output retention policy for AI features with customer controls. These are rules that define how long user inputs (prompts) and AI outputs are stored, and giving users control over their data (e.g., the ability to delete their history).
+testData: []
+evaluators: []

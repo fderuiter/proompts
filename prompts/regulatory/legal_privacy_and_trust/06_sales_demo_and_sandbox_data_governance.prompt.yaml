@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Explain sales demo and sandbox data governance with safe redaction. These are rules for managing the data used in sales demonstrations and customer trial environments ("sandboxes"). This includes processes for safely redacting or anonymizing any sensitive information.
+testData: []
+evaluators: []

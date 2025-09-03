@@ -11,3 +11,5 @@ messages:
   - role: user
     content: >
       Develop a technical strategy for adopting a micro-frontend architecture using module federation. The strategy should articulate the primary goals, such as enabling independent team deployments and facilitating the incremental modernization of our front-end monolith. It must also establish a clear dependency policy that defines rules for sharing common libraries (e.g., React), components from our design system, and runtime data to prevent version conflicts and ensure a cohesive user experience while preserving team autonomy.
+testData: []
+evaluators: []
