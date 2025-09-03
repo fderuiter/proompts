@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Change Management
+description: Define a change management policy for a project.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Define a change management policy for <project>. Cover change types (standard, normal, emergency), CAB composition, approval workflow, and release calendar. Specify blackout and freeze windows, success and failure KPIs, and audit logging. Provide request templates, risk assessment rubric, and rollback criteria.
+testData:
+  - input: |-
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

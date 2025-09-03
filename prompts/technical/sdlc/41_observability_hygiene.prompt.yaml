@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Observability Hygiene
+description: Define observability hygiene.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Define observability hygiene for <project>. Set log and metric cardinality limits, sampling, and retention. Add PII scrubbing and schema rules. Provide alert policies to avoid fatigue, runbook freshness SLO, and dashboard standards.
+testData:
+  - input: |-
+      project: A new e-commerce website
+    expected: ""
+evaluators: []
