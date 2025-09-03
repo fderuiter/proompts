@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: System Decommissioning and End-of-Life Plans
+description: A detailed, standardized checklist and runbook for decommissioning a production system or service.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Create a detailed, standardized checklist and runbook for decommissioning a production system or service. This process guide should cover all phases of the end-of-life cycle, including: stakeholder communication plans, traffic migration and redirection strategies, data archival procedures to meet retention policies, a step-by-step technical guide for dismantling the infrastructure and removing code, and a final verification phase to ensure no dependencies or ghost assets remain.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

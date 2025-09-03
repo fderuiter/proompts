@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Access Management
+description: A comprehensive access management framework for internal systems and cloud infrastructure.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Develop a comprehensive access management framework for our internal systems and cloud infrastructure. Compare and contrast Role-Based Access Control (RBAC) with Attribute-Based Access Control (ABAC), and recommend a hybrid approach. The framework must incorporate the principles of Just-in-Time (JIT) access and Just-Enough-Administration (JEA) to grant temporary, scoped-down permissions. Finally, outline a mandatory, auditable process for periodic access reviews to ensure the principle of least privilege is consistently maintained and stale permissions are revoked.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

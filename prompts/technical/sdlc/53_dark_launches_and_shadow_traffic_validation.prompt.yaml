@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Dark Launches and Shadow Traffic Validation
+description: A technical implementation guide on using dark launches and shadow traffic validation to de-risk the deployment of new services.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Create a technical implementation guide on using dark launches and shadow traffic validation to de-risk the deployment of new services. Explain the architectural patterns and infrastructure required to deploy a new feature into production while keeping it hidden from end-users. Then, detail the process of "shadowing" or "mirroring" a percentage of live production traffic to this new service. The guide must cover how to compare the performance, output, and error rates between the old and new systems to validate correctness and stability under real-world conditions without impacting customers.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

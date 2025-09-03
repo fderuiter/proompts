@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Data Platform
+description: An architectural design for a modern data platform centered on the lakehouse paradigm.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Propose an architectural design for a modern data platform centered on the lakehouse paradigm, explaining how it combines the benefits of data lakes (low-cost storage for raw data) and data warehouses (structured, queryable data). Compare and contrast data ingestion patterns like Change Data Capture (CDC), ETL, and ELT, and recommend which to use for different scenarios. Conclude with a proposal for a data modeling methodology (e.g., dimensional modeling with star schemas) to be used in the structured "warehouse" layer to support business intelligence and analytics use cases.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

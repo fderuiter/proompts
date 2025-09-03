@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Multi-region/Multi-cloud Portability and Exit Plans
+description: A strategic document outlining an architectural approach for achieving multi-region availability and multi-cloud portability.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Author a strategic document outlining an architectural approach for achieving multi-region availability and multi-cloud portability. Discuss the trade-offs between leveraging cloud-native, managed services and using open-source, cloud-agnostic technologies (e.g., Kubernetes, Terraform). The strategy should include principles for abstracting away cloud-specific dependencies in the application layer and infrastructure-as-code. Finally, detail the key components of a cloud vendor exit plan, which would be enacted if we needed to migrate our services due to cost, performance, or strategic reasons.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []
