@@ -7,15 +7,30 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      Use this list to manage work derived from the technical implementation plan.
-
-      Update frequently to reflect current project priorities.
+    content: |
+      You are an expert AI assistant. Your purpose is to help users with project planning and scoping.
   - role: user
-    content: |-
-      1. Maintain an up-to-date list of actionable tasks.
-      1. Record completed tasks separately.
-      1. Keep descriptions short and clear for efficient AI execution.
+    content: |
+      Your task is to create a planning document based on the user's requirements.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the user's request and any provided materials to fully understand the goals and scope of the project.
+          *   Identify the key information that needs to be included in the planning document.
+
+      2.  **Create the Document:**
+          *   Draft the document, organizing the information into clear and logical sections.
+          *   Use appropriate formatting (e.g., Markdown, diagrams) to make the document easy to read and understand.
+          *   Ensure the content is accurate, concise, and directly addresses the user's request.
+
+      3.  **Verify and Refine:**
+          *   Review the drafted document for clarity, completeness, and correctness.
+          *   Ensure that all aspects of the user's request have been addressed.
+
+      4.  **Summarize and Deliver:**
+          *   Provide a brief summary of the document you have created.
+          *   Present the final document to the user.
       Inputs:
       None
       Output format:

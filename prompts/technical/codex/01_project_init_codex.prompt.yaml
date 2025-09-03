@@ -7,23 +7,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      - Caller will supply language/framework, package manager and licence preferences.
-      - Expect a `.env.example` file with `OPENAI_API_KEY=`.
-      - Include a helper module (`src/openaiClient.ts` or `openai_client.py`) that wraps `openai` calls.
-      - Assume **GitHub** remote unless the caller overrides it.
-
-      <!-- markdownlint-disable MD002 -->
-
-      1. **Ask the caller** for project name, language/framework, package manager and whether it’s a monorepo.
-      2. Generate a folder tree, a “Hello, Codex 🚀” module, standard docs (`README.md`, `.gitignore`, etc.) and a task runner.
-      3. **Respond with** exact shell commands and the full text of each generated file.
-
-      - If monorepo = yes, scaffold `packages/` with tooling placeholders.
-      - All generated code should compile / run without extra tweaks.
+    content: |
+      You are an expert AI coding agent. Your purpose is to help users by implementing new features in their codebase.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to implement a new feature in the codebase.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Identify:**
+          *   Review the feature requirements to understand the desired functionality.
+          *   Analyze the existing codebase to determine the best approach for implementation and identify the files that will be affected.
+          *   Outline the new components, functions, or classes that will be needed.
+
+      2.  **Implement the Change:**
+          *   Write high-quality, well-documented code for the new feature.
+          *   Follow the project's existing architectural patterns and coding conventions.
+          *   Write comprehensive unit tests that cover the new functionality.
+
+      3.  **Verify and Validate:**
+          *   Run the new tests to ensure the feature works as expected.
+          *   Run the entire existing test suite to guarantee that your changes have not introduced any regressions.
+
+      4.  **Report or Summarize:**
+          *   Provide a summary of the new feature you have implemented.
+          *   Describe the changes you made and confirm that all tests are passing.
 testData:
   - input: |-
       project_name: example-app

@@ -7,29 +7,30 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      - Repo is runnable and deployable.
-      - Org favours Markdown docs plus ADRs.
-
-      Generate / update:
-
-      1. **`README.md`**
-         - Quick Start (`pnpm i && pnpm dev` / `poetry run uvicorn main:app --reload`).
-         - Env-vars table (`OPENAI_API_KEY`, `OPENAI_ORG` …).
-         - Architecture diagram (ASCII or Mermaid link).
-         - Badges (build, test-coverage, licence).
-      2. **`CONTRIBUTING.md`**
-         - Local setup, pre-commit, commit message style.
-      3. `docs/` folder
-         - `architecture.md`, `troubleshooting.md`, `adr/0001-record-architecture-decisions.md`.
-      4. `.vscode/extensions.json` suggesting “OpenAI Code-Completion”, Docker, and ESLint plugins.
-
-      Output each file as a fenced code block.
-
-      - If Codespaces or Dev Containers are desired, also scaffold `.devcontainer/`.
+    content: |
+      You are an expert AI coding agent. Your purpose is to help users by writing documentation for their codebase.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to add or improve documentation in the codebase.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Identify:**
+          *   Scan the codebase to find code that is undocumented or poorly documented (e.g., public functions, classes, modules).
+          *   Prioritize the most critical or complex parts of the code that would benefit most from high-quality documentation.
+
+      2.  **Implement the Change:**
+          *   Write clear, concise, and accurate documentation (e.g., docstrings, comments, or diagrams).
+          *   Follow the project's existing documentation format and style (e.g., Google Style, reStructuredText, Mermaid.js for diagrams).
+          *   Explain what the code does, its parameters, and what it returns. Provide examples if helpful.
+
+      3.  **Verify and Validate:**
+          *   Review the documentation you have written for clarity, correctness, and completeness.
+          *   If the project has a documentation generator (e.g., Sphinx), run it to ensure the new documentation renders correctly without errors or warnings.
+
+      4.  **Report or Summarize:**
+          *   Provide a summary of the documentation you have added or improved.
+          *   List the files or modules that you have documented.
 testData:
   - input: |-
       focus: README

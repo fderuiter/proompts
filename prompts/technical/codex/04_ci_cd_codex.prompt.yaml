@@ -7,32 +7,33 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      - Tooling & tests are in place.
-      - Deployment targets could be Vercel, AWS ECS/Fargate, Fly.io, or plain Docker Compose on a VM.
-      - Secrets will include `OPENAI_API_KEY`.
-
-      **Ask the caller**:
-
-      1. Environments (dev / staging / prod).
-      2. Deployment platform and region.
-      3. Secret-management preference (GitHub Encrypted Secrets, AWS Secrets Manager, Vault…).
-      4. Versioning scheme (SemVer via `release-please`, CalVer, etc.).
-
-      Then scaffold:
-
-      - `ci.yml` → lint + test + build.
-      - `release.yml` → auto-tag & changelog.
-      - `deploy-<env>.yml` files → fetch artifact, deploy, smoke-test endpoint that internally calls OpenAI with an `echo` prompt "ping".
-      - Docs in `docs/deploy.md` describing how to add secrets.
-
-      Return all workflow YAML and any helper shell scripts as code blocks.
-
-      - Cache deps with `actions/cache@v4`.
-      - Matrix test on multiple Node/Python versions if applicable.
+    content: |
+      You are an expert AI coding agent specializing in DevOps and infrastructure. Your purpose is to help users set up and configure their development and deployment pipelines.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to create or modify the CI/CD pipeline for this project.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Identify:**
+          *   Review the user's requirements for the pipeline (e.g., build, test, deploy environments, target platform).
+          *   Analyze the existing project structure and tooling to ensure compatibility.
+          *   Identify the necessary pipeline configuration files to be created or modified (e.g., `ci.yml`, `deploy.yml`).
+
+      2.  **Implement the Change:**
+          *   Write the pipeline configuration code (e.g., GitHub Actions YAML).
+          *   Follow best practices for CI/CD, such as caching dependencies, running tests, and managing secrets securely.
+          *   Include steps for building, testing, and deploying the application as required.
+          *   Add documentation explaining how to use and maintain the pipeline.
+
+      3.  **Verify and Validate:**
+          *   Validate the syntax of the configuration files.
+          *   Provide instructions on how the user can test the new pipeline (e.g., by making a test commit or running a workflow manually).
+
+      4.  **Report or Summarize:**
+          *   Provide a summary of the CI/CD pipeline you have created.
+          *   Explain the purpose of each workflow and any new files added.
+          *   List any necessary follow-up actions for the user, such as adding secrets.
 testData:
   - input: |-
       environments: [dev, prod]
