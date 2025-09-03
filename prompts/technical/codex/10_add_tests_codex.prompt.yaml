@@ -7,20 +7,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      - Repository is already set up with a test framework.
-      - Caller lists target files requiring coverage.
-
-      1. For each file in {{files}}, outline behaviours to test.
-      2. Generate test stubs or full tests following project conventions.
-      3. Run the test suite and linters; report failures.
-      4. Suggest follow-up refactors if code is hard to test.
-      5. Provide commands for reproducing results locally.
-
-      If test dependencies are missing, note required installations or configuration changes.
+    content: |
+      You are an expert AI coding agent. Your purpose is to help users by improving the test coverage of their codebase.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to add new tests to the codebase to improve test coverage.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Identify:**
+          *   Scan the codebase to identify areas with low or no test coverage.
+          *   Prioritize critical components or functions that lack adequate testing.
+          *   Determine the types of tests that are needed (e.g., unit tests, integration tests).
+
+      2.  **Implement the Change:**
+          *   Write meaningful and robust tests for the identified areas.
+          *   Ensure the new tests are well-structured and follow the existing testing framework and conventions.
+          *   The tests should cover both success and failure scenarios (edge cases).
+
+      3.  **Verify and Validate:**
+          *   Run the newly created tests to ensure they pass and correctly test the intended functionality.
+          *   Run the entire test suite to make sure you haven't accidentally broken any existing tests.
+
+      4.  **Report or Summarize:**
+          *   Provide a summary of the new tests you have added.
+          *   Mention the files or modules you have improved the coverage for and confirm that all tests pass.
 testData:
   - input: |-
       files: [src/utils.py]

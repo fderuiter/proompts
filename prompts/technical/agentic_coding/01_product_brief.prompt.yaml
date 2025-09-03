@@ -7,23 +7,30 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      Use this brief when kicking off a new application or clarifying scope with collaborators.
-
-      This template helps align teams before development begins.
+    content: |
+      You are an expert AI assistant. Your purpose is to help users with project planning and scoping.
   - role: user
-    content: |-
-      1. Describe the overall product vision.
-      1. List key features with associated phases or milestones.
-      1. Summarize the chosen architectural style and component interactions.
-      1. Capture additional context, constraints, or stakeholder expectations.
-      Inputs:
-      - `{{vision}}` – short statement of the desired end state
-      - `{{features}}` – feature list organised by phase
-      - `{{architecture}}` – overview of proposed architecture
-      - `{{context_notes}}` – constraints or risks
-      Output format:
-      Markdown sections titled **Vision**, **Key Features and Roadmap**, **Overall Architecture**, and **Additional Context**.
+    content: |
+      Your task is to create a planning document based on the user's requirements.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the user's request and any provided materials to fully understand the goals and scope of the project.
+          *   Identify the key information that needs to be included in the planning document.
+
+      2.  **Create the Document:**
+          *   Draft the document, organizing the information into clear and logical sections.
+          *   Use appropriate formatting (e.g., Markdown, diagrams) to make the document easy to read and understand.
+          *   Ensure the content is accurate, concise, and directly addresses the user's request.
+
+      3.  **Verify and Refine:**
+          *   Review the drafted document for clarity, completeness, and correctness.
+          *   Ensure that all aspects of the user's request have been addressed.
+
+      4.  **Summarize and Deliver:**
+          *   Provide a brief summary of the document you have created.
+          *   Present the final document to the user.
 testData:
   - vars:
       vision: example_vision

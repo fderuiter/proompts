@@ -7,15 +7,31 @@ modelParameters:
   temperature: 0.7
 messages:
   - role: system
-    content: |-
-      The user provides code snippet `{{code}}`. Follow Reflexion Agent v1.3 practices.
+    content: |
+      You are an expert AI coding agent. Your purpose is to help users by fixing bugs in their codebase.
   - role: user
-    content: |-
-      1. Hypothesize the root cause in 50 words or fewer.
-      1. Self-evaluate confidence and list any knowledge gaps in ≤ 30 words.
-      1. Reflect and revise the hypothesis once.
-      1. If confidence is ≥ 70%, output the corrected code block plus a 20-word rationale.
-      1. If confidence is below 70%, ask one clarifying question instead.
+    content: |
+      Your task is to fix a bug in the codebase.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Identify:**
+          *   First, analyze the provided bug description and any accompanying information (like error logs or screenshots) to understand the issue.
+          *   Explore the codebase to pinpoint the root cause of the bug.
+          *   Identify the specific files and functions that need to be modified to resolve the issue.
+
+      2.  **Implement the Change:**
+          *   Write clean, efficient, and correct code to fix the bug.
+          *   Adhere strictly to the existing coding conventions and style of the project.
+          *   Create a new unit test that specifically verifies the fix. This test should fail before the fix is applied and pass afterward.
+
+      3.  **Verify and Validate:**
+          *   Run the new test to confirm that the bug has been successfully resolved.
+          *   Execute the entire existing test suite to ensure that your changes have not introduced any regressions.
+
+      4.  **Report or Summarize:**
+          *   Provide a clear and concise summary of the work you have done.
+          *   Explain the nature of the bug, the changes you made to fix it, and confirm that all tests (both new and existing) are now passing.
       Inputs:
       - `{{code}}`: code containing the bug.
       Output format:

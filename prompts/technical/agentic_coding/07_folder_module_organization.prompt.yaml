@@ -7,20 +7,29 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      Use this prompt when analysing an existing project with confusing package layouts and circular dependencies.
-
-      Include exact shell commands where possible and highlight tools such as `import-linter` or `ruff` to enforce layering rules.
+    content: |
+      You are an expert AI coding agent. Your purpose is to help users by refactoring their codebase to improve its quality.
   - role: user
-    content: |-
-      1. Analyse the current package and module structure.
-      1. Identify opportunities for feature- or domain-based grouping and flag separation-of-concern violations.
-      1. Produce a step-by-step refactoring plan including:
-         - pre-refactor checklist commands (`pytest`, `coverage`, `flake8` or `pylint`)
-         - file migration steps with `git mv` and import updates
-         - post-refactor validation commands
-         - rollback guidance if a step fails
-      1. Offer follow-up prompts to drill into sample modules, examine cross-module dependencies, and validate scalability with a new feature stub.
+    content: |
+      Your task is to refactor a part of the codebase to improve its structure, readability, and maintainability without changing its external behavior.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Identify:**
+          *   Analyze the codebase to identify code smells, complex functions, or duplicated code that could be refactored.
+          *   Identify a specific target for refactoring and define the goal (e.g., simplify a complex method, extract a class).
+
+      2.  **Implement the Change:**
+          *   Perform the refactoring, applying well-known patterns and techniques.
+          *   Ensure the new code is cleaner, more readable, and easier to maintain.
+          *   Adhere to the project's coding conventions.
+
+      3.  **Verify and Validate:**
+          *   Crucially, run the entire existing test suite to ensure that the refactoring has not changed the code's behavior or introduced any regressions. No tests should be broken. If test coverage is poor, consider adding tests first.
+
+      4.  **Report or Summarize:**
+          *   Provide a summary of the refactoring work you have done.
+          *   Explain what you changed and why, and confirm that all tests are still passing.
       Inputs:
       - `{{repo_path}}` – path to the project source
       Output format:

@@ -7,26 +7,30 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      This plan guides developers in structuring modules, selecting libraries, and mitigating risks.
-
-      Revise the plan iteratively until all risks are addressed.
+    content: |
+      You are an expert AI assistant. Your purpose is to help users with project planning and scoping.
   - role: user
-    content: |-
-      1. Define modules, services, and overall architecture.
-      1. List the libraries, frameworks, and tools to use.
-      1. Describe all required data models with fields and constraints.
-      1. Specify business logic and rules in clear terms.
-      1. Identify dependencies, risks, and proposed solutions.
-      1. Outline step-by-step implementation for each feature or service.
+    content: |
+      Your task is to create a planning document based on the user's requirements.
 
-         Iterate the plan at least three times for robustness.
-      Inputs:
-      - `{{architecture_overview}}` – proposed system structure
-      - `{{technology_choices}}` – libraries and frameworks
-      - `{{data_models}}` – entities and relationships
-      Output format:
-      Markdown sections for Architecture Breakdown, Libraries and Tools, Data Models & Specifications, Business Logic & Rules, Dependencies & Risk Analysis, and Implementation Steps.
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the user's request and any provided materials to fully understand the goals and scope of the project.
+          *   Identify the key information that needs to be included in the planning document.
+
+      2.  **Create the Document:**
+          *   Draft the document, organizing the information into clear and logical sections.
+          *   Use appropriate formatting (e.g., Markdown, diagrams) to make the document easy to read and understand.
+          *   Ensure the content is accurate, concise, and directly addresses the user's request.
+
+      3.  **Verify and Refine:**
+          *   Review the drafted document for clarity, completeness, and correctness.
+          *   Ensure that all aspects of the user's request have been addressed.
+
+      4.  **Summarize and Deliver:**
+          *   Provide a brief summary of the document you have created.
+          *   Present the final document to the user.
 testData:
   - vars:
       architecture_overview: example_architecture_overview

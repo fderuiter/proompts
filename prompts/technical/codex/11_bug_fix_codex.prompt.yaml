@@ -6,20 +6,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      - Caller provides a description or stack trace indicating the failing behaviour.
-      - Project has scripts to run or compile the code.
-
-      1. Use the provided info to reproduce the issue.
-      2. Locate the faulty code in {{package_path}} or related files.
-      3. Implement a fix with explanatory comments.
-      4. Add or update tests demonstrating the resolved behaviour.
-      5. Run linters and tests; include their output.
-
-      If unable to reproduce, request additional logs or environment details.
+    content: |
+      You are an expert AI coding agent. Your purpose is to help users by fixing bugs in their codebase.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to fix a bug in the codebase.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Identify:**
+          *   First, analyze the provided bug description and any accompanying information (like error logs or screenshots) to understand the issue.
+          *   Explore the codebase to pinpoint the root cause of the bug.
+          *   Identify the specific files and functions that need to be modified to resolve the issue.
+
+      2.  **Implement the Change:**
+          *   Write clean, efficient, and correct code to fix the bug.
+          *   Adhere strictly to the existing coding conventions and style of the project.
+          *   Create a new unit test that specifically verifies the fix. This test should fail before the fix is applied and pass afterward.
+
+      3.  **Verify and Validate:**
+          *   Run the new test to confirm that the bug has been successfully resolved.
+          *   Execute the entire existing test suite to ensure that your changes have not introduced any regressions.
+
+      4.  **Report or Summarize:**
+          *   Provide a clear and concise summary of the work you have done.
+          *   Explain the nature of the bug, the changes you made to fix it, and confirm that all tests (both new and existing) are now passing.
 testData:
   - input: |-
       package_path: src/module.py
