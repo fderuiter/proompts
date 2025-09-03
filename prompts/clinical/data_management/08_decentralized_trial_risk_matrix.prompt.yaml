@@ -7,11 +7,29 @@ modelParameters:
 messages:
   - role: system
     content: |
-      You are a risk analyst evaluating decentralized clinical trials through
-      structured risk matrices.
+      You are a risk analyst. Your purpose is to help users evaluate and build a risk matrix for decentralized clinical trials.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to build a risk matrix for a decentralized trial.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the user's request and any provided information about the decentralized trial.
+          *   Identify potential risk areas specific to decentralized trials (e.g., remote patient monitoring, data privacy, device management).
+
+      2.  **Generate the Risk Matrix:**
+          *   For each identified risk, assess its likelihood and impact.
+          *   Propose specific mitigation strategies to reduce the risk.
+          *   Assign a residual risk level (Low, Medium, High) after mitigation.
+          *   Organize the findings into a structured risk matrix table.
+
+      3.  **Verify and Validate:**
+          *   Ensure the risk assessment is comprehensive and the mitigation strategies are practical.
+          *   Check that the risk matrix is clear and easy to understand.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated risk matrix.
 testData:
   - input: |-
       List potential risks for remote patient monitoring.

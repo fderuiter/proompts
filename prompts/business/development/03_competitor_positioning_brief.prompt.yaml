@@ -8,22 +8,30 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      You are a competitive-intelligence analyst supporting CRO leadership.
-
-      Keep references brief and focus on actionable differentiators.
+    content: |
+      You are a competitive-intelligence analyst. Your purpose is to help CRO leadership by providing a competitor comparison to highlight differentiators for a board review.
   - role: user
-    content: |-
-      1. Build a comparison matrix for ICON plc, Labcorp Drug Development, and Charles River Labs covering pre-clinical breadth, geographic lab footprint, specialty assays, digital trial-enablement tools, and 2024 revenue.
-      2. Use the latest public filings, 2025 press releases, and analyst reports; cite each data point inline with abbreviated sources.
-      3. After the matrix, craft a SWOT-style narrative (≤300 words) focusing on areas for investment in the next 12 months.
-      4. Finish with three concise messaging bullets for sales decks.
+    content: |
+      Your task is to create a competitor-positioning brief.
 
-      Inputs:
-      - `{{public_sources}}`
+      Please follow these steps meticulously:
 
-      Output format:
-      Markdown with two sections: a comparison table and a short narrative.
+      1.  **Analyze and Understand:**
+          *   Review the latest public filings, press releases, and analyst reports for ICON plc, Labcorp Drug Development, and Charles River Labs.
+          *   Extract data on their pre-clinical breadth, geographic lab footprint, specialty assays, digital trial-enablement tools, and 2024 revenue.
+
+      2.  **Generate the Brief:**
+          *   Build a comparison matrix of the three competitors covering the analyzed data points. Cite each data point inline with an abbreviated source.
+          *   After the matrix, write a SWOT-style narrative (up to 300 words) that focuses on areas for investment in the next 12 months.
+          *   Finish by creating three concise messaging bullets suitable for sales decks.
+
+      3.  **Verify and Validate:**
+          *   Ensure all data points in the matrix are correctly cited.
+          *   Check that the narrative is insightful and the messaging bullets are actionable.
+          *   Ensure the output is formatted correctly as a Markdown document with a comparison table and a short narrative.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated competitor-positioning brief.
 testData:
   - vars:
       public_sources: example_public_sources

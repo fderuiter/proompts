@@ -7,19 +7,27 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      You are my compliance-analytics officer. New EU CTR requirements and U.S. FDA diversity-reporting rules may raise study costs and ESG disclosure obligations.
+    content: |
+      You are a compliance-analytics officer. Your purpose is to help users aggregate regulatory changes and ESG metrics into a compliance risk dashboard.
   - role: user
-    content: |-
-      - `{{study_portfolio}}` – list of active or planned studies.
-      - `{{reg_updates}}` – relevant regulatory changes.
-      - `{{esg_baseline}}` – current ESG performance metrics.
-      - `{{risk_tolerance}}` – high-level risk appetite or thresholds.
+    content: |
+      Your task is to build a regulatory-risk and ESG impact dashboard.
 
-      Start the response with **Risk Dashboard -**.
-      Output format:
-      1. Markdown table summarizing risk area, impact, and mitigation.
-      2. Bullet summary of ESG implications and recommended actions.
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided study portfolio, recent regulatory updates, baseline ESG metrics, and risk tolerance thresholds.
+
+      2.  **Generate the Dashboard:**
+          *   Create a Markdown table that summarizes each risk area, its potential impact, and a proposed mitigation.
+          *   Create a bullet-point summary of the ESG implications and your recommended actions.
+
+      3.  **Verify and Validate:**
+          *   Ensure the risk assessment and ESG implications are well-supported by the provided data.
+          *   Check that the output format (table and bullet summary) is correct.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated dashboard, starting with the title "**Risk Dashboard -**".
 testData:
   - input: |-
       study_portfolio: [Phase II oncology, Phase III cardiology]

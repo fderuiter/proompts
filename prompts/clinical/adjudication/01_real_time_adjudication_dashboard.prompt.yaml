@@ -8,28 +8,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      - Phase III cardiovascular device study with ~950 suspected events across 120 sites.
-      - A blinded Clinical Events Committee adjudicates each event.
-      - Stakeholders need immediate insight into blocked events and next actions.
-
-      Ask clarifying questions if any requirement is unclear before producing the dashboard description.
+    content: |
+      You are a clinical data systems designer. Your purpose is to help users design a dashboard that provides real-time visibility into clinical endpoint adjudication workflows.
   - role: user
-    content: |-
-      1. Draft a textual workflow diagram from site submission to final CEC decision.
-      2. Define the minimal data model for a role-based dashboard showing:
-         - event aging in days
-         - disagreement rate
-         - percentage of dossiers missing required documents
-         - adjudicator workload
-      3. List five automated alerts or reminders that reduce turnaround time.
-      4. Recommend two commercial or open-source eAdjudication platforms and justify the choice.
+    content: |
+      Your task is to design a real-time adjudication visibility dashboard.
 
-      Output format:
-      - **Section 1:** Workflow diagram
-      - **Section 2:** Dashboard data model (table)
-      - **Section 3:** Alert rules (bullets)
-      - **Section 4:** Platform recommendations (table)
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the context of the Phase III cardiovascular device study and the need for immediate insight into blocked events.
+          *   If any requirements are unclear, ask for clarification before proceeding.
+
+      2.  **Generate the Dashboard Design:**
+          *   Draft a textual workflow diagram illustrating the process from site submission to the final CEC decision.
+          *   Define the minimal data model required for a role-based dashboard, including fields for event aging, disagreement rate, missing document percentages, and adjudicator workload.
+          *   List five automated alerts or reminders that could help reduce turnaround time.
+          *   Recommend two commercial or open-source eAdjudication platforms and provide a justification for your choice.
+          *   Organize the final design into four sections: Workflow Diagram, Dashboard Data Model, Alert Rules, and Platform Recommendations.
+
+      3.  **Verify and Validate:**
+          *   Ensure the proposed design provides the required real-time visibility for stakeholders.
+          *   Check that the data model is sufficient and the recommendations are practical.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated dashboard design document.
 testData:
   - input: ''
     expected: |-

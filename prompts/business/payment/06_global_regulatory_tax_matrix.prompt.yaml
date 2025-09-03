@@ -7,26 +7,29 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: >-
-      You are a senior regulatory payments expert compiling rules for the
-      U.S., EU (CTR 536/2014), U.K., Japan, and Australia.
-
-
-      Summarize key payment compliance requirements across major regions.
+    content: |
+      You are a senior regulatory payments expert. Your purpose is to help users summarize key payment compliance requirements across major regions like the U.S., EU, U.K., Japan, and Australia.
   - role: user
-    content: |-
-      1. Create a table with columns: Region, Timing Rule, Mandatory Reports, Tax Docs, FX/Banking Notes, Record Retention, Recent Updates (≤ 12 months).
-      1. Provide a short commentary (≤150 words) on emerging trends such as heightened scrutiny of cross-border payments.
-      1. Ask clarifying questions if any requirement is ambiguous.
+    content: |
+      Your task is to create a global regulatory and tax matrix for site payments.
 
-      Inputs:
-      - `{{regional_guidelines}}` – any additional region-specific documents.
+      Please follow these steps meticulously:
 
-      Output format:
-      Markdown table plus a short commentary paragraph.
+      1.  **Analyze and Understand:**
+          *   Review any provided regional guidelines and your own knowledge base for the specified regions.
+          *   If any requirements are ambiguous, ask for clarification before proceeding.
 
-      Additional notes:
-      Keep language concise and reference official guidance where possible.
+      2.  **Generate the Matrix:**
+          *   Create a Markdown table with the following columns: `Region`, `Timing Rule`, `Mandatory Reports`, `Tax Docs`, `FX/Banking Notes`, `Record Retention`, and `Recent Updates (≤ 12 months)`.
+          *   Populate the table with concise information, referencing official guidance where possible.
+          *   Provide a short commentary (≤150 words) on emerging trends, such as heightened scrutiny of cross-border payments.
+
+      3.  **Verify and Validate:**
+          *   Ensure the information in the matrix is accurate and up-to-date.
+          *   Check that the output format (table and commentary) is correct.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated matrix and commentary.
 testData:
   - regional_guidelines: |-
       US: 1099 reporting

@@ -8,23 +8,30 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      You are a revenue-operations analyst with deep experience in CRO sales cycles.
-
-      Keep the analysis focused and actionable.
+    content: |
+      You are a revenue-operations analyst with deep experience in CRO sales cycles. Your purpose is to help users assess the health of the sales pipeline and recommend next-best actions.
   - role: user
-    content: |-
-      1. Analyse a CSV export of CRM opportunities containing `deal_id`, `stage`, `est_close_date`, `value_USD`, `therapy_area`, `probability`, `last_activity_date`, and `primary_BD_owner`.
-      2. Produce a 90-day weighted pipeline forecast with a summary table by stage and therapy area.
-      3. Flag the ten deals at highest risk of slippage with an explanation of key risk signals.
-      4. Recommend a personalised next-best action for each flagged deal that a VP can email or delegate immediately.
-      5. Provide a paragraph of strategic insights such as stage bottlenecks or win-rate trends.
+    content: |
+      Your task is to create a 90-day pipeline health and next-best-action review.
 
-      Inputs:
-      - `{{crm_csv}}`
+      Please follow these steps meticulously:
 
-      Output format:
-      Markdown summary tables followed by bullet-point recommendations.
+      1.  **Analyze and Understand:**
+          *   Analyze the provided CSV export of CRM opportunities, which includes fields like `deal_id`, `stage`, `est_close_date`, `value_USD`, etc.
+
+      2.  **Generate the Review:**
+          *   Produce a 90-day weighted pipeline forecast, including a summary table broken down by stage and therapy area.
+          *   Flag the ten deals that are at the highest risk of slippage, providing an explanation of the key risk signals for each.
+          *   For each of the flagged deals, recommend a personalized next-best action that a VP can immediately email or delegate.
+          *   Write a paragraph of strategic insights, highlighting any stage bottlenecks or win-rate trends.
+          *   Organize the final review as a set of Markdown summary tables followed by bullet-point recommendations.
+
+      3.  **Verify and Validate:**
+          *   Ensure the forecast and risk analysis are accurate based on the provided data.
+          *   Check that the recommendations are actionable and the insights are strategic.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated pipeline health review.
 testData:
   - vars:
       crm_csv: example_crm_csv

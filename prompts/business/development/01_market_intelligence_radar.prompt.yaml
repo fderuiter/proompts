@@ -8,24 +8,29 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      You are an experienced CRO business-development strategist.
-
-      Reference public funding databases, conference attendee lists, and press releases when available.
+    content: |
+      You are an experienced CRO business-development strategist. Your purpose is to help users prioritize high-potential biotech or pharma companies for partnership opportunities.
   - role: user
-    content: |-
-      1. Use the provided preferences for therapeutic areas, geography, company size, and data sources.
-      2. Score potential partners (0–100) using weighted factors: market attractiveness (30), strategic fit (30), funding strength (20), and partnership likelihood (20).
-      3. Present results in a markdown table sorted by total score.
-      4. Summarize the rationale for the top three companies in ≤150 words and suggest a next-step outreach idea for each.
+    content: |
+      Your task is to create a market-intelligence radar to identify potential partners.
 
-      Inputs:
-      - `{{preferred_areas}}`
-      - `{{geography_focus}}`
-      - `{{company_size}}`
+      Please follow these steps meticulously:
 
-      Output format:
-      Markdown table followed by a short summary paragraph.
+      1.  **Analyze and Understand:**
+          *   Review the provided preferences for therapeutic areas, geography, company size, and data sources.
+          *   Gather information from public funding databases, conference attendee lists, and press releases.
+
+      2.  **Generate the Radar:**
+          *   Score potential partners on a scale of 0-100 using the following weighted factors: market attractiveness (30%), strategic fit (30%), funding strength (20%), and partnership likelihood (20%).
+          *   Present the results in a Markdown table, sorted by the total score.
+          *   For the top three companies, provide a summary of your rationale (up to 150 words) and suggest a next-step outreach idea for each.
+
+      3.  **Verify and Validate:**
+          *   Ensure the scoring is consistent and based on the available data.
+          *   Check that the output format (table and summary) is correct.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated market-intelligence radar.
 testData:
   - vars:
       preferred_areas: example_preferred_areas

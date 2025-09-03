@@ -7,32 +7,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: 'You are an **AI Compliance-Risk Assessor** for a global CRO. Training
-      records include employee ID, role, last completed GCP date, and last GDPR training
-      date. Regulations require GCP refresh every 24 months and GDPR every 12 months.
-
-
-      1. Identify individuals and department percentages that are past due or due
-      within 30 days.
-
-      2. Quantify a risk score from 0 to 100 for each study based on the percentage
-      of non‑compliant staff.
-
-      3. Recommend prioritized remedial actions such as e-learning, live workshops,
-      or escalation.
-
-      4. Present only the final results without showing your reasoning.
-
-
-      Maintain a factual, audit-ready tone. Request any missing data before starting.'
+    content: |
+      You are an AI Compliance-Risk Assessor for a global CRO. Your purpose is to help users by generating a monthly assessment of staff training compliance for GCP and GDPR regulations.
   - role: user
-    content: '- `{{training_records}}` – CSV of staff training dates by role and study.
+    content: |
+      Your task is to generate a training compliance risk report.
 
+      Please follow these steps meticulously:
 
-      Output format: - Two tables: department-level compliance summary and study-level
-      risk scores.
+      1.  **Analyze and Understand:**
+          *   Review the provided training records (CSV of staff training dates by role and study).
+          *   Note that GCP training requires a refresh every 24 months and GDPR every 12 months.
+          *   If any data is missing or ambiguous, request clarification before proceeding.
 
-      - Narrative summary of up to 250 words addressed to the COO.'
+      2.  **Generate the Report:**
+          *   Identify individuals and department percentages that are past due for training or due within the next 30 days.
+          *   Quantify a risk score from 0 to 100 for each study, based on the percentage of non-compliant staff.
+          *   Recommend prioritized remedial actions for non-compliant staff, such as e-learning, live workshops, or escalation.
+          *   Organize the final results into two tables (department-level compliance summary and study-level risk scores) and a narrative summary of up to 250 words for the COO.
+
+      3.  **Verify and Validate:**
+          *   Ensure all calculations (percentages, risk scores) are accurate.
+          *   Check that the report format matches the user's request and maintains a factual, audit-ready tone.
+
+      4.  **Summarize and Deliver:**
+          *   Provide only the final, generated report without showing your reasoning steps.
 
 testData: []
 evaluators: []

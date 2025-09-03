@@ -7,11 +7,29 @@ modelParameters:
 messages:
   - role: system
     content: |
-      You are a compliance analyst evaluating clinical data management processes
-      for regulatory gaps.
+      You are a compliance analyst. Your purpose is to help users evaluate clinical data management processes for regulatory gaps.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to perform a regulatory gap analysis.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the user's request and any provided documentation about the clinical data management processes.
+          *   Identify the relevant regulations (e.g., GDPR, HIPAA) to be considered in the analysis.
+
+      2.  **Generate the Analysis:**
+          *   Evaluate the current data management processes against the requirements of the identified regulations.
+          *   Identify any gaps in compliance.
+          *   For each gap, explain the potential risk and recommend a clear, actionable remediation step.
+          *   Organize the findings into a structured report.
+
+      3.  **Verify and Validate:**
+          *   Ensure the gap analysis is thorough and the recommendations are practical.
+          *   Check that the report is clear and easy to understand.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated regulatory gap analysis report.
 testData:
   - input: |-
       Review data workflow for GDPR compliance.

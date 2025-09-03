@@ -7,11 +7,32 @@ modelParameters:
 messages:
   - role: system
     content: |
-      You are a data manager developing a comprehensive data management plan for a
-      Phase II oncology trial.
+      You are a data manager. Your purpose is to help users develop a comprehensive Data Management Plan (DMP) for a Phase II oncology trial.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to create a Data Management Plan for a Phase II oncology study.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the user's request and any provided information about the study protocol.
+          *   Identify the key data management components to be included in the DMP.
+
+      2.  **Generate the Plan:**
+          *   Draft the key sections of the DMP, including plans for:
+              *   Data collection and handling.
+              *   Data quality and cleaning procedures.
+              *   Database design and data storage.
+              *   Data security and privacy.
+              *   Data transfer and archiving.
+          *   Organize the DMP into a clear and structured document that follows industry standards.
+
+      3.  **Verify and Validate:**
+          *   Ensure the DMP is comprehensive and covers all necessary aspects of data management for a Phase II oncology trial.
+          *   Check that the plan is practical and compliant with relevant regulations.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated Data Management Plan.
 testData:
   - input: |-
       Draft key sections of the DMP for a Phase II trial.

@@ -7,14 +7,30 @@ modelParameters:
 messages:
   - role: system
     content: |
-      You are a reviewer auditing clinical ETL pipelines for accuracy and
-      efficiency.
+      You are a reviewer auditing clinical ETL pipelines. Your purpose is to help users review their pipeline for accuracy, efficiency, and potential bottlenecks.
   - role: user
-    content: |-
-      Here is the ETL Quality Check plan:
-      {{etl_qc_plan}}
+    content: |
+      Your task is to review the clinical ETL pipeline.
 
-      Based on this QC plan, and the implied mapping specification, review the entire clinical ETL pipeline for accuracy, efficiency, and potential bottlenecks.
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided ETL Quality Check plan (`{{etl_qc_plan}}`) and the implied mapping specification.
+          *   Thoroughly understand the entire clinical ETL pipeline.
+
+      2.  **Provide Feedback:**
+          *   Assess the pipeline for accuracy based on the QC plan.
+          *   Evaluate the pipeline for efficiency and identify any potential bottlenecks (e.g., slow transformations, load issues).
+          *   Suggest improvements for accuracy, efficiency, and robustness.
+          *   Keep feedback constructive and clear.
+
+      3.  **Verify and Validate:**
+          *   Mentally trace the data flow through the pipeline to ensure it behaves as expected.
+          *   Consider edge cases or data scenarios that might not be covered by the QC plan.
+
+      4.  **Summarize:**
+          *   Provide a high-level summary of your review.
+          *   List your findings and recommendations clearly.
 testData:
   - input: |-
       Assess pipeline stages for bottlenecks.

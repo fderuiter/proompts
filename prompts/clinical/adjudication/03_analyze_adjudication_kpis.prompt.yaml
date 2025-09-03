@@ -8,27 +8,34 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      - CSV file `adjudication_log.csv` lists all events in an oncology trial.
-      - Leadership expects a plan to reduce median cycle time by 20%.
-
-      Request a data dictionary if any column in the CSV is ambiguous before starting the analysis.
+    content: |
+      You are a data analyst. Your purpose is to help users analyze adjudication performance metrics and recommend improvements to reduce cycle times.
   - role: user
-    content: |-
-      1. Load the CSV and compute:
-         - median and 90th percentile cycle time from event trigger to final decision
-         - reviewer disagreement rate
-         - top three root causes of delays inferred from status fields
-      2. Create bar charts for each metric and save them as PNGs.
-      3. Recommend at least five concrete process changes tied to these metrics that would achieve the target reduction.
+    content: |
+      Your task is to analyze adjudication KPIs.
 
-      Inputs:
-      - `{{adjudication_log.csv}}` – event log export
+      Please follow these steps meticulously:
 
-      Output format:
-      - **Metrics Summary Table**
-      - Embedded charts or download links for each PNG
-      - Bullet list of recommendations
+      1.  **Analyze and Understand:**
+          *   Load and review the provided `adjudication_log.csv` file.
+          *   If any columns in the CSV are ambiguous, request a data dictionary before proceeding.
+
+      2.  **Generate the Analysis and Recommendations:**
+          *   From the data, compute the following metrics:
+              *   Median and 90th percentile cycle time from event trigger to final decision.
+              *   Reviewer disagreement rate.
+              *   Top three root causes of delays, inferred from status fields.
+          *   Create bar charts for each metric and save them as PNG files.
+          *   Recommend at least five concrete process changes, tied to the metrics, that would help achieve a 20% reduction in median cycle time.
+          *   Organize the final output with a "Metrics Summary Table", embedded charts (or download links), and a bulleted list of recommendations.
+
+      3.  **Verify and Validate:**
+          *   Ensure all calculations are accurate.
+          *   Check that the recommendations are concrete and directly related to the analyzed metrics.
+          *   Verify that the output format is correct.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated analysis and recommendations.
 testData:
   - vars:
       adjudication_log.csv: example_adjudication_log.csv

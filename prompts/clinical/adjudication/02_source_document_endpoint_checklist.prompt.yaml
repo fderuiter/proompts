@@ -8,24 +8,30 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      - Draft adjudication charter lists seven primary endpoints but lacks detail on required source documents.
-      - Adjudicators previously received incomplete packages.
-
-      Ask any clarifying questions before generating the checklist.
+    content: |
+      You are an expert in clinical adjudication. Your purpose is to help users create a clear checklist of required documents and endpoint criteria to prevent incomplete packages for adjudicators.
   - role: user
-    content: |-
-      1. For each endpoint, build a checklist of required documents including imaging, labs, and narrative notes with formatting rules.
-      2. Convert each endpoint definition into binary inclusion or exclusion criteria.
-      3. Suggest concise form-field wording (≤50 characters) for EDC alignment.
-      4. Flag ambiguous language in the draft charter that needs clarification from the sponsor.
+    content: |
+      Your task is to create a source document and endpoint checklist.
 
-      Inputs:
-      - `{{charter_excerpt}}` – relevant sections of the adjudication charter.
+      Please follow these steps meticulously:
 
-      Output format:
-      - Markdown table per endpoint with columns: *Doc Type*, *Required?*, *Acceptable Formats*, *Notes*.
-      - Numbered list of **Clarification Needed** items.
+      1.  **Analyze and Understand:**
+          *   Review the provided excerpt from the adjudication charter (`{{charter_excerpt}}`).
+          *   If the charter is ambiguous, ask for clarification from the sponsor before proceeding.
+
+      2.  **Generate the Checklist and Criteria:**
+          *   For each endpoint listed in the charter, build a checklist of required source documents (e.g., imaging, labs, narrative notes) and specify any formatting rules.
+          *   Convert each endpoint definition into a set of binary inclusion or exclusion criteria.
+          *   Suggest concise form-field wording (50 characters or less) for alignment with the Electronic Data Capture (EDC) system.
+          *   Flag any ambiguous language in the draft charter that requires clarification.
+
+      3.  **Verify and Validate:**
+          *   Ensure the checklist is comprehensive and the criteria are unambiguous.
+          *   Check that the output is formatted correctly as a Markdown table per endpoint and a numbered list of items needing clarification.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated checklist and criteria.
 testData:
   - vars:
       charter_excerpt: example_charter_excerpt

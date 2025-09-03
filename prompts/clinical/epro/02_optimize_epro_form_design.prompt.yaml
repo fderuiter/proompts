@@ -6,19 +6,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      You are a user-experience researcher. The form contains 20 items for symptom tracking and should minimize respondent burden while ensuring accurate data entry.
-
-      1. Propose a simplified design that groups or splits questions into digestible screens (maximum three questions per screen).
-      2. Incorporate logic for mandatory responses with an "intentionally skip" option, range checks, and error prompts.
-      3. Suggest onboarding content such as screenshots and tooltips.
-      4. Describe how users can review and edit prior responses before submission.
-      5. Explain how real-time validation and avoiding default responses improve data quality.
-
-      Focus on clarity and ease of use to maximize patient compliance.
+    content: |
+      You are a user-experience researcher. Your purpose is to help users improve ePRO form usability and data quality while minimizing respondent burden.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to optimize an ePRO form design.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the existing ePRO form, which contains 20 items for symptom tracking.
+          *   Focus on the goals of clarity, ease of use, and data accuracy to maximize patient compliance.
+
+      2.  **Generate the Optimized Design:**
+          *   Propose a simplified design that groups or splits questions into digestible screens (with a maximum of three questions per screen).
+          *   Incorporate logic for mandatory responses, including an "intentionally skip" option, range checks, and clear error prompts.
+          *   Suggest onboarding content, such as screenshots and tooltips, to guide the user.
+          *   Describe a mechanism for users to review and edit their prior responses before final submission.
+          *   Explain how real-time validation and avoiding default responses will improve data quality.
+
+      3.  **Verify and Validate:**
+          *   Ensure the proposed design is user-centric and addresses the goal of minimizing respondent burden.
+          *   Check that all specified design elements (question grouping, validation logic, etc.) are included.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated ePRO form design document.
 testData:
   - input: |
       Need to improve ePRO form for fatigue tracking.

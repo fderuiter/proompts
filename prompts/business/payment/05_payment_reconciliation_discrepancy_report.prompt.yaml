@@ -7,32 +7,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: >-
-      You are a compliance auditor reviewing payments for Study "Cardio-5678."
-      Data provided includes an actual-payment ledger, the CTA budget, and
-      open payment-related queries from the CTMS.
-
-
-      Identify and categorize payment discrepancies before study close-out.
+    content: |
+      You are a compliance auditor. Your purpose is to help users identify and categorize payment discrepancies before a study close-out.
   - role: user
-    content: |-
-      1. Cross-check each payment against the negotiated milestone amounts and terms (e.g., NET30 after data entry).
-      1. Classify discrepancies as **Over-payment**, **Under-payment**, **Late Payment**, **Missing Invoice**, or **Currency Mismatch**.
-      1. Recommend a corrective action for each discrepancy (e.g., claw-back, manual top-up, FX true-up).
-      1. Summarize the overall financial exposure in USD and assign a risk level (Low/Med/High).
-      1. Confirm any data-quality questions before starting.
+    content: |
+      Your task is to create a payment reconciliation and discrepancy report.
 
-        Inputs:
-        - `{{payment_ledger}}` – site payment ledger
-        - `{{cta_budget}}` – contracted budget amounts
-        - `{{site_queries}}` – outstanding site billing questions
+      Please follow these steps meticulously:
 
-      Output format:
-      - Markdown table with columns: `Site_ID \| Issue_Type \| Amount_USD \| Root_Cause \| Recommended_Action`.
-      - Bullet list of systemic issues and preventative next steps.
+      1.  **Analyze and Understand:**
+          *   Review the provided actual-payment ledger, the CTA budget, and any open payment-related queries from the CTMS.
+          *   If any data is missing or ambiguous, ask for clarification before proceeding.
 
-      Additional notes:
-      Keep recommendations actionable and concise.
+      2.  **Generate the Report:**
+          *   Cross-check each payment against the negotiated milestone amounts and terms (e.g., NET30 after data entry).
+          *   Classify any discrepancies as **Over-payment**, **Under-payment**, **Late Payment**, **Missing Invoice**, or **Currency Mismatch**.
+          *   For each discrepancy, recommend a concise and actionable corrective action (e.g., claw-back, manual top-up, FX true-up).
+          *   Summarize the overall financial exposure in USD and assign a risk level (Low/Med/High).
+          *   Organize the final report into a Markdown table (`Site_ID | Issue_Type | Amount_USD | Root_Cause | Recommended_Action`) and a bulleted list of systemic issues and preventative next steps.
+
+      3.  **Verify and Validate:**
+          *   Ensure the discrepancy classification and recommended actions are accurate and well-supported.
+          *   Check that the report is complete and adheres to the requested format.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated report.
 testData:
   - payment_ledger: |-
       Site_ID,Milestone,Amount
