@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Backward Compatibility and Deprecation Policy for APIs and Events
+description: A public-facing policy that governs backward compatibility and deprecation for external APIs and event streams.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Create a public-facing policy that governs backward compatibility and deprecation for our external APIs and event streams. This policy must clearly define what constitutes a breaking versus non-breaking change and establish a predictable, multi-stage deprecation lifecycle for any features being retired. The process should detail the minimum notice period, the communication channels that will be used to inform consumers (e.g., changelogs, email, API headers), and the versioning strategy that will be employed to allow consumers to transition smoothly with minimal disruption.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

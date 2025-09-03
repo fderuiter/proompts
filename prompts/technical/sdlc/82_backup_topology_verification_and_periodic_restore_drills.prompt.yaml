@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Backup Topology Verification and Periodic Restore Drills
+description: An operational policy and procedure to ensure the viability of a data backup and recovery strategy.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Create an operational policy and procedure to ensure the viability of our data backup and recovery strategy. The policy must require a formal, quarterly verification of the backup topology to confirm that all critical stateful systems and data stores are included in backup plans. Crucially, it must also mandate the execution of periodic, scheduled disaster recovery drills, where data from production backups is restored to an isolated environment to rigorously test the integrity of the backups and the accuracy of the recovery runbooks.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

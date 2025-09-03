@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Serverless Limits, Cold Start Budgets, and Concurrency Tuning
+description: A best-practices guide for engineers developing applications on a serverless platform.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Create a best-practices guide for engineers developing applications on our serverless platform (e.g., AWS Lambda, Google Cloud Functions). The guide should clearly document platform-specific limits (memory, timeout, package size) and provide actionable strategies for performance optimization. It must address how to mitigate and budget for cold starts on latency-sensitive functions and offer a decision framework for tuning concurrency settings (e.g., provisioned vs. on-demand) to strike the right balance between cost and performance.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

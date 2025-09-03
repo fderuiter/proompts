@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Monorepo vs Polyrepo Strategy and Tooling
+description: A strategic document that analyzes the monorepo vs. polyrepo approaches for structuring source code.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Create a strategic document that analyzes the monorepo vs. polyrepo approaches for structuring our source code. The analysis should evaluate the pros and cons of each model in the context of our engineering culture, team autonomy, and system architecture. Conclude with a clear recommendation on which strategy to adopt and provide a roadmap for the necessary tooling to support it effectively, addressing key areas such as build optimization, dependency management, code ownership, and access control.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

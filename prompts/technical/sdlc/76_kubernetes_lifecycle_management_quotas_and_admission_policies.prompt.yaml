@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Kubernetes Lifecycle Management, Quotas, and Admission Policies
+description: A comprehensive operational guide for managing the lifecycle and governance of Kubernetes clusters.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Develop a comprehensive operational guide for managing the lifecycle and governance of our Kubernetes clusters. This guide should detail a strategy for performing regular, non-disruptive cluster upgrades to stay on supported versions. It must also outline a resource management framework that includes setting resource quotas at the namespace level to ensure fair usage and implementing admission controllers to automatically enforce security policies, best practices, and compliance guardrails on all workloads before they are admitted to the cluster.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

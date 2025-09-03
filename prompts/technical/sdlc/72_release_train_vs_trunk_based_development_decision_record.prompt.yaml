@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Release Train vs Trunk Based Development Decision Record
+description: An Architecture Decision Record (ADR) that evaluates the trade-offs between a scheduled "release train" model and a continuous "trunk-based development" model.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Write an Architecture Decision Record (ADR) that evaluates the trade-offs between a scheduled "release train" model and a continuous "trunk-based development" model. Analyze both strategies against key criteria relevant to our organization, including speed of delivery, release predictability, developer experience, and the ability to support our current product roadmap and team structure. The ADR should conclude with a clear recommendation for the branching and release strategy we should adopt, along with a well-articulated rationale for the decision.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

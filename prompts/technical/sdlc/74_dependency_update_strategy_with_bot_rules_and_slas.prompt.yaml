@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Dependency Update Strategy with Bot Rules and SLAs
+description: A comprehensive strategy for managing and updating third-party software dependencies.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Formulate a comprehensive strategy for managing and updating third-party software dependencies to enhance security and stability. This strategy should involve configuring automated tools like Dependabot or Renovate to create pull requests for available updates, with intelligent rules for auto-merging non-breaking patches and minor versions. Crucially, it must also define strict Service Level Agreements (SLAs) for the triage and application of security patches based on their CVE severity level (e.g., critical, high, medium).
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

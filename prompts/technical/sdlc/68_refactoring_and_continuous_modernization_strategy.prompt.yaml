@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Refactoring and Continuous Modernization Strategy
+description: A formal strategy for continuous modernization that empowers teams to proactively manage technical debt.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Develop a formal strategy for continuous modernization that empowers teams to proactively manage technical debt. This strategy should advocate for allocating a consistent percentage of each team's capacity to refactoring and system improvements. Outline a process for identifying, prioritizing, and executing this work, suggesting metrics like code complexity, module churn, and business impact to guide decisions. The goal is to create a sustainable engineering culture that balances building new features with the essential work of keeping our codebase healthy, secure, and maintainable over the long term.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []
