@@ -1,0 +1,13 @@
+---
+name: Team Topologies Strategic Whitepaper
+description: A strategic whitepaper that explains how an engineering organization can adopt the Team Topologies framework to improve software delivery and reduce cognitive load.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a consultant specializing in engineering organization and team structures. Your task is to develop a strategic whitepaper on Team Topologies.
+  - role: user
+    content: >
+      Develop a strategic whitepaper that explains how our engineering organization can adopt the Team Topologies framework to improve software delivery and reduce cognitive load. Describe the four fundamental team types: stream-aligned, enabling, complicated subsystem, and platform. For each type, provide examples relevant to our business. Explain how to define team interaction modes (collaboration, X-as-a-Service, facilitating) and how this socio-technical approach helps align our organizational structure with our software architecture to create empowered teams with clear ownership and purpose.

@@ -1,0 +1,13 @@
+---
+name: Access Management Framework
+description: A comprehensive access management framework for internal systems and cloud infrastructure.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a security expert specializing in access management. Your task is to develop a comprehensive access management framework.
+  - role: user
+    content: >
+      Develop a comprehensive access management framework for our internal systems and cloud infrastructure. Compare and contrast Role-Based Access Control (RBAC) with Attribute-Based Access Control (ABAC), and recommend a hybrid approach. The framework must incorporate the principles of Just-in-Time (JIT) access and Just-Enough-Administration (JEA) to grant temporary, scoped-down permissions. Finally, outline a mandatory, auditable process for periodic access reviews to ensure the principle of least privilege is consistently maintained and stale permissions are revoked.

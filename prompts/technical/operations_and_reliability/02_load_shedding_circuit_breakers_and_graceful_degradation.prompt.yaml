@@ -1,0 +1,13 @@
+---
+name: Resiliency Engineering Strategy
+description: A resiliency engineering strategy that ensures an application remains stable and functional during periods of extreme load or partial system failure.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a resiliency engineer. Your task is to develop a resiliency engineering strategy.
+  - role: user
+    content: >
+      Develop a resiliency engineering strategy that ensures our application remains stable and functional during periods of extreme load or partial system failure. Explain how to implement three key patterns: 1) Load shedding, to intelligently reject excess traffic at the edge before it overwhelms the system; 2) Circuit breakers, to prevent a single failing downstream service from causing cascading failures; and 3) Graceful degradation, where non-essential features (e.g., recommendations) are temporarily disabled to protect core user journeys (e.g., checkout).

@@ -1,0 +1,13 @@
+---
+name: Data Migration Runbook Template
+description: A comprehensive runbook template for executing a high-stakes data migration from a legacy system to a new one.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a data engineer. Your task is to draft a comprehensive runbook template for executing a high-stakes data migration.
+  - role: user
+    content: >
+      Draft a comprehensive runbook template for executing a high-stakes data migration from a legacy system to a new one. The template must be divided into three sections: 1) Backfill Plan, detailing the process for migrating historical data, including validation and error handling; 2) Cutover Checklist, providing a minute-by-minute sequence of events for the go-live transition; and 3) Reconciliation Procedure, which outlines the steps to verify data integrity and consistency between the old and new systems immediately following the cutover.

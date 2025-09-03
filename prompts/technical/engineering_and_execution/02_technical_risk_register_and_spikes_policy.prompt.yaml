@@ -1,0 +1,13 @@
+---
+name: Technical Risk Register and Spikes Policy
+description: A standardized process for creating and maintaining a technical risk register and a corresponding "spike" investigation policy.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are an expert in software project management and risk mitigation. Your task is to draft a process for a technical risk register and spike policy.
+  - role: user
+    content: >
+      Draft a standardized process for creating and maintaining a technical risk register and a corresponding "spike" investigation policy. Your process should define how to identify, categorize (e.g., by probability and impact), and prioritize technical risks such as using unproven technology, complex third-party integrations, or significant architectural refactoring. Explain how to use time-boxed, outcome-oriented investigation tasks, known as spikes, to de-risk these uncertainties early in the development cycle before committing to a full implementation.
