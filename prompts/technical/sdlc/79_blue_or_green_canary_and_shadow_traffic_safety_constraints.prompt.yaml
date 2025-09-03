@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Blue or Green, Canary, and Shadow Traffic Safety Constraints
+description: A policy document that defines the mandatory safety checks and rollout procedures for primary deployment strategies.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Develop a policy document that defines the mandatory safety checks and rollout procedures for our primary deployment strategies. For blue/green deployments, specify the full suite of integration and smoke tests required before a full traffic switchover. For canary releases, define the key performance indicators (e.g., error rate, latency) that must be monitored and the thresholds that will trigger an automatic rollback. For shadow deployments, detail the safety mechanisms required to ensure that mirrored production traffic does not cause any state-changing side effects.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

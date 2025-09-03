@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Safe Schema Evolution with Online Migrations and Guardrails
+description: A technical best-practices guide for database schema evolution that ensures zero downtime for applications.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Outline a technical best-practices guide for database schema evolution that ensures zero downtime for our applications. The guide should detail a process for "online migrations" using patterns like expand-and-contract (or parallel change) to safely add, modify, and remove columns and tables without locking. Furthermore, describe how to implement automated guardrails within our CI/CD pipeline to detect and block potentially dangerous migrations, such as those that could cause data loss or require extended table locks, before they are ever deployed to production.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

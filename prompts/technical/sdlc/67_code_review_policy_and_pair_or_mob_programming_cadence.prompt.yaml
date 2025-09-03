@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Code Review Policy and Pair or Mob Programming Cadence
+description: A comprehensive code review policy for an engineering department.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Draft a comprehensive code review policy for our engineering department that balances quality, velocity, and knowledge sharing. The policy should define the standards for a "reviewable" pull request (e.g., size, description clarity), outline the responsibilities of both the author and the reviewer (e.g., constructive tone, response SLAs), and specify the minimum number of approvals required. Additionally, provide guidelines on a recommended cadence for pair and mob programming, explaining which types of tasks—such as complex architectural problems, bug-fixing, or onboarding new team members—are better suited for these synchronous, collaborative sessions versus an asynchronous code review.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

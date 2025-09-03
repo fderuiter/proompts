@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Unit Cost Tracing and Cost per Feature Attribution
+description: A strategy and technical implementation plan for achieving fine-grained cloud cost visibility and attribution.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Propose a strategy and technical implementation plan for achieving fine-grained cloud cost visibility and attribution. The plan should describe how to enforce a consistent resource tagging policy and leverage observability data to trace unit costs (e.g., cost per customer, cost per API request). The end goal is to develop a model that can attribute infrastructure spending back to specific product features, providing the business with critical insights to inform pricing, optimization efforts, and future technology investments.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

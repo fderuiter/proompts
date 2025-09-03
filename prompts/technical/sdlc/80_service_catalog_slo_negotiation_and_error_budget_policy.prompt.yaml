@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Service Catalog, SLO Negotiation, and Error Budget Policy
+description: A formal policy for implementing Service Level Objectives (SLOs) and error budgets.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Establish a formal policy for implementing Service Level Objectives (SLOs) and error budgets as the foundation of our reliability practice. This policy should mandate that all production services be documented in a central service catalog with clearly defined owners and dependencies. Outline a collaborative process for product managers and engineers to negotiate and agree upon meaningful SLOs for critical user journeys. Finally, detail how the resulting error budget will be calculated and used to make objective, data-driven decisions about when to prioritize reliability work over new feature development.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

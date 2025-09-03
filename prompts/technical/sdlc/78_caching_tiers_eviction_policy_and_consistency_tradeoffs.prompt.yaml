@@ -1,0 +1,19 @@
+# yamllint disable rule:line-length
+---
+name: Caching Tiers, Eviction Policy, and Consistency Tradeoffs
+description: An architectural guide on implementing a multi-tiered caching strategy.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Create an architectural guide on implementing a multi-tiered caching strategy to improve application performance and reduce database load.
+
+      The guide should describe the purpose of different caching tiers, from client-side and CDN caching to in-memory distributed caches (like Redis or Memcached). It must analyze common eviction policies (e.g., LRU, LFU, TTL) and provide a clear framework for product teams to make intentional trade-offs between performance gains and data consistency by choosing the appropriate caching pattern (e.g., cache-aside, read-through, write-through).
+testData:
+  - input: {}
+    expected: ""
+evaluators: []

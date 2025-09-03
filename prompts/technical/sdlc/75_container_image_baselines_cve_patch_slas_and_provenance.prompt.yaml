@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Container Image Baselines, CVE Patch SLAs, and Provenance
+description: A security policy for all container images used within a production environment.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Establish a security policy for all container images used within our production environment. This policy must define a set of approved, hardened base images and a process for their continuous maintenance. It must set strict, non-negotiable SLAs for patching discovered Common Vulnerabilities and Exposures (CVEs) based on severity level. Furthermore, the policy should mandate the generation and verification of software provenance (e.g., using SLSA or Sigstore), creating a verifiable chain of custody for every image to secure our software supply chain.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []
