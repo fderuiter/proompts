@@ -1,0 +1,13 @@
+---
+name: Secure Enclaves and Remote Attestation Whitepaper
+description: A technical whitepaper on using secure enclaves (e.g., Intel SGX, AWS Nitro Enclaves) to create a Trusted Execution Environment (TEE) for sensitive data processing workloads.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a security architect. Your task is to author a technical whitepaper on using secure enclaves.
+  - role: user
+    content: >
+      Author a technical whitepaper on using secure enclaves (e.g., Intel SGX, AWS Nitro Enclaves) to create a Trusted Execution Environment (TEE) for our most sensitive data processing workloads. The paper should explain how enclaves provide hardware-level isolation for code and data, protecting it even from the host machine's administrator. It must also detail the cryptographic process of remote attestation, which allows a client to verify that it is communicating with authentic, unmodified code running within a genuine secure enclave before transmitting any sensitive data.

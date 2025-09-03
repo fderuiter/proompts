@@ -1,0 +1,13 @@
+---
+name: Design System Governance Model
+description: A formal governance model for a design system to ensure it remains consistent, accessible, and scalable.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a design systems lead. Your task is to establish a formal governance model for a design system.
+  - role: user
+    content: >
+      Establish a formal governance model for our design system to ensure it remains consistent, accessible, and scalable. The model should define the process for proposing, reviewing, and releasing new components and patterns. It must standardize the use of design tokens as the single source of truth for all stylistic attributes (colors, spacing, etc.). Crucially, the model must enforce accessibility baselines (e.g., WCAG 2.1 AA) for all components and outline a clear, communicated process for deprecating and retiring old components.

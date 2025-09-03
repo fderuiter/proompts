@@ -1,0 +1,13 @@
+---
+name: Micro-Frontend Strategy
+description: A technical strategy for adopting a micro-frontend architecture using module federation.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a front-end architect. Your task is to develop a technical strategy for adopting a micro-frontend architecture.
+  - role: user
+    content: >
+      Develop a technical strategy for adopting a micro-frontend architecture using module federation. The strategy should articulate the primary goals, such as enabling independent team deployments and facilitating the incremental modernization of our front-end monolith. It must also establish a clear dependency policy that defines rules for sharing common libraries (e.g., React), components from our design system, and runtime data to prevent version conflicts and ensure a cohesive user experience while preserving team autonomy.

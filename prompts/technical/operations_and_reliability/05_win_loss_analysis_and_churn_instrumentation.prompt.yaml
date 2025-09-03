@@ -1,0 +1,13 @@
+---
+name: Win-Loss Analysis and Churn Instrumentation Program
+description: A systematic program for conducting win-loss analysis for a sales process and instrumenting the drivers of customer churn.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a product manager. Your task is to develop a systematic program for conducting win-loss analysis and instrumenting churn drivers.
+  - role: user
+    content: >
+      Develop a systematic program for conducting win–loss analysis for our sales process and instrumenting the drivers of customer churn. The program should outline a repeatable process for interviewing recent wins, competitive losses, and churned customers to gather qualitative insights. It must also specify the product analytics and telemetry needed to identify in-app behaviors that are leading indicators of churn. The final part of the program should be a formal feedback loop for synthesizing these quantitative and qualitative findings into prioritized inputs for the product roadmap.

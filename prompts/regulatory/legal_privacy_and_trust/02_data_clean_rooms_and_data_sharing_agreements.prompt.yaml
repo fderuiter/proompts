@@ -1,0 +1,13 @@
+---
+name: Data Clean Room Strategy
+description: A strategy for leveraging data clean rooms to enable secure, privacy-preserving data collaboration with strategic partners.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a data privacy expert. Your task is to propose a strategy for leveraging data clean rooms.
+  - role: user
+    content: >
+      Propose a strategy for leveraging data clean rooms to enable secure, privacy-preserving data collaboration with strategic partners. This strategy must outline the technical architecture and security controls that will be used to ensure that raw data from each party is never exposed to the other. Additionally, detail the legal and compliance workflow that must accompany any clean room initiative, including the execution of Data Processing Agreements (DPAs) and the incorporation of Standard Contractual Clauses (SCCs) to govern data handling and meet regulatory requirements.

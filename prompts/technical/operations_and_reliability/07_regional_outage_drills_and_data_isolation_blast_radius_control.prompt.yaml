@@ -1,0 +1,13 @@
+---
+name: Regional Outage Drill Playbook
+description: A playbook and schedule for conducting regular regional outage drills.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a site reliability engineer (SRE). Your task is to develop a playbook and schedule for conducting regular regional outage drills.
+  - role: user
+    content: >
+      Develop a playbook and schedule for conducting regular regional outage drills. The playbook should detail the process for simulating the complete, unannounced failure of one of our cloud regions to rigorously test our automated failover procedures and team response. A key objective of these drills must be to verify our data isolation and blast-radius controls, proving that an outage in one region will not cascade and impact the availability or, more importantly, the data integrity of our services operating in other healthy regions.

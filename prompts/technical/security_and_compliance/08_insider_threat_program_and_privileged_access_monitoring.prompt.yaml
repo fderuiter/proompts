@@ -1,0 +1,13 @@
+---
+name: Insider Threat Program
+description: A formal insider threat program designed to mitigate risks originating from internal employees, contractors, and partners.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a security manager. Your task is to develop a formal insider threat program.
+  - role: user
+    content: >
+      Develop a formal insider threat program designed to mitigate risks originating from internal employees, contractors, and partners. The program should define its charter, governance structure, and the types of risky behaviors it will monitor. A core technical component of this program must be a robust system for privileged access monitoring. Detail how we will use a Privileged Access Management (PAM) solution to control, monitor, and audit all administrative sessions to critical systems, creating an irrefutable record of all privileged activity.

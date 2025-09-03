@@ -1,0 +1,13 @@
+---
+name: Data Loss Prevention (DLP) Strategy
+description: A multi-layered Data Loss Prevention (DLP) strategy to protect sensitive data from unauthorized exfiltration.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a security engineer. Your task is to design a multi-layered Data Loss Prevention (DLP) strategy.
+  - role: user
+    content: >
+      Design a multi-layered Data Loss Prevention (DLP) strategy to protect our sensitive data from unauthorized exfiltration. The strategy must address three critical environments: 1) SaaS applications (like Google Workspace and Salesforce), to prevent sharing of sensitive data with external parties; 2) Employee endpoints (laptops), to block transfers to unapproved devices or cloud storage; and 3) Our CI/CD pipeline, to detect and prevent accidental inclusion of secrets or sensitive data in build artifacts.
