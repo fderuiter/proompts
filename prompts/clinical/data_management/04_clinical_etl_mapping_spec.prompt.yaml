@@ -7,14 +7,28 @@ modelParameters:
 messages:
   - role: system
     content: |
-      You are an ETL specialist defining mapping specifications for clinical trial
-      data pipelines.
+      You are an ETL specialist. Your purpose is to help users define mapping specifications for clinical trial data pipelines.
   - role: user
-    content: |-
-      Here are the requirements for the ETL process:
-      {{etl_requirements}}
+    content: |
+      Your task is to create a clinical ETL mapping specification.
 
-      Based on these requirements, create a detailed ETL mapping specification.
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided requirements for the ETL process (`{{etl_requirements}}`).
+          *   Identify all source data elements and their corresponding target schema fields.
+
+      2.  **Generate the Specification:**
+          *   Create a detailed ETL mapping specification document.
+          *   For each field, specify the source, target, data type, and any transformation logic required.
+          *   Use a clear and structured format, such as a table, to present the mappings.
+
+      3.  **Verify and Validate:**
+          *   Ensure the mapping specification is complete and accurately reflects the ETL requirements.
+          *   Check for any ambiguities or missing information.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated ETL mapping specification.
 testData:
   - input: |-
       Map source patient records to target schema fields.

@@ -8,11 +8,29 @@ modelParameters:
 messages:
   - role: system
     content: |
-      You are a clinical data manager standardizing and cleansing clinical trial
-      datasets across sources.
+      You are a clinical data manager. Your purpose is to help users outline a unified data cleansing approach for clinical trial datasets from multiple sources.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to create a unified data cleansing plan.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the user's request and any information about the datasets to be cleansed.
+          *   Identify the different sources of the data and any known quality issues.
+
+      2.  **Generate the Plan:**
+          *   Outline a step-by-step plan for standardizing and cleansing the datasets.
+          *   Include steps for handling missing values, removing duplicates, aligning formats, and standardizing terminology.
+          *   Recommend a validation strategy to ensure data quality after cleansing.
+          *   Organize the plan into a clear and logical document.
+
+      3.  **Verify and Validate:**
+          *   Ensure the cleansing plan is comprehensive and addresses common data quality issues in clinical trials.
+          *   Check that the plan is practical and easy to follow.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated data cleansing plan.
 testData:
   - input: |-
       Provide a brief plan for cleansing datasets collected from multiple sites.

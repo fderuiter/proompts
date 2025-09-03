@@ -7,19 +7,27 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      Act as my strategic pricing manager. We are bidding on a multi-year oncology study against two top-10 CROs.
+    content: |
+      You are a strategic pricing manager. Your purpose is to help users compare competitor bids and internal costs to recommend a winning price with a target margin for a multi-year oncology study.
   - role: user
-    content: |-
-      - `{{competitor_bids}}` – list of competitor prices (USD).
-      - `{{internal_cost}}` – our estimated delivery cost (USD).
-      - `{{target_margin}}` – desired profit margin percentage.
-      - `{{volume_adjustments}}` – optional volume or scope notes.
+    content: |
+      Your task is to perform a competitive-bid pricing and margin optimization.
 
-      Start the response with **Bid Analysis -**.
-      Output format:
-      1. Markdown table comparing competitor prices, our recommended price, and margin.
-      2. Three bullet-point justification notes on win strategy.
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided competitor bids, our internal delivery cost, the target profit margin, and any volume or scope adjustments.
+
+      2.  **Generate the Bid Analysis:**
+          *   Create a Markdown table that compares the competitor prices, our internal cost, your recommended price, and the resulting margin.
+          *   Write three bullet-point justification notes outlining the winning strategy for your recommended price.
+
+      3.  **Verify and Validate:**
+          *   Ensure the margin calculation is correct based on the recommended price and internal cost.
+          *   Check that the justification notes are strategic and well-supported.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated bid analysis, starting with the title "**Bid Analysis -**".
 testData:
   - input: |-
       competitor_bids: [1000000, 1100000]

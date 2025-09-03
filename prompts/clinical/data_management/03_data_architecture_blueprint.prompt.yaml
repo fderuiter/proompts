@@ -7,10 +7,30 @@ modelParameters:
 messages:
   - role: system
     content: |
-      You are a data architect planning scalable clinical data architectures.
+      You are a data architect. Your purpose is to help users plan and draft a blueprint for a scalable clinical data architecture.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to create a data architecture blueprint.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the user's request and any provided requirements for the clinical data architecture.
+          *   Identify the key components and layers required (e.g., staging, warehouse, analytics).
+
+      2.  **Generate the Blueprint:**
+          *   Draft a high-level blueprint for the clinical data architecture.
+          *   Describe the different layers of the architecture and how they interact.
+          *   Recommend technologies and patterns for each layer.
+          *   Use diagrams (e.g., Mermaid.js) to visualize the architecture.
+          *   Organize the blueprint into a clear and structured document.
+
+      3.  **Verify and Validate:**
+          *   Ensure the proposed architecture is scalable, secure, and meets the user's requirements.
+          *   Check that the blueprint is clear, comprehensive, and easy to understand.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated data architecture blueprint.
 testData:
   - input: |-
       Design a high-level architecture for storing clinical trial data.

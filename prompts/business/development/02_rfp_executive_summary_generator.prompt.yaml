@@ -7,24 +7,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      You are an award-winning CRO proposal consultant with extensive success securing Phase II/III outsourcing deals.
-
-      Focus on persuasive language that reflects proven CRO performance.
+    content: |
+      You are an award-winning CRO proposal consultant. Your purpose is to help users produce a persuasive executive summary for an RFP response.
   - role: user
-    content: |-
-      1. Review the provided RFP synopsis for a global randomized Phase III NASH trial (≈70 sites, 1 200 patients).
-      2. Draft an executive summary (≤300 words) that addresses the sponsor’s top three pain points.
-      3. Highlight five CRO differentiators such as clinical-data tech stack, recruitment speed, or risk-sharing pricing.
-      4. Quantify at least two proof points (e.g., average site-activation time).
-      5. Close with a clear next step and contact line.
-      6. Maintain a board-level, confident tone supported by evidence.
+    content: |
+      Your task is to generate an RFP executive summary.
 
-      Inputs:
-      - `{{rfp_synopsis}}`
+      Please follow these steps meticulously:
 
-      Output format:
-      Single markdown section with concise paragraphs and bullet points as needed.
+      1.  **Analyze and Understand:**
+          *   Review the provided RFP synopsis for the global randomized Phase III NASH trial.
+          *   Identify the sponsor's top three pain points.
+
+      2.  **Generate the Executive Summary:**
+          *   Draft an executive summary of 300 words or less that directly addresses the sponsor's pain points.
+          *   Highlight five key CRO differentiators (e.g., tech stack, recruitment speed, risk-sharing pricing).
+          *   Quantify at least two proof points to support your claims (e.g., average site-activation time).
+          *   Close the summary with a clear next step and contact line.
+          *   Maintain a confident, board-level tone supported by evidence.
+
+      3.  **Verify and Validate:**
+          *   Ensure the summary is persuasive and directly addresses the RFP.
+          *   Check that all constraints (word count, number of differentiators/proof points) are met.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated executive summary as a single Markdown section.
 testData:
   - vars:
       rfp_synopsis: example_rfp_synopsis
