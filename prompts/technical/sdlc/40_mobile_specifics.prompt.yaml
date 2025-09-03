@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Mobile Specifics
+description: Create a mobile engineering guide.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Create a mobile engineering guide for <project>. Cover background tasks, permissions, battery and network constraints, push notifications, and crash reporting. Define store release flow, signing, feature flags, and A/B on mobile. Provide test devices matrix and rollout plan.
+testData:
+  - input: |-
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

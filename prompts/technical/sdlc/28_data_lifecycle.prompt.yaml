@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Data Lifecycle
+description: Create a data lifecycle plan.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Create a data lifecycle plan for <project>. Classify data, define lineage capture, and set quality SLAs. Provide retention, archival, and purge schedules. Add backup verification, reprocessing steps, and catalog metadata with owners.
+testData:
+  - input: |-
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

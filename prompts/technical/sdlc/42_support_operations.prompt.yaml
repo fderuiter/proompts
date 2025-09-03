@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Support Operations
+description: Produce a support and on-call handbook.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Produce a support and on-call handbook for <project>. Define rotations, paging rules, and MTTx targets. Add incident severity matrix, comms templates, and status page policy. Provide PIR template, defect triage rules, and SLA tiers.
+testData:
+  - input: |-
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

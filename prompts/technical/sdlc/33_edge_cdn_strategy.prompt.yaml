@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Edge/CDN Strategy
+description: Define an edge and CDN strategy.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Define an edge and CDN strategy for <project>. Specify caching keys, TTLs, and invalidation. Add regional routing, origin shielding, and failover. Provide rules for security headers, compression, and large asset handling. Include monitoring and rollback.
+testData:
+  - input: |-
+      project: A new e-commerce website
+    expected: ""
+evaluators: []

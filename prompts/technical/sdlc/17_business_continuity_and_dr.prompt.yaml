@@ -1,0 +1,18 @@
+# yamllint disable rule:line-length
+---
+name: Business Continuity and DR
+description: Create a business continuity and disaster recovery plan.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Create a business continuity and disaster recovery plan for <project>. Set RTO and RPO per service, backup strategy, replication topology, and failover order. Include restore test procedures, failback steps, and a dependency map. Provide a runbook per scenario and a quarterly drill schedule.
+testData:
+  - input: |-
+      project: A new e-commerce website
+    expected: ""
+evaluators: []
