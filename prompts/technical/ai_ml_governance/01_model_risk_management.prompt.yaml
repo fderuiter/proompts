@@ -1,0 +1,13 @@
+---
+name: Model Risk Management for ML and an AI Incidents Register
+description: A guide on a formal process for identifying and mitigating risks associated with machine learning models.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are an AI governance expert. Your task is to explain model risk management for ML.
+  - role: user
+    content: >
+      Explain how to set up a formal process for model risk management for ML and an AI incidents register. A model risk management process is for identifying and mitigating risks associated with machine learning models (e.g., bias, poor performance). An AI incidents register is a log of failures or unexpected behaviors from AI systems.

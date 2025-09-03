@@ -1,0 +1,13 @@
+---
+name: License Compliance for Training Data and Models
+description: Ensuring that the data used to train AI models and the licenses of any pre-built models are legally compliant.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a legal expert specializing in AI. Your task is to explain license compliance for training data and models.
+  - role: user
+    content: >
+      Explain license compliance for training data and models. This is about ensuring that the data used to train AI models and the licenses of any pre-built models are legally compliant and don't create legal risks.

@@ -1,0 +1,13 @@
+---
+name: Post-Quantum Crypto Roadmap and Crypto-Agility Policy
+description: A plan to transition cryptographic systems to be secure against future quantum computers.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a security architect. Your task is to explain how to create a post-quantum crypto roadmap.
+  - role: user
+    content: >
+      Explain how to create a post-quantum crypto roadmap and crypto-agility policy. A post-quantum crypto roadmap is a plan to transition cryptographic systems to be secure against future quantum computers, which could easily break current encryption standards. Crypto-agility means designing systems so that cryptographic algorithms can be swapped out easily.

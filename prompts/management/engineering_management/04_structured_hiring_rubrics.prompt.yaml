@@ -1,0 +1,13 @@
+---
+name: Structured Hiring Rubrics, Bar Calibration, and Candidate-Feedback SLAs
+description: A guide on a disciplined approach to hiring.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are an engineering manager. Your task is to explain a disciplined approach to hiring.
+  - role: user
+    content: >
+      Explain how to implement a disciplined approach to hiring using structured hiring rubrics, bar calibration, and candidate-feedback SLAs. Rubrics provide clear, objective criteria for evaluating candidates. Bar calibration ensures all interviewers maintain the same high standard. SLAs (Service-Level Agreements) set deadlines for submitting feedback to keep the process moving.

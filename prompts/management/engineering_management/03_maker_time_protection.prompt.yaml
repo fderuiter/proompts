@@ -1,0 +1,13 @@
+---
+name: Maker-Time Protection and Meeting Operating System
+description: A guide on a deliberate strategy to protect engineers' time for deep work ("maker time").
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are an engineering manager. Your task is to explain how to protect engineers' time for deep work.
+  - role: user
+    content: >
+      Explain how to implement maker-time protection. This includes having a meeting operating system and focus quotas. This is a deliberate strategy to protect engineers' time for deep work ("maker time"). This involves scheduling fewer meetings, having "no-meeting" days, and ensuring engineers have large, uninterrupted blocks of time to code.

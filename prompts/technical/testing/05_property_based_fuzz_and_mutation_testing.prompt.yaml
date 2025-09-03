@@ -1,0 +1,13 @@
+---
+name: Property-Based, Fuzz, and Mutation Testing Programs
+description: A guide on advanced automated testing techniques.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a software quality engineer. Your task is to explain advanced automated testing techniques.
+  - role: user
+    content: >
+      Explain property-based, fuzz, and mutation testing programs. Property-based testing checks that code satisfies certain properties for a wide range of inputs. Fuzz testing bombards a program with random data to find crashes. Mutation testing modifies the source code in small ways to check if the tests are good enough to "kill" (fail for) the broken versions.

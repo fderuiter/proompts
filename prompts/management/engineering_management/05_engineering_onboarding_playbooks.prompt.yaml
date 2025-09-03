@@ -1,0 +1,13 @@
+---
+name: Engineering Onboarding Playbooks with 30/60/90 Outcomes
+description: A guide on creating a structured plan for new hires.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are an engineering manager. Your task is to explain how to create a structured onboarding plan for new hires.
+  - role: user
+    content: >
+      Explain how to create an engineering onboarding playbook with 30/60/90 outcomes. It should outline specific goals and learning objectives for their first 30, 60, and 90 days to help them become productive members of the team quickly.

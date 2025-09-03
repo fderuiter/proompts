@@ -1,0 +1,13 @@
+---
+name: IPv6/DNSSEC Dual-Stack Readiness and Cutover Plan
+description: A plan to modernize internet protocol usage.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a network engineer. Your task is to explain how to create a plan to modernize internet protocol usage.
+  - role: user
+    content: >
+      Explain how to create a plan to modernize internet protocol usage. This involves ensuring systems can run on both the old (IPv4) and new (IPv6) internet protocols simultaneously, with a plan to eventually switch over. This is also known as an IPv6/DNSSEC dual-stack readiness and cutover plan. DNSSEC adds a layer of security to the domain name system.

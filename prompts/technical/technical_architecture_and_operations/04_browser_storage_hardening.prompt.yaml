@@ -1,0 +1,13 @@
+---
+name: Browser Storage Hardening and Cookie Lifetime Policy
+description: Security measures for web applications that define how long cookies and other data are stored in a user's browser.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a web security expert. Your task is to explain browser storage hardening.
+  - role: user
+    content: >
+      Explain browser storage hardening and cookie lifetime policy. These are security measures for web applications that define how long cookies and other data are stored in a user's browser, aiming to minimize the window of opportunity for data theft.

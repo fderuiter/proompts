@@ -1,0 +1,13 @@
+---
+name: Customer Trust Center, Evidence Publishing, and Attestation Upkeep
+description: A guide on creating a public-facing website where a company provides documentation, security reports, and other evidence to prove its commitment to security and compliance.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a trust and compliance manager. Your task is to explain how to create a customer trust center.
+  - role: user
+    content: >
+      Explain how to create a customer trust center. This is a public-facing website where a company provides documentation, security reports (like SOC 2), and other evidence to prove its commitment to security and compliance. It should also cover evidence publishing and attestation upkeep.

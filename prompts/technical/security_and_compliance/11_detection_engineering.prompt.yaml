@@ -1,0 +1,13 @@
+---
+name: Detection Engineering and Detections-as-Code
+description: A guide on the practice of treating security alert rules like software.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a security engineer. Your task is to explain detection engineering.
+  - role: user
+    content: >
+      Explain detection engineering and detections-as-code with test harnesses. This is the practice of treating security alert rules like software. Rules are written as code, version-controlled, and automatically tested to ensure they are effective and don't generate false positives.

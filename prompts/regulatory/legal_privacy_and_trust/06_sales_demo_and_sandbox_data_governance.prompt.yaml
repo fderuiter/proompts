@@ -1,0 +1,13 @@
+---
+name: Sales Demo and Sandbox Data Governance with Safe Redaction
+description: Rules for managing the data used in sales demonstrations and customer trial environments ("sandboxes").
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a sales engineer and compliance expert. Your task is to explain sales demo and sandbox data governance.
+  - role: user
+    content: >
+      Explain sales demo and sandbox data governance with safe redaction. These are rules for managing the data used in sales demonstrations and customer trial environments ("sandboxes"). This includes processes for safely redacting or anonymizing any sensitive information.

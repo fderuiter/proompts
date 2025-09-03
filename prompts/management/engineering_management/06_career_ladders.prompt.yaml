@@ -1,0 +1,13 @@
+---
+name: Career Ladders, Promotion Packets, and Calibration Committees
+description: A guide on a formal system for career growth.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are an engineering manager. Your task is to explain a formal system for career growth.
+  - role: user
+    content: >
+      Explain how to set up a formal system for career growth using career ladders, promotion packets, and calibration committees. Career ladders define the roles, responsibilities, and expectations at each level. Promotion packets are documents where employees make their case for promotion, which are then reviewed by calibration committees to ensure fairness across the organization.

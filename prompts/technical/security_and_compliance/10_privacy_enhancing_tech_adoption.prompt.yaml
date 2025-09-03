@@ -1,0 +1,13 @@
+---
+name: Privacy-Enhancing Tech Adoption (MPC, Homomorphic Encryption, TEEs)
+description: A guide on the use of advanced technologies to protect data while it's being processed.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+  - role: system
+    content: >
+      You are a security architect. Your task is to explain privacy-enhancing technologies.
+  - role: user
+    content: >
+      Explain the use of advanced privacy-enhancing technologies to protect data while it's being processed. Examples include Multi-Party Computation (MPC), Homomorphic Encryption (allows computation on encrypted data), and Trusted Execution Environments (TEEs) which are secure hardware areas.
