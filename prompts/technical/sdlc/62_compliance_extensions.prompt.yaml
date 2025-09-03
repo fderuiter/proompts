@@ -1,0 +1,17 @@
+# yamllint disable rule:line-length
+---
+name: Compliance Extensions
+description: An analysis of the engineering and procedural changes required to extend a platform's compliance scope.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: You are an asynchronous coding agent.
+  - role: user
+    content: |-
+      Conduct an analysis of the engineering and procedural changes required to extend our platform's compliance scope to achieve SOC2 Type II certification. Identify the key Trust Services Criteria (Security, Availability, Processing Integrity, Confidentiality, and Privacy) relevant to our business. Perform a gap analysis of our current architecture, security controls, and operational processes against SOC2 requirements. Provide a high-level project plan with actionable steps for remediation, evidence collection, and preparation for the audit period.
+testData:
+  - input: {}
+    expected: ""
+evaluators: []
