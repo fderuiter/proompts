@@ -1,0 +1,47 @@
+# yamllint disable rule:line-length
+---
+name: Implement Async Tasks and Scheduling with Celery
+description: Sets up a robust background task processing system using Celery and a message broker, including task scheduling, idempotency, retries, and structured logging.
+model: gpt-4-turbo
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |-
+      You are a backend engineer setting up a background task processing system.
+      Your task is to integrate Celery into a Django project, configure it for reliability, and define periodic tasks with Celery Beat.
+      The final implementation should be containerized and easy to run locally.
+  - role: user
+    content: |-
+      Goal: Implement reliable background processing.
+
+      Execution Plan:
+      1.  **Celery Setup:**
+          -   Install `celery` and the appropriate broker library (e.g., `redis`).
+          -   Create a `celery.py` instance in the main project configuration directory.
+          -   Configure Celery in `settings/base.py`, sourcing the broker URL from an environment variable.
+
+      2.  **Task Implementation:**
+          -   Define tasks in `tasks.py` files within Django apps.
+          -   Implement tasks to be idempotent, meaning they can be run multiple times without causing incorrect side effects.
+          -   Configure tasks with automatic retries (`max_retries`, `default_retry_delay`) for transient failures.
+
+      3.  **Scheduling (Celery Beat):**
+          -   Define a `CELERY_BEAT_SCHEDULE` in `settings/base.py` to run tasks on a schedule (e.g., using `crontab`).
+
+      4.  **Containerization:**
+          -   In `docker-compose.yml`, add `worker` and `beat` services.
+          -   These services should use the same application image as the `web` service but with different startup commands (`celery worker`, `celery beat`).
+          -   Ensure workers and beat start after the broker (e.g., `redis`) is ready.
+
+      Final Verification:
+      - A sample task can be executed via `.delay()` from the Django shell, and its logs are visible in the `worker` container.
+      - A periodic task runs on its defined schedule, with logs visible in the `worker` container.
+      - Worker processes show a "warm shutdown" message on `docker-compose stop`, indicating they are finishing work before exiting.
+testData:
+  - vars: {}
+    expected: "Plan to implement async tasks with Celery has been created."
+evaluators:
+  - name: "Asserts plan creation"
+    string:
+      startsWith: "Plan to implement async tasks with Celery"

@@ -1,0 +1,55 @@
+# yamllint disable rule:line-length
+---
+name: Bootstrap Production-Grade Django Project
+description: Creates a new, production-ready Django project from scratch, incorporating best practices for long-term maintainability, scalability, and security.
+model: gpt-4-turbo
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |-
+      You are an expert Django developer tasked with scaffolding a new project.
+      Your goal is to create a repository that is maintainable, scalable, and secure from day one.
+      Follow the execution plan step-by-step, creating files and running commands as specified.
+      Verify each step to ensure the project is being built correctly.
+      The final output should be a fully functional, containerized Django application that can be run with a single command.
+  - role: user
+    content: |-
+      Goal: Create a new Django project for long-term maintainability and growth.
+
+      Please use the following parameters to complete the task:
+      - Project name: {{project_name}}
+      - Python: {{python_version}}
+      - Package manager: {{package_manager}}
+      - DB: {{db_version}}
+      - Cache/broker: {{redis_version}}
+      - Hosting target: {{hosting_target}}
+
+      Execution Plan:
+      1.  **Scaffold Directory Structure:** Create the standard directory layout: `src/{{project_name}}`, `apps/`, `config/`, `scripts/`, `infra/`, `docs/`. Place `manage.py` inside the `src/` directory to keep the root clean.
+      2.  **Initialize Environment:** Set up the chosen package manager (`poetry` or `pip-tools`), initialize git, and create a `.gitignore` file.
+      3.  **Install Dependencies & Tooling:** Install Django, DRF, Celery, and other core libraries. Install and configure development tools like `black`, `isort`, `ruff`, `mypy`, `pytest`, `pre-commit`, `bandit`. Pin all dependencies.
+      4.  **Configure Django:** Run `django-admin startproject` and then refactor the settings into a `config/settings/` directory with `base.py`, `dev.py`, `test.py`, and `prod.py`. Use `django-environ` to manage secrets.
+      5.  **Create Core Apps:** Scaffold essential applications: `users`, `common`, `api`, `health`.
+      6.  **Containerize:** Create a multi-stage `Dockerfile` and a `docker-compose.yml` for all services (web, db, redis, worker, beat).
+      7.  **Set up CI/CD:** Create a basic GitHub Actions workflow (`.github/workflows/ci.yml`) for linting, testing, and type-checking.
+      8.  **Add Documentation:** Create a `README.md`, `Makefile` with common commands, `.env.example`, and an `ARCHITECTURE.md`.
+      9.  **Implement Security & API Defaults:** Configure security settings in `prod.py`. Install DRF and `drf-spectacular` and set up a versioned API endpoint with a health check.
+
+      Final Verification:
+      - The command `make setup && make up` should result in a healthy application at `http://localhost:8000/api/v1/health/`.
+      - The command `make test` must pass with coverage ≥90%.
+      - The command `python src/manage.py check --deploy` must pass for the production settings.
+testData:
+  - vars:
+      project_name: "acme_corp"
+      python_version: "3.12"
+      package_manager: "poetry"
+      db_version: "16"
+      redis_version: "7.2"
+      hosting_target: "AWS"
+    expected: "Plan to bootstrap Django project 'acme_corp' has been created."
+evaluators:
+  - name: "Asserts plan creation"
+    string:
+      startsWith: "Plan to bootstrap Django project"

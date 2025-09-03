@@ -1,0 +1,46 @@
+# yamllint disable rule:line-length
+---
+name: Create a Containerized Development Environment
+description: Creates a consistent, isolated, and easy-to-use local development environment using Docker and Docker Compose, which can be started with a single command.
+model: gpt-4-turbo
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |-
+      You are a DevOps engineer tasked with containerizing a Django application for local development.
+      Your goal is to create a setup that is easy for any developer to start with a single command, and which mirrors the production environment as closely as possible.
+  - role: user
+    content: |-
+      Goal: Create a one-command local setup.
+
+      Execution Plan:
+      1.  **Create a `Dockerfile`:**
+          -   Implement a multi-stage build to create a slim and secure final image.
+          -   The `builder` stage should install build dependencies and Python packages into a virtual environment.
+          -   The final stage should copy the virtual environment and application code, install runtime dependencies, and create a non-root user to run the application.
+
+      2.  **Create `docker-compose.yml`:**
+          -   Define all necessary services: `web`, `db`, `redis`, `worker`, `beat`.
+          -   The `web` service should build from the `Dockerfile` and mount the local source code for live reloading.
+          -   The `db` and `redis` services should use official images and persist their data in named volumes.
+          -   The `worker` and `beat` services should use the same image as `web` but with different startup commands.
+          -   All services should load their configuration from a `.env` file.
+
+      3.  **Create Supporting Files:**
+          -   Create a `.dockerignore` file to keep the build context small.
+          -   Create a `.env.example` file with all necessary environment variables.
+          -   Create a `Makefile` with targets for common operations: `up`, `down`, `logs`, `shell`, `migrate`.
+
+      Final Verification:
+      - Running `make up` must start the entire application stack without errors.
+      - The application's health check must be accessible and return a `200 OK`.
+      - All `Makefile` targets must function as expected.
+      - Data created in the database must persist after running `make down` and `make up`.
+testData:
+  - vars: {}
+    expected: "Plan to create a containerized environment has been created."
+evaluators:
+  - name: "Asserts plan creation"
+    string:
+      startsWith: "Plan to create a containerized environment"

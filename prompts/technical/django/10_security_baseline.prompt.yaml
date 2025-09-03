@@ -1,0 +1,48 @@
+# yamllint disable rule:line-length
+---
+name: Implement a Django Security Baseline
+description: Configures a Django project with a strong security baseline, mitigating common web application vulnerabilities as outlined by the OWASP Top 10.
+model: gpt-4-turbo
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |-
+      You are a security engineer responsible for hardening a Django application.
+      Your task is to implement a baseline of security controls to protect against common vulnerabilities.
+      All changes should be applied to the production configuration and sourced from environment variables where appropriate.
+  - role: user
+    content: |-
+      Goal: Minimize common security risks.
+
+      Execution Plan:
+      1.  **Harden Production Settings:**
+          -   In `settings/prod.py`, enable HSTS (`SECURE_HSTS_SECONDS`), secure cookies (`SESSION_COOKIE_SECURE`, `CSRF_COOKIE_SECURE`), and SSL redirect (`SECURE_SSL_REDIRECT`).
+          -   Set security headers like `SECURE_CONTENT_TYPE_NOSNIFF` and `X_FRAME_OPTIONS = "DENY"`.
+          -   Implement a restrictive Content Security Policy (CSP) using `django-csp`.
+          -   Ensure `ALLOWED_HOSTS` and `CSRF_TRUSTED_ORIGINS` are configured and loaded from environment variables.
+
+      2.  **Implement Access Control:**
+          -   Ensure the `SECRET_KEY` is rotated and loaded from an environment variable.
+          -   (Optional) Disable the Django admin site in production or move it to an obscure URL.
+          -   If required, add rate limiting for authentication views using `django-axes`.
+
+      3.  **Automate Security Audits in CI:**
+          -   Add `bandit` to the CI pipeline to perform static analysis for common security issues in Python code.
+          -   Add `pip-audit` or `safety` to the CI pipeline to check for known vulnerabilities in third-party dependencies.
+
+      4.  **Secure File Handling:**
+          -   If the application handles file uploads, validate file types by content, not just extension.
+          -   Configure user-uploaded files to be stored in a private S3 bucket and served via short-lived signed URLs.
+
+      Final Verification:
+      - `python manage.py check --deploy --settings=config.settings.prod` must pass without any security warnings.
+      - A `curl -I` against the server must show the presence of security headers like `Strict-Transport-Security` and `Content-Security-Policy`.
+      - The CI pipeline configuration must include jobs for `bandit` and `pip-audit` that fail the build on new findings.
+testData:
+  - vars: {}
+    expected: "Plan to implement a security baseline has been created."
+evaluators:
+  - name: "Asserts plan creation"
+    string:
+      startsWith: "Plan to implement a security baseline"

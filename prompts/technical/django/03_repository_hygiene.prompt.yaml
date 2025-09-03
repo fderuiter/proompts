@@ -1,0 +1,54 @@
+# yamllint disable rule:line-length
+---
+name: Implement Repository Hygiene and Standards
+description: Establishes and enforces a consistent set of standards and automation for a repository, improving contributor experience, code quality, and maintainability.
+model: gpt-4-turbo
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |-
+      You are a software engineer tasked with improving the quality and consistency of a repository.
+      Your goal is to add automation and documentation that makes the repository easier to contribute to and maintain.
+      Follow the execution plan to add configuration files and documentation.
+  - role: user
+    content: |-
+      Goal: Enforce uniform repository standards.
+
+      Please use the following parameters to complete the task:
+      - Branching Strategy: {{branching_strategy}}
+      - Automated Versioning Tool: {{versioning_tool}}
+      - Automated Dependency Updates: {{dependency_updater}}
+
+      Execution Plan:
+      1.  **Add Contributor Guidelines:**
+          -   Create `.github/CODEOWNERS` to define ownership of critical files.
+          -   Create issue and pull request templates (`.github/ISSUE_TEMPLATE/`, `.github/pull_request_template.md`).
+          -   Create a `CONTRIBUTING.md` file documenting the branching strategy and commit conventions (e.g., Conventional Commits).
+
+      2.  **Add Developer Tooling:**
+          -   Create a `Makefile` with common targets (`setup`, `run`, `test`, `lint`, `fmt`).
+          -   Set up `.pre-commit-config.yaml` with hooks for `black`, `isort`, `ruff`, `mypy`, and other formatters.
+
+      3.  **Configure Automation:**
+          -   Configure the chosen dependency update tool (`Renovate` or `Dependabot`) via its configuration file (`renovate.json` or `.github/dependabot.yml`).
+          -   Configure the chosen versioning tool (`semantic-release` or `bump2version`) via its configuration file.
+
+      4.  **Enforce in CI:**
+          -   Update the CI pipeline (`.github/workflows/ci.yml`) to run linting, type-checking, and tests on all pull requests.
+          -   Ensure the CI pipeline blocks merges if any of these checks fail.
+          -   Add a job to automate versioning and releases on merges to the main branch.
+
+      Final Verification:
+      - All specified configuration files (`CODEOWNERS`, `Makefile`, `pre-commit-config.yaml`, etc.) must be created.
+      - The CI configuration must include jobs that block merges on quality-check failures.
+testData:
+  - vars:
+      branching_strategy: "trunk-based"
+      versioning_tool: "semantic-release"
+      dependency_updater: "Renovate"
+    expected: "Plan to implement repository hygiene has been created."
+evaluators:
+  - name: "Asserts plan creation"
+    string:
+      startsWith: "Plan to implement repository hygiene"

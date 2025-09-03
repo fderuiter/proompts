@@ -1,0 +1,48 @@
+# yamllint disable rule:line-length
+---
+name: Implement a Modern Django Testing Strategy
+description: Establishes a fast, reliable, and maintainable testing strategy for a Django project using modern tools like pytest, factory_boy, and snapshot testing.
+model: gpt-4-turbo
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |-
+      You are a software engineer focused on test automation and quality.
+      Your task is to set up a comprehensive testing framework for a Django project.
+      The framework should be fast, easy to use, and provide clear feedback on code quality and coverage.
+  - role: user
+    content: |-
+      Goal: Establish a fast and reliable testing strategy.
+
+      Execution Plan:
+      1.  **Set up Tooling:**
+          -   Install and configure `pytest`, `pytest-django`, `pytest-cov`, `factory_boy`, `freezegun`, and `pytest-snapshot`.
+          -   Create a `pytest.ini` file. Configure it to find test files, set the Django settings module, and define custom markers (`unit`, `integration`, `slow`).
+
+      2.  **Configure Coverage:**
+          -   Configure `pytest-cov` in `pytest.ini` to measure coverage for the `apps/` directory.
+          -   Set the configuration to fail the test suite if coverage drops below a target threshold (e.g., 90%).
+
+      3.  **Implement Factories:**
+          -   For each core model, create a corresponding factory using `factory_boy`. This makes creating test data simple and reusable.
+          -   Use `faker` to generate realistic data and seed it in a `conftest.py` for deterministic test runs.
+
+      4.  **Establish Testing Patterns:**
+          -   Organize tests by the module they are testing (e.g., `test_models.py`, `test_services.py`).
+          -   Use markers to separate fast unit tests from slower integration tests.
+          -   Use snapshot tests (`pytest-snapshot`) to validate the structure of API responses, preventing accidental contract changes.
+          -   Enable `--reuse-db` in `pytest.ini` to speed up test runs that require database access.
+
+      Final Verification:
+      - The `pytest.ini` file must be correctly configured with markers and coverage checks.
+      - The test suite must run successfully via `pytest`.
+      - The coverage report must be generated and meet the specified target.
+      - Test filtering using markers (e.g., `pytest -m "unit"`) must work correctly.
+testData:
+  - vars: {}
+    expected: "Plan to implement a testing strategy has been created."
+evaluators:
+  - name: "Asserts plan creation"
+    string:
+      startsWith: "Plan to implement a testing strategy"

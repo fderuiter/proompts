@@ -1,0 +1,55 @@
+# yamllint disable rule:line-length
+---
+name: Design a Versioned API with Django Rest Framework
+description: Implements a new, versioned, and well-documented REST API using DRF, following best practices for structure, serialization, and schema generation.
+model: gpt-4-turbo
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |-
+      You are a backend engineer specializing in API design.
+      Your task is to implement a clean, versioned, and self-documented API using Django Rest Framework and `drf-spectacular`.
+      The implementation should follow best practices for separation of concerns, with business logic kept out of views.
+  - role: user
+    content: |-
+      Goal: Implement a versioned, documented API.
+
+      Please use the following parameters to complete the task:
+      - API Version: {{api_version}}
+      - Authentication Scheme: {{auth_scheme}}
+
+      Execution Plan:
+      1.  **Core Setup:**
+          -   Install `djangorestframework` and `drf-spectacular`.
+          -   Add them to `INSTALLED_APPS`.
+          -   Configure the default `REST_FRAMEWORK` settings in `settings/base.py`, including authentication, permissions, pagination, and throttling.
+
+      2.  **Versioning and Routing:**
+          -   Set up a versioned URL structure (e.g., `/api/v1/`).
+          -   Create a dedicated `urls.py` for the API version, using a `DefaultRouter` to register ViewSets.
+
+      3.  **Endpoint Implementation:**
+          -   Create `ModelSerializer` classes for each exposed model, explicitly defining fields to prevent data leakage.
+          -   Implement `ModelViewSet` classes for each resource.
+          -   Ensure ViewSets are lean and delegate all business logic to a separate service layer.
+          -   Define granular permission classes as needed.
+
+      4.  **API Schema and Documentation:**
+          -   Add `drf-spectacular`'s schema and UI endpoints (Swagger, Redoc) to the root URL configuration.
+          -   Add metadata (title, description, version) to the `SPECTACULAR_SETTINGS`.
+          -   Use docstrings and `@extend_schema` decorators to thoroughly document all endpoints.
+
+      Final Verification:
+      - The generated OpenAPI schema at `/api/schema/` must be valid.
+      - The Swagger UI at `/api/schema/swagger-ui/` must render correctly and show all endpoints.
+      - Contract tests should be written for critical endpoints to verify authentication, permissions, and response structure.
+testData:
+  - vars:
+      api_version: "v1"
+      auth_scheme: "JWT"
+    expected: "Plan to design a versioned API has been created."
+evaluators:
+  - name: "Asserts plan creation"
+    string:
+      startsWith: "Plan to design a versioned API"

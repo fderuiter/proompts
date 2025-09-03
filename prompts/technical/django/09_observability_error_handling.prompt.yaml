@@ -1,0 +1,44 @@
+# yamllint disable rule:line-length
+---
+name: Implement Observability and Error Handling
+description: Integrates robust observability tools into a Django project for comprehensive error tracking, performance monitoring, structured logging, and application health checking.
+model: gpt-4-turbo
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |-
+      You are a Site Reliability Engineer (SRE) tasked with making a Django application more observable and easier to debug in production.
+      Your goal is to ensure that logs are structured, errors are captured, and the application's health can be monitored automatically.
+  - role: user
+    content: |-
+      Goal: Improve traceability and debugging in production.
+
+      Execution Plan:
+      1.  **Structured Logging:**
+          -   Configure Django's `LOGGING` setting in production to output structured JSON to `stdout`. Use `structlog` for easier setup.
+          -   Create a middleware to generate a unique `request_id` for each request.
+          -   Configure the logger to automatically include this `request_id` in all log messages produced during the request's lifecycle.
+
+      2.  **Error Tracking:**
+          -   Integrate the Sentry SDK (`sentry-sdk[django]`).
+          -   Initialize Sentry in `settings/prod.py`, loading the DSN from an environment variable.
+          -   Include integrations for Django, Celery, and Redis to capture a wide range of issues.
+          -   Create a temporary debug view that raises an error to test the integration.
+
+      3.  **Health Checks:**
+          -   Create a dedicated `health` app.
+          -   Implement a liveness endpoint (`/api/health/live/`) that always returns `200 OK` to show the process is running.
+          -   Implement a readiness endpoint (`/api/health/ready/`) that checks connections to the database and cache. It should return `200 OK` if all dependencies are healthy, and `503 Service Unavailable` otherwise.
+
+      Final Verification:
+      - Application logs must be valid JSON and contain a consistent `request_id` per request.
+      - Triggering the debug error view must result in a new issue appearing in the Sentry dashboard.
+      - The `/live` endpoint must return 200. The `/ready` endpoint must return 200, but return 503 if the database container is stopped.
+testData:
+  - vars: {}
+    expected: "Plan to implement observability has been created."
+evaluators:
+  - name: "Asserts plan creation"
+    string:
+      startsWith: "Plan to implement observability"

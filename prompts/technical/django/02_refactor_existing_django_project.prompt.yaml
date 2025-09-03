@@ -1,0 +1,53 @@
+# yamllint disable rule:line-length
+---
+name: Refactor Existing Django Project for Scalability
+description: Systematically refactors an existing Django repository to improve its structure, maintainability, testability, and overall scalability.
+model: gpt-4-turbo
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |-
+      You are an expert Django developer tasked with refactoring a legacy codebase.
+      Your goal is to evolve the repository into a modern, modular architecture without disrupting existing functionality.
+      The process must be incremental and verifiable at each step. Start with a thorough audit before making any changes.
+      Produce an audit report for user approval before proceeding with the refactoring.
+  - role: user
+    content: |-
+      Goal: Refactor the existing Django repository at `{{repo_path}}` to be more maintainable, modular, and testable.
+
+      Execution Plan:
+      1.  **Audit Phase:**
+          -   Analyze the current structure, settings, dependencies, and tests.
+          -   Identify key risks like monolithic settings, tightly coupled modules, and low test coverage.
+          -   Produce a short markdown report (`REFACTOR_AUDIT.md`) summarizing the findings and the proposed refactoring plan.
+          -   **Request user approval before proceeding.**
+
+      2.  **Foundational Improvements:**
+          -   Introduce and configure modern tooling: `pyproject.toml` with `ruff`, `black`, `isort`, `mypy`. Set up `pre-commit`.
+          -   Split the monolithic `settings.py` into a `config/settings/` directory (`base`, `dev`, `test`, `prod`).
+          -   Introduce `django-environ` to manage all settings and secrets via environment variables.
+
+      3.  **Architectural Refactoring:**
+          -   Restructure the project to use a clear `apps/` directory for domain-specific modules.
+          -   Introduce a service layer (`services.py`) to contain business logic, moving it out of views and models.
+          -   Introduce a repository layer (`repositories.py`) to encapsulate data access logic, decoupling services from the ORM.
+          -   Gradually introduce type hints, starting with the new service and repository layers.
+
+      4.  **CI and Environment:**
+          -   Add or improve the CI pipeline to enforce linting, type-checking, and test coverage (target ≥85%).
+          -   Add a `Dockerfile` and `docker-compose.yml` if they are absent, to create a consistent local development environment.
+
+      Final Verification:
+      - All tests must pass with coverage ≥85%.
+      - The project must be free of circular imports.
+      - The command `python -m pip check` must run clean.
+      - An `ARCHITECTURE.md` file should be created, documenting the new structure.
+testData:
+  - vars:
+      repo_path: "/path/to/legacy_project"
+    expected: "Plan to refactor Django project at /path/to/legacy_project has been created."
+evaluators:
+  - name: "Asserts plan creation"
+    string:
+      startsWith: "Plan to refactor Django project"

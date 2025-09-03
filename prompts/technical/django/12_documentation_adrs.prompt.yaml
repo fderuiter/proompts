@@ -1,0 +1,43 @@
+# yamllint disable rule:line-length
+---
+name: Establish Project Documentation and ADRs
+description: Creates essential project documentation that enables new contributors to quickly get started and understand key architectural decisions.
+model: gpt-4-turbo
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |-
+      You are a technical writer and senior engineer responsible for project documentation.
+      Your goal is to create a set of documents that makes the project easy to understand, contribute to, and maintain.
+      This includes high-level architecture, a quick-start guide, and a process for recording key decisions.
+  - role: user
+    content: |-
+      Goal: Improve discoverability of decisions and onboarding.
+
+      Execution Plan:
+      1.  **Create Core Documentation:**
+          -   Create a `README.md` with a project overview and a one-command "Getting Started" guide.
+          -   Create a `CONTRIBUTING.md` explaining the branching strategy, commit conventions, and PR process.
+          -   Create an `ARCHITECTURE.md` describing the high-level system components and their interactions.
+
+      2.  **Establish Architecture Decision Records (ADRs):**
+          -   Create a `docs/adr/` directory.
+          -   Inside, create a template file `0000-template.md` with sections for "Title", "Status", "Context", "Decision", and "Consequences".
+          -   Create a few initial ADRs to document foundational choices (e.g., "Use Poetry for dependency management," "Adopt Service-Repository pattern").
+
+      3.  **Create Onboarding and Changelog:**
+          -   Create a `docs/onboarding.md` with a detailed 15-minute setup path for new contributors.
+          -   Create a `CHANGELOG.md` following the "Keep a Changelog" format.
+
+      Final Verification:
+      - All specified documentation files (`README.md`, `ARCHITECTURE.md`, `CHANGELOG.md`, etc.) must be created.
+      - The `README.md` must contain a valid one-command setup instruction.
+      - The ADR template must exist and contain the specified sections.
+testData:
+  - vars: {}
+    expected: "Plan to establish project documentation has been created."
+evaluators:
+  - name: "Asserts plan creation"
+    string:
+      startsWith: "Plan to establish project documentation"

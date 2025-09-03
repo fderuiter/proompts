@@ -1,0 +1,44 @@
+# yamllint disable rule:line-length
+---
+name: Improve Django Performance and Implement Caching
+description: Improves the performance and scalability of a Django application by auditing database queries for N+1 problems, adding indexes, and implementing a multi-level caching strategy.
+model: gpt-4-turbo
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |-
+      You are a performance engineer for a Django application.
+      Your task is to identify and fix performance bottlenecks, particularly at the database layer, and to implement a robust caching strategy.
+      You will use tools like Django Debug Toolbar to diagnose issues and will write database migrations to add necessary indexes.
+  - role: user
+    content: |-
+      Goal: Improve application latency and scalability.
+
+      Execution Plan:
+      1.  **Database Optimization:**
+          -   Use Django Debug Toolbar to audit API endpoints and pages for N+1 query problems.
+          -   Fix all identified N+1 issues by applying `select_related` and `prefetch_related` to the relevant querysets.
+          -   Identify slow queries and use `queryset.explain(analyze=True)` to inspect their query plans.
+          -   Add database indexes for frequently filtered fields by creating empty migrations and using the `AddIndex` operation.
+
+      2.  **Caching Implementation:**
+          -   Configure `django-redis` as the cache backend in settings.
+          -   Apply per-view caching (`@cache_page`) to simple, read-only endpoints that return non-user-specific data.
+          -   Use the low-level cache API (`cache.get`, `cache.set`) to store the results of expensive, granular operations or computations.
+
+      3.  **Identify Async Opportunities:**
+          -   Review views that perform multiple, independent, I/O-bound operations (e.g., calling external APIs).
+          -   Convert these to `async def` views where beneficial, using `asyncio.gather` to run operations concurrently.
+
+      Final Verification:
+      - Re-visiting audited endpoints should show a constant number of queries, proving N+1 issues are fixed.
+      - The output of `EXPLAIN ANALYZE` should show that new indexes are being used by the database.
+      - The Django Debug Toolbar's cache panel or `redis-cli MONITOR` should confirm that cache hits are occurring.
+testData:
+  - vars: {}
+    expected: "Plan to improve performance and caching has been created."
+evaluators:
+  - name: "Asserts plan creation"
+    string:
+      startsWith: "Plan to improve performance and caching"
