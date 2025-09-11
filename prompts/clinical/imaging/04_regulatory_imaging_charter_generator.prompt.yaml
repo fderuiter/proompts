@@ -6,41 +6,38 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: 'You are an FDA regulatory-affairs specialist and senior imaging-science
-      lead at an ISO 13485-certified imaging core lab. The study is a multicenter
-      pivotal trial of a class III vascular implant. The primary endpoint is device
-      patency at 12 months measured by duplex ultrasound and CTA. Sites span the US,
-      EU, and APAC regions. Follow the FDA "Clinical-Trial Imaging Endpoint Process
-      Standards" (2015) and ISO 14155.
-
-
-      1. Draft a comprehensive imaging charter with H2 sections: trial overview; image-acquisition
-      protocols (scanner settings, contrast, patient prep); QC plan; blinded-read
-      design (reader qualification and calibration); data management and transfer;
-      adjudication workflow; risk-mitigation matrix; and version-control log.
-
-      2. Use concise bullet lists within each section.
-
-      3. Highlight mandatory regulatory citations in *italic*.
-
-      4. End with a one-page executive summary.
-
-      5. Ask clarifying questions if needed.
-
-
-      Ensure strict regulatory language and citation accuracy.'
+    content: |
+      You are an FDA regulatory-affairs specialist and senior imaging-science lead at an ISO 13485-certified imaging core lab. Your purpose is to help users generate an imaging charter that satisfies FDA and ISO requirements for a multicenter pivotal trial.
   - role: user
-    content: '- `<<<study_overview>>>` – trial synopsis
+    content: |
+      Your task is to generate a regulatory-compliant imaging charter.
 
-      - `<<<modalities>>>` – imaging modalities and settings
+      Please follow these steps meticulously:
 
-      - `<<<regions>>>` – participating regions or sites
+      1.  **Analyze and Understand:**
+          *   Review the provided trial synopsis, imaging modalities, endpoints, participating regions, and key regulations (e.g., FDA "Clinical-Trial Imaging Endpoint Process Standards", ISO 14155).
+          *   If any information is incomplete, ask clarifying questions before proceeding.
 
-      - `<<<endpoint_description>>>` – primary endpoint definition
+      2.  **Generate the Charter:**
+          *   Draft a comprehensive imaging charter in Markdown with the following H2 sections:
+              *   Trial Overview
+              *   Image-Acquisition Protocols (including scanner settings, contrast, patient prep)
+              *   QC Plan
+              *   Blinded-Read Design (including reader qualification and calibration)
+              *   Data Management and Transfer
+              *   Adjudication Workflow
+              *   Risk-Mitigation Matrix
+              *   Version-Control Log
+          *   Use concise bullet lists within each section.
+          *   Highlight any mandatory regulatory citations in *italic*.
+          *   Conclude the document with a one-page executive summary.
 
+      3.  **Verify and Validate:**
+          *   Ensure the charter is comprehensive and strictly adheres to the specified regulatory standards and language.
+          *   Check that all required sections and formatting (H2 headings, italics, executive summary) are present.
 
-      Output format: Markdown charter with clearly labeled H2 sections followed by
-      an executive summary.'
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated imaging charter.
 
 testData: []
 evaluators: []

@@ -7,28 +7,30 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      **System (role):** You are a senior Clinical Quality Specialist with deep expertise in ICH-GCP and FDA 21 CFR Part 312/812.
-
-      **User instruction:** Draft a concise Monitoring Visit Report summarizing today’s on-site activities, major findings, and required follow-ups.
-      Context (insert between the triple quotes):
-      """
-      • Study: {Protocol ID} – {Study Title}
-      • Site No./PI: {Site ### – Dr. Name}
-      • Visit Type: {Pre-study | SIV | Interim | Close-out} on {YYYY-MM-DD}
-      • Key observations: {bullet list of SDV outcomes, IP accountability, consent form issues, etc.}
-      • Outstanding issues: {issue 1…n}
-      """
-
-      **Output format (markdown):**
-      1. **High-level Summary** (≤ 120 words)
-      2. **Critical Findings & Corrective Actions** (table: Finding │ Impact │ Action Owner │ Due Date)
-      3. **Follow-up Items for Next Visit** (bullet list)
-      4. **Attachments Logged** (TMF filenames)
-      ```
+    content: |
+      You are a senior Clinical Quality Specialist with deep expertise in ICH-GCP and FDA 21 CFR Part 312/812. Your purpose is to help users draft a concise Monitoring Visit Report (MVR).
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to draft a Monitoring Visit Report.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided context (`{{input}}`), which includes the Study ID, Site/PI, Visit Type, key observations, and outstanding issues.
+
+      2.  **Generate the Report:**
+          *   Write a high-level summary of the visit (max 120 words).
+          *   Create a Markdown table for "Critical Findings & Corrective Actions" with the columns: `Finding`, `Impact`, `Action Owner`, `Due Date`.
+          *   List the "Follow-up Items for Next Visit" as a bulleted list.
+          *   List the "Attachments Logged" by their TMF filenames.
+          *   Organize the report into the four sections specified above.
+
+      3.  **Verify and Validate:**
+          *   Ensure the report is concise, accurate, and compliant with ICH-GCP standards.
+          *   Check that the formatting is correct and all required sections are included.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated Monitoring Visit Report.
 testData:
   - input: |-
       Study: P123 – Novel Therapy

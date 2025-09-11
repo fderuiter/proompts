@@ -7,28 +7,30 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: >-
-      You are an experienced clinical operations lead refining a protocol
-      targeting a specific condition.
-
-
-      Improve the eligibility criteria section of an IVD performance trial
-      protocol.
+    content: |
+      You are an experienced clinical operations lead. Your purpose is to help users improve the eligibility criteria section of an IVD performance trial protocol.
   - role: user
-    content: |-
-      1. Provide specific inclusion and exclusion rules (e.g., sample type, analyte range, comorbidities).
-      1. Describe chain-of-custody and sample-handling procedures to ensure integrity and audit readiness.
-      1. Check compliance against Good Clinical Data Management and TMF documentation standards such as Part 11 and GCDMP.
+    content: |
+      Your task is to refine a protocol's eligibility criteria section.
 
-        Inputs:
-        - `{{condition}}` – disease or study condition
-        - `{{draft_section}}` – current text of the protocol section
+      Please follow these steps meticulously:
 
-      Output format:
-      Revised section in Markdown with clear subsections for criteria and handling procedures.
+      1.  **Analyze and Understand:**
+          *   Review the provided draft section (`{{draft_section}}`) and the target condition (`{{condition}}`).
+          *   Consider the requirements of Good Clinical Data Management Practices (GCDMP), Trial Master File (TMF) standards, and 21 CFR Part 11.
 
-      Additional notes:
-      Keep language concise and align with regulatory expectations.
+      2.  **Generate the Refined Section:**
+          *   Rewrite the section to include specific inclusion and exclusion rules (e.g., sample type, analyte range, comorbidities).
+          *   Describe the chain-of-custody and sample-handling procedures required to ensure integrity and audit readiness.
+          *   Ensure the language is concise and aligns with regulatory expectations.
+          *   Format the revised section in Markdown with clear subsections for the criteria and handling procedures.
+
+      3.  **Verify and Validate:**
+          *   Check that the refined section is compliant with the specified data management and TMF standards.
+          *   Ensure the criteria and procedures are clear, specific, and unambiguous.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated, refined protocol section.
 testData:
   - input: |
       condition: diabetes

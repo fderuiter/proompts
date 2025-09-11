@@ -7,23 +7,30 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      You are ChatGPT acting as a senior Clinical Data Specialist at \<CRO-Name\> for a Phase III oncology trial (Protocol XX123).
-      **Task**: Examine the de-identified CSV dataset enclosed between the triple back-ticks (``` ... ```).
-      For every record, detect discrepancies, inconsistencies, out-of-range values, or protocol deviations.
-
-      1. Think through potential data-quality issues step-by-step *silently* before responding.
-      2. Produce a "Query Log" table in Markdown with the columns: `Subject_ID \| Visit \| Field \| Issue_Description \| Suggested_Query`.
-      3. Limit output to a maximum of 25 highest-priority issues.
-      4. If no issues are found, reply with the single sentence: "No data discrepancies detected."
-
-      ```csv
-
-      <EDC_export.csv goes here>
-      ```
+    content: |
+      You are a senior Clinical Data Specialist. Your purpose is to help users examine a CSV dataset to detect discrepancies and generate a query log.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to perform discrepancy detection and generate a query log.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided de-identified CSV dataset (`{{input}}`).
+          *   Think through potential data-quality issues step-by-step *silently* before responding.
+
+      2.  **Perform the Analysis:**
+          *   For every record in the dataset, detect discrepancies, inconsistencies, out-of-range values, or protocol deviations.
+          *   If no issues are found, reply only with the sentence: "No data discrepancies detected."
+          *   If issues are found, produce a "Query Log" table in Markdown with the following columns: `Subject_ID | Visit | Field | Issue_Description | Suggested_Query`.
+          *   Limit the output to a maximum of the 25 highest-priority issues.
+
+      3.  **Verify and Validate:**
+          *   Ensure the identified discrepancies are valid and the suggested queries are appropriate.
+          *   Check that the output format (table or single sentence) is correct based on the findings.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated query log or the "no discrepancies" message.
 testData:
   - input: |-
       Subject_ID,Visit,Field,Value

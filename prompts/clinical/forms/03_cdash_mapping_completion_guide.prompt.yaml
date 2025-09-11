@@ -6,15 +6,34 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: "• CDASH variable name  \n  • SDTM target domain.variable  \n  • Plain-language
-      completion instruction (≤40 words)  \n  • Controlled terminology / units  \n\
-      \  • Allowed query logic (range checks, missing-data rules).\n- At the end,
-      provide a one-page “Top 10 data-entry tips” bullet list.\n- Output in CSV-ready
-      Markdown:\n  Variable | Domain | Instruction | Terminology/Units | Edit-Check\n\
-      - Think through the mapping logic first, then write the table."
+    content: |
+      You are a clinical data standards expert. Your purpose is to help users create a CDASH mapping and completion guide for a list of variables.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to create a CDASH mapping and completion guide.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided list of variables (`{{input}}`).
+          *   Think through the mapping logic for each variable before generating the output.
+
+      2.  **Generate the Guide:**
+          *   Create a CSV-ready Markdown table with the columns: `Variable`, `Domain`, `Instruction`, `Terminology/Units`, and `Edit-Check`.
+          *   For each variable provided, populate the table with the following information:
+              *   The CDASH variable name.
+              *   The target SDTM domain and variable.
+              *   A plain-language completion instruction (max 40 words).
+              *   The controlled terminology or units.
+              *   The allowed query logic (e.g., range checks, missing-data rules).
+          *   After the table, provide a one-page "Top 10 data-entry tips" as a bulleted list.
+
+      3.  **Verify and Validate:**
+          *   Ensure the mapping and completion guidance is accurate and conforms to CDASH and SDTM standards.
+          *   Check that the output format (Markdown table and bulleted list) is correct.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated CDASH mapping and completion guide.
 testData:
   - input: |
       HEIGHT

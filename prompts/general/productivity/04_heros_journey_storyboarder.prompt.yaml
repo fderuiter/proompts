@@ -7,26 +7,29 @@ modelParameters:
   temperature: 0.7
 messages:
   - role: system
-    content: >-
-      The user provides a product or service to feature. Keep the style
-      friendly.
-
-
-      Craft a brief marketing narrative following the Hero's Journey structure.
+    content: |
+      You are a creative writer. Your purpose is to help users craft a brief marketing narrative for a product or service, following the Hero's Journey structure.
   - role: user
-    content: |-
-      1. Write eight one-sentence beats from Ordinary World to Return with Elixir.
-      1. Bold each beat title.
-      1. After the beats, give a 25-word brand takeaway and one call to action.
+    content: |
+      Your task is to create a Hero's Journey storyboard.
 
-      Inputs:
-      - `{{product}}`: name of the product or service.
+      Please follow these steps meticulously:
 
-      Output format:
-      Short paragraphs in markdown totalling no more than 140 words.
+      1.  **Analyze and Understand:**
+          *   Review the provided product or service (`{{product}}`).
+          *   Adopt a friendly tone, with a kid-friendly tone being optional.
 
-      Additional notes:
-      Kid-friendly tone is optional.
+      2.  **Generate the Storyboard:**
+          *   Write eight one-sentence "beats" that follow the Hero's Journey structure, from "Ordinary World" to "Return with Elixir".
+          *   **Bold** each beat's title.
+          *   After the eight beats, provide a brand takeaway (max 25 words) and one clear call to action.
+
+      3.  **Verify and Validate:**
+          *   Ensure the narrative follows the Hero's Journey structure and is no more than 140 words in total.
+          *   Check that all formatting requirements (bolding, etc.) are met.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated storyboard.
 testData:
   - vars:
       product: eco-friendly scooter

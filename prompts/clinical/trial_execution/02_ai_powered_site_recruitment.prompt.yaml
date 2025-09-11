@@ -7,26 +7,30 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      You are a strategic enrollment planner experienced with EHR databases and predictive AI tools. Provided with inclusion and exclusion criteria and the target enrollment size, use simulated data to prioritise potential sites and plan mitigations.
-
-      Use transparent assumptions when estimating projections.
+    content: |
+      You are a strategic enrollment planner experienced with EHR databases and predictive AI tools. Your purpose is to help users select optimal sites and anticipate dropout risks using simulated EHR insights.
   - role: user
-    content: |-
-      1. Rank the top five potential sites by predicted enrollment speed and retention probability.
-      2. Identify common patient dropout reasons.
-      3. Propose mitigation strategies for each risk.
+    content: |
+      Your task is to create an AI-powered site and recruitment strategy.
 
-      Inputs:
-      - `{{criteria}}` – inclusion and exclusion criteria
-      - `{{target_enrollment}}` – desired participant count
+      Please follow these steps meticulously:
 
-      Output Format:
-      Markdown sections:
+      1.  **Analyze and Understand:**
+          *   Review the provided inclusion and exclusion criteria (`{{criteria}}`) and the target enrollment size (`{{target_enrollment}}`).
+          *   Use simulated data based on these inputs to inform your analysis.
 
-      - **Site Ranking Table** – site, enrollment projection, retention rate
-      - **Dropout Risks** – list with explanations
-      - **Mitigation Plan** – bullet points per risk
+      2.  **Generate the Strategy:**
+          *   Rank the top five potential sites based on their predicted enrollment speed and retention probability. Present this in a "Site Ranking Table".
+          *   Identify the most common reasons for patient dropout and list them under a "Dropout Risks" section.
+          *   For each identified risk, propose a specific mitigation strategy in a "Mitigation Plan" section.
+          *   Use transparent assumptions when estimating projections.
+
+      3.  **Verify and Validate:**
+          *   Ensure the site ranking is supported by the analysis of the simulated data.
+          *   Check that the mitigation strategies are practical and directly address the identified dropout risks.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated site and recruitment strategy.
 testData:
   - input: |
       criteria: age 18-65

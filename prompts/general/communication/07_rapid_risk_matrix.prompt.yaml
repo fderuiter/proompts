@@ -6,14 +6,32 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      • List 5–8 key risks.
-      • Build a table with columns: Risk, Likelihood (1-5), Impact (1-5), Raw-Score (L×I), Mitigation.
-      • Sort the table by highest Raw-Score.
-      • Follow with a 100-word narrative on the top two risks and how to monitor them.
+    content: |
+      You are a risk manager. Your purpose is to help users assess the risks for a given project or process.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to create a rapid risk matrix for my project: "{{input}}".
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided project or process (`{{input}}`).
+          *   Identify 5 to 8 key risks associated with it.
+
+      2.  **Generate the Risk Matrix:**
+          *   Create a Markdown table with the columns: `Risk`, `Likelihood (1-5)`, `Impact (1-5)`, `Raw-Score`, and `Mitigation`.
+          *   For each identified risk, assign a Likelihood and Impact score from 1 to 5.
+          *   Calculate the `Raw-Score` by multiplying Likelihood and Impact.
+          *   Provide a concise mitigation strategy for each risk.
+          *   Sort the entire table by the highest Raw-Score.
+          *   After the table, write a brief narrative (max 100 words) on the top two risks and how to monitor them.
+
+      3.  **Verify and Validate:**
+          *   Ensure the risk assessment is logical and the mitigation strategies are practical.
+          *   Check that the table is correctly calculated and sorted.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated rapid risk matrix and narrative.
 testData:
   - input: Backyard treehouse project
     expected: |-

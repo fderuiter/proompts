@@ -7,18 +7,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      1. Use this checklist: protocol adherence, IP accountability, source-CRF reconciliation, AE/SAE reporting, action-items follow-up, signature status, and overall tone.
-      2. Flag any omissions or vague language; quote the section header and suggest precise revisions.
-      3. Highlight any findings that require escalation to a CAPA.
-      4. Return feedback in **two blocks**:
-         • “Summary of Critical Gaps” – bullet list (≤ 200 words)
-         • “Line-by-Line Redlines” – markdown table (`Section | Current Text | Recommended Edit`).
-         **Format**: Summary block + markdown table.
-         **Reasoning**: Think step-by-step, but hide your chain-of-thought.
+    content: |
+      You are a Senior Monitoring Oversight Lead. Your purpose is to help users conduct a quality review of a draft Monitoring Visit Report (MVR).
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to perform a quality critique of a Monitoring Visit Report (MVR).
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided draft MVR (`{{input}}`).
+          *   Use the following checklist for your review: protocol adherence, IP accountability, source-CRF reconciliation, AE/SAE reporting, action-items follow-up, signature status, and overall tone.
+
+      2.  **Generate the Critique:**
+          *   Flag any omissions or vague language in the report. For each issue, quote the section header and suggest a precise revision.
+          *   Highlight any findings that require escalation to a Corrective and Preventive Action (CAPA).
+          *   Organize your feedback into two blocks:
+              1.  A "Summary of Critical Gaps" as a bulleted list (max 200 words).
+              2.  A "Line-by-Line Redlines" section in a Markdown table with the columns: `Section | Current Text | Recommended Edit`.
+
+      3.  **Verify and Validate:**
+          *   Ensure your critique is thorough and covers all items in the checklist.
+          *   Check that the suggested revisions are clear, precise, and professional.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated MVR quality critique. Do not show your chain-of-thought.
 testData:
   - input: |-
       section: AE/SAE reporting

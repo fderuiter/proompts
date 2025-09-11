@@ -7,27 +7,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      You are a clinical operations expert with extensive experience in protocol design and risk management. Review the protocol to identify operational bottlenecks such as site activation delays, complex eligibility requirements or data collection challenges. Then simulate outcomes under two scenarios: reducing eligibility criteria by 20 % and consolidating data collection points by 30 %.
-
-      Use data‑driven assumptions when estimating impact.
+    content: |
+      You are a clinical operations expert with extensive experience in protocol design and risk management. Your purpose is to help users evaluate a draft clinical protocol and simulate the effects of simplifying key elements.
   - role: user
-    content: |-
-      1. Summarize the main operational bottlenecks.
-      2. For Scenario 1, estimate the impact on timeline, enrollment rate and budget.
-      3. For Scenario 2, estimate the same metrics.
-      4. Provide recommendations with quantified justification for each change.
+    content: |
+      Your task is to perform a protocol optimization and risk simulation.
 
-      Inputs:
-      - `{{draft_protocol}}` – proposed protocol text
+      Please follow these steps meticulously:
 
-      Output Format:
-      Markdown sections:
+      1.  **Analyze and Understand:**
+          *   Review the provided draft clinical protocol (`{{draft_protocol}}`).
+          *   Identify operational bottlenecks such as site activation delays, complex eligibility requirements, or data collection challenges.
 
-      - **Section A:** Bottlenecks
-      - **Section B:** Scenario 1 – metrics and narrative
-      - **Section C:** Scenario 2 – metrics and narrative
-      - **Section D:** Recommendations
+      2.  **Generate the Simulation and Analysis:**
+          *   Summarize the main operational bottlenecks you identified.
+          *   **Scenario 1:** Simulate the outcome of reducing eligibility criteria by 20%. Estimate the impact on the trial's timeline, enrollment rate, and budget.
+          *   **Scenario 2:** Simulate the outcome of consolidating data collection points by 30%. Estimate the impact on the same metrics.
+          *   Provide clear recommendations with quantified justification for each proposed change.
+          *   Organize the final report into four Markdown sections: "Bottlenecks", "Scenario 1", "Scenario 2", and "Recommendations".
+
+      3.  **Verify and Validate:**
+          *   Ensure the analysis is based on data-driven assumptions.
+          *   Check that the report is well-structured and follows the requested format.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated protocol optimization and risk simulation report.
 testData:
   - input: |
       Draft includes 12 visits and 50 inclusion criteria.

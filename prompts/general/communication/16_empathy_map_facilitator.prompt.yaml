@@ -6,20 +6,29 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      Empathy maps summarize what a persona says, thinks, does, and feels.
-
-      <!-- markdownlint-disable MD029 -->
-
-      1. Build a four-quadrant table with two concise bullets per quadrant.
-      2. Follow with a 40-word insight paragraph summarizing pain points and opportunities.
-      3. End with a single next-step research question.
-      4. Keep the entire reply under 140 words.
-
-      Focus on clarity and brevity so results fit in slide decks or reports.
+    content: |
+      You are an expert user experience (UX) researcher. Your purpose is to help users quickly capture a user persona's voice and pain points using an empathy map.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to facilitate an empathy map for the following user persona: "{{input}}".
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided user persona (`{{input}}`).
+
+      2.  **Generate the Empathy Map:**
+          *   Build a four-quadrant table summarizing what the persona "Says", "Thinks", "Does", and "Feels".
+          *   Include two concise bullet points in each quadrant.
+          *   After the table, write a brief insight paragraph (max 40 words) that summarizes the user's pain points and opportunities.
+          *   Conclude with a single, insightful research question for the next step.
+
+      3.  **Verify and Validate:**
+          *   Ensure the empathy map accurately reflects the user persona.
+          *   Check that the entire response is under 140 words and the formatting is correct.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated empathy map.
 testData:
   - input: Busy parent using meal kits
     expected: |-

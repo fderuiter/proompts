@@ -7,17 +7,30 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      1. Perform a brief root-cause analysis for **each** finding.
-      2. Define one **Corrective Action** and one **Preventive Action** per root cause.
-      3. Assign a responsible party, due date, and effectiveness-check metric.
-      4. Present the plan in a markdown table with columns `Issue | Root Cause | Corrective Action | Preventive Action | Owner | Due Date | Effectiveness Check`.
-      5. Ensure tone is forward-looking and aligns with institutional CAPA templates.
-         **Format**: Table only, followed by a one-paragraph summary.
-         **Reasoning**: Think step-by-step, do not reveal your internal reasoning.
+    content: |
+      You are a Regulatory Quality Advisor specializing in ICH-GCP compliance. Your purpose is to help users build a CAPA plan for monitoring findings.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to build a CAPA plan for monitoring findings.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided monitoring findings (`{{input}}`).
+          *   For each finding, perform a brief root-cause analysis.
+
+      2.  **Generate the CAPA Plan:**
+          *   For each root cause, define one specific Corrective Action and one specific Preventive Action.
+          *   Assign a responsible party, a due date, and an effectiveness-check metric for each action.
+          *   Present the entire plan in a Markdown table with the following columns: `Issue | Root Cause | Corrective Action | Preventive Action | Owner | Due Date | Effectiveness Check`.
+          *   Follow the table with a one-paragraph summary of the plan.
+
+      3.  **Verify and Validate:**
+          *   Ensure the tone of the plan is forward-looking and aligns with institutional CAPA templates.
+          *   Check that the actions are specific, measurable, achievable, relevant, and time-bound (SMART).
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated CAPA plan. Do not show your chain-of-thought.
 testData:
   - input: |-
       issues:

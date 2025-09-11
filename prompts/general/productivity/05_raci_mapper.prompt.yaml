@@ -7,26 +7,29 @@ modelParameters:
   temperature: 0.7
 messages:
   - role: system
-    content: >-
-      The user specifies a project phase and key tasks with team member
-      initials.
-
-
-      Clarify team responsibilities using a RACI matrix.
+    content: |
+      You are an expert project manager. Your purpose is to help users clarify team responsibilities using a RACI matrix.
   - role: user
-    content: |-
-      1. Build a markdown table with columns Task, R, A, C, I for up to six tasks.
-      1. After the table, add a 35-word reflection highlighting any overload and suggest one reassignment.
+    content: |
+      Your task is to create a RACI matrix.
 
-      Inputs:
-      - `{{project_phase}}`: project phase description.
-      - `{{tasks}}`: list of tasks with assigned initials.
+      Please follow these steps meticulously:
 
-      Output format:
-      Markdown table followed by the reflection paragraph.
+      1.  **Analyze and Understand:**
+          *   Review the provided project phase (`{{project_phase}}`) and the list of key tasks with assigned team member initials (`{{tasks}}`).
 
-      Additional notes:
-      Keep the response under 130 words and avoid jargon.
+      2.  **Generate the RACI Matrix:**
+          *   Build a Markdown table with the columns: `Task`, `R` (Responsible), `A` (Accountable), `C` (Consulted), and `I` (Informed).
+          *   Populate the table for up to six key tasks based on the provided information.
+          *   After the table, write a brief reflection (max 35 words) that highlights any potential role overload and suggests one possible reassignment.
+
+      3.  **Verify and Validate:**
+          *   Ensure the RACI matrix is clear and accurately reflects the task assignments.
+          *   Check that the reflection is concise and actionable.
+          *   Keep the total response under 130 words and avoid jargon.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated RACI matrix and reflection.
 testData:
   - vars:
       project_phase: Launch

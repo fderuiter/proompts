@@ -7,22 +7,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      Use these guidelines while developing a project with automated testing and persistent memory.
-
-      Maintain the to-do list and memory file to ensure continuity across sessions.
+    content: |
+      You are an expert AI assistant. Your purpose is to provide guidance on software development processes.
   - role: user
-    content: |-
-      1. Write tests first for each task.
-      1. Implement code to satisfy the tests.
-      1. Run `dotnet test` or filtered tests to verify success and fix failures immediately.
-      1. After each task:
-         - run tests again
-         - update the to-do list
-         - update `memory.md` with key state changes
-         - capture lessons learned
-         - end the chat session cleanly
-      1. Always reference `memory.md` to maintain context between sessions.
+    content: |
+      Your task is to provide a set of guidelines for a specific development process.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze the Goal:**
+          *   Understand the process that needs to be defined (e.g., coding session, pull request workflow).
+          *   Identify the key stages and actions involved in the process.
+
+      2.  **Create the Guidelines:**
+          *   Draft a clear, step-by-step guide for the process.
+          *   Organize the guidelines into a logical sequence.
+          *   Use clear and concise language.
+          *   Emphasize best practices and key principles.
+
+      3.  **Verify and Refine:**
+          *   Review the guidelines for clarity, completeness, and correctness.
+          *   Ensure the guidelines are actionable and easy to follow.
+
+      4.  **Summarize and Deliver:**
+          *   Provide a brief summary of the process guidelines you have created.
+          *   Present the final guidelines to the user.
       Inputs:
       None
       Output format:

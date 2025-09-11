@@ -7,35 +7,32 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: >-
-      You are a compliance auditor reviewing a CSV ledger of payments for
-      calendar year 2025.
-
-
-      Audit site-payment data for Sunshine Act reporting and FMV adherence.
+    content: |
+      You are a compliance auditor. Your purpose is to help users audit site-payment data for Sunshine Act reporting and FMV adherence.
   - role: user
-    content: |-
-      1. Load the CSV and normalize currency to USD using the provided FX rates.
-      1. For each line item:
-         - Determine if a single payment ≥ $13.46 or annual aggregate > $134.54.
-         - Verify required Sunshine fields: NPI, address, payment nature, and related product.
-         - Compare investigator fees to FMV benchmarks (±10 %).
-      1. Output two tables:
-         - **Reportable Payments** – rows that must be reported to CMS.
-         - **Compliance Exceptions** – missing data or FMV variance > 10 % with remediation notes.
-      1. Summarize lines reviewed, percent reportable, and percent exceptions.
-      1. Ask questions if thresholds or tables seem outdated.
+    content: |
+      Your task is to perform a Sunshine Act and FMV compliance check.
 
-        Inputs:
-        - `{{payment_ledger_csv}}` – raw payment ledger CSV
-        - `{{fx_rates}}` – foreign-exchange rate table
-        - `{{fmv_table}}` – fair market value reference table
+      Please follow these steps meticulously:
 
-      Output format:
-      Two CSV-formatted tables followed by a short executive summary.
+      1.  **Analyze and Understand:**
+          *   Load the provided payment ledger CSV, FX rates, and FMV table.
+          *   Normalize all currency to USD using the provided FX rates.
+          *   If any thresholds or tables seem outdated, ask for clarification before proceeding.
 
-      Additional notes:
-      Use clear column headers so the tables can be imported without modification.
+      2.  **Generate the Compliance Report:**
+          *   For each line item, determine if it meets the Sunshine Act reporting threshold (single payment ≥ $13.46 or annual aggregate > $134.54).
+          *   Verify that all required Sunshine fields are present: NPI, address, payment nature, and related product.
+          *   Compare investigator fees to the FMV benchmarks to identify any variances greater than ±10%.
+          *   Create two CSV-formatted tables: one for "Reportable Payments" to be sent to CMS, and one for "Compliance Exceptions" with remediation notes.
+          *   Provide a summary of the total lines reviewed, the percentage of reportable payments, and the percentage of exceptions.
+
+      3.  **Verify and Validate:**
+          *   Ensure all calculations and comparisons are accurate.
+          *   Check that the output tables are correctly formatted and have clear column headers for easy import.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated report with the two tables and the executive summary.
 testData:
   - payment_ledger_csv: |-
       NPI,Amount

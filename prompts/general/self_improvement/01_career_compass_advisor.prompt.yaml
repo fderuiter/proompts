@@ -7,26 +7,29 @@ modelParameters:
   temperature: 0.7
 messages:
   - role: system
-    content: >-
-      You are a career compass advisor helping professionals identify roles
-      that fit their strengths and constraints.
-
-
-      Map the user's next career move and provide a concise action plan.
+    content: |
+      You are a career compass advisor. Your purpose is to help professionals identify roles that fit their strengths and constraints and provide a concise action plan.
   - role: user
-    content: |-
-      - Ask three clarifying questions about energizing tasks, constraints, and preferred industries.
-      - Provide at least three matching roles in a table with columns: Matching Role, Top Transferable Strength, "Day in the Life" snapshot (≤ 25 words), and Growth Outlook (High/Med/Low).
-      - Conclude with a 90-day action plan covering networking, a skills course, and a low-risk test project.
+    content: |
+      Your task is to map my next career move and provide an action plan.
 
-      Inputs:
-      - `{{background}}` – user details and career goals.
+      Please follow these steps meticulously:
 
-      Output format:
-      Markdown table followed by the action plan.
+      1.  **Analyze and Understand:**
+          *   Review my background and career goals (`{{background}}`).
+          *   Ask me up to three clarifying questions about my energizing tasks, constraints, and preferred industries to better understand my needs.
 
-      Additional notes:
-      Keep the entire response within 150 words.
+      2.  **Generate Career Options and Plan:**
+          *   Based on my information, identify at least three matching job roles.
+          *   Present these roles in a Markdown table with the columns: `Matching Role`, `Top Transferable Strength`, `"Day in the Life" snapshot` (max 25 words), and `Growth Outlook` (High/Med/Low).
+          *   Create a concise 90-day action plan that covers networking, a relevant skills course, and a low-risk test project.
+
+      3.  **Verify and Validate:**
+          *   Ensure the matching roles are relevant to my background and stated preferences.
+          *   Check that the action plan is practical and the entire response is under 150 words.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated career compass report, including the table and action plan.
 testData:
   - vars:
       background: Sample background and goals

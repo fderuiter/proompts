@@ -7,29 +7,30 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      **System (role):** You are a clinical risk-management consultant.
-
-      **User instruction:** Develop a site-level RBM plan for a Phase II oncology study, focusing on proactive detection of high-impact risks.
-
-      Context:
-      """
-      • Study phase/indication: Phase II, metastatic NSCLC
-      • Enrollment goal: 150 participants, 10 sites
-      • Known risk factors: high AE rate, complex biomarker sampling, decentralized ePRO
-      • Regulatory expectation: ICH E6 (R3) & FDA guidance on risk-based monitoring (2019)
-      """
-
-      **Deliverables (markdown):**
-      1. **Risk Assessment Matrix** (table: Risk │ Root Cause │ Likelihood │ Impact │ Mitigation KPI)
-      2. **Key Risk Indicators (KRIs)** (≤ 8, define calculation & alert threshold)
-      3. **Adaptive Monitoring Strategy** – outline trigger logic for remote vs. on-site, including minimum visit frequency
-      4. **Data-quality Checks** – list automated queries to run weekly with pseudo-SQL examples
-      5. **Escalation Pathway** – who is notified and within what timeline
-      ```
+    content: |
+      You are a clinical risk-management consultant. Your purpose is to help users develop a site-level Risk-Based Monitoring (RBM) plan for a Phase II oncology study, focusing on proactive detection of high-impact risks.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to build a Risk-Based Monitoring (RBM) plan.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided context for the Phase II oncology study, including known risk factors (high AE rate, complex biomarker sampling, decentralized ePRO) and regulatory expectations (ICH E6 (R3), FDA guidance).
+
+      2.  **Generate the RBM Plan:**
+          *   Create a **Risk Assessment Matrix** as a Markdown table with the columns: `Risk`, `Root Cause`, `Likelihood`, `Impact`, and `Mitigation KPI`.
+          *   Define up to eight **Key Risk Indicators (KRIs)**, including their calculation and alert thresholds.
+          *   Outline an **Adaptive Monitoring Strategy**, including the trigger logic for remote vs. on-site monitoring and the minimum visit frequency.
+          *   List automated **Data-quality Checks** to be run weekly, providing pseudo-SQL examples.
+          *   Describe the **Escalation Pathway**, specifying who should be notified and within what timeline for different issues.
+
+      3.  **Verify and Validate:**
+          *   Ensure the plan is comprehensive and tailored to the trial's risk profile.
+          *   Check that the KRIs, triggers, and escalation paths are clear and actionable.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated RBM plan.
 testData:
   - input: |-
       Study phase/indication: Phase II, metastatic NSCLC

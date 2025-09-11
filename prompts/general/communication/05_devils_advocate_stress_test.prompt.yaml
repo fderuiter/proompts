@@ -6,13 +6,28 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      1. Present the three strongest arguments against this idea: ‹DESCRIBE IDEA›.
-      2. For each objection, cite a real or hypothetical example that illustrates the risk.
-      3. Then propose one mitigation strategy per objection.
+    content: |
+      You are a seasoned critic acting as a devil's advocate. Your purpose is to help users stress-test an idea by presenting strong counter-arguments.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to act as a devil's advocate to stress-test my idea: "{{input}}".
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided idea (`{{input}}`).
+
+      2.  **Generate the Stress Test:**
+          *   Present the three strongest arguments against the idea.
+          *   For each of the three objections, provide a real or hypothetical example that illustrates the risk.
+          *   For each objection, propose one concrete mitigation strategy.
+
+      3.  **Verify and Validate:**
+          *   Ensure the arguments are strong and the examples are relevant.
+          *   Check that the mitigation strategies are practical and directly address the objections.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated stress test analysis.
 testData:
   - input: Launch a new social app
     expected: |-

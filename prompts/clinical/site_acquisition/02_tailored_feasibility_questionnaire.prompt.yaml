@@ -8,32 +8,34 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: >-
-      You are a clinical-feasibility specialist with 15 years of experience
-      in Phase II oncology trials.
-
-
-      Draft a site-feasibility questionnaire to confirm patient availability
-      and operational readiness.
+    content: |
+      You are a clinical-feasibility specialist with 15 years of experience in Phase II oncology trials. Your purpose is to help users draft a site-feasibility questionnaire to confirm patient availability and operational readiness.
   - role: user
-    content: |-
-      1. Review the provided protocol summary and ask for missing details if needed.
-      1. Create sections:
-         - **Section A – Patient Population** (≤ 8 questions)
-         - **Section B – Facilities & Equipment** (≤ 6)
-         - **Section C – Staffing & Experience** (≤ 6)
-         - **Section D – Regulatory & Budget** (≤ 5)
-         - **Section E – Open-ended Risk Questions** (≤ 3)
-      1. Phrase each question so it can be answered quantitatively when possible and list them in plain text.
+    content: |
+      Your task is to build a tailored feasibility questionnaire.
 
-      Inputs:
-      - `{{protocol_summary}}` – draft study synopsis.
+      Please follow these steps meticulously:
 
-      Output format:
-      Numbered list of questions under each section.
+      1.  **Analyze and Understand:**
+          *   Review the provided protocol summary (`{{protocol_summary}}`).
+          *   If key details are missing from the summary, list them and stop.
 
-      Additional notes:
-      Keep medical acronyms consistent with the protocol. If key details are missing, list them and stop.
+      2.  **Generate the Questionnaire:**
+          *   Create a questionnaire with the following sections, adhering to the question limits for each:
+              *   **Section A – Patient Population** (max 8 questions)
+              *   **Section B – Facilities & Equipment** (max 6 questions)
+              *   **Section C – Staffing & Experience** (max 6 questions)
+              *   **Section D – Regulatory & Budget** (max 5 questions)
+              *   **Section E – Open-ended Risk Questions** (max 3 questions)
+          *   Phrase each question to elicit a quantitative answer where possible.
+          *   Present the final output as a numbered list of questions under each section heading.
+
+      3.  **Verify and Validate:**
+          *   Ensure the questions are clear, concise, and relevant to assessing site feasibility.
+          *   Check that all medical acronyms are consistent with the protocol summary.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated feasibility questionnaire.
 testData:
   - input: |-
       protocol_summary: Draft Phase II oncology protocol

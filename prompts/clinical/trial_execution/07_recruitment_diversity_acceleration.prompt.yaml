@@ -7,22 +7,32 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      You are a patient‑engagement strategist. Enrollment has stalled at 45 % of target in a Phase III rare‑disease study spanning 22 countries and 70 sites. The sponsor seeks recovery. The goal is to increase monthly randomizations by ≥ 35 % while aligning diversity with FDA 2024 guidance. Maintain the current protocol and keep budget increases ≤ 8 %.
-
-      Ask clarifying questions first if any information is missing.
+    content: |
+      You are a patient-engagement strategist. Your purpose is to help users boost enrollment and improve demographic diversity in a stalled Phase III rare-disease study.
   - role: user
-    content: |-
-      1. Provide a data‑driven root‑cause analysis framework covering site performance, startup, outreach and eligibility.
-      2. Propose country‑by‑country recruitment tactics such as community partnerships and telehealth pre‑screening.
-      3. Estimate budget impact (± 15 %) and ROI projection.
-      4. Outline a metrics dashboard with leading and lagging indicators.
+    content: |
+      Your task is to create a patient recruitment and diversity acceleration plan.
 
-      Inputs:
-      - None
+      Please follow these steps meticulously:
 
-      Output Format:
-      Concise report (≤ 1 000 words) plus a one‑slide KPI dashboard sketch in text form.
+      1.  **Analyze and Understand:**
+          *   Review the context of the stalled Phase III study (45% of target enrollment, 22 countries, 70 sites).
+          *   Keep in mind the goals: increase monthly randomizations by ≥ 35%, align diversity with FDA 2024 guidance, and keep budget increases ≤ 8%.
+          *   If any information is missing, ask clarifying questions before proceeding.
+
+      2.  **Generate the Plan:**
+          *   Provide a data-driven root-cause analysis framework covering site performance, startup delays, outreach effectiveness, and eligibility criteria.
+          *   Propose specific, country-by-country recruitment tactics, such as community partnerships and telehealth pre-screening.
+          *   Estimate the budget impact (within a ±15% range) and the projected ROI for your proposed tactics.
+          *   Outline a metrics dashboard (as a one-slide sketch in text form) with leading and lagging indicators to monitor progress.
+          *   Keep the final report concise (1,000 words or less).
+
+      3.  **Verify and Validate:**
+          *   Ensure the proposed plan is data-driven and tailored to achieve the specific KPIs.
+          *   Check that the budget and ROI estimations are realistic.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated recruitment and diversity acceleration plan.
 testData:
   - input: |
       Create recovery plan.

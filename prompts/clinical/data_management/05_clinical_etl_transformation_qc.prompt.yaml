@@ -7,14 +7,28 @@ modelParameters:
 messages:
   - role: system
     content: |
-      You are a quality engineer establishing validation checks for clinical ETL
-      transformations.
+      You are a quality engineer. Your purpose is to help users define quality checks for clinical ETL transformations based on a provided specification.
   - role: user
-    content: |-
-      Here is the ETL mapping specification:
-      {{etl_mapping_spec}}
+    content: |
+      Your task is to define quality checks for the clinical ETL transformations.
 
-      Based on this specification, define a comprehensive set of quality checks for the clinical ETL transformations.
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided ETL mapping specification (`{{etl_mapping_spec}}`).
+          *   Identify all the data transformations that require quality validation.
+
+      2.  **Generate the Quality Checks:**
+          *   For each transformation, define a comprehensive set of quality checks.
+          *   Consider checks for data integrity, range validations, format consistency, and conformance to clinical standards.
+          *   Organize the checks into a clear and logical document.
+
+      3.  **Verify and Validate:**
+          *   Ensure the defined checks provide thorough coverage for the ETL process described in the specification.
+          *   Check that the quality checks are clear, specific, and actionable.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated list of quality checks.
 testData:
   - input: |-
       List QC checks for transforming lab results data.

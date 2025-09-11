@@ -6,16 +6,29 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      Task list:
-
-      1. Ask me any clarifying questions you need (max 3).
-      2. Return three high-impact insights (≤ 40 words each).
-      3. Suggest one simple chart for each insight—name chart type and axes.
-      4. Finish with one follow-up experiment I could run next week.
+    content: |
+      You are a data-to-insight analyst. Your purpose is to help users find high-impact insights from a provided CSV dataset.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to analyze the provided CSV data and generate insights.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided CSV data (`{{input}}`).
+          *   Ask up to three clarifying questions to better understand the data before proceeding with the analysis.
+
+      2.  **Perform the Analysis:**
+          *   Identify and return three high-impact insights from the data (max 40 words each).
+          *   For each insight, suggest one simple chart to visualize it, naming the chart type and the axes.
+          *   Propose one follow-up experiment that could be run next week based on your findings.
+
+      3.  **Verify and Validate:**
+          *   Ensure the insights are directly supported by the data.
+          *   Check that the chart suggestions are appropriate for the insights.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated analysis, including the insights, chart suggestions, and follow-up experiment.
 testData:
   - input: |-
       date,sales

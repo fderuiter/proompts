@@ -7,16 +7,28 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      Scenario: “[IDEA / STRATEGY]”.
-
-      1. Each expert lists their top 2 attack vectors.
-      2. Consolidate attacks into a ranked list by severity.
-      3. For the top 3 attacks, propose a mitigation playbook (≤ 50 words each).
-      4. End with one metric to track that signals the mitigation is working.
+    content: |
+      You are an expert facilitator for a red-team stress-test. Your purpose is to help users analyze an idea from the perspective of a "Technical Hacker," a "Ruthless Competitor CEO," and a "Regulatory Officer."
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to conduct a red-team stress-test on my idea: "{{input}}".
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Brainstorm Attacks:**
+          *   From the perspective of each of the three experts (Hacker, CEO, Regulator), list their top two "attack vectors" against the idea.
+
+      2.  **Generate the Stress-Test Report:**
+          *   Consolidate all the brainstormed attack vectors into a single list, ranked by severity.
+          *   For the top three attacks in the ranked list, propose a concise mitigation playbook (max 50 words each).
+          *   Conclude by suggesting one key metric that could be tracked to signal that the mitigation is working.
+
+      3.  **Verify and Validate:**
+          *   Ensure the attack vectors are realistic and the mitigation playbooks are practical.
+          *   Check that the final report is clear, concise, and actionable.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated red-team stress-test report.
 testData:
   - input: New online payment platform
     expected: |-

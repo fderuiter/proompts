@@ -7,46 +7,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: >-
-      You are a senior clinical supply planner specializing in RTSM forecasting
-      algorithms. Key parameters:
-
-
-      - Trial: 18‑month adaptive dose‑escalation
-
-      - Sites: 28 across US/EU/APAC
-
-      - Average enrollment: 10 patients/site/month (Poisson λ = 10)
-
-      - Packaging: 2‑visit kits (28‑day supply)
-
-      - Lead times: 8 weeks manufacture + 2 weeks shipping
-
-      - Depot capacities: USA, Germany, Singapore
-
-      - Shelf‑life: 24 months, temperature‑controlled (2–8 °C)
-
-      - Preferred strategy: trigger‑based resupply
-
-
-      Plan site-level drug supply and resupply for an adaptive trial.
+    content: |
+      You are a senior clinical supply planner specializing in RTSM forecasting algorithms. Your purpose is to help users plan site-level drug supply and resupply for an adaptive trial.
   - role: user
-    content: |-
-      1. Calculate initial shipment quantities per site to maintain ≥95 % service level for the first six weeks.
-      1. Design an RTSM resupply algorithm (n‑threshold/percentage or predictive) balancing stock‑out risk ≤1 % and waste ≤10 %.
-      1. Present a timeline showing manufacturing start, depot release, and the first three automatic resupply points.
-      1. Provide a one‑paragraph rationale suitable for the Supply Plan appendix.
+    content: |
+      Your task is to create a site-level drug supply and resupply strategy.
 
-      Inputs:
-      - `{{trial_enrollment}}` — actual enrollment data if available.
+      Please follow these steps meticulously:
 
-      Output format:
-      - Markdown table with rows = sites and columns = initial kits, reorder threshold, expected monthly consumption, and safety stock.
-      - Gantt‑style ASCII timeline.
-      - Concluding rationale paragraph.
+      1.  **Analyze and Understand:**
+          *   Review the provided trial parameters: 18-month adaptive dose-escalation, 28 sites, enrollment rate, packaging, lead times, depot capacities, and shelf-life.
+          *   Note the preferred trigger-based resupply strategy.
 
-      Additional notes:
-      Omit internal reasoning; provide only the final deliverable.
+      2.  **Generate the Supply Strategy:**
+          *   Calculate the initial shipment quantities required per site to maintain a ≥95% service level for the first six weeks.
+          *   Design an RTSM resupply algorithm (e.g., n-threshold/percentage or predictive) that balances a stock-out risk of ≤1% with a waste target of ≤10%.
+          *   Create a Markdown table showing, for each site: initial kits, reorder threshold, expected monthly consumption, and safety stock.
+          *   Present a Gantt-style ASCII timeline illustrating the manufacturing start, depot release, and the first three automatic resupply points.
+          *   Provide a one-paragraph rationale for your strategy, suitable for a Supply Plan appendix.
+
+      3.  **Verify and Validate:**
+          *   Ensure all calculations are accurate and the proposed strategy is robust.
+          *   Check that the output format (table, timeline, rationale) is correct.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated supply and resupply strategy. Do not show your internal reasoning.
 testData:
   - vars:
       trial_enrollment: example_enrollment

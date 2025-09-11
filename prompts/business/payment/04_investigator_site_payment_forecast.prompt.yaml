@@ -7,32 +7,30 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: >-
-      You are a senior clinical payments analyst planning for the Phase III
-      oncology study "Onco-1234." The CTA defines Start-up, Per-Visit, Close-out,
-      and Screen-Failure fees. FPFV is 15 Sep 2025 and the planned duration
-      is 30 months.
-
-
-      Produce a month-by-month cash-flow forecast for site payments.
+    content: |
+      You are a senior clinical payments analyst. Your purpose is to help users produce a month-by-month cash-flow forecast for site payments.
   - role: user
-    content: |-
-      1. Convert milestone amounts to USD using the provided FX rates.
-      1. Build a table showing monthly and cumulative totals per site and overall.
-      1. Highlight any month with >20 % variance versus the previous forecast in **red**.
-      1. Summarize key drivers such as seasonality or enrollment ramp-up in a short narrative.
-      1. Clarify any assumptions before starting if needed.
+    content: |
+      Your task is to create an investigator-site payment forecast.
 
-      Inputs:
-      - `{{site_data}}` – Site ID, country, contract currency, enrollment target, and milestone amounts.
-      - `{{enrollment_curve}}` – expected enrollment percentage per month.
-      - `{{fx_rates}}` – FX rate sheet name.
+      Please follow these steps meticulously:
 
-      Output format:
-      Markdown table followed by a narrative summary.
+      1.  **Analyze and Understand:**
+          *   Review the provided site data, enrollment curve, and FX rate sheet.
+          *   Clarify any assumptions before starting.
 
-      Additional notes:
-      Keep the table easy to import into spreadsheets.
+      2.  **Generate the Forecast:**
+          *   Convert all milestone amounts to USD using the provided FX rates.
+          *   Build a Markdown table showing monthly and cumulative payment totals, both per site and overall.
+          *   In the table, highlight any month with a greater than 20% variance compared to the previous forecast in **red**.
+          *   Write a short narrative summary of the key forecast drivers, such as seasonality or enrollment ramp-up.
+
+      3.  **Verify and Validate:**
+          *   Ensure all calculations (USD conversions, totals, variances) are accurate.
+          *   Check that the output format (table and narrative) is correct and the table is easy to import into spreadsheets.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated forecast.
 testData:
   - site_data: |-
       Site_ID,Country,Currency,Enrollment,Start-up

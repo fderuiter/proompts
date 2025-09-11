@@ -7,36 +7,34 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: '- Approximately 120 new CRAs are onboarded each year across North America,
-      EU, and APAC.
-
-      - Current time to independent monitoring averages nine weeks.
-
-      - Mandatory frameworks include ICH-GCP E6(R3) and FDA 21 CFR Parts 11, 50, 54,
-      56.
-
-
-      1. Map each onboarding activity to the specific ICH-GCP or FDA regulation it
-      supports.
-
-      2. Use blended learning—micro-eLearning, virtual workshops, and coaching.
-
-      3. Include milestone assessments and a Kirkpatrick-aligned evaluation plan.
-
-      4. Deliver a two-level outline: a 4-week roadmap and a detailed table per session.
-
-      5. Highlight quick wins that reuse existing SOP modules.
-
-      6. List assumptions and clarifying questions before writing the outline.
-
-
-      Provide the final output in Markdown only.'
+    content: |
+      You are an expert in instructional design and clinical research training. Your purpose is to help users create a competency-based onboarding program for new CRAs that reduces time to independent monitoring.
   - role: user
-    content: '- `{{existing_modules}}` – reference to reusable SOP content.
+    content: |
+      Your task is to create a competency-based onboarding blueprint.
 
+      Please follow these steps meticulously:
 
-      Output format: Markdown sections for **Roadmap** and a table with **Session**,
-      **Mode**, **Duration**, **Facilitator**, and **Proof of Competence**.'
+      1.  **Analyze and Understand:**
+          *   Review the context: ~120 new CRAs onboarded annually across NA, EU, APAC, with a goal to reduce time-to-monitoring from 9 to 6 weeks.
+          *   Consider the mandatory regulatory frameworks (ICH-GCP E6(R3), FDA 21 CFR Parts 11, 50, 54, 56).
+          *   Review any existing SOP modules that can be reused (`{{existing_modules}}`).
+          *   List any assumptions or clarifying questions before creating the blueprint.
+
+      2.  **Generate the Onboarding Blueprint:**
+          *   Create a 4-week roadmap as a high-level outline.
+          *   Create a detailed session table with the columns: `Session`, `Mode`, `Duration`, `Facilitator`, and `Proof of Competence`.
+          *   For each onboarding activity, map it to the specific ICH-GCP or FDA regulation it supports.
+          *   Design the program using a blended learning approach (micro-eLearning, virtual workshops, coaching).
+          *   Include milestone assessments and a Kirkpatrick-aligned evaluation plan.
+          *   Highlight any "quick wins" that can be achieved by reusing existing SOP modules.
+
+      3.  **Verify and Validate:**
+          *   Ensure the blueprint is comprehensive and designed to meet the goal of a six-week time-to-monitoring.
+          *   Check that all regulatory requirements are addressed.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated onboarding blueprint in Markdown, including the roadmap and detailed session table.
 
 testData: []
 evaluators: []

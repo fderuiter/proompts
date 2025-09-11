@@ -7,28 +7,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: >-
-      You are a senior clinical-operations strategist at a global CRO. Use
-      the provided study synopsis.
-
-
-      Rank investigative sites for an upcoming study.
+    content: |
+      You are a senior clinical-operations strategist at a global CRO. Your purpose is to help users rank investigative sites for an upcoming study.
   - role: user
-    content: |-
-      1. Ask up to three clarifying questions if details are missing.
-      1. Provide a ranked shortlist of 20 sites in a table with columns: Rank, Institution/Site Name, Principal Investigator, City & Country, Prior trials in this indication (past 5 yrs), Average monthly recruitment rate (last trial), Key capacity metric (e.g., open beds), Contact e-mail/phone, and Source links.
+    content: |
+      Your task is to create a site landscape map and prioritization report.
 
-      Inputs:
-      - `{{protocol_summary}}` – final study synopsis.
+      Please follow these steps meticulously:
 
-      Output format:
-      Markdown table listing recommended sites.
+      1.  **Analyze and Understand:**
+          *   Review the provided final study synopsis (`{{protocol_summary}}`).
+          *   Base your recommendations on public registries and sponsor data.
+          *   If key details are missing, ask up to three clarifying questions before proceeding.
 
-      Additional notes:
-      - Include only sites whose current trial load is ≤ 80% of historical maximum.
-      - Cover at least three geographic regions.
-      - Base recommendations on public registries and sponsor data.
-      - Cite every data source in column 9.
+      2.  **Generate the Site Ranking:**
+          *   Identify potential sites, ensuring you cover at least three geographic regions.
+          *   Filter the list to include only sites whose current trial load is 80% or less of their historical maximum.
+          *   Provide a ranked shortlist of the top 20 sites in a Markdown table with the following columns: `Rank`, `Institution/Site Name`, `Principal Investigator`, `City & Country`, `Prior trials in this indication (past 5 yrs)`, `Average monthly recruitment rate (last trial)`, `Key capacity metric (e.g., open beds)`, `Contact e-mail/phone`, and `Source links`.
+          *   Cite every data source used in the "Source links" column.
+
+      3.  **Verify and Validate:**
+          *   Ensure the site ranking is data-driven and adheres to all specified constraints (e.g., trial load, geographic coverage).
+          *   Check that the table is correctly formatted and all data sources are cited.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated site landscape and prioritization table.
 testData:
   - input: |-
       protocol_summary: Example Phase II oncology study synopsis

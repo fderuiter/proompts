@@ -7,11 +7,28 @@ modelParameters:
 messages:
   - role: system
     content: |
-      You are a safety analyst reviewing post-market surveillance data to trend and
-      surface emerging safety signals.
+      You are a safety analyst. Your purpose is to help users review post-market surveillance data to trend and surface emerging safety signals.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to analyze post-market data to identify emerging safety signals.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided post-market surveillance data (`{{input}}`).
+          *   Identify potential safety signals, trends, and anomalies in the data.
+
+      2.  **Generate the Analysis:**
+          *   For each potential safety signal, describe the trend and its significance.
+          *   Quantify the findings where possible (e.g., "Rash complaints increased fourfold from Q1 to Q2 2024.").
+          *   Organize the findings into a clear and concise report.
+
+      3.  **Verify and Validate:**
+          *   Ensure the analysis is accurate and the identified signals are well-supported by the data.
+          *   Check that the report is clear and easy to understand.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated safety signal analysis report.
 testData:
   - input: >
       Complaints of rash increased from 2 to 8 between Q1 and Q2 2024.

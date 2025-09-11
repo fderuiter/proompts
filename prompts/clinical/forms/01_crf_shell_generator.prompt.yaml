@@ -6,15 +6,29 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      - Working section-by-section, list the CRF pages you would create.
-      - Under each page, list every field with: • CDASH variable • question text • data type • permitted values • SDTM mapping.
-      - Flag any data the protocol requests that is not essential for primary/secondary endpoints.
-      - Output a Markdown table grouped by CRF page.
-      - Think step-by-step before writing the final table.
+    content: |
+      You are a clinical data specialist. Your purpose is to help users generate a Case Report Form (CRF) shell from a protocol summary.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to generate a CRF shell.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Read the provided protocol summary (`{{input}}`).
+          *   Think step-by-step through the required CRF pages and fields before responding.
+
+      2.  **Generate the CRF Shell:**
+          *   Working section-by-section, list the CRF pages you would create based on the protocol.
+          *   For each page, create a Markdown table that lists every field with the following columns: `CDASH variable`, `Question Text`, `Data Type`, `Permitted Values`, and `SDTM Mapping`.
+          *   Flag any data points requested in the protocol that are not essential for the primary or secondary endpoints.
+
+      3.  **Verify and Validate:**
+          *   Ensure the CRF shell is comprehensive and accurately reflects the data collection requirements of the protocol.
+          *   Check that the table format is correct and all required information is included for each field.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated CRF shell.
 testData:
   - input: |
       Study collects age and sex.

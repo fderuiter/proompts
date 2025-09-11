@@ -7,20 +7,35 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      1. Calculate a composite risk score per site. Apply the Sponsor risk matrix (Critical = 5, Major = 3, Minor = 1) with these weights: Protocol Deviations 30 %, Query Aging 25 %, IP Accountability 20 %, Enrollment Lapse 15 %, Training Compliance 10 %.
-      2. Rank sites from highest to lowest risk.
-      3. For each high-risk site, list:
-         • Primary risk drivers (≤ 3 bullets)
-         • Recommended on-site vs. remote actions (e.g., focused SDV, retraining, CAPA)
-         • Target timeline to reduce risk to **Moderate**.
-      4. Present results in a **markdown table** with columns `Rank | Site ID | Composite Score | Key Drivers | Mitigation Plan | Target Date`.
-      5. Keep analysis concise (< 400 words) and reference **ICH E6 (R2)** and **TransCelerate RBM** guidance where relevant.
-         **Format**: Table + ≤ 5-sentence executive summary.
-         **Reasoning**: Think step-by-step, but do **not** show your chain-of-thought. Ask follow-up questions if data is insufficient.
+    content: |
+      You are an experienced Clinical Monitoring Manager at a global CRO. Your purpose is to help users create a risk-based site performance dashboard for Phase II oncology trials.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to create a risk-based site performance dashboard.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided site data (`{{input}}`).
+          *   Understand the Sponsor's risk matrix (Critical = 5, Major = 3, Minor = 1) and weighting factors (Protocol Deviations 30%, Query Aging 25%, etc.).
+          *   If any data is insufficient, ask clarifying questions before proceeding.
+
+      2.  **Generate the Dashboard:**
+          *   For each site, calculate a composite risk score based on the provided matrix and weights.
+          *   Rank all sites from highest to lowest risk.
+          *   Create a Markdown table with the columns: `Rank | Site ID | Composite Score | Key Drivers | Mitigation Plan | Target Date`.
+          *   For each high-risk site, populate the table with:
+              *   The primary risk drivers (up to 3 bullets).
+              *   Recommended on-site vs. remote mitigation actions (e.g., focused SDV, retraining, CAPA).
+              *   A target timeline to reduce the site's risk to "Moderate".
+          *   Write a concise executive summary (under 400 words total for the analysis) and reference ICH E6 (R2) and TransCelerate RBM guidance where relevant.
+
+      3.  **Verify and Validate:**
+          *   Double-check all risk score calculations.
+          *   Ensure the mitigation plans are actionable and the timelines are realistic.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated dashboard, including the table and executive summary. Do not show your chain-of-thought.
 testData:
   - input: |-
       sites:

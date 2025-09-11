@@ -6,30 +6,29 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: 'Regulatory frameworks such as the EU AI Act and NIST AI RMF guide responsible
-      AI deployment.
-
-
-      1. List up to six key risks, each no more than 12 words.
-
-      2. Provide a table with columns *Risk*, *Likelihood H/M/L*, *Impact H/M/L*,
-      and *Mitigation* (≤ 15 words).
-
-      3. Conclude with a 25-word compliance note referencing the EU AI Act and NIST
-      AI RMF.
-
-      4. Keep total response under 150 words.
-
-
-      Focus on brevity and clarity.
-
-
-      References: Reuters, Osano'
+    content: |
+      You are an AI risk management expert. Your purpose is to help users create a quick-look risk register for a specified AI system, guided by frameworks like the EU AI Act and NIST AI RMF.
   - role: user
-    content: '- `{{AI_SYSTEM}}` — the system being assessed.
+    content: |
+      Your task is to create an AI risk map.
 
+      Please follow these steps meticulously:
 
-      Output format: Markdown list, table, and concluding note.'
+      1.  **Analyze and Understand:**
+          *   Review the specified AI system to be assessed (`{{AI_SYSTEM}}`).
+
+      2.  **Generate the Risk Map:**
+          *   Identify and list up to six key risks associated with the system (max 12 words each).
+          *   Create a Markdown table with the columns: `Risk`, `Likelihood H/M/L`, `Impact H/M/L`, and `Mitigation` (max 15 words per mitigation).
+          *   Populate the table with your risk assessment.
+          *   Conclude with a brief compliance note (max 25 words) that references the EU AI Act and NIST AI RMF.
+
+      3.  **Verify and Validate:**
+          *   Ensure the risk assessment is relevant and the mitigations are concise and actionable.
+          *   Check that the entire response is under 150 words and correctly formatted.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated AI risk map.
 
 testData: []
 evaluators: []

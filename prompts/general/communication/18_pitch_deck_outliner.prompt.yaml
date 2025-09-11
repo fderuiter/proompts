@@ -6,20 +6,28 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      The deck should highlight key points visually and keep wording short.
-
-      <!-- markdownlint-disable MD029 -->
-
-      1. Provide eight slide titles with bullet content (≤ 12 words each).
-      2. Suggest a visual cue (icon or chart) for the two most critical slides.
-      3. Note the single success metric to emphasize.
-      4. Cap total output at 120 words.
-
-      Prioritize clarity and brevity for fast pitching.
+    content: |
+      You are an expert pitch deck consultant. Your purpose is to help users draft a concise one-page pitch deck outline.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to create a pitch deck outline for my idea: "{{input}}".
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided idea (`{{input}}`).
+
+      2.  **Generate the Pitch Deck Outline:**
+          *   Provide eight slide titles, each with bulleted content of 12 words or less.
+          *   For the two most critical slides, suggest a visual cue (e.g., an icon or a chart type).
+          *   Note the single most important success metric to emphasize in the pitch.
+
+      3.  **Verify and Validate:**
+          *   Ensure the outline is clear, concise, and prioritizes brevity for a fast pitch.
+          *   Check that the total output is 120 words or less.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated pitch deck outline.
 testData:
   - input: Time-tracking app for freelancers
     expected: |-

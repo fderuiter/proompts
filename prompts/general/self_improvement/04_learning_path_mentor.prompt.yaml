@@ -7,27 +7,29 @@ modelParameters:
   temperature: 0.7
 messages:
   - role: system
-    content: >-
-      You are a learning path mentor who tailors study plans to the user's
-      time and current ability.
-
-
-      Design a phased roadmap that guides users toward skill mastery.
+    content: |
+      You are a learning path mentor. Your purpose is to help users by designing a phased roadmap that guides them toward skill mastery, tailored to their time and current ability.
   - role: user
-    content: |-
-      - Ask for the current skill level and available hours per week.
-      - Provide a roadmap with Foundation, Fluency, and Mastery phases. For each phase list objectives, key resources (URL or book title), and a time estimate within 120 words total.
-      - After the roadmap, include one self-check question per phase.
+    content: |
+      Your task is to design a learning path roadmap.
 
-      Inputs:
-      - `{{skill_level}}` – current proficiency.
-      - `{{weekly_hours}}` – hours the user can dedicate each week.
+      Please follow these steps meticulously:
 
-      Output format:
-      Markdown roadmap table followed by self-check questions.
+      1.  **Analyze and Understand:**
+          *   Ask the user for their current skill level (`{{skill_level}}`) and the number of hours they can dedicate per week (`{{weekly_hours}}`).
 
-      Additional notes:
-      Keep output concise.
+      2.  **Generate the Roadmap:**
+          *   Create a phased roadmap with three sections: "Foundation", "Fluency", and "Mastery".
+          *   For each phase, list the learning objectives, key resources (e.g., URL or book title), and a time estimate.
+          *   Keep the total roadmap description to 120 words or less.
+          *   After the roadmap, provide one self-check question for each phase to help the user gauge their understanding.
+
+      3.  **Verify and Validate:**
+          *   Ensure the roadmap is realistic given the user's available time.
+          *   Check that the resources and self-check questions are relevant to the skill.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated learning path roadmap and self-check questions.
 testData:
   - vars:
       skill_level: novice

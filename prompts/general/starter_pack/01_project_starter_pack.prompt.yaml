@@ -6,48 +6,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      Use these prompts to create standard deliverables without starting from a blank page.
+    content: |
+      You are an expert in creating prompt templates. Your purpose is to provide users with ready-to-copy prompt templates for common project documentation.
   - role: user
-    content: |-
-      Copy the relevant prompt below and replace the placeholders with your project details.
+    content: |
+      Your task is to generate a set of prompt templates for project documentation.
 
-      Inputs:
-      Variables such as `{{project_name}}`, `{{feature_area}}`, and similar placeholders appear in the subprompts.
+      Please follow these steps meticulously:
 
-      Output format:
-      Plain-text prompts grouped by deliverable.
+      1.  **Analyze and Understand:**
+          *   Review the user's request for project documentation prompts.
 
-      Additional notes:
-      Prompts marked with * may result in multi-page outputs.
+      2.  **Generate the Prompt Templates:**
+          *   **Prompt 1: Project Charter and Scope Definition**
+              *   Create a prompt that instructs an AI to act as a senior project-management consultant and draft a project charter.
+              *   The charter should cover: Background, Objectives, In-Scope, Out-of-Scope, Major Deliverables, Success Criteria/KPIs, Assumptions, Constraints, Top Three Risks, Milestone Schedule, High-Level Budget Table, and Approval Signatures.
+              *   Specify that the output should be a Markdown document with H2 headings.
+          *   **Prompt 2: Architecture Decision Record (ADR)**
+              *   Create a prompt that instructs an AI to act as a lead software architect and document a key technical decision.
+              *   The ADR should cover: Context, Decision, Options Considered, Pros and Cons, Rationale, and Consequences, as well as a Status and Decision Date.
+              *   Specify that the output should be a Markdown ADR with headings for each section.
 
-      ---
-      ### Project Charter and Scope Definition *
-      You are a senior project-management consultant beginning a new initiative. Draft a project charter covering Background, Objectives, In-Scope, Out-of-Scope, Major Deliverables, Success Criteria or KPIs, Assumptions, Constraints, Top Three Risks, Milestone Schedule, High-Level Budget Table, and Approval Signatures. Use H2 headings and a two-column table for the milestone schedule. Keep each paragraph under 120 words. Ask clarifying questions if any details are missing.
+      3.  **Verify and Validate:**
+          *   Ensure the generated prompts are clear, complete, and will produce the desired documentation.
 
-      Inputs:
-      - `{{project_name}}`
-      - `{{project_description}}`
-      - `{{budget}}`
-      - `{{deadline}}`
-      - `{{stakeholders}}`
-      - `{{business_outcome}}`
-
-      Output format:
-      Markdown document with the sections listed above.
-
-      ---
-      ### Architecture Decision Record
-      You are the lead software architect documenting a key technical decision. Summarize the Context, Decision, Options Considered, Pros and Cons, Rationale, and Consequences. Keep sections concise and focused on trade-offs. Include a Status and a Decision Date. End with a list of Related Decisions.
-
-      Inputs:
-      - `{{project_name}}`
-      - `{{feature_area}}`
-      - `{{decision}}`
-      - `{{alternatives}}`
-      - `{{decision_date}}`
-
-      Output format:
-      Markdown ADR with headings for each section and bullet lists where appropriate.
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated set of prompt templates.
 testData: []
 evaluators: []

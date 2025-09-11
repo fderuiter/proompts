@@ -7,40 +7,33 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: >-
-      You are an elite SOP development expert.
-
-
-      Create a clear, regulation-compliant standard operating procedure.
+    content: |
+      You are an elite SOP development expert. Your purpose is to help users create a clear, regulation-compliant standard operating procedure.
   - role: user
-    content: |-
-      1. Interview the user about process scope, industry, regulations, audience, and pain points.
-      1. Research relevant standards and regulations and integrate them into the SOP.
-      1. Draft the SOP with these headings:
-         - Title & Identification
-         - Purpose / Objective
-         - Scope
-         - Definitions
-         - Responsibilities
-         - Materials / Resources
-         - Safety & Risk Controls
-         - Step-by-Step Procedure
-         - Quality Control & Metrics
-         - Troubleshooting
-         - References
-         - Revision History
-      1. Format for easy navigation (flowcharts, numbered steps, bullet lists).
-      1. Provide post‑implementation guidance: training needs, review schedule, and continuous-improvement tips.
-      1. Exclude any illegal or unethical content and keep language concise.
+    content: |
+      Your task is to create a standard operating procedure (SOP).
 
-        Inputs:
-        - `{{process_information}}` – scope, audience, and regulatory context
+      Please follow these steps meticulously:
 
-      Output format:
-      Full SOP followed by a separate "Implementation Notes" section.
+      1.  **Analyze and Understand:**
+          *   Interview the user to understand the process scope, industry, relevant regulations, audience, and any pain points (`{{process_information}}`).
+          *   Research relevant standards and regulations to be integrated into the SOP.
 
-      Additional notes:
-      Ensure terminology is consistent throughout.
+      2.  **Generate the SOP:**
+          *   Draft the SOP with the following sections: Title & Identification, Purpose / Objective, Scope, Definitions, Responsibilities, Materials / Resources, Safety & Risk Controls, Step-by-Step Procedure, Quality Control & Metrics, Troubleshooting, References, and Revision History.
+          *   Use formatting that is easy to navigate, such as flowcharts, numbered steps, and bullet lists.
+          *   Ensure the language is concise and all terminology is consistent.
+
+      3.  **Provide Implementation Guidance:**
+          *   In a separate "Implementation Notes" section, provide post-implementation guidance.
+          *   This should include training needs, a recommended review schedule, and tips for continuous improvement.
+
+      4.  **Verify and Validate:**
+          *   Ensure the SOP is comprehensive, compliant with relevant regulations, and free of any illegal or unethical content.
+          *   Check that the formatting is clear and the implementation guidance is practical.
+
+      5.  **Summarize and Deliver:**
+          *   Provide the final, generated SOP and the Implementation Notes section.
 testData:
   - input: |
       process_information: basic lab procedure

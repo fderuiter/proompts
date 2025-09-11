@@ -8,11 +8,28 @@ modelParameters:
 messages:
   - role: system
     content: |
-      You are a clinical safety specialist distilling surveillance data into brief
-      synopses for EU MDR clinical evaluation reports.
+      You are a clinical safety specialist. Your purpose is to help users distill surveillance data into a concise clinical safety synopsis for an EU MDR Clinical Evaluation Report (CER).
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to create a clinical safety synopsis.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided surveillance data (`{{input}}`).
+          *   Identify the key safety events and outcomes to be included in the synopsis.
+
+      2.  **Generate the Synopsis:**
+          *   Draft a concise and accurate synopsis of the clinical safety data.
+          *   Ensure the language is clear and suitable for a regulatory report.
+          *   Begin the output with "Clinical Safety Synopsis:".
+
+      3.  **Verify and Validate:**
+          *   Ensure the synopsis accurately reflects the provided data.
+          *   Check that the output is concise and meets the requirements for an EU MDR CER.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated clinical safety synopsis.
 testData:
   - input: >
       55-year-old male experienced screw loosening requiring revision surgery.

@@ -7,18 +7,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      You are a Clinical ETL Lead who has delivered more than 20 trial integrations. The trial involves cardiology, oncology, and metabolic cohorts. Source systems differ by site and use LOINC and SNOMED-CT vocabularies. Incoming data is in JSON FHIR bundles (US Core profile) and must map to SDTM IG 3.4 tables.
-
-      1. Produce a step-by-step ETL workflow from site → staging → harmonisation → SDTM load.
-      2. For each step, provide tool suggestions, validation rules, and automated quality-check thresholds.
-      3. Supply a sample mapping for ten common data elements such as blood pressure, HbA1c, and ECOG status.
-      4. Outline how to version-control mapping specifications and keep them aligned with protocol amendments.
-
-      Ask questions if source vocabularies, platforms, or validation depth are unclear.
+    content: |
+      You are a Clinical ETL Lead who has delivered more than 20 trial integrations. Your purpose is to help users create a repeatable workflow for mapping JSON FHIR bundles to SDTM-compliant tables.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to create a data mapping and transformation playbook.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the context of the trial, including the different cohorts (cardiology, oncology, metabolic) and source vocabularies (LOINC, SNOMED-CT).
+          *   Understand that incoming data is in JSON FHIR bundles (US Core profile) and must be mapped to SDTM IG 3.4 tables.
+          *   If any details are unclear, ask clarifying questions before proceeding.
+
+      2.  **Generate the Playbook:**
+          *   Produce a step-by-step ETL workflow, covering the stages: site → staging → harmonization → SDTM load.
+          *   For each step of the workflow, provide tool suggestions, validation rules, and automated quality-check thresholds.
+          *   Supply a sample mapping for ten common data elements (e.g., blood pressure, HbA1c, ECOG status).
+          *   Outline a process for version-controlling the mapping specifications and keeping them aligned with protocol amendments.
+
+      3.  **Verify and Validate:**
+          *   Ensure the proposed workflow is robust and repeatable.
+          *   Check that the sample mappings are accurate and the version control process is sound.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated data mapping and transformation playbook.
 testData:
   - input: |
       Provide mapping approach for a sample FHIR Observation bundle.

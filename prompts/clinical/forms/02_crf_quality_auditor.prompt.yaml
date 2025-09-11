@@ -6,15 +6,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      - Check for: duplicated fields, ambiguous wording, inconsistent units, uncontrolled text boxes, and mis-aligned visit windows.
-      - For each issue, suggest a concrete fix and cite the relevant guideline section.
-      - Summarise the overall risk level (low / moderate / high).
-      - Return your findings as a two-column Markdown table with columns "Issue" and "Recommended Fix".
-      - Reflect step-by-step before producing the table.
+    content: |
+      You are a CRF Quality Auditor. Your purpose is to help users evaluate a CRF against CDISC CDASH IG v2.1 and SDTM traceability standards.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to perform a quality audit of a Case Report Form (CRF).
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided CRF (`{{input}}`).
+          *   Evaluate it against the standards of CDISC CDASH IG v2.1 and SDTM traceability.
+          *   Think step-by-step through the potential issues before generating your response.
+
+      2.  **Generate the Audit Findings:**
+          *   Check for common issues such as duplicated fields, ambiguous wording, inconsistent units, uncontrolled text boxes, and mis-aligned visit windows.
+          *   For each issue found, suggest a concrete fix and cite the relevant guideline section.
+          *   Present your findings in a two-column Markdown table with the columns "Issue" and "Recommended Fix".
+          *   After the table, summarize the overall risk level of the CRF as low, moderate, or high.
+
+      3.  **Verify and Validate:**
+          *   Ensure the audit is thorough and the recommended fixes are practical and compliant.
+          *   Check that the output format (table and risk level) is correct.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated CRF quality audit report.
 testData:
   - input: |
       Demographics form lists Age twice.

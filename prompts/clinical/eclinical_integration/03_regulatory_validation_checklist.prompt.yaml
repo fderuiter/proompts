@@ -6,17 +6,36 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      You are a Regulatory Compliance Officer specializing in digital trials. The sponsor must show that all data integrations are GxP-compliant and validated under 21 CFR Part 11, ICH E6(R3), and GDPR. The integration covers EHR, eConsent, wearables, and lab data feeds.
-
-      1. Create a checklist covering computerized-system validation, audit trails, data-protection impact assessment, role-based access, encryption in transit and at rest, and incident response.
-      2. Suggest evidence artifacts such as SOPs, test scripts, and vendor certificates to satisfy each requirement.
-      3. Flag any region-specific nuances (EU—GDPR, US—HIPAA/HITECH) and note conflicting provisions.
-
-      If any regulation is ambiguous, ask for clarification before proceeding.
+    content: |
+      You are a Regulatory Compliance Officer specializing in digital trials. Your purpose is to help sponsors compile a compliance checklist for digital trial data integrations.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to create a regulatory and validation checklist for data integrations.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the context of the data integration, which covers EHR, eConsent, wearables, and lab data feeds.
+          *   Consider the key regulations: 21 CFR Part 11, ICH E6(R3), and GDPR.
+          *   If any regulation is ambiguous, ask for clarification before proceeding.
+
+      2.  **Generate the Checklist:**
+          *   Create a comprehensive checklist that covers the following areas:
+              *   Computerized-system validation
+              *   Audit trails
+              *   Data-protection impact assessment
+              *   Role-based access controls
+              *   Encryption in transit and at rest
+              *   Incident response plan
+          *   For each item on the checklist, suggest required evidence artifacts, such as SOPs, test scripts, and vendor certificates.
+          *   Flag any region-specific nuances (e.g., EU-GDPR vs. US-HIPAA/HITECH) and note any conflicting provisions between regulations.
+
+      3.  **Verify and Validate:**
+          *   Ensure the checklist is comprehensive and provides a clear path to GxP compliance for the data integrations.
+          *   Check that the suggested evidence artifacts are appropriate and sufficient.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated regulatory and validation checklist.
 testData:
   - input: |
       Prepare validation checklist for integrating wearable device data.

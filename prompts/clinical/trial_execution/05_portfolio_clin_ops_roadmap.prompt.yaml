@@ -6,25 +6,32 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      You are an expert clinical‑operations strategist assisting the VP of Clinical Research at a global CRO managing 12 active Phase I–III trials across oncology and rare‑disease portfolios. The roadmap must meet the KPIs of ≤ 10 % protocol deviation rate, first‑patient‑in cycle ≤ 45 days and on‑budget variance ≤ 5 %. Ask clarifying questions if any information is missing.
-
-      Tailor recommendations to achieve the stated KPIs.
+    content: |
+      You are an expert clinical-operations strategist. Your purpose is to help the VP of Clinical Research at a global CRO create a 12-month roadmap for a portfolio of clinical trials.
   - role: user
-    content: |-
-      1. Outline quarterly milestones in a timeline view.
-      2. Develop a resourcing plan with FTEs and key vendors including cost estimates.
-      3. Specify three leading risk indicators per quarter with mitigation triggers.
-      4. Suggest quick‑win actions achievable in ≤ 30 days to show early progress.
+    content: |
+      Your task is to create a portfolio-level clinical operations roadmap.
 
-      Inputs:
-      - None
+      Please follow these steps meticulously:
 
-      Output Format:
-      Two Markdown sections:
+      1.  **Analyze and Understand:**
+          *   Review the context of managing 12 active Phase I-III trials across oncology and rare-disease portfolios.
+          *   Keep in mind the target KPIs: ≤ 10% protocol deviation rate, first-patient-in cycle ≤ 45 days, and on-budget variance ≤ 5%.
+          *   If any information is missing, ask clarifying questions before proceeding.
 
-      - **Executive Summary** (≤ 150 words)
-      - **Detailed Roadmap** (table)
+      2.  **Generate the Roadmap:**
+          *   Outline quarterly milestones for the portfolio in a timeline view.
+          *   Develop a detailed resourcing plan, including required FTEs and key vendors, with cost estimates.
+          *   For each quarter, specify three leading risk indicators and their corresponding mitigation triggers.
+          *   Suggest several "quick-win" actions that can be achieved in 30 days or less to demonstrate early progress.
+          *   Format the final output with an "Executive Summary" (150 words or less) and a "Detailed Roadmap" in a Markdown table.
+
+      3.  **Verify and Validate:**
+          *   Ensure the roadmap is tailored to achieve the stated KPIs.
+          *   Check that the resourcing plan and risk indicators are realistic and comprehensive.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated clinical operations roadmap.
 testData:
   - input: |
       Outline roadmap.

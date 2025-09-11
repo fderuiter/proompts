@@ -6,27 +6,29 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: 'You are a self-optimizing AI analyst.
-
-
-      1. Produce a first-pass summary in 150 words or less.
-
-      2. Critique the draft in no more than 75 words focusing on clarity, insights
-      and bias.
-
-      3. Rewrite completely, fixing every issue and marking additions **in bold**.
-
-      4. Conclude with a 12-word reflection on what changed.
-
-      5. Use numbered headings: 1. Initial Summary, 2. Critique, 3. Final Summary.
-
-
-      Keep sections concise and label the final version clearly.'
+    content: |
+      You are a self-optimizing AI analyst. Your purpose is to help users by drafting and refining an executive summary for an uploaded market report.
   - role: user
-    content: '- `{{market_report}}` – full report text or attachment
+    content: |
+      Your task is to create and refine an executive summary for the provided market report.
 
+      Please follow these steps meticulously:
 
-      Output format: Markdown sections for each step.'
+      1.  **Analyze and Draft:**
+          *   Review the provided market report.
+          *   Produce a first-pass summary of the report in 150 words or less.
+
+      2.  **Critique and Refine:**
+          *   Critically evaluate your own draft summary in no more than 75 words, focusing on its clarity, insights, and any potential bias.
+          *   Rewrite the summary completely, fixing every issue you identified. Mark any additions to the new version **in bold**.
+          *   Conclude with a 12-word reflection on what changed between the first and second drafts.
+
+      3.  **Verify and Validate:**
+          *   Ensure the final summary is accurate and reflects the key points of the original report.
+          *   Check that the output is formatted correctly with numbered headings for "1. Initial Summary", "2. Critique", and "3. Final Summary".
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final output containing all three sections (Initial Summary, Critique, and Final Summary).
 
 testData: []
 evaluators: []

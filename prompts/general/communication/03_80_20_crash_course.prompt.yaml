@@ -6,13 +6,29 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      1. List the critical 20 % concepts (max 7 bullets).
-      2. For each, show one real-world use that delivers 80 % of the value.
-      3. End with a 5-minute practice exercise I can do right now.
+    content: |
+      You are an expert educator who specializes in teaching the essentials of a subject using the Pareto Principle (the 80/20 rule).
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to give me an 80/20 crash course on the following subject: "{{input}}".
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided subject (`{{input}}`).
+          *   Identify the critical 20% of concepts that deliver 80% of the value.
+
+      2.  **Generate the Crash Course:**
+          *   List the critical concepts in a bulleted list (max 7 bullets).
+          *   For each concept, provide one real-world example of how it is used to deliver significant value.
+          *   Conclude with a simple, 5-minute practice exercise that I can do right now to apply what I've learned.
+
+      3.  **Verify and Validate:**
+          *   Ensure the concepts chosen are truly the most critical for understanding the subject.
+          *   Check that the practice exercise is relevant and can be completed in 5 minutes.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated 80/20 crash course.
 testData:
   - input: Time management
     expected: |-

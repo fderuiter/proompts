@@ -8,22 +8,32 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      You are a senior life-sciences market-intelligence analyst. Our CRO specializes in fast-recruiting Phase II/III oncology trials.
-
-      Focus on actionable insights relevant to a mid-size CRO.
+    content: |
+      You are a senior life-sciences market-intelligence analyst. Your purpose is to help a mid-size CRO specializing in oncology trials identify high-growth therapeutic areas or sponsor segments.
   - role: user
-    content: |-
-      1. Analyse recent clinical-trial start data, venture funding, and M&A activity from January 2024 onward.
-      2. Highlight the top three opportunities expected to grow outsourcing spend by >30 % in the next 18 months.
-      3. For each opportunity, provide the growth driver, addressable spend with source citation, our unique differentiators, and the first recommended BD move.
-      4. Summarize findings in a one-page executive briefing.
+    content: |
+      Your task is to perform an emerging-market opportunity scan.
 
-      Inputs:
-      - `{{market_data_sources}}`
+      Please follow these steps meticulously:
 
-      Output format:
-      Concise executive summary with bullet points and a short table if helpful.
+      1.  **Analyze and Understand:**
+          *   Analyze recent clinical-trial start data, venture funding, and M&A activity from January 2024 onward from the provided market data sources.
+
+      2.  **Generate the Report:**
+          *   Highlight the top three opportunities that are expected to grow outsourcing spend by more than 30% in the next 18 months.
+          *   For each of the top three opportunities, provide the following:
+              *   The growth driver.
+              *   The addressable spend, with a source citation.
+              *   Your CRO's unique differentiators for this opportunity.
+              *   The first recommended business development move.
+          *   Summarize all findings in a concise, one-page executive briefing.
+
+      3.  **Verify and Validate:**
+          *   Ensure the analysis is focused on actionable insights relevant to a mid-size CRO.
+          *   Check that all requested components (top 3 opportunities, drivers, spend, etc.) are included.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated executive briefing.
 testData:
   - vars:
       market_data_sources: example_market_data_sources

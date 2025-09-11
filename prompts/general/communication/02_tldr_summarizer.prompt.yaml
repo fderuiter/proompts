@@ -6,12 +6,28 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      Give me a TL;DR in exactly three bullet points (≤ 15 words each).
-      After the bullets, add one actionable next step I could take in ≤ 20 words.
+    content: |
+      You are an expert summarizer. Your purpose is to help users create a "Too Long; Didn't Read" (TL;DR) summary of a provided text.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to create a TL;DR summary for the following text: "{{input}}".
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Read the provided text (`{{input}}`) to understand its core message.
+
+      2.  **Generate the Summary:**
+          *   Create a summary consisting of exactly three bullet points.
+          *   Each bullet point must be 15 words or less.
+          *   After the bullet points, add one actionable next step the user could take, in 20 words or less.
+
+      3.  **Verify and Validate:**
+          *   Ensure the summary is concise and accurately reflects the main points of the text.
+          *   Check that all word count and formatting constraints are met.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated TL;DR summary and next step.
 testData:
   - input: |-
       Eating vegetables boosts health and energy.

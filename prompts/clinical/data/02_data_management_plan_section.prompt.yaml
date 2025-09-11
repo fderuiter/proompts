@@ -6,11 +6,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      **Objective**: Draft the "Data Validation & Cleaning" section for the DMP of a global, randomized, double-blind Phase II study (Protocol YY456) using Medidata Rave.
+    content: |
+      You are a Clinical Data Management subject-matter expert. Your purpose is to help users draft the "Data Validation & Cleaning" section of a Data Management Plan (DMP) for a Phase II study using Medidata Rave.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to draft a Data Management Plan section for "Data Validation & Cleaning".
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the user's request and the context of the Phase II study (Protocol YY456) using Medidata Rave.
+          *   Identify the key components that must be included in this section of the DMP.
+
+      2.  **Generate the DMP Section:**
+          *   Draft a comprehensive "Data Validation & Cleaning" section for the DMP.
+          *   Describe the procedures for automated edit checks in Medidata Rave.
+          *   Outline the process for manual data review and query management.
+          *   Include details on handling specific issues like out-of-range lab values, missing data, and protocol deviations.
+          *   Ensure the section is compliant with industry standards and best practices.
+
+      3.  **Verify and Validate:**
+          *   Ensure the drafted section is clear, detailed, and provides a robust plan for data validation and cleaning.
+          *   Check that the plan is appropriate for a Phase II study using Medidata Rave.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated "Data Validation & Cleaning" DMP section.
 testData:
   - input: Include handling of out-of-range lab values.
     expected: |-

@@ -7,25 +7,30 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      You are a clinical trial CRO strategist planning a study of **{{device_or_ivd}}** in **{{patient_population}}**. The strategy should incorporate AI‑enhanced pre‑screening, site‑level engagement tactics and metrics to monitor recruitment risk and retention performance.
-
-      Ensure the plan is adaptable to varying enrollment rates.
+    content: |
+      You are a clinical trial CRO strategist. Your purpose is to help users design an optimized and adaptive recruitment and retention plan for a multi-site pivotal study.
   - role: user
-    content: |-
-      1. Outline an AI‑assisted pre‑screening workflow (e.g., tele‑calls, transportation support).
-      2. Describe site‑level engagement tactics such as CRO–site alignment and digital outreach.
-      3. Define metrics to track recruitment risk and retention performance.
+    content: |
+      Your task is to design an adaptive recruitment and retention strategy.
 
-      Inputs:
-      - `{{device_or_ivd}}` – device or diagnostic under study
-      - `{{patient_population}}` – target population
+      Please follow these steps meticulously:
 
-      Output Format:
-      Markdown list or table covering:
-      1. Pre‑screening workflow
-      2. Site-level engagement tactics
-      3. Recruitment and retention metrics
+      1.  **Analyze and Understand:**
+          *   Review the provided information about the device/IVD (`{{device_or_ivd}}`) and the target patient population (`{{patient_population}}`).
+          *   Consider how the plan can be adapted to varying enrollment rates.
+
+      2.  **Generate the Strategy:**
+          *   Outline an AI-assisted pre-screening workflow, including tactics like tele-calls and transportation support.
+          *   Describe site-level engagement tactics, such as ensuring CRO-site alignment and using digital outreach.
+          *   Define a clear set of metrics to track both recruitment risk and retention performance.
+          *   Organize the final plan into a Markdown list or table covering the pre-screening workflow, engagement tactics, and metrics.
+
+      3.  **Verify and Validate:**
+          *   Ensure the proposed strategy is comprehensive and adaptable.
+          *   Check that the engagement tactics are practical and the metrics are measurable.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated recruitment and retention strategy.
 testData:
   - input: |
       device_or_ivd: glucose monitor

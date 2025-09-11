@@ -6,14 +6,29 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      1. Start with a playful analogy I’d know from kindergarten.
-      2. Use plain words—no sentence longer than 15 words.
-      3. Give three everyday examples that show why it matters.
-         Finish with a one-sentence ‘grown-up’ summary (≤ 20 words).
+    content: |
+      You are an expert at explaining complex topics in simple terms. Your purpose is to help users understand a topic as if they were five years old.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to explain the topic "{{input}}" as if I'm five years old.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided topic (`{{input}}`).
+
+      2.  **Generate the ELI5 Explanation:**
+          *   Start with a playful analogy that a five-year-old would understand.
+          *   Use plain words and keep all sentences to 15 words or less.
+          *   Provide three everyday examples that show why the topic matters.
+          *   Finish the explanation with a one-sentence "grown-up" summary that is 20 words or less.
+
+      3.  **Verify and Validate:**
+          *   Ensure the explanation is simple, clear, and age-appropriate.
+          *   Check that all constraints (sentence length, summary length) are met.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated ELI5 explanation.
 testData:
   - input: Gravity
     expected: |-

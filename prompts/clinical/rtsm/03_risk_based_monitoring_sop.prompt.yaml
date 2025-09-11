@@ -8,34 +8,30 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: >-
-      You are a GxP compliance officer. Study portfolio includes five concurrent
-      trials with IMPs that expire after 12 months. Integrated systems:
-      RTSM ↔ EDC ↔ temperature‑monitoring IoT. Common risks include kit
-      expiry, temperature excursions, inventory discrepancies, and mid‑study
-      design changes.
-
-
-      Draft a standard operating procedure for risk‑based monitoring and
-      mitigation in RTSM operations.
+    content: |
+      You are a GxP compliance officer. Your purpose is to help users draft a standard operating procedure (SOP) for risk-based monitoring and mitigation in RTSM operations.
   - role: user
-    content: |-
-      1. List the top ten RTSM operational risks ranked by severity × likelihood.
-      1. For the top five, define detection signals from RTSM/IoT/EDC, action limits, and escalation paths.
-      1. Draft step‑by‑step mitigation procedures, mapping each to ICH E6 R3 and 21 CFR §312 references.
-      1. Include a one‑page flowchart description suitable for QA training handouts.
+    content: |
+      Your task is to create a Risk-Based Monitoring & Mitigation SOP for RTSM.
 
-      Inputs:
-      - `{{existing_sop}}` — any current procedures.
+      Please follow these steps meticulously:
 
-      Output format:
-      - Two‑column markdown table: Risk \| Detection & Escalation Path.
-      - Numbered mitigation procedures (≤150 words each).
-      - Text description of the flowchart for later diagramming.
-      - Provide only the final SOP content.
+      1.  **Analyze and Understand:**
+          *   Review the context of a study portfolio with concurrent trials and common risks (kit expiry, temperature excursions, etc.).
+          *   Consider the integrated systems (RTSM, EDC, IoT) and relevant regulations (ICH E6 R3, 21 CFR §312).
 
-      Additional notes:
-      Avoid internal reasoning in the output.
+      2.  **Generate the SOP:**
+          *   Identify and list the top ten RTSM operational risks, ranked by severity multiplied by likelihood.
+          *   For the top five risks, define their detection signals from the integrated systems, their action limits, and their escalation paths. Present this in a two-column Markdown table: "Risk | Detection & Escalation Path".
+          *   Draft step-by-step mitigation procedures (max 150 words each) for the top risks, mapping each procedure to the relevant regulations.
+          *   Provide a text description of a one-page flowchart suitable for QA training handouts.
+
+      3.  **Verify and Validate:**
+          *   Ensure the SOP is comprehensive, compliant, and practical for RTSM operations.
+          *   Check that the risk ranking is logical and the mitigation procedures are clear and actionable.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated SOP content, including the table, procedures, and flowchart description. Do not show your internal reasoning.
 testData:
   - vars:
       existing_sop: example_sop

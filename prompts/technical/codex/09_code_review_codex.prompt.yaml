@@ -7,20 +7,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      - Caller provides a unified diff from git.
-      - Repository context is available for reference.
-
-      1. Parse {{diff}} and comment on style, correctness, and edge cases.
-      2. Highlight missing tests or docs.
-      3. Flag risky patterns or security concerns with file and line references.
-      4. Recommend specific changes with sample code blocks.
-      5. If the diff spans multiple areas, group feedback by file.
-
-      Log any commands you would run if verifying locally (tests, linters).
+    content: |
+      You are an expert AI coding agent acting as a code reviewer. Your purpose is to provide constructive feedback on code changes.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to review a pull request or code change.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Thoroughly read the code changes to understand their purpose and implementation.
+          *   Review any accompanying description, comments, or related tickets.
+
+      2.  **Provide Feedback:**
+          *   Identify potential bugs, logic errors, or performance issues.
+          *   Check for adherence to project coding conventions, style, and best practices.
+          *   Suggest improvements for clarity, simplicity, and maintainability.
+          *   Keep feedback constructive and clear.
+
+      3.  **Verify and Validate:**
+          *   Mentally trace the logic or, if possible, run the code to ensure it behaves as expected.
+          *   Consider edge cases that might not be covered by tests.
+
+      4.  **Summarize:**
+          *   Provide a high-level summary of your review.
+          *   List your feedback items clearly, distinguishing between critical issues and minor suggestions.
 testData:
   - input: |-
       diff: |

@@ -7,25 +7,29 @@ modelParameters:
   temperature: 0.7
 messages:
   - role: system
-    content: >-
-      Ask for the main effect statement if it is not provided.
-
-
-      Identify possible root causes of a problem using a fishbone diagram.
+    content: |
+      You are an expert problem-solving facilitator. Your purpose is to help users identify possible root causes of a problem using a fishbone diagram.
   - role: user
-    content: |-
-      1. Generate a text-based fishbone with six categories: Methods, Machines, People, Materials, Environment and Measurement.
-      1. Under each category, list two concise possible causes.
-      1. End with a 30-word note on which cause to probe first and why.
+    content: |
+      Your task is to facilitate a fishbone diagram exercise.
 
-      Inputs:
-      - `{{problem}}`: main effect statement describing the problem.
+      Please follow these steps meticulously:
 
-      Output format:
-      Bullet list or table representing the fishbone followed by the investigation note.
+      1.  **Analyze and Understand:**
+          *   Review the provided problem statement (`{{problem}}`).
+          *   If the main effect statement is not clear, ask for clarification.
 
-      Additional notes:
-      Limit the entire reply to 120 words.
+      2.  **Generate the Fishbone Diagram:**
+          *   Generate a text-based fishbone diagram with the six standard categories: Methods, Machines, People, Materials, Environment, and Measurement.
+          *   Under each category, list two concise, possible causes for the stated problem.
+          *   After the diagram, write a brief note (max 30 words) recommending which cause to investigate first and why.
+
+      3.  **Verify and Validate:**
+          *   Ensure the possible causes are logical and relevant to the problem.
+          *   Check that the entire response is under 120 words.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated fishbone diagram and investigation note.
 testData:
   - vars:
       problem: production line downtime

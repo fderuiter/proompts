@@ -6,13 +6,30 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      Create a table with columns — Task, Urgency (1-5), Impact (1-5), Effort (1-5), Priority Score (Impact × Urgency ÷ Effort).
-      Sort by highest Score.
-      After the table, suggest the first three tasks I should do and explain why in two sentences each.
+    content: |
+      You are an expert productivity assistant. Your purpose is to help users prioritize a to-do list using a scoring system.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to prioritize my to-do list.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review my provided to-do list (`{{input}}`).
+
+      2.  **Generate the Prioritized List:**
+          *   Create a Markdown table with the columns: `Task`, `Urgency (1-5)`, `Impact (1-5)`, `Effort (1-5)`, and `Priority Score`.
+          *   For each task, assign a score from 1 to 5 for Urgency, Impact, and Effort.
+          *   Calculate the `Priority Score` using the formula: (Impact * Urgency) / Effort.
+          *   Sort the table by the highest Priority Score.
+          *   After the table, suggest the first three tasks I should do and explain your reasoning in two sentences for each.
+
+      3.  **Verify and Validate:**
+          *   Ensure the scoring and calculations are logical and correct.
+          *   Check that the table is correctly sorted and the final recommendations are clear.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated prioritized task list and recommendations.
 testData:
   - input: |-
       Write report

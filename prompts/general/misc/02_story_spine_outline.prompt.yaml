@@ -7,29 +7,36 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: 'The Pixar Story Spine provides a simple eight-sentence framework for
-      tales with a clear emotional arc.
-
-
-      1. Write eight numbered sentences following the structure: *Once upon a time…
-      Every day… Until one day… Because of that… Because of that… Until finally… Ever
-      since then…*.
-
-      2. Keep each sentence 18 words or fewer and total length under 120 words.
-
-      3. Add a 30-word note summarizing the emotional arc and one teaching moment
-      after the outline.
-
-
-      Designed for middle-grade readers; keep language age-appropriate.
-
-
-      References: Tame Your Book, Westside Excellence in Youth'
+    content: |
+      You are a creative writer specializing in storytelling. Your purpose is to help users create a short Pixar-style story outline for middle-grade readers using the Story Spine framework.
   - role: user
-    content: '- `{{TOPIC}}` — the subject of the story.
+    content: |
+      Your task is to create a Pixar Story Spine outline.
 
+      Please follow these steps meticulously:
 
-      Output format: Plain text with the numbered sentences followed by a short note.'
+      1.  **Analyze and Understand:**
+          *   Review the provided topic for the story (`{{TOPIC}}`).
+          *   Keep the language age-appropriate for middle-grade readers.
+
+      2.  **Generate the Story Outline:**
+          *   Write eight numbered sentences that follow the Pixar Story Spine structure:
+              1.  Once upon a time...
+              2.  Every day...
+              3.  Until one day...
+              4.  Because of that...
+              5.  Because of that...
+              6.  Until finally...
+              7.  Ever since then...
+          *   Keep each sentence to 18 words or fewer, and the total story under 120 words.
+          *   After the outline, add a brief note (max 30 words) that summarizes the emotional arc and one teaching moment.
+
+      3.  **Verify and Validate:**
+          *   Ensure the story follows the specified structure and constraints (sentence length, total length).
+          *   Check that the tone is appropriate for the target audience.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated story spine outline and the concluding note.
 
 testData: []
 evaluators: []

@@ -7,25 +7,30 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      You are a compliance and data quality manager trained in AI-assisted clinical oversight and GCDMP standards. The plan must maintain GCP/GCDMP compliance, enable early detection of data anomalies and ensure timely resolution of protocol deviations.
-
-      Tailor the monitoring plan to the trial’s risk profile.
+    content: |
+      You are a compliance and data quality manager trained in AI-assisted clinical oversight and GCDMP standards. Your purpose is to help users design a monitoring plan that ensures compliance and data integrity.
   - role: user
-    content: |-
-      1. List the types of automated alerts and their trigger conditions.
-      2. Specify the frequency of human–AI reviews.
-      3. Define the reporting cadence to sponsors and regulators.
+    content: |
+      Your task is to create a compliance and data quality monitoring plan.
 
-      Inputs:
-      - None
+      Please follow these steps meticulously:
 
-      Output Format:
-      Markdown sections:
+      1.  **Analyze and Understand:**
+          *   Review the trial's risk profile to tailor the monitoring plan accordingly.
+          *   Consider the requirements for maintaining GCP/GCDMP compliance, enabling early detection of data anomalies, and ensuring timely resolution of protocol deviations.
 
-      - **Part A:** Alert list (type, trigger condition)
-      - **Part B:** Review schedule (who and how often)
-      - **Part C:** Reporting plan (frequency, content, recipients)
+      2.  **Generate the Monitoring Plan:**
+          *   **Part A:** Create a list of automated alert types and their specific trigger conditions.
+          *   **Part B:** Specify the frequency of human-AI reviews, including who should be involved and how often they should occur.
+          *   **Part C:** Define the reporting cadence to sponsors and regulators, including the frequency, content, and recipients of the reports.
+          *   Organize the final plan into three clear Markdown sections as specified above.
+
+      3.  **Verify and Validate:**
+          *   Ensure the plan is comprehensive and provides a robust framework for monitoring compliance and data quality.
+          *   Check that the alert triggers, review schedules, and reporting plans are clear and actionable.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated compliance and data quality monitoring plan.
 testData:
   - input: |
       Generate monitoring plan.

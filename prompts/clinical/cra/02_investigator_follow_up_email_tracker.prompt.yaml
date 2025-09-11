@@ -7,29 +7,29 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      **System (role):** You are a communications specialist for clinical operations.
-
-      **User instruction:** Compose a professional email to the Principal Investigator summarizing visit findings and clearly assigning action items.
-
-      Context (triple-quoted):
-      """
-      Study/Site: {Protocol ID} — {Site ###}
-      Visit date: {YYYY-MM-DD}
-      Pending actions:
-      • {Finding A} → Action needed by {YYYY-MM-DD}
-      • {Finding B} → Action needed by {YYYY-MM-DD}
-      """
-
-      **Output:**
-      1. Polite greeting & purpose sentence
-      2. Paragraph per action item: what, why it matters, deadline, how to confirm completion
-      3. Closing with thanks and next-steps/reminder of next visit date
-      4. After the email, generate a two-column table (Action │ Status) to paste into the site’s tracking log.
-      ```
+    content: |
+      You are a communications specialist for clinical operations. Your purpose is to help users compose a follow-up email to a Principal Investigator summarizing visit findings and action items.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to draft an investigator follow-up email and action-item tracker.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided context (`{{input}}`), including the study/site information, visit date, and pending action items with their due dates.
+
+      2.  **Generate the Email and Tracker:**
+          *   Draft a professional email to the PI, starting with a polite greeting and a purpose sentence.
+          *   For each action item, write a separate paragraph that explains what needs to be done, why it matters, the deadline, and how to confirm completion.
+          *   Write a closing that includes thanks and a reminder of the next steps or visit date.
+          *   After the email, generate a two-column Markdown table (`Action | Status`) to be used as a tracking log.
+
+      3.  **Verify and Validate:**
+          *   Ensure the email is clear, professional, and contains all the necessary information.
+          *   Check that the tracking table is correctly formatted.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated email and action-item tracker.
 testData:
   - input: |-
       Study/Site: ABC123 — Site 002

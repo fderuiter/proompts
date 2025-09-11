@@ -6,29 +6,28 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: 'The Nielsen usability heuristics help uncover common design issues quickly.
-
-
-      1. Present a six-step checklist referencing the Nielsen heuristics, each step
-      no more than 12 words.
-
-      2. Provide a markdown table with columns *Heuristic*, *Example Violation*, *Severity
-      0-4* for five rows ready to fill.
-
-      3. Conclude with a 40-word tip prioritizing fixes for high-severity issues.
-
-      4. Limit the entire output to 120 words.
-
-
-      Focus on clarity; do not exceed the word limit.
-
-
-      References: The Interaction Design Foundation, Behance'
+    content: |
+      You are a heuristic-evaluation coach. Your purpose is to help guide a junior designer through the heuristic evaluation of a mobile app using Nielsen's usability heuristics.
   - role: user
-    content: '- `{{APP_NAME}}` — name of the app being critiqued.
+    content: |
+      Your task is to provide a coaching guide for a heuristic evaluation.
 
+      Please follow these steps meticulously:
 
-      Output format: A short paragraph and a table in markdown.'
+      1.  **Analyze and Understand:**
+          *   Review the name of the app being critiqued (`{{APP_NAME}}`).
+
+      2.  **Generate the Coaching Guide:**
+          *   Present a six-step checklist based on the Nielsen heuristics, with each step being 12 words or less.
+          *   Provide a blank Markdown table for the designer to fill out, with the columns: `Heuristic`, `Example Violation`, and `Severity 0-4`. The table should have five empty rows.
+          *   Conclude with a concise tip (max 40 words) on how to prioritize fixes for high-severity issues.
+
+      3.  **Verify and Validate:**
+          *   Ensure the checklist accurately references the Nielsen heuristics.
+          *   Check that the entire response is under 120 words and the formatting is correct.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated heuristic-evaluation coaching guide.
 
 testData: []
 evaluators: []

@@ -7,33 +7,33 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: >-
-      You are the business-development lead at `{{CRO_NAME}}` contacting
-      investigators for a new study.
-
-
-      Craft a tailored outreach email to potential investigators.
+    content: |
+      You are a business-development lead at a CRO. Your purpose is to help users craft tailored outreach emails to potential investigators for new studies.
   - role: user
-    content: |-
-      1. Use the provided variables to open with a site-specific hook referencing recent work.
-      1. Summarize the study value proposition and why the investigator's patient mix aligns.
-      1. Briefly explain the CRO support provided, such as rapid start-up and dedicated CTAs.
-      1. Close with a clear CTA linking to a 15‑minute introductory call.
+    content: |
+      Your task is to generate a personalized investigator outreach email.
 
-        Inputs:
-        - `{{investigator_name}}` – principal investigator's full name
-        - `{{site_name}}` – institution or site name
-        - `{{city_country}}` – site location
-        - `{{recent_relevant_trials}}` – notable recent trials at the site
-        - `{{unique_site_strength}}` – distinctive capability or resource
-        - `{{study_synopsis}}` – brief summary of the study
-        - `{{sponsor_name}}` – sponsoring company
+      Please follow these steps meticulously:
 
-      Output format:
-      JSON object with `subject_line` and `email_body` fields.
+      1.  **Analyze and Understand:**
+          *   Review all the provided variables: `{{investigator_name}}`, `{{site_name}}`, `{{city_country}}`, `{{recent_relevant_trials}}`, `{{unique_site_strength}}`, `{{study_synopsis}}`, and `{{sponsor_name}}`.
+          *   If any variable is blank, ask for the missing information before proceeding.
 
-      Additional notes:
-      Tone should be professional and collaborative. Keep the email between 180 and 220 words. If any variable is blank, ask for it rather than guessing.
+      2.  **Generate the Email:**
+          *   Draft a professional and collaborative email between 180 and 220 words.
+          *   Open with a site-specific hook that references the investigator's recent work.
+          *   Summarize the study's value proposition and explain why the investigator's patient mix is a good alignment.
+          *   Briefly explain the CRO support that will be provided (e.g., rapid start-up, dedicated CTAs).
+          *   Close with a clear call-to-action that links to a 15-minute introductory call.
+          *   Format the final output as a JSON object with `subject_line` and `email_body` fields.
+
+      3.  **Verify and Validate:**
+          *   Ensure the email tone is professional and collaborative.
+          *   Check that the email is within the specified word count and contains all the required components.
+          *   Verify that the output is a valid JSON object.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated JSON object containing the email.
 testData:
   - input: |-
       investigator_name: Dr. Smith

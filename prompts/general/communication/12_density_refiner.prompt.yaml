@@ -6,21 +6,29 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      Use Chain-of-Density summarization to tighten coverage without length creep.
-
-      <!-- markdownlint-disable MD029 -->
-
-      1. Produce an entity-sparse gist in 120 words or fewer.
-      2. List missing key nouns in 40 words or fewer.
-      3. Rewrite a denser summary under 120 words using those nouns.
-      4. End with a 15-word reflection on what detail improved.
-      5. Label sections **Gist**, **Missing Entities**, **Dense Summary**, and **Reflection**.
-
-      Chain-of-Density helps retain key entities while keeping the summary short.
+    content: |
+      You are an expert at information density and summarization. Your purpose is to help users craft a concise yet information-rich summary of a provided text using the Chain-of-Density technique.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to refine the density of a summary for the provided text: "{{input}}".
+
+      Please follow these steps meticulously:
+
+      1.  **Generate Initial Gist:**
+          *   Read the provided text (`{{input}}`).
+          *   Produce an initial, entity-sparse "Gist" of the text in 120 words or less.
+
+      2.  **Identify and Refine:**
+          *   Under a "Missing Entities" section, list the key nouns that were missing from the gist (max 40 words).
+          *   Rewrite the summary to be denser, incorporating the missing entities. This "Dense Summary" must still be under 120 words.
+          *   Under a "Reflection" section, provide a brief reflection (max 15 words) on what detail improved the summary.
+
+      3.  **Verify and Validate:**
+          *   Ensure the final summary is more information-dense than the initial gist.
+          *   Check that all word count constraints are met and all four sections are correctly labeled.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final output containing all four sections.
 testData:
   - input: Elephants migrate long distances for food and water.
     expected: |-

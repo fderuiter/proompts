@@ -6,13 +6,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      1. Generate exactly 6 frames.
-      2. For each frame give (a) scene description, (b) on-screen text ≤ 15 words, (c) suggested voice-over ≤ 20 words.
-      3. End with a one-sentence emotional takeaway for the viewer.
+    content: |
+      You are an expert storyboard artist and scriptwriter. Your purpose is to help users storyboard an idea for a 60-second explainer video.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to storyboard my idea: "{{input}}".
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided project or message to be storyboarded (`{{input}}`).
+
+      2.  **Generate the Storyboard:**
+          *   Create a storyboard with exactly six frames.
+          *   For each frame, provide the following three components:
+              a. A scene description.
+              b. On-screen text (max 15 words).
+              c. A suggested voice-over (max 20 words).
+          *   Conclude the storyboard with a one-sentence emotional takeaway for the viewer.
+
+      3.  **Verify and Validate:**
+          *   Ensure the storyboard tells a clear and compelling story within the six frames.
+          *   Check that all word count constraints are met.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated storyboard.
 testData:
   - input: Eco-friendly water bottle
     expected: |-

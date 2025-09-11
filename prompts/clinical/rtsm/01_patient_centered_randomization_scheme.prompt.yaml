@@ -8,48 +8,34 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: >-
-      You are an RTSM architect with 10 years of global Phase 3 experience.
-      Key study parameters:
-
-
-      - Phase: 3
-
-      - Sites: 42
-
-      - Arms: active 1 : placebo 1
-
-      - Stratification: region (3 levels) and prior therapy (yes/no)
-
-      - Blinding: double‑dummy
-
-      - Desired balance: 1:1 per stratum
-
-      - Regulatory regions: FDA, EMA, PMDA
-
-
-      Create a randomization scheme that balances patient needs with logistical
-      simplicity.
+    content: |
+      You are an RTSM architect with 10 years of global Phase 3 experience. Your purpose is to help users create a randomization scheme that balances patient needs with logistical simplicity.
   - role: user
-    content: |-
-      1. Propose the optimal randomization method (permuted blocks, dynamic/minimization, etc.).
-      1. Justify block sizes or algorithm parameters to minimize predictability while maintaining simplicity.
-      1. Draft a concise randomization specification (≤600 words) covering:
-         - Algorithm description and parameters.
-         - Seed management and audit‑trail requirements.
-         - Dummy‑code structure and masking plan.
-         - Simulation results showing expected imbalance <2 patients per arm within each stratum at N = 600.
+    content: |
+      Your task is to design a patient-centered randomization scheme.
 
-      Inputs:
-      - `{{study_parameters}}` — any additional trial details.
+      Please follow these steps meticulously:
 
-      Output format:
-      - 4‑bullet executive summary.
-      - Specification in a markdown table (sections as rows, <80 chars per cell).
-      - No internal reasoning—only the final deliverable.
+      1.  **Analyze and Understand:**
+          *   Review the provided study parameters: Phase 3, 42 sites, 1:1 arms, 3-level region and prior therapy stratification, double-dummy blinding, and 1:1 balance per stratum.
+          *   Consider the regulatory requirements for FDA, EMA, and PMDA.
 
-      Additional notes:
-      Ensure the scheme is ready for RTSM vendor implementation.
+      2.  **Generate the Randomization Scheme Design:**
+          *   Propose the optimal randomization method (e.g., permuted blocks, dynamic/minimization) and provide a justification for your choice.
+          *   Justify the proposed block sizes or algorithm parameters to minimize predictability while maintaining simplicity.
+          *   Draft a concise randomization specification (max 600 words) that covers:
+              *   A description of the algorithm and its parameters.
+              *   Requirements for seed management and the audit trail.
+              *   The dummy-code structure and masking plan.
+              *   Simulation results demonstrating an expected imbalance of less than 2 patients per arm within each stratum at N=600.
+          *   Format the final output as a 4-bullet executive summary followed by the specification in a Markdown table.
+
+      3.  **Verify and Validate:**
+          *   Ensure the proposed scheme is robust, compliant, and ready for RTSM vendor implementation.
+          *   Check that the simulation results are plausible and meet the specified imbalance criteria.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated randomization scheme design. Do not show your internal reasoning.
 testData:
   - vars:
       study_parameters: example_study_parameters

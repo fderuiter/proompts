@@ -7,19 +7,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      You are my senior FP&A analyst inside a mid-size global CRO. Rising Phase II/III costs and client delays are compressing margins. I need a 12-quarter cash-flow forecast under three scenarios (Base, +15% cost inflation, –20% patient-recruitment pace).
+    content: |
+      You are a senior FP&A analyst for a mid-size global CRO. Your purpose is to help users model 12-quarter cash flows under different scenarios to understand the impact of rising costs and client delays.
   - role: user
-    content: |-
-      - `{{base_revenue}}` – baseline quarterly revenue (USD).
-      - `{{base_costs}}` – baseline quarterly costs (USD).
-      - `{{starting_cash}}` – cash on hand at start (USD).
-      - `{{notes}}` – assumptions or upcoming events.
+    content: |
+      Your task is to create a scenario-based clinical-trial cash-flow forecast.
 
-      Start the response with **Scenario Forecast -**.
-      Output format:
-      1. Markdown table showing Base, Inflation, and Slow-Recruitment scenarios for 12 quarters with net and ending cash.
-      2. Two bullet-point insights on liquidity risks or funding needs.
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided baseline quarterly revenue, baseline quarterly costs, starting cash, and any notes on assumptions or upcoming events.
+
+      2.  **Generate the Forecast:**
+          *   Model a 12-quarter cash-flow forecast under three distinct scenarios:
+              1.  **Base:** Using the provided baseline figures.
+              2.  **Inflation:** With a +15% increase in cost inflation.
+              3.  **Slow-Recruitment:** With a -20% patient-recruitment pace (you may need to model its impact on revenue/costs).
+          *   Create a Markdown table that shows the net and ending cash for all three scenarios over the 12 quarters.
+          *   Provide two bullet-point insights on potential liquidity risks or funding needs identified from the forecast.
+
+      3.  **Verify and Validate:**
+          *   Ensure the cash-flow calculations for each scenario are accurate.
+          *   Check that the output format (table and insights) is correct.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated forecast, starting with the title "**Scenario Forecast -**".
 testData:
   - input: |-
       base_revenue: 20000000

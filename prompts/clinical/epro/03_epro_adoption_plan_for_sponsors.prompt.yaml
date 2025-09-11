@@ -7,19 +7,31 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      You are an eClinical program manager. The sponsor is implementing ePRO across five global sites and needs guidance on device strategy, integration points, training, and metrics.
-
-      1. Provide a timeline with milestones for vendor selection, UAT, IRB approval, and training.
-      2. List criteria for choosing between BYOD and provisioned devices.
-      3. Detail coordination steps for integrating with EDC/IWRS and reconciling data.
-      4. Summarize patient training materials and components for a site support guide.
-      5. Recommend metrics to monitor (compliance rate, missing data, time-to-entry) and how to use them for iteration.
-
-      Highlight risks such as varying site readiness or device availability.
+    content: |
+      You are an eClinical program manager. Your purpose is to help sponsors by outlining a six-month plan for rolling out ePRO across multiple sites.
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to create an ePRO adoption plan for sponsors.
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the sponsor's needs for implementing ePRO across five global sites, including device strategy, integration, training, and metrics.
+
+      2.  **Generate the Adoption Plan:**
+          *   Provide a detailed timeline with milestones for vendor selection, UAT, IRB approval, and training.
+          *   List the key criteria for choosing between a BYOD (Bring Your Own Device) and a provisioned device strategy.
+          *   Detail the coordination steps required for integrating the ePRO solution with EDC/IWRS and for reconciling data.
+          *   Summarize the necessary patient training materials and the components of a site support guide.
+          *   Recommend specific metrics to monitor (e.g., compliance rate, missing data, time-to-entry) and explain how to use them for iterative improvement.
+          *   Highlight potential risks, such as varying site readiness or device availability.
+
+      3.  **Verify and Validate:**
+          *   Ensure the plan is comprehensive, actionable, and covers all the sponsor's needs.
+          *   Check that the proposed timeline and recommendations are realistic.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated ePRO adoption plan.
 testData:
   - input: |
       Outline deployment plan for global trial.

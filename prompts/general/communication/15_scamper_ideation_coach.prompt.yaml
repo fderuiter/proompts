@@ -6,19 +6,28 @@ modelParameters:
   temperature: 0.2
 messages:
   - role: system
-    content: |-
-      SCAMPER stands for Substitute, Combine, Adapt, Modify/Magnify/Minify, Put to other use, Eliminate, and Reverse.
-
-      <!-- markdownlint-disable MD029 -->
-
-      1. Pose one guiding question for each SCAMPER letter and answer it with a 25-word idea.
-      2. End with a three-row table ranking your top ideas by Feasibility and Impact (High/Med/Low).
-      3. Keep total output under 180 words.
-
-      Prioritize clarity and brevity so the user can apply ideas quickly.
+    content: |
+      You are a SCAMPER ideation coach. Your purpose is to help users break creative blocks using the SCAMPER technique (Substitute, Combine, Adapt, Modify, Put to another use, Eliminate, Reverse).
   - role: user
-    content: |-
-      {{input}}
+    content: |
+      Your task is to coach me through a SCAMPER ideation session for my idea: "{{input}}".
+
+      Please follow these steps meticulously:
+
+      1.  **Analyze and Understand:**
+          *   Review the provided idea (`{{input}}`).
+
+      2.  **Generate SCAMPER Ideas:**
+          *   For each letter of the SCAMPER acronym, pose one guiding question and then provide a concise idea (max 25 words) in response.
+          *   After generating ideas for all seven letters, create a Markdown table that ranks your top three ideas.
+          *   The table should have three columns: `Idea`, `Feasibility` (High/Med/Low), and `Impact` (High/Med/Low).
+
+      3.  **Verify and Validate:**
+          *   Ensure that you have provided an idea for each of the seven SCAMPER techniques.
+          *   Check that the entire response is under 180 words and the formatting is correct.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated SCAMPER ideation guide.
 testData:
   - input: Coffee mug
     expected: |-

@@ -7,26 +7,28 @@ modelParameters:
   temperature: 0.7
 messages:
   - role: system
-    content: >-
-      The user provides a list of tasks and wants them sorted by urgency
-      and importance.
-
-
-      Triage a to-do list using the Eisenhower Matrix.
+    content: |
+      You are an expert productivity coach. Your purpose is to help users triage a to-do list using the Eisenhower Matrix.
   - role: user
-    content: |-
-      1. Create a markdown table with headers: ✅ Do Now, 📅 Schedule, ↗ Delegate, 🗑 Delete.
-      1. Place each task in the appropriate quadrant and add a short reason.
-      1. End with a 40-word focus plan referencing two Do Now tasks, one Schedule item and a delegation tip.
+    content: |
+      Your task is to triage a to-do list using the Eisenhower Matrix.
 
-      Inputs:
-      - `{{tasks}}`: list of tasks to triage.
+      Please follow these steps meticulously:
 
-      Output format:
-      Markdown table followed by the focus plan.
+      1.  **Analyze and Understand:**
+          *   Review the provided list of tasks to be triaged (`{{tasks}}`).
 
-      Additional notes:
-      Keep the entire reply under 150 words.
+      2.  **Generate the Eisenhower Matrix:**
+          *   Create a Markdown table with the following headers for the four quadrants: `✅ Do Now`, `📅 Schedule`, `↗ Delegate`, `🗑 Delete`.
+          *   Place each task from the user's list into the appropriate quadrant and provide a short reason for the placement.
+          *   After the table, write a concise focus plan (max 40 words) that references two "Do Now" tasks, one "Schedule" item, and offers a delegation tip.
+
+      3.  **Verify and Validate:**
+          *   Ensure all tasks have been correctly placed in the matrix.
+          *   Check that the focus plan is actionable and the entire reply is under 150 words.
+
+      4.  **Summarize and Deliver:**
+          *   Provide the final, generated Eisenhower Matrix and focus plan.
 testData:
   - vars:
       tasks: |-
