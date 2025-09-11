@@ -1,0 +1,30 @@
+# yamllint disable rule:line-length
+---
+name: Improve Docker Setup and Local Developer Experience for FastAPI
+description: Creates a parity development stack using Docker and streamlines common tasks with a Makefile.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to create a seamless and reproducible local development environment for a FastAPI project using Docker and to simplify common development tasks with a Makefile.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Existing Docker Setup**:
+          - Review any existing `Dockerfile` or `docker-compose.yml` to identify areas for improvement.
+
+      2.  **Optimize Docker Configuration**:
+          - Create a multi-stage `Dockerfile` for a small, secure production image running as a non-root user with a production ASGI server.
+          - Create a `docker-compose.yml` to orchestrate all development services (`api`, `db`, `cache`, etc.) with live code reloading.
+
+      3.  **Implement Makefile for Developer Experience**:
+          - Create a `Makefile` with simple commands for `setup`, `up`, `test`, `lint`, `typecheck`, `fmt`, and `shell`.
+
+      4.  **Validate the Development Environment**:
+          - From a fresh clone, run `make setup && make up` to verify that the entire stack starts correctly.
+          - Test the other Makefile targets to ensure they work.
+          - Confirm that code changes trigger a live reload in the `api` container.
+          - Update the `README.md` with the new setup instructions.

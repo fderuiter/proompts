@@ -1,0 +1,31 @@
+# yamllint disable rule:line-length
+---
+name: Implement Security-by-Default
+description: Configures the service to be safe-by-default from its inception.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to build a strong security posture into the new Flask project from day one, making it safe-by-default.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Security Requirements**:
+          - Review the project requirements to identify the core security needs: security headers, rate limiting, CORS, and request correlation.
+
+      2.  **Implement Security Headers and Rate Limiting**:
+          - Integrate `Flask-Talisman` to set secure default headers, including a strict Content Security Policy (CSP) and HSTS.
+          - Integrate `Flask-Limiter` and apply a sensible default rate limit to all API endpoints.
+
+      3.  **Implement CORS and Request IDs**:
+          - Configure `Flask-Cors` with a strict allowlist for trusted origins, loaded from application settings.
+          - Implement a middleware that generates a unique request ID for every incoming request and adds it to response headers and application logs.
+          - Configure the web server or Flask application to enforce a reasonable maximum request body size.
+
+      4.  **Validate Security Controls**:
+          - Write **new, meaningful tests** that verify the security headers are set, rate limits are enforced, CORS headers are correct, and the request ID header is present.
+          - **Run the entire existing test suite** to ensure your changes have not introduced any regressions.
+          - Create a `security.md` document outlining the default security posture of the service.

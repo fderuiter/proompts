@@ -1,0 +1,33 @@
+# yamllint disable rule:line-length
+---
+name: Set Up Data Layer with SQLAlchemy and Alembic
+description: Initializes the data layer with SQLAlchemy 2.x and sets up Alembic for migrations.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to set up a modern and robust data layer for the new Flask project using SQLAlchemy 2.x and Alembic for migrations.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Data Layer Requirements**:
+          - Review the project structure to identify the correct locations for database code (`/src/app/db/`, `/src/app/repositories/`).
+          - Note the requirement for SQLAlchemy 2.x and Alembic.
+
+      2.  **Implement SQLAlchemy and Session Management**:
+          - Configure the SQLAlchemy 2.x engine and session management in `/src/app/db/session.py`.
+          - Ensure the session is properly scoped to the application context to prevent leaks.
+          - Create initial database models (e.g., a `User` model).
+
+      3.  **Implement Repositories and Migrations**:
+          - Implement a base repository class with common CRUD methods, providing a clean abstraction for data access.
+          - Initialize Alembic to manage database schema migrations, including a naming convention and an initial migration for the `User` model.
+          - Create a simple script in `/scripts` to seed the database with initial data for development.
+
+      4.  **Validate the Data Layer**:
+          - **Run the `alembic upgrade head` command** to apply migrations and ensure they work correctly.
+          - Write **new, meaningful CRUD tests** for the `User` model that use the repository for data access.
+          - **Run the entire existing test suite** to ensure your changes have not introduced any regressions. All tests must pass.

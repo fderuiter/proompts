@@ -1,0 +1,29 @@
+# yamllint disable rule:line-length
+---
+name: Improve Documentation and Add ADRs for FastAPI Project
+description: Creates essential project documentation and seeds a log of architectural decisions.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to create a set of essential documentation to make the repository self-explaining and easy for new developers to onboard, and to establish a process for recording important architectural decisions.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Existing Documentation**:
+          - Review existing documentation (`README.md`, etc.) to find gaps or outdated information.
+
+      2.  **Create and Update Foundational Documents**:
+          - Write or update the `README.md` (with setup instructions), `CONTRIBUTING.md` (with workflow), and a `pull_request_template.md`.
+          - Ensure the `CODEOWNERS` file is up-to-date.
+
+      3.  **Establish Architectural Decision Records (ADRs)**:
+          - Create a `docs/adr` directory with a template.
+          - Write at least two initial ADRs for significant refactoring decisions (e.g., "Adopt Async SQLAlchemy", "Choose Arq for Background Tasks").
+
+      4.  **Validate Documentation Quality**:
+          - Review the created documents for clarity, conciseness, and accuracy.
+          - The final documentation should be sufficient for a new developer to get started in under an hour. Confirm this by following the steps yourself.

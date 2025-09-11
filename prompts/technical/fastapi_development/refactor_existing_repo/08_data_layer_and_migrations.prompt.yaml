@@ -1,0 +1,36 @@
+# yamllint disable rule:line-length
+---
+name: Solidify Async DB Layer and Add Migrations for FastAPI
+description: Modernizes a FastAPI project's SQLAlchemy setup to be fully async and introduces Alembic for migrations.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to harden the persistence layer of this FastAPI application by implementing a fully asynchronous data layer using SQLAlchemy 2.x and integrating Alembic for schema migrations.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Existing Data Layer**:
+          - Review the current SQLAlchemy setup to identify any non-async patterns (e.g., use of `create_engine` instead of `create_async_engine`).
+          - Check for the existence of `alembic` for migrations and `asyncpg` in the project dependencies.
+          - Analyze the existing data access logic to plan the refactoring to an async repository pattern.
+
+      2.  **Implement Async Persistence Layer**:
+          - Ensure `sqlalchemy[asyncio]` and `asyncpg` are in the project dependencies.
+          - Following existing conventions, configure SQLAlchemy 2.x with an `async_engine` and `AsyncSession` in the appropriate module (e.g., `/src/app/db/session.py`).
+          - Create a FastAPI dependency that provides a request-scoped `AsyncSession` to your API endpoints.
+          - Refactor all data access logic to use the async repository pattern. All repository methods must be `async` and use the injected `AsyncSession`.
+          - Implement helper functions or decorators for managing async transaction boundaries.
+
+      3.  **Integrate Database Migrations**:
+          - Set up Alembic to manage database schema changes in an async context. Follow existing project conventions for tooling setup.
+          - Establish a clear naming convention for migration files.
+          - Generate an initial migration that captures the current state of the database models.
+
+      4.  **Validate with Tests and Migrations**:
+          - **Run the `alembic upgrade head` and `alembic downgrade base` commands** to ensure the migration process runs cleanly without errors.
+          - Refactor all existing CRUD-related tests to be `async` and to use the new async session fixture.
+          - **Run the entire existing test suite** to ensure that your changes have not introduced any regressions. All existing and refactored tests must pass.

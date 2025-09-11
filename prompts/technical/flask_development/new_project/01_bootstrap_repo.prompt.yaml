@@ -1,0 +1,36 @@
+# yamllint disable rule:line-length
+---
+name: Bootstrap Production-Ready Flask Repo
+description: Creates a production-ready skeleton for a new Flask project.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to bootstrap a new, production-ready Flask project skeleton that follows modern best practices for structure, tooling, and basic functionality.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Project Requirements**:
+          - Review the specified inputs to understand the project's requirements:
+            - Project Name: {{PROJECT_NAME}}
+            - Python/Flask Versions: {{PYTHON_VERSION}}, {{FLASK_VERSION}}
+            - Core Tech Stack: {{DB}}, {{PACKAGE_MANAGER}}, {{WSGI_SERVER}}, {{CACHE}}, {{BROKER}}
+
+      2.  **Implement Project Structure and Tooling**:
+          - Generate the standard, modular directory tree for a new Flask application.
+          - Create a `pyproject.toml` file configured for `{{PACKAGE_MANAGER}}`.
+          - Add and configure standard tooling: `ruff`, `black`, `mypy`, `pytest`, `pytest-cov`, and `bandit`.
+          - Initialize a `.pre-commit-config.yaml` with hooks for the configured tools.
+
+      3.  **Implement Boilerplate Application**:
+          - Create a basic Flask application using the app factory (`create_app`) pattern.
+          - Implement a `/health` endpoint that returns a 200 OK status.
+          - Implement a `/__version__` endpoint that returns the application version.
+
+      4.  **Validate the Skeleton**:
+          - **Run `pytest`** to ensure the initial test setup is correct and all boilerplate tests pass.
+          - **Run `pre-commit run --all-files`** to ensure all static analysis and formatting checks pass.
+          - Start the application and make a request to the `/health` endpoint to verify it returns a 200 OK response.

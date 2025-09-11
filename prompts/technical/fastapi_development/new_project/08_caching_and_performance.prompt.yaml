@@ -1,0 +1,31 @@
+# yamllint disable rule:line-length
+---
+name: Set Up Caching and Performance Baseline for FastAPI
+description: Establishes an async caching layer and performance baseline for the new project.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to set up an async caching layer and establish a performance baseline for the new FastAPI project from its inception.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Caching and Performance Needs**:
+          - Review project requirements for a caching layer and the need to prevent performance anti-patterns like N+1 queries.
+
+      2.  **Implement Async Caching Layer**:
+          - Integrate an async Redis client and create a cache dependency.
+          - Establish a clear strategy for cache key naming and default TTLs.
+
+      3.  **Implement Performance Guards**:
+          - Set up a process for profiling database queries during testing.
+          - Write a **new, specific test** designed to fail if an N+1 query is detected in an example endpoint.
+          - Add `GZipMiddleware` to the application to compress responses.
+
+      4.  **Validate and Document**:
+          - Write **new tests** to verify that caching is working as expected.
+          - **Run the entire existing test suite** to ensure no regressions were introduced.
+          - Create a `performance.md` file documenting the baseline latency, query counts, and the N+1 detection mechanism.

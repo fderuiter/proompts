@@ -1,0 +1,34 @@
+# yamllint disable rule:line-length
+---
+name: Implement Application Observability
+description: Integrates tools for tracing, error monitoring, and metrics collection.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to instrument the Flask application to provide deep insights into its behavior, performance, and errors using modern observability tools.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze for Existing Observability**:
+          - Scan the codebase for any existing observability tools, such as logging configurations, error monitoring integrations (e.g., Sentry), or metrics exporters (e.g., Prometheus).
+
+      2.  **Implement Tracing and Error Monitoring**:
+          - Instrument the application with a tool like Sentry or an OpenTelemetry (OTEL) SDK.
+          - Ensure the integration captures unhandled exceptions, performance data (traces), and user context.
+
+      3.  **Implement Structured Logging and Metrics**:
+          - Configure the Python `logging` module to output structured logs (e.g., JSON format).
+          - Add a request ID to every log message to allow for easy correlation of all logs related to a single request.
+          - Add a Prometheus exporter (e.g., `prometheus-flask-exporter`) to the application to expose basic RED metrics (Rate, Errors, Duration) for all HTTP requests.
+
+      4.  **Validate the Observability Stack**:
+          - Write **new, meaningful tests** or manually verify that:
+            - Application errors are captured and visible in the error monitoring backend (e.g., Sentry).
+            - Distributed traces for API requests can be viewed in the tracing backend.
+            - Logs are output in a structured JSON format and contain a correlation ID.
+            - The `/metrics` endpoint is available and exposes Prometheus-compatible metrics.
+          - Document the setup and how to view traces, logs, and metrics locally in an `observability.md` file.

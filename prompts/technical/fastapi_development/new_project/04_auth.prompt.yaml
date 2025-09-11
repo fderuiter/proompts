@@ -1,0 +1,31 @@
+# yamllint disable rule:line-length
+---
+name: Implement Standard Authentication for FastAPI
+description: Implements standard authentication and authorization from day one.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to implement a secure and standard authentication system for the new FastAPI project, using OAuth2 with JWT Bearer tokens.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Auth Requirements**:
+          - Review the project requirements for the chosen auth method: `{{AUTH_METHOD}}` (e.g., JWT, OIDC).
+          - Identify the need for role-based access control and a secure password policy.
+
+      2.  **Implement Authentication Logic**:
+          - Implement OAuth2 with Password Flow and Bearer tokens. This includes creating a `/token` endpoint and utility functions for creating and decoding JWTs.
+          - Use `passlib` with `bcrypt` for secure password hashing and verification.
+
+      3.  **Implement Authorization and Secure Endpoint**:
+          - Add a `roles` field to the User model.
+          - Create a dependency that checks for required role(s) on a protected endpoint.
+          - Create a sample admin-only endpoint protected by this dependency.
+
+      4.  **Validate the Auth System**:
+          - Write **new, meaningful end-to-end tests** for the entire authentication flow (get token, access protected resource) and authorization logic (admin vs. regular user access).
+          - **Run the entire existing test suite** to ensure your changes have not introduced any regressions. All tests must pass.

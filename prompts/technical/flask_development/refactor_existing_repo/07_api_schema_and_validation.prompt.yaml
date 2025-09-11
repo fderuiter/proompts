@@ -1,0 +1,33 @@
+# yamllint disable rule:line-length
+---
+name: Implement REST API Schema and Validation
+description: Adopts a framework for typed validation and OpenAPI specification generation.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to make the API self-documenting and robust by implementing typed validation for all API endpoints and generating an OpenAPI specification.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze API Endpoints**:
+          - Review all existing API endpoints to understand their routes, expected request payloads, and current response structures.
+          - Identify any inconsistencies in validation or error handling.
+
+      2.  **Implement API Framework and Schemas**:
+          - Following project conventions, integrate an API framework like `Flask-Smorest` (which uses apispec and Marshmallow) or `Flask-RESTX`.
+          - Define request and response schemas for all existing API endpoints using this framework.
+          - Ensure all API endpoints are grouped under a versioned prefix, such as `/api/v1`.
+
+      3.  **Implement Standardized Error Handling**:
+          - Create a standardized JSON error envelope for validation errors and other exceptions.
+          - Implement custom exception handlers to ensure all errors are returned in this standard format.
+
+      4.  **Validate Schemas and Documentation**:
+          - **Run the entire existing test suite** to ensure no regressions were introduced.
+          - Write **new, meaningful tests** to confirm that endpoints now correctly validate incoming request data and that invalid data returns a 422 error in the standard format.
+          - Verify that the application now serves a valid OpenAPI specification (e.g., at `/api/spec.json`) and a documentation UI (e.g., Swagger UI at `/api/docs`).
+          - Include a link to the generated documentation in your summary.

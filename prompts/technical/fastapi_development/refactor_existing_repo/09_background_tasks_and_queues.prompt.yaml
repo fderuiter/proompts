@@ -1,0 +1,34 @@
+# yamllint disable rule:line-length
+---
+name: Implement Reliable Background Tasks and Queues
+description: Integrates a robust async-compatible task queue for handling background jobs.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to integrate a robust, async-native background job system into a FastAPI application.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Background Job Requirements**:
+          - Analyze the project to determine the requirements for background job processing.
+          - Confirm the task queue and message broker to be used: `{{TASK_QUEUE}}` and `{{BROKER}}`.
+
+      2.  **Integrate and Configure Task Queue**:
+          - Add the chosen task queue library to the project's dependencies.
+          - Configure the library to work with the FastAPI application and the chosen message broker, ensuring the setup is async-native.
+          - Configure sensible retry policies and a Dead Letter Queue (DLQ).
+
+      3.  **Implement Example Task and Health Check**:
+          - Create a new `tasks.py` file with an example async task.
+          - Implement a health check endpoint to monitor the status of the workers and broker.
+          - Update `docker-compose.yml` to include a `worker` service.
+
+      4.  **Validate the Job System**:
+          - Write **new, meaningful tests** to verify that a job can be enqueued and is executed by a worker.
+          - Test the failure case to ensure retries and the DLQ work as expected.
+          - **Run the entire existing test suite** to check for regressions.
+          - Document how to run the workers in the `README.md`.

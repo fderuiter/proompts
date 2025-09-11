@@ -1,0 +1,40 @@
+# yamllint disable rule:line-length
+---
+name: Implement Standard Flask Authentication
+description: Implements a standard, secure, and testable authentication and authorization system for a Flask project.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to implement a standard, secure, and testable authentication system for this Flask project, including role-based access control and end-to-end tests.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Codebase Analysis**:
+          - Review the existing User model to identify where to add role information.
+          - Analyze the project structure to determine the best location for authentication logic (e.g., a new `auth` service or module).
+          - Identify which dependencies are needed for the chosen auth method (`{{AUTH_METHOD}}`), such as `Flask-Login` for sessions or `PyJWT` for JWTs.
+
+      2.  **Implement Authentication and Authorization**:
+          - Add the necessary dependencies to the project, following existing conventions.
+          - Implement the core authentication logic. This must include user loading and secure password hashing and verification (e.g., using `passlib` with `bcrypt`).
+          - Implement the logic for your chosen auth method: for sessions, this involves session management; for JWTs, it involves token creation and validation.
+          - Add a `roles` attribute to the User model.
+          - Create a decorator or middleware to protect endpoints based on user roles (e.g., `@roles_required('admin')`).
+
+      3.  **Implement and Secure Endpoints**:
+          - Create the necessary endpoints for login and logout.
+          - Create a new sample endpoint that is protected and requires an 'admin' role.
+
+      4.  **Validate with Tests**:
+          - Write **new, meaningful end-to-end tests** for the entire authentication flow:
+            - A test for successful login with correct credentials.
+            - A test for failed login with incorrect credentials.
+            - A test to access a protected resource with a valid session/token.
+            - A test to verify an unauthenticated user is denied access.
+            - A test to verify a non-admin user is denied access to the admin-only endpoint.
+            - A test to verify an admin user **can** access the admin-only endpoint.
+          - **Run the entire existing test suite** to ensure that your changes have not introduced any regressions. All existing tests must pass.

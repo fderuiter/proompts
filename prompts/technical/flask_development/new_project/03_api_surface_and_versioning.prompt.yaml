@@ -1,0 +1,33 @@
+# yamllint disable rule:line-length
+---
+name: Define API Surface and Versioning
+description: Establishes v1 API endpoints with schema validation and automated documentation.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to establish the initial API surface for the new Flask project, including versioning, schema validation, and automated documentation.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze API Requirements**:
+          - Review the project structure and identify the boilerplate blueprints (`health.py`, `example.py`).
+          - Note the requirement for API versioning under `/api/v1`.
+
+      2.  **Implement API Framework and Schemas**:
+          - Integrate `Flask-Smorest` into the application factory.
+          - Create `Request` and `Response` Marshmallow schemas for the existing boilerplate endpoints.
+          - Register the blueprints under the `/api/v1` prefix.
+
+      3.  **Implement Standardized Error Handling**:
+          - Implement a standardized JSON error envelope for validation errors and other HTTP exceptions.
+          - Register a custom error handler to enforce this standard format across the API.
+
+      4.  **Validate the API Surface**:
+          - Write **new, meaningful tests** to verify that the endpoints correctly validate requests and serialize responses according to their schemas.
+          - Verify that the application serves a valid OpenAPI specification at `/api/spec.json` and a documentation UI at `/api/docs`.
+          - Confirm that a 422 validation error is returned in the standard format for an invalid request.
+          - **Run the entire existing test suite** to ensure no regressions were introduced.

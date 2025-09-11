@@ -1,0 +1,28 @@
+# yamllint disable rule:line-length
+---
+name: Implement Application Observability for FastAPI
+description: Integrates tools for tracing, error monitoring, and metrics collection into a FastAPI app.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to instrument a FastAPI application to provide deep insights into its behavior, performance, and errors using modern observability tools.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze for Existing Observability**:
+          - Scan the codebase for any existing observability tools (e.g., Sentry, Prometheus, structured logging).
+
+      2.  **Implement Tracing and Error Monitoring**:
+          - Instrument the application with Sentry or an OpenTelemetry (OTEL) SDK, using their ASGI middleware integrations.
+
+      3.  **Implement Structured Logging and Metrics**:
+          - Configure structured logging (e.g., with `structlog`) and add a middleware to include a request correlation ID.
+          - Add a Prometheus exporter (e.g., `starlette-prometheus`) to expose RED metrics.
+
+      4.  **Validate the Observability Stack**:
+          - Verify that errors are captured, traces are generated, logs are structured and correlated, and the `/metrics` endpoint works.
+          - Document the setup in a `runbook.md` or `observability.md` file.

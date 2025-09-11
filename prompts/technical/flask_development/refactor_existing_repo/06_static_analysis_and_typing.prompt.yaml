@@ -1,0 +1,31 @@
+# yamllint disable rule:line-length
+---
+name: Implement Static Analysis and Typing
+description: Integrates Ruff, Black, Mypy, and Bandit to establish quality gates for the codebase.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to establish automated quality gates for the codebase by integrating a comprehensive suite of static analysis and typing tools.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Existing Tooling**:
+          - Scan the repository for any existing static analysis tools (e.g., `flake8`, `isort`, `black`, `mypy`, `bandit`) and review their current configuration in files like `.flake8`, `pyproject.toml`, etc.
+
+      2.  **Implement Static Analysis and Formatting**:
+          - Following project conventions, set up `Ruff` in `pyproject.toml` to handle linting, import sorting, and formatting. If `Black` is preferred, configure it for formatting instead.
+          - Add these tools to the project's development dependencies.
+
+      3.  **Implement Static Typing and Security Scanning**:
+          - Set up `Mypy` for static type checking. Enable `strict` mode for all code under the `/src` directory. Add necessary type stubs (e.g., `types-flask`, `types-sqlalchemy`) for libraries that need them.
+          - Integrate `Bandit` to perform static application security testing (SAST).
+
+      4.  **Validate the Quality Gates**:
+          - **Run all the new tools** (`Ruff`, `Mypy`, `Bandit`) across the entire codebase.
+          - Fix all reported errors until every tool passes with a zero exit code. This may require adding type annotations, fixing style issues, or addressing security warnings.
+          - **Run the entire existing test suite** to ensure that your code changes (e.g., adding type annotations) have not introduced any regressions. All tests must pass.
+          - Optionally, add these checks to a pre-commit hook configuration.

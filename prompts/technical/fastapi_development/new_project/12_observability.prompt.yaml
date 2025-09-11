@@ -1,0 +1,29 @@
+# yamllint disable rule:line-length
+---
+name: Set Up Observability for FastAPI
+description: Implements tracing, metrics, and error monitoring for the new service.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to instrument the new FastAPI application for excellent observability from day one, providing visibility into traces, metrics, and errors.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Observability Requirements**:
+          - Review project goals to identify the need for error monitoring, tracing, metrics, and structured logging.
+
+      2.  **Implement Error Monitoring and Tracing**:
+          - Instrument the application with Sentry or an OpenTelemetry (OTEL) SDK using their ASGI integrations.
+
+      3.  **Implement Metrics and Structured Logging**:
+          - Add a Prometheus exporter to expose RED metrics at a `/metrics` endpoint.
+          - Ensure the logging setup produces structured (JSON) logs and uses a request correlation ID.
+
+      4.  **Validate the Observability Stack**:
+          - Add local instances of observability tools (e.g., Prometheus, Grafana) to `docker-compose.yml`.
+          - Write **new tests** or manually verify that errors are captured, the `/metrics` endpoint works, and logs are structured and correlated.
+          - Create an `observability.md` document explaining the setup.

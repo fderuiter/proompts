@@ -1,0 +1,36 @@
+# yamllint disable rule:line-length
+---
+name: Establish a Flask Testing Baseline
+description: Establishes a robust and reliable testing baseline for a Flask project.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      You are an expert test engineer. Your task is to establish a robust testing baseline for the Flask project by installing necessary tools, writing foundational tests for critical components, and ensuring the test suite is fast and provides adequate coverage.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Dependency and Configuration Analysis**:
+          - Analyze the project's dependency files (`pyproject.toml`, `requirements.txt`, etc.).
+          - Identify which of the following testing tools are missing: `pytest`, `pytest-cov`, `pytest-mock`, `pytest-flask`, `factory_boy`, `faker`, and `pytest-xdist`.
+          - Check for an existing test configuration file (e.g., `pytest.ini` or in `pyproject.toml`).
+
+      2.  **Install and Configure Testing Framework**:
+          - Add any missing testing libraries to the project's dependencies, following existing conventions for dependency management.
+          - Create or update the test configuration to set up basic options, enable coverage reporting, and configure parallel execution via `pytest-xdist`.
+
+      3.  **Implement Foundational Tests**:
+          - Following existing project conventions, create new test files for foundational checks.
+          - Write a **meaningful test** for the application's health check endpoint.
+          - Write a **meaningful test** to verify that the application loads the correct configuration for the 'testing' environment.
+          - Write a **meaningful test** for at least one custom error handler (e.g., a 404 Not Found error).
+          - Write a **meaningful test** for a basic CRUD operation on a core application model, using `factory_boy` for test data generation.
+          - Write a **meaningful test** for a protected API endpoint to verify authentication logic.
+
+      4.  **Validate and Report**:
+          - **Run the entire existing test suite** to ensure that your changes have not introduced any regressions. All existing tests must pass.
+          - Run the new tests you have written to confirm they pass and correctly test the new functionality.
+          - Generate a test coverage report and provide a summary of the new coverage percentage. The final coverage should be >= {{TARGET_COVERAGE}}% and the runtime should be <= {{MAX_RUNTIME_SECS}}s.

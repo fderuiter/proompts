@@ -1,0 +1,33 @@
+# yamllint disable rule:line-length
+---
+name: Implement Caching and Baseline Performance
+description: Implements sensible caching strategies and establishes a performance baseline.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to improve the application's performance and scalability by implementing a caching layer and addressing common performance bottlenecks.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Performance and Identify Hot Spots**:
+          - Use a profiling tool (e.g., `cProfile`, `py-spy`) to analyze the application and create a baseline.
+          - Identify performance hot spots, such as slow database queries or computationally expensive operations.
+          - Specifically look for and document any N+1 query problems in the data access layer.
+
+      2.  **Implement Caching Layer**:
+          - Integrate `Flask-Caching` with a Redis backend, adding it to the project dependencies and `docker-compose.yml`.
+          - Establish a clear key prefixing strategy to avoid cache collisions and define sensible default TTLs.
+          - Following project conventions, apply caching decorators to at least one of the identified hot spots to demonstrate the pattern.
+
+      3.  **Implement HTTP-Level Improvements**:
+          - Ensure Gzip compression is enabled, either via a reverse proxy or Flask middleware.
+          - Add support for conditional responses using ETags to reduce bandwidth for unchanged resources.
+
+      4.  **Validate Performance Gains**:
+          - Write **new, meaningful tests** to verify that caching is working correctly (e.g., by asserting a faster response time on the second call or checking logs for a cache hit).
+          - **Run the entire existing test suite** to ensure your changes have not introduced any regressions.
+          - Create a `performance.md` file that documents the performance improvements. This report must include the before-and-after latency and query counts for the optimized endpoints.

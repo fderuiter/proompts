@@ -1,0 +1,30 @@
+# yamllint disable rule:line-length
+---
+name: Implement Static Analysis and Typing for FastAPI
+description: Integrates Ruff, Black, Mypy, and Bandit to establish quality gates for the codebase.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to establish automated quality gates for the FastAPI codebase by integrating a comprehensive suite of static analysis and typing tools.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Existing Tooling**:
+          - Scan the repository for any existing static analysis tools and their configurations.
+
+      2.  **Implement Static Analysis and Formatting**:
+          - Set up `Ruff` in `pyproject.toml` for linting, import sorting, and formatting.
+          - Add these tools to the project's development dependencies.
+
+      3.  **Implement Strict Static Typing and Security Scanning**:
+          - Set up `Mypy` for strict static type checking, enabling the official `pydantic` and `sqlalchemy` Mypy plugins.
+          - Integrate `Bandit` for static application security testing (SAST).
+
+      4.  **Validate the Quality Gates**:
+          - **Run all the new tools** (`Ruff`, `Mypy`, `Bandit`) across the entire codebase and fix all reported errors until every check passes.
+          - **Run the entire existing test suite** to ensure that your code changes (e.g., adding type annotations) have not introduced any regressions.
+          - Optionally, add these checks to a pre-commit hook configuration.

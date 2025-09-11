@@ -1,0 +1,32 @@
+# yamllint disable rule:line-length
+---
+name: Set Up CI/CD Pipeline
+description: Implements a CI pipeline that runs on the very first pull request.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to implement a fast and effective continuous integration (CI) pipeline for the new Flask project, ensuring it is ready for the first pull request.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze CI Requirements**:
+          - Review the project's tooling (`lint`, `typecheck`, `test`, `build`, `security-scan`) to define the necessary CI jobs.
+          - Note the optional deployment target: `{{DEPLOY_TARGET}}`.
+
+      2.  **Implement CI Pipeline Configuration**:
+          - Create a CI pipeline configuration file (e.g., `.github/workflows/ci.yml`).
+          - Define a sequence of jobs for `lint`, `typecheck`, `test`, `build`, and `security-scan`.
+          - Implement dependency caching to ensure fast execution.
+
+      3.  **Implement Quality Reporting and Deployment Stub**:
+          - Configure the test job to upload coverage reports to a service like Codecov or as a CI artifact.
+          - Add a placeholder or an actual deployment job that deploys the application to `{{DEPLOY_TARGET}}`, configured to run only on merges to the `main` branch.
+
+      4.  **Validate and Document**:
+          - Document the required branch protection rules for the `main` branch (e.g., require CI to pass).
+          - Add CI status and coverage badges to the `README.md`.
+          - Validate the pipeline by pushing a test branch and ensuring it runs and reports status correctly on a pull request.

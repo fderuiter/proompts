@@ -1,0 +1,31 @@
+# yamllint disable rule:line-length
+---
+name: Build a Solid Async Test Harness for FastAPI
+description: Sets up a comprehensive async test harness with pytest, httpx, and test data factories.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to build a solid and scalable async test harness for the new FastAPI project.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Testing Requirements**:
+          - Review project dependencies to see which testing tools are already installed.
+          - Identify the need for core async fixtures for the app, client, database, and factories.
+
+      2.  **Install and Configure Async Testing Tools**:
+          - Ensure `pytest`, `pytest-asyncio`, `httpx`, `asgi-lifespan`, `pytest-cov`, `factory_boy`, and `faker` are installed and configured.
+
+      3.  **Implement Core Async Fixtures and Markers**:
+          - In `tests/conftest.py`, create essential async fixtures: `app`, `async_client`, a transaction-wrapped `db_session`, and `factories`.
+          - Define custom `pytest` markers for different test types (e.g., `slow`, `integration`, `e2e`).
+
+      4.  **Validate the Test Harness**:
+          - Write **new example tests** that demonstrate the use of the `async_client`, `db_session`, and `factories` fixtures.
+          - Configure and verify that tests can run in parallel with `pytest-xdist`.
+          - **Run the entire existing test suite** to ensure no regressions were introduced.
+          - The final test coverage should be >= {{TARGET_COVERAGE}}%.

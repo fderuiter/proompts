@@ -1,0 +1,32 @@
+# yamllint disable rule:line-length
+---
+name: Implement Centralized, Typed Configuration
+description: Refactors a FastAPI app to use Pydantic BaseSettings for a central, typed, 12-factor compliant configuration.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to refactor an existing FastAPI application to use a centralized, typed configuration system based on Pydantic's `BaseSettings`, aligning the application with 12-factor principles.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Existing Configuration**:
+          - Review the current application setup to identify where and how configuration is loaded, noting any hardcoded values or scattered settings.
+
+      2.  **Implement Pydantic BaseSettings**:
+          - Create a `/src/app/core/config.py` module.
+          - Define a `Settings` class that inherits from `pydantic_settings.BaseSettings` to load all settings from environment variables.
+          - Implement logic to support different `.env` files for `local`, `test`, and `prod` environments.
+
+      3.  **Refactor and Integrate**:
+          - Refactor the application to use a single, cached instance of the `Settings` object, typically provided via FastAPI's dependency injection system.
+          - Remove all old configuration logic.
+          - Create a comprehensive `.env.example` file documenting all required environment variables.
+
+      4.  **Validate the Refactoring**:
+          - **Run the entire existing test suite** to ensure that your changes have not introduced any regressions. All tests must pass.
+          - Write a new test that verifies that the application boots correctly and loads different settings when the environment is changed.
+          - Confirm that no secrets are present in the version control system.

@@ -1,0 +1,31 @@
+# yamllint disable rule:line-length
+---
+name: Implement Security-by-Default for FastAPI
+description: Configures the service to be safe-by-default from its inception.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to build a strong security posture into the new FastAPI project from day one, making it safe-by-default.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Security Requirements**:
+          - Review project requirements to identify the core security needs: CORS, rate limiting, security headers, and request correlation.
+
+      2.  **Implement CORS and Rate Limiting**:
+          - Add and configure `CORSMiddleware` with a strict allowlist for trusted origins.
+          - Integrate a rate limiter like `slowapi` and apply a sensible default rate limit.
+
+      3.  **Implement Security Headers and Request IDs**:
+          - Create a middleware to add security headers like `Content-Security-Policy` and `Strict-Transport-Security`.
+          - Implement a middleware that generates a unique request ID and adds it to responses and logs.
+          - Configure the ASGI server to limit the maximum request body size.
+
+      4.  **Validate Security Controls**:
+          - Write **new tests** that verify security headers are set, rate limits are enforced, and CORS headers are correct.
+          - **Run the entire existing test suite** to ensure no regressions were introduced.
+          - Create a `DEPLOY_CHECKLIST.md` or `security.md` document outlining the default security posture.

@@ -1,0 +1,31 @@
+# yamllint disable rule:line-length
+---
+name: Implement Caching and Baseline Performance for FastAPI
+description: Implements sensible async caching strategies and establishes a performance baseline.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to improve the performance and scalability of a FastAPI application by implementing async-native caching and addressing common performance bottlenecks.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Performance and Identify Hot Spots**:
+          - Use a profiling tool to analyze the application and create a baseline.
+          - Identify performance hot spots, such as slow database queries, and any N+1 query problems.
+
+      2.  **Implement Async Caching Layer**:
+          - Integrate an async-native Redis client and create a cache helper or dependency.
+          - Establish a clear key prefixing strategy and default TTLs.
+          - Apply caching to at least one of the identified hot spots.
+
+      3.  **Implement Gzip Compression**:
+          - Add `GZipMiddleware` to the FastAPI application to compress responses.
+
+      4.  **Validate Performance Gains**:
+          - Write **new tests** to verify that caching is working correctly (e.g., check for cache hits).
+          - **Run the entire existing test suite** to ensure no regressions were introduced.
+          - Create a `performance.md` file that documents the performance improvements, including before-and-after latency and query counts for the optimized endpoints.

@@ -1,0 +1,32 @@
+# yamllint disable rule:line-length
+---
+name: Implement API Versioning and Schema
+description: Establishes a stable, versioned public API surface with robust schemas.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to implement a versioned and well-documented API surface for a FastAPI application, ensuring a stable and predictable experience for clients.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Existing API Structure**:
+          - Review all existing API endpoints to understand their routes and response structures.
+          - Identify any endpoints that are not yet versioned.
+
+      2.  **Implement API Versioning and Response Models**:
+          - Group all public API endpoints under a versioned `APIRouter`, prefixed with `/api/v1`.
+          - Use Pydantic models for all `response_model` declarations to ensure consistent and validated API responses.
+
+      3.  **Implement Conventions and Error Handling**:
+          - Implement a standardized JSON error envelope for all HTTP exceptions, particularly for 422 validation errors.
+          - Implement common conventions for pagination and filtering, applying them to at least one list endpoint.
+
+      4.  **Validate Schemas and Documentation**:
+          - **Run the entire existing test suite** to ensure no regressions were introduced.
+          - Write **new tests** to confirm that endpoints now correctly validate data and that pagination/filtering work as expected.
+          - Verify that the application now serves a valid OpenAPI specification and a documentation UI.
+          - Include a link to the generated documentation in your summary.

@@ -1,0 +1,31 @@
+# yamllint disable rule:line-length
+---
+name: Improve Docker Setup and Local Developer Experience
+description: Creates a parity development stack using Docker and streamlines common tasks with a Makefile.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to create a seamless and reproducible local development environment using Docker and to simplify common development tasks with a Makefile.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Existing Docker Setup**:
+          - Review any existing `Dockerfile` or `docker-compose.yml` to understand the current containerization setup, identifying areas for improvement in image size, security, or developer experience.
+
+      2.  **Optimize Docker Configuration**:
+          - Create a multi-stage `Dockerfile` to produce a small, secure production image that runs as a non-root user.
+          - Create a comprehensive `.dockerignore` file to exclude unnecessary files.
+          - Create a `docker-compose.yml` file that orchestrates all services needed for local development (`web`, `db`, `cache`, `broker`, etc.), using bind mounts for live code reloading.
+
+      3.  **Implement Makefile for Developer Experience**:
+          - Create a `Makefile` that provides simple, memorable commands for common development workflows, such as `setup`, `up`, `test`, `lint`, `typecheck`, `fmt`, and `shell`.
+
+      4.  **Validate the Development Environment**:
+          - From a fresh clone of the repository, run `make setup && make up` to verify that the entire stack starts correctly.
+          - Test each of the other Makefile targets (`test`, `lint`, etc.) to ensure they execute the correct commands inside the container.
+          - Confirm that a code change to a Python file in the `web` service triggers a live reload.
+          - Update the `README.md` with the new, simplified setup instructions.

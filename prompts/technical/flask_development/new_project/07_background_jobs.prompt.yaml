@@ -1,0 +1,32 @@
+# yamllint disable rule:line-length
+---
+name: Set Up for Async Workloads
+description: Wires up Celery to handle background jobs from day one.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to set up a system for processing background jobs in the new Flask project, ensuring it is ready for asynchronous workloads.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Background Job Requirements**:
+          - Review the project requirements to confirm the need for a background job processor.
+          - Note the specified message broker: `{{BROKER}}`.
+
+      2.  **Integrate and Configure Celery**:
+          - Add Celery to the project and create a Celery application instance that is aware of the Flask application context.
+          - Configure Celery with sensible defaults for task retries (with exponential backoff) and timeouts.
+
+      3.  **Implement Example Task and Endpoint**:
+          - Create an example background task in a new `/src/app/tasks` directory.
+          - Create an API endpoint that enqueues this example task.
+          - Create a health check endpoint to monitor the health of the message broker.
+
+      4.  **Validate the Background Job System**:
+          - Add a `worker` service to the `docker-compose.yml` file.
+          - Write a **new, meaningful test** that calls the API endpoint and verifies that the example task is successfully enqueued and executed by the worker (e.g., by checking logs or a side effect).
+          - **Run the entire existing test suite** to ensure your changes have not introduced any regressions. All tests must pass.

@@ -1,0 +1,32 @@
+# yamllint disable rule:line-length
+---
+name: Solidify Database Layer and Add Migrations
+description: Modernizes the SQLAlchemy setup and introduces Alembic for database migrations.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to establish a solid and manageable persistence layer by modernizing the project's SQLAlchemy usage and integrating Alembic for schema migrations.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Data Layer**:
+          - Review the current data access logic, how SQLAlchemy sessions are created and managed, and how database transactions are handled.
+
+      2.  **Modernize SQLAlchemy and Repositories**:
+          - Ensure the application is using modern SQLAlchemy 2.x patterns.
+          - Implement robust session management to ensure sessions are properly scoped to the request lifecycle and are always closed, preventing leaks.
+          - Refactor existing repository methods to use the new session management helpers and to define clear transaction boundaries (typically at the service layer).
+
+      3.  **Integrate Database Migrations**:
+          - Following project conventions, set up Alembic to manage database schema changes.
+          - Establish a clear naming convention for migration files (e.g., `YYYYMMDD_short_description.py`).
+          - Generate an initial migration that reflects the current state of the database models.
+
+      4.  **Validate Migrations and Tests**:
+          - **Run the `alembic upgrade head` and `alembic downgrade base` commands** to ensure the migration process runs cleanly without errors.
+          - **Run the entire existing test suite** to confirm that all data-related tests pass with the new data layer implementation. All tests must pass.
+          - Update the `README.md` with instructions on how to run database migrations.

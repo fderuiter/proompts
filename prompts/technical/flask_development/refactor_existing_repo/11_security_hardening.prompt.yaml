@@ -1,0 +1,30 @@
+# yamllint disable rule:line-length
+---
+name: Harden Application Security
+description: Implements several security best practices to reduce common web application risks.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to harden the Flask application by implementing common security controls to mitigate risks like cross-site scripting (XSS), cross-site request forgery (CSRF), and insecure configuration.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Security Posture**:
+          - Review the application for common web security vulnerabilities. Check for missing security headers, lack of rate limiting on sensitive endpoints, improper CORS configuration, or potential CSRF vulnerabilities in session-based flows.
+
+      2.  **Implement Security Headers and Rate Limiting**:
+          - Integrate `Flask-Talisman` to set security headers like Content Security Policy (CSP), HTTP Strict Transport Security (HSTS), and X-Frame-Options.
+          - Integrate `Flask-Limiter` to protect sensitive endpoints (e.g., login, password reset) against brute-force attacks by applying sensible rate limits.
+
+      3.  **Configure CORS and CSRF**:
+          - If the application serves a separate frontend, configure a strict Cross-Origin Resource Sharing (CORS) policy using `Flask-Cors` to allow only trusted origins.
+          - If the application uses session-based authentication, ensure that CSRF protection (built into Flask or via `Flask-WTF`) is enabled and validated for all state-changing requests.
+
+      4.  **Validate Security Controls**:
+          - Write **new, meaningful tests** to verify that security headers are set correctly, rate limits are enforced on specific endpoints, and CORS policies work as expected.
+          - **Run the entire existing test suite** to ensure your changes have not introduced any regressions.
+          - Create a `security.md` file documenting the security measures taken, their status, and how to verify them (e.g., with `curl` commands or browser tools).

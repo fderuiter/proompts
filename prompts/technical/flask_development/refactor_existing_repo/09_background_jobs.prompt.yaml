@@ -1,0 +1,35 @@
+# yamllint disable rule:line-length
+---
+name: Implement Reliable Background Jobs
+description: Integrates Celery for handling asynchronous background tasks.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to implement a reliable system for running asynchronous background jobs using Celery.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Project Requirements**:
+          - Analyze the project to determine the requirements for background job processing.
+          - Confirm the message broker to be used: `{{BROKER}}` (e.g., redis, rabbitmq).
+
+      2.  **Integrate and Configure Celery**:
+          - Add Celery to the project's dependencies.
+          - Configure it to work with the Flask application context and the chosen message broker.
+          - For reliability, configure sensible retry policies for common transient failures (e.g., exponential backoff) and a Dead Letter Queue (DLQ) to handle tasks that fail repeatedly.
+          - Establish a clear naming convention for all tasks.
+
+      3.  **Implement Example Task and Health Check**:
+          - Create a new `tasks.py` file with a simple example task that can be used for testing.
+          - Implement a health check endpoint or CLI command to monitor the status of the Celery workers and the message broker.
+          - Update the `docker-compose.yml` file to include a `worker` service and a service for the message broker.
+
+      4.  **Validate the Job System**:
+          - Write **new, meaningful tests** to verify that a job can be successfully enqueued and is executed by a worker.
+          - Write a test for the failure case to ensure that a failing task is retried according to its policy and eventually sent to the DLQ.
+          - **Run the entire existing test suite** to ensure that your changes have not introduced any regressions. All tests must pass.
+          - Document how to run the workers and enqueue a task in the `README.md`.

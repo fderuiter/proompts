@@ -1,0 +1,30 @@
+# yamllint disable rule:line-length
+---
+name: Harden FastAPI Application Security
+description: Implements several security best practices to reduce common web application risks.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to harden a FastAPI application by implementing common security controls to mitigate risks like insecure CORS, rate limit abuse, and insufficient authentication.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Security Posture**:
+          - Review the application for common web security vulnerabilities, such as missing security headers, lack of rate limiting, or improper CORS configuration.
+
+      2.  **Implement CORS and Rate Limiting**:
+          - Add and configure FastAPI's `CORSMiddleware` with a strict, configuration-driven list of allowed origins.
+          - Integrate a rate limiting library like `slowapi` and apply sensible default rate limits.
+
+      3.  **Implement Authentication and Security Headers**:
+          - Implement or harden standard OAuth2 with JWT Bearer tokens.
+          - Create a simple middleware to add common security headers like `Content-Security-Policy` and `X-Content-Type-Options`.
+
+      4.  **Validate Security Controls**:
+          - Write **new tests** to verify that security headers are set, rate limits are enforced, and CORS policies work as expected.
+          - **Run the entire existing test suite** to check for regressions.
+          - Document the implemented security measures and their status against the OWASP Top 10 in a `security.md` file.

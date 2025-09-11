@@ -1,0 +1,31 @@
+# yamllint disable rule:line-length
+---
+name: Implement Typed, Environment-Driven Config for FastAPI
+description: Sets up a typed configuration system driven by environment variables using Pydantic.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to implement a robust, typed, and environment-driven configuration system for the new FastAPI project, using Pydantic's `BaseSettings`.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Configuration Requirements**:
+          - Review the project structure to identify the correct location for configuration files (`/src/app/core/config.py`).
+          - Note the need for separate configurations for `local`, `test`, and `prod` environments.
+
+      2.  **Implement Typed Settings**:
+          - Use `pydantic_settings.BaseSettings` to create a typed `Settings` class in `config.py`.
+          - The class should load all configuration from environment variables, using a prefix like `APP_`.
+
+      3.  **Implement Environment Switching and Logging**:
+          - Implement logic to load different `.env` files based on an `APP_ENV` variable.
+          - Create a `logging.py` module to configure structured logging, driven by the `Settings` object.
+          - Create a comprehensive `.env.example` file.
+
+      4.  **Validate the Configuration System**:
+          - Write a **new test** that verifies that the application loads different settings when the `APP_ENV` is switched.
+          - **Run the entire existing test suite** to ensure no regressions were introduced.

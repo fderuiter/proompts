@@ -1,0 +1,33 @@
+# yamllint disable rule:line-length
+---
+name: Improve Dependency Hygiene
+description: Switches to a modern dependency management tool and cleans up project dependencies.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to improve the project's dependency management to ensure clean, reproducible, and secure builds.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Dependencies**:
+          - Analyze the current dependency files (e.g., `requirements.txt`, `Pipfile`) to understand the existing dependencies and their structure.
+          - Identify the package manager currently in use.
+
+      2.  **Modernize Dependency Management**:
+          - Migrate the dependency management to `{{TOOL}}` (e.g., poetry or pip-tools), following existing project conventions for tooling.
+          - Pin all dependencies to specific, known-good versions to ensure deterministic builds.
+          - Organize dependencies into logical groups (`main` for production, `dev` for development, `test` for testing).
+
+      3.  **Clean and Secure Dependencies**:
+          - Identify and remove any unused dependencies from the project.
+          - Add a dependency auditing tool like `safety` or `pip-audit` to the project's tooling and CI pipeline to scan for known vulnerabilities.
+
+      4.  **Validate the New Setup**:
+          - Document the exact commands needed for a new developer to perform a clean install of all dependencies.
+          - **Run the entire existing test suite** to ensure the application works with the newly pinned dependencies. All tests must pass.
+          - **Run the new vulnerability scan** and ensure it passes with no critical issues.
+          - Update the `README.md` with the new installation instructions.

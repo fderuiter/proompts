@@ -1,0 +1,32 @@
+# yamllint disable rule:line-length
+---
+name: Set Up Caching and Performance Baseline
+description: Establishes a caching layer and performance baseline for the new project.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to set up a caching layer and establish a performance baseline for the new Flask project from its inception.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Caching and Performance Needs**:
+          - Review the project requirements for the need for a caching layer.
+          - Identify the need to prevent common performance anti-patterns like N+1 queries from day one.
+
+      2.  **Implement Caching Layer**:
+          - Integrate `Flask-Caching` and configure it with a Redis backend.
+          - Establish a clear strategy for cache key naming and default TTLs.
+
+      3.  **Implement Performance Guards**:
+          - Set up a tool or process for profiling database queries during testing.
+          - Write a **new, specific test** that is designed to fail if an N+1 query is detected in an example endpoint, ensuring this anti-pattern is caught early in development.
+          - Add middleware or decorators to support ETag generation and conditional responses for GET requests.
+
+      4.  **Validate and Document**:
+          - Write **new tests** to verify that caching and ETag headers are working as expected.
+          - **Run the entire existing test suite** to ensure no regressions were introduced.
+          - Create a `performance.md` file documenting the baseline latency and query counts for the initial endpoints, and explaining the N+1 detection mechanism.

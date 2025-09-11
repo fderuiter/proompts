@@ -1,0 +1,33 @@
+# yamllint disable rule:line-length
+---
+name: Implement Fast CI/CD and Improve Repo Hygiene
+description: Creates a fast and reliable CI pipeline and sets up repository guards for merge quality.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to build a fast, reliable continuous integration (CI) pipeline and establish repository hygiene best practices to ensure high-quality, guarded merges.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze CI and Repo Settings**:
+          - Review the existing CI configuration for `{{CI_PROVIDER}}` (e.g., in `.github/workflows/`) and the repository's branch protection settings for the main branch.
+
+      2.  **Build and Optimize CI Pipeline**:
+          - Create or update the CI pipeline configuration file.
+          - Define a sequence of jobs that run on every PR: `lint` → `typecheck` → `tests` → `build` → `vuln-scan`.
+          - Implement caching for dependencies (e.g., pip cache) to speed up job execution.
+          - Configure the pipeline to upload test coverage reports to a service like Codecov or as a CI artifact.
+
+      3.  **Establish Repository Hygiene**:
+          - Set up branch protection rules for the main branch to require all CI status checks to pass before merging.
+          - Enforce a rule that requires at least one peer review for all PRs.
+          - Create a `CODEOWNERS` file to automatically request reviews from the relevant teams or individuals.
+
+      4.  **Validate the Pipeline and Protections**:
+          - Make a test Pull Request to ensure the new CI pipeline is triggered and all jobs run correctly.
+          - Verify that the branch protection rules are active and prevent a PR from being merged without passing all required checks and getting a review.
+          - Document the branch protection rules and merge strategy in a `repo_hygiene.md` document. Provide a screenshot of the rules in the PR description for confirmation.

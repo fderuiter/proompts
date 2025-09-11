@@ -1,0 +1,30 @@
+# yamllint disable rule:line-length
+---
+name: Create Docs and ADRs for FastAPI Project
+description: Creates clear documentation and a process for recording architectural decisions.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to create the initial set of documentation for the new FastAPI project to ensure it is easy to understand, contribute to, and maintain.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Documentation Needs**:
+          - Review the project structure and goals to identify the essential documentation needed for a new developer.
+
+      2.  **Create Foundational Documents**:
+          - Write a `README.md` with a project overview and detailed setup instructions.
+          - Write a `CONTRIBUTING.md` outlining the development workflow and PR process.
+          - Create a `pull_request_template.md` and a `CODEOWNERS` file.
+
+      3.  **Establish Architectural Decision Records (ADRs)**:
+          - Create a `docs/adr` directory with an ADR template.
+          - Write the first two ADRs for key initial decisions (e.g., "Choose Pydantic BaseSettings for Config", "Use SQLAlchemy 2.0 Async Engine").
+
+      4.  **Validate Documentation Quality**:
+          - Review the created documents for clarity, conciseness, and accuracy.
+          - The final documentation must be sufficient for a new developer to get the project running and contribute without assistance. Confirm this by following the steps yourself.

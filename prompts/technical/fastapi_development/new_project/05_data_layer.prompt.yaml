@@ -1,0 +1,34 @@
+# yamllint disable rule:line-length
+---
+name: Set Up Async Data Layer with SQLAlchemy and Alembic
+description: Initializes the async data layer with SQLAlchemy 2.x and sets up Alembic for migrations.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to set up a modern and robust async data layer for the new FastAPI project using SQLAlchemy 2.x and Alembic.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Data Layer Requirements**:
+          - Review the project structure to identify the correct locations for database code (`/src/app/db/`, `/src/app/repositories/`).
+          - Note the requirement for async SQLAlchemy 2.x and Alembic.
+
+      2.  **Implement Async SQLAlchemy**:
+          - Configure an `async_engine` and `AsyncSession` using `asyncpg` in `/src/app/db/session.py`.
+          - Create a FastAPI dependency to provide a request-scoped `AsyncSession`.
+          - Create initial database models (e.g., a `User` model).
+
+      3.  **Implement Repositories and Migrations**:
+          - Implement a base repository class with `async` CRUD methods.
+          - Implement a Unit of Work pattern as a dependency to manage transaction boundaries.
+          - Initialize Alembic for async migrations and create an initial migration for the `User` model.
+          - Create a simple seed script in `/scripts`.
+
+      4.  **Validate the Data Layer**:
+          - **Run `alembic upgrade head`** to apply migrations.
+          - Write **new, meaningful async CRUD tests** for the `User` model using the repository.
+          - **Run the entire existing test suite** to ensure no regressions were introduced. All tests must pass.

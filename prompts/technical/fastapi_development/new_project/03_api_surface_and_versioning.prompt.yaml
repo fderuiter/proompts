@@ -1,0 +1,31 @@
+# yamllint disable rule:line-length
+---
+name: Define API Surface and Versioning for FastAPI
+description: Establishes v1 API endpoints with a standardized error shape and conventions.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to establish the initial API surface for the new FastAPI project, including versioning, standardized error responses, and common API patterns.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze API Requirements**:
+          - Review the project structure and boilerplate routers.
+          - Note the requirement for API versioning under `/api/v1` and a standard error shape.
+
+      2.  **Implement Versioned Routers and Schemas**:
+          - In `/src/app/main.py`, create a main `APIRouter` for `/api/v1` and include the boilerplate routers within it.
+          - Use Pydantic models in the `response_model` argument for all endpoints to ensure validated and documented response shapes.
+
+      3.  **Implement Error Handling and Conventions**:
+          - Add a custom exception handler to standardize the response body for 422 validation errors.
+          - Implement a pagination pattern using a library like `fastapi-pagination`.
+
+      4.  **Validate the API Surface**:
+          - Write **new tests** to verify that 422 errors return the standard JSON body and that pagination works as expected.
+          - **Run the entire existing test suite** to ensure no regressions were introduced.
+          - Verify that the application serves a valid OpenAPI specification.

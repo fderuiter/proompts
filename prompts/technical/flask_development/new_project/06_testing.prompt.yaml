@@ -1,0 +1,35 @@
+# yamllint disable rule:line-length
+---
+name: Build a Solid Test Harness
+description: Sets up a comprehensive test harness with pytest, fixtures, and test data factories.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to build a solid and scalable test harness for the new Flask project, enabling fast and reliable tests.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Testing Requirements**:
+          - Review the project dependencies to see which testing tools are already installed.
+          - Identify the need for core fixtures for the app, client, database, and factories.
+
+      2.  **Install and Configure Testing Tools**:
+          - Ensure `pytest`, `pytest-flask`, `pytest-cov`, `factory_boy`, `faker`, and `pytest-xdist` are installed and configured in `pyproject.toml`.
+
+      3.  **Implement Core Fixtures and Markers**:
+          - In `tests/conftest.py`, create essential fixtures:
+            - `app`: Creates a new application instance for testing.
+            - `client`: Provides a test client for making requests.
+            - `db_session`: Provides a clean, transaction-wrapped database session for each test that is automatically rolled back.
+            - `factories`: Expose `factory_boy` factories as fixtures for easy test data creation.
+          - Define custom `pytest` markers for different types of tests (e.g., `slow`, `integration`, `e2e`).
+
+      4.  **Validate the Test Harness**:
+          - Write **new, example tests** that demonstrate the use of the `client`, `db_session`, and `factories` fixtures.
+          - Configure the test suite to run in parallel and verify that it works.
+          - **Run the entire existing test suite** to ensure your new fixtures and configuration have not broken any existing tests.
+          - The final test coverage should be >= {{TARGET_COVERAGE}}%.

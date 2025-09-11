@@ -1,0 +1,32 @@
+# yamllint disable rule:line-length
+---
+name: Set Up for Async Workloads in FastAPI
+description: Wires up an async-native task queue to handle background jobs from day one.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to set up an async-native system for processing background jobs in the new FastAPI project.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Background Job Requirements**:
+          - Review the project requirements to confirm the need for a background job processor.
+          - Note the specified task queue and broker: `{{TASK_QUEUE}}`, `{{BROKER}}`.
+
+      2.  **Integrate and Configure Task Queue**:
+          - Add an async-native task queue like `Arq` to the project.
+          - Configure it with sensible defaults for retries and timeouts.
+
+      3.  **Implement Example Task and Endpoint**:
+          - Create an example `async` background task in `/src/app/tasks`.
+          - Create an API endpoint that enqueues this task.
+          - Create a health check endpoint for the message broker.
+
+      4.  **Validate the Background Job System**:
+          - Add a `worker` service to `docker-compose.yml`.
+          - Write a **new test** that calls the API and verifies that the task is successfully enqueued and executed.
+          - **Run the entire existing test suite** to ensure no regressions were introduced. All tests must pass.

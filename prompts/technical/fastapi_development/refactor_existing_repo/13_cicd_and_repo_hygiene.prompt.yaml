@@ -1,0 +1,30 @@
+# yamllint disable rule:line-length
+---
+name: Implement Fast CI/CD and Improve Repo Hygiene for FastAPI
+description: Creates a fast and reliable CI pipeline and sets up repository guards for merge quality.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to build a fast, reliable continuous integration (CI) pipeline and establish repository hygiene best practices for a FastAPI project.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze CI and Repo Settings**:
+          - Review the existing CI configuration (`{{CI_PROVIDER}}`) and repository branch protection settings.
+
+      2.  **Build and Optimize CI Pipeline**:
+          - Create or update the CI pipeline to run `lint` → `typecheck` → `test` → `build` → `vuln-scan` on every PR.
+          - Implement dependency caching and configure test coverage uploads.
+
+      3.  **Establish Repository Hygiene**:
+          - Set up branch protection rules to require passing status checks and at least one peer review.
+          - Create a `CODEOWNERS` file to automate review requests.
+
+      4.  **Validate the Pipeline and Protections**:
+          - Make a test PR to ensure the CI pipeline is triggered and runs correctly.
+          - Verify that branch protection rules prevent merging without the required checks and reviews.
+          - Document the new process in a `repo_hygiene.md` file and add CI badges to the `README.md`.

@@ -1,0 +1,37 @@
+# yamllint disable rule:line-length
+---
+name: Modularize Flask App and Enforce Boundaries
+description: Refactors a Flask application to establish cohesive modules with clear, enforced boundaries.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to improve the application's architecture by refactoring the codebase into cohesive modules with clear, enforced boundaries.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Existing Structure**:
+          - Analyze the current project layout to identify code corresponding to different logical layers: API routes, business logic (services), data access (repositories), data validation (schemas), and database models.
+
+      2.  **Restructure into Modules**:
+          - Restructure the codebase according to the proposed standard layout:
+            ```
+            /src/app/
+            ├── api/v1/blueprints/
+            ├── services/
+            ├── repositories/
+            ├── schemas/
+            └── db/
+            ```
+          - Move the identified code into the appropriate new modules. For example, Flask routes should be moved into versioned blueprints.
+
+      3.  **Enforce Architectural Boundaries**:
+          - Configure a tool like `importlinter` or Ruff's `TID` rules to enforce the new architectural boundaries.
+          - Define rules to prevent forbidden imports (e.g., repositories must not import from services; services must not import from blueprints).
+
+      4.  **Validate the New Architecture**:
+          - **Run the entire existing test suite** to ensure the application still functions correctly after the restructure. All tests must pass.
+          - **Run the import linter** to verify that there are zero forbidden import violations. Provide the command to run this check.

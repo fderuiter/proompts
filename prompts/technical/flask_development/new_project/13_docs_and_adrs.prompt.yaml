@@ -1,0 +1,30 @@
+# yamllint disable rule:line-length
+---
+name: Create Docs and ADRs
+description: Creates clear documentation and a process for recording architectural decisions.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to create the initial set of documentation for the new Flask project to ensure it is easy to understand, contribute to, and maintain.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Documentation Needs**:
+          - Review the project structure and goals to identify the essential documentation needed for a new developer to get started.
+
+      2.  **Create Foundational Documents**:
+          - Write a `README.md` with a project overview and detailed instructions for the one-command setup (`make setup && make up`).
+          - Write a `CONTRIBUTING.md` that outlines the development workflow, PR process, and code style guidelines.
+          - Create a `pull_request_template.md` and a `CODEOWNERS` file.
+
+      3.  **Establish Architectural Decision Records (ADRs)**:
+          - Create a `docs/adr` directory with an ADR template (`0000-template.md`).
+          - Write the first two ADRs for key initial decisions, such as "Choose Pydantic-Settings for Typed Configuration" and "Use Flask-Smorest for API Validation".
+
+      4.  **Validate Documentation Quality**:
+          - Review the created documents for clarity, conciseness, and accuracy.
+          - The final documentation must be comprehensive enough for a new team member to get the project running and understand how to contribute without assistance. Confirm this by following the steps yourself from a hypothetical clean slate.

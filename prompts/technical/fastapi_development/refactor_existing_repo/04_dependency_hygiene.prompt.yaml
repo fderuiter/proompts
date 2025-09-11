@@ -1,0 +1,31 @@
+# yamllint disable rule:line-length
+---
+name: Improve Dependency Hygiene for FastAPI Project
+description: Switches to a modern dependency management tool and cleans up project dependencies.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to improve the project's dependency management to ensure clean, reproducible, and secure builds.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Dependencies**:
+          - Analyze the current dependency files (e.g., `requirements.txt`) to understand the existing dependencies and their structure.
+
+      2.  **Modernize Dependency Management**:
+          - Migrate the dependency management to `{{TOOL}}` (e.g., poetry or pip-tools).
+          - Pin all dependencies to specific versions and organize them into logical groups (`main`, `dev`, `test`).
+
+      3.  **Clean and Secure Dependencies**:
+          - Identify and remove any unused dependencies.
+          - Add a dependency auditing tool like `safety` or `pip-audit` to the CI pipeline.
+
+      4.  **Validate the New Setup**:
+          - From a fresh clone, perform a clean install of all dependencies using the new tool and document the command.
+          - **Run the entire existing test suite** to ensure the application works with the newly pinned dependencies.
+          - **Run the new vulnerability scan** and ensure it passes with no critical issues.
+          - Update the `README.md` with the new installation instructions.

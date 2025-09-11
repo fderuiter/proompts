@@ -1,0 +1,33 @@
+# yamllint disable rule:line-length
+---
+name: Establish a FastAPI Testing Baseline
+description: Sets up a fast and reliable async testing framework and seeds the test suite with foundational tests.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to establish a robust and reliable async testing baseline for a FastAPI project.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Dependency and Configuration Analysis**:
+          - Analyze the project's dependencies to identify which of the following are missing: `pytest`, `pytest-asyncio`, `httpx`, `asgi-lifespan`, `pytest-cov`, `factory_boy`, `faker`.
+          - Check for an existing test configuration.
+
+      2.  **Install and Configure Async Testing Framework**:
+          - Add any missing testing libraries to the project's dependencies.
+          - Create essential async fixtures in `tests/conftest.py` for the app, an `httpx.AsyncClient`, and a transaction-wrapped database session.
+
+      3.  **Implement Foundational Tests**:
+          - Write a **meaningful test** for the health check endpoint.
+          - Write a **meaningful test** to ensure the `/openapi.json` schema is available and valid.
+          - Write a **meaningful test** for a custom error handler (e.g., a 422 validation error).
+          - Write a **meaningful async CRUD test** for a core model.
+
+      4.  **Validate and Report**:
+          - **Run the entire existing test suite** alongside the new tests to ensure no regressions were introduced.
+          - Generate a test coverage report. The final coverage should be >= {{TARGET_COVERAGE}}% and the runtime should be <= {{MAX_RUNTIME_SECS}}s.
+          - Provide a summary of the new tests and the updated coverage percentage.

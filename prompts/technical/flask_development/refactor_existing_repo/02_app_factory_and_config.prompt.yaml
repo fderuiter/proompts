@@ -1,0 +1,30 @@
+# yamllint disable rule:line-length
+---
+name: Adopt Application Factory and 12-Factor Config
+description: Refactors a Flask app to use the application factory pattern and environment-driven configuration.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to refactor the Flask application to use the application factory pattern (`create_app`) and adopt a 12-factor approach to configuration, sourcing all settings from environment variables.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Existing Configuration**:
+          - Review the current application setup to identify where and how configuration is loaded and how the Flask app object is instantiated and configured.
+
+      2.  **Implement Application Factory**:
+          - Following project conventions, create a `create_app(settings_override=None)` function, typically in `/src/app/__init__.py`.
+          - Relocate all application creation logic—including blueprint registration, extension initialization (e.g., SQLAlchemy, Marshmallow), and CLI command setup—inside this function.
+
+      3.  **Implement 12-Factor Configuration**:
+          - Use a library like `pydantic-settings` to create a typed settings object that loads all configuration from environment variables.
+          - Create separate configuration classes or files for `local`, `test`, and `prod` environments, selectable via an environment variable.
+          - Create a `.env.example` file that documents all required environment variables with sensible defaults for local development.
+
+      4.  **Validate the Refactoring**:
+          - **Run the entire existing test suite** to ensure that your changes have not introduced any regressions. All tests must pass.
+          - Write a new test that verifies that the application boots correctly in all defined environments (`local`, `test`, `prod`) using only environment variables for configuration.

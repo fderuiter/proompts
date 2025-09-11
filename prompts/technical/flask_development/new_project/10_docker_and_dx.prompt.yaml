@@ -1,0 +1,31 @@
+# yamllint disable rule:line-length
+---
+name: Set Up Docker and Developer Experience
+description: Creates a one-command development setup using Docker, Docker Compose, and a Makefile.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to create a seamless "one-command" local development environment for the new Flask project.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Containerization Needs**:
+          - Review the project structure and dependencies to plan the Docker setup. Note the required services: `web`, `db`, `cache`, `broker`, and optional `mailhog`.
+
+      2.  **Implement Optimized Dockerfile**:
+          - Write a multi-stage `Dockerfile` that creates a slim, secure production image running as a non-root user.
+          - Create a comprehensive `.dockerignore` file to minimize the build context.
+
+      3.  **Implement Docker Compose and Makefile**:
+          - Write a `docker-compose.yml` file to define and link all services, ensuring the `web` service uses a bind mount for live-reloading code.
+          - Write a `Makefile` that abstracts away all Docker commands, providing targets for `setup`, `up`, `down`, `test`, `lint`, `fmt`, and `shell`.
+
+      4.  **Validate the Developer Experience**:
+          - From a hypothetical fresh clone, run `make setup && make up` to verify that the entire stack starts correctly.
+          - Test each Makefile target to ensure it functions as described.
+          - Confirm that the `web` service live-reloads when a code file is saved.
+          - Update the `README.md` with the new, simplified setup instructions.

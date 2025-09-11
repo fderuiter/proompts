@@ -1,0 +1,29 @@
+# yamllint disable rule:line-length
+---
+name: Modularize FastAPI App and Enforce Boundaries
+description: Refactors a FastAPI application to establish cohesive modules with clear, enforced boundaries.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to improve the application's architecture by refactoring the codebase into cohesive modules with clear, enforced boundaries, following FastAPI best practices.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Analyze Existing Structure**:
+          - Analyze the current project layout to identify code corresponding to different logical layers: API routers, business logic (services), data access (repositories), Pydantic schemas, and database models.
+
+      2.  **Restructure into Modules**:
+          - Restructure the codebase according to the proposed standard layout, with `APIRouter` instances in `/src/app/api/v1/routers/`.
+          - Move business logic into a `/services` layer and data access logic into a `/repositories` layer.
+
+      3.  **Enforce Architectural Boundaries**:
+          - Configure `importlinter` or Ruff's `TID` rules to enforce architectural boundaries (e.g., routers depend on services, which depend on repositories).
+          - Define rules to prevent forbidden imports, such as repositories importing from services.
+
+      4.  **Validate the New Architecture**:
+          - **Run the entire existing test suite** to ensure the application still functions correctly after the restructure. All tests must pass.
+          - **Run the import linter** to verify that there are zero forbidden import violations. Provide the command to run this check and its output.

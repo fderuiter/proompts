@@ -1,0 +1,29 @@
+# yamllint disable rule:line-length
+---
+name: FastAPI Repo Audit and Refactor Roadmap
+description: Audits an existing FastAPI repository and proposes a phased refactoring plan.
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      Your task is to conduct a comprehensive audit of an existing FastAPI repository and produce a detailed, phased refactoring roadmap to guide its modernization.
+
+      Please follow these steps meticulously:
+  - role: user
+    content: |
+      1.  **Repository Analysis**:
+          - Analyze the project structure, settings management, dependency files, test suite, CI/CD pipeline configuration, and Docker setup.
+          - Pay close attention to async best practices and FastAPI-specific patterns.
+
+      2.  **Issue Identification and Categorization**:
+          - Based on your analysis, identify and list issues, categorizing them into the following buckets: {structure & boundaries, testing, code quality, security, ops & devops}.
+
+      3.  **Formulate Refactoring Roadmap**:
+          - Propose a clear, phased refactoring plan to address the identified issues.
+          - For each phase, define the specific goals, estimated effort, potential risks, and a suggested plan for Pull Requests.
+
+      4.  **Deliver Audit and Plan**:
+          - Produce three markdown documents: `audit.md` with your detailed findings, `refactor_plan.md` with the proposed roadmap, and `pr_list.md` with a list of proposed PRs.
+          - The proposed plan must not introduce any behavior changes, and it should ensure the CI pipeline remains green after each phase.
