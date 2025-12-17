@@ -274,6 +274,7 @@
 [UI Tweak & Verification (OpenAI Codex)](../prompts/technical/codex/12_ui_fix_codex.prompt.yaml)
 [Design.md Template](../prompts/technical/design/01_design_md_template.prompt.yaml)
 [AI Email Assistant Go/No-Go Vote](../prompts/technical/design/02_email_assistant_go_no_go_vote.prompt.yaml)
+[Forge - Script Reliability Agent](../prompts/technical/devops/forge_script_reliability.prompt.yaml)
 [Atlas Documentation Specialist](../prompts/technical/documentation/atlas_documentation_specialist.prompt.yaml)
 [Repository Foundation & Developer Experience Analysis](../prompts/technical/repository_refactoring/Prompt_1_Repo_Foundation_Analysis.prompt.yaml)
 [Codebase Quality & Maintainability Analysis](../prompts/technical/repository_refactoring/Prompt_2_Codebase_Quality_Analysis.prompt.yaml)
