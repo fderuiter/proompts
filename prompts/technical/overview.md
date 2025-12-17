@@ -9,5 +9,6 @@ This directory contains prompts related to software development, architecture, a
 - **codebase_analysis**: Prompts to analyze a codebase for quality and architectural improvements, such as identifying duplication, SOLID violations, and maintainability issues.
 - **codex**: Prompts tailored for OpenAI Codex and ChatGPT to scaffold new projects with tooling, CI/CD, and documentation.
 - **design**: Prompts related to software design documentation and guidelines.
+- **documentation**: Prompts related to software documentation, including inline documentation, guides, and architectural visualization.
 - **technical_writing**: Prompts focused on drafting regulatory documents and SOPs for CRO operations.
 - **testing**: Prompts for planning and generating high-quality tests and QA strategies.
