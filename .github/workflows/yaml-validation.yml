@@ -28,6 +28,6 @@ jobs:
         with:
           python-version: '3.x'
       - name: Install dependencies
-        run: pip install pyyaml yamllint
+        run: pip install -r requirements.txt
       - name: Run all validation checks
         run: python3 tools/scripts/test_all.py
