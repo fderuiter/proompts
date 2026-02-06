@@ -5,6 +5,8 @@ This utility checks YAML-based prompts (``*.prompt.yaml`` and
 ``*.prompt.yml``) for basic syntax and naming conventions.
 """
 
+from __future__ import annotations
+
 import re
 from pathlib import Path
 

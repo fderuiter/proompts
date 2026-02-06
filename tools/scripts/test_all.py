@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Run all repository validation checks."""
 
+from __future__ import annotations
+
 import subprocess
 import sys
 

@@ -1,18 +1,40 @@
-import argparse
-import yaml
-import re
-import os
+from __future__ import annotations
 
-def load_yaml(file_path):
-    """Loads a YAML file from the given path."""
+import argparse
+import os
+import re
+from typing import Any, Dict, Optional
+
+import yaml
+
+
+def load_yaml(file_path: str) -> Optional[Dict[str, Any]]:
+    """
+    Loads a YAML file from the given path.
+
+    Args:
+        file_path: The path to the YAML file.
+
+    Returns:
+        The parsed YAML content as a dictionary, or None if the file is not found.
+    """
     if not os.path.exists(file_path):
         print(f"Error: File not found at {file_path}")
         return None
     with open(file_path, 'r') as f:
         return yaml.safe_load(f)
 
-def resolve_value(template_string, workflow_state):
-    """Resolves a template string like '{{steps.step_id.output}}' from the workflow state."""
+def resolve_value(template_string: str, workflow_state: Dict[str, Any]) -> Any:
+    """
+    Resolves a template string like '{{steps.step_id.output}}' from the workflow state.
+
+    Args:
+        template_string: The string containing the template variable.
+        workflow_state: The current state of the workflow containing inputs and steps.
+
+    Returns:
+        The resolved value if the template matches, otherwise the original string.
+    """
     match = re.match(r"{{(.*?)}}", template_string)
     if not match:
         return template_string # Return the original string if it's not a template
@@ -31,9 +53,16 @@ def resolve_value(template_string, workflow_state):
         print(f"Warning: Could not resolve value for template '{template_string}'")
         return None
 
-def simulate_prompt_execution(prompt_data, inputs):
+def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any]) -> str:
     """
     Simulates executing a prompt by substituting variables and returning a simulated output.
+
+    Args:
+        prompt_data: The prompt data loaded from the YAML file.
+        inputs: A dictionary of mapped inputs for the prompt.
+
+    Returns:
+        The simulated output string.
     """
     print("\n---")
     print(f"Executing prompt: {prompt_data.get('name', 'Untitled Prompt')}")
@@ -66,10 +95,17 @@ def simulate_prompt_execution(prompt_data, inputs):
     return f"[Simulated output for prompt: {prompt_data.get('name', 'Untitled Prompt')}]"
 
 
-def run_workflow(workflow_file, initial_inputs, verbose=True):
+def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bool = True) -> Optional[Dict[str, Any]]:
     """
     Loads and runs a workflow from a given file path.
-    Returns the final workflow state dictionary.
+
+    Args:
+        workflow_file: Path to the workflow YAML file.
+        initial_inputs: Dictionary of initial inputs for the workflow.
+        verbose: Whether to print detailed execution logs.
+
+    Returns:
+        The final workflow state dictionary, or None if the workflow file could not be loaded.
     """
     workflow_data = load_yaml(workflow_file)
     if not workflow_data:
