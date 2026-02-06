@@ -228,8 +228,8 @@ python3 tools/scripts/test_all.py
 # Just validate schema
 python3 tools/scripts/validate_prompt_schema.py
 
-# Check YAML syntax
-yamllint prompts/**/*.prompt.yaml
+# Check YAML syntax (matches both .yaml and .yml extensions)
+yamllint prompts/
 ```
 
 ## Resources
