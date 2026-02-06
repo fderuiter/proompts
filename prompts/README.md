@@ -25,24 +25,38 @@ All prompts in this repository follow a strict YAML schema (`*.prompt.yaml`) to 
 
 - **`name`**: A unique, human-readable identifier for the prompt.
 - **`description`**: A clear explanation of the prompt's purpose.
-- **`messages`**: The sequence of messages (System, User) that form the prompt context. Variables are denoted with Jinja2 syntax (e.g., `{{ input_variable }}`).
-- **`inputs`**: Definitions of expected variables, including types and descriptions.
-- **`testData`**: A list of test cases (inputs and expected outputs) used for validation.
+- **`model`**: The AI model to use (e.g., `gpt-4o`, `gpt-4o-mini`).
+- **`modelParameters`**: Model configuration including `temperature`.
+- **`messages`**: The sequence of messages (System, User, Assistant) that form the prompt context. Variables are denoted with `{{variable_name}}` syntax.
+- **`testData`**: A list of test cases with sample inputs and expected outputs used for validation.
+- **`evaluators`**: Validation rules to check output quality and format.
 
 ### Example
 
 ```yaml
 name: "Code Reviewer"
 description: "Reviews code for best practices."
-inputs:
-  - name: "code_snippet"
-    description: "The code to review."
+model: "gpt-4o-mini"
+modelParameters:
+  temperature: 0.3
 messages:
   - role: "system"
     content: "You are an expert code reviewer."
   - role: "user"
-    content: "Review this code:\n\n{{ code_snippet }}"
+    content: |-
+      Review this code:
+      
+      {{code_snippet}}
+testData:
+  - code_snippet: "function add(a,b){return a+b}"
+    expected: "Review noting missing type safety and documentation"
+evaluators:
+  - name: "Output includes suggestions"
+    string:
+      contains: "suggest"
 ```
+
+For detailed guidance, see [Best Practices Guide](../docs/BEST_PRACTICES.md).
 
 ## Usage 🚀
 

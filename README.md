@@ -57,12 +57,20 @@ and commit the docs index when it changes.
 
 ## Contributing
 
-1. Create prompts as `.prompt.yaml` files that follow [`docs/template_prompt.prompt.yaml`](docs/template_prompt.prompt.yaml) and place them in the appropriate folder. Convert any existing `.json` prompts to YAML and remove the obsolete JSON files.
-1. Before committing, sanitize and standardize the file using `tools/prompt_tools/L5_prompt_sanitiser.md` and `tools/prompt_tools/L5_standardize-prompt-files.md`.
-1. Run a YAML linter to verify formatting and update the docs index.
-1. Optionally, run `tools/prompt_tools/01_architecture_review_pipeline.md` to audit the repository.
-1. If you create a new directory, an `overview.md` will be generated automatically by the workflow.
-1. The same validation runs in CI, but running a YAML linter locally helps catch issues early.
+1. Create prompts as `.prompt.yaml` files that follow [`docs/template_prompt.prompt.yaml`](docs/template_prompt.prompt.yaml) and place them in the appropriate folder.
+2. Review the [Best Practices Guide](docs/BEST_PRACTICES.md) for detailed guidance on creating high-quality prompts.
+3. Ensure your prompt includes:
+   - Meaningful `testData` with realistic examples (at least 1-2 test cases)
+   - `evaluators` to validate output quality
+   - Clear instructions and expected output format
+4. Before committing, run validation:
+   ```bash
+   python3 tools/scripts/test_all.py
+   yamllint **/*.prompt.yaml
+   ```
+5. If you create a new directory, an `overview.md` will be generated automatically by the workflow.
+
+The same validation runs in CI, but running checks locally helps catch issues early.
 
 ## License
 

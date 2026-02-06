@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 from pathlib import Path
 from typing import Any, List, Optional
 
@@ -42,7 +43,7 @@ class PromptSchema(BaseModel):
         return v
 
 
-def validate_file(file_path: Path) -> bool:
+def validate_file(file_path: Path, strict: bool = False) -> bool:
     """Validate a single prompt file and report missing keys."""
     content = load_yaml(file_path)
     # If parsing failed, load_yaml prints an error and returns {}.
@@ -54,13 +55,35 @@ def validate_file(file_path: Path) -> bool:
         print(f"Validation error in {file_path}:\n{e}")
         return False
 
+    # In strict mode, warn about empty testData or evaluators (best practice)
+    if strict:
+        issues = []
+        if not content.get('testData') or len(content.get('testData', [])) == 0:
+            issues.append("no testData")
+        elif len(content.get('testData', [])) == 1:
+            issues.append("only 1 test case")
+        
+        if not content.get('evaluators') or len(content.get('evaluators', [])) == 0:
+            issues.append("no evaluators")
+        
+        if issues:
+            print(f"Warning: {file_path} has {', '.join(issues)}")
+
     return True
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description="Validate prompt YAML files")
+    parser.add_argument(
+        "--strict",
+        action="store_true",
+        help="Enable strict mode with warnings for empty testData/evaluators"
+    )
+    args = parser.parse_args()
+
     ok = True
     for file_path in iter_prompt_files(ROOT):
-        if not validate_file(file_path):
+        if not validate_file(file_path, strict=args.strict):
             ok = False
     return 0 if ok else 1
 
