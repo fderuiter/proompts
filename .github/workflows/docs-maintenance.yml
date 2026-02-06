@@ -42,7 +42,7 @@ jobs:
       - name: Update docs index
         run: python3 tools/scripts/update_docs_index.py
       - name: Validate prompts
-        run: ./tools/scripts/validate_prompt_schema.py
+        run: python3 tools/scripts/validate_prompt_schema.py
       - name: Check for changes
         id: diff
         run: |
