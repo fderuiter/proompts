@@ -22,7 +22,6 @@ OVERVIEW_NAME = "overview.md"  # documentation stays Markdown
 
 
 NAMING_RULES = {
-    "agentic_coding": re.compile(r"^\d\d_.*\.prompt\.ya?ml$", re.IGNORECASE),
     "meta": re.compile(r"^L\d+_.*\.prompt\.ya?ml$", re.IGNORECASE),
 }
 
@@ -72,7 +71,7 @@ def main() -> int:
             continue
         if not check_overview(category_dir):
             success = False
-        if category_dir.name == "meta":
+        if category_dir.name in {"meta", "communication"}:
             if not check_files(category_dir):
                 success = False
             continue

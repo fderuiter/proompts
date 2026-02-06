@@ -17,3 +17,27 @@ Merge both directories into `prompts/technical/software_engineering` with a clea
 - Renamed `codex` files to remove redundant suffixes.
 - Updated `agentic_coding.workflow.yaml` to use correct, full paths.
 - Updated documentation.
+
+## 2024-05-23: The Great Consolidation
+
+**Observation:**
+The repository suffered from "The General Dump" (`prompts/general`), containing mismatched prompts for productivity, communication, and miscellaneous tasks. This violated the semantic home principle. Also, `prompts/technical/repository_refactoring` used inconsistent naming (`Prompt_1_...`).
+
+**Strategy:**
+Dissolve `prompts/general` entirely by distributing its contents into new semantic homes:
+- `prompts/communication` (New Root)
+- `prompts/management/personal_effectiveness` (New)
+- `prompts/management/training` (New)
+- `prompts/management/innovation` (New)
+- Consolidate others into existing `business`, `meta`, `regulatory`, and `technical` domains.
+
+**Action:**
+- Migrated all 25+ files from `general` to their new homes.
+- Created 4 new semantic directories.
+- Renamed `repository_refactoring` files to `01_` convention.
+- Updated `check_prompts.py` to support the new structure.
+- Regenerated documentation index.
+- Eliminated `prompts/general`.
+
+**Addendum:**
+Renumbered files in new directories to resolve prefix collisions and enforce sequential ordering (e.g., `prompts/communication` re-indexed 01-20).
