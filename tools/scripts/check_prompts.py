@@ -16,8 +16,10 @@ ROOT = Path(__file__).resolve().parents[2]
 PROMPTS_DIR = ROOT / "prompts"
 
 
-NUMERIC_RE = re.compile(r"^\d\d_.*\.prompt\.ya?ml$", re.IGNORECASE)
-LEVEL_RE = re.compile(r"^L\d+_.*\.prompt\.ya?ml$", re.IGNORECASE)
+NAMING_RULES = {
+    "agentic_coding": re.compile(r"^\d\d_.*\.prompt\.ya?ml$", re.IGNORECASE),
+    "meta": re.compile(r"^L\d+_.*\.prompt\.ya?ml$", re.IGNORECASE),
+}
 
 
 def check_overview(directory: Path) -> bool:
@@ -53,12 +55,11 @@ def check_files(directory: Path) -> bool:
             print(f"Failed to parse {file}: {exc}")
             ok = False
             continue
-        if directory.name == "agentic_coding" and not NUMERIC_RE.match(name):
-            print(f"{file} does not follow numeric prefix naming")
-            ok = False
-        if directory.name == "meta" and not LEVEL_RE.match(name):
-            print(f"{file} does not follow L#_ naming")
-            ok = False
+        if directory.name in NAMING_RULES:
+            pattern = NAMING_RULES[directory.name]
+            if not pattern.match(name):
+                print(f"{file} does not match required pattern for {directory.name}")
+                ok = False
     return ok
 
 
