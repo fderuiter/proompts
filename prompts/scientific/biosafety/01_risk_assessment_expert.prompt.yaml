@@ -26,10 +26,32 @@ messages:
       Markdown table summarizing hazards and mitigations.
 testData:
   - vars:
-      medical_device_type: example_medical_device_type
+      medical_device_type: |-
+        Silicone-coated intravascular catheter for central venous access,
+        intended for long-term use (>30 days) in adult patients
     expected: |-
-      Markdown table summarizing hazards and mitigations.
+      Markdown table with columns for Hazard, Likelihood, Severity,
+      Testing Strategy, and Mitigation Controls. Should reference ISO 10993
+      standards and include specific biological hazards like cytotoxicity,
+      sensitization, and thrombogenicity.
+  - vars:
+      medical_device_type: |-
+        Titanium hip implant with hydroxyapatite coating for
+        total hip replacement in osteoarthritis patients
+    expected: |-
+      Comprehensive risk assessment table identifying hazards such as
+      metal ion release, particulate wear debris, and infection risk.
+      Should include ISO 14971 risk management approach.
 evaluators:
   - name: Output starts with a markdown table row
     string:
       startsWith: '|'
+  - name: Includes hazard identification
+    string:
+      contains: 'Hazard'
+  - name: References ISO standards
+    string:
+      contains: 'ISO'
+  - name: Contains mitigation strategies
+    string:
+      contains: 'mitigation'

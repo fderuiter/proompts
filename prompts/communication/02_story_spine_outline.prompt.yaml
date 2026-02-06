@@ -31,5 +31,24 @@ messages:
 
       Output format: Plain text with the numbered sentences followed by a short note.'
 
-testData: []
-evaluators: []
+testData:
+  - TOPIC: "A young inventor who builds a robot friend"
+    expected: |-
+      Eight numbered sentences following the Pixar Story Spine structure,
+      ending with an emotional arc summary and teaching moment.
+      Should be age-appropriate for middle-grade readers.
+  - TOPIC: "A shy student who discovers they can talk to animals"
+    expected: |-
+      Eight numbered sentences in the format: Once upon a time, Every day,
+      Until one day, Because of that (x2), Until finally, Ever since then.
+      Followed by emotional arc and teaching moment summary.
+evaluators:
+  - name: Contains numbered sentences
+    string:
+      contains: '1.'
+  - name: Follows story spine structure
+    string:
+      contains: 'Once upon a time'
+  - name: Includes emotional arc note
+    string:
+      contains: 'emotional'
