@@ -41,3 +41,27 @@ Dissolve `prompts/general` entirely by distributing its contents into new semant
 
 **Addendum:**
 Renumbered files in new directories to resolve prefix collisions and enforce sequential ordering (e.g., `prompts/communication` re-indexed 01-20).
+
+## 2024-05-24: The Numbering Correction and Technical Consolidation
+
+**Observation:**
+The repository suffered from "Numbering Chaos" in `prompts/management/project_management` (e.g., duplicates of `07_`, `08_`, `09_`) and `prompts/technical/software_engineering/lifecycle` (duplicates of `06_`, `07_`). This prevented clear ordering and convergence.
+
+Additionally, `prompts/technical/architecture` was an empty shell while `prompts/technical/codebase_analysis` contained relevant analysis prompts but used inconsistent naming (`DRY_Codebase_Analysis...`). This violated the MECE principle (two places for technical analysis) and naming standards.
+
+**Strategy:**
+1. **Consolidate Technical Analysis:**
+   - Move contents of `prompts/technical/codebase_analysis` to `prompts/technical/architecture`.
+   - Rename them to `01_...` convention.
+   - Delete the redundant directory.
+
+2. **Fix Numbering Chaos:**
+   - Resequence `prompts/management/project_management` from `07` to `16` to resolve collisions.
+   - Resequence `prompts/technical/software_engineering/lifecycle` from `06` to `11` to resolve collisions.
+
+**Action:**
+- Migrated and renamed analysis prompts.
+- Renumbered 15+ files across two directories.
+- Updated `architecture/overview.md`.
+- Verified no broken workflow references.
+- Regenerated documentation index.
