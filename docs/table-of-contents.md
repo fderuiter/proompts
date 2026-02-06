@@ -267,7 +267,7 @@
 [Security Vulnerability Hunt (OpenAI Codex)](../prompts/technical/software_engineering/tasks/08_security_vulnerability.prompt.yaml)
 [Code Review Assistant (OpenAI Codex)](../prompts/technical/software_engineering/tasks/09_code_review.prompt.yaml)
 [Targeted Test Generation (OpenAI Codex)](../prompts/technical/software_engineering/tasks/10_add_tests.prompt.yaml)
-[Bug Finder & Fixer (OpenAI Codex)](../prompts/technical/software_engineering/tasks/11_bug_fix.prompt.yaml)
+[Bug Finder & Fixer (Secure Coding Agent)](../prompts/technical/software_engineering/tasks/11_bug_fix.prompt.yaml)
 [UI Tweak & Verification (OpenAI Codex)](../prompts/technical/software_engineering/tasks/12_ui_fix.prompt.yaml)
 [DRY Codebase Analysis](../prompts/technical/codebase_analysis/DRY_Codebase_Analysis.prompt.yaml)
 [Maintainability Codebase Analysis](../prompts/technical/codebase_analysis/Maintainability_Codebase_Analysis.prompt.yaml)
