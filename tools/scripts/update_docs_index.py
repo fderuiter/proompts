@@ -96,14 +96,10 @@ def check_files(index: str, toc: str) -> bool:
     return existing_index == index and existing_toc == toc
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser(description="Update documentation index")
-    parser.add_argument("--check", action="store_true", help="verify generated files are up to date")
-    args = parser.parse_args()
-
+def run_update(check: bool = False) -> int:
     index, toc = generate()
 
-    if args.check:
+    if check:
         if check_files(index, toc):
             return 0
         print("docs index out of date", file=sys.stderr)
@@ -111,6 +107,13 @@ def main() -> int:
 
     write_files(index, toc)
     return 0
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Update documentation index")
+    parser.add_argument("--check", action="store_true", help="verify generated files are up to date")
+    args = parser.parse_args()
+    return run_update(check=args.check)
 
 
 if __name__ == "__main__":

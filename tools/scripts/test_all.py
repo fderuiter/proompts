@@ -5,7 +5,7 @@ import subprocess
 import sys
 
 from check_prompts import main as check_prompts_main
-from update_docs_index import main as update_docs_index_main
+from update_docs_index import run_update as update_docs_index_run
 from validate_prompt_schema import main as validate_prompt_schema_main
 
 
@@ -24,24 +24,14 @@ def main() -> int:
     checks = {
         "check_prompts": check_prompts_main,
         "validate_prompt_schema": validate_prompt_schema_main,
-        "update_docs_index": update_docs_index_main,
+        "update_docs_index": lambda: update_docs_index_run(check=True),
         "yamllint": lambda: run_command(["yamllint", "."]),
     }
 
     failed = []
     for name, check_func in checks.items():
         print(f"Running {name}...")
-        if name == "update_docs_index":
-            # This is a temporary workaround until the script is refactored
-            # to not use argparse
-            sys.argv = ["", "--check"]
-            if check_func() != 0:
-                print(f"{name} failed.")
-                failed.append(name)
-            else:
-                print(f"{name} passed.")
-            sys.argv = [""]
-        elif check_func() != 0:
+        if check_func() != 0:
             print(f"{name} failed.")
             failed.append(name)
         else:
