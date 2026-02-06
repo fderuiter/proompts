@@ -27,7 +27,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+          cache: 'pip'
       - name: Install dependencies
-        run: pip install pyyaml yamllint
+        run: pip install -r requirements.txt
       - name: Run repository checks
         run: python3 tools/scripts/test_all.py
