@@ -29,7 +29,33 @@ messages:
       Keep the entire reply within 180 words.
 testData:
   - vars:
-      passage: Sample text needing improvement
+      passage: |-
+        The utilization of machine learning algorithms facilitates the optimization
+        of predictive analytics capabilities which enables organizations to leverage
+        data-driven insights for strategic decision-making processes.
     expected: |-
-      Markdown with a summary, issue list, revised passage, and style tip.
-evaluators: []
+      Markdown with:
+      - Summary in ≤30 words
+      - Three clarity issues listed
+      - Rewritten passage with improved phrases bolded
+      - One 20-word style tip
+  - vars:
+      passage: |-
+        It is important to note that the implementation of the aforementioned
+        procedures necessitates careful consideration of various factors.
+    expected: |-
+      Clear breakdown showing core message, specific issues identified,
+      improved version using plain language, and actionable writing tip.
+evaluators:
+  - name: Contains summary section
+    string:
+      contains: 'summary'
+  - name: Lists clarity issues
+    string:
+      contains: 'issue'
+  - name: Uses markdown formatting
+    string:
+      contains: '**'
+  - name: Includes style tip
+    string:
+      contains: 'tip'
