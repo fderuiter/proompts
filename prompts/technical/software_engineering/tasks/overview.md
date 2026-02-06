@@ -4,9 +4,9 @@ This folder houses prompts tailored for OpenAI Codex and ChatGPT usage. They pro
 
 The core **Codex Prompt Suite** is split across four files:
 
-1. `01_project_init_codex.md`
-1. `02_tooling_and_quality_codex.md`
-1. `03_ci_cd_codex.md`
-1. `04_docs_and_onboarding_codex.md`
+1. `01_project_init.prompt.yaml`
+1. `03_tooling_and_quality.prompt.yaml`
+1. `04_ci_cd.prompt.yaml`
+1. `05_docs_and_onboarding.prompt.yaml`
 
 Run these prompts sequentially in a fresh ChatGPT session to scaffold and document a new project.

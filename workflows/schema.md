@@ -45,12 +45,12 @@ The `steps` section is an array of objects, where each object represents a singl
 ```yaml
 steps:
   - step_id: "generate_product_brief"
-    prompt_file: "agentic_coding/01_product_brief.prompt.yaml"
+    prompt_file: "prompts/technical/software_engineering/lifecycle/01_product_brief.prompt.yaml"
     map_inputs:
       product_concept: "{{inputs.product_concept}}"
 
   - step_id: "create_epics"
-    prompt_file: "agentic_coding/02_project_brief_epic.prompt.yaml"
+    prompt_file: "prompts/technical/software_engineering/lifecycle/02_project_brief_epic.prompt.yaml"
     map_inputs:
       product_brief: "{{steps.generate_product_brief.output}}"
 ```
