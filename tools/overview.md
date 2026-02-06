@@ -4,5 +4,5 @@ This directory contains scripts and tools for maintaining and working with the p
 
 ## Subdirectories
 
-- **prompt_tools**: A collection of utilities for refining, cleaning, or reorganizing prompts.
-- **scripts**: Utility scripts for repository maintenance, such as validating prompt formatting and updating the documentation index.
+- **[prompt_tools](prompt_tools/overview.md)**: A collection of utilities for refining, cleaning, or reorganizing prompts.
+- **[scripts](scripts/overview.md)**: Utility scripts for repository maintenance, validation, and workflow execution.
