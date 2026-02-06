@@ -21,11 +21,28 @@ messages:
     content: |-
       {{input}}
 testData:
-  - input: |-
-      package_path: src/module.py
-      bug_description: failing edge case
-    expected: Bug Fix -
+  - package_path: analytics/stats.py
+    input: |-
+      I'm encountering an IndexError in the `calculate_moving_average` function when the window size is larger than the data list.
+
+      Traceback (most recent call last):
+        File "main.py", line 10, in <module>
+          calculate_moving_average([1, 2, 3], window=5)
+        File "/app/analytics/stats.py", line 15, in calculate_moving_average
+          return [sum(data[i:i+window])/window for i in range(len(data)-window+1)]
+      IndexError: list index out of range
+    expected: "def test_moving_average_large_window"
+  - package_path: finance/ratios.py
+    input: |-
+      The `calculate_pe_ratio` function crashes with a ZeroDivisionError when earnings are zero. It should return None instead.
+
+      Traceback:
+      ZeroDivisionError: float division by zero
+    expected: "def test_pe_ratio_zero_earnings"
 evaluators:
-  - name: Output starts with 'Bug Fix -'
-    string:
-      startsWith: 'Bug Fix -'
+  - name: "Contains Test Case"
+    regex:
+      pattern: "(def\\s+test_|class\\s+Test)"
+  - name: "Contains Code Block or Import"
+    regex:
+      pattern: "(```python|import )"
