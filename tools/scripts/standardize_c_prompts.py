@@ -1,8 +1,14 @@
 from pathlib import Path
 
+try:
+    from utils import PROMPTS_DIR, load_yaml
+except ImportError:
+    import sys
+    sys.path.append(str(Path(__file__).parent))
+    from utils import PROMPTS_DIR, load_yaml
+
 import yaml
 
-ROOT = Path(__file__).resolve().parents[1]
 TODAY = "2025-07-18"
 AUTHOR = "fderuiter"
 
@@ -15,9 +21,9 @@ REQUIRED_SECTIONS = [
 ]
 OPTIONAL_SECTIONS = ["additional_notes", "example_usage", "references"]
 
-for d in sorted([p for p in ROOT.iterdir() if p.is_dir() and p.name.startswith("c")]):
+for d in sorted([p for p in PROMPTS_DIR.iterdir() if p.is_dir() and p.name.startswith("c")]):
     for path in sorted(d.glob("*.prompt.yaml")):
-        data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        data = load_yaml(path) or {}
         prompt = data.get("prompt", {})
         changed = False
 

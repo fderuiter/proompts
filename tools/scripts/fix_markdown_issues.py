@@ -4,6 +4,13 @@
 from pathlib import Path
 import re
 
+try:
+    from utils import ROOT
+except ImportError:
+    import sys
+    sys.path.append(str(Path(__file__).parent))
+    from utils import ROOT
+
 TODO_FILE = "todo_fix.md"
 
 # Regex patterns for list items and headers
@@ -187,7 +194,7 @@ def process_file(path: Path):
 
 
 def main():
-    todo_path = Path(TODO_FILE)
+    todo_path = ROOT / TODO_FILE
     if not todo_path.exists():
         print(f"{TODO_FILE} not found")
         return

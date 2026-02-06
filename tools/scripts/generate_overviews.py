@@ -4,24 +4,23 @@
 from pathlib import Path
 import sys
 
-import yaml
+try:
+    from utils import PROMPTS_DIR, load_yaml
+except ImportError:
+    import sys
+    sys.path.append(str(Path(__file__).parent))
+    from utils import PROMPTS_DIR, load_yaml
 
 OVERVIEW_NAME = "overview.md"  # documentation remains in Markdown
-
-ROOT = Path(__file__).resolve().parents[2]
-PROMPTS_DIR = ROOT / "prompts"
 
 
 def title_from_prompt(path: Path) -> str:
     """Return prompt title from a YAML file or fallback to filename."""
-    try:
-        text = path.read_text(encoding="utf-8")
-        data = yaml.safe_load(text) or {}
-        title = data.get("name") or data.get("title")
-        if title:
-            return str(title).strip()
-    except Exception:
-        pass
+    data = load_yaml(path)
+    title = data.get("name") or data.get("title")
+    if title:
+        return str(title).strip()
+
     name = path.name
     for ext in (".prompt.yaml", ".prompt.yml"):
         if name.lower().endswith(ext):

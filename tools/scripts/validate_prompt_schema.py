@@ -6,9 +6,12 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Iterable, Tuple, Union
 
-import yaml
-
-ROOT = Path(__file__).resolve().parents[2]
+try:
+    from utils import ROOT, iter_prompt_files, load_yaml
+except ImportError:
+    import sys
+    sys.path.append(str(Path(__file__).parent))
+    from utils import ROOT, iter_prompt_files, load_yaml
 
 REQUIRED_PATHS: Tuple[Tuple[Union[str, int], ...], ...] = (
     ("name",),
@@ -20,15 +23,6 @@ REQUIRED_PATHS: Tuple[Tuple[Union[str, int], ...], ...] = (
     ("testData",),
     ("evaluators",),
 )
-
-
-def iter_prompt_files() -> Iterable[Path]:
-    """Yield all prompt files in the repository."""
-    patterns = ("*.prompt.yaml", "*.prompt.yml")
-    for pattern in patterns:
-        for path in ROOT.rglob(pattern):
-            if path.is_file():
-                yield path
 
 
 def has_path(data: object, path: Tuple[Union[str, int], ...]) -> bool:
@@ -46,11 +40,9 @@ def has_path(data: object, path: Tuple[Union[str, int], ...]) -> bool:
 
 def validate_file(file_path: Path) -> bool:
     """Validate a single prompt file and report missing keys."""
-    try:
-        content = yaml.safe_load(file_path.read_text(encoding="utf-8"))
-    except Exception as exc:  # pragma: no cover - simple validation
-        print(f"Failed to parse {file_path}: {exc}")
-        return False
+    content = load_yaml(file_path)
+    # If parsing failed, load_yaml prints an error and returns {}.
+    # We continue to check required paths, which will likely fail.
 
     missing = [".".join(map(str, p)) for p in REQUIRED_PATHS if not has_path(content, p)]
     if missing:
@@ -61,7 +53,7 @@ def validate_file(file_path: Path) -> bool:
 
 def main() -> int:
     ok = True
-    for file_path in iter_prompt_files():
+    for file_path in iter_prompt_files(ROOT):
         if not validate_file(file_path):
             ok = False
     return 0 if ok else 1
