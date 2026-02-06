@@ -11,12 +11,12 @@ import re
 from pathlib import Path
 
 try:
-    from utils import PROMPTS_DIR, load_yaml
+    from utils import PROMPTS_DIR, load_yaml, iter_prompt_files
 except ImportError:
     # Allow running from root or scripts dir
     import sys
     sys.path.append(str(Path(__file__).parent))
-    from utils import PROMPTS_DIR, load_yaml
+    from utils import PROMPTS_DIR, load_yaml, iter_prompt_files
 
 OVERVIEW_NAME = "overview.md"  # documentation stays Markdown
 
@@ -33,7 +33,8 @@ def check_overview(directory: Path) -> bool:
     return True
 
 
-def check_files(directory: Path) -> bool:
+def check_directory_contents(directory: Path) -> bool:
+    """Check for unrecognized files in the directory."""
     ok = True
     for file in directory.iterdir():
         if not file.is_file() or file.name.startswith('.'):
@@ -52,36 +53,52 @@ def check_files(directory: Path) -> bool:
             ok = False
             continue
 
-        if not load_yaml(file):
-            print(f"Failed to parse {file}")
+    return ok
+
+
+def check_prompt_file(file: Path) -> bool:
+    """Validate a single prompt file."""
+    ok = True
+    if not load_yaml(file):
+        print(f"Failed to parse {file}")
+        ok = False
+
+    directory = file.parent
+    if directory.name in NAMING_RULES:
+        pattern = NAMING_RULES[directory.name]
+        if not pattern.match(file.name):
+            print(f"{file} does not match required pattern for {directory.name}")
             ok = False
-            continue
-        if directory.name in NAMING_RULES:
-            pattern = NAMING_RULES[directory.name]
-            if not pattern.match(name):
-                print(f"{file} does not match required pattern for {directory.name}")
-                ok = False
+
     return ok
 
 
 def main() -> int:
     success = True
-    for category_dir in PROMPTS_DIR.iterdir():
-        if not category_dir.is_dir():
-            continue
-        if not check_overview(category_dir):
+
+    # 1. Identify all directories containing prompts (recursively)
+    #    and check all prompt files.
+    dirs_to_check = set()
+
+    for prompt_file in iter_prompt_files(PROMPTS_DIR):
+        if not check_prompt_file(prompt_file):
             success = False
-        if category_dir.name in {"meta", "communication"}:
-            if not check_files(category_dir):
-                success = False
-            continue
-        for prompt_dir in category_dir.iterdir():
-            if not prompt_dir.is_dir():
-                continue
-            if not check_overview(prompt_dir):
-                success = False
-            if not check_files(prompt_dir):
-                success = False
+
+        # Collect directory and all parents up to PROMPTS_DIR
+        path = prompt_file.parent
+        while path != PROMPTS_DIR:
+             dirs_to_check.add(path)
+             if path == path.parent: # Safety break
+                 break
+             path = path.parent
+
+    # 2. Check each directory for overview and stray files
+    for directory in dirs_to_check:
+        if not check_overview(directory):
+            success = False
+        if not check_directory_contents(directory):
+            success = False
+
     return 0 if success else 1
 
 

@@ -30,6 +30,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Install dependencies
+        run: pip install -r requirements.txt
       - name: Validate prompts
         run: python3 tools/scripts/validate_prompt_schema.py
       - name: Build with Jekyll
