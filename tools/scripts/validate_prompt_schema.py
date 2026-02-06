@@ -4,7 +4,9 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Iterable, Tuple, Union
+from typing import Any, List, Optional
+
+from pydantic import BaseModel, ValidationError, field_validator
 
 try:
     from utils import ROOT, iter_prompt_files, load_yaml
@@ -13,41 +15,45 @@ except ImportError:
     sys.path.append(str(Path(__file__).parent))
     from utils import ROOT, iter_prompt_files, load_yaml
 
-REQUIRED_PATHS: Tuple[Tuple[Union[str, int], ...], ...] = (
-    ("name",),
-    ("description",),
-    ("model",),
-    ("modelParameters", "temperature"),
-    ("messages", 0, "content"),
-    ("messages", 1, "content"),
-    ("testData",),
-    ("evaluators",),
-)
+
+class Message(BaseModel):
+    role: Optional[str] = None
+    content: str
 
 
-def has_path(data: object, path: Tuple[Union[str, int], ...]) -> bool:
-    """Check if ``data`` has ``path`` nested keys/indexes."""
-    try:
-        for key in path:
-            if isinstance(key, int):
-                data = data[key]
-            else:
-                data = data[key]
-    except (KeyError, IndexError, TypeError):
-        return False
-    return True
+class ModelParameters(BaseModel):
+    temperature: float
+
+
+class PromptSchema(BaseModel):
+    name: str
+    description: str
+    model: str
+    modelParameters: ModelParameters
+    messages: List[Message]
+    testData: List[Any]
+    evaluators: List[Any]
+
+    @field_validator("messages")
+    @classmethod
+    def check_messages_length(cls, v: List[Message]) -> List[Message]:
+        if len(v) < 2:
+            raise ValueError("messages list must have at least 2 items")
+        return v
 
 
 def validate_file(file_path: Path) -> bool:
     """Validate a single prompt file and report missing keys."""
     content = load_yaml(file_path)
     # If parsing failed, load_yaml prints an error and returns {}.
-    # We continue to check required paths, which will likely fail.
+    # We continue to check schema, which will fail if content is empty.
 
-    missing = [".".join(map(str, p)) for p in REQUIRED_PATHS if not has_path(content, p)]
-    if missing:
-        print(f"{file_path}: missing {', '.join(missing)}")
+    try:
+        PromptSchema(**content)
+    except ValidationError as e:
+        print(f"Validation error in {file_path}:\n{e}")
         return False
+
     return True
 
 
