@@ -4,22 +4,38 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Iterable, Tuple, Union
+from typing import Iterable, List, Any
 
 import yaml
+from pydantic import BaseModel, ValidationError, field_validator
 
 ROOT = Path(__file__).resolve().parents[2]
 
-REQUIRED_PATHS: Tuple[Tuple[Union[str, int], ...], ...] = (
-    ("name",),
-    ("description",),
-    ("model",),
-    ("modelParameters", "temperature"),
-    ("messages", 0, "content"),
-    ("messages", 1, "content"),
-    ("testData",),
-    ("evaluators",),
-)
+
+class Message(BaseModel):
+    role: str
+    content: str
+
+
+class ModelParameters(BaseModel):
+    temperature: float
+
+
+class PromptSchema(BaseModel):
+    name: str
+    description: str
+    model: str
+    modelParameters: ModelParameters
+    messages: List[Message]
+    testData: List[Any]
+    evaluators: List[Any]
+
+    @field_validator('messages')
+    @classmethod
+    def check_messages_length(cls, v: List[Message]) -> List[Message]:
+        if len(v) < 2:
+            raise ValueError('messages list must contain at least two entries')
+        return v
 
 
 def iter_prompt_files() -> Iterable[Path]:
@@ -31,31 +47,28 @@ def iter_prompt_files() -> Iterable[Path]:
                 yield path
 
 
-def has_path(data: object, path: Tuple[Union[str, int], ...]) -> bool:
-    """Check if ``data`` has ``path`` nested keys/indexes."""
-    try:
-        for key in path:
-            if isinstance(key, int):
-                data = data[key]
-            else:
-                data = data[key]
-    except (KeyError, IndexError, TypeError):
-        return False
-    return True
-
-
 def validate_file(file_path: Path) -> bool:
-    """Validate a single prompt file and report missing keys."""
+    """Validate a single prompt file and report errors."""
     try:
         content = yaml.safe_load(file_path.read_text(encoding="utf-8"))
-    except Exception as exc:  # pragma: no cover - simple validation
+    except Exception as exc:  # pragma: no cover
         print(f"Failed to parse {file_path}: {exc}")
         return False
 
-    missing = [".".join(map(str, p)) for p in REQUIRED_PATHS if not has_path(content, p)]
-    if missing:
-        print(f"{file_path}: missing {', '.join(missing)}")
+    if content is None:
+        print(f"File is empty: {file_path}")
         return False
+
+    try:
+        PromptSchema(**content)
+    except ValidationError as e:
+        print(f"Validation error in {file_path}:")
+        for error in e.errors():
+            loc = " -> ".join(map(str, error['loc']))
+            msg = error['msg']
+            print(f"  - {loc}: {msg}")
+        return False
+
     return True
 
 

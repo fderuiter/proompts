@@ -28,6 +28,6 @@ jobs:
         with:
           python-version: '3.x'
       - name: Install dependencies
-        run: pip install pyyaml yamllint
+        run: pip install pyyaml yamllint pydantic
       - name: Run repository checks
         run: python3 tools/scripts/test_all.py
