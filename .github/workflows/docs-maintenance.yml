@@ -34,7 +34,7 @@ jobs:
         with:
           python-version: '3.x'
       - name: Install dependencies
-        run: pip install pyyaml yamllint
+        run: pip install -r requirements.txt
       - name: Fix markdown issues
         run: python3 tools/scripts/fix_markdown_issues.py
       - name: Generate overviews
