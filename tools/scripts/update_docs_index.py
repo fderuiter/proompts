@@ -8,20 +8,20 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-import yaml
+try:
+    from utils import PROMPTS_DIR, ROOT, iter_prompt_files, load_yaml
+except ImportError:
+    import sys
+    sys.path.append(str(Path(__file__).parent))
+    from utils import PROMPTS_DIR, ROOT, iter_prompt_files, load_yaml
 
-ROOT = Path(__file__).resolve().parents[2]
 DOCS_DIR = ROOT / "docs"
-PROMPTS_DIR = ROOT / "prompts"
-# Extensions for prompt files included in the generated index
-PROMPT_EXTENSIONS = (".prompt.yaml", ".prompt.yml")
 
 
 def read_meta(path: Path) -> tuple[str, str]:
     """Return category and title from a prompt file."""
     try:
-        text = path.read_text(encoding="utf-8")
-        data = yaml.safe_load(text) or {}
+        data = load_yaml(path)
         title = str(data.get("name") or data.get("title") or "").strip()
         # Use parent's parent name for category, e.g. "clinical" for "prompts/clinical/adjudication"
         category = path.parent.parent.name
@@ -45,12 +45,11 @@ def read_meta(path: Path) -> tuple[str, str]:
 def collect_prompts() -> dict[str, list[tuple[Path, str]]]:
     """Group prompt file paths by category."""
     groups: dict[str, list[tuple[Path, str]]] = defaultdict(list)
-    for ext in PROMPT_EXTENSIONS:
-        for path in PROMPTS_DIR.rglob(f"*{ext}"):
-            if not path.is_file():
-                continue
-            category, title = read_meta(path)
-            groups[category].append((path, title))
+    for path in iter_prompt_files(PROMPTS_DIR):
+        if not path.is_file():
+            continue
+        category, title = read_meta(path)
+        groups[category].append((path, title))
     # sort files within each category
     for cat in groups:
         groups[cat].sort(key=lambda t: t[0])

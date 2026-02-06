@@ -8,12 +8,15 @@ This utility checks YAML-based prompts (``*.prompt.yaml`` and
 import re
 from pathlib import Path
 
-import yaml
+try:
+    from utils import PROMPTS_DIR, load_yaml
+except ImportError:
+    # Allow running from root or scripts dir
+    import sys
+    sys.path.append(str(Path(__file__).parent))
+    from utils import PROMPTS_DIR, load_yaml
 
 OVERVIEW_NAME = "overview.md"  # documentation stays Markdown
-
-ROOT = Path(__file__).resolve().parents[2]
-PROMPTS_DIR = ROOT / "prompts"
 
 
 NUMERIC_RE = re.compile(r"^\d\d_.*\.prompt\.ya?ml$", re.IGNORECASE)
@@ -46,11 +49,8 @@ def check_files(directory: Path) -> bool:
             ok = False
             continue
 
-        try:
-            text = file.read_text(encoding="utf-8")
-            yaml.safe_load(text)
-        except Exception as exc:  # pragma: no cover - simple validation
-            print(f"Failed to parse {file}: {exc}")
+        if not load_yaml(file):
+            print(f"Failed to parse {file}")
             ok = False
             continue
         if directory.name == "agentic_coding" and not NUMERIC_RE.match(name):
