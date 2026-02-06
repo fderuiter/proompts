@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Create ``overview.md`` files for prompt directories if missing."""
 
+from __future__ import annotations
+
 from pathlib import Path
 import sys
 

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Automatically fix common Markdown issues listed in todo_fix.md."""
 
+from __future__ import annotations
+
 from pathlib import Path
 import re
 
