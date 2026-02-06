@@ -73,8 +73,8 @@ def run_tests():
 
     print("\n--- Running workflow test ---")
     initial_inputs = {"user_name": "World"}
-    # Set verbose=False to keep the test output clean
-    final_state = run_workflow(workflow_file, initial_inputs, verbose=False)
+    # Logging is not configured, so INFO logs (default) are hidden, keeping output clean.
+    final_state = run_workflow(workflow_file, initial_inputs)
 
     print("\n--- Verifying results ---")
     try:
