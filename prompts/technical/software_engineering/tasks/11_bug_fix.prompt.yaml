@@ -7,42 +7,65 @@ modelParameters:
 messages:
   - role: system
     content: |-
+      You are an expert Software Engineer tasked with fixing critical bugs.
       - Caller provides a description or stack trace indicating the failing behaviour.
       - Project has scripts to run or compile the code.
 
-      1. Use the provided info to reproduce the issue.
-      2. Locate the faulty code in {{package_path}} or related files.
-      3. Implement a fix with explanatory comments.
-      4. Add or update tests demonstrating the resolved behaviour.
-      5. Run linters and tests; include their output.
+      Your response MUST follow this structure:
 
-      If unable to reproduce, request additional logs or environment details.
+      ## Analysis
+      Analyze the provided information to understand the root cause. Explain *why* the bug is happening.
+
+      ## Reproduction
+      Create a minimal reproduction script or explain how to reproduce the issue locally.
+
+      ## Fix
+      Provide the corrected code block for the file in {{package_path}}. Use comments to explain the fix.
+      Ensure your fix is robust (handles edge cases, concurrency, security).
+
+      ## Verification
+      Provide a new test case (e.g., `def test_...`) that demonstrates the bug is fixed.
+
+      If unable to reproduce or if the input is ambiguous, request additional logs or environment details in a clear "## Clarification Needed" section instead of guessing.
   - role: user
     content: |-
       {{input}}
 testData:
-  - package_path: analytics/stats.py
+  - package_path: core/concurrency/counter.py
     input: |-
-      I'm encountering an IndexError in the `calculate_moving_average` function when the window size is larger than the data list.
+      The `SharedCounter` class is producing incorrect results when accessed by multiple threads. It seems like a race condition.
 
-      Traceback (most recent call last):
-        File "main.py", line 10, in <module>
-          calculate_moving_average([1, 2, 3], window=5)
-        File "/app/analytics/stats.py", line 15, in calculate_moving_average
-          return [sum(data[i:i+window])/window for i in range(len(data)-window+1)]
-      IndexError: list index out of range
-    expected: "def test_moving_average_large_window"
-  - package_path: finance/ratios.py
+      Code snippet:
+      class SharedCounter:
+          def __init__(self):
+              self.value = 0
+
+          def increment(self):
+              current = self.value
+              # Simulate some processing delay
+              time.sleep(0.001)
+              self.value = current + 1
+    expected: "threading.Lock()"
+  - package_path: api/auth/login.py
     input: |-
-      The `calculate_pe_ratio` function crashes with a ZeroDivisionError when earnings are zero. It should return None instead.
+      Users are reporting intermittent 500 errors on the login page.
+    expected: "## Clarification Needed"
+  - package_path: db/repositories/user_repo.py
+    input: |-
+      Security Audit: The `find_user` method is vulnerable to SQL Injection.
 
-      Traceback:
-      ZeroDivisionError: float division by zero
-    expected: "def test_pe_ratio_zero_earnings"
+      Code:
+      def find_user(username):
+          query = "SELECT * FROM users WHERE username = '" + username + "'"
+          return db.execute(query)
+    expected: "execute(query, (username,))"
 evaluators:
-  - name: "Contains Test Case"
+  - name: "Structure Check"
     regex:
-      pattern: "(def\\s+test_|class\\s+Test)"
-  - name: "Contains Code Block or Import"
+      pattern: "(## Analysis|## Clarification Needed)"
+  - name: "Actionable Outcome"
     regex:
-      pattern: "(```python|import )"
+      pattern: "(## Fix|## Clarification Needed)"
+  - name: "Technical Content"
+    regex:
+      pattern: "(```python|request additional logs)"
