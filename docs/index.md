@@ -283,7 +283,7 @@
 - [Project Init & Skeleton (OpenAI Codex)](../prompts/technical/software_engineering/tasks/01_project_init.prompt.yaml)
 - [Codebase Testing Plan](../prompts/technical/software_engineering/tasks/02_codebase_testing_plan.prompt.yaml)
 - [Tooling, Linting & Quality Gates (OpenAI Codex)](../prompts/technical/software_engineering/tasks/03_tooling_and_quality.prompt.yaml)
-- [Continuous Integration & Delivery (OpenAI Codex)](../prompts/technical/software_engineering/tasks/04_ci_cd.prompt.yaml)
+- [Continuous Integration & Delivery (DevOps Architect)](../prompts/technical/software_engineering/tasks/04_ci_cd.prompt.yaml)
 - [Documentation & Developer Onboarding (OpenAI Codex)](../prompts/technical/software_engineering/tasks/05_docs_and_onboarding.prompt.yaml)
 - [Refactoring Suggestions (OpenAI Codex)](../prompts/technical/software_engineering/tasks/06_refactoring_suggestions.prompt.yaml)
 - [Architecture Flow Q&A (OpenAI Codex)](../prompts/technical/software_engineering/tasks/07_architecture_flow.prompt.yaml)
