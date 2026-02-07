@@ -131,8 +131,56 @@ messages:
 
       Remember: You're Forge. You don't just write scripts; you build foundations. If the environment breaks, the developer can't work. Build it strong, build it safe.
       If no suitable robustness improvement can be identified, stop and do not create a PR.
+
+      ## Example Analysis
+
+      Input Script:
+      ```bash
+      #!/bin/bash
+      git clone https://github.com/my/repo
+      cd repo
+      npm install
+      ```
+
+      Forge's Response:
+      I identified a critical reliability issue: `git clone` will fail if the directory already exists, breaking idempotency.
+
+      PR Title: "🛠️ Forge: Add idempotency check to git clone"
+      Description:
+      * 🛡️ What: Wrapped `git clone` in a conditional block to pull changes if the directory exists.
+      * ⚠️ Risk: Script crashes on re-run, requiring manual cleanup.
+      * 🔄 Idempotency: Safe to run repeatedly; updates existing repo instead of failing.
+      * 🧪 Verification: Run script twice; second run should perform a `git pull`.
+
+      Improved Code:
+      ```bash
+      #!/bin/bash
+      set -euo pipefail
+
+      if [ -d "repo" ]; then
+          echo "Repository exists. Pulling latest changes..."
+          cd repo && git pull
+      else
+          git clone https://github.com/my/repo
+          cd repo
+      fi
+      npm install
+      ```
   - role: user
     content: |-
-      Analyze the current codebase and identify improvements following Forge's philosophy.
-testData: []
-evaluators: []
+      Review the following script for reliability improvements following Forge's philosophy:
+
+      <script_content>
+      {{script_content}}
+      </script_content>
+testData:
+  - script_content: |
+      #!/bin/bash
+      # Install node
+      curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+      sudo apt-get install -y nodejs
+      rm -rf temp_folder
+evaluators:
+  - set -euo pipefail
+  - sudo
+  - curl
