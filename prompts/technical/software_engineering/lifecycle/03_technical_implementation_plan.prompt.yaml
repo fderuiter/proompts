@@ -8,33 +8,67 @@ modelParameters:
 messages:
   - role: system
     content: |-
-      This plan guides developers in structuring modules, selecting libraries, and mitigating risks.
+      You are a Principal Software Architect. Your job is to create a detailed, risk-averse Technical Implementation Plan that ensures scalability, security, and maintainability.
 
-      Revise the plan iteratively until all risks are addressed.
+      Your plan must be actionable, specific, and technically rigorous. Avoid generic advice.
   - role: user
     content: |-
-      1. Define modules, services, and overall architecture.
-      1. List the libraries, frameworks, and tools to use.
-      1. Describe all required data models with fields and constraints.
-      1. Specify business logic and rules in clear terms.
-      1. Identify dependencies, risks, and proposed solutions.
-      1. Outline step-by-step implementation for each feature or service.
+      Create a comprehensive Technical Implementation Plan based on the following inputs:
 
-         Iterate the plan at least three times for robustness.
-      Inputs:
-      - `{{architecture_overview}}` – proposed system structure
-      - `{{technology_choices}}` – libraries and frameworks
-      - `{{data_models}}` – entities and relationships
+      <architecture_overview>
+      {{architecture_overview}}
+      </architecture_overview>
+
+      <technology_choices>
+      {{technology_choices}}
+      </technology_choices>
+
+      <data_models>
+      {{data_models}}
+      </data_models>
+
+      Review the inputs carefully. Then, generate a plan covering:
+      1. Define modules, services, and overall architecture.
+      2. List the libraries, frameworks, and tools to use.
+      3. Describe all required data models with fields and constraints.
+      4. Specify business logic and rules in clear terms.
+      5. Identify dependencies, risks, and proposed solutions.
+      6. Outline step-by-step implementation for each feature or service.
+
+      Constraint: Iterate the plan internally to address edge cases before outputting.
+
       Output format:
-      Markdown sections for Architecture Breakdown, Libraries and Tools, Data Models & Specifications, Business Logic & Rules, Dependencies & Risk Analysis, and Implementation Steps.
+      Strictly follow this Markdown structure:
+      # Technical Implementation Plan
+      ## 1. Architecture Breakdown
+      ...
+      ## 2. Libraries and Tools
+      ...
+      ## 3. Data Models & Specifications
+      ...
+      ## 4. Business Logic & Rules
+      ...
+      ## 5. Dependencies & Risk Analysis
+      ...
+      ## 6. Implementation Steps
+      ...
 testData:
   - vars:
-      architecture_overview: example_architecture_overview
-      data_models: example_data_models
-      technology_choices: example_technology_choices
+      architecture_overview: |-
+        A RESTful API for a collaborative To-Do list application allowing users to create lists, share them, and assign tasks.
+      technology_choices: |-
+        Python, FastAPI, PostgreSQL, Redis, Docker.
+      data_models: |-
+        User (id, email, password_hash), TaskList (id, owner_id, title), Task (id, list_id, title, status, assignee_id), Comment (id, task_id, user_id, content).
     expected: |-
       Markdown sections for Architecture Breakdown, Libraries and Tools, Data Models & Specifications, Business Logic & Rules, Dependencies & Risk Analysis, and Implementation Steps.
 evaluators:
-  - name: Output starts with 'Architecture Breakdown'
-    string:
-      startsWith: 'Architecture Breakdown'
+  - name: Valid Header Structure
+    regex:
+      pattern: '(?m)^# Technical Implementation Plan'
+  - name: Architecture Section Exists
+    regex:
+      pattern: '(?m)^## 1\. Architecture Breakdown'
+  - name: Risk Analysis Section Exists
+    regex:
+      pattern: '(?m)^## 5\. Dependencies & Risk Analysis'
