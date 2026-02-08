@@ -79,11 +79,26 @@ messages:
       {{input}}
 testData:
   - input: |-
-      repo_path: /tmp/repo
-      languages: [python]
-      team_size: 5
-    expected: Testing Plan -
+      CONTEXT: Legacy e-commerce monolith (Python/Django + jQuery).
+      SIZE: ~150k LOC.
+      CURRENT STATE: No automated tests, manual QA only.
+      PROBLEMS: Frequent regressions in checkout, slow release cycles (monthly).
+      TEAM: 3 Backend Devs, 1 Frontend Dev, 1 Manual QA.
+      GOAL: Implement CI/CD and reach 50% coverage on critical paths in 6 months.
+    expected: "Testing Plan -"
+  - input: |-
+      CONTEXT: Greenfield financial data pipeline (Go + gRPC microservices + Kafka).
+      REQUIREMENTS: SOC2 compliance, 99.9% uptime, strict data integrity.
+      TEAM: 8 Senior Engineers.
+      GOAL: TDD from day one, 90% code coverage, mutation testing, contract testing.
+    expected: "Testing Plan -"
 evaluators:
-  - name: Output starts with 'Testing Plan -'
-    string:
-      startsWith: 'Testing Plan -'
+  - name: "Contains Key Sections"
+    regex:
+      pattern: "(?i)(Inventory & Baseline|Risk-Based Prioritization|Framework & Tooling|Milestones|CI/CD Integration)"
+  - name: "Mentions Testing Frameworks"
+    regex:
+      pattern: "(?i)(pytest|jest|vitest|junit|nunit|rspec|playwright|cypress|selenium|mockery|testify|ginkgo|mutation)"
+  - name: "Mentions CI/CD Tools"
+    regex:
+      pattern: "(?i)(github actions|gitlab ci|jenkins|circleci|travis|azure devops)"
