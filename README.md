@@ -9,6 +9,7 @@ A curated set of prompts in YAML for AI-assisted product development, regulatory
 ## Docs
 
 - **`docs/`** – additional docs and a full [table of contents](docs/index.md)
+- **`tools/scripts/`** – [developer scripts and utilities](tools/scripts/README.md)
 
 ## Prompt Schema
 
