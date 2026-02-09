@@ -287,7 +287,7 @@
 - [Documentation & Developer Onboarding (OpenAI Codex)](../prompts/technical/software_engineering/tasks/05_docs_and_onboarding.prompt.yaml)
 - [Refactoring Suggestions (OpenAI Codex)](../prompts/technical/software_engineering/tasks/06_refactoring_suggestions.prompt.yaml)
 - [Architecture Flow Q&A (OpenAI Codex)](../prompts/technical/software_engineering/tasks/07_architecture_flow.prompt.yaml)
-- [Security Vulnerability Hunt (OpenAI Codex)](../prompts/technical/software_engineering/tasks/08_security_vulnerability.prompt.yaml)
+- [Security Vulnerability Hunt](../prompts/technical/software_engineering/tasks/08_security_vulnerability.prompt.yaml)
 - [Code Review Assistant (OpenAI Codex)](../prompts/technical/software_engineering/tasks/09_code_review.prompt.yaml)
 - [Targeted Test Generation (OpenAI Codex)](../prompts/technical/software_engineering/tasks/10_add_tests.prompt.yaml)
 - [Bug Finder & Fixer (OpenAI Codex)](../prompts/technical/software_engineering/tasks/11_bug_fix.prompt.yaml)
