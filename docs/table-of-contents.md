@@ -187,6 +187,7 @@
 [Prompt Engineer Template](../prompts/meta/L2_prompt-engineer.prompt.yaml)
 [Task Prototyper](../prompts/meta/L3_task-prototyper.prompt.yaml)
 [Worker Prompt](../prompts/meta/L4_worker_prompt.prompt.yaml)
+[Agent Persona Generator](../prompts/meta/L5_agent_persona_generator.prompt.yaml)
 [AGENTS.md Checklist Generator](../prompts/meta/L5_agents-md-checklist.prompt.yaml)
 [AI Coding Agent Plan Generator](../prompts/meta/L5_ai_coding_agent.prompt.yaml)
 [Comprehensive Task Template](../prompts/meta/L5_comprehensive_task_template.prompt.yaml)
