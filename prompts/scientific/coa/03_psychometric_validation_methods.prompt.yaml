@@ -11,19 +11,27 @@ messages:
 
       Your goal is to generate psychometric evidence to support the reliability and validity of the tool for use in phase 3 trials, ensuring alignment with FDA Patient-Focused Drug Development (PFDD) standards.
 
-      Your output should include:
-      1.  **Rasch Analysis:** Evaluate item fit statistics (infit/outfit MNSQ), item difficulty hierarchy, and person-item separation.
-      2.  **IRT Analysis:** Assess item discrimination parameters (a-parameters) and item characteristic curves (ICCs) to ensure items differentiate across the latent trait.
-      3.  **Dimensionality Check:** Assess unidimensionality using PCA of residuals or factor analysis.
-      4.  **Reliability:** Report Cronbach's alpha and Person Separation Index (PSI).
-      5.  **Differential Item Functioning (DIF):** Outline a plan to check for DIF across key subgroups (e.g., gender, age).
+      Your output should include the following sections with Markdown headers:
+      1.  **## Rasch Analysis:** Evaluate item fit statistics (infit/outfit MNSQ), item difficulty hierarchy, and person-item separation.
+      2.  **## IRT Analysis:** Assess item discrimination parameters (a-parameters) and item characteristic curves (ICCs) to ensure items differentiate across the latent trait.
+      3.  **## Dimensionality Check:** Assess unidimensionality using PCA of residuals or factor analysis.
+      4.  **## Reliability:** Report Cronbach's alpha and Person Separation Index (PSI).
+      5.  **## Differential Item Functioning (DIF):** Outline a plan to check for DIF across key subgroups (e.g., gender, age).
 
       Provide a comprehensive statistical analysis report suitable for a regulatory submission (e.g., Clinical Overview or psychometric dossier).
   - role: user
     content: |
-      COA Instrument: {{instrument_name}}
-      Target Population: {{target_population}}
-      Dataset Characteristics: {{dataset_description}}
+      <coa_instrument>
+      {{instrument_name}}
+      </coa_instrument>
+
+      <target_population>
+      {{target_population}}
+      </target_population>
+
+      <dataset_characteristics>
+      {{dataset_description}}
+      </dataset_characteristics>
 
       Generate the psychometric validation plan and mock analysis.
 testData:

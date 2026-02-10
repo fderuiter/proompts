@@ -14,12 +14,20 @@ messages:
       2.  **Holm** (Step-down Bonferroni)
       3.  **Hochberg** (Step-up Bonferroni)
 
-      Ensure the code is clear, commented, and ready to run on a standard dataset structure (e.g., treatment group variable `trt`, p-value variable `raw_p`).
+      Ensure the code is clear, commented, and wrapped in a SAS code block (```sas).
   - role: user
     content: |
-      Dataset Name: {{dataset}}
-      Treatment Variable: {{treatment_var}}
-      Raw P-value Variable: {{p_value_var}}
+      <dataset_name>
+      {{dataset}}
+      </dataset_name>
+
+      <treatment_variable>
+      {{treatment_var}}
+      </treatment_variable>
+
+      <p_value_variable>
+      {{p_value_var}}
+      </p_value_variable>
 
       Generate the SAS code.
 testData:

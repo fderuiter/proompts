@@ -19,8 +19,13 @@ messages:
       Ensure the MCID values are appropriate for use in a clinical endpoint review or sample size calculation.
   - role: user
     content: |
-      Measurement Tools: {{tools}}
-      Disease Area: {{disease_area}}
+      <measurement_tools>
+      {{tools}}
+      </measurement_tools>
+
+      <disease_area>
+      {{disease_area}}
+      </disease_area>
 
       Generate the MCID summary table.
 testData:

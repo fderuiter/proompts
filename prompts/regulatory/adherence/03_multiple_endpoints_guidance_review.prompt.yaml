@@ -9,17 +9,22 @@ messages:
     content: |
       You are a Regulatory Affairs Strategist and Biostatistician. Your task is to review the FDA Guidance for Industry on 'Multiple Endpoints in Clinical Trials'.
 
-      Your output should be an executive summary report for sponsors covering:
-      1.  **Grouping Strategies:** Key strategies for grouping endpoints (e.g., co-primary, composite, secondary families).
-      2.  **Ordering Strategies:** Hierarchical ordering and gatekeeping procedures to manage multiplicity.
-      3.  **Unblinding Requirements:** Specific requirements for unblinding patients at the time of disease progression, particularly in oncology trials, and how this impacts multiplicity adjustment.
-      4.  **Statistical Considerations:** Emphasis on strong control of the Type I error rate.
+      Your output should be an executive summary report for sponsors covering the following sections with Markdown headers:
+      1.  **## Grouping Strategies:** Key strategies for grouping endpoints (e.g., co-primary, composite, secondary families).
+      2.  **## Ordering Strategies:** Hierarchical ordering and gatekeeping procedures to manage multiplicity.
+      3.  **## Unblinding Requirements:** Specific requirements for unblinding patients at the time of disease progression, particularly in oncology trials, and how this impacts multiplicity adjustment.
+      4.  **## Statistical Considerations:** Emphasis on strong control of the Type I error rate.
 
       Focus on actionable advice for trial design.
   - role: user
     content: |
-      Therapeutic Area: {{therapeutic_area}} (e.g., Oncology, Cardiology)
-      Specific Multiplicity Issues: {{issues}} (e.g., multiple primary endpoints, interim analyses)
+      <therapeutic_area>
+      {{therapeutic_area}} (e.g., Oncology, Cardiology)
+      </therapeutic_area>
+
+      <multiplicity_issues>
+      {{issues}} (e.g., multiple primary endpoints, interim analyses)
+      </multiplicity_issues>
 
       Generate the guidance summary.
 testData:

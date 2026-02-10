@@ -15,13 +15,20 @@ messages:
       1.  Define the hierarchy of endpoints (Primary -> Secondary 1 -> Secondary 2).
       2.  Include conditional logic (e.g., `IF p_primary < 0.05 THEN DO; ... END;`) or use a specialized procedure/package if available.
       3.  Clearly comment on the error control mechanism.
-
-      Specify if the user prefers SAS or R.
+      4.  Be wrapped in a code block appropriate for the selected language.
   - role: user
     content: |
-      Endpoints: {{endpoints}} (Ordered List)
-      Language: {{language}} (SAS or R)
-      Alpha Level: {{alpha}}
+      <endpoints>
+      {{endpoints}} (Ordered List)
+      </endpoints>
+
+      <language>
+      {{language}} (SAS or R)
+      </language>
+
+      <alpha_level>
+      {{alpha}}
+      </alpha_level>
 
       Generate the code snippet.
 testData:
