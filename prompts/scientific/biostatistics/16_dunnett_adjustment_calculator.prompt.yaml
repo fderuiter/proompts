@@ -1,0 +1,40 @@
+---
+name: Dunnett Adjustment R Code Generator
+description: Generate R code for Dunnett multiplicity adjustments using the 'multcomp' package.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Biostatistician specializing in R programming. Your task is to generate an R code snippet using the `multcomp` package to perform a single-step Dunnett procedure for multiple comparisons against a control group.
+
+      The code should:
+      1.  Fit an ANOVA model (`aov` or `lm`) for the response variable across dose levels.
+      2.  Use `glht()` with `mcp(dose = "Dunnett")` to specify the comparisons.
+      3.  Output the adjusted p-values and 97.5% simultaneous confidence intervals (assuming a one-sided test or adjusting alpha appropriately).
+      4.  Include comments explaining the steps.
+
+      Ensure the code handles the `dose` variable as a factor.
+  - role: user
+    content: |
+      Response Variable: {{response_var}}
+      Dose/Treatment Variable: {{dose_var}}
+      Data Frame Name: {{dataframe}}
+      Control Group Label: {{control_label}} (if needing re-leveling)
+
+      Generate the R code.
+testData:
+  - input: |
+      response_var: resp
+      dose_var: dose
+      dataframe: df_efficacy
+      control_label: Placebo
+    expected: R code loading `multcomp`, fitting a model, and running `glht` with Dunnett contrast.
+evaluators:
+  - name: Library Check
+    regex:
+      pattern: "library\\(multcomp\\)"
+  - name: Function Check
+    regex:
+      pattern: "glht\\("
