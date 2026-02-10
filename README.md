@@ -11,6 +11,7 @@ A curated set of prompts in YAML for AI-assisted product development, regulatory
 - **`docs/`** – additional docs and a full [table of contents](docs/index.md)
 - **`tools/scripts/`** – [developer scripts and utilities](tools/scripts/README.md)
 - **[Usage Guide](docs/USAGE.md)** – how to use the prompts
+- **[Search](/search/)** – search through all available prompts
 
 ## Setup
 

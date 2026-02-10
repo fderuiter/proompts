@@ -1,5 +1,7 @@
 # Table of Contents
 
+[Search all prompts](../search/)
+
 ## Architecture
 
 - [TOGAF Preliminary Phase](../prompts/technical/architecture/togaf/01_preliminary_phase.prompt.yaml)

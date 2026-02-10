@@ -34,6 +34,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Validate prompts
         run: python3 tools/scripts/validate_prompt_schema.py
+      - name: Generate search index
+        run: python3 tools/scripts/generate_search_index.py
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
