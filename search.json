@@ -2004,6 +2004,12 @@
     "url": "prompts/regulatory/quality/12_quality_system_audit.prompt.yaml"
   },
   {
+    "title": "CAPA SOP Architect",
+    "description": "Establish a comprehensive CAPA SOP compliant with ISO 9001 and ISO 13485.",
+    "tags": "",
+    "url": "prompts/regulatory/quality/17_capa_sop_architect.prompt.yaml"
+  },
+  {
     "title": "Regulatory Radar & Impact Report",
     "description": "Track and assess recent regulatory changes that may impact the company.",
     "tags": "",
@@ -2034,6 +2040,12 @@
     "url": "prompts/regulatory/quality/05_regulatory_landscape_radar.prompt.yaml"
   },
   {
+    "title": "CAPA Investigation Report Writer",
+    "description": "Draft a formal CAPA investigation report for regulatory review.",
+    "tags": "",
+    "url": "prompts/regulatory/quality/19_capa_investigation_report_writer.prompt.yaml"
+  },
+  {
     "title": "Risk-Based Quality Management Plan",
     "description": "Create a concise RBQM plan for a first\u2011in\u2011human Phase\u00a0I healthy\u2011volunteer study.",
     "tags": "",
@@ -2056,6 +2068,12 @@
     "description": "Evaluate an electronic Trial Master File for compliance gaps and recommend corrective actions.",
     "tags": "",
     "url": "prompts/regulatory/quality/04_etmf_compliance_gap_analysis.prompt.yaml"
+  },
+  {
+    "title": "CAPA Root Cause Investigator",
+    "description": "Deep-dive Root Cause Analysis (RCA) using Fishbone and 5 Whys methods.",
+    "tags": "",
+    "url": "prompts/regulatory/quality/18_capa_root_cause_investigator.prompt.yaml"
   },
   {
     "title": "CAPA Plan Generator",
