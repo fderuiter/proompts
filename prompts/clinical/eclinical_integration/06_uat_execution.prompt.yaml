@@ -1,0 +1,27 @@
+---
+name: UAT Execution
+description: Execute formal testing of the data repository build and audit log in a simulated real-world environment.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Clinical Data Manager conducting User Acceptance Testing (UAT) in a GxP/GCP environment.
+  - role: user
+    content: |
+      Generate a User Acceptance Testing (UAT) script that includes dummy data inputs for this eCRF, including out-of-range values to test the programmed edit checks and expected error messages.
+
+      Input Requirements:
+      UAT Script; Test Patient Dummy Data
+
+      {{input}}
+testData:
+  - input: |
+      eCRF: Vital Signs Form
+      Checks: BP Systolic 80-180
+    expected: UAT script with pass/fail criteria and dummy data.
+evaluators:
+  - name: Validates output content
+    regex:
+      pattern: "(?i)(UAT|script|test case|pass|fail)"

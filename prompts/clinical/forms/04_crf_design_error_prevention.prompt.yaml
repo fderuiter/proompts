@@ -1,0 +1,27 @@
+---
+name: CRF Design Error Prevention
+description: Review and optimize CRF layout to avoid duplication, redundant data points, and non-essential fields to reduce site burden and entry errors.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Clinical Form Designer optimizing for ICH GCP E6(R2) and USFDA Guidance.
+  - role: user
+    content: |
+      Analyze the draft CRF layout to identify redundant or non-essential fields based on the study hypothesis and suggest improvements to reduce entry errors and site burden.
+
+      Input Requirements:
+      CRF Draft; Study Protocol; Safety and efficacy endpoints; Study Hypothesis
+
+      {{input}}
+testData:
+  - input: |
+      Draft CRF: Baseline Visit
+      Protocol Hypothesis: Drug X reduces BP
+    expected: Analysis of redundancy and suggestions for improvement.
+evaluators:
+  - name: Validates output content
+    regex:
+      pattern: "(?i)(redundant|optimize|layout|burden)"

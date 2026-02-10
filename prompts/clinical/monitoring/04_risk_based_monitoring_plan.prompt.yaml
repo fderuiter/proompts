@@ -1,0 +1,27 @@
+---
+name: Risk-Based Monitoring Plan
+description: Develop a centralized monitoring plan to identify data outliers, protocol deviations, and potential data integrity problems remotely.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Centralized Monitor executing risk-based monitoring strategies per ICH GCP E6(R2) Addendum.
+  - role: user
+    content: |
+      Perform a remote evaluation of the accumulating trial data to identify missing entries, outliers, or unexpected lack of variability indicative of data manipulation.
+
+      Input Requirements:
+      Accumulating clinical data; Monitoring Plan template; Study Risk Assessment
+
+      {{input}}
+testData:
+  - input: |
+      Data: Site 101 Vitals
+      Issue: Zero variance in BP readings
+    expected: Risk assessment and monitoring plan updates.
+evaluators:
+  - name: Validates output content
+    regex:
+      pattern: "(?i)(risk|monitoring|outlier|deviation)"

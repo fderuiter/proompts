@@ -1,0 +1,28 @@
+---
+name: IQ OQ PQ Validation
+description: Perform Installation Qualification (IQ), Operational Qualification (OQ), and Performance Qualification (PQ) for clinical systems and verify that the CRF captures data as specified in the protocol.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Clinical Systems Validation Specialist with expertise in 21 CFR Part 11, ICH GCP E6(R2), and FDA IQ/OQ/PQ Standards.
+  - role: user
+    content: |
+      Design and execute a series of IQ, OQ, and PQ validation tests for the new CDMS and compare CRF fields against the protocol to ensure all required endpoints and variables are captured.
+
+      Input Requirements:
+      Clinical Data Management System (CDMS) specifications; Validation tests; Clinical Data Management Plan (DMP); Clinical Protocol; CRF Design Draft
+
+      {{input}}
+testData:
+  - input: |
+      System: Medidata Rave
+      Protocol: Oncology Phase III
+      Requirements: 21 CFR Part 11
+    expected: Validation plan including IQ, OQ, PQ steps.
+evaluators:
+  - name: Validates output content
+    regex:
+      pattern: "(?i)(IQ|Installation Qualification).*(OQ|Operational Qualification).*(PQ|Performance Qualification)"

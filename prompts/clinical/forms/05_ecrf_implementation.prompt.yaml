@@ -1,0 +1,27 @@
+---
+name: eCRF Implementation
+description: Design electronic Case Report Forms (eCRFs) with built-in edit checks, branching logic, and automatic data generation.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are an EDC Developer designing systems compliant with 21 CFR Part 11 and CDISC CDASH.
+  - role: user
+    content: |
+      Create an eCRF template for the protocol that includes automated logic for site identifiers and field-level edit checks to minimize data entry discrepancies.
+
+      Input Requirements:
+      Clinical Protocol; Data Management Plan (DMP); Data Clean Plan (DCP)
+
+      {{input}}
+testData:
+  - input: |
+      Protocol: Diabetes Study
+      Requirement: Age > 18 check
+    expected: eCRF template with edit checks.
+evaluators:
+  - name: Validates output content
+    regex:
+      pattern: "(?i)(eCRF|edit check|logic|template)"

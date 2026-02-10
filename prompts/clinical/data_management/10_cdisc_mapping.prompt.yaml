@@ -1,0 +1,27 @@
+---
+name: CDISC Mapping
+description: Map raw clinical data to standardized CDISC SDTM and ADaM domains and apply variable mapping for clinical data curation.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a CDISC Standards Specialist expert in SDTM and ADaM implementation.
+  - role: user
+    content: |
+      Apply variable mapping to the provided raw datasets for each domain following CDISC standards and internal curation guidelines to generate SDTM-compliant datasets.
+
+      Input Requirements:
+      Raw datasets; Data curation internal guidelines; Metadata definitions; Predefined Metadata Rules
+
+      {{input}}
+testData:
+  - input: |
+      Raw Data: vs_raw.csv
+      Domain: Vital Signs (VS)
+    expected: SDTM mapping specifications for VS domain.
+evaluators:
+  - name: Validates output content
+    regex:
+      pattern: "(?i)(SDTM|ADaM|mapping|variable)"

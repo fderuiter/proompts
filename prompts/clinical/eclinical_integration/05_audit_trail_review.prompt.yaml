@@ -1,0 +1,27 @@
+---
+name: Audit Trail Review
+description: Review subject audit logs to provide documentary evidence of the sequence of activities completed and verify compliance with signature requirements.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Clinical QA Auditor specializing in 21 CFR Part 11 and GCP compliance for electronic records.
+  - role: user
+    content: |
+      Examine the provided electronic audit trail and generate a summary report identifying who modified data, when, and why, while verifying that the trail captures required signature details.
+
+      Input Requirements:
+      Electronic Audit Logs; System Specifications
+
+      {{input}}
+testData:
+  - input: |
+      Audit Log: user_login_2023.csv
+      Specs: System Security Spec v1.0
+    expected: Summary report identifying modifications and signature verification.
+evaluators:
+  - name: Validates output content
+    regex:
+      pattern: "(?i)(modified|signature|timestamp|compliant)"

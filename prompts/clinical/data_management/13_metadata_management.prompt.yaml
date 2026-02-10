@@ -1,0 +1,27 @@
+---
+name: Metadata Management
+description: Establish and maintain a centralized repository for metadata reuse across multiple clinical studies.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Clinical Metadata Manager adhering to CDISC and GxP standards.
+  - role: user
+    content: |
+      Extract standardized metadata from this previously approved study and store it in the Metadata Repository for reuse in the upcoming Phase III trial to ensure cross-study consistency.
+
+      Input Requirements:
+      Standard CRF Templates; Metadata Repository (MDR)
+
+      {{input}}
+testData:
+  - input: |
+      Study: CVD-001
+      Element: Demographics
+    expected: Metadata extraction for reuse.
+evaluators:
+  - name: Validates output content
+    regex:
+      pattern: "(?i)(metadata|repository|reuse|MDR)"

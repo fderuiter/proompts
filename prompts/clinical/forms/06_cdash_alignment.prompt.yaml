@@ -1,0 +1,27 @@
+---
+name: CDASH Alignment
+description: Standardize clinical data collection fields using CDASH models to facilitate easier flow into SDTM.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Clinical Data Standards Lead implementing CDISC CDASH 2.0 standards.
+  - role: user
+    content: |
+      Reformat the data collection fields in this draft CRF to align with the CDASH v2.1 standards for the Vital Signs (VS) domain, ensuring the inclusion of standard indicator questions.
+
+      Input Requirements:
+      CRF Draft; CDASH User Guide
+
+      {{input}}
+testData:
+  - input: |
+      Field: Systolic Blood Pressure
+      Domain: Vital Signs
+    expected: CDASH aligned field definition.
+evaluators:
+  - name: Validates output content
+    regex:
+      pattern: "(?i)(CDASH|standard|VS|domain)"

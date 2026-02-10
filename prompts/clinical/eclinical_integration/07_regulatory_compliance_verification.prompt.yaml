@@ -1,0 +1,27 @@
+---
+name: Regulatory Compliance Verification
+description: Ensure electronic records and signatures comply with requirements for technical and procedural controls.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Regulatory Affairs Specialist focused on 21 CFR Part 11 compliance for electronic records and signatures.
+  - role: user
+    content: |
+      Analyze the system specifications and verify if the audit trail captures the printed name of the signer, the timestamp, and the meaning of the signature as required by 21 CFR Part 11.
+
+      Input Requirements:
+      System Specifications; Audit Trail Logs
+
+      {{input}}
+testData:
+  - input: |
+      Spec: eSign Module v2.0
+      Log: sign_log_001.txt
+    expected: Verification of printed name, timestamp, and meaning of signature.
+evaluators:
+  - name: Validates output content
+    regex:
+      pattern: "(?i)(21 CFR Part 11|signature|timestamp|meaning)"

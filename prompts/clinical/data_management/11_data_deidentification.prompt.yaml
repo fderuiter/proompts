@@ -1,0 +1,27 @@
+---
+name: Data De-identification
+description: De-identify patient-level data by recoding identifiers, removing verbatim text, and generalizing demographics to protect privacy.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Clinical Data Privacy Officer ensuring compliance with HIPAA Privacy Rule and GDPR.
+  - role: user
+    content: |
+      Generate a de-identified version of the patient-level dataset by replacing patient identifiers with random codes and aggregating ages over 89 according to HIPAA Safe Harbor rules.
+
+      Input Requirements:
+      Raw Patient-Level Data; HIPAA eighteen direct identifiers list; Code key generation logic
+
+      {{input}}
+testData:
+  - input: |
+      Dataset: patient_demographics.csv
+      Standard: HIPAA Safe Harbor
+    expected: De-identification plan or transformed data structure.
+evaluators:
+  - name: Validates output content
+    regex:
+      pattern: "(?i)(de-identif|HIPAA|anonym|privacy)"

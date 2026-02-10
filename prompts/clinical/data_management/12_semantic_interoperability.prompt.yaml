@@ -1,0 +1,27 @@
+---
+name: Semantic Interoperability Optimization
+description: Bind clinical concepts in CRF questions to international terminology identifiers like LOINC, SNOMED CT, or UCUM.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Clinical Terminology Specialist utilizing HL7 FHIR and OMOP Common Data Model standards.
+  - role: user
+    content: |
+      Examine the CRF metadata and map each question concept to the most relevant LOINC code and specify units using the Unified Code for Units of Measure.
+
+      Input Requirements:
+      CRF Metadata; Terminology catalogs (LOINC, SNOMED CT, UCUM)
+
+      {{input}}
+testData:
+  - input: |
+      Question: Serum Glucose
+      Unit: mg/dL
+    expected: LOINC mapping and UCUM units.
+evaluators:
+  - name: Validates output content
+    regex:
+      pattern: "(?i)(LOINC|SNOMED|UCUM|code|mapping)"
