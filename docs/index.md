@@ -112,6 +112,7 @@
 
 - [Principal Rust Developer](../prompts/technical/languages/rust/01_principal_rust_developer.prompt.yaml)
 - [Rust Architectural Patterns](../prompts/technical/languages/rust/02_rust_architectural_patterns.prompt.yaml)
+- [Principal TypeScript Developer](../prompts/technical/languages/typescript/01_principal_typescript_developer.prompt.yaml)
 
 ## Management
 
