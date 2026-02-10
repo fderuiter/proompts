@@ -222,16 +222,64 @@
     "url": "prompts/business/cfo/01_scenario_cash_flow_forecast.prompt.yaml"
   },
   {
+    "title": "Liquidity Stress Test",
+    "description": "Run a stress test on cash flow forecast assuming a drop in collections.",
+    "tags": "",
+    "url": "prompts/business/cfo/09_liquidity_stress_test.prompt.yaml"
+  },
+  {
+    "title": "Investor FAQ Generation",
+    "description": "Generate an FAQ for a bearish investor based on press release and 10-K.",
+    "tags": "",
+    "url": "prompts/business/cfo/12_investor_faq_generation.prompt.yaml"
+  },
+  {
+    "title": "Scenario Modeling & Sensitivity Analysis",
+    "description": "Create three financial scenarios (Conservative, Base, and Aggressive) based on historical data and market trends.",
+    "tags": "",
+    "url": "prompts/business/cfo/05_scenario_modeling_sensitivity.prompt.yaml"
+  },
+  {
     "title": "Net Present Value Socratic Tutor",
     "description": "Guide the learner to derive and apply the NPV formula through short Socratic questioning.",
     "tags": "",
     "url": "prompts/business/cfo/04_npv_tutor.prompt.yaml"
   },
   {
+    "title": "Board Deck Narrative Generation",
+    "description": "Draft the 'CFO Commentary' slide for a Board meeting.",
+    "tags": "",
+    "url": "prompts/business/cfo/07_board_deck_narrative.prompt.yaml"
+  },
+  {
+    "title": "M&A Target Evaluation",
+    "description": "Evaluate a potential acquisition target based on financial statements.",
+    "tags": "",
+    "url": "prompts/business/cfo/08_ma_target_evaluation.prompt.yaml"
+  },
+  {
+    "title": "Regulatory Compliance Summary",
+    "description": "Summarize key financial disclosure changes for a specific regulation.",
+    "tags": "",
+    "url": "prompts/business/cfo/10_regulatory_compliance_summary.prompt.yaml"
+  },
+  {
     "title": "Regulatory-Risk & ESG Impact Dashboard Builder",
     "description": "Aggregate regulatory changes and ESG metrics into a compliance risk dashboard.",
     "tags": "",
     "url": "prompts/business/cfo/03_regulatory_risk_dashboard.prompt.yaml"
+  },
+  {
+    "title": "Budget Variance Analysis",
+    "description": "Identify top variances in a budget-to-actuals report and draft explanations for the Board.",
+    "tags": "",
+    "url": "prompts/business/cfo/06_variance_analysis.prompt.yaml"
+  },
+  {
+    "title": "Earnings Call Script Prep",
+    "description": "Prepare for tough analyst questions on an earnings call.",
+    "tags": "",
+    "url": "prompts/business/cfo/11_earnings_call_script_prep.prompt.yaml"
   },
   {
     "title": "Target Segment & User Needs Assessment",
@@ -256,6 +304,54 @@
     "description": "Draft and refine an executive summary for the uploaded market report.",
     "tags": "",
     "url": "prompts/business/market_research/04_market_report_exec_summary.prompt.yaml"
+  },
+  {
+    "title": "Upskilling Program Design",
+    "description": "Design a technical upskilling curriculum for engineering teams.",
+    "tags": "",
+    "url": "prompts/business/vp_tech_innovation/05_upskilling_program_design.prompt.yaml"
+  },
+  {
+    "title": "Hype vs. Reality Analysis",
+    "description": "Evaluate a specific technology for pragmatic application, cutting through the hype.",
+    "tags": "",
+    "url": "prompts/business/vp_tech_innovation/01_hype_vs_reality_analysis.prompt.yaml"
+  },
+  {
+    "title": "Preventing Technical Debt",
+    "description": "Justify technical debt reduction to non-technical stakeholders using financial analogies.",
+    "tags": "",
+    "url": "prompts/business/vp_tech_innovation/06_preventing_technical_debt.prompt.yaml"
+  },
+  {
+    "title": "Legacy Modernization Strategy",
+    "description": "Create a phased roadmap for migrating legacy systems to modern architectures.",
+    "tags": "",
+    "url": "prompts/business/vp_tech_innovation/03_legacy_modernization_strategy.prompt.yaml"
+  },
+  {
+    "title": "Build vs. Buy Decision Matrix",
+    "description": "Create a weighted decision matrix for evaluating build vs. buy options.",
+    "tags": "",
+    "url": "prompts/business/vp_tech_innovation/04_build_vs_buy_matrix.prompt.yaml"
+  },
+  {
+    "title": "Post-Mortem / Incident Report Summary",
+    "description": "Summarize technical post-mortems for a general company audience.",
+    "tags": "",
+    "url": "prompts/business/vp_tech_innovation/08_post_mortem_summary.prompt.yaml"
+  },
+  {
+    "title": "Disruption Radar",
+    "description": "Identify emerging threats and startups that could disrupt core products.",
+    "tags": "",
+    "url": "prompts/business/vp_tech_innovation/02_disruption_radar.prompt.yaml"
+  },
+  {
+    "title": "Elevator Pitch for Expensive Tech",
+    "description": "Create a persuasive elevator pitch for expensive technology investments focusing on business outcomes.",
+    "tags": "",
+    "url": "prompts/business/vp_tech_innovation/07_elevator_pitch_expensive_tech.prompt.yaml"
   },
   {
     "title": "Competitor-Positioning Brief",

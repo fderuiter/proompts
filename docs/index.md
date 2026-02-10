@@ -67,6 +67,14 @@
 - [Payment Reconciliation and Discrepancy Report](../prompts/business/payment/05_payment_reconciliation_discrepancy_report.prompt.yaml)
 - [Global Regulatory and Tax Matrix for Site Payments](../prompts/business/payment/06_global_regulatory_tax_matrix.prompt.yaml)
 - [Medicare Coverage Analysis](../prompts/business/payment/07_coverage_analysis.prompt.yaml)
+- [Hype vs. Reality Analysis](../prompts/business/vp_tech_innovation/01_hype_vs_reality_analysis.prompt.yaml)
+- [Disruption Radar](../prompts/business/vp_tech_innovation/02_disruption_radar.prompt.yaml)
+- [Legacy Modernization Strategy](../prompts/business/vp_tech_innovation/03_legacy_modernization_strategy.prompt.yaml)
+- [Build vs. Buy Decision Matrix](../prompts/business/vp_tech_innovation/04_build_vs_buy_matrix.prompt.yaml)
+- [Upskilling Program Design](../prompts/business/vp_tech_innovation/05_upskilling_program_design.prompt.yaml)
+- [Preventing Technical Debt](../prompts/business/vp_tech_innovation/06_preventing_technical_debt.prompt.yaml)
+- [Elevator Pitch for Expensive Tech](../prompts/business/vp_tech_innovation/07_elevator_pitch_expensive_tech.prompt.yaml)
+- [Post-Mortem / Incident Report Summary](../prompts/business/vp_tech_innovation/08_post_mortem_summary.prompt.yaml)
 
 ## Clinical
 
