@@ -1,0 +1,2672 @@
+[
+  {
+    "title": "Text Summarizer",
+    "description": "Summarizes input text concisely",
+    "tags": "",
+    "url": "docs/template_prompt.prompt.yaml"
+  },
+  {
+    "title": "Worker Prompt",
+    "description": "Execute the concrete task defined by the L3 template and return structured output.",
+    "tags": "",
+    "url": "prompts/meta/L4_worker_prompt.prompt.yaml"
+  },
+  {
+    "title": "README Generator",
+    "description": "Scan an entire repository and produce a polished README.md covering everything a new developer needs.",
+    "tags": "",
+    "url": "prompts/meta/L5_readme-generator.prompt.yaml"
+  },
+  {
+    "title": "Comprehensive Task Template",
+    "description": "Provide a reusable prompt that guides an AI through planning, execution and self-checking for any complex task.",
+    "tags": "",
+    "url": "prompts/meta/L5_comprehensive_task_template.prompt.yaml"
+  },
+  {
+    "title": "Prompt Engineer Template",
+    "description": "Produce an L3 task template that enables a Task Prototyper to fulfil `{{end_task}}`.",
+    "tags": "",
+    "url": "prompts/meta/L2_prompt-engineer.prompt.yaml"
+  },
+  {
+    "title": "Master Ultrameta Prompt Architect",
+    "description": "Construct a five-layer prompt stack (L0\u2013L4) that reliably executes `{{end_task}}`.",
+    "tags": "",
+    "url": "prompts/meta/L0_master-ultrameta.prompt.yaml"
+  },
+  {
+    "title": "PromptCrafter GPT",
+    "description": "Generate three distinct, best-practice prompts for a given topic.",
+    "tags": "",
+    "url": "prompts/meta/L5_promptcrafter_gpt.prompt.yaml"
+  },
+  {
+    "title": "AI Coding Agent Plan Generator",
+    "description": "Provide a structured plan for completing a coding task in an existing repository.",
+    "tags": "",
+    "url": "prompts/meta/L5_ai_coding_agent.prompt.yaml"
+  },
+  {
+    "title": "Prompt Engineer Fact Checker",
+    "description": "Rewrite an original prompt so it is clear, fully sourced and produces accurate answers with inline citations.",
+    "tags": "",
+    "url": "prompts/meta/L5_prompt_engineer_fact_checker.prompt.yaml"
+  },
+  {
+    "title": "Task Prototyper",
+    "description": "Generate a domain-specific L3 prompt that accomplishes `{{end_task}}`.",
+    "tags": "",
+    "url": "prompts/meta/L3_task-prototyper.prompt.yaml"
+  },
+  {
+    "title": "Meta Prompt Architect",
+    "description": "Design an L2 prompt that instructs a Prompt Engineer to create a domain-specific template achieving `{{end_task}}`.",
+    "tags": "",
+    "url": "prompts/meta/L1_meta-prompt-architect.prompt.yaml"
+  },
+  {
+    "title": "MECE Structuring Consultant",
+    "description": "Reorganize brainstorm ideas into three mutually exclusive, collectively exhaustive buckets.",
+    "tags": "",
+    "url": "prompts/meta/L5_mece_structuring.prompt.yaml"
+  },
+  {
+    "title": "AGENTS.md Checklist Generator",
+    "description": "Create a best-practice checklist for writing an AGENTS.md file and provide a meta\u2011prompt to generate one from any repository.",
+    "tags": "",
+    "url": "prompts/meta/L5_agents-md-checklist.prompt.yaml"
+  },
+  {
+    "title": "Agent Persona Generator",
+    "description": "Generate detailed, high-integrity agent personas based on a provided role and goal, using a strict structural framework.",
+    "tags": "",
+    "url": "prompts/meta/L5_agent_persona_generator.prompt.yaml"
+  },
+  {
+    "title": "TL;DR Summarizer",
+    "description": "Here\u2019s some text: \u2039PASTE\u203a",
+    "tags": "",
+    "url": "prompts/communication/03_tldr_summarizer.prompt.yaml"
+  },
+  {
+    "title": "Lay Language Summary Creation",
+    "description": "Summarize trial results for lay audience.",
+    "tags": "",
+    "url": "prompts/communication/21_lay_language_summary.prompt.yaml"
+  },
+  {
+    "title": "Storyboard-My-Idea",
+    "description": "Storyboard \u201c[PROJECT OR MESSAGE]\u201d for a 60-second explainer video:",
+    "tags": "",
+    "url": "prompts/communication/09_storyboard_my_idea.prompt.yaml"
+  },
+  {
+    "title": "Negotiation Coach",
+    "description": "Prepare the user for salary negotiations by roleplaying as a manager and offering feedback.",
+    "tags": "",
+    "url": "prompts/communication/16_negotiation_coach.prompt.yaml"
+  },
+  {
+    "title": "Explain-Like-I\u2019m-5 (ELI5)",
+    "description": "Explain \u2018[TOPIC]\u2019 as if I\u2019m five:",
+    "tags": "",
+    "url": "prompts/communication/01_explain_like_im_5.prompt.yaml"
+  },
+  {
+    "title": "Rapid-Risk-Matrix",
+    "description": "Act as a risk-manager. Objective: assess \u201c[PROJECT/PROCESS]\u201d.",
+    "tags": "",
+    "url": "prompts/communication/10_rapid_risk_matrix.prompt.yaml"
+  },
+  {
+    "title": "Data-to-Insight Analyst",
+    "description": "Here is a CSV (pasted or uploaded): [DATA].",
+    "tags": "",
+    "url": "prompts/communication/11_data_to_insight_analyst.prompt.yaml"
+  },
+  {
+    "title": "Pixar Story Spine Outline",
+    "description": "Guide the model in creating a short Pixar-style story outline for middle-grade readers.",
+    "tags": "",
+    "url": "prompts/communication/02_story_spine_outline.prompt.yaml"
+  },
+  {
+    "title": "Writing Clarity Mentor",
+    "description": "Improve a passage by highlighting issues and rewriting for clarity.",
+    "tags": "",
+    "url": "prompts/communication/08_writing_clarity_mentor.prompt.yaml"
+  },
+  {
+    "title": "Socratic-Coach",
+    "description": "You are my Socratic coach on \u201c[TOPIC]\u201d.",
+    "tags": "",
+    "url": "prompts/communication/12_socratic_coach.prompt.yaml"
+  },
+  {
+    "title": "Density Refiner",
+    "description": "Craft a concise yet information-rich summary of provided text.",
+    "tags": "",
+    "url": "prompts/communication/15_density_refiner.prompt.yaml"
+  },
+  {
+    "title": "Pitch-Deck Outliner",
+    "description": "Draft a concise one-page pitch deck outline.",
+    "tags": "",
+    "url": "prompts/communication/20_pitch_deck_outliner.prompt.yaml"
+  },
+  {
+    "title": "Analogy Architect",
+    "description": "Help the user grasp a complex topic through everyday analogies.",
+    "tags": "",
+    "url": "prompts/communication/14_analogy_architect.prompt.yaml"
+  },
+  {
+    "title": "Devil\u2019s-Advocate Stress Test",
+    "description": "Act as a seasoned critic.",
+    "tags": "",
+    "url": "prompts/communication/07_devils_advocate_stress_test.prompt.yaml"
+  },
+  {
+    "title": "Red-Team Stress-Test",
+    "description": "Form a red-team panel of 3 experts (Technical Hacker, Ruthless Competitor CEO, Regulatory Officer).",
+    "tags": "",
+    "url": "prompts/communication/13_red_team_stress_test.prompt.yaml"
+  },
+  {
+    "title": "Panel Debate",
+    "description": "Host a simulated debate among three experts on a chosen topic.",
+    "tags": "",
+    "url": "prompts/communication/17_panel_debate.prompt.yaml"
+  },
+  {
+    "title": "Hero's Journey Storyboarder",
+    "description": "Craft a brief marketing narrative following the Hero's Journey structure.",
+    "tags": "",
+    "url": "prompts/communication/05_heros_journey_storyboarder.prompt.yaml"
+  },
+  {
+    "title": "80/20 Crash Course",
+    "description": "Teach me the essentials of [SUBJECT] using the Pareto Principle:",
+    "tags": "",
+    "url": "prompts/communication/04_80_20_crash_course.prompt.yaml"
+  },
+  {
+    "title": "Empathy-Map Facilitator",
+    "description": "Quickly capture a user persona\u2019s voice and pain points.",
+    "tags": "",
+    "url": "prompts/communication/18_empathy_map_facilitator.prompt.yaml"
+  },
+  {
+    "title": "Smart Task Prioritizer",
+    "description": "Here\u2019s my to-do list: \u2039PASTE\u203a",
+    "tags": "",
+    "url": "prompts/communication/06_smart_task_prioritizer.prompt.yaml"
+  },
+  {
+    "title": "Rubber Duck Debugger",
+    "description": "Guide developers through self-explanation to uncover bugs before providing fixes.",
+    "tags": "",
+    "url": "prompts/communication/19_rubber_duck_debugger.prompt.yaml"
+  },
+  {
+    "title": "Competitive-Bid Pricing & Margin Optimizer",
+    "description": "Compare competitor bids and internal costs to recommend a winning price with target margin.",
+    "tags": "",
+    "url": "prompts/business/cfo/02_competitive_bid_pricing.prompt.yaml"
+  },
+  {
+    "title": "Scenario-Based Clinical-Trial Cash-Flow Forecast",
+    "description": "Model 12-quarter cash flows under baseline, inflation, and recruitment slowdown scenarios.",
+    "tags": "",
+    "url": "prompts/business/cfo/01_scenario_cash_flow_forecast.prompt.yaml"
+  },
+  {
+    "title": "Net Present Value Socratic Tutor",
+    "description": "Guide the learner to derive and apply the NPV formula through short Socratic questioning.",
+    "tags": "",
+    "url": "prompts/business/cfo/04_npv_tutor.prompt.yaml"
+  },
+  {
+    "title": "Regulatory-Risk & ESG Impact Dashboard Builder",
+    "description": "Aggregate regulatory changes and ESG metrics into a compliance risk dashboard.",
+    "tags": "",
+    "url": "prompts/business/cfo/03_regulatory_risk_dashboard.prompt.yaml"
+  },
+  {
+    "title": "Target Segment & User Needs Assessment",
+    "description": "Identify key user segments for `{{device_or_assay}}` used in `{{application}}`.",
+    "tags": "",
+    "url": "prompts/business/market_research/02_target_segment_user_needs_assessment.prompt.yaml"
+  },
+  {
+    "title": "Market Landscape & Trend Analysis",
+    "description": "Summarize the global market for `{{device_or_assay}}` and highlight key trends.",
+    "tags": "",
+    "url": "prompts/business/market_research/01_market_landscape_trend_analysis.prompt.yaml"
+  },
+  {
+    "title": "Regulatory & Commercial Barrier Mapping",
+    "description": "Assess hurdles for launching `{{device}}` in major markets.",
+    "tags": "",
+    "url": "prompts/business/market_research/03_regulatory_commercial_barrier_mapping.prompt.yaml"
+  },
+  {
+    "title": "Market Report Executive Summary",
+    "description": "Draft and refine an executive summary for the uploaded market report.",
+    "tags": "",
+    "url": "prompts/business/market_research/04_market_report_exec_summary.prompt.yaml"
+  },
+  {
+    "title": "Competitor-Positioning Brief",
+    "description": "Provide a competitor comparison to highlight differentiators for an upcoming board review.",
+    "tags": "",
+    "url": "prompts/business/development/03_competitor_positioning_brief.prompt.yaml"
+  },
+  {
+    "title": "Rapid Proposal Builder",
+    "description": "Draft a concise capabilities and budget proposal for a prospective client.",
+    "tags": "",
+    "url": "prompts/business/development/02_rapid_proposal_builder.prompt.yaml"
+  },
+  {
+    "title": "Emerging-Market Opportunity Scan",
+    "description": "Identify high-growth therapeutic areas or sponsor segments for CRO services.",
+    "tags": "",
+    "url": "prompts/business/development/01_emerging_market_opportunity_scan.prompt.yaml"
+  },
+  {
+    "title": "RFP Executive-Summary Generator",
+    "description": "Produce a persuasive executive summary for an RFP response.",
+    "tags": "",
+    "url": "prompts/business/development/02_rfp_executive_summary_generator.prompt.yaml"
+  },
+  {
+    "title": "90-Day Pipeline Health & Next-Best-Action Review",
+    "description": "Assess the health of the sales pipeline and recommend next-best actions.",
+    "tags": "",
+    "url": "prompts/business/development/03_90_day_pipeline_health_review.prompt.yaml"
+  },
+  {
+    "title": "Market-Intelligence Radar",
+    "description": "Prioritize high-potential biotech or pharma companies for partnership opportunities.",
+    "tags": "",
+    "url": "prompts/business/development/01_market_intelligence_radar.prompt.yaml"
+  },
+  {
+    "title": "GCP and GDPR Training Compliance Risk Report",
+    "description": "Generate a monthly assessment of staff training compliance for GCP and GDPR regulations.",
+    "tags": "",
+    "url": "prompts/business/hr_finance/03_gcp_gdpr_compliance_training_risk_report.prompt.yaml"
+  },
+  {
+    "title": "Strategic Workforce and Talent Acquisition Plan",
+    "description": "Create a 12\u2011month hiring and retention roadmap that fills projected staffing gaps while keeping turnover under 12%.",
+    "tags": "",
+    "url": "prompts/business/hr_finance/01_strategic_workforce_talent_acquisition_plan.prompt.yaml"
+  },
+  {
+    "title": "Clinical-Trial Budget and Burn-Rate Dashboard",
+    "description": "Produce a month-end dashboard comparing planned versus actual spend and forecasting when budgets will run out for each active study.",
+    "tags": "",
+    "url": "prompts/business/hr_finance/02_clinical_trial_budget_burn_rate_dashboard.prompt.yaml"
+  },
+  {
+    "title": "Sunshine Act and FMV Compliance Check",
+    "description": "Audit site-payment data for Sunshine Act reporting and FMV adherence.",
+    "tags": "",
+    "url": "prompts/business/payment/02_sunshine_act_fmv_compliance_check.prompt.yaml"
+  },
+  {
+    "title": "Investigator-Site Payment Forecast",
+    "description": "Produce a month-by-month cash-flow forecast for site payments.",
+    "tags": "",
+    "url": "prompts/business/payment/04_investigator_site_payment_forecast.prompt.yaml"
+  },
+  {
+    "title": "Global Regulatory and Tax Matrix for Site Payments",
+    "description": "Summarize key payment compliance requirements across major regions.",
+    "tags": "",
+    "url": "prompts/business/payment/06_global_regulatory_tax_matrix.prompt.yaml"
+  },
+  {
+    "title": "Medicare Coverage Analysis",
+    "description": "Determine qualifying status and billing justification.",
+    "tags": "",
+    "url": "prompts/business/payment/07_coverage_analysis.prompt.yaml"
+  },
+  {
+    "title": "Payment-Process Risk Assessment and Mitigation",
+    "description": "Identify weak points in the site-payment workflow and propose mitigations.",
+    "tags": "",
+    "url": "prompts/business/payment/03_payment_process_risk_assessment.prompt.yaml"
+  },
+  {
+    "title": "Build an Audit-Ready Site-Payment Schedule",
+    "description": "Generate a transparent investigator payment schedule that withstands audit review.",
+    "tags": "",
+    "url": "prompts/business/payment/01_audit_ready_site_payment_schedule.prompt.yaml"
+  },
+  {
+    "title": "Payment Reconciliation and Discrepancy Report",
+    "description": "Identify and categorize payment discrepancies before study close-out.",
+    "tags": "",
+    "url": "prompts/business/payment/05_payment_reconciliation_discrepancy_report.prompt.yaml"
+  },
+  {
+    "title": "Scenario-Based Microlearning Series",
+    "description": "Design short interactive modules that help CRO staff apply GCP principles correctly during site visits.",
+    "tags": "",
+    "url": "prompts/management/training/02_scenario_based_microlearning_series.prompt.yaml"
+  },
+  {
+    "title": "Training Impact Analytics Planner",
+    "description": "Correlate training data with audit deviations and design interventions for high-risk learners.",
+    "tags": "",
+    "url": "prompts/management/training/03_training_impact_analytics_targeted_intervention_planner.prompt.yaml"
+  },
+  {
+    "title": "Competency-Based Onboarding Blueprint",
+    "description": "Create an onboarding program that reduces time to independent monitoring to six weeks or less.",
+    "tags": "",
+    "url": "prompts/management/training/01_competency_based_onboarding_blueprint.prompt.yaml"
+  },
+  {
+    "title": "Eisenhower Matrix Coach",
+    "description": "Triage a to-do list using the Eisenhower Matrix.",
+    "tags": "",
+    "url": "prompts/management/personal_effectiveness/03_eisenhower_matrix_coach.prompt.yaml"
+  },
+  {
+    "title": "Career Compass Advisor",
+    "description": "Map the user's next career move and provide a concise action plan.",
+    "tags": "",
+    "url": "prompts/management/personal_effectiveness/02_career_compass_advisor.prompt.yaml"
+  },
+  {
+    "title": "Learning Path Mentor",
+    "description": "Design a phased roadmap that guides users toward skill mastery.",
+    "tags": "",
+    "url": "prompts/management/personal_effectiveness/06_learning_path_mentor.prompt.yaml"
+  },
+  {
+    "title": "Micro-Habit Health Coach",
+    "description": "Deliver a concise 7-day wellness plan combining meals, movement, and mindset.",
+    "tags": "",
+    "url": "prompts/management/personal_effectiveness/05_micro_habit_health_coach.prompt.yaml"
+  },
+  {
+    "title": "Scenario-Based Financial Navigator",
+    "description": "Generate long-term wealth scenarios and actionable tactics.",
+    "tags": "",
+    "url": "prompts/management/personal_effectiveness/01_financial_navigator.prompt.yaml"
+  },
+  {
+    "title": "Second-Order Thinking Oracle",
+    "description": "Assess first- and second-order effects of a decision.",
+    "tags": "",
+    "url": "prompts/management/personal_effectiveness/04_second_order_thinking_oracle.prompt.yaml"
+  },
+  {
+    "title": "AI-Enhanced RBM Action Plan",
+    "description": "Generate next-week monitoring actions that optimize patient safety and data quality.",
+    "tags": "",
+    "url": "prompts/management/medical_director/03_ai_enhanced_rbm_action_plan.prompt.yaml"
+  },
+  {
+    "title": "Pharmacovigilance Safety Signal Prioritization",
+    "description": "Detect emerging safety signals and recommend follow-up actions.",
+    "tags": "",
+    "url": "prompts/management/medical_director/02_pharmacovigilance_safety_signal_prioritization.prompt.yaml"
+  },
+  {
+    "title": "Clinical Trial Protocol Compliance Review",
+    "description": "Evaluate a draft protocol for quality and regulatory compliance.",
+    "tags": "",
+    "url": "prompts/management/medical_director/01_clinical_trial_protocol_quality_compliance_review.prompt.yaml"
+  },
+  {
+    "title": "Interim Results Executive Brief",
+    "description": "Summarize interim analysis findings for cross-functional leadership.",
+    "tags": "",
+    "url": "prompts/management/vp_statistics/01_interim_results_executive_brief.prompt.yaml"
+  },
+  {
+    "title": "Statistical Analysis Plan Draft Builder",
+    "description": "Create the initial draft of a Statistical Analysis Plan (SAP) for a Phase II oncology trial.",
+    "tags": "",
+    "url": "prompts/management/vp_statistics/02_sap_first_draft_builder.prompt.yaml"
+  },
+  {
+    "title": "Data-Quality Risk Heat Map",
+    "description": "Assess site-level data quality and recommend mitigation actions.",
+    "tags": "",
+    "url": "prompts/management/vp_statistics/03_data_quality_risk_heatmap.prompt.yaml"
+  },
+  {
+    "title": "Strategic Growth Roadmap",
+    "description": "Rank therapeutic areas for expansion over the next three years.",
+    "tags": "",
+    "url": "prompts/management/executive/06_strategic_growth_roadmap.prompt.yaml"
+  },
+  {
+    "title": "Executive Trial-Health Dashboard",
+    "description": "Summarize the health of active studies in a weekly dashboard.",
+    "tags": "",
+    "url": "prompts/management/executive/10_executive_trial_health_dashboard.prompt.yaml"
+  },
+  {
+    "title": "Executive-Ready Brief and Talking Points",
+    "description": "Turn disparate reports into a concise executive brief and talking points.",
+    "tags": "",
+    "url": "prompts/management/executive/03_executive_brief_synthesizer.prompt.yaml"
+  },
+  {
+    "title": "Strategic Market Foresight and Action Plan",
+    "description": "Detect market inflections and craft a response plan.",
+    "tags": "",
+    "url": "prompts/management/executive/01_strategic_market_foresight.prompt.yaml"
+  },
+  {
+    "title": "Strategic Market and Competitor Radar",
+    "description": "Provide an executive briefing on growth areas, competitor moves, and regulatory shifts.",
+    "tags": "",
+    "url": "prompts/management/executive/05_market_competitor_radar.prompt.yaml"
+  },
+  {
+    "title": "Crisis-Management Playbook Generator",
+    "description": "Provide a concise playbook for handling critical incidents affecting customer data.",
+    "tags": "",
+    "url": "prompts/management/executive/02_crisis_management_playbook.prompt.yaml"
+  },
+  {
+    "title": "Trial-Design Optimisation Memo",
+    "description": "Rewrite a study synopsis to accelerate startup while maintaining statistical power and budget.",
+    "tags": "",
+    "url": "prompts/management/executive/14_trial_design_optimisation_memo.prompt.yaml"
+  },
+  {
+    "title": "Investor and Board Narrative Builder",
+    "description": "Craft a concise two-slide narrative for investors and board members.",
+    "tags": "",
+    "url": "prompts/management/executive/11_investor_board_narrative_builder.prompt.yaml"
+  },
+  {
+    "title": "Digital Transformation Roadmap for Clinical Operations",
+    "description": "Build a technology roadmap that shortens cycle times and enhances patient engagement.",
+    "tags": "",
+    "url": "prompts/management/executive/04_digital_transformation_roadmap.prompt.yaml"
+  },
+  {
+    "title": "Hosting Cost Reduction ToT Plan",
+    "description": "Develop a tree-of-thought plan to reduce hosting costs.",
+    "tags": "",
+    "url": "prompts/management/executive/15_hosting_cost_reduction_tot.prompt.yaml"
+  },
+  {
+    "title": "FDA-Aligned AI Governance Framework",
+    "description": "Draft an AI governance framework that satisfies regulators and sponsors.",
+    "tags": "",
+    "url": "prompts/management/executive/08_ai_governance_framework.prompt.yaml"
+  },
+  {
+    "title": "Quarterly Innovation Radar for Decentralized and Hybrid Trials",
+    "description": "Identify and prioritize technologies for decentralized or hybrid trials.",
+    "tags": "",
+    "url": "prompts/management/executive/12_innovation_radar.prompt.yaml"
+  },
+  {
+    "title": "Emerging-Science Horizon Scan",
+    "description": "Highlight emerging therapeutic areas or technologies likely to disrupt CRO services in the next three years.",
+    "tags": "",
+    "url": "prompts/management/executive/09_emerging_science_horizon_scan.prompt.yaml"
+  },
+  {
+    "title": "Regulatory and Competitive Intelligence Briefing",
+    "description": "Provide a Monday-morning briefing on regulatory changes and competitor moves that may affect decentralized and hybrid trials.",
+    "tags": "",
+    "url": "prompts/management/executive/13_regulatory_competitive_intel_briefing.prompt.yaml"
+  },
+  {
+    "title": "Strategic Consultant SWOT",
+    "description": "Provide a concise SWOT analysis and immediate roadmap.",
+    "tags": "",
+    "url": "prompts/management/executive/16_strategic_consultant_swot.prompt.yaml"
+  },
+  {
+    "title": "Strategic Portfolio Prioritizer",
+    "description": "Rank proposed clinical projects by scientific merit, ROI, risk, and strategic fit.",
+    "tags": "",
+    "url": "prompts/management/executive/07_strategic_portfolio_prioritizer.prompt.yaml"
+  },
+  {
+    "title": "Reverse Brainstorming",
+    "description": "Flip negative ideas into constructive solutions.",
+    "tags": "",
+    "url": "prompts/management/innovation/01_reverse_brainstorming.prompt.yaml"
+  },
+  {
+    "title": "SCAMPER Ideation Coach",
+    "description": "Break creative blocks using SCAMPER techniques.",
+    "tags": "",
+    "url": "prompts/management/innovation/02_scamper_ideation_coach.prompt.yaml"
+  },
+  {
+    "title": "Portfolio KPI Dashboard Brief",
+    "description": "Produce a one-page executive dashboard of enrollment, deviation, SDV, and budget KPIs for live studies.",
+    "tags": "",
+    "url": "prompts/management/clinical_research_manager/03_portfolio_kpi_dashboard_brief.prompt.yaml"
+  },
+  {
+    "title": "Digest the Latest Regulatory Updates Affecting My Protocol",
+    "description": "Summarize June 2025 FDA e-source guidance changes affecting protocol ABC-123, flagging mandatory versus recommended items and mapping to protocol sections.",
+    "tags": "",
+    "url": "prompts/management/clinical_research_manager/02_digest_regulatory_updates.prompt.yaml"
+  },
+  {
+    "title": "Accelerate Patient Recruitment & Retention",
+    "description": "Design a 3-step recruitment and retention plan for a Phase II oncology study within budget and timeline constraints.",
+    "tags": "",
+    "url": "prompts/management/clinical_research_manager/01_accelerate_patient_recruitment_retention.prompt.yaml"
+  },
+  {
+    "title": "Operational Excellence Communication Framework",
+    "description": "Improve collaboration between business development, clinical operations, and data teams after contract award.",
+    "tags": "",
+    "url": "prompts/management/leadership/02_operational_excellence_communication.prompt.yaml"
+  },
+  {
+    "title": "Leadership Reflection and Culture",
+    "description": "Assess leadership values and identify actions to strengthen team cohesion.",
+    "tags": "",
+    "url": "prompts/management/leadership/03_leadership_reflection_culture.prompt.yaml"
+  },
+  {
+    "title": "90-Day Biostatistics Onboarding Plan",
+    "description": "Design a structured program to move new statisticians from orientation to productive project work in 90 days.",
+    "tags": "",
+    "url": "prompts/management/leadership/04_biostatistics_onboarding_plan.prompt.yaml"
+  },
+  {
+    "title": "Strategic Alignment and Innovation",
+    "description": "Develop a roadmap that aligns global trial operations with emerging industry trends.",
+    "tags": "",
+    "url": "prompts/management/leadership/01_strategic_alignment_innovation.prompt.yaml"
+  },
+  {
+    "title": "Weekly Executive Status Report",
+    "description": "Summarize project progress for executive stakeholders in a concise weekly report.",
+    "tags": "",
+    "url": "prompts/management/project_management/03_weekly_exec_status_report.prompt.yaml"
+  },
+  {
+    "title": "TMF Gap-Analysis and Audit Readiness Check",
+    "description": "Identify missing or outdated Trial Master File documents and propose corrective actions.",
+    "tags": "",
+    "url": "prompts/management/project_management/12_tmf_gap_analysis_audit_readiness_check.prompt.yaml"
+  },
+  {
+    "title": "Comprehensive Risk Register and Mitigation Plan",
+    "description": "Produce a risk register with mitigation actions and overall strategies.",
+    "tags": "",
+    "url": "prompts/management/project_management/02_risk_register_mitigation.prompt.yaml"
+  },
+  {
+    "title": "RACI Mapper",
+    "description": "Clarify team responsibilities using a RACI matrix.",
+    "tags": "",
+    "url": "prompts/management/project_management/16_raci_mapper.prompt.yaml"
+  },
+  {
+    "title": "Project Charter and Scope Definition",
+    "description": "Create a complete project charter summarizing background, objectives, scope, deliverables, and key risks.",
+    "tags": "",
+    "url": "prompts/management/project_management/01_project_charter_scope.prompt.yaml"
+  },
+  {
+    "title": "Risk and Pre-Mortem Analysis",
+    "description": "Identify early failure points and mitigation strategies for a project or study.",
+    "tags": "",
+    "url": "prompts/management/project_management/05_risk_pre_mortem_analysis.prompt.yaml"
+  },
+  {
+    "title": "Project Starter Pack Prompts",
+    "description": "Provide ready-to-copy prompt templates for common project documentation.",
+    "tags": "",
+    "url": "prompts/management/project_management/15_project_starter_pack.prompt.yaml"
+  },
+  {
+    "title": "Status Update and Task Prioritization",
+    "description": "Summarize recent progress and recommend prioritized next actions.",
+    "tags": "",
+    "url": "prompts/management/project_management/06_status_update_task_prioritization.prompt.yaml"
+  },
+  {
+    "title": "Rollout Risk Matrix",
+    "description": "Assess rollout risks and propose key mitigation actions.",
+    "tags": "",
+    "url": "prompts/management/project_management/14_rollout_risk_matrix.prompt.yaml"
+  },
+  {
+    "title": "Neutral Scrum Retrospective Facilitator",
+    "description": "Design a balanced 60-minute remote sprint retrospective for seven participants.",
+    "tags": "",
+    "url": "prompts/management/project_management/13_neutral_scrum_retro.prompt.yaml"
+  },
+  {
+    "title": "Clinical-Trial Timeline and Risk Radar",
+    "description": "Evaluate study schedule variance and prioritize mitigation actions.",
+    "tags": "",
+    "url": "prompts/management/project_management/07_clinical_trial_timeline_risk_radar.prompt.yaml"
+  },
+  {
+    "title": "Executive Sponsor Briefing Deck Outline",
+    "description": "Provide a slide-by-slide outline for a quarterly sponsor briefing.",
+    "tags": "",
+    "url": "prompts/management/project_management/11_executive_sponsor_briefing_deck_outline.prompt.yaml"
+  },
+  {
+    "title": "Portfolio Resource and Budget Forecast",
+    "description": "Generate a rolling 12\u2011month FTE and budget forecast for active trials.",
+    "tags": "",
+    "url": "prompts/management/project_management/08_portfolio_resource_budget_forecast.prompt.yaml"
+  },
+  {
+    "title": "Detailed Project Blueprint and Timeline",
+    "description": "Provide a comprehensive roadmap with phases, milestones, success metrics, and stakeholders.",
+    "tags": "",
+    "url": "prompts/management/project_management/04_detailed_project_blueprint_timeline.prompt.yaml"
+  },
+  {
+    "title": "Cross-Study Operational Risk Heat Map and Mitigation Plan",
+    "description": "Identify and prioritize the top portfolio-level operational risks and propose mitigations.",
+    "tags": "",
+    "url": "prompts/management/project_management/09_cross_study_risk_heat_map_mitigation_plan.prompt.yaml"
+  },
+  {
+    "title": "Sponsor-Ready Monthly Status Brief",
+    "description": "Draft a concise, escalation-ready monthly status report for study sponsors.",
+    "tags": "",
+    "url": "prompts/management/project_management/10_sponsor_ready_monthly_status_brief.prompt.yaml"
+  },
+  {
+    "title": "Draft a GLP-Compliant Study Protocol",
+    "description": "Produce a detailed study plan that satisfies OECD and FDA GLP regulations.",
+    "tags": "",
+    "url": "prompts/management/study_director/01_draft_glp_compliant_study_protocol.prompt.yaml"
+  },
+  {
+    "title": "Generate an Executive Summary for the Final Report",
+    "description": "Write a concise executive summary of a non-clinical study report.",
+    "tags": "",
+    "url": "prompts/management/study_director/03_executive_summary_final_report.prompt.yaml"
+  },
+  {
+    "title": "Audit Raw Data and Draft a CAPA Summary",
+    "description": "Review study data for deviations and produce a corrective-action plan.",
+    "tags": "",
+    "url": "prompts/management/study_director/02_audit_raw_data_capa_summary.prompt.yaml"
+  },
+  {
+    "title": "Fair-Market-Value Budget Negotiation Brief",
+    "description": "Prepare a concise briefing to support FMV negotiations with a pharma sponsor.",
+    "tags": "",
+    "url": "prompts/management/operations/06_fair_market_value_budget_negotiation_brief.prompt.yaml"
+  },
+  {
+    "title": "Multistudy Resource & Capacity Forecast Plan",
+    "description": "Outline a data-driven approach for forecasting resources across multiple upcoming trials.",
+    "tags": "",
+    "url": "prompts/management/operations/05_multistudy_resource_capacity_forecast_plan.prompt.yaml"
+  },
+  {
+    "title": "Rolling Resource & Capacity Forecast",
+    "description": "Generate a 12-month forecast of FTE demand and utilization by function and region.",
+    "tags": "",
+    "url": "prompts/management/operations/04_rolling_resource_capacity_forecast.prompt.yaml"
+  },
+  {
+    "title": "Fishbone Facilitator",
+    "description": "Identify possible root causes of a problem using a fishbone diagram.",
+    "tags": "",
+    "url": "prompts/management/operations/07_fishbone_facilitator.prompt.yaml"
+  },
+  {
+    "title": "KPI Dashboard & Monthly Ops-Review Pack",
+    "description": "Summarize operational performance and highlight required actions for the monthly review.",
+    "tags": "",
+    "url": "prompts/management/operations/03_kpi_dashboard_ops_review.prompt.yaml"
+  },
+  {
+    "title": "Rapid Process Diagnostic & Lean Improvement Plan",
+    "description": "Create a concise process review and improvement roadmap.",
+    "tags": "",
+    "url": "prompts/management/operations/01_rapid_process_diagnostic.prompt.yaml"
+  },
+  {
+    "title": "360\u00b0 Operational KPI & Benchmark Review",
+    "description": "Compare internal KPIs to industry benchmarks and propose improvements.",
+    "tags": "",
+    "url": "prompts/management/operations/04_operational_kpi_benchmark_review.prompt.yaml"
+  },
+  {
+    "title": "Risk-Based Vendor Performance Improvement Plan",
+    "description": "Raise overall vendor performance and reduce operational risk.",
+    "tags": "",
+    "url": "prompts/management/operations/06_vendor_performance_improvement_plan.prompt.yaml"
+  },
+  {
+    "title": "Vendor Qualification and Oversight",
+    "description": "Develop Vendor Oversight Plan and KPIs.",
+    "tags": "",
+    "url": "prompts/management/operations/18_vendor_qualification.prompt.yaml"
+  },
+  {
+    "title": "Weekly Operations KPI Snapshot",
+    "description": "Summarize weekly milestone performance and highlight at-risk studies.",
+    "tags": "",
+    "url": "prompts/management/operations/05_weekly_ops_kpi_snapshot.prompt.yaml"
+  },
+  {
+    "title": "Quarterly CRO KPI Executive Brief",
+    "description": "Present key operational KPIs and recommended actions for the quarterly review.",
+    "tags": "",
+    "url": "prompts/management/operations/05_quarterly_kpi_executive_brief.prompt.yaml"
+  },
+  {
+    "title": "Study Start-Up Checklist & Timeline",
+    "description": "Provide an actionable checklist and timeline for Phase IIb study start-up.",
+    "tags": "",
+    "url": "prompts/management/operations/04_study_startup_checklist.prompt.yaml"
+  },
+  {
+    "title": "Operational Excellence & Risk Sweep",
+    "description": "Deliver a 90-day action plan to cut cycle time and reduce recruitment failure.",
+    "tags": "",
+    "url": "prompts/management/operations/04_operational_excellence_risk_sweep.prompt.yaml"
+  },
+  {
+    "title": "Forward-Looking Resource & Capacity Forecast",
+    "description": "Project FTE demand and recommend actions to balance capacity for the next 90 days.",
+    "tags": "",
+    "url": "prompts/management/operations/06_forward_capacity_forecast.prompt.yaml"
+  },
+  {
+    "title": "CRO Trial-Performance KPI Dashboard Blueprint",
+    "description": "Outline metrics and visuals for a CRO trial-performance dashboard.",
+    "tags": "",
+    "url": "prompts/management/operations/04_cro_trial_performance_kpi_dashboard_blueprint.prompt.yaml"
+  },
+  {
+    "title": "Action-Oriented Meeting Minutes & Tracker",
+    "description": "Capture decisions and action items from cross-functional meetings.",
+    "tags": "",
+    "url": "prompts/management/operations/06_action_oriented_meeting_minutes.prompt.yaml"
+  },
+  {
+    "title": "Proactive Risk Heat-Map for Decentralized & Virtual Trials",
+    "description": "Visualize portfolio risks and propose mitigation actions.",
+    "tags": "",
+    "url": "prompts/management/operations/05_proactive_risk_heat_map.prompt.yaml"
+  },
+  {
+    "title": "Inventory & Demand-Planning Simulation",
+    "description": "Create a forecast and inventory plan from historical demand data.",
+    "tags": "",
+    "url": "prompts/management/operations/02_inventory_demand_planning_simulation.prompt.yaml"
+  },
+  {
+    "title": "Hexagonal Architecture Implementation",
+    "description": "Guide for implementing Hexagonal Architecture, focusing on data flow, dependency inversion, and component placement.",
+    "tags": "",
+    "url": "prompts/technical/architecture/05_hexagonal_architecture_implementation.prompt.yaml"
+  },
+  {
+    "title": "Maintainability Codebase Analysis",
+    "description": "Improve code maintainability by addressing readability, organization, and test quality.",
+    "tags": "",
+    "url": "prompts/technical/architecture/03_maintainability_codebase_analysis.prompt.yaml"
+  },
+  {
+    "title": "Hexagonal Architecture Review",
+    "description": "Analyze code for adherence to Hexagonal Architecture principles, identifying layer violations and dependency issues.",
+    "tags": "",
+    "url": "prompts/technical/architecture/06_hexagonal_architecture_review.prompt.yaml"
+  },
+  {
+    "title": "SOLID Codebase Analysis",
+    "description": "Evaluate code against SOLID principles and suggest refactoring tasks.",
+    "tags": "",
+    "url": "prompts/technical/architecture/02_solid_codebase_analysis.prompt.yaml"
+  },
+  {
+    "title": "DRY Codebase Analysis",
+    "description": "Identify opportunities to remove code duplication and enforce the DRY principle.",
+    "tags": "",
+    "url": "prompts/technical/architecture/01_dry_codebase_analysis.prompt.yaml"
+  },
+  {
+    "title": "Hexagonal Architecture Principles",
+    "description": "Explain the core philosophy, skeleton, and benefits of Hexagonal Architecture (Ports and Adapters).",
+    "tags": "",
+    "url": "prompts/technical/architecture/04_hexagonal_architecture_principles.prompt.yaml"
+  },
+  {
+    "title": "Medical Device Cybersecurity Threat Modeling",
+    "description": "Analyze system architecture using STRIDE.",
+    "tags": "",
+    "url": "prompts/technical/security/01_cybersecurity_threat_modeling.prompt.yaml"
+  },
+  {
+    "title": "Repository Foundation & Developer Experience Analysis",
+    "description": "Analyze the repository's foundation and developer experience to prepare it for future growth and easy onboarding.",
+    "tags": "",
+    "url": "prompts/technical/repository_refactoring/01_repo_foundation_analysis.prompt.yaml"
+  },
+  {
+    "title": "Codebase Quality & Maintainability Analysis",
+    "description": "Conduct a deep analysis of the codebase's quality and maintainability to identify key areas for refactoring.",
+    "tags": "",
+    "url": "prompts/technical/repository_refactoring/02_codebase_quality_analysis.prompt.yaml"
+  },
+  {
+    "title": "Dependencies & Security Posture Analysis",
+    "description": "Perform a thorough audit of the repository's dependencies and overall security posture to identify and mitigate risks.",
+    "tags": "",
+    "url": "prompts/technical/repository_refactoring/03_dependencies_security_analysis.prompt.yaml"
+  },
+  {
+    "title": "Testing, Configuration, and Automation Analysis",
+    "description": "Analyze the repository's testing, configuration, and automation infrastructure to ensure reliability and deployment readiness.",
+    "tags": "",
+    "url": "prompts/technical/repository_refactoring/04_testing_configuration_automation_analysis.prompt.yaml"
+  },
+  {
+    "title": "Documentation and Repository Structure Implementation",
+    "description": "Implement foundational improvements for the repository's structure and documentation.",
+    "tags": "",
+    "url": "prompts/technical/repository_refactoring/05_documentation_structure_implementation.prompt.yaml"
+  },
+  {
+    "title": "Security Hardening and Dependency Management Implementation",
+    "description": "Secure the repository and manage its dependencies by externalizing secrets, addressing vulnerabilities, and updating dependencies.",
+    "tags": "",
+    "url": "prompts/technical/repository_refactoring/07_security_hardening_dependency_management_implementation.prompt.yaml"
+  },
+  {
+    "title": "Code Formatting, Linting, and Refactoring Implementation",
+    "description": "Improve the codebase's internal quality and consistency by introducing and configuring a standard code formatter and a linter, and refactoring complex code.",
+    "tags": "",
+    "url": "prompts/technical/repository_refactoring/06_code_formatting_linting_refactoring_implementation.prompt.yaml"
+  },
+  {
+    "title": "Test Suite Enhancement and CI Pipeline Implementation",
+    "description": "Build the automated quality gates for this repository by increasing test coverage, adding meaningful unit tests, and introducing a basic CI pipeline.",
+    "tags": "",
+    "url": "prompts/technical/repository_refactoring/08_test_suite_enhancement_ci_pipeline_implementation.prompt.yaml"
+  },
+  {
+    "title": "Investigator's Brochure Summary of Changes",
+    "description": "Produce a detailed summary of changes for the annual Investigator\u2019s Brochure update.",
+    "tags": "",
+    "url": "prompts/technical/technical_writing/02_ib_detailed_soc.prompt.yaml"
+  },
+  {
+    "title": "CSR Results and Safety Section",
+    "description": "Draft Sections 11 and 12 of an ICH\u00a0E3 clinical study report.",
+    "tags": "",
+    "url": "prompts/technical/technical_writing/01_csr_results_safety_section.prompt.yaml"
+  },
+  {
+    "title": "SAE and Unanticipated Problem Reporting SOP",
+    "description": "Develop a standard operating procedure for reporting serious adverse events and unanticipated problems.",
+    "tags": "",
+    "url": "prompts/technical/technical_writing/03_sae_reporting_sop.prompt.yaml"
+  },
+  {
+    "title": "AI Email Assistant Go/No-Go Vote",
+    "description": "Personas: UX designer, data scientist, CFO. Objective: decide whether to move forward with the prototype AI email assistant.\n",
+    "tags": "",
+    "url": "prompts/technical/design/02_email_assistant_go_no_go_vote.prompt.yaml"
+  },
+  {
+    "title": "Heuristic-Evaluation Coach",
+    "description": "Guide a junior designer through heuristic evaluation of a mobile app.",
+    "tags": "",
+    "url": "prompts/technical/design/03_heuristic_evaluation_coach.prompt.yaml"
+  },
+  {
+    "title": "Design.md Template",
+    "description": "Generate a design.md template capturing problem, constraints, and decisions.",
+    "tags": "",
+    "url": "prompts/technical/design/01_design_md_template.prompt.yaml"
+  },
+  {
+    "title": "Forge - Script Reliability Agent",
+    "description": "A reliability-obsessed agent who builds unbreakable development environments.",
+    "tags": "",
+    "url": "prompts/technical/devops/forge_script_reliability.prompt.yaml"
+  },
+  {
+    "title": "Human Factors Validation Study Protocol",
+    "description": "Draft a user validation study protocol for a medical device.",
+    "tags": "",
+    "url": "prompts/technical/testing/03_human_factors_validation_study_protocol.prompt.yaml"
+  },
+  {
+    "title": "E2E Test Discovery Template",
+    "description": "Guide a model to analyze a codebase and produce a comprehensive end\u2011to\u2011end test plan.",
+    "tags": "",
+    "url": "prompts/technical/testing/01_e2e_test_discovery.prompt.yaml"
+  },
+  {
+    "title": "Design Verification Test Plan",
+    "description": "Create a complete test plan for verifying that a medical device meets its design requirements.",
+    "tags": "",
+    "url": "prompts/technical/testing/02_design_verification_test_plan.prompt.yaml"
+  },
+  {
+    "title": "Risk-Based Test Case Suite",
+    "description": "Generate a test-case suite prioritizing controls for high and medium residual risks.",
+    "tags": "",
+    "url": "prompts/technical/testing/04_risk_based_test_case_suite.prompt.yaml"
+  },
+  {
+    "title": "Atlas Documentation Specialist",
+    "description": "A comprehensive system prompt tailored for a documentation and visualization specialist named \"Atlas\". Atlas handles inline documentation, high-level guides, architectural diagrams (Mermaid), and gap analysis.",
+    "tags": "",
+    "url": "prompts/technical/documentation/atlas_documentation_specialist.prompt.yaml"
+  },
+  {
+    "title": "TOGAF Preliminary Phase",
+    "description": "Guide for establishing the Architecture Capability and defining the organizational footprint (The Genesis of Architecture).",
+    "tags": "",
+    "url": "prompts/technical/architecture/togaf/01_preliminary_phase.prompt.yaml"
+  },
+  {
+    "title": "TOGAF Phase A - Architecture Vision",
+    "description": "Guide for defining the Architecture Vision, stakeholders, and the Statement of Architecture Work (The Mandate).",
+    "tags": "",
+    "url": "prompts/technical/architecture/togaf/02_phase_a_vision.prompt.yaml"
+  },
+  {
+    "title": "TOGAF Phase E - Opportunities & Solutions",
+    "description": "Guide for identifying delivery vehicles (projects), grouping gaps into work packages, and creating the initial roadmap (The Strategic Bridge).",
+    "tags": "",
+    "url": "prompts/technical/architecture/togaf/06_phase_e_opportunities.prompt.yaml"
+  },
+  {
+    "title": "TOGAF Requirements Management",
+    "description": "Guide for the continuous process of managing architecture requirements throughout the ADM cycle (The Dynamic Core).",
+    "tags": "",
+    "url": "prompts/technical/architecture/togaf/10_requirements_management.prompt.yaml"
+  },
+  {
+    "title": "TOGAF Phase D - Technology Architecture",
+    "description": "Guide for defining the Technology Architecture (infrastructure, hardware, networks).",
+    "tags": "",
+    "url": "prompts/technical/architecture/togaf/05_phase_d_technology.prompt.yaml"
+  },
+  {
+    "title": "TOGAF Phase G - Implementation Governance",
+    "description": "Guide for overseeing the implementation to ensure conformance with the architecture (Sustaining Integrity).",
+    "tags": "",
+    "url": "prompts/technical/architecture/togaf/08_phase_g_governance.prompt.yaml"
+  },
+  {
+    "title": "TOGAF Phase H - Architecture Change Management",
+    "description": "Guide for managing the architecture lifecycle after deployment and handling change requests (The Living Entity).",
+    "tags": "",
+    "url": "prompts/technical/architecture/togaf/09_phase_h_change_management.prompt.yaml"
+  },
+  {
+    "title": "TOGAF Phase B - Business Architecture",
+    "description": "Guide for defining the Business Architecture, baseline/target states, and gap analysis (The Core Engine).",
+    "tags": "",
+    "url": "prompts/technical/architecture/togaf/03_phase_b_business.prompt.yaml"
+  },
+  {
+    "title": "TOGAF Phase F - Migration Planning",
+    "description": "Guide for creating the detailed Implementation and Migration Plan and prioritizing work packages (Refined Planning).",
+    "tags": "",
+    "url": "prompts/technical/architecture/togaf/07_phase_f_migration.prompt.yaml"
+  },
+  {
+    "title": "TOGAF Phase C - Information Systems Architectures",
+    "description": "Guide for defining the Information Systems Architectures (Data and Application Architectures).",
+    "tags": "",
+    "url": "prompts/technical/architecture/togaf/04_phase_c_information_systems.prompt.yaml"
+  },
+  {
+    "title": "Folder and Module Organization",
+    "description": "Provide a detailed plan for restructuring a Python codebase into clearer, feature-based modules.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/lifecycle/09_folder_module_organization.prompt.yaml"
+  },
+  {
+    "title": "E2E Test Discovery Lifecycle Template",
+    "description": "Provide a system prompt template that guides an LLM to analyse a codebase and generate a comprehensive end-to-end test plan.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/lifecycle/08_e2e_test_discovery.prompt.yaml"
+  },
+  {
+    "title": "To-Do List Template",
+    "description": "Track pending and completed development tasks.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/lifecycle/07_todo_generation.prompt.yaml"
+  },
+  {
+    "title": "Product Brief Template",
+    "description": "Outline the high-level vision, features, and architecture for a new software project.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/lifecycle/01_product_brief.prompt.yaml"
+  },
+  {
+    "title": "Coding Session Guidelines",
+    "description": "Provide step-by-step guidance for running productive coding sessions.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/lifecycle/04_coding_session_guidelines.prompt.yaml"
+  },
+  {
+    "title": "RequirementsBot Prompt",
+    "description": "Guide an AI assistant to inspect a repository and generate a complete `REQUIREMENTS.md` file.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/lifecycle/10_requirements_prompt.prompt.yaml"
+  },
+  {
+    "title": "Technical Implementation Plan",
+    "description": "Detail the architecture, dependencies, and steps required to implement a project.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/lifecycle/03_technical_implementation_plan.prompt.yaml"
+  },
+  {
+    "title": "Project Memory Notes",
+    "description": "Maintain a running log of architectural decisions and contextual notes for the project.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/lifecycle/06_project_memory.prompt.yaml"
+  },
+  {
+    "title": "Project Review Checklist",
+    "description": "Verify completion of a coding project before finalizing.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/lifecycle/05_project_review.prompt.yaml"
+  },
+  {
+    "title": "Reflexion Agent Bug Patch",
+    "description": "Locate and fix a bug using a structured reflexion workflow.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/lifecycle/11_reflexion_agent_bug_patch.prompt.yaml"
+  },
+  {
+    "title": "Project Brief for Epic",
+    "description": "Summarize a project epic with key features, rules, and success metrics.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/lifecycle/02_project_brief_epic.prompt.yaml"
+  },
+  {
+    "title": "Retrieval-Augmented Answer Composer",
+    "description": "Provide concise answers using only supplied knowledge-base files.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/tasks/13_rag_composer.prompt.yaml"
+  },
+  {
+    "title": "Codebase Testing Plan",
+    "description": "As a Distinguished Quality Engineer, generate a comprehensive testing strategy and implementation roadmap for an existing codebase. This includes risk analysis, tooling selection, and a phased rollout plan aligned with modern CI/CD practices.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/tasks/02_codebase_testing_plan.prompt.yaml"
+  },
+  {
+    "title": "Architecture Flow Q&A (OpenAI Codex)",
+    "description": "Trace a request from client endpoint to database and document the flow with a Mermaid diagram.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/tasks/07_architecture_flow.prompt.yaml"
+  },
+  {
+    "title": "Targeted Test Generation (OpenAI Codex)",
+    "description": "Add unit or integration tests for specified files on the current branch.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/tasks/10_add_tests.prompt.yaml"
+  },
+  {
+    "title": "Security Vulnerability Hunt",
+    "description": "Locate and fix memory-safety vulnerabilities in C/C++ code.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/tasks/08_security_vulnerability.prompt.yaml"
+  },
+  {
+    "title": "Tooling, Linting & Quality Gates (OpenAI Codex)",
+    "description": "Add opinionated linters, formatters, type-checkers, commit hooks, and test frameworks so the repo \u201cfails fast\u201d on bad code.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/tasks/03_tooling_and_quality.prompt.yaml"
+  },
+  {
+    "title": "UI Tweak & Verification (OpenAI Codex)",
+    "description": "Resolve a minor UI regression and confirm the fix with build or test steps.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/tasks/12_ui_fix.prompt.yaml"
+  },
+  {
+    "title": "Bug Finder & Fixer (OpenAI Codex)",
+    "description": "Reproduce and resolve a bug within the specified package or module.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/tasks/11_bug_fix.prompt.yaml"
+  },
+  {
+    "title": "Code Review Assistant (Aegis Security)",
+    "description": "Review a supplied diff and suggest improvements or potential issues before merge, with a focus on security.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/tasks/09_code_review.prompt.yaml"
+  },
+  {
+    "title": "Refactoring Architect",
+    "description": "A Principal Software Architect's guide to surgical refactoring, focusing on decoupling, testability, and debt remediation.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/tasks/06_refactoring_suggestions.prompt.yaml"
+  },
+  {
+    "title": "GitHub Custom Agent Creator",
+    "description": "Expertly craft configuration files for GitHub Custom Agents with strict YAML frontmatter and structured Markdown instructions.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/tasks/14_create_github_agent.prompt.yaml"
+  },
+  {
+    "title": "Project Init & Skeleton (OpenAI Codex)",
+    "description": "Spin up a brand-new repository with a minimal but runnable skeleton, plus a one-command local dev experience.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/tasks/01_project_init.prompt.yaml"
+  },
+  {
+    "title": "DevEx Documentation Architect",
+    "description": "A Senior Developer Experience Engineer's guide to creating world-class documentation, onboarding paths, and architectural records.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/tasks/05_docs_and_onboarding.prompt.yaml"
+  },
+  {
+    "title": "Continuous Integration & Delivery (DevOps Architect)",
+    "description": "Design and implement secure, efficient, and scalable CI/CD pipelines for AI-integrated applications.",
+    "tags": "",
+    "url": "prompts/technical/software_engineering/tasks/04_ci_cd.prompt.yaml"
+  },
+  {
+    "title": "Principal Rust Developer",
+    "description": "A Principal Engineer's guide to Rust development, focusing on type-driven architecture, error handling, API stability, safety, concurrency, and DX.",
+    "tags": "",
+    "url": "prompts/technical/languages/rust/01_principal_rust_developer.prompt.yaml"
+  },
+  {
+    "title": "Rust Architectural Patterns",
+    "description": "Deep dive into Typestate and Zero-Cost FFI abstractions for Principal-level Rust.",
+    "tags": "",
+    "url": "prompts/technical/languages/rust/02_rust_architectural_patterns.prompt.yaml"
+  },
+  {
+    "title": "Principal TypeScript Developer",
+    "description": "A Principal Engineer's guide to TypeScript development, focusing on type-driven architecture, runtime validation, and developer experience.",
+    "tags": "",
+    "url": "prompts/technical/languages/typescript/01_principal_typescript_developer.prompt.yaml"
+  },
+  {
+    "title": "Python Concurrency Mastery",
+    "description": "A Principal-level guide to mastering Python concurrency, focusing on AsyncIO, Structured Concurrency, and Multiprocessing safety.",
+    "tags": "",
+    "url": "prompts/technical/languages/python/03_python_concurrency_mastery.prompt.yaml"
+  },
+  {
+    "title": "Principal Python Developer",
+    "description": "A Principal Engineer's guide to Python development, focusing on architecture, decoupling, robustness, concurrency, and observability.",
+    "tags": "",
+    "url": "prompts/technical/languages/python/01_principal_python_developer.prompt.yaml"
+  },
+  {
+    "title": "Advanced Python Testing",
+    "description": "A comprehensive guide to Python testing, covering Pytest fixtures, Property-Based Testing (Hypothesis), and Mutation Testing.",
+    "tags": "",
+    "url": "prompts/technical/languages/python/06_advanced_python_testing.prompt.yaml"
+  },
+  {
+    "title": "Senior Python Developer",
+    "description": "A Senior Developer's guide to Python execution, focusing on idiomatic code, maintainability, and code stewardship.",
+    "tags": "",
+    "url": "prompts/technical/languages/python/04_senior_python_developer.prompt.yaml"
+  },
+  {
+    "title": "Python Performance Optimization",
+    "description": "A Senior-level guide to optimizing Python code, focusing on profiling, memory management, and GIL workarounds.",
+    "tags": "",
+    "url": "prompts/technical/languages/python/05_python_performance_optimization.prompt.yaml"
+  },
+  {
+    "title": "Python Hexagonal Architecture",
+    "description": "A Principal-level guide to decoupling Python systems using Hexagonal Architecture, Protocols, and Dependency Injection.",
+    "tags": "",
+    "url": "prompts/technical/languages/python/02_python_hexagonal_architecture.prompt.yaml"
+  },
+  {
+    "title": "Test Environment: Python & Selenium Base",
+    "description": "Install the Selenium Base framework and environment using the Python package manager.",
+    "tags": "",
+    "url": "prompts/technical/testing/selenium_automation/13_selenium_python_setup.prompt.yaml"
+  },
+  {
+    "title": "Cross-Browser Infrastructure: Selenium Grid",
+    "description": "Configure a Selenium Grid Hub and Nodes to distribute test execution.",
+    "tags": "",
+    "url": "prompts/technical/testing/selenium_automation/05_selenium_grid_setup.prompt.yaml"
+  },
+  {
+    "title": "Driver Configuration: WebDriver Initialization",
+    "description": "Initialize and configure WebDriver instances with specific browser options.",
+    "tags": "",
+    "url": "prompts/technical/testing/selenium_automation/09_webdriver_initialization.prompt.yaml"
+  },
+  {
+    "title": "Security Testing: OWASP ZAP Integration",
+    "description": "Configure Selenium to route traffic through the OWASP ZAP proxy for security scanning.",
+    "tags": "",
+    "url": "prompts/technical/testing/selenium_automation/11_selenium_zap_integration.prompt.yaml"
+  },
+  {
+    "title": "Advanced Design Patterns: Fluent Interface",
+    "description": "Extend Page Objects with method chaining to create a more readable test API.",
+    "tags": "",
+    "url": "prompts/technical/testing/selenium_automation/07_fluent_interface_selenium.prompt.yaml"
+  },
+  {
+    "title": "Synchronization Strategy: Explicit Waits",
+    "description": "Replace brittle Thread.sleep() calls with dynamic Explicit or Fluent waits.",
+    "tags": "",
+    "url": "prompts/technical/testing/selenium_automation/04_selenium_waits.prompt.yaml"
+  },
+  {
+    "title": "Selenium Migration: Script Conversion",
+    "description": "Translate recorded browser actions (Selenese) from Selenium IDE into structured Java test scripts.",
+    "tags": "",
+    "url": "prompts/technical/testing/selenium_automation/01_script_conversion.prompt.yaml"
+  },
+  {
+    "title": "Architecture Design: Page Object Model",
+    "description": "Implement the Page Object Model pattern to separate UI locators from test logic.",
+    "tags": "",
+    "url": "prompts/technical/testing/selenium_automation/02_pom_implementation.prompt.yaml"
+  },
+  {
+    "title": "Framework Implementation: Data-Driven Testing",
+    "description": "Utilize data providers to execute the same test logic with multiple sets of data.",
+    "tags": "",
+    "url": "prompts/technical/testing/selenium_automation/12_data_driven_selenium.prompt.yaml"
+  },
+  {
+    "title": "Execution Optimization: Parallel Testing",
+    "description": "Configure the automation suite to execute multiple tests simultaneously.",
+    "tags": "",
+    "url": "prompts/technical/testing/selenium_automation/06_parallel_execution.prompt.yaml"
+  },
+  {
+    "title": "Framework Best Practices: Locator Strategy",
+    "description": "Transition from brittle XPaths to robust locators like ID or CSS selectors.",
+    "tags": "",
+    "url": "prompts/technical/testing/selenium_automation/08_locator_optimization.prompt.yaml"
+  },
+  {
+    "title": "Reporting and Maintenance: Custom Reports",
+    "description": "Integrate reporting libraries and screenshot utilities to capture execution evidence.",
+    "tags": "",
+    "url": "prompts/technical/testing/selenium_automation/10_selenium_reporting.prompt.yaml"
+  },
+  {
+    "title": "Project Configuration: Maven Setup",
+    "description": "Set up a Maven project structure and pom.xml file with necessary Selenium client libraries.",
+    "tags": "",
+    "url": "prompts/technical/testing/selenium_automation/03_maven_selenium_setup.prompt.yaml"
+  },
+  {
+    "title": "Multiplicity Adjustment Code Generator",
+    "description": "Generate SAS code for multiplicity adjustments (Bonferroni, Holm, Hochberg).",
+    "tags": "",
+    "url": "prompts/scientific/biostatistics/15_multiplicity_adjustments_calculator.prompt.yaml"
+  },
+  {
+    "title": "FDA Missing-Data Query Response",
+    "description": "Draft a response letter to an FDA information request about missing data.",
+    "tags": "",
+    "url": "prompts/scientific/biostatistics/11_fda_missing_data_query_response.prompt.yaml"
+  },
+  {
+    "title": "Peer-Review Checklist for Manuscript Methods",
+    "description": "Provide a structured checklist for reviewing the statistical methods section of a manuscript.",
+    "tags": "",
+    "url": "prompts/scientific/biostatistics/03_peer_review_methods_checklist.prompt.yaml"
+  },
+  {
+    "title": "QC Listing & Cross-check Prompt",
+    "description": "Automate a listing and QC cross-check between independent R and SAS runs.",
+    "tags": "",
+    "url": "prompts/scientific/biostatistics/06_qc_listing_cross_check_prompt.prompt.yaml"
+  },
+  {
+    "title": "Sample-Size & Randomization Strategy",
+    "description": "Determine sample size and recommend a randomization strategy for a clinical trial.",
+    "tags": "",
+    "url": "prompts/scientific/biostatistics/13_sample_size_randomization_strategy.prompt.yaml"
+  },
+  {
+    "title": "Time-to-Event Analysis Coach",
+    "description": "Guide a junior analyst through performing a time-to-event analysis.",
+    "tags": "",
+    "url": "prompts/scientific/biostatistics/02_time_to_event_analysis_coach.prompt.yaml"
+  },
+  {
+    "title": "Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive",
+    "description": "Clarify criteria, endpoints, and sample-size considerations for a medical device trial.",
+    "tags": "",
+    "url": "prompts/scientific/biostatistics/08_inclusion_exclusion_endpoints_sample_size.prompt.yaml"
+  },
+  {
+    "title": "FWER Gatekeeping Procedure Code Generator",
+    "description": "Generate code for sequential and gatekeeping procedures to control Family-Wise Error Rate (FWER).",
+    "tags": "",
+    "url": "prompts/scientific/biostatistics/17_fwer_gatekeeping_procedures.prompt.yaml"
+  },
+  {
+    "title": "Dunnett Adjustment R Code Generator",
+    "description": "Generate R code for Dunnett multiplicity adjustments using the 'multcomp' package.",
+    "tags": "",
+    "url": "prompts/scientific/biostatistics/16_dunnett_adjustment_calculator.prompt.yaml"
+  },
+  {
+    "title": "Phase II/III SAP Skeleton",
+    "description": "Provide a high-level statistical analysis plan skeleton for an adaptive Phase II/III trial.",
+    "tags": "",
+    "url": "prompts/scientific/biostatistics/10_phase_ii_iii_sap_skeleton.prompt.yaml"
+  },
+  {
+    "title": "Universal Template-Table Prompt",
+    "description": "Create a formatted safety table from an ADaM ADAE dataset using either R or SAS.",
+    "tags": "",
+    "url": "prompts/scientific/biostatistics/04_universal_template_table_prompt.prompt.yaml"
+  },
+  {
+    "title": "Dual-Language Figure Prompt",
+    "description": "Generate a Kaplan\u2013Meier figure in both R and SAS from ADaM ADTTE data.",
+    "tags": "",
+    "url": "prompts/scientific/biostatistics/05_dual_language_figure_prompt.prompt.yaml"
+  },
+  {
+    "title": "Adaptive Design & Interim Monitoring",
+    "description": "Provide guidance on adaptive trial design and interim monitoring strategies.",
+    "tags": "",
+    "url": "prompts/scientific/biostatistics/09_adaptive_design_interim_monitoring.prompt.yaml"
+  },
+  {
+    "title": "Statistical Analysis Plan (SAP) Development",
+    "description": "Draft a comprehensive SAP.",
+    "tags": "",
+    "url": "prompts/scientific/biostatistics/19_sap_development.prompt.yaml"
+  },
+  {
+    "title": "Generate & QC Submission-Ready TLFs",
+    "description": "Produce validated tables, listings, and figures (TLFs) ready for regulatory submission.",
+    "tags": "",
+    "url": "prompts/scientific/biostatistics/12_submission_ready_tlfs.prompt.yaml"
+  },
+  {
+    "title": "Statistical Analysis Plan Generator",
+    "description": "Generate a comprehensive statistical analysis plan for a clinical trial.",
+    "tags": "",
+    "url": "prompts/scientific/biostatistics/01_statistical_analysis_plan_generator.prompt.yaml"
+  },
+  {
+    "title": "Study Design and Statistical Approach",
+    "description": "Propose a clinical trial design with corresponding statistical approach.",
+    "tags": "",
+    "url": "prompts/scientific/biostatistics/07_study_design_statistical_approach.prompt.yaml"
+  },
+  {
+    "title": "Secondary Endpoint Multiplicity Adjuster",
+    "description": "Apply Bonferroni-Holm (step-down) procedure to secondary efficacy endpoints.",
+    "tags": "",
+    "url": "prompts/scientific/biostatistics/18_secondary_endpoint_multiplicity.prompt.yaml"
+  },
+  {
+    "title": "Submission-Ready Statistical Analysis Plan",
+    "description": "Generate sections of a submission-ready statistical analysis plan.",
+    "tags": "",
+    "url": "prompts/scientific/biostatistics/14_submission_ready_sap.prompt.yaml"
+  },
+  {
+    "title": "Sterility-Validation Protocol Builder",
+    "description": "Draft a complete validation protocol for a single-use Class\u00a0II instrument sterilized by gamma irradiation.",
+    "tags": "",
+    "url": "prompts/scientific/sterility/01_sterility_validation_protocol_builder.prompt.yaml"
+  },
+  {
+    "title": "Regulatory Gap-Analysis Comparator",
+    "description": "Compare sterility-assurance requirements across key standards and guidance.",
+    "tags": "",
+    "url": "prompts/scientific/sterility/02_regulatory_gap_analysis_comparator.prompt.yaml"
+  },
+  {
+    "title": "EtO Sterilization Process FMEA",
+    "description": "Facilitate a Failure Mode and Effects Analysis for an ethylene oxide sterilization process.",
+    "tags": "",
+    "url": "prompts/scientific/sterility/03_eto_sterilization_process_fmea.prompt.yaml"
+  },
+  {
+    "title": "Bioburden Testing SOP",
+    "description": "Draft a standard operating procedure for bioburden enumeration compliant with ISO 11737\u20111:2018.",
+    "tags": "",
+    "url": "prompts/scientific/microbiology/01_bioburden_testing_sop.prompt.yaml"
+  },
+  {
+    "title": "Endotoxin Control & 510(k) Risk Plan",
+    "description": "Draft a risk-based endotoxin-testing plan for a 510(k) submission.",
+    "tags": "",
+    "url": "prompts/scientific/microbiology/03_endotoxin_control_510k_risk_plan.prompt.yaml"
+  },
+  {
+    "title": "EO Sterilization Validation Protocol",
+    "description": "Outline a protocol to achieve SAL 10^-6 using an ethylene\u2011oxide half\u2011cycle approach.",
+    "tags": "",
+    "url": "prompts/scientific/microbiology/02_eo_sterilization_validation_protocol.prompt.yaml"
+  },
+  {
+    "title": "Clinical Study Report (CSR) Writing",
+    "description": "Draft Clinical Study Report sections.",
+    "tags": "",
+    "url": "prompts/scientific/medical_writing/01_csr_writing.prompt.yaml"
+  },
+  {
+    "title": "Objective Skills Assessment",
+    "description": "Design an objective skills checklist for a surgical stapler deployment lab.",
+    "tags": "",
+    "url": "prompts/scientific/bioskills/03_objective_skills_assessment.prompt.yaml"
+  },
+  {
+    "title": "Simulated Clinical Scenario Debrief",
+    "description": "Provide constructive feedback after a simulated clinical scenario.",
+    "tags": "",
+    "url": "prompts/scientific/bioskills/02_simulated_clinical_scenario_feedback.prompt.yaml"
+  },
+  {
+    "title": "Hands-On Procedure Coaching",
+    "description": "Coach a trainee through a vascular access technique using a training model.",
+    "tags": "",
+    "url": "prompts/scientific/bioskills/01_hands_on_procedure_coaching.prompt.yaml"
+  },
+  {
+    "title": "Psychometric Validation Methodology",
+    "description": "Apply Rasch and IRT models for COA validation and psychometric evidence generation.",
+    "tags": "",
+    "url": "prompts/scientific/coa/03_psychometric_validation_methods.prompt.yaml"
+  },
+  {
+    "title": "ePRO Migration Equivalence Checker",
+    "description": "Assess measurement equivalence for migrating paper-based PRO instruments to electronic modes.",
+    "tags": "",
+    "url": "prompts/scientific/coa/04_epro_migration_equivalence.prompt.yaml"
+  },
+  {
+    "title": "ClinRO User Manual Generator",
+    "description": "Draft a standardized user manual for ClinRO administration and training.",
+    "tags": "",
+    "url": "prompts/scientific/coa/06_clinro_training_manual.prompt.yaml"
+  },
+  {
+    "title": "Content Validity & Reliability Analysis",
+    "description": "Analyze clinician interview transcripts for content validity and plan inter-rater reliability.",
+    "tags": "",
+    "url": "prompts/scientific/coa/02_content_validity_clinician_input.prompt.yaml"
+  },
+  {
+    "title": "MCID Research and Summary",
+    "description": "Research and summarize Minimal Clinically Important Differences (MCIDs) for measurement tools.",
+    "tags": "",
+    "url": "prompts/scientific/coa/05_mcid_definition.prompt.yaml"
+  },
+  {
+    "title": "Qualitative Interview Guide Generator",
+    "description": "Draft a qualitative patient interview guide for concept elicitation and cognitive debriefing.",
+    "tags": "",
+    "url": "prompts/scientific/coa/01_qualitative_interview_guide.prompt.yaml"
+  },
+  {
+    "title": "Prepare Pathology Slides and Reporting Plan",
+    "description": "Plan slide preparation and review activities for a GLP cardiovascular stent study.",
+    "tags": "",
+    "url": "prompts/scientific/pathology/03_slides_and_reporting_workflow.prompt.yaml"
+  },
+  {
+    "title": "Evaluate Device\u2013Tissue Interface Findings",
+    "description": "Interpret histopathology results from implant studies and recommend next steps.",
+    "tags": "",
+    "url": "prompts/scientific/pathology/02_device_tissue_interface_evaluation.prompt.yaml"
+  },
+  {
+    "title": "Design a Robust Preclinical Pathology Study Protocol",
+    "description": "Outline a GLP-compliant pathology study plan for a medical device evaluation.",
+    "tags": "",
+    "url": "prompts/scientific/pathology/01_study_protocol_outline.prompt.yaml"
+  },
+  {
+    "title": "Design the Study",
+    "description": "You are a senior analytical chemist specializing in medical-device Extractables & Leachables (E&L). Using ISO 10993-18:2020 and FDA\u2019s 2024 draft \u201cChemical Analysis for Biocompatibility Assessment,\u201d create a detailed test plan for an exhaustive extractables study and a simulated-use leachables study of a device. Your plan must:",
+    "tags": "",
+    "url": "prompts/scientific/chemical_characterization/01_design_the_study.prompt.yaml"
+  },
+  {
+    "title": "Interpret the Chemistry & Assess Risk",
+    "description": "Act as a board-certified toxicologist.",
+    "tags": "",
+    "url": "prompts/scientific/chemical_characterization/02_interpret_the_chemistry_assess_risk.prompt.yaml"
+  },
+  {
+    "title": "Write the Regulatory Summary",
+    "description": "You are a regulatory-affairs specialist drafting the Chemical Characterization section of a 510(k).",
+    "tags": "",
+    "url": "prompts/scientific/chemical_characterization/03_write_the_regulatory_summary.prompt.yaml"
+  },
+  {
+    "title": "Comprehensive Biocompatibility Test Matrix",
+    "description": "Generate a detailed biocompatibility test matrix for a medical device.",
+    "tags": "",
+    "url": "prompts/scientific/biosafety/05_comprehensive_test_matrix.prompt.yaml"
+  },
+  {
+    "title": "Biological Evaluation Plan Builder",
+    "description": "Draft a complete Biological Evaluation Plan (BEP) for a specified medical device.",
+    "tags": "",
+    "url": "prompts/scientific/biosafety/04_bep_builder.prompt.yaml"
+  },
+  {
+    "title": "Chemical Characterization & TRA Work Plan",
+    "description": "Create a work plan for chemical characterization and toxicological risk assessment (TRA) for a medical device.",
+    "tags": "",
+    "url": "prompts/scientific/biosafety/06_chemical_characterization_work_plan.prompt.yaml"
+  },
+  {
+    "title": "Biological Safety Plan Developer",
+    "description": "Create a biological safety plan for the preclinical phase of a new medical device.",
+    "tags": "",
+    "url": "prompts/scientific/biosafety/02_biological_safety_plan_developer.prompt.yaml"
+  },
+  {
+    "title": "Risk Assessment Expert",
+    "description": "Provide a comprehensive biocompatibility risk assessment for a specified device.",
+    "tags": "",
+    "url": "prompts/scientific/biosafety/01_risk_assessment_expert.prompt.yaml"
+  },
+  {
+    "title": "Regulatory Submission Support",
+    "description": "Draft regulatory-ready documentation for a medical device submission.",
+    "tags": "",
+    "url": "prompts/scientific/biosafety/03_regulatory_submission_support.prompt.yaml"
+  },
+  {
+    "title": "PMA Supplement (CBE)",
+    "description": "Draft a 'Special PMA Supplement - Changes Being Effected' for safety warnings.",
+    "tags": "",
+    "url": "prompts/regulatory/submissions/08_pma_supplement_cbe.prompt.yaml"
+  },
+  {
+    "title": "Combination Product Jurisdiction",
+    "description": "Prepare a Request for Designation (RFD) to identify primary FDA jurisdiction.",
+    "tags": "",
+    "url": "prompts/regulatory/submissions/11_combination_product_jurisdiction.prompt.yaml"
+  },
+  {
+    "title": "De Novo Request Preparation",
+    "description": "Generate a summary of risks and mitigations for a De Novo classification request.",
+    "tags": "",
+    "url": "prompts/regulatory/submissions/09_de_novo_request_preparation.prompt.yaml"
+  },
+  {
+    "title": "RTA Checklist Preparation",
+    "description": "Annotate the RTA checklist with page numbers and sections where requirements are addressed in a 510(k).",
+    "tags": "",
+    "url": "prompts/regulatory/submissions/06_rta_checklist_preparation.prompt.yaml"
+  },
+  {
+    "title": "PMA Post-approval Reporting",
+    "description": "Compile a summary of post-approval requirements, including clinical study data, manufacturing changes, and scientific literature.",
+    "tags": "",
+    "url": "prompts/regulatory/submissions/04_pma_post_approval_reporting.prompt.yaml"
+  },
+  {
+    "title": "IDE Application Preparation",
+    "description": "Draft an Investigational Device Exemption (IDE) application, including risk analysis and investigational plans for clinical studies.",
+    "tags": "",
+    "url": "prompts/regulatory/submissions/02_ide_application_preparation.prompt.yaml"
+  },
+  {
+    "title": "510(k) Substantial Equivalence Preparation",
+    "description": "Draft a substantial equivalence comparison and summary between a subject device and predicate(s) to demonstrate safety and effectiveness.",
+    "tags": "",
+    "url": "prompts/regulatory/submissions/01_510_k_substantial_equivalence_preparation.prompt.yaml"
+  },
+  {
+    "title": "Humanitarian Device Exemption (HDE)",
+    "description": "Explain why the health benefit of a HUD outweighs the risk of injury.",
+    "tags": "",
+    "url": "prompts/regulatory/submissions/07_humanitarian_device_exemption_hde.prompt.yaml"
+  },
+  {
+    "title": "Parallel Review Request",
+    "description": "Draft an email requesting enrollment in the Parallel Review program.",
+    "tags": "",
+    "url": "prompts/regulatory/submissions/10_parallel_review_request.prompt.yaml"
+  },
+  {
+    "title": "UDI GUDID Submission",
+    "description": "Prepare a Device Identifier (DI) record for GUDID submission.",
+    "tags": "",
+    "url": "prompts/regulatory/submissions/05_udi_gudid_submission.prompt.yaml"
+  },
+  {
+    "title": "Premarket Approval (PMA) Preparation",
+    "description": "Draft a detailed summary of a PMA application, including clinical investigation results and manufacturing history.",
+    "tags": "",
+    "url": "prompts/regulatory/submissions/03_premarket_approval_pma_preparation.prompt.yaml"
+  },
+  {
+    "title": "Medicare Coverage Request (IDE)",
+    "description": "Prepare a request packet for CMS reimbursement of an IDE study.",
+    "tags": "",
+    "url": "prompts/regulatory/submissions/12_medicare_coverage_request_ide.prompt.yaml"
+  },
+  {
+    "title": "Citizen Petition Preparation",
+    "description": "Draft a Citizen Petition requesting administrative action by the Commissioner.",
+    "tags": "",
+    "url": "prompts/regulatory/administrative/04_citizen_petition_preparation.prompt.yaml"
+  },
+  {
+    "title": "Medical Device Administrative Detention Appeal",
+    "description": "Draft a written appeal for an administrative detention order issued on a food item or medical device.",
+    "tags": "",
+    "url": "prompts/regulatory/administrative/01_medical_device_administrative_detention_appeal.prompt.yaml"
+  },
+  {
+    "title": "Financial Disclosure Certification",
+    "description": "Identify required financial disclosure forms and draft attestations for clinical investigators.",
+    "tags": "",
+    "url": "prompts/regulatory/administrative/11_financial_disclosure_certification.prompt.yaml"
+  },
+  {
+    "title": "Reclassification Petitioning",
+    "description": "Prepare a statement of the basis for disagreement with a current device classification.",
+    "tags": "",
+    "url": "prompts/regulatory/administrative/07_reclassification_petitioning.prompt.yaml"
+  },
+  {
+    "title": "Patent Term Restoration Eligibility",
+    "description": "Determine if a medical product's review period qualifies for patent term restoration.",
+    "tags": "",
+    "url": "prompts/regulatory/administrative/10_patent_term_restoration_eligibility.prompt.yaml"
+  },
+  {
+    "title": "Public Hearing Participation",
+    "description": "Complete a Notice of Participation for a formal evidentiary public hearing.",
+    "tags": "",
+    "url": "prompts/regulatory/administrative/08_public_hearing_participation.prompt.yaml"
+  },
+  {
+    "title": "Civil Money Penalties Hearing Response",
+    "description": "Draft a formal 'Answer' to an FDA complaint seeking civil money penalties.",
+    "tags": "",
+    "url": "prompts/regulatory/administrative/03_civil_money_penalties_hearing_response.prompt.yaml"
+  },
+  {
+    "title": "Privacy Act Auditing",
+    "description": "Draft a notice for a new FDA Privacy Act Record System.",
+    "tags": "",
+    "url": "prompts/regulatory/administrative/09_privacy_act_auditing.prompt.yaml"
+  },
+  {
+    "title": "Import Entry Data Element Compilation",
+    "description": "Compile required identifying information (510(k), UFI, NDC, NDA) for electronic import entry of drugs or devices.",
+    "tags": "",
+    "url": "prompts/regulatory/administrative/02_import_entry_data_element_compilation.prompt.yaml"
+  },
+  {
+    "title": "Freedom of Information Act (FOIA) Request",
+    "description": "Draft a request for records regarding a specific 510(k) clearance.",
+    "tags": "",
+    "url": "prompts/regulatory/administrative/05_freedom_of_information_act_foia_request.prompt.yaml"
+  },
+  {
+    "title": "21 CFR Part 14 Auditing",
+    "description": "Audit advisory committee meeting minutes for compliance with record-keeping elements.",
+    "tags": "",
+    "url": "prompts/regulatory/administrative/06_21_cfr_part_14_auditing.prompt.yaml"
+  },
+  {
+    "title": "Off-Label Information Dissemination",
+    "description": "Prepare a mandatory disclosure statement for disseminating peer-reviewed articles on unapproved uses.",
+    "tags": "",
+    "url": "prompts/regulatory/adherence/10_off_label_information_dissemination.prompt.yaml"
+  },
+  {
+    "title": "ALCOA-C Data Integrity Checklist",
+    "description": "Ensure data integrity following ALCOA-C principles.",
+    "tags": "",
+    "url": "prompts/regulatory/adherence/06_alcoa_c_data_integrity_checklist.prompt.yaml"
+  },
+  {
+    "title": "Informed Consent Exception (Emergency)",
+    "description": "Draft IRB documentation for an exception from informed consent in emergency research.",
+    "tags": "",
+    "url": "prompts/regulatory/adherence/09_informed_consent_exception_emergency.prompt.yaml"
+  },
+  {
+    "title": "Multiple Endpoints Regulatory Strategy",
+    "description": "Review and summarize FDA guidance on multiple endpoints and multiplicity strategies.",
+    "tags": "",
+    "url": "prompts/regulatory/adherence/03_multiple_endpoints_guidance_review.prompt.yaml"
+  },
+  {
+    "title": "Human Factors/Usability Summary",
+    "description": "Summarize usability testing results to demonstrate minimized use-related risks.",
+    "tags": "",
+    "url": "prompts/regulatory/adherence/11_human_factors_usability_summary.prompt.yaml"
+  },
+  {
+    "title": "DHT Integration Regulatory Checklist",
+    "description": "Review FDA guidance for digital health technology (DHT) integration and validation.",
+    "tags": "",
+    "url": "prompts/regulatory/adherence/02_dht_integration_checklist.prompt.yaml"
+  },
+  {
+    "title": "Intended Use and Indications for Use Alignment",
+    "description": "Review 510(k) drafts to ensure 'Intended Use' and 'Indications for Use' are verbatim and consistent.",
+    "tags": "",
+    "url": "prompts/regulatory/adherence/07_intended_use_and_indications_for_use_alignment.prompt.yaml"
+  },
+  {
+    "title": "Shelf-life Study Rationale",
+    "description": "Draft a rationale for correlating accelerated aging data with real-time requirements.",
+    "tags": "",
+    "url": "prompts/regulatory/adherence/08_shelf_life_study_rationale.prompt.yaml"
+  },
+  {
+    "title": "Imaging Endpoint Process Standards Checklist",
+    "description": "Review FDA guidance on imaging endpoints and create process checklists.",
+    "tags": "",
+    "url": "prompts/regulatory/adherence/04_imaging_endpoint_process_standards.prompt.yaml"
+  },
+  {
+    "title": "ICH E9(R1) Estimand Builder",
+    "description": "Construct a primary estimand description following the ICH E9 (R1) framework.",
+    "tags": "",
+    "url": "prompts/regulatory/adherence/01_estimand_framework_builder.prompt.yaml"
+  },
+  {
+    "title": "RWE Regulatory Framework Summary",
+    "description": "Review the FDA Real-World Evidence (RWE) Framework and fitness-for-use criteria.",
+    "tags": "",
+    "url": "prompts/regulatory/adherence/05_rwe_framework_summary.prompt.yaml"
+  },
+  {
+    "title": "Zika Virus Reagent Study Design",
+    "description": "Draft a protocol for analytical performance studies to validate Zika virus serological reagents.",
+    "tags": "",
+    "url": "prompts/regulatory/device_specifics/03_zika_virus_reagent_study_design.prompt.yaml"
+  },
+  {
+    "title": "Carrier Screening System 510(k)",
+    "description": "Compile technical information for an autosomal recessive carrier screening gene mutation detection system.",
+    "tags": "",
+    "url": "prompts/regulatory/device_specifics/04_carrier_screening_system_510_k.prompt.yaml"
+  },
+  {
+    "title": "Clinical Chemistry Device Classification",
+    "description": "Identify classification and regulatory requirements (general/special controls) for a clinical chemistry device.",
+    "tags": "",
+    "url": "prompts/regulatory/device_specifics/07_clinical_chemistry_device_classification.prompt.yaml"
+  },
+  {
+    "title": "Automated Image Assessment System 510(k)",
+    "description": "Draft a detailed device description for an automated image assessment system for microbial colonies.",
+    "tags": "",
+    "url": "prompts/regulatory/device_specifics/01_automated_image_assessment_system_510_k.prompt.yaml"
+  },
+  {
+    "title": "Special Controls Labeling Compliance",
+    "description": "Generate mandatory labeling content, including warnings and limitations, for HCV antibody tests.",
+    "tags": "",
+    "url": "prompts/regulatory/device_specifics/02_special_controls_labeling_compliance.prompt.yaml"
+  },
+  {
+    "title": "NGS Tumor Profiling Documentation",
+    "description": "Develop documentation supporting the clinical significance of mutations in an NGS-based tumor profiling panel.",
+    "tags": "",
+    "url": "prompts/regulatory/device_specifics/06_ngs_tumor_profiling_documentation.prompt.yaml"
+  },
+  {
+    "title": "iCGM Clinical Testing Strategy",
+    "description": "Draft a clinical study plan to demonstrate accuracy for an iCGM system.",
+    "tags": "",
+    "url": "prompts/regulatory/device_specifics/08_icgm_clinical_testing_strategy.prompt.yaml"
+  },
+  {
+    "title": "Design Verification for BCR-ABL Tests",
+    "description": "Outline design verification and validation requirements for a BCR-ABL quantitation test.",
+    "tags": "",
+    "url": "prompts/regulatory/device_specifics/05_design_verification_for_bcr_abl_tests.prompt.yaml"
+  },
+  {
+    "title": "Directed Food Laboratory Order Verification",
+    "description": "Review a Directed Food Laboratory Order to identify mandatory testing parameters.",
+    "tags": "",
+    "url": "prompts/regulatory/food_safety/04_directed_food_laboratory_order_verification.prompt.yaml"
+  },
+  {
+    "title": "Foreign Supplier Verification Program (FSVP) Audit",
+    "description": "Draft a summary report of an onsite audit for a foreign food supplier including conclusions and corrective actions.",
+    "tags": "",
+    "url": "prompts/regulatory/food_safety/01_foreign_supplier_verification_program_fsvp_audit.prompt.yaml"
+  },
+  {
+    "title": "Food Safety Audit Reporting (Regulatory)",
+    "description": "Draft a regulatory audit report for an eligible entity after a food safety audit.",
+    "tags": "",
+    "url": "prompts/regulatory/food_safety/03_food_safety_audit_reporting_regulatory.prompt.yaml"
+  },
+  {
+    "title": "Establishment of Food Traceability Plan",
+    "description": "Create a structured traceability plan for a facility handling foods on the Food Traceability List.",
+    "tags": "",
+    "url": "prompts/regulatory/food_safety/02_establishment_of_food_traceability_plan.prompt.yaml"
+  },
+  {
+    "title": "Quality-Improvement RCA & Action Plan",
+    "description": "Identify root causes of a recurring defect and propose a 90\u2011day corrective\u2011action roadmap.",
+    "tags": "",
+    "url": "prompts/regulatory/quality/03_quality_improvement_rca_action_plan.prompt.yaml"
+  },
+  {
+    "title": "Part 11 Closed System Audit",
+    "description": "Audit a software supplier's closed system for electronic record integrity.",
+    "tags": "",
+    "url": "prompts/regulatory/quality/16_part_11_closed_system_audit.prompt.yaml"
+  },
+  {
+    "title": "CAPA Management Process",
+    "description": "Identify non-compliance, conduct RCA, and track CAPA.",
+    "tags": "",
+    "url": "prompts/regulatory/quality/10_capa_management_process.prompt.yaml"
+  },
+  {
+    "title": "Quality System Evaluation (MRA)",
+    "description": "Generate a quality system evaluation report for a manufacturer under the US-EC MRA.",
+    "tags": "",
+    "url": "prompts/regulatory/quality/14_quality_system_evaluation_mra.prompt.yaml"
+  },
+  {
+    "title": "Quality System Audit",
+    "description": "Generate an internal audit checklist or report focusing on design controls, production processes, and risk-based decision making.",
+    "tags": "",
+    "url": "prompts/regulatory/quality/12_quality_system_audit.prompt.yaml"
+  },
+  {
+    "title": "Regulatory Radar & Impact Report",
+    "description": "Track and assess recent regulatory changes that may impact the company.",
+    "tags": "",
+    "url": "prompts/regulatory/quality/01_regulatory_radar.prompt.yaml"
+  },
+  {
+    "title": "Inspection-Readiness Drill (CAPA Builder)",
+    "description": "Prepare for regulatory inspections by rehearsing high\u2011risk questions and drafting CAPAs.",
+    "tags": "",
+    "url": "prompts/regulatory/quality/07_inspection_readiness_drill_capa_builder.prompt.yaml"
+  },
+  {
+    "title": "Integrated Submission Strategy Coach",
+    "description": "Create a phased submission roadmap for Project Phoenix.",
+    "tags": "",
+    "url": "prompts/regulatory/quality/08_integrated_submission_strategy_coach.prompt.yaml"
+  },
+  {
+    "title": "Compliance Gap & Risk Matrix",
+    "description": "Quantify compliance gaps and associated risks against a selected standard or law.",
+    "tags": "",
+    "url": "prompts/regulatory/quality/02_compliance_gap_risk_matrix.prompt.yaml"
+  },
+  {
+    "title": "Regulatory-Landscape Radar",
+    "description": "Provide a weekly snapshot of regulatory developments relevant to early\u2011phase oncology and rare\u2011disease trials.",
+    "tags": "",
+    "url": "prompts/regulatory/quality/05_regulatory_landscape_radar.prompt.yaml"
+  },
+  {
+    "title": "Risk-Based Quality Management Plan",
+    "description": "Create a concise RBQM plan for a first\u2011in\u2011human Phase\u00a0I healthy\u2011volunteer study.",
+    "tags": "",
+    "url": "prompts/regulatory/quality/09_risk_based_quality_management_plan.prompt.yaml"
+  },
+  {
+    "title": "GLP Quality Assurance",
+    "description": "Prepare a statement for a nonclinical study report certifying inspection dates.",
+    "tags": "",
+    "url": "prompts/regulatory/quality/15_glp_quality_assurance.prompt.yaml"
+  },
+  {
+    "title": "Financial Conflict of Interest (FCOI) Reporting",
+    "description": "Review disclosures and draft management plan.",
+    "tags": "",
+    "url": "prompts/regulatory/quality/11_fcoi_reporting.prompt.yaml"
+  },
+  {
+    "title": "eTMF Compliance Gap Analysis",
+    "description": "Evaluate an electronic Trial Master File for compliance gaps and recommend corrective actions.",
+    "tags": "",
+    "url": "prompts/regulatory/quality/04_etmf_compliance_gap_analysis.prompt.yaml"
+  },
+  {
+    "title": "CAPA Plan Generator",
+    "description": "Generate a Corrective and Preventive Action (CAPA) plan based on audit findings.",
+    "tags": "",
+    "url": "prompts/regulatory/quality/06_capa_plan_generator.prompt.yaml"
+  },
+  {
+    "title": "Risk Management Analysis",
+    "description": "Perform a risk analysis (e.g., PHA) to identify potential hazards, hazardous situations, and mitigation strategies.",
+    "tags": "",
+    "url": "prompts/regulatory/quality/13_risk_management_analysis.prompt.yaml"
+  },
+  {
+    "title": "IRB Protocol Review",
+    "description": "Evaluate a clinical investigation protocol to ensure it meets IRB approval criteria.",
+    "tags": "",
+    "url": "prompts/regulatory/compliance/04_irb_protocol_review.prompt.yaml"
+  },
+  {
+    "title": "Medical Device Recall Strategy",
+    "description": "Develop a mandatory recall strategy for a device posing health risks.",
+    "tags": "",
+    "url": "prompts/regulatory/compliance/05_medical_device_recall_strategy.prompt.yaml"
+  },
+  {
+    "title": "Medical Device Reporting (MDR)",
+    "description": "Summarize an adverse event for mandatory electronic submission or develop an MDR SOP.",
+    "tags": "",
+    "url": "prompts/regulatory/compliance/01_medical_device_reporting_mdr.prompt.yaml"
+  },
+  {
+    "title": "Labeling Compliance Audit",
+    "description": "Audit device labeling for compliance with mandatory elements (Manufacturer, UDI, date formats).",
+    "tags": "",
+    "url": "prompts/regulatory/compliance/02_labeling_compliance_audit.prompt.yaml"
+  },
+  {
+    "title": "Correction and Removal Reporting",
+    "description": "Draft a written report to FDA for a device correction or removal.",
+    "tags": "",
+    "url": "prompts/regulatory/compliance/03_correction_and_removal_reporting.prompt.yaml"
+  },
+  {
+    "title": "Cyber Device Security Plan",
+    "description": "Draft a postmarket cybersecurity plan and Software Bill of Materials (SBOM).",
+    "tags": "",
+    "url": "prompts/regulatory/compliance/06_cyber_device_security_plan.prompt.yaml"
+  },
+  {
+    "title": "Regulatory-Change Impact Analysis",
+    "description": "Assess how a new regulation affects company operations and outline a phased response plan.",
+    "tags": "",
+    "url": "prompts/regulatory/strategy/03_regulatory_change_impact_analysis.prompt.yaml"
+  },
+  {
+    "title": "Prompt-Writing Best-Practice Checklist",
+    "description": "Summarize key elements of effective prompt design.",
+    "tags": "",
+    "url": "prompts/regulatory/strategy/13_prompt_best_practices.prompt.yaml"
+  },
+  {
+    "title": "RA/QA Integrated Quality System Audit",
+    "description": "Prepare for a combined FDA QSR and EU MDR/IVDR audit by identifying quality\u2011management gaps and recommending improvements.",
+    "tags": "",
+    "url": "prompts/regulatory/strategy/08_raqa_integrated_quality_system_audit.prompt.yaml"
+  },
+  {
+    "title": "IND Readiness Gap Analysis & Filing Road-Map",
+    "description": "Assess IND readiness and create a filing road\u2011map for a therapeutic program.",
+    "tags": "",
+    "url": "prompts/regulatory/strategy/06_ind_readiness_gap_analysis.prompt.yaml"
+  },
+  {
+    "title": "Pre-IND Meeting Preparation",
+    "description": "Draft Pre-IND briefing package and questions.",
+    "tags": "",
+    "url": "prompts/regulatory/strategy/19_pre_ind_meeting_preparation.prompt.yaml"
+  },
+  {
+    "title": "Literature & Regulatory Gap Analysis",
+    "description": "Identify evidence and regulatory gaps for a planned pivotal clinical study.",
+    "tags": "",
+    "url": "prompts/regulatory/strategy/14_literature_regulatory_gap_analysis.prompt.yaml"
+  },
+  {
+    "title": "Strategic Regulatory Pathway Plan",
+    "description": "Outline a holistic global regulatory pathway for a medical device or IVD.",
+    "tags": "",
+    "url": "prompts/regulatory/strategy/04_strategic_regulatory_pathway_plan.prompt.yaml"
+  },
+  {
+    "title": "510(k)/De Novo Pre-Submission Strategy",
+    "description": "Determine the best U.S. regulatory pathway and craft a 12\u2011month pre\u2011submission plan.",
+    "tags": "",
+    "url": "prompts/regulatory/strategy/01_510k_pre-sub_strategy.prompt.yaml"
+  },
+  {
+    "title": "IND Determination and Application",
+    "description": "Determine IND exemption and prepare dossier.",
+    "tags": "",
+    "url": "prompts/regulatory/strategy/16_ind_determination_application.prompt.yaml"
+  },
+  {
+    "title": "ClinicalTrials.gov Registration",
+    "description": "Draft registration summary and outcome measures.",
+    "tags": "",
+    "url": "prompts/regulatory/strategy/17_clinicaltrials_registration.prompt.yaml"
+  },
+  {
+    "title": "Regulatory Filing Draft Builder",
+    "description": "Produce a regulator\u2011ready draft document using provided financials and risk data.",
+    "tags": "",
+    "url": "prompts/regulatory/strategy/12_regulatory_filing_draft_builder.prompt.yaml"
+  },
+  {
+    "title": "Compliance Gap Assessment",
+    "description": "Evaluate organizational controls against a specified compliance framework and prioritize remediation.",
+    "tags": "",
+    "url": "prompts/regulatory/strategy/05_compliance_gap_assessment.prompt.yaml"
+  },
+  {
+    "title": "Dual MDR / IVDR Conformity-Assessment Roadmap",
+    "description": "Develop a coordinated roadmap for simultaneous MDR and IVDR submissions.",
+    "tags": "",
+    "url": "prompts/regulatory/strategy/09_dual_mdr_ivdr_roadmap.prompt.yaml"
+  },
+  {
+    "title": "Request for Designation (RFD) Submission",
+    "description": "Draft RFD for combination products.",
+    "tags": "",
+    "url": "prompts/regulatory/strategy/20_rfd_submission.prompt.yaml"
+  },
+  {
+    "title": "IVDR Performance-Evaluation Plan Blueprint",
+    "description": "Draft a comprehensive Performance\u2011Evaluation Plan (PEP) that satisfies Article\u00a056 and Annex\u00a0XIII of the IVDR.",
+    "tags": "",
+    "url": "prompts/regulatory/strategy/07_ivdr_pep_blueprint.prompt.yaml"
+  },
+  {
+    "title": "IVD Performance Study Compliance Review",
+    "description": "Review an IVD performance study for compliance with MDCG\u00a02024\u20114 and related guidance.",
+    "tags": "",
+    "url": "prompts/regulatory/strategy/10_ivd_performance_study_compliance_review.prompt.yaml"
+  },
+  {
+    "title": "EU MDR Technical-Documentation Gap Assessment",
+    "description": "Identify deficiencies in technical documentation against EU MDR Annex\u00a0II and\u00a0III.",
+    "tags": "",
+    "url": "prompts/regulatory/strategy/02_eu_mdr_gap_assessment.prompt.yaml"
+  },
+  {
+    "title": "IDE Determination and Device Classification",
+    "description": "Assess risk classification and draft rationale.",
+    "tags": "",
+    "url": "prompts/regulatory/strategy/18_ide_determination.prompt.yaml"
+  },
+  {
+    "title": "21 CFR 820 / QMSR Gap-Analysis & Remediation",
+    "description": "Evaluate the quality-management system against current 21\u00a0CFR\u00a0820 and the proposed QMSR.",
+    "tags": "",
+    "url": "prompts/regulatory/strategy/11_qmsr_gap_analysis.prompt.yaml"
+  },
+  {
+    "title": "AI Risk Mapper",
+    "description": "Create a quick-look risk register for a specified AI system.",
+    "tags": "",
+    "url": "prompts/regulatory/strategy/15_ai_risk_mapper.prompt.yaml"
+  },
+  {
+    "title": "Discrepancy Detection & Query Log Generator",
+    "description": "Examine a CSV dataset to detect discrepancies and generate a query log.",
+    "tags": "",
+    "url": "prompts/clinical/data/01_discrepancy_detection_query_log.prompt.yaml"
+  },
+  {
+    "title": "Edit-Check Specification Builder for New eCRF Fields",
+    "description": "Create edit-check specifications for the new Concomitant Medication module in Medidata Rave.",
+    "tags": "",
+    "url": "prompts/clinical/data/03_edit_check_specification_builder.prompt.yaml"
+  },
+  {
+    "title": "Draft a Data Management Plan Section",
+    "description": "Act as a Clinical Data Management subject-matter expert.",
+    "tags": "",
+    "url": "prompts/clinical/data/02_data_management_plan_section.prompt.yaml"
+  },
+  {
+    "title": "Audit Trail Review",
+    "description": "Review subject audit logs for compliance and data integrity.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/16_audit_trail_review.prompt.yaml"
+  },
+  {
+    "title": "SOP Gap Analysis",
+    "description": "Identify gaps in data management standard operating procedures.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/09_sop_gap_analysis.prompt.yaml"
+  },
+  {
+    "title": "Phase II Oncology DMP",
+    "description": "Create a Data Management Plan for a Phase II oncology study.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/07_phase_ii_oncology_dmp.prompt.yaml"
+  },
+  {
+    "title": "21 CFR Part 11 Compliance Verification",
+    "description": "Confirm system compliance with electronic signatures.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/11_part_11_compliance_verification.prompt.yaml"
+  },
+  {
+    "title": "Clinical ETL Pipeline Review",
+    "description": "Review the clinical ETL pipeline for accuracy and efficiency.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/06_clinical_etl_pipeline_review.prompt.yaml"
+  },
+  {
+    "title": "Database Lock Procedures",
+    "description": "Review CRFs and prepare for database lock.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/13_database_lock_procedures.prompt.yaml"
+  },
+  {
+    "title": "Trial Master File (TMF) Maintenance",
+    "description": "Generate TMF checklist based on CDISC Reference Model.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/12_tmf_maintenance.prompt.yaml"
+  },
+  {
+    "title": "Data Management Plan (DMP) Development",
+    "description": "Create a DMP outlining data lifecycle and quality control.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/10_dmp_development.prompt.yaml"
+  },
+  {
+    "title": "Clinical ETL Transformation QC",
+    "description": "Define quality checks for clinical ETL transformations.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/05_clinical_etl_transformation_qc.prompt.yaml"
+  },
+  {
+    "title": "Regulatory Compliance Verification",
+    "description": "Verify electronic records and signatures against 21 CFR Part 11.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/17_regulatory_compliance_verification.prompt.yaml"
+  },
+  {
+    "title": "Data Architecture Blueprint",
+    "description": "Draft a blueprint for clinical data architecture.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/03_data_architecture_blueprint.prompt.yaml"
+  },
+  {
+    "title": "Medical Coding and Reconciliation Assistant",
+    "description": "Automatically predict and apply medical terms to clinical data, and perform automated data reconciliation and query resolution within EDC builds.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/11_medical_coding_reconciliation.prompt.yaml"
+  },
+  {
+    "title": "Clinical Trial Document Archiving",
+    "description": "Develop archival strategy for TMF.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/14_document_archiving.prompt.yaml"
+  },
+  {
+    "title": "Decentralized Trial Risk Matrix",
+    "description": "Build a risk matrix for decentralized trials.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/08_decentralized_trial_risk_matrix.prompt.yaml"
+  },
+  {
+    "title": "Clinical ETL Mapping Spec",
+    "description": "Create an ETL mapping specification for clinical data.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/04_clinical_etl_mapping_spec.prompt.yaml"
+  },
+  {
+    "title": "Data De-identification",
+    "description": "De-identify patient-level data according to HIPAA Privacy Rule.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/18_data_deidentification.prompt.yaml"
+  },
+  {
+    "title": "eTMF Artifact Classifier",
+    "description": "Read document text and suggest appropriate eTMF artifact classification and metadata assignments for incoming trial documents.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/10_etmf_artifact_classifier.prompt.yaml"
+  },
+  {
+    "title": "Unified Data Cleansing",
+    "description": "Outline a unified data cleansing approach for clinical trial datasets.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/01_unified_data_cleansing.prompt.yaml"
+  },
+  {
+    "title": "CDISC SDTM/ADaM Mapping",
+    "description": "Map raw clinical data to standardized CDISC SDTM and ADaM domains.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/15_cdisc_mapping.prompt.yaml"
+  },
+  {
+    "title": "Regulatory Gap Analysis",
+    "description": "Assess regulatory compliance gaps in trial data processes.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/02_regulatory_gap_analysis.prompt.yaml"
+  },
+  {
+    "title": "Metadata Management",
+    "description": "Extract and store standardized metadata for reuse.",
+    "tags": "",
+    "url": "prompts/clinical/data_management/19_metadata_management.prompt.yaml"
+  },
+  {
+    "title": "Protocol Section Refinement",
+    "description": "Improve the eligibility criteria section of an IVD performance trial protocol.",
+    "tags": "",
+    "url": "prompts/clinical/protocol/04_protocol_section_refinement.prompt.yaml"
+  },
+  {
+    "title": "Clinical-Trial Protocol Creator",
+    "description": "Generate a full clinical-trial protocol from a one-page summary sheet.",
+    "tags": "",
+    "url": "prompts/clinical/protocol/01_clinical_trial_protocol_creator.prompt.yaml"
+  },
+  {
+    "title": "Ultimate SOP Architect",
+    "description": "Create a clear, regulation-compliant standard operating procedure.",
+    "tags": "",
+    "url": "prompts/clinical/protocol/02_ultimate_sop_architect.prompt.yaml"
+  },
+  {
+    "title": "Protocol Deviation Reporting",
+    "description": "Identify and report protocol deviations.",
+    "tags": "",
+    "url": "prompts/clinical/protocol/05_protocol_deviation_reporting.prompt.yaml"
+  },
+  {
+    "title": "SOP and TMF Document Synthesis",
+    "description": "Provide a quick retrieval and synthesis of information from specific internal SOPs and TMF documents to answer compliance or process queries.",
+    "tags": "",
+    "url": "prompts/clinical/protocol/05_sop_tmf_document_synthesis.prompt.yaml"
+  },
+  {
+    "title": "Protocol Reviewer and Gap-Analysis Coach",
+    "description": "Evaluate a clinical-trial protocol for patient experience, site feasibility, and regulatory completeness.",
+    "tags": "",
+    "url": "prompts/clinical/protocol/03_protocol_reviewer_gap_analysis_coach.prompt.yaml"
+  },
+  {
+    "title": "Optimize ePRO Form Design",
+    "description": "Improve ePRO form usability and data quality.",
+    "tags": "",
+    "url": "prompts/clinical/epro/02_optimize_epro_form_design.prompt.yaml"
+  },
+  {
+    "title": "ePRO Adoption Plan for Sponsors",
+    "description": "Outline a six-month plan for rolling out ePRO across multiple sites.",
+    "tags": "",
+    "url": "prompts/clinical/epro/03_epro_adoption_plan_for_sponsors.prompt.yaml"
+  },
+  {
+    "title": "Patient-Centric BYOD ePRO Workflow",
+    "description": "Design a streamlined ePRO workflow that supports a BYOD model and maximizes patient compliance.",
+    "tags": "",
+    "url": "prompts/clinical/epro/01_patient-centric_byod_workflow.prompt.yaml"
+  },
+  {
+    "title": "Central Reading Paradigm Design",
+    "description": "Recommend an efficient central reading model for an oncology trial.",
+    "tags": "",
+    "url": "prompts/clinical/imaging/03_central_reading_design.prompt.yaml"
+  },
+  {
+    "title": "Site Upload QC and Query Generator",
+    "description": "Automate QC of imaging uploads and craft site queries.",
+    "tags": "",
+    "url": "prompts/clinical/imaging/02_site_upload_qc.prompt.yaml"
+  },
+  {
+    "title": "Regulatory Imaging Data Package",
+    "description": "Assemble the imaging section of a PMA or 510(k) submission.",
+    "tags": "",
+    "url": "prompts/clinical/imaging/06_regulatory_imaging_data_package.prompt.yaml"
+  },
+  {
+    "title": "Imaging Charter Draft",
+    "description": "Create a study-specific imaging charter compliant with global regulations.",
+    "tags": "",
+    "url": "prompts/clinical/imaging/01_imaging_charter_draft.prompt.yaml"
+  },
+  {
+    "title": "Image Acquisition QC Workflow Blueprint",
+    "description": "Design a site-facing SOP for image acquisition and quality control.",
+    "tags": "",
+    "url": "prompts/clinical/imaging/05_image_acquisition_qc_workflow_blueprint.prompt.yaml"
+  },
+  {
+    "title": "Regulatory Imaging Charter Generator",
+    "description": "Generate an imaging charter that satisfies FDA and ISO requirements.",
+    "tags": "",
+    "url": "prompts/clinical/imaging/04_regulatory_imaging_charter_generator.prompt.yaml"
+  },
+  {
+    "title": "Analyze Adjudication KPIs",
+    "description": "Calculate adjudication performance metrics and recommend improvements.",
+    "tags": "",
+    "url": "prompts/clinical/adjudication/03_analyze_adjudication_kpis.prompt.yaml"
+  },
+  {
+    "title": "Source Document and Endpoint Checklist",
+    "description": "Create a clear checklist of required documents and endpoint criteria for clinical adjudication.",
+    "tags": "",
+    "url": "prompts/clinical/adjudication/02_source_document_endpoint_checklist.prompt.yaml"
+  },
+  {
+    "title": "Real-Time Adjudication Visibility Dashboard",
+    "description": "Design a dashboard that provides real-time visibility into clinical endpoint adjudication workflows.",
+    "tags": "",
+    "url": "prompts/clinical/adjudication/01_real_time_adjudication_dashboard.prompt.yaml"
+  },
+  {
+    "title": "Clinical Study Report (CSR) Narrative Drafter",
+    "description": "Automate the drafting of patient narratives for Clinical Study Reports (CSRs) by transforming clinical data into clear summaries with citations.",
+    "tags": "",
+    "url": "prompts/clinical/medical_writing/01_csr_narrative_drafter.prompt.yaml"
+  },
+  {
+    "title": "Clinical Monitoring Plan Development",
+    "description": "Draft a risk-based Clinical Monitoring Plan.",
+    "tags": "",
+    "url": "prompts/clinical/monitoring/04_clinical_monitoring_plan.prompt.yaml"
+  },
+  {
+    "title": "Monitoring Visit Report (MVR) Quality Critique",
+    "description": "You are a **Senior Monitoring Oversight Lead** conducting quality review of a draft **Monitoring Visit Report (MVR)**.",
+    "tags": "",
+    "url": "prompts/clinical/monitoring/03_monitoring_visit_report_quality_critique.prompt.yaml"
+  },
+  {
+    "title": "Risk-Based Site Performance Dashboard",
+    "description": "You are an experienced **Clinical Monitoring Manager** at a global CRO overseeing several Phase II oncology trials.",
+    "tags": "",
+    "url": "prompts/clinical/monitoring/01_risk_based_site_performance_dashboard.prompt.yaml"
+  },
+  {
+    "title": "Risk-Based Monitoring Data Evaluation",
+    "description": "Remote evaluation of accumulating trial data to identify outliers and data integrity problems.",
+    "tags": "",
+    "url": "prompts/clinical/monitoring/05_rbm_data_evaluation.prompt.yaml"
+  },
+  {
+    "title": "RBQM Anomaly Detection",
+    "description": "Identify data outliers, anomalies, and atypical patient patterns in real-time across clinical trial datasets to flag potential risks or misconduct.",
+    "tags": "",
+    "url": "prompts/clinical/monitoring/04_rbqm_anomaly_detection.prompt.yaml"
+  },
+  {
+    "title": "CAPA Plan Builder for Monitoring Findings",
+    "description": "You are a **Regulatory Quality Advisor** specializing in ICH-GCP compliance.",
+    "tags": "",
+    "url": "prompts/clinical/monitoring/02_capa_plan_builder_for_monitoring_findings.prompt.yaml"
+  },
+  {
+    "title": "Forecast Site-Level Drug Supply & Resupply Strategy",
+    "description": "Plan site-level drug supply and resupply for an adaptive trial.",
+    "tags": "",
+    "url": "prompts/clinical/rtsm/02_site_level_supply_resupply_strategy.prompt.yaml"
+  },
+  {
+    "title": "Create a Risk-Based Monitoring & Mitigation SOP for RTSM",
+    "description": "Draft a standard operating procedure for risk\u2011based monitoring and mitigation in RTSM operations.",
+    "tags": "",
+    "url": "prompts/clinical/rtsm/03_risk_based_monitoring_sop.prompt.yaml"
+  },
+  {
+    "title": "Design a Patient-Centered Randomization Scheme",
+    "description": "Create a randomization scheme that balances patient needs with logistical simplicity.",
+    "tags": "",
+    "url": "prompts/clinical/rtsm/01_patient_centered_randomization_scheme.prompt.yaml"
+  },
+  {
+    "title": "Single IRB (sIRB) Plan Submission",
+    "description": "Generate sIRB Plan and communication strategy.",
+    "tags": "",
+    "url": "prompts/clinical/site_acquisition/04_sirb_plan_submission.prompt.yaml"
+  },
+  {
+    "title": "Personalized Investigator-Outreach Email Generator",
+    "description": "Craft a tailored outreach email to potential investigators.",
+    "tags": "",
+    "url": "prompts/clinical/site_acquisition/03_investigator_outreach_email_generator.prompt.yaml"
+  },
+  {
+    "title": "Clinical Trial Agreement (CTA) Negotiation",
+    "description": "Review CTA for missing clauses.",
+    "tags": "",
+    "url": "prompts/clinical/site_acquisition/05_cta_negotiation.prompt.yaml"
+  },
+  {
+    "title": "Tailored Feasibility-Questionnaire Builder",
+    "description": "Draft a site-feasibility questionnaire to confirm patient availability and operational readiness.",
+    "tags": "",
+    "url": "prompts/clinical/site_acquisition/02_tailored_feasibility_questionnaire.prompt.yaml"
+  },
+  {
+    "title": "Site Landscape Mapping & Prioritization",
+    "description": "Rank investigative sites for an upcoming study.",
+    "tags": "",
+    "url": "prompts/clinical/site_acquisition/01_site_landscape_mapping.prompt.yaml"
+  },
+  {
+    "title": "Site Selection and Enrollment Forecaster",
+    "description": "Analyze historical site performance and patient demographics to rank investigative sites and predict enrollment timelines.",
+    "tags": "",
+    "url": "prompts/clinical/site_acquisition/04_site_enrollment_forecaster.prompt.yaml"
+  },
+  {
+    "title": "Data Mapping and Transformation Playbook",
+    "description": "Provide a repeatable workflow for mapping JSON FHIR bundles to SDTM-compliant tables.",
+    "tags": "",
+    "url": "prompts/clinical/eclinical_integration/02_data_mapping_transformation_playbook.prompt.yaml"
+  },
+  {
+    "title": "Digital Health Technology (DHT) Validation",
+    "description": "Create validation strategy for DHTs.",
+    "tags": "",
+    "url": "prompts/clinical/eclinical_integration/06_dht_validation.prompt.yaml"
+  },
+  {
+    "title": "Architect the Integration Blueprint",
+    "description": "Provide a structured plan for integrating site EHR systems with the sponsor's EDC and CTMS.",
+    "tags": "",
+    "url": "prompts/clinical/eclinical_integration/01_architect_integration_blueprint.prompt.yaml"
+  },
+  {
+    "title": "Computer System Validation (CSV)",
+    "description": "Generate validation documents for EDC systems.",
+    "tags": "",
+    "url": "prompts/clinical/eclinical_integration/05_computer_system_validation.prompt.yaml"
+  },
+  {
+    "title": "eConsent Implementation Strategy",
+    "description": "Verify eConsent platform compliance and workflow.",
+    "tags": "",
+    "url": "prompts/clinical/eclinical_integration/04_econsent_implementation.prompt.yaml"
+  },
+  {
+    "title": "Regulatory and Validation Checklist",
+    "description": "Compile a compliance checklist for digital trial data integrations.",
+    "tags": "",
+    "url": "prompts/clinical/eclinical_integration/03_regulatory_validation_checklist.prompt.yaml"
+  },
+  {
+    "title": "UAT Script Generator",
+    "description": "Generate a User Acceptance Testing (UAT) script with dummy data inputs.",
+    "tags": "",
+    "url": "prompts/clinical/eclinical_integration/08_uat_script_generator.prompt.yaml"
+  },
+  {
+    "title": "IQ/OQ/PQ Validation",
+    "description": "Design and execute a series of IQ, OQ, and PQ validation tests for clinical systems.",
+    "tags": "",
+    "url": "prompts/clinical/eclinical_integration/07_iq_oq_pq_validation.prompt.yaml"
+  },
+  {
+    "title": "CDASH Alignment",
+    "description": "Standardize clinical data collection fields using CDASH models.",
+    "tags": "",
+    "url": "prompts/clinical/forms/06_cdash_alignment.prompt.yaml"
+  },
+  {
+    "title": "Electronic Data Capture Implementation",
+    "description": "Design eCRFs with built-in edit checks and automation.",
+    "tags": "",
+    "url": "prompts/clinical/forms/05_ecrf_implementation.prompt.yaml"
+  },
+  {
+    "title": "Design Error Prevention",
+    "description": "Review and optimize CRF layout to avoid duplication and non-essential fields.",
+    "tags": "",
+    "url": "prompts/clinical/forms/04_crf_design_optimization.prompt.yaml"
+  },
+  {
+    "title": "CDASH Mapping & Completion-Guide Assistant",
+    "description": "- For every variable in the list, supply:",
+    "tags": "",
+    "url": "prompts/clinical/forms/03_cdash_mapping_completion_guide.prompt.yaml"
+  },
+  {
+    "title": "CRF Shell Generator",
+    "description": "- Read the protocol summary inside the triple quotes.",
+    "tags": "",
+    "url": "prompts/clinical/forms/01_crf_shell_generator.prompt.yaml"
+  },
+  {
+    "title": "Semantic Interoperability Optimization",
+    "description": "Bind clinical concepts in CRF questions to LOINC, SNOMED CT, or UCUM.",
+    "tags": "",
+    "url": "prompts/clinical/forms/07_semantic_interoperability.prompt.yaml"
+  },
+  {
+    "title": "CRF Quality Auditor",
+    "description": "- Evaluate against CDISC CDASH IG v2.1 and SDTM traceability.",
+    "tags": "",
+    "url": "prompts/clinical/forms/02_crf_quality_auditor.prompt.yaml"
+  },
+  {
+    "title": "Diversity Action Plan Development",
+    "description": "Generate a Diversity Action Plan per FDA guidance.",
+    "tags": "",
+    "url": "prompts/clinical/trial_execution/09_diversity_action_plan_document.prompt.yaml"
+  },
+  {
+    "title": "Portfolio-Level Clinical Operations Roadmap",
+    "description": "Provide a 12\u2011month roadmap for a portfolio of clinical trials.",
+    "tags": "",
+    "url": "prompts/clinical/trial_execution/05_portfolio_clin_ops_roadmap.prompt.yaml"
+  },
+  {
+    "title": "Compliance and Data Quality Monitoring Plan",
+    "description": "Design an AI-assisted monitoring plan to ensure compliance and data integrity.",
+    "tags": "",
+    "url": "prompts/clinical/trial_execution/03_compliance_data_quality_monitoring_plan.prompt.yaml"
+  },
+  {
+    "title": "AI-Powered Site and Recruitment Strategy",
+    "description": "Select optimal sites and anticipate dropout risks using simulated EHR insights.",
+    "tags": "",
+    "url": "prompts/clinical/trial_execution/02_ai_powered_site_recruitment.prompt.yaml"
+  },
+  {
+    "title": "Adaptive Recruitment and Retention Strategy",
+    "description": "Design an optimized recruitment and retention plan for a multi-site pivotal study.",
+    "tags": "",
+    "url": "prompts/clinical/trial_execution/04_adaptive_recruitment_retention_strategy.prompt.yaml"
+  },
+  {
+    "title": "Informed Consent Process Optimization",
+    "description": "Review and rewrite ICF for readability.",
+    "tags": "",
+    "url": "prompts/clinical/trial_execution/08_informed_consent_process.prompt.yaml"
+  },
+  {
+    "title": "Risk-Based Monitoring and Quality Plan",
+    "description": "Develop a risk-based monitoring plan for a Phase\u00a0II oncology trial.",
+    "tags": "",
+    "url": "prompts/clinical/trial_execution/06_risk_based_monitoring_plan.prompt.yaml"
+  },
+  {
+    "title": "Patient Recruitment and Diversity Acceleration Plan",
+    "description": "Boost enrollment and improve demographic diversity in a stalled Phase\u00a0III study.",
+    "tags": "",
+    "url": "prompts/clinical/trial_execution/07_recruitment_diversity_acceleration.prompt.yaml"
+  },
+  {
+    "title": "Protocol Optimization and Risk Simulation",
+    "description": "Evaluate a draft clinical protocol and simulate the effects of simplifying key elements.",
+    "tags": "",
+    "url": "prompts/clinical/trial_execution/01_protocol_optimization_risk_simulation.prompt.yaml"
+  },
+  {
+    "title": "Investigator Follow-up Email & Action-Item Tracker",
+    "description": "Compose a follow-up email to the PI summarizing visit findings and action items, plus a tracking table.",
+    "tags": "",
+    "url": "prompts/clinical/cra/02_investigator_follow_up_email_tracker.prompt.yaml"
+  },
+  {
+    "title": "Monitoring-Visit Report Generator",
+    "description": "Draft a monitoring visit report summarizing on-site activities, findings, follow-ups, and attachments.",
+    "tags": "",
+    "url": "prompts/clinical/cra/01_monitoring_visit_report_generator.prompt.yaml"
+  },
+  {
+    "title": "Risk-Based Monitoring (RBM) Plan Builder",
+    "description": "Develop a site-level risk-based monitoring plan with risk matrix, KRIs, and adaptive strategy.",
+    "tags": "",
+    "url": "prompts/clinical/cra/03_rbm_plan_builder.prompt.yaml"
+  },
+  {
+    "title": "FDA MDR/MDV Adverse-Event Narrative",
+    "description": "1. Extract: event date, patient age/sex, device identifiers, reporter type.",
+    "tags": "",
+    "url": "prompts/clinical/safety/02_fda_mdr_adverse_event_narrative.prompt.yaml"
+  },
+  {
+    "title": "SAE and Safety Reporting",
+    "description": "Analyze SAEs for expedited reporting criteria.",
+    "tags": "",
+    "url": "prompts/clinical/safety/04_sae_safety_reporting.prompt.yaml"
+  },
+  {
+    "title": "Clinical Safety Synopsis for EU MDR CER",
+    "description": "Provide a concise clinical safety synopsis for the EU MDR Clinical Evaluation Report.",
+    "tags": "",
+    "url": "prompts/clinical/safety/01_eu_cer_clinical_safety_synopsis.prompt.yaml"
+  },
+  {
+    "title": "Post-Market Safety Signal Trending",
+    "description": "Analyze post-market data to identify emerging safety signals.",
+    "tags": "",
+    "url": "prompts/clinical/safety/03_post_market_safety_signal_trending.prompt.yaml"
+  },
+  {
+    "title": "Prompt Optimizer 1.0",
+    "description": "Iteratively refine an instruction set for a given task.",
+    "tags": "",
+    "url": "tools/prompt_tools/L5_prompt_optimizer.prompt.yaml"
+  }
+]
