@@ -340,7 +340,7 @@
 [Codebase Testing Plan](../prompts/technical/software_engineering/tasks/02_codebase_testing_plan.prompt.yaml)
 [Tooling, Linting & Quality Gates (OpenAI Codex)](../prompts/technical/software_engineering/tasks/03_tooling_and_quality.prompt.yaml)
 [Continuous Integration & Delivery (DevOps Architect)](../prompts/technical/software_engineering/tasks/04_ci_cd.prompt.yaml)
-[Documentation & Developer Onboarding (OpenAI Codex)](../prompts/technical/software_engineering/tasks/05_docs_and_onboarding.prompt.yaml)
+[DevEx Documentation Architect](../prompts/technical/software_engineering/tasks/05_docs_and_onboarding.prompt.yaml)
 [Refactoring Architect](../prompts/technical/software_engineering/tasks/06_refactoring_suggestions.prompt.yaml)
 [Architecture Flow Q&A (OpenAI Codex)](../prompts/technical/software_engineering/tasks/07_architecture_flow.prompt.yaml)
 [Security Vulnerability Hunt](../prompts/technical/software_engineering/tasks/08_security_vulnerability.prompt.yaml)
