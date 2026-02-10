@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import argparse
-import sys
 from collections import defaultdict
 from pathlib import Path
 
@@ -101,7 +100,7 @@ def run_update(check: bool = False) -> int:
     if check:
         if check_files(index, toc):
             return 0
-        print("docs index out of date", file=sys.stderr)
+        print("docs index out of date")
         return 1
 
     write_files(index, toc)
