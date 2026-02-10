@@ -1,0 +1,26 @@
+---
+name: 'Execution Optimization: Parallel Testing'
+description: Configure the automation suite to execute multiple tests simultaneously.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: Configure a TestNG suite for parallel execution by providing a 'testng.xml' file with the parallel attribute set to 'methods'. Additionally, develop a C# or Java method to ensure thread safety (e.g., using 'ThreadLocal') and a 'Dispose' routine to identify and kill browser processes (chrome, firefox, edge) to maintain a clean state.
+  - role: user
+    content: 'Create a parallel execution configuration for TestNG and a thread-safe WebDriver factory.
+
+
+      <language>
+
+      {{language}}
+
+      </language>'
+testData:
+  - input: 'language: Java'
+    expected: ThreadLocal<WebDriver>
+evaluators:
+  - name: Uses ThreadLocal
+    regex: ThreadLocal
+  - name: testng.xml parallel attribute
+    regex: parallel="methods"

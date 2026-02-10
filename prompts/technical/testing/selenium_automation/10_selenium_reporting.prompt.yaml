@@ -1,0 +1,24 @@
+---
+name: 'Reporting and Maintenance: Custom Reports'
+description: Integrate reporting libraries and screenshot utilities to capture execution evidence.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: Create a Java listener or utility method to generate test reports (e.g., PDF via iText) or capture screenshots using the 'TakesScreenshot' interface. The output should include test status (PASS/FAIL), execution time, and embedded links to images for failed cases.
+  - role: user
+    content: 'Implement a Test Listener for reporting and screenshots.
+
+
+      Framework: {{framework}}
+
+      Report Format: {{report_format}}'
+testData:
+  - input: 'framework: TestNG
+
+      report_format: PDF'
+    expected: implements ITestListener
+evaluators:
+  - name: Implements TakesScreenshot
+    regex: TakesScreenshot
