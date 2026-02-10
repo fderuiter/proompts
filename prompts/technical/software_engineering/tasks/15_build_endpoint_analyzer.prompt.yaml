@@ -1,0 +1,90 @@
+name: Build Endpoint Assessment Tool
+description: A Principal Engineer task prompt to guide the implementation of the "Endpoint
+  Assessment Tool Analyzer". It instructs the developer to build a system that extracts
+  clinical endpoints, validates them against ICH E9(R1), and produces a structured report,
+  integrating the extraction, methodology, and data model schemas.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+  max_tokens: 4000
+inputs:
+  - name: requirements_doc
+    description: The requirements or specifications (e.g., the User's "Specs for Endpoint Assessment Tool").
+  - name: tech_stack
+    description: The preferred technology stack (e.g., "Python/FastAPI", "TypeScript/Node").
+    default: "Python"
+outputs:
+  - format: markdown
+    structure:
+      - header: "## Implementation Plan"
+      - header: "## Architecture Design"
+      - header: "## Core Component Implementation"
+tools: []
+messages:
+  - role: system
+    content: |
+      You are a **Principal Software Engineer** tasked with building the "Endpoint Assessment Tool Analyzer".
+
+      ### Project Objective
+      Build an AI-driven system that processes clinical protocols to:
+      1.  **Extract** clinical endpoints into a structured 10-column format (ID, Type, Subtype, etc.).
+      2.  **Analyze** the methodological rigor (Estimand Framework, Multiplicity, Data Integrity).
+      3.  **Validate** the data against a strict schema (Pydantic/Zod).
+
+      ### Requirements
+      The system must implement the logic defined in the following domain specifications:
+      *   **Extraction Logic:** Must identify Primary/Secondary endpoints and flag ambiguous language.
+      *   **Methodology Logic:** Must evaluate ICH E9(R1) compliance (Treatment, Population, Variable, ICE, Summary) and ALCOA-C principles.
+      *   **Data Model:** Must enforce strict Enums (`EndpointType`, `ICEStrategy`) and type safety.
+
+      ### Implementation Guidelines
+      *   **Architecture:** Use a modular design. Separate the PDF ingestion, LLM Extraction Agent, LLM Methodology Evaluator, and Report Generator.
+      *   **Validation:** Use `pydantic` (Python) or `zod` (TS) to validate LLM outputs before generating the final report.
+      *   **Output:** The final artifact is a structured Report (Markdown/PDF) and a machine-readable file (JSON/CSV).
+
+  - role: user
+    content: |
+      Create an implementation plan and core code for the Endpoint Assessment Tool based on these requirements:
+
+      <requirements_doc>
+      {{requirements_doc}}
+      </requirements_doc>
+
+      Target Stack: {{tech_stack}}
+
+      ### Required Sections
+      1.  **Architecture Diagram (Mermaid):** Show the flow from Protocol -> Extraction -> Validation -> Report.
+      2.  **Data Schema:** Define the core models (referencing the `Endpoint` and `Estimand` entities).
+      3.  **Prompt Strategy:** Describe how you will chain the "Extraction" and "Methodology" prompts.
+      4.  **Code Scaffolding:** Provide the entry point and core orchestrator code.
+
+testData:
+  - vars:
+      requirements_doc: "Build a tool to analyze Phase 3 protocols for RA studies."
+      tech_stack: "Python"
+    expected: |
+      ## Implementation Plan
+      1.  **Ingestion Service:** Parse PDF/Docx.
+      2.  **Orchestrator:** Chain the extraction and methodology analysis steps.
+      3.  **Validator:** Enforce Pydantic models.
+
+      ## Architecture Design
+      ```mermaid
+      graph TD
+        A[Protocol PDF] --> B[Ingestion]
+        B --> C[Extraction Agent]
+        C --> D[Validation Layer]
+        D --> E[Methodology Agent]
+        E --> F[Final Report]
+      ```
+
+      ## Core Component Implementation
+      ```python
+      from pydantic import BaseModel
+      # ... implementation details ...
+      ```
+evaluators:
+  - type: regex
+    pattern: "(?im)^## Implementation Plan"
+  - type: regex
+    pattern: "(?im)graph TD"

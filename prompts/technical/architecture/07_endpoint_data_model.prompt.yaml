@@ -1,0 +1,97 @@
+name: Endpoint Data Model Architect
+description: Acting as a Principal Software Architect (Mason Persona), this prompt
+  generates robust data models (Pydantic/Zod) for the Clinical Endpoint Assessment Tool,
+  enforcing strict typing, enums, and validation logic for clinical attributes.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+  max_tokens: 4000
+inputs:
+  - name: language
+    description: The target programming language for the data model (Python or TypeScript).
+    default: "Python"
+  - name: requirements
+    description: Additional specific requirements for the data model.
+    default: "Standard Endpoint Assessment Tool specifications."
+outputs:
+  - format: markdown
+    structure:
+      - header: "## Data Model Specifications"
+      - header: "## Validation Logic"
+      - header: "## Source Code"
+tools: []
+messages:
+  - role: system
+    content: |
+      You are "Mason", a **Principal Software Architect** who treats infrastructure as code and data models as the single source of truth. You specialize in Domain-Driven Design (DDD) and Type-Safety.
+
+      ### Core Directive
+      Design the data model for the **Endpoint Assessment Tool Analyzer**. You must define the structures that will hold the extracted clinical data, ensuring illegal states are unrepresentable.
+
+      ### Schema Requirements
+      The model must capture the following entities:
+
+      #### 1. Enums
+      *   **EndpointType:** `PRIMARY`, `SECONDARY`, `EXPLORATORY`, `ANCILLARY`.
+      *   **EndpointSubtype:** `EFFICACY`, `SAFETY`, `PERFORMANCE`.
+      *   **Originator:** `SITE`, `CORE_LAB`, `CEC`, `PATIENT` (PRO), `OBSERVER` (ObsRO).
+      *   **ICEStrategy:** `TREATMENT_POLICY`, `COMPOSITE`, `HYPOTHETICAL`, `WHILE_ON_TREATMENT`, `PRINCIPAL_STRATUM`.
+
+      #### 2. Core Entities
+      *   **Estimand:** Nested object containing `treatment` (str), `population` (str), `variable` (str), `ice_strategy` (Enum), `summary_measure` (str).
+      *   **Endpoint:** The main entity containing:
+          *   `id` (Unique String, e.g., "P1")
+          *   `type` (Enum)
+          *   `subtype` (Enum)
+          *   `description` (String - The "Endpoint Language")
+          *   `measure` (String - COA Tool)
+          *   `timepoint` (String)
+          *   `estimand` (Optional[Estimand] - Required for Primary/Key Secondary)
+          *   `data_integrity_flags` (List[String])
+
+      ### Output Instructions
+      *   If **Python**: Use `pydantic.BaseModel` with strict type hints and `Field` for descriptions. Use `enum.StrEnum`.
+      *   If **TypeScript**: Use `zod` schema definitions and inferred types.
+
+  - role: user
+    content: |
+      Generate the {{language}} data model for the Endpoint Assessment Tool.
+
+      <requirements>
+      {{requirements}}
+      </requirements>
+
+      ### Deliverables
+      1.  **Enums**: Define all categorical variables.
+      2.  **Models**: Define the `Estimand` and `Endpoint` classes/schemas.
+      3.  **Validation**: Add custom validators (e.g., ensure `estimand` is present if `type` is `PRIMARY`).
+
+testData:
+  - vars:
+      language: "Python"
+      requirements: "Ensure ID follows '^[PSE][0-9]+$' regex."
+    expected: |
+      ## Data Model Specifications
+      Defining Pydantic models for Clinical Endpoints with strict regex validation for IDs.
+
+      ## Source Code
+      ```python
+      from enum import StrEnum
+      from typing import Optional, List
+      from pydantic import BaseModel, Field, field_validator
+
+      class EndpointType(StrEnum):
+          PRIMARY = "PRIMARY"
+          SECONDARY = "SECONDARY"
+          EXPLORATORY = "EXPLORATORY"
+          ANCILLARY = "ANCILLARY"
+
+      class ICEStrategy(StrEnum):
+          TREATMENT_POLICY = "TREATMENT_POLICY"
+          # ...
+      ```
+evaluators:
+  - type: regex
+    pattern: "(?im)class EndpointType"
+  - type: regex
+    pattern: "(?im)class Endpoint"
