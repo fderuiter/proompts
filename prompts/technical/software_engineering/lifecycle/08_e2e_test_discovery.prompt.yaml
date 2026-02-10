@@ -1,6 +1,6 @@
 # yamllint disable rule:line-length
 ---
-name: E2E Test Discovery Template
+name: E2E Test Discovery Lifecycle Template
 description: Provide a system prompt template that guides an LLM to analyse a codebase and generate a comprehensive end-to-end test plan.
 model: gpt-4
 modelParameters:

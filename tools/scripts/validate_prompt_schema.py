@@ -34,6 +34,7 @@ class PromptSchema(BaseModel):
     messages: List[Message]
     testData: List[Any]
     evaluators: List[Any]
+    last_modified: Optional[str] = None
 
     @field_validator("messages")
     @classmethod
@@ -43,8 +44,10 @@ class PromptSchema(BaseModel):
         return v
 
 
-def validate_file(file_path: Path, strict: bool = False) -> bool:
-    """Validate a single prompt file and report missing keys."""
+def validate_file(file_path: Path, strict: bool = False) -> Optional[dict]:
+    """Validate a single prompt file and report missing keys.
+       Returns content dict if valid, None if invalid.
+    """
     content = load_yaml(file_path)
     # If parsing failed, load_yaml prints an error and returns {}.
     # We continue to check schema, which will fail if content is empty.
@@ -53,7 +56,7 @@ def validate_file(file_path: Path, strict: bool = False) -> bool:
         PromptSchema(**content)
     except ValidationError as e:
         print(f"Validation error in {file_path}:\n{e}")
-        return False
+        return None
 
     # In strict mode, warn about empty testData or evaluators (best practice)
     if strict:
@@ -69,7 +72,7 @@ def validate_file(file_path: Path, strict: bool = False) -> bool:
         if issues:
             print(f"Warning: {file_path} has {', '.join(issues)}")
 
-    return True
+    return content
 
 
 def main() -> int:
@@ -82,9 +85,22 @@ def main() -> int:
     args = parser.parse_args()
 
     ok = True
+    seen_names = {}  # name -> file_path
+
     for file_path in iter_prompt_files(ROOT):
-        if not validate_file(file_path, strict=args.strict):
+        content = validate_file(file_path, strict=args.strict)
+        if content is None:
             ok = False
+            continue
+
+        name = content.get('name')
+        if name:
+            if name in seen_names:
+                print(f"Error: Duplicate name '{name}' found in:\n  - {seen_names[name]}\n  - {file_path}")
+                ok = False
+            else:
+                seen_names[name] = file_path
+
     return 0 if ok else 1
 
 

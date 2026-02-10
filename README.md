@@ -10,6 +10,21 @@ A curated set of prompts in YAML for AI-assisted product development, regulatory
 
 - **`docs/`** – additional docs and a full [table of contents](docs/index.md)
 - **`tools/scripts/`** – [developer scripts and utilities](tools/scripts/README.md)
+- **[Usage Guide](docs/USAGE.md)** – how to use the prompts
+
+## Setup
+
+To run validation scripts and tools locally, you need Python 3 and the required dependencies.
+
+1.  Create a virtual environment (optional but recommended):
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+2.  Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ## Prompt Schema
 
@@ -57,6 +72,8 @@ generate missing `overview.md` files, verify file naming, validate prompts,
 and commit the docs index when it changes.
 
 ## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed instructions on how to contribute.
 
 1. Create prompts as `.prompt.yaml` files that follow [`docs/template_prompt.prompt.yaml`](docs/template_prompt.prompt.yaml) and place them in the appropriate folder.
 2. Review the [Best Practices Guide](docs/BEST_PRACTICES.md) for detailed guidance on creating high-quality prompts.

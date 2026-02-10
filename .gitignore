@@ -1,3 +1,27 @@
 # Python cache
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+
+# Environments
+venv/
+env/
+.env
+
+# IDEs
+.vscode/
+.idea/
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node
+node_modules/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/

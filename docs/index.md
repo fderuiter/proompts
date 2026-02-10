@@ -363,7 +363,7 @@
 - [Project Review Checklist](../prompts/technical/software_engineering/lifecycle/05_project_review.prompt.yaml)
 - [Project Memory Notes](../prompts/technical/software_engineering/lifecycle/06_project_memory.prompt.yaml)
 - [To-Do List Template](../prompts/technical/software_engineering/lifecycle/07_todo_generation.prompt.yaml)
-- [E2E Test Discovery Template](../prompts/technical/software_engineering/lifecycle/08_e2e_test_discovery.prompt.yaml)
+- [E2E Test Discovery Lifecycle Template](../prompts/technical/software_engineering/lifecycle/08_e2e_test_discovery.prompt.yaml)
 - [Folder and Module Organization](../prompts/technical/software_engineering/lifecycle/09_folder_module_organization.prompt.yaml)
 - [RequirementsBot Prompt](../prompts/technical/software_engineering/lifecycle/10_requirements_prompt.prompt.yaml)
 - [Reflexion Agent Bug Patch](../prompts/technical/software_engineering/lifecycle/11_reflexion_agent_bug_patch.prompt.yaml)
