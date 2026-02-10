@@ -1,4 +1,5 @@
 import unittest
+import tempfile
 from unittest.mock import patch
 from pathlib import Path
 import io
@@ -6,7 +7,7 @@ import sys
 
 # Add the current directory to sys.path to import utils
 sys.path.append(str(Path(__file__).parent))
-from utils import load_yaml
+from utils import load_yaml, iter_prompt_files
 
 class TestUtils(unittest.TestCase):
     @patch("utils.Path.read_text")
@@ -33,6 +34,38 @@ class TestUtils(unittest.TestCase):
         result = load_yaml(Path("invalid.yaml"))
         self.assertEqual(result, {})
         self.assertIn("Error reading invalid.yaml", mock_stdout.getvalue())
+
+    def test_iter_prompt_files(self):
+        """Test iter_prompt_files yields correct files."""
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+
+            # Create prompt files
+            (root / "prompt1.prompt.yaml").touch()
+            (root / "prompt2.prompt.yml").touch()
+
+            # Create subdirectory
+            subdir = root / "subdir"
+            subdir.mkdir()
+            (subdir / "prompt3.prompt.yaml").touch()
+
+            # Create non-prompt files
+            (root / "readme.md").touch()
+            (root / "image.png").touch()
+            (subdir / "notes.txt").touch()
+
+            # Get results
+            results = list(iter_prompt_files(root))
+
+            # Check results
+            expected_files = {
+                root / "prompt1.prompt.yaml",
+                root / "prompt2.prompt.yml",
+                subdir / "prompt3.prompt.yaml"
+            }
+
+            self.assertEqual(len(results), 3)
+            self.assertEqual(set(results), expected_files)
 
 if __name__ == "__main__":
     unittest.main()
