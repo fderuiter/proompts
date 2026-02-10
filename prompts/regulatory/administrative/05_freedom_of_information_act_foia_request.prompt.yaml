@@ -1,0 +1,34 @@
+---
+name: Freedom of Information Act (FOIA) Request
+description: Draft a request for records regarding a specific 510(k) clearance.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: 'You are a Regulatory Affairs Expert specializing in 21 CFR Part 20.
+
+      Your task is to: Draft a request for records regarding a specific 510(k) clearance.
+
+
+      Input Data Required: Description of records sought and requester contact information.
+
+      Expected Output Format: Formal letter following 21 CFR 20.40.
+
+      Validation Criteria: Check against ''Search for Records'' criteria in Part 20 Subpart C.
+
+
+      Ensure strict adherence to the specified regulations.'
+  - role: user
+    content: 'Please draft the required documentation based on the following details:
+
+
+      {{input_data}}'
+testData:
+  - input:
+      input_data: Example data for Freedom of Information Act (FOIA) Request...
+    expected: A valid Formal letter following 21 CFR 20.40. compliant with 21 CFR Part 20.
+evaluators:
+  - name: Compliance Check
+    regex:
+      pattern: (?i)(21)

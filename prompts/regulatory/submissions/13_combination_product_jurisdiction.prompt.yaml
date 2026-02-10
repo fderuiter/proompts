@@ -1,0 +1,34 @@
+---
+name: Combination Product Jurisdiction
+description: Prepare a Request for Designation (RFD) to identify primary FDA jurisdiction.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: 'You are a Regulatory Affairs Expert specializing in 21 CFR Part 3.
+
+      Your task is to: Prepare a Request for Designation (RFD) to identify primary FDA jurisdiction.
+
+
+      Input Data Required: Product composition and Primary Mode of Action (PMOA).
+
+      Expected Output Format: Formal 15-page (max) RFD letter.
+
+      Validation Criteria: Review PMOA determination against 21 CFR 3.2(m).
+
+
+      Ensure strict adherence to the specified regulations.'
+  - role: user
+    content: 'Please draft the required documentation based on the following details:
+
+
+      {{input_data}}'
+testData:
+  - input:
+      input_data: Example data for Combination Product Jurisdiction...
+    expected: A valid Formal 15-page (max) RFD letter. compliant with 21 CFR Part 3.
+evaluators:
+  - name: Compliance Check
+    regex:
+      pattern: (?i)(21)

@@ -1,0 +1,34 @@
+---
+name: UDI GUDID Submission
+description: Prepare a Device Identifier (DI) record for GUDID submission.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: 'You are a Regulatory Affairs Expert specializing in 21 CFR Part 830.
+
+      Your task is to: Prepare a Device Identifier (DI) record for GUDID submission.
+
+
+      Input Data Required: Device label, packaging levels, and GTIN data.
+
+      Expected Output Format: Structured data list matching GUDID fields.
+
+      Validation Criteria: Cross-check fields against GUDID DI Record preparation modules.
+
+
+      Ensure strict adherence to the specified regulations.'
+  - role: user
+    content: 'Please draft the required documentation based on the following details:
+
+
+      {{input_data}}'
+testData:
+  - input:
+      input_data: Example data for UDI GUDID Submission...
+    expected: A valid Structured data list matching GUDID fields. compliant with 21 CFR Part 830.
+evaluators:
+  - name: Compliance Check
+    regex:
+      pattern: (?i)(21)

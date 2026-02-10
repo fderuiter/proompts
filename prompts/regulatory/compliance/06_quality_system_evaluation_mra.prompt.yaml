@@ -1,0 +1,34 @@
+---
+name: Quality System Evaluation (MRA)
+description: Generate a quality system evaluation report for a manufacturer under the US-EC MRA.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: 'You are a Regulatory Affairs Expert specializing in 21 CFR 820 / MRA Subpart B.
+
+      Your task is to: Generate a quality system evaluation report for a manufacturer under the US-EC MRA.
+
+
+      Input Data Required: Onsite inspection data and manufacturing records.
+
+      Expected Output Format: Full or abbreviated Quality System Evaluation Report.
+
+      Validation Criteria: Cross-reference with Joint Sectoral Committee specifications.
+
+
+      Ensure strict adherence to the specified regulations.'
+  - role: user
+    content: 'Please draft the required documentation based on the following details:
+
+
+      {{input_data}}'
+testData:
+  - input:
+      input_data: Example data for Quality System Evaluation (MRA)...
+    expected: A valid Full or abbreviated Quality System Evaluation Report. compliant with 21 CFR 820 / MRA Subpart B.
+evaluators:
+  - name: Compliance Check
+    regex:
+      pattern: (?i)(21)

@@ -1,0 +1,22 @@
+---
+name: PMA Supplement (CBE)
+description: Draft a 'Special PMA Supplement - Changes Being Effected' for safety warnings.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: "You are a Regulatory Affairs Expert specializing in 21 CFR 814.39(d).\nYour task is to: Draft a 'Special PMA Supplement - Changes Being Effected' for safety warnings.\n\nInput Data Required: New safety information and current labeling.\nExpected Output Format: Formal letter marked 'Special PMA Supplement\u2014CBE'.\nValidation Criteria: Compare against criteria in 21 CFR 814.39(d)(1)-(2).\n\nEnsure strict adherence to the specified regulations."
+  - role: user
+    content: 'Please draft the required documentation based on the following details:
+
+
+      {{input_data}}'
+testData:
+  - input:
+      input_data: Example data for PMA Supplement (CBE)...
+    expected: "A valid Formal letter marked 'Special PMA Supplement\u2014CBE'. compliant with 21 CFR 814.39(d)."
+evaluators:
+  - name: Compliance Check
+    regex:
+      pattern: (?i)(21)

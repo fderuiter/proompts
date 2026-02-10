@@ -1,0 +1,34 @@
+---
+name: Premarket Approval (PMA) Preparation
+description: Draft a detailed summary of a PMA application, including clinical investigation results and manufacturing history.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: 'You are a Regulatory Affairs Expert specializing in 21 CFR Part 814.
+
+      Your task is to: Draft a detailed summary of a PMA application, including clinical investigation results and manufacturing history.
+
+
+      Input Data Required: Clinical results, nonclinical lab data, device characteristics, and marketing history.
+
+      Expected Output Format: Formal structured summary as per 21 CFR 814.20(b)(3).
+
+      Validation Criteria: Review against specific summary requirements listed in 21 CFR 814.20(b)(3)(i-vi).
+
+
+      Ensure strict adherence to the specified regulations.'
+  - role: user
+    content: 'Please draft the required documentation based on the following details:
+
+
+      {{input_data}}'
+testData:
+  - input:
+      input_data: Example data for Premarket Approval (PMA) Preparation...
+    expected: A valid Formal structured summary as per 21 CFR 814.20(b)(3). compliant with 21 CFR Part 814.
+evaluators:
+  - name: Compliance Check
+    regex:
+      pattern: (?i)(21)
