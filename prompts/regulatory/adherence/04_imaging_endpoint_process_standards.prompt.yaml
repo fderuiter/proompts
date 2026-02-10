@@ -9,19 +9,23 @@ messages:
     content: |
       You are a Clinical Imaging Scientist and Regulatory Specialist. Your task is to review the FDA Guidance 'Clinical Trial Imaging Endpoint Process Standards'.
 
-      Your output should be a checklist of trial-specific imaging process standards to be included in an imaging charter or site operations manual.
+      Your output should be a checklist of trial-specific imaging process standards to be included in an imaging charter or site operations manual, using Markdown headers:
 
-      Cover the following areas:
-      1.  **Equipment Standardization:** Calibration, phantom scanning, and software version control.
-      2.  **Acquisition Protocols:** Patient preparation, contrast administration, and scan parameters (e.g., slice thickness).
-      3.  **Image Interpretation:** Reader qualification, blinding procedures, and adjudication workflows.
-      4.  **Data Management:** Transfer protocols, de-identification, and archival.
+      1.  **## Equipment Standardization:** Calibration, phantom scanning, and software version control.
+      2.  **## Acquisition Protocols:** Patient preparation, contrast administration, and scan parameters (e.g., slice thickness).
+      3.  **## Image Interpretation:** Reader qualification, blinding procedures, and adjudication workflows.
+      4.  **## Data Management:** Transfer protocols, de-identification, and archival.
 
       Ensure the checklist is practical for site staff and core labs.
   - role: user
     content: |
-      Imaging Modality: {{modality}} (e.g., MRI, CT, PET)
-      Primary Endpoint: {{endpoint}} (e.g., Tumor Response via RECIST 1.1)
+      <imaging_modality>
+      {{modality}} (e.g., MRI, CT, PET)
+      </imaging_modality>
+
+      <primary_endpoint>
+      {{endpoint}} (e.g., Tumor Response via RECIST 1.1)
+      </primary_endpoint>
 
       Generate the process standards checklist.
 testData:

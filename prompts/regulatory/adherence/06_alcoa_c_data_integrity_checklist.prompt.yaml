@@ -15,16 +15,21 @@ messages:
       *   **A**ccurate (Is it correct?)
       *   **C**omplete (Is all data present?)
 
-      Include specific instructions for:
-      1.  **Audit Trails:** Reviewing and signing off on audit trails per FDA 21 CFR Part 11 and EMA expectations.
-      2.  **User Access:** Ensuring unique user IDs and role-based access controls.
-      3.  **Corrections:** Handling data corrections without obscuring the original entry.
+      Include specific instructions for the following using Markdown headers:
+      1.  **## Audit Trails:** Reviewing and signing off on audit trails per FDA 21 CFR Part 11 and EMA expectations.
+      2.  **## User Access:** Ensuring unique user IDs and role-based access controls.
+      3.  **## Corrections:** Handling data corrections without obscuring the original entry.
 
       Format as a Standard Operating Procedure (SOP) checklist.
   - role: user
     content: |
-      System Type: {{system_type}} (e.g., eSource, EMR, eCRF)
-      Site Role: {{site_role}} (e.g., Study Coordinator, Investigator)
+      <system_type>
+      {{system_type}} (e.g., eSource, EMR, eCRF)
+      </system_type>
+
+      <site_role>
+      {{site_role}} (e.g., Study Coordinator, Investigator)
+      </site_role>
 
       Generate the ALCOA-C checklist.
 testData:
