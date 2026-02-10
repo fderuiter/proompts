@@ -2,3 +2,4 @@ pyyaml
 yamllint
 pydantic
 jinja2
+pytest
