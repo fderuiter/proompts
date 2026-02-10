@@ -6,8 +6,8 @@ import os
 from typing import Any, Dict, Optional
 
 import yaml
-from jinja2 import Environment
 from jinja2.nativetypes import NativeEnvironment
+from jinja2.sandbox import SandboxedEnvironment
 
 # Configure logger
 logger = logging.getLogger(__name__)
@@ -35,6 +35,10 @@ def load_yaml(file_path: str) -> Optional[Dict[str, Any]]:
     with open(file_path, 'r') as f:
         return yaml.safe_load(f)
 
+class SandboxedNativeEnvironment(NativeEnvironment, SandboxedEnvironment):
+    """A NativeEnvironment that is also sandboxed."""
+    pass
+
 def resolve_value(template_string: str, workflow_state: Dict[str, Any]) -> Any:
     """
     Resolves a template string like '{{steps.step_id.output}}' from the workflow state.
@@ -47,7 +51,8 @@ def resolve_value(template_string: str, workflow_state: Dict[str, Any]) -> Any:
         The resolved value if the template matches, otherwise the original string.
     """
     # Use NativeEnvironment to evaluate the expression and return python objects if possible
-    env = NativeEnvironment()
+    # We use a SandboxedNativeEnvironment to prevent arbitrary code execution
+    env = SandboxedNativeEnvironment()
     try:
         # Check if it looks like a template
         if isinstance(template_string, str) and "{{" in template_string:
@@ -72,7 +77,8 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
     logger.info("---")
     logger.info(f"Executing prompt: {prompt_data.get('name', 'Untitled Prompt')}")
 
-    env = Environment()
+    # Use SandboxedEnvironment to prevent arbitrary code execution
+    env = SandboxedEnvironment()
 
     # Substitute variables in messages
     for message in prompt_data.get('messages', []):
