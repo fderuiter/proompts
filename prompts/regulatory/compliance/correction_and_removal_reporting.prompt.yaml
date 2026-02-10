@@ -1,0 +1,33 @@
+---
+name: Correction and Removal Reporting
+description: Draft a written report to FDA for a device correction or removal
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to draft a written report to fda for a device correction or removal
+
+      Target Regulatory Context: 21 CFR Part 806
+
+      You must strictly follow the output format: Formal report following 21 CFR 806.10(c)(1).
+
+      Validation Method: Cross-check fields against 21 CFR 806.10 mandatory info list.
+  - role: user
+    content: |-
+      Please correction and removal reporting using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for Correction and Removal Reporting: UDI, event description,
+        and consignee list.'
+    expected: 'A Formal report following 21 CFR 806.10(c)(1). that passes validation:
+      Cross-check fields against 21 CFR 806.10 mandatory info list.'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Cross)

@@ -1,0 +1,34 @@
+---
+name: NGS Tumor Profiling Documentation
+description: Develop documentation supporting the clinical significance of mutations
+  in an NGS-based tumor profiling panel
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to develop documentation supporting the clinical significance of mutations in an ngs-based tumor profiling panel
+
+      Target Regulatory Context: 21 CFR 866.6080
+
+      You must strictly follow the output format: Tabulated summary of mutations categorized by evidence levels.
+
+      Validation Method: Confirm categorization aligns with criteria in 21 CFR 866.6080(b)(1)(v).
+  - role: user
+    content: |-
+      Please ngs tumor profiling documentation using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for NGS Tumor Profiling Documentation: Somatic mutations,
+        professional guidelines, and method comparison data.'
+    expected: 'A Tabulated summary of mutations categorized by evidence levels. that
+      passes validation: Confirm categorization aligns with criteria in 21 CFR 866.6080(b)(1)(v).'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Confirm)

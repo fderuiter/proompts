@@ -1,0 +1,35 @@
+---
+name: Establishment of Food Traceability Plan
+description: Create a structured traceability plan for a facility handling foods on
+  the Food Traceability List
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to create a structured traceability plan for a facility handling foods on the food traceability list
+
+      Target Regulatory Context: 21 CFR Part 1 Subpart S
+
+      You must strictly follow the output format: Structured text document with sections for procedures and identification.
+
+      Validation Method: Ensure all requirements of 21 CFR 1.1315(a) (1-5) are addressed.
+  - role: user
+    content: |-
+      Please establishment of food traceability plan using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for Establishment of Food Traceability Plan: List
+        of foods handled, record maintenance procedures, and contact information.'
+    expected: 'A Structured text document with sections for procedures and identification.
+      that passes validation: Ensure all requirements of 21 CFR 1.1315(a) (1-5) are
+      addressed.'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Ensure)

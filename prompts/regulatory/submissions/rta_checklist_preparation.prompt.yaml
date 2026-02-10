@@ -1,0 +1,34 @@
+---
+name: RTA Checklist Preparation
+description: Annotate the RTA checklist with page numbers and sections where requirements
+  are addressed in a 510(k)
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to annotate the rta checklist with page numbers and sections where requirements are addressed in a 510(k)
+
+      Target Regulatory Context: FDA RTA Policy
+
+      You must strictly follow the output format: Annotated checklist with a comment column.
+
+      Validation Method: Verify cited page numbers correspond to final submission PDF.
+  - role: user
+    content: |-
+      Please rta checklist preparation using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for RTA Checklist Preparation: Draft 510(k) submission
+        and appropriate FDA RTA checklist.'
+    expected: 'A Annotated checklist with a comment column. that passes validation:
+      Verify cited page numbers correspond to final submission PDF.'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Verify)

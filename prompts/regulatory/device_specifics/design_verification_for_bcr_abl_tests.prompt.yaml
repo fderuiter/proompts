@@ -1,0 +1,34 @@
+---
+name: Design Verification for BCR-ABL Tests
+description: Outline design verification and validation requirements for a BCR-ABL
+  quantitation test
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to outline design verification and validation requirements for a bcr-abl quantitation test
+
+      Target Regulatory Context: 21 CFR 866.6060
+
+      You must strictly follow the output format: Validation checklist or matrix.
+
+      Validation Method: Review against submission requirements in 21 CFR 866.6060(b)(1).
+  - role: user
+    content: |-
+      Please design verification for bcr-abl tests using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for Design Verification for BCR-ABL Tests: Variant
+        types, IS conversion methodology, and calibration control data.'
+    expected: 'A Validation checklist or matrix. that passes validation: Review against
+      submission requirements in 21 CFR 866.6060(b)(1).'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Review)

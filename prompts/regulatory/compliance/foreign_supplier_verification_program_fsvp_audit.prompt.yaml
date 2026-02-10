@@ -1,0 +1,34 @@
+---
+name: Foreign Supplier Verification Program (FSVP) Audit
+description: Draft a summary report of an onsite audit for a foreign food supplier
+  including conclusions and corrective actions
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to draft a summary report of an onsite audit for a foreign food supplier including conclusions and corrective actions
+
+      Target Regulatory Context: 21 CFR Part 1 Subpart L
+
+      You must strictly follow the output format: Formal audit report in Markdown format.
+
+      Validation Method: Cross-reference against 21 CFR 1.506(e)(1)(i)(D) requirements for audit documentation.
+  - role: user
+    content: |-
+      Please foreign supplier verification program (fsvp) audit using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for Foreign Supplier Verification Program (FSVP) Audit:
+        Audit procedures, dates, findings on processes, and records of deficiencies.'
+    expected: 'A Formal audit report in Markdown format. that passes validation: Cross-reference
+      against 21 CFR 1.506(e)(1)(i)(D) requirements for audit documentation.'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Cross)

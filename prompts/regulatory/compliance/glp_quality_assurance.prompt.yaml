@@ -1,0 +1,34 @@
+---
+name: GLP Quality Assurance
+description: Prepare a statement for a nonclinical study report certifying inspection
+  dates
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to prepare a statement for a nonclinical study report certifying inspection dates
+
+      Target Regulatory Context: 21 CFR Part 58.35
+
+      You must strictly follow the output format: Signed QA Statement.
+
+      Validation Method: Verify inclusion of dates as required by 21 CFR 58.35(b)(7).
+  - role: user
+    content: |-
+      Please glp quality assurance using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for GLP Quality Assurance: Master schedule, protocol,
+        and inspection records.'
+    expected: 'A Signed QA Statement. that passes validation: Verify inclusion of
+      dates as required by 21 CFR 58.35(b)(7).'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Verify)

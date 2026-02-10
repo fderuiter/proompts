@@ -1,0 +1,33 @@
+---
+name: Medicare Coverage Request (IDE)
+description: Prepare a request packet for CMS reimbursement of an IDE study
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to prepare a request packet for cms reimbursement of an ide study
+
+      Target Regulatory Context: CMS Guidelines
+
+      You must strictly follow the output format: CMS request letter and crosswalk table.
+
+      Validation Method: Verify against the 10 regulatory Medicare coverage criteria.
+  - role: user
+    content: |-
+      Please medicare coverage request (ide) using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for Medicare Coverage Request (IDE): FDA IDE approval
+        letter and NCT number.'
+    expected: 'A CMS request letter and crosswalk table. that passes validation: Verify
+      against the 10 regulatory Medicare coverage criteria.'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Verify|Medicare)

@@ -1,0 +1,34 @@
+---
+name: PMA Post-approval Reporting
+description: Compile a summary of post-approval requirements, including clinical study
+  data, manufacturing changes, and scientific literature
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to compile a summary of post-approval requirements, including clinical study data, manufacturing changes, and scientific literature
+
+      Target Regulatory Context: 21 CFR Part 814.82 / 814.84
+
+      You must strictly follow the output format: Formal report to the Office of Device Evaluation.
+
+      Validation Method: Verify compliance with 21 CFR 814.82 and 814.84 submission requirements.
+  - role: user
+    content: |-
+      Please pma post-approval reporting using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for PMA Post-approval Reporting: PMA approval order,
+        study data, change logs, and bibliography of recent literature.'
+    expected: 'A Formal report to the Office of Device Evaluation. that passes validation:
+      Verify compliance with 21 CFR 814.82 and 814.84 submission requirements.'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Verify)

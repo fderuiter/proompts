@@ -1,0 +1,34 @@
+---
+name: Import Entry Data Element Compilation
+description: Compile required identifying information (510(k), UFI, NDC, NDA) for
+  electronic import entry of drugs or devices
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to compile required identifying information (510(k), ufi, ndc, nda) for electronic import entry of drugs or devices
+
+      Target Regulatory Context: 21 CFR Part 1 Subpart D
+
+      You must strictly follow the output format: JSON object or alphanumeric string.
+
+      Validation Method: Check compliance with 21 CFR 1.74(a) and 1.76(c) for ACE system mapping.
+  - role: user
+    content: |-
+      Please import entry data element compilation using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for Import Entry Data Element Compilation: Clearance
+        documentation, registration numbers, and listing information.'
+    expected: 'A JSON object or alphanumeric string. that passes validation: Check
+      compliance with 21 CFR 1.74(a) and 1.76(c) for ACE system mapping.'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Check)

@@ -1,0 +1,34 @@
+---
+name: Food Safety Audit Reporting (Regulatory)
+description: Draft a regulatory audit report for an eligible entity after a food safety
+  audit
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to draft a regulatory audit report for an eligible entity after a food safety audit
+
+      Target Regulatory Context: 21 CFR Part 1 Subpart M
+
+      You must strictly follow the output format: Structured Markdown table or list.
+
+      Validation Method: Verify that all 9 specific data elements listed in 21 CFR 1.652(b) are present.
+  - role: user
+    content: |-
+      Please food safety audit reporting (regulatory) using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for Food Safety Audit Reporting (Regulatory): Facility
+        identity (FEI), audit dates, scope, and identified deficiencies.'
+    expected: 'A Structured Markdown table or list. that passes validation: Verify
+      that all 9 specific data elements listed in 21 CFR 1.652(b) are present.'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Verify)

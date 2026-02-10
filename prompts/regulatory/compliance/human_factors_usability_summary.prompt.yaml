@@ -1,0 +1,34 @@
+---
+name: Human Factors/Usability Summary
+description: Summarize usability testing results to demonstrate minimized use-related
+  risks
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to summarize usability testing results to demonstrate minimized use-related risks
+
+      Target Regulatory Context: FDA HF Guidance
+
+      You must strictly follow the output format: Markdown table or narrative summary.
+
+      Validation Method: Review against 'Applying Human Factors' guidance and IEC 62366.
+  - role: user
+    content: |-
+      Please human factors/usability summary using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for Human Factors/Usability Summary: Usability test
+        protocols and summative data.'
+    expected: 'A Markdown table or narrative summary. that passes validation: Review
+      against ''Applying Human Factors'' guidance and IEC 62366.'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Review|Applying|Human)

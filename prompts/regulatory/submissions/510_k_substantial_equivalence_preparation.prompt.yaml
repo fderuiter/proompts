@@ -1,0 +1,36 @@
+---
+name: 510(k) Substantial Equivalence Preparation
+description: Draft a substantial equivalence comparison and summary between a subject
+  device and predicate(s) to demonstrate safety and effectiveness
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to draft a substantial equivalence comparison and summary between a subject device and predicate(s) to demonstrate safety and effectiveness
+
+      Target Regulatory Context: 21 CFR Part 807 Subpart E
+
+      You must strictly follow the output format: Formal 510(k) Summary or Markdown table as per 21 CFR 807.92.
+
+      Validation Method: Review against 21 CFR 807.87, 807.92, and FDA guidance on evaluating substantial equivalence.
+  - role: user
+    content: |-
+      Please 510(k) substantial equivalence preparation using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for 510(k) Substantial Equivalence Preparation: Device
+        description, indications for use, technological characteristics, performance
+        data, and predicate device identification.'
+    expected: 'A Formal 510(k) Summary or Markdown table as per 21 CFR 807.92. that
+      passes validation: Review against 21 CFR 807.87, 807.92, and FDA guidance on
+      evaluating substantial equivalence.'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Review)

@@ -1,0 +1,35 @@
+---
+name: Quality System Audit
+description: Generate an internal audit checklist or report focusing on design controls,
+  production processes, and risk-based decision making
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to generate an internal audit checklist or report focusing on design controls, production processes, and risk-based decision making
+
+      Target Regulatory Context: 21 CFR Part 820
+
+      You must strictly follow the output format: Formal audit report or Markdown checklist with regulatory citations.
+
+      Validation Method: Verify against requirements in 21 CFR 820 (Subparts B-O) and relevant transition modules (QMSR).
+  - role: user
+    content: |-
+      Please quality system audit using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for Quality System Audit: Quality Manual, Design History
+        File (DHF) excerpts, SOPs, and previous audit reports.'
+    expected: 'A Formal audit report or Markdown checklist with regulatory citations.
+      that passes validation: Verify against requirements in 21 CFR 820 (Subparts
+      B-O) and relevant transition modules (QMSR).'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Verify|Subparts)

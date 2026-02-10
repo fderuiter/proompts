@@ -1,0 +1,35 @@
+---
+name: Clinical Chemistry Device Classification
+description: Identify classification and regulatory requirements (general/special
+  controls) for a clinical chemistry device
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to identify classification and regulatory requirements (general/special controls) for a clinical chemistry device
+
+      Target Regulatory Context: 21 CFR Part 862
+
+      You must strictly follow the output format: Structured summary identifying FDA Class and regulatory section.
+
+      Validation Method: Verify classification against 21 CFR Part 862 Subparts A-D.
+  - role: user
+    content: |-
+      Please clinical chemistry device classification using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for Clinical Chemistry Device Classification: Device
+        name and intended use.'
+    expected: 'A Structured summary identifying FDA Class and regulatory section.
+      that passes validation: Verify classification against 21 CFR Part 862 Subparts
+      A-D.'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Verify|Part|Subparts)

@@ -1,0 +1,34 @@
+---
+name: Directed Food Laboratory Order Verification
+description: Review a Directed Food Laboratory Order to identify mandatory testing
+  parameters
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to review a directed food laboratory order to identify mandatory testing parameters
+
+      Target Regulatory Context: 21 CFR Part 1 Subpart R
+
+      You must strictly follow the output format: Key-value list of product, environment, methods, and timeframes.
+
+      Validation Method: Compare parameters with specifications in 21 CFR 1.1108(b).
+  - role: user
+    content: |-
+      Please directed food laboratory order verification using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for Directed Food Laboratory Order Verification: FDA
+        issued Directed Food Laboratory Order.'
+    expected: 'A Key-value list of product, environment, methods, and timeframes.
+      that passes validation: Compare parameters with specifications in 21 CFR 1.1108(b).'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Compare)

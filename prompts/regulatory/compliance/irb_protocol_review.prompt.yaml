@@ -1,0 +1,34 @@
+---
+name: IRB Protocol Review
+description: Evaluate a clinical investigation protocol to ensure it meets IRB approval
+  criteria
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to evaluate a clinical investigation protocol to ensure it meets irb approval criteria
+
+      Target Regulatory Context: 21 CFR Part 56
+
+      You must strictly follow the output format: Checklist of compliance items.
+
+      Validation Method: Verify against approval criteria in 21 CFR 56.111.
+  - role: user
+    content: |-
+      Please irb protocol review using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for IRB Protocol Review: Clinical protocol and informed
+        consent forms.'
+    expected: 'A Checklist of compliance items. that passes validation: Verify against
+      approval criteria in 21 CFR 56.111.'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Verify)

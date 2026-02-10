@@ -1,0 +1,34 @@
+---
+name: Medical Device Reporting (MDR)
+description: Summarize an adverse event for mandatory electronic submission or develop
+  an MDR SOP
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to summarize an adverse event for mandatory electronic submission or develop an mdr sop
+
+      Target Regulatory Context: 21 CFR Part 803
+
+      You must strictly follow the output format: Structured summary (eMDR) or numbered SOP document.
+
+      Validation Method: Review against reporting requirements in 21 CFR Part 803 and 803.17.
+  - role: user
+    content: |-
+      Please medical device reporting (mdr) using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for Medical Device Reporting (MDR): Incident reports,
+        outcome data, and device identification.'
+    expected: 'A Structured summary (eMDR) or numbered SOP document. that passes validation:
+      Review against reporting requirements in 21 CFR Part 803 and 803.17.'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Review|Part)

@@ -1,0 +1,33 @@
+---
+name: Civil Money Penalties Hearing Response
+description: Draft a formal 'Answer' to an FDA complaint seeking civil money penalties
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to draft a formal 'answer' to an fda complaint seeking civil money penalties
+
+      Target Regulatory Context: 21 CFR Part 17
+
+      You must strictly follow the output format: Formal legal pleading.
+
+      Validation Method: Review against required contents for an Answer specified in 21 CFR 17.9.
+  - role: user
+    content: |-
+      Please civil money penalties hearing response using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for Civil Money Penalties Hearing Response: FDA Complaint,
+        alleged violations, and mitigating factors.'
+    expected: 'A Formal legal pleading. that passes validation: Review against required
+      contents for an Answer specified in 21 CFR 17.9.'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Review|Answer)

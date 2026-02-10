@@ -1,0 +1,34 @@
+---
+name: Automated Image Assessment System 510(k)
+description: Draft a detailed device description for an automated image assessment
+  system for microbial colonies
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to draft a detailed device description for an automated image assessment system for microbial colonies
+
+      Target Regulatory Context: 21 CFR 866.2190
+
+      You must strictly follow the output format: Formal technical document.
+
+      Validation Method: Verify content against requirements in 21 CFR 866.2190(b)(1)-(5).
+  - role: user
+    content: |-
+      Please automated image assessment system 510(k) using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for Automated Image Assessment System 510(k): Technology
+        details, software modules, and expert rules for colony assessment.'
+    expected: 'A Formal technical document. that passes validation: Verify content
+      against requirements in 21 CFR 866.2190(b)(1)-(5).'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Verify)

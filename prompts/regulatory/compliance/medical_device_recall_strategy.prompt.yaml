@@ -1,0 +1,33 @@
+---
+name: Medical Device Recall Strategy
+description: Develop a mandatory recall strategy for a device posing health risks
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to develop a mandatory recall strategy for a device posing health risks
+
+      Target Regulatory Context: 21 CFR Part 810 / Part 7
+
+      You must strictly follow the output format: Structured strategy document.
+
+      Validation Method: Review against 21 CFR 810.14 and 7.42.
+  - role: user
+    content: |-
+      Please medical device recall strategy using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for Medical Device Recall Strategy: Health hazard
+        evaluation and distribution lists.'
+    expected: 'A Structured strategy document. that passes validation: Review against
+      21 CFR 810.14 and 7.42.'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Review)

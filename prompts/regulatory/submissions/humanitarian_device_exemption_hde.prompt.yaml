@@ -1,0 +1,33 @@
+---
+name: Humanitarian Device Exemption (HDE)
+description: Explain why the health benefit of a HUD outweighs the risk of injury
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to explain why the health benefit of a hud outweighs the risk of injury
+
+      Target Regulatory Context: 21 CFR Part 814 Subpart H
+
+      You must strictly follow the output format: Formal narrative explanation.
+
+      Validation Method: Check against HDE contents specified in 21 CFR 814.104(b)(3).
+  - role: user
+    content: |-
+      Please humanitarian device exemption (hde) using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for Humanitarian Device Exemption (HDE): HUD designation
+        and risk-benefit analysis of alternatives.'
+    expected: 'A Formal narrative explanation. that passes validation: Check against
+      HDE contents specified in 21 CFR 814.104(b)(3).'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Check)

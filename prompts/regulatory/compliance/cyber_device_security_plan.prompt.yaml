@@ -1,0 +1,34 @@
+---
+name: Cyber Device Security Plan
+description: Draft a postmarket cybersecurity plan and Software Bill of Materials
+  (SBOM)
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to draft a postmarket cybersecurity plan and software bill of materials (sbom)
+
+      Target Regulatory Context: FD&C Act 524B
+
+      You must strictly follow the output format: Technical documentation for eSTAR.
+
+      Validation Method: Check against FDA Cybersecurity guidance.
+  - role: user
+    content: |-
+      Please cyber device security plan using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for Cyber Device Security Plan: Software architecture
+        and list of components.'
+    expected: 'A Technical documentation for eSTAR. that passes validation: Check
+      against FDA Cybersecurity guidance.'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Check|Cybersecurity)

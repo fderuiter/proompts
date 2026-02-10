@@ -1,0 +1,35 @@
+---
+name: IDE Application Preparation
+description: Draft an Investigational Device Exemption (IDE) application, including
+  risk analysis and investigational plans for clinical studies
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to draft an investigational device exemption (ide) application, including risk analysis and investigational plans for clinical studies
+
+      Target Regulatory Context: 21 CFR Part 812
+
+      You must strictly follow the output format: Formal IDE application package following the sequence in 21 CFR 812.25.
+
+      Validation Method: Verify inclusion of all elements required by 21 CFR 812.20 and 812.25.
+  - role: user
+    content: |-
+      Please ide application preparation using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for IDE Application Preparation: Investigational plan,
+        report of prior investigations, investigator agreements, and device labeling.'
+    expected: 'A Formal IDE application package following the sequence in 21 CFR 812.25.
+      that passes validation: Verify inclusion of all elements required by 21 CFR
+      812.20 and 812.25.'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Verify)

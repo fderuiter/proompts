@@ -1,0 +1,34 @@
+---
+name: Citizen Petition Preparation
+description: Draft a Citizen Petition requesting administrative action by the Commissioner
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to draft a citizen petition requesting administrative action by the commissioner
+
+      Target Regulatory Context: 21 CFR Part 10.30
+
+      You must strictly follow the output format: Structured petition following 21 CFR 10.30(b)(3) format.
+
+      Validation Method: Verify all required sections (Grounds, Certification, etc.) are present.
+  - role: user
+    content: |-
+      Please citizen petition preparation using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for Citizen Petition Preparation: Factual/legal grounds,
+        action requested, and environmental impact assessment.'
+    expected: 'A Structured petition following 21 CFR 10.30(b)(3) format. that passes
+      validation: Verify all required sections (Grounds, Certification, etc.) are
+      present.'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Verify|Grounds|Certification)

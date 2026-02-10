@@ -1,0 +1,34 @@
+---
+name: 21 CFR Part 14 Auditing
+description: Audit advisory committee meeting minutes for compliance with record-keeping
+  elements
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to audit advisory committee meeting minutes for compliance with record-keeping elements
+
+      Target Regulatory Context: 21 CFR Part 14
+
+      You must strictly follow the output format: Markdown compliance checklist.
+
+      Validation Method: Verify presence of items listed in 21 CFR 14.60(b).
+  - role: user
+    content: |-
+      Please 21 cfr part 14 auditing using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for 21 CFR Part 14 Auditing: Minutes, attendee list,
+        and information considered.'
+    expected: 'A Markdown compliance checklist. that passes validation: Verify presence
+      of items listed in 21 CFR 14.60(b).'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Verify)

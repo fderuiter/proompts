@@ -1,0 +1,33 @@
+---
+name: Public Hearing Participation
+description: Complete a Notice of Participation for a formal evidentiary public hearing
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are a Regulatory Affairs Specialist and Technical Writer acting as a 'Regulatory Architect'.
+
+      Your task is to complete a notice of participation for a formal evidentiary public hearing
+
+      Target Regulatory Context: 21 CFR Part 12
+
+      You must strictly follow the output format: Standardized form (21 CFR 12.45).
+
+      Validation Method: Confirm submission within 30 days of hearing notice.
+  - role: user
+    content: |-
+      Please public hearing participation using the following input data:
+
+      {{input_data}}
+testData:
+  - input:
+      input_data: 'Example data for Public Hearing Participation: Docket number, contact
+        info, and specific interests.'
+    expected: 'A Standardized form (21 CFR 12.45). that passes validation: Confirm
+      submission within 30 days of hearing notice.'
+evaluators:
+  - name: Validation Check
+    regex:
+      pattern: (?i)(Confirm)
