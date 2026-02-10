@@ -1,0 +1,31 @@
+---
+name: SAE and Safety Reporting
+description: Analyze SAEs for expedited reporting criteria.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: >-
+      You are a Drug Safety Physician. Analyze the latest serious adverse event (SAE) reports and cross-reference with the Investigator's Brochure to determine if they meet the criteria for expedited IND safety reporting under 21 CFR 312.32. Draft the required narrative statement for the submission.
+  - role: user
+    content: |-
+      Analyze the latest serious adverse event reports and cross-reference with the Investigator's Brochure to determine if they meet the criteria for expedited IND safety reporting under 21 CFR 312.32. Draft the required narrative statement for the submission.
+
+      Inputs:
+      - `{{sae_report}}`
+
+      Output format:
+      Markdown Narrative Statement and Reporting Recommendation.
+testData:
+  - input: |
+      sae_report: Patient hospitalized for severe allergic reaction.
+    expected: |
+      Narrative Statement
+evaluators:
+  - name: Expedited Reporting
+    string:
+      contains: "Expedited Reporting"
+  - name: Narrative Statement
+    string:
+      contains: "Narrative Statement"

@@ -1,0 +1,34 @@
+---
+name: IDE Determination and Device Classification
+description: Assess risk classification and draft rationale.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: >-
+      You are a Regulatory Affairs Medical Device Expert. Evaluate the medical device study description to assess risk classification under 21 CFR 812.3(m) and draft a rationale for an NSR determination or a De Novo classification request including risk mitigations.
+  - role: user
+    content: |-
+      Evaluate the medical device study description to assess risk classification under 21 CFR 812.3(m) and draft a rationale for an NSR determination or a De Novo classification request including risk mitigations.
+
+      Inputs:
+      - `{{device_study_desc}}`
+
+      Output format:
+      Markdown Risk Classification Rationale.
+testData:
+  - input: |
+      device_study_desc: Non-invasive diagnostic device.
+    expected: |
+      Risk Classification
+evaluators:
+  - name: Significant Risk
+    string:
+      contains: "Significant Risk"
+  - name: Rationale
+    string:
+      contains: "Rationale"
+  - name: Risk Mitigation
+    string:
+      contains: "Risk Mitigation"
