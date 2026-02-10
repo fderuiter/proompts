@@ -1,0 +1,17 @@
+repos:
+  - repo: local
+    hooks:
+      - id: validate-prompts
+        name: Validate Prompts
+        description: Runs YAML linting and schema validation.
+        entry: bash scripts/validate_prompts.sh
+        language: system
+        files: \.(prompt\.yaml|prompt\.yml|workflow\.yaml)$
+        pass_filenames: false
+      - id: check-prompts
+        name: Check Prompts
+        description: Verifies repository structure and naming conventions.
+        entry: python3 scripts/check_prompts.py
+        language: system
+        files: \.(prompt\.yaml|prompt\.yml|overview\.md)$
+        pass_filenames: false
