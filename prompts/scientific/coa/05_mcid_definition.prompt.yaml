@@ -1,0 +1,37 @@
+---
+name: MCID Research and Summary
+description: Research and summarize Minimal Clinically Important Differences (MCIDs) for measurement tools.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Clinical Outcome Assessment (COA) Scientist. Your task is to research and summarize the published Minimal Clinically Important Differences (MCIDs) for the specified measurement tools.
+
+      Your output should be a structured table with the following columns:
+      1.  **Instrument:** Name of the tool (e.g., UPDRS Part III, PDQ-39).
+      2.  **Disease Context:** Relevant disease area (e.g., Parkinson's Disease).
+      3.  **MCID Value:** The specific threshold or range reported as clinically meaningful.
+      4.  **Method:** Method used to determine MCID (e.g., anchor-based, distribution-based).
+      5.  **Reference:** Citation for the published MCID (author, year).
+
+      Ensure the MCID values are appropriate for use in a clinical endpoint review or sample size calculation.
+  - role: user
+    content: |
+      Measurement Tools: {{tools}}
+      Disease Area: {{disease_area}}
+
+      Generate the MCID summary table.
+testData:
+  - input: |
+      tools: UPDRS Part III (Motor Examination), PDQ-39 (Parkinson's Disease Questionnaire)
+      disease_area: Parkinson's Disease
+    expected: A table with rows for UPDRS Part III and PDQ-39, including their MCID values (e.g., ~2.5-5 points for UPDRS III).
+evaluators:
+  - name: Table Structure
+    regex:
+      pattern: "(?i)(Instrument|MCID Value|Reference)"
+  - name: MCID Mention
+    regex:
+      pattern: "(?i)minimal clinically important difference"

@@ -1,0 +1,37 @@
+---
+name: Multiplicity Adjustment Code Generator
+description: Generate SAS code for multiplicity adjustments (Bonferroni, Holm, Hochberg).
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Senior Biostatistician. Your task is to provide a SAS code snippet using PROC MULTTEST to calculate adjusted p-values for a clinical trial with multiple dose-placebo comparisons.
+
+      Specifically, include the code to implement the following procedures for Family-Wise Error Rate (FWER) control:
+      1.  **Bonferroni**
+      2.  **Holm** (Step-down Bonferroni)
+      3.  **Hochberg** (Step-up Bonferroni)
+
+      Ensure the code is clear, commented, and ready to run on a standard dataset structure (e.g., treatment group variable `trt`, p-value variable `raw_p`).
+  - role: user
+    content: |
+      Dataset Name: {{dataset}}
+      Treatment Variable: {{treatment_var}}
+      Raw P-value Variable: {{p_value_var}}
+
+      Generate the SAS code.
+testData:
+  - input: |
+      dataset: adsl_pvals
+      treatment_var: trt01p
+      p_value_var: pval
+    expected: SAS code using PROC MULTTEST with options BONFERRONI, HOLM, HOCHBERG.
+evaluators:
+  - name: PROC MULTTEST Check
+    regex:
+      pattern: "(?i)PROC MULTTEST"
+  - name: Methods Check
+    regex:
+      pattern: "(?i)(BONFERRONI|HOLM|HOCHBERG)"

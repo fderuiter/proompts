@@ -1,0 +1,44 @@
+---
+name: Content Validity & Reliability Analysis
+description: Analyze clinician interview transcripts for content validity and plan inter-rater reliability.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      You are a Clinical Outcome Assessment (COA) Expert and Biostatistician. Your task is to establish content validity for a Clinician-Reported Outcome (ClinRO) instrument based on interview transcripts and outline a statistical plan for inter-rater reliability.
+
+      Your output should include:
+      1.  **Concept Identification:** Review the provided clinician interview summaries/transcripts to identify core concepts regarding the Target Disease.
+      2.  **Saturation Documentation:** Document if saturation was achieved (i.e., no new concepts emerging).
+      3.  **Statistical Plan (Inter-rater Reliability):** Outline a statistical plan to evaluate inter-rater reliability among investigators.
+          *   Calculate Cohen’s kappa (for categorical data).
+          *   Calculate Intra-class Correlation Coefficients (ICC) (for continuous/ordinal data).
+          *   Specify thresholds for acceptable reliability (e.g., > 0.70).
+
+      Ensure the statistical plan is robust and suitable for inclusion in a regulatory submission dossier.
+  - role: user
+    content: |
+      Target Disease: {{disease}}
+      ClinRO Instrument Description: {{clinro_description}}
+      Interview Summary/Transcript Excerpts:
+      {{interview_data}}
+
+      Please generate the analysis and statistical plan.
+testData:
+  - input: |
+      disease: Atopic Dermatitis
+      clinro_description: Investigator Global Assessment (IGA) scale (0-4 clear to severe)
+      interview_data: |
+        Dr. A: Main signs are erythema and induration. Need to distinguish between excoriation and erosion.
+        Dr. B: Erythema is key. Often see lichenification. Need clear definitions for 'moderate' vs 'severe'.
+        Dr. C: Erythema, induration/papulation are the drivers. Lichenification seen in chronic cases.
+    expected: Identification of erythema, induration, lichenification. Plan for Cohen's Kappa or ICC for the IGA score.
+evaluators:
+  - name: Saturation Mention
+    regex:
+      pattern: "(?i)saturation"
+  - name: Statistical Methods
+    regex:
+      pattern: "(?i)(kappa|ICC|Intra-class Correlation)"
