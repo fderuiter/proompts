@@ -108,6 +108,11 @@
 - [Rubber Duck Debugger](../prompts/communication/19_rubber_duck_debugger.prompt.yaml)
 - [Pitch-Deck Outliner](../prompts/communication/20_pitch_deck_outliner.prompt.yaml)
 
+## Languages
+
+- [Principal Rust Developer](../prompts/technical/languages/rust/01_principal_rust_developer.prompt.yaml)
+- [Rust Architectural Patterns](../prompts/technical/languages/rust/02_rust_architectural_patterns.prompt.yaml)
+
 ## Management
 
 - [Accelerate Patient Recruitment & Retention](../prompts/management/clinical_research_manager/01_accelerate_patient_recruitment_retention.prompt.yaml)

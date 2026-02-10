@@ -97,6 +97,8 @@
 [Empathy-Map Facilitator](../prompts/communication/18_empathy_map_facilitator.prompt.yaml)
 [Rubber Duck Debugger](../prompts/communication/19_rubber_duck_debugger.prompt.yaml)
 [Pitch-Deck Outliner](../prompts/communication/20_pitch_deck_outliner.prompt.yaml)
+[Principal Rust Developer](../prompts/technical/languages/rust/01_principal_rust_developer.prompt.yaml)
+[Rust Architectural Patterns](../prompts/technical/languages/rust/02_rust_architectural_patterns.prompt.yaml)
 [Accelerate Patient Recruitment & Retention](../prompts/management/clinical_research_manager/01_accelerate_patient_recruitment_retention.prompt.yaml)
 [Digest the Latest Regulatory Updates Affecting My Protocol](../prompts/management/clinical_research_manager/02_digest_regulatory_updates.prompt.yaml)
 [Portfolio KPI Dashboard Brief](../prompts/management/clinical_research_manager/03_portfolio_kpi_dashboard_brief.prompt.yaml)
