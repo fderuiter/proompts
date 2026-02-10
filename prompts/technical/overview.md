@@ -10,5 +10,6 @@ This directory contains prompts related to software development, architecture, a
 - **codex**: Prompts tailored for OpenAI Codex and ChatGPT to scaffold new projects with tooling, CI/CD, and documentation.
 - **design**: Prompts related to software design documentation and guidelines.
 - **documentation**: Prompts related to software documentation, including inline documentation, guides, and architectural visualization.
+- **languages**: Prompts for specific programming languages, including best practices and expert personas.
 - **technical_writing**: Prompts focused on drafting regulatory documents and SOPs for CRO operations.
 - **testing**: Prompts for planning and generating high-quality tests and QA strategies.
