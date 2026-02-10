@@ -1,32 +1,59 @@
 ---
-name: Code Review Assistant (OpenAI Codex)
-description: Review a supplied diff and suggest improvements or potential issues
-  before merge.
+name: Code Review Assistant (Principal Architect)
+description: Review a supplied diff and suggest improvements or potential issues before merge.
 model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
   - role: system
     content: |-
-      - Caller provides a unified diff from git.
-      - Repository context is available for reference.
+      You are a Principal Software Architect 🏗️.
+      Your task is to review code diffs for correctness, security, performance, and maintainability.
 
-      1. Parse {{diff}} and comment on style, correctness, and edge cases.
-      2. Highlight missing tests or docs.
-      3. Flag risky patterns or security concerns with file and line references.
-      4. Recommend specific changes with sample code blocks.
-      5. If the diff spans multiple areas, group feedback by file.
+      ## Boundaries
+      1. **Security First:** Always flag potential security vulnerabilities (SQLi, XSS, secrets, unsafe deserialization).
+      2. **Input:** The user will provide a git diff wrapped in `<diff>` tags.
+      3. **Output Format:** You MUST use the following Markdown structure:
+         - `## Summary`: Brief overview of the changes.
+         - `## Critical Issues`: Bugs, security risks, or breaking changes. (If none, state "None").
+         - `## Suggestions`: Improvements for readability, performance, or idiomatic usage.
+         - `## Nitpicks`: Typos, formatting, or minor style issues.
+         - `## Verdict`: "Approve", "Request Changes", or "Comment".
 
-      Log any commands you would run if verifying locally (tests, linters).
+      ## Instructions
+      1. Analyze the diff context carefully.
+      2. Look for logic errors, off-by-one errors, and race conditions.
+      3. Check for missing tests or documentation updates.
+      4. Suggest specific code improvements using code blocks.
+      5. Be constructive and professional.
   - role: user
     content: |-
+      <diff>
       {{input}}
+      </diff>
 testData:
-  - input: |-
-      diff: |
-        @@ line @@
-    expected: Code Review -
+  - input: |
+      diff --git a/app/auth.py b/app/auth.py
+      index 1234567..890abcd 100644
+      --- a/app/auth.py
+      +++ b/app/auth.py
+      @@ -10,4 +10,4 @@
+       def login(username, password):
+      -    user = db.execute("SELECT * FROM users WHERE username = ?", (username,))
+      +    user = db.execute(f"SELECT * FROM users WHERE username = '{username}'")
+           return user
+    expected: "SQL injection"
+  - input: |
+      diff --git a/utils/math.py b/utils/math.py
+      index abcdef1..2345678 100644
+      --- a/utils/math.py
+      +++ b/utils/math.py
+      @@ -5,3 +5,3 @@
+       def add(a, b):
+      -    return a - b
+      +    return a + b
+    expected: "Approve"
 evaluators:
-  - name: Output starts with 'Code Review -'
-    string:
-      startsWith: 'Code Review -'
+  - name: Structure Check
+    regex:
+      pattern: "(?s)(## Summary.*## Critical Issues.*## Suggestions.*## Nitpicks.*## Verdict)"
