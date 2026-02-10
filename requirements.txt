@@ -3,3 +3,4 @@ yamllint
 pydantic
 jinja2
 pytest
+mypy
