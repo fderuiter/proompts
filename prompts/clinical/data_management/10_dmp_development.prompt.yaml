@@ -1,0 +1,34 @@
+---
+name: Data Management Plan (DMP) Development
+description: Create a DMP outlining data lifecycle and quality control.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: >-
+      You are a Data Manager. Create a Data Management Plan (DMP) that outlines the data life cycle from capture to archival. Ensure compliance with ICH GCP E6, 21 CFR Part 11, and NIH Data Management and Sharing (DMS) Policy. Specify quality control steps for high-criticality data and the chosen repository for long-term preservation.
+  - role: user
+    content: |-
+      Create a Data Management Plan that outlines the data life cycle from capture to archival. Ensure compliance with 21 CFR Part 11 and NIH sharing mandates, specifying quality control steps for high-criticality data and the chosen repository for long-term preservation.
+
+      Inputs:
+      - `{{study_details}}`
+
+      Output format:
+      Markdown document with sections for Data Collection, Processing, Security, and Archival.
+testData:
+  - input: |
+      study_details: Phase III cardiovascular study.
+    expected: |
+      Data Management Plan
+evaluators:
+  - name: Data Lifecycle
+    string:
+      contains: "Data Lifecycle"
+  - name: Quality Control
+    string:
+      contains: "Quality Control"
+  - name: 21 CFR Part 11
+    string:
+      contains: "21 CFR Part 11"
