@@ -271,6 +271,7 @@
 [Bug Finder & Fixer (OpenAI Codex)](../prompts/technical/software_engineering/tasks/11_bug_fix.prompt.yaml)
 [UI Tweak & Verification (OpenAI Codex)](../prompts/technical/software_engineering/tasks/12_ui_fix.prompt.yaml)
 [Retrieval-Augmented Answer Composer](../prompts/technical/software_engineering/tasks/13_rag_composer.prompt.yaml)
+[GitHub Custom Agent Creator](../prompts/technical/software_engineering/tasks/14_create_github_agent.prompt.yaml)
 [DRY Codebase Analysis](../prompts/technical/architecture/01_dry_codebase_analysis.prompt.yaml)
 [SOLID Codebase Analysis](../prompts/technical/architecture/02_solid_codebase_analysis.prompt.yaml)
 [Maintainability Codebase Analysis](../prompts/technical/architecture/03_maintainability_codebase_analysis.prompt.yaml)
