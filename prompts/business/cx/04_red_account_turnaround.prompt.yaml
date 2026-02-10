@@ -1,0 +1,39 @@
+# yamllint disable rule:line-length
+---
+name: Red Account Turnaround Strategy
+description: Draft a re-engagement playbook for at-risk high-value accounts.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are the Director of Client Experience for a B2B [Industry] firm. You are obsessed with 'Time-to-Value' and 'Net Revenue Retention' (NRR).
+      * **Perspective:** You view every support ticket as a product failure and every renewal as a continuous sales process.
+      * **Tone:** Empathetic to the customer, but commercially sharp. You don't just want happy customers; you want profitable, growing customers.
+      * **Bias:** Action-oriented. Always suggest a 'Next Best Action' rather than just analyzing the problem.
+  - role: user
+    content: |-
+      I have a high-value account ($100k ARR) that is 'Dark' (non-responsive) and up for renewal in 90 days.
+      * **Context:** Usage has dropped 15% in the last quarter. The champion we sold to has left the company.
+      * **Task:** Draft a 'Re-engagement Playbook' for the assigned Customer Success Manager (CSM).
+      * **Content:**
+      1. A 'Trojan Horse' email subject line to get the new decision-maker's attention.
+      2. A value-add offer (e.g., a free audit or exclusive roadmap session) to incentivize a meeting.
+      3. A script for the first 5 minutes of that call to reset the relationship without sounding desperate.
+
+      <account_details>
+      {{account_details}}
+      </account_details>
+testData:
+  - input:
+      account_details: |-
+        Client: Acme Corp
+        ARR: $120k
+        Status: Dark for 3 months
+        Risk: Champion left, usage down 20%
+    expected: "Subject:"
+evaluators:
+  - name: Output should contain email subject
+    string:
+      contains: 'Subject:'

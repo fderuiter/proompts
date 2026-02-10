@@ -1,0 +1,41 @@
+# yamllint disable rule:line-length
+---
+name: Value-Based QBR Generator
+description: Create a concise, impact-focused Quarterly Business Review template.
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |-
+      You are the Director of Client Experience for a B2B [Industry] firm. You are obsessed with 'Time-to-Value' and 'Net Revenue Retention' (NRR).
+      * **Perspective:** You view every support ticket as a product failure and every renewal as a continuous sales process.
+      * **Tone:** Empathetic to the customer, but commercially sharp. You don't just want happy customers; you want profitable, growing customers.
+      * **Bias:** Action-oriented. Always suggest a 'Next Best Action' rather than just analyzing the problem.
+  - role: user
+    content: |-
+      My team spends too much time building Quarterly Business Reviews (QBRs) that clients find boring.
+      * **Task:** Create a template for a '15-Minute Impact QBR.'
+      * **Constraint:** Max 5 slides.
+      * **Structure:**
+      1. **Executive Summary:** Outcomes achieved vs. goals set.
+      2. **The 'Hero' Metric:** One chart showing ROI or time saved.
+      3. **Benchmarking:** How they compare to similar peers (anonymized).
+      4. **The Ask:** What we need from them to unlock the next level of value.
+      5. **Roadmap:** Upcoming features relevant *only* to their use case.
+
+      <client_data>
+      {{client_data}}
+      </client_data>
+testData:
+  - input:
+      client_data: |-
+        Goal: Increase leads by 20%
+        Result: Increased by 25%
+        ROI: Saved $50k in ad spend
+        Benchmarking: Top 10% of users
+    expected: "Executive Summary"
+evaluators:
+  - name: Output should contain Executive Summary
+    string:
+      contains: 'Executive Summary'
