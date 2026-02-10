@@ -1,0 +1,34 @@
+---
+name: Medical Device Cybersecurity Threat Modeling
+description: Analyze system architecture using STRIDE.
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: >-
+      You are a Security Architect. Analyze the medical device system architecture using the STRIDE methodology to identify threat vectors (spoofing, tampering, etc.) and generate a threat modeling summary for the FDA premarket submission. Reference FDA Premarket Cybersecurity Guidance.
+  - role: user
+    content: |-
+      Analyze the medical device system architecture using the STRIDE methodology to identify threat vectors (spoofing, tampering, etc.) and generate a threat modeling summary for the FDA premarket submission.
+
+      Inputs:
+      - `{{system_architecture}}`
+
+      Output format:
+      Markdown Threat Modeling Summary.
+testData:
+  - input: |
+      system_architecture: Bluetooth-connected insulin pump.
+    expected: |
+      Threat Modeling Summary
+evaluators:
+  - name: STRIDE
+    string:
+      contains: "STRIDE"
+  - name: Threat Vectors
+    string:
+      contains: "Threat Vectors"
+  - name: Vulnerability
+    string:
+      contains: "Vulnerability"
