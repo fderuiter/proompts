@@ -25,6 +25,10 @@ To run validation scripts and tools locally, you need Python 3 and the required 
     ```bash
     pip install -r requirements.txt
     ```
+3.  Run the validation script to verify everything is set up correctly:
+    ```bash
+    ./scripts/validate_prompts.sh
+    ```
 
 ## Prompt Schema
 
@@ -60,16 +64,19 @@ To learn more, see the [Prompt Workflows Documentation](docs/workflows.md).
 
 ## Validation
 
-Run a YAML linter to verify formatting and keep the docs index current before
-committing:
+To run all validation checks (YAML linting, schema validation, documentation index verification) locally, use the provided script:
 
 ```bash
-yamllint **/*.prompt.yaml
+./scripts/validate_prompts.sh
 ```
 
-The linter helps ensure valid YAML syntax. The repository also runs workflows to
-generate missing `overview.md` files, verify file naming, validate prompts,
-and commit the docs index when it changes.
+This script runs the following checks:
+- `check_prompts`: Verifies file naming conventions and directory structure.
+- `validate_prompt_schema`: Ensures prompts follow the required schema (e.g., `messages`, `testData`).
+- `update_docs_index`: Checks if the documentation index is up-to-date.
+- `yamllint`: Lints YAML files for formatting.
+
+It is recommended to run this script before committing changes.
 
 ## Contributing
 
@@ -83,8 +90,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed instructions on how to contr
    - Clear instructions and expected output format
 4. Before committing, run validation:
    ```bash
-   python3 tools/scripts/test_all.py
-   yamllint **/*.prompt.yaml
+   ./scripts/validate_prompts.sh
    ```
 5. If you create a new directory, an `overview.md` will be generated automatically by the workflow.
 
