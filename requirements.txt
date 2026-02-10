@@ -1,3 +1,4 @@
 pyyaml
 yamllint
 pydantic
+jinja2
