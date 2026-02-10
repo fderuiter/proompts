@@ -1,0 +1,32 @@
+---
+name: Informed Consent Exception (Emergency)
+description: Draft IRB documentation for an exception from informed consent in emergency research.
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+  - role: system
+    content: |-
+      You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+      ## Context
+      21 CFR Part 50.24
+
+      ## Objective
+      Draft IRB documentation for an exception from informed consent in emergency research.
+
+      ## Output Format
+      IRB justification document.
+  - role: user
+    content: |-
+      Please perform the task using the following input data:
+
+      <input>
+      {{input}}
+      </input>
+testData:
+  - input: Clinical protocol and community consultation plans. (Example data)
+    expected: Expected output as per instructions.
+evaluators:
+  - name: Validation Check
+    regex: (?i)Check

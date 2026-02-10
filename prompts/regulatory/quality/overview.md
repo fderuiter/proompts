@@ -1,3 +1,18 @@
-# Regulatory & Quality Prompts
+# Quality Overview
 
-Templates for monitoring regulations, assessing compliance gaps, generating CAPA plans, and creating risk-based quality management strategies.
+- [Regulatory Radar & Impact Report](01_regulatory_radar.prompt.yaml)
+- [Compliance Gap & Risk Matrix](02_compliance_gap_risk_matrix.prompt.yaml)
+- [Quality-Improvement RCA & Action Plan](03_quality_improvement_rca_action_plan.prompt.yaml)
+- [eTMF Compliance Gap Analysis](04_etmf_compliance_gap_analysis.prompt.yaml)
+- [Regulatory-Landscape Radar](05_regulatory_landscape_radar.prompt.yaml)
+- [CAPA Plan Generator](06_capa_plan_generator.prompt.yaml)
+- [Inspection-Readiness Drill (CAPA Builder)](07_inspection_readiness_drill_capa_builder.prompt.yaml)
+- [Integrated Submission Strategy Coach](08_integrated_submission_strategy_coach.prompt.yaml)
+- [Risk-Based Quality Management Plan](09_risk_based_quality_management_plan.prompt.yaml)
+- [CAPA Management Process](10_capa_management_process.prompt.yaml)
+- [Financial Conflict of Interest (FCOI) Reporting](11_fcoi_reporting.prompt.yaml)
+- [Quality System Audit](12_quality_system_audit.prompt.yaml)
+- [Risk Management Analysis](13_risk_management_analysis.prompt.yaml)
+- [Quality System Evaluation (MRA)](14_quality_system_evaluation_mra.prompt.yaml)
+- [GLP Quality Assurance](15_glp_quality_assurance.prompt.yaml)
+- [Part 11 Closed System Audit](16_part_11_closed_system_audit.prompt.yaml)

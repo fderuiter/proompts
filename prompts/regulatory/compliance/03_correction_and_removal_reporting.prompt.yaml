@@ -1,0 +1,32 @@
+---
+name: Correction and Removal Reporting
+description: Draft a written report to FDA for a device correction or removal.
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+  - role: system
+    content: |-
+      You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+      ## Context
+      21 CFR Part 806
+
+      ## Objective
+      Draft a written report to FDA for a device correction or removal.
+
+      ## Output Format
+      Formal report following 21 CFR 806.10(c)(1).
+  - role: user
+    content: |-
+      Please perform the task using the following input data:
+
+      <input>
+      {{input}}
+      </input>
+testData:
+  - input: UDI, event description, and consignee list. (Example data)
+    expected: Expected output as per instructions.
+evaluators:
+  - name: Validation Check
+    regex: (?i)Cross\-check
