@@ -19,6 +19,7 @@ pip install -r requirements.txt
    - [check_prompts.py](#check_promptspy)
    - [validate_prompt_schema.py](#validate_prompt_schemapy)
    - [test_run_workflow.py](#test_run_workflowpy)
+   - [test_utils.py](#test_utilspy)
 2. [Workflow Execution](#workflow-execution)
    - [run_workflow.py](#run_workflowpy)
 3. [Documentation Maintenance](#documentation-maintenance)
@@ -26,6 +27,8 @@ pip install -r requirements.txt
    - [generate_overviews.py](#generate_overviewspy)
    - [fix_markdown_issues.py](#fix_markdown_issuespy)
 4. [Prompt Maintenance](#prompt-maintenance)
+   - [search_prompts.py](#search_promptspy)
+   - [update_last_modified.py](#update_last_modifiedpy)
    - [standardize_c_prompts.py](#standardize_c_promptspy)
 5. [Shared Libraries](#shared-libraries)
    - [utils.py](#utilspy)
@@ -76,6 +79,16 @@ A functional test for the `run_workflow.py` script. It creates a temporary envir
 
 ```bash
 python3 tools/scripts/test_run_workflow.py
+```
+
+### `test_utils.py`
+
+Unit tests for `utils.py`. Ensures shared utility functions work as expected.
+
+**Usage:**
+
+```bash
+python3 tools/scripts/test_utils.py
 ```
 
 ## Workflow Execution
@@ -132,6 +145,37 @@ python3 tools/scripts/fix_markdown_issues.py
 ```
 
 ## Prompt Maintenance
+
+### `search_prompts.py`
+
+Searches for prompts by keyword in the `name` or `description` fields.
+
+**Usage:**
+
+```bash
+# Search for prompts containing "review"
+python3 tools/scripts/search_prompts.py review
+
+# Show full descriptions
+python3 tools/scripts/search_prompts.py "review" -v
+```
+
+### `update_last_modified.py`
+
+Updates the `last_modified` field in the specified prompt files to the current UTC time. If the field is missing, it adds it after `name` or at the top of the file.
+
+**Usage:**
+
+```bash
+# Update a specific file
+python3 tools/scripts/update_last_modified.py prompts/my_prompt.prompt.yaml
+
+# Update multiple files
+python3 tools/scripts/update_last_modified.py prompts/*.prompt.yaml
+
+# Check if files need updating without modifying them
+python3 tools/scripts/update_last_modified.py prompts/my_prompt.prompt.yaml --check
+```
 
 ### `standardize_c_prompts.py`
 
