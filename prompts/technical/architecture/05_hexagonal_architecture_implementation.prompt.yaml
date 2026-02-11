@@ -1,6 +1,19 @@
 ---
 name: Hexagonal Architecture Implementation
+version: 0.1.0
 description: Guide for implementing Hexagonal Architecture, focusing on data flow, dependency inversion, and component placement.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - architecture
+  - hexagonal
+  - implementation
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.3
@@ -31,8 +44,3 @@ messages:
   content: <scenario>{{input}}</scenario>
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

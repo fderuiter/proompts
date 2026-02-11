@@ -1,6 +1,20 @@
 ---
 name: Python Performance Optimization
+version: 0.1.0
 description: A Senior-level guide to optimizing Python code, focusing on profiling, memory management, and GIL workarounds.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - programming-languages
+  - python
+  - performance
+  - optimization
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.1
@@ -40,8 +54,3 @@ evaluators:
 - name: Output contains Optimized Implementation header
   regex:
     pattern: '## 💻 Optimized Implementation'
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

@@ -1,6 +1,17 @@
 ---
 name: Imaging Charter Draft
+version: 0.1.0
 description: Create a study-specific imaging charter compliant with global regulations.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - medical-imaging
+  - imaging
+  - charter
+  - draft
+  requires_context: true
+variables: []
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -58,5 +69,3 @@ messages:
     ```markdown'
 testData: []
 evaluators: []
-version: 0.1.0
-variables: []

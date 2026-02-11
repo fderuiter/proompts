@@ -1,6 +1,21 @@
 ---
 name: Clinical Study Report (CSR) Writing
+version: 0.1.0
 description: Draft Clinical Study Report sections.
+metadata:
+  domain: scientific
+  complexity: low
+  tags:
+  - medical-writing
+  - clinical
+  - study
+  - report
+  - csr
+  requires_context: false
+variables:
+- name: statistical_outputs
+  description: The statistical outputs to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -35,8 +50,3 @@ evaluators:
 - name: Safety Narratives
   string:
     contains: Safety Narratives
-version: 0.1.0
-variables:
-- name: statistical_outputs
-  description: TODO
-  required: true

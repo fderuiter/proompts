@@ -1,6 +1,29 @@
 ---
 name: Design Error Prevention
+version: 0.1.0
 description: Review and optimize CRF layout to avoid duplication and non-essential fields.
+metadata:
+  domain: clinical
+  complexity: high
+  tags:
+  - forms
+  - design
+  - error
+  - prevention
+  requires_context: false
+variables:
+- name: crf_draft
+  description: 'Study Protocol: `{{protocol}}`'
+  required: true
+- name: endpoints
+  description: 'Study Hypothesis: `{{hypothesis}}`'
+  required: true
+- name: hypothesis
+  description: The hypothesis to use for this prompt
+  required: true
+- name: protocol
+  description: 'Safety and efficacy endpoints: `{{endpoints}}`'
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -47,17 +70,3 @@ evaluators:
 - name: Redundancy Check
   string:
     contains: Visit 2
-version: 0.1.0
-variables:
-- name: crf_draft
-  description: TODO
-  required: true
-- name: endpoints
-  description: TODO
-  required: true
-- name: hypothesis
-  description: TODO
-  required: true
-- name: protocol
-  description: TODO
-  required: true

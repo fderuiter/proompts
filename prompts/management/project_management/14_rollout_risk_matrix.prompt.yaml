@@ -1,6 +1,20 @@
 ---
 name: Rollout Risk Matrix
+version: 0.1.0
 description: Assess rollout risks and propose key mitigation actions.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - project-management
+  - rollout
+  - risk
+  - matrix
+  requires_context: false
+variables:
+- name: risk_list
+  description: The risk list to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -39,8 +53,3 @@ evaluators:
 - name: Lists mitigation actions
   string:
     contains: Mitigation
-version: 0.1.0
-variables:
-- name: risk_list
-  description: TODO
-  required: true

@@ -1,6 +1,26 @@
 ---
 name: ICH E9(R1) Estimand Builder
+version: 0.1.0
 description: Construct a primary estimand description following the ICH E9 (R1) framework.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - regulatory-adherence
+  - ich
+  - estimand
+  - builder
+  requires_context: false
+variables:
+- name: clinical_setting
+  description: The clinical setting to use for this prompt
+  required: true
+- name: ice_list
+  description: The ice list to use for this prompt
+  required: true
+- name: scientific_question
+  description: The question to answer
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -68,14 +88,3 @@ evaluators:
 - name: Strategy Check
   regex:
     pattern: (?i)(Treatment Policy|Composite|Hypothetical|Principal Stratum)
-version: 0.1.0
-variables:
-- name: clinical_setting
-  description: TODO
-  required: true
-- name: ice_list
-  description: TODO
-  required: true
-- name: scientific_question
-  description: TODO
-  required: true

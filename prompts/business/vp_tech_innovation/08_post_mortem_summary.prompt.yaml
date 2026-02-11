@@ -1,6 +1,24 @@
 ---
 name: Post-Mortem / Incident Report Summary
+version: 0.1.0
 description: Summarize technical post-mortems for a general company audience.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - tech-innovation
+  - post-mortem
+  - incident
+  - report
+  - summary
+  requires_context: false
+variables:
+- name: cause
+  description: The cause to use for this prompt
+  required: true
+- name: post_mortem_details
+  description: The post mortem details to use for this prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -39,11 +57,3 @@ evaluators:
 - name: Output contains 'resilient'
   regex:
     pattern: (?i)resilient
-version: 0.1.0
-variables:
-- name: cause
-  description: TODO
-  required: true
-- name: post_mortem_details
-  description: TODO
-  required: true

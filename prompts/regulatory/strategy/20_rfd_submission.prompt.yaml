@@ -1,6 +1,21 @@
 ---
 name: Request for Designation (RFD) Submission
+version: 0.1.0
 description: Draft RFD for combination products.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-strategy
+  - request
+  - designation
+  - rfd
+  - submission
+  requires_context: false
+variables:
+- name: product_desc
+  description: The product or offering being discussed
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -35,8 +50,3 @@ evaluators:
 - name: CDER
   string:
     contains: CDER
-version: 0.1.0
-variables:
-- name: product_desc
-  description: TODO
-  required: true

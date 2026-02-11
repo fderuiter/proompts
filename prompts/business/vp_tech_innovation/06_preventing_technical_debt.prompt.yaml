@@ -1,6 +1,23 @@
 ---
 name: Preventing Technical Debt
+version: 0.1.0
 description: Justify technical debt reduction to non-technical stakeholders using financial analogies.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - tech-innovation
+  - preventing
+  - technical
+  - debt
+  requires_context: false
+variables:
+- name: refactoring_percentage
+  description: The refactoring percentage to use for this prompt
+  required: true
+- name: timeframe
+  description: The timeframe to use for this prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -32,11 +49,3 @@ evaluators:
 - name: Output contains 'credit cards'
   regex:
     pattern: credit cards
-version: 0.1.0
-variables:
-- name: refactoring_percentage
-  description: TODO
-  required: true
-- name: timeframe
-  description: TODO
-  required: true

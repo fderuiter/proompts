@@ -1,6 +1,30 @@
 ---
 name: Product Brief Template
+version: 0.1.0
 description: Outline the high-level vision, features, and architecture for a new software project.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - software-engineering
+  - sdlc
+  - product
+  - brief
+  - template
+  requires_context: false
+variables:
+- name: architecture
+  description: overview of proposed architecture
+  required: true
+- name: context_notes
+  description: constraints or risks
+  required: true
+- name: features
+  description: feature list organised by phase
+  required: true
+- name: vision
+  description: short statement of the desired end state
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -44,17 +68,3 @@ evaluators:
 - name: Output starts with 'Vision'
   string:
     startsWith: Vision
-version: 0.1.0
-variables:
-- name: architecture
-  description: TODO
-  required: true
-- name: context_notes
-  description: TODO
-  required: true
-- name: features
-  description: TODO
-  required: true
-- name: vision
-  description: TODO
-  required: true

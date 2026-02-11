@@ -1,6 +1,21 @@
 ---
 name: Intended Use and Indications for Use Alignment
+version: 0.1.0
 description: Review 510(k) drafts to ensure 'Intended Use' and 'Indications for Use' are verbatim and consistent.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-adherence
+  - intended
+  - use
+  - indications
+  - alignment
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
@@ -37,8 +52,3 @@ testData:
 evaluators:
 - name: Validation Check
   regex: (?i)Cross\-reference
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

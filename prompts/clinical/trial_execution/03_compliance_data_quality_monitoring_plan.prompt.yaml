@@ -1,6 +1,18 @@
 ---
 name: Compliance and Data Quality Monitoring Plan
+version: 0.1.0
 description: Design an AI-assisted monitoring plan to ensure compliance and data integrity.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - trial-execution
+  - compliance
+  - data
+  - quality
+  - monitoring
+  requires_context: true
+variables: []
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -46,5 +58,3 @@ evaluators:
 - name: Mentions reporting plan
   string:
     contains: Part C
-version: 0.1.0
-variables: []

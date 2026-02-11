@@ -1,6 +1,19 @@
 ---
 name: Regulatory-Landscape Radar
+version: 0.1.0
 description: Provide a weekly snapshot of regulatory developments relevant to early‑phase oncology and rare‑disease trials.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - quality
+  - regulatory-landscape
+  - radar
+  requires_context: false
+variables:
+- name: portfolio_snapshot
+  description: internal milestone tracker
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -26,8 +39,3 @@ messages:
     \ MD029 MD036 -->"
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: portfolio_snapshot
-  description: TODO
-  required: true

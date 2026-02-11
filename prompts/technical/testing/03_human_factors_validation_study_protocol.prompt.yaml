@@ -1,6 +1,24 @@
 ---
 name: Human Factors Validation Study Protocol
+version: 0.1.0
 description: Draft a user validation study protocol for a medical device.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - testing
+  - human
+  - factors
+  - validation
+  - study
+  requires_context: false
+variables:
+- name: class
+  description: device class
+  required: true
+- name: device_name
+  description: name of the device
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -69,11 +87,3 @@ evaluators:
 - name: Output starts with 'Purpose and regulatory basis'
   string:
     startsWith: Purpose and regulatory basis
-version: 0.1.0
-variables:
-- name: class
-  description: TODO
-  required: true
-- name: device_name
-  description: TODO
-  required: true

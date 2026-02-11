@@ -1,6 +1,42 @@
 ---
 name: Personalized Investigator-Outreach Email Generator
+version: 0.1.0
 description: Craft a tailored outreach email to potential investigators.
+metadata:
+  domain: clinical
+  complexity: high
+  tags:
+  - site-acquisition
+  - personalized
+  - investigator-outreach
+  - email
+  - generator
+  requires_context: false
+variables:
+- name: CRO_NAME
+  description: The name or identifier
+  required: true
+- name: city_country
+  description: site location
+  required: true
+- name: investigator_name
+  description: principal investigator's full name
+  required: true
+- name: recent_relevant_trials
+  description: notable recent trials at the site
+  required: true
+- name: site_name
+  description: institution or site name
+  required: true
+- name: sponsor_name
+  description: sponsoring company
+  required: true
+- name: study_synopsis
+  description: brief summary of the study
+  required: true
+- name: unique_site_strength
+  description: distinctive capability or resource
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -39,29 +75,3 @@ evaluators:
 - name: Output starts with '{'
   string:
     startsWith: '{'
-version: 0.1.0
-variables:
-- name: CRO_NAME
-  description: TODO
-  required: true
-- name: city_country
-  description: TODO
-  required: true
-- name: investigator_name
-  description: TODO
-  required: true
-- name: recent_relevant_trials
-  description: TODO
-  required: true
-- name: site_name
-  description: TODO
-  required: true
-- name: sponsor_name
-  description: TODO
-  required: true
-- name: study_synopsis
-  description: TODO
-  required: true
-- name: unique_site_strength
-  description: TODO
-  required: true

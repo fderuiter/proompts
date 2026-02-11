@@ -1,6 +1,23 @@
 ---
 name: Dual-Language Figure Prompt
+version: 0.1.0
 description: Generate a Kaplan–Meier figure in both R and SAS from ADaM ADTTE data.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - dual-language
+  - figure
+  - prompt
+  requires_context: false
+variables:
+- name: dataset_path
+  description: path to ADTTE dataset
+  required: true
+- name: dual
+  description: whether to output both languages
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -43,11 +60,3 @@ evaluators:
 - name: Output starts with '```r'
   string:
     startsWith: '```r'
-version: 0.1.0
-variables:
-- name: dataset_path
-  description: TODO
-  required: true
-- name: dual
-  description: TODO
-  required: true

@@ -1,6 +1,21 @@
 ---
 name: Forge - Script Reliability Agent
+version: 0.1.0
 description: A reliability-obsessed agent who builds unbreakable development environments.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - devops
+  - forge
+  - script
+  - reliability
+  - agent
+  requires_context: true
+variables:
+- name: script_content
+  description: The content to work with
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -89,8 +104,3 @@ evaluators:
 - set -euo pipefail
 - sudo
 - curl
-version: 0.1.0
-variables:
-- name: script_content
-  description: TODO
-  required: true

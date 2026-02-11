@@ -1,6 +1,24 @@
 ---
 name: Targeted Test Generation (OpenAI Codex)
+version: 0.1.0
 description: Add unit or integration tests for specified files on the current branch.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - software-engineering
+  - engineering-tasks
+  - targeted
+  - test
+  - generation
+  requires_context: true
+variables:
+- name: files
+  description: The files to use for this prompt
+  required: true
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -32,11 +50,3 @@ evaluators:
 - name: Output starts with 'Tests Added -'
   string:
     startsWith: Tests Added -
-version: 0.1.0
-variables:
-- name: files
-  description: TODO
-  required: true
-- name: input
-  description: TODO
-  required: true

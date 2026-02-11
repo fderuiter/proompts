@@ -1,6 +1,24 @@
 ---
 name: Portfolio Resource and Budget Forecast
+version: 0.1.0
 description: Generate a rolling 12‑month FTE and budget forecast for active trials.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - project-management
+  - portfolio
+  - resource
+  - budget
+  - forecast
+  requires_context: false
+variables:
+- name: enrollment_deltas
+  description: The enrollment deltas to use for this prompt
+  required: true
+- name: historic_burn_rates
+  description: '`{{enrollment_deltas}}`'
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -30,11 +48,3 @@ evaluators:
 - name: Contains Forecast table
   string:
     contains: Forecast
-version: 0.1.0
-variables:
-- name: enrollment_deltas
-  description: TODO
-  required: true
-- name: historic_burn_rates
-  description: TODO
-  required: true

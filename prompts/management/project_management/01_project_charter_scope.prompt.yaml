@@ -1,6 +1,36 @@
 ---
 name: Project Charter and Scope Definition
+version: 0.1.0
 description: Create a complete project charter summarizing background, objectives, scope, deliverables, and key risks.
+metadata:
+  domain: management
+  complexity: high
+  tags:
+  - project-management
+  - project
+  - charter
+  - scope
+  - definition
+  requires_context: true
+variables:
+- name: budget
+  description: '`{{deadline}}`'
+  required: true
+- name: business_outcome
+  description: The business outcome to use for this prompt
+  required: true
+- name: deadline
+  description: '`{{stakeholders}}`'
+  required: true
+- name: project_description
+  description: '`{{budget}}`'
+  required: true
+- name: project_name
+  description: '`{{project_description}}`'
+  required: true
+- name: stakeholders
+  description: '`{{business_outcome}}`'
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -55,23 +85,3 @@ evaluators:
 - name: Contains Background heading
   string:
     contains: Background
-version: 0.1.0
-variables:
-- name: budget
-  description: TODO
-  required: true
-- name: business_outcome
-  description: TODO
-  required: true
-- name: deadline
-  description: TODO
-  required: true
-- name: project_description
-  description: TODO
-  required: true
-- name: project_name
-  description: TODO
-  required: true
-- name: stakeholders
-  description: TODO
-  required: true

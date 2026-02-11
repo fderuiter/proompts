@@ -1,6 +1,20 @@
 ---
 name: Sterility-Validation Protocol Builder
+version: 0.1.0
 description: Draft a complete validation protocol for a single-use Class II instrument sterilized by gamma irradiation.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - sterility
+  - sterility-validation
+  - protocol
+  - builder
+  requires_context: false
+variables:
+- name: device_description
+  description: instrument details
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -50,8 +64,3 @@ evaluators:
 - name: Contains References section
   string:
     contains: References
-version: 0.1.0
-variables:
-- name: device_description
-  description: TODO
-  required: true

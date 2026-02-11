@@ -1,6 +1,20 @@
 ---
 name: Clinical-Trial Protocol Creator
+version: 0.1.0
 description: Generate a full clinical-trial protocol from a one-page summary sheet.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - protocol-design
+  - clinical-trial
+  - protocol
+  - creator
+  requires_context: true
+variables:
+- name: summary_sheet
+  description: one-page study summary with product and design details
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -28,8 +42,3 @@ evaluators:
 - name: Includes Title Page heading
   string:
     contains: Title Page
-version: 0.1.0
-variables:
-- name: summary_sheet
-  description: TODO
-  required: true

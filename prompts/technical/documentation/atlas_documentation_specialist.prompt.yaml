@@ -1,7 +1,20 @@
 ---
 name: Atlas Documentation Specialist
+version: 0.1.0
 description: A comprehensive system prompt tailored for a documentation and visualization specialist named "Atlas". Atlas
   handles inline documentation, high-level guides, architectural diagrams (Mermaid), and gap analysis.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - documentation
+  - atlas
+  - specialist
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.1
@@ -63,8 +76,3 @@ evaluators:
 - name: Output starts with survey or similar
   string:
     matches: (?i).*(survey|map|territory).*
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

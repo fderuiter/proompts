@@ -1,6 +1,36 @@
 ---
 name: Statistical Analysis Plan Generator
+version: 0.1.0
 description: Generate a comprehensive statistical analysis plan for a clinical trial.
+metadata:
+  domain: scientific
+  complexity: high
+  tags:
+  - biostatistics
+  - statistical
+  - analysis
+  - plan
+  - generator
+  requires_context: false
+variables:
+- name: control
+  description: '`{{population}}`'
+  required: true
+- name: endpoint
+  description: '`{{time_point}}`'
+  required: true
+- name: factors
+  description: The factors to use for this prompt
+  required: true
+- name: intervention
+  description: '`{{control}}`'
+  required: true
+- name: population
+  description: '`{{endpoint}}`'
+  required: true
+- name: time_point
+  description: '`{{factors}}`'
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -53,23 +83,3 @@ evaluators:
 - name: Output starts with '##'
   string:
     startsWith: '##'
-version: 0.1.0
-variables:
-- name: control
-  description: TODO
-  required: true
-- name: endpoint
-  description: TODO
-  required: true
-- name: factors
-  description: TODO
-  required: true
-- name: intervention
-  description: TODO
-  required: true
-- name: population
-  description: TODO
-  required: true
-- name: time_point
-  description: TODO
-  required: true

@@ -1,6 +1,27 @@
 ---
 name: 21 CFR 820 / QMSR Gap-Analysis & Remediation
+version: 0.1.0
 description: Evaluate the quality-management system against current 21 CFR 820 and the proposed QMSR.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - regulatory-strategy
+  - cfr
+  - '820'
+  - qmsr
+  - gap-analysis
+  requires_context: true
+variables:
+- name: device_class
+  description: The device class to use for this prompt
+  required: true
+- name: employee_count
+  description: The employee count to use for this prompt
+  required: true
+- name: qms_documents
+  description: procedures, SOP list, audit reports
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -22,14 +43,3 @@ messages:
     \ ISO 13485:2016 and proposed QMSR requirements."
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: device_class
-  description: TODO
-  required: true
-- name: employee_count
-  description: TODO
-  required: true
-- name: qms_documents
-  description: TODO
-  required: true

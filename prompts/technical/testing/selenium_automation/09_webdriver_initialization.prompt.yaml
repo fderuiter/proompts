@@ -1,6 +1,24 @@
 ---
 name: 'Driver Configuration: WebDriver Initialization'
+version: 0.1.0
 description: Initialize and configure WebDriver instances with specific browser options.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - testing
+  - selenium
+  - driver
+  - configuration
+  - web
+  requires_context: false
+variables:
+- name: browser
+  description: '{{browser}}'
+  required: true
+- name: proxy_url
+  description: The URL to process or reference
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -24,11 +42,3 @@ testData:
 evaluators:
 - name: Configures Options
   regex: Options
-version: 0.1.0
-variables:
-- name: browser
-  description: TODO
-  required: true
-- name: proxy_url
-  description: TODO
-  required: true

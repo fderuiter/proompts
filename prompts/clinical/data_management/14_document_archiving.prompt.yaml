@@ -1,6 +1,21 @@
 ---
 name: Clinical Trial Document Archiving
+version: 0.1.0
 description: Develop archival strategy for TMF.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - data-management
+  - clinical
+  - trial
+  - document
+  - archiving
+  requires_context: false
+variables:
+- name: tmf_details
+  description: The tmf details to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -35,8 +50,3 @@ evaluators:
 - name: Environmental Monitoring
   string:
     contains: Environmental Monitoring
-version: 0.1.0
-variables:
-- name: tmf_details
-  description: TODO
-  required: true

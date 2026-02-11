@@ -1,6 +1,20 @@
 ---
 name: Monitoring-Visit Report Generator
+version: 0.1.0
 description: Draft a monitoring visit report summarizing on-site activities, findings, follow-ups, and attachments.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - cra
+  - monitoring-visit
+  - report
+  - generator
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -58,8 +72,3 @@ evaluators:
 - name: Output starts with High-level Summary section
   string:
     startsWith: 1. **High-level Summary**
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

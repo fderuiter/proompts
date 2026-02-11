@@ -1,6 +1,24 @@
 ---
 name: Regulatory Radar & Impact Report
+version: 0.1.0
 description: Track and assess recent regulatory changes that may impact the company.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - quality
+  - regulatory
+  - radar
+  - impact
+  - report
+  requires_context: true
+variables:
+- name: company_profile
+  description: short description of the organization
+  required: true
+- name: compliance_posture
+  description: bullet list of existing posture
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -52,11 +70,3 @@ messages:
     <!-- markdownlint-enable MD029 MD036 -->'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: company_profile
-  description: TODO
-  required: true
-- name: compliance_posture
-  description: TODO
-  required: true

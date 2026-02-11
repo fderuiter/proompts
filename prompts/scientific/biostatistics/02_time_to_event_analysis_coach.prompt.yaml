@@ -1,6 +1,20 @@
 ---
 name: Time-to-Event Analysis Coach
+version: 0.1.0
 description: Guide a junior analyst through performing a time-to-event analysis.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - time-to-event
+  - analysis
+  - coach
+  requires_context: false
+variables:
+- name: dataset_path
+  description: path to the patient dataset
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -38,8 +52,3 @@ evaluators:
 - name: Output starts with 'Section A:'
   string:
     startsWith: 'Section A:'
-version: 0.1.0
-variables:
-- name: dataset_path
-  description: TODO
-  required: true

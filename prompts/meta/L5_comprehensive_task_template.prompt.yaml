@@ -1,6 +1,22 @@
 ---
 name: Comprehensive Task Template
+version: 0.1.0
 description: Provide a reusable prompt that guides an AI through planning, execution and self-checking for any complex task.
+metadata:
+  domain: meta
+  complexity: medium
+  tags:
+  - comprehensive
+  - task
+  - template
+  requires_context: false
+variables:
+- name: expert_role
+  description: role the agent should assume
+  required: true
+- name: task
+  description: description of the task
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -30,11 +46,3 @@ messages:
     Output format: Markdown with clearly labelled sections matching the instructions.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: expert_role
-  description: TODO
-  required: true
-- name: task
-  description: TODO
-  required: true

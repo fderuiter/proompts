@@ -1,6 +1,26 @@
 ---
 name: Risk-Based Monitoring Data Evaluation
+version: 0.1.0
 description: Remote evaluation of accumulating trial data to identify outliers and data integrity problems.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - monitoring
+  - risk-based
+  - data
+  - evaluation
+  requires_context: false
+variables:
+- name: clinical_data
+  description: 'Monitoring Plan template: `{{monitoring_plan}}`'
+  required: true
+- name: monitoring_plan
+  description: 'Study Risk Assessment: `{{risk_assessment}}`'
+  required: true
+- name: risk_assessment
+  description: The risk assessment to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -44,14 +64,3 @@ evaluators:
 - name: Fraud Detection
   string:
     contains: Site 001
-version: 0.1.0
-variables:
-- name: clinical_data
-  description: TODO
-  required: true
-- name: monitoring_plan
-  description: TODO
-  required: true
-- name: risk_assessment
-  description: TODO
-  required: true

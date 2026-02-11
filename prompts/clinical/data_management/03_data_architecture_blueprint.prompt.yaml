@@ -1,6 +1,20 @@
 ---
 name: Data Architecture Blueprint
+version: 0.1.0
 description: Draft a blueprint for clinical data architecture.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - data-management
+  - data
+  - architecture
+  - blueprint
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -18,8 +32,3 @@ evaluators:
 - name: Output mentions architecture
   string:
     contains: architecture
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

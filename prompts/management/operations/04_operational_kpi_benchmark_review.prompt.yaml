@@ -1,6 +1,21 @@
 ---
 name: 360° Operational KPI & Benchmark Review
+version: 0.1.0
 description: Compare internal KPIs to industry benchmarks and propose improvements.
+metadata:
+  domain: management
+  complexity: low
+  tags:
+  - operations
+  - '360'
+  - operational
+  - kpi
+  - benchmark
+  requires_context: true
+variables:
+- name: kpi_csv
+  description: quarterly KPI data
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -26,8 +41,3 @@ messages:
     Output format: Markdown table then summary paragraph.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: kpi_csv
-  description: TODO
-  required: true

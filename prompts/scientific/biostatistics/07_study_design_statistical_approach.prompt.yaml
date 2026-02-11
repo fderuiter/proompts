@@ -1,6 +1,30 @@
 ---
 name: Study Design and Statistical Approach
+version: 0.1.0
 description: Propose a clinical trial design with corresponding statistical approach.
+metadata:
+  domain: scientific
+  complexity: high
+  tags:
+  - biostatistics
+  - study
+  - design
+  - statistical
+  - approach
+  requires_context: true
+variables:
+- name: device_type
+  description: '`{{trial_phase}}`'
+  required: true
+- name: endpoints
+  description: '`{{regulatory_target}}`'
+  required: true
+- name: regulatory_target
+  description: The regulatory target to use for this prompt
+  required: true
+- name: trial_phase
+  description: '`{{endpoints}}`'
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -47,17 +71,3 @@ evaluators:
 - name: Output starts with '- '
   string:
     startsWith: '- '
-version: 0.1.0
-variables:
-- name: device_type
-  description: TODO
-  required: true
-- name: endpoints
-  description: TODO
-  required: true
-- name: regulatory_target
-  description: TODO
-  required: true
-- name: trial_phase
-  description: TODO
-  required: true

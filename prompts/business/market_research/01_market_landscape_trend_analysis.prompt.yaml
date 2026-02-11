@@ -1,6 +1,21 @@
 ---
 name: Market Landscape & Trend Analysis
+version: 0.1.0
 description: Summarize the global market for `{{device_or_assay}}` and highlight key trends.
+metadata:
+  domain: business
+  complexity: high
+  tags:
+  - market-research
+  - market
+  - landscape
+  - trend
+  - analysis
+  requires_context: false
+variables:
+- name: device_or_assay
+  description: The device or assay to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -27,8 +42,3 @@ messages:
     **Output Requirement:** Produce a structured Executive Briefing following the sections above.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: device_or_assay
-  description: TODO
-  required: true

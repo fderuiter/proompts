@@ -1,6 +1,21 @@
 ---
 name: Audit Raw Data and Draft a CAPA Summary
+version: 0.1.0
 description: Review study data for deviations and produce a corrective-action plan.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - study-director
+  - audit
+  - raw
+  - data
+  - draft
+  requires_context: false
+variables:
+- name: data_csv
+  description: raw study data
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -44,8 +59,3 @@ evaluators:
 - name: Includes CAPA memo
   string:
     contains: CAPA memo
-version: 0.1.0
-variables:
-- name: data_csv
-  description: TODO
-  required: true

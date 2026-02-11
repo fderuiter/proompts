@@ -1,6 +1,21 @@
 ---
 name: Dual MDR / IVDR Conformity-Assessment Roadmap
+version: 0.1.0
 description: Develop a coordinated roadmap for simultaneous MDR and IVDR submissions.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - regulatory-strategy
+  - dual
+  - mdr
+  - ivdr
+  - conformity-assessment
+  requires_context: true
+variables:
+- name: startup_info
+  description: any additional project details
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -27,8 +42,3 @@ messages:
     \ risk mitigation."
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: startup_info
-  description: TODO
-  required: true

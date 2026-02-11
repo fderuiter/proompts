@@ -1,6 +1,21 @@
 ---
 name: TMF Gap-Analysis and Audit Readiness Check
+version: 0.1.0
 description: Identify missing or outdated Trial Master File documents and propose corrective actions.
+metadata:
+  domain: management
+  complexity: low
+  tags:
+  - project-management
+  - tmf
+  - gap-analysis
+  - audit
+  - readiness
+  requires_context: false
+variables:
+- name: tmf_index
+  description: The tmf index to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -38,8 +53,3 @@ evaluators:
 - name: Includes Gap_Type column
   string:
     contains: Gap_Type
-version: 0.1.0
-variables:
-- name: tmf_index
-  description: TODO
-  required: true

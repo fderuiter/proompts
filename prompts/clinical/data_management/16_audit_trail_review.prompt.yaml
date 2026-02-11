@@ -1,6 +1,23 @@
 ---
 name: Audit Trail Review
+version: 0.1.0
 description: Review subject audit logs for compliance and data integrity.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - data-management
+  - audit
+  - trail
+  - review
+  requires_context: true
+variables:
+- name: audit_logs
+  description: 'System Specifications (Audit reqs): `{{system_specs}}`'
+  required: true
+- name: system_specs
+  description: The system specs to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -39,11 +56,3 @@ evaluators:
 - name: Modification Details
   string:
     contains: Dose
-version: 0.1.0
-variables:
-- name: audit_logs
-  description: TODO
-  required: true
-- name: system_specs
-  description: TODO
-  required: true

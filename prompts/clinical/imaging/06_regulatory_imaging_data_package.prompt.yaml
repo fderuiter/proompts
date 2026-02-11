@@ -1,6 +1,18 @@
 ---
 name: Regulatory Imaging Data Package
+version: 0.1.0
 description: Assemble the imaging section of a PMA or 510(k) submission.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - medical-imaging
+  - regulatory
+  - imaging
+  - data
+  - package
+  requires_context: false
+variables: []
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -40,5 +52,3 @@ messages:
     Output format: Narrative text followed by a Markdown table and an appendix template.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables: []

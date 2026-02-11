@@ -1,6 +1,21 @@
 ---
 name: Zika Virus Reagent Study Design
+version: 0.1.0
 description: Draft a protocol for analytical performance studies to validate Zika virus serological reagents.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - medical-devices
+  - zika
+  - virus
+  - reagent
+  - study
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
@@ -37,8 +52,3 @@ testData:
 evaluators:
 - name: Validation Check
   regex: (?i)Ensure
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

@@ -1,6 +1,30 @@
 ---
 name: Competitive-Bid Pricing & Margin Optimizer
+version: 0.1.0
 description: Compare competitor bids and internal costs to recommend a winning price with target margin.
+metadata:
+  domain: business
+  complexity: high
+  tags:
+  - finance
+  - competitive-bid
+  - pricing
+  - margin
+  - optimizer
+  requires_context: false
+variables:
+- name: competitor_bids
+  description: list of competitor prices (USD)
+  required: true
+- name: internal_cost
+  description: our estimated delivery cost (USD)
+  required: true
+- name: target_margin
+  description: desired profit margin percentage
+  required: true
+- name: volume_adjustments
+  description: optional volume or scope notes
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -37,17 +61,3 @@ evaluators:
 - name: Output should start with 'Bid Analysis -'
   string:
     startsWith: Bid Analysis -
-version: 0.1.0
-variables:
-- name: competitor_bids
-  description: TODO
-  required: true
-- name: internal_cost
-  description: TODO
-  required: true
-- name: target_margin
-  description: TODO
-  required: true
-- name: volume_adjustments
-  description: TODO
-  required: true

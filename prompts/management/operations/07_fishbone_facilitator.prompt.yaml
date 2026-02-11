@@ -1,6 +1,19 @@
 ---
 name: Fishbone Facilitator
+version: 0.1.0
 description: Identify possible root causes of a problem using a fishbone diagram.
+metadata:
+  domain: management
+  complexity: low
+  tags:
+  - operations
+  - fishbone
+  - facilitator
+  requires_context: false
+variables:
+- name: problem
+  description: The problem to use for this prompt
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.7
@@ -39,8 +52,3 @@ evaluators:
 - name: Mentions Methods category
   string:
     contains: Methods
-version: 0.1.0
-variables:
-- name: problem
-  description: TODO
-  required: true

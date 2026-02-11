@@ -1,7 +1,22 @@
 ---
 name: Principal TypeScript Developer
+version: 0.1.0
 description: A Principal Engineer's guide to TypeScript development, focusing on type-driven architecture, runtime validation,
   and developer experience.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - programming-languages
+  - typescript
+  - principal
+  - type
+  - script
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.1
@@ -127,8 +142,3 @@ evaluators:
 - name: Output contains Principal Implementation header
   regex:
     pattern: '## 💻 Principal Implementation'
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

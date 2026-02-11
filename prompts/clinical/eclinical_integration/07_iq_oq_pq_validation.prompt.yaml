@@ -1,6 +1,30 @@
 ---
 name: IQ/OQ/PQ Validation
+version: 0.1.0
 description: Design and execute a series of IQ, OQ, and PQ validation tests for clinical systems.
+metadata:
+  domain: clinical
+  complexity: high
+  tags:
+  - eclinical-integration
+  - validation
+  requires_context: false
+variables:
+- name: cdms_specs
+  description: 'Validation tests: `{{validation_tests}}`'
+  required: true
+- name: crf_draft
+  description: The crf draft to use for this prompt
+  required: true
+- name: dmp
+  description: 'Clinical Protocol: `{{protocol}}`'
+  required: true
+- name: protocol
+  description: 'CRF Design Draft: `{{crf_draft}}`'
+  required: true
+- name: validation_tests
+  description: 'Clinical Data Management Plan (DMP): `{{dmp}}`'
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -55,20 +79,3 @@ evaluators:
 - name: PQ Section
   string:
     contains: Performance Qualification
-version: 0.1.0
-variables:
-- name: cdms_specs
-  description: TODO
-  required: true
-- name: crf_draft
-  description: TODO
-  required: true
-- name: dmp
-  description: TODO
-  required: true
-- name: protocol
-  description: TODO
-  required: true
-- name: validation_tests
-  description: TODO
-  required: true

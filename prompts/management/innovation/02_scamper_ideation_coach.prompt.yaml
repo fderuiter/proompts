@@ -1,6 +1,20 @@
 ---
 name: SCAMPER Ideation Coach
+version: 0.1.0
 description: Break creative blocks using SCAMPER techniques.
+metadata:
+  domain: management
+  complexity: low
+  tags:
+  - innovation
+  - scamper
+  - ideation
+  - coach
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -49,8 +63,3 @@ evaluators:
 - name: Output ranks ideas with feasibility
   string:
     contains: Feasibility
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

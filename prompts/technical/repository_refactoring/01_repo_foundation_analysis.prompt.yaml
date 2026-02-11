@@ -1,6 +1,18 @@
 ---
 name: Repository Foundation & Developer Experience Analysis
+version: 0.1.0
 description: Analyze the repository's foundation and developer experience to prepare it for future growth and easy onboarding.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - repository-refactoring
+  - repository
+  - foundation
+  - developer
+  - experience
+  requires_context: true
+variables: []
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -22,5 +34,3 @@ messages:
     \ for each part of the analysis. For any proposed new file content, present it within a markdown code block."
 testData: []
 evaluators: []
-version: 0.1.0
-variables: []

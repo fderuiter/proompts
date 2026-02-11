@@ -1,6 +1,21 @@
 ---
 name: Risk-Based Site Performance Dashboard
+version: 0.1.0
 description: You are an experienced **Clinical Monitoring Manager** at a global CRO overseeing several Phase II oncology trials.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - monitoring
+  - risk-based
+  - site
+  - performance
+  - dashboard
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -32,8 +47,3 @@ evaluators:
 - name: Contains dashboard table
   string:
     contains: Rank | Site ID | Composite Score
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

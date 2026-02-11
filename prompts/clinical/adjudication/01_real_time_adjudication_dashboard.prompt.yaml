@@ -1,6 +1,17 @@
 ---
 name: Real-Time Adjudication Visibility Dashboard
+version: 0.1.0
 description: Design a dashboard that provides real-time visibility into clinical endpoint adjudication workflows.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - adjudication
+  - real-time
+  - visibility
+  - dashboard
+  requires_context: true
+variables: []
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -34,5 +45,3 @@ evaluators:
 - name: Output includes 'Section 1:'
   string:
     contains: 'Section 1:'
-version: 0.1.0
-variables: []

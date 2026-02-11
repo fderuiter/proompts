@@ -1,6 +1,21 @@
 ---
 name: Red Account Turnaround Strategy
+version: 0.1.0
 description: Draft a re-engagement playbook for at-risk high-value accounts.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - customer-experience
+  - red
+  - account
+  - turnaround
+  - strategy
+  requires_context: false
+variables:
+- name: account_details
+  description: The account details to use for this prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -50,8 +65,3 @@ evaluators:
 - name: Output should contain email subject
   string:
     contains: 'Subject:'
-version: 0.1.0
-variables:
-- name: account_details
-  description: TODO
-  required: true

@@ -1,6 +1,21 @@
 ---
 name: NGS Tumor Profiling Documentation
+version: 0.1.0
 description: Develop documentation supporting the clinical significance of mutations in an NGS-based tumor profiling panel.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - medical-devices
+  - ngs
+  - tumor
+  - profiling
+  - documentation
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
@@ -37,8 +52,3 @@ testData:
 evaluators:
 - name: Validation Check
   regex: (?i)Confirm
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

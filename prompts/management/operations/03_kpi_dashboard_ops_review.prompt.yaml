@@ -1,6 +1,24 @@
 ---
 name: KPI Dashboard & Monthly Ops-Review Pack
+version: 0.1.0
 description: Summarize operational performance and highlight required actions for the monthly review.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - operations
+  - kpi
+  - dashboard
+  - monthly
+  - ops-review
+  requires_context: false
+variables:
+- name: kpi_data
+  description: CSV of recent KPIs
+  required: true
+- name: strategic_priorities
+  description: bullet list
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -31,11 +49,3 @@ messages:
     Output format: Markdown bullet lists for each slide.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: kpi_data
-  description: TODO
-  required: true
-- name: strategic_priorities
-  description: TODO
-  required: true

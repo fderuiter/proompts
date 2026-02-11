@@ -1,6 +1,18 @@
 ---
 name: CSR Results and Safety Section
+version: 0.1.0
 description: Draft Sections 11 and 12 of an ICH E3 clinical study report.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - technical-writing
+  - csr
+  - results
+  - safety
+  - section
+  requires_context: false
+variables: []
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -51,5 +63,3 @@ evaluators:
 - name: Includes Safety Evaluation heading
   string:
     contains: Safety Evaluation
-version: 0.1.0
-variables: []

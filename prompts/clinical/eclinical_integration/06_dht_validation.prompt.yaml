@@ -1,6 +1,21 @@
 ---
 name: Digital Health Technology (DHT) Validation
+version: 0.1.0
 description: Create validation strategy for DHTs.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - eclinical-integration
+  - digital
+  - health
+  - technology
+  - dht
+  requires_context: false
+variables:
+- name: dht_specs
+  description: The dht specs to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -36,8 +51,3 @@ evaluators:
 - name: Software Update
   string:
     contains: Software Update
-version: 0.1.0
-variables:
-- name: dht_specs
-  description: TODO
-  required: true

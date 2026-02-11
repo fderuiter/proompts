@@ -1,6 +1,21 @@
 ---
 name: Establishment of Food Traceability Plan
+version: 0.1.0
 description: Create a structured traceability plan for a facility handling foods on the Food Traceability List.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - food-safety
+  - establishment
+  - food
+  - traceability
+  - plan
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
@@ -37,8 +52,3 @@ testData:
 evaluators:
 - name: Validation Check
   regex: (?i)Ensure
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

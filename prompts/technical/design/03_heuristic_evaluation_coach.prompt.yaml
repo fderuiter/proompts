@@ -1,6 +1,19 @@
 ---
 name: Heuristic-Evaluation Coach
+version: 0.1.0
 description: Guide a junior designer through heuristic evaluation of a mobile app.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - design
+  - heuristic-evaluation
+  - coach
+  requires_context: true
+variables:
+- name: APP_NAME
+  description: name of the app being critiqued
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -29,8 +42,3 @@ messages:
     Output format: A short paragraph and a table in markdown.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: APP_NAME
-  description: TODO
-  required: true

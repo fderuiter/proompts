@@ -1,6 +1,26 @@
 ---
 name: Payment Reconciliation and Discrepancy Report
+version: 0.1.0
 description: Identify and categorize payment discrepancies before study close-out.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - payment
+  - reconciliation
+  - discrepancy
+  - report
+  requires_context: false
+variables:
+- name: cta_budget
+  description: contracted budget amounts
+  required: true
+- name: payment_ledger
+  description: site payment ledger
+  required: true
+- name: site_queries
+  description: outstanding site billing questions
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -33,14 +53,3 @@ evaluators:
 - name: Contains issue type column
   string:
     contains: Issue_Type
-version: 0.1.0
-variables:
-- name: cta_budget
-  description: TODO
-  required: true
-- name: payment_ledger
-  description: TODO
-  required: true
-- name: site_queries
-  description: TODO
-  required: true

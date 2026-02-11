@@ -1,6 +1,20 @@
 ---
 name: Protocol Deviation Reporting
+version: 0.1.0
 description: Identify and report protocol deviations.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - protocol-design
+  - protocol
+  - deviation
+  - reporting
+  requires_context: false
+variables:
+- name: trial_logs
+  description: The trial logs to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -36,8 +50,3 @@ evaluators:
 - name: Mitigation Strategy
   string:
     contains: Mitigation Strategy
-version: 0.1.0
-variables:
-- name: trial_logs
-  description: TODO
-  required: true

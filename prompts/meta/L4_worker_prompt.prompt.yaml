@@ -1,6 +1,33 @@
 ---
 name: Worker Prompt
+version: 0.1.0
 description: Execute the concrete task defined by the L3 template and return structured output.
+metadata:
+  domain: meta
+  complexity: high
+  tags:
+  - worker
+  - prompt
+  requires_context: false
+variables:
+- name: generated_prompt
+  description: The generated prompt to use for this prompt
+  required: true
+- name: input_block
+  description: specific data
+  required: true
+- name: output_schema
+  description: required JSON schema
+  required: true
+- name: policy_block
+  description: Policy and style guide text for guardrails
+  required: true
+- name: task_description
+  description: The task or objective to accomplish
+  required: true
+- name: token_limit_l4
+  description: The token limit l4 to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -47,23 +74,3 @@ messages:
     Output format: Only the JSON inside `<answer>` tags.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: generated_prompt
-  description: TODO
-  required: true
-- name: input_block
-  description: TODO
-  required: true
-- name: output_schema
-  description: TODO
-  required: true
-- name: policy_block
-  description: TODO
-  required: true
-- name: task_description
-  description: TODO
-  required: true
-- name: token_limit_l4
-  description: TODO
-  required: true

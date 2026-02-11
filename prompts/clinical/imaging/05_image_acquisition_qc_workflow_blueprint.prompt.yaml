@@ -1,6 +1,18 @@
 ---
 name: Image Acquisition QC Workflow Blueprint
+version: 0.1.0
 description: Design a site-facing SOP for image acquisition and quality control.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - medical-imaging
+  - image
+  - acquisition
+  - workflow
+  - blueprint
+  requires_context: false
+variables: []
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -40,5 +52,3 @@ messages:
     Output format: Indented flowchart followed by a Markdown table checklist.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables: []

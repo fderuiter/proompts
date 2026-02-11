@@ -1,6 +1,20 @@
 ---
 name: Strategic Alignment and Innovation
+version: 0.1.0
 description: Develop a roadmap that aligns global trial operations with emerging industry trends.
+metadata:
+  domain: management
+  complexity: low
+  tags:
+  - leadership
+  - strategic
+  - alignment
+  - innovation
+  requires_context: false
+variables:
+- name: current_operations
+  description: summary of existing trial processes
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -26,8 +40,3 @@ messages:
     Output format: Markdown sections titled **Initiatives**, **Timeline**, **KPIs**, and **Risks**.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: current_operations
-  description: TODO
-  required: true

@@ -1,6 +1,21 @@
 ---
 name: Biological Safety Plan Developer
+version: 0.1.0
 description: Create a biological safety plan for the preclinical phase of a new medical device.
+metadata:
+  domain: scientific
+  complexity: low
+  tags:
+  - biosafety
+  - biological
+  - safety
+  - plan
+  - developer
+  requires_context: false
+variables:
+- name: device_description
+  description: description and materials of the device
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -38,8 +53,3 @@ evaluators:
 - name: Output starts with a bullet point
   string:
     startsWith: '-'
-version: 0.1.0
-variables:
-- name: device_description
-  description: TODO
-  required: true

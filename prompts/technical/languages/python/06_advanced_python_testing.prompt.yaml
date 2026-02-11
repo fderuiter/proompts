@@ -1,7 +1,21 @@
 ---
 name: Advanced Python Testing
+version: 0.1.0
 description: A comprehensive guide to Python testing, covering Pytest fixtures, Property-Based Testing (Hypothesis), and Mutation
   Testing.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - programming-languages
+  - python
+  - advanced
+  - testing
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.1
@@ -41,8 +55,3 @@ evaluators:
 - name: Output contains Implementation header
   regex:
     pattern: '## 💻 Implementation'
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

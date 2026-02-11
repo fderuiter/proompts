@@ -1,7 +1,22 @@
 ---
 name: Site Selection and Enrollment Forecaster
+version: 0.1.0
 description: Analyze historical site performance and patient demographics to rank investigative sites and predict enrollment
   timelines.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - site-acquisition
+  - site
+  - selection
+  - enrollment
+  - forecaster
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.3
@@ -35,8 +50,3 @@ evaluators:
 - name: Diversity Mentioned
   regex:
     pattern: (?i)diversity|demographic
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

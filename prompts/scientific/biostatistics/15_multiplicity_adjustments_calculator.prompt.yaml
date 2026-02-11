@@ -1,6 +1,27 @@
 ---
 name: Multiplicity Adjustment Code Generator
+version: 0.1.0
 description: Generate SAS code for multiplicity adjustments (Bonferroni, Holm, Hochberg).
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - multiplicity
+  - adjustment
+  - code
+  - generator
+  requires_context: false
+variables:
+- name: dataset
+  description: The data or dataset to analyze
+  required: true
+- name: p_value_var
+  description: The p value var to use for this prompt
+  required: true
+- name: treatment_var
+  description: The treatment var to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -63,14 +84,3 @@ evaluators:
 - name: Methods Check
   regex:
     pattern: (?i)(BONFERRONI|HOLM|HOCHBERG)
-version: 0.1.0
-variables:
-- name: dataset
-  description: TODO
-  required: true
-- name: p_value_var
-  description: TODO
-  required: true
-- name: treatment_var
-  description: TODO
-  required: true

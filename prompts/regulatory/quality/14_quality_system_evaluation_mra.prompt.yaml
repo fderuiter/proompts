@@ -1,6 +1,20 @@
 ---
 name: Quality System Evaluation (MRA)
+version: 0.1.0
 description: Generate a quality system evaluation report for a manufacturer under the US-EC MRA.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - quality
+  - system
+  - evaluation
+  - mra
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
@@ -37,8 +51,3 @@ testData:
 evaluators:
 - name: Validation Check
   regex: (?i)Cross\-reference
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

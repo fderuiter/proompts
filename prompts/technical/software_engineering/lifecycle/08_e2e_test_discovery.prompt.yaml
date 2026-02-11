@@ -1,7 +1,28 @@
 ---
 name: E2E Test Discovery Lifecycle Template
+version: 0.1.0
 description: Provide a system prompt template that guides an LLM to analyse a codebase and generate a comprehensive end-to-end
   test plan.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - software-engineering
+  - sdlc
+  - e2e
+  - test
+  - discovery
+  requires_context: true
+variables:
+- name: BUSINESS_GOAL
+  description: high-level goal of the system
+  required: true
+- name: LANGUAGES/FRAMEWORKS
+  description: '`{{BUSINESS_GOAL}}`'
+  required: true
+- name: PROJECT_NAME
+  description: '`{{LANGUAGES/FRAMEWORKS}}`'
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -52,14 +73,3 @@ evaluators:
 - name: Output starts with 'Repository Overview'
   string:
     startsWith: Repository Overview
-version: 0.1.0
-variables:
-- name: BUSINESS_GOAL
-  description: TODO
-  required: true
-- name: LANGUAGES/FRAMEWORKS
-  description: TODO
-  required: true
-- name: PROJECT_NAME
-  description: TODO
-  required: true

@@ -1,6 +1,21 @@
 ---
 name: Special Controls Labeling Compliance
+version: 0.1.0
 description: Generate mandatory labeling content, including warnings and limitations, for HCV antibody tests.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - medical-devices
+  - special
+  - controls
+  - labeling
+  - compliance
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
@@ -37,8 +52,3 @@ testData:
 evaluators:
 - name: Validation Check
   regex: (?i)Cross\-check
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

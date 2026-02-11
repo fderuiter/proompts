@@ -1,6 +1,27 @@
 ---
 name: Executive Sponsor Briefing Deck Outline
+version: 0.1.0
 description: Provide a slide-by-slide outline for a quarterly sponsor briefing.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - project-management
+  - executive
+  - sponsor
+  - briefing
+  - deck
+  requires_context: false
+variables:
+- name: challenges
+  description: The challenges to use for this prompt
+  required: true
+- name: kpi_snapshot
+  description: '`{{strategic_wins}}`'
+  required: true
+- name: strategic_wins
+  description: '`{{challenges}}`'
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -45,14 +66,3 @@ evaluators:
 - name: Contains Decision Request slide
   string:
     contains: Decision Request
-version: 0.1.0
-variables:
-- name: challenges
-  description: TODO
-  required: true
-- name: kpi_snapshot
-  description: TODO
-  required: true
-- name: strategic_wins
-  description: TODO
-  required: true

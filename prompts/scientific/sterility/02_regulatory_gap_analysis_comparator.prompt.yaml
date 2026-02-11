@@ -1,6 +1,20 @@
 ---
 name: Regulatory Gap-Analysis Comparator
+version: 0.1.0
 description: Compare sterility-assurance requirements across key standards and guidance.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - sterility
+  - regulatory
+  - gap-analysis
+  - comparator
+  requires_context: false
+variables:
+- name: device_description
+  description: brief description of the device
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -47,8 +61,3 @@ evaluators:
 - name: Contains summary section
   string:
     contains: Summary
-version: 0.1.0
-variables:
-- name: device_description
-  description: TODO
-  required: true

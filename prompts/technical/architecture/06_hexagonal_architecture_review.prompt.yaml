@@ -1,7 +1,20 @@
 ---
 name: Hexagonal Architecture Review
+version: 0.1.0
 description: Analyze code for adherence to Hexagonal Architecture principles, identifying layer violations and dependency
   issues.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - architecture
+  - hexagonal
+  - review
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.1
@@ -27,8 +40,3 @@ messages:
   content: <code>{{input}}</code>
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

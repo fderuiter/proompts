@@ -1,6 +1,21 @@
 ---
 name: Edit-Check Specification Builder for New eCRF Fields
+version: 0.1.0
 description: Create edit-check specifications for the new Concomitant Medication module in Medidata Rave.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - data
+  - edit-check
+  - specification
+  - builder
+  - new
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -19,8 +34,3 @@ evaluators:
 - name: Validates date order
   string:
     contains: CMENDTC < CMSTDTC
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

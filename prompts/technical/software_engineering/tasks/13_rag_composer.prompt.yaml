@@ -1,6 +1,24 @@
 ---
 name: Retrieval-Augmented Answer Composer
+version: 0.1.0
 description: Provide concise answers using only supplied knowledge-base files.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - software-engineering
+  - engineering-tasks
+  - retrieval-augmented
+  - answer
+  - composer
+  requires_context: true
+variables:
+- name: FILES
+  description: knowledge-base documents to search
+  required: true
+- name: QUESTION
+  description: user question
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -35,11 +53,3 @@ messages:
     Output format: Markdown with three sections: **## Sources**, **## Answer**, **## Next**.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: FILES
-  description: TODO
-  required: true
-- name: QUESTION
-  description: TODO
-  required: true

@@ -1,6 +1,18 @@
 ---
 name: Portfolio-Level Clinical Operations Roadmap
+version: 0.1.0
 description: Provide a 12‑month roadmap for a portfolio of clinical trials.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - trial-execution
+  - portfolio-level
+  - clinical
+  - operations
+  - roadmap
+  requires_context: false
+variables: []
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -47,5 +59,3 @@ evaluators:
 - name: Provides detailed roadmap
   string:
     contains: Detailed Roadmap
-version: 0.1.0
-variables: []

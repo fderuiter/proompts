@@ -1,6 +1,21 @@
 ---
 name: Clinical Trial Protocol Compliance Review
+version: 0.1.0
 description: Evaluate a draft protocol for quality and regulatory compliance.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - medical-director
+  - clinical
+  - trial
+  - protocol
+  - compliance
+  requires_context: true
+variables:
+- name: protocol_text
+  description: draft protocol or attachment
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -32,8 +47,3 @@ messages:
     - **Executive Summary** – prose overview'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: protocol_text
-  description: TODO
-  required: true

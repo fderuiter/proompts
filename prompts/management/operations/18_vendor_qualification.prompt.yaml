@@ -1,6 +1,20 @@
 ---
 name: Vendor Qualification and Oversight
+version: 0.1.0
 description: Develop Vendor Oversight Plan and KPIs.
+metadata:
+  domain: management
+  complexity: low
+  tags:
+  - operations
+  - vendor
+  - qualification
+  - oversight
+  requires_context: false
+variables:
+- name: vendor_details
+  description: The vendor details to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -35,8 +49,3 @@ evaluators:
 - name: Transfer of Obligations
   string:
     contains: Transfer of Obligations
-version: 0.1.0
-variables:
-- name: vendor_details
-  description: TODO
-  required: true

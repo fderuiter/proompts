@@ -1,6 +1,20 @@
 ---
 name: Lay Language Summary Creation
+version: 0.1.0
 description: Summarize trial results for lay audience.
+metadata:
+  domain: communication
+  complexity: low
+  tags:
+  - lay
+  - language
+  - summary
+  - creation
+  requires_context: false
+variables:
+- name: technical_results
+  description: The technical results to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -35,8 +49,3 @@ evaluators:
 - name: EU CTR Annex V
   string:
     contains: EU CTR Annex V
-version: 0.1.0
-variables:
-- name: technical_results
-  description: TODO
-  required: true

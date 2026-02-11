@@ -1,6 +1,20 @@
 ---
 name: IND Determination and Application
+version: 0.1.0
 description: Determine IND exemption and prepare dossier.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-strategy
+  - ind
+  - determination
+  - application
+  requires_context: false
+variables:
+- name: protocol_and_status
+  description: The protocol and status to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -36,8 +50,3 @@ evaluators:
 - name: IND Determination
   string:
     contains: IND Determination
-version: 0.1.0
-variables:
-- name: protocol_and_status
-  description: TODO
-  required: true

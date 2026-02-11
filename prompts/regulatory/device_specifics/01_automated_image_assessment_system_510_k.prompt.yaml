@@ -1,6 +1,21 @@
 ---
 name: Automated Image Assessment System 510(k)
+version: 0.1.0
 description: Draft a detailed device description for an automated image assessment system for microbial colonies.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - medical-devices
+  - automated
+  - image
+  - assessment
+  - system
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
@@ -37,8 +52,3 @@ testData:
 evaluators:
 - name: Validation Check
   regex: (?i)Verify
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

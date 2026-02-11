@@ -1,6 +1,24 @@
 ---
 name: eTMF Compliance Gap Analysis
+version: 0.1.0
 description: Evaluate an electronic Trial Master File for compliance gaps and recommend corrective actions.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - quality
+  - tmf
+  - compliance
+  - gap
+  - analysis
+  requires_context: true
+variables:
+- name: etmf_export
+  description: Excel export of the eTMF
+  required: true
+- name: study_id
+  description: The study id to use for this prompt
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -39,11 +57,3 @@ messages:
     <!-- markdownlint-enable MD029 MD036 -->'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: etmf_export
-  description: TODO
-  required: true
-- name: study_id
-  description: TODO
-  required: true

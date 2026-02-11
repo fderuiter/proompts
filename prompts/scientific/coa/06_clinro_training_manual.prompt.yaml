@@ -1,6 +1,27 @@
 ---
 name: ClinRO User Manual Generator
+version: 0.1.0
 description: Draft a standardized user manual for ClinRO administration and training.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - clinical-outcome-assessment
+  - clin
+  - user
+  - manual
+  - generator
+  requires_context: true
+variables:
+- name: clinro_name
+  description: The name or identifier
+  required: true
+- name: measurement_type
+  description: The measurement type to use for this prompt
+  required: true
+- name: requirements
+  description: The requirements or specifications
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -69,14 +90,3 @@ evaluators:
 - name: Tools Mention
   regex:
     pattern: (?i)(tool|light|caliper)
-version: 0.1.0
-variables:
-- name: clinro_name
-  description: TODO
-  required: true
-- name: measurement_type
-  description: TODO
-  required: true
-- name: requirements
-  description: TODO
-  required: true

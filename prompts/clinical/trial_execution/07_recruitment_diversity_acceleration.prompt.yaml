@@ -1,6 +1,18 @@
 ---
 name: Patient Recruitment and Diversity Acceleration Plan
+version: 0.1.0
 description: Boost enrollment and improve demographic diversity in a stalled Phase III study.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - trial-execution
+  - patient
+  - recruitment
+  - diversity
+  - acceleration
+  requires_context: false
+variables: []
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -41,5 +53,3 @@ evaluators:
 - name: Includes ROI projection
   string:
     contains: ROI
-version: 0.1.0
-variables: []

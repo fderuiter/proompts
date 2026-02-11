@@ -1,6 +1,21 @@
 ---
 name: Computer System Validation (CSV)
+version: 0.1.0
 description: Generate validation documents for EDC systems.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - eclinical-integration
+  - computer
+  - system
+  - validation
+  - csv
+  requires_context: false
+variables:
+- name: system_requirements
+  description: The requirements or specifications
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -39,8 +54,3 @@ evaluators:
 - name: Electronic Signature
   string:
     contains: Electronic Signature
-version: 0.1.0
-variables:
-- name: system_requirements
-  description: TODO
-  required: true

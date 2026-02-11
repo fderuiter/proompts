@@ -1,6 +1,20 @@
 ---
 name: Regulatory and Validation Checklist
+version: 0.1.0
 description: Compile a compliance checklist for digital trial data integrations.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - eclinical-integration
+  - regulatory
+  - validation
+  - checklist
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -36,8 +50,3 @@ evaluators:
 - name: Mentions GDPR
   string:
     contains: GDPR
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

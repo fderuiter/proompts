@@ -1,6 +1,20 @@
 ---
 name: Tailored Feasibility-Questionnaire Builder
+version: 0.1.0
 description: Draft a site-feasibility questionnaire to confirm patient availability and operational readiness.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - site-acquisition
+  - tailored
+  - feasibility-questionnaire
+  - builder
+  requires_context: false
+variables:
+- name: protocol_summary
+  description: draft study synopsis
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -24,8 +38,3 @@ evaluators:
 - name: Output starts with 'Section A'
   string:
     startsWith: Section A
-version: 0.1.0
-variables:
-- name: protocol_summary
-  description: TODO
-  required: true

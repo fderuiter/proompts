@@ -1,6 +1,20 @@
 ---
 name: Hands-On Procedure Coaching
+version: 0.1.0
 description: Coach a trainee through a vascular access technique using a training model.
+metadata:
+  domain: scientific
+  complexity: low
+  tags:
+  - bioskills
+  - hands-on
+  - procedure
+  - coaching
+  requires_context: false
+variables:
+- name: procedure_name
+  description: specific procedure being practiced
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -37,8 +51,3 @@ evaluators:
 - name: Output starts with a bullet
   string:
     startsWith: '- '
-version: 0.1.0
-variables:
-- name: procedure_name
-  description: TODO
-  required: true

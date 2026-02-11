@@ -1,6 +1,19 @@
 ---
 name: Writing Clarity Mentor
+version: 0.1.0
 description: Improve a passage by highlighting issues and rewriting for clarity.
+metadata:
+  domain: communication
+  complexity: low
+  tags:
+  - writing
+  - clarity
+  - mentor
+  requires_context: false
+variables:
+- name: passage
+  description: text to refine
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.7
@@ -69,8 +82,3 @@ evaluators:
 - name: Includes style tip
   string:
     contains: tip
-version: 0.1.0
-variables:
-- name: passage
-  description: TODO
-  required: true

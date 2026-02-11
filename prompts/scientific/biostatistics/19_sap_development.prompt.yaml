@@ -1,6 +1,21 @@
 ---
 name: Statistical Analysis Plan (SAP) Development
+version: 0.1.0
 description: Draft a comprehensive SAP.
+metadata:
+  domain: scientific
+  complexity: low
+  tags:
+  - biostatistics
+  - statistical
+  - analysis
+  - plan
+  - sap
+  requires_context: false
+variables:
+- name: protocol_summary
+  description: A summary of the key information
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -39,8 +54,3 @@ evaluators:
 - name: Sensitivity Analysis
   string:
     contains: Sensitivity Analysis
-version: 0.1.0
-variables:
-- name: protocol_summary
-  description: TODO
-  required: true

@@ -1,6 +1,21 @@
 ---
 name: Clinical Safety Synopsis for EU MDR CER
+version: 0.1.0
 description: Provide a concise clinical safety synopsis for the EU MDR Clinical Evaluation Report.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - safety
+  - clinical
+  - synopsis
+  - mdr
+  - cer
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -22,8 +37,3 @@ evaluators:
 - name: Output starts with 'Clinical Safety Synopsis'
   string:
     startsWith: Clinical Safety Synopsis
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

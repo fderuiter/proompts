@@ -1,6 +1,19 @@
 ---
 name: SAE and Safety Reporting
+version: 0.1.0
 description: Analyze SAEs for expedited reporting criteria.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - safety
+  - sae
+  - reporting
+  requires_context: true
+variables:
+- name: sae_report
+  description: The sae report to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -37,8 +50,3 @@ evaluators:
 - name: Narrative Statement
   string:
     contains: Narrative Statement
-version: 0.1.0
-variables:
-- name: sae_report
-  description: TODO
-  required: true

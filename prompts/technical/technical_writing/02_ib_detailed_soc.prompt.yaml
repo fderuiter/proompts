@@ -1,6 +1,18 @@
 ---
 name: Investigator's Brochure Summary of Changes
+version: 0.1.0
 description: Produce a detailed summary of changes for the annual Investigator’s Brochure update.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - technical-writing
+  - investigator
+  - brochure
+  - summary
+  - changes
+  requires_context: false
+variables: []
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -45,5 +57,3 @@ evaluators:
 - name: Contains summary of changes table headers
   string:
     contains: '| Section | Old text | New text | Rationale |'
-version: 0.1.0
-variables: []

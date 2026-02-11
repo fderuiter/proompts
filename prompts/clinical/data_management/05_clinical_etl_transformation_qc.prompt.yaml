@@ -1,6 +1,20 @@
 ---
 name: Clinical ETL Transformation QC
+version: 0.1.0
 description: Define quality checks for clinical ETL transformations.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - data-management
+  - clinical
+  - etl
+  - transformation
+  requires_context: false
+variables:
+- name: etl_mapping_spec
+  description: The etl mapping spec to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -25,8 +39,3 @@ evaluators:
 - name: Output mentions validation
   string:
     contains: validation
-version: 0.1.0
-variables:
-- name: etl_mapping_spec
-  description: TODO
-  required: true

@@ -1,6 +1,25 @@
 ---
 name: Investigator-Site Payment Forecast
+version: 0.1.0
 description: Produce a month-by-month cash-flow forecast for site payments.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - payment
+  - investigator-site
+  - forecast
+  requires_context: false
+variables:
+- name: enrollment_curve
+  description: expected enrollment percentage per month
+  required: true
+- name: fx_rates
+  description: FX rate sheet name
+  required: true
+- name: site_data
+  description: Site ID, country, contract currency, enrollment target, and milestone amounts
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -55,14 +74,3 @@ evaluators:
 - name: Contains site ID column
   string:
     contains: '| Site ID |'
-version: 0.1.0
-variables:
-- name: enrollment_curve
-  description: TODO
-  required: true
-- name: fx_rates
-  description: TODO
-  required: true
-- name: site_data
-  description: TODO
-  required: true

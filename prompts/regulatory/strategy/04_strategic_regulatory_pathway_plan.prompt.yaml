@@ -1,6 +1,24 @@
 ---
 name: Strategic Regulatory Pathway Plan
+version: 0.1.0
 description: Outline a holistic global regulatory pathway for a medical device or IVD.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - regulatory-strategy
+  - strategic
+  - regulatory
+  - pathway
+  - plan
+  requires_context: false
+variables:
+- name: device_name
+  description: product name
+  required: true
+- name: intended_use
+  description: summary of clinical application
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -40,11 +58,3 @@ messages:
     Keep advice concise and action‑oriented for a global audience.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: device_name
-  description: TODO
-  required: true
-- name: intended_use
-  description: TODO
-  required: true

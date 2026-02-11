@@ -1,6 +1,26 @@
 ---
 name: Cross-Functional Advocacy Memo
+version: 0.1.0
 description: Draft a memo to Product/Sales focusing on revenue risk to prioritize features.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - customer-experience
+  - cross-functional
+  - advocacy
+  - memo
+  requires_context: false
+variables:
+- name: feature_request
+  description: The feature request to use for this prompt
+  required: true
+- name: pipeline_stalled
+  description: The pipeline stalled to use for this prompt
+  required: true
+- name: renewal_risk
+  description: The renewal risk to use for this prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -57,14 +77,3 @@ evaluators:
 - name: Output should contain Revenue at Risk
   string:
     contains: Revenue at Risk
-version: 0.1.0
-variables:
-- name: feature_request
-  description: TODO
-  required: true
-- name: pipeline_stalled
-  description: TODO
-  required: true
-- name: renewal_risk
-  description: TODO
-  required: true

@@ -1,7 +1,22 @@
 ---
 name: DevEx Documentation Architect
+version: 0.1.0
 description: A Senior Developer Experience Engineer's guide to creating world-class documentation, onboarding paths, and architectural
   records.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - software-engineering
+  - engineering-tasks
+  - dev
+  - documentation
+  - architect
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -48,8 +63,3 @@ evaluators:
 - name: Output contains Documentation Plan header
   regex:
     pattern: '## 📚 Documentation Plan'
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

@@ -1,6 +1,20 @@
 ---
 name: Post-Market Safety Signal Trending
+version: 0.1.0
 description: Analyze post-market data to identify emerging safety signals.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - safety
+  - post-market
+  - signal
+  - trending
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -22,8 +36,3 @@ evaluators:
 - name: Output starts with 'Post-Market Safety Signal Trending'
   string:
     startsWith: Post-Market Safety Signal Trending
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

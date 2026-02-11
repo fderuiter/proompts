@@ -1,6 +1,24 @@
 ---
 name: 510(k)/De Novo Pre-Submission Strategy
+version: 0.1.0
 description: Determine the best U.S. regulatory pathway and craft a 12‑month pre‑submission plan.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - regulatory-strategy
+  - '510'
+  - novo
+  - pre-submission
+  - strategy
+  requires_context: true
+variables:
+- name: device_description
+  description: device details and intended use
+  required: true
+- name: predicate_devices
+  description: competitor or reference devices
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -22,11 +40,3 @@ messages:
     \ evidence‑based. Wait for user confirmation before drafting the final plan."
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: device_description
-  description: TODO
-  required: true
-- name: predicate_devices
-  description: TODO
-  required: true

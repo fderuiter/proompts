@@ -1,6 +1,21 @@
 ---
 name: Operational Excellence Communication Framework
+version: 0.1.0
 description: Improve collaboration between business development, clinical operations, and data teams after contract award.
+metadata:
+  domain: management
+  complexity: low
+  tags:
+  - leadership
+  - operational
+  - excellence
+  - communication
+  - framework
+  requires_context: false
+variables:
+- name: current_processes
+  description: short description of existing communication practices
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -26,8 +41,3 @@ messages:
     Output format: Markdown sections titled **Channels**, **Roles**, **Escalation**, and **Metrics**.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: current_processes
-  description: TODO
-  required: true

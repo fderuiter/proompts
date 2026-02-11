@@ -1,6 +1,21 @@
 ---
 name: 'Execution Optimization: Parallel Testing'
+version: 0.1.0
 description: Configure the automation suite to execute multiple tests simultaneously.
+metadata:
+  domain: technical
+  complexity: low
+  tags:
+  - testing
+  - selenium
+  - execution
+  - optimization
+  - parallel
+  requires_context: false
+variables:
+- name: language
+  description: The programming or natural language to use
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -26,8 +41,3 @@ evaluators:
   regex: ThreadLocal
 - name: testng.xml parallel attribute
   regex: parallel="methods"
-version: 0.1.0
-variables:
-- name: language
-  description: TODO
-  required: true

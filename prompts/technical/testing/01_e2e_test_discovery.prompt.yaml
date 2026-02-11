@@ -1,6 +1,27 @@
 ---
 name: E2E Test Discovery Template
+version: 0.1.0
 description: Guide a model to analyze a codebase and produce a comprehensive end‑to‑end test plan.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - testing
+  - e2e
+  - test
+  - discovery
+  - template
+  requires_context: true
+variables:
+- name: business_goal
+  description: overall objective
+  required: true
+- name: languages_frameworks
+  description: The programming or natural language to use
+  required: true
+- name: project_name
+  description: name of the project
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -79,14 +100,3 @@ evaluators:
 - name: Output starts with 'Repository Overview'
   string:
     startsWith: Repository Overview
-version: 0.1.0
-variables:
-- name: business_goal
-  description: TODO
-  required: true
-- name: languages_frameworks
-  description: TODO
-  required: true
-- name: project_name
-  description: TODO
-  required: true

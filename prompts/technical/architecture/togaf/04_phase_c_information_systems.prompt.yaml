@@ -1,6 +1,21 @@
 ---
 name: TOGAF Phase C - Information Systems Architectures
+version: 0.1.0
 description: Guide for defining the Information Systems Architectures (Data and Application Architectures).
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - architecture
+  - togaf
+  - phase
+  - information
+  - systems
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -89,8 +104,3 @@ messages:
   content: <request>{{input}}</request>
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

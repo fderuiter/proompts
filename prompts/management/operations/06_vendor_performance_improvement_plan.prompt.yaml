@@ -1,6 +1,27 @@
 ---
 name: Risk-Based Vendor Performance Improvement Plan
+version: 0.1.0
 description: Raise overall vendor performance and reduce operational risk.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - operations
+  - risk-based
+  - vendor
+  - performance
+  - improvement
+  requires_context: true
+variables:
+- name: audit_reports
+  description: recent QA findings
+  required: true
+- name: contract_terms
+  description: key obligations and SLAs
+  required: true
+- name: vendor_scorecards
+  description: performance metrics
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -35,14 +56,3 @@ messages:
     Output format: Markdown table plus narrative paragraph.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: audit_reports
-  description: TODO
-  required: true
-- name: contract_terms
-  description: TODO
-  required: true
-- name: vendor_scorecards
-  description: TODO
-  required: true

@@ -1,6 +1,21 @@
 ---
 name: 'Architecture Design: Page Object Model'
+version: 0.1.0
 description: Implement the Page Object Model pattern to separate UI locators from test logic.
+metadata:
+  domain: technical
+  complexity: low
+  tags:
+  - testing
+  - selenium
+  - architecture
+  - design
+  - page
+  requires_context: false
+variables:
+- name: html_source
+  description: The html source to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -25,8 +40,3 @@ testData:
 evaluators:
 - name: Uses FindBy annotation
   regex: '@FindBy'
-version: 0.1.0
-variables:
-- name: html_source
-  description: TODO
-  required: true

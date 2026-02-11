@@ -1,6 +1,20 @@
 ---
 name: Privacy Act Auditing
+version: 0.1.0
 description: Draft a notice for a new FDA Privacy Act Record System.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-admin
+  - privacy
+  - act
+  - auditing
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
@@ -37,8 +51,3 @@ testData:
 evaluators:
 - name: Validation Check
   regex: (?i)Compare
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

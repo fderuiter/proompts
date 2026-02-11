@@ -1,6 +1,20 @@
 ---
 name: Objective Skills Assessment
+version: 0.1.0
 description: Design an objective skills checklist for a surgical stapler deployment lab.
+metadata:
+  domain: scientific
+  complexity: low
+  tags:
+  - bioskills
+  - objective
+  - skills
+  - assessment
+  requires_context: false
+variables:
+- name: procedure_name
+  description: specific stapler procedure if provided
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -39,8 +53,3 @@ evaluators:
 - name: Output starts with 'Markdown table:'
   string:
     startsWith: 'Markdown table:'
-version: 0.1.0
-variables:
-- name: procedure_name
-  description: TODO
-  required: true

@@ -1,6 +1,21 @@
 ---
 name: Strategic Market and Competitor Radar
+version: 0.1.0
 description: Provide an executive briefing on growth areas, competitor moves, and regulatory shifts.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - executive
+  - strategic
+  - market
+  - competitor
+  - radar
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -32,8 +47,3 @@ evaluators:
 - name: Output is non-empty
   string:
     startsWith: ''
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

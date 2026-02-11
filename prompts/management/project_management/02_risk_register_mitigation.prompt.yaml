@@ -1,6 +1,21 @@
 ---
 name: Comprehensive Risk Register and Mitigation Plan
+version: 0.1.0
 description: Produce a risk register with mitigation actions and overall strategies.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - project-management
+  - comprehensive
+  - risk
+  - register
+  - mitigation
+  requires_context: false
+variables:
+- name: project_overview
+  description: The project overview to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -42,8 +57,3 @@ evaluators:
 - name: Mentions mitigation actions
   string:
     contains: Mitigation
-version: 0.1.0
-variables:
-- name: project_overview
-  description: TODO
-  required: true

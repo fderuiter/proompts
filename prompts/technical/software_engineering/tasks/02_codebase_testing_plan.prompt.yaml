@@ -1,8 +1,23 @@
 ---
 name: Codebase Testing Plan
+version: 0.1.0
 description: As a Distinguished Quality Engineer, generate a comprehensive testing strategy and implementation roadmap for
   an existing codebase. This includes risk analysis, tooling selection, and a phased rollout plan aligned with modern CI/CD
   practices.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - software-engineering
+  - engineering-tasks
+  - codebase
+  - testing
+  - plan
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -100,8 +115,3 @@ evaluators:
 - name: Contains Testing Strategy
   regex:
     pattern: '## Testing Strategy'
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

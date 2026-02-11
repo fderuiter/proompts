@@ -1,6 +1,20 @@
 ---
 name: Off-Label Information Dissemination
+version: 0.1.0
 description: Prepare a mandatory disclosure statement for disseminating peer-reviewed articles on unapproved uses.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-adherence
+  - off-label
+  - information
+  - dissemination
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
@@ -37,8 +51,3 @@ testData:
 evaluators:
 - name: Validation Check
   regex: (?i)Confirm
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

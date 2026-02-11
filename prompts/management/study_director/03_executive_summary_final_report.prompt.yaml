@@ -1,6 +1,21 @@
 ---
 name: Generate an Executive Summary for the Final Report
+version: 0.1.0
 description: Write a concise executive summary of a non-clinical study report.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - study-director
+  - generate
+  - executive
+  - summary
+  - final
+  requires_context: true
+variables:
+- name: report_sections
+  description: draft CTD modules and tables
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -52,8 +67,3 @@ evaluators:
 - name: Mentions NOAEL
   string:
     contains: NOAEL
-version: 0.1.0
-variables:
-- name: report_sections
-  description: TODO
-  required: true

@@ -1,6 +1,21 @@
 ---
 name: Adaptive Design & Interim Monitoring
+version: 0.1.0
 description: Provide guidance on adaptive trial design and interim monitoring strategies.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - adaptive
+  - design
+  - interim
+  - monitoring
+  requires_context: false
+variables:
+- name: trial_details
+  description: The trial details to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -38,8 +53,3 @@ evaluators:
 - name: Output starts with '- '
   string:
     startsWith: '- '
-version: 0.1.0
-variables:
-- name: trial_details
-  description: TODO
-  required: true

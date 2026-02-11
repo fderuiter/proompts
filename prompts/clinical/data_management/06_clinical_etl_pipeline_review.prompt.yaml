@@ -1,6 +1,21 @@
 ---
 name: Clinical ETL Pipeline Review
+version: 0.1.0
 description: Review the clinical ETL pipeline for accuracy and efficiency.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - data-management
+  - clinical
+  - etl
+  - pipeline
+  - review
+  requires_context: false
+variables:
+- name: etl_qc_plan
+  description: The etl qc plan to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -26,8 +41,3 @@ evaluators:
 - name: Output mentions pipeline
   string:
     contains: pipeline
-version: 0.1.0
-variables:
-- name: etl_qc_plan
-  description: TODO
-  required: true

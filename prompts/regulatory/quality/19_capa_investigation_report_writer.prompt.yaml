@@ -1,6 +1,30 @@
 ---
 name: CAPA Investigation Report Writer
+version: 0.1.0
 description: Draft a formal CAPA investigation report for regulatory review.
+metadata:
+  domain: regulatory
+  complexity: high
+  tags:
+  - quality
+  - capa
+  - investigation
+  - report
+  - writer
+  requires_context: false
+variables:
+- name: actions_taken
+  description: The actions taken to use for this prompt
+  required: true
+- name: effectiveness_check
+  description: The effectiveness check to use for this prompt
+  required: true
+- name: incident_summary
+  description: A summary of the key information
+  required: true
+- name: root_cause
+  description: The root cause to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -57,17 +81,3 @@ evaluators:
 - name: Effectiveness Verification Criteria
   regex:
     pattern: (?i)Effectiveness Verification Criteria
-version: 0.1.0
-variables:
-- name: actions_taken
-  description: TODO
-  required: true
-- name: effectiveness_check
-  description: TODO
-  required: true
-- name: incident_summary
-  description: TODO
-  required: true
-- name: root_cause
-  description: TODO
-  required: true

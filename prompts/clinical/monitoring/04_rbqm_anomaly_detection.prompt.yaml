@@ -1,7 +1,21 @@
 ---
 name: RBQM Anomaly Detection
+version: 0.1.0
 description: Identify data outliers, anomalies, and atypical patient patterns in real-time across clinical trial datasets
   to flag potential risks or misconduct.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - monitoring
+  - rbqm
+  - anomaly
+  - detection
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -39,8 +53,3 @@ evaluators:
 - name: Timeline Error Detected
   regex:
     pattern: (?i)consent.*visit
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

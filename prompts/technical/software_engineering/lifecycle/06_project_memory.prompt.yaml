@@ -1,6 +1,18 @@
 ---
 name: Project Memory Notes
+version: 0.1.0
 description: Maintain a running log of architectural decisions and contextual notes for the project.
+metadata:
+  domain: technical
+  complexity: low
+  tags:
+  - software-engineering
+  - sdlc
+  - project
+  - memory
+  - notes
+  requires_context: true
+variables: []
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -33,5 +45,3 @@ evaluators:
 - name: Output starts with 'Current Project State'
   string:
     startsWith: Current Project State
-version: 0.1.0
-variables: []

@@ -1,6 +1,19 @@
 ---
 name: Hero's Journey Storyboarder
+version: 0.1.0
 description: Craft a brief marketing narrative following the Hero's Journey structure.
+metadata:
+  domain: communication
+  complexity: low
+  tags:
+  - hero
+  - journey
+  - storyboarder
+  requires_context: false
+variables:
+- name: product
+  description: The product or offering being discussed
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.7
@@ -41,8 +54,3 @@ evaluators:
 - name: Includes Return with Elixir beat
   string:
     contains: Return with Elixir
-version: 0.1.0
-variables:
-- name: product
-  description: TODO
-  required: true

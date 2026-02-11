@@ -1,6 +1,25 @@
 ---
 name: PromptCrafter GPT
+version: 0.1.0
 description: Generate three distinct, best-practice prompts for a given topic.
+metadata:
+  domain: meta
+  complexity: medium
+  tags:
+  - prompt
+  - crafter
+  - gpt
+  requires_context: false
+variables:
+- name: optional_flags
+  description: optional modifiers
+  required: true
+- name: target_audience
+  description: optional audience description
+  required: true
+- name: topic
+  description: subject matter
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -32,14 +51,3 @@ messages:
     Output format: Numbered list of prompts.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: optional_flags
-  description: TODO
-  required: true
-- name: target_audience
-  description: TODO
-  required: true
-- name: topic
-  description: TODO
-  required: true

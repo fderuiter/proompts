@@ -1,6 +1,19 @@
 ---
 name: MECE Structuring Consultant
+version: 0.1.0
 description: Reorganize brainstorm ideas into three mutually exclusive, collectively exhaustive buckets.
+metadata:
+  domain: meta
+  complexity: low
+  tags:
+  - mece
+  - structuring
+  - consultant
+  requires_context: true
+variables:
+- name: LIST
+  description: the brainstorm items to reorganize
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -27,8 +40,3 @@ messages:
     Output format: Markdown outline with three top-level bullets, followed by a short paragraph.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: LIST
-  description: TODO
-  required: true

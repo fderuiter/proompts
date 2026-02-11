@@ -1,7 +1,19 @@
 ---
 name: Test Suite Enhancement and CI Pipeline Implementation
+version: 0.1.0
 description: Build the automated quality gates for this repository by increasing test coverage, adding meaningful unit tests,
   and introducing a basic CI pipeline.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - repository-refactoring
+  - test
+  - suite
+  - enhancement
+  - pipeline
+  requires_context: true
+variables: []
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -21,5 +33,3 @@ messages:
     \ For the CI pipeline, provide the complete YAML configuration file (e.g., `.github/workflows/ci.yml`)."
 testData: []
 evaluators: []
-version: 0.1.0
-variables: []

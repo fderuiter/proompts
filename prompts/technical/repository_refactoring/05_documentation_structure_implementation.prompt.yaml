@@ -1,6 +1,18 @@
 ---
 name: Documentation and Repository Structure Implementation
+version: 0.1.0
 description: Implement foundational improvements for the repository's structure and documentation.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - repository-refactoring
+  - documentation
+  - repository
+  - structure
+  - implementation
+  requires_context: true
+variables: []
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -24,5 +36,3 @@ messages:
     \ clearly labeled markdown code block. For the directory reorganization, provide the list of `mv` commands."
 testData: []
 evaluators: []
-version: 0.1.0
-variables: []

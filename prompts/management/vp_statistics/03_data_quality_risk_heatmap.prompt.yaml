@@ -1,6 +1,24 @@
 ---
 name: Data-Quality Risk Heat Map
+version: 0.1.0
 description: Assess site-level data quality and recommend mitigation actions.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - statistics
+  - data-quality
+  - risk
+  - heat
+  - map
+  requires_context: false
+variables:
+- name: query_log
+  description: open and closed queries
+  required: true
+- name: raw_eds_dump
+  description: patient-level dataset
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -34,11 +52,3 @@ evaluators:
 - name: Mentions risk deciles
   string:
     contains: risk deciles
-version: 0.1.0
-variables:
-- name: query_log
-  description: TODO
-  required: true
-- name: raw_eds_dump
-  description: TODO
-  required: true

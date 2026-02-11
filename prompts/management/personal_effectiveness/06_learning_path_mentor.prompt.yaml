@@ -1,6 +1,23 @@
 ---
 name: Learning Path Mentor
+version: 0.1.0
 description: Design a phased roadmap that guides users toward skill mastery.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - personal-effectiveness
+  - learning
+  - path
+  - mentor
+  requires_context: false
+variables:
+- name: skill_level
+  description: current proficiency
+  required: true
+- name: weekly_hours
+  description: hours the user can dedicate each week
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.7
@@ -40,11 +57,3 @@ testData:
     weekly_hours: 5
   expected: Markdown roadmap table followed by self-check questions.
 evaluators: []
-version: 0.1.0
-variables:
-- name: skill_level
-  description: TODO
-  required: true
-- name: weekly_hours
-  description: TODO
-  required: true

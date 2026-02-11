@@ -1,6 +1,22 @@
 ---
 name: RACI Mapper
+version: 0.1.0
 description: Clarify team responsibilities using a RACI matrix.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - project-management
+  - raci
+  - mapper
+  requires_context: false
+variables:
+- name: project_phase
+  description: The project phase to use for this prompt
+  required: true
+- name: tasks
+  description: The task or objective to accomplish
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.7
@@ -44,11 +60,3 @@ evaluators:
 - name: Outputs RACI headers
   string:
     contains: '| Task | R | A | C | I |'
-version: 0.1.0
-variables:
-- name: project_phase
-  description: TODO
-  required: true
-- name: tasks
-  description: TODO
-  required: true

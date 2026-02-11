@@ -1,6 +1,32 @@
 ---
 name: Compliance Gap Assessment
+version: 0.1.0
 description: Evaluate organizational controls against a specified compliance framework and prioritize remediation.
+metadata:
+  domain: regulatory
+  complexity: high
+  tags:
+  - regulatory-strategy
+  - compliance
+  - gap
+  - assessment
+  requires_context: false
+variables:
+- name: EMPLOYEES
+  description: The EMPLOYEES to use for this prompt
+  required: true
+- name: FRAMEWORK
+  description: The FRAMEWORK to use for this prompt
+  required: true
+- name: RISK_APPETITE
+  description: The RISK APPETITE to use for this prompt
+  required: true
+- name: controls
+  description: framework control list
+  required: true
+- name: evidence_logs
+  description: policies and evidence artifacts
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -23,20 +49,3 @@ messages:
     \ 12 months, mark status as Partially implemented. Request missing artifacts before final scoring."
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: EMPLOYEES
-  description: TODO
-  required: true
-- name: FRAMEWORK
-  description: TODO
-  required: true
-- name: RISK_APPETITE
-  description: TODO
-  required: true
-- name: controls
-  description: TODO
-  required: true
-- name: evidence_logs
-  description: TODO
-  required: true

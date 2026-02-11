@@ -1,6 +1,20 @@
 ---
 name: Budget Variance Analysis
+version: 0.1.0
 description: Identify top variances in a budget-to-actuals report and draft explanations for the Board.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - finance
+  - budget
+  - variance
+  - analysis
+  requires_context: true
+variables:
+- name: report
+  description: '`{{report}}`'
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -31,8 +45,3 @@ evaluators:
 - name: Output should contain variance explanations
   regex:
     pattern: (?i)variance
-version: 0.1.0
-variables:
-- name: report
-  description: TODO
-  required: true

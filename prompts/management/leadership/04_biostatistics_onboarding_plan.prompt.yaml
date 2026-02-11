@@ -1,6 +1,24 @@
 ---
 name: 90-Day Biostatistics Onboarding Plan
+version: 0.1.0
 description: Design a structured program to move new statisticians from orientation to productive project work in 90 days.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - leadership
+  - 90-day
+  - biostatistics
+  - onboarding
+  - plan
+  requires_context: false
+variables:
+- name: cohort_size
+  description: number of hires per onboarding cohort
+  required: true
+- name: therapeutic_focus
+  description: dominant therapeutic areas
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -32,11 +50,3 @@ messages:
     and **Remote Adaptation**.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: cohort_size
-  description: TODO
-  required: true
-- name: therapeutic_focus
-  description: TODO
-  required: true

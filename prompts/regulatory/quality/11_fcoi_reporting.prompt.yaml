@@ -1,6 +1,21 @@
 ---
 name: Financial Conflict of Interest (FCOI) Reporting
+version: 0.1.0
 description: Review disclosures and draft management plan.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - quality
+  - financial
+  - conflict
+  - interest
+  - fcoi
+  requires_context: false
+variables:
+- name: sfi_disclosure
+  description: The sfi disclosure to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -35,8 +50,3 @@ evaluators:
 - name: Management Plan
   string:
     contains: Management Plan
-version: 0.1.0
-variables:
-- name: sfi_disclosure
-  description: TODO
-  required: true

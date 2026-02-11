@@ -1,6 +1,19 @@
 ---
 name: GLP Quality Assurance
+version: 0.1.0
 description: Prepare a statement for a nonclinical study report certifying inspection dates.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - quality
+  - glp
+  - assurance
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
@@ -37,8 +50,3 @@ testData:
 evaluators:
 - name: Validation Check
   regex: (?i)Verify
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

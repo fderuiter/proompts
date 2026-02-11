@@ -1,6 +1,22 @@
 ---
 name: M&A Target Evaluation
+version: 0.1.0
 description: Evaluate a potential acquisition target based on financial statements.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - finance
+  - target
+  - evaluation
+  requires_context: false
+variables:
+- name: financial_statements
+  description: The financial statements to use for this prompt
+  required: true
+- name: target_description
+  description: A description of the subject
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -28,11 +44,3 @@ evaluators:
 - name: Output should contain CAGR calculation
   regex:
     pattern: (?i)CAGR
-version: 0.1.0
-variables:
-- name: financial_statements
-  description: TODO
-  required: true
-- name: target_description
-  description: TODO
-  required: true

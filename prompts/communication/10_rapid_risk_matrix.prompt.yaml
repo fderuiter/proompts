@@ -1,6 +1,17 @@
 ---
 name: Rapid-Risk-Matrix
+version: 0.1.0
 description: 'Act as a risk-manager. Objective: assess “[PROJECT/PROCESS]”.'
+metadata:
+  domain: communication
+  complexity: low
+  tags:
+  - rapid-risk-matrix
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -30,8 +41,3 @@ evaluators:
 - name: Output shows raw-score
   string:
     contains: Raw-Score
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

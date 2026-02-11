@@ -1,6 +1,21 @@
 ---
 name: AI-Enhanced RBM Action Plan
+version: 0.1.0
 description: Generate next-week monitoring actions that optimize patient safety and data quality.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - medical-director
+  - ai-enhanced
+  - rbm
+  - action
+  - plan
+  requires_context: false
+variables:
+- name: site_metrics
+  description: per-site metrics CSV
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -28,8 +43,3 @@ messages:
     Output format: Markdown sections: Method, Site‑Action Table and Resource Summary.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: site_metrics
-  description: TODO
-  required: true

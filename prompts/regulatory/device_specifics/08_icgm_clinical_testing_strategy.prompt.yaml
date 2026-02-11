@@ -1,6 +1,21 @@
 ---
 name: iCGM Clinical Testing Strategy
+version: 0.1.0
 description: Draft a clinical study plan to demonstrate accuracy for an iCGM system.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - medical-devices
+  - cgm
+  - clinical
+  - testing
+  - strategy
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
@@ -37,8 +52,3 @@ testData:
 evaluators:
 - name: Validation Check
   regex: (?i)Compare
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

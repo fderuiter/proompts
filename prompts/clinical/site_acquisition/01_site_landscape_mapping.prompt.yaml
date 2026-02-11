@@ -1,6 +1,21 @@
 ---
 name: Site Landscape Mapping & Prioritization
+version: 0.1.0
 description: Rank investigative sites for an upcoming study.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - site-acquisition
+  - site
+  - landscape
+  - mapping
+  - prioritization
+  requires_context: true
+variables:
+- name: protocol_summary
+  description: final study synopsis
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -44,8 +59,3 @@ evaluators:
 - name: Output starts with 'Rank'
   string:
     startsWith: Rank
-version: 0.1.0
-variables:
-- name: protocol_summary
-  description: TODO
-  required: true

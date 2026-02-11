@@ -1,6 +1,20 @@
 ---
 name: QC Listing & Cross-check Prompt
+version: 0.1.0
 description: Automate a listing and QC cross-check between independent R and SAS runs.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - listing
+  - cross-check
+  - prompt
+  requires_context: false
+variables:
+- name: dataset_paths
+  description: paths to ADAE and ADCM datasets
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -41,8 +55,3 @@ evaluators:
 - name: Output starts with '```r'
   string:
     startsWith: '```r'
-version: 0.1.0
-variables:
-- name: dataset_paths
-  description: TODO
-  required: true

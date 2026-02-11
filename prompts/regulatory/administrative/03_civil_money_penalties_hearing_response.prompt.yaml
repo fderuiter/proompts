@@ -1,6 +1,21 @@
 ---
 name: Civil Money Penalties Hearing Response
+version: 0.1.0
 description: Draft a formal 'Answer' to an FDA complaint seeking civil money penalties.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-admin
+  - civil
+  - money
+  - penalties
+  - hearing
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
@@ -37,8 +52,3 @@ testData:
 evaluators:
 - name: Validation Check
   regex: (?i)Review
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

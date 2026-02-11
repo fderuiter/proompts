@@ -1,6 +1,21 @@
 ---
 name: Project Init & Skeleton (OpenAI Codex)
+version: 0.1.0
 description: Spin up a brand-new repository with a minimal but runnable skeleton, plus a one-command local dev experience.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - software-engineering
+  - engineering-tasks
+  - project
+  - init
+  - skeleton
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -110,8 +125,3 @@ evaluators:
 - name: Output starts with 'Project Initialized -'
   string:
     startsWith: Project Initialized -
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

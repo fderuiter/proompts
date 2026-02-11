@@ -1,6 +1,26 @@
 ---
 name: UAT Script Generator
+version: 0.1.0
 description: Generate a User Acceptance Testing (UAT) script with dummy data inputs.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - eclinical-integration
+  - uat
+  - script
+  - generator
+  requires_context: false
+variables:
+- name: dummy_data_reqs
+  description: 'eCRF Design: `{{ecrf_design}}`'
+  required: true
+- name: ecrf_design
+  description: The ecrf design to use for this prompt
+  required: true
+- name: uat_scope
+  description: 'Test Patient Dummy Data Requirements: `{{dummy_data_reqs}}`'
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -43,14 +63,3 @@ evaluators:
 - name: Dummy Data
   string:
     contains: Input Data
-version: 0.1.0
-variables:
-- name: dummy_data_reqs
-  description: TODO
-  required: true
-- name: ecrf_design
-  description: TODO
-  required: true
-- name: uat_scope
-  description: TODO
-  required: true

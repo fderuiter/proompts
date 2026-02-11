@@ -1,6 +1,20 @@
 ---
 name: Emerging-Market Opportunity Scan
+version: 0.1.0
 description: Identify high-growth therapeutic areas or sponsor segments for CRO services.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - business-development
+  - emerging-market
+  - opportunity
+  - scan
+  requires_context: false
+variables:
+- name: market_data_sources
+  description: The data or dataset to analyze
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -38,8 +52,3 @@ evaluators:
 - name: Includes bullet points
   string:
     contains: '- '
-version: 0.1.0
-variables:
-- name: market_data_sources
-  description: TODO
-  required: true

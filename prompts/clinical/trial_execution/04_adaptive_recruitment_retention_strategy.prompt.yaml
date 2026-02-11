@@ -1,6 +1,24 @@
 ---
 name: Adaptive Recruitment and Retention Strategy
+version: 0.1.0
 description: Design an optimized recruitment and retention plan for a multi-site pivotal study.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - trial-execution
+  - adaptive
+  - recruitment
+  - retention
+  - strategy
+  requires_context: false
+variables:
+- name: device_or_ivd
+  description: device or diagnostic under study
+  required: true
+- name: patient_population
+  description: target population
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -49,11 +67,3 @@ evaluators:
 - name: Contains metrics section
   string:
     contains: Recruitment and retention metrics
-version: 0.1.0
-variables:
-- name: device_or_ivd
-  description: TODO
-  required: true
-- name: patient_population
-  description: TODO
-  required: true

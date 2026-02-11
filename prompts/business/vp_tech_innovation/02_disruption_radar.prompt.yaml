@@ -1,6 +1,19 @@
 ---
 name: Disruption Radar
+version: 0.1.0
 description: Identify emerging threats and startups that could disrupt core products.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - tech-innovation
+  - disruption
+  - radar
+  requires_context: true
+variables:
+- name: core_product
+  description: The product or offering being discussed
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -29,8 +42,3 @@ evaluators:
 - name: Output contains 'Likelihood of Success'
   regex:
     pattern: Likelihood of Success
-version: 0.1.0
-variables:
-- name: core_product
-  description: TODO
-  required: true

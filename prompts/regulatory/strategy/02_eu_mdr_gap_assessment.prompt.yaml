@@ -1,6 +1,24 @@
 ---
 name: EU MDR Technical-Documentation Gap Assessment
+version: 0.1.0
 description: Identify deficiencies in technical documentation against EU MDR Annex II and III.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - regulatory-strategy
+  - mdr
+  - technical-documentation
+  - gap
+  - assessment
+  requires_context: true
+variables:
+- name: device_info
+  description: device description and classification details
+  required: true
+- name: technical_docs
+  description: draft Annex II and III content
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -20,11 +38,3 @@ messages:
     \ step‑by‑step and summarize your reasoning. Cite exact MDR clauses used."
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: device_info
-  description: TODO
-  required: true
-- name: technical_docs
-  description: TODO
-  required: true

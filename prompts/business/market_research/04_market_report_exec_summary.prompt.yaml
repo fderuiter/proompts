@@ -1,6 +1,21 @@
 ---
 name: Market Report Executive Summary
+version: 0.1.0
 description: Draft and refine an executive summary for the uploaded market report.
+metadata:
+  domain: business
+  complexity: low
+  tags:
+  - market-research
+  - market
+  - report
+  - executive
+  - summary
+  requires_context: true
+variables:
+- name: market_report
+  description: full report text or attachment
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -28,8 +43,3 @@ messages:
     Output format: Markdown sections for each step.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: market_report
-  description: TODO
-  required: true

@@ -1,6 +1,20 @@
 ---
 name: Prompt Engineer Fact Checker
+version: 0.1.0
 description: Rewrite an original prompt so it is clear, fully sourced and produces accurate answers with inline citations.
+metadata:
+  domain: meta
+  complexity: medium
+  tags:
+  - prompt
+  - engineer
+  - fact
+  - checker
+  requires_context: true
+variables:
+- name: original_prompt
+  description: the user’s starting prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -31,8 +45,3 @@ messages:
     Output format: Markdown with sections: Enhanced Prompt, Rationale (bullet list) and Sources.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: original_prompt
-  description: TODO
-  required: true

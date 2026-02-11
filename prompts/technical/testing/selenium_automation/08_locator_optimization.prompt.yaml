@@ -1,6 +1,21 @@
 ---
 name: 'Framework Best Practices: Locator Strategy'
+version: 0.1.0
 description: Transition from brittle XPaths to robust locators like ID or CSS selectors.
+metadata:
+  domain: technical
+  complexity: low
+  tags:
+  - testing
+  - selenium
+  - framework
+  - best
+  - practices
+  requires_context: false
+variables:
+- name: locators
+  description: The locators to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -24,8 +39,3 @@ testData:
 evaluators:
 - name: Suggests robust locators
   regex: (By\.id|By\.cssSelector|data-)
-version: 0.1.0
-variables:
-- name: locators
-  description: TODO
-  required: true

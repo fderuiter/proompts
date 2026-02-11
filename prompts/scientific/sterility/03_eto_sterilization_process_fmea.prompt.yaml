@@ -1,6 +1,20 @@
 ---
 name: EtO Sterilization Process FMEA
+version: 0.1.0
 description: Facilitate a Failure Mode and Effects Analysis for an ethylene oxide sterilization process.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - sterility
+  - sterilization
+  - process
+  - fmea
+  requires_context: false
+variables:
+- name: process_description
+  description: overview of the EtO sterilization process
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -46,8 +60,3 @@ evaluators:
 - name: Contains bullet list
   string:
     contains: '- '
-version: 0.1.0
-variables:
-- name: process_description
-  description: TODO
-  required: true

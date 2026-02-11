@@ -1,6 +1,21 @@
 ---
 name: CRO Trial-Performance KPI Dashboard Blueprint
+version: 0.1.0
 description: Outline metrics and visuals for a CRO trial-performance dashboard.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - operations
+  - cro
+  - trial-performance
+  - kpi
+  - dashboard
+  requires_context: false
+variables:
+- name: portfolio_summary
+  description: snapshot of active studies
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -26,8 +41,3 @@ messages:
     Output format: Markdown table with columns `KPI \| Formula \| Visual \| Data Source \| Refresh Cadence \| Notes`.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: portfolio_summary
-  description: TODO
-  required: true

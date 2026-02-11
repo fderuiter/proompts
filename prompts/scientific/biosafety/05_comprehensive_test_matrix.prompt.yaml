@@ -1,6 +1,21 @@
 ---
 name: Comprehensive Biocompatibility Test Matrix
+version: 0.1.0
 description: Generate a detailed biocompatibility test matrix for a medical device.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biosafety
+  - comprehensive
+  - biocompatibility
+  - test
+  - matrix
+  requires_context: false
+variables:
+- name: device_materials
+  description: materials and clinical-use scenario
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -39,8 +54,3 @@ evaluators:
 - name: Output starts with markdown table
   string:
     startsWith: '|'
-version: 0.1.0
-variables:
-- name: device_materials
-  description: TODO
-  required: true

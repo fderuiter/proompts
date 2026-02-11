@@ -1,6 +1,21 @@
 ---
 name: 'Synchronization Strategy: Explicit Waits'
+version: 0.1.0
 description: Replace brittle Thread.sleep() calls with dynamic Explicit or Fluent waits.
+metadata:
+  domain: technical
+  complexity: low
+  tags:
+  - testing
+  - selenium
+  - synchronization
+  - strategy
+  - explicit
+  requires_context: false
+variables:
+- name: code_snippet
+  description: The source code to analyze or modify
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -29,8 +44,3 @@ evaluators:
 - name: No Thread.sleep
   regex: (?i)Thread\.sleep
   invert: true
-version: 0.1.0
-variables:
-- name: code_snippet
-  description: TODO
-  required: true

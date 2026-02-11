@@ -1,6 +1,39 @@
 ---
 name: Regulatory Filing Draft Builder
+version: 0.1.0
 description: Produce a regulator‑ready draft document using provided financials and risk data.
+metadata:
+  domain: regulatory
+  complexity: high
+  tags:
+  - regulatory-strategy
+  - regulatory
+  - filing
+  - draft
+  - builder
+  requires_context: false
+variables:
+- name: DATE
+  description: The DATE to use for this prompt
+  required: true
+- name: DOCUMENT_TYPE
+  description: The DOCUMENT TYPE to use for this prompt
+  required: true
+- name: REGULATOR
+  description: The REGULATOR to use for this prompt
+  required: true
+- name: SPECIFIC_GUIDELINE
+  description: The SPECIFIC GUIDELINE to use for this prompt
+  required: true
+- name: financial_data
+  description: Data Sheet 1
+  required: true
+- name: prior_filing
+  description: previous submission
+  required: true
+- name: risk_memo
+  description: risk factors
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -24,26 +57,3 @@ messages:
     \ the final self‑assessment table.\n\nAdditional notes:\nMaintain a regulator‑friendly tone and highlight missing information."
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: DATE
-  description: TODO
-  required: true
-- name: DOCUMENT_TYPE
-  description: TODO
-  required: true
-- name: REGULATOR
-  description: TODO
-  required: true
-- name: SPECIFIC_GUIDELINE
-  description: TODO
-  required: true
-- name: financial_data
-  description: TODO
-  required: true
-- name: prior_filing
-  description: TODO
-  required: true
-- name: risk_memo
-  description: TODO
-  required: true

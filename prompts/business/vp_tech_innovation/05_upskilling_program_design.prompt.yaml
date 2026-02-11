@@ -1,6 +1,29 @@
 ---
 name: Upskilling Program Design
+version: 0.1.0
 description: Design a technical upskilling curriculum for engineering teams.
+metadata:
+  domain: business
+  complexity: high
+  tags:
+  - tech-innovation
+  - upskilling
+  - program
+  - design
+  requires_context: false
+variables:
+- name: current_tech
+  description: The current tech to use for this prompt
+  required: true
+- name: target_tech
+  description: The target tech to use for this prompt
+  required: true
+- name: team_type
+  description: The team type to use for this prompt
+  required: true
+- name: timeline
+  description: The project timeline or schedule
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -39,17 +62,3 @@ evaluators:
 - name: Output contains 'Hackathon'
   regex:
     pattern: Hackathon
-version: 0.1.0
-variables:
-- name: current_tech
-  description: TODO
-  required: true
-- name: target_tech
-  description: TODO
-  required: true
-- name: team_type
-  description: TODO
-  required: true
-- name: timeline
-  description: TODO
-  required: true

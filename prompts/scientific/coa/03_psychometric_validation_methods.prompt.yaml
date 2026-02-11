@@ -1,6 +1,26 @@
 ---
 name: Psychometric Validation Methodology
+version: 0.1.0
 description: Apply Rasch and IRT models for COA validation and psychometric evidence generation.
+metadata:
+  domain: scientific
+  complexity: high
+  tags:
+  - clinical-outcome-assessment
+  - psychometric
+  - validation
+  - methodology
+  requires_context: false
+variables:
+- name: dataset_description
+  description: The data or dataset to analyze
+  required: true
+- name: instrument_name
+  description: The name or identifier
+  required: true
+- name: target_population
+  description: The target population to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -77,14 +97,3 @@ evaluators:
 - name: FDA Alignment
   regex:
     pattern: (?i)(FDA|PFDD|Patient-Focused Drug Development)
-version: 0.1.0
-variables:
-- name: dataset_description
-  description: TODO
-  required: true
-- name: instrument_name
-  description: TODO
-  required: true
-- name: target_population
-  description: TODO
-  required: true

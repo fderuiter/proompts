@@ -1,6 +1,19 @@
 ---
 name: AI Risk Mapper
+version: 0.1.0
 description: Create a quick-look risk register for a specified AI system.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-strategy
+  - risk
+  - mapper
+  requires_context: false
+variables:
+- name: AI_SYSTEM
+  description: the system being assessed
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -29,8 +42,3 @@ messages:
     Output format: Markdown list, table, and concluding note.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: AI_SYSTEM
-  description: TODO
-  required: true

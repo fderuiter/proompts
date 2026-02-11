@@ -1,6 +1,27 @@
 ---
 name: ePRO Migration Equivalence Checker
+version: 0.1.0
 description: Assess measurement equivalence for migrating paper-based PRO instruments to electronic modes.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - clinical-outcome-assessment
+  - pro
+  - migration
+  - equivalence
+  - checker
+  requires_context: false
+variables:
+- name: device_type
+  description: The device type to use for this prompt
+  required: true
+- name: features
+  description: The features to use for this prompt
+  required: true
+- name: paper_instrument_name
+  description: The name or identifier
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -56,14 +77,3 @@ evaluators:
 - name: ISPOR Mention
   regex:
     pattern: (?i)ISPOR
-version: 0.1.0
-variables:
-- name: device_type
-  description: TODO
-  required: true
-- name: features
-  description: TODO
-  required: true
-- name: paper_instrument_name
-  description: TODO
-  required: true

@@ -1,6 +1,21 @@
 ---
 name: Sponsor-Ready Monthly Status Brief
+version: 0.1.0
 description: Draft a concise, escalation-ready monthly status report for study sponsors.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - project-management
+  - sponsor-ready
+  - monthly
+  - status
+  - brief
+  requires_context: true
+variables:
+- name: monthly_notes
+  description: Additional notes, assumptions, or special considerations
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -38,8 +53,3 @@ evaluators:
 - name: Includes Enrollment section
   string:
     contains: Enrollment
-version: 0.1.0
-variables:
-- name: monthly_notes
-  description: TODO
-  required: true

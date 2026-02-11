@@ -1,6 +1,21 @@
 ---
 name: Proactive Risk Heat-Map for Decentralized & Virtual Trials
+version: 0.1.0
 description: Visualize portfolio risks and propose mitigation actions.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - operations
+  - proactive
+  - risk
+  - heat-map
+  - decentralized
+  requires_context: false
+variables:
+- name: portfolio_snapshot
+  description: summary of active studies
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -27,8 +42,3 @@ messages:
     Output format: ASCII heat map followed by a mitigation bullet list.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: portfolio_snapshot
-  description: TODO
-  required: true

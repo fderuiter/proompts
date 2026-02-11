@@ -1,6 +1,27 @@
 ---
 name: IND Readiness Gap Analysis & Filing Road-Map
+version: 0.1.0
 description: Assess IND readiness and create a filing road‑map for a therapeutic program.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - regulatory-strategy
+  - ind
+  - readiness
+  - gap
+  - analysis
+  requires_context: false
+variables:
+- name: data_snapshots
+  description: non‑clinical, CMC, and clinical outlines
+  required: true
+- name: first_in_human_date
+  description: planned FIH milestone
+  required: true
+- name: program_summary
+  description: brief description of the therapeutic program
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -22,14 +43,3 @@ messages:
     \ notes:\nProvide concise, actionable recommendations once clarifications are complete."
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: data_snapshots
-  description: TODO
-  required: true
-- name: first_in_human_date
-  description: TODO
-  required: true
-- name: program_summary
-  description: TODO
-  required: true

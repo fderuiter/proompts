@@ -1,6 +1,21 @@
 ---
 name: Status Update and Task Prioritization
+version: 0.1.0
 description: Summarize recent progress and recommend prioritized next actions.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - project-management
+  - status
+  - update
+  - task
+  - prioritization
+  requires_context: false
+variables:
+- name: status_notes
+  description: Additional notes, assumptions, or special considerations
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -50,8 +65,3 @@ evaluators:
 - name: Contains Blockers section
   string:
     contains: Blockers
-version: 0.1.0
-variables:
-- name: status_notes
-  description: TODO
-  required: true

@@ -1,6 +1,27 @@
 ---
 name: Interpret the Chemistry & Assess Risk
+version: 0.1.0
 description: Act as a board-certified toxicologist.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - chemical-characterization
+  - interpret
+  - chemistry
+  - assess
+  - risk
+  requires_context: false
+variables:
+- name: body_weight
+  description: The body weight to use for this prompt
+  required: true
+- name: device_dose
+  description: The device dose to use for this prompt
+  required: true
+- name: study_results
+  description: The study results to use for this prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -27,14 +48,3 @@ evaluators:
 - name: Output starts with a markdown table
   string:
     startsWith: '|'
-version: 0.1.0
-variables:
-- name: body_weight
-  description: TODO
-  required: true
-- name: device_dose
-  description: TODO
-  required: true
-- name: study_results
-  description: TODO
-  required: true

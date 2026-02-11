@@ -1,6 +1,21 @@
 ---
 name: Evaluate Device–Tissue Interface Findings
+version: 0.1.0
 description: Interpret histopathology results from implant studies and recommend next steps.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - pathology
+  - evaluate
+  - device
+  - tissue
+  - interface
+  requires_context: false
+variables:
+- name: study_protocol
+  description: The study protocol from the previous step
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -21,8 +36,3 @@ messages:
     \ evidence-based."
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: study_protocol
-  description: TODO
-  required: true

@@ -1,6 +1,24 @@
 ---
 name: FDA Missing-Data Query Response
+version: 0.1.0
 description: Draft a response letter to an FDA information request about missing data.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - fda
+  - missing-data
+  - query
+  - response
+  requires_context: false
+variables:
+- name: fda_questions
+  description: '`{{sap_references}}`'
+  required: true
+- name: sap_references
+  description: The sap references to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -48,11 +66,3 @@ evaluators:
 - name: Output starts with '# '
   string:
     startsWith: '# '
-version: 0.1.0
-variables:
-- name: fda_questions
-  description: TODO
-  required: true
-- name: sap_references
-  description: TODO
-  required: true

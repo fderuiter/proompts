@@ -1,6 +1,20 @@
 ---
 name: TOGAF Phase A - Architecture Vision
+version: 0.1.0
 description: Guide for defining the Architecture Vision, stakeholders, and the Statement of Architecture Work (The Mandate).
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - architecture
+  - togaf
+  - phase
+  - vision
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -72,8 +86,3 @@ messages:
   content: <request>{{input}}</request>
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

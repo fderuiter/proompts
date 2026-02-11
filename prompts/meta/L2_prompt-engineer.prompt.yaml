@@ -1,6 +1,25 @@
 ---
 name: Prompt Engineer Template
+version: 0.1.0
 description: Produce an L3 task template that enables a Task Prototyper to fulfil `{{end_task}}`.
+metadata:
+  domain: meta
+  complexity: medium
+  tags:
+  - prompt
+  - engineer
+  - template
+  requires_context: false
+variables:
+- name: end_task
+  description: final objective
+  required: true
+- name: generated_prompt
+  description: The generated prompt to use for this prompt
+  required: true
+- name: token_budget_l3
+  description: Budget details or financial constraints
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -43,14 +62,3 @@ messages:
     Output format: Return the L3 template inside a fenced block labelled `prompt`.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: end_task
-  description: TODO
-  required: true
-- name: generated_prompt
-  description: TODO
-  required: true
-- name: token_budget_l3
-  description: TODO
-  required: true

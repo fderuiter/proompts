@@ -1,6 +1,33 @@
 ---
 name: Rapid Process Diagnostic & Lean Improvement Plan
+version: 0.1.0
 description: Create a concise process review and improvement roadmap.
+metadata:
+  domain: management
+  complexity: high
+  tags:
+  - operations
+  - rapid
+  - process
+  - diagnostic
+  - lean
+  requires_context: false
+variables:
+- name: avg_cycle_time
+  description: The avg cycle time to use for this prompt
+  required: true
+- name: current_volume
+  description: units per month
+  required: true
+- name: pain_points
+  description: bullet list
+  required: true
+- name: process_name
+  description: The name or identifier
+  required: true
+- name: target_outcome
+  description: cycle-time and cost targets
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -34,20 +61,3 @@ messages:
     Output format: Markdown table for the action plan followed by the summary paragraph.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: avg_cycle_time
-  description: TODO
-  required: true
-- name: current_volume
-  description: TODO
-  required: true
-- name: pain_points
-  description: TODO
-  required: true
-- name: process_name
-  description: TODO
-  required: true
-- name: target_outcome
-  description: TODO
-  required: true

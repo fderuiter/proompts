@@ -1,6 +1,24 @@
 ---
 name: Pharmacovigilance Safety Signal Prioritization
+version: 0.1.0
 description: Detect emerging safety signals and recommend follow-up actions.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - medical-director
+  - pharmacovigilance
+  - safety
+  - signal
+  - prioritization
+  requires_context: false
+variables:
+- name: ae_listing
+  description: adverse-event listings in CSV
+  required: true
+- name: benchmark_rates
+  description: historical placebo incidence rates
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -31,11 +49,3 @@ messages:
     Output format: Valid JSON array with keys: `PT`, `PRR`, `nEvents`, `Assessment`, `RecommendedAction`.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: ae_listing
-  description: TODO
-  required: true
-- name: benchmark_rates
-  description: TODO
-  required: true

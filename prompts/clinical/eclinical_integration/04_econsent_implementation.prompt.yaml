@@ -1,6 +1,20 @@
 ---
 name: eConsent Implementation Strategy
+version: 0.1.0
 description: Verify eConsent platform compliance and workflow.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - eclinical-integration
+  - consent
+  - implementation
+  - strategy
+  requires_context: true
+variables:
+- name: platform_specs
+  description: The platform specs to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -40,8 +54,3 @@ evaluators:
 - name: Accessibility
   string:
     contains: Accessibility
-version: 0.1.0
-variables:
-- name: platform_specs
-  description: TODO
-  required: true

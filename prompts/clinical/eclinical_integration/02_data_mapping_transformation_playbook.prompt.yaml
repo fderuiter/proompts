@@ -1,6 +1,21 @@
 ---
 name: Data Mapping and Transformation Playbook
+version: 0.1.0
 description: Provide a repeatable workflow for mapping JSON FHIR bundles to SDTM-compliant tables.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - eclinical-integration
+  - data
+  - mapping
+  - transformation
+  - playbook
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -37,8 +52,3 @@ evaluators:
 - name: Mentions SDTM
   string:
     contains: SDTM
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

@@ -1,6 +1,20 @@
 ---
 name: Senior Python Developer
+version: 0.1.0
 description: A Senior Developer's guide to Python execution, focusing on idiomatic code, maintainability, and code stewardship.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - programming-languages
+  - python
+  - senior
+  - developer
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.1
@@ -42,8 +56,3 @@ evaluators:
 - name: Output contains Senior Implementation header
   regex:
     pattern: '## 💻 Senior Implementation'
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

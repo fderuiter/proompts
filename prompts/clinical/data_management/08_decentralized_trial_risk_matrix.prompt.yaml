@@ -1,6 +1,21 @@
 ---
 name: Decentralized Trial Risk Matrix
+version: 0.1.0
 description: Build a risk matrix for decentralized trials.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - data-management
+  - decentralized
+  - trial
+  - risk
+  - matrix
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -20,8 +35,3 @@ evaluators:
 - name: Output mentions risk
   string:
     contains: risk
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

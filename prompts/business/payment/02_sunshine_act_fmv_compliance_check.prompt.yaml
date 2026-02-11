@@ -1,6 +1,27 @@
 ---
 name: Sunshine Act and FMV Compliance Check
+version: 0.1.0
 description: Audit site-payment data for Sunshine Act reporting and FMV adherence.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - payment
+  - sunshine
+  - act
+  - fmv
+  - compliance
+  requires_context: true
+variables:
+- name: fmv_table
+  description: fair market value reference table
+  required: true
+- name: fx_rates
+  description: foreign-exchange rate table
+  required: true
+- name: payment_ledger_csv
+  description: raw payment ledger CSV
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -35,14 +56,3 @@ evaluators:
 - name: Generates reportable payments table
   string:
     contains: Reportable Payments
-version: 0.1.0
-variables:
-- name: fmv_table
-  description: TODO
-  required: true
-- name: fx_rates
-  description: TODO
-  required: true
-- name: payment_ledger_csv
-  description: TODO
-  required: true

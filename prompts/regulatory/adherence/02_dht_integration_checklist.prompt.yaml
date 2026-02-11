@@ -1,6 +1,27 @@
 ---
 name: DHT Integration Regulatory Checklist
+version: 0.1.0
 description: Review FDA guidance for digital health technology (DHT) integration and validation.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - regulatory-adherence
+  - dht
+  - integration
+  - regulatory
+  - checklist
+  requires_context: false
+variables:
+- name: dht_type
+  description: The dht type to use for this prompt
+  required: true
+- name: endpoint
+  description: The endpoint to use for this prompt
+  required: true
+- name: population
+  description: The population to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -73,14 +94,3 @@ evaluators:
 - name: Usability Check
   regex:
     pattern: (?i)(usability|burden)
-version: 0.1.0
-variables:
-- name: dht_type
-  description: TODO
-  required: true
-- name: endpoint
-  description: TODO
-  required: true
-- name: population
-  description: TODO
-  required: true

@@ -1,6 +1,17 @@
 ---
 name: Prompt-Writing Best-Practice Checklist
+version: 0.1.0
 description: Summarize key elements of effective prompt design.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - regulatory-strategy
+  - prompt-writing
+  - best-practice
+  - checklist
+  requires_context: true
+variables: []
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -39,5 +50,3 @@ messages:
     Adapt these points to fit the specific regulatory context.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables: []

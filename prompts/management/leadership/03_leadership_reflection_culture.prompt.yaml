@@ -1,6 +1,19 @@
 ---
 name: Leadership Reflection and Culture
+version: 0.1.0
 description: Assess leadership values and identify actions to strengthen team cohesion.
+metadata:
+  domain: management
+  complexity: low
+  tags:
+  - leadership
+  - reflection
+  - culture
+  requires_context: false
+variables:
+- name: current_values
+  description: existing leadership values or mission statements
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -24,8 +37,3 @@ messages:
     Output format: Markdown sections titled **Values**, **Gaps**, and **Recommended Actions**.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: current_values
-  description: TODO
-  required: true

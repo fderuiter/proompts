@@ -1,6 +1,21 @@
 ---
 name: Voice of Customer Root Cause Analysis
+version: 0.1.0
 description: Analyze raw feedback to identify root causes and quick wins.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - customer-experience
+  - voice
+  - customer
+  - root
+  - cause
+  requires_context: false
+variables:
+- name: feedback_comments
+  description: Feedback or critique to incorporate
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -45,8 +60,3 @@ evaluators:
 - name: Output should contain 'Quick Wins'
   string:
     contains: Quick Wins
-version: 0.1.0
-variables:
-- name: feedback_comments
-  description: TODO
-  required: true

@@ -1,6 +1,21 @@
 ---
 name: GCP and GDPR Training Compliance Risk Report
+version: 0.1.0
 description: Generate a monthly assessment of staff training compliance for GCP and GDPR regulations.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - hr-finance
+  - gcp
+  - gdpr
+  - training
+  - compliance
+  requires_context: false
+variables:
+- name: training_records
+  description: CSV of staff training dates by role and study
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -29,8 +44,3 @@ messages:
     - Narrative summary of up to 250 words addressed to the COO.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: training_records
-  description: TODO
-  required: true

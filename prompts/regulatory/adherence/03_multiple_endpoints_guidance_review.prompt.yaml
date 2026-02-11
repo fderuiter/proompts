@@ -1,6 +1,24 @@
 ---
 name: Multiple Endpoints Regulatory Strategy
+version: 0.1.0
 description: Review and summarize FDA guidance on multiple endpoints and multiplicity strategies.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - regulatory-adherence
+  - multiple
+  - endpoints
+  - regulatory
+  - strategy
+  requires_context: false
+variables:
+- name: issues
+  description: The issues to use for this prompt
+  required: true
+- name: therapeutic_area
+  description: The therapeutic area to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -58,11 +76,3 @@ evaluators:
 - name: Unblinding Check
   regex:
     pattern: (?i)(unblind|progression)
-version: 0.1.0
-variables:
-- name: issues
-  description: TODO
-  required: true
-- name: therapeutic_area
-  description: TODO
-  required: true

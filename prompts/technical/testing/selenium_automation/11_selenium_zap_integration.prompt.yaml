@@ -1,6 +1,18 @@
 ---
 name: 'Security Testing: OWASP ZAP Integration'
+version: 0.1.0
 description: Configure Selenium to route traffic through the OWASP ZAP proxy for security scanning.
+metadata:
+  domain: technical
+  complexity: low
+  tags:
+  - testing
+  - selenium
+  - security
+  - owasp
+  - zap
+  requires_context: false
+variables: []
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -18,5 +30,3 @@ evaluators:
   regex: setProxy
 - name: Accepts insecure certs
   regex: setAcceptInsecureCerts
-version: 0.1.0
-variables: []

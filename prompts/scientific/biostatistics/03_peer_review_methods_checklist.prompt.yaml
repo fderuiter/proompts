@@ -1,6 +1,21 @@
 ---
 name: Peer-Review Checklist for Manuscript Methods
+version: 0.1.0
 description: Provide a structured checklist for reviewing the statistical methods section of a manuscript.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - peer-review
+  - checklist
+  - manuscript
+  - methods
+  requires_context: true
+variables:
+- name: manuscript_excerpt
+  description: text or file attachment with methods section
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -40,8 +55,3 @@ evaluators:
 - name: Output starts with '|'
   string:
     startsWith: '|'
-version: 0.1.0
-variables:
-- name: manuscript_excerpt
-  description: TODO
-  required: true

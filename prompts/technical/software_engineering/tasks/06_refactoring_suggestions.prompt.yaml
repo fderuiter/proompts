@@ -1,7 +1,21 @@
 ---
 name: Refactoring Architect
+version: 0.1.0
 description: A Principal Software Architect's guide to surgical refactoring, focusing on decoupling, testability, and debt
   remediation.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - software-engineering
+  - engineering-tasks
+  - refactoring
+  - architect
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -41,8 +55,3 @@ evaluators:
 - name: Output contains Architectural Refactoring header
   regex:
     pattern: '## 🏗️ Architectural Refactoring'
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

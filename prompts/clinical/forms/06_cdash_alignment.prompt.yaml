@@ -1,6 +1,22 @@
 ---
 name: CDASH Alignment
+version: 0.1.0
 description: Standardize clinical data collection fields using CDASH models.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - forms
+  - cdash
+  - alignment
+  requires_context: false
+variables:
+- name: cdash_guide
+  description: The cdash guide to use for this prompt
+  required: true
+- name: crf_draft
+  description: 'CDASH User Guide: `{{cdash_guide}}`'
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -39,11 +55,3 @@ evaluators:
 - name: CDASH Variable
   string:
     contains: VSORRES
-version: 0.1.0
-variables:
-- name: cdash_guide
-  description: TODO
-  required: true
-- name: crf_draft
-  description: TODO
-  required: true

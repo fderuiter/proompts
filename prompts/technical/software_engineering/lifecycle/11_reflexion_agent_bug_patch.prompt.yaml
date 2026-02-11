@@ -1,6 +1,21 @@
 ---
 name: Reflexion Agent Bug Patch
+version: 0.1.0
 description: Locate and fix a bug using a structured reflexion workflow.
+metadata:
+  domain: technical
+  complexity: low
+  tags:
+  - software-engineering
+  - sdlc
+  - reflexion
+  - agent
+  - bug
+  requires_context: false
+variables:
+- name: code
+  description: The source code to analyze or modify
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.7
@@ -33,8 +48,3 @@ evaluators:
 - name: Output starts with 'Hypothesis:'
   string:
     startsWith: 'Hypothesis:'
-version: 0.1.0
-variables:
-- name: code
-  description: TODO
-  required: true

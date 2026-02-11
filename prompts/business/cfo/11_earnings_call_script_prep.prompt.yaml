@@ -1,6 +1,21 @@
 ---
 name: Earnings Call Script Prep
+version: 0.1.0
 description: Prepare for tough analyst questions on an earnings call.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - finance
+  - earnings
+  - call
+  - script
+  - prep
+  requires_context: false
+variables:
+- name: challenge
+  description: The challenge to use for this prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -29,8 +44,3 @@ evaluators:
 - name: Output should contain questions and responses
   regex:
     pattern: (?i)question|response
-version: 0.1.0
-variables:
-- name: challenge
-  description: TODO
-  required: true

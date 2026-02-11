@@ -1,6 +1,17 @@
 ---
 name: Storyboard-My-Idea
+version: 0.1.0
 description: 'Storyboard “[PROJECT OR MESSAGE]” for a 60-second explainer video:'
+metadata:
+  domain: communication
+  complexity: low
+  tags:
+  - storyboard-my-idea
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -32,8 +43,3 @@ evaluators:
 - name: Output includes frame 6
   string:
     contains: Frame 6
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

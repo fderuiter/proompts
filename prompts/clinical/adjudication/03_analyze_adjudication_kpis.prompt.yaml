@@ -1,6 +1,19 @@
 ---
 name: Analyze Adjudication KPIs
+version: 0.1.0
 description: Calculate adjudication performance metrics and recommend improvements.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - adjudication
+  - analyze
+  - kpis
+  requires_context: false
+variables:
+- name: adjudication_log.csv
+  description: event log export
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -30,8 +43,3 @@ evaluators:
 - name: Output includes 'Metrics Summary Table'
   string:
     contains: Metrics Summary Table
-version: 0.1.0
-variables:
-- name: adjudication_log.csv
-  description: TODO
-  required: true

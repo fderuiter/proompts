@@ -1,6 +1,20 @@
 ---
 name: Write the Regulatory Summary
+version: 0.1.0
 description: You are a regulatory-affairs specialist drafting the Chemical Characterization section of a 510(k).
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - chemical-characterization
+  - write
+  - regulatory
+  - summary
+  requires_context: false
+variables:
+- name: risk_assessment_summary
+  description: A summary of the key information
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -40,8 +54,3 @@ evaluators:
 - name: Output starts with an H2 heading
   string:
     startsWith: '##'
-version: 0.1.0
-variables:
-- name: risk_assessment_summary
-  description: TODO
-  required: true

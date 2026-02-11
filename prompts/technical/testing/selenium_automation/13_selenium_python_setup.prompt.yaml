@@ -1,6 +1,18 @@
 ---
 name: 'Test Environment: Python & Selenium Base'
+version: 0.1.0
 description: Install the Selenium Base framework and environment using the Python package manager.
+metadata:
+  domain: technical
+  complexity: low
+  tags:
+  - testing
+  - selenium
+  - test
+  - environment
+  - python
+  requires_context: false
+variables: []
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -16,5 +28,3 @@ testData:
 evaluators:
 - name: Install command
   regex: pip install seleniumbase
-version: 0.1.0
-variables: []

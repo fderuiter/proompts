@@ -1,6 +1,20 @@
 ---
 name: CSM Portfolio Balancing
+version: 0.1.0
 description: Propose a weighted scoring model to balance account loads among CSMs.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - customer-experience
+  - csm
+  - portfolio
+  - balancing
+  requires_context: false
+variables:
+- name: csm_data
+  description: The data or dataset to analyze
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -41,8 +55,3 @@ evaluators:
 - name: Output should contain Effort Score formula
   string:
     contains: Effort Score =
-version: 0.1.0
-variables:
-- name: csm_data
-  description: TODO
-  required: true

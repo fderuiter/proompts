@@ -1,6 +1,21 @@
 ---
 name: Action-Oriented Meeting Minutes & Tracker
+version: 0.1.0
 description: Capture decisions and action items from cross-functional meetings.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - operations
+  - action-oriented
+  - meeting
+  - minutes
+  - tracker
+  requires_context: false
+variables:
+- name: meeting_transcript
+  description: full text of the meeting
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -29,8 +44,3 @@ messages:
     Output format: Meeting minutes followed by the action-item table and the **Next Steps** sentence.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: meeting_transcript
-  description: TODO
-  required: true

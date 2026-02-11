@@ -1,6 +1,21 @@
 ---
 name: IVD Performance Study Compliance Review
+version: 0.1.0
 description: Review an IVD performance study for compliance with MDCG 2024‑4 and related guidance.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - regulatory-strategy
+  - ivd
+  - performance
+  - study
+  - compliance
+  requires_context: true
+variables:
+- name: study_overview
+  description: summary of the performance study design
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -36,8 +51,3 @@ messages:
     Use clear references to MDCG 2024‑4 and related authorities.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: study_overview
-  description: TODO
-  required: true

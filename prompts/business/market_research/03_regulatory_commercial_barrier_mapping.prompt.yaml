@@ -1,6 +1,24 @@
 ---
 name: Regulatory & Commercial Barrier Mapping
+version: 0.1.0
 description: Assess hurdles for launching `{{device}}` in major markets.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - market-research
+  - regulatory
+  - commercial
+  - barrier
+  - mapping
+  requires_context: false
+variables:
+- name: device
+  description: device to analyze
+  required: true
+- name: markets
+  description: markets of interest
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -28,11 +46,3 @@ messages:
     Output format: Comparative table followed by five prioritized strategic actions.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: device
-  description: TODO
-  required: true
-- name: markets
-  description: TODO
-  required: true

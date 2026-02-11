@@ -1,6 +1,21 @@
 ---
 name: Draft a GLP-Compliant Study Protocol
+version: 0.1.0
 description: Produce a detailed study plan that satisfies OECD and FDA GLP regulations.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - study-director
+  - draft
+  - glp-compliant
+  - study
+  - protocol
+  requires_context: false
+variables:
+- name: protocol_basics
+  description: any additional study parameters
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -46,8 +61,3 @@ evaluators:
 - name: Includes mitigation table headers
   string:
     contains: Phase,Risk,Impact,Mitigation
-version: 0.1.0
-variables:
-- name: protocol_basics
-  description: TODO
-  required: true

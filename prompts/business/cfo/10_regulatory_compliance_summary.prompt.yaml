@@ -1,6 +1,26 @@
 ---
 name: Regulatory Compliance Summary
+version: 0.1.0
 description: Summarize key financial disclosure changes for a specific regulation.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - finance
+  - regulatory
+  - compliance
+  - summary
+  requires_context: true
+variables:
+- name: annual_report
+  description: The annual report to use for this prompt
+  required: true
+- name: industry
+  description: The industry or sector
+  required: true
+- name: regulation
+  description: The regulation to use for this prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -37,14 +57,3 @@ evaluators:
 - name: Output should contain checklist
   regex:
     pattern: (?i)checklist|must-haves
-version: 0.1.0
-variables:
-- name: annual_report
-  description: TODO
-  required: true
-- name: industry
-  description: TODO
-  required: true
-- name: regulation
-  description: TODO
-  required: true

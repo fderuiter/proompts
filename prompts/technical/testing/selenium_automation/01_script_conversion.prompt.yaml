@@ -1,6 +1,24 @@
 ---
 name: 'Selenium Migration: Script Conversion'
+version: 0.1.0
 description: Translate recorded browser actions (Selenese) from Selenium IDE into structured Java test scripts.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - testing
+  - selenium
+  - migration
+  - script
+  - conversion
+  requires_context: false
+variables:
+- name: package_name
+  description: The name or identifier
+  required: true
+- name: selenese_code
+  description: The source code to analyze or modify
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -32,11 +50,3 @@ testData:
 evaluators:
 - name: Contains Java class definition
   regex: public class \w+
-version: 0.1.0
-variables:
-- name: package_name
-  description: TODO
-  required: true
-- name: selenese_code
-  description: TODO
-  required: true

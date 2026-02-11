@@ -1,6 +1,23 @@
 ---
 name: Strategic Consultant SWOT
+version: 0.1.0
 description: Provide a concise SWOT analysis and immediate roadmap.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - executive
+  - strategic
+  - consultant
+  - swot
+  requires_context: false
+variables:
+- name: business
+  description: The business to use for this prompt
+  required: true
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.7
@@ -26,11 +43,3 @@ evaluators:
 - name: Output is non-empty
   string:
     startsWith: ''
-version: 0.1.0
-variables:
-- name: business
-  description: TODO
-  required: true
-- name: input
-  description: TODO
-  required: true

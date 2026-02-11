@@ -1,6 +1,21 @@
 ---
 name: Trial Master File (TMF) Maintenance
+version: 0.1.0
 description: Generate TMF checklist based on CDISC Reference Model.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - data-management
+  - trial
+  - master
+  - file
+  - tmf
+  requires_context: true
+variables:
+- name: study_phase
+  description: The study phase to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -35,8 +50,3 @@ evaluators:
 - name: Audit Readiness
   string:
     contains: Audit Readiness
-version: 0.1.0
-variables:
-- name: study_phase
-  description: TODO
-  required: true

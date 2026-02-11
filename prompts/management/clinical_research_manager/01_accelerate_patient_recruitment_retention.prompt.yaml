@@ -1,6 +1,21 @@
 ---
 name: Accelerate Patient Recruitment & Retention
+version: 0.1.0
 description: Design a 3-step recruitment and retention plan for a Phase II oncology study within budget and timeline constraints.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - clinical-research-management
+  - accelerate
+  - patient
+  - recruitment
+  - retention
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -21,8 +36,3 @@ evaluators:
 - name: Contains table headers
   string:
     contains: Action | Owner
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

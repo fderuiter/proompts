@@ -1,6 +1,19 @@
 ---
 name: Hexagonal Architecture Principles
+version: 0.1.0
 description: Explain the core philosophy, skeleton, and benefits of Hexagonal Architecture (Ports and Adapters).
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - architecture
+  - hexagonal
+  - principles
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -32,8 +45,3 @@ messages:
   content: <request>{{input}}</request>
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

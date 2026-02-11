@@ -1,6 +1,24 @@
 ---
 name: Quality-Improvement RCA & Action Plan
+version: 0.1.0
 description: Identify root causes of a recurring defect and propose a 90‑day corrective‑action roadmap.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - quality
+  - quality-improvement
+  - rca
+  - action
+  - plan
+  requires_context: false
+variables:
+- name: defect_data_csv
+  description: defect details
+  required: true
+- name: prior_mitigation
+  description: mitigation steps already attempted
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -21,11 +39,3 @@ messages:
     \ MD029 MD036 -->"
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: defect_data_csv
-  description: TODO
-  required: true
-- name: prior_mitigation
-  description: TODO
-  required: true

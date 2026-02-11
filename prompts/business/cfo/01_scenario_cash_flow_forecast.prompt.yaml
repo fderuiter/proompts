@@ -1,6 +1,30 @@
 ---
 name: Scenario-Based Clinical-Trial Cash-Flow Forecast
+version: 0.1.0
 description: Model 12-quarter cash flows under baseline, inflation, and recruitment slowdown scenarios.
+metadata:
+  domain: business
+  complexity: high
+  tags:
+  - finance
+  - scenario-based
+  - clinical-trial
+  - cash-flow
+  - forecast
+  requires_context: false
+variables:
+- name: base_costs
+  description: baseline quarterly costs (USD)
+  required: true
+- name: base_revenue
+  description: baseline quarterly revenue (USD)
+  required: true
+- name: notes
+  description: assumptions or upcoming events
+  required: true
+- name: starting_cash
+  description: cash on hand at start (USD)
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -39,17 +63,3 @@ evaluators:
 - name: Output should start with 'Scenario Forecast -'
   string:
     startsWith: Scenario Forecast -
-version: 0.1.0
-variables:
-- name: base_costs
-  description: TODO
-  required: true
-- name: base_revenue
-  description: TODO
-  required: true
-- name: notes
-  description: TODO
-  required: true
-- name: starting_cash
-  description: TODO
-  required: true

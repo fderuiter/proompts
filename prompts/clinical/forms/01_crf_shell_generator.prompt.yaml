@@ -1,6 +1,20 @@
 ---
 name: CRF Shell Generator
+version: 0.1.0
 description: '- Read the protocol summary inside the triple quotes.'
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - forms
+  - crf
+  - shell
+  - generator
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -30,8 +44,3 @@ evaluators:
 - name: Output should include AGE mapping
   string:
     contains: DM.AGE
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

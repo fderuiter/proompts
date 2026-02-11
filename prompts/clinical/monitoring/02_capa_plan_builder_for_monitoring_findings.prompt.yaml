@@ -1,6 +1,21 @@
 ---
 name: CAPA Plan Builder for Monitoring Findings
+version: 0.1.0
 description: You are a **Regulatory Quality Advisor** specializing in ICH-GCP compliance.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - monitoring
+  - capa
+  - plan
+  - builder
+  - findings
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -20,8 +35,3 @@ evaluators:
 - name: Returns CAPA table
   string:
     contains: Issue | Root Cause | Corrective Action | Preventive Action | Owner | Due Date | Effectiveness Check
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

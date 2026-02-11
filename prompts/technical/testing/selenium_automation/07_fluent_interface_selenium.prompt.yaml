@@ -1,6 +1,21 @@
 ---
 name: 'Advanced Design Patterns: Fluent Interface'
+version: 0.1.0
 description: Extend Page Objects with method chaining to create a more readable test API.
+metadata:
+  domain: technical
+  complexity: low
+  tags:
+  - testing
+  - selenium
+  - advanced
+  - design
+  - patterns
+  requires_context: false
+variables:
+- name: java_class
+  description: The java class to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -24,8 +39,3 @@ testData:
 evaluators:
 - name: Methods return this or object
   regex: return this;
-version: 0.1.0
-variables:
-- name: java_class
-  description: TODO
-  required: true

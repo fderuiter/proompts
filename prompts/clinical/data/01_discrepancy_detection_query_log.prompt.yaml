@@ -1,6 +1,21 @@
 ---
 name: Discrepancy Detection & Query Log Generator
+version: 0.1.0
 description: Examine a CSV dataset to detect discrepancies and generate a query log.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - data
+  - discrepancy
+  - detection
+  - query
+  - log
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -42,8 +57,3 @@ evaluators:
 - name: Should report no discrepancies
   string:
     equals: No data discrepancies detected.
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

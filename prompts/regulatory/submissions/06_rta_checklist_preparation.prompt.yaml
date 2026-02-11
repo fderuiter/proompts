@@ -1,6 +1,20 @@
 ---
 name: RTA Checklist Preparation
+version: 0.1.0
 description: Annotate the RTA checklist with page numbers and sections where requirements are addressed in a 510(k).
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - submissions
+  - rta
+  - checklist
+  - preparation
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
@@ -37,8 +51,3 @@ testData:
 evaluators:
 - name: Validation Check
   regex: (?i)Verify
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

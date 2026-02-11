@@ -1,6 +1,23 @@
 ---
 name: Regulatory Compliance Verification
+version: 0.1.0
 description: Verify electronic records and signatures against 21 CFR Part 11.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - data-management
+  - regulatory
+  - compliance
+  - verification
+  requires_context: false
+variables:
+- name: audit_logs
+  description: The audit logs to use for this prompt
+  required: true
+- name: system_specs
+  description: 'Audit Trail Logs (sample): `{{audit_logs}}`'
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -39,11 +56,3 @@ evaluators:
 - name: Timestamp Check
   string:
     contains: Timestamp
-version: 0.1.0
-variables:
-- name: audit_logs
-  description: TODO
-  required: true
-- name: system_specs
-  description: TODO
-  required: true

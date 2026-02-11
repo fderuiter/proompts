@@ -1,7 +1,31 @@
 ---
 name: Clinical-Trial Budget and Burn-Rate Dashboard
+version: 0.1.0
 description: Produce a month-end dashboard comparing planned versus actual spend and forecasting when budgets will run out
   for each active study.
+metadata:
+  domain: business
+  complexity: high
+  tags:
+  - hr-finance
+  - clinical-trial
+  - budget
+  - burn-rate
+  - dashboard
+  requires_context: false
+variables:
+- name: invoices
+  description: pass-through invoice amounts
+  required: true
+- name: milestones
+  description: milestone payment schedule
+  required: true
+- name: planned_budget
+  description: approved budget per study
+  required: true
+- name: staffing_hours
+  description: hours logged per study
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -39,17 +63,3 @@ messages:
     - Up to five bullet-point recommendations.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: invoices
-  description: TODO
-  required: true
-- name: milestones
-  description: TODO
-  required: true
-- name: planned_budget
-  description: TODO
-  required: true
-- name: staffing_hours
-  description: TODO
-  required: true

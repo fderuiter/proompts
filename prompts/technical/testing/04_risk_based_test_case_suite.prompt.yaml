@@ -1,6 +1,24 @@
 ---
 name: Risk-Based Test Case Suite
+version: 0.1.0
 description: Generate a test-case suite prioritizing controls for high and medium residual risks.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - testing
+  - risk-based
+  - test
+  - case
+  - suite
+  requires_context: false
+variables:
+- name: device_name
+  description: name of the device
+  required: true
+- name: hazard_analysis_table
+  description: hazard analysis data
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -44,11 +62,3 @@ evaluators:
 - name: Output starts with 'Risk-Control Traceability Matrix'
   string:
     startsWith: Risk-Control Traceability Matrix
-version: 0.1.0
-variables:
-- name: device_name
-  description: TODO
-  required: true
-- name: hazard_analysis_table
-  description: TODO
-  required: true

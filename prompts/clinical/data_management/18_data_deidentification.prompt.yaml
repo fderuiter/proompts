@@ -1,6 +1,25 @@
 ---
 name: Data De-identification
+version: 0.1.0
 description: De-identify patient-level data according to HIPAA Privacy Rule.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - data-management
+  - data
+  - de-identification
+  requires_context: false
+variables:
+- name: code_key_logic
+  description: The source code to analyze or modify
+  required: true
+- name: identifiers_list
+  description: 'Code key generation logic: `{{code_key_logic}}`'
+  required: true
+- name: raw_data
+  description: 'HIPAA eighteen direct identifiers list: `{{identifiers_list}}`'
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -43,14 +62,3 @@ evaluators:
 - name: Age Aggregation
   string:
     contains: Age > 89
-version: 0.1.0
-variables:
-- name: code_key_logic
-  description: TODO
-  required: true
-- name: identifiers_list
-  description: TODO
-  required: true
-- name: raw_data
-  description: TODO
-  required: true

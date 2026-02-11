@@ -1,6 +1,21 @@
 ---
 name: CAPA Root Cause Investigator
+version: 0.1.0
 description: Deep-dive Root Cause Analysis (RCA) using Fishbone and 5 Whys methods.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - quality
+  - capa
+  - root
+  - cause
+  - investigator
+  requires_context: false
+variables:
+- name: problem_description
+  description: A description of the subject
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.3
@@ -37,8 +52,3 @@ evaluators:
 - name: Corrective Actions
   regex:
     pattern: (?i)Corrective Actions
-version: 0.1.0
-variables:
-- name: problem_description
-  description: TODO
-  required: true

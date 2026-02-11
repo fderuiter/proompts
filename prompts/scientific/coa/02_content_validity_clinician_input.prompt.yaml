@@ -1,6 +1,27 @@
 ---
 name: Content Validity & Reliability Analysis
+version: 0.1.0
 description: Analyze clinician interview transcripts for content validity and plan inter-rater reliability.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - clinical-outcome-assessment
+  - content
+  - validity
+  - reliability
+  - analysis
+  requires_context: true
+variables:
+- name: clinro_description
+  description: A description of the subject
+  required: true
+- name: disease
+  description: The disease to use for this prompt
+  required: true
+- name: interview_data
+  description: The data or dataset to analyze
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -53,14 +74,3 @@ evaluators:
 - name: Statistical Methods
   regex:
     pattern: (?i)(kappa|ICC|Intra-class Correlation)
-version: 0.1.0
-variables:
-- name: clinro_description
-  description: TODO
-  required: true
-- name: disease
-  description: TODO
-  required: true
-- name: interview_data
-  description: TODO
-  required: true

@@ -1,7 +1,26 @@
 ---
 name: Agent Persona Generator
+version: 0.1.0
 description: Generate detailed, high-integrity agent personas based on a provided role and goal, using a strict structural
   framework.
+metadata:
+  domain: meta
+  complexity: high
+  tags:
+  - agent
+  - persona
+  - generator
+  requires_context: true
+variables:
+- name: context
+  description: '{{context}}'
+  required: true
+- name: goal
+  description: The goal or desired outcome
+  required: true
+- name: role
+  description: The role or persona to adopt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -81,14 +100,3 @@ evaluators:
 - name: Goal Filled
   regex:
     pattern: 'Goal: .*'
-version: 0.1.0
-variables:
-- name: context
-  description: TODO
-  required: true
-- name: goal
-  description: TODO
-  required: true
-- name: role
-  description: TODO
-  required: true

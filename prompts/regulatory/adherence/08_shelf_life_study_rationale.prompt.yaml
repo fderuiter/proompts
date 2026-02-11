@@ -1,6 +1,20 @@
 ---
 name: Shelf-life Study Rationale
+version: 0.1.0
 description: Draft a rationale for correlating accelerated aging data with real-time requirements.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-adherence
+  - shelf-life
+  - study
+  - rationale
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
@@ -37,8 +51,3 @@ testData:
 evaluators:
 - name: Validation Check
   regex: (?i)Evaluate
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

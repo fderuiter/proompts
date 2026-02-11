@@ -1,6 +1,20 @@
 ---
 name: Devil’s-Advocate Stress Test
+version: 0.1.0
 description: Act as a seasoned critic.
+metadata:
+  domain: communication
+  complexity: low
+  tags:
+  - devil
+  - s-advocate
+  - stress
+  - test
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -30,8 +44,3 @@ evaluators:
 - name: Output lists mitigations
   string:
     contains: Mitigation
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

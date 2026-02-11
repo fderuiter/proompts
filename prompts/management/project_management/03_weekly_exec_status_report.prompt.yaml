@@ -1,6 +1,21 @@
 ---
 name: Weekly Executive Status Report
+version: 0.1.0
 description: Summarize project progress for executive stakeholders in a concise weekly report.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - project-management
+  - weekly
+  - executive
+  - status
+  - report
+  requires_context: true
+variables:
+- name: update_notes
+  description: Additional notes, assumptions, or special considerations
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -26,8 +41,3 @@ evaluators:
 - name: Includes RAG summary
   string:
     contains: RAG summary
-version: 0.1.0
-variables:
-- name: update_notes
-  description: TODO
-  required: true

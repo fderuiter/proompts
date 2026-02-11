@@ -1,6 +1,30 @@
 ---
 name: Build an Audit-Ready Site-Payment Schedule
+version: 0.1.0
 description: Generate a transparent investigator payment schedule that withstands audit review.
+metadata:
+  domain: business
+  complexity: high
+  tags:
+  - payment
+  - build
+  - audit-ready
+  - site-payment
+  - schedule
+  requires_context: false
+variables:
+- name: cta_budget
+  description: executed clinical trial agreement budget
+  required: true
+- name: fmv_benchmarks
+  description: fair market value benchmarks
+  required: true
+- name: fx_table
+  description: foreign-exchange rate table
+  required: true
+- name: visit_grid
+  description: visit schedule with milestones and triggers
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -37,17 +61,3 @@ evaluators:
 - name: Contains payment schedule table
   string:
     contains: '| Milestone | Trigger |'
-version: 0.1.0
-variables:
-- name: cta_budget
-  description: TODO
-  required: true
-- name: fmv_benchmarks
-  description: TODO
-  required: true
-- name: fx_table
-  description: TODO
-  required: true
-- name: visit_grid
-  description: TODO
-  required: true

@@ -1,6 +1,20 @@
 ---
 name: Career Compass Advisor
+version: 0.1.0
 description: Map the user's next career move and provide a concise action plan.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - personal-effectiveness
+  - career
+  - compass
+  - advisor
+  requires_context: false
+variables:
+- name: background
+  description: user details and career goals
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.7
@@ -37,8 +51,3 @@ testData:
     background: Sample background and goals
   expected: Markdown table followed by the action plan.
 evaluators: []
-version: 0.1.0
-variables:
-- name: background
-  description: TODO
-  required: true

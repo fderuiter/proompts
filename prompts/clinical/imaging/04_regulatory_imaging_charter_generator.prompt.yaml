@@ -1,6 +1,18 @@
 ---
 name: Regulatory Imaging Charter Generator
+version: 0.1.0
 description: Generate an imaging charter that satisfies FDA and ISO requirements.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - medical-imaging
+  - regulatory
+  - imaging
+  - charter
+  - generator
+  requires_context: false
+variables: []
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -39,5 +51,3 @@ messages:
     Output format: Markdown charter with clearly labeled H2 sections followed by an executive summary.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables: []

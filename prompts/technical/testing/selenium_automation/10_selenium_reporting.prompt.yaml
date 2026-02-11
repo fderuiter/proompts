@@ -1,6 +1,24 @@
 ---
 name: 'Reporting and Maintenance: Custom Reports'
+version: 0.1.0
 description: Integrate reporting libraries and screenshot utilities to capture execution evidence.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - testing
+  - selenium
+  - reporting
+  - maintenance
+  - custom
+  requires_context: true
+variables:
+- name: framework
+  description: '{{framework}}'
+  required: true
+- name: report_format
+  description: The report format to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -24,11 +42,3 @@ testData:
 evaluators:
 - name: Implements TakesScreenshot
   regex: TakesScreenshot
-version: 0.1.0
-variables:
-- name: framework
-  description: TODO
-  required: true
-- name: report_format
-  description: TODO
-  required: true

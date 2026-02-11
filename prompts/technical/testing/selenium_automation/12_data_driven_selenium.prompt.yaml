@@ -1,6 +1,18 @@
 ---
 name: 'Framework Implementation: Data-Driven Testing'
+version: 0.1.0
 description: Utilize data providers to execute the same test logic with multiple sets of data.
+metadata:
+  domain: technical
+  complexity: low
+  tags:
+  - testing
+  - selenium
+  - framework
+  - implementation
+  - data-driven
+  requires_context: false
+variables: []
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -16,5 +28,3 @@ testData:
 evaluators:
 - name: Uses DataProvider annotation
   regex: '@DataProvider'
-version: 0.1.0
-variables: []

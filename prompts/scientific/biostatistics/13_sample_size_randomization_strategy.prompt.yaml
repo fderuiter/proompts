@@ -1,6 +1,26 @@
 ---
 name: Sample-Size & Randomization Strategy
+version: 0.1.0
 description: Determine sample size and recommend a randomization strategy for a clinical trial.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - sample-size
+  - randomization
+  - strategy
+  requires_context: false
+variables:
+- name: dropout_rate
+  description: The dropout rate to use for this prompt
+  required: true
+- name: response_rate_active
+  description: '`{{response_rate_control}}`'
+  required: true
+- name: response_rate_control
+  description: '`{{dropout_rate}}`'
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -48,14 +68,3 @@ evaluators:
 - name: Output starts with 'Executive summary'
   string:
     startsWith: Executive summary
-version: 0.1.0
-variables:
-- name: dropout_rate
-  description: TODO
-  required: true
-- name: response_rate_active
-  description: TODO
-  required: true
-- name: response_rate_control
-  description: TODO
-  required: true

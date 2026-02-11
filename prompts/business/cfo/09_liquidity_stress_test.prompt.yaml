@@ -1,6 +1,23 @@
 ---
 name: Liquidity Stress Test
+version: 0.1.0
 description: Run a stress test on cash flow forecast assuming a drop in collections.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - finance
+  - liquidity
+  - stress
+  - test
+  requires_context: false
+variables:
+- name: drop_percentage
+  description: The drop percentage to use for this prompt
+  required: true
+- name: forecast
+  description: '`{{forecast}}`'
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -35,11 +52,3 @@ evaluators:
 - name: Output should contain runway calculation
   regex:
     pattern: (?i)runway
-version: 0.1.0
-variables:
-- name: drop_percentage
-  description: TODO
-  required: true
-- name: forecast
-  description: TODO
-  required: true

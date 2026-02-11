@@ -1,6 +1,20 @@
 ---
 name: DRY Codebase Analysis
+version: 0.1.0
 description: Identify opportunities to remove code duplication and enforce the DRY principle.
+metadata:
+  domain: technical
+  complexity: low
+  tags:
+  - architecture
+  - dry
+  - codebase
+  - analysis
+  requires_context: false
+variables:
+- name: codebase
+  description: The source code to analyze or modify
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -14,8 +28,3 @@ messages:
     {{codebase}}'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: codebase
-  description: TODO
-  required: true

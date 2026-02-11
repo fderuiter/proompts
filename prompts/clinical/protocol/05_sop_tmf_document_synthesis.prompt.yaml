@@ -1,7 +1,25 @@
 ---
 name: SOP and TMF Document Synthesis
+version: 0.1.0
 description: Provide a quick retrieval and synthesis of information from specific internal SOPs and TMF documents to answer
   compliance or process queries.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - protocol-design
+  - sop
+  - tmf
+  - document
+  - synthesis
+  requires_context: true
+variables:
+- name: documents
+  description: The documents to use for this prompt
+  required: true
+- name: query
+  description: The user's question or request
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.1
@@ -48,11 +66,3 @@ evaluators:
 - name: Reference present
   regex:
     pattern: SOP-001
-version: 0.1.0
-variables:
-- name: documents
-  description: TODO
-  required: true
-- name: query
-  description: TODO
-  required: true

@@ -1,6 +1,21 @@
 ---
 name: Inspection-Readiness Drill (CAPA Builder)
+version: 0.1.0
 description: Prepare for regulatory inspections by rehearsing high‑risk questions and drafting CAPAs.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - quality
+  - inspection-readiness
+  - drill
+  - capa
+  - builder
+  requires_context: false
+variables:
+- name: audit_notes
+  description: latest audit observations
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -26,8 +41,3 @@ messages:
     \ MD022 MD029 MD036 -->"
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: audit_notes
-  description: TODO
-  required: true

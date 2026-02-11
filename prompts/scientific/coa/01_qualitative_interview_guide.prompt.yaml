@@ -1,6 +1,27 @@
 ---
 name: Qualitative Interview Guide Generator
+version: 0.1.0
 description: Draft a qualitative patient interview guide for concept elicitation and cognitive debriefing.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - clinical-outcome-assessment
+  - qualitative
+  - interview
+  - guide
+  - generator
+  requires_context: false
+variables:
+- name: areas_of_interest
+  description: The areas of interest to use for this prompt
+  required: true
+- name: disease
+  description: The disease to use for this prompt
+  required: true
+- name: pro_instrument
+  description: The pro instrument to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.3
@@ -56,14 +77,3 @@ evaluators:
 - name: Probing Questions
   regex:
     pattern: (?i)probe|probing
-version: 0.1.0
-variables:
-- name: areas_of_interest
-  description: TODO
-  required: true
-- name: disease
-  description: TODO
-  required: true
-- name: pro_instrument
-  description: TODO
-  required: true

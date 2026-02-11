@@ -1,6 +1,27 @@
 ---
 name: Build vs. Buy Decision Matrix
+version: 0.1.0
 description: Create a weighted decision matrix for evaluating build vs. buy options.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - tech-innovation
+  - build
+  - buy
+  - decision
+  - matrix
+  requires_context: false
+variables:
+- name: function
+  description: The function to use for this prompt
+  required: true
+- name: team_capacity
+  description: The team capacity to use for this prompt
+  required: true
+- name: vendor
+  description: The vendor to use for this prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -36,14 +57,3 @@ evaluators:
 - name: Output contains 'Total Cost of Ownership'
   regex:
     pattern: Total Cost of Ownership
-version: 0.1.0
-variables:
-- name: function
-  description: TODO
-  required: true
-- name: team_capacity
-  description: TODO
-  required: true
-- name: vendor
-  description: TODO
-  required: true

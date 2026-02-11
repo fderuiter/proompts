@@ -1,6 +1,20 @@
 ---
 name: Pixar Story Spine Outline
+version: 0.1.0
 description: Guide the model in creating a short Pixar-style story outline for middle-grade readers.
+metadata:
+  domain: communication
+  complexity: medium
+  tags:
+  - pixar
+  - story
+  - spine
+  - outline
+  requires_context: false
+variables:
+- name: topic
+  description: the subject of the story
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -49,8 +63,3 @@ evaluators:
 - name: Includes emotional arc note
   string:
     contains: emotional
-version: 0.1.0
-variables:
-- name: topic
-  description: TODO
-  required: true

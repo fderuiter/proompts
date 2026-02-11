@@ -1,6 +1,24 @@
 ---
 name: AI-Powered Site and Recruitment Strategy
+version: 0.1.0
 description: Select optimal sites and anticipate dropout risks using simulated EHR insights.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - trial-execution
+  - ai-powered
+  - site
+  - recruitment
+  - strategy
+  requires_context: false
+variables:
+- name: criteria
+  description: inclusion and exclusion criteria
+  required: true
+- name: target_enrollment
+  description: desired participant count
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -49,11 +67,3 @@ evaluators:
 - name: Lists mitigation strategies
   string:
     contains: Mitigation Plan
-version: 0.1.0
-variables:
-- name: criteria
-  description: TODO
-  required: true
-- name: target_enrollment
-  description: TODO
-  required: true

@@ -1,6 +1,21 @@
 ---
 name: Design a Patient-Centered Randomization Scheme
+version: 0.1.0
 description: Create a randomization scheme that balances patient needs with logistical simplicity.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - rtsm
+  - design
+  - patient-centered
+  - randomization
+  - scheme
+  requires_context: false
+variables:
+- name: study_parameters
+  description: any additional trial details
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -41,8 +56,3 @@ evaluators:
 - name: Output starts with bullet list
   string:
     startsWith: '- '
-version: 0.1.0
-variables:
-- name: study_parameters
-  description: TODO
-  required: true

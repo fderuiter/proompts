@@ -1,6 +1,19 @@
 ---
 name: Executive Trial-Health Dashboard
+version: 0.1.0
 description: Summarize the health of active studies in a weekly dashboard.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - executive
+  - trial-health
+  - dashboard
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -23,8 +36,3 @@ evaluators:
 - name: Output is non-empty
   string:
     startsWith: ''
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

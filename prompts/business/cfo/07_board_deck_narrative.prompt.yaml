@@ -1,6 +1,21 @@
 ---
 name: Board Deck Narrative Generation
+version: 0.1.0
 description: Draft the 'CFO Commentary' slide for a Board meeting.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - finance
+  - board
+  - deck
+  - narrative
+  - generation
+  requires_context: true
+variables:
+- name: context
+  description: Background context or supporting information
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -31,8 +46,3 @@ evaluators:
 - name: Output should address context
   regex:
     pattern: (?i)revenue|margin|profitability
-version: 0.1.0
-variables:
-- name: context
-  description: TODO
-  required: true

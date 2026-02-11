@@ -1,6 +1,20 @@
 ---
 name: Eisenhower Matrix Coach
+version: 0.1.0
 description: Triage a to-do list using the Eisenhower Matrix.
+metadata:
+  domain: management
+  complexity: low
+  tags:
+  - personal-effectiveness
+  - eisenhower
+  - matrix
+  - coach
+  requires_context: false
+variables:
+- name: tasks
+  description: The task or objective to accomplish
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.7
@@ -47,8 +61,3 @@ evaluators:
 - name: Includes all four quadrants
   string:
     contains: 🗑 Delete
-version: 0.1.0
-variables:
-- name: tasks
-  description: TODO
-  required: true

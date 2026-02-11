@@ -1,6 +1,21 @@
 ---
 name: Informed Consent Process Optimization
+version: 0.1.0
 description: Review and rewrite ICF for readability.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - trial-execution
+  - informed
+  - consent
+  - process
+  - optimization
+  requires_context: false
+variables:
+- name: icf_text
+  description: The text content to process
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -36,8 +51,3 @@ evaluators:
 - name: Basic Elements
   string:
     contains: Basic Elements
-version: 0.1.0
-variables:
-- name: icf_text
-  description: TODO
-  required: true

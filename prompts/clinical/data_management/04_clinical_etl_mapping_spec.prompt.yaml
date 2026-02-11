@@ -1,6 +1,21 @@
 ---
 name: Clinical ETL Mapping Spec
+version: 0.1.0
 description: Create an ETL mapping specification for clinical data.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - data-management
+  - clinical
+  - etl
+  - mapping
+  - spec
+  requires_context: false
+variables:
+- name: etl_requirements
+  description: The requirements or specifications
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -25,8 +40,3 @@ evaluators:
 - name: Output mentions mapping
   string:
     contains: mapping
-version: 0.1.0
-variables:
-- name: etl_requirements
-  description: TODO
-  required: true

@@ -1,6 +1,21 @@
 ---
 name: Prepare Pathology Slides and Reporting Plan
+version: 0.1.0
 description: Plan slide preparation and review activities for a GLP cardiovascular stent study.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - pathology
+  - prepare
+  - slides
+  - reporting
+  - plan
+  requires_context: false
+variables:
+- name: interface_evaluation
+  description: The device-tissue interface evaluation from the previous step
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -20,8 +35,3 @@ messages:
     Keep the schedule concise and GLP compliant."
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: interface_evaluation
-  description: TODO
-  required: true

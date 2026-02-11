@@ -1,6 +1,21 @@
 ---
 name: RequirementsBot Prompt
+version: 0.1.0
 description: Guide an AI assistant to inspect a repository and generate a complete `REQUIREMENTS.md` file.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - software-engineering
+  - sdlc
+  - requirements
+  - bot
+  - prompt
+  requires_context: true
+variables:
+- name: repository_url
+  description: link or path to the codebase
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -29,8 +44,3 @@ evaluators:
 - name: Output starts with Markdown heading
   string:
     startsWith: '#'
-version: 0.1.0
-variables:
-- name: repository_url
-  description: TODO
-  required: true

@@ -1,6 +1,21 @@
 ---
 name: IDE Determination and Device Classification
+version: 0.1.0
 description: Assess risk classification and draft rationale.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-strategy
+  - ide
+  - determination
+  - device
+  - classification
+  requires_context: false
+variables:
+- name: device_study_desc
+  description: The device study desc to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -39,8 +54,3 @@ evaluators:
 - name: Risk Mitigation
   string:
     contains: Risk Mitigation
-version: 0.1.0
-variables:
-- name: device_study_desc
-  description: TODO
-  required: true

@@ -1,7 +1,21 @@
 ---
 name: TOGAF Preliminary Phase
+version: 0.1.0
 description: Guide for establishing the Architecture Capability and defining the organizational footprint (The Genesis of
   Architecture).
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - architecture
+  - togaf
+  - preliminary
+  - phase
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -75,8 +89,3 @@ messages:
   content: <request>{{input}}</request>
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

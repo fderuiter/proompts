@@ -1,6 +1,20 @@
 ---
 name: Rust Architectural Patterns
+version: 0.1.0
 description: Deep dive into Typestate and Zero-Cost FFI abstractions for Principal-level Rust.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - programming-languages
+  - rust
+  - architectural
+  - patterns
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.1
@@ -47,8 +61,3 @@ evaluators:
 - name: Output mentions repr(transparent)
   regex:
     pattern: repr\(transparent\)
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

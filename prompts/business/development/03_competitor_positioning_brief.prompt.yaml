@@ -1,6 +1,19 @@
 ---
 name: Competitor-Positioning Brief
+version: 0.1.0
 description: Provide a competitor comparison to highlight differentiators for an upcoming board review.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - business-development
+  - competitor-positioning
+  - brief
+  requires_context: true
+variables:
+- name: public_sources
+  description: The public sources to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -38,8 +51,3 @@ evaluators:
 - name: Includes markdown table
   string:
     contains: '|'
-version: 0.1.0
-variables:
-- name: public_sources
-  description: TODO
-  required: true

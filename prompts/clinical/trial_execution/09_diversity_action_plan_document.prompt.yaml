@@ -1,6 +1,21 @@
 ---
 name: Diversity Action Plan Development
+version: 0.1.0
 description: Generate a Diversity Action Plan per FDA guidance.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - trial-execution
+  - diversity
+  - action
+  - plan
+  - development
+  requires_context: false
+variables:
+- name: epidemiology_data
+  description: The data or dataset to analyze
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -35,8 +50,3 @@ evaluators:
 - name: Underrepresented Groups
   string:
     contains: Underrepresented Groups
-version: 0.1.0
-variables:
-- name: epidemiology_data
-  description: TODO
-  required: true

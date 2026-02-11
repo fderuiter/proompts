@@ -1,6 +1,17 @@
 ---
 name: Socratic-Coach
+version: 0.1.0
 description: You are my Socratic coach on “[TOPIC]”.
+metadata:
+  domain: communication
+  complexity: low
+  tags:
+  - socratic-coach
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -32,8 +43,3 @@ evaluators:
 - name: Output asks a question
   string:
     contains: '?'
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

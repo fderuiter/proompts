@@ -1,6 +1,23 @@
 ---
 name: Universal Template-Table Prompt
+version: 0.1.0
 description: Create a formatted safety table from an ADaM ADAE dataset using either R or SAS.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - universal
+  - template-table
+  - prompt
+  requires_context: false
+variables:
+- name: dataset_path
+  description: path to ADAE dataset
+  required: true
+- name: language
+  description: '`R` or `SAS`'
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -46,11 +63,3 @@ evaluators:
 - name: Output starts with '```'
   string:
     startsWith: '```'
-version: 0.1.0
-variables:
-- name: dataset_path
-  description: TODO
-  required: true
-- name: language
-  description: TODO
-  required: true

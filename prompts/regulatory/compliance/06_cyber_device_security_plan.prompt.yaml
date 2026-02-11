@@ -1,6 +1,21 @@
 ---
 name: Cyber Device Security Plan
+version: 0.1.0
 description: Draft a postmarket cybersecurity plan and Software Bill of Materials (SBOM).
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - compliance
+  - cyber
+  - device
+  - security
+  - plan
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
@@ -37,8 +52,3 @@ testData:
 evaluators:
 - name: Validation Check
   regex: (?i)Check
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

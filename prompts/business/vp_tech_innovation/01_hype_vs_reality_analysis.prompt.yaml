@@ -1,6 +1,23 @@
 ---
 name: Hype vs. Reality Analysis
+version: 0.1.0
 description: Evaluate a specific technology for pragmatic application, cutting through the hype.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - tech-innovation
+  - hype
+  - reality
+  - analysis
+  requires_context: true
+variables:
+- name: industry
+  description: The industry or sector
+  required: true
+- name: technology
+  description: The technology to use for this prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -39,11 +56,3 @@ evaluators:
 - name: Output contains 'The Promise'
   regex:
     pattern: The Promise
-version: 0.1.0
-variables:
-- name: industry
-  description: TODO
-  required: true
-- name: technology
-  description: TODO
-  required: true

@@ -1,6 +1,24 @@
 ---
 name: Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive
+version: 0.1.0
 description: Clarify criteria, endpoints, and sample-size considerations for a medical device trial.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - inclusion
+  - exclusion
+  - endpoints
+  - sample-size
+  requires_context: true
+variables:
+- name: device_description
+  description: '`{{population_details}}`'
+  required: true
+- name: population_details
+  description: The population details to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -43,11 +61,3 @@ evaluators:
 - name: Output starts with '- '
   string:
     startsWith: '- '
-version: 0.1.0
-variables:
-- name: device_description
-  description: TODO
-  required: true
-- name: population_details
-  description: TODO
-  required: true

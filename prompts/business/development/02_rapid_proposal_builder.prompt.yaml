@@ -1,6 +1,20 @@
 ---
 name: Rapid Proposal Builder
+version: 0.1.0
 description: Draft a concise capabilities and budget proposal for a prospective client.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - business-development
+  - rapid
+  - proposal
+  - builder
+  requires_context: true
+variables:
+- name: client_name
+  description: The name or identifier
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -43,8 +57,3 @@ evaluators:
 - name: Includes markdown heading
   string:
     contains: '#'
-version: 0.1.0
-variables:
-- name: client_name
-  description: TODO
-  required: true

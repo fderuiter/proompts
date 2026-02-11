@@ -1,6 +1,18 @@
 ---
 name: README Generator
+version: 0.1.0
 description: Scan an entire repository and produce a polished README.md covering everything a new developer needs.
+metadata:
+  domain: meta
+  complexity: medium
+  tags:
+  - readme
+  - generator
+  requires_context: true
+variables:
+- name: repo_access
+  description: repository path or URL
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -29,8 +41,3 @@ messages:
     Output format: Complete README.md between triple backticks.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: repo_access
-  description: TODO
-  required: true

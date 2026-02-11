@@ -1,6 +1,21 @@
 ---
 name: ClinicalTrials.gov Registration
+version: 0.1.0
 description: Draft registration summary and outcome measures.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-strategy
+  - clinical
+  - trials
+  - gov
+  - registration
+  requires_context: false
+variables:
+- name: protocol_final
+  description: The protocol final to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -39,8 +54,3 @@ evaluators:
 - name: Plain Language
   string:
     contains: Plain Language
-version: 0.1.0
-variables:
-- name: protocol_final
-  description: TODO
-  required: true

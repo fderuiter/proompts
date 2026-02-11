@@ -1,6 +1,35 @@
 ---
 name: Regulatory-Change Impact Analysis
+version: 0.1.0
 description: Assess how a new regulation affects company operations and outline a phased response plan.
+metadata:
+  domain: regulatory
+  complexity: high
+  tags:
+  - regulatory-strategy
+  - regulatory-change
+  - impact
+  - analysis
+  requires_context: true
+variables:
+- name: COMPANY
+  description: The company or organization name
+  required: true
+- name: EFFECTIVE_DATE
+  description: The EFFECTIVE DATE to use for this prompt
+  required: true
+- name: INDUSTRY_AND_REGION
+  description: The industry or sector
+  required: true
+- name: REGULATION_NAME
+  description: The name or identifier
+  required: true
+- name: company_profile
+  description: overview of operations and locations
+  required: true
+- name: regulation_text
+  description: full regulation content
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -52,23 +81,3 @@ messages:
     if essential details are missing.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: COMPANY
-  description: TODO
-  required: true
-- name: EFFECTIVE_DATE
-  description: TODO
-  required: true
-- name: INDUSTRY_AND_REGION
-  description: TODO
-  required: true
-- name: REGULATION_NAME
-  description: TODO
-  required: true
-- name: company_profile
-  description: TODO
-  required: true
-- name: regulation_text
-  description: TODO
-  required: true

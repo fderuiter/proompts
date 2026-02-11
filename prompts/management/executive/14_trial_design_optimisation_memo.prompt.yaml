@@ -1,6 +1,23 @@
 ---
 name: Trial-Design Optimisation Memo
+version: 0.1.0
 description: Rewrite a study synopsis to accelerate startup while maintaining statistical power and budget.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - executive
+  - trial-design
+  - optimisation
+  - memo
+  requires_context: false
+variables:
+- name: PASTE draft synopsis here
+  description: The PASTE draft synopsis here to use for this prompt
+  required: true
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -39,11 +56,3 @@ evaluators:
 - name: Output is non-empty
   string:
     startsWith: ''
-version: 0.1.0
-variables:
-- name: PASTE draft synopsis here
-  description: TODO
-  required: true
-- name: input
-  description: TODO
-  required: true

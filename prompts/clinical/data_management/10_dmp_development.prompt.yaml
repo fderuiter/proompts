@@ -1,6 +1,21 @@
 ---
 name: Data Management Plan (DMP) Development
+version: 0.1.0
 description: Create a DMP outlining data lifecycle and quality control.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - data-management
+  - data
+  - management
+  - plan
+  - dmp
+  requires_context: false
+variables:
+- name: study_details
+  description: The study details to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -40,8 +55,3 @@ evaluators:
 - name: 21 CFR Part 11
   string:
     contains: 21 CFR Part 11
-version: 0.1.0
-variables:
-- name: study_details
-  description: TODO
-  required: true

@@ -1,6 +1,23 @@
 ---
 name: Protocol Section Refinement
+version: 0.1.0
 description: Improve the eligibility criteria section of an IVD performance trial protocol.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - protocol-design
+  - protocol
+  - section
+  - refinement
+  requires_context: false
+variables:
+- name: condition
+  description: disease or study condition
+  required: true
+- name: draft_section
+  description: current text of the protocol section
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -28,11 +45,3 @@ evaluators:
 - name: Contains inclusion subsection
   string:
     contains: Inclusion
-version: 0.1.0
-variables:
-- name: condition
-  description: TODO
-  required: true
-- name: draft_section
-  description: TODO
-  required: true

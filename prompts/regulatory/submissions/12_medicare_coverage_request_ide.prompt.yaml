@@ -1,6 +1,21 @@
 ---
 name: Medicare Coverage Request (IDE)
+version: 0.1.0
 description: Prepare a request packet for CMS reimbursement of an IDE study.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - submissions
+  - medicare
+  - coverage
+  - request
+  - ide
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
@@ -37,8 +52,3 @@ testData:
 evaluators:
 - name: Validation Check
   regex: (?i)Verify
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

@@ -1,7 +1,19 @@
 ---
 name: Security Hardening and Dependency Management Implementation
+version: 0.1.0
 description: Secure the repository and manage its dependencies by externalizing secrets, addressing vulnerabilities, and updating
   dependencies.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - repository-refactoring
+  - security
+  - hardening
+  - dependency
+  - management
+  requires_context: true
+variables: []
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -23,5 +35,3 @@ messages:
     \ with the commands used for dependency management."
 testData: []
 evaluators: []
-version: 0.1.0
-variables: []

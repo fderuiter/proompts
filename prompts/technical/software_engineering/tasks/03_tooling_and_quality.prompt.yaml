@@ -1,7 +1,22 @@
 ---
 name: Tooling, Linting & Quality Gates (OpenAI Codex)
+version: 0.1.0
 description: Add opinionated linters, formatters, type-checkers, commit hooks, and test frameworks so the repo “fails fast”
   on bad code.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - software-engineering
+  - engineering-tasks
+  - tooling
+  - linting
+  - quality
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -24,8 +39,3 @@ evaluators:
 - name: Output starts with 'Tooling Added -'
   string:
     startsWith: Tooling Added -
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

@@ -1,6 +1,21 @@
 ---
 name: Folder and Module Organization
+version: 0.1.0
 description: Provide a detailed plan for restructuring a Python codebase into clearer, feature-based modules.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - software-engineering
+  - sdlc
+  - folder
+  - module
+  - organization
+  requires_context: true
+variables:
+- name: repo_path
+  description: path to the project source
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -27,8 +42,3 @@ evaluators:
 - name: Output starts with 'Checklist'
   string:
     startsWith: Checklist
-version: 0.1.0
-variables:
-- name: repo_path
-  description: TODO
-  required: true

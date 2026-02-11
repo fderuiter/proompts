@@ -1,6 +1,18 @@
 ---
 name: Risk-Based Monitoring and Quality Plan
+version: 0.1.0
 description: Develop a risk-based monitoring plan for a Phase II oncology trial.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - trial-execution
+  - risk-based
+  - monitoring
+  - quality
+  - plan
+  requires_context: false
+variables: []
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -42,5 +54,3 @@ evaluators:
 - name: Notes escalation workflow
   string:
     contains: communication matrix
-version: 0.1.0
-variables: []

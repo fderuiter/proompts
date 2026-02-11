@@ -1,6 +1,21 @@
 ---
 name: Source Document and Endpoint Checklist
+version: 0.1.0
 description: Create a clear checklist of required documents and endpoint criteria for clinical adjudication.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - adjudication
+  - source
+  - document
+  - endpoint
+  - checklist
+  requires_context: true
+variables:
+- name: charter_excerpt
+  description: relevant sections of the adjudication charter
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -43,8 +58,3 @@ evaluators:
 - name: Output includes 'Clarification Needed'
   string:
     contains: Clarification Needed
-version: 0.1.0
-variables:
-- name: charter_excerpt
-  description: TODO
-  required: true

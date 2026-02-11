@@ -1,6 +1,33 @@
 ---
 name: Project Brief for Epic
+version: 0.1.0
 description: Summarize a project epic with key features, rules, and success metrics.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - software-engineering
+  - sdlc
+  - project
+  - brief
+  - epic
+  requires_context: false
+variables:
+- name: business_rules
+  description: domain logic
+  required: true
+- name: data_models
+  description: entities and types
+  required: true
+- name: key_features
+  description: features or milestones
+  required: true
+- name: project_description
+  description: summary of the epic
+  required: true
+- name: success_metrics
+  description: measurements of success
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -52,20 +79,3 @@ evaluators:
 - name: Output starts with 'Project Description'
   string:
     startsWith: Project Description
-version: 0.1.0
-variables:
-- name: business_rules
-  description: TODO
-  required: true
-- name: data_models
-  description: TODO
-  required: true
-- name: key_features
-  description: TODO
-  required: true
-- name: project_description
-  description: TODO
-  required: true
-- name: success_metrics
-  description: TODO
-  required: true

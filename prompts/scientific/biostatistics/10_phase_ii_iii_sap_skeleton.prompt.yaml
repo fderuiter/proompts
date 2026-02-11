@@ -1,6 +1,20 @@
 ---
 name: Phase II/III SAP Skeleton
+version: 0.1.0
 description: Provide a high-level statistical analysis plan skeleton for an adaptive Phase II/III trial.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - phase
+  - sap
+  - skeleton
+  requires_context: false
+variables:
+- name: trial_overview
+  description: The trial overview to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -41,8 +55,3 @@ evaluators:
 - name: Output starts with '##'
   string:
     startsWith: '##'
-version: 0.1.0
-variables:
-- name: trial_overview
-  description: TODO
-  required: true

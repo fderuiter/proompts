@@ -1,6 +1,18 @@
 ---
 name: Site Upload QC and Query Generator
+version: 0.1.0
 description: Automate QC of imaging uploads and craft site queries.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - medical-imaging
+  - site
+  - upload
+  - query
+  - generator
+  requires_context: false
+variables: []
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -31,5 +43,3 @@ messages:
     : { \"<Site_ID>\": \"Dear …\" }\n}\n```"
 testData: []
 evaluators: []
-version: 0.1.0
-variables: []

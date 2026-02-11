@@ -1,6 +1,20 @@
 ---
 name: CAPA Plan Generator
+version: 0.1.0
 description: Generate a Corrective and Preventive Action (CAPA) plan based on audit findings.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - quality
+  - capa
+  - plan
+  - generator
+  requires_context: false
+variables:
+- name: audit_findings
+  description: list of major findings
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -40,8 +54,3 @@ messages:
     <!-- markdownlint-enable MD029 MD036 -->'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: audit_findings
-  description: TODO
-  required: true

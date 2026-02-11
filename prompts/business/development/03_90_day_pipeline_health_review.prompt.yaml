@@ -1,6 +1,21 @@
 ---
 name: 90-Day Pipeline Health & Next-Best-Action Review
+version: 0.1.0
 description: Assess the health of the sales pipeline and recommend next-best actions.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - business-development
+  - 90-day
+  - pipeline
+  - health
+  - next-best-action
+  requires_context: false
+variables:
+- name: crm_csv
+  description: The crm csv to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -39,8 +54,3 @@ evaluators:
 - name: Includes markdown table
   string:
     contains: '|'
-version: 0.1.0
-variables:
-- name: crm_csv
-  description: TODO
-  required: true

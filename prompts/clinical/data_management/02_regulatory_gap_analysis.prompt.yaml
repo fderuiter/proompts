@@ -1,6 +1,20 @@
 ---
 name: Regulatory Gap Analysis
+version: 0.1.0
 description: Assess regulatory compliance gaps in trial data processes.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - data-management
+  - regulatory
+  - gap
+  - analysis
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -20,8 +34,3 @@ evaluators:
 - name: Output mentions compliance
   string:
     contains: compliance
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

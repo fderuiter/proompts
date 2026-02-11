@@ -1,6 +1,19 @@
 ---
 name: Reclassification Petitioning
+version: 0.1.0
 description: Prepare a statement of the basis for disagreement with a current device classification.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-admin
+  - reclassification
+  - petitioning
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
@@ -37,8 +50,3 @@ testData:
 evaluators:
 - name: Validation Check
   regex: (?i)Assess
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

@@ -1,6 +1,24 @@
 ---
 name: 'Project Configuration: Maven Setup'
+version: 0.1.0
 description: Set up a Maven project structure and pom.xml file with necessary Selenium client libraries.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - testing
+  - selenium
+  - project
+  - configuration
+  - maven
+  requires_context: true
+variables:
+- name: java_version
+  description: The java version to use for this prompt
+  required: true
+- name: test_framework
+  description: The test framework to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -24,11 +42,3 @@ testData:
 evaluators:
 - name: Contains selenium-java dependency
   regex: selenium-java
-version: 0.1.0
-variables:
-- name: java_version
-  description: TODO
-  required: true
-- name: test_framework
-  description: TODO
-  required: true

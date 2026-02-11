@@ -1,6 +1,21 @@
 ---
 name: Draft a Data Management Plan Section
+version: 0.1.0
 description: Act as a Clinical Data Management subject-matter expert.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - data
+  - draft
+  - management
+  - plan
+  - section
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -20,8 +35,3 @@ evaluators:
 - name: References Medidata Rave
   string:
     contains: Medidata Rave
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

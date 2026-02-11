@@ -1,6 +1,27 @@
 ---
 name: Detailed Project Blueprint and Timeline
+version: 0.1.0
 description: Provide a comprehensive roadmap with phases, milestones, success metrics, and stakeholders.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - project-management
+  - detailed
+  - project
+  - blueprint
+  - timeline
+  requires_context: false
+variables:
+- name: milestone_data
+  description: The data or dataset to analyze
+  required: true
+- name: objectives
+  description: '`{{milestone_data}}`'
+  required: true
+- name: project_type
+  description: '`{{objectives}}`'
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -45,14 +66,3 @@ evaluators:
 - name: Contains Phase column
   string:
     contains: Phase
-version: 0.1.0
-variables:
-- name: milestone_data
-  description: TODO
-  required: true
-- name: objectives
-  description: TODO
-  required: true
-- name: project_type
-  description: TODO
-  required: true

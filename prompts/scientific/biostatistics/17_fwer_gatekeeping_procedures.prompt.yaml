@@ -1,6 +1,27 @@
 ---
 name: FWER Gatekeeping Procedure Code Generator
+version: 0.1.0
 description: Generate code for sequential and gatekeeping procedures to control Family-Wise Error Rate (FWER).
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - fwer
+  - gatekeeping
+  - procedure
+  - code
+  requires_context: false
+variables:
+- name: alpha
+  description: The alpha to use for this prompt
+  required: true
+- name: endpoints
+  description: The endpoints to use for this prompt
+  required: true
+- name: language
+  description: The programming or natural language to use
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -67,14 +88,3 @@ evaluators:
 - name: Alpha Check
   regex:
     pattern: 0\.05
-version: 0.1.0
-variables:
-- name: alpha
-  description: TODO
-  required: true
-- name: endpoints
-  description: TODO
-  required: true
-- name: language
-  description: TODO
-  required: true

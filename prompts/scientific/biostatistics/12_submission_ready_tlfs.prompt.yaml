@@ -1,6 +1,26 @@
 ---
 name: Generate & QC Submission-Ready TLFs
+version: 0.1.0
 description: Produce validated tables, listings, and figures (TLFs) ready for regulatory submission.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - generate
+  - submission-ready
+  - tlfs
+  requires_context: false
+variables:
+- name: adae_path
+  description: '`{{adsl_path}}`'
+  required: true
+- name: adlb_path
+  description: The adlb path to use for this prompt
+  required: true
+- name: adsl_path
+  description: '`{{adlb_path}}`'
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -30,14 +50,3 @@ evaluators:
 - name: Output starts with '```sas'
   string:
     startsWith: '```sas'
-version: 0.1.0
-variables:
-- name: adae_path
-  description: TODO
-  required: true
-- name: adlb_path
-  description: TODO
-  required: true
-- name: adsl_path
-  description: TODO
-  required: true

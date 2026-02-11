@@ -1,6 +1,30 @@
 ---
 name: Study Start-Up Checklist & Timeline
+version: 0.1.0
 description: Provide an actionable checklist and timeline for Phase IIb study start-up.
+metadata:
+  domain: management
+  complexity: high
+  tags:
+  - operations
+  - study
+  - start-up
+  - checklist
+  - timeline
+  requires_context: false
+variables:
+- name: fpi_date
+  description: first-patient-in target date
+  required: true
+- name: regions
+  description: participating regions
+  required: true
+- name: regulations
+  description: key regulatory references
+  required: true
+- name: therapeutic_area
+  description: indication for the study
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -33,17 +57,3 @@ messages:
     Notes/Risks`.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: fpi_date
-  description: TODO
-  required: true
-- name: regions
-  description: TODO
-  required: true
-- name: regulations
-  description: TODO
-  required: true
-- name: therapeutic_area
-  description: TODO
-  required: true

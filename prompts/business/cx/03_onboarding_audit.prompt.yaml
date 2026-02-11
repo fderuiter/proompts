@@ -1,6 +1,20 @@
 ---
 name: Friction-Hunting Onboarding Audit
+version: 0.1.0
 description: Critique onboarding steps to identify friction and propose low-touch alternatives.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - customer-experience
+  - friction-hunting
+  - onboarding
+  - audit
+  requires_context: false
+variables:
+- name: onboarding_steps
+  description: The onboarding steps to use for this prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -45,8 +59,3 @@ evaluators:
 - name: Output should contain 'Low-Touch' suggestion
   string:
     contains: Low-Touch
-version: 0.1.0
-variables:
-- name: onboarding_steps
-  description: TODO
-  required: true

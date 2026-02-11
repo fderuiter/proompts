@@ -1,6 +1,20 @@
 ---
 name: CAPA SOP Architect
+version: 0.1.0
 description: Establish a comprehensive CAPA SOP compliant with ISO 9001 and ISO 13485.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - quality
+  - capa
+  - sop
+  - architect
+  requires_context: false
+variables:
+- name: company_context
+  description: The text content to process
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -46,8 +60,3 @@ evaluators:
 - name: KPIs
   regex:
     pattern: (?i)Key Performance Indicators
-version: 0.1.0
-variables:
-- name: company_context
-  description: TODO
-  required: true

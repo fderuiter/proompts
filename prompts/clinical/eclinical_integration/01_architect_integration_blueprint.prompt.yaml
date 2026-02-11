@@ -1,6 +1,20 @@
 ---
 name: Architect the Integration Blueprint
+version: 0.1.0
 description: Provide a structured plan for integrating site EHR systems with the sponsor's EDC and CTMS.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - eclinical-integration
+  - architect
+  - integration
+  - blueprint
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -38,8 +52,3 @@ evaluators:
 - name: Mentions SDTM
   string:
     contains: SDTM
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

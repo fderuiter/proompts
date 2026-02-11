@@ -1,6 +1,20 @@
 ---
 name: Ultimate SOP Architect
+version: 0.1.0
 description: Create a clear, regulation-compliant standard operating procedure.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - protocol-design
+  - ultimate
+  - sop
+  - architect
+  requires_context: true
+variables:
+- name: process_information
+  description: scope, audience, and regulatory context
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -29,8 +43,3 @@ evaluators:
 - name: Contains Purpose heading
   string:
     contains: Purpose / Objective
-version: 0.1.0
-variables:
-- name: process_information
-  description: TODO
-  required: true

@@ -1,6 +1,21 @@
 ---
 name: Submission-Ready Statistical Analysis Plan
+version: 0.1.0
 description: Generate sections of a submission-ready statistical analysis plan.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - submission-ready
+  - statistical
+  - analysis
+  - plan
+  requires_context: false
+variables:
+- name: study_overview
+  description: The study overview to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -27,8 +42,3 @@ evaluators:
 - name: Output starts with '## 1'
   string:
     startsWith: '## 1'
-version: 0.1.0
-variables:
-- name: study_overview
-  description: TODO
-  required: true

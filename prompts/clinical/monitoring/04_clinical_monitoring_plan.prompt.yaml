@@ -1,6 +1,20 @@
 ---
 name: Clinical Monitoring Plan Development
+version: 0.1.0
 description: Draft a risk-based Clinical Monitoring Plan.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - monitoring
+  - clinical
+  - plan
+  - development
+  requires_context: false
+variables:
+- name: trial_details
+  description: The trial details to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -39,8 +53,3 @@ evaluators:
 - name: Site Performance
   string:
     contains: Site Performance
-version: 0.1.0
-variables:
-- name: trial_details
-  description: TODO
-  required: true

@@ -1,6 +1,24 @@
 ---
 name: UI Tweak & Verification (OpenAI Codex)
+version: 0.1.0
 description: Resolve a minor UI regression and confirm the fix with build or test steps.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - software-engineering
+  - engineering-tasks
+  - tweak
+  - verification
+  - open
+  requires_context: false
+variables:
+- name: component_path
+  description: The component path to use for this prompt
+  required: true
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -32,11 +50,3 @@ evaluators:
 - name: Output starts with 'UI Fix -'
   string:
     startsWith: UI Fix -
-version: 0.1.0
-variables:
-- name: component_path
-  description: TODO
-  required: true
-- name: input
-  description: TODO
-  required: true

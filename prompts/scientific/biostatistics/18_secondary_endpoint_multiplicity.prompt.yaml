@@ -1,6 +1,24 @@
 ---
 name: Secondary Endpoint Multiplicity Adjuster
+version: 0.1.0
 description: Apply Bonferroni-Holm (step-down) procedure to secondary efficacy endpoints.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - secondary
+  - endpoint
+  - multiplicity
+  - adjuster
+  requires_context: false
+variables:
+- name: endpoints
+  description: The endpoints to use for this prompt
+  required: true
+- name: p_values
+  description: The p values to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -44,11 +62,3 @@ evaluators:
 - name: Significance Check
   regex:
     pattern: (?i)(significant|reject)
-version: 0.1.0
-variables:
-- name: endpoints
-  description: TODO
-  required: true
-- name: p_values
-  description: TODO
-  required: true

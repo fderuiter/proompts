@@ -1,6 +1,21 @@
 ---
 name: Cross-Study Operational Risk Heat Map and Mitigation Plan
+version: 0.1.0
 description: Identify and prioritize the top portfolio-level operational risks and propose mitigations.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - project-management
+  - cross-study
+  - operational
+  - risk
+  - heat
+  requires_context: false
+variables:
+- name: risk_register
+  description: The risk register to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -43,8 +58,3 @@ evaluators:
 - name: Contains Risk-Heat-Map table
   string:
     contains: Risk-Heat-Map
-version: 0.1.0
-variables:
-- name: risk_register
-  description: TODO
-  required: true

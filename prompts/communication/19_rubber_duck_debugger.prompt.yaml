@@ -1,6 +1,19 @@
 ---
 name: Rubber Duck Debugger
+version: 0.1.0
 description: Guide developers through self-explanation to uncover bugs before providing fixes.
+metadata:
+  domain: communication
+  complexity: low
+  tags:
+  - rubber
+  - duck
+  - debugger
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -32,8 +45,3 @@ evaluators:
 - name: Output gives diagnosis
   string:
     contains: Diagnosis
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

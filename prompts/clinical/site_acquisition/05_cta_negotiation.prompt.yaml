@@ -1,6 +1,21 @@
 ---
 name: Clinical Trial Agreement (CTA) Negotiation
+version: 0.1.0
 description: Review CTA for missing clauses.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - site-acquisition
+  - clinical
+  - trial
+  - agreement
+  - cta
+  requires_context: false
+variables:
+- name: cta_draft
+  description: The cta draft to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -35,8 +50,3 @@ evaluators:
 - name: Intellectual Property
   string:
     contains: Intellectual Property
-version: 0.1.0
-variables:
-- name: cta_draft
-  description: TODO
-  required: true

@@ -1,6 +1,27 @@
 ---
 name: Electronic Data Capture Implementation
+version: 0.1.0
 description: Design eCRFs with built-in edit checks and automation.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - forms
+  - electronic
+  - data
+  - capture
+  - implementation
+  requires_context: false
+variables:
+- name: dcp
+  description: The dcp to use for this prompt
+  required: true
+- name: dmp
+  description: 'Data Clean Plan (DCP): `{{dcp}}`'
+  required: true
+- name: protocol
+  description: 'Data Management Plan (DMP): `{{dmp}}`'
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -43,14 +64,3 @@ evaluators:
 - name: Edit Check
   string:
     contains: Range
-version: 0.1.0
-variables:
-- name: dcp
-  description: TODO
-  required: true
-- name: dmp
-  description: TODO
-  required: true
-- name: protocol
-  description: TODO
-  required: true

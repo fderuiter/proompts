@@ -1,6 +1,21 @@
 ---
 name: Single IRB (sIRB) Plan Submission
+version: 0.1.0
 description: Generate sIRB Plan and communication strategy.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - site-acquisition
+  - single
+  - irb
+  - plan
+  - submission
+  requires_context: false
+variables:
+- name: grant_details
+  description: The grant details to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -35,8 +50,3 @@ evaluators:
 - name: Communication Plan
   string:
     contains: Communication Plan
-version: 0.1.0
-variables:
-- name: grant_details
-  description: TODO
-  required: true

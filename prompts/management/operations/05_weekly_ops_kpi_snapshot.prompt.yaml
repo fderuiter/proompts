@@ -1,6 +1,20 @@
 ---
 name: Weekly Operations KPI Snapshot
+version: 0.1.0
 description: Summarize weekly milestone performance and highlight at-risk studies.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - operations
+  - weekly
+  - kpi
+  - snapshot
+  requires_context: false
+variables:
+- name: milestone_csv
+  description: milestone data
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -25,8 +39,3 @@ messages:
     Output format: A ≤150-word executive summary and a Markdown table titled **Portfolio KPI Snapshot**. Dates should be ISO-8601.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: milestone_csv
-  description: TODO
-  required: true

@@ -1,6 +1,27 @@
 ---
 name: Payment-Process Risk Assessment and Mitigation
+version: 0.1.0
 description: Identify weak points in the site-payment workflow and propose mitigations.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - payment
+  - payment-process
+  - risk
+  - assessment
+  - mitigation
+  requires_context: false
+variables:
+- name: kpi_metrics
+  description: key performance indicators and targets
+  required: true
+- name: technology_stack
+  description: systems and tools in use
+  required: true
+- name: workflow_description
+  description: description of current payment workflow
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -29,14 +50,3 @@ evaluators:
 - name: Mentions risk in output
   string:
     contains: risk
-version: 0.1.0
-variables:
-- name: kpi_metrics
-  description: TODO
-  required: true
-- name: technology_stack
-  description: TODO
-  required: true
-- name: workflow_description
-  description: TODO
-  required: true

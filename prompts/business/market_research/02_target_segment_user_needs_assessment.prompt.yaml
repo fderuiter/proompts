@@ -1,6 +1,24 @@
 ---
 name: Target Segment & User Needs Assessment
+version: 0.1.0
 description: Identify key user segments for `{{device_or_assay}}` used in `{{application}}`.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - market-research
+  - target
+  - segment
+  - user
+  - needs
+  requires_context: false
+variables:
+- name: application
+  description: clinical application
+  required: true
+- name: device_or_assay
+  description: device or assay type
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -28,11 +46,3 @@ messages:
     Output format: Ranked segmentation table with insights.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: application
-  description: TODO
-  required: true
-- name: device_or_assay
-  description: TODO
-  required: true

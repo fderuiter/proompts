@@ -1,6 +1,30 @@
 ---
 name: Elevator Pitch for Expensive Tech
+version: 0.1.0
 description: Create a persuasive elevator pitch for expensive technology investments focusing on business outcomes.
+metadata:
+  domain: business
+  complexity: high
+  tags:
+  - tech-innovation
+  - elevator
+  - pitch
+  - expensive
+  - tech
+  requires_context: false
+variables:
+- name: budget
+  description: Budget details or financial constraints
+  required: true
+- name: current_problem
+  description: The current problem to use for this prompt
+  required: true
+- name: specific_tools
+  description: The specific tools to use for this prompt
+  required: true
+- name: technology
+  description: The technology to use for this prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -37,17 +61,3 @@ evaluators:
 - name: Output contains 'reporting'
   regex:
     pattern: reporting
-version: 0.1.0
-variables:
-- name: budget
-  description: TODO
-  required: true
-- name: current_problem
-  description: TODO
-  required: true
-- name: specific_tools
-  description: TODO
-  required: true
-- name: technology
-  description: TODO
-  required: true

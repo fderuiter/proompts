@@ -1,6 +1,21 @@
 ---
 name: IVDR Performance-Evaluation Plan Blueprint
+version: 0.1.0
 description: Draft a comprehensive Performance‑Evaluation Plan (PEP) that satisfies Article 56 and Annex XIII of the IVDR.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - regulatory-strategy
+  - ivdr
+  - performance-evaluation
+  - plan
+  - blueprint
+  requires_context: false
+variables:
+- name: device_details
+  description: any additional device information
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -24,8 +39,3 @@ messages:
     \ and keep the language concise."
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: device_details
-  description: TODO
-  required: true

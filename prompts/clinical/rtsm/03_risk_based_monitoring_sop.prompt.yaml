@@ -1,6 +1,21 @@
 ---
 name: Create a Risk-Based Monitoring & Mitigation SOP for RTSM
+version: 0.1.0
 description: Draft a standard operating procedure for risk‑based monitoring and mitigation in RTSM operations.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - rtsm
+  - create
+  - risk-based
+  - monitoring
+  - mitigation
+  requires_context: false
+variables:
+- name: existing_sop
+  description: any current procedures
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
@@ -49,8 +64,3 @@ evaluators:
 - name: Output starts with markdown table
   string:
     startsWith: '|'
-version: 0.1.0
-variables:
-- name: existing_sop
-  description: TODO
-  required: true

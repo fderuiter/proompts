@@ -1,6 +1,25 @@
 ---
 name: Market-Intelligence Radar
+version: 0.1.0
 description: Prioritize high-potential biotech or pharma companies for partnership opportunities.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - business-development
+  - market-intelligence
+  - radar
+  requires_context: true
+variables:
+- name: company_size
+  description: The company or organization name
+  required: true
+- name: geography_focus
+  description: '`{{company_size}}`'
+  required: true
+- name: preferred_areas
+  description: '`{{geography_focus}}`'
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -43,14 +62,3 @@ evaluators:
 - name: Includes markdown table
   string:
     contains: '|'
-version: 0.1.0
-variables:
-- name: company_size
-  description: TODO
-  required: true
-- name: geography_focus
-  description: TODO
-  required: true
-- name: preferred_areas
-  description: TODO
-  required: true

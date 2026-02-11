@@ -1,6 +1,30 @@
 ---
 name: CDISC SDTM/ADaM Mapping
+version: 0.1.0
 description: Map raw clinical data to standardized CDISC SDTM and ADaM domains.
+metadata:
+  domain: clinical
+  complexity: high
+  tags:
+  - data-management
+  - cdisc
+  - sdtm
+  - ada
+  - mapping
+  requires_context: false
+variables:
+- name: curation_guidelines
+  description: 'Metadata definitions: `{{metadata_defs}}`'
+  required: true
+- name: metadata_defs
+  description: 'Predefined Metadata Rules: `{{metadata_rules}}`'
+  required: true
+- name: metadata_rules
+  description: The data or dataset to analyze
+  required: true
+- name: raw_data
+  description: 'Data curation internal guidelines: `{{curation_guidelines}}`'
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -48,17 +72,3 @@ evaluators:
 - name: SDTM Domain
   string:
     contains: DM
-version: 0.1.0
-variables:
-- name: curation_guidelines
-  description: TODO
-  required: true
-- name: metadata_defs
-  description: TODO
-  required: true
-- name: metadata_rules
-  description: TODO
-  required: true
-- name: raw_data
-  description: TODO
-  required: true

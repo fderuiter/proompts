@@ -1,6 +1,20 @@
 ---
 name: Database Lock Procedures
+version: 0.1.0
 description: Review CRFs and prepare for database lock.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - data-management
+  - database
+  - lock
+  - procedures
+  requires_context: true
+variables:
+- name: crf_status
+  description: The crf status to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -38,8 +52,3 @@ evaluators:
 - name: Database Lock
   string:
     contains: Database Lock
-version: 0.1.0
-variables:
-- name: crf_status
-  description: TODO
-  required: true

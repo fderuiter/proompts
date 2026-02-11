@@ -1,6 +1,27 @@
 ---
 name: Quarterly CRO KPI Executive Brief
+version: 0.1.0
 description: Present key operational KPIs and recommended actions for the quarterly review.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - operations
+  - quarterly
+  - cro
+  - kpi
+  - executive
+  requires_context: false
+variables:
+- name: functional_comments
+  description: notes from department heads
+  required: true
+- name: kpi_definitions
+  description: thresholds and descriptions
+  required: true
+- name: operational_dataset
+  description: metrics from Redshift
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -33,14 +54,3 @@ messages:
     Output format: Narrative summary, slide outline and recommended visualization styles.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: functional_comments
-  description: TODO
-  required: true
-- name: kpi_definitions
-  description: TODO
-  required: true
-- name: operational_dataset
-  description: TODO
-  required: true

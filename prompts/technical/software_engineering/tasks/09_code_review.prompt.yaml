@@ -1,6 +1,21 @@
 ---
 name: Code Review Assistant (Aegis Security)
+version: 0.1.0
 description: Review a supplied diff and suggest improvements or potential issues before merge, with a focus on security.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - software-engineering
+  - engineering-tasks
+  - code
+  - review
+  - assistant
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -36,8 +51,3 @@ evaluators:
 - name: Security Awareness
   regex: '(?i)(SQL Injection|vulnerable|unsafe|parameterized query|No critical vulnerabilities found)|(\{"error": "Invalid
     input"\})'
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

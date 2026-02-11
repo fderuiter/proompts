@@ -1,6 +1,26 @@
 ---
 name: Legacy Modernization Strategy
+version: 0.1.0
 description: Create a phased roadmap for migrating legacy systems to modern architectures.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - tech-innovation
+  - legacy
+  - modernization
+  - strategy
+  requires_context: false
+variables:
+- name: budget
+  description: Budget details or financial constraints
+  required: true
+- name: downtime_limit
+  description: The downtime limit to use for this prompt
+  required: true
+- name: legacy_system
+  description: The legacy system to use for this prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -36,14 +56,3 @@ evaluators:
 - name: Output contains 'Strangler Fig Pattern'
   regex:
     pattern: (?i)Strangler Fig Pattern
-version: 0.1.0
-variables:
-- name: budget
-  description: TODO
-  required: true
-- name: downtime_limit
-  description: TODO
-  required: true
-- name: legacy_system
-  description: TODO
-  required: true

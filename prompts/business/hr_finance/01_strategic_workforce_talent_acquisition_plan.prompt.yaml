@@ -1,7 +1,28 @@
 ---
 name: Strategic Workforce and Talent Acquisition Plan
+version: 0.1.0
 description: Create a 12‑month hiring and retention roadmap that fills projected staffing gaps while keeping turnover under
   12%.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - hr-finance
+  - strategic
+  - workforce
+  - talent
+  - acquisition
+  requires_context: false
+variables:
+- name: cro_name
+  description: The name or identifier
+  required: true
+- name: headcount_data
+  description: role breakdown with trial timelines and turnover rates
+  required: true
+- name: salary_benchmarks
+  description: market compensation data
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -35,14 +56,3 @@ messages:
     - 200‑word executive summary.'
 testData: []
 evaluators: []
-version: 0.1.0
-variables:
-- name: cro_name
-  description: TODO
-  required: true
-- name: headcount_data
-  description: TODO
-  required: true
-- name: salary_benchmarks
-  description: TODO
-  required: true

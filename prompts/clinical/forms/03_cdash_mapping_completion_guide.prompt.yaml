@@ -1,6 +1,21 @@
 ---
 name: CDASH Mapping & Completion-Guide Assistant
+version: 0.1.0
 description: '- For every variable in the list, supply:'
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - forms
+  - cdash
+  - mapping
+  - completion-guide
+  - assistant
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -25,8 +40,3 @@ evaluators:
 - name: Output should start with CSV header
   string:
     startsWith: Variable | Domain | Instruction
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

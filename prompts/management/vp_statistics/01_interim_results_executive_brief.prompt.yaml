@@ -1,6 +1,27 @@
 ---
 name: Interim Results Executive Brief
+version: 0.1.0
 description: Summarize interim analysis findings for cross-functional leadership.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - statistics
+  - interim
+  - results
+  - executive
+  - brief
+  requires_context: true
+variables:
+- name: analysis_results
+  description: PDF with interim results
+  required: true
+- name: safety_listings
+  description: safety listings spreadsheet
+  required: true
+- name: statistical_plan
+  description: latest Statistical Analysis Plan
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -64,14 +85,3 @@ evaluators:
 - name: Contains Key Findings section
   string:
     contains: Key Findings
-version: 0.1.0
-variables:
-- name: analysis_results
-  description: TODO
-  required: true
-- name: safety_listings
-  description: TODO
-  required: true
-- name: statistical_plan
-  description: TODO
-  required: true

@@ -1,7 +1,21 @@
 ---
 name: Python Concurrency Mastery
+version: 0.1.0
 description: A Principal-level guide to mastering Python concurrency, focusing on AsyncIO, Structured Concurrency, and Multiprocessing
   safety.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - programming-languages
+  - python
+  - concurrency
+  - mastery
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.1
@@ -44,8 +58,3 @@ evaluators:
 - name: Output contains Principal Implementation header
   regex:
     pattern: '## 💻 Principal Implementation'
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

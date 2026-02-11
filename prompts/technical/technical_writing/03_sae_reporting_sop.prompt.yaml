@@ -1,6 +1,18 @@
 ---
 name: SAE and Unanticipated Problem Reporting SOP
+version: 0.1.0
 description: Develop a standard operating procedure for reporting serious adverse events and unanticipated problems.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - technical-writing
+  - sae
+  - unanticipated
+  - problem
+  - reporting
+  requires_context: true
+variables: []
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -52,5 +64,3 @@ evaluators:
 - name: Contains Scope section heading
   string:
     contains: 2. Scope
-version: 0.1.0
-variables: []

@@ -1,6 +1,21 @@
 ---
 name: Continuous Integration & Delivery (DevOps Architect)
+version: 0.1.0
 description: Design and implement secure, efficient, and scalable CI/CD pipelines for AI-integrated applications.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - software-engineering
+  - engineering-tasks
+  - continuous
+  - integration
+  - delivery
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -38,8 +53,3 @@ evaluators:
 - name: Uses OIDC or Secure Secrets
   string:
     matches: (OIDC|secrets|aws-actions/configure-aws-credentials)
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

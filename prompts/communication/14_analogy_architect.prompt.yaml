@@ -1,6 +1,21 @@
 ---
 name: Analogy Architect
+version: 0.1.0
 description: Help the user grasp a complex topic through everyday analogies.
+metadata:
+  domain: communication
+  complexity: medium
+  tags:
+  - analogy
+  - architect
+  requires_context: false
+variables:
+- name: complex_topic
+  description: The subject or topic to address
+  required: true
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.7
@@ -31,11 +46,3 @@ evaluators:
 - name: Output uses bold analogies
   string:
     contains: '**'
-version: 0.1.0
-variables:
-- name: complex_topic
-  description: TODO
-  required: true
-- name: input
-  description: TODO
-  required: true

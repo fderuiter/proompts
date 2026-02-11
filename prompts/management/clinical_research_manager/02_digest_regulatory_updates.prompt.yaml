@@ -1,7 +1,22 @@
 ---
 name: Digest the Latest Regulatory Updates Affecting My Protocol
+version: 0.1.0
 description: Summarize June 2025 FDA e-source guidance changes affecting protocol ABC-123, flagging mandatory versus recommended
   items and mapping to protocol sections.
+metadata:
+  domain: management
+  complexity: low
+  tags:
+  - clinical-research-management
+  - digest
+  - latest
+  - regulatory
+  - updates
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -25,8 +40,3 @@ evaluators:
 - name: Contains 'Monitor for Clarification' heading
   string:
     contains: Monitor for Clarification
-version: 0.1.0
-variables:
-- name: input
-  description: TODO
-  required: true

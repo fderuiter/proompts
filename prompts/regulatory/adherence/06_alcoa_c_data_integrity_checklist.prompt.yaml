@@ -1,6 +1,24 @@
 ---
 name: ALCOA-C Data Integrity Checklist
+version: 0.1.0
 description: Ensure data integrity following ALCOA-C principles.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - regulatory-adherence
+  - alcoa-c
+  - data
+  - integrity
+  - checklist
+  requires_context: false
+variables:
+- name: site_role
+  description: The role or persona to adopt
+  required: true
+- name: system_type
+  description: The system type to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -66,11 +84,3 @@ evaluators:
 - name: Audit Trail Check
   regex:
     pattern: (?i)(audit trail|21 CFR)
-version: 0.1.0
-variables:
-- name: site_role
-  description: TODO
-  required: true
-- name: system_type
-  description: TODO
-  required: true

@@ -1,6 +1,21 @@
 ---
 name: 21 CFR Part 11 Compliance Verification
+version: 0.1.0
 description: Confirm system compliance with electronic signatures.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - data-management
+  - cfr
+  - part
+  - compliance
+  - verification
+  requires_context: true
+variables:
+- name: system_features
+  description: The system features to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -38,8 +53,3 @@ evaluators:
 - name: Validation Documentation
   string:
     contains: Validation Documentation
-version: 0.1.0
-variables:
-- name: system_features
-  description: TODO
-  required: true

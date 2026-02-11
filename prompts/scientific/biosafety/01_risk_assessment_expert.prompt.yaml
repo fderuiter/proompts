@@ -1,6 +1,20 @@
 ---
 name: Risk Assessment Expert
+version: 0.1.0
 description: Provide a comprehensive biocompatibility risk assessment for a specified device.
+metadata:
+  domain: scientific
+  complexity: low
+  tags:
+  - biosafety
+  - risk
+  - assessment
+  - expert
+  requires_context: false
+variables:
+- name: medical_device_type
+  description: description of the device
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -62,8 +76,3 @@ evaluators:
 - name: Contains mitigation strategies
   string:
     contains: mitigation
-version: 0.1.0
-variables:
-- name: medical_device_type
-  description: TODO
-  required: true

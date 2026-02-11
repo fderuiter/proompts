@@ -1,6 +1,27 @@
 ---
 name: Technical Implementation Plan
+version: 0.1.0
 description: Detail the architecture, dependencies, and steps required to implement a project.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - software-engineering
+  - sdlc
+  - technical
+  - implementation
+  - plan
+  requires_context: false
+variables:
+- name: architecture_overview
+  description: The architecture overview to use for this prompt
+  required: true
+- name: data_models
+  description: The data or dataset to analyze
+  required: true
+- name: technology_choices
+  description: The technology choices to use for this prompt
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -102,14 +123,3 @@ evaluators:
 - name: Risk Analysis Section Exists
   regex:
     pattern: (?m)^## 5\. Dependencies & Risk Analysis
-version: 0.1.0
-variables:
-- name: architecture_overview
-  description: TODO
-  required: true
-- name: data_models
-  description: TODO
-  required: true
-- name: technology_choices
-  description: TODO
-  required: true

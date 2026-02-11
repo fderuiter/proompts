@@ -1,6 +1,20 @@
 ---
 name: Medicare Coverage Analysis
+version: 0.1.0
 description: Determine qualifying status and billing justification.
+metadata:
+  domain: business
+  complexity: low
+  tags:
+  - payment
+  - medicare
+  - coverage
+  - analysis
+  requires_context: false
+variables:
+- name: schedule_of_events
+  description: The schedule of events to use for this prompt
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -35,8 +49,3 @@ evaluators:
 - name: Medicare Guidelines
   string:
     contains: Medicare Guidelines
-version: 0.1.0
-variables:
-- name: schedule_of_events
-  description: TODO
-  required: true

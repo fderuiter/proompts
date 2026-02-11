@@ -1,6 +1,20 @@
 ---
 name: Scenario-Based Financial Navigator
+version: 0.1.0
 description: Generate long-term wealth scenarios and actionable tactics.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - personal-effectiveness
+  - scenario-based
+  - financial
+  - navigator
+  requires_context: false
+variables:
+- name: user_data
+  description: demographic and financial details
+  required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.7
@@ -36,8 +50,3 @@ testData:
     user_data: Sample financial profile
   expected: Markdown table of projections followed by brief tactics and a caution note.
 evaluators: []
-version: 0.1.0
-variables:
-- name: user_data
-  description: TODO
-  required: true
