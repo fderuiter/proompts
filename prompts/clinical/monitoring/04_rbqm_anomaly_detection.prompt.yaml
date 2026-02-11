@@ -36,20 +36,37 @@ messages:
 
     </site_data>'
 testData:
-- input: 'Site 001:
+- input: |
+    Site 001 (Investigator: Dr. Smith):
+    - Patient 101: Visit 1 (Jan 10), Visit 2 (Jan 12), Visit 3 (Jan 09).
+    - Patient 102: BP readings: 120/80, 120/80, 120/80, 120/80, 120/80.
+    - Patient 103: Lab values: 4.5, 4.5, 4.5, 4.5 (exact matches).
 
-    - BP readings for all 50 visits are exactly 120/80.
-
-    - Consent Date: 2023-01-10. Visit 1: 2023-01-09.
-
-    Site 002:
-
-    - Normal variance in BP. Dates chronological.'
-  expected: 120/80
+    Site 002 (Investigator: Dr. Jones):
+    - Patient 201: BP readings: 118/78, 122/81, 119/79, 121/80.
+    - Patient 202: All dates chronological.
+  expected: "Findings"
+- input: |
+    Site 003:
+    - Patient 301: Visit 1 (Jan 01).
+  expected: "Insufficient data"
+- input: |
+    Site 004:
+    - Patient 401: BP readings: 120/80, 120/80.
+  expected: "Potential risk"
 evaluators:
+- name: Structure Compliance
+  regex:
+    pattern: ^## Findings[\s\S]*## Statistical Evidence[\s\S]*## Recommendations
 - name: Invariance Detected
   regex:
-    pattern: (?i)variance|consistent|120/80
-- name: Timeline Error Detected
+    pattern: (?i)(exact match|no variance|identical values|120/80)
+- name: Timeline Error
   regex:
-    pattern: (?i)consent.*visit
+    pattern: (?i)(chronology|date discrepancy|visit.*before)
+- name: Guardrails
+  regex:
+    pattern: (?!.*confirmed fraud)
+- name: Insufficient Data Warning
+  regex:
+    pattern: (?i)(insufficient|limited data|sample size)
