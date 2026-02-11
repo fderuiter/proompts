@@ -1,4 +1,18 @@
 ---
 extends: default
+ignore:
+  - "._*"
+  - .git/
+  - __pycache__/
+  - .pytest_cache/
+  - node_modules/
+
 rules:
   line-length: disable
+  document-start: disable
+  truthy:
+    allowed-values: ['true', 'false', 'on']
+  indentation:
+    indent-sequences: whatever
+  empty-lines:
+    max: 3
