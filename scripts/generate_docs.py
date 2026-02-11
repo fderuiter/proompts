@@ -106,22 +106,96 @@ def main():
 
     # --- Process Workflows ---
     workflows = []
+    workflow_docs_dir = os.path.join(docs_abs, "workflows")
+    os.makedirs(workflow_docs_dir, exist_ok=True)
+
     if os.path.exists(workflows_abs):
         print(f"Scanning {workflows_abs}...")
         for root, dirs, files in os.walk(workflows_abs):
             for file in files:
                 if file.endswith('.workflow.yaml') or file.endswith('.workflow.yml'):
                     full_path = os.path.join(root, file)
-                    rel_path_from_workflows = os.path.relpath(full_path, workflows_abs)
-                    
                     title = get_title(full_path)
-                    link_path = os.path.join("..", WORKFLOWS_DIR, rel_path_from_workflows)
                     
+                    # Generate individual workflow page content with Mermaid
+                    mermaid_graph = "graph TD\n"
+                    
+                    try:
+                        with open(full_path, 'r') as f:
+                            data = yaml.safe_load(f)
+                            
+                            # Inputs node
+                            if 'inputs' in data:
+                                for inp in data['inputs']:
+                                    inp_name = inp['name']
+                                    mermaid_graph += f"    Input_{inp_name}[Input: {inp_name}] --> Steps\n"
+                            
+                            previous_step = None
+                            if 'steps' in data:
+                                for step in data['steps']:
+                                    step_id = step['step_id']
+                                    mermaid_graph += f"    {step_id}[Step: {step_id}]\n"
+                                    
+                                    # Try to infer dependencies from map_inputs
+                                    if 'map_inputs' in data:
+                                        # This is too complex to parse perfectly without a real parser
+                                        # But we can check if {{steps.PREV.output}} is used
+                                        pass
+                                    
+                                    # Simple sequential linking for now if no explicit dependencies found?
+                                    # Or just list them.
+                                    # Let's try to find dependencies in map_inputs values
+                                    if 'map_inputs' in step:
+                                        for key, val in step['map_inputs'].items():
+                                            if isinstance(val, str):
+                                                # Look for {{steps.STEP_ID.output}}
+                                                matches = re.findall(r'steps\.(\w+)\.output', val)
+                                                for match in matches:
+                                                    mermaid_graph += f"    {match} --> {step_id}\n"
+                                                
+                                                # Look for {{inputs.INPUT_NAME}}
+                                                matches_input = re.findall(r'inputs\.(\w+)', val)
+                                                for match in matches_input:
+                                                    mermaid_graph += f"    Input_{match} --> {step_id}\n"
+
+                    except Exception as e:
+                        print(f"Error parsing workflow {file}: {e}")
+                        mermaid_graph = ""
+
+                    # Create individual page
+                    workflow_filename = re.sub(r'\.workflow\.ya?ml$', '', file) + ".md"
+                    workflow_page_path = os.path.join(workflow_docs_dir, workflow_filename)
+                    
+                    description = data.get('description', 'No description provided.') if data else ''
+                    
+                    page_content = f"---\nlayout: default\ntitle: {title}\nparent: Workflows\nnav_order: 99\n---\n\n"
+                    page_content += f"# {title}\n\n"
+                    page_content += f"{description}\n\n"
+                    
+                    if mermaid_graph.strip() != "graph TD":
+                         page_content += "## Workflow Diagram\n\n"
+                         page_content += "<div class=\"mermaid\">\n"
+                         page_content += mermaid_graph
+                         page_content += "</div>\n\n"
+                    
+                    # Link to source
+                    rel_path_source = os.path.relpath(full_path, workflow_docs_dir)
+                    page_content += f"[View Source YAML]({rel_path_source})\n"
+
+                    with open(workflow_page_path, 'w') as f:
+                        f.write(page_content)
+                    print(f"Generated workflow page: {workflow_page_path}")
+
+                    # Add to main list (link to the generated doc, NOT the yaml)
+                    # The link in docs/workflows.md should be relative to docs/workflows.md
+                    # Target: docs/workflows/filename.md
+                    link_path = os.path.join("workflows", workflow_filename)
                     workflows.append({'title': title, 'path': link_path})
     
     # Add Workflows to categories if we want a separate page
     if workflows:
-        categories["Workflows"] = workflows
+        categories["Workflows"] = workflows # This will generate the index page
+
 
     # --- Generate Docs ---
     print("Generating documentation files...")
