@@ -98,24 +98,25 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
     if prompt_data.get('testData'):
         for test_case in prompt_data['testData']:
             # Check if expected inputs match actual inputs
-            expected_inputs = test_case.get('inputs', {})
+            # Support both 'vars' (common in prompts) and 'inputs'
+            expected_inputs = test_case.get('vars', test_case.get('inputs', {}))
             match = True
             for k, v in expected_inputs.items():
                 # Convert both to string for comparison to handle potential type mismatches
                 # or strictly compare values?
-                # Old code: all(item in inputs.items() for item in test_case.get('inputs', {}).items())
-                # This implies strict equality (and existence).
                 if k not in inputs or inputs[k] != v:
                     match = False
                     break
 
             if match:
                 logger.info("Found matching test case. Using its expected output.")
-                return test_case.get('expected', 'No expected output in test case.')[0]
+                output = test_case.get('expected', 'No expected output in test case.')
+                return output[0] if isinstance(output, list) else output
 
         # If no match, use the first test case's output
         logger.info("No matching test case found. Using the first available test case output.")
-        return prompt_data['testData'][0].get('expected', ['Simulated output from first test case.'])[0]
+        fallback_output = prompt_data['testData'][0].get('expected', 'Simulated output from first test case.')
+        return fallback_output[0] if isinstance(fallback_output, list) else fallback_output
 
     # If no testData, return a generic placeholder
     return f"[Simulated output for prompt: {prompt_data.get('name', 'Untitled Prompt')}]"
