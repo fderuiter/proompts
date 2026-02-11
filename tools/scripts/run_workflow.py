@@ -2,11 +2,11 @@ from __future__ import annotations
 
 import argparse
 import logging
-import os
+from pathlib import Path
 from typing import Any, Dict, Optional
 
-import yaml
 from jinja2 import Environment
+from utils import load_yaml
 from jinja2.nativetypes import NativeEnvironment
 
 # Configure logger
@@ -19,21 +19,6 @@ def setup_logging(verbose: bool = False):
     # Ensure module logger follows the level
     logger.setLevel(level)
 
-def load_yaml(file_path: str) -> Optional[Dict[str, Any]]:
-    """
-    Loads a YAML file from the given path.
-
-    Args:
-        file_path: The path to the YAML file.
-
-    Returns:
-        The parsed YAML content as a dictionary, or None if the file is not found.
-    """
-    if not os.path.exists(file_path):
-        logger.error(f"Error: File not found at {file_path}")
-        return None
-    with open(file_path, 'r') as f:
-        return yaml.safe_load(f)
 
 def resolve_value(template_string: str, workflow_state: Dict[str, Any]) -> Any:
     """
@@ -138,7 +123,7 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
          logging.basicConfig(level=logger.level, format='%(levelname)s: %(message)s')
 
 
-    workflow_data = load_yaml(workflow_file)
+    workflow_data = load_yaml(Path(workflow_file))
     if not workflow_data:
         return None
 
@@ -158,7 +143,7 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
         logger.info(f"\n===== Running Step: {step_id} =====")
 
         # 1. Load the prompt file
-        prompt_data = load_yaml(prompt_file)
+        prompt_data = load_yaml(Path(prompt_file))
         if not prompt_data:
             logger.warning(f"Skipping step {step_id} due to missing prompt file.")
             continue
@@ -201,7 +186,7 @@ def main():
 
     if final_state:
         logger.info("\n===== Workflow Finished =====")
-        workflow_data = load_yaml(args.workflow_file)
+        workflow_data = load_yaml(Path(args.workflow_file))
         final_output_step_id = workflow_data.get('steps', [{}])[-1].get('step_id')
         if final_output_step_id:
             final_output = final_state['steps'][final_output_step_id]['output']
