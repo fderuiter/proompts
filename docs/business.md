@@ -7,6 +7,8 @@ has_children: false
 
 # Business
 
+## Prompts
+
 - [90-Day Pipeline Health & Next-Best-Action Review](../prompts/business/development/03_90_day_pipeline_health_review.prompt.yaml)
 - [Board Deck Narrative Generation](../prompts/business/cfo/07_board_deck_narrative.prompt.yaml)
 - [Budget Variance Analysis](../prompts/business/cfo/06_variance_analysis.prompt.yaml)
@@ -54,3 +56,8 @@ has_children: false
 - [Upskilling Program Design](../prompts/business/vp_tech_innovation/05_upskilling_program_design.prompt.yaml)
 - [Value-Based QBR Generator](../prompts/business/cx/05_value_based_qbr.prompt.yaml)
 - [Voice of Customer Root Cause Analysis](../prompts/business/cx/01_root_cause_analysis.prompt.yaml)
+
+## Workflows
+
+- [CFO Workflow](workflows/cfo.md)
+- [Market Research Workflow](workflows/market_research.md)

@@ -7,6 +7,8 @@ has_children: false
 
 # Technical
 
+## Prompts
+
 - [AI Email Assistant Go/No-Go Vote](../prompts/technical/design/02_email_assistant_go_no_go_vote.prompt.yaml)
 - [Atlas Documentation Specialist](../prompts/technical/documentation/atlas_documentation_specialist.prompt.yaml)
 - [CSR Results and Safety Section](../prompts/technical/technical_writing/01_csr_results_safety_section.prompt.yaml)
@@ -24,3 +26,7 @@ has_children: false
 - [Security Hardening and Dependency Management Implementation](../prompts/technical/repository_refactoring/07_security_hardening_dependency_management_implementation.prompt.yaml)
 - [Test Suite Enhancement and CI Pipeline Implementation](../prompts/technical/repository_refactoring/08_test_suite_enhancement_ci_pipeline_implementation.prompt.yaml)
 - [Testing, Configuration, and Automation Analysis](../prompts/technical/repository_refactoring/04_testing_configuration_automation_analysis.prompt.yaml)
+
+## Workflows
+
+- [Technical Writer Workflow](workflows/technical_writer.md)

@@ -7,6 +7,8 @@ has_children: false
 
 # Meta
 
+## Prompts
+
 - [AGENTS.md Checklist Generator](../prompts/meta/L5_agents-md-checklist.prompt.yaml)
 - [AI Coding Agent Plan Generator](../prompts/meta/L5_ai_coding_agent.prompt.yaml)
 - [Agent Persona Generator](../prompts/meta/L5_agent_persona_generator.prompt.yaml)
@@ -20,3 +22,7 @@ has_children: false
 - [README Generator](../prompts/meta/L5_readme-generator.prompt.yaml)
 - [Task Prototyper](../prompts/meta/L3_task-prototyper.prompt.yaml)
 - [Worker Prompt](../prompts/meta/L4_worker_prompt.prompt.yaml)
+
+## Workflows
+
+- [Meta-Prompt Chain: L1 -> L2 -> L3 -> L4](workflows/meta_prompt_chain.md)

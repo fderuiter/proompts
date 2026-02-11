@@ -7,6 +7,8 @@ has_children: false
 
 # Regulatory
 
+## Prompts
+
 - [21 CFR 820 / QMSR Gap-Analysis & Remediation](../prompts/regulatory/strategy/11_qmsr_gap_analysis.prompt.yaml)
 - [21 CFR Part 14 Auditing](../prompts/regulatory/administrative/06_21_cfr_part_14_auditing.prompt.yaml)
 - [510(k) Substantial Equivalence Preparation](../prompts/regulatory/submissions/01_510_k_substantial_equivalence_preparation.prompt.yaml)
@@ -98,3 +100,4 @@ has_children: false
 - [Zika Virus Reagent Study Design](../prompts/regulatory/device_specifics/03_zika_virus_reagent_study_design.prompt.yaml)
 - [eTMF Compliance Gap Analysis](../prompts/regulatory/quality/04_etmf_compliance_gap_analysis.prompt.yaml)
 - [iCGM Clinical Testing Strategy](../prompts/regulatory/device_specifics/08_icgm_clinical_testing_strategy.prompt.yaml)
+

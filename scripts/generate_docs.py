@@ -41,6 +41,39 @@ NAV_ORDER = {
     "Workflows": 13 
 }
 
+# Workflow to Category Mapping
+WORKFLOW_MAPPING = {
+    "adjudication": "Clinical",
+    "agentic_coding": "Software Engineering",
+    "bioskills": "Scientific",
+    "biological_safety": "Scientific",
+    "cfo": "Business",
+    "cra": "Clinical",
+    "chemical_characterization": "Scientific",
+    "clinical_data": "Clinical",
+    "data_management_etl": "Clinical",
+    "clinical_monitoring": "Clinical",
+    "clinical_prompts": "Clinical",
+    "clinical_safety": "Clinical",
+    "imaging": "Clinical",
+    "learning_development": "Management",
+    "market_research": "Business",
+    "meta_prompt_chain": "Meta",
+    "microbiology": "Scientific",
+    "pathology_study": "Scientific",
+    "project_management": "Management",
+    "protocol": "Clinical",
+    "rtsm": "Clinical",
+    "site_acquisition": "Clinical",
+    "sterility": "Scientific",
+    "study_director": "Management",
+    "technical_writer": "Technical",
+    "testing": "Testing",
+    "vp_statistics": "Scientific",
+    "eclinical_integration": "Clinical",
+    "epro": "Clinical"
+}
+
 def get_title(filepath):
     """Extracts the title from a prompt or workflow file."""
     try:
@@ -80,8 +113,10 @@ def main():
     workflows_abs = os.path.join(base_dir, WORKFLOWS_DIR)
     docs_abs = os.path.join(base_dir, DOCS_DIR)
 
-    categories = {cat_name: [] for _, cat_name in CATEGORY_MAP_LIST}
-    categories["Uncategorized"] = []
+    # Categories now hold both prompts and workflows
+    categories = {cat_name: {'prompts': [], 'workflows': []} for _, cat_name in CATEGORY_MAP_LIST}
+    categories["Uncategorized"] = {'prompts': [], 'workflows': []}
+    categories["Workflows"] = {'prompts': [], 'workflows': []} # Keep master list
     
     # --- Process Prompts ---
     print(f"Scanning {prompts_abs}...")
@@ -102,10 +137,9 @@ def main():
                 title = get_title(full_path)
                 link_path = os.path.join("..", PROMPTS_DIR, rel_path_from_prompts)
                 
-                categories[category].append({'title': title, 'path': link_path})
+                categories[category]['prompts'].append({'title': title, 'path': link_path})
 
     # --- Process Workflows ---
-    workflows = []
     workflow_docs_dir = os.path.join(docs_abs, "workflows")
     os.makedirs(workflow_docs_dir, exist_ok=True)
 
@@ -137,14 +171,6 @@ def main():
                                     mermaid_graph += f"    {step_id}[Step: {step_id}]\n"
                                     
                                     # Try to infer dependencies from map_inputs
-                                    if 'map_inputs' in data:
-                                        # This is too complex to parse perfectly without a real parser
-                                        # But we can check if {{steps.PREV.output}} is used
-                                        pass
-                                    
-                                    # Simple sequential linking for now if no explicit dependencies found?
-                                    # Or just list them.
-                                    # Let's try to find dependencies in map_inputs values
                                     if 'map_inputs' in step:
                                         for key, val in step['map_inputs'].items():
                                             if isinstance(val, str):
@@ -186,37 +212,63 @@ def main():
                         f.write(page_content)
                     print(f"Generated workflow page: {workflow_page_path}")
 
-                    # Add to main list (link to the generated doc, NOT the yaml)
-                    # The link in docs/workflows.md should be relative to docs/workflows.md
-                    # Target: docs/workflows/filename.md
+                    # Determine Workflow Category
+                    workflow_basename = re.sub(r'\.workflow\.ya?ml$', '', file)
+                    # Handle double extensions if any
+                    if workflow_basename.endswith('.workflow'):
+                        workflow_basename = workflow_basename[:-9]
+                        
+                    category = WORKFLOW_MAPPING.get(workflow_basename, "Uncategorized")
+                    
+                    # Link paths are slightly different depending on if we are in docs/workflows.md or docs/category.md
+                    # But actually we are linking to the *generated* docs/workflows/file.md
+                    # In docs/category.md -> workflows/file.md
+                    # In docs/workflows.md -> workflows/file.md
+                    
                     link_path = os.path.join("workflows", workflow_filename)
-                    workflows.append({'title': title, 'path': link_path})
+                    
+                    # Add to specific category
+                    if category in categories:
+                        categories[category]['workflows'].append({'title': title, 'path': link_path})
+                    
+                    # Add to master list
+                    categories["Workflows"]['workflows'].append({'title': title, 'path': link_path})
     
-    # Add Workflows to categories if we want a separate page
-    if workflows:
-        categories["Workflows"] = workflows # This will generate the index page
-
 
     # --- Generate Docs ---
     print("Generating documentation files...")
-    for category, items in categories.items():
-        if not items:
+    for category, content_data in categories.items():
+        prompts = content_data['prompts']
+        workflows = content_data['workflows']
+        
+        if not prompts and not workflows:
             continue
             
         filename = category.lower().replace(" ", "_") + ".md"
         output_path = os.path.join(docs_abs, filename)
         
-        sorted_items = sorted(items, key=lambda x: x['title'])
         nav_order = NAV_ORDER.get(category, 99)
         
-        content = f"---\nlayout: default\ntitle: {category}\nnav_order: {nav_order}\nhas_children: false\n---\n\n"
-        content += f"# {category}\n\n"
+        page_content = f"---\nlayout: default\ntitle: {category}\nnav_order: {nav_order}\nhas_children: false\n---\n\n"
+        page_content += f"# {category}\n\n"
         
-        for item in sorted_items:
-             content += f"- [{item['title']}]({item['path']})\n"
+        if prompts and category != "Workflows":
+            page_content += "## Prompts\n\n"
+            sorted_prompts = sorted(prompts, key=lambda x: x['title'])
+            for prompt in sorted_prompts:
+                page_content += f"- [{prompt['title']}]({prompt['path']})\n"
+            page_content += "\n"
+
+        if workflows:
+            if category != "Workflows":
+                 page_content += "## Workflows\n\n"
+            
+            sorted_workflows = sorted(workflows, key=lambda x: x['title'])
+            for wf in sorted_workflows:
+                page_content += f"- [{wf['title']}]({wf['path']})\n"
         
         with open(output_path, 'w') as f:
-            f.write(content)
+            f.write(page_content)
         print(f"Updated {output_path}")
 
     print("Done.")

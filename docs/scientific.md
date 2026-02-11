@@ -7,6 +7,8 @@ has_children: false
 
 # Scientific
 
+## Prompts
+
 - [Adaptive Design & Interim Monitoring](../prompts/scientific/biostatistics/09_adaptive_design_interim_monitoring.prompt.yaml)
 - [Bioburden Testing SOP](../prompts/scientific/microbiology/01_bioburden_testing_sop.prompt.yaml)
 - [Biological Evaluation Plan Builder](../prompts/scientific/biosafety/04_bep_builder.prompt.yaml)
@@ -54,3 +56,13 @@ has_children: false
 - [Universal Template-Table Prompt](../prompts/scientific/biostatistics/04_universal_template_table_prompt.prompt.yaml)
 - [Write the Regulatory Summary](../prompts/scientific/chemical_characterization/03_write_the_regulatory_summary.prompt.yaml)
 - [ePRO Migration Equivalence Checker](../prompts/scientific/coa/04_epro_migration_equivalence.prompt.yaml)
+
+## Workflows
+
+- [BioSkills Workflow](workflows/bioskills.md)
+- [Biological Safety Assessment and Planning](workflows/biological_safety.md)
+- [Chemical Characterization and Biocompatibility Assessment](workflows/chemical_characterization.md)
+- [Microbiology Workflow](workflows/microbiology.md)
+- [Preclinical Pathology Study Workflow](workflows/pathology_study.md)
+- [Sterility Workflow](workflows/sterility.md)
+- [VP Statistics Workflow](workflows/vp_statistics.md)

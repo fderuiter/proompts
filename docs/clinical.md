@@ -7,6 +7,8 @@ has_children: false
 
 # Clinical
 
+## Prompts
+
 - [21 CFR Part 11 Compliance Verification](../prompts/clinical/data_management/11_part_11_compliance_verification.prompt.yaml)
 - [AI-Powered Site and Recruitment Strategy](../prompts/clinical/trial_execution/02_ai_powered_site_recruitment.prompt.yaml)
 - [Adaptive Recruitment and Retention Strategy](../prompts/clinical/trial_execution/04_adaptive_recruitment_retention_strategy.prompt.yaml)
@@ -96,3 +98,19 @@ has_children: false
 - [eConsent Implementation Strategy](../prompts/clinical/eclinical_integration/04_econsent_implementation.prompt.yaml)
 - [ePRO Adoption Plan for Sponsors](../prompts/clinical/epro/03_epro_adoption_plan_for_sponsors.prompt.yaml)
 - [eTMF Artifact Classifier](../prompts/clinical/data_management/10_etmf_artifact_classifier.prompt.yaml)
+
+## Workflows
+
+- [Adjudication Workflow](workflows/adjudication.md)
+- [CRA Workflow](workflows/cra.md)
+- [Clinical Data Workflow](workflows/clinical_data.md)
+- [Clinical ETL Pipeline Design and Review](workflows/data_management_etl.md)
+- [Clinical Monitoring Workflow](workflows/clinical_monitoring.md)
+- [Clinical Prompts Workflow](workflows/clinical_prompts.md)
+- [Clinical Safety Workflow](workflows/clinical_safety.md)
+- [Imaging Workflow](workflows/imaging.md)
+- [Protocol Workflow](workflows/protocol.md)
+- [RTSM Workflow](workflows/rtsm.md)
+- [Site Acquisition Workflow](workflows/site_acquisition.md)
+- [eClinical Integration Workflow](workflows/eclinical_integration.md)
+- [ePRO Workflow](workflows/epro.md)

@@ -7,6 +7,8 @@ has_children: false
 
 # Management
 
+## Prompts
+
 - [360° Operational KPI & Benchmark Review](../prompts/management/operations/04_operational_kpi_benchmark_review.prompt.yaml)
 - [90-Day Biostatistics Onboarding Plan](../prompts/management/leadership/04_biostatistics_onboarding_plan.prompt.yaml)
 - [AI-Enhanced RBM Action Plan](../prompts/management/medical_director/03_ai_enhanced_rbm_action_plan.prompt.yaml)
@@ -84,3 +86,9 @@ has_children: false
 - [Vendor Qualification and Oversight](../prompts/management/operations/18_vendor_qualification.prompt.yaml)
 - [Weekly Executive Status Report](../prompts/management/project_management/03_weekly_exec_status_report.prompt.yaml)
 - [Weekly Operations KPI Snapshot](../prompts/management/operations/05_weekly_ops_kpi_snapshot.prompt.yaml)
+
+## Workflows
+
+- [Learning and Development Workflow](workflows/learning_development.md)
+- [Project Management Workflow](workflows/project_management.md)
+- [Study Director Workflow](workflows/study_director.md)

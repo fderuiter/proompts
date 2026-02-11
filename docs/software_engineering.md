@@ -7,6 +7,8 @@ has_children: false
 
 # Software Engineering
 
+## Prompts
+
 - [Architecture Flow Q&A (OpenAI Codex)](../prompts/technical/software_engineering/tasks/07_architecture_flow.prompt.yaml)
 - [Bug Finder & Fixer (OpenAI Codex)](../prompts/technical/software_engineering/tasks/11_bug_fix.prompt.yaml)
 - [Code Review Assistant (Aegis Security)](../prompts/technical/software_engineering/tasks/09_code_review.prompt.yaml)
@@ -32,3 +34,7 @@ has_children: false
 - [To-Do List Template](../prompts/technical/software_engineering/lifecycle/07_todo_generation.prompt.yaml)
 - [Tooling, Linting & Quality Gates (OpenAI Codex)](../prompts/technical/software_engineering/tasks/03_tooling_and_quality.prompt.yaml)
 - [UI Tweak & Verification (OpenAI Codex)](../prompts/technical/software_engineering/tasks/12_ui_fix.prompt.yaml)
+
+## Workflows
+
+- [Agentic Coding: From Idea to Epics](workflows/agentic_coding.md)
