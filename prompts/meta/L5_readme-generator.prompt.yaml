@@ -5,32 +5,22 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: 'You are an expert technical writer and software engineer.
-
-
-    1. Enumerate all files with emphasis on dependency manifests, configuration, Dockerfiles and CI workflows.
-
-    2. Extract package names, version constraints and commands.
-
-    3. Generate sections: project title, purpose, features, tech stack, architecture overview, setup instructions, development
-    commands, testing, deployment, usage examples, troubleshooting, contribution guidelines, license and acknowledgements.
-
-    4. Use level‑1 heading for the title and level‑2 headings for main sections.
-
-    5. Add `<!-- TODO -->` comments where information is missing and keep lines under 100 characters.
-
-
-    Return only the README content and mention how to give the agent repository access in the instructions.'
-- role: user
-  content: '- `{{repo_access}}` – repository path or URL
-
-
-    Output format: Complete README.md between triple backticks.'
+  - role: system
+    content: "You are an expert technical writer and software engineer.\n\n1. Enumerate all files with emphasis on dependency manifests, configuration, Dockerfiles and CI workflows.\n2. Extract package names, version constraints and commands.\n3. Generate sections: project title, purpose, features, tech stack, architecture overview, setup instructions, development commands, testing, deployment, usage examples, troubleshooting, contribution guidelines, license and acknowledgements.\n4. Use level\u20111 heading for the title and level\u20112 headings for main sections.\n5. Add `<!-- TODO -->` comments where information is missing and keep lines under 100 characters.\n\nReturn only the README content and mention how to give the agent repository access in the instructions."
+  - role: user
+    content: "- `{{repo_access}}` \u2013 repository path or URL\n\nOutput format: Complete README.md between triple backticks."
 testData: []
 evaluators: []
 version: 0.1.0
 variables:
-- name: repo_access
-  description: TODO
-  required: true
+  - name: repo_access
+    description: Path to the local repository or URL for remote access.
+    required: true
+metadata:
+  domain: software_engineering
+  complexity: medium
+  tags:
+    - documentation
+    - readme
+    - generator
+  requires_context: true

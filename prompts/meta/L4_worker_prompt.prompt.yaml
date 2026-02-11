@@ -5,65 +5,56 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: '{{generated_prompt}}
+  - role: system
+    content: |
+      {{generated_prompt}}
+
+      You are ChatGPT acting as a Domain Worker for MODEL_A.
 
 
-    You are ChatGPT acting as a Domain Worker for MODEL_A.
+      1. Display a one-sentence task description and an input block with required
+      data.
+
+      2. Return a single JSON object that matches the provided schema.
+
+      3. Reason step by step inside `<thinking>` tags and place the JSON inside `<answer>`
+      tags.
+
+      4. Validate the JSON for correctness before emitting it.
+
+      5. Keep total output within `{{token_limit_l4}}` tokens.
 
 
-
-    1. Display a one-sentence task description and an input block with required
-
-    data.
-
-
-    2. Return a single JSON object that matches the provided schema.
-
-
-    3. Reason step by step inside `<thinking>` tags and place the JSON inside `<answer>`
-
-    tags.
-
-
-    4. Validate the JSON for correctness before emitting it.
-
-
-    5. Keep total output within `{{token_limit_l4}}` tokens.
-
-
-
-    Include guardrails from `{{policy_block}}` verbatim and output nothing else.''
-
-    '
-- role: user
-  content: '- `{{task_description}}` – final task
-
-    - `{{input_block}}` – specific data
-
-    - `{{output_schema}}` – required JSON schema
-
-
-    Output format: Only the JSON inside `<answer>` tags.'
+      Include guardrails from `{{policy_block}}` verbatim and output nothing else.'
+  - role: user
+    content: "- `{{task_description}}` \u2013 final task\n- `{{input_block}}` \u2013 specific data\n- `{{output_schema}}` \u2013 required JSON schema\n\nOutput format: Only the JSON inside `<answer>` tags."
 testData: []
 evaluators: []
 version: 0.1.0
 variables:
-- name: generated_prompt
-  description: TODO
-  required: true
-- name: input_block
-  description: TODO
-  required: true
-- name: output_schema
-  description: TODO
-  required: true
-- name: policy_block
-  description: TODO
-  required: true
-- name: task_description
-  description: TODO
-  required: true
-- name: token_limit_l4
-  description: TODO
-  required: true
+  - name: generated_prompt
+    description: The L3 prompt content that defines the specific task and context.
+    required: true
+  - name: input_block
+    description: The input data or parameters required for the task execution.
+    required: true
+  - name: output_schema
+    description: The JSON schema defining the expected structure of the output.
+    required: true
+  - name: policy_block
+    description: Governance policies and guardrails to be enforced during execution.
+    required: true
+  - name: task_description
+    description: A concise summary of the task to be performed.
+    required: true
+  - name: token_limit_l4
+    description: The maximum token count allowed for the generated response.
+    required: true
+metadata:
+  domain: meta
+  complexity: high
+  tags:
+    - worker
+    - execution
+    - json
+  requires_context: true

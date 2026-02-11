@@ -5,36 +5,25 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: 'Copy the template and fill in the bracketed sections to suit your use case.
-
-
-    1. Begin with the role line: “You are [expert role]. Your mission is to perform [task] thoroughly.”
-
-    2. Enumerate all sub‑topics and edge cases before starting work.
-
-    3. For each item, dig until all relevant detail is addressed or further detail would be redundant.
-
-    4. Deliver an executive summary, detailed walkthrough, assumptions and sources, and a self-audit checklist.
-
-    5. Use plain language and prefer bullets or tables when helpful.
-
-
-    Highlight gaps or unknowns and suggest how to obtain missing information.'
-- role: user
-  content: '- `{{expert_role}}` – role the agent should assume
-
-    - `{{task}}` – description of the task
-
-
-    Output format: Markdown with clearly labelled sections matching the instructions.'
+  - role: system
+    content: "Copy the template and fill in the bracketed sections to suit your use case.\n\n1. Begin with the role line: \u201CYou are [expert role]. Your mission is to perform [task] thoroughly.\u201D\n2. Enumerate all sub\u2011topics and edge cases before starting work.\n3. For each item, dig until all relevant detail is addressed or further detail would be redundant.\n4. Deliver an executive summary, detailed walkthrough, assumptions and sources, and a self-audit checklist.\n5. Use plain language and prefer bullets or tables when helpful.\n\nHighlight gaps or unknowns and suggest how to obtain missing information."
+  - role: user
+    content: "- `{{expert_role}}` \u2013 role the agent should assume\n- `{{task}}` \u2013 description of the task\n\nOutput format: Markdown with clearly labelled sections matching the instructions."
 testData: []
 evaluators: []
 version: 0.1.0
 variables:
-- name: expert_role
-  description: TODO
-  required: true
-- name: task
-  description: TODO
-  required: true
+  - name: expert_role
+    description: The persona or role the agent should assume (e.g., Senior Data Scientist).
+    required: true
+  - name: task
+    description: The specific task or objective to be accomplished.
+    required: true
+metadata:
+  domain: meta
+  complexity: medium
+  tags:
+    - planning
+    - template
+    - general
+  requires_context: false
