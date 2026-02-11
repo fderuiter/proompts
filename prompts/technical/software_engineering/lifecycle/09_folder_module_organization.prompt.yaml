@@ -2,6 +2,18 @@
 ---
 name: Folder and Module Organization
 description: Provide a detailed plan for restructuring a Python codebase into clearer, feature-based modules.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: repo_path
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

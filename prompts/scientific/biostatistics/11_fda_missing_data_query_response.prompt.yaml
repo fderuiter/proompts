@@ -2,6 +2,22 @@
 ---
 name: FDA Missing-Data Query Response
 description: Draft a response letter to an FDA information request about missing
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: fda_questions
+    description: ""
+    required: true
+    default: null
+  - name: sap_references
+    description: ""
+    required: true
+    default: null
+
   data.
 model: gpt-4o
 modelParameters:

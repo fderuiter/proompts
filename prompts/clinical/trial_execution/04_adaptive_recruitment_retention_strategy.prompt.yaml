@@ -1,6 +1,22 @@
 ---
 name: Adaptive Recruitment and Retention Strategy
 description: Design an optimized recruitment and retention plan for a multi-site
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device_or_ivd
+    description: ""
+    required: true
+    default: null
+  - name: patient_population
+    description: ""
+    required: true
+    default: null
+
   pivotal study.
 model: gpt-4o
 modelParameters:

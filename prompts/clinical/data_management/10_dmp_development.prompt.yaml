@@ -1,6 +1,18 @@
 ---
 name: Data Management Plan (DMP) Development
 description: Create a DMP outlining data lifecycle and quality control.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: study_details
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

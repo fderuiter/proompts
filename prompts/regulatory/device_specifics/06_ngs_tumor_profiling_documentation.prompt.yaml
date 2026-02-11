@@ -1,6 +1,18 @@
 ---
 name: NGS Tumor Profiling Documentation
 description: Develop documentation supporting the clinical significance of mutations in an NGS-based tumor profiling panel.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.5

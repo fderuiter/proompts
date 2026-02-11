@@ -1,6 +1,22 @@
 ---
 name: 'Project Configuration: Maven Setup'
 description: Set up a Maven project structure and pom.xml file with necessary Selenium client libraries.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: java_version
+    description: ""
+    required: true
+    default: null
+  - name: test_framework
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.1

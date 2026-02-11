@@ -1,6 +1,18 @@
 ---
 name: 'Architecture Design: Page Object Model'
 description: Implement the Page Object Model pattern to separate UI locators from test logic.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: html_source
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

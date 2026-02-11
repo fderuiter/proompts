@@ -1,6 +1,18 @@
 ---
 name: Endotoxin Control & 510(k) Risk Plan
 description: Draft a risk-based endotoxin-testing plan for a 510(k) submission.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device_name
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

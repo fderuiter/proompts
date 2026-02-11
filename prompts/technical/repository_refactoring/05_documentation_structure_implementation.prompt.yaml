@@ -1,6 +1,14 @@
 ---
 name: Documentation and Repository Structure Implementation
 description: Implement foundational improvements for the repository's structure and documentation.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables: []
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

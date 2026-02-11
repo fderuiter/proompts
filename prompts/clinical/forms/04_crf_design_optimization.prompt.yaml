@@ -1,6 +1,30 @@
 ---
 name: Design Error Prevention
 description: Review and optimize CRF layout to avoid duplication and non-essential fields.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: crf_draft
+    description: ""
+    required: true
+    default: null
+  - name: endpoints
+    description: ""
+    required: true
+    default: null
+  - name: hypothesis
+    description: ""
+    required: true
+    default: null
+  - name: protocol
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

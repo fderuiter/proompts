@@ -2,6 +2,26 @@
 ---
 name: Technical Implementation Plan
 description: Detail the architecture, dependencies, and steps required to implement a project.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: architecture_overview
+    description: ""
+    required: true
+    default: null
+  - name: data_models
+    description: ""
+    required: true
+    default: null
+  - name: technology_choices
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

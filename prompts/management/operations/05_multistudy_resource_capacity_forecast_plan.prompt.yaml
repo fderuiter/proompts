@@ -1,6 +1,18 @@
 ---
 name: Multistudy Resource & Capacity Forecast Plan
 description: Outline a data-driven approach for forecasting resources across multiple
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: historical_utilization
+    description: ""
+    required: true
+    default: null
+
   upcoming trials.
 model: gpt-4o
 modelParameters:

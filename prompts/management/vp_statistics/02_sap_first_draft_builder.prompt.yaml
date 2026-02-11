@@ -1,6 +1,18 @@
 ---
 name: Statistical Analysis Plan Draft Builder
 description: Create the initial draft of a Statistical Analysis Plan (SAP) for a
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: protocol_synopsis
+    description: ""
+    required: true
+    default: null
+
   Phase II oncology trial.
 model: gpt-4o
 modelParameters:

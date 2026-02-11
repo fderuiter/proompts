@@ -2,6 +2,26 @@
 ---
 name: Market-Intelligence Radar
 description: Prioritize high-potential biotech or pharma companies for
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: company_size
+    description: ""
+    required: true
+    default: null
+  - name: geography_focus
+    description: ""
+    required: true
+    default: null
+  - name: preferred_areas
+    description: ""
+    required: true
+    default: null
+
   partnership opportunities.
 model: gpt-4o
 modelParameters:

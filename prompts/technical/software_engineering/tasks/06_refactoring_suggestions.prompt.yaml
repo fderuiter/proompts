@@ -1,6 +1,18 @@
 ---
 name: Refactoring Architect
 description: A Principal Software Architect's guide to surgical refactoring, focusing
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
   on decoupling, testability, and debt remediation.
 model: gpt-4
 modelParameters:

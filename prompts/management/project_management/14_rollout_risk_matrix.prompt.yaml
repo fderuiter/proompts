@@ -1,6 +1,18 @@
 ---
 name: Rollout Risk Matrix
 description: Assess rollout risks and propose key mitigation actions.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: risk_list
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

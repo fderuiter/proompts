@@ -1,6 +1,18 @@
 ---
 name: Operational Excellence & Risk Sweep
 description: Deliver a 90-day action plan to cut cycle time and reduce recruitment
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: trial_metrics
+    description: ""
+    required: true
+    default: null
+
   failure.
 model: gpt-4o
 modelParameters:

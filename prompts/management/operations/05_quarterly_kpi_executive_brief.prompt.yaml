@@ -1,6 +1,26 @@
 ---
 name: Quarterly CRO KPI Executive Brief
 description: Present key operational KPIs and recommended actions for the quarterly
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: functional_comments
+    description: ""
+    required: true
+    default: null
+  - name: kpi_definitions
+    description: ""
+    required: true
+    default: null
+  - name: operational_dataset
+    description: ""
+    required: true
+    default: null
+
   review.
 model: gpt-4o
 modelParameters:

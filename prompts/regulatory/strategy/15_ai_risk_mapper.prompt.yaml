@@ -1,6 +1,18 @@
 ---
 name: AI Risk Mapper
 description: Create a quick-look risk register for a specified AI system.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: AI_SYSTEM
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

@@ -2,6 +2,38 @@
 ---
 name: Statistical Analysis Plan Generator
 description: Generate a comprehensive statistical analysis plan for a clinical
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: control
+    description: ""
+    required: true
+    default: null
+  - name: endpoint
+    description: ""
+    required: true
+    default: null
+  - name: factors
+    description: ""
+    required: true
+    default: null
+  - name: intervention
+    description: ""
+    required: true
+    default: null
+  - name: population
+    description: ""
+    required: true
+    default: null
+  - name: time_point
+    description: ""
+    required: true
+    default: null
+
   trial.
 model: gpt-4o
 modelParameters:

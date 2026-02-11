@@ -1,6 +1,22 @@
 ---
 name: Bug Finder & Fixer (OpenAI Codex)
 description: Reproduce and resolve a bug within the specified package or module.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+  - name: package_path
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

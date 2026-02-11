@@ -2,6 +2,22 @@
 ---
 name: Universal Template-Table Prompt
 description: Create a formatted safety table from an ADaM ADAE dataset using
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: dataset_path
+    description: ""
+    required: true
+    default: null
+  - name: language
+    description: ""
+    required: true
+    default: null
+
   either R or SAS.
 model: gpt-4o
 modelParameters:

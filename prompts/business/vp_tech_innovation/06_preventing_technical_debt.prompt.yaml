@@ -2,6 +2,22 @@
 ---
 name: Preventing Technical Debt
 description: Justify technical debt reduction to non-technical stakeholders using financial analogies.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: refactoring_percentage
+    description: ""
+    required: true
+    default: null
+  - name: timeframe
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

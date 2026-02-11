@@ -2,6 +2,18 @@
 ---
 name: Voice of Customer Root Cause Analysis
 description: Analyze raw feedback to identify root causes and quick wins.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: feedback_comments
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

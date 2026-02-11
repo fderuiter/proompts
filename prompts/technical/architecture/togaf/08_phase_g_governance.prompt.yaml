@@ -1,6 +1,18 @@
 ---
 name: TOGAF Phase G - Implementation Governance
 description: Guide for overseeing the implementation to ensure conformance with the architecture (Sustaining Integrity).
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

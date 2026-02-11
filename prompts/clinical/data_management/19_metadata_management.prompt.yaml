@@ -1,6 +1,22 @@
 ---
 name: Metadata Management
 description: Extract and store standardized metadata for reuse.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: crf_templates
+    description: ""
+    required: true
+    default: null
+  - name: mdr_schema
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

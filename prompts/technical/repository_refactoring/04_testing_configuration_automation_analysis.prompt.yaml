@@ -1,6 +1,14 @@
 ---
 name: Testing, Configuration, and Automation Analysis
 description: Analyze the repository's testing, configuration, and automation infrastructure to ensure reliability and deployment readiness.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables: []
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

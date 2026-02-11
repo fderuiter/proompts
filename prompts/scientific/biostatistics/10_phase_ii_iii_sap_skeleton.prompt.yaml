@@ -2,6 +2,18 @@
 ---
 name: Phase II/III SAP Skeleton
 description: Provide a high-level statistical analysis plan skeleton for an
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: trial_overview
+    description: ""
+    required: true
+    default: null
+
   adaptive Phase II/III trial.
 model: gpt-4o
 modelParameters:

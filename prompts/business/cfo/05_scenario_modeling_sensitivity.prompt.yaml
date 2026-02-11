@@ -2,6 +2,26 @@
 ---
 name: Scenario Modeling & Sensitivity Analysis
 description: Create three financial scenarios (Conservative, Base, and Aggressive) based on historical data and market trends.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: cac
+    description: ""
+    required: true
+    default: null
+  - name: churn
+    description: ""
+    required: true
+    default: null
+  - name: decision
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

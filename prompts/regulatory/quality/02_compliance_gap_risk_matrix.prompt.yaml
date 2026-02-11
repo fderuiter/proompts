@@ -1,6 +1,22 @@
 ---
 name: Compliance Gap & Risk Matrix
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: known_nonconformities
+    description: ""
+    required: true
+    default: null
+  - name: sops
+    description: ""
+    required: true
+    default: null
+
   Quantify compliance gaps and associated risks against a selected standard
   or law.
 model: gpt-4o-mini

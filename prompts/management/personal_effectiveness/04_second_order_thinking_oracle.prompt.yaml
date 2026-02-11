@@ -1,6 +1,18 @@
 ---
 name: Second-Order Thinking Oracle
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: decision
+    description: ""
+    required: true
+    default: null
+
   Assess first- and second-order effects of a decision.
 model: gpt-4o-mini
 modelParameters:

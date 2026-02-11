@@ -1,6 +1,18 @@
 ---
 name: Diversity Action Plan Development
 description: Generate a Diversity Action Plan per FDA guidance.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: epidemiology_data
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

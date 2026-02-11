@@ -1,6 +1,22 @@
 ---
 name: SOP and TMF Document Synthesis
 description: Provide a quick retrieval and synthesis of information from specific internal SOPs and TMF documents to answer compliance or process queries.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: documents
+    description: ""
+    required: true
+    default: null
+  - name: query
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.1

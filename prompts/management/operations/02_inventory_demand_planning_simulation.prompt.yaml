@@ -1,6 +1,18 @@
 ---
 name: Inventory & Demand-Planning Simulation
 description: Create a forecast and inventory plan from historical demand data.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: inventory_csv
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

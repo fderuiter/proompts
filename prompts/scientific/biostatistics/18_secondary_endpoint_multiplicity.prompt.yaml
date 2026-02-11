@@ -1,6 +1,22 @@
 ---
 name: Secondary Endpoint Multiplicity Adjuster
 description: Apply Bonferroni-Holm (step-down) procedure to secondary efficacy endpoints.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: endpoints
+    description: ""
+    required: true
+    default: null
+  - name: p_values
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.1

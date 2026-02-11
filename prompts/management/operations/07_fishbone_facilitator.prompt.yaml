@@ -1,6 +1,18 @@
 ---
 name: Fishbone Facilitator
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: problem
+    description: ""
+    required: true
+    default: null
+
   Identify possible root causes of a problem using a fishbone diagram.
 model: gpt-4o-mini
 modelParameters:

@@ -1,6 +1,22 @@
 ---
 name: Audit Trail Review
 description: Review subject audit logs for compliance and data integrity.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: audit_logs
+    description: ""
+    required: true
+    default: null
+  - name: system_specs
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

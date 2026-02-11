@@ -1,6 +1,22 @@
 ---
 name: AI Coding Agent Plan Generator
 description: Provide a structured plan for completing a coding task in an existing
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: repo_access
+    description: ""
+    required: true
+    default: null
+  - name: task_description
+    description: ""
+    required: true
+    default: null
+
   repository.
 model: gpt-4o
 modelParameters:

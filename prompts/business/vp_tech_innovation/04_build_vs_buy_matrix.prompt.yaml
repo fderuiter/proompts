@@ -2,6 +2,26 @@
 ---
 name: Build vs. Buy Decision Matrix
 description: Create a weighted decision matrix for evaluating build vs. buy options.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: function
+    description: ""
+    required: true
+    default: null
+  - name: team_capacity
+    description: ""
+    required: true
+    default: null
+  - name: vendor
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

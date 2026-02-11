@@ -1,6 +1,18 @@
 ---
 name: Global Regulatory and Tax Matrix for Site Payments
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: regional_guidelines
+    description: ""
+    required: true
+    default: null
+
   Summarize key payment compliance requirements across major regions.
 model: gpt-4o-mini
 modelParameters:

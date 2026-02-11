@@ -1,6 +1,18 @@
 ---
 name: Site Landscape Mapping & Prioritization
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: protocol_summary
+    description: ""
+    required: true
+    default: null
+
   Rank investigative sites for an upcoming study.
 model: gpt-4o-mini
 modelParameters:

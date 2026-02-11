@@ -1,6 +1,18 @@
 ---
 name: Design a Robust Preclinical Pathology Study Protocol
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: study_details
+    description: ""
+    required: true
+    default: null
+
   Outline a GLP-compliant pathology study plan for a medical device evaluation.
 model: gpt-4o-mini
 modelParameters:

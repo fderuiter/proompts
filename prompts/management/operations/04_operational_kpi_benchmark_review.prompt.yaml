@@ -1,6 +1,18 @@
 ---
 name: 360° Operational KPI & Benchmark Review
 description: Compare internal KPIs to industry benchmarks and propose improvements.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: kpi_csv
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

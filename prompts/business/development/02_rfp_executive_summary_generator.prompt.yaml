@@ -2,6 +2,18 @@
 ---
 name: RFP Executive-Summary Generator
 description: Produce a persuasive executive summary for an RFP response.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: rfp_synopsis
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

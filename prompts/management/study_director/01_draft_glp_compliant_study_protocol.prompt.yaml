@@ -1,6 +1,18 @@
 ---
 name: Draft a GLP-Compliant Study Protocol
 description: Produce a detailed study plan that satisfies OECD and FDA GLP
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: protocol_basics
+    description: ""
+    required: true
+    default: null
+
   regulations.
 model: gpt-4o
 modelParameters:

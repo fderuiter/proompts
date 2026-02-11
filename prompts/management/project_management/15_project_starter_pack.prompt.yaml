@@ -1,6 +1,54 @@
 ---
 name: Project Starter Pack Prompts
 description: Provide ready-to-copy prompt templates for common project documentation.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: alternatives
+    description: ""
+    required: true
+    default: null
+  - name: budget
+    description: ""
+    required: true
+    default: null
+  - name: business_outcome
+    description: ""
+    required: true
+    default: null
+  - name: deadline
+    description: ""
+    required: true
+    default: null
+  - name: decision
+    description: ""
+    required: true
+    default: null
+  - name: decision_date
+    description: ""
+    required: true
+    default: null
+  - name: feature_area
+    description: ""
+    required: true
+    default: null
+  - name: project_description
+    description: ""
+    required: true
+    default: null
+  - name: project_name
+    description: ""
+    required: true
+    default: null
+  - name: stakeholders
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

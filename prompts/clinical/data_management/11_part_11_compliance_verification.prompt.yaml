@@ -1,6 +1,18 @@
 ---
 name: 21 CFR Part 11 Compliance Verification
 description: Confirm system compliance with electronic signatures.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: system_features
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

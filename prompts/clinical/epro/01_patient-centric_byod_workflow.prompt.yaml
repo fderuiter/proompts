@@ -1,6 +1,18 @@
 ---
 name: Patient-Centric BYOD ePRO Workflow
 description: Design a streamlined ePRO workflow that supports a BYOD model and
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
   maximizes patient compliance.
 model: gpt-4o
 modelParameters:

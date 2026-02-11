@@ -1,6 +1,18 @@
 ---
 name: Sponsor-Ready Monthly Status Brief
 description: Draft a concise, escalation-ready monthly status report for study
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: monthly_notes
+    description: ""
+    required: true
+    default: null
+
   sponsors.
 model: gpt-4o
 modelParameters:

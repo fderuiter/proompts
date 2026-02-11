@@ -2,6 +2,18 @@
 ---
 name: Value-Based QBR Generator
 description: Create a concise, impact-focused Quarterly Business Review template.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: client_data
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

@@ -2,6 +2,18 @@
 ---
 name: Peer-Review Checklist for Manuscript Methods
 description: Provide a structured checklist for reviewing the statistical
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: manuscript_excerpt
+    description: ""
+    required: true
+    default: null
+
   methods section of a manuscript.
 model: gpt-4o
 modelParameters:

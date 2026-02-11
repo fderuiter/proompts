@@ -1,6 +1,26 @@
 ---
 name: UAT Script Generator
 description: Generate a User Acceptance Testing (UAT) script with dummy data inputs.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: dummy_data_reqs
+    description: ""
+    required: true
+    default: null
+  - name: ecrf_design
+    description: ""
+    required: true
+    default: null
+  - name: uat_scope
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

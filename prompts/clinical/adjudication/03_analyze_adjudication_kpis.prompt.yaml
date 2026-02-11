@@ -2,6 +2,18 @@
 ---
 name: Analyze Adjudication KPIs
 description: Calculate adjudication performance metrics and recommend
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: adjudication_log.csv
+    description: ""
+    required: true
+    default: null
+
   improvements.
 model: gpt-4
 modelParameters:

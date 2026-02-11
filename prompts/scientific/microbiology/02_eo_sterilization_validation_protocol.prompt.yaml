@@ -1,6 +1,18 @@
 ---
 name: EO Sterilization Validation Protocol
 description: Outline a protocol to achieve SAL 10^-6 using an ethylene‑oxide half‑cycle
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device_name
+    description: ""
+    required: true
+    default: null
+
   approach.
 model: gpt-4o
 modelParameters:

@@ -1,6 +1,18 @@
 ---
 name: Weekly Operations KPI Snapshot
 description: Summarize weekly milestone performance and highlight at-risk studies.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: milestone_csv
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

@@ -1,6 +1,18 @@
 ---
 name: Humanitarian Device Exemption (HDE)
 description: Explain why the health benefit of a HUD outweighs the risk of injury.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.5

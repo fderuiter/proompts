@@ -1,6 +1,22 @@
 ---
 name: Multiple Endpoints Regulatory Strategy
 description: Review and summarize FDA guidance on multiple endpoints and multiplicity strategies.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: issues
+    description: ""
+    required: true
+    default: null
+  - name: therapeutic_area
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.1

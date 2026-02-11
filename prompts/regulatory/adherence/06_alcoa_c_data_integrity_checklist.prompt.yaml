@@ -1,6 +1,22 @@
 ---
 name: ALCOA-C Data Integrity Checklist
 description: Ensure data integrity following ALCOA-C principles.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: site_role
+    description: ""
+    required: true
+    default: null
+  - name: system_type
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.1

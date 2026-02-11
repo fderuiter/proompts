@@ -1,6 +1,26 @@
 ---
 name: Risk-Based Vendor Performance Improvement Plan
 description: Raise overall vendor performance and reduce operational risk.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: audit_reports
+    description: ""
+    required: true
+    default: null
+  - name: contract_terms
+    description: ""
+    required: true
+    default: null
+  - name: vendor_scorecards
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

@@ -1,6 +1,26 @@
 ---
 name: ICH E9(R1) Estimand Builder
 description: Construct a primary estimand description following the ICH E9 (R1) framework.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: clinical_setting
+    description: ""
+    required: true
+    default: null
+  - name: ice_list
+    description: ""
+    required: true
+    default: null
+  - name: scientific_question
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

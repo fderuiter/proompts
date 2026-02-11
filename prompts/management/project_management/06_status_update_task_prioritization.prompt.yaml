@@ -1,6 +1,18 @@
 ---
 name: Status Update and Task Prioritization
 description: Summarize recent progress and recommend prioritized next actions.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: status_notes
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

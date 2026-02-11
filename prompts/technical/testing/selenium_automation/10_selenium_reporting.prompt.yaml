@@ -1,6 +1,22 @@
 ---
 name: 'Reporting and Maintenance: Custom Reports'
 description: Integrate reporting libraries and screenshot utilities to capture execution evidence.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: framework
+    description: ""
+    required: true
+    default: null
+  - name: report_format
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

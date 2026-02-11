@@ -1,6 +1,18 @@
 ---
 name: Quarterly Innovation Radar for Decentralized and Hybrid Trials
 description: Identify and prioritize technologies for decentralized or hybrid
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
   trials.
 model: gpt-4o
 modelParameters:

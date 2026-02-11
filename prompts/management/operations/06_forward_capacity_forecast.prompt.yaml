@@ -1,6 +1,22 @@
 ---
 name: Forward-Looking Resource & Capacity Forecast
 description: Project FTE demand and recommend actions to balance capacity for the
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: current_staffing
+    description: ""
+    required: true
+    default: null
+  - name: pipeline_forecast
+    description: ""
+    required: true
+    default: null
+
   next 90 days.
 model: gpt-4o
 modelParameters:

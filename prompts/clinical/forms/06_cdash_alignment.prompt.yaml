@@ -1,6 +1,22 @@
 ---
 name: CDASH Alignment
 description: Standardize clinical data collection fields using CDASH models.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: cdash_guide
+    description: ""
+    required: true
+    default: null
+  - name: crf_draft
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

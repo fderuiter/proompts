@@ -1,6 +1,22 @@
 ---
 name: Literature & Regulatory Gap Analysis
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device_or_ivd
+    description: ""
+    required: true
+    default: null
+  - name: target_indication
+    description: ""
+    required: true
+    default: null
+
   Identify evidence and regulatory gaps for a planned pivotal clinical study.
 model: gpt-4o-mini
 modelParameters:

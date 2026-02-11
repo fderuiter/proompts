@@ -1,6 +1,18 @@
 ---
 name: CAPA Root Cause Investigator
 description: Deep-dive Root Cause Analysis (RCA) using Fishbone and 5 Whys methods.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: problem_description
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.3

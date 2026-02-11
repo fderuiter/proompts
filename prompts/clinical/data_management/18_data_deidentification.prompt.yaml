@@ -1,6 +1,26 @@
 ---
 name: Data De-identification
 description: De-identify patient-level data according to HIPAA Privacy Rule.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: code_key_logic
+    description: ""
+    required: true
+    default: null
+  - name: identifiers_list
+    description: ""
+    required: true
+    default: null
+  - name: raw_data
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

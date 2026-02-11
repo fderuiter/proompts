@@ -1,6 +1,18 @@
 ---
 name: Medicare Coverage Request (IDE)
 description: Prepare a request packet for CMS reimbursement of an IDE study.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.5

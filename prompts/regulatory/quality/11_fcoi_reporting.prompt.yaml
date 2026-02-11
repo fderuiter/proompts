@@ -1,6 +1,18 @@
 ---
 name: Financial Conflict of Interest (FCOI) Reporting
 description: Review disclosures and draft management plan.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: sfi_disclosure
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

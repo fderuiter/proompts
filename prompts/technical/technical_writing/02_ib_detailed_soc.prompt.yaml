@@ -1,6 +1,14 @@
 ---
 name: Investigator's Brochure Summary of Changes
 description: Produce a detailed summary of changes for the annual Investigator’s
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables: []
+
   Brochure update.
 model: gpt-4o
 modelParameters:

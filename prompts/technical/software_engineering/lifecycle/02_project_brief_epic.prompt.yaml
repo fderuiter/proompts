@@ -2,6 +2,34 @@
 ---
 name: Project Brief for Epic
 description: Summarize a project epic with key features, rules, and success metrics.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: business_rules
+    description: ""
+    required: true
+    default: null
+  - name: data_models
+    description: ""
+    required: true
+    default: null
+  - name: key_features
+    description: ""
+    required: true
+    default: null
+  - name: project_description
+    description: ""
+    required: true
+    default: null
+  - name: success_metrics
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

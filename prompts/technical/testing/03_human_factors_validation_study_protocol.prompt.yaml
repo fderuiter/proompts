@@ -1,6 +1,22 @@
 ---
 name: Human Factors Validation Study Protocol
 description: Draft a user validation study protocol for a medical device.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: class
+    description: ""
+    required: true
+    default: null
+  - name: device_name
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

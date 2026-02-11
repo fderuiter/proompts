@@ -1,6 +1,18 @@
 ---
 name: Lay Language Summary Creation
 description: Summarize trial results for lay audience.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: technical_results
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

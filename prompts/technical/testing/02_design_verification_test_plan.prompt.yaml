@@ -1,6 +1,18 @@
 ---
 name: Design Verification Test Plan
 description: Create a complete test plan for verifying that a medical device meets its design requirements.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device_name
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

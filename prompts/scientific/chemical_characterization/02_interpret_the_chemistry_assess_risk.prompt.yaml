@@ -2,6 +2,26 @@
 ---
 name: Interpret the Chemistry & Assess Risk
 description: Act as a board-certified toxicologist.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: body_weight
+    description: ""
+    required: true
+    default: null
+  - name: device_dose
+    description: ""
+    required: true
+    default: null
+  - name: study_results
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

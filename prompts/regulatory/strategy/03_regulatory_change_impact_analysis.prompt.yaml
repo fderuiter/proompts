@@ -1,6 +1,38 @@
 ---
 name: Regulatory-Change Impact Analysis
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: COMPANY
+    description: ""
+    required: true
+    default: null
+  - name: EFFECTIVE_DATE
+    description: ""
+    required: true
+    default: null
+  - name: INDUSTRY_AND_REGION
+    description: ""
+    required: true
+    default: null
+  - name: REGULATION_NAME
+    description: ""
+    required: true
+    default: null
+  - name: company_profile
+    description: ""
+    required: true
+    default: null
+  - name: regulation_text
+    description: ""
+    required: true
+    default: null
+
   Assess how a new regulation affects company operations and outline a phased
   response plan.
 model: gpt-4o-mini

@@ -1,6 +1,18 @@
 ---
 name: Training Impact Analytics Planner
 description: Correlate training data with audit deviations and design interventions
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: analysis_goal
+    description: ""
+    required: true
+    default: null
+
   for high-risk learners.
 model: gpt-4o
 modelParameters:

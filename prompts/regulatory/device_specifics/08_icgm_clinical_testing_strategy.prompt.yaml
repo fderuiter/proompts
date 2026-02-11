@@ -1,6 +1,18 @@
 ---
 name: iCGM Clinical Testing Strategy
 description: Draft a clinical study plan to demonstrate accuracy for an iCGM system.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.5

@@ -1,6 +1,22 @@
 ---
 name: Strategic Portfolio Prioritizer
 description: Rank proposed clinical projects by scientific merit, ROI, risk, and
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: PASTE project spreadsheet or JSON here
+    description: ""
+    required: true
+    default: null
+  - name: input
+    description: ""
+    required: true
+    default: null
+
   strategic fit.
 model: gpt-4o
 modelParameters:

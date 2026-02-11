@@ -1,6 +1,18 @@
 ---
 name: Scenario-Based Financial Navigator
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: user_data
+    description: ""
+    required: true
+    default: null
+
   Generate long-term wealth scenarios and actionable tactics.
 model: gpt-4o-mini
 modelParameters:

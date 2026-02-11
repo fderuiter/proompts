@@ -1,6 +1,30 @@
 ---
 name: Dunnett Adjustment R Code Generator
 description: Generate R code for Dunnett multiplicity adjustments using the 'multcomp' package.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: control_label
+    description: ""
+    required: true
+    default: null
+  - name: dataframe
+    description: ""
+    required: true
+    default: null
+  - name: dose_var
+    description: ""
+    required: true
+    default: null
+  - name: response_var
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.1

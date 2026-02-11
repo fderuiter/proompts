@@ -1,6 +1,22 @@
 ---
 name: Risk-Based Test Case Suite
 description: Generate a test-case suite prioritizing controls for high and medium residual risks.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device_name
+    description: ""
+    required: true
+    default: null
+  - name: hazard_analysis_table
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

@@ -1,6 +1,18 @@
 ---
 name: Market Landscape & Trend Analysis
 description: Summarize the global market for `{{device_or_assay}}` and highlight key
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device_or_assay
+    description: ""
+    required: true
+    default: null
+
   trends.
 model: gpt-4o
 modelParameters:

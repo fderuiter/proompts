@@ -1,6 +1,22 @@
 ---
 name: Regulatory Compliance Verification
 description: Verify electronic records and signatures against 21 CFR Part 11.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: audit_logs
+    description: ""
+    required: true
+    default: null
+  - name: system_specs
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

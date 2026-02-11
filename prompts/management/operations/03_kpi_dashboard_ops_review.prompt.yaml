@@ -1,6 +1,22 @@
 ---
 name: KPI Dashboard & Monthly Ops-Review Pack
 description: Summarize operational performance and highlight required actions for
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: kpi_data
+    description: ""
+    required: true
+    default: null
+  - name: strategic_priorities
+    description: ""
+    required: true
+    default: null
+
   the monthly review.
 model: gpt-4o
 modelParameters:

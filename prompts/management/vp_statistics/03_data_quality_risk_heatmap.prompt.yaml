@@ -1,6 +1,22 @@
 ---
 name: Data-Quality Risk Heat Map
 description: Assess site-level data quality and recommend mitigation actions.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: query_log
+    description: ""
+    required: true
+    default: null
+  - name: raw_eds_dump
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

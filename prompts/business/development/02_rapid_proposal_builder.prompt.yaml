@@ -2,6 +2,18 @@
 ---
 name: Rapid Proposal Builder
 description: Draft a concise capabilities and budget proposal for a prospective
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: client_name
+    description: ""
+    required: true
+    default: null
+
   client.
 model: gpt-4o
 modelParameters:

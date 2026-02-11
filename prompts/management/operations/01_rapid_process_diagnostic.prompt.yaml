@@ -1,6 +1,34 @@
 ---
 name: Rapid Process Diagnostic & Lean Improvement Plan
 description: Create a concise process review and improvement roadmap.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: avg_cycle_time
+    description: ""
+    required: true
+    default: null
+  - name: current_volume
+    description: ""
+    required: true
+    default: null
+  - name: pain_points
+    description: ""
+    required: true
+    default: null
+  - name: process_name
+    description: ""
+    required: true
+    default: null
+  - name: target_outcome
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

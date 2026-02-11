@@ -1,6 +1,26 @@
 ---
 name: Multiplicity Adjustment Code Generator
 description: Generate SAS code for multiplicity adjustments (Bonferroni, Holm, Hochberg).
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: dataset
+    description: ""
+    required: true
+    default: null
+  - name: p_value_var
+    description: ""
+    required: true
+    default: null
+  - name: treatment_var
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.1

@@ -1,6 +1,18 @@
 ---
 name: CAPA SOP Architect
 description: Establish a comprehensive CAPA SOP compliant with ISO 9001 and ISO 13485.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: company_context
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

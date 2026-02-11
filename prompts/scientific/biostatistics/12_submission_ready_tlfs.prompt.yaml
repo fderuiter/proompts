@@ -2,6 +2,26 @@
 ---
 name: Generate & QC Submission-Ready TLFs
 description: Produce validated tables, listings, and figures (TLFs) ready for
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: adae_path
+    description: ""
+    required: true
+    default: null
+  - name: adlb_path
+    description: ""
+    required: true
+    default: null
+  - name: adsl_path
+    description: ""
+    required: true
+    default: null
+
   regulatory submission.
 model: gpt-4o
 modelParameters:

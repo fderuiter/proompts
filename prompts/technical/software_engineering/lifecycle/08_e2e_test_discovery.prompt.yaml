@@ -2,6 +2,26 @@
 ---
 name: E2E Test Discovery Lifecycle Template
 description: Provide a system prompt template that guides an LLM to analyse a codebase and generate a comprehensive end-to-end test plan.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: BUSINESS_GOAL
+    description: ""
+    required: true
+    default: null
+  - name: LANGUAGES/FRAMEWORKS
+    description: ""
+    required: true
+    default: null
+  - name: PROJECT_NAME
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

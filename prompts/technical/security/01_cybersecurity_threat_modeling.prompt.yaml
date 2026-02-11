@@ -1,6 +1,18 @@
 ---
 name: Medical Device Cybersecurity Threat Modeling
 description: Analyze system architecture using STRIDE.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: system_architecture
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

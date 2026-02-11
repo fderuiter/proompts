@@ -1,6 +1,18 @@
 ---
 name: Pixar Story Spine Outline
 description: Guide the model in creating a short Pixar-style story outline for middle-grade
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: topic
+    description: ""
+    required: true
+    default: null
+
   readers.
 model: gpt-4o
 modelParameters:

@@ -1,6 +1,18 @@
 ---
 name: Clinical-Trial Timeline and Risk Radar
 description: Evaluate study schedule variance and prioritize mitigation actions.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: csv_data
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

@@ -1,6 +1,22 @@
 ---
 name: Regulatory & Commercial Barrier Mapping
 description: Assess hurdles for launching `{{device}}` in major markets.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device
+    description: ""
+    required: true
+    default: null
+  - name: markets
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

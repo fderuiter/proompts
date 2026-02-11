@@ -1,6 +1,18 @@
 ---
 name: Negotiation Coach
 description: Prepare the user for salary negotiations by roleplaying as a
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
   manager and offering feedback.
 model: gpt-4
 modelParameters:

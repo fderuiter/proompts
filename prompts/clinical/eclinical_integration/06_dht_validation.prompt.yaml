@@ -1,6 +1,18 @@
 ---
 name: Digital Health Technology (DHT) Validation
 description: Create validation strategy for DHTs.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: dht_specs
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

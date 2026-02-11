@@ -1,6 +1,22 @@
 ---
 name: Portfolio Resource and Budget Forecast
 description: Generate a rolling 12‑month FTE and budget forecast for active
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: enrollment_deltas
+    description: ""
+    required: true
+    default: null
+  - name: historic_burn_rates
+    description: ""
+    required: true
+    default: null
+
   trials.
 model: gpt-4o
 modelParameters:

@@ -2,6 +2,30 @@
 ---
 name: Elevator Pitch for Expensive Tech
 description: Create a persuasive elevator pitch for expensive technology investments focusing on business outcomes.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: budget
+    description: ""
+    required: true
+    default: null
+  - name: current_problem
+    description: ""
+    required: true
+    default: null
+  - name: specific_tools
+    description: ""
+    required: true
+    default: null
+  - name: technology
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

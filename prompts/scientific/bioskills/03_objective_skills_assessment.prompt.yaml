@@ -2,6 +2,18 @@
 ---
 name: Objective Skills Assessment
 description: Design an objective skills checklist for a surgical stapler
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: procedure_name
+    description: ""
+    required: true
+    default: null
+
   deployment lab.
 model: gpt-4o
 modelParameters:

@@ -1,6 +1,18 @@
 ---
 name: Medical Device Reporting (MDR)
 description: Summarize an adverse event for mandatory electronic submission or develop an MDR SOP.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.5

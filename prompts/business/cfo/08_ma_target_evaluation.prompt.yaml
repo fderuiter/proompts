@@ -2,6 +2,22 @@
 ---
 name: M&A Target Evaluation
 description: Evaluate a potential acquisition target based on financial statements.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: financial_statements
+    description: ""
+    required: true
+    default: null
+  - name: target_description
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

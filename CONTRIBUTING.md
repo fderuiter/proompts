@@ -20,7 +20,11 @@ Thank you for your interest in contributing to the Proompts repository! This gui
 1.  **Create a Prompt File**:
     *   Use the `.prompt.yaml` extension.
     *   Follow the schema defined in `docs/template_prompt.prompt.yaml`.
-    *   Include required fields: `name`, `description`, `model`, `messages`.
+    *   Include **all** required fields defined in the new schema:
+        *   `version`: Start with "0.1.0" for new prompts.
+        *   `metadata`: accurate tags are required for the search index to work.
+        *   `variables`: explicitly define every `{{variable}}` used in your `messages`.
+        *   `name`, `description`, `model`, `messages`.
     *   Include optional but recommended fields: `testData`, `evaluators`.
 
 2.  **Choose the Right Category**:

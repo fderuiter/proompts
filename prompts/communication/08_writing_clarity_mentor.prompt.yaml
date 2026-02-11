@@ -1,6 +1,18 @@
 ---
 name: Writing Clarity Mentor
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: passage
+    description: ""
+    required: true
+    default: null
+
   Improve a passage by highlighting issues and rewriting for clarity.
 model: gpt-4o-mini
 modelParameters:

@@ -1,6 +1,18 @@
 ---
 name: 510(k) Substantial Equivalence Preparation
 description: Draft a substantial equivalence comparison and summary between a subject device and predicate(s) to demonstrate safety and effectiveness.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.5

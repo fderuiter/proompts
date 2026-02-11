@@ -1,6 +1,18 @@
 ---
 name: FDA MDR/MDV Adverse-Event Narrative
 description: '1. Extract: event date, patient age/sex, device identifiers, reporter
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
   type.'
 model: gpt-4
 modelParameters:

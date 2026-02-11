@@ -1,6 +1,18 @@
 ---
 name: Dual MDR / IVDR Conformity-Assessment Roadmap
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: startup_info
+    description: ""
+    required: true
+    default: null
+
   Develop a coordinated roadmap for simultaneous MDR and IVDR submissions.
 model: gpt-4o-mini
 modelParameters:

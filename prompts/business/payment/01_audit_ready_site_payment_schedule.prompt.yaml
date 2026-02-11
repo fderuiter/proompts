@@ -1,6 +1,30 @@
 ---
 name: Build an Audit-Ready Site-Payment Schedule
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: cta_budget
+    description: ""
+    required: true
+    default: null
+  - name: fmv_benchmarks
+    description: ""
+    required: true
+    default: null
+  - name: fx_table
+    description: ""
+    required: true
+    default: null
+  - name: visit_grid
+    description: ""
+    required: true
+    default: null
+
   Generate a transparent investigator payment schedule that withstands audit
   review.
 model: gpt-4o-mini

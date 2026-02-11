@@ -4,10 +4,12 @@
 from __future__ import annotations
 
 import argparse
+import re
+from enum import Enum
 from pathlib import Path
 from typing import Any, List, Optional
 
-from pydantic import BaseModel, ValidationError, field_validator
+from pydantic import BaseModel, ValidationError, field_validator, model_validator
 
 try:
     from utils import ROOT, iter_prompt_files, load_yaml
@@ -15,6 +17,26 @@ except ImportError:
     import sys
     sys.path.append(str(Path(__file__).parent))
     from utils import ROOT, iter_prompt_files, load_yaml
+
+
+class ComplexityLevel(str, Enum):
+    LOW = 'low'
+    MEDIUM = 'medium'
+    HIGH = 'high'
+
+
+class InputVariable(BaseModel):
+    name: str
+    description: str
+    required: bool = True
+    default: Optional[Any] = None
+
+
+class PromptMetadata(BaseModel):
+    domain: str
+    complexity: ComplexityLevel
+    tags: List[str] = []
+    requires_context: bool = False
 
 
 class Message(BaseModel):
@@ -28,7 +50,10 @@ class ModelParameters(BaseModel):
 
 class PromptSchema(BaseModel):
     name: str
+    version: str = "0.1.0"
     description: str
+    metadata: Optional[PromptMetadata] = None
+    variables: List[InputVariable] = []
     model: str
     modelParameters: ModelParameters
     messages: List[Message]
@@ -42,6 +67,27 @@ class PromptSchema(BaseModel):
         if len(v) < 2:
             raise ValueError("messages list must have at least 2 items")
         return v
+
+    @model_validator(mode='after')
+    def check_variables_match_content(self):
+        found_vars = set()
+        for msg in self.messages:
+            # Matches {{ var }} or {{var}}
+            found_vars.update(re.findall(r'\{\{\s*([^}]+?)\s*\}\}', msg.content))
+
+        defined_vars = {v.name for v in self.variables}
+
+        # Check if defined variables are actually used
+        unused = defined_vars - found_vars
+        if unused:
+            print(f"Warning: Variables defined but not used in prompt '{self.name}': {unused}")
+
+        # Check if used variables are defined (Critical for usability)
+        undefined = found_vars - defined_vars
+        if undefined:
+            raise ValueError(f"Variables used in messages but NOT defined in 'variables' section: {undefined}")
+
+        return self
 
 
 def validate_file(file_path: Path, strict: bool = False) -> Optional[dict]:

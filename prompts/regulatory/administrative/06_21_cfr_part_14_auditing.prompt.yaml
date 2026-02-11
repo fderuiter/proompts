@@ -1,6 +1,18 @@
 ---
 name: 21 CFR Part 14 Auditing
 description: Audit advisory committee meeting minutes for compliance with record-keeping elements.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.5

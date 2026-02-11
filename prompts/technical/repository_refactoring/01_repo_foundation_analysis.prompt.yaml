@@ -1,6 +1,14 @@
 ---
 name: Repository Foundation & Developer Experience Analysis
 description: Analyze the repository's foundation and developer experience to prepare it for future growth and easy onboarding.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables: []
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

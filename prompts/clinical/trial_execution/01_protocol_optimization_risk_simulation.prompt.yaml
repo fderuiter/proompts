@@ -1,6 +1,18 @@
 ---
 name: Protocol Optimization and Risk Simulation
 description: Evaluate a draft clinical protocol and simulate the effects of
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: draft_protocol
+    description: ""
+    required: true
+    default: null
+
   simplifying key elements.
 model: gpt-4o
 modelParameters:

@@ -2,6 +2,22 @@
 ---
 name: Post-Mortem / Incident Report Summary
 description: Summarize technical post-mortems for a general company audience.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: cause
+    description: ""
+    required: true
+    default: null
+  - name: post_mortem_details
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

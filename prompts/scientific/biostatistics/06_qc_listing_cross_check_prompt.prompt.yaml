@@ -2,6 +2,18 @@
 ---
 name: QC Listing & Cross-check Prompt
 description: Automate a listing and QC cross-check between independent R and SAS
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: dataset_paths
+    description: ""
+    required: true
+    default: null
+
   runs.
 model: gpt-4o
 modelParameters:

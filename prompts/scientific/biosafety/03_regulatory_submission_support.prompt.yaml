@@ -2,6 +2,18 @@
 ---
 name: Regulatory Submission Support
 description: Draft regulatory-ready documentation for a medical device
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device_description
+    description: ""
+    required: true
+    default: null
+
   submission.
 model: gpt-4o
 modelParameters:

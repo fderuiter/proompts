@@ -2,6 +2,18 @@
 ---
 name: Red Account Turnaround Strategy
 description: Draft a re-engagement playbook for at-risk high-value accounts.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: account_details
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

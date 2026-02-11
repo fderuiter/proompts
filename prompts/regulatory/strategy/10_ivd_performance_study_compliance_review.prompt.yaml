@@ -1,6 +1,18 @@
 ---
 name: IVD Performance Study Compliance Review
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: study_overview
+    description: ""
+    required: true
+    default: null
+
   Review an IVD performance study for compliance with MDCG 2024‑4 and related
   guidance.
 model: gpt-4o-mini

@@ -1,6 +1,22 @@
 ---
 name: Analogy Architect
 description: Help the user grasp a complex topic through everyday analogies.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: complex_topic
+    description: ""
+    required: true
+    default: null
+  - name: input
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.7

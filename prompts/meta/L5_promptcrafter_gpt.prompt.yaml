@@ -1,6 +1,26 @@
 ---
 name: PromptCrafter GPT
 description: Generate three distinct, best-practice prompts for a given topic.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: optional_flags
+    description: ""
+    required: true
+    default: null
+  - name: target_audience
+    description: ""
+    required: true
+    default: null
+  - name: topic
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

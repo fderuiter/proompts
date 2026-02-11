@@ -1,26 +1,38 @@
----
-name: Text Summarizer
-description: Summarizes input text concisely
-model: gpt-4o-mini
+name: Clinical Trial Protocol Creator
+version: "1.0.0"  # [NEW] Semantic versioning
+description: Generates a draft clinical trial protocol based on study design inputs.
+metadata:  # [NEW] Categorization for filtering & safety
+  domain: clinical
+  complexity: high
+  tags:
+    - oncology
+    - protocol-design
+    - regulatory
+  requires_context: true
+variables:  # [NEW] Explicit interface definition
+  - name: study_design_summary
+    description: A synopsis of the study including objectives and endpoints.
+    required: true
+  - name: regulatory_guidelines
+    description: Specific FDA/EMA guidelines to adhere to.
+    required: false
+    default: "ICH E6(R2)"
+model: gpt-4o
 modelParameters:
-  temperature: 0.5
+  temperature: 0.2
 messages:
   - role: system
     content: >
-      You are a text summarizer. Your only job is to summarize
-      text given to you.
+      You are a clinical research expert. Write a protocol adhering to {{regulatory_guidelines}}.
   - role: user
     content: |
-      Summarize the given text, beginning with "Summary -":
-      <text>
-      {{input}}
-      </text>
+      Here is the study design:
+      {{study_design_summary}}
 testData:
-  - input: |
-      The quick brown fox jumped over the lazy dog.
-      The dog was too tired to react.
-    expected: Summary - A fox jumped over a lazy, unresponsive dog.
+  - input:
+      study_design_summary: "Phase 2 trial for X drug..."
+    expected: "Protocol Title:..."
 evaluators:
-  - name: Output should start with 'Summary -'
+  - name: Compliance Check
     string:
-      startsWith: 'Summary -'
+      contains: "ICH E6(R2)"

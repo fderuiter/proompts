@@ -1,6 +1,22 @@
 ---
 name: MCID Research and Summary
 description: Research and summarize Minimal Clinically Important Differences (MCIDs) for measurement tools.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: disease_area
+    description: ""
+    required: true
+    default: null
+  - name: tools
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.1

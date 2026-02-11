@@ -1,6 +1,22 @@
 ---
 name: AI-Powered Site and Recruitment Strategy
 description: Select optimal sites and anticipate dropout risks using simulated
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: criteria
+    description: ""
+    required: true
+    default: null
+  - name: target_enrollment
+    description: ""
+    required: true
+    default: null
+
   EHR insights.
 model: gpt-4o
 modelParameters:

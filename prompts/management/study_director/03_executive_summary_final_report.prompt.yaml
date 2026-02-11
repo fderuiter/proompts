@@ -1,6 +1,18 @@
 ---
 name: Generate an Executive Summary for the Final Report
 description: Write a concise executive summary of a non-clinical study report.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: report_sections
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

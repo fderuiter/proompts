@@ -1,6 +1,22 @@
 ---
 name: EU MDR Technical-Documentation Gap Assessment
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device_info
+    description: ""
+    required: true
+    default: null
+  - name: technical_docs
+    description: ""
+    required: true
+    default: null
+
   Identify deficiencies in technical documentation against EU MDR Annex II
   and III.
 model: gpt-4o-mini

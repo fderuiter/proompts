@@ -1,6 +1,18 @@
 ---
 name: PMA Post-approval Reporting
 description: Compile a summary of post-approval requirements, including clinical study data, manufacturing changes, and scientific literature.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.5

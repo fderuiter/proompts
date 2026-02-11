@@ -1,6 +1,26 @@
 ---
 name: Payment Reconciliation and Discrepancy Report
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: cta_budget
+    description: ""
+    required: true
+    default: null
+  - name: payment_ledger
+    description: ""
+    required: true
+    default: null
+  - name: site_queries
+    description: ""
+    required: true
+    default: null
+
   Identify and categorize payment discrepancies before study close-out.
 model: gpt-4o-mini
 modelParameters:

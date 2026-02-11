@@ -1,6 +1,26 @@
 ---
 name: Risk-Based Monitoring Data Evaluation
 description: Remote evaluation of accumulating trial data to identify outliers and data integrity problems.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: clinical_data
+    description: ""
+    required: true
+    default: null
+  - name: monitoring_plan
+    description: ""
+    required: true
+    default: null
+  - name: risk_assessment
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

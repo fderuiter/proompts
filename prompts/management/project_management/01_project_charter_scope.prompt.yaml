@@ -1,6 +1,38 @@
 ---
 name: Project Charter and Scope Definition
 description: Create a complete project charter summarizing background,
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: budget
+    description: ""
+    required: true
+    default: null
+  - name: business_outcome
+    description: ""
+    required: true
+    default: null
+  - name: deadline
+    description: ""
+    required: true
+    default: null
+  - name: project_description
+    description: ""
+    required: true
+    default: null
+  - name: project_name
+    description: ""
+    required: true
+    default: null
+  - name: stakeholders
+    description: ""
+    required: true
+    default: null
+
   objectives, scope, deliverables, and key risks.
 model: gpt-4o
 modelParameters:

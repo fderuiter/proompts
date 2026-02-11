@@ -1,6 +1,18 @@
 ---
 name: Prompt Engineer Fact Checker
 description: Rewrite an original prompt so it is clear, fully sourced and produces
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: original_prompt
+    description: ""
+    required: true
+    default: null
+
   accurate answers with inline citations.
 model: gpt-4o
 modelParameters:

@@ -1,6 +1,22 @@
 ---
 name: Target Segment & User Needs Assessment
 description: Identify key user segments for `{{device_or_assay}}` used in `{{application}}`.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: application
+    description: ""
+    required: true
+    default: null
+  - name: device_or_assay
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

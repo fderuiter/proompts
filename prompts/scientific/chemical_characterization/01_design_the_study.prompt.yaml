@@ -2,6 +2,18 @@
 ---
 name: Design the Study
 description: 'You are a senior analytical chemist specializing in medical-device Extractables
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device_description
+    description: ""
+    required: true
+    default: null
+
   & Leachables (E&L). Using ISO 10993-18:2020 and FDA’s 2024 draft “Chemical Analysis
   for Biocompatibility Assessment,” create a detailed test plan for an exhaustive
   extractables study and a simulated-use leachables study of a device. Your plan must:'

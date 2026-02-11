@@ -1,6 +1,22 @@
 ---
 name: RWE Regulatory Framework Summary
 description: Review the FDA Real-World Evidence (RWE) Framework and fitness-for-use criteria.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: data_source
+    description: ""
+    required: true
+    default: null
+  - name: use_case
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

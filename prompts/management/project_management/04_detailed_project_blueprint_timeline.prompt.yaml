@@ -1,6 +1,26 @@
 ---
 name: Detailed Project Blueprint and Timeline
 description: Provide a comprehensive roadmap with phases, milestones, success
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: milestone_data
+    description: ""
+    required: true
+    default: null
+  - name: objectives
+    description: ""
+    required: true
+    default: null
+  - name: project_type
+    description: ""
+    required: true
+    default: null
+
   metrics, and stakeholders.
 model: gpt-4o
 modelParameters:

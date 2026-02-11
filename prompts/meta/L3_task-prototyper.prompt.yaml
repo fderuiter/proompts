@@ -1,6 +1,30 @@
 ---
 name: Task Prototyper
 description: Generate a domain-specific L3 prompt that accomplishes `{{end_task}}`.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: end_task
+    description: ""
+    required: true
+    default: null
+  - name: generated_prompt
+    description: ""
+    required: true
+    default: null
+  - name: policy_block
+    description: ""
+    required: true
+    default: null
+  - name: token_budget_l3
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

@@ -232,6 +232,17 @@ python3 tools/scripts/validate_prompt_schema.py
 yamllint prompts/
 ```
 
+## Versioning Strategy
+
+*   **Patch (0.0.x):** Minor wording changes that do not affect the output format.
+*   **Minor (0.x.0):** Adding new variables (optional) or improving reasoning capabilities.
+*   **Major (x.0.0):** Breaking changes, such as removing variables, changing the output format (e.g., JSON to Markdown), or switching model families.
+
+## Variable Definitions
+
+*   Always define `variables` in the YAML. This allows UI tools to automatically generate the correct form fields for users.
+*   Use clear, descriptive names (e.g., `patient_age_group` instead of `age`).
+
 ## Resources
 
 - [Template Prompt](template_prompt.prompt.yaml) - Reference example

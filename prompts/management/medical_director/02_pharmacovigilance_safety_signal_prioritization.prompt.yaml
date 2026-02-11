@@ -1,6 +1,22 @@
 ---
 name: Pharmacovigilance Safety Signal Prioritization
 description: Detect emerging safety signals and recommend follow-up actions.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: ae_listing
+    description: ""
+    required: true
+    default: null
+  - name: benchmark_rates
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

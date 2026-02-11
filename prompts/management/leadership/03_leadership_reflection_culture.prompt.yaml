@@ -1,6 +1,18 @@
 ---
 name: Leadership Reflection and Culture
 description: Assess leadership values and identify actions to strengthen team cohesion.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: current_values
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

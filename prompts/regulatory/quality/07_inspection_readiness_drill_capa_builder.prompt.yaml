@@ -1,6 +1,18 @@
 ---
 name: Inspection-Readiness Drill (CAPA Builder)
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: audit_notes
+    description: ""
+    required: true
+    default: null
+
   Prepare for regulatory inspections by rehearsing high‑risk questions and
   drafting CAPAs.
 model: gpt-4o-mini

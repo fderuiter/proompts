@@ -1,6 +1,18 @@
 ---
 name: Forecast Site-Level Drug Supply & Resupply Strategy
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: trial_enrollment
+    description: ""
+    required: true
+    default: null
+
   Plan site-level drug supply and resupply for an adaptive trial.
 model: gpt-4o-mini
 modelParameters:

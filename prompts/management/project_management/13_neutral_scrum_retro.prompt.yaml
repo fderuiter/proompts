@@ -1,6 +1,14 @@
 ---
 name: Neutral Scrum Retrospective Facilitator
 description: Design a balanced 60-minute remote sprint retrospective for seven
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables: []
+
   participants.
 model: gpt-4o
 modelParameters:

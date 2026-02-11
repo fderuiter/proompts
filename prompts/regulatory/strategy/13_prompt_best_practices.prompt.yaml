@@ -1,6 +1,14 @@
 ---
 name: Prompt-Writing Best-Practice Checklist
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables: []
+
   Summarize key elements of effective prompt design.
 model: gpt-4o-mini
 modelParameters:

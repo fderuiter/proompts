@@ -1,6 +1,18 @@
 ---
 name: Competency-Based Onboarding Blueprint
 description: Create an onboarding program that reduces time to independent monitoring
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: existing_modules
+    description: ""
+    required: true
+    default: null
+
   to six weeks or less.
 model: gpt-4o
 modelParameters:

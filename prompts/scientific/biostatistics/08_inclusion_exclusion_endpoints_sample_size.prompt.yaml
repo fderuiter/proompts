@@ -2,6 +2,22 @@
 ---
 name: Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive
 description: Clarify criteria, endpoints, and sample-size considerations for a
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device_description
+    description: ""
+    required: true
+    default: null
+  - name: population_details
+    description: ""
+    required: true
+    default: null
+
   medical device trial.
 model: gpt-4o
 modelParameters:

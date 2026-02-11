@@ -1,6 +1,18 @@
 ---
 name: Import Entry Data Element Compilation
 description: Compile required identifying information (510(k), UFI, NDC, NDA) for electronic import entry of drugs or devices.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.5

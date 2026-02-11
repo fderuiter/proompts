@@ -1,6 +1,18 @@
 ---
 name: Integrated Submission Strategy Coach
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: project_details
+    description: ""
+    required: true
+    default: null
+
   Create a phased submission roadmap for Project Phoenix.
 model: gpt-4o-mini
 modelParameters:

@@ -2,6 +2,18 @@
 ---
 name: Board Deck Narrative Generation
 description: Draft the 'CFO Commentary' slide for a Board meeting.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: context
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

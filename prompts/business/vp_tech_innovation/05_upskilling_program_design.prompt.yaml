@@ -2,6 +2,30 @@
 ---
 name: Upskilling Program Design
 description: Design a technical upskilling curriculum for engineering teams.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: current_tech
+    description: ""
+    required: true
+    default: null
+  - name: target_tech
+    description: ""
+    required: true
+    default: null
+  - name: team_type
+    description: ""
+    required: true
+    default: null
+  - name: timeline
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

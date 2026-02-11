@@ -1,6 +1,18 @@
 ---
 name: IVDR Performance-Evaluation Plan Blueprint
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device_details
+    description: ""
+    required: true
+    default: null
+
   Draft a comprehensive Performance‑Evaluation Plan (PEP) that satisfies
   Article 56 and Annex XIII of the IVDR.
 model: gpt-4o-mini

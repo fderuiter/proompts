@@ -1,6 +1,14 @@
 ---
 name: Code Formatting, Linting, and Refactoring Implementation
 description: Improve the codebase's internal quality and consistency by introducing and configuring a standard code formatter and a linter, and refactoring complex code.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables: []
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

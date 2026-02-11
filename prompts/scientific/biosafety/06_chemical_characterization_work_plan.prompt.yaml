@@ -2,6 +2,18 @@
 ---
 name: Chemical Characterization & TRA Work Plan
 description: Create a work plan for chemical characterization and toxicological
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device_information
+    description: ""
+    required: true
+    default: null
+
   risk assessment (TRA) for a medical device.
 model: gpt-4o
 modelParameters:

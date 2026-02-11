@@ -1,6 +1,22 @@
 ---
 name: Targeted Test Generation (OpenAI Codex)
 description: Add unit or integration tests for specified files on the current
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: files
+    description: ""
+    required: true
+    default: null
+  - name: input
+    description: ""
+    required: true
+    default: null
+
   branch.
 model: gpt-4
 modelParameters:

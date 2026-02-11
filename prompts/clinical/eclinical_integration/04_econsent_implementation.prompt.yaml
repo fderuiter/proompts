@@ -1,6 +1,18 @@
 ---
 name: eConsent Implementation Strategy
 description: Verify eConsent platform compliance and workflow.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: platform_specs
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

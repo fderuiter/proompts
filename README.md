@@ -44,6 +44,9 @@ contains two sections:
 Top-level fields available in a prompt file include:
 
 - `name` – short human-readable title
+- **`version`** – semantic version string (e.g., "1.0.0") to track prompt evolution.
+- **`metadata`** – classification tags (`domain`, `complexity`, `tags`) to aid in filtering and safety checks.
+- **`variables`** – a list of input variables defining the prompt's interface (name, description, required/optional).
 - `description` – concise summary of what the prompt does
 - `model` – model identifier
 - `modelParameters` – optional model parameters such as `temperature`

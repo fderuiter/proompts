@@ -1,6 +1,18 @@
 ---
 name: 'Advanced Design Patterns: Fluent Interface'
 description: Extend Page Objects with method chaining to create a more readable test API.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: java_class
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

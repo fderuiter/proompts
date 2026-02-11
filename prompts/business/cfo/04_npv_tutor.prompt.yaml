@@ -1,6 +1,14 @@
 ---
 name: Net Present Value Socratic Tutor
 description: Guide the learner to derive and apply the NPV formula through short Socratic
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables: []
+
   questioning.
 model: gpt-4o
 modelParameters:

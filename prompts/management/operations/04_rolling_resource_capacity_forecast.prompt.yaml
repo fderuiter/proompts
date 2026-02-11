@@ -1,6 +1,26 @@
 ---
 name: Rolling Resource & Capacity Forecast
 description: Generate a 12-month forecast of FTE demand and utilization by function
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: headcount
+    description: ""
+    required: true
+    default: null
+  - name: project_list
+    description: ""
+    required: true
+    default: null
+  - name: time_tracking_csv
+    description: ""
+    required: true
+    default: null
+
   and region.
 model: gpt-4o
 modelParameters:

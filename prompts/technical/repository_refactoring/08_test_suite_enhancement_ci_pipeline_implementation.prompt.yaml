@@ -1,6 +1,14 @@
 ---
 name: Test Suite Enhancement and CI Pipeline Implementation
 description: Build the automated quality gates for this repository by increasing test coverage, adding meaningful unit tests, and introducing a basic CI pipeline.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables: []
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

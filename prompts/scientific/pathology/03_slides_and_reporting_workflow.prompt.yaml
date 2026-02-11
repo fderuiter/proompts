@@ -1,6 +1,18 @@
 ---
 name: Prepare Pathology Slides and Reporting Plan
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: interface_evaluation
+    description: ""
+    required: true
+    default: null
+
   Plan slide preparation and review activities for a GLP cardiovascular
   stent study.
 model: gpt-4o-mini

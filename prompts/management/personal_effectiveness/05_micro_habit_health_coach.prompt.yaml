@@ -1,6 +1,18 @@
 ---
 name: Micro-Habit Health Coach
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: user_info
+    description: ""
+    required: true
+    default: null
+
   Deliver a concise 7-day wellness plan combining meals, movement, and mindset.
 model: gpt-4o-mini
 modelParameters:

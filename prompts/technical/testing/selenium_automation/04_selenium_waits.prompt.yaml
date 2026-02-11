@@ -1,6 +1,18 @@
 ---
 name: 'Synchronization Strategy: Explicit Waits'
 description: Replace brittle Thread.sleep() calls with dynamic Explicit or Fluent waits.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: code_snippet
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

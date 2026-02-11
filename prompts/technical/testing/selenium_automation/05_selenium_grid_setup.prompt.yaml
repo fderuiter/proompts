@@ -1,6 +1,22 @@
 ---
 name: 'Cross-Browser Infrastructure: Selenium Grid'
 description: Configure a Selenium Grid Hub and Nodes to distribute test execution.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: browser_count
+    description: ""
+    required: true
+    default: null
+  - name: grid_version
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.1

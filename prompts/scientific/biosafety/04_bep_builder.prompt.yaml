@@ -2,6 +2,18 @@
 ---
 name: Biological Evaluation Plan Builder
 description: Draft a complete Biological Evaluation Plan (BEP) for a specified
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device_details
+    description: ""
+    required: true
+    default: null
+
   medical device.
 model: gpt-4o
 modelParameters:

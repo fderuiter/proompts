@@ -2,6 +2,18 @@
 ---
 name: Comprehensive Biocompatibility Test Matrix
 description: Generate a detailed biocompatibility test matrix for a medical
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device_materials
+    description: ""
+    required: true
+    default: null
+
   device.
 model: gpt-4o
 modelParameters:

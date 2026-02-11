@@ -1,6 +1,18 @@
 ---
 name: Weekly Executive Status Report
 description: Summarize project progress for executive stakeholders in a concise
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: update_notes
+    description: ""
+    required: true
+    default: null
+
   weekly report.
 model: gpt-4o
 modelParameters:

@@ -2,6 +2,30 @@
 ---
 name: Study Design and Statistical Approach
 description: Propose a clinical trial design with corresponding statistical
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device_type
+    description: ""
+    required: true
+    default: null
+  - name: endpoints
+    description: ""
+    required: true
+    default: null
+  - name: regulatory_target
+    description: ""
+    required: true
+    default: null
+  - name: trial_phase
+    description: ""
+    required: true
+    default: null
+
   approach.
 model: gpt-4o
 modelParameters:

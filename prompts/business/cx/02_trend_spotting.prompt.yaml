@@ -2,6 +2,26 @@
 ---
 name: Trend Spotting vs Anomalies
 description: Compare support ticket datasets to identify trends and anomalies.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: dataset_a
+    description: ""
+    required: true
+    default: null
+  - name: dataset_b
+    description: ""
+    required: true
+    default: null
+  - name: specific_update
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

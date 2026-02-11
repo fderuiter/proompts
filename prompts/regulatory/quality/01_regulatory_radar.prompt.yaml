@@ -1,6 +1,22 @@
 ---
 name: Regulatory Radar & Impact Report
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: company_profile
+    description: ""
+    required: true
+    default: null
+  - name: compliance_posture
+    description: ""
+    required: true
+    default: null
+
   Track and assess recent regulatory changes that may impact the company.
 model: gpt-4o-mini
 modelParameters:

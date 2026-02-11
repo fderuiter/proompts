@@ -2,6 +2,18 @@
 ---
 name: Risk Assessment Expert
 description: Provide a comprehensive biocompatibility risk assessment for a
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: medical_device_type
+    description: ""
+    required: true
+    default: null
+
   specified device.
 model: gpt-4o
 modelParameters:

@@ -1,6 +1,22 @@
 ---
 name: Risk and Pre-Mortem Analysis
 description: Identify early failure points and mitigation strategies for a
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: project_name
+    description: ""
+    required: true
+    default: null
+  - name: project_summary
+    description: ""
+    required: true
+    default: null
+
   project or study.
 model: gpt-4o
 modelParameters:

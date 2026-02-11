@@ -1,6 +1,18 @@
 ---
 name: AGENTS.md Checklist Generator
 description: Create a best-practice checklist for writing an AGENTS.md file and provide
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: repo_url
+    description: ""
+    required: true
+    default: null
+
   a meta‑prompt to generate one from any repository.
 model: gpt-4o
 modelParameters:

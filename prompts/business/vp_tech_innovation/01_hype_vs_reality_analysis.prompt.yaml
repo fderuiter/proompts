@@ -2,6 +2,22 @@
 ---
 name: Hype vs. Reality Analysis
 description: Evaluate a specific technology for pragmatic application, cutting through the hype.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: industry
+    description: ""
+    required: true
+    default: null
+  - name: technology
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

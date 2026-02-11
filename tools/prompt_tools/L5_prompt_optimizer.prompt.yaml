@@ -1,6 +1,18 @@
 ---
 name: Prompt Optimizer 1.0
 description: Iteratively refine an instruction set for a given task.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: task
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

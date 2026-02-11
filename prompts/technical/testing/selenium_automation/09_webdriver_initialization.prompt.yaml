@@ -1,6 +1,22 @@
 ---
 name: 'Driver Configuration: WebDriver Initialization'
 description: Initialize and configure WebDriver instances with specific browser options.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: browser
+    description: ""
+    required: true
+    default: null
+  - name: proxy_url
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

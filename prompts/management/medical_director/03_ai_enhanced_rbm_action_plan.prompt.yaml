@@ -1,6 +1,18 @@
 ---
 name: AI-Enhanced RBM Action Plan
 description: Generate next-week monitoring actions that optimize patient safety and
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: site_metrics
+    description: ""
+    required: true
+    default: null
+
   data quality.
 model: gpt-4o
 modelParameters:

@@ -1,6 +1,18 @@
 ---
 name: Medical Coding and Reconciliation Assistant
 description: Automatically predict and apply medical terms to clinical data, and perform automated data reconciliation and query resolution within EDC builds.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.1

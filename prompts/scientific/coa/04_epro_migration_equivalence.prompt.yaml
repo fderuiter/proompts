@@ -1,6 +1,26 @@
 ---
 name: ePRO Migration Equivalence Checker
 description: Assess measurement equivalence for migrating paper-based PRO instruments to electronic modes.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device_type
+    description: ""
+    required: true
+    default: null
+  - name: features
+    description: ""
+    required: true
+    default: null
+  - name: paper_instrument_name
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.1

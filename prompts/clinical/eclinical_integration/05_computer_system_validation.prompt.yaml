@@ -1,6 +1,18 @@
 ---
 name: Computer System Validation (CSV)
 description: Generate validation documents for EDC systems.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: system_requirements
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

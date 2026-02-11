@@ -1,6 +1,22 @@
 ---
 name: Imaging Endpoint Process Standards Checklist
 description: Review FDA guidance on imaging endpoints and create process checklists.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: endpoint
+    description: ""
+    required: true
+    default: null
+  - name: modality
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.1

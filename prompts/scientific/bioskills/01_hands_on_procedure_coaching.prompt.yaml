@@ -2,6 +2,18 @@
 ---
 name: Hands-On Procedure Coaching
 description: Coach a trainee through a vascular access technique using a
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: procedure_name
+    description: ""
+    required: true
+    default: null
+
   training model.
 model: gpt-4o
 modelParameters:

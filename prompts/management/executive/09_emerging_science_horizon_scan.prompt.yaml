@@ -1,6 +1,18 @@
 ---
 name: Emerging-Science Horizon Scan
 description: Highlight emerging therapeutic areas or technologies likely to
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
   disrupt CRO services in the next three years.
 model: gpt-4o
 modelParameters:

@@ -1,6 +1,18 @@
 ---
 name: Comprehensive Risk Register and Mitigation Plan
 description: Produce a risk register with mitigation actions and overall
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: project_overview
+    description: ""
+    required: true
+    default: null
+
   strategies.
 model: gpt-4o
 modelParameters:

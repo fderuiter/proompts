@@ -1,6 +1,22 @@
 ---
 name: RACI Mapper
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: project_phase
+    description: ""
+    required: true
+    default: null
+  - name: tasks
+    description: ""
+    required: true
+    default: null
+
   Clarify team responsibilities using a RACI matrix.
 model: gpt-4o-mini
 modelParameters:

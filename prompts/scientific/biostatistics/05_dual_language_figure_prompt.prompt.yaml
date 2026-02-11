@@ -2,6 +2,22 @@
 ---
 name: Dual-Language Figure Prompt
 description: Generate a Kaplan–Meier figure in both R and SAS from ADaM ADTTE
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: dataset_path
+    description: ""
+    required: true
+    default: null
+  - name: dual
+    description: ""
+    required: true
+    default: null
+
   data.
 model: gpt-4o
 modelParameters:

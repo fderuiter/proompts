@@ -1,6 +1,22 @@
 ---
 name: UI Tweak & Verification (OpenAI Codex)
 description: Resolve a minor UI regression and confirm the fix with build or
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: component_path
+    description: ""
+    required: true
+    default: null
+  - name: input
+    description: ""
+    required: true
+    default: null
+
   test steps.
 model: gpt-4
 modelParameters:

@@ -2,6 +2,14 @@
 ---
 name: Project Memory Notes
 description: Maintain a running log of architectural decisions and contextual notes for the project.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables: []
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

@@ -2,6 +2,18 @@
 ---
 name: Earnings Call Script Prep
 description: Prepare for tough analyst questions on an earnings call.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: challenge
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

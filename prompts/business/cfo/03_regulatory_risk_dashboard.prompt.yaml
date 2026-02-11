@@ -2,6 +2,30 @@
 ---
 name: Regulatory-Risk & ESG Impact Dashboard Builder
 description: Aggregate regulatory changes and ESG metrics into a compliance risk dashboard.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: esg_baseline
+    description: ""
+    required: true
+    default: null
+  - name: reg_updates
+    description: ""
+    required: true
+    default: null
+  - name: risk_tolerance
+    description: ""
+    required: true
+    default: null
+  - name: study_portfolio
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

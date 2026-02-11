@@ -1,6 +1,14 @@
 ---
 name: Central Reading Paradigm Design
 description: Recommend an efficient central reading model for an oncology trial.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables: []
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

@@ -1,6 +1,18 @@
 ---
 name: Hero's Journey Storyboarder
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: product
+    description: ""
+    required: true
+    default: null
+
   Craft a brief marketing narrative following the Hero's Journey structure.
 model: gpt-4o-mini
 modelParameters:

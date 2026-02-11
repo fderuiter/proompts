@@ -2,6 +2,18 @@
 ---
 name: Time-to-Event Analysis Coach
 description: Guide a junior analyst through performing a time-to-event analysis.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: dataset_path
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

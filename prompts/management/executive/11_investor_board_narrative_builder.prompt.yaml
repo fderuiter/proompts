@@ -1,6 +1,18 @@
 ---
 name: Investor and Board Narrative Builder
 description: Craft a concise two-slide narrative for investors and board
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
   members.
 model: gpt-4o
 modelParameters:

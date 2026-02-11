@@ -1,6 +1,18 @@
 ---
 name: Audit Raw Data and Draft a CAPA Summary
 description: Review study data for deviations and produce a corrective-action
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: data_csv
+    description: ""
+    required: true
+    default: null
+
   plan.
 model: gpt-4o
 modelParameters:

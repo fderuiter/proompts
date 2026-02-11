@@ -1,6 +1,18 @@
 ---
 name: Market Report Executive Summary
 description: Draft and refine an executive summary for the uploaded market report.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: market_report
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

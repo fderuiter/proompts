@@ -1,6 +1,18 @@
 ---
 name: Informed Consent Process Optimization
 description: Review and rewrite ICF for readability.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: icf_text
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

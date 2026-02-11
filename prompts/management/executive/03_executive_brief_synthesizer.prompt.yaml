@@ -1,6 +1,18 @@
 ---
 name: Executive-Ready Brief and Talking Points
 description: Turn disparate reports into a concise executive brief and talking
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
   points.
 model: gpt-4o
 modelParameters:

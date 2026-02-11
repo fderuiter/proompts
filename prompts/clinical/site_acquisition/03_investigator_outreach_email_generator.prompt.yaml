@@ -1,6 +1,46 @@
 ---
 name: Personalized Investigator-Outreach Email Generator
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: CRO_NAME
+    description: ""
+    required: true
+    default: null
+  - name: city_country
+    description: ""
+    required: true
+    default: null
+  - name: investigator_name
+    description: ""
+    required: true
+    default: null
+  - name: recent_relevant_trials
+    description: ""
+    required: true
+    default: null
+  - name: site_name
+    description: ""
+    required: true
+    default: null
+  - name: sponsor_name
+    description: ""
+    required: true
+    default: null
+  - name: study_synopsis
+    description: ""
+    required: true
+    default: null
+  - name: unique_site_strength
+    description: ""
+    required: true
+    default: null
+
   Craft a tailored outreach email to potential investigators.
 model: gpt-4o-mini
 modelParameters:

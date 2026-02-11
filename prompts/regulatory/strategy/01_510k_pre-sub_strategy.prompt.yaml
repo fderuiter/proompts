@@ -1,6 +1,22 @@
 ---
 name: 510(k)/De Novo Pre-Submission Strategy
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device_description
+    description: ""
+    required: true
+    default: null
+  - name: predicate_devices
+    description: ""
+    required: true
+    default: null
+
   Determine the best U.S. regulatory pathway and craft a 12‑month pre‑submission
   plan.
 model: gpt-4o-mini

@@ -1,6 +1,22 @@
 ---
 name: Regulatory and Competitive Intelligence Briefing
 description: Provide a Monday-morning briefing on regulatory changes and
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: company_name
+    description: ""
+    required: true
+    default: null
+  - name: input
+    description: ""
+    required: true
+    default: null
+
   competitor moves that may affect decentralized and hybrid trials.
 model: gpt-4o
 modelParameters:

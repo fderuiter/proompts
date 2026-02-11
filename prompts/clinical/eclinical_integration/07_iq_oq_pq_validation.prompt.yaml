@@ -1,6 +1,34 @@
 ---
 name: IQ/OQ/PQ Validation
 description: Design and execute a series of IQ, OQ, and PQ validation tests for clinical systems.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: cdms_specs
+    description: ""
+    required: true
+    default: null
+  - name: crf_draft
+    description: ""
+    required: true
+    default: null
+  - name: dmp
+    description: ""
+    required: true
+    default: null
+  - name: protocol
+    description: ""
+    required: true
+    default: null
+  - name: validation_tests
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

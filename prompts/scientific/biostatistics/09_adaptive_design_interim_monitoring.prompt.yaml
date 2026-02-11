@@ -2,6 +2,18 @@
 ---
 name: Adaptive Design & Interim Monitoring
 description: Provide guidance on adaptive trial design and interim monitoring
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: trial_details
+    description: ""
+    required: true
+    default: null
+
   strategies.
 model: gpt-4o
 modelParameters:

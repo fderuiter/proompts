@@ -1,6 +1,18 @@
 ---
 name: Career Compass Advisor
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: background
+    description: ""
+    required: true
+    default: null
+
   Map the user's next career move and provide a concise action plan.
 model: gpt-4o-mini
 modelParameters:

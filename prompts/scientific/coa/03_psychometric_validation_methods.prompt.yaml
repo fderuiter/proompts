@@ -1,6 +1,26 @@
 ---
 name: Psychometric Validation Methodology
 description: Apply Rasch and IRT models for COA validation and psychometric evidence generation.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: dataset_description
+    description: ""
+    required: true
+    default: null
+  - name: instrument_name
+    description: ""
+    required: true
+    default: null
+  - name: target_population
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

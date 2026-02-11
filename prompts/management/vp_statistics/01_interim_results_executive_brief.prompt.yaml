@@ -1,6 +1,26 @@
 ---
 name: Interim Results Executive Brief
 description: Summarize interim analysis findings for cross-functional
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: analysis_results
+    description: ""
+    required: true
+    default: null
+  - name: safety_listings
+    description: ""
+    required: true
+    default: null
+  - name: statistical_plan
+    description: ""
+    required: true
+    default: null
+
   leadership.
 model: gpt-4o
 modelParameters:

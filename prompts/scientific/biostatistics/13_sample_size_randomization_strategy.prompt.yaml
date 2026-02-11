@@ -2,6 +2,26 @@
 ---
 name: Sample-Size & Randomization Strategy
 description: Determine sample size and recommend a randomization strategy for a
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: dropout_rate
+    description: ""
+    required: true
+    default: null
+  - name: response_rate_active
+    description: ""
+    required: true
+    default: null
+  - name: response_rate_control
+    description: ""
+    required: true
+    default: null
+
   clinical trial.
 model: gpt-4o
 modelParameters:

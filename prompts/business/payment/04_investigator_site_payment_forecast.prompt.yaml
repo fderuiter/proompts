@@ -1,6 +1,26 @@
 ---
 name: Investigator-Site Payment Forecast
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: enrollment_curve
+    description: ""
+    required: true
+    default: null
+  - name: fx_rates
+    description: ""
+    required: true
+    default: null
+  - name: site_data
+    description: ""
+    required: true
+    default: null
+
   Produce a month-by-month cash-flow forecast for site payments.
 model: gpt-4o-mini
 modelParameters:

@@ -1,6 +1,30 @@
 ---
 name: CAPA Investigation Report Writer
 description: Draft a formal CAPA investigation report for regulatory review.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: actions_taken
+    description: ""
+    required: true
+    default: null
+  - name: effectiveness_check
+    description: ""
+    required: true
+    default: null
+  - name: incident_summary
+    description: ""
+    required: true
+    default: null
+  - name: root_cause
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

@@ -1,6 +1,18 @@
 ---
 name: Vendor Qualification and Oversight
 description: Develop Vendor Oversight Plan and KPIs.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: vendor_details
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

@@ -1,6 +1,26 @@
 ---
 name: Sunshine Act and FMV Compliance Check
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: fmv_table
+    description: ""
+    required: true
+    default: null
+  - name: fx_rates
+    description: ""
+    required: true
+    default: null
+  - name: payment_ledger_csv
+    description: ""
+    required: true
+    default: null
+
   Audit site-payment data for Sunshine Act reporting and FMV adherence.
 model: gpt-4o-mini
 modelParameters:

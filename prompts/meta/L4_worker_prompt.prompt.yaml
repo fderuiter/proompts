@@ -1,6 +1,38 @@
 ---
 name: Worker Prompt
 description: Execute the concrete task defined by the L3 template and return structured
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: generated_prompt
+    description: ""
+    required: true
+    default: null
+  - name: input_block
+    description: ""
+    required: true
+    default: null
+  - name: output_schema
+    description: ""
+    required: true
+    default: null
+  - name: policy_block
+    description: ""
+    required: true
+    default: null
+  - name: task_description
+    description: ""
+    required: true
+    default: null
+  - name: token_limit_l4
+    description: ""
+    required: true
+    default: null
+
   output.
 model: gpt-4o
 modelParameters:

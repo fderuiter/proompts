@@ -1,6 +1,18 @@
 ---
 name: Scenario-Based Microlearning Series
 description: Design short interactive modules that help CRO staff apply GCP principles
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: audience_role
+    description: ""
+    required: true
+    default: null
+
   correctly during site visits.
 model: gpt-4o
 modelParameters:

@@ -1,6 +1,26 @@
 ---
 name: 21 CFR 820 / QMSR Gap-Analysis & Remediation
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device_class
+    description: ""
+    required: true
+    default: null
+  - name: employee_count
+    description: ""
+    required: true
+    default: null
+  - name: qms_documents
+    description: ""
+    required: true
+    default: null
+
   Evaluate the quality-management system against current 21 CFR 820 and
   the proposed QMSR.
 model: gpt-4o-mini

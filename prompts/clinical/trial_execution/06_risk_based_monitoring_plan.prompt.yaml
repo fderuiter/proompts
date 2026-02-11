@@ -1,6 +1,14 @@
 ---
 name: Risk-Based Monitoring and Quality Plan
 description: Develop a risk-based monitoring plan for a Phase II oncology trial.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables: []
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

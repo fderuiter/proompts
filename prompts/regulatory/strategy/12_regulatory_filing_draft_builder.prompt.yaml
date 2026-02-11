@@ -1,6 +1,42 @@
 ---
 name: Regulatory Filing Draft Builder
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: DATE
+    description: ""
+    required: true
+    default: null
+  - name: DOCUMENT_TYPE
+    description: ""
+    required: true
+    default: null
+  - name: REGULATOR
+    description: ""
+    required: true
+    default: null
+  - name: SPECIFIC_GUIDELINE
+    description: ""
+    required: true
+    default: null
+  - name: financial_data
+    description: ""
+    required: true
+    default: null
+  - name: prior_filing
+    description: ""
+    required: true
+    default: null
+  - name: risk_memo
+    description: ""
+    required: true
+    default: null
+
   Produce a regulator‑ready draft document using provided financials and
   risk data.
 model: gpt-4o-mini

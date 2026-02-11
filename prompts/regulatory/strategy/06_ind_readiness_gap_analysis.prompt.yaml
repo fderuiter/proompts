@@ -1,6 +1,26 @@
 ---
 name: IND Readiness Gap Analysis & Filing Road-Map
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: data_snapshots
+    description: ""
+    required: true
+    default: null
+  - name: first_in_human_date
+    description: ""
+    required: true
+    default: null
+  - name: program_summary
+    description: ""
+    required: true
+    default: null
+
   Assess IND readiness and create a filing road‑map for a therapeutic program.
 model: gpt-4o-mini
 modelParameters:

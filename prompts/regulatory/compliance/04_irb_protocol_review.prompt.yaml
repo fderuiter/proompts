@@ -1,6 +1,18 @@
 ---
 name: IRB Protocol Review
 description: Evaluate a clinical investigation protocol to ensure it meets IRB approval criteria.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.5

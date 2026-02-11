@@ -1,6 +1,18 @@
 ---
 name: Design a Patient-Centered Randomization Scheme
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: study_parameters
+    description: ""
+    required: true
+    default: null
+
   Create a randomization scheme that balances patient needs with logistical
   simplicity.
 model: gpt-4o-mini

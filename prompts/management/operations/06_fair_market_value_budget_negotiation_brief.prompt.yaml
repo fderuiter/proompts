@@ -1,6 +1,18 @@
 ---
 name: Fair-Market-Value Budget Negotiation Brief
 description: Prepare a concise briefing to support FMV negotiations with a pharma
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: site_cost_data
+    description: ""
+    required: true
+    default: null
+
   sponsor.
 model: gpt-4o
 modelParameters:

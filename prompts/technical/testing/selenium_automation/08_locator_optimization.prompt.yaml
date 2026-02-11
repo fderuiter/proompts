@@ -1,6 +1,18 @@
 ---
 name: 'Framework Best Practices: Locator Strategy'
 description: Transition from brittle XPaths to robust locators like ID or CSS selectors.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: locators
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

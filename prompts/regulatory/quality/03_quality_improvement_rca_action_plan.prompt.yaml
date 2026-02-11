@@ -1,6 +1,22 @@
 ---
 name: Quality-Improvement RCA & Action Plan
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: defect_data_csv
+    description: ""
+    required: true
+    default: null
+  - name: prior_mitigation
+    description: ""
+    required: true
+    default: null
+
   Identify root causes of a recurring defect and propose a 90‑day corrective‑action
   roadmap.
 model: gpt-4o-mini

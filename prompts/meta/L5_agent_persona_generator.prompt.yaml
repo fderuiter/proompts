@@ -1,6 +1,26 @@
 ---
 name: Agent Persona Generator
 description: Generate detailed, high-integrity agent personas based on a provided role and goal, using a strict structural framework.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: context
+    description: ""
+    required: true
+    default: null
+  - name: goal
+    description: ""
+    required: true
+    default: null
+  - name: role
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

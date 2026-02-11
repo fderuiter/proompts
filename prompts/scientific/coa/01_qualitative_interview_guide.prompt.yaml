@@ -1,6 +1,26 @@
 ---
 name: Qualitative Interview Guide Generator
 description: Draft a qualitative patient interview guide for concept elicitation and cognitive debriefing.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: areas_of_interest
+    description: ""
+    required: true
+    default: null
+  - name: disease
+    description: ""
+    required: true
+    default: null
+  - name: pro_instrument
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.3

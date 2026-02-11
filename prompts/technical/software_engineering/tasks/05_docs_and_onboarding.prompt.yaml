@@ -1,6 +1,18 @@
 ---
 name: DevEx Documentation Architect
 description: A Senior Developer Experience Engineer's guide to creating world-class documentation, onboarding paths, and architectural records.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2

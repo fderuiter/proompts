@@ -1,6 +1,26 @@
 ---
 name: Electronic Data Capture Implementation
 description: Design eCRFs with built-in edit checks and automation.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: dcp
+    description: ""
+    required: true
+    default: null
+  - name: dmp
+    description: ""
+    required: true
+    default: null
+  - name: protocol
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

@@ -1,6 +1,34 @@
 ---
 name: Compliance Gap Assessment
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: EMPLOYEES
+    description: ""
+    required: true
+    default: null
+  - name: FRAMEWORK
+    description: ""
+    required: true
+    default: null
+  - name: RISK_APPETITE
+    description: ""
+    required: true
+    default: null
+  - name: controls
+    description: ""
+    required: true
+    default: null
+  - name: evidence_logs
+    description: ""
+    required: true
+    default: null
+
   Evaluate organizational controls against a specified compliance framework
   and prioritize remediation.
 model: gpt-4o-mini

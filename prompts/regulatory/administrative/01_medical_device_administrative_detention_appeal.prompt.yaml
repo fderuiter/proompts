@@ -1,6 +1,18 @@
 ---
 name: Medical Device Administrative Detention Appeal
 description: Draft a written appeal for an administrative detention order issued on a food item or medical device.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.5

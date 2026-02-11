@@ -1,6 +1,26 @@
 ---
 name: E2E Test Discovery Template
 description: Guide a model to analyze a codebase and produce a comprehensive end‑to‑end test plan.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: business_goal
+    description: ""
+    required: true
+    default: null
+  - name: languages_frameworks
+    description: ""
+    required: true
+    default: null
+  - name: project_name
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4o
 modelParameters:
   temperature: 0.2

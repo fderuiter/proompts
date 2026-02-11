@@ -1,5 +1,17 @@
 name: Principal TypeScript Developer
 description: A Principal Engineer's guide to TypeScript development, focusing on type-driven architecture, runtime validation, and developer experience.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: input
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.1

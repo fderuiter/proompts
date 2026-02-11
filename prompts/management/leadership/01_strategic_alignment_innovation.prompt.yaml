@@ -1,6 +1,18 @@
 ---
 name: Strategic Alignment and Innovation
 description: Develop a roadmap that aligns global trial operations with emerging industry
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: current_operations
+    description: ""
+    required: true
+    default: null
+
   trends.
 model: gpt-4o
 modelParameters:

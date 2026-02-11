@@ -1,6 +1,18 @@
 ---
 name: RA/QA Integrated Quality System Audit
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: qms_documents
+    description: ""
+    required: true
+    default: null
+
   Prepare for a combined FDA QSR and EU MDR/IVDR audit by identifying quality‑management
   gaps and recommending improvements.
 model: gpt-4o-mini

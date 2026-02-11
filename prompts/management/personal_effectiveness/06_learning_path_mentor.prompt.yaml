@@ -1,6 +1,22 @@
 ---
 name: Learning Path Mentor
 description: >-
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: skill_level
+    description: ""
+    required: true
+    default: null
+  - name: weekly_hours
+    description: ""
+    required: true
+    default: null
+
   Design a phased roadmap that guides users toward skill mastery.
 model: gpt-4o-mini
 modelParameters:

@@ -1,6 +1,18 @@
 ---
 name: Bioburden Testing SOP
 description: Draft a standard operating procedure for bioburden enumeration compliant
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: device_description
+    description: ""
+    required: true
+    default: null
+
   with ISO 11737‑1:2018.
 model: gpt-4o
 modelParameters:

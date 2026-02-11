@@ -2,6 +2,30 @@
 ---
 name: Product Brief Template
 description: Outline the high-level vision, features, and architecture for a new software project.
+version: "0.1.0"
+metadata:
+  domain: unknown
+  complexity: medium
+  tags: []
+  requires_context: false
+variables:
+  - name: architecture
+    description: ""
+    required: true
+    default: null
+  - name: context_notes
+    description: ""
+    required: true
+    default: null
+  - name: features
+    description: ""
+    required: true
+    default: null
+  - name: vision
+    description: ""
+    required: true
+    default: null
+
 model: gpt-4
 modelParameters:
   temperature: 0.2
