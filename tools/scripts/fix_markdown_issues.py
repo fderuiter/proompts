@@ -32,7 +32,7 @@ def load_paths(todo_path: Path):
 
 
 def fix_trailing_spaces(lines):
-    return [re.sub(r"\s+$", "", l) for l in lines]
+    return [l.rstrip() for l in lines]
 
 
 def fix_front_matter(lines):
