@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Update `docs/index.md` and `docs/table-of-contents.md` from prompt metadata."""
+"""Update `docs/table-of-contents.md` from prompt metadata, preserving `docs/index.md`."""
 
 from __future__ import annotations
 
@@ -60,71 +60,44 @@ def nice_title(name: str) -> str:
     return " ".join(word.capitalize() for word in name.split())
 
 
-SEARCH_UI = """
-<div class="search-container">
-    <input type="text" id="search-input" placeholder="Search prompts..." style="width: 100%; padding: 10px; margin-bottom: 20px;">
-    <ul id="results-container"></ul>
-</div>
-
-<script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
-<script>
-    window.simpleJekyllSearch = new SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('results-container'),
-        json: '{{ site.baseurl }}/search.json',
-        searchResultTemplate: '<li><a href="{{ site.baseurl }}/{url}"><strong>{title}</strong></a><br><span style="font-size:0.8em">{description}</span></li>',
-        noResultsText: 'No prompts found',
-        limit: 10,
-        fuzzy: false
-    })
-</script>
-"""
-
-
-def generate() -> tuple[str, str]:
-    """Generate index.md and table-of-contents.md content."""
+def generate() -> str:
+    """Generate table-of-contents.md content."""
     groups = collect_prompts()
-    index_lines = [SEARCH_UI, "", "# Table of Contents", ""]
     toc_lines: list[str] = []
 
     for category, items in groups.items():
-        index_lines.append(f"## {nice_title(category)}")
-        index_lines.append("")
+        toc_lines.append(f"## {nice_title(category)}")
+        toc_lines.append("")
         for path, title in items:
             rel = Path("..") / path.relative_to(ROOT)
             link = f"[{title}]({rel.as_posix()})"
-            index_lines.append(f"- {link}")
-            toc_lines.append(link)
-        index_lines.append("")
+            toc_lines.append(f"- {link}")
+        toc_lines.append("")
 
-    index_content = "\n".join(index_lines).rstrip() + "\n"
     toc_content = "\n".join(toc_lines).rstrip() + "\n"
-    return index_content, toc_content
+    return toc_content
 
 
-def write_files(index: str, toc: str) -> None:
-    (DOCS_DIR / "index.md").write_text(index, encoding="utf-8")
+def write_files(toc: str) -> None:
     (DOCS_DIR / "table-of-contents.md").write_text(toc, encoding="utf-8")
 
 
-def check_files(index: str, toc: str) -> bool:
-    index_path = DOCS_DIR / "index.md"
+def check_files(toc: str) -> bool:
     toc_path = DOCS_DIR / "table-of-contents.md"
-    existing_index = index_path.read_text(encoding="utf-8") if index_path.exists() else ""
     existing_toc = toc_path.read_text(encoding="utf-8") if toc_path.exists() else ""
-    return existing_index == index and existing_toc == toc
+    return existing_toc == toc
 
 
 def run_update(check: bool = False) -> int:
-    index, toc = generate()
+    toc = generate()
 
     if check:
-        if check_files(index, toc):
+        if check_files(toc):
             return 0
         print("docs index out of date")
         return 1
 
-    write_files(index, toc)
+    write_files(toc)
     return 0
 
 
