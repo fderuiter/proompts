@@ -1,0 +1,50 @@
+name: Documentation Automation
+
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - "prompts/**"
+            - "scripts/generate_docs.py"
+    pull_request:
+        paths:
+            - "prompts/**"
+            - "scripts/generate_docs.py"
+
+permissions:
+    contents: write
+
+jobs:
+    update-docs:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+              with:
+                  ref: ${{ github.head_ref }} # Important for PRs to checkout the branch, not a detached HEAD
+
+            - name: Set up Python
+              uses: actions/setup-python@v4
+              with:
+                  python-version: "3.x"
+
+            - name: Install dependencies
+              run: |
+                  pip install pyyaml
+
+            - name: Generate Documentation
+              run: |
+                  python scripts/generate_docs.py
+
+            - name: Check for changes
+              id: check_changes
+              run: |
+                  git diff --exit-code || echo "changes_detected=true" >> $GITHUB_OUTPUT
+
+            - name: Commit and Push changes
+              if: steps.check_changes.outputs.changes_detected == 'true'
+              uses: stefanzweifel/git-auto-commit-action@v5
+              with:
+                  commit_message: "docs: auto-generate documentation from prompts"
+                  file_pattern: "docs/*.md"

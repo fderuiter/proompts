@@ -1,2 +1,22 @@
+title: Proompts
+description: A curated set of prompts in YAML for AI-assisted product development, regulatory workflows, and general operations.
 baseurl: "/proompts"
 url: "https://fderuiter.github.io"
+
+remote_theme: pmarsceill/just-the-docs
+
+color_scheme: dark
+
+search_enabled: true
+search:
+  button: true
+  tokenizer_separator: /[\s\-/]+/
+
+aux_links:
+  "Proompts on GitHub":
+    - "//github.com/fderuiter/proompts"
+
+heading_anchors: true
+
+check_external_links: true
+
