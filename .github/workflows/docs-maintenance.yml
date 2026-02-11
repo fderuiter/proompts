@@ -6,16 +6,20 @@ name: Docs Maintenance
     paths:
       - 'prompts/**/*.prompt.yaml'
       - 'prompts/**/*.prompt.yml'
+      - 'workflows/**/*.workflow.yaml'
       - 'tools/scripts/fix_markdown_issues.py'
       - 'tools/scripts/generate_overviews.py'
+      - 'tools/scripts/generate_workflow_diagrams.py'
       - 'tools/scripts/update_docs_index.py'
       - '.github/workflows/docs-maintenance.yml'
   pull_request:
     paths:
       - 'prompts/**/*.prompt.yaml'
       - 'prompts/**/*.prompt.yml'
+      - 'workflows/**/*.workflow.yaml'
       - 'tools/scripts/fix_markdown_issues.py'
       - 'tools/scripts/generate_overviews.py'
+      - 'tools/scripts/generate_workflow_diagrams.py'
       - 'tools/scripts/update_docs_index.py'
       - '.github/workflows/docs-maintenance.yml'
 
@@ -43,6 +47,8 @@ jobs:
         run: python3 tools/scripts/update_docs_index.py
       - name: Validate prompts
         run: python3 tools/scripts/validate_prompt_schema.py
+      - name: Generate Workflow Diagrams
+        run: python3 tools/scripts/generate_workflow_diagrams.py
       - name: Check for changes
         id: diff
         run: |
