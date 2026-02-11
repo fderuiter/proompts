@@ -1,28 +1,35 @@
 ---
 name: AI Email Assistant Go/No-Go Vote
-description: |
-  Personas: UX designer, data scientist, CFO. Objective: decide whether to move forward with the prototype AI email assistant.
+description: 'Personas: UX designer, data scientist, CFO. Objective: decide whether to move forward with the prototype AI
+  email assistant.
+
+  '
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |
-      Personas: UX designer, data scientist, CFO.
-      Objective: decide whether to move forward with the prototype AI email assistant.
-  - role: user
-    content: |
-      {{input}}
+- role: system
+  content: 'Personas: UX designer, data scientist, CFO.
+
+    Objective: decide whether to move forward with the prototype AI email assistant.
+
+    '
+- role: user
+  content: '{{input}}
+
+    '
 testData:
-  - input: |
-      Prototype feedback:
-        - UX designer impressed with usability.
-        - Data scientist concerned about privacy.
-        - CFO notes high projected costs.
-      Should we proceed with development?
-    expected: |
-      Summary of each persona's vote and final Go or No-Go recommendation.
+- input: "Prototype feedback:\n  - UX designer impressed with usability.\n  - Data scientist concerned about privacy.\n  -\
+    \ CFO notes high projected costs.\nShould we proceed with development?\n"
+  expected: 'Summary of each persona''s vote and final Go or No-Go recommendation.
+
+    '
 evaluators:
-  - name: Mentions a Go or No-Go decision
-    string:
-      contains: "Go"
+- name: Mentions a Go or No-Go decision
+  string:
+    contains: Go
+version: 0.1.0
+variables:
+- name: input
+  description: TODO
+  required: true

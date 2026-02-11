@@ -1,42 +1,54 @@
 ---
 name: RACI Mapper
-description: >-
-  Clarify team responsibilities using a RACI matrix.
+description: Clarify team responsibilities using a RACI matrix.
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.7
 messages:
-  - role: system
-    content: >-
-      The user specifies a project phase and key tasks with team member
-      initials.
+- role: system
+  content: 'The user specifies a project phase and key tasks with team member initials.
 
 
-      Clarify team responsibilities using a RACI matrix.
-  - role: user
-    content: |-
-      1. Build a markdown table with columns Task, R, A, C, I for up to six tasks.
-      1. After the table, add a 35-word reflection highlighting any overload and suggest one reassignment.
+    Clarify team responsibilities using a RACI matrix.'
+- role: user
+  content: '1. Build a markdown table with columns Task, R, A, C, I for up to six tasks.
 
-      Inputs:
-      - `{{project_phase}}`: project phase description.
-      - `{{tasks}}`: list of tasks with assigned initials.
+    1. After the table, add a 35-word reflection highlighting any overload and suggest one reassignment.
 
-      Output format:
-      Markdown table followed by the reflection paragraph.
 
-      Additional notes:
-      Keep the response under 130 words and avoid jargon.
+    Inputs:
+
+    - `{{project_phase}}`: project phase description.
+
+    - `{{tasks}}`: list of tasks with assigned initials.
+
+
+    Output format:
+
+    Markdown table followed by the reflection paragraph.
+
+
+    Additional notes:
+
+    Keep the response under 130 words and avoid jargon.'
 testData:
-  - vars:
-      project_phase: Launch
-      tasks: |-
-        Design marketing plan - AB
-        Build landing page - CD
-    expected: |-
-      | Task | R | A | C | I |
-      | --- | --- | --- | --- | --- |
+- vars:
+    project_phase: Launch
+    tasks: 'Design marketing plan - AB
+
+      Build landing page - CD'
+  expected: '| Task | R | A | C | I |
+
+    | --- | --- | --- | --- | --- |'
 evaluators:
-  - name: Outputs RACI headers
-    string:
-      contains: '| Task | R | A | C | I |'
+- name: Outputs RACI headers
+  string:
+    contains: '| Task | R | A | C | I |'
+version: 0.1.0
+variables:
+- name: project_phase
+  description: TODO
+  required: true
+- name: tasks
+  description: TODO
+  required: true

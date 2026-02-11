@@ -1,46 +1,57 @@
 ---
 name: Sterility-Validation Protocol Builder
-description: >-
-  Draft a complete validation protocol for a single-use Class II instrument
-  sterilized by gamma irradiation.
+description: Draft a complete validation protocol for a single-use Class II instrument sterilized by gamma irradiation.
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: >-
-      You are a senior sterility-assurance microbiologist.
+- role: system
+  content: 'You are a senior sterility-assurance microbiologist.
 
 
-      Draft a complete validation protocol for a single-use Class II instrument
-      sterilized by gamma irradiation.
-  - role: user
-    content: |-
-      - Define worst-case product configuration and family grouping approach.
-      - Design bioburden assessment, fractional/half-cycle verification, and VDmax method per **ISO 11137‑1:2025** and **ISO 11737‑2:2019**.
-      - Calculate sample sizes and acceptance criteria to meet a PNSU ≤ 10^-6.
-      - Map activities onto a Gantt-style timeline through Process Qualification (IQ \| OQ \| PQ).
-      - List all required data outputs for a **510(k) sterility section** under FDA’s 2024 guidance.
+    Draft a complete validation protocol for a single-use Class II instrument sterilized by gamma irradiation.'
+- role: user
+  content: '- Define worst-case product configuration and family grouping approach.
 
-      Inputs:
-      - `{{device_description}}` – instrument details.
+    - Design bioburden assessment, fractional/half-cycle verification, and VDmax method per **ISO 11137‑1:2025** and **ISO 11737‑2:2019**.
 
-      Output format:
-      Numbered sections: Overview, Materials, Methods, Acceptance Criteria, Timeline, and References.
+    - Calculate sample sizes and acceptance criteria to meet a PNSU ≤ 10^-6.
 
-      Additional notes:
-      - Include all equations explicitly.
-      - Cite each standard or guidance section by clause number.
-      - Think through the solution step-by-step internally and reveal only the final protocol.
+    - Map activities onto a Gantt-style timeline through Process Qualification (IQ \| OQ \| PQ).
+
+    - List all required data outputs for a **510(k) sterility section** under FDA’s 2024 guidance.
+
+
+    Inputs:
+
+    - `{{device_description}}` – instrument details.
+
+
+    Output format:
+
+    Numbered sections: Overview, Materials, Methods, Acceptance Criteria, Timeline, and References.
+
+
+    Additional notes:
+
+    - Include all equations explicitly.
+
+    - Cite each standard or guidance section by clause number.
+
+    - Think through the solution step-by-step internally and reveal only the final protocol.'
 testData:
-  - vars:
-      device_description: example_device_description
-    expected: |-
-      Protocol includes sections: Overview, Materials, Methods, Acceptance Criteria, Timeline, References.
+- vars:
+    device_description: example_device_description
+  expected: 'Protocol includes sections: Overview, Materials, Methods, Acceptance Criteria, Timeline, References.'
 evaluators:
-  - name: Contains Overview section
-    string:
-      contains: "Overview"
-  - name: Contains References section
-    string:
-      contains: "References"
+- name: Contains Overview section
+  string:
+    contains: Overview
+- name: Contains References section
+  string:
+    contains: References
+version: 0.1.0
+variables:
+- name: device_description
+  description: TODO
+  required: true

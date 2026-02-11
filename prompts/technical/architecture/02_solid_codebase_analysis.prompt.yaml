@@ -5,13 +5,17 @@ model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |-
-      You are a software architect assessing adherence to the SOLID object-oriented design principles.
-  - role: user
-    content: |-
-      Analyse the following codebase and produce concrete refactoring tasks for each SOLID principle.
+- role: system
+  content: You are a software architect assessing adherence to the SOLID object-oriented design principles.
+- role: user
+  content: 'Analyse the following codebase and produce concrete refactoring tasks for each SOLID principle.
 
-      {{codebase}}
+
+    {{codebase}}'
 testData: []
 evaluators: []
+version: 0.1.0
+variables:
+- name: codebase
+  description: TODO
+  required: true

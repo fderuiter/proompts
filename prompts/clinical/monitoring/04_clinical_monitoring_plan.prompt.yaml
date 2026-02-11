@@ -5,30 +5,42 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: >-
-      You are a Clinical Research Associate (CRA) Lead. Draft a risk-based Clinical Monitoring Plan (CMP) for the multicenter trial. Identify critical data points for source data verification and analyze site performance metrics to identify sites requiring targeted on-site visits.
-  - role: user
-    content: |-
-      Draft a risk-based Clinical Monitoring Plan (CMP) for the multicenter trial. Identify critical data points for source data verification and analyze site performance metrics to identify sites requiring targeted on-site visits.
+- role: system
+  content: You are a Clinical Research Associate (CRA) Lead. Draft a risk-based Clinical Monitoring Plan (CMP) for the multicenter
+    trial. Identify critical data points for source data verification and analyze site performance metrics to identify sites
+    requiring targeted on-site visits.
+- role: user
+  content: 'Draft a risk-based Clinical Monitoring Plan (CMP) for the multicenter trial. Identify critical data points for
+    source data verification and analyze site performance metrics to identify sites requiring targeted on-site visits.
 
-      Inputs:
-      - `{{trial_details}}`
 
-      Output format:
-      Markdown Clinical Monitoring Plan.
+    Inputs:
+
+    - `{{trial_details}}`
+
+
+    Output format:
+
+    Markdown Clinical Monitoring Plan.'
 testData:
-  - input: |
-      trial_details: Multicenter Phase II trial.
-    expected: |
-      Clinical Monitoring Plan
+- input: 'trial_details: Multicenter Phase II trial.
+
+    '
+  expected: 'Clinical Monitoring Plan
+
+    '
 evaluators:
-  - name: Risk-Based
-    string:
-      contains: "Risk-Based"
-  - name: Source Data Verification
-    string:
-      contains: "Source Data Verification"
-  - name: Site Performance
-    string:
-      contains: "Site Performance"
+- name: Risk-Based
+  string:
+    contains: Risk-Based
+- name: Source Data Verification
+  string:
+    contains: Source Data Verification
+- name: Site Performance
+  string:
+    contains: Site Performance
+version: 0.1.0
+variables:
+- name: trial_details
+  description: TODO
+  required: true

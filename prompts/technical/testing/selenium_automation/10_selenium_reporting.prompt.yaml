@@ -5,20 +5,30 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: Create a Java listener or utility method to generate test reports (e.g., PDF via iText) or capture screenshots using the 'TakesScreenshot' interface. The output should include test status (PASS/FAIL), execution time, and embedded links to images for failed cases.
-  - role: user
-    content: 'Implement a Test Listener for reporting and screenshots.
+- role: system
+  content: Create a Java listener or utility method to generate test reports (e.g., PDF via iText) or capture screenshots
+    using the 'TakesScreenshot' interface. The output should include test status (PASS/FAIL), execution time, and embedded
+    links to images for failed cases.
+- role: user
+  content: 'Implement a Test Listener for reporting and screenshots.
 
 
-      Framework: {{framework}}
+    Framework: {{framework}}
 
-      Report Format: {{report_format}}'
+    Report Format: {{report_format}}'
 testData:
-  - input: 'framework: TestNG
+- input: 'framework: TestNG
 
-      report_format: PDF'
-    expected: implements ITestListener
+    report_format: PDF'
+  expected: implements ITestListener
 evaluators:
-  - name: Implements TakesScreenshot
-    regex: TakesScreenshot
+- name: Implements TakesScreenshot
+  regex: TakesScreenshot
+version: 0.1.0
+variables:
+- name: framework
+  description: TODO
+  required: true
+- name: report_format
+  description: TODO
+  required: true

@@ -5,48 +5,89 @@ model: gpt-4o
 modelParameters:
   temperature: 0.1
 messages:
-  - role: system
-    content: |
-      You are a Biostatistician specializing in R programming. Your task is to generate an R code snippet using the `multcomp` package to perform a single-step Dunnett procedure for multiple comparisons against a control group.
+- role: system
+  content: 'You are a Biostatistician specializing in R programming. Your task is to generate an R code snippet using the
+    `multcomp` package to perform a single-step Dunnett procedure for multiple comparisons against a control group.
 
-      The code should:
-      1.  Fit an ANOVA model (`aov` or `lm`) for the response variable across dose levels.
-      2.  Use `glht()` with `mcp(dose = "Dunnett")` to specify the comparisons.
-      3.  Output the adjusted p-values and 97.5% simultaneous confidence intervals (assuming a one-sided test or adjusting alpha appropriately).
-      4.  Include comments explaining the steps.
-      5.  Be wrapped in an R code block (```r).
 
-      Ensure the code handles the `dose` variable as a factor.
-  - role: user
-    content: |
-      <response_variable>
-      {{response_var}}
-      </response_variable>
+    The code should:
 
-      <dose_variable>
-      {{dose_var}}
-      </dose_variable>
+    1.  Fit an ANOVA model (`aov` or `lm`) for the response variable across dose levels.
 
-      <dataframe_name>
-      {{dataframe}}
-      </dataframe_name>
+    2.  Use `glht()` with `mcp(dose = "Dunnett")` to specify the comparisons.
 
-      <control_group_label>
-      {{control_label}} (if needing re-leveling)
-      </control_group_label>
+    3.  Output the adjusted p-values and 97.5% simultaneous confidence intervals (assuming a one-sided test or adjusting alpha
+    appropriately).
 
-      Generate the R code.
+    4.  Include comments explaining the steps.
+
+    5.  Be wrapped in an R code block (```r).
+
+
+    Ensure the code handles the `dose` variable as a factor.
+
+    '
+- role: user
+  content: '<response_variable>
+
+    {{response_var}}
+
+    </response_variable>
+
+
+    <dose_variable>
+
+    {{dose_var}}
+
+    </dose_variable>
+
+
+    <dataframe_name>
+
+    {{dataframe}}
+
+    </dataframe_name>
+
+
+    <control_group_label>
+
+    {{control_label}} (if needing re-leveling)
+
+    </control_group_label>
+
+
+    Generate the R code.
+
+    '
 testData:
-  - input: |
-      response_var: resp
-      dose_var: dose
-      dataframe: df_efficacy
-      control_label: Placebo
-    expected: R code loading `multcomp`, fitting a model, and running `glht` with Dunnett contrast.
+- input: 'response_var: resp
+
+    dose_var: dose
+
+    dataframe: df_efficacy
+
+    control_label: Placebo
+
+    '
+  expected: R code loading `multcomp`, fitting a model, and running `glht` with Dunnett contrast.
 evaluators:
-  - name: Library Check
-    regex:
-      pattern: "library\\(multcomp\\)"
-  - name: Function Check
-    regex:
-      pattern: "glht\\("
+- name: Library Check
+  regex:
+    pattern: library\(multcomp\)
+- name: Function Check
+  regex:
+    pattern: glht\(
+version: 0.1.0
+variables:
+- name: control_label
+  description: TODO
+  required: true
+- name: dataframe
+  description: TODO
+  required: true
+- name: dose_var
+  description: TODO
+  required: true
+- name: response_var
+  description: TODO
+  required: true

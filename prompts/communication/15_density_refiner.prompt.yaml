@@ -5,34 +5,50 @@ model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |-
-      Use Chain-of-Density summarization to tighten coverage without length creep.
+- role: system
+  content: 'Use Chain-of-Density summarization to tighten coverage without length creep.
 
-      <!-- markdownlint-disable MD029 -->
 
-      1. Produce an entity-sparse gist in 120 words or fewer.
-      2. List missing key nouns in 40 words or fewer.
-      3. Rewrite a denser summary under 120 words using those nouns.
-      4. End with a 15-word reflection on what detail improved.
-      5. Label sections **Gist**, **Missing Entities**, **Dense Summary**, and **Reflection**.
+    <!-- markdownlint-disable MD029 -->
 
-      Chain-of-Density helps retain key entities while keeping the summary short.
-  - role: user
-    content: |-
-      {{input}}
+
+    1. Produce an entity-sparse gist in 120 words or fewer.
+
+    2. List missing key nouns in 40 words or fewer.
+
+    3. Rewrite a denser summary under 120 words using those nouns.
+
+    4. End with a 15-word reflection on what detail improved.
+
+    5. Label sections **Gist**, **Missing Entities**, **Dense Summary**, and **Reflection**.
+
+
+    Chain-of-Density helps retain key entities while keeping the summary short.'
+- role: user
+  content: '{{input}}'
 testData:
-  - input: Elephants migrate long distances for food and water.
-    expected: |-
-      **Gist**
-      Elephants travel for food and water.
-      **Missing Entities**
-      Savannah, herds.
-      **Dense Summary**
-      Elephant herds cross savannahs seeking water holes as seasons shift.
-      **Reflection**
-      Adding locations clarified context.
+- input: Elephants migrate long distances for food and water.
+  expected: '**Gist**
+
+    Elephants travel for food and water.
+
+    **Missing Entities**
+
+    Savannah, herds.
+
+    **Dense Summary**
+
+    Elephant herds cross savannahs seeking water holes as seasons shift.
+
+    **Reflection**
+
+    Adding locations clarified context.'
 evaluators:
-  - name: Output includes dense summary
-    string:
-      contains: 'Dense Summary'
+- name: Output includes dense summary
+  string:
+    contains: Dense Summary
+version: 0.1.0
+variables:
+- name: input
+  description: TODO
+  required: true

@@ -5,33 +5,60 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: >-
-      You are a Clinical Data Standards Specialist. Apply variable mapping to the provided raw datasets for each domain following CDISC standards and internal curation guidelines to generate SDTM-compliant datasets. Adhere to CDISC SDTM/ADaM standards.
-  - role: user
-    content: |-
-      Apply variable mapping to the provided raw datasets for each domain following CDISC standards and internal curation guidelines to generate SDTM-compliant datasets.
+- role: system
+  content: You are a Clinical Data Standards Specialist. Apply variable mapping to the provided raw datasets for each domain
+    following CDISC standards and internal curation guidelines to generate SDTM-compliant datasets. Adhere to CDISC SDTM/ADaM
+    standards.
+- role: user
+  content: 'Apply variable mapping to the provided raw datasets for each domain following CDISC standards and internal curation
+    guidelines to generate SDTM-compliant datasets.
 
-      Inputs:
-      - Raw datasets (schema/sample): `{{raw_data}}`
-      - Data curation internal guidelines: `{{curation_guidelines}}`
-      - Metadata definitions: `{{metadata_defs}}`
-      - Predefined Metadata Rules: `{{metadata_rules}}`
 
-      Output format:
-      Markdown Mapping Specifications Table (Source Variable -> Target Domain/Variable -> Transformation Logic).
+    Inputs:
+
+    - Raw datasets (schema/sample): `{{raw_data}}`
+
+    - Data curation internal guidelines: `{{curation_guidelines}}`
+
+    - Metadata definitions: `{{metadata_defs}}`
+
+    - Predefined Metadata Rules: `{{metadata_rules}}`
+
+
+    Output format:
+
+    Markdown Mapping Specifications Table (Source Variable -> Target Domain/Variable -> Transformation Logic).'
 testData:
-  - input: |
-      raw_data: "PatientID, DOB, Gender"
-      curation_guidelines: "Use DM domain"
-      metadata_defs: "DM.USUBJID, DM.BRTHDTC, DM.SEX"
-      metadata_rules: "ISO 8601 dates"
-    expected: |
-      | Source Variable | Target Variable | Transformation |
+- input: 'raw_data: "PatientID, DOB, Gender"
+
+    curation_guidelines: "Use DM domain"
+
+    metadata_defs: "DM.USUBJID, DM.BRTHDTC, DM.SEX"
+
+    metadata_rules: "ISO 8601 dates"
+
+    '
+  expected: '| Source Variable | Target Variable | Transformation |
+
+    '
 evaluators:
-  - name: Mapping Table
-    string:
-      contains: "| Source Variable |"
-  - name: SDTM Domain
-    string:
-      contains: "DM"
+- name: Mapping Table
+  string:
+    contains: '| Source Variable |'
+- name: SDTM Domain
+  string:
+    contains: DM
+version: 0.1.0
+variables:
+- name: curation_guidelines
+  description: TODO
+  required: true
+- name: metadata_defs
+  description: TODO
+  required: true
+- name: metadata_rules
+  description: TODO
+  required: true
+- name: raw_data
+  description: TODO
+  required: true

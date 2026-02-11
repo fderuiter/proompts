@@ -1,51 +1,76 @@
 ---
 name: Statistical Analysis Plan Draft Builder
-description: Create the initial draft of a Statistical Analysis Plan (SAP) for a
-  Phase II oncology trial.
+description: Create the initial draft of a Statistical Analysis Plan (SAP) for a Phase II oncology trial.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |-
-      You are an ICH E9–savvy biostatistician. The protocol synopsis is provided below.
+- role: system
+  content: 'You are an ICH E9–savvy biostatistician. The protocol synopsis is provided below.
 
-      """
-      {{protocol_synopsis}}
-      """
 
-      Ensure technical accuracy and clarity for regulatory review.
-  - role: user
-    content: |-
-      1. Outline study objectives and estimands.
-      2. Define analysis populations: ITT, PP, and Safety.
-      3. Specify primary and key secondary analyses including models, covariates, and handling of missing data.
-      4. Describe interim-analysis strategy and stopping boundaries.
-      5. Detail multiplicity control and Type I error allocation.
-      6. Provide Table, Listing, and Figure shells.
-      7. Include SAS-style pseudocode for each primary analysis.
-      8. Add a "Reviewer Checklist" box at the end of each major section.
-      9. Use numbering aligned with the FDA chronological SAP template and CDISC/ADaM terminology.
+    """
 
-      Inputs:
-      - `{{protocol_synopsis}}` – protocol synopsis text
+    {{protocol_synopsis}}
 
-      Output Format:
-      Markdown document with sections:
-      1. Objectives and estimands
-      2. Analysis populations (ITT, PP, Safety)
-      3. Primary and key secondary analyses
-      4. Interim-analysis strategy and stopping boundaries
-      5. Multiplicity control and Type I error allocation
-      6. Table, Listing and Figure shells
-      7. SAS-style pseudocode for primary analyses
-      8. Reviewer Checklist boxes
+    """
+
+
+    Ensure technical accuracy and clarity for regulatory review.'
+- role: user
+  content: '1. Outline study objectives and estimands.
+
+    2. Define analysis populations: ITT, PP, and Safety.
+
+    3. Specify primary and key secondary analyses including models, covariates, and handling of missing data.
+
+    4. Describe interim-analysis strategy and stopping boundaries.
+
+    5. Detail multiplicity control and Type I error allocation.
+
+    6. Provide Table, Listing, and Figure shells.
+
+    7. Include SAS-style pseudocode for each primary analysis.
+
+    8. Add a "Reviewer Checklist" box at the end of each major section.
+
+    9. Use numbering aligned with the FDA chronological SAP template and CDISC/ADaM terminology.
+
+
+    Inputs:
+
+    - `{{protocol_synopsis}}` – protocol synopsis text
+
+
+    Output Format:
+
+    Markdown document with sections:
+
+    1. Objectives and estimands
+
+    2. Analysis populations (ITT, PP, Safety)
+
+    3. Primary and key secondary analyses
+
+    4. Interim-analysis strategy and stopping boundaries
+
+    5. Multiplicity control and Type I error allocation
+
+    6. Table, Listing and Figure shells
+
+    7. SAS-style pseudocode for primary analyses
+
+    8. Reviewer Checklist boxes'
 testData:
-  - vars:
-      protocol_synopsis: example_protocol_synopsis
-    expected: |-
-      Markdown sections for Objectives and estimands and Analysis populations.
+- vars:
+    protocol_synopsis: example_protocol_synopsis
+  expected: Markdown sections for Objectives and estimands and Analysis populations.
 evaluators:
-  - name: Includes Objectives and estimands heading
-    string:
-      contains: "Objectives and estimands"
+- name: Includes Objectives and estimands heading
+  string:
+    contains: Objectives and estimands
+version: 0.1.0
+variables:
+- name: protocol_synopsis
+  description: TODO
+  required: true

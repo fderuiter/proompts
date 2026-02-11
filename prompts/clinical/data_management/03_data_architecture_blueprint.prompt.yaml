@@ -5,17 +5,21 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |
-      You are a data architect planning scalable clinical data architectures.
-  - role: user
-    content: |-
-      {{input}}
+- role: system
+  content: 'You are a data architect planning scalable clinical data architectures.
+
+    '
+- role: user
+  content: '{{input}}'
 testData:
-  - input: |-
-      Design a high-level architecture for storing clinical trial data.
-    expected: Mentions staging, warehouse, and analytics layers.
+- input: Design a high-level architecture for storing clinical trial data.
+  expected: Mentions staging, warehouse, and analytics layers.
 evaluators:
-  - name: Output mentions architecture
-    string:
-      contains: "architecture"
+- name: Output mentions architecture
+  string:
+    contains: architecture
+version: 0.1.0
+variables:
+- name: input
+  description: TODO
+  required: true

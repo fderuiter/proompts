@@ -1,32 +1,36 @@
 ---
 name: FDA MDR/MDV Adverse-Event Narrative
-description: '1. Extract: event date, patient age/sex, device identifiers, reporter
-  type.'
+description: '1. Extract: event date, patient age/sex, device identifiers, reporter type.'
 model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |-
-      1. Write a concise, chronological narrative (≤ 1 200 characters) that:
-         – Describes the event circumstances and patient impact.
-         – States whether the device malfunctioned and if it was returned.
-         – Includes any relevant concomitant products/procedures.
-      2. End with this boiler-plate sentence:
-         “This information is submitted to comply with 21 CFR 803.52.”
-  - role: user
-    content: |-
-      {{input}}
+- role: system
+  content: "1. Write a concise, chronological narrative (≤ 1 200 characters) that:\n   – Describes the event circumstances\
+    \ and patient impact.\n   – States whether the device malfunctioned and if it was returned.\n   – Includes any relevant\
+    \ concomitant products/procedures.\n2. End with this boiler-plate sentence:\n   “This information is submitted to comply\
+    \ with 21 CFR 803.52.”"
+- role: user
+  content: '{{input}}'
 testData:
-  - input: |
-      Event date: 2024-05-01
-      Patient: 34-year-old female
-      Device ID: 12345
-      Reporter: Physician
-      Device returned: No
-    expected: |-
-      Adverse Event Narrative: 34-year-old female experienced skin irritation; device not returned.
+- input: 'Event date: 2024-05-01
+
+    Patient: 34-year-old female
+
+    Device ID: 12345
+
+    Reporter: Physician
+
+    Device returned: No
+
+    '
+  expected: 'Adverse Event Narrative: 34-year-old female experienced skin irritation; device not returned.'
 evaluators:
-  - name: Output ends with boilerplate sentence
-    string:
-      endsWith: 'This information is submitted to comply with 21 CFR 803.52.'
+- name: Output ends with boilerplate sentence
+  string:
+    endsWith: This information is submitted to comply with 21 CFR 803.52.
+version: 0.1.0
+variables:
+- name: input
+  description: TODO
+  required: true

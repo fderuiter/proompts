@@ -5,21 +5,28 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |
-      You are a quality engineer establishing validation checks for clinical ETL
-      transformations.
-  - role: user
-    content: |-
-      Here is the ETL mapping specification:
-      {{etl_mapping_spec}}
+- role: system
+  content: 'You are a quality engineer establishing validation checks for clinical ETL
 
-      Based on this specification, define a comprehensive set of quality checks for the clinical ETL transformations.
+    transformations.
+
+    '
+- role: user
+  content: 'Here is the ETL mapping specification:
+
+    {{etl_mapping_spec}}
+
+
+    Based on this specification, define a comprehensive set of quality checks for the clinical ETL transformations.'
 testData:
-  - input: |-
-      List QC checks for transforming lab results data.
-    expected: Mentions range validations and format consistency.
+- input: List QC checks for transforming lab results data.
+  expected: Mentions range validations and format consistency.
 evaluators:
-  - name: Output mentions validation
-    string:
-      contains: "validation"
+- name: Output mentions validation
+  string:
+    contains: validation
+version: 0.1.0
+variables:
+- name: etl_mapping_spec
+  description: TODO
+  required: true

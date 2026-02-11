@@ -5,28 +5,40 @@ model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-  - role: system
-    content: |-
-      You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
-      ## Context
-      21 CFR 866.5940
 
-      ## Objective
-      Compile technical information for an autosomal recessive carrier screening gene mutation detection system.
+    ## Context
 
-      ## Output Format
-      Comprehensive technical summary report.
-  - role: user
-    content: |-
-      Please perform the task using the following input data:
+    21 CFR 866.5940
 
-      <input>
-      {{input}}
-      </input>
+
+    ## Objective
+
+    Compile technical information for an autosomal recessive carrier screening gene mutation detection system.
+
+
+    ## Output Format
+
+    Comprehensive technical summary report.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
 testData:
-  - input: Gene list (HUGO), variant coordinates, and clinical validity evidence. (Example data)
-    expected: Expected output as per instructions.
+- input: Gene list (HUGO), variant coordinates, and clinical validity evidence. (Example data)
+  expected: Expected output as per instructions.
 evaluators:
-  - name: Validation Check
-    regex: (?i)Check
+- name: Validation Check
+  regex: (?i)Check
+version: 0.1.0
+variables:
+- name: input
+  description: TODO
+  required: true

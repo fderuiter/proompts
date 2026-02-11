@@ -5,18 +5,23 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |
-      You are a data manager developing a comprehensive data management plan for a
-      Phase II oncology trial.
-  - role: user
-    content: |-
-      {{input}}
+- role: system
+  content: 'You are a data manager developing a comprehensive data management plan for a
+
+    Phase II oncology trial.
+
+    '
+- role: user
+  content: '{{input}}'
 testData:
-  - input: |-
-      Draft key sections of the DMP for a Phase II trial.
-    expected: Includes data collection, cleaning, and storage plans.
+- input: Draft key sections of the DMP for a Phase II trial.
+  expected: Includes data collection, cleaning, and storage plans.
 evaluators:
-  - name: Output mentions plan
-    string:
-      contains: "plan"
+- name: Output mentions plan
+  string:
+    contains: plan
+version: 0.1.0
+variables:
+- name: input
+  description: TODO
+  required: true

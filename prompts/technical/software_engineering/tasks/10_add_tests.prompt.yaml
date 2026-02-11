@@ -1,31 +1,42 @@
 ---
 name: Targeted Test Generation (OpenAI Codex)
-description: Add unit or integration tests for specified files on the current
-  branch.
+description: Add unit or integration tests for specified files on the current branch.
 model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |-
-      - Repository is already set up with a test framework.
-      - Caller lists target files requiring coverage.
+- role: system
+  content: '- Repository is already set up with a test framework.
 
-      1. For each file in {{files}}, outline behaviours to test.
-      2. Generate test stubs or full tests following project conventions.
-      3. Run the test suite and linters; report failures.
-      4. Suggest follow-up refactors if code is hard to test.
-      5. Provide commands for reproducing results locally.
+    - Caller lists target files requiring coverage.
 
-      If test dependencies are missing, note required installations or configuration changes.
-  - role: user
-    content: |-
-      {{input}}
+
+    1. For each file in {{files}}, outline behaviours to test.
+
+    2. Generate test stubs or full tests following project conventions.
+
+    3. Run the test suite and linters; report failures.
+
+    4. Suggest follow-up refactors if code is hard to test.
+
+    5. Provide commands for reproducing results locally.
+
+
+    If test dependencies are missing, note required installations or configuration changes.'
+- role: user
+  content: '{{input}}'
 testData:
-  - input: |-
-      files: [src/utils.py]
-    expected: Tests Added -
+- input: 'files: [src/utils.py]'
+  expected: Tests Added -
 evaluators:
-  - name: Output starts with 'Tests Added -'
-    string:
-      startsWith: 'Tests Added -'
+- name: Output starts with 'Tests Added -'
+  string:
+    startsWith: Tests Added -
+version: 0.1.0
+variables:
+- name: files
+  description: TODO
+  required: true
+- name: input
+  description: TODO
+  required: true

@@ -5,21 +5,27 @@ model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |-
-      1. List the critical 20 % concepts (max 7 bullets).
-      2. For each, show one real-world use that delivers 80 % of the value.
-      3. End with a 5-minute practice exercise I can do right now.
-  - role: user
-    content: |-
-      {{input}}
+- role: system
+  content: '1. List the critical 20 % concepts (max 7 bullets).
+
+    2. For each, show one real-world use that delivers 80 % of the value.
+
+    3. End with a 5-minute practice exercise I can do right now.'
+- role: user
+  content: '{{input}}'
 testData:
-  - input: Time management
-    expected: |-
-      - Focus on high-value tasks — finish reports first.
-      - Batch small chores to save time.
-      Practice exercise: Plan tomorrow using these steps.
+- input: Time management
+  expected: '- Focus on high-value tasks — finish reports first.
+
+    - Batch small chores to save time.
+
+    Practice exercise: Plan tomorrow using these steps.'
 evaluators:
-  - name: Output mentions practice exercise
-    string:
-      contains: 'Practice exercise'
+- name: Output mentions practice exercise
+  string:
+    contains: Practice exercise
+version: 0.1.0
+variables:
+- name: input
+  description: TODO
+  required: true

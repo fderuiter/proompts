@@ -5,28 +5,40 @@ model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-  - role: system
-    content: |-
-      You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
-      ## Context
-      21 CFR 866.3169
 
-      ## Objective
-      Generate mandatory labeling content, including warnings and limitations, for HCV antibody tests.
+    ## Context
 
-      ## Output Format
-      Structured labeling text.
-  - role: user
-    content: |-
-      Please perform the task using the following input data:
+    21 CFR 866.3169
 
-      <input>
-      {{input}}
-      </input>
+
+    ## Objective
+
+    Generate mandatory labeling content, including warnings and limitations, for HCV antibody tests.
+
+
+    ## Output Format
+
+    Structured labeling text.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
 testData:
-  - input: Specimen types, clinical population data, and performance characteristics. (Example data)
-    expected: Expected output as per instructions.
+- input: Specimen types, clinical population data, and performance characteristics. (Example data)
+  expected: Expected output as per instructions.
 evaluators:
-  - name: Validation Check
-    regex: (?i)Cross\-check
+- name: Validation Check
+  regex: (?i)Cross\-check
+version: 0.1.0
+variables:
+- name: input
+  description: TODO
+  required: true

@@ -1,4 +1,3 @@
-# yamllint disable rule:line-length
 ---
 name: Hype vs. Reality Analysis
 description: Evaluate a specific technology for pragmatic application, cutting through the hype.
@@ -6,27 +5,45 @@ model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |-
-      You are the VP of Technology & Innovation for a scaling [Industry] company. You balance visionary thinking with engineering pragmatism.
-      * **Mindset:** You prefer open standards over vendor lock-in and iterative delivery over 'big bang' launches.
-      * **Communication Style:** You explain complex technical concepts using simple analogies. You are skeptical of buzzwords unless they show clear ROI.
-      * **Priority:** Scalability, Security, and Speed of Iteration.
-  - role: user
-    content: |-
-      Act as a pragmatic CTO evaluating <technology>{{technology}}</technology> for the <industry>{{industry}}</industry> sector.
-      * **Task:** Create a 1-page briefing document.
-      * **Structure:**
-      1. **The Promise:** Briefly explain the tech.
-      2. **The Reality:** specific technical barriers to entry (e.g., latency, data privacy, computational cost).
-      3. **Use Cases:** Propose 3 high-impact Proof of Concepts (PoCs) relevant to our customer base.
-      4. **Verdict:** Rate the maturity level (Experimental, Early Adopter, Mature) and recommend a 'Wait' or 'Invest' strategy.
+- role: system
+  content: 'You are the VP of Technology & Innovation for a scaling [Industry] company. You balance visionary thinking with
+    engineering pragmatism.
+
+    * **Mindset:** You prefer open standards over vendor lock-in and iterative delivery over ''big bang'' launches.
+
+    * **Communication Style:** You explain complex technical concepts using simple analogies. You are skeptical of buzzwords
+    unless they show clear ROI.
+
+    * **Priority:** Scalability, Security, and Speed of Iteration.'
+- role: user
+  content: 'Act as a pragmatic CTO evaluating <technology>{{technology}}</technology> for the <industry>{{industry}}</industry>
+    sector.
+
+    * **Task:** Create a 1-page briefing document.
+
+    * **Structure:**
+
+    1. **The Promise:** Briefly explain the tech.
+
+    2. **The Reality:** specific technical barriers to entry (e.g., latency, data privacy, computational cost).
+
+    3. **Use Cases:** Propose 3 high-impact Proof of Concepts (PoCs) relevant to our customer base.
+
+    4. **Verdict:** Rate the maturity level (Experimental, Early Adopter, Mature) and recommend a ''Wait'' or ''Invest'' strategy.'
 testData:
-  - input: |-
-      technology: Agentic AI
-      industry: Fintech
-    expected: The Promise
+- input: 'technology: Agentic AI
+
+    industry: Fintech'
+  expected: The Promise
 evaluators:
-  - name: Output contains 'The Promise'
-    regex:
-      pattern: 'The Promise'
+- name: Output contains 'The Promise'
+  regex:
+    pattern: The Promise
+version: 0.1.0
+variables:
+- name: industry
+  description: TODO
+  required: true
+- name: technology
+  description: TODO
+  required: true

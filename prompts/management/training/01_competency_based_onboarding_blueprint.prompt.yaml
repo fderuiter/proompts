@@ -1,42 +1,42 @@
 ---
 name: Competency-Based Onboarding Blueprint
-description: Create an onboarding program that reduces time to independent monitoring
-  to six weeks or less.
+description: Create an onboarding program that reduces time to independent monitoring to six weeks or less.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: '- Approximately 120 new CRAs are onboarded each year across North America,
-      EU, and APAC.
+- role: system
+  content: '- Approximately 120 new CRAs are onboarded each year across North America, EU, and APAC.
 
-      - Current time to independent monitoring averages nine weeks.
+    - Current time to independent monitoring averages nine weeks.
 
-      - Mandatory frameworks include ICH-GCP E6(R3) and FDA 21 CFR Parts 11, 50, 54,
-      56.
+    - Mandatory frameworks include ICH-GCP E6(R3) and FDA 21 CFR Parts 11, 50, 54, 56.
 
 
-      1. Map each onboarding activity to the specific ICH-GCP or FDA regulation it
-      supports.
+    1. Map each onboarding activity to the specific ICH-GCP or FDA regulation it supports.
 
-      2. Use blended learning—micro-eLearning, virtual workshops, and coaching.
+    2. Use blended learning—micro-eLearning, virtual workshops, and coaching.
 
-      3. Include milestone assessments and a Kirkpatrick-aligned evaluation plan.
+    3. Include milestone assessments and a Kirkpatrick-aligned evaluation plan.
 
-      4. Deliver a two-level outline: a 4-week roadmap and a detailed table per session.
+    4. Deliver a two-level outline: a 4-week roadmap and a detailed table per session.
 
-      5. Highlight quick wins that reuse existing SOP modules.
+    5. Highlight quick wins that reuse existing SOP modules.
 
-      6. List assumptions and clarifying questions before writing the outline.
-
-
-      Provide the final output in Markdown only.'
-  - role: user
-    content: '- `{{existing_modules}}` – reference to reusable SOP content.
+    6. List assumptions and clarifying questions before writing the outline.
 
 
-      Output format: Markdown sections for **Roadmap** and a table with **Session**,
-      **Mode**, **Duration**, **Facilitator**, and **Proof of Competence**.'
+    Provide the final output in Markdown only.'
+- role: user
+  content: '- `{{existing_modules}}` – reference to reusable SOP content.
 
+
+    Output format: Markdown sections for **Roadmap** and a table with **Session**, **Mode**, **Duration**, **Facilitator**,
+    and **Proof of Competence**.'
 testData: []
 evaluators: []
+version: 0.1.0
+variables:
+- name: existing_modules
+  description: TODO
+  required: true

@@ -1,44 +1,53 @@
 ---
 name: EtO Sterilization Process FMEA
-description: >-
-  Facilitate a Failure Mode and Effects Analysis for an ethylene oxide sterilization
-  process.
+description: Facilitate a Failure Mode and Effects Analysis for an ethylene oxide sterilization process.
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: >-
-      You are a sterility-risk analyst reviewing a Category A EtO process
-      for a multilumen catheter.
+- role: system
+  content: 'You are a sterility-risk analyst reviewing a Category A EtO process for a multilumen catheter.
 
 
-      Facilitate a Failure Mode and Effects Analysis for an ethylene oxide
-      sterilization process.
-  - role: user
-    content: |-
-      - List each unit-operation step from preconditioning to aeration.
-      - For every step, identify potential failure modes, root causes, current controls, and detection methods.
-      - Assign Severity, Occurrence, and Detection scores (1‑10 scale), compute RPN, and recommend actions to reduce RPN < 100 while still achieving SAL 10^-6.
-      - Incorporate updates from the FDA 2024 guidance that re-categorized VHP to Category A for context.
+    Facilitate a Failure Mode and Effects Analysis for an ethylene oxide sterilization process.'
+- role: user
+  content: '- List each unit-operation step from preconditioning to aeration.
 
-      Inputs:
-      - `{{process_description}}` – overview of the EtO sterilization process.
+    - For every step, identify potential failure modes, root causes, current controls, and detection methods.
 
-      Output format:
-      Sortable Markdown table with columns: Step \| Failure Mode \| Cause \| S \| O \| D \| RPN \| Mitigation, followed by a bullet list summary of the three highest-risk failures.
+    - Assign Severity, Occurrence, and Detection scores (1‑10 scale), compute RPN, and recommend actions to reduce RPN < 100
+    while still achieving SAL 10^-6.
 
-      Additional notes:
-      Think step-by-step internally and share only the finished FMEA table and summary.
+    - Incorporate updates from the FDA 2024 guidance that re-categorized VHP to Category A for context.
+
+
+    Inputs:
+
+    - `{{process_description}}` – overview of the EtO sterilization process.
+
+
+    Output format:
+
+    Sortable Markdown table with columns: Step \| Failure Mode \| Cause \| S \| O \| D \| RPN \| Mitigation, followed by a
+    bullet list summary of the three highest-risk failures.
+
+
+    Additional notes:
+
+    Think step-by-step internally and share only the finished FMEA table and summary.'
 testData:
-  - vars:
-      process_description: example_process_description
-    expected: |-
-      Markdown table with FMEA columns followed by a bullet list summary.
+- vars:
+    process_description: example_process_description
+  expected: Markdown table with FMEA columns followed by a bullet list summary.
 evaluators:
-  - name: Contains RPN column
-    string:
-      contains: "| RPN |"
-  - name: Contains bullet list
-    string:
-      contains: "- "
+- name: Contains RPN column
+  string:
+    contains: '| RPN |'
+- name: Contains bullet list
+  string:
+    contains: '- '
+version: 0.1.0
+variables:
+- name: process_description
+  description: TODO
+  required: true

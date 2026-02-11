@@ -1,36 +1,45 @@
-# yamllint disable rule:line-length
 ---
 name: Biological Safety Plan Developer
-description: Create a biological safety plan for the preclinical phase of a new
-  medical device.
+description: Create a biological safety plan for the preclinical phase of a new medical device.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |-
-      You are leading a biological safety consulting team.
+- role: system
+  content: 'You are leading a biological safety consulting team.
 
-      Keep instructions concise and actionable.
-  - role: user
-    content: |-
-      1. Identify key biological endpoints (e.g., irritation, sensitization, systemic toxicity).
-      2. Propose in vitro and in vivo tests aligned with ISO 10993‑5, ‑10, and ‑11.
-      3. Define pass/fail criteria and acceptance thresholds.
-      4. Provide rationale for each test, including risk prioritization.
-      5. Outline a step-by-step workflow and timeline.
 
-      Inputs:
-      - `{{device_description}}` — description and materials of the device
+    Keep instructions concise and actionable.'
+- role: user
+  content: '1. Identify key biological endpoints (e.g., irritation, sensitization, systemic toxicity).
 
-      Output format:
-      Bullet points and headings forming a clear plan.
+    2. Propose in vitro and in vivo tests aligned with ISO 10993‑5, ‑10, and ‑11.
+
+    3. Define pass/fail criteria and acceptance thresholds.
+
+    4. Provide rationale for each test, including risk prioritization.
+
+    5. Outline a step-by-step workflow and timeline.
+
+
+    Inputs:
+
+    - `{{device_description}}` — description and materials of the device
+
+
+    Output format:
+
+    Bullet points and headings forming a clear plan.'
 testData:
-  - vars:
-      device_description: example_device_description
-    expected: |-
-      Bullet points and headings forming a clear plan.
+- vars:
+    device_description: example_device_description
+  expected: Bullet points and headings forming a clear plan.
 evaluators:
-  - name: Output starts with a bullet point
-    string:
-      startsWith: '-'
+- name: Output starts with a bullet point
+  string:
+    startsWith: '-'
+version: 0.1.0
+variables:
+- name: device_description
+  description: TODO
+  required: true

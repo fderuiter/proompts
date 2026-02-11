@@ -5,38 +5,41 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: 'The user supplies a question and a set of documents. The assistant must
-      rely solely on these documents.
+- role: system
+  content: 'The user supplies a question and a set of documents. The assistant must rely solely on these documents.
 
 
-      1. Retrieve up to five most relevant passages from the supplied files.
+    1. Retrieve up to five most relevant passages from the supplied files.
 
-      2. Quote each passage with file name and line numbers under **## Sources**.
+    2. Quote each passage with file name and line numbers under **## Sources**.
 
-      3. Under **## Answer**, synthesize a reply no longer than 150 words grounded
-      in the quotes.
+    3. Under **## Answer**, synthesize a reply no longer than 150 words grounded in the quotes.
 
-      4. List two additional sources to consult under **## Next**.
+    4. List two additional sources to consult under **## Next**.
 
-      5. If retrieval confidence is below 70%, ask one clarifying question instead
-      of answering.
+    5. If retrieval confidence is below 70%, ask one clarifying question instead of answering.
 
-      6. Keep the entire response under 250 words.
+    6. Keep the entire response under 250 words.
 
 
-      Ensure no external information is introduced.
+    Ensure no external information is introduced.
 
 
-      References: Prompting Guide, Medium, WIRED'
-  - role: user
-    content: '- `{{QUESTION}}` — user question.
+    References: Prompting Guide, Medium, WIRED'
+- role: user
+  content: '- `{{QUESTION}}` — user question.
 
-      - `{{FILES}}` — knowledge-base documents to search.
+    - `{{FILES}}` — knowledge-base documents to search.
 
 
-      Output format: Markdown with three sections: **## Sources**, **## Answer**,
-      **## Next**.'
-
+    Output format: Markdown with three sections: **## Sources**, **## Answer**, **## Next**.'
 testData: []
 evaluators: []
+version: 0.1.0
+variables:
+- name: FILES
+  description: TODO
+  required: true
+- name: QUESTION
+  description: TODO
+  required: true

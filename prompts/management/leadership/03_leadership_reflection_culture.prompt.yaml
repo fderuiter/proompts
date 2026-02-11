@@ -5,25 +5,27 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: 'The executive team wants a brief self-evaluation to align on culture
-      and expectations.
+- role: system
+  content: 'The executive team wants a brief self-evaluation to align on culture and expectations.
 
 
-      1. List core leadership values that define the CRO.
+    1. List core leadership values that define the CRO.
 
-      2. Highlight gaps or misalignments within the leadership team.
+    2. Highlight gaps or misalignments within the leadership team.
 
-      3. Recommend three actions for this quarter to enhance culture and cohesion.
-
-
-      Keep reflection points concise and prioritized.'
-  - role: user
-    content: '- `{{current_values}}` – existing leadership values or mission statements.
+    3. Recommend three actions for this quarter to enhance culture and cohesion.
 
 
-      Output format: Markdown sections titled **Values**, **Gaps**, and **Recommended
-      Actions**.'
+    Keep reflection points concise and prioritized.'
+- role: user
+  content: '- `{{current_values}}` – existing leadership values or mission statements.
 
+
+    Output format: Markdown sections titled **Values**, **Gaps**, and **Recommended Actions**.'
 testData: []
 evaluators: []
+version: 0.1.0
+variables:
+- name: current_values
+  description: TODO
+  required: true

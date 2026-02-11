@@ -1,37 +1,27 @@
 ---
 name: Prepare Pathology Slides and Reporting Plan
-description: >-
-  Plan slide preparation and review activities for a GLP cardiovascular
-  stent study.
+description: Plan slide preparation and review activities for a GLP cardiovascular stent study.
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: >-
-      You are designing a pathology workflow that assesses thrombogenicity,
-      endothelialization, and neointimal formation.
+- role: system
+  content: 'You are designing a pathology workflow that assesses thrombogenicity, endothelialization, and neointimal formation.
 
 
-      Plan slide preparation and review activities for a GLP cardiovascular
-      stent study.
-  - role: user
-    content: |-
-      1. List histology slide types, stains, sampling locations, and imaging needs (e.g., SEM, plastic embedding).
-      1. Outline a slide transfer and peer-review schedule with key milestones such as gross review, processing, first pathologist review, peer review, and sign-off.
-      1. Present the information in two tables:
-         - **Slides, Stains & Imaging**
-         - **Pathology Review Workflow** with timelines in days post‑necropsy.
-
-      Inputs:
-      - `{{interface_evaluation}}` – The device-tissue interface evaluation from the previous step.
-
-      Based on the provided evaluation, create a detailed plan for slide preparation and reporting.
-
-      Output format:
-      Two Markdown tables as described above.
-
-      Additional notes:
-      Keep the schedule concise and GLP compliant.
+    Plan slide preparation and review activities for a GLP cardiovascular stent study.'
+- role: user
+  content: "1. List histology slide types, stains, sampling locations, and imaging needs (e.g., SEM, plastic embedding).\n\
+    1. Outline a slide transfer and peer-review schedule with key milestones such as gross review, processing, first pathologist\
+    \ review, peer review, and sign-off.\n1. Present the information in two tables:\n   - **Slides, Stains & Imaging**\n \
+    \  - **Pathology Review Workflow** with timelines in days post‑necropsy.\n\nInputs:\n- `{{interface_evaluation}}` – The\
+    \ device-tissue interface evaluation from the previous step.\n\nBased on the provided evaluation, create a detailed plan\
+    \ for slide preparation and reporting.\n\nOutput format:\nTwo Markdown tables as described above.\n\nAdditional notes:\n\
+    Keep the schedule concise and GLP compliant."
 testData: []
 evaluators: []
+version: 0.1.0
+variables:
+- name: interface_evaluation
+  description: TODO
+  required: true

@@ -5,28 +5,40 @@ model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-  - role: system
-    content: |-
-      You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
-      ## Context
-      FDA/CMS Program
 
-      ## Objective
-      Draft an email requesting enrollment in the Parallel Review program.
+    ## Context
 
-      ## Output Format
-      Formal professional email.
-  - role: user
-    content: |-
-      Please perform the task using the following input data:
+    FDA/CMS Program
 
-      <input>
-      {{input}}
-      </input>
+
+    ## Objective
+
+    Draft an email requesting enrollment in the Parallel Review program.
+
+
+    ## Output Format
+
+    Formal professional email.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
 testData:
-  - input: Regulatory history and public health impact statement. (Example data)
-    expected: Expected output as per instructions.
+- input: Regulatory history and public health impact statement. (Example data)
+  expected: Expected output as per instructions.
 evaluators:
-  - name: Validation Check
-    regex: (?i)Check
+- name: Validation Check
+  regex: (?i)Check
+version: 0.1.0
+variables:
+- name: input
+  description: TODO
+  required: true

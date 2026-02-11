@@ -5,20 +5,27 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: Review the provided code snippet containing dynamic or brittle XPaths (e.g., '//div@class="dynamic-class"'). Refactor the locators to use By.id, CSS selectors targeting data-action attributes, or other robust selection strategies as per best practices.
-  - role: user
-    content: 'Optimize the following Selenium locators for stability.
+- role: system
+  content: Review the provided code snippet containing dynamic or brittle XPaths (e.g., '//div@class="dynamic-class"'). Refactor
+    the locators to use By.id, CSS selectors targeting data-action attributes, or other robust selection strategies as per
+    best practices.
+- role: user
+  content: 'Optimize the following Selenium locators for stability.
 
 
-      <locators>
+    <locators>
 
-      {{locators}}
+    {{locators}}
 
-      </locators>'
+    </locators>'
 testData:
-  - input: "locators: |\n  driver.findElement(By.xpath(\"//div[3]/span[2]\"));"
-    expected: By.id
+- input: "locators: |\n  driver.findElement(By.xpath(\"//div[3]/span[2]\"));"
+  expected: By.id
 evaluators:
-  - name: Suggests robust locators
-    regex: (By\.id|By\.cssSelector|data-)
+- name: Suggests robust locators
+  regex: (By\.id|By\.cssSelector|data-)
+version: 0.1.0
+variables:
+- name: locators
+  description: TODO
+  required: true

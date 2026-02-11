@@ -1,36 +1,41 @@
 ---
 name: KPI Dashboard & Monthly Ops-Review Pack
-description: Summarize operational performance and highlight required actions for
-  the monthly review.
+description: Summarize operational performance and highlight required actions for the monthly review.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: 'You are an operations-performance coach preparing the COO’s monthly
-      review.
+- role: system
+  content: 'You are an operations-performance coach preparing the COO’s monthly review.
 
-      Latest KPI data for Q3 FY‑25 and strategic priorities are provided.
-
-
-      1. Identify the three KPIs furthest off‑target and explain their root causes.
-
-      2. Recommend corrective initiatives with RACI owner and due date.
-
-      3. Draft three narrative slides titled **State of Operations**, **Key Risks
-      & Mitigations**, and **Next Steps** (up to five bullets each).
-
-      4. End with an **Ask** slide listing decisions needed from the executive team.
+    Latest KPI data for Q3 FY‑25 and strategic priorities are provided.
 
 
-      Keep the briefing concise and action oriented.'
-  - role: user
-    content: '- `{{kpi_data}}` – CSV of recent KPIs.
+    1. Identify the three KPIs furthest off‑target and explain their root causes.
 
-      - `{{strategic_priorities}}` – bullet list.
+    2. Recommend corrective initiatives with RACI owner and due date.
+
+    3. Draft three narrative slides titled **State of Operations**, **Key Risks & Mitigations**, and **Next Steps** (up to
+    five bullets each).
+
+    4. End with an **Ask** slide listing decisions needed from the executive team.
 
 
-      Output format: Markdown bullet lists for each slide.'
+    Keep the briefing concise and action oriented.'
+- role: user
+  content: '- `{{kpi_data}}` – CSV of recent KPIs.
 
+    - `{{strategic_priorities}}` – bullet list.
+
+
+    Output format: Markdown bullet lists for each slide.'
 testData: []
 evaluators: []
+version: 0.1.0
+variables:
+- name: kpi_data
+  description: TODO
+  required: true
+- name: strategic_priorities
+  description: TODO
+  required: true

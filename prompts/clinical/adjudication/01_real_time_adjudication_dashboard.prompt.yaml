@@ -1,43 +1,38 @@
-# yamllint disable rule:line-length
 ---
 name: Real-Time Adjudication Visibility Dashboard
-description: Design a dashboard that provides real-time visibility into clinical
-  endpoint adjudication workflows.
+description: Design a dashboard that provides real-time visibility into clinical endpoint adjudication workflows.
 model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |-
-      - Phase III cardiovascular device study with ~950 suspected events across 120 sites.
-      - A blinded Clinical Events Committee adjudicates each event.
-      - Stakeholders need immediate insight into blocked events and next actions.
+- role: system
+  content: '- Phase III cardiovascular device study with ~950 suspected events across 120 sites.
 
-      Ask clarifying questions if any requirement is unclear before producing the dashboard description.
-  - role: user
-    content: |-
-      1. Draft a textual workflow diagram from site submission to final CEC decision.
-      2. Define the minimal data model for a role-based dashboard showing:
-         - event aging in days
-         - disagreement rate
-         - percentage of dossiers missing required documents
-         - adjudicator workload
-      3. List five automated alerts or reminders that reduce turnaround time.
-      4. Recommend two commercial or open-source eAdjudication platforms and justify the choice.
+    - A blinded Clinical Events Committee adjudicates each event.
 
-      Output format:
-      - **Section 1:** Workflow diagram
-      - **Section 2:** Dashboard data model (table)
-      - **Section 3:** Alert rules (bullets)
-      - **Section 4:** Platform recommendations (table)
+    - Stakeholders need immediate insight into blocked events and next actions.
+
+
+    Ask clarifying questions if any requirement is unclear before producing the dashboard description.'
+- role: user
+  content: "1. Draft a textual workflow diagram from site submission to final CEC decision.\n2. Define the minimal data model\
+    \ for a role-based dashboard showing:\n   - event aging in days\n   - disagreement rate\n   - percentage of dossiers missing\
+    \ required documents\n   - adjudicator workload\n3. List five automated alerts or reminders that reduce turnaround time.\n\
+    4. Recommend two commercial or open-source eAdjudication platforms and justify the choice.\n\nOutput format:\n- **Section\
+    \ 1:** Workflow diagram\n- **Section 2:** Dashboard data model (table)\n- **Section 3:** Alert rules (bullets)\n- **Section\
+    \ 4:** Platform recommendations (table)"
 testData:
-  - input: ''
-    expected: |-
-      - **Section 1:** Workflow diagram
-      - **Section 2:** Dashboard data model (table)
-      - **Section 3:** Alert rules (bullets)
-      - **Section 4:** Platform recommendations (table)
+- input: ''
+  expected: '- **Section 1:** Workflow diagram
+
+    - **Section 2:** Dashboard data model (table)
+
+    - **Section 3:** Alert rules (bullets)
+
+    - **Section 4:** Platform recommendations (table)'
 evaluators:
-  - name: Output includes 'Section 1:'
-    string:
-      contains: 'Section 1:'
+- name: Output includes 'Section 1:'
+  string:
+    contains: 'Section 1:'
+version: 0.1.0
+variables: []

@@ -5,27 +5,38 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: >-
-      You are a Vendor Manager. Develop a Vendor Oversight Plan for a CRO managing monitoring services, including five key performance indicators for quality tracking and a review of the transfer of sponsor obligations.
-  - role: user
-    content: |-
-      Develop a Vendor Oversight Plan for a CRO managing monitoring services, including five key performance indicators for quality tracking and a review of the transfer of sponsor obligations.
+- role: system
+  content: You are a Vendor Manager. Develop a Vendor Oversight Plan for a CRO managing monitoring services, including five
+    key performance indicators for quality tracking and a review of the transfer of sponsor obligations.
+- role: user
+  content: 'Develop a Vendor Oversight Plan for a CRO managing monitoring services, including five key performance indicators
+    for quality tracking and a review of the transfer of sponsor obligations.
 
-      Inputs:
-      - `{{vendor_details}}`
 
-      Output format:
-      Markdown Vendor Oversight Plan.
+    Inputs:
+
+    - `{{vendor_details}}`
+
+
+    Output format:
+
+    Markdown Vendor Oversight Plan.'
 testData:
-  - input: |
-      vendor_details: CRO providing monitoring services.
-    expected: |
-      Vendor Oversight Plan
+- input: 'vendor_details: CRO providing monitoring services.
+
+    '
+  expected: 'Vendor Oversight Plan
+
+    '
 evaluators:
-  - name: Key Performance Indicators
-    string:
-      contains: "Key Performance Indicators"
-  - name: Transfer of Obligations
-    string:
-      contains: "Transfer of Obligations"
+- name: Key Performance Indicators
+  string:
+    contains: Key Performance Indicators
+- name: Transfer of Obligations
+  string:
+    contains: Transfer of Obligations
+version: 0.1.0
+variables:
+- name: vendor_details
+  description: TODO
+  required: true

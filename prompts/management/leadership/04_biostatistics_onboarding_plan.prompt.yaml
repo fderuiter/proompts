@@ -1,39 +1,42 @@
 ---
 name: 90-Day Biostatistics Onboarding Plan
-description: Design a structured program to move new statisticians from orientation
-  to productive project work in 90 days.
+description: Design a structured program to move new statisticians from orientation to productive project work in 90 days.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: 'You manage a global team of CRO biostatisticians. The plan must align
-      with departmental goals and support remote hires.
+- role: system
+  content: 'You manage a global team of CRO biostatisticians. The plan must align with departmental goals and support remote
+    hires.
 
 
-      1. Create a three-part table covering Days 1–30, 31–60, and 61–90.
+    1. Create a three-part table covering Days 1–30, 31–60, and 61–90.
 
-      2. Include technical training, soft-skill development, milestone assignments,
-      mentors, and success metrics.
+    2. Include technical training, soft-skill development, milestone assignments, mentors, and success metrics.
 
-      3. Keep total program length under 1,500 words.
+    3. Keep total program length under 1,500 words.
 
-      4. Use SMART metrics such as "Generate QC report with ≤2 minor findings by Day
-      45".
+    4. Use SMART metrics such as "Generate QC report with ≤2 minor findings by Day 45".
 
-      5. Add a column for remote-friendly adaptation.
+    5. Add a column for remote-friendly adaptation.
 
 
-      Ask clarifying questions before drafting to confirm team size and therapeutic
-      focus.'
-  - role: user
-    content: '- `{{cohort_size}}` – number of hires per onboarding cohort.
+    Ask clarifying questions before drafting to confirm team size and therapeutic focus.'
+- role: user
+  content: '- `{{cohort_size}}` – number of hires per onboarding cohort.
 
-      - `{{therapeutic_focus}}` – dominant therapeutic areas.
+    - `{{therapeutic_focus}}` – dominant therapeutic areas.
 
 
-      Output format: Markdown table with columns for **Timeline**, **Focus Areas**,
-      **Assignments**, **Mentors**, **Metrics**, and **Remote Adaptation**.'
-
+    Output format: Markdown table with columns for **Timeline**, **Focus Areas**, **Assignments**, **Mentors**, **Metrics**,
+    and **Remote Adaptation**.'
 testData: []
 evaluators: []
+version: 0.1.0
+variables:
+- name: cohort_size
+  description: TODO
+  required: true
+- name: therapeutic_focus
+  description: TODO
+  required: true

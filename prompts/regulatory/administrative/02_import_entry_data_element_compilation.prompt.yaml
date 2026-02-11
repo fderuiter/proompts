@@ -5,28 +5,40 @@ model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-  - role: system
-    content: |-
-      You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
-      ## Context
-      21 CFR Part 1 Subpart D
 
-      ## Objective
-      Compile required identifying information (510(k), UFI, NDC, NDA) for electronic import entry of drugs or devices.
+    ## Context
 
-      ## Output Format
-      JSON object or alphanumeric string.
-  - role: user
-    content: |-
-      Please perform the task using the following input data:
+    21 CFR Part 1 Subpart D
 
-      <input>
-      {{input}}
-      </input>
+
+    ## Objective
+
+    Compile required identifying information (510(k), UFI, NDC, NDA) for electronic import entry of drugs or devices.
+
+
+    ## Output Format
+
+    JSON object or alphanumeric string.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
 testData:
-  - input: Clearance documentation, registration numbers, and listing information. (Example data)
-    expected: Expected output as per instructions.
+- input: Clearance documentation, registration numbers, and listing information. (Example data)
+  expected: Expected output as per instructions.
 evaluators:
-  - name: Validation Check
-    regex: (?i)Check
+- name: Validation Check
+  regex: (?i)Check
+version: 0.1.0
+variables:
+- name: input
+  description: TODO
+  required: true

@@ -5,27 +5,38 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: >-
-      You are a Patient Advocacy Liaison. Summarize the technical results of this Phase III clinical trial into a lay language summary at a US 8th-grade reading level, ensuring all 10 key elements required by EU CTR Annex V are included.
-  - role: user
-    content: |-
-      Summarize the technical results of this Phase III clinical trial into a lay language summary at a US 8th-grade reading level, ensuring all 10 key elements required by EU CTR Annex V are included.
+- role: system
+  content: You are a Patient Advocacy Liaison. Summarize the technical results of this Phase III clinical trial into a lay
+    language summary at a US 8th-grade reading level, ensuring all 10 key elements required by EU CTR Annex V are included.
+- role: user
+  content: 'Summarize the technical results of this Phase III clinical trial into a lay language summary at a US 8th-grade
+    reading level, ensuring all 10 key elements required by EU CTR Annex V are included.
 
-      Inputs:
-      - `{{technical_results}}`
 
-      Output format:
-      Markdown Lay Summary.
+    Inputs:
+
+    - `{{technical_results}}`
+
+
+    Output format:
+
+    Markdown Lay Summary.'
 testData:
-  - input: |
-      technical_results: Primary endpoint met with p<0.05.
-    expected: |
-      Lay Summary
+- input: 'technical_results: Primary endpoint met with p<0.05.
+
+    '
+  expected: 'Lay Summary
+
+    '
 evaluators:
-  - name: 8th-grade reading level
-    string:
-      contains: "8th-grade reading level"
-  - name: EU CTR Annex V
-    string:
-      contains: "EU CTR Annex V"
+- name: 8th-grade reading level
+  string:
+    contains: 8th-grade reading level
+- name: EU CTR Annex V
+  string:
+    contains: EU CTR Annex V
+version: 0.1.0
+variables:
+- name: technical_results
+  description: TODO
+  required: true

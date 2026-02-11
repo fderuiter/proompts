@@ -1,43 +1,54 @@
 ---
 name: Eisenhower Matrix Coach
-description: >-
-  Triage a to-do list using the Eisenhower Matrix.
+description: Triage a to-do list using the Eisenhower Matrix.
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.7
 messages:
-  - role: system
-    content: >-
-      The user provides a list of tasks and wants them sorted by urgency
-      and importance.
+- role: system
+  content: 'The user provides a list of tasks and wants them sorted by urgency and importance.
 
 
-      Triage a to-do list using the Eisenhower Matrix.
-  - role: user
-    content: |-
-      1. Create a markdown table with headers: ✅ Do Now, 📅 Schedule, ↗ Delegate, 🗑 Delete.
-      1. Place each task in the appropriate quadrant and add a short reason.
-      1. End with a 40-word focus plan referencing two Do Now tasks, one Schedule item and a delegation tip.
+    Triage a to-do list using the Eisenhower Matrix.'
+- role: user
+  content: '1. Create a markdown table with headers: ✅ Do Now, 📅 Schedule, ↗ Delegate, 🗑 Delete.
 
-      Inputs:
-      - `{{tasks}}`: list of tasks to triage.
+    1. Place each task in the appropriate quadrant and add a short reason.
 
-      Output format:
-      Markdown table followed by the focus plan.
+    1. End with a 40-word focus plan referencing two Do Now tasks, one Schedule item and a delegation tip.
 
-      Additional notes:
-      Keep the entire reply under 150 words.
+
+    Inputs:
+
+    - `{{tasks}}`: list of tasks to triage.
+
+
+    Output format:
+
+    Markdown table followed by the focus plan.
+
+
+    Additional notes:
+
+    Keep the entire reply under 150 words.'
 testData:
-  - vars:
-      tasks: |-
-        Prepare presentation for Monday
-        Pay utility bill
-        Research vacation destinations
-        Organize desk
-    expected: |-
-      | ✅ Do Now | 📅 Schedule | ↗ Delegate | 🗑 Delete |
-      | --- | --- | --- | --- |
+- vars:
+    tasks: 'Prepare presentation for Monday
+
+      Pay utility bill
+
+      Research vacation destinations
+
+      Organize desk'
+  expected: '| ✅ Do Now | 📅 Schedule | ↗ Delegate | 🗑 Delete |
+
+    | --- | --- | --- | --- |'
 evaluators:
-  - name: Includes all four quadrants
-    string:
-      contains: '🗑 Delete'
+- name: Includes all four quadrants
+  string:
+    contains: 🗑 Delete
+version: 0.1.0
+variables:
+- name: tasks
+  description: TODO
+  required: true

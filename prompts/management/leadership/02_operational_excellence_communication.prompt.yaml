@@ -1,32 +1,33 @@
 ---
 name: Operational Excellence Communication Framework
-description: Improve collaboration between business development, clinical operations,
-  and data teams after contract award.
+description: Improve collaboration between business development, clinical operations, and data teams after contract award.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: 'The CRO requires a consistent governance structure across departments.
+- role: system
+  content: 'The CRO requires a consistent governance structure across departments.
 
 
-      1. Recommend communication channels and frequency.
+    1. Recommend communication channels and frequency.
 
-      2. Define roles and responsibilities.
+    2. Define roles and responsibilities.
 
-      3. Outline escalation pathways for issues.
+    3. Outline escalation pathways for issues.
 
-      4. Describe metrics to measure coordination effectiveness.
-
-
-      Keep guidance practical and easy to implement.'
-  - role: user
-    content: '- `{{current_processes}}` – short description of existing communication
-      practices.
+    4. Describe metrics to measure coordination effectiveness.
 
 
-      Output format: Markdown sections titled **Channels**, **Roles**, **Escalation**,
-      and **Metrics**.'
+    Keep guidance practical and easy to implement.'
+- role: user
+  content: '- `{{current_processes}}` – short description of existing communication practices.
 
+
+    Output format: Markdown sections titled **Channels**, **Roles**, **Escalation**, and **Metrics**.'
 testData: []
 evaluators: []
+version: 0.1.0
+variables:
+- name: current_processes
+  description: TODO
+  required: true

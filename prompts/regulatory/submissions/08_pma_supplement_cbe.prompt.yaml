@@ -5,18 +5,40 @@ model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-  - role: system
-    content: "You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.\n\n## Context\n21 CFR 814.39(d)\n\n## Objective\nDraft a 'Special PMA Supplement - Changes Being Effected' for safety warnings.\n\n## Output Format\nFormal letter marked 'Special PMA Supplement\u2014CBE'."
-  - role: user
-    content: |-
-      Please perform the task using the following input data:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
-      <input>
-      {{input}}
-      </input>
+
+    ## Context
+
+    21 CFR 814.39(d)
+
+
+    ## Objective
+
+    Draft a ''Special PMA Supplement - Changes Being Effected'' for safety warnings.
+
+
+    ## Output Format
+
+    Formal letter marked ''Special PMA Supplement—CBE''.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
 testData:
-  - input: New safety information and current labeling. (Example data)
-    expected: Expected output as per instructions.
+- input: New safety information and current labeling. (Example data)
+  expected: Expected output as per instructions.
 evaluators:
-  - name: Validation Check
-    regex: (?i)Compare
+- name: Validation Check
+  regex: (?i)Compare
+version: 0.1.0
+variables:
+- name: input
+  description: TODO
+  required: true

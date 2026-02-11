@@ -5,27 +5,38 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: >-
-      You are a TMF Specialist. Generate a checklist for the Trial Master File (TMF) based on the CDISC TMF Reference Model, categorizing documents required before, during, and after the clinical phase to ensure audit readiness.
-  - role: user
-    content: |-
-      Generate a checklist for the Trial Master File (TMF) based on the CDISC TMF Reference Model, categorizing documents required before, during, and after the clinical phase to ensure audit readiness.
+- role: system
+  content: You are a TMF Specialist. Generate a checklist for the Trial Master File (TMF) based on the CDISC TMF Reference
+    Model, categorizing documents required before, during, and after the clinical phase to ensure audit readiness.
+- role: user
+  content: 'Generate a checklist for the Trial Master File (TMF) based on the CDISC TMF Reference Model, categorizing documents
+    required before, during, and after the clinical phase to ensure audit readiness.
 
-      Inputs:
-      - `{{study_phase}}`
 
-      Output format:
-      Markdown TMF Checklist.
+    Inputs:
+
+    - `{{study_phase}}`
+
+
+    Output format:
+
+    Markdown TMF Checklist.'
 testData:
-  - input: |
-      study_phase: Study Start-up.
-    expected: |
-      TMF Checklist
+- input: 'study_phase: Study Start-up.
+
+    '
+  expected: 'TMF Checklist
+
+    '
 evaluators:
-  - name: CDISC TMF Reference Model
-    string:
-      contains: "CDISC TMF Reference Model"
-  - name: Audit Readiness
-    string:
-      contains: "Audit Readiness"
+- name: CDISC TMF Reference Model
+  string:
+    contains: CDISC TMF Reference Model
+- name: Audit Readiness
+  string:
+    contains: Audit Readiness
+version: 0.1.0
+variables:
+- name: study_phase
+  description: TODO
+  required: true

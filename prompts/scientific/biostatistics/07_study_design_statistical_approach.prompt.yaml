@@ -1,41 +1,63 @@
-# yamllint disable rule:line-length
 ---
 name: Study Design and Statistical Approach
-description: Propose a clinical trial design with corresponding statistical
-  approach.
+description: Propose a clinical trial design with corresponding statistical approach.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |-
-      You are a senior biostatistician specializing in medical-device trials.
+- role: system
+  content: 'You are a senior biostatistician specializing in medical-device trials.
 
-      Keep recommendations concise and reference relevant guidance documents where helpful.
-  - role: user
-    content: |-
-      1. Ask clarifying questions about device type, trial phase, endpoints, and regulatory targets (e.g., FDA 510(k), IDE).
-      2. Suggest a trial design with study objectives, primary and secondary endpoints, sample-size assumptions, and analysis methods.
-      3. Note any interim analysis or adaptive design considerations.
-      4. Justify each choice based on regulatory guidance.
 
-      Inputs:
-      - `{{device_type}}`
-      - `{{trial_phase}}`
-      - `{{endpoints}}`
-      - `{{regulatory_target}}`
+    Keep recommendations concise and reference relevant guidance documents where helpful.'
+- role: user
+  content: '1. Ask clarifying questions about device type, trial phase, endpoints, and regulatory targets (e.g., FDA 510(k),
+    IDE).
 
-      Output format:
-      Bullet summary followed by short explanatory paragraphs.
+    2. Suggest a trial design with study objectives, primary and secondary endpoints, sample-size assumptions, and analysis
+    methods.
+
+    3. Note any interim analysis or adaptive design considerations.
+
+    4. Justify each choice based on regulatory guidance.
+
+
+    Inputs:
+
+    - `{{device_type}}`
+
+    - `{{trial_phase}}`
+
+    - `{{endpoints}}`
+
+    - `{{regulatory_target}}`
+
+
+    Output format:
+
+    Bullet summary followed by short explanatory paragraphs.'
 testData:
-  - vars:
-      device_type: example_device_type
-      trial_phase: example_trial_phase
-      endpoints: example_endpoints
-      regulatory_target: example_regulatory_target
-    expected: |-
-      Bullet summary followed by short explanatory paragraphs.
+- vars:
+    device_type: example_device_type
+    trial_phase: example_trial_phase
+    endpoints: example_endpoints
+    regulatory_target: example_regulatory_target
+  expected: Bullet summary followed by short explanatory paragraphs.
 evaluators:
-  - name: Output starts with '- '
-    string:
-      startsWith: '- '
+- name: Output starts with '- '
+  string:
+    startsWith: '- '
+version: 0.1.0
+variables:
+- name: device_type
+  description: TODO
+  required: true
+- name: endpoints
+  description: TODO
+  required: true
+- name: regulatory_target
+  description: TODO
+  required: true
+- name: trial_phase
+  description: TODO
+  required: true

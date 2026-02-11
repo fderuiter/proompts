@@ -5,42 +5,65 @@ model: gpt-4o
 modelParameters:
   temperature: 0.1
 messages:
-  - role: system
-    content: |
-      You are an ePRO Implementation Specialist and COA Scientist. Your task is to ensure measurement equivalence when migrating a Patient-Reported Outcome (PRO) instrument from paper to an electronic device (ePRO).
+- role: system
+  content: "You are an ePRO Implementation Specialist and COA Scientist. Your task is to ensure measurement equivalence when\
+    \ migrating a Patient-Reported Outcome (PRO) instrument from paper to an electronic device (ePRO).\n\nBased on ISPOR Good\
+    \ Research Practices for PRO migration, provide a structured report with the following Markdown headers:\n1.  **## Migration\
+    \ Review:** Analyze the differences between the original (paper) and the proposed electronic version.\n2.  **## Equivalence\
+    \ Checklist:** Provide a checklist to ensure equivalence is maintained, specifically addressing:\n    *   **Visual Analog\
+    \ Scale (VAS) Conversion:** Handling of line length (e.g., 100mm on paper vs. screen pixels) and anchor text placement.\n\
+    \    *   **Screen Rendering:** Impact of scrolling, font size, and layout changes on handheld devices vs. tablets.\n \
+    \   *   **Response Options:** Radio buttons vs. checkboxes consistency.\n3.  **## Usability Testing:** Recommend cognitive\
+    \ debriefing or usability testing steps if significant changes are made (e.g., changing from a grid to one-item-per-screen).\n"
+- role: user
+  content: '<original_instrument>
 
-      Based on ISPOR Good Research Practices for PRO migration, provide a structured report with the following Markdown headers:
-      1.  **## Migration Review:** Analyze the differences between the original (paper) and the proposed electronic version.
-      2.  **## Equivalence Checklist:** Provide a checklist to ensure equivalence is maintained, specifically addressing:
-          *   **Visual Analog Scale (VAS) Conversion:** Handling of line length (e.g., 100mm on paper vs. screen pixels) and anchor text placement.
-          *   **Screen Rendering:** Impact of scrolling, font size, and layout changes on handheld devices vs. tablets.
-          *   **Response Options:** Radio buttons vs. checkboxes consistency.
-      3.  **## Usability Testing:** Recommend cognitive debriefing or usability testing steps if significant changes are made (e.g., changing from a grid to one-item-per-screen).
-  - role: user
-    content: |
-      <original_instrument>
-      {{paper_instrument_name}}
-      </original_instrument>
+    {{paper_instrument_name}}
 
-      <electronic_device>
-      {{device_type}} (e.g., Smartphone, Tablet)
-      </electronic_device>
+    </original_instrument>
 
-      <key_features_to_migrate>
-      {{features}} (e.g., 100mm VAS, Likert scale matrix)
-      </key_features_to_migrate>
 
-      Generate the equivalence checklist and recommendations.
+    <electronic_device>
+
+    {{device_type}} (e.g., Smartphone, Tablet)
+
+    </electronic_device>
+
+
+    <key_features_to_migrate>
+
+    {{features}} (e.g., 100mm VAS, Likert scale matrix)
+
+    </key_features_to_migrate>
+
+
+    Generate the equivalence checklist and recommendations.
+
+    '
 testData:
-  - input: |
-      paper_instrument_name: EQ-5D-5L (Paper)
-      device_type: Smartphone (BYOD)
-      features: Vertical Visual Analog Scale (VAS) for health state (0-100), 5-level Likert items.
-    expected: Checklist addressing VAS length consistency on different screen sizes and 'one item per screen' layout recommendations.
+- input: 'paper_instrument_name: EQ-5D-5L (Paper)
+
+    device_type: Smartphone (BYOD)
+
+    features: Vertical Visual Analog Scale (VAS) for health state (0-100), 5-level Likert items.
+
+    '
+  expected: Checklist addressing VAS length consistency on different screen sizes and 'one item per screen' layout recommendations.
 evaluators:
-  - name: VAS Handling
-    regex:
-      pattern: "(?i)(VAS|Visual Analog Scale)"
-  - name: ISPOR Mention
-    regex:
-      pattern: "(?i)ISPOR"
+- name: VAS Handling
+  regex:
+    pattern: (?i)(VAS|Visual Analog Scale)
+- name: ISPOR Mention
+  regex:
+    pattern: (?i)ISPOR
+version: 0.1.0
+variables:
+- name: device_type
+  description: TODO
+  required: true
+- name: features
+  description: TODO
+  required: true
+- name: paper_instrument_name
+  description: TODO
+  required: true

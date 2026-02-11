@@ -1,36 +1,46 @@
-# yamllint disable rule:line-length
 ---
 name: Objective Skills Assessment
-description: Design an objective skills checklist for a surgical stapler
-  deployment lab.
+description: Design an objective skills checklist for a surgical stapler deployment lab.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |-
-      You are an expert clinical educator. The trainee will apply an endoscopic stapler on tissue analog.
+- role: system
+  content: 'You are an expert clinical educator. The trainee will apply an endoscopic stapler on tissue analog.
 
-      Leave placeholder rows for customization if details are missing.
-  - role: user
-    content: |-
-      1. Select 6–8 measurable criteria that demonstrate proficiency.
-      2. Define pass thresholds for each criterion.
-      3. Present the checklist in a table.
 
-      Inputs:
-      - `{{procedure_name}}` — specific stapler procedure if provided
+    Leave placeholder rows for customization if details are missing.'
+- role: user
+  content: '1. Select 6–8 measurable criteria that demonstrate proficiency.
 
-      Output format:
-      Markdown table:
+    2. Define pass thresholds for each criterion.
 
-      | Criterion | Description | Pass threshold |
-      |-----------|-------------|----------------|
+    3. Present the checklist in a table.
+
+
+    Inputs:
+
+    - `{{procedure_name}}` — specific stapler procedure if provided
+
+
+    Output format:
+
+    Markdown table:
+
+
+    | Criterion | Description | Pass threshold |
+
+    |-----------|-------------|----------------|'
 testData:
-  - vars:
-      procedure_name: example_procedure_name
-    expected: "Markdown table:"
+- vars:
+    procedure_name: example_procedure_name
+  expected: 'Markdown table:'
 evaluators:
-  - name: Output starts with 'Markdown table:'
-    string:
-      startsWith: "Markdown table:"
+- name: Output starts with 'Markdown table:'
+  string:
+    startsWith: 'Markdown table:'
+version: 0.1.0
+variables:
+- name: procedure_name
+  description: TODO
+  required: true

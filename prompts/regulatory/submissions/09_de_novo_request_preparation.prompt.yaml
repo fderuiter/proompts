@@ -5,28 +5,40 @@ model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-  - role: system
-    content: |-
-      You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
-      ## Context
-      21 CFR Part 860 Subpart D
 
-      ## Objective
-      Generate a summary of risks and mitigations for a De Novo classification request.
+    ## Context
 
-      ## Output Format
-      Structured table or list.
-  - role: user
-    content: |-
-      Please perform the task using the following input data:
+    21 CFR Part 860 Subpart D
 
-      <input>
-      {{input}}
-      </input>
+
+    ## Objective
+
+    Generate a summary of risks and mitigations for a De Novo classification request.
+
+
+    ## Output Format
+
+    Structured table or list.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
 testData:
-  - input: Probable risks and proposed mitigation measures. (Example data)
-    expected: Expected output as per instructions.
+- input: Probable risks and proposed mitigation measures. (Example data)
+  expected: Expected output as per instructions.
 evaluators:
-  - name: Validation Check
-    regex: (?i)Review
+- name: Validation Check
+  regex: (?i)Review
+version: 0.1.0
+variables:
+- name: input
+  description: TODO
+  required: true

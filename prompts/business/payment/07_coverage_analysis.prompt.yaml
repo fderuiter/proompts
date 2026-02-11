@@ -5,27 +5,38 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: >-
-      You are a Reimbursement Analyst. Compare the study protocol's schedule of events with Medicare routine care guidelines to determine which labs should be billed to the research account vs. patient insurance. Adhere to Medicare NCD 310.1.
-  - role: user
-    content: |-
-      Compare the study protocol's schedule of events with Medicare routine care guidelines to determine which labs should be billed to the research account vs. patient insurance.
+- role: system
+  content: You are a Reimbursement Analyst. Compare the study protocol's schedule of events with Medicare routine care guidelines
+    to determine which labs should be billed to the research account vs. patient insurance. Adhere to Medicare NCD 310.1.
+- role: user
+  content: 'Compare the study protocol''s schedule of events with Medicare routine care guidelines to determine which labs
+    should be billed to the research account vs. patient insurance.
 
-      Inputs:
-      - `{{schedule_of_events}}`
 
-      Output format:
-      Markdown Coverage Analysis Matrix.
+    Inputs:
+
+    - `{{schedule_of_events}}`
+
+
+    Output format:
+
+    Markdown Coverage Analysis Matrix.'
 testData:
-  - input: |
-      schedule_of_events: Routine CBC and Chemistry.
-    expected: |
-      Coverage Analysis
+- input: 'schedule_of_events: Routine CBC and Chemistry.
+
+    '
+  expected: 'Coverage Analysis
+
+    '
 evaluators:
-  - name: Billing Justification
-    string:
-      contains: "Billing Justification"
-  - name: Medicare Guidelines
-    string:
-      contains: "Medicare Guidelines"
+- name: Billing Justification
+  string:
+    contains: Billing Justification
+- name: Medicare Guidelines
+  string:
+    contains: Medicare Guidelines
+version: 0.1.0
+variables:
+- name: schedule_of_events
+  description: TODO
+  required: true

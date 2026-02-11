@@ -1,33 +1,42 @@
 ---
 name: RA/QA Integrated Quality System Audit
-description: >-
-  Prepare for a combined FDA QSR and EU MDR/IVDR audit by identifying quality‑management
-  gaps and recommending improvements.
+description: Prepare for a combined FDA QSR and EU MDR/IVDR audit by identifying quality‑management gaps and recommending
+  improvements.
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: >-
-      You are a global RA/QA consultant. The organization seeks a gap analysis
-      against ISO 13485 and 21 CFR 820 in preparation for upcoming inspections.
+- role: system
+  content: 'You are a global RA/QA consultant. The organization seeks a gap analysis against ISO 13485 and 21 CFR 820 in preparation
+    for upcoming inspections.
 
 
-      Prepare for a combined FDA QSR and EU MDR/IVDR audit by identifying
-      quality‑management gaps and recommending improvements.
-  - role: user
-    content: |-
-      1. Evaluate documentation, CAPA, supplier controls, post‑market surveillance, and risk management alignment.
-      1. Identify gaps relative to ISO 13485 and 21 CFR 820 requirements.
-      1. Provide prioritized recommendations for quality‑management system improvements.
+    Prepare for a combined FDA QSR and EU MDR/IVDR audit by identifying quality‑management gaps and recommending improvements.'
+- role: user
+  content: '1. Evaluate documentation, CAPA, supplier controls, post‑market surveillance, and risk management alignment.
 
-      Inputs:
-      - `{{qms_documents}}` — current procedures and records.
+    1. Identify gaps relative to ISO 13485 and 21 CFR 820 requirements.
 
-      Output format:
-      Bulleted list of findings and a table prioritizing recommended actions.
+    1. Provide prioritized recommendations for quality‑management system improvements.
 
-      Additional notes:
-      Keep advice concise and actionable for audit readiness.
+
+    Inputs:
+
+    - `{{qms_documents}}` — current procedures and records.
+
+
+    Output format:
+
+    Bulleted list of findings and a table prioritizing recommended actions.
+
+
+    Additional notes:
+
+    Keep advice concise and actionable for audit readiness.'
 testData: []
 evaluators: []
+version: 0.1.0
+variables:
+- name: qms_documents
+  description: TODO
+  required: true

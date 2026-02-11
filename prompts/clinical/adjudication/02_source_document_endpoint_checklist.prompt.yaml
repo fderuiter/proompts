@@ -1,38 +1,50 @@
-# yamllint disable rule:line-length
 ---
 name: Source Document and Endpoint Checklist
-description: Create a clear checklist of required documents and endpoint
-  criteria for clinical adjudication.
+description: Create a clear checklist of required documents and endpoint criteria for clinical adjudication.
 model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |-
-      - Draft adjudication charter lists seven primary endpoints but lacks detail on required source documents.
-      - Adjudicators previously received incomplete packages.
+- role: system
+  content: '- Draft adjudication charter lists seven primary endpoints but lacks detail on required source documents.
 
-      Ask any clarifying questions before generating the checklist.
-  - role: user
-    content: |-
-      1. For each endpoint, build a checklist of required documents including imaging, labs, and narrative notes with formatting rules.
-      2. Convert each endpoint definition into binary inclusion or exclusion criteria.
-      3. Suggest concise form-field wording (≤50 characters) for EDC alignment.
-      4. Flag ambiguous language in the draft charter that needs clarification from the sponsor.
+    - Adjudicators previously received incomplete packages.
 
-      Inputs:
-      - `{{charter_excerpt}}` – relevant sections of the adjudication charter.
 
-      Output format:
-      - Markdown table per endpoint with columns: *Doc Type*, *Required?*, *Acceptable Formats*, *Notes*.
-      - Numbered list of **Clarification Needed** items.
+    Ask any clarifying questions before generating the checklist.'
+- role: user
+  content: '1. For each endpoint, build a checklist of required documents including imaging, labs, and narrative notes with
+    formatting rules.
+
+    2. Convert each endpoint definition into binary inclusion or exclusion criteria.
+
+    3. Suggest concise form-field wording (≤50 characters) for EDC alignment.
+
+    4. Flag ambiguous language in the draft charter that needs clarification from the sponsor.
+
+
+    Inputs:
+
+    - `{{charter_excerpt}}` – relevant sections of the adjudication charter.
+
+
+    Output format:
+
+    - Markdown table per endpoint with columns: *Doc Type*, *Required?*, *Acceptable Formats*, *Notes*.
+
+    - Numbered list of **Clarification Needed** items.'
 testData:
-  - vars:
-      charter_excerpt: example_charter_excerpt
-    expected: |-
-      - Markdown table per endpoint with columns: *Doc Type*, *Required?*, *Acceptable Formats*, *Notes*.
-      - Numbered list of **Clarification Needed** items.
+- vars:
+    charter_excerpt: example_charter_excerpt
+  expected: '- Markdown table per endpoint with columns: *Doc Type*, *Required?*, *Acceptable Formats*, *Notes*.
+
+    - Numbered list of **Clarification Needed** items.'
 evaluators:
-  - name: Output includes 'Clarification Needed'
-    string:
-      contains: 'Clarification Needed'
+- name: Output includes 'Clarification Needed'
+  string:
+    contains: Clarification Needed
+version: 0.1.0
+variables:
+- name: charter_excerpt
+  description: TODO
+  required: true

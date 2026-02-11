@@ -5,30 +5,41 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: >-
-      You are a Data Management Lead. Review all Case Report Forms (CRFs) for this trial and identify any missing pages, duplicate entries, or unresolved queries to ensure the database is ready for locking. Adhere to 21 CFR Part 11 and GCP.
-  - role: user
-    content: |-
-      Review all Case Report Forms (CRFs) for this trial and identify any missing pages, duplicate entries, or unresolved queries to ensure the database is ready for locking.
+- role: system
+  content: You are a Data Management Lead. Review all Case Report Forms (CRFs) for this trial and identify any missing pages,
+    duplicate entries, or unresolved queries to ensure the database is ready for locking. Adhere to 21 CFR Part 11 and GCP.
+- role: user
+  content: 'Review all Case Report Forms (CRFs) for this trial and identify any missing pages, duplicate entries, or unresolved
+    queries to ensure the database is ready for locking.
 
-      Inputs:
-      - `{{crf_status}}`
 
-      Output format:
-      Markdown Database Lock Readiness Report.
+    Inputs:
+
+    - `{{crf_status}}`
+
+
+    Output format:
+
+    Markdown Database Lock Readiness Report.'
 testData:
-  - input: |
-      crf_status: All pages entered, 3 pending queries.
-    expected: |
-      Database Lock Readiness
+- input: 'crf_status: All pages entered, 3 pending queries.
+
+    '
+  expected: 'Database Lock Readiness
+
+    '
 evaluators:
-  - name: Missing Pages
-    string:
-      contains: "Missing Pages"
-  - name: Unresolved Queries
-    string:
-      contains: "Unresolved Queries"
-  - name: Database Lock
-    string:
-      contains: "Database Lock"
+- name: Missing Pages
+  string:
+    contains: Missing Pages
+- name: Unresolved Queries
+  string:
+    contains: Unresolved Queries
+- name: Database Lock
+  string:
+    contains: Database Lock
+version: 0.1.0
+variables:
+- name: crf_status
+  description: TODO
+  required: true

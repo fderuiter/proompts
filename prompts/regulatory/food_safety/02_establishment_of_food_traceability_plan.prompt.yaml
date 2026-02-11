@@ -5,28 +5,40 @@ model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-  - role: system
-    content: |-
-      You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
-      ## Context
-      21 CFR Part 1 Subpart S
 
-      ## Objective
-      Create a structured traceability plan for a facility handling foods on the Food Traceability List.
+    ## Context
 
-      ## Output Format
-      Structured text document with sections for procedures and identification.
-  - role: user
-    content: |-
-      Please perform the task using the following input data:
+    21 CFR Part 1 Subpart S
 
-      <input>
-      {{input}}
-      </input>
+
+    ## Objective
+
+    Create a structured traceability plan for a facility handling foods on the Food Traceability List.
+
+
+    ## Output Format
+
+    Structured text document with sections for procedures and identification.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
 testData:
-  - input: List of foods handled, record maintenance procedures, and contact information. (Example data)
-    expected: Expected output as per instructions.
+- input: List of foods handled, record maintenance procedures, and contact information. (Example data)
+  expected: Expected output as per instructions.
 evaluators:
-  - name: Validation Check
-    regex: (?i)Ensure
+- name: Validation Check
+  regex: (?i)Ensure
+version: 0.1.0
+variables:
+- name: input
+  description: TODO
+  required: true

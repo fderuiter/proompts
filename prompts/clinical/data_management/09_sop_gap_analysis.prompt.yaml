@@ -5,17 +5,21 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |
-      You are a process auditor evaluating data management SOPs to identify gaps.
-  - role: user
-    content: |-
-      {{input}}
+- role: system
+  content: 'You are a process auditor evaluating data management SOPs to identify gaps.
+
+    '
+- role: user
+  content: '{{input}}'
 testData:
-  - input: |-
-      Review SOPs for data entry processes.
-    expected: Identifies missing version controls.
+- input: Review SOPs for data entry processes.
+  expected: Identifies missing version controls.
 evaluators:
-  - name: Output mentions SOP
-    string:
-      contains: "SOP"
+- name: Output mentions SOP
+  string:
+    contains: SOP
+version: 0.1.0
+variables:
+- name: input
+  description: TODO
+  required: true

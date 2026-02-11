@@ -5,18 +5,23 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |
-      You are a compliance analyst evaluating clinical data management processes
-      for regulatory gaps.
-  - role: user
-    content: |-
-      {{input}}
+- role: system
+  content: 'You are a compliance analyst evaluating clinical data management processes
+
+    for regulatory gaps.
+
+    '
+- role: user
+  content: '{{input}}'
 testData:
-  - input: |-
-      Review data workflow for GDPR compliance.
-    expected: Highlights missing consent records.
+- input: Review data workflow for GDPR compliance.
+  expected: Highlights missing consent records.
 evaluators:
-  - name: Output mentions compliance
-    string:
-      contains: "compliance"
+- name: Output mentions compliance
+  string:
+    contains: compliance
+version: 0.1.0
+variables:
+- name: input
+  description: TODO
+  required: true

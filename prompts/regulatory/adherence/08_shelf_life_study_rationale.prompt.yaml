@@ -5,28 +5,40 @@ model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-  - role: system
-    content: |-
-      You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
-      ## Context
-      21 CFR Part 801
 
-      ## Objective
-      Draft a rationale for correlating accelerated aging data with real-time requirements.
+    ## Context
 
-      ## Output Format
-      Formal technical report.
-  - role: user
-    content: |-
-      Please perform the task using the following input data:
+    21 CFR Part 801
 
-      <input>
-      {{input}}
-      </input>
+
+    ## Objective
+
+    Draft a rationale for correlating accelerated aging data with real-time requirements.
+
+
+    ## Output Format
+
+    Formal technical report.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
 testData:
-  - input: Material stability data, packaging type, and aging protocols. (Example data)
-    expected: Expected output as per instructions.
+- input: Material stability data, packaging type, and aging protocols. (Example data)
+  expected: Expected output as per instructions.
 evaluators:
-  - name: Validation Check
-    regex: (?i)Evaluate
+- name: Validation Check
+  regex: (?i)Evaluate
+version: 0.1.0
+variables:
+- name: input
+  description: TODO
+  required: true

@@ -5,23 +5,34 @@ model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |-
-      - Check for: duplicated fields, ambiguous wording, inconsistent units, uncontrolled text boxes, and mis-aligned visit windows.
-      - For each issue, suggest a concrete fix and cite the relevant guideline section.
-      - Summarise the overall risk level (low / moderate / high).
-      - Return your findings as a two-column Markdown table with columns "Issue" and "Recommended Fix".
-      - Reflect step-by-step before producing the table.
-  - role: user
-    content: |-
-      {{input}}
+- role: system
+  content: '- Check for: duplicated fields, ambiguous wording, inconsistent units, uncontrolled text boxes, and mis-aligned
+    visit windows.
+
+    - For each issue, suggest a concrete fix and cite the relevant guideline section.
+
+    - Summarise the overall risk level (low / moderate / high).
+
+    - Return your findings as a two-column Markdown table with columns "Issue" and "Recommended Fix".
+
+    - Reflect step-by-step before producing the table.'
+- role: user
+  content: '{{input}}'
 testData:
-  - input: |
-      Demographics form lists Age twice.
-    expected: |
-      | Issue | Recommended Fix |
-      | Duplicate field 'Age' | Remove one instance to avoid confusion. |
+- input: 'Demographics form lists Age twice.
+
+    '
+  expected: '| Issue | Recommended Fix |
+
+    | Duplicate field ''Age'' | Remove one instance to avoid confusion. |
+
+    '
 evaluators:
-  - name: Should flag duplicate field
-    string:
-      contains: Duplicate field
+- name: Should flag duplicate field
+  string:
+    contains: Duplicate field
+version: 0.1.0
+variables:
+- name: input
+  description: TODO
+  required: true

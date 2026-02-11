@@ -5,27 +5,39 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: >-
-      You are a Clinical Research Coordinator. Scan clinical trial logs for non-compliance with the approved protocol and draft the necessary Protocol Deviation Form entries for review within the 10-day reporting window. Suggest mitigation strategies.
-  - role: user
-    content: |-
-      Scan clinical trial logs for non-compliance with the approved protocol and draft the necessary Protocol Deviation Form entries for review within the 10-day reporting window.
+- role: system
+  content: You are a Clinical Research Coordinator. Scan clinical trial logs for non-compliance with the approved protocol
+    and draft the necessary Protocol Deviation Form entries for review within the 10-day reporting window. Suggest mitigation
+    strategies.
+- role: user
+  content: 'Scan clinical trial logs for non-compliance with the approved protocol and draft the necessary Protocol Deviation
+    Form entries for review within the 10-day reporting window.
 
-      Inputs:
-      - `{{trial_logs}}`
 
-      Output format:
-      Markdown Protocol Deviation Form.
+    Inputs:
+
+    - `{{trial_logs}}`
+
+
+    Output format:
+
+    Markdown Protocol Deviation Form.'
 testData:
-  - input: |
-      trial_logs: Patient missed visit window by 3 days.
-    expected: |
-      Protocol Deviation Form
+- input: 'trial_logs: Patient missed visit window by 3 days.
+
+    '
+  expected: 'Protocol Deviation Form
+
+    '
 evaluators:
-  - name: Protocol Deviation
-    string:
-      contains: "Protocol Deviation"
-  - name: Mitigation Strategy
-    string:
-      contains: "Mitigation Strategy"
+- name: Protocol Deviation
+  string:
+    contains: Protocol Deviation
+- name: Mitigation Strategy
+  string:
+    contains: Mitigation Strategy
+version: 0.1.0
+variables:
+- name: trial_logs
+  description: TODO
+  required: true

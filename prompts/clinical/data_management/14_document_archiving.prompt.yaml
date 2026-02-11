@@ -5,27 +5,38 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: >-
-      You are a Records Manager. Develop an archival strategy for the Trial Master File (TMF) that includes environmental monitoring requirements and a 15-year data retention schedule. Ensure compliance with ICH GCP Section 8.
-  - role: user
-    content: |-
-      Develop an archival strategy for the Trial Master File (TMF) that includes environmental monitoring requirements and a 15-year data retention schedule.
+- role: system
+  content: You are a Records Manager. Develop an archival strategy for the Trial Master File (TMF) that includes environmental
+    monitoring requirements and a 15-year data retention schedule. Ensure compliance with ICH GCP Section 8.
+- role: user
+  content: 'Develop an archival strategy for the Trial Master File (TMF) that includes environmental monitoring requirements
+    and a 15-year data retention schedule.
 
-      Inputs:
-      - `{{tmf_details}}`
 
-      Output format:
-      Markdown Archival Strategy.
+    Inputs:
+
+    - `{{tmf_details}}`
+
+
+    Output format:
+
+    Markdown Archival Strategy.'
 testData:
-  - input: |
-      tmf_details: Paper and electronic records.
-    expected: |
-      Archival Strategy
+- input: 'tmf_details: Paper and electronic records.
+
+    '
+  expected: 'Archival Strategy
+
+    '
 evaluators:
-  - name: Retention Schedule
-    string:
-      contains: "Retention Schedule"
-  - name: Environmental Monitoring
-    string:
-      contains: "Environmental Monitoring"
+- name: Retention Schedule
+  string:
+    contains: Retention Schedule
+- name: Environmental Monitoring
+  string:
+    contains: Environmental Monitoring
+version: 0.1.0
+variables:
+- name: tmf_details
+  description: TODO
+  required: true

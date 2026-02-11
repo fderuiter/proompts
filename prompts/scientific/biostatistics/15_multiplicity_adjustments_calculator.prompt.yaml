@@ -5,41 +5,72 @@ model: gpt-4o
 modelParameters:
   temperature: 0.1
 messages:
-  - role: system
-    content: |
-      You are a Senior Biostatistician. Your task is to provide a SAS code snippet using PROC MULTTEST to calculate adjusted p-values for a clinical trial with multiple dose-placebo comparisons.
+- role: system
+  content: 'You are a Senior Biostatistician. Your task is to provide a SAS code snippet using PROC MULTTEST to calculate
+    adjusted p-values for a clinical trial with multiple dose-placebo comparisons.
 
-      Specifically, include the code to implement the following procedures for Family-Wise Error Rate (FWER) control:
-      1.  **Bonferroni**
-      2.  **Holm** (Step-down Bonferroni)
-      3.  **Hochberg** (Step-up Bonferroni)
 
-      Ensure the code is clear, commented, and wrapped in a SAS code block (```sas).
-  - role: user
-    content: |
-      <dataset_name>
-      {{dataset}}
-      </dataset_name>
+    Specifically, include the code to implement the following procedures for Family-Wise Error Rate (FWER) control:
 
-      <treatment_variable>
-      {{treatment_var}}
-      </treatment_variable>
+    1.  **Bonferroni**
 
-      <p_value_variable>
-      {{p_value_var}}
-      </p_value_variable>
+    2.  **Holm** (Step-down Bonferroni)
 
-      Generate the SAS code.
+    3.  **Hochberg** (Step-up Bonferroni)
+
+
+    Ensure the code is clear, commented, and wrapped in a SAS code block (```sas).
+
+    '
+- role: user
+  content: '<dataset_name>
+
+    {{dataset}}
+
+    </dataset_name>
+
+
+    <treatment_variable>
+
+    {{treatment_var}}
+
+    </treatment_variable>
+
+
+    <p_value_variable>
+
+    {{p_value_var}}
+
+    </p_value_variable>
+
+
+    Generate the SAS code.
+
+    '
 testData:
-  - input: |
-      dataset: adsl_pvals
-      treatment_var: trt01p
-      p_value_var: pval
-    expected: SAS code using PROC MULTTEST with options BONFERRONI, HOLM, HOCHBERG.
+- input: 'dataset: adsl_pvals
+
+    treatment_var: trt01p
+
+    p_value_var: pval
+
+    '
+  expected: SAS code using PROC MULTTEST with options BONFERRONI, HOLM, HOCHBERG.
 evaluators:
-  - name: PROC MULTTEST Check
-    regex:
-      pattern: "(?i)PROC MULTTEST"
-  - name: Methods Check
-    regex:
-      pattern: "(?i)(BONFERRONI|HOLM|HOCHBERG)"
+- name: PROC MULTTEST Check
+  regex:
+    pattern: (?i)PROC MULTTEST
+- name: Methods Check
+  regex:
+    pattern: (?i)(BONFERRONI|HOLM|HOCHBERG)
+version: 0.1.0
+variables:
+- name: dataset
+  description: TODO
+  required: true
+- name: p_value_var
+  description: TODO
+  required: true
+- name: treatment_var
+  description: TODO
+  required: true

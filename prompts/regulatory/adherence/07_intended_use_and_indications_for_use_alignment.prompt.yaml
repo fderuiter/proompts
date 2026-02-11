@@ -5,28 +5,40 @@ model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-  - role: system
-    content: |-
-      You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
-      ## Context
-      21 CFR Part 801.4
 
-      ## Objective
-      Review 510(k) drafts to ensure 'Intended Use' and 'Indications for Use' are verbatim and consistent.
+    ## Context
 
-      ## Output Format
-      Consistency report identifying discrepancies.
-  - role: user
-    content: |-
-      Please perform the task using the following input data:
+    21 CFR Part 801.4
 
-      <input>
-      {{input}}
-      </input>
+
+    ## Objective
+
+    Review 510(k) drafts to ensure ''Intended Use'' and ''Indications for Use'' are verbatim and consistent.
+
+
+    ## Output Format
+
+    Consistency report identifying discrepancies.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
 testData:
-  - input: Full 510(k) draft including labeling and executive summary. (Example data)
-    expected: Expected output as per instructions.
+- input: Full 510(k) draft including labeling and executive summary. (Example data)
+  expected: Expected output as per instructions.
 evaluators:
-  - name: Validation Check
-    regex: (?i)Cross\-reference
+- name: Validation Check
+  regex: (?i)Cross\-reference
+version: 0.1.0
+variables:
+- name: input
+  description: TODO
+  required: true

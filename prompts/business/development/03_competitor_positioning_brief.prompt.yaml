@@ -1,36 +1,45 @@
-# yamllint disable rule:line-length
 ---
 name: Competitor-Positioning Brief
-description: Provide a competitor comparison to highlight differentiators for an
-  upcoming board review.
+description: Provide a competitor comparison to highlight differentiators for an upcoming board review.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |-
-      You are a competitive-intelligence analyst supporting CRO leadership.
+- role: system
+  content: 'You are a competitive-intelligence analyst supporting CRO leadership.
 
-      Keep references brief and focus on actionable differentiators.
-  - role: user
-    content: |-
-      1. Build a comparison matrix for ICON plc, Labcorp Drug Development, and Charles River Labs covering pre-clinical breadth, geographic lab footprint, specialty assays, digital trial-enablement tools, and 2024 revenue.
-      2. Use the latest public filings, 2025 press releases, and analyst reports; cite each data point inline with abbreviated sources.
-      3. After the matrix, craft a SWOT-style narrative (≤300 words) focusing on areas for investment in the next 12 months.
-      4. Finish with three concise messaging bullets for sales decks.
 
-      Inputs:
-      - `{{public_sources}}`
+    Keep references brief and focus on actionable differentiators.'
+- role: user
+  content: '1. Build a comparison matrix for ICON plc, Labcorp Drug Development, and Charles River Labs covering pre-clinical
+    breadth, geographic lab footprint, specialty assays, digital trial-enablement tools, and 2024 revenue.
 
-      Output format:
-      Markdown with two sections: a comparison table and a short narrative.
+    2. Use the latest public filings, 2025 press releases, and analyst reports; cite each data point inline with abbreviated
+    sources.
+
+    3. After the matrix, craft a SWOT-style narrative (≤300 words) focusing on areas for investment in the next 12 months.
+
+    4. Finish with three concise messaging bullets for sales decks.
+
+
+    Inputs:
+
+    - `{{public_sources}}`
+
+
+    Output format:
+
+    Markdown with two sections: a comparison table and a short narrative.'
 testData:
-  - vars:
-      public_sources: example_public_sources
-    expected: |-
-      Markdown with two sections: a comparison table and a short narrative.
-
+- vars:
+    public_sources: example_public_sources
+  expected: 'Markdown with two sections: a comparison table and a short narrative.'
 evaluators:
-  - name: Includes markdown table
-    string:
-      contains: "|"
+- name: Includes markdown table
+  string:
+    contains: '|'
+version: 0.1.0
+variables:
+- name: public_sources
+  description: TODO
+  required: true

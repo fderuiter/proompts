@@ -1,36 +1,50 @@
 ---
 name: Cross-Study Operational Risk Heat Map and Mitigation Plan
-description: Identify and prioritize the top portfolio-level operational risks
-  and propose mitigations.
+description: Identify and prioritize the top portfolio-level operational risks and propose mitigations.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |-
-      You are an enterprise risk-management AI for global clinical operations. Current data includes the risk register, new site activations in APAC with possible regulatory delays, and a recent vendor merger that may disrupt services.
+- role: system
+  content: 'You are an enterprise risk-management AI for global clinical operations. Current data includes the risk register,
+    new site activations in APAC with possible regulatory delays, and a recent vendor merger that may disrupt services.
 
-      Use concise language and focus on cross-study themes.
-  - role: user
-    content: |-
-      1. Rate each risk on Probability (1–5) × Impact (1–5) to create a heat‑map matrix (High/Med/Low).
-      1. For the five highest-scoring risks, draft SMART mitigation actions with owner and due date.
-      1. Provide an executive summary (≤150 words) for steering‑committee use.
-      1. Outline the scoring logic applied.
 
-      Inputs:
-      - `{{risk_register}}`
+    Use concise language and focus on cross-study themes.'
+- role: user
+  content: '1. Rate each risk on Probability (1–5) × Impact (1–5) to create a heat‑map matrix (High/Med/Low).
 
-      Output Format:
-      - Table "Risk-Heat-Map".
-      - Table "Mitigation-Plan".
-      - Executive summary paragraph.
+    1. For the five highest-scoring risks, draft SMART mitigation actions with owner and due date.
+
+    1. Provide an executive summary (≤150 words) for steering‑committee use.
+
+    1. Outline the scoring logic applied.
+
+
+    Inputs:
+
+    - `{{risk_register}}`
+
+
+    Output Format:
+
+    - Table "Risk-Heat-Map".
+
+    - Table "Mitigation-Plan".
+
+    - Executive summary paragraph.'
 testData:
-  - vars:
-      risk_register: Example register
-    expected: |
-      Tables named Risk-Heat-Map and Mitigation-Plan with an executive summary.
+- vars:
+    risk_register: Example register
+  expected: 'Tables named Risk-Heat-Map and Mitigation-Plan with an executive summary.
+
+    '
 evaluators:
-  - name: Contains Risk-Heat-Map table
-    string:
-      contains: "Risk-Heat-Map"
+- name: Contains Risk-Heat-Map table
+  string:
+    contains: Risk-Heat-Map
+version: 0.1.0
+variables:
+- name: risk_register
+  description: TODO
+  required: true

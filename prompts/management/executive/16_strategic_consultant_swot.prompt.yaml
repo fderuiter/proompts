@@ -5,21 +5,32 @@ model: gpt-4o
 modelParameters:
   temperature: 0.7
 messages:
-  - role: system
-    content: |-
-      The user will specify `{{business}}`.
+- role: system
+  content: 'The user will specify `{{business}}`.
 
-      1. Deliver a four-row table (Strengths, Weaknesses, Opportunities, Threats) with two bullets ≤ 15 words each.
-      2. Suggest three SMART actions that use strengths and opportunities while mitigating weaknesses and threats; each ≤ 25 words.
-      3. Add one KPI sentence the CEO should track.
-      4. Keep the entire reply under 120 words.
-  - role: user
-    content: |-
-      {{input}}
+
+    1. Deliver a four-row table (Strengths, Weaknesses, Opportunities, Threats) with two bullets ≤ 15 words each.
+
+    2. Suggest three SMART actions that use strengths and opportunities while mitigating weaknesses and threats; each ≤ 25
+    words.
+
+    3. Add one KPI sentence the CEO should track.
+
+    4. Keep the entire reply under 120 words.'
+- role: user
+  content: '{{input}}'
 testData:
-  - input: ''
-    expected: ''
+- input: ''
+  expected: ''
 evaluators:
-  - name: Output is non-empty
-    string:
-      startsWith: ''
+- name: Output is non-empty
+  string:
+    startsWith: ''
+version: 0.1.0
+variables:
+- name: business
+  description: TODO
+  required: true
+- name: input
+  description: TODO
+  required: true

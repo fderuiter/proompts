@@ -5,31 +5,44 @@ model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |-
-      Empathy maps summarize what a persona says, thinks, does, and feels.
+- role: system
+  content: 'Empathy maps summarize what a persona says, thinks, does, and feels.
 
-      <!-- markdownlint-disable MD029 -->
 
-      1. Build a four-quadrant table with two concise bullets per quadrant.
-      2. Follow with a 40-word insight paragraph summarizing pain points and opportunities.
-      3. End with a single next-step research question.
-      4. Keep the entire reply under 140 words.
+    <!-- markdownlint-disable MD029 -->
 
-      Focus on clarity and brevity so results fit in slide decks or reports.
-  - role: user
-    content: |-
-      {{input}}
+
+    1. Build a four-quadrant table with two concise bullets per quadrant.
+
+    2. Follow with a 40-word insight paragraph summarizing pain points and opportunities.
+
+    3. End with a single next-step research question.
+
+    4. Keep the entire reply under 140 words.
+
+
+    Focus on clarity and brevity so results fit in slide decks or reports.'
+- role: user
+  content: '{{input}}'
 testData:
-  - input: Busy parent using meal kits
-    expected: |-
-      Says: "I need quick dinners."
-      Thinks: "Am I a good cook?"
-      Does: orders kits weekly.
-      Feels: relieved but guilty.
-      Insight: Parents seek time-saving confidence.
-      Next-step research question: What recipes feel intimidating?
+- input: Busy parent using meal kits
+  expected: 'Says: "I need quick dinners."
+
+    Thinks: "Am I a good cook?"
+
+    Does: orders kits weekly.
+
+    Feels: relieved but guilty.
+
+    Insight: Parents seek time-saving confidence.
+
+    Next-step research question: What recipes feel intimidating?'
 evaluators:
-  - name: Output includes next-step question
-    string:
-      contains: 'Next-step'
+- name: Output includes next-step question
+  string:
+    contains: Next-step
+version: 0.1.0
+variables:
+- name: input
+  description: TODO
+  required: true

@@ -1,32 +1,33 @@
 ---
 name: Strategic Alignment and Innovation
-description: Develop a roadmap that aligns global trial operations with emerging industry
-  trends.
+description: Develop a roadmap that aligns global trial operations with emerging industry trends.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: 'The CRO seeks to incorporate decentralized trials and AI-driven monitoring
-      across all regions.
+- role: system
+  content: 'The CRO seeks to incorporate decentralized trials and AI-driven monitoring across all regions.
 
 
-      1. List key strategic initiatives.
+    1. List key strategic initiatives.
 
-      2. Provide estimated timelines for short-, mid-, and long-term horizons.
+    2. Provide estimated timelines for short-, mid-, and long-term horizons.
 
-      3. Specify KPIs used to track success.
+    3. Specify KPIs used to track success.
 
-      4. Outline potential risks and mitigation strategies.
-
-
-      Keep recommendations concise and actionable.'
-  - role: user
-    content: '- `{{current_operations}}` – summary of existing trial processes.
+    4. Outline potential risks and mitigation strategies.
 
 
-      Output format: Markdown sections titled **Initiatives**, **Timeline**, **KPIs**,
-      and **Risks**.'
+    Keep recommendations concise and actionable.'
+- role: user
+  content: '- `{{current_operations}}` – summary of existing trial processes.
 
+
+    Output format: Markdown sections titled **Initiatives**, **Timeline**, **KPIs**, and **Risks**.'
 testData: []
 evaluators: []
+version: 0.1.0
+variables:
+- name: current_operations
+  description: TODO
+  required: true

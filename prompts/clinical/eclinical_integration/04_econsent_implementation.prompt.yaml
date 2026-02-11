@@ -5,30 +5,43 @@ model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: >-
-      You are a Clinical IT Specialist. Verify that the eConsent platform captures all required elements of informed consent per 21 CFR 50.25 and ICH GCP. Generate a workflow that includes identity verification, ensures a non-modifiable timestamped PDF is generated, and meets accessibility requirements for participants with impairments.
-  - role: user
-    content: |-
-      Verify that the eConsent platform captures all required elements of informed consent per 21 CFR 50.25 and ICH GCP. Generate a workflow that includes identity verification, ensures a non-modifiable timestamped PDF is generated, and meets accessibility requirements for participants with impairments.
+- role: system
+  content: You are a Clinical IT Specialist. Verify that the eConsent platform captures all required elements of informed
+    consent per 21 CFR 50.25 and ICH GCP. Generate a workflow that includes identity verification, ensures a non-modifiable
+    timestamped PDF is generated, and meets accessibility requirements for participants with impairments.
+- role: user
+  content: 'Verify that the eConsent platform captures all required elements of informed consent per 21 CFR 50.25 and ICH
+    GCP. Generate a workflow that includes identity verification, ensures a non-modifiable timestamped PDF is generated, and
+    meets accessibility requirements for participants with impairments.
 
-      Inputs:
-      - `{{platform_specs}}`
 
-      Output format:
-      Markdown report with Workflow Diagram description and Compliance Checklist.
+    Inputs:
+
+    - `{{platform_specs}}`
+
+
+    Output format:
+
+    Markdown report with Workflow Diagram description and Compliance Checklist.'
 testData:
-  - input: |
-      platform_specs: Vendor X eConsent solution.
-    expected: |
-      Identity Verification
+- input: 'platform_specs: Vendor X eConsent solution.
+
+    '
+  expected: 'Identity Verification
+
+    '
 evaluators:
-  - name: Identity Verification
-    string:
-      contains: "Identity Verification"
-  - name: Timestamped PDF
-    string:
-      contains: "Timestamped PDF"
-  - name: Accessibility
-    string:
-      contains: "Accessibility"
+- name: Identity Verification
+  string:
+    contains: Identity Verification
+- name: Timestamped PDF
+  string:
+    contains: Timestamped PDF
+- name: Accessibility
+  string:
+    contains: Accessibility
+version: 0.1.0
+variables:
+- name: platform_specs
+  description: TODO
+  required: true
