@@ -7,13 +7,11 @@ from pathlib import Path
 import sys
 
 try:
-    from utils import PROMPTS_DIR, load_yaml
+    from utils import PROMPTS_DIR, load_yaml, OVERVIEW_NAME
 except ImportError:
     import sys
     sys.path.append(str(Path(__file__).parent))
-    from utils import PROMPTS_DIR, load_yaml
-
-OVERVIEW_NAME = "overview.md"  # documentation remains in Markdown
+    from utils import PROMPTS_DIR, load_yaml, OVERVIEW_NAME
 
 
 def title_from_prompt(path: Path) -> str:

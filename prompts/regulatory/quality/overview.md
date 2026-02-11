@@ -16,3 +16,6 @@
 - [Quality System Evaluation (MRA)](14_quality_system_evaluation_mra.prompt.yaml)
 - [GLP Quality Assurance](15_glp_quality_assurance.prompt.yaml)
 - [Part 11 Closed System Audit](16_part_11_closed_system_audit.prompt.yaml)
+- [CAPA SOP Architect](17_capa_sop_architect.prompt.yaml)
+- [CAPA Root Cause Investigator](18_capa_root_cause_investigator.prompt.yaml)
+- [CAPA Investigation Report Writer](19_capa_investigation_report_writer.prompt.yaml)

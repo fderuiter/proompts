@@ -11,14 +11,12 @@ import re
 from pathlib import Path
 
 try:
-    from utils import PROMPTS_DIR, load_yaml, iter_prompt_files
+    from utils import PROMPTS_DIR, load_yaml, iter_prompt_files, OVERVIEW_NAME
 except ImportError:
     # Allow running from root or scripts dir
     import sys
     sys.path.append(str(Path(__file__).parent))
-    from utils import PROMPTS_DIR, load_yaml, iter_prompt_files
-
-OVERVIEW_NAME = "overview.md"  # documentation stays Markdown
+    from utils import PROMPTS_DIR, load_yaml, iter_prompt_files, OVERVIEW_NAME
 
 
 NAMING_RULES = {

@@ -14,10 +14,11 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).parent))
 
 try:
-    from utils import PROMPTS_DIR
+    from utils import PROMPTS_DIR, OVERVIEW_NAME
 except ImportError:
     # Fallback if utils not found or running from elsewhere
     PROMPTS_DIR = Path(__file__).resolve().parents[2] / "prompts"
+    OVERVIEW_NAME = "overview.md"
 
 REGULATORY_DIR = PROMPTS_DIR / "regulatory"
 
@@ -584,7 +585,7 @@ def generate_prompt_yaml(task, category_dir):
         yaml.dump(content, f, Dumper=IndentDumper, sort_keys=False, width=1000)
 
 def update_overview(directory):
-    overview_file = directory / "overview.md"
+    overview_file = directory / OVERVIEW_NAME
     title = directory.name.replace("_", " ").title()
     content = f"# {title} Overview\n\n"
 

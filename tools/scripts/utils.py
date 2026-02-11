@@ -3,6 +3,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
 PROMPTS_DIR = ROOT / "prompts"
+OVERVIEW_NAME = "overview.md"
 
 def load_yaml(path: Path) -> dict:
     """Safe load YAML with error handling."""
