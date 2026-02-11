@@ -19,15 +19,23 @@ pip install -r requirements.txt
    - [check_prompts.py](#check_promptspy)
    - [validate_prompt_schema.py](#validate_prompt_schemapy)
    - [test_run_workflow.py](#test_run_workflowpy)
+   - [test_run_workflow_unit.py](#test_run_workflow_unitpy)
+   - [test_generate_workflow_diagrams.py](#test_generate_workflow_diagramspy)
+   - [test_validate_prompt_schema.py](#test_validate_prompt_schemapy)
    - [test_utils.py](#test_utilspy)
 2. [Workflow Execution](#workflow-execution)
    - [run_workflow.py](#run_workflowpy)
+   - [generate_workflow_diagrams.py](#generate_workflow_diagramspy)
 3. [Documentation Maintenance](#documentation-maintenance)
    - [update_docs_index.py](#update_docs_indexpy)
    - [generate_overviews.py](#generate_overviewspy)
+   - [generate_search_index.py](#generate_search_indexpy)
    - [fix_markdown_issues.py](#fix_markdown_issuespy)
 4. [Prompt Maintenance](#prompt-maintenance)
    - [search_prompts.py](#search_promptspy)
+   - [enrich_prompts.py](#enrich_promptspy)
+   - [migrate_prompts.py](#migrate_promptspy)
+   - [generate_regulatory_prompts.py](#generate_regulatory_promptspy)
    - [update_last_modified.py](#update_last_modifiedpy)
    - [standardize_c_prompts.py](#standardize_c_promptspy)
 5. [Shared Libraries](#shared-libraries)
@@ -81,6 +89,36 @@ A functional test for the `run_workflow.py` script. It creates a temporary envir
 python3 tools/scripts/test_run_workflow.py
 ```
 
+### `test_run_workflow_unit.py`
+
+Unit tests for internal functions of `run_workflow.py`, such as variable resolution and template rendering.
+
+**Usage:**
+
+```bash
+python3 tools/scripts/test_run_workflow_unit.py
+```
+
+### `test_generate_workflow_diagrams.py`
+
+Unit and integration tests for `generate_workflow_diagrams.py`, ensuring correct Mermaid syntax generation and file creation.
+
+**Usage:**
+
+```bash
+python3 tools/scripts/test_generate_workflow_diagrams.py
+```
+
+### `test_validate_prompt_schema.py`
+
+Unit tests for `validate_prompt_schema.py`, covering Pydantic models and validation logic.
+
+**Usage:**
+
+```bash
+python3 tools/scripts/test_validate_prompt_schema.py
+```
+
 ### `test_utils.py`
 
 Unit tests for `utils.py`. Ensures shared utility functions work as expected.
@@ -105,6 +143,29 @@ python3 tools/scripts/run_workflow.py path/to/workflow.workflow.yaml -v
 
 # Run with initial inputs
 python3 tools/scripts/run_workflow.py path/to/workflow.workflow.yaml -i user_name="Alice"
+```
+
+### `generate_workflow_diagrams.py`
+
+Scans for `.workflow.yaml` files and generates a companion `.md` file containing a [Mermaid.js](https://mermaid.js.org/) flowchart. This visualizes the inputs, steps, and data flow of the workflow.
+
+**Usage:**
+
+```bash
+python3 tools/scripts/generate_workflow_diagrams.py
+```
+
+**Example Output (Markdown):**
+
+```mermaid
+flowchart TD
+    subgraph Inputs [Global Inputs]
+        inp_topic((topic))
+    end
+    step1["research_step<br/><small>research.prompt.yaml</small>"]
+    step2["write_step<br/><small>write.prompt.yaml</small>"]
+    inp_topic -->|topic| step1
+    step1 -->|research_data| step2
 ```
 
 ## Documentation Maintenance
@@ -133,6 +194,16 @@ Automatically creates `overview.md` files in prompt directories that are missing
 python3 tools/scripts/generate_overviews.py
 ```
 
+### `generate_search_index.py`
+
+Generates a `search.json` file containing metadata for all prompts. This file is used by the documentation site for client-side search functionality.
+
+**Usage:**
+
+```bash
+python3 tools/scripts/generate_search_index.py
+```
+
 ### `fix_markdown_issues.py`
 
 Reads `todo_fix.md` (a list of file paths) and automatically corrects common Markdown formatting issues such as list indentation, header spacing, and trailing whitespace.
@@ -158,6 +229,40 @@ python3 tools/scripts/search_prompts.py review
 
 # Show full descriptions
 python3 tools/scripts/search_prompts.py "review" -v
+```
+
+### `enrich_prompts.py`
+
+Analyzes prompt files to infer and populate missing metadata (domain, complexity, tags) and variable descriptions. It helps maintain a rich and searchable prompt library.
+
+**Usage:**
+
+```bash
+# Enrich all prompts
+python3 tools/scripts/enrich_prompts.py
+
+# Dry run (show changes without writing)
+python3 tools/scripts/enrich_prompts.py --dry-run
+```
+
+### `migrate_prompts.py`
+
+Migrates older prompt files to the current schema by adding required fields like `version` and `variables` (as stubs) if they are missing.
+
+**Usage:**
+
+```bash
+python3 tools/scripts/migrate_prompts.py
+```
+
+### `generate_regulatory_prompts.py`
+
+A specialized script to programmatically generate a suite of regulatory prompts based on templates and categorization logic.
+
+**Usage:**
+
+```bash
+python3 tools/scripts/generate_regulatory_prompts.py
 ```
 
 ### `update_last_modified.py`
