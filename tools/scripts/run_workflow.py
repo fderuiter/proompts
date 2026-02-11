@@ -85,7 +85,7 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
         except Exception as e:
             logger.warning(f"Failed to render message content: {e}")
 
-        logger.info(f"  [{role}]: {content[:150]}...") # Print truncated content
+        logger.info(f"  [{role}]: (Content hidden for security)")
 
     # Simulate output
     # Try to find a matching test case in testData
