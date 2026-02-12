@@ -23,7 +23,7 @@ has_children: false
 - [Pitch-Deck Outliner](../prompts/communication/20_pitch_deck_outliner.prompt.yaml)
 - [Pixar Story Spine Outline](../prompts/communication/02_story_spine_outline.prompt.yaml)
 - [Rapid-Risk-Matrix](../prompts/communication/10_rapid_risk_matrix.prompt.yaml)
-- [Red-Team Stress-Test Simulation](../prompts/communication/13_red_team_stress_test.prompt.yaml)
+- [Red-Team Stress-Test](../prompts/communication/13_red_team_stress_test.prompt.yaml)
 - [Rubber Duck Debugger](../prompts/communication/19_rubber_duck_debugger.prompt.yaml)
 - [Smart Task Prioritizer](../prompts/communication/06_smart_task_prioritizer.prompt.yaml)
 - [Socratic-Coach](../prompts/communication/12_socratic_coach.prompt.yaml)
