@@ -19,12 +19,17 @@ pip install -r requirements.txt
    - [check_prompts.py](#check_promptspy)
    - [validate_prompt_schema.py](#validate_prompt_schemapy)
    - [test_run_workflow.py](#test_run_workflowpy)
+   - [test_generate_workflow_diagrams.py](#test_generate_workflow_diagramspy)
+   - [test_generate_overviews.py](#test_generate_overviewspy)
+   - [test_fix_markdown_issues.py](#test_fix_markdown_issuespy)
    - [test_utils.py](#test_utilspy)
 2. [Workflow Execution](#workflow-execution)
    - [run_workflow.py](#run_workflowpy)
+   - [generate_workflow_diagrams.py](#generate_workflow_diagramspy)
 3. [Documentation Maintenance](#documentation-maintenance)
    - [update_docs_index.py](#update_docs_indexpy)
    - [generate_overviews.py](#generate_overviewspy)
+   - [generate_search_index.py](#generate_search_indexpy)
    - [fix_markdown_issues.py](#fix_markdown_issuespy)
 4. [Prompt Maintenance](#prompt-maintenance)
    - [search_prompts.py](#search_promptspy)
@@ -81,6 +86,36 @@ A functional test for the `run_workflow.py` script. It creates a temporary envir
 python3 tools/scripts/test_run_workflow.py
 ```
 
+### `test_generate_workflow_diagrams.py`
+
+Unit tests for `generate_workflow_diagrams.py`. Verifies that Mermaid diagrams are correctly generated from workflow definitions, covering various edge cases like missing inputs or complex dependencies.
+
+**Usage:**
+
+```bash
+python3 tools/scripts/test_generate_workflow_diagrams.py
+```
+
+### `test_generate_overviews.py`
+
+Unit tests for `generate_overviews.py`. Ensures that prompt titles are correctly extracted from YAML files (prioritizing `name`, then `title`, then filename fallback) and that overview files are generated properly.
+
+**Usage:**
+
+```bash
+python3 tools/scripts/test_generate_overviews.py
+```
+
+### `test_fix_markdown_issues.py`
+
+Unit tests for `fix_markdown_issues.py`. Verifies the logic for correcting common Markdown formatting errors, such as trailing whitespace, header spacing, and list indentation.
+
+**Usage:**
+
+```bash
+python3 tools/scripts/test_fix_markdown_issues.py
+```
+
 ### `test_utils.py`
 
 Unit tests for `utils.py`. Ensures shared utility functions work as expected.
@@ -105,6 +140,16 @@ python3 tools/scripts/run_workflow.py path/to/workflow.workflow.yaml -v
 
 # Run with initial inputs
 python3 tools/scripts/run_workflow.py path/to/workflow.workflow.yaml -i user_name="Alice"
+```
+
+### `generate_workflow_diagrams.py`
+
+Generates Mermaid.js flowchart diagrams for all `.workflow.yaml` files in the repository. It creates a companion `.workflow.md` file next to each workflow, visualizing the inputs, steps, and data flow between them.
+
+**Usage:**
+
+```bash
+python3 tools/scripts/generate_workflow_diagrams.py
 ```
 
 ## Documentation Maintenance
@@ -133,9 +178,21 @@ Automatically creates `overview.md` files in prompt directories that are missing
 python3 tools/scripts/generate_overviews.py
 ```
 
+### `generate_search_index.py`
+
+Generates a `search.json` file in the repository root. This JSON file indexes all prompts with their titles, descriptions, and tags, enabling the search functionality on the documentation site.
+
+**Usage:**
+
+```bash
+python3 tools/scripts/generate_search_index.py
+```
+
 ### `fix_markdown_issues.py`
 
 Reads `todo_fix.md` (a list of file paths) and automatically corrects common Markdown formatting issues such as list indentation, header spacing, and trailing whitespace.
+
+The `todo_fix.md` file must contain a list of files to process, formatted as a markdown list where each line starts with `- ./` and ends with `.md`.
 
 **Usage:**
 
@@ -197,6 +254,7 @@ Contains shared constants and helper functions used by multiple scripts.
 - `PROMPTS_DIR`: Path to the `prompts/` directory.
 - `load_yaml(path)`: Safely loads YAML files.
 - `iter_prompt_files(root)`: Recursively yields all prompt files.
+- `iter_workflow_files(root)`: Recursively yields all workflow files.
 
 ---
 
