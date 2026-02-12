@@ -438,6 +438,7 @@
 [Heuristic-Evaluation Coach](../prompts/technical/design/03_heuristic_evaluation_coach.prompt.yaml)
 [Forge - Script Reliability Agent](../prompts/technical/devops/forge_script_reliability.prompt.yaml)
 [Atlas Documentation Specialist](../prompts/technical/documentation/atlas_documentation_specialist.prompt.yaml)
+[Source of Truth Harmonizer](../prompts/technical/documentation/source_of_truth_harmonizer.prompt.yaml)
 [Repository Foundation & Developer Experience Analysis](../prompts/technical/repository_refactoring/01_repo_foundation_analysis.prompt.yaml)
 [Codebase Quality & Maintainability Analysis](../prompts/technical/repository_refactoring/02_codebase_quality_analysis.prompt.yaml)
 [Dependencies & Security Posture Analysis](../prompts/technical/repository_refactoring/03_dependencies_security_analysis.prompt.yaml)
