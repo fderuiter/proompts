@@ -231,7 +231,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Rapid-Risk-Matrix](../prompts/communication/10_rapid_risk_matrix.prompt.yaml)
 - [Data-to-Insight Analyst](../prompts/communication/11_data_to_insight_analyst.prompt.yaml)
 - [Socratic-Coach](../prompts/communication/12_socratic_coach.prompt.yaml)
-- [Red-Team Stress-Test](../prompts/communication/13_red_team_stress_test.prompt.yaml)
+- [Red-Team Stress-Test Simulation](../prompts/communication/13_red_team_stress_test.prompt.yaml)
 - [Analogy Architect](../prompts/communication/14_analogy_architect.prompt.yaml)
 - [Density Refiner](../prompts/communication/15_density_refiner.prompt.yaml)
 - [Negotiation Coach](../prompts/communication/16_negotiation_coach.prompt.yaml)
