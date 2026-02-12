@@ -24,6 +24,7 @@ has_children: false
 - [Repository Foundation & Developer Experience Analysis](../prompts/technical/repository_refactoring/01_repo_foundation_analysis.prompt.yaml)
 - [SAE and Unanticipated Problem Reporting SOP](../prompts/technical/technical_writing/03_sae_reporting_sop.prompt.yaml)
 - [Security Hardening and Dependency Management Implementation](../prompts/technical/repository_refactoring/07_security_hardening_dependency_management_implementation.prompt.yaml)
+- [Source of Truth Harmonizer](../prompts/technical/documentation/source_of_truth_harmonizer.prompt.yaml)
 - [Test Suite Enhancement and CI Pipeline Implementation](../prompts/technical/repository_refactoring/08_test_suite_enhancement_ci_pipeline_implementation.prompt.yaml)
 - [Testing, Configuration, and Automation Analysis](../prompts/technical/repository_refactoring/04_testing_configuration_automation_analysis.prompt.yaml)
 

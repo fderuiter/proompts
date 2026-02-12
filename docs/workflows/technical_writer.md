@@ -13,9 +13,13 @@ A workflow for drafting a CSR results and safety section, an Investigator's Broc
 
 <div class="mermaid">
 graph TD
+    Input_study_context[Input: study_context] --> Steps
+    Input_sponsor_requirements[Input: sponsor_requirements] --> Steps
     csr_section[Step: csr_section]
     ib_summary[Step: ib_summary]
     sae_sop[Step: sae_sop]
+    Input_study_context --> sae_sop
+    Input_sponsor_requirements --> sae_sop
 </div>
 
 [View Source YAML](../../workflows/technical_writer.workflow.yaml)
