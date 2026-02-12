@@ -1,6 +1,6 @@
 ---
 name: Red-Team Stress-Test Simulation
-version: 0.1.0
+version: 0.2.0
 description: Assemble a ruthless panel of adversaries (Hacker, Competitor, Regulator) to dismantle a strategy.
 metadata:
   domain: communication
