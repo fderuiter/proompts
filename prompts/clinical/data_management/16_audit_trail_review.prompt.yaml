@@ -13,7 +13,7 @@ metadata:
   requires_context: true
 variables:
 - name: audit_logs
-  description: 'System Specifications (Audit reqs): `{{system_specs}}`'
+  description: The Audit logs
   required: true
 - name: system_specs
   description: The system specs to use for this prompt

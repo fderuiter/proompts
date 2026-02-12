@@ -14,16 +14,16 @@ metadata:
   requires_context: true
 variables:
 - name: device_type
-  description: '`{{trial_phase}}`'
+  description: The Device type
   required: true
 - name: endpoints
-  description: '`{{regulatory_target}}`'
+  description: The Endpoints
   required: true
 - name: regulatory_target
   description: The regulatory target to use for this prompt
   required: true
 - name: trial_phase
-  description: '`{{endpoints}}`'
+  description: The Trial phase
   required: true
 model: gpt-4o
 modelParameters:

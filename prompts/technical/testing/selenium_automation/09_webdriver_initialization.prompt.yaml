@@ -14,7 +14,7 @@ metadata:
   requires_context: false
 variables:
 - name: browser
-  description: '{{browser}}'
+  description: The Browser
   required: true
 - name: proxy_url
   description: The URL to process or reference

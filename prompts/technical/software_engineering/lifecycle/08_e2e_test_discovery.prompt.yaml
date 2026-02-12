@@ -18,10 +18,10 @@ variables:
   description: high-level goal of the system
   required: true
 - name: LANGUAGES/FRAMEWORKS
-  description: '`{{BUSINESS_GOAL}}`'
+  description: The LANGUAGES FRAMEWORKS
   required: true
 - name: PROJECT_NAME
-  description: '`{{LANGUAGES/FRAMEWORKS}}`'
+  description: The PROJECT NAME
   required: true
 model: gpt-4
 modelParameters:

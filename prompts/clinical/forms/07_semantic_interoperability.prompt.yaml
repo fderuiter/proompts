@@ -13,7 +13,7 @@ metadata:
   requires_context: false
 variables:
 - name: crf_metadata
-  description: 'Terminology catalogs (LOINC, SNOMED CT, UCUM): `{{terminology_catalogs}}`'
+  description: The Crf metadata
   required: true
 - name: terminology_catalogs
   description: The terminology catalogs to use for this prompt

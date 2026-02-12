@@ -15,7 +15,7 @@ variables:
   description: The cdash guide to use for this prompt
   required: true
 - name: crf_draft
-  description: 'CDASH User Guide: `{{cdash_guide}}`'
+  description: The Crf draft
   required: true
 model: gpt-4o
 modelParameters:

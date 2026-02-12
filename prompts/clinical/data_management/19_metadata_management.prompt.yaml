@@ -12,7 +12,7 @@ metadata:
   requires_context: false
 variables:
 - name: crf_templates
-  description: 'Metadata Repository (MDR) Schema: `{{mdr_schema}}`'
+  description: The Crf templates
   required: true
 - name: mdr_schema
   description: The mdr schema to use for this prompt

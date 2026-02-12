@@ -17,10 +17,10 @@ variables:
   description: The data or dataset to analyze
   required: true
 - name: objectives
-  description: '`{{milestone_data}}`'
+  description: The Objectives
   required: true
 - name: project_type
-  description: '`{{objectives}}`'
+  description: The Project type
   required: true
 model: gpt-4o
 modelParameters:

@@ -16,7 +16,7 @@ variables:
   description: The drop percentage to use for this prompt
   required: true
 - name: forecast
-  description: '`{{forecast}}`'
+  description: The Forecast
   required: true
 model: gpt-4
 modelParameters:

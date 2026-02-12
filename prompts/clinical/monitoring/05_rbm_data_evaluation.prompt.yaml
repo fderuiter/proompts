@@ -13,10 +13,10 @@ metadata:
   requires_context: false
 variables:
 - name: clinical_data
-  description: 'Monitoring Plan template: `{{monitoring_plan}}`'
+  description: The Clinical data
   required: true
 - name: monitoring_plan
-  description: 'Study Risk Assessment: `{{risk_assessment}}`'
+  description: The Monitoring plan
   required: true
 - name: risk_assessment
   description: The risk assessment to use for this prompt

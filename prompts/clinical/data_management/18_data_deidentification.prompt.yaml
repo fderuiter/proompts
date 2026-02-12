@@ -15,10 +15,10 @@ variables:
   description: The source code to analyze or modify
   required: true
 - name: identifiers_list
-  description: 'Code key generation logic: `{{code_key_logic}}`'
+  description: The Identifiers list
   required: true
 - name: raw_data
-  description: 'HIPAA eighteen direct identifiers list: `{{identifiers_list}}`'
+  description: The Raw data
   required: true
 model: gpt-4o
 modelParameters:

@@ -16,10 +16,10 @@ variables:
   description: The dropout rate to use for this prompt
   required: true
 - name: response_rate_active
-  description: '`{{response_rate_control}}`'
+  description: The Response rate active
   required: true
 - name: response_rate_control
-  description: '`{{dropout_rate}}`'
+  description: The Response rate control
   required: true
 model: gpt-4o
 modelParameters:

@@ -14,22 +14,22 @@ metadata:
   requires_context: false
 variables:
 - name: control
-  description: '`{{population}}`'
+  description: The Control
   required: true
 - name: endpoint
-  description: '`{{time_point}}`'
+  description: The Endpoint
   required: true
 - name: factors
   description: The factors to use for this prompt
   required: true
 - name: intervention
-  description: '`{{control}}`'
+  description: The Intervention
   required: true
 - name: population
-  description: '`{{endpoint}}`'
+  description: The Population
   required: true
 - name: time_point
-  description: '`{{factors}}`'
+  description: The Time point
   required: true
 model: gpt-4o
 modelParameters:

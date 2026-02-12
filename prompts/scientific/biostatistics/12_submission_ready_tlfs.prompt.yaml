@@ -13,13 +13,13 @@ metadata:
   requires_context: false
 variables:
 - name: adae_path
-  description: '`{{adsl_path}}`'
+  description: The Adae path
   required: true
 - name: adlb_path
   description: The adlb path to use for this prompt
   required: true
 - name: adsl_path
-  description: '`{{adlb_path}}`'
+  description: The Adsl path
   required: true
 model: gpt-4o
 modelParameters:

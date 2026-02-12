@@ -17,10 +17,10 @@ variables:
   description: The challenges to use for this prompt
   required: true
 - name: kpi_snapshot
-  description: '`{{strategic_wins}}`'
+  description: The Kpi snapshot
   required: true
 - name: strategic_wins
-  description: '`{{challenges}}`'
+  description: The Strategic wins
   required: true
 model: gpt-4o
 modelParameters:

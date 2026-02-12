@@ -13,13 +13,13 @@ metadata:
   requires_context: false
 variables:
 - name: dummy_data_reqs
-  description: 'eCRF Design: `{{ecrf_design}}`'
+  description: The Dummy data reqs
   required: true
 - name: ecrf_design
   description: The ecrf design to use for this prompt
   required: true
 - name: uat_scope
-  description: 'Test Patient Dummy Data Requirements: `{{dummy_data_reqs}}`'
+  description: The Uat scope
   required: true
 model: gpt-4o
 modelParameters:

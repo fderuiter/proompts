@@ -11,19 +11,19 @@ metadata:
   requires_context: false
 variables:
 - name: cdms_specs
-  description: 'Validation tests: `{{validation_tests}}`'
+  description: The Cdms specs
   required: true
 - name: crf_draft
   description: The crf draft to use for this prompt
   required: true
 - name: dmp
-  description: 'Clinical Protocol: `{{protocol}}`'
+  description: The Dmp
   required: true
 - name: protocol
-  description: 'CRF Design Draft: `{{crf_draft}}`'
+  description: The Protocol
   required: true
 - name: validation_tests
-  description: 'Clinical Data Management Plan (DMP): `{{dmp}}`'
+  description: The Validation tests
   required: true
 model: gpt-4o
 modelParameters:

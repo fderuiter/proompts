@@ -15,10 +15,10 @@ variables:
   description: The company or organization name
   required: true
 - name: geography_focus
-  description: '`{{company_size}}`'
+  description: The Geography focus
   required: true
 - name: preferred_areas
-  description: '`{{geography_focus}}`'
+  description: The Preferred areas
   required: true
 model: gpt-4o
 modelParameters:

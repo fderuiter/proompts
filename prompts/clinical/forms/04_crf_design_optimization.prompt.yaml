@@ -13,16 +13,16 @@ metadata:
   requires_context: false
 variables:
 - name: crf_draft
-  description: 'Study Protocol: `{{protocol}}`'
+  description: The Crf draft
   required: true
 - name: endpoints
-  description: 'Study Hypothesis: `{{hypothesis}}`'
+  description: The Endpoints
   required: true
 - name: hypothesis
   description: The hypothesis to use for this prompt
   required: true
 - name: protocol
-  description: 'Safety and efficacy endpoints: `{{endpoints}}`'
+  description: The Protocol
   required: true
 model: gpt-4o
 modelParameters:

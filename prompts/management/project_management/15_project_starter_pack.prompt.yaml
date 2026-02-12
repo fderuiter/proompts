@@ -14,34 +14,34 @@ metadata:
   requires_context: true
 variables:
 - name: alternatives
-  description: '`{{decision_date}}`'
+  description: The Alternatives
   required: true
 - name: budget
-  description: '`{{deadline}}`'
+  description: The Budget
   required: true
 - name: business_outcome
   description: The business outcome to use for this prompt
   required: true
 - name: deadline
-  description: '`{{stakeholders}}`'
+  description: The Deadline
   required: true
 - name: decision
-  description: '`{{alternatives}}`'
+  description: The Decision
   required: true
 - name: decision_date
   description: The decision date to use for this prompt
   required: true
 - name: feature_area
-  description: '`{{decision}}`'
+  description: The Feature area
   required: true
 - name: project_description
-  description: '`{{budget}}`'
+  description: The Project description
   required: true
 - name: project_name
-  description: '`{{project_description}}`'
+  description: The Project name
   required: true
 - name: stakeholders
-  description: '`{{business_outcome}}`'
+  description: The Stakeholders
   required: true
 model: gpt-4o
 modelParameters:

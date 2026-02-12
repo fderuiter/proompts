@@ -17,10 +17,10 @@ variables:
   description: The dcp to use for this prompt
   required: true
 - name: dmp
-  description: 'Data Clean Plan (DCP): `{{dcp}}`'
+  description: The Dmp
   required: true
 - name: protocol
-  description: 'Data Management Plan (DMP): `{{dmp}}`'
+  description: The Protocol
   required: true
 model: gpt-4o
 modelParameters:

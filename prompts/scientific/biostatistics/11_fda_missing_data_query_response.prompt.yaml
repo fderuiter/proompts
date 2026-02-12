@@ -14,7 +14,7 @@ metadata:
   requires_context: false
 variables:
 - name: fda_questions
-  description: '`{{sap_references}}`'
+  description: The Fda questions
   required: true
 - name: sap_references
   description: The sap references to use for this prompt

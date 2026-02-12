@@ -16,7 +16,7 @@ variables:
   description: The audit logs to use for this prompt
   required: true
 - name: system_specs
-  description: 'Audit Trail Logs (sample): `{{audit_logs}}`'
+  description: The System specs
   required: true
 model: gpt-4o
 modelParameters:

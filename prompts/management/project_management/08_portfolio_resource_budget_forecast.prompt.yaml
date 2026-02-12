@@ -17,7 +17,7 @@ variables:
   description: The enrollment deltas to use for this prompt
   required: true
 - name: historic_burn_rates
-  description: '`{{enrollment_deltas}}`'
+  description: The Historic burn rates
   required: true
 model: gpt-4o
 modelParameters:

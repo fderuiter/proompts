@@ -14,16 +14,16 @@ metadata:
   requires_context: false
 variables:
 - name: curation_guidelines
-  description: 'Metadata definitions: `{{metadata_defs}}`'
+  description: The Curation guidelines
   required: true
 - name: metadata_defs
-  description: 'Predefined Metadata Rules: `{{metadata_rules}}`'
+  description: The Metadata defs
   required: true
 - name: metadata_rules
   description: The data or dataset to analyze
   required: true
 - name: raw_data
-  description: 'Data curation internal guidelines: `{{curation_guidelines}}`'
+  description: The Raw data
   required: true
 model: gpt-4o
 modelParameters:

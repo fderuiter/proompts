@@ -14,7 +14,7 @@ metadata:
   requires_context: true
 variables:
 - name: device_description
-  description: '`{{population_details}}`'
+  description: The Device description
   required: true
 - name: population_details
   description: The population details to use for this prompt

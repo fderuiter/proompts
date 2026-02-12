@@ -13,7 +13,7 @@ metadata:
   requires_context: false
 variables:
 - name: project_name
-  description: '`{{project_summary}}`'
+  description: The Project name
   required: true
 - name: project_summary
   description: A summary of the key information
