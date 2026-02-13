@@ -39,3 +39,12 @@ has_children: false
 - [Technical Writer Workflow](workflows/technical_writer.md)
 - [Testing Workflow](workflows/testing.md)
 - [VP Statistics Workflow](workflows/vp_statistics.md)
+
+## Example Workflow Visualization
+
+<div class="mermaid">
+graph LR
+  A[User Request] --> B(Prompt 1: Analysis);
+  B --> C(Prompt 2: Strategy);
+  C --> D[Final Output];
+</div>
