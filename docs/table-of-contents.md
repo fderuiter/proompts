@@ -66,6 +66,7 @@
 [Interpret the Chemistry & Assess Risk](../prompts/scientific/chemical_characterization/chemical_characterization_workflow/02_interpret_the_chemistry_assess_risk.prompt.yaml)
 [Write the Regulatory Summary](../prompts/scientific/chemical_characterization/chemical_characterization_workflow/03_write_the_regulatory_summary.prompt.yaml)
 [Audit Trail Review](../prompts/clinical/data_management/audit_trail_review.prompt.yaml)
+[CDISC CRF Architect](../prompts/clinical/data_management/cdisc_crf_architect.prompt.yaml)
 [CDISC SDTM/ADaM Mapping](../prompts/clinical/data_management/cdisc_mapping.prompt.yaml)
 [Data Architecture Blueprint](../prompts/clinical/data_management/data_architecture_blueprint.prompt.yaml)
 [Data De-identification](../prompts/clinical/data_management/data_deidentification.prompt.yaml)
