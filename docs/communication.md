@@ -8,7 +8,6 @@ has_children: false
 # Communication
 
 ## Prompts
-
 - [80/20 Crash Course](../prompts/communication/80_20_crash_course.prompt.yaml)
 - [Analogy Architect](../prompts/communication/analogy_architect.prompt.yaml)
 - [Data-to-Insight Analyst](../prompts/communication/data_to_insight_analyst.prompt.yaml)
@@ -30,4 +29,3 @@ has_children: false
 - [Storyboard-My-Idea](../prompts/communication/storyboard_my_idea.prompt.yaml)
 - [TL;DR Summarizer](../prompts/communication/tldr_summarizer.prompt.yaml)
 - [Writing Clarity Mentor](../prompts/communication/writing_clarity_mentor.prompt.yaml)
-

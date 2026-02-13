@@ -14,29 +14,34 @@ pip install -r requirements.txt
 
 ## Table of Contents
 
-1. [Validation & Testing](#validation--testing)
-   - [test_all.py](#test_allpy)
-   - [check_prompts.py](#check_promptspy)
-   - [validate_prompt_schema.py](#validate_prompt_schemapy)
-   - [test_run_workflow.py](#test_run_workflowpy)
-   - [test_generate_workflow_diagrams.py](#test_generate_workflow_diagramspy)
-   - [test_generate_overviews.py](#test_generate_overviewspy)
-   - [test_fix_markdown_issues.py](#test_fix_markdown_issuespy)
-   - [test_utils.py](#test_utilspy)
-2. [Workflow Execution](#workflow-execution)
-   - [run_workflow.py](#run_workflowpy)
-   - [generate_workflow_diagrams.py](#generate_workflow_diagramspy)
-3. [Documentation Maintenance](#documentation-maintenance)
-   - [update_docs_index.py](#update_docs_indexpy)
-   - [generate_overviews.py](#generate_overviewspy)
-   - [generate_search_index.py](#generate_search_indexpy)
-   - [fix_markdown_issues.py](#fix_markdown_issuespy)
-4. [Prompt Maintenance](#prompt-maintenance)
-   - [search_prompts.py](#search_promptspy)
-   - [update_last_modified.py](#update_last_modifiedpy)
-   - [standardize_c_prompts.py](#standardize_c_promptspy)
-5. [Shared Libraries](#shared-libraries)
-   - [utils.py](#utilspy)
+- [Developer Scripts \& Utilities](#developer-scripts--utilities)
+  - [Prerequisites](#prerequisites)
+  - [Table of Contents](#table-of-contents)
+  - [Validation \& Testing](#validation--testing)
+    - [`test_all.py`](#test_allpy)
+    - [`check_prompts.py`](#check_promptspy)
+    - [`validate_prompt_schema.py`](#validate_prompt_schemapy)
+    - [`test_run_workflow.py`](#test_run_workflowpy)
+    - [`test_generate_workflow_diagrams.py`](#test_generate_workflow_diagramspy)
+    - [`test_generate_overviews.py`](#test_generate_overviewspy)
+    - [`test_fix_markdown_issues.py`](#test_fix_markdown_issuespy)
+    - [`test_utils.py`](#test_utilspy)
+  - [Workflow Execution](#workflow-execution)
+    - [`run_workflow.py`](#run_workflowpy)
+    - [`generate_workflow_diagrams.py`](#generate_workflow_diagramspy)
+  - [Documentation Maintenance](#documentation-maintenance)
+    - [`update_docs_index.py`](#update_docs_indexpy)
+    - [`generate_docs.py`](#generate_docspy)
+    - [`check_broken_links.py`](#check_broken_linkspy)
+    - [`generate_overviews.py`](#generate_overviewspy)
+    - [`generate_search_index.py`](#generate_search_indexpy)
+    - [`fix_markdown_issues.py`](#fix_markdown_issuespy)
+  - [Prompt Maintenance](#prompt-maintenance)
+    - [`search_prompts.py`](#search_promptspy)
+    - [`update_last_modified.py`](#update_last_modifiedpy)
+    - [`standardize_c_prompts.py`](#standardize_c_promptspy)
+  - [Shared Libraries](#shared-libraries)
+    - [`utils.py`](#utilspy)
 
 ---
 
@@ -166,6 +171,31 @@ python3 tools/scripts/update_docs_index.py
 
 # Check if docs are up-to-date (for CI)
 python3 tools/scripts/update_docs_index.py --check
+```
+
+### `generate_docs.py`
+
+Generates the static documentation site structure in `docs/`. It scans all prompts and workflows, organizes them by category (metadata-driven), and generates:
+- Category index pages (e.g., `docs/clinical.md`)
+- Individual workflow documentation pages in `docs/workflows/`
+
+**Usage:**
+
+```bash
+python3 tools/scripts/generate_docs.py
+```
+
+### `check_broken_links.py`
+
+Scans all Markdown files in `docs/` and `prompts/` for broken internal links. It validates:
+- Relative file paths
+- Anchors (e.g., `#section`)
+- Directory links (valid if directory exists)
+
+**Usage:**
+
+```bash
+python3 tools/scripts/check_broken_links.py
 ```
 
 ### `generate_overviews.py`

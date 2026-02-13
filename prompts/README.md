@@ -10,7 +10,7 @@ The prompts are organized by domain to ensure easy navigation and specialized co
 | :--- | :--- | :--- |
 | **[`business/`](./business)** | Business | Corporate functions including **Finance**, **HR**, and **Market Research**. |
 | **[`clinical/`](./clinical)** | Clinical | Comprehensive clinical trial operations, covering **Adjudication**, **CRA** tasks, **Data Management**, **Protocols**, **Safety**, and **Trial Execution**. |
-| **[`general/`](./general)** | General | Utility prompts for **Personal Productivity**, **Brainstorming**, **Communication**, and Self-Improvement. |
+| **[`communication/`](./communication)** | Communication | Prompts for **Writing**, **Speaking**, and **Interpersonal Skills**. |
 | **[`management/`](./management)** | Management | High-level decision-making prompts for **Leadership**, **Project Management**, and **Executive** roles. |
 | **[`meta/`](./meta)** | Meta | "Prompts for Prompts" - The engine room for **Prompt Engineering**, **Agent Creation**, and self-improving workflows. |
 | **[`regulatory/`](./regulatory)** | Regulatory | Critical frameworks for **Compliance**, **Quality Assurance**, and **Regulatory Strategy**. |

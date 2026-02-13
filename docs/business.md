@@ -8,17 +8,16 @@ has_children: false
 # Business
 
 ## Prompts
-
 - [90-Day Pipeline Health & Next-Best-Action Review](../prompts/business/development/90_day_pipeline_health_review.prompt.yaml)
 - [Board Deck Narrative Generation](../prompts/business/cfo/board_deck_narrative.prompt.yaml)
 - [Budget Variance Analysis](../prompts/business/cfo/variance_analysis.prompt.yaml)
 - [Build an Audit-Ready Site-Payment Schedule](../prompts/business/payment/audit_ready_site_payment_schedule.prompt.yaml)
 - [Build vs. Buy Decision Matrix](../prompts/business/vp_tech_innovation/build_vs_buy_matrix.prompt.yaml)
-- [CSM Portfolio Balancing](../prompts/business/cx/csm_portfolio_balancing.prompt.yaml)
 - [Clinical-Trial Budget and Burn-Rate Dashboard](../prompts/business/hr_finance/clinical_trial_budget_burn_rate_dashboard.prompt.yaml)
 - [Competitive-Bid Pricing & Margin Optimizer](../prompts/business/cfo/cfo_workflow/02_competitive_bid_pricing.prompt.yaml)
 - [Competitor-Positioning Brief](../prompts/business/development/competitor_positioning_brief.prompt.yaml)
 - [Cross-Functional Advocacy Memo](../prompts/business/cx/revenue_risk_advocacy.prompt.yaml)
+- [CSM Portfolio Balancing](../prompts/business/cx/csm_portfolio_balancing.prompt.yaml)
 - [Disruption Radar](../prompts/business/vp_tech_innovation/disruption_radar.prompt.yaml)
 - [Earnings Call Script Prep](../prompts/business/cfo/earnings_call_script_prep.prompt.yaml)
 - [Elevator Pitch for Expensive Tech](../prompts/business/vp_tech_innovation/elevator_pitch_expensive_tech.prompt.yaml)
@@ -41,12 +40,12 @@ has_children: false
 - [Payment-Process Risk Assessment and Mitigation](../prompts/business/payment/payment_process_risk_assessment.prompt.yaml)
 - [Post-Mortem / Incident Report Summary](../prompts/business/vp_tech_innovation/post_mortem_summary.prompt.yaml)
 - [Preventing Technical Debt](../prompts/business/vp_tech_innovation/preventing_technical_debt.prompt.yaml)
-- [RFP Executive-Summary Generator](../prompts/business/development/rfp_executive_summary_generator.prompt.yaml)
 - [Rapid Proposal Builder](../prompts/business/development/rapid_proposal_builder.prompt.yaml)
 - [Red Account Turnaround Strategy](../prompts/business/cx/red_account_turnaround.prompt.yaml)
 - [Regulatory & Commercial Barrier Mapping](../prompts/business/market_research/market_research_workflow/03_regulatory_commercial_barrier_mapping.prompt.yaml)
 - [Regulatory Compliance Summary](../prompts/business/cfo/regulatory_compliance_summary.prompt.yaml)
 - [Regulatory-Risk & ESG Impact Dashboard Builder](../prompts/business/cfo/cfo_workflow/03_regulatory_risk_dashboard.prompt.yaml)
+- [RFP Executive-Summary Generator](../prompts/business/development/rfp_executive_summary_generator.prompt.yaml)
 - [Scenario Modeling & Sensitivity Analysis](../prompts/business/cfo/scenario_modeling_sensitivity.prompt.yaml)
 - [Scenario-Based Clinical-Trial Cash-Flow Forecast](../prompts/business/cfo/cfo_workflow/01_scenario_cash_flow_forecast.prompt.yaml)
 - [Strategic Workforce and Talent Acquisition Plan](../prompts/business/hr_finance/strategic_workforce_talent_acquisition_plan.prompt.yaml)
@@ -58,6 +57,5 @@ has_children: false
 - [Voice of Customer Root Cause Analysis](../prompts/business/cx/root_cause_analysis.prompt.yaml)
 
 ## Workflows
-
 - [CFO Workflow](workflows/cfo.md)
 - [Market Research Workflow](workflows/market_research.md)

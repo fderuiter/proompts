@@ -37,7 +37,14 @@ Thank you for your interest in contributing to the Proompts repository! This gui
     This will run:
     *   `check_prompts.py`: Checks naming conventions and file locations.
     *   `validate_prompt_schema.py`: Validates the YAML structure and required fields.
+    *   `generate_docs.py --check`: Verifies that documentation files match the current prompts/workflows.
+    *   `check_broken_links.py`: Scans for broken internal links in documentation.
     *   `yamllint`: Checks for YAML syntax errors.
+
+    If `generate_docs.py` fails, run it without `--check` to automatically update the documentation:
+    ```bash
+    python3 tools/scripts/generate_docs.py
+    ```
 
 4.  **Sanitize and Standardize**:
     *   Ensure no sensitive information is included.

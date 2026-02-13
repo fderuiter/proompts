@@ -9,17 +9,12 @@ nav_order: 99
 
 A workflow to create an ETL mapping spec, define QC transformations, and review the final pipeline. This follows the sequence in the data_management_prompts directory (04, 05, 06).
 
-## Workflow Diagram
-
-<div class="mermaid">
-graph TD
+## Workflow Diagram\n\n<div class="mermaid">\ngraph TD
     Input_etl_requirements[Input: etl_requirements] --> Steps
     create_mapping_spec[Step: create_mapping_spec]
     Input_etl_requirements --> create_mapping_spec
     define_qc_checks[Step: define_qc_checks]
     create_mapping_spec --> define_qc_checks
     review_pipeline[Step: review_pipeline]
-    define_qc_checks --> review_pipeline
-</div>
-
+    define_qc_checks --> review_pipeline\n</div>\n
 [View Source YAML](../../workflows/clinical/data_management_etl.workflow.yaml)

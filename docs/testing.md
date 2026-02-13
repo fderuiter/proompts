@@ -8,7 +8,6 @@ has_children: false
 # Testing
 
 ## Prompts
-
 - [Advanced Design Patterns: Fluent Interface](../prompts/technical/testing/selenium_automation/fluent_interface_selenium.prompt.yaml)
 - [Architecture Design: Page Object Model](../prompts/technical/testing/selenium_automation/pom_implementation.prompt.yaml)
 - [Cross-Browser Infrastructure: Selenium Grid](../prompts/technical/testing/selenium_automation/selenium_grid_setup.prompt.yaml)
@@ -26,7 +25,3 @@ has_children: false
 - [Selenium Migration: Script Conversion](../prompts/technical/testing/selenium_automation/script_conversion.prompt.yaml)
 - [Synchronization Strategy: Explicit Waits](../prompts/technical/testing/selenium_automation/selenium_waits.prompt.yaml)
 - [Test Environment: Python & Selenium Base](../prompts/technical/testing/selenium_automation/selenium_python_setup.prompt.yaml)
-
-## Workflows
-
-- [Testing Workflow](workflows/testing.md)

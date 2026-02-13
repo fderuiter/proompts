@@ -75,6 +75,7 @@ This script runs the following checks:
 - `check_prompts`: Verifies file naming conventions and directory structure.
 - `validate_prompt_schema`: Ensures prompts follow the required schema (e.g., `messages`, `testData`).
 - `update_docs_index`: Checks if the documentation index is up-to-date.
+- `generate_docs`: Generates category and workflow documentation pages.
 - `yamllint`: Lints YAML files for formatting.
 
 It is recommended to run this script before committing changes.

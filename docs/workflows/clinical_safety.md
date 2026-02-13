@@ -9,10 +9,7 @@ nav_order: 99
 
 A workflow for creating a clinical safety synopsis, an adverse event narrative, and trending safety signals.
 
-## Workflow Diagram
-
-<div class="mermaid">
-graph TD
+## Workflow Diagram\n\n<div class="mermaid">\ngraph TD
     Input_surveillance_data[Input: surveillance_data] --> Steps
     Input_adverse_event_data[Input: adverse_event_data] --> Steps
     Input_post_market_data[Input: post_market_data] --> Steps
@@ -21,7 +18,5 @@ graph TD
     adverse_event_narrative[Step: adverse_event_narrative]
     Input_adverse_event_data --> adverse_event_narrative
     safety_signal_trending[Step: safety_signal_trending]
-    Input_post_market_data --> safety_signal_trending
-</div>
-
+    Input_post_market_data --> safety_signal_trending\n</div>\n
 [View Source YAML](../../workflows/clinical/clinical_safety.workflow.yaml)
