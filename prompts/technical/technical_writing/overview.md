@@ -2,3 +2,6 @@
 
 ## Categories
 - [Technical Writer Workflow/](technical_writer_workflow/overview.md)
+
+## Prompts
+- [Technical White Paper for Clinical Methodologies](technical_white_paper_in_silico.prompt.yaml)
