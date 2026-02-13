@@ -22,5 +22,7 @@ def iter_prompt_files(root: Path = PROMPTS_DIR):
                 yield p
 
 def iter_workflow_files(root: Path = WORKFLOWS_DIR):
-    """Yield all workflow files recursively."""
-    yield from root.rglob("*.workflow.yaml")
+    """Yield all workflow files recursively (skips macOS ._ resource forks)."""
+    for p in root.rglob("*.workflow.yaml"):
+        if not p.name.startswith("._"):
+            yield p

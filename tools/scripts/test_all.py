@@ -24,6 +24,7 @@ def run_command(command: list[str]) -> int:
 def main() -> int:
     """Run all checks and return final status."""
     checks = {
+        "cleanup_mac_files": lambda: run_command(["find", ".", "-name", "._*", "-delete"]),
         "check_prompts": check_prompts_main,
         "validate_prompt_schema": validate_prompt_schema_main,
         "update_docs_index": lambda: update_docs_index_run(check=True),
