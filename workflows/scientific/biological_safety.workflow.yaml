@@ -1,0 +1,22 @@
+name: "Biological Safety Assessment and Planning"
+description: "A workflow to perform a risk assessment for a medical device, develop a biological safety plan, and prepare for regulatory submission. This follows the sequence in the biological_safety_prompts directory."
+
+inputs:
+  - name: "medical_device_type"
+    description: "A description of the medical device under assessment."
+
+steps:
+  - step_id: "perform_risk_assessment"
+    prompt_file: "prompts/scientific/biosafety/01_risk_assessment_expert.prompt.yaml"
+    map_inputs:
+      medical_device_type: "{{inputs.medical_device_type}}"
+
+  - step_id: "develop_safety_plan"
+    prompt_file: "prompts/scientific/biosafety/02_biological_safety_plan_developer.prompt.yaml"
+    map_inputs:
+      risk_assessment: "{{steps.perform_risk_assessment.output}}"
+
+  - step_id: "prepare_submission"
+    prompt_file: "prompts/scientific/biosafety/03_regulatory_submission_support.prompt.yaml"
+    map_inputs:
+      biological_safety_plan: "{{steps.develop_safety_plan.output}}"

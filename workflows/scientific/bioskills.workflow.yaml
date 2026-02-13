@@ -1,0 +1,24 @@
+name: "BioSkills Workflow"
+description: "A workflow for coaching, feedback, and assessment of bioskills."
+
+inputs:
+  - name: "procedure_name"
+    description: "The name of the procedure being practiced."
+  - name: "procedure_notes"
+    description: "Notes from the simulated clinical scenario session."
+
+steps:
+  - step_id: "coaching"
+    prompt_file: "prompts/scientific/bioskills/01_hands_on_procedure_coaching.prompt.yaml"
+    map_inputs:
+      procedure_name: "{{inputs.procedure_name}}"
+
+  - step_id: "feedback"
+    prompt_file: "prompts/scientific/bioskills/02_simulated_clinical_scenario_feedback.prompt.yaml"
+    map_inputs:
+      procedure_notes: "{{inputs.procedure_notes}}"
+
+  - step_id: "assessment"
+    prompt_file: "prompts/scientific/bioskills/03_objective_skills_assessment.prompt.yaml"
+    map_inputs:
+      procedure_name: "{{inputs.procedure_name}}"

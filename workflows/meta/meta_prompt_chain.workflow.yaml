@@ -1,0 +1,49 @@
+name: "Meta-Prompt Chain: L1 -> L2 -> L3 -> L4"
+description: "A workflow that implements the full meta-prompt generative chain."
+
+inputs:
+  - name: "end_task"
+    description: "The final objective for the entire chain."
+  - name: "policy_block"
+    description: "Policy and style guidance for the prompts."
+  - name: "token_budget_l3"
+    description: "Token budget for the L3 prompt."
+  - name: "token_limit_l4"
+    description: "Token limit for the L4 worker."
+  - name: "task_description"
+    description: "The final, concrete task for the L4 worker."
+  - name: "input_block"
+    description: "Specific data/inputs for the L4 worker."
+  - name: "output_schema"
+    description: "The required JSON output schema for the L4 worker."
+
+steps:
+  - step_id: "generate_l2_prompt"
+    prompt_file: "prompts/meta/L1_meta-prompt-architect.prompt.yaml"
+    map_inputs:
+      end_task: "{{inputs.end_task}}"
+      policy_block: "{{inputs.policy_block}}"
+
+  - step_id: "generate_l3_prompt"
+    prompt_file: "prompts/meta/L2_prompt-engineer.prompt.yaml"
+    map_inputs:
+      generated_prompt: "{{steps.generate_l2_prompt.output}}"
+      end_task: "{{inputs.end_task}}"
+      token_budget_l3: "{{inputs.token_budget_l3}}"
+
+  - step_id: "generate_l4_prompt"
+    prompt_file: "prompts/meta/L3_task-prototyper.prompt.yaml"
+    map_inputs:
+      generated_prompt: "{{steps.generate_l3_prompt.output}}"
+      end_task: "{{inputs.end_task}}"
+      policy_block: "{{inputs.policy_block}}"
+
+  - step_id: "execute_task"
+    prompt_file: "prompts/meta/L4_worker_prompt.prompt.yaml"
+    map_inputs:
+      generated_prompt: "{{steps.generate_l4_prompt.output}}"
+      task_description: "{{inputs.task_description}}"
+      input_block: "{{inputs.input_block}}"
+      output_schema: "{{inputs.output_schema}}"
+      policy_block: "{{inputs.policy_block}}"
+      token_limit_l4: "{{inputs.token_limit_l4}}"
