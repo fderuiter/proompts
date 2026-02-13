@@ -14,6 +14,7 @@ has_children: false
 - [CSR Results and Safety Section](../prompts/technical/technical_writing/01_csr_results_safety_section.prompt.yaml)
 - [Code Formatting, Linting, and Refactoring Implementation](../prompts/technical/repository_refactoring/06_code_formatting_linting_refactoring_implementation.prompt.yaml)
 - [Codebase Quality & Maintainability Analysis](../prompts/technical/repository_refactoring/02_codebase_quality_analysis.prompt.yaml)
+- [Conversation Stochastic Modeler](../prompts/technical/data_science/conversation_stochastic_modeler.prompt.yaml)
 - [Dependencies & Security Posture Analysis](../prompts/technical/repository_refactoring/03_dependencies_security_analysis.prompt.yaml)
 - [Design.md Template](../prompts/technical/design/01_design_md_template.prompt.yaml)
 - [Documentation and Repository Structure Implementation](../prompts/technical/repository_refactoring/05_documentation_structure_implementation.prompt.yaml)
