@@ -35,6 +35,7 @@ Thank you for your interest in contributing to the Proompts repository! This gui
     python3 tools/scripts/test_all.py
     ```
     This will run:
+    *   `cleanup_mac_files`: **Automatically removes** macOS metadata files (`._*`) to prevent CI errors.
     *   `check_prompts.py`: Checks naming conventions and file locations.
     *   `validate_prompt_schema.py`: Validates the YAML structure and required fields.
     *   `generate_docs.py --check`: Verifies that documentation files match the current prompts/workflows.

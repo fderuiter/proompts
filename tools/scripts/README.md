@@ -48,7 +48,11 @@ pip install -r requirements.txt
 
 ### `test_all.py`
 
-**The Master Runner.** Runs all repository validation checks in sequence: `check_prompts`, `validate_prompt_schema`, `update_docs_index` (check mode), and `yamllint`.
+**The Master Runner.** Runs all repository validation checks in sequence.
+**Key Steps:**
+1.  **Cleanup**: Removes macOS metadata files (`._*`) to ensure a clean state.
+2.  **Validation**: Runs `check_prompts`, `validate_prompt_schema`, `generate_docs` (check mode), `check_broken_links`, and `yamllint`.
+3.  **Maintenance**: Runs `update_docs_index` (check mode).
 
 **Usage:**
 
@@ -189,7 +193,10 @@ python3 tools/scripts/check_broken_links.py
 
 ### `generate_overviews.py`
 
-Automatically creates `overview.md` files in prompt directories that are missing them. Populates the file with a list of prompts in that directory.
+Automatically creates `overview.md` files in prompt directories.
+- **Recursive**: Scans for subdirectories containing prompts and links them in a "Categories" section.
+- **Cleanup**: Removes `overview.md` files if a directory becomes empty.
+- **Filtering**: Ignores hidden files (e.g., `._*`) to prevent broken links.
 
 **Usage:**
 
@@ -272,8 +279,8 @@ Contains shared constants and helper functions used by multiple scripts.
 - `ROOT`: Path to the repository root.
 - `PROMPTS_DIR`: Path to the `prompts/` directory.
 - `load_yaml(path)`: Safely loads YAML files.
-- `iter_prompt_files(root)`: Recursively yields all prompt files.
-- `iter_workflow_files(root)`: Recursively yields all workflow files.
+- `iter_prompt_files(root)`: Recursively yields all prompt files **(skips macOS `._` resource forks)**.
+- `iter_workflow_files(root)`: Recursively yields all workflow files **(skips macOS `._` resource forks)**.
 
 ---
 

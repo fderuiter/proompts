@@ -68,14 +68,16 @@ To learn more, see the [Prompt Workflows Documentation](docs/workflows.md).
 To run all validation checks (YAML linting, schema validation, documentation index verification) locally, use the provided script:
 
 ```bash
-./scripts/validate_prompts.sh
+python3 tools/scripts/test_all.py
 ```
 
 This script runs the following checks:
+- `cleanup_mac_files`: Removes macOS metadata files (`._*`) to ensure a clean state.
 - `check_prompts`: Verifies file naming conventions and directory structure.
 - `validate_prompt_schema`: Ensures prompts follow the required schema (e.g., `messages`, `testData`).
 - `update_docs_index`: Checks if the documentation index is up-to-date.
 - `generate_docs`: Generates category and workflow documentation pages.
+- `check_broken_links`: Scans for broken internal links in documentation.
 - `yamllint`: Lints YAML files for formatting.
 
 It is recommended to run this script before committing changes.
