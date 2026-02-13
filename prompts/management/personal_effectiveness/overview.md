@@ -1,5 +1,6 @@
 # Personal Effectiveness Overview
 
+## Prompts
 - [Career Compass Advisor](career_compass_advisor.prompt.yaml)
 - [Eisenhower Matrix Coach](eisenhower_matrix_coach.prompt.yaml)
 - [Scenario-Based Financial Navigator](financial_navigator.prompt.yaml)

@@ -1,4 +1,7 @@
 # Safety Overview
 
-- [. Sae Safety Reporting](._sae_safety_reporting.prompt.yaml)
+## Categories
+- [Clinical Safety Workflow/](clinical_safety_workflow/overview.md)
+
+## Prompts
 - [SAE and Safety Reporting](sae_safety_reporting.prompt.yaml)

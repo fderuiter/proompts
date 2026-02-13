@@ -1,5 +1,6 @@
 # Quality Overview
 
+## Prompts
 - [CAPA Investigation Report Writer](capa_investigation_report_writer.prompt.yaml)
 - [CAPA Management Process](capa_management_process.prompt.yaml)
 - [CAPA Plan Generator](capa_plan_generator.prompt.yaml)

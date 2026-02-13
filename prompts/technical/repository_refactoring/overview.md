@@ -1,5 +1,6 @@
 # Repository Refactoring Overview
 
+## Prompts
 - [Code Formatting, Linting, and Refactoring Implementation](code_formatting_linting_refactoring_implementation.prompt.yaml)
 - [Codebase Quality & Maintainability Analysis](codebase_quality_analysis.prompt.yaml)
 - [Dependencies & Security Posture Analysis](dependencies_security_analysis.prompt.yaml)

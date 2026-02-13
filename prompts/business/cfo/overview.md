@@ -1,5 +1,9 @@
 # Cfo Overview
 
+## Categories
+- [Cfo Workflow/](cfo_workflow/overview.md)
+
+## Prompts
 - [Board Deck Narrative Generation](board_deck_narrative.prompt.yaml)
 - [Earnings Call Script Prep](earnings_call_script_prep.prompt.yaml)
 - [Investor FAQ Generation](investor_faq_generation.prompt.yaml)

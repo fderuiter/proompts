@@ -1,5 +1,6 @@
 # Togaf Overview
 
+## Prompts
 - [TOGAF Phase A - Architecture Vision](phase_a_vision.prompt.yaml)
 - [TOGAF Phase B - Business Architecture](phase_b_business.prompt.yaml)
 - [TOGAF Phase C - Information Systems Architectures](phase_c_information_systems.prompt.yaml)
