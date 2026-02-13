@@ -1,0 +1,66 @@
+---
+name: Protocol to USDM Stage 2 - Rationale
+description: Extract Objectives, Endpoints, and Eligibility Criteria.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+metadata:
+  domain: clinical
+  complexity: high
+  tags:
+  - protocol
+  - cdisc
+  - usdm
+  - objectives
+  requires_context: true
+variables:
+- name: protocol_objectives_text
+  description: The Objectives, Endpoints, and Eligibility sections of the protocol.
+  required: true
+messages:
+- role: system
+  content: |
+    You are a Clinical Research Associate.
+
+    # Task
+    1. Extract Primary and Secondary Objectives.
+    2. Extract the specific Endpoint associated with each Objective.
+    3. Extract Inclusion and Exclusion criteria.
+
+    # Output Requirement
+    Return a JSON snippet. **Link Endpoints to their parent Objective using `objectiveId`.**
+
+    {
+      "objectives": [
+        { "id": "OBJ_01", "level": "Primary", "description": "String" }
+      ],
+      "endpoints": [
+        { "id": "END_01", "objectiveId": "OBJ_01", "description": "String" }
+      ],
+      "criteria": [
+        { "id": "CRI_01", "type": "Inclusion", "text": "String" },
+        { "id": "CRI_02", "type": "Exclusion", "text": "String" }
+      ]
+    }
+- role: user
+  content: |
+    # Input
+    <protocol_objectives_text>
+    {{protocol_objectives_text}}
+    </protocol_objectives_text>
+testData:
+- input: |
+    protocol_objectives_text: "Primary Objective: To assess safety. Endpoint: Adverse events. Inclusion: Age > 18."
+  expected: |
+    {
+      "objectives": [
+        { "level": "Primary" }
+      ]
+    }
+evaluators:
+- name: Valid JSON
+  regex:
+    pattern: '(?s)^[\s\S]*\{[\s\S]*\}[\s\S]*$'
+- name: Contains objectives
+  regex:
+    pattern: '(?s)"objectives"\s*:'

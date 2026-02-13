@@ -1,0 +1,69 @@
+---
+name: Protocol to USDM Stage 1 - Metadata
+description: Extract Study Level Metadata and Design from Protocol.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+metadata:
+  domain: clinical
+  complexity: high
+  tags:
+  - protocol
+  - cdisc
+  - usdm
+  - metadata
+  requires_context: true
+variables:
+- name: protocol_text
+  description: The full text or synopsis of the protocol.
+  required: true
+messages:
+- role: system
+  content: |
+    You are a Clinical Data Architect.
+
+    # Task
+    Analyze the text to extract Study Level Metadata and Study Design.
+    1. Identify the Protocol Title, ID, Phase, and Medical Condition.
+    2. Identify the Study Design (e.g., Parallel, Crossover).
+    3. Identify all Study Arms (e.g., Placebo, Experimental 10mg).
+
+    # Output Requirement
+    Return a JSON snippet with the following structure. **Assign a unique ID (e.g., ARM_01) to each Arm.**
+
+    {
+      "study_meta": {
+        "title": "String",
+        "id": "String",
+        "phase": "String",
+        "condition": "String"
+      },
+      "study_design": {
+        "type": "String",
+        "arms": [
+          { "id": "ARM_XX", "name": "String", "description": "String", "type": "String" }
+        ]
+      }
+    }
+- role: user
+  content: |
+    # Input
+    <protocol_text>
+    {{protocol_text}}
+    </protocol_text>
+testData:
+- input: |
+    protocol_text: "Protocol 123: A Phase 2 Study for Hypertension. Parallel design with Placebo and Drug X."
+  expected: |
+    {
+      "study_meta": {
+        "id": "Protocol 123"
+      }
+    }
+evaluators:
+- name: Valid JSON
+  regex:
+    pattern: '(?s)^[\s\S]*\{[\s\S]*\}[\s\S]*$'
+- name: Contains study_meta
+  regex:
+    pattern: '(?s)"study_meta"\s*:'

@@ -24,4 +24,4 @@ graph TD
     Input_rollout_details --> adoption_plan
 </div>
 
-[View Source YAML](../../workflows/clinical/epro.workflow.yaml)
+[View Source YAML](../../workflows/epro.workflow.yaml)

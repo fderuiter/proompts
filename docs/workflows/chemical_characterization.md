@@ -26,4 +26,4 @@ graph TD
     assess_risk --> write_summary
 </div>
 
-[View Source YAML](../../workflows/scientific/chemical_characterization.workflow.yaml)
+[View Source YAML](../../workflows/chemical_characterization.workflow.yaml)

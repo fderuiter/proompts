@@ -30,4 +30,4 @@ graph TD
     Input_market_report --> executive_summary
 </div>
 
-[View Source YAML](../../workflows/business/market_research.workflow.yaml)
+[View Source YAML](../../workflows/market_research.workflow.yaml)

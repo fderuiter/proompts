@@ -40,4 +40,4 @@ graph TD
     Input_token_limit_l4 --> execute_task
 </div>
 
-[View Source YAML](../../workflows/meta/meta_prompt_chain.workflow.yaml)
+[View Source YAML](../../workflows/meta_prompt_chain.workflow.yaml)

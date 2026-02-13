@@ -22,4 +22,4 @@ graph TD
     develop_safety_plan --> prepare_submission
 </div>
 
-[View Source YAML](../../workflows/scientific/biological_safety.workflow.yaml)
+[View Source YAML](../../workflows/biological_safety.workflow.yaml)

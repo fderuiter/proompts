@@ -24,4 +24,4 @@ graph TD
     Input_edit_check_rules --> edit_check_specification
 </div>
 
-[View Source YAML](../../workflows/clinical/clinical_data.workflow.yaml)
+[View Source YAML](../../workflows/clinical_data.workflow.yaml)
