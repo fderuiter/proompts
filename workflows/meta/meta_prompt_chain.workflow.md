@@ -15,10 +15,10 @@ flowchart TD
         inp_input_block((input_block))
         inp_output_schema((output_schema))
     end
-    generate_l2_prompt["generate_l2_prompt<br/><small>prompts/meta/L1_meta-prompt-architect.prompt.yaml</small>"]
-    generate_l3_prompt["generate_l3_prompt<br/><small>prompts/meta/L2_prompt-engineer.prompt.yaml</small>"]
-    generate_l4_prompt["generate_l4_prompt<br/><small>prompts/meta/L3_task-prototyper.prompt.yaml</small>"]
-    execute_task["execute_task<br/><small>prompts/meta/L4_worker_prompt.prompt.yaml</small>"]
+    generate_l2_prompt["generate_l2_prompt<br/><small>prompts/meta/meta_prompt_chain/01_meta-prompt-architect.prompt.yaml</small>"]
+    generate_l3_prompt["generate_l3_prompt<br/><small>prompts/meta/meta_prompt_chain/02_prompt-engineer.prompt.yaml</small>"]
+    generate_l4_prompt["generate_l4_prompt<br/><small>prompts/meta/meta_prompt_chain/03_task-prototyper.prompt.yaml</small>"]
+    execute_task["execute_task<br/><small>prompts/meta/meta_prompt_chain/04_worker_prompt.prompt.yaml</small>"]
     inp_end_task -->|end_task| generate_l2_prompt
     inp_policy_block -->|policy_block| generate_l2_prompt
     generate_l2_prompt -->|generated_prompt| generate_l3_prompt

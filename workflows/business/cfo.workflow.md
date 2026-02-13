@@ -20,9 +20,9 @@ flowchart TD
         inp_esg_baseline((esg_baseline))
         inp_risk_tolerance((risk_tolerance))
     end
-    forecast["forecast<br/><small>prompts/business/cfo/01_scenario_cash_flow_forecast.prompt.yaml</small>"]
-    pricing["pricing<br/><small>prompts/business/cfo/02_competitive_bid_pricing.prompt.yaml</small>"]
-    risk_dashboard["risk_dashboard<br/><small>prompts/business/cfo/03_regulatory_risk_dashboard.prompt.yaml</small>"]
+    forecast["forecast<br/><small>prompts/business/cfo/cfo/01_scenario_cash_flow_forecast.prompt.yaml</small>"]
+    pricing["pricing<br/><small>prompts/business/cfo/cfo/02_competitive_bid_pricing.prompt.yaml</small>"]
+    risk_dashboard["risk_dashboard<br/><small>prompts/business/cfo/cfo/03_regulatory_risk_dashboard.prompt.yaml</small>"]
     inp_base_revenue -->|base_revenue| forecast
     inp_base_costs -->|base_costs| forecast
     inp_starting_cash -->|starting_cash| forecast

@@ -14,9 +14,9 @@ flowchart TD
         inp_raw_eds_dump((raw_eds_dump))
         inp_query_log((query_log))
     end
-    executive_brief["executive_brief<br/><small>prompts/management/vp_statistics/01_interim_results_executive_brief.prompt.yaml</small>"]
-    sap_draft["sap_draft<br/><small>prompts/management/vp_statistics/02_sap_first_draft_builder.prompt.yaml</small>"]
-    data_quality_heatmap["data_quality_heatmap<br/><small>prompts/management/vp_statistics/03_data_quality_risk_heatmap.prompt.yaml</small>"]
+    executive_brief["executive_brief<br/><small>prompts/management/vp_statistics/vp_statistics/01_interim_results_executive_brief.prompt.yaml</small>"]
+    sap_draft["sap_draft<br/><small>prompts/management/vp_statistics/vp_statistics/02_sap_first_draft_builder.prompt.yaml</small>"]
+    data_quality_heatmap["data_quality_heatmap<br/><small>prompts/management/vp_statistics/vp_statistics/03_data_quality_risk_heatmap.prompt.yaml</small>"]
     inp_analysis_results -->|analysis_results| executive_brief
     inp_statistical_plan -->|statistical_plan| executive_brief
     inp_safety_listings -->|safety_listings| executive_brief

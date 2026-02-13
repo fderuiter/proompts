@@ -9,10 +9,10 @@ flowchart TD
     subgraph Inputs [Global Inputs]
         inp_venting_text((venting_text))
     end
-    compassionate_analyst["compassionate_analyst<br/><small>prompts/clinical/therapy/01_compassionate_analyst.prompt.yaml</small>"]
-    iso_strategist["iso_strategist<br/><small>prompts/clinical/therapy/02_iso_strategist.prompt.yaml</small>"]
-    sonic_architect["sonic_architect<br/><small>prompts/clinical/therapy/03_sonic_architect.prompt.yaml</small>"]
-    lyricist["lyricist<br/><small>prompts/clinical/therapy/04_lyricist.prompt.yaml</small>"]
+    compassionate_analyst["compassionate_analyst<br/><small>prompts/clinical/therapy/music_therapy/01_compassionate_analyst.prompt.yaml</small>"]
+    iso_strategist["iso_strategist<br/><small>prompts/clinical/therapy/music_therapy/02_iso_strategist.prompt.yaml</small>"]
+    sonic_architect["sonic_architect<br/><small>prompts/clinical/therapy/music_therapy/03_sonic_architect.prompt.yaml</small>"]
+    lyricist["lyricist<br/><small>prompts/clinical/therapy/music_therapy/04_lyricist.prompt.yaml</small>"]
     inp_venting_text -->|venting_text| compassionate_analyst
     compassionate_analyst -->|psychological_profile| iso_strategist
     compassionate_analyst -->|psychological_profile| sonic_architect

@@ -28,12 +28,12 @@ flowchart TD
         inp_data_package_metrics_data((data_package_metrics_data))
         inp_data_package_reader_agreement((data_package_reader_agreement))
     end
-    imaging_charter_draft["imaging_charter_draft<br/><small>prompts/clinical/imaging/01_imaging_charter_draft.prompt.yaml</small>"]
-    site_upload_qc["site_upload_qc<br/><small>prompts/clinical/imaging/02_site_upload_qc.prompt.yaml</small>"]
-    central_reading_design["central_reading_design<br/><small>prompts/clinical/imaging/03_central_reading_design.prompt.yaml</small>"]
-    regulatory_imaging_charter["regulatory_imaging_charter<br/><small>prompts/clinical/imaging/04_regulatory_imaging_charter_generator.prompt.yaml</small>"]
-    image_acquisition_qc_workflow["image_acquisition_qc_workflow<br/><small>prompts/clinical/imaging/05_image_acquisition_qc_workflow_blueprint.prompt.yaml</small>"]
-    regulatory_imaging_data_package["regulatory_imaging_data_package<br/><small>prompts/clinical/imaging/06_regulatory_imaging_data_package.prompt.yaml</small>"]
+    imaging_charter_draft["imaging_charter_draft<br/><small>prompts/clinical/imaging/imaging/01_imaging_charter_draft.prompt.yaml</small>"]
+    site_upload_qc["site_upload_qc<br/><small>prompts/clinical/imaging/imaging/02_site_upload_qc.prompt.yaml</small>"]
+    central_reading_design["central_reading_design<br/><small>prompts/clinical/imaging/imaging/03_central_reading_design.prompt.yaml</small>"]
+    regulatory_imaging_charter["regulatory_imaging_charter<br/><small>prompts/clinical/imaging/imaging/04_regulatory_imaging_charter_generator.prompt.yaml</small>"]
+    image_acquisition_qc_workflow["image_acquisition_qc_workflow<br/><small>prompts/clinical/imaging/imaging/05_image_acquisition_qc_workflow_blueprint.prompt.yaml</small>"]
+    regulatory_imaging_data_package["regulatory_imaging_data_package<br/><small>prompts/clinical/imaging/imaging/06_regulatory_imaging_data_package.prompt.yaml</small>"]
     inp_charter_draft_protocol_synopsis -->|<<<protocol_synopsis>>>| imaging_charter_draft
     inp_charter_draft_modalities -->|<<<modalities>>>| imaging_charter_draft
     inp_charter_draft_endpoints -->|<<<endpoints>>>| imaging_charter_draft

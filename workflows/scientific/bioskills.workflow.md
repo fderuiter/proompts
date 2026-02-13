@@ -10,9 +10,9 @@ flowchart TD
         inp_procedure_name((procedure_name))
         inp_procedure_notes((procedure_notes))
     end
-    coaching["coaching<br/><small>prompts/scientific/bioskills/01_hands_on_procedure_coaching.prompt.yaml</small>"]
-    feedback["feedback<br/><small>prompts/scientific/bioskills/02_simulated_clinical_scenario_feedback.prompt.yaml</small>"]
-    assessment["assessment<br/><small>prompts/scientific/bioskills/03_objective_skills_assessment.prompt.yaml</small>"]
+    coaching["coaching<br/><small>prompts/scientific/bioskills/bioskills/01_hands_on_procedure_coaching.prompt.yaml</small>"]
+    feedback["feedback<br/><small>prompts/scientific/bioskills/bioskills/02_simulated_clinical_scenario_feedback.prompt.yaml</small>"]
+    assessment["assessment<br/><small>prompts/scientific/bioskills/bioskills/03_objective_skills_assessment.prompt.yaml</small>"]
     inp_procedure_name -->|procedure_name| coaching
     inp_procedure_notes -->|procedure_notes| feedback
     inp_procedure_name -->|procedure_name| assessment

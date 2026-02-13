@@ -16,9 +16,9 @@ flowchart TD
         inp_study_synopsis((study_synopsis))
         inp_sponsor_name((sponsor_name))
     end
-    site_mapping["site_mapping<br/><small>prompts/clinical/site_acquisition/01_site_landscape_mapping.prompt.yaml</small>"]
-    feasibility_questionnaire["feasibility_questionnaire<br/><small>prompts/clinical/site_acquisition/02_tailored_feasibility_questionnaire.prompt.yaml</small>"]
-    outreach_email["outreach_email<br/><small>prompts/clinical/site_acquisition/03_investigator_outreach_email_generator.prompt.yaml</small>"]
+    site_mapping["site_mapping<br/><small>prompts/clinical/site_acquisition/site_acquisition/01_site_landscape_mapping.prompt.yaml</small>"]
+    feasibility_questionnaire["feasibility_questionnaire<br/><small>prompts/clinical/site_acquisition/site_acquisition/02_tailored_feasibility_questionnaire.prompt.yaml</small>"]
+    outreach_email["outreach_email<br/><small>prompts/clinical/site_acquisition/site_acquisition/03_investigator_outreach_email_generator.prompt.yaml</small>"]
     inp_protocol_summary -->|protocol_summary| site_mapping
     inp_protocol_summary -->|protocol_summary| feasibility_questionnaire
     inp_investigator_name -->|investigator_name| outreach_email

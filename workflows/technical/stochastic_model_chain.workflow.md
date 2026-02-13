@@ -9,9 +9,9 @@ flowchart TD
     subgraph Inputs [Global Inputs]
         inp_conversation_scenario((conversation_scenario))
     end
-    architect_step["architect_step<br/><small>prompts/technical/data_science/stochastic_architect.prompt.yaml</small>"]
-    engineer_step["engineer_step<br/><small>prompts/technical/data_science/stochastic_engineer.prompt.yaml</small>"]
-    strategist_step["strategist_step<br/><small>prompts/technical/data_science/stochastic_strategist.prompt.yaml</small>"]
+    architect_step["architect_step<br/><small>prompts/technical/data_science/stochastic_model_chain/01_stochastic_architect.prompt.yaml</small>"]
+    engineer_step["engineer_step<br/><small>prompts/technical/data_science/stochastic_model_chain/02_stochastic_engineer.prompt.yaml</small>"]
+    strategist_step["strategist_step<br/><small>prompts/technical/data_science/stochastic_model_chain/03_stochastic_strategist.prompt.yaml</small>"]
     inp_conversation_scenario -->|conversation_scenario| architect_step
     architect_step -->|architect_output| engineer_step
     architect_step -->|architect_output| strategist_step
