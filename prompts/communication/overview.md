@@ -1,6 +1,5 @@
 # Communication Overview
 
-- [. Red Team Stress Test](._red_team_stress_test.prompt.yaml)
 - [80/20 Crash Course](80_20_crash_course.prompt.yaml)
 - [Analogy Architect](analogy_architect.prompt.yaml)
 - [Data-to-Insight Analyst](data_to_insight_analyst.prompt.yaml)
