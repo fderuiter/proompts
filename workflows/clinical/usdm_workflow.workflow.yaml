@@ -1,0 +1,39 @@
+name: "Protocol to USDM Workflow"
+description: "A 5-stage chain to convert unstructured Clinical Protocol text into CDISC USDM v3.0 JSON."
+
+inputs:
+  - name: "protocol_text"
+    description: "The full text or synopsis of the protocol."
+  - name: "protocol_objectives_text"
+    description: "The Objectives, Endpoints, and Eligibility sections."
+  - name: "protocol_soa_text"
+    description: "The Schedule of Activities table or text."
+
+steps:
+  - step_id: "stage1_metadata"
+    prompt_file: "prompts/clinical/protocol/07_usdm_stage1_metadata.prompt.yaml"
+    map_inputs:
+      protocol_text: "{{inputs.protocol_text}}"
+
+  - step_id: "stage2_rationale"
+    prompt_file: "prompts/clinical/protocol/08_usdm_stage2_rationale.prompt.yaml"
+    map_inputs:
+      protocol_objectives_text: "{{inputs.protocol_objectives_text}}"
+
+  - step_id: "stage3_workflow"
+    prompt_file: "prompts/clinical/protocol/09_usdm_stage3_workflow.prompt.yaml"
+    map_inputs:
+      protocol_soa_text: "{{inputs.protocol_soa_text}}"
+
+  - step_id: "stage4_concepts"
+    prompt_file: "prompts/clinical/protocol/10_usdm_stage4_concepts.prompt.yaml"
+    map_inputs:
+      activities_json: "{{steps.stage3_workflow.output}}"
+
+  - step_id: "stage5_assembly"
+    prompt_file: "prompts/clinical/protocol/11_usdm_stage5_assembly.prompt.yaml"
+    map_inputs:
+      metadata_json: "{{steps.stage1_metadata.output}}"
+      rationale_json: "{{steps.stage2_rationale.output}}"
+      workflow_json: "{{steps.stage3_workflow.output}}"
+      concepts_json: "{{steps.stage4_concepts.output}}"

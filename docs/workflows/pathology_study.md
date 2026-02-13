@@ -22,4 +22,4 @@ graph TD
     evaluate_interface --> plan_reporting
 </div>
 
-[View Source YAML](../../workflows/scientific/pathology_study.workflow.yaml)
+[View Source YAML](../../workflows/pathology_study.workflow.yaml)
