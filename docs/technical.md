@@ -28,6 +28,7 @@ has_children: false
 - [Stochastic Architect](../prompts/technical/data_science/stochastic_model_chain_workflow/01_stochastic_architect.prompt.yaml)
 - [Stochastic Engineer](../prompts/technical/data_science/stochastic_model_chain_workflow/02_stochastic_engineer.prompt.yaml)
 - [Stochastic Strategist](../prompts/technical/data_science/stochastic_model_chain_workflow/03_stochastic_strategist.prompt.yaml)
+- [Technical White Paper for Clinical Methodologies](../prompts/technical/technical_writing/technical_white_paper_in_silico.prompt.yaml)
 - [Test Suite Enhancement and CI Pipeline Implementation](../prompts/technical/repository_refactoring/test_suite_enhancement_ci_pipeline_implementation.prompt.yaml)
 - [Testing, Configuration, and Automation Analysis](../prompts/technical/repository_refactoring/testing_configuration_automation_analysis.prompt.yaml)
 

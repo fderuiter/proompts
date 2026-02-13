@@ -9,6 +9,7 @@ has_children: false
 
 ## Prompts
 - [21 CFR Part 11 Compliance Verification](../prompts/clinical/data_management/part_11_compliance_verification.prompt.yaml)
+- [ADaM Derivation Writer](../prompts/clinical/data_management/cdisc_compliance_workflow/03_adam_derivation_writer.prompt.yaml)
 - [Adaptive Recruitment and Retention Strategy](../prompts/clinical/trial_execution/adaptive_recruitment_retention_strategy.prompt.yaml)
 - [AI-Powered Site and Recruitment Strategy](../prompts/clinical/trial_execution/ai_powered_site_recruitment.prompt.yaml)
 - [Analyze Adjudication KPIs](../prompts/clinical/adjudication/adjudication_workflow/03_analyze_adjudication_kpis.prompt.yaml)
@@ -32,6 +33,7 @@ has_children: false
 - [Compassionate Music Therapist & Composer](../prompts/clinical/therapy/music_therapist_melody.prompt.yaml)
 - [Compliance and Data Quality Monitoring Plan](../prompts/clinical/trial_execution/compliance_data_quality_monitoring_plan.prompt.yaml)
 - [Computer System Validation (CSV)](../prompts/clinical/eclinical_integration/computer_system_validation.prompt.yaml)
+- [Controlled Terminology Harmonizer](../prompts/clinical/data_management/cdisc_compliance_workflow/04_controlled_terminology_harmonizer.prompt.yaml)
 - [Create a Risk-Based Monitoring & Mitigation SOP for RTSM](../prompts/clinical/rtsm/rtsm_workflow/03_risk_based_monitoring_sop.prompt.yaml)
 - [CRF Quality Auditor](../prompts/clinical/forms/clinical_prompts_workflow/02_crf_quality_auditor.prompt.yaml)
 - [CRF Shell Generator](../prompts/clinical/forms/clinical_prompts_workflow/01_crf_shell_generator.prompt.yaml)
@@ -82,6 +84,8 @@ has_children: false
 - [Protocol to USDM Stage 3 - Workflow](../prompts/clinical/protocol/usdm_workflow/03_usdm_stage3_workflow.prompt.yaml)
 - [Protocol to USDM Stage 4 - Concepts](../prompts/clinical/protocol/usdm_workflow/04_usdm_stage4_concepts.prompt.yaml)
 - [Protocol to USDM Stage 5 - Assembly](../prompts/clinical/protocol/usdm_workflow/05_usdm_stage5_assembly.prompt.yaml)
+- [Protocol-to-TS Generator](../prompts/clinical/data_management/cdisc_compliance_workflow/01_protocol_to_ts_generator.prompt.yaml)
+- [Raw-to-SDTM Auto-Mapper](../prompts/clinical/data_management/cdisc_compliance_workflow/02_raw_to_sdtm_auto_mapper.prompt.yaml)
 - [RBQM Anomaly Detection](../prompts/clinical/monitoring/rbqm_anomaly_detection.prompt.yaml)
 - [Real-Time Adjudication Visibility Dashboard](../prompts/clinical/adjudication/adjudication_workflow/01_real_time_adjudication_dashboard.prompt.yaml)
 - [Regulatory and Validation Checklist](../prompts/clinical/eclinical_integration/eclinical_integration_workflow/03_regulatory_validation_checklist.prompt.yaml)
