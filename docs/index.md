@@ -529,6 +529,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Hexagonal Architecture Principles](../prompts/technical/architecture/04_hexagonal_architecture_principles.prompt.yaml)
 - [Hexagonal Architecture Implementation](../prompts/technical/architecture/05_hexagonal_architecture_implementation.prompt.yaml)
 - [Hexagonal Architecture Review](../prompts/technical/architecture/06_hexagonal_architecture_review.prompt.yaml)
+- [Conversation Stochastic Modeler](../prompts/technical/data_science/conversation_stochastic_modeler.prompt.yaml)
 - [Design.md Template](../prompts/technical/design/01_design_md_template.prompt.yaml)
 - [AI Email Assistant Go/No-Go Vote](../prompts/technical/design/02_email_assistant_go_no_go_vote.prompt.yaml)
 - [Heuristic-Evaluation Coach](../prompts/technical/design/03_heuristic_evaluation_coach.prompt.yaml)
