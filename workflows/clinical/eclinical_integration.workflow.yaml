@@ -1,0 +1,26 @@
+name: "eClinical Integration Workflow"
+description: "A workflow for architecting an integration blueprint, creating a data mapping playbook, and compiling a regulatory validation checklist."
+
+inputs:
+  - name: "integration_description"
+    description: "A high-level description of the integration task."
+  - name: "mapping_requirements"
+    description: "Requirements for the data mapping and transformation playbook."
+  - name: "validation_info"
+    description: "Information for the regulatory and validation checklist."
+
+steps:
+  - step_id: "integration_blueprint"
+    prompt_file: "prompts/clinical/eclinical_integration/01_architect_integration_blueprint.prompt.yaml"
+    map_inputs:
+      input: "{{inputs.integration_description}}"
+
+  - step_id: "mapping_playbook"
+    prompt_file: "prompts/clinical/eclinical_integration/02_data_mapping_transformation_playbook.prompt.yaml"
+    map_inputs:
+      input: "{{inputs.mapping_requirements}}"
+
+  - step_id: "validation_checklist"
+    prompt_file: "prompts/clinical/eclinical_integration/03_regulatory_validation_checklist.prompt.yaml"
+    map_inputs:
+      input: "{{inputs.validation_info}}"

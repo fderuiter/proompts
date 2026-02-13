@@ -1,0 +1,22 @@
+name: "Adjudication Workflow"
+description: "A workflow to design an adjudication dashboard, create a source document checklist, and analyze adjudication KPIs."
+
+inputs:
+  - name: "charter_excerpt"
+    description: "Relevant sections of the adjudication charter for creating the checklist."
+  - name: "adjudication_log_csv"
+    description: "A CSV file containing the adjudication log for KPI analysis."
+
+steps:
+  - step_id: "design_dashboard"
+    prompt_file: "prompts/clinical/adjudication/01_real_time_adjudication_dashboard.prompt.yaml"
+
+  - step_id: "create_checklist"
+    prompt_file: "prompts/clinical/adjudication/02_source_document_endpoint_checklist.prompt.yaml"
+    map_inputs:
+      charter_excerpt: "{{inputs.charter_excerpt}}"
+
+  - step_id: "analyze_kpis"
+    prompt_file: "prompts/clinical/adjudication/03_analyze_adjudication_kpis.prompt.yaml"
+    map_inputs:
+      adjudication_log.csv: "{{inputs.adjudication_log_csv}}"

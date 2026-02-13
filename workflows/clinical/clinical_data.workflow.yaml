@@ -1,0 +1,26 @@
+name: "Clinical Data Workflow"
+description: "A workflow for detecting discrepancies, drafting a DMP section, and building edit check specifications."
+
+inputs:
+  - name: "edc_export_csv"
+    description: "A CSV dataset for discrepancy detection."
+  - name: "dmp_section_requirements"
+    description: "Requirements for the Data Management Plan section."
+  - name: "edit_check_rules"
+    description: "Rules for the edit check specifications."
+
+steps:
+  - step_id: "discrepancy_detection"
+    prompt_file: "prompts/clinical/data/01_discrepancy_detection_query_log.prompt.yaml"
+    map_inputs:
+      input: "{{inputs.edc_export_csv}}"
+
+  - step_id: "dmp_section"
+    prompt_file: "prompts/clinical/data/02_data_management_plan_section.prompt.yaml"
+    map_inputs:
+      input: "{{inputs.dmp_section_requirements}}"
+
+  - step_id: "edit_check_specification"
+    prompt_file: "prompts/clinical/data/03_edit_check_specification_builder.prompt.yaml"
+    map_inputs:
+      input: "{{inputs.edit_check_rules}}"
