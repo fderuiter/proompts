@@ -28,7 +28,7 @@ has_children: false
 - [RequirementsBot Prompt](../prompts/technical/software_engineering/lifecycle/requirements_prompt.prompt.yaml)
 - [Retrieval-Augmented Answer Composer](../prompts/technical/software_engineering/tasks/rag_composer.prompt.yaml)
 - [Security Vulnerability Hunt](../prompts/technical/software_engineering/tasks/security_vulnerability.prompt.yaml)
-- [Targeted Test Generation (OpenAI Codex)](../prompts/technical/software_engineering/tasks/add_tests.prompt.yaml)
+- [Senior QA Automation Architect](../prompts/technical/software_engineering/tasks/add_tests.prompt.yaml)
 - [Technical Implementation Plan](../prompts/technical/software_engineering/lifecycle/technical_implementation_plan.prompt.yaml)
 - [To-Do List Template](../prompts/technical/software_engineering/lifecycle/todo_generation.prompt.yaml)
 - [Tooling, Linting & Quality Gates (OpenAI Codex)](../prompts/technical/software_engineering/tasks/tooling_and_quality.prompt.yaml)
