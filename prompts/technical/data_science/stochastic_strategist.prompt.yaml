@@ -33,27 +33,44 @@ messages:
       1. **The "Black Swan" Path:** Identify a specific sequence of states that has a low probability but results in the highest possible Risk Score.
       2. **The "Leverage Point":** Identify ONE specific transition in the matrix (e.g., moving from "Objection" to "Clarification") where a 10% increase in probability would most drastically improve the final success rate.
       3. **Intervention:** Propose a specific conversational script or tactic that a human could use to achieve that 10% probability shift.
+
+      # Output Format
+      Wrap your analysis in `<strategic_analysis>` tags.
+      Structure the content with:
+      - `## Black Swan Analysis`
+      - `## Leverage Point`
+      - `## Proposed Intervention`
   - role: user
     content: |
       # Context
       Base this analysis on the Matrix and Simulation logic established in the previous turns.
 
       ## Architect's Model (Matrix):
+      <architect_model>
       {{architect_output}}
+      </architect_model>
 
       ## Engineer's Simulation (Logic):
+      <simulation_logic>
       {{engineer_output}}
+      </simulation_logic>
 testData:
   - input: |
       Architect: Matrix...
       Engineer: Code...
     expected: |
-      Black Swan
-      Leverage Point
+      <strategic_analysis>
+      ## Black Swan Analysis
+      ## Leverage Point
+      ## Proposed Intervention
+      </strategic_analysis>
 evaluators:
+  - name: Output wrapped in strategic_analysis tags
+    regex:
+      pattern: (?s)<strategic_analysis>.*</strategic_analysis>
   - name: Output includes Black Swan analysis
-    string:
-      matches: (?i)Black Swan
+    regex:
+      pattern: (?i)Black Swan
   - name: Output includes Leverage Point
-    string:
-      matches: (?i)Leverage Point
+    regex:
+      pattern: (?i)Leverage Point

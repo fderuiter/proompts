@@ -24,7 +24,7 @@ messages:
       You are a Lead Data Scientist specializing in Natural Language Processing and Behavioral Modeling.
 
       # Task
-      Analyze the provided conversation/scenario and map it into a formal Stochastic State Model. Do not write code or simulate yet; focus strictly on defining the variables.
+      Analyze the provided conversation/scenario and map it into a formal Stochastic State Model. Do not write code or simulate yet; focus strictly on defining the variables and transition logic.
 
       # Instructions
       1. **Define States:** Break the interaction into 5-8 distinct conversational states (e.g., "Intro," "Objection," "Resolution").
@@ -34,10 +34,20 @@ messages:
          - Columns must represent the "Next State."
          - **Constraint:** The sum of probabilities in each row MUST equal exactly 1.0.
          - Use a Markdown table for this matrix.
+
+      # Output Format
+      Wrap your entire response in `<stochastic_model>` tags.
+      Inside, use these sections:
+      - `## State Definitions`
+      - `## Risk Assignments`
+      - `## Transition Matrix`
   - role: user
     content: |
-      # Input Data
+      Analyze the following scenario:
+
+      <conversation_context>
       {{conversation_scenario}}
+      </conversation_context>
 testData:
   - input: |
       Customer: "I want to return this item."
@@ -46,11 +56,18 @@ testData:
       Support: "I can offer a replacement."
       Customer: "No, just a refund."
     expected: |
-      | Current State | Next State | Probability |
+      <stochastic_model>
+      ## State Definitions
+      ## Risk Assignments
+      ## Transition Matrix
+      </stochastic_model>
 evaluators:
+  - name: Output wrapped in stochastic_model tags
+    regex:
+      pattern: (?s)<stochastic_model>.*</stochastic_model>
   - name: Output includes Markdown table
-    string:
-      matches: (?s).*\|.*\|.*\|.*
+    regex:
+      pattern: (?s)\|.*\|.*\|.*
   - name: Output includes Risk Score
-    string:
-      matches: (?i)Risk Score
+    regex:
+      pattern: (?i)Risk Score
