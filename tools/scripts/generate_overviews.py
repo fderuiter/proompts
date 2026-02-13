@@ -37,10 +37,19 @@ def generate_overview(directory: Path) -> str:
     prompt_files = []
     for pattern in ("*.prompt.yaml", "*.prompt.yml"):
         prompt_files.extend(directory.glob(pattern))
+    
+    # Filter out hidden files (e.g. ._ files on Mac)
+    prompt_files = [f for f in prompt_files if not f.name.startswith('.')]
+    
+    lines = []
     for file in sorted(prompt_files):
         heading = title_from_prompt(file)
         lines.append(f"- [{heading}]({file.name})")
-    return "\n".join(lines).rstrip() + "\n"
+    
+    if not lines:
+        return ""
+        
+    return "\n".join([f"# {title} Overview", ""] + lines).rstrip() + "\n"
 
 
 def ensure_overview(directory: Path) -> bool:
