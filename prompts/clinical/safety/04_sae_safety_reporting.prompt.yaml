@@ -1,52 +1,88 @@
 ---
 name: SAE and Safety Reporting
 version: 0.1.0
-description: Analyze SAEs for expedited reporting criteria.
+description: Analyze SAEs for expedited reporting criteria (21 CFR 312.32).
 metadata:
   domain: clinical
-  complexity: medium
+  complexity: high
   tags:
   - safety
   - sae
   - reporting
+  - ind
+  - 21cfr312.32
   requires_context: true
 variables:
 - name: sae_report
-  description: The sae report to use for this prompt
+  description: The full text of the Serious Adverse Event report, including patient demographics (de-identified), event details, causality assessment, and concomitant medications.
   required: true
 model: gpt-4o
 modelParameters:
-  temperature: 0.2
+  temperature: 0.1
 messages:
 - role: system
-  content: You are a Drug Safety Physician. Analyze the latest serious adverse event (SAE) reports and cross-reference with
-    the Investigator's Brochure to determine if they meet the criteria for expedited IND safety reporting under 21 CFR 312.32.
-    Draft the required narrative statement for the submission.
+  content: |
+    You are an expert Drug Safety Physician and Regulatory Affairs Specialist. Your task is to evaluate Serious Adverse Event (SAE) reports for expedited reporting requirements under FDA 21 CFR 312.32 (IND Safety Reporting).
+
+    Analyze the provided SAE Report against the following criteria:
+    1. **Seriousness**: Is the event fatal, life-threatening, requiring hospitalization, disabling, or a congenital anomaly?
+    2. **Unexpectedness**: Is the event not listed in the Investigator's Brochure (IB) or is it more severe/specific than listed?
+    3. **Causality**: Is there a reasonable possibility that the drug caused the event?
+
+    Output your analysis in the following STRICT Markdown format:
+
+    ## Safety Assessment
+    - **Criteria Met**: [List criteria: Serious, Unexpected, Related]
+    - **Reasoning**: [Brief justification citing specific details from the report]
+
+    ## Narrative Statement
+    [A concise, medical narrative summary of the event, suitable for regulatory submission. Do not include PHI.]
+
+    ## Regulatory Recommendation
+    - **Action**: [Select ONE: Expedited 7-Day Report / Expedited 15-Day Report / Routine Annual Reporting / Query Site]
+    - **Citation**: [Cite specific section of 21 CFR 312.32, e.g., 21 CFR 312.32(c)(1)(i)]
 - role: user
-  content: 'Analyze the latest serious adverse event reports and cross-reference with the Investigator''s Brochure to determine
-    if they meet the criteria for expedited IND safety reporting under 21 CFR 312.32. Draft the required narrative statement
-    for the submission.
+  content: |
+    Analyze the following serious adverse event report:
 
-
-    Inputs:
-
-    - `{{sae_report}}`
-
-
-    Output format:
-
-    Markdown Narrative Statement and Reporting Recommendation.'
+    <sae_report>
+    {{sae_report}}
+    </sae_report>
 testData:
-- input: 'sae_report: Patient hospitalized for severe allergic reaction.
-
-    '
-  expected: 'Narrative Statement
-
-    '
+- vars:
+    sae_report: |
+      Subject ID: 101-005
+      Age/Sex: 45/M
+      Study Drug: Xylopram (blinded)
+      Event: Anaphylactic Shock (Fatal)
+      Onset: Day 3 of dosing, immediately after infusion.
+      Investigator Assessment: Related to study drug.
+      IB Status: Anaphylaxis is not listed in the current Investigator's Brochure.
+  expected: "Expedited 7-Day Report"
+- vars:
+    sae_report: |
+      Subject ID: 202-010
+      Age/Sex: 62/F
+      Study Drug: Placebo/Active (Blinded)
+      Event: Fractured Femur due to car accident.
+      Onset: Day 45.
+      Investigator Assessment: Not Related (trauma).
+      Outcome: Hospitalized for surgery.
+  expected: "Routine Annual Reporting"
+- vars:
+    sae_report: |
+      Subject ID: 303-008
+      Event: Stevens-Johnson Syndrome
+      Outcome: Recovered with sequelae.
+      Causality: [Missing]
+  expected: "Query Site"
 evaluators:
-- name: Expedited Reporting
-  string:
-    contains: Expedited Reporting
-- name: Narrative Statement
-  string:
-    contains: Narrative Statement
+- name: Structure Check
+  regex:
+    pattern: "## Safety Assessment[\\s\\S]+## Narrative Statement[\\s\\S]+## Regulatory Recommendation"
+- name: Regulatory Citation
+  regex:
+    pattern: "21 CFR 312\\.32\\(c\\)\\(\\d+\\)"
+- name: Narrative Length
+  python:
+    code: "len(output) > 100 and len(output) < 2000"
