@@ -17,4 +17,5 @@ This directory contains prompts related to various aspects of clinical trials.
 - **rtsm**: Prompts focused on randomization, trial supply management, and risk monitoring for clinical studies.
 - **safety**: Prompts focused on medical device safety reporting and post-market surveillance.
 - **site_acquisition**: Prompts for identifying, qualifying, and engaging clinical trial sites.
+- **therapy**: Prompts for therapeutic interventions, including music therapy and CBT-based support.
 - **trial_execution**: Prompts for optimizing protocols, planning AI-driven site strategies, and ensuring data quality during clinical trial execution.

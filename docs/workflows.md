@@ -19,6 +19,7 @@ has_children: false
 - [Clinical Monitoring Workflow](workflows/clinical_monitoring.md)
 - [Clinical Prompts Workflow](workflows/clinical_prompts.md)
 - [Clinical Safety Workflow](workflows/clinical_safety.md)
+- [Compassionate Music Therapy Workflow](workflows/music_therapy.md)
 - [Imaging Workflow](workflows/imaging.md)
 - [Learning and Development Workflow](workflows/learning_development.md)
 - [Market Research Workflow](workflows/market_research.md)

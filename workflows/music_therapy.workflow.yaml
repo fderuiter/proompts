@@ -1,0 +1,30 @@
+name: "Compassionate Music Therapy Workflow"
+description: "A 4-step workflow to deconstruct venting, plan a therapeutic arc, compose a musical blueprint, and write lyrics."
+
+inputs:
+  - name: "venting_text"
+    description: "The user's venting text to analyze."
+
+steps:
+  - step_id: "compassionate_analyst"
+    prompt_file: "prompts/clinical/therapy/01_compassionate_analyst.prompt.yaml"
+    map_inputs:
+      venting_text: "{{inputs.venting_text}}"
+
+  - step_id: "iso_strategist"
+    prompt_file: "prompts/clinical/therapy/02_iso_strategist.prompt.yaml"
+    map_inputs:
+      psychological_profile: "{{steps.compassionate_analyst.output}}"
+
+  - step_id: "sonic_architect"
+    prompt_file: "prompts/clinical/therapy/03_sonic_architect.prompt.yaml"
+    map_inputs:
+      psychological_profile: "{{steps.compassionate_analyst.output}}"
+      therapeutic_arc: "{{steps.iso_strategist.output}}"
+
+  - step_id: "lyricist"
+    prompt_file: "prompts/clinical/therapy/04_lyricist.prompt.yaml"
+    map_inputs:
+      psychological_profile: "{{steps.compassionate_analyst.output}}"
+      therapeutic_arc: "{{steps.iso_strategist.output}}"
+      musical_blueprint: "{{steps.sonic_architect.output}}"
