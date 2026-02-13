@@ -1,3 +1,5 @@
-# Clinical Data Specialist Prompts
+# Data Overview
 
-Prompts for day-to-day clinical data management tasks.
+
+## Subdirectories
+- [Clinical Data](clinical_data/overview.md)

@@ -13,22 +13,22 @@ inputs:
 
 steps:
   - step_id: "protocol_creator"
-    prompt_file: "prompts/clinical/protocol/01_clinical_trial_protocol_creator.prompt.yaml"
+    prompt_file: "prompts/clinical/protocol/protocol/01_clinical_trial_protocol_creator.prompt.yaml"
     map_inputs:
       summary_sheet: "{{inputs.summary_sheet}}"
 
   - step_id: "sop_architect"
-    prompt_file: "prompts/clinical/protocol/02_ultimate_sop_architect.prompt.yaml"
+    prompt_file: "prompts/clinical/protocol/protocol/02_ultimate_sop_architect.prompt.yaml"
     map_inputs:
       process_information: "{{inputs.process_information}}"
 
   - step_id: "protocol_reviewer"
-    prompt_file: "prompts/clinical/protocol/03_protocol_reviewer_gap_analysis_coach.prompt.yaml"
+    prompt_file: "prompts/clinical/protocol/protocol/03_protocol_reviewer_gap_analysis_coach.prompt.yaml"
     map_inputs:
       protocol_text_or_nct: "{{steps.protocol_creator.output}}"
 
   - step_id: "protocol_refinement"
-    prompt_file: "prompts/clinical/protocol/04_protocol_section_refinement.prompt.yaml"
+    prompt_file: "prompts/clinical/protocol/protocol/04_protocol_section_refinement.prompt.yaml"
     map_inputs:
       condition: "{{inputs.condition}}"
       draft_section: "{{inputs.draft_section}}"

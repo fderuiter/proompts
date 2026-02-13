@@ -1,3 +1,6 @@
-# Leadership Prompts
+# Leadership Overview
 
-This folder contains prompts for executive leadership alignment and reflection.
+- [90-Day Biostatistics Onboarding Plan](biostatistics_onboarding_plan.prompt.yaml)
+- [Leadership Reflection and Culture](leadership_reflection_culture.prompt.yaml)
+- [Operational Excellence Communication Framework](operational_excellence_communication.prompt.yaml)
+- [Strategic Alignment and Innovation](strategic_alignment_innovation.prompt.yaml)

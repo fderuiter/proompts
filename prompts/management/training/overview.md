@@ -1,3 +1,5 @@
 # Training Overview
 
-Prompts for designing training programs, onboarding, and measuring learning impact.
+
+## Subdirectories
+- [Learning Development](learning_development/overview.md)

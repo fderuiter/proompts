@@ -1,3 +1,5 @@
-# CRA Prompts
+# Cra Overview
 
-Prompts to streamline monitoring visits, investigator communication, and risk-based monitoring plans.
+
+## Subdirectories
+- [Cra](cra/overview.md)

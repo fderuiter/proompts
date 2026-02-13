@@ -88,6 +88,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed instructions on how to contr
    - Meaningful `testData` with realistic examples (at least 1-2 test cases)
    - `evaluators` to validate output quality
    - Clear instructions and expected output format
+   - Adherence to naming conventions: `snake_case` for standalone prompts, numbered files (e.g., `01_step.prompt.yaml`) in dedicated subfolders for workflows.
 4. Before committing, run validation:
    ```bash
    ./scripts/validate_prompts.sh

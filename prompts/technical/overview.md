@@ -1,15 +1,15 @@
-# Technical Prompts
+# Technical Overview
 
-This directory contains prompts related to software development, architecture, and other technical topics.
 
 ## Subdirectories
-
-- **agentic_coding**: A comprehensive set of prompts to guide an AI agent through a complete software development workflow, from product brief to project review.
-- **architecture**: Prompts for analyzing and reviewing a codebase's architecture, dependencies, and overall quality.
-- **codebase_analysis**: Prompts to analyze a codebase for quality and architectural improvements, such as identifying duplication, SOLID violations, and maintainability issues.
-- **codex**: Prompts tailored for OpenAI Codex and ChatGPT to scaffold new projects with tooling, CI/CD, and documentation.
-- **design**: Prompts related to software design documentation and guidelines.
-- **documentation**: Prompts related to software documentation, including inline documentation, guides, and architectural visualization.
-- **languages**: Prompts for specific programming languages, including best practices and expert personas.
-- **technical_writing**: Prompts focused on drafting regulatory documents and SOPs for CRO operations.
-- **testing**: Prompts for planning and generating high-quality tests and QA strategies.
+- [Architecture](architecture/overview.md)
+- [Data Science](data_science/overview.md)
+- [Design](design/overview.md)
+- [Devops](devops/overview.md)
+- [Documentation](documentation/overview.md)
+- [Languages](languages/overview.md)
+- [Repository Refactoring](repository_refactoring/overview.md)
+- [Security](security/overview.md)
+- [Software Engineering](software_engineering/overview.md)
+- [Technical Writing](technical_writing/overview.md)
+- [Testing](testing/overview.md)

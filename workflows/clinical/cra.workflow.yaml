@@ -11,16 +11,16 @@ inputs:
 
 steps:
   - step_id: "report_generator"
-    prompt_file: "prompts/clinical/cra/01_monitoring_visit_report_generator.prompt.yaml"
+    prompt_file: "prompts/clinical/cra/cra/01_monitoring_visit_report_generator.prompt.yaml"
     map_inputs:
       input: "{{inputs.visit_info}}"
 
   - step_id: "email_tracker"
-    prompt_file: "prompts/clinical/cra/02_investigator_follow_up_email_tracker.prompt.yaml"
+    prompt_file: "prompts/clinical/cra/cra/02_investigator_follow_up_email_tracker.prompt.yaml"
     map_inputs:
       input: "{{inputs.pending_actions}}"
 
   - step_id: "rbm_plan_builder"
-    prompt_file: "prompts/clinical/cra/03_rbm_plan_builder.prompt.yaml"
+    prompt_file: "prompts/clinical/cra/cra/03_rbm_plan_builder.prompt.yaml"
     map_inputs:
       input: "{{inputs.study_info}}"

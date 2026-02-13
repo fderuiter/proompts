@@ -19,9 +19,7 @@ except ImportError:
     from utils import PROMPTS_DIR, load_yaml, iter_prompt_files, OVERVIEW_NAME
 
 
-NAMING_RULES = {
-    "meta": re.compile(r"^L\d+_.*\.prompt\.ya?ml$", re.IGNORECASE),
-}
+NAMING_RULES = {}
 
 
 def check_overview(directory: Path) -> bool:

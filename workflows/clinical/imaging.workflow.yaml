@@ -45,7 +45,7 @@ inputs:
 
 steps:
   - step_id: "imaging_charter_draft"
-    prompt_file: "prompts/clinical/imaging/01_imaging_charter_draft.prompt.yaml"
+    prompt_file: "prompts/clinical/imaging/imaging/01_imaging_charter_draft.prompt.yaml"
     map_inputs:
       "<<<protocol_synopsis>>>": "{{inputs.charter_draft_protocol_synopsis}}"
       "<<<modalities>>>": "{{inputs.charter_draft_modalities}}"
@@ -53,11 +53,11 @@ steps:
       "<<<sites>>>": "{{inputs.charter_draft_sites}}"
       "<<<regulations>>>": "{{inputs.charter_draft_regulations}}"
   - step_id: "site_upload_qc"
-    prompt_file: "prompts/clinical/imaging/02_site_upload_qc.prompt.yaml"
+    prompt_file: "prompts/clinical/imaging/imaging/02_site_upload_qc.prompt.yaml"
     map_inputs:
       "<<<upload_log.csv>>>": "{{inputs.upload_log_csv}}"
   - step_id: "central_reading_design"
-    prompt_file: "prompts/clinical/imaging/03_central_reading_design.prompt.yaml"
+    prompt_file: "prompts/clinical/imaging/imaging/03_central_reading_design.prompt.yaml"
     map_inputs:
       "<<<disease>>>": "{{inputs.central_reading_disease}}"
       "<<<timepoints>>>": "{{inputs.central_reading_timepoints}}"
@@ -65,19 +65,19 @@ steps:
       "<<<reader_pool_size>>>": "{{inputs.central_reading_reader_pool_size}}"
       "<<<budget>>>": "{{inputs.central_reading_budget}}"
   - step_id: "regulatory_imaging_charter"
-    prompt_file: "prompts/clinical/imaging/04_regulatory_imaging_charter_generator.prompt.yaml"
+    prompt_file: "prompts/clinical/imaging/imaging/04_regulatory_imaging_charter_generator.prompt.yaml"
     map_inputs:
       "<<<study_overview>>>": "{{inputs.reg_charter_study_overview}}"
       "<<<modalities>>>": "{{inputs.reg_charter_modalities}}"
       "<<<regions>>>": "{{inputs.reg_charter_regions}}"
       "<<<endpoint_description>>>": "{{inputs.reg_charter_endpoint_description}}"
   - step_id: "image_acquisition_qc_workflow"
-    prompt_file: "prompts/clinical/imaging/05_image_acquisition_qc_workflow_blueprint.prompt.yaml"
+    prompt_file: "prompts/clinical/imaging/imaging/05_image_acquisition_qc_workflow_blueprint.prompt.yaml"
     map_inputs:
       "<<<study_description>>>": "{{inputs.qc_workflow_study_description}}"
       "<<<modalities>>>": "{{inputs.qc_workflow_modalities}}"
   - step_id: "regulatory_imaging_data_package"
-    prompt_file: "prompts/clinical/imaging/06_regulatory_imaging_data_package.prompt.yaml"
+    prompt_file: "prompts/clinical/imaging/imaging/06_regulatory_imaging_data_package.prompt.yaml"
     map_inputs:
       "<<<study_summary>>>": "{{inputs.data_package_study_summary}}"
       "<<<metrics_data>>>": "{{inputs.data_package_metrics_data}}"

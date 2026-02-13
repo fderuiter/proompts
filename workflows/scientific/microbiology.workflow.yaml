@@ -9,16 +9,16 @@ inputs:
 
 steps:
   - step_id: "bioburden_sop"
-    prompt_file: "prompts/scientific/microbiology/01_bioburden_testing_sop.prompt.yaml"
+    prompt_file: "prompts/scientific/microbiology/microbiology/01_bioburden_testing_sop.prompt.yaml"
     map_inputs:
       device_description: "{{inputs.device_description}}"
 
   - step_id: "sterilization_protocol"
-    prompt_file: "prompts/scientific/microbiology/02_eo_sterilization_validation_protocol.prompt.yaml"
+    prompt_file: "prompts/scientific/microbiology/microbiology/02_eo_sterilization_validation_protocol.prompt.yaml"
     map_inputs:
       device_name: "{{inputs.device_name}}"
 
   - step_id: "endotoxin_risk_plan"
-    prompt_file: "prompts/scientific/microbiology/03_endotoxin_control_510k_risk_plan.prompt.yaml"
+    prompt_file: "prompts/scientific/microbiology/microbiology/03_endotoxin_control_510k_risk_plan.prompt.yaml"
     map_inputs:
       device_name: "{{inputs.device_name}}"

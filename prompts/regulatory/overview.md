@@ -1,8 +1,12 @@
-# Regulatory Prompts
+# Regulatory Overview
 
-This directory contains prompts related to regulatory strategy and quality for medical devices and drugs.
 
 ## Subdirectories
-
-- **strategy**: Prompts to assess compliance gaps, plan performance evaluations, and coordinate MDR, IVDR, and FDA submissions.
-- **quality**: Prompts for monitoring regulations, assessing compliance gaps, generating CAPA plans, and creating risk-based quality management strategies.
+- [Adherence](adherence/overview.md)
+- [Administrative](administrative/overview.md)
+- [Compliance](compliance/overview.md)
+- [Device Specifics](device_specifics/overview.md)
+- [Food Safety](food_safety/overview.md)
+- [Quality](quality/overview.md)
+- [Strategy](strategy/overview.md)
+- [Submissions](submissions/overview.md)

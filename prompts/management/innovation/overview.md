@@ -1,3 +1,4 @@
 # Innovation Overview
 
-Prompts for brainstorming, ideation (SCAMPER), and creative problem solving.
+- [Reverse Brainstorming](reverse_brainstorming.prompt.yaml)
+- [SCAMPER Ideation Coach](scamper_ideation_coach.prompt.yaml)

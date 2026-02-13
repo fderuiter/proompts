@@ -11,18 +11,18 @@ inputs:
 
 steps:
   - step_id: "design_study"
-    prompt_file: "prompts/scientific/chemical_characterization/01_design_the_study.prompt.yaml"
+    prompt_file: "prompts/scientific/chemical_characterization/chemical_characterization/01_design_the_study.prompt.yaml"
     map_inputs:
       device_description: "{{inputs.device_description}}"
 
   - step_id: "assess_risk"
-    prompt_file: "prompts/scientific/chemical_characterization/02_interpret_the_chemistry_assess_risk.prompt.yaml"
+    prompt_file: "prompts/scientific/chemical_characterization/chemical_characterization/02_interpret_the_chemistry_assess_risk.prompt.yaml"
     map_inputs:
       study_results: "{{steps.design_study.output}}"
       body_weight: "{{inputs.body_weight_kg}}"
       device_dose: "{{inputs.device_dose_ug_day}}"
 
   - step_id: "write_summary"
-    prompt_file: "prompts/scientific/chemical_characterization/03_write_the_regulatory_summary.prompt.yaml"
+    prompt_file: "prompts/scientific/chemical_characterization/chemical_characterization/03_write_the_regulatory_summary.prompt.yaml"
     map_inputs:
       risk_assessment_summary: "{{steps.assess_risk.output}}"

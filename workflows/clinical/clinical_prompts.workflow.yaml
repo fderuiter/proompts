@@ -9,16 +9,16 @@ inputs:
 
 steps:
   - step_id: "crf_shell"
-    prompt_file: "prompts/clinical/forms/01_crf_shell_generator.prompt.yaml"
+    prompt_file: "prompts/clinical/forms/clinical_prompts/01_crf_shell_generator.prompt.yaml"
     map_inputs:
       input: "{{inputs.protocol_summary}}"
 
   - step_id: "quality_audit"
-    prompt_file: "prompts/clinical/forms/02_crf_quality_auditor.prompt.yaml"
+    prompt_file: "prompts/clinical/forms/clinical_prompts/02_crf_quality_auditor.prompt.yaml"
     map_inputs:
       input: "{{steps.crf_shell.output}}"
 
   - step_id: "cdash_mapping"
-    prompt_file: "prompts/clinical/forms/03_cdash_mapping_completion_guide.prompt.yaml"
+    prompt_file: "prompts/clinical/forms/clinical_prompts/03_cdash_mapping_completion_guide.prompt.yaml"
     map_inputs:
       input: "{{inputs.variable_list}}"

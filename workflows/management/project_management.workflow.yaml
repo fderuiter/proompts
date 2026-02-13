@@ -25,7 +25,7 @@ inputs:
 
 steps:
   - step_id: "project_charter"
-    prompt_file: "prompts/management/project_management/01_project_charter_scope.prompt.yaml"
+    prompt_file: "prompts/management/project_management/project_management/01_project_charter_scope.prompt.yaml"
     map_inputs:
       project_name: "{{inputs.project_name}}"
       project_description: "{{inputs.project_description}}"
@@ -35,17 +35,17 @@ steps:
       business_outcome: "{{inputs.business_outcome}}"
 
   - step_id: "risk_register"
-    prompt_file: "prompts/management/project_management/02_risk_register_mitigation.prompt.yaml"
+    prompt_file: "prompts/management/project_management/project_management/02_risk_register_mitigation.prompt.yaml"
     map_inputs:
       project_overview: "{{steps.project_charter.output}}"
 
   - step_id: "status_report"
-    prompt_file: "prompts/management/project_management/03_weekly_exec_status_report.prompt.yaml"
+    prompt_file: "prompts/management/project_management/project_management/03_weekly_exec_status_report.prompt.yaml"
     map_inputs:
       update_notes: "{{inputs.update_notes}}"
 
   - step_id: "timeline"
-    prompt_file: "prompts/management/project_management/04_detailed_project_blueprint_timeline.prompt.yaml"
+    prompt_file: "prompts/management/project_management/project_management/04_detailed_project_blueprint_timeline.prompt.yaml"
     map_inputs:
       project_type: "{{inputs.project_type}}"
       objectives: "{{inputs.objectives}}"

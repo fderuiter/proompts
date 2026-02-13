@@ -1,3 +1,6 @@
-# Overview of Testing Prompts
+# Testing Overview
 
-This folder collects prompts focused on planning and generating high-quality tests. Use them to design thorough QA strategies or test suites.
+
+## Subdirectories
+- [Selenium Automation](selenium_automation/overview.md)
+- [Testing](testing/overview.md)

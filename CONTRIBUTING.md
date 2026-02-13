@@ -41,7 +41,11 @@ Thank you for your interest in contributing to the Proompts repository! This gui
 
 4.  **Sanitize and Standardize**:
     *   Ensure no sensitive information is included.
-    *   Follow the naming convention: snake_case for filenames.
+    *   **Naming Conventions**:
+        *   **Standard Prompts**: use `snake_case.prompt.yaml` (e.g., `market_research.prompt.yaml`). Do not number them.
+        *   **Workflow Prompts**:
+            *   Create a dedicated subfolder for the workflow (e.g., `prompts/category/my_workflow/`).
+            *   Number the prompts sequentially (e.g., `01_step_one.prompt.yaml`, `02_step_two.prompt.yaml`).
 
 ## Submitting Changes
 

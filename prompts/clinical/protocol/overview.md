@@ -1,8 +1,9 @@
-# Overview of Protocol Prompts
+# Protocol Overview
 
-This folder contains prompts for creating and reviewing clinical-trial protocols and standard operating procedures.
+- [Protocol Deviation Reporting](protocol_deviation_reporting.prompt.yaml)
+- [Protocol to CDISC USDM v3.0 Converter](protocol_to_usdm_v3.prompt.yaml)
+- [SOP and TMF Document Synthesis](sop_tmf_document_synthesis.prompt.yaml)
 
-- **Clinical-Trial Protocol Creator** – draft a complete protocol from a summary sheet.
-- **Ultimate SOP Architect** – develop detailed SOPs that meet regulatory standards.
-- **Protocol Reviewer & Gap-Analysis Coach** – score and improve existing protocols.
-- **Protocol Section Refinement** – fine-tune eligibility and data-handling requirements.
+## Subdirectories
+- [Protocol](protocol/overview.md)
+- [Usdm Workflow](usdm_workflow/overview.md)

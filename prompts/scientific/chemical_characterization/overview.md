@@ -1,3 +1,5 @@
-# Chemical Characterization Prompts
+# Chemical Characterization Overview
 
-Prompts for planning and interpreting Extractables & Leachables studies and preparing regulatory summaries.
+
+## Subdirectories
+- [Chemical Characterization](chemical_characterization/overview.md)

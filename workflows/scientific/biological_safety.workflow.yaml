@@ -7,16 +7,16 @@ inputs:
 
 steps:
   - step_id: "perform_risk_assessment"
-    prompt_file: "prompts/scientific/biosafety/01_risk_assessment_expert.prompt.yaml"
+    prompt_file: "prompts/scientific/biosafety/biological_safety/01_risk_assessment_expert.prompt.yaml"
     map_inputs:
       medical_device_type: "{{inputs.medical_device_type}}"
 
   - step_id: "develop_safety_plan"
-    prompt_file: "prompts/scientific/biosafety/02_biological_safety_plan_developer.prompt.yaml"
+    prompt_file: "prompts/scientific/biosafety/biological_safety/02_biological_safety_plan_developer.prompt.yaml"
     map_inputs:
       risk_assessment: "{{steps.perform_risk_assessment.output}}"
 
   - step_id: "prepare_submission"
-    prompt_file: "prompts/scientific/biosafety/03_regulatory_submission_support.prompt.yaml"
+    prompt_file: "prompts/scientific/biosafety/biological_safety/03_regulatory_submission_support.prompt.yaml"
     map_inputs:
       biological_safety_plan: "{{steps.develop_safety_plan.output}}"

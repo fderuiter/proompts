@@ -1,3 +1,5 @@
-# Technical Writer Prompts
+# Technical Writing Overview
 
-Prompts focused on drafting regulatory documents and SOPs for CRO operations.
+
+## Subdirectories
+- [Technical Writer](technical_writer/overview.md)

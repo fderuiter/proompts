@@ -1,7 +1,7 @@
-# Languages
+# Languages Overview
 
-This directory contains language-specific prompts and guides.
 
 ## Subdirectories
-
-- **rust**: Prompts for Rust development, focusing on Principal-level principles, safety, and performance.
+- [Python](python/overview.md)
+- [Rust](rust/overview.md)
+- [Typescript](typescript/overview.md)

@@ -1,21 +1,14 @@
-# CFO Prompts
+# Cfo Overview
 
-Prompts focused on financial forecasting, pricing strategy, and compliance dashboards for clinical research organizations and general business contexts.
+- [Board Deck Narrative Generation](board_deck_narrative.prompt.yaml)
+- [Earnings Call Script Prep](earnings_call_script_prep.prompt.yaml)
+- [Investor FAQ Generation](investor_faq_generation.prompt.yaml)
+- [Liquidity Stress Test](liquidity_stress_test.prompt.yaml)
+- [M&A Target Evaluation](ma_target_evaluation.prompt.yaml)
+- [Net Present Value Socratic Tutor](npv_tutor.prompt.yaml)
+- [Regulatory Compliance Summary](regulatory_compliance_summary.prompt.yaml)
+- [Scenario Modeling & Sensitivity Analysis](scenario_modeling_sensitivity.prompt.yaml)
+- [Budget Variance Analysis](variance_analysis.prompt.yaml)
 
-## Prompts
-
-### 01-04: Clinical Focus
-- **01_scenario_cash_flow_forecast**: Clinical-Trial Cash-Flow Forecast.
-- **02_competitive_bid_pricing**: CRO Competitive Bid Pricing.
-- **03_regulatory_risk_dashboard**: Regulatory-Risk & ESG Impact Dashboard.
-- **04_npv_tutor**: NPV Tutor.
-
-### 05-12: General Finance & Strategy
-- **05_scenario_modeling_sensitivity**: Scenario Modeling & Sensitivity Analysis.
-- **06_variance_analysis**: Budget Variance Analysis.
-- **07_board_deck_narrative**: Board Deck Narrative Generation.
-- **08_ma_target_evaluation**: M&A Target Evaluation.
-- **09_liquidity_stress_test**: Liquidity Stress Test.
-- **10_regulatory_compliance_summary**: Regulatory Compliance Summary.
-- **11_earnings_call_script_prep**: Earnings Call Script Prep.
-- **12_investor_faq_generation**: Investor FAQ Generation.
+## Subdirectories
+- [Cfo](cfo/overview.md)

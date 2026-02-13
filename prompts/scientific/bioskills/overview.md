@@ -1,3 +1,5 @@
-# Bioskills Prompts
+# Bioskills Overview
 
-Prompts for hands-on medical device training and skills assessment.
+
+## Subdirectories
+- [Bioskills](bioskills/overview.md)

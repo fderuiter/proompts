@@ -1,3 +1,21 @@
-# Overview of Biostatistics Prompts
+# Biostatistics Overview
 
-This folder contains prompts tailored for biostatistical workflows in clinical research. Each file delivers a ready-to-use template for common analysis and review tasks.
+- [Adaptive Design & Interim Monitoring](adaptive_design_interim_monitoring.prompt.yaml)
+- [Dual-Language Figure Prompt](dual_language_figure_prompt.prompt.yaml)
+- [Dunnett Adjustment R Code Generator](dunnett_adjustment_calculator.prompt.yaml)
+- [FDA Missing-Data Query Response](fda_missing_data_query_response.prompt.yaml)
+- [FWER Gatekeeping Procedure Code Generator](fwer_gatekeeping_procedures.prompt.yaml)
+- [Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive](inclusion_exclusion_endpoints_sample_size.prompt.yaml)
+- [Multiplicity Adjustment Code Generator](multiplicity_adjustments_calculator.prompt.yaml)
+- [Peer-Review Checklist for Manuscript Methods](peer_review_methods_checklist.prompt.yaml)
+- [Phase II/III SAP Skeleton](phase_ii_iii_sap_skeleton.prompt.yaml)
+- [QC Listing & Cross-check Prompt](qc_listing_cross_check_prompt.prompt.yaml)
+- [Sample-Size & Randomization Strategy](sample_size_randomization_strategy.prompt.yaml)
+- [Statistical Analysis Plan (SAP) Development](sap_development.prompt.yaml)
+- [Secondary Endpoint Multiplicity Adjuster](secondary_endpoint_multiplicity.prompt.yaml)
+- [Statistical Analysis Plan Generator](statistical_analysis_plan_generator.prompt.yaml)
+- [Study Design and Statistical Approach](study_design_statistical_approach.prompt.yaml)
+- [Submission-Ready Statistical Analysis Plan](submission_ready_sap.prompt.yaml)
+- [Generate & QC Submission-Ready TLFs](submission_ready_tlfs.prompt.yaml)
+- [Time-to-Event Analysis Coach](time_to_event_analysis_coach.prompt.yaml)
+- [Universal Template-Table Prompt](universal_template_table_prompt.prompt.yaml)

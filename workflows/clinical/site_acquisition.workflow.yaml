@@ -21,17 +21,17 @@ inputs:
 
 steps:
   - step_id: "site_mapping"
-    prompt_file: "prompts/clinical/site_acquisition/01_site_landscape_mapping.prompt.yaml"
+    prompt_file: "prompts/clinical/site_acquisition/site_acquisition/01_site_landscape_mapping.prompt.yaml"
     map_inputs:
       protocol_summary: "{{inputs.protocol_summary}}"
 
   - step_id: "feasibility_questionnaire"
-    prompt_file: "prompts/clinical/site_acquisition/02_tailored_feasibility_questionnaire.prompt.yaml"
+    prompt_file: "prompts/clinical/site_acquisition/site_acquisition/02_tailored_feasibility_questionnaire.prompt.yaml"
     map_inputs:
       protocol_summary: "{{inputs.protocol_summary}}"
 
   - step_id: "outreach_email"
-    prompt_file: "prompts/clinical/site_acquisition/03_investigator_outreach_email_generator.prompt.yaml"
+    prompt_file: "prompts/clinical/site_acquisition/site_acquisition/03_investigator_outreach_email_generator.prompt.yaml"
     map_inputs:
       investigator_name: "{{inputs.investigator_name}}"
       site_name: "{{inputs.site_name}}"

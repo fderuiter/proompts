@@ -1,3 +1,5 @@
-# RTSM Prompts
+# Rtsm Overview
 
-Prompts focused on randomization, trial supply management, and risk monitoring for clinical studies.
+
+## Subdirectories
+- [Rtsm](rtsm/overview.md)

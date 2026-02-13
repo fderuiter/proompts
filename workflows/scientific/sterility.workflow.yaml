@@ -9,16 +9,16 @@ inputs:
 
 steps:
   - step_id: "validation_protocol"
-    prompt_file: "prompts/scientific/sterility/01_sterility_validation_protocol_builder.prompt.yaml"
+    prompt_file: "prompts/scientific/sterility/sterility/01_sterility_validation_protocol_builder.prompt.yaml"
     map_inputs:
       device_description: "{{inputs.device_description}}"
 
   - step_id: "gap_analysis"
-    prompt_file: "prompts/scientific/sterility/02_regulatory_gap_analysis_comparator.prompt.yaml"
+    prompt_file: "prompts/scientific/sterility/sterility/02_regulatory_gap_analysis_comparator.prompt.yaml"
     map_inputs:
       device_description: "{{inputs.device_description}}"
 
   - step_id: "process_fmea"
-    prompt_file: "prompts/scientific/sterility/03_eto_sterilization_process_fmea.prompt.yaml"
+    prompt_file: "prompts/scientific/sterility/sterility/03_eto_sterilization_process_fmea.prompt.yaml"
     map_inputs:
       process_description: "{{inputs.process_description}}"

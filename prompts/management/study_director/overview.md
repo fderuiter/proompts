@@ -1,3 +1,5 @@
-# Study Director Prompts
+# Study Director Overview
 
-Prompts for Study Directors at contract research organizations to craft protocols, audit data, and summarize findings.
+
+## Subdirectories
+- [Study Director](study_director/overview.md)

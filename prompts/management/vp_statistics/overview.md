@@ -1,3 +1,5 @@
-# VP Statistics Prompts
+# Vp Statistics Overview
 
-This folder contains prompts designed for a Vice President of Statistics & Data Management. They help streamline study oversight, SAP development and data-quality governance.
+
+## Subdirectories
+- [Vp Statistics](vp_statistics/overview.md)

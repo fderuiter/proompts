@@ -7,16 +7,16 @@ inputs:
 
 steps:
   - step_id: "create_mapping_spec"
-    prompt_file: "prompts/clinical/data_management/04_clinical_etl_mapping_spec.prompt.yaml"
+    prompt_file: "prompts/clinical/data_management/data_management_etl/01_clinical_etl_mapping_spec.prompt.yaml"
     map_inputs:
       etl_requirements: "{{inputs.etl_requirements}}"
 
   - step_id: "define_qc_checks"
-    prompt_file: "prompts/clinical/data_management/05_clinical_etl_transformation_qc.prompt.yaml"
+    prompt_file: "prompts/clinical/data_management/data_management_etl/02_clinical_etl_transformation_qc.prompt.yaml"
     map_inputs:
       etl_mapping_spec: "{{steps.create_mapping_spec.output}}"
 
   - step_id: "review_pipeline"
-    prompt_file: "prompts/clinical/data_management/06_clinical_etl_pipeline_review.prompt.yaml"
+    prompt_file: "prompts/clinical/data_management/data_management_etl/03_clinical_etl_pipeline_review.prompt.yaml"
     map_inputs:
       etl_qc_plan: "{{steps.define_qc_checks.output}}"

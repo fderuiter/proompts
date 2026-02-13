@@ -11,16 +11,16 @@ inputs:
 
 steps:
   - step_id: "safety_synopsis"
-    prompt_file: "prompts/clinical/safety/01_eu_cer_clinical_safety_synopsis.prompt.yaml"
+    prompt_file: "prompts/clinical/safety/clinical_safety/01_eu_cer_clinical_safety_synopsis.prompt.yaml"
     map_inputs:
       input: "{{inputs.surveillance_data}}"
 
   - step_id: "adverse_event_narrative"
-    prompt_file: "prompts/clinical/safety/02_fda_mdr_adverse_event_narrative.prompt.yaml"
+    prompt_file: "prompts/clinical/safety/clinical_safety/02_fda_mdr_adverse_event_narrative.prompt.yaml"
     map_inputs:
       input: "{{inputs.adverse_event_data}}"
 
   - step_id: "safety_signal_trending"
-    prompt_file: "prompts/clinical/safety/03_post_market_safety_signal_trending.prompt.yaml"
+    prompt_file: "prompts/clinical/safety/clinical_safety/03_post_market_safety_signal_trending.prompt.yaml"
     map_inputs:
       input: "{{inputs.post_market_data}}"

@@ -7,17 +7,17 @@ inputs:
 
 steps:
   - step_id: "architect_step"
-    prompt_file: "prompts/technical/data_science/stochastic_architect.prompt.yaml"
+    prompt_file: "prompts/technical/data_science/stochastic_model_chain/01_stochastic_architect.prompt.yaml"
     map_inputs:
       conversation_scenario: "{{inputs.conversation_scenario}}"
 
   - step_id: "engineer_step"
-    prompt_file: "prompts/technical/data_science/stochastic_engineer.prompt.yaml"
+    prompt_file: "prompts/technical/data_science/stochastic_model_chain/02_stochastic_engineer.prompt.yaml"
     map_inputs:
       architect_output: "{{steps.architect_step.output}}"
 
   - step_id: "strategist_step"
-    prompt_file: "prompts/technical/data_science/stochastic_strategist.prompt.yaml"
+    prompt_file: "prompts/technical/data_science/stochastic_model_chain/03_stochastic_strategist.prompt.yaml"
     map_inputs:
       architect_output: "{{steps.architect_step.output}}"
       engineer_output: "{{steps.engineer_step.output}}"

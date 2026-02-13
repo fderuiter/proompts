@@ -11,16 +11,16 @@ inputs:
 
 steps:
   - step_id: "discrepancy_detection"
-    prompt_file: "prompts/clinical/data/01_discrepancy_detection_query_log.prompt.yaml"
+    prompt_file: "prompts/clinical/data/clinical_data/01_discrepancy_detection_query_log.prompt.yaml"
     map_inputs:
       input: "{{inputs.edc_export_csv}}"
 
   - step_id: "dmp_section"
-    prompt_file: "prompts/clinical/data/02_data_management_plan_section.prompt.yaml"
+    prompt_file: "prompts/clinical/data/clinical_data/02_data_management_plan_section.prompt.yaml"
     map_inputs:
       input: "{{inputs.dmp_section_requirements}}"
 
   - step_id: "edit_check_specification"
-    prompt_file: "prompts/clinical/data/03_edit_check_specification_builder.prompt.yaml"
+    prompt_file: "prompts/clinical/data/clinical_data/03_edit_check_specification_builder.prompt.yaml"
     map_inputs:
       input: "{{inputs.edit_check_rules}}"

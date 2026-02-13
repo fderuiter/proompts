@@ -11,27 +11,27 @@ inputs:
 
 steps:
   - step_id: "stage1_metadata"
-    prompt_file: "prompts/clinical/protocol/07_usdm_stage1_metadata.prompt.yaml"
+    prompt_file: "prompts/clinical/protocol/usdm_workflow/01_usdm_stage1_metadata.prompt.yaml"
     map_inputs:
       protocol_text: "{{inputs.protocol_text}}"
 
   - step_id: "stage2_rationale"
-    prompt_file: "prompts/clinical/protocol/08_usdm_stage2_rationale.prompt.yaml"
+    prompt_file: "prompts/clinical/protocol/usdm_workflow/02_usdm_stage2_rationale.prompt.yaml"
     map_inputs:
       protocol_objectives_text: "{{inputs.protocol_objectives_text}}"
 
   - step_id: "stage3_workflow"
-    prompt_file: "prompts/clinical/protocol/09_usdm_stage3_workflow.prompt.yaml"
+    prompt_file: "prompts/clinical/protocol/usdm_workflow/03_usdm_stage3_workflow.prompt.yaml"
     map_inputs:
       protocol_soa_text: "{{inputs.protocol_soa_text}}"
 
   - step_id: "stage4_concepts"
-    prompt_file: "prompts/clinical/protocol/10_usdm_stage4_concepts.prompt.yaml"
+    prompt_file: "prompts/clinical/protocol/usdm_workflow/04_usdm_stage4_concepts.prompt.yaml"
     map_inputs:
       activities_json: "{{steps.stage3_workflow.output}}"
 
   - step_id: "stage5_assembly"
-    prompt_file: "prompts/clinical/protocol/11_usdm_stage5_assembly.prompt.yaml"
+    prompt_file: "prompts/clinical/protocol/usdm_workflow/05_usdm_stage5_assembly.prompt.yaml"
     map_inputs:
       metadata_json: "{{steps.stage1_metadata.output}}"
       rationale_json: "{{steps.stage2_rationale.output}}"
