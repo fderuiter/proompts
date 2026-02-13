@@ -9,6 +9,7 @@ retired.
 ## Essential Guides
 
 - **[Best Practices Guide](BEST_PRACTICES.md)** - Comprehensive guide for creating high-quality prompts
+- **[System Architecture](system_architecture.md)** - Technical design and validation pipeline
 - [Template Prompt](template_prompt.prompt.yaml) - Reference example for new prompts
 - [Workflows Documentation](workflows.md) - Guide to chaining prompts together
 

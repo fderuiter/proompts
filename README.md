@@ -8,7 +8,8 @@ A curated set of prompts in YAML for AI-assisted product development, regulatory
 
 ## Docs
 
-- **`docs/`** – additional docs and a full [table of contents](docs/index.md)
+- **`docs/`** – additional docs and a [documentation home](docs/index.md)
+- **[System Architecture](docs/system_architecture.md)** – internal design, simulation engine, and validation pipeline
 - **`tools/scripts/`** – [developer scripts and utilities](tools/scripts/README.md)
 - **[Usage Guide](docs/USAGE.md)** – how to use the prompts
 
@@ -62,6 +63,15 @@ workflow subfolders (e.g., `prompts/clinical/protocol/protocol_workflow/`).
 included runner script.
 
 To learn more, see the [Prompt Workflows Documentation](docs/workflows.md).
+
+## How it Works
+
+This repository functions as a **Simulation Engine** for prompt engineering.
+- **Prompts** are defined in YAML and treated as code.
+- **Workflows** orchestrate these prompts.
+- **Execution** is simulated using `testData` defined in each prompt file, ensuring deterministic testing without API costs.
+
+For a deep dive into the internals, see [System Architecture](docs/system_architecture.md).
 
 ## Validation
 

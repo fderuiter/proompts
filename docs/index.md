@@ -49,6 +49,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
     <h3>📊 Management</h3>
     <p>Project tracking, leadership, and team effectiveness.</p>
   </a>
+  <a href="system_architecture.html" class="card">
+    <h3>🏗️ Architecture</h3>
+    <p>System internals, simulation engine, and validation pipeline.</p>
+  </a>
 </div>
 
 <style>
