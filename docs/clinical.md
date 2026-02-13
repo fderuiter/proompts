@@ -9,19 +9,6 @@ has_children: false
 
 ## Prompts
 
-- [. 01 Compassionate Analyst.Prompt](../prompts/clinical/therapy/music_therapy_workflow/._01_compassionate_analyst.prompt.yaml)
-- [. 01 Usdm Stage1 Metadata.Prompt](../prompts/clinical/protocol/usdm_workflow/._01_usdm_stage1_metadata.prompt.yaml)
-- [. 02 Fda Mdr Adverse Event Narrative.Prompt](../prompts/clinical/safety/clinical_safety_workflow/._02_fda_mdr_adverse_event_narrative.prompt.yaml)
-- [. 02 Iso Strategist.Prompt](../prompts/clinical/therapy/music_therapy_workflow/._02_iso_strategist.prompt.yaml)
-- [. 02 Usdm Stage2 Rationale.Prompt](../prompts/clinical/protocol/usdm_workflow/._02_usdm_stage2_rationale.prompt.yaml)
-- [. 03 Sonic Architect.Prompt](../prompts/clinical/therapy/music_therapy_workflow/._03_sonic_architect.prompt.yaml)
-- [. 03 Usdm Stage3 Workflow.Prompt](../prompts/clinical/protocol/usdm_workflow/._03_usdm_stage3_workflow.prompt.yaml)
-- [. 04 Lyricist.Prompt](../prompts/clinical/therapy/music_therapy_workflow/._04_lyricist.prompt.yaml)
-- [. 04 Usdm Stage4 Concepts.Prompt](../prompts/clinical/protocol/usdm_workflow/._04_usdm_stage4_concepts.prompt.yaml)
-- [. 05 Usdm Stage5 Assembly.Prompt](../prompts/clinical/protocol/usdm_workflow/._05_usdm_stage5_assembly.prompt.yaml)
-- [. Music Therapist Melody.Prompt](../prompts/clinical/therapy/._music_therapist_melody.prompt.yaml)
-- [. Protocol To Usdm V3.Prompt](../prompts/clinical/protocol/._protocol_to_usdm_v3.prompt.yaml)
-- [. Sae Safety Reporting.Prompt](../prompts/clinical/safety/._sae_safety_reporting.prompt.yaml)
 - [21 CFR Part 11 Compliance Verification](../prompts/clinical/data_management/part_11_compliance_verification.prompt.yaml)
 - [AI-Powered Site and Recruitment Strategy](../prompts/clinical/trial_execution/ai_powered_site_recruitment.prompt.yaml)
 - [Adaptive Recruitment and Retention Strategy](../prompts/clinical/trial_execution/adaptive_recruitment_retention_strategy.prompt.yaml)

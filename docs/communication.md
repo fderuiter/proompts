@@ -9,7 +9,6 @@ has_children: false
 
 ## Prompts
 
-- [. Red Team Stress Test.Prompt](../prompts/communication/._red_team_stress_test.prompt.yaml)
 - [80/20 Crash Course](../prompts/communication/80_20_crash_course.prompt.yaml)
 - [Analogy Architect](../prompts/communication/analogy_architect.prompt.yaml)
 - [Data-to-Insight Analyst](../prompts/communication/data_to_insight_analyst.prompt.yaml)

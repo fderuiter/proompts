@@ -9,8 +9,6 @@ has_children: false
 
 ## Prompts
 
-- [. 04 L4 Worker Prompt.Prompt](../prompts/meta/meta_prompt_chain/._04_L4_worker_prompt.prompt.yaml)
-- [. 05 L5 Agent Persona Generator.Prompt](../prompts/meta/meta_prompt_chain/._05_L5_agent_persona_generator.prompt.yaml)
 - [AGENTS.md Checklist Generator](../prompts/meta/meta_prompt_chain/05_L5_agents-md-checklist.prompt.yaml)
 - [AI Coding Agent Plan Generator](../prompts/meta/meta_prompt_chain/05_L5_ai_coding_agent.prompt.yaml)
 - [Agent Persona Generator](../prompts/meta/meta_prompt_chain/05_L5_agent_persona_generator.prompt.yaml)

@@ -9,8 +9,6 @@ has_children: false
 
 ## Prompts
 
-- [. Selenium Reporting.Prompt](../prompts/technical/testing/selenium_automation/._selenium_reporting.prompt.yaml)
-- [. Webdriver Initialization.Prompt](../prompts/technical/testing/selenium_automation/._webdriver_initialization.prompt.yaml)
 - [Advanced Design Patterns: Fluent Interface](../prompts/technical/testing/selenium_automation/fluent_interface_selenium.prompt.yaml)
 - [Architecture Design: Page Object Model](../prompts/technical/testing/selenium_automation/pom_implementation.prompt.yaml)
 - [Cross-Browser Infrastructure: Selenium Grid](../prompts/technical/testing/selenium_automation/selenium_grid_setup.prompt.yaml)

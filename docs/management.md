@@ -9,7 +9,6 @@ has_children: false
 
 ## Prompts
 
-- [. Leadership Reflection Culture.Prompt](../prompts/management/leadership/._leadership_reflection_culture.prompt.yaml)
 - [360° Operational KPI & Benchmark Review](../prompts/management/operations/operational_kpi_benchmark_review.prompt.yaml)
 - [90-Day Biostatistics Onboarding Plan](../prompts/management/leadership/biostatistics_onboarding_plan.prompt.yaml)
 - [AI-Enhanced RBM Action Plan](../prompts/management/medical_director/ai_enhanced_rbm_action_plan.prompt.yaml)

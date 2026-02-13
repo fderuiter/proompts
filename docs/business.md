@@ -9,8 +9,6 @@ has_children: false
 
 ## Prompts
 
-- [. Hype Vs Reality Analysis.Prompt](../prompts/business/vp_tech_innovation/._hype_vs_reality_analysis.prompt.yaml)
-- [. Strategic Workforce Talent Acquisition Plan.Prompt](../prompts/business/hr_finance/._strategic_workforce_talent_acquisition_plan.prompt.yaml)
 - [90-Day Pipeline Health & Next-Best-Action Review](../prompts/business/development/90_day_pipeline_health_review.prompt.yaml)
 - [Board Deck Narrative Generation](../prompts/business/cfo/board_deck_narrative.prompt.yaml)
 - [Budget Variance Analysis](../prompts/business/cfo/variance_analysis.prompt.yaml)

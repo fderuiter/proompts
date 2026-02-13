@@ -9,12 +9,6 @@ has_children: false
 
 ## Prompts
 
-- [. 01 Stochastic Architect.Prompt](../prompts/technical/data_science/stochastic_model_chain_workflow/._01_stochastic_architect.prompt.yaml)
-- [. 02 Stochastic Engineer.Prompt](../prompts/technical/data_science/stochastic_model_chain_workflow/._02_stochastic_engineer.prompt.yaml)
-- [. 03 Sae Reporting Sop.Prompt](../prompts/technical/technical_writing/technical_writer_workflow/._03_sae_reporting_sop.prompt.yaml)
-- [. 03 Stochastic Strategist.Prompt](../prompts/technical/data_science/stochastic_model_chain_workflow/._03_stochastic_strategist.prompt.yaml)
-- [. Conversation Stochastic Modeler.Prompt](../prompts/technical/data_science/._conversation_stochastic_modeler.prompt.yaml)
-- [. Source Of Truth Harmonizer.Prompt](../prompts/technical/documentation/._source_of_truth_harmonizer.prompt.yaml)
 - [AI Email Assistant Go/No-Go Vote](../prompts/technical/design/email_assistant_go_no_go_vote.prompt.yaml)
 - [Atlas Documentation Specialist](../prompts/technical/documentation/atlas_documentation_specialist.prompt.yaml)
 - [CSR Results and Safety Section](../prompts/technical/technical_writing/technical_writer_workflow/01_csr_results_safety_section.prompt.yaml)
