@@ -60,6 +60,7 @@ WORKFLOW_MAPPING = {
     "market_research": "Business",
     "meta_prompt_chain": "Meta",
     "microbiology": "Scientific",
+    "music_therapy": "Clinical",
     "pathology_study": "Scientific",
     "project_management": "Management",
     "protocol": "Clinical",
