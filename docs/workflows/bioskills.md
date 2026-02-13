@@ -23,4 +23,4 @@ graph TD
     Input_procedure_name --> assessment
 </div>
 
-[View Source YAML](../../workflows/bioskills.workflow.yaml)
+[View Source YAML](../../workflows/scientific/bioskills.workflow.yaml)

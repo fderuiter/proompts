@@ -22,4 +22,4 @@ graph TD
     Input_sponsor_requirements --> sae_sop
 </div>
 
-[View Source YAML](../../workflows/technical_writer.workflow.yaml)
+[View Source YAML](../../workflows/technical/technical_writer.workflow.yaml)
