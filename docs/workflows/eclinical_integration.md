@@ -24,4 +24,4 @@ graph TD
     Input_validation_info --> validation_checklist
 </div>
 
-[View Source YAML](../../workflows/eclinical_integration.workflow.yaml)
+[View Source YAML](../../workflows/clinical/eclinical_integration.workflow.yaml)

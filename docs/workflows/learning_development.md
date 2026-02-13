@@ -24,4 +24,4 @@ graph TD
     Input_analysis_goal --> analytics_plan
 </div>
 
-[View Source YAML](../../workflows/learning_development.workflow.yaml)
+[View Source YAML](../../workflows/management/learning_development.workflow.yaml)

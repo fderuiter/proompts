@@ -35,4 +35,4 @@ graph TD
     Input_sponsor_name --> outreach_email
 </div>
 
-[View Source YAML](../../workflows/site_acquisition.workflow.yaml)
+[View Source YAML](../../workflows/clinical/site_acquisition.workflow.yaml)
