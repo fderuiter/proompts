@@ -39,6 +39,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - **Prompts**: Single-task instructions for an LLM (e.g., "Review this code", "Draft a protocol").
 - **Workflows**: Sequences of prompts that pass data from one step to the next to achieve a larger goal.
 - **Agents**: The AI systems that execute these prompts and workflows.
+- **System Architecture**: Read the [canonical guide](system_architecture.md) to understand Prompts as Code, the Simulation Engine, and the Validation Pipeline.
 
 ## Browse by Category
 
