@@ -23,4 +23,4 @@ graph TD
     engineer_step --> strategist_step
 </div>
 
-[View Source YAML](../../workflows/technical/stochastic_model_chain.workflow.yaml)
+[View Source YAML](../../workflows/stochastic_model_chain.workflow.yaml)

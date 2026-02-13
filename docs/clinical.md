@@ -74,7 +74,6 @@ has_children: false
 - [Protocol Optimization and Risk Simulation](../prompts/clinical/trial_execution/01_protocol_optimization_risk_simulation.prompt.yaml)
 - [Protocol Reviewer and Gap-Analysis Coach](../prompts/clinical/protocol/03_protocol_reviewer_gap_analysis_coach.prompt.yaml)
 - [Protocol Section Refinement](../prompts/clinical/protocol/04_protocol_section_refinement.prompt.yaml)
-- [Protocol to CDISC USDM v3.0 Converter](../prompts/clinical/protocol/06_protocol_to_usdm_v3.prompt.yaml)
 - [RBQM Anomaly Detection](../prompts/clinical/monitoring/04_rbqm_anomaly_detection.prompt.yaml)
 - [Real-Time Adjudication Visibility Dashboard](../prompts/clinical/adjudication/01_real_time_adjudication_dashboard.prompt.yaml)
 - [Regulatory Compliance Verification](../prompts/clinical/data_management/17_regulatory_compliance_verification.prompt.yaml)

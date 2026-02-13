@@ -22,4 +22,4 @@ graph TD
     define_qc_checks --> review_pipeline
 </div>
 
-[View Source YAML](../../workflows/clinical/data_management_etl.workflow.yaml)
+[View Source YAML](../../workflows/data_management_etl.workflow.yaml)
