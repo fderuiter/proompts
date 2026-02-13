@@ -30,4 +30,4 @@ graph TD
     Input_query_log --> data_quality_heatmap
 </div>
 
-[View Source YAML](../../workflows/vp_statistics.workflow.yaml)
+[View Source YAML](../../workflows/management/vp_statistics.workflow.yaml)

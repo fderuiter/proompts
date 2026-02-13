@@ -28,6 +28,7 @@ has_children: false
 - [Preclinical Pathology Study Workflow](workflows/pathology_study.md)
 - [Project Management Workflow](workflows/project_management.md)
 - [Protocol Workflow](workflows/protocol.md)
+- [Protocol to USDM Workflow](workflows/usdm_workflow.md)
 - [RTSM Workflow](workflows/rtsm.md)
 - [Site Acquisition Workflow](workflows/site_acquisition.md)
 - [Sterility Workflow](workflows/sterility.md)
