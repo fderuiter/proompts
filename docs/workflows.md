@@ -30,6 +30,7 @@ has_children: false
 - [RTSM Workflow](workflows/rtsm.md)
 - [Site Acquisition Workflow](workflows/site_acquisition.md)
 - [Sterility Workflow](workflows/sterility.md)
+- [Stochastic Model Chain: Architect -> Engineer -> Strategist](workflows/stochastic_model_chain.md)
 - [Study Director Workflow](workflows/study_director.md)
 - [Technical Writer Workflow](workflows/technical_writer.md)
 - [Testing Workflow](workflows/testing.md)
