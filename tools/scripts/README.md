@@ -94,16 +94,6 @@ A functional test for the `run_workflow.py` script. It creates a temporary envir
 python3 tools/scripts/test_run_workflow.py
 ```
 
-### `test_generate_workflow_diagrams.py`
-
-Unit tests for `generate_workflow_diagrams.py`. Verifies that Mermaid diagrams are correctly generated from workflow definitions, covering various edge cases like missing inputs or complex dependencies.
-
-**Usage:**
-
-```bash
-python3 tools/scripts/test_generate_workflow_diagrams.py
-```
-
 ### `test_generate_overviews.py`
 
 Unit tests for `generate_overviews.py`. Ensures that prompt titles are correctly extracted from YAML files (prioritizing `name`, then `title`, then filename fallback) and that overview files are generated properly.
