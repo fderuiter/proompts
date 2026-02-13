@@ -154,6 +154,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Clinical
 
 - [Audit Trail Review](../prompts/clinical/data_management/audit_trail_review.prompt.yaml)
+- [CDISC CRF Architect](../prompts/clinical/data_management/cdisc_crf_architect.prompt.yaml)
 - [CDISC SDTM/ADaM Mapping](../prompts/clinical/data_management/cdisc_mapping.prompt.yaml)
 - [Data Architecture Blueprint](../prompts/clinical/data_management/data_architecture_blueprint.prompt.yaml)
 - [Data De-identification](../prompts/clinical/data_management/data_deidentification.prompt.yaml)

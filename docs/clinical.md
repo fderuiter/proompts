@@ -18,6 +18,7 @@ has_children: false
 - [CAPA Plan Builder for Monitoring Findings](../prompts/clinical/monitoring/clinical_monitoring_workflow/02_capa_plan_builder_for_monitoring_findings.prompt.yaml)
 - [CDASH Alignment](../prompts/clinical/forms/cdash_alignment.prompt.yaml)
 - [CDASH Mapping & Completion-Guide Assistant](../prompts/clinical/forms/clinical_prompts_workflow/03_cdash_mapping_completion_guide.prompt.yaml)
+- [CDISC CRF Architect](../prompts/clinical/data_management/cdisc_crf_architect.prompt.yaml)
 - [CDISC SDTM/ADaM Mapping](../prompts/clinical/data_management/cdisc_mapping.prompt.yaml)
 - [Central Reading Paradigm Design](../prompts/clinical/imaging/imaging_workflow/03_central_reading_design.prompt.yaml)
 - [Clinical ETL Mapping Spec](../prompts/clinical/data_management/data_management_etl_workflow/01_clinical_etl_mapping_spec.prompt.yaml)

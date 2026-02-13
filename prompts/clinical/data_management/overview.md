@@ -6,6 +6,7 @@
 
 ## Prompts
 - [Audit Trail Review](audit_trail_review.prompt.yaml)
+- [CDISC CRF Architect](cdisc_crf_architect.prompt.yaml)
 - [CDISC SDTM/ADaM Mapping](cdisc_mapping.prompt.yaml)
 - [Data Architecture Blueprint](data_architecture_blueprint.prompt.yaml)
 - [Data De-identification](data_deidentification.prompt.yaml)
