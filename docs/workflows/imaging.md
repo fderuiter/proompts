@@ -61,4 +61,4 @@ graph TD
     Input_data_package_reader_agreement --> regulatory_imaging_data_package
 </div>
 
-[View Source YAML](../../workflows/imaging.workflow.yaml)
+[View Source YAML](../../workflows/clinical/imaging.workflow.yaml)
