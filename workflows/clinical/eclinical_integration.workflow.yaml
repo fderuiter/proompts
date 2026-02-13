@@ -11,16 +11,16 @@ inputs:
 
 steps:
   - step_id: "integration_blueprint"
-    prompt_file: "prompts/clinical/eclinical_integration/01_architect_integration_blueprint.prompt.yaml"
+    prompt_file: "prompts/clinical/eclinical_integration/eclinical_integration_workflow/01_architect_integration_blueprint.prompt.yaml"
     map_inputs:
       input: "{{inputs.integration_description}}"
 
   - step_id: "mapping_playbook"
-    prompt_file: "prompts/clinical/eclinical_integration/02_data_mapping_transformation_playbook.prompt.yaml"
+    prompt_file: "prompts/clinical/eclinical_integration/eclinical_integration_workflow/02_data_mapping_transformation_playbook.prompt.yaml"
     map_inputs:
       input: "{{inputs.mapping_requirements}}"
 
   - step_id: "validation_checklist"
-    prompt_file: "prompts/clinical/eclinical_integration/03_regulatory_validation_checklist.prompt.yaml"
+    prompt_file: "prompts/clinical/eclinical_integration/eclinical_integration_workflow/03_regulatory_validation_checklist.prompt.yaml"
     map_inputs:
       input: "{{inputs.validation_info}}"

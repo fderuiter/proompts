@@ -17,25 +17,25 @@ inputs:
 
 steps:
   - step_id: "e2e_test_discovery"
-    prompt_file: "prompts/technical/testing/01_e2e_test_discovery.prompt.yaml"
+    prompt_file: "prompts/technical/testing/testing_workflow/01_e2e_test_discovery.prompt.yaml"
     map_inputs:
       project_name: "{{inputs.project_name}}"
       languages_frameworks: "{{inputs.languages_frameworks}}"
       business_goal: "{{inputs.business_goal}}"
 
   - step_id: "design_verification"
-    prompt_file: "prompts/technical/testing/02_design_verification_test_plan.prompt.yaml"
+    prompt_file: "prompts/technical/testing/testing_workflow/02_design_verification_test_plan.prompt.yaml"
     map_inputs:
       device_name: "{{inputs.device_name}}"
 
   - step_id: "human_factors_validation"
-    prompt_file: "prompts/technical/testing/03_human_factors_validation_study_protocol.prompt.yaml"
+    prompt_file: "prompts/technical/testing/testing_workflow/03_human_factors_validation_study_protocol.prompt.yaml"
     map_inputs:
       device_name: "{{inputs.device_name}}"
       class: "{{inputs.device_class}}"
 
   - step_id: "risk_based_test_suite"
-    prompt_file: "prompts/technical/testing/04_risk_based_test_case_suite.prompt.yaml"
+    prompt_file: "prompts/technical/testing/testing_workflow/04_risk_based_test_case_suite.prompt.yaml"
     map_inputs:
       device_name: "{{inputs.device_name}}"
       hazard_analysis_table: "{{inputs.hazard_analysis_table}}"

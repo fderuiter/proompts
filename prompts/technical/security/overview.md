@@ -1,3 +1,3 @@
-# Security Prompts
+# Security Overview
 
-This directory contains prompts related to cybersecurity and system security, particularly focused on medical device and software security.
+- [Medical Device Cybersecurity Threat Modeling](cybersecurity_threat_modeling.prompt.yaml)

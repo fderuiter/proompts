@@ -7,16 +7,16 @@ inputs:
 
 steps:
   - step_id: "design_protocol"
-    prompt_file: "prompts/scientific/pathology/01_study_protocol_outline.prompt.yaml"
+    prompt_file: "prompts/scientific/pathology/pathology_study_workflow/01_study_protocol_outline.prompt.yaml"
     map_inputs:
       study_details: "{{inputs.study_details}}"
 
   - step_id: "evaluate_interface"
-    prompt_file: "prompts/scientific/pathology/02_device_tissue_interface_evaluation.prompt.yaml"
+    prompt_file: "prompts/scientific/pathology/pathology_study_workflow/02_device_tissue_interface_evaluation.prompt.yaml"
     map_inputs:
       study_protocol: "{{steps.design_protocol.output}}"
 
   - step_id: "plan_reporting"
-    prompt_file: "prompts/scientific/pathology/03_slides_and_reporting_workflow.prompt.yaml"
+    prompt_file: "prompts/scientific/pathology/pathology_study_workflow/03_slides_and_reporting_workflow.prompt.yaml"
     map_inputs:
       interface_evaluation: "{{steps.evaluate_interface.output}}"

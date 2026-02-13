@@ -1,0 +1,17 @@
+# Meta Prompt Chain Overview
+
+- [. 04 L4 Worker Prompt](._04_L4_worker_prompt.prompt.yaml)
+- [. 05 L5 Agent Persona Generator](._05_L5_agent_persona_generator.prompt.yaml)
+- [Master Ultrameta Prompt Architect](00_L0_master-ultrameta.prompt.yaml)
+- [Meta Prompt Architect](01_L1_meta-prompt-architect.prompt.yaml)
+- [Prompt Engineer Template](02_L2_prompt-engineer.prompt.yaml)
+- [Task Prototyper](03_L3_task-prototyper.prompt.yaml)
+- [Worker Prompt](04_L4_worker_prompt.prompt.yaml)
+- [Agent Persona Generator](05_L5_agent_persona_generator.prompt.yaml)
+- [AGENTS.md Checklist Generator](05_L5_agents-md-checklist.prompt.yaml)
+- [AI Coding Agent Plan Generator](05_L5_ai_coding_agent.prompt.yaml)
+- [Comprehensive Task Template](05_L5_comprehensive_task_template.prompt.yaml)
+- [MECE Structuring Consultant](05_L5_mece_structuring.prompt.yaml)
+- [Prompt Engineer Fact Checker](05_L5_prompt_engineer_fact_checker.prompt.yaml)
+- [PromptCrafter GPT](05_L5_promptcrafter_gpt.prompt.yaml)
+- [README Generator](05_L5_readme-generator.prompt.yaml)

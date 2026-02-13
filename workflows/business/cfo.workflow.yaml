@@ -29,7 +29,7 @@ inputs:
 
 steps:
   - step_id: "forecast"
-    prompt_file: "prompts/business/cfo/01_scenario_cash_flow_forecast.prompt.yaml"
+    prompt_file: "prompts/business/cfo/cfo_workflow/01_scenario_cash_flow_forecast.prompt.yaml"
     map_inputs:
       base_revenue: "{{inputs.base_revenue}}"
       base_costs: "{{inputs.base_costs}}"
@@ -37,7 +37,7 @@ steps:
       notes: "{{inputs.notes}}"
 
   - step_id: "pricing"
-    prompt_file: "prompts/business/cfo/02_competitive_bid_pricing.prompt.yaml"
+    prompt_file: "prompts/business/cfo/cfo_workflow/02_competitive_bid_pricing.prompt.yaml"
     map_inputs:
       competitor_bids: "{{inputs.competitor_bids}}"
       internal_cost: "{{inputs.internal_cost}}"
@@ -45,7 +45,7 @@ steps:
       volume_adjustments: "{{inputs.volume_adjustments}}"
 
   - step_id: "risk_dashboard"
-    prompt_file: "prompts/business/cfo/03_regulatory_risk_dashboard.prompt.yaml"
+    prompt_file: "prompts/business/cfo/cfo_workflow/03_regulatory_risk_dashboard.prompt.yaml"
     map_inputs:
       study_portfolio: "{{inputs.study_portfolio}}"
       reg_updates: "{{inputs.reg_updates}}"

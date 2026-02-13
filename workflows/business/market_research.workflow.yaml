@@ -15,23 +15,23 @@ inputs:
 
 steps:
   - step_id: "landscape_analysis"
-    prompt_file: "prompts/business/market_research/01_market_landscape_trend_analysis.prompt.yaml"
+    prompt_file: "prompts/business/market_research/market_research_workflow/01_market_landscape_trend_analysis.prompt.yaml"
     map_inputs:
       device_or_assay: "{{inputs.device_or_assay}}"
 
   - step_id: "needs_assessment"
-    prompt_file: "prompts/business/market_research/02_target_segment_user_needs_assessment.prompt.yaml"
+    prompt_file: "prompts/business/market_research/market_research_workflow/02_target_segment_user_needs_assessment.prompt.yaml"
     map_inputs:
       device_or_assay: "{{inputs.device_or_assay}}"
       application: "{{inputs.application}}"
 
   - step_id: "barrier_mapping"
-    prompt_file: "prompts/business/market_research/03_regulatory_commercial_barrier_mapping.prompt.yaml"
+    prompt_file: "prompts/business/market_research/market_research_workflow/03_regulatory_commercial_barrier_mapping.prompt.yaml"
     map_inputs:
       device: "{{inputs.device}}"
       markets: "{{inputs.markets}}"
 
   - step_id: "executive_summary"
-    prompt_file: "prompts/business/market_research/04_market_report_exec_summary.prompt.yaml"
+    prompt_file: "prompts/business/market_research/market_research_workflow/04_market_report_exec_summary.prompt.yaml"
     map_inputs:
       market_report: "{{inputs.market_report}}"

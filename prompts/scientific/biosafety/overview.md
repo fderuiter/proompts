@@ -1,3 +1,5 @@
-# Medical Device Biological Safety Prompts Overview
+# Biosafety Overview
 
-This folder collects prompts focused on biological safety for medical devices. Use them for risk assessments, safety planning, and preparing regulatory submissions.
+- [Biological Evaluation Plan Builder](bep_builder.prompt.yaml)
+- [Chemical Characterization & TRA Work Plan](chemical_characterization_work_plan.prompt.yaml)
+- [Comprehensive Biocompatibility Test Matrix](comprehensive_test_matrix.prompt.yaml)

@@ -1,17 +1,17 @@
-# Selenium Automation Prompts
+# Selenium Automation Overview
 
-This directory contains prompts for building, maintaining, and optimizing **Selenium Automation** frameworks.
-
-## Tasks
-The prompts cover the following key areas of Selenium automation:
-
-- **Migration**: Converting legacy Selenese scripts to Java/TestNG.
-- **Architecture**: Implementing Page Object Model (POM) and Fluent Interfaces.
-- **Configuration**: Maven setup, WebDriver initialization, and Grid configuration.
-- **Best Practices**: Robust locator strategies and explicit waits.
-- **Execution**: Parallel testing, data-driven testing, and reporting.
-- **Security**: OWASP ZAP proxy integration.
-- **Environment**: Python/SeleniumBase setup.
-
-## Usage
-These prompts are designed to act as specific expert personas (e.g., Selenium Developer, Automation Architect) to generate high-quality code and configuration snippets.
+- [. Selenium Reporting](._selenium_reporting.prompt.yaml)
+- [. Webdriver Initialization](._webdriver_initialization.prompt.yaml)
+- [Framework Implementation: Data-Driven Testing](data_driven_selenium.prompt.yaml)
+- [Advanced Design Patterns: Fluent Interface](fluent_interface_selenium.prompt.yaml)
+- [Framework Best Practices: Locator Strategy](locator_optimization.prompt.yaml)
+- [Project Configuration: Maven Setup](maven_selenium_setup.prompt.yaml)
+- [Execution Optimization: Parallel Testing](parallel_execution.prompt.yaml)
+- [Architecture Design: Page Object Model](pom_implementation.prompt.yaml)
+- [Selenium Migration: Script Conversion](script_conversion.prompt.yaml)
+- [Cross-Browser Infrastructure: Selenium Grid](selenium_grid_setup.prompt.yaml)
+- [Test Environment: Python & Selenium Base](selenium_python_setup.prompt.yaml)
+- [Reporting and Maintenance: Custom Reports](selenium_reporting.prompt.yaml)
+- [Synchronization Strategy: Explicit Waits](selenium_waits.prompt.yaml)
+- [Security Testing: OWASP ZAP Integration](selenium_zap_integration.prompt.yaml)
+- [Driver Configuration: WebDriver Initialization](webdriver_initialization.prompt.yaml)

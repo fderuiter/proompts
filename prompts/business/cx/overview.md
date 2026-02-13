@@ -1,20 +1,9 @@
-# Director of Client Experience (CX) Prompts
+# Cx Overview
 
-Prompts tailored to the strategic and operational needs of a CX Director, functioning as a Data Analyst, Empathetic Communicator, and Process Architect.
-
-## Prompts
-
-### 01-02: Voice of Customer (VoC) & Sentiment Analysis
-- **01_root_cause_analysis**: Voice of Customer Root Cause Analysis.
-- **02_trend_spotting**: Trend Spotting vs Anomalies.
-
-### 03-04: Customer Journey & Lifecycle Management
-- **03_onboarding_audit**: Friction-Hunting Onboarding Audit.
-- **04_red_account_turnaround**: Red Account Turnaround Strategy.
-
-### 05-06: Operational Efficiency & Scaling
-- **05_value_based_qbr**: Value-Based QBR Generator.
-- **06_csm_portfolio_balancing**: CSM Portfolio Balancing.
-
-### 07: Cross-Functional Advocacy
-- **07_revenue_risk_advocacy**: Cross-Functional Advocacy Memo.
+- [CSM Portfolio Balancing](csm_portfolio_balancing.prompt.yaml)
+- [Friction-Hunting Onboarding Audit](onboarding_audit.prompt.yaml)
+- [Red Account Turnaround Strategy](red_account_turnaround.prompt.yaml)
+- [Cross-Functional Advocacy Memo](revenue_risk_advocacy.prompt.yaml)
+- [Voice of Customer Root Cause Analysis](root_cause_analysis.prompt.yaml)
+- [Trend Spotting vs Anomalies](trend_spotting.prompt.yaml)
+- [Value-Based QBR Generator](value_based_qbr.prompt.yaml)

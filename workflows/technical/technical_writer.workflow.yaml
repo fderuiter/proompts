@@ -7,11 +7,11 @@ inputs:
 
 steps:
   - step_id: "csr_section"
-    prompt_file: "prompts/technical/technical_writing/01_csr_results_safety_section.prompt.yaml"
+    prompt_file: "prompts/technical/technical_writing/technical_writer_workflow/01_csr_results_safety_section.prompt.yaml"
   - step_id: "ib_summary"
-    prompt_file: "prompts/technical/technical_writing/02_ib_detailed_soc.prompt.yaml"
+    prompt_file: "prompts/technical/technical_writing/technical_writer_workflow/02_ib_detailed_soc.prompt.yaml"
   - step_id: "sae_sop"
-    prompt_file: "prompts/technical/technical_writing/03_sae_reporting_sop.prompt.yaml"
+    prompt_file: "prompts/technical/technical_writing/technical_writer_workflow/03_sae_reporting_sop.prompt.yaml"
     map_inputs:
       study_context: "{{ inputs.study_context }}"
       sponsor_requirements: "{{ inputs.sponsor_requirements }}"

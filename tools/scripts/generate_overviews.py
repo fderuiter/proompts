@@ -54,22 +54,21 @@ def ensure_overview(directory: Path) -> bool:
 
 def main() -> int:
     changed = False
-    for category_dir in PROMPTS_DIR.iterdir():
-        if not category_dir.is_dir():
-            continue
-        # For meta prompts, they are directly in the category dir
-        if category_dir.name == "meta":
-            if ensure_overview(category_dir):
-                print(f"Generated overview for {category_dir}")
-                changed = True
-            continue
+    
+    # helper to check if directory has prompts (recursively)
+    def has_prompts(d: Path) -> bool:
+        for pattern in ("*.prompt.yaml", "*.prompt.yml"):
+            if any(d.rglob(pattern)):
+                return True
+        return False
 
-        for prompt_dir in category_dir.iterdir():
-            if not prompt_dir.is_dir():
-                continue
-            if ensure_overview(prompt_dir):
-                print(f"Generated overview for {prompt_dir}")
+    # Walk through all directories under PROMPTS_DIR
+    for directory in PROMPTS_DIR.rglob("*"):
+        if directory.is_dir() and has_prompts(directory):
+            if ensure_overview(directory):
+                print(f"Generated overview for {directory}")
                 changed = True
+                
     return 0 if changed else 0
 
 

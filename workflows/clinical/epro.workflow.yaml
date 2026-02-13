@@ -11,16 +11,16 @@ inputs:
 
 steps:
   - step_id: "byod_workflow"
-    prompt_file: "prompts/clinical/epro/01_patient-centric_byod_workflow.prompt.yaml"
+    prompt_file: "prompts/clinical/epro/epro_workflow/01_patient-centric_byod_workflow.prompt.yaml"
     map_inputs:
       input: "{{inputs.byod_requirements}}"
 
   - step_id: "form_design"
-    prompt_file: "prompts/clinical/epro/02_optimize_epro_form_design.prompt.yaml"
+    prompt_file: "prompts/clinical/epro/epro_workflow/02_optimize_epro_form_design.prompt.yaml"
     map_inputs:
       input: "{{inputs.form_details}}"
 
   - step_id: "adoption_plan"
-    prompt_file: "prompts/clinical/epro/03_epro_adoption_plan_for_sponsors.prompt.yaml"
+    prompt_file: "prompts/clinical/epro/epro_workflow/03_epro_adoption_plan_for_sponsors.prompt.yaml"
     map_inputs:
       input: "{{inputs.rollout_details}}"

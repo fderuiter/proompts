@@ -1,3 +1,24 @@
-# Communication Prompts Overview
+# Communication Overview
 
-Prompts for clearer conversations, summaries, negotiation, and storytelling.
+- [. Red Team Stress Test](._red_team_stress_test.prompt.yaml)
+- [80/20 Crash Course](80_20_crash_course.prompt.yaml)
+- [Analogy Architect](analogy_architect.prompt.yaml)
+- [Data-to-Insight Analyst](data_to_insight_analyst.prompt.yaml)
+- [Density Refiner](density_refiner.prompt.yaml)
+- [Devil’s-Advocate Stress Test](devils_advocate_stress_test.prompt.yaml)
+- [Empathy-Map Facilitator](empathy_map_facilitator.prompt.yaml)
+- [Explain-Like-I’m-5 (ELI5)](explain_like_im_5.prompt.yaml)
+- [Hero's Journey Storyboarder](heros_journey_storyboarder.prompt.yaml)
+- [Lay Language Summary Creation](lay_language_summary.prompt.yaml)
+- [Negotiation Coach](negotiation_coach.prompt.yaml)
+- [Panel Debate](panel_debate.prompt.yaml)
+- [Pitch-Deck Outliner](pitch_deck_outliner.prompt.yaml)
+- [Rapid-Risk-Matrix](rapid_risk_matrix.prompt.yaml)
+- [Red-Team Stress-Test Simulation](red_team_stress_test.prompt.yaml)
+- [Rubber Duck Debugger](rubber_duck_debugger.prompt.yaml)
+- [Smart Task Prioritizer](smart_task_prioritizer.prompt.yaml)
+- [Socratic-Coach](socratic_coach.prompt.yaml)
+- [Pixar Story Spine Outline](story_spine_outline.prompt.yaml)
+- [Storyboard-My-Idea](storyboard_my_idea.prompt.yaml)
+- [TL;DR Summarizer](tldr_summarizer.prompt.yaml)
+- [Writing Clarity Mentor](writing_clarity_mentor.prompt.yaml)

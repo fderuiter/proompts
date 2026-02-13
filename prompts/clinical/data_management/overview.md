@@ -1,13 +1,20 @@
-# Data Management Prompts
+# Data Management Overview
 
-This folder contains prompt templates for data engineering and governance tasks.
-
-- **Unified Data Cleansing & Consolidation** – guidance to merge multi-source datasets into an analysis-ready table.
-- **Regulatory Data-Governance Gap Analysis** – identifies compliance gaps and remediation actions.
-- **Future-Proof Data-Architecture Blueprint** – evaluates scalable architectures and migration milestones.
-- **Clinical ETL Mapping Specification** – map raw EDC tables to SDTM domains with R and SAS examples.
-- **Clinical ETL Transformation Code and QC** – produce mirrored R and SAS code with automated tests.
-- **Clinical ETL Pipeline Review and Optimisation** – audit and refactor existing pipelines for performance and compliance.
-- **Phase II Oncology DMP Template** – outline and QC checklist for an oncology study.
-- **Decentralized Trial Risk Assessment** – matrix scoring data-quality risks and mitigations.
-- **SOP vs. Regulation Gap Analysis** – compare SOPs to regulations with a 90-day roadmap.
+- [Audit Trail Review](audit_trail_review.prompt.yaml)
+- [CDISC SDTM/ADaM Mapping](cdisc_mapping.prompt.yaml)
+- [Data Architecture Blueprint](data_architecture_blueprint.prompt.yaml)
+- [Data De-identification](data_deidentification.prompt.yaml)
+- [Database Lock Procedures](database_lock_procedures.prompt.yaml)
+- [Decentralized Trial Risk Matrix](decentralized_trial_risk_matrix.prompt.yaml)
+- [Data Management Plan (DMP) Development](dmp_development.prompt.yaml)
+- [Clinical Trial Document Archiving](document_archiving.prompt.yaml)
+- [eTMF Artifact Classifier](etmf_artifact_classifier.prompt.yaml)
+- [Medical Coding and Reconciliation Assistant](medical_coding_reconciliation.prompt.yaml)
+- [Metadata Management](metadata_management.prompt.yaml)
+- [21 CFR Part 11 Compliance Verification](part_11_compliance_verification.prompt.yaml)
+- [Phase II Oncology DMP](phase_ii_oncology_dmp.prompt.yaml)
+- [Regulatory Compliance Verification](regulatory_compliance_verification.prompt.yaml)
+- [Regulatory Gap Analysis](regulatory_gap_analysis.prompt.yaml)
+- [SOP Gap Analysis](sop_gap_analysis.prompt.yaml)
+- [Trial Master File (TMF) Maintenance](tmf_maintenance.prompt.yaml)
+- [Unified Data Cleansing](unified_data_cleansing.prompt.yaml)

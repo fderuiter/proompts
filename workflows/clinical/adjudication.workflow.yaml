@@ -9,14 +9,14 @@ inputs:
 
 steps:
   - step_id: "design_dashboard"
-    prompt_file: "prompts/clinical/adjudication/01_real_time_adjudication_dashboard.prompt.yaml"
+    prompt_file: "prompts/clinical/adjudication/adjudication_workflow/01_real_time_adjudication_dashboard.prompt.yaml"
 
   - step_id: "create_checklist"
-    prompt_file: "prompts/clinical/adjudication/02_source_document_endpoint_checklist.prompt.yaml"
+    prompt_file: "prompts/clinical/adjudication/adjudication_workflow/02_source_document_endpoint_checklist.prompt.yaml"
     map_inputs:
       charter_excerpt: "{{inputs.charter_excerpt}}"
 
   - step_id: "analyze_kpis"
-    prompt_file: "prompts/clinical/adjudication/03_analyze_adjudication_kpis.prompt.yaml"
+    prompt_file: "prompts/clinical/adjudication/adjudication_workflow/03_analyze_adjudication_kpis.prompt.yaml"
     map_inputs:
       adjudication_log.csv: "{{inputs.adjudication_log_csv}}"

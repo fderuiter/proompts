@@ -1,3 +1,7 @@
-# eClinical Integration Prompts
+# Eclinical Integration Overview
 
-This folder contains prompts for integrating electronic clinical systems such as EHR, EDC, and CTMS. Use them to design architecture, map data, and address regulatory compliance.
+- [Computer System Validation (CSV)](computer_system_validation.prompt.yaml)
+- [Digital Health Technology (DHT) Validation](dht_validation.prompt.yaml)
+- [eConsent Implementation Strategy](econsent_implementation.prompt.yaml)
+- [IQ/OQ/PQ Validation](iq_oq_pq_validation.prompt.yaml)
+- [UAT Script Generator](uat_script_generator.prompt.yaml)

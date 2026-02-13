@@ -19,27 +19,27 @@ inputs:
 
 steps:
   - step_id: "generate_l2_prompt"
-    prompt_file: "prompts/meta/L1_meta-prompt-architect.prompt.yaml"
+    prompt_file: "prompts/meta/meta_prompt_chain/01_L1_meta-prompt-architect.prompt.yaml"
     map_inputs:
       end_task: "{{inputs.end_task}}"
       policy_block: "{{inputs.policy_block}}"
 
   - step_id: "generate_l3_prompt"
-    prompt_file: "prompts/meta/L2_prompt-engineer.prompt.yaml"
+    prompt_file: "prompts/meta/meta_prompt_chain/02_L2_prompt-engineer.prompt.yaml"
     map_inputs:
       generated_prompt: "{{steps.generate_l2_prompt.output}}"
       end_task: "{{inputs.end_task}}"
       token_budget_l3: "{{inputs.token_budget_l3}}"
 
   - step_id: "generate_l4_prompt"
-    prompt_file: "prompts/meta/L3_task-prototyper.prompt.yaml"
+    prompt_file: "prompts/meta/meta_prompt_chain/03_L3_task-prototyper.prompt.yaml"
     map_inputs:
       generated_prompt: "{{steps.generate_l3_prompt.output}}"
       end_task: "{{inputs.end_task}}"
       policy_block: "{{inputs.policy_block}}"
 
   - step_id: "execute_task"
-    prompt_file: "prompts/meta/L4_worker_prompt.prompt.yaml"
+    prompt_file: "prompts/meta/meta_prompt_chain/04_L4_worker_prompt.prompt.yaml"
     map_inputs:
       generated_prompt: "{{steps.generate_l4_prompt.output}}"
       task_description: "{{inputs.task_description}}"

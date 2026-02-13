@@ -1,3 +1,5 @@
-# Medical Director Prompts
+# Medical Director Overview
 
-Prompts for clinical research medical directors focused on protocol quality, safety surveillance, and risk-based monitoring.
+- [AI-Enhanced RBM Action Plan](ai_enhanced_rbm_action_plan.prompt.yaml)
+- [Clinical Trial Protocol Compliance Review](clinical_trial_protocol_quality_compliance_review.prompt.yaml)
+- [Pharmacovigilance Safety Signal Prioritization](pharmacovigilance_safety_signal_prioritization.prompt.yaml)

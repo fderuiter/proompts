@@ -1,3 +1,20 @@
-# Operations Prompts
+# Operations Overview
 
-This folder contains prompts for business operations, including process improvement, inventory planning, and KPI review.
+- [Action-Oriented Meeting Minutes & Tracker](action_oriented_meeting_minutes.prompt.yaml)
+- [CRO Trial-Performance KPI Dashboard Blueprint](cro_trial_performance_kpi_dashboard_blueprint.prompt.yaml)
+- [Fair-Market-Value Budget Negotiation Brief](fair_market_value_budget_negotiation_brief.prompt.yaml)
+- [Fishbone Facilitator](fishbone_facilitator.prompt.yaml)
+- [Forward-Looking Resource & Capacity Forecast](forward_capacity_forecast.prompt.yaml)
+- [Inventory & Demand-Planning Simulation](inventory_demand_planning_simulation.prompt.yaml)
+- [KPI Dashboard & Monthly Ops-Review Pack](kpi_dashboard_ops_review.prompt.yaml)
+- [Multistudy Resource & Capacity Forecast Plan](multistudy_resource_capacity_forecast_plan.prompt.yaml)
+- [Operational Excellence & Risk Sweep](operational_excellence_risk_sweep.prompt.yaml)
+- [360° Operational KPI & Benchmark Review](operational_kpi_benchmark_review.prompt.yaml)
+- [Proactive Risk Heat-Map for Decentralized & Virtual Trials](proactive_risk_heat_map.prompt.yaml)
+- [Quarterly CRO KPI Executive Brief](quarterly_kpi_executive_brief.prompt.yaml)
+- [Rapid Process Diagnostic & Lean Improvement Plan](rapid_process_diagnostic.prompt.yaml)
+- [Rolling Resource & Capacity Forecast](rolling_resource_capacity_forecast.prompt.yaml)
+- [Study Start-Up Checklist & Timeline](study_startup_checklist.prompt.yaml)
+- [Risk-Based Vendor Performance Improvement Plan](vendor_performance_improvement_plan.prompt.yaml)
+- [Vendor Qualification and Oversight](vendor_qualification.prompt.yaml)
+- [Weekly Operations KPI Snapshot](weekly_ops_kpi_snapshot.prompt.yaml)

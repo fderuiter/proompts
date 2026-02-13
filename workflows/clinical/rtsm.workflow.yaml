@@ -11,16 +11,16 @@ inputs:
 
 steps:
   - step_id: "randomization_scheme"
-    prompt_file: "prompts/clinical/rtsm/01_patient_centered_randomization_scheme.prompt.yaml"
+    prompt_file: "prompts/clinical/rtsm/rtsm_workflow/01_patient_centered_randomization_scheme.prompt.yaml"
     map_inputs:
       study_parameters: "{{inputs.study_parameters}}"
 
   - step_id: "supply_strategy"
-    prompt_file: "prompts/clinical/rtsm/02_site_level_supply_resupply_strategy.prompt.yaml"
+    prompt_file: "prompts/clinical/rtsm/rtsm_workflow/02_site_level_supply_resupply_strategy.prompt.yaml"
     map_inputs:
       trial_enrollment: "{{inputs.trial_enrollment}}"
 
   - step_id: "rbm_sop"
-    prompt_file: "prompts/clinical/rtsm/03_risk_based_monitoring_sop.prompt.yaml"
+    prompt_file: "prompts/clinical/rtsm/rtsm_workflow/03_risk_based_monitoring_sop.prompt.yaml"
     map_inputs:
       existing_sop: "{{inputs.existing_sop}}"

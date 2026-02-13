@@ -11,16 +11,16 @@ inputs:
 
 steps:
   - step_id: "performance_dashboard"
-    prompt_file: "prompts/clinical/monitoring/01_risk_based_site_performance_dashboard.prompt.yaml"
+    prompt_file: "prompts/clinical/monitoring/clinical_monitoring_workflow/01_risk_based_site_performance_dashboard.prompt.yaml"
     map_inputs:
       input: "{{inputs.site_performance_data}}"
 
   - step_id: "capa_plan"
-    prompt_file: "prompts/clinical/monitoring/02_capa_plan_builder_for_monitoring_findings.prompt.yaml"
+    prompt_file: "prompts/clinical/monitoring/clinical_monitoring_workflow/02_capa_plan_builder_for_monitoring_findings.prompt.yaml"
     map_inputs:
       input: "{{inputs.monitoring_findings}}"
 
   - step_id: "mvr_critique"
-    prompt_file: "prompts/clinical/monitoring/03_monitoring_visit_report_quality_critique.prompt.yaml"
+    prompt_file: "prompts/clinical/monitoring/clinical_monitoring_workflow/03_monitoring_visit_report_quality_critique.prompt.yaml"
     map_inputs:
       input: "{{inputs.mvr_report}}"

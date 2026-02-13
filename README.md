@@ -57,7 +57,8 @@ See `docs/template_prompt.prompt.yaml` for a filled-out example.
 
 In addition to individual prompts, this repository supports **Prompt Workflows**,
 which chain multiple prompts together to perform complex, multi-step tasks.
-Workflows are defined in `.workflow.yaml` files and can be executed with the
+Workflows are defined in `.workflow.yaml` files and call prompts located in dedicated
+workflow subfolders (e.g., `prompts/clinical/protocol/protocol_workflow/`).
 included runner script.
 
 To learn more, see the [Prompt Workflows Documentation](docs/workflows.md).

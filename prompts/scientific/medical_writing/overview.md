@@ -1,3 +1,3 @@
-# Medical Writing Prompts
+# Medical Writing Overview
 
-This directory contains prompts for creating clinical and scientific documentation, such as Clinical Study Reports (CSRs).
+- [Clinical Study Report (CSR) Writing](csr_writing.prompt.yaml)

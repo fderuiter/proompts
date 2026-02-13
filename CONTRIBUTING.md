@@ -41,6 +41,9 @@ Thank you for your interest in contributing to the Proompts repository! This gui
 
 4.  **Sanitize and Standardize**:
     *   Ensure no sensitive information is included.
+    *   **File Organization Rule**:
+        *   **Standalone Prompts**: Do NOT number the file (e.g., `summarizer.yaml`). Place directly in the category folder.
+        *   **Workflow Prompts**: Place in a dedicated subfolder named `<workflow_name>_workflow/`. Number them sequentially (e.g., `01_step_one.yaml`, `02_step_two.yaml`).
     *   Follow the naming convention: snake_case for filenames.
 
 ## Submitting Changes
