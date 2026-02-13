@@ -13,7 +13,7 @@ metadata:
   requires_context: true
 variables:
 - name: context
-  description: '{{context}}'
+  description: Additional context or background information for the persona
   required: true
 - name: goal
   description: The goal or desired outcome

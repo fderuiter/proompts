@@ -14,7 +14,7 @@ metadata:
   requires_context: true
 variables:
 - name: framework
-  description: '{{framework}}'
+  description: The testing framework (e.g., TestNG, JUnit)
   required: true
 - name: report_format
   description: The report format to use for this prompt
