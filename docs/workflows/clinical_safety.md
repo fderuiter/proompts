@@ -24,4 +24,4 @@ graph TD
     Input_post_market_data --> safety_signal_trending
 </div>
 
-[View Source YAML](../../workflows/clinical_safety.workflow.yaml)
+[View Source YAML](../../workflows/clinical/clinical_safety.workflow.yaml)

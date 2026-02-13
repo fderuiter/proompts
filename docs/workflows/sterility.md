@@ -23,4 +23,4 @@ graph TD
     Input_process_description --> process_fmea
 </div>
 
-[View Source YAML](../../workflows/sterility.workflow.yaml)
+[View Source YAML](../../workflows/scientific/sterility.workflow.yaml)

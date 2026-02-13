@@ -24,4 +24,4 @@ graph TD
     Input_report_sections --> executive_summary
 </div>
 
-[View Source YAML](../../workflows/study_director.workflow.yaml)
+[View Source YAML](../../workflows/management/study_director.workflow.yaml)
