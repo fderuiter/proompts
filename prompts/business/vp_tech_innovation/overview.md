@@ -1,6 +1,6 @@
 # Vp Tech Innovation Overview
 
-- [. Hype Vs Reality Analysis](._hype_vs_reality_analysis.prompt.yaml)
+## Prompts
 - [Build vs. Buy Decision Matrix](build_vs_buy_matrix.prompt.yaml)
 - [Disruption Radar](disruption_radar.prompt.yaml)
 - [Elevator Pitch for Expensive Tech](elevator_pitch_expensive_tech.prompt.yaml)

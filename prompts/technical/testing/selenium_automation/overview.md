@@ -1,7 +1,6 @@
 # Selenium Automation Overview
 
-- [. Selenium Reporting](._selenium_reporting.prompt.yaml)
-- [. Webdriver Initialization](._webdriver_initialization.prompt.yaml)
+## Prompts
 - [Framework Implementation: Data-Driven Testing](data_driven_selenium.prompt.yaml)
 - [Advanced Design Patterns: Fluent Interface](fluent_interface_selenium.prompt.yaml)
 - [Framework Best Practices: Locator Strategy](locator_optimization.prompt.yaml)

@@ -1,7 +1,6 @@
 # Meta Prompt Chain Overview
 
-- [. 04 L4 Worker Prompt](._04_L4_worker_prompt.prompt.yaml)
-- [. 05 L5 Agent Persona Generator](._05_L5_agent_persona_generator.prompt.yaml)
+## Prompts
 - [Master Ultrameta Prompt Architect](00_L0_master-ultrameta.prompt.yaml)
 - [Meta Prompt Architect](01_L1_meta-prompt-architect.prompt.yaml)
 - [Prompt Engineer Template](02_L2_prompt-engineer.prompt.yaml)

@@ -46,17 +46,56 @@ def generate_overview(directory: Path) -> str:
         heading = title_from_prompt(file)
         lines.append(f"- [{heading}]({file.name})")
     
-    if not lines:
+    # Scan for subdirectories that have prompts or overviews
+    subdirs = []
+    for child in directory.iterdir():
+        if child.is_dir() and not child.name.startswith('.'):
+            # Check if this subdir has prompts recursively or has an overview
+            has_sub_prompts = False
+            for pattern in ("*.prompt.yaml", "*.prompt.yml"):
+                if any(child.rglob(pattern)):
+                    has_sub_prompts = True
+                    break
+            
+            if has_sub_prompts:
+                # Use the subdirectory name as title, or try to read its overview title?
+                # For simplicity, just use name.
+                title_sd = child.name.replace("_", " ").title()
+                subdirs.append(f"- [{title_sd}/]({child.name}/overview.md)")
+
+    if not lines and not subdirs:
         return ""
+    
+    sections = [f"# {title} Overview", ""]
+    if subdirs:
+        sections.append("## Categories")
+        sections.extend(sorted(subdirs))
+        sections.append("")
         
-    return "\n".join([f"# {title} Overview", ""] + lines).rstrip() + "\n"
+    if lines:
+        sections.append("## Prompts")
+        sections.extend(lines)
+        
+    return "\n".join(sections).rstrip() + "\n"
 
 
 def ensure_overview(directory: Path) -> bool:
     path = directory / OVERVIEW_NAME
-    if path.exists():
-        return False
     content = generate_overview(directory)
+    
+    if not content:
+        if path.exists():
+            path.unlink()
+            return True
+        return False
+    
+    if path.exists():
+        if path.read_text(encoding="utf-8") == content:
+            return False
+            
+    path.write_text(content, encoding="utf-8")
+    return True
+            
     path.write_text(content, encoding="utf-8")
     return True
 

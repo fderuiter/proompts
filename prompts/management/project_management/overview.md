@@ -1,5 +1,9 @@
 # Project Management Overview
 
+## Categories
+- [Project Management Workflow/](project_management_workflow/overview.md)
+
+## Prompts
 - [Clinical-Trial Timeline and Risk Radar](clinical_trial_timeline_risk_radar.prompt.yaml)
 - [Cross-Study Operational Risk Heat Map and Mitigation Plan](cross_study_risk_heat_map_mitigation_plan.prompt.yaml)
 - [Executive Sponsor Briefing Deck Outline](executive_sponsor_briefing_deck_outline.prompt.yaml)

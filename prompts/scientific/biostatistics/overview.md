@@ -1,5 +1,6 @@
 # Biostatistics Overview
 
+## Prompts
 - [Adaptive Design & Interim Monitoring](adaptive_design_interim_monitoring.prompt.yaml)
 - [Dual-Language Figure Prompt](dual_language_figure_prompt.prompt.yaml)
 - [Dunnett Adjustment R Code Generator](dunnett_adjustment_calculator.prompt.yaml)

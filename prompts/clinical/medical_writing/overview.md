@@ -1,3 +1,4 @@
 # Medical Writing Overview
 
+## Prompts
 - [Clinical Study Report (CSR) Narrative Drafter](csr_narrative_drafter.prompt.yaml)

@@ -1,5 +1,9 @@
 # Lifecycle Overview
 
+## Categories
+- [Agentic Coding Workflow/](agentic_coding_workflow/overview.md)
+
+## Prompts
 - [Coding Session Guidelines](coding_session_guidelines.prompt.yaml)
 - [E2E Test Discovery Lifecycle Template](e2e_test_discovery.prompt.yaml)
 - [Folder and Module Organization](folder_module_organization.prompt.yaml)

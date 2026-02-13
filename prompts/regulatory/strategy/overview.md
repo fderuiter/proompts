@@ -1,5 +1,6 @@
 # Strategy Overview
 
+## Prompts
 - [510(k)/De Novo Pre-Submission Strategy](510k_pre-sub_strategy.prompt.yaml)
 - [AI Risk Mapper](ai_risk_mapper.prompt.yaml)
 - [ClinicalTrials.gov Registration](clinicaltrials_registration.prompt.yaml)

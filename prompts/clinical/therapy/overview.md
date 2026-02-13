@@ -1,4 +1,7 @@
 # Therapy Overview
 
-- [. Music Therapist Melody](._music_therapist_melody.prompt.yaml)
+## Categories
+- [Music Therapy Workflow/](music_therapy_workflow/overview.md)
+
+## Prompts
 - [Compassionate Music Therapist & Composer](music_therapist_melody.prompt.yaml)

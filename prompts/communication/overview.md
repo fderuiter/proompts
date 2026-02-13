@@ -1,5 +1,6 @@
 # Communication Overview
 
+## Prompts
 - [80/20 Crash Course](80_20_crash_course.prompt.yaml)
 - [Analogy Architect](analogy_architect.prompt.yaml)
 - [Data-to-Insight Analyst](data_to_insight_analyst.prompt.yaml)

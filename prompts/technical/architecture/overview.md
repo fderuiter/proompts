@@ -1,5 +1,9 @@
 # Architecture Overview
 
+## Categories
+- [Togaf/](togaf/overview.md)
+
+## Prompts
 - [DRY Codebase Analysis](dry_codebase_analysis.prompt.yaml)
 - [Hexagonal Architecture Implementation](hexagonal_architecture_implementation.prompt.yaml)
 - [Hexagonal Architecture Principles](hexagonal_architecture_principles.prompt.yaml)
