@@ -28,7 +28,6 @@ pip install -r requirements.txt
     - [`test_utils.py`](#test_utilspy)
   - [Workflow Execution](#workflow-execution)
     - [`run_workflow.py`](#run_workflowpy)
-    - [`generate_workflow_diagrams.py`](#generate_workflow_diagramspy)
   - [Documentation Maintenance](#documentation-maintenance)
     - [`update_docs_index.py`](#update_docs_indexpy)
     - [`generate_docs.py`](#generate_docspy)
@@ -145,16 +144,6 @@ python3 tools/scripts/run_workflow.py path/to/workflow.workflow.yaml -v
 
 # Run with initial inputs
 python3 tools/scripts/run_workflow.py path/to/workflow.workflow.yaml -i user_name="Alice"
-```
-
-### `generate_workflow_diagrams.py`
-
-Generates Mermaid.js flowchart diagrams for all `.workflow.yaml` files in the repository. It creates a companion `.workflow.md` file next to each workflow, visualizing the inputs, steps, and data flow between them.
-
-**Usage:**
-
-```bash
-python3 tools/scripts/generate_workflow_diagrams.py
 ```
 
 ## Documentation Maintenance
