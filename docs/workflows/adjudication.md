@@ -22,4 +22,4 @@ graph TD
     Input_adjudication_log_csv --> analyze_kpis
 </div>
 
-[View Source YAML](../../workflows/clinical/adjudication.workflow.yaml)
+[View Source YAML](../../workflows/adjudication.workflow.yaml)

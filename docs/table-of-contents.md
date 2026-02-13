@@ -122,6 +122,7 @@
 [Protocol Section Refinement](../prompts/clinical/protocol/04_protocol_section_refinement.prompt.yaml)
 [Protocol Deviation Reporting](../prompts/clinical/protocol/05_protocol_deviation_reporting.prompt.yaml)
 [SOP and TMF Document Synthesis](../prompts/clinical/protocol/05_sop_tmf_document_synthesis.prompt.yaml)
+[Protocol to CDISC USDM v3.0 Converter](../prompts/clinical/protocol/06_protocol_to_usdm_v3.prompt.yaml)
 [Design a Patient-Centered Randomization Scheme](../prompts/clinical/rtsm/01_patient_centered_randomization_scheme.prompt.yaml)
 [Forecast Site-Level Drug Supply & Resupply Strategy](../prompts/clinical/rtsm/02_site_level_supply_resupply_strategy.prompt.yaml)
 [Create a Risk-Based Monitoring & Mitigation SOP for RTSM](../prompts/clinical/rtsm/03_risk_based_monitoring_sop.prompt.yaml)

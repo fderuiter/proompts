@@ -24,4 +24,4 @@ graph TD
     Input_study_info --> rbm_plan_builder
 </div>
 
-[View Source YAML](../../workflows/clinical/cra.workflow.yaml)
+[View Source YAML](../../workflows/cra.workflow.yaml)

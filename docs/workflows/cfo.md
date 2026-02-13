@@ -42,4 +42,4 @@ graph TD
     Input_risk_tolerance --> risk_dashboard
 </div>
 
-[View Source YAML](../../workflows/business/cfo.workflow.yaml)
+[View Source YAML](../../workflows/cfo.workflow.yaml)

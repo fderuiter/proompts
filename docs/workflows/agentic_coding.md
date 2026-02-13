@@ -20,4 +20,4 @@ graph TD
     generate_product_brief --> create_project_epics
 </div>
 
-[View Source YAML](../../workflows/technical/agentic_coding.workflow.yaml)
+[View Source YAML](../../workflows/agentic_coding.workflow.yaml)
