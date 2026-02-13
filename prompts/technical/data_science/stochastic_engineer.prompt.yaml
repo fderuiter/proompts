@@ -1,0 +1,55 @@
+---
+name: Stochastic Engineer
+description: Generates a Python Monte Carlo simulation script based on provided state definitions and transition matrix.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+    - python
+    - simulation
+    - monte-carlo
+    - engineer
+  requires_context: true
+variables:
+  - name: architect_output
+    description: The output from the Stochastic Architect, containing state definitions and transition matrix.
+    required: true
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      # Role
+      You are a Senior Python Developer and Simulation Specialist.
+
+      # Task
+      Using the State definitions and Transition Matrix provided in the previous turn, write a robust Python script to perform a Monte Carlo Simulation.
+
+      # Requirements
+      1. **Model the Logic:** Implement the states and transition probabilities exactly as defined in the previous step.
+      2. **Simulation Parameters:**
+         - Run **1,000 unique simulations** of the conversation flow.
+         - Track the path of each simulation until it hits an "Absorbing State" (a state with no exit, like "Success" or "Failure").
+      3. **Outputs:** The script must print:
+         - The percentage of conversations ending in each Absorbing State.
+         - The average "Cumulative Risk Score" for the 1,000 runs.
+         - A list of the "Most Common Path" taken.
+      4. **Library:** Use only standard libraries (`random`, `collections`) or `numpy` if necessary, but prioritize readability.
+  - role: user
+    content: |
+      # Context
+      Use the States and Matrix from the following description:
+
+      {{architect_output}}
+testData:
+  - input: |
+      State 1: Start (Risk: 0.0) -> State 2: End (Risk: 0.0)
+      Transition: Start -> End (1.0)
+    expected: |
+      ```python
+      import random
+evaluators:
+  - name: Output includes Python script
+    string:
+      matches: (?s).*```python.*```.*

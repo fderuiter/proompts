@@ -1,0 +1,23 @@
+name: "Stochastic Model Chain: Architect -> Engineer -> Strategist"
+description: "A three-stage workflow to model, simulate, and analyze conversation risks using Game Theory and Monte Carlo simulations."
+
+inputs:
+  - name: "conversation_scenario"
+    description: "The conversation transcript or scenario to analyze."
+
+steps:
+  - step_id: "architect_step"
+    prompt_file: "prompts/technical/data_science/stochastic_architect.prompt.yaml"
+    map_inputs:
+      conversation_scenario: "{{inputs.conversation_scenario}}"
+
+  - step_id: "engineer_step"
+    prompt_file: "prompts/technical/data_science/stochastic_engineer.prompt.yaml"
+    map_inputs:
+      architect_output: "{{steps.architect_step.output}}"
+
+  - step_id: "strategist_step"
+    prompt_file: "prompts/technical/data_science/stochastic_strategist.prompt.yaml"
+    map_inputs:
+      architect_output: "{{steps.architect_step.output}}"
+      engineer_output: "{{steps.engineer_step.output}}"
