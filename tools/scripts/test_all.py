@@ -27,6 +27,8 @@ def main() -> int:
         "check_prompts": check_prompts_main,
         "validate_prompt_schema": validate_prompt_schema_main,
         "update_docs_index": lambda: update_docs_index_run(check=True),
+        "generate_docs": lambda: run_command(["python3", "tools/scripts/generate_docs.py", "--check"]),
+        "check_broken_links": lambda: run_command(["python3", "tools/scripts/check_broken_links.py"]),
         "yamllint": lambda: run_command(["yamllint", "."]),
     }
 

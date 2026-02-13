@@ -8,22 +8,22 @@ has_children: false
 # Scientific
 
 ## Prompts
-
 - [Adaptive Design & Interim Monitoring](../prompts/scientific/biostatistics/adaptive_design_interim_monitoring.prompt.yaml)
 - [Bioburden Testing SOP](../prompts/scientific/microbiology/microbiology_workflow/01_bioburden_testing_sop.prompt.yaml)
 - [Biological Evaluation Plan Builder](../prompts/scientific/biosafety/bep_builder.prompt.yaml)
 - [Biological Safety Plan Developer](../prompts/scientific/biosafety/biological_safety_workflow/02_biological_safety_plan_developer.prompt.yaml)
 - [Chemical Characterization & TRA Work Plan](../prompts/scientific/biosafety/chemical_characterization_work_plan.prompt.yaml)
-- [ClinRO User Manual Generator](../prompts/scientific/coa/clinro_training_manual.prompt.yaml)
 - [Clinical Study Report (CSR) Writing](../prompts/scientific/medical_writing/csr_writing.prompt.yaml)
+- [ClinRO User Manual Generator](../prompts/scientific/coa/clinro_training_manual.prompt.yaml)
 - [Comprehensive Biocompatibility Test Matrix](../prompts/scientific/biosafety/comprehensive_test_matrix.prompt.yaml)
 - [Content Validity & Reliability Analysis](../prompts/scientific/coa/content_validity_clinician_input.prompt.yaml)
 - [Design a Robust Preclinical Pathology Study Protocol](../prompts/scientific/pathology/pathology_study_workflow/01_study_protocol_outline.prompt.yaml)
 - [Design the Study](../prompts/scientific/chemical_characterization/chemical_characterization_workflow/01_design_the_study.prompt.yaml)
 - [Dual-Language Figure Prompt](../prompts/scientific/biostatistics/dual_language_figure_prompt.prompt.yaml)
 - [Dunnett Adjustment R Code Generator](../prompts/scientific/biostatistics/dunnett_adjustment_calculator.prompt.yaml)
-- [EO Sterilization Validation Protocol](../prompts/scientific/microbiology/microbiology_workflow/02_eo_sterilization_validation_protocol.prompt.yaml)
 - [Endotoxin Control & 510(k) Risk Plan](../prompts/scientific/microbiology/microbiology_workflow/03_endotoxin_control_510k_risk_plan.prompt.yaml)
+- [EO Sterilization Validation Protocol](../prompts/scientific/microbiology/microbiology_workflow/02_eo_sterilization_validation_protocol.prompt.yaml)
+- [ePRO Migration Equivalence Checker](../prompts/scientific/coa/epro_migration_equivalence.prompt.yaml)
 - [EtO Sterilization Process FMEA](../prompts/scientific/sterility/sterility_workflow/03_eto_sterilization_process_fmea.prompt.yaml)
 - [Evaluate Device–Tissue Interface Findings](../prompts/scientific/pathology/pathology_study_workflow/02_device_tissue_interface_evaluation.prompt.yaml)
 - [FDA Missing-Data Query Response](../prompts/scientific/biostatistics/fda_missing_data_query_response.prompt.yaml)
@@ -55,14 +55,11 @@ has_children: false
 - [Time-to-Event Analysis Coach](../prompts/scientific/biostatistics/time_to_event_analysis_coach.prompt.yaml)
 - [Universal Template-Table Prompt](../prompts/scientific/biostatistics/universal_template_table_prompt.prompt.yaml)
 - [Write the Regulatory Summary](../prompts/scientific/chemical_characterization/chemical_characterization_workflow/03_write_the_regulatory_summary.prompt.yaml)
-- [ePRO Migration Equivalence Checker](../prompts/scientific/coa/epro_migration_equivalence.prompt.yaml)
 
 ## Workflows
-
-- [BioSkills Workflow](workflows/bioskills.md)
 - [Biological Safety Assessment and Planning](workflows/biological_safety.md)
+- [BioSkills Workflow](workflows/bioskills.md)
 - [Chemical Characterization and Biocompatibility Assessment](workflows/chemical_characterization.md)
 - [Microbiology Workflow](workflows/microbiology.md)
 - [Preclinical Pathology Study Workflow](workflows/pathology_study.md)
 - [Sterility Workflow](workflows/sterility.md)
-- [VP Statistics Workflow](workflows/vp_statistics.md)

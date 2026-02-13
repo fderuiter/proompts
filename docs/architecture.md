@@ -8,7 +8,6 @@ has_children: false
 # Architecture
 
 ## Prompts
-
 - [DRY Codebase Analysis](../prompts/technical/architecture/dry_codebase_analysis.prompt.yaml)
 - [Hexagonal Architecture Implementation](../prompts/technical/architecture/hexagonal_architecture_implementation.prompt.yaml)
 - [Hexagonal Architecture Principles](../prompts/technical/architecture/hexagonal_architecture_principles.prompt.yaml)
@@ -25,4 +24,3 @@ has_children: false
 - [TOGAF Phase H - Architecture Change Management](../prompts/technical/architecture/togaf/phase_h_change_management.prompt.yaml)
 - [TOGAF Preliminary Phase](../prompts/technical/architecture/togaf/preliminary_phase.prompt.yaml)
 - [TOGAF Requirements Management](../prompts/technical/architecture/togaf/requirements_management.prompt.yaml)
-

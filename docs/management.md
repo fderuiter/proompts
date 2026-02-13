@@ -8,20 +8,19 @@ has_children: false
 # Management
 
 ## Prompts
-
 - [360° Operational KPI & Benchmark Review](../prompts/management/operations/operational_kpi_benchmark_review.prompt.yaml)
 - [90-Day Biostatistics Onboarding Plan](../prompts/management/leadership/biostatistics_onboarding_plan.prompt.yaml)
-- [AI-Enhanced RBM Action Plan](../prompts/management/medical_director/ai_enhanced_rbm_action_plan.prompt.yaml)
 - [Accelerate Patient Recruitment & Retention](../prompts/management/clinical_research_manager/accelerate_patient_recruitment_retention.prompt.yaml)
 - [Action-Oriented Meeting Minutes & Tracker](../prompts/management/operations/action_oriented_meeting_minutes.prompt.yaml)
+- [AI-Enhanced RBM Action Plan](../prompts/management/medical_director/ai_enhanced_rbm_action_plan.prompt.yaml)
 - [Audit Raw Data and Draft a CAPA Summary](../prompts/management/study_director/study_director_workflow/02_audit_raw_data_capa_summary.prompt.yaml)
-- [CRO Trial-Performance KPI Dashboard Blueprint](../prompts/management/operations/cro_trial_performance_kpi_dashboard_blueprint.prompt.yaml)
 - [Career Compass Advisor](../prompts/management/personal_effectiveness/career_compass_advisor.prompt.yaml)
 - [Clinical Trial Protocol Compliance Review](../prompts/management/medical_director/clinical_trial_protocol_quality_compliance_review.prompt.yaml)
 - [Clinical-Trial Timeline and Risk Radar](../prompts/management/project_management/clinical_trial_timeline_risk_radar.prompt.yaml)
 - [Competency-Based Onboarding Blueprint](../prompts/management/training/learning_development_workflow/01_competency_based_onboarding_blueprint.prompt.yaml)
 - [Comprehensive Risk Register and Mitigation Plan](../prompts/management/project_management/project_management_workflow/02_risk_register_mitigation.prompt.yaml)
 - [Crisis-Management Playbook Generator](../prompts/management/executive/crisis_management_playbook.prompt.yaml)
+- [CRO Trial-Performance KPI Dashboard Blueprint](../prompts/management/operations/cro_trial_performance_kpi_dashboard_blueprint.prompt.yaml)
 - [Cross-Study Operational Risk Heat Map and Mitigation Plan](../prompts/management/project_management/cross_study_risk_heat_map_mitigation_plan.prompt.yaml)
 - [Data-Quality Risk Heat Map](../prompts/management/vp_statistics/vp_statistics_workflow/03_data_quality_risk_heatmap.prompt.yaml)
 - [Detailed Project Blueprint and Timeline](../prompts/management/project_management/project_management_workflow/04_detailed_project_blueprint_timeline.prompt.yaml)
@@ -33,8 +32,8 @@ has_children: false
 - [Executive Sponsor Briefing Deck Outline](../prompts/management/project_management/executive_sponsor_briefing_deck_outline.prompt.yaml)
 - [Executive Trial-Health Dashboard](../prompts/management/executive/executive_trial_health_dashboard.prompt.yaml)
 - [Executive-Ready Brief and Talking Points](../prompts/management/executive/executive_brief_synthesizer.prompt.yaml)
-- [FDA-Aligned AI Governance Framework](../prompts/management/executive/ai_governance_framework.prompt.yaml)
 - [Fair-Market-Value Budget Negotiation Brief](../prompts/management/operations/fair_market_value_budget_negotiation_brief.prompt.yaml)
+- [FDA-Aligned AI Governance Framework](../prompts/management/executive/ai_governance_framework.prompt.yaml)
 - [Fishbone Facilitator](../prompts/management/operations/fishbone_facilitator.prompt.yaml)
 - [Forward-Looking Resource & Capacity Forecast](../prompts/management/operations/forward_capacity_forecast.prompt.yaml)
 - [Generate an Executive Summary for the Final Report](../prompts/management/study_director/study_director_workflow/03_executive_summary_final_report.prompt.yaml)
@@ -76,8 +75,8 @@ has_children: false
 - [Strategic Alignment and Innovation](../prompts/management/leadership/strategic_alignment_innovation.prompt.yaml)
 - [Strategic Consultant SWOT](../prompts/management/executive/strategic_consultant_swot.prompt.yaml)
 - [Strategic Growth Roadmap](../prompts/management/executive/strategic_growth_roadmap.prompt.yaml)
-- [Strategic Market Foresight and Action Plan](../prompts/management/executive/strategic_market_foresight.prompt.yaml)
 - [Strategic Market and Competitor Radar](../prompts/management/executive/market_competitor_radar.prompt.yaml)
+- [Strategic Market Foresight and Action Plan](../prompts/management/executive/strategic_market_foresight.prompt.yaml)
 - [Strategic Portfolio Prioritizer](../prompts/management/executive/strategic_portfolio_prioritizer.prompt.yaml)
 - [Study Start-Up Checklist & Timeline](../prompts/management/operations/study_startup_checklist.prompt.yaml)
 - [TMF Gap-Analysis and Audit Readiness Check](../prompts/management/project_management/tmf_gap_analysis_audit_readiness_check.prompt.yaml)
@@ -88,7 +87,7 @@ has_children: false
 - [Weekly Operations KPI Snapshot](../prompts/management/operations/weekly_ops_kpi_snapshot.prompt.yaml)
 
 ## Workflows
-
 - [Learning and Development Workflow](workflows/learning_development.md)
 - [Project Management Workflow](workflows/project_management.md)
 - [Study Director Workflow](workflows/study_director.md)
+- [VP Statistics Workflow](workflows/vp_statistics.md)

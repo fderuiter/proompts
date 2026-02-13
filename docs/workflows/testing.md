@@ -9,10 +9,7 @@ nav_order: 99
 
 A workflow for end-to-end test discovery, design verification, human factors validation, and risk-based test case suite generation.
 
-## Workflow Diagram
-
-<div class="mermaid">
-graph TD
+## Workflow Diagram\n\n<div class="mermaid">\ngraph TD
     Input_project_name[Input: project_name] --> Steps
     Input_languages_frameworks[Input: languages_frameworks] --> Steps
     Input_business_goal[Input: business_goal] --> Steps
@@ -30,7 +27,5 @@ graph TD
     Input_device_class --> human_factors_validation
     risk_based_test_suite[Step: risk_based_test_suite]
     Input_device_name --> risk_based_test_suite
-    Input_hazard_analysis_table --> risk_based_test_suite
-</div>
-
+    Input_hazard_analysis_table --> risk_based_test_suite\n</div>\n
 [View Source YAML](../../workflows/technical/testing.workflow.yaml)

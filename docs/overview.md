@@ -16,7 +16,7 @@ retired.
 
 - [Index](index.md) - Full documentation index
 - [Table of Contents](table-of-contents.md) - Complete prompt catalog
-- [Prompt Inventory](prompt_inventory.md) - Detailed prompt listings
+ - Detailed prompt listings
 
 ## Prompt Categories
 

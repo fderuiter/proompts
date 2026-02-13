@@ -9,10 +9,7 @@ nav_order: 99
 
 A workflow for financial forecasting, competitive bid pricing, and regulatory risk assessment.
 
-## Workflow Diagram
-
-<div class="mermaid">
-graph TD
+## Workflow Diagram\n\n<div class="mermaid">\ngraph TD
     Input_base_revenue[Input: base_revenue] --> Steps
     Input_base_costs[Input: base_costs] --> Steps
     Input_starting_cash[Input: starting_cash] --> Steps
@@ -39,7 +36,5 @@ graph TD
     Input_study_portfolio --> risk_dashboard
     Input_reg_updates --> risk_dashboard
     Input_esg_baseline --> risk_dashboard
-    Input_risk_tolerance --> risk_dashboard
-</div>
-
+    Input_risk_tolerance --> risk_dashboard\n</div>\n
 [View Source YAML](../../workflows/business/cfo.workflow.yaml)
