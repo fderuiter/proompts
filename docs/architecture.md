@@ -25,4 +25,3 @@ has_children: false
 - [TOGAF Phase H - Architecture Change Management](../prompts/technical/architecture/togaf/09_phase_h_change_management.prompt.yaml)
 - [TOGAF Preliminary Phase](../prompts/technical/architecture/togaf/01_preliminary_phase.prompt.yaml)
 - [TOGAF Requirements Management](../prompts/technical/architecture/togaf/10_requirements_management.prompt.yaml)
-

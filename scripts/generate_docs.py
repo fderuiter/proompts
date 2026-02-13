@@ -1,280 +1,286 @@
 #!/usr/bin/env python3
-import os
+"""
+⚙️ Systems Core: Documentation Generator
+Refactored for Robustness, Scalability, and OCP.
+"""
+
+import sys
 import yaml
 import re
+import os
+from pathlib import Path
+from dataclasses import dataclass, field
+from typing import List, Dict, Optional, Any
 
-# Configuration
-PROMPTS_DIR = "prompts"
-WORKFLOWS_DIR = "workflows"
-DOCS_DIR = "docs"
-
-# Category Mapping: Order Matters!
-# We check for these prefixes in order.
-CATEGORY_MAP_LIST = [
-    ("technical/architecture", "Architecture"),
-    ("technical/languages", "Languages"),
-    ("technical/software_engineering", "Software Engineering"),
-    ("technical/testing", "Testing"),
-    ("technical", "Technical"), # General Technical
-    ("business", "Business"),
-    ("clinical", "Clinical"),
-    ("communication", "Communication"),
-    ("management", "Management"),
-    ("meta", "Meta"),
-    ("regulatory", "Regulatory"),
-    ("scientific", "Scientific"),
-]
-
-NAV_ORDER = {
-    "Architecture": 1,
-    "Business": 2,
-    "Clinical": 3,
-    "Communication": 4,
-    "Languages": 5,
-    "Management": 6,
-    "Meta": 7,
-    "Regulatory": 8,
-    "Scientific": 9,
-    "Software Engineering": 10,
-    "Technical": 11,
-    "Testing": 12,
-    "Workflows": 13 
+# --- Configuration Constants (Centralized) ---
+CONFIG = {
+    "dirs": {
+        "prompts": Path("prompts"),
+        "workflows": Path("workflows"),
+        "docs": Path("docs"),
+        "workflow_docs": Path("docs/workflows"),
+    },
+    "nav_order": {
+        "Architecture": 1, "Business": 2, "Clinical": 3, "Communication": 4,
+        "Languages": 5, "Management": 6, "Meta": 7, "Regulatory": 8,
+        "Scientific": 9, "Software Engineering": 10, "Technical": 11,
+        "Testing": 12, "Workflows": 13
+    }
 }
 
-# Workflow to Category Mapping
-WORKFLOW_MAPPING = {
-    "adjudication": "Clinical",
-    "agentic_coding": "Software Engineering",
-    "bioskills": "Scientific",
-    "biological_safety": "Scientific",
-    "cfo": "Business",
-    "cra": "Clinical",
-    "chemical_characterization": "Scientific",
-    "clinical_data": "Clinical",
-    "data_management_etl": "Clinical",
-    "clinical_monitoring": "Clinical",
-    "clinical_prompts": "Clinical",
-    "clinical_safety": "Clinical",
-    "imaging": "Clinical",
-    "learning_development": "Management",
-    "market_research": "Business",
-    "meta_prompt_chain": "Meta",
-    "microbiology": "Scientific",
-    "music_therapy": "Clinical",
-    "pathology_study": "Scientific",
-    "project_management": "Management",
-    "protocol": "Clinical",
-    "rtsm": "Clinical",
-    "site_acquisition": "Clinical",
-    "sterility": "Scientific",
-    "study_director": "Management",
-    "technical_writer": "Technical",
-    "testing": "Testing",
-    "vp_statistics": "Scientific",
-    "eclinical_integration": "Clinical",
-    "epro": "Clinical"
-}
+@dataclass(frozen=True)
+class DocItem:
+    """Immutable data carrier for documentation items."""
+    title: str
+    path: Path
+    category: str
+    item_type: str  # 'prompt' or 'workflow'
+    description: str = ""
+    graph_mermaid: Optional[str] = None
 
-def get_title(filepath):
-    """Extracts the title from a prompt or workflow file."""
-    try:
-        with open(filepath, 'r') as f:
-            data = yaml.safe_load(f)
-            if data and isinstance(data, dict):
-                if 'name' in data:
-                    return data['name']
-                # Workflows might use 'title' or just prompt names, let's check for 'name' first
-    except Exception as e:
-        pass
+class FileParser:
+    """Encapsulates logic for extracting metadata from files."""
     
-    # Fallback: Use filename converted to title case
-    filename = os.path.basename(filepath)
-    name = os.path.splitext(filename)[0]
-    # Remove numbering if present
-    name = re.sub(r'^\d+_', '', name)
-    # Remove extension if double extension (like .workflow.yaml -> .workflow -> name)
-    if name.endswith('.workflow'):
-        name = name[:-9]
+    @staticmethod
+    def load_yaml(path: Path) -> Dict[str, Any]:
+        try:
+            with path.open('r', encoding='utf-8') as f:
+                return yaml.safe_load(f) or {}
+        except Exception as e:
+            print(f"⚠️ Warning: Failed to parse {path}: {e}")
+            return {}
+
+    @staticmethod
+    def derive_title(path: Path, data: Dict[str, Any]) -> str:
+        """Derives title from metadata or strictly formatted filename."""
+        if name := data.get('name') or data.get('title'):
+            return str(name).strip()
         
-    return name.replace('_', ' ').title()
+        # Fallback: Robust filename parsing
+        stem = path.stem.replace('.workflow', '')
+        # Remove leading numbers (e.g., 01_filename -> filename)
+        clean_name = re.sub(r'^\d+_', '', stem)
+        return clean_name.replace('_', ' ').title()
+
+    @staticmethod
+    def derive_category(path: Path, root_dir: Path, data: Dict[str, Any] = None) -> str:
+        """
+        Derives category from directory structure or metadata.
+        Pattern: root / category / subfolder / file
+        """
+        if data:
+            if category := data.get('category'):
+                return str(category).strip()
+            # Check nested metadata too
+            if metadata := data.get('metadata'):
+                if isinstance(metadata, dict) and (cat := metadata.get('category')):
+                    return str(cat).strip()
+
+        try:
+            relative = path.relative_to(root_dir)
+            # If in root (e.g., prompts/README.md), it's Uncategorized
+            if len(relative.parts) < 2:
+                return "Uncategorized"
+
+            # Map top-level technical folders to cleaner names if needed
+            category_raw = relative.parts[0]
+            if category_raw == "technical" and len(relative.parts) > 1:
+                # Handle technical/architecture -> Architecture
+                sub = relative.parts[1]
+                if sub in ["architecture", "languages", "software_engineering", "testing"]:
+                    return sub.replace('_', ' ').title()
+                return "Technical"
+
+            return category_raw.replace('_', ' ').title()
+        except ValueError:
+            return "Uncategorized"
+
+class WorkflowGrapher:
+    """Specialized logic for Mermaid graph generation."""
+    
+    @staticmethod
+    def generate(data: Dict[str, Any]) -> str:
+        if 'steps' not in data and 'inputs' not in data:
+            return ""
+
+        graph = ["graph TD"]
+
+        # Inputs
+        for inp in data.get('inputs', []):
+            name = inp.get('name', 'Unknown')
+            graph.append(f"    Input_{name}[Input: {name}] --> Steps")
+
+        # Steps & Dependencies
+        for step in data.get('steps', []):
+            step_id = step.get('step_id', 'unknown')
+            graph.append(f"    {step_id}[Step: {step_id}]")
+
+            inputs_map = step.get('map_inputs', {})
+            for val in inputs_map.values():
+                if isinstance(val, str):
+                    # Dependency on other steps
+                    for match in re.findall(r'steps\.(\w+)\.output', val):
+                        graph.append(f"    {match} --> {step_id}")
+                    # Dependency on global inputs
+                    for match in re.findall(r'inputs\.(\w+)', val):
+                        graph.append(f"    Input_{match} --> {step_id}")
+
+        return "\n".join(graph) if len(graph) > 1 else ""
+
+class DocumentationGenerator:
+    def __init__(self, root: Path):
+        self.root = root
+        self.items: List[DocItem] = []
+
+    def scan_prompts(self):
+        prompts_dir = self.root / CONFIG['dirs']['prompts']
+        if not prompts_dir.exists():
+            return
+
+        print(f"🔍 Scanning Prompts in {prompts_dir}...")
+        for path in prompts_dir.rglob("*"):
+            if path.suffix in {'.yaml', '.yml'} and '.prompt' in path.name:
+                data = FileParser.load_yaml(path)
+                item = DocItem(
+                    title=FileParser.derive_title(path, data),
+                    path=path,
+                    category=FileParser.derive_category(path, prompts_dir, data),
+                    item_type='prompt'
+                )
+                self.items.append(item)
+
+    def scan_workflows(self):
+        wf_dir = self.root / CONFIG['dirs']['workflows']
+        if not wf_dir.exists():
+            return
+
+        print(f"🔍 Scanning Workflows in {wf_dir}...")
+        # Ensure output dir exists
+        (self.root / CONFIG['dirs']['workflow_docs']).mkdir(parents=True, exist_ok=True)
+
+        for path in wf_dir.rglob("*"):
+            if path.suffix in {'.yaml', '.yml'} and '.workflow' in path.name:
+                data = FileParser.load_yaml(path)
+
+                # Render the individual workflow page immediately (Side Effect)
+                page_path = self._render_workflow_page(path, data)
+
+                item = DocItem(
+                    title=FileParser.derive_title(path, data),
+                    path=page_path, # Link to the generated MD, not the source YAML
+                    category=FileParser.derive_category(path, wf_dir, data),
+                    item_type='workflow'
+                )
+                self.items.append(item)
+
+    def _render_workflow_page(self, source_path: Path, data: Dict[str, Any]) -> Path:
+        """Generates the Markdown page for a single workflow."""
+        title = FileParser.derive_title(source_path, data)
+        desc = data.get('description', 'No description provided.')
+        mermaid = WorkflowGrapher.generate(data)
+        
+        filename = source_path.stem.replace('.workflow', '') + ".md"
+        output_path = self.root / CONFIG['dirs']['workflow_docs'] / filename
+        
+        # Relative link to source for the button
+        rel_source = os.path.relpath(source_path, output_path.parent)
+
+        content = f"""---
+layout: default
+title: {title}
+parent: Workflows
+nav_order: 99
+---
+
+# {title}
+
+{desc}
+
+{f'## Workflow Diagram\n\n<div class="mermaid">\n{mermaid}\n</div>\n' if mermaid else ''}
+[View Source YAML]({rel_source})
+"""
+        output_path.write_text(content, encoding='utf-8')
+        return output_path
+
+    def build_indices(self):
+        """Groups items by category and writes index pages."""
+        print("📝 Generating Category Indices...")
+        
+        # Grouping
+        registry: Dict[str, Dict[str, List[DocItem]]] = {}
+        
+        for item in self.items:
+            if item.category not in registry:
+                registry[item.category] = {'prompt': [], 'workflow': []}
+            registry[item.category][item.item_type].append(item)
+
+            # Add all workflows to a Master "Workflows" category as well
+            if item.item_type == 'workflow':
+                if "Workflows" not in registry:
+                    registry["Workflows"] = {'prompt': [], 'workflow': []}
+                registry["Workflows"]['workflow'].append(item)
+
+        # Rendering
+        docs_dir = self.root / CONFIG['dirs']['docs']
+        for category, types in registry.items():
+            if not any(types.values()):
+                continue
+
+            filename = category.lower().replace(" ", "_") + ".md"
+            out_path = docs_dir / filename
+            nav = CONFIG['nav_order'].get(category, 99)
+            
+            md = [
+                "---",
+                "layout: default",
+                f"title: {category}",
+                f"nav_order: {nav}",
+                "has_children: false",
+                "---",
+                "",
+                f"# {category}",
+                ""
+            ]
+
+            if types['prompt'] and category != "Workflows":
+                md.append("## Prompts")
+                md.append("")
+                for p in sorted(types['prompt'], key=lambda x: x.title):
+                    # Calculate relative path from docs/category.md to prompts/file.yaml
+                    rel = os.path.relpath(p.path, docs_dir)
+                    md.append(f"- [{p.title}]({rel})")
+                md.append("")
+
+            if types['workflow']:
+                header = "## Workflows" if category != "Workflows" else ""
+                if header:
+                    md.append(header)
+                    md.append("")
+                for w in sorted(types['workflow'], key=lambda x: x.title):
+                    # For workflows, path is already pointing to docs/workflows/file.md
+                    # We need relative path from docs/category.md to docs/workflows/file.md
+                    rel = os.path.relpath(w.path, docs_dir)
+                    md.append(f"- [{w.title}]({rel})")
+
+            out_path.write_text("\n".join(md), encoding='utf-8')
+            print(f"✅ Updated {out_path}")
 
 def main():
-    # Find project root
-    current_dir = os.getcwd()
-    if os.path.exists(os.path.join(current_dir, PROMPTS_DIR)):
-        base_dir = current_dir
-    else:
-        # Try one up
-        base_dir = os.path.dirname(current_dir)
-        if not os.path.exists(os.path.join(base_dir, PROMPTS_DIR)):
-             # Fallback to script location
-             base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    # Detect root (where script is run from)
+    root = Path.cwd()
+    if not (root / CONFIG['dirs']['prompts']).exists():
+        # Try one level up if run from scripts/
+        if (root.parent / CONFIG['dirs']['prompts']).exists():
+            root = root.parent
+        else:
+            print("❌ Error: Could not locate project root.")
+            sys.exit(1)
 
-    prompts_abs = os.path.join(base_dir, PROMPTS_DIR)
-    workflows_abs = os.path.join(base_dir, WORKFLOWS_DIR)
-    docs_abs = os.path.join(base_dir, DOCS_DIR)
-
-    # Categories now hold both prompts and workflows
-    categories = {cat_name: {'prompts': [], 'workflows': []} for _, cat_name in CATEGORY_MAP_LIST}
-    categories["Uncategorized"] = {'prompts': [], 'workflows': []}
-    categories["Workflows"] = {'prompts': [], 'workflows': []} # Keep master list
-    
-    # --- Process Prompts ---
-    print(f"Scanning {prompts_abs}...")
-    for root, dirs, files in os.walk(prompts_abs):
-        for file in files:
-            if file.endswith('.prompt.yaml') or file.endswith('.prompt.yml'):
-                full_path = os.path.join(root, file)
-                rel_path_from_prompts = os.path.relpath(full_path, prompts_abs)
-                
-                category = "Uncategorized"
-                rel_path_check = rel_path_from_prompts.replace("\\", "/")
-                
-                for prefix, cat_name in CATEGORY_MAP_LIST:
-                    if rel_path_check.startswith(prefix):
-                        category = cat_name
-                        break
-                
-                title = get_title(full_path)
-                link_path = os.path.join("..", PROMPTS_DIR, rel_path_from_prompts)
-                
-                categories[category]['prompts'].append({'title': title, 'path': link_path})
-
-    # --- Process Workflows ---
-    workflow_docs_dir = os.path.join(docs_abs, "workflows")
-    os.makedirs(workflow_docs_dir, exist_ok=True)
-
-    if os.path.exists(workflows_abs):
-        print(f"Scanning {workflows_abs}...")
-        for root, dirs, files in os.walk(workflows_abs):
-            for file in files:
-                if file.endswith('.workflow.yaml') or file.endswith('.workflow.yml'):
-                    full_path = os.path.join(root, file)
-                    title = get_title(full_path)
-                    
-                    # Generate individual workflow page content with Mermaid
-                    mermaid_graph = "graph TD\n"
-                    
-                    try:
-                        with open(full_path, 'r') as f:
-                            data = yaml.safe_load(f)
-                            
-                            # Inputs node
-                            if 'inputs' in data:
-                                for inp in data['inputs']:
-                                    inp_name = inp['name']
-                                    mermaid_graph += f"    Input_{inp_name}[Input: {inp_name}] --> Steps\n"
-                            
-                            previous_step = None
-                            if 'steps' in data:
-                                for step in data['steps']:
-                                    step_id = step['step_id']
-                                    mermaid_graph += f"    {step_id}[Step: {step_id}]\n"
-                                    
-                                    # Try to infer dependencies from map_inputs
-                                    if 'map_inputs' in step:
-                                        for key, val in step['map_inputs'].items():
-                                            if isinstance(val, str):
-                                                # Look for {{steps.STEP_ID.output}}
-                                                matches = re.findall(r'steps\.(\w+)\.output', val)
-                                                for match in matches:
-                                                    mermaid_graph += f"    {match} --> {step_id}\n"
-                                                
-                                                # Look for {{inputs.INPUT_NAME}}
-                                                matches_input = re.findall(r'inputs\.(\w+)', val)
-                                                for match in matches_input:
-                                                    mermaid_graph += f"    Input_{match} --> {step_id}\n"
-
-                    except Exception as e:
-                        print(f"Error parsing workflow {file}: {e}")
-                        mermaid_graph = ""
-
-                    # Create individual page
-                    workflow_filename = re.sub(r'\.workflow\.ya?ml$', '', file) + ".md"
-                    workflow_page_path = os.path.join(workflow_docs_dir, workflow_filename)
-                    
-                    description = data.get('description', 'No description provided.') if data else ''
-                    
-                    page_content = f"---\nlayout: default\ntitle: {title}\nparent: Workflows\nnav_order: 99\n---\n\n"
-                    page_content += f"# {title}\n\n"
-                    page_content += f"{description}\n\n"
-                    
-                    if mermaid_graph.strip() != "graph TD":
-                         page_content += "## Workflow Diagram\n\n"
-                         page_content += "<div class=\"mermaid\">\n"
-                         page_content += mermaid_graph
-                         page_content += "</div>\n\n"
-                    
-                    # Link to source
-                    rel_path_source = os.path.relpath(full_path, workflow_docs_dir)
-                    page_content += f"[View Source YAML]({rel_path_source})\n"
-
-                    with open(workflow_page_path, 'w') as f:
-                        f.write(page_content)
-                    print(f"Generated workflow page: {workflow_page_path}")
-
-                    # Determine Workflow Category
-                    workflow_basename = re.sub(r'\.workflow\.ya?ml$', '', file)
-                    # Handle double extensions if any
-                    if workflow_basename.endswith('.workflow'):
-                        workflow_basename = workflow_basename[:-9]
-                        
-                    category = WORKFLOW_MAPPING.get(workflow_basename, "Uncategorized")
-                    
-                    # Link paths are slightly different depending on if we are in docs/workflows.md or docs/category.md
-                    # But actually we are linking to the *generated* docs/workflows/file.md
-                    # In docs/category.md -> workflows/file.md
-                    # In docs/workflows.md -> workflows/file.md
-                    
-                    link_path = os.path.join("workflows", workflow_filename)
-                    
-                    # Add to specific category
-                    if category in categories:
-                        categories[category]['workflows'].append({'title': title, 'path': link_path})
-                    
-                    # Add to master list
-                    categories["Workflows"]['workflows'].append({'title': title, 'path': link_path})
-    
-
-    # --- Generate Docs ---
-    print("Generating documentation files...")
-    for category, content_data in categories.items():
-        prompts = content_data['prompts']
-        workflows = content_data['workflows']
-        
-        if not prompts and not workflows:
-            continue
-            
-        filename = category.lower().replace(" ", "_") + ".md"
-        output_path = os.path.join(docs_abs, filename)
-        
-        nav_order = NAV_ORDER.get(category, 99)
-        
-        page_content = f"---\nlayout: default\ntitle: {category}\nnav_order: {nav_order}\nhas_children: false\n---\n\n"
-        page_content += f"# {category}\n\n"
-        
-        if prompts and category != "Workflows":
-            page_content += "## Prompts\n\n"
-            sorted_prompts = sorted(prompts, key=lambda x: x['title'])
-            for prompt in sorted_prompts:
-                page_content += f"- [{prompt['title']}]({prompt['path']})\n"
-            page_content += "\n"
-
-        if workflows:
-            if category != "Workflows":
-                 page_content += "## Workflows\n\n"
-            
-            sorted_workflows = sorted(workflows, key=lambda x: x['title'])
-            for wf in sorted_workflows:
-                page_content += f"- [{wf['title']}]({wf['path']})\n"
-        
-        with open(output_path, 'w') as f:
-            f.write(page_content)
-        print(f"Updated {output_path}")
-
-    print("Done.")
+    gen = DocumentationGenerator(root)
+    gen.scan_prompts()
+    gen.scan_workflows()
+    gen.build_indices()
+    print("✨ Documentation generation complete.")
 
 if __name__ == "__main__":
     main()
-
-

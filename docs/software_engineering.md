@@ -34,7 +34,3 @@ has_children: false
 - [To-Do List Template](../prompts/technical/software_engineering/lifecycle/07_todo_generation.prompt.yaml)
 - [Tooling, Linting & Quality Gates (OpenAI Codex)](../prompts/technical/software_engineering/tasks/03_tooling_and_quality.prompt.yaml)
 - [UI Tweak & Verification (OpenAI Codex)](../prompts/technical/software_engineering/tasks/12_ui_fix.prompt.yaml)
-
-## Workflows
-
-- [Agentic Coding: From Idea to Epics](workflows/agentic_coding.md)

@@ -65,4 +65,3 @@ has_children: false
 - [Microbiology Workflow](workflows/microbiology.md)
 - [Preclinical Pathology Study Workflow](workflows/pathology_study.md)
 - [Sterility Workflow](workflows/sterility.md)
-- [VP Statistics Workflow](workflows/vp_statistics.md)

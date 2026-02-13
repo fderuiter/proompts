@@ -122,6 +122,7 @@ has_children: false
 - [Compassionate Music Therapy Workflow](workflows/music_therapy.md)
 - [Imaging Workflow](workflows/imaging.md)
 - [Protocol Workflow](workflows/protocol.md)
+- [Protocol to USDM Workflow](workflows/usdm_workflow.md)
 - [RTSM Workflow](workflows/rtsm.md)
 - [Site Acquisition Workflow](workflows/site_acquisition.md)
 - [eClinical Integration Workflow](workflows/eclinical_integration.md)

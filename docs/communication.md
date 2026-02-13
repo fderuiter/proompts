@@ -30,4 +30,3 @@ has_children: false
 - [Storyboard-My-Idea](../prompts/communication/09_storyboard_my_idea.prompt.yaml)
 - [TL;DR Summarizer](../prompts/communication/03_tldr_summarizer.prompt.yaml)
 - [Writing Clarity Mentor](../prompts/communication/08_writing_clarity_mentor.prompt.yaml)
-
