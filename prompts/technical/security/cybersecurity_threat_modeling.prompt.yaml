@@ -1,56 +1,124 @@
 ---
 name: Medical Device Cybersecurity Threat Modeling
-version: 0.1.0
-description: Analyze system architecture using STRIDE.
+version: 0.2.0
+description: Analyze system architecture using STRIDE to identify threat vectors and generate an FDA-compliant summary.
 metadata:
   domain: technical
-  complexity: low
+  complexity: medium
   tags:
   - security
   - medical
   - device
   - cybersecurity
   - threat
+  - STRIDE
+  - FDA
   requires_context: false
 variables:
 - name: system_architecture
-  description: The system architecture to use for this prompt
+  description: The detailed system architecture description to use for this prompt.
   required: true
 model: gpt-4o
 modelParameters:
-  temperature: 0.2
+  temperature: 0.1
 messages:
 - role: system
-  content: You are a Security Architect. Analyze the medical device system architecture using the STRIDE methodology to identify
-    threat vectors (spoofing, tampering, etc.) and generate a threat modeling summary for the FDA premarket submission. Reference
-    FDA Premarket Cybersecurity Guidance.
+  content: |
+    You are a Senior Medical Device Cybersecurity Architect specializing in FDA premarket submissions. Your task is to analyze a medical device system architecture using the STRIDE methodology (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege) and generate a comprehensive threat modeling summary.
+
+    ### Instructions:
+    1.  **Analyze** the provided `<system_architecture>` thoroughly.
+    2.  **Identify** potential threats for each STRIDE category.
+    3.  **Assess** the risk and impact of each threat.
+    4.  **Propose** specific mitigation strategies.
+    5.  **Reference** relevant FDA Premarket Cybersecurity Guidance where applicable.
+
+    ### Constraints:
+    -   Do NOT provide generic security advice (e.g., "Use strong passwords"). Focus strictly on the specific architecture provided.
+    -   Ensure the output is strictly formatted in Markdown.
+    -   Do not include preamble or postscript. Start directly with the Executive Summary.
+
+    ### Output Format:
+    The output must strictly follow this Markdown structure:
+
+    ```markdown
+    ## Executive Summary
+    [Brief overview of the system and key security findings]
+
+    ## System Architecture Analysis
+    [Analysis of the system components and data flow]
+
+    ## STRIDE Threat Analysis
+    | Component | STRIDE Category | Threat Description | Impact | Mitigation |
+    |-----------|-----------------|--------------------|--------|------------|
+    | [Name]    | [Category]      | [Description]      | [High/Med/Low] | [Mitigation] |
+
+    ## Identified Threats
+    [Detailed discussion of critical threats]
+
+    ## Risk Mitigation Strategies
+    [Consolidated mitigation plan]
+    ```
+
+    ### Example:
+    Input:
+    <system_architecture>
+    A pacemaker that communicates with a bedside monitor via Bluetooth Low Energy (BLE). The monitor uploads data to a cloud server via Wi-Fi.
+    </system_architecture>
+
+    Output:
+    ## Executive Summary
+    The system involves a pacemaker communicating via BLE and a bedside monitor using Wi-Fi. The primary risks involve BLE interception and unauthorized access to the cloud interface.
+
+    ## System Architecture Analysis
+    The architecture consists of three main nodes: the Implantable Pulse Generator (IPG), the Bedside Monitor, and the Cloud Server. Data flows from IPG to Monitor (BLE) and Monitor to Cloud (Wi-Fi).
+
+    ## STRIDE Threat Analysis
+    | Component | STRIDE Category | Threat Description | Impact | Mitigation |
+    |-----------|-----------------|--------------------|--------|------------|
+    | BLE Link  | Spoofing        | Attacker mimics the bedside monitor to send commands to the IPG. | High | mutual authentication, encrypted pairing |
+    | Cloud API | Tampering       | Injection attacks on patient data. | High | Input validation, TLS 1.3 |
+
+    ## Identified Threats
+    1.  **BLE Spoofing:** An attacker could potentially reconfigure the IPG settings.
+    2.  **Cloud Data Exfiltration:** Unauthorized access to the cloud database could expose PHI.
+
+    ## Risk Mitigation Strategies
+    Implement mutual authentication for BLE pairing. Enforce strict TLS 1.3 for all Wi-Fi communications. Conduct regular penetration testing.
 - role: user
-  content: 'Analyze the medical device system architecture using the STRIDE methodology to identify threat vectors (spoofing,
-    tampering, etc.) and generate a threat modeling summary for the FDA premarket submission.
+  content: |
+    Analyze the medical device system architecture using the STRIDE methodology to identify threat vectors and generate a threat modeling summary for the FDA premarket submission.
 
-
-    Inputs:
-
-    - `{{system_architecture}}`
-
-
-    Output format:
-
-    Markdown Threat Modeling Summary.'
+    Input:
+    <system_architecture>
+    {{system_architecture}}
+    </system_architecture>
 testData:
-- input: 'system_architecture: Bluetooth-connected insulin pump.
-
-    '
-  expected: 'Threat Modeling Summary
-
-    '
+- input:
+    system_architecture: |
+      The 'GlucoSafe' system consists of a wearable Continuous Glucose Monitor (CGM) that transmits glucose levels every 5 minutes to a companion smartphone app via Bluetooth 5.0.
+      The smartphone app displays trends to the user and uploads data to a HIPAA-compliant cloud backend via HTTPS/TLS 1.2.
+      Users can also share data with their endocrinologist via a web portal.
+      The CGM has no physical user interface; all configuration is done via the app.
+      Firmware updates are pushed from the cloud to the app, then to the CGM.
+  expected: |
+    ## Executive Summary
+    ## System Architecture Analysis
+    ## STRIDE Threat Analysis
+    ## Identified Threats
+    ## Risk Mitigation Strategies
 evaluators:
-- name: STRIDE
+- name: Structure_Check_Executive_Summary
+  regex: '^## Executive Summary'
+- name: Structure_Check_System_Analysis
+  regex: '## System Architecture Analysis'
+- name: Structure_Check_STRIDE_Table
+  regex: '## STRIDE Threat Analysis[\s\S]*\| Component \| STRIDE Category \|'
+- name: Structure_Check_Risk_Mitigation
+  regex: '## Risk Mitigation Strategies'
+- name: Content_Check_STRIDE
   string:
     contains: STRIDE
-- name: Threat Vectors
-  string:
-    contains: Threat Vectors
-- name: Vulnerability
+- name: Content_Check_Vulnerability
   string:
     contains: Vulnerability
