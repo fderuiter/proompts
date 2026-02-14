@@ -224,7 +224,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Socratic-Coach](../prompts/communication/socratic_coach.prompt.yaml)
 - [Pixar Story Spine Outline](../prompts/communication/story_spine_outline.prompt.yaml)
 - [Storyboard-My-Idea](../prompts/communication/storyboard_my_idea.prompt.yaml)
-- [TL;DR Summarizer](../prompts/communication/tldr_summarizer.prompt.yaml)
+- [Executive Briefing Architect (TL;DR)](../prompts/communication/tldr_summarizer.prompt.yaml)
 - [Writing Clarity Mentor](../prompts/communication/writing_clarity_mentor.prompt.yaml)
 
 ## Cra

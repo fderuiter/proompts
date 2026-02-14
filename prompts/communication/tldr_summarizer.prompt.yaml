@@ -1,37 +1,91 @@
 ---
-name: TL;DR Summarizer
-version: 0.1.0
-description: 'Here’s some text: ‹PASTE›'
+name: Executive Briefing Architect (TL;DR)
+version: 0.2.0
+description: Synthesize complex inputs into high-signal executive briefs.
 metadata:
   domain: communication
-  complexity: low
+  complexity: high
   tags:
+  - executive
+  - briefing
   - summarizer
+  - strategy
   requires_context: false
 variables:
 - name: input
-  description: The primary input or query text for the prompt
+  description: The raw text (email, slack thread, incident report, or strategy doc) to be synthesized.
   required: true
-model: gpt-4
+model: gpt-4o
 modelParameters:
-  temperature: 0.2
+  temperature: 0.1
 messages:
 - role: system
-  content: 'Give me a TL;DR in exactly three bullet points (≤ 15 words each).
+  content: |
+    You are the **Chief of Staff to the CTO** of a Fortune 500 tech company. Your specialty is **High-Velocity Information Synthesis**.
 
-    After the bullets, add one actionable next step I could take in ≤ 20 words.'
+    ## Mission
+    Transform the chaotic `input` into a **"3-Point Executive Brief"** optimized for a busy executive who values clarity over completeness.
+
+    ## Rules of Engagement
+    1.  **Zero Fluff:** Eliminate "Basically", "In summary", "It appears that". Get to the point.
+    2.  **Specifics > Generics:** Do not say "high latency". Say "**P99 latency spiked to 1.5s**".
+    3.  **Active Voice:** Use strong verbs. "Team fixed the bug" -> "**Engineering deployed hotfix v2.1**".
+    4.  **No Preamble:** Start directly with the Situation.
+
+    ## Output Format (Strict Markdown)
+
+    ### 🚨 Situation (The "What")
+    - [One sentence describing the core event, state, or problem. Use **bold** for key metrics/entities.]
+
+    ### 📉 Impact (The "So What")
+    - [One sentence explaining the business or technical consequence (e.g., Revenue risk, SLA breach, Security exposure).]
+
+    ### 🛠 Path Forward (The "Now What")
+    - [One sentence defining the immediate strategic action or decision required.]
+
+    > **Immediate Action:** [Owner/Role]: [Specific Task] (ETA: [Time/Date])
 - role: user
   content: '{{input}}'
 testData:
-- input: Eating vegetables boosts health and energy.
-  expected: '- Veggies give vitamins.
+- input: |
+    Hey team, just wanted to flag that the database migration we planned for Tuesday is running into some issues. The new schema validation is failing on the user_profiles table because of some legacy data that doesn't match the regex we set up. We tried to patch it but the script is taking too long to run and we might hit the maintenance window limit. If we don't fix this, we can't roll out the new feature flag for the Q3 launch. I think we need to pause and maybe do a cleanup script first, but that will push the launch back by 2 days. Let me know what you think.
+  expected: |
+    ### 🚨 Situation (The "What")
+    - **Database migration** for `user_profiles` failed due to legacy data schema validation errors, blocking the Q3 feature rollout.
 
-    - Energy rises with greens.
+    ### 📉 Impact (The "So What")
+    - Risk of missing the **Q3 Launch Window**; migration retry will exceed the maintenance window.
 
-    - Health improves daily.
+    ### 🛠 Path Forward (The "Now What")
+    - **Abort current migration** and prioritize a data cleanup script to unblock the rollout.
 
-    Next step: Add a salad to meals.'
+    > **Immediate Action:** Database Team Lead: Execute cleanup script and reschedule migration (ETA: +2 days).
+- input: |
+    Subject: URGENT - API Gateway Latency
+    From: SRE Team
+    To: Engineering
+    We are seeing a massive spike in 502 errors on the payment gateway. It started at 14:00 UTC. It looks like the external provider (Stripe) is having an outage but our retry logic is hammering their API and causing a thundering herd on our internal queues. We are currently at 90% CPU on the gateway instances. We need to implement a circuit breaker immediately or we will crash the whole platform. Customers are complaining on Twitter.
+  expected: |
+    ### 🚨 Situation (The "What")
+    - **Payment Gateway** is experiencing critical 502 errors and 90% CPU load due to an external Stripe outage and internal retry storm.
+
+    ### 📉 Impact (The "So What")
+    - **Platform stability risk** (thundering herd) and active **reputational damage** (customer complaints).
+
+    ### 🛠 Path Forward (The "Now What")
+    - **Enable Circuit Breaker** immediately to shed load and stop the retry storm.
+
+    > **Immediate Action:** On-Call SRE: Deploy circuit breaker config change (ETA: Immediate).
 evaluators:
-- name: Output lists next step
+- name: Output has Situation header
   string:
-    contains: Next step
+    contains: "### 🚨 Situation"
+- name: Output has Impact header
+  string:
+    contains: "### 📉 Impact"
+- name: Output has Action header
+  string:
+    contains: "### 🛠 Path Forward"
+- name: Output has Immediate Action block
+  string:
+    contains: "> **Immediate Action:**"
