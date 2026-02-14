@@ -20,5 +20,5 @@
 - [Socratic-Coach](socratic_coach.prompt.yaml)
 - [Pixar Story Spine Outline](story_spine_outline.prompt.yaml)
 - [Storyboard-My-Idea](storyboard_my_idea.prompt.yaml)
-- [TL;DR Summarizer](tldr_summarizer.prompt.yaml)
+- [Executive Briefing Architect (TL;DR)](tldr_summarizer.prompt.yaml)
 - [Writing Clarity Mentor](writing_clarity_mentor.prompt.yaml)
