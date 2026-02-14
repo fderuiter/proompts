@@ -1,4 +1,4 @@
-# proompts
+# Proompts
 
 [![Deploy Jekyll site](https://github.com/fderuiter/proompts/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/deploy-pages.yml)
 [![YAML Validation](https://github.com/fderuiter/proompts/actions/workflows/yaml-validation.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/yaml-validation.yml)
@@ -6,101 +6,114 @@
 
 A curated set of prompts in YAML for AI-assisted product development, regulatory workflows, and general operations. Prompts are organized by topic: ranging from code reviews to market research. You can mix and match them in your own agentic workflows!
 
-## Docs
+## 🗺️ Directory Map
 
-- **`docs/`** – additional docs and a full [table of contents](docs/index.md)
-- **`tools/scripts/`** – [developer scripts and utilities](tools/scripts/README.md)
-- **[Usage Guide](docs/USAGE.md)** – how to use the prompts
+This repository is organized to separate content (prompts), logic (workflows), and tooling.
 
-## Setup
+```
+.
+├── docs/                # Documentation site & guides
+├── prompts/             # The Core Library (YAML source)
+│   ├── business/        # Finance, HR, Market Research
+│   ├── clinical/        # Trial Ops, Data Mgmt, Protocols
+│   ├── communication/   # Writing, Speaking, Negotiation
+│   ├── management/      # Leadership, Strategy, Project Mgmt
+│   ├── meta/            # Prompt Engineering & Agents
+│   ├── regulatory/      # Compliance, FDA/EMA Submissions
+│   ├── scientific/      # Lab, BioSafety, Statistics
+│   └── technical/       # Software Eng, DevOps, Security
+├── scripts/             # Convenience Wrappers (e.g., validate_prompts.sh)
+├── tools/               # Developer Utilities
+│   └── scripts/         # Validation, Simulation, & Maintenance Scripts
+└── workflows/           # Orchestration Logic (YAML)
+```
 
-To run validation scripts and tools locally, you need Python 3 and the required dependencies.
+## 🏗️ System Architecture
 
-1.  Create a virtual environment (optional but recommended):
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
-2.  Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-3.  Run the validation script to verify everything is set up correctly:
-    ```bash
-    ./scripts/validate_prompts.sh
-    ```
+We treat **Prompts as Code**. This repository uses a Simulation Engine to chain prompts into complex workflows.
 
-## Prompt Schema
+```mermaid
+graph TD
+    User[User Input] -->|Variables| Workflow[.workflow.yaml]
+    Workflow -->|Step 1| Prompt1[.prompt.yaml]
+    Prompt1 -->|Output| Workflow
+    Workflow -->|Step 2| Prompt2[.prompt.yaml]
+    Prompt2 -->|Output| Workflow
+    Workflow -->|Final Result| Artifact[Generated Artifact]
 
-Prompts are stored as `.prompt.yaml` or `.prompt.yml` files. Each prompt file
-contains two sections:
+    subgraph Engine [Simulation Engine]
+    Workflow
+    Prompt1
+    Prompt2
+    end
+```
 
-- **Runtime information** – ordered `messages` with `role`/`content` pairs that
-  form the actual prompt. Use `{{variable}}` placeholders for user-provided
-  values.
-- **Development information** – optional metadata that describes the prompt and
-  how to test it.
+- **Prompts**: Single-task instructions (YAML).
+- **Workflows**: Chains of prompts with state management.
+- **Engine**: `run_workflow.py` executes these locally for testing and simulation.
 
-Top-level fields available in a prompt file include:
+See [System Architecture](docs/system_architecture.md) for a deep dive.
 
-- `name` – short human-readable title
-- `description` – concise summary of what the prompt does
-- `model` – model identifier
-- `modelParameters` – optional model parameters such as `temperature`
-- `messages` – list of system and user messages
-- `testData` – example inputs with their expected outputs
-- `evaluators` – rules for verifying model responses
+## 🚀 Quick Start
 
-See `docs/template_prompt.prompt.yaml` for a filled-out example.
+### 1. Setup Environment
+To run validation scripts and tools locally, you need Python 3.
 
-## Prompt Workflows
+```bash
+# Create and activate virtual environment
+python3 -m venv venv
+source venv/bin/activate
 
-In addition to individual prompts, this repository supports **Prompt Workflows**,
-which chain multiple prompts together to perform complex, multi-step tasks.
-Workflows are defined in `.workflow.yaml` files and call prompts located in dedicated
-workflow subfolders (e.g., `prompts/clinical/protocol/protocol_workflow/`).
-included runner script.
+# Install dependencies
+pip install -r requirements.txt
+```
 
-To learn more, see the [Prompt Workflows Documentation](docs/workflows.md).
+### 2. Run a Workflow (Simulation)
+Try running the **Agentic Coding** workflow to see the engine in action.
 
-## Validation
+```bash
+python3 tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app"
+```
 
-To run all validation checks (YAML linting, schema validation, documentation index verification) locally, use the provided script:
+### 3. Search Prompts
+Find prompts related to a specific topic.
+
+```bash
+python3 tools/scripts/search_prompts.py "code review"
+```
+
+### 4. Validate Your Changes
+Run the full test suite to ensure your prompts are valid.
 
 ```bash
 python3 tools/scripts/test_all.py
 ```
 
-This script runs the following checks:
-- `cleanup_mac_files`: Removes macOS metadata files (`._*`) to ensure a clean state.
-- `check_prompts`: Verifies file naming conventions and directory structure.
-- `validate_prompt_schema`: Ensures prompts follow the required schema (e.g., `messages`, `testData`).
-- `update_docs_index`: Checks if the documentation index is up-to-date.
-- `generate_docs`: Generates category and workflow documentation pages.
-- `check_broken_links`: Scans for broken internal links in documentation.
-- `yamllint`: Lints YAML files for formatting.
+## 📝 Prompt Schema
 
-It is recommended to run this script before committing changes.
+Prompts are stored as `.prompt.yaml` files following a strict schema:
 
-## Contributing
+```yaml
+name: "Code Reviewer"
+description: "Reviews code for best practices."
+model: "gpt-4o-mini"
+messages:
+  - role: "user"
+    content: "Review this code: {{code_snippet}}"
+testData:
+  - code_snippet: "print('hello')"
+    expected: "No issues found."
+```
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed instructions on how to contribute.
+See [`docs/template_prompt.prompt.yaml`](docs/template_prompt.prompt.yaml) for a full example.
 
-1. Create prompts as `.prompt.yaml` files that follow [`docs/template_prompt.prompt.yaml`](docs/template_prompt.prompt.yaml) and place them in the appropriate folder.
-2. Review the [Best Practices Guide](docs/BEST_PRACTICES.md) for detailed guidance on creating high-quality prompts.
-3. Ensure your prompt includes:
-   - Meaningful `testData` with realistic examples (at least 1-2 test cases)
-   - `evaluators` to validate output quality
-   - Clear instructions and expected output format
-4. Before committing, run validation:
-   ```bash
-   ./scripts/validate_prompts.sh
-   ```
-5. If you create a new directory, an `overview.md` will be generated automatically by the workflow.
+## 🤝 Contributing
 
-The same validation runs in CI, but running checks locally helps catch issues early.
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for detailed instructions.
 
-## License
+**The Golden Rule:** Always run `python3 tools/scripts/test_all.py` before committing.
+
+## 📄 License
 
 This project is licensed under the [Proompts Personal Use License](LICENSE.md).
 Individuals may freely use, modify, and distribute the prompts for personal,
