@@ -14,6 +14,7 @@ has_children: false
 - [Density Refiner](../prompts/communication/density_refiner.prompt.yaml)
 - [Devil’s-Advocate Stress Test](../prompts/communication/devils_advocate_stress_test.prompt.yaml)
 - [Empathy-Map Facilitator](../prompts/communication/empathy_map_facilitator.prompt.yaml)
+- [Executive Briefing Architect (TL;DR)](../prompts/communication/tldr_summarizer.prompt.yaml)
 - [Explain-Like-I’m-5 (ELI5)](../prompts/communication/explain_like_im_5.prompt.yaml)
 - [Hero's Journey Storyboarder](../prompts/communication/heros_journey_storyboarder.prompt.yaml)
 - [Lay Language Summary Creation](../prompts/communication/lay_language_summary.prompt.yaml)
@@ -27,5 +28,4 @@ has_children: false
 - [Smart Task Prioritizer](../prompts/communication/smart_task_prioritizer.prompt.yaml)
 - [Socratic-Coach](../prompts/communication/socratic_coach.prompt.yaml)
 - [Storyboard-My-Idea](../prompts/communication/storyboard_my_idea.prompt.yaml)
-- [TL;DR Summarizer](../prompts/communication/tldr_summarizer.prompt.yaml)
 - [Writing Clarity Mentor](../prompts/communication/writing_clarity_mentor.prompt.yaml)
