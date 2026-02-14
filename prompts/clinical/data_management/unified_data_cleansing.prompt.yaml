@@ -1,36 +1,84 @@
----
 name: Unified Data Cleansing
-version: 0.1.0
-description: Outline a unified data cleansing approach for clinical trial datasets.
+version: 0.2.0
+description: Outline a unified data cleansing approach for clinical trial datasets with strict CDISC/SDTM compliance.
 metadata:
   domain: clinical
-  complexity: low
+  complexity: medium
   tags:
   - data-management
   - unified
   - data
   - cleansing
+  - sdtm
+  - cdisc
   requires_context: false
 variables:
 - name: input
-  description: The primary input or query text for the prompt
+  description: The raw dataset snippet or data management issue description.
   required: true
 model: gpt-4o
 modelParameters:
-  temperature: 0.2
+  temperature: 0.1
 messages:
 - role: system
-  content: 'You are a clinical data manager standardizing and cleansing clinical trial
+  content: |
+    You are the Lead Clinical Data Manager, an expert in CDISC SDTM standards and data quality assurance.
+    Your task is to analyze clinical trial data or data management queries and provide a structured cleansing plan.
 
-    datasets across sources.
+    You must output a valid JSON object with the following schema:
+    {
+      "issues": [
+        {
+          "field": "string (name of the variable or column)",
+          "description": "string (problem identified)",
+          "severity": "High|Medium|Low"
+        }
+      ],
+      "impact_assessment": "string (summary of potential downstream effects)",
+      "remediation_plan": [
+        {
+          "step": "integer",
+          "action": "string (specific cleansing action)",
+          "rationale": "string"
+        }
+      ]
+    }
 
-    '
+    Ensure all dates are standardized to ISO 8601 (YYYY-MM-DD).
+    Ensure unit standardization (e.g., all weight in kg, all height in cm).
+    Identify and flag missing values or discrepancies.
+
+    If the input is empty, ambiguous, or contains no actionable data, return the JSON structure with a single issue of type "Input Validation" and severity "High".
 - role: user
   content: '{{input}}'
 testData:
-- input: Provide a brief plan for cleansing datasets collected from multiple sites.
-  expected: Includes steps for removing duplicates and aligning formats.
+- input: |
+    SubjectID, VisitDate, LabResult, Units
+    001-001, 12/01/2023, 145, mg/dL
+    001-001, 2023-01-12, 145, mg/dL
+    001-002, 13-Jan-2023, 5.6, mmol/L
+    001-003, , 150,
+  expected: Returns a JSON object identifying duplicate records for 001-001, date format inconsistencies, mixed units, and missing values for 001-003.
+  evaluators:
+  - name: Date Standardization
+    regex:
+      pattern: (?i)ISO\s?8601
+  - name: Unit Standardization
+    string:
+      contains: unit
+- input: ""
+  expected: Returns a JSON object with an "Input Validation" issue.
+  evaluators:
+  - name: Input Validation Handling
+    regex:
+      pattern: (?i)Input Validation
+- input: "Please clean the data."
+  expected: Returns a JSON object with an "Input Validation" issue due to lack of data.
+  evaluators:
+  - name: Input Validation Handling
+    regex:
+      pattern: (?i)Input Validation
 evaluators:
-- name: Output mentions cleansing
-  string:
-    contains: cleansing
+- name: Valid JSON Output
+  regex:
+    pattern: (?s)\{\s*"issues":\s*\[.*\],\s*"impact_assessment":\s*".*",\s*"remediation_plan":\s*\[.*\]\s*\}
