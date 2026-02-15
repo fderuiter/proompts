@@ -22,6 +22,8 @@ pip install -r requirements.txt
     - [`check_prompts.py`](#check_promptspy)
     - [`validate_prompt_schema.py`](#validate_prompt_schemapy)
     - [`test_run_workflow.py`](#test_run_workflowpy)
+    - [`test_run_workflow_unit.py`](#test_run_workflow_unitpy)
+    - [`test_validate_prompt_schema.py`](#test_validate_prompt_schemapy)
     - [`test_generate_workflow_diagrams.py`](#test_generate_workflow_diagramspy)
     - [`test_generate_overviews.py`](#test_generate_overviewspy)
     - [`test_fix_markdown_issues.py`](#test_fix_markdown_issuespy)
@@ -36,6 +38,9 @@ pip install -r requirements.txt
     - [`generate_search_index.py`](#generate_search_indexpy)
     - [`fix_markdown_issues.py`](#fix_markdown_issuespy)
   - [Prompt Maintenance](#prompt-maintenance)
+    - [`enrich_prompts.py`](#enrich_promptspy)
+    - [`migrate_prompts.py`](#migrate_promptspy)
+    - [`generate_regulatory_prompts.py`](#generate_regulatory_promptspy)
     - [`search_prompts.py`](#search_promptspy)
     - [`update_last_modified.py`](#update_last_modifiedpy)
     - [`standardize_c_prompts.py`](#standardize_c_promptspy)
@@ -92,6 +97,26 @@ A functional test for the `run_workflow.py` script. It creates a temporary envir
 
 ```bash
 python3 tools/scripts/test_run_workflow.py
+```
+
+### `test_run_workflow_unit.py`
+
+Unit tests for `run_workflow.py`, specifically testing the Jinja2 template resolution and variable substitution logic.
+
+**Usage:**
+
+```bash
+python3 tools/scripts/test_run_workflow_unit.py
+```
+
+### `test_validate_prompt_schema.py`
+
+Unit tests for `validate_prompt_schema.py`. Verifies that the Pydantic schema correctly accepts valid prompts and rejects invalid ones (e.g., missing fields, incorrect types).
+
+**Usage:**
+
+```bash
+python3 tools/scripts/test_validate_prompt_schema.py
 ```
 
 ### `test_generate_overviews.py`
@@ -218,6 +243,47 @@ python3 tools/scripts/fix_markdown_issues.py
 ```
 
 ## Prompt Maintenance
+
+### `enrich_prompts.py`
+
+Automatically adds meaningful variable descriptions and metadata to prompt YAML files. It infers descriptions from context, inline comments, or variable names, and adds metadata like domain, complexity, and tags.
+
+**Usage:**
+
+```bash
+# Enrich all prompts
+python3 tools/scripts/enrich_prompts.py
+
+# Enrich a specific file
+python3 tools/scripts/enrich_prompts.py --file prompts/my_prompt.prompt.yaml
+
+# Dry run (see changes without applying)
+python3 tools/scripts/enrich_prompts.py --dry-run
+```
+
+### `migrate_prompts.py`
+
+Migrates existing prompt YAML files to the new schema by ensuring they have `version` and `variables` fields. Populates `variables` with "TODO" descriptions if missing.
+
+**Usage:**
+
+```bash
+# Migrate all prompts
+python3 tools/scripts/migrate_prompts.py
+
+# Dry run
+python3 tools/scripts/migrate_prompts.py --dry-run
+```
+
+### `generate_regulatory_prompts.py`
+
+Generates a suite of regulatory prompts based on a predefined list of tasks (e.g., 510(k) preparation, audit checklists). Useful for bootstrapping the regulatory domain.
+
+**Usage:**
+
+```bash
+python3 tools/scripts/generate_regulatory_prompts.py
+```
 
 ### `search_prompts.py`
 
