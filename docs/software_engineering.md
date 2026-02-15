@@ -20,7 +20,7 @@ has_children: false
 - [GitHub Custom Agent Creator](../prompts/technical/software_engineering/tasks/create_github_agent.prompt.yaml)
 - [Product Brief Template](../prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/01_product_brief.prompt.yaml)
 - [Project Brief for Epic](../prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/02_project_brief_epic.prompt.yaml)
-- [Project Init & Skeleton (OpenAI Codex)](../prompts/technical/software_engineering/tasks/project_init.prompt.yaml)
+- [Project Init & Skeleton (Construct Architect)](../prompts/technical/software_engineering/tasks/project_init.prompt.yaml)
 - [Project Memory Notes](../prompts/technical/software_engineering/lifecycle/project_memory.prompt.yaml)
 - [Project Review Checklist](../prompts/technical/software_engineering/lifecycle/project_review.prompt.yaml)
 - [Refactoring Architect](../prompts/technical/software_engineering/tasks/refactoring_suggestions.prompt.yaml)
