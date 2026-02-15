@@ -589,7 +589,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Codebase Testing Plan](../prompts/technical/software_engineering/tasks/codebase_testing_plan.prompt.yaml)
 - [GitHub Custom Agent Creator](../prompts/technical/software_engineering/tasks/create_github_agent.prompt.yaml)
 - [DevEx Documentation Architect](../prompts/technical/software_engineering/tasks/docs_and_onboarding.prompt.yaml)
-- [Project Init & Skeleton (OpenAI Codex)](../prompts/technical/software_engineering/tasks/project_init.prompt.yaml)
+- [Project Init & Skeleton (Construct Architect)](../prompts/technical/software_engineering/tasks/project_init.prompt.yaml)
 - [Retrieval-Augmented Answer Composer](../prompts/technical/software_engineering/tasks/rag_composer.prompt.yaml)
 - [Refactoring Architect](../prompts/technical/software_engineering/tasks/refactoring_suggestions.prompt.yaml)
 - [Security Vulnerability Hunt](../prompts/technical/software_engineering/tasks/security_vulnerability.prompt.yaml)
