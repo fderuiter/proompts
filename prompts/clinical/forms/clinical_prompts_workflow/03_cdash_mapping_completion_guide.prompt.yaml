@@ -28,14 +28,11 @@ messages:
 - role: user
   content: '{{input}}'
 testData:
-- input: 'HEIGHT
-
-    '
-  expected: 'Variable | Domain | Instruction | Terminology/Units | Edit-Check
-
+- input: |
+    HEIGHT
+  expected: |
+    Variable | Domain | Instruction | Terminology/Units | Edit-Check
     HEIGHT | DM.HEIGHT | Record height in cm | cm | 30-250
-
-    '
 evaluators:
 - name: Output should start with CSV header
   string:

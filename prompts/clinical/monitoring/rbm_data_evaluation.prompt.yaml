@@ -30,33 +30,23 @@ messages:
     missing entries, outliers, or unexpected lack of variability indicative of data manipulation. Adhere to ICH GCP E6(R2)
     Addendum.
 - role: user
-  content: 'Perform a remote evaluation of the accumulating trial data to identify missing entries, outliers, or unexpected
-    lack of variability indicative of data manipulation.
-
+  content: |-
+    Perform a remote evaluation of the accumulating trial data to identify missing entries, outliers, or unexpected lack of variability indicative of data manipulation.
 
     Inputs:
-
     - Accumulating clinical data (snippet/stats): `{{clinical_data}}`
-
     - Monitoring Plan template: `{{monitoring_plan}}`
-
     - Study Risk Assessment: `{{risk_assessment}}`
 
-
     Output format:
-
-    Markdown RBM Evaluation Report (Finding | Risk Level | Action).'
+    Markdown RBM Evaluation Report (Finding | Risk Level | Action).
 testData:
-- input: 'clinical_data: "Site 001: 100% perfect data entry."
-
+- input: |
+    clinical_data: "Site 001: 100% perfect data entry."
     monitoring_plan: "Check for lack of variability."
-
     risk_assessment: "High risk of fraud."
-
-    '
-  expected: '| Finding | Risk Level | Action |
-
-    '
+  expected: |
+    | Finding | Risk Level | Action |
 evaluators:
 - name: Evaluation Table
   string:

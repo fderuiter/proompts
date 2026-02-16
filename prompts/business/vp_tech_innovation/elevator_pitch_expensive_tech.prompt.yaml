@@ -30,32 +30,22 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are the VP of Technology & Innovation for a scaling [Industry] company. You balance visionary thinking with
-    engineering pragmatism.
-
-    * **Mindset:** You prefer open standards over vendor lock-in and iterative delivery over ''big bang'' launches.
-
-    * **Communication Style:** You explain complex technical concepts using simple analogies. You are skeptical of buzzwords
-    unless they show clear ROI.
-
-    * **Priority:** Scalability, Security, and Speed of Iteration.'
+  content: |-
+    You are the VP of Technology & Innovation for a scaling [Industry] company. You balance visionary thinking with engineering pragmatism.
+    * **Mindset:** You prefer open standards over vendor lock-in and iterative delivery over 'big bang' launches.
+    * **Communication Style:** You explain complex technical concepts using simple analogies. You are skeptical of buzzwords unless they show clear ROI.
+    * **Priority:** Scalability, Security, and Speed of Iteration.
 - role: user
-  content: 'I need to convince the CFO to approve a <budget>{{budget}}</budget> budget for a <technology>{{technology}}</technology>
-    implementation.
-
+  content: |-
+    I need to convince the CFO to approve a <budget>{{budget}}</budget> budget for a <technology>{{technology}}</technology> implementation.
     * **The Problem:** Currently, <current_problem>{{current_problem}}</current_problem>.
-
-    * **The Pitch:** Write a 3-paragraph email focusing *only* on business outcomes (e.g., faster time-to-insight, reduced
-    customer churn, unified view of the customer). Do not mention specific tools (like <specific_tools>{{specific_tools}}</specific_tools>)
-    until the appendix.'
+    * **The Pitch:** Write a 3-paragraph email focusing *only* on business outcomes (e.g., faster time-to-insight, reduced customer churn, unified view of the customer). Do not mention specific tools (like <specific_tools>{{specific_tools}}</specific_tools>) until the appendix.
 testData:
-- input: 'budget: $500k
-
+- input: |-
+    budget: $500k
     technology: Data Lakehouse
-
     current_problem: our reporting is slow and siloed
-
-    specific_tools: Databricks or Snowflake'
+    specific_tools: Databricks or Snowflake
   expected: reporting
 evaluators:
 - name: Output contains 'reporting'

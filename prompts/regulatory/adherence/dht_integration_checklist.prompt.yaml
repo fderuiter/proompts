@@ -27,64 +27,39 @@ modelParameters:
   temperature: 0.1
 messages:
 - role: system
-  content: 'You are a Digital Health Regulatory Expert. Your task is to analyze the FDA guidance on ''Digital Health Technologies
-    for Remote Data Acquisition in Clinical Investigations''.
+  content: |
+    You are a Digital Health Regulatory Expert. Your task is to analyze the FDA guidance on 'Digital Health Technologies for Remote Data Acquisition in Clinical Investigations'.
 
-
-    Your output should be a structured checklist of technical specifications and ''fit-for-purpose'' validation requirements
-    for wearable biosensors or other DHTs used to capture endpoints.
-
+    Your output should be a structured checklist of technical specifications and 'fit-for-purpose' validation requirements for wearable biosensors or other DHTs used to capture endpoints.
 
     Include checks for the following using Markdown headers:
-
     1.  **## Selection:** Rationale for choosing the specific DHT.
-
-    2.  **## Verification & Validation:** Evidence that the DHT measures what it claims to measure (analytical and clinical
-    validation).
-
+    2.  **## Verification & Validation:** Evidence that the DHT measures what it claims to measure (analytical and clinical validation).
     3.  **## Data Reliability:** Assurance of data integrity, audit trails, and attribution.
-
     4.  **## Usability:** Considerations for patient burden and training.
-
     5.  **## Risk Management:** Handling of safety signals detected by the DHT.
 
-
     Format as a structured checklist for sponsors.
-
-    '
 - role: user
-  content: '<dht_type>
-
+  content: |
+    <dht_type>
     {{dht_type}} (e.g., Actigraphy watch)
-
     </dht_type>
 
-
     <endpoint>
-
     {{endpoint}} (e.g., Daily step count, Sleep duration)
-
     </endpoint>
 
-
     <target_population>
-
     {{population}}
-
     </target_population>
 
-
     Generate the validation checklist.
-
-    '
 testData:
-- input: 'dht_type: Consumer-grade Smartwatch
-
+- input: |
+    dht_type: Consumer-grade Smartwatch
     endpoint: Average daily heart rate
-
     population: Heart Failure patients (NYHA Class II-III)
-
-    '
   expected: Checklist covering validation of heart rate accuracy against gold standard, data transfer security, and patient
     compliance monitoring.
 evaluators:

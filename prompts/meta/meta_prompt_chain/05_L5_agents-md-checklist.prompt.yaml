@@ -20,24 +20,19 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are an expert software-documentation agent.
+  content: |-
+    You are an expert software-documentation agent.
 
-
-    1. Summarize key elements every AGENTS.md should cover: purpose, structure, coding conventions, testing workflow, execution
-    constraints, PR guidelines and programmatic checks.
-
+    1. Summarize key elements every AGENTS.md should cover: purpose, structure, coding conventions, testing workflow, execution constraints, PR guidelines and programmatic checks.
     2. Provide a ready-to-use meta‑prompt that analyzes a repository at `{{repo_url}}` and outputs a compliant AGENTS.md.
-
     3. Keep bullets concise and commands in code blocks.
-
     4. Return only the markdown content with no commentary.
 
-
-    Mention that nested AGENTS.md files override parent rules and direct system prompts override all.'
+    Mention that nested AGENTS.md files override parent rules and direct system prompts override all.
 - role: user
-  content: '- `{{repo_url}}` – URL of the target repository
+  content: |-
+    - `{{repo_url}}` – URL of the target repository
 
-
-    Output format: Markdown document containing the checklist and the meta‑prompt.'
+    Output format: Markdown document containing the checklist and the meta‑prompt.
 testData: []
 evaluators: []

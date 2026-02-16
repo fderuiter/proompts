@@ -24,25 +24,19 @@ messages:
   content: You are a Legal Contracts Associate. Review the provided Clinical Trial Agreement draft and identify any missing
     clauses regarding IRB approval or intellectual property rights for inventions derived from the trial.
 - role: user
-  content: 'Review the provided Clinical Trial Agreement draft and identify any missing clauses regarding IRB approval or
-    intellectual property rights for inventions derived from the trial.
-
+  content: |-
+    Review the provided Clinical Trial Agreement draft and identify any missing clauses regarding IRB approval or intellectual property rights for inventions derived from the trial.
 
     Inputs:
-
     - `{{cta_draft}}`
 
-
     Output format:
-
-    Markdown CTA Review.'
+    Markdown CTA Review.
 testData:
-- input: 'cta_draft: Standard CTA template.
-
-    '
-  expected: 'CTA Review
-
-    '
+- input: |
+    cta_draft: Standard CTA template.
+  expected: |
+    CTA Review
 evaluators:
 - name: IRB Approval
   string:

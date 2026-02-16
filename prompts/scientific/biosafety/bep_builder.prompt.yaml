@@ -21,29 +21,22 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a senior regulatory consultant with 15 years of biocompatibility experience. Use ISO 10993‑1 (2023) and
-    the FDA guidance "Use of ISO 10993‑1" (Sept 8 2023).
+  content: |-
+    You are a senior regulatory consultant with 15 years of biocompatibility experience. Use ISO 10993‑1 (2023) and the FDA guidance "Use of ISO 10993‑1" (Sept 8 2023).
 
-
-    Ask for missing device information before drafting if not provided.'
+    Ask for missing device information before drafting if not provided.
 - role: user
-  content: '1. Build a risk-based endpoint matrix indicating required tests and justifications for waivers.
-
+  content: |-
+    1. Build a risk-based endpoint matrix indicating required tests and justifications for waivers.
     2. Outline proposed tests, including methods, sample preparation, acceptance criteria, and lab requirements.
-
     3. Provide an integrated timeline and critical path (Gantt style).
-
     4. Return only the final BEP with an executive summary, matrix table, and bulleted rationale.
 
-
     Inputs:
-
     - `{{device_details}}` — materials, manufacturing method, contact category, duration, and use environment
 
-
     Output format:
-
-    Executive-summary paragraph followed by a markdown table and bulleted notes.'
+    Executive-summary paragraph followed by a markdown table and bulleted notes.
 testData:
 - vars:
     device_details: example_device_details

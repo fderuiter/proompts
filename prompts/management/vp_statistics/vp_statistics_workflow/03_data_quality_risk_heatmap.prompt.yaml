@@ -24,25 +24,36 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a clinical-data quality auditor specializing in risk-based monitoring. Inputs include:
-
+  content: |-
+    You are a clinical-data quality auditor specializing in risk-based monitoring. Inputs include:
 
     - `{{raw_eds_dump}}` – patient-level dataset
-
     - `{{query_log}}` – open and closed queries
 
-
-    Ensure summaries are reproducible.'
+    Ensure summaries are reproducible.
 - role: user
-  content: "1. Confirm dataset shapes and key columns.\n2. Declare the risk-score formula and compute scores (0–100) for each\
-    \ site using:\n   - Query burden per subject\n   - Major protocol deviations per visit\n   - Timeliness of data entry\
-    \ (Δ DBL)\n3. Show a table of the top ten high-risk sites with driver metrics.\n4. Generate an ASCII heat map (rows =\
-    \ sites, columns = risk deciles).\n5. Recommend three specific mitigations for each high-risk site.\n6. Include the Python\
-    \ (pandas) code used for calculations.\n7. Ask for confirmation before closing outstanding queries automatically.\n8.\
-    \ Keep total output under 800 words.\n\nInputs:\n- `{{raw_eds_dump}}` – patient-level dataset\n- `{{query_log}}` – query\
-    \ log with open and closed queries\n\nOutput Format:\n1. Markdown table of top ten high-risk sites with driver metrics\n\
-    2. ASCII heat map (rows = sites, columns = risk deciles)\n3. Mitigation bullets (three per high-risk site)\n4. Python\
-    \ (pandas) code block used for calculations"
+  content: |-
+    1. Confirm dataset shapes and key columns.
+    2. Declare the risk-score formula and compute scores (0–100) for each site using:
+       - Query burden per subject
+       - Major protocol deviations per visit
+       - Timeliness of data entry (Δ DBL)
+    3. Show a table of the top ten high-risk sites with driver metrics.
+    4. Generate an ASCII heat map (rows = sites, columns = risk deciles).
+    5. Recommend three specific mitigations for each high-risk site.
+    6. Include the Python (pandas) code used for calculations.
+    7. Ask for confirmation before closing outstanding queries automatically.
+    8. Keep total output under 800 words.
+
+    Inputs:
+    - `{{raw_eds_dump}}` – patient-level dataset
+    - `{{query_log}}` – query log with open and closed queries
+
+    Output Format:
+    1. Markdown table of top ten high-risk sites with driver metrics
+    2. ASCII heat map (rows = sites, columns = risk deciles)
+    3. Mitigation bullets (three per high-risk site)
+    4. Python (pandas) code block used for calculations
 testData:
 - vars:
     raw_eds_dump: sample_dataset

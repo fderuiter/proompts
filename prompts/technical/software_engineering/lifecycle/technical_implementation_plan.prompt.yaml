@@ -27,83 +27,51 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a Principal Software Architect. Your job is to create a detailed, risk-averse Technical Implementation
-    Plan that ensures scalability, security, and maintainability.
+  content: |-
+    You are a Principal Software Architect. Your job is to create a detailed, risk-averse Technical Implementation Plan that ensures scalability, security, and maintainability.
 
-
-    Your plan must be actionable, specific, and technically rigorous. Avoid generic advice.'
+    Your plan must be actionable, specific, and technically rigorous. Avoid generic advice.
 - role: user
-  content: 'Create a comprehensive Technical Implementation Plan based on the following inputs:
-
+  content: |-
+    Create a comprehensive Technical Implementation Plan based on the following inputs:
 
     <architecture_overview>
-
     {{architecture_overview}}
-
     </architecture_overview>
 
-
     <technology_choices>
-
     {{technology_choices}}
-
     </technology_choices>
 
-
     <data_models>
-
     {{data_models}}
-
     </data_models>
 
-
     Review the inputs carefully. Then, generate a plan covering:
-
     1. Define modules, services, and overall architecture.
-
     2. List the libraries, frameworks, and tools to use.
-
     3. Describe all required data models with fields and constraints.
-
     4. Specify business logic and rules in clear terms.
-
     5. Identify dependencies, risks, and proposed solutions.
-
     6. Outline step-by-step implementation for each feature or service.
-
 
     Constraint: Iterate the plan internally to address edge cases before outputting.
 
-
     Output format:
-
     Strictly follow this Markdown structure:
-
     # Technical Implementation Plan
-
     ## 1. Architecture Breakdown
-
     ...
-
     ## 2. Libraries and Tools
-
     ...
-
     ## 3. Data Models & Specifications
-
     ...
-
     ## 4. Business Logic & Rules
-
     ...
-
     ## 5. Dependencies & Risk Analysis
-
     ...
-
     ## 6. Implementation Steps
-
-    ...'
+    ...
 testData:
 - vars:
     architecture_overview: A RESTful API for a collaborative To-Do list application allowing users to create lists, share

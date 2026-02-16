@@ -39,8 +39,8 @@ messages:
     Markdown Narrative Statement and Reporting Recommendation.
 testData:
 - input:
-    sae_report: "Patient hospitalized for severe allergic reaction."
-  expected: "Narrative Statement"
+    sae_report: Patient hospitalized for severe allergic reaction.
+  expected: Narrative Statement
 evaluators:
 - name: Expedited Reporting
   string:

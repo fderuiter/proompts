@@ -24,25 +24,19 @@ messages:
   content: You are a Grant Administrator. Generate a Single IRB (sIRB) Plan for this multi-site NIH grant application, including
     a list of participating sites and a communication plan for protocol-specific information. Adhere to NIH Single IRB Policy.
 - role: user
-  content: 'Generate a Single IRB (sIRB) Plan for this multi-site NIH grant application, including a list of participating
-    sites and a communication plan for protocol-specific information.
-
+  content: |-
+    Generate a Single IRB (sIRB) Plan for this multi-site NIH grant application, including a list of participating sites and a communication plan for protocol-specific information.
 
     Inputs:
-
     - `{{grant_details}}`
 
-
     Output format:
-
-    Markdown sIRB Plan.'
+    Markdown sIRB Plan.
 testData:
-- input: 'grant_details: Multi-site study with 5 centers.
-
-    '
-  expected: 'sIRB Plan
-
-    '
+- input: |
+    grant_details: Multi-site study with 5 centers.
+  expected: |
+    sIRB Plan
 evaluators:
 - name: Participating Sites
   string:

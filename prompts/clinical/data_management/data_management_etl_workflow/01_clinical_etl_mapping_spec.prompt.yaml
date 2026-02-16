@@ -21,18 +21,15 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are an ETL specialist defining mapping specifications for clinical trial
-
+  content: |
+    You are an ETL specialist defining mapping specifications for clinical trial
     data pipelines.
-
-    '
 - role: user
-  content: 'Here are the requirements for the ETL process:
-
+  content: |-
+    Here are the requirements for the ETL process:
     {{etl_requirements}}
 
-
-    Based on these requirements, create a detailed ETL mapping specification.'
+    Based on these requirements, create a detailed ETL mapping specification.
 testData:
 - input: Map source patient records to target schema fields.
   expected: Includes field-to-field mappings.

@@ -20,11 +20,9 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a compliance analyst evaluating clinical data management processes
-
+  content: |
+    You are a compliance analyst evaluating clinical data management processes
     for regulatory gaps.
-
-    '
 - role: user
   content: '{{input}}'
 testData:

@@ -22,18 +22,21 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: "1. Use this checklist: protocol adherence, IP accountability, source-CRF reconciliation, AE/SAE reporting, action-items\
-    \ follow-up, signature status, and overall tone.\n2. Flag any omissions or vague language; quote the section header and\
-    \ suggest precise revisions.\n3. Highlight any findings that require escalation to a CAPA.\n4. Return feedback in **two\
-    \ blocks**:\n   • “Summary of Critical Gaps” – bullet list (≤ 200 words)\n   • “Line-by-Line Redlines” – markdown table\
-    \ (`Section | Current Text | Recommended Edit`).\n   **Format**: Summary block + markdown table.\n   **Reasoning**: Think\
-    \ step-by-step, but hide your chain-of-thought."
+  content: |-
+    1. Use this checklist: protocol adherence, IP accountability, source-CRF reconciliation, AE/SAE reporting, action-items follow-up, signature status, and overall tone.
+    2. Flag any omissions or vague language; quote the section header and suggest precise revisions.
+    3. Highlight any findings that require escalation to a CAPA.
+    4. Return feedback in **two blocks**:
+       • “Summary of Critical Gaps” – bullet list (≤ 200 words)
+       • “Line-by-Line Redlines” – markdown table (`Section | Current Text | Recommended Edit`).
+       **Format**: Summary block + markdown table.
+       **Reasoning**: Think step-by-step, but hide your chain-of-thought.
 - role: user
   content: '{{input}}'
 testData:
-- input: 'section: AE/SAE reporting
-
-    text: Adverse events were summarized but severity grading was omitted.'
+- input: |-
+    section: AE/SAE reporting
+    text: Adverse events were summarized but severity grading was omitted.
   expected: Summary of Critical Gaps
 evaluators:
 - name: Contains summary block

@@ -25,25 +25,19 @@ messages:
     all basic elements required by 21 CFR 50.25. Rewrite the technical sections into plain language suitable for an 8th-grade
     reading level.
 - role: user
-  content: 'Review the clinical trial informed consent form to ensure it includes all basic elements required by 21 CFR 50.25.
-    Rewrite the technical sections into plain language suitable for an 8th-grade reading level.
-
+  content: |-
+    Review the clinical trial informed consent form to ensure it includes all basic elements required by 21 CFR 50.25. Rewrite the technical sections into plain language suitable for an 8th-grade reading level.
 
     Inputs:
-
     - `{{icf_text}}`
 
-
     Output format:
-
-    Markdown Revised ICF Text.'
+    Markdown Revised ICF Text.
 testData:
-- input: 'icf_text: The investigational product is a monoclonal antibody...
-
-    '
-  expected: 'Revised ICF
-
-    '
+- input: |
+    icf_text: The investigational product is a monoclonal antibody...
+  expected: |
+    Revised ICF
 evaluators:
 - name: 8th-grade reading level
   string:

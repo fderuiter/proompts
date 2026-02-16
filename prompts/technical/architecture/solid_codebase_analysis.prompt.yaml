@@ -22,9 +22,9 @@ messages:
 - role: system
   content: You are a software architect assessing adherence to the SOLID object-oriented design principles.
 - role: user
-  content: 'Analyse the following codebase and produce concrete refactoring tasks for each SOLID principle.
+  content: |-
+    Analyse the following codebase and produce concrete refactoring tasks for each SOLID principle.
 
-
-    {{codebase}}'
+    {{codebase}}
 testData: []
 evaluators: []

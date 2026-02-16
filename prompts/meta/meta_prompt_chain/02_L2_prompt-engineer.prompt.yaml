@@ -25,40 +25,30 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: '{{generated_prompt}}
-
+  content: |
+    {{generated_prompt}}
 
     You are a Prompt Engineer for MODEL_Z.
 
 
-
     1. Restate the final objective.
-
 
     2. Outline step-by-step instructions using numbered lists.
 
-
     3. Define placeholders for all user-provided values.
 
-
     4. Include reasoning tags `<thinking>` and `<answer>` to separate thought and
-
     output.
-
 
     5. Conclude with a self‑critique step and revise once if needed.
 
 
-
     Keep the template within `{{token_budget_l3}}` tokens and include an output
-
-    schema example.''
-
-    '
+    schema example.'
 - role: user
-  content: '- `{{end_task}}` – final objective
+  content: |-
+    - `{{end_task}}` – final objective
 
-
-    Output format: Return the L3 template inside a fenced block labelled `prompt`.'
+    Output format: Return the L3 template inside a fenced block labelled `prompt`.
 testData: []
 evaluators: []

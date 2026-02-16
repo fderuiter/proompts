@@ -23,23 +23,16 @@ messages:
 - role: system
   content: The user provides code snippet `{{code}}`. Follow Reflexion Agent v1.3 practices.
 - role: user
-  content: '1. Hypothesize the root cause in 50 words or fewer.
-
+  content: |-
+    1. Hypothesize the root cause in 50 words or fewer.
     1. Self-evaluate confidence and list any knowledge gaps in ≤ 30 words.
-
     1. Reflect and revise the hypothesis once.
-
     1. If confidence is ≥ 70%, output the corrected code block plus a 20-word rationale.
-
     1. If confidence is below 70%, ask one clarifying question instead.
-
     Inputs:
-
     - `{{code}}`: code containing the bug.
-
     Output format:
-
-    Markdown with code fences for the patch and a short rationale. Entire reply ≤ 120 words.'
+    Markdown with code fences for the patch and a short rationale. Entire reply ≤ 120 words.
 testData:
 - vars:
     code: example_code

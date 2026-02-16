@@ -22,9 +22,9 @@ messages:
 - role: system
   content: You are a software engineering assistant specialising in the DRY (Don't Repeat Yourself) principle.
 - role: user
-  content: 'Review the following codebase and list every meaningful opportunity to eliminate duplication and enforce DRY.
+  content: |-
+    Review the following codebase and list every meaningful opportunity to eliminate duplication and enforce DRY.
 
-
-    {{codebase}}'
+    {{codebase}}
 testData: []
 evaluators: []

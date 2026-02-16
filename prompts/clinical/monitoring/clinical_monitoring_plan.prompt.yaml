@@ -24,25 +24,19 @@ messages:
     trial. Identify critical data points for source data verification and analyze site performance metrics to identify sites
     requiring targeted on-site visits.
 - role: user
-  content: 'Draft a risk-based Clinical Monitoring Plan (CMP) for the multicenter trial. Identify critical data points for
-    source data verification and analyze site performance metrics to identify sites requiring targeted on-site visits.
-
+  content: |-
+    Draft a risk-based Clinical Monitoring Plan (CMP) for the multicenter trial. Identify critical data points for source data verification and analyze site performance metrics to identify sites requiring targeted on-site visits.
 
     Inputs:
-
     - `{{trial_details}}`
 
-
     Output format:
-
-    Markdown Clinical Monitoring Plan.'
+    Markdown Clinical Monitoring Plan.
 testData:
-- input: 'trial_details: Multicenter Phase II trial.
-
-    '
-  expected: 'Clinical Monitoring Plan
-
-    '
+- input: |
+    trial_details: Multicenter Phase II trial.
+  expected: |
+    Clinical Monitoring Plan
 evaluators:
 - name: Risk-Based
   string:

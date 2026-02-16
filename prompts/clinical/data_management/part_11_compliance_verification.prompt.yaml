@@ -24,25 +24,19 @@ messages:
   content: You are a Quality Systems Auditor. Review the clinical data management system's audit trail and electronic signature
     features to confirm compliance with 21 CFR Part 11 requirements and flag any missing validation documentation.
 - role: user
-  content: 'Review the clinical data management system''s audit trail and electronic signature features to confirm compliance
-    with 21 CFR Part 11 requirements and flag any missing validation documentation.
-
+  content: |-
+    Review the clinical data management system's audit trail and electronic signature features to confirm compliance with 21 CFR Part 11 requirements and flag any missing validation documentation.
 
     Inputs:
-
     - `{{system_features}}`
 
-
     Output format:
-
-    Markdown Compliance Review Report.'
+    Markdown Compliance Review Report.
 testData:
-- input: 'system_features: Audit trail records all changes.
-
-    '
-  expected: 'Compliance Review
-
-    '
+- input: |
+    system_features: Audit trail records all changes.
+  expected: |
+    Compliance Review
 evaluators:
 - name: Audit Trail
   string:

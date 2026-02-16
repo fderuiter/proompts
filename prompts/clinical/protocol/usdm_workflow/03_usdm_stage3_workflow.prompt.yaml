@@ -61,7 +61,8 @@ testData:
 evaluators:
 - name: Valid JSON
   regex:
-    pattern: '(?s)^[\s\S]*\{[\s\S]*\}[\s\S]*$'
+    pattern: (?s)^[\s\S]*\{[\s\S]*\}[\s\S]*$
 - name: Contains workflow_matrix
   regex:
     pattern: '(?s)"workflow_matrix"\s*:'
+version: 0.1.0

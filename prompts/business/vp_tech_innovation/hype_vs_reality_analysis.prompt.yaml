@@ -70,20 +70,20 @@ testData:
 - input:
     technology: Generative AI for Code
     industry: Enterprise SaaS
-  expected: "## The Reality"
+  expected: '## The Reality'
 evaluators:
 - name: Has Title
   regex:
-    pattern: "^# Hype vs. Reality:"
+    pattern: '^# Hype vs. Reality:'
 - name: Has Promise Section
   regex:
-    pattern: "## The Promise"
+    pattern: '## The Promise'
 - name: Has Reality Section
   regex:
-    pattern: "## The Reality"
+    pattern: '## The Reality'
 - name: Has Use Cases Section
   regex:
-    pattern: "## Use Cases"
+    pattern: '## Use Cases'
 - name: Has Verdict Section
   regex:
-    pattern: "## Verdict"
+    pattern: '## Verdict'

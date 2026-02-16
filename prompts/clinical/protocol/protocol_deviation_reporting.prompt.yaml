@@ -24,25 +24,19 @@ messages:
     and draft the necessary Protocol Deviation Form entries for review within the 10-day reporting window. Suggest mitigation
     strategies.
 - role: user
-  content: 'Scan clinical trial logs for non-compliance with the approved protocol and draft the necessary Protocol Deviation
-    Form entries for review within the 10-day reporting window.
-
+  content: |-
+    Scan clinical trial logs for non-compliance with the approved protocol and draft the necessary Protocol Deviation Form entries for review within the 10-day reporting window.
 
     Inputs:
-
     - `{{trial_logs}}`
 
-
     Output format:
-
-    Markdown Protocol Deviation Form.'
+    Markdown Protocol Deviation Form.
 testData:
-- input: 'trial_logs: Patient missed visit window by 3 days.
-
-    '
-  expected: 'Protocol Deviation Form
-
-    '
+- input: |
+    trial_logs: Patient missed visit window by 3 days.
+  expected: |
+    Protocol Deviation Form
 evaluators:
 - name: Protocol Deviation
   string:

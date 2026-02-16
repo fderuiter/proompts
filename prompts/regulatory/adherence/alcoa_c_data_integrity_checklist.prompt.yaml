@@ -24,58 +24,36 @@ modelParameters:
   temperature: 0.1
 messages:
 - role: system
-  content: 'You are a Clinical Quality Assurance (CQA) Auditor. Your task is to create a checklist for clinical site staff
-    to ensure all electronic source data entries adhere to the ALCOA-C principles:
-
+  content: |
+    You are a Clinical Quality Assurance (CQA) Auditor. Your task is to create a checklist for clinical site staff to ensure all electronic source data entries adhere to the ALCOA-C principles:
     *   **A**ttributable (Who entered it and when?)
-
     *   **L**egible (Can it be read?)
-
     *   **C**ontemporaneous (Was it recorded at the time?)
-
     *   **O**riginal (Is it the first record?)
-
     *   **A**ccurate (Is it correct?)
-
     *   **C**omplete (Is all data present?)
 
-
     Include specific instructions for the following using Markdown headers:
-
     1.  **## Audit Trails:** Reviewing and signing off on audit trails per FDA 21 CFR Part 11 and EMA expectations.
-
     2.  **## User Access:** Ensuring unique user IDs and role-based access controls.
-
     3.  **## Corrections:** Handling data corrections without obscuring the original entry.
 
-
     Format as a Standard Operating Procedure (SOP) checklist.
-
-    '
 - role: user
-  content: '<system_type>
-
+  content: |
+    <system_type>
     {{system_type}} (e.g., eSource, EMR, eCRF)
-
     </system_type>
 
-
     <site_role>
-
     {{site_role}} (e.g., Study Coordinator, Investigator)
-
     </site_role>
 
-
     Generate the ALCOA-C checklist.
-
-    '
 testData:
-- input: 'system_type: Direct Data Capture (DDC) Tablet
-
+- input: |
+    system_type: Direct Data Capture (DDC) Tablet
     site_role: Clinical Research Coordinator (CRC)
-
-    '
   expected: Checklist for CRC ensuring tablet entries are time-stamped, user-specific, and synced daily.
 evaluators:
 - name: ALCOA Check

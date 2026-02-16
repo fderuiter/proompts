@@ -7,11 +7,11 @@ import re
 from pathlib import Path
 
 try:
-    from utils import ROOT, iter_prompt_files, load_yaml
+    from utils import ROOT, iter_prompt_files, load_yaml, dump_yaml_str
 except ImportError:
     import sys
     sys.path.append(str(Path(__file__).parent))
-    from utils import ROOT, iter_prompt_files, load_yaml
+    from utils import ROOT, iter_prompt_files, load_yaml, dump_yaml_str
 
 import yaml
 
@@ -25,7 +25,7 @@ def extract_template_vars(content: dict) -> list[str]:
     return sorted(found)
 
 
-def migrate_file(file_path: Path, dry_run: bool = False) -> bool:
+def migrate_file(file_path: Path, dry_run: bool = False, force: bool = False) -> bool:
     """Add version and variables stubs to a prompt file if missing.
 
     Returns True if the file was modified.
@@ -55,6 +55,9 @@ def migrate_file(file_path: Path, dry_run: bool = False) -> bool:
             content["variables"] = []
             modified = True
 
+    if force:
+        modified = True
+
     if not modified:
         print(f"  OK (already migrated): {file_path}")
         return False
@@ -64,8 +67,7 @@ def migrate_file(file_path: Path, dry_run: bool = False) -> bool:
         return True
 
     # Write back — use default_flow_style=False for readable YAML
-    yaml_text = yaml.dump(content, default_flow_style=False, sort_keys=False,
-                          allow_unicode=True, width=120)
+    yaml_text = dump_yaml_str(content)
     file_path.write_text("---\n" + yaml_text, encoding="utf-8")
     print(f"  UPDATED: {file_path}")
     return True
@@ -76,13 +78,15 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Migrate prompt files to new schema")
     parser.add_argument("--dry-run", action="store_true",
                         help="Show what would change without writing files")
+    parser.add_argument("--force", action="store_true",
+                        help="Force update even if no changes detected (useful for reformatting)")
     args = parser.parse_args()
 
     updated = 0
     total = 0
     for file_path in iter_prompt_files(ROOT):
         total += 1
-        if migrate_file(file_path, dry_run=args.dry_run):
+        if migrate_file(file_path, dry_run=args.dry_run, force=args.force):
             updated += 1
 
     print(f"\n{'DRY-RUN: ' if args.dry_run else ''}Processed {total} files, "

@@ -34,29 +34,20 @@ messages:
     provided by the user. The report must be objective, concise, and professional, avoiding emotional language or speculation.
     It must be ready for review by auditors or regulators.
 - role: user
-  content: 'Please write a formal CAPA Investigation Report based on the following rough notes:
-
+  content: |-
+    Please write a formal CAPA Investigation Report based on the following rough notes:
 
     **Incident:** <incident_summary>{{incident_summary}}</incident_summary>
-
     **Root Cause Found:** <root_cause>{{root_cause}}</root_cause>
-
     **Actions Taken:** <actions_taken>{{actions_taken}}</actions_taken>
-
     **Effectiveness Check:** <effectiveness_check>{{effectiveness_check}}</effectiveness_check>
 
-
     Please structure this into a final report format with the following headers:
-
     1. **Background**
-
     2. **Investigation Methodology**
-
     3. **Root Cause Conclusion**
-
     4. **Corrective Action Plan**
-
-    5. **Effectiveness Verification Criteria**'
+    5. **Effectiveness Verification Criteria**
 testData:
 - input:
     incident_summary: 'Labeling machine X misprinted batch #123 with the wrong expiration date.'

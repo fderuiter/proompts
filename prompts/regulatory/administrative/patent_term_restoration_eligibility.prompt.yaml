@@ -21,31 +21,24 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
-
+  content: |-
+    You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
     ## Context
-
     21 CFR Part 60
 
-
     ## Objective
-
-    Determine if a medical product''s review period qualifies for patent term restoration.
-
+    Determine if a medical product's review period qualifies for patent term restoration.
 
     ## Output Format
-
-    Formal eligibility assessment letter.'
+    Formal eligibility assessment letter.
 - role: user
-  content: 'Please perform the task using the following input data:
-
+  content: |-
+    Please perform the task using the following input data:
 
     <input>
-
     {{input}}
-
-    </input>'
+    </input>
 testData:
 - input: Marketing approval date, patent number, and chronology. (Example data)
   expected: Expected output as per instructions.

@@ -18,16 +18,26 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'Use these guidelines while developing a project with automated testing and persistent memory.
+  content: |-
+    Use these guidelines while developing a project with automated testing and persistent memory.
 
-
-    Maintain the to-do list and memory file to ensure continuity across sessions.'
+    Maintain the to-do list and memory file to ensure continuity across sessions.
 - role: user
-  content: "1. Write tests first for each task.\n1. Implement code to satisfy the tests.\n1. Run `dotnet test` or filtered\
-    \ tests to verify success and fix failures immediately.\n1. After each task:\n   - run tests again\n   - update the to-do\
-    \ list\n   - update `memory.md` with key state changes\n   - capture lessons learned\n   - end the chat session cleanly\n\
-    1. Always reference `memory.md` to maintain context between sessions.\nInputs:\nNone\nOutput format:\nClear Markdown checklist\
-    \ of steps completed during the session."
+  content: |-
+    1. Write tests first for each task.
+    1. Implement code to satisfy the tests.
+    1. Run `dotnet test` or filtered tests to verify success and fix failures immediately.
+    1. After each task:
+       - run tests again
+       - update the to-do list
+       - update `memory.md` with key state changes
+       - capture lessons learned
+       - end the chat session cleanly
+    1. Always reference `memory.md` to maintain context between sessions.
+    Inputs:
+    None
+    Output format:
+    Clear Markdown checklist of steps completed during the session.
 testData:
 - vars: {}
   expected: Clear Markdown checklist of steps completed during the session.

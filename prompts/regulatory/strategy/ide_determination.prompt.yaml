@@ -25,25 +25,19 @@ messages:
     classification under 21 CFR 812.3(m) and draft a rationale for an NSR determination or a De Novo classification request
     including risk mitigations.
 - role: user
-  content: 'Evaluate the medical device study description to assess risk classification under 21 CFR 812.3(m) and draft a
-    rationale for an NSR determination or a De Novo classification request including risk mitigations.
-
+  content: |-
+    Evaluate the medical device study description to assess risk classification under 21 CFR 812.3(m) and draft a rationale for an NSR determination or a De Novo classification request including risk mitigations.
 
     Inputs:
-
     - `{{device_study_desc}}`
 
-
     Output format:
-
-    Markdown Risk Classification Rationale.'
+    Markdown Risk Classification Rationale.
 testData:
-- input: 'device_study_desc: Non-invasive diagnostic device.
-
-    '
-  expected: 'Risk Classification
-
-    '
+- input: |
+    device_study_desc: Non-invasive diagnostic device.
+  expected: |
+    Risk Classification
 evaluators:
 - name: Significant Risk
   string:

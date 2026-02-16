@@ -28,16 +28,15 @@ messages:
     using the 'TakesScreenshot' interface. The output should include test status (PASS/FAIL), execution time, and embedded
     links to images for failed cases.
 - role: user
-  content: 'Implement a Test Listener for reporting and screenshots.
-
+  content: |-
+    Implement a Test Listener for reporting and screenshots.
 
     Framework: {{framework}}
-
-    Report Format: {{report_format}}'
+    Report Format: {{report_format}}
 testData:
-- input: 'framework: TestNG
-
-    report_format: PDF'
+- input: |-
+    framework: TestNG
+    report_format: PDF
   expected: implements ITestListener
 evaluators:
 - name: Implements TakesScreenshot

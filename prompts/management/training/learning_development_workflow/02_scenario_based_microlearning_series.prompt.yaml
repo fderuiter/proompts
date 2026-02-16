@@ -20,27 +20,20 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'Recent audits show increased protocol deviations linked to poor application of GCP guidelines. Scenario-based
-    practice improves knowledge transfer.
-
+  content: |-
+    Recent audits show increased protocol deviations linked to poor application of GCP guidelines. Scenario-based practice improves knowledge transfer.
 
     1. List three high-risk violation themes to target and explain why.
-
-    2. Outline one complete sample module with scenario synopsis, branching decision points, feedback logic, and regulatory
-    citations.
-
+    2. Outline one complete sample module with scenario synopsis, branching decision points, feedback logic, and regulatory citations.
     3. After approval, create briefs for the remaining five modules.
-
     4. Incorporate adult-learning techniques such as retrieval practice, spaced repetition, and immediate feedback.
-
     5. Design for mobile-first LMS (SCORM 1.2) and specify metrics like completion and confidence ratings.
 
-
-    Ask clarifying questions before step two if necessary.'
+    Ask clarifying questions before step two if necessary.
 - role: user
-  content: '- `{{audience_role}}` – primary learner roles (e.g., CRAs, Study Coordinators).
+  content: |-
+    - `{{audience_role}}` – primary learner roles (e.g., CRAs, Study Coordinators).
 
-
-    Output format: Markdown sections titled **Violation Themes**, **Sample Module**, **Module Briefs**, and **Metrics**.'
+    Output format: Markdown sections titled **Violation Themes**, **Sample Module**, **Module Briefs**, and **Metrics**.
 testData: []
 evaluators: []

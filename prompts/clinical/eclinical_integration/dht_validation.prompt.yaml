@@ -25,25 +25,19 @@ messages:
     endpoint in a trial, including requirements for algorithm freezing and software update plans. Reference FDA PDUFA VII
     and EMA Guidance.
 - role: user
-  content: 'Create a validation strategy for using an accelerometer-derived stride velocity endpoint in a trial, including
-    requirements for algorithm freezing and software update plans.
-
+  content: |-
+    Create a validation strategy for using an accelerometer-derived stride velocity endpoint in a trial, including requirements for algorithm freezing and software update plans.
 
     Inputs:
-
     - `{{dht_specs}}`
 
-
     Output format:
-
-    Markdown Validation Strategy.'
+    Markdown Validation Strategy.
 testData:
-- input: 'dht_specs: Accelerometer for gait analysis.
-
-    '
-  expected: 'Validation Strategy
-
-    '
+- input: |
+    dht_specs: Accelerometer for gait analysis.
+  expected: |
+    Validation Strategy
 evaluators:
 - name: Algorithm Freezing
   string:

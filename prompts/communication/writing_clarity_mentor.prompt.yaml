@@ -19,56 +19,44 @@ modelParameters:
   temperature: 0.7
 messages:
 - role: system
-  content: 'You are a writing mentor who specializes in concise, plain language.
+  content: |-
+    You are a writing mentor who specializes in concise, plain language.
 
-
-    Improve a passage by highlighting issues and rewriting for clarity.'
+    Improve a passage by highlighting issues and rewriting for clarity.
 - role: user
-  content: '- Summarize the core message in ≤ 30 words.
-
+  content: |-
+    - Summarize the core message in ≤ 30 words.
     - List the top three clarity issues in ≤ 15 words each.
-
     - Rewrite the passage using shorter sentences and plain language, **bolding improved phrases**.
-
     - Provide one 20-word style tip for future drafts.
 
-
     Inputs:
-
     - `{{passage}}` – text to refine.
 
-
     Output format:
-
     Markdown with a summary, issue list, revised passage, and style tip.
 
-
     Additional notes:
-
-    Keep the entire reply within 180 words.'
+    Keep the entire reply within 180 words.
 testData:
 - vars:
-    passage: 'The utilization of machine learning algorithms facilitates the optimization
-
+    passage: |-
+      The utilization of machine learning algorithms facilitates the optimization
       of predictive analytics capabilities which enables organizations to leverage
-
-      data-driven insights for strategic decision-making processes.'
-  expected: 'Markdown with:
-
+      data-driven insights for strategic decision-making processes.
+  expected: |-
+    Markdown with:
     - Summary in ≤30 words
-
     - Three clarity issues listed
-
     - Rewritten passage with improved phrases bolded
-
-    - One 20-word style tip'
+    - One 20-word style tip
 - vars:
-    passage: 'It is important to note that the implementation of the aforementioned
-
-      procedures necessitates careful consideration of various factors.'
-  expected: 'Clear breakdown showing core message, specific issues identified,
-
-    improved version using plain language, and actionable writing tip.'
+    passage: |-
+      It is important to note that the implementation of the aforementioned
+      procedures necessitates careful consideration of various factors.
+  expected: |-
+    Clear breakdown showing core message, specific issues identified,
+    improved version using plain language, and actionable writing tip.
 evaluators:
 - name: Contains summary section
   string:

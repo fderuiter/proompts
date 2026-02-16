@@ -1,93 +1,94 @@
 ---
 name: Marketing Campaign for Clinical Services
 version: 0.1.0
-description: Generates a comprehensive marketing asset package including landing page copy, email sequence, and sell sheet for new clinical services.
+description: Generates a comprehensive marketing asset package including landing page copy, email sequence, and sell sheet
+  for new clinical services.
 metadata:
   domain: business
   complexity: medium
   tags:
-    - marketing
-    - sales
-    - copywriting
-    - clinical-services
-    - b2b
+  - marketing
+  - sales
+  - copywriting
+  - clinical-services
+  - b2b
   requires_context: true
 variables:
-  - name: service_suite_name
-    description: Name of the service suite being marketed.
-    required: true
-    default: "Stress-Test Services"
-  - name: target_audience
-    description: The target audience for the campaign.
-    required: true
-    default: "VP of Clinical Operations at Pharma companies"
-  - name: pain_points
-    description: Key pain points of the target audience.
-    required: true
-    default: |
-      They are tired of spending millions on trials that fail due to poor design or lack of participants. High cost of protocol amendments and screen failures. Risk of Phase 3 failure after years of investment.
-  - name: features
-    description: Key features of the service.
-    required: true
-    default: |
-      * **Feature A:** Synthetic Control Arms (Recruit fewer patients by using data instead).
-      * **Feature B:** Protocol Simulation (Find the flaws in the study design before you start).
-      * **Feature C:** Digital Twins (Know exactly which patient biology responds to the drug).
+- name: service_suite_name
+  description: Name of the service suite being marketed.
+  required: true
+  default: Stress-Test Services
+- name: target_audience
+  description: The target audience for the campaign.
+  required: true
+  default: VP of Clinical Operations at Pharma companies
+- name: pain_points
+  description: Key pain points of the target audience.
+  required: true
+  default: |
+    They are tired of spending millions on trials that fail due to poor design or lack of participants. High cost of protocol amendments and screen failures. Risk of Phase 3 failure after years of investment.
+- name: features
+  description: Key features of the service.
+  required: true
+  default: |
+    * **Feature A:** Synthetic Control Arms (Recruit fewer patients by using data instead).
+    * **Feature B:** Protocol Simulation (Find the flaws in the study design before you start).
+    * **Feature C:** Digital Twins (Know exactly which patient biology responds to the drug).
 model: gpt-4
 modelParameters:
   temperature: 0.8
 messages:
-  - role: system
-    content: |
-      You are a direct-response B2B Copywriter specializing in the Pharmaceutical industry. Your tone should be urgent, confident, innovative, and benefits-obsessed. Avoid overly dense jargon; keep it punchy.
-  - role: user
-    content: |
-      **Context:**
-      We are selling a new suite of "{{service_suite_name}}" to {{target_audience}}.
-      **Pain Points:**
-      {{pain_points}}
+- role: system
+  content: |
+    You are a direct-response B2B Copywriter specializing in the Pharmaceutical industry. Your tone should be urgent, confident, innovative, and benefits-obsessed. Avoid overly dense jargon; keep it punchy.
+- role: user
+  content: |
+    **Context:**
+    We are selling a new suite of "{{service_suite_name}}" to {{target_audience}}.
+    **Pain Points:**
+    {{pain_points}}
 
-      **Source Material (Features):**
-      {{features}}
+    **Source Material (Features):**
+    {{features}}
 
-      **Task:**
-      Create a **Marketing Asset Package** comprising the following three elements:
+    **Task:**
+    Create a **Marketing Asset Package** comprising the following three elements:
 
-      1. **The "Hook" (Landing Page Hero Section):**
-         * A bold Headline that grabs attention (focus on saving money/time).
-         * A Sub-headline that explains the concept simply.
-         * 3 Bullet points highlighting the benefits, not just features.
+    1. **The "Hook" (Landing Page Hero Section):**
+       * A bold Headline that grabs attention (focus on saving money/time).
+       * A Sub-headline that explains the concept simply.
+       * 3 Bullet points highlighting the benefits, not just features.
 
-      2. **The "Pain-Agitate-Solution" Email Sequence:**
-         * Draft a cold email to a {{target_audience}}.
-         * *Pain:* Mention the high cost of protocol amendments and screen failures.
-         * *Agitate:* Highlight the risk of a Phase 3 failure after years of investment.
-         * *Solution:* Introduce our "{{service_suite_name}}" as the insurance policy they need.
+    2. **The "Pain-Agitate-Solution" Email Sequence:**
+       * Draft a cold email to a {{target_audience}}.
+       * *Pain:* Mention the high cost of protocol amendments and screen failures.
+       * *Agitate:* Highlight the risk of a Phase 3 failure after years of investment.
+       * *Solution:* Introduce our "{{service_suite_name}}" as the insurance policy they need.
 
-      3. **The "One-Pager" Sell Sheet Copy:**
-         * Create a section called "Why Simulate?"
-         * Translate the features into benefits (e.g., ethical/financial benefits for SCA, operational benefits for Protocol Stress-Testing).
+    3. **The "One-Pager" Sell Sheet Copy:**
+       * Create a section called "Why Simulate?"
+       * Translate the features into benefits (e.g., ethical/financial benefits for SCA, operational benefits for Protocol Stress-Testing).
 testData:
-  - input: |
-      service_suite_name: "Stress-Test Services"
-      target_audience: "VP of Clinical Operations at Pharma companies"
-      pain_points: |
-        They are tired of spending millions on trials that fail due to poor design or lack of participants. High cost of protocol amendments and screen failures. Risk of Phase 3 failure after years of investment.
-      features: |
-        * **Feature A:** Synthetic Control Arms (Recruit fewer patients by using data instead).
-        * **Feature B:** Protocol Simulation (Find the flaws in the study design before you start).
-        * **Feature C:** Digital Twins (Know exactly which patient biology responds to the drug).
-    expected: |
-      Hook
-      Email Sequence
-      Sell Sheet
+- input: |
+    service_suite_name: "Stress-Test Services"
+    target_audience: "VP of Clinical Operations at Pharma companies"
+    pain_points: |
+      They are tired of spending millions on trials that fail due to poor design or lack of participants. High cost of protocol amendments and screen failures. Risk of Phase 3 failure after years of investment.
+    features: |
+      * **Feature A:** Synthetic Control Arms (Recruit fewer patients by using data instead).
+      * **Feature B:** Protocol Simulation (Find the flaws in the study design before you start).
+      * **Feature C:** Digital Twins (Know exactly which patient biology responds to the drug).
+  expected: |
+    Hook
+    Email Sequence
+    Sell Sheet
 evaluators:
-  - name: Output contains Headline
-    regex:
-      pattern: (?i)Headline
-  - name: Output contains Email
-    regex:
-      pattern: (?i)Email
-  - name: Output contains One-Pager
-    regex:
-      pattern: (?i)(One-Pager|Sell\s+Sheet)
+- name: Output contains Headline
+  regex:
+    pattern: (?i)Headline
+- name: Output contains Email
+  regex:
+    pattern: (?i)Email
+- name: Output contains One-Pager
+  regex:
+    pattern: (?i)(One-Pager|Sell\s+Sheet)

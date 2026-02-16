@@ -25,25 +25,19 @@ messages:
     Include detailed definitions for primary and secondary endpoints, methods for sensitivity analysis, and procedures for
     handling missing data. Follow ICH E9 and ICH E3 guidelines.
 - role: user
-  content: 'Draft a comprehensive Statistical Analysis Plan (SAP) based on the study protocol. Include detailed definitions
-    for primary and secondary endpoints, methods for sensitivity analysis, and procedures for handling missing data.
-
+  content: |-
+    Draft a comprehensive Statistical Analysis Plan (SAP) based on the study protocol. Include detailed definitions for primary and secondary endpoints, methods for sensitivity analysis, and procedures for handling missing data.
 
     Inputs:
-
     - `{{protocol_summary}}`
 
-
     Output format:
-
-    Markdown SAP Document.'
+    Markdown SAP Document.
 testData:
-- input: 'protocol_summary: Randomized controlled trial comparing Drug A vs Placebo.
-
-    '
-  expected: 'Statistical Analysis Plan
-
-    '
+- input: |
+    protocol_summary: Randomized controlled trial comparing Drug A vs Placebo.
+  expected: |
+    Statistical Analysis Plan
 evaluators:
 - name: Primary Endpoint
   string:

@@ -20,9 +20,8 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a data architect planning scalable clinical data architectures.
-
-    '
+  content: |
+    You are a data architect planning scalable clinical data architectures.
 - role: user
   content: '{{input}}'
 testData:

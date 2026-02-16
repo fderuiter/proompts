@@ -26,17 +26,18 @@ messages:
     (e.g., an ID like 'submit-btn' or 'dynamic-content') with a defined timeout (e.g., 10-15 seconds) and handle potential
     TimeoutExceptions gracefully.
 - role: user
-  content: 'Refactor the following code to use Explicit Waits:
-
+  content: |-
+    Refactor the following code to use Explicit Waits:
 
     <code>
-
     {{code_snippet}}
-
-    </code>'
+    </code>
 testData:
-- input: "code_snippet: |\n  driver.findElement(By.id(\"submit\")).click();\n  Thread.sleep(5000);\n  driver.findElement(By.id(\"\
-    result\")).getText();"
+- input: |-
+    code_snippet: |
+      driver.findElement(By.id("submit")).click();
+      Thread.sleep(5000);
+      driver.findElement(By.id("result")).getText();
   expected: WebDriverWait wait
 evaluators:
 - name: Uses WebDriverWait

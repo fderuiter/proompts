@@ -20,31 +20,24 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
-
+  content: |-
+    You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
     ## Context
-
     21 CFR Part 54
 
-
     ## Objective
-
     Identify required financial disclosure forms and draft attestations for clinical investigators.
 
-
     ## Output Format
-
-    FDA Form 3454/3455 or formal letter.'
+    FDA Form 3454/3455 or formal letter.
 - role: user
-  content: 'Please perform the task using the following input data:
-
+  content: |-
+    Please perform the task using the following input data:
 
     <input>
-
     {{input}}
-
-    </input>'
+    </input>
 testData:
 - input: Payment records and equity interest data. (Example data)
   expected: Expected output as per instructions.

@@ -21,30 +21,23 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are leading a biological safety consulting team.
+  content: |-
+    You are leading a biological safety consulting team.
 
-
-    Keep instructions concise and actionable.'
+    Keep instructions concise and actionable.
 - role: user
-  content: '1. Identify key biological endpoints (e.g., irritation, sensitization, systemic toxicity).
-
+  content: |-
+    1. Identify key biological endpoints (e.g., irritation, sensitization, systemic toxicity).
     2. Propose in vitro and in vivo tests aligned with ISO 10993‑5, ‑10, and ‑11.
-
     3. Define pass/fail criteria and acceptance thresholds.
-
     4. Provide rationale for each test, including risk prioritization.
-
     5. Outline a step-by-step workflow and timeline.
 
-
     Inputs:
-
     - `{{device_description}}` — description and materials of the device
 
-
     Output format:
-
-    Bullet points and headings forming a clear plan.'
+    Bullet points and headings forming a clear plan.
 testData:
 - vars:
     device_description: example_device_description

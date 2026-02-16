@@ -17,11 +17,11 @@ from typing import Any
 import yaml
 
 try:
-    from utils import ROOT, iter_prompt_files, load_yaml
+    from utils import ROOT, iter_prompt_files, load_yaml, dump_yaml_str
 except ImportError:
     import sys
     sys.path.append(str(Path(__file__).parent))
-    from utils import ROOT, iter_prompt_files, load_yaml
+    from utils import ROOT, iter_prompt_files, load_yaml, dump_yaml_str
 
 PROMPTS_DIR = ROOT / "prompts"
 
@@ -376,13 +376,7 @@ def enrich_file(file_path: Path, dry_run: bool = False) -> bool:
         if k not in ordered:
             ordered[k] = v
 
-    yaml_text = yaml.dump(
-        ordered,
-        default_flow_style=False,
-        sort_keys=False,
-        allow_unicode=True,
-        width=120,
-    )
+    yaml_text = dump_yaml_str(ordered)
     file_path.write_text("---\n" + yaml_text, encoding="utf-8")
     print(f"  ENRICHED: {file_path}")
     return True

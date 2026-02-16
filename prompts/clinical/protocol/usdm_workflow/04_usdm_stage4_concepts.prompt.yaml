@@ -58,7 +58,8 @@ testData:
 evaluators:
 - name: Valid JSON
   regex:
-    pattern: '(?s)^[\s\S]*\{[\s\S]*\}[\s\S]*$'
+    pattern: (?s)^[\s\S]*\{[\s\S]*\}[\s\S]*$
 - name: Contains biomedicalConcepts
   regex:
     pattern: '(?s)"biomedicalConcepts"\s*:'
+version: 0.1.0

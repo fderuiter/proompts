@@ -27,30 +27,43 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a compliance auditor reviewing a CSV ledger of payments for calendar year 2025.
+  content: |-
+    You are a compliance auditor reviewing a CSV ledger of payments for calendar year 2025.
 
-
-    Audit site-payment data for Sunshine Act reporting and FMV adherence.'
+    Audit site-payment data for Sunshine Act reporting and FMV adherence.
 - role: user
-  content: "1. Load the CSV and normalize currency to USD using the provided FX rates.\n1. For each line item:\n   - Determine\
-    \ if a single payment ≥ $13.46 or annual aggregate > $134.54.\n   - Verify required Sunshine fields: NPI, address, payment\
-    \ nature, and related product.\n   - Compare investigator fees to FMV benchmarks (±10 %).\n1. Output two tables:\n   -\
-    \ **Reportable Payments** – rows that must be reported to CMS.\n   - **Compliance Exceptions** – missing data or FMV variance\
-    \ > 10 % with remediation notes.\n1. Summarize lines reviewed, percent reportable, and percent exceptions.\n1. Ask questions\
-    \ if thresholds or tables seem outdated.\n\n  Inputs:\n  - `{{payment_ledger_csv}}` – raw payment ledger CSV\n  - `{{fx_rates}}`\
-    \ – foreign-exchange rate table\n  - `{{fmv_table}}` – fair market value reference table\n\nOutput format:\nTwo CSV-formatted\
-    \ tables followed by a short executive summary.\n\nAdditional notes:\nUse clear column headers so the tables can be imported\
-    \ without modification."
+  content: |-
+    1. Load the CSV and normalize currency to USD using the provided FX rates.
+    1. For each line item:
+       - Determine if a single payment ≥ $13.46 or annual aggregate > $134.54.
+       - Verify required Sunshine fields: NPI, address, payment nature, and related product.
+       - Compare investigator fees to FMV benchmarks (±10 %).
+    1. Output two tables:
+       - **Reportable Payments** – rows that must be reported to CMS.
+       - **Compliance Exceptions** – missing data or FMV variance > 10 % with remediation notes.
+    1. Summarize lines reviewed, percent reportable, and percent exceptions.
+    1. Ask questions if thresholds or tables seem outdated.
+
+      Inputs:
+      - `{{payment_ledger_csv}}` – raw payment ledger CSV
+      - `{{fx_rates}}` – foreign-exchange rate table
+      - `{{fmv_table}}` – fair market value reference table
+
+    Output format:
+    Two CSV-formatted tables followed by a short executive summary.
+
+    Additional notes:
+    Use clear column headers so the tables can be imported without modification.
 testData:
-- payment_ledger_csv: 'NPI,Amount
-
-    1234567890,150'
-  fx_rates: 'Currency,USD
-
-    USD,1'
-  fmv_table: 'Procedure,FMV
-
-    Consult,100'
+- payment_ledger_csv: |-
+    NPI,Amount
+    1234567890,150
+  fx_rates: |-
+    Currency,USD
+    USD,1
+  fmv_table: |-
+    Procedure,FMV
+    Consult,100
   expected: Reportable Payments
 evaluators:
 - name: Generates reportable payments table

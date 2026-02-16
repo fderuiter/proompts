@@ -25,25 +25,19 @@ messages:
     Testing (UAT) script to validate compliance with 21 CFR Part 11 requirements for electronic signatures and audit trails.
     Ensure alignment with EU GMP Annex 11 and GAMP 5.
 - role: user
-  content: 'Review the Electronic Data Capture (EDC) system requirements and generate a User Acceptance Testing (UAT) script
-    to validate compliance with 21 CFR Part 11 requirements for electronic signatures and audit trails.
-
+  content: |-
+    Review the Electronic Data Capture (EDC) system requirements and generate a User Acceptance Testing (UAT) script to validate compliance with 21 CFR Part 11 requirements for electronic signatures and audit trails.
 
     Inputs:
-
     - `{{system_requirements}}`
 
-
     Output format:
-
-    Markdown UAT Script and Validation Summary.'
+    Markdown UAT Script and Validation Summary.
 testData:
-- input: 'system_requirements: EDC system with e-signature modules.
-
-    '
-  expected: 'UAT Script
-
-    '
+- input: |
+    system_requirements: EDC system with e-signature modules.
+  expected: |
+    UAT Script
 evaluators:
 - name: UAT Script
   string:

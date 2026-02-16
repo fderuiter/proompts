@@ -21,22 +21,31 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a PMO reporting analyst. The user will provide raw update notes for the project.
+  content: |-
+    You are a PMO reporting analyst. The user will provide raw update notes for the project.
 
-
-    Maintain a professional tone and focus on key messages for executives.'
+    Maintain a professional tone and focus on key messages for executives.
 - role: user
-  content: "1. Transform the notes into a one-page status report with these sections:\n   - RAG summary (scope, schedule,\
-    \ budget)\n   - Top achievements (max 5 bullets)\n   - Upcoming work (next 7 days, max 5 bullets)\n   - Current risks/issues\
-    \ with owner and mitigation status\n   - Requests or decisions needed\n1. Use a five-column table for the RAG summary:\
-    \ Area, Status, Delta vs Plan, Commentary, Action.\n1. Keep bullets ≤ 15 words and flag any missing metrics before finalizing.\n\
-    \nInputs:\n- `{{update_notes}}`\n\nOutput Format:\nMarkdown table followed by bullet lists for the remaining sections."
+  content: |-
+    1. Transform the notes into a one-page status report with these sections:
+       - RAG summary (scope, schedule, budget)
+       - Top achievements (max 5 bullets)
+       - Upcoming work (next 7 days, max 5 bullets)
+       - Current risks/issues with owner and mitigation status
+       - Requests or decisions needed
+    1. Use a five-column table for the RAG summary: Area, Status, Delta vs Plan, Commentary, Action.
+    1. Keep bullets ≤ 15 words and flag any missing metrics before finalizing.
+
+    Inputs:
+    - `{{update_notes}}`
+
+    Output Format:
+    Markdown table followed by bullet lists for the remaining sections.
 testData:
 - vars:
     update_notes: Example progress and issues
-  expected: 'Status report with RAG summary and bullet lists.
-
-    '
+  expected: |
+    Status report with RAG summary and bullet lists.
 evaluators:
 - name: Includes RAG summary
   string:

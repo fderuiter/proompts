@@ -135,7 +135,7 @@ testData:
 evaluators:
 - name: Valid JSON Structure
   regex:
-    pattern: '(?s)^[\s\S]*\{[\s\S]*\}[\s\S]*$'
+    pattern: (?s)^[\s\S]*\{[\s\S]*\}[\s\S]*$
 - name: Contains Study Object
   regex:
     pattern: '(?s)"study"\s*:'
@@ -145,3 +145,4 @@ evaluators:
 - name: Contains Biomedical Concepts
   regex:
     pattern: '(?s)"biomedicalConcepts"\s*:'
+version: 0.1.0

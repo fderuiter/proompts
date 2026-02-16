@@ -29,23 +29,24 @@ messages:
     interaction, and ensure compatibility with TestNG or JUnit. Refactor any hardcoded pauses into ExpectedConditions and
     ensure correct imports (e.g., from com.thoughtworks.selenium or Selenium 4).
 - role: user
-  content: 'Convert the following Selenese code/script to a robust Java Selenium test class.
-
+  content: |-
+    Convert the following Selenese code/script to a robust Java Selenium test class.
 
     <selenese_code>
-
     {{selenese_code}}
-
     </selenese_code>
 
-
     <package_name>
-
     {{package_name}}
-
-    </package_name>'
+    </package_name>
 testData:
-- input: "selenese_code: |\n  open /login\n  type id=user admin\n  type id=pass secret\n  click id=submit\npackage_name: com.example.tests"
+- input: |-
+    selenese_code: |
+      open /login
+      type id=user admin
+      type id=pass secret
+      click id=submit
+    package_name: com.example.tests
   expected: public class LoginTest {
 evaluators:
 - name: Contains Java class definition

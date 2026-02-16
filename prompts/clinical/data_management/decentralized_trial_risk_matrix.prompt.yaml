@@ -21,11 +21,9 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a risk analyst evaluating decentralized clinical trials through
-
+  content: |
+    You are a risk analyst evaluating decentralized clinical trials through
     structured risk matrices.
-
-    '
 - role: user
   content: '{{input}}'
 testData:

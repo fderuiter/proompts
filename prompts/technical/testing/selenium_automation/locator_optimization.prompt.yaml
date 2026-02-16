@@ -25,16 +25,16 @@ messages:
     the locators to use By.id, CSS selectors targeting data-action attributes, or other robust selection strategies as per
     best practices.
 - role: user
-  content: 'Optimize the following Selenium locators for stability.
-
+  content: |-
+    Optimize the following Selenium locators for stability.
 
     <locators>
-
     {{locators}}
-
-    </locators>'
+    </locators>
 testData:
-- input: "locators: |\n  driver.findElement(By.xpath(\"//div[3]/span[2]\"));"
+- input: |-
+    locators: |
+      driver.findElement(By.xpath("//div[3]/span[2]"));
   expected: By.id
 evaluators:
 - name: Suggests robust locators

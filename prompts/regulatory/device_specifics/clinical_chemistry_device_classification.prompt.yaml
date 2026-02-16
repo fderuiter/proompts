@@ -21,31 +21,24 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
-
+  content: |-
+    You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
     ## Context
-
     21 CFR Part 862
 
-
     ## Objective
-
     Identify classification and regulatory requirements (general/special controls) for a clinical chemistry device.
 
-
     ## Output Format
-
-    Structured summary identifying FDA Class and regulatory section.'
+    Structured summary identifying FDA Class and regulatory section.
 - role: user
-  content: 'Please perform the task using the following input data:
-
+  content: |-
+    Please perform the task using the following input data:
 
     <input>
-
     {{input}}
-
-    </input>'
+    </input>
 testData:
 - input: Device name and intended use. (Example data)
   expected: Expected output as per instructions.

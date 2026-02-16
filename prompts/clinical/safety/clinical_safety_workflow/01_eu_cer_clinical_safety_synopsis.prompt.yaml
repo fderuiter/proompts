@@ -21,17 +21,14 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a clinical safety specialist distilling surveillance data into brief
-
+  content: |
+    You are a clinical safety specialist distilling surveillance data into brief
     synopses for EU MDR clinical evaluation reports.
-
-    '
 - role: user
   content: '{{input}}'
 testData:
-- input: '55-year-old male experienced screw loosening requiring revision surgery.
-
-    '
+- input: |
+    55-year-old male experienced screw loosening requiring revision surgery.
   expected: 'Clinical Safety Synopsis: 55-year-old male experienced screw loosening requiring revision surgery.'
 evaluators:
 - name: Output starts with 'Clinical Safety Synopsis'

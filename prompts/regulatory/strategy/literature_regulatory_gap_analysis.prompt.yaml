@@ -24,34 +24,24 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are an expert clinical trial strategist. The user plans a pivotal study of `{{device_or_ivd}}` for `{{target_indication}}`.
+  content: |-
+    You are an expert clinical trial strategist. The user plans a pivotal study of `{{device_or_ivd}}` for `{{target_indication}}`.
 
-
-    Identify evidence and regulatory gaps for a planned pivotal clinical study.'
+    Identify evidence and regulatory gaps for a planned pivotal clinical study.
 - role: user
-  content: '1. Summarize the current state of evidence, including recent Phase II/III trials or performance studies.
-
-    1. Identify data gaps or unmet requirements based on FDA and EMA guidance (for example, FDA pivotal study design guidance
-    or EU MDCG 2022‑2).
-
-    1. Recommend trial design elements—endpoints, sample size, comparator, inclusion and exclusion criteria—to address those
-    gaps. Provide references where appropriate.
-
+  content: |-
+    1. Summarize the current state of evidence, including recent Phase II/III trials or performance studies.
+    1. Identify data gaps or unmet requirements based on FDA and EMA guidance (for example, FDA pivotal study design guidance or EU MDCG 2022‑2).
+    1. Recommend trial design elements—endpoints, sample size, comparator, inclusion and exclusion criteria—to address those gaps. Provide references where appropriate.
 
     Inputs:
-
     - `{{device_or_ivd}}` — description of the medical device or IVD.
-
     - `{{target_indication}}` — proposed indication for use.
 
-
     Output format:
-
     Markdown bullet list or table summarizing findings and recommendations.
 
-
     Additional notes:
-
-    Keep the analysis concise and reference authoritative guidance documents.'
+    Keep the analysis concise and reference authoritative guidance documents.
 testData: []
 evaluators: []

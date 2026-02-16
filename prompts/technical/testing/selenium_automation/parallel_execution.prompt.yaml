@@ -25,14 +25,12 @@ messages:
     to 'methods'. Additionally, develop a C# or Java method to ensure thread safety (e.g., using 'ThreadLocal') and a 'Dispose'
     routine to identify and kill browser processes (chrome, firefox, edge) to maintain a clean state.
 - role: user
-  content: 'Create a parallel execution configuration for TestNG and a thread-safe WebDriver factory.
-
+  content: |-
+    Create a parallel execution configuration for TestNG and a thread-safe WebDriver factory.
 
     <language>
-
     {{language}}
-
-    </language>'
+    </language>
 testData:
 - input: 'language: Java'
   expected: ThreadLocal<WebDriver>

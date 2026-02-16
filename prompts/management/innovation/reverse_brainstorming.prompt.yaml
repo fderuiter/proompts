@@ -21,21 +21,16 @@ messages:
 - role: system
   content: The exercise targets `{{problem}}` and must stay within 110 words.
 - role: user
-  content: '1. Ask, "How could we make it worse?" and list ten worsening ideas.
-
+  content: |-
+    1. Ask, "How could we make it worse?" and list ten worsening ideas.
     2. Turn each idea into a constructive bullet prefixed with "➜".
-
     3. Build a mini-table (Solution \| Impact High/Med/Low) ranking the top three.
 
-
     Inputs:
-
     - `{{problem}}`: issue to address.
 
-
     Output format:
-
-    Bulleted list plus markdown table.'
+    Bulleted list plus markdown table.
 testData:
 - vars:
     problem: example_problem

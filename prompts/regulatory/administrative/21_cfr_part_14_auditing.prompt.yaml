@@ -20,31 +20,24 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
-
+  content: |-
+    You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
     ## Context
-
     21 CFR Part 14
 
-
     ## Objective
-
     Audit advisory committee meeting minutes for compliance with record-keeping elements.
 
-
     ## Output Format
-
-    Markdown compliance checklist.'
+    Markdown compliance checklist.
 - role: user
-  content: 'Please perform the task using the following input data:
-
+  content: |-
+    Please perform the task using the following input data:
 
     <input>
-
     {{input}}
-
-    </input>'
+    </input>
 testData:
 - input: Minutes, attendee list, and information considered. (Example data)
   expected: Expected output as per instructions.

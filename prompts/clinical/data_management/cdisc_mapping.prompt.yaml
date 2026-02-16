@@ -34,37 +34,25 @@ messages:
     following CDISC standards and internal curation guidelines to generate SDTM-compliant datasets. Adhere to CDISC SDTM/ADaM
     standards.
 - role: user
-  content: 'Apply variable mapping to the provided raw datasets for each domain following CDISC standards and internal curation
-    guidelines to generate SDTM-compliant datasets.
-
+  content: |-
+    Apply variable mapping to the provided raw datasets for each domain following CDISC standards and internal curation guidelines to generate SDTM-compliant datasets.
 
     Inputs:
-
     - Raw datasets (schema/sample): `{{raw_data}}`
-
     - Data curation internal guidelines: `{{curation_guidelines}}`
-
     - Metadata definitions: `{{metadata_defs}}`
-
     - Predefined Metadata Rules: `{{metadata_rules}}`
 
-
     Output format:
-
-    Markdown Mapping Specifications Table (Source Variable -> Target Domain/Variable -> Transformation Logic).'
+    Markdown Mapping Specifications Table (Source Variable -> Target Domain/Variable -> Transformation Logic).
 testData:
-- input: 'raw_data: "PatientID, DOB, Gender"
-
+- input: |
+    raw_data: "PatientID, DOB, Gender"
     curation_guidelines: "Use DM domain"
-
     metadata_defs: "DM.USUBJID, DM.BRTHDTC, DM.SEX"
-
     metadata_rules: "ISO 8601 dates"
-
-    '
-  expected: '| Source Variable | Target Variable | Transformation |
-
-    '
+  expected: |
+    | Source Variable | Target Variable | Transformation |
 evaluators:
 - name: Mapping Table
   string:

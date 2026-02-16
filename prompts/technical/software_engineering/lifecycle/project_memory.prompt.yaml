@@ -18,26 +18,20 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'Use `memory.md` to preserve important information between coding sessions.
+  content: |-
+    Use `memory.md` to preserve important information between coding sessions.
 
-
-    Update this document regularly to support persistent context management.'
+    Update this document regularly to support persistent context management.
 - role: user
-  content: '1. Document current architectural decisions and justifications.
-
+  content: |-
+    1. Document current architectural decisions and justifications.
     1. Capture critical notes or insights from previous sessions.
-
     1. Record important context or issues encountered and how they were resolved.
-
     1. Avoid marking task completions here; track them only in the to-do list.
-
     Inputs:
-
     None
-
     Output format:
-
-    Markdown file with sections **Current Project State** and **Contextual Notes**.'
+    Markdown file with sections **Current Project State** and **Contextual Notes**.
 testData:
 - vars: {}
   expected: Markdown file with sections **Current Project State** and **Contextual Notes**.

@@ -31,9 +31,9 @@ messages:
   content: Provide instructions for setting up Selenium Grid {{grid_version}} with {{browser_count}} nodes for Chrome and
     Firefox.
 testData:
-- input: 'grid_version: 4
-
-    browser_count: 2'
+- input: |-
+    grid_version: 4
+    browser_count: 2
   expected: java -jar selenium-server
 evaluators:
 - name: Contains java -jar command

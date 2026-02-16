@@ -25,16 +25,17 @@ messages:
     (e.g., ''setUsername'', ''setPassword'') returns ''this'' (the current page instance). Create an example test method demonstrating
     action chaining: page.open().login(''user'', ''pass'').verifySuccess();.'
 - role: user
-  content: 'Refactor the following Page Object to use a Fluent Interface.
-
+  content: |-
+    Refactor the following Page Object to use a Fluent Interface.
 
     <java_class>
-
     {{java_class}}
-
-    </java_class>'
+    </java_class>
 testData:
-- input: "java_class: |\n  public void setUsername(String u) { ... }\n  public void setPassword(String p) { ... }"
+- input: |-
+    java_class: |
+      public void setUsername(String u) { ... }
+      public void setPassword(String p) { ... }
   expected: public LoginPage setUsername
 evaluators:
 - name: Methods return this or object

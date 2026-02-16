@@ -24,49 +24,31 @@ modelParameters:
   temperature: 0.1
 messages:
 - role: system
-  content: 'You are a Regulatory Affairs Strategist and Biostatistician. Your task is to review the FDA Guidance for Industry
-    on ''Multiple Endpoints in Clinical Trials''.
-
+  content: |
+    You are a Regulatory Affairs Strategist and Biostatistician. Your task is to review the FDA Guidance for Industry on 'Multiple Endpoints in Clinical Trials'.
 
     Your output should be an executive summary report for sponsors covering the following sections with Markdown headers:
-
     1.  **## Grouping Strategies:** Key strategies for grouping endpoints (e.g., co-primary, composite, secondary families).
-
     2.  **## Ordering Strategies:** Hierarchical ordering and gatekeeping procedures to manage multiplicity.
-
-    3.  **## Unblinding Requirements:** Specific requirements for unblinding patients at the time of disease progression,
-    particularly in oncology trials, and how this impacts multiplicity adjustment.
-
+    3.  **## Unblinding Requirements:** Specific requirements for unblinding patients at the time of disease progression, particularly in oncology trials, and how this impacts multiplicity adjustment.
     4.  **## Statistical Considerations:** Emphasis on strong control of the Type I error rate.
 
-
     Focus on actionable advice for trial design.
-
-    '
 - role: user
-  content: '<therapeutic_area>
-
+  content: |
+    <therapeutic_area>
     {{therapeutic_area}} (e.g., Oncology, Cardiology)
-
     </therapeutic_area>
 
-
     <multiplicity_issues>
-
     {{issues}} (e.g., multiple primary endpoints, interim analyses)
-
     </multiplicity_issues>
 
-
     Generate the guidance summary.
-
-    '
 testData:
-- input: 'therapeutic_area: Oncology
-
+- input: |
+    therapeutic_area: Oncology
     issues: Two primary endpoints (PFS and OS) and one key secondary endpoint (ORR).
-
-    '
   expected: Summary advising on splitting alpha between PFS/OS or using hierarchical testing, and handling potential unblinding
     after progression.
 evaluators:

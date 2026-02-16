@@ -17,26 +17,21 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: '• List 5–8 key risks.
-
+  content: |-
+    • List 5–8 key risks.
     • Build a table with columns: Risk, Likelihood (1-5), Impact (1-5), Raw-Score (L×I), Mitigation.
-
     • Sort the table by highest Raw-Score.
-
-    • Follow with a 100-word narrative on the top two risks and how to monitor them.'
+    • Follow with a 100-word narrative on the top two risks and how to monitor them.
 - role: user
   content: '{{input}}'
 testData:
 - input: Backyard treehouse project
-  expected: 'Risk | Likelihood | Impact | Raw-Score | Mitigation
-
+  expected: |-
+    Risk | Likelihood | Impact | Raw-Score | Mitigation
     Fall injuries | 3 | 4 | 12 | safety rails
-
     Rotting wood | 2 | 5 | 10 | sealant
-
     Storm damage | 4 | 3 | 12 | anchors
-
-    Monitor top risks: inspect rails weekly; check weather alerts.'
+    Monitor top risks: inspect rails weekly; check weather alerts.
 evaluators:
 - name: Output shows raw-score
   string:

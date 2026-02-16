@@ -23,25 +23,19 @@ messages:
   content: You are a Regulatory Strategist. Review the preclinical data and draft a Pre-IND briefing package for the FDA,
     including specific questions regarding the adequacy of toxicology studies and Phase I trial design.
 - role: user
-  content: 'Review the preclinical data and draft a Pre-IND briefing package for the FDA, including specific questions regarding
-    the adequacy of toxicology studies and Phase I trial design.
-
+  content: |-
+    Review the preclinical data and draft a Pre-IND briefing package for the FDA, including specific questions regarding the adequacy of toxicology studies and Phase I trial design.
 
     Inputs:
-
     - `{{preclinical_data}}`
 
-
     Output format:
-
-    Markdown Briefing Package Draft.'
+    Markdown Briefing Package Draft.
 testData:
-- input: 'preclinical_data: Toxicology study results.
-
-    '
-  expected: 'Briefing Package
-
-    '
+- input: |
+    preclinical_data: Toxicology study results.
+  expected: |
+    Briefing Package
 evaluators:
 - name: Toxicology Studies
   string:

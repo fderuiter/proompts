@@ -1,3 +1,4 @@
+---
 name: SAE and Unanticipated Problem Reporting SOP
 version: 0.1.0
 description: Develop a standard operating procedure for reporting serious adverse events and unanticipated problems.
@@ -12,12 +13,12 @@ metadata:
   - reporting
   requires_context: true
 variables:
-  - name: study_context
-    description: specific details about the study (phase, indication, sites)
-    required: true
-  - name: sponsor_requirements
-    description: specific reporting timelines or requirements from the sponsor
-    required: false
+- name: study_context
+  description: specific details about the study (phase, indication, sites)
+  required: true
+- name: sponsor_requirements
+  description: specific reporting timelines or requirements from the sponsor
+  required: false
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -67,16 +68,17 @@ messages:
     Do not include conversational filler ("Here is the SOP...").
 testData:
 - vars:
-    study_context: "Phase III multi-site oncology trial (Protocol ONC-2024-001) involving investigational drug X."
-    sponsor_requirements: "Report all SAEs within 24 hours via the EDC system. Fatal events require immediate phone call to Medical Monitor."
-  expected: "ONC-2024-001"
+    study_context: Phase III multi-site oncology trial (Protocol ONC-2024-001) involving investigational drug X.
+    sponsor_requirements: Report all SAEs within 24 hours via the EDC system. Fatal events require immediate phone call to
+      Medical Monitor.
+  expected: ONC-2024-001
 evaluators:
 - name: Contains Purpose section heading
   regex:
-    pattern: '^1\.\s+Purpose'
+    pattern: ^1\.\s+Purpose
 - name: Contains Scope section heading
   regex:
-    pattern: '^2\.\s+Scope'
+    pattern: ^2\.\s+Scope
 - name: Mentions 24 hours
   string:
-    contains: "24 hours"
+    contains: 24 hours

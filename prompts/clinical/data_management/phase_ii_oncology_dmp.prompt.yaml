@@ -20,11 +20,9 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a data manager developing a comprehensive data management plan for a
-
+  content: |
+    You are a data manager developing a comprehensive data management plan for a
     Phase II oncology trial.
-
-    '
 - role: user
   content: '{{input}}'
 testData:

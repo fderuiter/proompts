@@ -26,16 +26,18 @@ messages:
     password, login button) and implement public methods (e.g., 'loginValidUser') that return appropriate page objects. Ensure
     the constructor initializes elements using PageFactory.initElements.
 - role: user
-  content: 'Create a POM class for the following page source/spec:
-
+  content: |-
+    Create a POM class for the following page source/spec:
 
     <html_source>
-
     {{html_source}}
-
-    </html_source>'
+    </html_source>
 testData:
-- input: "html_source: |\n  <input id='username'>\n  <input id='password'>\n  <button id='login'>Login</button>"
+- input: |-
+    html_source: |
+      <input id='username'>
+      <input id='password'>
+      <button id='login'>Login</button>
   expected: '@FindBy(id = "username")'
 evaluators:
 - name: Uses FindBy annotation

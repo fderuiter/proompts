@@ -25,25 +25,19 @@ messages:
     descriptions for a ClinicalTrials.gov registration based on the finalized study protocol, ensuring all mandatory fields
     are included per FDAAA 801.
 - role: user
-  content: 'Draft a plain language brief summary and primary outcome measure descriptions for a ClinicalTrials.gov registration
-    based on the finalized study protocol, ensuring all mandatory fields are included.
-
+  content: |-
+    Draft a plain language brief summary and primary outcome measure descriptions for a ClinicalTrials.gov registration based on the finalized study protocol, ensuring all mandatory fields are included.
 
     Inputs:
-
     - `{{protocol_final}}`
 
-
     Output format:
-
-    Markdown Registration Text.'
+    Markdown Registration Text.
 testData:
-- input: 'protocol_final: Phase 1 dose escalation study.
-
-    '
-  expected: 'Brief Summary
-
-    '
+- input: |
+    protocol_final: Phase 1 dose escalation study.
+  expected: |
+    Brief Summary
 evaluators:
 - name: Brief Summary
   string:

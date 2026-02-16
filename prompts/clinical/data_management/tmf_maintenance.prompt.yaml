@@ -24,25 +24,19 @@ messages:
   content: You are a TMF Specialist. Generate a checklist for the Trial Master File (TMF) based on the CDISC TMF Reference
     Model, categorizing documents required before, during, and after the clinical phase to ensure audit readiness.
 - role: user
-  content: 'Generate a checklist for the Trial Master File (TMF) based on the CDISC TMF Reference Model, categorizing documents
-    required before, during, and after the clinical phase to ensure audit readiness.
-
+  content: |-
+    Generate a checklist for the Trial Master File (TMF) based on the CDISC TMF Reference Model, categorizing documents required before, during, and after the clinical phase to ensure audit readiness.
 
     Inputs:
-
     - `{{study_phase}}`
 
-
     Output format:
-
-    Markdown TMF Checklist.'
+    Markdown TMF Checklist.
 testData:
-- input: 'study_phase: Study Start-up.
-
-    '
-  expected: 'TMF Checklist
-
-    '
+- input: |
+    study_phase: Study Start-up.
+  expected: |
+    TMF Checklist
 evaluators:
 - name: CDISC TMF Reference Model
   string:

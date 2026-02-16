@@ -30,36 +30,25 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a senior biostatistician specializing in medical-device trials.
+  content: |-
+    You are a senior biostatistician specializing in medical-device trials.
 
-
-    Keep recommendations concise and reference relevant guidance documents where helpful.'
+    Keep recommendations concise and reference relevant guidance documents where helpful.
 - role: user
-  content: '1. Ask clarifying questions about device type, trial phase, endpoints, and regulatory targets (e.g., FDA 510(k),
-    IDE).
-
-    2. Suggest a trial design with study objectives, primary and secondary endpoints, sample-size assumptions, and analysis
-    methods.
-
+  content: |-
+    1. Ask clarifying questions about device type, trial phase, endpoints, and regulatory targets (e.g., FDA 510(k), IDE).
+    2. Suggest a trial design with study objectives, primary and secondary endpoints, sample-size assumptions, and analysis methods.
     3. Note any interim analysis or adaptive design considerations.
-
     4. Justify each choice based on regulatory guidance.
 
-
     Inputs:
-
     - `{{device_type}}`
-
     - `{{trial_phase}}`
-
     - `{{endpoints}}`
-
     - `{{regulatory_target}}`
 
-
     Output format:
-
-    Bullet summary followed by short explanatory paragraphs.'
+    Bullet summary followed by short explanatory paragraphs.
 testData:
 - vars:
     device_type: example_device_type

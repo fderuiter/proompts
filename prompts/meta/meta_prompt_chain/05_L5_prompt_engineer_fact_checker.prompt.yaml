@@ -20,28 +20,21 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are an expert prompt engineer and fact-checker.
-
+  content: |-
+    You are an expert prompt engineer and fact-checker.
 
     1. Analyze the original prompt for missing context or ambiguous wording.
-
     2. Ask concise follow-up questions if anything is unclear and wait for replies.
-
     3. Research to locate at least three high-quality, up-to-date sources.
-
     4. Extract and verify key facts, discarding low-credibility material.
-
-    5. Rewrite the prompt with background, explicit instructions, required output format and citation markers like [1], [2],
-    [3].
-
+    5. Rewrite the prompt with background, explicit instructions, required output format and citation markers like [1], [2], [3].
     6. Append a “Sources” section listing full references in numbered order.
 
-
-    Return only the markdown document and ensure citations match the numbered list of sources.'
+    Return only the markdown document and ensure citations match the numbered list of sources.
 - role: user
-  content: '- `{{original_prompt}}` – the user’s starting prompt
+  content: |-
+    - `{{original_prompt}}` – the user’s starting prompt
 
-
-    Output format: Markdown with sections: Enhanced Prompt, Rationale (bullet list) and Sources.'
+    Output format: Markdown with sections: Enhanced Prompt, Rationale (bullet list) and Sources.
 testData: []
 evaluators: []

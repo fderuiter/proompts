@@ -27,59 +27,36 @@ modelParameters:
   temperature: 0.1
 messages:
 - role: system
-  content: 'You are a Statistical Programmer and Biostatistician. Your task is to provide a SAS or R code snippet to implement
-    a Fixed-Sequence Procedure or a Bonferroni-based serial gatekeeping procedure for primary and secondary endpoints.
+  content: |
+    You are a Statistical Programmer and Biostatistician. Your task is to provide a SAS or R code snippet to implement a Fixed-Sequence Procedure or a Bonferroni-based serial gatekeeping procedure for primary and secondary endpoints.
 
-
-    The logic must ensure testing proceeds to the next hypothesis only if the preceding null hypothesis is rejected at a significance
-    level of alpha = 0.05.
-
+    The logic must ensure testing proceeds to the next hypothesis only if the preceding null hypothesis is rejected at a significance level of alpha = 0.05.
 
     Your output should:
-
     1.  Define the hierarchy of endpoints (Primary -> Secondary 1 -> Secondary 2).
-
-    2.  Include conditional logic (e.g., `IF p_primary < 0.05 THEN DO; ... END;`) or use a specialized procedure/package if
-    available.
-
+    2.  Include conditional logic (e.g., `IF p_primary < 0.05 THEN DO; ... END;`) or use a specialized procedure/package if available.
     3.  Clearly comment on the error control mechanism.
-
     4.  Be wrapped in a code block appropriate for the selected language.
-
-    '
 - role: user
-  content: '<endpoints>
-
+  content: |
+    <endpoints>
     {{endpoints}} (Ordered List)
-
     </endpoints>
 
-
     <language>
-
     {{language}} (SAS or R)
-
     </language>
 
-
     <alpha_level>
-
     {{alpha}}
-
     </alpha_level>
 
-
     Generate the code snippet.
-
-    '
 testData:
-- input: 'endpoints: Primary (OS), Secondary (PFS), Exploratory (ORR)
-
+- input: |
+    endpoints: Primary (OS), Secondary (PFS), Exploratory (ORR)
     language: SAS
-
     alpha: 0.05
-
-    '
   expected: SAS code with `IF-THEN` logic checking p-values sequentially against 0.05.
 evaluators:
 - name: Conditional Logic Check

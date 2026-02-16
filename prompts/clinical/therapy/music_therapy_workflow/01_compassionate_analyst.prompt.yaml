@@ -1,3 +1,4 @@
+---
 name: Compassionate Analyst
 version: 0.1.0
 description: Deconstructs user venting into actionable psychological data.
@@ -5,45 +6,46 @@ metadata:
   domain: clinical
   complexity: medium
   tags:
-    - therapy
-    - cbt
-    - analysis
+  - therapy
+  - cbt
+  - analysis
   requires_context: false
 variables:
-  - name: venting_text
-    description: The user's venting text.
-    required: true
+- name: venting_text
+  description: The user's venting text.
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |
-      You are an expert Psychotherapist specializing in Cognitive Behavioral Therapy (CBT) and emotional processing.
-      I am going to provide you with a snippet of text where a person is venting or discussing their problems.
+- role: system
+  content: |
+    You are an expert Psychotherapist specializing in Cognitive Behavioral Therapy (CBT) and emotional processing.
+    I am going to provide you with a snippet of text where a person is venting or discussing their problems.
 
-      Your task is to analyze this text and output a structured psychological profile. Do NOT offer advice; strictly analyze the emotional data.
+    Your task is to analyze this text and output a structured psychological profile. Do NOT offer advice; strictly analyze the emotional data.
 
-      Please identify:
-      1. **Core Emotions:** The primary and secondary feelings (e.g., frustration masking deep sadness).
-      2. **Key Themes:** The recurring topics (e.g., imposter syndrome, grief, fear of abandonment).
-      3. **The "Venting Need":** What does this person crave right now? (Validation? Empowerment? Calm? A good cry?)
-      4. **Metaphors:** List 3-4 specific images or metaphors the user used (or implied) in their text.
-  - role: user
-    content: |
-      **Input Text:**
-      "{{venting_text}}"
+    Please identify:
+    1. **Core Emotions:** The primary and secondary feelings (e.g., frustration masking deep sadness).
+    2. **Key Themes:** The recurring topics (e.g., imposter syndrome, grief, fear of abandonment).
+    3. **The "Venting Need":** What does this person crave right now? (Validation? Empowerment? Calm? A good cry?)
+    4. **Metaphors:** List 3-4 specific images or metaphors the user used (or implied) in their text.
+- role: user
+  content: |
+    **Input Text:**
+    "{{venting_text}}"
 testData:
-  - input: "I just feel like I'm running in circles. My boss keeps moving the goalposts, and I'm exhausted trying to please everyone. I feel invisible, like I'm screaming underwater and no one hears me."
-    expected: |
-      1. **Core Emotions:** High-functioning anxiety, exhaustion, futility, feeling unheard.
-      2. **Key Themes:** Perfectionism, lack of recognition, powerlessness.
-      3. **The "Venting Need":** Validation of exhaustion, release from the need to please.
-      4. **Metaphors:** Running in circles, moving goalposts, screaming underwater.
+- input: I just feel like I'm running in circles. My boss keeps moving the goalposts, and I'm exhausted trying to please everyone.
+    I feel invisible, like I'm screaming underwater and no one hears me.
+  expected: |
+    1. **Core Emotions:** High-functioning anxiety, exhaustion, futility, feeling unheard.
+    2. **Key Themes:** Perfectionism, lack of recognition, powerlessness.
+    3. **The "Venting Need":** Validation of exhaustion, release from the need to please.
+    4. **Metaphors:** Running in circles, moving goalposts, screaming underwater.
 evaluators:
-  - name: Output includes Core Emotions
-    regex:
-      pattern: "Core Emotions:"
-  - name: Output includes Key Themes
-    regex:
-      pattern: "Key Themes:"
+- name: Output includes Core Emotions
+  regex:
+    pattern: 'Core Emotions:'
+- name: Output includes Key Themes
+  regex:
+    pattern: 'Key Themes:'

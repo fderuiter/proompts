@@ -20,18 +20,15 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a quality engineer establishing validation checks for clinical ETL
-
+  content: |
+    You are a quality engineer establishing validation checks for clinical ETL
     transformations.
-
-    '
 - role: user
-  content: 'Here is the ETL mapping specification:
-
+  content: |-
+    Here is the ETL mapping specification:
     {{etl_mapping_spec}}
 
-
-    Based on this specification, define a comprehensive set of quality checks for the clinical ETL transformations.'
+    Based on this specification, define a comprehensive set of quality checks for the clinical ETL transformations.
 testData:
 - input: List QC checks for transforming lab results data.
   expected: Mentions range validations and format consistency.

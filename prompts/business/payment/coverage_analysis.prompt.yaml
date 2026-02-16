@@ -23,25 +23,19 @@ messages:
   content: You are a Reimbursement Analyst. Compare the study protocol's schedule of events with Medicare routine care guidelines
     to determine which labs should be billed to the research account vs. patient insurance. Adhere to Medicare NCD 310.1.
 - role: user
-  content: 'Compare the study protocol''s schedule of events with Medicare routine care guidelines to determine which labs
-    should be billed to the research account vs. patient insurance.
-
+  content: |-
+    Compare the study protocol's schedule of events with Medicare routine care guidelines to determine which labs should be billed to the research account vs. patient insurance.
 
     Inputs:
-
     - `{{schedule_of_events}}`
 
-
     Output format:
-
-    Markdown Coverage Analysis Matrix.'
+    Markdown Coverage Analysis Matrix.
 testData:
-- input: 'schedule_of_events: Routine CBC and Chemistry.
-
-    '
-  expected: 'Coverage Analysis
-
-    '
+- input: |
+    schedule_of_events: Routine CBC and Chemistry.
+  expected: |
+    Coverage Analysis
 evaluators:
 - name: Billing Justification
   string:

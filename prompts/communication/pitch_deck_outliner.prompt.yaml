@@ -18,45 +18,32 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'The deck should highlight key points visually and keep wording short.
-
+  content: |-
+    The deck should highlight key points visually and keep wording short.
 
     <!-- markdownlint-disable MD029 -->
 
-
     1. Provide eight slide titles with bullet content (≤ 12 words each).
-
     2. Suggest a visual cue (icon or chart) for the two most critical slides.
-
     3. Note the single success metric to emphasize.
-
     4. Cap total output at 120 words.
 
-
-    Prioritize clarity and brevity for fast pitching.'
+    Prioritize clarity and brevity for fast pitching.
 - role: user
   content: '{{input}}'
 testData:
 - input: Time-tracking app for freelancers
-  expected: 'Slide 1: Problem – freelancers lose billable hours.
-
+  expected: |-
+    Slide 1: Problem – freelancers lose billable hours.
     Slide 2: Solution – simple timer.
-
     Slide 3: Market size.
-
     Slide 4: Business model.
-
     Slide 5: Traction.
-
     Slide 6: Competition.
-
     Slide 7: Team.
-
     Slide 8: Ask.
-
     Visual cues: clock icon on slides 1 and 2.
-
-    Success metric: daily active users.'
+    Success metric: daily active users.
 evaluators:
 - name: Output notes success metric
   string:

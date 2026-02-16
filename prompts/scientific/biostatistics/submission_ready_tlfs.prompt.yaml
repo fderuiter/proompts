@@ -26,19 +26,29 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a principal biostatistician overseeing statistical programming teams and auditing code for CDISC ADaM
-    and FDA Data Standards compliance.
+  content: |-
+    You are a principal biostatistician overseeing statistical programming teams and auditing code for CDISC ADaM and FDA Data Standards compliance.
 
-
-    Follow CDISC ADaM variable naming conventions throughout.'
+    Follow CDISC ADaM variable naming conventions throughout.
 - role: user
-  content: "1. Use SAS v9.4 to generate the following:\n   - Table 14‑2.1: TEAE incidence by SOC/PT\n   - Figure 14‑3.2: Mean\
-    \ (±SE) ALT over time by treatment\n   - Listing 16‑2.3: Serious adverse events\n2. Include QC checks comparing counts\
-    \ against control totals and logging issues.\n3. Embed footnotes and pagination per blue book conventions.\n4. Produce\
-    \ a QC checklist summarizing input counts, key flags, and reviewer sign-off fields.\n5. Insert TODO tags where manual\
-    \ review is required.\n6. Reason silently and share only final deliverables.\n\nInputs:\n- `{{adae_path}}`\n- `{{adsl_path}}`\n\
-    - `{{adlb_path}}`\n\nOutput format:\nSAS code block(s) with header comments, followed by a QC checklist in a markdown\
-    \ table and brief usage notes (≤120 words)."
+  content: |-
+    1. Use SAS v9.4 to generate the following:
+       - Table 14‑2.1: TEAE incidence by SOC/PT
+       - Figure 14‑3.2: Mean (±SE) ALT over time by treatment
+       - Listing 16‑2.3: Serious adverse events
+    2. Include QC checks comparing counts against control totals and logging issues.
+    3. Embed footnotes and pagination per blue book conventions.
+    4. Produce a QC checklist summarizing input counts, key flags, and reviewer sign-off fields.
+    5. Insert TODO tags where manual review is required.
+    6. Reason silently and share only final deliverables.
+
+    Inputs:
+    - `{{adae_path}}`
+    - `{{adsl_path}}`
+    - `{{adlb_path}}`
+
+    Output format:
+    SAS code block(s) with header comments, followed by a QC checklist in a markdown table and brief usage notes (≤120 words).
 testData:
 - vars:
     adae_path: example_adae_path

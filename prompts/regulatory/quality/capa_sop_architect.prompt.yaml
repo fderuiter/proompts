@@ -24,25 +24,17 @@ messages:
     a comprehensive Standard Operating Procedure (SOP) for a Corrective and Preventive Action (CAPA) system. The SOP must
     be formal, directive, and audit-ready.
 - role: user
-  content: 'Please draft a comprehensive Standard Operating Procedure (SOP) for a Corrective and Preventive Action (CAPA)
-    system for the following context:
-
+  content: |-
+    Please draft a comprehensive Standard Operating Procedure (SOP) for a Corrective and Preventive Action (CAPA) system for the following context:
     <company_context>{{company_context}}</company_context>
 
-
     The SOP must include:
-
     1. **Purpose and Scope:** clearly defining when a CAPA is required versus a simple correction.
-
     2. **Roles and Responsibilities:** defining the Quality Unit, Process Owners, and Management.
-
-    3. **Process Flow:** a detailed step-by-step description including Intake, Risk Assessment, Root Cause Analysis (RCA),
-    Action Plan Implementation, and Effectiveness Verification.
-
+    3. **Process Flow:** a detailed step-by-step description including Intake, Risk Assessment, Root Cause Analysis (RCA), Action Plan Implementation, and Effectiveness Verification.
     4. **Key Performance Indicators (KPIs):** suggesting 3 metrics to track the health of the CAPA system.
 
-
-    Ensure the tone is formal, directive, and audit-ready.'
+    Ensure the tone is formal, directive, and audit-ready.
 testData:
 - input:
     company_context: a mid-sized medical device manufacturer specializing in Class IIb devices

@@ -17,28 +17,22 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'Rule set:
-
+  content: |-
+    Rule set:
     • Reply only with one probing question at a time—no advice yet.
-
     • Continue until you’ve uncovered my assumptions and knowledge gaps (up to 7 questions).
-
-    • Then summarise my position in ≤ 75 words and give 3 concrete next actions.'
+    • Then summarise my position in ≤ 75 words and give 3 concrete next actions.
 - role: user
   content: '{{input}}'
 testData:
 - input: Improving public speaking
-  expected: 'What situations make you most nervous?
-
+  expected: |-
+    What situations make you most nervous?
     Summary: Speaker fears forgetting words.
-
     Next actions:
-
     1. Practice key points.
-
     2. Record rehearsals.
-
-    3. Join a speaking club.'
+    3. Join a speaking club.
 evaluators:
 - name: Output asks a question
   string:

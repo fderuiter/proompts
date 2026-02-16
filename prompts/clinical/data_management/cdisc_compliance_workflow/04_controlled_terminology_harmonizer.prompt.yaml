@@ -6,59 +6,59 @@ metadata:
   domain: clinical
   complexity: low
   tags:
-    - cdisc
-    - controlled-terminology
-    - data-cleaning
-    - harmonization
-    - nci
+  - cdisc
+  - controlled-terminology
+  - data-cleaning
+  - harmonization
+  - nci
   requires_context: true
 variables:
-  - name: value_list
-    description: A list of values to standardize.
-    required: true
+- name: value_list
+  description: A list of values to standardize.
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.1
 messages:
-  - role: system
-    content: |
-      You are a Clinical Data Cleaner.
+- role: system
+  content: |
+    You are a Clinical Data Cleaner.
 
-      Task: Standardize the provided list of "Unit" values to CDISC Controlled Terminology (Code List: UNIT).
+    Task: Standardize the provided list of "Unit" values to CDISC Controlled Terminology (Code List: UNIT).
 
-      Rules:
-      1.  Convert synonyms to the standard NCI Preferred Term.
-      2.  Standardize capitalization (all uppercase).
-      3.  If a unit is ambiguous (e.g., "mg/dL" vs "g/L"), flag it as "AMBIGUOUS".
+    Rules:
+    1.  Convert synonyms to the standard NCI Preferred Term.
+    2.  Standardize capitalization (all uppercase).
+    3.  If a unit is ambiguous (e.g., "mg/dL" vs "g/L"), flag it as "AMBIGUOUS".
 
-      Mapping Examples:
-      - "beat per minute" -> "BEATS/MIN"
-      - "percent" -> "%"
-      - "lbs" -> "LB"
+    Mapping Examples:
+    - "beat per minute" -> "BEATS/MIN"
+    - "percent" -> "%"
+    - "lbs" -> "LB"
 
-      Output (JSON):
-      {
-        "original_value": "STANDARDIZED_VALUE"
-      }
-  - role: user
-    content: |
-      **Input List:**
-      {{value_list}}
+    Output (JSON):
+    {
+      "original_value": "STANDARDIZED_VALUE"
+    }
+- role: user
+  content: |
+    **Input List:**
+    {{value_list}}
 testData:
-  - input: |
-      value_list: [ "bpm", "beats/min", "Degrees C", "Fahrenheit", "cells/uL" ]
-    expected: |
-      {
-        "bpm": "BEATS/MIN",
-        "beats/min": "BEATS/MIN",
-        "Degrees C": "C",
-        "Fahrenheit": "F",
-        "cells/uL": "AMBIGUOUS - Verify specific cell type unit"
-      }
+- input: |
+    value_list: [ "bpm", "beats/min", "Degrees C", "Fahrenheit", "cells/uL" ]
+  expected: |
+    {
+      "bpm": "BEATS/MIN",
+      "beats/min": "BEATS/MIN",
+      "Degrees C": "C",
+      "Fahrenheit": "F",
+      "cells/uL": "AMBIGUOUS - Verify specific cell type unit"
+    }
 evaluators:
-  - name: Output is JSON
-    regex:
-      pattern: (?s)^\{.*\}$
-  - name: Contains Standardized Units
-    regex:
-      pattern: (?i)(BEATS/MIN|LB)
+- name: Output is JSON
+  regex:
+    pattern: (?s)^\{.*\}$
+- name: Contains Standardized Units
+  regex:
+    pattern: (?i)(BEATS/MIN|LB)

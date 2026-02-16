@@ -32,37 +32,25 @@ messages:
   content: You are a Clinical Data Manager/Designer. Analyze the draft CRF layout to identify redundant or non-essential fields
     based on the study hypothesis and suggest improvements to reduce entry errors and site burden. Adhere to ICH GCP E6(R2).
 - role: user
-  content: 'Analyze the draft CRF layout to identify redundant or non-essential fields based on the study hypothesis and suggest
-    improvements to reduce entry errors and site burden.
-
+  content: |-
+    Analyze the draft CRF layout to identify redundant or non-essential fields based on the study hypothesis and suggest improvements to reduce entry errors and site burden.
 
     Inputs:
-
     - CRF Draft: `{{crf_draft}}`
-
     - Study Protocol: `{{protocol}}`
-
     - Safety and efficacy endpoints: `{{endpoints}}`
-
     - Study Hypothesis: `{{hypothesis}}`
 
-
     Output format:
-
-    Markdown Optimization Report (Field | Issue | Recommendation).'
+    Markdown Optimization Report (Field | Issue | Recommendation).
 testData:
-- input: 'crf_draft: "Field: Height (cm) at Visit 1 and Visit 2."
-
+- input: |
+    crf_draft: "Field: Height (cm) at Visit 1 and Visit 2."
     protocol: "Height only needed at baseline."
-
     endpoints: "Weight change."
-
     hypothesis: "Drug reduces weight."
-
-    '
-  expected: '| Field | Issue | Recommendation |
-
-    '
+  expected: |
+    | Field | Issue | Recommendation |
 evaluators:
 - name: Optimization Table
   string:

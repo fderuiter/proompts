@@ -67,16 +67,16 @@ messages:
     - Markdown table with one row per role showing gaps and recommendations.
     - 200‑word executive summary.
 testData:
-  - variables:
-      cro_name: "Acme Clinical Research"
-      headcount_data: |
-        Role,Current_Headcount,Projected_Need_Q1,Projected_Need_Q2,Turnover_Rate
-        CRA,50,55,60,15%
-        Project_Manager,20,22,25,10%
-        Data_Manager,15,15,15,5%
-      salary_benchmarks: |
-        Role,Min_Salary,Max_Salary,Market_Average
-        CRA,80000,120000,100000
-        Project_Manager,110000,160000,135000
-        Data_Manager,75000,110000,90000
+- variables:
+    cro_name: Acme Clinical Research
+    headcount_data: |
+      Role,Current_Headcount,Projected_Need_Q1,Projected_Need_Q2,Turnover_Rate
+      CRA,50,55,60,15%
+      Project_Manager,20,22,25,10%
+      Data_Manager,15,15,15,5%
+    salary_benchmarks: |
+      Role,Min_Salary,Max_Salary,Market_Average
+      CRA,80000,120000,100000
+      Project_Manager,110000,160000,135000
+      Data_Manager,75000,110000,90000
 evaluators: []

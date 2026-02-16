@@ -24,25 +24,19 @@ messages:
   content: You are a Clinical Operations Strategist. Generate a Diversity Action Plan that specifies enrollment goals for
     underrepresented racial and ethnic groups as required by FDA guidance, based on the epidemiology of the target indication.
 - role: user
-  content: 'Generate a Diversity Action Plan that specifies enrollment goals for underrepresented racial and ethnic groups
-    as required by FDA guidance, based on the epidemiology of the target indication.
-
+  content: |-
+    Generate a Diversity Action Plan that specifies enrollment goals for underrepresented racial and ethnic groups as required by FDA guidance, based on the epidemiology of the target indication.
 
     Inputs:
-
     - `{{epidemiology_data}}`
 
-
     Output format:
-
-    Markdown Diversity Action Plan.'
+    Markdown Diversity Action Plan.
 testData:
-- input: 'epidemiology_data: Hypertension prevalence by race.
-
-    '
-  expected: 'Diversity Action Plan
-
-    '
+- input: |
+    epidemiology_data: Hypertension prevalence by race.
+  expected: |
+    Diversity Action Plan
 evaluators:
 - name: Enrollment Goals
   string:

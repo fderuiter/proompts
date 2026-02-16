@@ -34,30 +34,22 @@ messages:
     margins. I need a 12-quarter cash-flow forecast under three scenarios (Base, +15% cost inflation, –20% patient-recruitment
     pace).
 - role: user
-  content: '- `{{base_revenue}}` – baseline quarterly revenue (USD).
-
+  content: |-
+    - `{{base_revenue}}` – baseline quarterly revenue (USD).
     - `{{base_costs}}` – baseline quarterly costs (USD).
-
     - `{{starting_cash}}` – cash on hand at start (USD).
-
     - `{{notes}}` – assumptions or upcoming events.
 
-
     Start the response with **Scenario Forecast -**.
-
     Output format:
-
     1. Markdown table showing Base, Inflation, and Slow-Recruitment scenarios for 12 quarters with net and ending cash.
-
-    2. Two bullet-point insights on liquidity risks or funding needs.'
+    2. Two bullet-point insights on liquidity risks or funding needs.
 testData:
-- input: 'base_revenue: 20000000
-
+- input: |-
+    base_revenue: 20000000
     base_costs: 15000000
-
     starting_cash: 50000000
-
-    notes: none'
+    notes: none
   expected: Scenario Forecast -
 evaluators:
 - name: Output should start with 'Scenario Forecast -'

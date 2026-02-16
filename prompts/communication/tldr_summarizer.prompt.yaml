@@ -17,20 +17,18 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'Give me a TL;DR in exactly three bullet points (≤ 15 words each).
-
-    After the bullets, add one actionable next step I could take in ≤ 20 words.'
+  content: |-
+    Give me a TL;DR in exactly three bullet points (≤ 15 words each).
+    After the bullets, add one actionable next step I could take in ≤ 20 words.
 - role: user
   content: '{{input}}'
 testData:
 - input: Eating vegetables boosts health and energy.
-  expected: '- Veggies give vitamins.
-
+  expected: |-
+    - Veggies give vitamins.
     - Energy rises with greens.
-
     - Health improves daily.
-
-    Next step: Add a salad to meals.'
+    Next step: Add a salad to meals.
 evaluators:
 - name: Output lists next step
   string:

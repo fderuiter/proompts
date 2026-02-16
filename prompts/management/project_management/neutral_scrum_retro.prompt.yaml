@@ -20,30 +20,22 @@ messages:
 - role: system
   content: The team meets online.
 - role: user
-  content: '1. Provide five ice-breaker questions.
-
+  content: |-
+    1. Provide five ice-breaker questions.
     1. Present a Start / Stop / Continue board with placeholder bullets.
-
     1. Offer two probing questions per category.
-
     1. Describe a 10-minute closing ritual that locks concrete action items.
-
     1. Label sections with markdown headers and keep the response under 120 words.
 
-
     Inputs:
-
     None.
 
-
     Output Format:
-
-    Markdown with headers for each section.'
+    Markdown with headers for each section.
 testData:
 - vars: {}
-  expected: 'Markdown sections for ice breakers, Start/Stop/Continue board, probing questions, and closing ritual.
-
-    '
+  expected: |
+    Markdown sections for ice breakers, Start/Stop/Continue board, probing questions, and closing ritual.
 evaluators:
 - name: Contains Start/Stop/Continue board
   string:

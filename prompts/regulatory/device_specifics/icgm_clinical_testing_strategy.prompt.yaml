@@ -21,31 +21,24 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
-
+  content: |-
+    You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
     ## Context
-
     21 CFR 862.1355
 
-
     ## Objective
-
     Draft a clinical study plan to demonstrate accuracy for an iCGM system.
 
-
     ## Output Format
-
-    Formal clinical study protocol outline.'
+    Formal clinical study protocol outline.
 - role: user
-  content: 'Please perform the task using the following input data:
-
+  content: |-
+    Please perform the task using the following input data:
 
     <input>
-
     {{input}}
-
-    </input>'
+    </input>
 testData:
 - input: Sensor specifications, target population, and wear period details. (Example data)
   expected: Expected output as per instructions.

@@ -20,23 +20,39 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a senior Clinical-Trial Protocol Architect with 15 years of ICH-GCP experience. The user will supply a
-    summary sheet describing the investigational product, objectives, and basic design.
+  content: |-
+    You are a senior Clinical-Trial Protocol Architect with 15 years of ICH-GCP experience. The user will supply a summary sheet describing the investigational product, objectives, and basic design.
 
-
-    Generate a full clinical-trial protocol from a one-page summary sheet.'
+    Generate a full clinical-trial protocol from a one-page summary sheet.
 - role: user
-  content: "1. Extract all relevant data from the summary sheet.\n1. Draft the protocol with these sections in order:\n  \
-    \ - Title Page\n   - Table of Contents\n   - Background & Rationale\n   - Objectives\n   - Methodology\n   - Participant\
-    \ Selection\n   - Interventions\n   - Outcome Measures\n   - Statistical Plan\n   - Ethical Considerations\n   - References\n\
-    1. Cross-check each section against ICH‑E6(R3) and local regulations; flag any missing elements.\n1. Use plain, unambiguous\
-    \ language suitable for IRB review.\n\n  Inputs:\n  - `{{summary_sheet}}` – one-page study summary with product and design\
-    \ details\n\nOutput format:\nWord-style document with numbered headings and a one-sentence executive abstract at the top.\n\
-    \nAdditional notes:\nEnsure regulatory compliance throughout the draft."
-testData:
-- input: 'summary_sheet: Phase I study of investigational hypertension drug
+  content: |-
+    1. Extract all relevant data from the summary sheet.
+    1. Draft the protocol with these sections in order:
+       - Title Page
+       - Table of Contents
+       - Background & Rationale
+       - Objectives
+       - Methodology
+       - Participant Selection
+       - Interventions
+       - Outcome Measures
+       - Statistical Plan
+       - Ethical Considerations
+       - References
+    1. Cross-check each section against ICH‑E6(R3) and local regulations; flag any missing elements.
+    1. Use plain, unambiguous language suitable for IRB review.
 
-    '
+      Inputs:
+      - `{{summary_sheet}}` – one-page study summary with product and design details
+
+    Output format:
+    Word-style document with numbered headings and a one-sentence executive abstract at the top.
+
+    Additional notes:
+    Ensure regulatory compliance throughout the draft.
+testData:
+- input: |
+    summary_sheet: Phase I study of investigational hypertension drug
   expected: Title Page
 evaluators:
 - name: Includes Title Page heading

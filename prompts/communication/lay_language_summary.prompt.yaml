@@ -23,25 +23,19 @@ messages:
   content: You are a Patient Advocacy Liaison. Summarize the technical results of this Phase III clinical trial into a lay
     language summary at a US 8th-grade reading level, ensuring all 10 key elements required by EU CTR Annex V are included.
 - role: user
-  content: 'Summarize the technical results of this Phase III clinical trial into a lay language summary at a US 8th-grade
-    reading level, ensuring all 10 key elements required by EU CTR Annex V are included.
-
+  content: |-
+    Summarize the technical results of this Phase III clinical trial into a lay language summary at a US 8th-grade reading level, ensuring all 10 key elements required by EU CTR Annex V are included.
 
     Inputs:
-
     - `{{technical_results}}`
 
-
     Output format:
-
-    Markdown Lay Summary.'
+    Markdown Lay Summary.
 testData:
-- input: 'technical_results: Primary endpoint met with p<0.05.
-
-    '
-  expected: 'Lay Summary
-
-    '
+- input: |
+    technical_results: Primary endpoint met with p<0.05.
+  expected: |
+    Lay Summary
 evaluators:
 - name: 8th-grade reading level
   string:

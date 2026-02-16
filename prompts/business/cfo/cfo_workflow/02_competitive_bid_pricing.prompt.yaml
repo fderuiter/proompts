@@ -32,30 +32,22 @@ messages:
 - role: system
   content: Act as my strategic pricing manager. We are bidding on a multi-year oncology study against two top-10 CROs.
 - role: user
-  content: '- `{{competitor_bids}}` – list of competitor prices (USD).
-
+  content: |-
+    - `{{competitor_bids}}` – list of competitor prices (USD).
     - `{{internal_cost}}` – our estimated delivery cost (USD).
-
     - `{{target_margin}}` – desired profit margin percentage.
-
     - `{{volume_adjustments}}` – optional volume or scope notes.
 
-
     Start the response with **Bid Analysis -**.
-
     Output format:
-
     1. Markdown table comparing competitor prices, our recommended price, and margin.
-
-    2. Three bullet-point justification notes on win strategy.'
+    2. Three bullet-point justification notes on win strategy.
 testData:
-- input: 'competitor_bids: [1000000, 1100000]
-
+- input: |-
+    competitor_bids: [1000000, 1100000]
     internal_cost: 850000
-
     target_margin: 0.2
-
-    volume_adjustments: none'
+    volume_adjustments: none
   expected: Bid Analysis -
 evaluators:
 - name: Output should start with 'Bid Analysis -'

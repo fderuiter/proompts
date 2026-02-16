@@ -21,27 +21,22 @@ modelParameters:
   temperature: 0.7
 messages:
 - role: system
-  content: 'The caller supplies `{{complex_topic}}`. The reply must stay under 120 words.
-
+  content: |-
+    The caller supplies `{{complex_topic}}`. The reply must stay under 120 words.
 
     1. Create three analogies linking everyday objects to `{{complex_topic}}`.
-
     2. **Bold** each object and map its parts to the concept in 40 words or fewer.
-
-    3. Provide one real-life scenario showing the analogy''s usefulness.
-
-    4. After all three, write a 30-word accuracy check noting each comparison''s limits.'
+    3. Provide one real-life scenario showing the analogy's usefulness.
+    4. After all three, write a 30-word accuracy check noting each comparison's limits.
 - role: user
   content: '{{input}}'
 testData:
 - input: Blockchain
-  expected: '1. **Ledger** like a shared notebook; each entry is a block.
-
+  expected: |-
+    1. **Ledger** like a shared notebook; each entry is a block.
     2. **Chain** like linked train cars; break one and records stop.
-
     3. **Vault** like a bank safe with codes.
-
-    Accuracy check: Analogies omit technical complexity.'
+    Accuracy check: Analogies omit technical complexity.
 evaluators:
 - name: Output uses bold analogies
   string:

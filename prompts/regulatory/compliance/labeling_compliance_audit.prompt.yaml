@@ -19,31 +19,24 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
-
+  content: |-
+    You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
     ## Context
-
     21 CFR Part 801
 
-
     ## Objective
-
     Audit device labeling for compliance with mandatory elements (Manufacturer, UDI, date formats).
 
-
     ## Output Format
-
-    Gap analysis report.'
+    Gap analysis report.
 - role: user
-  content: 'Please perform the task using the following input data:
-
+  content: |-
+    Please perform the task using the following input data:
 
     <input>
-
     {{input}}
-
-    </input>'
+    </input>
 testData:
 - input: Product labels, symbols glossary, and 21 CFR 801 text. (Example data)
   expected: Expected output as per instructions.

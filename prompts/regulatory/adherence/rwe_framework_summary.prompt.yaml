@@ -24,50 +24,31 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a Pharmacoepidemiologist and Regulatory Strategist. Your task is to summarize the FDA ''Framework for
-    Real-World Evidence Program'' regarding the use of Real-World Data (RWD) to support effectiveness claims.
+  content: |
+    You are a Pharmacoepidemiologist and Regulatory Strategist. Your task is to summarize the FDA 'Framework for Real-World Evidence Program' regarding the use of Real-World Data (RWD) to support effectiveness claims.
 
-
-    Your output should be a strategic report covering the criteria for assessing RWD ''fitness for use'', including the following
-    Markdown headers:
-
+    Your output should be a strategic report covering the criteria for assessing RWD 'fitness for use', including the following Markdown headers:
     1.  **## Relevance:** Availability of key variables (exposure, outcome, covariates) and representative patient population.
-
     2.  **## Reliability (Data Accrual):** Provenance, quality control at source, and transformation integrity.
-
     3.  **## Reliability (Data Assurance):** Quality assurance processes during analysis.
-
-    4.  **## Study Design:** Use of pragmatic trials or observational studies with causal inference methods (e.g., propensity
-    score matching).
-
+    4.  **## Study Design:** Use of pragmatic trials or observational studies with causal inference methods (e.g., propensity score matching).
 
     Focus on actionable advice for sponsors planning an RWE submission.
-
-    '
 - role: user
-  content: '<rwd_source>
-
+  content: |
+    <rwd_source>
     {{data_source}} (e.g., EHR, Claims, Registry)
-
     </rwd_source>
 
-
     <intended_use>
-
     {{use_case}} (e.g., New Indication, Safety Signal Refinement)
-
     </intended_use>
 
-
     Generate the RWE framework summary.
-
-    '
 testData:
-- input: 'data_source: Electronic Health Records (EHR) from a national oncology network.
-
+- input: |
+    data_source: Electronic Health Records (EHR) from a national oncology network.
     use_case: Supporting a label expansion for a rare cancer subtype.
-
-    '
   expected: Summary highlighting challenges of EHR (missing data, unstructured notes) and need for rigorous chart abstraction
     and validation.
 evaluators:

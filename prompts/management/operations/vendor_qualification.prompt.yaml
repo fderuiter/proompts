@@ -23,25 +23,19 @@ messages:
   content: You are a Vendor Manager. Develop a Vendor Oversight Plan for a CRO managing monitoring services, including five
     key performance indicators for quality tracking and a review of the transfer of sponsor obligations.
 - role: user
-  content: 'Develop a Vendor Oversight Plan for a CRO managing monitoring services, including five key performance indicators
-    for quality tracking and a review of the transfer of sponsor obligations.
-
+  content: |-
+    Develop a Vendor Oversight Plan for a CRO managing monitoring services, including five key performance indicators for quality tracking and a review of the transfer of sponsor obligations.
 
     Inputs:
-
     - `{{vendor_details}}`
 
-
     Output format:
-
-    Markdown Vendor Oversight Plan.'
+    Markdown Vendor Oversight Plan.
 testData:
-- input: 'vendor_details: CRO providing monitoring services.
-
-    '
-  expected: 'Vendor Oversight Plan
-
-    '
+- input: |
+    vendor_details: CRO providing monitoring services.
+  expected: |
+    Vendor Oversight Plan
 evaluators:
 - name: Key Performance Indicators
   string:

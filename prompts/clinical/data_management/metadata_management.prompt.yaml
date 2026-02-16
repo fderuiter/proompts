@@ -25,29 +25,21 @@ messages:
   content: You are a Metadata Manager. Establish and maintain a centralized repository for metadata reuse across multiple
     clinical studies. Adhere to CDISC / GxP.
 - role: user
-  content: 'Extract standardized metadata from this previously approved study and store it in the Metadata Repository for
-    reuse in the upcoming Phase III trial to ensure cross-study consistency.
-
+  content: |-
+    Extract standardized metadata from this previously approved study and store it in the Metadata Repository for reuse in the upcoming Phase III trial to ensure cross-study consistency.
 
     Inputs:
-
     - Standard CRF Templates: `{{crf_templates}}`
-
     - Metadata Repository (MDR) Schema: `{{mdr_schema}}`
 
-
     Output format:
-
-    Markdown Metadata Definition JSON/Table.'
+    Markdown Metadata Definition JSON/Table.
 testData:
-- input: 'crf_templates: "VS Form: Height (cm), Weight (kg)"
-
+- input: |
+    crf_templates: "VS Form: Height (cm), Weight (kg)"
     mdr_schema: "Field Name, Label, Unit, Type"
-
-    '
-  expected: '| Field Name | Label | Unit | Type |
-
-    '
+  expected: |
+    | Field Name | Label | Unit | Type |
 evaluators:
 - name: Metadata Table
   string:

@@ -21,11 +21,9 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a cost-optimization strategist using structured tree-of-thought
-
+  content: |
+    You are a cost-optimization strategist using structured tree-of-thought
     reasoning to reduce hosting expenses.
-
-    '
 - role: user
   content: '{{input}}'
 testData:

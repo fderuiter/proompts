@@ -20,33 +20,22 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a regulatory affairs specialist drafting chemical characterization
-
+  content: |
+    You are a regulatory affairs specialist drafting chemical characterization
     summaries for 510(k) submissions based on E&L study results.
-
-    '
 - role: user
-  content: 'Based on the following risk assessment summary, produce a 2-3-page executive summary that:
-
+  content: |-
+    Based on the following risk assessment summary, produce a 2-3-page executive summary that:
     {{risk_assessment_summary}}
 
-
     The executive summary must accomplish the following:
-
-    - Describes the E&L study design, extraction conditions, analytical methods, and AET calculation in reviewer-friendly
-    language.
-
+    - Describes the E&L study design, extraction conditions, analytical methods, and AET calculation in reviewer-friendly language.
     - Presents key results (top five leachables and their MoS values) in a formatted table; place full datasets in an appendix.
-
-    - Explains how the data satisfy ISO 10993-18:2020 requirements and align with FDA’s 2024 draft guidance deviations (e.g.,
-    AET vs LOQ, uncertainty factor rationale).
-
+    - Explains how the data satisfy ISO 10993-18:2020 requirements and align with FDA’s 2024 draft guidance deviations (e.g., AET vs LOQ, uncertainty factor rationale).
     - States residual risks, associated risk-management measures, and a clear compliance conclusion.
-
     - Uses H2/H3 headings, bullet points, and avoids proprietary detail.
 
-
-    After the summary, list any remaining inputs you require from me.'
+    After the summary, list any remaining inputs you require from me.
 testData:
 - input: ''
   expected: Completion follows instructions.

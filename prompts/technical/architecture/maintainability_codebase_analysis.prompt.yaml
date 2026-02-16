@@ -22,9 +22,9 @@ messages:
 - role: system
   content: You are a code reviewer focused on maintainability and long-term sustainability.
 - role: user
-  content: 'Review the following codebase and propose changes to enhance readability, organisation, and test coverage.
+  content: |-
+    Review the following codebase and propose changes to enhance readability, organisation, and test coverage.
 
-
-    {{codebase}}'
+    {{codebase}}
 testData: []
 evaluators: []

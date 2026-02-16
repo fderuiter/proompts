@@ -20,11 +20,9 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a clinical data manager standardizing and cleansing clinical trial
-
+  content: |
+    You are a clinical data manager standardizing and cleansing clinical trial
     datasets across sources.
-
-    '
 - role: user
   content: '{{input}}'
 testData:
