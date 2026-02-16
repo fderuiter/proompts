@@ -39,6 +39,9 @@ pip install -r requirements.txt
     - [`search_prompts.py`](#search_promptspy)
     - [`update_last_modified.py`](#update_last_modifiedpy)
     - [`standardize_c_prompts.py`](#standardize_c_promptspy)
+    - [`migrate_prompts.py`](#migrate_promptspy)
+    - [`enrich_prompts.py`](#enrich_promptspy)
+    - [`generate_regulatory_prompts.py`](#generate_regulatory_promptspy)
   - [Shared Libraries](#shared-libraries)
     - [`utils.py`](#utilspy)
 
@@ -258,6 +261,47 @@ Enforces standard fields (`purpose`, `context`, `instructions`, etc.) on prompts
 
 ```bash
 python3 tools/scripts/standardize_c_prompts.py
+```
+
+### `migrate_prompts.py`
+
+Migrates existing prompt YAML files to the new schema by adding `version` and `variables` fields if they are missing.
+
+**Usage:**
+
+```bash
+# Migrate all prompts
+python3 tools/scripts/migrate_prompts.py
+
+# Dry run to see what would change
+python3 tools/scripts/migrate_prompts.py --dry-run
+```
+
+### `enrich_prompts.py`
+
+Enriches prompt YAML files with meaningful variable descriptions and metadata (domain, complexity, tags, requires_context) based on the file path and content.
+
+**Usage:**
+
+```bash
+# Enrich all prompts
+python3 tools/scripts/enrich_prompts.py
+
+# Enrich a specific file
+python3 tools/scripts/enrich_prompts.py --file prompts/my_prompt.prompt.yaml
+
+# Dry run
+python3 tools/scripts/enrich_prompts.py --dry-run
+```
+
+### `generate_regulatory_prompts.py`
+
+Generates regulatory prompts based on a predefined list of tasks. Creates prompt files in the appropriate directories under `prompts/regulatory/`.
+
+**Usage:**
+
+```bash
+python3 tools/scripts/generate_regulatory_prompts.py
 ```
 
 ## Shared Libraries
