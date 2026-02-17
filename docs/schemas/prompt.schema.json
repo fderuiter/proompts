@@ -1,0 +1,270 @@
+{
+  "$defs": {
+    "ComplexityLevel": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "title": "ComplexityLevel",
+      "type": "string"
+    },
+    "InputVariable": {
+      "properties": {
+        "name": {
+          "description": "The name of the variable as used in the template (e.g., 'input_text').",
+          "title": "Name",
+          "type": "string"
+        },
+        "description": {
+          "description": "A description of what this variable represents.",
+          "title": "Description",
+          "type": "string"
+        },
+        "required": {
+          "default": true,
+          "description": "Whether this variable is mandatory.",
+          "title": "Required",
+          "type": "boolean"
+        },
+        "default": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "A default value for the variable if not provided.",
+          "title": "Default"
+        }
+      },
+      "required": [
+        "name",
+        "description"
+      ],
+      "title": "InputVariable",
+      "type": "object"
+    },
+    "Message": {
+      "properties": {
+        "role": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The role of the message sender (e.g., 'system', 'user', 'assistant').",
+          "title": "Role"
+        },
+        "content": {
+          "description": "The content of the message. Can contain Jinja2 variables like {{var}}.",
+          "title": "Content",
+          "type": "string"
+        }
+      },
+      "required": [
+        "content"
+      ],
+      "title": "Message",
+      "type": "object"
+    },
+    "ModelParameters": {
+      "properties": {
+        "temperature": {
+          "description": "The temperature parameter for the model, controlling randomness (0.0 to 1.0).",
+          "title": "Temperature",
+          "type": "number"
+        },
+        "max_tokens": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The maximum number of tokens to generate.",
+          "title": "Max Tokens"
+        },
+        "top_p": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The nucleus sampling probability.",
+          "title": "Top P"
+        },
+        "frequency_penalty": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The frequency penalty parameter.",
+          "title": "Frequency Penalty"
+        },
+        "presence_penalty": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The presence penalty parameter.",
+          "title": "Presence Penalty"
+        }
+      },
+      "required": [
+        "temperature"
+      ],
+      "title": "ModelParameters",
+      "type": "object"
+    },
+    "PromptMetadata": {
+      "properties": {
+        "domain": {
+          "description": "The business domain (e.g., 'clinical', 'technical').",
+          "title": "Domain",
+          "type": "string"
+        },
+        "complexity": {
+          "$ref": "#/$defs/ComplexityLevel",
+          "description": "The complexity level of the prompt."
+        },
+        "tags": {
+          "default": [],
+          "description": "A list of tags for categorization and search.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Tags",
+          "type": "array"
+        },
+        "requires_context": {
+          "default": false,
+          "description": "Whether this prompt requires external context or previous conversation history.",
+          "title": "Requires Context",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "domain",
+        "complexity"
+      ],
+      "title": "PromptMetadata",
+      "type": "object"
+    }
+  },
+  "description": "Schema definition for a Prompt file.",
+  "properties": {
+    "name": {
+      "description": "A short, descriptive name for the prompt.",
+      "title": "Name",
+      "type": "string"
+    },
+    "version": {
+      "default": "0.1.0",
+      "description": "Semantic version of the prompt.",
+      "title": "Version",
+      "type": "string"
+    },
+    "description": {
+      "description": "A detailed description of the prompt's purpose and usage.",
+      "title": "Description",
+      "type": "string"
+    },
+    "metadata": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/PromptMetadata"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Metadata for organization and categorization."
+    },
+    "variables": {
+      "default": [],
+      "description": "List of input variables used in the prompt template.",
+      "items": {
+        "$ref": "#/$defs/InputVariable"
+      },
+      "title": "Variables",
+      "type": "array"
+    },
+    "model": {
+      "description": "The ID of the LLM model to use (e.g., 'gpt-4', 'claude-3-opus').",
+      "title": "Model",
+      "type": "string"
+    },
+    "modelParameters": {
+      "$ref": "#/$defs/ModelParameters",
+      "description": "Configuration parameters for the model."
+    },
+    "messages": {
+      "description": "The sequence of messages that form the prompt.",
+      "items": {
+        "$ref": "#/$defs/Message"
+      },
+      "title": "Messages",
+      "type": "array"
+    },
+    "testData": {
+      "description": "List of test cases with inputs and expected outputs.",
+      "items": {},
+      "title": "Testdata",
+      "type": "array"
+    },
+    "evaluators": {
+      "description": "List of evaluators to validate the model's output.",
+      "items": {},
+      "title": "Evaluators",
+      "type": "array"
+    },
+    "last_modified": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Timestamp of the last modification (ISO 8601).",
+      "title": "Last Modified"
+    }
+  },
+  "required": [
+    "name",
+    "description",
+    "model",
+    "modelParameters",
+    "messages",
+    "testData",
+    "evaluators"
+  ],
+  "title": "PromptSchema",
+  "type": "object"
+}

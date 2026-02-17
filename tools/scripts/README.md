@@ -85,6 +85,9 @@ python3 tools/scripts/validate_prompt_schema.py
 
 # Strict mode (warns about empty testData)
 python3 tools/scripts/validate_prompt_schema.py --strict
+
+# Generate JSON Schema for IDE Intellisense
+python3 tools/scripts/validate_prompt_schema.py --json-schema > docs/schemas/prompt.schema.json
 ```
 
 ### `test_run_workflow.py`
