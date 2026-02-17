@@ -582,7 +582,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Technical Implementation Plan](../prompts/technical/software_engineering/lifecycle/technical_implementation_plan.prompt.yaml)
 - [To-Do List Template](../prompts/technical/software_engineering/lifecycle/todo_generation.prompt.yaml)
 - [Targeted Test Generation (OpenAI Codex)](../prompts/technical/software_engineering/tasks/add_tests.prompt.yaml)
-- [Architecture Flow Q&A (OpenAI Codex)](../prompts/technical/software_engineering/tasks/architecture_flow.prompt.yaml)
+- [Architecture Flow & Diagram Architect](../prompts/technical/software_engineering/tasks/architecture_flow.prompt.yaml)
 - [Bug Finder & Fixer (OpenAI Codex)](../prompts/technical/software_engineering/tasks/bug_fix.prompt.yaml)
 - [Continuous Integration & Delivery (DevOps Architect)](../prompts/technical/software_engineering/tasks/ci_cd.prompt.yaml)
 - [Code Review Assistant (Aegis Security)](../prompts/technical/software_engineering/tasks/code_review.prompt.yaml)
