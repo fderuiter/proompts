@@ -8,6 +8,7 @@ import sys
 import yaml
 import re
 import os # Needed for relpath calculation in strict paths
+import html
 from pathlib import Path
 from dataclasses import dataclass, field
 from typing import List, Dict, Optional, Any
@@ -91,6 +92,11 @@ class WorkflowGrapher:
     """Specialized logic for Mermaid graph generation."""
     
     @staticmethod
+    def sanitize_id(text: str) -> str:
+        """Sanitizes text for use as a Mermaid node ID."""
+        return re.sub(r'[^a-zA-Z0-9_]', '_', text)
+
+    @staticmethod
     def generate(data: Dict[str, Any]) -> str:
         if 'steps' not in data and 'inputs' not in data:
             return ""
@@ -99,23 +105,29 @@ class WorkflowGrapher:
         
         # Inputs
         for inp in data.get('inputs', []):
-            name = inp.get('name', 'Unknown')
-            graph.append(f"    Input_{name}[Input: {name}] --> Steps")
+            raw_name = inp.get('name', 'Unknown')
+            safe_name = html.escape(raw_name)
+            node_id = WorkflowGrapher.sanitize_id(raw_name)
+            graph.append(f"    Input_{node_id}[Input: {safe_name}] --> Steps")
 
         # Steps & Dependencies
         for step in data.get('steps', []):
-            step_id = step.get('step_id', 'unknown')
-            graph.append(f"    {step_id}[Step: {step_id}]")
+            raw_step_id = step.get('step_id', 'unknown')
+            safe_step_id = html.escape(raw_step_id)
+            node_id = WorkflowGrapher.sanitize_id(raw_step_id)
+            graph.append(f"    {node_id}[Step: {safe_step_id}]")
             
             inputs_map = step.get('map_inputs', {})
             for val in inputs_map.values():
                 if isinstance(val, str):
                     # Dependency on other steps
                     for match in re.findall(r'steps\.(\w+)\.output', val):
-                        graph.append(f"    {match} --> {step_id}")
+                        dep_node_id = WorkflowGrapher.sanitize_id(match)
+                        graph.append(f"    {dep_node_id} --> {node_id}")
                     # Dependency on global inputs
                     for match in re.findall(r'inputs\.(\w+)', val):
-                        graph.append(f"    Input_{match} --> {step_id}")
+                        dep_node_id = WorkflowGrapher.sanitize_id(match)
+                        graph.append(f"    Input_{dep_node_id} --> {node_id}")
                         
         return "\n".join(graph) if len(graph) > 1 else ""
 
@@ -176,8 +188,8 @@ class DocumentationGenerator:
 
     def _render_workflow_page(self, source_path: Path, data: Dict[str, Any], check_mode: bool = False) -> tuple[Path, bool]:
         """Generates the Markdown page for a single workflow. Returns (path, changed_bool)."""
-        title = FileParser.derive_title(source_path, data)
-        desc = data.get('description', 'No description provided.')
+        title = html.escape(FileParser.derive_title(source_path, data))
+        desc = html.escape(data.get('description', 'No description provided.'))
         mermaid = WorkflowGrapher.generate(data)
         
         filename = source_path.stem.replace('.workflow', '') + ".md"
@@ -242,15 +254,16 @@ nav_order: 99
             out_path = docs_dir / filename
             nav = CONFIG['nav_order'].get(category, 99)
             
+            safe_category = html.escape(category)
             md = [
                 "---",
                 "layout: default",
-                f"title: {category}",
+                f"title: {safe_category}",
                 f"nav_order: {nav}",
                 "has_children: false",
                 "---",
                 "",
-                f"# {category}",
+                f"# {safe_category}",
                 ""
             ]
 
@@ -261,7 +274,7 @@ nav_order: 99
                     # Calculate relative path from docs/category.md to prompts/file.yaml
                     # Note: p.path is absolute
                     rel = os.path.relpath(p.path, docs_dir)
-                    md.append(f"- [{p.title}]({rel})")
+                    md.append(f"- [{html.escape(p.title)}]({rel})")
                 md.append("")
 
             if types['workflow']:
@@ -272,7 +285,7 @@ nav_order: 99
                     # For workflows, p.path is absolute path to docs/workflows/file.md
                     # We need relative path from docs/category.md to docs/workflows/file.md
                     rel = os.path.relpath(w.path, docs_dir)
-                    md.append(f"- [{w.title}]({rel})")
+                    md.append(f"- [{html.escape(w.title)}]({rel})")
             
             content = "\n".join(md)
             

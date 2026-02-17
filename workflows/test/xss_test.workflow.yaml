@@ -1,0 +1,4 @@
+name: "<script>alert('title_xss')</script>"
+description: "<script>alert('desc_xss')</script>"
+steps:
+  - step_id: "<img src=x onerror=alert('step_id_xss')>"
