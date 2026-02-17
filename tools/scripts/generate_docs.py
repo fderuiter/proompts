@@ -308,16 +308,9 @@ def main():
 
     gen = DocumentationGenerator(root)
     gen.scan_prompts()
-    # In check mode, we still scan workflows but don't write individual pages? 
-    # Actually, for full correctness, typically we'd verify those too.
-    # But strictly speaking, specific workflow page generation happens inside scan_workflows.
-    # For now, let's assume scan_workflows writes files. To support check mode fully, 
-    # we'd need to refactor scan_workflows to respect the flag too.
-    # Let's do that refactor now for correctness.
     if args.check:
         print("🔍 Checking documentation status...")
     
-    # We need to pass check_mode to scan_workflows as well
     changes = gen.scan_workflows(check_mode=args.check)
     changes |= gen.build_indices(check_mode=args.check)
     
