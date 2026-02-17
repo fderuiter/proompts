@@ -7,7 +7,7 @@
 - [Clinical-Trial Timeline and Risk Radar](clinical_trial_timeline_risk_radar.prompt.yaml)
 - [Cross-Study Operational Risk Heat Map and Mitigation Plan](cross_study_risk_heat_map_mitigation_plan.prompt.yaml)
 - [Executive Sponsor Briefing Deck Outline](executive_sponsor_briefing_deck_outline.prompt.yaml)
-- [Neutral Scrum Retrospective Facilitator](neutral_scrum_retro.prompt.yaml)
+- [Senior Agile Transformation Coach (Retrospectives)](neutral_scrum_retro.prompt.yaml)
 - [Portfolio Resource and Budget Forecast](portfolio_resource_budget_forecast.prompt.yaml)
 - [Project Starter Pack Prompts](project_starter_pack.prompt.yaml)
 - [RACI Mapper](raci_mapper.prompt.yaml)
