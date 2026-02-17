@@ -28,56 +28,82 @@ variables:
   required: true
 messages:
 - role: system
-  content: |
-    You are a JSON Systems Integrator.
+  content: 'You are a JSON Systems Integrator.
+
 
     # Task
+
     Merge these four JSON snippets into a single, valid CDISC USDM v3.0 JSON object.
+
     - Place `study_meta` at the root.
+
     - Place `criteria` under the `study.criteria` array.
+
     - Construct the `workflow` section using the `encounters`, `activities`, and `workflow_matrix`.
+
     - Ensure all ID references (e.g., `activityId` inside `workflow`) remain consistent.
 
+
     # Output Requirement
+
     Produce **only** the final JSON object. Do not add conversational text.
+
+    '
 - role: user
-  content: |
-    # Inputs
+  content: '# Inputs
+
     1. Metadata:
+
     <metadata_json>
+
     {{metadata_json}}
+
     </metadata_json>
 
+
     2. Rationale:
+
     <rationale_json>
+
     {{rationale_json}}
+
     </rationale_json>
 
+
     3. Workflow:
+
     <workflow_json>
+
     {{workflow_json}}
+
     </workflow_json>
 
+
     4. Concepts:
+
     <concepts_json>
+
     {{concepts_json}}
+
     </concepts_json>
+
+    '
 testData:
-- input: |
-    metadata_json: '{"study_meta": {"id": "123"}}'
-    rationale_json: '{"criteria": []}'
-    workflow_json: '{"encounters": []}'
-    concepts_json: '{"biomedicalConcepts": []}'
-  expected: |
-    {
-      "study": {
-        "id": "123"
-      }
-    }
+- input: 'metadata_json: ''{"study_meta": {"id": "123"}}''
+
+    rationale_json: ''{"criteria": []}''
+
+    workflow_json: ''{"encounters": []}''
+
+    concepts_json: ''{"biomedicalConcepts": []}''
+
+    '
+  expected: "{\n  \"study\": {\n    \"id\": \"123\"\n  }\n}\n"
 evaluators:
 - name: Valid JSON
   regex:
-    pattern: '(?s)^[\s\S]*\{[\s\S]*\}[\s\S]*$'
+    pattern: (?s)^[\s\S]*\{[\s\S]*\}[\s\S]*$
 - name: Contains study root
   regex:
     pattern: '(?s)"study"\s*:'
+version: 0.1.0

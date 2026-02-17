@@ -19,48 +19,33 @@ variables:
   required: true
 messages:
 - role: system
-  content: |
-    You are a Clinical Research Associate.
-
-    # Task
-    1. Extract Primary and Secondary Objectives.
-    2. Extract the specific Endpoint associated with each Objective.
-    3. Extract Inclusion and Exclusion criteria.
-
-    # Output Requirement
-    Return a JSON snippet. **Link Endpoints to their parent Objective using `objectiveId`.**
-
-    {
-      "objectives": [
-        { "id": "OBJ_01", "level": "Primary", "description": "String" }
-      ],
-      "endpoints": [
-        { "id": "END_01", "objectiveId": "OBJ_01", "description": "String" }
-      ],
-      "criteria": [
-        { "id": "CRI_01", "type": "Inclusion", "text": "String" },
-        { "id": "CRI_02", "type": "Exclusion", "text": "String" }
-      ]
-    }
+  content: "You are a Clinical Research Associate.\n\n# Task\n1. Extract Primary and Secondary Objectives.\n2. Extract the\
+    \ specific Endpoint associated with each Objective.\n3. Extract Inclusion and Exclusion criteria.\n\n# Output Requirement\n\
+    Return a JSON snippet. **Link Endpoints to their parent Objective using `objectiveId`.**\n\n{\n  \"objectives\": [\n \
+    \   { \"id\": \"OBJ_01\", \"level\": \"Primary\", \"description\": \"String\" }\n  ],\n  \"endpoints\": [\n    { \"id\"\
+    : \"END_01\", \"objectiveId\": \"OBJ_01\", \"description\": \"String\" }\n  ],\n  \"criteria\": [\n    { \"id\": \"CRI_01\"\
+    , \"type\": \"Inclusion\", \"text\": \"String\" },\n    { \"id\": \"CRI_02\", \"type\": \"Exclusion\", \"text\": \"String\"\
+    \ }\n  ]\n}\n"
 - role: user
-  content: |
-    # Input
+  content: '# Input
+
     <protocol_objectives_text>
+
     {{protocol_objectives_text}}
+
     </protocol_objectives_text>
+
+    '
 testData:
-- input: |
-    protocol_objectives_text: "Primary Objective: To assess safety. Endpoint: Adverse events. Inclusion: Age > 18."
-  expected: |
-    {
-      "objectives": [
-        { "level": "Primary" }
-      ]
-    }
+- input: 'protocol_objectives_text: "Primary Objective: To assess safety. Endpoint: Adverse events. Inclusion: Age > 18."
+
+    '
+  expected: "{\n  \"objectives\": [\n    { \"level\": \"Primary\" }\n  ]\n}\n"
 evaluators:
 - name: Valid JSON
   regex:
-    pattern: '(?s)^[\s\S]*\{[\s\S]*\}[\s\S]*$'
+    pattern: (?s)^[\s\S]*\{[\s\S]*\}[\s\S]*$
 - name: Contains objectives
   regex:
     pattern: '(?s)"objectives"\s*:'
+version: 0.1.0
