@@ -8,7 +8,7 @@ has_children: false
 # Software Engineering
 
 ## Prompts
-- [Architecture Flow Q&A (OpenAI Codex)](../prompts/technical/software_engineering/tasks/architecture_flow.prompt.yaml)
+- [Architecture Flow & Diagram Architect](../prompts/technical/software_engineering/tasks/architecture_flow.prompt.yaml)
 - [Bug Finder & Fixer (OpenAI Codex)](../prompts/technical/software_engineering/tasks/bug_fix.prompt.yaml)
 - [Code Review Assistant (Aegis Security)](../prompts/technical/software_engineering/tasks/code_review.prompt.yaml)
 - [Codebase Testing Plan](../prompts/technical/software_engineering/tasks/codebase_testing_plan.prompt.yaml)
