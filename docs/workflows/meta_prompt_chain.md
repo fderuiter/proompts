@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Meta-Prompt Chain: L1 -> L2 -> L3 -> L4
+title: Meta-Prompt Chain: L1 -&gt; L2 -&gt; L3 -&gt; L4
 parent: Workflows
 nav_order: 99
 ---
 
-# Meta-Prompt Chain: L1 -> L2 -> L3 -> L4
+# Meta-Prompt Chain: L1 -&gt; L2 -&gt; L3 -&gt; L4
 
 A workflow that implements the full meta-prompt generative chain.
 

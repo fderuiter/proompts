@@ -23,4 +23,4 @@ has_children: false
 - [Worker Prompt](../prompts/meta/meta_prompt_chain/04_L4_worker_prompt.prompt.yaml)
 
 ## Workflows
-- [Meta-Prompt Chain: L1 -> L2 -> L3 -> L4](workflows/meta_prompt_chain.md)
+- [Meta-Prompt Chain: L1 -&gt; L2 -&gt; L3 -&gt; L4](workflows/meta_prompt_chain.md)

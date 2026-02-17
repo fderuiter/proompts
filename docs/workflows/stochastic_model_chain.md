@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Stochastic Model Chain: Architect -> Engineer -> Strategist
+title: Stochastic Model Chain: Architect -&gt; Engineer -&gt; Strategist
 parent: Workflows
 nav_order: 99
 ---
 
-# Stochastic Model Chain: Architect -> Engineer -> Strategist
+# Stochastic Model Chain: Architect -&gt; Engineer -&gt; Strategist
 
 A three-stage workflow to model, simulate, and analyze conversation risks using Game Theory and Monte Carlo simulations.
 

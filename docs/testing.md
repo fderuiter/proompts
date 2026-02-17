@@ -24,4 +24,4 @@ has_children: false
 - [Security Testing: OWASP ZAP Integration](../prompts/technical/testing/selenium_automation/selenium_zap_integration.prompt.yaml)
 - [Selenium Migration: Script Conversion](../prompts/technical/testing/selenium_automation/script_conversion.prompt.yaml)
 - [Synchronization Strategy: Explicit Waits](../prompts/technical/testing/selenium_automation/selenium_waits.prompt.yaml)
-- [Test Environment: Python & Selenium Base](../prompts/technical/testing/selenium_automation/selenium_python_setup.prompt.yaml)
+- [Test Environment: Python &amp; Selenium Base](../prompts/technical/testing/selenium_automation/selenium_python_setup.prompt.yaml)

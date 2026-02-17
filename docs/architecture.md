@@ -18,7 +18,7 @@ has_children: false
 - [TOGAF Phase B - Business Architecture](../prompts/technical/architecture/togaf/phase_b_business.prompt.yaml)
 - [TOGAF Phase C - Information Systems Architectures](../prompts/technical/architecture/togaf/phase_c_information_systems.prompt.yaml)
 - [TOGAF Phase D - Technology Architecture](../prompts/technical/architecture/togaf/phase_d_technology.prompt.yaml)
-- [TOGAF Phase E - Opportunities & Solutions](../prompts/technical/architecture/togaf/phase_e_opportunities.prompt.yaml)
+- [TOGAF Phase E - Opportunities &amp; Solutions](../prompts/technical/architecture/togaf/phase_e_opportunities.prompt.yaml)
 - [TOGAF Phase F - Migration Planning](../prompts/technical/architecture/togaf/phase_f_migration.prompt.yaml)
 - [TOGAF Phase G - Implementation Governance](../prompts/technical/architecture/togaf/phase_g_governance.prompt.yaml)
 - [TOGAF Phase H - Architecture Change Management](../prompts/technical/architecture/togaf/phase_h_change_management.prompt.yaml)

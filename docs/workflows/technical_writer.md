@@ -7,7 +7,7 @@ nav_order: 99
 
 # Technical Writer Workflow
 
-A workflow for drafting a CSR results and safety section, an Investigator's Brochure summary of changes, and an SAE reporting SOP.
+A workflow for drafting a CSR results and safety section, an Investigator&#x27;s Brochure summary of changes, and an SAE reporting SOP.
 
 ## Workflow Diagram\n\n<div class="mermaid">\ngraph TD
     Input_study_context[Input: study_context] --> Steps

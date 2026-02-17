@@ -7,6 +7,7 @@ has_children: false
 
 # Workflows
 
+- [&lt;script&gt;alert(&#x27;title_xss&#x27;)&lt;/script&gt;](workflows/xss_test.md)
 - [Adjudication Workflow](workflows/adjudication.md)
 - [Agentic Coding: From Idea to Epics](workflows/agentic_coding.md)
 - [Biological Safety Assessment and Planning](workflows/biological_safety.md)
@@ -25,7 +26,7 @@ has_children: false
 - [Imaging Workflow](workflows/imaging.md)
 - [Learning and Development Workflow](workflows/learning_development.md)
 - [Market Research Workflow](workflows/market_research.md)
-- [Meta-Prompt Chain: L1 -> L2 -> L3 -> L4](workflows/meta_prompt_chain.md)
+- [Meta-Prompt Chain: L1 -&gt; L2 -&gt; L3 -&gt; L4](workflows/meta_prompt_chain.md)
 - [Microbiology Workflow](workflows/microbiology.md)
 - [Preclinical Pathology Study Workflow](workflows/pathology_study.md)
 - [Project Management Workflow](workflows/project_management.md)
@@ -34,7 +35,7 @@ has_children: false
 - [RTSM Workflow](workflows/rtsm.md)
 - [Site Acquisition Workflow](workflows/site_acquisition.md)
 - [Sterility Workflow](workflows/sterility.md)
-- [Stochastic Model Chain: Architect -> Engineer -> Strategist](workflows/stochastic_model_chain.md)
+- [Stochastic Model Chain: Architect -&gt; Engineer -&gt; Strategist](workflows/stochastic_model_chain.md)
 - [Study Director Workflow](workflows/study_director.md)
 - [Technical Writer Workflow](workflows/technical_writer.md)
 - [Testing Workflow](workflows/testing.md)

@@ -16,7 +16,7 @@ has_children: false
 - [Empathy-Map Facilitator](../prompts/communication/empathy_map_facilitator.prompt.yaml)
 - [Executive Briefing Architect (TL;DR)](../prompts/communication/tldr_summarizer.prompt.yaml)
 - [Explain-Like-I’m-5 (ELI5)](../prompts/communication/explain_like_im_5.prompt.yaml)
-- [Hero's Journey Storyboarder](../prompts/communication/heros_journey_storyboarder.prompt.yaml)
+- [Hero&#x27;s Journey Storyboarder](../prompts/communication/heros_journey_storyboarder.prompt.yaml)
 - [Lay Language Summary Creation](../prompts/communication/lay_language_summary.prompt.yaml)
 - [Negotiation Coach](../prompts/communication/negotiation_coach.prompt.yaml)
 - [Panel Debate](../prompts/communication/panel_debate.prompt.yaml)
