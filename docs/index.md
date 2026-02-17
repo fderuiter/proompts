@@ -356,7 +356,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Clinical-Trial Timeline and Risk Radar](../prompts/management/project_management/clinical_trial_timeline_risk_radar.prompt.yaml)
 - [Cross-Study Operational Risk Heat Map and Mitigation Plan](../prompts/management/project_management/cross_study_risk_heat_map_mitigation_plan.prompt.yaml)
 - [Executive Sponsor Briefing Deck Outline](../prompts/management/project_management/executive_sponsor_briefing_deck_outline.prompt.yaml)
-- [Neutral Scrum Retrospective Facilitator](../prompts/management/project_management/neutral_scrum_retro.prompt.yaml)
+- [Senior Agile Transformation Coach (Retrospectives)](../prompts/management/project_management/neutral_scrum_retro.prompt.yaml)
 - [Portfolio Resource and Budget Forecast](../prompts/management/project_management/portfolio_resource_budget_forecast.prompt.yaml)
 - [Project Starter Pack Prompts](../prompts/management/project_management/project_starter_pack.prompt.yaml)
 - [RACI Mapper](../prompts/management/project_management/raci_mapper.prompt.yaml)
