@@ -20,6 +20,13 @@ except ImportError:
 
 
 # ---------------------------------------------------------------------------
+# Constants & Regex
+# ---------------------------------------------------------------------------
+
+VAR_PATTERN = re.compile(r'\{\{([^}]+)\}\}')
+
+
+# ---------------------------------------------------------------------------
 # Enums
 # ---------------------------------------------------------------------------
 
@@ -85,7 +92,7 @@ class PromptSchema(BaseModel):
         """Cross-check {{var}} usage in messages against defined variables."""
         found_vars: set[str] = set()
         for msg in self.messages:
-            found_vars.update(re.findall(r'\{\{([^}]+)\}\}', msg.content))
+            found_vars.update(VAR_PATTERN.findall(msg.content))
 
         defined_vars = {v.name for v in self.variables}
 
