@@ -18,6 +18,7 @@ has_children: false
 - [E2E Test Discovery Lifecycle Template](../prompts/technical/software_engineering/lifecycle/e2e_test_discovery.prompt.yaml)
 - [Folder and Module Organization](../prompts/technical/software_engineering/lifecycle/folder_module_organization.prompt.yaml)
 - [GitHub Custom Agent Creator](../prompts/technical/software_engineering/tasks/create_github_agent.prompt.yaml)
+- [Principal Architect Task Execution](../prompts/technical/software_engineering/tasks/principal_architect.prompt.yaml)
 - [Product Brief Template](../prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/01_product_brief.prompt.yaml)
 - [Project Brief for Epic](../prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/02_project_brief_epic.prompt.yaml)
 - [Project Init & Skeleton (Construct Architect)](../prompts/technical/software_engineering/tasks/project_init.prompt.yaml)
