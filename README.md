@@ -6,11 +6,28 @@
 
 A curated set of prompts in YAML for AI-assisted product development, regulatory workflows, and general operations. Prompts are organized by topic: ranging from code reviews to market research. You can mix and match them in your own agentic workflows!
 
+## Repository Structure
+
+```
+.
+├── 📂 prompts/          # The core library of YAML prompts, organized by domain
+│   ├── business/       # Sales, Marketing, HR, Finance
+│   ├── clinical/       # Protocols, Data Management, Safety
+│   └── ...
+├── 📂 workflows/        # Multi-step prompt chains for complex tasks
+├── 📂 docs/             # Documentation & Guides
+│   ├── index.md        # Full Table of Contents
+│   └── USAGE.md        # Usage Guide
+└── 📂 tools/
+    ├── 🐍 scripts/      # Python scripts for validation & maintenance
+    └── 🧠 prompt_tools/ # Meta-prompts for refining other prompts
+```
+
 ## Docs
 
-- **`docs/`** – additional docs and a full [table of contents](docs/index.md)
-- **`tools/scripts/`** – [developer scripts and utilities](tools/scripts/README.md)
-- **[Usage Guide](docs/USAGE.md)** – how to use the prompts
+- **[Full Table of Contents](docs/index.md)** – Browse all prompts by category
+- **[Usage Guide](docs/USAGE.md)** – Learn how to use and integrate prompts
+- **[Developer Scripts](tools/scripts/README.md)** – Tools for validating and maintaining the repo
 
 ## Setup
 
