@@ -426,6 +426,7 @@
 [Codebase Testing Plan](../prompts/technical/software_engineering/tasks/codebase_testing_plan.prompt.yaml)
 [GitHub Custom Agent Creator](../prompts/technical/software_engineering/tasks/create_github_agent.prompt.yaml)
 [DevEx Documentation Architect](../prompts/technical/software_engineering/tasks/docs_and_onboarding.prompt.yaml)
+[Principal Architect Task Execution](../prompts/technical/software_engineering/tasks/principal_architect.prompt.yaml)
 [Project Init & Skeleton (Construct Architect)](../prompts/technical/software_engineering/tasks/project_init.prompt.yaml)
 [Retrieval-Augmented Answer Composer](../prompts/technical/software_engineering/tasks/rag_composer.prompt.yaml)
 [Refactoring Architect](../prompts/technical/software_engineering/tasks/refactoring_suggestions.prompt.yaml)
