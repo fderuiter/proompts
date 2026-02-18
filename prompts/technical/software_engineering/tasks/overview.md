@@ -9,6 +9,7 @@
 - [Codebase Testing Plan](codebase_testing_plan.prompt.yaml)
 - [GitHub Custom Agent Creator](create_github_agent.prompt.yaml)
 - [DevEx Documentation Architect](docs_and_onboarding.prompt.yaml)
+- [Principal Architect Task Execution](principal_architect.prompt.yaml)
 - [Project Init & Skeleton (Construct Architect)](project_init.prompt.yaml)
 - [Retrieval-Augmented Answer Composer](rag_composer.prompt.yaml)
 - [Refactoring Architect](refactoring_suggestions.prompt.yaml)
