@@ -9,7 +9,10 @@ nav_order: 99
 
 A 5-stage chain to convert unstructured Clinical Protocol text into CDISC USDM v3.0 JSON.
 
-## Workflow Diagram\n\n<div class="mermaid">\ngraph TD
+## Workflow Diagram
+
+<div class="mermaid">
+graph TD
     Input_protocol_text[Input: protocol_text] --> Steps
     Input_protocol_objectives_text[Input: protocol_objectives_text] --> Steps
     Input_protocol_soa_text[Input: protocol_soa_text] --> Steps
@@ -25,5 +28,7 @@ A 5-stage chain to convert unstructured Clinical Protocol text into CDISC USDM v
     stage1_metadata --> stage5_assembly
     stage2_rationale --> stage5_assembly
     stage3_workflow --> stage5_assembly
-    stage4_concepts --> stage5_assembly\n</div>\n
+    stage4_concepts --> stage5_assembly
+</div>
+
 [View Source YAML](../../workflows/clinical/usdm_workflow.workflow.yaml)

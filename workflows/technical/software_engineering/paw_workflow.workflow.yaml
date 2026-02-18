@@ -1,0 +1,33 @@
+name: Principal Architect Workflow (PAW)
+description: A state-machine workflow for disciplined software engineering tasks, enforcing Design, Refactor, Implementation, and QA phases.
+inputs:
+  - name: todo_content
+    description: The content of the TODO.md file.
+  - name: file_structure
+    description: The current directory structure of the project.
+  - name: relevant_source_code
+    description: The content of the relevant source files identified for the task.
+steps:
+  - step_id: tactical_recon
+    prompt_file: prompts/technical/software_engineering/tasks/paw/paw_01_tactical_recon.prompt.yaml
+    map_inputs:
+      todo_content: "{{inputs.todo_content}}"
+      file_structure: "{{inputs.file_structure}}"
+
+  - step_id: architectural_blueprint
+    prompt_file: prompts/technical/software_engineering/tasks/paw/paw_02_architectural_blueprint.prompt.yaml
+    map_inputs:
+      tactical_brief: "{{steps.tactical_recon.output}}"
+      relevant_source_code: "{{inputs.relevant_source_code}}"
+
+  - step_id: precision_strike
+    prompt_file: prompts/technical/software_engineering/tasks/paw/paw_03_precision_strike.prompt.yaml
+    map_inputs:
+      design_spec: "{{steps.architectural_blueprint.output}}"
+      relevant_source_code: "{{inputs.relevant_source_code}}"
+
+  - step_id: qa_verification
+    prompt_file: prompts/technical/software_engineering/tasks/paw/paw_04_qa_verification.prompt.yaml
+    map_inputs:
+      implementation_code: "{{steps.precision_strike.output}}"
+      todo_content: "{{inputs.todo_content}}"

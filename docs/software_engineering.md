@@ -18,6 +18,10 @@ has_children: false
 - [E2E Test Discovery Lifecycle Template](../prompts/technical/software_engineering/lifecycle/e2e_test_discovery.prompt.yaml)
 - [Folder and Module Organization](../prompts/technical/software_engineering/lifecycle/folder_module_organization.prompt.yaml)
 - [GitHub Custom Agent Creator](../prompts/technical/software_engineering/tasks/create_github_agent.prompt.yaml)
+- [PAW Phase 1 - Tactical Recon](../prompts/technical/software_engineering/tasks/paw/paw_01_tactical_recon.prompt.yaml)
+- [PAW Phase 2 - Architectural Blueprint](../prompts/technical/software_engineering/tasks/paw/paw_02_architectural_blueprint.prompt.yaml)
+- [PAW Phase 3 - Precision Strike](../prompts/technical/software_engineering/tasks/paw/paw_03_precision_strike.prompt.yaml)
+- [PAW Phase 4 - Quality Assurance & Log](../prompts/technical/software_engineering/tasks/paw/paw_04_qa_verification.prompt.yaml)
 - [Principal Architect Task Execution](../prompts/technical/software_engineering/tasks/principal_architect.prompt.yaml)
 - [Product Brief Template](../prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/01_product_brief.prompt.yaml)
 - [Project Brief for Epic](../prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/02_project_brief_epic.prompt.yaml)
@@ -34,3 +38,6 @@ has_children: false
 - [To-Do List Template](../prompts/technical/software_engineering/lifecycle/todo_generation.prompt.yaml)
 - [Tooling, Linting & Quality Gates (OpenAI Codex)](../prompts/technical/software_engineering/tasks/tooling_and_quality.prompt.yaml)
 - [UI Tweak & Verification (OpenAI Codex)](../prompts/technical/software_engineering/tasks/ui_fix.prompt.yaml)
+
+## Workflows
+- [Principal Architect Workflow (PAW)](workflows/paw_workflow.md)

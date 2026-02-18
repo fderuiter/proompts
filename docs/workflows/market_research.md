@@ -9,7 +9,10 @@ nav_order: 99
 
 A workflow for market landscape analysis, user needs assessment, barrier mapping, and executive summary generation.
 
-## Workflow Diagram\n\n<div class="mermaid">\ngraph TD
+## Workflow Diagram
+
+<div class="mermaid">
+graph TD
     Input_device_or_assay[Input: device_or_assay] --> Steps
     Input_application[Input: application] --> Steps
     Input_device[Input: device] --> Steps
@@ -24,5 +27,7 @@ A workflow for market landscape analysis, user needs assessment, barrier mapping
     Input_device --> barrier_mapping
     Input_markets --> barrier_mapping
     executive_summary[Step: executive_summary]
-    Input_market_report --> executive_summary\n</div>\n
+    Input_market_report --> executive_summary
+</div>
+
 [View Source YAML](../../workflows/business/market_research.workflow.yaml)

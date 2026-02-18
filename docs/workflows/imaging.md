@@ -9,7 +9,10 @@ nav_order: 99
 
 A workflow for various imaging-related tasks, including charter drafting, QC, central reading design, and regulatory packaging.
 
-## Workflow Diagram\n\n<div class="mermaid">\ngraph TD
+## Workflow Diagram
+
+<div class="mermaid">
+graph TD
     Input_charter_draft_protocol_synopsis[Input: charter_draft_protocol_synopsis] --> Steps
     Input_charter_draft_modalities[Input: charter_draft_modalities] --> Steps
     Input_charter_draft_endpoints[Input: charter_draft_endpoints] --> Steps
@@ -55,5 +58,7 @@ A workflow for various imaging-related tasks, including charter drafting, QC, ce
     regulatory_imaging_data_package[Step: regulatory_imaging_data_package]
     Input_data_package_study_summary --> regulatory_imaging_data_package
     Input_data_package_metrics_data --> regulatory_imaging_data_package
-    Input_data_package_reader_agreement --> regulatory_imaging_data_package\n</div>\n
+    Input_data_package_reader_agreement --> regulatory_imaging_data_package
+</div>
+
 [View Source YAML](../../workflows/clinical/imaging.workflow.yaml)
