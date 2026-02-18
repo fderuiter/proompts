@@ -9,7 +9,10 @@ nav_order: 99
 
 A workflow to create, review, and refine a clinical trial protocol.
 
-## Workflow Diagram\n\n<div class="mermaid">\ngraph TD
+## Workflow Diagram
+
+<div class="mermaid">
+graph TD
     Input_summary_sheet[Input: summary_sheet] --> Steps
     Input_process_information[Input: process_information] --> Steps
     Input_condition[Input: condition] --> Steps
@@ -22,5 +25,7 @@ A workflow to create, review, and refine a clinical trial protocol.
     protocol_creator --> protocol_reviewer
     protocol_refinement[Step: protocol_refinement]
     Input_condition --> protocol_refinement
-    Input_draft_section --> protocol_refinement\n</div>\n
+    Input_draft_section --> protocol_refinement
+</div>
+
 [View Source YAML](../../workflows/clinical/protocol.workflow.yaml)

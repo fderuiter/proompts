@@ -9,7 +9,10 @@ nav_order: 99
 
 A workflow for coaching, feedback, and assessment of bioskills.
 
-## Workflow Diagram\n\n<div class="mermaid">\ngraph TD
+## Workflow Diagram
+
+<div class="mermaid">
+graph TD
     Input_procedure_name[Input: procedure_name] --> Steps
     Input_procedure_notes[Input: procedure_notes] --> Steps
     coaching[Step: coaching]
@@ -17,5 +20,7 @@ A workflow for coaching, feedback, and assessment of bioskills.
     feedback[Step: feedback]
     Input_procedure_notes --> feedback
     assessment[Step: assessment]
-    Input_procedure_name --> assessment\n</div>\n
+    Input_procedure_name --> assessment
+</div>
+
 [View Source YAML](../../workflows/scientific/bioskills.workflow.yaml)

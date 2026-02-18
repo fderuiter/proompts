@@ -9,7 +9,10 @@ nav_order: 99
 
 A workflow to create a project charter, risk register, status report, and timeline.
 
-## Workflow Diagram\n\n<div class="mermaid">\ngraph TD
+## Workflow Diagram
+
+<div class="mermaid">
+graph TD
     Input_project_name[Input: project_name] --> Steps
     Input_project_description[Input: project_description] --> Steps
     Input_budget[Input: budget] --> Steps
@@ -34,5 +37,7 @@ A workflow to create a project charter, risk register, status report, and timeli
     timeline[Step: timeline]
     Input_project_type --> timeline
     Input_objectives --> timeline
-    Input_milestone_data --> timeline\n</div>\n
+    Input_milestone_data --> timeline
+</div>
+
 [View Source YAML](../../workflows/management/project_management.workflow.yaml)

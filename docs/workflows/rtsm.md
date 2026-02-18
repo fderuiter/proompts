@@ -9,7 +9,10 @@ nav_order: 99
 
 A workflow for designing a randomization scheme, a supply strategy, and a risk-based monitoring SOP.
 
-## Workflow Diagram\n\n<div class="mermaid">\ngraph TD
+## Workflow Diagram
+
+<div class="mermaid">
+graph TD
     Input_study_parameters[Input: study_parameters] --> Steps
     Input_trial_enrollment[Input: trial_enrollment] --> Steps
     Input_existing_sop[Input: existing_sop] --> Steps
@@ -18,5 +21,7 @@ A workflow for designing a randomization scheme, a supply strategy, and a risk-b
     supply_strategy[Step: supply_strategy]
     Input_trial_enrollment --> supply_strategy
     rbm_sop[Step: rbm_sop]
-    Input_existing_sop --> rbm_sop\n</div>\n
+    Input_existing_sop --> rbm_sop
+</div>
+
 [View Source YAML](../../workflows/clinical/rtsm.workflow.yaml)

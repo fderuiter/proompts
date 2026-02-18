@@ -9,7 +9,10 @@ nav_order: 99
 
 A workflow that implements the full meta-prompt generative chain.
 
-## Workflow Diagram\n\n<div class="mermaid">\ngraph TD
+## Workflow Diagram
+
+<div class="mermaid">
+graph TD
     Input_end_task[Input: end_task] --> Steps
     Input_policy_block[Input: policy_block] --> Steps
     Input_token_budget_l3[Input: token_budget_l3] --> Steps
@@ -34,5 +37,7 @@ A workflow that implements the full meta-prompt generative chain.
     Input_input_block --> execute_task
     Input_output_schema --> execute_task
     Input_policy_block --> execute_task
-    Input_token_limit_l4 --> execute_task\n</div>\n
+    Input_token_limit_l4 --> execute_task
+</div>
+
 [View Source YAML](../../workflows/meta/meta_prompt_chain.workflow.yaml)

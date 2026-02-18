@@ -9,7 +9,10 @@ nav_order: 99
 
 A workflow for drafting a GLP-compliant study protocol, auditing raw data, and generating an executive summary.
 
-## Workflow Diagram\n\n<div class="mermaid">\ngraph TD
+## Workflow Diagram
+
+<div class="mermaid">
+graph TD
     Input_protocol_basics[Input: protocol_basics] --> Steps
     Input_data_csv[Input: data_csv] --> Steps
     Input_report_sections[Input: report_sections] --> Steps
@@ -18,5 +21,7 @@ A workflow for drafting a GLP-compliant study protocol, auditing raw data, and g
     audit_data[Step: audit_data]
     Input_data_csv --> audit_data
     executive_summary[Step: executive_summary]
-    Input_report_sections --> executive_summary\n</div>\n
+    Input_report_sections --> executive_summary
+</div>
+
 [View Source YAML](../../workflows/management/study_director.workflow.yaml)

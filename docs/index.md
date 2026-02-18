@@ -609,6 +609,13 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Audit Raw Data and Draft a CAPA Summary](../prompts/management/study_director/study_director_workflow/02_audit_raw_data_capa_summary.prompt.yaml)
 - [Generate an Executive Summary for the Final Report](../prompts/management/study_director/study_director_workflow/03_executive_summary_final_report.prompt.yaml)
 
+## Tasks
+
+- [PAW Phase 1 - Tactical Recon](../prompts/technical/software_engineering/tasks/paw/paw_01_tactical_recon.prompt.yaml)
+- [PAW Phase 2 - Architectural Blueprint](../prompts/technical/software_engineering/tasks/paw/paw_02_architectural_blueprint.prompt.yaml)
+- [PAW Phase 3 - Precision Strike](../prompts/technical/software_engineering/tasks/paw/paw_03_precision_strike.prompt.yaml)
+- [PAW Phase 4 - Quality Assurance & Log](../prompts/technical/software_engineering/tasks/paw/paw_04_qa_verification.prompt.yaml)
+
 ## Technical
 
 - [DRY Codebase Analysis](../prompts/technical/architecture/dry_codebase_analysis.prompt.yaml)

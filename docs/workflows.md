@@ -28,6 +28,7 @@ has_children: false
 - [Meta-Prompt Chain: L1 -> L2 -> L3 -> L4](workflows/meta_prompt_chain.md)
 - [Microbiology Workflow](workflows/microbiology.md)
 - [Preclinical Pathology Study Workflow](workflows/pathology_study.md)
+- [Principal Architect Workflow (PAW)](workflows/paw_workflow.md)
 - [Project Management Workflow](workflows/project_management.md)
 - [Protocol to USDM Workflow](workflows/usdm_workflow.md)
 - [Protocol Workflow](workflows/protocol.md)

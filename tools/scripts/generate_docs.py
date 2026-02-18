@@ -197,7 +197,7 @@ nav_order: 99
 
 {desc}
 
-{f'## Workflow Diagram\\n\\n<div class="mermaid">\\n{mermaid}\\n</div>\\n' if mermaid else ''}
+{f'## Workflow Diagram\n\n<div class="mermaid">\n{mermaid}\n</div>\n' if mermaid else ''}
 [View Source YAML]({rel_source})
 """
         if check_mode:

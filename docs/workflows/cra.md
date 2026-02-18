@@ -9,7 +9,10 @@ nav_order: 99
 
 A workflow for generating a monitoring visit report, tracking investigator follow-up emails, and building an RBM plan.
 
-## Workflow Diagram\n\n<div class="mermaid">\ngraph TD
+## Workflow Diagram
+
+<div class="mermaid">
+graph TD
     Input_visit_info[Input: visit_info] --> Steps
     Input_pending_actions[Input: pending_actions] --> Steps
     Input_study_info[Input: study_info] --> Steps
@@ -18,5 +21,7 @@ A workflow for generating a monitoring visit report, tracking investigator follo
     email_tracker[Step: email_tracker]
     Input_pending_actions --> email_tracker
     rbm_plan_builder[Step: rbm_plan_builder]
-    Input_study_info --> rbm_plan_builder\n</div>\n
+    Input_study_info --> rbm_plan_builder
+</div>
+
 [View Source YAML](../../workflows/clinical/cra.workflow.yaml)
