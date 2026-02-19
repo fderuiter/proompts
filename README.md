@@ -6,22 +6,15 @@
 
 A curated set of prompts in YAML for AI-assisted product development, regulatory workflows, and general operations. Prompts are organized by topic: ranging from code reviews to market research. You can mix and match them in your own agentic workflows!
 
-## Repository Structure
+## 🗺️ Directory Map
 
-```
-.
-├── 📂 prompts/          # The core library of YAML prompts, organized by domain
-│   ├── business/       # Sales, Marketing, HR, Finance
-│   ├── clinical/       # Protocols, Data Management, Safety
-│   └── ...
-├── 📂 workflows/        # Multi-step prompt chains for complex tasks
-├── 📂 docs/             # Documentation & Guides
-│   ├── index.md        # Full Table of Contents
-│   └── USAGE.md        # Usage Guide
-└── 📂 tools/
-    ├── 🐍 scripts/      # Python scripts for validation & maintenance
-    └── 🧠 prompt_tools/ # Meta-prompts for refining other prompts
-```
+| Path | Description | Key Contents |
+| :--- | :--- | :--- |
+| **[`prompts/`](prompts/)** | **The Core Library.** <br> YAML-based prompts organized by domain. | `business/`, `clinical/`, `technical/` |
+| **[`workflows/`](workflows/)** | **Chained Sequences.** <br> Multi-step prompt chains for complex tasks. | `paw_workflow.workflow.yaml` |
+| **[`tools/`](tools/overview.md)** | **The Engine Room.** <br> Utilities for maintenance and development. | [`scripts/`](tools/scripts/README.md) (Python), [`prompt_tools/`](tools/prompt_tools/README.md) (Meta-prompts) |
+| **[`scripts/`](scripts/)** | **Shell Wrappers.** <br> Convenience scripts for common tasks. | `validate_prompts.sh` |
+| **[`docs/`](docs/)** | **Knowledge Base.** <br> Guides, usage instructions, and generated docs. | `USAGE.md`, `BEST_PRACTICES.md` |
 
 ## Docs
 
