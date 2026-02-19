@@ -16,6 +16,15 @@ from typing import Any
 
 import yaml
 
+
+# Configure yaml to use block scalars for multiline strings
+def str_presenter(dumper, data):
+    if len(data.splitlines()) > 1:  # check for multiline string
+        return dumper.represent_scalar('tag:yaml.org,2002:str', data, style='|')
+    return dumper.represent_scalar('tag:yaml.org,2002:str', data)
+
+yaml.add_representer(str, str_presenter)
+
 try:
     from utils import ROOT, iter_prompt_files, load_yaml
 except ImportError:
@@ -336,19 +345,26 @@ def enrich_file(file_path: Path, dry_run: bool = False) -> bool:
             var["description"] = new_desc
             modified = True
 
-    # ── B. Add metadata if missing ──────────────────────────────────────
-    if "metadata" not in content or content.get("metadata") is None:
-        domain = infer_domain(parts)
-        complexity = infer_complexity(content)
-        tags = infer_tags(parts, prompt_name)
-        requires_context = infer_requires_context(content)
+    # ── B. Add or complete metadata ─────────────────────────────────────
+    metadata = content.get("metadata")
+    # Handle missing or null metadata block
+    if metadata is None:
+        metadata = {}
+        content["metadata"] = metadata
+        modified = True
 
-        content["metadata"] = {
-            "domain": domain,
-            "complexity": complexity,
-            "tags": tags,
-            "requires_context": requires_context,
-        }
+    # Infer values if missing
+    if "domain" not in metadata:
+        metadata["domain"] = infer_domain(parts)
+        modified = True
+    if "complexity" not in metadata:
+        metadata["complexity"] = infer_complexity(content)
+        modified = True
+    if "tags" not in metadata:
+        metadata["tags"] = infer_tags(parts, prompt_name)
+        modified = True
+    if "requires_context" not in metadata:
+        metadata["requires_context"] = infer_requires_context(content)
         modified = True
 
     if not modified:
