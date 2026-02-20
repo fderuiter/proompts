@@ -49,6 +49,8 @@ Follow these steps when adding a new prompt:
 1. Use `tools/prompt_tools/L5_standardize-prompt-files.md` to ensure structure and formatting are consistent.
 1. For large reorganizations, follow `tools/prompt_tools/L5_refactor-reindex-prompts.md`.
 1. Optionally, run `tools/prompt_tools/01_architecture_review_pipeline.md` for repository audits.
+1. Run `tools/scripts/migrate_prompts.py` to ensure all files conform to the latest schema (including `version` and `variables` stubs).
+1. Run `tools/scripts/enrich_prompts.py` to automatically fill in "TODO" variable descriptions and add missing metadata.
 1. Run `tools/scripts/update_docs_index.py` to regenerate the docs index (or rely on `.github/workflows/update-docs.yml`).
 1. Verify the YAML syntax using a tool like `yamllint`.
 1. Commit the new file with a concise message, e.g. `Add data ingestion prompt`.
