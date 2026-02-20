@@ -221,13 +221,15 @@ def _infer_description_from_inline_label(text: str, var_name: str) -> str | None
         r'`?\{\{' + re.escape(var_name) + r'\}\}`?\s*[–—\-]+\s*(.+?)(?:\n|$|;|\.|\\n)',
         # var_name: description (as in inline documentation)
         r'(?:^|\n)\s*[-*]?\s*' + re.escape(var_name) + r'\s*[:=]\s*(.+?)(?:\n|$)',
+        # Label: {{var}} (reverse mapping)
+        r'(?:^|\n)\s*[-*]?\s*(.+?)\s*[:=]\s*`?\{\{' + re.escape(var_name) + r'\}\}`?',
     ]
     for pat in patterns:
         m = re.search(pat, text, re.IGNORECASE)
         if m:
             desc = m.group(1).strip().rstrip('.')
             # Clean trailing punctuation and excess
-            if len(desc) > 10:
+            if len(desc) > 5:  # Allow slightly shorter labels like "Context"
                 return desc[:150]
     return None
 
