@@ -1,4 +1,17 @@
 #!/usr/bin/env python3
+"""
+Refactoring Utility for Prompts
+
+This script automates the restructuring of prompts into workflow-specific directories.
+It identifies prompts used in workflows, moves them to dedicated subdirectories
+(e.g., prompts/clinical/protocol/protocol_workflow/), and updates file references.
+
+Usage:
+    python3 scripts/apply_refactor.py --dry-run   # Preview changes
+    python3 scripts/apply_refactor.py             # Apply file moves
+    python3 scripts/apply_refactor.py --fix-refs  # Fix references in workflow files
+"""
+
 import os
 import yaml
 import re
@@ -146,6 +159,35 @@ def plan_refactoring(prompts_root, workflows_root):
 
     return schema_map, meta_moves, standalone_moves
 
+def apply_changes(schema_map, meta_moves, standalone_moves, dry_run=False):
+    """Executes the file moves planned by plan_refactoring."""
+    # Merge all moves
+    all_moves = {}
+
+    for old_path, data in schema_map.items():
+        all_moves[old_path] = data['new_path']
+
+    for old_path, new_path in meta_moves.items():
+        all_moves[old_path] = new_path
+
+    for old_path, new_path in standalone_moves.items():
+        all_moves[old_path] = new_path
+
+    print(f"Plan to move {len(all_moves)} files.")
+
+    for old_path, new_path in all_moves.items():
+        if dry_run:
+            print(f"[DRY RUN] Move {old_path} -> {new_path}")
+        else:
+            # Ensure target directory exists
+            os.makedirs(os.path.dirname(new_path), exist_ok=True)
+            # Move file
+            try:
+                shutil.move(old_path, new_path)
+                print(f"Moved {old_path} -> {new_path}")
+            except Exception as e:
+                print(f"Error moving {old_path} to {new_path}: {e}")
+
 def fix_references(prompts_root, workflows_root, dry_run=False):
     print("=== Fixing Workflow References ===")
     definitions = get_workflow_definitions(workflows_root)
@@ -158,34 +200,13 @@ def fix_references(prompts_root, workflows_root, dry_run=False):
         updates = []
         
         # Calculate expected locations
-        # We need to guess the target directory. 
-        # Since files are already moved, we can't reliably "find" the common parent of old files.
-        # But we can try to find where the files ARE now.
-        
-        # Strategy: Look at the OLD paths in the yaml.
-        # Deduce where they SHOULD be.
-        
-        # Problem: We need the grouping to find the target folder IF the old paths are scattered.
-        # But assuming the refactor logic from before:
-        # Target dir was based on the first prompt's directory.
-        
         with open(wf_path, 'r') as f:
             content = f.read()
             
         # We parse the file manually to find prompt_files because we want the raw string content
-        # PROMPT_FILE_REGEX = re.compile(r'(prompt_file:\s*["\']?)([^"\']+)(["\']?)')
         matches = list(PROMPT_FILE_REGEX.finditer(content))
         
-        # Groups: 1=prefix, 2=path, 3=suffix
-        
-        # We also need to process them in order to match the Step Index logic (01, 02...)
-        # The YAML 'steps' list order usually matches the file order, but let's rely on the parsed 'steps' from definitions
-        # which is safer.
-        
         current_steps = wf['steps']
-        
-        # We unfortunately need to map the steps to the matches in the file.
-        # The file content matches might be in order.
         
         # Let's iterate over the parsed steps, calculate the expected new path, and check if it exists.
         
@@ -203,9 +224,6 @@ def fix_references(prompts_root, workflows_root, dry_run=False):
             # Logic: prompts/CATEGORY/SUBDIR/07_name.yaml -> prompts/CATEGORY/SUBDIR/workflow_workflow/01_name.yaml
             
             # 1. Determine Category/Subdir
-            # We can't know for sure where it WAS if we only have relative path like "prompts/clinical/protocol/..."
-            # valid assumption: properties of the path string
-            
             prompt_dir = os.path.dirname(old_rel_path) # e.g. prompts/clinical/protocol
             filename = os.path.basename(old_rel_path)   # e.g. 07_usdm_stage1.yaml
             
@@ -246,12 +264,6 @@ def fix_references(prompts_root, workflows_root, dry_run=False):
             if not dry_run:
                 new_content = content
                 for old_p, new_p in updates:
-                    # We need to be careful replacing. The old_p string should be unique enough?
-                    # or use the regex approach again but carefully.
-                    
-                    # Simple string replace might be dangerous if substrings overlap matches?
-                    # using regex replace with strict matching on the specific value found
-                    
                     # Pattern: prompt_file: ["']old_p["']
                     # We construct a specific regex for this replacement
                     escaped_old_p = re.escape(old_p)
@@ -262,7 +274,7 @@ def fix_references(prompts_root, workflows_root, dry_run=False):
                     f.write(new_content)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="Refactor prompts into workflow directories.")
     parser.add_argument('--dry-run', action='store_true', help="Print actions without executing")
     parser.add_argument('--fix-refs', action='store_true', help="Fix broken references only")
     args = parser.parse_args()
@@ -278,4 +290,3 @@ if __name__ == "__main__":
              print("No moves planned. Did you mean to run --fix-refs?")
         else:
              apply_changes(schema_map, meta_moves, standalone_moves, dry_run=args.dry_run)
-
