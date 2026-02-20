@@ -1,4 +1,17 @@
 #!/usr/bin/env python3
+"""
+Refactors prompt files into workflow-specific directories.
+
+This script analyzes workflow definitions to identify prompts used in workflows,
+moves them to dedicated subdirectories (e.g., `prompts/category/workflow_name_workflow/`),
+and renames them sequentially (01_..., 02_...).
+
+It also handles:
+- Moving meta prompts to `prompts/meta/meta_prompt_chain/`
+- Cleaning up standalone prompts by stripping numbering
+- Updating workflow files to reference the new prompt locations
+"""
+
 import os
 import yaml
 import re
@@ -10,10 +23,12 @@ from collections import defaultdict
 PROMPT_FILE_REGEX = re.compile(r'(prompt_file:\s*["\']?)([^"\']+)(["\']?)')
 
 def load_yaml(path):
+    """Safely load a YAML file."""
     with open(path, 'r') as f:
         return yaml.safe_load(f)
 
 def get_all_prompts(prompts_dir):
+    """Recursively find all prompt YAML files in the directory."""
     all_prompts = set()
     for root, dirs, files in os.walk(prompts_dir):
         for file in files:
@@ -22,6 +37,7 @@ def get_all_prompts(prompts_dir):
     return all_prompts
 
 def get_workflow_definitions(workflows_dir):
+    """Parse all workflow files to extract steps and prompt references."""
     definitions = []
     
     for root, dirs, files in os.walk(workflows_dir):
@@ -48,6 +64,12 @@ def get_workflow_definitions(workflows_dir):
     return definitions
 
 def plan_refactoring(prompts_root, workflows_root):
+    """
+    Analyze workflows and prompts to determine necessary file moves.
+
+    Returns:
+        tuple: (schema_map, meta_moves, standalone_moves)
+    """
     # 1. Identify Workflow Prompts
     workflow_prompts = defaultdict(list) # path -> list of (workflow_path, step_index)
     definitions = get_workflow_definitions(workflows_root)
@@ -147,6 +169,9 @@ def plan_refactoring(prompts_root, workflows_root):
     return schema_map, meta_moves, standalone_moves
 
 def fix_references(prompts_root, workflows_root, dry_run=False):
+    """
+    Update workflow files to point to the new prompt locations.
+    """
     print("=== Fixing Workflow References ===")
     definitions = get_workflow_definitions(workflows_root)
     
@@ -261,10 +286,56 @@ def fix_references(prompts_root, workflows_root, dry_run=False):
                 with open(wf_path, 'w') as f:
                     f.write(new_content)
 
+def apply_changes(schema_map, meta_moves, standalone_moves, dry_run=False):
+    """
+    Execute the planned moves and directory creation.
+
+    Args:
+        schema_map (dict): Mapping of workflow prompt moves.
+        meta_moves (dict): Mapping of meta prompt moves.
+        standalone_moves (dict): Mapping of standalone prompt renames.
+        dry_run (bool): If True, only print actions.
+    """
+    print("=== Applying Changes ===")
+
+    # Merge all moves
+    # schema_map: p_path -> {'new_path': ...}
+    # meta_moves: p_path -> new_path
+    # standalone_moves: p_path -> new_path
+
+    all_moves = []
+
+    for old, data in schema_map.items():
+        all_moves.append((old, data['new_path'], "Workflow Move"))
+
+    for old, new in meta_moves.items():
+        all_moves.append((old, new, "Meta Move"))
+
+    for old, new in standalone_moves.items():
+        all_moves.append((old, new, "Standalone Cleanup"))
+
+    print(f"Planned {len(all_moves)} moves.")
+
+    for old_path, new_path, reason in all_moves:
+        if old_path == new_path:
+            continue
+
+        print(f"[{reason}] {os.path.relpath(old_path)} -> {os.path.relpath(new_path)}")
+
+        if not dry_run:
+            target_dir = os.path.dirname(new_path)
+            if not os.path.exists(target_dir):
+                os.makedirs(target_dir, exist_ok=True)
+
+            try:
+                shutil.move(old_path, new_path)
+            except Exception as e:
+                print(f"Error moving {old_path}: {e}")
+
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="Refactor prompts into workflow-specific directories.")
     parser.add_argument('--dry-run', action='store_true', help="Print actions without executing")
-    parser.add_argument('--fix-refs', action='store_true', help="Fix broken references only")
+    parser.add_argument('--fix-refs', action='store_true', help="Fix broken references in workflows only")
     args = parser.parse_args()
     
     prompts_root = os.path.abspath("prompts")
@@ -278,4 +349,3 @@ if __name__ == "__main__":
              print("No moves planned. Did you mean to run --fix-refs?")
         else:
              apply_changes(schema_map, meta_moves, standalone_moves, dry_run=args.dry_run)
-
