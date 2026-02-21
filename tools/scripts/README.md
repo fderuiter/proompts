@@ -26,7 +26,7 @@ pip install -r requirements.txt
     - [`test_generate_overviews.py`](#test_generate_overviewspy)
     - [`test_fix_markdown_issues.py`](#test_fix_markdown_issuespy)
     - [`test_utils.py`](#test_utilspy)
-  - [Workflow Execution](#workflow-execution)
+  - [Workflow Simulation](#workflow-simulation)
     - [`run_workflow.py`](#run_workflowpy)
   - [Documentation Maintenance](#documentation-maintenance)
     - [`update_docs_index.py`](#update_docs_indexpy)
@@ -130,19 +130,22 @@ Unit tests for `utils.py`. Ensures shared utility functions work as expected.
 python3 tools/scripts/test_utils.py
 ```
 
-## Workflow Execution
+## Workflow Simulation
 
 ### `run_workflow.py`
 
-Executes a prompt workflow defined in a `.workflow.yaml` file. It resolves Jinja2 templates, runs prompt steps sequentially, and manages state.
+**The Simulation Engine.** Simulates the execution of a prompt workflow defined in a `.workflow.yaml` file.
+
+> [!NOTE]
+> This script **does not make API calls** to LLMs. Instead, it uses the `testData` field in your prompt files to deterministically simulate outputs. This allows for rapid testing of workflow logic and variable passing without incurring costs.
 
 **Usage:**
 
 ```bash
-# Run a workflow with verbose output
+# Simulate a workflow with verbose output
 python3 tools/scripts/run_workflow.py path/to/workflow.workflow.yaml -v
 
-# Run with initial inputs
+# Simulate with initial inputs
 python3 tools/scripts/run_workflow.py path/to/workflow.workflow.yaml -i user_name="Alice"
 ```
 

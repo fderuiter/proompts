@@ -62,11 +62,11 @@ For detailed guidance, see [Best Practices Guide](../docs/BEST_PRACTICES.md).
 
 Prompts are rarely used in isolation. They are typically chained together in **Workflows**.
 
-- **Workflows**: Defined in the [`../workflows/`](../workflows) directory (organized by domain), workflows orchestrate multiple prompts to achieve complex goals (e.g., "Take a product idea -> Generate Brief -> Create Epics").
-- **Execution**: You can run workflows using the `run_workflow.py` script.
+- **Workflows**: Defined in the [`../workflows/`](../workflows) directory (organized by domain), workflows orchestrate multiple prompts to achieve complex goals.
+- **Simulation**: You can simulate workflows using the `run_workflow.py` script to test logic without API costs.
 
 ```bash
-# Example: Run the Agentic Coding workflow
+# Example: Simulate the Agentic Coding workflow
 python3 tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app"
 ```
 

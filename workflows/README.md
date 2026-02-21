@@ -25,12 +25,15 @@ Workflows are defined in `.workflow.yaml` files. Each workflow consists of:
   - **`prompt_file`**: Path to the prompt file (relative to repository root).
   - **`map_inputs`**: Mapping of workflow inputs or previous step outputs to the prompt's inputs.
 
-## Execution 🚀
+## Simulation 🚀
 
-You can run workflows using the `run_workflow.py` script.
+You can **simulate** workflow execution using the `run_workflow.py` script. This validates the variable passing and logic flow using the `testData` embedded in the prompt files.
+
+> [!NOTE]
+> This simulation does NOT make API calls to LLMs. It is a cost-free way to verify your workflow's integrity.
 
 ```bash
-# Example: Run the Agentic Coding workflow
+# Example: Simulate the Agentic Coding workflow
 python3 tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app"
 ```
 
