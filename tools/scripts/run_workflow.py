@@ -43,6 +43,9 @@ def resolve_value(template_string: str, workflow_state: Dict[str, Any]) -> Any:
     """
     Resolves a template string like '{{steps.step_id.output}}' from the workflow state.
 
+    This is part of the simulation engine, resolving variable mappings between steps
+    without executing external code.
+
     Args:
         template_string: The string containing the template variable.
         workflow_state: The current state of the workflow containing inputs and steps.
@@ -67,15 +70,19 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
     """
     Simulates executing a prompt by substituting variables and returning a simulated output.
 
+    NOTE: This function does NOT call any LLM API (e.g., OpenAI). It looks for a matching
+    test case in the prompt's `testData` field and returns the expected output. This allows
+    for deterministic testing of workflow logic and variable passing.
+
     Args:
         prompt_data: The prompt data loaded from the YAML file.
         inputs: A dictionary of mapped inputs for the prompt.
 
     Returns:
-        The simulated output string.
+        The simulated output string from `testData`.
     """
     logger.info("---")
-    logger.info(f"Executing prompt: {prompt_data.get('name', 'Untitled Prompt')}")
+    logger.info(f"Simulating prompt: {prompt_data.get('name', 'Untitled Prompt')}")
 
     # Use SandboxedEnvironment to prevent arbitrary code execution
     env = SandboxedEnvironment()
@@ -124,7 +131,10 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
 
 def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bool = True) -> Optional[Dict[str, Any]]:
     """
-    Loads and runs a workflow from a given file path.
+    Loads and simulates a workflow from a given file path.
+
+    This function orchestrates the flow of data between steps but mocks the actual
+    intelligence using the `simulate_prompt_execution` function.
 
     Args:
         workflow_file: Path to the workflow YAML file.
@@ -149,7 +159,8 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
     if not workflow_data:
         return None
 
-    logger.info(f"Starting workflow: {workflow_data.get('name', 'Untitled Workflow')}")
+    logger.info(f"Starting workflow simulation: {workflow_data.get('name', 'Untitled Workflow')}")
+    logger.info("ℹ️  NOTE: Running in SIMULATION MODE. No API calls will be made.")
 
     # Initialize workflow state
     workflow_state = {
@@ -162,7 +173,7 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
         step_id = step['step_id']
         prompt_file = step['prompt_file']
 
-        logger.info(f"\n===== Running Step: {step_id} =====")
+        logger.info(f"\n===== Simulating Step: {step_id} =====")
 
         # 1. Load the prompt file
         prompt_data = load_yaml(prompt_file)
@@ -187,7 +198,14 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
     return workflow_state
 
 def main():
-    parser = argparse.ArgumentParser(description="Run a prompt workflow.")
+    parser = argparse.ArgumentParser(
+        description=(
+            "Simulate a prompt workflow execution using mock data.\n\n"
+            "NOTE: This tool does NOT make API calls to LLMs. It uses the 'testData' field "
+            "in your prompt files to deterministically simulate outputs for validation."
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     parser.add_argument("workflow_file", help="Path to the .workflow.yaml file.")
     parser.add_argument("-i", "--input", action='append', help="Set a workflow input, e.g., -i name='value'")
     parser.add_argument("-v", "--verbose", action="store_true", help="Increase output verbosity")
@@ -207,7 +225,7 @@ def main():
     final_state = run_workflow(args.workflow_file, initial_inputs, verbose=args.verbose)
 
     if final_state:
-        logger.info("\n===== Workflow Finished =====")
+        logger.info("\n===== Simulation Finished =====")
         workflow_data = load_yaml(args.workflow_file)
         final_output_step_id = workflow_data.get('steps', [{}])[-1].get('step_id')
         if final_output_step_id:
