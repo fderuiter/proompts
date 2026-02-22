@@ -17,5 +17,5 @@
 - [Retrieval-Augmented Answer Composer](rag_composer.prompt.yaml)
 - [Refactoring Architect](refactoring_suggestions.prompt.yaml)
 - [Security Vulnerability Hunt](security_vulnerability.prompt.yaml)
-- [Tooling, Linting & Quality Gates (OpenAI Codex)](tooling_and_quality.prompt.yaml)
+- [Tooling & Quality Gates (DevEx Architect)](tooling_and_quality.prompt.yaml)
 - [UI Tweak & Verification (OpenAI Codex)](ui_fix.prompt.yaml)
