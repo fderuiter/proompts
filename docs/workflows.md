@@ -7,6 +7,8 @@ has_children: false
 
 # Workflows
 
+For a comprehensive guide on creating and running workflows, see the [Workflow Guide](workflow_guide.md).
+
 - [Adjudication Workflow](workflows/adjudication.md)
 - [Agentic Coding: From Idea to Epics](workflows/agentic_coding.md)
 - [Biological Safety Assessment and Planning](workflows/biological_safety.md)
