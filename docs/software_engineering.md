@@ -36,7 +36,7 @@ has_children: false
 - [Technical Implementation Plan](../prompts/technical/software_engineering/lifecycle/technical_implementation_plan.prompt.yaml)
 - [Test Architect (Automated Testing)](../prompts/technical/software_engineering/tasks/add_tests.prompt.yaml)
 - [To-Do List Template](../prompts/technical/software_engineering/lifecycle/todo_generation.prompt.yaml)
-- [Tooling, Linting & Quality Gates (OpenAI Codex)](../prompts/technical/software_engineering/tasks/tooling_and_quality.prompt.yaml)
+- [Tooling & Quality Gates (DevEx Architect)](../prompts/technical/software_engineering/tasks/tooling_and_quality.prompt.yaml)
 - [UI Tweak & Verification (OpenAI Codex)](../prompts/technical/software_engineering/tasks/ui_fix.prompt.yaml)
 
 ## Workflows
