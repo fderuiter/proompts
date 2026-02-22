@@ -254,6 +254,10 @@ nav_order: 99
                 ""
             ]
 
+            if category == "Workflows":
+                md.append("For a comprehensive guide on creating and running workflows, see the [Workflow Guide](workflow_guide.md).")
+                md.append("")
+
             if types['prompt'] and category != "Workflows":
                 md.append("## Prompts")
                 # Sort prompts by title (case insensitive)
