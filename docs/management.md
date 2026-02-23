@@ -24,7 +24,7 @@ has_children: false
 - [Cross-Study Operational Risk Heat Map and Mitigation Plan](../prompts/management/project_management/cross_study_risk_heat_map_mitigation_plan.prompt.yaml)
 - [Data-Quality Risk Heat Map](../prompts/management/vp_statistics/vp_statistics_workflow/03_data_quality_risk_heatmap.prompt.yaml)
 - [Detailed Project Blueprint and Timeline](../prompts/management/project_management/project_management_workflow/04_detailed_project_blueprint_timeline.prompt.yaml)
-- [Digest the Latest Regulatory Updates Affecting My Protocol](../prompts/management/clinical_research_manager/digest_regulatory_updates.prompt.yaml)
+- [Digest Regulatory Updates Affecting Protocol](../prompts/management/clinical_research_manager/digest_regulatory_updates.prompt.yaml)
 - [Digital Transformation Roadmap for Clinical Operations](../prompts/management/executive/digital_transformation_roadmap.prompt.yaml)
 - [Draft a GLP-Compliant Study Protocol](../prompts/management/study_director/study_director_workflow/01_draft_glp_compliant_study_protocol.prompt.yaml)
 - [Eisenhower Matrix Coach](../prompts/management/personal_effectiveness/eisenhower_matrix_coach.prompt.yaml)
