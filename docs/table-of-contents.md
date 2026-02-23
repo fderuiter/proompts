@@ -430,7 +430,7 @@
 [Project Init & Skeleton (Construct Architect)](../prompts/technical/software_engineering/tasks/project_init.prompt.yaml)
 [Retrieval-Augmented Answer Composer](../prompts/technical/software_engineering/tasks/rag_composer.prompt.yaml)
 [Refactoring Architect](../prompts/technical/software_engineering/tasks/refactoring_suggestions.prompt.yaml)
-[Security Vulnerability Hunt](../prompts/technical/software_engineering/tasks/security_vulnerability.prompt.yaml)
+[Security Vulnerability Hunt (Aegis)](../prompts/technical/software_engineering/tasks/security_vulnerability.prompt.yaml)
 [Tooling & Quality Gates (DevEx Architect)](../prompts/technical/software_engineering/tasks/tooling_and_quality.prompt.yaml)
 [UI Tweak & Verification (OpenAI Codex)](../prompts/technical/software_engineering/tasks/ui_fix.prompt.yaml)
 [Sterility-Validation Protocol Builder](../prompts/scientific/sterility/sterility_workflow/01_sterility_validation_protocol_builder.prompt.yaml)
