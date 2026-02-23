@@ -16,6 +16,6 @@
 - [Project Init & Skeleton (Construct Architect)](project_init.prompt.yaml)
 - [Retrieval-Augmented Answer Composer](rag_composer.prompt.yaml)
 - [Refactoring Architect](refactoring_suggestions.prompt.yaml)
-- [Security Vulnerability Hunt](security_vulnerability.prompt.yaml)
+- [Security Vulnerability Hunt (Aegis)](security_vulnerability.prompt.yaml)
 - [Tooling & Quality Gates (DevEx Architect)](tooling_and_quality.prompt.yaml)
 - [UI Tweak & Verification (OpenAI Codex)](ui_fix.prompt.yaml)
