@@ -32,7 +32,7 @@ has_children: false
 - [Reflexion Agent Bug Patch](../prompts/technical/software_engineering/lifecycle/reflexion_agent_bug_patch.prompt.yaml)
 - [RequirementsBot Prompt](../prompts/technical/software_engineering/lifecycle/requirements_prompt.prompt.yaml)
 - [Retrieval-Augmented Answer Composer](../prompts/technical/software_engineering/tasks/rag_composer.prompt.yaml)
-- [Security Vulnerability Hunt](../prompts/technical/software_engineering/tasks/security_vulnerability.prompt.yaml)
+- [Security Vulnerability Hunt (Aegis)](../prompts/technical/software_engineering/tasks/security_vulnerability.prompt.yaml)
 - [Technical Implementation Plan](../prompts/technical/software_engineering/lifecycle/technical_implementation_plan.prompt.yaml)
 - [Test Architect (Automated Testing)](../prompts/technical/software_engineering/tasks/add_tests.prompt.yaml)
 - [To-Do List Template](../prompts/technical/software_engineering/lifecycle/todo_generation.prompt.yaml)
