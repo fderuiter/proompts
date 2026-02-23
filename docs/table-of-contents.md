@@ -432,7 +432,7 @@
 [Refactoring Architect](../prompts/technical/software_engineering/tasks/refactoring_suggestions.prompt.yaml)
 [Security Vulnerability Hunt (Aegis)](../prompts/technical/software_engineering/tasks/security_vulnerability.prompt.yaml)
 [Tooling & Quality Gates (DevEx Architect)](../prompts/technical/software_engineering/tasks/tooling_and_quality.prompt.yaml)
-[UI Tweak & Verification (OpenAI Codex)](../prompts/technical/software_engineering/tasks/ui_fix.prompt.yaml)
+[UI Tweak & Verification (Aegis Security)](../prompts/technical/software_engineering/tasks/ui_fix.prompt.yaml)
 [Sterility-Validation Protocol Builder](../prompts/scientific/sterility/sterility_workflow/01_sterility_validation_protocol_builder.prompt.yaml)
 [Regulatory Gap-Analysis Comparator](../prompts/scientific/sterility/sterility_workflow/02_regulatory_gap_analysis_comparator.prompt.yaml)
 [EtO Sterilization Process FMEA](../prompts/scientific/sterility/sterility_workflow/03_eto_sterilization_process_fmea.prompt.yaml)

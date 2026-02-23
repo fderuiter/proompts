@@ -595,7 +595,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Refactoring Architect](../prompts/technical/software_engineering/tasks/refactoring_suggestions.prompt.yaml)
 - [Security Vulnerability Hunt (Aegis)](../prompts/technical/software_engineering/tasks/security_vulnerability.prompt.yaml)
 - [Tooling & Quality Gates (DevEx Architect)](../prompts/technical/software_engineering/tasks/tooling_and_quality.prompt.yaml)
-- [UI Tweak & Verification (OpenAI Codex)](../prompts/technical/software_engineering/tasks/ui_fix.prompt.yaml)
+- [UI Tweak & Verification (Aegis Security)](../prompts/technical/software_engineering/tasks/ui_fix.prompt.yaml)
 
 ## Sterility
 
