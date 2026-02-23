@@ -178,7 +178,7 @@
 [Product Brief Template](../prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/01_product_brief.prompt.yaml)
 [Project Brief for Epic](../prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/02_project_brief_epic.prompt.yaml)
 [Accelerate Patient Recruitment & Retention](../prompts/management/clinical_research_manager/accelerate_patient_recruitment_retention.prompt.yaml)
-[Digest the Latest Regulatory Updates Affecting My Protocol](../prompts/management/clinical_research_manager/digest_regulatory_updates.prompt.yaml)
+[Digest Regulatory Updates Affecting Protocol](../prompts/management/clinical_research_manager/digest_regulatory_updates.prompt.yaml)
 [Portfolio KPI Dashboard Brief](../prompts/management/clinical_research_manager/portfolio_kpi_dashboard_brief.prompt.yaml)
 [FDA-Aligned AI Governance Framework](../prompts/management/executive/ai_governance_framework.prompt.yaml)
 [Crisis-Management Playbook Generator](../prompts/management/executive/crisis_management_playbook.prompt.yaml)
