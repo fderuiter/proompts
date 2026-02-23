@@ -18,4 +18,4 @@
 - [Refactoring Architect](refactoring_suggestions.prompt.yaml)
 - [Security Vulnerability Hunt](security_vulnerability.prompt.yaml)
 - [Tooling & Quality Gates (DevEx Architect)](tooling_and_quality.prompt.yaml)
-- [UI Tweak & Verification (OpenAI Codex)](ui_fix.prompt.yaml)
+- [UI Tweak & Verification (Aegis Security)](ui_fix.prompt.yaml)
