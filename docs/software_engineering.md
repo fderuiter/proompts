@@ -37,7 +37,7 @@ has_children: false
 - [Test Architect (Automated Testing)](../prompts/technical/software_engineering/tasks/add_tests.prompt.yaml)
 - [To-Do List Template](../prompts/technical/software_engineering/lifecycle/todo_generation.prompt.yaml)
 - [Tooling & Quality Gates (DevEx Architect)](../prompts/technical/software_engineering/tasks/tooling_and_quality.prompt.yaml)
-- [UI Tweak & Verification (OpenAI Codex)](../prompts/technical/software_engineering/tasks/ui_fix.prompt.yaml)
+- [UI Tweak & Verification (Aegis Security)](../prompts/technical/software_engineering/tasks/ui_fix.prompt.yaml)
 
 ## Workflows
 - [Principal Architect Workflow (PAW)](workflows/paw_workflow.md)
