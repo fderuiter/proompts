@@ -35,88 +35,14 @@ except ImportError:
 PROMPTS_DIR = ROOT / "prompts"
 
 # ────────────────────────────────────────────────────────────────────────────
-# 1.  Domain & tag inference from directory path
+# 1.  Configuration & Mapping
 # ────────────────────────────────────────────────────────────────────────────
 
-DOMAIN_MAP: dict[str, str] = {
-    "business":      "business",
-    "clinical":      "clinical",
-    "communication": "communication",
-    "management":    "management",
-    "meta":          "meta",
-    "regulatory":    "regulatory",
-    "scientific":    "scientific",
-    "technical":     "technical",
-}
+CONFIG_PATH = Path(__file__).parent / "enrich_config.yaml"
+CONFIG = load_yaml(CONFIG_PATH)
 
-# Human-friendly labels for sub-directories used as tags
-TAG_LABELS: dict[str, str] = {
-    "cfo":                    "finance",
-    "cx":                     "customer-experience",
-    "hr_finance":             "hr-finance",
-    "market_research":        "market-research",
-    "vp_tech_innovation":     "tech-innovation",
-    "data_management":        "data-management",
-    "data":                   "data",
-    "eclinical_integration":  "eclinical-integration",
-    "epro":                   "epro",
-    "imaging":                "medical-imaging",
-    "medical_writing":        "medical-writing",
-    "monitoring":             "monitoring",
-    "protocol":               "protocol-design",
-    "rtsm":                   "rtsm",
-    "safety":                 "safety",
-    "site_acquisition":       "site-acquisition",
-    "trial_execution":        "trial-execution",
-    "adjudication":           "adjudication",
-    "cra":                    "cra",
-    "forms":                  "forms",
-    "clinical_research_manager": "clinical-research-management",
-    "executive":              "executive",
-    "innovation":             "innovation",
-    "leadership":             "leadership",
-    "medical_director":       "medical-director",
-    "operations":             "operations",
-    "personal_effectiveness": "personal-effectiveness",
-    "project_management":     "project-management",
-    "study_director":         "study-director",
-    "training":               "training",
-    "vp_statistics":          "statistics",
-    "adherence":              "regulatory-adherence",
-    "administrative":         "regulatory-admin",
-    "compliance":             "compliance",
-    "device_specifics":       "medical-devices",
-    "food_safety":            "food-safety",
-    "quality":                "quality",
-    "strategy":               "regulatory-strategy",
-    "submissions":            "submissions",
-    "biosafety":              "biosafety",
-    "bioskills":              "bioskills",
-    "biostatistics":          "biostatistics",
-    "chemical_characterization": "chemical-characterization",
-    "coa":                    "clinical-outcome-assessment",
-    "microbiology":           "microbiology",
-    "pathology":              "pathology",
-    "sterility":              "sterility",
-    "architecture":           "architecture",
-    "design":                 "design",
-    "devops":                 "devops",
-    "documentation":          "documentation",
-    "languages":              "programming-languages",
-    "repository_refactoring": "repository-refactoring",
-    "security":               "security",
-    "software_engineering":   "software-engineering",
-    "technical_writing":      "technical-writing",
-    "testing":                "testing",
-    "development":            "business-development",
-    "payment":                "payment",
-    "selenium_automation":    "selenium",
-    "lifecycle":              "sdlc",
-    "tasks":                  "engineering-tasks",
-    "python":                 "python",
-    "rust":                   "rust",
-    "typescript":             "typescript",
-}
+DOMAIN_MAP: dict[str, str] = CONFIG.get("domain_map", {})
+TAG_LABELS: dict[str, str] = CONFIG.get("tag_labels", {})
 
 
 def _path_parts(file_path: Path) -> list[str]:
@@ -179,12 +105,7 @@ def infer_complexity(content: dict) -> str:
 # 3.  requires_context heuristic
 # ────────────────────────────────────────────────────────────────────────────
 
-CONTEXT_KEYWORDS = {
-    "document", "documents", "pdf", "file", "files", "attachment",
-    "uploaded", "context", "source", "reference", "corpus",
-    "database", "knowledge_base", "knowledge-base", "retrieval",
-    "rag", "external", "uploaded_file", "report",
-}
+CONTEXT_KEYWORDS = set(CONFIG.get("context_keywords", []))
 
 
 def infer_requires_context(content: dict) -> bool:
@@ -235,52 +156,7 @@ def _infer_description_from_inline_label(text: str, var_name: str) -> str | None
 
 
 # Common variable name → fallback description mapping
-COMMON_VAR_DESCRIPTIONS: dict[str, str] = {
-    "input":               "The primary input or query text for the prompt",
-    "topic":               "The subject or topic to address",
-    "text":                "The text content to process",
-    "context":             "Background context or supporting information",
-    "query":               "The user's question or request",
-    "task":                "The task or objective to accomplish",
-    "question":            "The question to answer",
-    "data":                "The data or dataset to analyze",
-    "content":             "The content to work with",
-    "output_format":       "The desired output format",
-    "language":            "The programming or natural language to use",
-    "code":                "The source code to analyze or modify",
-    "url":                 "The URL to process or reference",
-    "name":                "The name or identifier",
-    "description":         "A description of the subject",
-    "requirements":        "The requirements or specifications",
-    "constraints":         "Any constraints or limitations to consider",
-    "audience":            "The target audience for the output",
-    "tone":                "The desired tone or style of the output",
-    "style":               "The writing or communication style to use",
-    "domain":              "The domain or field of expertise",
-    "goal":                "The goal or desired outcome",
-    "summary":             "A summary of the key information",
-    "feedback":            "Feedback or critique to incorporate",
-    "examples":            "Example inputs or desired outputs",
-    "notes":               "Additional notes, assumptions, or special considerations",
-    "instructions":        "Specific instructions or guidelines",
-    "role":                "The role or persona to adopt",
-    "scenario":            "The scenario or situation to address",
-    "policy_block":        "Policy and style guide text for guardrails",
-    "end_task":            "The final objective or end goal to accomplish",
-    "product":             "The product or offering being discussed",
-    "company":             "The company or organization name",
-    "industry":            "The industry or sector",
-    "stakeholders":        "Key stakeholders involved",
-    "timeline":            "The project timeline or schedule",
-    "budget":              "Budget details or financial constraints",
-    "risks":               "Known risks or potential issues",
-    "assumptions":         "Key assumptions underlying the analysis",
-    "criteria":            "Evaluation or decision criteria",
-    "metrics":             "Key performance indicators or metrics",
-    "region":              "Geographic region or market",
-    "competitor":          "Competitor name or competitive landscape",
-    "objectives":          "Strategic or project objectives",
-}
+COMMON_VAR_DESCRIPTIONS: dict[str, str] = CONFIG.get("common_var_descriptions", {})
 
 
 def infer_variable_description(
