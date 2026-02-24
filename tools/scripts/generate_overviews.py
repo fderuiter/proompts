@@ -7,11 +7,11 @@ from pathlib import Path
 import sys
 
 try:
-    from utils import PROMPTS_DIR, load_yaml, OVERVIEW_NAME
+    from utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, OVERVIEW_NAME
 except ImportError:
     import sys
     sys.path.append(str(Path(__file__).parent))
-    from utils import PROMPTS_DIR, load_yaml, OVERVIEW_NAME
+    from utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, OVERVIEW_NAME
 
 
 def title_from_prompt(path: Path) -> str:
@@ -22,7 +22,7 @@ def title_from_prompt(path: Path) -> str:
         return str(title).strip()
 
     name = path.name
-    for ext in (".prompt.yaml", ".prompt.yml"):
+    for ext in (".prompt.yaml", ".prompt.yml", ".workflow.yaml", ".workflow.yml"):
         if name.lower().endswith(ext):
             name = name[: -len(ext)]
             break
@@ -33,9 +33,8 @@ def title_from_prompt(path: Path) -> str:
 
 def generate_overview(directory: Path) -> str:
     title = directory.name.replace("_", " ").title()
-    lines = [f"# {title} Overview", ""]
     prompt_files = []
-    for pattern in ("*.prompt.yaml", "*.prompt.yml"):
+    for pattern in ("*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
         prompt_files.extend(directory.glob(pattern))
     
     # Filter out hidden files (e.g. ._ files on Mac)
@@ -52,7 +51,7 @@ def generate_overview(directory: Path) -> str:
         if child.is_dir() and not child.name.startswith('.'):
             # Check if this subdir has prompts recursively or has an overview
             has_sub_prompts = False
-            for pattern in ("*.prompt.yaml", "*.prompt.yml"):
+            for pattern in ("*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
                 if any(child.rglob(pattern)):
                     has_sub_prompts = True
                     break
@@ -73,7 +72,15 @@ def generate_overview(directory: Path) -> str:
         sections.append("")
         
     if lines:
-        sections.append("## Prompts")
+        has_workflows = any(f.name.endswith('workflow.yaml') or f.name.endswith('workflow.yml') for f in prompt_files)
+        has_prompts = any(f.name.endswith('prompt.yaml') or f.name.endswith('prompt.yml') for f in prompt_files)
+
+        if has_workflows and has_prompts:
+             sections.append("## Prompts & Workflows")
+        elif has_workflows:
+             sections.append("## Workflows")
+        else:
+             sections.append("## Prompts")
         sections.extend(lines)
         
     return "\n".join(sections).rstrip() + "\n"
@@ -95,27 +102,27 @@ def ensure_overview(directory: Path) -> bool:
             
     path.write_text(content, encoding="utf-8")
     return True
-            
-    path.write_text(content, encoding="utf-8")
-    return True
 
 
 def main() -> int:
     changed = False
     
-    # helper to check if directory has prompts (recursively)
-    def has_prompts(d: Path) -> bool:
-        for pattern in ("*.prompt.yaml", "*.prompt.yml"):
+    # helper to check if directory has content (recursively)
+    def has_content(d: Path) -> bool:
+        for pattern in ("*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
             if any(d.rglob(pattern)):
                 return True
         return False
 
-    # Walk through all directories under PROMPTS_DIR
-    for directory in PROMPTS_DIR.rglob("*"):
-        if directory.is_dir() and has_prompts(directory):
-            if ensure_overview(directory):
-                print(f"Generated overview for {directory}")
-                changed = True
+    # Walk through all directories under PROMPTS_DIR and WORKFLOWS_DIR
+    for root_dir in [PROMPTS_DIR, WORKFLOWS_DIR]:
+        if not root_dir.exists():
+            continue
+        for directory in root_dir.rglob("*"):
+            if directory.is_dir() and has_content(directory):
+                if ensure_overview(directory):
+                    print(f"Generated overview for {directory}")
+                    changed = True
                 
     return 0 if changed else 0
 

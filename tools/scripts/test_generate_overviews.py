@@ -57,5 +57,19 @@ class TestTitleFromPrompt(unittest.TestCase):
         path = Path("path/to/complex_file_name_example.prompt.yaml")
         self.assertEqual(title_from_prompt(path), "Complex File Name Example")
 
+    @patch("generate_overviews.load_yaml")
+    def test_title_from_workflow(self, mock_load_yaml):
+        """Test title extraction from .workflow.yaml file."""
+        mock_load_yaml.return_value = {"name": "My Workflow"}
+        path = Path("path/to/my_workflow.workflow.yaml")
+        self.assertEqual(title_from_prompt(path), "My Workflow")
+
+    @patch("generate_overviews.load_yaml")
+    def test_fallback_workflow_filename(self, mock_load_yaml):
+        """Test fallback to filename for .workflow.yaml files."""
+        mock_load_yaml.return_value = {}
+        path = Path("path/to/complex_workflow.workflow.yaml")
+        self.assertEqual(title_from_prompt(path), "Complex Workflow")
+
 if __name__ == "__main__":
     unittest.main()
