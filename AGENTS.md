@@ -1,77 +1,113 @@
-# Repository Guidance for AI Agent Prompts
+---
+description: "Comprehensive guide for AI agents contributing to the Proompts repository."
+tags: ["documentation", "developer-guide", "ai-context", "best-practices"]
+---
 
-This repository stores a collection of AI agent prompts. Prompts are stored as
-YAML (`.prompt.yaml` or `.prompt.yml`) and placed in one of the categories
-under the `prompts/` directory (e.g. `prompts/technical`, `prompts/meta`). The old JSON
-format has been deprecated; convert any remaining `.json` files to YAML. Use
-this file for guidelines on adding or modifying prompts.
+# 🤖 AI Agent Guidelines
 
-## File Format and Layout
+This document provides the tribal knowledge, technical constraints, and operational procedures required for AI agents to contribute effectively to this repository.
 
-- **Preferred YAML**: Prompts must be stored as `.prompt.yaml` or
-  `.prompt.yml` files containing valid YAML. Convert any `.json` prompts you
-  encounter. Use Markdown strictly for
-  documentation such as `README.md` or `overview.md`.
-- **Markdown docs**: All documentation files—including `overview.md`, `docs/*.md`,
-  and any additional guides—remain in Markdown format.
-- **Naming**: Follow the existing naming style in each directory. For example,
-  prompts in `prompts/technical/software_engineering/lifecycle` use numeric prefixes (`01_product_brief.prompt.yaml`,
-  `02_project_brief_epic.prompt.yaml`, etc.), while prompts in `prompts/meta`
-  start with `L#_` (`L0_master-ultrameta.prompt.yaml`).
-- **Directory placement**: Add new prompts to the most relevant directory. Create
-  new directories when necessary, using short, lowercase names separated by
-  underscores.
+## 1. Project Overview & Stack
 
-## Prompt Structure
+**Repository Type**: Prompt Engineering Library & Workflow Engine
+**Core Technologies**:
+- **Data Format**: YAML (`.prompt.yaml`, `.workflow.yaml`)
+- **Validation**: Python 3.x
+- **Documentation**: Jekyll (Markdown)
+- **CI/CD**: GitHub Actions
 
-Each prompt file follows the structure shown in
-`docs/template_prompt.prompt.yaml`. Top-level fields include:
+**Key Dependencies**: `pyyaml`, `yamllint`, `pydantic`, `jinja2`, `pytest`
 
-- `name` *(string, required)* — short descriptive title.
-- `description` *(string, optional)* — purpose of the prompt.
-- `model` *(string, required)* — model identifier.
-- `modelParameters` *(object, optional)* — model parameters such as `temperature`.
-- `messages` *(array, required)* — ordered list of `role`/`content` pairs.
-- `testData` *(array, optional)* — sample inputs with expected outputs.
-- `evaluators` *(array, optional)* — evaluation rules.
+## 2. Executable Commands
 
-Runtime messages should use simple `{{variable}}` placeholders where caller input
-is expected.
+Use these exact commands to build, test, and validate your work.
 
-## Contributing New Prompts
-
-Follow these steps when adding a new prompt:
-
-1. Create a `.prompt.yaml` file following `docs/template_prompt.prompt.yaml`.
-1. Place the file in the appropriate directory (`prompts/technical`, `prompts/meta`, etc.). Create new directories if needed using short, lowercase names separated by underscores.
-1. When you make a new directory, also add an `overview.md` file inside it that briefly explains the prompts in that folder.
-1. Run the draft through `tools/prompt_tools/L5_prompt_sanitiser.md`.
-1. Use `tools/prompt_tools/L5_standardize-prompt-files.md` to ensure structure and formatting are consistent.
-1. For large reorganizations, follow `tools/prompt_tools/L5_refactor-reindex-prompts.md`.
-1. Optionally, run `tools/prompt_tools/01_architecture_review_pipeline.md` for repository audits.
-1. Run `tools/scripts/migrate_prompts.py` to ensure all files conform to the latest schema (including `version` and `variables` stubs).
-1. Run `tools/scripts/enrich_prompts.py` to automatically fill in "TODO" variable descriptions and add missing metadata.
-1. Run `tools/scripts/update_docs_index.py` to regenerate the docs index (or rely on `.github/workflows/update-docs.yml`).
-1. Verify the YAML syntax using a tool like `yamllint`.
-1. Commit the new file with a concise message, e.g. `Add data ingestion prompt`.
-1. Open a pull request for review.
-
-Use a YAML linter to check prompt syntax before committing. For example:
-
+### Setup
 ```bash
-yamllint **/*.prompt.yaml
+# Install required Python dependencies
+pip install -r requirements.txt
 ```
 
-Make sure the linter is available. Install it with your package manager if it's missing.
-The `.github/workflows/update-docs.yml` workflow will automatically commit the docs index if it becomes out of date.
+### Validation & Testing
+```bash
+# Run the full validation suite (includes schema, linting, docs check)
+python3 tools/scripts/test_all.py
 
-## Automation
+# Run specific schema validation for prompts
+python3 tools/scripts/validate_prompt_schema.py
 
-Several GitHub Actions take care of routine maintenance tasks:
+# Lint YAML files strictly
+yamllint .
+```
 
-- **`generate-overviews.yml`** automatically creates an `overview.md` file in any new prompt directory and updates the docs index.
-- **`repo-checks.yml`** verifies file naming conventions, ensures new prompt files use the `.prompt.yaml` extension, and checks that each directory contains `overview.md`.
-- **`yaml-validation.yml`** runs a YAML linter over prompt files.
-- **`update-docs.yml`** commits the documentation index if it changes.
+### Documentation
+```bash
+# Generate documentation indices and overviews
+python3 tools/scripts/generate_docs.py
+```
 
-These workflows run on every push or pull request. When contributing, you can rely on them to handle the overview generation and docs update steps for you.
+## 3. Testing & Validation
+
+Testing in this repository means verifying **schema compliance** and **logic correctness** of prompts.
+
+- **Schema Validation**: handled by `validate_prompt_schema.py`. Ensure all required fields (`name`, `model`, `messages`) are present.
+- **Logic Verification**: use the `testData` field in your prompt file. This allows simulation tools to verify the prompt's output against expected results.
+- **Workflow Simulation**: use `tools/scripts/run_workflow.py` to simulate complex multi-step prompt chains.
+
+## 4. Code Style & Conventions
+
+### File Naming
+- **Prompts**: `snake_case.prompt.yaml` (e.g., `code_review.prompt.yaml`)
+- **Workflows**: `snake_case.workflow.yaml`
+- **Directories**: `snake_case/` (e.g., `prompts/technical/software_engineering/`)
+
+### Prompt Structure (Example)
+Your prompts **must** follow this structure. Do not invent new fields.
+
+```yaml
+name: Text Summarizer
+version: "1.0.0"
+description: Summarizes input text concisely.
+metadata:
+  domain: general
+  complexity: low
+  tags:
+    - summarization
+variables:
+  - name: input
+    description: The text to summarize.
+    required: true
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.5
+messages:
+  - role: system
+    content: "You are a concise summarizer."
+  - role: user
+    content: "Summarize this: {{input}}"
+testData:
+  - input:
+      input: "Long text here..."
+    expected: "Short summary."
+evaluators:
+  - name: Length Check
+    python: "len(output) < len(input)"
+```
+
+## 5. Strict Boundaries & Constraints
+
+🛑 **CRITICAL RULES**:
+1. **No JSON Prompts**: All prompts must be YAML (`.prompt.yaml`).
+2. **Docs Integrity**: Do not manually edit auto-generated files in `docs/` unless you are fixing the generator script itself.
+3. **Directory Hygiene**: Every new directory under `prompts/` **must** contain an `overview.md` file describing its contents.
+4. **Workflow Numbering**: Prompts inside a workflow directory (e.g., `paw_workflow/`) must be numbered sequentially (e.g., `01_step_one.prompt.yaml`). Standalone prompts must **not** be numbered.
+
+## 6. Git & PR Workflow
+
+- **Commit Messages**: Use Conventional Commits.
+  - `feat: add new summarization prompt`
+  - `fix: correct typo in system message`
+  - `docs: update usage guide`
+- **Pull Requests**:
+  - Must pass `tools/scripts/test_all.py` before submission.
+  - Ensure no sensitive data (API keys, PII) is included in `testData`.
