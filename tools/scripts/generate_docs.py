@@ -40,6 +40,7 @@ class DocItem:
 
 class FileParser:
     """Encapsulates logic for extracting metadata from files."""
+    RE_NUMERIC_PREFIX = re.compile(r'^\d+_')
     
     @staticmethod
     def load_yaml(path: Path) -> Dict[str, Any]:
@@ -59,7 +60,7 @@ class FileParser:
         # Fallback: Robust filename parsing
         stem = path.stem.replace('.workflow', '')
         # Remove leading numbers (e.g., 01_filename -> filename)
-        clean_name = re.sub(r'^\d+_', '', stem)
+        clean_name = FileParser.RE_NUMERIC_PREFIX.sub('', stem)
         return clean_name.replace('_', ' ').title()
 
     @staticmethod
@@ -89,6 +90,8 @@ class FileParser:
 
 class WorkflowGrapher:
     """Specialized logic for Mermaid graph generation."""
+    RE_STEPS = re.compile(r'steps\.(\w+)\.output')
+    RE_INPUTS = re.compile(r'inputs\.(\w+)')
     
     @staticmethod
     def generate(data: Dict[str, Any]) -> str:
@@ -111,10 +114,10 @@ class WorkflowGrapher:
             for val in inputs_map.values():
                 if isinstance(val, str):
                     # Dependency on other steps
-                    for match in re.findall(r'steps\.(\w+)\.output', val):
+                    for match in WorkflowGrapher.RE_STEPS.findall(val):
                         graph.append(f"    {match} --> {step_id}")
                     # Dependency on global inputs
-                    for match in re.findall(r'inputs\.(\w+)', val):
+                    for match in WorkflowGrapher.RE_INPUTS.findall(val):
                         graph.append(f"    Input_{match} --> {step_id}")
                         
         return "\n".join(graph) if len(graph) > 1 else ""
