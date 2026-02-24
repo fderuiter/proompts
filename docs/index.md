@@ -273,6 +273,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [CRF Quality Auditor](../prompts/clinical/forms/clinical_prompts_workflow/02_crf_quality_auditor.prompt.yaml)
 - [CDASH Mapping & Completion-Guide Assistant](../prompts/clinical/forms/clinical_prompts_workflow/03_cdash_mapping_completion_guide.prompt.yaml)
 
+## Google Jules
+
+- [Jules Test Generator](../prompts/google_jules/jules_test_gen.prompt.yaml)
+
 ## Imaging
 
 - [Imaging Charter Draft](../prompts/clinical/imaging/imaging_workflow/01_imaging_charter_draft.prompt.yaml)
