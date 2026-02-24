@@ -160,6 +160,7 @@
 [CRF Shell Generator](../prompts/clinical/forms/clinical_prompts_workflow/01_crf_shell_generator.prompt.yaml)
 [CRF Quality Auditor](../prompts/clinical/forms/clinical_prompts_workflow/02_crf_quality_auditor.prompt.yaml)
 [CDASH Mapping & Completion-Guide Assistant](../prompts/clinical/forms/clinical_prompts_workflow/03_cdash_mapping_completion_guide.prompt.yaml)
+[Jules Refactoring Agent](../prompts/google_jules/jules_refactoring_agent.prompt.yaml)
 [Jules Test Generator](../prompts/google_jules/jules_test_gen.prompt.yaml)
 [Imaging Charter Draft](../prompts/clinical/imaging/imaging_workflow/01_imaging_charter_draft.prompt.yaml)
 [Site Upload QC and Query Generator](../prompts/clinical/imaging/imaging_workflow/02_site_upload_qc.prompt.yaml)
