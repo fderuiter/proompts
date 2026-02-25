@@ -14,12 +14,14 @@ except ImportError:
     from utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, OVERVIEW_NAME
 
 
-def title_from_prompt(path: Path) -> str:
-    """Return prompt title from a YAML file or fallback to filename."""
+def get_prompt_metadata(path: Path) -> tuple[str, str]:
+    """Return prompt title and description from a YAML file or fallback to filename."""
     data = load_yaml(path)
     title = data.get("name") or data.get("title")
+    description = data.get("description", "")
+
     if title:
-        return str(title).strip()
+        return str(title).strip(), str(description).strip()
 
     name = path.name
     for ext in (".prompt.yaml", ".prompt.yml", ".workflow.yaml", ".workflow.yml"):
@@ -28,7 +30,9 @@ def title_from_prompt(path: Path) -> str:
             break
     if name.split("_", 1)[0].isdigit():
         name = name.split("_", 1)[1]
-    return name.replace("_", " ").title()
+
+    title = name.replace("_", " ").title()
+    return title, str(description).strip()
 
 
 def generate_overview(directory: Path) -> str:
@@ -42,8 +46,11 @@ def generate_overview(directory: Path) -> str:
     
     lines = []
     for file in sorted(prompt_files):
-        heading = title_from_prompt(file)
-        lines.append(f"- [{heading}]({file.name})")
+        heading, description = get_prompt_metadata(file)
+        if description:
+            lines.append(f"- **[{heading}]({file.name})**: {description}")
+        else:
+            lines.append(f"- [{heading}]({file.name})")
     
     # Scan for subdirectories that have prompts or overviews
     subdirs = []
