@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Testing
-nav_order: 12
-has_children: false
 ---
 
 # Testing

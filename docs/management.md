@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Management
-nav_order: 6
-has_children: false
 ---
 
 # Management

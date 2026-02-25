@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Imaging Workflow
-parent: Workflows
-nav_order: 99
 ---
 
 # Imaging Workflow
@@ -11,7 +8,7 @@ A workflow for various imaging-related tasks, including charter drafting, QC, ce
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_charter_draft_protocol_synopsis[Input: charter_draft_protocol_synopsis] --> Steps
     Input_charter_draft_modalities[Input: charter_draft_modalities] --> Steps
@@ -59,6 +56,6 @@ graph TD
     Input_data_package_study_summary --> regulatory_imaging_data_package
     Input_data_package_metrics_data --> regulatory_imaging_data_package
     Input_data_package_reader_agreement --> regulatory_imaging_data_package
-</div>
+```
 
 [View Source YAML](../../workflows/clinical/imaging.workflow.yaml)

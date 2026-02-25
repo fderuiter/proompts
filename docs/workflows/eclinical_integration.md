@@ -1,8 +1,5 @@
 ---
-layout: default
 title: eClinical Integration Workflow
-parent: Workflows
-nav_order: 99
 ---
 
 # eClinical Integration Workflow
@@ -11,7 +8,7 @@ A workflow for architecting an integration blueprint, creating a data mapping pl
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_integration_description[Input: integration_description] --> Steps
     Input_mapping_requirements[Input: mapping_requirements] --> Steps
@@ -22,6 +19,6 @@ graph TD
     Input_mapping_requirements --> mapping_playbook
     validation_checklist[Step: validation_checklist]
     Input_validation_info --> validation_checklist
-</div>
+```
 
 [View Source YAML](../../workflows/clinical/eclinical_integration.workflow.yaml)

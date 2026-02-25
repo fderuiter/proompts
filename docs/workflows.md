@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Workflows
-nav_order: 13
-has_children: false
 ---
 
 # Workflows

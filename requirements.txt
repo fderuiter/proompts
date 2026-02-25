@@ -4,3 +4,4 @@ pydantic
 jinja2
 pytest
 mypy
+mkdocs-material>=9.0.0

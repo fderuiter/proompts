@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Clinical Monitoring Workflow
-parent: Workflows
-nav_order: 99
 ---
 
 # Clinical Monitoring Workflow
@@ -11,7 +8,7 @@ A workflow for creating a site performance dashboard, building a CAPA plan, and 
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_site_performance_data[Input: site_performance_data] --> Steps
     Input_monitoring_findings[Input: monitoring_findings] --> Steps
@@ -22,6 +19,6 @@ graph TD
     Input_monitoring_findings --> capa_plan
     mvr_critique[Step: mvr_critique]
     Input_mvr_report --> mvr_critique
-</div>
+```
 
 [View Source YAML](../../workflows/clinical/clinical_monitoring.workflow.yaml)

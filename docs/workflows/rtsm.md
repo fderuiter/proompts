@@ -1,8 +1,5 @@
 ---
-layout: default
 title: RTSM Workflow
-parent: Workflows
-nav_order: 99
 ---
 
 # RTSM Workflow
@@ -11,7 +8,7 @@ A workflow for designing a randomization scheme, a supply strategy, and a risk-b
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_study_parameters[Input: study_parameters] --> Steps
     Input_trial_enrollment[Input: trial_enrollment] --> Steps
@@ -22,6 +19,6 @@ graph TD
     Input_trial_enrollment --> supply_strategy
     rbm_sop[Step: rbm_sop]
     Input_existing_sop --> rbm_sop
-</div>
+```
 
 [View Source YAML](../../workflows/clinical/rtsm.workflow.yaml)

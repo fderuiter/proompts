@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Meta-Prompt Chain: L1 -> L2 -> L3 -> L4
-parent: Workflows
-nav_order: 99
 ---
 
 # Meta-Prompt Chain: L1 -> L2 -> L3 -> L4
@@ -11,7 +8,7 @@ A workflow that implements the full meta-prompt generative chain.
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_end_task[Input: end_task] --> Steps
     Input_policy_block[Input: policy_block] --> Steps
@@ -38,6 +35,6 @@ graph TD
     Input_output_schema --> execute_task
     Input_policy_block --> execute_task
     Input_token_limit_l4 --> execute_task
-</div>
+```
 
 [View Source YAML](../../workflows/meta/meta_prompt_chain.workflow.yaml)

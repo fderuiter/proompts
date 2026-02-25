@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Biological Safety Assessment and Planning
-parent: Workflows
-nav_order: 99
 ---
 
 # Biological Safety Assessment and Planning
@@ -11,7 +8,7 @@ A workflow to perform a risk assessment for a medical device, develop a biologic
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_medical_device_type[Input: medical_device_type] --> Steps
     perform_risk_assessment[Step: perform_risk_assessment]
@@ -20,6 +17,6 @@ graph TD
     perform_risk_assessment --> develop_safety_plan
     prepare_submission[Step: prepare_submission]
     develop_safety_plan --> prepare_submission
-</div>
+```
 
 [View Source YAML](../../workflows/scientific/biological_safety.workflow.yaml)

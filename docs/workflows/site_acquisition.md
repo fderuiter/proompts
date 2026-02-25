@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Site Acquisition Workflow
-parent: Workflows
-nav_order: 99
 ---
 
 # Site Acquisition Workflow
@@ -11,7 +8,7 @@ A workflow for site landscape mapping, feasibility questionnaire building, and i
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_protocol_summary[Input: protocol_summary] --> Steps
     Input_investigator_name[Input: investigator_name] --> Steps
@@ -33,6 +30,6 @@ graph TD
     Input_unique_site_strength --> outreach_email
     Input_study_synopsis --> outreach_email
     Input_sponsor_name --> outreach_email
-</div>
+```
 
 [View Source YAML](../../workflows/clinical/site_acquisition.workflow.yaml)

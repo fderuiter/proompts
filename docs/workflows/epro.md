@@ -1,8 +1,5 @@
 ---
-layout: default
 title: ePRO Workflow
-parent: Workflows
-nav_order: 99
 ---
 
 # ePRO Workflow
@@ -11,7 +8,7 @@ A workflow for designing a patient-centric BYOD workflow, optimizing ePRO form d
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_byod_requirements[Input: byod_requirements] --> Steps
     Input_form_details[Input: form_details] --> Steps
@@ -22,6 +19,6 @@ graph TD
     Input_form_details --> form_design
     adoption_plan[Step: adoption_plan]
     Input_rollout_details --> adoption_plan
-</div>
+```
 
 [View Source YAML](../../workflows/clinical/epro.workflow.yaml)

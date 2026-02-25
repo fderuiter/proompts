@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Clinical Prompts Workflow
-parent: Workflows
-nav_order: 99
 ---
 
 # Clinical Prompts Workflow
@@ -11,7 +8,7 @@ A workflow to generate a CRF shell, audit it, and create a CDASH mapping guide.
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_protocol_summary[Input: protocol_summary] --> Steps
     Input_variable_list[Input: variable_list] --> Steps
@@ -21,6 +18,6 @@ graph TD
     crf_shell --> quality_audit
     cdash_mapping[Step: cdash_mapping]
     Input_variable_list --> cdash_mapping
-</div>
+```
 
 [View Source YAML](../../workflows/clinical/clinical_prompts.workflow.yaml)

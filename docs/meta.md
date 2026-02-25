@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Meta
-nav_order: 7
-has_children: false
 ---
 
 # Meta

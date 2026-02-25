@@ -190,17 +190,14 @@ class DocumentationGenerator:
         rel_source = os.path.relpath(source_path, output_path.parent)
 
         content = f"""---
-layout: default
 title: {title}
-parent: Workflows
-nav_order: 99
 ---
 
 # {title}
 
 {desc}
 
-{f'## Workflow Diagram\n\n<div class="mermaid">\n{mermaid}\n</div>\n' if mermaid else ''}
+{f'## Workflow Diagram\n\n```mermaid\n{mermaid}\n```\n' if mermaid else ''}
 [View Source YAML]({rel_source})
 """
         if check_mode:
@@ -247,10 +244,7 @@ nav_order: 99
             
             md = [
                 "---",
-                "layout: default",
                 f"title: {category}",
-                f"nav_order: {nav}",
-                "has_children: false",
                 "---",
                 "",
                 f"# {category}",

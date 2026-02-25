@@ -1,8 +1,5 @@
 ---
-layout: default
 title: CRA Workflow
-parent: Workflows
-nav_order: 99
 ---
 
 # CRA Workflow
@@ -11,7 +8,7 @@ A workflow for generating a monitoring visit report, tracking investigator follo
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_visit_info[Input: visit_info] --> Steps
     Input_pending_actions[Input: pending_actions] --> Steps
@@ -22,6 +19,6 @@ graph TD
     Input_pending_actions --> email_tracker
     rbm_plan_builder[Step: rbm_plan_builder]
     Input_study_info --> rbm_plan_builder
-</div>
+```
 
 [View Source YAML](../../workflows/clinical/cra.workflow.yaml)

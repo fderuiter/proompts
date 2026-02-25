@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Testing Workflow
-parent: Workflows
-nav_order: 99
 ---
 
 # Testing Workflow
@@ -11,7 +8,7 @@ A workflow for end-to-end test discovery, design verification, human factors val
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_project_name[Input: project_name] --> Steps
     Input_languages_frameworks[Input: languages_frameworks] --> Steps
@@ -31,6 +28,6 @@ graph TD
     risk_based_test_suite[Step: risk_based_test_suite]
     Input_device_name --> risk_based_test_suite
     Input_hazard_analysis_table --> risk_based_test_suite
-</div>
+```
 
 [View Source YAML](../../workflows/technical/testing.workflow.yaml)

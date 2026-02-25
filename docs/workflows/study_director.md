@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Study Director Workflow
-parent: Workflows
-nav_order: 99
 ---
 
 # Study Director Workflow
@@ -11,7 +8,7 @@ A workflow for drafting a GLP-compliant study protocol, auditing raw data, and g
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_protocol_basics[Input: protocol_basics] --> Steps
     Input_data_csv[Input: data_csv] --> Steps
@@ -22,6 +19,6 @@ graph TD
     Input_data_csv --> audit_data
     executive_summary[Step: executive_summary]
     Input_report_sections --> executive_summary
-</div>
+```
 
 [View Source YAML](../../workflows/management/study_director.workflow.yaml)

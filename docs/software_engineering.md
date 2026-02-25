@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Software Engineering
-nav_order: 10
-has_children: false
 ---
 
 # Software Engineering
