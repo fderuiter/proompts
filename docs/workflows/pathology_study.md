@@ -11,7 +11,7 @@ A workflow to design a pathology study protocol, evaluate the device-tissue inte
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_study_details[Input: study_details] --> Steps
     design_protocol[Step: design_protocol]
@@ -20,6 +20,6 @@ graph TD
     design_protocol --> evaluate_interface
     plan_reporting[Step: plan_reporting]
     evaluate_interface --> plan_reporting
-</div>
+```
 
-[View Source YAML](../../workflows/scientific/pathology_study.workflow.yaml)
+[View Source YAML](../workflows_src/scientific/pathology_study.workflow.yaml)

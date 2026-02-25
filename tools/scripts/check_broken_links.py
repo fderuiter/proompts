@@ -89,8 +89,28 @@ def check_link(source_file: Path, link: str, target_anchors_cache: dict) -> Tupl
 
     # Check if file exists
     if not target_file.exists():
-        return False, f"File not found: {link}"
-    
+        # Handle "virtual" paths for MkDocs build structure (where prompts/workflows are copied to docs/)
+        # Locally, these are in ROOT_DIR/prompts and ROOT_DIR/workflows
+        try:
+            if target_file.is_relative_to(ROOT_DIR / "docs" / "prompts"):
+                rel = target_file.relative_to(ROOT_DIR / "docs" / "prompts")
+                alt_target = ROOT_DIR / "prompts" / rel
+                if alt_target.exists():
+                    target_file = alt_target # Update target_file for anchor check
+                else:
+                    return False, f"File not found: {link} (checked {alt_target})"
+            elif target_file.is_relative_to(ROOT_DIR / "docs" / "workflows_src"):
+                rel = target_file.relative_to(ROOT_DIR / "docs" / "workflows_src")
+                alt_target = ROOT_DIR / "workflows" / rel
+                if alt_target.exists():
+                    target_file = alt_target # Update target_file for anchor check
+                else:
+                     return False, f"File not found: {link} (checked {alt_target})"
+            else:
+                return False, f"File not found: {link}"
+        except ValueError:
+            return False, f"File not found: {link}"
+
     # If it's a directory, it's valid for file browsing
     if target_file.is_dir():
          return True, ""

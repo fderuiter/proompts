@@ -11,7 +11,7 @@ A workflow for creating a competency-based onboarding blueprint, a scenario-base
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_existing_modules[Input: existing_modules] --> Steps
     Input_audience_role[Input: audience_role] --> Steps
@@ -22,6 +22,6 @@ graph TD
     Input_audience_role --> microlearning_series
     analytics_plan[Step: analytics_plan]
     Input_analysis_goal --> analytics_plan
-</div>
+```
 
-[View Source YAML](../../workflows/management/learning_development.workflow.yaml)
+[View Source YAML](../workflows_src/management/learning_development.workflow.yaml)

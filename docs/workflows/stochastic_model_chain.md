@@ -11,7 +11,7 @@ A three-stage workflow to model, simulate, and analyze conversation risks using 
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_conversation_scenario[Input: conversation_scenario] --> Steps
     architect_step[Step: architect_step]
@@ -21,6 +21,6 @@ graph TD
     strategist_step[Step: strategist_step]
     architect_step --> strategist_step
     engineer_step --> strategist_step
-</div>
+```
 
-[View Source YAML](../../workflows/technical/stochastic_model_chain.workflow.yaml)
+[View Source YAML](../workflows_src/technical/stochastic_model_chain.workflow.yaml)

@@ -57,27 +57,6 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Testing](testing.md)
 - [Workflows](workflows.md)
 
-## Search
-"""
-
-SEARCH_UI = """
-<div class="search-container">
-    <input type="text" id="search-input" placeholder="Search prompts..." style="width: 100%; padding: 10px; margin-bottom: 20px;">
-    <ul id="results-container"></ul>
-</div>
-
-<script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
-<script>
-    window.simpleJekyllSearch = new SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('results-container'),
-        json: '{{ site.baseurl }}/search.json',
-        searchResultTemplate: '<li><a href="{{ site.baseurl }}/{url}"><strong>{title}</strong></a><br><span style="font-size:0.8em">{description}</span></li>',
-        noResultsText: 'No prompts found',
-        limit: 10,
-        fuzzy: false
-    })
-</script>
 """
 
 
@@ -129,14 +108,18 @@ def generate() -> tuple[str, str]:
     groups = collect_prompts()
 
     # Prepend the fixed header content to the generated index
-    index_lines = [INDEX_HEADER, SEARCH_UI, "", "# All Prompts", ""]
+    index_lines = [INDEX_HEADER, "", "# All Prompts", ""]
     toc_lines: list[str] = []
 
     for category, items in groups.items():
         index_lines.append(f"## {nice_title(category)}")
         index_lines.append("")
         for path, title in items:
-            rel = Path("..") / path.relative_to(ROOT)
+            try:
+                rel = Path("prompts") / path.relative_to(PROMPTS_DIR)
+            except ValueError:
+                rel = Path("..") / path.relative_to(ROOT)
+
             link = f"[{title}]({rel.as_posix()})"
             index_lines.append(f"- {link}")
             toc_lines.append(link)

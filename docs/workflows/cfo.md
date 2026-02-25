@@ -11,7 +11,7 @@ A workflow for financial forecasting, competitive bid pricing, and regulatory ri
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_base_revenue[Input: base_revenue] --> Steps
     Input_base_costs[Input: base_costs] --> Steps
@@ -40,6 +40,6 @@ graph TD
     Input_reg_updates --> risk_dashboard
     Input_esg_baseline --> risk_dashboard
     Input_risk_tolerance --> risk_dashboard
-</div>
+```
 
-[View Source YAML](../../workflows/business/cfo.workflow.yaml)
+[View Source YAML](../workflows_src/business/cfo.workflow.yaml)

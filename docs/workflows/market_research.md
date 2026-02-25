@@ -11,7 +11,7 @@ A workflow for market landscape analysis, user needs assessment, barrier mapping
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_device_or_assay[Input: device_or_assay] --> Steps
     Input_application[Input: application] --> Steps
@@ -28,6 +28,6 @@ graph TD
     Input_markets --> barrier_mapping
     executive_summary[Step: executive_summary]
     Input_market_report --> executive_summary
-</div>
+```
 
-[View Source YAML](../../workflows/business/market_research.workflow.yaml)
+[View Source YAML](../workflows_src/business/market_research.workflow.yaml)

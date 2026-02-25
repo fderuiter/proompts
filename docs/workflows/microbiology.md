@@ -11,7 +11,7 @@ A workflow for creating a bioburden testing SOP, an EO sterilization validation 
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_device_description[Input: device_description] --> Steps
     Input_device_name[Input: device_name] --> Steps
@@ -21,6 +21,6 @@ graph TD
     Input_device_name --> sterilization_protocol
     endotoxin_risk_plan[Step: endotoxin_risk_plan]
     Input_device_name --> endotoxin_risk_plan
-</div>
+```
 
-[View Source YAML](../../workflows/scientific/microbiology.workflow.yaml)
+[View Source YAML](../workflows_src/scientific/microbiology.workflow.yaml)

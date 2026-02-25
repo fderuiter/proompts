@@ -11,7 +11,7 @@ A workflow to create a project charter, risk register, status report, and timeli
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_project_name[Input: project_name] --> Steps
     Input_project_description[Input: project_description] --> Steps
@@ -38,6 +38,6 @@ graph TD
     Input_project_type --> timeline
     Input_objectives --> timeline
     Input_milestone_data --> timeline
-</div>
+```
 
-[View Source YAML](../../workflows/management/project_management.workflow.yaml)
+[View Source YAML](../workflows_src/management/project_management.workflow.yaml)

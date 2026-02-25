@@ -11,7 +11,7 @@ A workflow to design a chemical characterization study, assess the risks from th
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_device_description[Input: device_description] --> Steps
     Input_body_weight_kg[Input: body_weight_kg] --> Steps
@@ -24,6 +24,6 @@ graph TD
     Input_device_dose_ug_day --> assess_risk
     write_summary[Step: write_summary]
     assess_risk --> write_summary
-</div>
+```
 
-[View Source YAML](../../workflows/scientific/chemical_characterization.workflow.yaml)
+[View Source YAML](../workflows_src/scientific/chemical_characterization.workflow.yaml)

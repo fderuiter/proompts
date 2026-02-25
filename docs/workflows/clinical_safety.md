@@ -11,7 +11,7 @@ A workflow for creating a clinical safety synopsis, an adverse event narrative, 
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_surveillance_data[Input: surveillance_data] --> Steps
     Input_adverse_event_data[Input: adverse_event_data] --> Steps
@@ -22,6 +22,6 @@ graph TD
     Input_adverse_event_data --> adverse_event_narrative
     safety_signal_trending[Step: safety_signal_trending]
     Input_post_market_data --> safety_signal_trending
-</div>
+```
 
-[View Source YAML](../../workflows/clinical/clinical_safety.workflow.yaml)
+[View Source YAML](../workflows_src/clinical/clinical_safety.workflow.yaml)

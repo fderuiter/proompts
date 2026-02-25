@@ -11,7 +11,7 @@ A workflow for detecting discrepancies, drafting a DMP section, and building edi
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_edc_export_csv[Input: edc_export_csv] --> Steps
     Input_dmp_section_requirements[Input: dmp_section_requirements] --> Steps
@@ -22,6 +22,6 @@ graph TD
     Input_dmp_section_requirements --> dmp_section
     edit_check_specification[Step: edit_check_specification]
     Input_edit_check_rules --> edit_check_specification
-</div>
+```
 
-[View Source YAML](../../workflows/clinical/clinical_data.workflow.yaml)
+[View Source YAML](../workflows_src/clinical/clinical_data.workflow.yaml)

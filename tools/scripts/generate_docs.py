@@ -187,7 +187,16 @@ class DocumentationGenerator:
         output_path = self.root / CONFIG['dirs']['workflow_docs'] / filename
         
         # Relative link to source for the button
-        rel_source = os.path.relpath(source_path, output_path.parent)
+        # Assumes workflows are copied to docs/workflows_src/ preserving structure
+        # output_path is docs/workflows/filename.md (flat)
+        # We need link to ../workflows_src/<relative_path_from_workflows_root>
+        try:
+             wf_root = self.root / CONFIG['dirs']['workflows']
+             rel_from_root = source_path.relative_to(wf_root)
+             rel_source = f"../workflows_src/{rel_from_root}"
+        except ValueError:
+             # Fallback
+             rel_source = os.path.relpath(source_path, output_path.parent)
 
         content = f"""---
 layout: default
@@ -200,7 +209,7 @@ nav_order: 99
 
 {desc}
 
-{f'## Workflow Diagram\n\n<div class="mermaid">\n{mermaid}\n</div>\n' if mermaid else ''}
+{f'## Workflow Diagram\n\n```mermaid\n{mermaid}\n```\n' if mermaid else ''}
 [View Source YAML]({rel_source})
 """
         if check_mode:
@@ -266,8 +275,13 @@ nav_order: 99
                 # Sort prompts by title (case insensitive)
                 for p in sorted(types['prompt'], key=lambda x: x.title.lower()):
                     # Calculate relative path from docs/category.md to prompts/file.yaml
-                    # Note: p.path is absolute
-                    rel = os.path.relpath(p.path, docs_dir)
+                    # Assumes prompts are copied to docs/prompts/ preserving structure
+                    try:
+                        prompts_root = self.root / CONFIG['dirs']['prompts']
+                        rel_from_root = p.path.relative_to(prompts_root)
+                        rel = f"prompts/{rel_from_root}"
+                    except ValueError:
+                         rel = os.path.relpath(p.path, docs_dir)
                     md.append(f"- [{p.title}]({rel})")
                 md.append("")
 

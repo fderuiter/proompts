@@ -11,13 +11,13 @@ A workflow that takes a product concept, generates a product brief, and then cre
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_product_concept[Input: product_concept] --> Steps
     generate_product_brief[Step: generate_product_brief]
     Input_product_concept --> generate_product_brief
     create_project_epics[Step: create_project_epics]
     generate_product_brief --> create_project_epics
-</div>
+```
 
-[View Source YAML](../../workflows/technical/agentic_coding.workflow.yaml)
+[View Source YAML](../workflows_src/technical/agentic_coding.workflow.yaml)

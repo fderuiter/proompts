@@ -11,7 +11,7 @@ A state-machine workflow for disciplined software engineering tasks, enforcing D
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_todo_content[Input: todo_content] --> Steps
     Input_file_structure[Input: file_structure] --> Steps
@@ -28,6 +28,6 @@ graph TD
     qa_verification[Step: qa_verification]
     precision_strike --> qa_verification
     Input_todo_content --> qa_verification
-</div>
+```
 
-[View Source YAML](../../workflows/technical/software_engineering/paw_workflow.workflow.yaml)
+[View Source YAML](../workflows_src/technical/software_engineering/paw_workflow.workflow.yaml)

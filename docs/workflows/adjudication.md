@@ -11,7 +11,7 @@ A workflow to design an adjudication dashboard, create a source document checkli
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_charter_excerpt[Input: charter_excerpt] --> Steps
     Input_adjudication_log_csv[Input: adjudication_log_csv] --> Steps
@@ -20,6 +20,6 @@ graph TD
     Input_charter_excerpt --> create_checklist
     analyze_kpis[Step: analyze_kpis]
     Input_adjudication_log_csv --> analyze_kpis
-</div>
+```
 
-[View Source YAML](../../workflows/clinical/adjudication.workflow.yaml)
+[View Source YAML](../workflows_src/clinical/adjudication.workflow.yaml)

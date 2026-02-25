@@ -11,7 +11,7 @@ A workflow for building a sterility validation protocol, comparing regulatory ga
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_device_description[Input: device_description] --> Steps
     Input_process_description[Input: process_description] --> Steps
@@ -21,6 +21,6 @@ graph TD
     Input_device_description --> gap_analysis
     process_fmea[Step: process_fmea]
     Input_process_description --> process_fmea
-</div>
+```
 
-[View Source YAML](../../workflows/scientific/sterility.workflow.yaml)
+[View Source YAML](../workflows_src/scientific/sterility.workflow.yaml)

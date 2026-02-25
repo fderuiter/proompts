@@ -8,4 +8,4 @@ has_children: false
 # Google Jules
 
 ## Prompts
-- [Jules Test Generator](../prompts/google_jules/jules_test_gen.prompt.yaml)
+- [Jules Test Generator](prompts/google_jules/jules_test_gen.prompt.yaml)
