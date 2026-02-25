@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Stochastic Model Chain: Architect -> Engineer -> Strategist
-parent: Workflows
-nav_order: 99
 ---
 
 # Stochastic Model Chain: Architect -> Engineer -> Strategist
@@ -11,7 +8,7 @@ A three-stage workflow to model, simulate, and analyze conversation risks using 
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_conversation_scenario[Input: conversation_scenario] --> Steps
     architect_step[Step: architect_step]
@@ -21,6 +18,6 @@ graph TD
     strategist_step[Step: strategist_step]
     architect_step --> strategist_step
     engineer_step --> strategist_step
-</div>
+```
 
 [View Source YAML](../../workflows/technical/stochastic_model_chain.workflow.yaml)

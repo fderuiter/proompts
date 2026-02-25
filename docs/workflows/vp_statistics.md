@@ -1,8 +1,5 @@
 ---
-layout: default
 title: VP Statistics Workflow
-parent: Workflows
-nav_order: 99
 ---
 
 # VP Statistics Workflow
@@ -11,7 +8,7 @@ A workflow for creating an interim results executive brief, a statistical analys
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_analysis_results[Input: analysis_results] --> Steps
     Input_statistical_plan[Input: statistical_plan] --> Steps
@@ -28,6 +25,6 @@ graph TD
     data_quality_heatmap[Step: data_quality_heatmap]
     Input_raw_eds_dump --> data_quality_heatmap
     Input_query_log --> data_quality_heatmap
-</div>
+```
 
 [View Source YAML](../../workflows/management/vp_statistics.workflow.yaml)

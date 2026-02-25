@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Scientific
-nav_order: 9
-has_children: false
 ---
 
 # Scientific

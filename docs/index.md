@@ -1,7 +1,5 @@
 ---
-layout: home
 title: Home
-nav_order: 0
 ---
 
 # Proompts
@@ -38,27 +36,6 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Technical](technical.md)
 - [Testing](testing.md)
 - [Workflows](workflows.md)
-
-## Search
-
-
-<div class="search-container">
-    <input type="text" id="search-input" placeholder="Search prompts..." style="width: 100%; padding: 10px; margin-bottom: 20px;">
-    <ul id="results-container"></ul>
-</div>
-
-<script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
-<script>
-    window.simpleJekyllSearch = new SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('results-container'),
-        json: '{{ site.baseurl }}/search.json',
-        searchResultTemplate: '<li><a href="{{ site.baseurl }}/{url}"><strong>{title}</strong></a><br><span style="font-size:0.8em">{description}</span></li>',
-        noResultsText: 'No prompts found',
-        limit: 10,
-        fuzzy: false
-    })
-</script>
 
 
 # All Prompts

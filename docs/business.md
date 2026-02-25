@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Business
-nav_order: 2
-has_children: false
 ---
 
 # Business

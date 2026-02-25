@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Google Jules
-nav_order: 99
-has_children: false
 ---
 
 # Google Jules

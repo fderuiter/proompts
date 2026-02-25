@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Technical
-nav_order: 11
-has_children: false
 ---
 
 # Technical

@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Compassionate Music Therapy Workflow
-parent: Workflows
-nav_order: 99
 ---
 
 # Compassionate Music Therapy Workflow
@@ -11,7 +8,7 @@ A 4-step workflow to deconstruct venting, plan a therapeutic arc, compose a musi
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_venting_text[Input: venting_text] --> Steps
     compassionate_analyst[Step: compassionate_analyst]
@@ -25,6 +22,6 @@ graph TD
     compassionate_analyst --> lyricist
     iso_strategist --> lyricist
     sonic_architect --> lyricist
-</div>
+```
 
 [View Source YAML](../../workflows/clinical/music_therapy.workflow.yaml)

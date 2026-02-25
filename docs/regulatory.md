@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Regulatory
-nav_order: 8
-has_children: false
 ---
 
 # Regulatory

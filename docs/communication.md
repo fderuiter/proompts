@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Communication
-nav_order: 4
-has_children: false
 ---
 
 # Communication

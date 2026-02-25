@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Protocol to USDM Workflow
-parent: Workflows
-nav_order: 99
 ---
 
 # Protocol to USDM Workflow
@@ -11,7 +8,7 @@ A 5-stage chain to convert unstructured Clinical Protocol text into CDISC USDM v
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_protocol_text[Input: protocol_text] --> Steps
     Input_protocol_objectives_text[Input: protocol_objectives_text] --> Steps
@@ -29,6 +26,6 @@ graph TD
     stage2_rationale --> stage5_assembly
     stage3_workflow --> stage5_assembly
     stage4_concepts --> stage5_assembly
-</div>
+```
 
 [View Source YAML](../../workflows/clinical/usdm_workflow.workflow.yaml)

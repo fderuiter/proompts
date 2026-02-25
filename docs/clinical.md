@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Clinical
-nav_order: 3
-has_children: false
 ---
 
 # Clinical

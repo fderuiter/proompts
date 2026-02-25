@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Protocol Workflow
-parent: Workflows
-nav_order: 99
 ---
 
 # Protocol Workflow
@@ -11,7 +8,7 @@ A workflow to create, review, and refine a clinical trial protocol.
 
 ## Workflow Diagram
 
-<div class="mermaid">
+```mermaid
 graph TD
     Input_summary_sheet[Input: summary_sheet] --> Steps
     Input_process_information[Input: process_information] --> Steps
@@ -26,6 +23,6 @@ graph TD
     protocol_refinement[Step: protocol_refinement]
     Input_condition --> protocol_refinement
     Input_draft_section --> protocol_refinement
-</div>
+```
 
 [View Source YAML](../../workflows/clinical/protocol.workflow.yaml)
