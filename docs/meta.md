@@ -20,6 +20,7 @@ has_children: false
 - [PromptCrafter GPT](../prompts/meta/meta_prompt_chain/05_L5_promptcrafter_gpt.prompt.yaml)
 - [README Generator](../prompts/meta/meta_prompt_chain/05_L5_readme-generator.prompt.yaml)
 - [Task Prototyper](../prompts/meta/meta_prompt_chain/03_L3_task-prototyper.prompt.yaml)
+- [The Prompt Alchemist](../prompts/meta/creative/the_prompt_alchemist.prompt.yaml)
 - [Worker Prompt](../prompts/meta/meta_prompt_chain/04_L4_worker_prompt.prompt.yaml)
 
 ## Workflows

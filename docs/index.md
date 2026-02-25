@@ -379,6 +379,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Meta
 
+- [The Prompt Alchemist](../prompts/meta/creative/the_prompt_alchemist.prompt.yaml)
 - [Master Ultrameta Prompt Architect](../prompts/meta/meta_prompt_chain/00_L0_master-ultrameta.prompt.yaml)
 - [Meta Prompt Architect](../prompts/meta/meta_prompt_chain/01_L1_meta-prompt-architect.prompt.yaml)
 - [Prompt Engineer Template](../prompts/meta/meta_prompt_chain/02_L2_prompt-engineer.prompt.yaml)

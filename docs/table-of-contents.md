@@ -246,6 +246,7 @@
 [Target Segment & User Needs Assessment](../prompts/business/market_research/market_research_workflow/02_target_segment_user_needs_assessment.prompt.yaml)
 [Regulatory & Commercial Barrier Mapping](../prompts/business/market_research/market_research_workflow/03_regulatory_commercial_barrier_mapping.prompt.yaml)
 [Market Report Executive Summary](../prompts/business/market_research/market_research_workflow/04_market_report_exec_summary.prompt.yaml)
+[The Prompt Alchemist](../prompts/meta/creative/the_prompt_alchemist.prompt.yaml)
 [Master Ultrameta Prompt Architect](../prompts/meta/meta_prompt_chain/00_L0_master-ultrameta.prompt.yaml)
 [Meta Prompt Architect](../prompts/meta/meta_prompt_chain/01_L1_meta-prompt-architect.prompt.yaml)
 [Prompt Engineer Template](../prompts/meta/meta_prompt_chain/02_L2_prompt-engineer.prompt.yaml)
