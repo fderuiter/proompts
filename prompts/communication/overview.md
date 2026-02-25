@@ -16,7 +16,7 @@
 - **[Rapid-Risk-Matrix](rapid_risk_matrix.prompt.yaml)**: Act as a risk-manager. Objective: assess “[PROJECT/PROCESS]”.
 - **[Red-Team Stress-Test Simulation](red_team_stress_test.prompt.yaml)**: Assemble a ruthless panel of adversaries (Hacker, Competitor, Regulator) to dismantle a strategy.
 - **[Rubber Duck Debugger](rubber_duck_debugger.prompt.yaml)**: Guide developers through self-explanation to uncover bugs before providing fixes.
-- **[Smart Task Prioritizer](smart_task_prioritizer.prompt.yaml)**: Here’s my to-do list: ‹PASTE›
+- **[Smart Task Prioritizer](smart_task_prioritizer.prompt.yaml)**: Transform a raw to-do list into a structured Prioritization Matrix (Impact/Urgency/Effort) and an actionable Execution Plan.
 - **[Socratic-Coach](socratic_coach.prompt.yaml)**: You are my Socratic coach on “[TOPIC]”.
 - **[Pixar Story Spine Outline](story_spine_outline.prompt.yaml)**: Guide the model in creating a short Pixar-style story outline for middle-grade readers.
 - **[Storyboard-My-Idea](storyboard_my_idea.prompt.yaml)**: Storyboard “[PROJECT OR MESSAGE]” for a 60-second explainer video:
