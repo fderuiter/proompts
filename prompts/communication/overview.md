@@ -2,7 +2,7 @@
 
 ## Prompts
 - [80/20 Crash Course](80_20_crash_course.prompt.yaml)
-- [Analogy Architect](analogy_architect.prompt.yaml)
+- [Principal Science Communicator (Analogy Engine)](analogy_architect.prompt.yaml)
 - [Data-to-Insight Analyst](data_to_insight_analyst.prompt.yaml)
 - [Density Refiner](density_refiner.prompt.yaml)
 - [Devil’s-Advocate Stress Test](devils_advocate_stress_test.prompt.yaml)
