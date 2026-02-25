@@ -303,6 +303,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Product Brief Template](../prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/01_product_brief.prompt.yaml)
 - [Project Brief for Epic](../prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/02_project_brief_epic.prompt.yaml)
 
+## Lifestyle
+
+- [Culinary Amnestic Reconstruction Engine (CARE)](../prompts/lifestyle/culinary/culinary_amnestic_reconstruction.prompt.yaml)
+
 ## Management
 
 - [Accelerate Patient Recruitment & Retention](../prompts/management/clinical_research_manager/accelerate_patient_recruitment_retention.prompt.yaml)
