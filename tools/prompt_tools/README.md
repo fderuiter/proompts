@@ -49,9 +49,9 @@ An autonomous agent script ("Mission") for splitting large prompts into smaller 
 A guide and agent persona for migrating prompt files to a standard YAML schema. It enforces consistent front-matter, header structures, and formatting conventions across the repository.
 
 ### Prompt Sanitiser
-**File:** [`L5_prompt_sanitiser.md`](./L5_prompt_sanitiser.md)
+**File:** [`L5_prompt_sanitiser.prompt.yaml`](./L5_prompt_sanitiser.prompt.yaml)
 
-A system prompt that acts as a filter to clean "raw" prompts. It removes source artifacts (footnotes, citations) and reformats the text into a clean, imperative style suitable for the repository.
+A meta-prompt that cleans "raw" prompts into a production-ready format. It removes source artifacts (footnotes, citations) and reformats the text into a clean, imperative style suitable for the repository.
 
 ---
 
@@ -60,17 +60,22 @@ A system prompt that acts as a filter to clean "raw" prompts. It removes source 
 Most tools in this directory are designed to be used with an LLM (like ChatGPT or Claude) to perform meta-tasks on the repository itself.
 
 ### Using Markdown Tools (`.md`)
-1. Open the file (e.g., `L5_prompt_sanitiser.md`).
+1. Open the file (e.g., `L5_standardize-prompt-files.md`).
 2. Copy the entire content.
 3. Paste it into your LLM chat interface as the "System" or first "User" message.
-4. Provide the target content (e.g., the raw prompt you want to sanitize) as the next message.
+4. Provide the target content as the next message.
 
 ### Using YAML Prompts (`.prompt.yaml`)
 These files follow the repository's standard schema and can be executed using the workflow engine (if supported) or used as templates.
 
+**Example 1: Running the Prompt Optimizer**
 ```bash
-# Example: Running the Prompt Optimizer (hypothetical usage if supported by run_workflow.py)
 python3 tools/scripts/run_workflow.py tools/prompt_tools/L5_prompt_optimizer.prompt.yaml -i task="Write a Python script to scrape a website"
+```
+
+**Example 2: Running the Prompt Sanitiser**
+```bash
+python3 tools/scripts/run_workflow.py tools/prompt_tools/L5_prompt_sanitiser.prompt.yaml -i raw_prompt="Write a fibonacci script [1]."
 ```
 
 ---
