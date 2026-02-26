@@ -2,6 +2,7 @@
 
 ## Categories
 - [Architecture/](architecture/overview.md)
+- [Automation/](automation/overview.md)
 - [Data Science/](data_science/overview.md)
 - [Design/](design/overview.md)
 - [Devops/](devops/overview.md)

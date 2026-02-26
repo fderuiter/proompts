@@ -453,6 +453,7 @@
 [Hexagonal Architecture Review](../prompts/technical/architecture/hexagonal_architecture_review.prompt.yaml)
 [Maintainability Codebase Analysis](../prompts/technical/architecture/maintainability_codebase_analysis.prompt.yaml)
 [SOLID Codebase Analysis](../prompts/technical/architecture/solid_codebase_analysis.prompt.yaml)
+[Universal Automation Agent](../prompts/technical/automation/universal_automation_agent.prompt.yaml)
 [Conversation Stochastic Modeler](../prompts/technical/data_science/conversation_stochastic_modeler.prompt.yaml)
 [Design.md Template](../prompts/technical/design/design_md_template.prompt.yaml)
 [AI Email Assistant Go/No-Go Vote](../prompts/technical/design/email_assistant_go_no_go_vote.prompt.yaml)
