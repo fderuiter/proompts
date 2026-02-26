@@ -2,7 +2,7 @@
 
 ## Prompts
 - **[FDA-Aligned AI Governance Framework](ai_governance_framework.prompt.yaml)**: Draft an AI governance framework that satisfies regulators and sponsors.
-- **[Crisis-Management Playbook Generator](crisis_management_playbook.prompt.yaml)**: Provide a concise playbook for handling critical incidents affecting customer data.
+- **[Crisis-Management Playbook Generator](crisis_management_playbook.prompt.yaml)**: Generates a high-stakes, legally precise crisis response playbook for critical data incidents, aligned with NIST SP 800-61 r2 and ISO 22301 standards.
 - **[Digital Transformation Roadmap for Clinical Operations](digital_transformation_roadmap.prompt.yaml)**: Develop a high-level strategic roadmap for digital transformation in clinical operations, focusing on efficiency, patient centricity, and data integrity.
 - **[Emerging-Science Horizon Scan](emerging_science_horizon_scan.prompt.yaml)**: Highlight emerging therapeutic areas or technologies likely to disrupt CRO services in the next three years.
 - **[Executive-Ready Brief and Talking Points](executive_brief_synthesizer.prompt.yaml)**: Turn disparate reports into a concise executive brief and talking points.
