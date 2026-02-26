@@ -189,6 +189,8 @@ class DocumentationGenerator:
         # Relative link to source for the button
         rel_source = os.path.relpath(source_path, output_path.parent)
 
+        mermaid_block = f"## Workflow Diagram\n\n```mermaid\n{mermaid}\n```\n" if mermaid else ""
+
         content = f"""---
 title: {title}
 ---
@@ -197,7 +199,7 @@ title: {title}
 
 {desc}
 
-{f'## Workflow Diagram\n\n```mermaid\n{mermaid}\n```\n' if mermaid else ''}
+{mermaid_block}
 [View Source YAML]({rel_source})
 """
         if check_mode:
