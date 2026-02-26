@@ -236,4 +236,4 @@ yamllint prompts/
 
 - [Template Prompt](template_prompt.prompt.yaml) - Reference example
 - [Workflows Documentation](workflows.md) - Chaining prompts together
-- [Repository README](../README.md) - General guidance
+- [Repository README](index.md) - General guidance
