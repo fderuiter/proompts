@@ -28,6 +28,7 @@ title: Technical
 - [Technical White Paper for Clinical Methodologies](../prompts/technical/technical_writing/technical_white_paper_in_silico.prompt.yaml)
 - [Test Suite Enhancement and CI Pipeline Implementation](../prompts/technical/repository_refactoring/test_suite_enhancement_ci_pipeline_implementation.prompt.yaml)
 - [Testing, Configuration, and Automation Analysis](../prompts/technical/repository_refactoring/testing_configuration_automation_analysis.prompt.yaml)
+- [Universal Automation Agent](../prompts/technical/automation/universal_automation_agent.prompt.yaml)
 
 ## Workflows
 - [Agentic Coding: From Idea to Epics](workflows/agentic_coding.md)
