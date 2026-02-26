@@ -178,6 +178,7 @@
 [Principal TypeScript Developer](prompts/technical/languages/typescript/principal_typescript_developer.prompt.md)
 [Product Brief Template](prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/01_product_brief.prompt.md)
 [Project Brief for Epic](prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/02_project_brief_epic.prompt.md)
+[Eco-Crypto Haiku Oracle](prompts/lifestyle/arboreal_crypto_haiku/eco_crypto_haiku_oracle.prompt.md)
 [Culinary Amnestic Reconstruction Engine (CARE)](prompts/lifestyle/culinary/culinary_amnestic_reconstruction.prompt.md)
 [Quantum Baroque Garden Architect](prompts/lifestyle/quantum_baroque_gardening/quantum_baroque_garden_architect.prompt.md)
 [Accelerate Patient Recruitment & Retention](prompts/management/clinical_research_manager/accelerate_patient_recruitment_retention.prompt.md)
