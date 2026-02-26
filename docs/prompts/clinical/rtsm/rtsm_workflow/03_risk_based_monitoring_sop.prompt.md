@@ -1,0 +1,79 @@
+---
+title: Create a Risk-Based Monitoring & Mitigation SOP for RTSM
+---
+
+# Create a Risk-Based Monitoring & Mitigation SOP for RTSM
+
+Draft a standard operating procedure for risk‑based monitoring and mitigation in RTSM operations.
+
+[View Source YAML](../../../../../prompts/clinical/rtsm/rtsm_workflow/03_risk_based_monitoring_sop.prompt.yaml)
+
+```yaml
+---
+name: Create a Risk-Based Monitoring & Mitigation SOP for RTSM
+version: 0.1.0
+description: Draft a standard operating procedure for risk‑based monitoring and mitigation in RTSM operations.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - rtsm
+  - create
+  - risk-based
+  - monitoring
+  - mitigation
+  requires_context: false
+variables:
+- name: existing_sop
+  description: any current procedures
+  required: true
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a GxP compliance officer. Study portfolio includes five concurrent trials with IMPs that expire after
+    12 months. Integrated systems: RTSM ↔ EDC ↔ temperature‑monitoring IoT. Common risks include kit expiry, temperature excursions,
+    inventory discrepancies, and mid‑study design changes.
+
+
+    Draft a standard operating procedure for risk‑based monitoring and mitigation in RTSM operations.'
+- role: user
+  content: '1. List the top ten RTSM operational risks ranked by severity × likelihood.
+
+    1. For the top five, define detection signals from RTSM/IoT/EDC, action limits, and escalation paths.
+
+    1. Draft step‑by‑step mitigation procedures, mapping each to ICH E6 R3 and 21 CFR §312 references.
+
+    1. Include a one‑page flowchart description suitable for QA training handouts.
+
+
+    Inputs:
+
+    - `{{existing_sop}}` — any current procedures.
+
+
+    Output format:
+
+    - Two‑column markdown table: Risk \| Detection & Escalation Path.
+
+    - Numbered mitigation procedures (≤150 words each).
+
+    - Text description of the flowchart for later diagramming.
+
+    - Provide only the final SOP content.
+
+
+    Additional notes:
+
+    Avoid internal reasoning in the output.'
+testData:
+- vars:
+    existing_sop: example_sop
+  expected: Markdown table, mitigation procedures, and flowchart description.
+evaluators:
+- name: Output starts with markdown table
+  string:
+    startsWith: '|'
+
+```

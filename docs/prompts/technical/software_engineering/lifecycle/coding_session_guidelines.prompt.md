@@ -1,0 +1,50 @@
+---
+title: Coding Session Guidelines
+---
+
+# Coding Session Guidelines
+
+Provide step-by-step guidance for running productive coding sessions.
+
+[View Source YAML](../../../../../prompts/technical/software_engineering/lifecycle/coding_session_guidelines.prompt.yaml)
+
+```yaml
+---
+name: Coding Session Guidelines
+version: 0.1.0
+description: Provide step-by-step guidance for running productive coding sessions.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - software-engineering
+  - sdlc
+  - coding
+  - session
+  - guidelines
+  requires_context: true
+variables: []
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'Use these guidelines while developing a project with automated testing and persistent memory.
+
+
+    Maintain the to-do list and memory file to ensure continuity across sessions.'
+- role: user
+  content: "1. Write tests first for each task.\n1. Implement code to satisfy the tests.\n1. Run `dotnet test` or filtered\
+    \ tests to verify success and fix failures immediately.\n1. After each task:\n   - run tests again\n   - update the to-do\
+    \ list\n   - update `memory.md` with key state changes\n   - capture lessons learned\n   - end the chat session cleanly\n\
+    1. Always reference `memory.md` to maintain context between sessions.\nInputs:\nNone\nOutput format:\nClear Markdown checklist\
+    \ of steps completed during the session."
+testData:
+- vars: {}
+  expected: Clear Markdown checklist of steps completed during the session.
+evaluators:
+- name: Output starts with checklist item
+  string:
+    startsWith: '- [ ]'
+
+```

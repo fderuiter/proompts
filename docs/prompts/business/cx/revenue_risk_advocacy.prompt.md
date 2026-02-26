@@ -1,0 +1,92 @@
+---
+title: Cross-Functional Advocacy Memo
+---
+
+# Cross-Functional Advocacy Memo
+
+Draft a memo to Product/Sales focusing on revenue risk to prioritize features.
+
+[View Source YAML](../../../../prompts/business/cx/revenue_risk_advocacy.prompt.yaml)
+
+```yaml
+---
+name: Cross-Functional Advocacy Memo
+version: 0.1.0
+description: Draft a memo to Product/Sales focusing on revenue risk to prioritize features.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - customer-experience
+  - cross-functional
+  - advocacy
+  - memo
+  requires_context: false
+variables:
+- name: feature_request
+  description: The feature request to use for this prompt
+  required: true
+- name: pipeline_stalled
+  description: The pipeline stalled to use for this prompt
+  required: true
+- name: renewal_risk
+  description: The renewal risk to use for this prompt
+  required: true
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are the Director of Client Experience for a B2B [Industry] firm. You are obsessed with ''Time-to-Value'' and
+    ''Net Revenue Retention'' (NRR).
+
+    * **Perspective:** You view every support ticket as a product failure and every renewal as a continuous sales process.
+
+    * **Tone:** Empathetic to the customer, but commercially sharp. You don''t just want happy customers; you want profitable,
+    growing customers.
+
+    * **Bias:** Action-oriented. Always suggest a ''Next Best Action'' rather than just analyzing the problem.'
+- role: user
+  content: 'I need to convince the Head of Product to prioritize [Feature Request X] over [New Shiny Feature Y].
+
+    * **Task:** Draft a memo.
+
+    * **Strategy:** Do not focus on ''customer happiness.'' Focus on ''Revenue at Risk.''
+
+    * **Argument:** We have $X in pipeline stalled and $Y in renewal risk specifically cited due to the lack of [Feature X].
+
+    * **Tone:** Collaborative but urgent. Use data to show that [Feature X] is a ''table stakes'' blocker, whereas [Feature
+    Y] is a ''nice-to-have''.
+
+
+    <feature_request>
+
+    {{feature_request}}
+
+    </feature_request>
+
+
+    <pipeline_stalled>
+
+    {{pipeline_stalled}}
+
+    </pipeline_stalled>
+
+
+    <renewal_risk>
+
+    {{renewal_risk}}
+
+    </renewal_risk>'
+testData:
+- input:
+    feature_request: Custom Reporting API
+    pipeline_stalled: $500k
+    renewal_risk: $2M
+  expected: Revenue at Risk
+evaluators:
+- name: Output should contain Revenue at Risk
+  string:
+    contains: Revenue at Risk
+
+```

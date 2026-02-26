@@ -1,0 +1,67 @@
+---
+title: Quality System Audit
+---
+
+# Quality System Audit
+
+Generate an internal audit checklist or report focusing on design controls, production processes, and risk-based decision making.
+
+[View Source YAML](../../../../prompts/regulatory/quality/quality_system_audit.prompt.yaml)
+
+```yaml
+---
+name: Quality System Audit
+version: 0.1.0
+description: Generate an internal audit checklist or report focusing on design controls, production processes, and risk-based
+  decision making.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - quality
+  - system
+  - audit
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR Part 820
+
+
+    ## Objective
+
+    Generate an internal audit checklist or report focusing on design controls, production processes, and risk-based decision
+    making.
+
+
+    ## Output Format
+
+    Formal audit report or Markdown checklist with regulatory citations.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Quality Manual, Design History File (DHF) excerpts, SOPs, and previous audit reports. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Verify
+
+```

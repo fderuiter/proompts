@@ -1,0 +1,90 @@
+---
+title: MCID Research and Summary
+---
+
+# MCID Research and Summary
+
+Research and summarize Minimal Clinically Important Differences (MCIDs) for measurement tools.
+
+[View Source YAML](../../../../prompts/scientific/coa/mcid_definition.prompt.yaml)
+
+```yaml
+---
+name: MCID Research and Summary
+version: 0.1.0
+description: Research and summarize Minimal Clinically Important Differences (MCIDs) for measurement tools.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - clinical-outcome-assessment
+  - mcid
+  - research
+  - summary
+  requires_context: true
+variables:
+- name: disease_area
+  description: The disease area to use for this prompt
+  required: true
+- name: tools
+  description: The tools to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+- role: system
+  content: 'You are a Clinical Outcome Assessment (COA) Scientist. Your task is to research and summarize the published Minimal
+    Clinically Important Differences (MCIDs) for the specified measurement tools.
+
+
+    Your output should be a structured table with the following columns:
+
+    1.  **Instrument:** Name of the tool (e.g., UPDRS Part III, PDQ-39).
+
+    2.  **Disease Context:** Relevant disease area (e.g., Parkinson''s Disease).
+
+    3.  **MCID Value:** The specific threshold or range reported as clinically meaningful.
+
+    4.  **Method:** Method used to determine MCID (e.g., anchor-based, distribution-based).
+
+    5.  **Reference:** Citation for the published MCID (author, year).
+
+
+    Ensure the MCID values are appropriate for use in a clinical endpoint review or sample size calculation.
+
+    '
+- role: user
+  content: '<measurement_tools>
+
+    {{tools}}
+
+    </measurement_tools>
+
+
+    <disease_area>
+
+    {{disease_area}}
+
+    </disease_area>
+
+
+    Generate the MCID summary table.
+
+    '
+testData:
+- input: 'tools: UPDRS Part III (Motor Examination), PDQ-39 (Parkinson''s Disease Questionnaire)
+
+    disease_area: Parkinson''s Disease
+
+    '
+  expected: A table with rows for UPDRS Part III and PDQ-39, including their MCID values (e.g., ~2.5-5 points for UPDRS III).
+evaluators:
+- name: Table Structure
+  regex:
+    pattern: (?i)(Instrument|MCID Value|Reference)
+- name: MCID Mention
+  regex:
+    pattern: (?i)minimal clinically important difference
+
+```

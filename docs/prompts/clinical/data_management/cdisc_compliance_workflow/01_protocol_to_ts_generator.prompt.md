@@ -1,0 +1,80 @@
+---
+title: Protocol-to-TS Generator
+---
+
+# Protocol-to-TS Generator
+
+Automates the extraction of trial design parameters from a clinical protocol for the CDISC SDTM Trial Summary (TS) domain.
+
+[View Source YAML](../../../../../prompts/clinical/data_management/cdisc_compliance_workflow/01_protocol_to_ts_generator.prompt.yaml)
+
+```yaml
+---
+name: Protocol-to-TS Generator
+version: 0.1.0
+description: Automates the extraction of trial design parameters from a clinical protocol for the CDISC SDTM Trial Summary (TS) domain.
+metadata:
+  domain: clinical
+  complexity: high
+  tags:
+    - cdisc
+    - sdtm
+    - trial-summary
+    - protocol-extraction
+    - automation
+  requires_context: true
+variables:
+  - name: protocol_synopsis
+    description: The text of the Clinical Study Protocol Synopsis.
+    required: true
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      You are a CDISC Standards Expert specializing in the SDTM Trial Summary (TS) domain.
+
+      Task: Extract trial design parameters from the provided Clinical Study Protocol text and format them into an SDTM TS domain dataset.
+
+      Reference Standards:
+      - Use strict CDISC Controlled Terminology (NCI Code) for all values (TSVAL) where applicable.
+      - If a value is not explicitly stated, output "ASSIGNMENT_REQUIRED" in the TSVAL column.
+
+      Required Parameters to Extract:
+      1.  **ADDON:** Add-on Trial? (Yes/No)
+      2.  **AGEMIN/AGEMAX:** Minimum/Maximum Age (Parse "18 years" to "18" and "YEARS").
+      3.  **COMPTRT:** Comparative Treatment Name (e.g., "Placebo", "Pembrolizumab").
+      4.  **PHASE:** Trial Phase (e.g., "Phase 3").
+      5.  **ISPVID:** Sponsor Identity.
+
+      Output Format: CSV with columns [TSPARMCD, TSPARM, TSVAL, TSVALNF].
+  - role: user
+    content: |
+      **Input Text:**
+      {{protocol_synopsis}}
+testData:
+  - input: |
+      protocol_synopsis: |
+        This is a Phase 3, randomized, double-blind study to evaluate the efficacy of Drug X in combination with Pembrolizumab versus Placebo in patients with advanced melanoma.
+        Key Inclusion Criteria:
+        - Age >= 18 years
+        - Confirmed diagnosis of unresectable or metastatic melanoma
+        Sponsor: Global Pharma Inc.
+    expected: |
+      TSPARMCD,TSPARM,TSVAL,TSVALNF
+      ADDON,Add-on Trial Indicator,No,
+      AGEMIN,Minimum Age,18,
+      AGEMAX,Maximum Age,ASSIGNMENT_REQUIRED,
+      COMPTRT,Comparative Treatment Name,Placebo,
+      PHASE,Trial Phase,Phase 3,
+      ISPVID,Sponsor Identity,Global Pharma Inc.,
+evaluators:
+  - name: Output is CSV
+    regex:
+      pattern: (?i)TSPARMCD,TSPARM,TSVAL,TSVALNF
+  - name: Output contains extracted values
+    regex:
+      pattern: (?i)(Phase\s+3|Placebo|18)
+
+```

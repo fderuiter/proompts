@@ -1,0 +1,65 @@
+---
+title: RA/QA Integrated Quality System Audit
+---
+
+# RA/QA Integrated Quality System Audit
+
+Prepare for a combined FDA QSR and EU MDR/IVDR audit by identifying quality‑management gaps and recommending improvements.
+
+[View Source YAML](../../../../prompts/regulatory/strategy/raqa_integrated_quality_system_audit.prompt.yaml)
+
+```yaml
+---
+name: RA/QA Integrated Quality System Audit
+version: 0.1.0
+description: Prepare for a combined FDA QSR and EU MDR/IVDR audit by identifying quality‑management gaps and recommending
+  improvements.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - regulatory-strategy
+  - integrated
+  - quality
+  - system
+  - audit
+  requires_context: true
+variables:
+- name: qms_documents
+  description: current procedures and records
+  required: true
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a global RA/QA consultant. The organization seeks a gap analysis against ISO 13485 and 21 CFR 820 in preparation
+    for upcoming inspections.
+
+
+    Prepare for a combined FDA QSR and EU MDR/IVDR audit by identifying quality‑management gaps and recommending improvements.'
+- role: user
+  content: '1. Evaluate documentation, CAPA, supplier controls, post‑market surveillance, and risk management alignment.
+
+    1. Identify gaps relative to ISO 13485 and 21 CFR 820 requirements.
+
+    1. Provide prioritized recommendations for quality‑management system improvements.
+
+
+    Inputs:
+
+    - `{{qms_documents}}` — current procedures and records.
+
+
+    Output format:
+
+    Bulleted list of findings and a table prioritizing recommended actions.
+
+
+    Additional notes:
+
+    Keep advice concise and actionable for audit readiness.'
+testData: []
+evaluators: []
+
+```

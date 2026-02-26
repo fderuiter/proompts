@@ -1,0 +1,67 @@
+---
+title: Medicare Coverage Request (IDE)
+---
+
+# Medicare Coverage Request (IDE)
+
+Prepare a request packet for CMS reimbursement of an IDE study.
+
+[View Source YAML](../../../../prompts/regulatory/submissions/medicare_coverage_request_ide.prompt.yaml)
+
+```yaml
+---
+name: Medicare Coverage Request (IDE)
+version: 0.1.0
+description: Prepare a request packet for CMS reimbursement of an IDE study.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - submissions
+  - medicare
+  - coverage
+  - request
+  - ide
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    CMS Guidelines
+
+
+    ## Objective
+
+    Prepare a request packet for CMS reimbursement of an IDE study.
+
+
+    ## Output Format
+
+    CMS request letter and crosswalk table.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: FDA IDE approval letter and NCT number. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Verify
+
+```

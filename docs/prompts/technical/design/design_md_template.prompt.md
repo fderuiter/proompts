@@ -1,0 +1,54 @@
+---
+title: Design.md Template
+---
+
+# Design.md Template
+
+Generate a design.md template capturing problem, constraints, and decisions.
+
+[View Source YAML](../../../../prompts/technical/design/design_md_template.prompt.yaml)
+
+```yaml
+---
+name: Design.md Template
+version: 0.1.0
+description: Generate a design.md template capturing problem, constraints, and decisions.
+metadata:
+  domain: technical
+  complexity: low
+  tags:
+  - design
+  - template
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a software design assistant drafting Design.md templates that capture
+
+    the problem, constraints, and key decisions.
+
+    '
+- role: user
+  content: '{{input}}'
+testData:
+- input: 'Design a microservice for processing image uploads.
+
+    '
+  expected: 'Template includes sections: Problem, Constraints, and Key Decisions.
+
+    '
+evaluators:
+- name: Contains Problem section
+  string:
+    contains: '## Problem'
+- name: Contains Key Decisions section
+  string:
+    contains: '## Key Decisions'
+
+```

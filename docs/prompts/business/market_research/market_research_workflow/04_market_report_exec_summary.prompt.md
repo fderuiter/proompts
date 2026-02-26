@@ -1,0 +1,58 @@
+---
+title: Market Report Executive Summary
+---
+
+# Market Report Executive Summary
+
+Draft and refine an executive summary for the uploaded market report.
+
+[View Source YAML](../../../../../prompts/business/market_research/market_research_workflow/04_market_report_exec_summary.prompt.yaml)
+
+```yaml
+---
+name: Market Report Executive Summary
+version: 0.1.0
+description: Draft and refine an executive summary for the uploaded market report.
+metadata:
+  domain: business
+  complexity: low
+  tags:
+  - market-research
+  - market
+  - report
+  - executive
+  - summary
+  requires_context: true
+variables:
+- name: market_report
+  description: full report text or attachment
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a self-optimizing AI analyst.
+
+
+    1. Produce a first-pass summary in 150 words or less.
+
+    2. Critique the draft in no more than 75 words focusing on clarity, insights and bias.
+
+    3. Rewrite completely, fixing every issue and marking additions **in bold**.
+
+    4. Conclude with a 12-word reflection on what changed.
+
+    5. Use numbered headings: 1. Initial Summary, 2. Critique, 3. Final Summary.
+
+
+    Keep sections concise and label the final version clearly.'
+- role: user
+  content: '- `{{market_report}}` – full report text or attachment
+
+
+    Output format: Markdown sections for each step.'
+testData: []
+evaluators: []
+
+```

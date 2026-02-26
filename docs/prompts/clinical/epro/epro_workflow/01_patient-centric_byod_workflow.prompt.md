@@ -1,0 +1,62 @@
+---
+title: Patient-Centric BYOD ePRO Workflow
+---
+
+# Patient-Centric BYOD ePRO Workflow
+
+Design a streamlined ePRO workflow that supports a BYOD model and maximizes patient compliance.
+
+[View Source YAML](../../../../../prompts/clinical/epro/epro_workflow/01_patient-centric_byod_workflow.prompt.yaml)
+
+```yaml
+---
+name: Patient-Centric BYOD ePRO Workflow
+version: 0.1.0
+description: Design a streamlined ePRO workflow that supports a BYOD model and maximizes patient compliance.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - epro
+  - patient-centric
+  - byod
+  - pro
+  - workflow
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a clinical operations expert preparing a Phase II trial. The workflow should integrate with Interactive
+    Web Response Systems and include training guides, automated reminders, range validation, and review/edit functionality.
+    Data security must comply with HIPAA and GDPR and remain fully auditable.
+
+
+    1. List key setup steps for implementing BYOD ePRO.
+
+    2. Provide a mock screen flow and UX best practices.
+
+    3. Describe integration checkpoints with IWRS and other data systems.
+
+    4. Ensure patient data is secure and audit ready.
+
+
+    Confirm any assumptions about platform capabilities or security requirements before finalizing the workflow.'
+- role: user
+  content: '{{input}}'
+testData:
+- input: 'Design a BYOD workflow for 100 patients over 6 months.
+
+    '
+  expected: Plan outlines BYOD setup steps, UX flow, IWRS integration, and data security.
+evaluators:
+- name: Includes BYOD workflow details
+  string:
+    contains: BYOD
+
+```

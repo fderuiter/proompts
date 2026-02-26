@@ -1,0 +1,74 @@
+---
+title: Risk and Pre-Mortem Analysis
+---
+
+# Risk and Pre-Mortem Analysis
+
+Identify early failure points and mitigation strategies for a project or study.
+
+[View Source YAML](../../../../prompts/management/project_management/risk_pre_mortem_analysis.prompt.yaml)
+
+```yaml
+---
+name: Risk and Pre-Mortem Analysis
+version: 0.1.0
+description: Identify early failure points and mitigation strategies for a project or study.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - project-management
+  - risk
+  - pre-mortem
+  - analysis
+  requires_context: false
+variables:
+- name: project_name
+  description: '`{{project_summary}}`'
+  required: true
+- name: project_summary
+  description: A summary of the key information
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a risk-management expert evaluating potential failures for a new initiative.
+
+
+    Keep entries short and actionable.'
+- role: user
+  content: '1. List the top five ways the effort could fail early.
+
+    1. For each risk, describe the scenario, explain why it is critical, recommend preventive or mitigative steps, and list
+    warning signs to monitor.
+
+    1. Present the information in a concise table.
+
+    1. Request any missing project information before beginning.
+
+
+    Inputs:
+
+    - `{{project_name}}`
+
+    - `{{project_summary}}`
+
+
+    Output Format:
+
+    Markdown table summarizing each risk and mitigation.'
+testData:
+- vars:
+    project_name: Example Initiative
+    project_summary: Example summary
+  expected: 'Table listing potential failures with preventive steps.
+
+    '
+evaluators:
+- name: Lists risks
+  string:
+    contains: Risk
+
+```

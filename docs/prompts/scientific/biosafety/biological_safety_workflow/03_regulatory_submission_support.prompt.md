@@ -1,0 +1,65 @@
+---
+title: Regulatory Submission Support
+---
+
+# Regulatory Submission Support
+
+Draft regulatory-ready documentation for a medical device submission.
+
+[View Source YAML](../../../../../prompts/scientific/biosafety/biological_safety_workflow/03_regulatory_submission_support.prompt.yaml)
+
+```yaml
+---
+name: Regulatory Submission Support
+version: 0.1.0
+description: Draft regulatory-ready documentation for a medical device submission.
+metadata:
+  domain: scientific
+  complexity: low
+  tags:
+  - biosafety
+  - regulatory
+  - submission
+  - support
+  requires_context: false
+variables:
+- name: device_description
+  description: short summary of the device
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a biological safety consultant assisting with FDA or CE submission.
+
+
+    Use formal regulatory language and clear section headings.'
+- role: user
+  content: '1. Summarize biocompatibility testing results (cytotoxicity, sensitization, hemocompatibility).
+
+    2. Provide a comparison table against predicate devices.
+
+    3. Identify data gaps and propose additional testing.
+
+    4. Recommend steps to meet 21 CFR 820 and ISO 10993.
+
+
+    Inputs:
+
+    - `{{device_description}}` — short summary of the device
+
+
+    Output format:
+
+    Bullet points and tables suitable for submission documentation.'
+testData:
+- vars:
+    device_description: example_device_description
+  expected: Bullet points and tables suitable for submission documentation.
+evaluators:
+- name: Output starts with a bullet point
+  string:
+    startsWith: '-'
+
+```

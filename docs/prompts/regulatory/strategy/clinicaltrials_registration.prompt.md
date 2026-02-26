@@ -1,0 +1,69 @@
+---
+title: ClinicalTrials.gov Registration
+---
+
+# ClinicalTrials.gov Registration
+
+Draft registration summary and outcome measures.
+
+[View Source YAML](../../../../prompts/regulatory/strategy/clinicaltrials_registration.prompt.yaml)
+
+```yaml
+---
+name: ClinicalTrials.gov Registration
+version: 0.1.0
+description: Draft registration summary and outcome measures.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-strategy
+  - clinical
+  - trials
+  - gov
+  - registration
+  requires_context: false
+variables:
+- name: protocol_final
+  description: The protocol final to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are a Clinical Trial Disclosure Specialist. Draft a plain language brief summary and primary outcome measure
+    descriptions for a ClinicalTrials.gov registration based on the finalized study protocol, ensuring all mandatory fields
+    are included per FDAAA 801.
+- role: user
+  content: 'Draft a plain language brief summary and primary outcome measure descriptions for a ClinicalTrials.gov registration
+    based on the finalized study protocol, ensuring all mandatory fields are included.
+
+
+    Inputs:
+
+    - `{{protocol_final}}`
+
+
+    Output format:
+
+    Markdown Registration Text.'
+testData:
+- input: 'protocol_final: Phase 1 dose escalation study.
+
+    '
+  expected: 'Brief Summary
+
+    '
+evaluators:
+- name: Brief Summary
+  string:
+    contains: Brief Summary
+- name: Primary Outcome
+  string:
+    contains: Primary Outcome
+- name: Plain Language
+  string:
+    contains: Plain Language
+
+```

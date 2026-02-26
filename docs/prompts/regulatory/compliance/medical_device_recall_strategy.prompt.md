@@ -1,0 +1,67 @@
+---
+title: Medical Device Recall Strategy
+---
+
+# Medical Device Recall Strategy
+
+Develop a mandatory recall strategy for a device posing health risks.
+
+[View Source YAML](../../../../prompts/regulatory/compliance/medical_device_recall_strategy.prompt.yaml)
+
+```yaml
+---
+name: Medical Device Recall Strategy
+version: 0.1.0
+description: Develop a mandatory recall strategy for a device posing health risks.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - compliance
+  - medical
+  - device
+  - recall
+  - strategy
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR Part 810 / Part 7
+
+
+    ## Objective
+
+    Develop a mandatory recall strategy for a device posing health risks.
+
+
+    ## Output Format
+
+    Structured strategy document.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Health hazard evaluation and distribution lists. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Review
+
+```

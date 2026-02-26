@@ -1,0 +1,54 @@
+---
+title: IVDR Performance-Evaluation Plan Blueprint
+---
+
+# IVDR Performance-Evaluation Plan Blueprint
+
+Draft a comprehensive Performance‑Evaluation Plan (PEP) that satisfies Article 56 and Annex XIII of the IVDR.
+
+[View Source YAML](../../../../prompts/regulatory/strategy/ivdr_pep_blueprint.prompt.yaml)
+
+```yaml
+---
+name: IVDR Performance-Evaluation Plan Blueprint
+version: 0.1.0
+description: Draft a comprehensive Performance‑Evaluation Plan (PEP) that satisfies Article 56 and Annex XIII of the IVDR.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - regulatory-strategy
+  - ivdr
+  - performance-evaluation
+  - plan
+  - blueprint
+  requires_context: false
+variables:
+- name: device_details
+  description: any additional device information
+  required: true
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are an EU IVDR subject‑matter expert employed by a Notified Body. Device: Class C immunoassay for cardiac
+    biomarkers. Development starts Q3‑2025 with target CE submission Q3‑2026. The manufacturer operates an ISO 13485‑certified
+    QMS.
+
+
+    Draft a comprehensive Performance‑Evaluation Plan (PEP) that satisfies Article 56 and Annex XIII of the IVDR.'
+- role: user
+  content: "1. Structure the plan with numbered H2/H3 headings:\n   - Device description and intended purpose.\n   - Performance‑evaluation\
+    \ scope and objectives.\n   - Scientific‑validity strategy.\n   - Analytical‑performance studies (including MDCG 2022‑2\
+    \ parameters).\n   - Clinical‑performance studies or literature‑review methodology.\n   - Statistical methods and acceptance\
+    \ criteria.\n   - State‑of‑the‑art comparison.\n   - Benefit‑risk determination.\n   - Gantt‑style timeline (12‑month\
+    \ window).\n   - Data ownership and update frequency.\n1. Embed the Gantt timeline as a Markdown table (quarters).\n1.\
+    \ Cite specific IVDR clauses or MDCG guidance used.\n1. Provide a short bullet list of risks and mitigations.\n1. Keep\
+    \ total length ≤1 500 words.\n\nInputs:\n- `{{device_details}}` — any additional device information.\n\nOutput format:\n\
+    Markdown document with the sections above, including tables where relevant.\n\nAdditional notes:\nPresent reasoning step‑by‑step\
+    \ and keep the language concise."
+testData: []
+evaluators: []
+
+```

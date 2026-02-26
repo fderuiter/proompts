@@ -1,0 +1,54 @@
+---
+title: Weekly Operations KPI Snapshot
+---
+
+# Weekly Operations KPI Snapshot
+
+Summarize weekly milestone performance and highlight at-risk studies.
+
+[View Source YAML](../../../../prompts/management/operations/weekly_ops_kpi_snapshot.prompt.yaml)
+
+```yaml
+---
+name: Weekly Operations KPI Snapshot
+version: 0.1.0
+description: Summarize weekly milestone performance and highlight at-risk studies.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - operations
+  - weekly
+  - kpi
+  - snapshot
+  requires_context: false
+variables:
+- name: milestone_csv
+  description: milestone data
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a data analyst supporting CRO operations leadership. A CSV with StudyID, Milestone, PlannedDate, ActualDate,
+    Status and Issues will be provided.
+
+
+    1. Calculate portfolio on-time performance (percentage of milestones delivered on or before the planned date).
+
+    2. Compute median slip days for late milestones.
+
+    3. Identify the three highest-risk studies (Status="Behind" or slip > 10 days) and give a one-sentence cause for each.
+
+
+    Use a concise and professional tone.'
+- role: user
+  content: '- `{{milestone_csv}}` – milestone data.
+
+
+    Output format: A ≤150-word executive summary and a Markdown table titled **Portfolio KPI Snapshot**. Dates should be ISO-8601.'
+testData: []
+evaluators: []
+
+```

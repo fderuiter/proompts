@@ -1,0 +1,61 @@
+---
+title: Target Segment & User Needs Assessment
+---
+
+# Target Segment & User Needs Assessment
+
+Identify key user segments for `{{device_or_assay}}` used in `{{application}}`.
+
+[View Source YAML](../../../../../prompts/business/market_research/market_research_workflow/02_target_segment_user_needs_assessment.prompt.yaml)
+
+```yaml
+---
+name: Target Segment & User Needs Assessment
+version: 0.1.0
+description: Identify key user segments for `{{device_or_assay}}` used in `{{application}}`.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - market-research
+  - target
+  - segment
+  - user
+  - needs
+  requires_context: false
+variables:
+- name: application
+  description: clinical application
+  required: true
+- name: device_or_assay
+  description: device or assay type
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'Act as a healthcare market researcher.
+
+
+    1. Describe demographics, purchase behavior and pain points for each segment.
+
+    2. Highlight unmet needs or jobs to be done.
+
+    3. Suggest innovations that could address these needs.
+
+    4. Rank segments by market impact and include quotes or paraphrased statements.
+
+
+    Focus on market impact and user voice.'
+- role: user
+  content: '- `{{device_or_assay}}` – device or assay type
+
+    - `{{application}}` – clinical application
+
+
+    Output format: Ranked segmentation table with insights.'
+testData: []
+evaluators: []
+
+```

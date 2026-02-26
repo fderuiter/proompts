@@ -1,0 +1,67 @@
+---
+title: Automated Image Assessment System 510(k)
+---
+
+# Automated Image Assessment System 510(k)
+
+Draft a detailed device description for an automated image assessment system for microbial colonies.
+
+[View Source YAML](../../../../prompts/regulatory/device_specifics/automated_image_assessment_system_510_k.prompt.yaml)
+
+```yaml
+---
+name: Automated Image Assessment System 510(k)
+version: 0.1.0
+description: Draft a detailed device description for an automated image assessment system for microbial colonies.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - medical-devices
+  - automated
+  - image
+  - assessment
+  - system
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR 866.2190
+
+
+    ## Objective
+
+    Draft a detailed device description for an automated image assessment system for microbial colonies.
+
+
+    ## Output Format
+
+    Formal technical document.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Technology details, software modules, and expert rules for colony assessment. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Verify
+
+```

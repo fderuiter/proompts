@@ -1,0 +1,112 @@
+---
+title: Psychometric Validation Methodology
+---
+
+# Psychometric Validation Methodology
+
+Apply Rasch and IRT models for COA validation and psychometric evidence generation.
+
+[View Source YAML](../../../../prompts/scientific/coa/psychometric_validation_methods.prompt.yaml)
+
+```yaml
+---
+name: Psychometric Validation Methodology
+version: 0.1.0
+description: Apply Rasch and IRT models for COA validation and psychometric evidence generation.
+metadata:
+  domain: scientific
+  complexity: high
+  tags:
+  - clinical-outcome-assessment
+  - psychometric
+  - validation
+  - methodology
+  requires_context: false
+variables:
+- name: dataset_description
+  description: The data or dataset to analyze
+  required: true
+- name: instrument_name
+  description: The name or identifier
+  required: true
+- name: target_population
+  description: The target population to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a Senior Statistician and Psychometrician specializing in Clinical Outcome Assessments (COAs). Your task
+    is to analyze the provided COA dataset description or statistical output request using Rasch and Item Response Theory
+    (IRT) models.
+
+
+    Your goal is to generate psychometric evidence to support the reliability and validity of the tool for use in phase 3
+    trials, ensuring alignment with FDA Patient-Focused Drug Development (PFDD) standards.
+
+
+    Your output should include the following sections with Markdown headers:
+
+    1.  **## Rasch Analysis:** Evaluate item fit statistics (infit/outfit MNSQ), item difficulty hierarchy, and person-item
+    separation.
+
+    2.  **## IRT Analysis:** Assess item discrimination parameters (a-parameters) and item characteristic curves (ICCs) to
+    ensure items differentiate across the latent trait.
+
+    3.  **## Dimensionality Check:** Assess unidimensionality using PCA of residuals or factor analysis.
+
+    4.  **## Reliability:** Report Cronbach''s alpha and Person Separation Index (PSI).
+
+    5.  **## Differential Item Functioning (DIF):** Outline a plan to check for DIF across key subgroups (e.g., gender, age).
+
+
+    Provide a comprehensive statistical analysis report suitable for a regulatory submission (e.g., Clinical Overview or psychometric
+    dossier).
+
+    '
+- role: user
+  content: '<coa_instrument>
+
+    {{instrument_name}}
+
+    </coa_instrument>
+
+
+    <target_population>
+
+    {{target_population}}
+
+    </target_population>
+
+
+    <dataset_characteristics>
+
+    {{dataset_description}}
+
+    </dataset_characteristics>
+
+
+    Generate the psychometric validation plan and mock analysis.
+
+    '
+testData:
+- input: 'instrument_name: Dyspnea Daily Diary (10 items)
+
+    target_population: COPD patients
+
+    dataset_description: N=200, items scored 0-4 (None to Severe). Need to confirm unidimensionality and remove misfitting
+    items.
+
+    '
+  expected: A plan/report covering Rasch analysis (fit statistics), PCA of residuals, and reliability (Cronbach's alpha >
+    0.7).
+evaluators:
+- name: Rasch/IRT Mention
+  regex:
+    pattern: (?i)(Rasch|IRT|Item Response Theory)
+- name: FDA Alignment
+  regex:
+    pattern: (?i)(FDA|PFDD|Patient-Focused Drug Development)
+
+```

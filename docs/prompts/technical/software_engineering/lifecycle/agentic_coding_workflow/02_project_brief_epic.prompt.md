@@ -1,0 +1,94 @@
+---
+title: Project Brief for Epic
+---
+
+# Project Brief for Epic
+
+Summarize a project epic with key features, rules, and success metrics.
+
+[View Source YAML](../../../../../../prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/02_project_brief_epic.prompt.yaml)
+
+```yaml
+---
+name: Project Brief for Epic
+version: 0.1.0
+description: Summarize a project epic with key features, rules, and success metrics.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+  - software-engineering
+  - sdlc
+  - project
+  - brief
+  - epic
+  requires_context: false
+variables:
+- name: business_rules
+  description: domain logic
+  required: true
+- name: data_models
+  description: entities and types
+  required: true
+- name: key_features
+  description: features or milestones
+  required: true
+- name: project_description
+  description: summary of the epic
+  required: true
+- name: success_metrics
+  description: measurements of success
+  required: true
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'Use this brief to capture the high-level scope of a significant project milestone or epic.
+
+
+    Keep each list concise and focused on actionable information.'
+- role: user
+  content: '1. Describe the overall project goal.
+
+    1. List key features or milestones to achieve.
+
+    1. Outline important data models and entities.
+
+    1. Specify critical business rules or logic.
+
+    1. Define success metrics for performance or engagement.
+
+    1. Add any additional technical details or constraints.
+
+    Inputs:
+
+    - `{{project_description}}` – summary of the epic
+
+    - `{{key_features}}` – features or milestones
+
+    - `{{data_models}}` – entities and types
+
+    - `{{business_rules}}` – domain logic
+
+    - `{{success_metrics}}` – measurements of success
+
+    Output format:
+
+    Markdown sections titled **Project Description**, **Key Features**, **Technical Entities & Data Models**, **Business Rules
+    & Logic**, **Success Metrics**, and **Additional Implementation Details**.'
+testData:
+- vars:
+    success_metrics: example_success_metrics
+    business_rules: example_business_rules
+    data_models: example_data_models
+    key_features: example_key_features
+    project_description: example_project_description
+  expected: Markdown sections titled **Project Description**, **Key Features**, **Technical Entities & Data Models**, **Business
+    Rules & Logic**, **Success Metrics**, and **Additional Implementation Details**.
+evaluators:
+- name: Output starts with 'Project Description'
+  string:
+    startsWith: Project Description
+
+```

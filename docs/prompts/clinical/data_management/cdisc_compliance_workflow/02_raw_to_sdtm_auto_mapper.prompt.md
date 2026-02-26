@@ -1,0 +1,77 @@
+---
+title: Raw-to-SDTM Auto-Mapper
+---
+
+# Raw-to-SDTM Auto-Mapper
+
+Intelligently maps raw EDC variables to standard SDTM variables based on fuzzy logic and context.
+
+[View Source YAML](../../../../../prompts/clinical/data_management/cdisc_compliance_workflow/02_raw_to_sdtm_auto_mapper.prompt.yaml)
+
+```yaml
+---
+name: Raw-to-SDTM Auto-Mapper
+version: 0.1.0
+description: Intelligently maps raw EDC variables to standard SDTM variables based on fuzzy logic and context.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+    - cdisc
+    - sdtm
+    - mapping
+    - data-management
+    - automation
+  requires_context: true
+variables:
+  - name: target_domain
+    description: The target SDTM domain (e.g., "AE - Adverse Events").
+    required: true
+  - name: raw_variables
+    description: A list of raw variable names and their labels from the dataset.
+    required: true
+model: gpt-4
+modelParameters:
+  temperature: 0.3
+messages:
+  - role: system
+    content: |
+      You are a Senior Statistical Programmer. Your goal is to map raw EDC (Electronic Data Capture) variables to standard SDTM variables (IG v3.3).
+
+      Instructions:
+      1.  Analyze the meaning of the raw variable label.
+      2.  Map it to the most appropriate SDTM variable for the Target Domain: {{target_domain}}.
+      3.  If the raw variable is a date, map to --DTC.
+      4.  If the raw variable is a 'Yes/No' question about occurrence, map to --OCCUR.
+      5.  Assign a "Confidence Score" (High/Medium/Low) to your mapping.
+
+      Expected Output (JSON):
+      [
+        { "Raw": "RAW_VAR", "SDTM": "SDTM_VAR", "Confidence": "Score" }
+      ]
+  - role: user
+    content: |
+      **Input List:**
+      {{raw_variables}}
+testData:
+  - input: |
+      target_domain: "AE - Adverse Events"
+      raw_variables: |
+        - Raw Var: "START_DT" (Label: Start Date of Event)
+        - Raw Var: "SEV_LEVEL" (Label: Severity Grade 1-3)
+        - Raw Var: "RELATION" (Label: Related to Study Drug?)
+    expected: |
+      [
+        { "Raw": "START_DT", "SDTM": "AESTDTC", "Confidence": "High" },
+        { "Raw": "SEV_LEVEL", "SDTM": "AESEV", "Confidence": "High" },
+        { "Raw": "RELATION", "SDTM": "AEREL", "Confidence": "High" }
+      ]
+evaluators:
+  - name: Output is JSON
+    regex:
+      pattern: (?s)^\[.*\]$
+  - name: Output contains SDTM variables
+    regex:
+      pattern: (?i)(AESTDTC|AESEV)
+
+```

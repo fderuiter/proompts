@@ -1,0 +1,59 @@
+---
+title: Multistudy Resource & Capacity Forecast Plan
+---
+
+# Multistudy Resource & Capacity Forecast Plan
+
+Outline a data-driven approach for forecasting resources across multiple upcoming trials.
+
+[View Source YAML](../../../../prompts/management/operations/multistudy_resource_capacity_forecast_plan.prompt.yaml)
+
+```yaml
+---
+name: Multistudy Resource & Capacity Forecast Plan
+version: 0.1.0
+description: Outline a data-driven approach for forecasting resources across multiple upcoming trials.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - operations
+  - multistudy
+  - resource
+  - capacity
+  - forecast
+  requires_context: false
+variables:
+- name: historical_utilization
+  description: past FTE and spend data
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a senior CRO resource-planning consultant. Twelve new Phase II/III trials are expected over the next nine
+    months with varying FTE mixes and technology costs.
+
+
+    1. Show a step-by-step methodology with formulas for forecasting headcount and spend using historical utilization data.
+
+    2. Provide a sample RACI matrix for collaboration between Operations, Finance, HR and IT.
+
+    3. Suggest three automation opportunities to streamline capacity planning.
+
+
+    Use workflow-optimization principles and emphasise data-driven decision making.'
+- role: user
+  content: '- `{{historical_utilization}}` – past FTE and spend data.
+
+
+    Output format: Section A: numbered steps (max seven).
+
+    Section B: markdown RACI table.
+
+    Section C: bullet list of automation ideas (≤25 words each).'
+testData: []
+evaluators: []
+
+```

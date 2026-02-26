@@ -112,8 +112,16 @@ def generate() -> tuple[str, str]:
         index_lines.append(f"## {nice_title(category)}")
         index_lines.append("")
         for path, title in items:
-            rel = Path("..") / path.relative_to(ROOT)
-            link = f"[{title}]({rel.as_posix()})"
+            # path is absolute path to the prompt yaml file
+            # we want to link to the generated markdown file in docs/prompts
+            # e.g. path: .../prompts/A/foo.prompt.yaml
+            # rel to prompts dir: A/foo.prompt.yaml
+            # markdown rel path: prompts/A/foo.md
+
+            rel_prompt = path.relative_to(PROMPTS_DIR)
+            rel_md = Path("prompts") / rel_prompt.with_suffix(".md")
+
+            link = f"[{title}]({rel_md.as_posix()})"
             index_lines.append(f"- {link}")
             toc_lines.append(link)
         index_lines.append("")

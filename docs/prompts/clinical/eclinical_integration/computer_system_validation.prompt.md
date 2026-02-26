@@ -1,0 +1,69 @@
+---
+title: Computer System Validation (CSV)
+---
+
+# Computer System Validation (CSV)
+
+Generate validation documents for EDC systems.
+
+[View Source YAML](../../../../prompts/clinical/eclinical_integration/computer_system_validation.prompt.yaml)
+
+```yaml
+---
+name: Computer System Validation (CSV)
+version: 0.1.0
+description: Generate validation documents for EDC systems.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - eclinical-integration
+  - computer
+  - system
+  - validation
+  - csv
+  requires_context: false
+variables:
+- name: system_requirements
+  description: The requirements or specifications
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are a CSV Engineer. Review the Electronic Data Capture (EDC) system requirements and generate a User Acceptance
+    Testing (UAT) script to validate compliance with 21 CFR Part 11 requirements for electronic signatures and audit trails.
+    Ensure alignment with EU GMP Annex 11 and GAMP 5.
+- role: user
+  content: 'Review the Electronic Data Capture (EDC) system requirements and generate a User Acceptance Testing (UAT) script
+    to validate compliance with 21 CFR Part 11 requirements for electronic signatures and audit trails.
+
+
+    Inputs:
+
+    - `{{system_requirements}}`
+
+
+    Output format:
+
+    Markdown UAT Script and Validation Summary.'
+testData:
+- input: 'system_requirements: EDC system with e-signature modules.
+
+    '
+  expected: 'UAT Script
+
+    '
+evaluators:
+- name: UAT Script
+  string:
+    contains: UAT Script
+- name: Audit Trail
+  string:
+    contains: Audit Trail
+- name: Electronic Signature
+  string:
+    contains: Electronic Signature
+
+```

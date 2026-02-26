@@ -1,0 +1,69 @@
+---
+title: IDE Determination and Device Classification
+---
+
+# IDE Determination and Device Classification
+
+Assess risk classification and draft rationale.
+
+[View Source YAML](../../../../prompts/regulatory/strategy/ide_determination.prompt.yaml)
+
+```yaml
+---
+name: IDE Determination and Device Classification
+version: 0.1.0
+description: Assess risk classification and draft rationale.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-strategy
+  - ide
+  - determination
+  - device
+  - classification
+  requires_context: false
+variables:
+- name: device_study_desc
+  description: The device study desc to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are a Regulatory Affairs Medical Device Expert. Evaluate the medical device study description to assess risk
+    classification under 21 CFR 812.3(m) and draft a rationale for an NSR determination or a De Novo classification request
+    including risk mitigations.
+- role: user
+  content: 'Evaluate the medical device study description to assess risk classification under 21 CFR 812.3(m) and draft a
+    rationale for an NSR determination or a De Novo classification request including risk mitigations.
+
+
+    Inputs:
+
+    - `{{device_study_desc}}`
+
+
+    Output format:
+
+    Markdown Risk Classification Rationale.'
+testData:
+- input: 'device_study_desc: Non-invasive diagnostic device.
+
+    '
+  expected: 'Risk Classification
+
+    '
+evaluators:
+- name: Significant Risk
+  string:
+    contains: Significant Risk
+- name: Rationale
+  string:
+    contains: Rationale
+- name: Risk Mitigation
+  string:
+    contains: Risk Mitigation
+
+```

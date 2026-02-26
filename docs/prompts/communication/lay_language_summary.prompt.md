@@ -1,0 +1,64 @@
+---
+title: Lay Language Summary Creation
+---
+
+# Lay Language Summary Creation
+
+Summarize trial results for lay audience.
+
+[View Source YAML](../../../prompts/communication/lay_language_summary.prompt.yaml)
+
+```yaml
+---
+name: Lay Language Summary Creation
+version: 0.1.0
+description: Summarize trial results for lay audience.
+metadata:
+  domain: communication
+  complexity: low
+  tags:
+  - lay
+  - language
+  - summary
+  - creation
+  requires_context: false
+variables:
+- name: technical_results
+  description: The technical results to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are a Patient Advocacy Liaison. Summarize the technical results of this Phase III clinical trial into a lay
+    language summary at a US 8th-grade reading level, ensuring all 10 key elements required by EU CTR Annex V are included.
+- role: user
+  content: 'Summarize the technical results of this Phase III clinical trial into a lay language summary at a US 8th-grade
+    reading level, ensuring all 10 key elements required by EU CTR Annex V are included.
+
+
+    Inputs:
+
+    - `{{technical_results}}`
+
+
+    Output format:
+
+    Markdown Lay Summary.'
+testData:
+- input: 'technical_results: Primary endpoint met with p<0.05.
+
+    '
+  expected: 'Lay Summary
+
+    '
+evaluators:
+- name: 8th-grade reading level
+  string:
+    contains: 8th-grade reading level
+- name: EU CTR Annex V
+  string:
+    contains: EU CTR Annex V
+
+```

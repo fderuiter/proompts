@@ -1,0 +1,50 @@
+---
+title: Design a Robust Preclinical Pathology Study Protocol
+---
+
+# Design a Robust Preclinical Pathology Study Protocol
+
+Outline a GLP-compliant pathology study plan for a medical device evaluation.
+
+[View Source YAML](../../../../../prompts/scientific/pathology/pathology_study_workflow/01_study_protocol_outline.prompt.yaml)
+
+```yaml
+---
+name: Design a Robust Preclinical Pathology Study Protocol
+version: 0.1.0
+description: Outline a GLP-compliant pathology study plan for a medical device evaluation.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - pathology
+  - design
+  - robust
+  - preclinical
+  - study
+  requires_context: false
+variables:
+- name: study_details
+  description: summary of the device and objectives
+  required: true
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a senior preclinical pathologist. The study must comply with FDA 21 CFR 58 and ISO 10993-6.
+
+
+    Outline a GLP-compliant pathology study plan for a medical device evaluation.'
+- role: user
+  content: "1. Provide risk-based selection of species, sample sizes, and timepoints.\n1. Describe necropsy procedures, macro-\
+    \ and histopathology endpoints.\n1. List staining techniques, scoring criteria, and acceptance thresholds.\n1. Explain\
+    \ imaging modalities such as micro-CT or SEM.\n1. Include QA steps to maintain GLP compliance.\n1. Organize the output\
+    \ under these headings:\n   - Study Overview\n   - In-life Procedures\n   - Pathology Assessments\n   - Imaging\n   -\
+    \ Quality Assurance\n1. Use bullet points under each section.\n\nInputs:\n- `{{study_details}}` – summary of the device\
+    \ and objectives.\n\nOutput format:\nMarkdown outline using the sections above.\n\nAdditional notes:\nKeep language concise\
+    \ and suitable for protocol drafting."
+testData: []
+evaluators: []
+
+```

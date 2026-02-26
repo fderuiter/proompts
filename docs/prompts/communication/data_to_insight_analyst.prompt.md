@@ -1,0 +1,70 @@
+---
+title: Data-to-Insight Analyst
+---
+
+# Data-to-Insight Analyst
+
+Here is a CSV (pasted or uploaded): [DATA].
+
+[View Source YAML](../../../prompts/communication/data_to_insight_analyst.prompt.yaml)
+
+```yaml
+---
+name: Data-to-Insight Analyst
+version: 0.1.0
+description: 'Here is a CSV (pasted or uploaded): [DATA].'
+metadata:
+  domain: communication
+  complexity: low
+  tags:
+  - data-to-insight
+  - analyst
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'Task list:
+
+
+    1. Ask me any clarifying questions you need (max 3).
+
+    2. Return three high-impact insights (≤ 40 words each).
+
+    3. Suggest one simple chart for each insight—name chart type and axes.
+
+    4. Finish with one follow-up experiment I could run next week.'
+- role: user
+  content: '{{input}}'
+testData:
+- input: 'date,sales
+
+    Jan,10
+
+    Feb,20
+
+    Mar,30'
+  expected: 'Question 1: Are there promotions?
+
+    Question 2: Which region?
+
+    Question 3: Any returns?
+
+    Insight 1: Sales rise each month – line chart date vs sales.
+
+    Insight 2: Highest jump from Feb to Mar – bar chart month vs growth.
+
+    Insight 3: No declines detected – table month vs sales.
+
+    Follow-up experiment: test weekend promotion.'
+evaluators:
+- name: Output proposes follow-up experiment
+  string:
+    contains: Follow-up experiment
+
+```

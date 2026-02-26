@@ -1,0 +1,66 @@
+---
+title: Parallel Review Request
+---
+
+# Parallel Review Request
+
+Draft an email requesting enrollment in the Parallel Review program.
+
+[View Source YAML](../../../../prompts/regulatory/submissions/parallel_review_request.prompt.yaml)
+
+```yaml
+---
+name: Parallel Review Request
+version: 0.1.0
+description: Draft an email requesting enrollment in the Parallel Review program.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - submissions
+  - parallel
+  - review
+  - request
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    FDA/CMS Program
+
+
+    ## Objective
+
+    Draft an email requesting enrollment in the Parallel Review program.
+
+
+    ## Output Format
+
+    Formal professional email.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Regulatory history and public health impact statement. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Check
+
+```

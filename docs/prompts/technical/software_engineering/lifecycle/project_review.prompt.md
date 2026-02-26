@@ -1,0 +1,66 @@
+---
+title: Project Review Checklist
+---
+
+# Project Review Checklist
+
+Verify completion of a coding project before finalizing.
+
+[View Source YAML](../../../../../prompts/technical/software_engineering/lifecycle/project_review.prompt.yaml)
+
+```yaml
+---
+name: Project Review Checklist
+version: 0.1.0
+description: Verify completion of a coding project before finalizing.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - software-engineering
+  - sdlc
+  - project
+  - review
+  - checklist
+  requires_context: true
+variables: []
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'Run this checklist at the end of a development cycle to ensure quality and documentation are complete.
+
+
+    Only mark the project finished when every checklist item passes.'
+- role: user
+  content: '1. Run the formatter (`dotnet format` or equivalent).
+
+    1. Execute all tests with `dotnet test` and fix failures.
+
+    1. Resolve compiler and static-analysis warnings.
+
+    1. Review changes using `git diff --name-only main`.
+
+    1. Confirm the to-do list shows all tasks complete.
+
+    1. Cross-reference `memory.md` for project state accuracy.
+
+    1. Update development guidelines with any lessons learned.
+
+    Inputs:
+
+    None
+
+    Output format:
+
+    Markdown checklist confirming each step was completed.'
+testData:
+- vars: {}
+  expected: Markdown checklist confirming each step was completed.
+evaluators:
+- name: Output starts with checklist item
+  string:
+    startsWith: '- [ ]'
+
+```

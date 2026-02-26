@@ -1,0 +1,65 @@
+---
+title: Generate & QC Submission-Ready TLFs
+---
+
+# Generate & QC Submission-Ready TLFs
+
+Produce validated tables, listings, and figures (TLFs) ready for regulatory submission.
+
+[View Source YAML](../../../../prompts/scientific/biostatistics/submission_ready_tlfs.prompt.yaml)
+
+```yaml
+---
+name: Generate & QC Submission-Ready TLFs
+version: 0.1.0
+description: Produce validated tables, listings, and figures (TLFs) ready for regulatory submission.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - generate
+  - submission-ready
+  - tlfs
+  requires_context: false
+variables:
+- name: adae_path
+  description: '`{{adsl_path}}`'
+  required: true
+- name: adlb_path
+  description: The adlb path to use for this prompt
+  required: true
+- name: adsl_path
+  description: '`{{adlb_path}}`'
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a principal biostatistician overseeing statistical programming teams and auditing code for CDISC ADaM
+    and FDA Data Standards compliance.
+
+
+    Follow CDISC ADaM variable naming conventions throughout.'
+- role: user
+  content: "1. Use SAS v9.4 to generate the following:\n   - Table 14‑2.1: TEAE incidence by SOC/PT\n   - Figure 14‑3.2: Mean\
+    \ (±SE) ALT over time by treatment\n   - Listing 16‑2.3: Serious adverse events\n2. Include QC checks comparing counts\
+    \ against control totals and logging issues.\n3. Embed footnotes and pagination per blue book conventions.\n4. Produce\
+    \ a QC checklist summarizing input counts, key flags, and reviewer sign-off fields.\n5. Insert TODO tags where manual\
+    \ review is required.\n6. Reason silently and share only final deliverables.\n\nInputs:\n- `{{adae_path}}`\n- `{{adsl_path}}`\n\
+    - `{{adlb_path}}`\n\nOutput format:\nSAS code block(s) with header comments, followed by a QC checklist in a markdown\
+    \ table and brief usage notes (≤120 words)."
+testData:
+- vars:
+    adae_path: example_adae_path
+    adsl_path: example_adsl_path
+    adlb_path: example_adlb_path
+  expected: SAS code block(s) with header comments, followed by a QC checklist in a markdown table and brief usage notes (≤120
+    words).
+evaluators:
+- name: Output starts with '```sas'
+  string:
+    startsWith: '```sas'
+
+```

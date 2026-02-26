@@ -1,0 +1,71 @@
+---
+title: Audit Trail Review
+---
+
+# Audit Trail Review
+
+Review subject audit logs for compliance and data integrity.
+
+[View Source YAML](../../../../prompts/clinical/data_management/audit_trail_review.prompt.yaml)
+
+```yaml
+---
+name: Audit Trail Review
+version: 0.1.0
+description: Review subject audit logs for compliance and data integrity.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - data-management
+  - audit
+  - trail
+  - review
+  requires_context: true
+variables:
+- name: audit_logs
+  description: 'System Specifications (Audit reqs): `{{system_specs}}`'
+  required: true
+- name: system_specs
+  description: The system specs to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are a Clinical Data Auditor. Review subject audit logs to provide documentary evidence of the sequence of activities
+    completed and verify compliance with signature requirements. Adhere to 21 CFR Part 11 and GCP.
+- role: user
+  content: 'Examine the provided electronic audit trail and generate a summary report identifying who modified data, when,
+    and why, while verifying that the trail captures required signature details.
+
+
+    Inputs:
+
+    - Electronic Audit Logs (snippet): `{{audit_logs}}`
+
+    - System Specifications (Audit reqs): `{{system_specs}}`
+
+
+    Output format:
+
+    Markdown Audit Review Report.'
+testData:
+- input: 'audit_logs: "2023-01-01 10:00:00 UserA Modified Dose from 10 to 20. Reason: Typo."
+
+    system_specs: "Must capture Reason for Change."
+
+    '
+  expected: 'Audit Review Report
+
+    '
+evaluators:
+- name: User Identification
+  string:
+    contains: UserA
+- name: Modification Details
+  string:
+    contains: Dose
+
+```

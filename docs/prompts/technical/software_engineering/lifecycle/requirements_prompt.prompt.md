@@ -1,0 +1,59 @@
+---
+title: RequirementsBot Prompt
+---
+
+# RequirementsBot Prompt
+
+Guide an AI assistant to inspect a repository and generate a complete `REQUIREMENTS.md` file.
+
+[View Source YAML](../../../../../prompts/technical/software_engineering/lifecycle/requirements_prompt.prompt.yaml)
+
+```yaml
+---
+name: RequirementsBot Prompt
+version: 0.1.0
+description: Guide an AI assistant to inspect a repository and generate a complete `REQUIREMENTS.md` file.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - software-engineering
+  - sdlc
+  - requirements
+  - bot
+  - prompt
+  requires_context: true
+variables:
+- name: repository_url
+  description: link or path to the codebase
+  required: true
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'Use this prompt with an agent that has read access to the entire codebase, commit history, and tests. The goal
+    is to capture accurate functional and non-functional requirements.
+
+
+    Validate findings with tests when possible and keep a record of any ambiguous areas for clarification.'
+- role: user
+  content: "1. Act as **RequirementsBot**, an autonomous analyst.\n1. Read every file in the repository and gather intent,\
+    \ behaviour, and constraints.\n1. Produce `REQUIREMENTS.md` with sections:\n   - Front-matter summarising the project\n\
+    \   - Purpose & Scope with in-scope and out-of-scope lists\n   - Glossary & Acronyms (if needed)\n   - Functional Requirements\
+    \ numbered FR-x with triggers, expected behaviour, actor, and priority\n   - Non-Functional Requirements with measurable\
+    \ statements\n   - System Constraints & External Dependencies\n   - Acceptance Criteria or test references\n   - Open\
+    \ Questions & Assumptions\n   - Appendices if relevant\n1. Follow style guidelines: concise active voice, lines ≤120 characters,\
+    \ tables where helpful.\n1. Ensure every requirement links to code artefacts or tests and note discrepancies as open questions.\n\
+    Inputs:\n- `{{repository_url}}` – link or path to the codebase\nOutput format:\nReturn the finished `REQUIREMENTS.md`\
+    \ content only."
+testData:
+- vars:
+    repository_url: example_repository_url
+  expected: Return the finished `REQUIREMENTS.md` content only.
+evaluators:
+- name: Output starts with Markdown heading
+  string:
+    startsWith: '#'
+
+```

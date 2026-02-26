@@ -1,0 +1,67 @@
+---
+title: Time-to-Event Analysis Coach
+---
+
+# Time-to-Event Analysis Coach
+
+Guide a junior analyst through performing a time-to-event analysis.
+
+[View Source YAML](../../../../prompts/scientific/biostatistics/time_to_event_analysis_coach.prompt.yaml)
+
+```yaml
+---
+name: Time-to-Event Analysis Coach
+version: 0.1.0
+description: Guide a junior analyst through performing a time-to-event analysis.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - time-to-event
+  - analysis
+  - coach
+  requires_context: false
+variables:
+- name: dataset_path
+  description: path to the patient dataset
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'Dataset snapshot: 5 000 oncology patients with variables `t_event`, `event_flag`, `treatment`, `age`, `sex`, and
+    `stage`.
+
+
+    Provide rationale before each major code chunk using comments.'
+- role: user
+  content: '1. Explain why a Cox proportional-hazards model is appropriate.
+
+    2. Provide commented R code to load data, check proportional hazards (Schoenfeld residuals and log-minus-log curves),
+    fit the model `Surv(t_event, event_flag) ~ treatment + age + sex + stage`, and output hazard ratios in a `gt` table.
+
+    3. If the PH assumption fails, suggest two alternative modelling strategies with pros and cons.
+
+
+    Inputs:
+
+    - `{{dataset_path}}` — path to the patient dataset
+
+
+    Output format:
+
+    Section A: conceptual walk-through (bullets). Section B: fenced R code block. Section C: interpretation and next steps
+    (\u2264250 words).'
+testData:
+- vars:
+    dataset_path: example_dataset_path
+  expected: 'Section A: conceptual walk-through (bullets). Section B: fenced R code block. Section C: interpretation and next
+    steps (\u2264250 words).'
+evaluators:
+- name: Output starts with 'Section A:'
+  string:
+    startsWith: 'Section A:'
+
+```

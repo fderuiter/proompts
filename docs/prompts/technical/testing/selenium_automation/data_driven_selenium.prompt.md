@@ -1,0 +1,43 @@
+---
+title: Framework Implementation: Data-Driven Testing
+---
+
+# Framework Implementation: Data-Driven Testing
+
+Utilize data providers to execute the same test logic with multiple sets of data.
+
+[View Source YAML](../../../../../prompts/technical/testing/selenium_automation/data_driven_selenium.prompt.yaml)
+
+```yaml
+---
+name: 'Framework Implementation: Data-Driven Testing'
+version: 0.1.0
+description: Utilize data providers to execute the same test logic with multiple sets of data.
+metadata:
+  domain: technical
+  complexity: low
+  tags:
+  - testing
+  - selenium
+  - framework
+  - implementation
+  - data-driven
+  requires_context: false
+variables: []
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: Write a TestNG @DataProvider method in Java that returns a 2D object array of credentials (usernames/passwords)
+    and map it to a @Test method to perform data-driven login verification.
+- role: user
+  content: Create a data-driven test for login functionality using TestNG DataProvider.
+testData:
+- input: N/A
+  expected: '@DataProvider'
+evaluators:
+- name: Uses DataProvider annotation
+  regex: '@DataProvider'
+
+```

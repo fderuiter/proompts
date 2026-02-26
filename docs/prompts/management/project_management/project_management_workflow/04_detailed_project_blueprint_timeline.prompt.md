@@ -1,0 +1,81 @@
+---
+title: Detailed Project Blueprint and Timeline
+---
+
+# Detailed Project Blueprint and Timeline
+
+Provide a comprehensive roadmap with phases, milestones, success metrics, and stakeholders.
+
+[View Source YAML](../../../../../prompts/management/project_management/project_management_workflow/04_detailed_project_blueprint_timeline.prompt.yaml)
+
+```yaml
+---
+name: Detailed Project Blueprint and Timeline
+version: 0.1.0
+description: Provide a comprehensive roadmap with phases, milestones, success metrics, and stakeholders.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - project-management
+  - detailed
+  - project
+  - blueprint
+  - timeline
+  requires_context: false
+variables:
+- name: milestone_data
+  description: The data or dataset to analyze
+  required: true
+- name: objectives
+  description: '`{{milestone_data}}`'
+  required: true
+- name: project_type
+  description: '`{{objectives}}`'
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are an experienced project manager planning a study or project. The user will supply the project type and
+    key objectives.
+
+
+    Keep the plan concise and easy to translate into Gantt software.'
+- role: user
+  content: '1. Outline objectives, scope, key phases, and milestones with deliverables.
+
+    1. Include start and end dates, success metrics, and stakeholder roles for each phase.
+
+    1. Present the information in a table with columns: Phase, Task, Start Date, End Date, Owner.
+
+    1. Confirm any missing details before producing the final plan.
+
+
+    Inputs:
+
+    - `{{project_type}}`
+
+    - `{{objectives}}`
+
+    - `{{milestone_data}}`
+
+
+    Output Format:
+
+    Markdown table outlining the project roadmap.'
+testData:
+- vars:
+    project_type: Example project
+    objectives: Example objectives
+    milestone_data: Sample milestones
+  expected: 'Markdown table outlining phases, tasks, and owners.
+
+    '
+evaluators:
+- name: Contains Phase column
+  string:
+    contains: Phase
+
+```

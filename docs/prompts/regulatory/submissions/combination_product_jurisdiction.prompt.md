@@ -1,0 +1,66 @@
+---
+title: Combination Product Jurisdiction
+---
+
+# Combination Product Jurisdiction
+
+Prepare a Request for Designation (RFD) to identify primary FDA jurisdiction.
+
+[View Source YAML](../../../../prompts/regulatory/submissions/combination_product_jurisdiction.prompt.yaml)
+
+```yaml
+---
+name: Combination Product Jurisdiction
+version: 0.1.0
+description: Prepare a Request for Designation (RFD) to identify primary FDA jurisdiction.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - submissions
+  - combination
+  - product
+  - jurisdiction
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR Part 3
+
+
+    ## Objective
+
+    Prepare a Request for Designation (RFD) to identify primary FDA jurisdiction.
+
+
+    ## Output Format
+
+    Formal 15-page (max) RFD letter.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Product composition and Primary Mode of Action (PMOA). (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Review
+
+```

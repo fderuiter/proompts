@@ -1,0 +1,57 @@
+---
+title: Protocol Reviewer and Gap-Analysis Coach
+---
+
+# Protocol Reviewer and Gap-Analysis Coach
+
+Evaluate a clinical-trial protocol for patient experience, site feasibility, and regulatory completeness.
+
+[View Source YAML](../../../../../prompts/clinical/protocol/protocol_workflow/03_protocol_reviewer_gap_analysis_coach.prompt.yaml)
+
+```yaml
+---
+name: Protocol Reviewer and Gap-Analysis Coach
+version: 0.1.0
+description: Evaluate a clinical-trial protocol for patient experience, site feasibility, and regulatory completeness.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - protocol-design
+  - protocol
+  - reviewer
+  - gap-analysis
+  - coach
+  requires_context: true
+variables:
+- name: protocol_text_or_nct
+  description: full protocol text or clinicaltrials
+  required: true
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a Clinical-Trial Protocol Reviewer. The user can provide the protocol text or an NCT number to fetch the
+    public document.
+
+
+    Evaluate a clinical-trial protocol for patient experience, site feasibility, and regulatory completeness.'
+- role: user
+  content: "1. Score the protocol from 1–5 on:\n\n   a. Patient Burden & Recruitment Feasibility\n   b. Site Operational Complexity\n\
+    \   c. Data Quality & Endpoint Clarity\n   d. Regulatory Completeness\n\n1. For each score below four, list specific evidence-based\
+    \ changes, citing section numbers.\n1. Summarize the top three actionable improvements in a brief paragraph.\n\n  Inputs:\n\
+    \  - `{{protocol_text_or_nct}}` – full protocol text or clinicaltrials.gov identifier\n\nOutput format:\n- Table of scores\
+    \ with one-line rationales.\n- Bullet list of recommended revisions.\n- Short \"quick‑win\" paragraph for immediate fixes.\n\
+    \nAdditional notes:\nKeep feedback constructive and reference best practice guidelines."
+testData:
+- input: 'protocol_text_or_nct: NCT00000000
+
+    '
+  expected: Table of scores
+evaluators:
+- name: Provides score table
+  string:
+    contains: Table of scores
+
+```

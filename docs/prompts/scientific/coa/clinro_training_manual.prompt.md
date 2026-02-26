@@ -1,0 +1,105 @@
+---
+title: ClinRO User Manual Generator
+---
+
+# ClinRO User Manual Generator
+
+Draft a standardized user manual for ClinRO administration and training.
+
+[View Source YAML](../../../../prompts/scientific/coa/clinro_training_manual.prompt.yaml)
+
+```yaml
+---
+name: ClinRO User Manual Generator
+version: 0.1.0
+description: Draft a standardized user manual for ClinRO administration and training.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - clinical-outcome-assessment
+  - clin
+  - user
+  - manual
+  - generator
+  requires_context: true
+variables:
+- name: clinro_name
+  description: The name or identifier
+  required: true
+- name: measurement_type
+  description: The measurement type to use for this prompt
+  required: true
+- name: requirements
+  description: The requirements or specifications
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a Clinical Trial Manager and COA Specialist. Your task is to draft a comprehensive section for a Clinician-Reported
+    Outcome (ClinRO) user manual.
+
+
+    The goal is to ensure standardized administration and inter-rater reliability across sites.
+
+
+    Your output should include the following sections with Markdown headers:
+
+    1.  **## Administration Instructions:** Step-by-step procedures for measurement (e.g., skin lesion size, body positioning).
+
+    2.  **## Tools:** Specify the exact tools to be used (e.g., caliper type, light source).
+
+    3.  **## Qualification Criteria:** Define the requirements for clinicians to be qualified to administer the ClinRO (e.g.,
+    training completion, passing an inter-rater reliability test).
+
+    4.  **## Data Recording:** How to document findings in the source documents and eCRF.
+
+
+    Ensure the language is clear, concise, and directive.
+
+    '
+- role: user
+  content: '<clinro_instrument>
+
+    {{clinro_name}}
+
+    </clinro_instrument>
+
+
+    <measurement_type>
+
+    {{measurement_type}} (e.g., lesion size, range of motion)
+
+    </measurement_type>
+
+
+    <specific_requirements>
+
+    {{requirements}}
+
+    </specific_requirements>
+
+
+    Draft the user manual section.
+
+    '
+testData:
+- input: 'clinro_name: Psoriasis Area and Severity Index (PASI)
+
+    measurement_type: Lesion area and severity (erythema, induration, scaling)
+
+    requirements: Must be done in natural light, patient standing.
+
+    '
+  expected: Instructions on assessing area percentage, severity scoring (0-4), and body positioning under natural light.
+evaluators:
+- name: Standardization Check
+  regex:
+    pattern: (?i)(standard|criteria|qualification)
+- name: Tools Mention
+  regex:
+    pattern: (?i)(tool|light|caliper)
+
+```

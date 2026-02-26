@@ -1,0 +1,64 @@
+---
+title: Competency-Based Onboarding Blueprint
+---
+
+# Competency-Based Onboarding Blueprint
+
+Create an onboarding program that reduces time to independent monitoring to six weeks or less.
+
+[View Source YAML](../../../../../prompts/management/training/learning_development_workflow/01_competency_based_onboarding_blueprint.prompt.yaml)
+
+```yaml
+---
+name: Competency-Based Onboarding Blueprint
+version: 0.1.0
+description: Create an onboarding program that reduces time to independent monitoring to six weeks or less.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - training
+  - competency-based
+  - onboarding
+  - blueprint
+  requires_context: true
+variables:
+- name: existing_modules
+  description: reference to reusable SOP content
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: '- Approximately 120 new CRAs are onboarded each year across North America, EU, and APAC.
+
+    - Current time to independent monitoring averages nine weeks.
+
+    - Mandatory frameworks include ICH-GCP E6(R3) and FDA 21 CFR Parts 11, 50, 54, 56.
+
+
+    1. Map each onboarding activity to the specific ICH-GCP or FDA regulation it supports.
+
+    2. Use blended learning—micro-eLearning, virtual workshops, and coaching.
+
+    3. Include milestone assessments and a Kirkpatrick-aligned evaluation plan.
+
+    4. Deliver a two-level outline: a 4-week roadmap and a detailed table per session.
+
+    5. Highlight quick wins that reuse existing SOP modules.
+
+    6. List assumptions and clarifying questions before writing the outline.
+
+
+    Provide the final output in Markdown only.'
+- role: user
+  content: '- `{{existing_modules}}` – reference to reusable SOP content.
+
+
+    Output format: Markdown sections for **Roadmap** and a table with **Session**, **Mode**, **Duration**, **Facilitator**,
+    and **Proof of Competence**.'
+testData: []
+evaluators: []
+
+```

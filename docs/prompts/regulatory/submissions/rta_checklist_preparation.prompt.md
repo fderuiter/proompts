@@ -1,0 +1,66 @@
+---
+title: RTA Checklist Preparation
+---
+
+# RTA Checklist Preparation
+
+Annotate the RTA checklist with page numbers and sections where requirements are addressed in a 510(k).
+
+[View Source YAML](../../../../prompts/regulatory/submissions/rta_checklist_preparation.prompt.yaml)
+
+```yaml
+---
+name: RTA Checklist Preparation
+version: 0.1.0
+description: Annotate the RTA checklist with page numbers and sections where requirements are addressed in a 510(k).
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - submissions
+  - rta
+  - checklist
+  - preparation
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    FDA RTA Policy
+
+
+    ## Objective
+
+    Annotate the RTA checklist with page numbers and sections where requirements are addressed in a 510(k).
+
+
+    ## Output Format
+
+    Annotated checklist with a comment column.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Draft 510(k) submission and appropriate FDA RTA checklist. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Verify
+
+```

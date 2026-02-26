@@ -1,0 +1,68 @@
+---
+title: PMA Post-approval Reporting
+---
+
+# PMA Post-approval Reporting
+
+Compile a summary of post-approval requirements, including clinical study data, manufacturing changes, and scientific literature.
+
+[View Source YAML](../../../../prompts/regulatory/submissions/pma_post_approval_reporting.prompt.yaml)
+
+```yaml
+---
+name: PMA Post-approval Reporting
+version: 0.1.0
+description: Compile a summary of post-approval requirements, including clinical study data, manufacturing changes, and scientific
+  literature.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - submissions
+  - pma
+  - post-approval
+  - reporting
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR Part 814.82 / 814.84
+
+
+    ## Objective
+
+    Compile a summary of post-approval requirements, including clinical study data, manufacturing changes, and scientific
+    literature.
+
+
+    ## Output Format
+
+    Formal report to the Office of Device Evaluation.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: PMA approval order, study data, change logs, and bibliography of recent literature. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Verify
+
+```

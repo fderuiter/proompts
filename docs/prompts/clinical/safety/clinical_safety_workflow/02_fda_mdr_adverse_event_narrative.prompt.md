@@ -1,0 +1,64 @@
+---
+title: FDA MDR/MDV Adverse-Event Narrative
+---
+
+# FDA MDR/MDV Adverse-Event Narrative
+
+1. Extract: event date, patient age/sex, device identifiers, reporter type.
+
+[View Source YAML](../../../../../prompts/clinical/safety/clinical_safety_workflow/02_fda_mdr_adverse_event_narrative.prompt.yaml)
+
+```yaml
+---
+name: FDA MDR/MDV Adverse-Event Narrative
+version: 0.1.0
+description: '1. Extract: event date, patient age/sex, device identifiers, reporter type.'
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - safety
+  - fda
+  - mdr
+  - mdv
+  - adverse-event
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: "1. Write a concise, chronological narrative (≤ 1 200 characters) that:\n   – Describes the event circumstances\
+    \ and patient impact.\n   – States whether the device malfunctioned and if it was returned.\n   – Includes any relevant\
+    \ concomitant products/procedures.\n2. End with this boiler-plate sentence:\n   “This information is submitted to comply\
+    \ with 21 CFR 803.52.”"
+- role: user
+  content: '{{input}}'
+testData:
+  - input: |
+      SENDER: Dr. A. Smith (Cardiology)
+      DATE: 2024-06-12
+      PATIENT: J. Doe (M/72)
+      DETAILS: Pt admitted for arrhythmia. Implanted PaceMaker (SN: 998877) showing irregular pacing intervals. Device explanted on 12th. Returned to manuf? Yes. Pt stable post-op.
+    expected: "72-year-old male... PaceMaker (SN: 998877)... device was returned... This information is submitted to comply with 21 CFR 803.52."
+  - input: |
+      REPORT: Nurse notes from 15-May-2024.
+      SUBJECT: Female, 45y.
+      EVENT: Redness at insertion site observed during checkup. No device ID available in chart. Device not removed.
+    expected: "45-year-old female... redness at insertion site... device not removed... This information is submitted to comply with 21 CFR 803.52."
+evaluators:
+  - name: Ends with regulatory boilerplate
+    regex:
+      pattern: "This information is submitted to comply with 21 CFR 803\\.52\\.$"
+  - name: Narrative includes patient demographics
+    regex:
+      pattern: "\\d{2}-year-old (male|female)"
+  - name: Narrative is concise (under 1200 chars)
+    python:
+      code: "len(output) <= 1200"
+
+```

@@ -1,0 +1,70 @@
+---
+title: QC Listing & Cross-check Prompt
+---
+
+# QC Listing & Cross-check Prompt
+
+Automate a listing and QC cross-check between independent R and SAS runs.
+
+[View Source YAML](../../../../prompts/scientific/biostatistics/qc_listing_cross_check_prompt.prompt.yaml)
+
+```yaml
+---
+name: QC Listing & Cross-check Prompt
+version: 0.1.0
+description: Automate a listing and QC cross-check between independent R and SAS runs.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - listing
+  - cross-check
+  - prompt
+  requires_context: false
+variables:
+- name: dataset_paths
+  description: paths to ADAE and ADCM datasets
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'Act as the lead programmer overseeing double-programming for safety listings.
+
+
+    Use concise code and avoid extra narrative text.'
+- role: user
+  content: '1. Use **R** to extract ADCM records where `USUBJID` appears in `ADAE` with `SAEFL=''Y''`; list `USUBJID`, `CMTRT`,
+    `CMDECOD`, `CMSTDTC`, `CMENDTC`.
+
+    2. Use **SAS** to replicate the same logic independently.
+
+    3. Perform a record-level comparison keyed by `USUBJID`, `CMDECOD`, and `CMSTDTC`.
+
+    4. Return three code blocks in order: R extract, SAS extract, R comparison.
+
+    5. If differences exist, print a diff table; otherwise output “QC PASS – R and SAS identical.”
+
+    6. Provide no additional commentary.
+
+
+    Inputs:
+
+    - `{{dataset_paths}}` — paths to ADAE and ADCM datasets
+
+
+    Output format:
+
+    Three code blocks followed by a diff table or pass message.'
+testData:
+- vars:
+    dataset_paths: example_dataset_paths
+  expected: Three code blocks followed by a diff table or pass message.
+evaluators:
+- name: Output starts with '```r'
+  string:
+    startsWith: '```r'
+
+```

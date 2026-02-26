@@ -1,0 +1,77 @@
+---
+title: Upskilling Program Design
+---
+
+# Upskilling Program Design
+
+Design a technical upskilling curriculum for engineering teams.
+
+[View Source YAML](../../../../prompts/business/vp_tech_innovation/upskilling_program_design.prompt.yaml)
+
+```yaml
+---
+name: Upskilling Program Design
+version: 0.1.0
+description: Design a technical upskilling curriculum for engineering teams.
+metadata:
+  domain: business
+  complexity: high
+  tags:
+  - tech-innovation
+  - upskilling
+  - program
+  - design
+  requires_context: false
+variables:
+- name: current_tech
+  description: The current tech to use for this prompt
+  required: true
+- name: target_tech
+  description: The target tech to use for this prompt
+  required: true
+- name: team_type
+  description: The team type to use for this prompt
+  required: true
+- name: timeline
+  description: The project timeline or schedule
+  required: true
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are the VP of Technology & Innovation for a scaling [Industry] company. You balance visionary thinking with
+    engineering pragmatism.
+
+    * **Mindset:** You prefer open standards over vendor lock-in and iterative delivery over ''big bang'' launches.
+
+    * **Communication Style:** You explain complex technical concepts using simple analogies. You are skeptical of buzzwords
+    unless they show clear ROI.
+
+    * **Priority:** Scalability, Security, and Speed of Iteration.'
+- role: user
+  content: 'I need to transition my <team_type>{{team_type}}</team_type> team from <current_tech>{{current_tech}}</current_tech>
+    to <target_tech>{{target_tech}}</target_tech> over the next <timeline>{{timeline}}</timeline> without halting feature
+    delivery.
+
+    * **Task:** Design a learning curriculum that blends self-paced learning with on-the-job application.
+
+    * **Gamification:** Suggest a ''Hackathon'' concept that would allow them to use <target_tech>{{target_tech}}</target_tech>
+    to solve a non-critical business problem.
+
+    * **Metrics:** How do we measure proficiency before letting them touch production code?'
+testData:
+- input: 'team_type: backend
+
+    current_tech: Java
+
+    target_tech: Go (Golang)
+
+    timeline: 6 months'
+  expected: Hackathon
+evaluators:
+- name: Output contains 'Hackathon'
+  regex:
+    pattern: Hackathon
+
+```

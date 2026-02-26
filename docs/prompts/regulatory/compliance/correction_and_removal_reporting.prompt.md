@@ -1,0 +1,66 @@
+---
+title: Correction and Removal Reporting
+---
+
+# Correction and Removal Reporting
+
+Draft a written report to FDA for a device correction or removal.
+
+[View Source YAML](../../../../prompts/regulatory/compliance/correction_and_removal_reporting.prompt.yaml)
+
+```yaml
+---
+name: Correction and Removal Reporting
+version: 0.1.0
+description: Draft a written report to FDA for a device correction or removal.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - compliance
+  - correction
+  - removal
+  - reporting
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR Part 806
+
+
+    ## Objective
+
+    Draft a written report to FDA for a device correction or removal.
+
+
+    ## Output Format
+
+    Formal report following 21 CFR 806.10(c)(1).'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: UDI, event description, and consignee list. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Cross\-check
+
+```

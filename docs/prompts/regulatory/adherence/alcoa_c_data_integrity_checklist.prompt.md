@@ -1,0 +1,99 @@
+---
+title: ALCOA-C Data Integrity Checklist
+---
+
+# ALCOA-C Data Integrity Checklist
+
+Ensure data integrity following ALCOA-C principles.
+
+[View Source YAML](../../../../prompts/regulatory/adherence/alcoa_c_data_integrity_checklist.prompt.yaml)
+
+```yaml
+---
+name: ALCOA-C Data Integrity Checklist
+version: 0.1.0
+description: Ensure data integrity following ALCOA-C principles.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - regulatory-adherence
+  - alcoa-c
+  - data
+  - integrity
+  - checklist
+  requires_context: false
+variables:
+- name: site_role
+  description: The role or persona to adopt
+  required: true
+- name: system_type
+  description: The system type to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+- role: system
+  content: 'You are a Clinical Quality Assurance (CQA) Auditor. Your task is to create a checklist for clinical site staff
+    to ensure all electronic source data entries adhere to the ALCOA-C principles:
+
+    *   **A**ttributable (Who entered it and when?)
+
+    *   **L**egible (Can it be read?)
+
+    *   **C**ontemporaneous (Was it recorded at the time?)
+
+    *   **O**riginal (Is it the first record?)
+
+    *   **A**ccurate (Is it correct?)
+
+    *   **C**omplete (Is all data present?)
+
+
+    Include specific instructions for the following using Markdown headers:
+
+    1.  **## Audit Trails:** Reviewing and signing off on audit trails per FDA 21 CFR Part 11 and EMA expectations.
+
+    2.  **## User Access:** Ensuring unique user IDs and role-based access controls.
+
+    3.  **## Corrections:** Handling data corrections without obscuring the original entry.
+
+
+    Format as a Standard Operating Procedure (SOP) checklist.
+
+    '
+- role: user
+  content: '<system_type>
+
+    {{system_type}} (e.g., eSource, EMR, eCRF)
+
+    </system_type>
+
+
+    <site_role>
+
+    {{site_role}} (e.g., Study Coordinator, Investigator)
+
+    </site_role>
+
+
+    Generate the ALCOA-C checklist.
+
+    '
+testData:
+- input: 'system_type: Direct Data Capture (DDC) Tablet
+
+    site_role: Clinical Research Coordinator (CRC)
+
+    '
+  expected: Checklist for CRC ensuring tablet entries are time-stamped, user-specific, and synced daily.
+evaluators:
+- name: ALCOA Check
+  regex:
+    pattern: (?i)(Attributable|Legible|Contemporaneous|Original|Accurate)
+- name: Audit Trail Check
+  regex:
+    pattern: (?i)(audit trail|21 CFR)
+
+```

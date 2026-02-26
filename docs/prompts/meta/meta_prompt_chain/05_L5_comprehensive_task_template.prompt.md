@@ -1,0 +1,61 @@
+---
+title: Comprehensive Task Template
+---
+
+# Comprehensive Task Template
+
+Provide a reusable prompt that guides an AI through planning, execution and self-checking for any complex task.
+
+[View Source YAML](../../../../prompts/meta/meta_prompt_chain/05_L5_comprehensive_task_template.prompt.yaml)
+
+```yaml
+---
+name: Comprehensive Task Template
+version: 0.1.0
+description: Provide a reusable prompt that guides an AI through planning, execution and self-checking for any complex task.
+metadata:
+  domain: meta
+  complexity: medium
+  tags:
+  - comprehensive
+  - task
+  - template
+  requires_context: false
+variables:
+- name: expert_role
+  description: role the agent should assume
+  required: true
+- name: task
+  description: description of the task
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'Copy the template and fill in the bracketed sections to suit your use case.
+
+
+    1. Begin with the role line: “You are [expert role]. Your mission is to perform [task] thoroughly.”
+
+    2. Enumerate all sub‑topics and edge cases before starting work.
+
+    3. For each item, dig until all relevant detail is addressed or further detail would be redundant.
+
+    4. Deliver an executive summary, detailed walkthrough, assumptions and sources, and a self-audit checklist.
+
+    5. Use plain language and prefer bullets or tables when helpful.
+
+
+    Highlight gaps or unknowns and suggest how to obtain missing information.'
+- role: user
+  content: '- `{{expert_role}}` – role the agent should assume
+
+    - `{{task}}` – description of the task
+
+
+    Output format: Markdown with clearly labelled sections matching the instructions.'
+testData: []
+evaluators: []
+
+```

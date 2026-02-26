@@ -1,0 +1,64 @@
+---
+title: Protocol to USDM Stage 2 - Rationale
+---
+
+# Protocol to USDM Stage 2 - Rationale
+
+Extract Objectives, Endpoints, and Eligibility Criteria.
+
+[View Source YAML](../../../../../prompts/clinical/protocol/usdm_workflow/02_usdm_stage2_rationale.prompt.yaml)
+
+```yaml
+---
+name: Protocol to USDM Stage 2 - Rationale
+description: Extract Objectives, Endpoints, and Eligibility Criteria.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+metadata:
+  domain: clinical
+  complexity: high
+  tags:
+  - protocol
+  - cdisc
+  - usdm
+  - objectives
+  requires_context: true
+variables:
+- name: protocol_objectives_text
+  description: The Objectives, Endpoints, and Eligibility sections of the protocol.
+  required: true
+messages:
+- role: system
+  content: "You are a Clinical Research Associate.\n\n# Task\n1. Extract Primary and Secondary Objectives.\n2. Extract the\
+    \ specific Endpoint associated with each Objective.\n3. Extract Inclusion and Exclusion criteria.\n\n# Output Requirement\n\
+    Return a JSON snippet. **Link Endpoints to their parent Objective using `objectiveId`.**\n\n{\n  \"objectives\": [\n \
+    \   { \"id\": \"OBJ_01\", \"level\": \"Primary\", \"description\": \"String\" }\n  ],\n  \"endpoints\": [\n    { \"id\"\
+    : \"END_01\", \"objectiveId\": \"OBJ_01\", \"description\": \"String\" }\n  ],\n  \"criteria\": [\n    { \"id\": \"CRI_01\"\
+    , \"type\": \"Inclusion\", \"text\": \"String\" },\n    { \"id\": \"CRI_02\", \"type\": \"Exclusion\", \"text\": \"String\"\
+    \ }\n  ]\n}\n"
+- role: user
+  content: '# Input
+
+    <protocol_objectives_text>
+
+    {{protocol_objectives_text}}
+
+    </protocol_objectives_text>
+
+    '
+testData:
+- input: 'protocol_objectives_text: "Primary Objective: To assess safety. Endpoint: Adverse events. Inclusion: Age > 18."
+
+    '
+  expected: "{\n  \"objectives\": [\n    { \"level\": \"Primary\" }\n  ]\n}\n"
+evaluators:
+- name: Valid JSON
+  regex:
+    pattern: (?s)^[\s\S]*\{[\s\S]*\}[\s\S]*$
+- name: Contains objectives
+  regex:
+    pattern: '(?s)"objectives"\s*:'
+version: 0.1.0
+
+```

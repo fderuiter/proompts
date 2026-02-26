@@ -127,24 +127,86 @@ class DocumentationGenerator:
         self.root = root
         self.items: List[DocItem] = []
 
-    def scan_prompts(self):
+    def scan_prompts(self, check_mode: bool = False) -> bool:
         prompts_dir = self.root / CONFIG['dirs']['prompts']
         if not prompts_dir.exists():
-            return
+            return False
 
         print(f"🔍 Scanning Prompts in {prompts_dir}...")
+        changes_detected = False
+
+        # Ensure output dir exists
+        (self.root / CONFIG['dirs']['docs'] / "prompts").mkdir(parents=True, exist_ok=True)
+
         for path in prompts_dir.rglob("*"):
             if path.name.startswith("._"):
                 continue
             if path.suffix in {'.yaml', '.yml'} and '.prompt' in path.name:
                 data = FileParser.load_yaml(path)
+
+                # Render the individual prompt page
+                page_path, page_changed = self._render_prompt_page(path, data, check_mode)
+                if page_changed:
+                    changes_detected = True
+
                 item = DocItem(
                     title=FileParser.derive_title(path, data),
-                    path=path,
+                    path=page_path,
                     category=FileParser.derive_category(path, prompts_dir),
                     item_type='prompt'
                 )
                 self.items.append(item)
+        return changes_detected
+
+    def _render_prompt_page(self, source_path: Path, data: Dict[str, Any], check_mode: bool = False) -> tuple[Path, bool]:
+        """Generates the Markdown page for a single prompt."""
+        title = FileParser.derive_title(source_path, data)
+        desc = data.get('description', 'No description provided.')
+
+        # Calculate output path: docs/prompts/category/filename.md
+        # relative_path = source_path.relative_to(self.root / CONFIG['dirs']['prompts'])
+        # Actually, let's just mirror the structure under prompts/
+        # source: prompts/A/B/foo.prompt.yaml
+        # output: docs/prompts/A/B/foo.md
+
+        rel_to_prompts = source_path.relative_to(self.root / CONFIG['dirs']['prompts'])
+        output_path = self.root / CONFIG['dirs']['docs'] / "prompts" / rel_to_prompts.with_suffix(".md")
+
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+
+        # Relative link to source for the button
+        rel_source = os.path.relpath(source_path, output_path.parent)
+
+        try:
+            raw_content = source_path.read_text(encoding='utf-8')
+        except Exception as e:
+            raw_content = f"# Error reading source file: {e}"
+
+        content = f"""---
+title: {title}
+---
+
+# {title}
+
+{desc}
+
+[View Source YAML]({rel_source})
+
+```yaml
+{raw_content}
+```
+"""
+        if check_mode:
+            if not output_path.exists():
+                print(f"❌ Missing prompt page: {output_path}")
+                return output_path, True
+            elif output_path.read_text(encoding='utf-8') != content:
+                print(f"❌ Content mismatch: {output_path}")
+                return output_path, True
+            return output_path, False
+        else:
+            output_path.write_text(content, encoding='utf-8')
+            return output_path, False
 
     def scan_workflows(self, check_mode: bool = False) -> bool:
         wf_dir = self.root / CONFIG['dirs']['workflows']
@@ -310,11 +372,12 @@ def main():
             sys.exit(1)
 
     gen = DocumentationGenerator(root)
-    gen.scan_prompts()
+
     if args.check:
         print("🔍 Checking documentation status...")
-    
-    changes = gen.scan_workflows(check_mode=args.check)
+
+    changes = gen.scan_prompts(check_mode=args.check)
+    changes |= gen.scan_workflows(check_mode=args.check)
     changes |= gen.build_indices(check_mode=args.check)
     
     if args.check:

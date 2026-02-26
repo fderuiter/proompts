@@ -1,0 +1,81 @@
+---
+title: Protocol Optimization and Risk Simulation
+---
+
+# Protocol Optimization and Risk Simulation
+
+Evaluate a draft clinical protocol and simulate the effects of simplifying key elements.
+
+[View Source YAML](../../../../prompts/clinical/trial_execution/protocol_optimization_risk_simulation.prompt.yaml)
+
+```yaml
+---
+name: Protocol Optimization and Risk Simulation
+version: 0.1.0
+description: Evaluate a draft clinical protocol and simulate the effects of simplifying key elements.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - trial-execution
+  - protocol
+  - optimization
+  - risk
+  - simulation
+  requires_context: false
+variables:
+- name: draft_protocol
+  description: proposed protocol text
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a clinical operations expert with extensive experience in protocol design and risk management. Review
+    the protocol to identify operational bottlenecks such as site activation delays, complex eligibility requirements or data
+    collection challenges. Then simulate outcomes under two scenarios: reducing eligibility criteria by 20 % and consolidating
+    data collection points by 30 %.
+
+
+    Use data‑driven assumptions when estimating impact.'
+- role: user
+  content: '1. Summarize the main operational bottlenecks.
+
+    2. For Scenario 1, estimate the impact on timeline, enrollment rate and budget.
+
+    3. For Scenario 2, estimate the same metrics.
+
+    4. Provide recommendations with quantified justification for each change.
+
+
+    Inputs:
+
+    - `{{draft_protocol}}` – proposed protocol text
+
+
+    Output Format:
+
+    Markdown sections:
+
+
+    - **Section A:** Bottlenecks
+
+    - **Section B:** Scenario 1 – metrics and narrative
+
+    - **Section C:** Scenario 2 – metrics and narrative
+
+    - **Section D:** Recommendations'
+testData:
+- input: 'Draft includes 12 visits and 50 inclusion criteria.
+
+    '
+  expected: 'Section A:
+
+    '
+evaluators:
+- name: Includes recommendations section
+  string:
+    contains: 'Section D:'
+
+```

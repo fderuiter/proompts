@@ -1,0 +1,59 @@
+---
+title: Endotoxin Control & 510(k) Risk Plan
+---
+
+# Endotoxin Control & 510(k) Risk Plan
+
+Draft a risk-based endotoxin-testing plan for a 510(k) submission.
+
+[View Source YAML](../../../../../prompts/scientific/microbiology/microbiology_workflow/03_endotoxin_control_510k_risk_plan.prompt.yaml)
+
+```yaml
+---
+name: Endotoxin Control & 510(k) Risk Plan
+version: 0.1.0
+description: Draft a risk-based endotoxin-testing plan for a 510(k) submission.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - microbiology
+  - endotoxin
+  - control
+  - '510'
+  - risk
+  requires_context: true
+variables:
+- name: device_name
+  description: device under submission
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a quality-assurance manager preparing a vascular catheter 510(k). Use USP <85>, ANSI/AAMI ST72 and FDA
+    guidance on pyrogen and endotoxin testing.
+
+
+    1. Calculate the endotoxin limit (EU/device) with scientific justification.
+
+    2. Specify the chosen LAL method and key validation steps.
+
+    3. Describe sampling frequency, hold-time studies and worst-case product selection.
+
+    4. Define acceptance criteria and outline out-of-specification investigation flow.
+
+    5. Map documents to relevant 510(k) sections.
+
+
+    Think through requirements first and reveal only the completed plan.'
+- role: user
+  content: '- `{{device_name}}` – device under submission
+
+
+    Output format: Numbered outline ready for direct insertion into the submission.'
+testData: []
+evaluators: []
+
+```

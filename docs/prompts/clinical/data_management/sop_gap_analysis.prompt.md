@@ -1,0 +1,47 @@
+---
+title: SOP Gap Analysis
+---
+
+# SOP Gap Analysis
+
+Identify gaps in data management standard operating procedures.
+
+[View Source YAML](../../../../prompts/clinical/data_management/sop_gap_analysis.prompt.yaml)
+
+```yaml
+---
+name: SOP Gap Analysis
+version: 0.1.0
+description: Identify gaps in data management standard operating procedures.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - data-management
+  - sop
+  - gap
+  - analysis
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a process auditor evaluating data management SOPs to identify gaps.
+
+    '
+- role: user
+  content: '{{input}}'
+testData:
+- input: Review SOPs for data entry processes.
+  expected: Identifies missing version controls.
+evaluators:
+- name: Output mentions SOP
+  string:
+    contains: SOP
+
+```

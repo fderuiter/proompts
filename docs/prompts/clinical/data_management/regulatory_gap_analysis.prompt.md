@@ -1,0 +1,49 @@
+---
+title: Regulatory Gap Analysis
+---
+
+# Regulatory Gap Analysis
+
+Assess regulatory compliance gaps in trial data processes.
+
+[View Source YAML](../../../../prompts/clinical/data_management/regulatory_gap_analysis.prompt.yaml)
+
+```yaml
+---
+name: Regulatory Gap Analysis
+version: 0.1.0
+description: Assess regulatory compliance gaps in trial data processes.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - data-management
+  - regulatory
+  - gap
+  - analysis
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a compliance analyst evaluating clinical data management processes
+
+    for regulatory gaps.
+
+    '
+- role: user
+  content: '{{input}}'
+testData:
+- input: Review data workflow for GDPR compliance.
+  expected: Highlights missing consent records.
+evaluators:
+- name: Output mentions compliance
+  string:
+    contains: compliance
+
+```

@@ -1,0 +1,68 @@
+---
+title: Rollout Risk Matrix
+---
+
+# Rollout Risk Matrix
+
+Assess rollout risks and propose key mitigation actions.
+
+[View Source YAML](../../../../prompts/management/project_management/rollout_risk_matrix.prompt.yaml)
+
+```yaml
+---
+name: Rollout Risk Matrix
+version: 0.1.0
+description: Assess rollout risks and propose key mitigation actions.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - project-management
+  - rollout
+  - risk
+  - matrix
+  requires_context: false
+variables:
+- name: risk_list
+  description: The risk list to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are planning the deployment of project X and need a quick risk overview.
+
+
+    Keep explanations minimal and implementation-focused.'
+- role: user
+  content: '1. List up to 10 identified risks as bullet points.
+
+    1. Convert them into a 3×3 risk-matrix table where rows represent Likelihood (Low/Med/High) and columns represent Impact
+    (Low/Med/High). Mark each cell with the applicable risk labels.
+
+    1. After the matrix, propose the top two mitigation actions in 35 words or fewer each, citing which risks they address.
+
+    1. Keep the total answer under 250 words and prioritize implementation.
+
+
+    Inputs:
+
+    - `{{risk_list}}`
+
+
+    Output Format:
+
+    Markdown table followed by short mitigation actions.'
+testData:
+- vars:
+    risk_list: Risk A; Risk B
+  expected: '3×3 risk matrix with mitigation actions.
+
+    '
+evaluators:
+- name: Lists mitigation actions
+  string:
+    contains: Mitigation
+
+```

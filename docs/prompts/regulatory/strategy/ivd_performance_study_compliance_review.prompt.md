@@ -1,0 +1,66 @@
+---
+title: IVD Performance Study Compliance Review
+---
+
+# IVD Performance Study Compliance Review
+
+Review an IVD performance study for compliance with MDCG 2024‑4 and related guidance.
+
+[View Source YAML](../../../../prompts/regulatory/strategy/ivd_performance_study_compliance_review.prompt.yaml)
+
+```yaml
+---
+name: IVD Performance Study Compliance Review
+version: 0.1.0
+description: Review an IVD performance study for compliance with MDCG 2024‑4 and related guidance.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - regulatory-strategy
+  - ivd
+  - performance
+  - study
+  - compliance
+  requires_context: true
+variables:
+- name: study_overview
+  description: summary of the performance study design
+  required: true
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are advising on an EU IVDR performance study. The user needs guidance on adverse‑event reporting, summary
+    forms, and risk mitigation, plus alignment with Swissmedic and UK requirements.
+
+
+    Review an IVD performance study for compliance with MDCG 2024‑4 and related guidance.'
+- role: user
+  content: '1. Walk through MDCG 2024‑4 compliance steps for the study.
+
+    1. Detail adverse‑event and event‑reporting procedures and required summary forms.
+
+    1. Recommend risk‑mitigation strategies.
+
+    1. Advise on harmonizing with Swissmedic and UK guidance.
+
+
+    Inputs:
+
+    - `{{study_overview}}` — summary of the performance study design.
+
+
+    Output format:
+
+    Bulleted guidance followed by a short summary paragraph.
+
+
+    Additional notes:
+
+    Use clear references to MDCG 2024‑4 and related authorities.'
+testData: []
+evaluators: []
+
+```

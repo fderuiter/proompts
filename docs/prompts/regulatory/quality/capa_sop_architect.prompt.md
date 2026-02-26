@@ -1,0 +1,75 @@
+---
+title: CAPA SOP Architect
+---
+
+# CAPA SOP Architect
+
+Establish a comprehensive CAPA SOP compliant with ISO 9001 and ISO 13485.
+
+[View Source YAML](../../../../prompts/regulatory/quality/capa_sop_architect.prompt.yaml)
+
+```yaml
+---
+name: CAPA SOP Architect
+version: 0.1.0
+description: Establish a comprehensive CAPA SOP compliant with ISO 9001 and ISO 13485.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - quality
+  - capa
+  - sop
+  - architect
+  requires_context: false
+variables:
+- name: company_context
+  description: The text content to process
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: Act as a Senior Quality Assurance Manager with expertise in ISO 9001 and ISO 13485 standards. Your task is to draft
+    a comprehensive Standard Operating Procedure (SOP) for a Corrective and Preventive Action (CAPA) system. The SOP must
+    be formal, directive, and audit-ready.
+- role: user
+  content: 'Please draft a comprehensive Standard Operating Procedure (SOP) for a Corrective and Preventive Action (CAPA)
+    system for the following context:
+
+    <company_context>{{company_context}}</company_context>
+
+
+    The SOP must include:
+
+    1. **Purpose and Scope:** clearly defining when a CAPA is required versus a simple correction.
+
+    2. **Roles and Responsibilities:** defining the Quality Unit, Process Owners, and Management.
+
+    3. **Process Flow:** a detailed step-by-step description including Intake, Risk Assessment, Root Cause Analysis (RCA),
+    Action Plan Implementation, and Effectiveness Verification.
+
+    4. **Key Performance Indicators (KPIs):** suggesting 3 metrics to track the health of the CAPA system.
+
+
+    Ensure the tone is formal, directive, and audit-ready.'
+testData:
+- input:
+    company_context: a mid-sized medical device manufacturer specializing in Class IIb devices
+  expected: Standard Operating Procedure
+evaluators:
+- name: Purpose and Scope
+  regex:
+    pattern: (?i)Purpose and Scope
+- name: Roles and Responsibilities
+  regex:
+    pattern: (?i)Roles and Responsibilities
+- name: Process Flow
+  regex:
+    pattern: (?i)Process Flow
+- name: KPIs
+  regex:
+    pattern: (?i)Key Performance Indicators
+
+```

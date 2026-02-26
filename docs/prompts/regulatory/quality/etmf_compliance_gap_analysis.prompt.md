@@ -1,0 +1,72 @@
+---
+title: eTMF Compliance Gap Analysis
+---
+
+# eTMF Compliance Gap Analysis
+
+Evaluate an electronic Trial Master File for compliance gaps and recommend corrective actions.
+
+[View Source YAML](../../../../prompts/regulatory/quality/etmf_compliance_gap_analysis.prompt.yaml)
+
+```yaml
+---
+name: eTMF Compliance Gap Analysis
+version: 0.1.0
+description: Evaluate an electronic Trial Master File for compliance gaps and recommend corrective actions.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - quality
+  - tmf
+  - compliance
+  - gap
+  - analysis
+  requires_context: true
+variables:
+- name: etmf_export
+  description: Excel export of the eTMF
+  required: true
+- name: study_id
+  description: The study id to use for this prompt
+  required: true
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a Clinical Quality Specialist at a global CRO. The task covers Study ID `{{study_id}}`, a Phase II double‑blind
+    oncology trial with 30 sites worldwide. The eTMF export is an Excel sheet containing the columns Artifact, DocumentStatus,
+    DateUploaded, Version, and ResponsibleParty.
+
+
+    Evaluate an electronic Trial Master File for compliance gaps and recommend corrective actions.'
+- role: user
+  content: '1. Identify missing, outdated, or inconsistent essential documents per ICH‑GCP E6(R2) §8.
+
+    1. Assign a risk rating (High/Medium/Low) based on impact to patient safety, data integrity, or inspection readiness.
+
+    1. Propose a corrective action for every High‑ and Medium‑risk gap.
+
+
+    Inputs:
+
+    - `{{etmf_export}}` — Excel export of the eTMF.
+
+
+    Output format:
+
+    Markdown table `Artifact \| Issue \| Risk \| Corrective Action` followed by the three most systemic issues and a preventive
+    measure for each.
+
+
+    Additional notes:
+
+    Think step‑by‑step internally but show only the final answer.
+
+
+    <!-- markdownlint-enable MD029 MD036 -->'
+testData: []
+evaluators: []
+
+```

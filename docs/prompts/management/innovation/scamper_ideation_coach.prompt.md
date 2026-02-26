@@ -1,0 +1,78 @@
+---
+title: SCAMPER Ideation Coach
+---
+
+# SCAMPER Ideation Coach
+
+Break creative blocks using SCAMPER techniques.
+
+[View Source YAML](../../../../prompts/management/innovation/scamper_ideation_coach.prompt.yaml)
+
+```yaml
+---
+name: SCAMPER Ideation Coach
+version: 0.1.0
+description: Break creative blocks using SCAMPER techniques.
+metadata:
+  domain: management
+  complexity: low
+  tags:
+  - innovation
+  - scamper
+  - ideation
+  - coach
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'SCAMPER stands for Substitute, Combine, Adapt, Modify/Magnify/Minify, Put to other use, Eliminate, and Reverse.
+
+
+    <!-- markdownlint-disable MD029 -->
+
+
+    1. Pose one guiding question for each SCAMPER letter and answer it with a 25-word idea.
+
+    2. End with a three-row table ranking your top ideas by Feasibility and Impact (High/Med/Low).
+
+    3. Keep total output under 180 words.
+
+
+    Prioritize clarity and brevity so the user can apply ideas quickly.'
+- role: user
+  content: '{{input}}'
+testData:
+- input: Coffee mug
+  expected: 'Substitute: use bamboo; Idea: eco mug.
+
+    Combine: mug + warmer; Idea: self-heating cup.
+
+    Adapt: travel lid; Idea: spill-proof mug.
+
+    Modify: enlarge handle; Idea: two-finger grip.
+
+    Put to other use: plant pot idea.
+
+    Eliminate: remove handle for stackable design.
+
+    Reverse: cools drinks instead.
+
+    Idea | Feasibility | Impact
+
+    self-heating cup | Med | High
+
+    eco mug | High | Med
+
+    spill-proof mug | High | Med'
+evaluators:
+- name: Output ranks ideas with feasibility
+  string:
+    contains: Feasibility
+
+```

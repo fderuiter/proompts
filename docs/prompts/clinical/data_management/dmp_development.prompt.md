@@ -1,0 +1,70 @@
+---
+title: Data Management Plan (DMP) Development
+---
+
+# Data Management Plan (DMP) Development
+
+Create a DMP outlining data lifecycle and quality control.
+
+[View Source YAML](../../../../prompts/clinical/data_management/dmp_development.prompt.yaml)
+
+```yaml
+---
+name: Data Management Plan (DMP) Development
+version: 0.1.0
+description: Create a DMP outlining data lifecycle and quality control.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - data-management
+  - data
+  - management
+  - plan
+  - dmp
+  requires_context: false
+variables:
+- name: study_details
+  description: The study details to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are a Data Manager. Create a Data Management Plan (DMP) that outlines the data life cycle from capture to archival.
+    Ensure compliance with ICH GCP E6, 21 CFR Part 11, and NIH Data Management and Sharing (DMS) Policy. Specify quality control
+    steps for high-criticality data and the chosen repository for long-term preservation.
+- role: user
+  content: 'Create a Data Management Plan that outlines the data life cycle from capture to archival. Ensure compliance with
+    21 CFR Part 11 and NIH sharing mandates, specifying quality control steps for high-criticality data and the chosen repository
+    for long-term preservation.
+
+
+    Inputs:
+
+    - `{{study_details}}`
+
+
+    Output format:
+
+    Markdown document with sections for Data Collection, Processing, Security, and Archival.'
+testData:
+- input: 'study_details: Phase III cardiovascular study.
+
+    '
+  expected: 'Data Management Plan
+
+    '
+evaluators:
+- name: Data Lifecycle
+  string:
+    contains: Data Lifecycle
+- name: Quality Control
+  string:
+    contains: Quality Control
+- name: 21 CFR Part 11
+  string:
+    contains: 21 CFR Part 11
+
+```

@@ -1,0 +1,69 @@
+---
+title: eConsent Implementation Strategy
+---
+
+# eConsent Implementation Strategy
+
+Verify eConsent platform compliance and workflow.
+
+[View Source YAML](../../../../prompts/clinical/eclinical_integration/econsent_implementation.prompt.yaml)
+
+```yaml
+---
+name: eConsent Implementation Strategy
+version: 0.1.0
+description: Verify eConsent platform compliance and workflow.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - eclinical-integration
+  - consent
+  - implementation
+  - strategy
+  requires_context: true
+variables:
+- name: platform_specs
+  description: The platform specs to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are a Clinical IT Specialist. Verify that the eConsent platform captures all required elements of informed
+    consent per 21 CFR 50.25 and ICH GCP. Generate a workflow that includes identity verification, ensures a non-modifiable
+    timestamped PDF is generated, and meets accessibility requirements for participants with impairments.
+- role: user
+  content: 'Verify that the eConsent platform captures all required elements of informed consent per 21 CFR 50.25 and ICH
+    GCP. Generate a workflow that includes identity verification, ensures a non-modifiable timestamped PDF is generated, and
+    meets accessibility requirements for participants with impairments.
+
+
+    Inputs:
+
+    - `{{platform_specs}}`
+
+
+    Output format:
+
+    Markdown report with Workflow Diagram description and Compliance Checklist.'
+testData:
+- input: 'platform_specs: Vendor X eConsent solution.
+
+    '
+  expected: 'Identity Verification
+
+    '
+evaluators:
+- name: Identity Verification
+  string:
+    contains: Identity Verification
+- name: Timestamped PDF
+  string:
+    contains: Timestamped PDF
+- name: Accessibility
+  string:
+    contains: Accessibility
+
+```

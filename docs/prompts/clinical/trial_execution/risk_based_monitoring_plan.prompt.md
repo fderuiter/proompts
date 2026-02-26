@@ -1,0 +1,69 @@
+---
+title: Risk-Based Monitoring and Quality Plan
+---
+
+# Risk-Based Monitoring and Quality Plan
+
+Develop a risk-based monitoring plan for a Phase II oncology trial.
+
+[View Source YAML](../../../../prompts/clinical/trial_execution/risk_based_monitoring_plan.prompt.yaml)
+
+```yaml
+---
+name: Risk-Based Monitoring and Quality Plan
+version: 0.1.0
+description: Develop a risk-based monitoring plan for a Phase II oncology trial.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - trial-execution
+  - risk-based
+  - monitoring
+  - quality
+  - plan
+  requires_context: false
+variables: []
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a senior GCP compliance advisor. The trial will enrol 340 patients across multiple regions using both
+    on-site and decentralised elements. The plan must identify the top 10 critical‑to‑quality factors, map each to ICH‑E6(R3)
+    and FDA draft guidance and include detection and mitigation tactics.
+
+
+    Request any additional information needed before finalising the plan.'
+- role: user
+  content: '1. Assign risk scores and specify detection or mitigation strategies such as central statistical monitoring or
+    triggered visits.
+
+    2. Provide an escalation workflow and communication matrix.
+
+    3. Recommend digital tools and metrics to track risk in real time.
+
+
+    Inputs:
+
+    - None
+
+
+    Output Format:
+
+    1. Executive slide outline (bulleted)
+
+    2. Editable risk register in a Markdown table'
+testData:
+- input: 'Create plan.
+
+    '
+  expected: 'risk register
+
+    '
+evaluators:
+- name: Notes escalation workflow
+  string:
+    contains: communication matrix
+
+```

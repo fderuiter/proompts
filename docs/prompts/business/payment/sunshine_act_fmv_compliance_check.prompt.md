@@ -1,0 +1,71 @@
+---
+title: Sunshine Act and FMV Compliance Check
+---
+
+# Sunshine Act and FMV Compliance Check
+
+Audit site-payment data for Sunshine Act reporting and FMV adherence.
+
+[View Source YAML](../../../../prompts/business/payment/sunshine_act_fmv_compliance_check.prompt.yaml)
+
+```yaml
+---
+name: Sunshine Act and FMV Compliance Check
+version: 0.1.0
+description: Audit site-payment data for Sunshine Act reporting and FMV adherence.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - payment
+  - sunshine
+  - act
+  - fmv
+  - compliance
+  requires_context: true
+variables:
+- name: fmv_table
+  description: fair market value reference table
+  required: true
+- name: fx_rates
+  description: foreign-exchange rate table
+  required: true
+- name: payment_ledger_csv
+  description: raw payment ledger CSV
+  required: true
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a compliance auditor reviewing a CSV ledger of payments for calendar year 2025.
+
+
+    Audit site-payment data for Sunshine Act reporting and FMV adherence.'
+- role: user
+  content: "1. Load the CSV and normalize currency to USD using the provided FX rates.\n1. For each line item:\n   - Determine\
+    \ if a single payment ≥ $13.46 or annual aggregate > $134.54.\n   - Verify required Sunshine fields: NPI, address, payment\
+    \ nature, and related product.\n   - Compare investigator fees to FMV benchmarks (±10 %).\n1. Output two tables:\n   -\
+    \ **Reportable Payments** – rows that must be reported to CMS.\n   - **Compliance Exceptions** – missing data or FMV variance\
+    \ > 10 % with remediation notes.\n1. Summarize lines reviewed, percent reportable, and percent exceptions.\n1. Ask questions\
+    \ if thresholds or tables seem outdated.\n\n  Inputs:\n  - `{{payment_ledger_csv}}` – raw payment ledger CSV\n  - `{{fx_rates}}`\
+    \ – foreign-exchange rate table\n  - `{{fmv_table}}` – fair market value reference table\n\nOutput format:\nTwo CSV-formatted\
+    \ tables followed by a short executive summary.\n\nAdditional notes:\nUse clear column headers so the tables can be imported\
+    \ without modification."
+testData:
+- payment_ledger_csv: 'NPI,Amount
+
+    1234567890,150'
+  fx_rates: 'Currency,USD
+
+    USD,1'
+  fmv_table: 'Procedure,FMV
+
+    Consult,100'
+  expected: Reportable Payments
+evaluators:
+- name: Generates reportable payments table
+  string:
+    contains: Reportable Payments
+
+```

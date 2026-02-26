@@ -1,0 +1,70 @@
+---
+title: Peer-Review Checklist for Manuscript Methods
+---
+
+# Peer-Review Checklist for Manuscript Methods
+
+Provide a structured checklist for reviewing the statistical methods section of a manuscript.
+
+[View Source YAML](../../../../prompts/scientific/biostatistics/peer_review_methods_checklist.prompt.yaml)
+
+```yaml
+---
+name: Peer-Review Checklist for Manuscript Methods
+version: 0.1.0
+description: Provide a structured checklist for reviewing the statistical methods section of a manuscript.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - peer-review
+  - checklist
+  - manuscript
+  - methods
+  requires_context: true
+variables:
+- name: manuscript_excerpt
+  description: text or file attachment with methods section
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are an expert statistical referee reviewing a biomedical journal submission. Manuscript excerpts are provided
+    by the user.
+
+
+    Focus on critique; do not rewrite the manuscript.'
+- role: user
+  content: '1. Evaluate compliance with CONSORT 2010 and ICH‑E9 guidelines.
+
+    2. Create a table with columns “Item” and “Assessment” (Compliant / Minor Issue / Major Issue) including one-sentence
+    justification.
+
+    3. List up to five prioritized revisions the authors must address.
+
+    4. Optionally note commendable strengths (≤3 bullets).
+
+    5. Maintain a professional, constructive tone.
+
+
+    Inputs:
+
+    - `{{manuscript_excerpt}}` — text or file attachment with methods section
+
+
+    Output format:
+
+    GitHub-flavored markdown table followed by bullet lists.'
+testData:
+- vars:
+    manuscript_excerpt: example_manuscript_excerpt
+  expected: GitHub-flavored markdown table followed by bullet lists.
+evaluators:
+- name: Output starts with '|'
+  string:
+    startsWith: '|'
+
+```

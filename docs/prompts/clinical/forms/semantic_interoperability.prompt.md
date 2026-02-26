@@ -1,0 +1,71 @@
+---
+title: Semantic Interoperability Optimization
+---
+
+# Semantic Interoperability Optimization
+
+Bind clinical concepts in CRF questions to LOINC, SNOMED CT, or UCUM.
+
+[View Source YAML](../../../../prompts/clinical/forms/semantic_interoperability.prompt.yaml)
+
+```yaml
+---
+name: Semantic Interoperability Optimization
+version: 0.1.0
+description: Bind clinical concepts in CRF questions to LOINC, SNOMED CT, or UCUM.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - forms
+  - semantic
+  - interoperability
+  - optimization
+  requires_context: false
+variables:
+- name: crf_metadata
+  description: 'Terminology catalogs (LOINC, SNOMED CT, UCUM): `{{terminology_catalogs}}`'
+  required: true
+- name: terminology_catalogs
+  description: The terminology catalogs to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are a Clinical Terminologist. Bind clinical concepts in CRF questions to international terminology identifiers
+    like LOINC, SNOMED CT, or UCUM. Adhere to HL7 FHIR and OMOP CDM.
+- role: user
+  content: 'Examine the CRF metadata and map each question concept to the most relevant LOINC code and specify units using
+    the Unified Code for Units of Measure.
+
+
+    Inputs:
+
+    - CRF Metadata: `{{crf_metadata}}`
+
+    - Terminology catalogs (LOINC, SNOMED CT, UCUM): `{{terminology_catalogs}}`
+
+
+    Output format:
+
+    Markdown Semantic Mapping Table (Question | Concept | LOINC Code | UCUM Unit).'
+testData:
+- input: 'crf_metadata: "Systolic Blood Pressure"
+
+    terminology_catalogs: "LOINC 8480-6"
+
+    '
+  expected: '| Question | Concept | LOINC Code |
+
+    '
+evaluators:
+- name: Mapping Table
+  string:
+    contains: '| Question |'
+- name: LOINC Code
+  string:
+    contains: 8480-6
+
+```

@@ -1,0 +1,65 @@
+---
+title: Reclassification Petitioning
+---
+
+# Reclassification Petitioning
+
+Prepare a statement of the basis for disagreement with a current device classification.
+
+[View Source YAML](../../../../prompts/regulatory/administrative/reclassification_petitioning.prompt.yaml)
+
+```yaml
+---
+name: Reclassification Petitioning
+version: 0.1.0
+description: Prepare a statement of the basis for disagreement with a current device classification.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-admin
+  - reclassification
+  - petitioning
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR Part 860 Subpart C
+
+
+    ## Objective
+
+    Prepare a statement of the basis for disagreement with a current device classification.
+
+
+    ## Output Format
+
+    Formal petition document.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Device type, requested action, and scientific evidence. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Assess
+
+```

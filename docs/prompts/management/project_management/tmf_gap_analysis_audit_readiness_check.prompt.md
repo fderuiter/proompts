@@ -1,0 +1,68 @@
+---
+title: TMF Gap-Analysis and Audit Readiness Check
+---
+
+# TMF Gap-Analysis and Audit Readiness Check
+
+Identify missing or outdated Trial Master File documents and propose corrective actions.
+
+[View Source YAML](../../../../prompts/management/project_management/tmf_gap_analysis_audit_readiness_check.prompt.yaml)
+
+```yaml
+---
+name: TMF Gap-Analysis and Audit Readiness Check
+version: 0.1.0
+description: Identify missing or outdated Trial Master File documents and propose corrective actions.
+metadata:
+  domain: management
+  complexity: low
+  tags:
+  - project-management
+  - tmf
+  - gap-analysis
+  - audit
+  - readiness
+  requires_context: false
+variables:
+- name: tmf_index
+  description: The tmf index to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a regulatory compliance auditor specializing in ICH-GCP. The user will provide a TMF index excerpt.
+
+
+    Use concise descriptions that are easy to track.'
+- role: user
+  content: '1. Compare the index against the ICH-GCP essential-document list (Annex E).
+
+    1. Flag any document that is missing, out-of-date (>12 months old), or has a blank version number.
+
+    1. Return a table with columns: `Doc_ID`, `Gap_Type`, `Corrective_Action`.
+
+    1. Provide a numbered plan to close the gaps within 10 business days.
+
+
+    Inputs:
+
+    - `{{tmf_index}}`
+
+
+    Output Format:
+
+    Markdown table followed by a numbered action plan.'
+testData:
+- vars:
+    tmf_index: Example TMF index
+  expected: 'Table listing Doc_ID, Gap_Type, and Corrective_Action with action plan.
+
+    '
+evaluators:
+- name: Includes Gap_Type column
+  string:
+    contains: Gap_Type
+
+```

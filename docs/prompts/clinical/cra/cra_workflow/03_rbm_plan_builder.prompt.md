@@ -1,0 +1,86 @@
+---
+title: Risk-Based Monitoring (RBM) Plan Builder
+---
+
+# Risk-Based Monitoring (RBM) Plan Builder
+
+Develop a site-level risk-based monitoring plan with risk matrix, KRIs, and adaptive strategy.
+
+[View Source YAML](../../../../../prompts/clinical/cra/cra_workflow/03_rbm_plan_builder.prompt.yaml)
+
+```yaml
+---
+name: Risk-Based Monitoring (RBM) Plan Builder
+version: 0.1.0
+description: Develop a site-level risk-based monitoring plan with risk matrix, KRIs, and adaptive strategy.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - cra
+  - risk-based
+  - monitoring
+  - rbm
+  - plan
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: '**System (role):** You are a clinical risk-management consultant.
+
+
+    **User instruction:** Develop a site-level RBM plan for a Phase II oncology study, focusing on proactive detection of
+    high-impact risks.
+
+
+    Context:
+
+    """
+
+    • Study phase/indication: Phase II, metastatic NSCLC
+
+    • Enrollment goal: 150 participants, 10 sites
+
+    • Known risk factors: high AE rate, complex biomarker sampling, decentralized ePRO
+
+    • Regulatory expectation: ICH E6 (R3) & FDA guidance on risk-based monitoring (2019)
+
+    """
+
+
+    **Deliverables (markdown):**
+
+    1. **Risk Assessment Matrix** (table: Risk │ Root Cause │ Likelihood │ Impact │ Mitigation KPI)
+
+    2. **Key Risk Indicators (KRIs)** (≤ 8, define calculation & alert threshold)
+
+    3. **Adaptive Monitoring Strategy** – outline trigger logic for remote vs. on-site, including minimum visit frequency
+
+    4. **Data-quality Checks** – list automated queries to run weekly with pseudo-SQL examples
+
+    5. **Escalation Pathway** – who is notified and within what timeline
+
+    ```'
+- role: user
+  content: '{{input}}'
+testData:
+- input: 'Study phase/indication: Phase II, metastatic NSCLC
+
+    Enrollment goal: 150 participants, 10 sites
+
+    Known risk factors: high AE rate, complex biomarker sampling, decentralized ePRO
+
+    Regulatory expectation: ICH E6 (R3) & FDA guidance on risk-based monitoring (2019)'
+  expected: 1. **Risk Assessment Matrix**
+evaluators:
+- name: Output starts with Risk Assessment Matrix section
+  string:
+    startsWith: 1. **Risk Assessment Matrix**
+
+```

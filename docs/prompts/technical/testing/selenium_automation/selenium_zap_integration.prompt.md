@@ -1,0 +1,45 @@
+---
+title: Security Testing: OWASP ZAP Integration
+---
+
+# Security Testing: OWASP ZAP Integration
+
+Configure Selenium to route traffic through the OWASP ZAP proxy for security scanning.
+
+[View Source YAML](../../../../../prompts/technical/testing/selenium_automation/selenium_zap_integration.prompt.yaml)
+
+```yaml
+---
+name: 'Security Testing: OWASP ZAP Integration'
+version: 0.1.0
+description: Configure Selenium to route traffic through the OWASP ZAP proxy for security scanning.
+metadata:
+  domain: technical
+  complexity: low
+  tags:
+  - testing
+  - selenium
+  - security
+  - owasp
+  - zap
+  requires_context: false
+variables: []
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: Write a Java snippet to configure ChromeOptions and DesiredCapabilities to route traffic through a local proxy
+    at localhost:8888. Ensure the configuration accepts insecure SSL certificates to allow for ZAP interception and scanning.
+- role: user
+  content: Configure Chrome WebDriver to proxy through ZAP (localhost:8888) and ignore SSL errors.
+testData:
+- input: N/A (Static request)
+  expected: setProxy
+evaluators:
+- name: Sets proxy
+  regex: setProxy
+- name: Accepts insecure certs
+  regex: setAcceptInsecureCerts
+
+```

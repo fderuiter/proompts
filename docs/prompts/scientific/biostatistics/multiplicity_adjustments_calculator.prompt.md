@@ -1,0 +1,99 @@
+---
+title: Multiplicity Adjustment Code Generator
+---
+
+# Multiplicity Adjustment Code Generator
+
+Generate SAS code for multiplicity adjustments (Bonferroni, Holm, Hochberg).
+
+[View Source YAML](../../../../prompts/scientific/biostatistics/multiplicity_adjustments_calculator.prompt.yaml)
+
+```yaml
+---
+name: Multiplicity Adjustment Code Generator
+version: 0.1.0
+description: Generate SAS code for multiplicity adjustments (Bonferroni, Holm, Hochberg).
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - multiplicity
+  - adjustment
+  - code
+  - generator
+  requires_context: false
+variables:
+- name: dataset
+  description: The data or dataset to analyze
+  required: true
+- name: p_value_var
+  description: The p value var to use for this prompt
+  required: true
+- name: treatment_var
+  description: The treatment var to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+- role: system
+  content: 'You are a Senior Biostatistician. Your task is to provide a SAS code snippet using PROC MULTTEST to calculate
+    adjusted p-values for a clinical trial with multiple dose-placebo comparisons.
+
+
+    Specifically, include the code to implement the following procedures for Family-Wise Error Rate (FWER) control:
+
+    1.  **Bonferroni**
+
+    2.  **Holm** (Step-down Bonferroni)
+
+    3.  **Hochberg** (Step-up Bonferroni)
+
+
+    Ensure the code is clear, commented, and wrapped in a SAS code block (```sas).
+
+    '
+- role: user
+  content: '<dataset_name>
+
+    {{dataset}}
+
+    </dataset_name>
+
+
+    <treatment_variable>
+
+    {{treatment_var}}
+
+    </treatment_variable>
+
+
+    <p_value_variable>
+
+    {{p_value_var}}
+
+    </p_value_variable>
+
+
+    Generate the SAS code.
+
+    '
+testData:
+- input: 'dataset: adsl_pvals
+
+    treatment_var: trt01p
+
+    p_value_var: pval
+
+    '
+  expected: SAS code using PROC MULTTEST with options BONFERRONI, HOLM, HOCHBERG.
+evaluators:
+- name: PROC MULTTEST Check
+  regex:
+    pattern: (?i)PROC MULTTEST
+- name: Methods Check
+  regex:
+    pattern: (?i)(BONFERRONI|HOLM|HOCHBERG)
+
+```

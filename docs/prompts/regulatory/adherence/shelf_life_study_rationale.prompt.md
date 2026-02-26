@@ -1,0 +1,66 @@
+---
+title: Shelf-life Study Rationale
+---
+
+# Shelf-life Study Rationale
+
+Draft a rationale for correlating accelerated aging data with real-time requirements.
+
+[View Source YAML](../../../../prompts/regulatory/adherence/shelf_life_study_rationale.prompt.yaml)
+
+```yaml
+---
+name: Shelf-life Study Rationale
+version: 0.1.0
+description: Draft a rationale for correlating accelerated aging data with real-time requirements.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-adherence
+  - shelf-life
+  - study
+  - rationale
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR Part 801
+
+
+    ## Objective
+
+    Draft a rationale for correlating accelerated aging data with real-time requirements.
+
+
+    ## Output Format
+
+    Formal technical report.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Material stability data, packaging type, and aging protocols. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Evaluate
+
+```

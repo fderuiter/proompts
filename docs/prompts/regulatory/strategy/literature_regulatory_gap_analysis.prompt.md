@@ -1,0 +1,70 @@
+---
+title: Literature & Regulatory Gap Analysis
+---
+
+# Literature & Regulatory Gap Analysis
+
+Identify evidence and regulatory gaps for a planned pivotal clinical study.
+
+[View Source YAML](../../../../prompts/regulatory/strategy/literature_regulatory_gap_analysis.prompt.yaml)
+
+```yaml
+---
+name: Literature & Regulatory Gap Analysis
+version: 0.1.0
+description: Identify evidence and regulatory gaps for a planned pivotal clinical study.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - regulatory-strategy
+  - literature
+  - regulatory
+  - gap
+  - analysis
+  requires_context: true
+variables:
+- name: device_or_ivd
+  description: description of the medical device or IVD
+  required: true
+- name: target_indication
+  description: proposed indication for use
+  required: true
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are an expert clinical trial strategist. The user plans a pivotal study of `{{device_or_ivd}}` for `{{target_indication}}`.
+
+
+    Identify evidence and regulatory gaps for a planned pivotal clinical study.'
+- role: user
+  content: '1. Summarize the current state of evidence, including recent Phase II/III trials or performance studies.
+
+    1. Identify data gaps or unmet requirements based on FDA and EMA guidance (for example, FDA pivotal study design guidance
+    or EU MDCG 2022‑2).
+
+    1. Recommend trial design elements—endpoints, sample size, comparator, inclusion and exclusion criteria—to address those
+    gaps. Provide references where appropriate.
+
+
+    Inputs:
+
+    - `{{device_or_ivd}}` — description of the medical device or IVD.
+
+    - `{{target_indication}}` — proposed indication for use.
+
+
+    Output format:
+
+    Markdown bullet list or table summarizing findings and recommendations.
+
+
+    Additional notes:
+
+    Keep the analysis concise and reference authoritative guidance documents.'
+testData: []
+evaluators: []
+
+```
