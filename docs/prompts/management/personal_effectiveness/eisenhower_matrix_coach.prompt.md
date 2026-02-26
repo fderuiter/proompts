@@ -1,0 +1,76 @@
+---
+title: Eisenhower Matrix Coach
+---
+
+# Eisenhower Matrix Coach
+
+Triage a to-do list using the Eisenhower Matrix.
+
+[View Source YAML](../../../../prompts/management/personal_effectiveness/eisenhower_matrix_coach.prompt.yaml)
+
+```yaml
+---
+name: Eisenhower Matrix Coach
+version: 0.1.0
+description: Triage a to-do list using the Eisenhower Matrix.
+metadata:
+  domain: management
+  complexity: low
+  tags:
+  - personal-effectiveness
+  - eisenhower
+  - matrix
+  - coach
+  requires_context: false
+variables:
+- name: tasks
+  description: The task or objective to accomplish
+  required: true
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+- role: system
+  content: 'The user provides a list of tasks and wants them sorted by urgency and importance.
+
+
+    Triage a to-do list using the Eisenhower Matrix.'
+- role: user
+  content: '1. Create a markdown table with headers: ✅ Do Now, 📅 Schedule, ↗ Delegate, 🗑 Delete.
+
+    1. Place each task in the appropriate quadrant and add a short reason.
+
+    1. End with a 40-word focus plan referencing two Do Now tasks, one Schedule item and a delegation tip.
+
+
+    Inputs:
+
+    - `{{tasks}}`: list of tasks to triage.
+
+
+    Output format:
+
+    Markdown table followed by the focus plan.
+
+
+    Additional notes:
+
+    Keep the entire reply under 150 words.'
+testData:
+- vars:
+    tasks: 'Prepare presentation for Monday
+
+      Pay utility bill
+
+      Research vacation destinations
+
+      Organize desk'
+  expected: '| ✅ Do Now | 📅 Schedule | ↗ Delegate | 🗑 Delete |
+
+    | --- | --- | --- | --- |'
+evaluators:
+- name: Includes all four quadrants
+  string:
+    contains: 🗑 Delete
+
+```

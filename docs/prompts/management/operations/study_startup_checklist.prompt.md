@@ -1,0 +1,72 @@
+---
+title: Study Start-Up Checklist & Timeline
+---
+
+# Study Start-Up Checklist & Timeline
+
+Provide an actionable checklist and timeline for Phase IIb study start-up.
+
+[View Source YAML](../../../../prompts/management/operations/study_startup_checklist.prompt.yaml)
+
+```yaml
+---
+name: Study Start-Up Checklist & Timeline
+version: 0.1.0
+description: Provide an actionable checklist and timeline for Phase IIb study start-up.
+metadata:
+  domain: management
+  complexity: high
+  tags:
+  - operations
+  - study
+  - start-up
+  - checklist
+  - timeline
+  requires_context: false
+variables:
+- name: fpi_date
+  description: first-patient-in target date
+  required: true
+- name: regions
+  description: participating regions
+  required: true
+- name: regulations
+  description: key regulatory references
+  required: true
+- name: therapeutic_area
+  description: indication for the study
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are an experienced clinical-operations specialist. The therapeutic area, regions, target first-patient-in
+    date and regulations are provided.
+
+
+    1. Detail workstreams for regulatory submissions, site contracts, vendor onboarding, IMP supply and staff training.
+
+    2. Include a Gantt-style timeline.
+
+    3. List at least three common start-up risks with mitigations.
+
+
+    All critical-path tasks should take no longer than 15 business days and align with the FPI date. Ask clarifying questions
+    if information is missing.'
+- role: user
+  content: '- `{{therapeutic_area}}` – indication for the study.
+
+    - `{{regions}}` – participating regions.
+
+    - `{{fpi_date}}` – first-patient-in target date.
+
+    - `{{regulations}}` – key regulatory references.
+
+
+    Output format: Markdown table with columns `Workstream \| Key Activities \| Owner \| Start \| Finish \| Dependencies \|
+    Notes/Risks`.'
+testData: []
+evaluators: []
+
+```

@@ -1,0 +1,67 @@
+---
+title: Design Verification for BCR-ABL Tests
+---
+
+# Design Verification for BCR-ABL Tests
+
+Outline design verification and validation requirements for a BCR-ABL quantitation test.
+
+[View Source YAML](../../../../prompts/regulatory/device_specifics/design_verification_for_bcr_abl_tests.prompt.yaml)
+
+```yaml
+---
+name: Design Verification for BCR-ABL Tests
+version: 0.1.0
+description: Outline design verification and validation requirements for a BCR-ABL quantitation test.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - medical-devices
+  - design
+  - verification
+  - bcr-abl
+  - tests
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR 866.6060
+
+
+    ## Objective
+
+    Outline design verification and validation requirements for a BCR-ABL quantitation test.
+
+
+    ## Output Format
+
+    Validation checklist or matrix.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Variant types, IS conversion methodology, and calibration control data. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Review
+
+```

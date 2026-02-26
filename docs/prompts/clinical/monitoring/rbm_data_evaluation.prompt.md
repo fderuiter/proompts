@@ -1,0 +1,79 @@
+---
+title: Risk-Based Monitoring Data Evaluation
+---
+
+# Risk-Based Monitoring Data Evaluation
+
+Remote evaluation of accumulating trial data to identify outliers and data integrity problems.
+
+[View Source YAML](../../../../prompts/clinical/monitoring/rbm_data_evaluation.prompt.yaml)
+
+```yaml
+---
+name: Risk-Based Monitoring Data Evaluation
+version: 0.1.0
+description: Remote evaluation of accumulating trial data to identify outliers and data integrity problems.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - monitoring
+  - risk-based
+  - data
+  - evaluation
+  requires_context: false
+variables:
+- name: clinical_data
+  description: 'Monitoring Plan template: `{{monitoring_plan}}`'
+  required: true
+- name: monitoring_plan
+  description: 'Study Risk Assessment: `{{risk_assessment}}`'
+  required: true
+- name: risk_assessment
+  description: The risk assessment to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are a Risk-Based Monitoring (RBM) Analyst. Perform a remote evaluation of the accumulating trial data to identify
+    missing entries, outliers, or unexpected lack of variability indicative of data manipulation. Adhere to ICH GCP E6(R2)
+    Addendum.
+- role: user
+  content: 'Perform a remote evaluation of the accumulating trial data to identify missing entries, outliers, or unexpected
+    lack of variability indicative of data manipulation.
+
+
+    Inputs:
+
+    - Accumulating clinical data (snippet/stats): `{{clinical_data}}`
+
+    - Monitoring Plan template: `{{monitoring_plan}}`
+
+    - Study Risk Assessment: `{{risk_assessment}}`
+
+
+    Output format:
+
+    Markdown RBM Evaluation Report (Finding | Risk Level | Action).'
+testData:
+- input: 'clinical_data: "Site 001: 100% perfect data entry."
+
+    monitoring_plan: "Check for lack of variability."
+
+    risk_assessment: "High risk of fraud."
+
+    '
+  expected: '| Finding | Risk Level | Action |
+
+    '
+evaluators:
+- name: Evaluation Table
+  string:
+    contains: '| Finding |'
+- name: Fraud Detection
+  string:
+    contains: Site 001
+
+```

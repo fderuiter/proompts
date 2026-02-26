@@ -1,0 +1,97 @@
+---
+title: Writing Clarity Mentor
+---
+
+# Writing Clarity Mentor
+
+Improve a passage by highlighting issues and rewriting for clarity.
+
+[View Source YAML](../../../prompts/communication/writing_clarity_mentor.prompt.yaml)
+
+```yaml
+---
+name: Writing Clarity Mentor
+version: 0.1.0
+description: Improve a passage by highlighting issues and rewriting for clarity.
+metadata:
+  domain: communication
+  complexity: low
+  tags:
+  - writing
+  - clarity
+  - mentor
+  requires_context: false
+variables:
+- name: passage
+  description: text to refine
+  required: true
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+- role: system
+  content: 'You are a writing mentor who specializes in concise, plain language.
+
+
+    Improve a passage by highlighting issues and rewriting for clarity.'
+- role: user
+  content: '- Summarize the core message in ≤ 30 words.
+
+    - List the top three clarity issues in ≤ 15 words each.
+
+    - Rewrite the passage using shorter sentences and plain language, **bolding improved phrases**.
+
+    - Provide one 20-word style tip for future drafts.
+
+
+    Inputs:
+
+    - `{{passage}}` – text to refine.
+
+
+    Output format:
+
+    Markdown with a summary, issue list, revised passage, and style tip.
+
+
+    Additional notes:
+
+    Keep the entire reply within 180 words.'
+testData:
+- vars:
+    passage: 'The utilization of machine learning algorithms facilitates the optimization
+
+      of predictive analytics capabilities which enables organizations to leverage
+
+      data-driven insights for strategic decision-making processes.'
+  expected: 'Markdown with:
+
+    - Summary in ≤30 words
+
+    - Three clarity issues listed
+
+    - Rewritten passage with improved phrases bolded
+
+    - One 20-word style tip'
+- vars:
+    passage: 'It is important to note that the implementation of the aforementioned
+
+      procedures necessitates careful consideration of various factors.'
+  expected: 'Clear breakdown showing core message, specific issues identified,
+
+    improved version using plain language, and actionable writing tip.'
+evaluators:
+- name: Contains summary section
+  string:
+    contains: summary
+- name: Lists clarity issues
+  string:
+    contains: issue
+- name: Uses markdown formatting
+  string:
+    contains: '**'
+- name: Includes style tip
+  string:
+    contains: tip
+
+```

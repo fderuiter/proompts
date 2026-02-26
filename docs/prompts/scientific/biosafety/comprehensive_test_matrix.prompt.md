@@ -1,0 +1,69 @@
+---
+title: Comprehensive Biocompatibility Test Matrix
+---
+
+# Comprehensive Biocompatibility Test Matrix
+
+Generate a detailed biocompatibility test matrix for a medical device.
+
+[View Source YAML](../../../../prompts/scientific/biosafety/comprehensive_test_matrix.prompt.yaml)
+
+```yaml
+---
+name: Comprehensive Biocompatibility Test Matrix
+version: 0.1.0
+description: Generate a detailed biocompatibility test matrix for a medical device.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biosafety
+  - comprehensive
+  - biocompatibility
+  - test
+  - matrix
+  requires_context: false
+variables:
+- name: device_materials
+  description: materials and clinical-use scenario
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are the lead biocompatibility scientist at an ISO 17025-accredited lab. Follow the FDA-modified ISO 10993
+    endpoint matrix.
+
+
+    Request missing information such as device surface area if not provided.'
+- role: user
+  content: '1. For each endpoint, specify test type (in vitro, in vivo, or NAM).
+
+    2. List the relevant standard and edition (ISO/ASTM/USP).
+
+    3. Provide sample conditioning and extraction details per FDA guidance.
+
+    4. Note acceptance criteria and rationale.
+
+    5. Suggest potential NAM replacements to reduce animal use.
+
+
+    Inputs:
+
+    - `{{device_materials}}` — materials and clinical-use scenario
+
+
+    Output format:
+
+    Two-level markdown table followed by concise explanatory notes.'
+testData:
+- vars:
+    device_materials: example_device_materials
+  expected: Two-level markdown table followed by concise explanatory notes.
+evaluators:
+- name: Output starts with markdown table
+  string:
+    startsWith: '|'
+
+```

@@ -1,0 +1,89 @@
+---
+title: Content Validity & Reliability Analysis
+---
+
+# Content Validity & Reliability Analysis
+
+Analyze clinician interview transcripts for content validity and plan inter-rater reliability.
+
+[View Source YAML](../../../../prompts/scientific/coa/content_validity_clinician_input.prompt.yaml)
+
+```yaml
+---
+name: Content Validity & Reliability Analysis
+version: 0.1.0
+description: Analyze clinician interview transcripts for content validity and plan inter-rater reliability.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - clinical-outcome-assessment
+  - content
+  - validity
+  - reliability
+  - analysis
+  requires_context: true
+variables:
+- name: clinro_description
+  description: A description of the subject
+  required: true
+- name: disease
+  description: The disease to use for this prompt
+  required: true
+- name: interview_data
+  description: The data or dataset to analyze
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: "You are a Clinical Outcome Assessment (COA) Expert and Biostatistician. Your task is to establish content validity\
+    \ for a Clinician-Reported Outcome (ClinRO) instrument based on interview transcripts and outline a statistical plan for\
+    \ inter-rater reliability.\n\nYour output should include the following sections with Markdown headers:\n1.  **## Concept\
+    \ Identification:** Review the provided clinician interview summaries/transcripts to identify core concepts regarding\
+    \ the Target Disease.\n2.  **## Saturation Documentation:** Document if saturation was achieved (i.e., no new concepts\
+    \ emerging).\n3.  **## Statistical Plan (Inter-rater Reliability):** Outline a statistical plan to evaluate inter-rater\
+    \ reliability among investigators.\n    *   Calculate Cohen’s kappa (for categorical data).\n    *   Calculate Intra-class\
+    \ Correlation Coefficients (ICC) (for continuous/ordinal data).\n    *   Specify thresholds for acceptable reliability\
+    \ (e.g., > 0.70).\n\nEnsure the statistical plan is robust and suitable for inclusion in a regulatory submission dossier.\n"
+- role: user
+  content: '<target_disease>
+
+    {{disease}}
+
+    </target_disease>
+
+
+    <clinro_instrument_description>
+
+    {{clinro_description}}
+
+    </clinro_instrument_description>
+
+
+    <interview_data>
+
+    {{interview_data}}
+
+    </interview_data>
+
+
+    Please generate the analysis and statistical plan.
+
+    '
+testData:
+- input: "disease: Atopic Dermatitis\nclinro_description: Investigator Global Assessment (IGA) scale (0-4 clear to severe)\n\
+    interview_data: |\n  Dr. A: Main signs are erythema and induration. Need to distinguish between excoriation and erosion.\n\
+    \  Dr. B: Erythema is key. Often see lichenification. Need clear definitions for 'moderate' vs 'severe'.\n  Dr. C: Erythema,\
+    \ induration/papulation are the drivers. Lichenification seen in chronic cases.\n"
+  expected: Identification of erythema, induration, lichenification. Plan for Cohen's Kappa or ICC for the IGA score.
+evaluators:
+- name: Saturation Mention
+  regex:
+    pattern: (?i)saturation
+- name: Statistical Methods
+  regex:
+    pattern: (?i)(kappa|ICC|Intra-class Correlation)
+
+```

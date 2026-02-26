@@ -1,0 +1,77 @@
+---
+title: Task Prototyper
+---
+
+# Task Prototyper
+
+Generate a domain-specific L3 prompt that accomplishes `{{end_task}}`.
+
+[View Source YAML](../../../../prompts/meta/meta_prompt_chain/03_L3_task-prototyper.prompt.yaml)
+
+```yaml
+---
+name: Task Prototyper
+version: 0.1.0
+description: Generate a domain-specific L3 prompt that accomplishes `{{end_task}}`.
+metadata:
+  domain: meta
+  complexity: high
+  tags:
+  - task
+  - prototyper
+  requires_context: false
+variables:
+- name: end_task
+  description: final objective
+  required: true
+- name: generated_prompt
+  description: The generated prompt to use for this prompt
+  required: true
+- name: policy_block
+  description: policy and style guidance
+  required: true
+- name: token_budget_l3
+  description: Budget details or financial constraints
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: '{{generated_prompt}}
+
+
+    You are ChatGPT acting as a Task Prototyper for MODEL_A.
+
+
+
+    1. List required user inputs as placeholders.
+
+
+    2. Embed `<thinking>` and `<answer>` tags so reasoning remains hidden.
+
+
+    3. Keep the template within `{{token_budget_l3}}` tokens.
+
+
+    4. Produce three mutated variants using different styles and rank them.
+
+
+    5. Critique the top variant for clarity and policy compliance, then revise once.
+
+
+
+    Include an example schema if structured output is required.''
+
+    '
+- role: user
+  content: '- `{{end_task}}` – final objective
+
+    - `{{policy_block}}` – policy and style guidance
+
+
+    Output format: Return only the final L3 prompt inside a fenced block labelled `prompt`.'
+testData: []
+evaluators: []
+
+```

@@ -1,0 +1,67 @@
+---
+title: Zika Virus Reagent Study Design
+---
+
+# Zika Virus Reagent Study Design
+
+Draft a protocol for analytical performance studies to validate Zika virus serological reagents.
+
+[View Source YAML](../../../../prompts/regulatory/device_specifics/zika_virus_reagent_study_design.prompt.yaml)
+
+```yaml
+---
+name: Zika Virus Reagent Study Design
+version: 0.1.0
+description: Draft a protocol for analytical performance studies to validate Zika virus serological reagents.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - medical-devices
+  - zika
+  - virus
+  - reagent
+  - study
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR 866.3935
+
+
+    ## Objective
+
+    Draft a protocol for analytical performance studies to validate Zika virus serological reagents.
+
+
+    ## Output Format
+
+    Technical study protocol.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Reference material details, cross-reactivity targets, and specimen stability. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Ensure
+
+```

@@ -1,0 +1,43 @@
+---
+title: SOLID Codebase Analysis
+---
+
+# SOLID Codebase Analysis
+
+Evaluate code against SOLID principles and suggest refactoring tasks.
+
+[View Source YAML](../../../../prompts/technical/architecture/solid_codebase_analysis.prompt.yaml)
+
+```yaml
+---
+name: SOLID Codebase Analysis
+version: 0.1.0
+description: Evaluate code against SOLID principles and suggest refactoring tasks.
+metadata:
+  domain: technical
+  complexity: low
+  tags:
+  - architecture
+  - solid
+  - codebase
+  - analysis
+  requires_context: false
+variables:
+- name: codebase
+  description: The source code to analyze or modify
+  required: true
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are a software architect assessing adherence to the SOLID object-oriented design principles.
+- role: user
+  content: 'Analyse the following codebase and produce concrete refactoring tasks for each SOLID principle.
+
+
+    {{codebase}}'
+testData: []
+evaluators: []
+
+```

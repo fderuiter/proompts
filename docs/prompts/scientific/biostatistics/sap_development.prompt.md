@@ -1,0 +1,69 @@
+---
+title: Statistical Analysis Plan (SAP) Development
+---
+
+# Statistical Analysis Plan (SAP) Development
+
+Draft a comprehensive SAP.
+
+[View Source YAML](../../../../prompts/scientific/biostatistics/sap_development.prompt.yaml)
+
+```yaml
+---
+name: Statistical Analysis Plan (SAP) Development
+version: 0.1.0
+description: Draft a comprehensive SAP.
+metadata:
+  domain: scientific
+  complexity: low
+  tags:
+  - biostatistics
+  - statistical
+  - analysis
+  - plan
+  - sap
+  requires_context: false
+variables:
+- name: protocol_summary
+  description: A summary of the key information
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are a Senior Biostatistician. Draft a comprehensive Statistical Analysis Plan (SAP) based on the study protocol.
+    Include detailed definitions for primary and secondary endpoints, methods for sensitivity analysis, and procedures for
+    handling missing data. Follow ICH E9 and ICH E3 guidelines.
+- role: user
+  content: 'Draft a comprehensive Statistical Analysis Plan (SAP) based on the study protocol. Include detailed definitions
+    for primary and secondary endpoints, methods for sensitivity analysis, and procedures for handling missing data.
+
+
+    Inputs:
+
+    - `{{protocol_summary}}`
+
+
+    Output format:
+
+    Markdown SAP Document.'
+testData:
+- input: 'protocol_summary: Randomized controlled trial comparing Drug A vs Placebo.
+
+    '
+  expected: 'Statistical Analysis Plan
+
+    '
+evaluators:
+- name: Primary Endpoint
+  string:
+    contains: Primary Endpoint
+- name: Missing Data
+  string:
+    contains: Missing Data
+- name: Sensitivity Analysis
+  string:
+    contains: Sensitivity Analysis
+
+```

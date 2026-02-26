@@ -1,0 +1,78 @@
+---
+title: Pixar Story Spine Outline
+---
+
+# Pixar Story Spine Outline
+
+Guide the model in creating a short Pixar-style story outline for middle-grade readers.
+
+[View Source YAML](../../../prompts/communication/story_spine_outline.prompt.yaml)
+
+```yaml
+---
+name: Pixar Story Spine Outline
+version: 0.1.0
+description: Guide the model in creating a short Pixar-style story outline for middle-grade readers.
+metadata:
+  domain: communication
+  complexity: medium
+  tags:
+  - pixar
+  - story
+  - spine
+  - outline
+  requires_context: false
+variables:
+- name: topic
+  description: the subject of the story
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'The Pixar Story Spine provides a simple eight-sentence framework for tales with a clear emotional arc.
+
+
+    1. Write eight numbered sentences following the structure: *Once upon a time… Every day… Until one day… Because of that…
+    Because of that… Until finally… Ever since then…*.
+
+    2. Keep each sentence 18 words or fewer and total length under 120 words.
+
+    3. Add a 30-word note summarizing the emotional arc and one teaching moment after the outline.
+
+
+    Designed for middle-grade readers; keep language age-appropriate.
+
+
+    References: Tame Your Book, Westside Excellence in Youth'
+- role: user
+  content: '- `{{topic}}` — the subject of the story.
+
+
+    Output format: Plain text with the numbered sentences followed by a short note.'
+testData:
+- topic: A young inventor who builds a robot friend
+  expected: 'Eight numbered sentences following the Pixar Story Spine structure,
+
+    ending with an emotional arc summary and teaching moment.
+
+    Should be age-appropriate for middle-grade readers.'
+- topic: A shy student who discovers they can talk to animals
+  expected: 'Eight numbered sentences in the format: Once upon a time, Every day,
+
+    Until one day, Because of that (x2), Until finally, Ever since then.
+
+    Followed by emotional arc and teaching moment summary.'
+evaluators:
+- name: Contains numbered sentences
+  string:
+    contains: '1.'
+- name: Follows story spine structure
+  string:
+    contains: Once upon a time
+- name: Includes emotional arc note
+  string:
+    contains: emotional
+
+```

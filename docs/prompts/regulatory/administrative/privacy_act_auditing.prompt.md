@@ -1,0 +1,66 @@
+---
+title: Privacy Act Auditing
+---
+
+# Privacy Act Auditing
+
+Draft a notice for a new FDA Privacy Act Record System.
+
+[View Source YAML](../../../../prompts/regulatory/administrative/privacy_act_auditing.prompt.yaml)
+
+```yaml
+---
+name: Privacy Act Auditing
+version: 0.1.0
+description: Draft a notice for a new FDA Privacy Act Record System.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-admin
+  - privacy
+  - act
+  - auditing
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR Part 21.20
+
+
+    ## Objective
+
+    Draft a notice for a new FDA Privacy Act Record System.
+
+
+    ## Output Format
+
+    Federal Register notice format.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: System name, location, and categories of individuals. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Compare
+
+```

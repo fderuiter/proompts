@@ -1,0 +1,72 @@
+---
+title: Regulatory-Risk & ESG Impact Dashboard Builder
+---
+
+# Regulatory-Risk & ESG Impact Dashboard Builder
+
+Aggregate regulatory changes and ESG metrics into a compliance risk dashboard.
+
+[View Source YAML](../../../../../prompts/business/cfo/cfo_workflow/03_regulatory_risk_dashboard.prompt.yaml)
+
+```yaml
+---
+name: Regulatory-Risk & ESG Impact Dashboard Builder
+version: 0.1.0
+description: Aggregate regulatory changes and ESG metrics into a compliance risk dashboard.
+metadata:
+  domain: business
+  complexity: high
+  tags:
+  - finance
+  - regulatory-risk
+  - esg
+  - impact
+  - dashboard
+  requires_context: false
+variables:
+- name: esg_baseline
+  description: current ESG performance metrics
+  required: true
+- name: reg_updates
+  description: relevant regulatory changes
+  required: true
+- name: risk_tolerance
+  description: high-level risk appetite or thresholds
+  required: true
+- name: study_portfolio
+  description: list of active or planned studies
+  required: true
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are my compliance-analytics officer. New EU CTR requirements and U.S. FDA diversity-reporting rules may raise
+    study costs and ESG disclosure obligations.
+- role: user
+  content: '- `{{study_portfolio}}` – list of active or planned studies.
+
+    - `{{reg_updates}}` – relevant regulatory changes.
+
+    - `{{esg_baseline}}` – current ESG performance metrics.
+
+    - `{{risk_tolerance}}` – high-level risk appetite or thresholds.
+
+
+    Start the response with **Risk Dashboard -**.
+
+    Output format:
+
+    1. Markdown table summarizing risk area, impact, and mitigation.
+
+    2. Bullet summary of ESG implications and recommended actions.'
+testData:
+- input: "study_portfolio: [Phase II oncology, Phase III cardiology]\nreg_updates: [EU CTR 2024, FDA diversity guidance 2022]\n\
+    esg_baseline:\n  current_score: 65\nrisk_tolerance: moderate"
+  expected: Risk Dashboard -
+evaluators:
+- name: Output should start with 'Risk Dashboard -'
+  string:
+    startsWith: Risk Dashboard -
+
+```

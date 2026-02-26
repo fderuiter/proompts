@@ -1,0 +1,65 @@
+---
+title: IND Determination and Application
+---
+
+# IND Determination and Application
+
+Determine IND exemption and prepare dossier.
+
+[View Source YAML](../../../../prompts/regulatory/strategy/ind_determination_application.prompt.yaml)
+
+```yaml
+---
+name: IND Determination and Application
+version: 0.1.0
+description: Determine IND exemption and prepare dossier.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-strategy
+  - ind
+  - determination
+  - application
+  requires_context: false
+variables:
+- name: protocol_and_status
+  description: The protocol and status to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are a Regulatory Affairs Director. Analyze the proposed drug study protocol and current marketing status of
+    the product to determine if it meets the IND exemption criteria under 21 CFR 312.2(b). Draft the necessary components
+    for the IND application if required.
+- role: user
+  content: 'Analyze the proposed drug study protocol and current marketing status of the product to determine if it meets
+    the IND exemption criteria under 21 CFR 312.2(b).
+
+
+    Inputs:
+
+    - `{{protocol_and_status}}`
+
+
+    Output format:
+
+    Markdown IND Determination Memo.'
+testData:
+- input: 'protocol_and_status: Marketed drug used within approved labeling.
+
+    '
+  expected: 'IND Exemption
+
+    '
+evaluators:
+- name: Exemption Criteria
+  string:
+    contains: Exemption Criteria
+- name: IND Determination
+  string:
+    contains: IND Determination
+
+```

@@ -1,0 +1,67 @@
+---
+title: Import Entry Data Element Compilation
+---
+
+# Import Entry Data Element Compilation
+
+Compile required identifying information (510(k), UFI, NDC, NDA) for electronic import entry of drugs or devices.
+
+[View Source YAML](../../../../prompts/regulatory/administrative/import_entry_data_element_compilation.prompt.yaml)
+
+```yaml
+---
+name: Import Entry Data Element Compilation
+version: 0.1.0
+description: Compile required identifying information (510(k), UFI, NDC, NDA) for electronic import entry of drugs or devices.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-admin
+  - import
+  - entry
+  - data
+  - element
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR Part 1 Subpart D
+
+
+    ## Objective
+
+    Compile required identifying information (510(k), UFI, NDC, NDA) for electronic import entry of drugs or devices.
+
+
+    ## Output Format
+
+    JSON object or alphanumeric string.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Clearance documentation, registration numbers, and listing information. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Check
+
+```

@@ -1,0 +1,94 @@
+---
+title: IQ/OQ/PQ Validation
+---
+
+# IQ/OQ/PQ Validation
+
+Design and execute a series of IQ, OQ, and PQ validation tests for clinical systems.
+
+[View Source YAML](../../../../prompts/clinical/eclinical_integration/iq_oq_pq_validation.prompt.yaml)
+
+```yaml
+---
+name: IQ/OQ/PQ Validation
+version: 0.1.0
+description: Design and execute a series of IQ, OQ, and PQ validation tests for clinical systems.
+metadata:
+  domain: clinical
+  complexity: high
+  tags:
+  - eclinical-integration
+  - validation
+  requires_context: false
+variables:
+- name: cdms_specs
+  description: 'Validation tests: `{{validation_tests}}`'
+  required: true
+- name: crf_draft
+  description: The crf draft to use for this prompt
+  required: true
+- name: dmp
+  description: 'Clinical Protocol: `{{protocol}}`'
+  required: true
+- name: protocol
+  description: 'CRF Design Draft: `{{crf_draft}}`'
+  required: true
+- name: validation_tests
+  description: 'Clinical Data Management Plan (DMP): `{{dmp}}`'
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are a Clinical Systems Validation Specialist. Perform Installation Qualification (IQ), Operational Qualification
+    (OQ), and Performance Qualification (PQ) for clinical systems and verify that the CRF captures data as specified in the
+    protocol. Ensure compliance with 21 CFR Part 11, ICH GCP E6(R2), and FDA IQ/OQ/PQ Standards.
+- role: user
+  content: 'Design and execute a series of IQ, OQ, and PQ validation tests for the new CDMS and compare CRF fields against
+    the protocol to ensure all required endpoints and variables are captured.
+
+
+    Inputs:
+
+    - Clinical Data Management System (CDMS) specifications: `{{cdms_specs}}`
+
+    - Validation tests: `{{validation_tests}}`
+
+    - Clinical Data Management Plan (DMP): `{{dmp}}`
+
+    - Clinical Protocol: `{{protocol}}`
+
+    - CRF Design Draft: `{{crf_draft}}`
+
+
+    Output format:
+
+    Markdown Validation Report with sections for IQ, OQ, PQ, and CRF Verification.'
+testData:
+- input: 'cdms_specs: "Version 2.0"
+
+    validation_tests: "Test Case 1: Login"
+
+    dmp: "DMP v1"
+
+    protocol: "Protocol A"
+
+    crf_draft: "CRF v0.9"
+
+    '
+  expected: 'Validation Report
+
+    '
+evaluators:
+- name: IQ Section
+  string:
+    contains: Installation Qualification
+- name: OQ Section
+  string:
+    contains: Operational Qualification
+- name: PQ Section
+  string:
+    contains: Performance Qualification
+
+```

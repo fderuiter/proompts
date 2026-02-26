@@ -1,0 +1,67 @@
+---
+title: Special Controls Labeling Compliance
+---
+
+# Special Controls Labeling Compliance
+
+Generate mandatory labeling content, including warnings and limitations, for HCV antibody tests.
+
+[View Source YAML](../../../../prompts/regulatory/device_specifics/special_controls_labeling_compliance.prompt.yaml)
+
+```yaml
+---
+name: Special Controls Labeling Compliance
+version: 0.1.0
+description: Generate mandatory labeling content, including warnings and limitations, for HCV antibody tests.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - medical-devices
+  - special
+  - controls
+  - labeling
+  - compliance
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR 866.3169
+
+
+    ## Objective
+
+    Generate mandatory labeling content, including warnings and limitations, for HCV antibody tests.
+
+
+    ## Output Format
+
+    Structured labeling text.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Specimen types, clinical population data, and performance characteristics. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Cross\-check
+
+```

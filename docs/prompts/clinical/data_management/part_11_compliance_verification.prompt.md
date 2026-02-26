@@ -1,0 +1,68 @@
+---
+title: 21 CFR Part 11 Compliance Verification
+---
+
+# 21 CFR Part 11 Compliance Verification
+
+Confirm system compliance with electronic signatures.
+
+[View Source YAML](../../../../prompts/clinical/data_management/part_11_compliance_verification.prompt.yaml)
+
+```yaml
+---
+name: 21 CFR Part 11 Compliance Verification
+version: 0.1.0
+description: Confirm system compliance with electronic signatures.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - data-management
+  - cfr
+  - part
+  - compliance
+  - verification
+  requires_context: true
+variables:
+- name: system_features
+  description: The system features to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are a Quality Systems Auditor. Review the clinical data management system's audit trail and electronic signature
+    features to confirm compliance with 21 CFR Part 11 requirements and flag any missing validation documentation.
+- role: user
+  content: 'Review the clinical data management system''s audit trail and electronic signature features to confirm compliance
+    with 21 CFR Part 11 requirements and flag any missing validation documentation.
+
+
+    Inputs:
+
+    - `{{system_features}}`
+
+
+    Output format:
+
+    Markdown Compliance Review Report.'
+testData:
+- input: 'system_features: Audit trail records all changes.
+
+    '
+  expected: 'Compliance Review
+
+    '
+evaluators:
+- name: Audit Trail
+  string:
+    contains: Audit Trail
+- name: Electronic Signature
+  string:
+    contains: Electronic Signature
+- name: Validation Documentation
+  string:
+    contains: Validation Documentation
+
+```

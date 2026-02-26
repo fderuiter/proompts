@@ -1,0 +1,67 @@
+---
+title: Biological Evaluation Plan Builder
+---
+
+# Biological Evaluation Plan Builder
+
+Draft a complete Biological Evaluation Plan (BEP) for a specified medical device.
+
+[View Source YAML](../../../../prompts/scientific/biosafety/bep_builder.prompt.yaml)
+
+```yaml
+---
+name: Biological Evaluation Plan Builder
+version: 0.1.0
+description: Draft a complete Biological Evaluation Plan (BEP) for a specified medical device.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biosafety
+  - biological
+  - evaluation
+  - plan
+  - builder
+  requires_context: false
+variables:
+- name: device_details
+  description: materials, manufacturing method, contact category, duration, and use environment
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a senior regulatory consultant with 15 years of biocompatibility experience. Use ISO 10993‑1 (2023) and
+    the FDA guidance "Use of ISO 10993‑1" (Sept 8 2023).
+
+
+    Ask for missing device information before drafting if not provided.'
+- role: user
+  content: '1. Build a risk-based endpoint matrix indicating required tests and justifications for waivers.
+
+    2. Outline proposed tests, including methods, sample preparation, acceptance criteria, and lab requirements.
+
+    3. Provide an integrated timeline and critical path (Gantt style).
+
+    4. Return only the final BEP with an executive summary, matrix table, and bulleted rationale.
+
+
+    Inputs:
+
+    - `{{device_details}}` — materials, manufacturing method, contact category, duration, and use environment
+
+
+    Output format:
+
+    Executive-summary paragraph followed by a markdown table and bulleted notes.'
+testData:
+- vars:
+    device_details: example_device_details
+  expected: Executive-summary paragraph followed by a markdown table and bulleted notes.
+evaluators:
+- name: Contains a markdown table
+  string:
+    contains: '|'
+
+```

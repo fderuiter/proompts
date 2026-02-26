@@ -1,0 +1,66 @@
+---
+title: Financial Disclosure Certification
+---
+
+# Financial Disclosure Certification
+
+Identify required financial disclosure forms and draft attestations for clinical investigators.
+
+[View Source YAML](../../../../prompts/regulatory/administrative/financial_disclosure_certification.prompt.yaml)
+
+```yaml
+---
+name: Financial Disclosure Certification
+version: 0.1.0
+description: Identify required financial disclosure forms and draft attestations for clinical investigators.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-admin
+  - financial
+  - disclosure
+  - certification
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR Part 54
+
+
+    ## Objective
+
+    Identify required financial disclosure forms and draft attestations for clinical investigators.
+
+
+    ## Output Format
+
+    FDA Form 3454/3455 or formal letter.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Payment records and equity interest data. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Cross\-reference
+
+```

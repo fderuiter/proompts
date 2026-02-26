@@ -1,0 +1,70 @@
+---
+title: Metadata Management
+---
+
+# Metadata Management
+
+Extract and store standardized metadata for reuse.
+
+[View Source YAML](../../../../prompts/clinical/data_management/metadata_management.prompt.yaml)
+
+```yaml
+---
+name: Metadata Management
+version: 0.1.0
+description: Extract and store standardized metadata for reuse.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - data-management
+  - metadata
+  - management
+  requires_context: false
+variables:
+- name: crf_templates
+  description: 'Metadata Repository (MDR) Schema: `{{mdr_schema}}`'
+  required: true
+- name: mdr_schema
+  description: The mdr schema to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are a Metadata Manager. Establish and maintain a centralized repository for metadata reuse across multiple
+    clinical studies. Adhere to CDISC / GxP.
+- role: user
+  content: 'Extract standardized metadata from this previously approved study and store it in the Metadata Repository for
+    reuse in the upcoming Phase III trial to ensure cross-study consistency.
+
+
+    Inputs:
+
+    - Standard CRF Templates: `{{crf_templates}}`
+
+    - Metadata Repository (MDR) Schema: `{{mdr_schema}}`
+
+
+    Output format:
+
+    Markdown Metadata Definition JSON/Table.'
+testData:
+- input: 'crf_templates: "VS Form: Height (cm), Weight (kg)"
+
+    mdr_schema: "Field Name, Label, Unit, Type"
+
+    '
+  expected: '| Field Name | Label | Unit | Type |
+
+    '
+evaluators:
+- name: Metadata Table
+  string:
+    contains: '| Field Name |'
+- name: Extraction Check
+  string:
+    contains: Height
+
+```

@@ -1,0 +1,75 @@
+---
+title: Compliance Gap & Risk Matrix
+---
+
+# Compliance Gap & Risk Matrix
+
+Quantify compliance gaps and associated risks against a selected standard or law.
+
+[View Source YAML](../../../../prompts/regulatory/quality/compliance_gap_risk_matrix.prompt.yaml)
+
+```yaml
+---
+name: Compliance Gap & Risk Matrix
+version: 0.1.0
+description: Quantify compliance gaps and associated risks against a selected standard or law.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - quality
+  - compliance
+  - gap
+  - risk
+  - matrix
+  requires_context: false
+variables:
+- name: known_nonconformities
+  description: list of known issues
+  required: true
+- name: sops
+  description: process SOP excerpts
+  required: true
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are an ISO‑certified lead auditor specializing in `$target standard or law – e.g., EU MDR 2017/745$`.
+
+
+    Quantify compliance gaps and associated risks against a selected standard or law.'
+- role: user
+  content: '1. Review each clause and cite exact paragraph numbers.
+
+    1. Score gaps using a 1‑to‑5 Likelihood × Severity scale.
+
+    1. Suggest a “Minimum Viable Mitigation” for any score ≥12.
+
+    1. Output only the final matrix; avoid private reasoning.
+
+    1. Ask clarifying questions if information is missing.
+
+
+    Inputs:
+
+    - `{{sops}}` — process SOP excerpts.
+
+    - `{{known_nonconformities}}` — list of known issues.
+
+
+    Output format:
+
+    CSV‑ready table with columns: Clause, Finding, Likelihood, Severity, Risk Score, Mitigation, Owner, Target Date.
+
+
+    Additional notes:
+
+    This approach aligns with auditor workflows and supports import into GRC tools.
+
+
+    <!-- markdownlint-enable MD029 MD036 -->'
+testData: []
+evaluators: []
+
+```

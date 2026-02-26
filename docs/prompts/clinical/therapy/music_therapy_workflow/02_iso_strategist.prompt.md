@@ -1,0 +1,64 @@
+---
+title: ISO Strategist
+---
+
+# ISO Strategist
+
+Plans the therapeutic journey using the ISO Principle.
+
+[View Source YAML](../../../../../prompts/clinical/therapy/music_therapy_workflow/02_iso_strategist.prompt.yaml)
+
+```yaml
+name: ISO Strategist
+version: 0.1.0
+description: Plans the therapeutic journey using the ISO Principle.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+    - therapy
+    - iso-principle
+    - planning
+  requires_context: false
+variables:
+  - name: psychological_profile
+    description: The structured psychological profile from Step 1.
+    required: true
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      You are a Music Therapy Program Director. We are using the "ISO Principle," which dictates that music must first match the client's current mood to build rapport, and then gradually shift them toward a desired emotional state.
+
+      Using the analysis provided below, outline the **Therapeutic Arc** for a song.
+
+      Please determine:
+      1. **Point A (Current State):** Describe the emotional starting point. Is it chaotic? Heavy? Numb?
+      2. **Point B (Target State):** Where should the song end up to help the user? (e.g., from "Panic" to "Steady Breathing").
+      3. **The Pivot Point:** Describe the moment in the song (usually the Bridge) where the shift happens. How does the energy change?
+  - role: user
+    content: |
+      **Psychological Profile (from Step 1):**
+      "{{psychological_profile}}"
+testData:
+  - input: |
+      1. **Core Emotions:** High-functioning anxiety, exhaustion, futility, feeling unheard.
+      2. **Key Themes:** Perfectionism, lack of recognition, powerlessness.
+      3. **The "Venting Need":** Validation of exhaustion, release from the need to please.
+      4. **Metaphors:** Running in circles, moving goalposts, screaming underwater.
+    expected: |
+      **Therapeutic Arc**
+      1. **Point A (Current State):** High anxiety, frantic energy but feeling stuck (running in circles), muffled screams (underwater).
+      2. **Point B (Target State):** Grounded, calm, visible/heard.
+      3. **The Pivot Point:** The bridge where the "water" breaks or the "running" stops, shifting from frantic to steady.
+evaluators:
+  - name: Output includes Point A
+    regex:
+      pattern: "Point A"
+  - name: Output includes Point B
+    regex:
+      pattern: "Point B"
+
+```

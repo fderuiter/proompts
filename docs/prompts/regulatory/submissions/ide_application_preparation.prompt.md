@@ -1,0 +1,68 @@
+---
+title: IDE Application Preparation
+---
+
+# IDE Application Preparation
+
+Draft an Investigational Device Exemption (IDE) application, including risk analysis and investigational plans for clinical studies.
+
+[View Source YAML](../../../../prompts/regulatory/submissions/ide_application_preparation.prompt.yaml)
+
+```yaml
+---
+name: IDE Application Preparation
+version: 0.1.0
+description: Draft an Investigational Device Exemption (IDE) application, including risk analysis and investigational plans
+  for clinical studies.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - submissions
+  - ide
+  - application
+  - preparation
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR Part 812
+
+
+    ## Objective
+
+    Draft an Investigational Device Exemption (IDE) application, including risk analysis and investigational plans for clinical
+    studies.
+
+
+    ## Output Format
+
+    Formal IDE application package following the sequence in 21 CFR 812.25.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Investigational plan, report of prior investigations, investigator agreements, and device labeling. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Verify
+
+```

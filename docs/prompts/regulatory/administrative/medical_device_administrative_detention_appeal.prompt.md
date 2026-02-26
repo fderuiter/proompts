@@ -1,0 +1,67 @@
+---
+title: Medical Device Administrative Detention Appeal
+---
+
+# Medical Device Administrative Detention Appeal
+
+Draft a written appeal for an administrative detention order issued on a food item or medical device.
+
+[View Source YAML](../../../../prompts/regulatory/administrative/medical_device_administrative_detention_appeal.prompt.yaml)
+
+```yaml
+---
+name: Medical Device Administrative Detention Appeal
+version: 0.1.0
+description: Draft a written appeal for an administrative detention order issued on a food item or medical device.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-admin
+  - medical
+  - device
+  - administrative
+  - detention
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR Part 1.402 / 800.55
+
+
+    ## Objective
+
+    Draft a written appeal for an administrative detention order issued on a food item or medical device.
+
+
+    ## Output Format
+
+    Formal legal letter.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Detention order number, date received, and verified statement of ownership/proprietary interest. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Verify
+
+```

@@ -1,0 +1,68 @@
+---
+title: Sponsor-Ready Monthly Status Brief
+---
+
+# Sponsor-Ready Monthly Status Brief
+
+Draft a concise, escalation-ready monthly status report for study sponsors.
+
+[View Source YAML](../../../../prompts/management/project_management/sponsor_ready_monthly_status_brief.prompt.yaml)
+
+```yaml
+---
+name: Sponsor-Ready Monthly Status Brief
+version: 0.1.0
+description: Draft a concise, escalation-ready monthly status report for study sponsors.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - project-management
+  - sponsor-ready
+  - monthly
+  - status
+  - brief
+  requires_context: true
+variables:
+- name: monthly_notes
+  description: Additional notes, assumptions, or special considerations
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are ghost-writing for a CRO Project Manager. The user will provide bullet notes and metrics for the month.
+
+
+    Ask clarifying questions if metrics or context are incomplete.'
+- role: user
+  content: '1. Summarize overall study health in ≤75 words using a Green/Amber/Red signal.
+
+    1. Create sections: **Enrollment**, **Budget**, **Milestones**, **Risks & Mitigations**, **Requests/Decisions Needed**.
+
+    1. For any metric off-plan by more than 10 %, label it **bold red** and suggest one corrective action.
+
+    1. Keep the tone professional and concise (max 450 words).
+
+
+    Inputs:
+
+    - `{{monthly_notes}}`
+
+
+    Output Format:
+
+    Markdown document with H2 section headers as listed above.'
+testData:
+- vars:
+    monthly_notes: Example monthly notes
+  expected: 'Document with sections Enrollment, Budget, Milestones, Risks & Mitigations, and Requests/Decisions Needed.
+
+    '
+evaluators:
+- name: Includes Enrollment section
+  string:
+    contains: Enrollment
+
+```

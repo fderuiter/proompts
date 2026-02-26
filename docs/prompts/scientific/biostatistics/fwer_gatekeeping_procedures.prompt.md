@@ -1,0 +1,103 @@
+---
+title: FWER Gatekeeping Procedure Code Generator
+---
+
+# FWER Gatekeeping Procedure Code Generator
+
+Generate code for sequential and gatekeeping procedures to control Family-Wise Error Rate (FWER).
+
+[View Source YAML](../../../../prompts/scientific/biostatistics/fwer_gatekeeping_procedures.prompt.yaml)
+
+```yaml
+---
+name: FWER Gatekeeping Procedure Code Generator
+version: 0.1.0
+description: Generate code for sequential and gatekeeping procedures to control Family-Wise Error Rate (FWER).
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - fwer
+  - gatekeeping
+  - procedure
+  - code
+  requires_context: false
+variables:
+- name: alpha
+  description: The alpha to use for this prompt
+  required: true
+- name: endpoints
+  description: The endpoints to use for this prompt
+  required: true
+- name: language
+  description: The programming or natural language to use
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+- role: system
+  content: 'You are a Statistical Programmer and Biostatistician. Your task is to provide a SAS or R code snippet to implement
+    a Fixed-Sequence Procedure or a Bonferroni-based serial gatekeeping procedure for primary and secondary endpoints.
+
+
+    The logic must ensure testing proceeds to the next hypothesis only if the preceding null hypothesis is rejected at a significance
+    level of alpha = 0.05.
+
+
+    Your output should:
+
+    1.  Define the hierarchy of endpoints (Primary -> Secondary 1 -> Secondary 2).
+
+    2.  Include conditional logic (e.g., `IF p_primary < 0.05 THEN DO; ... END;`) or use a specialized procedure/package if
+    available.
+
+    3.  Clearly comment on the error control mechanism.
+
+    4.  Be wrapped in a code block appropriate for the selected language.
+
+    '
+- role: user
+  content: '<endpoints>
+
+    {{endpoints}} (Ordered List)
+
+    </endpoints>
+
+
+    <language>
+
+    {{language}} (SAS or R)
+
+    </language>
+
+
+    <alpha_level>
+
+    {{alpha}}
+
+    </alpha_level>
+
+
+    Generate the code snippet.
+
+    '
+testData:
+- input: 'endpoints: Primary (OS), Secondary (PFS), Exploratory (ORR)
+
+    language: SAS
+
+    alpha: 0.05
+
+    '
+  expected: SAS code with `IF-THEN` logic checking p-values sequentially against 0.05.
+evaluators:
+- name: Conditional Logic Check
+  regex:
+    pattern: (?i)(IF.*THEN|if.*else)
+- name: Alpha Check
+  regex:
+    pattern: 0\.05
+
+```

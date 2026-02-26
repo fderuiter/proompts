@@ -1,0 +1,57 @@
+---
+title: Reporting and Maintenance: Custom Reports
+---
+
+# Reporting and Maintenance: Custom Reports
+
+Integrate reporting libraries and screenshot utilities to capture execution evidence.
+
+[View Source YAML](../../../../../prompts/technical/testing/selenium_automation/selenium_reporting.prompt.yaml)
+
+```yaml
+---
+name: 'Reporting and Maintenance: Custom Reports'
+version: 0.1.0
+description: Integrate reporting libraries and screenshot utilities to capture execution evidence.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - testing
+  - selenium
+  - reporting
+  - maintenance
+  - custom
+  requires_context: true
+variables:
+- name: framework
+  description: The testing framework (e.g., TestNG, JUnit)
+  required: true
+- name: report_format
+  description: The report format to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: Create a Java listener or utility method to generate test reports (e.g., PDF via iText) or capture screenshots
+    using the 'TakesScreenshot' interface. The output should include test status (PASS/FAIL), execution time, and embedded
+    links to images for failed cases.
+- role: user
+  content: 'Implement a Test Listener for reporting and screenshots.
+
+
+    Framework: {{framework}}
+
+    Report Format: {{report_format}}'
+testData:
+- input: 'framework: TestNG
+
+    report_format: PDF'
+  expected: implements ITestListener
+evaluators:
+- name: Implements TakesScreenshot
+  regex: TakesScreenshot
+
+```

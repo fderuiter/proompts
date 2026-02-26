@@ -1,0 +1,140 @@
+---
+title: Project Starter Pack Prompts
+---
+
+# Project Starter Pack Prompts
+
+Provide ready-to-copy prompt templates for common project documentation.
+
+[View Source YAML](../../../../prompts/management/project_management/project_starter_pack.prompt.yaml)
+
+```yaml
+---
+name: Project Starter Pack Prompts
+version: 0.1.0
+description: Provide ready-to-copy prompt templates for common project documentation.
+metadata:
+  domain: management
+  complexity: high
+  tags:
+  - project-management
+  - project
+  - starter
+  - pack
+  - prompts
+  requires_context: true
+variables:
+- name: alternatives
+  description: '`{{decision_date}}`'
+  required: true
+- name: budget
+  description: '`{{deadline}}`'
+  required: true
+- name: business_outcome
+  description: The business outcome to use for this prompt
+  required: true
+- name: deadline
+  description: '`{{stakeholders}}`'
+  required: true
+- name: decision
+  description: '`{{alternatives}}`'
+  required: true
+- name: decision_date
+  description: The decision date to use for this prompt
+  required: true
+- name: feature_area
+  description: '`{{decision}}`'
+  required: true
+- name: project_description
+  description: '`{{budget}}`'
+  required: true
+- name: project_name
+  description: '`{{project_description}}`'
+  required: true
+- name: stakeholders
+  description: '`{{business_outcome}}`'
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: Use these prompts to create standard deliverables without starting from a blank page.
+- role: user
+  content: 'Copy the relevant prompt below and replace the placeholders with your project details.
+
+
+    Inputs:
+
+    Variables such as `{{project_name}}`, `{{feature_area}}`, and similar placeholders appear in the subprompts.
+
+
+    Output format:
+
+    Plain-text prompts grouped by deliverable.
+
+
+    Additional notes:
+
+    Prompts marked with * may result in multi-page outputs.
+
+
+    ---
+
+    ### Project Charter and Scope Definition *
+
+    You are a senior project-management consultant beginning a new initiative. Draft a project charter covering Background,
+    Objectives, In-Scope, Out-of-Scope, Major Deliverables, Success Criteria or KPIs, Assumptions, Constraints, Top Three
+    Risks, Milestone Schedule, High-Level Budget Table, and Approval Signatures. Use H2 headings and a two-column table for
+    the milestone schedule. Keep each paragraph under 120 words. Ask clarifying questions if any details are missing.
+
+
+    Inputs:
+
+    - `{{project_name}}`
+
+    - `{{project_description}}`
+
+    - `{{budget}}`
+
+    - `{{deadline}}`
+
+    - `{{stakeholders}}`
+
+    - `{{business_outcome}}`
+
+
+    Output format:
+
+    Markdown document with the sections listed above.
+
+
+    ---
+
+    ### Architecture Decision Record
+
+    You are the lead software architect documenting a key technical decision. Summarize the Context, Decision, Options Considered,
+    Pros and Cons, Rationale, and Consequences. Keep sections concise and focused on trade-offs. Include a Status and a Decision
+    Date. End with a list of Related Decisions.
+
+
+    Inputs:
+
+    - `{{project_name}}`
+
+    - `{{feature_area}}`
+
+    - `{{decision}}`
+
+    - `{{alternatives}}`
+
+    - `{{decision_date}}`
+
+
+    Output format:
+
+    Markdown ADR with headings for each section and bullet lists where appropriate.'
+testData: []
+evaluators: []
+
+```

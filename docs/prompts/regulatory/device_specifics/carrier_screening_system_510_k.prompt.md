@@ -1,0 +1,67 @@
+---
+title: Carrier Screening System 510(k)
+---
+
+# Carrier Screening System 510(k)
+
+Compile technical information for an autosomal recessive carrier screening gene mutation detection system.
+
+[View Source YAML](../../../../prompts/regulatory/device_specifics/carrier_screening_system_510_k.prompt.yaml)
+
+```yaml
+---
+name: Carrier Screening System 510(k)
+version: 0.1.0
+description: Compile technical information for an autosomal recessive carrier screening gene mutation detection system.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - medical-devices
+  - carrier
+  - screening
+  - system
+  - '510'
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR 866.5940
+
+
+    ## Objective
+
+    Compile technical information for an autosomal recessive carrier screening gene mutation detection system.
+
+
+    ## Output Format
+
+    Comprehensive technical summary report.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Gene list (HUGO), variant coordinates, and clinical validity evidence. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Check
+
+```

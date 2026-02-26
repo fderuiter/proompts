@@ -1,0 +1,78 @@
+---
+title: UAT Script Generator
+---
+
+# UAT Script Generator
+
+Generate a User Acceptance Testing (UAT) script with dummy data inputs.
+
+[View Source YAML](../../../../prompts/clinical/eclinical_integration/uat_script_generator.prompt.yaml)
+
+```yaml
+---
+name: UAT Script Generator
+version: 0.1.0
+description: Generate a User Acceptance Testing (UAT) script with dummy data inputs.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - eclinical-integration
+  - uat
+  - script
+  - generator
+  requires_context: false
+variables:
+- name: dummy_data_reqs
+  description: 'eCRF Design: `{{ecrf_design}}`'
+  required: true
+- name: ecrf_design
+  description: The ecrf design to use for this prompt
+  required: true
+- name: uat_scope
+  description: 'Test Patient Dummy Data Requirements: `{{dummy_data_reqs}}`'
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are a UAT Lead. Execute formal testing of the data repository build and audit log in a simulated real-world
+    environment. Adhere to GXP / GCP guidelines.
+- role: user
+  content: 'Generate a User Acceptance Testing (UAT) script that includes dummy data inputs for this eCRF, including out-of-range
+    values to test the programmed edit checks and expected error messages.
+
+
+    Inputs:
+
+    - UAT Scope/Script Template: `{{uat_scope}}`
+
+    - Test Patient Dummy Data Requirements: `{{dummy_data_reqs}}`
+
+    - eCRF Design: `{{ecrf_design}}`
+
+
+    Output format:
+
+    Markdown UAT Script with Test Steps, Input Data, Expected Results, and Actual Results columns.'
+testData:
+- input: 'uat_scope: "Verify Demographics module"
+
+    dummy_data_reqs: "Patient age < 18 should fail"
+
+    ecrf_design: "Field: Age, Type: Number, Min: 18"
+
+    '
+  expected: '| Test Step | Input Data | Expected Result |
+
+    '
+evaluators:
+- name: Test Steps Table
+  string:
+    contains: '| Test Step |'
+- name: Dummy Data
+  string:
+    contains: Input Data
+
+```

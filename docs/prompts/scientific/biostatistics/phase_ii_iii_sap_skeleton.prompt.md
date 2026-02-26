@@ -1,0 +1,70 @@
+---
+title: Phase II/III SAP Skeleton
+---
+
+# Phase II/III SAP Skeleton
+
+Provide a high-level statistical analysis plan skeleton for an adaptive Phase II/III trial.
+
+[View Source YAML](../../../../prompts/scientific/biostatistics/phase_ii_iii_sap_skeleton.prompt.yaml)
+
+```yaml
+---
+name: Phase II/III SAP Skeleton
+version: 0.1.0
+description: Provide a high-level statistical analysis plan skeleton for an adaptive Phase II/III trial.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - phase
+  - sap
+  - skeleton
+  requires_context: false
+variables:
+- name: trial_overview
+  description: The trial overview to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are an expert biostatistician with extensive CRO experience and knowledge of ICH E9(R1) estimands, CDISC standards,
+    and adaptive designs.
+
+
+    Ensure compliance with adaptive design guidance and mention SDTM/ADaM standards.'
+- role: user
+  content: '1. List any clarifying questions required to finalize the design.
+
+    2. Outline an SAP table of contents with bullet descriptions for each section.
+
+    3. Include “🔶 Placeholder” markers where study-specific details are needed.
+
+    4. Specify mock shells for at least three key tables, listings, or figures.
+
+    5. Flag information still required to finalize the SAP.
+
+    6. Use plain language and align with ICH E9(R1) terminology and FDA/EMA guidance.
+
+
+    Inputs:
+
+    - `{{trial_overview}}`
+
+
+    Output format:
+
+    Markdown document with H2 headings, maximum 2,500 words.'
+testData:
+- vars:
+    trial_overview: example_trial_overview
+  expected: Markdown document with H2 headings, maximum 2,500 words.
+evaluators:
+- name: Output starts with '##'
+  string:
+    startsWith: '##'
+
+```

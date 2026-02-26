@@ -1,0 +1,67 @@
+---
+title: Clinical Chemistry Device Classification
+---
+
+# Clinical Chemistry Device Classification
+
+Identify classification and regulatory requirements (general/special controls) for a clinical chemistry device.
+
+[View Source YAML](../../../../prompts/regulatory/device_specifics/clinical_chemistry_device_classification.prompt.yaml)
+
+```yaml
+---
+name: Clinical Chemistry Device Classification
+version: 0.1.0
+description: Identify classification and regulatory requirements (general/special controls) for a clinical chemistry device.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - medical-devices
+  - clinical
+  - chemistry
+  - device
+  - classification
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR Part 862
+
+
+    ## Objective
+
+    Identify classification and regulatory requirements (general/special controls) for a clinical chemistry device.
+
+
+    ## Output Format
+
+    Structured summary identifying FDA Class and regulatory section.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Device name and intended use. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Verify
+
+```

@@ -1,0 +1,57 @@
+---
+title: Clinical-Trial Protocol Creator
+---
+
+# Clinical-Trial Protocol Creator
+
+Generate a full clinical-trial protocol from a one-page summary sheet.
+
+[View Source YAML](../../../../../prompts/clinical/protocol/protocol_workflow/01_clinical_trial_protocol_creator.prompt.yaml)
+
+```yaml
+---
+name: Clinical-Trial Protocol Creator
+version: 0.1.0
+description: Generate a full clinical-trial protocol from a one-page summary sheet.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - protocol-design
+  - clinical-trial
+  - protocol
+  - creator
+  requires_context: true
+variables:
+- name: summary_sheet
+  description: one-page study summary with product and design details
+  required: true
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a senior Clinical-Trial Protocol Architect with 15 years of ICH-GCP experience. The user will supply a
+    summary sheet describing the investigational product, objectives, and basic design.
+
+
+    Generate a full clinical-trial protocol from a one-page summary sheet.'
+- role: user
+  content: "1. Extract all relevant data from the summary sheet.\n1. Draft the protocol with these sections in order:\n  \
+    \ - Title Page\n   - Table of Contents\n   - Background & Rationale\n   - Objectives\n   - Methodology\n   - Participant\
+    \ Selection\n   - Interventions\n   - Outcome Measures\n   - Statistical Plan\n   - Ethical Considerations\n   - References\n\
+    1. Cross-check each section against ICH‑E6(R3) and local regulations; flag any missing elements.\n1. Use plain, unambiguous\
+    \ language suitable for IRB review.\n\n  Inputs:\n  - `{{summary_sheet}}` – one-page study summary with product and design\
+    \ details\n\nOutput format:\nWord-style document with numbered headings and a one-sentence executive abstract at the top.\n\
+    \nAdditional notes:\nEnsure regulatory compliance throughout the draft."
+testData:
+- input: 'summary_sheet: Phase I study of investigational hypertension drug
+
+    '
+  expected: Title Page
+evaluators:
+- name: Includes Title Page heading
+  string:
+    contains: Title Page
+
+```

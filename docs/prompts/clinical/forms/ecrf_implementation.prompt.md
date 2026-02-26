@@ -1,0 +1,79 @@
+---
+title: Electronic Data Capture Implementation
+---
+
+# Electronic Data Capture Implementation
+
+Design eCRFs with built-in edit checks and automation.
+
+[View Source YAML](../../../../prompts/clinical/forms/ecrf_implementation.prompt.yaml)
+
+```yaml
+---
+name: Electronic Data Capture Implementation
+version: 0.1.0
+description: Design eCRFs with built-in edit checks and automation.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - forms
+  - electronic
+  - data
+  - capture
+  - implementation
+  requires_context: false
+variables:
+- name: dcp
+  description: The dcp to use for this prompt
+  required: true
+- name: dmp
+  description: 'Data Clean Plan (DCP): `{{dcp}}`'
+  required: true
+- name: protocol
+  description: 'Data Management Plan (DMP): `{{dmp}}`'
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are an EDC Developer. Design electronic Case Report Forms (eCRFs) with built-in edit checks, branching logic,
+    and automatic data generation. Adhere to 21 CFR Part 11 and CDISC CDASH.
+- role: user
+  content: 'Create an eCRF template for the protocol that includes automated logic for site identifiers and field-level edit
+    checks to minimize data entry discrepancies.
+
+
+    Inputs:
+
+    - Clinical Protocol: `{{protocol}}`
+
+    - Data Management Plan (DMP): `{{dmp}}`
+
+    - Data Clean Plan (DCP): `{{dcp}}`
+
+
+    Output format:
+
+    Markdown eCRF Specification (Field | Type | Logic/Check).'
+testData:
+- input: 'protocol: "Collect Systolic BP. Range 80-200."
+
+    dmp: "Standard checks apply."
+
+    dcp: "Query if out of range."
+
+    '
+  expected: '| Field | Type | Logic/Check |
+
+    '
+evaluators:
+- name: Spec Table
+  string:
+    contains: '| Field |'
+- name: Edit Check
+  string:
+    contains: Range
+
+```

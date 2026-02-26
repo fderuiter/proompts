@@ -1,0 +1,76 @@
+---
+title: Competitive-Bid Pricing & Margin Optimizer
+---
+
+# Competitive-Bid Pricing & Margin Optimizer
+
+Compare competitor bids and internal costs to recommend a winning price with target margin.
+
+[View Source YAML](../../../../../prompts/business/cfo/cfo_workflow/02_competitive_bid_pricing.prompt.yaml)
+
+```yaml
+---
+name: Competitive-Bid Pricing & Margin Optimizer
+version: 0.1.0
+description: Compare competitor bids and internal costs to recommend a winning price with target margin.
+metadata:
+  domain: business
+  complexity: high
+  tags:
+  - finance
+  - competitive-bid
+  - pricing
+  - margin
+  - optimizer
+  requires_context: false
+variables:
+- name: competitor_bids
+  description: list of competitor prices (USD)
+  required: true
+- name: internal_cost
+  description: our estimated delivery cost (USD)
+  required: true
+- name: target_margin
+  description: desired profit margin percentage
+  required: true
+- name: volume_adjustments
+  description: optional volume or scope notes
+  required: true
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: Act as my strategic pricing manager. We are bidding on a multi-year oncology study against two top-10 CROs.
+- role: user
+  content: '- `{{competitor_bids}}` – list of competitor prices (USD).
+
+    - `{{internal_cost}}` – our estimated delivery cost (USD).
+
+    - `{{target_margin}}` – desired profit margin percentage.
+
+    - `{{volume_adjustments}}` – optional volume or scope notes.
+
+
+    Start the response with **Bid Analysis -**.
+
+    Output format:
+
+    1. Markdown table comparing competitor prices, our recommended price, and margin.
+
+    2. Three bullet-point justification notes on win strategy.'
+testData:
+- input: 'competitor_bids: [1000000, 1100000]
+
+    internal_cost: 850000
+
+    target_margin: 0.2
+
+    volume_adjustments: none'
+  expected: Bid Analysis -
+evaluators:
+- name: Output should start with 'Bid Analysis -'
+  string:
+    startsWith: Bid Analysis -
+
+```

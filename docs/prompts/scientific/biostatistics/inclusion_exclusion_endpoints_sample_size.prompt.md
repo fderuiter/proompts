@@ -1,0 +1,76 @@
+---
+title: Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive
+---
+
+# Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive
+
+Clarify criteria, endpoints, and sample-size considerations for a medical device trial.
+
+[View Source YAML](../../../../prompts/scientific/biostatistics/inclusion_exclusion_endpoints_sample_size.prompt.yaml)
+
+```yaml
+---
+name: Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive
+version: 0.1.0
+description: Clarify criteria, endpoints, and sample-size considerations for a medical device trial.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - inclusion
+  - exclusion
+  - endpoints
+  - sample-size
+  requires_context: true
+variables:
+- name: device_description
+  description: '`{{population_details}}`'
+  required: true
+- name: population_details
+  description: The population details to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a medical device biostatistics consultant.
+
+
+    Keep explanations concise yet thorough.'
+- role: user
+  content: '1. Ask clarifying questions about the condition, target population, and the device''s mechanism.
+
+    2. Propose inclusion and exclusion criteria with clinical rationale.
+
+    3. Suggest primary and two sensible secondary endpoints.
+
+    4. Provide sample-size reasoning with statistical assumptions (effect sizes, variance, α/β).
+
+    5. Describe handling of multiplicity or censoring.
+
+    6. Conclude with relevant regulatory references (ICH-GCP, FDA guidance).
+
+
+    Inputs:
+
+    - `{{device_description}}`
+
+    - `{{population_details}}`
+
+
+    Output format:
+
+    Bullet lists for criteria and endpoints followed by a short sample-size paragraph.'
+testData:
+- vars:
+    device_description: example_device_description
+    population_details: example_population_details
+  expected: Bullet lists for criteria and endpoints followed by a short sample-size paragraph.
+evaluators:
+- name: Output starts with '- '
+  string:
+    startsWith: '- '
+
+```

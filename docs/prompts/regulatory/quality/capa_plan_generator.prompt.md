@@ -1,0 +1,69 @@
+---
+title: CAPA Plan Generator
+---
+
+# CAPA Plan Generator
+
+Generate a Corrective and Preventive Action (CAPA) plan based on audit findings.
+
+[View Source YAML](../../../../prompts/regulatory/quality/capa_plan_generator.prompt.yaml)
+
+```yaml
+---
+name: CAPA Plan Generator
+version: 0.1.0
+description: Generate a Corrective and Preventive Action (CAPA) plan based on audit findings.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - quality
+  - capa
+  - plan
+  - generator
+  requires_context: false
+variables:
+- name: audit_findings
+  description: list of major findings
+  required: true
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a GxP audit consultant for a CRO. A draft sponsor audit report lists five major findings.
+
+
+    Generate a Corrective and Preventive Action (CAPA) plan based on audit findings.'
+- role: user
+  content: '1. For each finding, conduct root-cause analysis using the 5 Whys method.
+
+    1. Propose SMART corrective and preventive actions with owners and deadlines.
+
+    1. Describe effectiveness checks.
+
+    1. Present results as a CAPA tracker table ready for Excel import.
+
+    1. Conclude with one sentence on how the plan prevents recurrence.
+
+
+    Inputs:
+
+    - `{{audit_findings}}` — list of major findings.
+
+
+    Output format:
+
+    Markdown table plus short concluding sentence.
+
+
+    Additional notes:
+
+    Ensure alignment with FDA 21 CFR 820.100 and ISO 13485:2016.
+
+
+    <!-- markdownlint-enable MD029 MD036 -->'
+testData: []
+evaluators: []
+
+```

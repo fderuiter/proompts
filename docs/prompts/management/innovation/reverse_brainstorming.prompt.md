@@ -1,0 +1,62 @@
+---
+title: Reverse Brainstorming
+---
+
+# Reverse Brainstorming
+
+Flip negative ideas into constructive solutions.
+
+[View Source YAML](../../../../prompts/management/innovation/reverse_brainstorming.prompt.yaml)
+
+```yaml
+---
+name: Reverse Brainstorming
+version: 0.1.0
+description: Flip negative ideas into constructive solutions.
+metadata:
+  domain: management
+  complexity: low
+  tags:
+  - innovation
+  - reverse
+  - brainstorming
+  requires_context: false
+variables:
+- name: problem
+  description: The problem to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.7
+messages:
+- role: system
+  content: The exercise targets `{{problem}}` and must stay within 110 words.
+- role: user
+  content: '1. Ask, "How could we make it worse?" and list ten worsening ideas.
+
+    2. Turn each idea into a constructive bullet prefixed with "➜".
+
+    3. Build a mini-table (Solution \| Impact High/Med/Low) ranking the top three.
+
+
+    Inputs:
+
+    - `{{problem}}`: issue to address.
+
+
+    Output format:
+
+    Bulleted list plus markdown table.'
+testData:
+- vars:
+    problem: example_problem
+  expected: Bulleted list plus markdown table.
+evaluators:
+- name: Output includes '➜' bullet prefix
+  string:
+    contains: ➜
+- name: Output includes Solution | Impact table header
+  string:
+    contains: Solution | Impact
+
+```

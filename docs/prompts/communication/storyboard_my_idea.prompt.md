@@ -1,0 +1,58 @@
+---
+title: Storyboard-My-Idea
+---
+
+# Storyboard-My-Idea
+
+Storyboard “[PROJECT OR MESSAGE]” for a 60-second explainer video:
+
+[View Source YAML](../../../prompts/communication/storyboard_my_idea.prompt.yaml)
+
+```yaml
+---
+name: Storyboard-My-Idea
+version: 0.1.0
+description: 'Storyboard “[PROJECT OR MESSAGE]” for a 60-second explainer video:'
+metadata:
+  domain: communication
+  complexity: low
+  tags:
+  - storyboard-my-idea
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: '1. Generate exactly 6 frames.
+
+    2. For each frame give (a) scene description, (b) on-screen text ≤ 15 words, (c) suggested voice-over ≤ 20 words.
+
+    3. End with a one-sentence emotional takeaway for the viewer.'
+- role: user
+  content: '{{input}}'
+testData:
+- input: Eco-friendly water bottle
+  expected: 'Frame 1: Plastic waste piles up.
+
+    Frame 2: Reusable bottle introduced.
+
+    Frame 3: People refill happily.
+
+    Frame 4: Bottle features shown.
+
+    Frame 5: Community cleanup.
+
+    Frame 6: Clean beach celebration.
+
+    Takeaway: Every refill protects the ocean.'
+evaluators:
+- name: Output includes frame 6
+  string:
+    contains: Frame 6
+
+```

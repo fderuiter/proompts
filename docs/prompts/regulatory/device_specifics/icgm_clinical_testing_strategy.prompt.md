@@ -1,0 +1,67 @@
+---
+title: iCGM Clinical Testing Strategy
+---
+
+# iCGM Clinical Testing Strategy
+
+Draft a clinical study plan to demonstrate accuracy for an iCGM system.
+
+[View Source YAML](../../../../prompts/regulatory/device_specifics/icgm_clinical_testing_strategy.prompt.yaml)
+
+```yaml
+---
+name: iCGM Clinical Testing Strategy
+version: 0.1.0
+description: Draft a clinical study plan to demonstrate accuracy for an iCGM system.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - medical-devices
+  - cgm
+  - clinical
+  - testing
+  - strategy
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR 862.1355
+
+
+    ## Objective
+
+    Draft a clinical study plan to demonstrate accuracy for an iCGM system.
+
+
+    ## Output Format
+
+    Formal clinical study protocol outline.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Sensor specifications, target population, and wear period details. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Compare
+
+```

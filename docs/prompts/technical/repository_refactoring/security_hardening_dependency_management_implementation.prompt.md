@@ -1,0 +1,50 @@
+---
+title: Security Hardening and Dependency Management Implementation
+---
+
+# Security Hardening and Dependency Management Implementation
+
+Secure the repository and manage its dependencies by externalizing secrets, addressing vulnerabilities, and updating dependencies.
+
+[View Source YAML](../../../../prompts/technical/repository_refactoring/security_hardening_dependency_management_implementation.prompt.yaml)
+
+```yaml
+---
+name: Security Hardening and Dependency Management Implementation
+version: 0.1.0
+description: Secure the repository and manage its dependencies by externalizing secrets, addressing vulnerabilities, and updating
+  dependencies.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - repository-refactoring
+  - security
+  - hardening
+  - dependency
+  - management
+  requires_context: true
+variables: []
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are a DevSecOps Engineer securing a repository and managing its dependencies.
+- role: user
+  content: "As a DevSecOps Engineer, your responsibility is to secure the repository and manage its dependencies. You will\
+    \ provide the necessary configuration files and code changes to harden the repository.\n\nYour implementation must include\
+    \ the following actions:\n\n1.  **Externalize Secrets:**\n    *   Find all hardcoded secrets, API keys, and other credentials\
+    \ within the code.\n    *   Replace the hardcoded values with calls to environment variables.\n    *   Create a `.env.example`\
+    \ file as a template for developers, including placeholder values for all required variables.\n\n2.  **Address Critical\
+    \ Vulnerabilities:**\n    *   Address any critical security vulnerabilities that were previously identified (e.g., from\
+    \ a SAST scan).\n    *   Provide the code diffs for the fixes.\n\n3.  **Manage Dependencies:**\n    *   Update all third-party\
+    \ dependencies to their latest stable and secure versions.\n    *   Remove any unused or unnecessary packages.\n    *\
+    \   Ensure an up-to-date lock file (e.g., `package-lock.json`, `poetry.lock`) is present and committed.\n    *   Provide\
+    \ the commands used to update and prune the dependencies.\n\n**Output Format:**\nProvide the complete content for the\
+    \ new `.env.example` file. For all code and dependency changes, provide a series of `diffs` in the git diff format, along\
+    \ with the commands used for dependency management."
+testData: []
+evaluators: []
+
+```

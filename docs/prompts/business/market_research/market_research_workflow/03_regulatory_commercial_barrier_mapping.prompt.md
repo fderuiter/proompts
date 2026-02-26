@@ -1,0 +1,61 @@
+---
+title: Regulatory & Commercial Barrier Mapping
+---
+
+# Regulatory & Commercial Barrier Mapping
+
+Assess hurdles for launching `{{device}}` in major markets.
+
+[View Source YAML](../../../../../prompts/business/market_research/market_research_workflow/03_regulatory_commercial_barrier_mapping.prompt.yaml)
+
+```yaml
+---
+name: Regulatory & Commercial Barrier Mapping
+version: 0.1.0
+description: Assess hurdles for launching `{{device}}` in major markets.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - market-research
+  - regulatory
+  - commercial
+  - barrier
+  - mapping
+  requires_context: false
+variables:
+- name: device
+  description: device to analyze
+  required: true
+- name: markets
+  description: markets of interest
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are an expert in global medical device regulation.
+
+
+    1. Compare approval pathways for the top three markets.
+
+    2. Summarize typical timelines, costs and risks.
+
+    3. Outline commercial entry barriers such as reimbursement or distributor dynamics.
+
+    4. Recommend mitigation strategies for each hurdle.
+
+
+    Keep guidance concise and actionable.'
+- role: user
+  content: '- `{{device}}` – device to analyze
+
+    - `{{markets}}` – markets of interest
+
+
+    Output format: Comparative table followed by five prioritized strategic actions.'
+testData: []
+evaluators: []
+
+```

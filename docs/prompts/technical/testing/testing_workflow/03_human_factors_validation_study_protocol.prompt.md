@@ -1,0 +1,102 @@
+---
+title: Human Factors Validation Study Protocol
+---
+
+# Human Factors Validation Study Protocol
+
+Draft a user validation study protocol for a medical device.
+
+[View Source YAML](../../../../../prompts/technical/testing/testing_workflow/03_human_factors_validation_study_protocol.prompt.yaml)
+
+```yaml
+---
+name: Human Factors Validation Study Protocol
+version: 0.1.0
+description: Draft a user validation study protocol for a medical device.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - testing
+  - human
+  - factors
+  - validation
+  - study
+  requires_context: false
+variables:
+- name: class
+  description: device class
+  required: true
+- name: device_name
+  description: name of the device
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a human‑factors specialist preparing the design validation protocol for **{{device_name}}**. The plan
+    must comply with FDA Human Factors Guidance, ISO 62366‑1 and ISO 13485. Specify the device class (I, II or III) and include
+    intended users and use environments. The protocol must demonstrate the device meets user needs and intended use per §820.30(g).
+    Maintain a formal tone suitable for a regulatory submission. Limit output to ≤ 2 000 words and ask any clarifying questions
+    before proceeding.
+
+
+    Confirm any missing design inputs before finalizing the protocol.'
+- role: user
+  content: '1. Outline the purpose and regulatory basis.
+
+    2. Define study objectives and success metrics.
+
+    3. Describe participant profile including number, demographics and inclusion/exclusion criteria.
+
+    4. Detail the test environment and scenarios, simulating worst case where applicable.
+
+    5. Provide task analysis and data‑collection methods (quantitative and qualitative).
+
+    6. Specify risk‑mitigation triggers and stop rules.
+
+    7. Present the data analysis plan.
+
+    8. List deliverables and acceptance criteria.
+
+
+    Inputs:
+
+    - `{{device_name}}` – name of the device
+
+    - `{{class}}` – device class
+
+
+    Output Format:
+
+    1. Purpose and regulatory basis
+
+    2. Objectives and success metrics
+
+    3. Participant profile
+
+    4. Test environment and scenarios
+
+    5. Task analysis and data-collection methods
+
+    6. Risk-mitigation triggers and stop rules
+
+    7. Data analysis plan
+
+    8. Deliverables and acceptance criteria'
+testData:
+- input: 'device_name: Smart Inhaler
+
+    class: II
+
+    '
+  expected: 'Purpose and regulatory basis
+
+    '
+evaluators:
+- name: Output starts with 'Purpose and regulatory basis'
+  string:
+    startsWith: Purpose and regulatory basis
+
+```

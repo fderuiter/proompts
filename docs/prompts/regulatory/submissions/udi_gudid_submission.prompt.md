@@ -1,0 +1,66 @@
+---
+title: UDI GUDID Submission
+---
+
+# UDI GUDID Submission
+
+Prepare a Device Identifier (DI) record for GUDID submission.
+
+[View Source YAML](../../../../prompts/regulatory/submissions/udi_gudid_submission.prompt.yaml)
+
+```yaml
+---
+name: UDI GUDID Submission
+version: 0.1.0
+description: Prepare a Device Identifier (DI) record for GUDID submission.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - submissions
+  - udi
+  - gudid
+  - submission
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR Part 830
+
+
+    ## Objective
+
+    Prepare a Device Identifier (DI) record for GUDID submission.
+
+
+    ## Output Format
+
+    Structured data list matching GUDID fields.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Device label, packaging levels, and GTIN data. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Cross\-check
+
+```

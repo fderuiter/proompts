@@ -1,0 +1,86 @@
+---
+title: Study Design and Statistical Approach
+---
+
+# Study Design and Statistical Approach
+
+Propose a clinical trial design with corresponding statistical approach.
+
+[View Source YAML](../../../../prompts/scientific/biostatistics/study_design_statistical_approach.prompt.yaml)
+
+```yaml
+---
+name: Study Design and Statistical Approach
+version: 0.1.0
+description: Propose a clinical trial design with corresponding statistical approach.
+metadata:
+  domain: scientific
+  complexity: high
+  tags:
+  - biostatistics
+  - study
+  - design
+  - statistical
+  - approach
+  requires_context: true
+variables:
+- name: device_type
+  description: '`{{trial_phase}}`'
+  required: true
+- name: endpoints
+  description: '`{{regulatory_target}}`'
+  required: true
+- name: regulatory_target
+  description: The regulatory target to use for this prompt
+  required: true
+- name: trial_phase
+  description: '`{{endpoints}}`'
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a senior biostatistician specializing in medical-device trials.
+
+
+    Keep recommendations concise and reference relevant guidance documents where helpful.'
+- role: user
+  content: '1. Ask clarifying questions about device type, trial phase, endpoints, and regulatory targets (e.g., FDA 510(k),
+    IDE).
+
+    2. Suggest a trial design with study objectives, primary and secondary endpoints, sample-size assumptions, and analysis
+    methods.
+
+    3. Note any interim analysis or adaptive design considerations.
+
+    4. Justify each choice based on regulatory guidance.
+
+
+    Inputs:
+
+    - `{{device_type}}`
+
+    - `{{trial_phase}}`
+
+    - `{{endpoints}}`
+
+    - `{{regulatory_target}}`
+
+
+    Output format:
+
+    Bullet summary followed by short explanatory paragraphs.'
+testData:
+- vars:
+    device_type: example_device_type
+    trial_phase: example_trial_phase
+    endpoints: example_endpoints
+    regulatory_target: example_regulatory_target
+  expected: Bullet summary followed by short explanatory paragraphs.
+evaluators:
+- name: Output starts with '- '
+  string:
+    startsWith: '- '
+
+```

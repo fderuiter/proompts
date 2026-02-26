@@ -1,0 +1,67 @@
+---
+title: Establishment of Food Traceability Plan
+---
+
+# Establishment of Food Traceability Plan
+
+Create a structured traceability plan for a facility handling foods on the Food Traceability List.
+
+[View Source YAML](../../../../prompts/regulatory/food_safety/establishment_of_food_traceability_plan.prompt.yaml)
+
+```yaml
+---
+name: Establishment of Food Traceability Plan
+version: 0.1.0
+description: Create a structured traceability plan for a facility handling foods on the Food Traceability List.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - food-safety
+  - establishment
+  - food
+  - traceability
+  - plan
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR Part 1 Subpart S
+
+
+    ## Objective
+
+    Create a structured traceability plan for a facility handling foods on the Food Traceability List.
+
+
+    ## Output Format
+
+    Structured text document with sections for procedures and identification.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: List of foods handled, record maintenance procedures, and contact information. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Ensure
+
+```

@@ -1,0 +1,57 @@
+---
+title: Folder and Module Organization
+---
+
+# Folder and Module Organization
+
+Provide a detailed plan for restructuring a Python codebase into clearer, feature-based modules.
+
+[View Source YAML](../../../../../prompts/technical/software_engineering/lifecycle/folder_module_organization.prompt.yaml)
+
+```yaml
+---
+name: Folder and Module Organization
+version: 0.1.0
+description: Provide a detailed plan for restructuring a Python codebase into clearer, feature-based modules.
+metadata:
+  domain: technical
+  complexity: medium
+  tags:
+  - software-engineering
+  - sdlc
+  - folder
+  - module
+  - organization
+  requires_context: true
+variables:
+- name: repo_path
+  description: path to the project source
+  required: true
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'Use this prompt when analysing an existing project with confusing package layouts and circular dependencies.
+
+
+    Include exact shell commands where possible and highlight tools such as `import-linter` or `ruff` to enforce layering
+    rules.'
+- role: user
+  content: "1. Analyse the current package and module structure.\n1. Identify opportunities for feature- or domain-based grouping\
+    \ and flag separation-of-concern violations.\n1. Produce a step-by-step refactoring plan including:\n   - pre-refactor\
+    \ checklist commands (`pytest`, `coverage`, `flake8` or `pylint`)\n   - file migration steps with `git mv` and import\
+    \ updates\n   - post-refactor validation commands\n   - rollback guidance if a step fails\n1. Offer follow-up prompts\
+    \ to drill into sample modules, examine cross-module dependencies, and validate scalability with a new feature stub.\n\
+    Inputs:\n- `{{repo_path}}` – path to the project source\nOutput format:\nMarkdown plan detailing the checklist, migration\
+    \ steps, validation commands, and follow-up prompts."
+testData:
+- vars:
+    repo_path: example_repo_path
+  expected: Markdown plan detailing the checklist, migration steps, validation commands, and follow-up prompts.
+evaluators:
+- name: Output starts with 'Checklist'
+  string:
+    startsWith: Checklist
+
+```

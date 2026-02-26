@@ -1,0 +1,55 @@
+---
+title: Architecture Design: Page Object Model
+---
+
+# Architecture Design: Page Object Model
+
+Implement the Page Object Model pattern to separate UI locators from test logic.
+
+[View Source YAML](../../../../../prompts/technical/testing/selenium_automation/pom_implementation.prompt.yaml)
+
+```yaml
+---
+name: 'Architecture Design: Page Object Model'
+version: 0.1.0
+description: Implement the Page Object Model pattern to separate UI locators from test logic.
+metadata:
+  domain: technical
+  complexity: low
+  tags:
+  - testing
+  - selenium
+  - architecture
+  - design
+  - page
+  requires_context: false
+variables:
+- name: html_source
+  description: The html source to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: Act as a Selenium automation expert. Create a Java class following the Page Object Model (POM) for a 'Login' page
+    based on the provided HTML source or specifications. Use @FindBy annotations or private By locators for fields (username,
+    password, login button) and implement public methods (e.g., 'loginValidUser') that return appropriate page objects. Ensure
+    the constructor initializes elements using PageFactory.initElements.
+- role: user
+  content: 'Create a POM class for the following page source/spec:
+
+
+    <html_source>
+
+    {{html_source}}
+
+    </html_source>'
+testData:
+- input: "html_source: |\n  <input id='username'>\n  <input id='password'>\n  <button id='login'>Login</button>"
+  expected: '@FindBy(id = "username")'
+evaluators:
+- name: Uses FindBy annotation
+  regex: '@FindBy'
+
+```

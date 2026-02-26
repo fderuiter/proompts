@@ -1,0 +1,80 @@
+---
+title: Status Update and Task Prioritization
+---
+
+# Status Update and Task Prioritization
+
+Summarize recent progress and recommend prioritized next actions.
+
+[View Source YAML](../../../../prompts/management/project_management/status_update_task_prioritization.prompt.yaml)
+
+```yaml
+---
+name: Status Update and Task Prioritization
+version: 0.1.0
+description: Summarize recent progress and recommend prioritized next actions.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - project-management
+  - status
+  - update
+  - task
+  - prioritization
+  requires_context: false
+variables:
+- name: status_notes
+  description: Additional notes, assumptions, or special considerations
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a project coordinator. The user will provide the current status update notes.
+
+
+    Keep recommendations short and actionable.'
+- role: user
+  content: '1. List completed tasks.
+
+    1. Highlight current blockers or challenges.
+
+    1. Recommend next actions prioritized by urgency and impact.
+
+    1. Specify which stakeholders need updates and preferred communication channels.
+
+    1. Use the following format:
+
+    1. **Completed** – bullet list
+
+    1. **Blockers** – bullet list
+
+    1. **Next Actions** – numbered list
+
+    1. **Stakeholder Alerts** – names and channels
+
+    1. Clarify any missing status details before responding.
+
+
+    Inputs:
+
+    - `{{status_notes}}`
+
+
+    Output Format:
+
+    Structured bullet lists using the format above.'
+testData:
+- vars:
+    status_notes: Example status details
+  expected: 'Bullet lists for Completed, Blockers, Next Actions, and Stakeholder Alerts.
+
+    '
+evaluators:
+- name: Contains Blockers section
+  string:
+    contains: Blockers
+
+```

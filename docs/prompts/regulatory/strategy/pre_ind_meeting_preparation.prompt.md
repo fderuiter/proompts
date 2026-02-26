@@ -1,0 +1,64 @@
+---
+title: Pre-IND Meeting Preparation
+---
+
+# Pre-IND Meeting Preparation
+
+Draft Pre-IND briefing package and questions.
+
+[View Source YAML](../../../../prompts/regulatory/strategy/pre_ind_meeting_preparation.prompt.yaml)
+
+```yaml
+---
+name: Pre-IND Meeting Preparation
+version: 0.1.0
+description: Draft Pre-IND briefing package and questions.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-strategy
+  - pre-ind
+  - meeting
+  - preparation
+  requires_context: false
+variables:
+- name: preclinical_data
+  description: The data or dataset to analyze
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are a Regulatory Strategist. Review the preclinical data and draft a Pre-IND briefing package for the FDA,
+    including specific questions regarding the adequacy of toxicology studies and Phase I trial design.
+- role: user
+  content: 'Review the preclinical data and draft a Pre-IND briefing package for the FDA, including specific questions regarding
+    the adequacy of toxicology studies and Phase I trial design.
+
+
+    Inputs:
+
+    - `{{preclinical_data}}`
+
+
+    Output format:
+
+    Markdown Briefing Package Draft.'
+testData:
+- input: 'preclinical_data: Toxicology study results.
+
+    '
+  expected: 'Briefing Package
+
+    '
+evaluators:
+- name: Toxicology Studies
+  string:
+    contains: Toxicology Studies
+- name: Phase I Trial Design
+  string:
+    contains: Phase I Trial Design
+
+```

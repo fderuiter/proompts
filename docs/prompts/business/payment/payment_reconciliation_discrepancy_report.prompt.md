@@ -1,0 +1,68 @@
+---
+title: Payment Reconciliation and Discrepancy Report
+---
+
+# Payment Reconciliation and Discrepancy Report
+
+Identify and categorize payment discrepancies before study close-out.
+
+[View Source YAML](../../../../prompts/business/payment/payment_reconciliation_discrepancy_report.prompt.yaml)
+
+```yaml
+---
+name: Payment Reconciliation and Discrepancy Report
+version: 0.1.0
+description: Identify and categorize payment discrepancies before study close-out.
+metadata:
+  domain: business
+  complexity: medium
+  tags:
+  - payment
+  - reconciliation
+  - discrepancy
+  - report
+  requires_context: false
+variables:
+- name: cta_budget
+  description: contracted budget amounts
+  required: true
+- name: payment_ledger
+  description: site payment ledger
+  required: true
+- name: site_queries
+  description: outstanding site billing questions
+  required: true
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a compliance auditor reviewing payments for Study "Cardio-5678." Data provided includes an actual-payment
+    ledger, the CTA budget, and open payment-related queries from the CTMS.
+
+
+    Identify and categorize payment discrepancies before study close-out.'
+- role: user
+  content: "1. Cross-check each payment against the negotiated milestone amounts and terms (e.g., NET30 after data entry).\n\
+    1. Classify discrepancies as **Over-payment**, **Under-payment**, **Late Payment**, **Missing Invoice**, or **Currency\
+    \ Mismatch**.\n1. Recommend a corrective action for each discrepancy (e.g., claw-back, manual top-up, FX true-up).\n1.\
+    \ Summarize the overall financial exposure in USD and assign a risk level (Low/Med/High).\n1. Confirm any data-quality\
+    \ questions before starting.\n\n  Inputs:\n  - `{{payment_ledger}}` – site payment ledger\n  - `{{cta_budget}}` – contracted\
+    \ budget amounts\n  - `{{site_queries}}` – outstanding site billing questions\n\nOutput format:\n- Markdown table with\
+    \ columns: `Site_ID \\| Issue_Type \\| Amount_USD \\| Root_Cause \\| Recommended_Action`.\n- Bullet list of systemic issues\
+    \ and preventative next steps.\n\nAdditional notes:\nKeep recommendations actionable and concise."
+testData:
+- payment_ledger: 'Site_ID,Milestone,Amount
+
+    S1,Start-up,1000'
+  cta_budget: 'Milestone,Amount
+
+    Start-up,1000'
+  site_queries: 'S1: none'
+  expected: Issue_Type
+evaluators:
+- name: Contains issue type column
+  string:
+    contains: Issue_Type
+
+```

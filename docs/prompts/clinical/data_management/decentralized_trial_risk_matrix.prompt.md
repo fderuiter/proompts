@@ -1,0 +1,50 @@
+---
+title: Decentralized Trial Risk Matrix
+---
+
+# Decentralized Trial Risk Matrix
+
+Build a risk matrix for decentralized trials.
+
+[View Source YAML](../../../../prompts/clinical/data_management/decentralized_trial_risk_matrix.prompt.yaml)
+
+```yaml
+---
+name: Decentralized Trial Risk Matrix
+version: 0.1.0
+description: Build a risk matrix for decentralized trials.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - data-management
+  - decentralized
+  - trial
+  - risk
+  - matrix
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a risk analyst evaluating decentralized clinical trials through
+
+    structured risk matrices.
+
+    '
+- role: user
+  content: '{{input}}'
+testData:
+- input: List potential risks for remote patient monitoring.
+  expected: Includes mitigation strategies and risk levels.
+evaluators:
+- name: Output mentions risk
+  string:
+    contains: risk
+
+```

@@ -1,0 +1,91 @@
+---
+title: Risk Assessment Expert
+---
+
+# Risk Assessment Expert
+
+Provide a comprehensive biocompatibility risk assessment for a specified device.
+
+[View Source YAML](../../../../../prompts/scientific/biosafety/biological_safety_workflow/01_risk_assessment_expert.prompt.yaml)
+
+```yaml
+---
+name: Risk Assessment Expert
+version: 0.1.0
+description: Provide a comprehensive biocompatibility risk assessment for a specified device.
+metadata:
+  domain: scientific
+  complexity: low
+  tags:
+  - biosafety
+  - risk
+  - assessment
+  - expert
+  requires_context: false
+variables:
+- name: medical_device_type
+  description: description of the device
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a senior biological safety consultant. Apply ISO 10993 and ISO 14971.
+
+
+    Focus on clear, actionable steps.'
+- role: user
+  content: '1. Identify potential biological hazards.
+
+    2. Evaluate likelihood and severity of each hazard.
+
+    3. Recommend testing strategies and mitigation controls.
+
+    4. Provide a structured summary table.
+
+
+    Inputs:
+
+    - `{{medical_device_type}}` — description of the device
+
+
+    Output format:
+
+    Markdown table summarizing hazards and mitigations.'
+testData:
+- vars:
+    medical_device_type: 'Silicone-coated intravascular catheter for central venous access,
+
+      intended for long-term use (>30 days) in adult patients'
+  expected: 'Markdown table with columns for Hazard, Likelihood, Severity,
+
+    Testing Strategy, and Mitigation Controls. Should reference ISO 10993
+
+    standards and include specific biological hazards like cytotoxicity,
+
+    sensitization, and thrombogenicity.'
+- vars:
+    medical_device_type: 'Titanium hip implant with hydroxyapatite coating for
+
+      total hip replacement in osteoarthritis patients'
+  expected: 'Comprehensive risk assessment table identifying hazards such as
+
+    metal ion release, particulate wear debris, and infection risk.
+
+    Should include ISO 14971 risk management approach.'
+evaluators:
+- name: Output starts with a markdown table row
+  string:
+    startsWith: '|'
+- name: Includes hazard identification
+  string:
+    contains: Hazard
+- name: References ISO standards
+  string:
+    contains: ISO
+- name: Contains mitigation strategies
+  string:
+    contains: mitigation
+
+```

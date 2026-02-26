@@ -1,0 +1,66 @@
+---
+title: Quality System Evaluation (MRA)
+---
+
+# Quality System Evaluation (MRA)
+
+Generate a quality system evaluation report for a manufacturer under the US-EC MRA.
+
+[View Source YAML](../../../../prompts/regulatory/quality/quality_system_evaluation_mra.prompt.yaml)
+
+```yaml
+---
+name: Quality System Evaluation (MRA)
+version: 0.1.0
+description: Generate a quality system evaluation report for a manufacturer under the US-EC MRA.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - quality
+  - system
+  - evaluation
+  - mra
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR 820 / MRA Subpart B
+
+
+    ## Objective
+
+    Generate a quality system evaluation report for a manufacturer under the US-EC MRA.
+
+
+    ## Output Format
+
+    Full or abbreviated Quality System Evaluation Report.'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Onsite inspection data and manufacturing records. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Cross\-reference
+
+```

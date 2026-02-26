@@ -1,0 +1,60 @@
+---
+title: CRF Quality Auditor
+---
+
+# CRF Quality Auditor
+
+- Evaluate against CDISC CDASH IG v2.1 and SDTM traceability.
+
+[View Source YAML](../../../../../prompts/clinical/forms/clinical_prompts_workflow/02_crf_quality_auditor.prompt.yaml)
+
+```yaml
+---
+name: CRF Quality Auditor
+version: 0.1.0
+description: '- Evaluate against CDISC CDASH IG v2.1 and SDTM traceability.'
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - forms
+  - crf
+  - quality
+  - auditor
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: '- Check for: duplicated fields, ambiguous wording, inconsistent units, uncontrolled text boxes, and mis-aligned
+    visit windows.
+
+    - For each issue, suggest a concrete fix and cite the relevant guideline section.
+
+    - Summarise the overall risk level (low / moderate / high).
+
+    - Return your findings as a two-column Markdown table with columns "Issue" and "Recommended Fix".
+
+    - Reflect step-by-step before producing the table.'
+- role: user
+  content: '{{input}}'
+testData:
+- input: 'Demographics form lists Age twice.
+
+    '
+  expected: '| Issue | Recommended Fix |
+
+    | Duplicate field ''Age'' | Remove one instance to avoid confusion. |
+
+    '
+evaluators:
+- name: Should flag duplicate field
+  string:
+    contains: Duplicate field
+
+```

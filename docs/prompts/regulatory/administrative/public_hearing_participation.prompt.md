@@ -1,0 +1,66 @@
+---
+title: Public Hearing Participation
+---
+
+# Public Hearing Participation
+
+Complete a Notice of Participation for a formal evidentiary public hearing.
+
+[View Source YAML](../../../../prompts/regulatory/administrative/public_hearing_participation.prompt.yaml)
+
+```yaml
+---
+name: Public Hearing Participation
+version: 0.1.0
+description: Complete a Notice of Participation for a formal evidentiary public hearing.
+metadata:
+  domain: regulatory
+  complexity: low
+  tags:
+  - regulatory-admin
+  - public
+  - hearing
+  - participation
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.5
+messages:
+- role: system
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+
+
+    ## Context
+
+    21 CFR Part 12
+
+
+    ## Objective
+
+    Complete a Notice of Participation for a formal evidentiary public hearing.
+
+
+    ## Output Format
+
+    Standardized form (21 CFR 12.45).'
+- role: user
+  content: 'Please perform the task using the following input data:
+
+
+    <input>
+
+    {{input}}
+
+    </input>'
+testData:
+- input: Docket number, contact info, and specific interests. (Example data)
+  expected: Expected output as per instructions.
+evaluators:
+- name: Validation Check
+  regex: (?i)Confirm
+
+```

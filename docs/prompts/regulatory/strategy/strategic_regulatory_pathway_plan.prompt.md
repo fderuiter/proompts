@@ -1,0 +1,73 @@
+---
+title: Strategic Regulatory Pathway Plan
+---
+
+# Strategic Regulatory Pathway Plan
+
+Outline a holistic global regulatory pathway for a medical device or IVD.
+
+[View Source YAML](../../../../prompts/regulatory/strategy/strategic_regulatory_pathway_plan.prompt.yaml)
+
+```yaml
+---
+name: Strategic Regulatory Pathway Plan
+version: 0.1.0
+description: Outline a holistic global regulatory pathway for a medical device or IVD.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - regulatory-strategy
+  - strategic
+  - regulatory
+  - pathway
+  - plan
+  requires_context: false
+variables:
+- name: device_name
+  description: product name
+  required: true
+- name: intended_use
+  description: summary of clinical application
+  required: true
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a regulatory strategy consultant. The user is developing `{{device_name}}` intended for `{{intended_use}}`
+    in the US, EU (MDR/IVDR), and APAC markets.
+
+
+    Outline a holistic global regulatory pathway for a medical device or IVD.'
+- role: user
+  content: '1. Determine classification in each region.
+
+    1. List applicable standards such as ISO 13485 and ISO 14971.
+
+    1. Specify submission types (e.g., FDA 510(k), EU CE technical documentation).
+
+    1. Provide key timelines for major milestones.
+
+    1. Highlight potential pitfalls and mitigation strategies.
+
+
+    Inputs:
+
+    - `{{device_name}}` — product name.
+
+    - `{{intended_use}}` — summary of clinical application.
+
+
+    Output format:
+
+    Bulleted sections or tables summarizing classifications, required standards, submission types, timelines, and pitfalls.
+
+
+    Additional notes:
+
+    Keep advice concise and action‑oriented for a global audience.'
+testData: []
+evaluators: []
+
+```

@@ -1,0 +1,57 @@
+---
+title: Dual MDR / IVDR Conformity-Assessment Roadmap
+---
+
+# Dual MDR / IVDR Conformity-Assessment Roadmap
+
+Develop a coordinated roadmap for simultaneous MDR and IVDR submissions.
+
+[View Source YAML](../../../../prompts/regulatory/strategy/dual_mdr_ivdr_roadmap.prompt.yaml)
+
+```yaml
+---
+name: Dual MDR / IVDR Conformity-Assessment Roadmap
+version: 0.1.0
+description: Develop a coordinated roadmap for simultaneous MDR and IVDR submissions.
+metadata:
+  domain: regulatory
+  complexity: medium
+  tags:
+  - regulatory-strategy
+  - dual
+  - mdr
+  - ivdr
+  - conformity-assessment
+  requires_context: true
+variables:
+- name: startup_info
+  description: any additional project details
+  required: true
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are an EU regulatory strategist. A start‑up plans to launch:
+
+    • A Class IIa wearable ECG monitor (MDR)
+
+    • A companion Class B cloud‑based algorithm producing diagnostic indices (IVDR software)
+
+
+    Develop a coordinated roadmap for simultaneous MDR and IVDR submissions.'
+- role: user
+  content: "1. Create a side‑by‑side roadmap covering July 2025 to December 2028 with:\n   - Device‑classification justification\
+    \ (Annex VIII MDR and IVDR).\n   - Applicable harmonised standards or common specs.\n   - Conformity‑assessment route\
+    \ and Notified Body engagement points.\n   - QMS milestones (ISO 13485 and 15189 as relevant).\n   - Verification, validation,\
+    \ and clinical or performance‑evidence activities.\n   - Post‑market deliverables such as PMS plan, PMCF/PMPF, PSURs.\n\
+    \   - Key EU and national transition deadlines with dates.\n1. Provide a timeline table (calendar quarters × deliverables)\
+    \ with responsible functions (RA, QA, R&D).\n1. Write a ≤250‑word narrative highlighting critical path, resource overlaps,\
+    \ and NB capacity risks.\n1. Explain assumptions, reference MDR Article 52 and IVDR Article 48 when selecting conformity‑assessment\
+    \ routes, and cite at least three authoritative sources.\n\nInputs:\n- `{{startup_info}}` — any additional project details.\n\
+    \nOutput format:\nTimeline table followed by the narrative summary.\n\nAdditional notes:\nFocus on clear milestones and\
+    \ risk mitigation."
+testData: []
+evaluators: []
+
+```

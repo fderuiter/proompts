@@ -1,0 +1,83 @@
+---
+title: Sample-Size & Randomization Strategy
+---
+
+# Sample-Size & Randomization Strategy
+
+Determine sample size and recommend a randomization strategy for a clinical trial.
+
+[View Source YAML](../../../../prompts/scientific/biostatistics/sample_size_randomization_strategy.prompt.yaml)
+
+```yaml
+---
+name: Sample-Size & Randomization Strategy
+version: 0.1.0
+description: Determine sample size and recommend a randomization strategy for a clinical trial.
+metadata:
+  domain: scientific
+  complexity: medium
+  tags:
+  - biostatistics
+  - sample-size
+  - randomization
+  - strategy
+  requires_context: false
+variables:
+- name: dropout_rate
+  description: The dropout rate to use for this prompt
+  required: true
+- name: response_rate_active
+  description: '`{{response_rate_control}}`'
+  required: true
+- name: response_rate_control
+  description: '`{{dropout_rate}}`'
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a senior biostatistician at an international CRO following ICH E9(R1) and regulatory guidance.
+
+
+    Reason step by step internally but present only the final answer.'
+- role: user
+  content: '1. Review trial specifics such as indication, phase, and primary endpoint.
+
+    2. Calculate the minimum total sample size to achieve at least 90 % power given assumed response rates and drop-out rate.
+
+    3. Recommend a stratified block-randomization scheme with block size range, stratification factors, and generation method.
+
+    4. Explain any sensitivity or re-estimation options.
+
+    5. Provide R code using `pwr` or `power.prop.test` and `randomizeR` with inline comments.
+
+    6. Summarize key references to statistical guidance.
+
+
+    Inputs:
+
+    - `{{response_rate_active}}`
+
+    - `{{response_rate_control}}`
+
+    - `{{dropout_rate}}`
+
+
+    Output format:
+
+    Executive summary (≤150 words) followed by two tables: sample-size scenarios and randomization parameters. Conclude with
+    a fenced R code block.'
+testData:
+- vars:
+    response_rate_active: example_response_rate_active
+    response_rate_control: example_response_rate_control
+    dropout_rate: example_dropout_rate
+  expected: 'Executive summary (≤150 words) followed by two tables: sample-size scenarios and randomization parameters. Conclude
+    with a fenced R code block.'
+evaluators:
+- name: Output starts with 'Executive summary'
+  string:
+    startsWith: Executive summary
+
+```

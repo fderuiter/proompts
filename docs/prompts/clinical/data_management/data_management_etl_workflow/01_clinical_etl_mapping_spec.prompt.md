@@ -1,0 +1,55 @@
+---
+title: Clinical ETL Mapping Spec
+---
+
+# Clinical ETL Mapping Spec
+
+Create an ETL mapping specification for clinical data.
+
+[View Source YAML](../../../../../prompts/clinical/data_management/data_management_etl_workflow/01_clinical_etl_mapping_spec.prompt.yaml)
+
+```yaml
+---
+name: Clinical ETL Mapping Spec
+version: 0.1.0
+description: Create an ETL mapping specification for clinical data.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - data-management
+  - clinical
+  - etl
+  - mapping
+  - spec
+  requires_context: false
+variables:
+- name: etl_requirements
+  description: The requirements or specifications
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are an ETL specialist defining mapping specifications for clinical trial
+
+    data pipelines.
+
+    '
+- role: user
+  content: 'Here are the requirements for the ETL process:
+
+    {{etl_requirements}}
+
+
+    Based on these requirements, create a detailed ETL mapping specification.'
+testData:
+- input: Map source patient records to target schema fields.
+  expected: Includes field-to-field mappings.
+evaluators:
+- name: Output mentions mapping
+  string:
+    contains: mapping
+
+```

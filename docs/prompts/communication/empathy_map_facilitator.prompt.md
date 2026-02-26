@@ -1,0 +1,68 @@
+---
+title: Empathy-Map Facilitator
+---
+
+# Empathy-Map Facilitator
+
+Quickly capture a user persona’s voice and pain points.
+
+[View Source YAML](../../../prompts/communication/empathy_map_facilitator.prompt.yaml)
+
+```yaml
+---
+name: Empathy-Map Facilitator
+version: 0.1.0
+description: Quickly capture a user persona’s voice and pain points.
+metadata:
+  domain: communication
+  complexity: low
+  tags:
+  - empathy-map
+  - facilitator
+  requires_context: true
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'Empathy maps summarize what a persona says, thinks, does, and feels.
+
+
+    <!-- markdownlint-disable MD029 -->
+
+
+    1. Build a four-quadrant table with two concise bullets per quadrant.
+
+    2. Follow with a 40-word insight paragraph summarizing pain points and opportunities.
+
+    3. End with a single next-step research question.
+
+    4. Keep the entire reply under 140 words.
+
+
+    Focus on clarity and brevity so results fit in slide decks or reports.'
+- role: user
+  content: '{{input}}'
+testData:
+- input: Busy parent using meal kits
+  expected: 'Says: "I need quick dinners."
+
+    Thinks: "Am I a good cook?"
+
+    Does: orders kits weekly.
+
+    Feels: relieved but guilty.
+
+    Insight: Parents seek time-saving confidence.
+
+    Next-step research question: What recipes feel intimidating?'
+evaluators:
+- name: Output includes next-step question
+  string:
+    contains: Next-step
+
+```

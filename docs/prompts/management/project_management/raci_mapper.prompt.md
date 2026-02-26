@@ -1,0 +1,75 @@
+---
+title: RACI Mapper
+---
+
+# RACI Mapper
+
+Clarify team responsibilities using a RACI matrix.
+
+[View Source YAML](../../../../prompts/management/project_management/raci_mapper.prompt.yaml)
+
+```yaml
+---
+name: RACI Mapper
+version: 0.1.0
+description: Clarify team responsibilities using a RACI matrix.
+metadata:
+  domain: management
+  complexity: medium
+  tags:
+  - project-management
+  - raci
+  - mapper
+  requires_context: false
+variables:
+- name: project_phase
+  description: The project phase to use for this prompt
+  required: true
+- name: tasks
+  description: The task or objective to accomplish
+  required: true
+model: gpt-4o-mini
+modelParameters:
+  temperature: 0.7
+messages:
+- role: system
+  content: 'The user specifies a project phase and key tasks with team member initials.
+
+
+    Clarify team responsibilities using a RACI matrix.'
+- role: user
+  content: '1. Build a markdown table with columns Task, R, A, C, I for up to six tasks.
+
+    1. After the table, add a 35-word reflection highlighting any overload and suggest one reassignment.
+
+
+    Inputs:
+
+    - `{{project_phase}}`: project phase description.
+
+    - `{{tasks}}`: list of tasks with assigned initials.
+
+
+    Output format:
+
+    Markdown table followed by the reflection paragraph.
+
+
+    Additional notes:
+
+    Keep the response under 130 words and avoid jargon.'
+testData:
+- vars:
+    project_phase: Launch
+    tasks: 'Design marketing plan - AB
+
+      Build landing page - CD'
+  expected: '| Task | R | A | C | I |
+
+    | --- | --- | --- | --- | --- |'
+evaluators:
+- name: Outputs RACI headers
+  string:
+    contains: '| Task | R | A | C | I |'
+
+```

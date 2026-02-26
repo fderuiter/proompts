@@ -1,0 +1,67 @@
+---
+title: Database Lock Procedures
+---
+
+# Database Lock Procedures
+
+Review CRFs and prepare for database lock.
+
+[View Source YAML](../../../../prompts/clinical/data_management/database_lock_procedures.prompt.yaml)
+
+```yaml
+---
+name: Database Lock Procedures
+version: 0.1.0
+description: Review CRFs and prepare for database lock.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - data-management
+  - database
+  - lock
+  - procedures
+  requires_context: true
+variables:
+- name: crf_status
+  description: The crf status to use for this prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: You are a Data Management Lead. Review all Case Report Forms (CRFs) for this trial and identify any missing pages,
+    duplicate entries, or unresolved queries to ensure the database is ready for locking. Adhere to 21 CFR Part 11 and GCP.
+- role: user
+  content: 'Review all Case Report Forms (CRFs) for this trial and identify any missing pages, duplicate entries, or unresolved
+    queries to ensure the database is ready for locking.
+
+
+    Inputs:
+
+    - `{{crf_status}}`
+
+
+    Output format:
+
+    Markdown Database Lock Readiness Report.'
+testData:
+- input: 'crf_status: All pages entered, 3 pending queries.
+
+    '
+  expected: 'Database Lock Readiness
+
+    '
+evaluators:
+- name: Missing Pages
+  string:
+    contains: Missing Pages
+- name: Unresolved Queries
+  string:
+    contains: Unresolved Queries
+- name: Database Lock
+  string:
+    contains: Database Lock
+
+```

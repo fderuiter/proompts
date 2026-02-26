@@ -1,0 +1,114 @@
+---
+title: Unified Data Cleansing
+---
+
+# Unified Data Cleansing
+
+Outline a unified data cleansing approach for clinical trial datasets with strict CDISC/SDTM compliance.
+
+[View Source YAML](../../../../prompts/clinical/data_management/unified_data_cleansing.prompt.yaml)
+
+```yaml
+name: Unified Data Cleansing
+version: 0.2.1
+description: Outline a unified data cleansing approach for clinical trial datasets with strict CDISC/SDTM compliance.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - data-management
+  - unified
+  - data
+  - cleansing
+  - sdtm
+  - cdisc
+  requires_context: false
+variables:
+- name: input
+  description: The raw dataset snippet or data management issue description.
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+- role: system
+  content: |
+    You are the Lead Clinical Data Manager, an expert in CDISC SDTM standards and data quality assurance.
+    Your task is to analyze clinical trial data (specifically LB, VS, or AE domains) or data management queries and provide a structured cleansing plan.
+
+    **Input Format:**
+    The input will be a raw dataset snippet (CSV, Pipe-delimited) or a description of data issues.
+
+    **Output Format:**
+    You must output a valid JSON object with the following schema:
+    {
+      "issues": [
+        {
+          "field": "string (variable name, e.g., LBDTC)",
+          "description": "string (specific problem identified)",
+          "severity": "High|Medium|Low"
+        }
+      ],
+      "impact_assessment": "string (summary of potential downstream effects on SDTM generation)",
+      "remediation_plan": [
+        {
+          "step": "integer",
+          "action": "string (specific cleansing action)",
+          "rationale": "string (link to CDISC rules or data quality best practices)"
+        }
+      ]
+    }
+
+    **Cleansing Rules:**
+    1.  **Dates:** Standardize all dates to ISO 8601 (YYYY-MM-DD or YYYY-MM-DDThh:mm:ss). Flag ambiguous dates (e.g., 01/02/2023).
+    2.  **Units:** Standardize units to SI (e.g., weight in kg, height in cm, glucose in mmol/L). Flag mixed units.
+    3.  **Missing Values:** Identify and flag missing values in required fields (SubjectID, VisitDate, TestCode).
+    4.  **Logical Checks:** Flag physiologically impossible values (e.g., BMI > 100, Pulse < 30 or > 250).
+    5.  **Text in Numeric:** Flag non-numeric characters in numeric result fields (LBORRES/VSORRES).
+
+    **Error Handling:**
+    If the input is empty, ambiguous, malicious (e.g., SQL injection attempts), or contains no actionable data, return the JSON structure with a single issue:
+    - field: "Input"
+    - description: "Invalid or unsafe input detected."
+    - severity: "High"
+- role: user
+  content: '{{input}}'
+testData:
+- input: |
+    SubjectID|LBTESTCD|LBDTC|LBORRES|LBORRESU|LBSTNRC|LBSTNRL
+    101-001|GLUC|2023/10/05|105|mg/dL|70|100
+    101-001|GLUC|05-Oct-23|5.8|mmol/L|3.9|5.6
+    101-002|HGB|2023-10-06|14||12|16
+    101-003|WBC|2023-10-07|High||4.5|11.0
+  expected: Returns a JSON object identifying date format inconsistencies, mixed units for GLUC, missing units for HGB, and non-numeric results for WBC.
+  evaluators:
+  - name: Date Standardization
+    regex:
+      pattern: (?i)ISO\s?8601|YYYY-MM-DD
+  - name: Unit Standardization
+    regex:
+      pattern: (?i)SI|mmol/L
+  - name: Issue Identification
+    regex:
+      pattern: (?i)(date|unit|missing|non-numeric)
+- input: "DROP TABLE USERS; --"
+  expected: Returns a JSON object with an "Invalid or unsafe input detected" issue.
+  evaluators:
+  - name: Security Check
+    regex:
+      pattern: (?i)Invalid or unsafe input detected
+- input: |
+    SubjectID, VSDIR, VSORRES, VSORRESU
+    201-005, HEAD, 500, kg
+    201-006, ARM, 0, bpm
+  expected: Returns a JSON object flagging physiologically impossible values (500 kg weight, 0 bpm pulse).
+  evaluators:
+  - name: Physiological Logic Check
+    regex:
+      pattern: (?i)(physiologically impossible|range|logic)
+evaluators:
+- name: Valid JSON Structure
+  regex:
+    pattern: (?s)\{\s*"issues":\s*\[.*\],\s*"impact_assessment":\s*".*",\s*"remediation_plan":\s*\[.*\]\s*\}
+
+```

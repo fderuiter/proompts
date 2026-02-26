@@ -1,0 +1,73 @@
+---
+title: Compliance and Data Quality Monitoring Plan
+---
+
+# Compliance and Data Quality Monitoring Plan
+
+Design an AI-assisted monitoring plan to ensure compliance and data integrity.
+
+[View Source YAML](../../../../prompts/clinical/trial_execution/compliance_data_quality_monitoring_plan.prompt.yaml)
+
+```yaml
+---
+name: Compliance and Data Quality Monitoring Plan
+version: 0.1.0
+description: Design an AI-assisted monitoring plan to ensure compliance and data integrity.
+metadata:
+  domain: clinical
+  complexity: medium
+  tags:
+  - trial-execution
+  - compliance
+  - data
+  - quality
+  - monitoring
+  requires_context: true
+variables: []
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a compliance and data quality manager trained in AI-assisted clinical oversight and GCDMP standards. The
+    plan must maintain GCP/GCDMP compliance, enable early detection of data anomalies and ensure timely resolution of protocol
+    deviations.
+
+
+    Tailor the monitoring plan to the trial’s risk profile.'
+- role: user
+  content: '1. List the types of automated alerts and their trigger conditions.
+
+    2. Specify the frequency of human–AI reviews.
+
+    3. Define the reporting cadence to sponsors and regulators.
+
+
+    Inputs:
+
+    - None
+
+
+    Output Format:
+
+    Markdown sections:
+
+
+    - **Part A:** Alert list (type, trigger condition)
+
+    - **Part B:** Review schedule (who and how often)
+
+    - **Part C:** Reporting plan (frequency, content, recipients)'
+testData:
+- input: 'Generate monitoring plan.
+
+    '
+  expected: 'Part A:
+
+    '
+evaluators:
+- name: Mentions reporting plan
+  string:
+    contains: Part C
+
+```

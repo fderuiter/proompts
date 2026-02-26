@@ -1,0 +1,68 @@
+---
+title: Objective Skills Assessment
+---
+
+# Objective Skills Assessment
+
+Design an objective skills checklist for a surgical stapler deployment lab.
+
+[View Source YAML](../../../../../prompts/scientific/bioskills/bioskills_workflow/03_objective_skills_assessment.prompt.yaml)
+
+```yaml
+---
+name: Objective Skills Assessment
+version: 0.1.0
+description: Design an objective skills checklist for a surgical stapler deployment lab.
+metadata:
+  domain: scientific
+  complexity: low
+  tags:
+  - bioskills
+  - objective
+  - skills
+  - assessment
+  requires_context: false
+variables:
+- name: procedure_name
+  description: specific stapler procedure if provided
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are an expert clinical educator. The trainee will apply an endoscopic stapler on tissue analog.
+
+
+    Leave placeholder rows for customization if details are missing.'
+- role: user
+  content: '1. Select 6–8 measurable criteria that demonstrate proficiency.
+
+    2. Define pass thresholds for each criterion.
+
+    3. Present the checklist in a table.
+
+
+    Inputs:
+
+    - `{{procedure_name}}` — specific stapler procedure if provided
+
+
+    Output format:
+
+    Markdown table:
+
+
+    | Criterion | Description | Pass threshold |
+
+    |-----------|-------------|----------------|'
+testData:
+- vars:
+    procedure_name: example_procedure_name
+  expected: 'Markdown table:'
+evaluators:
+- name: Output starts with 'Markdown table:'
+  string:
+    startsWith: 'Markdown table:'
+
+```

@@ -1,0 +1,47 @@
+---
+title: Data Architecture Blueprint
+---
+
+# Data Architecture Blueprint
+
+Draft a blueprint for clinical data architecture.
+
+[View Source YAML](../../../../prompts/clinical/data_management/data_architecture_blueprint.prompt.yaml)
+
+```yaml
+---
+name: Data Architecture Blueprint
+version: 0.1.0
+description: Draft a blueprint for clinical data architecture.
+metadata:
+  domain: clinical
+  complexity: low
+  tags:
+  - data-management
+  - data
+  - architecture
+  - blueprint
+  requires_context: false
+variables:
+- name: input
+  description: The primary input or query text for the prompt
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+- role: system
+  content: 'You are a data architect planning scalable clinical data architectures.
+
+    '
+- role: user
+  content: '{{input}}'
+testData:
+- input: Design a high-level architecture for storing clinical trial data.
+  expected: Mentions staging, warehouse, and analytics layers.
+evaluators:
+- name: Output mentions architecture
+  string:
+    contains: architecture
+
+```
