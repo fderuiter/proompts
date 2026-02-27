@@ -16,6 +16,7 @@ The prompts are organized by domain to ensure easy navigation and specialized co
 | **[`meta/`](./meta)** | Meta | "Prompts for Prompts" - The engine room for **Prompt Engineering**, **Agent Creation**, and self-improving workflows. |
 | **[`regulatory/`](./regulatory)** | Regulatory | Critical frameworks for **Compliance**, **Quality Assurance**, and **Regulatory Strategy**. |
 | **[`scientific/`](./scientific)** | Scientific | Lab-focused prompts for **Biosafety**, **Microbiology**, **Pathology**, and **Sterility**. |
+| **[`speculative/`](./speculative)** | Speculative | Futuristic, sci-fi, and high-complexity conceptual prompts for experimental domains. |
 | **[`technical/`](./technical)** | Technical | Engineering excellence: **Software Architecture**, **DevOps**, **Testing**, and **Codebase Analysis**. |
 
 ## Prompt Structure 🏗️

@@ -602,6 +602,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Tooling & Quality Gates (DevEx Architect)](prompts/technical/software_engineering/tasks/tooling_and_quality.prompt.md)
 - [UI Tweak & Verification (Aegis Security)](prompts/technical/software_engineering/tasks/ui_fix.prompt.md)
 
+## Speculative
+
+- [Quantum Paleo-Arbitrageur](prompts/speculative/quantum_paleo_arbitrage/quantum_paleo_arbitrageur.prompt.md)
+
 ## Sterility
 
 - [Sterility-Validation Protocol Builder](prompts/scientific/sterility/sterility_workflow/01_sterility_validation_protocol_builder.prompt.md)
