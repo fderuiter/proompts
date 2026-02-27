@@ -254,6 +254,8 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [Jules Agile Orchestrator](prompts/google_jules/jules_agile_orchestrator.prompt.md)
 - [Jules Orchestrator](prompts/google_jules/jules_orchestrator.prompt.md)
+- [Jules Product Architect](prompts/google_jules/jules_product_architect.prompt.md)
+- [Jules System Designer](prompts/google_jules/jules_system_designer.prompt.md)
 - [Jules Test Generator](prompts/google_jules/jules_test_gen.prompt.md)
 
 ## Imaging
