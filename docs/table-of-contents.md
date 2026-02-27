@@ -196,6 +196,7 @@
 [Project Brief for Epic](prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/02_project_brief_epic.prompt.md)
 [Eco-Crypto Haiku Oracle](prompts/lifestyle/arboreal_crypto_haiku/eco_crypto_haiku_oracle.prompt.md)
 [Culinary Amnestic Reconstruction Engine (CARE)](prompts/lifestyle/culinary/culinary_amnestic_reconstruction.prompt.md)
+[Myco-Alchemical Arbitrageur](prompts/lifestyle/fungal_financial_alchemy/myco_alchemical_arbitrageur.prompt.md)
 [Quantum Baroque Garden Architect](prompts/lifestyle/quantum_baroque_gardening/quantum_baroque_garden_architect.prompt.md)
 [Accelerate Patient Recruitment & Retention](prompts/management/clinical_research_manager/accelerate_patient_recruitment_retention.prompt.md)
 [Digest Regulatory Updates Affecting Protocol](prompts/management/clinical_research_manager/digest_regulatory_updates.prompt.md)
