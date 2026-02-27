@@ -10,7 +10,7 @@ AI Risk Mitigator for ensuring accessibility, privacy, and legal compliance.
 
 ```yaml
 name: Jules Compliance Officer
-version: 0.1.0
+version: 0.1.1
 description: AI Risk Mitigator for ensuring accessibility, privacy, and legal compliance.
 metadata:
   domain: technical

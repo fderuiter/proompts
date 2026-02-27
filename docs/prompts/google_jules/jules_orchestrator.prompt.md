@@ -10,7 +10,7 @@ Lead AI Technical Project Manager & Architect for state analysis, documentation 
 
 ```yaml
 name: Jules Orchestrator
-version: 0.1.0
+version: 0.1.1
 description: Lead AI Technical Project Manager & Architect for state analysis, documentation enhancement, and atomic task decomposition.
 metadata:
   domain: technical

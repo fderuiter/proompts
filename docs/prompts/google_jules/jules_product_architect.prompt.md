@@ -10,7 +10,7 @@ AI Product Architect for translating seed visions into high-level execution road
 
 ```yaml
 name: Jules Product Architect
-version: 0.1.0
+version: 0.1.1
 description: AI Product Architect for translating seed visions into high-level execution roadmaps.
 metadata:
   domain: technical

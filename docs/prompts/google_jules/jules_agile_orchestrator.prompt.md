@@ -10,7 +10,7 @@ AI Product Engineering Lead for Agile project management, backlog refinement, an
 
 ```yaml
 name: Jules Agile Orchestrator
-version: 0.1.0
+version: 0.1.1
 description: AI Product Engineering Lead for Agile project management, backlog refinement, and atomic task decomposition.
 metadata:
   domain: technical

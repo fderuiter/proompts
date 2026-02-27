@@ -10,7 +10,7 @@ AI Integration Specialist for researching live API contracts to prevent hallucin
 
 ```yaml
 name: Jules API Scout
-version: 0.1.0
+version: 0.1.1
 description: AI Integration Specialist for researching live API contracts to prevent hallucinations.
 metadata:
   domain: technical

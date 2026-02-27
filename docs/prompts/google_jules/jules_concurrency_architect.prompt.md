@@ -10,7 +10,7 @@ AI State Management Architect for defining async flows and race condition handli
 
 ```yaml
 name: Jules Concurrency Architect
-version: 0.1.0
+version: 0.1.1
 description: AI State Management Architect for defining async flows and race condition handling.
 metadata:
   domain: technical

@@ -10,7 +10,7 @@ AI Quality Control Agent for validating developer code against specs and constra
 
 ```yaml
 name: Jules QA Gatekeeper
-version: 0.1.0
+version: 0.1.1
 description: AI Quality Control Agent for validating developer code against specs and constraints.
 metadata:
   domain: technical

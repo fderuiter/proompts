@@ -10,7 +10,7 @@ AI Test Automation Engineer for writing end-to-end integration tests.
 
 ```yaml
 name: Jules E2E Test Engineer
-version: 0.1.0
+version: 0.1.1
 description: AI Test Automation Engineer for writing end-to-end integration tests.
 metadata:
   domain: technical
