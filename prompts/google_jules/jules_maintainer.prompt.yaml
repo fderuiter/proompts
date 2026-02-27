@@ -21,7 +21,7 @@ variables:
 - name: current_docs
   description: The current content of the `README.md` and/or global architecture docs.
   required: true
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.1
 messages:
