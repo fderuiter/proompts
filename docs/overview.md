@@ -10,6 +10,7 @@ retired.
 
 - **[Best Practices Guide](BEST_PRACTICES.md)** - Comprehensive guide for creating high-quality prompts
 - **[Google Prompting Guide](google_prompting_guide.md)** - Official Google strategies for effective prompt design
+- **[Claude Prompting Guide](claude_prompting_guide.md)** - Comprehensive guide to prompt engineering techniques for Claude's latest models
 - **[GPT-5.2 Prompting Guide](gpt_5_2_prompting_guide.md)** - Official OpenAI strategies for GPT-5.2
 - [Template Prompt](template_prompt.prompt.yaml) - Reference example for new prompts
 - [Workflows Documentation](workflows.md) - Guide to chaining prompts together
