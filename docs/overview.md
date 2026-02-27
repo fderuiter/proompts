@@ -9,6 +9,7 @@ retired.
 ## Essential Guides
 
 - **[Best Practices Guide](BEST_PRACTICES.md)** - Comprehensive guide for creating high-quality prompts
+- **[Google Prompting Guide](google_prompting_guide.md)** - Official Google strategies for effective prompt design
 - [Template Prompt](template_prompt.prompt.yaml) - Reference example for new prompts
 - [Workflows Documentation](workflows.md) - Guide to chaining prompts together
 
