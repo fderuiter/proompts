@@ -29,7 +29,7 @@ variables:
 - name: context
   description: Compliance requirements (e.g., GDPR, CCPA, WCAG 2.1).
   required: false
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.1
 messages:

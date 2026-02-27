@@ -26,7 +26,7 @@ variables:
 - name: target_epic
   description: The UI or Background feature requiring asynchronous state design.
   required: true
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.2
 messages:

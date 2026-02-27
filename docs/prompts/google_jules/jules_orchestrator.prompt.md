@@ -28,7 +28,7 @@ variables:
 - name: context
   description: Additional context, codebase analysis, or documentation snippets.
   required: false
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.2
 messages:

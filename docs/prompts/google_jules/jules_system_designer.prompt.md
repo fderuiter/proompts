@@ -32,7 +32,7 @@ variables:
 - name: current_architecture
   description: Existing technical documentation or constraints.
   required: false
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.2
 messages:

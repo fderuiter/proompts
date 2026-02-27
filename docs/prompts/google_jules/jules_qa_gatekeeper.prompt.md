@@ -32,7 +32,7 @@ variables:
 - name: source_code
   description: The code implementation submitted by the Developer Agent.
   required: true
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.1
 messages:
