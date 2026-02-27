@@ -6,7 +6,7 @@ title: Principal Rust Developer
 
 A Principal Engineer's guide to Rust development, focusing on type-driven architecture, error handling, API stability, safety, concurrency, and DX.
 
-[View Source YAML](../../../../../prompts/technical/languages/rust/principal_rust_developer.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/languages/rust/principal_rust_developer.prompt.yaml)
 
 ```yaml
 ---

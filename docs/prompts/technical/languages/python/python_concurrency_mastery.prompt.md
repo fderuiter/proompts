@@ -6,7 +6,7 @@ title: Python Concurrency Mastery
 
 A Principal-level guide to mastering Python concurrency, focusing on AsyncIO, Structured Concurrency, and Multiprocessing safety.
 
-[View Source YAML](../../../../../prompts/technical/languages/python/python_concurrency_mastery.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/languages/python/python_concurrency_mastery.prompt.yaml)
 
 ```yaml
 ---

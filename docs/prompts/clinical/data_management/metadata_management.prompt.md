@@ -6,7 +6,7 @@ title: Metadata Management
 
 Extract and store standardized metadata for reuse.
 
-[View Source YAML](../../../../prompts/clinical/data_management/metadata_management.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/metadata_management.prompt.yaml)
 
 ```yaml
 ---

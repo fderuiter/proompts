@@ -6,7 +6,7 @@ title: Off-Label Information Dissemination
 
 Prepare a mandatory disclosure statement for disseminating peer-reviewed articles on unapproved uses.
 
-[View Source YAML](../../../../prompts/regulatory/adherence/off_label_information_dissemination.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/adherence/off_label_information_dissemination.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Clinical Trial Agreement (CTA) Negotiation
 
 Review CTA for missing clauses.
 
-[View Source YAML](../../../../prompts/clinical/site_acquisition/cta_negotiation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/site_acquisition/cta_negotiation.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: UDI GUDID Submission
 
 Prepare a Device Identifier (DI) record for GUDID submission.
 
-[View Source YAML](../../../../prompts/regulatory/submissions/udi_gudid_submission.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/submissions/udi_gudid_submission.prompt.yaml)
 
 ```yaml
 ---

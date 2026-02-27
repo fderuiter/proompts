@@ -6,7 +6,7 @@ title: Regulatory Compliance Verification
 
 Verify electronic records and signatures against 21 CFR Part 11.
 
-[View Source YAML](../../../../prompts/clinical/data_management/regulatory_compliance_verification.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/regulatory_compliance_verification.prompt.yaml)
 
 ```yaml
 ---

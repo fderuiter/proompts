@@ -6,7 +6,7 @@ title: Technical Implementation Plan
 
 Detail the architecture, dependencies, and steps required to implement a project.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/lifecycle/technical_implementation_plan.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/lifecycle/technical_implementation_plan.prompt.yaml)
 
 ```yaml
 ---

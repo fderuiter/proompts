@@ -27,4 +27,4 @@ graph TD
     Input_query_log --> data_quality_heatmap
 ```
 
-[View Source YAML](../../workflows/management/vp_statistics.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/management/vp_statistics.workflow.yaml)

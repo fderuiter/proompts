@@ -6,7 +6,7 @@ title: Simulated Clinical Scenario Debrief
 
 Provide constructive feedback after a simulated clinical scenario.
 
-[View Source YAML](../../../../../prompts/scientific/bioskills/bioskills_workflow/02_simulated_clinical_scenario_feedback.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/bioskills/bioskills_workflow/02_simulated_clinical_scenario_feedback.prompt.yaml)
 
 ```yaml
 ---

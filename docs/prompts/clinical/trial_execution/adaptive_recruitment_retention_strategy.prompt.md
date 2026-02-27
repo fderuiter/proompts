@@ -6,7 +6,7 @@ title: Adaptive Recruitment and Retention Strategy
 
 Design an optimized recruitment and retention plan for a multi-site pivotal study.
 
-[View Source YAML](../../../../prompts/clinical/trial_execution/adaptive_recruitment_retention_strategy.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/trial_execution/adaptive_recruitment_retention_strategy.prompt.yaml)
 
 ```yaml
 ---

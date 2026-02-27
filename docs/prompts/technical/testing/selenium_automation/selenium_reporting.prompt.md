@@ -6,7 +6,7 @@ title: Reporting and Maintenance: Custom Reports
 
 Integrate reporting libraries and screenshot utilities to capture execution evidence.
 
-[View Source YAML](../../../../../prompts/technical/testing/selenium_automation/selenium_reporting.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/testing/selenium_automation/selenium_reporting.prompt.yaml)
 
 ```yaml
 ---

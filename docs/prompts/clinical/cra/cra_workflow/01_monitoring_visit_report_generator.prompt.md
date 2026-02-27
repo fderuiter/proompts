@@ -6,7 +6,7 @@ title: Monitoring-Visit Report Generator
 
 Draft a monitoring visit report summarizing on-site activities, findings, follow-ups, and attachments.
 
-[View Source YAML](../../../../../prompts/clinical/cra/cra_workflow/01_monitoring_visit_report_generator.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/cra/cra_workflow/01_monitoring_visit_report_generator.prompt.yaml)
 
 ```yaml
 ---

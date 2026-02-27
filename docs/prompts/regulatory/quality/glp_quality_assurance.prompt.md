@@ -6,7 +6,7 @@ title: GLP Quality Assurance
 
 Prepare a statement for a nonclinical study report certifying inspection dates.
 
-[View Source YAML](../../../../prompts/regulatory/quality/glp_quality_assurance.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/glp_quality_assurance.prompt.yaml)
 
 ```yaml
 ---

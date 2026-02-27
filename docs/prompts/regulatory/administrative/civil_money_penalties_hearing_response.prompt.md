@@ -6,7 +6,7 @@ title: Civil Money Penalties Hearing Response
 
 Draft a formal 'Answer' to an FDA complaint seeking civil money penalties.
 
-[View Source YAML](../../../../prompts/regulatory/administrative/civil_money_penalties_hearing_response.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/administrative/civil_money_penalties_hearing_response.prompt.yaml)
 
 ```yaml
 ---

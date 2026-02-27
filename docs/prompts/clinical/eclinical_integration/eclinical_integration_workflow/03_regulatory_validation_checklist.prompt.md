@@ -6,7 +6,7 @@ title: Regulatory and Validation Checklist
 
 Compile a compliance checklist for digital trial data integrations.
 
-[View Source YAML](../../../../../prompts/clinical/eclinical_integration/eclinical_integration_workflow/03_regulatory_validation_checklist.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/eclinical_integration/eclinical_integration_workflow/03_regulatory_validation_checklist.prompt.yaml)
 
 ```yaml
 ---

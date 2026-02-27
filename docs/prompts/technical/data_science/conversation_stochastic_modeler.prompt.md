@@ -6,7 +6,7 @@ title: Conversation Stochastic Modeler
 
 Maps human-to-human or human-to-AI interactions into a mathematical framework to predict outcomes and quantify risk.
 
-[View Source YAML](../../../../prompts/technical/data_science/conversation_stochastic_modeler.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/data_science/conversation_stochastic_modeler.prompt.yaml)
 
 ```yaml
 ---

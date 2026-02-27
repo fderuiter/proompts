@@ -6,7 +6,7 @@ title: Scenario Modeling & Sensitivity Analysis
 
 Create three financial scenarios (Conservative, Base, and Aggressive) based on historical data and market trends.
 
-[View Source YAML](../../../../prompts/business/cfo/scenario_modeling_sensitivity.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/cfo/scenario_modeling_sensitivity.prompt.yaml)
 
 ```yaml
 ---

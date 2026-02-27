@@ -6,7 +6,7 @@ title: E2E Test Discovery Lifecycle Template
 
 Provide a system prompt template that guides an LLM to analyse a codebase and generate a comprehensive end-to-end test plan.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/lifecycle/e2e_test_discovery.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/lifecycle/e2e_test_discovery.prompt.yaml)
 
 ```yaml
 ---

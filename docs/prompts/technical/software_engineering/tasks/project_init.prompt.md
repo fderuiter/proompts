@@ -6,7 +6,7 @@ title: Project Init & Skeleton (Construct Architect)
 
 A Principal Cloud-Native Architect's blueprint for initializing secure, scalable, and 12-Factor compliant project skeletons.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/tasks/project_init.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/tasks/project_init.prompt.yaml)
 
 ```yaml
 ---

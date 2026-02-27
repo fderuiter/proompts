@@ -6,7 +6,7 @@ title: Codebase Quality & Maintainability Analysis
 
 Conduct a deep analysis of the codebase's quality and maintainability to identify key areas for refactoring.
 
-[View Source YAML](../../../../prompts/technical/repository_refactoring/codebase_quality_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/repository_refactoring/codebase_quality_analysis.prompt.yaml)
 
 ```yaml
 ---

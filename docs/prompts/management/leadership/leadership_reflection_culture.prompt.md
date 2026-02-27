@@ -6,7 +6,7 @@ title: Leadership Reflection and Culture
 
 Assess leadership values and identify actions to strengthen team cohesion.
 
-[View Source YAML](../../../../prompts/management/leadership/leadership_reflection_culture.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/leadership/leadership_reflection_culture.prompt.yaml)
 
 ```yaml
 ---

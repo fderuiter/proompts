@@ -6,7 +6,7 @@ title: Submission-Ready Statistical Analysis Plan
 
 Generate sections of a submission-ready statistical analysis plan.
 
-[View Source YAML](../../../../prompts/scientific/biostatistics/submission_ready_sap.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biostatistics/submission_ready_sap.prompt.yaml)
 
 ```yaml
 ---

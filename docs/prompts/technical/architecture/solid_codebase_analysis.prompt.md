@@ -6,7 +6,7 @@ title: SOLID Codebase Analysis
 
 Evaluate code against SOLID principles and suggest refactoring tasks.
 
-[View Source YAML](../../../../prompts/technical/architecture/solid_codebase_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/architecture/solid_codebase_analysis.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Financial Disclosure Certification
 
 Identify required financial disclosure forms and draft attestations for clinical investigators.
 
-[View Source YAML](../../../../prompts/regulatory/administrative/financial_disclosure_certification.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/administrative/financial_disclosure_certification.prompt.yaml)
 
 ```yaml
 ---

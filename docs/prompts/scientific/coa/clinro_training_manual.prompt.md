@@ -6,7 +6,7 @@ title: ClinRO User Manual Generator
 
 Draft a standardized user manual for ClinRO administration and training.
 
-[View Source YAML](../../../../prompts/scientific/coa/clinro_training_manual.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/coa/clinro_training_manual.prompt.yaml)
 
 ```yaml
 ---

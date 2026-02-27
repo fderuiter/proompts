@@ -6,7 +6,7 @@ title: Regulatory and Competitive Intelligence Briefing
 
 Provide a Monday-morning briefing on regulatory changes and competitor moves that may affect decentralized and hybrid trials.
 
-[View Source YAML](../../../../prompts/management/executive/regulatory_competitive_intel_briefing.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/executive/regulatory_competitive_intel_briefing.prompt.yaml)
 
 ```yaml
 ---

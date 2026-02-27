@@ -6,7 +6,7 @@ title: Citizen Petition Preparation
 
 Draft a Citizen Petition requesting administrative action by the Commissioner.
 
-[View Source YAML](../../../../prompts/regulatory/administrative/citizen_petition_preparation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/administrative/citizen_petition_preparation.prompt.yaml)
 
 ```yaml
 ---

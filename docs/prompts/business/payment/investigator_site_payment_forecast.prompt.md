@@ -6,7 +6,7 @@ title: Investigator-Site Payment Forecast
 
 Produce a month-by-month cash-flow forecast for site payments.
 
-[View Source YAML](../../../../prompts/business/payment/investigator_site_payment_forecast.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/payment/investigator_site_payment_forecast.prompt.yaml)
 
 ```yaml
 ---

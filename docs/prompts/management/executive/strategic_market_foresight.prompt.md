@@ -6,7 +6,7 @@ title: Strategic Market Foresight and Action Plan
 
 Detect market inflections and craft a response plan.
 
-[View Source YAML](../../../../prompts/management/executive/strategic_market_foresight.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/executive/strategic_market_foresight.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Target Segment & User Needs Assessment
 
 Identify key user segments for `{{device_or_assay}}` used in `{{application}}`.
 
-[View Source YAML](../../../../../prompts/business/market_research/market_research_workflow/02_target_segment_user_needs_assessment.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/market_research/market_research_workflow/02_target_segment_user_needs_assessment.prompt.yaml)
 
 ```yaml
 ---

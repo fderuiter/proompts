@@ -6,7 +6,7 @@ title: Code Review Assistant (Aegis Security)
 
 Conduct a comprehensive security-focused code review, identifying vulnerabilities, logic flaws, and style issues with a structured report.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/tasks/code_review.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/tasks/code_review.prompt.yaml)
 
 ```yaml
 ---

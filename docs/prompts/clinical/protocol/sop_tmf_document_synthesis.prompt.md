@@ -6,7 +6,7 @@ title: SOP and TMF Document Synthesis
 
 Provide a quick retrieval and synthesis of information from specific internal SOPs and TMF documents to answer compliance or process queries.
 
-[View Source YAML](../../../../prompts/clinical/protocol/sop_tmf_document_synthesis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/protocol/sop_tmf_document_synthesis.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Single IRB (sIRB) Plan Submission
 
 Generate sIRB Plan and communication strategy.
 
-[View Source YAML](../../../../prompts/clinical/site_acquisition/sirb_plan_submission.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/site_acquisition/sirb_plan_submission.prompt.yaml)
 
 ```yaml
 ---

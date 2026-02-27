@@ -6,7 +6,7 @@ title: Imaging Endpoint Process Standards Checklist
 
 Review FDA guidance on imaging endpoints and create process checklists.
 
-[View Source YAML](../../../../prompts/regulatory/adherence/imaging_endpoint_process_standards.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/adherence/imaging_endpoint_process_standards.prompt.yaml)
 
 ```yaml
 ---

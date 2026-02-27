@@ -6,7 +6,7 @@ title: Carrier Screening System 510(k)
 
 Compile technical information for an autosomal recessive carrier screening gene mutation detection system.
 
-[View Source YAML](../../../../prompts/regulatory/device_specifics/carrier_screening_system_510_k.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/device_specifics/carrier_screening_system_510_k.prompt.yaml)
 
 ```yaml
 ---

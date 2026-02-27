@@ -6,7 +6,7 @@ title: Psychometric Validation Methodology
 
 Apply Rasch and IRT models for COA validation and psychometric evidence generation.
 
-[View Source YAML](../../../../prompts/scientific/coa/psychometric_validation_methods.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/coa/psychometric_validation_methods.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Compliance Gap & Risk Matrix
 
 Quantify compliance gaps and associated risks against a selected standard or law.
 
-[View Source YAML](../../../../prompts/regulatory/quality/compliance_gap_risk_matrix.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/compliance_gap_risk_matrix.prompt.yaml)
 
 ```yaml
 ---

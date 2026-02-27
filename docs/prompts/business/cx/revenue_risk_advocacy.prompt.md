@@ -6,7 +6,7 @@ title: Cross-Functional Advocacy Memo
 
 Draft a memo to Product/Sales focusing on revenue risk to prioritize features.
 
-[View Source YAML](../../../../prompts/business/cx/revenue_risk_advocacy.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/cx/revenue_risk_advocacy.prompt.yaml)
 
 ```yaml
 ---

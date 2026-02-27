@@ -6,7 +6,7 @@ title: Data-to-Insight Analyst
 
 Here is a CSV (pasted or uploaded): [DATA].
 
-[View Source YAML](../../../prompts/communication/data_to_insight_analyst.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/data_to_insight_analyst.prompt.yaml)
 
 ```yaml
 ---

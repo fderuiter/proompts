@@ -20,4 +20,4 @@ graph TD
     Input_device_name --> endotoxin_risk_plan
 ```
 
-[View Source YAML](../../workflows/scientific/microbiology.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/scientific/microbiology.workflow.yaml)

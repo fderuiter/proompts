@@ -6,7 +6,7 @@ title: Comprehensive Biocompatibility Test Matrix
 
 Generate a detailed biocompatibility test matrix for a medical device.
 
-[View Source YAML](../../../../prompts/scientific/biosafety/comprehensive_test_matrix.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biosafety/comprehensive_test_matrix.prompt.yaml)
 
 ```yaml
 ---

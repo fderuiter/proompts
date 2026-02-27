@@ -6,7 +6,7 @@ title: Unified Data Cleansing
 
 Outline a unified data cleansing approach for clinical trial datasets with strict CDISC/SDTM compliance.
 
-[View Source YAML](../../../../prompts/clinical/data_management/unified_data_cleansing.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/unified_data_cleansing.prompt.yaml)
 
 ```yaml
 name: Unified Data Cleansing

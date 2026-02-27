@@ -6,7 +6,7 @@ title: Clinical Monitoring Plan Development
 
 Draft a risk-based Clinical Monitoring Plan.
 
-[View Source YAML](../../../../prompts/clinical/monitoring/clinical_monitoring_plan.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/monitoring/clinical_monitoring_plan.prompt.yaml)
 
 ```yaml
 ---

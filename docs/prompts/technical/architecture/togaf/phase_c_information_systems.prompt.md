@@ -6,7 +6,7 @@ title: TOGAF Phase C - Information Systems Architectures
 
 Guide for defining the Information Systems Architectures (Data and Application Architectures).
 
-[View Source YAML](../../../../../prompts/technical/architecture/togaf/phase_c_information_systems.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/architecture/togaf/phase_c_information_systems.prompt.yaml)
 
 ```yaml
 ---

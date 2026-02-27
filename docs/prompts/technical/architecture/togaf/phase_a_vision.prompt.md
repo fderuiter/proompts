@@ -6,7 +6,7 @@ title: TOGAF Phase A - Architecture Vision
 
 Guide for defining the Architecture Vision, stakeholders, and the Statement of Architecture Work (The Mandate).
 
-[View Source YAML](../../../../../prompts/technical/architecture/togaf/phase_a_vision.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/architecture/togaf/phase_a_vision.prompt.yaml)
 
 ```yaml
 ---

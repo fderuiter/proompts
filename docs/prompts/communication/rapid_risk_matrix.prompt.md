@@ -6,7 +6,7 @@ title: Rapid-Risk-Matrix
 
 Act as a risk-manager. Objective: assess “[PROJECT/PROCESS]”.
 
-[View Source YAML](../../../prompts/communication/rapid_risk_matrix.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/rapid_risk_matrix.prompt.yaml)
 
 ```yaml
 ---

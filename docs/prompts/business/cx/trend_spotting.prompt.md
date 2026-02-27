@@ -6,7 +6,7 @@ title: Trend Spotting vs Anomalies
 
 Compare support ticket datasets to identify trends and anomalies.
 
-[View Source YAML](../../../../prompts/business/cx/trend_spotting.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/cx/trend_spotting.prompt.yaml)
 
 ```yaml
 ---

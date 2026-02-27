@@ -6,7 +6,7 @@ title: FDA MDR/MDV Adverse-Event Narrative
 
 1. Extract: event date, patient age/sex, device identifiers, reporter type.
 
-[View Source YAML](../../../../../prompts/clinical/safety/clinical_safety_workflow/02_fda_mdr_adverse_event_narrative.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/safety/clinical_safety_workflow/02_fda_mdr_adverse_event_narrative.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Post-Mortem / Incident Report Summary
 
 Summarize technical post-mortems for a general company audience.
 
-[View Source YAML](../../../../prompts/business/vp_tech_innovation/post_mortem_summary.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/vp_tech_innovation/post_mortem_summary.prompt.yaml)
 
 ```yaml
 ---

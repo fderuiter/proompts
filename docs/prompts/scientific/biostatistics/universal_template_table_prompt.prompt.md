@@ -6,7 +6,7 @@ title: Universal Template-Table Prompt
 
 Create a formatted safety table from an ADaM ADAE dataset using either R or SAS.
 
-[View Source YAML](../../../../prompts/scientific/biostatistics/universal_template_table_prompt.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biostatistics/universal_template_table_prompt.prompt.yaml)
 
 ```yaml
 ---

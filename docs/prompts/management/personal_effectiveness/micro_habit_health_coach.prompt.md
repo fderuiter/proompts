@@ -6,7 +6,7 @@ title: Micro-Habit Health Coach
 
 Deliver a concise 7-day wellness plan combining meals, movement, and mindset.
 
-[View Source YAML](../../../../prompts/management/personal_effectiveness/micro_habit_health_coach.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/personal_effectiveness/micro_habit_health_coach.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Tailored Feasibility-Questionnaire Builder
 
 Draft a site-feasibility questionnaire to confirm patient availability and operational readiness.
 
-[View Source YAML](../../../../../prompts/clinical/site_acquisition/site_acquisition_workflow/02_tailored_feasibility_questionnaire.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/site_acquisition/site_acquisition_workflow/02_tailored_feasibility_questionnaire.prompt.yaml)
 
 ```yaml
 ---

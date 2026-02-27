@@ -6,7 +6,7 @@ title: Protocol Deviation Reporting
 
 Identify and report protocol deviations from clinical trial logs.
 
-[View Source YAML](../../../../prompts/clinical/protocol/protocol_deviation_reporting.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/protocol/protocol_deviation_reporting.prompt.yaml)
 
 ```yaml
 ---

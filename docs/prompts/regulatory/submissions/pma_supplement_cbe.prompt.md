@@ -6,7 +6,7 @@ title: PMA Supplement (CBE)
 
 Draft a 'Special PMA Supplement - Changes Being Effected' for safety warnings.
 
-[View Source YAML](../../../../prompts/regulatory/submissions/pma_supplement_cbe.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/submissions/pma_supplement_cbe.prompt.yaml)
 
 ```yaml
 ---

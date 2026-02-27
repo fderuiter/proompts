@@ -6,7 +6,7 @@ title: Strategic Portfolio Prioritizer
 
 Rank proposed clinical projects by scientific merit, ROI, risk, and strategic fit.
 
-[View Source YAML](../../../../prompts/management/executive/strategic_portfolio_prioritizer.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/executive/strategic_portfolio_prioritizer.prompt.yaml)
 
 ```yaml
 ---

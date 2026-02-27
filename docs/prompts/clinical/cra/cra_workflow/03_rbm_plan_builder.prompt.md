@@ -6,7 +6,7 @@ title: Risk-Based Monitoring (RBM) Plan Builder
 
 Develop a site-level risk-based monitoring plan with risk matrix, KRIs, and adaptive strategy.
 
-[View Source YAML](../../../../../prompts/clinical/cra/cra_workflow/03_rbm_plan_builder.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/cra/cra_workflow/03_rbm_plan_builder.prompt.yaml)
 
 ```yaml
 ---

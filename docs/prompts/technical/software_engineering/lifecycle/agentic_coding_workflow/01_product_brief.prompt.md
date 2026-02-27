@@ -6,7 +6,7 @@ title: Product Brief Template
 
 Outline the high-level vision, features, and architecture for a new software project.
 
-[View Source YAML](../../../../../../prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/01_product_brief.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/01_product_brief.prompt.yaml)
 
 ```yaml
 ---

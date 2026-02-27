@@ -6,7 +6,7 @@ title: CDASH Mapping & Completion-Guide Assistant
 
 - For every variable in the list, supply:
 
-[View Source YAML](../../../../../prompts/clinical/forms/clinical_prompts_workflow/03_cdash_mapping_completion_guide.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/forms/clinical_prompts_workflow/03_cdash_mapping_completion_guide.prompt.yaml)
 
 ```yaml
 ---

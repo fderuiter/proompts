@@ -6,7 +6,7 @@ title: Database Lock Procedures
 
 Review CRFs and prepare for database lock.
 
-[View Source YAML](../../../../prompts/clinical/data_management/database_lock_procedures.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/database_lock_procedures.prompt.yaml)
 
 ```yaml
 ---

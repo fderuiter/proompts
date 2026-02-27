@@ -6,7 +6,7 @@ title: CDASH Alignment
 
 Standardize clinical data collection fields using CDASH models.
 
-[View Source YAML](../../../../prompts/clinical/forms/cdash_alignment.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/forms/cdash_alignment.prompt.yaml)
 
 ```yaml
 ---

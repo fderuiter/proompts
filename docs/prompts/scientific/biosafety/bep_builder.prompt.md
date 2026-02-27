@@ -6,7 +6,7 @@ title: Biological Evaluation Plan Builder
 
 Draft a complete Biological Evaluation Plan (BEP) for a specified medical device.
 
-[View Source YAML](../../../../prompts/scientific/biosafety/bep_builder.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biosafety/bep_builder.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Sponsor-Ready Monthly Status Brief
 
 Draft a concise, escalation-ready monthly status report for study sponsors.
 
-[View Source YAML](../../../../prompts/management/project_management/sponsor_ready_monthly_status_brief.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/project_management/sponsor_ready_monthly_status_brief.prompt.yaml)
 
 ```yaml
 ---

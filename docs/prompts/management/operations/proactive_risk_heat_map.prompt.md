@@ -6,7 +6,7 @@ title: Proactive Risk Heat-Map for Decentralized & Virtual Trials
 
 Visualize portfolio risks and propose mitigation actions.
 
-[View Source YAML](../../../../prompts/management/operations/proactive_risk_heat_map.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/operations/proactive_risk_heat_map.prompt.yaml)
 
 ```yaml
 ---

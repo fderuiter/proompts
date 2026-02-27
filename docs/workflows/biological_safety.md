@@ -19,4 +19,4 @@ graph TD
     develop_safety_plan --> prepare_submission
 ```
 
-[View Source YAML](../../workflows/scientific/biological_safety.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/scientific/biological_safety.workflow.yaml)

@@ -6,7 +6,7 @@ title: IDE Determination and Device Classification
 
 Assess risk classification and draft rationale.
 
-[View Source YAML](../../../../prompts/regulatory/strategy/ide_determination.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/strategy/ide_determination.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: M&A Target Evaluation
 
 Evaluate a potential acquisition target based on financial statements.
 
-[View Source YAML](../../../../prompts/business/cfo/ma_target_evaluation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/cfo/ma_target_evaluation.prompt.yaml)
 
 ```yaml
 ---

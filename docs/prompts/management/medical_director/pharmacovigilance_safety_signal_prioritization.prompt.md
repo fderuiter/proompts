@@ -6,7 +6,7 @@ title: Pharmacovigilance Safety Signal Prioritization
 
 Detect emerging safety signals and recommend follow-up actions.
 
-[View Source YAML](../../../../prompts/management/medical_director/pharmacovigilance_safety_signal_prioritization.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/medical_director/pharmacovigilance_safety_signal_prioritization.prompt.yaml)
 
 ```yaml
 ---

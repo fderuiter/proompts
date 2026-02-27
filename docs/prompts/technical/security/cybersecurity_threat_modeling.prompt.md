@@ -6,7 +6,7 @@ title: Medical Device Cybersecurity Threat Modeling
 
 Analyze system architecture using STRIDE.
 
-[View Source YAML](../../../../prompts/technical/security/cybersecurity_threat_modeling.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/security/cybersecurity_threat_modeling.prompt.yaml)
 
 ```yaml
 ---

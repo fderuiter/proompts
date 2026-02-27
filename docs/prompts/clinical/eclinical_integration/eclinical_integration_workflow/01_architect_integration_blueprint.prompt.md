@@ -6,7 +6,7 @@ title: Architect the Integration Blueprint
 
 Provide a structured plan for integrating site EHR systems with the sponsor's EDC and CTMS.
 
-[View Source YAML](../../../../../prompts/clinical/eclinical_integration/eclinical_integration_workflow/01_architect_integration_blueprint.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/eclinical_integration/eclinical_integration_workflow/01_architect_integration_blueprint.prompt.yaml)
 
 ```yaml
 ---

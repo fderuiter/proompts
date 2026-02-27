@@ -6,7 +6,7 @@ title: CAPA SOP Architect
 
 Establish a comprehensive CAPA SOP compliant with ISO 9001 and ISO 13485.
 
-[View Source YAML](../../../../prompts/regulatory/quality/capa_sop_architect.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/capa_sop_architect.prompt.yaml)
 
 ```yaml
 ---

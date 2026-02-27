@@ -6,7 +6,7 @@ title: AI-Powered Site and Recruitment Strategy
 
 Select optimal sites and anticipate dropout risks using simulated EHR insights.
 
-[View Source YAML](../../../../prompts/clinical/trial_execution/ai_powered_site_recruitment.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/trial_execution/ai_powered_site_recruitment.prompt.yaml)
 
 ```yaml
 ---

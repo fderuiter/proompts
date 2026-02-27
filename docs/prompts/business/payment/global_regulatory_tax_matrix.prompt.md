@@ -6,7 +6,7 @@ title: Global Regulatory and Tax Matrix for Site Payments
 
 Summarize key payment compliance requirements across major regions.
 
-[View Source YAML](../../../../prompts/business/payment/global_regulatory_tax_matrix.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/payment/global_regulatory_tax_matrix.prompt.yaml)
 
 ```yaml
 ---

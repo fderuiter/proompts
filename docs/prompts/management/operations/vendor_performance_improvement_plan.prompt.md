@@ -6,7 +6,7 @@ title: Risk-Based Vendor Performance Improvement Plan
 
 Raise overall vendor performance and reduce operational risk.
 
-[View Source YAML](../../../../prompts/management/operations/vendor_performance_improvement_plan.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/operations/vendor_performance_improvement_plan.prompt.yaml)
 
 ```yaml
 ---

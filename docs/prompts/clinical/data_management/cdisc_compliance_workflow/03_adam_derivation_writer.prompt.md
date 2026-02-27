@@ -6,7 +6,7 @@ title: ADaM Derivation Writer
 
 Translates SAS/R programming logic into plain-English derivation descriptions for CDISC define.xml documentation.
 
-[View Source YAML](../../../../../prompts/clinical/data_management/cdisc_compliance_workflow/03_adam_derivation_writer.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/cdisc_compliance_workflow/03_adam_derivation_writer.prompt.yaml)
 
 ```yaml
 ---

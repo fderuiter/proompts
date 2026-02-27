@@ -6,7 +6,7 @@ title: 80/20 Crash Course
 
 Teach me the essentials of [SUBJECT] using the Pareto Principle:
 
-[View Source YAML](../../../prompts/communication/80_20_crash_course.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/80_20_crash_course.prompt.yaml)
 
 ```yaml
 ---

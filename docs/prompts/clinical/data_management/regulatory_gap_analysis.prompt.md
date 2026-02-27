@@ -6,7 +6,7 @@ title: Regulatory Gap Analysis
 
 Assess regulatory compliance gaps in trial data processes.
 
-[View Source YAML](../../../../prompts/clinical/data_management/regulatory_gap_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/regulatory_gap_analysis.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Lay Language Summary Creation
 
 Summarize trial results for lay audience.
 
-[View Source YAML](../../../prompts/communication/lay_language_summary.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/lay_language_summary.prompt.yaml)
 
 ```yaml
 ---

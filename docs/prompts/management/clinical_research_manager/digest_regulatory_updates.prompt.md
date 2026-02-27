@@ -6,7 +6,7 @@ title: Digest Regulatory Updates Affecting Protocol
 
 Analyze new regulatory guidance documents for impact on specific clinical protocols, differentiating between mandatory and recommended actions.
 
-[View Source YAML](../../../../prompts/management/clinical_research_manager/digest_regulatory_updates.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/clinical_research_manager/digest_regulatory_updates.prompt.yaml)
 
 ```yaml
 ---

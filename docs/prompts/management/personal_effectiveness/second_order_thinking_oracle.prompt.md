@@ -6,7 +6,7 @@ title: Second-Order Thinking Oracle
 
 Assess first- and second-order effects of a decision.
 
-[View Source YAML](../../../../prompts/management/personal_effectiveness/second_order_thinking_oracle.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/personal_effectiveness/second_order_thinking_oracle.prompt.yaml)
 
 ```yaml
 ---

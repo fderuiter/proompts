@@ -6,7 +6,7 @@ title: Socratic-Coach
 
 You are my Socratic coach on “[TOPIC]”.
 
-[View Source YAML](../../../prompts/communication/socratic_coach.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/socratic_coach.prompt.yaml)
 
 ```yaml
 ---

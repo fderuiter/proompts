@@ -6,7 +6,7 @@ title: Regulatory-Risk & ESG Impact Dashboard Builder
 
 Aggregate regulatory changes and ESG metrics into a compliance risk dashboard.
 
-[View Source YAML](../../../../../prompts/business/cfo/cfo_workflow/03_regulatory_risk_dashboard.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/cfo/cfo_workflow/03_regulatory_risk_dashboard.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Zika Virus Reagent Study Design
 
 Draft a protocol for analytical performance studies to validate Zika virus serological reagents.
 
-[View Source YAML](../../../../prompts/regulatory/device_specifics/zika_virus_reagent_study_design.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/device_specifics/zika_virus_reagent_study_design.prompt.yaml)
 
 ```yaml
 ---

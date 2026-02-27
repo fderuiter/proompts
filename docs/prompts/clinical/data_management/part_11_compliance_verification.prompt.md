@@ -6,7 +6,7 @@ title: 21 CFR Part 11 Compliance Verification
 
 Confirm system compliance with electronic signatures.
 
-[View Source YAML](../../../../prompts/clinical/data_management/part_11_compliance_verification.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/part_11_compliance_verification.prompt.yaml)
 
 ```yaml
 ---

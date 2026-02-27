@@ -6,7 +6,7 @@ title: Comprehensive Risk Register and Mitigation Plan
 
 Produce a risk register with mitigation actions and overall strategies.
 
-[View Source YAML](../../../../../prompts/management/project_management/project_management_workflow/02_risk_register_mitigation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/project_management/project_management_workflow/02_risk_register_mitigation.prompt.yaml)
 
 ```yaml
 ---

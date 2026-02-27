@@ -6,7 +6,7 @@ title: TOGAF Requirements Management
 
 Guide for the continuous process of managing architecture requirements throughout the ADM cycle (The Dynamic Core).
 
-[View Source YAML](../../../../../prompts/technical/architecture/togaf/requirements_management.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/architecture/togaf/requirements_management.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Regulatory Submission Support
 
 Draft regulatory-ready documentation for a medical device submission.
 
-[View Source YAML](../../../../../prompts/scientific/biosafety/biological_safety_workflow/03_regulatory_submission_support.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biosafety/biological_safety_workflow/03_regulatory_submission_support.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Medicare Coverage Analysis
 
 Determine qualifying status and billing justification.
 
-[View Source YAML](../../../../prompts/business/payment/coverage_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/payment/coverage_analysis.prompt.yaml)
 
 ```yaml
 ---

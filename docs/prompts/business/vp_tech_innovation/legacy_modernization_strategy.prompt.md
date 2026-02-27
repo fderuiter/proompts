@@ -6,7 +6,7 @@ title: Legacy Modernization Strategy
 
 Create a phased roadmap for migrating legacy systems to modern architectures.
 
-[View Source YAML](../../../../prompts/business/vp_tech_innovation/legacy_modernization_strategy.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/vp_tech_innovation/legacy_modernization_strategy.prompt.yaml)
 
 ```yaml
 ---

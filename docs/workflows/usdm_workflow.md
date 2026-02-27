@@ -28,4 +28,4 @@ graph TD
     stage4_concepts --> stage5_assembly
 ```
 
-[View Source YAML](../../workflows/clinical/usdm_workflow.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/clinical/usdm_workflow.workflow.yaml)

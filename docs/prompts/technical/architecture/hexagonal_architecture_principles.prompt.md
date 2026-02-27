@@ -6,7 +6,7 @@ title: Hexagonal Architecture Principles
 
 Explain the core philosophy, skeleton, and benefits of Hexagonal Architecture (Ports and Adapters).
 
-[View Source YAML](../../../../prompts/technical/architecture/hexagonal_architecture_principles.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/architecture/hexagonal_architecture_principles.prompt.yaml)
 
 ```yaml
 ---

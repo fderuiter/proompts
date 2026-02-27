@@ -6,7 +6,7 @@ title: Career Compass Advisor
 
 Map the user's next career move and provide a concise action plan.
 
-[View Source YAML](../../../../prompts/management/personal_effectiveness/career_compass_advisor.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/personal_effectiveness/career_compass_advisor.prompt.yaml)
 
 ```yaml
 ---

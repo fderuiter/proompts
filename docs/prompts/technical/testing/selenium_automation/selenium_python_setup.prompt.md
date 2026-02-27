@@ -6,7 +6,7 @@ title: Test Environment: Python & Selenium Base
 
 Install the Selenium Base framework and environment using the Python package manager.
 
-[View Source YAML](../../../../../prompts/technical/testing/selenium_automation/selenium_python_setup.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/testing/selenium_automation/selenium_python_setup.prompt.yaml)
 
 ```yaml
 ---

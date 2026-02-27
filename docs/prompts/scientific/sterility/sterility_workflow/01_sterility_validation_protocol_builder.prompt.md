@@ -6,7 +6,7 @@ title: Sterility-Validation Protocol Builder
 
 Draft a complete validation protocol for a single-use Class II instrument sterilized by gamma irradiation, strictly adhering to ISO 11137 and FDA guidance.
 
-[View Source YAML](../../../../../prompts/scientific/sterility/sterility_workflow/01_sterility_validation_protocol_builder.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/sterility/sterility_workflow/01_sterility_validation_protocol_builder.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: RBQM Anomaly Detection
 
 Identify data outliers, anomalies, and atypical patient patterns in real-time across clinical trial datasets to flag potential risks or misconduct.
 
-[View Source YAML](../../../../prompts/clinical/monitoring/rbqm_anomaly_detection.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/monitoring/rbqm_anomaly_detection.prompt.yaml)
 
 ```yaml
 ---

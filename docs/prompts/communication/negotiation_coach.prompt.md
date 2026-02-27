@@ -6,7 +6,7 @@ title: Negotiation Coach
 
 Prepare the user for salary negotiations by roleplaying as a manager and offering feedback.
 
-[View Source YAML](../../../prompts/communication/negotiation_coach.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/negotiation_coach.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: KPI Dashboard & Monthly Ops-Review Pack
 
 Summarize operational performance and highlight required actions for the monthly review.
 
-[View Source YAML](../../../../prompts/management/operations/kpi_dashboard_ops_review.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/operations/kpi_dashboard_ops_review.prompt.yaml)
 
 ```yaml
 ---

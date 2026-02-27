@@ -6,7 +6,7 @@ title: To-Do List Template
 
 Track pending and completed development tasks.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/lifecycle/todo_generation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/lifecycle/todo_generation.prompt.yaml)
 
 ```yaml
 ---

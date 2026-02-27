@@ -6,7 +6,7 @@ title: Market-Intelligence Radar
 
 Prioritize high-potential biotech or pharma companies for partnership opportunities.
 
-[View Source YAML](../../../../prompts/business/development/market_intelligence_radar.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/development/market_intelligence_radar.prompt.yaml)
 
 ```yaml
 ---

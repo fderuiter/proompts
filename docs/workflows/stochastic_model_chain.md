@@ -20,4 +20,4 @@ graph TD
     engineer_step --> strategist_step
 ```
 
-[View Source YAML](../../workflows/technical/stochastic_model_chain.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/technical/stochastic_model_chain.workflow.yaml)

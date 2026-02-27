@@ -6,7 +6,7 @@ title: Master Ultrameta Prompt Architect
 
 Construct a five-layer prompt stack (L0–L4) that reliably executes `{{end_task}}`.
 
-[View Source YAML](../../../../prompts/meta/meta_prompt_chain/00_L0_master-ultrameta.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/meta/meta_prompt_chain/00_L0_master-ultrameta.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: DHT Integration Regulatory Checklist
 
 Review FDA guidance for digital health technology (DHT) integration and validation.
 
-[View Source YAML](../../../../prompts/regulatory/adherence/dht_integration_checklist.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/adherence/dht_integration_checklist.prompt.yaml)
 
 ```yaml
 ---

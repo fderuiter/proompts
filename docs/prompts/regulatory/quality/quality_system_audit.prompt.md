@@ -6,7 +6,7 @@ title: Quality System Audit
 
 Generate an internal audit checklist or report focusing on design controls, production processes, and risk-based decision making.
 
-[View Source YAML](../../../../prompts/regulatory/quality/quality_system_audit.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/quality_system_audit.prompt.yaml)
 
 ```yaml
 ---

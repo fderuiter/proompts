@@ -6,7 +6,7 @@ title: CAPA Plan Generator
 
 Generate a Corrective and Preventive Action (CAPA) plan based on audit findings.
 
-[View Source YAML](../../../../prompts/regulatory/quality/capa_plan_generator.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/capa_plan_generator.prompt.yaml)
 
 ```yaml
 ---

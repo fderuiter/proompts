@@ -21,4 +21,4 @@ graph TD
     Input_study_info --> rbm_plan_builder
 ```
 
-[View Source YAML](../../workflows/clinical/cra.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/clinical/cra.workflow.yaml)

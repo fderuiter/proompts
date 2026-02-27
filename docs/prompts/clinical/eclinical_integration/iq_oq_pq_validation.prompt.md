@@ -6,7 +6,7 @@ title: IQ/OQ/PQ Validation
 
 Design and execute a series of IQ, OQ, and PQ validation tests for clinical systems.
 
-[View Source YAML](../../../../prompts/clinical/eclinical_integration/iq_oq_pq_validation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/eclinical_integration/iq_oq_pq_validation.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Study Start-Up Checklist & Timeline
 
 Provide an actionable checklist and timeline for Phase IIb study start-up.
 
-[View Source YAML](../../../../prompts/management/operations/study_startup_checklist.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/operations/study_startup_checklist.prompt.yaml)
 
 ```yaml
 ---

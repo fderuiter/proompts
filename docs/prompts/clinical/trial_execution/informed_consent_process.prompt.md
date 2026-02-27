@@ -6,7 +6,7 @@ title: Informed Consent Process Optimization
 
 Review and rewrite ICF for readability.
 
-[View Source YAML](../../../../prompts/clinical/trial_execution/informed_consent_process.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/trial_execution/informed_consent_process.prompt.yaml)
 
 ```yaml
 ---

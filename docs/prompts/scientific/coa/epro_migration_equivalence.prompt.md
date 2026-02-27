@@ -6,7 +6,7 @@ title: ePRO Migration Equivalence Checker
 
 Assess measurement equivalence for migrating paper-based PRO instruments to electronic modes.
 
-[View Source YAML](../../../../prompts/scientific/coa/epro_migration_equivalence.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/coa/epro_migration_equivalence.prompt.yaml)
 
 ```yaml
 ---

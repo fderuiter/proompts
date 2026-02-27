@@ -6,7 +6,7 @@ title: Trial Master File (TMF) Maintenance
 
 Generate TMF checklist based on CDISC Reference Model.
 
-[View Source YAML](../../../../prompts/clinical/data_management/tmf_maintenance.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/tmf_maintenance.prompt.yaml)
 
 ```yaml
 ---

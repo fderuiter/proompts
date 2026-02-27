@@ -6,7 +6,7 @@ title: Risk-Based Test Case Suite
 
 Generate a test-case suite prioritizing controls for high and medium residual risks.
 
-[View Source YAML](../../../../../prompts/technical/testing/testing_workflow/04_risk_based_test_case_suite.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/testing/testing_workflow/04_risk_based_test_case_suite.prompt.yaml)
 
 ```yaml
 ---

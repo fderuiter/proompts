@@ -17,4 +17,4 @@ graph TD
     generate_product_brief --> create_project_epics
 ```
 
-[View Source YAML](../../workflows/technical/agentic_coding.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/technical/agentic_coding.workflow.yaml)

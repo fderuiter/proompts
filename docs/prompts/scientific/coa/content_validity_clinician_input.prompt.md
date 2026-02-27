@@ -6,7 +6,7 @@ title: Content Validity & Reliability Analysis
 
 Analyze clinician interview transcripts for content validity and plan inter-rater reliability.
 
-[View Source YAML](../../../../prompts/scientific/coa/content_validity_clinician_input.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/coa/content_validity_clinician_input.prompt.yaml)
 
 ```yaml
 ---

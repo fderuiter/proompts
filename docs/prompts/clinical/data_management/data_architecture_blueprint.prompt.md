@@ -6,7 +6,7 @@ title: Data Architecture Blueprint
 
 Draft a blueprint for clinical data architecture.
 
-[View Source YAML](../../../../prompts/clinical/data_management/data_architecture_blueprint.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/data_architecture_blueprint.prompt.yaml)
 
 ```yaml
 ---

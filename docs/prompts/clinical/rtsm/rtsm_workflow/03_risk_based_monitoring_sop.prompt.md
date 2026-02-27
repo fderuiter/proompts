@@ -6,7 +6,7 @@ title: Create a Risk-Based Monitoring & Mitigation SOP for RTSM
 
 Draft a standard operating procedure for risk‑based monitoring and mitigation in RTSM operations.
 
-[View Source YAML](../../../../../prompts/clinical/rtsm/rtsm_workflow/03_risk_based_monitoring_sop.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/rtsm/rtsm_workflow/03_risk_based_monitoring_sop.prompt.yaml)
 
 ```yaml
 ---

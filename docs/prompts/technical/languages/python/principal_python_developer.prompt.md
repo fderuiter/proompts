@@ -6,7 +6,7 @@ title: Principal Python Developer
 
 A Principal Engineer's guide to Python development, focusing on architecture, decoupling, robustness, concurrency, and observability.
 
-[View Source YAML](../../../../../prompts/technical/languages/python/principal_python_developer.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/languages/python/principal_python_developer.prompt.yaml)
 
 ```yaml
 ---

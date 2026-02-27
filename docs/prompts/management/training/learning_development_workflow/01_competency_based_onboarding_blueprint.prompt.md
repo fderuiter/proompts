@@ -6,7 +6,7 @@ title: Competency-Based Onboarding Blueprint
 
 Create an onboarding program that reduces time to independent monitoring to six weeks or less.
 
-[View Source YAML](../../../../../prompts/management/training/learning_development_workflow/01_competency_based_onboarding_blueprint.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/training/learning_development_workflow/01_competency_based_onboarding_blueprint.prompt.yaml)
 
 ```yaml
 ---

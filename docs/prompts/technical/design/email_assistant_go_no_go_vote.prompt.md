@@ -7,7 +7,7 @@ title: AI Email Assistant Go/No-Go Vote
 Personas: UX designer, data scientist, CFO. Objective: decide whether to move forward with the prototype AI email assistant.
 
 
-[View Source YAML](../../../../prompts/technical/design/email_assistant_go_no_go_vote.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/design/email_assistant_go_no_go_vote.prompt.yaml)
 
 ```yaml
 ---

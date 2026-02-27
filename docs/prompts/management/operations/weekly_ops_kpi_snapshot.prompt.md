@@ -6,7 +6,7 @@ title: Weekly Operations KPI Snapshot
 
 Summarize weekly milestone performance and highlight at-risk studies.
 
-[View Source YAML](../../../../prompts/management/operations/weekly_ops_kpi_snapshot.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/operations/weekly_ops_kpi_snapshot.prompt.yaml)
 
 ```yaml
 ---

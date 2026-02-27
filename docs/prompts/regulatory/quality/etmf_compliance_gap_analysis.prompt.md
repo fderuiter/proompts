@@ -6,7 +6,7 @@ title: eTMF Compliance Gap Analysis
 
 Evaluate an electronic Trial Master File for compliance gaps and recommend corrective actions.
 
-[View Source YAML](../../../../prompts/regulatory/quality/etmf_compliance_gap_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/etmf_compliance_gap_analysis.prompt.yaml)
 
 ```yaml
 ---

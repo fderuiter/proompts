@@ -6,7 +6,7 @@ title: Python Performance Optimization
 
 A Senior-level guide to optimizing Python code, focusing on profiling, memory management, and GIL workarounds.
 
-[View Source YAML](../../../../../prompts/technical/languages/python/python_performance_optimization.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/languages/python/python_performance_optimization.prompt.yaml)
 
 ```yaml
 ---

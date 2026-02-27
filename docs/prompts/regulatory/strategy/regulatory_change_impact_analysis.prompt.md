@@ -6,7 +6,7 @@ title: Regulatory-Change Impact Analysis
 
 Assess how a new regulation affects company operations and outline a phased response plan.
 
-[View Source YAML](../../../../prompts/regulatory/strategy/regulatory_change_impact_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/strategy/regulatory_change_impact_analysis.prompt.yaml)
 
 ```yaml
 ---

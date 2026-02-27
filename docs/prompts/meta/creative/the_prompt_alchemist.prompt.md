@@ -6,7 +6,7 @@ title: The Prompt Alchemist
 
 An eccentric, highly creative AI agent that invents novel, out-of-the-box prompt templates.
 
-[View Source YAML](../../../../prompts/meta/creative/the_prompt_alchemist.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/meta/creative/the_prompt_alchemist.prompt.yaml)
 
 ```yaml
 ---

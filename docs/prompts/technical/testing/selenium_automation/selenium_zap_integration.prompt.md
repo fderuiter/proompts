@@ -6,7 +6,7 @@ title: Security Testing: OWASP ZAP Integration
 
 Configure Selenium to route traffic through the OWASP ZAP proxy for security scanning.
 
-[View Source YAML](../../../../../prompts/technical/testing/selenium_automation/selenium_zap_integration.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/testing/selenium_automation/selenium_zap_integration.prompt.yaml)
 
 ```yaml
 ---

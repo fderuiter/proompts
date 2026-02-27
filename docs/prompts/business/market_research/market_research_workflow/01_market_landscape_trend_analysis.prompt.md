@@ -6,7 +6,7 @@ title: Market Landscape & Trend Analysis
 
 Summarize the global market for `{{device_or_assay}}` and highlight key trends.
 
-[View Source YAML](../../../../../prompts/business/market_research/market_research_workflow/01_market_landscape_trend_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/market_research/market_research_workflow/01_market_landscape_trend_analysis.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Digital Transformation Roadmap for Clinical Operations
 
 Develop a high-level strategic roadmap for digital transformation in clinical operations, focusing on efficiency, patient centricity, and data integrity.
 
-[View Source YAML](../../../../prompts/management/executive/digital_transformation_roadmap.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/executive/digital_transformation_roadmap.prompt.yaml)
 
 ```yaml
 name: Digital Transformation Roadmap for Clinical Operations

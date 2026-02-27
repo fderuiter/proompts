@@ -6,7 +6,7 @@ title: Analyze Adjudication KPIs
 
 Calculate adjudication performance metrics and recommend improvements.
 
-[View Source YAML](../../../../../prompts/clinical/adjudication/adjudication_workflow/03_analyze_adjudication_kpis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/adjudication/adjudication_workflow/03_analyze_adjudication_kpis.prompt.yaml)
 
 ```yaml
 ---

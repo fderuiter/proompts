@@ -6,7 +6,7 @@ title: Build vs. Buy Decision Matrix
 
 Create a weighted decision matrix for evaluating build vs. buy options.
 
-[View Source YAML](../../../../prompts/business/vp_tech_innovation/build_vs_buy_matrix.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/vp_tech_innovation/build_vs_buy_matrix.prompt.yaml)
 
 ```yaml
 ---

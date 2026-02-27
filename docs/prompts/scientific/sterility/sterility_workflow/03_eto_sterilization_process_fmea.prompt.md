@@ -6,7 +6,7 @@ title: EtO Sterilization Process FMEA
 
 Facilitate a Failure Mode and Effects Analysis for an ethylene oxide sterilization process.
 
-[View Source YAML](../../../../../prompts/scientific/sterility/sterility_workflow/03_eto_sterilization_process_fmea.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/sterility/sterility_workflow/03_eto_sterilization_process_fmea.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Chemical Characterization & TRA Work Plan
 
 Create a work plan for chemical characterization and toxicological risk assessment (TRA) for a medical device.
 
-[View Source YAML](../../../../prompts/scientific/biosafety/chemical_characterization_work_plan.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biosafety/chemical_characterization_work_plan.prompt.yaml)
 
 ```yaml
 ---

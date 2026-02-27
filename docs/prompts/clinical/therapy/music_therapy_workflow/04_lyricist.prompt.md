@@ -6,7 +6,7 @@ title: Lyricist
 
 Writes the actual lyrics using the themes and structure.
 
-[View Source YAML](../../../../../prompts/clinical/therapy/music_therapy_workflow/04_lyricist.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/therapy/music_therapy_workflow/04_lyricist.prompt.yaml)
 
 ```yaml
 name: Lyricist

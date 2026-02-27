@@ -6,7 +6,7 @@ title: Executive Trial-Health Dashboard
 
 Summarize the health of active studies in a weekly dashboard.
 
-[View Source YAML](../../../../prompts/management/executive/executive_trial_health_dashboard.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/executive/executive_trial_health_dashboard.prompt.yaml)
 
 ```yaml
 ---

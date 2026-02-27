@@ -6,7 +6,7 @@ title: Testing, Configuration, and Automation Analysis
 
 Analyze the repository's testing, configuration, and automation infrastructure to ensure reliability and deployment readiness.
 
-[View Source YAML](../../../../prompts/technical/repository_refactoring/testing_configuration_automation_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/repository_refactoring/testing_configuration_automation_analysis.prompt.yaml)
 
 ```yaml
 ---

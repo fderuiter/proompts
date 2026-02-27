@@ -6,7 +6,7 @@ title: Clinical Study Report (CSR) Writing
 
 Draft Clinical Study Report sections.
 
-[View Source YAML](../../../../prompts/scientific/medical_writing/csr_writing.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/medical_writing/csr_writing.prompt.yaml)
 
 ```yaml
 ---

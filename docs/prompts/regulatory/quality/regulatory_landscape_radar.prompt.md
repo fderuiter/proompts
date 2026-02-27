@@ -6,7 +6,7 @@ title: Regulatory-Landscape Radar
 
 Provide a weekly snapshot of regulatory developments relevant to early‑phase oncology and rare‑disease trials.
 
-[View Source YAML](../../../../prompts/regulatory/quality/regulatory_landscape_radar.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/regulatory_landscape_radar.prompt.yaml)
 
 ```yaml
 ---

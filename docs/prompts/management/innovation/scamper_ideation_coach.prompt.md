@@ -6,7 +6,7 @@ title: SCAMPER Ideation Coach
 
 Break creative blocks using SCAMPER techniques.
 
-[View Source YAML](../../../../prompts/management/innovation/scamper_ideation_coach.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/innovation/scamper_ideation_coach.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Regulatory & Commercial Barrier Mapping
 
 Assess hurdles for launching `{{device}}` in major markets.
 
-[View Source YAML](../../../../../prompts/business/market_research/market_research_workflow/03_regulatory_commercial_barrier_mapping.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/market_research/market_research_workflow/03_regulatory_commercial_barrier_mapping.prompt.yaml)
 
 ```yaml
 ---

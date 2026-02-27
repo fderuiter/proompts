@@ -6,7 +6,7 @@ title: Site Landscape Mapping & Prioritization
 
 Rank investigative sites for an upcoming study.
 
-[View Source YAML](../../../../../prompts/clinical/site_acquisition/site_acquisition_workflow/01_site_landscape_mapping.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/site_acquisition/site_acquisition_workflow/01_site_landscape_mapping.prompt.yaml)
 
 ```yaml
 ---

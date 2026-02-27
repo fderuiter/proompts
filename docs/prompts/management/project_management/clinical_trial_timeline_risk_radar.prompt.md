@@ -6,7 +6,7 @@ title: Clinical-Trial Timeline and Risk Radar
 
 Evaluate study schedule variance and prioritize mitigation actions.
 
-[View Source YAML](../../../../prompts/management/project_management/clinical_trial_timeline_risk_radar.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/project_management/clinical_trial_timeline_risk_radar.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Codebase Testing Plan
 
 As a Distinguished Quality Engineer, generate a comprehensive testing strategy and implementation roadmap for an existing codebase. This includes risk analysis, tooling selection, and a phased rollout plan aligned with modern CI/CD practices.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/tasks/codebase_testing_plan.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/tasks/codebase_testing_plan.prompt.yaml)
 
 ```yaml
 ---

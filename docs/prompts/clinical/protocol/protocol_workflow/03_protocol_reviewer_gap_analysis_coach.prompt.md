@@ -6,7 +6,7 @@ title: Protocol Reviewer and Gap-Analysis Coach
 
 Evaluate a clinical-trial protocol for patient experience, site feasibility, and regulatory completeness.
 
-[View Source YAML](../../../../../prompts/clinical/protocol/protocol_workflow/03_protocol_reviewer_gap_analysis_coach.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/protocol/protocol_workflow/03_protocol_reviewer_gap_analysis_coach.prompt.yaml)
 
 ```yaml
 ---

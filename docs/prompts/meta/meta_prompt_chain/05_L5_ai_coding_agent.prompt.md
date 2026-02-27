@@ -6,7 +6,7 @@ title: AI Coding Agent Plan Generator
 
 Provide a structured plan for completing a coding task in an existing repository.
 
-[View Source YAML](../../../../prompts/meta/meta_prompt_chain/05_L5_ai_coding_agent.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/meta/meta_prompt_chain/05_L5_ai_coding_agent.prompt.yaml)
 
 ```yaml
 ---

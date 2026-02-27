@@ -6,7 +6,7 @@ title: Site Selection and Enrollment Forecaster
 
 Analyze historical site performance and patient demographics to rank investigative sites and predict enrollment timelines.
 
-[View Source YAML](../../../../prompts/clinical/site_acquisition/site_enrollment_forecaster.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/site_acquisition/site_enrollment_forecaster.prompt.yaml)
 
 ```yaml
 ---

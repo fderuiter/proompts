@@ -6,7 +6,7 @@ title: MECE Structuring Consultant
 
 Reorganize brainstorm ideas into three mutually exclusive, collectively exhaustive buckets.
 
-[View Source YAML](../../../../prompts/meta/meta_prompt_chain/05_L5_mece_structuring.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/meta/meta_prompt_chain/05_L5_mece_structuring.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: RACI Mapper
 
 Clarify team responsibilities using a RACI matrix.
 
-[View Source YAML](../../../../prompts/management/project_management/raci_mapper.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/project_management/raci_mapper.prompt.yaml)
 
 ```yaml
 ---

@@ -19,4 +19,4 @@ graph TD
     Input_sponsor_requirements --> sae_sop
 ```
 
-[View Source YAML](../../workflows/technical/technical_writer.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/technical/technical_writer.workflow.yaml)

@@ -6,7 +6,7 @@ title: Protocol Section Refinement
 
 Improve the eligibility criteria section of an IVD performance trial protocol.
 
-[View Source YAML](../../../../../prompts/clinical/protocol/protocol_workflow/04_protocol_section_refinement.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/protocol/protocol_workflow/04_protocol_section_refinement.prompt.yaml)
 
 ```yaml
 ---

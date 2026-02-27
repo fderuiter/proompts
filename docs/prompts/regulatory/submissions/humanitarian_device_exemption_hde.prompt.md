@@ -6,7 +6,7 @@ title: Humanitarian Device Exemption (HDE)
 
 Explain why the health benefit of a HUD outweighs the risk of injury.
 
-[View Source YAML](../../../../prompts/regulatory/submissions/humanitarian_device_exemption_hde.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/submissions/humanitarian_device_exemption_hde.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Strategic Regulatory Pathway Plan
 
 Outline a holistic global regulatory pathway for a medical device or IVD.
 
-[View Source YAML](../../../../prompts/regulatory/strategy/strategic_regulatory_pathway_plan.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/strategy/strategic_regulatory_pathway_plan.prompt.yaml)
 
 ```yaml
 ---

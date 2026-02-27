@@ -6,7 +6,7 @@ title: Weekly Executive Status Report
 
 Summarize project progress for executive stakeholders in a concise weekly report.
 
-[View Source YAML](../../../../../prompts/management/project_management/project_management_workflow/03_weekly_exec_status_report.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/project_management/project_management_workflow/03_weekly_exec_status_report.prompt.yaml)
 
 ```yaml
 ---

@@ -20,4 +20,4 @@ graph TD
     Input_procedure_name --> assessment
 ```
 
-[View Source YAML](../../workflows/scientific/bioskills.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/scientific/bioskills.workflow.yaml)

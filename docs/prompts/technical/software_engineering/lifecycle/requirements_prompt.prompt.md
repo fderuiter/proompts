@@ -6,7 +6,7 @@ title: RequirementsBot Prompt
 
 Guide an AI assistant to inspect a repository and generate a complete `REQUIREMENTS.md` file.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/lifecycle/requirements_prompt.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/lifecycle/requirements_prompt.prompt.yaml)
 
 ```yaml
 ---

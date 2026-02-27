@@ -6,7 +6,7 @@ title: 360° Operational KPI & Benchmark Review
 
 Compare internal KPIs to industry benchmarks and propose improvements.
 
-[View Source YAML](../../../../prompts/management/operations/operational_kpi_benchmark_review.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/operations/operational_kpi_benchmark_review.prompt.yaml)
 
 ```yaml
 ---

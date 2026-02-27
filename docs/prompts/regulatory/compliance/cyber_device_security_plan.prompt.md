@@ -6,7 +6,7 @@ title: Cyber Device Security Plan
 
 Draft a postmarket cybersecurity plan and Software Bill of Materials (SBOM).
 
-[View Source YAML](../../../../prompts/regulatory/compliance/cyber_device_security_plan.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/compliance/cyber_device_security_plan.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Design.md Template
 
 Generate a design.md template capturing problem, constraints, and decisions.
 
-[View Source YAML](../../../../prompts/technical/design/design_md_template.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/design/design_md_template.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: DevEx Documentation Architect
 
 A Senior Developer Experience Engineer's guide to creating world-class documentation, onboarding paths, and architectural records.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/tasks/docs_and_onboarding.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/tasks/docs_and_onboarding.prompt.yaml)
 
 ```yaml
 ---

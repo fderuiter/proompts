@@ -6,7 +6,7 @@ title: Discrepancy Detection & Query Log Generator
 
 Examine a CSV dataset to detect discrepancies and generate a query log.
 
-[View Source YAML](../../../../../prompts/clinical/data/clinical_data_workflow/01_discrepancy_detection_query_log.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data/clinical_data_workflow/01_discrepancy_detection_query_log.prompt.yaml)
 
 ```yaml
 ---

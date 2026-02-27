@@ -6,7 +6,7 @@ title: Emerging-Science Horizon Scan
 
 Highlight emerging therapeutic areas or technologies likely to disrupt CRO services in the next three years.
 
-[View Source YAML](../../../../prompts/management/executive/emerging_science_horizon_scan.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/executive/emerging_science_horizon_scan.prompt.yaml)
 
 ```yaml
 ---

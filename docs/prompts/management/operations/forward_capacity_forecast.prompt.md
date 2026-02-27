@@ -6,7 +6,7 @@ title: Forward-Looking Resource & Capacity Forecast
 
 Project FTE demand and recommend actions to balance capacity for the next 90 days.
 
-[View Source YAML](../../../../prompts/management/operations/forward_capacity_forecast.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/operations/forward_capacity_forecast.prompt.yaml)
 
 ```yaml
 ---

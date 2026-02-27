@@ -6,7 +6,7 @@ title: Sunshine Act and FMV Compliance Check
 
 Audit site-payment data for Sunshine Act reporting and FMV adherence.
 
-[View Source YAML](../../../../prompts/business/payment/sunshine_act_fmv_compliance_check.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/payment/sunshine_act_fmv_compliance_check.prompt.yaml)
 
 ```yaml
 ---

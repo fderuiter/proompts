@@ -6,7 +6,7 @@ title: Literature & Regulatory Gap Analysis
 
 Identify evidence and regulatory gaps for a planned pivotal clinical study.
 
-[View Source YAML](../../../../prompts/regulatory/strategy/literature_regulatory_gap_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/strategy/literature_regulatory_gap_analysis.prompt.yaml)
 
 ```yaml
 ---

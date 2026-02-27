@@ -6,7 +6,7 @@ title: FDA-Aligned AI Governance Framework
 
 Draft an AI governance framework that satisfies regulators and sponsors.
 
-[View Source YAML](../../../../prompts/management/executive/ai_governance_framework.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/executive/ai_governance_framework.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Risk Management Analysis
 
 Perform a risk analysis (e.g., PHA) to identify potential hazards, hazardous situations, and mitigation strategies.
 
-[View Source YAML](../../../../prompts/regulatory/quality/risk_management_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/risk_management_analysis.prompt.yaml)
 
 ```yaml
 ---

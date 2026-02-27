@@ -6,7 +6,7 @@ title: Trial-Design Optimisation Memo
 
 Rewrite a study synopsis to accelerate startup while maintaining statistical power and budget.
 
-[View Source YAML](../../../../prompts/management/executive/trial_design_optimisation_memo.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/executive/trial_design_optimisation_memo.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: AI Risk Mapper
 
 Create a quick-look risk register for a specified AI system.
 
-[View Source YAML](../../../../prompts/regulatory/strategy/ai_risk_mapper.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/strategy/ai_risk_mapper.prompt.yaml)
 
 ```yaml
 ---

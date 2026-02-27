@@ -6,7 +6,7 @@ title: Retrieval-Augmented Answer Composer
 
 Provide concise, grounded answers using only supplied knowledge-base files, with strict security boundaries.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/tasks/rag_composer.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/tasks/rag_composer.prompt.yaml)
 
 ```yaml
 ---

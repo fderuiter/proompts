@@ -6,7 +6,7 @@ title: SOP Gap Analysis
 
 Identify gaps in data management standard operating procedures.
 
-[View Source YAML](../../../../prompts/clinical/data_management/sop_gap_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/sop_gap_analysis.prompt.yaml)
 
 ```yaml
 ---

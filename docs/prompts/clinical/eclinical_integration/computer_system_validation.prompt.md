@@ -6,7 +6,7 @@ title: Computer System Validation (CSV)
 
 Generate validation documents for EDC systems.
 
-[View Source YAML](../../../../prompts/clinical/eclinical_integration/computer_system_validation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/eclinical_integration/computer_system_validation.prompt.yaml)
 
 ```yaml
 ---

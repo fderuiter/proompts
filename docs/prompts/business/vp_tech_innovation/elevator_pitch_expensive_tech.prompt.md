@@ -6,7 +6,7 @@ title: Elevator Pitch for Expensive Tech
 
 Create a persuasive elevator pitch for expensive technology investments focusing on business outcomes.
 
-[View Source YAML](../../../../prompts/business/vp_tech_innovation/elevator_pitch_expensive_tech.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/vp_tech_innovation/elevator_pitch_expensive_tech.prompt.yaml)
 
 ```yaml
 ---

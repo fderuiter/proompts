@@ -6,7 +6,7 @@ title: Project Starter Pack Prompts
 
 Provide ready-to-copy prompt templates for common project documentation.
 
-[View Source YAML](../../../../prompts/management/project_management/project_starter_pack.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/project_management/project_starter_pack.prompt.yaml)
 
 ```yaml
 ---

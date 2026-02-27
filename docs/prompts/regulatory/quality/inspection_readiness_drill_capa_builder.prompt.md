@@ -6,7 +6,7 @@ title: Inspection-Readiness Drill (CAPA Builder)
 
 Prepare for regulatory inspections by rehearsing high‑risk questions and drafting CAPAs.
 
-[View Source YAML](../../../../prompts/regulatory/quality/inspection_readiness_drill_capa_builder.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/inspection_readiness_drill_capa_builder.prompt.yaml)
 
 ```yaml
 ---

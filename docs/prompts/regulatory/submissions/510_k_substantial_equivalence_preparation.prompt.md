@@ -6,7 +6,7 @@ title: 510(k) Substantial Equivalence Preparation
 
 Draft a substantial equivalence comparison and summary between a subject device and predicate(s) to demonstrate safety and effectiveness.
 
-[View Source YAML](../../../../prompts/regulatory/submissions/510_k_substantial_equivalence_preparation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/submissions/510_k_substantial_equivalence_preparation.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Statistical Analysis Plan (SAP) Development
 
 Draft a comprehensive SAP.
 
-[View Source YAML](../../../../prompts/scientific/biostatistics/sap_development.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biostatistics/sap_development.prompt.yaml)
 
 ```yaml
 ---

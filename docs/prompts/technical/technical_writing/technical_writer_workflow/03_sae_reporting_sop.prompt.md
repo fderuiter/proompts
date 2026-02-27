@@ -6,7 +6,7 @@ title: SAE and Unanticipated Problem Reporting SOP
 
 Develop a standard operating procedure for reporting serious adverse events and unanticipated problems.
 
-[View Source YAML](../../../../../prompts/technical/technical_writing/technical_writer_workflow/03_sae_reporting_sop.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/technical_writing/technical_writer_workflow/03_sae_reporting_sop.prompt.yaml)
 
 ```yaml
 name: SAE and Unanticipated Problem Reporting SOP

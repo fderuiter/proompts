@@ -6,7 +6,7 @@ title: Interpret the Chemistry & Assess Risk
 
 Act as a board-certified toxicologist.
 
-[View Source YAML](../../../../../prompts/scientific/chemical_characterization/chemical_characterization_workflow/02_interpret_the_chemistry_assess_risk.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/chemical_characterization/chemical_characterization_workflow/02_interpret_the_chemistry_assess_risk.prompt.yaml)
 
 ```yaml
 ---

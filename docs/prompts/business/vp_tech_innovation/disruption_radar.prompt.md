@@ -6,7 +6,7 @@ title: Disruption Radar
 
 Identify emerging threats and startups that could disrupt core products.
 
-[View Source YAML](../../../../prompts/business/vp_tech_innovation/disruption_radar.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/vp_tech_innovation/disruption_radar.prompt.yaml)
 
 ```yaml
 ---

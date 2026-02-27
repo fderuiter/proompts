@@ -6,7 +6,7 @@ title: Compliance Gap Assessment
 
 Evaluate organizational controls against a specified compliance framework and prioritize remediation.
 
-[View Source YAML](../../../../prompts/regulatory/strategy/compliance_gap_assessment.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/strategy/compliance_gap_assessment.prompt.yaml)
 
 ```yaml
 ---

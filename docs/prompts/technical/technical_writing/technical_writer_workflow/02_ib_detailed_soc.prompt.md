@@ -6,7 +6,7 @@ title: Investigator's Brochure Summary of Changes
 
 Produce a detailed summary of changes for the annual Investigator’s Brochure update.
 
-[View Source YAML](../../../../../prompts/technical/technical_writing/technical_writer_workflow/02_ib_detailed_soc.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/technical_writing/technical_writer_workflow/02_ib_detailed_soc.prompt.yaml)
 
 ```yaml
 ---

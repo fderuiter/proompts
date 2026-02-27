@@ -6,7 +6,7 @@ title: Site Upload QC and Query Generator
 
 Automate QC of imaging uploads and craft site queries.
 
-[View Source YAML](../../../../../prompts/clinical/imaging/imaging_workflow/02_site_upload_qc.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/imaging/imaging_workflow/02_site_upload_qc.prompt.yaml)
 
 ```yaml
 ---

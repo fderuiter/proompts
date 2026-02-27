@@ -6,7 +6,7 @@ title: Storyboard-My-Idea
 
 Storyboard “[PROJECT OR MESSAGE]” for a 60-second explainer video:
 
-[View Source YAML](../../../prompts/communication/storyboard_my_idea.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/storyboard_my_idea.prompt.yaml)
 
 ```yaml
 ---

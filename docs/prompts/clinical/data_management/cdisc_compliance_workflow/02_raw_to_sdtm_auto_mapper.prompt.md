@@ -6,7 +6,7 @@ title: Raw-to-SDTM Auto-Mapper
 
 Intelligently maps raw EDC variables to standard SDTM variables based on fuzzy logic and context.
 
-[View Source YAML](../../../../../prompts/clinical/data_management/cdisc_compliance_workflow/02_raw_to_sdtm_auto_mapper.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/cdisc_compliance_workflow/02_raw_to_sdtm_auto_mapper.prompt.yaml)
 
 ```yaml
 ---

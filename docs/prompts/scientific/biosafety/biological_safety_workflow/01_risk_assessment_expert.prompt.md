@@ -6,7 +6,7 @@ title: Risk Assessment Expert
 
 Provide a comprehensive biocompatibility risk assessment for a specified device.
 
-[View Source YAML](../../../../../prompts/scientific/biosafety/biological_safety_workflow/01_risk_assessment_expert.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biosafety/biological_safety_workflow/01_risk_assessment_expert.prompt.yaml)
 
 ```yaml
 ---

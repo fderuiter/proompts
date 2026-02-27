@@ -6,7 +6,7 @@ title: Rust Architectural Patterns
 
 Deep dive into Typestate and Zero-Cost FFI abstractions for Principal-level Rust.
 
-[View Source YAML](../../../../../prompts/technical/languages/rust/rust_architectural_patterns.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/languages/rust/rust_architectural_patterns.prompt.yaml)
 
 ```yaml
 ---

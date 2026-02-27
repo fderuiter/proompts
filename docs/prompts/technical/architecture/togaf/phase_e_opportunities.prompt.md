@@ -6,7 +6,7 @@ title: TOGAF Phase E - Opportunities & Solutions
 
 Guide for identifying delivery vehicles (projects), grouping gaps into work packages, and creating the initial roadmap (The Strategic Bridge).
 
-[View Source YAML](../../../../../prompts/technical/architecture/togaf/phase_e_opportunities.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/architecture/togaf/phase_e_opportunities.prompt.yaml)
 
 ```yaml
 ---

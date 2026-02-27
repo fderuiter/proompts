@@ -6,7 +6,7 @@ title: Friction-Hunting Onboarding Audit
 
 Critique onboarding steps to identify friction and propose low-touch alternatives.
 
-[View Source YAML](../../../../prompts/business/cx/onboarding_audit.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/cx/onboarding_audit.prompt.yaml)
 
 ```yaml
 ---

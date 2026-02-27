@@ -6,7 +6,7 @@ title: TOGAF Phase H - Architecture Change Management
 
 Guide for managing the architecture lifecycle after deployment and handling change requests (The Living Entity).
 
-[View Source YAML](../../../../../prompts/technical/architecture/togaf/phase_h_change_management.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/architecture/togaf/phase_h_change_management.prompt.yaml)
 
 ```yaml
 ---

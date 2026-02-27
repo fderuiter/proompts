@@ -6,7 +6,7 @@ title: Risk-Based Monitoring and Quality Plan
 
 Develop a risk-based monitoring plan for a Phase II oncology trial.
 
-[View Source YAML](../../../../prompts/clinical/trial_execution/risk_based_monitoring_plan.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/trial_execution/risk_based_monitoring_plan.prompt.yaml)
 
 ```yaml
 ---

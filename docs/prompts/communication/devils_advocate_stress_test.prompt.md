@@ -6,7 +6,7 @@ title: Devil’s-Advocate Stress Test
 
 Act as a seasoned critic.
 
-[View Source YAML](../../../prompts/communication/devils_advocate_stress_test.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/devils_advocate_stress_test.prompt.yaml)
 
 ```yaml
 ---

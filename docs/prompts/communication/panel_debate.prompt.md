@@ -6,7 +6,7 @@ title: Panel Debate
 
 Host a simulated debate among three experts on a chosen topic.
 
-[View Source YAML](../../../prompts/communication/panel_debate.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/panel_debate.prompt.yaml)
 
 ```yaml
 ---

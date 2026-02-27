@@ -6,7 +6,7 @@ title: IND Readiness Gap Analysis & Filing Road-Map
 
 Assess IND readiness and create a filing road‑map for a therapeutic program.
 
-[View Source YAML](../../../../prompts/regulatory/strategy/ind_readiness_gap_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/strategy/ind_readiness_gap_analysis.prompt.yaml)
 
 ```yaml
 ---

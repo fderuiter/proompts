@@ -6,7 +6,7 @@ title: 90-Day Pipeline Health & Next-Best-Action Review
 
 Assess the health of the sales pipeline and recommend next-best actions.
 
-[View Source YAML](../../../../prompts/business/development/90_day_pipeline_health_review.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/development/90_day_pipeline_health_review.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Fair-Market-Value Budget Negotiation Brief
 
 Prepare a concise briefing to support FMV negotiations with a pharma sponsor.
 
-[View Source YAML](../../../../prompts/management/operations/fair_market_value_budget_negotiation_brief.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/operations/fair_market_value_budget_negotiation_brief.prompt.yaml)
 
 ```yaml
 ---

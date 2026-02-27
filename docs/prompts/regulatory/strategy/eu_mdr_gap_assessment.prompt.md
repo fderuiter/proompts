@@ -6,7 +6,7 @@ title: EU MDR Technical-Documentation Gap Assessment
 
 Identify deficiencies in technical documentation against EU MDR Annex II and III.
 
-[View Source YAML](../../../../prompts/regulatory/strategy/eu_mdr_gap_assessment.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/strategy/eu_mdr_gap_assessment.prompt.yaml)
 
 ```yaml
 ---

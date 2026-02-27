@@ -6,7 +6,7 @@ title: Rollout Risk Matrix
 
 Assess rollout risks and propose key mitigation actions.
 
-[View Source YAML](../../../../prompts/management/project_management/rollout_risk_matrix.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/project_management/rollout_risk_matrix.prompt.yaml)
 
 ```yaml
 ---

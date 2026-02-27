@@ -19,4 +19,4 @@ graph TD
     evaluate_interface --> plan_reporting
 ```
 
-[View Source YAML](../../workflows/scientific/pathology_study.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/scientific/pathology_study.workflow.yaml)

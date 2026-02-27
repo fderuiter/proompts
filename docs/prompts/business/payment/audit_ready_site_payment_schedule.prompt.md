@@ -6,7 +6,7 @@ title: Build an Audit-Ready Site-Payment Schedule
 
 Generate a transparent investigator payment schedule that withstands audit review.
 
-[View Source YAML](../../../../prompts/business/payment/audit_ready_site_payment_schedule.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/payment/audit_ready_site_payment_schedule.prompt.yaml)
 
 ```yaml
 ---

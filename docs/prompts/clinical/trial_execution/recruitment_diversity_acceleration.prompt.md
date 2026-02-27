@@ -6,7 +6,7 @@ title: Patient Recruitment and Diversity Acceleration Plan
 
 Boost enrollment and improve demographic diversity in a stalled Phase III study.
 
-[View Source YAML](../../../../prompts/clinical/trial_execution/recruitment_diversity_acceleration.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/trial_execution/recruitment_diversity_acceleration.prompt.yaml)
 
 ```yaml
 ---

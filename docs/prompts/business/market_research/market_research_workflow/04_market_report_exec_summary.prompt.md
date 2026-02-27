@@ -6,7 +6,7 @@ title: Market Report Executive Summary
 
 Draft and refine an executive summary for the uploaded market report.
 
-[View Source YAML](../../../../../prompts/business/market_research/market_research_workflow/04_market_report_exec_summary.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/market_research/market_research_workflow/04_market_report_exec_summary.prompt.yaml)
 
 ```yaml
 ---

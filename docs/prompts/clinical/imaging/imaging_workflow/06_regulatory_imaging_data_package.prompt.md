@@ -6,7 +6,7 @@ title: Regulatory Imaging Data Package
 
 Assemble the imaging section of a PMA or 510(k) submission.
 
-[View Source YAML](../../../../../prompts/clinical/imaging/imaging_workflow/06_regulatory_imaging_data_package.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/imaging/imaging_workflow/06_regulatory_imaging_data_package.prompt.yaml)
 
 ```yaml
 ---

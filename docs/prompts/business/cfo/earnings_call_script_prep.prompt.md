@@ -6,7 +6,7 @@ title: Earnings Call Script Prep
 
 Prepare for tough analyst questions on an earnings call.
 
-[View Source YAML](../../../../prompts/business/cfo/earnings_call_script_prep.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/cfo/earnings_call_script_prep.prompt.yaml)
 
 ```yaml
 ---

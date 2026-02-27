@@ -6,7 +6,7 @@ title: Digital Health Technology (DHT) Validation
 
 Create validation strategy for DHTs.
 
-[View Source YAML](../../../../prompts/clinical/eclinical_integration/dht_validation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/eclinical_integration/dht_validation.prompt.yaml)
 
 ```yaml
 ---

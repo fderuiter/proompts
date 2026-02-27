@@ -6,7 +6,7 @@ title: Regulatory Radar & Impact Report
 
 Track and assess recent regulatory changes that may impact the company.
 
-[View Source YAML](../../../../prompts/regulatory/quality/regulatory_radar.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/regulatory_radar.prompt.yaml)
 
 ```yaml
 ---

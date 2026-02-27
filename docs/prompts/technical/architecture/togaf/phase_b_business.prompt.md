@@ -6,7 +6,7 @@ title: TOGAF Phase B - Business Architecture
 
 Guide for defining the Business Architecture, baseline/target states, and gap analysis (The Core Engine).
 
-[View Source YAML](../../../../../prompts/technical/architecture/togaf/phase_b_business.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/architecture/togaf/phase_b_business.prompt.yaml)
 
 ```yaml
 ---

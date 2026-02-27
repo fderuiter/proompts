@@ -6,7 +6,7 @@ title: Fishbone Facilitator
 
 Identify possible root causes of a problem using a fishbone diagram.
 
-[View Source YAML](../../../../prompts/management/operations/fishbone_facilitator.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/operations/fishbone_facilitator.prompt.yaml)
 
 ```yaml
 ---

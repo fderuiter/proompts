@@ -6,7 +6,7 @@ title: Clinical-Trial Protocol Creator
 
 Generate a full clinical-trial protocol from a one-page summary sheet.
 
-[View Source YAML](../../../../../prompts/clinical/protocol/protocol_workflow/01_clinical_trial_protocol_creator.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/protocol/protocol_workflow/01_clinical_trial_protocol_creator.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: CRO Trial-Performance KPI Dashboard Blueprint
 
 Outline metrics and visuals for a CRO trial-performance dashboard.
 
-[View Source YAML](../../../../prompts/management/operations/cro_trial_performance_kpi_dashboard_blueprint.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/operations/cro_trial_performance_kpi_dashboard_blueprint.prompt.yaml)
 
 ```yaml
 ---

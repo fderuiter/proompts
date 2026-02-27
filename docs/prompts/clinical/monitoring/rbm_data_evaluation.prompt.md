@@ -6,7 +6,7 @@ title: Risk-Based Monitoring Data Evaluation
 
 Remote evaluation of accumulating trial data to identify outliers and data integrity problems.
 
-[View Source YAML](../../../../prompts/clinical/monitoring/rbm_data_evaluation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/monitoring/rbm_data_evaluation.prompt.yaml)
 
 ```yaml
 ---

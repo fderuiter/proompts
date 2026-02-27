@@ -6,7 +6,7 @@ title: Liquidity Stress Test
 
 Run a stress test on cash flow forecast assuming a drop in collections.
 
-[View Source YAML](../../../../prompts/business/cfo/liquidity_stress_test.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/cfo/liquidity_stress_test.prompt.yaml)
 
 ```yaml
 ---

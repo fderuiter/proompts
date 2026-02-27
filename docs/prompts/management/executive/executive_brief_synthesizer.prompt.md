@@ -6,7 +6,7 @@ title: Executive-Ready Brief and Talking Points
 
 Turn disparate reports into a concise executive brief and talking points.
 
-[View Source YAML](../../../../prompts/management/executive/executive_brief_synthesizer.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/executive/executive_brief_synthesizer.prompt.yaml)
 
 ```yaml
 ---

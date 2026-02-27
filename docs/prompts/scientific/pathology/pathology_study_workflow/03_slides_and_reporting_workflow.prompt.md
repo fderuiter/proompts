@@ -6,7 +6,7 @@ title: Prepare Pathology Slides and Reporting Plan
 
 Plan slide preparation and review activities for a GLP cardiovascular stent study.
 
-[View Source YAML](../../../../../prompts/scientific/pathology/pathology_study_workflow/03_slides_and_reporting_workflow.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/pathology/pathology_study_workflow/03_slides_and_reporting_workflow.prompt.yaml)
 
 ```yaml
 ---

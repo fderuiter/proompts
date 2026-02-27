@@ -6,7 +6,7 @@ title: Study Design and Statistical Approach
 
 Propose a clinical trial design with corresponding statistical approach.
 
-[View Source YAML](../../../../prompts/scientific/biostatistics/study_design_statistical_approach.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biostatistics/study_design_statistical_approach.prompt.yaml)
 
 ```yaml
 ---

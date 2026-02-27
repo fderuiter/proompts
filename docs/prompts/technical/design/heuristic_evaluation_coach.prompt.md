@@ -6,7 +6,7 @@ title: Heuristic-Evaluation Coach
 
 Guide a junior designer through heuristic evaluation of a mobile app.
 
-[View Source YAML](../../../../prompts/technical/design/heuristic_evaluation_coach.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/design/heuristic_evaluation_coach.prompt.yaml)
 
 ```yaml
 ---

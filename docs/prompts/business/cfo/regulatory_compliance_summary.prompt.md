@@ -6,7 +6,7 @@ title: Regulatory Compliance Summary
 
 Summarize key financial disclosure changes for a specific regulation.
 
-[View Source YAML](../../../../prompts/business/cfo/regulatory_compliance_summary.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/cfo/regulatory_compliance_summary.prompt.yaml)
 
 ```yaml
 ---

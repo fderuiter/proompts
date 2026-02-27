@@ -6,7 +6,7 @@ title: Biological Safety Plan Developer
 
 Create a biological safety plan for the preclinical phase of a new medical device.
 
-[View Source YAML](../../../../../prompts/scientific/biosafety/biological_safety_workflow/02_biological_safety_plan_developer.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biosafety/biological_safety_workflow/02_biological_safety_plan_developer.prompt.yaml)
 
 ```yaml
 ---

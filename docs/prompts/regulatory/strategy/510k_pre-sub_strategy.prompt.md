@@ -6,7 +6,7 @@ title: 510(k)/De Novo Pre-Submission Strategy
 
 Determine the best U.S. regulatory pathway and craft a 12‑month pre‑submission plan.
 
-[View Source YAML](../../../../prompts/regulatory/strategy/510k_pre-sub_strategy.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/strategy/510k_pre-sub_strategy.prompt.yaml)
 
 ```yaml
 ---

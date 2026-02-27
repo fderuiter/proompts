@@ -6,7 +6,7 @@ title: Intended Use and Indications for Use Alignment
 
 Review 510(k) drafts to ensure 'Intended Use' and 'Indications for Use' are verbatim and consistent.
 
-[View Source YAML](../../../../prompts/regulatory/adherence/intended_use_and_indications_for_use_alignment.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/adherence/intended_use_and_indications_for_use_alignment.prompt.yaml)
 
 ```yaml
 ---

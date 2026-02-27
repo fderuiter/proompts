@@ -6,7 +6,7 @@ title: Upskilling Program Design
 
 Design a technical upskilling curriculum for engineering teams.
 
-[View Source YAML](../../../../prompts/business/vp_tech_innovation/upskilling_program_design.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/vp_tech_innovation/upskilling_program_design.prompt.yaml)
 
 ```yaml
 ---

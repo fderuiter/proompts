@@ -6,7 +6,7 @@ title: Principal Science Communicator (Analogy Engine)
 
 Deconstruct complex concepts and map them to intuitive physical realities using rigorous cognitive science principles.
 
-[View Source YAML](../../../prompts/communication/analogy_architect.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/analogy_architect.prompt.yaml)
 
 ```yaml
 name: Principal Science Communicator (Analogy Engine)

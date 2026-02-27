@@ -6,7 +6,7 @@ title: Audit Raw Data and Draft a CAPA Summary
 
 Review study data for deviations and produce a corrective-action plan.
 
-[View Source YAML](../../../../../prompts/management/study_director/study_director_workflow/02_audit_raw_data_capa_summary.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/study_director/study_director_workflow/02_audit_raw_data_capa_summary.prompt.yaml)
 
 ```yaml
 ---

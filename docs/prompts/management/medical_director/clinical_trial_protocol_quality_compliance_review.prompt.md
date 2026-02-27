@@ -6,7 +6,7 @@ title: Clinical Trial Protocol Compliance Review
 
 Evaluate a draft protocol for quality and regulatory compliance.
 
-[View Source YAML](../../../../prompts/management/medical_director/clinical_trial_protocol_quality_compliance_review.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/medical_director/clinical_trial_protocol_quality_compliance_review.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Rapid Process Diagnostic & Lean Improvement Plan
 
 Create a concise process review and improvement roadmap.
 
-[View Source YAML](../../../../prompts/management/operations/rapid_process_diagnostic.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/operations/rapid_process_diagnostic.prompt.yaml)
 
 ```yaml
 ---

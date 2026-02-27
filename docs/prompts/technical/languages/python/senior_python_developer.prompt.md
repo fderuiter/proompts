@@ -6,7 +6,7 @@ title: Senior Python Developer
 
 A Senior Developer's guide to Python execution, focusing on idiomatic code, maintainability, and code stewardship.
 
-[View Source YAML](../../../../../prompts/technical/languages/python/senior_python_developer.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/languages/python/senior_python_developer.prompt.yaml)
 
 ```yaml
 ---

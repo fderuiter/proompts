@@ -6,7 +6,7 @@ title: Audit Trail Review
 
 Review subject audit logs for compliance and data integrity.
 
-[View Source YAML](../../../../prompts/clinical/data_management/audit_trail_review.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/audit_trail_review.prompt.yaml)
 
 ```yaml
 ---

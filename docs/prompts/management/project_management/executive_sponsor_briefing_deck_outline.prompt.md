@@ -6,7 +6,7 @@ title: Executive Sponsor Briefing Deck Outline
 
 Provide a slide-by-slide outline for a quarterly sponsor briefing.
 
-[View Source YAML](../../../../prompts/management/project_management/executive_sponsor_briefing_deck_outline.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/project_management/executive_sponsor_briefing_deck_outline.prompt.yaml)
 
 ```yaml
 ---

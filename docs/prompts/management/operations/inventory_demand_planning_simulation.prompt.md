@@ -6,7 +6,7 @@ title: Inventory & Demand-Planning Simulation
 
 Create a forecast and inventory plan from historical demand data.
 
-[View Source YAML](../../../../prompts/management/operations/inventory_demand_planning_simulation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/operations/inventory_demand_planning_simulation.prompt.yaml)
 
 ```yaml
 ---

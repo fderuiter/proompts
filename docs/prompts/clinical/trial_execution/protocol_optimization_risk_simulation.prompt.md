@@ -6,7 +6,7 @@ title: Protocol Optimization and Risk Simulation
 
 Evaluate a draft clinical protocol and simulate the effects of simplifying key elements.
 
-[View Source YAML](../../../../prompts/clinical/trial_execution/protocol_optimization_risk_simulation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/trial_execution/protocol_optimization_risk_simulation.prompt.yaml)
 
 ```yaml
 ---

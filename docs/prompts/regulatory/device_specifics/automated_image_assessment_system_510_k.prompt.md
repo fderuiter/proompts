@@ -6,7 +6,7 @@ title: Automated Image Assessment System 510(k)
 
 Draft a detailed device description for an automated image assessment system for microbial colonies.
 
-[View Source YAML](../../../../prompts/regulatory/device_specifics/automated_image_assessment_system_510_k.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/device_specifics/automated_image_assessment_system_510_k.prompt.yaml)
 
 ```yaml
 ---

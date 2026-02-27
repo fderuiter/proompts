@@ -6,7 +6,7 @@ title: Reclassification Petitioning
 
 Prepare a statement of the basis for disagreement with a current device classification.
 
-[View Source YAML](../../../../prompts/regulatory/administrative/reclassification_petitioning.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/administrative/reclassification_petitioning.prompt.yaml)
 
 ```yaml
 ---

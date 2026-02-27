@@ -6,7 +6,7 @@ title: IND Determination and Application
 
 Determine IND exemption and prepare dossier.
 
-[View Source YAML](../../../../prompts/regulatory/strategy/ind_determination_application.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/strategy/ind_determination_application.prompt.yaml)
 
 ```yaml
 ---

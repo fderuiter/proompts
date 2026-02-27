@@ -6,7 +6,7 @@ title: Forecast Site-Level Drug Supply & Resupply Strategy
 
 Plan site-level drug supply and resupply for an adaptive trial.
 
-[View Source YAML](../../../../../prompts/clinical/rtsm/rtsm_workflow/02_site_level_supply_resupply_strategy.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/rtsm/rtsm_workflow/02_site_level_supply_resupply_strategy.prompt.yaml)
 
 ```yaml
 ---

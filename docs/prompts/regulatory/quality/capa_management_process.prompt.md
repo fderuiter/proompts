@@ -6,7 +6,7 @@ title: CAPA Management Process
 
 Identify non-compliance, conduct RCA, and track CAPA.
 
-[View Source YAML](../../../../prompts/regulatory/quality/capa_management_process.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/capa_management_process.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Objective Skills Assessment
 
 Design an objective skills checklist for a surgical stapler deployment lab.
 
-[View Source YAML](../../../../../prompts/scientific/bioskills/bioskills_workflow/03_objective_skills_assessment.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/bioskills/bioskills_workflow/03_objective_skills_assessment.prompt.yaml)
 
 ```yaml
 ---

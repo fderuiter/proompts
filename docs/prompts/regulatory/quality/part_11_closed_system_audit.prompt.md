@@ -6,7 +6,7 @@ title: Part 11 Closed System Audit
 
 Audit a software supplier's closed system for electronic record integrity.
 
-[View Source YAML](../../../../prompts/regulatory/quality/part_11_closed_system_audit.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/part_11_closed_system_audit.prompt.yaml)
 
 ```yaml
 ---

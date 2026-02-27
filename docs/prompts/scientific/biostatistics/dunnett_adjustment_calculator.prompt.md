@@ -6,7 +6,7 @@ title: Dunnett Adjustment R Code Generator
 
 Generate R code for Dunnett multiplicity adjustments using the 'multcomp' package.
 
-[View Source YAML](../../../../prompts/scientific/biostatistics/dunnett_adjustment_calculator.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biostatistics/dunnett_adjustment_calculator.prompt.yaml)
 
 ```yaml
 ---

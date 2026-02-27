@@ -6,7 +6,7 @@ title: Source Document and Endpoint Checklist
 
 Create a clear checklist of required documents and endpoint criteria for clinical adjudication.
 
-[View Source YAML](../../../../../prompts/clinical/adjudication/adjudication_workflow/02_source_document_endpoint_checklist.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/adjudication/adjudication_workflow/02_source_document_endpoint_checklist.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Payment Reconciliation and Discrepancy Report
 
 Identify and categorize payment discrepancies before study close-out.
 
-[View Source YAML](../../../../prompts/business/payment/payment_reconciliation_discrepancy_report.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/payment/payment_reconciliation_discrepancy_report.prompt.yaml)
 
 ```yaml
 ---

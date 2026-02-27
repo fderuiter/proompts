@@ -6,7 +6,7 @@ title: Combination Product Jurisdiction
 
 Prepare a Request for Designation (RFD) to identify primary FDA jurisdiction.
 
-[View Source YAML](../../../../prompts/regulatory/submissions/combination_product_jurisdiction.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/submissions/combination_product_jurisdiction.prompt.yaml)
 
 ```yaml
 ---

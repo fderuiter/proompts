@@ -6,7 +6,7 @@ title: Central Reading Paradigm Design
 
 Recommend an efficient central reading model for an oncology trial.
 
-[View Source YAML](../../../../../prompts/clinical/imaging/imaging_workflow/03_central_reading_design.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/imaging/imaging_workflow/03_central_reading_design.prompt.yaml)
 
 ```yaml
 ---

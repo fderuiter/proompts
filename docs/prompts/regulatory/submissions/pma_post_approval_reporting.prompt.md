@@ -6,7 +6,7 @@ title: PMA Post-approval Reporting
 
 Compile a summary of post-approval requirements, including clinical study data, manufacturing changes, and scientific literature.
 
-[View Source YAML](../../../../prompts/regulatory/submissions/pma_post_approval_reporting.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/submissions/pma_post_approval_reporting.prompt.yaml)
 
 ```yaml
 ---

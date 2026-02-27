@@ -6,7 +6,7 @@ title: CAPA Root Cause Investigator
 
 Deep-dive Root Cause Analysis (RCA) using Fishbone and 5 Whys methods.
 
-[View Source YAML](../../../../prompts/regulatory/quality/capa_root_cause_investigator.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/capa_root_cause_investigator.prompt.yaml)
 
 ```yaml
 ---

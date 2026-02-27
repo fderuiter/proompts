@@ -6,7 +6,7 @@ title: Quarterly Innovation Radar for Decentralized and Hybrid Trials
 
 Identify and prioritize technologies for decentralized or hybrid trials.
 
-[View Source YAML](../../../../prompts/management/executive/innovation_radar.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/executive/innovation_radar.prompt.yaml)
 
 ```yaml
 ---

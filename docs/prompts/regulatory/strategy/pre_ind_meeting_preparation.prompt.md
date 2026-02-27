@@ -6,7 +6,7 @@ title: Pre-IND Meeting Preparation
 
 Draft Pre-IND briefing package and questions.
 
-[View Source YAML](../../../../prompts/regulatory/strategy/pre_ind_meeting_preparation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/strategy/pre_ind_meeting_preparation.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Data De-identification
 
 De-identify patient-level data according to HIPAA Privacy Rule.
 
-[View Source YAML](../../../../prompts/clinical/data_management/data_deidentification.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/data_deidentification.prompt.yaml)
 
 ```yaml
 ---

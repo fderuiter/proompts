@@ -6,7 +6,7 @@ title: Accelerate Patient Recruitment & Retention
 
 Develop a high-impact recruitment and retention strategy for a stalling clinical trial.
 
-[View Source YAML](../../../../prompts/management/clinical_research_manager/accelerate_patient_recruitment_retention.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/clinical_research_manager/accelerate_patient_recruitment_retention.prompt.yaml)
 
 ```yaml
 ---

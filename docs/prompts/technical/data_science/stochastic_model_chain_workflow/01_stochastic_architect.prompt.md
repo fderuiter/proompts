@@ -6,7 +6,7 @@ title: Stochastic Architect
 
 Analyzes a conversation or scenario to map it into a formal Stochastic State Model, defining states, risk scores, and a transition probability matrix.
 
-[View Source YAML](../../../../../prompts/technical/data_science/stochastic_model_chain_workflow/01_stochastic_architect.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/data_science/stochastic_model_chain_workflow/01_stochastic_architect.prompt.yaml)
 
 ```yaml
 ---

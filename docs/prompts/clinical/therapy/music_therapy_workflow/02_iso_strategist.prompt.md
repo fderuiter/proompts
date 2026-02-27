@@ -6,7 +6,7 @@ title: ISO Strategist
 
 Plans the therapeutic journey using the ISO Principle.
 
-[View Source YAML](../../../../../prompts/clinical/therapy/music_therapy_workflow/02_iso_strategist.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/therapy/music_therapy_workflow/02_iso_strategist.prompt.yaml)
 
 ```yaml
 name: ISO Strategist

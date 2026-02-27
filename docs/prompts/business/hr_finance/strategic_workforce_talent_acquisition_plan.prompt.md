@@ -6,7 +6,7 @@ title: Strategic Workforce and Talent Acquisition Plan
 
 Create a 12‑month hiring and retention roadmap that fills projected staffing gaps while keeping turnover under 12%.
 
-[View Source YAML](../../../../prompts/business/hr_finance/strategic_workforce_talent_acquisition_plan.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/hr_finance/strategic_workforce_talent_acquisition_plan.prompt.yaml)
 
 ```yaml
 ---

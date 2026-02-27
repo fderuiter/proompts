@@ -6,7 +6,7 @@ title: FDA Missing-Data Query Response
 
 Draft a response letter to an FDA information request about missing data.
 
-[View Source YAML](../../../../prompts/scientific/biostatistics/fda_missing_data_query_response.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biostatistics/fda_missing_data_query_response.prompt.yaml)
 
 ```yaml
 ---

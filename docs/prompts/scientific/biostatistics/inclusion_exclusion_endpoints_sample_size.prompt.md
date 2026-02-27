@@ -6,7 +6,7 @@ title: Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive
 
 Clarify criteria, endpoints, and sample-size considerations for a medical device trial.
 
-[View Source YAML](../../../../prompts/scientific/biostatistics/inclusion_exclusion_endpoints_sample_size.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biostatistics/inclusion_exclusion_endpoints_sample_size.prompt.yaml)
 
 ```yaml
 ---

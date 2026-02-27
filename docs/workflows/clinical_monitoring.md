@@ -21,4 +21,4 @@ graph TD
     Input_mvr_report --> mvr_critique
 ```
 
-[View Source YAML](../../workflows/clinical/clinical_monitoring.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/clinical/clinical_monitoring.workflow.yaml)

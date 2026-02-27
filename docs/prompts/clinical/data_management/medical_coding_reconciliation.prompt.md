@@ -6,7 +6,7 @@ title: Medical Coding and Reconciliation Assistant
 
 Automatically predict and apply medical terms to clinical data, and perform automated data reconciliation and query resolution within EDC builds.
 
-[View Source YAML](../../../../prompts/clinical/data_management/medical_coding_reconciliation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/medical_coding_reconciliation.prompt.yaml)
 
 ```yaml
 ---

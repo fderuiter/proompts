@@ -6,7 +6,7 @@ title: CSR Results and Safety Section
 
 Draft Sections 11 and 12 of an ICH E3 clinical study report.
 
-[View Source YAML](../../../../../prompts/technical/technical_writing/technical_writer_workflow/01_csr_results_safety_section.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/technical_writing/technical_writer_workflow/01_csr_results_safety_section.prompt.yaml)
 
 ```yaml
 ---

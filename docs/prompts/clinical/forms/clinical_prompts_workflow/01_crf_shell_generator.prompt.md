@@ -6,7 +6,7 @@ title: CRF Shell Generator
 
 - Read the protocol summary inside the triple quotes.
 
-[View Source YAML](../../../../../prompts/clinical/forms/clinical_prompts_workflow/01_crf_shell_generator.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/forms/clinical_prompts_workflow/01_crf_shell_generator.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Preventing Technical Debt
 
 Justify technical debt reduction to non-technical stakeholders using financial analogies.
 
-[View Source YAML](../../../../prompts/business/vp_tech_innovation/preventing_technical_debt.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/vp_tech_innovation/preventing_technical_debt.prompt.yaml)
 
 ```yaml
 ---

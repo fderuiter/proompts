@@ -6,7 +6,7 @@ title: Protocol to USDM Stage 1 - Metadata
 
 Extract Study Level Metadata and Design from Protocol.
 
-[View Source YAML](../../../../../prompts/clinical/protocol/usdm_workflow/01_usdm_stage1_metadata.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/protocol/usdm_workflow/01_usdm_stage1_metadata.prompt.yaml)
 
 ```yaml
 ---

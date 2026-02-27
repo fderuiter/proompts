@@ -6,7 +6,7 @@ title: Test Suite Enhancement and CI Pipeline Implementation
 
 Build the automated quality gates for this repository by increasing test coverage, adding meaningful unit tests, and introducing a basic CI pipeline.
 
-[View Source YAML](../../../../prompts/technical/repository_refactoring/test_suite_enhancement_ci_pipeline_implementation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/repository_refactoring/test_suite_enhancement_ci_pipeline_implementation.prompt.yaml)
 
 ```yaml
 ---

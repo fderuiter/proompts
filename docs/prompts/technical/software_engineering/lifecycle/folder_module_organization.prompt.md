@@ -6,7 +6,7 @@ title: Folder and Module Organization
 
 Provide a detailed plan for restructuring a Python codebase into clearer, feature-based modules.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/lifecycle/folder_module_organization.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/lifecycle/folder_module_organization.prompt.yaml)
 
 ```yaml
 ---

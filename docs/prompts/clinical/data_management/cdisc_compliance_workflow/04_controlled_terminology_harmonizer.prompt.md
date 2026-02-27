@@ -6,7 +6,7 @@ title: Controlled Terminology Harmonizer
 
 Standardizes a list of values (e.g., Units) to CDISC Controlled Terminology (NCI Preferred Terms).
 
-[View Source YAML](../../../../../prompts/clinical/data_management/cdisc_compliance_workflow/04_controlled_terminology_harmonizer.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/cdisc_compliance_workflow/04_controlled_terminology_harmonizer.prompt.yaml)
 
 ```yaml
 ---
