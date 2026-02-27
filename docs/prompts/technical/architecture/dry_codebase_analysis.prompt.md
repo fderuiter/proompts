@@ -6,7 +6,7 @@ title: DRY Codebase Analysis
 
 Identify opportunities to remove code duplication and enforce the DRY principle.
 
-[View Source YAML](../../../../prompts/technical/architecture/dry_codebase_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/architecture/dry_codebase_analysis.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Synchronization Strategy: Explicit Waits
 
 Replace brittle Thread.sleep() calls with dynamic Explicit or Fluent waits.
 
-[View Source YAML](../../../../../prompts/technical/testing/selenium_automation/selenium_waits.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/testing/selenium_automation/selenium_waits.prompt.yaml)
 
 ```yaml
 ---

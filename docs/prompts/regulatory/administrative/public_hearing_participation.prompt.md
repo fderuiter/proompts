@@ -6,7 +6,7 @@ title: Public Hearing Participation
 
 Complete a Notice of Participation for a formal evidentiary public hearing.
 
-[View Source YAML](../../../../prompts/regulatory/administrative/public_hearing_participation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/administrative/public_hearing_participation.prompt.yaml)
 
 ```yaml
 ---

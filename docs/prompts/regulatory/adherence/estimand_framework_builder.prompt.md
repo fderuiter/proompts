@@ -6,7 +6,7 @@ title: ICH E9(R1) Estimand Builder
 
 Construct a primary estimand description following the ICH E9 (R1) framework.
 
-[View Source YAML](../../../../prompts/regulatory/adherence/estimand_framework_builder.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/adherence/estimand_framework_builder.prompt.yaml)
 
 ```yaml
 ---

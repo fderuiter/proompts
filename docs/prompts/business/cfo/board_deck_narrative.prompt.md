@@ -6,7 +6,7 @@ title: Board Deck Narrative Generation
 
 Draft the 'CFO Commentary' slide for a Board meeting.
 
-[View Source YAML](../../../../prompts/business/cfo/board_deck_narrative.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/cfo/board_deck_narrative.prompt.yaml)
 
 ```yaml
 ---

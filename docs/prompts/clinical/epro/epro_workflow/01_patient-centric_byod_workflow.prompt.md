@@ -6,7 +6,7 @@ title: Patient-Centric BYOD ePRO Workflow
 
 Design a streamlined ePRO workflow that supports a BYOD model and maximizes patient compliance.
 
-[View Source YAML](../../../../../prompts/clinical/epro/epro_workflow/01_patient-centric_byod_workflow.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/epro/epro_workflow/01_patient-centric_byod_workflow.prompt.yaml)
 
 ```yaml
 ---

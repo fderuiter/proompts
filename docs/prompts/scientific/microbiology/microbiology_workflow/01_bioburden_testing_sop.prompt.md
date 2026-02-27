@@ -6,7 +6,7 @@ title: Bioburden Testing SOP
 
 Draft a standard operating procedure for bioburden enumeration compliant with ISO 11737‑1:2018.
 
-[View Source YAML](../../../../../prompts/scientific/microbiology/microbiology_workflow/01_bioburden_testing_sop.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/microbiology/microbiology_workflow/01_bioburden_testing_sop.prompt.yaml)
 
 ```yaml
 name: Bioburden Testing SOP

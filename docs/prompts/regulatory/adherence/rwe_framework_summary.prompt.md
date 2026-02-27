@@ -6,7 +6,7 @@ title: RWE Regulatory Framework Summary
 
 Review the FDA Real-World Evidence (RWE) Framework and fitness-for-use criteria.
 
-[View Source YAML](../../../../prompts/regulatory/adherence/rwe_framework_summary.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/adherence/rwe_framework_summary.prompt.yaml)
 
 ```yaml
 ---

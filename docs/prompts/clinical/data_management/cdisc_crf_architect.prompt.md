@@ -6,7 +6,7 @@ title: CDISC CRF Architect
 
 Design CDASH/SDTM compliant CRFs from a Clinical Protocol.
 
-[View Source YAML](../../../../prompts/clinical/data_management/cdisc_crf_architect.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/cdisc_crf_architect.prompt.yaml)
 
 ```yaml
 name: CDISC CRF Architect

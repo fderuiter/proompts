@@ -6,7 +6,7 @@ title: Python Hexagonal Architecture
 
 A Principal-level guide to decoupling Python systems using Hexagonal Architecture, Protocols, and Dependency Injection.
 
-[View Source YAML](../../../../../prompts/technical/languages/python/python_hexagonal_architecture.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/languages/python/python_hexagonal_architecture.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Hosting Cost Reduction ToT Plan
 
 Develop a tree-of-thought plan to reduce hosting costs.
 
-[View Source YAML](../../../../prompts/management/executive/hosting_cost_reduction_tot.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/executive/hosting_cost_reduction_tot.prompt.yaml)
 
 ```yaml
 ---

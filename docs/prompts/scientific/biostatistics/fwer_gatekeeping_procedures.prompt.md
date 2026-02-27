@@ -6,7 +6,7 @@ title: FWER Gatekeeping Procedure Code Generator
 
 Generate code for sequential and gatekeeping procedures to control Family-Wise Error Rate (FWER).
 
-[View Source YAML](../../../../prompts/scientific/biostatistics/fwer_gatekeeping_procedures.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biostatistics/fwer_gatekeeping_procedures.prompt.yaml)
 
 ```yaml
 ---

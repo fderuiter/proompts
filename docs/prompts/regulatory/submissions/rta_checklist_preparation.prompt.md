@@ -6,7 +6,7 @@ title: RTA Checklist Preparation
 
 Annotate the RTA checklist with page numbers and sections where requirements are addressed in a 510(k).
 
-[View Source YAML](../../../../prompts/regulatory/submissions/rta_checklist_preparation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/submissions/rta_checklist_preparation.prompt.yaml)
 
 ```yaml
 ---

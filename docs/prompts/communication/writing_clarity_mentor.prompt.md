@@ -6,7 +6,7 @@ title: Writing Clarity Mentor
 
 Improve a passage by highlighting issues and rewriting for clarity.
 
-[View Source YAML](../../../prompts/communication/writing_clarity_mentor.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/writing_clarity_mentor.prompt.yaml)
 
 ```yaml
 ---

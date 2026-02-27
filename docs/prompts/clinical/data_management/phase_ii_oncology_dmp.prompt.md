@@ -6,7 +6,7 @@ title: Phase II Oncology DMP
 
 Create a Data Management Plan for a Phase II oncology study.
 
-[View Source YAML](../../../../prompts/clinical/data_management/phase_ii_oncology_dmp.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/phase_ii_oncology_dmp.prompt.yaml)
 
 ```yaml
 ---

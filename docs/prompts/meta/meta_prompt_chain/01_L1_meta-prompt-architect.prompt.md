@@ -6,7 +6,7 @@ title: Meta Prompt Architect
 
 Design an L2 prompt that instructs a Prompt Engineer to create a domain-specific template achieving `{{end_task}}`.
 
-[View Source YAML](../../../../prompts/meta/meta_prompt_chain/01_L1_meta-prompt-architect.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/meta/meta_prompt_chain/01_L1_meta-prompt-architect.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Quarterly CRO KPI Executive Brief
 
 Present key operational KPIs and recommended actions for the quarterly review.
 
-[View Source YAML](../../../../prompts/management/operations/quarterly_kpi_executive_brief.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/operations/quarterly_kpi_executive_brief.prompt.yaml)
 
 ```yaml
 ---

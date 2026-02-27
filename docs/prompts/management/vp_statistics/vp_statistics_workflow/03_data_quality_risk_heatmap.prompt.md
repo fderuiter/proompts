@@ -6,7 +6,7 @@ title: Data-Quality Risk Heat Map
 
 Assess site-level data quality and recommend mitigation actions.
 
-[View Source YAML](../../../../../prompts/management/vp_statistics/vp_statistics_workflow/03_data_quality_risk_heatmap.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/vp_statistics/vp_statistics_workflow/03_data_quality_risk_heatmap.prompt.yaml)
 
 ```yaml
 ---

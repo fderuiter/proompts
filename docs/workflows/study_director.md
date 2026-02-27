@@ -21,4 +21,4 @@ graph TD
     Input_report_sections --> executive_summary
 ```
 
-[View Source YAML](../../workflows/management/study_director.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/management/study_director.workflow.yaml)

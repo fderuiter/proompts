@@ -6,7 +6,7 @@ title: Patent Term Restoration Eligibility
 
 Determine if a medical product's review period qualifies for patent term restoration.
 
-[View Source YAML](../../../../prompts/regulatory/administrative/patent_term_restoration_eligibility.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/administrative/patent_term_restoration_eligibility.prompt.yaml)
 
 ```yaml
 ---

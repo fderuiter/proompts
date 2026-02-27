@@ -6,7 +6,7 @@ title: Portfolio-Level Clinical Operations Roadmap
 
 Provide a 12‑month roadmap for a portfolio of clinical trials.
 
-[View Source YAML](../../../../prompts/clinical/trial_execution/portfolio_clin_ops_roadmap.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/trial_execution/portfolio_clin_ops_roadmap.prompt.yaml)
 
 ```yaml
 ---

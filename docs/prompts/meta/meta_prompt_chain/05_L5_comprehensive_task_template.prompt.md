@@ -6,7 +6,7 @@ title: Comprehensive Task Template
 
 Provide a reusable prompt that guides an AI through planning, execution and self-checking for any complex task.
 
-[View Source YAML](../../../../prompts/meta/meta_prompt_chain/05_L5_comprehensive_task_template.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/meta/meta_prompt_chain/05_L5_comprehensive_task_template.prompt.yaml)
 
 ```yaml
 ---

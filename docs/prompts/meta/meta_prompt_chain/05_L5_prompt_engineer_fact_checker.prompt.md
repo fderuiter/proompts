@@ -6,7 +6,7 @@ title: Prompt Engineer Fact Checker
 
 Rewrite an original prompt so it is clear, fully sourced and produces accurate answers with inline citations.
 
-[View Source YAML](../../../../prompts/meta/meta_prompt_chain/05_L5_prompt_engineer_fact_checker.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/meta/meta_prompt_chain/05_L5_prompt_engineer_fact_checker.prompt.yaml)
 
 ```yaml
 ---

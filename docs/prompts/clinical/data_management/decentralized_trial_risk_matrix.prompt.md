@@ -6,7 +6,7 @@ title: Decentralized Trial Risk Matrix
 
 Build a risk matrix for decentralized trials.
 
-[View Source YAML](../../../../prompts/clinical/data_management/decentralized_trial_risk_matrix.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/decentralized_trial_risk_matrix.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Clinical Chemistry Device Classification
 
 Identify classification and regulatory requirements (general/special controls) for a clinical chemistry device.
 
-[View Source YAML](../../../../prompts/regulatory/device_specifics/clinical_chemistry_device_classification.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/device_specifics/clinical_chemistry_device_classification.prompt.yaml)
 
 ```yaml
 ---

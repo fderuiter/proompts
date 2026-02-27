@@ -6,7 +6,7 @@ title: Universal Automation Agent
 
 An elite, highly adaptable automation agent that executes specific tasks based on strict constraints and context.
 
-[View Source YAML](../../../../prompts/technical/automation/universal_automation_agent.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/automation/universal_automation_agent.prompt.yaml)
 
 ```yaml
 name: Universal Automation Agent

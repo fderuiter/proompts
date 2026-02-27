@@ -6,7 +6,7 @@ title: PAW Phase 2 - Architectural Blueprint
 
 Phase 2 of the Principal Architect Workflow (PAW). Designs the solution based on the Tactical Brief.
 
-[View Source YAML](../../../../../../prompts/technical/software_engineering/tasks/paw/paw_02_architectural_blueprint.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/tasks/paw/paw_02_architectural_blueprint.prompt.yaml)
 
 ```yaml
 ---

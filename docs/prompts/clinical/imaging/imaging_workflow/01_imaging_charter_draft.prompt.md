@@ -6,7 +6,7 @@ title: Imaging Charter Draft
 
 Create a study-specific imaging charter compliant with global regulations.
 
-[View Source YAML](../../../../../prompts/clinical/imaging/imaging_workflow/01_imaging_charter_draft.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/imaging/imaging_workflow/01_imaging_charter_draft.prompt.yaml)
 
 ```yaml
 ---

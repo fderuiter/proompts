@@ -7,7 +7,7 @@ title: Strategic Consultant SWOT
 Generates a high-impact, board-ready SWOT analysis for Life Sciences organizations, delivered by a Senior Partner.
 
 
-[View Source YAML](../../../../prompts/management/executive/strategic_consultant_swot.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/executive/strategic_consultant_swot.prompt.yaml)
 
 ```yaml
 name: Strategic Consultant SWOT

@@ -6,7 +6,7 @@ title: Driver Configuration: WebDriver Initialization
 
 Initialize and configure WebDriver instances with specific browser options.
 
-[View Source YAML](../../../../../prompts/technical/testing/selenium_automation/webdriver_initialization.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/testing/selenium_automation/webdriver_initialization.prompt.yaml)
 
 ```yaml
 ---

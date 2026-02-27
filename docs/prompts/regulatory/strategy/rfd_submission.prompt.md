@@ -6,7 +6,7 @@ title: Request for Designation (RFD) Submission
 
 Draft RFD for combination products.
 
-[View Source YAML](../../../../prompts/regulatory/strategy/rfd_submission.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/strategy/rfd_submission.prompt.yaml)
 
 ```yaml
 ---

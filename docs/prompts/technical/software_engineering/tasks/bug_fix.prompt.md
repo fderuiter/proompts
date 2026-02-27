@@ -6,7 +6,7 @@ title: Bug Finder & Fixer (OpenAI Codex)
 
 Reproduce and resolve a bug within the specified package or module.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/tasks/bug_fix.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/tasks/bug_fix.prompt.yaml)
 
 ```yaml
 ---

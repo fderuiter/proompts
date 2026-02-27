@@ -6,7 +6,7 @@ title: Project Review Checklist
 
 Verify completion of a coding project before finalizing.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/lifecycle/project_review.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/lifecycle/project_review.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Principal Architect Task Execution
 
 A Principal Architect persona for executing tasks from TODO.md with strict adherence to SOLID, DRY, YAGNI, and KISS principles.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/tasks/principal_architect.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/tasks/principal_architect.prompt.yaml)
 
 ```yaml
 ---

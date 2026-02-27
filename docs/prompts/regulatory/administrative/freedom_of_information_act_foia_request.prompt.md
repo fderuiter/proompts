@@ -6,7 +6,7 @@ title: Freedom of Information Act (FOIA) Request
 
 Draft a request for records regarding a specific 510(k) clearance.
 
-[View Source YAML](../../../../prompts/regulatory/administrative/freedom_of_information_act_foia_request.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/administrative/freedom_of_information_act_foia_request.prompt.yaml)
 
 ```yaml
 ---

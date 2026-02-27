@@ -6,7 +6,7 @@ title: IVD Performance Study Compliance Review
 
 Review an IVD performance study for compliance with MDCG 2024‑4 and related guidance.
 
-[View Source YAML](../../../../prompts/regulatory/strategy/ivd_performance_study_compliance_review.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/strategy/ivd_performance_study_compliance_review.prompt.yaml)
 
 ```yaml
 ---

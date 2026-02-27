@@ -6,7 +6,7 @@ title: Real-Time Adjudication Visibility Dashboard
 
 Design a dashboard that provides real-time visibility into clinical endpoint adjudication workflows.
 
-[View Source YAML](../../../../../prompts/clinical/adjudication/adjudication_workflow/01_real_time_adjudication_dashboard.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/adjudication/adjudication_workflow/01_real_time_adjudication_dashboard.prompt.yaml)
 
 ```yaml
 ---

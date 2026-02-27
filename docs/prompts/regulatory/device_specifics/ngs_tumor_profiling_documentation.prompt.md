@@ -6,7 +6,7 @@ title: NGS Tumor Profiling Documentation
 
 Develop documentation supporting the clinical significance of mutations in an NGS-based tumor profiling panel.
 
-[View Source YAML](../../../../prompts/regulatory/device_specifics/ngs_tumor_profiling_documentation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/device_specifics/ngs_tumor_profiling_documentation.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: UI Tweak & Verification (Aegis Security)
 
 Resolve a minor UI regression and confirm the fix with build or test steps, ensuring accessibility and security.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/tasks/ui_fix.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/tasks/ui_fix.prompt.yaml)
 
 ```yaml
 ---

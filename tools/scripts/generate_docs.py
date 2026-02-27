@@ -174,8 +174,9 @@ class DocumentationGenerator:
 
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
-        # Relative link to source for the button
-        rel_source = os.path.relpath(source_path, output_path.parent)
+        # Link to GitHub source for the button
+        rel_path_from_root = source_path.relative_to(self.root)
+        github_url = f"https://github.com/fderuiter/proompts/blob/main/{rel_path_from_root}"
 
         try:
             raw_content = source_path.read_text(encoding='utf-8')
@@ -190,7 +191,7 @@ title: {title}
 
 {desc}
 
-[View Source YAML]({rel_source})
+[View Source YAML]({github_url})
 
 ```yaml
 {raw_content}
@@ -248,8 +249,9 @@ title: {title}
         filename = source_path.stem.replace('.workflow', '') + ".md"
         output_path = self.root / CONFIG['dirs']['workflow_docs'] / filename
         
-        # Relative link to source for the button
-        rel_source = os.path.relpath(source_path, output_path.parent)
+        # Link to GitHub source for the button
+        rel_path_from_root = source_path.relative_to(self.root)
+        github_url = f"https://github.com/fderuiter/proompts/blob/main/{rel_path_from_root}"
 
         mermaid_block = f"## Workflow Diagram\n\n```mermaid\n{mermaid}\n```\n" if mermaid else ""
 
@@ -262,7 +264,7 @@ title: {title}
 {desc}
 
 {mermaid_block}
-[View Source YAML]({rel_source})
+[View Source YAML]({github_url})
 """
         if check_mode:
             if not output_path.exists():

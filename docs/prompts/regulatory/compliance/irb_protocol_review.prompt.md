@@ -6,7 +6,7 @@ title: IRB Protocol Review
 
 Evaluate a clinical investigation protocol to ensure it meets IRB approval criteria.
 
-[View Source YAML](../../../../prompts/regulatory/compliance/irb_protocol_review.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/compliance/irb_protocol_review.prompt.yaml)
 
 ```yaml
 ---

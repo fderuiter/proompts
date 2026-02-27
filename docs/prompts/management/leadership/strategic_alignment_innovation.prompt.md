@@ -6,7 +6,7 @@ title: Strategic Alignment and Innovation
 
 Develop a roadmap that aligns global trial operations with emerging industry trends.
 
-[View Source YAML](../../../../prompts/management/leadership/strategic_alignment_innovation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/leadership/strategic_alignment_innovation.prompt.yaml)
 
 ```yaml
 ---

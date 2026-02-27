@@ -20,4 +20,4 @@ graph TD
     Input_process_description --> process_fmea
 ```
 
-[View Source YAML](../../workflows/scientific/sterility.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/scientific/sterility.workflow.yaml)

@@ -6,7 +6,7 @@ title: Protocol to USDM Stage 3 - Workflow
 
 Extract Encounters and Activities from Schedule of Activities.
 
-[View Source YAML](../../../../../prompts/clinical/protocol/usdm_workflow/03_usdm_stage3_workflow.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/protocol/usdm_workflow/03_usdm_stage3_workflow.prompt.yaml)
 
 ```yaml
 ---

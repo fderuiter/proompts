@@ -6,7 +6,7 @@ title: Operational Excellence & Risk Sweep
 
 Deliver a 90-day action plan to cut cycle time and reduce recruitment failure.
 
-[View Source YAML](../../../../prompts/management/operations/operational_excellence_risk_sweep.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/operations/operational_excellence_risk_sweep.prompt.yaml)
 
 ```yaml
 ---

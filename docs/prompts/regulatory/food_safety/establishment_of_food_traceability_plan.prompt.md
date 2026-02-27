@@ -6,7 +6,7 @@ title: Establishment of Food Traceability Plan
 
 Create a structured traceability plan for a facility handling foods on the Food Traceability List.
 
-[View Source YAML](../../../../prompts/regulatory/food_safety/establishment_of_food_traceability_plan.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/food_safety/establishment_of_food_traceability_plan.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Medical Device Reporting (MDR)
 
 Summarize an adverse event for mandatory electronic submission or develop an MDR SOP.
 
-[View Source YAML](../../../../prompts/regulatory/compliance/medical_device_reporting_mdr.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/compliance/medical_device_reporting_mdr.prompt.yaml)
 
 ```yaml
 ---

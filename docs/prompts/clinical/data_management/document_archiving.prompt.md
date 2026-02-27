@@ -6,7 +6,7 @@ title: Clinical Trial Document Archiving
 
 Develop archival strategy for TMF.
 
-[View Source YAML](../../../../prompts/clinical/data_management/document_archiving.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/document_archiving.prompt.yaml)
 
 ```yaml
 ---

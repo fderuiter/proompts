@@ -6,7 +6,7 @@ title: Time-to-Event Analysis Coach
 
 Guide a junior analyst through performing a time-to-event analysis.
 
-[View Source YAML](../../../../prompts/scientific/biostatistics/time_to_event_analysis_coach.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biostatistics/time_to_event_analysis_coach.prompt.yaml)
 
 ```yaml
 ---

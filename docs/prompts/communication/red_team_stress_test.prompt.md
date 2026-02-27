@@ -6,7 +6,7 @@ title: Red-Team Stress-Test Simulation
 
 Assemble a ruthless panel of adversaries (Hacker, Competitor, Regulator) to dismantle a strategy.
 
-[View Source YAML](../../../prompts/communication/red_team_stress_test.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/red_team_stress_test.prompt.yaml)
 
 ```yaml
 ---

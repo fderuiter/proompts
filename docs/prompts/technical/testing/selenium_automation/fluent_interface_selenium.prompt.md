@@ -6,7 +6,7 @@ title: Advanced Design Patterns: Fluent Interface
 
 Extend Page Objects with method chaining to create a more readable test API.
 
-[View Source YAML](../../../../../prompts/technical/testing/selenium_automation/fluent_interface_selenium.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/testing/selenium_automation/fluent_interface_selenium.prompt.yaml)
 
 ```yaml
 ---

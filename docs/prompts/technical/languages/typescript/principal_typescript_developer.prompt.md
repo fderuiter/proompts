@@ -6,7 +6,7 @@ title: Principal TypeScript Developer
 
 A Principal Engineer's guide to TypeScript development, focusing on type-driven architecture, runtime validation, and developer experience.
 
-[View Source YAML](../../../../../prompts/technical/languages/typescript/principal_typescript_developer.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/languages/typescript/principal_typescript_developer.prompt.yaml)
 
 ```yaml
 ---

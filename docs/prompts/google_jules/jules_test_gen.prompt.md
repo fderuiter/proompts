@@ -6,7 +6,7 @@ title: Jules Test Generator
 
 A specialized prompt for Google Jules to autonomously generate comprehensive test suites for existing code, ensuring high coverage and reliability.
 
-[View Source YAML](../../../prompts/google_jules/jules_test_gen.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/google_jules/jules_test_gen.prompt.yaml)
 
 ```yaml
 name: Jules Test Generator

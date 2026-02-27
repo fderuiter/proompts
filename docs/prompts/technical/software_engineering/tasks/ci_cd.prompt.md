@@ -6,7 +6,7 @@ title: Continuous Integration & Delivery (DevOps Architect)
 
 Design and implement secure, efficient, and scalable CI/CD pipelines for AI-integrated applications.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/tasks/ci_cd.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/tasks/ci_cd.prompt.yaml)
 
 ```yaml
 ---

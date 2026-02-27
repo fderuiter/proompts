@@ -6,7 +6,7 @@ title: Density Refiner
 
 Craft a concise yet information-rich summary of provided text.
 
-[View Source YAML](../../../prompts/communication/density_refiner.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/density_refiner.prompt.yaml)
 
 ```yaml
 ---

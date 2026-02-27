@@ -6,7 +6,7 @@ title: Detailed Project Blueprint and Timeline
 
 Provide a comprehensive roadmap with phases, milestones, success metrics, and stakeholders.
 
-[View Source YAML](../../../../../prompts/management/project_management/project_management_workflow/04_detailed_project_blueprint_timeline.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/project_management/project_management_workflow/04_detailed_project_blueprint_timeline.prompt.yaml)
 
 ```yaml
 ---

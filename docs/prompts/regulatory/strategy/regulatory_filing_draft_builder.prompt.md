@@ -6,7 +6,7 @@ title: Regulatory Filing Draft Builder
 
 Produce a regulator‑ready draft document using provided financials and risk data.
 
-[View Source YAML](../../../../prompts/regulatory/strategy/regulatory_filing_draft_builder.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/strategy/regulatory_filing_draft_builder.prompt.yaml)
 
 ```yaml
 ---

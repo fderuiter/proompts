@@ -6,7 +6,7 @@ title: Protocol to USDM Stage 5 - Assembly
 
 Assemble the final USDM JSON from previous stages.
 
-[View Source YAML](../../../../../prompts/clinical/protocol/usdm_workflow/05_usdm_stage5_assembly.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/protocol/usdm_workflow/05_usdm_stage5_assembly.prompt.yaml)
 
 ```yaml
 ---

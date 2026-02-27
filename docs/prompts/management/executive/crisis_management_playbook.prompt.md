@@ -6,7 +6,7 @@ title: Crisis-Management Playbook Generator
 
 Provide a concise playbook for handling critical incidents affecting customer data.
 
-[View Source YAML](../../../../prompts/management/executive/crisis_management_playbook.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/executive/crisis_management_playbook.prompt.yaml)
 
 ```yaml
 ---

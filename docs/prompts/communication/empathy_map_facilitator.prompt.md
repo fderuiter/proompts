@@ -6,7 +6,7 @@ title: Empathy-Map Facilitator
 
 Quickly capture a user persona’s voice and pain points.
 
-[View Source YAML](../../../prompts/communication/empathy_map_facilitator.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/empathy_map_facilitator.prompt.yaml)
 
 ```yaml
 ---

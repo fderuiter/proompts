@@ -32,4 +32,4 @@ graph TD
     Input_sponsor_name --> outreach_email
 ```
 
-[View Source YAML](../../workflows/clinical/site_acquisition.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/clinical/site_acquisition.workflow.yaml)

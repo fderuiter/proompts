@@ -6,7 +6,7 @@ title: Strategic Growth Roadmap
 
 Rank therapeutic areas for expansion over the next three years.
 
-[View Source YAML](../../../../prompts/management/executive/strategic_growth_roadmap.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/executive/strategic_growth_roadmap.prompt.yaml)
 
 ```yaml
 ---

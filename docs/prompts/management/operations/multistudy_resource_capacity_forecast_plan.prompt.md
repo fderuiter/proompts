@@ -6,7 +6,7 @@ title: Multistudy Resource & Capacity Forecast Plan
 
 Outline a data-driven approach for forecasting resources across multiple upcoming trials.
 
-[View Source YAML](../../../../prompts/management/operations/multistudy_resource_capacity_forecast_plan.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/operations/multistudy_resource_capacity_forecast_plan.prompt.yaml)
 
 ```yaml
 ---

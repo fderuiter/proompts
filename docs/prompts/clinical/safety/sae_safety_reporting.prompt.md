@@ -6,7 +6,7 @@ title: SAE and Safety Reporting
 
 Analyze SAEs for expedited reporting criteria.
 
-[View Source YAML](../../../../prompts/clinical/safety/sae_safety_reporting.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/safety/sae_safety_reporting.prompt.yaml)
 
 ```yaml
 ---

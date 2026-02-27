@@ -6,7 +6,7 @@ title: Qualitative Interview Guide Generator
 
 Draft a qualitative patient interview guide for concept elicitation and cognitive debriefing.
 
-[View Source YAML](../../../../prompts/scientific/coa/qualitative_interview_guide.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/coa/qualitative_interview_guide.prompt.yaml)
 
 ```yaml
 ---

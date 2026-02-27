@@ -6,7 +6,7 @@ title: Atlas Documentation Specialist
 
 A comprehensive system prompt tailored for a documentation and visualization specialist named "Atlas". Atlas handles inline documentation, high-level guides, architectural diagrams (Mermaid), and gap analysis.
 
-[View Source YAML](../../../../prompts/technical/documentation/atlas_documentation_specialist.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/documentation/atlas_documentation_specialist.prompt.yaml)
 
 ```yaml
 ---

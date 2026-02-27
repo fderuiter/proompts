@@ -6,7 +6,7 @@ title: PromptCrafter GPT
 
 Generate three distinct, best-practice prompts for a given topic.
 
-[View Source YAML](../../../../prompts/meta/meta_prompt_chain/05_L5_promptcrafter_gpt.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/meta/meta_prompt_chain/05_L5_promptcrafter_gpt.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Edit-Check Specification Builder for New eCRF Fields
 
 Create edit-check specifications for the new Concomitant Medication module in Medidata Rave.
 
-[View Source YAML](../../../../../prompts/clinical/data/clinical_data_workflow/03_edit_check_specification_builder.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data/clinical_data_workflow/03_edit_check_specification_builder.prompt.yaml)
 
 ```yaml
 ---

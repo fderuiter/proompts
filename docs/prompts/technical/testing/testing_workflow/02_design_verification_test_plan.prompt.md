@@ -6,7 +6,7 @@ title: Design Verification Test Plan
 
 Create a complete test plan for verifying that a medical device meets its design requirements.
 
-[View Source YAML](../../../../../prompts/technical/testing/testing_workflow/02_design_verification_test_plan.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/testing/testing_workflow/02_design_verification_test_plan.prompt.yaml)
 
 ```yaml
 ---

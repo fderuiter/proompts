@@ -6,7 +6,7 @@ title: Dependencies & Security Posture Analysis
 
 Perform a thorough audit of the repository's dependencies and overall security posture to identify and mitigate risks.
 
-[View Source YAML](../../../../prompts/technical/repository_refactoring/dependencies_security_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/repository_refactoring/dependencies_security_analysis.prompt.yaml)
 
 ```yaml
 ---

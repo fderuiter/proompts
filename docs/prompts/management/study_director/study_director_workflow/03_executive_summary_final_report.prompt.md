@@ -6,7 +6,7 @@ title: Generate an Executive Summary for the Final Report
 
 Write a concise executive summary of a non-clinical study report.
 
-[View Source YAML](../../../../../prompts/management/study_director/study_director_workflow/03_executive_summary_final_report.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/study_director/study_director_workflow/03_executive_summary_final_report.prompt.yaml)
 
 ```yaml
 ---

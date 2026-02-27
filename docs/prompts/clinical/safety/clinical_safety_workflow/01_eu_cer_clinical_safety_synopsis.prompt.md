@@ -6,7 +6,7 @@ title: Clinical Safety Synopsis for EU MDR CER
 
 Provide a concise clinical safety synopsis for the EU MDR Clinical Evaluation Report.
 
-[View Source YAML](../../../../../prompts/clinical/safety/clinical_safety_workflow/01_eu_cer_clinical_safety_synopsis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/safety/clinical_safety_workflow/01_eu_cer_clinical_safety_synopsis.prompt.yaml)
 
 ```yaml
 ---

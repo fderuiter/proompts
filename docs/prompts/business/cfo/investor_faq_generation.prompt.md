@@ -6,7 +6,7 @@ title: Investor FAQ Generation
 
 Generate an FAQ for a bearish investor based on press release and 10-K.
 
-[View Source YAML](../../../../prompts/business/cfo/investor_faq_generation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/cfo/investor_faq_generation.prompt.yaml)
 
 ```yaml
 ---

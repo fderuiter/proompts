@@ -6,7 +6,7 @@ title: Scenario-Based Microlearning Series
 
 Design short interactive modules that help CRO staff apply GCP principles correctly during site visits.
 
-[View Source YAML](../../../../../prompts/management/training/learning_development_workflow/02_scenario_based_microlearning_series.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/training/learning_development_workflow/02_scenario_based_microlearning_series.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Advanced Python Testing
 
 A comprehensive guide to Python testing, covering Pytest fixtures, Property-Based Testing (Hypothesis), and Mutation Testing.
 
-[View Source YAML](../../../../../prompts/technical/languages/python/advanced_python_testing.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/languages/python/advanced_python_testing.prompt.yaml)
 
 ```yaml
 ---

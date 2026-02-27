@@ -6,7 +6,7 @@ title: De Novo Request Preparation
 
 Generate a summary of risks and mitigations for a De Novo classification request.
 
-[View Source YAML](../../../../prompts/regulatory/submissions/de_novo_request_preparation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/submissions/de_novo_request_preparation.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Task Prototyper
 
 Generate a domain-specific L3 prompt that accomplishes `{{end_task}}`.
 
-[View Source YAML](../../../../prompts/meta/meta_prompt_chain/03_L3_task-prototyper.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/meta/meta_prompt_chain/03_L3_task-prototyper.prompt.yaml)
 
 ```yaml
 ---

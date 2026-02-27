@@ -6,7 +6,7 @@ title: Secondary Endpoint Multiplicity Adjuster
 
 Apply Bonferroni-Holm (step-down) procedure to secondary efficacy endpoints.
 
-[View Source YAML](../../../../prompts/scientific/biostatistics/secondary_endpoint_multiplicity.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biostatistics/secondary_endpoint_multiplicity.prompt.yaml)
 
 ```yaml
 ---

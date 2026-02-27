@@ -27,4 +27,4 @@ graph TD
     Input_market_report --> executive_summary
 ```
 
-[View Source YAML](../../workflows/business/market_research.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/business/market_research.workflow.yaml)

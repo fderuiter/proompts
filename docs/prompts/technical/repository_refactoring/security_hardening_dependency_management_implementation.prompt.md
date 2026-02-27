@@ -6,7 +6,7 @@ title: Security Hardening and Dependency Management Implementation
 
 Secure the repository and manage its dependencies by externalizing secrets, addressing vulnerabilities, and updating dependencies.
 
-[View Source YAML](../../../../prompts/technical/repository_refactoring/security_hardening_dependency_management_implementation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/repository_refactoring/security_hardening_dependency_management_implementation.prompt.yaml)
 
 ```yaml
 ---

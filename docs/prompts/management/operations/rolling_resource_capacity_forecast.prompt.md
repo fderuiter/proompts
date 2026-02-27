@@ -6,7 +6,7 @@ title: Rolling Resource & Capacity Forecast
 
 Generate a 12-month forecast of FTE demand and utilization by function and region.
 
-[View Source YAML](../../../../prompts/management/operations/rolling_resource_capacity_forecast.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/operations/rolling_resource_capacity_forecast.prompt.yaml)
 
 ```yaml
 ---

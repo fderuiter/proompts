@@ -6,7 +6,7 @@ title: E2E Test Discovery Template
 
 Guide a model to analyze a codebase and produce a comprehensive end‑to‑end test plan.
 
-[View Source YAML](../../../../../prompts/technical/testing/testing_workflow/01_e2e_test_discovery.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/testing/testing_workflow/01_e2e_test_discovery.prompt.yaml)
 
 ```yaml
 ---

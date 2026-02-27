@@ -6,7 +6,7 @@ title: Pixar Story Spine Outline
 
 Guide the model in creating a short Pixar-style story outline for middle-grade readers.
 
-[View Source YAML](../../../prompts/communication/story_spine_outline.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/story_spine_outline.prompt.yaml)
 
 ```yaml
 ---

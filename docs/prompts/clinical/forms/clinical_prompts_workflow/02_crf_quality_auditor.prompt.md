@@ -6,7 +6,7 @@ title: CRF Quality Auditor
 
 - Evaluate against CDISC CDASH IG v2.1 and SDTM traceability.
 
-[View Source YAML](../../../../../prompts/clinical/forms/clinical_prompts_workflow/02_crf_quality_auditor.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/forms/clinical_prompts_workflow/02_crf_quality_auditor.prompt.yaml)
 
 ```yaml
 ---

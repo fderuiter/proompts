@@ -6,7 +6,7 @@ title: Architecture Flow & Diagram Architect
 
 A Principal System Architect's guide to tracing request lifecycles, identifying bottlenecks, and generating Mermaid diagrams.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/tasks/architecture_flow.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/tasks/architecture_flow.prompt.yaml)
 
 ```yaml
 ---

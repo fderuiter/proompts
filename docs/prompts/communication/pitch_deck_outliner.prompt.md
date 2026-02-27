@@ -6,7 +6,7 @@ title: Pitch-Deck Outliner
 
 Draft a high-impact, 10-slide VC pitch deck outline.
 
-[View Source YAML](../../../prompts/communication/pitch_deck_outliner.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/pitch_deck_outliner.prompt.yaml)
 
 ```yaml
 ---

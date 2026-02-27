@@ -24,4 +24,4 @@ graph TD
     sonic_architect --> lyricist
 ```
 
-[View Source YAML](../../workflows/clinical/music_therapy.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/clinical/music_therapy.workflow.yaml)

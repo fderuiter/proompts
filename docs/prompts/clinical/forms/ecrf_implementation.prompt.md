@@ -6,7 +6,7 @@ title: Electronic Data Capture Implementation
 
 Design eCRFs with built-in edit checks and automation.
 
-[View Source YAML](../../../../prompts/clinical/forms/ecrf_implementation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/forms/ecrf_implementation.prompt.yaml)
 
 ```yaml
 ---

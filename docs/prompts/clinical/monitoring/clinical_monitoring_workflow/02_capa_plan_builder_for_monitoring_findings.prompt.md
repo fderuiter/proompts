@@ -6,7 +6,7 @@ title: CAPA Plan Builder for Monitoring Findings
 
 You are a **Regulatory Quality Advisor** specializing in ICH-GCP compliance.
 
-[View Source YAML](../../../../../prompts/clinical/monitoring/clinical_monitoring_workflow/02_capa_plan_builder_for_monitoring_findings.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/monitoring/clinical_monitoring_workflow/02_capa_plan_builder_for_monitoring_findings.prompt.yaml)
 
 ```yaml
 ---

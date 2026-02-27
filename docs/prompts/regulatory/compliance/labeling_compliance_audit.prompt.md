@@ -6,7 +6,7 @@ title: Labeling Compliance Audit
 
 Audit device labeling for compliance with mandatory elements (Manufacturer, UDI, date formats).
 
-[View Source YAML](../../../../prompts/regulatory/compliance/labeling_compliance_audit.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/compliance/labeling_compliance_audit.prompt.yaml)
 
 ```yaml
 ---

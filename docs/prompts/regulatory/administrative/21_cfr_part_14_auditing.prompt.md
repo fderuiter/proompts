@@ -6,7 +6,7 @@ title: 21 CFR Part 14 Auditing
 
 Audit advisory committee meeting minutes for compliance with record-keeping elements.
 
-[View Source YAML](../../../../prompts/regulatory/administrative/21_cfr_part_14_auditing.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/administrative/21_cfr_part_14_auditing.prompt.yaml)
 
 ```yaml
 ---

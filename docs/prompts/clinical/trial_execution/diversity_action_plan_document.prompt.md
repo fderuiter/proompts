@@ -6,7 +6,7 @@ title: Diversity Action Plan Development
 
 Generate a Diversity Action Plan per FDA guidance.
 
-[View Source YAML](../../../../prompts/clinical/trial_execution/diversity_action_plan_document.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/trial_execution/diversity_action_plan_document.prompt.yaml)
 
 ```yaml
 ---

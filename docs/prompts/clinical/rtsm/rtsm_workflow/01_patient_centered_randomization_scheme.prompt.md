@@ -6,7 +6,7 @@ title: Design a Patient-Centered Randomization Scheme
 
 Create a randomization scheme that balances patient needs with logistical simplicity.
 
-[View Source YAML](../../../../../prompts/clinical/rtsm/rtsm_workflow/01_patient_centered_randomization_scheme.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/rtsm/rtsm_workflow/01_patient_centered_randomization_scheme.prompt.yaml)
 
 ```yaml
 ---

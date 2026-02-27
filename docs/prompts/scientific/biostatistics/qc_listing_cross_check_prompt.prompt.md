@@ -6,7 +6,7 @@ title: QC Listing & Cross-check Prompt
 
 Automate a listing and QC cross-check between independent R and SAS runs.
 
-[View Source YAML](../../../../prompts/scientific/biostatistics/qc_listing_cross_check_prompt.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biostatistics/qc_listing_cross_check_prompt.prompt.yaml)
 
 ```yaml
 ---

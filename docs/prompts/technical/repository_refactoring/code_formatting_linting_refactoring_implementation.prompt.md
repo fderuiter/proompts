@@ -6,7 +6,7 @@ title: Code Formatting, Linting, and Refactoring Implementation
 
 Improve the codebase's internal quality and consistency by introducing and configuring a standard code formatter and a linter, and refactoring complex code.
 
-[View Source YAML](../../../../prompts/technical/repository_refactoring/code_formatting_linting_refactoring_implementation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/repository_refactoring/code_formatting_linting_refactoring_implementation.prompt.yaml)
 
 ```yaml
 ---

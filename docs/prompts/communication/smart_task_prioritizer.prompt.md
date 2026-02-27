@@ -6,7 +6,7 @@ title: Smart Task Prioritizer
 
 Transform a raw to-do list into a structured Prioritization Matrix (Impact/Urgency/Effort) and an actionable Execution Plan.
 
-[View Source YAML](../../../prompts/communication/smart_task_prioritizer.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/smart_task_prioritizer.prompt.yaml)
 
 ```yaml
 ---

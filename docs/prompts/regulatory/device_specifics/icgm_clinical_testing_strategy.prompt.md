@@ -6,7 +6,7 @@ title: iCGM Clinical Testing Strategy
 
 Draft a clinical study plan to demonstrate accuracy for an iCGM system.
 
-[View Source YAML](../../../../prompts/regulatory/device_specifics/icgm_clinical_testing_strategy.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/device_specifics/icgm_clinical_testing_strategy.prompt.yaml)
 
 ```yaml
 ---

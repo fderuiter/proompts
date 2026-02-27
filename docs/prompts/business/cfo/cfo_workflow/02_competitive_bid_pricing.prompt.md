@@ -6,7 +6,7 @@ title: Competitive-Bid Pricing & Margin Optimizer
 
 Compare competitor bids and internal costs to recommend a winning price with target margin.
 
-[View Source YAML](../../../../../prompts/business/cfo/cfo_workflow/02_competitive_bid_pricing.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/cfo/cfo_workflow/02_competitive_bid_pricing.prompt.yaml)
 
 ```yaml
 ---

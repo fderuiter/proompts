@@ -6,7 +6,7 @@ title: Learning Path Mentor
 
 Design a phased roadmap that guides users toward skill mastery.
 
-[View Source YAML](../../../../prompts/management/personal_effectiveness/learning_path_mentor.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/personal_effectiveness/learning_path_mentor.prompt.yaml)
 
 ```yaml
 ---

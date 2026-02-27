@@ -6,7 +6,7 @@ title: Scenario-Based Financial Navigator
 
 Generate long-term wealth scenarios and actionable tactics.
 
-[View Source YAML](../../../../prompts/management/personal_effectiveness/financial_navigator.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/personal_effectiveness/financial_navigator.prompt.yaml)
 
 ```yaml
 ---

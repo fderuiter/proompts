@@ -6,7 +6,7 @@ title: Medical Device Recall Strategy
 
 Develop a mandatory recall strategy for a device posing health risks.
 
-[View Source YAML](../../../../prompts/regulatory/compliance/medical_device_recall_strategy.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/compliance/medical_device_recall_strategy.prompt.yaml)
 
 ```yaml
 ---

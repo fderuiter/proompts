@@ -6,7 +6,7 @@ title: Portfolio Resource and Budget Forecast
 
 Generate a rolling 12‑month FTE and budget forecast for active trials.
 
-[View Source YAML](../../../../prompts/management/project_management/portfolio_resource_budget_forecast.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/project_management/portfolio_resource_budget_forecast.prompt.yaml)
 
 ```yaml
 ---

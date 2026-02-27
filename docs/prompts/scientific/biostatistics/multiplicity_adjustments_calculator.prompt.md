@@ -6,7 +6,7 @@ title: Multiplicity Adjustment Code Generator
 
 Generate SAS code for multiplicity adjustments (Bonferroni, Holm, Hochberg).
 
-[View Source YAML](../../../../prompts/scientific/biostatistics/multiplicity_adjustments_calculator.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biostatistics/multiplicity_adjustments_calculator.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: AGENTS.md Checklist Generator
 
 Create a best-practice checklist for writing an AGENTS.md file and provide a meta‑prompt to generate one from any repository.
 
-[View Source YAML](../../../../prompts/meta/meta_prompt_chain/05_L5_agents-md-checklist.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/meta/meta_prompt_chain/05_L5_agents-md-checklist.prompt.yaml)
 
 ```yaml
 ---

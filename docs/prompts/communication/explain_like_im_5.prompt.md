@@ -6,7 +6,7 @@ title: Explain-Like-I’m-5 (ELI5)
 
 Explain ‘[TOPIC]’ as if I’m five:
 
-[View Source YAML](../../../prompts/communication/explain_like_im_5.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/explain_like_im_5.prompt.yaml)
 
 ```yaml
 ---

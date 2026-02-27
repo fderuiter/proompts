@@ -19,4 +19,4 @@ graph TD
     define_qc_checks --> review_pipeline
 ```
 
-[View Source YAML](../../workflows/clinical/data_management_etl.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/clinical/data_management_etl.workflow.yaml)

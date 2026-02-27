@@ -6,7 +6,7 @@ title: Voice of Customer Root Cause Analysis
 
 Analyze raw feedback to identify root causes and quick wins.
 
-[View Source YAML](../../../../prompts/business/cx/root_cause_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/cx/root_cause_analysis.prompt.yaml)
 
 ```yaml
 ---

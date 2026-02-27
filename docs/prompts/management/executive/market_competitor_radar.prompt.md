@@ -6,7 +6,7 @@ title: Strategic Market and Competitor Radar
 
 Provide an executive briefing on growth areas, competitor moves, and regulatory shifts.
 
-[View Source YAML](../../../../prompts/management/executive/market_competitor_radar.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/executive/market_competitor_radar.prompt.yaml)
 
 ```yaml
 ---

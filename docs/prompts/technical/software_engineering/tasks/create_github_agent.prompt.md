@@ -6,7 +6,7 @@ title: GitHub Custom Agent Creator
 
 Expertly craft configuration files for GitHub Custom Agents with strict YAML frontmatter and structured Markdown instructions.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/tasks/create_github_agent.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/tasks/create_github_agent.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: TOGAF Phase D - Technology Architecture
 
 Guide for defining the Technology Architecture (infrastructure, hardware, networks).
 
-[View Source YAML](../../../../../prompts/technical/architecture/togaf/phase_d_technology.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/architecture/togaf/phase_d_technology.prompt.yaml)
 
 ```yaml
 ---

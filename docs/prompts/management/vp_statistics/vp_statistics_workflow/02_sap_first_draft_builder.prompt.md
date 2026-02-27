@@ -6,7 +6,7 @@ title: Statistical Analysis Plan Draft Builder
 
 Create the initial draft of a Statistical Analysis Plan (SAP) for a Phase II oncology trial.
 
-[View Source YAML](../../../../../prompts/management/vp_statistics/vp_statistics_workflow/02_sap_first_draft_builder.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/vp_statistics/vp_statistics_workflow/02_sap_first_draft_builder.prompt.yaml)
 
 ```yaml
 ---

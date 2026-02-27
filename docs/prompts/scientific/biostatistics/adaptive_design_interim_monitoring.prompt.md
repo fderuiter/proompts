@@ -6,7 +6,7 @@ title: Adaptive Design & Interim Monitoring
 
 Provide guidance on adaptive trial design and interim monitoring strategies.
 
-[View Source YAML](../../../../prompts/scientific/biostatistics/adaptive_design_interim_monitoring.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biostatistics/adaptive_design_interim_monitoring.prompt.yaml)
 
 ```yaml
 ---

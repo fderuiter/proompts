@@ -6,7 +6,7 @@ title: Endotoxin Control & 510(k) Risk Plan
 
 Draft a risk-based endotoxin-testing plan for a 510(k) submission.
 
-[View Source YAML](../../../../../prompts/scientific/microbiology/microbiology_workflow/03_endotoxin_control_510k_risk_plan.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/microbiology/microbiology_workflow/03_endotoxin_control_510k_risk_plan.prompt.yaml)
 
 ```yaml
 ---

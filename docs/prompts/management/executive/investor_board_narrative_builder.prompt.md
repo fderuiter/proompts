@@ -6,7 +6,7 @@ title: Investor and Board Narrative Builder
 
 Craft a concise two-slide narrative for investors and board members.
 
-[View Source YAML](../../../../prompts/management/executive/investor_board_narrative_builder.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/executive/investor_board_narrative_builder.prompt.yaml)
 
 ```yaml
 ---

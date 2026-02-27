@@ -6,7 +6,7 @@ title: PAW Phase 3 - Precision Strike
 
 Phase 3 of the Principal Architect Workflow (PAW). Implements the design spec with surgical accuracy.
 
-[View Source YAML](../../../../../../prompts/technical/software_engineering/tasks/paw/paw_03_precision_strike.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/tasks/paw/paw_03_precision_strike.prompt.yaml)
 
 ```yaml
 ---

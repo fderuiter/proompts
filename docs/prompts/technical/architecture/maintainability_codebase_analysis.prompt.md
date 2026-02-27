@@ -6,7 +6,7 @@ title: Maintainability Codebase Analysis
 
 Improve code maintainability by addressing readability, organization, and test quality.
 
-[View Source YAML](../../../../prompts/technical/architecture/maintainability_codebase_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/architecture/maintainability_codebase_analysis.prompt.yaml)
 
 ```yaml
 ---

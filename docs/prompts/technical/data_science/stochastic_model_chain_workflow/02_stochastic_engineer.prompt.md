@@ -6,7 +6,7 @@ title: Stochastic Engineer
 
 Generates a Python Monte Carlo simulation script based on provided state definitions and transition matrix.
 
-[View Source YAML](../../../../../prompts/technical/data_science/stochastic_model_chain_workflow/02_stochastic_engineer.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/data_science/stochastic_model_chain_workflow/02_stochastic_engineer.prompt.yaml)
 
 ```yaml
 ---

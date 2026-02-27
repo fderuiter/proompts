@@ -6,7 +6,7 @@ title: Financial Conflict of Interest (FCOI) Reporting
 
 Review disclosures and draft management plan.
 
-[View Source YAML](../../../../prompts/regulatory/quality/fcoi_reporting.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/fcoi_reporting.prompt.yaml)
 
 ```yaml
 ---

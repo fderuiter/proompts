@@ -6,7 +6,7 @@ title: Project Brief for Epic
 
 Summarize a project epic with key features, rules, and success metrics.
 
-[View Source YAML](../../../../../../prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/02_project_brief_epic.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/02_project_brief_epic.prompt.yaml)
 
 ```yaml
 ---

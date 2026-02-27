@@ -6,7 +6,7 @@ title: Draft a GLP-Compliant Study Protocol
 
 Produce a detailed study plan that satisfies OECD and FDA GLP regulations.
 
-[View Source YAML](../../../../../prompts/management/study_director/study_director_workflow/01_draft_glp_compliant_study_protocol.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/study_director/study_director_workflow/01_draft_glp_compliant_study_protocol.prompt.yaml)
 
 ```yaml
 ---

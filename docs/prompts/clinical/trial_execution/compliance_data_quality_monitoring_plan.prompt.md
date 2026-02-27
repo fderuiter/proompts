@@ -6,7 +6,7 @@ title: Compliance and Data Quality Monitoring Plan
 
 Design an AI-assisted monitoring plan to ensure compliance and data integrity.
 
-[View Source YAML](../../../../prompts/clinical/trial_execution/compliance_data_quality_monitoring_plan.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/trial_execution/compliance_data_quality_monitoring_plan.prompt.yaml)
 
 ```yaml
 ---

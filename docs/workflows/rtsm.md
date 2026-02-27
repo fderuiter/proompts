@@ -21,4 +21,4 @@ graph TD
     Input_existing_sop --> rbm_sop
 ```
 
-[View Source YAML](../../workflows/clinical/rtsm.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/clinical/rtsm.workflow.yaml)

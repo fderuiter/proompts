@@ -6,7 +6,7 @@ title: Hype vs. Reality Analysis
 
 Evaluate a specific technology for pragmatic application, cutting through the hype.
 
-[View Source YAML](../../../../prompts/business/vp_tech_innovation/hype_vs_reality_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/vp_tech_innovation/hype_vs_reality_analysis.prompt.yaml)
 
 ```yaml
 ---

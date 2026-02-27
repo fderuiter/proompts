@@ -6,7 +6,7 @@ title: AI-Enhanced RBM Action Plan
 
 Generate next-week monitoring actions that optimize patient safety and data quality.
 
-[View Source YAML](../../../../prompts/management/medical_director/ai_enhanced_rbm_action_plan.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/medical_director/ai_enhanced_rbm_action_plan.prompt.yaml)
 
 ```yaml
 ---

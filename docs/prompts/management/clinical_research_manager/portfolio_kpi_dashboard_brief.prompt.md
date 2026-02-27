@@ -6,7 +6,7 @@ title: Portfolio KPI Dashboard Brief
 
 Produce a one-page executive dashboard of enrollment, deviation, SDV, and budget KPIs for live studies.
 
-[View Source YAML](../../../../prompts/management/clinical_research_manager/portfolio_kpi_dashboard_brief.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/clinical_research_manager/portfolio_kpi_dashboard_brief.prompt.yaml)
 
 ```yaml
 ---

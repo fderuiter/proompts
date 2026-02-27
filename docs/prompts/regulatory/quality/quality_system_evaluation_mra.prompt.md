@@ -6,7 +6,7 @@ title: Quality System Evaluation (MRA)
 
 Generate a quality system evaluation report for a manufacturer under the US-EC MRA.
 
-[View Source YAML](../../../../prompts/regulatory/quality/quality_system_evaluation_mra.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/quality_system_evaluation_mra.prompt.yaml)
 
 ```yaml
 ---

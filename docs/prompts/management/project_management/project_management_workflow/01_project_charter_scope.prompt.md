@@ -6,7 +6,7 @@ title: Project Charter and Scope Definition
 
 Create a complete project charter summarizing background, objectives, scope, deliverables, and key risks.
 
-[View Source YAML](../../../../../prompts/management/project_management/project_management_workflow/01_project_charter_scope.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/project_management/project_management_workflow/01_project_charter_scope.prompt.yaml)
 
 ```yaml
 ---

@@ -19,4 +19,4 @@ graph TD
     Input_adjudication_log_csv --> analyze_kpis
 ```
 
-[View Source YAML](../../workflows/clinical/adjudication.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/clinical/adjudication.workflow.yaml)

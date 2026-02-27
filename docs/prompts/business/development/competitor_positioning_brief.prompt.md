@@ -6,7 +6,7 @@ title: Competitor-Positioning Brief
 
 Provide a competitor comparison to highlight differentiators for an upcoming board review.
 
-[View Source YAML](../../../../prompts/business/development/competitor_positioning_brief.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/development/competitor_positioning_brief.prompt.yaml)
 
 ```yaml
 ---

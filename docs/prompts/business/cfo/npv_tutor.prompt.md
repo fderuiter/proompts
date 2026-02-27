@@ -6,7 +6,7 @@ title: Net Present Value Socratic Tutor
 
 Guide the learner to derive and apply the NPV formula through short Socratic questioning.
 
-[View Source YAML](../../../../prompts/business/cfo/npv_tutor.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/cfo/npv_tutor.prompt.yaml)
 
 ```yaml
 ---

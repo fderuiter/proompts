@@ -6,7 +6,7 @@ title: Repository Foundation & Developer Experience Analysis
 
 Analyze the repository's foundation and developer experience to prepare it for future growth and easy onboarding.
 
-[View Source YAML](../../../../prompts/technical/repository_refactoring/repo_foundation_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/repository_refactoring/repo_foundation_analysis.prompt.yaml)
 
 ```yaml
 ---

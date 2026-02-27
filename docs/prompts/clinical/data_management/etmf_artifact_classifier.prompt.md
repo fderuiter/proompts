@@ -6,7 +6,7 @@ title: eTMF Artifact Classifier
 
 Read document text and suggest appropriate eTMF artifact classification and metadata assignments for incoming trial documents.
 
-[View Source YAML](../../../../prompts/clinical/data_management/etmf_artifact_classifier.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/etmf_artifact_classifier.prompt.yaml)
 
 ```yaml
 ---

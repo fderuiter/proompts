@@ -6,7 +6,7 @@ title: Post-Market Safety Signal Trending
 
 Analyze post-market data to identify emerging safety signals.
 
-[View Source YAML](../../../../../prompts/clinical/safety/clinical_safety_workflow/03_post_market_safety_signal_trending.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/safety/clinical_safety_workflow/03_post_market_safety_signal_trending.prompt.yaml)
 
 ```yaml
 ---

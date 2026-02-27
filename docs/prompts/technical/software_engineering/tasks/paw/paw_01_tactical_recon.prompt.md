@@ -6,7 +6,7 @@ title: PAW Phase 1 - Tactical Recon
 
 Phase 1 of the Principal Architect Workflow (PAW). Analyzes TODO.md and file structure to generate a Tactical Brief.
 
-[View Source YAML](../../../../../../prompts/technical/software_engineering/tasks/paw/paw_01_tactical_recon.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/tasks/paw/paw_01_tactical_recon.prompt.yaml)
 
 ```yaml
 ---

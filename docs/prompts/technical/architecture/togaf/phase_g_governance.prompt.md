@@ -6,7 +6,7 @@ title: TOGAF Phase G - Implementation Governance
 
 Guide for overseeing the implementation to ensure conformance with the architecture (Sustaining Integrity).
 
-[View Source YAML](../../../../../prompts/technical/architecture/togaf/phase_g_governance.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/architecture/togaf/phase_g_governance.prompt.yaml)
 
 ```yaml
 ---

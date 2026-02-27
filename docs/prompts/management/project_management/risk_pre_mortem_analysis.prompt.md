@@ -6,7 +6,7 @@ title: Risk and Pre-Mortem Analysis
 
 Identify early failure points and mitigation strategies for a project or study.
 
-[View Source YAML](../../../../prompts/management/project_management/risk_pre_mortem_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/project_management/risk_pre_mortem_analysis.prompt.yaml)
 
 ```yaml
 ---

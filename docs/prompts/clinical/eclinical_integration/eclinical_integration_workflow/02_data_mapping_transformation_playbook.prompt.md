@@ -6,7 +6,7 @@ title: Data Mapping and Transformation Playbook
 
 Provide a repeatable workflow for mapping JSON FHIR bundles to SDTM-compliant tables.
 
-[View Source YAML](../../../../../prompts/clinical/eclinical_integration/eclinical_integration_workflow/02_data_mapping_transformation_playbook.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/eclinical_integration/eclinical_integration_workflow/02_data_mapping_transformation_playbook.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Informed Consent Exception (Emergency)
 
 Draft IRB documentation for an exception from informed consent in emergency research.
 
-[View Source YAML](../../../../prompts/regulatory/adherence/informed_consent_exception_emergency.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/adherence/informed_consent_exception_emergency.prompt.yaml)
 
 ```yaml
 ---

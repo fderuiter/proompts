@@ -6,7 +6,7 @@ title: README Generator
 
 Scan an entire repository and produce a polished README.md covering everything a new developer needs.
 
-[View Source YAML](../../../../prompts/meta/meta_prompt_chain/05_L5_readme-generator.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/meta/meta_prompt_chain/05_L5_readme-generator.prompt.yaml)
 
 ```yaml
 ---

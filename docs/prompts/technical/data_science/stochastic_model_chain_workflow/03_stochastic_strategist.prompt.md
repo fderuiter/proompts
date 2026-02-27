@@ -6,7 +6,7 @@ title: Stochastic Strategist
 
 Analyzes the stochastic model and simulation logic to provide strategic advice, identifying "Black Swan" paths and leverage points.
 
-[View Source YAML](../../../../../prompts/technical/data_science/stochastic_model_chain_workflow/03_stochastic_strategist.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/data_science/stochastic_model_chain_workflow/03_stochastic_strategist.prompt.yaml)
 
 ```yaml
 ---

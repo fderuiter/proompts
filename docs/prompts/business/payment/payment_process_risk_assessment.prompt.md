@@ -6,7 +6,7 @@ title: Payment-Process Risk Assessment and Mitigation
 
 Identify weak points in the site-payment workflow and propose mitigations.
 
-[View Source YAML](../../../../prompts/business/payment/payment_process_risk_assessment.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/payment/payment_process_risk_assessment.prompt.yaml)
 
 ```yaml
 ---

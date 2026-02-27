@@ -6,7 +6,7 @@ title: TOGAF Preliminary Phase
 
 Guide for establishing the Architecture Capability and defining the organizational footprint (The Genesis of Architecture).
 
-[View Source YAML](../../../../../prompts/technical/architecture/togaf/preliminary_phase.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/architecture/togaf/preliminary_phase.prompt.yaml)
 
 ```yaml
 ---

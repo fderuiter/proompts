@@ -6,7 +6,7 @@ title: ClinicalTrials.gov Registration
 
 Draft registration summary and outcome measures.
 
-[View Source YAML](../../../../prompts/regulatory/strategy/clinicaltrials_registration.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/strategy/clinicaltrials_registration.prompt.yaml)
 
 ```yaml
 ---

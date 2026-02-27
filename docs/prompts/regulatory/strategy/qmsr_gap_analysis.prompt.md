@@ -6,7 +6,7 @@ title: 21 CFR 820 / QMSR Gap-Analysis & Remediation
 
 Evaluate the quality-management system against current 21 CFR 820 and the proposed QMSR.
 
-[View Source YAML](../../../../prompts/regulatory/strategy/qmsr_gap_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/strategy/qmsr_gap_analysis.prompt.yaml)
 
 ```yaml
 ---

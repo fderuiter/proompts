@@ -6,7 +6,7 @@ title: Interim Results Executive Brief
 
 Summarize interim analysis findings for cross-functional leadership.
 
-[View Source YAML](../../../../../prompts/management/vp_statistics/vp_statistics_workflow/01_interim_results_executive_brief.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/vp_statistics/vp_statistics_workflow/01_interim_results_executive_brief.prompt.yaml)
 
 ```yaml
 ---

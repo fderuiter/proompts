@@ -6,7 +6,7 @@ title: Special Controls Labeling Compliance
 
 Generate mandatory labeling content, including warnings and limitations, for HCV antibody tests.
 
-[View Source YAML](../../../../prompts/regulatory/device_specifics/special_controls_labeling_compliance.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/device_specifics/special_controls_labeling_compliance.prompt.yaml)
 
 ```yaml
 ---

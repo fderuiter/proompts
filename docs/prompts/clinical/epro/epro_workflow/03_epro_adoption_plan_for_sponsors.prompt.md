@@ -6,7 +6,7 @@ title: ePRO Adoption Plan for Sponsors
 
 Outline a six-month plan for rolling out ePRO across multiple sites.
 
-[View Source YAML](../../../../../prompts/clinical/epro/epro_workflow/03_epro_adoption_plan_for_sponsors.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/epro/epro_workflow/03_epro_adoption_plan_for_sponsors.prompt.yaml)
 
 ```yaml
 ---

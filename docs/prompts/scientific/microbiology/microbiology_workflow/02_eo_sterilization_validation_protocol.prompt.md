@@ -6,7 +6,7 @@ title: EO Sterilization Validation Protocol
 
 Outline a protocol to achieve SAL 10^-6 using an ethylene‑oxide half‑cycle approach.
 
-[View Source YAML](../../../../../prompts/scientific/microbiology/microbiology_workflow/02_eo_sterilization_validation_protocol.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/microbiology/microbiology_workflow/02_eo_sterilization_validation_protocol.prompt.yaml)
 
 ```yaml
 ---

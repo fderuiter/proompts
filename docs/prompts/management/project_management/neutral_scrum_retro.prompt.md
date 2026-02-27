@@ -6,7 +6,7 @@ title: Senior Agile Transformation Coach (Retrospectives)
 
 Design a high-impact retrospective agenda tailored to team sentiment and sprint outcomes, focusing on root cause analysis and actionable improvements.
 
-[View Source YAML](../../../../prompts/management/project_management/neutral_scrum_retro.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/project_management/neutral_scrum_retro.prompt.yaml)
 
 ```yaml
 name: Senior Agile Transformation Coach (Retrospectives)

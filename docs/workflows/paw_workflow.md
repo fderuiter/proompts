@@ -27,4 +27,4 @@ graph TD
     Input_todo_content --> qa_verification
 ```
 
-[View Source YAML](../../workflows/technical/software_engineering/paw_workflow.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/technical/software_engineering/paw_workflow.workflow.yaml)

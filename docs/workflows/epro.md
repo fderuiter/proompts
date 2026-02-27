@@ -21,4 +21,4 @@ graph TD
     Input_rollout_details --> adoption_plan
 ```
 
-[View Source YAML](../../workflows/clinical/epro.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/clinical/epro.workflow.yaml)

@@ -6,7 +6,7 @@ title: Reverse Brainstorming
 
 Flip negative ideas into constructive solutions.
 
-[View Source YAML](../../../../prompts/management/innovation/reverse_brainstorming.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/innovation/reverse_brainstorming.prompt.yaml)
 
 ```yaml
 ---

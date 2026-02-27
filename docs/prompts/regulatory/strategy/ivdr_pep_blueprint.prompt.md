@@ -6,7 +6,7 @@ title: IVDR Performance-Evaluation Plan Blueprint
 
 Draft a comprehensive Performance‑Evaluation Plan (PEP) that satisfies Article 56 and Annex XIII of the IVDR.
 
-[View Source YAML](../../../../prompts/regulatory/strategy/ivdr_pep_blueprint.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/strategy/ivdr_pep_blueprint.prompt.yaml)
 
 ```yaml
 ---

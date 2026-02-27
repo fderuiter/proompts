@@ -6,7 +6,7 @@ title: Evaluate Device–Tissue Interface Findings
 
 Interpret histopathology results from implant studies and recommend next steps.
 
-[View Source YAML](../../../../../prompts/scientific/pathology/pathology_study_workflow/02_device_tissue_interface_evaluation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/pathology/pathology_study_workflow/02_device_tissue_interface_evaluation.prompt.yaml)
 
 ```yaml
 ---

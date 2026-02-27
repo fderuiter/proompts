@@ -6,7 +6,7 @@ title: Vendor Qualification and Oversight
 
 Develop Vendor Oversight Plan and KPIs.
 
-[View Source YAML](../../../../prompts/management/operations/vendor_qualification.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/operations/vendor_qualification.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: MCID Research and Summary
 
 Research and summarize Minimal Clinically Important Differences (MCIDs) for measurement tools.
 
-[View Source YAML](../../../../prompts/scientific/coa/mcid_definition.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/coa/mcid_definition.prompt.yaml)
 
 ```yaml
 ---

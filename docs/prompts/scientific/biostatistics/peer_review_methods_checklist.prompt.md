@@ -6,7 +6,7 @@ title: Peer-Review Checklist for Manuscript Methods
 
 Provide a structured checklist for reviewing the statistical methods section of a manuscript.
 
-[View Source YAML](../../../../prompts/scientific/biostatistics/peer_review_methods_checklist.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biostatistics/peer_review_methods_checklist.prompt.yaml)
 
 ```yaml
 ---

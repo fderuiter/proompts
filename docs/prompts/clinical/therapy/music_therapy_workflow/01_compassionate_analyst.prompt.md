@@ -6,7 +6,7 @@ title: Compassionate Analyst
 
 Deconstructs user venting into actionable psychological data.
 
-[View Source YAML](../../../../../prompts/clinical/therapy/music_therapy_workflow/01_compassionate_analyst.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/therapy/music_therapy_workflow/01_compassionate_analyst.prompt.yaml)
 
 ```yaml
 name: Compassionate Analyst

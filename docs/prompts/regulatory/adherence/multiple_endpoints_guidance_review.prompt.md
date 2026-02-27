@@ -6,7 +6,7 @@ title: Multiple Endpoints Regulatory Strategy
 
 Review and summarize FDA guidance on multiple endpoints and multiplicity strategies.
 
-[View Source YAML](../../../../prompts/regulatory/adherence/multiple_endpoints_guidance_review.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/adherence/multiple_endpoints_guidance_review.prompt.yaml)
 
 ```yaml
 ---

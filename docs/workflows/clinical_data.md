@@ -21,4 +21,4 @@ graph TD
     Input_edit_check_rules --> edit_check_specification
 ```
 
-[View Source YAML](../../workflows/clinical/clinical_data.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/clinical/clinical_data.workflow.yaml)

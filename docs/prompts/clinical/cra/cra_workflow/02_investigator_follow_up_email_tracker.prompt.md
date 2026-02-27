@@ -6,7 +6,7 @@ title: Investigator Follow-up Email & Action-Item Tracker
 
 Compose a follow-up email to the PI summarizing visit findings and action items, plus a tracking table.
 
-[View Source YAML](../../../../../prompts/clinical/cra/cra_workflow/02_investigator_follow_up_email_tracker.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/cra/cra_workflow/02_investigator_follow_up_email_tracker.prompt.yaml)
 
 ```yaml
 ---

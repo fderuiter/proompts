@@ -6,7 +6,7 @@ title: Generate & QC Submission-Ready TLFs
 
 Produce validated tables, listings, and figures (TLFs) ready for regulatory submission.
 
-[View Source YAML](../../../../prompts/scientific/biostatistics/submission_ready_tlfs.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biostatistics/submission_ready_tlfs.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Protocol-to-TS Generator
 
 Automates the extraction of trial design parameters from a clinical protocol for the CDISC SDTM Trial Summary (TS) domain.
 
-[View Source YAML](../../../../../prompts/clinical/data_management/cdisc_compliance_workflow/01_protocol_to_ts_generator.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/cdisc_compliance_workflow/01_protocol_to_ts_generator.prompt.yaml)
 
 ```yaml
 ---

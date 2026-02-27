@@ -23,4 +23,4 @@ graph TD
     assess_risk --> write_summary
 ```
 
-[View Source YAML](../../workflows/scientific/chemical_characterization.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/scientific/chemical_characterization.workflow.yaml)

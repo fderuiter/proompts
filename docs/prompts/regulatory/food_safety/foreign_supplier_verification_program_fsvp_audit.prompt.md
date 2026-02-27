@@ -6,7 +6,7 @@ title: Foreign Supplier Verification Program (FSVP) Audit
 
 Draft a summary report of an onsite audit for a foreign food supplier including conclusions and corrective actions.
 
-[View Source YAML](../../../../prompts/regulatory/food_safety/foreign_supplier_verification_program_fsvp_audit.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/food_safety/foreign_supplier_verification_program_fsvp_audit.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Shelf-life Study Rationale
 
 Draft a rationale for correlating accelerated aging data with real-time requirements.
 
-[View Source YAML](../../../../prompts/regulatory/adherence/shelf_life_study_rationale.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/adherence/shelf_life_study_rationale.prompt.yaml)
 
 ```yaml
 ---

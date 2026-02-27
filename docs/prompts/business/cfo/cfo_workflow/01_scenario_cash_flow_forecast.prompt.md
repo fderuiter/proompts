@@ -6,7 +6,7 @@ title: Scenario-Based Clinical-Trial Cash-Flow Forecast
 
 Model 12-quarter cash flows under baseline, inflation, and recruitment slowdown scenarios.
 
-[View Source YAML](../../../../../prompts/business/cfo/cfo_workflow/01_scenario_cash_flow_forecast.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/cfo/cfo_workflow/01_scenario_cash_flow_forecast.prompt.yaml)
 
 ```yaml
 ---

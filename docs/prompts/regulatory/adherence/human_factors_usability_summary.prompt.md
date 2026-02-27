@@ -6,7 +6,7 @@ title: Human Factors/Usability Summary
 
 Summarize usability testing results to demonstrate minimized use-related risks.
 
-[View Source YAML](../../../../prompts/regulatory/adherence/human_factors_usability_summary.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/adherence/human_factors_usability_summary.prompt.yaml)
 
 ```yaml
 ---

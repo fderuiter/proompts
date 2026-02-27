@@ -6,7 +6,7 @@ title: Rapid Proposal Builder
 
 Draft a concise capabilities and budget proposal for a prospective client.
 
-[View Source YAML](../../../../prompts/business/development/rapid_proposal_builder.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/development/rapid_proposal_builder.prompt.yaml)
 
 ```yaml
 ---

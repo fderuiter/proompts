@@ -6,7 +6,7 @@ title: Protocol to USDM Stage 4 - Concepts
 
 Map Activities to Biomedical Concepts.
 
-[View Source YAML](../../../../../prompts/clinical/protocol/usdm_workflow/04_usdm_stage4_concepts.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/protocol/usdm_workflow/04_usdm_stage4_concepts.prompt.yaml)
 
 ```yaml
 ---

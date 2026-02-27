@@ -6,7 +6,7 @@ title: eConsent Implementation Strategy
 
 Verify eConsent platform compliance and workflow.
 
-[View Source YAML](../../../../prompts/clinical/eclinical_integration/econsent_implementation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/eclinical_integration/econsent_implementation.prompt.yaml)
 
 ```yaml
 ---

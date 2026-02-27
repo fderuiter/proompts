@@ -6,7 +6,7 @@ title: Emerging-Market Opportunity Scan
 
 Identify high-growth therapeutic areas or sponsor segments for CRO services.
 
-[View Source YAML](../../../../prompts/business/development/emerging_market_opportunity_scan.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/development/emerging_market_opportunity_scan.prompt.yaml)
 
 ```yaml
 ---

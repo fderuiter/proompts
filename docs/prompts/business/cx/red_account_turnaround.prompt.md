@@ -6,7 +6,7 @@ title: Red Account Turnaround Strategy
 
 Draft a re-engagement playbook for at-risk high-value accounts.
 
-[View Source YAML](../../../../prompts/business/cx/red_account_turnaround.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/cx/red_account_turnaround.prompt.yaml)
 
 ```yaml
 ---

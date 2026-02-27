@@ -6,7 +6,7 @@ title: Eisenhower Matrix Coach
 
 Triage a to-do list using the Eisenhower Matrix.
 
-[View Source YAML](../../../../prompts/management/personal_effectiveness/eisenhower_matrix_coach.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/personal_effectiveness/eisenhower_matrix_coach.prompt.yaml)
 
 ```yaml
 ---

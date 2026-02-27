@@ -6,7 +6,7 @@ title: Sonic Architect
 
 Translates the emotional arc into concrete music theory and production choices.
 
-[View Source YAML](../../../../../prompts/clinical/therapy/music_therapy_workflow/03_sonic_architect.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/therapy/music_therapy_workflow/03_sonic_architect.prompt.yaml)
 
 ```yaml
 name: Sonic Architect

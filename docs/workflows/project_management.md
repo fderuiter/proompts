@@ -37,4 +37,4 @@ graph TD
     Input_milestone_data --> timeline
 ```
 
-[View Source YAML](../../workflows/management/project_management.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/management/project_management.workflow.yaml)

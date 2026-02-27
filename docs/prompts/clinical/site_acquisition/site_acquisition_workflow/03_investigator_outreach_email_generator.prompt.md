@@ -6,7 +6,7 @@ title: Personalized Investigator-Outreach Email Generator
 
 Craft a tailored outreach email to potential investigators.
 
-[View Source YAML](../../../../../prompts/clinical/site_acquisition/site_acquisition_workflow/03_investigator_outreach_email_generator.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/site_acquisition/site_acquisition_workflow/03_investigator_outreach_email_generator.prompt.yaml)
 
 ```yaml
 ---

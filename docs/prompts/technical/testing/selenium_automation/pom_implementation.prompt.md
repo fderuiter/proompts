@@ -6,7 +6,7 @@ title: Architecture Design: Page Object Model
 
 Implement the Page Object Model pattern to separate UI locators from test logic.
 
-[View Source YAML](../../../../../prompts/technical/testing/selenium_automation/pom_implementation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/testing/selenium_automation/pom_implementation.prompt.yaml)
 
 ```yaml
 ---

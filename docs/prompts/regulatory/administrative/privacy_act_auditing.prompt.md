@@ -6,7 +6,7 @@ title: Privacy Act Auditing
 
 Draft a notice for a new FDA Privacy Act Record System.
 
-[View Source YAML](../../../../prompts/regulatory/administrative/privacy_act_auditing.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/administrative/privacy_act_auditing.prompt.yaml)
 
 ```yaml
 ---

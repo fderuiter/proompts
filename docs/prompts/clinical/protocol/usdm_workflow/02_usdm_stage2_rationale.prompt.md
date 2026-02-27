@@ -6,7 +6,7 @@ title: Protocol to USDM Stage 2 - Rationale
 
 Extract Objectives, Endpoints, and Eligibility Criteria.
 
-[View Source YAML](../../../../../prompts/clinical/protocol/usdm_workflow/02_usdm_stage2_rationale.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/protocol/usdm_workflow/02_usdm_stage2_rationale.prompt.yaml)
 
 ```yaml
 ---

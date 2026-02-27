@@ -6,7 +6,7 @@ title: Test Architect (Automated Testing)
 
 Generates comprehensive unit and integration tests for provided code, focusing on edge cases, reliability, and clean code practices.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/tasks/add_tests.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/tasks/add_tests.prompt.yaml)
 
 ```yaml
 ---

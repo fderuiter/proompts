@@ -6,7 +6,7 @@ title: CDISC SDTM/ADaM Mapping
 
 Map raw clinical data to standardized CDISC SDTM and ADaM domains.
 
-[View Source YAML](../../../../prompts/clinical/data_management/cdisc_mapping.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/cdisc_mapping.prompt.yaml)
 
 ```yaml
 ---

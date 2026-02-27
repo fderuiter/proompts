@@ -6,7 +6,7 @@ title: Action-Oriented Meeting Minutes & Tracker
 
 Capture decisions and action items from cross-functional meetings.
 
-[View Source YAML](../../../../prompts/management/operations/action_oriented_meeting_minutes.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/operations/action_oriented_meeting_minutes.prompt.yaml)
 
 ```yaml
 ---

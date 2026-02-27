@@ -6,7 +6,7 @@ title: Prompt-Writing Best-Practice Checklist
 
 Summarize key elements of effective prompt design.
 
-[View Source YAML](../../../../prompts/regulatory/strategy/prompt_best_practices.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/strategy/prompt_best_practices.prompt.yaml)
 
 ```yaml
 ---

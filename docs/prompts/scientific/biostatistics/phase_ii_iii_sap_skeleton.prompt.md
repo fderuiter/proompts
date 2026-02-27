@@ -6,7 +6,7 @@ title: Phase II/III SAP Skeleton
 
 Provide a high-level statistical analysis plan skeleton for an adaptive Phase II/III trial.
 
-[View Source YAML](../../../../prompts/scientific/biostatistics/phase_ii_iii_sap_skeleton.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biostatistics/phase_ii_iii_sap_skeleton.prompt.yaml)
 
 ```yaml
 ---

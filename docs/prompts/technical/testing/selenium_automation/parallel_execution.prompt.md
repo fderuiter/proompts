@@ -6,7 +6,7 @@ title: Execution Optimization: Parallel Testing
 
 Configure the automation suite to execute multiple tests simultaneously.
 
-[View Source YAML](../../../../../prompts/technical/testing/selenium_automation/parallel_execution.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/testing/selenium_automation/parallel_execution.prompt.yaml)
 
 ```yaml
 ---

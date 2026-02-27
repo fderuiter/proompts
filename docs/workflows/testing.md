@@ -30,4 +30,4 @@ graph TD
     Input_hazard_analysis_table --> risk_based_test_suite
 ```
 
-[View Source YAML](../../workflows/technical/testing.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/technical/testing.workflow.yaml)

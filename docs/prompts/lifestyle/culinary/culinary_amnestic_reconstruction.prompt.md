@@ -7,7 +7,7 @@ title: Culinary Amnestic Reconstruction Engine (CARE)
 A cybernetic gastronomy system that reconstructs forgotten food memories into precise molecular recipes based on sensory fragments and emotional residue.
 
 
-[View Source YAML](../../../../prompts/lifestyle/culinary/culinary_amnestic_reconstruction.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/lifestyle/culinary/culinary_amnestic_reconstruction.prompt.yaml)
 
 ```yaml
 name: Culinary Amnestic Reconstruction Engine (CARE)

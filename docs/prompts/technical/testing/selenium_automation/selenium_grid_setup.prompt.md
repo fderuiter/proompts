@@ -6,7 +6,7 @@ title: Cross-Browser Infrastructure: Selenium Grid
 
 Configure a Selenium Grid Hub and Nodes to distribute test execution.
 
-[View Source YAML](../../../../../prompts/technical/testing/selenium_automation/selenium_grid_setup.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/testing/selenium_automation/selenium_grid_setup.prompt.yaml)
 
 ```yaml
 ---

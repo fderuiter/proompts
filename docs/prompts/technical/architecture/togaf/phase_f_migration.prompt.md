@@ -6,7 +6,7 @@ title: TOGAF Phase F - Migration Planning
 
 Guide for creating the detailed Implementation and Migration Plan and prioritizing work packages (Refined Planning).
 
-[View Source YAML](../../../../../prompts/technical/architecture/togaf/phase_f_migration.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/architecture/togaf/phase_f_migration.prompt.yaml)
 
 ```yaml
 ---

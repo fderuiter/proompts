@@ -6,7 +6,7 @@ title: CSM Portfolio Balancing
 
 Propose a weighted scoring model to balance account loads among CSMs.
 
-[View Source YAML](../../../../prompts/business/cx/csm_portfolio_balancing.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/cx/csm_portfolio_balancing.prompt.yaml)
 
 ```yaml
 ---

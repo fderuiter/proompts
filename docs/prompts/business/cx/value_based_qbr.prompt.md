@@ -6,7 +6,7 @@ title: Value-Based QBR Generator
 
 Create a concise, impact-focused Quarterly Business Review template.
 
-[View Source YAML](../../../../prompts/business/cx/value_based_qbr.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/cx/value_based_qbr.prompt.yaml)
 
 ```yaml
 ---

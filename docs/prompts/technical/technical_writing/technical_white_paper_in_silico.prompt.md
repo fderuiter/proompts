@@ -6,7 +6,7 @@ title: Technical White Paper for Clinical Methodologies
 
 Generates a deep technical white paper or educational document for clinical methodologies, focusing on scientific validity and regulatory context.
 
-[View Source YAML](../../../../prompts/technical/technical_writing/technical_white_paper_in_silico.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/technical_writing/technical_white_paper_in_silico.prompt.yaml)
 
 ```yaml
 ---

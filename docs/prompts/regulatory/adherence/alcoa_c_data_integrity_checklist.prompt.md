@@ -6,7 +6,7 @@ title: ALCOA-C Data Integrity Checklist
 
 Ensure data integrity following ALCOA-C principles.
 
-[View Source YAML](../../../../prompts/regulatory/adherence/alcoa_c_data_integrity_checklist.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/adherence/alcoa_c_data_integrity_checklist.prompt.yaml)
 
 ```yaml
 ---

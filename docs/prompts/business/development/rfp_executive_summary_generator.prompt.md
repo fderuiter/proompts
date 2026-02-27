@@ -6,7 +6,7 @@ title: RFP Executive-Summary Generator
 
 Produce a persuasive executive summary for an RFP response.
 
-[View Source YAML](../../../../prompts/business/development/rfp_executive_summary_generator.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/development/rfp_executive_summary_generator.prompt.yaml)
 
 ```yaml
 ---

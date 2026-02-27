@@ -6,7 +6,7 @@ title: Integrated Submission Strategy Coach
 
 Create a phased submission roadmap for Project Phoenix.
 
-[View Source YAML](../../../../prompts/regulatory/quality/integrated_submission_strategy_coach.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/integrated_submission_strategy_coach.prompt.yaml)
 
 ```yaml
 ---

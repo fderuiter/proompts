@@ -6,7 +6,7 @@ title: Executive Briefing Architect (TL;DR)
 
 Synthesize complex inputs into high-signal executive briefs.
 
-[View Source YAML](../../../prompts/communication/tldr_summarizer.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/tldr_summarizer.prompt.yaml)
 
 ```yaml
 ---

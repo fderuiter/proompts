@@ -6,7 +6,7 @@ title: Framework Best Practices: Locator Strategy
 
 Transition from brittle XPaths to robust locators like ID or CSS selectors.
 
-[View Source YAML](../../../../../prompts/technical/testing/selenium_automation/locator_optimization.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/testing/selenium_automation/locator_optimization.prompt.yaml)
 
 ```yaml
 ---

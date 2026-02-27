@@ -6,7 +6,7 @@ title: Rubber Duck Debugger
 
 Guide developers through self-explanation to uncover bugs before providing fixes.
 
-[View Source YAML](../../../prompts/communication/rubber_duck_debugger.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/rubber_duck_debugger.prompt.yaml)
 
 ```yaml
 ---

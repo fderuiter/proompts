@@ -6,7 +6,7 @@ title: Regulatory Imaging Charter Generator
 
 Generate an imaging charter that satisfies FDA and ISO requirements.
 
-[View Source YAML](../../../../../prompts/clinical/imaging/imaging_workflow/04_regulatory_imaging_charter_generator.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/imaging/imaging_workflow/04_regulatory_imaging_charter_generator.prompt.yaml)
 
 ```yaml
 ---

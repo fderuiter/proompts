@@ -6,7 +6,7 @@ title: Framework Implementation: Data-Driven Testing
 
 Utilize data providers to execute the same test logic with multiple sets of data.
 
-[View Source YAML](../../../../../prompts/technical/testing/selenium_automation/data_driven_selenium.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/testing/selenium_automation/data_driven_selenium.prompt.yaml)
 
 ```yaml
 ---

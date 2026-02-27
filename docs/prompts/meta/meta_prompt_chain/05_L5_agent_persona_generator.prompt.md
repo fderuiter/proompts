@@ -6,7 +6,7 @@ title: Agent Persona Generator
 
 Generate detailed, high-integrity agent personas based on a provided role and goal, using a strict structural framework.
 
-[View Source YAML](../../../../prompts/meta/meta_prompt_chain/05_L5_agent_persona_generator.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/meta/meta_prompt_chain/05_L5_agent_persona_generator.prompt.yaml)
 
 ```yaml
 ---

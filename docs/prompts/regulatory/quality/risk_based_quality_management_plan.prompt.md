@@ -6,7 +6,7 @@ title: Risk-Based Quality Management Plan
 
 Create a concise RBQM plan for a first‑in‑human Phase I healthy‑volunteer study.
 
-[View Source YAML](../../../../prompts/regulatory/quality/risk_based_quality_management_plan.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/risk_based_quality_management_plan.prompt.yaml)
 
 ```yaml
 ---

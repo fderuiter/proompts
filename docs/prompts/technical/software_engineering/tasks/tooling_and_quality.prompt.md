@@ -6,7 +6,7 @@ title: Tooling & Quality Gates (DevEx Architect)
 
 A Distinguished Developer Experience Engineer's guide to enforcing code quality, strict typing, and "fail-fast" CI/CD pipelines.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/tasks/tooling_and_quality.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/tasks/tooling_and_quality.prompt.yaml)
 
 ```yaml
 ---

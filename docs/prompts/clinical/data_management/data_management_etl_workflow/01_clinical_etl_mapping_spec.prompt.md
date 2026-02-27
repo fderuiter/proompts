@@ -6,7 +6,7 @@ title: Clinical ETL Mapping Spec
 
 Create an ETL mapping specification for clinical data.
 
-[View Source YAML](../../../../../prompts/clinical/data_management/data_management_etl_workflow/01_clinical_etl_mapping_spec.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/data_management_etl_workflow/01_clinical_etl_mapping_spec.prompt.yaml)
 
 ```yaml
 ---

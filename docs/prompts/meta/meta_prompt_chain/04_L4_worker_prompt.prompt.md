@@ -6,7 +6,7 @@ title: Worker Prompt
 
 Execute the concrete task defined by the L3 template and return structured output.
 
-[View Source YAML](../../../../prompts/meta/meta_prompt_chain/04_L4_worker_prompt.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/meta/meta_prompt_chain/04_L4_worker_prompt.prompt.yaml)
 
 ```yaml
 ---

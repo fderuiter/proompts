@@ -6,7 +6,7 @@ title: Source of Truth Harmonizer
 
 Harmonizes codebase documentation with a provided 'New Source of Truth'.
 
-[View Source YAML](../../../../prompts/technical/documentation/source_of_truth_harmonizer.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/documentation/source_of_truth_harmonizer.prompt.yaml)
 
 ```yaml
 ---

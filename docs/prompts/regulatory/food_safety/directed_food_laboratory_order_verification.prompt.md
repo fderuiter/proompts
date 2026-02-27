@@ -6,7 +6,7 @@ title: Directed Food Laboratory Order Verification
 
 Review a Directed Food Laboratory Order to identify mandatory testing parameters.
 
-[View Source YAML](../../../../prompts/regulatory/food_safety/directed_food_laboratory_order_verification.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/food_safety/directed_food_laboratory_order_verification.prompt.yaml)
 
 ```yaml
 ---

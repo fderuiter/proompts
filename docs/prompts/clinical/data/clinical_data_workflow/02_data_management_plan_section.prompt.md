@@ -6,7 +6,7 @@ title: Draft a Data Management Plan Section
 
 Act as a Clinical Data Management subject-matter expert.
 
-[View Source YAML](../../../../../prompts/clinical/data/clinical_data_workflow/02_data_management_plan_section.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data/clinical_data_workflow/02_data_management_plan_section.prompt.yaml)
 
 ```yaml
 ---

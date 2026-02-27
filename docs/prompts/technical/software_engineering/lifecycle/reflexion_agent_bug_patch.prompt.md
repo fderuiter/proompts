@@ -6,7 +6,7 @@ title: Reflexion Agent Bug Patch
 
 Locate and fix a bug using a structured reflexion workflow.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/lifecycle/reflexion_agent_bug_patch.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/lifecycle/reflexion_agent_bug_patch.prompt.yaml)
 
 ```yaml
 ---

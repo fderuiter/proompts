@@ -6,7 +6,7 @@ title: Quality-Improvement RCA & Action Plan
 
 Identify root causes of a recurring defect and propose a 90‑day corrective‑action roadmap.
 
-[View Source YAML](../../../../prompts/regulatory/quality/quality_improvement_rca_action_plan.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/quality_improvement_rca_action_plan.prompt.yaml)
 
 ```yaml
 ---

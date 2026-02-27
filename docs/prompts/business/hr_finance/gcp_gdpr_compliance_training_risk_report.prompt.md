@@ -6,7 +6,7 @@ title: GCP and GDPR Training Compliance Risk Report
 
 Generate a monthly assessment of staff training compliance for GCP and GDPR regulations.
 
-[View Source YAML](../../../../prompts/business/hr_finance/gcp_gdpr_compliance_training_risk_report.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/hr_finance/gcp_gdpr_compliance_training_risk_report.prompt.yaml)
 
 ```yaml
 ---

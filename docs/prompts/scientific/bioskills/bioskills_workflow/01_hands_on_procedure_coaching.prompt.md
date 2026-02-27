@@ -6,7 +6,7 @@ title: Hands-On Procedure Coaching
 
 Coach a trainee through a vascular access technique using a training model.
 
-[View Source YAML](../../../../../prompts/scientific/bioskills/bioskills_workflow/01_hands_on_procedure_coaching.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/bioskills/bioskills_workflow/01_hands_on_procedure_coaching.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Clinical ETL Transformation QC
 
 Define quality checks for clinical ETL transformations.
 
-[View Source YAML](../../../../../prompts/clinical/data_management/data_management_etl_workflow/02_clinical_etl_transformation_qc.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/data_management_etl_workflow/02_clinical_etl_transformation_qc.prompt.yaml)
 
 ```yaml
 ---

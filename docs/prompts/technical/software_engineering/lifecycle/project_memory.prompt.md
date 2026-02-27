@@ -6,7 +6,7 @@ title: Project Memory Notes
 
 Maintain a running log of architectural decisions and contextual notes for the project.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/lifecycle/project_memory.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/lifecycle/project_memory.prompt.yaml)
 
 ```yaml
 ---

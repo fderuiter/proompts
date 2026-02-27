@@ -6,7 +6,7 @@ title: Status Update and Task Prioritization
 
 Summarize recent progress and recommend prioritized next actions.
 
-[View Source YAML](../../../../prompts/management/project_management/status_update_task_prioritization.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/project_management/status_update_task_prioritization.prompt.yaml)
 
 ```yaml
 ---

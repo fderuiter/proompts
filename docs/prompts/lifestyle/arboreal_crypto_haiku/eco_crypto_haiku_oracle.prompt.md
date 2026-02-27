@@ -6,7 +6,7 @@ title: Eco-Crypto Haiku Oracle
 
 Transforms arboreal environmental data into cryptographically seeded haikus for the forest blockchain.
 
-[View Source YAML](../../../../prompts/lifestyle/arboreal_crypto_haiku/eco_crypto_haiku_oracle.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/lifestyle/arboreal_crypto_haiku/eco_crypto_haiku_oracle.prompt.yaml)
 
 ```yaml
 name: "Eco-Crypto Haiku Oracle"

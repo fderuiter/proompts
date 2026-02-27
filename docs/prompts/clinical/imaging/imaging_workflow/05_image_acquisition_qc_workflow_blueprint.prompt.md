@@ -6,7 +6,7 @@ title: Image Acquisition QC Workflow Blueprint
 
 Design a site-facing SOP for image acquisition and quality control.
 
-[View Source YAML](../../../../../prompts/clinical/imaging/imaging_workflow/05_image_acquisition_qc_workflow_blueprint.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/imaging/imaging_workflow/05_image_acquisition_qc_workflow_blueprint.prompt.yaml)
 
 ```yaml
 ---

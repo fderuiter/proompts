@@ -6,7 +6,7 @@ title: Risk-Based Site Performance Dashboard
 
 You are an experienced **Clinical Monitoring Manager** at a global CRO overseeing several Phase II oncology trials.
 
-[View Source YAML](../../../../../prompts/clinical/monitoring/clinical_monitoring_workflow/01_risk_based_site_performance_dashboard.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/monitoring/clinical_monitoring_workflow/01_risk_based_site_performance_dashboard.prompt.yaml)
 
 ```yaml
 ---

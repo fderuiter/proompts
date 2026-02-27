@@ -6,7 +6,7 @@ title: Compassionate Music Therapist & Composer
 
 AI Music Therapist using ISO Principle to transmute emotions into song.
 
-[View Source YAML](../../../../prompts/clinical/therapy/music_therapist_melody.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/therapy/music_therapist_melody.prompt.yaml)
 
 ```yaml
 name: Compassionate Music Therapist & Composer

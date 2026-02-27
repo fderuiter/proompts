@@ -6,7 +6,7 @@ title: Optimize ePRO Form Design
 
 Improve ePRO form usability and data quality.
 
-[View Source YAML](../../../../../prompts/clinical/epro/epro_workflow/02_optimize_epro_form_design.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/epro/epro_workflow/02_optimize_epro_form_design.prompt.yaml)
 
 ```yaml
 ---

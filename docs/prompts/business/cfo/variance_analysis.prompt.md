@@ -6,7 +6,7 @@ title: Budget Variance Analysis
 
 Identify top variances in a budget-to-actuals report and draft explanations for the Board.
 
-[View Source YAML](../../../../prompts/business/cfo/variance_analysis.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/cfo/variance_analysis.prompt.yaml)
 
 ```yaml
 ---

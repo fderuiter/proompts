@@ -15,10 +15,10 @@ def load_yaml(path: Path) -> dict:
         return {}
 
 def iter_prompt_files(root: Path = PROMPTS_DIR):
-    """Yield all prompt files recursively (skips macOS ._ resource forks)."""
+    """Yield all prompt files recursively (skips macOS ._ resource forks and site/ directory)."""
     for ext in ("*.prompt.yaml", "*.prompt.yml"):
         for p in root.rglob(ext):
-            if not p.name.startswith("._"):
+            if not p.name.startswith("._") and "site/" not in str(p):
                 yield p
 
 def iter_workflow_files(root: Path = WORKFLOWS_DIR):

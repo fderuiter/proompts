@@ -6,7 +6,7 @@ title: Training Impact Analytics Planner
 
 Correlate training data with audit deviations and design interventions for high-risk learners.
 
-[View Source YAML](../../../../../prompts/management/training/learning_development_workflow/03_training_impact_analytics_targeted_intervention_planner.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/training/learning_development_workflow/03_training_impact_analytics_targeted_intervention_planner.prompt.yaml)
 
 ```yaml
 ---

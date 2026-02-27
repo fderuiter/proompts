@@ -6,7 +6,7 @@ title: UAT Script Generator
 
 Generate a User Acceptance Testing (UAT) script with dummy data inputs.
 
-[View Source YAML](../../../../prompts/clinical/eclinical_integration/uat_script_generator.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/eclinical_integration/uat_script_generator.prompt.yaml)
 
 ```yaml
 ---

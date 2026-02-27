@@ -6,7 +6,7 @@ title: Protocol to CDISC USDM v3.0 Converter
 
 Convert unstructured Clinical Research Protocol text into a structured CDISC USDM v3.0 JSON object.
 
-[View Source YAML](../../../../prompts/clinical/protocol/protocol_to_usdm_v3.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/protocol/protocol_to_usdm_v3.prompt.yaml)
 
 ```yaml
 ---

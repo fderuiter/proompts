@@ -6,7 +6,7 @@ title: Clinical-Trial Budget and Burn-Rate Dashboard
 
 Produce a month-end dashboard comparing planned versus actual spend and forecasting when budgets will run out for each active study.
 
-[View Source YAML](../../../../prompts/business/hr_finance/clinical_trial_budget_burn_rate_dashboard.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/hr_finance/clinical_trial_budget_burn_rate_dashboard.prompt.yaml)
 
 ```yaml
 ---

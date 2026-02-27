@@ -6,7 +6,7 @@ title: Design the Study
 
 You are a senior analytical chemist specializing in medical-device Extractables & Leachables (E&L). Using ISO 10993-18:2020 and FDA’s 2024 draft “Chemical Analysis for Biocompatibility Assessment,” create a detailed test plan for an exhaustive extractables study and a simulated-use leachables study of a device. Your plan must:
 
-[View Source YAML](../../../../../prompts/scientific/chemical_characterization/chemical_characterization_workflow/01_design_the_study.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/chemical_characterization/chemical_characterization_workflow/01_design_the_study.prompt.yaml)
 
 ```yaml
 ---

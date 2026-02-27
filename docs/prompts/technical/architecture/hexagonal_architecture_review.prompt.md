@@ -6,7 +6,7 @@ title: Hexagonal Architecture Review
 
 Analyze code for adherence to Hexagonal Architecture principles, identifying layer violations and dependency issues.
 
-[View Source YAML](../../../../prompts/technical/architecture/hexagonal_architecture_review.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/architecture/hexagonal_architecture_review.prompt.yaml)
 
 ```yaml
 ---

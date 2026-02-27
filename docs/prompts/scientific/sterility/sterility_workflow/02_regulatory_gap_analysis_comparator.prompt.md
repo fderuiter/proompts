@@ -6,7 +6,7 @@ title: Regulatory Gap-Analysis Comparator
 
 Compare sterility-assurance requirements across key standards and guidance.
 
-[View Source YAML](../../../../../prompts/scientific/sterility/sterility_workflow/02_regulatory_gap_analysis_comparator.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/sterility/sterility_workflow/02_regulatory_gap_analysis_comparator.prompt.yaml)
 
 ```yaml
 ---

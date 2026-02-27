@@ -6,7 +6,7 @@ title: Parallel Review Request
 
 Draft an email requesting enrollment in the Parallel Review program.
 
-[View Source YAML](../../../../prompts/regulatory/submissions/parallel_review_request.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/submissions/parallel_review_request.prompt.yaml)
 
 ```yaml
 ---

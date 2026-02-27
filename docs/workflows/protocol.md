@@ -25,4 +25,4 @@ graph TD
     Input_draft_section --> protocol_refinement
 ```
 
-[View Source YAML](../../workflows/clinical/protocol.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/clinical/protocol.workflow.yaml)

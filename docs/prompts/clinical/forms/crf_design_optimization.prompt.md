@@ -6,7 +6,7 @@ title: Design Error Prevention
 
 Review and optimize CRF layout to avoid duplication and non-essential fields.
 
-[View Source YAML](../../../../prompts/clinical/forms/crf_design_optimization.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/forms/crf_design_optimization.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Premarket Approval (PMA) Preparation
 
 Draft a detailed summary of a PMA application, including clinical investigation results and manufacturing history.
 
-[View Source YAML](../../../../prompts/regulatory/submissions/premarket_approval_pma_preparation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/submissions/premarket_approval_pma_preparation.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Strategic Business Case for New Service Line
 
 Drafts a comprehensive New Venture Strategic Plan for a new service line, focusing on market shift, service breakdown, SWOT, target client, and roadmap.
 
-[View Source YAML](../../../../prompts/business/development/strategic_business_case_in_silico.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/development/strategic_business_case_in_silico.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Ultimate SOP Architect
 
 Create a clear, regulation-compliant standard operating procedure.
 
-[View Source YAML](../../../../../prompts/clinical/protocol/protocol_workflow/02_ultimate_sop_architect.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/protocol/protocol_workflow/02_ultimate_sop_architect.prompt.yaml)
 
 ```yaml
 ---

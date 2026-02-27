@@ -6,7 +6,7 @@ title: Project Configuration: Maven Setup
 
 Set up a Maven project structure and pom.xml file with necessary Selenium client libraries.
 
-[View Source YAML](../../../../../prompts/technical/testing/selenium_automation/maven_selenium_setup.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/testing/selenium_automation/maven_selenium_setup.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Prompt Engineer Template
 
 Produce an L3 task template that enables a Task Prototyper to fulfil `{{end_task}}`.
 
-[View Source YAML](../../../../prompts/meta/meta_prompt_chain/02_L2_prompt-engineer.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/meta/meta_prompt_chain/02_L2_prompt-engineer.prompt.yaml)
 
 ```yaml
 ---

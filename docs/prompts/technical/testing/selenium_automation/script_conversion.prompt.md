@@ -6,7 +6,7 @@ title: Selenium Migration: Script Conversion
 
 Translate recorded browser actions (Selenese) from Selenium IDE into structured Java test scripts.
 
-[View Source YAML](../../../../../prompts/technical/testing/selenium_automation/script_conversion.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/testing/selenium_automation/script_conversion.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Clinical ETL Pipeline Review
 
 Review the clinical ETL pipeline for accuracy and efficiency.
 
-[View Source YAML](../../../../../prompts/clinical/data_management/data_management_etl_workflow/03_clinical_etl_pipeline_review.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/data_management_etl_workflow/03_clinical_etl_pipeline_review.prompt.yaml)
 
 ```yaml
 ---

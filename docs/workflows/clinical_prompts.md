@@ -20,4 +20,4 @@ graph TD
     Input_variable_list --> cdash_mapping
 ```
 
-[View Source YAML](../../workflows/clinical/clinical_prompts.workflow.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/clinical/clinical_prompts.workflow.yaml)

@@ -6,7 +6,7 @@ title: Medicare Coverage Request (IDE)
 
 Prepare a request packet for CMS reimbursement of an IDE study.
 
-[View Source YAML](../../../../prompts/regulatory/submissions/medicare_coverage_request_ide.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/submissions/medicare_coverage_request_ide.prompt.yaml)
 
 ```yaml
 ---

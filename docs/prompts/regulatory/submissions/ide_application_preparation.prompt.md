@@ -6,7 +6,7 @@ title: IDE Application Preparation
 
 Draft an Investigational Device Exemption (IDE) application, including risk analysis and investigational plans for clinical studies.
 
-[View Source YAML](../../../../prompts/regulatory/submissions/ide_application_preparation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/submissions/ide_application_preparation.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: CAPA Investigation Report Writer
 
 Draft a formal CAPA investigation report for regulatory review.
 
-[View Source YAML](../../../../prompts/regulatory/quality/capa_investigation_report_writer.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/capa_investigation_report_writer.prompt.yaml)
 
 ```yaml
 ---

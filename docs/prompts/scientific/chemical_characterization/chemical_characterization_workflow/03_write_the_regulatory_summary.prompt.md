@@ -6,7 +6,7 @@ title: Write the Regulatory Summary
 
 You are a regulatory-affairs specialist drafting the Chemical Characterization section of a 510(k).
 
-[View Source YAML](../../../../../prompts/scientific/chemical_characterization/chemical_characterization_workflow/03_write_the_regulatory_summary.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/chemical_characterization/chemical_characterization_workflow/03_write_the_regulatory_summary.prompt.yaml)
 
 ```yaml
 ---

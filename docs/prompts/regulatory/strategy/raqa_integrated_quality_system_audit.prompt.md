@@ -6,7 +6,7 @@ title: RA/QA Integrated Quality System Audit
 
 Prepare for a combined FDA QSR and EU MDR/IVDR audit by identifying quality‑management gaps and recommending improvements.
 
-[View Source YAML](../../../../prompts/regulatory/strategy/raqa_integrated_quality_system_audit.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/strategy/raqa_integrated_quality_system_audit.prompt.yaml)
 
 ```yaml
 ---

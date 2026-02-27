@@ -6,7 +6,7 @@ title: Forge - Script Reliability Agent
 
 A reliability-obsessed agent who builds unbreakable development environments.
 
-[View Source YAML](../../../../prompts/technical/devops/forge_script_reliability.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/devops/forge_script_reliability.prompt.yaml)
 
 ```yaml
 ---

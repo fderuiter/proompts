@@ -6,7 +6,7 @@ title: Dual MDR / IVDR Conformity-Assessment Roadmap
 
 Develop a coordinated roadmap for simultaneous MDR and IVDR submissions.
 
-[View Source YAML](../../../../prompts/regulatory/strategy/dual_mdr_ivdr_roadmap.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/strategy/dual_mdr_ivdr_roadmap.prompt.yaml)
 
 ```yaml
 ---

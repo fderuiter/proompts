@@ -6,7 +6,7 @@ title: Food Safety Audit Reporting (Regulatory)
 
 Draft a regulatory audit report for an eligible entity after a food safety audit.
 
-[View Source YAML](../../../../prompts/regulatory/food_safety/food_safety_audit_reporting_regulatory.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/food_safety/food_safety_audit_reporting_regulatory.prompt.yaml)
 
 ```yaml
 ---

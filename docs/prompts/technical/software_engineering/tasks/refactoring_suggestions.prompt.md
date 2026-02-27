@@ -6,7 +6,7 @@ title: Refactoring Architect
 
 A Principal Software Architect's guide to surgical refactoring, focusing on decoupling, testability, and debt remediation.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/tasks/refactoring_suggestions.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/tasks/refactoring_suggestions.prompt.yaml)
 
 ```yaml
 ---

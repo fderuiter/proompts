@@ -6,7 +6,7 @@ title: TMF Gap-Analysis and Audit Readiness Check
 
 Identify missing or outdated Trial Master File documents and propose corrective actions.
 
-[View Source YAML](../../../../prompts/management/project_management/tmf_gap_analysis_audit_readiness_check.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/project_management/tmf_gap_analysis_audit_readiness_check.prompt.yaml)
 
 ```yaml
 ---

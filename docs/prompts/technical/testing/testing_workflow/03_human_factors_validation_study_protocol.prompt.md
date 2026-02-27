@@ -6,7 +6,7 @@ title: Human Factors Validation Study Protocol
 
 Draft a user validation study protocol for a medical device.
 
-[View Source YAML](../../../../../prompts/technical/testing/testing_workflow/03_human_factors_validation_study_protocol.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/testing/testing_workflow/03_human_factors_validation_study_protocol.prompt.yaml)
 
 ```yaml
 ---

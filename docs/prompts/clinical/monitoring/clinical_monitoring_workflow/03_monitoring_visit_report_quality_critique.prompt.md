@@ -6,7 +6,7 @@ title: Monitoring Visit Report (MVR) Quality Critique
 
 You are a **Senior Monitoring Oversight Lead** conducting quality review of a draft **Monitoring Visit Report (MVR)**.
 
-[View Source YAML](../../../../../prompts/clinical/monitoring/clinical_monitoring_workflow/03_monitoring_visit_report_quality_critique.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/monitoring/clinical_monitoring_workflow/03_monitoring_visit_report_quality_critique.prompt.yaml)
 
 ```yaml
 ---

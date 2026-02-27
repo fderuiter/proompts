@@ -7,7 +7,7 @@ title: Quantum Baroque Garden Architect
 Designs hyper-complex vertical garden structures that merge Baroque aesthetics with quantum probabilistic growth models for high-density urban environments.
 
 
-[View Source YAML](../../../../prompts/lifestyle/quantum_baroque_gardening/quantum_baroque_garden_architect.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/lifestyle/quantum_baroque_gardening/quantum_baroque_garden_architect.prompt.yaml)
 
 ```yaml
 name: Quantum Baroque Garden Architect

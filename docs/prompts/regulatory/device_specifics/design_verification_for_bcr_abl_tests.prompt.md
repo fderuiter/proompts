@@ -6,7 +6,7 @@ title: Design Verification for BCR-ABL Tests
 
 Outline design verification and validation requirements for a BCR-ABL quantitation test.
 
-[View Source YAML](../../../../prompts/regulatory/device_specifics/design_verification_for_bcr_abl_tests.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/device_specifics/design_verification_for_bcr_abl_tests.prompt.yaml)
 
 ```yaml
 ---

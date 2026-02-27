@@ -6,7 +6,7 @@ title: Coding Session Guidelines
 
 Provide step-by-step guidance for running productive coding sessions.
 
-[View Source YAML](../../../../../prompts/technical/software_engineering/lifecycle/coding_session_guidelines.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/software_engineering/lifecycle/coding_session_guidelines.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Dual-Language Figure Prompt
 
 Generate a Kaplan–Meier figure in both R and SAS from ADaM ADTTE data.
 
-[View Source YAML](../../../../prompts/scientific/biostatistics/dual_language_figure_prompt.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biostatistics/dual_language_figure_prompt.prompt.yaml)
 
 ```yaml
 ---

@@ -6,7 +6,7 @@ title: Hexagonal Architecture Implementation
 
 Expert guidance on implementing Hexagonal Architecture, focusing on data flow, dependency inversion, and component placement.
 
-[View Source YAML](../../../../prompts/technical/architecture/hexagonal_architecture_implementation.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/architecture/hexagonal_architecture_implementation.prompt.yaml)
 
 ```yaml
 ---

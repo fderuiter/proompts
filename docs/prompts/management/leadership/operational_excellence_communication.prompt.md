@@ -6,7 +6,7 @@ title: Operational Excellence Communication Framework
 
 improved collaboration strategy between Business Development, Clinical Operations, and Data Management using industry-standard governance.
 
-[View Source YAML](../../../../prompts/management/leadership/operational_excellence_communication.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/management/leadership/operational_excellence_communication.prompt.yaml)
 
 ```yaml
 ---

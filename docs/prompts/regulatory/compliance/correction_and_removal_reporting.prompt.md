@@ -6,7 +6,7 @@ title: Correction and Removal Reporting
 
 Draft a written report to FDA for a device correction or removal.
 
-[View Source YAML](../../../../prompts/regulatory/compliance/correction_and_removal_reporting.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/compliance/correction_and_removal_reporting.prompt.yaml)
 
 ```yaml
 ---

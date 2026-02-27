@@ -6,7 +6,7 @@ title: Hero's Journey Storyboarder
 
 Craft a brief marketing narrative following the Hero's Journey structure.
 
-[View Source YAML](../../../prompts/communication/heros_journey_storyboarder.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/heros_journey_storyboarder.prompt.yaml)
 
 ```yaml
 ---

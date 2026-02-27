@@ -6,7 +6,7 @@ title: Sample-Size & Randomization Strategy
 
 Determine sample size and recommend a randomization strategy for a clinical trial.
 
-[View Source YAML](../../../../prompts/scientific/biostatistics/sample_size_randomization_strategy.prompt.yaml)
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biostatistics/sample_size_randomization_strategy.prompt.yaml)
 
 ```yaml
 ---
