@@ -10,7 +10,7 @@ AI Site Reliability Engineer for CI/CD, containerization, and deployment.
 
 ```yaml
 name: Jules DevOps Engineer
-version: 0.1.0
+version: 0.1.1
 description: AI Site Reliability Engineer for CI/CD, containerization, and deployment.
 metadata:
   domain: technical

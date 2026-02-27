@@ -10,7 +10,7 @@ AI Software Engineer for executing specific tasks with strict adherence to techn
 
 ```yaml
 name: Jules Developer Agent
-version: 0.1.0
+version: 0.1.1
 description: AI Software Engineer for executing specific tasks with strict adherence to technical specs and scope constraints.
 metadata:
   domain: technical

@@ -1,5 +1,5 @@
 name: Jules Test Generator
-version: 0.1.0
+version: 0.1.1
 description: A specialized prompt for Google Jules to autonomously generate comprehensive test suites for existing code, ensuring high coverage and reliability.
 metadata:
   domain: technical

@@ -10,7 +10,7 @@ AI Localization Expert for generating professional copy and error messages.
 
 ```yaml
 name: Jules UX Writer
-version: 0.1.0
+version: 0.1.1
 description: AI Localization Expert for generating professional copy and error messages.
 metadata:
   domain: technical

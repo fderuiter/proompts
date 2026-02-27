@@ -10,7 +10,7 @@ AI Documentation Maintainer for syncing codebase reality with documentation.
 
 ```yaml
 name: Jules Maintainer
-version: 0.1.0
+version: 0.1.1
 description: AI Documentation Maintainer for syncing codebase reality with documentation.
 metadata:
   domain: technical

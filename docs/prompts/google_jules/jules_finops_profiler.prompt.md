@@ -10,7 +10,7 @@ AI Performance Watchdog for detecting resource inefficiencies and cost risks.
 
 ```yaml
 name: Jules FinOps Profiler
-version: 0.1.0
+version: 0.1.1
 description: AI Performance Watchdog for detecting resource inefficiencies and cost risks.
 metadata:
   domain: technical

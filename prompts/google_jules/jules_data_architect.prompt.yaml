@@ -1,5 +1,5 @@
 name: Jules Data Architect
-version: 0.1.0
+version: 0.1.1
 description: AI Database Architect for designing schemas, migrations, and indexing strategies.
 metadata:
   domain: technical
