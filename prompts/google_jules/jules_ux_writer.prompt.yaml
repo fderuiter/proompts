@@ -15,7 +15,7 @@ variables:
 - name: ui_components
   description: List of UI elements (buttons, errors, tooltips) needing copy.
   required: true
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.3
 messages:

@@ -18,7 +18,7 @@ variables:
 - name: current_state
   description: Summary of any existing code or documentation in the repo.
   required: false
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.2
 messages:

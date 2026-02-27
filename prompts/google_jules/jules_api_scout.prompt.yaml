@@ -18,7 +18,7 @@ variables:
 - name: context
   description: The specific features or endpoints needed (e.g., Create Subscription).
   required: true
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.1
 messages:

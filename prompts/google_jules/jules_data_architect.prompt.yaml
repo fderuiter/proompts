@@ -18,7 +18,7 @@ variables:
 - name: current_schema
   description: The current database schema definition (e.g., Prisma schema, SQL dump).
   required: false
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.2
 messages:
