@@ -20,14 +20,14 @@ retired.
 
 ## Prompt Categories
 
-- [Business](../prompts/business/overview.md) - Corporate functions (Finance, HR, Market Research)
-- [Clinical](../prompts/clinical/overview.md) - Clinical trial operations
-- [Communication](../prompts/communication/overview.md) - Professional communication
-- [Management](../prompts/management/overview.md) - Leadership and project management
-- [Meta](../prompts/meta/overview.md) - Prompt engineering and agent creation
-- [Regulatory](../prompts/regulatory/overview.md) - Compliance and quality assurance
-- [Scientific](../prompts/scientific/overview.md) - Laboratory and research prompts
-- [Technical](../prompts/technical/overview.md) - Software engineering and DevOps
+- [Business](business.md) - Corporate functions (Finance, HR, Market Research)
+- [Clinical](clinical.md) - Clinical trial operations
+- [Communication](communication.md) - Professional communication
+- [Management](management.md) - Leadership and project management
+- [Meta](meta.md) - Prompt engineering and agent creation
+- [Regulatory](regulatory.md) - Compliance and quality assurance
+- [Scientific](scientific.md) - Laboratory and research prompts
+- [Technical](technical.md) - Software engineering and DevOps
 
 ## Historical References
 
