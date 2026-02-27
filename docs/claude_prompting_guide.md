@@ -7,7 +7,7 @@ Comprehensive guide to prompt engineering techniques for Claude's latest models,
 This is the single reference for prompt engineering with Claude's latest models, including Claude Opus 4.6, Claude Sonnet 4.6, and Claude Haiku 4.5. It covers foundational techniques, output control, tool use, thinking, and agentic systems. Jump to the section that matches your situation.
 
 !!! tip
-    For an overview of model capabilities, see the [models overview](/docs/en/about-claude/models/overview). For details on what's new in Claude 4.6, see [What's new in Claude 4.6](/docs/en/about-claude/models/whats-new-claude-4-6). For migration guidance, see the [Migration guide](/docs/en/about-claude/models/migration-guide).
+    For an overview of model capabilities, see the [models overview](https://docs.anthropic.com/docs/en/about-claude/models/overview). For details on what's new in Claude 4.6, see [What's new in Claude 4.6](https://docs.anthropic.com/docs/en/about-claude/models/whats-new-claude-4-6). For migration guidance, see the [Migration guide](https://docs.anthropic.com/docs/en/about-claude/models/migration-guide).
 
 ## General principles
 
@@ -241,7 +241,7 @@ Here are common prefill scenarios and how to migrate away from them:
 !!! example "Controlling output formatting"
     Prefills have been used to force specific output formats like JSON/YAML, classification, and similar patterns where the prefill constrains Claude to a particular structure.
 
-    **Migration:** The [Structured Outputs](/docs/en/build-with-claude/structured-outputs) feature is designed specifically to constrain Claude's responses to follow a given schema. Try simply asking the model to conform to your output structure first, as newer models can reliably match complex schemas when told to, especially if implemented with retries. For classification tasks, use either tools with an enum field containing your valid labels or structured outputs.
+    **Migration:** The [Structured Outputs](https://docs.anthropic.com/docs/en/build-with-claude/structured-outputs) feature is designed specifically to constrain Claude's responses to follow a given schema. Try simply asking the model to conform to your output structure first, as newer models can reliably match complex schemas when told to, especially if implemented with retries. For classification tasks, use either tools with an enum field containing your valid labels or structured outputs.
 
 !!! example "Eliminating preambles"
     Prefills like `Here is the requested summary:\n` were used to skip introductory text.
@@ -347,7 +347,7 @@ For Claude Sonnet 4.6 specifically, switching from adaptive to extended thinking
 
 Claude's latest models offer thinking capabilities that can be especially helpful for tasks involving reflection after tool use or complex multi-step reasoning. You can guide its initial or interleaved thinking for better results.
 
-Claude Opus 4.6 uses [adaptive thinking](/docs/en/build-with-claude/adaptive-thinking) (`thinking: {type: "adaptive"}`), where Claude dynamically decides when and how much to think. Claude Sonnet 4.6 supports both adaptive thinking and manual extended thinking with [interleaved mode](/docs/en/build-with-claude/extended-thinking#interleaved-thinking). Claude calibrates its thinking based on two factors: the `effort` parameter and query complexity. Higher effort elicits more thinking, and more complex queries do the same. On easier queries that don't require thinking, the model responds directly. In internal evaluations, adaptive thinking reliably drives better performance than extended thinking, and we recommend moving to adaptive thinking to get the most intelligent responses.
+Claude Opus 4.6 uses [adaptive thinking](https://docs.anthropic.com/docs/en/build-with-claude/adaptive-thinking) (`thinking: {type: "adaptive"}`), where Claude dynamically decides when and how much to think. Claude Sonnet 4.6 supports both adaptive thinking and manual extended thinking with [interleaved mode](https://docs.anthropic.com/docs/en/build-with-claude/extended-thinking#interleaved-thinking). Claude calibrates its thinking based on two factors: the `effort` parameter and query complexity. Higher effort elicits more thinking, and more complex queries do the same. On easier queries that don't require thinking, the model responds directly. In internal evaluations, adaptive thinking reliably drives better performance than extended thinking, and we recommend moving to adaptive thinking to get the most intelligent responses.
 
 For Sonnet 4.6, consider trying adaptive thinking for workloads that require agentic behavior such as multi-step tool use, complex coding tasks, and long-horizon agent loops. If adaptive thinking doesn't fit your use case, manual extended thinking with interleaved mode remains supported. Older models use manual thinking mode with `budget_tokens`.
 
@@ -363,7 +363,7 @@ The triggering behavior for adaptive thinking is promptable. If you find the mod
 Extended thinking adds latency and should only be used when it will meaningfully improve answer quality - typically for problems that require multi-step reasoning. When in doubt, respond directly.
 ```
 
-If you are migrating from [extended thinking](/docs/en/build-with-claude/extended-thinking) with `budget_tokens`, replace your thinking configuration and move budget control to `effort`:
+If you are migrating from [extended thinking](https://docs.anthropic.com/docs/en/build-with-claude/extended-thinking) with `budget_tokens`, replace your thinking configuration and move budget control to `effort`:
 
 ```python Before (extended thinking, older models)
 client.messages.create(
@@ -395,7 +395,7 @@ If you are not using extended thinking, no changes are required. Thinking is off
     When extended thinking is disabled, Claude Opus 4.5 is particularly sensitive to the word "think" and its variants. Consider using alternatives like "consider," "evaluate," or "reason through" in those cases.
 
 !!! info
-    For more information on thinking capabilities, see [Extended thinking](/docs/en/build-with-claude/extended-thinking) and [Adaptive thinking](/docs/en/build-with-claude/adaptive-thinking).
+    For more information on thinking capabilities, see [Extended thinking](https://docs.anthropic.com/docs/en/build-with-claude/extended-thinking) and [Adaptive thinking](https://docs.anthropic.com/docs/en/build-with-claude/adaptive-thinking).
 
 ## Agentic systems
 
@@ -405,7 +405,7 @@ Claude's latest models excel at long-horizon reasoning tasks with exceptional st
 
 #### Context awareness and multi-window workflows
 
-Claude 4.6 and Claude 4.5 models feature [context awareness](/docs/en/build-with-claude/context-windows#context-awareness-in-claude-sonnet-4-6-sonnet-4-5-and-haiku-4-5), enabling the model to track its remaining context window (i.e. "token budget") throughout a conversation. This enables Claude to execute tasks and manage context more effectively by understanding how much space it has to work.
+Claude 4.6 and Claude 4.5 models feature [context awareness](https://docs.anthropic.com/docs/en/build-with-claude/context-windows#context-awareness-in-claude-sonnet-4-6-sonnet-4-5-and-haiku-4-5), enabling the model to track its remaining context window (i.e. "token budget") throughout a conversation. This enables Claude to execute tasks and manage context more effectively by understanding how much space it has to work.
 
 **Managing context limits:**
 
@@ -415,7 +415,7 @@ If you are using Claude in an agent harness that compacts context or allows savi
 Your context window will be automatically compacted as it approaches its limit, allowing you to continue working indefinitely from where you left off. Therefore, do not stop tasks early due to token budget concerns. As you approach your token budget limit, save your current progress and state to memory before the context window refreshes. Always be as persistent and autonomous as possible and complete tasks fully, even if the end of your budget is approaching. Never artificially stop any task early regardless of the context remaining.
 ```
 
-The [memory tool](/docs/en/agents-and-tools/tool-use/memory-tool) pairs naturally with context awareness for seamless context transitions.
+The [memory tool](https://docs.anthropic.com/docs/en/agents-and-tools/tool-use/memory-tool) pairs naturally with context awareness for seamless context transitions.
 
 #### Multi-context window workflows
 
@@ -581,7 +581,7 @@ Never speculate about code you have not opened. If the user references a specifi
 
 Claude Opus 4.5 and Claude Opus 4.6 have improved vision capabilities compared to previous Claude models. They perform better on image processing and data extraction tasks, particularly when there are multiple images present in context. These improvements carry over to computer use, where the models can more reliably interpret screenshots and UI elements. You can also use these models to analyze videos by breaking them up into frames.
 
-One technique we've found effective to further boost performance is to give Claude a crop tool or [skill](/docs/en/agents-and-tools/agent-skills/overview). We've seen consistent uplift on image evaluations when Claude is able to "zoom" in on relevant regions of an image. We've put together a [cookbook for the crop tool](https://platform.claude.com/cookbook/multimodal-crop-tool).
+One technique we've found effective to further boost performance is to give Claude a crop tool or [skill](https://docs.anthropic.com/docs/en/agents-and-tools/agent-skills/overview). We've seen consistent uplift on image evaluations when Claude is able to "zoom" in on relevant regions of an image. We've put together a [cookbook for the crop tool](https://platform.claude.com/cookbook/multimodal-crop-tool).
 
 ### Frontend design
 
@@ -624,13 +624,13 @@ When migrating to Claude 4.6 models from earlier generations:
 
 3. **Request specific features explicitly**: Animations and interactive elements should be requested explicitly when desired.
 
-4. **Update thinking configuration**: Claude 4.6 models use [adaptive thinking](/docs/en/build-with-claude/adaptive-thinking) (`thinking: {type: "adaptive"}`) instead of manual thinking with `budget_tokens`. Use the [effort parameter](/docs/en/build-with-claude/effort) to control thinking depth.
+4. **Update thinking configuration**: Claude 4.6 models use [adaptive thinking](https://docs.anthropic.com/docs/en/build-with-claude/adaptive-thinking) (`thinking: {type: "adaptive"}`) instead of manual thinking with `budget_tokens`. Use the [effort parameter](https://docs.anthropic.com/docs/en/build-with-claude/effort) to control thinking depth.
 
 5. **Migrate away from prefilled responses**: Prefilled responses on the last assistant turn are deprecated starting with Claude 4.6 models. See [Migrating away from prefilled responses](#migrating-away-from-prefilled-responses) for detailed guidance on alternatives.
 
 6. **Tune anti-laziness prompting**: If your prompts previously encouraged the model to be more thorough or use tools more aggressively, dial back that guidance. Claude 4.6 models are significantly more proactive and may overtrigger on instructions that were needed for previous models.
 
-For detailed migration steps, see the [Migration guide](/docs/en/about-claude/models/migration-guide).
+For detailed migration steps, see the [Migration guide](https://docs.anthropic.com/docs/en/about-claude/models/migration-guide).
 
 ### Migrating from Claude Sonnet 4.5 to Claude Sonnet 4.6
 
@@ -691,7 +691,7 @@ client.messages.create(
 
 #### When to try adaptive thinking
 
-The extended thinking paths above use `budget_tokens` for predictable token usage. If your workload fits one of the following patterns, consider trying [adaptive thinking](/docs/en/build-with-claude/adaptive-thinking) instead:
+The extended thinking paths above use `budget_tokens` for predictable token usage. If your workload fits one of the following patterns, consider trying [adaptive thinking](https://docs.anthropic.com/docs/en/build-with-claude/adaptive-thinking) instead:
 
 - **Autonomous multi-step agents:** coding agents that turn requirements into working software, data analysis pipelines, and bug finding where the model runs independently across many steps. Adaptive thinking lets the model calibrate its reasoning per step, staying on path over longer trajectories. For these workloads, start at `high` effort. If latency or token usage is a concern, scale down to `medium`.
 - **Computer use agents:** Claude Sonnet 4.6 achieved best-in-class accuracy on computer use evaluations using adaptive mode.

@@ -455,7 +455,6 @@
 [Security Vulnerability Hunt (Aegis)](prompts/technical/software_engineering/tasks/security_vulnerability.prompt.md)
 [Tooling & Quality Gates (DevEx Architect)](prompts/technical/software_engineering/tasks/tooling_and_quality.prompt.md)
 [UI Tweak & Verification (Aegis Security)](prompts/technical/software_engineering/tasks/ui_fix.prompt.md)
-[Victorian Glitch-Diplomacy Transcoder](prompts/speculative/glitch_etiquette/victorian_glitch_diplomat.prompt.md)
 [Sterility-Validation Protocol Builder](prompts/scientific/sterility/sterility_workflow/01_sterility_validation_protocol_builder.prompt.md)
 [Regulatory Gap-Analysis Comparator](prompts/scientific/sterility/sterility_workflow/02_regulatory_gap_analysis_comparator.prompt.md)
 [EtO Sterilization Process FMEA](prompts/scientific/sterility/sterility_workflow/03_eto_sterilization_process_fmea.prompt.md)

@@ -1,8 +1,8 @@
 # Data Management Overview
 
 ## Categories
-- [**Cdisc Compliance Workflow**](cdisc_compliance_workflow/overview.md)
-- [**Data Management Etl Workflow**](data_management_etl_workflow/overview.md)
+- [Cdisc Compliance Workflow/](cdisc_compliance_workflow/overview.md)
+- [Data Management Etl Workflow/](data_management_etl_workflow/overview.md)
 
 ## Prompts
 - **[Audit Trail Review](audit_trail_review.prompt.yaml)**: Review subject audit logs for compliance and data integrity.

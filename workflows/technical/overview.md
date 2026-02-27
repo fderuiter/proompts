@@ -1,7 +1,7 @@
 # Technical Overview
 
 ## Categories
-- [**Software Engineering**](software_engineering/overview.md)
+- [Software Engineering/](software_engineering/overview.md)
 
 ## Workflows
 - **[Agentic Coding: From Idea to Epics](agentic_coding.workflow.yaml)**: A workflow that takes a product concept, generates a product brief, and then creates project epics from that brief.

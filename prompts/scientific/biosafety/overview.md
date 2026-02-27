@@ -1,7 +1,7 @@
 # Biosafety Overview
 
 ## Categories
-- [**Biological Safety Workflow**](biological_safety_workflow/overview.md)
+- [Biological Safety Workflow/](biological_safety_workflow/overview.md)
 
 ## Prompts
 - **[Biological Evaluation Plan Builder](bep_builder.prompt.yaml)**: Draft a complete Biological Evaluation Plan (BEP) for a specified medical device.

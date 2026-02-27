@@ -1,7 +1,7 @@
 # Forms Overview
 
 ## Categories
-- [**Clinical Prompts Workflow**](clinical_prompts_workflow/overview.md)
+- [Clinical Prompts Workflow/](clinical_prompts_workflow/overview.md)
 
 ## Prompts
 - **[CDASH Alignment](cdash_alignment.prompt.yaml)**: Standardize clinical data collection fields using CDASH models.
