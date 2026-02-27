@@ -252,6 +252,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Google Jules
 
+- [Jules Orchestrator](prompts/google_jules/jules_orchestrator.prompt.md)
 - [Jules Test Generator](prompts/google_jules/jules_test_gen.prompt.md)
 
 ## Imaging
