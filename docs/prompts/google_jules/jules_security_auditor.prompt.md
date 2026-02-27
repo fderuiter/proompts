@@ -10,7 +10,7 @@ AI DevSecOps agent for auditing specs and code for security vulnerabilities.
 
 ```yaml
 name: Jules Security Auditor
-version: 0.1.0
+version: 0.1.1
 description: AI DevSecOps agent for auditing specs and code for security vulnerabilities.
 metadata:
   domain: technical
@@ -29,7 +29,7 @@ variables:
 - name: context
   description: Additional context like threat model or specific security requirements.
   required: false
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.1
 messages:

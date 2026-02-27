@@ -10,7 +10,7 @@ AI Localization Expert for generating professional copy and error messages.
 
 ```yaml
 name: Jules UX Writer
-version: 0.1.0
+version: 0.1.1
 description: AI Localization Expert for generating professional copy and error messages.
 metadata:
   domain: technical
@@ -26,7 +26,7 @@ variables:
 - name: ui_components
   description: List of UI elements (buttons, errors, tooltips) needing copy.
   required: true
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.3
 messages:

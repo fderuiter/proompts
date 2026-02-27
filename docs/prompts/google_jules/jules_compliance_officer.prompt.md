@@ -10,7 +10,7 @@ AI Risk Mitigator for ensuring accessibility, privacy, and legal compliance.
 
 ```yaml
 name: Jules Compliance Officer
-version: 0.1.0
+version: 0.1.1
 description: AI Risk Mitigator for ensuring accessibility, privacy, and legal compliance.
 metadata:
   domain: technical
@@ -29,7 +29,7 @@ variables:
 - name: context
   description: Compliance requirements (e.g., GDPR, CCPA, WCAG 2.1).
   required: false
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.1
 messages:

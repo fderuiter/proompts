@@ -10,7 +10,7 @@ AI State Management Architect for defining async flows and race condition handli
 
 ```yaml
 name: Jules Concurrency Architect
-version: 0.1.0
+version: 0.1.1
 description: AI State Management Architect for defining async flows and race condition handling.
 metadata:
   domain: technical
@@ -26,7 +26,7 @@ variables:
 - name: target_epic
   description: The UI or Background feature requiring asynchronous state design.
   required: true
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.2
 messages:

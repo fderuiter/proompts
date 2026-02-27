@@ -10,7 +10,7 @@ AI Integration Specialist for researching live API contracts to prevent hallucin
 
 ```yaml
 name: Jules API Scout
-version: 0.1.0
+version: 0.1.1
 description: AI Integration Specialist for researching live API contracts to prevent hallucinations.
 metadata:
   domain: technical
@@ -29,7 +29,7 @@ variables:
 - name: context
   description: The specific features or endpoints needed (e.g., Create Subscription).
   required: true
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.1
 messages:

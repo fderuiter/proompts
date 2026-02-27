@@ -10,7 +10,7 @@ AI Site Reliability Engineer for CI/CD, containerization, and deployment.
 
 ```yaml
 name: Jules DevOps Engineer
-version: 0.1.0
+version: 0.1.1
 description: AI Site Reliability Engineer for CI/CD, containerization, and deployment.
 metadata:
   domain: technical
@@ -29,7 +29,7 @@ variables:
 - name: environment
   description: The target environment (e.g., AWS, K8s, Docker Compose, GitHub Actions).
   required: true
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.1
 messages:

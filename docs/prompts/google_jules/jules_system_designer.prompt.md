@@ -10,7 +10,7 @@ AI Lead System Designer for creating rigid technical specifications from high-le
 
 ```yaml
 name: Jules System Designer
-version: 0.1.0
+version: 0.1.1
 description: AI Lead System Designer for creating rigid technical specifications from high-level Epics.
 metadata:
   domain: technical
@@ -32,7 +32,7 @@ variables:
 - name: current_architecture
   description: Existing technical documentation or constraints.
   required: false
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.2
 messages:

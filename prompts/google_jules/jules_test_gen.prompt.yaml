@@ -1,5 +1,5 @@
 name: Jules Test Generator
-version: 0.1.0
+version: 0.1.1
 description: A specialized prompt for Google Jules to autonomously generate comprehensive test suites for existing code, ensuring high coverage and reliability.
 metadata:
   domain: technical
@@ -14,7 +14,7 @@ variables:
 - name: target_files
   description: The list of source files to generate tests for.
   required: true
-model: gpt-4
+model: gemini-3-pro
 modelParameters:
   temperature: 0.2
 messages:

@@ -10,7 +10,7 @@ Lead AI Technical Project Manager & Architect for state analysis, documentation 
 
 ```yaml
 name: Jules Orchestrator
-version: 0.1.0
+version: 0.1.1
 description: Lead AI Technical Project Manager & Architect for state analysis, documentation enhancement, and atomic task decomposition.
 metadata:
   domain: technical
@@ -28,7 +28,7 @@ variables:
 - name: context
   description: Additional context, codebase analysis, or documentation snippets.
   required: false
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.2
 messages:

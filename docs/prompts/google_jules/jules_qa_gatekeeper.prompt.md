@@ -10,7 +10,7 @@ AI Quality Control Agent for validating developer code against specs and constra
 
 ```yaml
 name: Jules QA Gatekeeper
-version: 0.1.0
+version: 0.1.1
 description: AI Quality Control Agent for validating developer code against specs and constraints.
 metadata:
   domain: technical
@@ -32,7 +32,7 @@ variables:
 - name: source_code
   description: The code implementation submitted by the Developer Agent.
   required: true
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.1
 messages:
