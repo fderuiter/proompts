@@ -472,7 +472,7 @@
 [SOLID Codebase Analysis](prompts/technical/architecture/solid_codebase_analysis.prompt.md)
 [Universal Automation Agent](prompts/technical/automation/universal_automation_agent.prompt.md)
 [Conversation Stochastic Modeler](prompts/technical/data_science/conversation_stochastic_modeler.prompt.md)
-[Design.md Template](prompts/technical/design/design_md_template.prompt.md)
+[System Design RFC Architect](prompts/technical/design/design_md_template.prompt.md)
 [AI Email Assistant Go/No-Go Vote](prompts/technical/design/email_assistant_go_no_go_vote.prompt.md)
 [Heuristic-Evaluation Coach](prompts/technical/design/heuristic_evaluation_coach.prompt.md)
 [Forge - Script Reliability Agent](prompts/technical/devops/forge_script_reliability.prompt.md)
