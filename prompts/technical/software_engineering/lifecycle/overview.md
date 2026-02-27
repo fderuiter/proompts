@@ -1,7 +1,7 @@
 # Lifecycle Overview
 
 ## Categories
-- [Agentic Coding Workflow/](agentic_coding_workflow/overview.md)
+- [**Agentic Coding Workflow**](agentic_coding_workflow/overview.md)
 
 ## Prompts
 - **[Coding Session Guidelines](coding_session_guidelines.prompt.yaml)**: Provide step-by-step guidance for running productive coding sessions.

@@ -1,7 +1,7 @@
 # Project Management Overview
 
 ## Categories
-- [Project Management Workflow/](project_management_workflow/overview.md)
+- [**Project Management Workflow**](project_management_workflow/overview.md)
 
 ## Prompts
 - **[Clinical-Trial Timeline and Risk Radar](clinical_trial_timeline_risk_radar.prompt.yaml)**: Evaluate study schedule variance and prioritize mitigation actions.

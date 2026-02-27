@@ -1,7 +1,7 @@
 # Eclinical Integration Overview
 
 ## Categories
-- [Eclinical Integration Workflow/](eclinical_integration_workflow/overview.md)
+- [**Eclinical Integration Workflow**](eclinical_integration_workflow/overview.md)
 
 ## Prompts
 - **[Computer System Validation (CSV)](computer_system_validation.prompt.yaml)**: Generate validation documents for EDC systems.
