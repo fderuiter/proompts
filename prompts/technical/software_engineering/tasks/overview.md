@@ -1,7 +1,7 @@
 # Tasks Overview
 
 ## Categories
-- [Paw/](paw/overview.md)
+- [**Paw**](paw/overview.md)
 
 ## Prompts
 - **[Test Architect (Automated Testing)](add_tests.prompt.yaml)**: Generates comprehensive unit and integration tests for provided code, focusing on edge cases, reliability, and clean code practices.

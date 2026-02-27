@@ -1,7 +1,7 @@
 # Cfo Overview
 
 ## Categories
-- [Cfo Workflow/](cfo_workflow/overview.md)
+- [**Cfo Workflow**](cfo_workflow/overview.md)
 
 ## Prompts
 - **[Board Deck Narrative Generation](board_deck_narrative.prompt.yaml)**: Draft the 'CFO Commentary' slide for a Board meeting.

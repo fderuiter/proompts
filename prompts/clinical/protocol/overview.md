@@ -1,8 +1,8 @@
 # Protocol Overview
 
 ## Categories
-- [Protocol Workflow/](protocol_workflow/overview.md)
-- [Usdm Workflow/](usdm_workflow/overview.md)
+- [**Protocol Workflow**](protocol_workflow/overview.md)
+- [**Usdm Workflow**](usdm_workflow/overview.md)
 
 ## Prompts
 - **[Protocol Deviation Reporting](protocol_deviation_reporting.prompt.yaml)**: Identify and report protocol deviations from clinical trial logs.
