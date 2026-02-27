@@ -162,6 +162,8 @@
 [CDASH Mapping & Completion-Guide Assistant](prompts/clinical/forms/clinical_prompts_workflow/03_cdash_mapping_completion_guide.prompt.md)
 [Jules Agile Orchestrator](prompts/google_jules/jules_agile_orchestrator.prompt.md)
 [Jules Orchestrator](prompts/google_jules/jules_orchestrator.prompt.md)
+[Jules Product Architect](prompts/google_jules/jules_product_architect.prompt.md)
+[Jules System Designer](prompts/google_jules/jules_system_designer.prompt.md)
 [Jules Test Generator](prompts/google_jules/jules_test_gen.prompt.md)
 [Imaging Charter Draft](prompts/clinical/imaging/imaging_workflow/01_imaging_charter_draft.prompt.md)
 [Site Upload QC and Query Generator](prompts/clinical/imaging/imaging_workflow/02_site_upload_qc.prompt.md)
