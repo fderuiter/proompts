@@ -161,6 +161,7 @@
 [CRF Quality Auditor](prompts/clinical/forms/clinical_prompts_workflow/02_crf_quality_auditor.prompt.md)
 [CDASH Mapping & Completion-Guide Assistant](prompts/clinical/forms/clinical_prompts_workflow/03_cdash_mapping_completion_guide.prompt.md)
 [Jules Agile Orchestrator](prompts/google_jules/jules_agile_orchestrator.prompt.md)
+[Jules Developer Agent](prompts/google_jules/jules_developer_agent.prompt.md)
 [Jules Orchestrator](prompts/google_jules/jules_orchestrator.prompt.md)
 [Jules Product Architect](prompts/google_jules/jules_product_architect.prompt.md)
 [Jules System Designer](prompts/google_jules/jules_system_designer.prompt.md)
