@@ -32,7 +32,7 @@ variables:
 - name: target_files
   description: The specific files in the codebase authorized for reading, creation, or modification.
   required: true
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.2
 messages:

@@ -29,7 +29,7 @@ variables:
 - name: environment
   description: The target environment (e.g., AWS, K8s, Docker Compose, GitHub Actions).
   required: true
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.1
 messages:

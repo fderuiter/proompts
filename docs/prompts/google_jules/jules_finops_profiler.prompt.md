@@ -29,7 +29,7 @@ variables:
 - name: context
   description: The expected scale or usage (e.g., "1M concurrent users", "ETL pipeline").
   required: false
-model: gpt-4o
+model: gemini-3-pro
 modelParameters:
   temperature: 0.1
 messages:
