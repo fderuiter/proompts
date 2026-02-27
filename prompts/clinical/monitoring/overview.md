@@ -1,7 +1,7 @@
 # Monitoring Overview
 
 ## Categories
-- [**Clinical Monitoring Workflow**](clinical_monitoring_workflow/overview.md)
+- [Clinical Monitoring Workflow/](clinical_monitoring_workflow/overview.md)
 
 ## Prompts
 - **[Clinical Monitoring Plan Development](clinical_monitoring_plan.prompt.yaml)**: Draft a risk-based Clinical Monitoring Plan.

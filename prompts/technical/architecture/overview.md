@@ -1,7 +1,7 @@
 # Architecture Overview
 
 ## Categories
-- [**Togaf**](togaf/overview.md)
+- [Togaf/](togaf/overview.md)
 
 ## Prompts
 - **[DRY Codebase Analysis](dry_codebase_analysis.prompt.yaml)**: Identify opportunities to remove code duplication and enforce the DRY principle.

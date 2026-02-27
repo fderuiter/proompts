@@ -1,4 +1,4 @@
 # Sterility Overview
 
 ## Categories
-- [**Sterility Workflow**](sterility_workflow/overview.md)
+- [Sterility Workflow/](sterility_workflow/overview.md)

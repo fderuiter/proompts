@@ -3,18 +3,15 @@
 
 from __future__ import annotations
 
-import sys
 from pathlib import Path
+import sys
 
-# Add the parent directory of 'tools' to sys.path so we can import 'tools.scripts.utils'
-# Assuming this script is in tools/scripts/
 try:
-    from utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml
+    from utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, OVERVIEW_NAME
 except ImportError:
+    import sys
     sys.path.append(str(Path(__file__).parent))
-    from utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml
-
-OVERVIEW_NAME = "overview.md"
+    from utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, OVERVIEW_NAME
 
 
 def get_prompt_metadata(path: Path) -> tuple[str, str]:
@@ -31,91 +28,76 @@ def get_prompt_metadata(path: Path) -> tuple[str, str]:
         if name.lower().endswith(ext):
             name = name[: -len(ext)]
             break
-    # Remove leading numbers if present (e.g., 01_foo -> foo)
-    parts = name.split("_", 1)
-    if parts[0].isdigit() and len(parts) > 1:
-        name = parts[1]
+    if name.split("_", 1)[0].isdigit():
+        name = name.split("_", 1)[1]
 
     title = name.replace("_", " ").title()
     return title, str(description).strip()
 
 
-def generate_overview_content(directory: Path) -> str:
-    """Generate the markdown content for an overview file."""
-
-    # 1. Collect Prompts/Workflows in this directory
+def generate_overview(directory: Path) -> str:
+    title = directory.name.replace("_", " ").title()
     prompt_files = []
     for pattern in ("*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
         prompt_files.extend(directory.glob(pattern))
     
-    # Filter out hidden files
+    # Filter out hidden files (e.g. ._ files on Mac)
     prompt_files = [f for f in prompt_files if not f.name.startswith('.')]
-    prompt_files.sort(key=lambda f: f.name)
 
-    # 2. Collect Subdirectories that are relevant
-    # A relevant subdirectory is one that contains prompt/workflow files (recursively)
+    lines = []
+    for file in sorted(prompt_files):
+        heading, description = get_prompt_metadata(file)
+        if description:
+            lines.append(f"- **[{heading}]({file.name})**: {description}")
+        else:
+            lines.append(f"- [{heading}]({file.name})")
+
+    # Scan for subdirectories that have prompts or overviews
     subdirs = []
     for child in directory.iterdir():
         if child.is_dir() and not child.name.startswith('.'):
-            # Check if this subdir has any relevant content deep down
-            has_content_recursive = False
+            # Check if this subdir has prompts recursively or has an overview
+            has_sub_prompts = False
             for pattern in ("*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
                 if any(child.rglob(pattern)):
-                    has_content_recursive = True
+                    has_sub_prompts = True
                     break
             
-            if has_content_recursive:
-                # Use the subdirectory name as title
+            if has_sub_prompts:
+                # Use the subdirectory name as title, or try to read its overview title?
+                # For simplicity, just use name.
                 title_sd = child.name.replace("_", " ").title()
-                subdirs.append((title_sd, child.name))
+                subdirs.append(f"- [{title_sd}/]({child.name}/overview.md)")
 
-    subdirs.sort(key=lambda x: x[0])
-
-    # If no content at all, return empty
-    if not prompt_files and not subdirs:
+    if not lines and not subdirs:
         return ""
 
-    # Build the Markdown
-    title = directory.name.replace("_", " ").title()
-    lines = [f"# {title} Overview", ""]
-
-    # Add Categories (Subdirectories) section if any
+    sections = [f"# {title} Overview", ""]
     if subdirs:
-        lines.append("## Categories")
-        for title_sd, dirname in subdirs:
-            lines.append(f"- [**{title_sd}**]({dirname}/overview.md)")
-        lines.append("")
+        sections.append("## Categories")
+        sections.extend(sorted(subdirs))
+        sections.append("")
 
-    # Add Prompts/Workflows section if any files exist
-    if prompt_files:
-        has_workflows = any(f.name.endswith(('workflow.yaml', 'workflow.yml')) for f in prompt_files)
-        has_prompts = any(f.name.endswith(('prompt.yaml', 'prompt.yml')) for f in prompt_files)
+    if lines:
+        has_workflows = any(f.name.endswith('workflow.yaml') or f.name.endswith('workflow.yml') for f in prompt_files)
+        has_prompts = any(f.name.endswith('prompt.yaml') or f.name.endswith('prompt.yml') for f in prompt_files)
 
         if has_workflows and has_prompts:
-            lines.append("## Prompts & Workflows")
+             sections.append("## Prompts & Workflows")
         elif has_workflows:
-            lines.append("## Workflows")
+             sections.append("## Workflows")
         else:
-            lines.append("## Prompts")
+             sections.append("## Prompts")
+        sections.extend(lines)
 
-        for file in prompt_files:
-            heading, description = get_prompt_metadata(file)
-            if description:
-                lines.append(f"- **[{heading}]({file.name})**: {description}")
-            else:
-                lines.append(f"- [{heading}]({file.name})")
-        lines.append("")
-
-    return "\n".join(lines).rstrip() + "\n"
+    return "\n".join(sections).rstrip() + "\n"
 
 
 def ensure_overview(directory: Path) -> bool:
-    """Create or update overview.md if content differs."""
     path = directory / OVERVIEW_NAME
-    content = generate_overview_content(directory)
+    content = generate_overview(directory)
     
     if not content:
-        # If no content is generated, but file exists, delete it
         if path.exists():
             path.unlink()
             return True
@@ -132,31 +114,24 @@ def ensure_overview(directory: Path) -> bool:
 def main() -> int:
     changed = False
 
-    # Process PROMPTS_DIR and WORKFLOWS_DIR
-    roots = [d for d in [PROMPTS_DIR, WORKFLOWS_DIR] if d.exists()]
+    # helper to check if directory has content (recursively)
+    def has_content(d: Path) -> bool:
+        for pattern in ("*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
+            if any(d.rglob(pattern)):
+                return True
+        return False
 
-    for root_dir in roots:
-        # Walk strictly top-down so we can handle parents?
-        # Actually, we want to generate for every directory that has content.
-        # os.walk or rglob('*') gives us all dirs.
-        # We need to sort them so output is deterministic, though execution order doesn't matter much for individual files.
-        all_dirs = sorted([p for p in root_dir.rglob("*") if p.is_dir()])
-        # Also include the root_dir itself if it has files (usually not prompts directly in root, but possible)
-        all_dirs.insert(0, root_dir)
-
-        for directory in all_dirs:
-            # Skip hidden directories
-            if directory.name.startswith('.'):
-                continue
-
-            # Check if directory should have an overview
-            # It should if it has prompt files OR subdirectories with prompt files
-            # generate_overview_content handles this check internally and returns "" if empty.
-            if ensure_overview(directory):
-                print(f"Generated/Updated overview for {directory}")
-                changed = True
+    # Walk through all directories under PROMPTS_DIR and WORKFLOWS_DIR
+    for root_dir in [PROMPTS_DIR, WORKFLOWS_DIR]:
+        if not root_dir.exists():
+            continue
+        for directory in root_dir.rglob("*"):
+            if directory.is_dir() and has_content(directory):
+                if ensure_overview(directory):
+                    print(f"Generated overview for {directory}")
+                    changed = True
                 
-    return 0
+    return 0 if changed else 0
 
 
 if __name__ == "__main__":

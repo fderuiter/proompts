@@ -1,4 +1,4 @@
 # Adjudication Overview
 
 ## Categories
-- [**Adjudication Workflow**](adjudication_workflow/overview.md)
+- [Adjudication Workflow/](adjudication_workflow/overview.md)
