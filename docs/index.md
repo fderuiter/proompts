@@ -604,6 +604,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Speculative
 
+- [Temporal Syntax Debugger](prompts/speculative/chrono_linguistic_debugging/temporal_syntax_debugger.prompt.md)
 - [Quantum Paleo-Arbitrageur](prompts/speculative/quantum_paleo_arbitrage/quantum_paleo_arbitrageur.prompt.md)
 
 ## Sterility
