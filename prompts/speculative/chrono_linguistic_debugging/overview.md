@@ -1,8 +1,4 @@
----
-description: "Experimental temporal linguistics and chronological debugging."
-tags: ["speculative", "time-travel", "linguistics"]
----
+# Chrono Linguistic Debugging Overview
 
-# Chrono-Linguistic Debugging
-
-This directory explores prompts related to debugging code across divergent timelines and alternative semantic histories.
+## Prompts
+- **[Temporal Syntax Debugger](temporal_syntax_debugger.prompt.yaml)**: Resolves code conflicts created by time-traveling developers by analyzing the semantic drift of programming languages across different timelines.
