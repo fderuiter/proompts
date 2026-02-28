@@ -25,19 +25,16 @@ class TestRenderWorkflow(unittest.TestCase):
             'inputs': [{'name': 'foo'}]
         }
 
-        source_path = Path("workflows/test.workflow.yaml")
+        source_path = self.root / Path("workflows/test.workflow.yaml")
 
         # We need to mock CONFIG['dirs']['workflow_docs'] used in _render_workflow_page
         # Since CONFIG is a global constant, we might need to patch it or ensure it works.
         # CONFIG uses relative paths, so self.root / CONFIG... works.
 
         # We don't want to actually write files, so we'll mock path methods
-        with patch('pathlib.Path.write_text') as mock_write:
-            # Also mock relative_to/relpath calls if needed, but Path operations should be fine
-            # except for actual IO.
-
-            # The method uses os.path.relpath which might fail if paths don't exist?
-            # os.path.relpath calculates relative path string, doesn't check existence.
+        with patch('pathlib.Path.write_text') as mock_write, \
+             patch('pathlib.Path.mkdir') as mock_mkdir, \
+             patch('pathlib.Path.read_text', return_value="") as mock_read:
 
             output_path, changed = self.gen._render_workflow_page(source_path, data, check_mode=False)
 
@@ -58,9 +55,12 @@ class TestRenderWorkflow(unittest.TestCase):
             'description': 'No diagram needed.'
         }
 
-        source_path = Path("workflows/simple.workflow.yaml")
+        source_path = self.root / Path("workflows/simple.workflow.yaml")
 
-        with patch('pathlib.Path.write_text') as mock_write:
+        with patch('pathlib.Path.write_text') as mock_write, \
+             patch('pathlib.Path.mkdir') as mock_mkdir, \
+             patch('pathlib.Path.read_text', return_value="") as mock_read:
+
             output_path, changed = self.gen._render_workflow_page(source_path, data, check_mode=False)
 
             args, _ = mock_write.call_args
