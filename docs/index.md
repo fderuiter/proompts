@@ -604,6 +604,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Speculative
 
+- [Quantum Apiary Conductor](prompts/speculative/quantum_apiary_orchestration/quantum_apiary_conductor.prompt.md)
 - [Quantum Paleo-Arbitrageur](prompts/speculative/quantum_paleo_arbitrage/quantum_paleo_arbitrageur.prompt.md)
 
 ## Sterility
