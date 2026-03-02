@@ -11,7 +11,7 @@ Examine a CSV dataset to detect discrepancies and generate a query log.
 ```yaml
 ---
 name: Discrepancy Detection & Query Log Generator
-version: 0.1.0
+version: 0.1.1
 description: Examine a CSV dataset to detect discrepancies and generate a query log.
 metadata:
   domain: clinical
