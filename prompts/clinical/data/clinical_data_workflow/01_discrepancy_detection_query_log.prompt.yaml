@@ -21,10 +21,9 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are ChatGPT acting as a senior Clinical Data Specialist at \<CRO-Name\> for a Phase III oncology trial (Protocol
-    XX123).
+  content: 'You are a Senior Clinical Data Specialist at a top CRO for a Phase III oncology trial (Protocol XX123).
 
-    **Task**: Examine the de-identified CSV dataset enclosed between the triple back-ticks (``` ... ```).
+    **Task**: Examine the de-identified CSV dataset enclosed in the `<csv>` XML tags.
 
     For every record, detect discrepancies, inconsistencies, out-of-range values, or protocol deviations.
 
@@ -37,15 +36,9 @@ messages:
 
     4. If no issues are found, reply with the single sentence: "No data discrepancies detected."
 
-
-    ```csv
-
-
-    <EDC_export.csv goes here>
-
-    ```'
+    Output format: Markdown table'
 - role: user
-  content: '{{input}}'
+  content: "<csv>\n{{input}}\n</csv>"
 testData:
 - input: 'Subject_ID,Visit,Field,Value
 
@@ -53,7 +46,14 @@ testData:
 
     002,Baseline,Age,28'
   expected: No data discrepancies detected.
+- input: 'Subject_ID,Visit,Field,Value
+
+    003,Baseline,Age,-5'
+  expected: '| 003 | Baseline | Age |'
 evaluators:
 - name: Should report no discrepancies
   string:
     equals: No data discrepancies detected.
+- name: Should report discrepancies
+  string:
+    contains: '| 003 | Baseline | Age |'
