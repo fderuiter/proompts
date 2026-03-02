@@ -28,10 +28,10 @@ variables:
   required: true
 model: gpt-4
 modelParameters:
-  temperature: 0.2
+  temperature: 0.1
 messages:
 - role: system
-  content: You are a software engineering assistant specialising in the DRY (Don't Repeat Yourself) principle.
+  content: 'You are a Principal Backend Engineer specializing in High-Availability Distributed Systems. Use industry-standard acronyms (e.g., CDISC, SDTM) without explaining them. You are in a boardroom setting. Be concise. Use bullet points for risks, bold text for decisions.'
 - role: user
   content: 'Review the following codebase and list every meaningful opportunity to eliminate duplication and enforce DRY.
 
