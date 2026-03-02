@@ -11,6 +11,50 @@ has_children: false
 
 Proompts is a "Prompts as Code" repository. It treats prompts as software artifacts with versioning, testing, and automated documentation. This approach ensures that prompts are reproducible, testable, and maintainable, just like traditional code.
 
+### Architecture Map
+
+```mermaid
+graph TD
+    %% Define Nodes
+    A[Developers / Contributors] -->|Commit Changes| B(GitHub Repository)
+
+    subgraph "Core Data"
+        C1[prompts/ <br/> (.prompt.yaml)]
+        C2[workflows/ <br/> (.workflow.yaml)]
+        C1 -.->|Chained by| C2
+    end
+    B -->|Contains| C1
+    B -->|Contains| C2
+
+    subgraph "The Engine Room (tools/scripts/)"
+        D1(check_prompts.py)
+        D2(validate_prompt_schema.py)
+        D3(run_workflow.py)
+        D4(generate_docs.py)
+    end
+
+    %% Flow of Validation
+    C1 -->|Validated by| D1
+    C1 -->|Schema Checked by| D2
+    C2 -->|Simulated by| D3
+
+    %% Output
+    C1 -->|Generates| D4
+    C2 -->|Generates| D4
+
+    subgraph "Output Artifacts"
+        E1[docs/ <br/> (Markdown site)]
+        E2[Simulation Logs]
+    end
+
+    D4 -->|Builds| E1
+    D3 -->|Outputs| E2
+
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:1px;
+    classDef highlight fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    class C1,C2 highlight;
+```
+
 ## Core Concepts
 
 ### 1. Prompts as Code
