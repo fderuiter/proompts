@@ -12,6 +12,7 @@ title: Architecture
 - [Hexagonal Architecture Review](prompts/technical/architecture/hexagonal_architecture_review.prompt.md)
 - [Maintainability Codebase Analysis](prompts/technical/architecture/maintainability_codebase_analysis.prompt.md)
 - [SOLID Codebase Analysis](prompts/technical/architecture/solid_codebase_analysis.prompt.md)
+- [Strangler Fig Migration Architect](prompts/technical/architecture/strangler_fig_migration_architect.prompt.md)
 - [TOGAF Phase A - Architecture Vision](prompts/technical/architecture/togaf/phase_a_vision.prompt.md)
 - [TOGAF Phase B - Business Architecture](prompts/technical/architecture/togaf/phase_b_business.prompt.md)
 - [TOGAF Phase C - Information Systems Architectures](prompts/technical/architecture/togaf/phase_c_information_systems.prompt.md)
