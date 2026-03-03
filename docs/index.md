@@ -631,6 +631,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Technical
 
 - [DRY Codebase Analysis](prompts/technical/architecture/dry_codebase_analysis.prompt.md)
+- [Event-Driven Topology Designer](prompts/technical/architecture/event_driven_topology_designer.prompt.md)
 - [Hexagonal Architecture Implementation](prompts/technical/architecture/hexagonal_architecture_implementation.prompt.md)
 - [Hexagonal Architecture Principles](prompts/technical/architecture/hexagonal_architecture_principles.prompt.md)
 - [Hexagonal Architecture Review](prompts/technical/architecture/hexagonal_architecture_review.prompt.md)
