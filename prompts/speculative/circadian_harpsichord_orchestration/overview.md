@@ -1,4 +1,3 @@
-# Circadian Harpsichord Orchestration Overview
+# Circadian Harpsichord Orchestration
 
-## Prompts
-- **[Circadian Harpsichord Orchestrator](circadian_harpsichord_orchestrator.prompt.yaml)**: Schedules volatile containerized workloads by analyzing Kubernetes pod eviction cycles through the lens of human circadian rhythms, synchronized to a Werckmeister III harpsichord temperament.
+This domain explores speculative concepts at the intersection of chronobiology, Kubernetes orchestration, and Baroque harpsichord tuning systems.
