@@ -10,6 +10,11 @@ import sys
 import yaml
 from pathlib import Path
 
+try:
+    from yaml import CSafeLoader as SafeLoader
+except ImportError:
+    from yaml import SafeLoader
+
 # Add the current directory to sys.path to import utils if needed
 sys.path.append(str(Path(__file__).parent))
 
@@ -593,7 +598,7 @@ def update_overview(directory):
     for p in prompts:
         try:
             with open(p, 'r') as f:
-                docs = list(yaml.safe_load_all(f))
+                docs = list(yaml.load_all(f, Loader=SafeLoader))
                 data = docs[0] if docs else {}
                 name = data.get('name', p.stem)
         except Exception:
