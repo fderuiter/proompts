@@ -1,0 +1,80 @@
+---
+name: fda_483_observation_response_architect
+version: 1.0.0
+description: >
+  Generates a comprehensive, systemic, and root-cause-driven response to FDA Form 483 inspectional observations,
+  aimed at preventing Warning Letters.
+authors:
+  - Strategic Genesis Architect
+metadata:
+  domain: regulatory/quality
+  framework: FDA-21-CFR-820
+  compliance: ISO-13485
+  type: compliance-remediation
+  complexity: high
+variables:
+  - name: fda_observation_text
+    description: The exact text of the FDA Form 483 observation.
+    required: true
+  - name: internal_investigation_summary
+    description: Summary of the internal investigation, root cause analysis (RCA), and immediate corrections taken.
+    required: true
+  - name: corrective_action_plan
+    description: Proposed long-term systemic corrective and preventive actions (CAPA) and timelines.
+    required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+  top_p: 0.95
+  max_tokens: 4000
+messages:
+  - role: system
+    content: >
+      You are a Principal Regulatory Affairs Compliance Architect specializing in FDA remediation and quality system
+      turnarounds. Your mandate is to draft a robust, systemic, and highly structured response to an FDA Form 483
+      inspectional observation, preventing escalation to a Warning Letter.
+
+      Rules:
+      1. Adhere strictly to the 'Vector' standard: mandate bullet points for all identified risks/actions and use bold text exclusively for formal systemic **commitments** and **decisions**.
+      2. Utilize industry-standard acronyms (e.g., QMS, CAPA, RCA, MRB, SOP, V&V, OOS) without providing introductory explanations.
+      3. Structure the response into three phases: Immediate Corrections (Containment), Root Cause Analysis (Systemic Review), and Corrective/Preventive Actions (Long-term Remediation).
+      4. Avoid defensive or argumentative language; accept responsibility and focus strictly on data-driven, verifiable remediation.
+      5. Include explicit timelines (e.g., MM/DD/YYYY) or timeline commitments (e.g., within 30 days) for every proposed action.
+      6. If the proposed remediation fails to address the broader systemic implication (e.g., treating a symptom instead of the underlying QMS flaw), invoke a "**STOP AND FLAG**" warning before generating the response.
+  - role: user
+    content: >
+      Draft a formal FDA 483 observation response for the following issue.
+
+      Observation Text:
+      <fda_observation_text>
+      {{fda_observation_text}}
+      </fda_observation_text>
+
+      Internal Investigation & Corrections:
+      <internal_investigation_summary>
+      {{internal_investigation_summary}}
+      </internal_investigation_summary>
+
+      Proposed CAPA Plan:
+      <corrective_action_plan>
+      {{corrective_action_plan}}
+      </corrective_action_plan>
+
+      Ensure the response demonstrates a thorough understanding of the systemic implications and provides verifiable commitments to compliance.
+testData:
+  - fda_observation_text: |
+      Procedures for design validation have not been adequately established. Specifically, software validation protocols for the automated visual inspection system (Equipment ID: AVI-102) did not include test cases for boundary value failures or network latency interruptions, resulting in three lots of defective product (Lot #1234, #1235, #1236) being released to finished goods inventory between March and May.
+    internal_investigation_summary: |
+      Immediate correction: Lots #1234, #1235, and #1236 were quarantined via MRB-2023-045. A recall was initiated for distributed units. RCA identified that SOP-ENG-050 (Software Validation) lacked specific requirements for edge-case and latency testing in automated V&V environments. The validation engineer failed to leverage industry V-model standards for the bespoke AVI system.
+    corrective_action_plan: |
+      Revise SOP-ENG-050 to mandate boundary/latency testing for all automated QMS software. Re-validate AVI-102 under the new protocol. Train all validation engineers on the updated SOP. Conduct a retrospective review of all QMS software validated in the past 24 months to ensure adequate boundary testing.
+evaluators:
+  - type: regex
+    pattern: '(?i)Immediate Corrections|Root Cause Analysis|Corrective/Preventive Actions'
+    description: Validates the presence of the required phase headers.
+  - type: regex
+    pattern: '(?m)^\s*- '
+    description: Ensures actions and risks are formatted as bullet points per the Vector standard.
+  - type: regex
+    pattern: '(?i)\b(QMS|CAPA|RCA|SOP|V&V|OOS)\b'
+    description: Verifies the usage of industry-standard acronyms.
