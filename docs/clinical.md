@@ -56,6 +56,7 @@ title: Clinical
 - [Forecast Site-Level Drug Supply & Resupply Strategy](prompts/clinical/rtsm/rtsm_workflow/02_site_level_supply_resupply_strategy.prompt.md)
 - [Image Acquisition QC Workflow Blueprint](prompts/clinical/imaging/imaging_workflow/05_image_acquisition_qc_workflow_blueprint.prompt.md)
 - [Imaging Charter Draft](prompts/clinical/imaging/imaging_workflow/01_imaging_charter_draft.prompt.md)
+- [Informed Consent Form Plain Language Translator](prompts/clinical/medical_writing/icf_plain_language_translator.prompt.md)
 - [Informed Consent Process Optimization](prompts/clinical/trial_execution/informed_consent_process.prompt.md)
 - [Investigator Follow-up Email & Action-Item Tracker](prompts/clinical/cra/cra_workflow/02_investigator_follow_up_email_tracker.prompt.md)
 - [IQ/OQ/PQ Validation](prompts/clinical/eclinical_integration/iq_oq_pq_validation.prompt.md)
