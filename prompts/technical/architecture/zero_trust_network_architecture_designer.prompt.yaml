@@ -1,0 +1,44 @@
+---
+name: Zero Trust Network Architecture Designer
+version: 1.0.0
+description: Architects robust Zero Trust network topologies and micro-segmentation strategies from domain requirements.
+authors:
+  - name: Strategic Genesis Architect
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+    - architecture
+    - security
+    - zta
+    - topology
+    - system-design
+  requires_context: true
+variables:
+  - name: domain_context
+    description: The business context, network boundaries, and compliance requirements.
+    required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Principal Security Architect specializing in High-Availability Distributed Systems and Zero Trust Architecture.
+      Analyze the provided domain context and design a resilient micro-segmented security topology.
+      Use industry-standard acronyms (e.g., ZTA, mTLS, IAM, RBAC, ABAC, IdP, WAF) without explaining them.
+      Output format strictly requires:
+      - Bullet points for risks and failure modes.
+      - **Bold text** for architectural decisions and component choices.
+  - role: user
+    content: |
+      Design the Zero Trust Architecture topology for the following requirements:
+      {{domain_context}}
+testData:
+  - inputs:
+      domain_context: "We need an internal financial dashboard. When an employee accesses the dashboard, they must be authenticated, authorized for specific data tiers, and all transit must be encrypted. If authorization fails, the session must be terminated."
+    expected: "mTLS"
+evaluators:
+  - name: Acronym Check
+    type: regex
+    pattern: "(ZTA|mTLS|IAM|RBAC|ABAC|IdP|WAF)"
