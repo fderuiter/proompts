@@ -474,6 +474,7 @@
 [PAW Phase 4 - Quality Assurance & Log](prompts/technical/software_engineering/tasks/paw/paw_04_qa_verification.prompt.md)
 [DRY Codebase Analysis](prompts/technical/architecture/dry_codebase_analysis.prompt.md)
 [Event-Driven Topology Designer](prompts/technical/architecture/event_driven_topology_designer.prompt.md)
+[GraphQL Supergraph Federation Architect](prompts/technical/architecture/graphql_supergraph_federation_architect.prompt.md)
 [Hexagonal Architecture Implementation](prompts/technical/architecture/hexagonal_architecture_implementation.prompt.md)
 [Hexagonal Architecture Principles](prompts/technical/architecture/hexagonal_architecture_principles.prompt.md)
 [Hexagonal Architecture Review](prompts/technical/architecture/hexagonal_architecture_review.prompt.md)
