@@ -12,6 +12,7 @@ import os # Needed for relpath calculation in strict paths
 from pathlib import Path
 from dataclasses import dataclass, field
 from typing import List, Dict, Optional, Any
+from utils import load_yaml
 
 # --- Configuration Loading (Extracted) ---
 def load_config() -> Dict[str, Any]:
@@ -43,15 +44,6 @@ class DocItem:
 class FileParser:
     """Encapsulates logic for extracting metadata from files."""
     RE_NUMERIC_PREFIX = re.compile(r'^\d+_')
-    
-    @staticmethod
-    def load_yaml(path: Path) -> Dict[str, Any]:
-        try:
-            with path.open('r', encoding='utf-8') as f:
-                return yaml.safe_load(f) or {}
-        except Exception as e:
-            print(f"⚠️ Warning: Failed to parse {path}: {e}")
-            return {}
 
     @staticmethod
     def derive_title(path: Path, data: Dict[str, Any]) -> str:
@@ -144,7 +136,7 @@ class DocumentationGenerator:
             if path.name.startswith("._"):
                 continue
             if path.suffix in {'.yaml', '.yml'} and '.prompt' in path.name:
-                data = FileParser.load_yaml(path)
+                data = load_yaml(path)
 
                 # Render the individual prompt page
                 page_path, page_changed = self._render_prompt_page(path, data, check_mode)
@@ -226,7 +218,7 @@ title: {title}
             if path.name.startswith("._"):
                 continue
             if path.suffix in {'.yaml', '.yml'} and '.workflow' in path.name:
-                data = FileParser.load_yaml(path)
+                data = load_yaml(path)
                 
                 # Check/Render the individual workflow page
                 page_path, page_changed = self._render_workflow_page(path, data, check_mode)
