@@ -12,5 +12,5 @@
 - **[Maintainability Codebase Analysis](maintainability_codebase_analysis.prompt.yaml)**: Improve code maintainability by addressing readability, organization, and test quality.
 - **[Multi-Region Active-Active Resilience Architect](multi_region_active_active_resilience.prompt.yaml)**: Designs true active-active multi-region topologies, resolving global state conflict and replication latency.
 - **[SOLID Codebase Analysis](solid_codebase_analysis.prompt.yaml)**: Evaluate code against SOLID principles and suggest refactoring tasks.
-- **[Zero Trust Network Architecture Designer](zero_trust_network_architecture_designer.prompt.yaml)**: Architects robust Zero Trust network topologies and micro-segmentation strategies from domain requirements.
 - **[Strangler Fig Migration Architect](strangler_fig_migration_architect.prompt.yaml)**: Architect a Strangler Fig pattern migration from a legacy monolith to microservices.
+- **[Zero Trust Network Architecture Designer](zero_trust_network_architecture_designer.prompt.yaml)**: Architects robust Zero Trust network topologies and micro-segmentation strategies from domain requirements.
