@@ -5,6 +5,7 @@
 
 ## Prompts
 - **[DRY Codebase Analysis](dry_codebase_analysis.prompt.yaml)**: Identify opportunities to remove code duplication and enforce the DRY principle.
+- **[Event-Driven Topology Designer](event_driven_topology_designer.prompt.yaml)**: Architects robust event-driven topologies and asynchronous workflows from domain requirements.
 - **[Hexagonal Architecture Implementation](hexagonal_architecture_implementation.prompt.yaml)**: Expert guidance on implementing Hexagonal Architecture, focusing on data flow, dependency inversion, and component placement.
 - **[Hexagonal Architecture Principles](hexagonal_architecture_principles.prompt.yaml)**: Explain the core philosophy, skeleton, and benefits of Hexagonal Architecture (Ports and Adapters).
 - **[Hexagonal Architecture Review](hexagonal_architecture_review.prompt.yaml)**: Analyze code for adherence to Hexagonal Architecture principles, identifying layer violations and dependency issues.
