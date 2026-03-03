@@ -207,20 +207,48 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter
     )
     parser.add_argument("workflow_file", help="Path to the .workflow.yaml file.")
-    parser.add_argument("-i", "--input", action='append', help="Set a workflow input, e.g., -i name='value'")
+    parser.add_argument("-i", "--input", action='append', help="Set a workflow input, e.g., -i name='value' (Not recommended for sensitive data)")
+    parser.add_argument("-f", "--inputs-file", help="Path to a JSON or YAML file containing workflow inputs (Recommended for security)")
     parser.add_argument("-v", "--verbose", action="store_true", help="Increase output verbosity")
 
     args = parser.parse_args()
 
-    # Parse inputs from command line
-    initial_inputs = {}
-    if args.input:
-        for item in args.input:
-            key, value = item.split('=', 1)
-            initial_inputs[key] = value
-
-    # Setup logging
+    # Setup logging early so that warnings/errors during argument parsing use the proper format
     setup_logging(args.verbose)
+
+    # Parse inputs
+    initial_inputs = {}
+
+    # Load inputs from file if provided
+    if args.inputs_file:
+        import json
+        import sys
+        file_ext = args.inputs_file.split('.')[-1].lower()
+        try:
+            if file_ext in ['yaml', 'yml']:
+                file_inputs = load_yaml(args.inputs_file)
+                if file_inputs is None:
+                    sys.exit(1) # load_yaml already logs the error
+                initial_inputs.update(file_inputs)
+            elif file_ext == 'json':
+                with open(args.inputs_file, 'r') as f:
+                    initial_inputs.update(json.load(f))
+            else:
+                logger.error(f"Unsupported inputs file extension '{file_ext}'. Expected .yaml, .yml, or .json")
+                sys.exit(1)
+        except Exception as e:
+            logger.error(f"Failed to load inputs file {args.inputs_file}: {e}")
+            sys.exit(1)
+
+    # Parse inputs from command line (overrides file inputs if any)
+    if args.input:
+        logger.warning("Warning: Using -i/--input for workflow inputs. Avoid passing sensitive secrets via command-line arguments.")
+        for item in args.input:
+            if '=' in item:
+                key, value = item.split('=', 1)
+                initial_inputs[key] = value
+            else:
+                logger.warning(f"Invalid input format: {item}. Expected key=value")
 
     final_state = run_workflow(args.workflow_file, initial_inputs, verbose=args.verbose)
 
