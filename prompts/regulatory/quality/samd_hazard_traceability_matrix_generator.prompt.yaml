@@ -1,0 +1,78 @@
+---
+name: samd_hazard_traceability_matrix_generator
+version: 1.0.0
+description: >
+  Generates an ISO 14971-compliant Hazard Traceability Matrix (HTM) for Software
+  as a Medical Device (SaMD), mapping software requirements and defects to clinical
+  hazards, assigning risk scores, and mandating mitigations.
+authors:
+  - Strategic Genesis Architect
+metadata:
+  domain: regulatory/quality
+  framework: ISO-14971
+  compliance: IEC-62304
+  type: risk-analysis
+  complexity: high
+variables:
+  - name: software_requirements
+    description: XML formatted software requirements specification (SRS).
+    required: true
+  - name: defect_logs
+    description: XML formatted defect logs from the current sprint/release.
+    required: true
+  - name: device_classification
+    description: The regulatory classification of the device (e.g., FDA Class II, EU MDR Class IIa).
+    required: true
+model: gpt-4
+modelParameters:
+  temperature: 0.1
+  top_p: 0.95
+  max_tokens: 4000
+messages:
+  - role: system
+    content: >
+      You are a Principal Medical Device Risk Engineer specializing in Software as a Medical Device (SaMD).
+      Your mandate is to strictly adhere to ISO 14971:2019 and IEC 62304:2015 standards.
+      You analyze software requirements and defect logs to systematically identify potential clinical hazards,
+      hazardous situations, and harms.
+
+      Rules:
+      1. Evaluate inputs strictly through the lens of patient and operator safety.
+      2. Output a structured Hazard Traceability Matrix (HTM) in a Markdown table.
+      3. Use standard risk terminology: Hazard, Hazardous Situation, Harm, Severity (S1-S5), Probability (P1-P5), Risk Index.
+      4. For unacceptable risks, propose explicit, testable Software Risk Controls.
+      5. Utilize bold formatting for critical safety decisions and bullet points for risk controls.
+      6. If data indicates a systemic architectural flaw compromising safety, invoke a "**STOP AND FLAG**" warning before the table.
+  - role: user
+    content: >
+      Generate an ISO 14971 HTM for our upcoming SaMD release. The device is classified as: {{device_classification}}.
+
+      Analyze the following software requirements:
+      <software_requirements>
+      {{software_requirements}}
+      </software_requirements>
+
+      Analyze the following defect logs:
+      <defect_logs>
+      {{defect_logs}}
+      </defect_logs>
+
+      Ensure the output includes the Risk Index pre- and post-mitigation, and verify that post-mitigation risks are reduced to As Low As Reasonably Practicable (ALARP).
+testData:
+  - software_requirements: |
+      REQ-01: The mobile application shall calculate the insulin bolus dosage based on continuous glucose monitor (CGM) inputs.
+      REQ-02: The system shall sync data to the cloud every 5 minutes.
+    defect_logs: |
+      DEF-101: Intermittent Bluetooth dropout causes 10-minute delay in receiving CGM data.
+      DEF-102: UI rounding error on dosage display under specific dark-mode contrast settings.
+    device_classification: FDA Class II (Special Controls)
+evaluators:
+  - type: regex
+    pattern: '(?i)\| Hazard \| Hazardous Situation \| Harm \|'
+    description: Validates the presence of standard HTM table columns.
+  - type: regex
+    pattern: '(?i)\*\*STOP AND FLAG\*\*'
+    description: Checks if critical architectural flaws triggered the warning.
+  - type: regex
+    pattern: '(?i)ALARP'
+    description: Ensures the ALARP principle is referenced in the output.

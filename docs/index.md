@@ -493,6 +493,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Regulatory Radar & Impact Report](prompts/regulatory/quality/regulatory_radar.prompt.md)
 - [Risk-Based Quality Management Plan](prompts/regulatory/quality/risk_based_quality_management_plan.prompt.md)
 - [Risk Management Analysis](prompts/regulatory/quality/risk_management_analysis.prompt.md)
+- [samd_hazard_traceability_matrix_generator](prompts/regulatory/quality/samd_hazard_traceability_matrix_generator.prompt.md)
 - [510(k)/De Novo Pre-Submission Strategy](prompts/regulatory/strategy/510k_pre-sub_strategy.prompt.md)
 - [AI Risk Mapper](prompts/regulatory/strategy/ai_risk_mapper.prompt.md)
 - [ClinicalTrials.gov Registration](prompts/regulatory/strategy/clinicaltrials_registration.prompt.md)
