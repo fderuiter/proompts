@@ -13,18 +13,29 @@ Usage:
 """
 
 import os
-import yaml
 import re
 import shutil
 import argparse
 from collections import defaultdict
 
+try:
+    import yaml
+    YAML_AVAILABLE = True
+except ImportError:
+    YAML_AVAILABLE = False
+    print("WARNING: 'yaml' module not found. Using regex fallback for workflow parsing.")
+
 # Regex for finding prompt_file in workflow yaml (to preserve comments)
 PROMPT_FILE_REGEX = re.compile(r'(prompt_file:\s*["\']?)([^"\']+)(["\']?)')
 
 def load_yaml(path):
-    with open(path, 'r') as f:
-        return yaml.safe_load(f)
+    if not YAML_AVAILABLE:
+        return None
+    try:
+        with open(path, 'r') as f:
+            return yaml.safe_load(f)
+    except Exception:
+        return None
 
 def get_all_prompts(prompts_dir):
     all_prompts = set()
@@ -43,8 +54,18 @@ def get_workflow_definitions(workflows_dir):
                 path = os.path.join(root, file)
                 try:
                     data = load_yaml(path)
-                    if not data or 'steps' not in data:
-                        continue
+
+                    # Fallback if YAML is not available or parsing failed
+                    if data is None or 'steps' not in data:
+                        with open(path, 'r') as f:
+                            content = f.read()
+                        matches = PROMPT_FILE_REGEX.findall(content)
+                        if matches:
+                            steps = [{'prompt_file': m[1]} for m in matches]
+                        else:
+                            continue
+                    else:
+                        steps = data['steps']
                     
                     workflow_name = os.path.splitext(file)[0]
                     if workflow_name.endswith('.workflow'):
@@ -53,7 +74,7 @@ def get_workflow_definitions(workflows_dir):
                     definitions.append({
                         'path': os.path.abspath(path),
                         'name': workflow_name,
-                        'steps': data['steps']
+                        'steps': steps
                     })
                 except Exception as e:
                     print(f"Error parsing workflow {path}: {e}")
@@ -191,6 +212,7 @@ def apply_changes(schema_map, meta_moves, standalone_moves, dry_run=False):
 def fix_references(prompts_root, workflows_root, dry_run=False):
     print("=== Fixing Workflow References ===")
     definitions = get_workflow_definitions(workflows_root)
+    repo_root = os.getcwd()
     
     for wf in definitions:
         wf_path = wf['path']
@@ -203,9 +225,6 @@ def fix_references(prompts_root, workflows_root, dry_run=False):
         with open(wf_path, 'r') as f:
             content = f.read()
             
-        # We parse the file manually to find prompt_files because we want the raw string content
-        matches = list(PROMPT_FILE_REGEX.finditer(content))
-        
         current_steps = wf['steps']
         
         # Let's iterate over the parsed steps, calculate the expected new path, and check if it exists.
@@ -215,14 +234,12 @@ def fix_references(prompts_root, workflows_root, dry_run=False):
                 continue
                 
             old_rel_path = step['prompt_file']
-            old_abs_path = os.path.abspath(old_rel_path)
+            old_abs_path = os.path.abspath(os.path.join(repo_root, old_rel_path))
             
             if os.path.exists(old_abs_path):
                 continue # Path is valid, nothing to do
                 
             # Path doesn't exist. Let's guess where it went.
-            # Logic: prompts/CATEGORY/SUBDIR/07_name.yaml -> prompts/CATEGORY/SUBDIR/workflow_workflow/01_name.yaml
-            
             # 1. Determine Category/Subdir
             prompt_dir = os.path.dirname(old_rel_path) # e.g. prompts/clinical/protocol
             filename = os.path.basename(old_rel_path)   # e.g. 07_usdm_stage1.yaml
@@ -230,34 +247,37 @@ def fix_references(prompts_root, workflows_root, dry_run=False):
             # Workflow folder name logic
             target_folder_name = f"{wf_name}_workflow" if not wf_name.endswith('_workflow') else wf_name
             
-            # Construct candidate new path
+            # Construct candidate new paths
             # strip number
             clean_name = re.sub(r'^\d+_', '', filename)
             new_filename = f"{idx + 1:02d}_{clean_name}"
             
             # Candidate 1: Nested in workflow folder
-            candidate_rel_path = os.path.join(prompt_dir, target_folder_name, new_filename)
-            candidate_abs_path = os.path.abspath(candidate_rel_path)
+            candidate_rel_path_1 = os.path.join(prompt_dir, target_folder_name, new_filename)
+            candidate_abs_path_1 = os.path.abspath(os.path.join(repo_root, candidate_rel_path_1))
             
-            if os.path.exists(candidate_abs_path):
-                # Found it!
-                updates.append((old_rel_path, candidate_rel_path))
+            if os.path.exists(candidate_abs_path_1):
+                updates.append((old_rel_path, candidate_rel_path_1))
                 continue
                 
-            # Candidate 2: Maybe it was already correctly numbered/named or logic was slightly different?
-            # E.g. meta prompts moved to meta/meta_prompt_chain/
+            # Candidate 2: Meta prompts moved to meta/meta_prompt_chain/
             if 'prompts/meta/' in old_rel_path:
-                 # Check meta logic
-                 # L1_... -> meta_prompt_chain/01_L1_...
-                 # Extract level
                  mm = re.match(r'L(\d+)_', filename)
                  if mm:
                      level = int(mm.group(1))
                      meta_new_filename = f"{level:02d}_{filename}"
                      meta_rel_path = os.path.join('prompts/meta/meta_prompt_chain', meta_new_filename)
-                     if os.path.exists(os.path.abspath(meta_rel_path)):
+                     if os.path.exists(os.path.abspath(os.path.join(repo_root, meta_rel_path))):
                          updates.append((old_rel_path, meta_rel_path))
                          continue
+
+            # Candidate 3: Standalone prompts (numbers stripped but same directory)
+            candidate_rel_path_3 = os.path.join(prompt_dir, clean_name)
+            candidate_abs_path_3 = os.path.abspath(os.path.join(repo_root, candidate_rel_path_3))
+
+            if os.path.exists(candidate_abs_path_3):
+                updates.append((old_rel_path, candidate_rel_path_3))
+                continue
 
         if updates:
             print(f"Fixing {len(updates)} references in {wf_name}")
@@ -265,7 +285,6 @@ def fix_references(prompts_root, workflows_root, dry_run=False):
                 new_content = content
                 for old_p, new_p in updates:
                     # Pattern: prompt_file: ["']old_p["']
-                    # We construct a specific regex for this replacement
                     escaped_old_p = re.escape(old_p)
                     pattern = re.compile(r'(prompt_file:\s*["\']?)' + escaped_old_p + r'(["\']?)')
                     new_content = pattern.sub(r'\1' + new_p + r'\2', new_content)
