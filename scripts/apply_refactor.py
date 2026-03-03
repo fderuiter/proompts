@@ -262,14 +262,26 @@ def fix_references(prompts_root, workflows_root, dry_run=False):
         if updates:
             print(f"Fixing {len(updates)} references in {wf_name}")
             if not dry_run:
-                new_content = content
-                for old_p, new_p in updates:
-                    # Pattern: prompt_file: ["']old_p["']
-                    # We construct a specific regex for this replacement
-                    escaped_old_p = re.escape(old_p)
-                    pattern = re.compile(r'(prompt_file:\s*["\']?)' + escaped_old_p + r'(["\']?)')
-                    new_content = pattern.sub(r'\1' + new_p + r'\2', new_content)
+                # Map old paths to new paths for lookup in replacement
+                update_dict = dict(updates)
                 
+                # Sort paths by length (descending) to avoid partial matches
+                # and escape them for inclusion in the regex
+                sorted_old_paths = sorted(update_dict.keys(), key=len, reverse=True)
+                escaped_paths = [re.escape(p) for p in sorted_old_paths]
+
+                # Create a combined regex pattern that matches only the specific old paths
+                # capturing the surrounding context
+                combined_pattern = re.compile(
+                    r'(prompt_file:\s*["\']?)(' + '|'.join(escaped_paths) + r')(["\']?)'
+                )
+
+                def replacer(match):
+                    prefix, old_p, suffix = match.groups()
+                    return prefix + update_dict[old_p] + suffix
+
+                new_content = combined_pattern.sub(replacer, content)
+
                 with open(wf_path, 'w') as f:
                     f.write(new_content)
 
