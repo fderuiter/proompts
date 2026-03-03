@@ -1,8 +1,8 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: ''
-labels: ''
+title: '[Bug] '
+labels: 'bug'
 assignees: ''
 ---
 
@@ -22,10 +22,15 @@ A clear and concise description of what you expected to happen.
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
 
-**Environment (please complete the following information):**
- - OS: [e.g. macOS, Windows]
- - Python version: [e.g. 3.9]
- - Browser (if applicable): [e.g. chrome, safari]
+**Desktop/Environment (please complete the following information):**
+ - OS: [e.g. macOS, Windows, Linux]
+ - Python version: [e.g. 3.12]
+ - Branch or Commit hash: [e.g. main, f8a13a]
+
+**Validation Checks (if applicable)**
+Did you run the validation script? If so, what was the output?
+- [ ] Run `python3 tools/scripts/test_all.py`
+- Paste the output here.
 
 **Additional context**
-Add any other context about the problem here.
+Add any other context about the problem here (e.g., specific workflow failing, specific prompt format issue).
