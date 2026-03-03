@@ -4,6 +4,7 @@
 - [Togaf/](togaf/overview.md)
 
 ## Prompts
+- **[Chaos Engineering Experiment Designer](chaos_engineering_experiment_designer.prompt.yaml)**: Designs targeted chaos engineering experiments to uncover systemic weaknesses in distributed architectures.
 - **[DRY Codebase Analysis](dry_codebase_analysis.prompt.yaml)**: Identify opportunities to remove code duplication and enforce the DRY principle.
 - **[Event-Driven Topology Designer](event_driven_topology_designer.prompt.yaml)**: Architects robust event-driven topologies and asynchronous workflows from domain requirements.
 - **[Hexagonal Architecture Implementation](hexagonal_architecture_implementation.prompt.yaml)**: Expert guidance on implementing Hexagonal Architecture, focusing on data flow, dependency inversion, and component placement.
