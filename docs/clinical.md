@@ -35,6 +35,7 @@ title: Clinical
 - [Create a Risk-Based Monitoring & Mitigation SOP for RTSM](prompts/clinical/rtsm/rtsm_workflow/03_risk_based_monitoring_sop.prompt.md)
 - [CRF Quality Auditor](prompts/clinical/forms/clinical_prompts_workflow/02_crf_quality_auditor.prompt.md)
 - [CRF Shell Generator](prompts/clinical/forms/clinical_prompts_workflow/01_crf_shell_generator.prompt.md)
+- [CSR Plain Language Summary Generator](prompts/clinical/medical_writing/csr_plain_language_summary_generator.prompt.md)
 - [Data Architecture Blueprint](prompts/clinical/data_management/data_architecture_blueprint.prompt.md)
 - [Data De-identification](prompts/clinical/data_management/data_deidentification.prompt.md)
 - [Data Management Plan (DMP) Development](prompts/clinical/data_management/dmp_development.prompt.md)

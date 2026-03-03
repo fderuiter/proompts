@@ -20,3 +20,4 @@
 - **[Regulatory Radar & Impact Report](regulatory_radar.prompt.yaml)**: Track and assess recent regulatory changes that may impact the company.
 - **[Risk-Based Quality Management Plan](risk_based_quality_management_plan.prompt.yaml)**: Create a concise RBQM plan for a first‑in‑human Phase I healthy‑volunteer study.
 - **[Risk Management Analysis](risk_management_analysis.prompt.yaml)**: Perform a risk analysis (e.g., PHA) to identify potential hazards, hazardous situations, and mitigation strategies.
+- **[samd_hazard_traceability_matrix_generator](samd_hazard_traceability_matrix_generator.prompt.yaml)**: Generates an ISO 14971-compliant Hazard Traceability Matrix (HTM) for Software as a Medical Device (SaMD), mapping software requirements and defects to clinical hazards, assigning risk scores, and mandating mitigations.
