@@ -22,10 +22,10 @@ class TestResolveValue(unittest.TestCase):
         self.assertEqual(result, "result")
 
     def test_python_expression(self):
-        """Test evaluation of Python expressions."""
+        """Test evaluation of Python expressions is not allowed."""
         state = {}
         result = resolve_value("{{ 1 + 1 }}", state)
-        self.assertEqual(result, 2)
+        self.assertEqual(result, "{{ 1 + 1 }}")
 
     def test_string_without_template(self):
         """Test string with no template markers returned as is."""
