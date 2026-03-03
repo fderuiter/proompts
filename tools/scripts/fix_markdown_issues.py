@@ -158,19 +158,27 @@ def fix_codeblock_spacing(lines):
     out = []
     i = 0
     in_code = False
+    code_ticks = ""
     while i < len(lines):
         line = lines[i]
-        if line.strip().startswith("```"):
-            if not in_code and out and out[-1].strip() != "":
-                out.append("")
-            out.append(line)
-            in_code = not in_code
-            if in_code and i + 1 < len(lines) and lines[i + 1].strip() != "":
-                out.append("")
-            elif not in_code and i + 1 < len(lines) and lines[i + 1].strip() != "":
-                out.append("")
-            i += 1
-            continue
+        match = re.match(r"^(\s*)(`{3,}|~{3,})", line)
+        if match:
+            ticks = match.group(2)
+            if not in_code:
+                if out and out[-1].strip() != "":
+                    out.append("")
+                out.append(line)
+                in_code = True
+                code_ticks = ticks
+                i += 1
+                continue
+            elif in_code and ticks == code_ticks:
+                out.append(line)
+                in_code = False
+                if i + 1 < len(lines) and lines[i + 1].strip() != "":
+                    out.append("")
+                i += 1
+                continue
         out.append(line)
         i += 1
     return out
