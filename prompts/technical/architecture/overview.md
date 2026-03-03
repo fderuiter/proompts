@@ -11,3 +11,4 @@
 - **[Hexagonal Architecture Review](hexagonal_architecture_review.prompt.yaml)**: Analyze code for adherence to Hexagonal Architecture principles, identifying layer violations and dependency issues.
 - **[Maintainability Codebase Analysis](maintainability_codebase_analysis.prompt.yaml)**: Improve code maintainability by addressing readability, organization, and test quality.
 - **[SOLID Codebase Analysis](solid_codebase_analysis.prompt.yaml)**: Evaluate code against SOLID principles and suggest refactoring tasks.
+- **[Zero Trust Network Architecture Designer](zero_trust_network_architecture_designer.prompt.yaml)**: Architects robust Zero Trust network topologies and micro-segmentation strategies from domain requirements.
