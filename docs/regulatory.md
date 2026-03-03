@@ -47,6 +47,7 @@ title: Regulatory
 - [ICH E9(R1) Estimand Builder](prompts/regulatory/adherence/estimand_framework_builder.prompt.md)
 - [IDE Application Preparation](prompts/regulatory/submissions/ide_application_preparation.prompt.md)
 - [IDE Determination and Device Classification](prompts/regulatory/strategy/ide_determination.prompt.md)
+- [iec_62304_soup_anomaly_evaluator](prompts/regulatory/quality/iec_62304_soup_anomaly_evaluator.prompt.md)
 - [Imaging Endpoint Process Standards Checklist](prompts/regulatory/adherence/imaging_endpoint_process_standards.prompt.md)
 - [Import Entry Data Element Compilation](prompts/regulatory/administrative/import_entry_data_element_compilation.prompt.md)
 - [IND Determination and Application](prompts/regulatory/strategy/ind_determination_application.prompt.md)
