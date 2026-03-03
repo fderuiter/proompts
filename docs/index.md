@@ -633,6 +633,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Technical
 
+- [Chaos Engineering Experiment Designer](prompts/technical/architecture/chaos_engineering_experiment_designer.prompt.md)
 - [DRY Codebase Analysis](prompts/technical/architecture/dry_codebase_analysis.prompt.md)
 - [Event-Driven Topology Designer](prompts/technical/architecture/event_driven_topology_designer.prompt.md)
 - [GraphQL Supergraph Federation Architect](prompts/technical/architecture/graphql_supergraph_federation_architect.prompt.md)
