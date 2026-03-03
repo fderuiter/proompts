@@ -3,11 +3,10 @@ from __future__ import annotations
 import argparse
 import logging
 import os
+import re
 from typing import Any, Dict, Optional
 
 import yaml
-from jinja2.nativetypes import NativeEnvironment
-from jinja2.sandbox import SandboxedEnvironment
 
 # Configure logger
 logger = logging.getLogger(__name__)
@@ -35,9 +34,59 @@ def load_yaml(file_path: str) -> Optional[Dict[str, Any]]:
     with open(file_path, 'r') as f:
         return yaml.safe_load(f)
 
-class SandboxedNativeEnvironment(NativeEnvironment, SandboxedEnvironment):
-    """A NativeEnvironment that is also sandboxed."""
-    pass
+def safe_render(template: str, context: Dict[str, Any]) -> Any:
+    """
+    Safely renders a template string by replacing {{ variables }} with values from context.
+
+    This replaces Jinja2's from_string(template).render(**context) with a restricted
+    implementation that only supports simple path-based variable access, preventing
+    arbitrary code execution.
+
+    Args:
+        template: The string containing template variables (e.g., 'Hello {{ name }}').
+        context: The dictionary containing available variables.
+
+    Returns:
+        The rendered value. If the template is exactly '{{ variable }}', it returns
+        the native type of the variable. Otherwise, it returns a string.
+    """
+    if not isinstance(template, str) or "{{" not in template:
+        return template
+
+    # Regex to find all {{ variable.path }} patterns
+    # Supports optional spaces: {{  var.path  }}
+    pattern = re.compile(r"\{\{\s*([\w\.\-]+)\s*\}\}")
+
+    # Special case: If the template is ONLY a single variable, preserve its native type
+    # e.g., template = '{{ steps.step1.output }}' and output is a list, return the list.
+    match = pattern.fullmatch(template.strip())
+    if match:
+        var_path = match.group(1)
+        val = _get_value_from_context(var_path, context)
+        # If the variable is missing, return the original template
+        return val if val is not None else template
+
+    # General case: string interpolation
+    def replace_match(match):
+        var_path = match.group(1)
+        val = _get_value_from_context(var_path, context)
+        return str(val) if val is not None else match.group(0)
+
+    return pattern.sub(replace_match, template)
+
+def _get_value_from_context(path: str, context: Dict[str, Any]) -> Any:
+    """Helper to traverse a nested dictionary using a dot-separated path."""
+    parts = path.split('.')
+    current = context
+    try:
+        for part in parts:
+            if isinstance(current, dict) and part in current:
+                current = current[part]
+            else:
+                return None
+        return current
+    except (KeyError, TypeError):
+        return None
 
 def resolve_value(template_string: str, workflow_state: Dict[str, Any]) -> Any:
     """
@@ -53,15 +102,8 @@ def resolve_value(template_string: str, workflow_state: Dict[str, Any]) -> Any:
     Returns:
         The resolved value if the template matches, otherwise the original string.
     """
-    # Use NativeEnvironment to evaluate the expression and return python objects if possible
-    # We use a SandboxedNativeEnvironment to prevent arbitrary code execution
-    env = SandboxedNativeEnvironment()
     try:
-        # Check if it looks like a template
-        if isinstance(template_string, str) and "{{" in template_string:
-             t = env.from_string(template_string)
-             return t.render(**workflow_state)
-        return template_string
+        return safe_render(template_string, workflow_state)
     except Exception as e:
         logger.warning(f"Warning: Could not resolve value for template '{template_string}': {e}")
         return template_string
@@ -84,17 +126,13 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
     logger.info("---")
     logger.info(f"Simulating prompt: {prompt_data.get('name', 'Untitled Prompt')}")
 
-    # Use SandboxedEnvironment to prevent arbitrary code execution
-    env = SandboxedEnvironment()
-
     # Substitute variables in messages
     for message in prompt_data.get('messages', []):
         role = message.get('role', 'user')
         content = message.get('content', '')
 
         try:
-            t = env.from_string(content)
-            content = t.render(**inputs)
+            content = safe_render(content, inputs)
         except Exception as e:
             logger.warning(f"Failed to render message content: {e}")
 
