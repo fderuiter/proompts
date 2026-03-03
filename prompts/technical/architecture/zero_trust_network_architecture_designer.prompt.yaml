@@ -35,7 +35,7 @@ messages:
       Design the Zero Trust Architecture topology for the following requirements:
       {{domain_context}}
 testData:
-  - input:
+  - inputs:
       domain_context: "We need an internal financial dashboard. When an employee accesses the dashboard, they must be authenticated, authorized for specific data tiers, and all transit must be encrypted. If authorization fails, the session must be terminated."
     expected: "mTLS"
 evaluators:
