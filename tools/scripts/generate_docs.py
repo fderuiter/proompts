@@ -6,27 +6,29 @@ Refactored for Robustness, Scalability, and OCP.
 
 import sys
 import yaml
+import json
 import re
 import os # Needed for relpath calculation in strict paths
 from pathlib import Path
 from dataclasses import dataclass, field
 from typing import List, Dict, Optional, Any
 
-# --- Configuration Constants (Centralized) ---
-CONFIG = {
-    "dirs": {
-        "prompts": Path("prompts"),
-        "workflows": Path("workflows"),
-        "docs": Path("docs"),
-        "workflow_docs": Path("docs/workflows"),
-    },
-    "nav_order": {
-        "Architecture": 1, "Business": 2, "Clinical": 3, "Communication": 4,
-        "Languages": 5, "Management": 6, "Meta": 7, "Regulatory": 8,
-        "Scientific": 9, "Software Engineering": 10, "Technical": 11,
-        "Testing": 12, "Workflows": 13
-    }
-}
+# --- Configuration Loading (Extracted) ---
+def load_config() -> Dict[str, Any]:
+    config_path = Path(__file__).parent / "docs_config.json"
+    try:
+        with config_path.open('r', encoding='utf-8') as f:
+            config = json.load(f)
+            # Convert dir strings to Path objects
+            if "dirs" in config:
+                for k, v in config["dirs"].items():
+                    config["dirs"][k] = Path(v)
+            return config
+    except Exception as e:
+        print(f"❌ Error: Failed to load config from {config_path}: {e}")
+        sys.exit(1)
+
+CONFIG = load_config()
 
 @dataclass(frozen=True)
 class DocItem:
