@@ -592,7 +592,9 @@ def generate_prompt_yaml(task, category_dir):
 def update_overview(directory):
     overview_file = directory / OVERVIEW_NAME
     title = directory.name.replace("_", " ").title()
-    content = f"# {title} Overview\n\n"
+
+    # Use a list to collect lines instead of string concatenation
+    lines = [f"# {title} Overview\n\n"]
 
     prompts = sorted(directory.glob("*.prompt.yaml"))
     for p in prompts:
@@ -604,10 +606,10 @@ def update_overview(directory):
         except Exception:
             name = p.stem
 
-        content += f"- [{name}]({p.name})\n"
+        lines.append(f"- [{name}]({p.name})\n")
 
     with open(overview_file, 'w') as f:
-        f.write(content)
+        f.write("".join(lines))
     print(f"Updated {overview_file}")
 
 def main():
