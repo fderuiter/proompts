@@ -477,6 +477,7 @@
 [Hexagonal Architecture Review](prompts/technical/architecture/hexagonal_architecture_review.prompt.md)
 [Maintainability Codebase Analysis](prompts/technical/architecture/maintainability_codebase_analysis.prompt.md)
 [SOLID Codebase Analysis](prompts/technical/architecture/solid_codebase_analysis.prompt.md)
+[Zero Trust Network Architecture Designer](prompts/technical/architecture/zero_trust_network_architecture_designer.prompt.md)
 [Universal Automation Agent](prompts/technical/automation/universal_automation_agent.prompt.md)
 [Conversation Stochastic Modeler](prompts/technical/data_science/conversation_stochastic_modeler.prompt.md)
 [System Design RFC Architect](prompts/technical/design/design_md_template.prompt.md)

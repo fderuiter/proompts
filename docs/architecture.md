@@ -22,3 +22,4 @@ title: Architecture
 - [TOGAF Phase H - Architecture Change Management](prompts/technical/architecture/togaf/phase_h_change_management.prompt.md)
 - [TOGAF Preliminary Phase](prompts/technical/architecture/togaf/preliminary_phase.prompt.md)
 - [TOGAF Requirements Management](prompts/technical/architecture/togaf/requirements_management.prompt.md)
+- [Zero Trust Network Architecture Designer](prompts/technical/architecture/zero_trust_network_architecture_designer.prompt.md)
