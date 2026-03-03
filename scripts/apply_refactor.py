@@ -190,6 +190,17 @@ def apply_changes(schema_map, meta_moves, standalone_moves, dry_run=False):
 
 def fix_references(prompts_root, workflows_root, dry_run=False):
     print("=== Fixing Workflow References ===")
+
+    # Build prompt index for robust lookup
+    prompt_index = defaultdict(list)
+    for root, dirs, files in os.walk(prompts_root):
+        for file in files:
+            if file.endswith(('.yaml', '.yml')):
+                clean_name = re.sub(r'^\d+_', '', file)
+                # Store relative to repo root
+                rel_path = os.path.relpath(os.path.join(root, file), start=os.getcwd())
+                prompt_index[clean_name].append(rel_path)
+
     definitions = get_workflow_definitions(workflows_root)
     
     for wf in definitions:
@@ -233,31 +244,19 @@ def fix_references(prompts_root, workflows_root, dry_run=False):
             # Construct candidate new path
             # strip number
             clean_name = re.sub(r'^\d+_', '', filename)
-            new_filename = f"{idx + 1:02d}_{clean_name}"
             
-            # Candidate 1: Nested in workflow folder
-            candidate_rel_path = os.path.join(prompt_dir, target_folder_name, new_filename)
-            candidate_abs_path = os.path.abspath(candidate_rel_path)
-            
-            if os.path.exists(candidate_abs_path):
-                # Found it!
-                updates.append((old_rel_path, candidate_rel_path))
-                continue
-                
-            # Candidate 2: Maybe it was already correctly numbered/named or logic was slightly different?
-            # E.g. meta prompts moved to meta/meta_prompt_chain/
-            if 'prompts/meta/' in old_rel_path:
-                 # Check meta logic
-                 # L1_... -> meta_prompt_chain/01_L1_...
-                 # Extract level
-                 mm = re.match(r'L(\d+)_', filename)
-                 if mm:
-                     level = int(mm.group(1))
-                     meta_new_filename = f"{level:02d}_{filename}"
-                     meta_rel_path = os.path.join('prompts/meta/meta_prompt_chain', meta_new_filename)
-                     if os.path.exists(os.path.abspath(meta_rel_path)):
-                         updates.append((old_rel_path, meta_rel_path))
-                         continue
+            # Candidate 1: Use index lookup
+            if clean_name in prompt_index:
+                candidates = prompt_index[clean_name]
+                if candidates:
+                    # Prefer exact match if only 1, or match in workflow directory
+                    best_match = candidates[0]
+                    for c in candidates:
+                        if target_folder_name in c:
+                            best_match = c
+                            break
+                    updates.append((old_rel_path, best_match))
+                    continue
 
         if updates:
             print(f"Fixing {len(updates)} references in {wf_name}")
