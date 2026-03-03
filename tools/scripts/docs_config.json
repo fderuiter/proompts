@@ -1,0 +1,23 @@
+{
+  "dirs": {
+    "prompts": "prompts",
+    "workflows": "workflows",
+    "docs": "docs",
+    "workflow_docs": "docs/workflows"
+  },
+  "nav_order": {
+    "Architecture": 1,
+    "Business": 2,
+    "Clinical": 3,
+    "Communication": 4,
+    "Languages": 5,
+    "Management": 6,
+    "Meta": 7,
+    "Regulatory": 8,
+    "Scientific": 9,
+    "Software Engineering": 10,
+    "Technical": 11,
+    "Testing": 12,
+    "Workflows": 13
+  }
+}
