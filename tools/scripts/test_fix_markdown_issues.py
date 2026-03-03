@@ -5,7 +5,7 @@ from pathlib import Path
 # Add the script directory to sys.path
 sys.path.append(str(Path(__file__).parent))
 
-from fix_markdown_issues import fix_trailing_spaces, fix_codeblock_spacing
+from fix_markdown_issues import fix_trailing_spaces, fix_codeblock_spacing, fix_header_style
 
 class TestFixMarkdownIssues(unittest.TestCase):
     def test_fix_trailing_spaces(self):
@@ -30,6 +30,29 @@ class TestFixMarkdownIssues(unittest.TestCase):
             ""
         ]
         self.assertEqual(fix_trailing_spaces(lines), expected)
+
+    def test_fix_header_style(self):
+        lines = [
+            "#Header 1",
+            "##Header 2",
+            "### Header 3",
+            "####",
+            "Not a header",
+            " # Not header because of leading space",
+            "#123",
+            "##123"
+        ]
+        expected = [
+            "# Header 1",
+            "## Header 2",
+            "### Header 3",
+            "####",
+            "Not a header",
+            " # Not header because of leading space",
+            "# 123",
+            "## 123"
+        ]
+        self.assertEqual(fix_header_style(lines), expected)
 
     def test_fix_codeblock_spacing(self):
         # 1. No surrounding blank lines
