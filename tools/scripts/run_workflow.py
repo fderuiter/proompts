@@ -186,14 +186,14 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
         for var_name, template in step.get('map_inputs', {}).items():
             prompt_inputs[var_name] = resolve_value(template, workflow_state)
 
-        logger.debug(f"Resolved prompt inputs: {prompt_inputs}")
+        logger.debug(f"Resolved prompt inputs: {list(prompt_inputs.keys())}")
 
         # 3. Simulate prompt execution
         output = simulate_prompt_execution(prompt_data, prompt_inputs)
 
         # 4. Store the output in the workflow state
         workflow_state['steps'][step_id] = {'output': output}
-        logger.debug(f"Step '{step_id}' produced output: {output[:100]}...")
+        logger.debug(f"Step '{step_id}' produced output: (Content hidden for security)")
 
     return workflow_state
 
