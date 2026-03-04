@@ -460,6 +460,7 @@
 [Security Vulnerability Hunt (Aegis)](prompts/technical/software_engineering/tasks/security_vulnerability.prompt.md)
 [Tooling & Quality Gates (DevEx Architect)](prompts/technical/software_engineering/tasks/tooling_and_quality.prompt.md)
 [UI Tweak & Verification (Aegis Security)](prompts/technical/software_engineering/tasks/ui_fix.prompt.md)
+[Chrono-Gastronomic Encryptor](prompts/speculative/chrono_gastronomic_encryption/chrono_gastronomic_encryptor.prompt.md)
 [Temporal Syntax Debugger](prompts/speculative/chrono_linguistic_debugging/temporal_syntax_debugger.prompt.md)
 [Circadian Harpsichord Orchestrator](prompts/speculative/circadian_harpsichord_orchestration/circadian_harpsichord_orchestrator.prompt.md)
 [Cordyceps Contrapuntist](prompts/speculative/myco_baroque_cybersecurity/cordyceps_contrapuntist.prompt.md)
