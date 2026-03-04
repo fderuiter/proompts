@@ -356,6 +356,7 @@
 [iec_62304_soup_anomaly_evaluator](prompts/regulatory/quality/iec_62304_soup_anomaly_evaluator.prompt.md)
 [Inspection-Readiness Drill (CAPA Builder)](prompts/regulatory/quality/inspection_readiness_drill_capa_builder.prompt.md)
 [Integrated Submission Strategy Coach](prompts/regulatory/quality/integrated_submission_strategy_coach.prompt.md)
+[NCMR MRB Disposition Architect](prompts/regulatory/quality/ncmr_mrb_disposition_architect.prompt.md)
 [Part 11 Closed System Audit](prompts/regulatory/quality/part_11_closed_system_audit.prompt.md)
 [Quality-Improvement RCA & Action Plan](prompts/regulatory/quality/quality_improvement_rca_action_plan.prompt.md)
 [Quality System Audit](prompts/regulatory/quality/quality_system_audit.prompt.md)

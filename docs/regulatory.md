@@ -66,6 +66,7 @@ title: Regulatory
 - [Medical Device Reporting (MDR)](prompts/regulatory/compliance/medical_device_reporting_mdr.prompt.md)
 - [Medicare Coverage Request (IDE)](prompts/regulatory/submissions/medicare_coverage_request_ide.prompt.md)
 - [Multiple Endpoints Regulatory Strategy](prompts/regulatory/adherence/multiple_endpoints_guidance_review.prompt.md)
+- [NCMR MRB Disposition Architect](prompts/regulatory/quality/ncmr_mrb_disposition_architect.prompt.md)
 - [NGS Tumor Profiling Documentation](prompts/regulatory/device_specifics/ngs_tumor_profiling_documentation.prompt.md)
 - [Off-Label Information Dissemination](prompts/regulatory/adherence/off_label_information_dissemination.prompt.md)
 - [Parallel Review Request](prompts/regulatory/submissions/parallel_review_request.prompt.md)
