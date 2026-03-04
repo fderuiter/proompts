@@ -644,6 +644,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Hexagonal Architecture Principles](prompts/technical/architecture/hexagonal_architecture_principles.prompt.md)
 - [Hexagonal Architecture Review](prompts/technical/architecture/hexagonal_architecture_review.prompt.md)
 - [Maintainability Codebase Analysis](prompts/technical/architecture/maintainability_codebase_analysis.prompt.md)
+- [Micro-Frontend Topology Architect](prompts/technical/architecture/micro_frontend_topology_architect.prompt.md)
 - [Multi-Region Active-Active Resilience Architect](prompts/technical/architecture/multi_region_active_active_resilience.prompt.md)
 - [SOLID Codebase Analysis](prompts/technical/architecture/solid_codebase_analysis.prompt.md)
 - [Strangler Fig Migration Architect](prompts/technical/architecture/strangler_fig_migration_architect.prompt.md)

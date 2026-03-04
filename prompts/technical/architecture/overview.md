@@ -12,6 +12,7 @@
 - **[Hexagonal Architecture Principles](hexagonal_architecture_principles.prompt.yaml)**: Explain the core philosophy, skeleton, and benefits of Hexagonal Architecture (Ports and Adapters).
 - **[Hexagonal Architecture Review](hexagonal_architecture_review.prompt.yaml)**: Analyze code for adherence to Hexagonal Architecture principles, identifying layer violations and dependency issues.
 - **[Maintainability Codebase Analysis](maintainability_codebase_analysis.prompt.yaml)**: Improve code maintainability by addressing readability, organization, and test quality.
+- **[Micro-Frontend Topology Architect](micro_frontend_topology_architect.prompt.yaml)**: Architects scalable and resilient micro-frontend topologies across independent engineering teams.
 - **[Multi-Region Active-Active Resilience Architect](multi_region_active_active_resilience.prompt.yaml)**: Designs true active-active multi-region topologies, resolving global state conflict and replication latency.
 - **[SOLID Codebase Analysis](solid_codebase_analysis.prompt.yaml)**: Evaluate code against SOLID principles and suggest refactoring tasks.
 - **[Strangler Fig Migration Architect](strangler_fig_migration_architect.prompt.yaml)**: Architect a Strangler Fig pattern migration from a legacy monolith to microservices.
