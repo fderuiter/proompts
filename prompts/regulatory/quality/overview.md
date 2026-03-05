@@ -13,6 +13,7 @@
 - **[iec_62304_soup_anomaly_evaluator](iec_62304_soup_anomaly_evaluator.prompt.yaml)**: Evaluates Software of Unknown Provenance (SOUP) known anomalies against IEC 62304 requirements to determine clinical safety impact and mandate required architectural risk control measures for SaMD.
 - **[Inspection-Readiness Drill (CAPA Builder)](inspection_readiness_drill_capa_builder.prompt.yaml)**: Prepare for regulatory inspections by rehearsing high‑risk questions and drafting CAPAs.
 - **[Integrated Submission Strategy Coach](integrated_submission_strategy_coach.prompt.yaml)**: Create a phased submission roadmap for Project Phoenix.
+- **[Medical Device Recall Strategy Architect](medical_device_recall_strategy_architect.prompt.yaml)**: Designs comprehensive Health Hazard Evaluation (HHE) and recall execution strategies for medical device failures, adhering strictly to global regulatory frameworks.
 - **[Part 11 Closed System Audit](part_11_closed_system_audit.prompt.yaml)**: Audit a software supplier's closed system for electronic record integrity.
 - **[Quality-Improvement RCA & Action Plan](quality_improvement_rca_action_plan.prompt.yaml)**: Identify root causes of a recurring defect and propose a 90‑day corrective‑action roadmap.
 - **[Quality System Audit](quality_system_audit.prompt.yaml)**: Generate an internal audit checklist or report focusing on design controls, production processes, and risk-based decision making.
