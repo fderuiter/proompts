@@ -8,6 +8,7 @@
 - **[CAPA SOP Architect](capa_sop_architect.prompt.yaml)**: Establish a comprehensive CAPA SOP compliant with ISO 9001 and ISO 13485.
 - **[Compliance Gap & Risk Matrix](compliance_gap_risk_matrix.prompt.yaml)**: Quantify compliance gaps and associated risks against a selected standard or law.
 - **[eTMF Compliance Gap Analysis](etmf_compliance_gap_analysis.prompt.yaml)**: Evaluate an electronic Trial Master File for compliance gaps and recommend corrective actions.
+- **[eu_mdr_psur_architect](eu_mdr_psur_architect.prompt.yaml)**: Generates a comprehensive, audit-ready EU MDR Article 86 Periodic Safety Update Report (PSUR) synthesis, synthesizing post-market surveillance data, PMCF findings, and vigilance data into definitive benefit-risk determinations.
 - **[Financial Conflict of Interest (FCOI) Reporting](fcoi_reporting.prompt.yaml)**: Review disclosures and draft management plan.
 - **[GLP Quality Assurance](glp_quality_assurance.prompt.yaml)**: Prepare a statement for a nonclinical study report certifying inspection dates.
 - **[iec_62304_soup_anomaly_evaluator](iec_62304_soup_anomaly_evaluator.prompt.yaml)**: Evaluates Software of Unknown Provenance (SOUP) known anomalies against IEC 62304 requirements to determine clinical safety impact and mandate required architectural risk control measures for SaMD.
