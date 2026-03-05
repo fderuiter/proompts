@@ -63,6 +63,7 @@ title: Regulatory
 - [Literature & Regulatory Gap Analysis](prompts/regulatory/strategy/literature_regulatory_gap_analysis.prompt.md)
 - [Medical Device Administrative Detention Appeal](prompts/regulatory/administrative/medical_device_administrative_detention_appeal.prompt.md)
 - [Medical Device Recall Strategy](prompts/regulatory/compliance/medical_device_recall_strategy.prompt.md)
+- [Medical Device Recall Strategy Architect](prompts/regulatory/quality/medical_device_recall_strategy_architect.prompt.md)
 - [Medical Device Reporting (MDR)](prompts/regulatory/compliance/medical_device_reporting_mdr.prompt.md)
 - [Medicare Coverage Request (IDE)](prompts/regulatory/submissions/medicare_coverage_request_ide.prompt.md)
 - [Multiple Endpoints Regulatory Strategy](prompts/regulatory/adherence/multiple_endpoints_guidance_review.prompt.md)
