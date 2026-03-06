@@ -1,4 +1,3 @@
-# Myco Baroque Cybersecurity Overview
+# Myco-Baroque Cybersecurity
 
-## Prompts
-- **[Cordyceps Contrapuntist](cordyceps_contrapuntist.prompt.yaml)**: Penetrates legacy systems by encoding payloads into Baroque counterpoint rules mirroring fungal mycelial growth patterns.
+Prompts for simulating the orchestration of fungal biological processes with Baroque musical counterpoint to model and penetrate advanced systems architectures.
