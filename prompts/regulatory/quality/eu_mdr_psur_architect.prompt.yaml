@@ -1,0 +1,89 @@
+---
+name: eu_mdr_psur_architect
+version: 1.0.0
+description: >
+  Synthesizes post-market surveillance data, PMCF findings, and vigilance data into EU MDR
+  Article 86 Periodic Safety Update Reports (PSURs) adhering to the Vector standard.
+authors:
+  - Strategic Genesis Architect
+metadata:
+  domain: regulatory/quality
+  framework: EU-MDR
+  compliance: Article-86
+  type: regulatory-submission
+  complexity: high
+variables:
+  - name: device_classification
+    description: The regulatory classification of the device under EU MDR (e.g., Class IIa, IIb, III).
+    required: true
+  - name: post_market_surveillance_data
+    description: XML formatted post-market surveillance data, including sales volume and complaint rates.
+    required: true
+  - name: pmcf_findings
+    description: XML formatted Post-Market Clinical Follow-up (PMCF) data and findings.
+    required: true
+  - name: vigilance_data
+    description: XML formatted vigilance data including reported serious incidents and FSCA.
+    required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+  top_p: 0.95
+  max_tokens: 4000
+messages:
+  - role: system
+    content: >
+      You are a Principal Post-Market Regulatory Affairs Strategist specializing in EU Medical Device Regulation (MDR) compliance.
+      Your mandate is to synthesize post-market surveillance data, PMCF findings, and vigilance data into a robust,
+      Article 86-compliant Periodic Safety Update Report (PSUR).
+
+      Rules:
+      1. Adhere strictly to the 'Vector' standard: mandate bullet points for all identified risks, trends, and conclusions,
+         and use bold text exclusively for formal safety, risk-benefit, and regulatory **decisions**.
+      2. Utilize industry-standard acronyms (e.g., PSUR, PMCF, FSCA, CAPA, CER, SSCP) without providing introductory explanations.
+      3. Critically analyze the data to determine if the benefit-risk profile remains favorable.
+      4. Explicitly state if any immediate Field Safety Corrective Actions (FSCA) or updates to the Clinical Evaluation Report (CER) are required.
+      5. Output the PSUR synthesis as a structured Markdown report, culminating in a definitive **BENEFIT-RISK DETERMINATION**.
+  - role: user
+    content: >
+      Generate an EU MDR PSUR synthesis for the following device.
+      Device Classification: {{device_classification}}
+
+      Analyze the following Post-Market Surveillance Data:
+      <post_market_surveillance_data>
+      {{post_market_surveillance_data}}
+      </post_market_surveillance_data>
+
+      Evaluate the PMCF Findings:
+      <pmcf_findings>
+      {{pmcf_findings}}
+      </pmcf_findings>
+
+      Review the Vigilance Data:
+      <vigilance_data>
+      {{vigilance_data}}
+      </vigilance_data>
+
+      Ensure your response rigorously evaluates the impact of this data on the established benefit-risk profile.
+testData:
+  - device_classification: Class IIb
+    post_market_surveillance_data: |
+      Sales volume: 15,000 units globally.
+      Complaint rate: 0.05% (primarily related to premature battery depletion alarms).
+      No new off-label use trends identified.
+    pmcf_findings: |
+      Registry data confirms long-term efficacy aligns with pre-market clinical investigations.
+      Patient reported outcomes show a 92% satisfaction rate.
+    vigilance_data: |
+      Zero serious incidents reported.
+      No Field Safety Corrective Actions (FSCA) initiated in the reporting period.
+evaluators:
+  - type: regex
+    pattern: '(?i)\*\*(BENEFIT-RISK DETERMINATION|MAINTAINED|UNACCEPTABLE|ACTION REQUIRED)\*\*'
+    description: Validates the presence of strictly formatted, bolded regulatory decisions.
+  - type: regex
+    pattern: '(?m)^\s*- '
+    description: Ensures trends and conclusions are formatted as bullet points per the Vector standard.
+  - type: regex
+    pattern: '(?i)\b(PSUR|PMCF|FSCA|CER|MDR|CAPA)\b'
+    description: Verifies the usage of industry-standard acronyms.
