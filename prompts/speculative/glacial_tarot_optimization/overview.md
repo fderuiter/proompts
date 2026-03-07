@@ -1,5 +1,4 @@
-# Glacial Tarot Optimization
+# Glacial Tarot Optimization Overview
 
-This directory contains prompts related to Glacial Tarot Optimization, a highly specialized domain that merges the principles of Glaciology, Tarot Reading, and SQL Database Optimization.
-
-Agents in this domain are designed to resolve complex, long-standing database bottlenecks by interpreting the metaphorical stratification of data through the lens of esoteric glacial flow and archetypal tarot readings.
+## Prompts
+- **[Glacial-Tarot Database Architect](glacial_tarot_dba.prompt.yaml)**: Resolves long-standing database bottlenecks by interpreting SQL query plans through esoteric glaciological stratification and archetypal tarot readings.
