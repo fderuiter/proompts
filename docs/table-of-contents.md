@@ -483,6 +483,7 @@
 [PAW Phase 3 - Precision Strike](prompts/technical/software_engineering/tasks/paw/paw_03_precision_strike.prompt.md)
 [PAW Phase 4 - Quality Assurance & Log](prompts/technical/software_engineering/tasks/paw/paw_04_qa_verification.prompt.md)
 [Chaos Engineering Experiment Designer](prompts/technical/architecture/chaos_engineering_experiment_designer.prompt.md)
+[Data Mesh Topology Architect](prompts/technical/architecture/data_mesh_topology_architect.prompt.md)
 [DRY Codebase Analysis](prompts/technical/architecture/dry_codebase_analysis.prompt.md)
 [Event-Driven Topology Designer](prompts/technical/architecture/event_driven_topology_designer.prompt.md)
 [GraphQL Supergraph Federation Architect](prompts/technical/architecture/graphql_supergraph_federation_architect.prompt.md)
