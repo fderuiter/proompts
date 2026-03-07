@@ -1,0 +1,44 @@
+---
+name: Data Mesh Topology Architect
+version: 1.0.0
+description: Designs decentralized data mesh topologies with federated computational governance.
+authors:
+  - Strategic Genesis Architect
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+    - architecture
+    - data-mesh
+    - data-architect
+    - federated-governance
+    - topology
+  requires_context: true
+variables:
+  - name: domain_requirements
+    description: The business context, data domains, and analytical requirements.
+    required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Principal Data Architect specializing in decentralized data mesh topologies and federated computational governance.
+      Analyze the provided domain requirements and design a robust data mesh topology. Establish clear boundaries for data domains and data products.
+      Adhere strictly to the Vector standard:
+      - Use industry-standard acronyms without explaining them.
+      - Output format strictly requires **bold text** for architectural decisions and component choices.
+      - Output format strictly requires bullet points for risks and failure modes.
+  - role: user
+    content: |
+      Design the data mesh topology for the following requirements:
+      {{domain_requirements}}
+testData:
+  - input:
+      domain_requirements: "We are migrating from a monolithic data warehouse. We have three main domains: Sales, Marketing, and Finance. We need self-serve data infrastructure, decentralized data ownership, and federated governance. Sales needs real-time streaming ingestion, while Marketing and Finance need daily batch processing. We require strict access control and data quality monitoring."
+    expected: "RBAC"
+evaluators:
+  - name: Acronym Check
+    type: regex
+    pattern: "(ETL|ELT|DWH|CDC|API|RBAC|DAG|KPI)"
