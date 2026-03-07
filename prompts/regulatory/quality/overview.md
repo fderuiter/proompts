@@ -9,6 +9,7 @@
 - **[Compliance Gap & Risk Matrix](compliance_gap_risk_matrix.prompt.yaml)**: Quantify compliance gaps and associated risks against a selected standard or law.
 - **[eTMF Compliance Gap Analysis](etmf_compliance_gap_analysis.prompt.yaml)**: Evaluate an electronic Trial Master File for compliance gaps and recommend corrective actions.
 - **[Financial Conflict of Interest (FCOI) Reporting](fcoi_reporting.prompt.yaml)**: Review disclosures and draft management plan.
+- **[fda_483_observation_response_architect](fda_483_observation_response_architect.prompt.yaml)**: Generates systemic, root-cause-driven remediation plans for FDA 483 observations, formulating strategic CAPA responses to prevent Warning Letters and ensure sustained compliance.
 - **[GLP Quality Assurance](glp_quality_assurance.prompt.yaml)**: Prepare a statement for a nonclinical study report certifying inspection dates.
 - **[iec_62304_soup_anomaly_evaluator](iec_62304_soup_anomaly_evaluator.prompt.yaml)**: Evaluates Software of Unknown Provenance (SOUP) known anomalies against IEC 62304 requirements to determine clinical safety impact and mandate required architectural risk control measures for SaMD.
 - **[Inspection-Readiness Drill (CAPA Builder)](inspection_readiness_drill_capa_builder.prompt.yaml)**: Prepare for regulatory inspections by rehearsing high‑risk questions and drafting CAPAs.
