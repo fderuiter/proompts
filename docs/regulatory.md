@@ -61,6 +61,7 @@ title: Regulatory
 - [IVDR Performance-Evaluation Plan Blueprint](prompts/regulatory/strategy/ivdr_pep_blueprint.prompt.md)
 - [Labeling Compliance Audit](prompts/regulatory/compliance/labeling_compliance_audit.prompt.md)
 - [Literature & Regulatory Gap Analysis](prompts/regulatory/strategy/literature_regulatory_gap_analysis.prompt.md)
+- [MDSAP Nonconformity Grading Evaluator](prompts/regulatory/quality/mdsap_nonconformity_grading_evaluator.prompt.md)
 - [Medical Device Administrative Detention Appeal](prompts/regulatory/administrative/medical_device_administrative_detention_appeal.prompt.md)
 - [Medical Device Recall Strategy](prompts/regulatory/compliance/medical_device_recall_strategy.prompt.md)
 - [Medical Device Reporting (MDR)](prompts/regulatory/compliance/medical_device_reporting_mdr.prompt.md)
