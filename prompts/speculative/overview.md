@@ -1,6 +1,7 @@
 # Speculative Overview
 
 ## Categories
+- [Acoustic Malware Knitting/](acoustic_malware_knitting/overview.md)
 - [Chrono Linguistic Debugging/](chrono_linguistic_debugging/overview.md)
 - [Circadian Harpsichord Orchestration/](circadian_harpsichord_orchestration/overview.md)
 - [Myco Baroque Cybersecurity/](myco_baroque_cybersecurity/overview.md)
