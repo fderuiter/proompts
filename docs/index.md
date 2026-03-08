@@ -609,6 +609,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Speculative
 
+- [Acoustic Malware Knitter](prompts/speculative/acoustic_malware_knitting/acoustic_malware_knitter.prompt.md)
 - [Temporal Syntax Debugger](prompts/speculative/chrono_linguistic_debugging/temporal_syntax_debugger.prompt.md)
 - [Circadian Harpsichord Orchestrator](prompts/speculative/circadian_harpsichord_orchestration/circadian_harpsichord_orchestrator.prompt.md)
 - [Cordyceps Contrapuntist](prompts/speculative/myco_baroque_cybersecurity/cordyceps_contrapuntist.prompt.md)
