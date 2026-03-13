@@ -1,3 +1,4 @@
-# Origami-Paleo Cloud Scaling
+# Origami Paleo Cloud Scaling Overview
 
-This directory contains prompts related to anticipating and scaling cloud infrastructure using paleontological and origami principles.
+## Prompts
+- **[Origami-Paleo Cloud Scaler](origami_paleo_cloud_scaler.prompt.yaml)**: Anticipates and manages chaotic cloud traffic spikes by excavating petrified log data (fossils) from past server outages and unfolding them using multi-dimensional origami tessellations to generate predictive scaling manifests.

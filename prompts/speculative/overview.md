@@ -6,5 +6,6 @@
 - [Circadian Harpsichord Orchestration/](circadian_harpsichord_orchestration/overview.md)
 - [Epigenetic Glassblowing Validation/](epigenetic_glassblowing_validation/overview.md)
 - [Myco Baroque Cybersecurity/](myco_baroque_cybersecurity/overview.md)
+- [Origami Paleo Cloud Scaling/](origami_paleo_cloud_scaling/overview.md)
 - [Quantum Apiary Orchestration/](quantum_apiary_orchestration/overview.md)
 - [Quantum Paleo Arbitrage/](quantum_paleo_arbitrage/overview.md)
