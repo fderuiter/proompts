@@ -161,6 +161,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Clinical Study Report (CSR) Narrative Drafter](prompts/clinical/medical_writing/csr_narrative_drafter.prompt.md)
 - [CSR Plain Language Summary Generator](prompts/clinical/medical_writing/csr_plain_language_summary_generator.prompt.md)
 - [Informed Consent Form Plain Language Translator](prompts/clinical/medical_writing/icf_plain_language_translator.prompt.md)
+- [Pediatric Investigational Plan (PIP) Architect](prompts/clinical/medical_writing/pediatric_investigational_plan_architect.prompt.md)
 - [Clinical Monitoring Plan Development](prompts/clinical/monitoring/clinical_monitoring_plan.prompt.md)
 - [Risk-Based Monitoring Data Evaluation](prompts/clinical/monitoring/rbm_data_evaluation.prompt.md)
 - [RBQM Anomaly Detection](prompts/clinical/monitoring/rbqm_anomaly_detection.prompt.md)

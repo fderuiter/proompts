@@ -70,6 +70,7 @@ title: Clinical
 - [Optimize ePRO Form Design](prompts/clinical/epro/epro_workflow/02_optimize_epro_form_design.prompt.md)
 - [Patient Recruitment and Diversity Acceleration Plan](prompts/clinical/trial_execution/recruitment_diversity_acceleration.prompt.md)
 - [Patient-Centric BYOD ePRO Workflow](prompts/clinical/epro/epro_workflow/01_patient-centric_byod_workflow.prompt.md)
+- [Pediatric Investigational Plan (PIP) Architect](prompts/clinical/medical_writing/pediatric_investigational_plan_architect.prompt.md)
 - [Personalized Investigator-Outreach Email Generator](prompts/clinical/site_acquisition/site_acquisition_workflow/03_investigator_outreach_email_generator.prompt.md)
 - [Phase II Oncology DMP](prompts/clinical/data_management/phase_ii_oncology_dmp.prompt.md)
 - [Portfolio-Level Clinical Operations Roadmap](prompts/clinical/trial_execution/portfolio_clin_ops_roadmap.prompt.md)
