@@ -97,5 +97,6 @@ title: Regulatory
 - [Shelf-life Study Rationale](prompts/regulatory/adherence/shelf_life_study_rationale.prompt.md)
 - [Special Controls Labeling Compliance](prompts/regulatory/device_specifics/special_controls_labeling_compliance.prompt.md)
 - [Strategic Regulatory Pathway Plan](prompts/regulatory/strategy/strategic_regulatory_pathway_plan.prompt.md)
+- [Supplier Quality Evaluation and SQA Architect](prompts/regulatory/quality/supplier_quality_agreement_architect.prompt.md)
 - [UDI GUDID Submission](prompts/regulatory/submissions/udi_gudid_submission.prompt.md)
 - [Zika Virus Reagent Study Design](prompts/regulatory/device_specifics/zika_virus_reagent_study_design.prompt.md)
