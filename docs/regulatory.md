@@ -57,6 +57,7 @@ title: Regulatory
 - [Integrated Submission Strategy Coach](prompts/regulatory/quality/integrated_submission_strategy_coach.prompt.md)
 - [Intended Use and Indications for Use Alignment](prompts/regulatory/adherence/intended_use_and_indications_for_use_alignment.prompt.md)
 - [IRB Protocol Review](prompts/regulatory/compliance/irb_protocol_review.prompt.md)
+- [ISO 10993 Biological Evaluation Plan Architect](prompts/regulatory/quality/iso_10993_biological_evaluation_plan_architect.prompt.md)
 - [IVD Performance Study Compliance Review](prompts/regulatory/strategy/ivd_performance_study_compliance_review.prompt.md)
 - [IVDR Performance-Evaluation Plan Blueprint](prompts/regulatory/strategy/ivdr_pep_blueprint.prompt.md)
 - [Labeling Compliance Audit](prompts/regulatory/compliance/labeling_compliance_audit.prompt.md)
