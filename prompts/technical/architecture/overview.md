@@ -5,6 +5,7 @@
 
 ## Prompts
 - **[Chaos Engineering Experiment Designer](chaos_engineering_experiment_designer.prompt.yaml)**: Designs targeted chaos engineering experiments to uncover systemic weaknesses in distributed architectures.
+- **[CQRS and Event Sourcing Architect](cqrs_event_sourcing_architect.prompt.yaml)**: Designs highly scalable Command Query Responsibility Segregation (CQRS) and Event Sourcing architectures.
 - **[Data Mesh Topology Architect](data_mesh_topology_architect.prompt.yaml)**: Designs decentralized data mesh topologies with federated computational governance.
 - **[DRY Codebase Analysis](dry_codebase_analysis.prompt.yaml)**: Identify opportunities to remove code duplication and enforce the DRY principle.
 - **[Event-Driven Topology Designer](event_driven_topology_designer.prompt.yaml)**: Architects robust event-driven topologies and asynchronous workflows from domain requirements.
