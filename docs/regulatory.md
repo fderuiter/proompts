@@ -34,6 +34,7 @@ title: Regulatory
 - [Dual MDR / IVDR Conformity-Assessment Roadmap](prompts/regulatory/strategy/dual_mdr_ivdr_roadmap.prompt.md)
 - [Establishment of Food Traceability Plan](prompts/regulatory/food_safety/establishment_of_food_traceability_plan.prompt.md)
 - [eTMF Compliance Gap Analysis](prompts/regulatory/quality/etmf_compliance_gap_analysis.prompt.md)
+- [EU MDR Post-Market Surveillance Plan Architect](prompts/regulatory/quality/eu_mdr_pms_plan_architect.prompt.md)
 - [EU MDR Technical-Documentation Gap Assessment](prompts/regulatory/strategy/eu_mdr_gap_assessment.prompt.md)
 - [FDA 483 Response Strategist](prompts/regulatory/quality/fda_483_response_strategist.prompt.md)
 - [Financial Conflict of Interest (FCOI) Reporting](prompts/regulatory/quality/fcoi_reporting.prompt.md)
