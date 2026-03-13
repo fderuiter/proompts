@@ -1,0 +1,47 @@
+---
+name: EU MDR Post-Market Surveillance Plan Architect
+version: 1.0.0
+description: Design comprehensive, regulatory-compliant Post-Market Surveillance (PMS) Plans under EU MDR 2017/745.
+metadata:
+  domain: regulatory
+  complexity: high
+  tags:
+  - regulatory
+  - quality
+  - mdr
+  - pms
+  requires_context: false
+variables:
+- name: device_class
+  description: The risk classification of the medical device (e.g., Class IIa, IIb, III).
+  required: true
+- name: intended_purpose
+  description: A brief summary of the device's intended clinical purpose.
+  required: true
+- name: market_history
+  description: A high-level overview of the device's market history and known adverse events.
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+- role: system
+  content: Act as a Principal Post-Market Regulatory Affairs Architect specializing in EU MDR 2017/745. Your task is to architect a comprehensive Post-Market Surveillance (PMS) Plan that complies strictly with MDR Article 84 and Annex III. Do not provide generic advice; engineer a highly structured, data-driven framework encompassing reactive (vigilance, complaints) and proactive (PMCF, literature review, registry data) data collection strategies. The output must adhere strictly to the 'Vector' standard, utilizing precise regulatory terminology, risk-based methodologies, and establishing concrete indicators and threshold values for continuous benefit-risk reassessment. Wrap your outputs in XML tags as instructed.
+- role: user
+  content: "Architect a robust EU MDR PMS Plan framework for the following medical device profile:\n\n<input>\nDevice Risk Classification: {{device_class}}\nIntended Purpose: {{intended_purpose}}\nMarket History & Known Issues: {{market_history}}\n</input>\n\nGenerate the plan structure inside <pms_plan> tags. Ensure it includes at least the following sections: \n1. Objective & Scope\n2. Reactive Surveillance Methods\n3. Proactive Surveillance Methods (including PMCF rationale)\n4. Thresholds for Benefit-Risk Reassessment\n5. Cross-Functional Responsibilities."
+testData:
+- input:
+    device_class: Class IIb
+    intended_purpose: Implantable orthopedic bone screw for long bone fracture fixation.
+    market_history: 5 years on market globally. 12 reported instances of screw breakage under high mechanical stress. No fatalities.
+  expected: "1. Objective & Scope"
+evaluators:
+- name: Has Objective
+  regex:
+    pattern: (?i)Objective & Scope
+- name: Has Proactive Methods
+  regex:
+    pattern: (?i)Proactive Surveillance
+- name: Has Thresholds
+  regex:
+    pattern: (?i)Thresholds for Benefit-Risk Reassessment
