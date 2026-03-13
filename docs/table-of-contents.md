@@ -353,6 +353,7 @@
 [Compliance Gap & Risk Matrix](prompts/regulatory/quality/compliance_gap_risk_matrix.prompt.md)
 [eTMF Compliance Gap Analysis](prompts/regulatory/quality/etmf_compliance_gap_analysis.prompt.md)
 [Financial Conflict of Interest (FCOI) Reporting](prompts/regulatory/quality/fcoi_reporting.prompt.md)
+[FDA 483 Response Strategist](prompts/regulatory/quality/fda_483_response_strategist.prompt.md)
 [GLP Quality Assurance](prompts/regulatory/quality/glp_quality_assurance.prompt.md)
 [iec_62304_soup_anomaly_evaluator](prompts/regulatory/quality/iec_62304_soup_anomaly_evaluator.prompt.md)
 [Inspection-Readiness Drill (CAPA Builder)](prompts/regulatory/quality/inspection_readiness_drill_capa_builder.prompt.md)

@@ -35,6 +35,7 @@ title: Regulatory
 - [Establishment of Food Traceability Plan](prompts/regulatory/food_safety/establishment_of_food_traceability_plan.prompt.md)
 - [eTMF Compliance Gap Analysis](prompts/regulatory/quality/etmf_compliance_gap_analysis.prompt.md)
 - [EU MDR Technical-Documentation Gap Assessment](prompts/regulatory/strategy/eu_mdr_gap_assessment.prompt.md)
+- [FDA 483 Response Strategist](prompts/regulatory/quality/fda_483_response_strategist.prompt.md)
 - [Financial Conflict of Interest (FCOI) Reporting](prompts/regulatory/quality/fcoi_reporting.prompt.md)
 - [Financial Disclosure Certification](prompts/regulatory/administrative/financial_disclosure_certification.prompt.md)
 - [Food Safety Audit Reporting (Regulatory)](prompts/regulatory/food_safety/food_safety_audit_reporting_regulatory.prompt.md)
