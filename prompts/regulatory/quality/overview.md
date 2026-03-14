@@ -11,6 +11,7 @@
 - **[EU MDR Post-Market Surveillance Plan Architect](eu_mdr_pms_plan_architect.prompt.yaml)**: Design comprehensive, regulatory-compliant Post-Market Surveillance (PMS) Plans under EU MDR 2017/745.
 - **[Financial Conflict of Interest (FCOI) Reporting](fcoi_reporting.prompt.yaml)**: Review disclosures and draft management plan.
 - **[FDA 483 Response Strategist](fda_483_response_strategist.prompt.yaml)**: Design comprehensive, regulatory-compliant responses to FDA Form 483 observations, employing an authoritative and structured corrective action strategy.
+- **[Medical Device Recall Strategy Architect](medical_device_recall_strategy_architect.prompt.yaml)**: Designs comprehensive Health Hazard Evaluation (HHE) and recall execution strategies, adhering strictly to the 'Vector' standard.
 - **[GLP Quality Assurance](glp_quality_assurance.prompt.yaml)**: Prepare a statement for a nonclinical study report certifying inspection dates.
 - **[iec_62304_soup_anomaly_evaluator](iec_62304_soup_anomaly_evaluator.prompt.yaml)**: Evaluates Software of Unknown Provenance (SOUP) known anomalies against IEC 62304 requirements to determine clinical safety impact and mandate required architectural risk control measures for SaMD.
 - **[Inspection-Readiness Drill (CAPA Builder)](inspection_readiness_drill_capa_builder.prompt.yaml)**: Prepare for regulatory inspections by rehearsing high‑risk questions and drafting CAPAs.
