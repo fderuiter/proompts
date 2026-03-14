@@ -13,6 +13,7 @@
 - **[FDA 483 Response Strategist](fda_483_response_strategist.prompt.yaml)**: Design comprehensive, regulatory-compliant responses to FDA Form 483 observations, employing an authoritative and structured corrective action strategy.
 - **[GLP Quality Assurance](glp_quality_assurance.prompt.yaml)**: Prepare a statement for a nonclinical study report certifying inspection dates.
 - **[iec_62304_soup_anomaly_evaluator](iec_62304_soup_anomaly_evaluator.prompt.yaml)**: Evaluates Software of Unknown Provenance (SOUP) known anomalies against IEC 62304 requirements to determine clinical safety impact and mandate required architectural risk control measures for SaMD.
+- **[IEC 62366-1 Summative Usability Evaluation Protocol Architect](iec_62366_summative_usability_protocol_architect.prompt.yaml)**: Design comprehensive, regulatory-compliant Summative Usability Evaluation Protocols under IEC 62366-1 and FDA Human Factors Engineering Guidance.
 - **[Inspection-Readiness Drill (CAPA Builder)](inspection_readiness_drill_capa_builder.prompt.yaml)**: Prepare for regulatory inspections by rehearsing high‑risk questions and drafting CAPAs.
 - **[Integrated Submission Strategy Coach](integrated_submission_strategy_coach.prompt.yaml)**: Create a phased submission roadmap for Project Phoenix.
 - **[ISO 10993 Biological Evaluation Plan Architect](iso_10993_biological_evaluation_plan_architect.prompt.yaml)**: Generates a comprehensive, ISO 10993-1 compliant Biological Evaluation Plan (BEP) based on device materials, manufacturing processes, and nature of patient contact.
