@@ -364,6 +364,7 @@
 [Inspection-Readiness Drill (CAPA Builder)](prompts/regulatory/quality/inspection_readiness_drill_capa_builder.prompt.md)
 [Integrated Submission Strategy Coach](prompts/regulatory/quality/integrated_submission_strategy_coach.prompt.md)
 [ISO 10993 Biological Evaluation Plan Architect](prompts/regulatory/quality/iso_10993_biological_evaluation_plan_architect.prompt.md)
+[MDSAP Nonconformity Grading Evaluator](prompts/regulatory/quality/mdsap_nonconformity_grading_evaluator.prompt.md)
 [Medical Device Recall Strategy Architect](prompts/regulatory/quality/medical_device_recall_strategy_architect.prompt.md)
 [Medical Device Reporting (MDR) and Vigilance Decision Evaluator](prompts/regulatory/quality/medical_device_reporting_decision_evaluator.prompt.md)
 [Part 11 Closed System Audit](prompts/regulatory/quality/part_11_closed_system_audit.prompt.md)
