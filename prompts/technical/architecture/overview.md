@@ -19,6 +19,7 @@
 - **[Maintainability Codebase Analysis](maintainability_codebase_analysis.prompt.yaml)**: Improve code maintainability by addressing readability, organization, and test quality.
 - **[Micro-Frontend Orchestration Architect](micro_frontend_orchestration_architect.prompt.yaml)**: Designs robust, scalable micro-frontend architectures, addressing orchestration, state management, and routing strategies.
 - **[Multi-Region Active-Active Resilience Architect](multi_region_active_active_resilience.prompt.yaml)**: Designs true active-active multi-region topologies, resolving global state conflict and replication latency.
+- **[Multi-Tenant SaaS Architecture Designer](multi_tenant_saas_architecture_designer.prompt.yaml)**: Designs highly scalable, secure, and cost-efficient multi-tenant SaaS architectures, focusing on tenant isolation, data partitioning, and noisy neighbor mitigation.
 - **[Real-Time Stream Processing Architect](real_time_stream_processing_architect.prompt.yaml)**: Designs highly scalable, fault-tolerant real-time data streaming and processing architectures.
 - **[Service Mesh Security Architect](service_mesh_security_architect.prompt.yaml)**: Designs zero-trust mTLS communication policies and robust service mesh architectures within Kubernetes environments.
 - **[SOLID Codebase Analysis](solid_codebase_analysis.prompt.yaml)**: Evaluate code against SOLID principles and suggest refactoring tasks.
