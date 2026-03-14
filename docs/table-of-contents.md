@@ -357,6 +357,7 @@
 [FDA 483 Response Strategist](prompts/regulatory/quality/fda_483_response_strategist.prompt.md)
 [GLP Quality Assurance](prompts/regulatory/quality/glp_quality_assurance.prompt.md)
 [iec_62304_soup_anomaly_evaluator](prompts/regulatory/quality/iec_62304_soup_anomaly_evaluator.prompt.md)
+[IEC 62366-1 Summative Usability Evaluation Protocol Architect](prompts/regulatory/quality/iec_62366_summative_usability_protocol_architect.prompt.md)
 [Inspection-Readiness Drill (CAPA Builder)](prompts/regulatory/quality/inspection_readiness_drill_capa_builder.prompt.md)
 [Integrated Submission Strategy Coach](prompts/regulatory/quality/integrated_submission_strategy_coach.prompt.md)
 [ISO 10993 Biological Evaluation Plan Architect](prompts/regulatory/quality/iso_10993_biological_evaluation_plan_architect.prompt.md)
