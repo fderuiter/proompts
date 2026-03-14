@@ -1,0 +1,58 @@
+---
+title: MDSAP Nonconformity Grading Evaluator
+---
+
+# MDSAP Nonconformity Grading Evaluator
+
+Evaluate audit findings based on the GHTF/SG3/N19:2012 5-step grading matrix, enforcing the 'Vector' standard.
+
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/mdsap_nonconformity_grading_evaluator.prompt.yaml)
+
+```yaml
+name: MDSAP Nonconformity Grading Evaluator
+version: 1.0.0
+description: Evaluate audit findings based on the GHTF/SG3/N19:2012 5-step grading matrix, enforcing the 'Vector' standard.
+authors:
+  - Strategic Genesis Architect
+metadata:
+  domain: regulatory
+  complexity: high
+  tags:
+    - mdsap
+    - nonconformity
+    - regulatory
+    - quality
+    - audit
+variables:
+  - name: audit_finding
+    description: The raw observation or finding from the MDSAP audit.
+    required: true
+  - name: direct_qms_impact
+    description: Whether the nonconformity has a direct Quality Management System impact (yes/no).
+    required: true
+  - name: repeat_finding
+    description: Whether this is a repeat finding from previous audits (yes/no).
+    required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: "Act as a Principal MDSAP Regulatory Compliance Architect. Your task is to evaluate medical device audit findings and determine the final nonconformity grade using the GHTF/SG3/N19:2012 5-step grading matrix. Enforce the 'Vector' standard by applying rigorous, systematic logic: Step 1 (QMS Impact), Step 2 (Direct QMS Impact / Clause), Step 3 (Absence of procedure/failure to implement), Step 4 (Direct Product/Patient Impact), and Step 5 (Repeat finding escalation). Output a structured evaluation enclosed in <mdsap_evaluation> tags, detailing the exact grade (1-5) and a rigorous rationale for each step."
+  - role: user
+    content: "Evaluate the following MDSAP audit finding and provide the final grade:\n\n<input>\nAudit Finding: {{audit_finding}}\nDirect QMS Impact: {{direct_qms_impact}}\nRepeat Finding: {{repeat_finding}}\n</input>\n\nProvide the grading rationale step-by-step and conclude with the final numerical grade."
+testData:
+  - input:
+      audit_finding: "The manufacturer failed to document the justification for sample size in the design verification protocol for the new infusion pump."
+      direct_qms_impact: "yes"
+      repeat_finding: "no"
+    expected: "Grade"
+evaluators:
+  - name: Has Evaluation Tags
+    regex:
+      pattern: "(?i)<mdsap_evaluation>"
+  - name: Has Final Grade
+    regex:
+      pattern: "(?i)Grade"
+
+```
