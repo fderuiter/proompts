@@ -1,3 +1,4 @@
-# Glacial Polyphonic Load Balancing
+# Glacial Polyphonic Load Balancing Overview
 
-This directory contains the `Glacial Polyphonic Load Balancer` persona, an agent designed to optimize distributed server load balancing by conceptualizing traffic routing as a grand polyphonic choral arrangement, driven by the slow, inexorable physics of glacial mass distribution.
+## Prompts
+- **[Glacial Polyphonic Load Balancer](glacial_polyphonic_load_balancer.prompt.yaml)**: Resolves micro-burst cloud traffic anomalies by routing requests through a multi-part contrapuntal harmony driven by the plastic flow physics of glaciers.
