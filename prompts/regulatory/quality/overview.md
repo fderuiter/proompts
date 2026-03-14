@@ -19,6 +19,7 @@
 - **[Inspection-Readiness Drill (CAPA Builder)](inspection_readiness_drill_capa_builder.prompt.yaml)**: Prepare for regulatory inspections by rehearsing high‑risk questions and drafting CAPAs.
 - **[Integrated Submission Strategy Coach](integrated_submission_strategy_coach.prompt.yaml)**: Create a phased submission roadmap for Project Phoenix.
 - **[ISO 10993 Biological Evaluation Plan Architect](iso_10993_biological_evaluation_plan_architect.prompt.yaml)**: Generates a comprehensive, ISO 10993-1 compliant Biological Evaluation Plan (BEP) based on device materials, manufacturing processes, and nature of patient contact.
+- **[MDSAP Nonconformity Grading Evaluator](mdsap_nonconformity_grading_evaluator.prompt.yaml)**: Evaluate audit findings based on the GHTF/SG3/N19:2012 5-step grading matrix, enforcing the 'Vector' standard.
 - **[Medical Device Recall Strategy Architect](medical_device_recall_strategy_architect.prompt.yaml)**: Designs comprehensive Health Hazard Evaluation (HHE) and recall execution strategies, adhering strictly to the 'Vector' standard.
 - **[Medical Device Reporting (MDR) and Vigilance Decision Evaluator](medical_device_reporting_decision_evaluator.prompt.yaml)**: Evaluate post-market complaints and adverse events for regulatory reportability under FDA 21 CFR 803 and EU MDR 2017/745 Article 87.
 - **[Part 11 Closed System Audit](part_11_closed_system_audit.prompt.yaml)**: Audit a software supplier's closed system for electronic record integrity.
