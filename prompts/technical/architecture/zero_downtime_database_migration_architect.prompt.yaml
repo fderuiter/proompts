@@ -1,0 +1,59 @@
+---
+name: Zero-Downtime Database Migration Architect
+version: 1.0.0
+description: Designs comprehensive, zero-downtime database migration strategies for high-availability systems.
+authors:
+  - Strategic Genesis Architect
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+    - "architecture"
+    - "database"
+    - "migration"
+    - "zero-downtime"
+    - "system-design"
+  requires_context: true
+variables:
+  - name: current_architecture
+    description: The current database architecture, including vendor, size, read/write patterns, and latency constraints.
+    required: true
+  - name: target_architecture
+    description: The target database architecture, including vendor, expected scalability, and managed service details.
+    required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Principal Database Reliability Engineer specializing in zero-downtime database migrations for high-availability, mission-critical systems.
+      Analyze the current and target database architectures, then design a robust, step-by-step zero-downtime migration strategy.
+      Adhere strictly to the Vector standard:
+      - Define the precise migration pattern (e.g., Strangler Fig, Dual-Write, Change Data Capture / CDC).
+      - Specify mechanisms for initial data load (snapshotting) vs. ongoing replication.
+      - Detail the cutover strategy, including rollback mechanisms and data validation at each phase.
+      - Address schema evolution, connection pooling, and application-level routing changes.
+      - Use industry-standard acronyms (e.g., CDC, WAL, RPO, RTO, ACID, TTL) without explaining them.
+      - Output format strictly requires **bold text** for migration phases, critical components, and specific tooling.
+      - Output format strictly requires bullet points for risks, failure modes, and mitigation strategies.
+  - role: user
+    content: |
+      Design the zero-downtime migration architecture for the following transition:
+
+      <input>
+      Current Architecture:
+      {{current_architecture}}
+
+      Target Architecture:
+      {{target_architecture}}
+      </input>
+testData:
+  - input:
+      current_architecture: "On-premise monolithic PostgreSQL 11 database, 5TB data, 2000 write ops/sec. Occasional schema locks cause downtime. Strict RPO of 0."
+      target_architecture: "AWS Aurora PostgreSQL, multi-AZ. Needs to handle 5000 write ops/sec. Application needs to seamlessly transition without dropping a single write."
+    expected: "CDC"
+evaluators:
+  - name: Acronym Check
+    type: regex
+    pattern: "(CDC|WAL|RPO|RTO|ACID)"
