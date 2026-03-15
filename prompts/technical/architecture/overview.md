@@ -9,6 +9,7 @@
 - **[Data Mesh Topology Architect](data_mesh_topology_architect.prompt.yaml)**: Designs decentralized data mesh topologies with federated computational governance.
 - **[DRY Codebase Analysis](dry_codebase_analysis.prompt.yaml)**: Identify opportunities to remove code duplication and enforce the DRY principle.
 - **[Event-Driven Topology Designer](event_driven_topology_designer.prompt.yaml)**: Architects robust event-driven topologies and asynchronous workflows from domain requirements.
+- **[finops_cloud_cost_optimization_architect](finops_cloud_cost_optimization_architect.prompt.yaml)**: Analyzes existing cloud architectures to identify cost inefficiencies and redesigns them using advanced FinOps principles, ensuring optimal resource utilization without compromising performance SLAs.
 - **[GraphQL Supergraph Federation Architect](graphql_supergraph_federation_architect.prompt.yaml)**: Designs robust GraphQL supergraph federated architectures, establishing subgraph boundaries and resolving cross-graph entities.
 - **[Hexagonal Architecture Implementation](hexagonal_architecture_implementation.prompt.yaml)**: Expert guidance on implementing Hexagonal Architecture, focusing on data flow, dependency inversion, and component placement.
 - **[Hexagonal Architecture Principles](hexagonal_architecture_principles.prompt.yaml)**: Explain the core philosophy, skeleton, and benefits of Hexagonal Architecture (Ports and Adapters).
