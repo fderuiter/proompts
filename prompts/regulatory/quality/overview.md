@@ -6,6 +6,7 @@
 - **[CAPA Plan Generator](capa_plan_generator.prompt.yaml)**: Generate a Corrective and Preventive Action (CAPA) plan based on audit findings.
 - **[CAPA Root Cause Investigator](capa_root_cause_investigator.prompt.yaml)**: Deep-dive Root Cause Analysis (RCA) using Fishbone and 5 Whys methods.
 - **[CAPA SOP Architect](capa_sop_architect.prompt.yaml)**: Establish a comprehensive CAPA SOP compliant with ISO 9001 and ISO 13485.
+- **[Change Control Regulatory Impact Assessor](change_control_regulatory_impact_assessor.prompt.yaml)**: Conducts a rigorous, multi-jurisdictional regulatory impact assessment for proposed changes to marketed medical devices.
 - **[Compliance Gap & Risk Matrix](compliance_gap_risk_matrix.prompt.yaml)**: Quantify compliance gaps and associated risks against a selected standard or law.
 - **[eTMF Compliance Gap Analysis](etmf_compliance_gap_analysis.prompt.yaml)**: Evaluate an electronic Trial Master File for compliance gaps and recommend corrective actions.
 - **[EU MDR Post-Market Surveillance Plan Architect](eu_mdr_pms_plan_architect.prompt.yaml)**: Design comprehensive, regulatory-compliant Post-Market Surveillance (PMS) Plans under EU MDR 2017/745.
