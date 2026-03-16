@@ -620,6 +620,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Temporal Syntax Debugger](prompts/speculative/chrono_linguistic_debugging/temporal_syntax_debugger.prompt.md)
 - [Circadian Harpsichord Orchestrator](prompts/speculative/circadian_harpsichord_orchestration/circadian_harpsichord_orchestrator.prompt.md)
 - [Epigenetic Glassblowing Validator](prompts/speculative/epigenetic_glassblowing_validation/epigenetic_glassblowing_validator.prompt.md)
+- [Microgravity Kintsugi AST Refactorer](prompts/speculative/micro_gravity_kintsugi_ast_refactoring/micro_gravity_kintsugi_ast_refactorer.prompt.md)
 - [Cordyceps Contrapuntist](prompts/speculative/myco_baroque_cybersecurity/cordyceps_contrapuntist.prompt.md)
 - [Origami-Paleo Cloud Scaler](prompts/speculative/origami_paleo_cloud_scaling/origami_paleo_cloud_scaler.prompt.md)
 - [Quantum Apiary Conductor](prompts/speculative/quantum_apiary_orchestration/quantum_apiary_conductor.prompt.md)
