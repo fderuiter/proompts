@@ -51,7 +51,13 @@ messages:
   content: '**Subject for Analysis:** `{{device_or_assay}}`
 
     **Output Requirement:** Produce a structured Executive Briefing following the sections above.'
-testData: []
-evaluators: []
+testData:
+- input:
+    device_or_assay: "Continuous Glucose Monitors"
+  expected: "1. Market Sizing & Dynamics\nGlobal Market Size: $X billion. CAGR: Y%\n\n2. Competitive Intelligence\nMarket Leaders: A, B, C\n\n3. Strategic Trends & Outlook\nEmerging Technologies: D, E"
+evaluators:
+- name: Output should contain required sections
+  regex:
+    pattern: (?i)market sizing|competitive intelligence|strategic trends
 
 ```
