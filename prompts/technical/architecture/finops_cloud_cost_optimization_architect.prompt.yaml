@@ -1,0 +1,55 @@
+---
+name: FinOps Cloud Architecture Optimizer
+version: 1.0.0
+description: Analyzes existing cloud architectures for cost inefficiencies and proposes redesigns using advanced FinOps principles without compromising performance SLAs.
+authors:
+  - Strategic Genesis Architect
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+    - finops
+    - cloud-architecture
+    - cost-optimization
+    - aws
+    - azure
+    - gcp
+  requires_context: false
+variables:
+  - name: current_architecture
+    description: Detailed description of the current cloud architecture, including services used, deployment regions, and current cost bottlenecks.
+    required: true
+  - name: performance_slas
+    description: The mandatory performance Service Level Agreements (SLAs) and availability targets that must be strictly maintained.
+    required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Principal FinOps Cloud Architect. Your objective is to analyze existing cloud architectures for cost inefficiencies and propose comprehensive redesigns using advanced FinOps principles.
+      Your redesign must strictly adhere to the provided performance Service Level Agreements (SLAs) and ensure zero degradation in system performance, availability, or reliability.
+      Provide a highly detailed, actionable optimization plan including:
+      - Identification of wasteful resource provisioning and architectural anti-patterns.
+      - Specific recommendations for right-sizing, spot instance utilization, reserved capacity planning, and storage tiering.
+      - A revised architectural topology that maximizes cost-efficiency.
+      Output your response in a structured format with clear headings. Use industry-standard terminology without providing basic definitions.
+  - role: user
+    content: |
+      Analyze the following cloud architecture and provide a FinOps optimization redesign that respects the defined SLAs.
+
+      Current Architecture:
+      {{current_architecture}}
+
+      Performance SLAs to Maintain:
+      {{performance_slas}}
+testData:
+  - input:
+      current_architecture: "A multi-tier web application on AWS using 50 statically provisioned m5.2xlarge EC2 instances across 3 Availability Zones behind an ALB. Data is stored in a single oversized RDS Multi-AZ MySQL db.m5.4xlarge instance. Logs are kept indefinitely in a standard S3 bucket. Average CPU utilization across EC2 instances is 15%."
+      performance_slas: "99.99% availability, P99 API latency under 200ms, and zero data loss during zone failures."
+    expected: "Spot Instances"
+evaluators:
+  - name: Output Quality Check
+    type: regex
+    pattern: "(Spot|Auto Scaling|Right-sizing|Storage Tiering|Reserved)"
