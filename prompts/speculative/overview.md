@@ -5,6 +5,7 @@
 - [Chrono Linguistic Debugging/](chrono_linguistic_debugging/overview.md)
 - [Circadian Harpsichord Orchestration/](circadian_harpsichord_orchestration/overview.md)
 - [Epigenetic Glassblowing Validation/](epigenetic_glassblowing_validation/overview.md)
+- [Micro Gravity Kintsugi Ast Refactoring/](micro_gravity_kintsugi_ast_refactoring/overview.md)
 - [Myco Baroque Cybersecurity/](myco_baroque_cybersecurity/overview.md)
 - [Origami Paleo Cloud Scaling/](origami_paleo_cloud_scaling/overview.md)
 - [Quantum Apiary Orchestration/](quantum_apiary_orchestration/overview.md)
