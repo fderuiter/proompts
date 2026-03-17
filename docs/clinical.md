@@ -75,6 +75,7 @@ title: Clinical
 - [Phase II Oncology DMP](prompts/clinical/data_management/phase_ii_oncology_dmp.prompt.md)
 - [Portfolio-Level Clinical Operations Roadmap](prompts/clinical/trial_execution/portfolio_clin_ops_roadmap.prompt.md)
 - [Post-Market Safety Signal Trending](prompts/clinical/safety/clinical_safety_workflow/03_post_market_safety_signal_trending.prompt.md)
+- [Protocol Amendment Rationale Drafter](prompts/clinical/medical_writing/protocol_amendment_rationale_drafter.prompt.md)
 - [Protocol Deviation Reporting](prompts/clinical/protocol/protocol_deviation_reporting.prompt.md)
 - [Protocol Optimization and Risk Simulation](prompts/clinical/trial_execution/protocol_optimization_risk_simulation.prompt.md)
 - [Protocol Reviewer and Gap-Analysis Coach](prompts/clinical/protocol/protocol_workflow/03_protocol_reviewer_gap_analysis_coach.prompt.md)
