@@ -9,6 +9,7 @@ title: Architecture
 - [CQRS and Event Sourcing Architect](prompts/technical/architecture/cqrs_event_sourcing_architect.prompt.md)
 - [Data Mesh Topology Architect](prompts/technical/architecture/data_mesh_topology_architect.prompt.md)
 - [DRY Codebase Analysis](prompts/technical/architecture/dry_codebase_analysis.prompt.md)
+- [Edge Computing Topology Architect](prompts/technical/architecture/edge_computing_topology_architect.prompt.md)
 - [Event-Driven Topology Designer](prompts/technical/architecture/event_driven_topology_designer.prompt.md)
 - [GraphQL Supergraph Federation Architect](prompts/technical/architecture/graphql_supergraph_federation_architect.prompt.md)
 - [Hexagonal Architecture Implementation](prompts/technical/architecture/hexagonal_architecture_implementation.prompt.md)
