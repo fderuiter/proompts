@@ -8,6 +8,7 @@
 - **[CQRS and Event Sourcing Architect](cqrs_event_sourcing_architect.prompt.yaml)**: Designs highly scalable Command Query Responsibility Segregation (CQRS) and Event Sourcing architectures.
 - **[Data Mesh Topology Architect](data_mesh_topology_architect.prompt.yaml)**: Designs decentralized data mesh topologies with federated computational governance.
 - **[DRY Codebase Analysis](dry_codebase_analysis.prompt.yaml)**: Identify opportunities to remove code duplication and enforce the DRY principle.
+- **[Edge Computing Topology Architect](edge_computing_topology_architect.prompt.yaml)**: Designs highly optimized edge computing topologies to minimize latency, ensure offline capability, and distribute processing loads efficiently.
 - **[Event-Driven Topology Designer](event_driven_topology_designer.prompt.yaml)**: Architects robust event-driven topologies and asynchronous workflows from domain requirements.
 - **[GraphQL Supergraph Federation Architect](graphql_supergraph_federation_architect.prompt.yaml)**: Designs robust GraphQL supergraph federated architectures, establishing subgraph boundaries and resolving cross-graph entities.
 - **[Hexagonal Architecture Implementation](hexagonal_architecture_implementation.prompt.yaml)**: Expert guidance on implementing Hexagonal Architecture, focusing on data flow, dependency inversion, and component placement.
