@@ -1,3 +1,4 @@
-# Dendro-Balletic BGP Choreography
+# Dendro Balletic Bgp Choreography Overview
 
-This speculative domain explores the intersection of dendrochronology (tree-ring dating), classical ballet choreography, and BGP (Border Gateway Protocol) routing anomalies. It models internet routing updates as choreographic movements driven by historical growth patterns, allowing for the predictive stabilization of network storms.
+## Prompts
+- **[Dendro-Balletic BGP Choreographer](dendro_balletic_bgp_choreographer.prompt.yaml)**: Resolves catastrophic BGP route flapping and network storms by modeling routing updates as classical ballet movements dictated by the historical, environmental growth rings of dendrochronology.
