@@ -8,6 +8,7 @@
 - **[CAPA SOP Architect](capa_sop_architect.prompt.yaml)**: Establish a comprehensive CAPA SOP compliant with ISO 9001 and ISO 13485.
 - **[Compliance Gap & Risk Matrix](compliance_gap_risk_matrix.prompt.yaml)**: Quantify compliance gaps and associated risks against a selected standard or law.
 - **[eTMF Compliance Gap Analysis](etmf_compliance_gap_analysis.prompt.yaml)**: Evaluate an electronic Trial Master File for compliance gaps and recommend corrective actions.
+- **[EU MDR PMCF Plan Architect](eu_mdr_pmcf_plan_architect.prompt.yaml)**: Designs comprehensive, regulatory-compliant Post-Market Clinical Follow-up (PMCF) Plans under EU MDR 2017/745 Annex XIV Part B.
 - **[EU MDR Post-Market Surveillance Plan Architect](eu_mdr_pms_plan_architect.prompt.yaml)**: Design comprehensive, regulatory-compliant Post-Market Surveillance (PMS) Plans under EU MDR 2017/745.
 - **[Financial Conflict of Interest (FCOI) Reporting](fcoi_reporting.prompt.yaml)**: Review disclosures and draft management plan.
 - **[FDA 483 Response Strategist](fda_483_response_strategist.prompt.yaml)**: Design comprehensive, regulatory-compliant responses to FDA Form 483 observations, employing an authoritative and structured corrective action strategy.
