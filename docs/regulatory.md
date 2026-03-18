@@ -69,6 +69,7 @@ title: Regulatory
 - [Medical Device Recall Strategy](prompts/regulatory/compliance/medical_device_recall_strategy.prompt.md)
 - [Medical Device Recall Strategy Architect](prompts/regulatory/quality/medical_device_recall_strategy_architect.prompt.md)
 - [Medical Device Reporting (MDR)](prompts/regulatory/compliance/medical_device_reporting_mdr.prompt.md)
+- [Medical Device Reporting (MDR) and Vigilance Decision Evaluator](prompts/regulatory/quality/medical_device_reporting_decision_evaluator.prompt.md)
 - [Medicare Coverage Request (IDE)](prompts/regulatory/submissions/medicare_coverage_request_ide.prompt.md)
 - [Multiple Endpoints Regulatory Strategy](prompts/regulatory/adherence/multiple_endpoints_guidance_review.prompt.md)
 - [NGS Tumor Profiling Documentation](prompts/regulatory/device_specifics/ngs_tumor_profiling_documentation.prompt.md)
