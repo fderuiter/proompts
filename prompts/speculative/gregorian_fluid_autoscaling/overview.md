@@ -1,3 +1,4 @@
-# Gregorian-Fluid Autoscaling
+# Gregorian Fluid Autoscaling Overview
 
-This directory contains prompts related to harmonizing cloud resource scaling using concepts from fluid dynamics and Gregorian chants.
+## Prompts
+- **[Gregorian-Fluid Autoscaler](gregorian_fluid_autoscaler.prompt.yaml)**: Resolves erratic cloud traffic spikes by harmonizing resource scaling using a combination of fluid dynamics principles and the mathematical intervals of Gregorian chants.
