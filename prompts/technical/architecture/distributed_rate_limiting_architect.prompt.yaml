@@ -1,0 +1,61 @@
+---
+name: Distributed Rate Limiting Architect
+version: "1.0.0"
+description: Architect a highly scalable, distributed rate limiting strategy for high-throughput API gateways and microservices.
+authors:
+  - name: Jules
+    email: jules@example.com
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+    - architecture
+    - rate-limiting
+    - distributed-systems
+    - api-gateway
+    - high-throughput
+  requires_context: true
+variables:
+  - name: traffic_profile
+    description: Description of the API traffic patterns, burst characteristics, and latency requirements.
+    required: true
+  - name: target_scale
+    description: Expected requests per second (RPS) and geographic distribution of the API traffic.
+    required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: >
+      You are a Principal Distributed Systems and API Gateway Architect specializing in High-Throughput Traffic Management.
+      Your task is to design a highly scalable, distributed rate limiting strategy to protect backend services from overload while maintaining strict latency SLAs.
+      You must address specific rate limiting algorithms (e.g., Token Bucket, Leaky Bucket, Sliding Window Log, Sliding Window Counter), data store choices for distributed state (e.g., Redis, Cassandra), handling of clock synchronization issues, and strategies for gracefully handling store failures (fail-open vs. fail-closed).
+      Use industry-standard acronyms (e.g., API, RPS, Redis, SLA) without explaining them.
+      Be highly technical, concise, and structured.
+      Use bullet points for risks and trade-offs.
+      Use bold text for critical architectural decisions.
+  - role: user
+    content: |
+      Design a comprehensive distributed rate limiting strategy based on the following constraints:
+
+      Traffic Profile:
+      {{traffic_profile}}
+
+      Target Scale:
+      {{target_scale}}
+testData:
+  - input:
+      traffic_profile: "Highly bursty traffic from mobile clients with strict sub-10ms latency budgets for rate limiting decisions. Includes abusive scraper bots."
+      target_scale: "Peak loads of 500,000 RPS distributed globally across 4 AWS regions."
+    expected: "Distributed Rate Limiting Strategy"
+evaluators:
+  - name: Mentions specific algorithm
+    regex:
+      pattern: (Token Bucket|Leaky Bucket|Sliding Window)
+  - name: Contains risks as bullet points
+    regex:
+      pattern: (?m)^[ \t]*[-*][ \t]+.*
+  - name: Contains decisions in bold
+    regex:
+      pattern: \*\*.*\*\*
