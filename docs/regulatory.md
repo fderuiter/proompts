@@ -18,6 +18,7 @@ title: Regulatory
 - [CAPA Root Cause Investigator](prompts/regulatory/quality/capa_root_cause_investigator.prompt.md)
 - [CAPA SOP Architect](prompts/regulatory/quality/capa_sop_architect.prompt.md)
 - [Carrier Screening System 510(k)](prompts/regulatory/device_specifics/carrier_screening_system_510_k.prompt.md)
+- [Change Control Regulatory Impact Assessor](prompts/regulatory/quality/change_control_regulatory_impact_assessor.prompt.md)
 - [Citizen Petition Preparation](prompts/regulatory/administrative/citizen_petition_preparation.prompt.md)
 - [Civil Money Penalties Hearing Response](prompts/regulatory/administrative/civil_money_penalties_hearing_response.prompt.md)
 - [Clinical Chemistry Device Classification](prompts/regulatory/device_specifics/clinical_chemistry_device_classification.prompt.md)

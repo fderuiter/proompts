@@ -481,6 +481,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [CAPA Plan Generator](prompts/regulatory/quality/capa_plan_generator.prompt.md)
 - [CAPA Root Cause Investigator](prompts/regulatory/quality/capa_root_cause_investigator.prompt.md)
 - [CAPA SOP Architect](prompts/regulatory/quality/capa_sop_architect.prompt.md)
+- [Change Control Regulatory Impact Assessor](prompts/regulatory/quality/change_control_regulatory_impact_assessor.prompt.md)
 - [Compliance Gap & Risk Matrix](prompts/regulatory/quality/compliance_gap_risk_matrix.prompt.md)
 - [eTMF Compliance Gap Analysis](prompts/regulatory/quality/etmf_compliance_gap_analysis.prompt.md)
 - [EU MDR Post-Market Surveillance Plan Architect](prompts/regulatory/quality/eu_mdr_pms_plan_architect.prompt.md)
