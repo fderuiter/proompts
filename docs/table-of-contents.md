@@ -358,6 +358,7 @@
 [EU MDR Clinical Evaluation Report Architect](prompts/regulatory/quality/eu_mdr_clinical_evaluation_report_architect.prompt.md)
 [EU MDR PMCF Plan Architect](prompts/regulatory/quality/eu_mdr_pmcf_plan_architect.prompt.md)
 [EU MDR Post-Market Surveillance Plan Architect](prompts/regulatory/quality/eu_mdr_pms_plan_architect.prompt.md)
+[EU MDR PSUR Architect](prompts/regulatory/quality/eu_mdr_psur_architect.prompt.md)
 [Financial Conflict of Interest (FCOI) Reporting](prompts/regulatory/quality/fcoi_reporting.prompt.md)
 [FDA 483 Response Strategist](prompts/regulatory/quality/fda_483_response_strategist.prompt.md)
 [GLP Quality Assurance](prompts/regulatory/quality/glp_quality_assurance.prompt.md)
