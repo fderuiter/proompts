@@ -13,6 +13,7 @@
 - **[EU MDR Clinical Evaluation Report Architect](eu_mdr_clinical_evaluation_report_architect.prompt.yaml)**: Designs comprehensive, regulatory-compliant Clinical Evaluation Reports (CER) under EU MDR 2017/745 Article 61 and Annex XIV Part A.
 - **[EU MDR PMCF Plan Architect](eu_mdr_pmcf_plan_architect.prompt.yaml)**: Designs comprehensive, regulatory-compliant Post-Market Clinical Follow-up (PMCF) Plans under EU MDR 2017/745 Annex XIV Part B.
 - **[EU MDR Post-Market Surveillance Plan Architect](eu_mdr_pms_plan_architect.prompt.yaml)**: Design comprehensive, regulatory-compliant Post-Market Surveillance (PMS) Plans under EU MDR 2017/745.
+- **[EU MDR PSUR Architect](eu_mdr_psur_architect.prompt.yaml)**: Designs comprehensive, regulatory-compliant Periodic Safety Update Reports (PSUR) under EU MDR 2017/745 Article 86 and MDCG 2022-21.
 - **[Financial Conflict of Interest (FCOI) Reporting](fcoi_reporting.prompt.yaml)**: Review disclosures and draft management plan.
 - **[FDA 483 Response Strategist](fda_483_response_strategist.prompt.yaml)**: Design comprehensive, regulatory-compliant responses to FDA Form 483 observations, employing an authoritative and structured corrective action strategy.
 - **[GLP Quality Assurance](glp_quality_assurance.prompt.yaml)**: Prepare a statement for a nonclinical study report certifying inspection dates.
