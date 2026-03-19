@@ -653,6 +653,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Technical
 
+- [API Gateway and BFF Architect](prompts/technical/architecture/api_gateway_bff_architect.prompt.md)
 - [Chaos Engineering Experiment Designer](prompts/technical/architecture/chaos_engineering_experiment_designer.prompt.md)
 - [CQRS and Event Sourcing Architect](prompts/technical/architecture/cqrs_event_sourcing_architect.prompt.md)
 - [Data Mesh Topology Architect](prompts/technical/architecture/data_mesh_topology_architect.prompt.md)
