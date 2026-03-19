@@ -60,6 +60,7 @@ title: Clinical
 - [Informed Consent Form Plain Language Translator](prompts/clinical/medical_writing/icf_plain_language_translator.prompt.md)
 - [Informed Consent Process Optimization](prompts/clinical/trial_execution/informed_consent_process.prompt.md)
 - [Investigator Follow-up Email & Action-Item Tracker](prompts/clinical/cra/cra_workflow/02_investigator_follow_up_email_tracker.prompt.md)
+- [Investigator's Brochure Safety Update Architect](prompts/clinical/medical_writing/investigators_brochure_safety_update_architect.prompt.md)
 - [IQ/OQ/PQ Validation](prompts/clinical/eclinical_integration/iq_oq_pq_validation.prompt.md)
 - [ISO Strategist](prompts/clinical/therapy/music_therapy_workflow/02_iso_strategist.prompt.md)
 - [Lyricist](prompts/clinical/therapy/music_therapy_workflow/04_lyricist.prompt.md)
