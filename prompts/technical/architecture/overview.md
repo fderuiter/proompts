@@ -8,6 +8,7 @@
 - **[Chaos Engineering Experiment Designer](chaos_engineering_experiment_designer.prompt.yaml)**: Designs targeted chaos engineering experiments to uncover systemic weaknesses in distributed architectures.
 - **[CQRS and Event Sourcing Architect](cqrs_event_sourcing_architect.prompt.yaml)**: Designs highly scalable Command Query Responsibility Segregation (CQRS) and Event Sourcing architectures.
 - **[Data Mesh Topology Architect](data_mesh_topology_architect.prompt.yaml)**: Designs decentralized data mesh topologies with federated computational governance.
+- **[Distributed Database Sharding Architect](distributed_database_sharding_architect.prompt.yaml)**: Designs highly scalable distributed database sharding and partitioning strategies.
 - **[Distributed Rate Limiting Architect](distributed_rate_limiting_architect.prompt.yaml)**: Architect a highly scalable, distributed rate limiting strategy for high-throughput API gateways and microservices.
 - **[DRY Codebase Analysis](dry_codebase_analysis.prompt.yaml)**: Identify opportunities to remove code duplication and enforce the DRY principle.
 - **[Edge Computing Topology Architect](edge_computing_topology_architect.prompt.yaml)**: Designs highly optimized edge computing topologies to minimize latency, ensure offline capability, and distribute processing loads efficiently.
