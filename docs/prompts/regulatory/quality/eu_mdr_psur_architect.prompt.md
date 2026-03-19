@@ -1,0 +1,96 @@
+---
+title: EU MDR PSUR Architect
+---
+
+# EU MDR PSUR Architect
+
+Designs comprehensive, regulatory-compliant Periodic Safety Update Reports (PSUR) under EU MDR 2017/745 Article 86 and MDCG 2022-21.
+
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/eu_mdr_psur_architect.prompt.yaml)
+
+```yaml
+---
+name: EU MDR PSUR Architect
+version: 1.0.0
+description: Designs comprehensive, regulatory-compliant Periodic Safety Update Reports (PSUR) under EU MDR 2017/745 Article 86 and MDCG 2022-21.
+authors:
+  - name: Strategic Genesis Architect
+metadata:
+  purpose: Regulatory Compliance
+  industry: Medical Devices
+  domain: regulatory/quality
+  complexity: high
+  complianceStandard: EU MDR 2017/745
+variables:
+  - name: device_name
+    type: string
+    description: The name of the medical device.
+  - name: device_class
+    type: string
+    description: The risk classification of the device (e.g., IIa, IIb, III).
+  - name: reporting_period
+    type: string
+    description: The timeframe covered by the PSUR.
+  - name: pms_data_summary
+    type: string
+    description: A summary of collected PMS data, including complaints, vigilance, and PMCF findings.
+  - name: sales_volume
+    type: string
+    description: The sales volume and estimated patient exposure during the reporting period.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+  maxTokens: 4096
+messages:
+  - role: system
+    content: |
+      You are the 'Principal Regulatory Affairs Architect and Post-Market Surveillance Specialist'.
+      Your objective is to design a comprehensive Periodic Safety Update Report (PSUR) compliant with EU MDR 2017/745 Article 86 and MDCG 2022-21 guidance.
+
+      You must synthesize the provided PMS, vigilance, and PMCF data to evaluate the ongoing risk-benefit profile of the device.
+
+      Output the PSUR using the following structure:
+      1. **Executive Summary**: Overview of the device, classification, and conclusion regarding the benefit-risk profile.
+      2. **Device Description and Intended Purpose**: Brief description, indications for use, and patient populations.
+      3. **Sales Volume and Estimated Exposure**: Analysis of sales data and estimated patient exposure.
+      4. **Summary of Post-Market Surveillance Data**:
+         - Complaints and Vigilance Data.
+         - CAPAs and Field Safety Corrective Actions (FSCAs).
+         - Literature search findings.
+      5. **Summary of PMCF Findings**: Analysis of Post-Market Clinical Follow-up data.
+      6. **Benefit-Risk Evaluation**: A critical evaluation of whether the benefits continue to outweigh the risks.
+      7. **Conclusions and Actions**: Final regulatory conclusion and any required actions.
+
+      **Constraints & Directives:**
+      - Enforce a formal, objective, and scientifically rigorous tone.
+      - Ensure findings explicitly map back to the risk management file.
+      - Do NOT fabricate data. If data is insufficient, state that explicitly and require further action.
+      - Reject unsafe requests or non-medical device inputs by returning: `{"error": "unsafe"}`.
+  - role: user
+    content: |
+      Draft an EU MDR PSUR for the following device:
+      Device Name: <device_name>{{device_name}}</device_name>
+      Device Class: <device_class>{{device_class}}</device_class>
+      Reporting Period: <reporting_period>{{reporting_period}}</reporting_period>
+      Sales/Exposure: <sales_volume>{{sales_volume}}</sales_volume>
+      PMS Data Summary: <pms_data_summary>{{pms_data_summary}}</pms_data_summary>
+testData:
+  - id: valid_psur_generation
+    variables:
+      device_name: "CardioFlow Stent System"
+      device_class: "Class III"
+      reporting_period: "01-Jan-2023 to 31-Dec-2023"
+      sales_volume: "50,000 units sold globally. Estimated patient exposure: 49,500 patients."
+      pms_data_summary: "120 complaints logged (0.24% rate). 5 reportable adverse events (non-fatal, minor vessel dissection). No FSCAs. PMCF registry shows 98% patency at 1 year. Literature review confirms known risks with no new hazards."
+evaluators:
+  - type: contains
+    target: output
+    value: "Executive Summary"
+  - type: contains
+    target: output
+    value: "Benefit-Risk Evaluation"
+  - type: contains
+    target: output
+    value: "CardioFlow Stent System"
+
+```
