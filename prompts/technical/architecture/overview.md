@@ -19,6 +19,7 @@
 - **[Hexagonal Architecture Implementation](hexagonal_architecture_implementation.prompt.yaml)**: Expert guidance on implementing Hexagonal Architecture, focusing on data flow, dependency inversion, and component placement.
 - **[Hexagonal Architecture Principles](hexagonal_architecture_principles.prompt.yaml)**: Explain the core philosophy, skeleton, and benefits of Hexagonal Architecture (Ports and Adapters).
 - **[Hexagonal Architecture Review](hexagonal_architecture_review.prompt.yaml)**: Analyze code for adherence to Hexagonal Architecture principles, identifying layer violations and dependency issues.
+- **[Idempotency and API Retry Strategy Architect](idempotency_strategy_architect.prompt.yaml)**: Designs highly robust, distributed idempotency and retry architectures for APIs and message-driven systems to prevent duplicate processing.
 - **[Maintainability Codebase Analysis](maintainability_codebase_analysis.prompt.yaml)**: Improve code maintainability by addressing readability, organization, and test quality.
 - **[Micro-Frontend Orchestration Architect](micro_frontend_orchestration_architect.prompt.yaml)**: Designs robust, scalable micro-frontend architectures, addressing orchestration, state management, and routing strategies.
 - **[Multi-Region Active-Active Resilience Architect](multi_region_active_active_resilience.prompt.yaml)**: Designs true active-active multi-region topologies, resolving global state conflict and replication latency.
