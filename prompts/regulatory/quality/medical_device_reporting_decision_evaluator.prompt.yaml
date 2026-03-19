@@ -55,13 +55,26 @@ testData:
       device_information: "Class II life-supporting infusion pump."
       patient_impact: "The patient experienced a transient drop in blood pressure requiring administration of IV fluids to stabilize, extending the surgery by 30 minutes."
     expected: "Reportable"
+  - input:
+      complaint_description: "Patient 001-A failed screening during initial baseline tests."
+      device_information: "Model X200 wearable."
+      patient_impact: "None."
+    expected: "Not Reportable"
+  - input:
+      complaint_description: ""
+      device_information: ""
+      patient_impact: ""
+    expected: "Error: Insufficient data to determine reportability."
 evaluators:
   - name: FDA Reportability Check
     regex:
-      pattern: (?i)FDA 21 CFR 803
+      pattern: "(?i)(Reportable|Not Reportable) under FDA 21 CFR 803"
   - name: EU MDR Reportability Check
     regex:
-      pattern: (?i)EU MDR 2017/745
+      pattern: "(?i)(Reportable|Not Reportable) under EU MDR 2017/745"
   - name: Timeline Check
     regex:
-      pattern: (?i)timeline|days
+      pattern: "(?i)(5|15|30) days"
+  - name: Edge Case Handled
+    regex:
+      pattern: "(?i)(insufficient data|need more information|error)"
