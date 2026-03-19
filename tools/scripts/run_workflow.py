@@ -148,8 +148,9 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
             match = True
             for k, v in expected_inputs.items():
                 # Convert both to string for comparison to handle potential type mismatches
-                # or strictly compare values?
-                if k not in inputs or inputs[k] != v:
+                # Note: We cast to string because testData inputs might be defined as ints/bools
+                # in YAML, but command-line inputs (-i) are parsed as strings.
+                if k not in inputs or str(inputs[k]) != str(v):
                     match = False
                     break
 

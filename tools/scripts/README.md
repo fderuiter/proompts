@@ -149,6 +149,21 @@ python3 tools/scripts/run_workflow.py path/to/workflow.workflow.yaml -v
 python3 tools/scripts/run_workflow.py path/to/workflow.workflow.yaml -i user_name="Alice"
 ```
 
+**Workflow Input & testData Example:**
+
+To successfully simulate a workflow step, your prompt file must contain a `testData` array that matches the inputs passed to it:
+
+```yaml
+# In your prompt.yaml file:
+testData:
+  - inputs:
+      user_name: "Alice"
+      role: "admin"
+    expected: "Hello Admin Alice, welcome to the system."
+```
+
+If the inputs map exactly to what the `run_workflow.py` engine provides (e.g., via `-i user_name="Alice" -i role="admin"`), the simulator returns the `expected` string.
+
 ## Documentation Maintenance
 
 ### `update_docs_index.py`
