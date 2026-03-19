@@ -4,6 +4,7 @@
 - [Togaf/](togaf/overview.md)
 
 ## Prompts
+- **[API Gateway and BFF Architect](api_gateway_bff_architect.prompt.yaml)**: Designs highly scalable, secure, and performant API Gateway and Backend-for-Frontend (BFF) architectures for microservices ecosystems.
 - **[Chaos Engineering Experiment Designer](chaos_engineering_experiment_designer.prompt.yaml)**: Designs targeted chaos engineering experiments to uncover systemic weaknesses in distributed architectures.
 - **[CQRS and Event Sourcing Architect](cqrs_event_sourcing_architect.prompt.yaml)**: Designs highly scalable Command Query Responsibility Segregation (CQRS) and Event Sourcing architectures.
 - **[Data Mesh Topology Architect](data_mesh_topology_architect.prompt.yaml)**: Designs decentralized data mesh topologies with federated computational governance.
