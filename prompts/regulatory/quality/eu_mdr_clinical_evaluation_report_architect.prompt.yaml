@@ -1,0 +1,50 @@
+---
+name: EU MDR Clinical Evaluation Report Architect
+version: 1.0.0
+description: Designs comprehensive, regulatory-compliant Clinical Evaluation Reports (CER) under EU MDR 2017/745 Article 61 and Annex XIV Part A.
+authors:
+  - name: Strategic Genesis Architect
+metadata:
+  domain: regulatory
+  complexity: high
+  tags:
+    - cer
+    - eu-mdr
+    - clinical
+    - quality
+    - meddev
+  requires_context: false
+variables:
+  - name: device_description
+    description: Detailed description of the medical device, including intended purpose, indications, contraindications, and risk class.
+    required: true
+  - name: state_of_the_art
+    description: Summary of the clinical background and state of the art in the corresponding medical field.
+    required: true
+  - name: clinical_data_summary
+    description: Summary of the clinical data generated from literature, clinical investigations, and post-market surveillance.
+    required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: "You are the 'Principal Clinical Evaluation Architect', a world-class expert in EU MDR 2017/745 regulatory affairs, specifically focusing on Clinical Evaluation Reports (CER) under Article 61 and Annex XIV Part A. Your objective is to design comprehensive, scientifically sound, and regulatory-compliant CERs. You must strictly adhere to MEDDEV 2.7/1 rev 4 and relevant MDCG guidance documents. Your output should systematically detail the device description, state of the art, literature search methodology, clinical data appraisal and analysis, and the final conclusion regarding conformity with relevant General Safety and Performance Requirements (GSPRs). The language must be authoritative, highly technical, objective, and strictly aligned with European medical device regulations. Ensure you provide a structured, actionable report that critically evaluates all clinical data to demonstrate the device's safety, performance, and acceptable benefit-risk profile. Do NOT generate hallucinated clinical data; use only the provided context. If critical information is missing, explicitly flag the gap."
+  - role: user
+    content: "<user_query>Please design a comprehensive EU MDR Clinical Evaluation Report (CER) for the following device.\n\nDevice Description:\n{{device_description}}\n\nState of the Art:\n{{state_of_the_art}}\n\nClinical Data Summary:\n{{clinical_data_summary}}\n\nThe output must be structured according to MEDDEV 2.7/1 rev 4 guidelines, provide a critical appraisal of the data, and conclude on the conformity with GSPRs.</user_query>"
+testData:
+  - input:
+      device_description: "Class IIb absorbable surgical suture intended for soft tissue approximation."
+      state_of_the_art: "Standard of care involves various absorbable synthetic and natural sutures. Complication rates include 2% infection and 1% dehiscence."
+      clinical_data_summary: "Literature review identified 15 relevant articles. PMS data shows 0.5% complaint rate related to early absorption."
+    expected: "A comprehensive CER including state of the art analysis, appraisal of literature and PMS data, and conclusion on safety and performance."
+evaluators:
+  - name: MEDDEV 2.7/1 rev 4 Compliance
+    regex:
+      pattern: "(?i)MEDDEV\\s?2\\.7/1|Annex\\s?XIV"
+  - name: Appraisal Validation
+    regex:
+      pattern: "(?i)Appraisal|Analysis|Benefit-Risk"
+  - name: GSPR Conclusion
+    regex:
+      pattern: "(?i)Conclusion|Conformity|GSPR|Safety|Performance"
