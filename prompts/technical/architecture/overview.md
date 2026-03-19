@@ -24,6 +24,7 @@
 - **[Multi-Region Active-Active Resilience Architect](multi_region_active_active_resilience.prompt.yaml)**: Designs true active-active multi-region topologies, resolving global state conflict and replication latency.
 - **[Multi-Tenant SaaS Architecture Designer](multi_tenant_saas_architecture_designer.prompt.yaml)**: Designs highly scalable, secure, and cost-efficient multi-tenant SaaS architectures, focusing on tenant isolation, data partitioning, and noisy neighbor mitigation.
 - **[Offline-First Synchronization Architect](offline_first_sync_architect.prompt.yaml)**: Designs highly resilient, offline-first data synchronization and conflict resolution architectures for occasionally connected distributed clients.
+- **[Platform Engineering IDP Architect](platform_engineering_idp_architect.prompt.yaml)**: Designs scalable, developer-centric Internal Developer Platforms (IDPs) utilizing platform engineering principles to reduce cognitive load, standardize golden paths, and accelerate delivery velocity.
 - **[Real-Time Stream Processing Architect](real_time_stream_processing_architect.prompt.yaml)**: Designs highly scalable, fault-tolerant real-time data streaming and processing architectures.
 - **[Service Mesh Security Architect](service_mesh_security_architect.prompt.yaml)**: Designs zero-trust mTLS communication policies and robust service mesh architectures within Kubernetes environments.
 - **[SOLID Codebase Analysis](solid_codebase_analysis.prompt.yaml)**: Evaluate code against SOLID principles and suggest refactoring tasks.
