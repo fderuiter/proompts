@@ -18,6 +18,16 @@ Usage:
 
     # Generate JSON Schema for IDEs
     python3 tools/scripts/validate_prompt_schema.py --json-schema > docs/schemas/prompt.schema.json
+
+Example valid testData section:
+    ```yaml
+    testData:
+      - inputs:
+          user_input: "Hello world"
+        expected: "Hello! How can I help you today?"
+    evaluators:
+      - rule: "Output must contain 'Hello'"
+    ```
 """
 
 from __future__ import annotations
