@@ -14,6 +14,7 @@
 - **[Distributed Rate Limiting Architect](distributed_rate_limiting_architect.prompt.yaml)**: Architect a highly scalable, distributed rate limiting strategy for high-throughput API gateways and microservices.
 - **[DRY Codebase Analysis](dry_codebase_analysis.prompt.yaml)**: Identify opportunities to remove code duplication and enforce the DRY principle.
 - **[Edge Computing Topology Architect](edge_computing_topology_architect.prompt.yaml)**: Designs highly optimized edge computing topologies to minimize latency, ensure offline capability, and distribute processing loads efficiently.
+- **[Enterprise RAG Architecture Designer](enterprise_rag_architecture_designer.prompt.yaml)**: Designs highly secure, hallucination-resistant, and high-throughput Retrieval-Augmented Generation (RAG) architectures for enterprise LLM deployments.
 - **[Event-Driven Topology Designer](event_driven_topology_designer.prompt.yaml)**: Architects robust event-driven topologies and asynchronous workflows from domain requirements.
 - **[finops_cloud_cost_optimization_architect](finops_cloud_cost_optimization_architect.prompt.yaml)**: Analyzes existing cloud architectures to identify cost inefficiencies and redesigns them using advanced FinOps principles, ensuring optimal resource utilization without compromising performance SLAs.
 - **[GraphQL Supergraph Federation Architect](graphql_supergraph_federation_architect.prompt.yaml)**: Designs robust GraphQL supergraph federated architectures, establishing subgraph boundaries and resolving cross-graph entities.
