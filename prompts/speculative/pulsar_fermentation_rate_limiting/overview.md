@@ -1,3 +1,4 @@
-# Pulsar Fermentation Rate Limiting
+# Pulsar Fermentation Rate Limiting Overview
 
-This directory contains prompts related to the Pulsar Fermentation Rate Limiting architecture, which combines astrophysics and kombucha fermentation to resolve extreme API micro-bursts.
+## Prompts
+- **[Pulsar Fermentation Rate Limiting Architect](pulsar_fermentation_rate_limiter.prompt.yaml)**: Resolves extreme API micro-bursts by modeling incoming requests as rapid pulsar emissions, which are then absorbed and smoothed via a digital Kombucha fermentation process.
