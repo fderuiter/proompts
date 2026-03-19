@@ -31,10 +31,10 @@ variables:
   required: true
 model: gpt-4o
 modelParameters:
-  temperature: 0.2
+  temperature: 0.1
 messages:
 - role: system
-  content: 'You are an expert software engineer and code-review assistant.
+  content: 'You are a Principal Backend Engineer specializing in High-Availability Distributed Systems.
 
 
     1. Restate the task in your own words.
