@@ -9,5 +9,6 @@
 - [Gregorian Fluid Autoscaling/](gregorian_fluid_autoscaling/overview.md)
 - [Myco Baroque Cybersecurity/](myco_baroque_cybersecurity/overview.md)
 - [Origami Paleo Cloud Scaling/](origami_paleo_cloud_scaling/overview.md)
+- [Pulsar Fermentation Rate Limiting/](pulsar_fermentation_rate_limiting/overview.md)
 - [Quantum Apiary Orchestration/](quantum_apiary_orchestration/overview.md)
 - [Quantum Paleo Arbitrage/](quantum_paleo_arbitrage/overview.md)
