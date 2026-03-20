@@ -5,6 +5,7 @@ title: Architecture
 # Architecture
 
 ## Prompts
+- [AI Model Inference Serving Architect](prompts/technical/architecture/ai_model_inference_serving_architect.prompt.md)
 - [API Gateway and BFF Architect](prompts/technical/architecture/api_gateway_bff_architect.prompt.md)
 - [Chaos Engineering Experiment Designer](prompts/technical/architecture/chaos_engineering_experiment_designer.prompt.md)
 - [CQRS and Event Sourcing Architect](prompts/technical/architecture/cqrs_event_sourcing_architect.prompt.md)
