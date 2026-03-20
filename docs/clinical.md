@@ -40,6 +40,7 @@ title: Clinical
 - [Data De-identification](prompts/clinical/data_management/data_deidentification.prompt.md)
 - [Data Management Plan (DMP) Development](prompts/clinical/data_management/dmp_development.prompt.md)
 - [Data Mapping and Transformation Playbook](prompts/clinical/eclinical_integration/eclinical_integration_workflow/02_data_mapping_transformation_playbook.prompt.md)
+- [Data Safety Monitoring Board Report Synthesizer](prompts/clinical/medical_writing/data_safety_monitoring_board_report_synthesizer.prompt.md)
 - [Database Lock Procedures](prompts/clinical/data_management/database_lock_procedures.prompt.md)
 - [Decentralized Trial Risk Matrix](prompts/clinical/data_management/decentralized_trial_risk_matrix.prompt.md)
 - [Design a Patient-Centered Randomization Scheme](prompts/clinical/rtsm/rtsm_workflow/01_patient_centered_randomization_scheme.prompt.md)
