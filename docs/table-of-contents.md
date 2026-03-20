@@ -500,6 +500,7 @@
 [PAW Phase 2 - Architectural Blueprint](prompts/technical/software_engineering/tasks/paw/paw_02_architectural_blueprint.prompt.md)
 [PAW Phase 3 - Precision Strike](prompts/technical/software_engineering/tasks/paw/paw_03_precision_strike.prompt.md)
 [PAW Phase 4 - Quality Assurance & Log](prompts/technical/software_engineering/tasks/paw/paw_04_qa_verification.prompt.md)
+[AI Model Inference Serving Architect](prompts/technical/architecture/ai_model_inference_serving_architect.prompt.md)
 [API Gateway and BFF Architect](prompts/technical/architecture/api_gateway_bff_architect.prompt.md)
 [Chaos Engineering Experiment Designer](prompts/technical/architecture/chaos_engineering_experiment_designer.prompt.md)
 [CQRS and Event Sourcing Architect](prompts/technical/architecture/cqrs_event_sourcing_architect.prompt.md)
