@@ -13,6 +13,7 @@
 - **[Distributed Database Sharding Architect](distributed_database_sharding_architect.prompt.yaml)**: Designs highly scalable distributed database sharding and partitioning strategies.
 - **[Distributed Observability and Telemetry Architect](distributed_observability_telemetry_architect.prompt.yaml)**: A Principal Distributed Observability and Telemetry Architect to design highly scalable, robust distributed observability and telemetry pipelines.
 - **[Distributed Rate Limiting Architect](distributed_rate_limiting_architect.prompt.yaml)**: Architect a highly scalable, distributed rate limiting strategy for high-throughput API gateways and microservices.
+- **[Distributed Transaction Orchestration Architect](distributed_transaction_orchestration_architect.prompt.yaml)**: Designs highly resilient, distributed transaction orchestration architectures using Saga, 2PC, or TCC patterns across microservices to ensure data consistency.
 - **[DRY Codebase Analysis](dry_codebase_analysis.prompt.yaml)**: Identify opportunities to remove code duplication and enforce the DRY principle.
 - **[Edge Computing Topology Architect](edge_computing_topology_architect.prompt.yaml)**: Designs highly optimized edge computing topologies to minimize latency, ensure offline capability, and distribute processing loads efficiently.
 - **[Enterprise RAG Architecture Designer](enterprise_rag_architecture_designer.prompt.yaml)**: Designs highly secure, hallucination-resistant, and high-throughput Retrieval-Augmented Generation (RAG) architectures for enterprise LLM deployments.
