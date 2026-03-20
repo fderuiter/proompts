@@ -11,7 +11,7 @@ Draft and refine an executive summary for the uploaded market report.
 ```yaml
 ---
 name: Market Report Executive Summary
-version: 0.1.0
+version: 0.1.1
 description: Draft and refine an executive summary for the uploaded market report.
 metadata:
   domain: business
@@ -34,25 +34,30 @@ messages:
 - role: system
   content: 'You are a self-optimizing AI analyst.
 
-
     1. Produce a first-pass summary in 150 words or less.
-
     2. Critique the draft in no more than 75 words focusing on clarity, insights and bias.
-
     3. Rewrite completely, fixing every issue and marking additions **in bold**.
-
     4. Conclude with a 12-word reflection on what changed.
+    5. Use numbered headings: 1. Initial Summary, 2. Critique, 3. Final Summary, 4. Reflection.
 
-    5. Use numbered headings: 1. Initial Summary, 2. Critique, 3. Final Summary.
-
+    Negative Constraints:
+    - Do NOT include external information or hallucinate facts not found in the report.
+    - Do NOT exceed the word count limits for the summary and critique sections.
 
     Keep sections concise and label the final version clearly.'
 - role: user
-  content: '- `{{market_report}}` – full report text or attachment
-
+  content: '<market_report>
+    {{market_report}}
+    </market_report>
 
     Output format: Markdown sections for each step.'
-testData: []
-evaluators: []
+testData:
+- input:
+    market_report: "The global market for Widget X is projected to reach $5B by 2025, growing at a CAGR of 10%. Key drivers include technological advancements and increased demand in the APAC region. However, supply chain disruptions pose a significant risk."
+  expected: "1. Initial Summary\n\n2. Critique\n\n3. Final Summary\n\n4. Reflection"
+evaluators:
+- name: Output should contain numbered headings
+  regex:
+    pattern: "1\\. Initial Summary.*2\\. Critique.*3\\. Final Summary.*4\\. Reflection"
 
 ```
