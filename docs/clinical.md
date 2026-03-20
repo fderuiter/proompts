@@ -98,6 +98,7 @@ title: Clinical
 - [Regulatory Gap Analysis](prompts/clinical/data_management/regulatory_gap_analysis.prompt.md)
 - [Regulatory Imaging Charter Generator](prompts/clinical/imaging/imaging_workflow/04_regulatory_imaging_charter_generator.prompt.md)
 - [Regulatory Imaging Data Package](prompts/clinical/imaging/imaging_workflow/06_regulatory_imaging_data_package.prompt.md)
+- [Regulatory Query Response Drafter](prompts/clinical/medical_writing/regulatory_query_response_drafter.prompt.md)
 - [Risk-Based Monitoring (RBM) Plan Builder](prompts/clinical/cra/cra_workflow/03_rbm_plan_builder.prompt.md)
 - [Risk-Based Monitoring and Quality Plan](prompts/clinical/trial_execution/risk_based_monitoring_plan.prompt.md)
 - [Risk-Based Monitoring Data Evaluation](prompts/clinical/monitoring/rbm_data_evaluation.prompt.md)
