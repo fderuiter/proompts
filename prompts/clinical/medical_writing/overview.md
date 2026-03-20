@@ -1,6 +1,7 @@
 # Medical Writing Overview
 
 ## Prompts
+- **[Clinical Trial Protocol Synopsis Architect](clinical_trial_protocol_synopsis_architect.prompt.yaml)**: Synthesizes a comprehensive, regulatory-compliant Clinical Trial Protocol Synopsis from raw study design parameters, objectives, and statistical assumptions.
 - **[Clinical Study Report (CSR) Narrative Drafter](csr_narrative_drafter.prompt.yaml)**: Automate the drafting of patient narratives for Clinical Study Reports (CSRs) by transforming clinical data into clear summaries with citations.
 - **[CSR Plain Language Summary Generator](csr_plain_language_summary_generator.prompt.yaml)**: Generates a Plain Language Summary (PLS) from a Clinical Study Report (CSR) following EU CTR 536/2014 requirements.
 - **[Data Safety Monitoring Board Report Synthesizer](data_safety_monitoring_board_report_synthesizer.prompt.yaml)**: Synthesizes unblinded clinical trial safety and efficacy data into a comprehensive, confidential report for Data Safety Monitoring Board (DSMB) review.
