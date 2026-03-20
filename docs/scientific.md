@@ -50,6 +50,7 @@ title: Scientific
 - [Study Design and Statistical Approach](prompts/scientific/biostatistics/study_design_statistical_approach.prompt.md)
 - [Submission-Ready Statistical Analysis Plan](prompts/scientific/biostatistics/submission_ready_sap.prompt.md)
 - [Time-to-Event Analysis Coach](prompts/scientific/biostatistics/time_to_event_analysis_coach.prompt.md)
+- [Topological Counterexample Generator](prompts/scientific/mathematics/topology/topological_counterexample_generator.prompt.md)
 - [Universal Template-Table Prompt](prompts/scientific/biostatistics/universal_template_table_prompt.prompt.md)
 - [Write the Regulatory Summary](prompts/scientific/chemical_characterization/chemical_characterization_workflow/03_write_the_regulatory_summary.prompt.md)
 

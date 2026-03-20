@@ -385,6 +385,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Regulatory & Commercial Barrier Mapping](prompts/business/market_research/market_research_workflow/03_regulatory_commercial_barrier_mapping.prompt.md)
 - [Market Report Executive Summary](prompts/business/market_research/market_research_workflow/04_market_report_exec_summary.prompt.md)
 
+## Mathematics
+
+- [Topological Counterexample Generator](prompts/scientific/mathematics/topology/topological_counterexample_generator.prompt.md)
+
 ## Meta
 
 - [The Prompt Alchemist](prompts/meta/creative/the_prompt_alchemist.prompt.md)
