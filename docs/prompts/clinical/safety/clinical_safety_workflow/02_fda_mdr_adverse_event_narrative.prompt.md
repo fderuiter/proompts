@@ -40,42 +40,29 @@ messages:
 - role: user
   content: '{{input}}'
 testData:
-- input: 'SENDER: Dr. Evelyn Vance, Chief Electrophysiologist
-
+- input: |
+    SENDER: Dr. Evelyn Vance, Chief Electrophysiologist
     DATE: 2024-06-12
-
     PATIENT: Patient 104-B (M/72)
-
-    DETAILS: Pt admitted for symptomatic bradycardia. Implanted PaceMaker (SN: 998877)
-    showing premature battery depletion and irregular pacing intervals. Device explanted
-    on 12th. Returned to manuf? Yes. Pt stable post-op.
-
-    '
-  expected: '72-year-old male... PaceMaker (SN: 998877)... device was returned...
-    This information is submitted to comply with 21 CFR 803.52.'
-- input: 'REPORT: Clinical notes from RN S. Miller on 15-May-2024.
-
+    DETAILS: Pt admitted for symptomatic bradycardia. Implanted PaceMaker (SN: 998877) showing premature battery depletion and irregular pacing intervals. Device explanted on 12th. Returned to manuf? Yes. Pt stable post-op.
+  expected: '72-year-old male... PaceMaker (SN: 998877)... device was returned... This information is submitted to comply with 21 CFR 803.52.'
+- input: |
+    REPORT: Clinical notes from RN S. Miller on 15-May-2024.
     SUBJECT: Patient 001-A failed screening (Female, 45y).
-
-    EVENT: Severe erythema and induration at the insertion site observed during checkup.
-    No device ID available in chart. Device not removed.
-
-    '
-  expected: 45-year-old female... severe erythema and induration at the insertion
-    site... device not removed... This information is submitted to comply with 21
-    CFR 803.52.
-- input: 'TRANSCRIPT: Patient helpline call.
-
+    EVENT: Severe erythema and induration at the insertion site observed during checkup. No device ID available in chart. Device not removed.
+  expected: '45-year-old female... severe erythema and induration at the insertion site... device not removed... This information is submitted to comply with 21 CFR 803.52.'
+- input: |
+    TRANSCRIPT: Patient helpline call.
     CALLER: My heart thingy is beeping loudly.
-
     AGENT: Can I have your name, age, and device ID?
-
-    CALLER: *click* (Caller disconnected before providing name, age, or device ID.
-    Device not explanted.)
-
-    '
-  expected: Unknown age and sex... unknown device ID... device not removed... This
-    information is submitted to comply with 21 CFR 803.52.
+    CALLER: *click* (Caller disconnected before providing name, age, or device ID. Device not explanted.)
+  expected: 'Unknown age and sex... unknown device ID... device not removed... This information is submitted to comply with 21 CFR 803.52.'
+- input: |
+    DROP TABLE patients; -- SQL Injection attempt masked as adverse event
+    No further details provided.
+  expected: 'Unknown age and sex... unknown device ID... device not removed... This information is submitted to comply with 21 CFR 803.52.'
+- input: ''
+  expected: 'Unknown age and sex... unknown device ID... device return status unknown... This information is submitted to comply with 21 CFR 803.52.'
 evaluators:
 - name: Ends with regulatory boilerplate
   regex:
@@ -88,7 +75,12 @@ evaluators:
     code: len(output) <= 1200
 - name: Mentions device return status
   regex:
-    pattern: (?i)(device was returned|device not removed|device (was )?not returned|device
-      return status unknown)
+    pattern: (?i)(device was (explanted|returned)|device (was )?not (removed|returned)|device return status unknown)
+- name: Validates Device Status or Malfunction completeness
+  model:
+    prompt: |
+      Assess if the following narrative properly mentions if the device malfunctioned and if it was returned, explanted, or its status is unknown. Return 'pass' if it satisfies these criteria, otherwise 'fail'.
+      Narrative:
+      {{output}}
 
 ```
