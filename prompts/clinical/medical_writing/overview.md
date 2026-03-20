@@ -11,3 +11,4 @@
 - **[Pediatric Investigational Plan (PIP) Architect](pediatric_investigational_plan_architect.prompt.yaml)**: Synthesizes scientific rationale and clinical development strategy into a comprehensive, EMA-compliant Pediatric Investigational Plan (PIP) application.
 - **[Protocol Amendment Rationale Drafter](protocol_amendment_rationale_drafter.prompt.yaml)**: Drafts scientifically and ethically sound rationales for clinical trial protocol amendments.
 - **[Regulatory Query Response Drafter](regulatory_query_response_drafter.prompt.yaml)**: Drafts precise, evidence-backed, and regulatory-compliant responses to Health Authority (e.g., FDA/EMA) Information Requests (IRs) or queries regarding clinical submissions.
+- **[SAE Patient Narrative Drafter](sae_patient_narrative_drafter.prompt.yaml)**: Synthesizes complex clinical trial data into regulatory-compliant Serious Adverse Event (SAE) patient narratives for Clinical Study Reports (CSR) per ICH E3 guidelines.
