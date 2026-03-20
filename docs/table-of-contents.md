@@ -511,6 +511,7 @@
 [Distributed Database Sharding Architect](prompts/technical/architecture/distributed_database_sharding_architect.prompt.md)
 [Distributed Observability and Telemetry Architect](prompts/technical/architecture/distributed_observability_telemetry_architect.prompt.md)
 [Distributed Rate Limiting Architect](prompts/technical/architecture/distributed_rate_limiting_architect.prompt.md)
+[Distributed Transaction Orchestration Architect](prompts/technical/architecture/distributed_transaction_orchestration_architect.prompt.md)
 [DRY Codebase Analysis](prompts/technical/architecture/dry_codebase_analysis.prompt.md)
 [Edge Computing Topology Architect](prompts/technical/architecture/edge_computing_topology_architect.prompt.md)
 [Enterprise RAG Architecture Designer](prompts/technical/architecture/enterprise_rag_architecture_designer.prompt.md)
