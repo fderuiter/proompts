@@ -26,6 +26,7 @@ title: Clinical
 - [Clinical Study Report (CSR) Narrative Drafter](prompts/clinical/medical_writing/csr_narrative_drafter.prompt.md)
 - [Clinical Trial Agreement (CTA) Negotiation](prompts/clinical/site_acquisition/cta_negotiation.prompt.md)
 - [Clinical Trial Document Archiving](prompts/clinical/data_management/document_archiving.prompt.md)
+- [Clinical Trial Protocol Synopsis Architect](prompts/clinical/medical_writing/clinical_trial_protocol_synopsis_architect.prompt.md)
 - [Clinical-Trial Protocol Creator](prompts/clinical/protocol/protocol_workflow/01_clinical_trial_protocol_creator.prompt.md)
 - [Compassionate Analyst](prompts/clinical/therapy/music_therapy_workflow/01_compassionate_analyst.prompt.md)
 - [Compassionate Music Therapist & Composer](prompts/clinical/therapy/music_therapist_melody.prompt.md)
