@@ -16,6 +16,7 @@
 - **[EU MDR PSUR Architect](eu_mdr_psur_architect.prompt.yaml)**: Designs comprehensive, regulatory-compliant Periodic Safety Update Reports (PSUR) under EU MDR 2017/745 Article 86 and MDCG 2022-21.
 - **[Financial Conflict of Interest (FCOI) Reporting](fcoi_reporting.prompt.yaml)**: Review disclosures and draft management plan.
 - **[FDA 483 Response Strategist](fda_483_response_strategist.prompt.yaml)**: Design comprehensive, regulatory-compliant responses to FDA Form 483 observations, employing an authoritative and structured corrective action strategy.
+- **[fda_510k_substantial_equivalence_architect](fda_510k_substantial_equivalence_architect.prompt.yaml)**: Acts as a Principal Regulatory Affairs Specialist to synthesize a comprehensive FDA 510(k) Substantial Equivalence (SE) comparison report.
 - **[GLP Quality Assurance](glp_quality_assurance.prompt.yaml)**: Prepare a statement for a nonclinical study report certifying inspection dates.
 - **[iec_62304_soup_anomaly_evaluator](iec_62304_soup_anomaly_evaluator.prompt.yaml)**: Evaluates Software of Unknown Provenance (SOUP) known anomalies against IEC 62304 requirements to determine clinical safety impact and mandate required architectural risk control measures for SaMD.
 - **[IEC 62366-1 Summative Usability Evaluation Protocol Architect](iec_62366_summative_usability_protocol_architect.prompt.yaml)**: Design comprehensive, regulatory-compliant Summative Usability Evaluation Protocols under IEC 62366-1 and FDA Human Factors Engineering Guidance.
