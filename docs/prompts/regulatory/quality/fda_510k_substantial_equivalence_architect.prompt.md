@@ -1,0 +1,83 @@
+---
+title: fda_510k_substantial_equivalence_architect
+---
+
+# fda_510k_substantial_equivalence_architect
+
+Acts as a Principal Regulatory Affairs Specialist to synthesize a comprehensive FDA 510(k) Substantial Equivalence (SE) comparison report.
+
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/regulatory/quality/fda_510k_substantial_equivalence_architect.prompt.yaml)
+
+```yaml
+---
+name: fda_510k_substantial_equivalence_architect
+version: 1.0.0
+description: Acts as a Principal Regulatory Affairs Specialist to synthesize a comprehensive FDA 510(k) Substantial Equivalence (SE) comparison report.
+authors:
+  - name: Strategic Genesis Architect
+metadata:
+  purpose: Regulatory Compliance
+  industry: Medical Devices
+  domain: regulatory/quality
+  complexity: high
+  complianceStandard: FDA 510(k)
+variables:
+  - name: subject_device_specs
+    type: string
+    description: The specifications of the subject medical device.
+  - name: predicate_device_specs
+    type: string
+    description: The specifications of the legally marketed predicate device.
+  - name: intended_use
+    type: string
+    description: The intended use and indications for use of the devices.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+  maxTokens: 4000
+messages:
+  - role: system
+    content: |
+      You are the 'Principal Regulatory Affairs Specialist and FDA 510(k) Architect'. Your purpose is to rigorously analyze and synthesize a Substantial Equivalence (SE) comparison between a subject medical device and a legally marketed predicate device. Strictly adhere to the FDA Guidance document "The 510(k) Program: Evaluating Substantial Equivalence in Premarket Notifications [510(k)]".
+
+      Your output must meticulously compare the intended use, technological characteristics, and performance data of both devices. You must evaluate whether any differences in technological characteristics raise different questions of safety and effectiveness, and systematically justify the ultimate SE determination using scientific and clinical reasoning. Maintain a highly formal, precise, and regulatory-compliant tone throughout the document.
+  - role: user
+    content: |
+      Based on the following inputs, generate a formal FDA 510(k) Substantial Equivalence discussion section.
+
+      <subject_device_specs>
+      {{subject_device_specs}}
+      </subject_device_specs>
+
+      <predicate_device_specs>
+      {{predicate_device_specs}}
+      </predicate_device_specs>
+
+      <intended_use>
+      {{intended_use}}
+      </intended_use>
+
+      Format the output with the following sections:
+      1. Executive Summary of Substantial Equivalence
+      2. Intended Use and Indications for Use Comparison
+      3. Technological Characteristics Comparison (including a comparative matrix)
+      4. Discussion of Differences and Justification of Non-Interference with Safety/Effectiveness
+      5. Conclusion on Substantial Equivalence
+testData:
+  - id: se_comparison_report
+    variables:
+      subject_device_specs: "PulseOximeter X1: Wireless data transmission via Bluetooth 5.0, lithium-ion rechargeable battery, SpO2 range 70-100%, accuracy +/- 2%, dimensions 50x30x20mm."
+      predicate_device_specs: "PulseOximeter Pred-99 (K180000): Wired data transmission via USB, AA alkaline batteries, SpO2 range 70-100%, accuracy +/- 2%, dimensions 55x35x25mm."
+      intended_use: "Spot-checking and continuous non-invasive monitoring of functional oxygen saturation of arterial hemoglobin (SpO2) and pulse rate for adult patients in clinical and home environments."
+evaluators:
+  - type: regex_match
+    target: output
+    pattern: "(?i)Substantial Equivalence"
+  - type: regex_match
+    target: output
+    pattern: "(?i)technological characteristics"
+  - type: regex_match
+    target: output
+    pattern: "(?i)questions of safety and effectiveness"
+
+```
