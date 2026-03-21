@@ -502,6 +502,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [EU MDR PSUR Architect](prompts/regulatory/quality/eu_mdr_psur_architect.prompt.md)
 - [Financial Conflict of Interest (FCOI) Reporting](prompts/regulatory/quality/fcoi_reporting.prompt.md)
 - [FDA 483 Response Strategist](prompts/regulatory/quality/fda_483_response_strategist.prompt.md)
+- [fda_510k_substantial_equivalence_architect](prompts/regulatory/quality/fda_510k_substantial_equivalence_architect.prompt.md)
 - [GLP Quality Assurance](prompts/regulatory/quality/glp_quality_assurance.prompt.md)
 - [iec_62304_soup_anomaly_evaluator](prompts/regulatory/quality/iec_62304_soup_anomaly_evaluator.prompt.md)
 - [IEC 62366-1 Summative Usability Evaluation Protocol Architect](prompts/regulatory/quality/iec_62366_summative_usability_protocol_architect.prompt.md)
