@@ -1,3 +1,4 @@
-# Computational Prompts
+# Computational Overview
 
-This directory contains computational prompt models.
+## Categories
+- [Network Contagion/](network_contagion/overview.md)
