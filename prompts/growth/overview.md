@@ -1,3 +1,4 @@
-# Growth
+# Growth Overview
 
-This directory contains prompts related to growth marketing, predictive modeling, and strategy.
+## Categories
+- [Predictive Modeling/](predictive_modeling/overview.md)
