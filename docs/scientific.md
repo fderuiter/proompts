@@ -47,6 +47,7 @@ title: Scientific
 - [Statistical Analysis Plan (SAP) Development](prompts/scientific/biostatistics/sap_development.prompt.md)
 - [Statistical Analysis Plan Generator](prompts/scientific/biostatistics/statistical_analysis_plan_generator.prompt.md)
 - [Sterility-Validation Protocol Builder](prompts/scientific/sterility/sterility_workflow/01_sterility_validation_protocol_builder.prompt.md)
+- [Stochastic Multi-Objective Optimization Architect](prompts/scientific/mathematics/optimization/stochastic_optimization_architect.prompt.md)
 - [Study Design and Statistical Approach](prompts/scientific/biostatistics/study_design_statistical_approach.prompt.md)
 - [Submission-Ready Statistical Analysis Plan](prompts/scientific/biostatistics/submission_ready_sap.prompt.md)
 - [Time-to-Event Analysis Coach](prompts/scientific/biostatistics/time_to_event_analysis_coach.prompt.md)
