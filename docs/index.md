@@ -299,6 +299,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Image Acquisition QC Workflow Blueprint](prompts/clinical/imaging/imaging_workflow/05_image_acquisition_qc_workflow_blueprint.prompt.md)
 - [Regulatory Imaging Data Package](prompts/clinical/imaging/imaging_workflow/06_regulatory_imaging_data_package.prompt.md)
 
+## Inference
+
+- [bayesian_hierarchical_model_architect](prompts/scientific/statistics/inference/bayesian_methods/bayesian_hierarchical_model_architect.prompt.md)
+
 ## Languages
 
 - [Advanced Python Testing](prompts/technical/languages/python/advanced_python_testing.prompt.md)
