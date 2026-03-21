@@ -432,6 +432,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Prompt Engineer Fact Checker](prompts/meta/meta_prompt_chain/05_L5_prompt_engineer_fact_checker.prompt.md)
 - [PromptCrafter GPT](prompts/meta/meta_prompt_chain/05_L5_promptcrafter_gpt.prompt.md)
 - [README Generator](prompts/meta/meta_prompt_chain/05_L5_readme-generator.prompt.md)
+- [Vector Prompt Calibration Evaluator](prompts/meta/meta_prompt_chain/vector_calibration.prompt.md)
 
 ## Microbiology
 
