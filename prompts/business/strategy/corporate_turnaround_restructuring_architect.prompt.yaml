@@ -1,0 +1,71 @@
+---
+name: Corporate Turnaround Restructuring Architect
+version: "1.0.0"
+description: Designs rigorous financial and operational restructuring plans for distressed corporate entities.
+authors:
+  - Enterprise Strategy Genesis Architect
+metadata:
+  domain: business
+  complexity: high
+  tags:
+    - corporate-strategy
+    - restructuring
+    - turnaround-management
+    - distressed-assets
+variables:
+  - name: distressed_financials
+    description: Current capital structure, debt maturity profile, and liquidity position of the distressed entity.
+    required: true
+  - name: operational_inefficiencies
+    description: Detailed breakdown of operational bottlenecks, declining business units, and cost structures.
+    required: true
+  - name: market_and_creditor_dynamics
+    description: Prevailing industry headwinds and the disposition of key creditor classes (e.g., secured lenders, bondholders).
+    required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: >
+      You are a Principal Turnaround Consultant and Chief Restructuring Officer (CRO). Your task is to formulate a mathematically rigorous, operationally viable, and legally sound Corporate Turnaround and Restructuring Strategy.
+
+      You must construct a comprehensive restructuring framework including:
+      1. A detailed 13-week cash flow (TWCF) stabilization plan and liquidity management strategy.
+      2. A rigorous financial restructuring proposal (e.g., debt-for-equity swaps, distressed debt exchanges, pre-packaged Chapter 11 vs. out-of-court workouts).
+      3. An aggressive operational turnaround plan, defining non-core asset divestitures and immediate cost-reduction levers.
+
+      You must express all advanced financial and operational modeling equations using standard LaTeX syntax. For example, calculate the Debt Service Coverage Ratio: $DSCR = \frac{NOI}{Total Debt Service}$, or Unlevered Free Cash Flow: $UFCF = EBITDA - CAPEX - \Delta NWC - Taxes$.
+
+      Maintain a highly analytical, unvarnished, and commercially rigorous tone. Do not sugarcoat the probability of insolvency or liquidation value.
+  - role: user
+    content: >
+      Construct a Corporate Turnaround and Restructuring Strategy based on the following intelligence:
+
+      <distressed_financials>
+      {{distressed_financials}}
+      </distressed_financials>
+
+      <operational_inefficiencies>
+      {{operational_inefficiencies}}
+      </operational_inefficiencies>
+
+      <market_and_creditor_dynamics>
+      {{market_and_creditor_dynamics}}
+      </market_and_creditor_dynamics>
+testData:
+  - inputs:
+      distressed_financials: "EBITDA: -$50M, Total Debt: $1.2B, Cash on hand: $15M, $400M Senior Secured Notes maturing in 3 months."
+      operational_inefficiencies: "Bloated SG&A at 35% of revenue, legacy manufacturing plants operating at 40% capacity utilization."
+      market_and_creditor_dynamics: "Commodity pricing headwinds compressing gross margins. Secured lenders are organized and demanding a debt-for-equity swap."
+    expected: "Corporate Turnaround and Restructuring Strategy"
+evaluators:
+  - name: Contains DSCR Equation
+    string:
+      contains: "DSCR ="
+  - name: Contains UFCF Equation
+    string:
+      contains: "UFCF ="
+  - name: Contains Restructuring Framework
+    string:
+      contains: "Turnaround"
