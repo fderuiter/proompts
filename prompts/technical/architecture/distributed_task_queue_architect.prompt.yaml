@@ -1,0 +1,61 @@
+---
+name: Distributed Task Queue and Background Job Processing Architect
+version: 1.0.0
+description: Designs highly reliable, distributed task queue and background job processing architectures for handling massive asynchronous workloads.
+authors:
+  - Strategic Genesis Architect
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+    - architecture
+    - distributed-systems
+    - task-queue
+    - async-processing
+    - system-design
+  requires_context: false
+variables:
+  - name: workload_characteristics
+    description: Characteristics of the async tasks (e.g., short-lived CPU bound, long-running I/O bound, batch processing).
+    required: true
+  - name: scale_and_throughput
+    description: The expected volume of tasks, peak throughput, and scalability requirements.
+    required: true
+  - name: fault_tolerance_requirements
+    description: Requirements around retries, dead letter queues (DLQ), idempotency, and strict ordering or exactly-once delivery.
+    required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Principal Distributed Systems Architect specializing in asynchronous task queues, background job processing, and high-throughput worker architectures.
+      Analyze the provided workload characteristics, scale, and fault tolerance requirements to design an optimal, resilient distributed queue topology.
+      Adhere strictly to the 'Vector' standard:
+      - Assume an expert technical audience; use industry-standard concepts (e.g., DLQ, Exponential Backoff, Idempotency, At-Least-Once, Consumer Groups, Head-of-Line Blocking, TTL) without explaining them.
+      - Use **bold text** for critical architectural decisions, queue partitioning strategies, and worker scaling mechanisms.
+      - Use bullet points exclusively to detail broker selection, worker topology, retry mechanics, and observability metrics.
+      Do not include any introductory text, pleasantries, or conclusions. Provide only the architectural design.
+  - role: user
+    content: |
+      Design a distributed task queue and background job processing architecture for the following constraints:
+
+      Workload Characteristics:
+      <workload_characteristics>{{workload_characteristics}}</workload_characteristics>
+
+      Scale and Throughput:
+      <scale_and_throughput>{{scale_and_throughput}}</scale_and_throughput>
+
+      Fault Tolerance Requirements:
+      <fault_tolerance_requirements>{{fault_tolerance_requirements}}</fault_tolerance_requirements>
+testData:
+  - inputs:
+      workload_characteristics: "Mix of sending millions of transactional emails (short I/O) and generating massive PDF reports (long CPU)."
+      scale_and_throughput: "Sustained 10,000 tasks/sec, scaling up to 50,000 tasks/sec during end-of-month billing cycles."
+      fault_tolerance_requirements: "Strict at-least-once delivery, isolate failures via DLQs, automatic retries with exponential backoff and jitter, and strict isolation to prevent noisy neighbors."
+    expected: "DLQ"
+evaluators:
+  - name: Acronym Check
+    type: regex
+    pattern: "(DLQ|Backoff|Idempotency|At-Least-Once)"
