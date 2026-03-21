@@ -107,6 +107,8 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Payment-Process Risk Assessment and Mitigation](prompts/business/payment/payment_process_risk_assessment.prompt.md)
 - [Payment Reconciliation and Discrepancy Report](prompts/business/payment/payment_reconciliation_discrepancy_report.prompt.md)
 - [Sunshine Act and FMV Compliance Check](prompts/business/payment/sunshine_act_fmv_compliance_check.prompt.md)
+- [Corporate Turnaround Restructuring Architect](prompts/business/strategy/corporate_turnaround_restructuring_architect.prompt.md)
+- [Hostile Takeover Defense Matrix Architect](prompts/business/strategy/hostile_takeover_defense_matrix.prompt.md)
 - [Build vs. Buy Decision Matrix](prompts/business/vp_tech_innovation/build_vs_buy_matrix.prompt.md)
 - [Disruption Radar](prompts/business/vp_tech_innovation/disruption_radar.prompt.md)
 - [Elevator Pitch for Expensive Tech](prompts/business/vp_tech_innovation/elevator_pitch_expensive_tech.prompt.md)
@@ -127,6 +129,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Design the Study](prompts/scientific/chemical_characterization/chemical_characterization_workflow/01_design_the_study.prompt.md)
 - [Interpret the Chemistry & Assess Risk](prompts/scientific/chemical_characterization/chemical_characterization_workflow/02_interpret_the_chemistry_assess_risk.prompt.md)
 - [Write the Regulatory Summary](prompts/scientific/chemical_characterization/chemical_characterization_workflow/03_write_the_regulatory_summary.prompt.md)
+
+## Chemistry
+
+- [Quantum Chemical Transition State Architect](prompts/scientific/chemistry/computational/quantum_chemical_transition_state_architect.prompt.md)
 
 ## Clinical
 
@@ -164,6 +170,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [CTD Module 2.5 Clinical Overview Architect](prompts/clinical/medical_writing/ctd_module_2_5_clinical_overview_architect.prompt.md)
 - [Data Safety Monitoring Board Report Synthesizer](prompts/clinical/medical_writing/data_safety_monitoring_board_report_synthesizer.prompt.md)
 - [Informed Consent Form Plain Language Translator](prompts/clinical/medical_writing/icf_plain_language_translator.prompt.md)
+- [icf_readability_compliance_architect](prompts/clinical/medical_writing/icf_readability_compliance_architect.prompt.md)
 - [Investigator's Brochure Safety Update Architect](prompts/clinical/medical_writing/investigators_brochure_safety_update_architect.prompt.md)
 - [Pediatric Investigational Plan (PIP) Architect](prompts/clinical/medical_writing/pediatric_investigational_plan_architect.prompt.md)
 - [Protocol Amendment Rationale Drafter](prompts/clinical/medical_writing/protocol_amendment_rationale_drafter.prompt.md)
@@ -260,6 +267,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [CRF Quality Auditor](prompts/clinical/forms/clinical_prompts_workflow/02_crf_quality_auditor.prompt.md)
 - [CDASH Mapping & Completion-Guide Assistant](prompts/clinical/forms/clinical_prompts_workflow/03_cdash_mapping_completion_guide.prompt.md)
 
+## Genetics
+
+- [crispr_cas9_off_target_predictive_modeler](prompts/scientific/genetics/genomics/crispr_cas9_off_target_predictive_modeler.prompt.md)
+
 ## Google Jules
 
 - [Jules Agile Orchestrator](prompts/google_jules/jules_agile_orchestrator.prompt.md)
@@ -280,6 +291,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Jules Test Generator](prompts/google_jules/jules_test_gen.prompt.md)
 - [Jules UX Writer](prompts/google_jules/jules_ux_writer.prompt.md)
 
+## Growth
+
+- [predictive_churn_ltv_optimization_architect](prompts/growth/predictive_modeling/predictive_churn_ltv_optimization_architect.prompt.md)
+
 ## Imaging
 
 - [Imaging Charter Draft](prompts/clinical/imaging/imaging_workflow/01_imaging_charter_draft.prompt.md)
@@ -288,6 +303,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Regulatory Imaging Charter Generator](prompts/clinical/imaging/imaging_workflow/04_regulatory_imaging_charter_generator.prompt.md)
 - [Image Acquisition QC Workflow Blueprint](prompts/clinical/imaging/imaging_workflow/05_image_acquisition_qc_workflow_blueprint.prompt.md)
 - [Regulatory Imaging Data Package](prompts/clinical/imaging/imaging_workflow/06_regulatory_imaging_data_package.prompt.md)
+
+## Inference
+
+- [bayesian_hierarchical_model_architect](prompts/scientific/statistics/inference/bayesian_methods/bayesian_hierarchical_model_architect.prompt.md)
 
 ## Languages
 
@@ -427,6 +446,13 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Evaluate Device–Tissue Interface Findings](prompts/scientific/pathology/pathology_study_workflow/02_device_tissue_interface_evaluation.prompt.md)
 - [Prepare Pathology Slides and Reporting Plan](prompts/scientific/pathology/pathology_study_workflow/03_slides_and_reporting_workflow.prompt.md)
 
+## Philosophy
+
+- [Natural Language Argument Formalizer](prompts/scientific/philosophy/logic/natural_language_argument_formalizer.prompt.md)
+## Physics
+
+- [Feynman Rule Derivation Architect](prompts/scientific/physics/quantum_field_theory/feynman_rule_derivation_architect.prompt.md)
+
 ## Project Management
 
 - [Project Charter and Scope Definition](prompts/management/project_management/project_management_workflow/01_project_charter_scope.prompt.md)
@@ -445,6 +471,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Protocol to USDM Stage 3 - Workflow](prompts/clinical/protocol/usdm_workflow/03_usdm_stage3_workflow.prompt.md)
 - [Protocol to USDM Stage 4 - Concepts](prompts/clinical/protocol/usdm_workflow/04_usdm_stage4_concepts.prompt.md)
 - [Protocol to USDM Stage 5 - Assembly](prompts/clinical/protocol/usdm_workflow/05_usdm_stage5_assembly.prompt.md)
+
+## Psychology
+
+- [structural_equation_modeling_architect](prompts/scientific/psychology/quantitative/structural_equation_modeling_architect.prompt.md)
 
 ## Regulatory
 
@@ -503,6 +533,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [EU MDR PSUR Architect](prompts/regulatory/quality/eu_mdr_psur_architect.prompt.md)
 - [Financial Conflict of Interest (FCOI) Reporting](prompts/regulatory/quality/fcoi_reporting.prompt.md)
 - [FDA 483 Response Strategist](prompts/regulatory/quality/fda_483_response_strategist.prompt.md)
+- [fda_510k_substantial_equivalence_architect](prompts/regulatory/quality/fda_510k_substantial_equivalence_architect.prompt.md)
 - [GLP Quality Assurance](prompts/regulatory/quality/glp_quality_assurance.prompt.md)
 - [iec_62304_soup_anomaly_evaluator](prompts/regulatory/quality/iec_62304_soup_anomaly_evaluator.prompt.md)
 - [IEC 62366-1 Summative Usability Evaluation Protocol Architect](prompts/regulatory/quality/iec_62366_summative_usability_protocol_architect.prompt.md)
@@ -598,6 +629,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [MCID Research and Summary](prompts/scientific/coa/mcid_definition.prompt.md)
 - [Psychometric Validation Methodology](prompts/scientific/coa/psychometric_validation_methods.prompt.md)
 - [Qualitative Interview Guide Generator](prompts/scientific/coa/qualitative_interview_guide.prompt.md)
+- [graph_theoretical_connectome_analyzer](prompts/scientific/computational_theoretical_neuroscience/graph_theoretical_connectome_analyzer.prompt.md)
 - [Clinical Study Report (CSR) Writing](prompts/scientific/medical_writing/csr_writing.prompt.md)
 
 ## Site Acquisition
@@ -605,6 +637,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Site Landscape Mapping & Prioritization](prompts/clinical/site_acquisition/site_acquisition_workflow/01_site_landscape_mapping.prompt.md)
 - [Tailored Feasibility-Questionnaire Builder](prompts/clinical/site_acquisition/site_acquisition_workflow/02_tailored_feasibility_questionnaire.prompt.md)
 - [Personalized Investigator-Outreach Email Generator](prompts/clinical/site_acquisition/site_acquisition_workflow/03_investigator_outreach_email_generator.prompt.md)
+
+## Sociology
+
+- [intergenerational_mobility_modeler](prompts/scientific/sociology/stratification/intergenerational_mobility_modeler.prompt.md)
 
 ## Software Engineering
 

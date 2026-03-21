@@ -7,4 +7,5 @@
 - [Hr Finance/](hr_finance/overview.md)
 - [Market Research/](market_research/overview.md)
 - [Payment/](payment/overview.md)
+- [Strategy/](strategy/overview.md)
 - [Vp Tech Innovation/](vp_tech_innovation/overview.md)
