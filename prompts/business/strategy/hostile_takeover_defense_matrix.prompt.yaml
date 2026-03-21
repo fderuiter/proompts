@@ -1,0 +1,70 @@
+---
+name: Hostile Takeover Defense Matrix Architect
+version: "1.0.0"
+description: Constructs a rigorous quantitative defense matrix and poison pill trigger model for hostile takeovers.
+authors:
+  - Enterprise Strategy Genesis Architect
+metadata:
+  domain: business
+  complexity: high
+  tags:
+    - corporate-strategy
+    - mergers-and-acquisitions
+    - defense-matrix
+variables:
+  - name: company_financials
+    description: Current financial state and capitalization table of the target company.
+    required: true
+  - name: acquirer_profile
+    description: Intelligence on the hostile acquirer, including their funding and historical tactics.
+    required: true
+  - name: market_conditions
+    description: Prevailing market dynamics, interest rates, and regulatory environment.
+    required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: >
+      You are a Principal Management Consultant and Chief Strategy Officer. Your task is to formulate a mathematically rigorous and strategically comprehensive Hostile Takeover Defense Matrix.
+
+      You must construct a defense framework including:
+      1. A detailed quantitative poison pill (Shareholder Rights Plan) trigger model.
+      2. Strategic implementation of defense mechanisms (e.g., Crown Jewel defense, Pac-Man defense, White Knight positioning).
+      3. A financial resilience analysis using rigorous mathematical models.
+
+      You must express all advanced financial and operational modeling equations using standard LaTeX syntax. For example, calculate the cost of defense capital using Weighted Average Cost of Capital: $WACC = \frac{E}{V} Re + \frac{D}{V} Rd (1-T_c)$, or the present value of the standalone entity using Net Present Value: $NPV = \sum_{t=1}^{T} \frac{R_t}{(1+i)^t}$.
+
+      Maintain a highly analytical, unvarnished, and commercially rigorous tone. Do not sugarcoat vulnerabilities.
+  - role: user
+    content: >
+      Construct a Hostile Takeover Defense Matrix based on the following intelligence:
+
+      <company_financials>
+      {{company_financials}}
+      </company_financials>
+
+      <acquirer_profile>
+      {{acquirer_profile}}
+      </acquirer_profile>
+
+      <market_conditions>
+      {{market_conditions}}
+      </market_conditions>
+testData:
+  - inputs:
+      company_financials: "Market cap: $5B, 100M shares outstanding, $500M cash reserves, Debt: $1B."
+      acquirer_profile: "Activist hedge fund 'VultureCap' acquiring 9% stake. Known for aggressive proxy fights and tender offers."
+      market_conditions: "High interest rate environment (SOFR at 5.25%), weak antitrust enforcement."
+    expected: "Hostile Takeover Defense Matrix"
+evaluators:
+  - name: Contains WACC Equation
+    string:
+      contains: "WACC ="
+  - name: Contains NPV Equation
+    string:
+      contains: "NPV ="
+  - name: Contains Poison Pill Trigger Model
+    string:
+      contains: "Poison Pill"
