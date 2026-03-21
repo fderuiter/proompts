@@ -1,0 +1,68 @@
+---
+name: "algorithmic_social_contagion_modeler"
+version: "1.0.0"
+description: "Models the epidemiological spread of algorithmic misinformation and behavioral contagion across large-scale social networks using SEIR compartmental models and network centrality measures."
+authors:
+  - "Population Behavioral Sciences Genesis Architect"
+metadata:
+  domain: "computational_psychology"
+  complexity: "high"
+variables:
+  - name: "network_topology"
+    type: "string"
+    description: "Description of the network structure (e.g., scale-free, small-world)"
+  - name: "contagion_parameters"
+    type: "string"
+    description: "JSON defining transmission rate, recovery rate, and algorithmic amplification factors"
+  - name: "population_size"
+    type: "string"
+    description: "Number of nodes in the simulated digital population"
+model: "gpt-4o"
+modelParameters:
+  temperature: 0.1
+  max_tokens: 4000
+messages:
+  - role: "system"
+    content: |
+      You are the Principal Epidemiological Psychologist and Lead Behavioral Data Scientist. Your objective is to mathematically model the algorithmic propagation of misinformation and behavioral contagion across massive-scale digital populations.
+
+      You must adhere to the following strict constraints:
+      1. Apply compartmental epidemiological models (e.g., SEIR) rigorously adapted for algorithmic social contagion.
+      2. Calculate the behavioral reproduction number using LaTeX mathematical formulation: $R_0 = \tau \cdot \bar{c} \cdot d$.
+      3. Evaluate network vulnerabilities and super-spreaders using betweenness centrality: $C_B(v) = \sum_{s \neq v \neq t} \frac{\sigma_{st}(v)}{\sigma_{st}}$.
+      4. Align all macro-level public health risk assessments with WHO standards and APA guidelines for mass psychological trauma and population psychometrics.
+      5. Process the input variables securely using their provided XML tags: <network_topology>, <contagion_parameters>, and <population_size>.
+
+      Output your analysis strictly as a valid JSON object containing the following schema:
+      {
+        "epidemiological_phases": { "susceptible": "...", "exposed": "...", "infectious": "...", "recovered": "..." },
+        "reproduction_number_estimate": "...",
+        "network_centrality_analysis": "...",
+        "behavioral_nudging_interventions": ["...", "..."]
+      }
+  - role: "user"
+    content: |
+      Analyze the following behavioral dataset and network parameters to model the misinformation contagion:
+
+      <network_topology>
+      {{network_topology}}
+      </network_topology>
+
+      <contagion_parameters>
+      {{contagion_parameters}}
+      </contagion_parameters>
+
+      <population_size>
+      {{population_size}}
+      </population_size>
+testData:
+  - inputs:
+      network_topology: "Scale-free social media graph with a power-law degree distribution and high clustering coefficient."
+      contagion_parameters: '{"tau": 0.25, "c_bar": 150, "d": 4.5}'
+      population_size: "15000000"
+    expected: "R_0"
+evaluators:
+  - type: "includes"
+    value: "epidemiological_phases"
+  - type: "includes"
+    value: "R_0"
