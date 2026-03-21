@@ -16,6 +16,43 @@ A curated set of prompts in YAML for AI-assisted product development, regulatory
 | **[`scripts/`](scripts/)** | **Shell Wrappers.** <br> Convenience scripts for common tasks. | `validate_prompts.sh` |
 | **[`docs/`](docs/)** | **Knowledge Base.** <br> Guides, usage instructions, and generated docs. | `USAGE.md`, `BEST_PRACTICES.md` |
 
+
+
+### System Architecture
+
+```mermaid
+graph TD
+    %% Define Nodes
+    A[Developers / Contributors] -->|Commit Changes| B(GitHub Repository)
+
+    subgraph "Core Data"
+        C1[prompts/ <br/> (.prompt.yaml)]
+        C2[workflows/ <br/> (.workflow.yaml)]
+        C1 -.->|Chained by| C2
+    end
+    B -->|Contains| C1
+    B -->|Contains| C2
+
+    subgraph "The Engine Room (scripts/)"
+        D1(validate_prompts.sh)
+        D2(apply_refactor.py)
+    end
+
+    %% Flow of Validation
+    C1 -->|Validated by| D1
+    C2 -->|Validated by| D1
+
+    subgraph "Output Artifacts"
+        E1[docs/ <br/> (Markdown site)]
+    end
+
+    D1 -->|Builds| E1
+
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:1px;
+    classDef highlight fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    class C1,C2 highlight;
+```
+
 ## Docs
 
 - **[Full Table of Contents](docs/index.md)** – Browse all prompts by category
