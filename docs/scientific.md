@@ -24,6 +24,7 @@ title: Scientific
 - [EtO Sterilization Process FMEA](prompts/scientific/sterility/sterility_workflow/03_eto_sterilization_process_fmea.prompt.md)
 - [Evaluate Device–Tissue Interface Findings](prompts/scientific/pathology/pathology_study_workflow/02_device_tissue_interface_evaluation.prompt.md)
 - [FDA Missing-Data Query Response](prompts/scientific/biostatistics/fda_missing_data_query_response.prompt.md)
+- [Feynman Rule Derivation Architect](prompts/scientific/physics/quantum_field_theory/feynman_rule_derivation_architect.prompt.md)
 - [FWER Gatekeeping Procedure Code Generator](prompts/scientific/biostatistics/fwer_gatekeeping_procedures.prompt.md)
 - [Generate & QC Submission-Ready TLFs](prompts/scientific/biostatistics/submission_ready_tlfs.prompt.md)
 - [Hands-On Procedure Coaching](prompts/scientific/bioskills/bioskills_workflow/01_hands_on_procedure_coaching.prompt.md)
