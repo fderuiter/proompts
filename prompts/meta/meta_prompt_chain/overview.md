@@ -14,3 +14,4 @@
 - **[Prompt Engineer Fact Checker](05_L5_prompt_engineer_fact_checker.prompt.yaml)**: Rewrite an original prompt so it is clear, fully sourced and produces accurate answers with inline citations.
 - **[PromptCrafter GPT](05_L5_promptcrafter_gpt.prompt.yaml)**: Generate three distinct, best-practice prompts for a given topic.
 - **[README Generator](05_L5_readme-generator.prompt.yaml)**: Scan an entire repository and produce a polished README.md covering everything a new developer needs.
+- **[Vector Prompt Calibration Evaluator](vector_calibration.prompt.yaml)**: Evaluates and calibrates draft prompts according to the Vector standard, enforcing persona specificity, contextual alignment, and structural rigor.
