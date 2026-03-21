@@ -317,6 +317,7 @@
 [Protocol to USDM Stage 3 - Workflow](prompts/clinical/protocol/usdm_workflow/03_usdm_stage3_workflow.prompt.md)
 [Protocol to USDM Stage 4 - Concepts](prompts/clinical/protocol/usdm_workflow/04_usdm_stage4_concepts.prompt.md)
 [Protocol to USDM Stage 5 - Assembly](prompts/clinical/protocol/usdm_workflow/05_usdm_stage5_assembly.prompt.md)
+[structural_equation_modeling_architect](prompts/scientific/psychology/quantitative/structural_equation_modeling_architect.prompt.md)
 [ALCOA-C Data Integrity Checklist](prompts/regulatory/adherence/alcoa_c_data_integrity_checklist.prompt.md)
 [DHT Integration Regulatory Checklist](prompts/regulatory/adherence/dht_integration_checklist.prompt.md)
 [ICH E9(R1) Estimand Builder](prompts/regulatory/adherence/estimand_framework_builder.prompt.md)
