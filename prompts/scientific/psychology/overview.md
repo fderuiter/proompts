@@ -1,3 +1,4 @@
-# Psychology Prompts
+# Psychology Overview
 
-This directory contains prompts related to psychology, behavioral sciences, and related disciplines.
+## Categories
+- [Quantitative/](quantitative/overview.md)

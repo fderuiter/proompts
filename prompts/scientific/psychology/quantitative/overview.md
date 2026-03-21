@@ -1,3 +1,4 @@
-# Quantitative Psychology Prompts
+# Quantitative Overview
 
-This directory contains prompts related to quantitative psychology, psychometrics, and statistical modeling in the behavioral sciences.
+## Prompts
+- **[structural_equation_modeling_architect](structural_equation_modeling_architect.prompt.yaml)**: Designs rigorous Structural Equation Models (SEM) for latent psychological constructs, providing lavaan/Mplus syntax and fit evaluation criteria.
