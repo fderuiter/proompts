@@ -445,6 +445,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Protocol to USDM Stage 4 - Concepts](prompts/clinical/protocol/usdm_workflow/04_usdm_stage4_concepts.prompt.md)
 - [Protocol to USDM Stage 5 - Assembly](prompts/clinical/protocol/usdm_workflow/05_usdm_stage5_assembly.prompt.md)
 
+## Psychology
+
+- [structural_equation_modeling_architect](prompts/scientific/psychology/quantitative/structural_equation_modeling_architect.prompt.md)
+
 ## Regulatory
 
 - [ALCOA-C Data Integrity Checklist](prompts/regulatory/adherence/alcoa_c_data_integrity_checklist.prompt.md)
