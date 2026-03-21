@@ -67,15 +67,15 @@ messages:
       Please formulate the stochastic optimization model for the following scenario:
 
       <scenario_description>
-      <SCENARIO_DESCRIPTION>
+      {{SCENARIO_DESCRIPTION}}
       </scenario_description>
 
       <uncertainty_sources>
-      <UNCERTAINTY_SOURCES>
+      {{UNCERTAINTY_SOURCES}}
       </uncertainty_sources>
 
       <decision_variables>
-      <DECISION_VARIABLES>
+      {{DECISION_VARIABLES}}
       </decision_variables>
 testData:
   - inputs:
