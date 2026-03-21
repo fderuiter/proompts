@@ -449,6 +449,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Philosophy
 
 - [Natural Language Argument Formalizer](prompts/scientific/philosophy/logic/natural_language_argument_formalizer.prompt.md)
+
 ## Physics
 
 - [Feynman Rule Derivation Architect](prompts/scientific/physics/quantum_field_theory/feynman_rule_derivation_architect.prompt.md)
