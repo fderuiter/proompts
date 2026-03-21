@@ -13,6 +13,7 @@ title: Business
 - [Clinical-Trial Budget and Burn-Rate Dashboard](prompts/business/hr_finance/clinical_trial_budget_burn_rate_dashboard.prompt.md)
 - [Competitive-Bid Pricing & Margin Optimizer](prompts/business/cfo/cfo_workflow/02_competitive_bid_pricing.prompt.md)
 - [Competitor-Positioning Brief](prompts/business/development/competitor_positioning_brief.prompt.md)
+- [Corporate Turnaround Restructuring Architect](prompts/business/strategy/corporate_turnaround_restructuring_architect.prompt.md)
 - [Cross-Functional Advocacy Memo](prompts/business/cx/revenue_risk_advocacy.prompt.md)
 - [CSM Portfolio Balancing](prompts/business/cx/csm_portfolio_balancing.prompt.md)
 - [Disruption Radar](prompts/business/vp_tech_innovation/disruption_radar.prompt.md)
