@@ -260,6 +260,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [CRF Quality Auditor](prompts/clinical/forms/clinical_prompts_workflow/02_crf_quality_auditor.prompt.md)
 - [CDASH Mapping & Completion-Guide Assistant](prompts/clinical/forms/clinical_prompts_workflow/03_cdash_mapping_completion_guide.prompt.md)
 
+## Genetics
+
+- [crispr_cas9_off_target_predictive_modeler](prompts/scientific/genetics/genomics/crispr_cas9_off_target_predictive_modeler.prompt.md)
+
 ## Google Jules
 
 - [Jules Agile Orchestrator](prompts/google_jules/jules_agile_orchestrator.prompt.md)
