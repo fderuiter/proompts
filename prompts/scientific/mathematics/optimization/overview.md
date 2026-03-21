@@ -1,3 +1,4 @@
-# Optimization
+# Optimization Overview
 
-This directory contains prompts related to mathematical optimization, operations research, and stochastic modeling.
+## Prompts
+- **[Stochastic Multi-Objective Optimization Architect](stochastic_optimization_architect.prompt.yaml)**: Formulates robust, multi-objective stochastic optimization models for complex operations research scenarios involving deep uncertainty.
