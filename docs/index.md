@@ -221,6 +221,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Executive Briefing Architect (TL;DR)](prompts/communication/tldr_summarizer.prompt.md)
 - [Writing Clarity Mentor](prompts/communication/writing_clarity_mentor.prompt.md)
 
+## Computational
+
+- [algorithmic_social_contagion_modeler](prompts/computational/network_contagion/algorithmic_social_contagion_modeler.prompt.md)
+
 ## Cra
 
 - [Monitoring-Visit Report Generator](prompts/clinical/cra/cra_workflow/01_monitoring_visit_report_generator.prompt.md)

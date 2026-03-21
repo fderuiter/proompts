@@ -149,6 +149,7 @@
 [Storyboard-My-Idea](prompts/communication/storyboard_my_idea.prompt.md)
 [Executive Briefing Architect (TL;DR)](prompts/communication/tldr_summarizer.prompt.md)
 [Writing Clarity Mentor](prompts/communication/writing_clarity_mentor.prompt.md)
+[algorithmic_social_contagion_modeler](prompts/computational/network_contagion/algorithmic_social_contagion_modeler.prompt.md)
 [Monitoring-Visit Report Generator](prompts/clinical/cra/cra_workflow/01_monitoring_visit_report_generator.prompt.md)
 [Investigator Follow-up Email & Action-Item Tracker](prompts/clinical/cra/cra_workflow/02_investigator_follow_up_email_tracker.prompt.md)
 [Risk-Based Monitoring (RBM) Plan Builder](prompts/clinical/cra/cra_workflow/03_rbm_plan_builder.prompt.md)
