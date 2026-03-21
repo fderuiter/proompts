@@ -280,6 +280,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Jules Test Generator](prompts/google_jules/jules_test_gen.prompt.md)
 - [Jules UX Writer](prompts/google_jules/jules_ux_writer.prompt.md)
 
+## Growth
+
+- [predictive_churn_ltv_optimization_architect](prompts/growth/predictive_modeling/predictive_churn_ltv_optimization_architect.prompt.md)
+
 ## Imaging
 
 - [Imaging Charter Draft](prompts/clinical/imaging/imaging_workflow/01_imaging_charter_draft.prompt.md)
