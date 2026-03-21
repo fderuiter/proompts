@@ -389,6 +389,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Mathematics
 
+- [epistemic_modal_logic_kripke_evaluator](prompts/scientific/mathematics/formal_logic/epistemic_modal_logic_kripke_evaluator.prompt.md)
 - [Topological Counterexample Generator](prompts/scientific/mathematics/topology/topological_counterexample_generator.prompt.md)
 
 ## Meta
