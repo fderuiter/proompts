@@ -445,6 +445,9 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Evaluate Device–Tissue Interface Findings](prompts/scientific/pathology/pathology_study_workflow/02_device_tissue_interface_evaluation.prompt.md)
 - [Prepare Pathology Slides and Reporting Plan](prompts/scientific/pathology/pathology_study_workflow/03_slides_and_reporting_workflow.prompt.md)
 
+## Philosophy
+
+- [Natural Language Argument Formalizer](prompts/scientific/philosophy/logic/natural_language_argument_formalizer.prompt.md)
 ## Physics
 
 - [Feynman Rule Derivation Architect](prompts/scientific/physics/quantum_field_theory/feynman_rule_derivation_architect.prompt.md)

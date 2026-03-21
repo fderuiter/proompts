@@ -13,6 +13,7 @@
 - [Medical Writing/](medical_writing/overview.md)
 - [Microbiology/](microbiology/overview.md)
 - [Pathology/](pathology/overview.md)
+- [Philosophy/](philosophy/overview.md)
 - [Physics/](physics/overview.md)
 - [Psychology/](psychology/overview.md)
 - [Sociology/](sociology/overview.md)
