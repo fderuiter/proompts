@@ -1,3 +1,4 @@
-# Computational Chemistry
+# Computational Overview
 
-This directory contains computational chemistry prompts, such as quantum chemical transition state modeling.
+## Prompts
+- **[Quantum Chemical Transition State Architect](quantum_chemical_transition_state_architect.prompt.yaml)**: Generates automated quantum mechanical transition state analyses and complex kinetic rate equations using rigorous chemical thermodynamics and structural guidelines.

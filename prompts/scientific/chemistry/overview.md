@@ -1,3 +1,4 @@
-# Chemistry
+# Chemistry Overview
 
-This directory contains prompts related to chemical sciences.
+## Categories
+- [Computational/](computational/overview.md)
