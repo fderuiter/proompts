@@ -510,6 +510,7 @@
 [Pulsar Fermentation Rate Limiting Architect](prompts/speculative/pulsar_fermentation_rate_limiting/pulsar_fermentation_rate_limiter.prompt.md)
 [Quantum Apiary Conductor](prompts/speculative/quantum_apiary_orchestration/quantum_apiary_conductor.prompt.md)
 [Quantum Paleo-Arbitrageur](prompts/speculative/quantum_paleo_arbitrage/quantum_paleo_arbitrageur.prompt.md)
+[Quantum Poetic Leachate Optimizer](prompts/speculative/quantum_poetic_leachate_optimization/quantum_poetic_leachate_optimizer.prompt.md)
 [Sterility-Validation Protocol Builder](prompts/scientific/sterility/sterility_workflow/01_sterility_validation_protocol_builder.prompt.md)
 [Regulatory Gap-Analysis Comparator](prompts/scientific/sterility/sterility_workflow/02_regulatory_gap_analysis_comparator.prompt.md)
 [EtO Sterilization Process FMEA](prompts/scientific/sterility/sterility_workflow/03_eto_sterilization_process_fmea.prompt.md)
