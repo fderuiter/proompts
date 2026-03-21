@@ -408,6 +408,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Mathematics
 
+- [Stochastic Multi-Objective Optimization Architect](prompts/scientific/mathematics/optimization/stochastic_optimization_architect.prompt.md)
 - [Topological Counterexample Generator](prompts/scientific/mathematics/topology/topological_counterexample_generator.prompt.md)
 
 ## Meta
