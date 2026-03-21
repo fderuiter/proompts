@@ -1,2 +1,4 @@
-# Philosophical Logic
-This sub-domain involves the application of logical methods to philosophical problems, including formal logic, modal logic, semantics, and argument formalization.
+# Logic Overview
+
+## Prompts
+- **[Natural Language Argument Formalizer](natural_language_argument_formalizer.prompt.yaml)**: Systematically formalizes complex natural language philosophical arguments into rigorous symbolic logic, testing for validity and identifying informal fallacies.
