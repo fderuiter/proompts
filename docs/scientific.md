@@ -14,6 +14,7 @@ title: Scientific
 - [ClinRO User Manual Generator](prompts/scientific/coa/clinro_training_manual.prompt.md)
 - [Comprehensive Biocompatibility Test Matrix](prompts/scientific/biosafety/comprehensive_test_matrix.prompt.md)
 - [Content Validity & Reliability Analysis](prompts/scientific/coa/content_validity_clinician_input.prompt.md)
+- [crispr_cas9_off_target_predictive_modeler](prompts/scientific/genetics/genomics/crispr_cas9_off_target_predictive_modeler.prompt.md)
 - [Design a Robust Preclinical Pathology Study Protocol](prompts/scientific/pathology/pathology_study_workflow/01_study_protocol_outline.prompt.md)
 - [Design the Study](prompts/scientific/chemical_characterization/chemical_characterization_workflow/01_design_the_study.prompt.md)
 - [Dual-Language Figure Prompt](prompts/scientific/biostatistics/dual_language_figure_prompt.prompt.md)

@@ -171,6 +171,7 @@
 [CRF Shell Generator](prompts/clinical/forms/clinical_prompts_workflow/01_crf_shell_generator.prompt.md)
 [CRF Quality Auditor](prompts/clinical/forms/clinical_prompts_workflow/02_crf_quality_auditor.prompt.md)
 [CDASH Mapping & Completion-Guide Assistant](prompts/clinical/forms/clinical_prompts_workflow/03_cdash_mapping_completion_guide.prompt.md)
+[crispr_cas9_off_target_predictive_modeler](prompts/scientific/genetics/genomics/crispr_cas9_off_target_predictive_modeler.prompt.md)
 [Jules Agile Orchestrator](prompts/google_jules/jules_agile_orchestrator.prompt.md)
 [Jules API Scout](prompts/google_jules/jules_api_scout.prompt.md)
 [Jules Compliance Officer](prompts/google_jules/jules_compliance_officer.prompt.md)
