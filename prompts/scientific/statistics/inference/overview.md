@@ -1,3 +1,4 @@
-# Inference Prompts
+# Inference Overview
 
-This directory contains prompt engineering tools related to statistical inference.
+## Categories
+- [Bayesian Methods/](bayesian_methods/overview.md)

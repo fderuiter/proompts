@@ -10,4 +10,5 @@
 - [Medical Writing/](medical_writing/overview.md)
 - [Microbiology/](microbiology/overview.md)
 - [Pathology/](pathology/overview.md)
+- [Statistics/](statistics/overview.md)
 - [Sterility/](sterility/overview.md)

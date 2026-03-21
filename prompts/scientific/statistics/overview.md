@@ -1,3 +1,4 @@
-# Statistics Prompts
+# Statistics Overview
 
-This directory contains advanced statistical methodology prompt engineering tools.
+## Categories
+- [Inference/](inference/overview.md)
