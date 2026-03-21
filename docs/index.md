@@ -129,6 +129,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Interpret the Chemistry & Assess Risk](prompts/scientific/chemical_characterization/chemical_characterization_workflow/02_interpret_the_chemistry_assess_risk.prompt.md)
 - [Write the Regulatory Summary](prompts/scientific/chemical_characterization/chemical_characterization_workflow/03_write_the_regulatory_summary.prompt.md)
 
+## Chemistry
+
+- [Quantum Chemical Transition State Architect](prompts/scientific/chemistry/computational/quantum_chemical_transition_state_architect.prompt.md)
+
 ## Clinical
 
 - [Audit Trail Review](prompts/clinical/data_management/audit_trail_review.prompt.md)

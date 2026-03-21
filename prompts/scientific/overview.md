@@ -5,6 +5,7 @@
 - [Bioskills/](bioskills/overview.md)
 - [Biostatistics/](biostatistics/overview.md)
 - [Chemical Characterization/](chemical_characterization/overview.md)
+- [Chemistry/](chemistry/overview.md)
 - [Coa/](coa/overview.md)
 - [Computational Theoretical Neuroscience/](computational_theoretical_neuroscience/overview.md)
 - [Genetics/](genetics/overview.md)
