@@ -14,4 +14,5 @@
 - [Pathology/](pathology/overview.md)
 - [Physics/](physics/overview.md)
 - [Psychology/](psychology/overview.md)
+- [Sociology/](sociology/overview.md)
 - [Sterility/](sterility/overview.md)

@@ -625,6 +625,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Tailored Feasibility-Questionnaire Builder](prompts/clinical/site_acquisition/site_acquisition_workflow/02_tailored_feasibility_questionnaire.prompt.md)
 - [Personalized Investigator-Outreach Email Generator](prompts/clinical/site_acquisition/site_acquisition_workflow/03_investigator_outreach_email_generator.prompt.md)
 
+## Sociology
+
+- [intergenerational_mobility_modeler](prompts/scientific/sociology/stratification/intergenerational_mobility_modeler.prompt.md)
+
 ## Software Engineering
 
 - [Coding Session Guidelines](prompts/technical/software_engineering/lifecycle/coding_session_guidelines.prompt.md)
