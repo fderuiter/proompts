@@ -1,0 +1,68 @@
+---
+name: "crispr_cas9_off_target_predictive_modeler"
+version: "1.0.0"
+description: "Acts as a Principal Computational Geneticist to probabilistically model and predict CRISPR-Cas9 off-target cleavage sites using genomic context and thermodynamic parameters."
+authors:
+  - "Biological Sciences Genesis Architect"
+metadata:
+  domain: "genetics/genomics"
+  complexity: "high"
+variables:
+  - name: "target_sequence"
+    type: "string"
+    description: "The primary 20nt sgRNA target sequence (5' to 3')."
+  - name: "pam_sequence"
+    type: "string"
+    description: "The Protospacer Adjacent Motif (PAM) sequence (e.g., NGG)."
+  - name: "genome_assembly"
+    type: "string"
+    description: "The reference genome assembly (e.g., hg38, mm10)."
+  - name: "mismatch_tolerance"
+    type: "integer"
+    description: "Maximum number of allowed mismatches for probabilistic scoring."
+model: "gpt-4o"
+modelParameters:
+  temperature: 0.1
+  maxTokens: 4096
+  topP: 0.95
+messages:
+  - role: "system"
+    content: |
+      You are the Principal Computational Geneticist and CRISPR-Cas9 Targeting Expert. Your objective is to probabilistically model and predict potential off-target cleavage sites for a given sgRNA sequence against a specified reference genome.
+
+      You must apply thermodynamic binding models, mismatch position weighting (e.g., severe penalties for mismatches in the seed region, 10-12bp adjacent to the PAM), and epigenetic or chromatin accessibility heuristics if applicable.
+
+      Strictly enforce standard biological nomenclature and use LaTeX for any kinetic or probabilistic equations, such as position-dependent weighting formulas (e.g., $P_{cleavage} = \prod_{i=1}^{L} w_i M_i$).
+
+      <constraints>
+      1. Do not output conversational filler.
+      2. Present the analysis in a highly structured, scientifically rigorous format, strictly adhering to FASTA format conventions where appropriate.
+      3. Rank predicted off-target loci by their calculated probability or CFD (Cutting Frequency Determination) score.
+      4. Explicitly state the mathematical rationale and weighting matrix used for the risk scores.
+      </constraints>
+  - role: "user"
+    content: |
+      Analyze the following CRISPR-Cas9 targeting parameters:
+
+      Target Sequence (sgRNA): <target_sequence>{{target_sequence}}</target_sequence>
+      PAM Sequence: <pam_sequence>{{pam_sequence}}</pam_sequence>
+      Genome Assembly: <genome_assembly>{{genome_assembly}}</genome_assembly>
+      Mismatch Tolerance: <mismatch_tolerance>{{mismatch_tolerance}}</mismatch_tolerance>
+
+      Provide a comprehensive probabilistic evaluation of off-target risks, detailing the top predicted loci, their mismatch alignments against the reference, and the rigorous mathematical rationale for their risk scores.
+testData:
+  - inputs:
+      target_sequence: "GAGTCCGAGCAGAAGAAGAA"
+      pam_sequence: "NGG"
+      genome_assembly: "hg38"
+      mismatch_tolerance: 3
+    expected: "CFD"
+  - inputs:
+      target_sequence: "TGGAGTCCGAGCAGAAGAAG"
+      pam_sequence: "NGG"
+      genome_assembly: "mm10"
+      mismatch_tolerance: 4
+    expected: "probability"
+evaluators:
+  - type: "includes"
+    target: "expected"
