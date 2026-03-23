@@ -11,3 +11,4 @@
 - Validation scripts are critical (`scripts/validate_prompts.sh`).
 - Workflows chain prompts together.
 - Documentation generation is automated and verified by `scripts/validate_prompts.sh`.
+- The validation script `check_prompts.py` historically neglected checking for `overview.md` files in the `workflows/` directory. Added checking and generation logic for `overview.md` in `workflows/` directories to prevent documentation debt and ensure uniform repository structure.
