@@ -1,7 +1,6 @@
 import unittest
 import sys
 from pathlib import Path
-from io import StringIO
 from pydantic import ValidationError
 
 # Add the current directory to sys.path to import validate_prompt_schema
