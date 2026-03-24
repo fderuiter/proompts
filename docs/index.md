@@ -399,6 +399,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Rapid Process Diagnostic & Lean Improvement Plan](prompts/management/operations/rapid_process_diagnostic.prompt.md)
 - [Rolling Resource & Capacity Forecast](prompts/management/operations/rolling_resource_capacity_forecast.prompt.md)
 - [Study Start-Up Checklist & Timeline](prompts/management/operations/study_startup_checklist.prompt.md)
+- [Supply Chain Disruption Stochastic Stress Test Architect](prompts/management/operations/supply_chain_stress_test.prompt.md)
 - [Risk-Based Vendor Performance Improvement Plan](prompts/management/operations/vendor_performance_improvement_plan.prompt.md)
 - [Vendor Qualification and Oversight](prompts/management/operations/vendor_qualification.prompt.md)
 - [Weekly Operations KPI Snapshot](prompts/management/operations/weekly_ops_kpi_snapshot.prompt.md)
