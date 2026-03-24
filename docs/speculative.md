@@ -18,4 +18,5 @@ title: Speculative
 - [Quantum Apiary Conductor](prompts/speculative/quantum_apiary_orchestration/quantum_apiary_conductor.prompt.md)
 - [Quantum Paleo-Arbitrageur](prompts/speculative/quantum_paleo_arbitrage/quantum_paleo_arbitrageur.prompt.md)
 - [Quantum Poetic Leachate Optimizer](prompts/speculative/quantum_poetic_leachate_optimization/quantum_poetic_leachate_optimizer.prompt.md)
+- [quantum_zymurgy_astrogator](prompts/speculative/quantum_zymurgy_astrogator/quantum_zymurgy_astrogator.prompt.md)
 - [Temporal Syntax Debugger](prompts/speculative/chrono_linguistic_debugging/temporal_syntax_debugger.prompt.md)
