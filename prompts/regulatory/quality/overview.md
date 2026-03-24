@@ -5,6 +5,7 @@
 - **[CAPA Management Process](capa_management_process.prompt.yaml)**: Identify non-compliance, conduct RCA, and track CAPA.
 - **[CAPA Plan Generator](capa_plan_generator.prompt.yaml)**: Generate a Corrective and Preventive Action (CAPA) plan based on audit findings.
 - **[CAPA Root Cause Investigator](capa_root_cause_investigator.prompt.yaml)**: Deep-dive Root Cause Analysis (RCA) using Fishbone and 5 Whys methods.
+- **[CAPA Root Cause Resolution Architect](capa_root_cause_resolution_architect.prompt.yaml)**: Acts as a Principal Quality Assurance Engineer and Regulatory Compliance Expert to systematically perform Root Cause Analysis (RCA) and generate comprehensive Corrective and Preventive Action (CAPA) plans for critical non-conformances.
 - **[CAPA SOP Architect](capa_sop_architect.prompt.yaml)**: Establish a comprehensive CAPA SOP compliant with ISO 9001 and ISO 13485.
 - **[Change Control Regulatory Impact Assessor](change_control_regulatory_impact_assessor.prompt.yaml)**: Perform rigorous regulatory impact assessments for proposed medical device changes using FDA guidance.
 - **[Compliance Gap & Risk Matrix](compliance_gap_risk_matrix.prompt.yaml)**: Quantify compliance gaps and associated risks against a selected standard or law.

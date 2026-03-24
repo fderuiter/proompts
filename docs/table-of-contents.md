@@ -371,6 +371,7 @@
 [CAPA Management Process](prompts/regulatory/quality/capa_management_process.prompt.md)
 [CAPA Plan Generator](prompts/regulatory/quality/capa_plan_generator.prompt.md)
 [CAPA Root Cause Investigator](prompts/regulatory/quality/capa_root_cause_investigator.prompt.md)
+[capa_root_cause_resolution_architect](prompts/regulatory/quality/capa_root_cause_resolution_architect.prompt.md)
 [CAPA SOP Architect](prompts/regulatory/quality/capa_sop_architect.prompt.md)
 [Change Control Regulatory Impact Assessor](prompts/regulatory/quality/change_control_regulatory_impact_assessor.prompt.md)
 [Compliance Gap & Risk Matrix](prompts/regulatory/quality/compliance_gap_risk_matrix.prompt.md)
