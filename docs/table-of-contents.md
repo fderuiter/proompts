@@ -321,6 +321,7 @@
 [Natural Language Argument Formalizer](prompts/scientific/philosophy/logic/natural_language_argument_formalizer.prompt.md)
 [dialectical_metaphysical_synthesizer](prompts/scientific/philosophy/metaphysics/dialectical_metaphysical_synthesizer.prompt.md)
 [Feynman Rule Derivation Architect](prompts/scientific/physics/quantum_field_theory/feynman_rule_derivation_architect.prompt.md)
+[ads_cft_holographic_dictionary_architect](prompts/scientific/physics/string_theory/ads_cft_holographic_dictionary_architect.prompt.md)
 [Project Charter and Scope Definition](prompts/management/project_management/project_management_workflow/01_project_charter_scope.prompt.md)
 [Comprehensive Risk Register and Mitigation Plan](prompts/management/project_management/project_management_workflow/02_risk_register_mitigation.prompt.md)
 [Weekly Executive Status Report](prompts/management/project_management/project_management_workflow/03_weekly_exec_status_report.prompt.md)
