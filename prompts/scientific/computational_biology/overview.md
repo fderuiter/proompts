@@ -1,5 +1,4 @@
-# Computational Biology
+# Computational Biology Overview
 
 ## Prompts
-
-- [Multi-Omics Data Integration Architect](multi_omics_data_integration_architect.prompt.yaml)
+- **[multi_omics_data_integration_architect](multi_omics_data_integration_architect.prompt.yaml)**: Designs robust, mathematically rigorous multi-omics data integration pipelines for complex biological systems.
