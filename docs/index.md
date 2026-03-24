@@ -109,6 +109,8 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Sunshine Act and FMV Compliance Check](prompts/business/payment/sunshine_act_fmv_compliance_check.prompt.md)
 - [Corporate Turnaround Restructuring Architect](prompts/business/strategy/corporate_turnaround_restructuring_architect.prompt.md)
 - [Hostile Takeover Defense Matrix Architect](prompts/business/strategy/hostile_takeover_defense_matrix.prompt.md)
+- [Private Equity Value Creation Architect](prompts/business/strategy/private_equity_value_creation_architect.prompt.md)
+- [zero_based_budgeting_turnaround_architect](prompts/business/strategy/zero_based_budgeting_turnaround_architect.prompt.md)
 - [Build vs. Buy Decision Matrix](prompts/business/vp_tech_innovation/build_vs_buy_matrix.prompt.md)
 - [Disruption Radar](prompts/business/vp_tech_innovation/disruption_radar.prompt.md)
 - [Elevator Pitch for Expensive Tech](prompts/business/vp_tech_innovation/elevator_pitch_expensive_tech.prompt.md)
@@ -167,9 +169,11 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Clinical Trial Protocol Synopsis Architect](prompts/clinical/medical_writing/clinical_trial_protocol_synopsis_architect.prompt.md)
 - [Clinical Study Report (CSR) Narrative Drafter](prompts/clinical/medical_writing/csr_narrative_drafter.prompt.md)
 - [csr_patient_narrative_architect](prompts/clinical/medical_writing/csr_patient_narrative_architect.prompt.md)
+- [csr_patient_safety_narrative_architect](prompts/clinical/medical_writing/csr_patient_safety_narrative_architect.prompt.md)
 - [CSR Plain Language Summary Generator](prompts/clinical/medical_writing/csr_plain_language_summary_generator.prompt.md)
 - [CTD Module 2.5 Clinical Overview Architect](prompts/clinical/medical_writing/ctd_module_2_5_clinical_overview_architect.prompt.md)
 - [Data Safety Monitoring Board Report Synthesizer](prompts/clinical/medical_writing/data_safety_monitoring_board_report_synthesizer.prompt.md)
+- [Development Safety Update Report Architect](prompts/clinical/medical_writing/development_safety_update_report_architect.prompt.md)
 - [Informed Consent Form Plain Language Translator](prompts/clinical/medical_writing/icf_plain_language_translator.prompt.md)
 - [icf_readability_compliance_architect](prompts/clinical/medical_writing/icf_readability_compliance_architect.prompt.md)
 - [Investigator's Brochure Safety Update Architect](prompts/clinical/medical_writing/investigators_brochure_safety_update_architect.prompt.md)
@@ -180,9 +184,12 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Clinical Monitoring Plan Development](prompts/clinical/monitoring/clinical_monitoring_plan.prompt.md)
 - [Risk-Based Monitoring Data Evaluation](prompts/clinical/monitoring/rbm_data_evaluation.prompt.md)
 - [RBQM Anomaly Detection](prompts/clinical/monitoring/rbqm_anomaly_detection.prompt.md)
+- [signal_detection_evaluator](prompts/clinical/pharmacovigilance/signal_detection_evaluator.prompt.md)
+- [adverse_event_signal_detection_architect](prompts/clinical/pharmacovigilance/adverse_event_signal_detection_architect.prompt.md)
 - [Protocol Deviation Reporting](prompts/clinical/protocol/protocol_deviation_reporting.prompt.md)
 - [Protocol to CDISC USDM v3.0 Converter](prompts/clinical/protocol/protocol_to_usdm_v3.prompt.md)
 - [SOP and TMF Document Synthesis](prompts/clinical/protocol/sop_tmf_document_synthesis.prompt.md)
+- [investigators_brochure_safety_synthesizer](prompts/clinical/regulatory_affairs/investigators_brochure_safety_synthesizer.prompt.md)
 - [SAE and Safety Reporting](prompts/clinical/safety/sae_safety_reporting.prompt.md)
 - [Clinical Trial Agreement (CTA) Negotiation](prompts/clinical/site_acquisition/cta_negotiation.prompt.md)
 - [Single IRB (sIRB) Plan Submission](prompts/clinical/site_acquisition/sirb_plan_submission.prompt.md)
@@ -225,6 +232,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Computational
 
 - [algorithmic_social_contagion_modeler](prompts/computational/network_contagion/algorithmic_social_contagion_modeler.prompt.md)
+- [physics_informed_neural_network_architect](prompts/computational/numerical_methods/physics_informed_neural_network_architect.prompt.md)
 
 ## Cra
 
@@ -254,11 +262,19 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Stochastic Engineer](prompts/technical/data_science/stochastic_model_chain_workflow/02_stochastic_engineer.prompt.md)
 - [Stochastic Strategist](prompts/technical/data_science/stochastic_model_chain_workflow/03_stochastic_strategist.prompt.md)
 
+## Design
+
+- [causal_inference_dag_architect](prompts/scientific/statistics/design/causal_inference/causal_inference_dag_architect.prompt.md)
+
 ## Eclinical Integration
 
 - [Architect the Integration Blueprint](prompts/clinical/eclinical_integration/eclinical_integration_workflow/01_architect_integration_blueprint.prompt.md)
 - [Data Mapping and Transformation Playbook](prompts/clinical/eclinical_integration/eclinical_integration_workflow/02_data_mapping_transformation_playbook.prompt.md)
 - [Regulatory and Validation Checklist](prompts/clinical/eclinical_integration/eclinical_integration_workflow/03_regulatory_validation_checklist.prompt.md)
+
+## Epidemiology
+
+- [longitudinal_trauma_propagation_modeler](prompts/scientific/epidemiology/global_mental_health/longitudinal_trauma_propagation_modeler.prompt.md)
 
 ## Epro
 
@@ -271,6 +287,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [CRF Shell Generator](prompts/clinical/forms/clinical_prompts_workflow/01_crf_shell_generator.prompt.md)
 - [CRF Quality Auditor](prompts/clinical/forms/clinical_prompts_workflow/02_crf_quality_auditor.prompt.md)
 - [CDASH Mapping & Completion-Guide Assistant](prompts/clinical/forms/clinical_prompts_workflow/03_cdash_mapping_completion_guide.prompt.md)
+
+## Foundations
+
+- [intuitionistic_logic_natural_deduction_generator](prompts/scientific/mathematics/foundations/proof_theory/intuitionistic_logic_natural_deduction_generator.prompt.md)
 
 ## Genetics
 
@@ -298,6 +318,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Growth
 
+- [algorithmic_multi_touch_attribution_modeler](prompts/growth/analytics/algorithmic_multi_touch_attribution_modeler.prompt.md)
 - [predictive_churn_ltv_optimization_architect](prompts/growth/predictive_modeling/predictive_churn_ltv_optimization_architect.prompt.md)
 
 ## Imaging
@@ -447,6 +468,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [CAPA Plan Builder for Monitoring Findings](prompts/clinical/monitoring/clinical_monitoring_workflow/02_capa_plan_builder_for_monitoring_findings.prompt.md)
 - [Monitoring Visit Report (MVR) Quality Critique](prompts/clinical/monitoring/clinical_monitoring_workflow/03_monitoring_visit_report_quality_critique.prompt.md)
 
+## Organic
+
+- [advanced_retrosynthetic_pathway_generator](prompts/scientific/chemistry/organic/retrosynthesis/advanced_retrosynthetic_pathway_generator.prompt.md)
+
 ## Pathology
 
 - [Design a Robust Preclinical Pathology Study Protocol](prompts/scientific/pathology/pathology_study_workflow/01_study_protocol_outline.prompt.md)
@@ -456,10 +481,12 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Philosophy
 
 - [Natural Language Argument Formalizer](prompts/scientific/philosophy/logic/natural_language_argument_formalizer.prompt.md)
+- [dialectical_metaphysical_synthesizer](prompts/scientific/philosophy/metaphysics/dialectical_metaphysical_synthesizer.prompt.md)
 
 ## Physics
 
 - [Feynman Rule Derivation Architect](prompts/scientific/physics/quantum_field_theory/feynman_rule_derivation_architect.prompt.md)
+- [ads_cft_holographic_dictionary_architect](prompts/scientific/physics/string_theory/ads_cft_holographic_dictionary_architect.prompt.md)
 
 ## Project Management
 
@@ -483,6 +510,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Psychology
 
 - [structural_equation_modeling_architect](prompts/scientific/psychology/quantitative/structural_equation_modeling_architect.prompt.md)
+
+## Quantitative
+
+- [item_response_theory_dif_analyzer](prompts/scientific/psychology/quantitative/psychometrics/item_response_theory_dif_analyzer.prompt.md)
 
 ## Regulatory
 
@@ -529,6 +560,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [CAPA Investigation Report Writer](prompts/regulatory/quality/capa_investigation_report_writer.prompt.md)
 - [CAPA Management Process](prompts/regulatory/quality/capa_management_process.prompt.md)
 - [CAPA Plan Generator](prompts/regulatory/quality/capa_plan_generator.prompt.md)
+- [capa_root_cause_analysis_architect](prompts/regulatory/quality/capa_root_cause_analysis_architect.prompt.md)
 - [CAPA Root Cause Investigator](prompts/regulatory/quality/capa_root_cause_investigator.prompt.md)
 - [CAPA SOP Architect](prompts/regulatory/quality/capa_sop_architect.prompt.md)
 - [Change Control Regulatory Impact Assessor](prompts/regulatory/quality/change_control_regulatory_impact_assessor.prompt.md)
@@ -539,6 +571,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [EU MDR PMCF Plan Architect](prompts/regulatory/quality/eu_mdr_pmcf_plan_architect.prompt.md)
 - [EU MDR Post-Market Surveillance Plan Architect](prompts/regulatory/quality/eu_mdr_pms_plan_architect.prompt.md)
 - [EU MDR PSUR Architect](prompts/regulatory/quality/eu_mdr_psur_architect.prompt.md)
+- [eu_mdr_sscp_architect](prompts/regulatory/quality/eu_mdr_sscp_architect.prompt.md)
 - [Financial Conflict of Interest (FCOI) Reporting](prompts/regulatory/quality/fcoi_reporting.prompt.md)
 - [FDA 483 Response Strategist](prompts/regulatory/quality/fda_483_response_strategist.prompt.md)
 - [fda_510k_substantial_equivalence_architect](prompts/regulatory/quality/fda_510k_substantial_equivalence_architect.prompt.md)
@@ -637,7 +670,9 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [MCID Research and Summary](prompts/scientific/coa/mcid_definition.prompt.md)
 - [Psychometric Validation Methodology](prompts/scientific/coa/psychometric_validation_methods.prompt.md)
 - [Qualitative Interview Guide Generator](prompts/scientific/coa/qualitative_interview_guide.prompt.md)
+- [multi_omics_data_integration_architect](prompts/scientific/computational_biology/multi_omics_data_integration_architect.prompt.md)
 - [graph_theoretical_connectome_analyzer](prompts/scientific/computational_theoretical_neuroscience/graph_theoretical_connectome_analyzer.prompt.md)
+- [multi_modal_fmri_eeg_integration_architect](prompts/scientific/computational_theoretical_neuroscience/multi_modal_fmri_eeg_integration_architect.prompt.md)
 - [Clinical Study Report (CSR) Writing](prompts/scientific/medical_writing/csr_writing.prompt.md)
 
 ## Site Acquisition
@@ -648,6 +683,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Sociology
 
+- [institutional_isomorphism_lifecycle_modeler](prompts/scientific/sociology/institutions/institutional_isomorphism_lifecycle_modeler.prompt.md)
 - [intergenerational_mobility_modeler](prompts/scientific/sociology/stratification/intergenerational_mobility_modeler.prompt.md)
 
 ## Software Engineering
@@ -769,6 +805,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Testing, Configuration, and Automation Analysis](prompts/technical/repository_refactoring/testing_configuration_automation_analysis.prompt.md)
 - [APT Threat Hunting Query Engineer](prompts/technical/security/apt_threat_hunting_query_engineer.prompt.md)
 - [Medical Device Cybersecurity Threat Modeling](prompts/technical/security/cybersecurity_threat_modeling.prompt.md)
+- [Zero-Day Incident Containment Architect](prompts/technical/security/zero_day_containment_architect.prompt.md)
 - [Technical White Paper for Clinical Methodologies](prompts/technical/technical_writing/technical_white_paper_in_silico.prompt.md)
 
 ## Technical Writing
