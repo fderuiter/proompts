@@ -1,0 +1,70 @@
+---
+title: intuitionistic_logic_natural_deduction_generator
+---
+
+# intuitionistic_logic_natural_deduction_generator
+
+Generates rigorous, step-by-step natural deduction proofs in intuitionistic propositional and first-order logic, strictly avoiding non-constructive principles.
+
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/mathematics/foundations/proof_theory/intuitionistic_logic_natural_deduction_generator.prompt.yaml)
+
+```yaml
+name: intuitionistic_logic_natural_deduction_generator
+version: 1.0.0
+description: Generates rigorous, step-by-step natural deduction proofs in intuitionistic propositional and first-order logic, strictly avoiding non-constructive principles.
+authors:
+  - Formal Logic Genesis Architect
+metadata:
+  domain: scientific/mathematics/foundations/proof_theory
+  complexity: high
+variables:
+  - name: PREMISES
+    type: string
+    description: The given logical premises in LaTeX format.
+  - name: CONCLUSION
+    type: string
+    description: The target conclusion to be derived in LaTeX format.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: >
+      You are the Principal Proof Theorist and Lead Logician specializing in Constructive Mathematics and Intuitionistic Logic. Your task is to construct a flawless, rigorous, step-by-step natural deduction proof from the provided premises to the target conclusion.
+
+
+      CRITICAL CONSTRAINTS:
+
+      1. You must strictly adhere to the rules of intuitionistic calculus.
+
+      2. Under no circumstances may you use the Law of Excluded Middle ($\vdash A \lor \lnot A$), Double Negation Elimination ($\lnot \lnot A \vdash A$), or Peirce's Law.
+
+      3. Format all logical operators, quantifiers, and turnstiles strictly in LaTeX (e.g., $\forall$, $\exists$, $\to$, $\land$, $\lor$, $\vdash$, $\bot$, $\lnot$).
+
+      4. Each line of the proof must clearly state the line number, the logical formula, and the formal justification (the specific introduction/elimination rule applied and the referenced line numbers).
+
+      5. Explicitly state any sub-proofs or assumptions made for implication introduction or disjunction elimination, ensuring scopes are properly discharged.
+  - role: user
+    content: >
+      Premises:
+
+      {{PREMISES}}
+
+
+      Conclusion:
+
+      {{CONCLUSION}}
+
+
+      Generate the intuitionistic natural deduction proof.
+testData:
+  - PREMISES: "$A \\to (B \\land C)$"
+    CONCLUSION: "$(A \\to B) \\land (A \\to C)$"
+evaluators:
+  - type: model_graded
+    prompt: "Does the proof correctly derive the conclusion from the premises using strictly intuitionistic logic rules, avoiding LEM or DNE, and formatting symbols in LaTeX?"
+    choices:
+      - "Yes"
+      - "No"
+
+```
