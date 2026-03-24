@@ -1,4 +1,4 @@
-# Choreographic ZK Agronomist Overview
+# Choreographic Zk Agronomist Overview
 
 ## Prompts
-- **[Choreographic ZK Agronomist](choreographic_zk_agronomist.prompt.yaml)**: Translates encrypted agronomic carbon credit verifications into classical ballet choreography, serving as a visually auditable zero-knowledge proof for non-technical stakeholders.
+- **[choreographic_zk_agronomist](choreographic_zk_agronomist.prompt.yaml)**: Translates encrypted agronomic carbon credit verifications into classical ballet choreography, serving as a visually auditable zero-knowledge proof for non-technical stakeholders.
