@@ -138,6 +138,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Clinical
 
+- [risk_based_monitoring_strategist](prompts/clinical/clinical_operations/risk_based_monitoring_strategist.prompt.md)
 - [Audit Trail Review](prompts/clinical/data_management/audit_trail_review.prompt.md)
 - [CDISC CRF Architect](prompts/clinical/data_management/cdisc_crf_architect.prompt.md)
 - [CDISC SDTM/ADaM Mapping](prompts/clinical/data_management/cdisc_mapping.prompt.md)

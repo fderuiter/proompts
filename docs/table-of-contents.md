@@ -70,6 +70,7 @@
 [Interpret the Chemistry & Assess Risk](prompts/scientific/chemical_characterization/chemical_characterization_workflow/02_interpret_the_chemistry_assess_risk.prompt.md)
 [Write the Regulatory Summary](prompts/scientific/chemical_characterization/chemical_characterization_workflow/03_write_the_regulatory_summary.prompt.md)
 [Quantum Chemical Transition State Architect](prompts/scientific/chemistry/computational/quantum_chemical_transition_state_architect.prompt.md)
+[risk_based_monitoring_strategist](prompts/clinical/clinical_operations/risk_based_monitoring_strategist.prompt.md)
 [Audit Trail Review](prompts/clinical/data_management/audit_trail_review.prompt.md)
 [CDISC CRF Architect](prompts/clinical/data_management/cdisc_crf_architect.prompt.md)
 [CDISC SDTM/ADaM Mapping](prompts/clinical/data_management/cdisc_mapping.prompt.md)
