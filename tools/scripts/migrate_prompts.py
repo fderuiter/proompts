@@ -7,11 +7,11 @@ import re
 from pathlib import Path
 
 try:
-    from utils import ROOT, iter_prompt_files, load_yaml
+    from utils import ROOT, extract_template_vars, iter_prompt_files, load_yaml
 except ImportError:
     import sys
     sys.path.append(str(Path(__file__).parent))
-    from utils import ROOT, iter_prompt_files, load_yaml
+    from utils import ROOT, extract_template_vars, iter_prompt_files, load_yaml
 
 import yaml
 
@@ -23,15 +23,6 @@ def str_presenter(dumper, data):
     return dumper.represent_scalar('tag:yaml.org,2002:str', data)
 
 yaml.add_representer(str, str_presenter)
-
-
-def extract_template_vars(content: dict) -> list[str]:
-    """Extract all {{var}} patterns from messages."""
-    found: set[str] = set()
-    for msg in content.get("messages", []):
-        text = msg.get("content", "")
-        found.update(re.findall(r'\{\{([^}]+)\}\}', text))
-    return sorted(found)
 
 
 def migrate_file(file_path: Path, dry_run: bool = False) -> bool:

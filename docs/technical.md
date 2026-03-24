@@ -18,6 +18,7 @@ title: Technical
 - [Heuristic-Evaluation Coach](prompts/technical/design/heuristic_evaluation_coach.prompt.md)
 - [Investigator's Brochure Summary of Changes](prompts/technical/technical_writing/technical_writer_workflow/02_ib_detailed_soc.prompt.md)
 - [Medical Device Cybersecurity Threat Modeling](prompts/technical/security/cybersecurity_threat_modeling.prompt.md)
+- [post_quantum_cryptography_migration_architect](prompts/technical/cryptography/post_quantum_cryptography_migration_architect.prompt.md)
 - [Repository Foundation & Developer Experience Analysis](prompts/technical/repository_refactoring/repo_foundation_analysis.prompt.md)
 - [SAE and Unanticipated Problem Reporting SOP](prompts/technical/technical_writing/technical_writer_workflow/03_sae_reporting_sop.prompt.md)
 - [Security Hardening and Dependency Management Implementation](prompts/technical/repository_refactoring/security_hardening_dependency_management_implementation.prompt.md)
@@ -30,6 +31,7 @@ title: Technical
 - [Test Suite Enhancement and CI Pipeline Implementation](prompts/technical/repository_refactoring/test_suite_enhancement_ci_pipeline_implementation.prompt.md)
 - [Testing, Configuration, and Automation Analysis](prompts/technical/repository_refactoring/testing_configuration_automation_analysis.prompt.md)
 - [Universal Automation Agent](prompts/technical/automation/universal_automation_agent.prompt.md)
+- [Zero-Day Incident Containment Architect](prompts/technical/security/zero_day_containment_architect.prompt.md)
 
 ## Workflows
 - [Agentic Coding: From Idea to Epics](workflows/agentic_coding.md)
