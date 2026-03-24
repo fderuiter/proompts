@@ -1,7 +1,4 @@
-# Pharmacovigilance
-
-This directory contains specialized prompt templates for pharmacovigilance and drug safety domains.
+# Pharmacovigilance Overview
 
 ## Prompts
-
-- [Signal Detection Evaluator](signal_detection_evaluator.prompt.yaml)
+- **[signal_detection_evaluator](signal_detection_evaluator.prompt.yaml)**: A rigorous prompt for evaluating and validating pharmacovigilance safety signals based on quantitative and qualitative data.
