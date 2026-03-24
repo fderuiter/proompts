@@ -2,6 +2,7 @@
 
 ## Categories
 - [Adjudication/](adjudication/overview.md)
+- [Clinical Operations/](clinical_operations/overview.md)
 - [Cra/](cra/overview.md)
 - [Data Management/](data_management/overview.md)
 - [Data/](data/overview.md)
