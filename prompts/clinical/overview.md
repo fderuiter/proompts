@@ -11,6 +11,7 @@
 - [Imaging/](imaging/overview.md)
 - [Medical Writing/](medical_writing/overview.md)
 - [Monitoring/](monitoring/overview.md)
+- [Pharmacovigilance/](pharmacovigilance/overview.md)
 - [Protocol/](protocol/overview.md)
 - [Regulatory Affairs/](regulatory_affairs/overview.md)
 - [Rtsm/](rtsm/overview.md)
