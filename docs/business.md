@@ -40,6 +40,7 @@ title: Business
 - [Payment-Process Risk Assessment and Mitigation](prompts/business/payment/payment_process_risk_assessment.prompt.md)
 - [Post-Mortem / Incident Report Summary](prompts/business/vp_tech_innovation/post_mortem_summary.prompt.md)
 - [Preventing Technical Debt](prompts/business/vp_tech_innovation/preventing_technical_debt.prompt.md)
+- [Private Equity Value Creation Architect](prompts/business/strategy/private_equity_value_creation_architect.prompt.md)
 - [Rapid Proposal Builder](prompts/business/development/rapid_proposal_builder.prompt.md)
 - [Red Account Turnaround Strategy](prompts/business/cx/red_account_turnaround.prompt.md)
 - [Regulatory & Commercial Barrier Mapping](prompts/business/market_research/market_research_workflow/03_regulatory_commercial_barrier_mapping.prompt.md)
@@ -56,6 +57,7 @@ title: Business
 - [Upskilling Program Design](prompts/business/vp_tech_innovation/upskilling_program_design.prompt.md)
 - [Value-Based QBR Generator](prompts/business/cx/value_based_qbr.prompt.md)
 - [Voice of Customer Root Cause Analysis](prompts/business/cx/root_cause_analysis.prompt.md)
+- [zero_based_budgeting_turnaround_architect](prompts/business/strategy/zero_based_budgeting_turnaround_architect.prompt.md)
 
 ## Workflows
 - [CFO Workflow](workflows/cfo.md)

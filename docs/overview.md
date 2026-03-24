@@ -1,10 +1,10 @@
 # Documentation Overview
 
-This directory stores general reference material for the repository. Use
-`index.md` or `table-of-contents.md` for a complete table of contents that links to every prompt.
+- **What is this?** This directory stores general reference material and guides for the repository.
+- **Why does it exist?** It provides a centralized knowledge base to help developers understand, use, and contribute to the prompt library efficiently.
+- **How to use it?** Browse the quick links below or use `index.md` or `table-of-contents.md` for a complete table of contents that links to every prompt.
 
-Prompts are stored as `.prompt.yaml` files. The previous JSON format has been
-retired.
+Prompts are stored as `.prompt.yaml` files. The previous JSON format has been retired.
 
 ## Essential Guides
 
