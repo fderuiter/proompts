@@ -99,6 +99,7 @@ title: Clinical
 - [Protocol to USDM Stage 4 - Concepts](prompts/clinical/protocol/usdm_workflow/04_usdm_stage4_concepts.prompt.md)
 - [Protocol to USDM Stage 5 - Assembly](prompts/clinical/protocol/usdm_workflow/05_usdm_stage5_assembly.prompt.md)
 - [Protocol-to-TS Generator](prompts/clinical/data_management/cdisc_compliance_workflow/01_protocol_to_ts_generator.prompt.md)
+- [protocol_deviation_assessment_architect](prompts/clinical/medical_writing/protocol_deviation_assessment_architect.prompt.md)
 - [Raw-to-SDTM Auto-Mapper](prompts/clinical/data_management/cdisc_compliance_workflow/02_raw_to_sdtm_auto_mapper.prompt.md)
 - [RBQM Anomaly Detection](prompts/clinical/monitoring/rbqm_anomaly_detection.prompt.md)
 - [Real-Time Adjudication Visibility Dashboard](prompts/clinical/adjudication/adjudication_workflow/01_real_time_adjudication_dashboard.prompt.md)
