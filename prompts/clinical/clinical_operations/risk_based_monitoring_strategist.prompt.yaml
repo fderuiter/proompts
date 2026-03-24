@@ -5,6 +5,7 @@ authors:
   - Strategic Genesis Architect
 metadata:
   domain: clinical/clinical_operations
+  complexity: high
   tags:
     - risk-based monitoring
     - clinical operations
@@ -12,9 +13,9 @@ metadata:
     - clinical trials
     - quality management
 variables:
-  - PROTOCOL_SYNOPSIS
-  - CRITICAL_DATA_VARIABLES
-  - KNOWN_RISK_FACTORS
+  - name: PROTOCOL_SYNOPSIS
+  - name: CRITICAL_DATA_VARIABLES
+  - name: KNOWN_RISK_FACTORS
 model: gpt-4o
 modelParameters:
   temperature: 0.1
