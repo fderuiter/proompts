@@ -424,6 +424,7 @@
 [Risk Management Analysis](prompts/regulatory/quality/risk_management_analysis.prompt.md)
 [SaMD Cybersecurity Vulnerability Assessor](prompts/regulatory/quality/samd_cybersecurity_vulnerability_assessor.prompt.md)
 [samd_hazard_traceability_matrix_generator](prompts/regulatory/quality/samd_hazard_traceability_matrix_generator.prompt.md)
+[samd_iec62304_software_architecture_architect](prompts/regulatory/quality/samd_iec62304_software_architecture_architect.prompt.md)
 [Supplier Corrective Action Request Evaluator](prompts/regulatory/quality/supplier_corrective_action_request_evaluator.prompt.md)
 [510(k)/De Novo Pre-Submission Strategy](prompts/regulatory/strategy/510k_pre-sub_strategy.prompt.md)
 [AI Risk Mapper](prompts/regulatory/strategy/ai_risk_mapper.prompt.md)
