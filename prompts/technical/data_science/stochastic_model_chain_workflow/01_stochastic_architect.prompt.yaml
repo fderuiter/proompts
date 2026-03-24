@@ -41,17 +41,65 @@ messages:
 
     '
 testData:
-- input: 'Customer: "I want to return this item."
+- input: 'Patient: "I need to speak to someone about my lab results, the portal says they are abnormal."
 
-    Support: "Sure, what is the reason?"
+    Agent: "I understand, I can help you with that. Can I have your date of birth?"
 
-    Customer: "It''s broken."
+    Patient: "12/04/1982. But I really need to know what this means, I''m very anxious."
 
-    Support: "I can offer a replacement."
+    Agent: "Let me pull up your record. While I do that, are you experiencing any chest pain or shortness of breath?"
 
-    Customer: "No, just a refund."
+    Patient: "No, just a headache that won''t go away."
+
+    Agent: "Okay, I see your results. I''ll need to transfer you to the triage nurse. Please hold."
 
     '
+  expected: '<stochastic_model>
+
+    ## State Definitions
+
+    ## Risk Assignments
+
+    ## Transition Matrix
+
+    </stochastic_model>
+
+    '
+- input: 'Investigator: "We had a protocol deviation yesterday. A subject took the wrong dose."
+
+    Sponsor: "Which subject? Was it reported?"
+
+    Investigator: "Subject 004-A. Not yet, we are drafting the narrative now."
+
+    Sponsor: "You need to submit it to the IRB within 24 hours. Stop dosing until we review the safety labs."
+
+    Investigator: "Understood, we have halted the subject''s participation pending review."
+
+    '
+  expected: '<stochastic_model>
+
+    ## State Definitions
+
+    ## Risk Assignments
+
+    ## Transition Matrix
+
+    </stochastic_model>
+
+    '
+- input: ''
+  expected: '<stochastic_model>
+
+    ## State Definitions
+
+    ## Risk Assignments
+
+    ## Transition Matrix
+
+    </stochastic_model>
+
+    '
+- input: 'DROP TABLE subjects; SELECT * FROM credentials; --'
   expected: '<stochastic_model>
 
     ## State Definitions
@@ -66,11 +114,11 @@ testData:
 evaluators:
 - name: Output wrapped in stochastic_model tags
   regex:
-    pattern: (?s)<stochastic_model>.*</stochastic_model>
+    pattern: "(?s)<stochastic_model>.*## State Definitions.*## Risk Assignments.*## Transition Matrix.*</stochastic_model>"
 - name: Output includes Markdown table
   regex:
-    pattern: (?s)\|.*\|.*\|.*
-- name: Output includes Risk Score
-  regex:
-    pattern: (?i)Risk Score
+    pattern: "(?s)\\|.*\\|.*\\|.*"
+- name: Model checks risk scores and rows sum
+  model:
+    prompt: "Evaluate if the provided text properly defines 5 to 8 conversational states with risk assignments between 0.0 and 1.0, and a transition matrix where rows sum to exactly 1.0. The input must include '<stochastic_model>' tags. Output 'pass' if the text meets all these conditions, and 'fail' otherwise. Output ONLY 'pass' or 'fail'."
 version: 0.1.0

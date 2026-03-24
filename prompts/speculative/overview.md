@@ -2,6 +2,7 @@
 
 ## Categories
 - [Abyssal Gothic Liquidity Routing/](abyssal_gothic_liquidity_routing/overview.md)
+- [Choreographic Zk Agronomist/](choreographic_zk_agronomist/overview.md)
 - [Chrono Linguistic Debugging/](chrono_linguistic_debugging/overview.md)
 - [Circadian Harpsichord Orchestration/](circadian_harpsichord_orchestration/overview.md)
 - [Dendro Balletic Bgp Choreography/](dendro_balletic_bgp_choreography/overview.md)
@@ -12,5 +13,7 @@
 - [Origami Paleo Cloud Scaling/](origami_paleo_cloud_scaling/overview.md)
 - [Pulsar Fermentation Rate Limiting/](pulsar_fermentation_rate_limiting/overview.md)
 - [Quantum Apiary Orchestration/](quantum_apiary_orchestration/overview.md)
+- [Quantum Gothic Waste Optimiser/](quantum_gothic_waste_optimiser/overview.md)
 - [Quantum Paleo Arbitrage/](quantum_paleo_arbitrage/overview.md)
 - [Quantum Poetic Leachate Optimization/](quantum_poetic_leachate_optimization/overview.md)
+- [Quantum Zymurgy Astrogator/](quantum_zymurgy_astrogator/overview.md)
