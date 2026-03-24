@@ -314,6 +314,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Growth
 
+- [algorithmic_multi_touch_attribution_modeler](prompts/growth/analytics/algorithmic_multi_touch_attribution_modeler.prompt.md)
 - [predictive_churn_ltv_optimization_architect](prompts/growth/predictive_modeling/predictive_churn_ltv_optimization_architect.prompt.md)
 
 ## Imaging
