@@ -2,3 +2,4 @@
 
 ## Categories
 - [Network Contagion/](network_contagion/overview.md)
+- [Numerical Methods/](numerical_methods/overview.md)
