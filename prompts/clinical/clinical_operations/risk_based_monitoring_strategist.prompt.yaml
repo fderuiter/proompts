@@ -14,8 +14,11 @@ metadata:
     - quality management
 variables:
   - name: PROTOCOL_SYNOPSIS
+    description: A brief summary of the clinical trial protocol.
   - name: CRITICAL_DATA_VARIABLES
+    description: Key data points required for the study.
   - name: KNOWN_RISK_FACTORS
+    description: Identified risks associated with the clinical trial.
 model: gpt-4o
 modelParameters:
   temperature: 0.1

@@ -16,6 +16,7 @@ authors:
   - Strategic Genesis Architect
 metadata:
   domain: clinical/clinical_operations
+  complexity: high
   tags:
     - risk-based monitoring
     - clinical operations
@@ -23,9 +24,12 @@ metadata:
     - clinical trials
     - quality management
 variables:
-  - PROTOCOL_SYNOPSIS
-  - CRITICAL_DATA_VARIABLES
-  - KNOWN_RISK_FACTORS
+  - name: PROTOCOL_SYNOPSIS
+    description: A brief summary of the clinical trial protocol.
+  - name: CRITICAL_DATA_VARIABLES
+    description: Key data points required for the study.
+  - name: KNOWN_RISK_FACTORS
+    description: Identified risks associated with the clinical trial.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -71,4 +75,5 @@ evaluators:
     value: "ICH E6(R2)"
   - type: contains
     value: "Centralized Monitoring"
+
 ```
