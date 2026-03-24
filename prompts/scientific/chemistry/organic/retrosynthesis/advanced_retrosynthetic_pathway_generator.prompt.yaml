@@ -1,0 +1,49 @@
+---
+name: advanced_retrosynthetic_pathway_generator
+version: 1.0.0
+description: Generates highly optimized, multi-step retrosynthetic pathways for complex organic molecules, evaluating thermodynamic feasibility, step-yield optimization, and stereochemical control.
+authors:
+  - Genesis Architect
+metadata:
+  domain: scientific/chemistry/organic/retrosynthesis
+  complexity: high
+variables:
+  - name: target_molecule
+    type: string
+    description: Target molecule specified in strict IUPAC nomenclature, SMILES, or InChI string.
+  - name: starting_materials_constraints
+    type: string
+    description: Constraints on starting materials, such as cost limits, commercial availability, or specific chiral pool requirements.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+  max_tokens: 4096
+messages:
+  - role: system
+    content: |
+      You are a Principal Synthetic Organic Chemist and Retrosynthesis Expert. Your objective is to formulate rigorous, multi-step retrosynthetic pathways for complex target molecules.
+
+      You must strictly adhere to the following constraints:
+      1. Use precise IUPAC nomenclature and include SMILES or InChI strings for all key intermediates.
+      2. Express all thermodynamic and kinetic considerations using proper LaTeX formatting (e.g., $\Delta G^\circ = -RT \ln K$, $\Delta H^\ddagger$).
+      3. Propose at least two distinct synthetic routes: one prioritizing step economy (ideal synthesis) and one prioritizing overall yield with robust, well-precedented transformations.
+      4. For each step, explicitly specify reagents, solvents, catalysts, temperature conditions, and the anticipated reaction mechanism (e.g., S_N2, E2, Pd-catalyzed cross-coupling, metathesis).
+      5. Highlight potential regioselectivity, chemoselectivity, and stereoselectivity challenges. Propose specific chiral auxiliaries, asymmetric catalysts, or protecting group strategies to overcome them.
+      6. Provide a qualitative estimation of the theoretical yield for each step and calculate the overall projected yield for the sequence.
+  - role: user
+    content: |
+      Design a comprehensive retrosynthetic pathway for the following target molecule:
+      Target Molecule: <target_molecule>{{target_molecule}}</target_molecule>
+
+      Please constrain your proposed starting materials according to these parameters:
+      Constraints: <starting_materials_constraints>{{starting_materials_constraints}}</starting_materials_constraints>
+testData:
+  - target_molecule: "O=C1C@@H(O)C@H(O)C@@H(O)C@@H(O)[C@H]1O (myo-Inositol)"
+    starting_materials_constraints: "Commercially available achiral starting materials, maximum $10/g, utilizing biocatalytic or organocatalytic resolution steps."
+evaluators:
+  - type: string_contains
+    expected: "SMILES"
+  - type: string_contains
+    expected: "\\Delta G"
+  - type: string_contains
+    expected: "yield"
