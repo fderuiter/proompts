@@ -4,6 +4,7 @@
 - **[CAPA Investigation Report Writer](capa_investigation_report_writer.prompt.yaml)**: Draft a formal CAPA investigation report for regulatory review.
 - **[CAPA Management Process](capa_management_process.prompt.yaml)**: Identify non-compliance, conduct RCA, and track CAPA.
 - **[CAPA Plan Generator](capa_plan_generator.prompt.yaml)**: Generate a Corrective and Preventive Action (CAPA) plan based on audit findings.
+- **[capa_root_cause_analysis_architect](capa_root_cause_analysis_architect.prompt.yaml)**: Acts as a Principal Quality Assurance Engineer and CAPA Specialist to rigorously investigate nonconformances, perform root cause analysis, and generate comprehensive CAPA plans compliant with FDA 21 CFR 820.100 and ISO 13485.
 - **[CAPA Root Cause Investigator](capa_root_cause_investigator.prompt.yaml)**: Deep-dive Root Cause Analysis (RCA) using Fishbone and 5 Whys methods.
 - **[CAPA SOP Architect](capa_sop_architect.prompt.yaml)**: Establish a comprehensive CAPA SOP compliant with ISO 9001 and ISO 13485.
 - **[Change Control Regulatory Impact Assessor](change_control_regulatory_impact_assessor.prompt.yaml)**: Perform rigorous regulatory impact assessments for proposed medical device changes using FDA guidance.
@@ -14,6 +15,7 @@
 - **[EU MDR PMCF Plan Architect](eu_mdr_pmcf_plan_architect.prompt.yaml)**: Designs comprehensive, regulatory-compliant Post-Market Clinical Follow-up (PMCF) Plans under EU MDR 2017/745 Annex XIV Part B.
 - **[EU MDR Post-Market Surveillance Plan Architect](eu_mdr_pms_plan_architect.prompt.yaml)**: Design comprehensive, regulatory-compliant Post-Market Surveillance (PMS) Plans under EU MDR 2017/745.
 - **[EU MDR PSUR Architect](eu_mdr_psur_architect.prompt.yaml)**: Designs comprehensive, regulatory-compliant Periodic Safety Update Reports (PSUR) under EU MDR 2017/745 Article 86 and MDCG 2022-21.
+- **[eu_mdr_sscp_architect](eu_mdr_sscp_architect.prompt.yaml)**: Acts as a Principal Regulatory Affairs Medical Writer to synthesize complex clinical data into a compliant Summary of Safety and Clinical Performance (SSCP) per EU MDR 2017/745 Article 32 and MDCG 2019-9.
 - **[Financial Conflict of Interest (FCOI) Reporting](fcoi_reporting.prompt.yaml)**: Review disclosures and draft management plan.
 - **[FDA 483 Response Strategist](fda_483_response_strategist.prompt.yaml)**: Design comprehensive, regulatory-compliant responses to FDA Form 483 observations, employing an authoritative and structured corrective action strategy.
 - **[fda_510k_substantial_equivalence_architect](fda_510k_substantial_equivalence_architect.prompt.yaml)**: Acts as a Principal Regulatory Affairs Architect to synthesize device specifications, intended use, and performance data into a highly robust FDA 510(k) Substantial Equivalence (SE) argument.
