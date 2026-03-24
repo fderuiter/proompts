@@ -35,7 +35,7 @@ def get_prompt_metadata(path: Path) -> tuple[str, str]:
     return title, str(description).strip()
 
 
-def generate_overview(directory: Path) -> str:
+def generate_overview(directory: Path, content_cache: dict[Path, bool] | None = None) -> str:
     title = directory.name.replace("_", " ").title()
     prompt_files = []
     for pattern in ("*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
@@ -58,11 +58,19 @@ def generate_overview(directory: Path) -> str:
         if child.is_dir() and not child.name.startswith('.'):
             # Check if this subdir has prompts recursively or has an overview
             has_sub_prompts = False
-            for pattern in ("*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
-                if any(child.rglob(pattern)):
-                    has_sub_prompts = True
-                    break
-            
+            if content_cache is not None and child in content_cache:
+                has_sub_prompts = content_cache[child]
+            else:
+                for pattern in ("*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
+                    try:
+                        next(child.rglob(pattern))
+                        has_sub_prompts = True
+                        break
+                    except StopIteration:
+                        continue
+                if content_cache is not None:
+                    content_cache[child] = has_sub_prompts
+
             if has_sub_prompts:
                 # Use the subdirectory name as title, or try to read its overview title?
                 # For simplicity, just use name.
@@ -93,10 +101,10 @@ def generate_overview(directory: Path) -> str:
     return "\n".join(sections).rstrip() + "\n"
 
 
-def ensure_overview(directory: Path) -> bool:
+def ensure_overview(directory: Path, content_cache: dict[Path, bool] | None = None) -> bool:
     path = directory / OVERVIEW_NAME
-    content = generate_overview(directory)
-    
+    content = generate_overview(directory, content_cache)
+
     if not content:
         if path.exists():
             path.unlink()
@@ -115,10 +123,19 @@ def main() -> int:
     changed = False
 
     # helper to check if directory has content (recursively)
+    content_cache: dict[Path, bool] = {}
+
     def has_content(d: Path) -> bool:
+        if d in content_cache:
+            return content_cache[d]
         for pattern in ("*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
-            if any(d.rglob(pattern)):
+            try:
+                next(d.rglob(pattern))
+                content_cache[d] = True
                 return True
+            except StopIteration:
+                continue
+        content_cache[d] = False
         return False
 
     # Walk through all directories under PROMPTS_DIR and WORKFLOWS_DIR
@@ -127,7 +144,7 @@ def main() -> int:
             continue
         for directory in root_dir.rglob("*"):
             if directory.is_dir() and has_content(directory):
-                if ensure_overview(directory):
+                if ensure_overview(directory, content_cache):
                     print(f"Generated overview for {directory}")
                     changed = True
                 
