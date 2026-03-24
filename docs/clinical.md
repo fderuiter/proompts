@@ -47,6 +47,7 @@ title: Clinical
 - [Decentralized Trial Risk Matrix](prompts/clinical/data_management/decentralized_trial_risk_matrix.prompt.md)
 - [Design a Patient-Centered Randomization Scheme](prompts/clinical/rtsm/rtsm_workflow/01_patient_centered_randomization_scheme.prompt.md)
 - [Design Error Prevention](prompts/clinical/forms/crf_design_optimization.prompt.md)
+- [Development Safety Update Report Architect](prompts/clinical/medical_writing/development_safety_update_report_architect.prompt.md)
 - [Digital Health Technology (DHT) Validation](prompts/clinical/eclinical_integration/dht_validation.prompt.md)
 - [Discrepancy Detection & Query Log Generator](prompts/clinical/data/clinical_data_workflow/01_discrepancy_detection_query_log.prompt.md)
 - [Diversity Action Plan Development](prompts/clinical/trial_execution/diversity_action_plan_document.prompt.md)
