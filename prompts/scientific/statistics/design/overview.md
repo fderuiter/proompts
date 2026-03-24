@@ -1,4 +1,4 @@
 # Design Overview
 
 ## Categories
-- [Causal Inference](causal_inference/overview.md)
+- [Causal Inference/](causal_inference/overview.md)
