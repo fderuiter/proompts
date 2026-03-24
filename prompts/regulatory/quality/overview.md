@@ -7,6 +7,7 @@
 - **[capa_root_cause_analysis_architect](capa_root_cause_analysis_architect.prompt.yaml)**: Acts as a Principal Quality Assurance Engineer and CAPA Specialist to rigorously investigate nonconformances, perform root cause analysis, and generate comprehensive CAPA plans compliant with FDA 21 CFR 820.100 and ISO 13485.
 - **[CAPA Root Cause Investigator](capa_root_cause_investigator.prompt.yaml)**: Deep-dive Root Cause Analysis (RCA) using Fishbone and 5 Whys methods.
 - **[CAPA SOP Architect](capa_sop_architect.prompt.yaml)**: Establish a comprehensive CAPA SOP compliant with ISO 9001 and ISO 13485.
+- **[cer_literature_review_architect](cer_literature_review_architect.prompt.yaml)**: Acts as a Principal Medical Writer and Regulatory Clinical Evaluator to systematically synthesize clinical literature search results into a MEDDEV 2.7/1 Rev 4 and EU MDR compliant Clinical Evaluation Report (CER) section.
 - **[Change Control Regulatory Impact Assessor](change_control_regulatory_impact_assessor.prompt.yaml)**: Perform rigorous regulatory impact assessments for proposed medical device changes using FDA guidance.
 - **[Compliance Gap & Risk Matrix](compliance_gap_risk_matrix.prompt.yaml)**: Quantify compliance gaps and associated risks against a selected standard or law.
 - **[eTMF Compliance Gap Analysis](etmf_compliance_gap_analysis.prompt.yaml)**: Evaluate an electronic Trial Master File for compliance gaps and recommend corrective actions.
