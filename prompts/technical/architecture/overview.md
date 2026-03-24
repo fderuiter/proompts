@@ -36,7 +36,7 @@
 - **[Real-Time Stream Processing Architect](real_time_stream_processing_architect.prompt.yaml)**: Designs highly scalable, fault-tolerant real-time data streaming and processing architectures.
 - **[Serverless Function Orchestration Architect](serverless_function_orchestration_architect.prompt.yaml)**: Designs highly scalable, resilient, and cost-efficient serverless function orchestration architectures using patterns like Saga, Scatter-Gather, and Map-Reduce.
 - **[Service Mesh Security Architect](service_mesh_security_architect.prompt.yaml)**: Designs zero-trust mTLS communication policies and robust service mesh architectures within Kubernetes environments.
-- **[SOLID Codebase Analysis](solid_codebase_analysis.prompt.yaml)**: Evaluate code against SOLID principles and suggest refactoring tasks.
+- **[SOLID Codebase Analysis](solid_codebase_analysis.prompt.yaml)**: Evaluate code against SOLID principles and suggest precise, actionable refactoring tasks.
 - **[Strangler Fig Migration Architect](strangler_fig_migration_architect.prompt.yaml)**: Architect a Strangler Fig pattern migration from a legacy monolith to microservices.
 - **[WebRTC Real-Time Media Streaming Architect](webrtc_media_streaming_architect.prompt.yaml)**: Designs highly scalable, low-latency, and resilient WebRTC-based real-time media streaming architectures.
 - **[Zero-Downtime Database Migration Architect](zero_downtime_database_migration_architect.prompt.yaml)**: Designs comprehensive, zero-downtime database migration strategies for high-availability systems.
