@@ -193,6 +193,7 @@
 [Jules System Designer](prompts/google_jules/jules_system_designer.prompt.md)
 [Jules Test Generator](prompts/google_jules/jules_test_gen.prompt.md)
 [Jules UX Writer](prompts/google_jules/jules_ux_writer.prompt.md)
+[algorithmic_multi_touch_attribution_modeler](prompts/growth/analytics/algorithmic_multi_touch_attribution_modeler.prompt.md)
 [predictive_churn_ltv_optimization_architect](prompts/growth/predictive_modeling/predictive_churn_ltv_optimization_architect.prompt.md)
 [Imaging Charter Draft](prompts/clinical/imaging/imaging_workflow/01_imaging_charter_draft.prompt.md)
 [Site Upload QC and Query Generator](prompts/clinical/imaging/imaging_workflow/02_site_upload_qc.prompt.md)
