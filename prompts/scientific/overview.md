@@ -8,6 +8,7 @@
 - [Chemistry/](chemistry/overview.md)
 - [Coa/](coa/overview.md)
 - [Computational Theoretical Neuroscience/](computational_theoretical_neuroscience/overview.md)
+- [Economics/](economics/overview.md)
 - [Genetics/](genetics/overview.md)
 - [Mathematics/](mathematics/overview.md)
 - [Medical Writing/](medical_writing/overview.md)
