@@ -12,6 +12,7 @@
 - [Medical Writing/](medical_writing/overview.md)
 - [Monitoring/](monitoring/overview.md)
 - [Protocol/](protocol/overview.md)
+- [Regulatory Affairs/](regulatory_affairs/overview.md)
 - [Rtsm/](rtsm/overview.md)
 - [Safety/](safety/overview.md)
 - [Site Acquisition/](site_acquisition/overview.md)
