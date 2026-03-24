@@ -17,6 +17,7 @@ title: Regulatory
 - [CAPA Plan Generator](prompts/regulatory/quality/capa_plan_generator.prompt.md)
 - [CAPA Root Cause Investigator](prompts/regulatory/quality/capa_root_cause_investigator.prompt.md)
 - [CAPA SOP Architect](prompts/regulatory/quality/capa_sop_architect.prompt.md)
+- [capa_root_cause_analysis_architect](prompts/regulatory/quality/capa_root_cause_analysis_architect.prompt.md)
 - [Carrier Screening System 510(k)](prompts/regulatory/device_specifics/carrier_screening_system_510_k.prompt.md)
 - [Change Control Regulatory Impact Assessor](prompts/regulatory/quality/change_control_regulatory_impact_assessor.prompt.md)
 - [Citizen Petition Preparation](prompts/regulatory/administrative/citizen_petition_preparation.prompt.md)
