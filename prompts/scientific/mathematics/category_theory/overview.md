@@ -1,7 +1,4 @@
-# Category Theory
-
-This directory contains prompts related to Category Theory and abstract structural analysis.
+# Category Theory Overview
 
 ## Prompts
-
-- [Category Theory Adjunction Architect](category_theory_adjunction_architect.prompt.yaml)
+- **[category_theory_adjunction_architect](category_theory_adjunction_architect.prompt.yaml)**: Generates rigorous mathematical proofs of functorial adjunctions and Kan extensions, enforcing strict category-theoretical formalisms and LaTeX formatting.
