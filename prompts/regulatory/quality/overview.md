@@ -14,6 +14,7 @@
 - **[EU MDR PMCF Plan Architect](eu_mdr_pmcf_plan_architect.prompt.yaml)**: Designs comprehensive, regulatory-compliant Post-Market Clinical Follow-up (PMCF) Plans under EU MDR 2017/745 Annex XIV Part B.
 - **[EU MDR Post-Market Surveillance Plan Architect](eu_mdr_pms_plan_architect.prompt.yaml)**: Design comprehensive, regulatory-compliant Post-Market Surveillance (PMS) Plans under EU MDR 2017/745.
 - **[EU MDR PSUR Architect](eu_mdr_psur_architect.prompt.yaml)**: Designs comprehensive, regulatory-compliant Periodic Safety Update Reports (PSUR) under EU MDR 2017/745 Article 86 and MDCG 2022-21.
+- **[EU MDR SSCP Architect](eu_mdr_sscp_architect.prompt.yaml)**: Acts as a Principal Regulatory Affairs Medical Writer to synthesize complex clinical data into a compliant Summary of Safety and Clinical Performance (SSCP) per EU MDR 2017/745 Article 32 and MDCG 2019-9.
 - **[Financial Conflict of Interest (FCOI) Reporting](fcoi_reporting.prompt.yaml)**: Review disclosures and draft management plan.
 - **[FDA 483 Response Strategist](fda_483_response_strategist.prompt.yaml)**: Design comprehensive, regulatory-compliant responses to FDA Form 483 observations, employing an authoritative and structured corrective action strategy.
 - **[fda_510k_substantial_equivalence_architect](fda_510k_substantial_equivalence_architect.prompt.yaml)**: Acts as a Principal Regulatory Affairs Architect to synthesize device specifications, intended use, and performance data into a highly robust FDA 510(k) Substantial Equivalence (SE) argument.
