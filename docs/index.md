@@ -793,6 +793,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Zero-Downtime Database Migration Architect](prompts/technical/architecture/zero_downtime_database_migration_architect.prompt.md)
 - [Zero Trust Network Architecture Designer](prompts/technical/architecture/zero_trust_network_architecture_designer.prompt.md)
 - [Universal Automation Agent](prompts/technical/automation/universal_automation_agent.prompt.md)
+- [post_quantum_cryptography_migration_architect](prompts/technical/cryptography/post_quantum_cryptography_migration_architect.prompt.md)
 - [Conversation Stochastic Modeler](prompts/technical/data_science/conversation_stochastic_modeler.prompt.md)
 - [System Design RFC Architect](prompts/technical/design/design_md_template.prompt.md)
 - [AI Email Assistant Go/No-Go Vote](prompts/technical/design/email_assistant_go_no_go_vote.prompt.md)
