@@ -1,4 +1,4 @@
 # Institutions Overview
 
 ## Prompts
-- [Institutional Isomorphism Lifecycle Modeler](institutional_isomorphism_lifecycle_modeler.prompt.yaml)
+- **[institutional_isomorphism_lifecycle_modeler](institutional_isomorphism_lifecycle_modeler.prompt.yaml)**: Models the lifecycle of institutional isomorphism (coercive, mimetic, normative) within specific organizational fields using neo-institutional theory.
