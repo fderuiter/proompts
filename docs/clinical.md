@@ -8,6 +8,7 @@ title: Clinical
 - [21 CFR Part 11 Compliance Verification](prompts/clinical/data_management/part_11_compliance_verification.prompt.md)
 - [ADaM Derivation Writer](prompts/clinical/data_management/cdisc_compliance_workflow/03_adam_derivation_writer.prompt.md)
 - [Adaptive Recruitment and Retention Strategy](prompts/clinical/trial_execution/adaptive_recruitment_retention_strategy.prompt.md)
+- [adverse_event_signal_detection_architect](prompts/clinical/pharmacovigilance/adverse_event_signal_detection_architect.prompt.md)
 - [AI-Powered Site and Recruitment Strategy](prompts/clinical/trial_execution/ai_powered_site_recruitment.prompt.md)
 - [Analyze Adjudication KPIs](prompts/clinical/adjudication/adjudication_workflow/03_analyze_adjudication_kpis.prompt.md)
 - [Architect the Integration Blueprint](prompts/clinical/eclinical_integration/eclinical_integration_workflow/01_architect_integration_blueprint.prompt.md)
