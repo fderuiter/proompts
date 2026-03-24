@@ -16,6 +16,7 @@
 - **[Rapid Process Diagnostic & Lean Improvement Plan](rapid_process_diagnostic.prompt.yaml)**: Create a concise process review and improvement roadmap.
 - **[Rolling Resource & Capacity Forecast](rolling_resource_capacity_forecast.prompt.yaml)**: Generate a 12-month forecast of FTE demand and utilization by function and region.
 - **[Study Start-Up Checklist & Timeline](study_startup_checklist.prompt.yaml)**: Provide an actionable checklist and timeline for Phase IIb study start-up.
+- **[Supply Chain Disruption Stochastic Stress Test Architect](supply_chain_stress_test.prompt.yaml)**: Conducts rigorous stochastic stress testing and resilience optimization for global supply chain networks using node vulnerability analysis and disruption modeling.
 - **[Risk-Based Vendor Performance Improvement Plan](vendor_performance_improvement_plan.prompt.yaml)**: Raise overall vendor performance and reduce operational risk.
 - **[Vendor Qualification and Oversight](vendor_qualification.prompt.yaml)**: Develop Vendor Oversight Plan and KPIs.
 - **[Weekly Operations KPI Snapshot](weekly_ops_kpi_snapshot.prompt.yaml)**: Summarize weekly milestone performance and highlight at-risk studies.
