@@ -1,4 +1,4 @@
-# Numerical Methods
+# Numerical Methods Overview
 
 ## Prompts
-- [Physics Informed Neural Network Architect](physics_informed_neural_network_architect.prompt.yaml)
+- **[physics_informed_neural_network_architect](physics_informed_neural_network_architect.prompt.yaml)**: Designs robust Physics-Informed Neural Network (PINN) architectures for solving complex nonlinear Partial Differential Equations (PDEs), ensuring physical constraint enforcement and numerical stability.
