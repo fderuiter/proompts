@@ -1,3 +1,31 @@
+"""
+run_workflow.py: The Workflow Simulation Engine
+
+WHAT:
+This script loads a `.workflow.yaml` file, parses the step execution order,
+resolves inter-step variable mappings, and simulates the output of each prompt.
+
+WHY:
+It allows developers to verify the logic, input mappings, and output extraction
+of complex prompt chains *without* incurring any LLM API costs or dealing with
+network latency. It ensures your workflows are structurally sound before deployment.
+
+> [!NOTE]
+> This is a SIMULATION engine. It does **not** make actual API calls to OpenAI,
+> Anthropic, or any other LLM provider. Instead, it deterministically returns
+> the `expected` output defined in the `testData` array of the corresponding prompt file.
+
+HOW TO USE:
+Basic simulation:
+    python3 tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml
+
+With custom initial inputs:
+    python3 tools/scripts/run_workflow.py path/to/workflow.workflow.yaml -i user_name="Alice"
+
+With verbose logging (useful for debugging variable resolution):
+    python3 tools/scripts/run_workflow.py path/to/workflow.workflow.yaml -v
+"""
+
 from __future__ import annotations
 
 import argparse
@@ -11,7 +39,7 @@ import yaml
 # Configure logger
 logger = logging.getLogger(__name__)
 
-def setup_logging(verbose: bool = False):
+def setup_logging(verbose: bool = False) -> None:
     """Configures the logger."""
     level = logging.DEBUG if verbose else logging.INFO
     logging.basicConfig(level=level, format='%(levelname)s: %(message)s')
