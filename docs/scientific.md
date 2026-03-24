@@ -6,6 +6,7 @@ title: Scientific
 
 ## Prompts
 - [Adaptive Design & Interim Monitoring](prompts/scientific/biostatistics/adaptive_design_interim_monitoring.prompt.md)
+- [advanced_retrosynthetic_pathway_generator](prompts/scientific/chemistry/organic/retrosynthesis/advanced_retrosynthetic_pathway_generator.prompt.md)
 - [bayesian_hierarchical_model_architect](prompts/scientific/statistics/inference/bayesian_methods/bayesian_hierarchical_model_architect.prompt.md)
 - [Bioburden Testing SOP](prompts/scientific/microbiology/microbiology_workflow/01_bioburden_testing_sop.prompt.md)
 - [Biological Evaluation Plan Builder](prompts/scientific/biosafety/bep_builder.prompt.md)

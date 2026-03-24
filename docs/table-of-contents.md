@@ -308,6 +308,7 @@
 [Risk-Based Site Performance Dashboard](prompts/clinical/monitoring/clinical_monitoring_workflow/01_risk_based_site_performance_dashboard.prompt.md)
 [CAPA Plan Builder for Monitoring Findings](prompts/clinical/monitoring/clinical_monitoring_workflow/02_capa_plan_builder_for_monitoring_findings.prompt.md)
 [Monitoring Visit Report (MVR) Quality Critique](prompts/clinical/monitoring/clinical_monitoring_workflow/03_monitoring_visit_report_quality_critique.prompt.md)
+[advanced_retrosynthetic_pathway_generator](prompts/scientific/chemistry/organic/retrosynthesis/advanced_retrosynthetic_pathway_generator.prompt.md)
 [Design a Robust Preclinical Pathology Study Protocol](prompts/scientific/pathology/pathology_study_workflow/01_study_protocol_outline.prompt.md)
 [Evaluate Device–Tissue Interface Findings](prompts/scientific/pathology/pathology_study_workflow/02_device_tissue_interface_evaluation.prompt.md)
 [Prepare Pathology Slides and Reporting Plan](prompts/scientific/pathology/pathology_study_workflow/03_slides_and_reporting_workflow.prompt.md)
