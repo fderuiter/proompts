@@ -57,6 +57,7 @@ title: Business
 - [Upskilling Program Design](prompts/business/vp_tech_innovation/upskilling_program_design.prompt.md)
 - [Value-Based QBR Generator](prompts/business/cx/value_based_qbr.prompt.md)
 - [Voice of Customer Root Cause Analysis](prompts/business/cx/root_cause_analysis.prompt.md)
+- [zero_based_budgeting_turnaround_architect](prompts/business/strategy/zero_based_budgeting_turnaround_architect.prompt.md)
 
 ## Workflows
 - [CFO Workflow](workflows/cfo.md)
