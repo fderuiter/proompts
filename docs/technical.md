@@ -6,6 +6,7 @@ title: Technical
 
 ## Prompts
 - [AI Email Assistant Go/No-Go Vote](prompts/technical/design/email_assistant_go_no_go_vote.prompt.md)
+- [ai_threat_modeling_architect](prompts/technical/security/ai_threat_modeling_architect.prompt.md)
 - [APT Threat Hunting Query Engineer](prompts/technical/security/apt_threat_hunting_query_engineer.prompt.md)
 - [Atlas Documentation Specialist](prompts/technical/documentation/atlas_documentation_specialist.prompt.md)
 - [Code Formatting, Linting, and Refactoring Implementation](prompts/technical/repository_refactoring/code_formatting_linting_refactoring_implementation.prompt.md)
