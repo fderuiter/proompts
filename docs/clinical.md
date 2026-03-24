@@ -29,6 +29,7 @@ title: Clinical
 - [Clinical Trial Document Archiving](prompts/clinical/data_management/document_archiving.prompt.md)
 - [Clinical Trial Protocol Synopsis Architect](prompts/clinical/medical_writing/clinical_trial_protocol_synopsis_architect.prompt.md)
 - [Clinical-Trial Protocol Creator](prompts/clinical/protocol/protocol_workflow/01_clinical_trial_protocol_creator.prompt.md)
+- [clinical_study_report_patient_narrative_architect](prompts/clinical/medical_writing/clinical_study_report_patient_narrative_architect.prompt.md)
 - [Compassionate Analyst](prompts/clinical/therapy/music_therapy_workflow/01_compassionate_analyst.prompt.md)
 - [Compassionate Music Therapist & Composer](prompts/clinical/therapy/music_therapist_melody.prompt.md)
 - [Compliance and Data Quality Monitoring Plan](prompts/clinical/trial_execution/compliance_data_quality_monitoring_plan.prompt.md)

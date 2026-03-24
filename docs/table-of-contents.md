@@ -100,6 +100,7 @@
 [Design Error Prevention](prompts/clinical/forms/crf_design_optimization.prompt.md)
 [Electronic Data Capture Implementation](prompts/clinical/forms/ecrf_implementation.prompt.md)
 [Semantic Interoperability Optimization](prompts/clinical/forms/semantic_interoperability.prompt.md)
+[clinical_study_report_patient_narrative_architect](prompts/clinical/medical_writing/clinical_study_report_patient_narrative_architect.prompt.md)
 [Clinical Trial Protocol Synopsis Architect](prompts/clinical/medical_writing/clinical_trial_protocol_synopsis_architect.prompt.md)
 [Clinical Study Report (CSR) Narrative Drafter](prompts/clinical/medical_writing/csr_narrative_drafter.prompt.md)
 [csr_patient_narrative_architect](prompts/clinical/medical_writing/csr_patient_narrative_architect.prompt.md)
