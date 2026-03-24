@@ -837,6 +837,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Sonic Architect](prompts/clinical/therapy/music_therapy_workflow/03_sonic_architect.prompt.md)
 - [Lyricist](prompts/clinical/therapy/music_therapy_workflow/04_lyricist.prompt.md)
 
+## Topology
+
+- [serre_spectral_sequence_calculator](prompts/scientific/mathematics/topology/algebraic_topology/serre_spectral_sequence_calculator.prompt.md)
+
 ## Training
 
 - [Competency-Based Onboarding Blueprint](prompts/management/training/learning_development_workflow/01_competency_based_onboarding_blueprint.prompt.md)
