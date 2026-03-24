@@ -110,6 +110,7 @@ title: Regulatory
 - [RWE Regulatory Framework Summary](prompts/regulatory/adherence/rwe_framework_summary.prompt.md)
 - [SaMD Cybersecurity Vulnerability Assessor](prompts/regulatory/quality/samd_cybersecurity_vulnerability_assessor.prompt.md)
 - [samd_hazard_traceability_matrix_generator](prompts/regulatory/quality/samd_hazard_traceability_matrix_generator.prompt.md)
+- [samd_iec62304_software_architecture_architect](prompts/regulatory/quality/samd_iec62304_software_architecture_architect.prompt.md)
 - [samd_iec_62304_software_safety_classification_architect](prompts/regulatory/quality/samd_iec_62304_software_safety_classification_architect.prompt.md)
 - [Shelf-life Study Rationale](prompts/regulatory/adherence/shelf_life_study_rationale.prompt.md)
 - [Special Controls Labeling Compliance](prompts/regulatory/device_specifics/special_controls_labeling_compliance.prompt.md)
