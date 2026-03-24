@@ -1,3 +1,4 @@
-# Polyphonic Astrobotanical Harmoniser
+# Polyphonic Astrobotanical Harmoniser Overview
 
-This directory contains the `polyphonic_astrobotanical_harmoniser` prompt, designed to solve microgravity hydroponic fluid stagnation using Renaissance polyphony.
+## Prompts
+- **[polyphonic_astrobotanical_harmoniser](polyphonic_astrobotanical_harmoniser.prompt.yaml)**: Generates polyphonic acoustic resonance profiles to optimize microgravity hydroponic fluid dynamics. Translates target turbulence and nutrient dispersion metrics into four-part Renaissance-style acoustic waveforms.
