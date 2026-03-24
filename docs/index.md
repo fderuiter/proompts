@@ -734,6 +734,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Mycelial Aristocrat HFT Router](prompts/speculative/mycelial_aristocrat_hft_routing/mycelial_aristocrat_hft_router.prompt.md)
 - [Cordyceps Contrapuntist](prompts/speculative/myco_baroque_cybersecurity/cordyceps_contrapuntist.prompt.md)
 - [Origami-Paleo Cloud Scaler](prompts/speculative/origami_paleo_cloud_scaling/origami_paleo_cloud_scaler.prompt.md)
+- [polyphonic_astrobotanical_harmoniser](prompts/speculative/polyphonic_astrobotanical_harmoniser/polyphonic_astrobotanical_harmoniser.prompt.md)
 - [Pulsar Fermentation Rate Limiting Architect](prompts/speculative/pulsar_fermentation_rate_limiting/pulsar_fermentation_rate_limiter.prompt.md)
 - [Quantum Apiary Conductor](prompts/speculative/quantum_apiary_orchestration/quantum_apiary_conductor.prompt.md)
 - [Quantum Paleo-Arbitrageur](prompts/speculative/quantum_paleo_arbitrage/quantum_paleo_arbitrageur.prompt.md)
