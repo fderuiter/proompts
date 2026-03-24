@@ -174,6 +174,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Investigator's Brochure Safety Update Architect](prompts/clinical/medical_writing/investigators_brochure_safety_update_architect.prompt.md)
 - [Pediatric Investigational Plan (PIP) Architect](prompts/clinical/medical_writing/pediatric_investigational_plan_architect.prompt.md)
 - [Protocol Amendment Rationale Drafter](prompts/clinical/medical_writing/protocol_amendment_rationale_drafter.prompt.md)
+- [protocol_deviation_assessment_architect](prompts/clinical/medical_writing/protocol_deviation_assessment_architect.prompt.md)
 - [Regulatory Query Response Drafter](prompts/clinical/medical_writing/regulatory_query_response_drafter.prompt.md)
 - [SAE Patient Narrative Drafter](prompts/clinical/medical_writing/sae_patient_narrative_drafter.prompt.md)
 - [Clinical Monitoring Plan Development](prompts/clinical/monitoring/clinical_monitoring_plan.prompt.md)
