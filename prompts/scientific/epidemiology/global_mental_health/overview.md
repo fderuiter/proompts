@@ -1,6 +1,4 @@
-# Global Mental Health
-
-This directory contains prompts related to global mental health epidemiology.
+# Global Mental Health Overview
 
 ## Prompts
-- [Longitudinal Trauma Propagation Modeler](longitudinal_trauma_propagation_modeler.prompt.yaml)
+- **[longitudinal_trauma_propagation_modeler](longitudinal_trauma_propagation_modeler.prompt.yaml)**: Models the epidemiological propagation of psychological trauma across massive longitudinal population datasets using advanced spatial-temporal network equations and WHO mental health guidelines.
