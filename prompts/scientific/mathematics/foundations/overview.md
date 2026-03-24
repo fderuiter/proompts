@@ -1,4 +1,4 @@
 # Foundations Overview
 
-## Prompts
-- **proof_theory**: Subdirectory for proof theory prompts.
+## Categories
+- [Proof Theory/](proof_theory/overview.md)
