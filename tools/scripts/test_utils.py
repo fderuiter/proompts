@@ -7,7 +7,7 @@ import sys
 
 # Add the current directory to sys.path to import utils
 sys.path.append(str(Path(__file__).parent))
-from utils import load_yaml, iter_prompt_files
+from utils import load_yaml, iter_prompt_files, iter_workflow_files
 
 class TestUtils(unittest.TestCase):
     @patch("utils.Path.read_text")
@@ -65,6 +65,36 @@ class TestUtils(unittest.TestCase):
             }
 
             self.assertEqual(len(results), 3)
+            self.assertEqual(set(results), expected_files)
+
+    def test_iter_workflow_files(self):
+        """Test iter_workflow_files yields correct files."""
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+
+            # Create workflow files
+            (root / "flow1.workflow.yaml").touch()
+            (root / "._flow1.workflow.yaml").touch()  # Should be skipped
+
+            # Create subdirectory
+            subdir = root / "subdir"
+            subdir.mkdir()
+            (subdir / "flow2.workflow.yaml").touch()
+
+            # Create non-workflow files
+            (root / "readme.md").touch()
+            (root / "prompt1.prompt.yaml").touch()
+
+            # Get results
+            results = list(iter_workflow_files(root))
+
+            # Check results
+            expected_files = {
+                root / "flow1.workflow.yaml",
+                subdir / "flow2.workflow.yaml"
+            }
+
+            self.assertEqual(len(results), 2)
             self.assertEqual(set(results), expected_files)
 
 if __name__ == "__main__":
