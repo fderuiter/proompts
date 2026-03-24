@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 import yaml
 
@@ -26,3 +27,11 @@ def iter_workflow_files(root: Path = WORKFLOWS_DIR):
     for p in root.rglob("*.workflow.yaml"):
         if not p.name.startswith("._"):
             yield p
+
+def extract_template_vars(content: dict) -> list[str]:
+    """Extract all {{var}} patterns from messages."""
+    found: set[str] = set()
+    for msg in content.get("messages", []):
+        text = msg.get("content", "")
+        found.update(re.findall(r'\{\{([^}]+)\}\}', text))
+    return sorted(found)
