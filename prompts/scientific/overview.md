@@ -7,6 +7,7 @@
 - [Chemical Characterization/](chemical_characterization/overview.md)
 - [Chemistry/](chemistry/overview.md)
 - [Coa/](coa/overview.md)
+- [Computational Biology/](computational_biology/overview.md)
 - [Computational Theoretical Neuroscience/](computational_theoretical_neuroscience/overview.md)
 - [Genetics/](genetics/overview.md)
 - [Mathematics/](mathematics/overview.md)
