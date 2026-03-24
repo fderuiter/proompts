@@ -21,6 +21,7 @@ title: Business
 - [Elevator Pitch for Expensive Tech](prompts/business/vp_tech_innovation/elevator_pitch_expensive_tech.prompt.md)
 - [Emerging-Market Opportunity Scan](prompts/business/development/emerging_market_opportunity_scan.prompt.md)
 - [Friction-Hunting Onboarding Audit](prompts/business/cx/onboarding_audit.prompt.md)
+- [game_theoretic_competitive_dynamics_architect](prompts/business/strategy/game_theoretic_competitive_dynamics_architect.prompt.md)
 - [GCP and GDPR Training Compliance Risk Report](prompts/business/hr_finance/gcp_gdpr_compliance_training_risk_report.prompt.md)
 - [Global Regulatory and Tax Matrix for Site Payments](prompts/business/payment/global_regulatory_tax_matrix.prompt.md)
 - [Hostile Takeover Defense Matrix Architect](prompts/business/strategy/hostile_takeover_defense_matrix.prompt.md)
@@ -40,6 +41,7 @@ title: Business
 - [Payment-Process Risk Assessment and Mitigation](prompts/business/payment/payment_process_risk_assessment.prompt.md)
 - [Post-Mortem / Incident Report Summary](prompts/business/vp_tech_innovation/post_mortem_summary.prompt.md)
 - [Preventing Technical Debt](prompts/business/vp_tech_innovation/preventing_technical_debt.prompt.md)
+- [Private Equity Value Creation Architect](prompts/business/strategy/private_equity_value_creation_architect.prompt.md)
 - [Rapid Proposal Builder](prompts/business/development/rapid_proposal_builder.prompt.md)
 - [Red Account Turnaround Strategy](prompts/business/cx/red_account_turnaround.prompt.md)
 - [Regulatory & Commercial Barrier Mapping](prompts/business/market_research/market_research_workflow/03_regulatory_commercial_barrier_mapping.prompt.md)
@@ -56,6 +58,7 @@ title: Business
 - [Upskilling Program Design](prompts/business/vp_tech_innovation/upskilling_program_design.prompt.md)
 - [Value-Based QBR Generator](prompts/business/cx/value_based_qbr.prompt.md)
 - [Voice of Customer Root Cause Analysis](prompts/business/cx/root_cause_analysis.prompt.md)
+- [zero_based_budgeting_turnaround_architect](prompts/business/strategy/zero_based_budgeting_turnaround_architect.prompt.md)
 
 ## Workflows
 - [CFO Workflow](workflows/cfo.md)

@@ -75,7 +75,7 @@ class TestCheckPrompts(unittest.TestCase):
 
             result = check_directory_contents(dir_path)
             self.assertFalse(result)
-            self.assertIn(f"{invalid_file} is not a recognised prompt file", mock_stdout.getvalue())
+            self.assertIn(f"{invalid_file} is not a recognised prompt or workflow file", mock_stdout.getvalue())
 
     @patch('check_prompts.load_yaml')
     def test_check_prompt_file_valid(self, mock_load_yaml):
@@ -143,14 +143,19 @@ class TestCheckPrompts(unittest.TestCase):
     @patch('check_prompts.check_directory_contents')
     @patch('check_prompts.check_overview')
     @patch('check_prompts.check_prompt_file')
+    @patch('check_prompts.iter_workflow_files')
     @patch('check_prompts.iter_prompt_files')
+    @patch('check_prompts.WORKFLOWS_DIR', new_callable=lambda: Path('/fake/workflows'))
     @patch('check_prompts.PROMPTS_DIR', new_callable=lambda: Path('/fake/prompts'))
-    def test_main_success(self, mock_prompts_dir, mock_iter, mock_check_prompt, mock_check_overview, mock_check_dir):
+    def test_main_success(self, mock_prompts_dir, mock_workflows_dir, mock_iter_prompts, mock_iter_workflows, mock_check_prompt, mock_check_overview, mock_check_dir):
         """Test main when all checks pass."""
         # Set up mock iter_prompt_files to yield a couple of files
         prompt1 = mock_prompts_dir / "dir1" / "test1.prompt.yaml"
         prompt2 = mock_prompts_dir / "dir2" / "test2.prompt.yaml"
-        mock_iter.return_value = [prompt1, prompt2]
+        mock_iter_prompts.return_value = [prompt1, prompt2]
+
+        workflow1 = mock_workflows_dir / "flow1" / "test1.workflow.yaml"
+        mock_iter_workflows.return_value = [workflow1]
 
         # Make all checks pass
         mock_check_prompt.return_value = True
@@ -160,10 +165,11 @@ class TestCheckPrompts(unittest.TestCase):
         result = main()
 
         self.assertEqual(result, 0)
-        self.assertEqual(mock_check_prompt.call_count, 2)
-        # Should check dir1 and dir2
-        self.assertEqual(mock_check_overview.call_count, 2)
-        self.assertEqual(mock_check_dir.call_count, 2)
+        # 2 prompts + 1 workflow = 3
+        self.assertEqual(mock_check_prompt.call_count, 3)
+        # Should check dir1, dir2 and flow1
+        self.assertEqual(mock_check_overview.call_count, 3)
+        self.assertEqual(mock_check_dir.call_count, 3)
 
     @patch('check_prompts.check_directory_contents')
     @patch('check_prompts.check_overview')
