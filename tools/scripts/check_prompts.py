@@ -1,8 +1,32 @@
 #!/usr/bin/env python3
-"""Repository checks for prompt files.
+"""
+Repository Checks for Prompt Files
 
-This utility checks YAML-based prompts (``*.prompt.yaml`` and
-``*.prompt.yml``) for basic syntax and naming conventions.
+## What is this?
+This script performs structural and naming validation on the `prompts/` and `workflows/`
+directories to ensure repository consistency. It enforces that prompts follow required
+naming patterns and that every directory has documentation.
+
+## Why use it?
+- **Prevents Documentation Debt:** Ensures every prompt directory contains an `overview.md` file.
+- **Enforces Consistency:** Validates that meta-prompts follow the `L<num>_` naming pattern.
+- **Catches Stray Files:** Identifies unrecognized files that don't belong in prompt directories.
+
+> [!NOTE]
+> This script is primarily focused on file structure and names. For deep YAML schema validation,
+> use `validate_prompt_schema.py`.
+
+## How to use it?
+
+### Usage Example
+Run this script from the root of the repository:
+
+```bash
+python3 tools/scripts/check_prompts.py
+```
+
+If successful, it exits with code 0. If it finds missing `overview.md` files or invalid names,
+it prints the errors to stdout and exits with code 1.
 """
 
 from __future__ import annotations
