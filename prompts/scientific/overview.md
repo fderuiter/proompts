@@ -9,6 +9,7 @@
 - [Coa/](coa/overview.md)
 - [Computational Biology/](computational_biology/overview.md)
 - [Computational Theoretical Neuroscience/](computational_theoretical_neuroscience/overview.md)
+- [Ecology/](ecology/overview.md)
 - [Economics/](economics/overview.md)
 - [Epidemiology/](epidemiology/overview.md)
 - [Genetics/](genetics/overview.md)

@@ -1,3 +1,4 @@
-# Population Dynamics Prompts
+# Population Dynamics Overview
 
-Contains advanced prompts for modeling population dynamics, multispecies interactions, and ecological networks using stochastic mathematical models and generalized Lotka-Volterra equations.
+## Prompts
+- **[stochastic_lotka_volterra_population_modeler](stochastic_lotka_volterra_population_modeler.prompt.yaml)**: Rigorously models stochastic multispecies population dynamics using generalized Lotka-Volterra equations with environmental noise.

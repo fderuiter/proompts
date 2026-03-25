@@ -1,3 +1,4 @@
-# Ecology Prompts
+# Ecology Overview
 
-Contains advanced prompts for ecological systems, population dynamics, and ecosystem modeling.
+## Categories
+- [Population Dynamics/](population_dynamics/overview.md)
