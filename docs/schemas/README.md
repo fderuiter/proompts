@@ -7,10 +7,11 @@ This directory contains JSON Schemas generated from the repository's validation 
 | Schema File | Description | Source Script |
 | :--- | :--- | :--- |
 | [`prompt.schema.json`](./prompt.schema.json) | Validates `.prompt.yaml` files. | `tools/scripts/validate_prompt_schema.py` |
+| [`workflow.schema.json`](./workflow.schema.json) | Validates `.workflow.yaml` files. | Manual (Schema defined in docs) |
 
 ## How to Configure VS Code
 
-To enable schema validation and Intellisense in VS Code for `.prompt.yaml` files:
+To enable schema validation and Intellisense in VS Code for `.prompt.yaml` and `.workflow.yaml` files:
 
 1.  Open your workspace settings (`.vscode/settings.json`) or global settings.
 2.  Add the `yaml.schemas` configuration:
@@ -18,7 +19,8 @@ To enable schema validation and Intellisense in VS Code for `.prompt.yaml` files
 ```json
 {
   "yaml.schemas": {
-    "docs/schemas/prompt.schema.json": "**/*.prompt.yaml"
+    "docs/schemas/prompt.schema.json": "**/*.prompt.yaml",
+    "docs/schemas/workflow.schema.json": "**/*.workflow.yaml"
   }
 }
 ```
@@ -33,6 +35,12 @@ To enable schema validation and Intellisense in VS Code for `.prompt.yaml` files
 4.  **Schema file or URL**: Select the `docs/schemas/prompt.schema.json` file in your project.
 5.  **Schema version**: JSON Schema version 7.
 6.  **File path pattern**: `**/*.prompt.yaml`.
+
+Repeat the process for the Workflow Schema:
+3.  **Name**: "Workflow Schema".
+4.  **Schema file or URL**: Select the `docs/schemas/workflow.schema.json` file in your project.
+5.  **Schema version**: JSON Schema version 7.
+6.  **File path pattern**: `**/*.workflow.yaml`.
 
 ## Updating the Schema
 
