@@ -236,6 +236,7 @@
 [Culinary Amnestic Reconstruction Engine (CARE)](prompts/lifestyle/culinary/culinary_amnestic_reconstruction.prompt.md)
 [Myco-Alchemical Arbitrageur](prompts/lifestyle/fungal_financial_alchemy/myco_alchemical_arbitrageur.prompt.md)
 [Quantum Baroque Garden Architect](prompts/lifestyle/quantum_baroque_gardening/quantum_baroque_garden_architect.prompt.md)
+[new_keynesian_dsge_architect](prompts/scientific/economics/macroeconomics/dsge_modeling/new_keynesian_dsge_architect.prompt.md)
 [Accelerate Patient Recruitment & Retention](prompts/management/clinical_research_manager/accelerate_patient_recruitment_retention.prompt.md)
 [Digest Regulatory Updates Affecting Protocol](prompts/management/clinical_research_manager/digest_regulatory_updates.prompt.md)
 [Portfolio KPI Dashboard Brief](prompts/management/clinical_research_manager/portfolio_kpi_dashboard_brief.prompt.md)
