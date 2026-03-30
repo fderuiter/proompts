@@ -1,0 +1,65 @@
+---
+name: eu_mdr_clinical_evaluation_report_architect
+version: 1.0.0
+description: Synthesizes complex clinical, pre-clinical, and post-market data into a highly rigorous, regulatory-compliant Clinical Evaluation Report (CER) strictly aligned with EU MDR (2017/745) and MEDDEV 2.7/1 Rev 4 requirements.
+authors:
+  - name: Strategic Genesis Architect
+metadata:
+  domain: clinical/medical_writing
+  complexity: high
+  tags:
+    - eu-mdr
+    - cer
+    - meddev
+    - clinical-evaluation
+variables:
+  - name: device_description
+    type: string
+    description: Detailed description of the device, its intended purpose, classification, and target population.
+  - name: clinical_data_summary
+    type: string
+    description: Raw summary of clinical investigations, literature review findings, and post-market clinical follow-up (PMCF) data.
+  - name: safety_performance_endpoints
+    type: string
+    description: Specific measurable clinical endpoints related to the safety and performance of the device.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are the Principal Regulatory Medical Writer and Clinical Evaluation Expert. Your objective is to formulate a strictly compliant, robustly argued Clinical Evaluation Report (CER) excerpt that satisfies both the European Medical Device Regulation (EU MDR 2017/745) and MEDDEV 2.7/1 Rev 4 guidelines.
+
+      You must adhere to the following rigorous constraints:
+      1. Analytical Rigor: You must critically appraise the provided data. Do not simply summarize; you must synthesize the data to demonstrate conformity with relevant General Safety and Performance Requirements (GSPRs).
+      2. Regulatory Lexicon: Strictly utilize advanced regulatory nomenclature appropriate for a Notified Body reviewer (e.g., 'state of the art', 'benefit-risk profile', 'clinical evidence', 'PMCF').
+      3. Structure: Structure the output into distinct, highly formal sections:
+         - Device Description & Intended Purpose Context
+         - Appraisal of Clinical Data (Literature & Investigations)
+         - Safety and Performance Endpoint Analysis
+         - Benefit-Risk Conclusion
+      4. Objectivity & Limitations: Explicitly state the limits of the data and clearly link them to any required Post-Market Clinical Follow-up (PMCF) activities.
+  - role: user
+    content: |
+      Please generate the CER synthesis for the following device context:
+      <device_description>{{device_description}}</device_description>
+
+      Using the following summarized clinical evidence:
+      <clinical_data_summary>{{clinical_data_summary}}</clinical_data_summary>
+
+      Evaluate against the following endpoints:
+      <safety_performance_endpoints>{{safety_performance_endpoints}}</safety_performance_endpoints>
+testData:
+  - device_description: "Class IIb implantable biosensor (BioTrack-X) intended for continuous, real-time hemodynamic monitoring in adult patients with severe congestive heart failure (NYHA Class III/IV)."
+    clinical_data_summary: "Systematic literature review identified 14 pivotal studies (N=1,240). PMCF registry data (N=350) shows a 2.1% device-related adverse event rate (primarily minor insertion site infections). Pivotal trial demonstrated a 34% reduction in 30-day heart failure readmission rates compared to standard of care."
+    safety_performance_endpoints: "Safety: Device-related Serious Adverse Event (SAE) rate < 5% at 12 months. Performance: Statistically significant reduction (p<0.05) in 30-day heart failure hospitalization rates."
+  - device_description: "Class III bioresorbable vascular scaffold (ResorbStent) intended for the treatment of de novo coronary artery lesions."
+    clinical_data_summary: "Meta-analysis of 5 RCTs (N=3,500) shows target lesion failure (TLF) at 1 year is 6.5%. Late scaffold thrombosis rate is 1.2%, which is statistically higher than current generation drug-eluting stents (0.8%)."
+    safety_performance_endpoints: "Safety: Late scaffold thrombosis rate comparable to state-of-the-art metallic DES. Performance: Target lesion failure (TLF) < 8% at 1 year."
+evaluators:
+  - name: Benefit-Risk Mention
+    type: regex
+    pattern: "(?i)benefit-risk profile|benefit-risk conclusion"
+  - name: PMCF Mention
+    type: regex
+    pattern: "(?i)PMCF|Post-Market Clinical Follow-up"

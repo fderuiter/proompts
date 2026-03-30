@@ -61,6 +61,7 @@ title: Clinical
 - [Electronic Data Capture Implementation](prompts/clinical/forms/ecrf_implementation.prompt.md)
 - [ePRO Adoption Plan for Sponsors](prompts/clinical/epro/epro_workflow/03_epro_adoption_plan_for_sponsors.prompt.md)
 - [eTMF Artifact Classifier](prompts/clinical/data_management/etmf_artifact_classifier.prompt.md)
+- [eu_mdr_clinical_evaluation_report_architect](prompts/clinical/medical_writing/eu_mdr_clinical_evaluation_report_architect.prompt.md)
 - [FDA MDR/MDV Adverse-Event Narrative](prompts/clinical/safety/clinical_safety_workflow/02_fda_mdr_adverse_event_narrative.prompt.md)
 - [Forecast Site-Level Drug Supply & Resupply Strategy](prompts/clinical/rtsm/rtsm_workflow/02_site_level_supply_resupply_strategy.prompt.md)
 - [icf_readability_compliance_architect](prompts/clinical/medical_writing/icf_readability_compliance_architect.prompt.md)
