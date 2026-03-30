@@ -1,6 +1,4 @@
-# Clinical Psychology
-
-This directory contains prompts related to clinical psychology, diagnostics, and intervention frameworks.
+# Clinical Overview
 
 ## Categories
-- [Psychopathology](psychopathology/overview.md)
+- [Psychopathology/](psychopathology/overview.md)

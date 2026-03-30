@@ -1,3 +1,4 @@
-# Psychopathology
+# Psychopathology Overview
 
-This directory contains prompts focused on the systemic study, differential diagnosis, and conceptual mapping of mental disorders using established diagnostic criteria such as DSM-5-TR and ICD-11.
+## Prompts
+- **[differential_diagnosis_mapper](differential_diagnosis_mapper.prompt.yaml)**: Conducts rigorous differential diagnostic mapping using strict DSM-5-TR and ICD-11 criteria to isolate primary pathologies and rule out confounding syndromes.
