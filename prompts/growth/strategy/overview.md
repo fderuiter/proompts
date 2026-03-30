@@ -1,3 +1,4 @@
-# Growth Strategy
+# Strategy Overview
 
-This directory contains advanced prompt templates for growth strategy, including strategic planning, pricing elasticity mapping, and other critical commercial workflows for enterprise SaaS.
+## Prompts
+- **[gtm_pricing_elasticity_architect](gtm_pricing_elasticity_architect.prompt.yaml)**: Synthesizes enterprise SaaS historical sales data into predictive Go-To-Market (GTM) pricing elasticity matrices.
