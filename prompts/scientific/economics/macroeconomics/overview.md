@@ -1,3 +1,4 @@
-# Macroeconomics
+# Macroeconomics Overview
 
-This directory contains expert-level prompts for macroeconomic analysis, forecasting, and theory.
+## Categories
+- [Dsge Modeling/](dsge_modeling/overview.md)
