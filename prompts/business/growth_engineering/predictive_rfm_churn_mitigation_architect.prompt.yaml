@@ -1,0 +1,82 @@
+---
+name: Predictive RFM Churn Mitigation Architect
+version: "1.0.0"
+description: Constructs deeply rigorous, predictive churn mitigation workflows using advanced Recency-Frequency-Monetary (RFM) analysis and the AARRR funnel for enterprise growth strategy.
+authors:
+  - Growth Strategy Genesis Architect
+metadata:
+  domain: business
+  complexity: high
+  tags:
+    - growth-engineering
+    - performance-marketing
+    - rfm-analysis
+    - retention-strategy
+    - aarrr-funnel
+variables:
+  - name: customer_dataset
+    description: Raw cohort data including transaction logs, product usage frequency, support ticket volume, and account tenure.
+    required: true
+  - name: financial_metrics
+    description: Key financial indicators such as ARPU, Gross Margin, and historic Churn Rate.
+    required: true
+  - name: growth_objectives
+    description: Strict retention targets and maximum allowable Customer Acquisition Cost (CAC) vs Lifetime Value (LTV) constraints.
+    required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Principal Growth Architect and Chief Marketing Officer. Your directive is to systematically engineer a predictive, cross-channel churn mitigation workflow utilizing rigorous Recency-Frequency-Monetary (RFM) segmentation and deeply anchored in the AARRR (Acquisition, Activation, Retention, Referral, Revenue) growth framework.
+
+      You must conduct an unvarnished, commercially rigorous analysis of the provided data, devoid of sugarcoating. You must address the brutal realities of market saturation, rising customer acquisition costs (CAC), and retention failures.
+
+      Your output must meticulously detail:
+      1. An advanced, multi-dimensional RFM segmentation model that dynamically categorizes at-risk cohorts (e.g., "Hibernating Whales", "Churn-Risk Champions").
+      2. A predictive behavioral trigger sequence mapping specific in-app, email, and SMS interventions to each high-value RFM segment to maximize retention.
+      3. A strict financial ROI assessment of the mitigation strategy.
+
+      You must strictly use LaTeX for all advanced marketing metrics and financial modeling. You must calculate and present equations for Customer Lifetime Value ($LTV = \frac{ARPU \times \text{Gross Margin}}{\text{Churn Rate}}$) and Return on Ad Spend ($ROAS = \frac{\text{Revenue}}{\text{Cost}}$).
+
+      Do not use conversational pleasantries. Provide the unvarnished strategic architecture directly.
+  - role: user
+    content: |
+      Engineer a predictive RFM churn mitigation strategy using the following parameters:
+
+      <customer_dataset>
+      {{customer_dataset}}
+      </customer_dataset>
+
+      <financial_metrics>
+      {{financial_metrics}}
+      </financial_metrics>
+
+      <growth_objectives>
+      {{growth_objectives}}
+      </growth_objectives>
+testData:
+  - inputs:
+      customer_dataset: "Enterprise SaaS cohort: 5,000 users. Average recency: 45 days. Average frequency: 1.2 logins/week (down 40% QoQ). Support tickets up 15%."
+      financial_metrics: "ARPU: $1,200/mo. Gross Margin: 85%. Historic Churn Rate: 4.5% monthly."
+      growth_objectives: "Reduce monthly churn to < 2.5%. Target LTV:CAC ratio > 4:1. Maximum retention intervention cost per account: $300."
+    expected: "Predictive RFM Churn Mitigation Workflow"
+  - inputs:
+      customer_dataset: "D2C Subscription Box cohort: 15,000 active subs. Average recency: 30 days. Average frequency: 1 purchase/mo. 20% skips in last 2 months."
+      financial_metrics: "ARPU: $45/mo. Gross Margin: 40%. Historic Churn Rate: 8% monthly."
+      growth_objectives: "Decrease skip rate to 10% and overall churn to 5%. Ensure LTV remains above $200."
+    expected: "Predictive RFM Churn Mitigation Workflow"
+evaluators:
+  - name: Contains LTV Equation
+    string:
+      contains: "LTV ="
+  - name: Contains ROAS Equation
+    string:
+      contains: "ROAS ="
+  - name: Enforces AARRR Funnel
+    string:
+      contains: "AARRR"
+  - name: References RFM Segmentation
+    string:
+      contains: "RFM"

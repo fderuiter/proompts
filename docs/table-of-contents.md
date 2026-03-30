@@ -41,6 +41,7 @@
 [Rapid Proposal Builder](prompts/business/development/rapid_proposal_builder.prompt.md)
 [RFP Executive-Summary Generator](prompts/business/development/rfp_executive_summary_generator.prompt.md)
 [Strategic Business Case for New Service Line](prompts/business/development/strategic_business_case_in_silico.prompt.md)
+[Predictive RFM Churn Mitigation Architect](prompts/business/growth_engineering/predictive_rfm_churn_mitigation_architect.prompt.md)
 [Clinical-Trial Budget and Burn-Rate Dashboard](prompts/business/hr_finance/clinical_trial_budget_burn_rate_dashboard.prompt.md)
 [GCP and GDPR Training Compliance Risk Report](prompts/business/hr_finance/gcp_gdpr_compliance_training_risk_report.prompt.md)
 [Strategic Workforce and Talent Acquisition Plan](prompts/business/hr_finance/strategic_workforce_talent_acquisition_plan.prompt.md)
