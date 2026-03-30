@@ -1,3 +1,4 @@
-# Ethics
+# Ethics Overview
 
-This directory contains prompts related to ethics and moral philosophy.
+## Categories
+- [Normative Ethics/](normative_ethics/overview.md)

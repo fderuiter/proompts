@@ -1,3 +1,4 @@
-# Normative Ethics
+# Normative Ethics Overview
 
-This directory contains prompts related to normative ethics, including applied ethical stress testing and moral framework analysis.
+## Prompts
+- **[Applied Ethical Stress Tester](applied_ethical_stress_tester.prompt.yaml)**: Systematically stress-tests complex ethical dilemmas and applied scenarios using Kantian and Utilitarian matrices, rigorously deconstructing edge-cases and moral conflicts.
