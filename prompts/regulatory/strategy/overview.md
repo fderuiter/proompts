@@ -13,6 +13,7 @@
 - **[IVD Performance Study Compliance Review](ivd_performance_study_compliance_review.prompt.yaml)**: Review an IVD performance study for compliance with MDCG 2024‑4 and related guidance.
 - **[IVDR Performance-Evaluation Plan Blueprint](ivdr_pep_blueprint.prompt.yaml)**: Draft a comprehensive Performance‑Evaluation Plan (PEP) that satisfies Article 56 and Annex XIII of the IVDR.
 - **[Literature & Regulatory Gap Analysis](literature_regulatory_gap_analysis.prompt.yaml)**: Identify evidence and regulatory gaps for a planned pivotal clinical study.
+- **[Orphan Drug Designation Architect](orphan_drug_designation_architect.prompt.yaml)**: Formulates a compelling FDA Orphan Drug Designation (ODD) request incorporating rigorous epidemiological analysis and medical plausibility rationale.
 - **[Pre-IND Meeting Preparation](pre_ind_meeting_preparation.prompt.yaml)**: Draft Pre-IND briefing package and questions.
 - **[Prompt-Writing Best-Practice Checklist](prompt_best_practices.prompt.yaml)**: Summarize key elements of effective prompt design.
 - **[21 CFR 820 / QMSR Gap-Analysis & Remediation](qmsr_gap_analysis.prompt.yaml)**: Evaluate the quality-management system against current 21 CFR 820 and the proposed QMSR.
