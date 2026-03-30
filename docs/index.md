@@ -46,6 +46,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Source Document and Endpoint Checklist](prompts/clinical/adjudication/adjudication_workflow/02_source_document_endpoint_checklist.prompt.md)
 - [Analyze Adjudication KPIs](prompts/clinical/adjudication/adjudication_workflow/03_analyze_adjudication_kpis.prompt.md)
 
+## Analytical
+
+- [Predictive Multidimensional Spectroscopy Architect](prompts/scientific/chemistry/analytical/spectroscopy/predictive_multidimensional_spectroscopy_architect.prompt.md)
+
 ## Architecture
 
 - [TOGAF Phase A - Architecture Vision](prompts/technical/architecture/togaf/phase_a_vision.prompt.md)

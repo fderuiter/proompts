@@ -1,6 +1,7 @@
 [Real-Time Adjudication Visibility Dashboard](prompts/clinical/adjudication/adjudication_workflow/01_real_time_adjudication_dashboard.prompt.md)
 [Source Document and Endpoint Checklist](prompts/clinical/adjudication/adjudication_workflow/02_source_document_endpoint_checklist.prompt.md)
 [Analyze Adjudication KPIs](prompts/clinical/adjudication/adjudication_workflow/03_analyze_adjudication_kpis.prompt.md)
+[Predictive Multidimensional Spectroscopy Architect](prompts/scientific/chemistry/analytical/spectroscopy/predictive_multidimensional_spectroscopy_architect.prompt.md)
 [TOGAF Phase A - Architecture Vision](prompts/technical/architecture/togaf/phase_a_vision.prompt.md)
 [TOGAF Phase B - Business Architecture](prompts/technical/architecture/togaf/phase_b_business.prompt.md)
 [TOGAF Phase C - Information Systems Architectures](prompts/technical/architecture/togaf/phase_c_information_systems.prompt.md)
