@@ -724,6 +724,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [MCID Research and Summary](prompts/scientific/coa/mcid_definition.prompt.md)
 - [Psychometric Validation Methodology](prompts/scientific/coa/psychometric_validation_methods.prompt.md)
 - [Qualitative Interview Guide Generator](prompts/scientific/coa/qualitative_interview_guide.prompt.md)
+- [molecular_dynamics_simulation_architect](prompts/scientific/computational_biology/molecular_dynamics_simulation_architect.prompt.md)
 - [multi_omics_data_integration_architect](prompts/scientific/computational_biology/multi_omics_data_integration_architect.prompt.md)
 - [biophysical_hodgkin_huxley_modeler](prompts/scientific/computational_theoretical_neuroscience/biophysical_hodgkin_huxley_modeler.prompt.md)
 - [graph_theoretical_connectome_analyzer](prompts/scientific/computational_theoretical_neuroscience/graph_theoretical_connectome_analyzer.prompt.md)

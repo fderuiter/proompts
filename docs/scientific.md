@@ -53,6 +53,7 @@ title: Scientific
 - [large_scale_axial_coding_framework_generator](prompts/scientific/sociology/methods/ethnographic_coding/large_scale_axial_coding_framework_generator.prompt.md)
 - [longitudinal_trauma_propagation_modeler](prompts/scientific/epidemiology/global_mental_health/longitudinal_trauma_propagation_modeler.prompt.md)
 - [MCID Research and Summary](prompts/scientific/coa/mcid_definition.prompt.md)
+- [molecular_dynamics_simulation_architect](prompts/scientific/computational_biology/molecular_dynamics_simulation_architect.prompt.md)
 - [multi_modal_fmri_eeg_integration_architect](prompts/scientific/computational_theoretical_neuroscience/multi_modal_fmri_eeg_integration_architect.prompt.md)
 - [multi_omics_data_integration_architect](prompts/scientific/computational_biology/multi_omics_data_integration_architect.prompt.md)
 - [multidimensional_nmr_hrms_structure_elucidator](prompts/scientific/chemistry/analytical/multidimensional_nmr_hrms_structure_elucidator.prompt.md)
