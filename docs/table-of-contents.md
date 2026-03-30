@@ -474,6 +474,7 @@
 [Regulatory-Change Impact Analysis](prompts/regulatory/strategy/regulatory_change_impact_analysis.prompt.md)
 [Regulatory Filing Draft Builder](prompts/regulatory/strategy/regulatory_filing_draft_builder.prompt.md)
 [Request for Designation (RFD) Submission](prompts/regulatory/strategy/rfd_submission.prompt.md)
+[SaMD AI/ML PCCP Architect](prompts/regulatory/strategy/samd_ai_pccp_architect.prompt.md)
 [Strategic Regulatory Pathway Plan](prompts/regulatory/strategy/strategic_regulatory_pathway_plan.prompt.md)
 [510(k) Substantial Equivalence Preparation](prompts/regulatory/submissions/510_k_substantial_equivalence_preparation.prompt.md)
 [Combination Product Jurisdiction](prompts/regulatory/submissions/combination_product_jurisdiction.prompt.md)
