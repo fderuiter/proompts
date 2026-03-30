@@ -1,3 +1,4 @@
-# Analytical Chemistry Prompts
+# Analytical Overview
 
-This directory contains prompts related to analytical chemistry, including spectroscopy, chromatography, and mass spectrometry.
+## Categories
+- [Spectroscopy/](spectroscopy/overview.md)
