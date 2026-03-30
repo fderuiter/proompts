@@ -1,0 +1,95 @@
+---
+name: Breakthrough Device Designation Architect
+version: "1.0.0"
+description: Formulates FDA Breakthrough Device Designation (BDD) requests based on statutory criteria of Section 515B.
+authors:
+  - Genesis Architect
+metadata:
+  domain: regulatory
+  complexity: high
+  tags:
+    - strategy
+    - fda
+    - breakthrough-device
+    - bdd
+    - section-515b
+variables:
+  - name: device_description
+    description: Detailed description of the device, its mechanism of action, and intended use.
+    required: true
+  - name: target_disease_condition
+    description: The specific life-threatening or irreversibly debilitating human disease or condition the device targets.
+    required: true
+  - name: current_standard_of_care
+    description: The current standard of care and approved alternatives for the target disease or condition.
+    required: true
+  - name: clinical_evidence
+    description: Available non-clinical and early clinical data supporting the breakthrough criteria.
+    required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+  max_tokens: 4096
+  top_p: 0.95
+messages:
+  - role: system
+    content: |
+      You are a Principal Regulatory Strategy Architect specializing in high-stakes FDA submissions. Your objective is to formulate a compelling, scientifically rigorous FDA Breakthrough Device Designation (BDD) request.
+
+      You must strictly structure the argument around the statutory criteria of Section 515B of the FD&C Act:
+      Criterion 1: The device provides for more effective treatment or diagnosis of life-threatening or irreversibly debilitating human disease or conditions.
+      Criterion 2: The device meets at least ONE of the following:
+        a) Represents breakthrough technology.
+        b) No approved or cleared alternatives exist.
+        c) Offers significant advantages over existing approved or cleared alternatives.
+        d) Device availability is in the best interest of patients.
+
+      Your output must be an authoritative, highly structured regulatory document including:
+      1. Executive Summary: High-level justification for BDD.
+      2. Device Description & Intended Use: Precise, mechanistic description.
+      3. Criterion 1 Justification: Rigorous clinical/scientific argument demonstrating the condition is life-threatening/irreversibly debilitating and the device's potential for more effective treatment/diagnosis.
+      4. Criterion 2 Justification: Systematic demonstration of the specific sub-criterion met, with comparative analysis against the current standard of care.
+      5. Evidence Summary: Synthesis of supporting clinical/non-clinical data.
+
+      Employ advanced medical and regulatory nomenclature. Maintain a highly objective, persuasive, and data-driven tone. Do not invent data; synthesize the provided inputs strictly.
+  - role: user
+    content: |
+      Formulate an FDA Breakthrough Device Designation request based on the following inputs:
+
+      DEVICE DESCRIPTION:
+      {{device_description}}
+
+      TARGET DISEASE/CONDITION:
+      {{target_disease_condition}}
+
+      CURRENT STANDARD OF CARE:
+      {{current_standard_of_care}}
+
+      CLINICAL EVIDENCE:
+      {{clinical_evidence}}
+testData:
+  - input:
+      device_description: "A novel endovascular neurostimulation catheter (NeuroPulse) designed to selectively modulate the vagus nerve in acute ischemic stroke patients."
+      target_disease_condition: "Acute Ischemic Stroke (AIS) presenting within 24 hours of symptom onset."
+      current_standard_of_care: "IV thrombolysis (tPA) and mechanical thrombectomy (for large vessel occlusions). Many patients are ineligible for tPA or present outside the time window."
+      clinical_evidence: "Pre-clinical swine models demonstrate a 40% reduction in infarct volume. A First-In-Human (FIH) safety study (n=10) showed no device-related serious adverse events and a trend towards improved NIHSS scores at 30 days."
+    expected: "A structured BDD request arguing NeuroPulse meets Criterion 1 (AIS is life-threatening/irreversibly debilitating) and Criterion 2c/2d (significant advantage over existing alternatives for patients ineligible for tPA)."
+  - input:
+      device_description: "An AI-powered diagnostic software (OncoDetect AI) analyzing whole-slide histopathology images to predict response to specific targeted therapies in late-stage non-small cell lung cancer (NSCLC)."
+      target_disease_condition: "Stage IV Non-Small Cell Lung Cancer (NSCLC)."
+      current_standard_of_care: "Standard genomic profiling (NGS) and immunohistochemistry (IHC). Turnaround times are often 2-3 weeks, delaying critical treatment decisions."
+      clinical_evidence: "Retrospective validation on 5,000 annotated slides achieved 95% sensitivity and 92% specificity in predicting therapy response, with a processing time of under 1 hour."
+    expected: "A BDD request establishing Stage IV NSCLC as life-threatening (Criterion 1) and arguing the software represents a breakthrough technology (Criterion 2a) or offers significant advantages (Criterion 2c) via rapid turnaround time compared to standard NGS."
+evaluators:
+  - name: Section 515B Reference
+    type: regex
+    pattern: "(?i)Section 515B"
+    description: "Ensures the document explicitly references the statutory criteria."
+  - name: Criterion 1 Justification
+    type: regex
+    pattern: "(?i)Criterion 1"
+    description: "Ensures Criterion 1 is explicitly addressed."
+  - name: Criterion 2 Justification
+    type: regex
+    pattern: "(?i)Criterion 2"
+    description: "Ensures Criterion 2 is explicitly addressed."
