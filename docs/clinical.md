@@ -42,6 +42,7 @@ title: Clinical
 - [csr_patient_narrative_architect](prompts/clinical/medical_writing/csr_patient_narrative_architect.prompt.md)
 - [csr_patient_safety_narrative_architect](prompts/clinical/medical_writing/csr_patient_safety_narrative_architect.prompt.md)
 - [CTD Module 2.5 Clinical Overview Architect](prompts/clinical/medical_writing/ctd_module_2_5_clinical_overview_architect.prompt.md)
+- [ctd_module_2_7_clinical_summary_architect](prompts/clinical/medical_writing/ctd_module_2_7_clinical_summary_architect.prompt.md)
 - [Data Architecture Blueprint](prompts/clinical/data_management/data_architecture_blueprint.prompt.md)
 - [Data De-identification](prompts/clinical/data_management/data_deidentification.prompt.md)
 - [Data Management Plan (DMP) Development](prompts/clinical/data_management/dmp_development.prompt.md)
