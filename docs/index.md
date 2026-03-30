@@ -312,6 +312,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Ethics
 
+- [Applied Ethical Stress Tester](prompts/scientific/philosophy/ethics/normative_ethics/applied_ethical_stress_tester.prompt.md)
 - [Normative Ethics Stress Tester](prompts/scientific/philosophy/ethics/normative_ethics/normative_ethics_stress_tester.prompt.md)
 
 ## Forms
