@@ -477,6 +477,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [EO Sterilization Validation Protocol](prompts/scientific/microbiology/microbiology_workflow/02_eo_sterilization_validation_protocol.prompt.md)
 - [Endotoxin Control & 510(k) Risk Plan](prompts/scientific/microbiology/microbiology_workflow/03_endotoxin_control_510k_risk_plan.prompt.md)
 
+## Molecular
+
+- [complex_ppi_network_mapper](prompts/scientific/molecular/proteomics/complex_ppi_network_mapper.prompt.md)
+
 ## Monitoring
 
 - [Risk-Based Site Performance Dashboard](prompts/clinical/monitoring/clinical_monitoring_workflow/01_risk_based_site_performance_dashboard.prompt.md)
