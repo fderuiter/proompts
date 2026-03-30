@@ -11,6 +11,7 @@
 - [Microbial Steganography Diplomat/](microbial_steganography_diplomat/overview.md)
 - [Mycelial Aristocrat Hft Routing/](mycelial_aristocrat_hft_routing/overview.md)
 - [Myco Baroque Cybersecurity/](myco_baroque_cybersecurity/overview.md)
+- [Orbital Fermentation Arbitrageur/](orbital_fermentation_arbitrageur/overview.md)
 - [Origami Paleo Cloud Scaling/](origami_paleo_cloud_scaling/overview.md)
 - [Polyphonic Astrobotanical Harmoniser/](polyphonic_astrobotanical_harmoniser/overview.md)
 - [Pulsar Fermentation Rate Limiting/](pulsar_fermentation_rate_limiting/overview.md)
