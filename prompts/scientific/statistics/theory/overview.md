@@ -1,4 +1,4 @@
 # Theory Overview
 
 ## Categories
-- [Asymptotics](asymptotics/overview.md)
+- [Asymptotics/](asymptotics/overview.md)
