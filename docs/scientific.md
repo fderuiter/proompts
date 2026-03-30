@@ -58,6 +58,7 @@ title: Scientific
 - [multi_omics_data_integration_architect](prompts/scientific/computational_biology/multi_omics_data_integration_architect.prompt.md)
 - [multidimensional_nmr_hrms_structure_elucidator](prompts/scientific/chemistry/analytical/multidimensional_nmr_hrms_structure_elucidator.prompt.md)
 - [Multiplicity Adjustment Code Generator](prompts/scientific/biostatistics/multiplicity_adjustments_calculator.prompt.md)
+- [n_player_bayesian_nash_equilibrium_auction_architect](prompts/scientific/economics/microeconomics/game_theory/n_player_bayesian_nash_equilibrium_auction_architect.prompt.md)
 - [Natural Language Argument Formalizer](prompts/scientific/philosophy/logic/natural_language_argument_formalizer.prompt.md)
 - [new_keynesian_dsge_architect](prompts/scientific/economics/macroeconomics/dsge_modeling/new_keynesian_dsge_architect.prompt.md)
 - [Normative Ethics Stress Tester](prompts/scientific/philosophy/ethics/normative_ethics/normative_ethics_stress_tester.prompt.md)

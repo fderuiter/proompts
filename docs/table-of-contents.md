@@ -344,6 +344,7 @@
 [Bioburden Testing SOP](prompts/scientific/microbiology/microbiology_workflow/01_bioburden_testing_sop.prompt.md)
 [EO Sterilization Validation Protocol](prompts/scientific/microbiology/microbiology_workflow/02_eo_sterilization_validation_protocol.prompt.md)
 [Endotoxin Control & 510(k) Risk Plan](prompts/scientific/microbiology/microbiology_workflow/03_endotoxin_control_510k_risk_plan.prompt.md)
+[n_player_bayesian_nash_equilibrium_auction_architect](prompts/scientific/economics/microeconomics/game_theory/n_player_bayesian_nash_equilibrium_auction_architect.prompt.md)
 [complex_ppi_network_mapper](prompts/scientific/molecular/proteomics/complex_ppi_network_mapper.prompt.md)
 [Risk-Based Site Performance Dashboard](prompts/clinical/monitoring/clinical_monitoring_workflow/01_risk_based_site_performance_dashboard.prompt.md)
 [CAPA Plan Builder for Monitoring Findings](prompts/clinical/monitoring/clinical_monitoring_workflow/02_capa_plan_builder_for_monitoring_findings.prompt.md)
