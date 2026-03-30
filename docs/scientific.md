@@ -20,6 +20,7 @@ title: Scientific
 - [Comprehensive Biocompatibility Test Matrix](prompts/scientific/biosafety/comprehensive_test_matrix.prompt.md)
 - [Content Validity & Reliability Analysis](prompts/scientific/coa/content_validity_clinician_input.prompt.md)
 - [crispr_cas9_off_target_predictive_modeler](prompts/scientific/genetics/genomics/crispr_cas9_off_target_predictive_modeler.prompt.md)
+- [crispr_cas9_off_target_probabilistic_modeler](prompts/scientific/computational_biology/crispr_cas9_off_target_probabilistic_modeler.prompt.md)
 - [Design a Robust Preclinical Pathology Study Protocol](prompts/scientific/pathology/pathology_study_workflow/01_study_protocol_outline.prompt.md)
 - [Design the Study](prompts/scientific/chemical_characterization/chemical_characterization_workflow/01_design_the_study.prompt.md)
 - [dialectical_metaphysical_synthesizer](prompts/scientific/philosophy/metaphysics/dialectical_metaphysical_synthesizer.prompt.md)
