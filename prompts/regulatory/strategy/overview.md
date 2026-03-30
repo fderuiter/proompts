@@ -20,4 +20,5 @@
 - **[Regulatory-Change Impact Analysis](regulatory_change_impact_analysis.prompt.yaml)**: Assess how a new regulation affects company operations and outline a phased response plan.
 - **[Regulatory Filing Draft Builder](regulatory_filing_draft_builder.prompt.yaml)**: Produce a regulator‑ready draft document using provided financials and risk data.
 - **[Request for Designation (RFD) Submission](rfd_submission.prompt.yaml)**: Draft RFD for combination products.
+- **[SaMD AI/ML PCCP Architect](samd_ai_pccp_architect.prompt.yaml)**: Design rigorous Predetermined Change Control Plans (PCCP) for AI/ML-enabled Software as a Medical Device (SaMD) aligned with FDA guidance.
 - **[Strategic Regulatory Pathway Plan](strategic_regulatory_pathway_plan.prompt.yaml)**: Outline a holistic global regulatory pathway for a medical device or IVD.
