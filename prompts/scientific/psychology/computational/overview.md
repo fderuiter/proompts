@@ -1,3 +1,4 @@
-# Computational Psychology
+# Computational Overview
 
-This directory contains advanced prompt templates for computational psychology, including automated modeling of algorithmic social contagion, behavioral epidemiology, and macro-psychological phenomena.
+## Categories
+- [Network Contagion/](network_contagion/overview.md)
