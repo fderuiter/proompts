@@ -42,6 +42,7 @@ title: Scientific
 - [intergenerational_mobility_modeler](prompts/scientific/sociology/stratification/intergenerational_mobility_modeler.prompt.md)
 - [Interpret the Chemistry & Assess Risk](prompts/scientific/chemical_characterization/chemical_characterization_workflow/02_interpret_the_chemistry_assess_risk.prompt.md)
 - [intuitionistic_logic_natural_deduction_generator](prompts/scientific/mathematics/foundations/proof_theory/intuitionistic_logic_natural_deduction_generator.prompt.md)
+- [investigators_brochure_synthesis_architect](prompts/scientific/medical_writing/investigators_brochure_synthesis_architect.prompt.md)
 - [item_response_theory_dif_analyzer](prompts/scientific/psychology/quantitative/psychometrics/item_response_theory_dif_analyzer.prompt.md)
 - [longitudinal_trauma_propagation_modeler](prompts/scientific/epidemiology/global_mental_health/longitudinal_trauma_propagation_modeler.prompt.md)
 - [MCID Research and Summary](prompts/scientific/coa/mcid_definition.prompt.md)
