@@ -16,6 +16,7 @@ title: Technical
 - [Dependencies & Security Posture Analysis](prompts/technical/repository_refactoring/dependencies_security_analysis.prompt.md)
 - [Documentation and Repository Structure Implementation](prompts/technical/repository_refactoring/documentation_structure_implementation.prompt.md)
 - [Forge - Script Reliability Agent](prompts/technical/devops/forge_script_reliability.prompt.md)
+- [Hardware Side-Channel Attack Modeling Architect](prompts/technical/security/hardware_side_channel_attack_modeling_architect.prompt.md)
 - [Heuristic-Evaluation Coach](prompts/technical/design/heuristic_evaluation_coach.prompt.md)
 - [Investigator's Brochure Summary of Changes](prompts/technical/technical_writing/technical_writer_workflow/02_ib_detailed_soc.prompt.md)
 - [Medical Device Cybersecurity Threat Modeling](prompts/technical/security/cybersecurity_threat_modeling.prompt.md)
