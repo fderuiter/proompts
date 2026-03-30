@@ -1,3 +1,4 @@
-# Early Universe
+# Early Universe Overview
 
-This directory contains advanced theoretical physics prompts related to early universe cosmology, such as inflationary dynamics and primordial perturbations.
+## Prompts
+- **[Inflationary Tensor Perturbation Architect](inflationary_tensor_perturbation_architect.prompt.yaml)**: Analytically derives tensor perturbations (primordial gravitational waves) generated during cosmic inflation, computing power spectra and assessing observational signatures.
