@@ -1,3 +1,4 @@
-# Asymptotic Theory
+# Asymptotics Overview
 
-This directory contains prompts focused on large-sample theory, including the asymptotic properties of estimators, deriving limiting distributions under standard and non-standard conditions, and related mathematical probability topics.
+## Prompts
+- **[asymptotic_distribution_mle_architect](asymptotic_distribution_mle_architect.prompt.yaml)**: Acts as a Principal Statistician to rigorously derive the asymptotic distribution of Maximum Likelihood Estimators (MLEs) and test statistics under non-standard conditions.
