@@ -594,6 +594,7 @@
 [Offline-First Synchronization Architect](prompts/technical/architecture/offline_first_sync_architect.prompt.md)
 [Platform Engineering IDP Architect](prompts/technical/architecture/platform_engineering_idp_architect.prompt.md)
 [Real-Time Stream Processing Architect](prompts/technical/architecture/real_time_stream_processing_architect.prompt.md)
+[Server-Driven UI Architecture Designer](prompts/technical/architecture/server_driven_ui_architect.prompt.md)
 [Serverless Function Orchestration Architect](prompts/technical/architecture/serverless_function_orchestration_architect.prompt.md)
 [Service Mesh Security Architect](prompts/technical/architecture/service_mesh_security_architect.prompt.md)
 [SOLID Codebase Analysis](prompts/technical/architecture/solid_codebase_analysis.prompt.md)
