@@ -1,3 +1,4 @@
-# Macroeconomics Prompts
+# Macroeconomics Overview
 
-This directory contains prompts related to macroeconomics, including structural models, forecasting, and policy analysis.
+## Categories
+- [Dsge/](dsge/overview.md)

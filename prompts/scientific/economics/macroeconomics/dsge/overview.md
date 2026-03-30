@@ -1,3 +1,4 @@
-# DSGE Model Prompts
+# Dsge Overview
 
-This directory contains prompts related to Dynamic Stochastic General Equilibrium (DSGE) modeling, a key tool in modern macroeconomic analysis.
+## Prompts
+- **[dsge_model_architect](dsge_model_architect.prompt.yaml)**: Economic Sciences Genesis Architect persona for developing advanced Dynamic Stochastic General Equilibrium (DSGE) models.
