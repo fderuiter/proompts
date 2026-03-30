@@ -831,6 +831,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Testing, Configuration, and Automation Analysis](prompts/technical/repository_refactoring/testing_configuration_automation_analysis.prompt.md)
 - [ai_threat_modeling_architect](prompts/technical/security/ai_threat_modeling_architect.prompt.md)
 - [APT Threat Hunting Query Engineer](prompts/technical/security/apt_threat_hunting_query_engineer.prompt.md)
+- [automated_malware_reverse_engineering_analyst](prompts/technical/security/automated_malware_reverse_engineering_analyst.prompt.md)
 - [Medical Device Cybersecurity Threat Modeling](prompts/technical/security/cybersecurity_threat_modeling.prompt.md)
 - [Zero-Day Incident Containment Architect](prompts/technical/security/zero_day_containment_architect.prompt.md)
 - [Technical White Paper for Clinical Methodologies](prompts/technical/technical_writing/technical_white_paper_in_silico.prompt.md)
