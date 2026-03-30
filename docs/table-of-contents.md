@@ -592,6 +592,7 @@
 [Micro-Frontend Orchestration Architect](prompts/technical/architecture/micro_frontend_orchestration_architect.prompt.md)
 [Multi-Agent Orchestration Architect](prompts/technical/architecture/multi_agent_orchestration_architect.prompt.md)
 [Multi-Region Active-Active Resilience Architect](prompts/technical/architecture/multi_region_active_active_resilience.prompt.md)
+[Multi-Region K8s Federation Architect](prompts/technical/architecture/multi_region_k8s_federation_architect.prompt.md)
 [Multi-Tenant SaaS Architecture Designer](prompts/technical/architecture/multi_tenant_saas_architecture_designer.prompt.md)
 [Offline-First Synchronization Architect](prompts/technical/architecture/offline_first_sync_architect.prompt.md)
 [Platform Engineering IDP Architect](prompts/technical/architecture/platform_engineering_idp_architect.prompt.md)
