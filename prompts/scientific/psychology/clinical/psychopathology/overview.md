@@ -1,3 +1,4 @@
-# Psychopathology Prompts
+# Psychopathology Overview
 
-This directory contains prompts related to abnormal psychology, diagnostic categorizations (e.g., DSM-5-TR, ICD-11), and the etiology of psychological disorders.
+## Prompts
+- **[differential_diagnosis_mapping_architect](differential_diagnosis_mapping_architect.prompt.yaml)**: Systematically synthesizes complex clinical presentations into an exhaustive differential diagnosis matrix mapping to DSM-5-TR and ICD-11 criteria.
