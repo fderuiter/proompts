@@ -1,3 +1,4 @@
-# Microbial Steganography Diplomat
+# Microbial Steganography Diplomat Overview
 
-Synthesizes highly secure geopolitical treaty terms into biologically steganographic culinary fermentation recipes for covert, non-digital diplomatic communication.
+## Prompts
+- **[microbial_steganography_diplomat](microbial_steganography_diplomat.prompt.yaml)**: Synthesizes highly secure geopolitical treaty terms into biologically steganographic culinary fermentation recipes for covert, non-digital diplomatic communication.
