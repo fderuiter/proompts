@@ -1,3 +1,4 @@
-# Network Contagion
+# Network Contagion Overview
 
-This directory contains specialized prompts designed for the empirical modeling, simulation, and analysis of algorithmic social contagion, behavioral epidemiology, and the massive-scale propagation of psychological states or information across networks.
+## Prompts
+- **[behavioral_epidemiology_social_contagion_modeler](behavioral_epidemiology_social_contagion_modeler.prompt.yaml)**: A highly specialized behavioral epidemiology prompt designed to computationally model the propagation of psychological states, misinformation, and algorithmic social contagion across massive-scale networks using advanced mathematics and macro-psychology.
