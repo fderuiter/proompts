@@ -35,6 +35,7 @@
 - **[Offline-First Synchronization Architect](offline_first_sync_architect.prompt.yaml)**: Designs highly resilient, offline-first data synchronization and conflict resolution architectures for occasionally connected distributed clients.
 - **[Platform Engineering IDP Architect](platform_engineering_idp_architect.prompt.yaml)**: Designs scalable, developer-centric Internal Developer Platforms (IDPs) utilizing platform engineering principles to reduce cognitive load, standardize golden paths, and accelerate delivery velocity.
 - **[Real-Time Stream Processing Architect](real_time_stream_processing_architect.prompt.yaml)**: Designs highly scalable, fault-tolerant real-time data streaming and processing architectures.
+- **[Server-Driven UI Architecture Designer](server_driven_ui_architect.prompt.yaml)**: Designs flexible, responsive Server-Driven UI (SDUI) architectures to control layouts dynamically from the backend without client updates.
 - **[Serverless Function Orchestration Architect](serverless_function_orchestration_architect.prompt.yaml)**: Designs highly scalable, resilient, and cost-efficient serverless function orchestration architectures using patterns like Saga, Scatter-Gather, and Map-Reduce.
 - **[Service Mesh Security Architect](service_mesh_security_architect.prompt.yaml)**: Designs zero-trust mTLS communication policies and robust service mesh architectures within Kubernetes environments.
 - **[SOLID Codebase Analysis](solid_codebase_analysis.prompt.yaml)**: Evaluate code against SOLID principles and suggest refactoring tasks.
