@@ -371,6 +371,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Inference
 
 - [bayesian_hierarchical_model_architect](prompts/scientific/statistics/inference/bayesian_methods/bayesian_hierarchical_model_architect.prompt.md)
+- [target_trial_emulation_architect](prompts/scientific/statistics/inference/causal_inference/target_trial_emulation_architect.prompt.md)
 
 ## Languages
 
