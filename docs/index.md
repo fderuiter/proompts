@@ -135,6 +135,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Chemistry
 
+- [multidimensional_nmr_hrms_structure_elucidator](prompts/scientific/chemistry/analytical/multidimensional_nmr_hrms_structure_elucidator.prompt.md)
 - [Quantum Chemical Transition State Architect](prompts/scientific/chemistry/computational/quantum_chemical_transition_state_architect.prompt.md)
 
 ## Clinical
