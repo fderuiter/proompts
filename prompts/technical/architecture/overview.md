@@ -6,6 +6,7 @@
 ## Prompts
 - **[AI Model Inference Serving Architect](ai_model_inference_serving_architect.prompt.yaml)**: Designs highly scalable, low-latency, and cost-efficient architecture topologies for serving large-scale AI/ML models in production.
 - **[API Gateway and BFF Architect](api_gateway_bff_architect.prompt.yaml)**: Designs highly scalable, secure, and performant API Gateway and Backend-for-Frontend (BFF) architectures for microservices ecosystems.
+- **[Cell-Based Architecture Designer](cell_based_architecture_designer.prompt.yaml)**: Architects robust, hyper-scalable, and blast-radius-contained distributed systems using advanced Cell-Based Architecture (CBA) patterns.
 - **[Chaos Engineering Experiment Designer](chaos_engineering_experiment_designer.prompt.yaml)**: Designs targeted chaos engineering experiments to uncover systemic weaknesses in distributed architectures.
 - **[CQRS and Event Sourcing Architect](cqrs_event_sourcing_architect.prompt.yaml)**: Designs highly scalable Command Query Responsibility Segregation (CQRS) and Event Sourcing architectures.
 - **[Data Mesh Topology Architect](data_mesh_topology_architect.prompt.yaml)**: Designs decentralized data mesh topologies with federated computational governance.
@@ -31,10 +32,12 @@
 - **[Micro-Frontend Orchestration Architect](micro_frontend_orchestration_architect.prompt.yaml)**: Designs robust, scalable micro-frontend architectures, addressing orchestration, state management, and routing strategies.
 - **[Multi-Agent Orchestration Architect](multi_agent_orchestration_architect.prompt.yaml)**: Designs highly robust, scalable, and resilient multi-agent system (MAS) orchestration architectures, focusing on agent communication protocols, shared state resolution, and consensus algorithms.
 - **[Multi-Region Active-Active Resilience Architect](multi_region_active_active_resilience.prompt.yaml)**: Designs true active-active multi-region topologies, resolving global state conflict and replication latency.
+- **[Multi-Region K8s Federation Architect](multi_region_k8s_federation_architect.prompt.yaml)**: Acts as an Expert-level Genesis Architect to systematically engineer robust, fault-tolerant Multi-Region Active-Active Kubernetes Cluster Federation architectures with globally distributed state synchronization.
 - **[Multi-Tenant SaaS Architecture Designer](multi_tenant_saas_architecture_designer.prompt.yaml)**: Designs highly scalable, secure, and cost-efficient multi-tenant SaaS architectures, focusing on tenant isolation, data partitioning, and noisy neighbor mitigation.
 - **[Offline-First Synchronization Architect](offline_first_sync_architect.prompt.yaml)**: Designs highly resilient, offline-first data synchronization and conflict resolution architectures for occasionally connected distributed clients.
 - **[Platform Engineering IDP Architect](platform_engineering_idp_architect.prompt.yaml)**: Designs scalable, developer-centric Internal Developer Platforms (IDPs) utilizing platform engineering principles to reduce cognitive load, standardize golden paths, and accelerate delivery velocity.
 - **[Real-Time Stream Processing Architect](real_time_stream_processing_architect.prompt.yaml)**: Designs highly scalable, fault-tolerant real-time data streaming and processing architectures.
+- **[Server-Driven UI Architecture Designer](server_driven_ui_architect.prompt.yaml)**: Designs flexible, responsive Server-Driven UI (SDUI) architectures to control layouts dynamically from the backend without client updates.
 - **[Serverless Function Orchestration Architect](serverless_function_orchestration_architect.prompt.yaml)**: Designs highly scalable, resilient, and cost-efficient serverless function orchestration architectures using patterns like Saga, Scatter-Gather, and Map-Reduce.
 - **[Service Mesh Security Architect](service_mesh_security_architect.prompt.yaml)**: Designs zero-trust mTLS communication policies and robust service mesh architectures within Kubernetes environments.
 - **[SOLID Codebase Analysis](solid_codebase_analysis.prompt.yaml)**: Evaluate code against SOLID principles and suggest refactoring tasks.

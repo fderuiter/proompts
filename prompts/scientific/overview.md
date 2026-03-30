@@ -16,6 +16,7 @@
 - [Mathematics/](mathematics/overview.md)
 - [Medical Writing/](medical_writing/overview.md)
 - [Microbiology/](microbiology/overview.md)
+- [Molecular/](molecular/overview.md)
 - [Pathology/](pathology/overview.md)
 - [Philosophy/](philosophy/overview.md)
 - [Physics/](physics/overview.md)
