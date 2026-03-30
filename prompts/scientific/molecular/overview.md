@@ -1,3 +1,4 @@
-# Molecular Sciences Prompts
+# Molecular Overview
 
-This directory contains prompts related to molecular biology.
+## Categories
+- [Proteomics/](proteomics/overview.md)
