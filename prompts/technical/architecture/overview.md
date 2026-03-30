@@ -6,6 +6,7 @@
 ## Prompts
 - **[AI Model Inference Serving Architect](ai_model_inference_serving_architect.prompt.yaml)**: Designs highly scalable, low-latency, and cost-efficient architecture topologies for serving large-scale AI/ML models in production.
 - **[API Gateway and BFF Architect](api_gateway_bff_architect.prompt.yaml)**: Designs highly scalable, secure, and performant API Gateway and Backend-for-Frontend (BFF) architectures for microservices ecosystems.
+- **[Cell-Based Architecture Designer](cell_based_architecture_designer.prompt.yaml)**: Architects robust, hyper-scalable, and blast-radius-contained distributed systems using advanced Cell-Based Architecture (CBA) patterns.
 - **[Chaos Engineering Experiment Designer](chaos_engineering_experiment_designer.prompt.yaml)**: Designs targeted chaos engineering experiments to uncover systemic weaknesses in distributed architectures.
 - **[CQRS and Event Sourcing Architect](cqrs_event_sourcing_architect.prompt.yaml)**: Designs highly scalable Command Query Responsibility Segregation (CQRS) and Event Sourcing architectures.
 - **[Data Mesh Topology Architect](data_mesh_topology_architect.prompt.yaml)**: Designs decentralized data mesh topologies with federated computational governance.
