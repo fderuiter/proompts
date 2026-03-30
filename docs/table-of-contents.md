@@ -656,6 +656,7 @@
 [Design Verification Test Plan](prompts/technical/testing/testing_workflow/02_design_verification_test_plan.prompt.md)
 [Human Factors Validation Study Protocol](prompts/technical/testing/testing_workflow/03_human_factors_validation_study_protocol.prompt.md)
 [Risk-Based Test Case Suite](prompts/technical/testing/testing_workflow/04_risk_based_test_case_suite.prompt.md)
+[asymptotic_distribution_mle_architect](prompts/scientific/statistics/theory/asymptotics/asymptotic_distribution_mle_architect.prompt.md)
 [Compassionate Analyst](prompts/clinical/therapy/music_therapy_workflow/01_compassionate_analyst.prompt.md)
 [ISO Strategist](prompts/clinical/therapy/music_therapy_workflow/02_iso_strategist.prompt.md)
 [Sonic Architect](prompts/clinical/therapy/music_therapy_workflow/03_sonic_architect.prompt.md)

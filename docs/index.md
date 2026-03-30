@@ -887,6 +887,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Human Factors Validation Study Protocol](prompts/technical/testing/testing_workflow/03_human_factors_validation_study_protocol.prompt.md)
 - [Risk-Based Test Case Suite](prompts/technical/testing/testing_workflow/04_risk_based_test_case_suite.prompt.md)
 
+## Theory
+
+- [asymptotic_distribution_mle_architect](prompts/scientific/statistics/theory/asymptotics/asymptotic_distribution_mle_architect.prompt.md)
+
 ## Therapy
 
 - [Compassionate Analyst](prompts/clinical/therapy/music_therapy_workflow/01_compassionate_analyst.prompt.md)
