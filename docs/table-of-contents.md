@@ -307,6 +307,7 @@
 [Market Report Executive Summary](prompts/business/market_research/market_research_workflow/04_market_report_exec_summary.prompt.md)
 [category_theory_adjunction_architect](prompts/scientific/mathematics/category_theory/category_theory_adjunction_architect.prompt.md)
 [epistemic_modal_logic_kripke_evaluator](prompts/scientific/mathematics/formal_logic/epistemic_modal_logic_kripke_evaluator.prompt.md)
+[first_order_logic_sequent_calculus_prover](prompts/scientific/mathematics/formal_logic/first_order_logic_sequent_calculus_prover.prompt.md)
 [Stochastic Multi-Objective Optimization Architect](prompts/scientific/mathematics/optimization/stochastic_optimization_architect.prompt.md)
 [Topological Counterexample Generator](prompts/scientific/mathematics/topology/topological_counterexample_generator.prompt.md)
 [The Prompt Alchemist](prompts/meta/creative/the_prompt_alchemist.prompt.md)
