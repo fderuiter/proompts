@@ -86,6 +86,7 @@ title: Regulatory
 - [Multiple Endpoints Regulatory Strategy](prompts/regulatory/adherence/multiple_endpoints_guidance_review.prompt.md)
 - [NGS Tumor Profiling Documentation](prompts/regulatory/device_specifics/ngs_tumor_profiling_documentation.prompt.md)
 - [Off-Label Information Dissemination](prompts/regulatory/adherence/off_label_information_dissemination.prompt.md)
+- [Orphan Drug Designation Architect](prompts/regulatory/strategy/orphan_drug_designation_architect.prompt.md)
 - [Parallel Review Request](prompts/regulatory/submissions/parallel_review_request.prompt.md)
 - [Part 11 Closed System Audit](prompts/regulatory/quality/part_11_closed_system_audit.prompt.md)
 - [Patent Term Restoration Eligibility](prompts/regulatory/administrative/patent_term_restoration_eligibility.prompt.md)
