@@ -12,6 +12,7 @@ title: Regulatory
 - [AI Risk Mapper](prompts/regulatory/strategy/ai_risk_mapper.prompt.md)
 - [ALCOA-C Data Integrity Checklist](prompts/regulatory/adherence/alcoa_c_data_integrity_checklist.prompt.md)
 - [Automated Image Assessment System 510(k)](prompts/regulatory/device_specifics/automated_image_assessment_system_510_k.prompt.md)
+- [Breakthrough Device Designation Architect](prompts/regulatory/strategy/breakthrough_device_designation_architect.prompt.md)
 - [CAPA Investigation Report Writer](prompts/regulatory/quality/capa_investigation_report_writer.prompt.md)
 - [CAPA Management Process](prompts/regulatory/quality/capa_management_process.prompt.md)
 - [CAPA Plan Generator](prompts/regulatory/quality/capa_plan_generator.prompt.md)

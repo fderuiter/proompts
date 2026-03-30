@@ -3,6 +3,7 @@
 ## Prompts
 - **[510(k)/De Novo Pre-Submission Strategy](510k_pre-sub_strategy.prompt.yaml)**: Determine the best U.S. regulatory pathway and craft a 12‑month pre‑submission plan.
 - **[AI Risk Mapper](ai_risk_mapper.prompt.yaml)**: Create a quick-look risk register for a specified AI system.
+- **[Breakthrough Device Designation Architect](breakthrough_device_designation_architect.prompt.yaml)**: Formulates compelling FDA Breakthrough Device Designation (BDD) requests based on statutory criteria of Section 515B of the FD&C Act.
 - **[ClinicalTrials.gov Registration](clinicaltrials_registration.prompt.yaml)**: Draft registration summary and outcome measures.
 - **[Compliance Gap Assessment](compliance_gap_assessment.prompt.yaml)**: Evaluate organizational controls against a specified compliance framework and prioritize remediation.
 - **[Dual MDR / IVDR Conformity-Assessment Roadmap](dual_mdr_ivdr_roadmap.prompt.yaml)**: Develop a coordinated roadmap for simultaneous MDR and IVDR submissions.
