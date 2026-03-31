@@ -46,6 +46,7 @@ title: Scientific
 - [Generate & QC Submission-Ready TLFs](prompts/scientific/biostatistics/submission_ready_tlfs.prompt.md)
 - [graph_theoretical_connectome_analyzer](prompts/scientific/computational_theoretical_neuroscience/graph_theoretical_connectome_analyzer.prompt.md)
 - [Hands-On Procedure Coaching](prompts/scientific/bioskills/bioskills_workflow/01_hands_on_procedure_coaching.prompt.md)
+- [high_dimensional_sparse_regression_architect](prompts/scientific/statistics/modeling/high_dimensional_analysis/high_dimensional_sparse_regression_architect.prompt.md)
 - [Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive](prompts/scientific/biostatistics/inclusion_exclusion_endpoints_sample_size.prompt.md)
 - [Inflationary Tensor Perturbation Architect](prompts/scientific/physics/cosmology/early_universe/inflationary_tensor_perturbation_architect.prompt.md)
 - [institutional_isomorphism_lifecycle_modeler](prompts/scientific/sociology/institutions/institutional_isomorphism_lifecycle_modeler.prompt.md)
