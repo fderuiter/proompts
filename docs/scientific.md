@@ -44,6 +44,7 @@ title: Scientific
 - [first_order_logic_sequent_calculus_prover](prompts/scientific/mathematics/formal_logic/first_order_logic_sequent_calculus_prover.prompt.md)
 - [FWER Gatekeeping Procedure Code Generator](prompts/scientific/biostatistics/fwer_gatekeeping_procedures.prompt.md)
 - [Generate & QC Submission-Ready TLFs](prompts/scientific/biostatistics/submission_ready_tlfs.prompt.md)
+- [genome_scale_metabolic_flux_modeler](prompts/scientific/cellular/metabolism/genome_scale_metabolic_flux_modeler.prompt.md)
 - [graph_theoretical_connectome_analyzer](prompts/scientific/computational_theoretical_neuroscience/graph_theoretical_connectome_analyzer.prompt.md)
 - [Hands-On Procedure Coaching](prompts/scientific/bioskills/bioskills_workflow/01_hands_on_procedure_coaching.prompt.md)
 - [high_dimensional_sparse_regression_architect](prompts/scientific/statistics/modeling/high_dimensional_analysis/high_dimensional_sparse_regression_architect.prompt.md)

@@ -131,6 +131,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Preventing Technical Debt](prompts/business/vp_tech_innovation/preventing_technical_debt.prompt.md)
 - [Upskilling Program Design](prompts/business/vp_tech_innovation/upskilling_program_design.prompt.md)
 
+## Cellular
+
+- [genome_scale_metabolic_flux_modeler](prompts/scientific/cellular/metabolism/genome_scale_metabolic_flux_modeler.prompt.md)
+
 ## Cfo
 
 - [Scenario-Based Clinical-Trial Cash-Flow Forecast](prompts/business/cfo/cfo_workflow/01_scenario_cash_flow_forecast.prompt.md)
