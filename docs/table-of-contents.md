@@ -620,6 +620,7 @@
 [ai_threat_modeling_architect](prompts/technical/security/ai_threat_modeling_architect.prompt.md)
 [APT Threat Hunting Query Engineer](prompts/technical/security/apt_threat_hunting_query_engineer.prompt.md)
 [Medical Device Cybersecurity Threat Modeling](prompts/technical/security/cybersecurity_threat_modeling.prompt.md)
+[red_team_exploit_chain_architect](prompts/technical/security/red_team_exploit_chain_architect.prompt.md)
 [Zero-Day Incident Containment Architect](prompts/technical/security/zero_day_containment_architect.prompt.md)
 [Technical White Paper for Clinical Methodologies](prompts/technical/technical_writing/technical_white_paper_in_silico.prompt.md)
 [CSR Results and Safety Section](prompts/technical/technical_writing/technical_writer_workflow/01_csr_results_safety_section.prompt.md)
