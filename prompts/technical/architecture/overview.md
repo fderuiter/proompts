@@ -9,6 +9,7 @@
 - **[Cell-Based Architecture Designer](cell_based_architecture_designer.prompt.yaml)**: Architects robust, hyper-scalable, and blast-radius-contained distributed systems using advanced Cell-Based Architecture (CBA) patterns.
 - **[Chaos Engineering Experiment Designer](chaos_engineering_experiment_designer.prompt.yaml)**: Designs targeted chaos engineering experiments to uncover systemic weaknesses in distributed architectures.
 - **[CQRS and Event Sourcing Architect](cqrs_event_sourcing_architect.prompt.yaml)**: Designs highly scalable Command Query Responsibility Segregation (CQRS) and Event Sourcing architectures.
+- **[crdt_conflict_resolution_architect](crdt_conflict_resolution_architect.prompt.yaml)**: Designs robust Conflict-Free Replicated Data Type (CRDT) architectures for building highly available, partition-tolerant distributed systems with strong eventual consistency guarantees.
 - **[Data Mesh Topology Architect](data_mesh_topology_architect.prompt.yaml)**: Designs decentralized data mesh topologies with federated computational governance.
 - **[Distributed Caching Strategy Architect](distributed_caching_strategy_architect.prompt.yaml)**: Designs highly resilient, multi-level distributed caching architectures, handling cache topologies, invalidation strategies, and failure modes like cache stampedes.
 - **[Distributed Database Sharding Architect](distributed_database_sharding_architect.prompt.yaml)**: Designs highly scalable distributed database sharding and partitioning strategies.
@@ -28,6 +29,7 @@
 - **[Hexagonal Architecture Implementation](hexagonal_architecture_implementation.prompt.yaml)**: Expert guidance on implementing Hexagonal Architecture, focusing on data flow, dependency inversion, and component placement.
 - **[Hexagonal Architecture Principles](hexagonal_architecture_principles.prompt.yaml)**: Explain the core philosophy, skeleton, and benefits of Hexagonal Architecture (Ports and Adapters).
 - **[Hexagonal Architecture Review](hexagonal_architecture_review.prompt.yaml)**: Analyze code for adherence to Hexagonal Architecture principles, identifying layer violations and dependency issues.
+- **[HFT Low-Latency Architecture Designer](hft_low_latency_trading_architect.prompt.yaml)**: Designs strictly optimized, sub-microsecond latency network and hardware architectures for High-Frequency Trading (HFT) systems.
 - **[Idempotency and API Retry Strategy Architect](idempotency_strategy_architect.prompt.yaml)**: Designs highly robust, distributed idempotency and retry architectures for APIs and message-driven systems to prevent duplicate processing.
 - **[IoT Digital Twin Architect](iot_digital_twin_architect.prompt.yaml)**: Designs highly accurate, scalable, and synchronized digital twin architectures for complex IoT ecosystems, ensuring real-time bidirectional state management and predictive simulation capabilities.
 - **[Maintainability Codebase Analysis](maintainability_codebase_analysis.prompt.yaml)**: Improve code maintainability by addressing readability, organization, and test quality.
