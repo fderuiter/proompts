@@ -13,22 +13,43 @@ All prompts must be stored as `.prompt.yaml` or `.prompt.yml` files following th
    - Be specific and clear
    - Example: "Risk Assessment Expert" or "Code Review Assistant"
 
-2. **`description`** (string) - Concise summary of what the prompt does
+2. **`version`** (string, optional) - Semantic version of the prompt
+   - Default: "0.1.0"
+   - Example: "1.0.0"
+
+3. **`description`** (string) - Concise summary of what the prompt does
    - 1-2 sentences maximum
    - Describe the purpose and expected outcome
    - Example: "Provide a comprehensive biocompatibility risk assessment for a specified device."
 
-3. **`model`** (string) - Model identifier to use
+4. **`metadata`** (object, optional) - Metadata for organization and categorization
+   - **`domain`** (string) - The business domain (e.g., 'clinical', 'technical')
+   - **`complexity`** (string) - Complexity level ('low', 'medium', 'high')
+   - **`tags`** (array) - List of tags for categorization
+   - **`requires_context`** (boolean) - Whether it requires external context/history
+
+5. **`variables`** (array, optional) - List of input variables used in the prompt template
+   - Each variable has:
+     - **`name`** (string) - Variable name (e.g., 'input_text')
+     - **`description`** (string) - What the variable represents
+     - **`required`** (boolean, optional) - Whether it is mandatory (default: true)
+     - **`default`** (any, optional) - Default value
+
+6. **`model`** (string) - Model identifier to use
    - Examples: `gpt-4o`, `gpt-4o-mini`, `claude-3-5-sonnet-20241022`
    - Choose based on task complexity
 
-4. **`modelParameters`** (object) - Model configuration
+7. **`modelParameters`** (object) - Model configuration
    - **`temperature`** (float) - Controls randomness (0.0-2.0)
      - 0.0-0.3: Deterministic, factual tasks
      - 0.4-0.7: Balanced creativity and consistency
      - 0.8-1.0+: Creative, varied outputs
+   - **`max_tokens`** (integer, optional) - Maximum tokens to generate
+   - **`top_p`** (float, optional) - Nucleus sampling probability
+   - **`frequency_penalty`** (float, optional) - Frequency penalty parameter
+   - **`presence_penalty`** (float, optional) - Presence penalty parameter
 
-5. **`messages`** (array) - Ordered list of message objects
+8. **`messages`** (array) - Ordered list of message objects
    - Must have at least 2 messages (typically system + user)
    - Each message has:
      - **`role`** (string): "system", "user", or "assistant"
@@ -36,22 +57,24 @@ All prompts must be stored as `.prompt.yaml` or `.prompt.yml` files following th
    - Use `{{variable_name}}` for runtime placeholders
    - Use YAML multi-line strings (`|` or `|-`) for readability
 
-6. **`testData`** (array) - Sample inputs with expected outputs
+9. **`testData`** (array) - Sample inputs with expected outputs
    - **Best Practice**: Include at least 2 test cases per prompt
    - Each test case should have:
-     - Input variables matching `{{placeholders}}` in messages
-     - `expected` output description or example
+     - **`inputs`** (object) - Input variables matching `{{placeholders}}` in messages
+     - **`expected`** (string/object) - Expected output description or example
    - Use realistic, meaningful examples (not just placeholders)
 
-7. **`evaluators`** (array) - Validation rules for outputs
-   - **Best Practice**: Include at least 1 evaluator per prompt
-   - Common evaluator types:
-     - `string.startsWith`: Check output begins with expected text
-     - `string.contains`: Check output includes required content
-     - `string.endsWith`: Check output ends with expected text
-   - Each evaluator has:
-     - **`name`** (string): Description of what it checks
-     - **`string`** (object): The validation rule
+10. **`evaluators`** (array) - Validation rules for outputs
+    - **Best Practice**: Include at least 1 evaluator per prompt
+    - Common evaluator types:
+      - `string.startsWith`: Check output begins with expected text
+      - `string.contains`: Check output includes required content
+      - `string.endsWith`: Check output ends with expected text
+    - Each evaluator has:
+      - **`name`** (string): Description of what it checks
+      - **`string`** (object): The validation rule
+
+11. **`last_modified`** (string, optional) - Timestamp of last modification (ISO 8601)
 
 ## Best Practices
 

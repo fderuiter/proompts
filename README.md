@@ -58,6 +58,7 @@ graph TD
 - **[Full Table of Contents](docs/index.md)** – Browse all prompts by category
 - **[Usage Guide](docs/USAGE.md)** – Learn how to use and integrate prompts
 - **[Developer Scripts](tools/scripts/README.md)** – Tools for validating and maintaining the repo
+- **[IDE JSON Schemas](docs/schemas/README.md)** – Configure your IDE for prompt and workflow validation
 
 ## Setup
 
