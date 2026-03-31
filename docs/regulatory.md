@@ -111,6 +111,7 @@ title: Regulatory
 - [Regulatory Radar & Impact Report](prompts/regulatory/quality/regulatory_radar.prompt.md)
 - [Regulatory-Change Impact Analysis](prompts/regulatory/strategy/regulatory_change_impact_analysis.prompt.md)
 - [Regulatory-Landscape Radar](prompts/regulatory/quality/regulatory_landscape_radar.prompt.md)
+- [regulatory_compliance_automation_architect](prompts/regulatory/quality/regulatory_compliance_automation_architect.prompt.md)
 - [Request for Designation (RFD) Submission](prompts/regulatory/strategy/rfd_submission.prompt.md)
 - [Risk Management Analysis](prompts/regulatory/quality/risk_management_analysis.prompt.md)
 - [Risk-Based Quality Management Plan](prompts/regulatory/quality/risk_based_quality_management_plan.prompt.md)
