@@ -677,6 +677,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Compliance Gap Assessment](prompts/regulatory/strategy/compliance_gap_assessment.prompt.md)
 - [Dual MDR / IVDR Conformity-Assessment Roadmap](prompts/regulatory/strategy/dual_mdr_ivdr_roadmap.prompt.md)
 - [EU MDR Technical-Documentation Gap Assessment](prompts/regulatory/strategy/eu_mdr_gap_assessment.prompt.md)
+- [FDA Fast Track Designation Architect](prompts/regulatory/strategy/fda_fast_track_designation_architect.prompt.md)
 - [IDE Determination and Device Classification](prompts/regulatory/strategy/ide_determination.prompt.md)
 - [IND Determination and Application](prompts/regulatory/strategy/ind_determination_application.prompt.md)
 - [IND Readiness Gap Analysis & Filing Road-Map](prompts/regulatory/strategy/ind_readiness_gap_analysis.prompt.md)
