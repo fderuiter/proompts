@@ -70,6 +70,7 @@ title: Clinical
 - [ich_e3_clinical_study_report_architect](prompts/clinical/medical_writing/ich_e3_clinical_study_report_architect.prompt.md)
 - [Image Acquisition QC Workflow Blueprint](prompts/clinical/imaging/imaging_workflow/05_image_acquisition_qc_workflow_blueprint.prompt.md)
 - [Imaging Charter Draft](prompts/clinical/imaging/imaging_workflow/01_imaging_charter_draft.prompt.md)
+- [ind_clinical_hold_response_architect](prompts/clinical/regulatory_affairs/ind_clinical_hold_response_architect.prompt.md)
 - [Informed Consent Form Plain Language Translator](prompts/clinical/medical_writing/icf_plain_language_translator.prompt.md)
 - [Informed Consent Process Optimization](prompts/clinical/trial_execution/informed_consent_process.prompt.md)
 - [Investigator Follow-up Email & Action-Item Tracker](prompts/clinical/cra/cra_workflow/02_investigator_follow_up_email_tracker.prompt.md)
