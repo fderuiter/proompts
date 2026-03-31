@@ -37,6 +37,7 @@
 - **[Quality-Improvement RCA & Action Plan](quality_improvement_rca_action_plan.prompt.yaml)**: Identify root causes of a recurring defect and propose a 90‑day corrective‑action roadmap.
 - **[Quality System Audit](quality_system_audit.prompt.yaml)**: Generate an internal audit checklist or report focusing on design controls, production processes, and risk-based decision making.
 - **[Quality System Evaluation (MRA)](quality_system_evaluation_mra.prompt.yaml)**: Generate a quality system evaluation report for a manufacturer under the US-EC MRA.
+- **[regulatory_compliance_automation_architect](regulatory_compliance_automation_architect.prompt.yaml)**: Architects automated regulatory compliance and continuous monitoring frameworks for heavily regulated environments.
 - **[Regulatory-Landscape Radar](regulatory_landscape_radar.prompt.yaml)**: Provide a weekly snapshot of regulatory developments relevant to early‑phase oncology and rare‑disease trials.
 - **[Regulatory Radar & Impact Report](regulatory_radar.prompt.yaml)**: Track and assess recent regulatory changes that may impact the company.
 - **[Risk-Based Quality Management Plan](risk_based_quality_management_plan.prompt.yaml)**: Create a concise RBQM plan for a first‑in‑human Phase I healthy‑volunteer study.
