@@ -63,6 +63,7 @@
 [Legacy Modernization Strategy](prompts/business/vp_tech_innovation/legacy_modernization_strategy.prompt.md)
 [Post-Mortem / Incident Report Summary](prompts/business/vp_tech_innovation/post_mortem_summary.prompt.md)
 [Preventing Technical Debt](prompts/business/vp_tech_innovation/preventing_technical_debt.prompt.md)
+[Strategic Vendor Lock-In Mitigation Architect](prompts/business/vp_tech_innovation/strategic_vendor_lock_in_mitigation_architect.prompt.md)
 [Upskilling Program Design](prompts/business/vp_tech_innovation/upskilling_program_design.prompt.md)
 [Scenario-Based Clinical-Trial Cash-Flow Forecast](prompts/business/cfo/cfo_workflow/01_scenario_cash_flow_forecast.prompt.md)
 [Competitive-Bid Pricing & Margin Optimizer](prompts/business/cfo/cfo_workflow/02_competitive_bid_pricing.prompt.md)
