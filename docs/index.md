@@ -551,6 +551,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [advanced_retrosynthetic_pathway_generator](prompts/scientific/chemistry/organic/retrosynthesis/advanced_retrosynthetic_pathway_generator.prompt.md)
 
+## Particle Physics
+
+- [Non-Abelian Gauge Theory Perturbative Expansion Architect](prompts/scientific/physics/particle_physics/standard_model/non_abelian_gauge_theory_perturbative_expansion_architect.prompt.md)
+
 ## Pathology
 
 - [Design a Robust Preclinical Pathology Study Protocol](prompts/scientific/pathology/pathology_study_workflow/01_study_protocol_outline.prompt.md)
