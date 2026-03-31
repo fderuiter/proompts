@@ -647,6 +647,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Sociology
 
+- [residential_segregation_spatial_inequality_modeler](prompts/scientific/sociology/demography/residential_segregation_spatial_inequality_modeler.prompt.md)
 - [intergenerational_mobility_modeler](prompts/scientific/sociology/stratification/intergenerational_mobility_modeler.prompt.md)
 
 ## Software Engineering
