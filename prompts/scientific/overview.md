@@ -4,6 +4,7 @@
 - [Biosafety/](biosafety/overview.md)
 - [Bioskills/](bioskills/overview.md)
 - [Biostatistics/](biostatistics/overview.md)
+- [Cellular/](cellular/overview.md)
 - [Chemical Characterization/](chemical_characterization/overview.md)
 - [Chemistry/](chemistry/overview.md)
 - [Coa/](coa/overview.md)

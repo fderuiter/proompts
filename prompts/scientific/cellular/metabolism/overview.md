@@ -1,3 +1,4 @@
-# Metabolism
+# Metabolism Overview
 
-This directory contains prompts related to cellular metabolism, including genome-scale metabolic flux modeling.
+## Prompts
+- **[genome_scale_metabolic_flux_modeler](genome_scale_metabolic_flux_modeler.prompt.yaml)**: Acts as a Principal Systems Biologist to systematically formulate, analyze, and optimize Genome-Scale Metabolic Models (GEMs) using Flux Balance Analysis (FBA) and advanced constraint-based methods.
