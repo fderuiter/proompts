@@ -642,6 +642,7 @@
 [Enterprise RAG Architecture Designer](prompts/technical/architecture/enterprise_rag_architecture_designer.prompt.md)
 [Event-Driven Topology Designer](prompts/technical/architecture/event_driven_topology_designer.prompt.md)
 [Feature Flag and Progressive Delivery Architect](prompts/technical/architecture/feature_flag_progressive_delivery_architect.prompt.md)
+[Federated Learning Topology Architect](prompts/technical/architecture/federated_learning_topology_architect.prompt.md)
 [Fine-Grained Authorization Architect](prompts/technical/architecture/fine_grained_authorization_architect.prompt.md)
 [finops_cloud_cost_optimization_architect](prompts/technical/architecture/finops_cloud_cost_optimization_architect.prompt.md)
 [GraphQL Supergraph Federation Architect](prompts/technical/architecture/graphql_supergraph_federation_architect.prompt.md)
