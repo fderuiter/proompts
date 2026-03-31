@@ -1,3 +1,4 @@
-# Normative Ethics
+# Normative Ethics Overview
 
-This directory contains prompts related to normative ethics, the study of ethical action. It investigates the set of questions that arise when considering how one ought to act, morally speaking.
+## Prompts
+- **[Normative Ethics Stress Tester](normative_ethics_stress_tester.prompt.yaml)**: Systematically stress-tests complex, applied ethical dilemmas through mutually exclusive normative matrices (e.g., Kantian Deontology vs. Act Utilitarianism), resolving them via reflective equilibrium or highlighting unresolvable paradoxes.

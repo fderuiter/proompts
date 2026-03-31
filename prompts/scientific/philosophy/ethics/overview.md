@@ -1,3 +1,4 @@
-# Ethics
+# Ethics Overview
 
-This directory contains prompts related to ethics, a major branch of philosophy that involves systematizing, defending, and recommending concepts of right and wrong behavior.
+## Categories
+- [Normative Ethics/](normative_ethics/overview.md)
