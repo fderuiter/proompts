@@ -26,11 +26,11 @@ def str_presenter(dumper, data):
 yaml.add_representer(str, str_presenter)
 
 try:
-    from utils import ROOT, iter_prompt_files, load_yaml
+    from utils import ROOT, extract_template_vars, iter_prompt_files, load_yaml
 except ImportError:
     import sys
     sys.path.append(str(Path(__file__).parent))
-    from utils import ROOT, iter_prompt_files, load_yaml
+    from utils import ROOT, extract_template_vars, iter_prompt_files, load_yaml
 
 PROMPTS_DIR = ROOT / "prompts"
 
@@ -283,21 +283,15 @@ COMMON_VAR_DESCRIPTIONS: dict[str, str] = {
 }
 
 
-def infer_variable_description(
-    var_name: str,
-    content: dict,
-    prompt_name: str,
-    prompt_description: str,
-) -> str:
-    """Infer a human-readable description for a variable."""
+def suggest_variable_description(var_name: str, context: str) -> str:
+    """Infer a human-readable description for a variable from context."""
     # 1. Try to extract description from message content (inline labels)
-    all_msg_text = "\n".join(m.get("content", "") for m in content.get("messages", []))
-    inline = _infer_description_from_inline_label(all_msg_text, var_name)
+    inline = _infer_description_from_inline_label(context, var_name)
     if inline:
         return inline
 
     # 2. Try surrounding context
-    ctx = _extract_surrounding_context(all_msg_text, var_name)
+    ctx = _extract_surrounding_context(context, var_name)
     if ctx:
         inline2 = _infer_description_from_inline_label(ctx, var_name)
         if inline2:
@@ -318,6 +312,17 @@ def infer_variable_description(
     return f"The {readable_name} to use for this prompt"
 
 
+def infer_variable_description(
+    var_name: str,
+    content: dict,
+    prompt_name: str,
+    prompt_description: str,
+) -> str:
+    """Backward compatibility wrapper for infer_variable_description."""
+    all_msg_text = "\n".join(m.get("content", "") for m in content.get("messages", []))
+    return suggest_variable_description(var_name, all_msg_text)
+
+
 # ────────────────────────────────────────────────────────────────────────────
 # 5.  Main enrichment logic
 # ────────────────────────────────────────────────────────────────────────────
@@ -335,17 +340,52 @@ def enrich_file(file_path: Path, dry_run: bool = False) -> bool:
     parts = _path_parts(file_path)
 
     # ── A. Fill in variable descriptions ────────────────────────────────
-    variables = content.get("variables", [])
+    current_vars = content.get("variables", [])
+    vars_in_template = extract_template_vars(content)
     prompt_name = content.get("name", "")
     prompt_desc = content.get("description", "")
 
-    for var in variables:
-        if var.get("description") == "TODO" or not var.get("description"):
-            new_desc = infer_variable_description(
-                var["name"], content, prompt_name, prompt_desc
-            )
-            var["description"] = new_desc
+    # Extract prompt content for context
+    messages = content.get("messages", [])
+    system_prompt = next((m.get("content", "") for m in messages if m.get("role") == "system"), "")
+    user_prompt = next((m.get("content", "") for m in messages if m.get("role") == "user"), "")
+    combined_context = f"{system_prompt}\n{user_prompt}"
+
+    enriched_vars = []
+    for var in current_vars:
+        var_name = var.get("name")
+        if var_name not in vars_in_template:
             modified = True
+            continue
+
+        if var.get("description") == "TODO" or not var.get("description"):
+            print(f"  Suggesting description for variable '{var_name}'...")
+            suggested_desc = suggest_variable_description(var_name, combined_context)
+            print(f"    Suggested: {suggested_desc}")
+
+            # Create new var dict to preserve order and fields
+            new_var = var.copy()
+            new_var["description"] = suggested_desc
+            enriched_vars.append(new_var)
+            modified = True
+        else:
+            enriched_vars.append(var)
+
+    # Add any missing variables from template that weren't in current_vars
+    existing_names = {v.get("name") for v in enriched_vars}
+    for v_name in vars_in_template:
+        if v_name not in existing_names:
+            print(f"  Adding missing variable '{v_name}' from template...")
+            new_desc = suggest_variable_description(v_name, combined_context)
+            enriched_vars.append({
+                "name": v_name,
+                "description": new_desc,
+                "required": True
+            })
+            modified = True
+
+    if modified:
+        content["variables"] = enriched_vars
 
     # ── B. Add or complete metadata ─────────────────────────────────────
     metadata = content.get("metadata")

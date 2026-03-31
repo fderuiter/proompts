@@ -123,9 +123,9 @@ testData:
   - name: Valid Header
     regex: ^## Executive Summary
   - name: Section - Understanding
-    regex: ### Understanding of Challenge
+    regex: "### Understanding of Challenge"
   - name: Section - Solution
-    regex: ### Proposed Solution & Value
+    regex: "### Proposed Solution & Value"
   - name: Addresses Key Challenges
     regex: (?i)(screen failure|biopsy|activation)
   - name: Quantified Proof Points

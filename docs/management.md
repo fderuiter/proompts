@@ -76,6 +76,7 @@ title: Management
 - [Strategic Market Foresight and Action Plan](prompts/management/executive/strategic_market_foresight.prompt.md)
 - [Strategic Portfolio Prioritizer](prompts/management/executive/strategic_portfolio_prioritizer.prompt.md)
 - [Study Start-Up Checklist & Timeline](prompts/management/operations/study_startup_checklist.prompt.md)
+- [Supply Chain Disruption Stochastic Stress Test Architect](prompts/management/operations/supply_chain_stress_test.prompt.md)
 - [TMF Gap-Analysis and Audit Readiness Check](prompts/management/project_management/tmf_gap_analysis_audit_readiness_check.prompt.md)
 - [Training Impact Analytics Planner](prompts/management/training/learning_development_workflow/03_training_impact_analytics_targeted_intervention_planner.prompt.md)
 - [Trial-Design Optimisation Memo](prompts/management/executive/trial_design_optimisation_memo.prompt.md)

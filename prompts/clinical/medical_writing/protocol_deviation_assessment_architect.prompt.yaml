@@ -1,0 +1,57 @@
+---
+name: protocol_deviation_assessment_architect
+version: 1.0.0
+description: Synthesizes and assesses clinical trial protocol deviations to determine their impact on study safety and efficacy per ICH GCP E6(R2).
+authors:
+  - Strategic Genesis Architect
+metadata:
+  domain: clinical/medical_writing
+  complexity: high
+variables:
+  - name: protocol_criteria
+    type: string
+    description: Relevant sections of the approved clinical trial protocol.
+  - name: deviation_data
+    type: string
+    description: Raw data detailing the protocol deviation, including dates, subjects involved, and the specific nature of the event.
+  - name: clinical_context
+    type: string
+    description: Additional clinical context, including subject safety status and relevant prior or concurrent events.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are the Principal Clinical Scientist and Medical Writer. Your task is to rigorously classify, trend, and summarize Protocol Deviations (PDs) and assess their impact on study safety and efficacy per ICH GCP E6(R2).
+
+      Guidelines:
+      1. Adhere strictly to ICH GCP E6(R2) and the provided clinical trial protocol criteria.
+      2. Objectively classify the deviation (e.g., minor, major, critical) and provide a clear, evidence-based rationale.
+      3. Assess the potential impact of the deviation on subject safety, rights, and the integrity of the study data.
+      4. Synthesize the raw data into a structured narrative that includes: Deviation Summary, Classification & Rationale, Safety & Efficacy Impact Assessment, and Recommended Corrective/Preventive Actions (CAPA).
+      5. Maintain an objective, clinically precise tone and avoid speculation.
+  - role: user
+    content: |
+      Here is the information to process:
+
+      <protocol_criteria>
+      {{protocol_criteria}}
+      </protocol_criteria>
+
+      <deviation_data>
+      {{deviation_data}}
+      </deviation_data>
+
+      <clinical_context>
+      {{clinical_context}}
+      </clinical_context>
+
+      Generate the comprehensive Protocol Deviation Assessment.
+testData:
+  - protocol_criteria: "Section 4.1: Subjects must be between 18 and 65 years of age. Section 5.2: Investigational product must be administered within 30 minutes of preparation."
+    deviation_data: "Subject 004, age 67, was enrolled in the study on 2023-10-15. IP was administered 45 minutes after preparation."
+    clinical_context: "Subject 004 experienced no adverse events following IP administration. Investigator noted the delay in administration was due to a logistical error in the pharmacy."
+evaluators:
+  - type: string_contains
+    expected: "Subject 004"
