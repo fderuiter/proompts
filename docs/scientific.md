@@ -94,6 +94,7 @@ title: Scientific
 - [structural_vector_autoregression_architect](prompts/scientific/economics/econometrics/time_series/structural_vector_autoregression_architect.prompt.md)
 - [Study Design and Statistical Approach](prompts/scientific/biostatistics/study_design_statistical_approach.prompt.md)
 - [Submission-Ready Statistical Analysis Plan](prompts/scientific/biostatistics/submission_ready_sap.prompt.md)
+- [synaptic_plasticity_weight_update_architect](prompts/scientific/computational_theoretical_neuroscience/synaptic_plasticity_weight_update_architect.prompt.md)
 - [target_trial_emulation_architect](prompts/scientific/statistics/inference/causal_inference/target_trial_emulation_architect.prompt.md)
 - [Time-to-Event Analysis Coach](prompts/scientific/biostatistics/time_to_event_analysis_coach.prompt.md)
 - [Topological Counterexample Generator](prompts/scientific/mathematics/topology/topological_counterexample_generator.prompt.md)
