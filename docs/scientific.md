@@ -59,6 +59,7 @@ title: Scientific
 - [Quantum Chemical Transition State Architect](prompts/scientific/chemistry/computational/quantum_chemical_transition_state_architect.prompt.md)
 - [Regulatory Gap-Analysis Comparator](prompts/scientific/sterility/sterility_workflow/02_regulatory_gap_analysis_comparator.prompt.md)
 - [Regulatory Submission Support](prompts/scientific/biosafety/biological_safety_workflow/03_regulatory_submission_support.prompt.md)
+- [Riemannian Manifold Curvature Deriver](prompts/scientific/mathematics/geometry/differential/riemannian_manifold_curvature_deriver.prompt.md)
 - [Risk Assessment Expert](prompts/scientific/biosafety/biological_safety_workflow/01_risk_assessment_expert.prompt.md)
 - [Sample-Size & Randomization Strategy](prompts/scientific/biostatistics/sample_size_randomization_strategy.prompt.md)
 - [Secondary Endpoint Multiplicity Adjuster](prompts/scientific/biostatistics/secondary_endpoint_multiplicity.prompt.md)

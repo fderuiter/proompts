@@ -309,6 +309,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [crispr_cas9_off_target_predictive_modeler](prompts/scientific/genetics/genomics/crispr_cas9_off_target_predictive_modeler.prompt.md)
 
+## Geometry
+
+- [Riemannian Manifold Curvature Deriver](prompts/scientific/mathematics/geometry/differential/riemannian_manifold_curvature_deriver.prompt.md)
+
 ## Google Jules
 
 - [Jules Agile Orchestrator](prompts/google_jules/jules_agile_orchestrator.prompt.md)
