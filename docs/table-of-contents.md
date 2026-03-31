@@ -12,6 +12,7 @@
 [TOGAF Phase H - Architecture Change Management](prompts/technical/architecture/togaf/phase_h_change_management.prompt.md)
 [TOGAF Preliminary Phase](prompts/technical/architecture/togaf/preliminary_phase.prompt.md)
 [TOGAF Requirements Management](prompts/technical/architecture/togaf/requirements_management.prompt.md)
+[population_macro_nudging_architect](prompts/scientific/psychology/behavioral_economics/macro_nudging/population_macro_nudging_architect.prompt.md)
 [Risk Assessment Expert](prompts/scientific/biosafety/biological_safety_workflow/01_risk_assessment_expert.prompt.md)
 [Biological Safety Plan Developer](prompts/scientific/biosafety/biological_safety_workflow/02_biological_safety_plan_developer.prompt.md)
 [Regulatory Submission Support](prompts/scientific/biosafety/biological_safety_workflow/03_regulatory_submission_support.prompt.md)
