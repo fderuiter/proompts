@@ -2,6 +2,7 @@
 
 ## Categories
 - [Abyssal Gothic Liquidity Routing/](abyssal_gothic_liquidity_routing/overview.md)
+- [Benthic Contrapuntal Supply Chain Harmonizer/](benthic_contrapuntal_supply_chain_harmonizer/overview.md)
 - [Choreographic Zk Agronomist/](choreographic_zk_agronomist/overview.md)
 - [Chrono Linguistic Debugging/](chrono_linguistic_debugging/overview.md)
 - [Circadian Harpsichord Orchestration/](circadian_harpsichord_orchestration/overview.md)
