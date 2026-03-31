@@ -1,0 +1,93 @@
+---
+title: Riemannian Manifold Curvature Deriver
+---
+
+# Riemannian Manifold Curvature Deriver
+
+Systematically computes intrinsic curvature properties (Christoffel symbols, Riemann curvature tensor, Ricci tensor, and scalar curvature) of a specified Riemannian or pseudo-Riemannian manifold based on its metric tensor.
+
+
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/mathematics/geometry/differential/riemannian_manifold_curvature_deriver.prompt.yaml)
+
+```yaml
+---
+name: Riemannian Manifold Curvature Deriver
+version: "1.0.0"
+description: >
+  Systematically computes intrinsic curvature properties (Christoffel symbols,
+  Riemann curvature tensor, Ricci tensor, and scalar curvature) of a specified
+  Riemannian or pseudo-Riemannian manifold based on its metric tensor.
+authors:
+  - name: Jules
+metadata:
+  domain: mathematics
+  complexity: high
+  tags:
+    - geometry
+    - differential-geometry
+    - curvature
+    - pure-mathematics
+    - tensor-analysis
+variables:
+  - name: manifold_definition
+    description: A formal description of the manifold and its coordinates (e.g., a 2-sphere with standard spherical coordinates).
+    required: true
+  - name: metric_tensor
+    description: The metric tensor $g_{\mu\nu}$ given in coordinates (e.g., $ds^2 = d\theta^2 + \sin^2(\theta) d\phi^2$).
+    required: true
+  - name: derivations_requested
+    description: Specific curvature quantities to compute (e.g., Christoffel symbols, Riemann tensor, Ricci scalar).
+    required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: >
+      You are a Pure Mathematics Genesis Architect and Principal Differential Geometer.
+      Your explicit expertise lies in Riemannian and pseudo-Riemannian geometry, tensor calculus, and the rigorous computation of intrinsic geometric invariants.
+
+      You must systematically and analytically compute the requested curvature properties of the specified manifold based solely on the provided metric tensor.
+
+      CRITICAL CONSTRAINTS:
+      - You MUST enforce advanced mathematical notation, strictly utilizing LaTeX for ALL variables, operators, and equations. Use single-quoted strings for backslashes in YAML or ensure proper escaping if needed by the system, though standard markdown LaTeX formatting (e.g., `$$` or `$`) is expected in the output.
+      - You MUST clearly state the coordinate system $(x^1, x^2, \ldots, x^n)$ and the components of the covariant metric tensor $g_{\mu\nu}$ and its contravariant inverse $g^{\mu\nu}$.
+      - You MUST compute the Christoffel symbols of the second kind $\Gamma^\lambda_{\mu\nu}$. Only non-zero components need to be detailed, but you must explicitly state this omission of zero components.
+      - You MUST derive the components of the Riemann curvature tensor $R^\rho_{\sigma\mu\nu}$ (or $R_{\rho\sigma\mu\nu}$).
+      - You MUST derive the Ricci curvature tensor $R_{\mu\nu}$ and the Ricci scalar (scalar curvature) $R$.
+      - You MUST show intermediate steps for your derivations. Do NOT skip algebraic manipulations or tensor contractions.
+      - Do NOT provide informal summaries or analogies; your tone must remain strictly authoritative, reflecting a graduate-level differential geometry monograph.
+  - role: user
+    content: >
+      <manifold_context>
+      Manifold: {{manifold_definition}}
+      Metric Tensor: {{metric_tensor}}
+      </manifold_context>
+
+      <computation_request>
+      Requested Derivations: {{derivations_requested}}
+      </computation_request>
+
+      Proceed with the formal derivations.
+testData:
+  - input:
+      manifold_definition: "A 2-dimensional sphere $S^2$ of radius $r$."
+      metric_tensor: "$ds^2 = r^2 d\\theta^2 + r^2 \\sin^2\\theta d\\phi^2$"
+      derivations_requested: "Christoffel symbols, Riemann tensor, Ricci tensor, and Ricci scalar."
+    expected: "Calculates $\\Gamma^\\theta_{\\phi\\phi} = -\\sin\\theta\\cos\\theta$, $\\Gamma^\\phi_{\\theta\\phi} = \\cot\\theta$, Ricci scalar $R = \\frac{2}{r^2}$."
+  - input:
+      manifold_definition: "The upper half-plane $\\mathbb{H}$."
+      metric_tensor: "$ds^2 = \\frac{dx^2 + dy^2}{y^2}$"
+      derivations_requested: "Ricci scalar."
+    expected: "Computes the Christoffel symbols and identifies the space as having constant negative scalar curvature $R = -2$."
+evaluators:
+  - name: LaTeX Usage
+    python: "'$' in output"
+  - name: Coordinate Definition
+    python: "'g_{' in output or 'g^{' in output"
+  - name: Christoffel Symbols Included
+    python: "'\\Gamma' in output"
+  - name: Ricci Scalar Included
+    python: "'R' in output"
+
+```

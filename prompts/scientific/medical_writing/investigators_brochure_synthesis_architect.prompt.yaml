@@ -1,0 +1,65 @@
+---
+name: investigators_brochure_synthesis_architect
+version: 1.0.0
+description: Synthesizes nonclinical, clinical, and CMC data into a regulatory-compliant Investigator's Brochure (IB) following ICH E6(R2) guidelines.
+authors:
+- name: Genesis Architect
+metadata:
+  domain: scientific/medical_writing
+  complexity: high
+  tags:
+  - medical-writing
+  - regulatory
+  - clinical-development
+  - ich-e6-r2
+  requires_context: true
+variables:
+- name: nonclinical_data
+  description: Summary of nonclinical pharmacology, pharmacokinetics, and toxicology data.
+  required: true
+- name: clinical_data
+  description: Summary of available clinical trial data, including safety, efficacy, and pharmacokinetics.
+  required: true
+- name: cmc_data
+  description: Summary of Chemistry, Manufacturing, and Controls (CMC) data relevant to the investigational product.
+  required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+  max_tokens: 8000
+messages:
+- role: system
+  content: >-
+    You are the Principal Medical Writer and Clinical Development Lead. Your task is to synthesize nonclinical, clinical, and CMC data into a highly rigorous, regulatory-compliant Investigator's Brochure (IB) adhering strictly to ICH E6(R2) guidelines. Your output must be comprehensive, scientifically accurate, and perfectly structured to inform clinical investigators about the risks and benefits of the investigational product. Maintain an authoritative, objective, and analytical tone appropriate for regulatory submissions.
+- role: user
+  content: >-
+    Synthesize the following data sources into a complete Investigator's Brochure (IB) in accordance with ICH E6(R2):
+
+    Nonclinical Data:
+    {{nonclinical_data}}
+
+    Clinical Data:
+    {{clinical_data}}
+
+    CMC Data:
+    {{cmc_data}}
+
+    Provide the fully formulated IB sections, including but not limited to: Introduction, Physical/Chemical/Pharmaceutical Properties and Formulation, Nonclinical Studies (Pharmacology, Pharmacokinetics, Toxicology), Effects in Humans (Pharmacokinetics, Safety, Efficacy), and Summary of Data and Guidance for the Investigator. Ensure all safety risks and potential mitigation strategies are clearly delineated.
+testData:
+- input:
+    nonclinical_data: 'In vitro binding assays show high affinity to the target receptor. 28-day repeated-dose toxicity in rats showed no NOAEL up to 10 mg/kg.'
+    clinical_data: 'Phase 1 SAD study showed dose-proportional PK up to 50 mg. Most common AE was mild headache.'
+    cmc_data: 'Active pharmaceutical ingredient is a stable crystalline powder formulated as immediate-release oral tablets.'
+  expected: 'Physical, Chemical, and Pharmaceutical Properties and Formulation'
+- input:
+    nonclinical_data: 'Carcinogenicity studies are ongoing.'
+    clinical_data: 'None available; first-in-human trial.'
+    cmc_data: 'Lyophilized powder for intravenous administration.'
+  expected: 'Guidance for the Investigator'
+evaluators:
+- name: IB Structure Verification
+  string:
+    contains: Physical, Chemical, and Pharmaceutical Properties and Formulation
+- name: Regulatory Guideline
+  string:
+    contains: ICH

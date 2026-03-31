@@ -5,6 +5,7 @@
 - **[Combination Product Jurisdiction](combination_product_jurisdiction.prompt.yaml)**: Prepare a Request for Designation (RFD) to identify primary FDA jurisdiction.
 - **[De Novo Request Preparation](de_novo_request_preparation.prompt.yaml)**: Generate a summary of risks and mitigations for a De Novo classification request.
 - **[Humanitarian Device Exemption (HDE)](humanitarian_device_exemption_hde.prompt.yaml)**: Explain why the health benefit of a HUD outweighs the risk of injury.
+- **[ich_m4e_ctd_clinical_overview_architect](ich_m4e_ctd_clinical_overview_architect.prompt.yaml)**: Synthesizes complex clinical trial data into a rigorously structured, highly authoritative ICH M4E(R2)-compliant CTD Module 2.5 Clinical Overview, incorporating advanced risk-benefit analysis and biostatistical rationale.
 - **[IDE Application Preparation](ide_application_preparation.prompt.yaml)**: Draft an Investigational Device Exemption (IDE) application, including risk analysis and investigational plans for clinical studies.
 - **[Medicare Coverage Request (IDE)](medicare_coverage_request_ide.prompt.yaml)**: Prepare a request packet for CMS reimbursement of an IDE study.
 - **[Parallel Review Request](parallel_review_request.prompt.yaml)**: Draft an email requesting enrollment in the Parallel Review program.
