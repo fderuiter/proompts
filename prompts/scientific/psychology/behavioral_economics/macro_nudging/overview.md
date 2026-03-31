@@ -1,7 +1,4 @@
-# Macro Nudging
-
-## Overview
-This directory focuses on population-scale behavioral interventions ("nudges"), optimizing resource allocation, compliance maximization, and systems-level behavioral architecture.
+# Macro Nudging Overview
 
 ## Prompts
-- [Population Macro Nudging Architect](population_macro_nudging_architect.prompt.yaml)
+- **[population_macro_nudging_architect](population_macro_nudging_architect.prompt.yaml)**: A highly analytical prompt designed to engineer population-scale behavioral macro-nudging architectures, formulating mathematical optimization models to maximize public compliance and minimize reactance using rigorous epidemiological and economic constraints.
