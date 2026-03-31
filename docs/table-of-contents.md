@@ -451,6 +451,7 @@
 [Medical Device Recall Strategy Architect](prompts/regulatory/quality/medical_device_recall_strategy_architect.prompt.md)
 [Medical Device Reporting (MDR) and Vigilance Decision Evaluator](prompts/regulatory/quality/medical_device_reporting_decision_evaluator.prompt.md)
 [Part 11 Closed System Audit](prompts/regulatory/quality/part_11_closed_system_audit.prompt.md)
+[qms_management_review_architect](prompts/regulatory/quality/qms_management_review_architect.prompt.md)
 [Quality-Improvement RCA & Action Plan](prompts/regulatory/quality/quality_improvement_rca_action_plan.prompt.md)
 [Quality System Audit](prompts/regulatory/quality/quality_system_audit.prompt.md)
 [Quality System Evaluation (MRA)](prompts/regulatory/quality/quality_system_evaluation_mra.prompt.md)

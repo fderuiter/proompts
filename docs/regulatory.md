@@ -100,6 +100,7 @@ title: Regulatory
 - [Privacy Act Auditing](prompts/regulatory/administrative/privacy_act_auditing.prompt.md)
 - [Prompt-Writing Best-Practice Checklist](prompts/regulatory/strategy/prompt_best_practices.prompt.md)
 - [Public Hearing Participation](prompts/regulatory/administrative/public_hearing_participation.prompt.md)
+- [qms_management_review_architect](prompts/regulatory/quality/qms_management_review_architect.prompt.md)
 - [Quality System Audit](prompts/regulatory/quality/quality_system_audit.prompt.md)
 - [Quality System Evaluation (MRA)](prompts/regulatory/quality/quality_system_evaluation_mra.prompt.md)
 - [Quality-Improvement RCA & Action Plan](prompts/regulatory/quality/quality_improvement_rca_action_plan.prompt.md)
