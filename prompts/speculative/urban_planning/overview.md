@@ -1,3 +1,4 @@
-# Urban Planning Prompts
+# Urban Planning Overview
 
-This directory contains speculative prompts related to urban planning and infrastructure optimization, blending biological concepts with technical routing algorithms.
+## Prompts
+- **[mycelial_arbitrage_urban_planner](mycelial_arbitrage_urban_planner.prompt.yaml)**: Synthesizes biological slime mold networking algorithms with high-frequency trading logic to dynamically route and optimize urban infrastructure and supply chains in real-time.
