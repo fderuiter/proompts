@@ -1,76 +1,114 @@
-# Contributing to Proompts
+# Contributing to Proompts 🚀
 
 Thank you for your interest in contributing to the Proompts repository! This guide will help you get started with adding new prompts, improving documentation, and submitting changes.
 
-## Getting Started
+## What is this guide?
 
-1.  **Fork the repository** and clone it locally.
-2.  **Install dependencies**:
+This document outlines the standard operating procedure for contributing to the Proompts library. It covers the end-to-end lifecycle of a contribution, from setting up your local environment to opening a Pull Request.
+
+## Why do we have these rules?
+
+Proompts treats "Prompts as Code". This means our prompts must be structured, testable, and documented just like traditional software. By following these guidelines, you help us:
+- **Maintain High Quality**: Automated tests (`testData`) ensure prompts behave as expected.
+- **Prevent Documentation Debt**: Automated scripts keep our docs and directories in sync.
+- **Reduce Friction**: A standardized structure makes it easy for anyone to find, use, and modify prompts.
+
+## How to Contribute
+
+The contribution process follows a simple lifecycle: **Setup ➡️ Create ➡️ Validate ➡️ Submit**.
+
+### The Contribution Lifecycle
+
+```mermaid
+graph TD
+    A[Clone & Setup] --> B[Create / Edit Prompt]
+    B --> C{Standalone or Workflow?}
+    C -->|Standalone| D[Place in Category Folder]
+    C -->|Workflow| E[Create Workflow Subfolder]
+    D --> F[Run Validation Pipeline]
+    E --> F
+    F -->|Fail| B
+    F -->|Pass| G[Open Pull Request]
+
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:1px;
+    classDef action fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    class B,F,G action;
+```
+
+---
+
+### Step 1: Setup Your Environment
+
+1.  **Fork and Clone**: Fork the repository and clone it to your local machine.
+2.  **Install Dependencies**: The validation scripts require Python 3 and a few packages.
     ```bash
+    python3 -m venv venv
+    source venv/bin/activate
     pip install -r requirements.txt
     ```
-    Ensure you have Python 3 installed.
-3.  **Explore the repository**:
-    *   `prompts/` contains the prompt files, organized by category.
-    *   `docs/` contains documentation.
-    *   `tools/scripts/` contains utility scripts for validation and maintenance.
 
-## Adding a New Prompt
+### Step 2: Add or Edit a Prompt
 
-1.  **Create a Prompt File**:
-    *   Use the `.prompt.yaml` extension.
-    *   Follow the schema defined in `docs/template_prompt.prompt.yaml`.
-    *   Include required fields: `name`, `description`, `model`, `messages`.
-    *   Include optional but recommended fields: `testData`, `evaluators`.
+All prompts must be written as `.prompt.yaml` files.
 
-2.  **Choose the Right Category**:
-    *   Place your file in the appropriate subdirectory under `prompts/`.
-    *   If a suitable directory doesn't exist, create a new one using snake_case (e.g., `prompts/new_category/`).
-    *   Add an `overview.md` file to any new directory describing its contents.
+> [!NOTE]
+> **Schema is Strict!**
+> Your YAML must follow the exact structure defined in [`docs/template_prompt.prompt.yaml`](docs/template_prompt.prompt.yaml).
 
-3.  **Validate Your Prompt**:
-    Run the validation scripts to ensure your prompt meets the standards:
-    ```bash
-    # Run all checks
-    python3 tools/scripts/test_all.py
-    ```
-    This will run:
-    *   `cleanup_mac_files`: **Automatically removes** macOS metadata files (`._*`) to prevent CI errors.
-    *   `check_prompts.py`: Checks naming conventions and file locations.
-    *   `validate_prompt_schema.py`: Validates the YAML structure and required fields.
-    *   `generate_docs.py --check`: Verifies that documentation files match the current prompts/workflows.
-    *   `check_broken_links.py`: Scans for broken internal links in documentation.
-    *   `yamllint`: Checks for YAML syntax errors.
+1.  **Create the File**:
+    *   **Standalone Prompts**: Place directly in the appropriate category folder (e.g., `prompts/business/market_research.prompt.yaml`). Do *not* number the filename.
+    *   **Workflow Prompts**: If your prompt is part of a chained workflow, create a dedicated subfolder named `<workflow_name>_workflow/` and number the files sequentially (e.g., `prompts/clinical/protocol/protocol_workflow/01_clinical_trial_protocol_creator.prompt.yaml`).
+2.  **Fill Required Fields**:
+    *   `name`: A short, descriptive title.
+    *   `description`: What does this prompt do?
+    *   `model` & `modelParameters`: The target LLM and settings (like temperature).
+    *   `messages`: The actual prompt content (use `{{variable}}` for inputs).
+3.  **Add Test Data (Crucial!)**:
+    *   Provide `testData` array with sample inputs and `expected` outputs. This allows our simulation engine to test the prompt without making API calls.
+4.  **Add Evaluators (Optional but recommended)**:
+    *   Define regex or string matching rules to automatically grade the LLM's output.
 
-    If `generate_docs.py` fails, run it without `--check` to automatically update the documentation:
-    ```bash
-    python3 tools/scripts/generate_docs.py
-    ```
+### Step 3: Run the Validation Pipeline
 
-4.  **Sanitize and Standardize**:
-    *   Ensure no sensitive information is included.
-    *   **File Organization Rule**:
-        *   **Standalone Prompts**: Do NOT number the file (e.g., `summarizer.yaml`). Place directly in the category folder.
-        *   **Workflow Prompts**: Place in a dedicated subfolder named `<workflow_name>_workflow/`. Number them sequentially (e.g., `01_step_one.yaml`, `02_step_two.yaml`).
-    *   Follow the naming convention: snake_case for filenames.
+Before committing, you **must** run the test suite. This ensures your YAML is valid, tests pass, and documentation is updated.
 
-## Submitting Changes
+> [!WARNING]
+> Do not skip this step! The CI pipeline will fail your PR if these checks do not pass locally.
 
-1.  **Create a Branch**: Use a descriptive name for your branch (e.g., `add-feature-x`, `fix-bug-y`).
-2.  **Commit Your Changes**: Write clear and concise commit messages.
-3.  **Open a Pull Request**:
-    *   Describe your changes in detail.
-    *   Link to any relevant issues.
-    *   Ensure all checks pass.
+Run the master script from the repository root:
 
-## Style Guide
+```bash
+python3 tools/scripts/test_all.py
+```
 
-*   **YAML**: Use 2 spaces for indentation.
-*   **Markdown**: Use standard Markdown formatting.
-*   **Prompts**: Be clear, concise, and explicit in your instructions. Use `{{variable}}` for placeholders.
+**What this script does:**
+*   `cleanup_mac_files`: Removes hidden macOS files (`._*`) that break parsing.
+*   `check_prompts`: Validates naming conventions and directory structures.
+*   `validate_prompt_schema`: Ensures your YAML matches the Pydantic schema (checks for missing fields or empty `testData`).
+*   `generate_docs` & `update_docs_index`: Automatically regenerates the Markdown documentation site based on your changes!
+*   `yamllint`: Checks for formatting issues.
 
-## Reporting Issues
+If `test_all.py` fails on documentation checks, you can force a regeneration by running:
+```bash
+python3 tools/scripts/generate_docs.py
+python3 tools/scripts/update_docs_index.py
+```
 
-If you find a bug or have a feature request, please open an issue using the provided templates.
+### Step 4: Submit Your Pull Request
 
-Thank you for contributing!
+1.  **Commit**: Use clear, descriptive commit messages (e.g., `feat: Add new risk assessment prompt`).
+2.  **Push**: Push to your fork.
+3.  **PR**: Open a Pull Request against the `main` branch of the upstream repository.
+    *   Include a brief description of what you added or fixed.
+    *   Confirm that you ran `python3 tools/scripts/test_all.py` locally.
+
+## Style Guide 🎨
+
+- **YAML**: Use 2 spaces for indentation. Wrap long text blocks using the block scalar `|-` operator.
+- **Variables**: Always use double curly braces: `{{variable_name}}`. Do not add spaces inside the braces.
+- **Descriptions**: Keep descriptions concise and action-oriented.
+- **Test Data**: Make your test cases realistic. Don't use "foo" and "bar" if the prompt expects a clinical protocol summary.
+
+## Need Help?
+
+If you run into issues, check the [`docs/BEST_PRACTICES.md`](docs/BEST_PRACTICES.md) or explore the [`tools/scripts/README.md`](tools/scripts/README.md) for more detailed information on our tooling. You can also open an issue to ask questions.

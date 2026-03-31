@@ -53,12 +53,25 @@ messages:
 testData:
   - inputs:
       target_audience_reading_level: "6th Grade"
-      protocol_synopsis: "The study involves a double-blind, randomized, placebo-controlled trial evaluating the efficacy of a novel monoclonal antibody targeting the IL-6 receptor in patients with moderate-to-severe rheumatoid arthritis. Patients will undergo bi-weekly subcutaneous injections, regular phlebotomy for pharmacokinetic analysis, and MRI imaging of joint spaces."
-    expected: "Study Purpose"
+      protocol_synopsis: "Phase III, randomized, double-blind, placebo-controlled trial evaluating efficacy and safety of a novel monoclonal antibody targeting the IL-6 receptor in patients with moderate-to-severe rheumatoid arthritis. Patients will undergo bi-weekly subcutaneous injections, regular phlebotomy for pharmacokinetic analysis, and MRI imaging of joint spaces. Severe adverse events include potential immunosuppression, opportunistic infections, and hypersensitivity reactions."
+  - inputs:
+      target_audience_reading_level: "8th Grade"
+      protocol_synopsis: ""
+  - inputs:
+      target_audience_reading_level: "5th Grade"
+      protocol_synopsis: "<script>alert('test')</script> Trial to see if drug works."
 evaluators:
-  - type: includes
-    value: "Study Purpose"
-  - type: includes
-    value: "Risks"
+  - type: regex
+    pattern: "(?i)Study Purpose"
+  - type: regex
+    pattern: "(?i)Procedures"
+  - type: regex
+    pattern: "(?i)Risks"
+  - type: regex
+    pattern: "(?i)Benefits"
+  - type: regex
+    pattern: "(?i)Alternatives"
+  - type: regex
+    pattern: "(?i)Voluntary Participation"
 
 ```

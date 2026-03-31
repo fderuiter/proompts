@@ -2,6 +2,9 @@
 
 This document outlines the structure of `.workflow.yaml` files, which are used to define and run chains of prompts.
 
+> [!TIP]
+> **IDE Validation**: You can enable autocomplete and validation in your IDE by using the [Workflow JSON Schema](../docs/schemas/workflow.schema.json). See the [Schemas README](../docs/schemas/README.md) for setup instructions.
+
 ## Top-Level Fields
 
 A workflow file has the following top-level keys:
