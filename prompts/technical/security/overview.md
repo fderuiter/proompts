@@ -13,4 +13,5 @@
 - **[Medical Device Cybersecurity Threat Modeling](cybersecurity_threat_modeling.prompt.yaml)**: Analyze system architecture using STRIDE.
 - **[Hardware Side-Channel Attack Modeling Architect](hardware_side_channel_attack_modeling_architect.prompt.yaml)**: Designs highly rigorous, physics-based side-channel attack models and advanced countermeasures for embedded systems and secure enclaves.
 - **[red_team_exploit_chain_architect](red_team_exploit_chain_architect.prompt.yaml)**: Acts as a Principal Offensive Security Architect to engineer advanced, multi-staged exploit chains, bypassing defense-in-depth controls for Red Team operations.
+- **[Software Supply Chain Provenance Architect](software_supply_chain_provenance_architect.prompt.yaml)**: Architects robust, mathematically sound, and SLSA-compliant software supply chain security frameworks emphasizing cryptographic provenance, SBOM generation, and zero-trust CI/CD orchestration.
 - **[Zero-Day Incident Containment Architect](zero_day_containment_architect.prompt.yaml)**: Generates tactical containment strategies and mitigation playbooks for zero-day vulnerabilities.
