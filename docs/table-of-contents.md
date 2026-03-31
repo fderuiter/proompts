@@ -685,6 +685,7 @@
 [ai_threat_modeling_architect](prompts/technical/security/ai_threat_modeling_architect.prompt.md)
 [APT Threat Hunting Query Engineer](prompts/technical/security/apt_threat_hunting_query_engineer.prompt.md)
 [automated_malware_reverse_engineering_analyst](prompts/technical/security/automated_malware_reverse_engineering_analyst.prompt.md)
+[Cloud IAM Least-Privilege Remediation Architect](prompts/technical/security/cloud_iam_least_privilege_remediation_architect.prompt.md)
 [Cloud Incident Response Forensics Architect](prompts/technical/security/cloud_incident_response_forensics_architect.prompt.md)
 [Medical Device Cybersecurity Threat Modeling](prompts/technical/security/cybersecurity_threat_modeling.prompt.md)
 [Hardware Side-Channel Attack Modeling Architect](prompts/technical/security/hardware_side_channel_attack_modeling_architect.prompt.md)
