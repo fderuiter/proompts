@@ -1,4 +1,4 @@
-# Prompt Engineering Utilities
+# Prompt Engineering Utilities 🛠️
 
 This directory contains **Meta-Prompts**, agent scripts, and specialized utilities for maintaining, refining, and standardizing the prompt library.
 
@@ -8,6 +8,7 @@ This directory contains **Meta-Prompts**, agent scripts, and specialized utiliti
 ## Table of Contents
 
 - [Overview](#overview)
+- [Why this directory exists?](#why-this-directory-exists)
 - [Tool Descriptions](#tool-descriptions)
   - [Architecture Review Pipeline](#architecture-review-pipeline)
   - [Prompt Optimizer](#prompt-optimizer)
@@ -15,7 +16,18 @@ This directory contains **Meta-Prompts**, agent scripts, and specialized utiliti
   - [Standardize Prompt Files](#standardize-prompt-files)
   - [Prompt Sanitiser](#prompt-sanitiser)
 - [Usage Guide](#usage-guide)
+  - [Prerequisites](#prerequisites)
+  - [Using Markdown Tools (`.md`)](#using-markdown-tools-md)
+  - [Using YAML Prompts (`.prompt.yaml`)](#using-yaml-prompts-promptyaml)
 - [Contribution](#contribution)
+
+---
+
+## Why this directory exists?
+
+This directory exists as the **"Engine Room"** for Proompts developers. While `prompts/meta/` contains user-facing tools for general meta-prompting tasks, `tools/prompt_tools/` is specifically built to maintain and elevate the quality of *this* repository itself.
+
+It houses the instructions and scripts used by LLMs to enforce our strict YAML schema, refactor directories, and systematically optimize our core product: the prompts.
 
 ---
 
@@ -59,6 +71,14 @@ A system prompt that acts as a filter to clean "raw" prompts. It removes source 
 
 Most tools in this directory are designed to be used with an LLM (like ChatGPT or Claude) to perform meta-tasks on the repository itself.
 
+### Prerequisites
+
+> [!WARNING]
+> Before running any Python-based workflow scripts (like `run_workflow.py`), ensure you are at the root of the repository and have installed the required dependencies:
+> ```bash
+> pip install -r requirements.txt
+> ```
+
 ### Using Markdown Tools (`.md`)
 1. Open the file (e.g., `L5_prompt_sanitiser.md`).
 2. Copy the entire content.
@@ -66,11 +86,21 @@ Most tools in this directory are designed to be used with an LLM (like ChatGPT o
 4. Provide the target content (e.g., the raw prompt you want to sanitize) as the next message.
 
 ### Using YAML Prompts (`.prompt.yaml`)
-These files follow the repository's standard schema and can be executed using the workflow engine (if supported) or used as templates.
+These files follow the repository's standard schema and can be executed using the workflow engine as a standalone simulation.
+
+**Example: Running the Prompt Optimizer**
 
 ```bash
-# Example: Running the Prompt Optimizer (hypothetical usage if supported by run_workflow.py)
+# Provide the task variable via the -i flag
 python3 tools/scripts/run_workflow.py tools/prompt_tools/L5_prompt_optimizer.prompt.yaml -i task="Write a Python script to scrape a website"
+```
+
+**Example: Running with Verbose Output**
+
+To see the exact inputs being passed into the prompt messages during the simulation:
+
+```bash
+python3 tools/scripts/run_workflow.py tools/prompt_tools/L5_prompt_optimizer.prompt.yaml -i task="Draft a project brief" -v
 ```
 
 ---
