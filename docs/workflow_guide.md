@@ -169,14 +169,13 @@ graph TD
 
 ---
 
-## 5. Running Workflows
+## 5. Simulating Workflows
 
-We provide a Python script to execute workflows locally.
+We provide a Python script to simulate workflow execution locally without making actual LLM API calls.
 
 **Prerequisites:**
 - Python 3.x
 - Dependencies installed (`pip install -r requirements.txt`)
-- An LLM provider API key (e.g., `OPENAI_API_KEY`) set in your environment.
 
 **Command:**
 
@@ -187,15 +186,22 @@ python3 tools/scripts/run_workflow.py path/to/workflow.workflow.yaml [options]
 **Options:**
 - `-i key=value`: Provide global inputs.
 - `-v`: Verbose mode (shows full prompts and responses).
-- `--dry-run`: Simulate execution without calling the LLM.
+- `-f`, `--inputs-file`: Path to a JSON or YAML file containing workflow inputs (Recommended for security)
+
+**What it does:** It loads a `.workflow.yaml` file, parses the step execution order, resolves inter-step variable mappings, and deterministically simulates the output of each prompt using its defined `testData`.
+
+**Why use it:** It allows developers to quickly verify the logic, input mappings, and output extraction of complex prompt chains without incurring API costs or dealing with network latency.
 
 **Example:**
 
 ```bash
-# Run the 'Idea to Epic' workflow
+# Simulate the 'Idea to Epic' workflow
 python3 tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml \
   -i product_concept="A specialized AI for writing documentation"
 ```
+
+> [!NOTE]
+> To successfully simulate a workflow step, the corresponding prompt file must contain a `testData` array that matches the inputs passed to it during the simulation.
 
 ---
 
