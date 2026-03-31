@@ -458,6 +458,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Physics
 
+- [inflationary_tensor_perturbation_architect](prompts/scientific/physics/cosmology/inflationary_tensor_perturbation_architect.prompt.md)
 - [Feynman Rule Derivation Architect](prompts/scientific/physics/quantum_field_theory/feynman_rule_derivation_architect.prompt.md)
 
 ## Project Management
