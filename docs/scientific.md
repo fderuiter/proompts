@@ -49,6 +49,7 @@ title: Scientific
 - [multi_omics_data_integration_architect](prompts/scientific/computational_biology/multi_omics_data_integration_architect.prompt.md)
 - [Multiplicity Adjustment Code Generator](prompts/scientific/biostatistics/multiplicity_adjustments_calculator.prompt.md)
 - [Natural Language Argument Formalizer](prompts/scientific/philosophy/logic/natural_language_argument_formalizer.prompt.md)
+- [Normative Ethics Stress Tester](prompts/scientific/philosophy/ethics/normative_ethics/normative_ethics_stress_tester.prompt.md)
 - [Objective Skills Assessment](prompts/scientific/bioskills/bioskills_workflow/03_objective_skills_assessment.prompt.md)
 - [Peer-Review Checklist for Manuscript Methods](prompts/scientific/biostatistics/peer_review_methods_checklist.prompt.md)
 - [Phase II/III SAP Skeleton](prompts/scientific/biostatistics/phase_ii_iii_sap_skeleton.prompt.md)
