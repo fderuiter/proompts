@@ -413,6 +413,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Mathematics
 
 - [epistemic_modal_logic_kripke_evaluator](prompts/scientific/mathematics/formal_logic/epistemic_modal_logic_kripke_evaluator.prompt.md)
+- [physics_informed_neural_network_architect](prompts/scientific/mathematics/numerical_methods/physics_informed_neural_network_architect.prompt.md)
 - [Stochastic Multi-Objective Optimization Architect](prompts/scientific/mathematics/optimization/stochastic_optimization_architect.prompt.md)
 - [Topological Counterexample Generator](prompts/scientific/mathematics/topology/topological_counterexample_generator.prompt.md)
 
