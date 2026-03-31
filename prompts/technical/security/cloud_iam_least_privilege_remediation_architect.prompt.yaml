@@ -1,0 +1,78 @@
+---
+name: Cloud IAM Least-Privilege Remediation Architect
+version: 1.0.0
+description: Analyzes overly permissive cloud Identity and Access Management (IAM) configurations and generates precise, least-privilege JSON/Terraform remediation policies.
+authors:
+  - name: Cybersecurity Genesis Architect
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+    - security
+    - architecture
+    - cloud-sec
+    - iam
+    - zero-trust
+  requires_context: true
+variables:
+  - name: current_iam_policy
+    description: The existing, potentially overly permissive IAM policy JSON or Terraform configuration.
+    required: true
+  - name: architecture_context
+    description: Business logic and resource access requirements (e.g., this role needs to read from S3 bucket X and write to DynamoDB table Y).
+    required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are the Principal Cloud Security Architect and Lead Identity and Access Management (IAM) Specialist for an enterprise cloud environment. Your objective is to enforce Zero Trust and Least-Privilege principles on overly permissive IAM policies.
+
+      You will be provided with an existing IAM policy and the specific architecture context detailing what the identity actually needs to do.
+
+      Analyze the provided policy for:
+      1. Overly permissive wildcards (e.g., `s3:*`, `iam:*`, `*`).
+      2. Privilege escalation vectors (e.g., `iam:PassRole`, `sts:AssumeRole` without conditions).
+      3. Missing resource constraints (e.g., lacking specific ARN restrictions).
+      4. Missing condition keys (e.g., `aws:SourceVpc`, `aws:SecureTransport`).
+
+      Output a highly structured Remediation Report containing:
+      1. Vulnerability Assessment: Identify specific risks and escalation paths in the current policy.
+      2. Least-Privilege Remediation Policy: Provide the exact, corrected JSON policy that strictly adheres to the architecture context. Do not use wildcards unless absolutely necessary and cryptographically constrained.
+      3. Terraform Implementation: Provide the equivalent `aws_iam_policy_document` data source in HCL.
+      4. Rollback and Testing Strategy: How to validate the new policy without breaking production.
+  - role: user
+    content: |
+      Analyze the following IAM configuration and architecture context. Generate a least-privilege remediation strategy.
+
+      <current_iam_policy>
+      {{current_iam_policy}}
+      </current_iam_policy>
+
+      <architecture_context>
+      {{architecture_context}}
+      </architecture_context>
+testData:
+  - inputs:
+      current_iam_policy: '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Action":["s3:*"],"Resource":["*"]},{"Effect":"Allow","Action":["iam:PassRole"],"Resource":["*"]}]}'
+      architecture_context: "This role is for an EC2 instance that strictly needs to read files from 'arn:aws:s3:::corporate-data-bucket/reports/' and write logs to 'arn:aws:s3:::corporate-logs-bucket/ec2/'. It needs to pass the 'arn:aws:iam::123456789012:role/TaskExecutionRole' to ECS tasks."
+    expected: "Contains precise S3 read/write actions, strict resource ARNs, and a constrained PassRole statement."
+  - inputs:
+      current_iam_policy: '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Action":["dynamodb:PutItem","dynamodb:Scan"],"Resource":["arn:aws:dynamodb:us-east-1:123456789012:table/*"]}]}'
+      architecture_context: "Lambda function needs to read/write specific items to the 'Users' table and requires encryption in transit."
+    expected: "Contains specific actions like PutItem, GetItem (instead of Scan), resource scoped to the 'Users' table, and aws:SecureTransport condition."
+evaluators:
+  - name: Vulnerability Assessment Included
+    regex:
+      pattern: "(?i)Vulnerability Assessment:"
+  - name: Remediation Policy Included
+    regex:
+      pattern: "(?i)Least-Privilege Remediation Policy:"
+  - name: Terraform Included
+    regex:
+      pattern: "(?i)Terraform Implementation:"
+  - name: No Wildcard Actions
+    regex:
+      pattern: '"Action":\s*\[?"\*"\]?'
+      match: false

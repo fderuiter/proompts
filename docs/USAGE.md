@@ -6,6 +6,24 @@ This guide provides examples of how to use the prompts in this repository.
 
 Most prompts are designed to be used with an LLM agent. You can load the prompt YAML file, parse it, and feed the `messages` to the LLM API (e.g., OpenAI, Anthropic).
 
+### Prompt Execution Lifecycle
+
+```mermaid
+sequenceDiagram
+    actor Developer
+    participant Agent Script
+    participant YAML Prompt
+    participant LLM API
+
+    Developer->>Agent Script: run_prompt(prompt_file, variables)
+    Agent Script->>YAML Prompt: Load .prompt.yaml
+    YAML Prompt-->>Agent Script: Parsed Prompt Object
+    Agent Script->>Agent Script: Inject Variables (e.g., {{name}})
+    Agent Script->>LLM API: Send formatted messages
+    LLM API-->>Agent Script: Return Response
+    Agent Script-->>Developer: Output Result
+```
+
 ### Python Example
 
 ```python
