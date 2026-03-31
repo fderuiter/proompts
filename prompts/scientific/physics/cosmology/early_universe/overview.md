@@ -1,3 +1,4 @@
-# Early Universe
+# Early Universe Overview
 
-Prompts related to theoretical physics in the early universe, including inflation, big bang nucleosynthesis, and baryogenesis.
+## Prompts
+- **[inflationary_tensor_perturbation_architect](inflationary_tensor_perturbation_architect.prompt.yaml)**: Formulates rigorous mathematical derivations for tensor perturbations generated during cosmological inflation.
