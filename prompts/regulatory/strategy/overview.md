@@ -8,6 +8,7 @@
 - **[Compliance Gap Assessment](compliance_gap_assessment.prompt.yaml)**: Evaluate organizational controls against a specified compliance framework and prioritize remediation.
 - **[Dual MDR / IVDR Conformity-Assessment Roadmap](dual_mdr_ivdr_roadmap.prompt.yaml)**: Develop a coordinated roadmap for simultaneous MDR and IVDR submissions.
 - **[EU MDR Technical-Documentation Gap Assessment](eu_mdr_gap_assessment.prompt.yaml)**: Identify deficiencies in technical documentation against EU MDR Annex II and III.
+- **[FDA Fast Track Designation Architect](fda_fast_track_designation_architect.prompt.yaml)**: Designs a rigorous, strategically aligned FDA Fast Track Designation application focusing on demonstrating an unmet medical need for a serious or life-threatening condition.
 - **[IDE Determination and Device Classification](ide_determination.prompt.yaml)**: Assess risk classification and draft rationale.
 - **[IND Determination and Application](ind_determination_application.prompt.yaml)**: Determine IND exemption and prepare dossier.
 - **[IND Readiness Gap Analysis & Filing Road-Map](ind_readiness_gap_analysis.prompt.yaml)**: Assess IND readiness and create a filing road‑map for a therapeutic program.
