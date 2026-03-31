@@ -692,6 +692,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Combination Product Jurisdiction](prompts/regulatory/submissions/combination_product_jurisdiction.prompt.md)
 - [De Novo Request Preparation](prompts/regulatory/submissions/de_novo_request_preparation.prompt.md)
 - [Humanitarian Device Exemption (HDE)](prompts/regulatory/submissions/humanitarian_device_exemption_hde.prompt.md)
+- [ich_m4e_ctd_clinical_overview_architect](prompts/regulatory/submissions/ich_m4e_ctd_clinical_overview_architect.prompt.md)
 - [IDE Application Preparation](prompts/regulatory/submissions/ide_application_preparation.prompt.md)
 - [Medicare Coverage Request (IDE)](prompts/regulatory/submissions/medicare_coverage_request_ide.prompt.md)
 - [Parallel Review Request](prompts/regulatory/submissions/parallel_review_request.prompt.md)
