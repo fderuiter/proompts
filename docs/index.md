@@ -341,6 +341,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Geometry
 
+- [Riemannian Manifold Curvature Deriver](prompts/scientific/mathematics/geometry/differential/riemannian_manifold_curvature_deriver.prompt.md)
 - [pseudo_riemannian_tensor_calculus_prover](prompts/scientific/mathematics/geometry/differential/pseudo_riemannian_tensor_calculus_prover.prompt.md)
 
 ## Google Jules
