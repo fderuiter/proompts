@@ -96,6 +96,7 @@ title: Regulatory
 - [Pre-IND Meeting Preparation](prompts/regulatory/strategy/pre_ind_meeting_preparation.prompt.md)
 - [Premarket Approval (PMA) Preparation](prompts/regulatory/submissions/premarket_approval_pma_preparation.prompt.md)
 - [Privacy Act Auditing](prompts/regulatory/administrative/privacy_act_auditing.prompt.md)
+- [Process Validation IQ/OQ/PQ Protocol Architect](prompts/regulatory/quality/process_validation_iq_oq_pq_protocol_architect.prompt.md)
 - [Prompt-Writing Best-Practice Checklist](prompts/regulatory/strategy/prompt_best_practices.prompt.md)
 - [Public Hearing Participation](prompts/regulatory/administrative/public_hearing_participation.prompt.md)
 - [Quality System Audit](prompts/regulatory/quality/quality_system_audit.prompt.md)
