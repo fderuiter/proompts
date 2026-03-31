@@ -55,6 +55,7 @@ title: Scientific
 - [institutional_isomorphism_lifecycle_modeler](prompts/scientific/sociology/institutions/institutional_isomorphism_lifecycle_modeler.prompt.md)
 - [intergenerational_mobility_modeler](prompts/scientific/sociology/stratification/intergenerational_mobility_modeler.prompt.md)
 - [Interpret the Chemistry & Assess Risk](prompts/scientific/chemical_characterization/chemical_characterization_workflow/02_interpret_the_chemistry_assess_risk.prompt.md)
+- [intuitionistic_natural_deduction_prover](prompts/scientific/mathematics/formal_logic/intuitionistic_natural_deduction_prover.prompt.md)
 - [intersectional_stratification_mechanism_modeler](prompts/scientific/sociology/stratification/intersectional_stratification_mechanism_modeler.prompt.md)
 - [intuitionistic_logic_natural_deduction_generator](prompts/scientific/mathematics/foundations/proof_theory/intuitionistic_logic_natural_deduction_generator.prompt.md)
 - [investigators_brochure_synthesis_architect](prompts/scientific/medical_writing/investigators_brochure_synthesis_architect.prompt.md)
