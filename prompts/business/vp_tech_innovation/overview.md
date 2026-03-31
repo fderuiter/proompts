@@ -8,4 +8,5 @@
 - **[Legacy Modernization Strategy](legacy_modernization_strategy.prompt.yaml)**: Create a phased roadmap for migrating legacy systems to modern architectures.
 - **[Post-Mortem / Incident Report Summary](post_mortem_summary.prompt.yaml)**: Summarize technical post-mortems for a general company audience.
 - **[Preventing Technical Debt](preventing_technical_debt.prompt.yaml)**: Justify technical debt reduction to non-technical stakeholders using financial analogies.
+- **[Strategic Vendor Lock-In Mitigation Architect](strategic_vendor_lock_in_mitigation_architect.prompt.yaml)**: Analyzes proposed enterprise technology stacks and architects highly rigorous, multi-vendor interoperability and vendor lock-in mitigation strategies.
 - **[Upskilling Program Design](upskilling_program_design.prompt.yaml)**: Design a technical upskilling curriculum for engineering teams.
