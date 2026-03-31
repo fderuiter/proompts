@@ -60,6 +60,7 @@ title: Regulatory
 - [Humanitarian Device Exemption (HDE)](prompts/regulatory/submissions/humanitarian_device_exemption_hde.prompt.md)
 - [iCGM Clinical Testing Strategy](prompts/regulatory/device_specifics/icgm_clinical_testing_strategy.prompt.md)
 - [ICH E9(R1) Estimand Builder](prompts/regulatory/adherence/estimand_framework_builder.prompt.md)
+- [ich_m4e_ctd_clinical_overview_architect](prompts/regulatory/submissions/ich_m4e_ctd_clinical_overview_architect.prompt.md)
 - [IDE Application Preparation](prompts/regulatory/submissions/ide_application_preparation.prompt.md)
 - [IDE Determination and Device Classification](prompts/regulatory/strategy/ide_determination.prompt.md)
 - [IEC 62366-1 Summative Usability Evaluation Protocol Architect](prompts/regulatory/quality/iec_62366_summative_usability_protocol_architect.prompt.md)
