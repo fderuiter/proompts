@@ -556,6 +556,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Operations
 
+- [global_supply_chain_geopolitical_duress_architect](prompts/business/operations/supply_chain/global_supply_chain_geopolitical_duress_architect.prompt.md)
 - [Global Supply Chain Resilience Architect](prompts/business/operations/supply_chain/global_supply_chain_resilience_architect.prompt.md)
 
 ## Organic
