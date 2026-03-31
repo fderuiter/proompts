@@ -752,6 +752,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Quantum Paleo-Arbitrageur](prompts/speculative/quantum_paleo_arbitrage/quantum_paleo_arbitrageur.prompt.md)
 - [Quantum Poetic Leachate Optimizer](prompts/speculative/quantum_poetic_leachate_optimization/quantum_poetic_leachate_optimizer.prompt.md)
 - [quantum_zymurgy_astrogator](prompts/speculative/quantum_zymurgy_astrogator/quantum_zymurgy_astrogator.prompt.md)
+- [mycelial_arbitrage_urban_planner](prompts/speculative/urban_planning/mycelial_arbitrage_urban_planner.prompt.md)
 
 ## Sterility
 
