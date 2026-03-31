@@ -110,6 +110,7 @@
 [Semantic Interoperability Optimization](prompts/clinical/forms/semantic_interoperability.prompt.md)
 [clinical_study_report_patient_narrative_architect](prompts/clinical/medical_writing/clinical_study_report_patient_narrative_architect.prompt.md)
 [Clinical Trial Protocol Synopsis Architect](prompts/clinical/medical_writing/clinical_trial_protocol_synopsis_architect.prompt.md)
+[csr_efficacy_narrative_architect](prompts/clinical/medical_writing/csr_efficacy_narrative_architect.prompt.md)
 [Clinical Study Report (CSR) Narrative Drafter](prompts/clinical/medical_writing/csr_narrative_drafter.prompt.md)
 [csr_patient_narrative_architect](prompts/clinical/medical_writing/csr_patient_narrative_architect.prompt.md)
 [csr_patient_safety_narrative_architect](prompts/clinical/medical_writing/csr_patient_safety_narrative_architect.prompt.md)

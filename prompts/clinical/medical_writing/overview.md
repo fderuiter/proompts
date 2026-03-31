@@ -3,6 +3,7 @@
 ## Prompts
 - **[clinical_study_report_patient_narrative_architect](clinical_study_report_patient_narrative_architect.prompt.yaml)**: Synthesizes complex clinical trial data into regulatory-compliant Patient Narratives for Clinical Study Reports (CSR) per ICH E3 guidelines.
 - **[Clinical Trial Protocol Synopsis Architect](clinical_trial_protocol_synopsis_architect.prompt.yaml)**: Synthesizes a comprehensive, regulatory-compliant Clinical Trial Protocol Synopsis from raw study design parameters, objectives, and statistical assumptions.
+- **[csr_efficacy_narrative_architect](csr_efficacy_narrative_architect.prompt.yaml)**: A Principal Medical Writer and Clinical Scientist prompt designed to synthesize complex statistical outputs (TLFs) into rigorous, ICH E3-compliant clinical efficacy narratives for Clinical Study Reports (CSRs).
 - **[Clinical Study Report (CSR) Narrative Drafter](csr_narrative_drafter.prompt.yaml)**: Automate the drafting of patient narratives for Clinical Study Reports (CSRs) by transforming clinical data into clear summaries with citations.
 - **[csr_patient_narrative_architect](csr_patient_narrative_architect.prompt.yaml)**: Synthesizes complex clinical trial subject data into regulatory-compliant patient narratives for Clinical Study Reports (CSR) per ICH E3 guidelines.
 - **[csr_patient_safety_narrative_architect](csr_patient_safety_narrative_architect.prompt.yaml)**: Synthesizes complex clinical trial subject data into regulatory-compliant patient safety narratives for Clinical Study Reports (CSR) per ICH E3 guidelines.
