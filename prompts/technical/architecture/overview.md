@@ -29,6 +29,7 @@
 - **[Hexagonal Architecture Implementation](hexagonal_architecture_implementation.prompt.yaml)**: Expert guidance on implementing Hexagonal Architecture, focusing on data flow, dependency inversion, and component placement.
 - **[Hexagonal Architecture Principles](hexagonal_architecture_principles.prompt.yaml)**: Explain the core philosophy, skeleton, and benefits of Hexagonal Architecture (Ports and Adapters).
 - **[Hexagonal Architecture Review](hexagonal_architecture_review.prompt.yaml)**: Analyze code for adherence to Hexagonal Architecture principles, identifying layer violations and dependency issues.
+- **[HFT Low-Latency Architecture Designer](hft_low_latency_trading_architect.prompt.yaml)**: Designs strictly optimized, sub-microsecond latency network and hardware architectures for High-Frequency Trading (HFT) systems.
 - **[Idempotency and API Retry Strategy Architect](idempotency_strategy_architect.prompt.yaml)**: Designs highly robust, distributed idempotency and retry architectures for APIs and message-driven systems to prevent duplicate processing.
 - **[IoT Digital Twin Architect](iot_digital_twin_architect.prompt.yaml)**: Designs highly accurate, scalable, and synchronized digital twin architectures for complex IoT ecosystems, ensuring real-time bidirectional state management and predictive simulation capabilities.
 - **[Maintainability Codebase Analysis](maintainability_codebase_analysis.prompt.yaml)**: Improve code maintainability by addressing readability, organization, and test quality.
