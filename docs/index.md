@@ -63,6 +63,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [TOGAF Preliminary Phase](prompts/technical/architecture/togaf/preliminary_phase.prompt.md)
 - [TOGAF Requirements Management](prompts/technical/architecture/togaf/requirements_management.prompt.md)
 
+## Behavioral Economics
+
+- [population_macro_nudging_architect](prompts/scientific/psychology/behavioral_economics/macro_nudging/population_macro_nudging_architect.prompt.md)
+
 ## Biosafety
 
 - [Risk Assessment Expert](prompts/scientific/biosafety/biological_safety_workflow/01_risk_assessment_expert.prompt.md)
