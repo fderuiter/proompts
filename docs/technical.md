@@ -41,6 +41,7 @@ title: Technical
 - [Universal Automation Agent](prompts/technical/automation/universal_automation_agent.prompt.md)
 - [Zero Trust Privileged Access Management Architect](prompts/technical/security/iam_security/zero_trust_pam_architect.prompt.md)
 - [Zero-Day Incident Containment Architect](prompts/technical/security/zero_day_containment_architect.prompt.md)
+- [Zero-Knowledge Proof Protocol Architect](prompts/technical/security/zero_knowledge_proof_protocol_architect.prompt.md)
 
 ## Workflows
 - [Agentic Coding: From Idea to Epics](workflows/agentic_coding.md)
