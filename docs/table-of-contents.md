@@ -468,6 +468,7 @@
 [Quality-Improvement RCA & Action Plan](prompts/regulatory/quality/quality_improvement_rca_action_plan.prompt.md)
 [Quality System Audit](prompts/regulatory/quality/quality_system_audit.prompt.md)
 [Quality System Evaluation (MRA)](prompts/regulatory/quality/quality_system_evaluation_mra.prompt.md)
+[regulatory_compliance_automation_architect](prompts/regulatory/quality/regulatory_compliance_automation_architect.prompt.md)
 [Regulatory-Landscape Radar](prompts/regulatory/quality/regulatory_landscape_radar.prompt.md)
 [Regulatory Radar & Impact Report](prompts/regulatory/quality/regulatory_radar.prompt.md)
 [Risk-Based Quality Management Plan](prompts/regulatory/quality/risk_based_quality_management_plan.prompt.md)
