@@ -11,3 +11,6 @@
 - **[Hardware Side-Channel Attack Modeling Architect](hardware_side_channel_attack_modeling_architect.prompt.yaml)**: Designs highly rigorous, physics-based side-channel attack models and advanced countermeasures for embedded systems and secure enclaves.
 - **[red_team_exploit_chain_architect](red_team_exploit_chain_architect.prompt.yaml)**: Acts as a Principal Offensive Security Architect to engineer advanced, multi-staged exploit chains, bypassing defense-in-depth controls for Red Team operations.
 - **[Zero-Day Incident Containment Architect](zero_day_containment_architect.prompt.yaml)**: Generates tactical containment strategies and mitigation playbooks for zero-day vulnerabilities.
+
+## Subdirectories
+- **[iam_security](iam_security/overview.md)**
