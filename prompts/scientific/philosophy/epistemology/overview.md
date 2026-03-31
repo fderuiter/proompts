@@ -1,3 +1,4 @@
-# Epistemology
+# Epistemology Overview
 
-This directory contains prompts related to epistemology.
+## Categories
+- [Formal Epistemology/](formal_epistemology/overview.md)
