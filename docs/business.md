@@ -23,6 +23,7 @@ title: Business
 - [Friction-Hunting Onboarding Audit](prompts/business/cx/onboarding_audit.prompt.md)
 - [GCP and GDPR Training Compliance Risk Report](prompts/business/hr_finance/gcp_gdpr_compliance_training_risk_report.prompt.md)
 - [Global Regulatory and Tax Matrix for Site Payments](prompts/business/payment/global_regulatory_tax_matrix.prompt.md)
+- [global_supply_chain_geopolitical_duress_architect](prompts/business/operations/supply_chain/global_supply_chain_geopolitical_duress_architect.prompt.md)
 - [Hostile Takeover Defense Matrix Architect](prompts/business/strategy/hostile_takeover_defense_matrix.prompt.md)
 - [Hype vs. Reality Analysis](prompts/business/vp_tech_innovation/hype_vs_reality_analysis.prompt.md)
 - [Investigator-Site Payment Forecast](prompts/business/payment/investigator_site_payment_forecast.prompt.md)
