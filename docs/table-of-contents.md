@@ -340,6 +340,7 @@
 [stiff_pde_numerical_stability_architect](prompts/scientific/mathematics/numerical_methods/stiff_pde_numerical_stability_architect.prompt.md)
 [Stochastic Multi-Objective Optimization Architect](prompts/scientific/mathematics/optimization/stochastic_optimization_architect.prompt.md)
 [Topological Counterexample Generator](prompts/scientific/mathematics/topology/topological_counterexample_generator.prompt.md)
+[Vector Prompt Calibrator](prompts/meta/calibration/vector_prompt_calibrator.prompt.md)
 [The Prompt Alchemist](prompts/meta/creative/the_prompt_alchemist.prompt.md)
 [Master Ultrameta Prompt Architect](prompts/meta/meta_prompt_chain/00_L0_master-ultrameta.prompt.md)
 [Meta Prompt Architect](prompts/meta/meta_prompt_chain/01_L1_meta-prompt-architect.prompt.md)
