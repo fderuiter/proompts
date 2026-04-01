@@ -62,10 +62,14 @@ messages:
 - role: user
   content: |
     SEED_IDEA.md:
+    <seed_idea>
     {{seed_idea}}
+    </seed_idea>
 
     Current Project State:
+    <current_state>
     {{current_state}}
+    </current_state>
 testData:
 - input:
     seed_idea: "I want a weather app that suggests outfits based on rain/sun."
