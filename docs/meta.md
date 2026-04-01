@@ -19,6 +19,7 @@ title: Meta
 - [Task Prototyper](prompts/meta/meta_prompt_chain/03_L3_task-prototyper.prompt.md)
 - [The Prompt Alchemist](prompts/meta/creative/the_prompt_alchemist.prompt.md)
 - [Vector Prompt Calibration Evaluator](prompts/meta/meta_prompt_chain/vector_calibration.prompt.md)
+- [Vector Prompt Calibrator](prompts/meta/calibration/vector_prompt_calibrator.prompt.md)
 - [Worker Prompt](prompts/meta/meta_prompt_chain/04_L4_worker_prompt.prompt.md)
 
 ## Workflows
