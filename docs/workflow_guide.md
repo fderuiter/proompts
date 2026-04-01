@@ -8,6 +8,11 @@ nav_order: 14
 
 Workflows are the powerhouse of this repository. They allow you to chain multiple prompts together into a coherent, multi-step process, passing data from one step to the next automatically.
 
+**TL;DR - Run a workflow simulation:**
+```bash
+python3 tools/scripts/run_workflow.py workflows/technical/software_engineering/paw_workflow.workflow.yaml -i product_concept="A new app idea"
+```
+
 > [!NOTE]
 > Workflows are ideal for complex tasks that require multiple reasoning steps, such as "Analyze a problem -> Propose a solution -> Critique the solution".
 

@@ -2,6 +2,11 @@
 
 This guide outlines best practices for creating high-quality prompts in this repository.
 
+**TL;DR - Validate your prompts:**
+```bash
+python3 tools/scripts/test_all.py
+```
+
 ## Prompt File Structure
 
 All prompts must be stored as `.prompt.yaml` or `.prompt.yml` files following this structure:
