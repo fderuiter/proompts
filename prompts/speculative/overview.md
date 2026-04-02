@@ -7,6 +7,7 @@
 - [Chrono Linguistic Debugging/](chrono_linguistic_debugging/overview.md)
 - [Circadian Harpsichord Orchestration/](circadian_harpsichord_orchestration/overview.md)
 - [Dendro Balletic Bgp Choreography/](dendro_balletic_bgp_choreography/overview.md)
+- [Endocrine Cobol Botanical Orchestration/](endocrine_cobol_botanical_orchestration/overview.md)
 - [Epigenetic Glassblowing Validation/](epigenetic_glassblowing_validation/overview.md)
 - [Gregorian Fluid Autoscaling/](gregorian_fluid_autoscaling/overview.md)
 - [Microbial Steganography Diplomat/](microbial_steganography_diplomat/overview.md)
