@@ -204,6 +204,7 @@
 [stochastic_lotka_volterra_population_modeler](prompts/scientific/ecology/population_dynamics/stochastic_lotka_volterra_population_modeler.prompt.md)
 [structural_vector_autoregression_architect](prompts/scientific/economics/econometrics/time_series/structural_vector_autoregression_architect.prompt.md)
 [longitudinal_trauma_propagation_modeler](prompts/scientific/epidemiology/global_mental_health/longitudinal_trauma_propagation_modeler.prompt.md)
+[psychological_trauma_epidemiology_mapper](prompts/scientific/psychology/epidemiology/global_mental_health/psychological_trauma_epidemiology_mapper.prompt.md)
 [cognitive_bias_epistemological_deconstructor](prompts/scientific/philosophy/epistemology/formal_epistemology/cognitive_bias_epistemological_deconstructor.prompt.md)
 [Patient-Centric BYOD ePRO Workflow](prompts/clinical/epro/epro_workflow/01_patient-centric_byod_workflow.prompt.md)
 [Optimize ePRO Form Design](prompts/clinical/epro/epro_workflow/02_optimize_epro_form_design.prompt.md)

@@ -83,6 +83,7 @@ title: Scientific
 - [Predictive Multidimensional Spectroscopy Architect](prompts/scientific/chemistry/analytical/spectroscopy/predictive_multidimensional_spectroscopy_architect.prompt.md)
 - [Prepare Pathology Slides and Reporting Plan](prompts/scientific/pathology/pathology_study_workflow/03_slides_and_reporting_workflow.prompt.md)
 - [pseudo_riemannian_tensor_calculus_prover](prompts/scientific/mathematics/geometry/differential/pseudo_riemannian_tensor_calculus_prover.prompt.md)
+- [psychological_trauma_epidemiology_mapper](prompts/scientific/psychology/epidemiology/global_mental_health/psychological_trauma_epidemiology_mapper.prompt.md)
 - [Psychometric Validation Methodology](prompts/scientific/coa/psychometric_validation_methods.prompt.md)
 - [QC Listing & Cross-check Prompt](prompts/scientific/biostatistics/qc_listing_cross_check_prompt.prompt.md)
 - [Qualitative Interview Guide Generator](prompts/scientific/coa/qualitative_interview_guide.prompt.md)
