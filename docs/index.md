@@ -1005,6 +1005,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Topology
 
+- [higher_homotopy_postnikov_tower_architect](prompts/scientific/mathematics/topology/algebraic_topology/higher_homotopy_postnikov_tower_architect.prompt.md)
 - [serre_spectral_sequence_calculator](prompts/scientific/mathematics/topology/algebraic_topology/serre_spectral_sequence_calculator.prompt.md)
 
 ## Training
