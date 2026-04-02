@@ -731,6 +731,7 @@
 [ISO Strategist](prompts/clinical/therapy/music_therapy_workflow/02_iso_strategist.prompt.md)
 [Sonic Architect](prompts/clinical/therapy/music_therapy_workflow/03_sonic_architect.prompt.md)
 [Lyricist](prompts/clinical/therapy/music_therapy_workflow/04_lyricist.prompt.md)
+[higher_homotopy_postnikov_tower_architect](prompts/scientific/mathematics/topology/algebraic_topology/higher_homotopy_postnikov_tower_architect.prompt.md)
 [serre_spectral_sequence_calculator](prompts/scientific/mathematics/topology/algebraic_topology/serre_spectral_sequence_calculator.prompt.md)
 [Competency-Based Onboarding Blueprint](prompts/management/training/learning_development_workflow/01_competency_based_onboarding_blueprint.prompt.md)
 [Scenario-Based Microlearning Series](prompts/management/training/learning_development_workflow/02_scenario_based_microlearning_series.prompt.md)
