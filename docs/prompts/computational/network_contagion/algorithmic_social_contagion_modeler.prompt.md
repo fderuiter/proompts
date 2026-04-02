@@ -68,14 +68,19 @@ messages:
       </population_size>
 testData:
   - inputs:
-      network_topology: "Scale-free social media graph with a power-law degree distribution and high clustering coefficient."
-      contagion_parameters: '{"tau": 0.25, "c_bar": 150, "d": 4.5}'
+      network_topology: "Scale-free social media graph with a power-law degree distribution (gamma=2.2) and a core-periphery structure containing 5 major echo chambers."
+      contagion_parameters: '{"tau": 0.42, "c_bar": 310, "d": 7.5, "algorithmic_amplification_multiplier": 2.5}'
       population_size: "15000000"
-    expected: "R_0"
+  - inputs:
+      network_topology: "Dense small-world network representing a localized professional forum with high homophily."
+      contagion_parameters: '{"tau": 0.05, "c_bar": 45, "d": 12.0}'
+      population_size: "350000"
+  - inputs:
+      network_topology: ""
+      contagion_parameters: '{"error": "Missing transmission rate"}'
+      population_size: "0"
 evaluators:
-  - type: "includes"
-    value: "epidemiological_phases"
-  - type: "includes"
-    value: "R_0"
+  - type: "regex"
+    value: '(?s)\{\s*"epidemiological_phases":\s*\{\s*"susceptible":\s*".*?",\s*"exposed":\s*".*?",\s*"infectious":\s*".*?",\s*"recovered":\s*".*?"\s*\},\s*"reproduction_number_estimate":\s*".*?",\s*"network_centrality_analysis":\s*".*?",\s*"behavioral_nudging_interventions":\s*\[.*?\]\s*\}'
 
 ```
