@@ -1,3 +1,4 @@
-# Stochastic Processes
+# Stochastic Overview
 
-This category contains prompts focused on stochastic processes and the inferential theory of latent variable models.
+## Categories
+- [Markov Processes/](markov_processes/overview.md)
