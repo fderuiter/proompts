@@ -1,3 +1,4 @@
-# Epidemiology
+# Epidemiology Overview
 
-This section contains prompts related to epidemiological models and public health analysis within population psychology.
+## Categories
+- [Global Mental Health/](global_mental_health/overview.md)
