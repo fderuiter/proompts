@@ -12,6 +12,7 @@
 - **[CQRS and Event Sourcing Architect](cqrs_event_sourcing_architect.prompt.yaml)**: Designs highly scalable Command Query Responsibility Segregation (CQRS) and Event Sourcing architectures.
 - **[crdt_conflict_resolution_architect](crdt_conflict_resolution_architect.prompt.yaml)**: Designs robust Conflict-Free Replicated Data Type (CRDT) architectures for building highly available, partition-tolerant distributed systems with strong eventual consistency guarantees.
 - **[Data Mesh Topology Architect](data_mesh_topology_architect.prompt.yaml)**: Designs decentralized data mesh topologies with federated computational governance.
+- **[Data Residency & Localization Architect](data_residency_localization_architect.prompt.yaml)**: Designs globally distributed architectures enforcing strict data sovereignty and privacy compliance (GDPR/CCPA/PIPL).
 - **[Distributed Caching Strategy Architect](distributed_caching_strategy_architect.prompt.yaml)**: Designs highly resilient, multi-level distributed caching architectures, handling cache topologies, invalidation strategies, and failure modes like cache stampedes.
 - **[Distributed Database Sharding Architect](distributed_database_sharding_architect.prompt.yaml)**: Designs highly scalable distributed database sharding and partitioning strategies.
 - **[Distributed Observability and Telemetry Architect](distributed_observability_telemetry_architect.prompt.yaml)**: A Principal Distributed Observability and Telemetry Architect to design highly scalable, robust distributed observability and telemetry pipelines.
