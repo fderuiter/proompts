@@ -274,6 +274,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Investigator Follow-up Email & Action-Item Tracker](prompts/clinical/cra/cra_workflow/02_investigator_follow_up_email_tracker.prompt.md)
 - [Risk-Based Monitoring (RBM) Plan Builder](prompts/clinical/cra/cra_workflow/03_rbm_plan_builder.prompt.md)
 
+## Cross Cultural
+
+- [multi_national_longitudinal_intervention_architect](prompts/scientific/psychology/cross_cultural/longitudinal_interventions/multi_national_longitudinal_intervention_architect.prompt.md)
+
 ## Data
 
 - [Discrepancy Detection & Query Log Generator](prompts/clinical/data/clinical_data_workflow/01_discrepancy_detection_query_log.prompt.md)

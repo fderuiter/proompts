@@ -184,6 +184,7 @@
 [Monitoring-Visit Report Generator](prompts/clinical/cra/cra_workflow/01_monitoring_visit_report_generator.prompt.md)
 [Investigator Follow-up Email & Action-Item Tracker](prompts/clinical/cra/cra_workflow/02_investigator_follow_up_email_tracker.prompt.md)
 [Risk-Based Monitoring (RBM) Plan Builder](prompts/clinical/cra/cra_workflow/03_rbm_plan_builder.prompt.md)
+[multi_national_longitudinal_intervention_architect](prompts/scientific/psychology/cross_cultural/longitudinal_interventions/multi_national_longitudinal_intervention_architect.prompt.md)
 [Discrepancy Detection & Query Log Generator](prompts/clinical/data/clinical_data_workflow/01_discrepancy_detection_query_log.prompt.md)
 [Draft a Data Management Plan Section](prompts/clinical/data/clinical_data_workflow/02_data_management_plan_section.prompt.md)
 [Edit-Check Specification Builder for New eCRF Fields](prompts/clinical/data/clinical_data_workflow/03_edit_check_specification_builder.prompt.md)
