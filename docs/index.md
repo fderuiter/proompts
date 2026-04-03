@@ -136,6 +136,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Cellular
 
 - [genome_scale_metabolic_flux_modeler](prompts/scientific/cellular/metabolism/genome_scale_metabolic_flux_modeler.prompt.md)
+- [metabolic_control_analysis_architect](prompts/scientific/cellular/metabolism/metabolic_control_analysis_architect.prompt.md)
 
 ## Cfo
 
