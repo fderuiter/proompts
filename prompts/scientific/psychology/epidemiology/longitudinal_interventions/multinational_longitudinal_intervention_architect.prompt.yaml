@@ -1,0 +1,102 @@
+---
+name: multinational_longitudinal_intervention_architect
+version: 1.0.0
+description: A highly robust, expert-level prompt designed to architect massively scaled, multi-national longitudinal behavioral interventions. It models cross-cultural epidemiological outcomes and intervention attrition over long time horizons using advanced predictive mathematics and strictly defined data structures.
+authors:
+  - Population Behavioral Sciences Genesis Architect
+metadata:
+  domain: epidemiology
+  sub_domain: longitudinal_interventions
+  complexity: high
+  frameworks:
+    - Multi-Level Survival Analysis
+    - Hidden Markov Models (HMM) for Behavioral State Transitions
+    - Cross-Cultural Psychometrics Harmonization
+    - WHO/APA Macro-Level Cohort Guidelines
+variables:
+  - name: multi_national_cohort_schema
+    description: Detailed JSON/CSV schema defining the multi-national cohort structure (e.g., million-row schemas including participant IDs, stratification clusters, localized psychometric scales, and time-series measurement intervals).
+  - name: longitudinal_intervention_target
+    description: The specific behavioral target for the longitudinal intervention (e.g., chronic substance use reduction, sustained climate-conscious consumption, long-term adherence to prophylactic mental health protocols).
+  - name: systemic_attrition_factors
+    description: Known systemic, geopolitical, or cultural factors anticipated to cause non-random attrition and missingness in the massive-scale dataset over the intervention horizon.
+model: "gpt-4o"
+modelParameters:
+  temperature: 0.1
+  max_tokens: 8192
+  top_p: 0.95
+messages:
+  - role: system
+    content: |
+      You are the Principal Epidemiological Psychologist and Lead Behavioral Data Scientist. Your objective is to mathematically design and architect a massive-scale, multi-national longitudinal behavioral intervention.
+
+      You must strictly adhere to advanced macroeconomic, psychological, and epidemiological standards (e.g., WHO guidelines, APA macro-level standards). You will employ rigorous mathematical notation using LaTeX to describe survival probabilities, behavioral state transition dynamics, and mixed-effects trajectory models.
+
+      Constraints & Formatting:
+      1. Deliver an unvarnished, scientifically rigorous assessment without sugarcoating the complexities of mass behavior tracking, compliance, and non-random missing data.
+      2. Define all mathematical models strictly using LaTeX. For example, use hazard functions like \( h(t|X) = h_0(t) \exp(\beta' X) \) or hidden Markov model transition matrices \( P(S_t | S_{t-1}) \). Do not omit the rigorous equations governing the epidemiological trajectory.
+      3. All massive-scale data structures and inputs must be explicitly documented using rigorous JSON/CSV schemas designed to handle millions of rows across diverse multinational clusters.
+      4. Your output must encompass:
+         a) Mathematical Formulation (Multi-level survival and behavioral state transition models).
+         b) Attrition & Missingness Mitigation (Rigorous mathematical handling of non-random dropout driven by the stated systemic factors).
+         c) Data Schema & Cross-Cultural Harmonization Pipeline (For processing massive multi-national cohort data).
+         d) Predictive Epidemiological Trajectory.
+      5. Adopt a highly authoritative, critical, and analytical tone.
+  - role: user
+    content: |
+      Architect the multi-national longitudinal behavioral intervention for the following target: {{longitudinal_intervention_target}}.
+
+      Target Multi-National Cohort Schema:
+      {{multi_national_cohort_schema}}
+
+      Systemic Attrition Factors:
+      {{systemic_attrition_factors}}
+
+      Proceed with the mathematical formulation, attrition mitigation strategy, big data pipeline schema, and predictive trajectory.
+testData:
+  - multi_national_cohort_schema: |
+      {
+        "cohorts": [
+          {
+            "region_id": "string",
+            "participants": [
+              {
+                "id": "uuid",
+                "baseline_psychometric_score": "float",
+                "cultural_stratification_index": "integer",
+                "time_series_observations": [
+                  {"wave": "integer", "timestamp": "datetime", "adherence_metric": "float"}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    longitudinal_intervention_target: "Long-term adherence to digital cognitive behavioral therapy for major depressive disorder across 15 OECD nations."
+    systemic_attrition_factors: "Digital divide in lower-income strata; varying national healthcare reimbursement policies causing differential dropout at month 6."
+  - multi_national_cohort_schema: |
+      {
+        "strata": [
+          {
+            "country_code": "string",
+            "population_density": "float",
+            "subjects": [
+              {
+                "subject_id": "string",
+                "intervention_arm": "string",
+                "monthly_consumption_index": "float",
+                "dropout_flag": "boolean"
+              }
+            ]
+          }
+        ]
+      }
+    longitudinal_intervention_target: "Sustained climate-conscious consumption patterns (reduction in high-carbon purchases) over a 10-year horizon."
+    systemic_attrition_factors: "Economic recession impacts disproportionately affecting developing nations; shifting national climate policies altering local pricing dynamics."
+evaluators:
+  - type: model_graded
+    description: Verifies that the mathematical formulation includes strict LaTeX equations for survival analysis or behavioral state transitions.
+  - type: model_graded
+    description: Evaluates the robustness and scalability of the big data JSON/CSV pipeline schema designed for multi-national harmonization.
+  - type: model_graded
+    description: Checks the authoritative tone, handling of non-random attrition, and adherence to WHO/APA macro-level epidemiological standards.

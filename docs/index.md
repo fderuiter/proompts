@@ -318,6 +318,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [longitudinal_trauma_propagation_modeler](prompts/scientific/epidemiology/global_mental_health/longitudinal_trauma_propagation_modeler.prompt.md)
 - [psychological_trauma_epidemiology_mapper](prompts/scientific/psychology/epidemiology/global_mental_health/psychological_trauma_epidemiology_mapper.prompt.md)
+- [multinational_longitudinal_intervention_architect](prompts/scientific/psychology/epidemiology/longitudinal_interventions/multinational_longitudinal_intervention_architect.prompt.md)
 
 ## Epistemology
 
