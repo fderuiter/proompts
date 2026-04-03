@@ -1,3 +1,4 @@
-# Control Theory
+# Control Theory Overview
 
-This directory contains mathematical prompt templates for control theory.
+## Prompts
+- **[Stochastic Model Predictive Control (MPC) Architect](stochastic_mpc_architect.prompt.yaml)**: Formulates mathematically rigorous, robust, and stochastic Model Predictive Control (MPC) frameworks for complex dynamical systems subject to noise and uncertainty.
