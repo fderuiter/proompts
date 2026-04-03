@@ -66,10 +66,10 @@ messages:
 - role: user
   content: |
     Source Code:
-    {{source_code}}
+    <source_code>{{source_code}}</source_code>
 
     Scale Context:
-    {{context}}
+    <context>{{context}}</context>
 testData:
 - input:
     source_code: "users.forEach(async u => await db.get(u.id))"
