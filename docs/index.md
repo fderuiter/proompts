@@ -394,6 +394,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [bayesian_hierarchical_model_architect](prompts/scientific/statistics/inference/bayesian_methods/bayesian_hierarchical_model_architect.prompt.md)
 - [target_trial_emulation_architect](prompts/scientific/statistics/inference/causal_inference/target_trial_emulation_architect.prompt.md)
 
+## Inorganic
+
+- [Organometallic Catalytic Cycle Architect](prompts/scientific/chemistry/inorganic/catalysis/organometallic_catalytic_cycle_architect.prompt.md)
+
 ## Languages
 
 - [Advanced Python Testing](prompts/technical/languages/python/advanced_python_testing.prompt.md)
