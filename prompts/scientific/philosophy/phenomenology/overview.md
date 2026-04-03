@@ -1,3 +1,4 @@
-# Phenomenology
+# Phenomenology Overview
 
-This section contains prompts focused on the philosophical study of structures of consciousness and first-person experience (phenomenology). These prompts utilize Husserlian and Heideggerian methodologies to systematically deconstruct lived experiences, isolate eidetic invariants, and analyze intentionality.
+## Prompts
+- **[phenomenological_reduction_engine](phenomenological_reduction_engine.prompt.yaml)**: A highly rigorous prompt designed to systematically deconstruct first-person experiences using Husserlian phenomenological reduction, isolating eidetic invariants while bracketing naturalistic assumptions.
