@@ -720,6 +720,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Prompt-Writing Best-Practice Checklist](prompts/regulatory/strategy/prompt_best_practices.prompt.md)
 - [21 CFR 820 / QMSR Gap-Analysis & Remediation](prompts/regulatory/strategy/qmsr_gap_analysis.prompt.md)
 - [RA/QA Integrated Quality System Audit](prompts/regulatory/strategy/raqa_integrated_quality_system_audit.prompt.md)
+- [Regenerative Medicine Advanced Therapy RMAT Designation Architect](prompts/regulatory/strategy/regenerative_medicine_advanced_therapy_rmat_designation_architect.prompt.md)
 - [Regulatory-Change Impact Analysis](prompts/regulatory/strategy/regulatory_change_impact_analysis.prompt.md)
 - [Regulatory Filing Draft Builder](prompts/regulatory/strategy/regulatory_filing_draft_builder.prompt.md)
 - [Request for Designation (RFD) Submission](prompts/regulatory/strategy/rfd_submission.prompt.md)
