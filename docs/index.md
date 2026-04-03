@@ -879,6 +879,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Audit Raw Data and Draft a CAPA Summary](prompts/management/study_director/study_director_workflow/02_audit_raw_data_capa_summary.prompt.md)
 - [Generate an Executive Summary for the Final Report](prompts/management/study_director/study_director_workflow/03_executive_summary_final_report.prompt.md)
 
+## Systems
+
+- [Stochastic Model Predictive Control (MPC) Architect](prompts/scientific/mathematics/systems/control_theory/stochastic_mpc_architect.prompt.md)
+
 ## Tasks
 
 - [PAW Phase 1 - Tactical Recon](prompts/technical/software_engineering/tasks/paw/paw_01_tactical_recon.prompt.md)
