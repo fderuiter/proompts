@@ -20,6 +20,7 @@
 - **[Prompt-Writing Best-Practice Checklist](prompt_best_practices.prompt.yaml)**: Summarize key elements of effective prompt design.
 - **[21 CFR 820 / QMSR Gap-Analysis & Remediation](qmsr_gap_analysis.prompt.yaml)**: Evaluate the quality-management system against current 21 CFR 820 and the proposed QMSR.
 - **[RA/QA Integrated Quality System Audit](raqa_integrated_quality_system_audit.prompt.yaml)**: Prepare for a combined FDA QSR and EU MDR/IVDR audit by identifying quality‑management gaps and recommending improvements.
+- **[regenerative_medicine_advanced_therapy_rmat_designation_architect](regenerative_medicine_advanced_therapy_rmat_designation_architect.prompt.yaml)**: A Principal Regulatory Affairs Strategist and Cellular Therapy Expert to architect a highly compelling Regenerative Medicine Advanced Therapy (RMAT) designation request to the FDA.
 - **[Regulatory-Change Impact Analysis](regulatory_change_impact_analysis.prompt.yaml)**: Assess how a new regulation affects company operations and outline a phased response plan.
 - **[Regulatory Filing Draft Builder](regulatory_filing_draft_builder.prompt.yaml)**: Produce a regulator‑ready draft document using provided financials and risk data.
 - **[Request for Designation (RFD) Submission](rfd_submission.prompt.yaml)**: Draft RFD for combination products.
