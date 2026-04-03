@@ -107,6 +107,7 @@ title: Regulatory
 - [Quality-Improvement RCA & Action Plan](prompts/regulatory/quality/quality_improvement_rca_action_plan.prompt.md)
 - [RA/QA Integrated Quality System Audit](prompts/regulatory/strategy/raqa_integrated_quality_system_audit.prompt.md)
 - [Reclassification Petitioning](prompts/regulatory/administrative/reclassification_petitioning.prompt.md)
+- [regenerative_medicine_advanced_therapy_rmat_designation_architect](prompts/regulatory/strategy/regenerative_medicine_advanced_therapy_rmat_designation_architect.prompt.md)
 - [Regulatory Filing Draft Builder](prompts/regulatory/strategy/regulatory_filing_draft_builder.prompt.md)
 - [Regulatory Radar & Impact Report](prompts/regulatory/quality/regulatory_radar.prompt.md)
 - [Regulatory-Change Impact Analysis](prompts/regulatory/strategy/regulatory_change_impact_analysis.prompt.md)
