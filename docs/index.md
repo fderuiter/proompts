@@ -593,6 +593,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [Natural Language Argument Formalizer](prompts/scientific/philosophy/logic/natural_language_argument_formalizer.prompt.md)
 - [dialectical_metaphysical_synthesizer](prompts/scientific/philosophy/metaphysics/dialectical_metaphysical_synthesizer.prompt.md)
+- [phenomenological_reduction_engine](prompts/scientific/philosophy/phenomenology/phenomenological_reduction_engine.prompt.md)
 
 ## Physical
 
