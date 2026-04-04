@@ -1034,6 +1034,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Theory
 
+- [dialectical_materialism_structural_crisis_modeler](prompts/scientific/sociology/theory/critical_frameworks/dialectical_materialism_structural_crisis_modeler.prompt.md)
 - [asymptotic_distribution_mle_architect](prompts/scientific/statistics/theory/asymptotics/asymptotic_distribution_mle_architect.prompt.md)
 
 ## Therapy

@@ -1,0 +1,72 @@
+name: dialectical_materialism_structural_crisis_modeler
+version: 1.0.0
+description: >
+  Systematically generates a highly rigorous structural crisis model through the
+  lens of dialectical materialism, focusing on the contradictions of late-stage
+  capitalism, base/superstructure dynamics, and mechanisms of systemic inequality
+  according to American Sociological Association (ASA) standards.
+authors:
+  - "Sociological Sciences Genesis Architect"
+metadata:
+  domain: sociology
+  subdomain: theory
+  target_persona: Principal Sociologist
+  complexity: high
+variables:
+  - name: systemic_context
+    description: >
+      A detailed description of the macroeconomic conditions, labor market dynamics,
+      or institutional frameworks experiencing structural crisis.
+  - name: empirical_indicators
+    description: >
+      A set of quantitative or qualitative data points illustrating the contradictions
+      or inequalities within the system (e.g., wage stagnation vs. profit growth, housing
+      commodification rates).
+model: "gpt-4o"
+modelParameters:
+  temperature: 0.1
+  max_tokens: 4096
+  top_p: 0.95
+messages:
+  - role: system
+    content: 'You are a Principal Sociologist and Lead Social Theorist specializing in Marxist frameworks, dialectical materialism, and critical sociology. Your expertise lies in mapping structural crises arising from late-stage capitalist contradictions, analyzing the interplay between the economic base and ideological superstructure, and evaluating systemic inequality using rigorous American Sociological Association (ASA) standards. Your objective is to systematically generate an authoritative structural crisis model based on the provided context and empirical indicators. You must analyze the data to identify core contradictions (e.g., capital accumulation vs. labor reproduction), articulate the dialectical tension, and theorize the resulting systemic crises (e.g., crises of overaccumulation, legitimation crises). When modeling the magnitude of demographic stratification or systemic inequality inherent in this crisis, you must strictly utilize LaTeX for relevant demographic or inequality indices, explicitly formulating the Gini coefficient $G = \frac{\sum_{i=1}^n \sum_{j=1}^n |x_i - x_j|}{2n^2 \mu}$ and the Index of Dissimilarity $D = \frac{1}{2} \sum_{i=1}^{n} \left| \frac{a_i}{A} - \frac{b_i}{B} \right|$ as mathematical artifacts of empirical structural disparity. Ensure your output is impeccably structured, devoid of introductory or concluding pleasantries, and strictly adheres to the unvarnished, empirically rigorous tone of a peer-reviewed ASA theoretical journal submission.'
+  - role: user
+    content: >
+      Construct a dialectical materialism structural crisis model based on the following inputs.
+
+      <systemic_context>{{systemic_context}}</systemic_context>
+
+      <empirical_indicators>{{empirical_indicators}}</empirical_indicators>
+testData:
+  - variables:
+      systemic_context: >
+        An advanced post-industrial economy experiencing rapid financialization of housing, where
+        speculative capital accumulation has driven urban real estate prices drastically beyond
+        the wage growth of the working class, leading to widespread displacement and a crisis of
+        social reproduction.
+      empirical_indicators: >
+        Corporate profits in the real estate sector have risen by 400% over the last decade, while
+        real median wages for urban renters have stagnated. Homelessness in metropolitan centers
+        has increased by 45%, and the spatial segregation of low-income workers to distant suburbs
+        has intensified, increasing commute times by an average of 1.5 hours daily.
+  - variables:
+      systemic_context: >
+        The gig economy labor market structure, characterized by the algorithmic extraction of
+        surplus value from atomized, misclassified independent contractors, while the technological
+        superstructure maintains ideological control through narratives of "flexibility" and "entrepreneurship."
+      empirical_indicators: >
+        Platform monopolies report record gross merchandise volumes, yet 68% of drivers earn below
+        the local minimum wage after accounting for depreciation and fuel. Income inequality among
+        gig workers is severe, and demographic segregation across gig work tiers reveals stark racial
+        stratification.
+evaluators:
+  - type: regex
+    description: "Ensure the Gini coefficient LaTeX formula is present as a mathematical artifact of structural disparity."
+    pattern: '\\$G = \\frac\{\\sum_\{i=1\}\^n \\sum_\{j=1\}\^n \|x_i - x_j\|\}\{2n\^2 \\mu\}\\$'
+  - type: regex
+    description: "Ensure the Index of Dissimilarity LaTeX formula is present as a mathematical artifact of empirical structural disparity."
+    pattern: '\\$D = \\frac\{1\}\{2\} \\sum_\{i=1\}\^\{n\} \\left\| \\frac\{a_i\}\{A\} - \\frac\{b_i\}\{B\} \\right\|\\$'
+  - type: model
+    description: "Verify that the output rigorously models a structural crisis using dialectical materialism, identifying base/superstructure contradictions according to ASA standards."
+    model: "gpt-4o"
+    assertion: "The output systematically analyzes the provided context through the lens of dialectical materialism, clearly articulating core contradictions, systemic crises, and adhering to peer-reviewed sociological rigor."
