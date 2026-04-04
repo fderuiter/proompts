@@ -247,6 +247,7 @@
 [Regulatory Imaging Data Package](prompts/clinical/imaging/imaging_workflow/06_regulatory_imaging_data_package.prompt.md)
 [bayesian_hierarchical_model_architect](prompts/scientific/statistics/inference/bayesian_methods/bayesian_hierarchical_model_architect.prompt.md)
 [target_trial_emulation_architect](prompts/scientific/statistics/inference/causal_inference/target_trial_emulation_architect.prompt.md)
+[Functional Data Analysis Architect](prompts/scientific/statistics/inference/nonparametric_methods/functional_data_analysis_architect.prompt.md)
 [Advanced Python Testing](prompts/technical/languages/python/advanced_python_testing.prompt.md)
 [Principal Python Developer](prompts/technical/languages/python/principal_python_developer.prompt.md)
 [Python Concurrency Mastery](prompts/technical/languages/python/python_concurrency_mastery.prompt.md)
