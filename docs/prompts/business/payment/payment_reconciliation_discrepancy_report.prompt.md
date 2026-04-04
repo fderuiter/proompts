@@ -47,8 +47,8 @@ messages:
     1. Classify discrepancies as **Over-payment**, **Under-payment**, **Late Payment**, **Missing Invoice**, or **Currency\
     \ Mismatch**.\n1. Recommend a corrective action for each discrepancy (e.g., claw-back, manual top-up, FX true-up).\n1.\
     \ Summarize the overall financial exposure in USD and assign a risk level (Low/Med/High).\n1. Confirm any data-quality\
-    \ questions before starting.\n\n  Inputs:\n  - `{{payment_ledger}}` – site payment ledger\n  - `{{cta_budget}}` – contracted\
-    \ budget amounts\n  - `{{site_queries}}` – outstanding site billing questions\n\nOutput format:\n- Markdown table with\
+    \ questions before starting.\n\n  Inputs:\n  - `<payment_ledger>{{payment_ledger}}</payment_ledger>` – site payment ledger\n  - `<cta_budget>{{cta_budget}}</cta_budget>` – contracted\
+    \ budget amounts\n  - `<site_queries>{{site_queries}}</site_queries>` – outstanding site billing questions\n\nOutput format:\n- Markdown table with\
     \ columns: `Site_ID \\| Issue_Type \\| Amount_USD \\| Root_Cause \\| Recommended_Action`.\n- Bullet list of systemic issues\
     \ and preventative next steps.\n\nAdditional notes:\nKeep recommendations actionable and concise."
 testData:

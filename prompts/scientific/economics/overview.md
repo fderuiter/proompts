@@ -4,3 +4,4 @@
 - [Econometrics/](econometrics/overview.md)
 - [Macroeconomics/](macroeconomics/overview.md)
 - [Microeconomics/](microeconomics/overview.md)
+- [Public Economics/](public_economics/overview.md)

@@ -47,6 +47,7 @@ title: Business
 - [Predictive RFM Churn Mitigation Architect](prompts/business/growth_engineering/predictive_rfm_churn_mitigation_architect.prompt.md)
 - [Preventing Technical Debt](prompts/business/vp_tech_innovation/preventing_technical_debt.prompt.md)
 - [Private Equity Value Creation Architect](prompts/business/strategy/private_equity_value_creation_architect.prompt.md)
+- [Quantitative Corporate Portfolio Divestiture Architect](prompts/business/strategy/quantitative_corporate_portfolio_divestiture_architect.prompt.md)
 - [Rapid Proposal Builder](prompts/business/development/rapid_proposal_builder.prompt.md)
 - [Red Account Turnaround Strategy](prompts/business/cx/red_account_turnaround.prompt.md)
 - [Regulatory & Commercial Barrier Mapping](prompts/business/market_research/market_research_workflow/03_regulatory_commercial_barrier_mapping.prompt.md)
