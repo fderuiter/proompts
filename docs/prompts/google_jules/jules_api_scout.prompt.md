@@ -83,10 +83,10 @@ messages:
 - role: user
   content: |
     Target Service:
-    {{target_service}}
+    <target_service>{{target_service}}</target_service>
 
     Context:
-    {{context}}
+    <context>{{context}}</context>
 testData:
 - input:
     target_service: "Stripe"
