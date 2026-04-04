@@ -37,8 +37,8 @@ messages:
     \ nature, and related product.\n   - Compare investigator fees to FMV benchmarks (±10 %).\n1. Output two tables:\n   -\
     \ **Reportable Payments** – rows that must be reported to CMS.\n   - **Compliance Exceptions** – missing data or FMV variance\
     \ > 10 % with remediation notes.\n1. Summarize lines reviewed, percent reportable, and percent exceptions.\n1. Ask questions\
-    \ if thresholds or tables seem outdated.\n\n  Inputs:\n  - `{{payment_ledger_csv}}` – raw payment ledger CSV\n  - `{{fx_rates}}`\
-    \ – foreign-exchange rate table\n  - `{{fmv_table}}` – fair market value reference table\n\nOutput format:\nTwo CSV-formatted\
+    \ if thresholds or tables seem outdated.\n\n  Inputs:\n  - `<payment_ledger_csv>{{payment_ledger_csv}}</payment_ledger_csv>` – raw payment ledger CSV\n  - `<fx_rates>{{fx_rates}}</fx_rates>`\
+    \ – foreign-exchange rate table\n  - `<fmv_table>{{fmv_table}}</fmv_table>` – fair market value reference table\n\nOutput format:\nTwo CSV-formatted\
     \ tables followed by a short executive summary.\n\nAdditional notes:\nUse clear column headers so the tables can be imported\
     \ without modification."
 testData:
