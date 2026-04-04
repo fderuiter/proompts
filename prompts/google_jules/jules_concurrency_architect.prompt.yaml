@@ -63,7 +63,7 @@ messages:
 - role: user
   content: |
     Target Epic:
-    {{target_epic}}
+    <target_epic>{{target_epic}}</target_epic>
 testData:
 - input:
     target_epic: "Typeahead Search Bar"
