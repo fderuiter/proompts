@@ -60,13 +60,13 @@ messages:
 
     Keep the entire response under 300 words.'
 - role: user
-  content: '- `{{staffing_hours}}` – hours logged per study.
+  content: '- `<staffing_hours>{{staffing_hours}}</staffing_hours>` – hours logged per study.
 
-    - `{{invoices}}` – pass-through invoice amounts.
+    - `<invoices>{{invoices}}</invoices>` – pass-through invoice amounts.
 
-    - `{{milestones}}` – milestone payment schedule.
+    - `<milestones>{{milestones}}</milestones>` – milestone payment schedule.
 
-    - `{{planned_budget}}` – approved budget per study.
+    - `<planned_budget>{{planned_budget}}</planned_budget>` – approved budget per study.
 
 
     Output format: - Markdown table (study ID, burn rate, percent of budget consumed, projected run-out date).

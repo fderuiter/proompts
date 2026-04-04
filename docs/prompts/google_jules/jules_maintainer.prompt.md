@@ -78,13 +78,13 @@ messages:
 - role: user
   content: |
     Completed Tasks:
-    {{completed_tasks}}
+    <completed_tasks>{{completed_tasks}}</completed_tasks>
 
     Codebase Diff:
-    {{codebase_diff}}
+    <codebase_diff>{{codebase_diff}}</codebase_diff>
 
     Current Documentation:
-    {{current_docs}}
+    <current_docs>{{current_docs}}</current_docs>
 testData:
 - input:
     completed_tasks: "TSK-001: Added user login API"
