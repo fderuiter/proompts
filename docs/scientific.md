@@ -34,6 +34,7 @@ title: Scientific
 - [differential_diagnosis_mapping_architect](prompts/scientific/psychology/clinical/psychopathology/differential_diagnosis_mapping_architect.prompt.md)
 - [Dual-Language Figure Prompt](prompts/scientific/biostatistics/dual_language_figure_prompt.prompt.md)
 - [Dunnett Adjustment R Code Generator](prompts/scientific/biostatistics/dunnett_adjustment_calculator.prompt.md)
+- [Dynamic Causal Modeling Architect](prompts/scientific/computational_theoretical_neuroscience/dynamic_causal_modeling_architect.prompt.md)
 - [Endotoxin Control & 510(k) Risk Plan](prompts/scientific/microbiology/microbiology_workflow/03_endotoxin_control_510k_risk_plan.prompt.md)
 - [EO Sterilization Validation Protocol](prompts/scientific/microbiology/microbiology_workflow/02_eo_sterilization_validation_protocol.prompt.md)
 - [epistemic_modal_logic_kripke_evaluator](prompts/scientific/mathematics/formal_logic/epistemic_modal_logic_kripke_evaluator.prompt.md)

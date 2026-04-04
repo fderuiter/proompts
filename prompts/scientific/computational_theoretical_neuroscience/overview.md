@@ -2,6 +2,7 @@
 
 ## Prompts
 - **[biophysical_hodgkin_huxley_modeler](biophysical_hodgkin_huxley_modeler.prompt.yaml)**: A Principal Computational Neuroscientist agent designed to analytically derive and simulate complex biophysical Hodgkin-Huxley action potential dynamics and ion channel kinetics.
+- **[Dynamic Causal Modeling Architect](dynamic_causal_modeling_architect.prompt.yaml)**: A Principal Computational Neuroscientist agent designed to formulate advanced Dynamic Causal Modeling (DCM) pipelines for effective connectivity inference.
 - **[fokker_planck_population_dynamics_architect](fokker_planck_population_dynamics_architect.prompt.yaml)**: A Principal Theoretical Neuroscientist agent designed to analytically derive and numerically solve the Fokker-Planck equation for stochastic integrate-and-fire neural populations.
 - **[graph_theoretical_connectome_analyzer](graph_theoretical_connectome_analyzer.prompt.yaml)**: A Principal Computational Neuroscientist agent designed to synthesize and analyze whole-brain connectome data using advanced graph-theoretical metrics.
 - **[hodgkin_huxley_biophysical_modeler](hodgkin_huxley_biophysical_modeler.prompt.yaml)**: Generates highly rigorous, computationally sound biophysical models of single-neuron action potential dynamics using the Hodgkin-Huxley formalism.
