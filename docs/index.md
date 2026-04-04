@@ -402,6 +402,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [target_trial_emulation_architect](prompts/scientific/statistics/inference/causal_inference/target_trial_emulation_architect.prompt.md)
 - [Functional Data Analysis Architect](prompts/scientific/statistics/inference/nonparametric_methods/functional_data_analysis_architect.prompt.md)
 
+## Inorganic
+
+- [Organometallic Catalytic Cycle Architect](prompts/scientific/chemistry/inorganic/catalysis/organometallic_catalytic_cycle_architect.prompt.md)
+
 ## Languages
 
 - [Advanced Python Testing](prompts/technical/languages/python/advanced_python_testing.prompt.md)

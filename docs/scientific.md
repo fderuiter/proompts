@@ -88,6 +88,7 @@ title: Scientific
 - [Non-Ideal Fluid Phase Equilibria Architect](prompts/scientific/chemistry/physical/thermodynamics/non_ideal_fluid_phase_equilibria_architect.prompt.md)
 - [Normative Ethics Stress Tester](prompts/scientific/philosophy/ethics/normative_ethics/normative_ethics_stress_tester.prompt.md)
 - [Objective Skills Assessment](prompts/scientific/bioskills/bioskills_workflow/03_objective_skills_assessment.prompt.md)
+- [Organometallic Catalytic Cycle Architect](prompts/scientific/chemistry/inorganic/catalysis/organometallic_catalytic_cycle_architect.prompt.md)
 - [Peer-Review Checklist for Manuscript Methods](prompts/scientific/biostatistics/peer_review_methods_checklist.prompt.md)
 - [Phase II/III SAP Skeleton](prompts/scientific/biostatistics/phase_ii_iii_sap_skeleton.prompt.md)
 - [phenomenological_reduction_engine](prompts/scientific/philosophy/phenomenology/phenomenological_reduction_engine.prompt.md)
