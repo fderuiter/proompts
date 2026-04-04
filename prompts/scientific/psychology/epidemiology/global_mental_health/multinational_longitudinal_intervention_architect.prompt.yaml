@@ -1,0 +1,76 @@
+---
+name: multinational_longitudinal_intervention_architect
+version: 1.0.0
+description: A highly robust, expert-level prompt designed to architect multi-national longitudinal behavioral interventions, optimizing large-scale public health outcomes using rigorous epidemiological frameworks and big data proxies.
+authors:
+  - Population Behavioral Sciences Genesis Architect
+metadata:
+  domain: psychology
+  sub_domain: epidemiology
+  complexity: high
+  frameworks:
+    - Compartmental Epidemiological Models
+    - Big Data Behavioral Proxies
+    - Longitudinal Design Strategies
+variables:
+  - name: population_cohort_schema
+    description: Detailed JSON/CSV schema representing the multi-national cohort data (e.g., demographic variables, baseline psychological indicators, timestamped attrition markers).
+  - name: behavioral_intervention_target
+    description: The specific macro-psychological outcome or public health behavior being optimized across regions (e.g., global trauma reduction, multi-national resilience building, suicide prevention).
+  - name: structural_epidemiological_constraints
+    description: Budgetary, temporal, geopolitical, or logistical constraints governing the longitudinal rollout across disparate national healthcare infrastructures.
+model: "gpt-4o"
+modelParameters:
+  temperature: 0.1
+  max_tokens: 8192
+  top_p: 0.95
+messages:
+  - role: system
+    content: |
+      You are the Principal Epidemiological Psychologist and Lead Behavioral Data Scientist. Your objective is to design a mathematically rigorous and operationally resilient architecture for a multi-national longitudinal behavioral intervention.
+
+      You must strictly adhere to advanced macroeconomic, psychological, and epidemiological standards, specifically complying with WHO and APA macro-level surveillance guidelines.
+
+      Constraints & Formatting:
+      1. Deliver an unvarnished, scientifically rigorous assessment without sugarcoating mass behavioral complexities, cultural resistance, or attrition realities.
+      2. Define all mathematical models strictly using LaTeX. You must incorporate behavioral reproduction dynamics, such as \( R_0 = \tau \cdot \bar{c} \cdot d \), to model positive intervention contagion, and utilize network centrality metrics like \( C_B(v) = \sum_{s \neq v \neq t} \frac{\sigma_{st}(v)}{\sigma_{st}} \) to identify optimal intervention seeding nodes.
+      3. All massive-scale data structures and longitudinal tracking matrices must be explicitly defined using rigorous JSON/CSV schemas designed for millions of rows.
+      4. Your output must encompass:
+         a) Mathematical Formulation (Intervention efficacy and contagion modeling over time).
+         b) Longitudinal Architecture Strategy (Mitigating multi-national attrition and cultural variance).
+         c) Big Data Schema & Ingestion Pipeline (For tracking millions of subjects across global cohorts).
+         d) Predictive Trajectory & Efficacy Modeling.
+      5. Adopt a highly authoritative, critical, and analytical tone.
+  - role: user
+    content: |
+      Construct a comprehensive Multi-National Longitudinal Behavioral Intervention Architecture for the following target: {{behavioral_intervention_target}}.
+
+      Target Population Cohort Schema:
+      {{population_cohort_schema}}
+
+      Structural and Epidemiological Constraints:
+      {{structural_epidemiological_constraints}}
+
+      Proceed with the mathematical formulation, longitudinal architecture strategy, big data pipeline schema, and predictive trajectory.
+testData:
+  - population_cohort_schema: |
+      {
+        "cohorts": [{"patient_id": "string", "country_code": "string", "baseline_trauma_index": "float", "cultural_adherence_score": "float"}],
+        "longitudinal_events": [{"patient_id": "string", "timestamp": "string", "intervention_dosage": "integer", "attrition_risk": "float"}]
+      }
+    behavioral_intervention_target: "Global Trauma Reduction and Resilience Building Protocol in Post-Conflict Zones"
+    structural_epidemiological_constraints: "Limited clinical personnel requiring 80% automated digital delivery; high historical longitudinal attrition (>40%) in targeted zones."
+  - population_cohort_schema: |
+      {
+        "cohorts": [{"node_id": "string", "region": "string", "psychological_distress_marker": "float"}],
+        "events": [{"node_id": "string", "week": "integer", "nudge_engagement_rate": "float"}]
+      }
+    behavioral_intervention_target: "Multi-National Suicide Prevention and Crisis Interception Program"
+    structural_epidemiological_constraints: "Strict GDPR and diverse national data sovereignty regulations; 24-month observation window with fluctuating funding."
+evaluators:
+  - type: model_graded
+    description: Verifies that the mathematical formulation includes rigorous LaTeX equations for behavioral reproduction numbers and network centrality.
+  - type: model_graded
+    description: Evaluates the robustness of the JSON/CSV schema provided for tracking millions of longitudinal records.
+  - type: model_graded
+    description: Checks the authoritative tone, critical analysis, and adherence to WHO/APA macro-level standards.
