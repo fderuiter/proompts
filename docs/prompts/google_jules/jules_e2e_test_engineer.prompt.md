@@ -75,10 +75,10 @@ messages:
 - role: user
   content: |
     Completed Tasks:
-    {{completed_tasks}}
+    <completed_tasks>{{completed_tasks}}</completed_tasks>
 
     System Spec:
-    {{spec}}
+    <spec>{{spec}}</spec>
 testData:
 - input:
     completed_tasks: "Added login form and submit button"

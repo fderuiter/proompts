@@ -65,10 +65,10 @@ messages:
 - role: user
   content: |
     Target Document:
-    {{target_document}}
+    <target_document>{{target_document}}</target_document>
 
     Context:
-    {{context}}
+    <context>{{context}}</context>
 testData:
 - input:
     target_document: "const query = 'SELECT * FROM users WHERE id = ' + userId;"

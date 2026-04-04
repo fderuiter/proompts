@@ -4,7 +4,7 @@ title: Regulatory & Commercial Barrier Mapping
 
 # Regulatory & Commercial Barrier Mapping
 
-Assess hurdles for launching `{{device}}` in major markets.
+Assess hurdles for launching `<device>{{device}}</device>` in major markets.
 
 [View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/business/market_research/market_research_workflow/03_regulatory_commercial_barrier_mapping.prompt.yaml)
 
@@ -12,7 +12,7 @@ Assess hurdles for launching `{{device}}` in major markets.
 ---
 name: Regulatory & Commercial Barrier Mapping
 version: 0.1.0
-description: Assess hurdles for launching `{{device}}` in major markets.
+description: Assess hurdles for launching `<device>{{device}}</device>` in major markets.
 metadata:
   domain: business
   complexity: medium
@@ -49,9 +49,9 @@ messages:
 
     Keep guidance concise and actionable.'
 - role: user
-  content: '- `{{device}}` – device to analyze
+  content: '- `<device>{{device}}</device>` – device to analyze
 
-    - `{{markets}}` – markets of interest
+    - `<markets>{{markets}}</markets>` – markets of interest
 
 
     Output format: Comparative table followed by five prioritized strategic actions.'
