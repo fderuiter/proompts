@@ -378,6 +378,7 @@
 [Prepare Pathology Slides and Reporting Plan](prompts/scientific/pathology/pathology_study_workflow/03_slides_and_reporting_workflow.prompt.md)
 [Natural Language Argument Formalizer](prompts/scientific/philosophy/logic/natural_language_argument_formalizer.prompt.md)
 [dialectical_metaphysical_synthesizer](prompts/scientific/philosophy/metaphysics/dialectical_metaphysical_synthesizer.prompt.md)
+[Non-Ideal Fluid Phase Equilibria Architect](prompts/scientific/chemistry/physical/thermodynamics/non_ideal_fluid_phase_equilibria_architect.prompt.md)
 [Feynman Rule Derivation Architect](prompts/scientific/physics/quantum_field_theory/feynman_rule_derivation_architect.prompt.md)
 [ads_cft_holographic_dictionary_architect](prompts/scientific/physics/string_theory/ads_cft_holographic_dictionary_architect.prompt.md)
 [string_worldsheet_scattering_amplitude_architect](prompts/scientific/physics/string_theory/string_worldsheet_scattering_amplitude_architect.prompt.md)
