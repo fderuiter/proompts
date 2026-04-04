@@ -11,6 +11,7 @@
 - **[Multistudy Resource & Capacity Forecast Plan](multistudy_resource_capacity_forecast_plan.prompt.yaml)**: Outline a data-driven approach for forecasting resources across multiple upcoming trials.
 - **[Operational Excellence & Risk Sweep](operational_excellence_risk_sweep.prompt.yaml)**: Deliver a 90-day action plan to cut cycle time and reduce recruitment failure.
 - **[360° Operational KPI & Benchmark Review](operational_kpi_benchmark_review.prompt.yaml)**: Compare internal KPIs to industry benchmarks and propose improvements.
+- **[operational_resilience_tabletop_simulation_architect](operational_resilience_tabletop_simulation_architect.prompt.yaml)**: Acts as a Principal Business Continuity Director to design highly realistic, cross-functional tabletop simulations for testing organizational resilience against severe operational disruptions, strictly enforcing ISO 22301 standards.
 - **[Proactive Risk Heat-Map for Decentralized & Virtual Trials](proactive_risk_heat_map.prompt.yaml)**: Visualize portfolio risks and propose mitigation actions.
 - **[Quarterly CRO KPI Executive Brief](quarterly_kpi_executive_brief.prompt.yaml)**: Present key operational KPIs and recommended actions for the quarterly review.
 - **[Rapid Process Diagnostic & Lean Improvement Plan](rapid_process_diagnostic.prompt.yaml)**: Create a concise process review and improvement roadmap.
