@@ -20,6 +20,7 @@ title: Technical
 - [CSR Results and Safety Section](prompts/technical/technical_writing/technical_writer_workflow/01_csr_results_safety_section.prompt.md)
 - [Dependencies & Security Posture Analysis](prompts/technical/repository_refactoring/dependencies_security_analysis.prompt.md)
 - [Documentation and Repository Structure Implementation](prompts/technical/repository_refactoring/documentation_structure_implementation.prompt.md)
+- [eBPF Runtime Security Architect](prompts/technical/security/ebpf_runtime_security_architect.prompt.md)
 - [Forge - Script Reliability Agent](prompts/technical/devops/forge_script_reliability.prompt.md)
 - [Hardware Side-Channel Attack Modeling Architect](prompts/technical/security/hardware_side_channel_attack_modeling_architect.prompt.md)
 - [Heuristic-Evaluation Coach](prompts/technical/design/heuristic_evaluation_coach.prompt.md)
