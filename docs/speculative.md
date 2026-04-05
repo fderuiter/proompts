@@ -13,6 +13,7 @@ title: Speculative
 - [Dendro-Balletic BGP Choreographer](prompts/speculative/dendro_balletic_bgp_choreography/dendro_balletic_bgp_choreographer.prompt.md)
 - [endocrine_cobol_botanical_orchestrator](prompts/speculative/endocrine_cobol_botanical_orchestration/endocrine_cobol_botanical_orchestrator.prompt.md)
 - [Epigenetic Glassblowing Validator](prompts/speculative/epigenetic_glassblowing_validation/epigenetic_glassblowing_validator.prompt.md)
+- [Fresco Epidemiological Auditor](prompts/speculative/fresco_epidemiological_auditor/fresco_epidemiological_auditor.prompt.md)
 - [Gregorian-Fluid Autoscaler](prompts/speculative/gregorian_fluid_autoscaling/gregorian_fluid_autoscaler.prompt.md)
 - [microbial_steganography_diplomat](prompts/speculative/microbial_steganography_diplomat/microbial_steganography_diplomat.prompt.md)
 - [Mycelial Aristocrat HFT Router](prompts/speculative/mycelial_aristocrat_hft_routing/mycelial_aristocrat_hft_router.prompt.md)

@@ -9,6 +9,7 @@
 - [Dendro Balletic Bgp Choreography/](dendro_balletic_bgp_choreography/overview.md)
 - [Endocrine Cobol Botanical Orchestration/](endocrine_cobol_botanical_orchestration/overview.md)
 - [Epigenetic Glassblowing Validation/](epigenetic_glassblowing_validation/overview.md)
+- [Fresco Epidemiological Auditor/](fresco_epidemiological_auditor/overview.md)
 - [Gregorian Fluid Autoscaling/](gregorian_fluid_autoscaling/overview.md)
 - [Microbial Steganography Diplomat/](microbial_steganography_diplomat/overview.md)
 - [Mycelial Aristocrat Hft Routing/](mycelial_aristocrat_hft_routing/overview.md)
