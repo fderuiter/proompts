@@ -86,6 +86,7 @@ title: Scientific
 - [Multiplicity Adjustment Code Generator](prompts/scientific/biostatistics/multiplicity_adjustments_calculator.prompt.md)
 - [n_player_bayesian_nash_equilibrium_auction_architect](prompts/scientific/economics/microeconomics/game_theory/n_player_bayesian_nash_equilibrium_auction_architect.prompt.md)
 - [Natural Language Argument Formalizer](prompts/scientific/philosophy/logic/natural_language_argument_formalizer.prompt.md)
+- [neural_manifold_state_space_analyzer](prompts/scientific/computational_theoretical_neuroscience/neural_manifold_state_space_analyzer.prompt.md)
 - [new_keynesian_dsge_architect](prompts/scientific/economics/macroeconomics/dsge_modeling/new_keynesian_dsge_architect.prompt.md)
 - [Non-Abelian Gauge Theory Perturbative Expansion Architect](prompts/scientific/physics/particle_physics/standard_model/non_abelian_gauge_theory_perturbative_expansion_architect.prompt.md)
 - [Non-Ideal Fluid Phase Equilibria Architect](prompts/scientific/chemistry/physical/thermodynamics/non_ideal_fluid_phase_equilibria_architect.prompt.md)
