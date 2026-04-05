@@ -341,6 +341,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Applied Ethical Stress Tester](prompts/scientific/philosophy/ethics/normative_ethics/applied_ethical_stress_tester.prompt.md)
 - [Normative Ethics Stress Tester](prompts/scientific/philosophy/ethics/normative_ethics/normative_ethics_stress_tester.prompt.md)
 
+## Finance
+
+- [continuous_time_asset_pricing_architect](prompts/scientific/economics/finance/asset_pricing/continuous_time_asset_pricing_architect.prompt.md)
+
 ## Forms
 
 - [CRF Shell Generator](prompts/clinical/forms/clinical_prompts_workflow/01_crf_shell_generator.prompt.md)
