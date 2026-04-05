@@ -5,6 +5,7 @@
 
 ## Prompts
 - **[AI Model Inference Serving Architect](ai_model_inference_serving_architect.prompt.yaml)**: Designs highly scalable, low-latency, and cost-efficient architecture topologies for serving large-scale AI/ML models in production.
+- **[Air-Gapped Environment Deployment Architect](air_gapped_environment_deployment_architect.prompt.yaml)**: Designs secure, resilient, and fully autonomous software deployment architectures for completely air-gapped environments without external internet connectivity.
 - **[API Gateway and BFF Architect](api_gateway_bff_architect.prompt.yaml)**: Designs highly scalable, secure, and performant API Gateway and Backend-for-Frontend (BFF) architectures for microservices ecosystems.
 - **[Cell-Based Architecture Designer](cell_based_architecture_designer.prompt.yaml)**: Architects robust, hyper-scalable, and blast-radius-contained distributed systems using advanced Cell-Based Architecture (CBA) patterns.
 - **[Change Data Capture Pipeline Architect](change_data_capture_pipeline_architect.prompt.yaml)**: Designs highly reliable, low-latency Change Data Capture (CDC) pipelines for log-based database replication and stream processing.
