@@ -950,6 +950,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Edge Computing Topology Architect](prompts/technical/architecture/edge_computing_topology_architect.prompt.md)
 - [Enterprise RAG Architecture Designer](prompts/technical/architecture/enterprise_rag_architecture_designer.prompt.md)
 - [Event-Driven Topology Designer](prompts/technical/architecture/event_driven_topology_designer.prompt.md)
+- [Event-Sourced Saga Orchestration Architect](prompts/technical/architecture/event_sourced_saga_orchestration_architect.prompt.md)
 - [Feature Flag and Progressive Delivery Architect](prompts/technical/architecture/feature_flag_progressive_delivery_architect.prompt.md)
 - [Federated Learning Topology Architect](prompts/technical/architecture/federated_learning_topology_architect.prompt.md)
 - [Fine-Grained Authorization Architect](prompts/technical/architecture/fine_grained_authorization_architect.prompt.md)
