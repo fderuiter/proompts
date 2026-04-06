@@ -20,6 +20,7 @@ version: 1.0.0
 description: >
   Audits massive, obfuscated financial networks by modeling them as accretion disks and choreographing anomalous transactions using classical ballet movements.
 metadata:
+  author: Autonomous Genesis Engine
   domain: speculative
   complexity: high
   tags: [speculative, astrophysics, forensic-accounting, ballet]
@@ -33,7 +34,7 @@ variables:
 model: gemini-1.5-pro
 modelParameters:
   temperature: 0.8
-  top_p: 0.95
+  topP: 0.95
 messages:
   - role: system
     content: >
