@@ -442,6 +442,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Macroeconomics
 
 - [new_keynesian_dsge_architect](prompts/scientific/economics/macroeconomics/dsge_modeling/new_keynesian_dsge_architect.prompt.md)
+- [hank_macroeconomic_architect](prompts/scientific/economics/macroeconomics/heterogeneous_agents/hank_macroeconomic_architect.prompt.md)
 
 ## Management
 
