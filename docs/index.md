@@ -885,6 +885,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Dendro-Balletic BGP Choreographer](prompts/speculative/dendro_balletic_bgp_choreography/dendro_balletic_bgp_choreographer.prompt.md)
 - [endocrine_cobol_botanical_orchestrator](prompts/speculative/endocrine_cobol_botanical_orchestration/endocrine_cobol_botanical_orchestrator.prompt.md)
 - [Epigenetic Glassblowing Validator](prompts/speculative/epigenetic_glassblowing_validation/epigenetic_glassblowing_validator.prompt.md)
+- [Event Horizon Choreographic Auditor](prompts/speculative/event_horizon_choreographic_auditor/event_horizon_choreographic_auditor.prompt.md)
 - [Gregorian-Fluid Autoscaler](prompts/speculative/gregorian_fluid_autoscaling/gregorian_fluid_autoscaler.prompt.md)
 - [microbial_steganography_diplomat](prompts/speculative/microbial_steganography_diplomat/microbial_steganography_diplomat.prompt.md)
 - [Mycelial Aristocrat HFT Router](prompts/speculative/mycelial_aristocrat_hft_routing/mycelial_aristocrat_hft_router.prompt.md)
