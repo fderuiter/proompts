@@ -65,6 +65,7 @@ title: Scientific
 - [Inflationary Tensor Perturbation Architect](prompts/scientific/physics/cosmology/early_universe/inflationary_tensor_perturbation_architect.prompt.md)
 - [institutional_isomorphism_lifecycle_modeler](prompts/scientific/sociology/institutions/institutional_isomorphism_lifecycle_modeler.prompt.md)
 - [intergenerational_mobility_modeler](prompts/scientific/sociology/stratification/intergenerational_mobility_modeler.prompt.md)
+- [intergenerational_social_mobility_markov_modeler](prompts/scientific/sociology/demography/intergenerational_social_mobility_markov_modeler.prompt.md)
 - [Interpret the Chemistry & Assess Risk](prompts/scientific/chemical_characterization/chemical_characterization_workflow/02_interpret_the_chemistry_assess_risk.prompt.md)
 - [intersectional_stratification_mechanism_modeler](prompts/scientific/sociology/stratification/intersectional_stratification_mechanism_modeler.prompt.md)
 - [intuitionistic_logic_natural_deduction_generator](prompts/scientific/mathematics/foundations/proof_theory/intuitionistic_logic_natural_deduction_generator.prompt.md)
