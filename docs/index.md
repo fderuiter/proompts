@@ -236,6 +236,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [differential_diagnosis_mapping_architect](prompts/scientific/psychology/clinical/psychopathology/differential_diagnosis_mapping_architect.prompt.md)
 - [evidence_based_intervention_architect](prompts/scientific/psychology/clinical/treatment_planning/evidence_based_intervention_architect.prompt.md)
 
+## Cognitive
+
+- [cognitive_bias_mitigation_architect](prompts/scientific/psychology/cognitive/information_processing/cognitive_bias_mitigation_architect.prompt.md)
+
 ## Communication
 
 - [80/20 Crash Course](prompts/communication/80_20_crash_course.prompt.md)
