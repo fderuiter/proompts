@@ -142,8 +142,12 @@ def main() -> int:
     for root_dir in [PROMPTS_DIR, WORKFLOWS_DIR]:
         if not root_dir.exists():
             continue
-        for directory in root_dir.rglob("*"):
-            if directory.is_dir() and has_content(directory):
+
+        # Include the root_dir itself in the list of directories to process
+        dirs_to_process = [root_dir] + [d for d in root_dir.rglob("*") if d.is_dir()]
+
+        for directory in dirs_to_process:
+            if has_content(directory):
                 if ensure_overview(directory, content_cache):
                     print(f"Generated overview for {directory}")
                     changed = True
