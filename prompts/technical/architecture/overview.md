@@ -5,6 +5,7 @@
 
 ## Prompts
 - **[AI Model Inference Serving Architect](ai_model_inference_serving_architect.prompt.yaml)**: Designs highly scalable, low-latency, and cost-efficient architecture topologies for serving large-scale AI/ML models in production.
+- **[Air-Gapped Environment Deployment Architect](air_gapped_environment_deployment_architect.prompt.yaml)**: Designs secure, resilient, and fully autonomous software deployment architectures for highly restricted, completely air-gapped environments.
 - **[API Gateway and BFF Architect](api_gateway_bff_architect.prompt.yaml)**: Designs highly scalable, secure, and performant API Gateway and Backend-for-Frontend (BFF) architectures for microservices ecosystems.
 - **[Cell-Based Architecture Designer](cell_based_architecture_designer.prompt.yaml)**: Architects robust, hyper-scalable, and blast-radius-contained distributed systems using advanced Cell-Based Architecture (CBA) patterns.
 - **[Change Data Capture Pipeline Architect](change_data_capture_pipeline_architect.prompt.yaml)**: Designs highly reliable, low-latency Change Data Capture (CDC) pipelines for log-based database replication and stream processing.
@@ -24,6 +25,7 @@
 - **[Edge Computing Topology Architect](edge_computing_topology_architect.prompt.yaml)**: Designs highly optimized edge computing topologies to minimize latency, ensure offline capability, and distribute processing loads efficiently.
 - **[Enterprise RAG Architecture Designer](enterprise_rag_architecture_designer.prompt.yaml)**: Designs highly secure, hallucination-resistant, and high-throughput Retrieval-Augmented Generation (RAG) architectures for enterprise LLM deployments.
 - **[Event-Driven Topology Designer](event_driven_topology_designer.prompt.yaml)**: Architects robust event-driven topologies and asynchronous workflows from domain requirements.
+- **[Event-Sourced Saga Orchestration Architect](event_sourced_saga_orchestration_architect.prompt.yaml)**: Designs robust, stateful saga orchestration architectures for long-running, distributed business transactions using event sourcing and compensating actions.
 - **[Feature Flag and Progressive Delivery Architect](feature_flag_progressive_delivery_architect.prompt.yaml)**: Designs highly reliable, scalable, and risk-mitigated feature flag and progressive delivery architectures for modern continuous integration and deployment pipelines.
 - **[Federated Learning Topology Architect](federated_learning_topology_architect.prompt.yaml)**: Architects secure, robust, and highly scalable federated learning distributed topologies, emphasizing privacy-preserving model aggregation, secure multi-party computation, and straggler mitigation.
 - **[Fine-Grained Authorization Architect](fine_grained_authorization_architect.prompt.yaml)**: Designs highly scalable, low-latency, and distributed Fine-Grained Authorization (FGA) architectures using Relationship-Based Access Control (ReBAC) and Google Zanzibar principles.
@@ -52,6 +54,7 @@
 - **[Service Mesh Security Architect](service_mesh_security_architect.prompt.yaml)**: Designs zero-trust mTLS communication policies and robust service mesh architectures within Kubernetes environments.
 - **[SOLID Codebase Analysis](solid_codebase_analysis.prompt.yaml)**: Evaluate code against SOLID principles and suggest refactoring tasks.
 - **[Strangler Fig Migration Architect](strangler_fig_migration_architect.prompt.yaml)**: Architect a Strangler Fig pattern migration from a legacy monolith to microservices.
+- **[WebAssembly Sandboxed Plugin Architect](webassembly_sandboxed_plugin_architect.prompt.yaml)**: Designs highly secure, performant, and sandboxed plugin architectures leveraging WebAssembly (Wasm) and WASI for extensibility in core enterprise platforms.
 - **[Webhook Dispatch Delivery Architect](webhook_dispatch_delivery_architect.prompt.yaml)**: Designs highly resilient, high-throughput webhook delivery architectures addressing concurrency, payload signing, exponential backoff, and circuit breaking.
 - **[WebRTC Real-Time Media Streaming Architect](webrtc_media_streaming_architect.prompt.yaml)**: Designs highly scalable, low-latency, and resilient WebRTC-based real-time media streaming architectures.
 - **[Zero-Downtime Database Migration Architect](zero_downtime_database_migration_architect.prompt.yaml)**: Designs comprehensive, zero-downtime database migration strategies for high-availability systems.
