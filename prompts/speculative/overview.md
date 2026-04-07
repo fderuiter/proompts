@@ -11,6 +11,7 @@
 - [Epigenetic Glassblowing Validation/](epigenetic_glassblowing_validation/overview.md)
 - [Event Horizon Choreographic Auditor/](event_horizon_choreographic_auditor/overview.md)
 - [Gregorian Fluid Autoscaling/](gregorian_fluid_autoscaling/overview.md)
+- [Intersection/](intersection/overview.md)
 - [Microbial Steganography Diplomat/](microbial_steganography_diplomat/overview.md)
 - [Mycelial Aristocrat Hft Routing/](mycelial_aristocrat_hft_routing/overview.md)
 - [Myco Baroque Cybersecurity/](myco_baroque_cybersecurity/overview.md)
