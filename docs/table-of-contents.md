@@ -183,6 +183,7 @@
 [algorithmic_social_contagion_modeler](prompts/computational/network_contagion/algorithmic_social_contagion_modeler.prompt.md)
 [physics_informed_neural_network_architect](prompts/computational/numerical_methods/physics_informed_neural_network_architect.prompt.md)
 [Free Energy Perturbation Architect](prompts/scientific/chemistry/computational/molecular_dynamics/free_energy_perturbation_architect.prompt.md)
+[algorithmic_behavior_echo_chamber_modeler](prompts/scientific/psychology/computational/network_contagion/algorithmic_behavior_echo_chamber_modeler.prompt.md)
 [behavioral_epidemiology_social_contagion_modeler](prompts/scientific/psychology/computational/network_contagion/behavioral_epidemiology_social_contagion_modeler.prompt.md)
 [Inflationary Tensor Perturbation Architect](prompts/scientific/physics/cosmology/early_universe/inflationary_tensor_perturbation_architect.prompt.md)
 [Monitoring-Visit Report Generator](prompts/clinical/cra/cra_workflow/01_monitoring_visit_report_generator.prompt.md)

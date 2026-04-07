@@ -8,6 +8,7 @@ title: Scientific
 - [Adaptive Design & Interim Monitoring](prompts/scientific/biostatistics/adaptive_design_interim_monitoring.prompt.md)
 - [ads_cft_holographic_dictionary_architect](prompts/scientific/physics/string_theory/ads_cft_holographic_dictionary_architect.prompt.md)
 - [advanced_retrosynthetic_pathway_generator](prompts/scientific/chemistry/organic/retrosynthesis/advanced_retrosynthetic_pathway_generator.prompt.md)
+- [algorithmic_behavior_echo_chamber_modeler](prompts/scientific/psychology/computational/network_contagion/algorithmic_behavior_echo_chamber_modeler.prompt.md)
 - [Applied Ethical Stress Tester](prompts/scientific/philosophy/ethics/normative_ethics/applied_ethical_stress_tester.prompt.md)
 - [asymptotic_distribution_mle_architect](prompts/scientific/statistics/theory/asymptotics/asymptotic_distribution_mle_architect.prompt.md)
 - [bayesian_hierarchical_model_architect](prompts/scientific/statistics/inference/bayesian_methods/bayesian_hierarchical_model_architect.prompt.md)
