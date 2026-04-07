@@ -6,6 +6,7 @@ title: Architecture
 
 ## Prompts
 - [AI Model Inference Serving Architect](prompts/technical/architecture/ai_model_inference_serving_architect.prompt.md)
+- [Air-Gapped Environment Deployment Architect](prompts/technical/architecture/air_gapped_environment_deployment_architect.prompt.md)
 - [API Gateway and BFF Architect](prompts/technical/architecture/api_gateway_bff_architect.prompt.md)
 - [Cell-Based Architecture Designer](prompts/technical/architecture/cell_based_architecture_designer.prompt.md)
 - [Change Data Capture Pipeline Architect](prompts/technical/architecture/change_data_capture_pipeline_architect.prompt.md)
@@ -25,6 +26,7 @@ title: Architecture
 - [Edge Computing Topology Architect](prompts/technical/architecture/edge_computing_topology_architect.prompt.md)
 - [Enterprise RAG Architecture Designer](prompts/technical/architecture/enterprise_rag_architecture_designer.prompt.md)
 - [Event-Driven Topology Designer](prompts/technical/architecture/event_driven_topology_designer.prompt.md)
+- [Event-Sourced Saga Orchestration Architect](prompts/technical/architecture/event_sourced_saga_orchestration_architect.prompt.md)
 - [Feature Flag and Progressive Delivery Architect](prompts/technical/architecture/feature_flag_progressive_delivery_architect.prompt.md)
 - [Federated Learning Topology Architect](prompts/technical/architecture/federated_learning_topology_architect.prompt.md)
 - [Fine-Grained Authorization Architect](prompts/technical/architecture/fine_grained_authorization_architect.prompt.md)
@@ -63,6 +65,7 @@ title: Architecture
 - [TOGAF Phase H - Architecture Change Management](prompts/technical/architecture/togaf/phase_h_change_management.prompt.md)
 - [TOGAF Preliminary Phase](prompts/technical/architecture/togaf/preliminary_phase.prompt.md)
 - [TOGAF Requirements Management](prompts/technical/architecture/togaf/requirements_management.prompt.md)
+- [WebAssembly Sandboxed Plugin Architect](prompts/technical/architecture/webassembly_sandboxed_plugin_architect.prompt.md)
 - [Webhook Dispatch Delivery Architect](prompts/technical/architecture/webhook_dispatch_delivery_architect.prompt.md)
 - [WebRTC Real-Time Media Streaming Architect](prompts/technical/architecture/webrtc_media_streaming_architect.prompt.md)
 - [Zero Trust Network Architecture Designer](prompts/technical/architecture/zero_trust_network_architecture_designer.prompt.md)
