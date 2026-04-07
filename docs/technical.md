@@ -42,6 +42,7 @@ title: Technical
 - [Test Suite Enhancement and CI Pipeline Implementation](prompts/technical/repository_refactoring/test_suite_enhancement_ci_pipeline_implementation.prompt.md)
 - [Testing, Configuration, and Automation Analysis](prompts/technical/repository_refactoring/testing_configuration_automation_analysis.prompt.md)
 - [Universal Automation Agent](prompts/technical/automation/universal_automation_agent.prompt.md)
+- [Vector Prompt Editor-in-Chief](prompts/technical/prompt_engineering/vector_prompt_editor_in_chief.prompt.md)
 - [Zero Trust Privileged Access Management Architect](prompts/technical/security/iam_security/zero_trust_pam_architect.prompt.md)
 - [Zero-Day Incident Containment Architect](prompts/technical/security/zero_day_containment_architect.prompt.md)
 - [Zero-Knowledge Proof Protocol Architect](prompts/technical/security/zero_knowledge_proof_protocol_architect.prompt.md)

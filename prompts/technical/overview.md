@@ -9,6 +9,7 @@
 - [Devops/](devops/overview.md)
 - [Documentation/](documentation/overview.md)
 - [Languages/](languages/overview.md)
+- [Prompt Engineering/](prompt_engineering/overview.md)
 - [Repository Refactoring/](repository_refactoring/overview.md)
 - [Security/](security/overview.md)
 - [Software Engineering/](software_engineering/overview.md)
