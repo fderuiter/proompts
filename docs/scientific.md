@@ -16,6 +16,7 @@ title: Scientific
 - [Biological Evaluation Plan Builder](prompts/scientific/biosafety/bep_builder.prompt.md)
 - [Biological Safety Plan Developer](prompts/scientific/biosafety/biological_safety_workflow/02_biological_safety_plan_developer.prompt.md)
 - [biophysical_hodgkin_huxley_modeler](prompts/scientific/computational_theoretical_neuroscience/biophysical_hodgkin_huxley_modeler.prompt.md)
+- [Black Hole Perturbation Teukolsky Architect](prompts/scientific/physics/relativity/general_relativity/black_hole_perturbation_teukolsky_architect.prompt.md)
 - [category_theory_adjunction_architect](prompts/scientific/mathematics/category_theory/category_theory_adjunction_architect.prompt.md)
 - [causal_inference_dag_architect](prompts/scientific/statistics/design/causal_inference/causal_inference_dag_architect.prompt.md)
 - [Chemical Characterization & TRA Work Plan](prompts/scientific/biosafety/chemical_characterization_work_plan.prompt.md)

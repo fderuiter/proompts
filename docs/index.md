@@ -777,6 +777,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [RTA Checklist Preparation](prompts/regulatory/submissions/rta_checklist_preparation.prompt.md)
 - [UDI GUDID Submission](prompts/regulatory/submissions/udi_gudid_submission.prompt.md)
 
+## Relativity
+
+- [Black Hole Perturbation Teukolsky Architect](prompts/scientific/physics/relativity/general_relativity/black_hole_perturbation_teukolsky_architect.prompt.md)
+
 ## Rtsm
 
 - [Design a Patient-Centered Randomization Scheme](prompts/clinical/rtsm/rtsm_workflow/01_patient_centered_randomization_scheme.prompt.md)
