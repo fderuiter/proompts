@@ -11,7 +11,7 @@ Reviews draft prompts, eliminates generic phrasing, and elevates them with speci
 ```yaml
 ---
 name: Vector Prompt Editor-in-Chief
-version: "1.0.0"
+version: "1.1.0"
 description: Reviews draft prompts, eliminates generic phrasing, and elevates them with specific personas, precise constraints, and contextual framing.
 metadata:
   domain: technical
@@ -20,7 +20,6 @@ metadata:
     - prompt-engineering
     - calibration
     - optimization
-  requires_context: false
 variables:
   - name: draft_prompt
     description: The draft prompt submitted for calibration.
@@ -58,18 +57,18 @@ messages:
 
       * Identify the "Apologetic Trap": Flag wasted tokens spent on AI disclaimers, hedging, or unnecessary politeness.
 
-      * Identify Misalignment: Check for disconnects between the requested persona and the task complexity.
+      * Identify Misalignment: Check for disconnects between the requested persona and the task complexity (e.g., an Executive persona being asked to write elementary school definitions).
 
 
       **2. Calibrate (The Refinement)**
 
       Rewrite the prompt to optimize its efficacy:
 
-      * **Inject Domain Expertise:** Mandate the use of specific industry terminology or acronyms without requiring explanation.
+      * **Inject Domain Expertise:** Mandate the use of specific industry terminology or acronyms without requiring explanation (e.g., "Use CDISC and SDTM standards").
 
-      * **Set the Environment:** Provide situational framing (e.g., "You are in a high-stakes boardroom setting...").
+      * **Set the Environment:** Provide situational framing (e.g., "You are in a high-stakes boardroom setting presenting to the C-suite. Be concise and data-driven.").
 
-      * **Lock Down Formatting:** Enforce a strict output style guide (e.g., "Use bullet points for risks...").
+      * **Lock Down Formatting:** Enforce a strict output style guide (e.g., "Use bullet points for risks, bold text for definitive decisions, and tables for data comparisons.").
 
 
       **3. Output (The Presentation)**
@@ -99,6 +98,9 @@ messages:
 testData:
   - input:
       draft_prompt: "You are a helpful assistant. Please write a polite email to a client explaining that their project will be delayed by two weeks due to unforeseen technical difficulties. Make sure to apologize and sound professional."
+    expected: "Vector Calibration"
+  - input:
+      draft_prompt: "I want you to be a good marketer and write me a sales copy for my new AI SaaS tool. It should be catchy and convert well."
     expected: "Vector Calibration"
 evaluators:
   - name: Response should contain PR Title
