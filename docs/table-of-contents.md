@@ -158,6 +158,7 @@
 [Risk-Based Monitoring and Quality Plan](prompts/clinical/trial_execution/risk_based_monitoring_plan.prompt.md)
 [differential_diagnosis_mapping_architect](prompts/scientific/psychology/clinical/psychopathology/differential_diagnosis_mapping_architect.prompt.md)
 [evidence_based_intervention_architect](prompts/scientific/psychology/clinical/treatment_planning/evidence_based_intervention_architect.prompt.md)
+[cognitive_bias_mitigation_architect](prompts/scientific/psychology/cognitive/information_processing/cognitive_bias_mitigation_architect.prompt.md)
 [80/20 Crash Course](prompts/communication/80_20_crash_course.prompt.md)
 [Principal Science Communicator (Analogy Engine)](prompts/communication/analogy_architect.prompt.md)
 [Data-to-Insight Analyst](prompts/communication/data_to_insight_analyst.prompt.md)
