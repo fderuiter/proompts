@@ -449,6 +449,7 @@
 [Automated Image Assessment System 510(k)](prompts/regulatory/device_specifics/automated_image_assessment_system_510_k.prompt.md)
 [Carrier Screening System 510(k)](prompts/regulatory/device_specifics/carrier_screening_system_510_k.prompt.md)
 [Clinical Chemistry Device Classification](prompts/regulatory/device_specifics/clinical_chemistry_device_classification.prompt.md)
+[companion_diagnostic_analytical_validation_architect](prompts/regulatory/device_specifics/companion_diagnostic_analytical_validation_architect.prompt.md)
 [Design Verification for BCR-ABL Tests](prompts/regulatory/device_specifics/design_verification_for_bcr_abl_tests.prompt.md)
 [iCGM Clinical Testing Strategy](prompts/regulatory/device_specifics/icgm_clinical_testing_strategy.prompt.md)
 [NGS Tumor Profiling Documentation](prompts/regulatory/device_specifics/ngs_tumor_profiling_documentation.prompt.md)
