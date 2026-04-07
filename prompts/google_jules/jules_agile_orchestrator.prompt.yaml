@@ -76,10 +76,14 @@ messages:
 - role: user
   content: |
     Project Goals:
+    <project_goals>
     {{project_goals}}
+    </project_goals>
 
     Additional Context:
+    <context>
     {{context}}
+    </context>
 testData:
 - input:
     project_goals: "Migrate monolithic Django app to Go microservices for order processing and inventory management."
