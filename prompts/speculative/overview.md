@@ -25,5 +25,6 @@
 - [Quantum Gothic Waste Optimiser/](quantum_gothic_waste_optimiser/overview.md)
 - [Quantum Paleo Arbitrage/](quantum_paleo_arbitrage/overview.md)
 - [Quantum Poetic Leachate Optimization/](quantum_poetic_leachate_optimization/overview.md)
+- [Quantum Poetic Waste Architect/](quantum_poetic_waste_architect/overview.md)
 - [Quantum Zymurgy Astrogator/](quantum_zymurgy_astrogator/overview.md)
 - [Urban Planning/](urban_planning/overview.md)
