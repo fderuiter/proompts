@@ -2,6 +2,7 @@
 
 ## Prompts
 - **[biophysical_hodgkin_huxley_modeler](biophysical_hodgkin_huxley_modeler.prompt.yaml)**: A Principal Computational Neuroscientist agent designed to analytically derive and simulate complex biophysical Hodgkin-Huxley action potential dynamics and ion channel kinetics.
+- **[dendritic_cable_theory_computation_architect](dendritic_cable_theory_computation_architect.prompt.yaml)**: A Principal Computational Neuroscientist to analytically derive and simulate complex dendritic cable theory equations and multi-compartmental synaptic integration models.
 - **[Dynamic Causal Modeling Architect](dynamic_causal_modeling_architect.prompt.yaml)**: A Principal Computational Neuroscientist agent designed to formulate advanced Dynamic Causal Modeling (DCM) pipelines for effective connectivity inference.
 - **[fokker_planck_population_dynamics_architect](fokker_planck_population_dynamics_architect.prompt.yaml)**: A Principal Theoretical Neuroscientist agent designed to analytically derive and numerically solve the Fokker-Planck equation for stochastic integrate-and-fire neural populations.
 - **[free_energy_principle_active_inference_architect](free_energy_principle_active_inference_architect.prompt.yaml)**: A Principal Theoretical Neuroscientist agent designed to formulate and analyze generative models, variational free energy, and active inference dynamics for perception and action under the Free Energy Principle.
