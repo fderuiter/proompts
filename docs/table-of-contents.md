@@ -248,6 +248,7 @@
 [cross_channel_behavioral_trigger_architect](prompts/growth/lifecycle/cross_channel_behavioral_trigger_architect.prompt.md)
 [predictive_cac_payback_modeler](prompts/growth/performance_marketing/predictive_cac_payback_modeler.prompt.md)
 [predictive_churn_ltv_optimization_architect](prompts/growth/predictive_modeling/predictive_churn_ltv_optimization_architect.prompt.md)
+[product_led_growth_k_factor_architect](prompts/growth/product_marketing/product_led_growth_k_factor_architect.prompt.md)
 [gtm_pricing_elasticity_architect](prompts/growth/strategy/gtm_pricing_elasticity_architect.prompt.md)
 [Imaging Charter Draft](prompts/clinical/imaging/imaging_workflow/01_imaging_charter_draft.prompt.md)
 [Site Upload QC and Query Generator](prompts/clinical/imaging/imaging_workflow/02_site_upload_qc.prompt.md)
