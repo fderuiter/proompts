@@ -1,3 +1,4 @@
-# Quantum Chemistry
+# Quantum Chemistry Overview
 
-This directory contains specialized prompts for advanced quantum mechanical calculations, electronic structure modeling, and non-adiabatic photodynamic analyses.
+## Prompts
+- **[Non-Adiabatic Photodynamics Architect](non_adiabatic_photodynamics_architect.prompt.yaml)**: Generates highly specialized non-adiabatic molecular dynamics protocols, computing excited-state decay pathways and conical intersection topographies.
