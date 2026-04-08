@@ -5,6 +5,7 @@
 
 ## Prompts
 - **[Advanced Red Team Adversary Emulation Architect](advanced_red_team_adversary_emulation_architect.prompt.yaml)**: Generates highly rigorous, tactically sound, and evasive adversary emulation campaigns based on specific Advanced Persistent Threat (APT) profiles and target environments.
+- **[Advanced Volatile Memory Forensics Analyst](advanced_volatile_memory_forensics_analyst.prompt.yaml)**: Generates highly technical, precise volatile memory forensic analysis workflows and advanced rootkit detection strategies for complex intrusions.
 - **[ai_threat_modeling_architect](ai_threat_modeling_architect.prompt.yaml)**: Acts as a Principal AI Security Architect to conduct rigorous threat modeling (STRIDE/MITRE ATLAS) on LLM-integrated architectures.
 - **[APT Threat Hunting Query Engineer](apt_threat_hunting_query_engineer.prompt.yaml)**: Translates high-level Advanced Persistent Threat (APT) TTPs into precise, actionable SIEM queries for proactive threat hunting.
 - **[automated_malware_reverse_engineering_analyst](automated_malware_reverse_engineering_analyst.prompt.yaml)**: Acts as a Lead Malware Reverse Engineer to perform automated static and dynamic analysis, deobfuscation, and capability mapping of malicious binaries.

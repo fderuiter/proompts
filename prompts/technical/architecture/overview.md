@@ -55,6 +55,7 @@
 - **[Service Mesh Security Architect](service_mesh_security_architect.prompt.yaml)**: Designs zero-trust mTLS communication policies and robust service mesh architectures within Kubernetes environments.
 - **[SOLID Codebase Analysis](solid_codebase_analysis.prompt.yaml)**: Evaluate code against SOLID principles and suggest refactoring tasks.
 - **[Strangler Fig Migration Architect](strangler_fig_migration_architect.prompt.yaml)**: Architect a Strangler Fig pattern migration from a legacy monolith to microservices.
+- **[Sustainable Green Software Architect](sustainable_green_software_architect.prompt.yaml)**: Acts as a Principal Green Software Architect to formulate comprehensive, data-driven technical architectures optimized for carbon efficiency, energy proportionality, and embodied carbon minimization across distributed systems.
 - **[WebAssembly Sandboxed Plugin Architect](webassembly_sandboxed_plugin_architect.prompt.yaml)**: Designs highly secure, performant, and sandboxed plugin architectures leveraging WebAssembly (Wasm) and WASI for extensibility in core enterprise platforms.
 - **[Webhook Dispatch Delivery Architect](webhook_dispatch_delivery_architect.prompt.yaml)**: Designs highly resilient, high-throughput webhook delivery architectures addressing concurrency, payload signing, exponential backoff, and circuit breaking.
 - **[WebRTC Real-Time Media Streaming Architect](webrtc_media_streaming_architect.prompt.yaml)**: Designs highly scalable, low-latency, and resilient WebRTC-based real-time media streaming architectures.
