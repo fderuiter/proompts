@@ -33,6 +33,7 @@ title: Business
 - [Investor FAQ Generation](prompts/business/cfo/investor_faq_generation.prompt.md)
 - [Legacy Modernization Strategy](prompts/business/vp_tech_innovation/legacy_modernization_strategy.prompt.md)
 - [Liquidity Stress Test](prompts/business/cfo/liquidity_stress_test.prompt.md)
+- [M&A Synergy Valuation Architect](prompts/business/strategy/m_and_a_synergy_valuation_architect.prompt.md)
 - [M&A Target Evaluation](prompts/business/cfo/ma_target_evaluation.prompt.md)
 - [Market Landscape & Trend Analysis](prompts/business/market_research/market_research_workflow/01_market_landscape_trend_analysis.prompt.md)
 - [Market Report Executive Summary](prompts/business/market_research/market_research_workflow/04_market_report_exec_summary.prompt.md)
