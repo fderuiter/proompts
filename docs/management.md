@@ -40,6 +40,7 @@ title: Management
 - [Investor and Board Narrative Builder](prompts/management/executive/investor_board_narrative_builder.prompt.md)
 - [KPI Dashboard & Monthly Ops-Review Pack](prompts/management/operations/kpi_dashboard_ops_review.prompt.md)
 - [Leadership Reflection and Culture](prompts/management/leadership/leadership_reflection_culture.prompt.md)
+- [Lean Six Sigma VSM Architect](prompts/management/operations/lean_six_sigma_vsm_architect.prompt.md)
 - [Learning Path Mentor](prompts/management/personal_effectiveness/learning_path_mentor.prompt.md)
 - [Micro-Habit Health Coach](prompts/management/personal_effectiveness/micro_habit_health_coach.prompt.md)
 - [Multistudy Resource & Capacity Forecast Plan](prompts/management/operations/multistudy_resource_capacity_forecast_plan.prompt.md)
