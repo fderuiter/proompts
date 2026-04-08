@@ -1,2 +1,4 @@
-# Product Marketing
-This section contains highly specialized prompts for Go-To-Market (GTM) execution and Product-Led Growth (PLG) strategies. It focuses on mapping complex adoption frameworks, intrinsic viral loops, and product feature-level interventions.
+# Product Marketing Overview
+
+## Prompts
+- **[product_led_growth_k_factor_architect](product_led_growth_k_factor_architect.prompt.yaml)**: Formulates advanced Product-Led Growth (PLG) viral loop architectures, modeling K-Factor optimization and intrinsic referral mechanics to mathematically accelerate organic acquisition.
