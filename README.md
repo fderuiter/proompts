@@ -26,8 +26,8 @@ graph TD
     A[Developers / Contributors] -->|Commit Changes| B(GitHub Repository)
 
     subgraph "Core Data"
-        C1[prompts/ <br/> (.prompt.yaml)]
-        C2[workflows/ <br/> (.workflow.yaml)]
+        C1["prompts/<br>(.prompt.yaml)"]
+        C2["workflows/<br>(.workflow.yaml)"]
         C1 -.->|Chained by| C2
     end
     B -->|Contains| C1
@@ -43,7 +43,7 @@ graph TD
     C2 -->|Validated by| D1
 
     subgraph "Output Artifacts"
-        E1[docs/ <br/> (Markdown site)]
+        E1["docs/<br>(Markdown site)"]
     end
 
     D1 -->|Builds| E1
