@@ -933,6 +933,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [hidden_markov_model_architect](prompts/scientific/statistics/stochastic/markov_processes/hidden_markov_model_architect.prompt.md)
 
+## Stratification
+
+- [wealth_concentration_decomposition_architect](prompts/scientific/sociology/stratification/systemic_inequality/wealth_concentration_decomposition_architect.prompt.md)
+
 ## Study Director
 
 - [Draft a GLP-Compliant Study Protocol](prompts/management/study_director/study_director_workflow/01_draft_glp_compliant_study_protocol.prompt.md)
