@@ -5,4 +5,5 @@
 - [Lifecycle/](lifecycle/overview.md)
 - [Performance Marketing/](performance_marketing/overview.md)
 - [Predictive Modeling/](predictive_modeling/overview.md)
+- [Product Marketing/](product_marketing/overview.md)
 - [Strategy/](strategy/overview.md)

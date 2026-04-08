@@ -28,6 +28,7 @@ title: Regulatory
 - [Clinical Chemistry Device Classification](prompts/regulatory/device_specifics/clinical_chemistry_device_classification.prompt.md)
 - [ClinicalTrials.gov Registration](prompts/regulatory/strategy/clinicaltrials_registration.prompt.md)
 - [Combination Product Jurisdiction](prompts/regulatory/submissions/combination_product_jurisdiction.prompt.md)
+- [companion_diagnostic_analytical_validation_architect](prompts/regulatory/device_specifics/companion_diagnostic_analytical_validation_architect.prompt.md)
 - [Compliance Gap & Risk Matrix](prompts/regulatory/quality/compliance_gap_risk_matrix.prompt.md)
 - [Compliance Gap Assessment](prompts/regulatory/strategy/compliance_gap_assessment.prompt.md)
 - [Correction and Removal Reporting](prompts/regulatory/compliance/correction_and_removal_reporting.prompt.md)
