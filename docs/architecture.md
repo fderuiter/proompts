@@ -56,6 +56,7 @@ title: Architecture
 - [Service Mesh Security Architect](prompts/technical/architecture/service_mesh_security_architect.prompt.md)
 - [SOLID Codebase Analysis](prompts/technical/architecture/solid_codebase_analysis.prompt.md)
 - [Strangler Fig Migration Architect](prompts/technical/architecture/strangler_fig_migration_architect.prompt.md)
+- [Sustainable Green Software Architect](prompts/technical/architecture/sustainable_green_software_architect.prompt.md)
 - [TOGAF Phase A - Architecture Vision](prompts/technical/architecture/togaf/phase_a_vision.prompt.md)
 - [TOGAF Phase B - Business Architecture](prompts/technical/architecture/togaf/phase_b_business.prompt.md)
 - [TOGAF Phase C - Information Systems Architectures](prompts/technical/architecture/togaf/phase_c_information_systems.prompt.md)
