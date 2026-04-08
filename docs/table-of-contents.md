@@ -312,6 +312,7 @@
 [Clinical Trial Protocol Compliance Review](prompts/management/medical_director/clinical_trial_protocol_quality_compliance_review.prompt.md)
 [Pharmacovigilance Safety Signal Prioritization](prompts/management/medical_director/pharmacovigilance_safety_signal_prioritization.prompt.md)
 [Action-Oriented Meeting Minutes & Tracker](prompts/management/operations/action_oriented_meeting_minutes.prompt.md)
+[CAPA Root Cause and Resolution Architect](prompts/management/operations/capa_root_cause_resolution_architect.prompt.md)
 [CRO Trial-Performance KPI Dashboard Blueprint](prompts/management/operations/cro_trial_performance_kpi_dashboard_blueprint.prompt.md)
 [Fair-Market-Value Budget Negotiation Brief](prompts/management/operations/fair_market_value_budget_negotiation_brief.prompt.md)
 [Fishbone Facilitator](prompts/management/operations/fishbone_facilitator.prompt.md)

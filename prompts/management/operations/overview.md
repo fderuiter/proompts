@@ -2,6 +2,7 @@
 
 ## Prompts
 - **[Action-Oriented Meeting Minutes & Tracker](action_oriented_meeting_minutes.prompt.yaml)**: Capture decisions and action items from cross-functional meetings.
+- **[CAPA Root Cause and Resolution Architect](capa_root_cause_resolution_architect.prompt.yaml)**: A highly analytical operational architect designed to perform rigorous Corrective and Preventive Action (CAPA) root cause analysis and formulate comprehensive resolution plans.
 - **[CRO Trial-Performance KPI Dashboard Blueprint](cro_trial_performance_kpi_dashboard_blueprint.prompt.yaml)**: Outline metrics and visuals for a CRO trial-performance dashboard.
 - **[Fair-Market-Value Budget Negotiation Brief](fair_market_value_budget_negotiation_brief.prompt.yaml)**: Prepare a concise briefing to support FMV negotiations with a pharma sponsor.
 - **[Fishbone Facilitator](fishbone_facilitator.prompt.yaml)**: Identify possible root causes of a problem using a fishbone diagram.

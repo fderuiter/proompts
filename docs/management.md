@@ -11,6 +11,7 @@ title: Management
 - [Action-Oriented Meeting Minutes & Tracker](prompts/management/operations/action_oriented_meeting_minutes.prompt.md)
 - [AI-Enhanced RBM Action Plan](prompts/management/medical_director/ai_enhanced_rbm_action_plan.prompt.md)
 - [Audit Raw Data and Draft a CAPA Summary](prompts/management/study_director/study_director_workflow/02_audit_raw_data_capa_summary.prompt.md)
+- [CAPA Root Cause and Resolution Architect](prompts/management/operations/capa_root_cause_resolution_architect.prompt.md)
 - [Career Compass Advisor](prompts/management/personal_effectiveness/career_compass_advisor.prompt.md)
 - [Clinical Trial Protocol Compliance Review](prompts/management/medical_director/clinical_trial_protocol_quality_compliance_review.prompt.md)
 - [Clinical-Trial Timeline and Risk Radar](prompts/management/project_management/clinical_trial_timeline_risk_radar.prompt.md)
