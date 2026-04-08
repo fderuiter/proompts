@@ -532,6 +532,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Mathematics
 
+- [categorical_theorem_translator](prompts/scientific/mathematics/category_theory/categorical_theorem_translator.prompt.md)
 - [category_theory_adjunction_architect](prompts/scientific/mathematics/category_theory/category_theory_adjunction_architect.prompt.md)
 - [Physics-Informed Neural Network (PINN) Architect](prompts/scientific/mathematics/computational/physics_informed_neural_network_architect.prompt.md)
 - [Custom Axiomatic System Soundness Evaluator](prompts/scientific/mathematics/formal_logic/custom_axiomatic_system_soundness_evaluator.prompt.md)
