@@ -6,6 +6,7 @@ title: Technical
 
 ## Prompts
 - [Advanced Red Team Adversary Emulation Architect](prompts/technical/security/advanced_red_team_adversary_emulation_architect.prompt.md)
+- [Adversarial Prompt Robustness Tester](prompts/technical/prompt_engineering/adversarial_prompt_robustness_tester.prompt.md)
 - [Advanced Volatile Memory Forensics Analyst](prompts/technical/security/advanced_volatile_memory_forensics_analyst.prompt.md)
 - [AI Email Assistant Go/No-Go Vote](prompts/technical/design/email_assistant_go_no_go_vote.prompt.md)
 - [ai_threat_modeling_architect](prompts/technical/security/ai_threat_modeling_architect.prompt.md)

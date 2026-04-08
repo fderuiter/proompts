@@ -744,6 +744,7 @@
 [Forge - Script Reliability Agent](prompts/technical/devops/forge_script_reliability.prompt.md)
 [Atlas Documentation Specialist](prompts/technical/documentation/atlas_documentation_specialist.prompt.md)
 [Source of Truth Harmonizer](prompts/technical/documentation/source_of_truth_harmonizer.prompt.md)
+[Adversarial Prompt Robustness Tester](prompts/technical/prompt_engineering/adversarial_prompt_robustness_tester.prompt.md)
 [Vector Prompt Editor-in-Chief](prompts/technical/prompt_engineering/vector_prompt_editor_in_chief.prompt.md)
 [Code Formatting, Linting, and Refactoring Implementation](prompts/technical/repository_refactoring/code_formatting_linting_refactoring_implementation.prompt.md)
 [Codebase Quality & Maintainability Analysis](prompts/technical/repository_refactoring/codebase_quality_analysis.prompt.md)
