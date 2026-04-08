@@ -1,3 +1,4 @@
-# Mass Behavior
+# Mass Behavior Overview
 
-This directory contains prompt templates related to mass behavior, collective panic, crowd psychology, and large-scale sociological dynamics. These prompts are designed to model and analyze the emergent behavior of large populations under various systemic and environmental conditions.
+## Prompts
+- **[collective_panic_cascade_architect](collective_panic_cascade_architect.prompt.yaml)**: A highly robust, expert-level prompt designed to formulate mathematical models and multi-modal big data architectures for predicting the onset and rapid propagation of collective panic cascades across mass urban populations.
