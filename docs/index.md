@@ -364,6 +364,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Genetics
 
 - [crispr_cas9_off_target_predictive_modeler](prompts/scientific/genetics/genomics/crispr_cas9_off_target_predictive_modeler.prompt.md)
+- [epigenetic_methylation_hmm_architect](prompts/scientific/genetics/genomics/epigenetic_methylation_hmm_architect.prompt.md)
 - [gwas_polygenic_risk_score_architect](prompts/scientific/genetics/genomics/gwas_polygenic_risk_score_architect.prompt.md)
 
 ## Geometry
