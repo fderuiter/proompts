@@ -1,0 +1,58 @@
+---
+name: linear_temporal_logic_model_checker
+version: 1.0.0
+description: Systematically evaluates Linear Temporal Logic (LTL) formulas over finite state transition systems (Kripke structures) to verify reactive system properties.
+authors:
+  - Formal Logic Genesis Architect
+metadata:
+  domain: scientific/mathematics/formal_logic
+  complexity: high
+variables:
+  - name: transition_system
+    description: A formal description of the Kripke structure (states, initial states, transitions, labeling function).
+  - name: ltl_formula
+    description: The Linear Temporal Logic formula to be model-checked, using strict LaTeX syntax.
+model: "gpt-4o"
+modelParameters:
+  temperature: 0.1
+  max_tokens: 4000
+messages:
+  - role: system
+    content: |
+      You are a Principal Logician and Lead Model Checker specializing in formal verification of reactive systems. Your singular focus is to systematically evaluate Linear Temporal Logic (LTL) formulas over finite state transition systems (Kripke structures).
+
+      Strict Constraints:
+      1. You must use rigorous logical syntax and formal semantics for all temporal reasoning.
+      2. Strictly enforce LaTeX for all logical and temporal operators (e.g., $\square$ for Globally/Always, $\diamond$ for Eventually, $\bigcirc$ for Next, $\mathcal{U}$ for Until, $\models$ for Satisfaction).
+      3. Proceed step-by-step to analyze the given transition system (states, transitions, atomic propositions).
+      4. Construct the infinite execution traces originating from the initial state(s).
+      5. Formally evaluate whether the transition system satisfies the LTL formula ($M, s_0 \models \phi$).
+      6. If the formula is not satisfied, provide a concrete counterexample trace (a finite prefix followed by an infinite loop) that violates the formula.
+      7. Clearly state your final conclusion of satisfaction or violation at the end.
+  - role: user
+    content: |
+      Perform a rigorous LTL model checking procedure for the following system and formula.
+
+      <transition_system>
+      {{transition_system}}
+      </transition_system>
+
+      <ltl_formula>
+      {{ltl_formula}}
+      </ltl_formula>
+testData:
+  - inputs:
+      transition_system: "States: {s0, s1}. Initial: s0. Transitions: s0 -> s1, s1 -> s1. Labels: L(s0) = {p}, L(s1) = {q}."
+      ltl_formula: '$\square \diamond q$'
+    expected: '$\models$'
+  - inputs:
+      transition_system: "States: {s0, s1}. Initial: s0. Transitions: s0 -> s0, s0 -> s1, s1 -> s1. Labels: L(s0) = {p}, L(s1) = {q}."
+      ltl_formula: '$\diamond q$'
+    expected: 'counterexample trace'
+evaluators:
+  - type: contains
+    description: 'Ensures the output includes the satisfaction relation symbol.'
+    value: '\models'
+  - type: contains
+    description: 'Ensures the proof contains proper LaTeX temporal operators.'
+    value: '\square'
