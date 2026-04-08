@@ -489,6 +489,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Forward-Looking Resource & Capacity Forecast](prompts/management/operations/forward_capacity_forecast.prompt.md)
 - [Inventory & Demand-Planning Simulation](prompts/management/operations/inventory_demand_planning_simulation.prompt.md)
 - [KPI Dashboard & Monthly Ops-Review Pack](prompts/management/operations/kpi_dashboard_ops_review.prompt.md)
+- [Lean Six Sigma Value Stream Mapping Architect](prompts/management/operations/lean_six_sigma_vsm_architect.prompt.md)
 - [Multistudy Resource & Capacity Forecast Plan](prompts/management/operations/multistudy_resource_capacity_forecast_plan.prompt.md)
 - [Operational Excellence & Risk Sweep](prompts/management/operations/operational_excellence_risk_sweep.prompt.md)
 - [360° Operational KPI & Benchmark Review](prompts/management/operations/operational_kpi_benchmark_review.prompt.md)
