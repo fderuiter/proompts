@@ -8,6 +8,7 @@
 - **[Forward-Looking Resource & Capacity Forecast](forward_capacity_forecast.prompt.yaml)**: Project FTE demand and recommend actions to balance capacity for the next 90 days.
 - **[Inventory & Demand-Planning Simulation](inventory_demand_planning_simulation.prompt.yaml)**: Create a forecast and inventory plan from historical demand data.
 - **[KPI Dashboard & Monthly Ops-Review Pack](kpi_dashboard_ops_review.prompt.yaml)**: Summarize operational performance and highlight required actions for the monthly review.
+- **[Lean Six Sigma Value Stream Mapping Architect](lean_six_sigma_vsm_architect.prompt.yaml)**: Formulates advanced Lean Six Sigma Value Stream Mapping (VSM) frameworks for bottleneck identification, cycle time reduction, and complex operational optimization.
 - **[Multistudy Resource & Capacity Forecast Plan](multistudy_resource_capacity_forecast_plan.prompt.yaml)**: Outline a data-driven approach for forecasting resources across multiple upcoming trials.
 - **[Operational Excellence & Risk Sweep](operational_excellence_risk_sweep.prompt.yaml)**: Deliver a 90-day action plan to cut cycle time and reduce recruitment failure.
 - **[360° Operational KPI & Benchmark Review](operational_kpi_benchmark_review.prompt.yaml)**: Compare internal KPIs to industry benchmarks and propose improvements.
