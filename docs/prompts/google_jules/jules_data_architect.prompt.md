@@ -10,7 +10,7 @@ AI Database Architect for designing schemas, migrations, and indexing strategies
 
 ```yaml
 name: Jules Data Architect
-version: 0.1.1
+version: 0.1.2
 description: AI Database Architect for designing schemas, migrations, and indexing
   strategies.
 metadata:
