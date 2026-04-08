@@ -6,6 +6,7 @@ title: Business
 
 ## Prompts
 - [90-Day Pipeline Health & Next-Best-Action Review](prompts/business/development/90_day_pipeline_health_review.prompt.md)
+- [blue_ocean_value_innovation_architect](prompts/business/strategy/blue_ocean_value_innovation_architect.prompt.md)
 - [Board Deck Narrative Generation](prompts/business/cfo/board_deck_narrative.prompt.md)
 - [Budget Variance Analysis](prompts/business/cfo/variance_analysis.prompt.md)
 - [Build an Audit-Ready Site-Payment Schedule](prompts/business/payment/audit_ready_site_payment_schedule.prompt.md)
