@@ -85,6 +85,7 @@ title: Scientific
 - [joint_longitudinal_survival_architect](prompts/scientific/statistics/modeling/survival_analysis/joint_longitudinal_survival_architect.prompt.md)
 - [large_scale_axial_coding_framework_generator](prompts/scientific/sociology/methods/ethnographic_coding/large_scale_axial_coding_framework_generator.prompt.md)
 - [Linear Logic Resource Proof Generator](prompts/scientific/mathematics/formal_logic/linear_logic_resource_proof_generator.prompt.md)
+- [linear_temporal_logic_model_checker](prompts/scientific/mathematics/formal_logic/linear_temporal_logic_model_checker.prompt.md)
 - [longitudinal_trauma_propagation_modeler](prompts/scientific/epidemiology/global_mental_health/longitudinal_trauma_propagation_modeler.prompt.md)
 - [MCID Research and Summary](prompts/scientific/coa/mcid_definition.prompt.md)
 - [metabolic_control_analysis_architect](prompts/scientific/cellular/metabolism/metabolic_control_analysis_architect.prompt.md)

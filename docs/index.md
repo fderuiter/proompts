@@ -542,6 +542,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [first_order_logic_sequent_calculus_prover](prompts/scientific/mathematics/formal_logic/first_order_logic_sequent_calculus_prover.prompt.md)
 - [intuitionistic_natural_deduction_prover](prompts/scientific/mathematics/formal_logic/intuitionistic_natural_deduction_prover.prompt.md)
 - [Linear Logic Resource Proof Generator](prompts/scientific/mathematics/formal_logic/linear_logic_resource_proof_generator.prompt.md)
+- [linear_temporal_logic_model_checker](prompts/scientific/mathematics/formal_logic/linear_temporal_logic_model_checker.prompt.md)
 - [stiff_pde_numerical_stability_architect](prompts/scientific/mathematics/numerical_methods/stiff_pde_numerical_stability_architect.prompt.md)
 - [Stochastic Multi-Objective Optimization Architect](prompts/scientific/mathematics/optimization/stochastic_optimization_architect.prompt.md)
 - [Topological Counterexample Generator](prompts/scientific/mathematics/topology/topological_counterexample_generator.prompt.md)
