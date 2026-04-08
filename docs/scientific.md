@@ -26,6 +26,7 @@ title: Scientific
 - [ClinRO User Manual Generator](prompts/scientific/coa/clinro_training_manual.prompt.md)
 - [cognitive_bias_epistemological_deconstructor](prompts/scientific/philosophy/epistemology/formal_epistemology/cognitive_bias_epistemological_deconstructor.prompt.md)
 - [cognitive_bias_mitigation_architect](prompts/scientific/psychology/cognitive/information_processing/cognitive_bias_mitigation_architect.prompt.md)
+- [collective_panic_cascade_architect](prompts/scientific/sociology/mass_behavior/collective_panic_cascade_architect.prompt.md)
 - [complex_ppi_network_mapper](prompts/scientific/molecular/proteomics/complex_ppi_network_mapper.prompt.md)
 - [Comprehensive Biocompatibility Test Matrix](prompts/scientific/biosafety/comprehensive_test_matrix.prompt.md)
 - [Content Validity & Reliability Analysis](prompts/scientific/coa/content_validity_clinician_input.prompt.md)
