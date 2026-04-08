@@ -42,6 +42,7 @@ title: Business
 - [Net Present Value Socratic Tutor](prompts/business/cfo/npv_tutor.prompt.md)
 - [Payment Reconciliation and Discrepancy Report](prompts/business/payment/payment_reconciliation_discrepancy_report.prompt.md)
 - [Payment-Process Risk Assessment and Mitigation](prompts/business/payment/payment_process_risk_assessment.prompt.md)
+- [Platform Ecosystem Network Effects Architect](prompts/business/strategy/platform_ecosystem_network_effects_architect.prompt.md)
 - [Post-Merger Integration Synergy Architect](prompts/business/strategy/post_merger_integration_synergy_architect.prompt.md)
 - [Post-Mortem / Incident Report Summary](prompts/business/vp_tech_innovation/post_mortem_summary.prompt.md)
 - [Predictive RFM Churn Mitigation Architect](prompts/business/growth_engineering/predictive_rfm_churn_mitigation_architect.prompt.md)

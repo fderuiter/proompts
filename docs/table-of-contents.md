@@ -58,6 +58,7 @@
 [Corporate Venture Capital Strategy Architect](prompts/business/strategy/corporate_venture_capital_strategy_architect.prompt.md)
 [game_theoretic_competitive_dynamics_architect](prompts/business/strategy/game_theoretic_competitive_dynamics_architect.prompt.md)
 [Hostile Takeover Defense Matrix Architect](prompts/business/strategy/hostile_takeover_defense_matrix.prompt.md)
+[Platform Ecosystem Network Effects Architect](prompts/business/strategy/platform_ecosystem_network_effects_architect.prompt.md)
 [Post-Merger Integration Synergy Architect](prompts/business/strategy/post_merger_integration_synergy_architect.prompt.md)
 [Private Equity Value Creation Architect](prompts/business/strategy/private_equity_value_creation_architect.prompt.md)
 [Quantitative Corporate Portfolio Divestiture Architect](prompts/business/strategy/quantitative_corporate_portfolio_divestiture_architect.prompt.md)
