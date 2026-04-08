@@ -11,7 +11,7 @@ Phase 4 of the Principal Architect Workflow (PAW). Verifies the implementation a
 ```yaml
 ---
 name: PAW Phase 4 - Quality Assurance & Log
-version: 0.1.0
+version: 0.2.0
 description: Phase 4 of the Principal Architect Workflow (PAW). Verifies the implementation and updates the TODO log.
 metadata:
   domain: technical
