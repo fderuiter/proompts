@@ -695,6 +695,7 @@
 [Distributed Caching Strategy Architect](prompts/technical/architecture/distributed_caching_strategy_architect.prompt.md)
 [Distributed Database Sharding Architect](prompts/technical/architecture/distributed_database_sharding_architect.prompt.md)
 [Distributed Knowledge Graph Architect](prompts/technical/architecture/distributed_knowledge_graph_architect.prompt.md)
+[Distributed Lock Manager Architect](prompts/technical/architecture/distributed_lock_manager_architect.prompt.md)
 [Distributed Observability and Telemetry Architect](prompts/technical/architecture/distributed_observability_telemetry_architect.prompt.md)
 [Distributed Rate Limiting Architect](prompts/technical/architecture/distributed_rate_limiting_architect.prompt.md)
 [Distributed Task Queue and Background Job Processing Architect](prompts/technical/architecture/distributed_task_queue_architect.prompt.md)
