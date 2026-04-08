@@ -1,7 +1,4 @@
-# Metaphysics / Ontology Prompts
+# Ontology Overview
 
-This directory contains advanced prompt templates for philosophical analysis in the domain of metaphysics and ontology.
-
-## Included Prompts
-
-- **Metaphysical Dialectical Synthesizer**: Systematically executes a rigorous dialectical synthesis of mutually exclusive metaphysical frameworks, avoiding informal fallacies and ensuring logical validity.
+## Prompts
+- **[Metaphysical Dialectical Synthesizer](metaphysical_dialectical_synthesizer.prompt.yaml)**: Systematically executes a rigorous dialectical synthesis of mutually exclusive metaphysical frameworks, avoiding informal fallacies and ensuring logical validity.

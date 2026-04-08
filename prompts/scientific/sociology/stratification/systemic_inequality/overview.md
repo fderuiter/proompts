@@ -1,3 +1,4 @@
-# Systemic Inequality
+# Systemic Inequality Overview
 
-This directory contains advanced sociological prompt templates for analyzing structural stratification, decomposing wealth concentration mechanisms, and evaluating systemic inequality using rigorous indices and macroeconomic/demographic frameworks.
+## Prompts
+- **[wealth_concentration_decomposition_architect](wealth_concentration_decomposition_architect.prompt.yaml)**: A Principal Sociologist agent that systematically decomposes wealth concentration mechanisms and calculates rigorous inequality indices (e.g., Gini, Theil).
