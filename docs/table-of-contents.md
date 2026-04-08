@@ -350,6 +350,7 @@
 [Target Segment & User Needs Assessment](prompts/business/market_research/market_research_workflow/02_target_segment_user_needs_assessment.prompt.md)
 [Regulatory & Commercial Barrier Mapping](prompts/business/market_research/market_research_workflow/03_regulatory_commercial_barrier_mapping.prompt.md)
 [Market Report Executive Summary](prompts/business/market_research/market_research_workflow/04_market_report_exec_summary.prompt.md)
+[categorical_theorem_translator](prompts/scientific/mathematics/category_theory/categorical_theorem_translator.prompt.md)
 [category_theory_adjunction_architect](prompts/scientific/mathematics/category_theory/category_theory_adjunction_architect.prompt.md)
 [Physics-Informed Neural Network (PINN) Architect](prompts/scientific/mathematics/computational/physics_informed_neural_network_architect.prompt.md)
 [Custom Axiomatic System Soundness Evaluator](prompts/scientific/mathematics/formal_logic/custom_axiomatic_system_soundness_evaluator.prompt.md)
