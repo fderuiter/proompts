@@ -44,6 +44,7 @@ title: Scientific
 - [Dynamic Causal Modeling Architect](prompts/scientific/computational_theoretical_neuroscience/dynamic_causal_modeling_architect.prompt.md)
 - [Endotoxin Control & 510(k) Risk Plan](prompts/scientific/microbiology/microbiology_workflow/03_endotoxin_control_510k_risk_plan.prompt.md)
 - [EO Sterilization Validation Protocol](prompts/scientific/microbiology/microbiology_workflow/02_eo_sterilization_validation_protocol.prompt.md)
+- [epigenetic_methylation_hmm_architect](prompts/scientific/genetics/genomics/epigenetic_methylation_hmm_architect.prompt.md)
 - [epistemic_modal_logic_kripke_evaluator](prompts/scientific/mathematics/formal_logic/epistemic_modal_logic_kripke_evaluator.prompt.md)
 - [ePRO Migration Equivalence Checker](prompts/scientific/coa/epro_migration_equivalence.prompt.md)
 - [EtO Sterilization Process FMEA](prompts/scientific/sterility/sterility_workflow/03_eto_sterilization_process_fmea.prompt.md)
