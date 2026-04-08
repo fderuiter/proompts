@@ -326,6 +326,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Econometrics
 
+- [Synthetic Control Method Architect](prompts/scientific/economics/econometrics/causal_inference/synthetic_control_method_architect.prompt.md)
 - [structural_vector_autoregression_architect](prompts/scientific/economics/econometrics/time_series/structural_vector_autoregression_architect.prompt.md)
 
 ## Epidemiology

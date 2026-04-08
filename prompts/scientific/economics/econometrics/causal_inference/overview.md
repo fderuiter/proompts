@@ -1,0 +1,3 @@
+# Causal Inference
+
+This directory contains prompts focused on modern causal inference methodologies within econometrics. Prompts in this domain are designed to rigorously estimate causal effects from observational data or quasi-experiments when traditional randomized controlled trials are infeasible. Key areas include difference-in-differences, regression discontinuity designs, instrumental variables, and synthetic control methods. These methodologies rely heavily on advanced statistical modeling, rigorous assumption testing, and precise optimization algorithms to isolate the causal impact of specific interventions or policy changes.
