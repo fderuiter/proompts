@@ -11,7 +11,7 @@ Phase 3 of the Principal Architect Workflow (PAW). Implements the design spec wi
 ```yaml
 ---
 name: PAW Phase 3 - Precision Strike
-version: 0.1.0
+version: 0.2.0
 description: Phase 3 of the Principal Architect Workflow (PAW). Implements the design spec with surgical accuracy.
 metadata:
   domain: technical
@@ -91,6 +91,9 @@ testData:
       - name: Security Refusal
         regex:
           pattern: '"unsafe_input"'
-evaluators: []
+evaluators:
+- name: Valid Structure or Refusal
+  regex:
+    pattern: '(?s)(### 🎯 Tactical Brief|### 🏗️ Design Spec|### 🚀 Code Delivery|### 🔬 QA Verdict)|(\{"error": "unsafe_input".*\})'
 
 ```

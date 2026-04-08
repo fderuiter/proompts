@@ -11,7 +11,7 @@ Phase 2 of the Principal Architect Workflow (PAW). Designs the solution based on
 ```yaml
 ---
 name: PAW Phase 2 - Architectural Blueprint
-version: 0.1.0
+version: 0.2.0
 description: Phase 2 of the Principal Architect Workflow (PAW). Designs the solution based on the Tactical Brief.
 metadata:
   domain: technical
@@ -89,6 +89,9 @@ testData:
       - name: Security Refusal
         regex:
           pattern: '"unsafe_input"'
-evaluators: []
+evaluators:
+- name: Valid Structure or Refusal
+  regex:
+    pattern: '(?s)(### 🎯 Tactical Brief|### 🏗️ Design Spec|### 🚀 Code Delivery|### 🔬 QA Verdict)|(\{"error": "unsafe_input".*\})'
 
 ```

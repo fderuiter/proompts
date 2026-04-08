@@ -11,7 +11,7 @@ Phase 1 of the Principal Architect Workflow (PAW). Analyzes TODO.md and file str
 ```yaml
 ---
 name: PAW Phase 1 - Tactical Recon
-version: 0.1.0
+version: 0.2.0
 description: Phase 1 of the Principal Architect Workflow (PAW). Analyzes TODO.md and file structure to generate a Tactical Brief.
 metadata:
   domain: technical
@@ -88,6 +88,9 @@ testData:
       - name: Security Refusal
         regex:
           pattern: '"unsafe_input"'
-evaluators: []
+evaluators:
+- name: Valid Structure or Refusal
+  regex:
+    pattern: '(?s)(### 🎯 Tactical Brief|### 🏗️ Design Spec|### 🚀 Code Delivery|### 🔬 QA Verdict)|(\{"error": "unsafe_input".*\})'
 
 ```
