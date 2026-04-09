@@ -6,6 +6,7 @@ title: Business
 
 ## Prompts
 - [90-Day Pipeline Health & Next-Best-Action Review](prompts/business/development/90_day_pipeline_health_review.prompt.md)
+- [Activist Investor Defense Strategy Architect](prompts/business/strategy/activist_investor_defense_strategy_architect.prompt.md)
 - [blue_ocean_value_innovation_architect](prompts/business/strategy/blue_ocean_value_innovation_architect.prompt.md)
 - [Board Deck Narrative Generation](prompts/business/cfo/board_deck_narrative.prompt.md)
 - [Budget Variance Analysis](prompts/business/cfo/variance_analysis.prompt.md)
