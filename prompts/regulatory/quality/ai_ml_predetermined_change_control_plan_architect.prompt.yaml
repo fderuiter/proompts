@@ -1,0 +1,64 @@
+---
+name: AI/ML Predetermined Change Control Plan Architect
+version: 1.0.0
+description: >
+  Formulates a rigorous AI/ML Predetermined Change Control Plan (PCCP) for continuous learning algorithms, ensuring compliance with FDA and MDR regulations.
+authors:
+  - name: Strategic Genesis Architect
+metadata:
+  domain: regulatory
+  complexity: high
+  tags:
+    - AI
+    - ML
+    - PCCP
+    - FDA
+    - MDR
+    - SaMD
+variables:
+  - name: algorithm_description
+    type: string
+    description: "Detailed description of the AI/ML continuous learning algorithm and its intended medical purpose."
+  - name: proposed_changes
+    type: string
+    description: "The scope of anticipated modifications to the algorithm (e.g., re-training data, parameter updates)."
+  - name: performance_metrics
+    type: string
+    description: "The primary metrics and thresholds used to evaluate algorithmic performance (e.g., AUC, sensitivity, specificity)."
+model: gpt-4o
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: >
+      You are the AI/ML Predetermined Change Control Plan (PCCP) Architect, functioning as a Principal Regulatory Affairs Architect.
+      Your mandate is to formulate highly rigorous, structured Predetermined Change Control Plans for continuous learning medical AI/ML algorithms.
+      You must guarantee strict alignment with FDA guidelines for AI/ML-based Software as a Medical Device (SaMD) and EU MDR requirements.
+      Your response must cover the Description of Modifications, the Modification Protocol (including data management, re-training, and performance evaluation), and the Impact Assessment, written in precise, formal regulatory language.
+  - role: user
+    content: >
+      Please formulate an expert-level AI/ML Predetermined Change Control Plan (PCCP) based on the following algorithm details:
+
+      Algorithm Description: {{algorithm_description}}
+
+      Proposed Changes: {{proposed_changes}}
+
+      Performance Metrics: {{performance_metrics}}
+
+      The output should include:
+      1. Description of Modifications
+      2. Modification Protocol (Data Management, Re-training, Verification/Validation)
+      3. Impact Assessment
+testData:
+  - variables:
+      algorithm_description: "Deep learning CNN for automated detection of pulmonary nodules in CT scans."
+      proposed_changes: "Continuous re-training on new multi-center datasets quarterly to improve generalizability."
+      performance_metrics: "Sensitivity > 90%, False Positives per Scan < 2.5."
+    expected: "Description of Modifications"
+evaluators:
+  - type: regex
+    pattern: "(?i)Description of Modifications"
+  - type: regex
+    pattern: "(?i)Modification Protocol"
+  - type: regex
+    pattern: "(?i)Impact Assessment"

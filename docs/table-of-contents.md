@@ -475,6 +475,7 @@
 [Establishment of Food Traceability Plan](prompts/regulatory/food_safety/establishment_of_food_traceability_plan.prompt.md)
 [Food Safety Audit Reporting (Regulatory)](prompts/regulatory/food_safety/food_safety_audit_reporting_regulatory.prompt.md)
 [Foreign Supplier Verification Program (FSVP) Audit](prompts/regulatory/food_safety/foreign_supplier_verification_program_fsvp_audit.prompt.md)
+[AI/ML Predetermined Change Control Plan Architect](prompts/regulatory/quality/ai_ml_predetermined_change_control_plan_architect.prompt.md)
 [CAPA Investigation Report Writer](prompts/regulatory/quality/capa_investigation_report_writer.prompt.md)
 [CAPA Management Process](prompts/regulatory/quality/capa_management_process.prompt.md)
 [CAPA Plan Generator](prompts/regulatory/quality/capa_plan_generator.prompt.md)
