@@ -66,7 +66,33 @@ messages:
 
 
     <!-- markdownlint-enable MD029 MD036 -->'
-testData: []
-evaluators: []
+testData:
+  - vars:
+      study_id: "ONC-2024-001"
+      etmf_export: |
+        Artifact,DocumentStatus,DateUploaded,Version,ResponsibleParty
+        Protocol Signature Page,Missing,,,
+        Informed Consent Form,Approved,2023-01-15,1.0,PI
+        Investigator Brochure,Outdated,2022-11-01,2.0,Sponsor
+        Form FDA 1572,Approved,2023-02-20,1.0,PI
+    expected: "High"
+  - vars:
+      study_id: "ONC-2024-001"
+      etmf_export: |
+        Artifact,DocumentStatus,DateUploaded,Version,ResponsibleParty
+        Financial Disclosure Form,Missing,,,
+        CV of Principal Investigator,Outdated,2020-05-12,1.0,PI
+    expected: "Medium"
+  - vars:
+      study_id: "ONC-2024-001"
+      etmf_export: ""
+    expected: "High"
+evaluators:
+  - name: Output formatting includes markdown table headers
+    type: regex
+    pattern: '(?i)\|?\s*Artifact\s*\|\s*Issue\s*\|\s*Risk\s*\|\s*Corrective Action\s*\|?'
+  - name: Ensure output discusses systemic issues
+    type: regex
+    pattern: "(?i)systemic issues"
 
 ```
