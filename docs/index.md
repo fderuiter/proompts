@@ -116,6 +116,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Payment-Process Risk Assessment and Mitigation](prompts/business/payment/payment_process_risk_assessment.prompt.md)
 - [Payment Reconciliation and Discrepancy Report](prompts/business/payment/payment_reconciliation_discrepancy_report.prompt.md)
 - [Sunshine Act and FMV Compliance Check](prompts/business/payment/sunshine_act_fmv_compliance_check.prompt.md)
+- [Activist Investor Defense Strategy Architect](prompts/business/strategy/activist_investor_defense_strategy_architect.prompt.md)
 - [blue_ocean_value_innovation_architect](prompts/business/strategy/blue_ocean_value_innovation_architect.prompt.md)
 - [Corporate Turnaround Restructuring Architect](prompts/business/strategy/corporate_turnaround_restructuring_architect.prompt.md)
 - [Corporate Venture Capital Strategy Architect](prompts/business/strategy/corporate_venture_capital_strategy_architect.prompt.md)
@@ -367,6 +368,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Foundations
 
 - [intuitionistic_logic_natural_deduction_generator](prompts/scientific/mathematics/foundations/proof_theory/intuitionistic_logic_natural_deduction_generator.prompt.md)
+- [forcing_poset_generic_extension_architect](prompts/scientific/mathematics/foundations/set_theory/forcing_poset_generic_extension_architect.prompt.md)
 
 ## Genetics
 
@@ -1061,6 +1063,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Security Hardening and Dependency Management Implementation](prompts/technical/repository_refactoring/security_hardening_dependency_management_implementation.prompt.md)
 - [Test Suite Enhancement and CI Pipeline Implementation](prompts/technical/repository_refactoring/test_suite_enhancement_ci_pipeline_implementation.prompt.md)
 - [Testing, Configuration, and Automation Analysis](prompts/technical/repository_refactoring/testing_configuration_automation_analysis.prompt.md)
+- [Active Directory Domain Dominance Forensics Analyst](prompts/technical/security/active_directory_domain_dominance_forensics_analyst.prompt.md)
 - [Advanced Red Team Adversary Emulation Architect](prompts/technical/security/advanced_red_team_adversary_emulation_architect.prompt.md)
 - [Advanced Volatile Memory Forensics Analyst](prompts/technical/security/advanced_volatile_memory_forensics_analyst.prompt.md)
 - [ai_threat_modeling_architect](prompts/technical/security/ai_threat_modeling_architect.prompt.md)
