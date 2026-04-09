@@ -122,6 +122,15 @@ class DocumentationGenerator:
         self.items: List[DocItem] = []
 
     def scan_prompts(self, check_mode: bool = False) -> bool:
+        """
+        Scans the prompts directory for YAML files, generating a Markdown page for each.
+
+        Args:
+            check_mode: If True, checks if pages exist and match expected content without writing.
+
+        Returns:
+            bool: True if changes were detected or written, False otherwise.
+        """
         prompts_dir = self.root / CONFIG['dirs']['prompts']
         if not prompts_dir.exists():
             return False
@@ -153,7 +162,17 @@ class DocumentationGenerator:
         return changes_detected
 
     def _render_prompt_page(self, source_path: Path, data: Dict[str, Any], check_mode: bool = False) -> tuple[Path, bool]:
-        """Generates the Markdown page for a single prompt."""
+        """
+        Generates or checks the Markdown page for a single prompt.
+
+        Args:
+            source_path: The filesystem path to the source `.prompt.yaml` file.
+            data: The parsed YAML data dictionary.
+            check_mode: If True, only checks if the generated content matches the existing file.
+
+        Returns:
+            tuple[Path, bool]: A tuple containing the output Path and a boolean indicating if changes occurred.
+        """
         title = FileParser.derive_title(source_path, data)
         desc = data.get('description', 'No description provided.')
 
@@ -204,6 +223,15 @@ title: {title}
             return output_path, False
 
     def scan_workflows(self, check_mode: bool = False) -> bool:
+        """
+        Scans the workflows directory for YAML files, generating a Markdown page for each.
+
+        Args:
+            check_mode: If True, checks if pages exist and match expected content without writing.
+
+        Returns:
+            bool: True if changes were detected or written, False otherwise.
+        """
         wf_dir = self.root / CONFIG['dirs']['workflows']
         if not wf_dir.exists():
             return False
@@ -235,7 +263,17 @@ title: {title}
         return changes_detected
 
     def _render_workflow_page(self, source_path: Path, data: Dict[str, Any], check_mode: bool = False) -> tuple[Path, bool]:
-        """Generates the Markdown page for a single workflow. Returns (path, changed_bool)."""
+        """
+        Generates or checks the Markdown page for a single workflow, including Mermaid graphs.
+
+        Args:
+            source_path: The filesystem path to the source `.workflow.yaml` file.
+            data: The parsed YAML data dictionary.
+            check_mode: If True, only checks if the generated content matches the existing file.
+
+        Returns:
+            tuple[Path, bool]: A tuple containing the output Path and a boolean indicating if changes occurred.
+        """
         title = FileParser.derive_title(source_path, data)
         desc = data.get('description', 'No description provided.')
         mermaid = WorkflowGrapher.generate(data)
@@ -273,7 +311,15 @@ title: {title}
             return output_path, False
 
     def build_indices(self, check_mode: bool = False) -> bool:
-        """Groups items by category and writes index pages. Returns True if changes detected in check mode."""
+        """
+        Groups all discovered items by category and generates the index Markdown pages.
+
+        Args:
+            check_mode: If True, only checks if the generated indices match the existing files.
+
+        Returns:
+            bool: True if changes were detected or written, False otherwise.
+        """
         print("📝 Generating Category Indices...")
         
         # Grouping
@@ -352,7 +398,11 @@ title: {title}
 
 import argparse
 
-def main():
+def main() -> None:
+    """
+    Main entrypoint for the documentation generator script.
+    Parses arguments, initializes the generator, and runs scans.
+    """
     parser = argparse.ArgumentParser(description="Generate documentation site structure.")
     parser.add_argument("--check", action="store_true", help="Check if docs are up-to-date without writing.")
     args = parser.parse_args()
