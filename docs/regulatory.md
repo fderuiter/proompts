@@ -34,6 +34,7 @@ title: Regulatory
 - [Compliance Gap Assessment](prompts/regulatory/strategy/compliance_gap_assessment.prompt.md)
 - [Correction and Removal Reporting](prompts/regulatory/compliance/correction_and_removal_reporting.prompt.md)
 - [Cyber Device Security Plan](prompts/regulatory/compliance/cyber_device_security_plan.prompt.md)
+- [Data Integrity ALCOA+ Audit Architect](prompts/regulatory/quality/data_integrity_alcoa_plus_audit_architect.prompt.md)
 - [De Novo Request Preparation](prompts/regulatory/submissions/de_novo_request_preparation.prompt.md)
 - [Design Verification for BCR-ABL Tests](prompts/regulatory/device_specifics/design_verification_for_bcr_abl_tests.prompt.md)
 - [DHT Integration Regulatory Checklist](prompts/regulatory/adherence/dht_integration_checklist.prompt.md)

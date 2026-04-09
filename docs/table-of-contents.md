@@ -486,6 +486,7 @@
 [cer_literature_review_architect](prompts/regulatory/quality/cer_literature_review_architect.prompt.md)
 [Change Control Regulatory Impact Assessor](prompts/regulatory/quality/change_control_regulatory_impact_assessor.prompt.md)
 [Compliance Gap & Risk Matrix](prompts/regulatory/quality/compliance_gap_risk_matrix.prompt.md)
+[Data Integrity ALCOA+ Audit Architect](prompts/regulatory/quality/data_integrity_alcoa_plus_audit_architect.prompt.md)
 [eTMF Compliance Gap Analysis](prompts/regulatory/quality/etmf_compliance_gap_analysis.prompt.md)
 [EU IVDR Performance Evaluation Report Architect](prompts/regulatory/quality/eu_ivdr_performance_evaluation_report_architect.prompt.md)
 [EU MDR Clinical Evaluation Report Architect](prompts/regulatory/quality/eu_mdr_clinical_evaluation_report_architect.prompt.md)
