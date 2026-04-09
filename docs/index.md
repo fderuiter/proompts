@@ -117,6 +117,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Payment Reconciliation and Discrepancy Report](prompts/business/payment/payment_reconciliation_discrepancy_report.prompt.md)
 - [Sunshine Act and FMV Compliance Check](prompts/business/payment/sunshine_act_fmv_compliance_check.prompt.md)
 - [Activist Investor Defense Strategy Architect](prompts/business/strategy/activist_investor_defense_strategy_architect.prompt.md)
+- [Algorithmic Dynamic Pricing & Yield Management Architect](prompts/business/strategy/algorithmic_dynamic_pricing_yield_management_architect.prompt.md)
 - [blue_ocean_value_innovation_architect](prompts/business/strategy/blue_ocean_value_innovation_architect.prompt.md)
 - [Corporate Turnaround Restructuring Architect](prompts/business/strategy/corporate_turnaround_restructuring_architect.prompt.md)
 - [Corporate Venture Capital Strategy Architect](prompts/business/strategy/corporate_venture_capital_strategy_architect.prompt.md)
