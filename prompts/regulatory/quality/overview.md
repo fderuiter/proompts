@@ -23,6 +23,7 @@
 - **[FDA 483 Response Strategist](fda_483_response_strategist.prompt.yaml)**: Design comprehensive, regulatory-compliant responses to FDA Form 483 observations, employing an authoritative and structured corrective action strategy.
 - **[fda_483_warning_letter_remediation_architect](fda_483_warning_letter_remediation_architect.prompt.yaml)**: Acts as a Principal Regulatory Compliance Expert and Former FDA Investigator to synthesize Form 483 observations into rigorous, systemic remediation plans and warning letter responses.
 - **[fda_510k_substantial_equivalence_architect](fda_510k_substantial_equivalence_architect.prompt.yaml)**: Acts as a Principal Regulatory Affairs Architect to synthesize device specifications, intended use, and performance data into a highly robust FDA 510(k) Substantial Equivalence (SE) argument.
+- **[FDA CSA Risk-Based Testing Strategy Architect](fda_csa_risk_based_testing_strategy_architect.prompt.yaml)**: Formulates rigorous, risk-based Computer Software Assurance (CSA) testing strategies to optimize software validation based on patient safety and product quality risk, transitioning from traditional CSV.
 - **[GLP Quality Assurance](glp_quality_assurance.prompt.yaml)**: Prepare a statement for a nonclinical study report certifying inspection dates.
 - **[iec_62304_soup_anomaly_evaluator](iec_62304_soup_anomaly_evaluator.prompt.yaml)**: Evaluates Software of Unknown Provenance (SOUP) known anomalies against IEC 62304 requirements to determine clinical safety impact and mandate required architectural risk control measures for SaMD.
 - **[IEC 62366-1 Summative Usability Evaluation Protocol Architect](iec_62366_summative_usability_protocol_architect.prompt.yaml)**: Design comprehensive, regulatory-compliant Summative Usability Evaluation Protocols under IEC 62366-1 and FDA Human Factors Engineering Guidance.
@@ -48,7 +49,3 @@
 - **[samd_iec62304_software_architecture_architect](samd_iec62304_software_architecture_architect.prompt.yaml)**: Acts as a Principal Medical Device Software Architect to design rigorous Software Architecture Design Documents (SADD) compliant with IEC 62304 and FDA 21 CFR Part 820.30.
 - **[samd_iec_62304_software_safety_classification_architect](samd_iec_62304_software_safety_classification_architect.prompt.yaml)**: Acts as a Principal Medical Device Software Architect to rigorously evaluate and assign IEC 62304 software safety classifications for Software as a Medical Device (SaMD).
 - **[Supplier Corrective Action Request Evaluator](supplier_corrective_action_request_evaluator.prompt.yaml)**: Evaluates a Supplier Corrective Action Request (SCAR) response for adequacy, regulatory compliance, and effectiveness under ISO 13485 and FDA 21 CFR 820.50.
-
-### FDA CSA Risk-Based Testing Strategy Architect
-- **File**: `fda_csa_risk_based_testing_strategy_architect.prompt.yaml`
-- **Description**: Formulates rigorous, risk-based Computer Software Assurance (CSA) testing strategies to optimize software validation based on patient safety and product quality risk, transitioning from traditional CSV.
