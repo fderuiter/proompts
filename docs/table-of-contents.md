@@ -497,6 +497,7 @@
 [FDA 483 Response Strategist](prompts/regulatory/quality/fda_483_response_strategist.prompt.md)
 [fda_483_warning_letter_remediation_architect](prompts/regulatory/quality/fda_483_warning_letter_remediation_architect.prompt.md)
 [fda_510k_substantial_equivalence_architect](prompts/regulatory/quality/fda_510k_substantial_equivalence_architect.prompt.md)
+[FDA CSA Risk-Based Testing Strategy Architect](prompts/regulatory/quality/fda_csa_risk_based_testing_strategy_architect.prompt.md)
 [GLP Quality Assurance](prompts/regulatory/quality/glp_quality_assurance.prompt.md)
 [iec_62304_soup_anomaly_evaluator](prompts/regulatory/quality/iec_62304_soup_anomaly_evaluator.prompt.md)
 [IEC 62366-1 Summative Usability Evaluation Protocol Architect](prompts/regulatory/quality/iec_62366_summative_usability_protocol_architect.prompt.md)
