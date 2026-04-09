@@ -1,6 +1,7 @@
 # Quality Overview
 
 ## Prompts
+- **[AI/ML Predetermined Change Control Plan Architect](ai_ml_predetermined_change_control_plan_architect.prompt.yaml)**: Formulates a rigorous AI/ML Predetermined Change Control Plan (PCCP) for continuous learning algorithms, ensuring compliance with FDA and MDR regulations.
 - **[CAPA Investigation Report Writer](capa_investigation_report_writer.prompt.yaml)**: Draft a formal CAPA investigation report for regulatory review.
 - **[CAPA Management Process](capa_management_process.prompt.yaml)**: Identify non-compliance, conduct RCA, and track CAPA.
 - **[CAPA Plan Generator](capa_plan_generator.prompt.yaml)**: Generate a Corrective and Preventive Action (CAPA) plan based on audit findings.

@@ -10,6 +10,7 @@ title: Regulatory
 - [510(k) Substantial Equivalence Preparation](prompts/regulatory/submissions/510_k_substantial_equivalence_preparation.prompt.md)
 - [510(k)/De Novo Pre-Submission Strategy](prompts/regulatory/strategy/510k_pre-sub_strategy.prompt.md)
 - [AI Risk Mapper](prompts/regulatory/strategy/ai_risk_mapper.prompt.md)
+- [AI/ML Predetermined Change Control Plan Architect](prompts/regulatory/quality/ai_ml_predetermined_change_control_plan_architect.prompt.md)
 - [ALCOA-C Data Integrity Checklist](prompts/regulatory/adherence/alcoa_c_data_integrity_checklist.prompt.md)
 - [Automated Image Assessment System 510(k)](prompts/regulatory/device_specifics/automated_image_assessment_system_510_k.prompt.md)
 - [Breakthrough Device Designation Architect](prompts/regulatory/strategy/breakthrough_device_designation_architect.prompt.md)
