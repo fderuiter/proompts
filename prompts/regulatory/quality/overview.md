@@ -48,3 +48,7 @@
 - **[samd_iec62304_software_architecture_architect](samd_iec62304_software_architecture_architect.prompt.yaml)**: Acts as a Principal Medical Device Software Architect to design rigorous Software Architecture Design Documents (SADD) compliant with IEC 62304 and FDA 21 CFR Part 820.30.
 - **[samd_iec_62304_software_safety_classification_architect](samd_iec_62304_software_safety_classification_architect.prompt.yaml)**: Acts as a Principal Medical Device Software Architect to rigorously evaluate and assign IEC 62304 software safety classifications for Software as a Medical Device (SaMD).
 - **[Supplier Corrective Action Request Evaluator](supplier_corrective_action_request_evaluator.prompt.yaml)**: Evaluates a Supplier Corrective Action Request (SCAR) response for adequacy, regulatory compliance, and effectiveness under ISO 13485 and FDA 21 CFR 820.50.
+
+### FDA CSA Risk-Based Testing Strategy Architect
+- **File**: `fda_csa_risk_based_testing_strategy_architect.prompt.yaml`
+- **Description**: Formulates rigorous, risk-based Computer Software Assurance (CSA) testing strategies to optimize software validation based on patient safety and product quality risk, transitioning from traditional CSV.
