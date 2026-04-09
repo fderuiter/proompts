@@ -57,6 +57,7 @@ title: Architecture
 - [Serverless Function Orchestration Architect](prompts/technical/architecture/serverless_function_orchestration_architect.prompt.md)
 - [Service Mesh Security Architect](prompts/technical/architecture/service_mesh_security_architect.prompt.md)
 - [SOLID Codebase Analysis](prompts/technical/architecture/solid_codebase_analysis.prompt.md)
+- [Stateful Workflow Orchestration Architect](prompts/technical/architecture/stateful_workflow_orchestration_architect.prompt.md)
 - [Strangler Fig Migration Architect](prompts/technical/architecture/strangler_fig_migration_architect.prompt.md)
 - [Sustainable Green Software Architect](prompts/technical/architecture/sustainable_green_software_architect.prompt.md)
 - [TOGAF Phase A - Architecture Vision](prompts/technical/architecture/togaf/phase_a_vision.prompt.md)
