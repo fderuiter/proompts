@@ -230,6 +230,7 @@
 [CRF Quality Auditor](prompts/clinical/forms/clinical_prompts_workflow/02_crf_quality_auditor.prompt.md)
 [CDASH Mapping & Completion-Guide Assistant](prompts/clinical/forms/clinical_prompts_workflow/03_cdash_mapping_completion_guide.prompt.md)
 [intuitionistic_logic_natural_deduction_generator](prompts/scientific/mathematics/foundations/proof_theory/intuitionistic_logic_natural_deduction_generator.prompt.md)
+[forcing_poset_generic_extension_architect](prompts/scientific/mathematics/foundations/set_theory/forcing_poset_generic_extension_architect.prompt.md)
 [crispr_cas9_off_target_predictive_modeler](prompts/scientific/genetics/genomics/crispr_cas9_off_target_predictive_modeler.prompt.md)
 [epigenetic_methylation_hmm_architect](prompts/scientific/genetics/genomics/epigenetic_methylation_hmm_architect.prompt.md)
 [gwas_polygenic_risk_score_architect](prompts/scientific/genetics/genomics/gwas_polygenic_risk_score_architect.prompt.md)
