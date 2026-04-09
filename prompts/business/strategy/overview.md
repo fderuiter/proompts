@@ -2,6 +2,7 @@
 
 ## Prompts
 - **[Activist Investor Defense Strategy Architect](activist_investor_defense_strategy_architect.prompt.yaml)**: Architects rigorous, actionable activist investor defense strategies, conducting vulnerability assessments, Sum-of-the-Parts (SOTP) valuation analysis, and proxy fight readiness planning.
+- **[Algorithmic Dynamic Pricing & Yield Management Architect](algorithmic_dynamic_pricing_yield_management_architect.prompt.yaml)**: Designs rigorous algorithmic dynamic pricing and yield management strategies to optimize revenue maximization under constrained capacity, perishable inventory, and stochastic demand.
 - **[blue_ocean_value_innovation_architect](blue_ocean_value_innovation_architect.prompt.yaml)**: Acts as a Principal Blue Ocean Strategy Architect to formulate rigorous value innovation models, constructing ERRC grids and uncontested market space strategies.
 - **[Corporate Turnaround Restructuring Architect](corporate_turnaround_restructuring_architect.prompt.yaml)**: Designs rigorous financial and operational restructuring plans for distressed corporate entities.
 - **[Corporate Venture Capital Strategy Architect](corporate_venture_capital_strategy_architect.prompt.yaml)**: Designs highly rigorous, quantitatively backed Corporate Venture Capital (CVC) investment theses and portfolio optimization models.
