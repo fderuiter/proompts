@@ -1,0 +1,1 @@
+- A prompt technique that consistently fails for this specific domain: Prompts with loosely defined schema variables (like circular or nonsensical descriptions) cause confusion during workflow mapping. Always ensure variables have distinct semantic meaning, are strictly typed, and bound within explicit XML limits during prompt consumption.
