@@ -55,6 +55,7 @@ title: Regulatory
 - [FDA Fast Track Designation Architect](prompts/regulatory/strategy/fda_fast_track_designation_architect.prompt.md)
 - [fda_483_warning_letter_remediation_architect](prompts/regulatory/quality/fda_483_warning_letter_remediation_architect.prompt.md)
 - [fda_510k_substantial_equivalence_architect](prompts/regulatory/quality/fda_510k_substantial_equivalence_architect.prompt.md)
+- [fda_de_novo_classification_request_architect](prompts/regulatory/quality/fda_de_novo_classification_request_architect.prompt.md)
 - [fda_q_submission_pre_sub_meeting_package_architect](prompts/regulatory/quality/fda_q_submission_pre_sub_meeting_package_architect.prompt.md)
 - [Financial Conflict of Interest (FCOI) Reporting](prompts/regulatory/quality/fcoi_reporting.prompt.md)
 - [Financial Disclosure Certification](prompts/regulatory/administrative/financial_disclosure_certification.prompt.md)
