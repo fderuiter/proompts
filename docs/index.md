@@ -748,6 +748,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [fda_510k_substantial_equivalence_architect](prompts/regulatory/quality/fda_510k_substantial_equivalence_architect.prompt.md)
 - [FDA Breakthrough Device Designation Architect](prompts/regulatory/quality/fda_breakthrough_device_designation_architect.prompt.md)
 - [FDA CSA Risk-Based Testing Strategy Architect](prompts/regulatory/quality/fda_csa_risk_based_testing_strategy_architect.prompt.md)
+- [fda_q_submission_pre_sub_meeting_package_architect](prompts/regulatory/quality/fda_q_submission_pre_sub_meeting_package_architect.prompt.md)
 - [GLP Quality Assurance](prompts/regulatory/quality/glp_quality_assurance.prompt.md)
 - [iec_62304_soup_anomaly_evaluator](prompts/regulatory/quality/iec_62304_soup_anomaly_evaluator.prompt.md)
 - [IEC 62366-1 Summative Usability Evaluation Protocol Architect](prompts/regulatory/quality/iec_62366_summative_usability_protocol_architect.prompt.md)
