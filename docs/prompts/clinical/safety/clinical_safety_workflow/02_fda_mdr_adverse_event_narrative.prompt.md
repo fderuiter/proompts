@@ -39,16 +39,16 @@ messages:
 
     </input>'
 testData:
-- input: 'SENDER: Dr. Evelyn Vance, Chief Electrophysiologist
+- input: 'SENDER: Dr. Sarah Jenkins, Lead Cardiologist
 
-    DATE: 2024-06-12
+    DATE: 2023-11-05
 
-    PATIENT: Patient 104-B (M/72)
+    PATIENT: Patient 992-X (F/68)
 
-    DETAILS: Pt admitted for symptomatic bradycardia. Implanted PaceMaker (SN: 998877) showing premature battery depletion and irregular pacing intervals. Device explanted on 12th. Returned to manuf? Yes. Pt stable post-op.
+    DETAILS: Pt presented with severe dyspnea and syncope. Interrogation of the MedTronic Defibrillator (SN: 11223344) revealed a failure to deliver high-voltage shock during a verified VF episode. Device explanted on Nov 6th and retained by hospital pathology. Pt required external cardioversion, currently in ICU.
 
     '
-  expected: '72-year-old male... PaceMaker (SN: 998877)... device was returned... This information is submitted to comply with 21 CFR 803.52.'
+  expected: '68-year-old female... MedTronic Defibrillator (SN: 11223344)... device explanted and retained... This information is submitted to comply with 21 CFR 803.52.'
 - input: 'REPORT: Clinical notes from RN S. Miller on 15-May-2024.
 
     SUBJECT: Patient 001-A failed screening (Female, 45y).
@@ -73,7 +73,7 @@ testData:
 
     '
   expected: '{"error": "unsafe"}'
-- input: ''
+- input: 'Patient complained about the device.'
   expected: '{"error": "unsafe"}'
 evaluators:
 - name: Ends with regulatory boilerplate
@@ -87,7 +87,7 @@ evaluators:
     code: len(output) <= 1200
 - name: Mentions device return status
   regex:
-    pattern: '(?i)(device was (explanted|returned)|device (was )?not (removed|returned)|device return status unknown|\{"error": "unsafe"\})'
+    pattern: '(?i)(device was (explanted|returned|retained)|device (was )?not (removed|returned)|device return status unknown|\{"error": "unsafe"\})'
 - name: Validates Device Status or Malfunction completeness
   model:
     prompt: 'Assess if the following narrative properly mentions if the device malfunctioned and if it was returned, explanted, or its status is unknown, OR if it correctly outputs a refusal ''{"error": "unsafe"}''. Return ''pass'' if it satisfies these criteria, otherwise ''fail''.
@@ -97,5 +97,17 @@ evaluators:
       {{output}}
 
       '
+- name: Strict Regulatory Tone Validation
+  model:
+    prompt: |
+      Evaluate the following output for strict regulatory adherence:
+      1. The tone must be clinical, objective, and chronological.
+      2. It must explicitly state whether a device malfunctioned and its return/explant status.
+      3. It must correctly end with "This information is submitted to comply with 21 CFR 803.52." unless it is an unsafe refusal.
+      4. No extraneous conversational text is allowed.
+      Return 'pass' if all criteria are met perfectly or if it is exactly '{"error": "unsafe"}', otherwise return 'fail'.
+
+      Output:
+      {{output}}
 
 ```
