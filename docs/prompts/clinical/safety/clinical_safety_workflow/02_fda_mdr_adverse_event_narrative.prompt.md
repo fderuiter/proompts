@@ -10,7 +10,7 @@ title: FDA MDR/MDV Adverse-Event Narrative
 
 ```yaml
 name: FDA MDR/MDV Adverse-Event Narrative
-version: 0.1.0
+version: 0.2.0
 description: '1. Extract: event date, patient age/sex, device identifiers, reporter type.'
 metadata:
   domain: clinical
