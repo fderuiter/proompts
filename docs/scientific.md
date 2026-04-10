@@ -66,6 +66,7 @@ title: Scientific
 - [free_energy_principle_active_inference_architect](prompts/scientific/computational_theoretical_neuroscience/free_energy_principle_active_inference_architect.prompt.md)
 - [Functional Data Analysis Architect](prompts/scientific/statistics/inference/nonparametric_methods/functional_data_analysis_architect.prompt.md)
 - [FWER Gatekeeping Procedure Code Generator](prompts/scientific/biostatistics/fwer_gatekeeping_procedures.prompt.md)
+- [galois_group_resolvent_architect](prompts/scientific/mathematics/algebra/galois_theory/galois_group_resolvent_architect.prompt.md)
 - [Generate & QC Submission-Ready TLFs](prompts/scientific/biostatistics/submission_ready_tlfs.prompt.md)
 - [genome_scale_metabolic_flux_modeler](prompts/scientific/cellular/metabolism/genome_scale_metabolic_flux_modeler.prompt.md)
 - [graph_theoretical_connectome_analyzer](prompts/scientific/computational_theoretical_neuroscience/graph_theoretical_connectome_analyzer.prompt.md)
