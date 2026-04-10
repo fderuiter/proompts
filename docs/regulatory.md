@@ -47,6 +47,7 @@ title: Regulatory
 - [EU MDR PMCF Plan Architect](prompts/regulatory/quality/eu_mdr_pmcf_plan_architect.prompt.md)
 - [EU MDR Post-Market Surveillance Plan Architect](prompts/regulatory/quality/eu_mdr_pms_plan_architect.prompt.md)
 - [EU MDR PSUR Architect](prompts/regulatory/quality/eu_mdr_psur_architect.prompt.md)
+- [EU MDR Technical Documentation Architect](prompts/regulatory/submissions/eu_mdr_technical_documentation_architect.prompt.md)
 - [EU MDR Technical-Documentation Gap Assessment](prompts/regulatory/strategy/eu_mdr_gap_assessment.prompt.md)
 - [eu_mdr_sscp_architect](prompts/regulatory/quality/eu_mdr_sscp_architect.prompt.md)
 - [FDA 483 Response Strategist](prompts/regulatory/quality/fda_483_response_strategist.prompt.md)
