@@ -11,7 +11,7 @@ Produce a month-by-month cash-flow forecast for site payments.
 ```yaml
 ---
 name: Investigator-Site Payment Forecast
-version: 0.1.0
+version: 0.1.1
 description: Produce a month-by-month cash-flow forecast for site payments.
 metadata:
   domain: business
