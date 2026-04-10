@@ -135,5 +135,6 @@ title: Regulatory
 - [Special Controls Labeling Compliance](prompts/regulatory/device_specifics/special_controls_labeling_compliance.prompt.md)
 - [Strategic Regulatory Pathway Plan](prompts/regulatory/strategy/strategic_regulatory_pathway_plan.prompt.md)
 - [Supplier Corrective Action Request Evaluator](prompts/regulatory/quality/supplier_corrective_action_request_evaluator.prompt.md)
+- [Supplier Quality Agreement Architect](prompts/regulatory/quality/supplier_quality_agreement_architect.prompt.md)
 - [UDI GUDID Submission](prompts/regulatory/submissions/udi_gudid_submission.prompt.md)
 - [Zika Virus Reagent Study Design](prompts/regulatory/device_specifics/zika_virus_reagent_study_design.prompt.md)

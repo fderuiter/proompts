@@ -789,6 +789,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [samd_iec62304_software_architecture_architect](prompts/regulatory/quality/samd_iec62304_software_architecture_architect.prompt.md)
 - [samd_iec_62304_software_safety_classification_architect](prompts/regulatory/quality/samd_iec_62304_software_safety_classification_architect.prompt.md)
 - [Supplier Corrective Action Request Evaluator](prompts/regulatory/quality/supplier_corrective_action_request_evaluator.prompt.md)
+- [Supplier Quality Agreement Architect](prompts/regulatory/quality/supplier_quality_agreement_architect.prompt.md)
 - [510(k)/De Novo Pre-Submission Strategy](prompts/regulatory/strategy/510k_pre-sub_strategy.prompt.md)
 - [AI Risk Mapper](prompts/regulatory/strategy/ai_risk_mapper.prompt.md)
 - [Breakthrough Device Designation Architect](prompts/regulatory/strategy/breakthrough_device_designation_architect.prompt.md)
