@@ -46,6 +46,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Source Document and Endpoint Checklist](prompts/clinical/adjudication/adjudication_workflow/02_source_document_endpoint_checklist.prompt.md)
 - [Analyze Adjudication KPIs](prompts/clinical/adjudication/adjudication_workflow/03_analyze_adjudication_kpis.prompt.md)
 
+## Algebra
+
+- [galois_group_resolvent_architect](prompts/scientific/mathematics/algebra/galois_theory/galois_group_resolvent_architect.prompt.md)
+
 ## Analytical
 
 - [Predictive Multidimensional Spectroscopy Architect](prompts/scientific/chemistry/analytical/spectroscopy/predictive_multidimensional_spectroscopy_architect.prompt.md)
