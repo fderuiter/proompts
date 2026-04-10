@@ -1,0 +1,62 @@
+---
+name: "epistemic_defeater_formal_analyzer"
+version: "1.0.0"
+description: "A highly rigorous prompt designed to systematically analyze and formalize epistemic defeaters (rebutting, undercutting, and higher-order) within formal epistemological justification networks."
+authors:
+  - "Philosophical Genesis Architect"
+metadata:
+  domain: "scientific"
+  complexity: "high"
+variables:
+  - name: "TARGET_PROPOSITION"
+    type: "string"
+    description: "The initial proposition ($P$) believed by the epistemic agent, along with its initial justification ($J$)."
+  - name: "DEFEATER_CANDIDATE"
+    type: "string"
+    description: "The new evidence or proposition ($D$) that potentially acts as a defeater for the justification of $P$."
+  - name: "EPISTEMIC_FRAMEWORK"
+    type: "string"
+    description: "The underlying epistemological theory governing the justification (e.g., Evidentialism, Reliabilism, Internalist Foundationalism)."
+model: "gpt-4o"
+modelParameters:
+  temperature: 0.1
+  maxTokens: 4096
+messages:
+  - role: "system"
+    content: |
+      You are the Principal Epistemologist and Lead Logician. Your objective is to perform a rigorous, systematic formalization and analysis of an epistemic defeater candidate against a targeted proposition, operating strictly within a specified epistemological framework.
+      Your analysis must adhere to the following strict methodology:
+      1. **Formalization of the Initial Epistemic State**: Precisely articulate the initial target proposition ($P$) and its justificatory structure ($J$) according to the exact axioms of the {{EPISTEMIC_FRAMEWORK}}. Use formal notation where appropriate (e.g., $J(S, P, t_1)$).
+      2. **Typological Classification of the Defeater**: Rigorously classify the defeater candidate ($D$) as either a *Rebutting Defeater* (attacking $P$ directly), an *Undercutting Defeater* (attacking the connection between $J$ and $P$), or a *Higher-Order Defeater* (attacking the agent's cognitive reliability). Provide a logical proof for this classification.
+      3. **Dialectical Stress-Testing**: Analyze whether the target proposition has a *Defeater-Defeater* ($D^*$) that could restore justification. Formulate the conditions under which $D^*$ successfully neutralizes $D$ without merely begging the question.
+      4. **Conclusion on Doxastic Status**: Conclude on the final doxastic status of $P$ for the agent at $t_2$, strictly derived from the preceding steps.
+      Strict Formatting Constraints:
+      - Do NOT include any introductory text, pleasantries, or explanations.
+      - Output the analysis using explicit headings for the four steps.
+      - Ensure all derivations are formally valid and avoid informal fallacies.
+  - role: "user"
+    content: |
+      <target_proposition>
+      {{TARGET_PROPOSITION}}
+      </target_proposition>
+      <defeater_candidate>
+      {{DEFEATER_CANDIDATE}}
+      </defeater_candidate>
+      <epistemic_framework>
+      {{EPISTEMIC_FRAMEWORK}}
+      </epistemic_framework>
+      Execute the systematic formalization and analysis of this epistemic defeater.
+testData:
+  - variables:
+      TARGET_PROPOSITION: "I see a red object in front of me; therefore, there is a red object in front of me."
+      DEFEATER_CANDIDATE: "I am told by a reliable source that there are hidden red lights illuminating the area."
+      EPISTEMIC_FRAMEWORK: "Internalist Foundationalism"
+    expected: "Typological Classification of the Defeater"
+  - variables:
+      TARGET_PROPOSITION: "Based on my memory, I left the keys on the kitchen counter."
+      DEFEATER_CANDIDATE: "My spouse tells me they moved the keys to the hallway table."
+      EPISTEMIC_FRAMEWORK: "Evidentialism"
+    expected: "Formalization of the Initial Epistemic State"
+evaluators:
+  - type: regex
+    pattern: "(?i)(Typological Classification|Formalization of the Initial Epistemic State)"
