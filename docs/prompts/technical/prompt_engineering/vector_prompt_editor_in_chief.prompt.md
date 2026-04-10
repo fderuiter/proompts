@@ -11,7 +11,7 @@ Reviews draft prompts, eliminates generic phrasing, and elevates them with speci
 ```yaml
 ---
 name: Vector Prompt Editor-in-Chief
-version: "1.1.0"
+version: "1.1.1"
 description: Reviews draft prompts, eliminates generic phrasing, and elevates them with specific personas, precise constraints, and contextual framing.
 metadata:
   domain: technical
