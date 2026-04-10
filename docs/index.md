@@ -648,6 +648,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Physical
 
+- [Microkinetic Modeling Architect](prompts/scientific/chemistry/physical/kinetics/microkinetic_modeling_architect.prompt.md)
 - [Non-Ideal Fluid Phase Equilibria Architect](prompts/scientific/chemistry/physical/thermodynamics/non_ideal_fluid_phase_equilibria_architect.prompt.md)
 
 ## Physics
