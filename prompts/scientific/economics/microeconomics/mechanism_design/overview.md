@@ -1,3 +1,4 @@
-# Mechanism Design
+# Mechanism Design Overview
 
-This directory contains prompts for modeling and executing mechanism design tasks, such as designing optimal mechanisms leveraging the revelation principle, incentive compatibility (IC), individual rationality (IR), and virtual valuation equations.
+## Prompts
+- **[optimal_mechanism_design_architect](optimal_mechanism_design_architect.prompt.yaml)**: Formulates optimal mechanism design frameworks leveraging the revelation principle, incentive compatibility (IC), individual rationality (IR), and virtual valuation equations.
