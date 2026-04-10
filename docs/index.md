@@ -817,6 +817,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [510(k) Substantial Equivalence Preparation](prompts/regulatory/submissions/510_k_substantial_equivalence_preparation.prompt.md)
 - [Combination Product Jurisdiction](prompts/regulatory/submissions/combination_product_jurisdiction.prompt.md)
 - [De Novo Request Preparation](prompts/regulatory/submissions/de_novo_request_preparation.prompt.md)
+- [EU MDR Technical Documentation Architect](prompts/regulatory/submissions/eu_mdr_technical_documentation_architect.prompt.md)
 - [Humanitarian Device Exemption (HDE)](prompts/regulatory/submissions/humanitarian_device_exemption_hde.prompt.md)
 - [ich_m4e_ctd_clinical_overview_architect](prompts/regulatory/submissions/ich_m4e_ctd_clinical_overview_architect.prompt.md)
 - [IDE Application Preparation](prompts/regulatory/submissions/ide_application_preparation.prompt.md)
