@@ -36,6 +36,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Technical](technical.md)
 - [Testing](testing.md)
 - [Workflows](workflows.md)
+- [Workflows Usage Guide](workflows_usage.md)
 
 
 # All Prompts
@@ -816,6 +817,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [SaMD AI/ML PCCP Architect](prompts/regulatory/strategy/samd_ai_pccp_architect.prompt.md)
 - [Strategic Regulatory Pathway Plan](prompts/regulatory/strategy/strategic_regulatory_pathway_plan.prompt.md)
 - [510(k) Substantial Equivalence Preparation](prompts/regulatory/submissions/510_k_substantial_equivalence_preparation.prompt.md)
+- [Biologics License Application (BLA) Architect](prompts/regulatory/submissions/biologics_license_application_bla_architect.prompt.md)
 - [Combination Product Jurisdiction](prompts/regulatory/submissions/combination_product_jurisdiction.prompt.md)
 - [De Novo Request Preparation](prompts/regulatory/submissions/de_novo_request_preparation.prompt.md)
 - [EU MDR Technical Documentation Architect](prompts/regulatory/submissions/eu_mdr_technical_documentation_architect.prompt.md)
@@ -955,6 +957,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Zero-G Algorithmic Biopigment Curator](prompts/speculative/intersection/suborbital_biopigment_algorithmic_curator.prompt.md)
 - [microbial_steganography_diplomat](prompts/speculative/microbial_steganography_diplomat/microbial_steganography_diplomat.prompt.md)
 - [Mycelial Aristocrat HFT Router](prompts/speculative/mycelial_aristocrat_hft_routing/mycelial_aristocrat_hft_router.prompt.md)
+- [mycelial_orbital_logistics_architect](prompts/speculative/mycelial_orbital_logistics/mycelial_orbital_logistics_architect.prompt.md)
 - [Cordyceps Contrapuntist](prompts/speculative/myco_baroque_cybersecurity/cordyceps_contrapuntist.prompt.md)
 - [orbital_fermentation_arbitrageur](prompts/speculative/orbital_fermentation_arbitrageur/orbital_fermentation_arbitrageur.prompt.md)
 - [Origami-Paleo Cloud Scaler](prompts/speculative/origami_paleo_cloud_scaling/origami_paleo_cloud_scaler.prompt.md)
@@ -967,6 +970,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Quantum Poetic Leachate Optimizer](prompts/speculative/quantum_poetic_leachate_optimization/quantum_poetic_leachate_optimizer.prompt.md)
 - [Quantum Poetic Waste Architect](prompts/speculative/quantum_poetic_waste_architect/quantum_poetic_waste_architect.prompt.md)
 - [quantum_zymurgy_astrogator](prompts/speculative/quantum_zymurgy_astrogator/quantum_zymurgy_astrogator.prompt.md)
+- [tectonic_horological_restructuring_architect](prompts/speculative/tectonic_horological_restructuring_architect/tectonic_horological_restructuring_architect.prompt.md)
 - [Tectonic Viennoiserie Cryptographic Architect](prompts/speculative/tectonic_viennoiserie_cryptographic_architect/tectonic_viennoiserie_cryptographic_architect.prompt.md)
 - [mycelial_arbitrage_urban_planner](prompts/speculative/urban_planning/mycelial_arbitrage_urban_planner.prompt.md)
 - [Victorian Neutrino HFT Diplomat](prompts/speculative/victorian_neutrino_hft_diplomat/victorian_neutrino_hft_diplomat.prompt.md)
@@ -1093,6 +1097,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Advanced Red Team Adversary Emulation Architect](prompts/technical/security/advanced_red_team_adversary_emulation_architect.prompt.md)
 - [Advanced Volatile Memory Forensics Analyst](prompts/technical/security/advanced_volatile_memory_forensics_analyst.prompt.md)
 - [ai_threat_modeling_architect](prompts/technical/security/ai_threat_modeling_architect.prompt.md)
+- [API Security & Zero Trust Architect](prompts/technical/security/api_security_zero_trust_architect.prompt.md)
 - [APT Threat Hunting Query Engineer](prompts/technical/security/apt_threat_hunting_query_engineer.prompt.md)
 - [automated_malware_reverse_engineering_analyst](prompts/technical/security/automated_malware_reverse_engineering_analyst.prompt.md)
 - [Cloud IAM Least-Privilege Remediation Architect](prompts/technical/security/cloud_iam_least_privilege_remediation_architect.prompt.md)
