@@ -54,6 +54,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Technical](technical.md)
 - [Testing](testing.md)
 - [Workflows](workflows.md)
+- [Workflows Usage Guide](workflows_usage.md)
 """
 
 
