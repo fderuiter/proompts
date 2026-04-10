@@ -1097,6 +1097,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Advanced Red Team Adversary Emulation Architect](prompts/technical/security/advanced_red_team_adversary_emulation_architect.prompt.md)
 - [Advanced Volatile Memory Forensics Analyst](prompts/technical/security/advanced_volatile_memory_forensics_analyst.prompt.md)
 - [ai_threat_modeling_architect](prompts/technical/security/ai_threat_modeling_architect.prompt.md)
+- [API Security & Zero Trust Architect](prompts/technical/security/api_security_zero_trust_architect.prompt.md)
 - [APT Threat Hunting Query Engineer](prompts/technical/security/apt_threat_hunting_query_engineer.prompt.md)
 - [automated_malware_reverse_engineering_analyst](prompts/technical/security/automated_malware_reverse_engineering_analyst.prompt.md)
 - [Cloud IAM Least-Privilege Remediation Architect](prompts/technical/security/cloud_iam_least_privilege_remediation_architect.prompt.md)
