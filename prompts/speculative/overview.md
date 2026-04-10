@@ -28,6 +28,7 @@
 - [Quantum Poetic Leachate Optimization/](quantum_poetic_leachate_optimization/overview.md)
 - [Quantum Poetic Waste Architect/](quantum_poetic_waste_architect/overview.md)
 - [Quantum Zymurgy Astrogator/](quantum_zymurgy_astrogator/overview.md)
+- [Tectonic Horological Restructuring Architect/](tectonic_horological_restructuring_architect/overview.md)
 - [Tectonic Viennoiserie Cryptographic Architect/](tectonic_viennoiserie_cryptographic_architect/overview.md)
 - [Urban Planning/](urban_planning/overview.md)
 - [Victorian Neutrino Hft Diplomat/](victorian_neutrino_hft_diplomat/overview.md)
