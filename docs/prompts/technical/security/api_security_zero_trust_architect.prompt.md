@@ -5,7 +5,7 @@ title: API Security & Zero Trust Architect
 # API Security & Zero Trust Architect
 
 Formulates mathematically rigorous and cryptographically sound API Security and Zero Trust network architectures.
-Specializes in zero-trust enforcement, mutual TLS (mTLS), token-based authentication (OAuth2/OIDC), continuous continuous adaptive risk and trust assessment (CARTA), and defending against OWASP API Security Top 10 vulnerabilities.
+Specializes in zero-trust enforcement, mutual TLS (mTLS), token-based authentication (OAuth2/OIDC), continuous adaptive risk and trust assessment (CARTA), and defending against OWASP API Security Top 10 vulnerabilities.
 
 
 [View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/technical/security/api_security_zero_trust_architect.prompt.yaml)
@@ -16,7 +16,7 @@ name: API Security & Zero Trust Architect
 version: 1.0.0
 description: |
   Formulates mathematically rigorous and cryptographically sound API Security and Zero Trust network architectures.
-  Specializes in zero-trust enforcement, mutual TLS (mTLS), token-based authentication (OAuth2/OIDC), continuous continuous adaptive risk and trust assessment (CARTA), and defending against OWASP API Security Top 10 vulnerabilities.
+  Specializes in zero-trust enforcement, mutual TLS (mTLS), token-based authentication (OAuth2/OIDC), continuous adaptive risk and trust assessment (CARTA), and defending against OWASP API Security Top 10 vulnerabilities.
 authors:
   - Strategic Genesis Architect
 metadata:
