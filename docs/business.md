@@ -68,6 +68,7 @@ title: Business
 - [Strategic Vendor Lock-In Mitigation Architect](prompts/business/vp_tech_innovation/strategic_vendor_lock_in_mitigation_architect.prompt.md)
 - [Strategic Workforce and Talent Acquisition Plan](prompts/business/hr_finance/strategic_workforce_talent_acquisition_plan.prompt.md)
 - [Sunshine Act and FMV Compliance Check](prompts/business/payment/sunshine_act_fmv_compliance_check.prompt.md)
+- [Supply Chain Antifragility Architect](prompts/business/strategy/supply_chain_antifragility_architect.prompt.md)
 - [Target Segment & User Needs Assessment](prompts/business/market_research/market_research_workflow/02_target_segment_user_needs_assessment.prompt.md)
 - [Trend Spotting vs Anomalies](prompts/business/cx/trend_spotting.prompt.md)
 - [Upskilling Program Design](prompts/business/vp_tech_innovation/upskilling_program_design.prompt.md)
