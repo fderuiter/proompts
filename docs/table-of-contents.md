@@ -680,6 +680,7 @@
 [Zero-G Algorithmic Biopigment Curator](prompts/speculative/intersection/suborbital_biopigment_algorithmic_curator.prompt.md)
 [microbial_steganography_diplomat](prompts/speculative/microbial_steganography_diplomat/microbial_steganography_diplomat.prompt.md)
 [Mycelial Aristocrat HFT Router](prompts/speculative/mycelial_aristocrat_hft_routing/mycelial_aristocrat_hft_router.prompt.md)
+[mycelial_orbital_logistics_architect](prompts/speculative/mycelial_orbital_logistics/mycelial_orbital_logistics_architect.prompt.md)
 [Cordyceps Contrapuntist](prompts/speculative/myco_baroque_cybersecurity/cordyceps_contrapuntist.prompt.md)
 [orbital_fermentation_arbitrageur](prompts/speculative/orbital_fermentation_arbitrageur/orbital_fermentation_arbitrageur.prompt.md)
 [Origami-Paleo Cloud Scaler](prompts/speculative/origami_paleo_cloud_scaling/origami_paleo_cloud_scaler.prompt.md)
