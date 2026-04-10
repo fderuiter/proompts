@@ -13,6 +13,7 @@ title: Regulatory
 - [AI/ML Predetermined Change Control Plan Architect](prompts/regulatory/quality/ai_ml_predetermined_change_control_plan_architect.prompt.md)
 - [ALCOA-C Data Integrity Checklist](prompts/regulatory/adherence/alcoa_c_data_integrity_checklist.prompt.md)
 - [Automated Image Assessment System 510(k)](prompts/regulatory/device_specifics/automated_image_assessment_system_510_k.prompt.md)
+- [Biologics License Application (BLA) Architect](prompts/regulatory/submissions/biologics_license_application_bla_architect.prompt.md)
 - [Breakthrough Device Designation Architect](prompts/regulatory/strategy/breakthrough_device_designation_architect.prompt.md)
 - [CAPA Investigation Report Writer](prompts/regulatory/quality/capa_investigation_report_writer.prompt.md)
 - [CAPA Management Process](prompts/regulatory/quality/capa_management_process.prompt.md)

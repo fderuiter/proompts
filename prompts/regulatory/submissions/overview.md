@@ -2,6 +2,7 @@
 
 ## Prompts
 - **[510(k) Substantial Equivalence Preparation](510_k_substantial_equivalence_preparation.prompt.yaml)**: Draft a substantial equivalence comparison and summary between a subject device and predicate(s) to demonstrate safety and effectiveness.
+- **[Biologics License Application (BLA) Architect](biologics_license_application_bla_architect.prompt.yaml)**: Formulates rigorous, compliant FDA Biologics License Application (BLA) eCTD submissions for biological products, ensuring alignment with 21 CFR 600-680 and ICH M4 guidelines.
 - **[Combination Product Jurisdiction](combination_product_jurisdiction.prompt.yaml)**: Prepare a Request for Designation (RFD) to identify primary FDA jurisdiction.
 - **[De Novo Request Preparation](de_novo_request_preparation.prompt.yaml)**: Generate a summary of risks and mitigations for a De Novo classification request.
 - **[EU MDR Technical Documentation Architect](eu_mdr_technical_documentation_architect.prompt.yaml)**: Formulates rigorous, compliant EU MDR Annex II and III technical documentation for medical devices, ensuring alignment with General Safety and Performance Requirements (GSPRs) and Notified Body expectations.
