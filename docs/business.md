@@ -17,6 +17,7 @@ title: Business
 - [Competitive-Bid Pricing & Margin Optimizer](prompts/business/cfo/cfo_workflow/02_competitive_bid_pricing.prompt.md)
 - [Competitor-Positioning Brief](prompts/business/development/competitor_positioning_brief.prompt.md)
 - [Corporate Capital Structure Optimization Architect](prompts/business/strategy/corporate_capital_structure_optimization_architect.prompt.md)
+- [Corporate Transfer Pricing Optimization Architect](prompts/business/strategy/corporate_transfer_pricing_optimization_architect.prompt.md)
 - [Corporate Turnaround Restructuring Architect](prompts/business/strategy/corporate_turnaround_restructuring_architect.prompt.md)
 - [Corporate Venture Capital Strategy Architect](prompts/business/strategy/corporate_venture_capital_strategy_architect.prompt.md)
 - [Corporate Vertical Integration Structuring Architect](prompts/business/strategy/corporate_vertical_integration_structuring_architect.prompt.md)
