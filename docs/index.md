@@ -132,6 +132,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Real Options Valuation Architect](prompts/business/strategy/real_options_valuation_architect.prompt.md)
 - [Strategic Capital Allocation Architect](prompts/business/strategy/strategic_capital_allocation_architect.prompt.md)
 - [Strategic Real Options Valuation Architect](prompts/business/strategy/strategic_real_options_valuation_architect.prompt.md)
+- [Supply Chain Antifragility Architect](prompts/business/strategy/supply_chain_antifragility_architect.prompt.md)
 - [zero_based_budgeting_turnaround_architect](prompts/business/strategy/zero_based_budgeting_turnaround_architect.prompt.md)
 - [Build vs. Buy Decision Matrix](prompts/business/vp_tech_innovation/build_vs_buy_matrix.prompt.md)
 - [Disruption Radar](prompts/business/vp_tech_innovation/disruption_radar.prompt.md)
