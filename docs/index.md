@@ -121,6 +121,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [blue_ocean_value_innovation_architect](prompts/business/strategy/blue_ocean_value_innovation_architect.prompt.md)
 - [Corporate Turnaround Restructuring Architect](prompts/business/strategy/corporate_turnaround_restructuring_architect.prompt.md)
 - [Corporate Venture Capital Strategy Architect](prompts/business/strategy/corporate_venture_capital_strategy_architect.prompt.md)
+- [Corporate Vertical Integration Structuring Architect](prompts/business/strategy/corporate_vertical_integration_structuring_architect.prompt.md)
 - [Cross-Border Joint Venture Structuring Architect](prompts/business/strategy/cross_border_joint_venture_structuring_architect.prompt.md)
 - [game_theoretic_competitive_dynamics_architect](prompts/business/strategy/game_theoretic_competitive_dynamics_architect.prompt.md)
 - [Hostile Takeover Defense Matrix Architect](prompts/business/strategy/hostile_takeover_defense_matrix.prompt.md)
