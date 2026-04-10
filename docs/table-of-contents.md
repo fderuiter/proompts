@@ -400,6 +400,7 @@
 [EO Sterilization Validation Protocol](prompts/scientific/microbiology/microbiology_workflow/02_eo_sterilization_validation_protocol.prompt.md)
 [Endotoxin Control & 510(k) Risk Plan](prompts/scientific/microbiology/microbiology_workflow/03_endotoxin_control_510k_risk_plan.prompt.md)
 [n_player_bayesian_nash_equilibrium_auction_architect](prompts/scientific/economics/microeconomics/game_theory/n_player_bayesian_nash_equilibrium_auction_architect.prompt.md)
+[optimal_mechanism_design_architect](prompts/scientific/economics/microeconomics/mechanism_design/optimal_mechanism_design_architect.prompt.md)
 [high_dimensional_sparse_regression_architect](prompts/scientific/statistics/modeling/high_dimensional_analysis/high_dimensional_sparse_regression_architect.prompt.md)
 [joint_longitudinal_survival_architect](prompts/scientific/statistics/modeling/survival_analysis/joint_longitudinal_survival_architect.prompt.md)
 [complex_ppi_network_mapper](prompts/scientific/molecular/proteomics/complex_ppi_network_mapper.prompt.md)
