@@ -816,6 +816,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [SaMD AI/ML PCCP Architect](prompts/regulatory/strategy/samd_ai_pccp_architect.prompt.md)
 - [Strategic Regulatory Pathway Plan](prompts/regulatory/strategy/strategic_regulatory_pathway_plan.prompt.md)
 - [510(k) Substantial Equivalence Preparation](prompts/regulatory/submissions/510_k_substantial_equivalence_preparation.prompt.md)
+- [Biologics License Application (BLA) Architect](prompts/regulatory/submissions/biologics_license_application_bla_architect.prompt.md)
 - [Combination Product Jurisdiction](prompts/regulatory/submissions/combination_product_jurisdiction.prompt.md)
 - [De Novo Request Preparation](prompts/regulatory/submissions/de_novo_request_preparation.prompt.md)
 - [EU MDR Technical Documentation Architect](prompts/regulatory/submissions/eu_mdr_technical_documentation_architect.prompt.md)
