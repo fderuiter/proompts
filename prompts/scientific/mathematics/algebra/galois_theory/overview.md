@@ -1,3 +1,4 @@
-# Galois Theory
+# Galois Theory Overview
 
-This directory contains advanced mathematical prompt templates focused on Galois theory, the study of the connection between field theory and group theory, particularly the symmetries in the roots of polynomial equations and field extensions.
+## Prompts
+- **[galois_group_resolvent_architect](galois_group_resolvent_architect.prompt.yaml)**: Computes rigorous Galois groups of polynomials over finite extensions and formulates Galois resolvents using symmetric group properties and field automorphisms.

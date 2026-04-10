@@ -1,3 +1,4 @@
-# Algebra
+# Algebra Overview
 
-This directory contains advanced mathematical prompt templates focused on abstract algebra, encompassing structures such as groups, rings, fields, and their representations.
+## Categories
+- [Galois Theory/](galois_theory/overview.md)
