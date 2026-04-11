@@ -26,6 +26,7 @@ title: Business
 - [Cross-Functional Advocacy Memo](prompts/business/cx/revenue_risk_advocacy.prompt.md)
 - [CSM Portfolio Balancing](prompts/business/cx/csm_portfolio_balancing.prompt.md)
 - [Disruption Radar](prompts/business/vp_tech_innovation/disruption_radar.prompt.md)
+- [Distressed Debt Restructuring Chapter 11 Architect](prompts/business/strategy/distressed_debt_restructuring_chapter11_architect.prompt.md)
 - [DMAIC Process Optimization Architect](prompts/business/operations/lean_six_sigma/dmaic_process_optimization_architect.prompt.md)
 - [Earnings Call Script Prep](prompts/business/cfo/earnings_call_script_prep.prompt.md)
 - [Elevator Pitch for Expensive Tech](prompts/business/vp_tech_innovation/elevator_pitch_expensive_tech.prompt.md)
