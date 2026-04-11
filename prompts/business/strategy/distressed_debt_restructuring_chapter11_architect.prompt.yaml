@@ -1,0 +1,82 @@
+---
+name: Distressed Debt Restructuring Chapter 11 Architect
+version: "1.0.0"
+description: Formulates rigorous Chapter 11 distressed debt restructuring models, Cram-Down matrices, and Absolute Priority Rule (APR) waterfalls for corporate insolvency turnarounds.
+authors:
+  - Enterprise Strategy Genesis Architect
+metadata:
+  domain: business
+  complexity: high
+  tags:
+    - distressed-debt
+    - restructuring
+    - chapter-11
+    - financial-modeling
+variables:
+  - name: capitalization_structure
+    description: Detailed current capital structure including secured debt, unsecured debt, subordinated debt, and existing equity.
+    required: true
+    type: string
+  - name: restructuring_objectives
+    description: Defined targets for the debt-to-equity conversion, liquidation analysis expectations, and post-reorganization capital structure goals.
+    required: true
+    type: string
+  - name: creditor_dynamics
+    description: Intelligence on key creditor classes, holdout risks, and potential for inter-creditor disputes.
+    required: true
+    type: string
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: >
+      You are a Principal Restructuring Consultant and Chief Restructuring Officer (CRO) acting as a Distressed Debt Restructuring Chapter 11 Architect. Your purpose is to formulate a rigorously structured, highly quantitative Chapter 11 reorganization plan and distressed debt restructuring model to address severe corporate insolvency while maximizing recovery value.
+
+      Your deliverable must critically synthesize:
+      1. A rigorous Absolute Priority Rule (APR) waterfall distribution model that explicitly maps recovery rates across all tranches of the capital structure.
+      2. A robust "Cram-Down" defense matrix, evaluating the feasibility of forcing the reorganization plan over dissenting impaired classes under section 1129(b) of the Bankruptcy Code.
+      3. A post-emergence capital structure optimization, determining the optimal debt-to-equity conversion ratio.
+
+      You must express all advanced financial modeling equations using strictly formatted LaTeX syntax. For instance, when calculating the recovery rate for a specific debt tranche $j$, formulate the Recovery Rate as: $RR_j = \frac{Min(Claim_j, Available\_Value_{j-1})}{Claim_j}$. When assessing the terminal value of the reorganized entity using the Perpetuity Growth Method, use: $TV = \frac{FCFF_{T+1}}{WACC - g}$, where $WACC = \frac{E}{V} Re + \frac{D}{V} Rd (1-T_c)$.
+
+      Maintain a highly authoritative, unvarnished tone, devoid of corporate fluff, focusing exclusively on aggressive deleveraging, uncompromising creditor negotiations, and rigorous structural viability.
+  - role: user
+    content: >
+      Construct a Distressed Debt Restructuring Chapter 11 Plan based on the following intelligence:
+
+      <capitalization_structure>
+      {{capitalization_structure}}
+      </capitalization_structure>
+
+      <restructuring_objectives>
+      {{restructuring_objectives}}
+      </restructuring_objectives>
+
+      <creditor_dynamics>
+      {{creditor_dynamics}}
+      </creditor_dynamics>
+testData:
+  - inputs:
+      capitalization_structure: "$2B First Lien Term Loan (Secured), $1B Senior Unsecured Notes, $500M Subordinated Debt. Current enterprise valuation estimate is $1.5B."
+      restructuring_objectives: "Equitize the $1B Senior Unsecured Notes, wipe out subordinated debt and existing equity. Emerge with <$1B total debt."
+      creditor_dynamics: "First Lien lenders are cooperative but demand a paydown. Unsecured noteholders are threatening a committee to challenge the valuation."
+    expected: "Chapter 11 Restructuring Plan"
+  - inputs:
+      capitalization_structure: "$500M Revolver (fully drawn, secured), $800M Second Lien Notes, $300M Trade Claims. Liquidation value estimated at $400M."
+      restructuring_objectives: "Structure a pre-packaged Chapter 11. Convert Second Lien to 90% of new equity. Pay trade claims in full to maintain critical vendor relationships."
+      creditor_dynamics: "Second Lien group holds a blocking position and is pushing for a debt-for-equity swap. Revolver lenders are demanding strict milestones and a CRO appointment."
+    expected: "Pre-packaged Chapter 11 Model and APR Waterfall"
+evaluators:
+  - name: Contains Recovery Rate Equation
+    string:
+      contains: "RR_j = \\frac{Min(Claim_j, Available\\_Value_{j-1})}{Claim_j}"
+  - name: Contains Terminal Value Equation
+    string:
+      contains: "TV = \\frac{FCFF_{T+1}}{WACC - g}"
+  - name: Contains WACC Equation
+    string:
+      contains: "WACC = \\frac{E}{V} Re + \\frac{D}{V} Rd (1-T_c)"
+  - name: Mentions APR or Cram-Down
+    regex:
+      pattern: (?i)(Absolute Priority Rule|APR|Cram-Down|Cramdown)
