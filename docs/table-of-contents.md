@@ -295,6 +295,7 @@
 [Culinary Amnestic Reconstruction Engine (CARE)](prompts/lifestyle/culinary/culinary_amnestic_reconstruction.prompt.md)
 [Myco-Alchemical Arbitrageur](prompts/lifestyle/fungal_financial_alchemy/myco_alchemical_arbitrageur.prompt.md)
 [Quantum Baroque Garden Architect](prompts/lifestyle/quantum_baroque_gardening/quantum_baroque_garden_architect.prompt.md)
+[agm_belief_revision_formal_engine](prompts/scientific/philosophy/logic/philosophical_logic/agm_belief_revision_formal_engine.prompt.md)
 [Deontic Logic Normative Conflict Resolver](prompts/scientific/philosophy/logic/philosophical_logic/deontic_logic_normative_conflict_resolver.prompt.md)
 [Modal Logic Possible Worlds Evaluator](prompts/scientific/philosophy/logic/philosophical_logic/modal_logic_possible_worlds_evaluator.prompt.md)
 [new_keynesian_dsge_architect](prompts/scientific/economics/macroeconomics/dsge_modeling/new_keynesian_dsge_architect.prompt.md)
