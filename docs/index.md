@@ -995,6 +995,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Stratification
 
+- [theil_t_index_inequality_decomposer](prompts/scientific/sociology/stratification/systemic_inequality/theil_t_index_inequality_decomposer.prompt.md)
 - [wealth_concentration_decomposition_architect](prompts/scientific/sociology/stratification/systemic_inequality/wealth_concentration_decomposition_architect.prompt.md)
 
 ## Study Director
