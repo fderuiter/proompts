@@ -48,6 +48,7 @@
 [Clinical-Trial Budget and Burn-Rate Dashboard](prompts/business/hr_finance/clinical_trial_budget_burn_rate_dashboard.prompt.md)
 [GCP and GDPR Training Compliance Risk Report](prompts/business/hr_finance/gcp_gdpr_compliance_training_risk_report.prompt.md)
 [Strategic Workforce and Talent Acquisition Plan](prompts/business/hr_finance/strategic_workforce_talent_acquisition_plan.prompt.md)
+[Theory of Constraints Throughput Architect](prompts/business/operations/theory_of_constraints_throughput_architect.prompt.md)
 [Build an Audit-Ready Site-Payment Schedule](prompts/business/payment/audit_ready_site_payment_schedule.prompt.md)
 [Medicare Coverage Analysis](prompts/business/payment/coverage_analysis.prompt.md)
 [Global Regulatory and Tax Matrix for Site Payments](prompts/business/payment/global_regulatory_tax_matrix.prompt.md)
