@@ -154,6 +154,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [genome_scale_metabolic_flux_modeler](prompts/scientific/cellular/metabolism/genome_scale_metabolic_flux_modeler.prompt.md)
 - [metabolic_control_analysis_architect](prompts/scientific/cellular/metabolism/metabolic_control_analysis_architect.prompt.md)
+- [astrocytic_tripartite_synapse_calcium_dynamics_architect](prompts/scientific/cellular/neurophysiology/astrocytic_tripartite_synapse_calcium_dynamics_architect.prompt.md)
 
 ## Cfo
 
