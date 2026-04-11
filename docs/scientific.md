@@ -11,6 +11,7 @@ title: Scientific
 - [agm_belief_revision_formal_engine](prompts/scientific/philosophy/logic/philosophical_logic/agm_belief_revision_formal_engine.prompt.md)
 - [algorithmic_behavior_echo_chamber_modeler](prompts/scientific/psychology/computational/network_contagion/algorithmic_behavior_echo_chamber_modeler.prompt.md)
 - [Applied Ethical Stress Tester](prompts/scientific/philosophy/ethics/normative_ethics/applied_ethical_stress_tester.prompt.md)
+- [astrocytic_tripartite_synapse_calcium_dynamics_architect](prompts/scientific/cellular/neurophysiology/astrocytic_tripartite_synapse_calcium_dynamics_architect.prompt.md)
 - [asymptotic_distribution_mle_architect](prompts/scientific/statistics/theory/asymptotics/asymptotic_distribution_mle_architect.prompt.md)
 - [bayesian_hierarchical_model_architect](prompts/scientific/statistics/inference/bayesian_methods/bayesian_hierarchical_model_architect.prompt.md)
 - [behavioral_epidemiology_social_contagion_modeler](prompts/scientific/psychology/computational/network_contagion/behavioral_epidemiology_social_contagion_modeler.prompt.md)
