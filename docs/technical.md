@@ -30,6 +30,7 @@ title: Technical
 - [eBPF Runtime Security Architect](prompts/technical/security/ebpf_runtime_security_architect.prompt.md)
 - [Forge - Script Reliability Agent](prompts/technical/devops/forge_script_reliability.prompt.md)
 - [fully_homomorphic_encryption_circuit_architect](prompts/technical/cryptography/fully_homomorphic_encryption_circuit_architect.prompt.md)
+- [gitops_continuous_delivery_architect](prompts/technical/devops/gitops_continuous_delivery_architect.prompt.md)
 - [Hardware Side-Channel Attack Modeling Architect](prompts/technical/security/hardware_side_channel_attack_modeling_architect.prompt.md)
 - [Heuristic-Evaluation Coach](prompts/technical/design/heuristic_evaluation_coach.prompt.md)
 - [Infrastructure as Code (IaC) Security Architect](prompts/technical/devops/infrastructure_as_code_security_architect.prompt.md)
