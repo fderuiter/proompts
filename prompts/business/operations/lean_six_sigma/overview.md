@@ -1,3 +1,4 @@
-# Lean Six Sigma
+# Lean Six Sigma Overview
 
-Prompts for optimizing operational processes and reducing variance using Lean Six Sigma methodologies.
+## Prompts
+- **[DMAIC Process Optimization Architect](dmaic_process_optimization_architect.prompt.yaml)**: Formulates rigorous Lean Six Sigma DMAIC optimization frameworks to eliminate process defects and minimize operational variance.
