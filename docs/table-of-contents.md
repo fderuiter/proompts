@@ -423,6 +423,7 @@
 [Risk-Based Site Performance Dashboard](prompts/clinical/monitoring/clinical_monitoring_workflow/01_risk_based_site_performance_dashboard.prompt.md)
 [CAPA Plan Builder for Monitoring Findings](prompts/clinical/monitoring/clinical_monitoring_workflow/02_capa_plan_builder_for_monitoring_findings.prompt.md)
 [Monitoring Visit Report (MVR) Quality Critique](prompts/clinical/monitoring/clinical_monitoring_workflow/03_monitoring_visit_report_quality_critique.prompt.md)
+[DMAIC Process Optimization Architect](prompts/business/operations/lean_six_sigma/dmaic_process_optimization_architect.prompt.md)
 [global_supply_chain_geopolitical_duress_architect](prompts/business/operations/supply_chain/global_supply_chain_geopolitical_duress_architect.prompt.md)
 [Global Supply Chain Resilience Architect](prompts/business/operations/supply_chain/global_supply_chain_resilience_architect.prompt.md)
 [Supply Chain Network Topology Optimization Architect](prompts/business/operations/supply_chain/supply_chain_network_topology_optimization_architect.prompt.md)
