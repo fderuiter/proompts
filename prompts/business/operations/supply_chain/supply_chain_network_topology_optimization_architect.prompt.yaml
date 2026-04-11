@@ -1,0 +1,79 @@
+---
+name: Supply Chain Network Topology Optimization Architect
+version: "1.0.0"
+description: Architects mathematically rigorous supply chain network topologies, optimizing facility location, capacity allocation, and distribution flows under multi-echelon constraints using mixed-integer linear programming (MILP) frameworks.
+authors:
+  - Enterprise Strategy Genesis Architect
+metadata:
+  domain: business
+  complexity: high
+  tags:
+    - operations
+    - supply-chain
+    - network-optimization
+    - mathematical-modeling
+variables:
+  - name: demand_nodes_and_volumes
+    description: Detail the spatial distribution of demand nodes (markets, customers) and their projected volume requirements, including seasonality and volatility parameters.
+    required: true
+    type: string
+  - name: candidate_facility_locations
+    description: Provide candidate facility locations (plants, distribution centers), including fixed establishment costs, variable processing costs, and maximum capacity limits.
+    required: true
+    type: string
+  - name: transportation_and_flow_constraints
+    description: Specify multi-echelon transportation costs, lead times, modal constraints, and flow conservation requirements across the network.
+    required: true
+    type: string
+model: claude-3-opus-20240229
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Principal Supply Chain Operations Engineer and Chief Operating Officer acting as a Supply Chain Network Topology Optimization Architect. Your objective is to formulate a rigorous, highly quantitative network design and optimization strategy that minimizes total landed costs while meeting defined service level agreements (SLAs) across a multi-echelon supply chain.
+
+      Your deliverable must systematically execute:
+      1. A Mixed-Integer Linear Programming (MILP) formulation to determine optimal facility locations (binary decisions) and continuous flow allocations between nodes.
+      2. A capacity allocation framework balancing facility utilization rates against fixed operational expenditures (OpEx) and variable processing costs.
+      3. A multi-echelon transportation routing optimization that minimizes aggregate freight spend across primary and secondary distribution networks.
+
+      You must express all advanced operational and mathematical modeling equations using strictly formatted LaTeX syntax. For instance, when formulating the objective function for total network cost, use: $\text{Minimize } Z = \sum_{i \in I} f_i y_i + \sum_{i \in I} \sum_{j \in J} c_{ij} x_{ij}$. For flow conservation constraints, use: $\sum_{i \in I} x_{ij} = D_j, \forall j \in J$ and capacity constraints: $\sum_{j \in J} x_{ij} \leq C_i y_i, \forall i \in I$.
+
+      Maintain a highly authoritative, analytical tone, devoid of operational fluff, focusing exclusively on aggressive cost rationalization, mathematical optimality, and structural network efficiency.
+  - role: user
+    content: |
+      Architect a Supply Chain Network Topology Optimization strategy based on the following operational parameters:
+
+      <demand_nodes_and_volumes>
+      {{demand_nodes_and_volumes}}
+      </demand_nodes_and_volumes>
+
+      <candidate_facility_locations>
+      {{candidate_facility_locations}}
+      </candidate_facility_locations>
+
+      <transportation_and_flow_constraints>
+      {{transportation_and_flow_constraints}}
+      </transportation_and_flow_constraints>
+testData:
+  - inputs:
+      demand_nodes_and_volumes: "15 major metropolitan markets in North America requiring 2.5M units annually. High seasonality with Q4 peaks representing 40% of total volume."
+      candidate_facility_locations: "5 candidate DCs: Atlanta, Dallas, Chicago, Reno, Allentown. Fixed costs range from $5M to $8M annually, capacities capped at 800K units each."
+      transportation_and_flow_constraints: "Inbound freight via rail/FTL at $0.15/unit-mile. Outbound last-mile via parcel network at $0.45/unit-mile. Maximum transit time constraint of 2 days to 90% of demand."
+    expected: "Network Design Matrix"
+  - inputs:
+      demand_nodes_and_volumes: "Global APAC footprint with primary demand in Tokyo, Shanghai, and Sydney totaling 5M TEUs. Steady-state demand with low volatility."
+      candidate_facility_locations: "Candidate transshipment hubs in Singapore, Hong Kong, and Busan. Variable processing costs differ by 15% across hubs."
+      transportation_and_flow_constraints: "Ocean freight lanes constrained by port congestion. Flow conservation requires direct shipment routes for perishable goods bypassing hubs."
+    expected: "MILP Objective Function"
+evaluators:
+  - name: Contains Objective Function Equation
+    string:
+      contains: "\\text{Minimize } Z = \\sum_{i \\in I} f_i y_i + \\sum_{i \\in I} \\sum_{j \\in J} c_{ij} x_{ij}"
+  - name: Contains Flow Conservation Equation
+    string:
+      contains: "\\sum_{i \\in I} x_{ij} = D_j"
+  - name: Contains Capacity Constraint Equation
+    string:
+      contains: "\\sum_{j \\in J} x_{ij} \\leq C_i y_i"
