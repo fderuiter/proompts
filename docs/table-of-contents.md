@@ -798,6 +798,7 @@
 [Heuristic-Evaluation Coach](prompts/technical/design/heuristic_evaluation_coach.prompt.md)
 [Forge - Script Reliability Agent](prompts/technical/devops/forge_script_reliability.prompt.md)
 [Infrastructure as Code (IaC) Security Architect](prompts/technical/devops/infrastructure_as_code_security_architect.prompt.md)
+[SRE Incident Postmortem RCA Architect](prompts/technical/devops/sre_incident_postmortem_rca_architect.prompt.md)
 [Atlas Documentation Specialist](prompts/technical/documentation/atlas_documentation_specialist.prompt.md)
 [Source of Truth Harmonizer](prompts/technical/documentation/source_of_truth_harmonizer.prompt.md)
 [Adversarial Prompt Robustness Tester](prompts/technical/prompt_engineering/adversarial_prompt_robustness_tester.prompt.md)

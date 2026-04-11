@@ -44,6 +44,7 @@ title: Technical
 - [Security Hardening and Dependency Management Implementation](prompts/technical/repository_refactoring/security_hardening_dependency_management_implementation.prompt.md)
 - [Software Supply Chain Provenance Architect](prompts/technical/security/software_supply_chain_provenance_architect.prompt.md)
 - [Source of Truth Harmonizer](prompts/technical/documentation/source_of_truth_harmonizer.prompt.md)
+- [SRE Incident Postmortem RCA Architect](prompts/technical/devops/sre_incident_postmortem_rca_architect.prompt.md)
 - [Stochastic Architect](prompts/technical/data_science/stochastic_model_chain_workflow/01_stochastic_architect.prompt.md)
 - [Stochastic Engineer](prompts/technical/data_science/stochastic_model_chain_workflow/02_stochastic_engineer.prompt.md)
 - [Stochastic Strategist](prompts/technical/data_science/stochastic_model_chain_workflow/03_stochastic_strategist.prompt.md)
