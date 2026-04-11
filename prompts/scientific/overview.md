@@ -13,6 +13,7 @@
 - [Ecology/](ecology/overview.md)
 - [Economics/](economics/overview.md)
 - [Epidemiology/](epidemiology/overview.md)
+- [Formal Logic/](formal_logic/overview.md)
 - [Genetics/](genetics/overview.md)
 - [Mathematics/](mathematics/overview.md)
 - [Medical Writing/](medical_writing/overview.md)
