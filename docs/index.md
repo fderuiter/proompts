@@ -614,6 +614,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Modeling
 
 - [high_dimensional_sparse_regression_architect](prompts/scientific/statistics/modeling/high_dimensional_analysis/high_dimensional_sparse_regression_architect.prompt.md)
+- [spatio_temporal_geostatistical_spde_inla_architect](prompts/scientific/statistics/modeling/spatio_temporal_analysis/spatio_temporal_geostatistical_spde_inla_architect.prompt.md)
 - [joint_longitudinal_survival_architect](prompts/scientific/statistics/modeling/survival_analysis/joint_longitudinal_survival_architect.prompt.md)
 
 ## Molecular
