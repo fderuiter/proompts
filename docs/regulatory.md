@@ -82,6 +82,7 @@ title: Regulatory
 - [Inspection-Readiness Drill (CAPA Builder)](prompts/regulatory/quality/inspection_readiness_drill_capa_builder.prompt.md)
 - [Integrated Submission Strategy Coach](prompts/regulatory/quality/integrated_submission_strategy_coach.prompt.md)
 - [Intended Use and Indications for Use Alignment](prompts/regulatory/adherence/intended_use_and_indications_for_use_alignment.prompt.md)
+- [Investigational New Drug (IND) Architect](prompts/regulatory/submissions/investigational_new_drug_ind_architect.prompt.md)
 - [IRB Protocol Review](prompts/regulatory/compliance/irb_protocol_review.prompt.md)
 - [ISO 10993 Biological Evaluation Plan Architect](prompts/regulatory/quality/iso_10993_biological_evaluation_plan_architect.prompt.md)
 - [IVD Performance Study Compliance Review](prompts/regulatory/strategy/ivd_performance_study_compliance_review.prompt.md)
