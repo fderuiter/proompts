@@ -379,6 +379,7 @@
 [Market Report Executive Summary](prompts/business/market_research/market_research_workflow/04_market_report_exec_summary.prompt.md)
 [categorical_theorem_translator](prompts/scientific/mathematics/category_theory/categorical_theorem_translator.prompt.md)
 [category_theory_adjunction_architect](prompts/scientific/mathematics/category_theory/category_theory_adjunction_architect.prompt.md)
+[topos_theoretic_sheaf_semantics_evaluator](prompts/scientific/mathematics/category_theory/topos_theoretic_sheaf_semantics_evaluator.prompt.md)
 [Physics-Informed Neural Network (PINN) Architect](prompts/scientific/mathematics/computational/physics_informed_neural_network_architect.prompt.md)
 [Custom Axiomatic System Soundness Evaluator](prompts/scientific/mathematics/formal_logic/custom_axiomatic_system_soundness_evaluator.prompt.md)
 [dependent_type_theory_judgment_derivation](prompts/scientific/mathematics/formal_logic/dependent_type_theory_judgment_derivation.prompt.md)
