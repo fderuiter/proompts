@@ -836,6 +836,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Humanitarian Device Exemption (HDE)](prompts/regulatory/submissions/humanitarian_device_exemption_hde.prompt.md)
 - [ich_m4e_ctd_clinical_overview_architect](prompts/regulatory/submissions/ich_m4e_ctd_clinical_overview_architect.prompt.md)
 - [IDE Application Preparation](prompts/regulatory/submissions/ide_application_preparation.prompt.md)
+- [Investigational New Drug (IND) Architect](prompts/regulatory/submissions/investigational_new_drug_ind_architect.prompt.md)
 - [Medicare Coverage Request (IDE)](prompts/regulatory/submissions/medicare_coverage_request_ide.prompt.md)
 - [Parallel Review Request](prompts/regulatory/submissions/parallel_review_request.prompt.md)
 - [PMA Post-approval Reporting](prompts/regulatory/submissions/pma_post_approval_reporting.prompt.md)

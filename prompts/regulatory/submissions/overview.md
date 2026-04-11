@@ -9,6 +9,7 @@
 - **[Humanitarian Device Exemption (HDE)](humanitarian_device_exemption_hde.prompt.yaml)**: Explain why the health benefit of a HUD outweighs the risk of injury.
 - **[ich_m4e_ctd_clinical_overview_architect](ich_m4e_ctd_clinical_overview_architect.prompt.yaml)**: Synthesizes complex clinical trial data into a rigorously structured, highly authoritative ICH M4E(R2)-compliant CTD Module 2.5 Clinical Overview, incorporating advanced risk-benefit analysis and biostatistical rationale.
 - **[IDE Application Preparation](ide_application_preparation.prompt.yaml)**: Draft an Investigational Device Exemption (IDE) application, including risk analysis and investigational plans for clinical studies.
+- **[Investigational New Drug (IND) Architect](investigational_new_drug_ind_architect.prompt.yaml)**: Formulates rigorous, compliant Investigational New Drug (IND) applications (21 CFR Part 312), explicitly designed to translate preclinical pharmacology/toxicology into safe Phase 1 clinical protocols and prevent FDA clinical holds.
 - **[Medicare Coverage Request (IDE)](medicare_coverage_request_ide.prompt.yaml)**: Prepare a request packet for CMS reimbursement of an IDE study.
 - **[Parallel Review Request](parallel_review_request.prompt.yaml)**: Draft an email requesting enrollment in the Parallel Review program.
 - **[PMA Post-approval Reporting](pma_post_approval_reporting.prompt.yaml)**: Compile a summary of post-approval requirements, including clinical study data, manufacturing changes, and scientific literature.
