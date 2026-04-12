@@ -916,6 +916,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [hodgkin_huxley_biophysical_modeler](prompts/scientific/computational_theoretical_neuroscience/hodgkin_huxley_biophysical_modeler.prompt.md)
 - [multi_modal_fmri_eeg_integration_architect](prompts/scientific/computational_theoretical_neuroscience/multi_modal_fmri_eeg_integration_architect.prompt.md)
 - [neural_manifold_state_space_analyzer](prompts/scientific/computational_theoretical_neuroscience/neural_manifold_state_space_analyzer.prompt.md)
+- [optogenetic_photocurrent_biophysical_modeler](prompts/scientific/computational_theoretical_neuroscience/optogenetic_photocurrent_biophysical_modeler.prompt.md)
 - [synaptic_plasticity_weight_update_architect](prompts/scientific/computational_theoretical_neuroscience/synaptic_plasticity_weight_update_architect.prompt.md)
 - [Clinical Study Report (CSR) Writing](prompts/scientific/medical_writing/csr_writing.prompt.md)
 - [investigators_brochure_synthesis_architect](prompts/scientific/medical_writing/investigators_brochure_synthesis_architect.prompt.md)

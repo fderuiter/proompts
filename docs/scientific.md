@@ -130,6 +130,7 @@ title: Scientific
 - [Objective Skills Assessment](prompts/scientific/bioskills/bioskills_workflow/03_objective_skills_assessment.prompt.md)
 - [open_economy_dsge_architect](prompts/scientific/economics/macroeconomics/dsge_modeling/open_economy_dsge_architect.prompt.md)
 - [optimal_mechanism_design_architect](prompts/scientific/economics/microeconomics/mechanism_design/optimal_mechanism_design_architect.prompt.md)
+- [optogenetic_photocurrent_biophysical_modeler](prompts/scientific/computational_theoretical_neuroscience/optogenetic_photocurrent_biophysical_modeler.prompt.md)
 - [Organometallic Catalytic Cycle Architect](prompts/scientific/chemistry/inorganic/catalysis/organometallic_catalytic_cycle_architect.prompt.md)
 - [Peer-Review Checklist for Manuscript Methods](prompts/scientific/biostatistics/peer_review_methods_checklist.prompt.md)
 - [Phase II/III SAP Skeleton](prompts/scientific/biostatistics/phase_ii_iii_sap_skeleton.prompt.md)
