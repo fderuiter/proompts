@@ -296,6 +296,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Non-Adiabatic Photodynamics Architect](prompts/scientific/chemistry/computational/quantum_chemistry/non_adiabatic_photodynamics_architect.prompt.md)
 - [algorithmic_behavior_echo_chamber_modeler](prompts/scientific/psychology/computational/network_contagion/algorithmic_behavior_echo_chamber_modeler.prompt.md)
 - [behavioral_epidemiology_social_contagion_modeler](prompts/scientific/psychology/computational/network_contagion/behavioral_epidemiology_social_contagion_modeler.prompt.md)
+- [mass_psychogenic_illness_diffusion_modeler](prompts/scientific/psychology/computational/network_contagion/mass_psychogenic_illness_diffusion_modeler.prompt.md)
 
 ## Cosmology
 
