@@ -5,6 +5,7 @@ title: Scientific
 # Scientific
 
 ## Prompts
+- [Adaptive Control Loop Tuning Architect](prompts/scientific/mathematics/systems/control_theory/adaptive_control_loop_tuning_architect.prompt.md)
 - [Adaptive Design & Interim Monitoring](prompts/scientific/biostatistics/adaptive_design_interim_monitoring.prompt.md)
 - [ads_cft_holographic_dictionary_architect](prompts/scientific/physics/string_theory/ads_cft_holographic_dictionary_architect.prompt.md)
 - [advanced_retrosynthetic_pathway_generator](prompts/scientific/chemistry/organic/retrosynthesis/advanced_retrosynthetic_pathway_generator.prompt.md)

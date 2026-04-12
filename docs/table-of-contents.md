@@ -725,6 +725,7 @@
 [Draft a GLP-Compliant Study Protocol](prompts/management/study_director/study_director_workflow/01_draft_glp_compliant_study_protocol.prompt.md)
 [Audit Raw Data and Draft a CAPA Summary](prompts/management/study_director/study_director_workflow/02_audit_raw_data_capa_summary.prompt.md)
 [Generate an Executive Summary for the Final Report](prompts/management/study_director/study_director_workflow/03_executive_summary_final_report.prompt.md)
+[Adaptive Control Loop Tuning Architect](prompts/scientific/mathematics/systems/control_theory/adaptive_control_loop_tuning_architect.prompt.md)
 [Stochastic Model Predictive Control (MPC) Architect](prompts/scientific/mathematics/systems/control_theory/stochastic_mpc_architect.prompt.md)
 [PAW Phase 1 - Tactical Recon](prompts/technical/software_engineering/tasks/paw/paw_01_tactical_recon.prompt.md)
 [PAW Phase 2 - Architectural Blueprint](prompts/technical/software_engineering/tasks/paw/paw_02_architectural_blueprint.prompt.md)
