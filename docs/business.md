@@ -77,6 +77,7 @@ title: Business
 - [Supply Chain Antifragility Architect](prompts/business/strategy/supply_chain_antifragility_architect.prompt.md)
 - [Supply Chain Network Topology Optimization Architect](prompts/business/operations/supply_chain/supply_chain_network_topology_optimization_architect.prompt.md)
 - [Target Segment & User Needs Assessment](prompts/business/market_research/market_research_workflow/02_target_segment_user_needs_assessment.prompt.md)
+- [Theory of Constraints Throughput Architect](prompts/business/operations/theory_of_constraints_throughput_architect.prompt.md)
 - [Trend Spotting vs Anomalies](prompts/business/cx/trend_spotting.prompt.md)
 - [Upskilling Program Design](prompts/business/vp_tech_innovation/upskilling_program_design.prompt.md)
 - [Value-Based QBR Generator](prompts/business/cx/value_based_qbr.prompt.md)
