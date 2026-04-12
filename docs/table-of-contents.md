@@ -687,6 +687,7 @@
 [Abyssal-Gothic Liquidity Router](prompts/speculative/abyssal_gothic_liquidity_routing/abyssal_gothic_liquidity_router.prompt.md)
 [benthic_contrapuntal_supply_chain_harmonizer](prompts/speculative/benthic_contrapuntal_supply_chain_harmonizer/benthic_contrapuntal_supply_chain_harmonizer.prompt.md)
 [Byzantine Chromodynamic Flocculation Architect](prompts/speculative/byzantine_chromodynamic_flocculation_architect/byzantine_chromodynamic_flocculation_architect.prompt.md)
+[Cetacean Origami Sharding Architect](prompts/speculative/cetacean_origami_sharding/cetacean_origami_sharding_architect.prompt.md)
 [choreographic_zk_agronomist](prompts/speculative/choreographic_zk_agronomist/choreographic_zk_agronomist.prompt.md)
 [Temporal Syntax Debugger](prompts/speculative/chrono_linguistic_debugging/temporal_syntax_debugger.prompt.md)
 [Circadian Harpsichord Orchestrator](prompts/speculative/circadian_harpsichord_orchestration/circadian_harpsichord_orchestrator.prompt.md)
