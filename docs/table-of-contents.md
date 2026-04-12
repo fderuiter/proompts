@@ -204,6 +204,7 @@
 [Non-Adiabatic Photodynamics Architect](prompts/scientific/chemistry/computational/quantum_chemistry/non_adiabatic_photodynamics_architect.prompt.md)
 [algorithmic_behavior_echo_chamber_modeler](prompts/scientific/psychology/computational/network_contagion/algorithmic_behavior_echo_chamber_modeler.prompt.md)
 [behavioral_epidemiology_social_contagion_modeler](prompts/scientific/psychology/computational/network_contagion/behavioral_epidemiology_social_contagion_modeler.prompt.md)
+[mass_psychogenic_illness_diffusion_modeler](prompts/scientific/psychology/computational/network_contagion/mass_psychogenic_illness_diffusion_modeler.prompt.md)
 [Inflationary Tensor Perturbation Architect](prompts/scientific/physics/cosmology/early_universe/inflationary_tensor_perturbation_architect.prompt.md)
 [Monitoring-Visit Report Generator](prompts/clinical/cra/cra_workflow/01_monitoring_visit_report_generator.prompt.md)
 [Investigator Follow-up Email & Action-Item Tracker](prompts/clinical/cra/cra_workflow/02_investigator_follow_up_email_tracker.prompt.md)
