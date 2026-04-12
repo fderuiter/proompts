@@ -803,6 +803,7 @@
 [AI Email Assistant Go/No-Go Vote](prompts/technical/design/email_assistant_go_no_go_vote.prompt.md)
 [Heuristic-Evaluation Coach](prompts/technical/design/heuristic_evaluation_coach.prompt.md)
 [Forge - Script Reliability Agent](prompts/technical/devops/forge_script_reliability.prompt.md)
+[gitops_continuous_delivery_architect](prompts/technical/devops/gitops_continuous_delivery_architect.prompt.md)
 [Infrastructure as Code (IaC) Security Architect](prompts/technical/devops/infrastructure_as_code_security_architect.prompt.md)
 [Site Reliability SLO Error Budget Architect](prompts/technical/devops/site_reliability_slo_error_budget_architect.prompt.md)
 [SRE Incident Postmortem RCA Architect](prompts/technical/devops/sre_incident_postmortem_rca_architect.prompt.md)
