@@ -70,6 +70,7 @@
 [Distressed Debt Restructuring Chapter 11 Architect](prompts/business/strategy/distressed_debt_restructuring_chapter11_architect.prompt.md)
 [game_theoretic_competitive_dynamics_architect](prompts/business/strategy/game_theoretic_competitive_dynamics_architect.prompt.md)
 [Hostile Takeover Defense Matrix Architect](prompts/business/strategy/hostile_takeover_defense_matrix.prompt.md)
+[M&A Target Screening and Strategic Fit Architect](prompts/business/strategy/m_a_target_screening_strategic_fit_architect.prompt.md)
 [Platform Ecosystem Network Effects Architect](prompts/business/strategy/platform_ecosystem_network_effects_architect.prompt.md)
 [Post-Merger Integration Synergy Architect](prompts/business/strategy/post_merger_integration_synergy_architect.prompt.md)
 [Private Equity Value Creation Architect](prompts/business/strategy/private_equity_value_creation_architect.prompt.md)

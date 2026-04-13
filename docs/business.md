@@ -45,6 +45,7 @@ title: Business
 - [Legacy Modernization Strategy](prompts/business/vp_tech_innovation/legacy_modernization_strategy.prompt.md)
 - [Liquidity Stress Test](prompts/business/cfo/liquidity_stress_test.prompt.md)
 - [M&A Target Evaluation](prompts/business/cfo/ma_target_evaluation.prompt.md)
+- [M&A Target Screening and Strategic Fit Architect](prompts/business/strategy/m_a_target_screening_strategic_fit_architect.prompt.md)
 - [Market Landscape & Trend Analysis](prompts/business/market_research/market_research_workflow/01_market_landscape_trend_analysis.prompt.md)
 - [Market Report Executive Summary](prompts/business/market_research/market_research_workflow/04_market_report_exec_summary.prompt.md)
 - [Market-Intelligence Radar](prompts/business/development/market_intelligence_radar.prompt.md)
