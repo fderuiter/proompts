@@ -835,6 +835,7 @@
 [eBPF Runtime Security Architect](prompts/technical/security/ebpf_runtime_security_architect.prompt.md)
 [Hardware Side-Channel Attack Modeling Architect](prompts/technical/security/hardware_side_channel_attack_modeling_architect.prompt.md)
 [Insider Threat Behavioral Analytics Engineer](prompts/technical/security/insider_threat_behavioral_analytics_engineer.prompt.md)
+[Kubernetes Cluster Security Posture Architect](prompts/technical/security/kubernetes_cluster_security_posture_architect.prompt.md)
 [OT/SCADA Security Resilience Architect](prompts/technical/security/ot_scada_security_architect.prompt.md)
 [Post-Quantum Cryptography Migration Architect](prompts/technical/security/post_quantum_cryptography_migration_architect.prompt.md)
 [red_team_exploit_chain_architect](prompts/technical/security/red_team_exploit_chain_architect.prompt.md)
