@@ -171,6 +171,7 @@ title: Scientific
 - [Topological Counterexample Generator](prompts/scientific/mathematics/topology/topological_counterexample_generator.prompt.md)
 - [topos_theoretic_sheaf_semantics_evaluator](prompts/scientific/mathematics/category_theory/topos_theoretic_sheaf_semantics_evaluator.prompt.md)
 - [Universal Template-Table Prompt](prompts/scientific/biostatistics/universal_template_table_prompt.prompt.md)
+- [variational_inference_architect](prompts/scientific/statistics/inference/bayesian_methods/variational_inference_architect.prompt.md)
 - [wealth_concentration_decomposition_architect](prompts/scientific/sociology/stratification/systemic_inequality/wealth_concentration_decomposition_architect.prompt.md)
 - [Write the Regulatory Summary](prompts/scientific/chemical_characterization/chemical_characterization_workflow/03_write_the_regulatory_summary.prompt.md)
 
