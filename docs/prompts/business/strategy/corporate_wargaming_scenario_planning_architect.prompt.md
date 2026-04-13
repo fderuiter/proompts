@@ -86,7 +86,7 @@ testData:
       strategic_horizon: "5-year horizon"
     expectedOutputs:
       - "Nash"
-      - "\Pi_i"
+      - "\\Pi_i"
       - "scenario matrix"
       - "game-theoretic"
       - "Foundry Alpha"
