@@ -1,8 +1,52 @@
-# Developer Scripts & Utilities
+# Developer Scripts & Utilities 🧰
 
-This directory contains Python scripts for repository maintenance, validation, and workflow execution.
+> [!NOTE]
+> **TL;DR - Quickstart for Validation**
+> Before committing any changes, run the master validation script from the repository root to check schemas, formatting, and update documentation:
+> ```bash
+> python3 tools/scripts/test_all.py
+> ```
 
-**TL;DR:** Run `python3 tools/scripts/test_all.py` before committing.
+## What is this?
+This directory is the "Engine Room" of the Proompts repository. It contains the core Python scripts responsible for CI/CD validation, workflow simulation, schema enforcement, and automated documentation generation.
+
+## Why does it exist?
+To maintain high standards across the prompt library. By automating schema checks and documentation generation, these scripts reduce manual overhead and prevent "Documentation Debt."
+
+## How does it work?
+The scripts operate as a pipeline. The master script (`test_all.py`) acts as the entry point, orchestrating validation and documentation tasks.
+
+### The CI/CD Pipeline
+
+```mermaid
+graph TD
+    %% Define Nodes
+    A[Developer Commits] -->|Triggers| B(test_all.py)
+
+    subgraph "Validation Phase"
+        C1[check_prompts.py]
+        C2[validate_prompt_schema.py]
+        C3[yamllint]
+    end
+
+    subgraph "Documentation Phase"
+        D1[update_docs_index.py]
+        D2[generate_docs.py]
+        D3[check_broken_links.py]
+    end
+
+    B -->|1. Validates| C1
+    B -->|2. Validates| C2
+    B -->|3. Validates| C3
+
+    B -->|4. Updates| D1
+    B -->|5. Generates| D2
+    B -->|6. Scans| D3
+
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:1px;
+    classDef highlight fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    class B highlight;
+```
 
 ## Prerequisites
 
