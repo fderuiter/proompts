@@ -37,5 +37,6 @@ title: Speculative
 - [Tectonic Viennoiserie Cryptographic Architect](prompts/speculative/tectonic_viennoiserie_cryptographic_architect/tectonic_viennoiserie_cryptographic_architect.prompt.md)
 - [tectonic_horological_restructuring_architect](prompts/speculative/tectonic_horological_restructuring_architect/tectonic_horological_restructuring_architect.prompt.md)
 - [Temporal Syntax Debugger](prompts/speculative/chrono_linguistic_debugging/temporal_syntax_debugger.prompt.md)
+- [Thermodynamic Epistolary Waste Architect](prompts/speculative/thermodynamic_epistolary_waste_architect/thermodynamic_epistolary_waste_architect.prompt.md)
 - [Victorian Neutrino HFT Diplomat](prompts/speculative/victorian_neutrino_hft_diplomat/victorian_neutrino_hft_diplomat.prompt.md)
 - [Zero-G Algorithmic Biopigment Curator](prompts/speculative/intersection/suborbital_biopigment_algorithmic_curator.prompt.md)
