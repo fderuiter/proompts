@@ -145,6 +145,7 @@ title: Scientific
 - [Riemannian Manifold Curvature Deriver](prompts/scientific/mathematics/geometry/differential/riemannian_manifold_curvature_deriver.prompt.md)
 - [Risk Assessment Expert](prompts/scientific/biosafety/biological_safety_workflow/01_risk_assessment_expert.prompt.md)
 - [Sample-Size & Randomization Strategy](prompts/scientific/biostatistics/sample_size_randomization_strategy.prompt.md)
+- [Schwinger-Dyson Equation Architect](prompts/scientific/physics/quantum_field_theory/schwinger_dyson_equation_architect.prompt.md)
 - [Secondary Endpoint Multiplicity Adjuster](prompts/scientific/biostatistics/secondary_endpoint_multiplicity.prompt.md)
 - [serre_spectral_sequence_calculator](prompts/scientific/mathematics/topology/algebraic_topology/serre_spectral_sequence_calculator.prompt.md)
 - [Simulated Clinical Scenario Debrief](prompts/scientific/bioskills/bioskills_workflow/02_simulated_clinical_scenario_feedback.prompt.md)
