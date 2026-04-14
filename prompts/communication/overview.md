@@ -9,7 +9,7 @@
 - **[Empathy-Map Facilitator](empathy_map_facilitator.prompt.yaml)**: Quickly capture a user persona’s voice and pain points.
 - **[Explain-Like-I’m-5 (ELI5)](explain_like_im_5.prompt.yaml)**: Explain ‘[TOPIC]’ as if I’m five:
 - **[Hero's Journey Storyboarder](heros_journey_storyboarder.prompt.yaml)**: Craft a brief marketing narrative following the Hero's Journey structure.
-- **[Lay Language Summary Creation](lay_language_summary.prompt.yaml)**: Summarize trial results for lay audience.
+- **[Lay Language Summary Creation](lay_language_summary.prompt.yaml)**: Summarize trial results for lay audience with rigorous formatting and safety checks.
 - **[Negotiation Coach](negotiation_coach.prompt.yaml)**: Prepare the user for salary negotiations by roleplaying as a manager and offering feedback.
 - **[Panel Debate](panel_debate.prompt.yaml)**: Host a simulated debate among three experts on a chosen topic.
 - **[Pitch-Deck Outliner](pitch_deck_outliner.prompt.yaml)**: Draft a high-impact, 10-slide VC pitch deck outline.
