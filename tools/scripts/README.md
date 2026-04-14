@@ -101,6 +101,23 @@ pip install -r requirements.txt
 2.  **Validation**: Runs `check_prompts`, `validate_prompt_schema`, `generate_docs` (check mode), `check_broken_links`, and `yamllint`.
 3.  **Maintenance**: Runs `update_docs_index` (check mode).
 
+**Pipeline Visualization:**
+
+```mermaid
+graph TD
+    A[Start: test_all.py] --> B[1. cleanup_mac_files]
+    B --> C[2. check_prompts]
+    C --> D[3. validate_prompt_schema]
+    D --> E[4. update_docs_index]
+    E --> F[5. generate_docs]
+    F --> G[6. check_broken_links]
+    G --> H[7. yamllint]
+    H --> I[End: All Checks Passed]
+
+    classDef process fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    class B,C,D,E,F,G,H process;
+```
+
 **Usage:**
 
 ```bash
