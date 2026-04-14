@@ -4,6 +4,7 @@
 - [Abyssal Gothic Liquidity Routing/](abyssal_gothic_liquidity_routing/overview.md)
 - [Benthic Contrapuntal Supply Chain Harmonizer/](benthic_contrapuntal_supply_chain_harmonizer/overview.md)
 - [Byzantine Chromodynamic Flocculation Architect/](byzantine_chromodynamic_flocculation_architect/overview.md)
+- [Cetacean Origami Sharding/](cetacean_origami_sharding/overview.md)
 - [Choreographic Zk Agronomist/](choreographic_zk_agronomist/overview.md)
 - [Chrono Linguistic Debugging/](chrono_linguistic_debugging/overview.md)
 - [Circadian Harpsichord Orchestration/](circadian_harpsichord_orchestration/overview.md)
@@ -33,3 +34,6 @@
 - [Tectonic Viennoiserie Cryptographic Architect/](tectonic_viennoiserie_cryptographic_architect/overview.md)
 - [Urban Planning/](urban_planning/overview.md)
 - [Victorian Neutrino Hft Diplomat/](victorian_neutrino_hft_diplomat/overview.md)
+
+## Prompts
+- **[Hyperbolic Fermentation RL Architect](hyperbolic_fermentation_rl_architect.prompt.yaml)**: Architects multi-agent reinforcement learning environments on hyperbolic manifolds to model and control microbial population dynamics and flavor-profile evolution in complex culinary fermentation matrices.
