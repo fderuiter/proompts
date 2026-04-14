@@ -36,6 +36,7 @@ title: Technical
 - [Infrastructure as Code (IaC) Security Architect](prompts/technical/devops/infrastructure_as_code_security_architect.prompt.md)
 - [Insider Threat Behavioral Analytics Engineer](prompts/technical/security/insider_threat_behavioral_analytics_engineer.prompt.md)
 - [Investigator's Brochure Summary of Changes](prompts/technical/technical_writing/technical_writer_workflow/02_ib_detailed_soc.prompt.md)
+- [Kubernetes Cluster Security Posture Architect](prompts/technical/security/kubernetes_cluster_security_posture_architect.prompt.md)
 - [Medical Device Cybersecurity Threat Modeling](prompts/technical/security/cybersecurity_threat_modeling.prompt.md)
 - [OT/SCADA Security Resilience Architect](prompts/technical/security/ot_scada_security_architect.prompt.md)
 - [Post-Quantum Cryptography Migration Architect](prompts/technical/security/post_quantum_cryptography_migration_architect.prompt.md)
