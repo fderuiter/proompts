@@ -136,6 +136,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Distressed Debt Restructuring Chapter 11 Architect](prompts/business/strategy/distressed_debt_restructuring_chapter11_architect.prompt.md)
 - [game_theoretic_competitive_dynamics_architect](prompts/business/strategy/game_theoretic_competitive_dynamics_architect.prompt.md)
 - [Hostile Takeover Defense Matrix Architect](prompts/business/strategy/hostile_takeover_defense_matrix.prompt.md)
+- [Leveraged Buyout Financial Structuring Architect](prompts/business/strategy/leveraged_buyout_financial_structuring_architect.prompt.md)
 - [Platform Ecosystem Network Effects Architect](prompts/business/strategy/platform_ecosystem_network_effects_architect.prompt.md)
 - [Post-Merger Integration Synergy Architect](prompts/business/strategy/post_merger_integration_synergy_architect.prompt.md)
 - [Private Equity Value Creation Architect](prompts/business/strategy/private_equity_value_creation_architect.prompt.md)

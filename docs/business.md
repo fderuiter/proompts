@@ -43,6 +43,7 @@ title: Business
 - [Investigator-Site Payment Forecast](prompts/business/payment/investigator_site_payment_forecast.prompt.md)
 - [Investor FAQ Generation](prompts/business/cfo/investor_faq_generation.prompt.md)
 - [Legacy Modernization Strategy](prompts/business/vp_tech_innovation/legacy_modernization_strategy.prompt.md)
+- [Leveraged Buyout Financial Structuring Architect](prompts/business/strategy/leveraged_buyout_financial_structuring_architect.prompt.md)
 - [Liquidity Stress Test](prompts/business/cfo/liquidity_stress_test.prompt.md)
 - [M&A Target Evaluation](prompts/business/cfo/ma_target_evaluation.prompt.md)
 - [Market Landscape & Trend Analysis](prompts/business/market_research/market_research_workflow/01_market_landscape_trend_analysis.prompt.md)
