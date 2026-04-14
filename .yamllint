@@ -1,6 +1,7 @@
 ---
 extends: default
 ignore:
+  - venv/
   - "._*"
   - .git/
   - __pycache__/
