@@ -5,7 +5,6 @@ title: Scientific
 # Scientific
 
 ## Prompts
-- [Adaptive Control Loop Tuning Architect](prompts/scientific/mathematics/systems/control_theory/adaptive_control_loop_tuning_architect.prompt.md)
 - [Adaptive Design & Interim Monitoring](prompts/scientific/biostatistics/adaptive_design_interim_monitoring.prompt.md)
 - [ads_cft_holographic_dictionary_architect](prompts/scientific/physics/string_theory/ads_cft_holographic_dictionary_architect.prompt.md)
 - [advanced_retrosynthetic_pathway_generator](prompts/scientific/chemistry/organic/retrosynthesis/advanced_retrosynthetic_pathway_generator.prompt.md)
@@ -14,7 +13,6 @@ title: Scientific
 - [Applied Ethical Stress Tester](prompts/scientific/philosophy/ethics/normative_ethics/applied_ethical_stress_tester.prompt.md)
 - [astrocytic_tripartite_synapse_calcium_dynamics_architect](prompts/scientific/cellular/neurophysiology/astrocytic_tripartite_synapse_calcium_dynamics_architect.prompt.md)
 - [asymptotic_distribution_mle_architect](prompts/scientific/statistics/theory/asymptotics/asymptotic_distribution_mle_architect.prompt.md)
-- [atiyah_singer_index_theorem_architect](prompts/scientific/mathematics/geometry/differential/atiyah_singer_index_theorem_architect.prompt.md)
 - [bayesian_hierarchical_model_architect](prompts/scientific/statistics/inference/bayesian_methods/bayesian_hierarchical_model_architect.prompt.md)
 - [behavioral_epidemiology_social_contagion_modeler](prompts/scientific/psychology/computational/network_contagion/behavioral_epidemiology_social_contagion_modeler.prompt.md)
 - [Bioburden Testing SOP](prompts/scientific/microbiology/microbiology_workflow/01_bioburden_testing_sop.prompt.md)
@@ -53,7 +51,6 @@ title: Scientific
 - [Dual-Language Figure Prompt](prompts/scientific/biostatistics/dual_language_figure_prompt.prompt.md)
 - [Dunnett Adjustment R Code Generator](prompts/scientific/biostatistics/dunnett_adjustment_calculator.prompt.md)
 - [Dynamic Causal Modeling Architect](prompts/scientific/computational_theoretical_neuroscience/dynamic_causal_modeling_architect.prompt.md)
-- [Electrocatalytic Mechanism Architect](prompts/scientific/chemistry/physical/electrochemistry/electrocatalytic_mechanism_architect.prompt.md)
 - [empirical_process_theory_architect](prompts/scientific/statistics/theory/asymptotics/empirical_process_theory_architect.prompt.md)
 - [Endotoxin Control & 510(k) Risk Plan](prompts/scientific/microbiology/microbiology_workflow/03_endotoxin_control_510k_risk_plan.prompt.md)
 - [EO Sterilization Validation Protocol](prompts/scientific/microbiology/microbiology_workflow/02_eo_sterilization_validation_protocol.prompt.md)
@@ -71,7 +68,6 @@ title: Scientific
 - [first_order_logic_sequent_calculus_prover](prompts/scientific/mathematics/formal_logic/first_order_logic_sequent_calculus_prover.prompt.md)
 - [fokker_planck_population_dynamics_architect](prompts/scientific/computational_theoretical_neuroscience/fokker_planck_population_dynamics_architect.prompt.md)
 - [forcing_poset_generic_extension_architect](prompts/scientific/mathematics/foundations/set_theory/forcing_poset_generic_extension_architect.prompt.md)
-- [fractional_calculus_pde_modeler](prompts/scientific/mathematics/numerical_methods/fractional_calculus_pde_modeler.prompt.md)
 - [Free Energy Perturbation Architect](prompts/scientific/chemistry/computational/molecular_dynamics/free_energy_perturbation_architect.prompt.md)
 - [free_energy_principle_active_inference_architect](prompts/scientific/computational_theoretical_neuroscience/free_energy_principle_active_inference_architect.prompt.md)
 - [Functional Data Analysis Architect](prompts/scientific/statistics/inference/nonparametric_methods/functional_data_analysis_architect.prompt.md)
@@ -103,7 +99,6 @@ title: Scientific
 - [Linear Logic Resource Proof Generator](prompts/scientific/mathematics/formal_logic/linear_logic_resource_proof_generator.prompt.md)
 - [linear_temporal_logic_model_checker](prompts/scientific/mathematics/formal_logic/linear_temporal_logic_model_checker.prompt.md)
 - [longitudinal_trauma_propagation_modeler](prompts/scientific/epidemiology/global_mental_health/longitudinal_trauma_propagation_modeler.prompt.md)
-- [mass_psychogenic_illness_diffusion_modeler](prompts/scientific/psychology/computational/network_contagion/mass_psychogenic_illness_diffusion_modeler.prompt.md)
 - [MCID Research and Summary](prompts/scientific/coa/mcid_definition.prompt.md)
 - [metabolic_control_analysis_architect](prompts/scientific/cellular/metabolism/metabolic_control_analysis_architect.prompt.md)
 - [Metaphysical Dialectical Synthesizer](prompts/scientific/philosophy/metaphysics/ontology/metaphysical_dialectical_synthesizer.prompt.md)
@@ -130,7 +125,6 @@ title: Scientific
 - [Objective Skills Assessment](prompts/scientific/bioskills/bioskills_workflow/03_objective_skills_assessment.prompt.md)
 - [open_economy_dsge_architect](prompts/scientific/economics/macroeconomics/dsge_modeling/open_economy_dsge_architect.prompt.md)
 - [optimal_mechanism_design_architect](prompts/scientific/economics/microeconomics/mechanism_design/optimal_mechanism_design_architect.prompt.md)
-- [optogenetic_photocurrent_biophysical_modeler](prompts/scientific/computational_theoretical_neuroscience/optogenetic_photocurrent_biophysical_modeler.prompt.md)
 - [Organometallic Catalytic Cycle Architect](prompts/scientific/chemistry/inorganic/catalysis/organometallic_catalytic_cycle_architect.prompt.md)
 - [Peer-Review Checklist for Manuscript Methods](prompts/scientific/biostatistics/peer_review_methods_checklist.prompt.md)
 - [Phase II/III SAP Skeleton](prompts/scientific/biostatistics/phase_ii_iii_sap_skeleton.prompt.md)
@@ -151,7 +145,6 @@ title: Scientific
 - [Riemannian Manifold Curvature Deriver](prompts/scientific/mathematics/geometry/differential/riemannian_manifold_curvature_deriver.prompt.md)
 - [Risk Assessment Expert](prompts/scientific/biosafety/biological_safety_workflow/01_risk_assessment_expert.prompt.md)
 - [Sample-Size & Randomization Strategy](prompts/scientific/biostatistics/sample_size_randomization_strategy.prompt.md)
-- [Schwinger-Dyson Equation Architect](prompts/scientific/physics/quantum_field_theory/schwinger_dyson_equation_architect.prompt.md)
 - [Secondary Endpoint Multiplicity Adjuster](prompts/scientific/biostatistics/secondary_endpoint_multiplicity.prompt.md)
 - [serre_spectral_sequence_calculator](prompts/scientific/mathematics/topology/algebraic_topology/serre_spectral_sequence_calculator.prompt.md)
 - [Simulated Clinical Scenario Debrief](prompts/scientific/bioskills/bioskills_workflow/02_simulated_clinical_scenario_feedback.prompt.md)
@@ -178,7 +171,6 @@ title: Scientific
 - [Topological Counterexample Generator](prompts/scientific/mathematics/topology/topological_counterexample_generator.prompt.md)
 - [topos_theoretic_sheaf_semantics_evaluator](prompts/scientific/mathematics/category_theory/topos_theoretic_sheaf_semantics_evaluator.prompt.md)
 - [Universal Template-Table Prompt](prompts/scientific/biostatistics/universal_template_table_prompt.prompt.md)
-- [variational_inference_architect](prompts/scientific/statistics/inference/bayesian_methods/variational_inference_architect.prompt.md)
 - [wealth_concentration_decomposition_architect](prompts/scientific/sociology/stratification/systemic_inequality/wealth_concentration_decomposition_architect.prompt.md)
 - [Write the Regulatory Summary](prompts/scientific/chemical_characterization/chemical_characterization_workflow/03_write_the_regulatory_summary.prompt.md)
 
