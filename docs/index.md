@@ -1002,6 +1002,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [quantum_zymurgy_astrogator](prompts/speculative/quantum_zymurgy_astrogator/quantum_zymurgy_astrogator.prompt.md)
 - [tectonic_horological_restructuring_architect](prompts/speculative/tectonic_horological_restructuring_architect/tectonic_horological_restructuring_architect.prompt.md)
 - [Tectonic Viennoiserie Cryptographic Architect](prompts/speculative/tectonic_viennoiserie_cryptographic_architect/tectonic_viennoiserie_cryptographic_architect.prompt.md)
+- [Thermodynamic Epistolary Waste Architect](prompts/speculative/thermodynamic_epistolary_waste_architect/thermodynamic_epistolary_waste_architect.prompt.md)
 - [mycelial_arbitrage_urban_planner](prompts/speculative/urban_planning/mycelial_arbitrage_urban_planner.prompt.md)
 - [Victorian Neutrino HFT Diplomat](prompts/speculative/victorian_neutrino_hft_diplomat/victorian_neutrino_hft_diplomat.prompt.md)
 
