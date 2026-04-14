@@ -33,3 +33,6 @@
 - [Tectonic Viennoiserie Cryptographic Architect/](tectonic_viennoiserie_cryptographic_architect/overview.md)
 - [Urban Planning/](urban_planning/overview.md)
 - [Victorian Neutrino Hft Diplomat/](victorian_neutrino_hft_diplomat/overview.md)
+
+## Prompts
+- **[Hyperbolic Fermentation RL Architect](hyperbolic_fermentation_rl_architect.prompt.yaml)**: Architects multi-agent reinforcement learning environments on hyperbolic manifolds to model and control microbial population dynamics and flavor-profile evolution in complex culinary fermentation matrices.
