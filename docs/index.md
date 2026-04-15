@@ -583,6 +583,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [first_order_logic_natural_language_translator](prompts/scientific/mathematics/formal_logic/first_order_logic_natural_language_translator.prompt.md)
 - [first_order_logic_semantic_tableau_generator](prompts/scientific/mathematics/formal_logic/first_order_logic_semantic_tableau_generator.prompt.md)
 - [first_order_logic_sequent_calculus_prover](prompts/scientific/mathematics/formal_logic/first_order_logic_sequent_calculus_prover.prompt.md)
+- [godel_incompleteness_arithmetization_engineer](prompts/scientific/mathematics/formal_logic/godel_incompleteness_arithmetization_engineer.prompt.md)
 - [intuitionistic_natural_deduction_prover](prompts/scientific/mathematics/formal_logic/intuitionistic_natural_deduction_prover.prompt.md)
 - [Linear Logic Resource Proof Generator](prompts/scientific/mathematics/formal_logic/linear_logic_resource_proof_generator.prompt.md)
 - [linear_temporal_logic_model_checker](prompts/scientific/mathematics/formal_logic/linear_temporal_logic_model_checker.prompt.md)
