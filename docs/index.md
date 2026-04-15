@@ -450,6 +450,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Inference
 
 - [bayesian_hierarchical_model_architect](prompts/scientific/statistics/inference/bayesian_methods/bayesian_hierarchical_model_architect.prompt.md)
+- [dirichlet_process_mixture_architect](prompts/scientific/statistics/inference/bayesian_methods/dirichlet_process_mixture_architect.prompt.md)
 - [variational_inference_architect](prompts/scientific/statistics/inference/bayesian_methods/variational_inference_architect.prompt.md)
 - [target_trial_emulation_architect](prompts/scientific/statistics/inference/causal_inference/target_trial_emulation_architect.prompt.md)
 - [Functional Data Analysis Architect](prompts/scientific/statistics/inference/nonparametric_methods/functional_data_analysis_architect.prompt.md)
