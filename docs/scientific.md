@@ -79,6 +79,7 @@ title: Scientific
 - [galois_group_resolvent_architect](prompts/scientific/mathematics/algebra/galois_theory/galois_group_resolvent_architect.prompt.md)
 - [Generate & QC Submission-Ready TLFs](prompts/scientific/biostatistics/submission_ready_tlfs.prompt.md)
 - [genome_scale_metabolic_flux_modeler](prompts/scientific/cellular/metabolism/genome_scale_metabolic_flux_modeler.prompt.md)
+- [godel_incompleteness_arithmetization_engineer](prompts/scientific/mathematics/formal_logic/godel_incompleteness_arithmetization_engineer.prompt.md)
 - [graph_theoretical_connectome_analyzer](prompts/scientific/computational_theoretical_neuroscience/graph_theoretical_connectome_analyzer.prompt.md)
 - [gwas_polygenic_risk_score_architect](prompts/scientific/genetics/genomics/gwas_polygenic_risk_score_architect.prompt.md)
 - [Hands-On Procedure Coaching](prompts/scientific/bioskills/bioskills_workflow/01_hands_on_procedure_coaching.prompt.md)
