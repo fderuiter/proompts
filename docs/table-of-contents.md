@@ -734,6 +734,7 @@
 [Regulatory Gap-Analysis Comparator](prompts/scientific/sterility/sterility_workflow/02_regulatory_gap_analysis_comparator.prompt.md)
 [EtO Sterilization Process FMEA](prompts/scientific/sterility/sterility_workflow/03_eto_sterilization_process_fmea.prompt.md)
 [hidden_markov_model_architect](prompts/scientific/statistics/stochastic/markov_processes/hidden_markov_model_architect.prompt.md)
+[occupational_segregation_opportunity_hoarding_architect](prompts/scientific/sociology/stratification/systemic_inequality/occupational_segregation_opportunity_hoarding_architect.prompt.md)
 [theil_t_index_inequality_decomposer](prompts/scientific/sociology/stratification/systemic_inequality/theil_t_index_inequality_decomposer.prompt.md)
 [wealth_concentration_decomposition_architect](prompts/scientific/sociology/stratification/systemic_inequality/wealth_concentration_decomposition_architect.prompt.md)
 [Draft a GLP-Compliant Study Protocol](prompts/management/study_director/study_director_workflow/01_draft_glp_compliant_study_protocol.prompt.md)
