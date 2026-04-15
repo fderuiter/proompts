@@ -128,6 +128,7 @@ title: Scientific
 - [Non-Ideal Fluid Phase Equilibria Architect](prompts/scientific/chemistry/physical/thermodynamics/non_ideal_fluid_phase_equilibria_architect.prompt.md)
 - [Normative Ethics Stress Tester](prompts/scientific/philosophy/ethics/normative_ethics/normative_ethics_stress_tester.prompt.md)
 - [Objective Skills Assessment](prompts/scientific/bioskills/bioskills_workflow/03_objective_skills_assessment.prompt.md)
+- [occupational_segregation_opportunity_hoarding_architect](prompts/scientific/sociology/stratification/systemic_inequality/occupational_segregation_opportunity_hoarding_architect.prompt.md)
 - [open_economy_dsge_architect](prompts/scientific/economics/macroeconomics/dsge_modeling/open_economy_dsge_architect.prompt.md)
 - [optimal_mechanism_design_architect](prompts/scientific/economics/microeconomics/mechanism_design/optimal_mechanism_design_architect.prompt.md)
 - [optogenetic_photocurrent_biophysical_modeler](prompts/scientific/computational_theoretical_neuroscience/optogenetic_photocurrent_biophysical_modeler.prompt.md)
