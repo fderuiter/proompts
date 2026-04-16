@@ -4,6 +4,7 @@
 - [Togaf/](togaf/overview.md)
 
 ## Prompts
+- **[Adaptive Load Shedding and Backpressure Architect](adaptive_load_shedding_backpressure_architect.prompt.yaml)**: Designs highly resilient, adaptive load shedding and backpressure mechanisms for distributed systems to prevent cascading failures under extreme traffic surges.
 - **[AI Model Inference Serving Architect](ai_model_inference_serving_architect.prompt.yaml)**: Designs highly scalable, low-latency, and cost-efficient architecture topologies for serving large-scale AI/ML models in production.
 - **[Air-Gapped Environment Deployment Architect](air_gapped_environment_deployment_architect.prompt.yaml)**: Designs secure, resilient, and fully autonomous software deployment architectures for highly restricted, completely air-gapped environments.
 - **[API Gateway and BFF Architect](api_gateway_bff_architect.prompt.yaml)**: Designs highly scalable, secure, and performant API Gateway and Backend-for-Frontend (BFF) architectures for microservices ecosystems.
