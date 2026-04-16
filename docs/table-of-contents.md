@@ -752,6 +752,7 @@
 [PAW Phase 2 - Architectural Blueprint](prompts/technical/software_engineering/tasks/paw/paw_02_architectural_blueprint.prompt.md)
 [PAW Phase 3 - Precision Strike](prompts/technical/software_engineering/tasks/paw/paw_03_precision_strike.prompt.md)
 [PAW Phase 4 - Quality Assurance & Log](prompts/technical/software_engineering/tasks/paw/paw_04_qa_verification.prompt.md)
+[Adaptive Load Shedding and Backpressure Architect](prompts/technical/architecture/adaptive_load_shedding_backpressure_architect.prompt.md)
 [AI Model Inference Serving Architect](prompts/technical/architecture/ai_model_inference_serving_architect.prompt.md)
 [Air-Gapped Environment Deployment Architect](prompts/technical/architecture/air_gapped_environment_deployment_architect.prompt.md)
 [API Gateway and BFF Architect](prompts/technical/architecture/api_gateway_bff_architect.prompt.md)
