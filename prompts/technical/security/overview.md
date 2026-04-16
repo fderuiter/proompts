@@ -1,8 +1,8 @@
 # Security Overview
 
 ## Categories
-- [SecOps/](secops/overview.md)
 - [Iam Security/](iam_security/overview.md)
+- [Secops/](secops/overview.md)
 
 ## Prompts
 - **[Active Directory Domain Dominance Forensics Analyst](active_directory_domain_dominance_forensics_analyst.prompt.yaml)**: Generates expert-level forensic analysis and threat hunting strategies for identifying advanced Active Directory domain dominance and persistence mechanisms.
