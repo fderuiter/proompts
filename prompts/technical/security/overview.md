@@ -1,6 +1,7 @@
 # Security Overview
 
 ## Categories
+- [SecOps/](secops/overview.md)
 - [Iam Security/](iam_security/overview.md)
 
 ## Prompts
