@@ -37,6 +37,7 @@ title: Business
 - [Friction-Hunting Onboarding Audit](prompts/business/cx/onboarding_audit.prompt.md)
 - [game_theoretic_competitive_dynamics_architect](prompts/business/strategy/game_theoretic_competitive_dynamics_architect.prompt.md)
 - [GCP and GDPR Training Compliance Risk Report](prompts/business/hr_finance/gcp_gdpr_compliance_training_risk_report.prompt.md)
+- [Global Market Entry Expansion Architect](prompts/business/strategy/global_market_entry_expansion_architect.prompt.md)
 - [Global Regulatory and Tax Matrix for Site Payments](prompts/business/payment/global_regulatory_tax_matrix.prompt.md)
 - [Global Supply Chain Resilience Architect](prompts/business/operations/supply_chain/global_supply_chain_resilience_architect.prompt.md)
 - [global_supply_chain_geopolitical_duress_architect](prompts/business/operations/supply_chain/global_supply_chain_geopolitical_duress_architect.prompt.md)
