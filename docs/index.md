@@ -135,6 +135,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [blue_ocean_value_innovation_architect](prompts/business/strategy/blue_ocean_value_innovation_architect.prompt.md)
 - [corporate_b2b_saas_pricing_tier_architect](prompts/business/strategy/corporate_b2b_saas_pricing_tier_architect.prompt.md)
 - [Corporate Capital Structure Optimization Architect](prompts/business/strategy/corporate_capital_structure_optimization_architect.prompt.md)
+- [Corporate Digital Transformation ROI Architect](prompts/business/strategy/corporate_digital_transformation_roi_architect.prompt.md)
 - [Corporate Diversification Synergy Architect](prompts/business/strategy/corporate_diversification_synergy_architect.prompt.md)
 - [Corporate ESG Carbon Abatement Strategy Architect](prompts/business/strategy/corporate_esg_carbon_abatement_strategy_architect.prompt.md)
 - [corporate_fx_hedging_currency_risk_architect](prompts/business/strategy/corporate_fx_hedging_currency_risk_architect.prompt.md)
