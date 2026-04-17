@@ -334,6 +334,7 @@
 [new_keynesian_dsge_architect](prompts/scientific/economics/macroeconomics/dsge_modeling/new_keynesian_dsge_architect.prompt.md)
 [open_economy_dsge_architect](prompts/scientific/economics/macroeconomics/dsge_modeling/open_economy_dsge_architect.prompt.md)
 [hank_macroeconomic_architect](prompts/scientific/economics/macroeconomics/heterogeneous_agents/hank_macroeconomic_architect.prompt.md)
+[diamond_mortensen_pissarides_architect](prompts/scientific/economics/macroeconomics/search_and_matching/diamond_mortensen_pissarides_architect.prompt.md)
 [Accelerate Patient Recruitment & Retention](prompts/management/clinical_research_manager/accelerate_patient_recruitment_retention.prompt.md)
 [Digest Regulatory Updates Affecting Protocol](prompts/management/clinical_research_manager/digest_regulatory_updates.prompt.md)
 [Portfolio KPI Dashboard Brief](prompts/management/clinical_research_manager/portfolio_kpi_dashboard_brief.prompt.md)
