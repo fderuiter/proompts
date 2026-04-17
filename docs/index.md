@@ -302,6 +302,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [algorithmic_social_contagion_modeler](prompts/computational/network_contagion/algorithmic_social_contagion_modeler.prompt.md)
 - [physics_informed_neural_network_architect](prompts/computational/numerical_methods/physics_informed_neural_network_architect.prompt.md)
 - [multi_objective_stochastic_optimization_architect](prompts/computational/operations_research/multi_objective_stochastic_optimization_architect.prompt.md)
+- [3D QSAR Pharmacophore Modeling Architect](prompts/scientific/chemistry/computational/cheminformatics/3d_qsar_pharmacophore_modeling_architect.prompt.md)
 - [Free Energy Perturbation Architect](prompts/scientific/chemistry/computational/molecular_dynamics/free_energy_perturbation_architect.prompt.md)
 - [Non-Adiabatic Photodynamics Architect](prompts/scientific/chemistry/computational/quantum_chemistry/non_adiabatic_photodynamics_architect.prompt.md)
 - [algorithmic_behavior_echo_chamber_modeler](prompts/scientific/psychology/computational/network_contagion/algorithmic_behavior_echo_chamber_modeler.prompt.md)

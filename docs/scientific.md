@@ -5,6 +5,7 @@ title: Scientific
 # Scientific
 
 ## Prompts
+- [3D QSAR Pharmacophore Modeling Architect](prompts/scientific/chemistry/computational/cheminformatics/3d_qsar_pharmacophore_modeling_architect.prompt.md)
 - [Adaptive Control Loop Tuning Architect](prompts/scientific/mathematics/systems/control_theory/adaptive_control_loop_tuning_architect.prompt.md)
 - [Adaptive Design & Interim Monitoring](prompts/scientific/biostatistics/adaptive_design_interim_monitoring.prompt.md)
 - [ads_cft_holographic_dictionary_architect](prompts/scientific/physics/string_theory/ads_cft_holographic_dictionary_architect.prompt.md)
