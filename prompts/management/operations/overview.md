@@ -10,6 +10,7 @@
 - **[Inventory & Demand-Planning Simulation](inventory_demand_planning_simulation.prompt.yaml)**: Create a forecast and inventory plan from historical demand data.
 - **[KPI Dashboard & Monthly Ops-Review Pack](kpi_dashboard_ops_review.prompt.yaml)**: Summarize operational performance and highlight required actions for the monthly review.
 - **[lean_six_sigma_vsm_architect](lean_six_sigma_vsm_architect.prompt.yaml)**: Acts as a Lean Six Sigma Master Black Belt to formulate advanced VSM frameworks for bottleneck identification, cycle time reduction, and complex operational optimization.
+- **[multi_echelon_inventory_optimization_architect](multi_echelon_inventory_optimization_architect.prompt.yaml)**: Formulates rigorous Multi-Echelon Inventory Optimization (MEIO) models to minimize network-wide safety stock while maximizing service levels using advanced stochastic modeling and LaTeX.
 - **[Multistudy Resource & Capacity Forecast Plan](multistudy_resource_capacity_forecast_plan.prompt.yaml)**: Outline a data-driven approach for forecasting resources across multiple upcoming trials.
 - **[Operational Excellence & Risk Sweep](operational_excellence_risk_sweep.prompt.yaml)**: Deliver a 90-day action plan to cut cycle time and reduce recruitment failure.
 - **[360° Operational KPI & Benchmark Review](operational_kpi_benchmark_review.prompt.yaml)**: Compare internal KPIs to industry benchmarks and propose improvements.
