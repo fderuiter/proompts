@@ -91,6 +91,7 @@ title: Scientific
 - [hidden_markov_model_architect](prompts/scientific/statistics/stochastic/markov_processes/hidden_markov_model_architect.prompt.md)
 - [high_dimensional_sparse_regression_architect](prompts/scientific/statistics/modeling/high_dimensional_analysis/high_dimensional_sparse_regression_architect.prompt.md)
 - [higher_homotopy_postnikov_tower_architect](prompts/scientific/mathematics/topology/algebraic_topology/higher_homotopy_postnikov_tower_architect.prompt.md)
+- [higher_order_unification_resolution_architect](prompts/scientific/formal_logic/systems/higher_order_logic/higher_order_unification_resolution_architect.prompt.md)
 - [hodgkin_huxley_biophysical_modeler](prompts/scientific/computational_theoretical_neuroscience/hodgkin_huxley_biophysical_modeler.prompt.md)
 - [Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive](prompts/scientific/biostatistics/inclusion_exclusion_endpoints_sample_size.prompt.md)
 - [Inflationary Tensor Perturbation Architect](prompts/scientific/physics/cosmology/early_universe/inflationary_tensor_perturbation_architect.prompt.md)
