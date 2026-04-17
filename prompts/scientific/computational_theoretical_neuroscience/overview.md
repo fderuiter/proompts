@@ -1,6 +1,7 @@
 # Computational Theoretical Neuroscience Overview
 
 ## Prompts
+- **[astrocytic_tripartite_synapse_architect](astrocytic_tripartite_synapse_architect.prompt.yaml)**: A Principal Computational Neuroscientist agent designed to analytically derive and simulate complex biophysical dynamics of the tripartite synapse, including astrocytic calcium signaling and gliotransmission.
 - **[biophysical_hodgkin_huxley_modeler](biophysical_hodgkin_huxley_modeler.prompt.yaml)**: A Principal Computational Neuroscientist agent designed to analytically derive and simulate complex biophysical Hodgkin-Huxley action potential dynamics and ion channel kinetics.
 - **[dendritic_cable_theory_computation_architect](dendritic_cable_theory_computation_architect.prompt.yaml)**: A Principal Computational Neuroscientist to analytically derive and simulate complex dendritic cable theory equations and multi-compartmental synaptic integration models.
 - **[Dynamic Causal Modeling Architect](dynamic_causal_modeling_architect.prompt.yaml)**: A Principal Computational Neuroscientist agent designed to formulate advanced Dynamic Causal Modeling (DCM) pipelines for effective connectivity inference.
@@ -9,6 +10,7 @@
 - **[graph_theoretical_connectome_analyzer](graph_theoretical_connectome_analyzer.prompt.yaml)**: A Principal Computational Neuroscientist agent designed to synthesize and analyze whole-brain connectome data using advanced graph-theoretical metrics.
 - **[hodgkin_huxley_biophysical_modeler](hodgkin_huxley_biophysical_modeler.prompt.yaml)**: Generates highly rigorous, computationally sound biophysical models of single-neuron action potential dynamics using the Hodgkin-Huxley formalism.
 - **[multi_modal_fmri_eeg_integration_architect](multi_modal_fmri_eeg_integration_architect.prompt.yaml)**: Designs advanced, mathematically rigorous multi-modal fMRI and EEG data integration pipelines adhering strictly to BIDS standards.
+- **[neural_field_theory_spatiotemporal_dynamics_architect](neural_field_theory_spatiotemporal_dynamics_architect.prompt.yaml)**: A Principal Theoretical Neuroscientist agent designed to analytically derive and numerically simulate high-dimensional spatiotemporal pattern formation using continuum Neural Field Theory.
 - **[neural_manifold_state_space_analyzer](neural_manifold_state_space_analyzer.prompt.yaml)**: A Principal Theoretical Neuroscientist agent designed to rigorously extract and analyze low-dimensional latent dynamics and topological structures from high-dimensional neural population recordings.
 - **[optogenetic_photocurrent_biophysical_modeler](optogenetic_photocurrent_biophysical_modeler.prompt.yaml)**: A Principal Computational Neurophysiologist agent designed to analytically derive and simulate multi-state Markov models for optogenetic photocurrent kinetics and their integration into Hodgkin-Huxley membrane dynamics.
 - **[synaptic_plasticity_weight_update_architect](synaptic_plasticity_weight_update_architect.prompt.yaml)**: A Lead Computational Neuroscientist agent designed to mathematically formulate and analyze complex synaptic plasticity weight-update rules and learning dynamics.
