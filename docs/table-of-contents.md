@@ -215,6 +215,7 @@
 [multi_objective_stochastic_optimization_architect](prompts/computational/operations_research/multi_objective_stochastic_optimization_architect.prompt.md)
 [3D QSAR Pharmacophore Modeling Architect](prompts/scientific/chemistry/computational/cheminformatics/3d_qsar_pharmacophore_modeling_architect.prompt.md)
 [Free Energy Perturbation Architect](prompts/scientific/chemistry/computational/molecular_dynamics/free_energy_perturbation_architect.prompt.md)
+[DFT Transition State Architect](prompts/scientific/chemistry/computational/quantum_chemistry/dft_transition_state_architect.prompt.md)
 [Non-Adiabatic Photodynamics Architect](prompts/scientific/chemistry/computational/quantum_chemistry/non_adiabatic_photodynamics_architect.prompt.md)
 [algorithmic_behavior_echo_chamber_modeler](prompts/scientific/psychology/computational/network_contagion/algorithmic_behavior_echo_chamber_modeler.prompt.md)
 [behavioral_epidemiology_social_contagion_modeler](prompts/scientific/psychology/computational/network_contagion/behavioral_epidemiology_social_contagion_modeler.prompt.md)

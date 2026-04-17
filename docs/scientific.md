@@ -51,6 +51,7 @@ title: Scientific
 - [dependent_type_theory_judgment_derivation](prompts/scientific/mathematics/formal_logic/dependent_type_theory_judgment_derivation.prompt.md)
 - [Design a Robust Preclinical Pathology Study Protocol](prompts/scientific/pathology/pathology_study_workflow/01_study_protocol_outline.prompt.md)
 - [Design the Study](prompts/scientific/chemical_characterization/chemical_characterization_workflow/01_design_the_study.prompt.md)
+- [DFT Transition State Architect](prompts/scientific/chemistry/computational/quantum_chemistry/dft_transition_state_architect.prompt.md)
 - [dialectical_materialism_structural_crisis_modeler](prompts/scientific/sociology/theory/critical_frameworks/dialectical_materialism_structural_crisis_modeler.prompt.md)
 - [dialectical_metaphysical_synthesizer](prompts/scientific/philosophy/metaphysics/dialectical_metaphysical_synthesizer.prompt.md)
 - [diamond_mortensen_pissarides_architect](prompts/scientific/economics/macroeconomics/search_and_matching/diamond_mortensen_pissarides_architect.prompt.md)
