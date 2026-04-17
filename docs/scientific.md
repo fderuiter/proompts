@@ -48,6 +48,7 @@ title: Scientific
 - [Design the Study](prompts/scientific/chemical_characterization/chemical_characterization_workflow/01_design_the_study.prompt.md)
 - [dialectical_materialism_structural_crisis_modeler](prompts/scientific/sociology/theory/critical_frameworks/dialectical_materialism_structural_crisis_modeler.prompt.md)
 - [dialectical_metaphysical_synthesizer](prompts/scientific/philosophy/metaphysics/dialectical_metaphysical_synthesizer.prompt.md)
+- [diamond_mortensen_pissarides_architect](prompts/scientific/economics/macroeconomics/search_and_matching/diamond_mortensen_pissarides_architect.prompt.md)
 - [differential_diagnosis_mapping_architect](prompts/scientific/psychology/clinical/psychopathology/differential_diagnosis_mapping_architect.prompt.md)
 - [digital_phenotyping_epidemiological_surveillance_architect](prompts/scientific/psychology/epidemiology/global_mental_health/digital_phenotyping_epidemiological_surveillance_architect.prompt.md)
 - [dirichlet_process_mixture_architect](prompts/scientific/statistics/inference/bayesian_methods/dirichlet_process_mixture_architect.prompt.md)
