@@ -1,3 +1,4 @@
-# Cheminformatics
+# Cheminformatics Overview
 
-Prompts for computational modeling of chemical data, including quantitative structure-activity relationship (QSAR) models, virtual screening, pharmacophore modeling, and predictive toxicology.
+## Prompts
+- **[3D QSAR Pharmacophore Modeling Architect](3d_qsar_pharmacophore_modeling_architect.prompt.yaml)**: Generates expert-level 3D Quantitative Structure-Activity Relationship (QSAR) models and pharmacophore hypotheses for novel molecular series, strictly adhering to IUPAC, SMILES/InChI notations, and precise energetic mapping.
