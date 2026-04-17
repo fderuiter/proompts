@@ -778,6 +778,7 @@
 [Cell-Based Architecture Designer](prompts/technical/architecture/cell_based_architecture_designer.prompt.md)
 [Change Data Capture Pipeline Architect](prompts/technical/architecture/change_data_capture_pipeline_architect.prompt.md)
 [Chaos Engineering Experiment Designer](prompts/technical/architecture/chaos_engineering_experiment_designer.prompt.md)
+[Confidential Computing Enclave Architect](prompts/technical/architecture/confidential_computing_enclave_architect.prompt.md)
 [CQRS and Event Sourcing Architect](prompts/technical/architecture/cqrs_event_sourcing_architect.prompt.md)
 [crdt_conflict_resolution_architect](prompts/technical/architecture/crdt_conflict_resolution_architect.prompt.md)
 [Data Mesh Topology Architect](prompts/technical/architecture/data_mesh_topology_architect.prompt.md)
