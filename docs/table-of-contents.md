@@ -757,6 +757,7 @@
 [Gregorian-Fluid Autoscaler](prompts/speculative/gregorian_fluid_autoscaling/gregorian_fluid_autoscaler.prompt.md)
 [Hyperbolic Fermentation RL Architect](prompts/speculative/hyperbolic_fermentation_rl_architect.prompt.md)
 [Zero-G Algorithmic Biopigment Curator](prompts/speculative/intersection/suborbital_biopigment_algorithmic_curator.prompt.md)
+[magnetohydrodynamic_polyphonic_logistics_architect](prompts/speculative/magnetohydrodynamic_polyphonic_logistics_architect.prompt.md)
 [microbial_steganography_diplomat](prompts/speculative/microbial_steganography_diplomat/microbial_steganography_diplomat.prompt.md)
 [Mycelial Aristocrat HFT Router](prompts/speculative/mycelial_aristocrat_hft_routing/mycelial_aristocrat_hft_router.prompt.md)
 [mycelial_orbital_logistics_architect](prompts/speculative/mycelial_orbital_logistics/mycelial_orbital_logistics_architect.prompt.md)

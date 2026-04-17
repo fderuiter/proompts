@@ -21,6 +21,7 @@ title: Speculative
 - [glacial_typographic_zk_architect](prompts/speculative/glacial_typographic_zk_architect/glacial_typographic_zk_architect.prompt.md)
 - [Gregorian-Fluid Autoscaler](prompts/speculative/gregorian_fluid_autoscaling/gregorian_fluid_autoscaler.prompt.md)
 - [Hyperbolic Fermentation RL Architect](prompts/speculative/hyperbolic_fermentation_rl_architect.prompt.md)
+- [magnetohydrodynamic_polyphonic_logistics_architect](prompts/speculative/magnetohydrodynamic_polyphonic_logistics_architect.prompt.md)
 - [microbial_steganography_diplomat](prompts/speculative/microbial_steganography_diplomat/microbial_steganography_diplomat.prompt.md)
 - [Mycelial Aristocrat HFT Router](prompts/speculative/mycelial_aristocrat_hft_routing/mycelial_aristocrat_hft_router.prompt.md)
 - [mycelial_arbitrage_urban_planner](prompts/speculative/urban_planning/mycelial_arbitrage_urban_planner.prompt.md)
