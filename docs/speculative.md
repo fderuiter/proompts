@@ -33,6 +33,7 @@ title: Speculative
 - [Quantum Poetic Waste Architect](prompts/speculative/quantum_poetic_waste_architect/quantum_poetic_waste_architect.prompt.md)
 - [quantum_epistolary_waste_architect](prompts/speculative/quantum_epistolary_waste_architect/quantum_epistolary_waste_architect.prompt.md)
 - [quantum_gothic_waste_optimiser](prompts/speculative/quantum_gothic_waste_optimiser/quantum_gothic_waste_optimiser.prompt.md)
+- [quantum_victorian_traffic_warden_architect](prompts/speculative/quantum_victorian_traffic_warden.prompt.md)
 - [quantum_zymurgy_astrogator](prompts/speculative/quantum_zymurgy_astrogator/quantum_zymurgy_astrogator.prompt.md)
 - [Tectonic Viennoiserie Cryptographic Architect](prompts/speculative/tectonic_viennoiserie_cryptographic_architect/tectonic_viennoiserie_cryptographic_architect.prompt.md)
 - [tectonic_horological_restructuring_architect](prompts/speculative/tectonic_horological_restructuring_architect/tectonic_horological_restructuring_architect.prompt.md)
