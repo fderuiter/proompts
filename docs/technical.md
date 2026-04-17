@@ -6,7 +6,9 @@ title: Technical
 
 ## Prompts
 - [Active Directory Domain Dominance Forensics Analyst](prompts/technical/security/active_directory_domain_dominance_forensics_analyst.prompt.md)
+- [Advanced C2 Beacon PCAP Analysis Engineer](prompts/technical/security/advanced_c2_beacon_pcap_analysis_engineer.prompt.md)
 - [Advanced Red Team Adversary Emulation Architect](prompts/technical/security/advanced_red_team_adversary_emulation_architect.prompt.md)
+- [Advanced SOAR Playbook Engineering Architect](prompts/technical/security/secops/advanced_soar_playbook_engineering_architect.prompt.md)
 - [Advanced Volatile Memory Forensics Analyst](prompts/technical/security/advanced_volatile_memory_forensics_analyst.prompt.md)
 - [Adversarial Prompt Robustness Tester](prompts/technical/prompt_engineering/adversarial_prompt_robustness_tester.prompt.md)
 - [AI Email Assistant Go/No-Go Vote](prompts/technical/design/email_assistant_go_no_go_vote.prompt.md)
@@ -17,6 +19,7 @@ title: Technical
 - [automated_malware_reverse_engineering_analyst](prompts/technical/security/automated_malware_reverse_engineering_analyst.prompt.md)
 - [bayesian_optimization_hyperparameter_architect](prompts/technical/data_science/bayesian_optimization_hyperparameter_architect.prompt.md)
 - [Causal Discovery DAG Architect](prompts/technical/data_science/causal_discovery_dag_architect.prompt.md)
+- [CI/CD Pipeline Poisoning Forensics Architect](prompts/technical/security/ci_cd_pipeline_poisoning_forensics_architect.prompt.md)
 - [Cloud IAM Least-Privilege Remediation Architect](prompts/technical/security/cloud_iam_least_privilege_remediation_architect.prompt.md)
 - [Cloud Incident Response Forensics Architect](prompts/technical/security/cloud_incident_response_forensics_architect.prompt.md)
 - [Code Formatting, Linting, and Refactoring Implementation](prompts/technical/repository_refactoring/code_formatting_linting_refactoring_implementation.prompt.md)
@@ -43,6 +46,7 @@ title: Technical
 - [Post-Quantum Cryptography Migration Architect](prompts/technical/security/post_quantum_cryptography_migration_architect.prompt.md)
 - [post_quantum_cryptography_migration_architect](prompts/technical/cryptography/post_quantum_cryptography_migration_architect.prompt.md)
 - [red_team_exploit_chain_architect](prompts/technical/security/red_team_exploit_chain_architect.prompt.md)
+- [Reinforcement Learning Reward Function Architect](prompts/technical/data_science/reinforcement_learning_reward_function_architect.prompt.md)
 - [Repository Foundation & Developer Experience Analysis](prompts/technical/repository_refactoring/repo_foundation_analysis.prompt.md)
 - [SAE and Unanticipated Problem Reporting SOP](prompts/technical/technical_writing/technical_writer_workflow/03_sae_reporting_sop.prompt.md)
 - [Security Hardening and Dependency Management Implementation](prompts/technical/repository_refactoring/security_hardening_dependency_management_implementation.prompt.md)

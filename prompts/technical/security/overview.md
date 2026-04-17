@@ -2,9 +2,11 @@
 
 ## Categories
 - [Iam Security/](iam_security/overview.md)
+- [Secops/](secops/overview.md)
 
 ## Prompts
 - **[Active Directory Domain Dominance Forensics Analyst](active_directory_domain_dominance_forensics_analyst.prompt.yaml)**: Generates expert-level forensic analysis and threat hunting strategies for identifying advanced Active Directory domain dominance and persistence mechanisms.
+- **[Advanced C2 Beacon PCAP Analysis Engineer](advanced_c2_beacon_pcap_analysis_engineer.prompt.yaml)**: Systematically reverse-engineers and analyzes network packet captures (PCAP) to identify, decode, and attribute complex Command and Control (C2) beaconing behaviors, focusing on obfuscated payloads and advanced threat actor evasion techniques.
 - **[Advanced Red Team Adversary Emulation Architect](advanced_red_team_adversary_emulation_architect.prompt.yaml)**: Generates highly rigorous, tactically sound, and evasive adversary emulation campaigns based on specific Advanced Persistent Threat (APT) profiles and target environments.
 - **[Advanced Volatile Memory Forensics Analyst](advanced_volatile_memory_forensics_analyst.prompt.yaml)**: Generates highly technical, precise volatile memory forensic analysis workflows and advanced rootkit detection strategies for complex intrusions.
 - **[ai_threat_modeling_architect](ai_threat_modeling_architect.prompt.yaml)**: Acts as a Principal AI Security Architect to conduct rigorous threat modeling (STRIDE/MITRE ATLAS) on LLM-integrated architectures.
@@ -12,6 +14,7 @@
 Specializes in zero-trust enforcement, mutual TLS (mTLS), token-based authentication (OAuth2/OIDC), continuous adaptive risk and trust assessment (CARTA), and defending against OWASP API Security Top 10 vulnerabilities.
 - **[APT Threat Hunting Query Engineer](apt_threat_hunting_query_engineer.prompt.yaml)**: Translates high-level Advanced Persistent Threat (APT) TTPs into precise, actionable SIEM queries for proactive threat hunting.
 - **[automated_malware_reverse_engineering_analyst](automated_malware_reverse_engineering_analyst.prompt.yaml)**: Acts as a Lead Malware Reverse Engineer to perform automated static and dynamic analysis, deobfuscation, and capability mapping of malicious binaries.
+- **[CI/CD Pipeline Poisoning Forensics Architect](ci_cd_pipeline_poisoning_forensics_architect.prompt.yaml)**: Conducts rigorous forensic analysis of compromised CI/CD pipelines to detect advanced pipeline poisoning and toxic deployment patterns.
 - **[Cloud IAM Least-Privilege Remediation Architect](cloud_iam_least_privilege_remediation_architect.prompt.yaml)**: Analyzes overly permissive cloud Identity and Access Management (IAM) configurations and generates precise, least-privilege JSON/Terraform remediation policies.
 - **[Cloud Incident Response Forensics Architect](cloud_incident_response_forensics_architect.prompt.yaml)**: Generates highly technical, cloud-native (AWS/Azure/GCP) incident response playbooks and forensic evidence acquisition strategies for sophisticated intrusions.
 - **[confidential_computing_enclave_architect](confidential_computing_enclave_architect.prompt.yaml)**: Acts as a Principal Security Architect to design highly secure, hardware-isolated Trusted Execution Environments (TEEs) and Confidential Computing architectures for protecting data in use.
