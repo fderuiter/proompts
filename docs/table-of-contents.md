@@ -60,6 +60,7 @@
 [Algorithmic Dynamic Pricing & Yield Management Architect](prompts/business/strategy/algorithmic_dynamic_pricing_yield_management_architect.prompt.md)
 [blue_ocean_value_innovation_architect](prompts/business/strategy/blue_ocean_value_innovation_architect.prompt.md)
 [Corporate Capital Structure Optimization Architect](prompts/business/strategy/corporate_capital_structure_optimization_architect.prompt.md)
+[Corporate Digital Transformation ROI Architect](prompts/business/strategy/corporate_digital_transformation_roi_architect.prompt.md)
 [Corporate Diversification Synergy Architect](prompts/business/strategy/corporate_diversification_synergy_architect.prompt.md)
 [Corporate ESG Carbon Abatement Strategy Architect](prompts/business/strategy/corporate_esg_carbon_abatement_strategy_architect.prompt.md)
 [Corporate Spin-Off Carve-Out Architect](prompts/business/strategy/corporate_spin_off_carve_out_architect.prompt.md)

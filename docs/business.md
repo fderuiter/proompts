@@ -17,6 +17,7 @@ title: Business
 - [Competitive-Bid Pricing & Margin Optimizer](prompts/business/cfo/cfo_workflow/02_competitive_bid_pricing.prompt.md)
 - [Competitor-Positioning Brief](prompts/business/development/competitor_positioning_brief.prompt.md)
 - [Corporate Capital Structure Optimization Architect](prompts/business/strategy/corporate_capital_structure_optimization_architect.prompt.md)
+- [Corporate Digital Transformation ROI Architect](prompts/business/strategy/corporate_digital_transformation_roi_architect.prompt.md)
 - [Corporate Diversification Synergy Architect](prompts/business/strategy/corporate_diversification_synergy_architect.prompt.md)
 - [Corporate ESG Carbon Abatement Strategy Architect](prompts/business/strategy/corporate_esg_carbon_abatement_strategy_architect.prompt.md)
 - [Corporate Spin-Off Carve-Out Architect](prompts/business/strategy/corporate_spin_off_carve_out_architect.prompt.md)
