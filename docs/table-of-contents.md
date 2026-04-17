@@ -72,6 +72,7 @@
 [Cross-Border Joint Venture Structuring Architect](prompts/business/strategy/cross_border_joint_venture_structuring_architect.prompt.md)
 [Distressed Debt Restructuring Chapter 11 Architect](prompts/business/strategy/distressed_debt_restructuring_chapter11_architect.prompt.md)
 [game_theoretic_competitive_dynamics_architect](prompts/business/strategy/game_theoretic_competitive_dynamics_architect.prompt.md)
+[Global Market Entry Expansion Architect](prompts/business/strategy/global_market_entry_expansion_architect.prompt.md)
 [Hostile Takeover Defense Matrix Architect](prompts/business/strategy/hostile_takeover_defense_matrix.prompt.md)
 [Leveraged Buyout Financial Structuring Architect](prompts/business/strategy/leveraged_buyout_financial_structuring_architect.prompt.md)
 [Platform Ecosystem Network Effects Architect](prompts/business/strategy/platform_ecosystem_network_effects_architect.prompt.md)
