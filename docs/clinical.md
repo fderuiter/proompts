@@ -90,6 +90,7 @@ title: Clinical
 - [Patient-Centric BYOD ePRO Workflow](prompts/clinical/epro/epro_workflow/01_patient-centric_byod_workflow.prompt.md)
 - [Pediatric Investigational Plan (PIP) Architect](prompts/clinical/medical_writing/pediatric_investigational_plan_architect.prompt.md)
 - [Personalized Investigator-Outreach Email Generator](prompts/clinical/site_acquisition/site_acquisition_workflow/03_investigator_outreach_email_generator.prompt.md)
+- [Pharmacovigilance Risk Management Plan Architect](prompts/clinical/pharmacovigilance/pharmacovigilance_risk_management_plan_architect.prompt.md)
 - [Phase II Oncology DMP](prompts/clinical/data_management/phase_ii_oncology_dmp.prompt.md)
 - [Portfolio-Level Clinical Operations Roadmap](prompts/clinical/trial_execution/portfolio_clin_ops_roadmap.prompt.md)
 - [Post-Market Safety Signal Trending](prompts/clinical/safety/clinical_safety_workflow/03_post_market_safety_signal_trending.prompt.md)
