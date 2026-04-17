@@ -51,6 +51,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [galois_group_resolvent_architect](prompts/scientific/mathematics/algebra/galois_theory/galois_group_resolvent_architect.prompt.md)
 
+## Analysis
+
+- [banach_space_operator_architect](prompts/scientific/mathematics/analysis/functional_analysis/banach_space_operator_architect.prompt.md)
+
 ## Analytical
 
 - [Predictive Multidimensional Spectroscopy Architect](prompts/scientific/chemistry/analytical/spectroscopy/predictive_multidimensional_spectroscopy_architect.prompt.md)
