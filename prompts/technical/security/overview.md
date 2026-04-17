@@ -6,6 +6,7 @@
 
 ## Prompts
 - **[Active Directory Domain Dominance Forensics Analyst](active_directory_domain_dominance_forensics_analyst.prompt.yaml)**: Generates expert-level forensic analysis and threat hunting strategies for identifying advanced Active Directory domain dominance and persistence mechanisms.
+- **[Advanced C2 Beacon PCAP Analysis Engineer](advanced_c2_beacon_pcap_analysis_engineer.prompt.yaml)**: Systematically reverse-engineers and analyzes network packet captures (PCAP) to identify, decode, and attribute complex Command and Control (C2) beaconing behaviors, focusing on obfuscated payloads and advanced threat actor evasion techniques.
 - **[Advanced Red Team Adversary Emulation Architect](advanced_red_team_adversary_emulation_architect.prompt.yaml)**: Generates highly rigorous, tactically sound, and evasive adversary emulation campaigns based on specific Advanced Persistent Threat (APT) profiles and target environments.
 - **[Advanced Volatile Memory Forensics Analyst](advanced_volatile_memory_forensics_analyst.prompt.yaml)**: Generates highly technical, precise volatile memory forensic analysis workflows and advanced rootkit detection strategies for complex intrusions.
 - **[ai_threat_modeling_architect](ai_threat_modeling_architect.prompt.yaml)**: Acts as a Principal AI Security Architect to conduct rigorous threat modeling (STRIDE/MITRE ATLAS) on LLM-integrated architectures.
