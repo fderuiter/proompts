@@ -64,6 +64,7 @@ title: Business
 - [Preventing Technical Debt](prompts/business/vp_tech_innovation/preventing_technical_debt.prompt.md)
 - [Private Equity Value Creation Architect](prompts/business/strategy/private_equity_value_creation_architect.prompt.md)
 - [Quantitative Corporate Portfolio Divestiture Architect](prompts/business/strategy/quantitative_corporate_portfolio_divestiture_architect.prompt.md)
+- [Quantitative FX Hedging Strategy Architect](prompts/business/cfo/quantitative_fx_hedging_strategy_architect.prompt.md)
 - [Rapid Proposal Builder](prompts/business/development/rapid_proposal_builder.prompt.md)
 - [Real Options Valuation Architect](prompts/business/strategy/real_options_valuation_architect.prompt.md)
 - [Red Account Turnaround Strategy](prompts/business/cx/red_account_turnaround.prompt.md)

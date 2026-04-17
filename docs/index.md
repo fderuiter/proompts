@@ -96,6 +96,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Liquidity Stress Test](prompts/business/cfo/liquidity_stress_test.prompt.md)
 - [M&A Target Evaluation](prompts/business/cfo/ma_target_evaluation.prompt.md)
 - [Net Present Value Socratic Tutor](prompts/business/cfo/npv_tutor.prompt.md)
+- [Quantitative FX Hedging Strategy Architect](prompts/business/cfo/quantitative_fx_hedging_strategy_architect.prompt.md)
 - [Regulatory Compliance Summary](prompts/business/cfo/regulatory_compliance_summary.prompt.md)
 - [Scenario Modeling & Sensitivity Analysis](prompts/business/cfo/scenario_modeling_sensitivity.prompt.md)
 - [Budget Variance Analysis](prompts/business/cfo/variance_analysis.prompt.md)
