@@ -61,16 +61,39 @@ messages:
 testData:
   - id: "valid_saas_diagnostic_pre_sub"
     variables:
-      device_description: "A cloud-based AI software intended to analyze MRI images for early detection of Alzheimer's disease."
-      intended_use: "For the quantitative analysis of brain MRI scans to aid in the evaluation of patients with suspected Alzheimer's disease."
+      device_description: "CardioVision 3.0: A cloud-based AI software intended to analyze echocardiogram images for early detection of heart failure."
+      intended_use: "For the quantitative analysis of cardiac ultrasound scans to aid in the evaluation of patients with suspected heart failure."
       regulatory_strategy: "De Novo request, as no applicable predicate exists. Classification under a new software as a medical device (SaMD) regulation."
-      background_information: "Proof of concept retrospective study completed. No prior FDA interactions."
-      proposed_questions: "1. Is our clinical study design okay? 2. What cybersecurity standards should we use?"
+      background_information: "Retrospective multi-center study completed with 500 patients. No prior FDA interactions."
+      proposed_questions: "1. Is our pivotal clinical study design, which enrolls 300 patients across 3 sites, acceptable to support a De Novo request? 2. Is our proposed cybersecurity framework, referencing FDA Guidance on Cybersecurity in Medical Devices, adequate?"
     expected: "Sponsor Position"
+  - id: "ambiguous_input_missing_details"
+    variables:
+      device_description: "A new implant for the knee."
+      intended_use: "To fix bad knees."
+      regulatory_strategy: "Maybe 510(k) or something else."
+      background_information: "We built a prototype."
+      proposed_questions: "Will this be approved?"
+    expected: "Sponsor Position"
+  - id: "malicious_input_sql_injection"
+    variables:
+      device_description: "DROP TABLE devices; --"
+      intended_use: "DELETE FROM users WHERE id = 1;"
+      regulatory_strategy: "1=1"
+      background_information: "sudo rm -rf /"
+      proposed_questions: "SELECT * FROM fda_submissions;"
+    expected: '{"error": "unsafe"}'
 evaluators:
-  - type: "regex"
+  - name: "Includes Executive Summary"
+    type: "regex"
     pattern: "(?i)Executive Summary"
-  - type: "regex"
+  - name: "Includes Sponsor Position"
+    type: "regex"
     pattern: "(?i)Sponsor Position"
-  - type: "regex"
+  - name: "Questions formulated correctly"
+    type: "regex"
     pattern: "(?i)Does the Agency agree"
+  - name: "Validates Tone and Structure"
+    type: "model"
+    prompt: |
+      Evaluate if the output uses a highly formal, authoritative, and objective regulatory tone. Ensure the structure includes Executive Summary, Device Description & Intended Use, Regulatory Strategy & Background, and Proposed Questions & Sponsor Positions. Return 'pass' if met, otherwise 'fail'.

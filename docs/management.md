@@ -52,6 +52,7 @@ title: Management
 - [Pharmacovigilance Safety Signal Prioritization](prompts/management/medical_director/pharmacovigilance_safety_signal_prioritization.prompt.md)
 - [Portfolio KPI Dashboard Brief](prompts/management/clinical_research_manager/portfolio_kpi_dashboard_brief.prompt.md)
 - [Portfolio Resource and Budget Forecast](prompts/management/project_management/portfolio_resource_budget_forecast.prompt.md)
+- [post_merger_integration_synergy_architect](prompts/management/operations/post_merger_integration_synergy_architect.prompt.md)
 - [Proactive Risk Heat-Map for Decentralized & Virtual Trials](prompts/management/operations/proactive_risk_heat_map.prompt.md)
 - [Project Charter and Scope Definition](prompts/management/project_management/project_management_workflow/01_project_charter_scope.prompt.md)
 - [Project Starter Pack Prompts](prompts/management/project_management/project_starter_pack.prompt.md)
