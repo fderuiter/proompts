@@ -1,5 +1,27 @@
 #!/usr/bin/env python3
-"""Run all repository validation checks."""
+"""
+Test All Script - The Master Runner
+
+## What is this?
+This is the master validation script that orchestrates the execution of all
+repository validation checks in sequence. It ensures the repository remains
+healthy, documentation is up-to-date, and prompt schemas are valid.
+
+## Why use it?
+- **Reduces Cognitive Load:** Instead of running 7 different maintenance scripts
+  manually, this script executes them all in the correct order.
+- **Prevents CI Failures:** Running this locally before committing helps catch
+  schema violations, broken links, and formatting issues early.
+- **Ensures Documentation Fidelity:** It runs scripts that rebuild the `docs/`
+  indexes based on current YAML content.
+
+## How to use it?
+Run this script from the root of the repository before committing changes.
+
+```bash
+python3 tools/scripts/test_all.py
+```
+"""
 
 from __future__ import annotations
 
@@ -27,6 +49,7 @@ def main() -> int:
         "cleanup_mac_files": lambda: run_command(["find", ".", "-name", "._*", "-delete"]),
         "check_prompts": check_prompts_main,
         "validate_prompt_schema": validate_prompt_schema_main,
+        "generate_overviews": lambda: run_command(["python3", "tools/scripts/generate_overviews.py"]),
         "update_docs_index": lambda: update_docs_index_run(check=True),
         "generate_docs": lambda: run_command(["python3", "tools/scripts/generate_docs.py", "--check"]),
         "check_broken_links": lambda: run_command(["python3", "tools/scripts/check_broken_links.py"]),
