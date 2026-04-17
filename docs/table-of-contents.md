@@ -67,6 +67,7 @@
 [Corporate Capital Structure Optimization Architect](prompts/business/strategy/corporate_capital_structure_optimization_architect.prompt.md)
 [Corporate Diversification Synergy Architect](prompts/business/strategy/corporate_diversification_synergy_architect.prompt.md)
 [Corporate ESG Carbon Abatement Strategy Architect](prompts/business/strategy/corporate_esg_carbon_abatement_strategy_architect.prompt.md)
+[corporate_fx_hedging_currency_risk_architect](prompts/business/strategy/corporate_fx_hedging_currency_risk_architect.prompt.md)
 [Corporate Geopolitical Risk Mitigation Architect](prompts/business/strategy/corporate_geopolitical_risk_mitigation_architect.prompt.md)
 [Corporate Spin-Off Carve-Out Architect](prompts/business/strategy/corporate_spin_off_carve_out_architect.prompt.md)
 [Corporate Transfer Pricing Optimization Architect](prompts/business/strategy/corporate_transfer_pricing_optimization_architect.prompt.md)
