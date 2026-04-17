@@ -211,6 +211,7 @@ title: Scientific
 - [Universal Template-Table Prompt](prompts/scientific/biostatistics/universal_template_table_prompt.prompt.md)
 - [variational_inference_architect](prompts/scientific/statistics/inference/bayesian_methods/variational_inference_architect.prompt.md)
 - [wealth_concentration_decomposition_architect](prompts/scientific/sociology/stratification/systemic_inequality/wealth_concentration_decomposition_architect.prompt.md)
+- [whole_brain_biophysical_network_simulator](prompts/scientific/computational_theoretical_neuroscience/whole_brain_biophysical_network_simulator.prompt.md)
 - [Write the Regulatory Summary](prompts/scientific/chemical_characterization/chemical_characterization_workflow/03_write_the_regulatory_summary.prompt.md)
 
 ## Workflows
