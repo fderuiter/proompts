@@ -13,6 +13,7 @@ title: Clinical
 - [Analyze Adjudication KPIs](prompts/clinical/adjudication/adjudication_workflow/03_analyze_adjudication_kpis.prompt.md)
 - [Architect the Integration Blueprint](prompts/clinical/eclinical_integration/eclinical_integration_workflow/01_architect_integration_blueprint.prompt.md)
 - [Audit Trail Review](prompts/clinical/data_management/audit_trail_review.prompt.md)
+- [breakthrough_therapy_designation_rationale_architect](prompts/clinical/regulatory_affairs/breakthrough_therapy_designation_rationale_architect.prompt.md)
 - [CAPA Plan Builder for Monitoring Findings](prompts/clinical/monitoring/clinical_monitoring_workflow/02_capa_plan_builder_for_monitoring_findings.prompt.md)
 - [CDASH Alignment](prompts/clinical/forms/cdash_alignment.prompt.md)
 - [CDASH Mapping & Completion-Guide Assistant](prompts/clinical/forms/clinical_prompts_workflow/03_cdash_mapping_completion_guide.prompt.md)

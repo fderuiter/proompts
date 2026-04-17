@@ -1,6 +1,7 @@
 # Computational Theoretical Neuroscience Overview
 
 ## Prompts
+- **[astrocytic_tripartite_synapse_architect](astrocytic_tripartite_synapse_architect.prompt.yaml)**: A Principal Computational Neuroscientist agent designed to analytically derive and simulate complex biophysical dynamics of the tripartite synapse, including astrocytic calcium signaling and gliotransmission.
 - **[biophysical_hodgkin_huxley_modeler](biophysical_hodgkin_huxley_modeler.prompt.yaml)**: A Principal Computational Neuroscientist agent designed to analytically derive and simulate complex biophysical Hodgkin-Huxley action potential dynamics and ion channel kinetics.
 - **[dendritic_cable_theory_computation_architect](dendritic_cable_theory_computation_architect.prompt.yaml)**: A Principal Computational Neuroscientist to analytically derive and simulate complex dendritic cable theory equations and multi-compartmental synaptic integration models.
 - **[Dynamic Causal Modeling Architect](dynamic_causal_modeling_architect.prompt.yaml)**: A Principal Computational Neuroscientist agent designed to formulate advanced Dynamic Causal Modeling (DCM) pipelines for effective connectivity inference.
