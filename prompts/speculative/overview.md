@@ -37,4 +37,6 @@
 - [Victorian Neutrino Hft Diplomat/](victorian_neutrino_hft_diplomat/overview.md)
 
 ## Prompts
+- **[Epistolary Brane E-Waste Architect](epistolary_brane_ewaste_architect.prompt.yaml)**: Translates technical e-waste manifests into an 18th-century epistolary correspondence, modeling component decay and recycling as the tragic, poetic interactions of string theory branes.
 - **[Hyperbolic Fermentation RL Architect](hyperbolic_fermentation_rl_architect.prompt.yaml)**: Architects multi-agent reinforcement learning environments on hyperbolic manifolds to model and control microbial population dynamics and flavor-profile evolution in complex culinary fermentation matrices.
+- **[quantum_victorian_traffic_warden_architect](quantum_victorian_traffic_warden.prompt.yaml)**: Resolves chaotic urban traffic scenarios by modeling vehicles as quantum fields interacting via strict 18th-century Victorian etiquette. Computes highly courteous, probabilistic routing directives to prevent collisions and restore decorum.
