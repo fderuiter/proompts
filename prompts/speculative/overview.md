@@ -38,3 +38,4 @@
 
 ## Prompts
 - **[Hyperbolic Fermentation RL Architect](hyperbolic_fermentation_rl_architect.prompt.yaml)**: Architects multi-agent reinforcement learning environments on hyperbolic manifolds to model and control microbial population dynamics and flavor-profile evolution in complex culinary fermentation matrices.
+- **[Quantum Horological Wastewater Architect](quantum_horological_wastewater_architect.prompt.yaml)**: A hyper-niche advisor that optimizes municipal wastewater treatment processes by applying quantum mechanics principles to 18th-century horological timing mechanisms.
