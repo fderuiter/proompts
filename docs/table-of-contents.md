@@ -88,6 +88,7 @@
 [Private Equity Value Creation Architect](prompts/business/strategy/private_equity_value_creation_architect.prompt.md)
 [Quantitative Corporate Portfolio Divestiture Architect](prompts/business/strategy/quantitative_corporate_portfolio_divestiture_architect.prompt.md)
 [Real Options Valuation Architect](prompts/business/strategy/real_options_valuation_architect.prompt.md)
+[stochastic_market_entry_greenfield_architect](prompts/business/strategy/stochastic_market_entry_greenfield_architect.prompt.md)
 [Strategic Capital Allocation Architect](prompts/business/strategy/strategic_capital_allocation_architect.prompt.md)
 [Strategic Product Cannibalization Architect](prompts/business/strategy/strategic_product_cannibalization_architect.prompt.md)
 [Strategic Real Options Valuation Architect](prompts/business/strategy/strategic_real_options_valuation_architect.prompt.md)

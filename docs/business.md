@@ -80,6 +80,7 @@ title: Business
 - [RFP Executive-Summary Generator](prompts/business/development/rfp_executive_summary_generator.prompt.md)
 - [Scenario Modeling & Sensitivity Analysis](prompts/business/cfo/scenario_modeling_sensitivity.prompt.md)
 - [Scenario-Based Clinical-Trial Cash-Flow Forecast](prompts/business/cfo/cfo_workflow/01_scenario_cash_flow_forecast.prompt.md)
+- [stochastic_market_entry_greenfield_architect](prompts/business/strategy/stochastic_market_entry_greenfield_architect.prompt.md)
 - [Strategic Business Case for New Service Line](prompts/business/development/strategic_business_case_in_silico.prompt.md)
 - [Strategic Capital Allocation Architect](prompts/business/strategy/strategic_capital_allocation_architect.prompt.md)
 - [Strategic Product Cannibalization Architect](prompts/business/strategy/strategic_product_cannibalization_architect.prompt.md)
