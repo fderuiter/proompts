@@ -28,6 +28,15 @@ Workflows are defined in `.workflow.yaml` files. Each workflow consists of:
   - **`prompt_file`**: Path to the prompt file (relative to repository root).
   - **`map_inputs`**: Mapping of workflow inputs or previous step outputs to the prompt's inputs.
 
+```mermaid
+graph TD
+    A[Global Inputs] --> B(Step 1: step_id)
+    B -->|map_inputs: steps.step_id.output| C(Step 2: step_id)
+    C -->|Output| D[Final Output]
+    style A fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    style D fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+```
+
 ## Simulation 🚀
 
 You can **simulate** workflow execution using the `run_workflow.py` script. This validates the variable passing and logic flow using the `testData` embedded in the prompt files.
