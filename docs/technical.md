@@ -42,6 +42,7 @@ title: Technical
 - [Investigator's Brochure Summary of Changes](prompts/technical/technical_writing/technical_writer_workflow/02_ib_detailed_soc.prompt.md)
 - [Kubernetes Cluster Security Posture Architect](prompts/technical/security/kubernetes_cluster_security_posture_architect.prompt.md)
 - [Medical Device Cybersecurity Threat Modeling](prompts/technical/security/cybersecurity_threat_modeling.prompt.md)
+- [Non-Human Identity Lifecycle Architect](prompts/technical/security/iam_security/non_human_identity_lifecycle_architect.prompt.md)
 - [OT/SCADA Security Resilience Architect](prompts/technical/security/ot_scada_security_architect.prompt.md)
 - [Post-Quantum Cryptography Migration Architect](prompts/technical/security/post_quantum_cryptography_migration_architect.prompt.md)
 - [post_quantum_cryptography_migration_architect](prompts/technical/cryptography/post_quantum_cryptography_migration_architect.prompt.md)
