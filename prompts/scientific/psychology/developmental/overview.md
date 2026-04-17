@@ -1,3 +1,4 @@
-# Developmental Psychology
+# Developmental Overview
 
-This directory contains prompts related to developmental psychology, including longitudinal modeling and life-span development methodologies.
+## Categories
+- [Longitudinal Modeling/](longitudinal_modeling/overview.md)
