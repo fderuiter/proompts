@@ -489,6 +489,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [agm_belief_revision_formal_engine](prompts/scientific/philosophy/logic/philosophical_logic/agm_belief_revision_formal_engine.prompt.md)
 - [Deontic Logic Normative Conflict Resolver](prompts/scientific/philosophy/logic/philosophical_logic/deontic_logic_normative_conflict_resolver.prompt.md)
 - [Modal Logic Possible Worlds Evaluator](prompts/scientific/philosophy/logic/philosophical_logic/modal_logic_possible_worlds_evaluator.prompt.md)
+- [paraconsistent_logic_dialetheism_evaluator](prompts/scientific/philosophy/logic/philosophical_logic/paraconsistent_logic_dialetheism_evaluator.prompt.md)
 
 ## Macroeconomics
 
