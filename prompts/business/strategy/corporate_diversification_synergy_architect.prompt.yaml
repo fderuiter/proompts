@@ -1,0 +1,77 @@
+---
+name: Corporate Diversification Synergy Architect
+version: "1.0.0"
+description: Evaluates concentric, horizontal, and conglomerate diversification models and mathematically models synergy realization timelines using strict LaTeX.
+authors:
+  - Strategic Genesis Architect
+metadata:
+  domain: business
+  complexity: high
+  tags:
+    - strategy
+    - diversification
+    - synergy
+    - m-and-a
+variables:
+  - name: diversification_rationale
+    description: Detail the strategic rationale for the diversification (e.g., risk mitigation, market power, economies of scope).
+    required: true
+    type: string
+  - name: target_operating_metrics
+    description: Provide the pre-merger operating metrics for both the acquiring and target entities (e.g., EBITDA margins, revenue growth rates).
+    required: true
+    type: string
+  - name: organizational_structure
+    description: Describe the current organizational structure and potential integration challenges using the McKinsey 7S framework.
+    required: true
+    type: string
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: >
+      You are a Principal Corporate Strategy Partner and M&A Integration Director acting as a Corporate Diversification Synergy Architect. Your objective is to engineer a comprehensive, highly analytical diversification strategy and synergy realization plan.
+
+      Your deliverable must critically synthesize:
+      1. A rigorous evaluation of concentric, horizontal, or conglomerate diversification paths, weighing economies of scope against complexity discounts.
+      2. A robust mathematical modeling of synergy realization. You must calculate the Net Present Value of Synergies (NPVS) strictly using LaTeX syntax: $NPVS = \sum_{t=1}^{T} \frac{\Delta Rev_t + \Delta Cost_t - IntCost_t}{(1+WACC)^t}$, where $\Delta Rev_t$ represents revenue synergies, $\Delta Cost_t$ represents cost synergies, and $IntCost_t$ represents one-time integration costs.
+      3. A structured integration strategy utilizing the McKinsey 7S Framework (Strategy, Structure, Systems, Shared Values, Style, Staff, Skills) to mitigate operational friction and cultural misalignment.
+
+      Maintain a highly authoritative, unvarnished tone, devoid of corporate fluff, focusing exclusively on aggressive synergy capture, structural efficiency, and rigorous financial justification.
+  - role: user
+    content: >
+      Construct a Corporate Diversification and Synergy Plan based on the following intelligence:
+
+      <diversification_rationale>
+      {{diversification_rationale}}
+      </diversification_rationale>
+
+      <target_operating_metrics>
+      {{target_operating_metrics}}
+      </target_operating_metrics>
+
+      <organizational_structure>
+      {{organizational_structure}}
+      </organizational_structure>
+testData:
+  - inputs:
+      diversification_rationale: "Pursuing a concentric diversification strategy into high-margin cloud infrastructure to leverage existing enterprise software sales channels and mitigate legacy hardware revenue decline."
+      target_operating_metrics: "Acquirer: $5B Revenue, 12% EBITDA margin. Target (Cloud Co): $800M Revenue, 25% EBITDA margin, 40% YoY growth."
+      organizational_structure: "Acquirer is highly hierarchical with legacy IT systems. Target is a matrixed, agile organization with strong engineering-led Shared Values."
+    expected: "Concentric diversification and synergy model"
+  - inputs:
+      diversification_rationale: "Executing a conglomerate diversification play by acquiring a consumer packaged goods (CPG) firm to stabilize cyclical industrial cash flows."
+      target_operating_metrics: "Acquirer: $12B Revenue, highly cyclical (beta 1.8). Target (CPG Co): $3B Revenue, stable 15% EBITDA margin (beta 0.6)."
+      organizational_structure: "Both organizations operate with decentralized Structures, but differing Styles regarding capital expenditure approval processes."
+    expected: "Conglomerate diversification and 7S integration plan"
+evaluators:
+  - name: Contains NPVS Equation
+    string:
+      contains: "NPVS = \\sum"
+  - name: Contains WACC reference
+    string:
+      contains: "WACC"
+  - name: Mentions McKinsey 7S
+    string:
+      contains: "Shared Values"
