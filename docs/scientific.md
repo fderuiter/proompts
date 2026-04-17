@@ -151,6 +151,7 @@ title: Scientific
 - [Regulatory Gap-Analysis Comparator](prompts/scientific/sterility/sterility_workflow/02_regulatory_gap_analysis_comparator.prompt.md)
 - [Regulatory Submission Support](prompts/scientific/biosafety/biological_safety_workflow/03_regulatory_submission_support.prompt.md)
 - [residential_segregation_spatial_inequality_modeler](prompts/scientific/sociology/demography/residential_segregation_spatial_inequality_modeler.prompt.md)
+- [reversible_jump_mcmc_architect](prompts/scientific/statistics/inference/bayesian_methods/reversible_jump_mcmc_architect.prompt.md)
 - [Riemannian Manifold Curvature Deriver](prompts/scientific/mathematics/geometry/differential/riemannian_manifold_curvature_deriver.prompt.md)
 - [Risk Assessment Expert](prompts/scientific/biosafety/biological_safety_workflow/01_risk_assessment_expert.prompt.md)
 - [Sample-Size & Randomization Strategy](prompts/scientific/biostatistics/sample_size_randomization_strategy.prompt.md)
