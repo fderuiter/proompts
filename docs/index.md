@@ -656,6 +656,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Organic
 
+- [Visible Light Photoredox Pathway Architect](prompts/scientific/chemistry/organic/photoredox_catalysis/visible_light_photoredox_pathway_architect.prompt.md)
 - [advanced_retrosynthetic_pathway_generator](prompts/scientific/chemistry/organic/retrosynthesis/advanced_retrosynthetic_pathway_generator.prompt.md)
 
 ## Particle Physics
