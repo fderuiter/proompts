@@ -121,6 +121,7 @@ title: Scientific
 - [multi_national_behavioral_intervention_architect](prompts/scientific/psychology/cross_cultural/population_psychometrics/multi_national_behavioral_intervention_architect.prompt.md)
 - [multi_omics_data_integration_architect](prompts/scientific/computational_biology/multi_omics_data_integration_architect.prompt.md)
 - [multidimensional_nmr_hrms_structure_elucidator](prompts/scientific/chemistry/analytical/multidimensional_nmr_hrms_structure_elucidator.prompt.md)
+- [multidimensional_poverty_alkire_foster_architect](prompts/scientific/sociology/stratification/systemic_inequality/multidimensional_poverty_alkire_foster_architect.prompt.md)
 - [multifactorial_behavioral_intervention_architect](prompts/scientific/psychology/quantitative/experimental_design/multifactorial_behavioral_intervention_architect.prompt.md)
 - [multinational_longitudinal_intervention_architect](prompts/scientific/psychology/epidemiology/global_mental_health/multinational_longitudinal_intervention_architect.prompt.md)
 - [Multiplicity Adjustment Code Generator](prompts/scientific/biostatistics/multiplicity_adjustments_calculator.prompt.md)

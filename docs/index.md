@@ -1035,6 +1035,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Stratification
 
+- [multidimensional_poverty_alkire_foster_architect](prompts/scientific/sociology/stratification/systemic_inequality/multidimensional_poverty_alkire_foster_architect.prompt.md)
 - [occupational_segregation_opportunity_hoarding_architect](prompts/scientific/sociology/stratification/systemic_inequality/occupational_segregation_opportunity_hoarding_architect.prompt.md)
 - [theil_t_index_inequality_decomposer](prompts/scientific/sociology/stratification/systemic_inequality/theil_t_index_inequality_decomposer.prompt.md)
 - [wealth_concentration_decomposition_architect](prompts/scientific/sociology/stratification/systemic_inequality/wealth_concentration_decomposition_architect.prompt.md)
