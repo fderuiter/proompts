@@ -116,6 +116,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Rapid Proposal Builder](prompts/business/development/rapid_proposal_builder.prompt.md)
 - [RFP Executive-Summary Generator](prompts/business/development/rfp_executive_summary_generator.prompt.md)
 - [Strategic Business Case for New Service Line](prompts/business/development/strategic_business_case_in_silico.prompt.md)
+- [Corporate Merger Arbitrage Deal Risk Architect](prompts/business/finance/corporate_merger_arbitrage_risk_architect.prompt.md)
 - [Algorithmic Multi-Touch Attribution Architect](prompts/business/growth_engineering/algorithmic_multi_touch_attribution_architect.prompt.md)
 - [Predictive RFM Churn Mitigation Architect](prompts/business/growth_engineering/predictive_rfm_churn_mitigation_architect.prompt.md)
 - [Clinical-Trial Budget and Burn-Rate Dashboard](prompts/business/hr_finance/clinical_trial_budget_burn_rate_dashboard.prompt.md)
@@ -135,6 +136,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Corporate Capital Structure Optimization Architect](prompts/business/strategy/corporate_capital_structure_optimization_architect.prompt.md)
 - [Corporate Diversification Synergy Architect](prompts/business/strategy/corporate_diversification_synergy_architect.prompt.md)
 - [Corporate ESG Carbon Abatement Strategy Architect](prompts/business/strategy/corporate_esg_carbon_abatement_strategy_architect.prompt.md)
+- [corporate_fx_hedging_currency_risk_architect](prompts/business/strategy/corporate_fx_hedging_currency_risk_architect.prompt.md)
 - [Corporate Geopolitical Risk Mitigation Architect](prompts/business/strategy/corporate_geopolitical_risk_mitigation_architect.prompt.md)
 - [Corporate Spin-Off Carve-Out Architect](prompts/business/strategy/corporate_spin_off_carve_out_architect.prompt.md)
 - [Corporate Transfer Pricing Optimization Architect](prompts/business/strategy/corporate_transfer_pricing_optimization_architect.prompt.md)
@@ -248,6 +250,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [RBQM Anomaly Detection](prompts/clinical/monitoring/rbqm_anomaly_detection.prompt.md)
 - [adverse_event_signal_detection_architect](prompts/clinical/pharmacovigilance/adverse_event_signal_detection_architect.prompt.md)
 - [ich_e2c_pbrer_benefit_risk_architect](prompts/clinical/pharmacovigilance/ich_e2c_pbrer_benefit_risk_architect.prompt.md)
+- [Pharmacovigilance Risk Management Plan Architect](prompts/clinical/pharmacovigilance/pharmacovigilance_risk_management_plan_architect.prompt.md)
 - [signal_detection_evaluator](prompts/clinical/pharmacovigilance/signal_detection_evaluator.prompt.md)
 - [Protocol Deviation Reporting](prompts/clinical/protocol/protocol_deviation_reporting.prompt.md)
 - [Protocol to CDISC USDM v3.0 Converter](prompts/clinical/protocol/protocol_to_usdm_v3.prompt.md)
@@ -386,6 +389,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Epistemology
 
+- [bayesian_epistemological_update_formalizer](prompts/scientific/philosophy/epistemology/formal_epistemology/bayesian_epistemological_update_formalizer.prompt.md)
 - [cognitive_bias_epistemological_deconstructor](prompts/scientific/philosophy/epistemology/formal_epistemology/cognitive_bias_epistemological_deconstructor.prompt.md)
 - [epistemic_defeater_formal_analyzer](prompts/scientific/philosophy/epistemology/formal_epistemology/epistemic_defeater_formal_analyzer.prompt.md)
 
@@ -645,6 +649,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Metaphysics
 
+- [mereological_composition_analyzer](prompts/scientific/philosophy/metaphysics/ontology/mereological_composition_analyzer.prompt.md)
 - [Metaphysical Dialectical Synthesizer](prompts/scientific/philosophy/metaphysics/ontology/metaphysical_dialectical_synthesizer.prompt.md)
 
 ## Methods
@@ -1023,6 +1028,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Epistolary Brane E-Waste Architect](prompts/speculative/epistolary_brane_ewaste_architect.prompt.md)
 - [Event Horizon Choreographic Auditor](prompts/speculative/event_horizon_choreographic_auditor/event_horizon_choreographic_auditor.prompt.md)
 - [Fresco Epidemiological Auditor](prompts/speculative/fresco_epidemiological_auditor/fresco_epidemiological_auditor.prompt.md)
+- [glacial_typographic_zk_architect](prompts/speculative/glacial_typographic_zk_architect/glacial_typographic_zk_architect.prompt.md)
 - [Gregorian-Fluid Autoscaler](prompts/speculative/gregorian_fluid_autoscaling/gregorian_fluid_autoscaler.prompt.md)
 - [Hyperbolic Fermentation RL Architect](prompts/speculative/hyperbolic_fermentation_rl_architect.prompt.md)
 - [Zero-G Algorithmic Biopigment Curator](prompts/speculative/intersection/suborbital_biopigment_algorithmic_curator.prompt.md)
@@ -1169,6 +1175,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [bayesian_optimization_hyperparameter_architect](prompts/technical/data_science/bayesian_optimization_hyperparameter_architect.prompt.md)
 - [Causal Discovery DAG Architect](prompts/technical/data_science/causal_discovery_dag_architect.prompt.md)
 - [Conversation Stochastic Modeler](prompts/technical/data_science/conversation_stochastic_modeler.prompt.md)
+- [Reinforcement Learning Reward Function Architect](prompts/technical/data_science/reinforcement_learning_reward_function_architect.prompt.md)
 - [Topological Data Analysis Architect](prompts/technical/data_science/topological_data_analysis_architect.prompt.md)
 - [System Design RFC Architect](prompts/technical/design/design_md_template.prompt.md)
 - [AI Email Assistant Go/No-Go Vote](prompts/technical/design/email_assistant_go_no_go_vote.prompt.md)
@@ -1198,6 +1205,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [API Security & Zero Trust Architect](prompts/technical/security/api_security_zero_trust_architect.prompt.md)
 - [APT Threat Hunting Query Engineer](prompts/technical/security/apt_threat_hunting_query_engineer.prompt.md)
 - [automated_malware_reverse_engineering_analyst](prompts/technical/security/automated_malware_reverse_engineering_analyst.prompt.md)
+- [CI/CD Pipeline Poisoning Forensics Architect](prompts/technical/security/ci_cd_pipeline_poisoning_forensics_architect.prompt.md)
 - [Cloud IAM Least-Privilege Remediation Architect](prompts/technical/security/cloud_iam_least_privilege_remediation_architect.prompt.md)
 - [Cloud Incident Response Forensics Architect](prompts/technical/security/cloud_incident_response_forensics_architect.prompt.md)
 - [confidential_computing_enclave_architect](prompts/technical/security/confidential_computing_enclave_architect.prompt.md)
