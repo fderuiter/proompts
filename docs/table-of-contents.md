@@ -630,6 +630,7 @@
 [Premarket Approval (PMA) Preparation](prompts/regulatory/submissions/premarket_approval_pma_preparation.prompt.md)
 [RTA Checklist Preparation](prompts/regulatory/submissions/rta_checklist_preparation.prompt.md)
 [UDI GUDID Submission](prompts/regulatory/submissions/udi_gudid_submission.prompt.md)
+[ADM 3+1 Decomposition Architect](prompts/scientific/physics/relativity/general_relativity/adm_3_plus_1_decomposition_architect.prompt.md)
 [adm_spacetime_decomposition_architect](prompts/scientific/physics/relativity/general_relativity/adm_spacetime_decomposition_architect.prompt.md)
 [Black Hole Perturbation Teukolsky Architect](prompts/scientific/physics/relativity/general_relativity/black_hole_perturbation_teukolsky_architect.prompt.md)
 [Design a Patient-Centered Randomization Scheme](prompts/clinical/rtsm/rtsm_workflow/01_patient_centered_randomization_scheme.prompt.md)
