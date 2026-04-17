@@ -13,6 +13,7 @@
 - [Epigenetic Glassblowing Validation/](epigenetic_glassblowing_validation/overview.md)
 - [Event Horizon Choreographic Auditor/](event_horizon_choreographic_auditor/overview.md)
 - [Fresco Epidemiological Auditor/](fresco_epidemiological_auditor/overview.md)
+- [Glacial Typographic Zk Architect/](glacial_typographic_zk_architect/overview.md)
 - [Gregorian Fluid Autoscaling/](gregorian_fluid_autoscaling/overview.md)
 - [Intersection/](intersection/overview.md)
 - [Microbial Steganography Diplomat/](microbial_steganography_diplomat/overview.md)
