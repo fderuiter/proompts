@@ -930,6 +930,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [Identity Threat Detection and Response Architect](prompts/technical/security/iam_security/identity_threat_detection_response_architect.prompt.md)
 - [Zero Trust Privileged Access Management Architect](prompts/technical/security/iam_security/zero_trust_pam_architect.prompt.md)
+- [advanced_soar_playbook_engineering_architect](prompts/technical/security/secops/advanced_soar_playbook_engineering_architect.prompt.md)
 
 ## Site Acquisition
 
