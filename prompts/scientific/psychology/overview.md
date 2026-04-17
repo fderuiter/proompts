@@ -6,5 +6,6 @@
 - [Cognitive/](cognitive/overview.md)
 - [Computational/](computational/overview.md)
 - [Cross Cultural/](cross_cultural/overview.md)
+- [Developmental/](developmental/overview.md)
 - [Epidemiology/](epidemiology/overview.md)
 - [Quantitative/](quantitative/overview.md)
