@@ -38,3 +38,4 @@
 
 ## Prompts
 - **[Hyperbolic Fermentation RL Architect](hyperbolic_fermentation_rl_architect.prompt.yaml)**: Architects multi-agent reinforcement learning environments on hyperbolic manifolds to model and control microbial population dynamics and flavor-profile evolution in complex culinary fermentation matrices.
+- **[quantum_victorian_traffic_warden_architect](quantum_victorian_traffic_warden.prompt.yaml)**: Resolves chaotic urban traffic scenarios by modeling vehicles as quantum fields interacting via strict 18th-century Victorian etiquette. Computes highly courteous, probabilistic routing directives to prevent collisions and restore decorum.
