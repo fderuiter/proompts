@@ -314,6 +314,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [behavioral_epidemiology_social_contagion_modeler](prompts/scientific/psychology/computational/network_contagion/behavioral_epidemiology_social_contagion_modeler.prompt.md)
 - [mass_psychogenic_illness_diffusion_modeler](prompts/scientific/psychology/computational/network_contagion/mass_psychogenic_illness_diffusion_modeler.prompt.md)
 - [stochastic_radicalization_cascade_modeler](prompts/scientific/psychology/computational/network_contagion/stochastic_radicalization_cascade_modeler.prompt.md)
+- [synthetic_media_epistemic_collapse_modeler](prompts/scientific/psychology/computational/network_contagion/synthetic_media_epistemic_collapse_modeler.prompt.md)
 
 ## Cosmology
 
