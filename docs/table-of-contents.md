@@ -164,6 +164,7 @@
 [RBQM Anomaly Detection](prompts/clinical/monitoring/rbqm_anomaly_detection.prompt.md)
 [adverse_event_signal_detection_architect](prompts/clinical/pharmacovigilance/adverse_event_signal_detection_architect.prompt.md)
 [ich_e2c_pbrer_benefit_risk_architect](prompts/clinical/pharmacovigilance/ich_e2c_pbrer_benefit_risk_architect.prompt.md)
+[Pharmacovigilance Risk Management Plan Architect](prompts/clinical/pharmacovigilance/pharmacovigilance_risk_management_plan_architect.prompt.md)
 [signal_detection_evaluator](prompts/clinical/pharmacovigilance/signal_detection_evaluator.prompt.md)
 [Protocol Deviation Reporting](prompts/clinical/protocol/protocol_deviation_reporting.prompt.md)
 [Protocol to CDISC USDM v3.0 Converter](prompts/clinical/protocol/protocol_to_usdm_v3.prompt.md)
