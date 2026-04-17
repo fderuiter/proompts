@@ -848,6 +848,7 @@
 [Test Suite Enhancement and CI Pipeline Implementation](prompts/technical/repository_refactoring/test_suite_enhancement_ci_pipeline_implementation.prompt.md)
 [Testing, Configuration, and Automation Analysis](prompts/technical/repository_refactoring/testing_configuration_automation_analysis.prompt.md)
 [Active Directory Domain Dominance Forensics Analyst](prompts/technical/security/active_directory_domain_dominance_forensics_analyst.prompt.md)
+[Advanced C2 Beacon PCAP Analysis Engineer](prompts/technical/security/advanced_c2_beacon_pcap_analysis_engineer.prompt.md)
 [Advanced Red Team Adversary Emulation Architect](prompts/technical/security/advanced_red_team_adversary_emulation_architect.prompt.md)
 [Advanced Volatile Memory Forensics Analyst](prompts/technical/security/advanced_volatile_memory_forensics_analyst.prompt.md)
 [ai_threat_modeling_architect](prompts/technical/security/ai_threat_modeling_architect.prompt.md)
