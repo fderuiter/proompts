@@ -1113,6 +1113,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [bayesian_optimization_hyperparameter_architect](prompts/technical/data_science/bayesian_optimization_hyperparameter_architect.prompt.md)
 - [Causal Discovery DAG Architect](prompts/technical/data_science/causal_discovery_dag_architect.prompt.md)
 - [Conversation Stochastic Modeler](prompts/technical/data_science/conversation_stochastic_modeler.prompt.md)
+- [reinforcement_learning_reward_function_architect](prompts/technical/data_science/reinforcement_learning_reward_function_architect.prompt.md)
 - [Topological Data Analysis Architect](prompts/technical/data_science/topological_data_analysis_architect.prompt.md)
 - [System Design RFC Architect](prompts/technical/design/design_md_template.prompt.md)
 - [AI Email Assistant Go/No-Go Vote](prompts/technical/design/email_assistant_go_no_go_vote.prompt.md)
