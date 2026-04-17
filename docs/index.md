@@ -145,6 +145,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Quantitative Corporate Portfolio Divestiture Architect](prompts/business/strategy/quantitative_corporate_portfolio_divestiture_architect.prompt.md)
 - [Real Options Valuation Architect](prompts/business/strategy/real_options_valuation_architect.prompt.md)
 - [Strategic Capital Allocation Architect](prompts/business/strategy/strategic_capital_allocation_architect.prompt.md)
+- [Strategic Product Cannibalization Architect](prompts/business/strategy/strategic_product_cannibalization_architect.prompt.md)
 - [Strategic Real Options Valuation Architect](prompts/business/strategy/strategic_real_options_valuation_architect.prompt.md)
 - [Supply Chain Antifragility Architect](prompts/business/strategy/supply_chain_antifragility_architect.prompt.md)
 - [zero_based_budgeting_turnaround_architect](prompts/business/strategy/zero_based_budgeting_turnaround_architect.prompt.md)
