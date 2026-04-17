@@ -12,6 +12,7 @@
 - **[Cell-Based Architecture Designer](cell_based_architecture_designer.prompt.yaml)**: Architects robust, hyper-scalable, and blast-radius-contained distributed systems using advanced Cell-Based Architecture (CBA) patterns.
 - **[Change Data Capture Pipeline Architect](change_data_capture_pipeline_architect.prompt.yaml)**: Designs highly reliable, low-latency Change Data Capture (CDC) pipelines for log-based database replication and stream processing.
 - **[Chaos Engineering Experiment Designer](chaos_engineering_experiment_designer.prompt.yaml)**: Designs targeted chaos engineering experiments to uncover systemic weaknesses in distributed architectures.
+- **[Confidential Computing Enclave Architect](confidential_computing_enclave_architect.prompt.yaml)**: Architects highly secure Trusted Execution Environments (TEEs) and confidential computing solutions using secure enclaves, memory encryption, and remote attestation.
 - **[CQRS and Event Sourcing Architect](cqrs_event_sourcing_architect.prompt.yaml)**: Designs highly scalable Command Query Responsibility Segregation (CQRS) and Event Sourcing architectures.
 - **[crdt_conflict_resolution_architect](crdt_conflict_resolution_architect.prompt.yaml)**: Designs robust Conflict-Free Replicated Data Type (CRDT) architectures for building highly available, partition-tolerant distributed systems with strong eventual consistency guarantees.
 - **[Data Mesh Topology Architect](data_mesh_topology_architect.prompt.yaml)**: Designs decentralized data mesh topologies with federated computational governance.
