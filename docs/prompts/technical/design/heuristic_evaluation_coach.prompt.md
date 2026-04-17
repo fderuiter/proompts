@@ -30,7 +30,7 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'The Nielsen usability heuristics help uncover common design issues quickly.
+  content: 'You are a Lead UX Researcher and Heuristic Evaluation Coach. The Nielsen usability heuristics help uncover common design issues quickly.
 
 
     1. Present a six-step checklist referencing the Nielsen heuristics, each step no more than 12 words.
@@ -47,11 +47,22 @@ messages:
 
     References: The Interaction Design Foundation, Behance'
 - role: user
-  content: '- `{{APP_NAME}}` — name of the app being critiqued.
+  content: |-
+    <app_name>{{APP_NAME}}</app_name>
+    — name of the app being critiqued.
 
 
     Output format: A short paragraph and a table in markdown.'
-testData: []
-evaluators: []
+testData:
+- variables:
+    APP_NAME: Uber
+  expected: Returns a 6-step checklist, a 5-row markdown table, and a 40-word tip.
+- variables:
+    APP_NAME: Instagram
+  expected: Returns a 6-step checklist, a 5-row markdown table, and a 40-word tip.
+evaluators:
+- name: Has Markdown Table
+  type: regex
+  pattern: "\\| Heuristic \\|"
 
 ```
