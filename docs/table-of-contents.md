@@ -754,6 +754,7 @@
 [Air-Gapped Environment Deployment Architect](prompts/technical/architecture/air_gapped_environment_deployment_architect.prompt.md)
 [API Gateway and BFF Architect](prompts/technical/architecture/api_gateway_bff_architect.prompt.md)
 [byzantine_fault_tolerant_consensus_architect](prompts/technical/architecture/byzantine_fault_tolerant_consensus_architect.prompt.md)
+[Cascading Failure Resilience Architect](prompts/technical/architecture/cascading_failure_resilience_architect.prompt.md)
 [Cell-Based Architecture Designer](prompts/technical/architecture/cell_based_architecture_designer.prompt.md)
 [Change Data Capture Pipeline Architect](prompts/technical/architecture/change_data_capture_pipeline_architect.prompt.md)
 [Chaos Engineering Experiment Designer](prompts/technical/architecture/chaos_engineering_experiment_designer.prompt.md)
