@@ -44,6 +44,7 @@ title: Management
 - [lean_six_sigma_vsm_architect](prompts/management/operations/lean_six_sigma_vsm_architect.prompt.md)
 - [Learning Path Mentor](prompts/management/personal_effectiveness/learning_path_mentor.prompt.md)
 - [Micro-Habit Health Coach](prompts/management/personal_effectiveness/micro_habit_health_coach.prompt.md)
+- [multi_echelon_inventory_optimization_architect](prompts/management/operations/multi_echelon_inventory_optimization_architect.prompt.md)
 - [Multistudy Resource & Capacity Forecast Plan](prompts/management/operations/multistudy_resource_capacity_forecast_plan.prompt.md)
 - [Operational Excellence & Risk Sweep](prompts/management/operations/operational_excellence_risk_sweep.prompt.md)
 - [Operational Excellence Communication Framework](prompts/management/leadership/operational_excellence_communication.prompt.md)
