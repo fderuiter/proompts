@@ -30,6 +30,7 @@ title: Business
 - [Corporate Vertical Integration Structuring Architect](prompts/business/strategy/corporate_vertical_integration_structuring_architect.prompt.md)
 - [corporate_b2b_saas_pricing_tier_architect](prompts/business/strategy/corporate_b2b_saas_pricing_tier_architect.prompt.md)
 - [corporate_fx_hedging_currency_risk_architect](prompts/business/strategy/corporate_fx_hedging_currency_risk_architect.prompt.md)
+- [corporate_ip_portfolio_monetization_architect](prompts/business/strategy/corporate_ip_portfolio_monetization_architect.prompt.md)
 - [corporate_wargaming_scenario_planning_architect](prompts/business/strategy/corporate_wargaming_scenario_planning_architect.prompt.md)
 - [Cross-Border Joint Venture Structuring Architect](prompts/business/strategy/cross_border_joint_venture_structuring_architect.prompt.md)
 - [Cross-Functional Advocacy Memo](prompts/business/cx/revenue_risk_advocacy.prompt.md)
