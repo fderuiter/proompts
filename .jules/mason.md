@@ -1,0 +1,1 @@
+- **Repository Refactoring Prompts**: The `repo_foundation_analysis.prompt.yaml` prompt initially lacked required variables, testing data, and evaluators. Adding explicit `<repo_structure>` and `<file_contents>` delimiters combined with regex evaluators significantly hardens the prompt against injection and zero-shot fragility.
