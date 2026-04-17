@@ -116,6 +116,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Rapid Proposal Builder](prompts/business/development/rapid_proposal_builder.prompt.md)
 - [RFP Executive-Summary Generator](prompts/business/development/rfp_executive_summary_generator.prompt.md)
 - [Strategic Business Case for New Service Line](prompts/business/development/strategic_business_case_in_silico.prompt.md)
+- [Algorithmic Multi-Touch Attribution Architect](prompts/business/growth_engineering/algorithmic_multi_touch_attribution_architect.prompt.md)
 - [Predictive RFM Churn Mitigation Architect](prompts/business/growth_engineering/predictive_rfm_churn_mitigation_architect.prompt.md)
 - [Clinical-Trial Budget and Burn-Rate Dashboard](prompts/business/hr_finance/clinical_trial_budget_burn_rate_dashboard.prompt.md)
 - [GCP and GDPR Training Compliance Risk Report](prompts/business/hr_finance/gcp_gdpr_compliance_training_risk_report.prompt.md)
@@ -517,6 +518,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [new_keynesian_dsge_architect](prompts/scientific/economics/macroeconomics/dsge_modeling/new_keynesian_dsge_architect.prompt.md)
 - [open_economy_dsge_architect](prompts/scientific/economics/macroeconomics/dsge_modeling/open_economy_dsge_architect.prompt.md)
 - [hank_macroeconomic_architect](prompts/scientific/economics/macroeconomics/heterogeneous_agents/hank_macroeconomic_architect.prompt.md)
+- [diamond_mortensen_pissarides_architect](prompts/scientific/economics/macroeconomics/search_and_matching/diamond_mortensen_pissarides_architect.prompt.md)
 
 ## Management
 
@@ -1052,6 +1054,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Stratification
 
+- [gentrification_displacement_spatial_inequality_architect](prompts/scientific/sociology/stratification/systemic_inequality/gentrification_displacement_spatial_inequality_architect.prompt.md)
 - [multidimensional_poverty_alkire_foster_architect](prompts/scientific/sociology/stratification/systemic_inequality/multidimensional_poverty_alkire_foster_architect.prompt.md)
 - [occupational_segregation_opportunity_hoarding_architect](prompts/scientific/sociology/stratification/systemic_inequality/occupational_segregation_opportunity_hoarding_architect.prompt.md)
 - [theil_t_index_inequality_decomposer](prompts/scientific/sociology/stratification/systemic_inequality/theil_t_index_inequality_decomposer.prompt.md)
