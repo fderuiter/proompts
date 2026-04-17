@@ -1,5 +1,4 @@
-# Finance
+# Finance Overview
 
-A collection of prompts focused on advanced corporate finance, quantitative modeling, M&A due diligence, and capital structuring.
-
-This directory includes tools for CFOs, investment bankers, and corporate strategy professionals to rigorize financial evaluation and mitigate risk.
+## Prompts
+- **[Corporate Merger Arbitrage Deal Risk Architect](corporate_merger_arbitrage_risk_architect.prompt.yaml)**: Evaluate deal completion probabilities, antitrust risk, and expected annualized returns using advanced probability-weighted financial modeling and the McKinsey 7S framework.
