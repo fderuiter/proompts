@@ -53,6 +53,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Analysis
 
+- [Riemann Surface Analytic Continuation Architect](prompts/scientific/mathematics/analysis/complex_analysis/riemann_surface_analytic_continuation_architect.prompt.md)
 - [banach_space_operator_architect](prompts/scientific/mathematics/analysis/functional_analysis/banach_space_operator_architect.prompt.md)
 
 ## Analytical
