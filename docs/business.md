@@ -75,6 +75,7 @@ title: Business
 - [Scenario-Based Clinical-Trial Cash-Flow Forecast](prompts/business/cfo/cfo_workflow/01_scenario_cash_flow_forecast.prompt.md)
 - [Strategic Business Case for New Service Line](prompts/business/development/strategic_business_case_in_silico.prompt.md)
 - [Strategic Capital Allocation Architect](prompts/business/strategy/strategic_capital_allocation_architect.prompt.md)
+- [Strategic Product Cannibalization Architect](prompts/business/strategy/strategic_product_cannibalization_architect.prompt.md)
 - [Strategic Real Options Valuation Architect](prompts/business/strategy/strategic_real_options_valuation_architect.prompt.md)
 - [Strategic Vendor Lock-In Mitigation Architect](prompts/business/vp_tech_innovation/strategic_vendor_lock_in_mitigation_architect.prompt.md)
 - [Strategic Workforce and Talent Acquisition Plan](prompts/business/hr_finance/strategic_workforce_talent_acquisition_plan.prompt.md)
