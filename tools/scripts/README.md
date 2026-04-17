@@ -99,7 +99,7 @@ pip install -r requirements.txt
 **Key Steps:**
 1.  **Cleanup**: Removes macOS metadata files (`._*`) to ensure a clean state.
 2.  **Validation**: Runs `check_prompts`, `validate_prompt_schema`, `generate_docs` (check mode), `check_broken_links`, and `yamllint`.
-3.  **Maintenance**: Runs `update_docs_index` (check mode).
+3.  **Maintenance**: Runs `generate_overviews`, then `update_docs_index` (check mode).
 
 **Pipeline Visualization:**
 
@@ -108,14 +108,15 @@ graph TD
     A[Start: test_all.py] --> B[1. cleanup_mac_files]
     B --> C[2. check_prompts]
     C --> D[3. validate_prompt_schema]
-    D --> E[4. update_docs_index]
-    E --> F[5. generate_docs]
-    F --> G[6. check_broken_links]
-    G --> H[7. yamllint]
+    D --> E0[4. generate_overviews]
+    E0 --> E[5. update_docs_index]
+    E --> F[6. generate_docs]
+    F --> G[7. check_broken_links]
+    G --> H[8. yamllint]
     H --> I[End: All Checks Passed]
 
     classDef process fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
-    class B,C,D,E,F,G,H process;
+    class B,C,D,E0,E,F,G,H process;
 ```
 
 **Usage:**
