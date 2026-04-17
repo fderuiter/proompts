@@ -1,3 +1,4 @@
-# Longitudinal Modeling
+# Longitudinal Modeling Overview
 
-This directory contains advanced prompts for quantitative longitudinal modeling methodologies, such as Latent Growth Curve Modeling (LGCM), used to mathematically formalize and analyze developmental trajectories over time.
+## Prompts
+- **[latent_growth_curve_modeling_architect](latent_growth_curve_modeling_architect.prompt.yaml)**: Mathematically formalizes longitudinal developmental trajectories using Latent Growth Curve Modeling (LGCM) and Structural Equation Modeling (SEM).
