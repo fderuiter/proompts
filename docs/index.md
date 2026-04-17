@@ -865,6 +865,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Relativity
 
+- [adm_spacetime_decomposition_architect](prompts/scientific/physics/relativity/general_relativity/adm_spacetime_decomposition_architect.prompt.md)
 - [Black Hole Perturbation Teukolsky Architect](prompts/scientific/physics/relativity/general_relativity/black_hole_perturbation_teukolsky_architect.prompt.md)
 
 ## Rtsm
