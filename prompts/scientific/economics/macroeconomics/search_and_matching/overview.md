@@ -1,3 +1,4 @@
-# Search and Matching
+# Search And Matching Overview
 
-This directory contains prompts related to macroeconomics search and matching models, focusing on labor market frictions, equilibrium unemployment, and the Diamond-Mortensen-Pissarides (DMP) framework.
+## Prompts
+- **[diamond_mortensen_pissarides_architect](diamond_mortensen_pissarides_architect.prompt.yaml)**: Formulates mathematically rigorous Diamond-Mortensen-Pissarides (DMP) search and matching models to analyze equilibrium unemployment, wage bargaining, and labor market frictions.
