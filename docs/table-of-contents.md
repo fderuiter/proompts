@@ -359,6 +359,7 @@
 [Operational Excellence & Risk Sweep](prompts/management/operations/operational_excellence_risk_sweep.prompt.md)
 [360° Operational KPI & Benchmark Review](prompts/management/operations/operational_kpi_benchmark_review.prompt.md)
 [operational_resilience_tabletop_simulation_architect](prompts/management/operations/operational_resilience_tabletop_simulation_architect.prompt.md)
+[post_merger_integration_synergy_architect](prompts/management/operations/post_merger_integration_synergy_architect.prompt.md)
 [Proactive Risk Heat-Map for Decentralized & Virtual Trials](prompts/management/operations/proactive_risk_heat_map.prompt.md)
 [Quarterly CRO KPI Executive Brief](prompts/management/operations/quarterly_kpi_executive_brief.prompt.md)
 [Rapid Process Diagnostic & Lean Improvement Plan](prompts/management/operations/rapid_process_diagnostic.prompt.md)
