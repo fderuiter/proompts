@@ -49,6 +49,7 @@ def main() -> int:
         "cleanup_mac_files": lambda: run_command(["find", ".", "-name", "._*", "-delete"]),
         "check_prompts": check_prompts_main,
         "validate_prompt_schema": validate_prompt_schema_main,
+        "generate_overviews": lambda: run_command(["python3", "tools/scripts/generate_overviews.py"]),
         "update_docs_index": lambda: update_docs_index_run(check=True),
         "generate_docs": lambda: run_command(["python3", "tools/scripts/generate_docs.py", "--check"]),
         "check_broken_links": lambda: run_command(["python3", "tools/scripts/check_broken_links.py"]),
