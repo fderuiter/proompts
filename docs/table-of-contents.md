@@ -710,6 +710,7 @@
 [Epigenetic Glassblowing Validator](prompts/speculative/epigenetic_glassblowing_validation/epigenetic_glassblowing_validator.prompt.md)
 [Event Horizon Choreographic Auditor](prompts/speculative/event_horizon_choreographic_auditor/event_horizon_choreographic_auditor.prompt.md)
 [Fresco Epidemiological Auditor](prompts/speculative/fresco_epidemiological_auditor/fresco_epidemiological_auditor.prompt.md)
+[glacial_typographic_zk_architect](prompts/speculative/glacial_typographic_zk_architect/glacial_typographic_zk_architect.prompt.md)
 [Gregorian-Fluid Autoscaler](prompts/speculative/gregorian_fluid_autoscaling/gregorian_fluid_autoscaler.prompt.md)
 [Hyperbolic Fermentation RL Architect](prompts/speculative/hyperbolic_fermentation_rl_architect.prompt.md)
 [Zero-G Algorithmic Biopigment Curator](prompts/speculative/intersection/suborbital_biopigment_algorithmic_curator.prompt.md)
