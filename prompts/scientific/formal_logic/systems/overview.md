@@ -1,3 +1,4 @@
-# Systems
+# Systems Overview
 
-This directory contains formal logic prompt engineering specifications categorized by underlying deductive systems.
+## Categories
+- [Higher Order Logic/](higher_order_logic/overview.md)
