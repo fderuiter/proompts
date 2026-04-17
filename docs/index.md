@@ -386,6 +386,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Epistemology
 
+- [bayesian_epistemological_update_formalizer](prompts/scientific/philosophy/epistemology/formal_epistemology/bayesian_epistemological_update_formalizer.prompt.md)
 - [cognitive_bias_epistemological_deconstructor](prompts/scientific/philosophy/epistemology/formal_epistemology/cognitive_bias_epistemological_deconstructor.prompt.md)
 - [epistemic_defeater_formal_analyzer](prompts/scientific/philosophy/epistemology/formal_epistemology/epistemic_defeater_formal_analyzer.prompt.md)
 
@@ -645,6 +646,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Metaphysics
 
+- [mereological_composition_analyzer](prompts/scientific/philosophy/metaphysics/ontology/mereological_composition_analyzer.prompt.md)
 - [Metaphysical Dialectical Synthesizer](prompts/scientific/philosophy/metaphysics/ontology/metaphysical_dialectical_synthesizer.prompt.md)
 
 ## Methods
