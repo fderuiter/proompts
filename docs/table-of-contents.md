@@ -64,6 +64,7 @@
 [Activist Investor Defense Strategy Architect](prompts/business/strategy/activist_investor_defense_strategy_architect.prompt.md)
 [Algorithmic Dynamic Pricing & Yield Management Architect](prompts/business/strategy/algorithmic_dynamic_pricing_yield_management_architect.prompt.md)
 [blue_ocean_value_innovation_architect](prompts/business/strategy/blue_ocean_value_innovation_architect.prompt.md)
+[corporate_b2b_saas_pricing_tier_architect](prompts/business/strategy/corporate_b2b_saas_pricing_tier_architect.prompt.md)
 [Corporate Capital Structure Optimization Architect](prompts/business/strategy/corporate_capital_structure_optimization_architect.prompt.md)
 [Corporate Diversification Synergy Architect](prompts/business/strategy/corporate_diversification_synergy_architect.prompt.md)
 [Corporate ESG Carbon Abatement Strategy Architect](prompts/business/strategy/corporate_esg_carbon_abatement_strategy_architect.prompt.md)
