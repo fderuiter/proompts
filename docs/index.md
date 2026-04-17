@@ -1062,6 +1062,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [theil_t_index_inequality_decomposer](prompts/scientific/sociology/stratification/systemic_inequality/theil_t_index_inequality_decomposer.prompt.md)
 - [wealth_concentration_decomposition_architect](prompts/scientific/sociology/stratification/systemic_inequality/wealth_concentration_decomposition_architect.prompt.md)
 
+## String Theory
+
+- [d_brane_worldvolume_effective_action_architect](prompts/scientific/physics/string_theory/brane_dynamics/d_brane_worldvolume_effective_action_architect.prompt.md)
+
 ## Study Director
 
 - [Draft a GLP-Compliant Study Protocol](prompts/management/study_director/study_director_workflow/01_draft_glp_compliant_study_protocol.prompt.md)

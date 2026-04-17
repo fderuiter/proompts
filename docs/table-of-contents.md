@@ -770,6 +770,7 @@
 [occupational_segregation_opportunity_hoarding_architect](prompts/scientific/sociology/stratification/systemic_inequality/occupational_segregation_opportunity_hoarding_architect.prompt.md)
 [theil_t_index_inequality_decomposer](prompts/scientific/sociology/stratification/systemic_inequality/theil_t_index_inequality_decomposer.prompt.md)
 [wealth_concentration_decomposition_architect](prompts/scientific/sociology/stratification/systemic_inequality/wealth_concentration_decomposition_architect.prompt.md)
+[d_brane_worldvolume_effective_action_architect](prompts/scientific/physics/string_theory/brane_dynamics/d_brane_worldvolume_effective_action_architect.prompt.md)
 [Draft a GLP-Compliant Study Protocol](prompts/management/study_director/study_director_workflow/01_draft_glp_compliant_study_protocol.prompt.md)
 [Audit Raw Data and Draft a CAPA Summary](prompts/management/study_director/study_director_workflow/02_audit_raw_data_capa_summary.prompt.md)
 [Generate an Executive Summary for the Final Report](prompts/management/study_director/study_director_workflow/03_executive_summary_final_report.prompt.md)

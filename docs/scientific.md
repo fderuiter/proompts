@@ -46,6 +46,7 @@ title: Scientific
 - [crispr_cas9_off_target_predictive_modeler](prompts/scientific/genetics/genomics/crispr_cas9_off_target_predictive_modeler.prompt.md)
 - [crispr_cas9_off_target_probabilistic_modeler](prompts/scientific/computational_biology/crispr_cas9_off_target_probabilistic_modeler.prompt.md)
 - [Custom Axiomatic System Soundness Evaluator](prompts/scientific/mathematics/formal_logic/custom_axiomatic_system_soundness_evaluator.prompt.md)
+- [d_brane_worldvolume_effective_action_architect](prompts/scientific/physics/string_theory/brane_dynamics/d_brane_worldvolume_effective_action_architect.prompt.md)
 - [dendritic_cable_theory_computation_architect](prompts/scientific/computational_theoretical_neuroscience/dendritic_cable_theory_computation_architect.prompt.md)
 - [Deontic Logic Normative Conflict Resolver](prompts/scientific/philosophy/logic/philosophical_logic/deontic_logic_normative_conflict_resolver.prompt.md)
 - [dependent_type_theory_judgment_derivation](prompts/scientific/mathematics/formal_logic/dependent_type_theory_judgment_derivation.prompt.md)
