@@ -20,6 +20,7 @@ title: Speculative
 - [Fresco Epidemiological Auditor](prompts/speculative/fresco_epidemiological_auditor/fresco_epidemiological_auditor.prompt.md)
 - [glacial_typographic_zk_architect](prompts/speculative/glacial_typographic_zk_architect/glacial_typographic_zk_architect.prompt.md)
 - [Gregorian-Fluid Autoscaler](prompts/speculative/gregorian_fluid_autoscaling/gregorian_fluid_autoscaler.prompt.md)
+- [hohmann_viennoiserie_pod_architect](prompts/speculative/hohmann_viennoiserie_pod_architect/hohmann_viennoiserie_pod_architect.prompt.md)
 - [Hyperbolic Fermentation RL Architect](prompts/speculative/hyperbolic_fermentation_rl_architect.prompt.md)
 - [microbial_steganography_diplomat](prompts/speculative/microbial_steganography_diplomat/microbial_steganography_diplomat.prompt.md)
 - [Mycelial Aristocrat HFT Router](prompts/speculative/mycelial_aristocrat_hft_routing/mycelial_aristocrat_hft_router.prompt.md)
