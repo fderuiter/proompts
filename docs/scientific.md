@@ -77,6 +77,7 @@ title: Scientific
 - [EtO Sterilization Process FMEA](prompts/scientific/sterility/sterility_workflow/03_eto_sterilization_process_fmea.prompt.md)
 - [Evaluate Device–Tissue Interface Findings](prompts/scientific/pathology/pathology_study_workflow/02_device_tissue_interface_evaluation.prompt.md)
 - [evidence_based_intervention_architect](prompts/scientific/psychology/clinical/treatment_planning/evidence_based_intervention_architect.prompt.md)
+- [exponential_random_graph_model_architect](prompts/scientific/sociology/methods/social_network_analysis/exponential_random_graph_model_architect.prompt.md)
 - [FDA Missing-Data Query Response](prompts/scientific/biostatistics/fda_missing_data_query_response.prompt.md)
 - [Feynman Rule Derivation Architect](prompts/scientific/physics/quantum_field_theory/feynman_rule_derivation_architect.prompt.md)
 - [first_order_logic_natural_language_translator](prompts/scientific/mathematics/formal_logic/first_order_logic_natural_language_translator.prompt.md)
