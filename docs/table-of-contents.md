@@ -524,6 +524,7 @@
 [mirrleesian_optimal_income_tax_architect](prompts/scientific/economics/public_economics/optimal_tax_theory/mirrleesian_optimal_income_tax_architect.prompt.md)
 [multifactorial_behavioral_intervention_architect](prompts/scientific/psychology/quantitative/experimental_design/multifactorial_behavioral_intervention_architect.prompt.md)
 [item_response_theory_dif_analyzer](prompts/scientific/psychology/quantitative/psychometrics/item_response_theory_dif_analyzer.prompt.md)
+[latent_profile_mixture_modeling_architect](prompts/scientific/psychology/quantitative/psychometrics/latent_profile_mixture_modeling_architect.prompt.md)
 [network_psychometrics_architect](prompts/scientific/psychology/quantitative/psychometrics/network_psychometrics_architect.prompt.md)
 [ALCOA-C Data Integrity Checklist](prompts/regulatory/adherence/alcoa_c_data_integrity_checklist.prompt.md)
 [DHT Integration Regulatory Checklist](prompts/regulatory/adherence/dht_integration_checklist.prompt.md)
