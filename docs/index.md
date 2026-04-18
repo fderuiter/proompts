@@ -576,6 +576,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Operational Excellence & Risk Sweep](prompts/management/operations/operational_excellence_risk_sweep.prompt.md)
 - [360° Operational KPI & Benchmark Review](prompts/management/operations/operational_kpi_benchmark_review.prompt.md)
 - [operational_resilience_tabletop_simulation_architect](prompts/management/operations/operational_resilience_tabletop_simulation_architect.prompt.md)
+- [operational_turnaround_restructuring_architect](prompts/management/operations/operational_turnaround_restructuring_architect.prompt.md)
 - [post_merger_integration_synergy_architect](prompts/management/operations/post_merger_integration_synergy_architect.prompt.md)
 - [Proactive Risk Heat-Map for Decentralized & Virtual Trials](prompts/management/operations/proactive_risk_heat_map.prompt.md)
 - [Quarterly CRO KPI Executive Brief](prompts/management/operations/quarterly_kpi_executive_brief.prompt.md)
