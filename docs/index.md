@@ -676,6 +676,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Modeling
 
+- [multivariate_extreme_value_architect](prompts/scientific/statistics/modeling/extreme_value_theory/multivariate_extreme_value_architect.prompt.md)
 - [high_dimensional_sparse_regression_architect](prompts/scientific/statistics/modeling/high_dimensional_analysis/high_dimensional_sparse_regression_architect.prompt.md)
 - [log_gaussian_cox_process_architect](prompts/scientific/statistics/modeling/spatial_point_processes/log_gaussian_cox_process_architect.prompt.md)
 - [spatio_temporal_geostatistical_spde_inla_architect](prompts/scientific/statistics/modeling/spatio_temporal_analysis/spatio_temporal_geostatistical_spde_inla_architect.prompt.md)
