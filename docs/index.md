@@ -662,6 +662,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [mereological_composition_analyzer](prompts/scientific/philosophy/metaphysics/ontology/mereological_composition_analyzer.prompt.md)
 - [Metaphysical Dialectical Synthesizer](prompts/scientific/philosophy/metaphysics/ontology/metaphysical_dialectical_synthesizer.prompt.md)
+- [metaphysical_grounding_fundamentality_formalizer](prompts/scientific/philosophy/metaphysics/ontology/metaphysical_grounding_fundamentality_formalizer.prompt.md)
 
 ## Methods
 
