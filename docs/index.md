@@ -662,6 +662,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [large_scale_axial_coding_framework_generator](prompts/scientific/sociology/methods/ethnographic_coding/large_scale_axial_coding_framework_generator.prompt.md)
 - [blinder_oaxaca_decomposition_architect](prompts/scientific/sociology/methods/quantitative/blinder_oaxaca_decomposition_architect.prompt.md)
+- [exponential_random_graph_model_architect](prompts/scientific/sociology/methods/social_network_analysis/exponential_random_graph_model_architect.prompt.md)
 
 ## Microbiology
 
