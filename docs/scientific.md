@@ -173,6 +173,7 @@ title: Scientific
 - [population_macro_nudging_architect](prompts/scientific/psychology/behavioral_economics/macro_nudging/population_macro_nudging_architect.prompt.md)
 - [Predictive Multidimensional Spectroscopy Architect](prompts/scientific/chemistry/analytical/spectroscopy/predictive_multidimensional_spectroscopy_architect.prompt.md)
 - [Prepare Pathology Slides and Reporting Plan](prompts/scientific/pathology/pathology_study_workflow/03_slides_and_reporting_workflow.prompt.md)
+- [projective_scheme_sheaf_cohomology_architect](prompts/scientific/mathematics/geometry/algebraic_geometry/projective_scheme_sheaf_cohomology_architect.prompt.md)
 - [propositional_dynamic_logic_pdl_evaluator](prompts/scientific/mathematics/formal_logic/propositional_dynamic_logic_pdl_evaluator.prompt.md)
 - [pseudo_riemannian_tensor_calculus_prover](prompts/scientific/mathematics/geometry/differential/pseudo_riemannian_tensor_calculus_prover.prompt.md)
 - [psychological_trauma_epidemiology_mapper](prompts/scientific/psychology/epidemiology/global_mental_health/psychological_trauma_epidemiology_mapper.prompt.md)
