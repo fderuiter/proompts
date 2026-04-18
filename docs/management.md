@@ -49,6 +49,7 @@ title: Management
 - [Operational Excellence & Risk Sweep](prompts/management/operations/operational_excellence_risk_sweep.prompt.md)
 - [Operational Excellence Communication Framework](prompts/management/leadership/operational_excellence_communication.prompt.md)
 - [operational_resilience_tabletop_simulation_architect](prompts/management/operations/operational_resilience_tabletop_simulation_architect.prompt.md)
+- [operational_turnaround_restructuring_architect](prompts/management/operations/operational_turnaround_restructuring_architect.prompt.md)
 - [Pharmacovigilance Safety Signal Prioritization](prompts/management/medical_director/pharmacovigilance_safety_signal_prioritization.prompt.md)
 - [Portfolio KPI Dashboard Brief](prompts/management/clinical_research_manager/portfolio_kpi_dashboard_brief.prompt.md)
 - [Portfolio Resource and Budget Forecast](prompts/management/project_management/portfolio_resource_budget_forecast.prompt.md)

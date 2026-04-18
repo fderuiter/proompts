@@ -19,7 +19,7 @@ variables:
     description: "Any topological features or boundary conditions imposed on the global domain, including potential singularities, branch cuts, or the topology of the underlying manifold."
     type: string
 model: gpt-4o
-#model:
+# model:
 
 
 modelParameters:
