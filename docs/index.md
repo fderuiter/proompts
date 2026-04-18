@@ -742,6 +742,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Physics
 
 - [Callan-Symanzik Beta Function Architect](prompts/scientific/physics/quantum_field_theory/callan_symanzik_beta_function_architect.prompt.md)
+- [effective_field_theory_matching_rg_running_architect](prompts/scientific/physics/quantum_field_theory/effective_field_theory_matching_rg_running_architect.prompt.md)
 - [Feynman Rule Derivation Architect](prompts/scientific/physics/quantum_field_theory/feynman_rule_derivation_architect.prompt.md)
 - [Schwinger-Dyson Equation Architect](prompts/scientific/physics/quantum_field_theory/schwinger_dyson_equation_architect.prompt.md)
 - [ads_cft_holographic_dictionary_architect](prompts/scientific/physics/string_theory/ads_cft_holographic_dictionary_architect.prompt.md)
@@ -971,6 +972,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [molecular_dynamics_simulation_architect](prompts/scientific/computational_biology/molecular_dynamics_simulation_architect.prompt.md)
 - [multi_omics_data_integration_architect](prompts/scientific/computational_biology/multi_omics_data_integration_architect.prompt.md)
 - [astrocytic_tripartite_synapse_architect](prompts/scientific/computational_theoretical_neuroscience/astrocytic_tripartite_synapse_architect.prompt.md)
+- [basal_ganglia_td_learning_architect](prompts/scientific/computational_theoretical_neuroscience/basal_ganglia_td_learning_architect.prompt.md)
 - [biophysical_hodgkin_huxley_modeler](prompts/scientific/computational_theoretical_neuroscience/biophysical_hodgkin_huxley_modeler.prompt.md)
 - [dendritic_cable_theory_computation_architect](prompts/scientific/computational_theoretical_neuroscience/dendritic_cable_theory_computation_architect.prompt.md)
 - [Dynamic Causal Modeling Architect](prompts/scientific/computational_theoretical_neuroscience/dynamic_causal_modeling_architect.prompt.md)
