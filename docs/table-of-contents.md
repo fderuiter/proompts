@@ -310,6 +310,7 @@
 [predictive_cac_payback_modeler](prompts/growth/performance_marketing/predictive_cac_payback_modeler.prompt.md)
 [b2b_abm_pipeline_velocity_architect](prompts/growth/predictive_modeling/b2b_abm_pipeline_velocity_architect.prompt.md)
 [predictive_churn_ltv_optimization_architect](prompts/growth/predictive_modeling/predictive_churn_ltv_optimization_architect.prompt.md)
+[freemium_conversion_velocity_architect](prompts/growth/product_marketing/freemium_conversion_velocity_architect.prompt.md)
 [product_led_growth_k_factor_architect](prompts/growth/product_marketing/product_led_growth_k_factor_architect.prompt.md)
 [gtm_pricing_elasticity_architect](prompts/growth/strategy/gtm_pricing_elasticity_architect.prompt.md)
 [Imaging Charter Draft](prompts/clinical/imaging/imaging_workflow/01_imaging_charter_draft.prompt.md)
