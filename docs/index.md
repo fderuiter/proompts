@@ -995,6 +995,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Identity Threat Detection and Response Architect](prompts/technical/security/iam_security/identity_threat_detection_response_architect.prompt.md)
 - [Non-Human Identity Lifecycle Architect](prompts/technical/security/iam_security/non_human_identity_lifecycle_architect.prompt.md)
 - [Zero Trust Privileged Access Management Architect](prompts/technical/security/iam_security/zero_trust_pam_architect.prompt.md)
+- [Advanced Sigma Rule Detection Architect](prompts/technical/security/secops/advanced_sigma_rule_detection_architect.prompt.md)
 - [Advanced SOAR Playbook Engineering Architect](prompts/technical/security/secops/advanced_soar_playbook_engineering_architect.prompt.md)
 - [Threat Intelligence Fusion Attribution Architect](prompts/technical/security/secops/threat_intelligence_fusion_attribution_architect.prompt.md)
 
