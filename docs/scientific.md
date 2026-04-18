@@ -205,6 +205,7 @@ title: Scientific
 - [Synthetic Control Method Architect](prompts/scientific/economics/econometrics/causal_inference/synthetic_control_method_architect.prompt.md)
 - [synthetic_media_epistemic_collapse_modeler](prompts/scientific/psychology/computational/network_contagion/synthetic_media_epistemic_collapse_modeler.prompt.md)
 - [target_trial_emulation_architect](prompts/scientific/statistics/inference/causal_inference/target_trial_emulation_architect.prompt.md)
+- [TD-DFT Excited-State Dynamics Architect](prompts/scientific/chemistry/computational/quantum_chemistry/td_dft_excited_state_dynamics_architect.prompt.md)
 - [theil_t_index_inequality_decomposer](prompts/scientific/sociology/stratification/systemic_inequality/theil_t_index_inequality_decomposer.prompt.md)
 - [Time-to-Event Analysis Coach](prompts/scientific/biostatistics/time_to_event_analysis_coach.prompt.md)
 - [top_down_proteomics_ptm_mapping_architect](prompts/scientific/molecular/proteomics/top_down_proteomics_ptm_mapping_architect.prompt.md)
