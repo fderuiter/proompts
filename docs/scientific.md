@@ -125,6 +125,7 @@ title: Scientific
 - [MCID Research and Summary](prompts/scientific/coa/mcid_definition.prompt.md)
 - [mereological_composition_analyzer](prompts/scientific/philosophy/metaphysics/ontology/mereological_composition_analyzer.prompt.md)
 - [metabolic_control_analysis_architect](prompts/scientific/cellular/metabolism/metabolic_control_analysis_architect.prompt.md)
+- [metagenomic_assembly_taxonomic_binning_architect](prompts/scientific/genetics/genomics/metagenomic_assembly_taxonomic_binning_architect.prompt.md)
 - [Metaphysical Dialectical Synthesizer](prompts/scientific/philosophy/metaphysics/ontology/metaphysical_dialectical_synthesizer.prompt.md)
 - [Microkinetic Modeling Architect](prompts/scientific/chemistry/physical/kinetics/microkinetic_modeling_architect.prompt.md)
 - [mirrleesian_optimal_income_tax_architect](prompts/scientific/economics/public_economics/optimal_tax_theory/mirrleesian_optimal_income_tax_architect.prompt.md)
