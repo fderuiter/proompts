@@ -1,6 +1,7 @@
 # Scientific Overview
 
 ## Categories
+- [Applied Mathematics/](applied_mathematics/overview.md)
 - [Biosafety/](biosafety/overview.md)
 - [Bioskills/](bioskills/overview.md)
 - [Biostatistics/](biostatistics/overview.md)
