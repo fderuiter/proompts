@@ -313,6 +313,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [multi_scale_pde_asymptotic_homogenization_architect](prompts/computational/numerical_methods/multi_scale_pde_asymptotic_homogenization_architect.prompt.md)
 - [physics_informed_neural_network_architect](prompts/computational/numerical_methods/physics_informed_neural_network_architect.prompt.md)
 - [multi_objective_stochastic_optimization_architect](prompts/computational/operations_research/multi_objective_stochastic_optimization_architect.prompt.md)
+- [pinn_stiff_pde_architect](prompts/scientific/applied_mathematics/computational/physics_informed_neural_networks/pinn_stiff_pde_architect.prompt.md)
 - [3D QSAR Pharmacophore Modeling Architect](prompts/scientific/chemistry/computational/cheminformatics/3d_qsar_pharmacophore_modeling_architect.prompt.md)
 - [Free Energy Perturbation Architect](prompts/scientific/chemistry/computational/molecular_dynamics/free_energy_perturbation_architect.prompt.md)
 - [DFT Transition State Architect](prompts/scientific/chemistry/computational/quantum_chemistry/dft_transition_state_architect.prompt.md)
