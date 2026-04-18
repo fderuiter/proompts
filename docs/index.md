@@ -1132,6 +1132,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [AI Model Inference Serving Architect](prompts/technical/architecture/ai_model_inference_serving_architect.prompt.md)
 - [Air-Gapped Environment Deployment Architect](prompts/technical/architecture/air_gapped_environment_deployment_architect.prompt.md)
 - [API Gateway and BFF Architect](prompts/technical/architecture/api_gateway_bff_architect.prompt.md)
+- [Autonomous Vehicle V2X Telemetry Architect](prompts/technical/architecture/autonomous_vehicle_v2x_telemetry_architect.prompt.md)
 - [byzantine_fault_tolerant_consensus_architect](prompts/technical/architecture/byzantine_fault_tolerant_consensus_architect.prompt.md)
 - [Cascading Failure Resilience Architect](prompts/technical/architecture/cascading_failure_resilience_architect.prompt.md)
 - [Cell-Based Architecture Designer](prompts/technical/architecture/cell_based_architecture_designer.prompt.md)
