@@ -251,6 +251,7 @@
 [Stochastic Engineer](prompts/technical/data_science/stochastic_model_chain_workflow/02_stochastic_engineer.prompt.md)
 [Stochastic Strategist](prompts/technical/data_science/stochastic_model_chain_workflow/03_stochastic_strategist.prompt.md)
 [causal_inference_dag_architect](prompts/scientific/statistics/design/causal_inference/causal_inference_dag_architect.prompt.md)
+[ecological_momentary_assessment_multilevel_modeler](prompts/scientific/psychology/developmental/longitudinal_modeling/ecological_momentary_assessment_multilevel_modeler.prompt.md)
 [latent_growth_curve_modeling_architect](prompts/scientific/psychology/developmental/longitudinal_modeling/latent_growth_curve_modeling_architect.prompt.md)
 [Architect the Integration Blueprint](prompts/clinical/eclinical_integration/eclinical_integration_workflow/01_architect_integration_blueprint.prompt.md)
 [Data Mapping and Transformation Playbook](prompts/clinical/eclinical_integration/eclinical_integration_workflow/02_data_mapping_transformation_playbook.prompt.md)

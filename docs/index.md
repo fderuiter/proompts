@@ -368,6 +368,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Developmental
 
+- [ecological_momentary_assessment_multilevel_modeler](prompts/scientific/psychology/developmental/longitudinal_modeling/ecological_momentary_assessment_multilevel_modeler.prompt.md)
 - [latent_growth_curve_modeling_architect](prompts/scientific/psychology/developmental/longitudinal_modeling/latent_growth_curve_modeling_architect.prompt.md)
 
 ## Eclinical Integration
