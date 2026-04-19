@@ -59,6 +59,7 @@ title: Architecture
 - [Multi-Cloud Disaster Recovery Architect](prompts/technical/architecture/multi_cloud_disaster_recovery_architect.prompt.md)
 - [Multi-Region Active-Active Resilience Architect](prompts/technical/architecture/multi_region_active_active_resilience.prompt.md)
 - [Multi-Region K8s Federation Architect](prompts/technical/architecture/multi_region_k8s_federation_architect.prompt.md)
+- [Multi-Tenant Noisy Neighbor Mitigation Architect](prompts/technical/architecture/multi_tenant_noisy_neighbor_mitigation_architect.prompt.md)
 - [Multi-Tenant SaaS Architecture Designer](prompts/technical/architecture/multi_tenant_saas_architecture_designer.prompt.md)
 - [Offline-First Synchronization Architect](prompts/technical/architecture/offline_first_sync_architect.prompt.md)
 - [peer_to_peer_gossip_protocol_architect](prompts/technical/architecture/peer_to_peer_gossip_protocol_architect.prompt.md)
