@@ -21,6 +21,7 @@ title: Business
 - [Corporate Digital Transformation ROI Architect](prompts/business/strategy/corporate_digital_transformation_roi_architect.prompt.md)
 - [Corporate Diversification Synergy Architect](prompts/business/strategy/corporate_diversification_synergy_architect.prompt.md)
 - [Corporate ESG Carbon Abatement Strategy Architect](prompts/business/strategy/corporate_esg_carbon_abatement_strategy_architect.prompt.md)
+- [Corporate Financial Distress Predictive Altman Z-Score Architect](prompts/business/finance/corporate_financial_distress_predictive_altman_z_score_architect.prompt.md)
 - [Corporate Geopolitical Risk Mitigation Architect](prompts/business/strategy/corporate_geopolitical_risk_mitigation_architect.prompt.md)
 - [Corporate Merger Arbitrage Deal Risk Architect](prompts/business/finance/corporate_merger_arbitrage_risk_architect.prompt.md)
 - [Corporate Spin-Off Carve-Out Architect](prompts/business/strategy/corporate_spin_off_carve_out_architect.prompt.md)
