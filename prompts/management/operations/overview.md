@@ -4,6 +4,7 @@
 - **[Action-Oriented Meeting Minutes & Tracker](action_oriented_meeting_minutes.prompt.yaml)**: Capture decisions and action items from cross-functional meetings.
 - **[CAPA Root Cause and Resolution Architect](capa_root_cause_resolution_architect.prompt.yaml)**: A highly analytical operational architect designed to perform rigorous Corrective and Preventive Action (CAPA) root cause analysis and formulate comprehensive resolution plans.
 - **[CRO Trial-Performance KPI Dashboard Blueprint](cro_trial_performance_kpi_dashboard_blueprint.prompt.yaml)**: Outline metrics and visuals for a CRO trial-performance dashboard.
+- **[dynamic_fleet_routing_optimization_architect](dynamic_fleet_routing_optimization_architect.prompt.yaml)**: Acts as a Principal Logistics Operations Research Scientist to formulate rigorous Capacitated Vehicle Routing Problem with Time Windows (CVRPTW) models to optimize last-mile logistics networks using advanced stochastic heuristics and strict LaTeX notation.
 - **[Fair-Market-Value Budget Negotiation Brief](fair_market_value_budget_negotiation_brief.prompt.yaml)**: Prepare a concise briefing to support FMV negotiations with a pharma sponsor.
 - **[Fishbone Facilitator](fishbone_facilitator.prompt.yaml)**: Identify possible root causes of a problem using a fishbone diagram.
 - **[Forward-Looking Resource & Capacity Forecast](forward_capacity_forecast.prompt.yaml)**: Project FTE demand and recommend actions to balance capacity for the next 90 days.

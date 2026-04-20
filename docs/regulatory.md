@@ -55,6 +55,7 @@ title: Regulatory
 - [FDA Breakthrough Device Designation Architect](prompts/regulatory/quality/fda_breakthrough_device_designation_architect.prompt.md)
 - [FDA CSA Risk-Based Testing Strategy Architect](prompts/regulatory/quality/fda_csa_risk_based_testing_strategy_architect.prompt.md)
 - [FDA Fast Track Designation Architect](prompts/regulatory/strategy/fda_fast_track_designation_architect.prompt.md)
+- [FDA OOS Investigation Architect](prompts/regulatory/quality/fda_oos_investigation_architect.prompt.md)
 - [fda_483_warning_letter_remediation_architect](prompts/regulatory/quality/fda_483_warning_letter_remediation_architect.prompt.md)
 - [fda_510k_substantial_equivalence_architect](prompts/regulatory/quality/fda_510k_substantial_equivalence_architect.prompt.md)
 - [fda_de_novo_classification_request_architect](prompts/regulatory/quality/fda_de_novo_classification_request_architect.prompt.md)
