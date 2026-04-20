@@ -25,6 +25,7 @@ title: Management
 - [Digest Regulatory Updates Affecting Protocol](prompts/management/clinical_research_manager/digest_regulatory_updates.prompt.md)
 - [Digital Transformation Roadmap for Clinical Operations](prompts/management/executive/digital_transformation_roadmap.prompt.md)
 - [Draft a GLP-Compliant Study Protocol](prompts/management/study_director/study_director_workflow/01_draft_glp_compliant_study_protocol.prompt.md)
+- [dynamic_fleet_routing_optimization_architect](prompts/management/operations/dynamic_fleet_routing_optimization_architect.prompt.md)
 - [Eisenhower Matrix Coach](prompts/management/personal_effectiveness/eisenhower_matrix_coach.prompt.md)
 - [Emerging-Science Horizon Scan](prompts/management/executive/emerging_science_horizon_scan.prompt.md)
 - [Executive Sponsor Briefing Deck Outline](prompts/management/project_management/executive_sponsor_briefing_deck_outline.prompt.md)
