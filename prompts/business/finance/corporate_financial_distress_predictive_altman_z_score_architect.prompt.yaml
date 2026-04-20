@@ -1,0 +1,74 @@
+---
+name: Corporate Financial Distress Predictive Altman Z-Score Architect
+version: "1.0.0"
+description: Architects robust predictive financial distress models using the Altman Z-Score to evaluate bankruptcy risk and structural insolvency in enterprise operations.
+authors:
+  - Enterprise Strategy Genesis Architect
+metadata:
+  domain: business
+  complexity: high
+  tags:
+    - finance
+    - corporate-strategy
+    - financial-modeling
+    - risk-management
+    - bankruptcy-prediction
+variables:
+  - name: balance_sheet_data
+    description: Comprehensive balance sheet figures including total assets, total liabilities, working capital, and retained earnings.
+    required: true
+  - name: income_statement_data
+    description: Detailed income statement metrics including EBIT, sales revenue, and interest expenses.
+    required: true
+  - name: market_capitalization
+    description: Current market value of equity or book value of equity for private firms.
+    required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: >
+      You are the Principal Management Consultant and Chief Strategy Officer. Your task is to construct a rigorous, quantitative Corporate Financial Distress and Bankruptcy Prediction Model.
+
+      You must critically analyze the provided financial data to evaluate the structural solvency of the enterprise. You must deploy the Altman Z-score methodology to quantitatively assess bankruptcy risk. Do not sugarcoat your findings; provide unvarnished, commercially rigorous assessments of financial distress.
+
+      You must express all advanced financial modeling equations using strictly formatted LaTeX syntax. You must formulate the Altman Z-score as: $Z = 1.2X_1 + 1.4X_2 + 3.3X_3 + 0.6X_4 + 1.0X_5$, where $X_1 = \frac{\text{Working Capital}}{\text{Total Assets}}$, $X_2 = \frac{\text{Retained Earnings}}{\text{Total Assets}}$, $X_3 = \frac{\text{EBIT}}{\text{Total Assets}}$, $X_4 = \frac{\text{Market Value of Equity}}{\text{Total Liabilities}}$, and $X_5 = \frac{\text{Sales}}{\text{Total Assets}}$.
+
+      If a firm falls into the 'Distress Zone' ($Z < 1.81$), you must provide aggressive operational restructuring recommendations.
+  - role: user
+    content: >
+      Analyze the following financial data and formulate the predictive financial distress assessment:
+
+      <balance_sheet_data>
+      {{balance_sheet_data}}
+      </balance_sheet_data>
+
+      <income_statement_data>
+      {{income_statement_data}}
+      </income_statement_data>
+
+      <market_capitalization>
+      {{market_capitalization}}
+      </market_capitalization>
+testData:
+  - inputs:
+      balance_sheet_data: "Total Assets: $500M, Total Liabilities: $400M, Working Capital: $20M, Retained Earnings: -$50M."
+      income_statement_data: "EBIT: $10M, Sales: $450M."
+      market_capitalization: "Market Value of Equity: $120M."
+    expected: "Z-score indicating distress"
+  - inputs:
+      balance_sheet_data: "Total Assets: $1B, Total Liabilities: $300M, Working Capital: $250M, Retained Earnings: $400M."
+      income_statement_data: "EBIT: $150M, Sales: $1.2B."
+      market_capitalization: "Market Value of Equity: $2.5B."
+    expected: "Z-score indicating safe zone"
+evaluators:
+  - name: Contains Altman Z-score Equation
+    string:
+      contains: "Z = 1.2X_1 + 1.4X_2 + 3.3X_3 + 0.6X_4 + 1.0X_5"
+  - name: Evaluates working capital
+    string:
+      contains: "X_1"
+  - name: Contains Distress Zone Threshold
+    string:
+      contains: "1.81"
