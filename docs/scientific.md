@@ -67,6 +67,7 @@ title: Scientific
 - [Dunnett Adjustment R Code Generator](prompts/scientific/biostatistics/dunnett_adjustment_calculator.prompt.md)
 - [Dynamic Causal Modeling Architect](prompts/scientific/computational_theoretical_neuroscience/dynamic_causal_modeling_architect.prompt.md)
 - [dynamic_panel_gmm_architect](prompts/scientific/economics/econometrics/panel_data/dynamic_panel_gmm_architect.prompt.md)
+- [ecological_momentary_assessment_multilevel_modeler](prompts/scientific/psychology/developmental/longitudinal_modeling/ecological_momentary_assessment_multilevel_modeler.prompt.md)
 - [effective_field_theory_matching_rg_running_architect](prompts/scientific/physics/quantum_field_theory/effective_field_theory_matching_rg_running_architect.prompt.md)
 - [Electrocatalytic Mechanism Architect](prompts/scientific/chemistry/physical/electrochemistry/electrocatalytic_mechanism_architect.prompt.md)
 - [empirical_process_theory_architect](prompts/scientific/statistics/theory/asymptotics/empirical_process_theory_architect.prompt.md)
