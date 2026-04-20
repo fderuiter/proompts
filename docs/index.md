@@ -778,6 +778,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Quantitative
 
 - [multifactorial_behavioral_intervention_architect](prompts/scientific/psychology/quantitative/experimental_design/multifactorial_behavioral_intervention_architect.prompt.md)
+- [cognitive_diagnostic_modeling_architect](prompts/scientific/psychology/quantitative/psychometrics/cognitive_diagnostic_modeling_architect.prompt.md)
 - [item_response_theory_dif_analyzer](prompts/scientific/psychology/quantitative/psychometrics/item_response_theory_dif_analyzer.prompt.md)
 - [latent_profile_mixture_modeling_architect](prompts/scientific/psychology/quantitative/psychometrics/latent_profile_mixture_modeling_architect.prompt.md)
 - [network_psychometrics_architect](prompts/scientific/psychology/quantitative/psychometrics/network_psychometrics_architect.prompt.md)
