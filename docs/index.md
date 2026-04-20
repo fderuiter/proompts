@@ -368,6 +368,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Developmental
 
+- [ecological_momentary_assessment_multilevel_modeler](prompts/scientific/psychology/developmental/longitudinal_modeling/ecological_momentary_assessment_multilevel_modeler.prompt.md)
 - [latent_growth_curve_modeling_architect](prompts/scientific/psychology/developmental/longitudinal_modeling/latent_growth_curve_modeling_architect.prompt.md)
 
 ## Eclinical Integration
@@ -441,6 +442,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Geometry
 
+- [projective_scheme_sheaf_cohomology_architect](prompts/scientific/mathematics/geometry/algebraic_geometry/projective_scheme_sheaf_cohomology_architect.prompt.md)
 - [atiyah_singer_index_theorem_architect](prompts/scientific/mathematics/geometry/differential/atiyah_singer_index_theorem_architect.prompt.md)
 - [pseudo_riemannian_tensor_calculus_prover](prompts/scientific/mathematics/geometry/differential/pseudo_riemannian_tensor_calculus_prover.prompt.md)
 - [Riemannian Manifold Curvature Deriver](prompts/scientific/mathematics/geometry/differential/riemannian_manifold_curvature_deriver.prompt.md)
@@ -571,6 +573,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Action-Oriented Meeting Minutes & Tracker](prompts/management/operations/action_oriented_meeting_minutes.prompt.md)
 - [CAPA Root Cause and Resolution Architect](prompts/management/operations/capa_root_cause_resolution_architect.prompt.md)
 - [CRO Trial-Performance KPI Dashboard Blueprint](prompts/management/operations/cro_trial_performance_kpi_dashboard_blueprint.prompt.md)
+- [dynamic_fleet_routing_optimization_architect](prompts/management/operations/dynamic_fleet_routing_optimization_architect.prompt.md)
 - [Fair-Market-Value Budget Negotiation Brief](prompts/management/operations/fair_market_value_budget_negotiation_brief.prompt.md)
 - [Fishbone Facilitator](prompts/management/operations/fishbone_facilitator.prompt.md)
 - [Forward-Looking Resource & Capacity Forecast](prompts/management/operations/forward_capacity_forecast.prompt.md)
@@ -851,6 +854,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [FDA Breakthrough Device Designation Architect](prompts/regulatory/quality/fda_breakthrough_device_designation_architect.prompt.md)
 - [FDA CSA Risk-Based Testing Strategy Architect](prompts/regulatory/quality/fda_csa_risk_based_testing_strategy_architect.prompt.md)
 - [fda_de_novo_classification_request_architect](prompts/regulatory/quality/fda_de_novo_classification_request_architect.prompt.md)
+- [FDA OOS Investigation Architect](prompts/regulatory/quality/fda_oos_investigation_architect.prompt.md)
 - [fda_q_submission_pre_sub_meeting_package_architect](prompts/regulatory/quality/fda_q_submission_pre_sub_meeting_package_architect.prompt.md)
 - [GLP Quality Assurance](prompts/regulatory/quality/glp_quality_assurance.prompt.md)
 - [iec_62304_soup_anomaly_evaluator](prompts/regulatory/quality/iec_62304_soup_anomaly_evaluator.prompt.md)
@@ -994,6 +998,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Identity Threat Detection and Response Architect](prompts/technical/security/iam_security/identity_threat_detection_response_architect.prompt.md)
 - [Non-Human Identity Lifecycle Architect](prompts/technical/security/iam_security/non_human_identity_lifecycle_architect.prompt.md)
 - [Zero Trust Privileged Access Management Architect](prompts/technical/security/iam_security/zero_trust_pam_architect.prompt.md)
+- [Advanced Sigma Rule Detection Architect](prompts/technical/security/secops/advanced_sigma_rule_detection_architect.prompt.md)
 - [Advanced SOAR Playbook Engineering Architect](prompts/technical/security/secops/advanced_soar_playbook_engineering_architect.prompt.md)
 - [Threat Intelligence Fusion Attribution Architect](prompts/technical/security/secops/threat_intelligence_fusion_attribution_architect.prompt.md)
 
@@ -1099,6 +1104,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [gentrification_displacement_spatial_inequality_architect](prompts/scientific/sociology/stratification/systemic_inequality/gentrification_displacement_spatial_inequality_architect.prompt.md)
 - [multidimensional_poverty_alkire_foster_architect](prompts/scientific/sociology/stratification/systemic_inequality/multidimensional_poverty_alkire_foster_architect.prompt.md)
 - [occupational_segregation_opportunity_hoarding_architect](prompts/scientific/sociology/stratification/systemic_inequality/occupational_segregation_opportunity_hoarding_architect.prompt.md)
+- [spatial_mismatch_employment_accessibility_modeler](prompts/scientific/sociology/stratification/systemic_inequality/spatial_mismatch_employment_accessibility_modeler.prompt.md)
 - [theil_t_index_inequality_decomposer](prompts/scientific/sociology/stratification/systemic_inequality/theil_t_index_inequality_decomposer.prompt.md)
 - [wealth_concentration_decomposition_architect](prompts/scientific/sociology/stratification/systemic_inequality/wealth_concentration_decomposition_architect.prompt.md)
 
@@ -1131,6 +1137,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [AI Model Inference Serving Architect](prompts/technical/architecture/ai_model_inference_serving_architect.prompt.md)
 - [Air-Gapped Environment Deployment Architect](prompts/technical/architecture/air_gapped_environment_deployment_architect.prompt.md)
 - [API Gateway and BFF Architect](prompts/technical/architecture/api_gateway_bff_architect.prompt.md)
+- [Autonomous Vehicle V2X Telemetry Architect](prompts/technical/architecture/autonomous_vehicle_v2x_telemetry_architect.prompt.md)
 - [byzantine_fault_tolerant_consensus_architect](prompts/technical/architecture/byzantine_fault_tolerant_consensus_architect.prompt.md)
 - [Cascading Failure Resilience Architect](prompts/technical/architecture/cascading_failure_resilience_architect.prompt.md)
 - [Cell-Based Architecture Designer](prompts/technical/architecture/cell_based_architecture_designer.prompt.md)
@@ -1169,6 +1176,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Hexagonal Architecture Review](prompts/technical/architecture/hexagonal_architecture_review.prompt.md)
 - [HFT Low-Latency Architecture Designer](prompts/technical/architecture/hft_low_latency_trading_architect.prompt.md)
 - [High-Scale WebSocket Push Architect](prompts/technical/architecture/high_scale_websocket_push_architect.prompt.md)
+- [High-Throughput Geospatial Indexing Architect](prompts/technical/architecture/high_throughput_geospatial_indexing_architect.prompt.md)
 - [HTAP Real-Time Analytics Architect](prompts/technical/architecture/htap_real_time_analytics_architect.prompt.md)
 - [Idempotency and API Retry Strategy Architect](prompts/technical/architecture/idempotency_strategy_architect.prompt.md)
 - [IoT Digital Twin Architect](prompts/technical/architecture/iot_digital_twin_architect.prompt.md)
@@ -1180,6 +1188,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Multi-Cloud Disaster Recovery Architect](prompts/technical/architecture/multi_cloud_disaster_recovery_architect.prompt.md)
 - [Multi-Region Active-Active Resilience Architect](prompts/technical/architecture/multi_region_active_active_resilience.prompt.md)
 - [Multi-Region K8s Federation Architect](prompts/technical/architecture/multi_region_k8s_federation_architect.prompt.md)
+- [Multi-Tenant Noisy Neighbor Mitigation Architect](prompts/technical/architecture/multi_tenant_noisy_neighbor_mitigation_architect.prompt.md)
 - [Multi-Tenant SaaS Architecture Designer](prompts/technical/architecture/multi_tenant_saas_architecture_designer.prompt.md)
 - [Offline-First Synchronization Architect](prompts/technical/architecture/offline_first_sync_architect.prompt.md)
 - [peer_to_peer_gossip_protocol_architect](prompts/technical/architecture/peer_to_peer_gossip_protocol_architect.prompt.md)
@@ -1192,6 +1201,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Serverless Function Orchestration Architect](prompts/technical/architecture/serverless_function_orchestration_architect.prompt.md)
 - [Service Mesh Security Architect](prompts/technical/architecture/service_mesh_security_architect.prompt.md)
 - [SOLID Codebase Analysis](prompts/technical/architecture/solid_codebase_analysis.prompt.md)
+- [Spatial Geofencing Topology Architect](prompts/technical/architecture/spatial_geofencing_topology_architect.prompt.md)
 - [Stateful Workflow Orchestration Architect](prompts/technical/architecture/stateful_workflow_orchestration_architect.prompt.md)
 - [Strangler Fig Migration Architect](prompts/technical/architecture/strangler_fig_migration_architect.prompt.md)
 - [Sustainable Green Software Architect](prompts/technical/architecture/sustainable_green_software_architect.prompt.md)

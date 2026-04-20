@@ -1,2 +1,3 @@
 - Added What-Why-How patterned docstring to `tools/scripts/test_all.py` to improve Time to Understanding for new developers regarding the master validation script.
 - Added Mermaid diagram to `workflows/README.md` `Workflow Structure` section to visually demonstrate data flow across steps, as visual graphs yield better structural comprehension than text alone.
+- Added What-Why-How patterned docstrings and type hints to `tools/scripts/utils.py` to document critical constraints (like skipping macOS `._*` resource forks) and improve developer understanding of core utility functions.
