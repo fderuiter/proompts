@@ -729,6 +729,7 @@
 [Zero Trust Privileged Access Management Architect](prompts/technical/security/iam_security/zero_trust_pam_architect.prompt.md)
 [Advanced Sigma Rule Detection Architect](prompts/technical/security/secops/advanced_sigma_rule_detection_architect.prompt.md)
 [Advanced SOAR Playbook Engineering Architect](prompts/technical/security/secops/advanced_soar_playbook_engineering_architect.prompt.md)
+[macOS ESF Unified Logging Threat Hunter](prompts/technical/security/secops/macos_esf_unified_logging_threat_hunter.prompt.md)
 [Threat Intelligence Fusion Attribution Architect](prompts/technical/security/secops/threat_intelligence_fusion_attribution_architect.prompt.md)
 [Site Landscape Mapping & Prioritization](prompts/clinical/site_acquisition/site_acquisition_workflow/01_site_landscape_mapping.prompt.md)
 [Tailored Feasibility-Questionnaire Builder](prompts/clinical/site_acquisition/site_acquisition_workflow/02_tailored_feasibility_questionnaire.prompt.md)
