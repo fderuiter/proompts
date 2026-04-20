@@ -995,6 +995,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Non-Human Identity Lifecycle Architect](prompts/technical/security/iam_security/non_human_identity_lifecycle_architect.prompt.md)
 - [Zero Trust Privileged Access Management Architect](prompts/technical/security/iam_security/zero_trust_pam_architect.prompt.md)
 - [Advanced SOAR Playbook Engineering Architect](prompts/technical/security/secops/advanced_soar_playbook_engineering_architect.prompt.md)
+- [macOS ESF Unified Logging Threat Hunter](prompts/technical/security/secops/macos_esf_unified_logging_threat_hunter.prompt.md)
 - [Threat Intelligence Fusion Attribution Architect](prompts/technical/security/secops/threat_intelligence_fusion_attribution_architect.prompt.md)
 
 ## Site Acquisition

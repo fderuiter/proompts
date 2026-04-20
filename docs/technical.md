@@ -41,6 +41,7 @@ title: Technical
 - [Insider Threat Behavioral Analytics Engineer](prompts/technical/security/insider_threat_behavioral_analytics_engineer.prompt.md)
 - [Investigator's Brochure Summary of Changes](prompts/technical/technical_writing/technical_writer_workflow/02_ib_detailed_soc.prompt.md)
 - [Kubernetes Cluster Security Posture Architect](prompts/technical/security/kubernetes_cluster_security_posture_architect.prompt.md)
+- [macOS ESF Unified Logging Threat Hunter](prompts/technical/security/secops/macos_esf_unified_logging_threat_hunter.prompt.md)
 - [Medical Device Cybersecurity Threat Modeling](prompts/technical/security/cybersecurity_threat_modeling.prompt.md)
 - [Non-Human Identity Lifecycle Architect](prompts/technical/security/iam_security/non_human_identity_lifecycle_architect.prompt.md)
 - [OT/SCADA Security Resilience Architect](prompts/technical/security/ot_scada_security_architect.prompt.md)
