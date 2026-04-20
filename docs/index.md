@@ -368,6 +368,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Developmental
 
+- [ecological_momentary_assessment_multilevel_modeler](prompts/scientific/psychology/developmental/longitudinal_modeling/ecological_momentary_assessment_multilevel_modeler.prompt.md)
 - [latent_growth_curve_modeling_architect](prompts/scientific/psychology/developmental/longitudinal_modeling/latent_growth_curve_modeling_architect.prompt.md)
 
 ## Eclinical Integration
@@ -995,6 +996,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Identity Threat Detection and Response Architect](prompts/technical/security/iam_security/identity_threat_detection_response_architect.prompt.md)
 - [Non-Human Identity Lifecycle Architect](prompts/technical/security/iam_security/non_human_identity_lifecycle_architect.prompt.md)
 - [Zero Trust Privileged Access Management Architect](prompts/technical/security/iam_security/zero_trust_pam_architect.prompt.md)
+- [Advanced Sigma Rule Detection Architect](prompts/technical/security/secops/advanced_sigma_rule_detection_architect.prompt.md)
 - [Advanced SOAR Playbook Engineering Architect](prompts/technical/security/secops/advanced_soar_playbook_engineering_architect.prompt.md)
 - [Threat Intelligence Fusion Attribution Architect](prompts/technical/security/secops/threat_intelligence_fusion_attribution_architect.prompt.md)
 
@@ -1132,6 +1134,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [AI Model Inference Serving Architect](prompts/technical/architecture/ai_model_inference_serving_architect.prompt.md)
 - [Air-Gapped Environment Deployment Architect](prompts/technical/architecture/air_gapped_environment_deployment_architect.prompt.md)
 - [API Gateway and BFF Architect](prompts/technical/architecture/api_gateway_bff_architect.prompt.md)
+- [Autonomous Vehicle V2X Telemetry Architect](prompts/technical/architecture/autonomous_vehicle_v2x_telemetry_architect.prompt.md)
 - [byzantine_fault_tolerant_consensus_architect](prompts/technical/architecture/byzantine_fault_tolerant_consensus_architect.prompt.md)
 - [Cascading Failure Resilience Architect](prompts/technical/architecture/cascading_failure_resilience_architect.prompt.md)
 - [Cell-Based Architecture Designer](prompts/technical/architecture/cell_based_architecture_designer.prompt.md)
@@ -1192,6 +1195,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Serverless Function Orchestration Architect](prompts/technical/architecture/serverless_function_orchestration_architect.prompt.md)
 - [Service Mesh Security Architect](prompts/technical/architecture/service_mesh_security_architect.prompt.md)
 - [SOLID Codebase Analysis](prompts/technical/architecture/solid_codebase_analysis.prompt.md)
+- [Spatial Geofencing Topology Architect](prompts/technical/architecture/spatial_geofencing_topology_architect.prompt.md)
 - [Stateful Workflow Orchestration Architect](prompts/technical/architecture/stateful_workflow_orchestration_architect.prompt.md)
 - [Strangler Fig Migration Architect](prompts/technical/architecture/strangler_fig_migration_architect.prompt.md)
 - [Sustainable Green Software Architect](prompts/technical/architecture/sustainable_green_software_architect.prompt.md)
