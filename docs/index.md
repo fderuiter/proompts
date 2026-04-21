@@ -1101,6 +1101,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Stochastic
 
 - [hidden_markov_model_architect](prompts/scientific/statistics/stochastic/markov_processes/hidden_markov_model_architect.prompt.md)
+- [jump_diffusion_modeler](prompts/scientific/statistics/stochastic/stochastic_differential_equations/jump_diffusion_modeler.prompt.md)
 
 ## Stratification
 
