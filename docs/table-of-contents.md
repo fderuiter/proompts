@@ -903,6 +903,7 @@
 [Stateful Workflow Orchestration Architect](prompts/technical/architecture/stateful_workflow_orchestration_architect.prompt.md)
 [Strangler Fig Migration Architect](prompts/technical/architecture/strangler_fig_migration_architect.prompt.md)
 [Sustainable Green Software Architect](prompts/technical/architecture/sustainable_green_software_architect.prompt.md)
+[Time-Series Database Topology Architect](prompts/technical/architecture/time_series_database_topology_architect.prompt.md)
 [transactional_outbox_event_publishing_architect](prompts/technical/architecture/transactional_outbox_event_publishing_architect.prompt.md)
 [Virtual Waiting Room Fair Access Architect](prompts/technical/architecture/virtual_waiting_room_fair_access_architect.prompt.md)
 [WebAssembly Sandboxed Plugin Architect](prompts/technical/architecture/webassembly_sandboxed_plugin_architect.prompt.md)
