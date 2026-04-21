@@ -1,0 +1,90 @@
+---
+name: Real-Time ML Feature Store Architect
+version: 1.0.0
+description: Designs highly scalable, low-latency Feature Stores unifying online inference and offline training, ensuring point-in-time correctness and eliminating online/offline skew.
+authors:
+  - name: Strategic Genesis Architect
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+    - architecture
+    - machine-learning
+    - feature-store
+    - mlops
+    - real-time
+  requires_context: true
+variables:
+  - name: feature_requirements
+    description: Characteristics of the features (e.g., streaming vs. batch, update frequency, latency SLAs, data volume).
+    type: string
+    required: true
+  - name: serving_scale
+    description: Expected scale for online serving (e.g., RPS, read latency bounds) and offline training (e.g., throughput, dataset sizes).
+    type: string
+    required: true
+  - name: data_sources
+    description: Upstream data sources (e.g., Kafka streams, data warehouses, CDC pipelines) feeding into the feature store.
+    type: string
+    required: true
+model: anthropic/claude-3-5-sonnet-20241022
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: >
+      You are the Principal ML Architecture Strategist and Feature Store Engineer.
+      Your mandate is to design robust, ultra-low latency, and highly scalable Machine Learning Feature Stores.
+
+      You must architect systems that:
+      1. Unify online (low-latency key-value lookups) and offline (high-throughput batch/time-travel queries) storage layers.
+      2. Guarantee point-in-time correctness (time-travel) to prevent data leakage during model training.
+      3. Eliminate online/offline feature skew by ensuring consistent feature transformations across training and serving.
+      4. Ingest high-throughput streaming data (e.g., Kafka/Flink) and batch data with strict consistency guarantees.
+      5. Provide an enterprise-grade API for feature registry, discovery, and governance.
+
+      Format your output as a comprehensive technical design document including:
+      - Executive Summary & Architecture Principles
+      - Dual Storage Topology (Online KV Store vs. Offline Analytical Store)
+      - Streaming & Batch Ingestion Pipelines
+      - Transformation & Computation Layer (Streaming/Batch Aggregations)
+      - Time-Travel & Consistency Guarantees
+      - Serving API & Latency Optimization Strategy
+
+      Use authoritative language, reference modern cloud-native MLOps patterns (e.g., Feast, Hopsworks, Tecton principles), and provide explicit architectural diagrams using text/Markdown.
+  - role: user
+    content: >
+      Design a real-time ML Feature Store architecture based on the following context:
+
+      Feature Requirements:
+      {{feature_requirements}}
+
+      Serving Scale:
+      {{serving_scale}}
+
+      Data Sources:
+      {{data_sources}}
+testData:
+  - variables:
+      feature_requirements: "Fraud detection features requiring sub-second updates, mixed with daily batch aggregates. High cardinality (100M+ entities)."
+      serving_scale: "Online: 50,000 RPS at <10ms P99 latency. Offline: Generating 5TB training datasets daily."
+      data_sources: "Kafka (user events, transactions), Snowflake (historical accounts), Debezium CDC from Postgres."
+    evaluators:
+      - type: regex
+        pattern: "(?i)Point-in-[Tt]ime|Time-[Tt]ravel"
+      - type: regex
+        pattern: "(?i)Kafka|Streaming"
+      - type: regex
+        pattern: "(?i)Online.*Offline|Dual.*Storage"
+  - variables:
+      feature_requirements: "Recommendation engine embeddings and fast-moving context features. Needs strict versioning and lineage."
+      serving_scale: "Online: 10,000 RPS <20ms. Offline: Hourly batch retraining on 1TB sets."
+      data_sources: "Kinesis streams, Redshift, S3 Parquet lakes."
+    evaluators:
+      - type: regex
+        pattern: "(?i)Lineage|Governance|Registry"
+      - type: regex
+        pattern: "(?i)Skew"
+      - type: regex
+        pattern: "(?i)Embedding.*Vector|Key-Value"
+evaluators: []
