@@ -15,6 +15,7 @@ title: Technical
 - [AI Email Assistant Go/No-Go Vote](prompts/technical/design/email_assistant_go_no_go_vote.prompt.md)
 - [ai_threat_modeling_architect](prompts/technical/security/ai_threat_modeling_architect.prompt.md)
 - [API Security & Zero Trust Architect](prompts/technical/security/api_security_zero_trust_architect.prompt.md)
+- [APT Threat Hunting Hypothesis Generation Architect](prompts/technical/security/secops/apt_threat_hypothesis_generation_architect.prompt.md)
 - [APT Threat Hunting Query Engineer](prompts/technical/security/apt_threat_hunting_query_engineer.prompt.md)
 - [Atlas Documentation Specialist](prompts/technical/documentation/atlas_documentation_specialist.prompt.md)
 - [automated_malware_reverse_engineering_analyst](prompts/technical/security/automated_malware_reverse_engineering_analyst.prompt.md)
