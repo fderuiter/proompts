@@ -1196,6 +1196,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Multi-Tenant Noisy Neighbor Mitigation Architect](prompts/technical/architecture/multi_tenant_noisy_neighbor_mitigation_architect.prompt.md)
 - [Multi-Tenant SaaS Architecture Designer](prompts/technical/architecture/multi_tenant_saas_architecture_designer.prompt.md)
 - [Offline-First Synchronization Architect](prompts/technical/architecture/offline_first_sync_architect.prompt.md)
+- [Payment Gateway Idempotency Architect](prompts/technical/architecture/payment_gateway_idempotency_architect.prompt.md)
 - [peer_to_peer_gossip_protocol_architect](prompts/technical/architecture/peer_to_peer_gossip_protocol_architect.prompt.md)
 - [PII Tokenization Vault Architect](prompts/technical/architecture/pii_tokenization_vault_architect.prompt.md)
 - [Platform Engineering IDP Architect](prompts/technical/architecture/platform_engineering_idp_architect.prompt.md)
