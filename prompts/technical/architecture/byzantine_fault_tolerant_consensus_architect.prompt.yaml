@@ -93,4 +93,16 @@ testData:
       - name: Refusal JSON
         type: regex
         pattern: '\{"error": "unsafe"\}'
-evaluators: []
+evaluators:
+  - name: Consensus Protocol Header
+    type: regex
+    pattern: "(?i)Consensus Protocol"
+  - name: Cryptographic Primitives Header
+    type: regex
+    pattern: "(?i)Cryptographic Primitives"
+  - name: View Change Header
+    type: regex
+    pattern: "(?i)View Change"
+  - name: Network Protocol Header
+    type: regex
+    pattern: "(?i)Network Protocol"
