@@ -1081,6 +1081,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Origami-Paleo Cloud Scaler](prompts/speculative/origami_paleo_cloud_scaling/origami_paleo_cloud_scaler.prompt.md)
 - [polyphonic_astrobotanical_harmoniser](prompts/speculative/polyphonic_astrobotanical_harmoniser/polyphonic_astrobotanical_harmoniser.prompt.md)
 - [Pulsar Fermentation Rate Limiting Architect](prompts/speculative/pulsar_fermentation_rate_limiting/pulsar_fermentation_rate_limiter.prompt.md)
+- [qcd_chanoyu_autoscaler](prompts/speculative/qcd_chanoyu_autoscaler.prompt.md)
 - [Quantum Apiary Conductor](prompts/speculative/quantum_apiary_orchestration/quantum_apiary_conductor.prompt.md)
 - [quantum_epistolary_waste_architect](prompts/speculative/quantum_epistolary_waste_architect/quantum_epistolary_waste_architect.prompt.md)
 - [quantum_gothic_waste_optimiser](prompts/speculative/quantum_gothic_waste_optimiser/quantum_gothic_waste_optimiser.prompt.md)
