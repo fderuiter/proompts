@@ -71,6 +71,7 @@ title: Architecture
 - [Platform Engineering IDP Architect](prompts/technical/architecture/platform_engineering_idp_architect.prompt.md)
 - [Quantum-Safe Cryptography Migration Architect](prompts/technical/architecture/quantum_safe_cryptography_migration_architect.prompt.md)
 - [Real-Time Bidding AdTech Architect](prompts/technical/architecture/real_time_bidding_adtech_architect.prompt.md)
+- [Real-Time Fraud Decision Engine Architect](prompts/technical/architecture/real_time_fraud_decision_engine_architect.prompt.md)
 - [Real-Time Game State Synchronization Architect](prompts/technical/architecture/real_time_game_state_synchronization_architect.prompt.md)
 - [Real-Time ML Feature Store Architect](prompts/technical/architecture/real_time_ml_feature_store_architect.prompt.md)
 - [Real-Time Stream Processing Architect](prompts/technical/architecture/real_time_stream_processing_architect.prompt.md)
