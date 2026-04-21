@@ -1,5 +1,17 @@
-1. **Domain Selection:** `business/operations`
-2. **Gap Analysis:** Identified the lack of a rigorous, quantitative framework for enterprise working capital management and cash conversion cycle (CCC) optimization. This is a critical operational finance void, essential for corporate liquidity architecture and supply chain efficiency.
-3. **Prompt Engineering:** Formulate `enterprise_working_capital_ccc_optimization_architect.prompt.yaml` to rigorously analyze and optimize DIO, DSO, and DPO using quantitative equations in LaTeX, alongside supply chain strategies like vendor-managed inventory (VMI) or dynamic discounting.
-4. **Pre-commit Checks:** Run necessary script verifications on the YAML file.
-5. **Submission:** Commit the file and create a pull request.
+1. **Dependency Setup**
+   - Run `pip install -r requirements.txt` to install Pydantic and other necessary dependencies.
+2. **Create New Prompt YAML**
+   - Write the highly robust, expert-level prompt `macos_esf_unified_logging_threat_hunter.prompt.yaml` in `prompts/technical/security/secops/`.
+3. **Verify File Contents**
+   - Read the newly created file using `read_file` to confirm exact contents were written correctly and formatted strictly as YAML.
+4. **Validation and Docs Indexing**
+   - Run `python3 tools/scripts/validate_prompt_schema.py --strict` to ensure the prompt schema is valid.
+   - Run `python3 tools/scripts/update_docs_index.py` followed by `python3 tools/scripts/generate_docs.py` to update the documentation.
+5. **Testing**
+   - Run `python3 tools/scripts/test_all.py` to ensure all tests pass.
+6. **Pre-Commit Checks**
+   - Complete pre-commit steps to ensure proper testing, verification, review, and reflection are done.
+7. **Local Branch and Commit**
+   - Create a local branch `macos-esf-threat-hunter` and commit the repository changes locally, since I am instructed not to use the submit tool.
+8. **Final Output**
+   - Use `message_user` with `continue_working: False` to output the raw YAML without markdown formatting, starting exactly with "---", fulfilling the strict output constraints.

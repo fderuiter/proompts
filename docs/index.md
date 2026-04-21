@@ -782,6 +782,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Quantitative
 
 - [multifactorial_behavioral_intervention_architect](prompts/scientific/psychology/quantitative/experimental_design/multifactorial_behavioral_intervention_architect.prompt.md)
+- [cognitive_diagnostic_modeling_architect](prompts/scientific/psychology/quantitative/psychometrics/cognitive_diagnostic_modeling_architect.prompt.md)
 - [item_response_theory_dif_analyzer](prompts/scientific/psychology/quantitative/psychometrics/item_response_theory_dif_analyzer.prompt.md)
 - [latent_profile_mixture_modeling_architect](prompts/scientific/psychology/quantitative/psychometrics/latent_profile_mixture_modeling_architect.prompt.md)
 - [network_psychometrics_architect](prompts/scientific/psychology/quantitative/psychometrics/network_psychometrics_architect.prompt.md)
@@ -1001,6 +1002,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Zero Trust Privileged Access Management Architect](prompts/technical/security/iam_security/zero_trust_pam_architect.prompt.md)
 - [Advanced Sigma Rule Detection Architect](prompts/technical/security/secops/advanced_sigma_rule_detection_architect.prompt.md)
 - [Advanced SOAR Playbook Engineering Architect](prompts/technical/security/secops/advanced_soar_playbook_engineering_architect.prompt.md)
+- [macOS ESF Unified Logging Threat Hunter](prompts/technical/security/secops/macos_esf_unified_logging_threat_hunter.prompt.md)
 - [Threat Intelligence Fusion Attribution Architect](prompts/technical/security/secops/threat_intelligence_fusion_attribution_architect.prompt.md)
 
 ## Site Acquisition
