@@ -1215,6 +1215,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Real-Time Game State Synchronization Architect](prompts/technical/architecture/real_time_game_state_synchronization_architect.prompt.md)
 - [Real-Time ML Feature Store Architect](prompts/technical/architecture/real_time_ml_feature_store_architect.prompt.md)
 - [Real-Time Stream Processing Architect](prompts/technical/architecture/real_time_stream_processing_architect.prompt.md)
+- [Semantic Caching AI Gateway Architect](prompts/technical/architecture/semantic_caching_ai_gateway_architect.prompt.md)
 - [Server-Driven UI Architecture Designer](prompts/technical/architecture/server_driven_ui_architect.prompt.md)
 - [Serverless Database Connection Pooling Architect](prompts/technical/architecture/serverless_database_connection_pooling_architect.prompt.md)
 - [Serverless Function Orchestration Architect](prompts/technical/architecture/serverless_function_orchestration_architect.prompt.md)
