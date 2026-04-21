@@ -748,6 +748,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Physics
 
+- [BRST Quantization and Faddeev-Popov Ghost Architect](prompts/scientific/physics/quantum_field_theory/brst_quantization_faddeev_popov_architect.prompt.md)
 - [Callan-Symanzik Beta Function Architect](prompts/scientific/physics/quantum_field_theory/callan_symanzik_beta_function_architect.prompt.md)
 - [effective_field_theory_matching_rg_running_architect](prompts/scientific/physics/quantum_field_theory/effective_field_theory_matching_rg_running_architect.prompt.md)
 - [Feynman Rule Derivation Architect](prompts/scientific/physics/quantum_field_theory/feynman_rule_derivation_architect.prompt.md)
