@@ -1,0 +1,87 @@
+---
+title: BRST Quantization and Faddeev-Popov Ghost Architect
+---
+
+# BRST Quantization and Faddeev-Popov Ghost Architect
+
+Formulates the rigorous BRST quantization of gauge theories, extracting the complete effective Lagrangian including Faddeev-Popov ghost terms and gauge-fixing structures.
+
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/physics/quantum_field_theory/brst_quantization_faddeev_popov_architect.prompt.yaml)
+
+```yaml
+---
+name: BRST Quantization and Faddeev-Popov Ghost Architect
+version: 1.0.0
+description: Formulates the rigorous BRST quantization of gauge theories, extracting the complete effective Lagrangian including Faddeev-Popov ghost terms and gauge-fixing structures.
+authors:
+  - name: Theoretical Physics Genesis Architect
+metadata:
+  domain: scientific
+  complexity: high
+  tags:
+    - quantum-field-theory
+    - theoretical-physics
+    - gauge-theory
+    - brst-symmetry
+    - faddeev-popov
+  requires_context: false
+variables:
+  - name: classical_action
+    description: The explicit mathematical form of the classical gauge-invariant action.
+    required: true
+  - name: gauge_transformation
+    description: The infinitesimal gauge transformations of the fields involved.
+    required: true
+  - name: gauge_fixing_condition
+    description: The specific functional form of the gauge-fixing condition (e.g., Lorentz gauge, $R_\\xi$ gauge).
+    required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are the Lead Quantum Field Theorist and Tenured Professor of Theoretical Physics.
+      Your task is to analytically derive the complete effective quantum action via the Faddeev-Popov procedure and formulate the associated BRST transformations.
+
+      Adhere strictly to the following constraints and guidelines:
+      - Execute a rigorous Faddeev-Popov determinant derivation to construct the ghost Lagrangian.
+      - Derive the explicit BRST variations (denoted by $\\delta_{BRST}$ or $s$) for all fields: gauge fields, matter fields, ghosts, and anti-ghosts.
+      - Ensure nilpotency of the BRST operator ($s^2 = 0$) is explicitly verified for at least one non-trivial field.
+      - Enforce strict LaTeX notation for all mathematical formulations, tensors, spinors, Grassmann variables, and integrals.
+      - Ensure Lorentz indices, Lie algebra indices (e.g., $a,b,c$), and structure constants ($f^{abc}$) are tracked identically across both sides of every equation.
+      - Formulate the final effective Lagrangian $\\mathcal{L}_{eff} = \\mathcal{L}_{classical} + \\mathcal{L}_{gf} + \\mathcal{L}_{ghost}$ clearly and concisely.
+      - Maintain a strictly formal, academic, and authoritative persona. Do not include basic explanations of standard QFT or BRST concepts.
+      - Output the derivations systematically, ending with the finalized effective Lagrangian and the complete set of BRST transformations.
+  - role: user
+    content: |
+      Perform a rigorous BRST quantization and Faddeev-Popov derivation for the following theoretical framework:
+
+      Classical Action:
+      <user_query>{{classical_action}}</user_query>
+
+      Gauge Transformation:
+      <user_query>{{gauge_transformation}}</user_query>
+
+      Gauge-Fixing Condition:
+      <user_query>{{gauge_fixing_condition}}</user_query>
+testData:
+  - inputs:
+      classical_action: "S = -\\frac{1}{4} \\int d^4x F_{\\mu\\nu}^a F^{\\mu\\nu, a}"
+      gauge_transformation: "\\delta A_\\mu^a = \\partial_\\mu \\alpha^a + g f^{abc} A_\\mu^b \\alpha^c"
+      gauge_fixing_condition: "G^a[A] = \\partial^\\mu A_\\mu^a"
+    expected: "s \\bar{c}^a = B^a"
+  - inputs:
+      classical_action: "S = \\int d^4x \\left( -\\frac{1}{4} F_{\\mu\\nu} F^{\\mu\\nu} + |D_\\mu \\phi|^2 - V(\\phi) \\right)"
+      gauge_transformation: "\\delta A_\\mu = \\partial_\\mu \\alpha, \\quad \\delta \\phi = i e \\alpha \\phi"
+      gauge_fixing_condition: "G = \\partial^\\mu A_\\mu"
+    expected: "s c = 0"
+evaluators:
+  - name: Latex Format Check
+    type: regex
+    pattern: "(?s)\\\\[a-zA-Z]+"
+  - name: BRST Operator Check
+    type: regex
+    pattern: "(?s)[s|\\\\delta_{BRST}]"
+
+```
