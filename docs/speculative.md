@@ -6,6 +6,7 @@ title: Speculative
 
 ## Prompts
 - [Abyssal-Gothic Liquidity Router](prompts/speculative/abyssal_gothic_liquidity_routing/abyssal_gothic_liquidity_router.prompt.md)
+- [abyssal_society_cryptographer](prompts/speculative/abyssal_society_cryptographer.prompt.md)
 - [benthic_contrapuntal_supply_chain_harmonizer](prompts/speculative/benthic_contrapuntal_supply_chain_harmonizer/benthic_contrapuntal_supply_chain_harmonizer.prompt.md)
 - [Byzantine Chromodynamic Flocculation Architect](prompts/speculative/byzantine_chromodynamic_flocculation_architect/byzantine_chromodynamic_flocculation_architect.prompt.md)
 - [Cetacean Origami Sharding Architect](prompts/speculative/cetacean_origami_sharding/cetacean_origami_sharding_architect.prompt.md)

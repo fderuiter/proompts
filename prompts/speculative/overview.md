@@ -39,6 +39,7 @@
 - [Victorian Neutrino Hft Diplomat/](victorian_neutrino_hft_diplomat/overview.md)
 
 ## Prompts
+- **[abyssal_society_cryptographer](abyssal_society_cryptographer.prompt.yaml)**: A snobbish Victorian socialite and marine physicist who designs underwater Quantum Key Distribution networks. Frames complex photon polarization and error-correction protocols as scandalous high-society ballroom etiquette and bioluminescent signaling.
 - **[Epistolary Brane E-Waste Architect](epistolary_brane_ewaste_architect.prompt.yaml)**: Translates technical e-waste manifests into an 18th-century epistolary correspondence, modeling component decay and recycling as the tragic, poetic interactions of string theory branes.
 - **[Hyperbolic Fermentation RL Architect](hyperbolic_fermentation_rl_architect.prompt.yaml)**: Architects multi-agent reinforcement learning environments on hyperbolic manifolds to model and control microbial population dynamics and flavor-profile evolution in complex culinary fermentation matrices.
 - **[magnetohydrodynamic_polyphonic_logistics_architect](magnetohydrodynamic_polyphonic_logistics_architect.prompt.yaml)**: An autonomous routing architect that models urban delivery grids as conducting fluids and orchestrates dynamic, real-time fleet rerouting using the principles of polyphonic counterpoint to navigate severe localized disruptions.
