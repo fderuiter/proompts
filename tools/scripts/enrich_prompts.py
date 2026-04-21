@@ -1,11 +1,40 @@
 #!/usr/bin/env python3
-"""Enrich prompt YAML files with meaningful variable descriptions and metadata.
+"""
+Enrich Prompt Files - Automation Script
 
-Strategy:
-  1. Variable descriptions: inferred from surrounding message context where
-     {{var_name}} appears, or from the variable name and prompt description.
-  2. Metadata: domain/complexity/tags/requires_context derived from the file
-     path and prompt content heuristics.
+## What is this?
+This script scans prompt YAML files and automatically enriches them with missing
+metadata (such as `domain`, `complexity`, `tags`, and `requires_context`) and
+inferential descriptions for variables declared in the `messages` block.
+
+## Why use it?
+- **Reduces Cognitive Load:** Manually writing descriptions for every variable
+  in a complex prompt chain is tedious. This script uses heuristics to do it for you.
+- **Maintains Consistency:** Ensures all prompts have the necessary metadata
+  for categorization and search functionality across the repository.
+
+> [!NOTE]
+> This script uses a heuristic approach based on the file path, variable names,
+> and surrounding context. It does **not** use an LLM API to infer descriptions.
+
+## How to use it?
+
+### Usage Examples
+
+1. **Dry Run** (Preview changes without modifying files):
+   ```bash
+   python3 tools/scripts/enrich_prompts.py --dry-run
+   ```
+
+2. **Enrich a Specific File**:
+   ```bash
+   python3 tools/scripts/enrich_prompts.py --file prompts/my_prompt.prompt.yaml
+   ```
+
+3. **Enrich All Prompts**:
+   ```bash
+   python3 tools/scripts/enrich_prompts.py
+   ```
 """
 
 from __future__ import annotations
