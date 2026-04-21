@@ -78,6 +78,7 @@ title: Architecture
 - [Stateful Workflow Orchestration Architect](prompts/technical/architecture/stateful_workflow_orchestration_architect.prompt.md)
 - [Strangler Fig Migration Architect](prompts/technical/architecture/strangler_fig_migration_architect.prompt.md)
 - [Sustainable Green Software Architect](prompts/technical/architecture/sustainable_green_software_architect.prompt.md)
+- [Time-Series Database Storage Architect](prompts/technical/architecture/time_series_database_storage_architect.prompt.md)
 - [TOGAF Phase A - Architecture Vision](prompts/technical/architecture/togaf/phase_a_vision.prompt.md)
 - [TOGAF Phase B - Business Architecture](prompts/technical/architecture/togaf/phase_b_business.prompt.md)
 - [TOGAF Phase C - Information Systems Architectures](prompts/technical/architecture/togaf/phase_c_information_systems.prompt.md)
