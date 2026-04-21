@@ -1,4 +1,5 @@
 # Automation Overview
 
 ## Prompts
+- **[Autonomous Automation Agent](autonomous_automation_agent.prompt.yaml)**: A Principal DevOps Automation Engineer persona that executes a fully autonomous repository commit and generates a pull request based on the current workspace state.
 - **[Universal Automation Agent](universal_automation_agent.prompt.yaml)**: An elite, highly adaptable automation agent that executes specific tasks based on strict constraints and context.
