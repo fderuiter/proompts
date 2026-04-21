@@ -192,6 +192,7 @@ title: Scientific
 - [Sample-Size & Randomization Strategy](prompts/scientific/biostatistics/sample_size_randomization_strategy.prompt.md)
 - [Schwinger-Dyson Equation Architect](prompts/scientific/physics/quantum_field_theory/schwinger_dyson_equation_architect.prompt.md)
 - [Secondary Endpoint Multiplicity Adjuster](prompts/scientific/biostatistics/secondary_endpoint_multiplicity.prompt.md)
+- [semantic_mutation_censorship_evasion_modeler](prompts/scientific/psychology/computational/network_contagion/semantic_mutation_censorship_evasion_modeler.prompt.md)
 - [serre_spectral_sequence_calculator](prompts/scientific/mathematics/topology/algebraic_topology/serre_spectral_sequence_calculator.prompt.md)
 - [Simulated Clinical Scenario Debrief](prompts/scientific/bioskills/bioskills_workflow/02_simulated_clinical_scenario_feedback.prompt.md)
 - [single_cell_rna_seq_trajectory_inference_architect](prompts/scientific/genetics/transcriptomics/single_cell_rna_seq_trajectory_inference_architect.prompt.md)
