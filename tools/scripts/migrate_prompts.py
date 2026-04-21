@@ -1,5 +1,37 @@
 #!/usr/bin/env python3
-"""Migrate existing prompt YAML files to include version and variables fields."""
+"""
+Migrate Prompts - Schema Evolution Script
+
+## What is this?
+This script migrates older prompt YAML files to the latest schema standard by
+automatically inserting missing structural fields such as `version` and `variables`.
+
+## Why use it?
+- **Reduces Cognitive Load:** Eliminates the need to manually update legacy prompts
+  when new schema requirements are introduced.
+- **Maintains Consistency:** Ensures all prompts follow the strict Pydantic schema
+  rules defined in `validate_prompt_schema.py`.
+
+> [!NOTE]
+> This script performs structural updates only. For `variables`, it extracts variable
+> names from template strings (e.g., `{{var_name}}`) and adds them to the `variables`
+> block with a placeholder description (`TODO`). Use `enrich_prompts.py` afterwards
+> to auto-generate those descriptions.
+
+## How to use it?
+
+### Usage Examples
+
+1. **Dry Run** (Preview changes without modifying files):
+   ```bash
+   python3 tools/scripts/migrate_prompts.py --dry-run
+   ```
+
+2. **Migrate All Prompts**:
+   ```bash
+   python3 tools/scripts/migrate_prompts.py
+   ```
+"""
 
 from __future__ import annotations
 
