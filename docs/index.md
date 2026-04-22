@@ -1258,6 +1258,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Webhook Dispatch Delivery Architect](prompts/technical/architecture/webhook_dispatch_delivery_architect.prompt.md)
 - [WebRTC Real-Time Media Streaming Architect](prompts/technical/architecture/webrtc_media_streaming_architect.prompt.md)
 - [Zero-Downtime Database Migration Architect](prompts/technical/architecture/zero_downtime_database_migration_architect.prompt.md)
+- [Zero-Knowledge Rollup Scaling Architect](prompts/technical/architecture/zero_knowledge_rollup_scaling_architect.prompt.md)
 - [Zero Trust Network Architecture Designer](prompts/technical/architecture/zero_trust_network_architecture_designer.prompt.md)
 - [Autonomous Automation Agent](prompts/technical/automation/autonomous_automation_agent.prompt.md)
 - [Universal Automation Agent](prompts/technical/automation/universal_automation_agent.prompt.md)
