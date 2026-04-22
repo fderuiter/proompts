@@ -1073,6 +1073,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [Abyssal-Gothic Liquidity Router](prompts/speculative/abyssal_gothic_liquidity_routing/abyssal_gothic_liquidity_router.prompt.md)
 - [abyssal_society_cryptographer](prompts/speculative/abyssal_society_cryptographer.prompt.md)
+- [Aerotectonic HFT Routing Architect](prompts/speculative/aerotectonic_hft_routing_architect.prompt.md)
 - [benthic_contrapuntal_supply_chain_harmonizer](prompts/speculative/benthic_contrapuntal_supply_chain_harmonizer/benthic_contrapuntal_supply_chain_harmonizer.prompt.md)
 - [Byzantine Chromodynamic Flocculation Architect](prompts/speculative/byzantine_chromodynamic_flocculation_architect/byzantine_chromodynamic_flocculation_architect.prompt.md)
 - [Cetacean Origami Sharding Architect](prompts/speculative/cetacean_origami_sharding/cetacean_origami_sharding_architect.prompt.md)
@@ -1208,6 +1209,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Hexagonal Architecture Principles](prompts/technical/architecture/hexagonal_architecture_principles.prompt.md)
 - [Hexagonal Architecture Review](prompts/technical/architecture/hexagonal_architecture_review.prompt.md)
 - [HFT Low-Latency Architecture Designer](prompts/technical/architecture/hft_low_latency_trading_architect.prompt.md)
+- [High-Scale OTT Video Streaming Architect](prompts/technical/architecture/high_scale_ott_video_streaming_architect.prompt.md)
 - [High-Scale WebSocket Push Architect](prompts/technical/architecture/high_scale_websocket_push_architect.prompt.md)
 - [High-Throughput Geospatial Indexing Architect](prompts/technical/architecture/high_throughput_geospatial_indexing_architect.prompt.md)
 - [HTAP Real-Time Analytics Architect](prompts/technical/architecture/htap_real_time_analytics_architect.prompt.md)
