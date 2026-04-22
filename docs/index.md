@@ -387,6 +387,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Econometrics
 
+- [staggered_difference_in_differences_architect](prompts/scientific/economics/econometrics/causal_inference/staggered_difference_in_differences_architect.prompt.md)
 - [Synthetic Control Method Architect](prompts/scientific/economics/econometrics/causal_inference/synthetic_control_method_architect.prompt.md)
 - [dynamic_panel_gmm_architect](prompts/scientific/economics/econometrics/panel_data/dynamic_panel_gmm_architect.prompt.md)
 - [mixed_frequency_dynamic_factor_nowcasting_architect](prompts/scientific/economics/econometrics/time_series/mixed_frequency_dynamic_factor_nowcasting_architect.prompt.md)
