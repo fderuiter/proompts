@@ -754,6 +754,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [effective_field_theory_matching_rg_running_architect](prompts/scientific/physics/quantum_field_theory/effective_field_theory_matching_rg_running_architect.prompt.md)
 - [Feynman Rule Derivation Architect](prompts/scientific/physics/quantum_field_theory/feynman_rule_derivation_architect.prompt.md)
 - [Schwinger-Dyson Equation Architect](prompts/scientific/physics/quantum_field_theory/schwinger_dyson_equation_architect.prompt.md)
+- [Schwinger-Keldysh Non-Equilibrium Path Integral Architect](prompts/scientific/physics/quantum_field_theory/schwinger_keldysh_non_equilibrium_path_integral_architect.prompt.md)
 - [ads_cft_holographic_dictionary_architect](prompts/scientific/physics/string_theory/ads_cft_holographic_dictionary_architect.prompt.md)
 - [string_worldsheet_scattering_amplitude_architect](prompts/scientific/physics/string_theory/string_worldsheet_scattering_amplitude_architect.prompt.md)
 
