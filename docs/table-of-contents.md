@@ -746,6 +746,7 @@
 [Advanced Sigma Rule Detection Architect](prompts/technical/security/secops/advanced_sigma_rule_detection_architect.prompt.md)
 [Advanced SOAR Playbook Engineering Architect](prompts/technical/security/secops/advanced_soar_playbook_engineering_architect.prompt.md)
 [APT Threat Hunting Hypothesis Generation Architect](prompts/technical/security/secops/apt_threat_hypothesis_generation_architect.prompt.md)
+[Forensic Super Timeline Analysis Architect](prompts/technical/security/secops/forensic_super_timeline_analysis_architect.prompt.md)
 [macOS ESF Unified Logging Threat Hunter](prompts/technical/security/secops/macos_esf_unified_logging_threat_hunter.prompt.md)
 [Threat Intelligence Fusion Attribution Architect](prompts/technical/security/secops/threat_intelligence_fusion_attribution_architect.prompt.md)
 [Site Landscape Mapping & Prioritization](prompts/clinical/site_acquisition/site_acquisition_workflow/01_site_landscape_mapping.prompt.md)
