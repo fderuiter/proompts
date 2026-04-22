@@ -509,6 +509,7 @@
 [Electrocatalytic Mechanism Architect](prompts/scientific/chemistry/physical/electrochemistry/electrocatalytic_mechanism_architect.prompt.md)
 [Microkinetic Modeling Architect](prompts/scientific/chemistry/physical/kinetics/microkinetic_modeling_architect.prompt.md)
 [Non-Ideal Fluid Phase Equilibria Architect](prompts/scientific/chemistry/physical/thermodynamics/non_ideal_fluid_phase_equilibria_architect.prompt.md)
+[lattice_boltzmann_multiphase_architect](prompts/scientific/applied_mathematics/physics/fluid_dynamics/lattice_boltzmann_multiphase_architect.prompt.md)
 [BRST Quantization and Faddeev-Popov Ghost Architect](prompts/scientific/physics/quantum_field_theory/brst_quantization_faddeev_popov_architect.prompt.md)
 [Callan-Symanzik Beta Function Architect](prompts/scientific/physics/quantum_field_theory/callan_symanzik_beta_function_architect.prompt.md)
 [effective_field_theory_matching_rg_running_architect](prompts/scientific/physics/quantum_field_theory/effective_field_theory_matching_rg_running_architect.prompt.md)

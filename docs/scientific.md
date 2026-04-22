@@ -127,6 +127,7 @@ title: Scientific
 - [large_scale_axial_coding_framework_generator](prompts/scientific/sociology/methods/ethnographic_coding/large_scale_axial_coding_framework_generator.prompt.md)
 - [latent_growth_curve_modeling_architect](prompts/scientific/psychology/developmental/longitudinal_modeling/latent_growth_curve_modeling_architect.prompt.md)
 - [latent_profile_mixture_modeling_architect](prompts/scientific/psychology/quantitative/psychometrics/latent_profile_mixture_modeling_architect.prompt.md)
+- [lattice_boltzmann_multiphase_architect](prompts/scientific/applied_mathematics/physics/fluid_dynamics/lattice_boltzmann_multiphase_architect.prompt.md)
 - [Linear Logic Resource Proof Generator](prompts/scientific/mathematics/formal_logic/linear_logic_resource_proof_generator.prompt.md)
 - [linear_temporal_logic_model_checker](prompts/scientific/mathematics/formal_logic/linear_temporal_logic_model_checker.prompt.md)
 - [log_gaussian_cox_process_architect](prompts/scientific/statistics/modeling/spatial_point_processes/log_gaussian_cox_process_architect.prompt.md)
