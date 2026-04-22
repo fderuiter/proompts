@@ -36,6 +36,7 @@ title: Architecture
 - [Domain-Driven Design Bounded Context Architect](prompts/technical/architecture/domain_driven_design_bounded_context_architect.prompt.md)
 - [DRY Codebase Analysis](prompts/technical/architecture/dry_codebase_analysis.prompt.md)
 - [eBPF Network Observability Architect](prompts/technical/architecture/ebpf_network_observability_architect.prompt.md)
+- [Edge AI Inference Architect](prompts/technical/architecture/edge_ai_inference_architect.prompt.md)
 - [Edge Computing Topology Architect](prompts/technical/architecture/edge_computing_topology_architect.prompt.md)
 - [Enterprise RAG Architecture Designer](prompts/technical/architecture/enterprise_rag_architecture_designer.prompt.md)
 - [Event-Driven Dead Letter Queue Remediation Architect](prompts/technical/architecture/event_driven_dead_letter_queue_remediation_architect.prompt.md)
