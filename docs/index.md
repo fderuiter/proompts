@@ -1209,6 +1209,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Offline-First Synchronization Architect](prompts/technical/architecture/offline_first_sync_architect.prompt.md)
 - [Payment Gateway Idempotency Architect](prompts/technical/architecture/payment_gateway_idempotency_architect.prompt.md)
 - [peer_to_peer_gossip_protocol_architect](prompts/technical/architecture/peer_to_peer_gossip_protocol_architect.prompt.md)
+- [Petabyte-Scale Data Lakehouse Architect](prompts/technical/architecture/petabyte_scale_data_lakehouse_architect.prompt.md)
 - [PII Tokenization Vault Architect](prompts/technical/architecture/pii_tokenization_vault_architect.prompt.md)
 - [Platform Engineering IDP Architect](prompts/technical/architecture/platform_engineering_idp_architect.prompt.md)
 - [Quantum-Safe Cryptography Migration Architect](prompts/technical/architecture/quantum_safe_cryptography_migration_architect.prompt.md)
