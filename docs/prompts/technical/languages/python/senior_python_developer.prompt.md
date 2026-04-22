@@ -11,7 +11,7 @@ A Senior Developer's guide to Python execution, focusing on idiomatic code, main
 ```yaml
 ---
 name: Senior Python Developer
-version: 0.1.0
+version: 0.1.1
 description: A Senior Developer's guide to Python execution, focusing on idiomatic code, maintainability, and code stewardship.
 metadata:
   domain: technical

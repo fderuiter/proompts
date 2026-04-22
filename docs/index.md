@@ -1073,7 +1073,6 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [Abyssal-Gothic Liquidity Router](prompts/speculative/abyssal_gothic_liquidity_routing/abyssal_gothic_liquidity_router.prompt.md)
 - [abyssal_society_cryptographer](prompts/speculative/abyssal_society_cryptographer.prompt.md)
-- [Aerotectonic HFT Routing Architect](prompts/speculative/aerotectonic_hft_routing_architect.prompt.md)
 - [benthic_contrapuntal_supply_chain_harmonizer](prompts/speculative/benthic_contrapuntal_supply_chain_harmonizer/benthic_contrapuntal_supply_chain_harmonizer.prompt.md)
 - [Byzantine Chromodynamic Flocculation Architect](prompts/speculative/byzantine_chromodynamic_flocculation_architect/byzantine_chromodynamic_flocculation_architect.prompt.md)
 - [Cetacean Origami Sharding Architect](prompts/speculative/cetacean_origami_sharding/cetacean_origami_sharding_architect.prompt.md)
@@ -1189,7 +1188,6 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Distributed Task Queue and Background Job Processing Architect](prompts/technical/architecture/distributed_task_queue_architect.prompt.md)
 - [Distributed Transaction Orchestration Architect](prompts/technical/architecture/distributed_transaction_orchestration_architect.prompt.md)
 - [Distributed Vector Database Architect](prompts/technical/architecture/distributed_vector_database_architect.prompt.md)
-- [Distributed Web Crawler Pipeline Architect](prompts/technical/architecture/distributed_web_crawler_pipeline_architect.prompt.md)
 - [Domain-Driven Design Bounded Context Architect](prompts/technical/architecture/domain_driven_design_bounded_context_architect.prompt.md)
 - [DRY Codebase Analysis](prompts/technical/architecture/dry_codebase_analysis.prompt.md)
 - [eBPF Network Observability Architect](prompts/technical/architecture/ebpf_network_observability_architect.prompt.md)
