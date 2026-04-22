@@ -31,6 +31,7 @@ title: Technical
 - [Conversation Stochastic Modeler](prompts/technical/data_science/conversation_stochastic_modeler.prompt.md)
 - [CSR Results and Safety Section](prompts/technical/technical_writing/technical_writer_workflow/01_csr_results_safety_section.prompt.md)
 - [Deception Technology & Active Defense Architect](prompts/technical/security/deception_technology_active_defense_architect.prompt.md)
+- [DeFi Protocol Economic Security Architect](prompts/technical/security/defi_protocol_economic_security_architect.prompt.md)
 - [Dependencies & Security Posture Analysis](prompts/technical/repository_refactoring/dependencies_security_analysis.prompt.md)
 - [Documentation and Repository Structure Implementation](prompts/technical/repository_refactoring/documentation_structure_implementation.prompt.md)
 - [eBPF Runtime Security Architect](prompts/technical/security/ebpf_runtime_security_architect.prompt.md)
