@@ -1,5 +1,24 @@
 #!/usr/bin/env python3
-"""Update last_modified field in prompt files."""
+"""
+update_last_modified.py
+
+WHAT:
+This script updates the `last_modified` metadata field in prompt YAML files to the current UTC time.
+If the field is missing, it injects it at the top of the file (or immediately after the `name` field).
+
+WHY:
+It ensures that prompt versions and modification timestamps are tracked automatically. This is especially
+useful in CI/CD pipelines to guarantee that documentation and databases accurately reflect the latest
+updates to a prompt without requiring developers to manually edit timestamps.
+
+HOW:
+Usage:
+    # Update specific files
+    python3 tools/scripts/update_last_modified.py prompts/my_prompt.prompt.yaml
+
+    # Dry-run check (returns non-zero if updates are needed, but modifies nothing)
+    python3 tools/scripts/update_last_modified.py prompts/my_prompt.prompt.yaml --check
+"""
 
 import argparse
 from datetime import datetime, timezone
