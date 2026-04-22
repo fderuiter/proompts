@@ -143,6 +143,7 @@ title: Scientific
 - [mixed_frequency_dynamic_factor_nowcasting_architect](prompts/scientific/economics/econometrics/time_series/mixed_frequency_dynamic_factor_nowcasting_architect.prompt.md)
 - [Modal Logic Possible Worlds Evaluator](prompts/scientific/philosophy/logic/philosophical_logic/modal_logic_possible_worlds_evaluator.prompt.md)
 - [molecular_dynamics_simulation_architect](prompts/scientific/computational_biology/molecular_dynamics_simulation_architect.prompt.md)
+- [mu_recursive_function_derivation_architect](prompts/scientific/mathematics/formal_logic/mu_recursive_function_derivation_architect.prompt.md)
 - [multi_modal_fmri_eeg_integration_architect](prompts/scientific/computational_theoretical_neuroscience/multi_modal_fmri_eeg_integration_architect.prompt.md)
 - [multi_national_behavioral_intervention_architect](prompts/scientific/psychology/cross_cultural/population_psychometrics/multi_national_behavioral_intervention_architect.prompt.md)
 - [multi_omics_data_integration_architect](prompts/scientific/computational_biology/multi_omics_data_integration_architect.prompt.md)
