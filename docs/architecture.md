@@ -53,6 +53,7 @@ title: Architecture
 - [High-Throughput Geospatial Indexing Architect](prompts/technical/architecture/high_throughput_geospatial_indexing_architect.prompt.md)
 - [HTAP Real-Time Analytics Architect](prompts/technical/architecture/htap_real_time_analytics_architect.prompt.md)
 - [Idempotency and API Retry Strategy Architect](prompts/technical/architecture/idempotency_strategy_architect.prompt.md)
+- [Immutable Financial Ledger Architect](prompts/technical/architecture/immutable_financial_ledger_architect.prompt.md)
 - [IoT Digital Twin Architect](prompts/technical/architecture/iot_digital_twin_architect.prompt.md)
 - [Leader Election and Split-Brain Mitigation Architect](prompts/technical/architecture/leader_election_split_brain_mitigation_architect.prompt.md)
 - [Log-Structured Merge Tree Storage Architect](prompts/technical/architecture/log_structured_merge_tree_storage_architect.prompt.md)
