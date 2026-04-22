@@ -280,6 +280,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Patient Recruitment and Diversity Acceleration Plan](prompts/clinical/trial_execution/recruitment_diversity_acceleration.prompt.md)
 - [Risk-Based Monitoring and Quality Plan](prompts/clinical/trial_execution/risk_based_monitoring_plan.prompt.md)
 - [differential_diagnosis_mapping_architect](prompts/scientific/psychology/clinical/psychopathology/differential_diagnosis_mapping_architect.prompt.md)
+- [dimensional_psychopathology_hierarchical_modeler](prompts/scientific/psychology/clinical/psychopathology/dimensional_psychopathology_hierarchical_modeler.prompt.md)
 - [evidence_based_intervention_architect](prompts/scientific/psychology/clinical/treatment_planning/evidence_based_intervention_architect.prompt.md)
 
 ## Cognitive
