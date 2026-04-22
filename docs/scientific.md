@@ -230,6 +230,7 @@ title: Scientific
 - [topos_theoretic_sheaf_semantics_evaluator](prompts/scientific/mathematics/category_theory/topos_theoretic_sheaf_semantics_evaluator.prompt.md)
 - [Universal Template-Table Prompt](prompts/scientific/biostatistics/universal_template_table_prompt.prompt.md)
 - [variational_inference_architect](prompts/scientific/statistics/inference/bayesian_methods/variational_inference_architect.prompt.md)
+- [vine_copula_dependency_architect](prompts/scientific/statistics/modeling/multivariate_analysis/vine_copula_dependency_architect.prompt.md)
 - [Visible Light Photoredox Pathway Architect](prompts/scientific/chemistry/organic/photoredox_catalysis/visible_light_photoredox_pathway_architect.prompt.md)
 - [wealth_concentration_decomposition_architect](prompts/scientific/sociology/stratification/systemic_inequality/wealth_concentration_decomposition_architect.prompt.md)
 - [whole_brain_biophysical_network_simulator](prompts/scientific/computational_theoretical_neuroscience/whole_brain_biophysical_network_simulator.prompt.md)
