@@ -121,6 +121,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Quantitative Enterprise Working Capital CCC Architect](prompts/business/finance/quantitative_enterprise_working_capital_ccc_architect.prompt.md)
 - [Quantitative M&A Accretion Dilution Architect](prompts/business/finance/quantitative_ma_accretion_dilution_architect.prompt.md)
 - [Algorithmic Multi-Touch Attribution Architect](prompts/business/growth_engineering/algorithmic_multi_touch_attribution_architect.prompt.md)
+- [GTM Pricing Elasticity Architect](prompts/business/growth_engineering/gtm_pricing_elasticity_architect.prompt.md)
 - [Predictive RFM Churn Mitigation Architect](prompts/business/growth_engineering/predictive_rfm_churn_mitigation_architect.prompt.md)
 - [Clinical-Trial Budget and Burn-Rate Dashboard](prompts/business/hr_finance/clinical_trial_budget_burn_rate_dashboard.prompt.md)
 - [GCP and GDPR Training Compliance Risk Report](prompts/business/hr_finance/gcp_gdpr_compliance_training_risk_report.prompt.md)

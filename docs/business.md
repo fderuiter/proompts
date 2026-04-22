@@ -49,6 +49,7 @@ title: Business
 - [Global Regulatory and Tax Matrix for Site Payments](prompts/business/payment/global_regulatory_tax_matrix.prompt.md)
 - [Global Supply Chain Resilience Architect](prompts/business/operations/supply_chain/global_supply_chain_resilience_architect.prompt.md)
 - [global_supply_chain_geopolitical_duress_architect](prompts/business/operations/supply_chain/global_supply_chain_geopolitical_duress_architect.prompt.md)
+- [GTM Pricing Elasticity Architect](prompts/business/growth_engineering/gtm_pricing_elasticity_architect.prompt.md)
 - [Hostile Takeover Defense Matrix Architect](prompts/business/strategy/hostile_takeover_defense_matrix.prompt.md)
 - [Hype vs. Reality Analysis](prompts/business/vp_tech_innovation/hype_vs_reality_analysis.prompt.md)
 - [Investigator-Site Payment Forecast](prompts/business/payment/investigator_site_payment_forecast.prompt.md)
