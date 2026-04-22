@@ -44,7 +44,9 @@ messages:
     \    with open(filename) as f:\n        for line in f:\n            yield line.strip().upper()\n```\n\n## ⚡ Quality Assurance\n\
     [Discuss complexity, memory usage, and how this change prevents future bugs.]"
 - role: user
-  content: '{{input}}'
+  content: '<input>
+    {{input}}
+    </input>'
 testData:
 - input: "def get_users_with_profiles(session):\n    users = session.query(User).all()\n    for user in users:\n        print(user.profile.bio)\
     \ # N+1 problem"
