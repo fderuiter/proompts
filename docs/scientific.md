@@ -208,6 +208,7 @@ title: Scientific
 - [spatial_mismatch_employment_accessibility_modeler](prompts/scientific/sociology/stratification/systemic_inequality/spatial_mismatch_employment_accessibility_modeler.prompt.md)
 - [spatial_transcriptomics_cellular_communication_architect](prompts/scientific/genetics/transcriptomics/spatial_transcriptomics_cellular_communication_architect.prompt.md)
 - [spatio_temporal_geostatistical_spde_inla_architect](prompts/scientific/statistics/modeling/spatio_temporal_analysis/spatio_temporal_geostatistical_spde_inla_architect.prompt.md)
+- [staggered_difference_in_differences_architect](prompts/scientific/economics/econometrics/causal_inference/staggered_difference_in_differences_architect.prompt.md)
 - [Statistical Analysis Plan (SAP) Development](prompts/scientific/biostatistics/sap_development.prompt.md)
 - [Statistical Analysis Plan Generator](prompts/scientific/biostatistics/statistical_analysis_plan_generator.prompt.md)
 - [Sterility-Validation Protocol Builder](prompts/scientific/sterility/sterility_workflow/01_sterility_validation_protocol_builder.prompt.md)
