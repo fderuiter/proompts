@@ -436,6 +436,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Genetics
 
+- [crispr_cas9_off_target_thermodynamic_architect](prompts/scientific/biology/genetics/genomics/crispr_cas9_off_target_thermodynamic_architect.prompt.md)
 - [chromatin_conformation_hic_contact_map_architect](prompts/scientific/genetics/genomics/chromatin_conformation_hic_contact_map_architect.prompt.md)
 - [crispr_cas9_off_target_predictive_modeler](prompts/scientific/genetics/genomics/crispr_cas9_off_target_predictive_modeler.prompt.md)
 - [epigenetic_methylation_hmm_architect](prompts/scientific/genetics/genomics/epigenetic_methylation_hmm_architect.prompt.md)

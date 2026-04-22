@@ -2,6 +2,7 @@
 
 ## Categories
 - [Applied Mathematics/](applied_mathematics/overview.md)
+- [Biology/](biology/overview.md)
 - [Biosafety/](biosafety/overview.md)
 - [Bioskills/](bioskills/overview.md)
 - [Biostatistics/](biostatistics/overview.md)
