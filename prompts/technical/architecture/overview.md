@@ -99,4 +99,5 @@
 - **[Webhook Dispatch Delivery Architect](webhook_dispatch_delivery_architect.prompt.yaml)**: Designs highly resilient, high-throughput webhook delivery architectures addressing concurrency, payload signing, exponential backoff, and circuit breaking.
 - **[WebRTC Real-Time Media Streaming Architect](webrtc_media_streaming_architect.prompt.yaml)**: Designs highly scalable, low-latency, and resilient WebRTC-based real-time media streaming architectures.
 - **[Zero-Downtime Database Migration Architect](zero_downtime_database_migration_architect.prompt.yaml)**: Designs comprehensive, zero-downtime database migration strategies for high-availability systems.
+- **[Zero-Knowledge Rollup Scaling Architect](zero_knowledge_rollup_scaling_architect.prompt.yaml)**: Designs highly scalable, secure, and decentralized Zero-Knowledge Rollup (ZK-Rollup) Layer 2 architectures for blockchain networks.
 - **[Zero Trust Network Architecture Designer](zero_trust_network_architecture_designer.prompt.yaml)**: Architects robust Zero Trust network topologies and micro-segmentation strategies from domain requirements.
