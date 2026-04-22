@@ -196,6 +196,7 @@ title: Scientific
 - [Risk Assessment Expert](prompts/scientific/biosafety/biological_safety_workflow/01_risk_assessment_expert.prompt.md)
 - [Sample-Size & Randomization Strategy](prompts/scientific/biostatistics/sample_size_randomization_strategy.prompt.md)
 - [Schwinger-Dyson Equation Architect](prompts/scientific/physics/quantum_field_theory/schwinger_dyson_equation_architect.prompt.md)
+- [Schwinger-Keldysh Non-Equilibrium Path Integral Architect](prompts/scientific/physics/quantum_field_theory/schwinger_keldysh_non_equilibrium_path_integral_architect.prompt.md)
 - [Secondary Endpoint Multiplicity Adjuster](prompts/scientific/biostatistics/secondary_endpoint_multiplicity.prompt.md)
 - [semantic_mutation_censorship_evasion_modeler](prompts/scientific/psychology/computational/network_contagion/semantic_mutation_censorship_evasion_modeler.prompt.md)
 - [serre_spectral_sequence_calculator](prompts/scientific/mathematics/topology/algebraic_topology/serre_spectral_sequence_calculator.prompt.md)
