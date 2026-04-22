@@ -1,5 +1,16 @@
 ---
-name: "crispr_cas9_off_target_probabilistic_modeler"
+title: crispr_cas9_off_target_thermodynamic_architect
+---
+
+# crispr_cas9_off_target_thermodynamic_architect
+
+A highly rigorous biological genesis architect prompt designed to establish probabilistic models and map off-target cleavage events for CRISPR-Cas9 genome editing systems using thermodynamics, kinetic equations, and genomic alignments.
+
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/scientific/biology/genetics/genomics/crispr_cas9_off_target_thermodynamic_architect.prompt.yaml)
+
+```yaml
+---
+name: "crispr_cas9_off_target_thermodynamic_architect"
 version: "1.0.0"
 description: "A highly rigorous biological genesis architect prompt designed to establish probabilistic models and map off-target cleavage events for CRISPR-Cas9 genome editing systems using thermodynamics, kinetic equations, and genomic alignments."
 metadata:
@@ -76,3 +87,5 @@ evaluators:
   - rule: "Output includes an algorithmic pipeline or pseudo-code for mapping genome-wide off-targets."
   - rule: "Output strictly adheres to FASTA formatting when presenting nucleotide sequences."
   - rule: "Output demonstrates a rigorous, advanced biological sciences persona without generic or simplified explanations."
+
+```
