@@ -65,6 +65,7 @@ title: Scientific
 - [diamond_mortensen_pissarides_architect](prompts/scientific/economics/macroeconomics/search_and_matching/diamond_mortensen_pissarides_architect.prompt.md)
 - [differential_diagnosis_mapping_architect](prompts/scientific/psychology/clinical/psychopathology/differential_diagnosis_mapping_architect.prompt.md)
 - [digital_phenotyping_epidemiological_surveillance_architect](prompts/scientific/psychology/epidemiology/global_mental_health/digital_phenotyping_epidemiological_surveillance_architect.prompt.md)
+- [dimensional_psychopathology_hierarchical_modeler](prompts/scientific/psychology/clinical/psychopathology/dimensional_psychopathology_hierarchical_modeler.prompt.md)
 - [dirichlet_process_mixture_architect](prompts/scientific/statistics/inference/bayesian_methods/dirichlet_process_mixture_architect.prompt.md)
 - [Dual-Language Figure Prompt](prompts/scientific/biostatistics/dual_language_figure_prompt.prompt.md)
 - [Dunnett Adjustment R Code Generator](prompts/scientific/biostatistics/dunnett_adjustment_calculator.prompt.md)
