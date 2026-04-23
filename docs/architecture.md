@@ -114,6 +114,7 @@ title: Architecture
 - [TOGAF Requirements Management](prompts/technical/architecture/togaf/requirements_management.prompt.md)
 - [transactional_outbox_event_publishing_architect](prompts/technical/architecture/transactional_outbox_event_publishing_architect.prompt.md)
 - [Virtual Waiting Room Fair Access Architect](prompts/technical/architecture/virtual_waiting_room_fair_access_architect.prompt.md)
+- [WASM Edge Serverless Runtime Architect](prompts/technical/architecture/wasm_edge_serverless_runtime_architect.prompt.md)
 - [WebAssembly Sandboxed Plugin Architect](prompts/technical/architecture/webassembly_sandboxed_plugin_architect.prompt.md)
 - [Webhook Dispatch Delivery Architect](prompts/technical/architecture/webhook_dispatch_delivery_architect.prompt.md)
 - [WebRTC Real-Time Media Streaming Architect](prompts/technical/architecture/webrtc_media_streaming_architect.prompt.md)
