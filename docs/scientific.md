@@ -137,6 +137,7 @@ title: Scientific
 - [Linear Logic Resource Proof Generator](prompts/scientific/mathematics/formal_logic/linear_logic_resource_proof_generator.prompt.md)
 - [linear_temporal_logic_model_checker](prompts/scientific/mathematics/formal_logic/linear_temporal_logic_model_checker.prompt.md)
 - [log_gaussian_cox_process_architect](prompts/scientific/statistics/modeling/spatial_point_processes/log_gaussian_cox_process_architect.prompt.md)
+- [longitudinal_measurement_invariance_evaluator](prompts/scientific/psychology/quantitative/psychometrics/longitudinal_measurement_invariance_evaluator.prompt.md)
 - [longitudinal_trauma_propagation_modeler](prompts/scientific/epidemiology/global_mental_health/longitudinal_trauma_propagation_modeler.prompt.md)
 - [mass_psychogenic_illness_diffusion_modeler](prompts/scientific/psychology/computational/network_contagion/mass_psychogenic_illness_diffusion_modeler.prompt.md)
 - [MCID Research and Summary](prompts/scientific/coa/mcid_definition.prompt.md)
