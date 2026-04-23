@@ -46,7 +46,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Build MkDocs
-        run: mkdocs build --clean --strict
+        run: export NO_MKDOCS_2_WARNING=1 && mkdocs build --clean --strict
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
