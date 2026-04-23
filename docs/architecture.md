@@ -20,6 +20,7 @@ title: Architecture
 - [Confidential Computing Enclave Architect](prompts/technical/architecture/confidential_computing_enclave_architect.prompt.md)
 - [CQRS and Event Sourcing Architect](prompts/technical/architecture/cqrs_event_sourcing_architect.prompt.md)
 - [crdt_conflict_resolution_architect](prompts/technical/architecture/crdt_conflict_resolution_architect.prompt.md)
+- [Cross-Chain Interoperability Bridge Architect](prompts/technical/architecture/cross_chain_interoperability_bridge_architect.prompt.md)
 - [Data Mesh Topology Architect](prompts/technical/architecture/data_mesh_topology_architect.prompt.md)
 - [Data Privacy Clean Room Architect](prompts/technical/architecture/data_privacy_clean_room_architect.prompt.md)
 - [Data Residency & Localization Architect](prompts/technical/architecture/data_residency_localization_architect.prompt.md)
