@@ -38,6 +38,7 @@ title: Scientific
 - [causal_inference_dag_architect](prompts/scientific/statistics/design/causal_inference/causal_inference_dag_architect.prompt.md)
 - [characteristic_class_cobordism_architect](prompts/scientific/mathematics/topology/algebraic_topology/characteristic_class_cobordism_architect.prompt.md)
 - [Chemical Characterization & TRA Work Plan](prompts/scientific/biosafety/chemical_characterization_work_plan.prompt.md)
+- [Chiral Anomaly Fujikawa Path Integral Architect](prompts/scientific/physics/quantum_field_theory/chiral_anomaly_fujikawa_path_integral_architect.prompt.md)
 - [chromatin_conformation_hic_contact_map_architect](prompts/scientific/genetics/genomics/chromatin_conformation_hic_contact_map_architect.prompt.md)
 - [Clinical Study Report (CSR) Writing](prompts/scientific/medical_writing/csr_writing.prompt.md)
 - [ClinRO User Manual Generator](prompts/scientific/coa/clinro_training_manual.prompt.md)
