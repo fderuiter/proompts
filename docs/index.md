@@ -1231,6 +1231,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [finops_cloud_cost_optimization_architect](prompts/technical/architecture/finops_cloud_cost_optimization_architect.prompt.md)
 - [Generative AI Guardrails Gateway Architect](prompts/technical/architecture/generative_ai_guardrails_gateway_architect.prompt.md)
 - [GPU Cluster Orchestration Architect](prompts/technical/architecture/gpu_cluster_orchestration_architect.prompt.md)
+- [Graph Database Traversal Architect](prompts/technical/architecture/graph_database_traversal_architect.prompt.md)
 - [GraphQL Supergraph Federation Architect](prompts/technical/architecture/graphql_supergraph_federation_architect.prompt.md)
 - [Hexagonal Architecture Implementation](prompts/technical/architecture/hexagonal_architecture_implementation.prompt.md)
 - [Hexagonal Architecture Principles](prompts/technical/architecture/hexagonal_architecture_principles.prompt.md)
