@@ -2,6 +2,7 @@
 
 ## Prompts
 - **[agm_belief_revision_formal_engine](agm_belief_revision_formal_engine.prompt.yaml)**: A highly rigorous prompt designed to systematically formalize and execute AGM (Alchourrón, Gärdenfors, and Makinson) belief revision operators upon a formal knowledge base.
+- **[counterfactual_semantics_stalnaker_lewis_evaluator](counterfactual_semantics_stalnaker_lewis_evaluator.prompt.yaml)**: A highly rigorous prompt designed to systematically evaluate the truth conditions of counterfactual conditionals using Stalnaker-Lewis closest possible world semantics.
 - **[Deontic Logic Normative Conflict Resolver](deontic_logic_normative_conflict_resolver.prompt.yaml)**: Systematically formalizes and resolves normative conflicts (e.g., moral dilemmas) using Standard Deontic Logic (SDL) or advanced non-monotonic variations.
 - **[Modal Logic Possible Worlds Evaluator](modal_logic_possible_worlds_evaluator.prompt.yaml)**: A highly rigorous prompt designed to systematically evaluate modal propositions and counterfactual statements using Kripke semantics and precisely defined accessibility relations.
 - **[paraconsistent_logic_dialetheism_evaluator](paraconsistent_logic_dialetheism_evaluator.prompt.yaml)**: A highly rigorous prompt designed to systematically analyze and formalize paradoxical statements using paraconsistent logic frameworks, specifically evaluating them as potential dialetheias (true contradictions) without permitting deductive explosion (ex contradictione quodlibet).

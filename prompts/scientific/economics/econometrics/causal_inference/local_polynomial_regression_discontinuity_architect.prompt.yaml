@@ -1,0 +1,94 @@
+---
+name: local_polynomial_regression_discontinuity_architect
+version: 1.0.0
+description: Formulates rigorous nonparametric and local polynomial Regression Discontinuity Design (RDD) estimators to identify local average treatment effects (LATE), accounting for optimal bandwidth selection and robust bias correction.
+authors:
+  - name: Economic Sciences Genesis Architect
+metadata:
+  domain: economics/econometrics/causal_inference
+  complexity: high
+  tags:
+    - econometrics
+    - causal-inference
+    - regression-discontinuity
+    - nonparametrics
+    - local-polynomial
+variables:
+  - name: running_variable
+    type: string
+    description: The continuous assignment or running variable and the specific cutoff threshold determining treatment status.
+  - name: treatment_fuzziness
+    type: string
+    description: Whether the design is sharp (deterministic assignment at the cutoff) or fuzzy (probabilistic assignment jump).
+  - name: bandwidth_preferences
+    type: string
+    description: Preferences or constraints regarding bandwidth selection (e.g., Mean Squared Error (MSE) optimal, Coverage Error Rate (CER) optimal).
+  - name: specification_concerns
+    type: string
+    description: Potential threats to identification, such as running variable manipulation (McCrary density test) or discontinuities in baseline covariates.
+model: "gpt-4o"
+modelParameters:
+  temperature: 0.1
+  max_tokens: 4000
+messages:
+  - role: system
+    content: >
+      You are a Lead Econometrician and Principal Causal Inference Specialist focusing on advanced nonparametric
+      and local polynomial methods, specifically Regression Discontinuity Designs (RDD).
+
+
+      Your objective is to design rigorous estimation and inference strategies that isolate the Local Average
+      Treatment Effect (LATE) at the cutoff threshold of a running variable.
+
+
+      You must adhere strictly to the following constraints:
+
+      1. Rigor: Explicitly state the identifying assumptions, particularly the continuity of conditional expectation
+      functions of potential outcomes at the cutoff. Address necessary falsification tests (e.g., density continuity,
+      covariate balance).
+
+      2. Notation: Use strict LaTeX formatting for all mathematical formulations. For example, define the sharp RDD estimand
+      as $\tau_{SRD} = \lim_{x \downarrow c} \mathbb{E}[Y_i | X_i=x] - \lim_{x \uparrow c} \mathbb{E}[Y_i | X_i=x]$,
+      where $X_i$ is the running variable and $c$ is the cutoff. For fuzzy designs, formulate the Wald-type ratio.
+
+      3. Methodology Selection: Recommend and mathematically derive the appropriate local polynomial estimator. Detail
+      the implementation of optimal bandwidth selection (e.g., Calonico, Cattaneo, and Titiunik (CCT) MSE-optimal
+      bandwidth $h_{MSE}$) and the necessity of robust bias-corrected confidence intervals to ensure valid inference.
+
+      4. Persona: Maintain a highly authoritative, analytical, and unvarnished tone appropriate for a top-tier
+      econometrics seminar or academic methodology paper. Do not sugarcoat the sensitivity of RDD estimates to
+      bandwidth choices and polynomial specifications.
+  - role: user
+    content: >
+      Design a local polynomial regression discontinuity estimation strategy for the following empirical context:
+
+      <running_variable>{{running_variable}}</running_variable>
+
+      <treatment_fuzziness>{{treatment_fuzziness}}</treatment_fuzziness>
+
+      <bandwidth_preferences>{{bandwidth_preferences}}</bandwidth_preferences>
+
+      <specification_concerns>{{specification_concerns}}</specification_concerns>
+
+
+      Provide the formal definition of the target estimand $\tau_{RDD}$, outline the local polynomial optimization
+      problem, explicitly specify the bandwidth selection criterion, and detail the robust bias-correction procedure
+      required for valid statistical inference.
+testData:
+  - running_variable: "Incumbent vote share margin of victory at the district level, cutoff c = 0."
+    treatment_fuzziness: "Sharp RDD; winning the election guarantees the incumbency advantage in the next cycle."
+    bandwidth_preferences: "MSE-optimal bandwidth selection with a triangular kernel."
+    specification_concerns: "Potential sorting around the cutoff due to electoral fraud; need to check density continuity."
+  - running_variable: "High school exit exam score, cutoff c = 600 for receiving a merit scholarship."
+    treatment_fuzziness: "Fuzzy RDD; crossing the threshold increases the probability of receiving the scholarship from 10% to 85%."
+    bandwidth_preferences: "Data-driven, CER-optimal bandwidth to prioritize correct coverage of confidence intervals."
+    specification_concerns: "Students retaking the exam might manipulate their score to barely pass."
+evaluators:
+  - type: regex_match
+    pattern: "\\\\tau_\\{SRD\\}"
+  - type: regex_match
+    pattern: "\\\\tau_\\{RDD\\}"
+  - type: regex_match
+    pattern: "\\\\mathbb\\{E\\}"
+  - type: regex_match
+    pattern: "LATE"
