@@ -37,6 +37,7 @@ title: Speculative
 - [qcd_chanoyu_autoscaler](prompts/speculative/qcd_chanoyu_autoscaler.prompt.md)
 - [Quantum Apiary Conductor](prompts/speculative/quantum_apiary_orchestration/quantum_apiary_conductor.prompt.md)
 - [Quantum Horological Wastewater Architect](prompts/speculative/quantum_horological_wastewater_architect.prompt.md)
+- [Quantum Olfactory Retention Architect](prompts/speculative/quantum_olfactory_retention_architect.prompt.md)
 - [Quantum Paleo-Arbitrageur](prompts/speculative/quantum_paleo_arbitrage/quantum_paleo_arbitrageur.prompt.md)
 - [Quantum Poetic Leachate Optimizer](prompts/speculative/quantum_poetic_leachate_optimization/quantum_poetic_leachate_optimizer.prompt.md)
 - [Quantum Poetic Waste Architect](prompts/speculative/quantum_poetic_waste_architect/quantum_poetic_waste_architect.prompt.md)
