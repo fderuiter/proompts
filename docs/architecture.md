@@ -64,6 +64,7 @@ title: Architecture
 - [Immutable Financial Ledger Architect](prompts/technical/architecture/immutable_financial_ledger_architect.prompt.md)
 - [IoT Digital Twin Architect](prompts/technical/architecture/iot_digital_twin_architect.prompt.md)
 - [Leader Election and Split-Brain Mitigation Architect](prompts/technical/architecture/leader_election_split_brain_mitigation_architect.prompt.md)
+- [LLM Distributed Training Architect](prompts/technical/architecture/llm_distributed_training_architect.prompt.md)
 - [Log-Structured Merge Tree Storage Architect](prompts/technical/architecture/log_structured_merge_tree_storage_architect.prompt.md)
 - [Maintainability Codebase Analysis](prompts/technical/architecture/maintainability_codebase_analysis.prompt.md)
 - [Massive-Scale IoT OTA Update Architect](prompts/technical/architecture/massive_scale_iot_ota_architect.prompt.md)
