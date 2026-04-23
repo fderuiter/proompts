@@ -440,6 +440,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Foundations
 
 - [structural_proof_theory_cut_elimination_architect](prompts/scientific/formal_logic/foundations/proof_theory/structural_proof_theory_cut_elimination_architect.prompt.md)
+- [homotopy_type_theory_univalence_architect](prompts/scientific/mathematics/foundations/proof_theory/homotopy_type_theory_univalence_architect.prompt.md)
 - [intuitionistic_logic_natural_deduction_generator](prompts/scientific/mathematics/foundations/proof_theory/intuitionistic_logic_natural_deduction_generator.prompt.md)
 - [forcing_poset_generic_extension_architect](prompts/scientific/mathematics/foundations/set_theory/forcing_poset_generic_extension_architect.prompt.md)
 - [large_cardinal_elementary_embedding_architect](prompts/scientific/mathematics/foundations/set_theory/large_cardinal_elementary_embedding_architect.prompt.md)
@@ -1093,6 +1094,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Speculative
 
 - [Abyssal-Gothic Liquidity Router](prompts/speculative/abyssal_gothic_liquidity_routing/abyssal_gothic_liquidity_router.prompt.md)
+- [Abyssal Neumatic Consensus Architect](prompts/speculative/abyssal_neumatic_consensus_architect.prompt.md)
 - [abyssal_society_cryptographer](prompts/speculative/abyssal_society_cryptographer.prompt.md)
 - [Aerotectonic HFT Routing Architect](prompts/speculative/aerotectonic_hft_routing_architect.prompt.md)
 - [benthic_contrapuntal_supply_chain_harmonizer](prompts/speculative/benthic_contrapuntal_supply_chain_harmonizer/benthic_contrapuntal_supply_chain_harmonizer.prompt.md)
@@ -1126,6 +1128,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [quantum_epistolary_waste_architect](prompts/speculative/quantum_epistolary_waste_architect/quantum_epistolary_waste_architect.prompt.md)
 - [quantum_gothic_waste_optimiser](prompts/speculative/quantum_gothic_waste_optimiser/quantum_gothic_waste_optimiser.prompt.md)
 - [Quantum Horological Wastewater Architect](prompts/speculative/quantum_horological_wastewater_architect.prompt.md)
+- [Quantum Olfactory Retention Architect](prompts/speculative/quantum_olfactory_retention_architect.prompt.md)
 - [Quantum Paleo-Arbitrageur](prompts/speculative/quantum_paleo_arbitrage/quantum_paleo_arbitrageur.prompt.md)
 - [Quantum Poetic Leachate Optimizer](prompts/speculative/quantum_poetic_leachate_optimization/quantum_poetic_leachate_optimizer.prompt.md)
 - [Quantum Poetic Waste Architect](prompts/speculative/quantum_poetic_waste_architect/quantum_poetic_waste_architect.prompt.md)
