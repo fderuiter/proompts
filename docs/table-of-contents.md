@@ -763,6 +763,7 @@
 [Cloud Identity Fabric Threat Hunting Architect](prompts/technical/security/secops/cloud_identity_fabric_threat_hunting_architect.prompt.md)
 [Firmware and UEFI Bootkit Forensics Analyst](prompts/technical/security/secops/firmware_uefi_bootkit_forensics_analyst.prompt.md)
 [Forensic Super Timeline Analysis Architect](prompts/technical/security/secops/forensic_super_timeline_analysis_architect.prompt.md)
+[Living-off-the-Land Behavioral SIEM Query Architect](prompts/technical/security/secops/lotl_behavioral_siem_query_architect.prompt.md)
 [macOS ESF Unified Logging Threat Hunter](prompts/technical/security/secops/macos_esf_unified_logging_threat_hunter.prompt.md)
 [Threat Intelligence Fusion Attribution Architect](prompts/technical/security/secops/threat_intelligence_fusion_attribution_architect.prompt.md)
 [Site Landscape Mapping & Prioritization](prompts/clinical/site_acquisition/site_acquisition_workflow/01_site_landscape_mapping.prompt.md)
