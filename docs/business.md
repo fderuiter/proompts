@@ -35,6 +35,7 @@ title: Business
 - [corporate_ip_portfolio_monetization_architect](prompts/business/strategy/corporate_ip_portfolio_monetization_architect.prompt.md)
 - [corporate_wargaming_scenario_planning_architect](prompts/business/strategy/corporate_wargaming_scenario_planning_architect.prompt.md)
 - [Cross-Border Joint Venture Structuring Architect](prompts/business/strategy/cross_border_joint_venture_structuring_architect.prompt.md)
+- [Cross-Channel Behavioral Trigger Architect](prompts/business/growth_engineering/cross_channel_behavioral_trigger_architect.prompt.md)
 - [Cross-Functional Advocacy Memo](prompts/business/cx/revenue_risk_advocacy.prompt.md)
 - [CSM Portfolio Balancing](prompts/business/cx/csm_portfolio_balancing.prompt.md)
 - [Disruption Radar](prompts/business/vp_tech_innovation/disruption_radar.prompt.md)
