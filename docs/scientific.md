@@ -72,6 +72,7 @@ title: Scientific
 - [digital_phenotyping_epidemiological_surveillance_architect](prompts/scientific/psychology/epidemiology/global_mental_health/digital_phenotyping_epidemiological_surveillance_architect.prompt.md)
 - [dimensional_psychopathology_hierarchical_modeler](prompts/scientific/psychology/clinical/psychopathology/dimensional_psychopathology_hierarchical_modeler.prompt.md)
 - [dirichlet_process_mixture_architect](prompts/scientific/statistics/inference/bayesian_methods/dirichlet_process_mixture_architect.prompt.md)
+- [double_machine_learning_architect](prompts/scientific/statistics/inference/causal_inference/double_machine_learning_architect.prompt.md)
 - [Dual-Language Figure Prompt](prompts/scientific/biostatistics/dual_language_figure_prompt.prompt.md)
 - [Dunnett Adjustment R Code Generator](prompts/scientific/biostatistics/dunnett_adjustment_calculator.prompt.md)
 - [Dynamic Causal Modeling Architect](prompts/scientific/computational_theoretical_neuroscience/dynamic_causal_modeling_architect.prompt.md)
