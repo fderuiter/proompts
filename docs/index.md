@@ -672,6 +672,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Meta
 
+- [Dynamic Epistemic Drift Mitigator](prompts/meta/agent_orchestration/dynamic_epistemic_drift_mitigator.prompt.md)
 - [Vector Prompt Calibrator](prompts/meta/calibration/vector_prompt_calibrator.prompt.md)
 - [The Prompt Alchemist](prompts/meta/creative/the_prompt_alchemist.prompt.md)
 - [Master Ultrameta Prompt Architect](prompts/meta/meta_prompt_chain/00_L0_master-ultrameta.prompt.md)
