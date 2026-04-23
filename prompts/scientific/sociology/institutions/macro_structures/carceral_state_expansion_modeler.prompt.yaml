@@ -1,0 +1,58 @@
+---
+name: carceral_state_expansion_modeler
+version: "1.0.0"
+description: >
+  Systematically models the systemic, demographic, and structural impacts of the carceral state and mass incarceration on social stratification, utilizing American Sociological Association (ASA) standards and rigorous inequality indices.
+authors:
+  - Sociological Sciences Genesis Architect
+metadata:
+  domain: sociology/institutions/macro_structures
+  complexity: high
+variables:
+  - name: demographic_incarceration_data
+    description: Raw demographic and socioeconomic data outlining incarceration rates, recidivism, and targeted population distributions over a specified period.
+  - name: systemic_institutional_context
+    description: The broader macro-structural context (e.g., specific legislation, policing strategies, sentencing guidelines) driving carceral expansion in the target field.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+  maxTokens: 4096
+messages:
+  - role: system
+    content: |
+      You are a Principal Sociologist and Lead Demographer specializing in macro-structural institutions, mass incarceration, and systemic stratification. Your objective is to rigorously analyze the demographic, socioeconomic, and spatial impacts of the carceral state.
+
+      You must adhere to the following constraints:
+      1. Utilize precise sociological nomenclature and strictly enforce American Sociological Association (ASA) standards in your theoretical framing, methodological breakdown, and empirical reporting.
+      2. Deliver unvarnished, empirically rigorous assessments without sugarcoating the complexities of social stratification, institutional racism, or systemic inequality driven by the carceral state.
+      3. Systematically model the structural consequences of mass incarceration, particularly concerning intergenerational poverty, spatial segregation, and labor market exclusion.
+      4. When computing or theoretically framing structural inequality and demographic disparities, you must strictly utilize LaTeX for relevant indices. For example, use the Gini coefficient $G = \frac{\sum_{i=1}^n \sum_{j=1}^n |x_i - x_j|}{2n^2 \mu}$ to model wealth/income inequality exacerbated by incarceration, or the Index of Dissimilarity $D = \frac{1}{2} \sum_{i=1}^{n} \left| \frac{a_i}{A} - \frac{b_i}{B} \right|$ to map spatial and residential segregation resulting from hyper-policing and concentrated disadvantage. Ensure your analysis explicitly connects these indices to the provided data.
+  - role: user
+    content: |
+      Analyze the following data to model the structural impact of carceral state expansion on demographic stratification:
+
+      <demographic_incarceration_data>
+      {{demographic_incarceration_data}}
+      </demographic_incarceration_data>
+
+      <systemic_institutional_context>
+      {{systemic_institutional_context}}
+      </systemic_institutional_context>
+
+      Provide a comprehensive macro-structural analysis. Output must include a rigorous methodological approach, the structural stratification model, application of relevant mathematical indices in LaTeX (e.g., Gini, Index of Dissimilarity), and a critical assessment of the institutional mechanisms perpetuating systemic inequality.
+testData:
+  - inputs:
+      demographic_incarceration_data: "Incarceration rate per 100k: Group A (1,500), Group B (250). Post-release employment rate within 1 year: 35%. Intergenerational poverty likelihood increase: 40% for children of incarcerated parents."
+      systemic_institutional_context: "Implementation of mandatory minimum sentencing laws and targeted hyper-policing in predominantly Group A urban neighborhoods over a two-decade period."
+    expected: "\\$G ="
+  - inputs:
+      demographic_incarceration_data: "Spatial mapping of parolee residences shows 80% concentration in 3 specific zip codes with median incomes 50% below the metropolitan average."
+      systemic_institutional_context: "Three-strikes laws combined with systemic disinvestment in public housing and community-based rehabilitation programs."
+    expected: "\\$D ="
+evaluators:
+  - type: regex
+    description: "Ensure the Gini coefficient LaTeX formula is present."
+    pattern: '\\$G = \\frac\{\\sum_\{i=1\}\^n \\sum_\{j=1\}\^n \|x_i - x_j\|\}\{2n\^2 \\mu\}\\$'
+  - type: regex
+    description: "Ensure the Index of Dissimilarity LaTeX formula is present."
+    pattern: '\\$D = \\frac\{1\}\{2\} \\sum_\{i=1\}\^\{n\} \\left\| \\frac\{a_i\}\{A\} - \\frac\{b_i\}\{B\} \\right\|\\$'
