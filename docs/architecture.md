@@ -112,3 +112,4 @@ title: Architecture
 - [WebRTC Real-Time Media Streaming Architect](prompts/technical/architecture/webrtc_media_streaming_architect.prompt.md)
 - [Zero Trust Network Architecture Designer](prompts/technical/architecture/zero_trust_network_architecture_designer.prompt.md)
 - [Zero-Downtime Database Migration Architect](prompts/technical/architecture/zero_downtime_database_migration_architect.prompt.md)
+- [Zero-Knowledge Rollup Scaling Architect](prompts/technical/architecture/zero_knowledge_rollup_scaling_architect.prompt.md)

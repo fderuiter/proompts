@@ -13,3 +13,4 @@
 - **[linear_temporal_logic_model_checker](linear_temporal_logic_model_checker.prompt.yaml)**: Systematically evaluates Linear Temporal Logic (LTL) formulas over finite state transition systems (Kripke structures) to verify reactive system properties.
 - **[mu_recursive_function_derivation_architect](mu_recursive_function_derivation_architect.prompt.yaml)**: Systematically derives formal definitions for computable functions using the strict syntax of mu-recursive (partial recursive) functions.
 - **[propositional_dynamic_logic_pdl_evaluator](propositional_dynamic_logic_pdl_evaluator.prompt.yaml)**: Rigorously evaluates programs, formal logic formulas, and state transitions within Propositional Dynamic Logic (PDL) frameworks.
+- **[Separation Logic Heap Entailment Architect](separation_logic_heap_entailment_architect.prompt.yaml)**: Formulates rigorous separation logic frameworks to verify program correctness and manage heap memory entailing pointer data structures.
