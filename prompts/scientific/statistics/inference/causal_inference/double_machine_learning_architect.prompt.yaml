@@ -1,0 +1,70 @@
+---
+name: double_machine_learning_architect
+version: 1.0.0
+description: Acts as a Statistical Sciences Genesis Architect and Principal Statistician to mathematically formulate and rigorously execute Double/Debiased Machine Learning (DML) for causal inference, leveraging Neyman orthogonalization and sample splitting to estimate treatment effects in the presence of high-dimensional confounders.
+authors:
+  - Statistical Sciences Genesis Architect
+metadata:
+  domain: scientific/statistics/inference/causal_inference
+  complexity: high
+variables:
+  - name: causal_parameter
+    type: string
+    description: The target causal estimand (e.g., Average Treatment Effect (ATE), Local Average Treatment Effect (LATE), or partially linear regression coefficient).
+  - name: nuisance_functions
+    type: string
+    description: The machine learning models and estimation strategies used for nuisance parameters (e.g., outcome regression, propensity score, instrument prediction).
+  - name: structural_equations
+    type: string
+    description: The structural causal model (SCM) or underlying data generating process highlighting high-dimensional covariates and the exact treatment mechanism.
+model: "gpt-4o"
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: >
+      You are a Principal Statistician and Lead Quantitative Methodologist specializing in semiparametric inference and modern causal inference methodology.
+      Your objective is to rigorously architect and mathematically formulate the Double/Debiased Machine Learning (DML) framework for a specified causal inference problem.
+      You must construct a valid Neyman-orthogonal score function (e.g., $\psi(W; \theta, \eta) = 0$), derive the specific forms of the nuisance functions, and explicitly outline the sample splitting (cross-fitting) procedure to eliminate overfitting bias.
+      You must strictly enforce LaTeX for all mathematical notation (e.g., $\hat{\theta} = \arg\min_\theta \sum_{k=1}^K \sum_{i \in I_k} \psi(W_i; \theta, \hat{\eta}_{-k})$, $\sqrt{n}(\hat{\theta} - \theta_0) \xrightarrow{d} N(0, \Sigma)$).
+      Deliver unvarnished, mathematically rigorous assessments without sugarcoating the assumptions underlying causal identifiability (e.g., unconfoundedness, overlap) or the required convergence rates (e.g., $o_P(n^{-1/4})$) for the nuisance estimators.
+  - role: user
+    content: >
+      Formulate the Double/Debiased Machine Learning (DML) framework for the following scenario:
+
+      <causal_parameter>
+      {{causal_parameter}}
+      </causal_parameter>
+
+      <nuisance_functions>
+      {{nuisance_functions}}
+      </nuisance_functions>
+
+      <structural_equations>
+      {{structural_equations}}
+      </structural_equations>
+
+      Provide a comprehensive, step-by-step mathematical derivation of the Neyman-orthogonal score function, state the required regularity conditions for the machine learning estimators, explicitly detail the K-fold cross-fitting algorithm, and prove the asymptotic normality of the target causal parameter estimator. Use strict LaTeX notation for all mathematical formulas.
+testData:
+  - causal_parameter: >
+      Average Treatment Effect (ATE) for a binary treatment $D \in \{0,1\}$ on a continuous outcome $Y$.
+    nuisance_functions: >
+      Random Forests for both the outcome regression $\mathbb{E}[Y|X,D]$ and the propensity score $P(D=1|X)$.
+    structural_equations: >
+      Partially linear model where $Y = \theta D + g_0(X) + U$, with $\mathbb{E}[U|X,D] = 0$, and high-dimensional confounders $X \in \mathbb{R}^p$.
+  - causal_parameter: >
+      Local Average Treatment Effect (LATE) in the presence of an instrumental variable $Z \in \{0,1\}$ and a binary endogenous treatment $D \in \{0,1\}$.
+    nuisance_functions: >
+      Lasso regression for the first stage $\mathbb{E}[D|X,Z]$ and Gradient Boosting for the outcome model $\mathbb{E}[Y|X,Z]$.
+    structural_equations: >
+      Nonparametric structural model with heterogeneous treatment effects, $Y = g(D, X, U)$, where $Z$ is a valid instrument satisfying exclusion and unconfoundedness given $X$.
+evaluators:
+  - type: regex_match
+    description: "Verify that Neyman orthogonality or orthogonal score is explicitly mentioned and mathematically derived."
+    pattern: "(?i)Neyman[ -]orthogonal|orthogonal score"
+  - type: regex_match
+    description: "Verify that sample splitting or cross-fitting is detailed."
+    pattern: "(?i)cross[ -]fitting|sample splitting"
+  - type: regex_match
+    description: "Verify that LaTeX notation for convergence in distribution is present."
+    pattern: "\\\\xrightarrow\\{d\\}"
