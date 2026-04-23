@@ -474,6 +474,7 @@
 [Polynomial Optimization SDP Relaxation Architect](prompts/scientific/mathematics/optimization/polynomial_optimization_sdp_relaxation_architect.prompt.md)
 [Stochastic Multi-Objective Optimization Architect](prompts/scientific/mathematics/optimization/stochastic_optimization_architect.prompt.md)
 [Topological Counterexample Generator](prompts/scientific/mathematics/topology/topological_counterexample_generator.prompt.md)
+[Dynamic Epistemic Drift Mitigator](prompts/meta/agent_orchestration/dynamic_epistemic_drift_mitigator.prompt.md)
 [Vector Prompt Calibrator](prompts/meta/calibration/vector_prompt_calibrator.prompt.md)
 [The Prompt Alchemist](prompts/meta/creative/the_prompt_alchemist.prompt.md)
 [Master Ultrameta Prompt Architect](prompts/meta/meta_prompt_chain/00_L0_master-ultrameta.prompt.md)
