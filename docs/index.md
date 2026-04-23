@@ -672,6 +672,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Meta
 
+- [Dynamic Epistemic Drift Mitigator](prompts/meta/agent_orchestration/dynamic_epistemic_drift_mitigator.prompt.md)
 - [Vector Prompt Calibrator](prompts/meta/calibration/vector_prompt_calibrator.prompt.md)
 - [The Prompt Alchemist](prompts/meta/creative/the_prompt_alchemist.prompt.md)
 - [Master Ultrameta Prompt Architect](prompts/meta/meta_prompt_chain/00_L0_master-ultrameta.prompt.md)
@@ -1091,6 +1092,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Speculative
 
 - [Abyssal-Gothic Liquidity Router](prompts/speculative/abyssal_gothic_liquidity_routing/abyssal_gothic_liquidity_router.prompt.md)
+- [Abyssal Neumatic Consensus Architect](prompts/speculative/abyssal_neumatic_consensus_architect.prompt.md)
 - [abyssal_society_cryptographer](prompts/speculative/abyssal_society_cryptographer.prompt.md)
 - [Aerotectonic HFT Routing Architect](prompts/speculative/aerotectonic_hft_routing_architect.prompt.md)
 - [benthic_contrapuntal_supply_chain_harmonizer](prompts/speculative/benthic_contrapuntal_supply_chain_harmonizer/benthic_contrapuntal_supply_chain_harmonizer.prompt.md)
@@ -1124,6 +1126,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [quantum_epistolary_waste_architect](prompts/speculative/quantum_epistolary_waste_architect/quantum_epistolary_waste_architect.prompt.md)
 - [quantum_gothic_waste_optimiser](prompts/speculative/quantum_gothic_waste_optimiser/quantum_gothic_waste_optimiser.prompt.md)
 - [Quantum Horological Wastewater Architect](prompts/speculative/quantum_horological_wastewater_architect.prompt.md)
+- [Quantum Olfactory Retention Architect](prompts/speculative/quantum_olfactory_retention_architect.prompt.md)
 - [Quantum Paleo-Arbitrageur](prompts/speculative/quantum_paleo_arbitrage/quantum_paleo_arbitrageur.prompt.md)
 - [Quantum Poetic Leachate Optimizer](prompts/speculative/quantum_poetic_leachate_optimization/quantum_poetic_leachate_optimizer.prompt.md)
 - [Quantum Poetic Waste Architect](prompts/speculative/quantum_poetic_waste_architect/quantum_poetic_waste_architect.prompt.md)
