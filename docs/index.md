@@ -58,6 +58,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Analytical
 
+- [Tandem MS/MS Fragmentation Pathway Elucidator](prompts/scientific/chemistry/analytical/mass_spectrometry/tandem_ms_fragmentation_pathway_elucidator.prompt.md)
 - [Predictive Multidimensional Spectroscopy Architect](prompts/scientific/chemistry/analytical/spectroscopy/predictive_multidimensional_spectroscopy_architect.prompt.md)
 
 ## Architecture

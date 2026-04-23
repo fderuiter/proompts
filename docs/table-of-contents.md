@@ -4,6 +4,7 @@
 [galois_group_resolvent_architect](prompts/scientific/mathematics/algebra/galois_theory/galois_group_resolvent_architect.prompt.md)
 [Riemann Surface Analytic Continuation Architect](prompts/scientific/mathematics/analysis/complex_analysis/riemann_surface_analytic_continuation_architect.prompt.md)
 [banach_space_operator_architect](prompts/scientific/mathematics/analysis/functional_analysis/banach_space_operator_architect.prompt.md)
+[Tandem MS/MS Fragmentation Pathway Elucidator](prompts/scientific/chemistry/analytical/mass_spectrometry/tandem_ms_fragmentation_pathway_elucidator.prompt.md)
 [Predictive Multidimensional Spectroscopy Architect](prompts/scientific/chemistry/analytical/spectroscopy/predictive_multidimensional_spectroscopy_architect.prompt.md)
 [TOGAF Phase A - Architecture Vision](prompts/technical/architecture/togaf/phase_a_vision.prompt.md)
 [TOGAF Phase B - Business Architecture](prompts/technical/architecture/togaf/phase_b_business.prompt.md)
