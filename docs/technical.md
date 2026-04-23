@@ -20,6 +20,7 @@ title: Technical
 - [Atlas Documentation Specialist](prompts/technical/documentation/atlas_documentation_specialist.prompt.md)
 - [automated_malware_reverse_engineering_analyst](prompts/technical/security/automated_malware_reverse_engineering_analyst.prompt.md)
 - [Autonomous Automation Agent](prompts/technical/automation/autonomous_automation_agent.prompt.md)
+- [Autonomous Automation Agent Upgrade](prompts/technical/automation/autonomous_automation_agent_upgrade.prompt.md)
 - [bayesian_optimization_hyperparameter_architect](prompts/technical/data_science/bayesian_optimization_hyperparameter_architect.prompt.md)
 - [Causal Discovery DAG Architect](prompts/technical/data_science/causal_discovery_dag_architect.prompt.md)
 - [CI/CD Pipeline Poisoning Forensics Architect](prompts/technical/security/ci_cd_pipeline_poisoning_forensics_architect.prompt.md)

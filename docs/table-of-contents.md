@@ -956,6 +956,7 @@
 [Zero-Knowledge Rollup Scaling Architect](prompts/technical/architecture/zero_knowledge_rollup_scaling_architect.prompt.md)
 [Zero Trust Network Architecture Designer](prompts/technical/architecture/zero_trust_network_architecture_designer.prompt.md)
 [Autonomous Automation Agent](prompts/technical/automation/autonomous_automation_agent.prompt.md)
+[Autonomous Automation Agent Upgrade](prompts/technical/automation/autonomous_automation_agent_upgrade.prompt.md)
 [Universal Automation Agent](prompts/technical/automation/universal_automation_agent.prompt.md)
 [fully_homomorphic_encryption_circuit_architect](prompts/technical/cryptography/fully_homomorphic_encryption_circuit_architect.prompt.md)
 [post_quantum_cryptography_migration_architect](prompts/technical/cryptography/post_quantum_cryptography_migration_architect.prompt.md)
