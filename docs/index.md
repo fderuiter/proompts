@@ -518,6 +518,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [Organometallic Catalytic Cycle Architect](prompts/scientific/chemistry/inorganic/catalysis/organometallic_catalytic_cycle_architect.prompt.md)
 
+## Institutions
+
+- [carceral_state_expansion_modeler](prompts/scientific/sociology/institutions/macro_structures/carceral_state_expansion_modeler.prompt.md)
+
 ## Languages
 
 - [Advanced Python Testing](prompts/technical/languages/python/advanced_python_testing.prompt.md)

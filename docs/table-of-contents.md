@@ -349,6 +349,7 @@
 [target_trial_emulation_architect](prompts/scientific/statistics/inference/causal_inference/target_trial_emulation_architect.prompt.md)
 [Functional Data Analysis Architect](prompts/scientific/statistics/inference/nonparametric_methods/functional_data_analysis_architect.prompt.md)
 [Organometallic Catalytic Cycle Architect](prompts/scientific/chemistry/inorganic/catalysis/organometallic_catalytic_cycle_architect.prompt.md)
+[carceral_state_expansion_modeler](prompts/scientific/sociology/institutions/macro_structures/carceral_state_expansion_modeler.prompt.md)
 [Advanced Python Testing](prompts/technical/languages/python/advanced_python_testing.prompt.md)
 [Principal Python Developer](prompts/technical/languages/python/principal_python_developer.prompt.md)
 [Python Concurrency Mastery](prompts/technical/languages/python/python_concurrency_mastery.prompt.md)
