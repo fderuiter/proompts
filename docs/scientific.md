@@ -231,6 +231,7 @@ title: Scientific
 - [synaptic_plasticity_weight_update_architect](prompts/scientific/computational_theoretical_neuroscience/synaptic_plasticity_weight_update_architect.prompt.md)
 - [Synthetic Control Method Architect](prompts/scientific/economics/econometrics/causal_inference/synthetic_control_method_architect.prompt.md)
 - [synthetic_media_epistemic_collapse_modeler](prompts/scientific/psychology/computational/network_contagion/synthetic_media_epistemic_collapse_modeler.prompt.md)
+- [Tandem MS/MS Fragmentation Pathway Elucidator](prompts/scientific/chemistry/analytical/mass_spectrometry/tandem_ms_fragmentation_pathway_elucidator.prompt.md)
 - [target_trial_emulation_architect](prompts/scientific/statistics/inference/causal_inference/target_trial_emulation_architect.prompt.md)
 - [TD-DFT Excited-State Dynamics Architect](prompts/scientific/chemistry/computational/quantum_chemistry/td_dft_excited_state_dynamics_architect.prompt.md)
 - [theil_t_index_inequality_decomposer](prompts/scientific/sociology/stratification/systemic_inequality/theil_t_index_inequality_decomposer.prompt.md)
