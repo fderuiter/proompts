@@ -33,6 +33,7 @@ title: Scientific
 - [blinder_oaxaca_decomposition_architect](prompts/scientific/sociology/methods/quantitative/blinder_oaxaca_decomposition_architect.prompt.md)
 - [BRST Quantization and Faddeev-Popov Ghost Architect](prompts/scientific/physics/quantum_field_theory/brst_quantization_faddeev_popov_architect.prompt.md)
 - [Callan-Symanzik Beta Function Architect](prompts/scientific/physics/quantum_field_theory/callan_symanzik_beta_function_architect.prompt.md)
+- [carceral_state_expansion_modeler](prompts/scientific/sociology/institutions/macro_structures/carceral_state_expansion_modeler.prompt.md)
 - [categorical_theorem_translator](prompts/scientific/mathematics/category_theory/categorical_theorem_translator.prompt.md)
 - [category_theory_adjunction_architect](prompts/scientific/mathematics/category_theory/category_theory_adjunction_architect.prompt.md)
 - [causal_inference_dag_architect](prompts/scientific/statistics/design/causal_inference/causal_inference_dag_architect.prompt.md)
