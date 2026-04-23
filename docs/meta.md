@@ -10,6 +10,7 @@ title: Meta
 - [AI Coding Agent Plan Generator](prompts/meta/meta_prompt_chain/05_L5_ai_coding_agent.prompt.md)
 - [Comprehensive Task Template](prompts/meta/meta_prompt_chain/05_L5_comprehensive_task_template.prompt.md)
 - [Dynamic Epistemic Drift Mitigator](prompts/meta/agent_orchestration/dynamic_epistemic_drift_mitigator.prompt.md)
+- [Fractal Epistemic Consensus Architect](prompts/meta/agent_orchestration/fractal_epistemic_consensus_architect.prompt.md)
 - [Master Ultrameta Prompt Architect](prompts/meta/meta_prompt_chain/00_L0_master-ultrameta.prompt.md)
 - [MECE Structuring Consultant](prompts/meta/meta_prompt_chain/05_L5_mece_structuring.prompt.md)
 - [Meta Prompt Architect](prompts/meta/meta_prompt_chain/01_L1_meta-prompt-architect.prompt.md)
