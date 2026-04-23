@@ -7,6 +7,7 @@
 - [Finance/](finance/overview.md)
 - [Growth Engineering/](growth_engineering/overview.md)
 - [Hr Finance/](hr_finance/overview.md)
+- [Legal/](legal/overview.md)
 - [Market Research/](market_research/overview.md)
 - [Operations/](operations/overview.md)
 - [Payment/](payment/overview.md)

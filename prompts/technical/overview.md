@@ -8,6 +8,7 @@
 - [Design/](design/overview.md)
 - [Devops/](devops/overview.md)
 - [Documentation/](documentation/overview.md)
+- [Hardware Engineering/](hardware_engineering/overview.md)
 - [Languages/](languages/overview.md)
 - [Prompt Engineering/](prompt_engineering/overview.md)
 - [Repository Refactoring/](repository_refactoring/overview.md)

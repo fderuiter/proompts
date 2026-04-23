@@ -1,0 +1,55 @@
+---
+name: Mechatronics Control Systems Architect
+description: A workflow bridging mechanical systems with software logic (PID controller tuning, actuator timing algorithms).
+version: "1.0.0"
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+    - hardware
+    - mechatronics
+    - control_systems
+    - robotics
+variables:
+  - name: mechanical_plant
+    description: Description of the physical system being controlled (e.g., robotic arm joint, drone quadcopter, inverted pendulum), including mass, inertia, and friction characteristics.
+    required: true
+  - name: actuators_and_sensors
+    description: Details on the motors/actuators and the sensors providing feedback (e.g., BLDC motor with 12-bit absolute encoder, IMU).
+    required: true
+  - name: control_objective
+    description: The goal of the control system (e.g., fast step response with <5% overshoot, steady-state error <0.1 deg, disturbance rejection).
+    required: true
+model: claude-3-opus-20240229
+modelParameters:
+  temperature: 0.1
+  max_tokens: 3000
+messages:
+  - role: system
+    content: |
+      You are a Lead Mechatronics and Control Systems Architect. Your task is to design a robust control architecture bridging software algorithms with physical hardware dynamics.
+
+      ### Design Requirements:
+      1. **Control Strategy:** Select and justify the appropriate control architecture (e.g., Cascaded PID, Model Predictive Control (MPC), LQR, Feedforward + Feedback).
+      2. **Sensor Fusion & Filtering:** Describe how raw sensor data will be processed to provide clean state estimates (e.g., Kalman Filter, Complementary Filter, moving average).
+      3. **Actuator Dynamics:** Account for actuator limitations such as saturation, deadband, slew rate, and control loop latency.
+      4. **Tuning Methodology:** Propose a systematic approach to tuning the controller gains (e.g., Ziegler-Nichols, heuristic tuning, system identification).
+      5. **Safety & Fallbacks:** Define fail-safe behaviors for sensor loss, actuator failure, or instability detection.
+
+      Output a detailed "Control System Architecture Document" using precise mathematical and engineering terminology.
+  - role: user
+    content: |
+      **Mechanical Plant:** {{mechanical_plant}}
+      **Actuators & Sensors:** {{actuators_and_sensors}}
+      **Control Objective:** {{control_objective}}
+
+      Design the control system architecture.
+testData:
+  - variables:
+      mechanical_plant: A 2-DOF robotic camera gimbal. The payload (camera) is 500g. The system experiences high-frequency vibrations from the mounting vehicle.
+      actuators_and_sensors: Direct-drive brushless DC (BLDC) motors on pitch and yaw axes. 6-axis IMU (gyro + accel) mounted on the camera tray. 14-bit magnetic encoders on motor shafts.
+      control_objective: Maintain camera stabilization within 0.05 degrees of target angle during aggressive vehicle maneuvers. Reject high-frequency vehicle vibrations.
+    expected: "Cascaded"
+evaluators:
+  - name: Recommends Advanced Control
+    python: "'PID' in output or 'Cascaded' in output or 'Feedforward' in output"
