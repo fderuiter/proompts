@@ -46,6 +46,7 @@ title: Architecture
 - [Event-Driven Topology Designer](prompts/technical/architecture/event_driven_topology_designer.prompt.md)
 - [Event-Sourced Saga Orchestration Architect](prompts/technical/architecture/event_sourced_saga_orchestration_architect.prompt.md)
 - [Feature Flag and Progressive Delivery Architect](prompts/technical/architecture/feature_flag_progressive_delivery_architect.prompt.md)
+- [Federated Learning Privacy-Preserving Architect](prompts/technical/architecture/federated_learning_privacy_preserving_architect.prompt.md)
 - [Federated Learning Topology Architect](prompts/technical/architecture/federated_learning_topology_architect.prompt.md)
 - [Fine-Grained Authorization Architect](prompts/technical/architecture/fine_grained_authorization_architect.prompt.md)
 - [finops_cloud_cost_optimization_architect](prompts/technical/architecture/finops_cloud_cost_optimization_architect.prompt.md)
