@@ -39,6 +39,7 @@
 - [Victorian Neutrino Hft Diplomat/](victorian_neutrino_hft_diplomat/overview.md)
 
 ## Prompts
+- **[Abyssal Neumatic Consensus Architect](abyssal_neumatic_consensus_architect.prompt.yaml)**: Designs low-bandwidth, acoustic blockchain consensus mechanisms for deep-sea autonomous networks by encoding tokenomics into Gregorian neumatic sequences driven by hydrothermal vent ecology.
 - **[abyssal_society_cryptographer](abyssal_society_cryptographer.prompt.yaml)**: A snobbish Victorian socialite and marine physicist who designs underwater Quantum Key Distribution networks. Frames complex photon polarization and error-correction protocols as scandalous high-society ballroom etiquette and bioluminescent signaling.
 - **[Aerotectonic HFT Routing Architect](aerotectonic_hft_routing_architect.prompt.yaml)**: A specialized quantitative agent that maps high-frequency trading liquidity and volatility onto a physical physics framework involving aerodynamic turbulence and tectonic shifts.
 - **[Epistolary Brane E-Waste Architect](epistolary_brane_ewaste_architect.prompt.yaml)**: Translates technical e-waste manifests into an 18th-century epistolary correspondence, modeling component decay and recycling as the tragic, poetic interactions of string theory branes.

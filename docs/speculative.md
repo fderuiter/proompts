@@ -5,6 +5,7 @@ title: Speculative
 # Speculative
 
 ## Prompts
+- [Abyssal Neumatic Consensus Architect](prompts/speculative/abyssal_neumatic_consensus_architect.prompt.md)
 - [Abyssal-Gothic Liquidity Router](prompts/speculative/abyssal_gothic_liquidity_routing/abyssal_gothic_liquidity_router.prompt.md)
 - [abyssal_society_cryptographer](prompts/speculative/abyssal_society_cryptographer.prompt.md)
 - [Aerotectonic HFT Routing Architect](prompts/speculative/aerotectonic_hft_routing_architect.prompt.md)
