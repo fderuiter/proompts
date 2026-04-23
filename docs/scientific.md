@@ -119,6 +119,7 @@ title: Scientific
 - [higher_homotopy_postnikov_tower_architect](prompts/scientific/mathematics/topology/algebraic_topology/higher_homotopy_postnikov_tower_architect.prompt.md)
 - [higher_order_unification_resolution_architect](prompts/scientific/formal_logic/systems/higher_order_logic/higher_order_unification_resolution_architect.prompt.md)
 - [hodgkin_huxley_biophysical_modeler](prompts/scientific/computational_theoretical_neuroscience/hodgkin_huxley_biophysical_modeler.prompt.md)
+- [homotopy_type_theory_univalence_architect](prompts/scientific/mathematics/foundations/proof_theory/homotopy_type_theory_univalence_architect.prompt.md)
 - [Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive](prompts/scientific/biostatistics/inclusion_exclusion_endpoints_sample_size.prompt.md)
 - [Inflationary Tensor Perturbation Architect](prompts/scientific/physics/cosmology/early_universe/inflationary_tensor_perturbation_architect.prompt.md)
 - [institutional_isomorphism_lifecycle_modeler](prompts/scientific/sociology/institutions/institutional_isomorphism_lifecycle_modeler.prompt.md)
