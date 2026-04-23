@@ -654,6 +654,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [propositional_dynamic_logic_pdl_evaluator](prompts/scientific/mathematics/formal_logic/propositional_dynamic_logic_pdl_evaluator.prompt.md)
 - [fractional_calculus_pde_modeler](prompts/scientific/mathematics/numerical_methods/fractional_calculus_pde_modeler.prompt.md)
 - [stiff_pde_numerical_stability_architect](prompts/scientific/mathematics/numerical_methods/stiff_pde_numerical_stability_architect.prompt.md)
+- [Polynomial Optimization SDP Relaxation Architect](prompts/scientific/mathematics/optimization/polynomial_optimization_sdp_relaxation_architect.prompt.md)
 - [Stochastic Multi-Objective Optimization Architect](prompts/scientific/mathematics/optimization/stochastic_optimization_architect.prompt.md)
 - [Topological Counterexample Generator](prompts/scientific/mathematics/topology/topological_counterexample_generator.prompt.md)
 

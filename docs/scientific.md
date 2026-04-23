@@ -183,6 +183,7 @@ title: Scientific
 - [phenomenological_reduction_engine](prompts/scientific/philosophy/phenomenology/phenomenological_reduction_engine.prompt.md)
 - [Physics-Informed Neural Network (PINN) Architect](prompts/scientific/mathematics/computational/physics_informed_neural_network_architect.prompt.md)
 - [pinn_stiff_pde_architect](prompts/scientific/applied_mathematics/computational/physics_informed_neural_networks/pinn_stiff_pde_architect.prompt.md)
+- [Polynomial Optimization SDP Relaxation Architect](prompts/scientific/mathematics/optimization/polynomial_optimization_sdp_relaxation_architect.prompt.md)
 - [population_macro_nudging_architect](prompts/scientific/psychology/behavioral_economics/macro_nudging/population_macro_nudging_architect.prompt.md)
 - [Predictive Multidimensional Spectroscopy Architect](prompts/scientific/chemistry/analytical/spectroscopy/predictive_multidimensional_spectroscopy_architect.prompt.md)
 - [Prepare Pathology Slides and Reporting Plan](prompts/scientific/pathology/pathology_study_workflow/03_slides_and_reporting_workflow.prompt.md)
