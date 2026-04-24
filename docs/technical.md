@@ -54,6 +54,7 @@ title: Technical
 - [macOS ESF Unified Logging Threat Hunter](prompts/technical/security/secops/macos_esf_unified_logging_threat_hunter.prompt.md)
 - [Mechatronics Control Systems Architect](prompts/technical/hardware_engineering/mechatronics_control_systems_architect.prompt.md)
 - [Medical Device Cybersecurity Threat Modeling](prompts/technical/security/cybersecurity_threat_modeling.prompt.md)
+- [neuromorphic_hardware_spiking_neural_network_architect](prompts/technical/hardware_engineering/neuromorphic_hardware_spiking_neural_network_architect.prompt.md)
 - [Non-Human Identity Lifecycle Architect](prompts/technical/security/iam_security/non_human_identity_lifecycle_architect.prompt.md)
 - [OT/SCADA Security Resilience Architect](prompts/technical/security/ot_scada_security_architect.prompt.md)
 - [PCB Layout Topology Reviewer](prompts/technical/hardware_engineering/pcb_layout_topology_reviewer.prompt.md)

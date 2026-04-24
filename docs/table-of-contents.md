@@ -1011,6 +1011,7 @@
 [Source of Truth Harmonizer](prompts/technical/documentation/source_of_truth_harmonizer.prompt.md)
 [Finite Element Analysis (FEA) Interpreter](prompts/technical/hardware_engineering/finite_element_analysis_interpreter.prompt.md)
 [Mechatronics Control Systems Architect](prompts/technical/hardware_engineering/mechatronics_control_systems_architect.prompt.md)
+[neuromorphic_hardware_spiking_neural_network_architect](prompts/technical/hardware_engineering/neuromorphic_hardware_spiking_neural_network_architect.prompt.md)
 [PCB Layout Topology Reviewer](prompts/technical/hardware_engineering/pcb_layout_topology_reviewer.prompt.md)
 [Adversarial Prompt Robustness Tester](prompts/technical/prompt_engineering/adversarial_prompt_robustness_tester.prompt.md)
 [Vector Prompt Editor-in-Chief](prompts/technical/prompt_engineering/vector_prompt_editor_in_chief.prompt.md)
