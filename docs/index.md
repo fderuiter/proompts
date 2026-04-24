@@ -1177,6 +1177,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [higher_order_unification_resolution_architect](prompts/scientific/formal_logic/systems/higher_order_logic/higher_order_unification_resolution_architect.prompt.md)
 - [Adaptive Control Loop Tuning Architect](prompts/scientific/mathematics/systems/control_theory/adaptive_control_loop_tuning_architect.prompt.md)
+- [Robust H-infinity Control Architect](prompts/scientific/mathematics/systems/control_theory/robust_h_infinity_control_architect.prompt.md)
 - [Stochastic Model Predictive Control (MPC) Architect](prompts/scientific/mathematics/systems/control_theory/stochastic_mpc_architect.prompt.md)
 
 ## Tasks
