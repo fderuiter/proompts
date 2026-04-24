@@ -1271,6 +1271,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [high_throughput_distributed_counter_architect](prompts/technical/architecture/high_throughput_distributed_counter_architect.prompt.md)
 - [High-Throughput Distributed ID Generator Architect](prompts/technical/architecture/high_throughput_distributed_id_generator_architect.prompt.md)
 - [High-Throughput Geospatial Indexing Architect](prompts/technical/architecture/high_throughput_geospatial_indexing_architect.prompt.md)
+- [High-Throughput LLM Inference Serving Architect](prompts/technical/architecture/high_throughput_llm_inference_serving_architect.prompt.md)
 - [High-Throughput Order Matching Engine Architect](prompts/technical/architecture/high_throughput_order_matching_engine_architect.prompt.md)
 - [HTAP Real-Time Analytics Architect](prompts/technical/architecture/htap_real_time_analytics_architect.prompt.md)
 - [hyper_scale_inventory_reservation_architect](prompts/technical/architecture/hyper_scale_inventory_reservation_architect.prompt.md)
