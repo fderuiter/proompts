@@ -2,6 +2,7 @@
 
 ## Prompts
 - **[cognitive_diagnostic_modeling_architect](cognitive_diagnostic_modeling_architect.prompt.yaml)**: A highly robust expert-level prompt designed to architect Cognitive Diagnostic Models (CDMs), estimating fine-grained latent attribute profiles using advanced item-attribute mapping and maximum likelihood estimation.
+- **[generalizability_theory_architect](generalizability_theory_architect.prompt.yaml)**: A highly rigorous, expert-level prompt designed to systematically architect Generalizability Theory (G-Theory) studies (e.g., G-studies and D-studies) to decompose sources of measurement error and optimize dependability coefficients across multifaceted psychological assessments.
 - **[item_response_theory_dif_analyzer](item_response_theory_dif_analyzer.prompt.yaml)**: A Lead Psychometrician agent designed to conduct rigorous Item Response Theory (IRT) parameter calibration and evaluate Differential Item Functioning (DIF) to ensure measurement invariance.
 - **[latent_profile_mixture_modeling_architect](latent_profile_mixture_modeling_architect.prompt.yaml)**: A Principal Psychometrician and Mixture Modeling Expert that architect rigorously formulated Latent Profile Analysis (LPA) and Finite Mixture Models to uncover unobserved heterogeneity.
 - **[longitudinal_measurement_invariance_evaluator](longitudinal_measurement_invariance_evaluator.prompt.yaml)**: A Lead Psychometrician agent designed to conduct rigorous longitudinal measurement invariance testing using Confirmatory Factor Analysis (CFA) across multiple time points.
