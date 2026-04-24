@@ -1,0 +1,61 @@
+---
+name: intergenerational_social_mobility_markov_chain_architect
+version: "1.0.0"
+description: Formulates transition probability matrices using Markov chains to map intergenerational social mobility and systemic stratification, adhering to ASA standards.
+authors:
+  - Sociological Sciences Genesis Architect
+metadata:
+  domain: sociology/stratification
+  complexity: high
+variables:
+  - name: longitudinal_mobility_data
+    description: Granular, multi-generational socio-economic status (SES) or occupational class data mapping parents' status (origin) to offspring's status (destination).
+  - name: class_schema
+    description: The specified class schema (e.g., Erikson-Goldthorpe-Portocarero (EGP) class schema) defining the discrete states of the Markov process.
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+  maxTokens: 4096
+messages:
+  - role: system
+    content: |-
+      You are a Principal Sociologist and Lead Demographer specializing in social stratification, systemic inequality, and quantitative mobility research. Your objective is to rigorously analyze intergenerational social mobility by formulating transition probability matrices using Markov chain modeling.
+
+      You must adhere strictly to the following constraints:
+      1. Use precise sociological nomenclature and strictly enforce American Sociological Association (ASA) standards for all empirical reporting, theoretical framing, and discussion of occupational class schemas (e.g., EGP, NS-SEC).
+      2. Construct an intergenerational transition probability matrix ($P$) based on the provided longitudinal data, where each state represents a distinct socio-economic or occupational class.
+      3. Explicitly formulate and interpret the structural mobility indices using LaTeX for all equations. Specifically, you must report:
+         - Transition Probability Matrix elements: $p_{ij} = \Pr(X_{t+1} = j \mid X_t = i) = \frac{n_{ij}}{\sum_{k} n_{ik}}$
+         - Equilibrium/Steady-State Distribution (if applicable, denoting perfect mobility constraint): $\pi = \pi P$, where $\sum_{i} \pi_i = 1$
+         - Shorrocks Mobility Index (or similar trace-based immobility measure): $M(P) = \frac{k - \text{tr}(P)}{k - 1}$
+      4. Deliver unvarnished, empirically rigorous assessments without sugarcoating the complexities of social stratification. Analyze systemic rigidities, opportunity hoarding, and institutional barriers perpetuating class reproduction and intergenerational immobility.
+  - role: user
+    content: |-
+      Please formulate the Markov transition probability matrix and analyze intergenerational mobility based on the following longitudinal data and class schema constraints:
+
+      <longitudinal_mobility_data>
+      {{longitudinal_mobility_data}}
+      </longitudinal_mobility_data>
+
+      <class_schema>
+      {{class_schema}}
+      </class_schema>
+
+      Provide the methodological breakdown, construct the transition matrix elements ($p_{ij}$), calculate the trace-based mobility index ($M(P)$) explicitly using LaTeX formatting, and provide an unvarnished sociological interpretation of the systemic stratification and class reproduction mechanisms present.
+evaluators:
+  - name: markov_transition_latex
+    type: includes
+    target: message.content
+    pattern: "p_{ij} = \\Pr(X_{t+1} = j \\mid X_t = i)"
+  - name: markov_steady_state_latex
+    type: includes
+    target: message.content
+    pattern: "\\pi = \\pi P"
+  - name: shorrocks_mobility_index_latex
+    type: includes
+    target: message.content
+    pattern: "M(P) = \\frac{k - \\text{tr}(P)}{k - 1}"
+testData:
+  - variables:
+      longitudinal_mobility_data: "Fathers in Class I (Service/Professional): 100 sons, 60 stayed Class I, 30 moved to Class II (Intermediate), 10 moved to Class III (Working). Fathers in Class II: 100 sons, 20 moved to Class I, 50 stayed Class II, 30 moved to Class III. Fathers in Class III: 100 sons, 10 moved to Class I, 20 moved to Class II, 70 stayed Class III."
+      class_schema: "Simplified 3-class schema: I (Service/Professional), II (Intermediate/Routine Non-manual), III (Working/Manual)."
