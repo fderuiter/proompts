@@ -1039,6 +1039,7 @@
 [neuromorphic_hardware_spiking_neural_network_architect](prompts/technical/hardware_engineering/neuromorphic_hardware_spiking_neural_network_architect.prompt.md)
 [PCB Layout Topology Reviewer](prompts/technical/hardware_engineering/pcb_layout_topology_reviewer.prompt.md)
 [Adversarial Prompt Robustness Tester](prompts/technical/prompt_engineering/adversarial_prompt_robustness_tester.prompt.md)
+[Vector Lead Prompt Engineer](prompts/technical/prompt_engineering/vector_lead_prompt_engineer.prompt.md)
 [Vector Prompt Editor-in-Chief](prompts/technical/prompt_engineering/vector_prompt_editor_in_chief.prompt.md)
 [Code Formatting, Linting, and Refactoring Implementation](prompts/technical/repository_refactoring/code_formatting_linting_refactoring_implementation.prompt.md)
 [Codebase Quality & Maintainability Analysis](prompts/technical/repository_refactoring/codebase_quality_analysis.prompt.md)
