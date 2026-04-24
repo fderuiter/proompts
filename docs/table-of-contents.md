@@ -57,6 +57,7 @@
 [Algorithmic Multi-Touch Attribution Architect](prompts/business/growth_engineering/algorithmic_multi_touch_attribution_architect.prompt.md)
 [Cross-Channel Behavioral Trigger Architect](prompts/business/growth_engineering/cross_channel_behavioral_trigger_architect.prompt.md)
 [GTM Pricing Elasticity Architect](prompts/business/growth_engineering/gtm_pricing_elasticity_architect.prompt.md)
+[Predictive PLG Viral Loop Architect](prompts/business/growth_engineering/predictive_plg_viral_loop_architect.prompt.md)
 [Predictive RFM Churn Mitigation Architect](prompts/business/growth_engineering/predictive_rfm_churn_mitigation_architect.prompt.md)
 [Clinical-Trial Budget and Burn-Rate Dashboard](prompts/business/hr_finance/clinical_trial_budget_burn_rate_dashboard.prompt.md)
 [GCP and GDPR Training Compliance Risk Report](prompts/business/hr_finance/gcp_gdpr_compliance_training_risk_report.prompt.md)
