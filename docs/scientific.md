@@ -233,6 +233,7 @@ title: Scientific
 - [Stochastic Multi-Objective Optimization Architect](prompts/scientific/mathematics/optimization/stochastic_optimization_architect.prompt.md)
 - [stochastic_gene_regulatory_network_cme_architect](prompts/scientific/computational_biology/stochastic_gene_regulatory_network_cme_architect.prompt.md)
 - [stochastic_lotka_volterra_population_modeler](prompts/scientific/ecology/population_dynamics/stochastic_lotka_volterra_population_modeler.prompt.md)
+- [stochastic_lotka_volterra_simulation_architect](prompts/scientific/biology/ecology/population_dynamics/stochastic_lotka_volterra_simulation_architect.prompt.md)
 - [stochastic_radicalization_cascade_modeler](prompts/scientific/psychology/computational/network_contagion/stochastic_radicalization_cascade_modeler.prompt.md)
 - [string_worldsheet_scattering_amplitude_architect](prompts/scientific/physics/string_theory/string_worldsheet_scattering_amplitude_architect.prompt.md)
 - [structural_equation_modeling_architect](prompts/scientific/psychology/quantitative/structural_equation_modeling_architect.prompt.md)

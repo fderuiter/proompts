@@ -393,6 +393,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Ecology
 
+- [stochastic_lotka_volterra_simulation_architect](prompts/scientific/biology/ecology/population_dynamics/stochastic_lotka_volterra_simulation_architect.prompt.md)
 - [spatial_metapopulation_seir_epidemiology_architect](prompts/scientific/ecology/population_dynamics/spatial_metapopulation_seir_epidemiology_architect.prompt.md)
 - [stochastic_lotka_volterra_population_modeler](prompts/scientific/ecology/population_dynamics/stochastic_lotka_volterra_population_modeler.prompt.md)
 
