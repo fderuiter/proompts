@@ -333,6 +333,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Non-Adiabatic Photodynamics Architect](prompts/scientific/chemistry/computational/quantum_chemistry/non_adiabatic_photodynamics_architect.prompt.md)
 - [TD-DFT Excited-State Dynamics Architect](prompts/scientific/chemistry/computational/quantum_chemistry/td_dft_excited_state_dynamics_architect.prompt.md)
 - [algorithmic_behavior_echo_chamber_modeler](prompts/scientific/psychology/computational/network_contagion/algorithmic_behavior_echo_chamber_modeler.prompt.md)
+- [algorithmic_empathy_decay_mapper](prompts/scientific/psychology/computational/network_contagion/algorithmic_empathy_decay_mapper.prompt.md)
 - [behavioral_epidemiology_social_contagion_modeler](prompts/scientific/psychology/computational/network_contagion/behavioral_epidemiology_social_contagion_modeler.prompt.md)
 - [cognitive_dissonance_cascade_modeler](prompts/scientific/psychology/computational/network_contagion/cognitive_dissonance_cascade_modeler.prompt.md)
 - [cognitive_inoculation_campaign_architect](prompts/scientific/psychology/computational/network_contagion/cognitive_inoculation_campaign_architect.prompt.md)
