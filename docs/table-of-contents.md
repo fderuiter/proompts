@@ -347,6 +347,7 @@
 [Regulatory Imaging Charter Generator](prompts/clinical/imaging/imaging_workflow/04_regulatory_imaging_charter_generator.prompt.md)
 [Image Acquisition QC Workflow Blueprint](prompts/clinical/imaging/imaging_workflow/05_image_acquisition_qc_workflow_blueprint.prompt.md)
 [Regulatory Imaging Data Package](prompts/clinical/imaging/imaging_workflow/06_regulatory_imaging_data_package.prompt.md)
+[approximate_bayesian_computation_architect](prompts/scientific/statistics/inference/bayesian_methods/approximate_bayesian_computation_architect.prompt.md)
 [bayesian_hierarchical_model_architect](prompts/scientific/statistics/inference/bayesian_methods/bayesian_hierarchical_model_architect.prompt.md)
 [dirichlet_process_mixture_architect](prompts/scientific/statistics/inference/bayesian_methods/dirichlet_process_mixture_architect.prompt.md)
 [reversible_jump_mcmc_architect](prompts/scientific/statistics/inference/bayesian_methods/reversible_jump_mcmc_architect.prompt.md)
