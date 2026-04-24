@@ -19,6 +19,7 @@ title: Technical
 - [APT Threat Hunting Query Engineer](prompts/technical/security/apt_threat_hunting_query_engineer.prompt.md)
 - [Atlas Documentation Specialist](prompts/technical/documentation/atlas_documentation_specialist.prompt.md)
 - [automated_malware_reverse_engineering_analyst](prompts/technical/security/automated_malware_reverse_engineering_analyst.prompt.md)
+- [Automotive CAN Bus Security Architect](prompts/technical/security/automotive_can_bus_security_architect.prompt.md)
 - [Autonomous Automation Agent](prompts/technical/automation/autonomous_automation_agent.prompt.md)
 - [Autonomous Automation Agent Upgrade](prompts/technical/automation/autonomous_automation_agent_upgrade.prompt.md)
 - [bayesian_optimization_hyperparameter_architect](prompts/technical/data_science/bayesian_optimization_hyperparameter_architect.prompt.md)
