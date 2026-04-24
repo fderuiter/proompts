@@ -246,6 +246,7 @@ title: Scientific
 - [Tandem MS/MS Fragmentation Pathway Elucidator](prompts/scientific/chemistry/analytical/mass_spectrometry/tandem_ms_fragmentation_pathway_elucidator.prompt.md)
 - [target_trial_emulation_architect](prompts/scientific/statistics/inference/causal_inference/target_trial_emulation_architect.prompt.md)
 - [TD-DFT Excited-State Dynamics Architect](prompts/scientific/chemistry/computational/quantum_chemistry/td_dft_excited_state_dynamics_architect.prompt.md)
+- [Temporal Logic Branching Time Evaluator](prompts/scientific/philosophy/logic/philosophical_logic/temporal_logic_branching_time_evaluator.prompt.md)
 - [theil_t_index_inequality_decomposer](prompts/scientific/sociology/stratification/systemic_inequality/theil_t_index_inequality_decomposer.prompt.md)
 - [Time-to-Event Analysis Coach](prompts/scientific/biostatistics/time_to_event_analysis_coach.prompt.md)
 - [top_down_proteomics_ptm_mapping_architect](prompts/scientific/molecular/proteomics/top_down_proteomics_ptm_mapping_architect.prompt.md)
