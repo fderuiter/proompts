@@ -525,6 +525,7 @@
 [Supply Chain Network Topology Optimization Architect](prompts/business/operations/supply_chain/supply_chain_network_topology_optimization_architect.prompt.md)
 [Visible Light Photoredox Pathway Architect](prompts/scientific/chemistry/organic/photoredox_catalysis/visible_light_photoredox_pathway_architect.prompt.md)
 [advanced_retrosynthetic_pathway_generator](prompts/scientific/chemistry/organic/retrosynthesis/advanced_retrosynthetic_pathway_generator.prompt.md)
+[multi_step_retrosynthetic_pathway_architect](prompts/scientific/chemistry/organic/retrosynthesis/multi_step_retrosynthetic_pathway_architect.prompt.md)
 [Non-Abelian Gauge Theory Perturbative Expansion Architect](prompts/scientific/physics/particle_physics/standard_model/non_abelian_gauge_theory_perturbative_expansion_architect.prompt.md)
 [Design a Robust Preclinical Pathology Study Protocol](prompts/scientific/pathology/pathology_study_workflow/01_study_protocol_outline.prompt.md)
 [Evaluate Device–Tissue Interface Findings](prompts/scientific/pathology/pathology_study_workflow/02_device_tissue_interface_evaluation.prompt.md)
