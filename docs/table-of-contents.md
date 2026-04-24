@@ -384,6 +384,7 @@
 [Deontic Logic Normative Conflict Resolver](prompts/scientific/philosophy/logic/philosophical_logic/deontic_logic_normative_conflict_resolver.prompt.md)
 [Modal Logic Possible Worlds Evaluator](prompts/scientific/philosophy/logic/philosophical_logic/modal_logic_possible_worlds_evaluator.prompt.md)
 [paraconsistent_logic_dialetheism_evaluator](prompts/scientific/philosophy/logic/philosophical_logic/paraconsistent_logic_dialetheism_evaluator.prompt.md)
+[Temporal Logic Branching Time Evaluator](prompts/scientific/philosophy/logic/philosophical_logic/temporal_logic_branching_time_evaluator.prompt.md)
 [new_keynesian_dsge_architect](prompts/scientific/economics/macroeconomics/dsge_modeling/new_keynesian_dsge_architect.prompt.md)
 [open_economy_dsge_architect](prompts/scientific/economics/macroeconomics/dsge_modeling/open_economy_dsge_architect.prompt.md)
 [hank_macroeconomic_architect](prompts/scientific/economics/macroeconomics/heterogeneous_agents/hank_macroeconomic_architect.prompt.md)
