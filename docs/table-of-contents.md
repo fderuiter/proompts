@@ -889,6 +889,7 @@
 [Generate an Executive Summary for the Final Report](prompts/management/study_director/study_director_workflow/03_executive_summary_final_report.prompt.md)
 [higher_order_unification_resolution_architect](prompts/scientific/formal_logic/systems/higher_order_logic/higher_order_unification_resolution_architect.prompt.md)
 [Adaptive Control Loop Tuning Architect](prompts/scientific/mathematics/systems/control_theory/adaptive_control_loop_tuning_architect.prompt.md)
+[Robust H-infinity Control Architect](prompts/scientific/mathematics/systems/control_theory/robust_h_infinity_control_architect.prompt.md)
 [Stochastic Model Predictive Control (MPC) Architect](prompts/scientific/mathematics/systems/control_theory/stochastic_mpc_architect.prompt.md)
 [PAW Phase 1 - Tactical Recon](prompts/technical/software_engineering/tasks/paw/paw_01_tactical_recon.prompt.md)
 [PAW Phase 2 - Architectural Blueprint](prompts/technical/software_engineering/tasks/paw/paw_02_architectural_blueprint.prompt.md)
