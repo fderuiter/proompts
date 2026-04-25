@@ -2,10 +2,16 @@
 """
 Refactoring Utility for Prompts
 
+WHAT:
 This script automates the restructuring of prompts into workflow-specific directories.
 It identifies prompts used in workflows, moves them to dedicated subdirectories
 (e.g., prompts/clinical/protocol/protocol_workflow/), and updates file references.
 
+WHY:
+Centralizes refactoring operations to reduce cognitive load, ensures uniformity of
+directory structures, and guarantees that file references in workflows aren't broken.
+
+HOW:
 Usage:
     python3 scripts/apply_refactor.py --dry-run   # Preview changes
     python3 scripts/apply_refactor.py             # Apply file moves
@@ -18,23 +24,27 @@ import re
 import shutil
 import argparse
 from collections import defaultdict
+from typing import Dict, List, Tuple, Set, Any, Optional
 
 # Regex for finding prompt_file in workflow yaml (to preserve comments)
 PROMPT_FILE_REGEX = re.compile(r'(prompt_file:\s*["\']?)([^"\']+)(["\']?)')
 
-def load_yaml(path):
-    with open(path, 'r') as f:
+def load_yaml(path: str) -> Any:
+    """Load a YAML file safely."""
+    with open(path, "r") as f:
         return yaml.safe_load(f)
 
-def get_all_prompts(prompts_dir):
+def get_all_prompts(prompts_dir: str) -> Set[str]:
+    """Return a set of absolute paths to all prompt files."""
     all_prompts = set()
-    for root, dirs, files in os.walk(prompts_dir):
+    for root, _, files in os.walk(prompts_dir):
         for file in files:
-            if file.endswith(('.yaml', '.yml')):
+            if file.endswith((".yaml", ".yml")):
                 all_prompts.add(os.path.abspath(os.path.join(root, file)))
     return all_prompts
 
-def get_workflow_definitions(workflows_dir):
+def get_workflow_definitions(workflows_dir: str) -> List[Dict[str, Any]]:
+    """Load all workflow definitions and return a list of dictionaries."""
     definitions = []
     
     for root, dirs, files in os.walk(workflows_dir):
@@ -60,7 +70,7 @@ def get_workflow_definitions(workflows_dir):
                     
     return definitions
 
-def plan_refactoring(prompts_root, workflows_root):
+def plan_refactoring(prompts_root: str, workflows_root: str) -> Tuple[Dict[str, Dict[str, str]], Dict[str, str], Dict[str, str]]:
     # 1. Identify Workflow Prompts
     workflow_prompts = defaultdict(list) # path -> list of (workflow_path, step_index)
     definitions = get_workflow_definitions(workflows_root)
@@ -159,7 +169,7 @@ def plan_refactoring(prompts_root, workflows_root):
 
     return schema_map, meta_moves, standalone_moves
 
-def apply_changes(schema_map, meta_moves, standalone_moves, dry_run=False):
+def apply_changes(schema_map: Dict[str, Dict[str, str]], meta_moves: Dict[str, str], standalone_moves: Dict[str, str], dry_run: bool = False) -> None:
     """Executes the file moves planned by plan_refactoring."""
     # Merge all moves
     all_moves = {}
@@ -188,7 +198,7 @@ def apply_changes(schema_map, meta_moves, standalone_moves, dry_run=False):
             except Exception as e:
                 print(f"Error moving {old_path} to {new_path}: {e}")
 
-def fix_references(prompts_root, workflows_root, dry_run=False):
+def fix_references(prompts_root: str, workflows_root: str, dry_run: bool = False) -> None:
     print("=== Fixing Workflow References ===")
 
     # Build prompt index for robust lookup
