@@ -783,6 +783,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [BRST Quantization and Faddeev-Popov Ghost Architect](prompts/scientific/physics/quantum_field_theory/brst_quantization_faddeev_popov_architect.prompt.md)
 - [Callan-Symanzik Beta Function Architect](prompts/scientific/physics/quantum_field_theory/callan_symanzik_beta_function_architect.prompt.md)
 - [Chiral Anomaly Fujikawa Path Integral Architect](prompts/scientific/physics/quantum_field_theory/chiral_anomaly_fujikawa_path_integral_architect.prompt.md)
+- [coleman_weinberg_effective_potential_architect](prompts/scientific/physics/quantum_field_theory/coleman_weinberg_effective_potential_architect.prompt.md)
 - [effective_field_theory_matching_rg_running_architect](prompts/scientific/physics/quantum_field_theory/effective_field_theory_matching_rg_running_architect.prompt.md)
 - [Feynman Rule Derivation Architect](prompts/scientific/physics/quantum_field_theory/feynman_rule_derivation_architect.prompt.md)
 - [Schwinger-Dyson Equation Architect](prompts/scientific/physics/quantum_field_theory/schwinger_dyson_equation_architect.prompt.md)
