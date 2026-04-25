@@ -1342,6 +1342,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [API Security & Zero Trust Architect](prompts/technical/security/api_security_zero_trust_architect.prompt.md)
 - [APT Threat Hunting Query Engineer](prompts/technical/security/apt_threat_hunting_query_engineer.prompt.md)
 - [automated_malware_reverse_engineering_analyst](prompts/technical/security/automated_malware_reverse_engineering_analyst.prompt.md)
+- [automotive_can_bus_security_architect](prompts/technical/security/automotive_can_bus_security_architect.prompt.md)
 - [CI/CD Pipeline Poisoning Forensics Architect](prompts/technical/security/ci_cd_pipeline_poisoning_forensics_architect.prompt.md)
 - [Cloud IAM Least-Privilege Remediation Architect](prompts/technical/security/cloud_iam_least_privilege_remediation_architect.prompt.md)
 - [Cloud Incident Response Forensics Architect](prompts/technical/security/cloud_incident_response_forensics_architect.prompt.md)
