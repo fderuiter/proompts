@@ -48,6 +48,7 @@ title: Scientific
 - [cognitive_diagnostic_modeling_architect](prompts/scientific/psychology/quantitative/psychometrics/cognitive_diagnostic_modeling_architect.prompt.md)
 - [cognitive_dissonance_cascade_modeler](prompts/scientific/psychology/computational/network_contagion/cognitive_dissonance_cascade_modeler.prompt.md)
 - [cognitive_inoculation_campaign_architect](prompts/scientific/psychology/computational/network_contagion/cognitive_inoculation_campaign_architect.prompt.md)
+- [coleman_weinberg_effective_potential_architect](prompts/scientific/physics/quantum_field_theory/coleman_weinberg_effective_potential_architect.prompt.md)
 - [collective_panic_cascade_architect](prompts/scientific/sociology/mass_behavior/collective_panic_cascade_architect.prompt.md)
 - [complex_ppi_network_mapper](prompts/scientific/molecular/proteomics/complex_ppi_network_mapper.prompt.md)
 - [Comprehensive Biocompatibility Test Matrix](prompts/scientific/biosafety/comprehensive_test_matrix.prompt.md)
