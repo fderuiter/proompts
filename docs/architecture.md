@@ -5,6 +5,7 @@ title: Architecture
 # Architecture
 
 ## Prompts
+- [5G Core Network Slicing Architect](prompts/technical/architecture/5g_core_network_slicing_architect.prompt.md)
 - [Adaptive Load Shedding and Backpressure Architect](prompts/technical/architecture/adaptive_load_shedding_backpressure_architect.prompt.md)
 - [AI Model Inference Serving Architect](prompts/technical/architecture/ai_model_inference_serving_architect.prompt.md)
 - [Air-Gapped Environment Deployment Architect](prompts/technical/architecture/air_gapped_environment_deployment_architect.prompt.md)

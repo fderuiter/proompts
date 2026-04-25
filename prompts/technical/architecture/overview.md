@@ -4,6 +4,7 @@
 - [Togaf/](togaf/overview.md)
 
 ## Prompts
+- **[5G Core Network Slicing Architect](5g_core_network_slicing_architect.prompt.yaml)**: Designs carrier-grade, highly isolated, multi-tenant 5G Core (5GC) network slicing topologies to guarantee rigorous Quality of Service (QoS) and Quality of Experience (QoE) Service Level Agreements (SLAs).
 - **[Adaptive Load Shedding and Backpressure Architect](adaptive_load_shedding_backpressure_architect.prompt.yaml)**: Designs highly resilient, adaptive load shedding and backpressure mechanisms for distributed systems to prevent cascading failures under extreme traffic surges.
 - **[AI Model Inference Serving Architect](ai_model_inference_serving_architect.prompt.yaml)**: Designs highly scalable, low-latency, and cost-efficient architecture topologies for serving large-scale AI/ML models in production.
 - **[Air-Gapped Environment Deployment Architect](air_gapped_environment_deployment_architect.prompt.yaml)**: Designs secure, resilient, and fully autonomous software deployment architectures for highly restricted, completely air-gapped environments.
