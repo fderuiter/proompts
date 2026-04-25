@@ -10,6 +10,7 @@ title: Architecture
 - [Air-Gapped Environment Deployment Architect](prompts/technical/architecture/air_gapped_environment_deployment_architect.prompt.md)
 - [API Gateway and BFF Architect](prompts/technical/architecture/api_gateway_bff_architect.prompt.md)
 - [API Management and Developer Portal Architect](prompts/technical/architecture/api_management_developer_portal_architect.prompt.md)
+- [Autonomous Drone Swarm Orchestration Architect](prompts/technical/architecture/autonomous_drone_swarm_orchestration_architect.prompt.md)
 - [Autonomous Vehicle V2X Telemetry Architect](prompts/technical/architecture/autonomous_vehicle_v2x_telemetry_architect.prompt.md)
 - [byzantine_fault_tolerant_consensus_architect](prompts/technical/architecture/byzantine_fault_tolerant_consensus_architect.prompt.md)
 - [Cache Stampede Mitigation Architect](prompts/technical/architecture/cache_stampede_mitigation_architect.prompt.md)
