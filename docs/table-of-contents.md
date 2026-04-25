@@ -947,6 +947,7 @@
 [GPU Cluster Orchestration Architect](prompts/technical/architecture/gpu_cluster_orchestration_architect.prompt.md)
 [Graph Database Traversal Architect](prompts/technical/architecture/graph_database_traversal_architect.prompt.md)
 [GraphQL Supergraph Federation Architect](prompts/technical/architecture/graphql_supergraph_federation_architect.prompt.md)
+[Healthcare FHIR Interoperability Architect](prompts/technical/architecture/healthcare_fhir_interoperability_architect.prompt.md)
 [Hexagonal Architecture Implementation](prompts/technical/architecture/hexagonal_architecture_implementation.prompt.md)
 [Hexagonal Architecture Principles](prompts/technical/architecture/hexagonal_architecture_principles.prompt.md)
 [Hexagonal Architecture Review](prompts/technical/architecture/hexagonal_architecture_review.prompt.md)
