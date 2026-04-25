@@ -1168,6 +1168,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Stratification
 
 - [gentrification_displacement_spatial_inequality_architect](prompts/scientific/sociology/stratification/systemic_inequality/gentrification_displacement_spatial_inequality_architect.prompt.md)
+- [global_wealth_stratification_gini_architect](prompts/scientific/sociology/stratification/systemic_inequality/global_wealth_stratification_gini_architect.prompt.md)
 - [intergenerational_social_mobility_markov_chain_architect](prompts/scientific/sociology/stratification/systemic_inequality/intergenerational_social_mobility_markov_chain_architect.prompt.md)
 - [multidimensional_poverty_alkire_foster_architect](prompts/scientific/sociology/stratification/systemic_inequality/multidimensional_poverty_alkire_foster_architect.prompt.md)
 - [occupational_segregation_opportunity_hoarding_architect](prompts/scientific/sociology/stratification/systemic_inequality/occupational_segregation_opportunity_hoarding_architect.prompt.md)

@@ -2,6 +2,7 @@
 
 ## Prompts
 - **[gentrification_displacement_spatial_inequality_architect](gentrification_displacement_spatial_inequality_architect.prompt.yaml)**: A Principal Sociologist agent that systematically analyzes gentrification-induced displacement and structural spatial inequality, calculating rigorous demographic and spatial indices.
+- **[global_wealth_stratification_gini_architect](global_wealth_stratification_gini_architect.prompt.yaml)**: A Principal Sociologist agent that systematically analyzes global wealth stratification, calculating rigorous Gini coefficients and modeling systemic inequality dynamics using ASA standards.
 - **[intergenerational_social_mobility_markov_chain_architect](intergenerational_social_mobility_markov_chain_architect.prompt.yaml)**: Formulates transition probability matrices using Markov chains to map intergenerational social mobility and systemic stratification, adhering to ASA standards.
 - **[multidimensional_poverty_alkire_foster_architect](multidimensional_poverty_alkire_foster_architect.prompt.yaml)**: Operationalizes the Alkire-Foster (AF) method for calculating multidimensional poverty indices, enforcing rigorous American Sociological Association (ASA) standards and LaTeX formulas.
 - **[occupational_segregation_opportunity_hoarding_architect](occupational_segregation_opportunity_hoarding_architect.prompt.yaml)**: A Principal Sociologist agent that systematically analyzes occupational segregation and structural opportunity hoarding mechanisms, calculating rigorous demographic inequality indices.

@@ -113,6 +113,7 @@ title: Scientific
 - [Generate & QC Submission-Ready TLFs](prompts/scientific/biostatistics/submission_ready_tlfs.prompt.md)
 - [genome_scale_metabolic_flux_modeler](prompts/scientific/cellular/metabolism/genome_scale_metabolic_flux_modeler.prompt.md)
 - [gentrification_displacement_spatial_inequality_architect](prompts/scientific/sociology/stratification/systemic_inequality/gentrification_displacement_spatial_inequality_architect.prompt.md)
+- [global_wealth_stratification_gini_architect](prompts/scientific/sociology/stratification/systemic_inequality/global_wealth_stratification_gini_architect.prompt.md)
 - [godel_incompleteness_arithmetization_engineer](prompts/scientific/mathematics/formal_logic/godel_incompleteness_arithmetization_engineer.prompt.md)
 - [graph_theoretical_connectome_analyzer](prompts/scientific/computational_theoretical_neuroscience/graph_theoretical_connectome_analyzer.prompt.md)
 - [gwas_polygenic_risk_score_architect](prompts/scientific/genetics/genomics/gwas_polygenic_risk_score_architect.prompt.md)
