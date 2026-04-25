@@ -52,6 +52,7 @@ title: Scientific
 - [Comprehensive Biocompatibility Test Matrix](prompts/scientific/biosafety/comprehensive_test_matrix.prompt.md)
 - [Content Validity & Reliability Analysis](prompts/scientific/coa/content_validity_clinician_input.prompt.md)
 - [continuous_time_asset_pricing_architect](prompts/scientific/economics/finance/asset_pricing/continuous_time_asset_pricing_architect.prompt.md)
+- [coquands_calculus_of_constructions_architect](prompts/scientific/mathematics/foundations/proof_theory/coquands_calculus_of_constructions_architect.prompt.md)
 - [counterfactual_semantics_stalnaker_lewis_evaluator](prompts/scientific/philosophy/logic/philosophical_logic/counterfactual_semantics_stalnaker_lewis_evaluator.prompt.md)
 - [crispr_cas9_off_target_predictive_modeler](prompts/scientific/genetics/genomics/crispr_cas9_off_target_predictive_modeler.prompt.md)
 - [crispr_cas9_off_target_probabilistic_modeler](prompts/scientific/computational_biology/crispr_cas9_off_target_probabilistic_modeler.prompt.md)
