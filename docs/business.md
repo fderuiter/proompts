@@ -27,6 +27,7 @@ title: Business
 - [Corporate Merger Arbitrage Deal Risk Architect](prompts/business/finance/corporate_merger_arbitrage_risk_architect.prompt.md)
 - [Corporate Spin-Off Carve-Out Architect](prompts/business/strategy/corporate_spin_off_carve_out_architect.prompt.md)
 - [Corporate Transfer Pricing Optimization Architect](prompts/business/strategy/corporate_transfer_pricing_optimization_architect.prompt.md)
+- [Corporate Treasury ALM Duration Gap Architect](prompts/business/finance/corporate_treasury_alm_duration_gap_architect.prompt.md)
 - [Corporate Turnaround Restructuring Architect](prompts/business/strategy/corporate_turnaround_restructuring_architect.prompt.md)
 - [Corporate Venture Capital Strategy Architect](prompts/business/strategy/corporate_venture_capital_strategy_architect.prompt.md)
 - [Corporate Vertical Integration Structuring Architect](prompts/business/strategy/corporate_vertical_integration_structuring_architect.prompt.md)
