@@ -177,6 +177,7 @@ title: Scientific
 - [neural_field_theory_spatiotemporal_dynamics_architect](prompts/scientific/computational_theoretical_neuroscience/neural_field_theory_spatiotemporal_dynamics_architect.prompt.md)
 - [neural_manifold_state_space_analyzer](prompts/scientific/computational_theoretical_neuroscience/neural_manifold_state_space_analyzer.prompt.md)
 - [neuromorphic_spiking_network_biophysical_architect](prompts/scientific/computational_theoretical_neuroscience/neuromorphic_spiking_network_biophysical_architect.prompt.md)
+- [neurovascular_coupling_bold_signal_modeler](prompts/scientific/computational_theoretical_neuroscience/neurovascular_coupling_bold_signal_modeler.prompt.md)
 - [new_keynesian_dsge_architect](prompts/scientific/economics/macroeconomics/dsge_modeling/new_keynesian_dsge_architect.prompt.md)
 - [Non-Abelian Gauge Theory Perturbative Expansion Architect](prompts/scientific/physics/particle_physics/standard_model/non_abelian_gauge_theory_perturbative_expansion_architect.prompt.md)
 - [Non-Adiabatic Photodynamics Architect](prompts/scientific/chemistry/computational/quantum_chemistry/non_adiabatic_photodynamics_architect.prompt.md)
