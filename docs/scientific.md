@@ -172,6 +172,7 @@ title: Scientific
 - [multifactorial_behavioral_intervention_architect](prompts/scientific/psychology/quantitative/experimental_design/multifactorial_behavioral_intervention_architect.prompt.md)
 - [multinational_longitudinal_intervention_architect](prompts/scientific/psychology/epidemiology/global_mental_health/multinational_longitudinal_intervention_architect.prompt.md)
 - [Multiplicity Adjustment Code Generator](prompts/scientific/biostatistics/multiplicity_adjustments_calculator.prompt.md)
+- [multitrait_multimethod_matrix_evaluator](prompts/scientific/psychology/quantitative/psychometrics/multitrait_multimethod_matrix_evaluator.prompt.md)
 - [multivariate_extreme_value_architect](prompts/scientific/statistics/modeling/extreme_value_theory/multivariate_extreme_value_architect.prompt.md)
 - [n_player_bayesian_nash_equilibrium_auction_architect](prompts/scientific/economics/microeconomics/game_theory/n_player_bayesian_nash_equilibrium_auction_architect.prompt.md)
 - [Natural Language Argument Formalizer](prompts/scientific/philosophy/logic/natural_language_argument_formalizer.prompt.md)
