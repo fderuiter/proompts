@@ -291,6 +291,7 @@
 [Patient-Centric BYOD ePRO Workflow](prompts/clinical/epro/epro_workflow/01_patient-centric_byod_workflow.prompt.md)
 [Optimize ePRO Form Design](prompts/clinical/epro/epro_workflow/02_optimize_epro_form_design.prompt.md)
 [ePRO Adoption Plan for Sponsors](prompts/clinical/epro/epro_workflow/03_epro_adoption_plan_for_sponsors.prompt.md)
+[metaethical_discourse_semantic_analyzer](prompts/scientific/philosophy/ethics/metaethics/metaethical_discourse_semantic_analyzer.prompt.md)
 [Applied Ethical Stress Tester](prompts/scientific/philosophy/ethics/normative_ethics/applied_ethical_stress_tester.prompt.md)
 [Normative Ethics Stress Tester](prompts/scientific/philosophy/ethics/normative_ethics/normative_ethics_stress_tester.prompt.md)
 [continuous_time_asset_pricing_architect](prompts/scientific/economics/finance/asset_pricing/continuous_time_asset_pricing_architect.prompt.md)
