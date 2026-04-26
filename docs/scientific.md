@@ -81,6 +81,7 @@ title: Scientific
 - [effective_field_theory_matching_rg_running_architect](prompts/scientific/physics/quantum_field_theory/effective_field_theory_matching_rg_running_architect.prompt.md)
 - [Electrocatalytic Mechanism Architect](prompts/scientific/chemistry/physical/electrochemistry/electrocatalytic_mechanism_architect.prompt.md)
 - [empirical_process_theory_architect](prompts/scientific/statistics/theory/asymptotics/empirical_process_theory_architect.prompt.md)
+- [Enantioselective Catalytic Mechanism Architect](prompts/scientific/chemistry/organic/asymmetric_synthesis/enantioselective_catalytic_mechanism_architect.prompt.md)
 - [Endotoxin Control & 510(k) Risk Plan](prompts/scientific/microbiology/microbiology_workflow/03_endotoxin_control_510k_risk_plan.prompt.md)
 - [EO Sterilization Validation Protocol](prompts/scientific/microbiology/microbiology_workflow/02_eo_sterilization_validation_protocol.prompt.md)
 - [epigenetic_methylation_hmm_architect](prompts/scientific/genetics/genomics/epigenetic_methylation_hmm_architect.prompt.md)
