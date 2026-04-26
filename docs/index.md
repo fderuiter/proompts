@@ -1247,6 +1247,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [HFT Low-Latency Architecture Designer](prompts/technical/architecture/hft_low_latency_trading_architect.prompt.md)
 - [High-Scale OTT Video Streaming Architect](prompts/technical/architecture/high_scale_ott_video_streaming_architect.prompt.md)
 - [High-Scale WebSocket Push Architect](prompts/technical/architecture/high_scale_websocket_push_architect.prompt.md)
+- [high_throughput_distributed_counter_architect](prompts/technical/architecture/high_throughput_distributed_counter_architect.prompt.md)
 - [High-Throughput Distributed ID Generator Architect](prompts/technical/architecture/high_throughput_distributed_id_generator_architect.prompt.md)
 - [High-Throughput Geospatial Indexing Architect](prompts/technical/architecture/high_throughput_geospatial_indexing_architect.prompt.md)
 - [High-Throughput Order Matching Engine Architect](prompts/technical/architecture/high_throughput_order_matching_engine_architect.prompt.md)
