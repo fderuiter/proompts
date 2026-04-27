@@ -126,8 +126,6 @@ title: Clinical
 - [SAE and Safety Reporting](prompts/clinical/safety/sae_safety_reporting.prompt.md)
 - [SAE Patient Narrative Drafter](prompts/clinical/medical_writing/sae_patient_narrative_drafter.prompt.md)
 - [SDTM Cardiovascular Device Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/09_sdtm_cardiovascular_device_mapping_architect.prompt.md)
-- [SDTM Medical Device Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/08_sdtm_medical_device_mapping_architect.prompt.md)
-- [SDTM Device Deficiencies Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/15_sdtm_device_deficiencies_architect.prompt.md)
 - [SDTM Concomitant Medications Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/14_sdtm_concomitant_medications_mapping_architect.prompt.md)
 - [SDTM Device Deficiencies Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/15_sdtm_device_deficiencies_architect.prompt.md)
 - [SDTM Medical Device Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/08_sdtm_medical_device_mapping_architect.prompt.md)
