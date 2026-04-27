@@ -570,6 +570,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [epistemic_logic_omniscience_paradox_resolver](prompts/scientific/philosophy/logic/philosophical_logic/epistemic_logic_omniscience_paradox_resolver.prompt.md)
 - [Modal Logic Possible Worlds Evaluator](prompts/scientific/philosophy/logic/philosophical_logic/modal_logic_possible_worlds_evaluator.prompt.md)
 - [paraconsistent_logic_dialetheism_evaluator](prompts/scientific/philosophy/logic/philosophical_logic/paraconsistent_logic_dialetheism_evaluator.prompt.md)
+- [Temporal Logic Branching Time Evaluator](prompts/scientific/philosophy/logic/philosophical_logic/temporal_logic_branching_time_evaluator.prompt.md)
 
 ## Macroeconomics
 
