@@ -1310,6 +1310,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Threshold Signature MPC Custody Architect](prompts/technical/architecture/threshold_signature_mpc_custody_architect.prompt.md)
 - [Time-Series Database Topology Architect](prompts/technical/architecture/time_series_database_topology_architect.prompt.md)
 - [transactional_outbox_event_publishing_architect](prompts/technical/architecture/transactional_outbox_event_publishing_architect.prompt.md)
+- [Underwater Acoustic Sensor Network Architect](prompts/technical/architecture/underwater_acoustic_sensor_network_architect.prompt.md)
 - [Virtual Waiting Room Fair Access Architect](prompts/technical/architecture/virtual_waiting_room_fair_access_architect.prompt.md)
 - [WASM Edge Serverless Runtime Architect](prompts/technical/architecture/wasm_edge_serverless_runtime_architect.prompt.md)
 - [WebAssembly Sandboxed Plugin Architect](prompts/technical/architecture/webassembly_sandboxed_plugin_architect.prompt.md)
