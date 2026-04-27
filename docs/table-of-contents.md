@@ -228,6 +228,7 @@
 [Storyboard-My-Idea](prompts/communication/storyboard_my_idea.prompt.md)
 [Executive Briefing Architect (TL;DR)](prompts/communication/tldr_summarizer.prompt.md)
 [Writing Clarity Mentor](prompts/communication/writing_clarity_mentor.prompt.md)
+[turing_degree_reduction_evaluator](prompts/scientific/formal_logic/computability/recursion_theory/turing_degree_reduction_evaluator.prompt.md)
 [algorithmic_social_contagion_modeler](prompts/computational/network_contagion/algorithmic_social_contagion_modeler.prompt.md)
 [multi_scale_pde_asymptotic_homogenization_architect](prompts/computational/numerical_methods/multi_scale_pde_asymptotic_homogenization_architect.prompt.md)
 [physics_informed_neural_network_architect](prompts/computational/numerical_methods/physics_informed_neural_network_architect.prompt.md)

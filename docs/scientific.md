@@ -254,6 +254,7 @@ title: Scientific
 - [top_down_proteomics_ptm_mapping_architect](prompts/scientific/molecular/proteomics/top_down_proteomics_ptm_mapping_architect.prompt.md)
 - [Topological Counterexample Generator](prompts/scientific/mathematics/topology/topological_counterexample_generator.prompt.md)
 - [topos_theoretic_sheaf_semantics_evaluator](prompts/scientific/mathematics/category_theory/topos_theoretic_sheaf_semantics_evaluator.prompt.md)
+- [turing_degree_reduction_evaluator](prompts/scientific/formal_logic/computability/recursion_theory/turing_degree_reduction_evaluator.prompt.md)
 - [Universal Template-Table Prompt](prompts/scientific/biostatistics/universal_template_table_prompt.prompt.md)
 - [variational_inference_architect](prompts/scientific/statistics/inference/bayesian_methods/variational_inference_architect.prompt.md)
 - [vine_copula_dependency_architect](prompts/scientific/statistics/modeling/multivariate_analysis/vine_copula_dependency_architect.prompt.md)
