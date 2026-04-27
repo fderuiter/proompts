@@ -75,6 +75,7 @@ title: Business
 - [Platform Ecosystem Network Effects Architect](prompts/business/strategy/platform_ecosystem_network_effects_architect.prompt.md)
 - [Post-Merger Integration Synergy Architect](prompts/business/strategy/post_merger_integration_synergy_architect.prompt.md)
 - [Post-Mortem / Incident Report Summary](prompts/business/vp_tech_innovation/post_mortem_summary.prompt.md)
+- [Predictive Algorithmic SaaS Churn Model Architect](prompts/business/strategy/predictive_algorithmic_saas_churn_model_architect.prompt.md)
 - [Predictive PLG Viral Loop Architect](prompts/business/growth_engineering/predictive_plg_viral_loop_architect.prompt.md)
 - [Predictive RFM Churn Mitigation Architect](prompts/business/growth_engineering/predictive_rfm_churn_mitigation_architect.prompt.md)
 - [Preventing Technical Debt](prompts/business/vp_tech_innovation/preventing_technical_debt.prompt.md)
