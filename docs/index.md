@@ -494,6 +494,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Growth
 
 - [algorithmic_multi_touch_attribution_modeler](prompts/growth/analytics/algorithmic_multi_touch_attribution_modeler.prompt.md)
+- [incrementality_causal_inference_modeler](prompts/growth/analytics/incrementality_causal_inference_modeler.prompt.md)
 - [cohort_retention_survival_analysis_architect](prompts/growth/lifecycle/cohort_retention_survival_analysis_architect.prompt.md)
 - [cross_channel_behavioral_trigger_architect](prompts/growth/lifecycle/cross_channel_behavioral_trigger_architect.prompt.md)
 - [bayesian_media_mix_modeling_architect](prompts/growth/performance_marketing/bayesian_media_mix_modeling_architect.prompt.md)
@@ -1291,6 +1292,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Serverless Function Orchestration Architect](prompts/technical/architecture/serverless_function_orchestration_architect.prompt.md)
 - [Service Mesh Security Architect](prompts/technical/architecture/service_mesh_security_architect.prompt.md)
 - [SOLID Codebase Analysis](prompts/technical/architecture/solid_codebase_analysis.prompt.md)
+- [Space-Based Architecture Designer](prompts/technical/architecture/space_based_architecture_designer.prompt.md)
 - [Spatial Geofencing Topology Architect](prompts/technical/architecture/spatial_geofencing_topology_architect.prompt.md)
 - [Stateful Workflow Orchestration Architect](prompts/technical/architecture/stateful_workflow_orchestration_architect.prompt.md)
 - [Strangler Fig Migration Architect](prompts/technical/architecture/strangler_fig_migration_architect.prompt.md)
