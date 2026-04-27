@@ -106,6 +106,7 @@ title: Scientific
 - [FWER Gatekeeping Procedure Code Generator](prompts/scientific/biostatistics/fwer_gatekeeping_procedures.prompt.md)
 - [galois_group_resolvent_architect](prompts/scientific/mathematics/algebra/galois_theory/galois_group_resolvent_architect.prompt.md)
 - [gamified_behavioral_addiction_contagion_modeler](prompts/scientific/psychology/computational/network_contagion/gamified_behavioral_addiction_contagion_modeler.prompt.md)
+- [gaussian_process_regression_architect](prompts/scientific/statistics/inference/bayesian_methods/gaussian_process_regression_architect.prompt.md)
 - [generalizability_theory_architect](prompts/scientific/psychology/quantitative/psychometrics/generalizability_theory_architect.prompt.md)
 - [Generate & QC Submission-Ready TLFs](prompts/scientific/biostatistics/submission_ready_tlfs.prompt.md)
 - [genome_scale_metabolic_flux_modeler](prompts/scientific/cellular/metabolism/genome_scale_metabolic_flux_modeler.prompt.md)
