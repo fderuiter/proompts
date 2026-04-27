@@ -125,6 +125,7 @@ title: Clinical
 - [risk_based_monitoring_strategist](prompts/clinical/clinical_operations/risk_based_monitoring_strategist.prompt.md)
 - [SAE and Safety Reporting](prompts/clinical/safety/sae_safety_reporting.prompt.md)
 - [SAE Patient Narrative Drafter](prompts/clinical/medical_writing/sae_patient_narrative_drafter.prompt.md)
+- [SDTM Device Deficiencies Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/15_sdtm_device_deficiencies_architect.prompt.md)
 - [SDTM Pharmacokinetics Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/07_sdtm_pharmacokinetics_mapping_architect.prompt.md)
 - [Semantic Interoperability Optimization](prompts/clinical/forms/semantic_interoperability.prompt.md)
 - [signal_detection_evaluator](prompts/clinical/pharmacovigilance/signal_detection_evaluator.prompt.md)
