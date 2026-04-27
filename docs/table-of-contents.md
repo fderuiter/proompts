@@ -920,6 +920,7 @@
 [Distributed Database Sharding Architect](prompts/technical/architecture/distributed_database_sharding_architect.prompt.md)
 [Distributed Knowledge Graph Architect](prompts/technical/architecture/distributed_knowledge_graph_architect.prompt.md)
 [Distributed Lock Manager Architect](prompts/technical/architecture/distributed_lock_manager_architect.prompt.md)
+[Distributed Message Broker Topology Architect](prompts/technical/architecture/distributed_message_broker_topology_architect.prompt.md)
 [Distributed Observability and Telemetry Architect](prompts/technical/architecture/distributed_observability_telemetry_architect.prompt.md)
 [Distributed Rate Limiting Architect](prompts/technical/architecture/distributed_rate_limiting_architect.prompt.md)
 [Distributed Secrets Management Topology Architect](prompts/technical/architecture/distributed_secrets_management_topology_architect.prompt.md)
