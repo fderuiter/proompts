@@ -379,6 +379,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Design
 
 - [causal_inference_dag_architect](prompts/scientific/statistics/design/causal_inference/causal_inference_dag_architect.prompt.md)
+- [optimal_experimental_design_architect](prompts/scientific/statistics/design/optimal_experimental_design/optimal_experimental_design_architect.prompt.md)
 
 ## Developmental
 
