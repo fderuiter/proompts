@@ -741,6 +741,7 @@
 [MCID Research and Summary](prompts/scientific/coa/mcid_definition.prompt.md)
 [Psychometric Validation Methodology](prompts/scientific/coa/psychometric_validation_methods.prompt.md)
 [Qualitative Interview Guide Generator](prompts/scientific/coa/qualitative_interview_guide.prompt.md)
+[bayesian_phylodynamic_inference_architect](prompts/scientific/computational_biology/bayesian_phylodynamic_inference_architect.prompt.md)
 [crispr_cas9_off_target_probabilistic_modeler](prompts/scientific/computational_biology/crispr_cas9_off_target_probabilistic_modeler.prompt.md)
 [molecular_dynamics_simulation_architect](prompts/scientific/computational_biology/molecular_dynamics_simulation_architect.prompt.md)
 [multi_omics_data_integration_architect](prompts/scientific/computational_biology/multi_omics_data_integration_architect.prompt.md)

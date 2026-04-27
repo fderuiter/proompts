@@ -24,6 +24,7 @@ title: Scientific
 - [basal_ganglia_td_learning_architect](prompts/scientific/computational_theoretical_neuroscience/basal_ganglia_td_learning_architect.prompt.md)
 - [bayesian_epistemological_update_formalizer](prompts/scientific/philosophy/epistemology/formal_epistemology/bayesian_epistemological_update_formalizer.prompt.md)
 - [bayesian_hierarchical_model_architect](prompts/scientific/statistics/inference/bayesian_methods/bayesian_hierarchical_model_architect.prompt.md)
+- [bayesian_phylodynamic_inference_architect](prompts/scientific/computational_biology/bayesian_phylodynamic_inference_architect.prompt.md)
 - [behavioral_epidemiology_social_contagion_modeler](prompts/scientific/psychology/computational/network_contagion/behavioral_epidemiology_social_contagion_modeler.prompt.md)
 - [Bioburden Testing SOP](prompts/scientific/microbiology/microbiology_workflow/01_bioburden_testing_sop.prompt.md)
 - [Biological Evaluation Plan Builder](prompts/scientific/biosafety/bep_builder.prompt.md)
