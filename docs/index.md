@@ -755,6 +755,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Organic
 
+- [Enantioselective Catalytic Mechanism Architect](prompts/scientific/chemistry/organic/asymmetric_synthesis/enantioselective_catalytic_mechanism_architect.prompt.md)
 - [Visible Light Photoredox Pathway Architect](prompts/scientific/chemistry/organic/photoredox_catalysis/visible_light_photoredox_pathway_architect.prompt.md)
 - [advanced_retrosynthetic_pathway_generator](prompts/scientific/chemistry/organic/retrosynthesis/advanced_retrosynthetic_pathway_generator.prompt.md)
 - [multi_step_retrosynthetic_pathway_architect](prompts/scientific/chemistry/organic/retrosynthesis/multi_step_retrosynthetic_pathway_architect.prompt.md)
