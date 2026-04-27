@@ -1,5 +1,8 @@
 # Secops Overview
 
+## Categories
+- [Incident Response/](incident_response/overview.md)
+
 ## Prompts
 - **[Advanced Sigma Rule Detection Architect](advanced_sigma_rule_detection_architect.prompt.yaml)**: Architects robust, highly-optimized, cross-platform Sigma detection rules tailored for uncovering complex evasion techniques and living-off-the-land (LotL) binaries.
 - **[Advanced SOAR Playbook Engineering Architect](advanced_soar_playbook_engineering_architect.prompt.yaml)**: Formulates precise, highly complex, and automated Security Orchestration, Automation, and Response (SOAR) playbooks for resolving advanced security incidents while minimizing Mean Time to Respond (MTTR).
