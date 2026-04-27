@@ -965,6 +965,7 @@
 [Petabyte-Scale Data Lakehouse Architect](prompts/technical/architecture/petabyte_scale_data_lakehouse_architect.prompt.md)
 [PII Tokenization Vault Architect](prompts/technical/architecture/pii_tokenization_vault_architect.prompt.md)
 [Platform Engineering IDP Architect](prompts/technical/architecture/platform_engineering_idp_architect.prompt.md)
+[Polyglot Monorepo Build Orchestration Architect](prompts/technical/architecture/polyglot_monorepo_build_orchestration_architect.prompt.md)
 [Predictive Auto-Scaling Machine Learning Architect](prompts/technical/architecture/predictive_auto_scaling_machine_learning_architect.prompt.md)
 [Quantum Key Distribution Network Architect](prompts/technical/architecture/quantum_key_distribution_network_architect.prompt.md)
 [Quantum-Safe Cryptography Migration Architect](prompts/technical/architecture/quantum_safe_cryptography_migration_architect.prompt.md)
