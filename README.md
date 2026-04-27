@@ -63,6 +63,7 @@ graph TD
 ## Setup
 
 To run validation scripts and tools locally, you need Python 3 and the required dependencies.
+You can also configure your IDE for prompt and workflow validation by following the [IDE JSON Schemas Guide](docs/schemas/README.md).
 
 1.  Create a virtual environment (optional but recommended):
     ```bash
