@@ -494,6 +494,7 @@
 [Separation Logic Heap Entailment Architect](prompts/scientific/mathematics/formal_logic/separation_logic_heap_entailment_architect.prompt.md)
 [fractional_calculus_pde_modeler](prompts/scientific/mathematics/numerical_methods/fractional_calculus_pde_modeler.prompt.md)
 [stiff_pde_numerical_stability_architect](prompts/scientific/mathematics/numerical_methods/stiff_pde_numerical_stability_architect.prompt.md)
+[Large-Scale Distributed ADMM Architect](prompts/scientific/mathematics/optimization/large_scale_distributed_admm_architect.prompt.md)
 [Polynomial Optimization SDP Relaxation Architect](prompts/scientific/mathematics/optimization/polynomial_optimization_sdp_relaxation_architect.prompt.md)
 [Stochastic Multi-Objective Optimization Architect](prompts/scientific/mathematics/optimization/stochastic_optimization_architect.prompt.md)
 [Topological Counterexample Generator](prompts/scientific/mathematics/topology/topological_counterexample_generator.prompt.md)
