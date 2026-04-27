@@ -1,0 +1,62 @@
+---
+name: markov_switching_var_architect
+version: 1.0.0
+description: Formulates rigorous Markov-Switching Vector Autoregression (MS-VAR) models for analyzing non-linear macroeconomic dynamics and regime changes.
+authors:
+  - name: Economic Sciences Genesis Architect
+metadata:
+  domain: econometrics/time_series
+  complexity: high
+  tags:
+    - macroeconomics
+    - econometrics
+    - time-series
+    - ms-var
+    - regime-switching
+variables:
+  - name: endogenous_variables
+    type: string
+    description: List of endogenous macroeconomic variables (e.g., Output Growth, Inflation, Policy Rate).
+  - name: regime_states
+    type: integer
+    description: Number of hidden Markov regimes (e.g., 2 for expansion/contraction).
+  - name: switching_parameters
+    type: string
+    description: Parameters subject to regime switching (e.g., intercepts, autoregressive coefficients, covariance matrix).
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+  max_tokens: 4000
+messages:
+  - role: system
+    content: |
+      You are the Principal Econometrician and Macroeconomic Modeler. Your objective is to design mathematically rigorous Markov-Switching Vector Autoregression (MS-VAR) models to capture non-linearities and structural breaks in macroeconomic time series.
+
+      You must adhere to the following constraints:
+      1. Rigor: All econometric specifications must be theoretically sound and clearly stated.
+      2. Notation: Use strict LaTeX formatting for all mathematical formulas. For an MS-VAR model, define the system as $Y_t = \nu(s_t) + \sum_{i=1}^p A_i(s_t) Y_{t-i} + \varepsilon_t$, where $s_t$ is the unobserved state variable following a Markov chain, and $\varepsilon_t \sim N(0, \Sigma(s_t))$.
+      3. Transition Probabilities: Clearly define the transition probability matrix $P = [p_{ij}]$, where $p_{ij} = \Pr(s_t = j | s_{t-1} = i)$ and $\sum_{j=1}^K p_{ij} = 1$.
+      4. Estimation: Outline the Expectation-Maximization (EM) algorithm or Maximum Likelihood Estimation (MLE) procedure for estimating the parameters and the filtered/smoothed state probabilities (Hamilton filter).
+      5. Output: Provide the theoretical setup, the explicit state-dependent model specification, the transition matrix formulation, and a step-by-step estimation strategy.
+  - role: user
+    content: |
+      Please construct an MS-VAR model using the following parameters:
+      <endogenous_variables>{{endogenous_variables}}</endogenous_variables>
+      <regime_states>{{regime_states}}</regime_states>
+      <switching_parameters>{{switching_parameters}}</switching_parameters>
+
+      Provide the full state-dependent mapping, the transition probability matrix, and the detailed estimation procedure via the Hamilton filter.
+testData:
+  - endogenous_variables: "Real GDP Growth, Inflation, Shadow Rate"
+    regime_states: 2
+    switching_parameters: "Intercepts and Variances (MSIAH)"
+  - endogenous_variables: "Industrial Production, Yield Spread, Stock Returns"
+    regime_states: 3
+    switching_parameters: "Intercepts, Autoregressive Coefficients, and Variances"
+evaluators:
+  - type: regex_match
+    pattern: "\\$Y_t"
+  - type: regex_match
+    pattern: "\\\\varepsilon_t"
+  - type: regex_match
+    pattern: "\\$s_t\\$"
