@@ -6,6 +6,7 @@ title: Clinical
 
 ## Prompts
 - [21 CFR Part 11 Compliance Verification](prompts/clinical/data_management/part_11_compliance_verification.prompt.md)
+- [ADaM ADRS RECIST Derivation Architect](prompts/clinical/data_management/cdisc_compliance_workflow/05_adam_adrs_recist_derivation_architect.prompt.md)
 - [ADaM Derivation Writer](prompts/clinical/data_management/cdisc_compliance_workflow/03_adam_derivation_writer.prompt.md)
 - [Adaptive Recruitment and Retention Strategy](prompts/clinical/trial_execution/adaptive_recruitment_retention_strategy.prompt.md)
 - [adverse_event_signal_detection_architect](prompts/clinical/pharmacovigilance/adverse_event_signal_detection_architect.prompt.md)
