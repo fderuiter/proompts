@@ -130,6 +130,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Clinical-Trial Budget and Burn-Rate Dashboard](prompts/business/hr_finance/clinical_trial_budget_burn_rate_dashboard.prompt.md)
 - [GCP and GDPR Training Compliance Risk Report](prompts/business/hr_finance/gcp_gdpr_compliance_training_risk_report.prompt.md)
 - [Strategic Workforce and Talent Acquisition Plan](prompts/business/hr_finance/strategic_workforce_talent_acquisition_plan.prompt.md)
+- [Automated E-Discovery Reviewer](prompts/business/legal/automated_ediscovery_reviewer.prompt.md)
 - [Cross-Border Data Privacy Architect](prompts/business/legal/cross_border_data_privacy_architect.prompt.md)
 - [Intellectual Property Claim Drafter](prompts/business/legal/intellectual_property_claim_drafter.prompt.md)
 - [Mergers and Acquisitions Due Diligence Auditor](prompts/business/legal/mergers_acquisitions_due_diligence_auditor.prompt.md)
