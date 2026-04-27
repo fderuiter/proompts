@@ -117,6 +117,7 @@ title: Architecture
 - [TOGAF Preliminary Phase](prompts/technical/architecture/togaf/preliminary_phase.prompt.md)
 - [TOGAF Requirements Management](prompts/technical/architecture/togaf/requirements_management.prompt.md)
 - [transactional_outbox_event_publishing_architect](prompts/technical/architecture/transactional_outbox_event_publishing_architect.prompt.md)
+- [Underwater Acoustic Sensor Network Architect](prompts/technical/architecture/underwater_acoustic_sensor_network_architect.prompt.md)
 - [Virtual Waiting Room Fair Access Architect](prompts/technical/architecture/virtual_waiting_room_fair_access_architect.prompt.md)
 - [WASM Edge Serverless Runtime Architect](prompts/technical/architecture/wasm_edge_serverless_runtime_architect.prompt.md)
 - [WebAssembly Sandboxed Plugin Architect](prompts/technical/architecture/webassembly_sandboxed_plugin_architect.prompt.md)
