@@ -70,6 +70,7 @@ title: Architecture
 - [High-Throughput Order Matching Engine Architect](prompts/technical/architecture/high_throughput_order_matching_engine_architect.prompt.md)
 - [high_throughput_distributed_counter_architect](prompts/technical/architecture/high_throughput_distributed_counter_architect.prompt.md)
 - [HTAP Real-Time Analytics Architect](prompts/technical/architecture/htap_real_time_analytics_architect.prompt.md)
+- [hyper_scale_inventory_reservation_architect](prompts/technical/architecture/hyper_scale_inventory_reservation_architect.prompt.md)
 - [Idempotency and API Retry Strategy Architect](prompts/technical/architecture/idempotency_strategy_architect.prompt.md)
 - [Immutable Financial Ledger Architect](prompts/technical/architecture/immutable_financial_ledger_architect.prompt.md)
 - [IoT Digital Twin Architect](prompts/technical/architecture/iot_digital_twin_architect.prompt.md)
