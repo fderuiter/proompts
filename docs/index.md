@@ -1054,6 +1054,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Living-off-the-Land Behavioral SIEM Query Architect](prompts/technical/security/secops/lotl_behavioral_siem_query_architect.prompt.md)
 - [macOS ESF Unified Logging Threat Hunter](prompts/technical/security/secops/macos_esf_unified_logging_threat_hunter.prompt.md)
 - [Threat Intelligence Fusion Attribution Architect](prompts/technical/security/secops/threat_intelligence_fusion_attribution_architect.prompt.md)
+- [Windows ETW Threat Hunting Architect](prompts/technical/security/secops/windows_etw_threat_hunting_architect.prompt.md)
 
 ## Site Acquisition
 
