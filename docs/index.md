@@ -1047,6 +1047,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Advanced SOAR Playbook Engineering Architect](prompts/technical/security/secops/advanced_soar_playbook_engineering_architect.prompt.md)
 - [APT Threat Hunting Hypothesis Generation Architect](prompts/technical/security/secops/apt_threat_hypothesis_generation_architect.prompt.md)
 - [Cloud Identity Fabric Threat Hunting Architect](prompts/technical/security/secops/cloud_identity_fabric_threat_hunting_architect.prompt.md)
+- [EDR Evasion and Telemetry Tampering Forensics Architect](prompts/technical/security/secops/edr_evasion_telemetry_tampering_forensics_architect.prompt.md)
 - [Firmware and UEFI Bootkit Forensics Analyst](prompts/technical/security/secops/firmware_uefi_bootkit_forensics_analyst.prompt.md)
 - [Forensic Super Timeline Analysis Architect](prompts/technical/security/secops/forensic_super_timeline_analysis_architect.prompt.md)
 - [Living-off-the-Land Behavioral SIEM Query Architect](prompts/technical/security/secops/lotl_behavioral_siem_query_architect.prompt.md)

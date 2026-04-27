@@ -37,6 +37,7 @@ title: Technical
 - [Dependencies & Security Posture Analysis](prompts/technical/repository_refactoring/dependencies_security_analysis.prompt.md)
 - [Documentation and Repository Structure Implementation](prompts/technical/repository_refactoring/documentation_structure_implementation.prompt.md)
 - [eBPF Runtime Security Architect](prompts/technical/security/ebpf_runtime_security_architect.prompt.md)
+- [EDR Evasion and Telemetry Tampering Forensics Architect](prompts/technical/security/secops/edr_evasion_telemetry_tampering_forensics_architect.prompt.md)
 - [Finite Element Analysis (FEA) Interpreter](prompts/technical/hardware_engineering/finite_element_analysis_interpreter.prompt.md)
 - [Firmware and UEFI Bootkit Forensics Analyst](prompts/technical/security/secops/firmware_uefi_bootkit_forensics_analyst.prompt.md)
 - [Forensic Super Timeline Analysis Architect](prompts/technical/security/secops/forensic_super_timeline_analysis_architect.prompt.md)
