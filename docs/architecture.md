@@ -25,6 +25,7 @@ title: Architecture
 - [Data Privacy Clean Room Architect](prompts/technical/architecture/data_privacy_clean_room_architect.prompt.md)
 - [Data Residency & Localization Architect](prompts/technical/architecture/data_residency_localization_architect.prompt.md)
 - [Decentralized Identity and Verifiable Credentials Architect](prompts/technical/architecture/decentralized_identity_verifiable_credentials_architect.prompt.md)
+- [Distributed Actor Model Architect](prompts/technical/architecture/distributed_actor_model_architect.prompt.md)
 - [Distributed Caching Strategy Architect](prompts/technical/architecture/distributed_caching_strategy_architect.prompt.md)
 - [Distributed Database Clock Synchronization Architect](prompts/technical/architecture/distributed_database_clock_synchronization_architect.prompt.md)
 - [Distributed Database Sharding Architect](prompts/technical/architecture/distributed_database_sharding_architect.prompt.md)
