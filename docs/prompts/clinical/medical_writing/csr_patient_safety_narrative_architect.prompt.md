@@ -56,15 +56,18 @@ testData:
   - variables:
       subject_data: "Subject ID: 405-012. 62yo Female. Med Hx: Type 2 Diabetes, Hyperlipidemia. Event: Acute Kidney Injury (AKI) reported on Study Day 28. Lab on Day 28: Serum Creatinine 2.4 mg/dL (Baseline: 0.9 mg/dL). Action taken: Study drug interrupted. Investigator causality assessment: Probable. Concomitant meds: Metformin, Atorvastatin. Outcome: Recovered on Day 40 after IV fluids."
       protocol_details: "Study ONC-992. Phase 2, open-label trial of Investigational Agent Beta (100mg IV Q2W) for advanced solid tumors. Primary safety endpoint includes renal toxicity monitoring."
+  - variables:
+      subject_data: "Subject ID: 219-084. 45yo Male. Event: Severe Anaphylaxis reported on Study Day 2. Lab on Day 2: Not reported. Action taken: Study drug permanently discontinued. Investigator causality assessment: Definite. Concomitant meds: None reported. Outcome: Recovered on Day 3 after Epinephrine IM."
+      protocol_details: "Study IMM-104. Phase 3 trial of Monoclonal Antibody Gamma for rheumatoid arthritis."
+  - variables:
+      subject_data: "Subject ID: 901-055. 71yo Male. Med Hx: Hypertension, Atrial Fibrillation. Event: Unexplained syncope on Study Day 15. Causality assessment: Missing/Not provided by investigator. Action taken: Not reported. Outcome: Unknown, lost to follow-up on Day 20."
+      protocol_details: "Study CV-202. Phase 2b trial of Anti-arrhythmic Delta (50mg PO QD) for chronic AFib. Secondary safety endpoint includes continuous ECG monitoring."
 evaluators:
-  - type: string_match
-    property: content
-    expected: "405-012"
-  - type: string_match
-    property: content
-    expected: "Acute Kidney Injury"
-  - type: string_match
-    property: content
-    expected: "Study Day 28"
+  - type: regex
+    pattern: "405-012|219-084|901-055"
+  - type: regex
+    pattern: "Acute Kidney Injury|Severe Anaphylaxis|Unexplained syncope"
+  - type: regex
+    pattern: "Study Day [0-9]+"
 
 ```

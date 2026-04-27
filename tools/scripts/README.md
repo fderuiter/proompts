@@ -93,12 +93,6 @@ pip install -r requirements.txt
 
 ## Validation & Testing
 
-### JSON Schema & IDE Integration
-
-You can get autocomplete and real-time validation in your IDE (like VS Code or JetBrains) for all `.prompt.yaml` and `.workflow.yaml` files.
-
-For setup instructions, see the **[JSON Schemas Guide](../../docs/schemas/README.md)**.
-
 ### `test_all.py`
 
 **The Master Runner.** Runs all repository validation checks in sequence.

@@ -72,11 +72,6 @@ testData:
       Repository Overview
 ```
 
-## IDE Integration
-
-You can get autocomplete and real-time validation in your IDE (like VS Code or JetBrains) for all `.prompt.yaml` and `.workflow.yaml` files.
-See the **[JSON Schemas Guide](schemas/README.md)** for setup instructions.
-
 ## Search Prompts
 
 You can search for prompts using the included script:
