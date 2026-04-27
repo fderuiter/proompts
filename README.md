@@ -11,7 +11,7 @@ A curated set of prompts in YAML for AI-assisted product development, regulatory
 | Path | Description | Key Contents |
 | :--- | :--- | :--- |
 | **[`prompts/`](prompts/)** | **The Core Library.** <br> YAML-based prompts organized by domain. | `business/`, `clinical/`, `technical/` |
-| **[`workflows/`](workflows/)** | **Chained Sequences.** <br> Multi-step prompt chains for complex tasks. | `paw_workflow.workflow.yaml` |
+| **[`workflows/`](workflows/)** | **Chained Sequences.** <br> Multi-step prompt chains for complex tasks. | `technical/software_engineering/paw_workflow.workflow.yaml` |
 | **[`tools/`](tools/overview.md)** | **The Engine Room.** <br> Utilities for maintenance and development. | [`scripts/`](tools/scripts/README.md) (Python), [`prompt_tools/`](tools/prompt_tools/README.md) (Meta-prompts) |
 | **[`scripts/`](scripts/)** | **Shell Wrappers.** <br> Convenience scripts for common tasks. | `validate_prompts.sh` |
 | **[`docs/`](docs/)** | **Knowledge Base.** <br> Guides, usage instructions, and generated docs. | `USAGE.md`, `BEST_PRACTICES.md` |
