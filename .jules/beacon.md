@@ -10,3 +10,10 @@
 
 3. **"TODO" Placeholders in Scripts vs Prompts:**
    There are several literal "TODO" strings injected by scripts (like `migrate_prompts.py`) to indicate missing descriptions. These need to be cleaned up periodically by `enrich_prompts.py`. The use of `TODO.md` as an orchestrator concept is separate and well-documented inside the prompt templates.
+# 💡 Beacon Journal
+
+## Critical Learnings
+
+### 2025-05-18: The `scripts/` vs `tools/scripts/` Confusion
+- **Knowledge Gap**: The `scripts/` directory lacked clear context explaining *why* it exists alongside the similarly named `tools/scripts/` directory.
+- **Action Taken**: Refactored `scripts/README.md` to use the WHAT-WHY-HOW pattern, clarifying that `scripts/` contains top-level wrappers for everyday developer usage, while `tools/scripts/` is the "Engine Room" for granular Python utilities. Added usage examples to reduce cognitive load.
