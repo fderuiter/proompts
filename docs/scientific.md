@@ -159,6 +159,7 @@ title: Scientific
 - [mirrleesian_optimal_income_tax_architect](prompts/scientific/economics/public_economics/optimal_tax_theory/mirrleesian_optimal_income_tax_architect.prompt.md)
 - [mixed_frequency_dynamic_factor_nowcasting_architect](prompts/scientific/economics/econometrics/time_series/mixed_frequency_dynamic_factor_nowcasting_architect.prompt.md)
 - [Modal Logic Possible Worlds Evaluator](prompts/scientific/philosophy/logic/philosophical_logic/modal_logic_possible_worlds_evaluator.prompt.md)
+- [model_theoretic_type_space_architect](prompts/scientific/mathematics/foundations/model_theory/model_theoretic_type_space_architect.prompt.md)
 - [molecular_dynamics_simulation_architect](prompts/scientific/computational_biology/molecular_dynamics_simulation_architect.prompt.md)
 - [mu_recursive_function_derivation_architect](prompts/scientific/mathematics/formal_logic/mu_recursive_function_derivation_architect.prompt.md)
 - [multi_modal_fmri_eeg_integration_architect](prompts/scientific/computational_theoretical_neuroscience/multi_modal_fmri_eeg_integration_architect.prompt.md)
