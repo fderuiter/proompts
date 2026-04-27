@@ -1,3 +1,0 @@
-- Learned that `todo_fix.md` is expected to be present at the root but was missing, meaning `fix_markdown_issues.py` can fail if not handled manually.
-- The workflow simulation tool `run_workflow.py` relies on the `testData` within prompt YAMLs and doesn't actually call an LLM API.
-- The `prompts/README.md` refers to `workflows/` as being organized by domain.
