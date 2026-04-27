@@ -504,6 +504,7 @@
 [PromptCrafter GPT](prompts/meta/meta_prompt_chain/05_L5_promptcrafter_gpt.prompt.md)
 [README Generator](prompts/meta/meta_prompt_chain/05_L5_readme-generator.prompt.md)
 [Vector Prompt Calibration Evaluator](prompts/meta/meta_prompt_chain/vector_calibration.prompt.md)
+[Non-Monotonic Self-Correction Meta-Reasoner](prompts/meta/recursive_logic/non_monotonic_self_correction_reasoner.prompt.md)
 [mereological_composition_analyzer](prompts/scientific/philosophy/metaphysics/ontology/mereological_composition_analyzer.prompt.md)
 [Metaphysical Dialectical Synthesizer](prompts/scientific/philosophy/metaphysics/ontology/metaphysical_dialectical_synthesizer.prompt.md)
 [metaphysical_grounding_fundamentality_formalizer](prompts/scientific/philosophy/metaphysics/ontology/metaphysical_grounding_fundamentality_formalizer.prompt.md)
