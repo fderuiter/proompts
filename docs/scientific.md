@@ -245,6 +245,7 @@ title: Scientific
 - [structural_vector_autoregression_architect](prompts/scientific/economics/econometrics/time_series/structural_vector_autoregression_architect.prompt.md)
 - [Study Design and Statistical Approach](prompts/scientific/biostatistics/study_design_statistical_approach.prompt.md)
 - [Submission-Ready Statistical Analysis Plan](prompts/scientific/biostatistics/submission_ready_sap.prompt.md)
+- [Symplectic Integrator Hamiltonian Systems Architect](prompts/scientific/mathematics/numerical_methods/symplectic_integrator_hamiltonian_systems_architect.prompt.md)
 - [synaptic_plasticity_weight_update_architect](prompts/scientific/computational_theoretical_neuroscience/synaptic_plasticity_weight_update_architect.prompt.md)
 - [Synthetic Control Method Architect](prompts/scientific/economics/econometrics/causal_inference/synthetic_control_method_architect.prompt.md)
 - [synthetic_media_epistemic_collapse_modeler](prompts/scientific/psychology/computational/network_contagion/synthetic_media_epistemic_collapse_modeler.prompt.md)
