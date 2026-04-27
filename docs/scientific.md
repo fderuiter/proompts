@@ -28,6 +28,7 @@ title: Scientific
 - [Bioburden Testing SOP](prompts/scientific/microbiology/microbiology_workflow/01_bioburden_testing_sop.prompt.md)
 - [Biological Evaluation Plan Builder](prompts/scientific/biosafety/bep_builder.prompt.md)
 - [Biological Safety Plan Developer](prompts/scientific/biosafety/biological_safety_workflow/02_biological_safety_plan_developer.prompt.md)
+- [biological_stochastic_lotka_volterra_population_modeler](prompts/scientific/biology/ecology/population_dynamics/biological_stochastic_lotka_volterra_population_modeler.prompt.md)
 - [biophysical_hodgkin_huxley_modeler](prompts/scientific/computational_theoretical_neuroscience/biophysical_hodgkin_huxley_modeler.prompt.md)
 - [Black Hole Perturbation Teukolsky Architect](prompts/scientific/physics/relativity/general_relativity/black_hole_perturbation_teukolsky_architect.prompt.md)
 - [blinder_oaxaca_decomposition_architect](prompts/scientific/sociology/methods/quantitative/blinder_oaxaca_decomposition_architect.prompt.md)
