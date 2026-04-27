@@ -974,6 +974,7 @@
 [Serverless Function Orchestration Architect](prompts/technical/architecture/serverless_function_orchestration_architect.prompt.md)
 [Service Mesh Security Architect](prompts/technical/architecture/service_mesh_security_architect.prompt.md)
 [SOLID Codebase Analysis](prompts/technical/architecture/solid_codebase_analysis.prompt.md)
+[Space-Based Architecture Designer](prompts/technical/architecture/space_based_architecture_designer.prompt.md)
 [Spatial Geofencing Topology Architect](prompts/technical/architecture/spatial_geofencing_topology_architect.prompt.md)
 [Stateful Workflow Orchestration Architect](prompts/technical/architecture/stateful_workflow_orchestration_architect.prompt.md)
 [Strangler Fig Migration Architect](prompts/technical/architecture/strangler_fig_migration_architect.prompt.md)
