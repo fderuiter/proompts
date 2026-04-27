@@ -208,6 +208,7 @@
 [dimensional_psychopathology_hierarchical_modeler](prompts/scientific/psychology/clinical/psychopathology/dimensional_psychopathology_hierarchical_modeler.prompt.md)
 [evidence_based_intervention_architect](prompts/scientific/psychology/clinical/treatment_planning/evidence_based_intervention_architect.prompt.md)
 [cognitive_bias_mitigation_architect](prompts/scientific/psychology/cognitive/information_processing/cognitive_bias_mitigation_architect.prompt.md)
+[signal_detection_theory_architect](prompts/scientific/psychology/cognitive/information_processing/signal_detection_theory_architect.prompt.md)
 [80/20 Crash Course](prompts/communication/80_20_crash_course.prompt.md)
 [Principal Science Communicator (Analogy Engine)](prompts/communication/analogy_architect.prompt.md)
 [Data-to-Insight Analyst](prompts/communication/data_to_insight_analyst.prompt.md)

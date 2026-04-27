@@ -295,6 +295,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Cognitive
 
 - [cognitive_bias_mitigation_architect](prompts/scientific/psychology/cognitive/information_processing/cognitive_bias_mitigation_architect.prompt.md)
+- [signal_detection_theory_architect](prompts/scientific/psychology/cognitive/information_processing/signal_detection_theory_architect.prompt.md)
 
 ## Communication
 
