@@ -14,9 +14,6 @@ env/
 .idea/
 .DS_Store
 
-# Agent Tools
-.jules/*
-
 # Logs
 *.log
 npm-debug.log*
