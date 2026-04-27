@@ -297,6 +297,7 @@
 [CRF Quality Auditor](prompts/clinical/forms/clinical_prompts_workflow/02_crf_quality_auditor.prompt.md)
 [CDASH Mapping & Completion-Guide Assistant](prompts/clinical/forms/clinical_prompts_workflow/03_cdash_mapping_completion_guide.prompt.md)
 [structural_proof_theory_cut_elimination_architect](prompts/scientific/formal_logic/foundations/proof_theory/structural_proof_theory_cut_elimination_architect.prompt.md)
+[model_theoretic_type_space_architect](prompts/scientific/mathematics/foundations/model_theory/model_theoretic_type_space_architect.prompt.md)
 [homotopy_type_theory_univalence_architect](prompts/scientific/mathematics/foundations/proof_theory/homotopy_type_theory_univalence_architect.prompt.md)
 [intuitionistic_logic_natural_deduction_generator](prompts/scientific/mathematics/foundations/proof_theory/intuitionistic_logic_natural_deduction_generator.prompt.md)
 [forcing_poset_generic_extension_architect](prompts/scientific/mathematics/foundations/set_theory/forcing_poset_generic_extension_architect.prompt.md)
