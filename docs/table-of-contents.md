@@ -1047,6 +1047,7 @@
 [System Design RFC Architect](prompts/technical/design/design_md_template.prompt.md)
 [AI Email Assistant Go/No-Go Vote](prompts/technical/design/email_assistant_go_no_go_vote.prompt.md)
 [Heuristic-Evaluation Coach](prompts/technical/design/heuristic_evaluation_coach.prompt.md)
+[Ephemeral Environment Architect](prompts/technical/devops/ephemeral_environment_architect.prompt.md)
 [Forge - Script Reliability Agent](prompts/technical/devops/forge_script_reliability.prompt.md)
 [gitops_continuous_delivery_architect](prompts/technical/devops/gitops_continuous_delivery_architect.prompt.md)
 [Infrastructure as Code (IaC) Security Architect](prompts/technical/devops/infrastructure_as_code_security_architect.prompt.md)
