@@ -45,6 +45,7 @@ title: Scientific
 - [Chemical Characterization & TRA Work Plan](prompts/scientific/biosafety/chemical_characterization_work_plan.prompt.md)
 - [Chiral Anomaly Fujikawa Path Integral Architect](prompts/scientific/physics/quantum_field_theory/chiral_anomaly_fujikawa_path_integral_architect.prompt.md)
 - [chromatin_conformation_hic_contact_map_architect](prompts/scientific/genetics/genomics/chromatin_conformation_hic_contact_map_architect.prompt.md)
+- [chronic_loneliness_spatial_epidemiology_architect](prompts/scientific/psychology/epidemiology/global_mental_health/chronic_loneliness_spatial_epidemiology_architect.prompt.md)
 - [Clinical Study Report (CSR) Writing](prompts/scientific/medical_writing/csr_writing.prompt.md)
 - [ClinRO User Manual Generator](prompts/scientific/coa/clinro_training_manual.prompt.md)
 - [cognitive_bias_epistemological_deconstructor](prompts/scientific/philosophy/epistemology/formal_epistemology/cognitive_bias_epistemological_deconstructor.prompt.md)
