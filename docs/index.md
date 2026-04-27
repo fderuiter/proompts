@@ -1051,6 +1051,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Clinical Study Report (CSR) Writing](prompts/scientific/medical_writing/csr_writing.prompt.md)
 - [investigators_brochure_synthesis_architect](prompts/scientific/medical_writing/investigators_brochure_synthesis_architect.prompt.md)
 
+## Secops
+
+- [OAuth Illicit Consent Grant Forensics Analyst](prompts/technical/security/secops/incident_response/oauth_illicit_consent_grant_forensics_analyst.prompt.md)
+
 ## Security
 
 - [Identity Threat Detection and Response Architect](prompts/technical/security/iam_security/identity_threat_detection_response_architect.prompt.md)
@@ -1278,6 +1282,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Massive-Scale IoT OTA Update Architect](prompts/technical/architecture/massive_scale_iot_ota_architect.prompt.md)
 - [Micro-Frontend Orchestration Architect](prompts/technical/architecture/micro_frontend_orchestration_architect.prompt.md)
 - [Multi-Agent Orchestration Architect](prompts/technical/architecture/multi_agent_orchestration_architect.prompt.md)
+- [Multi-CDN Edge Routing Architect](prompts/technical/architecture/multi_cdn_edge_routing_architect.prompt.md)
 - [Multi-Cloud Disaster Recovery Architect](prompts/technical/architecture/multi_cloud_disaster_recovery_architect.prompt.md)
 - [Multi-Region Active-Active Resilience Architect](prompts/technical/architecture/multi_region_active_active_resilience.prompt.md)
 - [Multi-Region K8s Federation Architect](prompts/technical/architecture/multi_region_k8s_federation_architect.prompt.md)
