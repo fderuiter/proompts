@@ -406,6 +406,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [staggered_difference_in_differences_architect](prompts/scientific/economics/econometrics/causal_inference/staggered_difference_in_differences_architect.prompt.md)
 - [Synthetic Control Method Architect](prompts/scientific/economics/econometrics/causal_inference/synthetic_control_method_architect.prompt.md)
 - [dynamic_panel_gmm_architect](prompts/scientific/economics/econometrics/panel_data/dynamic_panel_gmm_architect.prompt.md)
+- [bayesian_vector_autoregression_architect](prompts/scientific/economics/econometrics/time_series/bayesian_vector_autoregression_architect.prompt.md)
 - [markov_switching_var_architect](prompts/scientific/economics/econometrics/time_series/markov_switching_var_architect.prompt.md)
 - [mixed_frequency_dynamic_factor_nowcasting_architect](prompts/scientific/economics/econometrics/time_series/mixed_frequency_dynamic_factor_nowcasting_architect.prompt.md)
 - [structural_vector_autoregression_architect](prompts/scientific/economics/econometrics/time_series/structural_vector_autoregression_architect.prompt.md)
@@ -568,6 +569,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Deontic Logic Normative Conflict Resolver](prompts/scientific/philosophy/logic/philosophical_logic/deontic_logic_normative_conflict_resolver.prompt.md)
 - [Modal Logic Possible Worlds Evaluator](prompts/scientific/philosophy/logic/philosophical_logic/modal_logic_possible_worlds_evaluator.prompt.md)
 - [paraconsistent_logic_dialetheism_evaluator](prompts/scientific/philosophy/logic/philosophical_logic/paraconsistent_logic_dialetheism_evaluator.prompt.md)
+- [Temporal Logic Branching Time Evaluator](prompts/scientific/philosophy/logic/philosophical_logic/temporal_logic_branching_time_evaluator.prompt.md)
 
 ## Macroeconomics
 
