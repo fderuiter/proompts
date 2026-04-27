@@ -14,6 +14,7 @@ title: Meta
 - [Master Ultrameta Prompt Architect](prompts/meta/meta_prompt_chain/00_L0_master-ultrameta.prompt.md)
 - [MECE Structuring Consultant](prompts/meta/meta_prompt_chain/05_L5_mece_structuring.prompt.md)
 - [Meta Prompt Architect](prompts/meta/meta_prompt_chain/01_L1_meta-prompt-architect.prompt.md)
+- [Non-Monotonic Self-Correction Meta-Reasoner](prompts/meta/recursive_logic/non_monotonic_self_correction_reasoner.prompt.md)
 - [Prompt Engineer Fact Checker](prompts/meta/meta_prompt_chain/05_L5_prompt_engineer_fact_checker.prompt.md)
 - [Prompt Engineer Template](prompts/meta/meta_prompt_chain/02_L2_prompt-engineer.prompt.md)
 - [PromptCrafter GPT](prompts/meta/meta_prompt_chain/05_L5_promptcrafter_gpt.prompt.md)
