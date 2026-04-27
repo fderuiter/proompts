@@ -451,6 +451,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Foundations
 
+- [custom_axiomatic_system_soundness_evaluator](prompts/scientific/formal_logic/foundations/proof_theory/custom_axiomatic_system_soundness_evaluator.prompt.md)
 - [structural_proof_theory_cut_elimination_architect](prompts/scientific/formal_logic/foundations/proof_theory/structural_proof_theory_cut_elimination_architect.prompt.md)
 - [coquands_calculus_of_constructions_architect](prompts/scientific/mathematics/foundations/proof_theory/coquands_calculus_of_constructions_architect.prompt.md)
 - [homotopy_type_theory_univalence_architect](prompts/scientific/mathematics/foundations/proof_theory/homotopy_type_theory_univalence_architect.prompt.md)
