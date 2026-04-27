@@ -79,6 +79,7 @@ title: Technical
 - [Topological Data Analysis Architect](prompts/technical/data_science/topological_data_analysis_architect.prompt.md)
 - [Universal Automation Agent](prompts/technical/automation/universal_automation_agent.prompt.md)
 - [Vector Prompt Editor-in-Chief](prompts/technical/prompt_engineering/vector_prompt_editor_in_chief.prompt.md)
+- [Windows ETW Threat Hunting Architect](prompts/technical/security/secops/windows_etw_threat_hunting_architect.prompt.md)
 - [Zero Trust Privileged Access Management Architect](prompts/technical/security/iam_security/zero_trust_pam_architect.prompt.md)
 - [Zero-Day Incident Containment Architect](prompts/technical/security/zero_day_containment_architect.prompt.md)
 - [Zero-Knowledge Proof Protocol Architect](prompts/technical/security/zero_knowledge_proof_protocol_architect.prompt.md)

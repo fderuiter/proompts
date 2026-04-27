@@ -776,6 +776,7 @@
 [Living-off-the-Land Behavioral SIEM Query Architect](prompts/technical/security/secops/lotl_behavioral_siem_query_architect.prompt.md)
 [macOS ESF Unified Logging Threat Hunter](prompts/technical/security/secops/macos_esf_unified_logging_threat_hunter.prompt.md)
 [Threat Intelligence Fusion Attribution Architect](prompts/technical/security/secops/threat_intelligence_fusion_attribution_architect.prompt.md)
+[Windows ETW Threat Hunting Architect](prompts/technical/security/secops/windows_etw_threat_hunting_architect.prompt.md)
 [Site Landscape Mapping & Prioritization](prompts/clinical/site_acquisition/site_acquisition_workflow/01_site_landscape_mapping.prompt.md)
 [Tailored Feasibility-Questionnaire Builder](prompts/clinical/site_acquisition/site_acquisition_workflow/02_tailored_feasibility_questionnaire.prompt.md)
 [Personalized Investigator-Outreach Email Generator](prompts/clinical/site_acquisition/site_acquisition_workflow/03_investigator_outreach_email_generator.prompt.md)
