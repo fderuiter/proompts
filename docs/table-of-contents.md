@@ -263,6 +263,7 @@
 [Controlled Terminology Harmonizer](prompts/clinical/data_management/cdisc_compliance_workflow/04_controlled_terminology_harmonizer.prompt.md)
 [ADaM ADRS RECIST Derivation Architect](prompts/clinical/data_management/cdisc_compliance_workflow/05_adam_adrs_recist_derivation_architect.prompt.md)
 [Pinnacle 21 Conformance Resolution Architect](prompts/clinical/data_management/cdisc_compliance_workflow/06_pinnacle21_conformance_resolution_architect.prompt.md)
+[SDTM Cardiovascular Device Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/09_sdtm_cardiovascular_device_mapping_architect.prompt.md)
 [SDTM Medical Device Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/08_sdtm_medical_device_mapping_architect.prompt.md)
 [SDTM Pharmacokinetics Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/07_sdtm_pharmacokinetics_mapping_architect.prompt.md)
 [SDTM Device Deficiencies Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/15_sdtm_device_deficiencies_architect.prompt.md)
