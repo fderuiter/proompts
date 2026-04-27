@@ -59,6 +59,7 @@ title: Technical
 - [PCB Layout Topology Reviewer](prompts/technical/hardware_engineering/pcb_layout_topology_reviewer.prompt.md)
 - [Post-Quantum Cryptography Migration Architect](prompts/technical/security/post_quantum_cryptography_migration_architect.prompt.md)
 - [post_quantum_cryptography_migration_architect](prompts/technical/cryptography/post_quantum_cryptography_migration_architect.prompt.md)
+- [Recursive Metacognitive Error Corrector](prompts/technical/recursive_logic/recursive_metacognitive_error_corrector.prompt.md)
 - [red_team_exploit_chain_architect](prompts/technical/security/red_team_exploit_chain_architect.prompt.md)
 - [Reinforcement Learning Reward Function Architect](prompts/technical/data_science/reinforcement_learning_reward_function_architect.prompt.md)
 - [Repository Foundation & Developer Experience Analysis](prompts/technical/repository_refactoring/repo_foundation_analysis.prompt.md)
