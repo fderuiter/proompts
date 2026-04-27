@@ -52,6 +52,7 @@ title: Architecture
 - [Fine-Grained Authorization Architect](prompts/technical/architecture/fine_grained_authorization_architect.prompt.md)
 - [finops_cloud_cost_optimization_architect](prompts/technical/architecture/finops_cloud_cost_optimization_architect.prompt.md)
 - [Generative AI Guardrails Gateway Architect](prompts/technical/architecture/generative_ai_guardrails_gateway_architect.prompt.md)
+- [Global CDN Topology Architect](prompts/technical/architecture/global_cdn_topology_architect.prompt.md)
 - [GPU Cluster Orchestration Architect](prompts/technical/architecture/gpu_cluster_orchestration_architect.prompt.md)
 - [Graph Database Traversal Architect](prompts/technical/architecture/graph_database_traversal_architect.prompt.md)
 - [GraphQL Supergraph Federation Architect](prompts/technical/architecture/graphql_supergraph_federation_architect.prompt.md)
