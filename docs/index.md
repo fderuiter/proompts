@@ -523,6 +523,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [bayesian_hierarchical_model_architect](prompts/scientific/statistics/inference/bayesian_methods/bayesian_hierarchical_model_architect.prompt.md)
 - [dirichlet_process_mixture_architect](prompts/scientific/statistics/inference/bayesian_methods/dirichlet_process_mixture_architect.prompt.md)
+- [gaussian_process_regression_architect](prompts/scientific/statistics/inference/bayesian_methods/gaussian_process_regression_architect.prompt.md)
 - [reversible_jump_mcmc_architect](prompts/scientific/statistics/inference/bayesian_methods/reversible_jump_mcmc_architect.prompt.md)
 - [variational_inference_architect](prompts/scientific/statistics/inference/bayesian_methods/variational_inference_architect.prompt.md)
 - [double_machine_learning_architect](prompts/scientific/statistics/inference/causal_inference/double_machine_learning_architect.prompt.md)
@@ -705,6 +706,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [PromptCrafter GPT](prompts/meta/meta_prompt_chain/05_L5_promptcrafter_gpt.prompt.md)
 - [README Generator](prompts/meta/meta_prompt_chain/05_L5_readme-generator.prompt.md)
 - [Vector Prompt Calibration Evaluator](prompts/meta/meta_prompt_chain/vector_calibration.prompt.md)
+- [Non-Monotonic Self-Correction Meta-Reasoner](prompts/meta/recursive_logic/non_monotonic_self_correction_reasoner.prompt.md)
 
 ## Metaphysics
 
@@ -1050,6 +1052,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Clinical Study Report (CSR) Writing](prompts/scientific/medical_writing/csr_writing.prompt.md)
 - [investigators_brochure_synthesis_architect](prompts/scientific/medical_writing/investigators_brochure_synthesis_architect.prompt.md)
 
+## Secops
+
+- [OAuth Illicit Consent Grant Forensics Analyst](prompts/technical/security/secops/incident_response/oauth_illicit_consent_grant_forensics_analyst.prompt.md)
+
 ## Security
 
 - [Identity Threat Detection and Response Architect](prompts/technical/security/iam_security/identity_threat_detection_response_architect.prompt.md)
@@ -1233,6 +1239,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Distributed Lock Manager Architect](prompts/technical/architecture/distributed_lock_manager_architect.prompt.md)
 - [Distributed Observability and Telemetry Architect](prompts/technical/architecture/distributed_observability_telemetry_architect.prompt.md)
 - [Distributed Rate Limiting Architect](prompts/technical/architecture/distributed_rate_limiting_architect.prompt.md)
+- [Distributed Secrets Management Topology Architect](prompts/technical/architecture/distributed_secrets_management_topology_architect.prompt.md)
 - [Distributed Task Queue and Background Job Processing Architect](prompts/technical/architecture/distributed_task_queue_architect.prompt.md)
 - [Distributed Transaction Orchestration Architect](prompts/technical/architecture/distributed_transaction_orchestration_architect.prompt.md)
 - [Distributed Vector Database Architect](prompts/technical/architecture/distributed_vector_database_architect.prompt.md)
@@ -1271,12 +1278,14 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Immutable Financial Ledger Architect](prompts/technical/architecture/immutable_financial_ledger_architect.prompt.md)
 - [IoT Digital Twin Architect](prompts/technical/architecture/iot_digital_twin_architect.prompt.md)
 - [Leader Election and Split-Brain Mitigation Architect](prompts/technical/architecture/leader_election_split_brain_mitigation_architect.prompt.md)
+- [LEO Satellite Mesh Network Architect](prompts/technical/architecture/leo_satellite_mesh_network_architect.prompt.md)
 - [LLM Distributed Training Architect](prompts/technical/architecture/llm_distributed_training_architect.prompt.md)
 - [Log-Structured Merge Tree Storage Architect](prompts/technical/architecture/log_structured_merge_tree_storage_architect.prompt.md)
 - [Maintainability Codebase Analysis](prompts/technical/architecture/maintainability_codebase_analysis.prompt.md)
 - [Massive-Scale IoT OTA Update Architect](prompts/technical/architecture/massive_scale_iot_ota_architect.prompt.md)
 - [Micro-Frontend Orchestration Architect](prompts/technical/architecture/micro_frontend_orchestration_architect.prompt.md)
 - [Multi-Agent Orchestration Architect](prompts/technical/architecture/multi_agent_orchestration_architect.prompt.md)
+- [Multi-CDN Edge Routing Architect](prompts/technical/architecture/multi_cdn_edge_routing_architect.prompt.md)
 - [Multi-Cloud Disaster Recovery Architect](prompts/technical/architecture/multi_cloud_disaster_recovery_architect.prompt.md)
 - [Multi-Region Active-Active Resilience Architect](prompts/technical/architecture/multi_region_active_active_resilience.prompt.md)
 - [Multi-Region K8s Federation Architect](prompts/technical/architecture/multi_region_k8s_federation_architect.prompt.md)
@@ -1289,6 +1298,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Petabyte-Scale Data Lakehouse Architect](prompts/technical/architecture/petabyte_scale_data_lakehouse_architect.prompt.md)
 - [PII Tokenization Vault Architect](prompts/technical/architecture/pii_tokenization_vault_architect.prompt.md)
 - [Platform Engineering IDP Architect](prompts/technical/architecture/platform_engineering_idp_architect.prompt.md)
+- [Polyglot Monorepo Build Orchestration Architect](prompts/technical/architecture/polyglot_monorepo_build_orchestration_architect.prompt.md)
 - [Predictive Auto-Scaling Machine Learning Architect](prompts/technical/architecture/predictive_auto_scaling_machine_learning_architect.prompt.md)
 - [Quantum Key Distribution Network Architect](prompts/technical/architecture/quantum_key_distribution_network_architect.prompt.md)
 - [Quantum-Safe Cryptography Migration Architect](prompts/technical/architecture/quantum_safe_cryptography_migration_architect.prompt.md)
