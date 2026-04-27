@@ -118,6 +118,9 @@ testData:
   - name: Refusal JSON
     regex:
       pattern: '{"error": "unsafe"}'
-evaluators: []
+evaluators:
+  - name: Global No Markdown Enclosure
+    type: regex
+    pattern: "^(?!```).*$"
 
 ```
