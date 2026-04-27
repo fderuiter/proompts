@@ -375,6 +375,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [ADaM ADRS RECIST Derivation Architect](prompts/clinical/data_management/cdisc_compliance_workflow/05_adam_adrs_recist_derivation_architect.prompt.md)
 - [Pinnacle 21 Conformance Resolution Architect](prompts/clinical/data_management/cdisc_compliance_workflow/06_pinnacle21_conformance_resolution_architect.prompt.md)
 - [SDTM Pharmacokinetics Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/07_sdtm_pharmacokinetics_mapping_architect.prompt.md)
+- [SDTM Concomitant Medications Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/14_sdtm_concomitant_medications_mapping_architect.prompt.md)
 - [SDTM Protocol Deviation Modeling Architect](prompts/clinical/data_management/cdisc_compliance_workflow/12_sdtm_protocol_deviation_modeling_architect.prompt.md)
 - [Clinical ETL Mapping Spec](prompts/clinical/data_management/data_management_etl_workflow/01_clinical_etl_mapping_spec.prompt.md)
 - [Clinical ETL Transformation QC](prompts/clinical/data_management/data_management_etl_workflow/02_clinical_etl_transformation_qc.prompt.md)
