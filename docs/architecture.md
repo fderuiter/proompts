@@ -32,6 +32,7 @@ title: Architecture
 - [Distributed Lock Manager Architect](prompts/technical/architecture/distributed_lock_manager_architect.prompt.md)
 - [Distributed Observability and Telemetry Architect](prompts/technical/architecture/distributed_observability_telemetry_architect.prompt.md)
 - [Distributed Rate Limiting Architect](prompts/technical/architecture/distributed_rate_limiting_architect.prompt.md)
+- [Distributed Search Engine Topology Architect](prompts/technical/architecture/distributed_search_engine_topology_architect.prompt.md)
 - [Distributed Task Queue and Background Job Processing Architect](prompts/technical/architecture/distributed_task_queue_architect.prompt.md)
 - [Distributed Transaction Orchestration Architect](prompts/technical/architecture/distributed_transaction_orchestration_architect.prompt.md)
 - [Distributed Vector Database Architect](prompts/technical/architecture/distributed_vector_database_architect.prompt.md)
