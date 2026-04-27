@@ -120,6 +120,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Corporate Capital Budgeting Investment Appraisal Architect](prompts/business/finance/corporate_capital_budgeting_investment_appraisal_architect.prompt.md)
 - [Corporate Financial Distress Predictive Altman Z-Score Architect](prompts/business/finance/corporate_financial_distress_predictive_altman_z_score_architect.prompt.md)
 - [Corporate Merger Arbitrage Deal Risk Architect](prompts/business/finance/corporate_merger_arbitrage_risk_architect.prompt.md)
+- [Corporate Treasury ALM Duration Gap Architect](prompts/business/finance/corporate_treasury_alm_duration_gap_architect.prompt.md)
 - [Quantitative Enterprise Working Capital CCC Architect](prompts/business/finance/quantitative_enterprise_working_capital_ccc_architect.prompt.md)
 - [Quantitative M&A Accretion Dilution Architect](prompts/business/finance/quantitative_ma_accretion_dilution_architect.prompt.md)
 - [Quantitative Private Equity Dividend Recapitalization Architect](prompts/business/finance/quantitative_private_equity_dividend_recapitalization_architect.prompt.md)
@@ -333,6 +334,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [TD-DFT Excited-State Dynamics Architect](prompts/scientific/chemistry/computational/quantum_chemistry/td_dft_excited_state_dynamics_architect.prompt.md)
 - [algorithmic_behavior_echo_chamber_modeler](prompts/scientific/psychology/computational/network_contagion/algorithmic_behavior_echo_chamber_modeler.prompt.md)
 - [behavioral_epidemiology_social_contagion_modeler](prompts/scientific/psychology/computational/network_contagion/behavioral_epidemiology_social_contagion_modeler.prompt.md)
+- [cognitive_dissonance_cascade_modeler](prompts/scientific/psychology/computational/network_contagion/cognitive_dissonance_cascade_modeler.prompt.md)
 - [cognitive_inoculation_campaign_architect](prompts/scientific/psychology/computational/network_contagion/cognitive_inoculation_campaign_architect.prompt.md)
 - [gamified_behavioral_addiction_contagion_modeler](prompts/scientific/psychology/computational/network_contagion/gamified_behavioral_addiction_contagion_modeler.prompt.md)
 - [mass_psychogenic_illness_diffusion_modeler](prompts/scientific/psychology/computational/network_contagion/mass_psychogenic_illness_diffusion_modeler.prompt.md)
@@ -379,6 +381,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Design
 
 - [causal_inference_dag_architect](prompts/scientific/statistics/design/causal_inference/causal_inference_dag_architect.prompt.md)
+- [optimal_experimental_design_architect](prompts/scientific/statistics/design/optimal_experimental_design/optimal_experimental_design_architect.prompt.md)
 
 ## Developmental
 
@@ -393,6 +396,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Ecology
 
+- [stochastic_lotka_volterra_simulation_architect](prompts/scientific/biology/ecology/population_dynamics/stochastic_lotka_volterra_simulation_architect.prompt.md)
 - [spatial_metapopulation_seir_epidemiology_architect](prompts/scientific/ecology/population_dynamics/spatial_metapopulation_seir_epidemiology_architect.prompt.md)
 - [stochastic_lotka_volterra_population_modeler](prompts/scientific/ecology/population_dynamics/stochastic_lotka_volterra_population_modeler.prompt.md)
 
@@ -403,6 +407,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Synthetic Control Method Architect](prompts/scientific/economics/econometrics/causal_inference/synthetic_control_method_architect.prompt.md)
 - [dynamic_panel_gmm_architect](prompts/scientific/economics/econometrics/panel_data/dynamic_panel_gmm_architect.prompt.md)
 - [bayesian_vector_autoregression_architect](prompts/scientific/economics/econometrics/time_series/bayesian_vector_autoregression_architect.prompt.md)
+- [markov_switching_var_architect](prompts/scientific/economics/econometrics/time_series/markov_switching_var_architect.prompt.md)
 - [mixed_frequency_dynamic_factor_nowcasting_architect](prompts/scientific/economics/econometrics/time_series/mixed_frequency_dynamic_factor_nowcasting_architect.prompt.md)
 - [structural_vector_autoregression_architect](prompts/scientific/economics/econometrics/time_series/structural_vector_autoregression_architect.prompt.md)
 
@@ -428,6 +433,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Ethics
 
+- [metaethical_discourse_semantic_analyzer](prompts/scientific/philosophy/ethics/metaethics/metaethical_discourse_semantic_analyzer.prompt.md)
 - [Applied Ethical Stress Tester](prompts/scientific/philosophy/ethics/normative_ethics/applied_ethical_stress_tester.prompt.md)
 - [Normative Ethics Stress Tester](prompts/scientific/philosophy/ethics/normative_ethics/normative_ethics_stress_tester.prompt.md)
 
@@ -444,8 +450,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Foundations
 
 - [structural_proof_theory_cut_elimination_architect](prompts/scientific/formal_logic/foundations/proof_theory/structural_proof_theory_cut_elimination_architect.prompt.md)
+- [coquands_calculus_of_constructions_architect](prompts/scientific/mathematics/foundations/proof_theory/coquands_calculus_of_constructions_architect.prompt.md)
 - [homotopy_type_theory_univalence_architect](prompts/scientific/mathematics/foundations/proof_theory/homotopy_type_theory_univalence_architect.prompt.md)
 - [intuitionistic_logic_natural_deduction_generator](prompts/scientific/mathematics/foundations/proof_theory/intuitionistic_logic_natural_deduction_generator.prompt.md)
+- [set_theoretic_forcing_architect](prompts/scientific/mathematics/foundations/proof_theory/set_theoretic_forcing_architect.prompt.md)
 - [forcing_poset_generic_extension_architect](prompts/scientific/mathematics/foundations/set_theory/forcing_poset_generic_extension_architect.prompt.md)
 - [large_cardinal_elementary_embedding_architect](prompts/scientific/mathematics/foundations/set_theory/large_cardinal_elementary_embedding_architect.prompt.md)
 - [Intuitionistic Logic Natural Deduction Prover](prompts/scientific/philosophy/logic/foundations/proof_theory/intuitionistic_logic_natural_deduction_prover.prompt.md)
@@ -560,6 +568,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Deontic Logic Normative Conflict Resolver](prompts/scientific/philosophy/logic/philosophical_logic/deontic_logic_normative_conflict_resolver.prompt.md)
 - [Modal Logic Possible Worlds Evaluator](prompts/scientific/philosophy/logic/philosophical_logic/modal_logic_possible_worlds_evaluator.prompt.md)
 - [paraconsistent_logic_dialetheism_evaluator](prompts/scientific/philosophy/logic/philosophical_logic/paraconsistent_logic_dialetheism_evaluator.prompt.md)
+- [Temporal Logic Branching Time Evaluator](prompts/scientific/philosophy/logic/philosophical_logic/temporal_logic_branching_time_evaluator.prompt.md)
 
 ## Macroeconomics
 
@@ -748,12 +757,15 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [DMAIC Process Optimization Architect](prompts/business/operations/lean_six_sigma/dmaic_process_optimization_architect.prompt.md)
 - [global_supply_chain_geopolitical_duress_architect](prompts/business/operations/supply_chain/global_supply_chain_geopolitical_duress_architect.prompt.md)
 - [Global Supply Chain Resilience Architect](prompts/business/operations/supply_chain/global_supply_chain_resilience_architect.prompt.md)
+- [Stochastic Inventory EOQ Optimization Architect](prompts/business/operations/supply_chain/stochastic_inventory_eoq_optimization_architect.prompt.md)
 - [Supply Chain Network Topology Optimization Architect](prompts/business/operations/supply_chain/supply_chain_network_topology_optimization_architect.prompt.md)
 
 ## Organic
 
+- [Enantioselective Catalytic Mechanism Architect](prompts/scientific/chemistry/organic/asymmetric_synthesis/enantioselective_catalytic_mechanism_architect.prompt.md)
 - [Visible Light Photoredox Pathway Architect](prompts/scientific/chemistry/organic/photoredox_catalysis/visible_light_photoredox_pathway_architect.prompt.md)
 - [advanced_retrosynthetic_pathway_generator](prompts/scientific/chemistry/organic/retrosynthesis/advanced_retrosynthetic_pathway_generator.prompt.md)
+- [multi_step_retrosynthetic_pathway_architect](prompts/scientific/chemistry/organic/retrosynthesis/multi_step_retrosynthetic_pathway_architect.prompt.md)
 
 ## Particle Physics
 
@@ -783,6 +795,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [BRST Quantization and Faddeev-Popov Ghost Architect](prompts/scientific/physics/quantum_field_theory/brst_quantization_faddeev_popov_architect.prompt.md)
 - [Callan-Symanzik Beta Function Architect](prompts/scientific/physics/quantum_field_theory/callan_symanzik_beta_function_architect.prompt.md)
 - [Chiral Anomaly Fujikawa Path Integral Architect](prompts/scientific/physics/quantum_field_theory/chiral_anomaly_fujikawa_path_integral_architect.prompt.md)
+- [coleman_weinberg_effective_potential_architect](prompts/scientific/physics/quantum_field_theory/coleman_weinberg_effective_potential_architect.prompt.md)
 - [effective_field_theory_matching_rg_running_architect](prompts/scientific/physics/quantum_field_theory/effective_field_theory_matching_rg_running_architect.prompt.md)
 - [Feynman Rule Derivation Architect](prompts/scientific/physics/quantum_field_theory/feynman_rule_derivation_architect.prompt.md)
 - [Schwinger-Dyson Equation Architect](prompts/scientific/physics/quantum_field_theory/schwinger_dyson_equation_architect.prompt.md)
@@ -821,9 +834,11 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [multifactorial_behavioral_intervention_architect](prompts/scientific/psychology/quantitative/experimental_design/multifactorial_behavioral_intervention_architect.prompt.md)
 - [cognitive_diagnostic_modeling_architect](prompts/scientific/psychology/quantitative/psychometrics/cognitive_diagnostic_modeling_architect.prompt.md)
+- [generalizability_theory_architect](prompts/scientific/psychology/quantitative/psychometrics/generalizability_theory_architect.prompt.md)
 - [item_response_theory_dif_analyzer](prompts/scientific/psychology/quantitative/psychometrics/item_response_theory_dif_analyzer.prompt.md)
 - [latent_profile_mixture_modeling_architect](prompts/scientific/psychology/quantitative/psychometrics/latent_profile_mixture_modeling_architect.prompt.md)
 - [longitudinal_measurement_invariance_evaluator](prompts/scientific/psychology/quantitative/psychometrics/longitudinal_measurement_invariance_evaluator.prompt.md)
+- [multitrait_multimethod_matrix_evaluator](prompts/scientific/psychology/quantitative/psychometrics/multitrait_multimethod_matrix_evaluator.prompt.md)
 - [network_psychometrics_architect](prompts/scientific/psychology/quantitative/psychometrics/network_psychometrics_architect.prompt.md)
 
 ## Regulatory
@@ -1031,7 +1046,9 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [neural_field_theory_spatiotemporal_dynamics_architect](prompts/scientific/computational_theoretical_neuroscience/neural_field_theory_spatiotemporal_dynamics_architect.prompt.md)
 - [neural_manifold_state_space_analyzer](prompts/scientific/computational_theoretical_neuroscience/neural_manifold_state_space_analyzer.prompt.md)
 - [neuromorphic_spiking_network_biophysical_architect](prompts/scientific/computational_theoretical_neuroscience/neuromorphic_spiking_network_biophysical_architect.prompt.md)
+- [neurovascular_coupling_bold_signal_modeler](prompts/scientific/computational_theoretical_neuroscience/neurovascular_coupling_bold_signal_modeler.prompt.md)
 - [optogenetic_photocurrent_biophysical_modeler](prompts/scientific/computational_theoretical_neuroscience/optogenetic_photocurrent_biophysical_modeler.prompt.md)
+- [point_process_bayesian_neural_decoder_architect](prompts/scientific/computational_theoretical_neuroscience/point_process_bayesian_neural_decoder_architect.prompt.md)
 - [synaptic_plasticity_weight_update_architect](prompts/scientific/computational_theoretical_neuroscience/synaptic_plasticity_weight_update_architect.prompt.md)
 - [whole_brain_biophysical_network_simulator](prompts/scientific/computational_theoretical_neuroscience/whole_brain_biophysical_network_simulator.prompt.md)
 - [Clinical Study Report (CSR) Writing](prompts/scientific/medical_writing/csr_writing.prompt.md)
@@ -1158,8 +1175,11 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Stratification
 
 - [gentrification_displacement_spatial_inequality_architect](prompts/scientific/sociology/stratification/systemic_inequality/gentrification_displacement_spatial_inequality_architect.prompt.md)
+- [global_wealth_stratification_gini_architect](prompts/scientific/sociology/stratification/systemic_inequality/global_wealth_stratification_gini_architect.prompt.md)
+- [intergenerational_social_mobility_markov_chain_architect](prompts/scientific/sociology/stratification/systemic_inequality/intergenerational_social_mobility_markov_chain_architect.prompt.md)
 - [multidimensional_poverty_alkire_foster_architect](prompts/scientific/sociology/stratification/systemic_inequality/multidimensional_poverty_alkire_foster_architect.prompt.md)
 - [occupational_segregation_opportunity_hoarding_architect](prompts/scientific/sociology/stratification/systemic_inequality/occupational_segregation_opportunity_hoarding_architect.prompt.md)
+- [spatial_income_polarization_gini_architect](prompts/scientific/sociology/stratification/systemic_inequality/spatial_income_polarization_gini_architect.prompt.md)
 - [spatial_mismatch_employment_accessibility_modeler](prompts/scientific/sociology/stratification/systemic_inequality/spatial_mismatch_employment_accessibility_modeler.prompt.md)
 - [theil_t_index_inequality_decomposer](prompts/scientific/sociology/stratification/systemic_inequality/theil_t_index_inequality_decomposer.prompt.md)
 - [wealth_concentration_decomposition_architect](prompts/scientific/sociology/stratification/systemic_inequality/wealth_concentration_decomposition_architect.prompt.md)
@@ -1178,6 +1198,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [higher_order_unification_resolution_architect](prompts/scientific/formal_logic/systems/higher_order_logic/higher_order_unification_resolution_architect.prompt.md)
 - [Adaptive Control Loop Tuning Architect](prompts/scientific/mathematics/systems/control_theory/adaptive_control_loop_tuning_architect.prompt.md)
+- [Robust H-infinity Control Architect](prompts/scientific/mathematics/systems/control_theory/robust_h_infinity_control_architect.prompt.md)
 - [Stochastic Model Predictive Control (MPC) Architect](prompts/scientific/mathematics/systems/control_theory/stochastic_mpc_architect.prompt.md)
 
 ## Tasks
@@ -1189,11 +1210,13 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Technical
 
+- [5G Core Network Slicing Architect](prompts/technical/architecture/5g_core_network_slicing_architect.prompt.md)
 - [Adaptive Load Shedding and Backpressure Architect](prompts/technical/architecture/adaptive_load_shedding_backpressure_architect.prompt.md)
 - [AI Model Inference Serving Architect](prompts/technical/architecture/ai_model_inference_serving_architect.prompt.md)
 - [Air-Gapped Environment Deployment Architect](prompts/technical/architecture/air_gapped_environment_deployment_architect.prompt.md)
 - [API Gateway and BFF Architect](prompts/technical/architecture/api_gateway_bff_architect.prompt.md)
 - [API Management and Developer Portal Architect](prompts/technical/architecture/api_management_developer_portal_architect.prompt.md)
+- [Autonomous Drone Swarm Orchestration Architect](prompts/technical/architecture/autonomous_drone_swarm_orchestration_architect.prompt.md)
 - [Autonomous Vehicle V2X Telemetry Architect](prompts/technical/architecture/autonomous_vehicle_v2x_telemetry_architect.prompt.md)
 - [byzantine_fault_tolerant_consensus_architect](prompts/technical/architecture/byzantine_fault_tolerant_consensus_architect.prompt.md)
 - [Cache Stampede Mitigation Architect](prompts/technical/architecture/cache_stampede_mitigation_architect.prompt.md)
@@ -1201,6 +1224,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Cell-Based Architecture Designer](prompts/technical/architecture/cell_based_architecture_designer.prompt.md)
 - [Change Data Capture Pipeline Architect](prompts/technical/architecture/change_data_capture_pipeline_architect.prompt.md)
 - [Chaos Engineering Experiment Designer](prompts/technical/architecture/chaos_engineering_experiment_designer.prompt.md)
+- [Chaos Engineering Resilience Architect](prompts/technical/architecture/chaos_engineering_resilience_architect.prompt.md)
 - [Confidential Computing Enclave Architect](prompts/technical/architecture/confidential_computing_enclave_architect.prompt.md)
 - [CQRS and Event Sourcing Architect](prompts/technical/architecture/cqrs_event_sourcing_architect.prompt.md)
 - [crdt_conflict_resolution_architect](prompts/technical/architecture/crdt_conflict_resolution_architect.prompt.md)
@@ -1209,13 +1233,17 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Data Privacy Clean Room Architect](prompts/technical/architecture/data_privacy_clean_room_architect.prompt.md)
 - [Data Residency & Localization Architect](prompts/technical/architecture/data_residency_localization_architect.prompt.md)
 - [Decentralized Identity and Verifiable Credentials Architect](prompts/technical/architecture/decentralized_identity_verifiable_credentials_architect.prompt.md)
+- [Distributed Actor Model Topology Architect](prompts/technical/architecture/distributed_actor_model_topology_architect.prompt.md)
 - [Distributed Caching Strategy Architect](prompts/technical/architecture/distributed_caching_strategy_architect.prompt.md)
+- [Distributed Commit Log Topology Architect](prompts/technical/architecture/distributed_commit_log_topology_architect.prompt.md)
 - [Distributed Database Clock Synchronization Architect](prompts/technical/architecture/distributed_database_clock_synchronization_architect.prompt.md)
 - [Distributed Database Sharding Architect](prompts/technical/architecture/distributed_database_sharding_architect.prompt.md)
 - [Distributed Knowledge Graph Architect](prompts/technical/architecture/distributed_knowledge_graph_architect.prompt.md)
 - [Distributed Lock Manager Architect](prompts/technical/architecture/distributed_lock_manager_architect.prompt.md)
+- [Distributed Object Storage Architect](prompts/technical/architecture/distributed_object_storage_architect.prompt.md)
 - [Distributed Observability and Telemetry Architect](prompts/technical/architecture/distributed_observability_telemetry_architect.prompt.md)
 - [Distributed Rate Limiting Architect](prompts/technical/architecture/distributed_rate_limiting_architect.prompt.md)
+- [Distributed Search Engine Topology Architect](prompts/technical/architecture/distributed_search_engine_topology_architect.prompt.md)
 - [Distributed Task Queue and Background Job Processing Architect](prompts/technical/architecture/distributed_task_queue_architect.prompt.md)
 - [Distributed Transaction Orchestration Architect](prompts/technical/architecture/distributed_transaction_orchestration_architect.prompt.md)
 - [Distributed Vector Database Architect](prompts/technical/architecture/distributed_vector_database_architect.prompt.md)
@@ -1225,6 +1253,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [eBPF Network Observability Architect](prompts/technical/architecture/ebpf_network_observability_architect.prompt.md)
 - [Edge AI Inference Architect](prompts/technical/architecture/edge_ai_inference_architect.prompt.md)
 - [Edge Computing Topology Architect](prompts/technical/architecture/edge_computing_topology_architect.prompt.md)
+- [Enterprise Hybrid Search Architect](prompts/technical/architecture/enterprise_hybrid_search_architect.prompt.md)
 - [Enterprise RAG Architecture Designer](prompts/technical/architecture/enterprise_rag_architecture_designer.prompt.md)
 - [Event-Driven Dead Letter Queue Remediation Architect](prompts/technical/architecture/event_driven_dead_letter_queue_remediation_architect.prompt.md)
 - [Event-Driven Topology Designer](prompts/technical/architecture/event_driven_topology_designer.prompt.md)
@@ -1235,19 +1264,24 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Fine-Grained Authorization Architect](prompts/technical/architecture/fine_grained_authorization_architect.prompt.md)
 - [finops_cloud_cost_optimization_architect](prompts/technical/architecture/finops_cloud_cost_optimization_architect.prompt.md)
 - [Generative AI Guardrails Gateway Architect](prompts/technical/architecture/generative_ai_guardrails_gateway_architect.prompt.md)
+- [Global Service Discovery Topology Architect](prompts/technical/architecture/global_service_discovery_topology_architect.prompt.md)
 - [GPU Cluster Orchestration Architect](prompts/technical/architecture/gpu_cluster_orchestration_architect.prompt.md)
 - [Graph Database Traversal Architect](prompts/technical/architecture/graph_database_traversal_architect.prompt.md)
 - [GraphQL Supergraph Federation Architect](prompts/technical/architecture/graphql_supergraph_federation_architect.prompt.md)
+- [Healthcare FHIR Interoperability Architect](prompts/technical/architecture/healthcare_fhir_interoperability_architect.prompt.md)
 - [Hexagonal Architecture Implementation](prompts/technical/architecture/hexagonal_architecture_implementation.prompt.md)
 - [Hexagonal Architecture Principles](prompts/technical/architecture/hexagonal_architecture_principles.prompt.md)
 - [Hexagonal Architecture Review](prompts/technical/architecture/hexagonal_architecture_review.prompt.md)
 - [HFT Low-Latency Architecture Designer](prompts/technical/architecture/hft_low_latency_trading_architect.prompt.md)
 - [High-Scale OTT Video Streaming Architect](prompts/technical/architecture/high_scale_ott_video_streaming_architect.prompt.md)
 - [High-Scale WebSocket Push Architect](prompts/technical/architecture/high_scale_websocket_push_architect.prompt.md)
+- [high_throughput_distributed_counter_architect](prompts/technical/architecture/high_throughput_distributed_counter_architect.prompt.md)
 - [High-Throughput Distributed ID Generator Architect](prompts/technical/architecture/high_throughput_distributed_id_generator_architect.prompt.md)
 - [High-Throughput Geospatial Indexing Architect](prompts/technical/architecture/high_throughput_geospatial_indexing_architect.prompt.md)
+- [High-Throughput LLM Inference Serving Architect](prompts/technical/architecture/high_throughput_llm_inference_serving_architect.prompt.md)
 - [High-Throughput Order Matching Engine Architect](prompts/technical/architecture/high_throughput_order_matching_engine_architect.prompt.md)
 - [HTAP Real-Time Analytics Architect](prompts/technical/architecture/htap_real_time_analytics_architect.prompt.md)
+- [hyper_scale_inventory_reservation_architect](prompts/technical/architecture/hyper_scale_inventory_reservation_architect.prompt.md)
 - [Idempotency and API Retry Strategy Architect](prompts/technical/architecture/idempotency_strategy_architect.prompt.md)
 - [Immutable Financial Ledger Architect](prompts/technical/architecture/immutable_financial_ledger_architect.prompt.md)
 - [IoT Digital Twin Architect](prompts/technical/architecture/iot_digital_twin_architect.prompt.md)
@@ -1263,6 +1297,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Multi-Region K8s Federation Architect](prompts/technical/architecture/multi_region_k8s_federation_architect.prompt.md)
 - [Multi-Tenant Noisy Neighbor Mitigation Architect](prompts/technical/architecture/multi_tenant_noisy_neighbor_mitigation_architect.prompt.md)
 - [Multi-Tenant SaaS Architecture Designer](prompts/technical/architecture/multi_tenant_saas_architecture_designer.prompt.md)
+- [Multi-Tier Disaggregated Memory CXL Architect](prompts/technical/architecture/multi_tier_disaggregated_memory_cxl_architect.prompt.md)
 - [Offline-First Synchronization Architect](prompts/technical/architecture/offline_first_sync_architect.prompt.md)
 - [Payment Gateway Idempotency Architect](prompts/technical/architecture/payment_gateway_idempotency_architect.prompt.md)
 - [peer_to_peer_gossip_protocol_architect](prompts/technical/architecture/peer_to_peer_gossip_protocol_architect.prompt.md)
@@ -1279,6 +1314,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Real-Time Stream Processing Architect](prompts/technical/architecture/real_time_stream_processing_architect.prompt.md)
 - [Semantic Caching AI Gateway Architect](prompts/technical/architecture/semantic_caching_ai_gateway_architect.prompt.md)
 - [Server-Driven UI Architecture Designer](prompts/technical/architecture/server_driven_ui_architect.prompt.md)
+- [Serverless Cold Start Mitigation Architect](prompts/technical/architecture/serverless_cold_start_mitigation_architect.prompt.md)
 - [Serverless Database Connection Pooling Architect](prompts/technical/architecture/serverless_database_connection_pooling_architect.prompt.md)
 - [Serverless Function Orchestration Architect](prompts/technical/architecture/serverless_function_orchestration_architect.prompt.md)
 - [Service Mesh Security Architect](prompts/technical/architecture/service_mesh_security_architect.prompt.md)
@@ -1300,6 +1336,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Zero Trust Network Architecture Designer](prompts/technical/architecture/zero_trust_network_architecture_designer.prompt.md)
 - [Autonomous Automation Agent](prompts/technical/automation/autonomous_automation_agent.prompt.md)
 - [Autonomous Automation Agent Upgrade](prompts/technical/automation/autonomous_automation_agent_upgrade.prompt.md)
+- [Calibrated Autonomous Agent](prompts/technical/automation/calibrated_autonomous_agent.prompt.md)
 - [Universal Automation Agent](prompts/technical/automation/universal_automation_agent.prompt.md)
 - [fully_homomorphic_encryption_circuit_architect](prompts/technical/cryptography/fully_homomorphic_encryption_circuit_architect.prompt.md)
 - [post_quantum_cryptography_migration_architect](prompts/technical/cryptography/post_quantum_cryptography_migration_architect.prompt.md)
@@ -1320,8 +1357,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Source of Truth Harmonizer](prompts/technical/documentation/source_of_truth_harmonizer.prompt.md)
 - [Finite Element Analysis (FEA) Interpreter](prompts/technical/hardware_engineering/finite_element_analysis_interpreter.prompt.md)
 - [Mechatronics Control Systems Architect](prompts/technical/hardware_engineering/mechatronics_control_systems_architect.prompt.md)
+- [neuromorphic_hardware_spiking_neural_network_architect](prompts/technical/hardware_engineering/neuromorphic_hardware_spiking_neural_network_architect.prompt.md)
 - [PCB Layout Topology Reviewer](prompts/technical/hardware_engineering/pcb_layout_topology_reviewer.prompt.md)
 - [Adversarial Prompt Robustness Tester](prompts/technical/prompt_engineering/adversarial_prompt_robustness_tester.prompt.md)
+- [Vector Lead Prompt Engineer](prompts/technical/prompt_engineering/vector_lead_prompt_engineer.prompt.md)
 - [Vector Prompt Editor-in-Chief](prompts/technical/prompt_engineering/vector_prompt_editor_in_chief.prompt.md)
 - [Code Formatting, Linting, and Refactoring Implementation](prompts/technical/repository_refactoring/code_formatting_linting_refactoring_implementation.prompt.md)
 - [Codebase Quality & Maintainability Analysis](prompts/technical/repository_refactoring/codebase_quality_analysis.prompt.md)
@@ -1339,6 +1378,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [API Security & Zero Trust Architect](prompts/technical/security/api_security_zero_trust_architect.prompt.md)
 - [APT Threat Hunting Query Engineer](prompts/technical/security/apt_threat_hunting_query_engineer.prompt.md)
 - [automated_malware_reverse_engineering_analyst](prompts/technical/security/automated_malware_reverse_engineering_analyst.prompt.md)
+- [automotive_can_bus_security_architect](prompts/technical/security/automotive_can_bus_security_architect.prompt.md)
 - [CI/CD Pipeline Poisoning Forensics Architect](prompts/technical/security/ci_cd_pipeline_poisoning_forensics_architect.prompt.md)
 - [Cloud IAM Least-Privilege Remediation Architect](prompts/technical/security/cloud_iam_least_privilege_remediation_architect.prompt.md)
 - [Cloud Incident Response Forensics Architect](prompts/technical/security/cloud_incident_response_forensics_architect.prompt.md)
