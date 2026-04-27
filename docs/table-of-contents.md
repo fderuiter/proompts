@@ -332,6 +332,7 @@
 [Jules Test Generator](prompts/google_jules/jules_test_gen.prompt.md)
 [Jules UX Writer](prompts/google_jules/jules_ux_writer.prompt.md)
 [algorithmic_multi_touch_attribution_modeler](prompts/growth/analytics/algorithmic_multi_touch_attribution_modeler.prompt.md)
+[incrementality_causal_inference_modeler](prompts/growth/analytics/incrementality_causal_inference_modeler.prompt.md)
 [cohort_retention_survival_analysis_architect](prompts/growth/lifecycle/cohort_retention_survival_analysis_architect.prompt.md)
 [cross_channel_behavioral_trigger_architect](prompts/growth/lifecycle/cross_channel_behavioral_trigger_architect.prompt.md)
 [bayesian_media_mix_modeling_architect](prompts/growth/performance_marketing/bayesian_media_mix_modeling_architect.prompt.md)
