@@ -86,6 +86,7 @@ title: Scientific
 - [epigenetic_methylation_hmm_architect](prompts/scientific/genetics/genomics/epigenetic_methylation_hmm_architect.prompt.md)
 - [Epistemic Logic Multi-Agent Knowledge Architect](prompts/scientific/mathematics/formal_logic/epistemic_logic_multi_agent_knowledge_architect.prompt.md)
 - [epistemic_defeater_formal_analyzer](prompts/scientific/philosophy/epistemology/formal_epistemology/epistemic_defeater_formal_analyzer.prompt.md)
+- [epistemic_logic_omniscience_paradox_resolver](prompts/scientific/philosophy/logic/philosophical_logic/epistemic_logic_omniscience_paradox_resolver.prompt.md)
 - [epistemic_modal_logic_kripke_evaluator](prompts/scientific/formal_logic/non_classical/modal_logic/epistemic_modal_logic_kripke_evaluator.prompt.md)
 - [ePRO Migration Equivalence Checker](prompts/scientific/coa/epro_migration_equivalence.prompt.md)
 - [EtO Sterilization Process FMEA](prompts/scientific/sterility/sterility_workflow/03_eto_sterilization_process_fmea.prompt.md)
