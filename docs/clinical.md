@@ -127,6 +127,7 @@ title: Clinical
 - [SAE Patient Narrative Drafter](prompts/clinical/medical_writing/sae_patient_narrative_drafter.prompt.md)
 - [SDTM Concomitant Medications Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/14_sdtm_concomitant_medications_mapping_architect.prompt.md)
 - [SDTM Pharmacokinetics Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/07_sdtm_pharmacokinetics_mapping_architect.prompt.md)
+- [SDTM Protocol Deviation Modeling Architect](prompts/clinical/data_management/cdisc_compliance_workflow/12_sdtm_protocol_deviation_modeling_architect.prompt.md)
 - [Semantic Interoperability Optimization](prompts/clinical/forms/semantic_interoperability.prompt.md)
 - [signal_detection_evaluator](prompts/clinical/pharmacovigilance/signal_detection_evaluator.prompt.md)
 - [Single IRB (sIRB) Plan Submission](prompts/clinical/site_acquisition/sirb_plan_submission.prompt.md)
