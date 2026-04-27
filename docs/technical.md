@@ -35,6 +35,7 @@ title: Technical
 - [Deception Technology & Active Defense Architect](prompts/technical/security/deception_technology_active_defense_architect.prompt.md)
 - [DeFi Protocol Economic Security Architect](prompts/technical/security/defi_protocol_economic_security_architect.prompt.md)
 - [Dependencies & Security Posture Analysis](prompts/technical/repository_refactoring/dependencies_security_analysis.prompt.md)
+- [devsecops_supply_chain_provenance_architect](prompts/technical/devops/devsecops_supply_chain_provenance_architect.prompt.md)
 - [Documentation and Repository Structure Implementation](prompts/technical/repository_refactoring/documentation_structure_implementation.prompt.md)
 - [eBPF Runtime Security Architect](prompts/technical/security/ebpf_runtime_security_architect.prompt.md)
 - [Finite Element Analysis (FEA) Interpreter](prompts/technical/hardware_engineering/finite_element_analysis_interpreter.prompt.md)
