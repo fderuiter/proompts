@@ -764,6 +764,7 @@
 [whole_brain_biophysical_network_simulator](prompts/scientific/computational_theoretical_neuroscience/whole_brain_biophysical_network_simulator.prompt.md)
 [Clinical Study Report (CSR) Writing](prompts/scientific/medical_writing/csr_writing.prompt.md)
 [investigators_brochure_synthesis_architect](prompts/scientific/medical_writing/investigators_brochure_synthesis_architect.prompt.md)
+[OAuth Illicit Consent Grant Forensics Analyst](prompts/technical/security/secops/incident_response/oauth_illicit_consent_grant_forensics_analyst.prompt.md)
 [Identity Threat Detection and Response Architect](prompts/technical/security/iam_security/identity_threat_detection_response_architect.prompt.md)
 [Non-Human Identity Lifecycle Architect](prompts/technical/security/iam_security/non_human_identity_lifecycle_architect.prompt.md)
 [Zero Trust Privileged Access Management Architect](prompts/technical/security/iam_security/zero_trust_pam_architect.prompt.md)

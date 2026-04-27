@@ -1038,6 +1038,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Clinical Study Report (CSR) Writing](prompts/scientific/medical_writing/csr_writing.prompt.md)
 - [investigators_brochure_synthesis_architect](prompts/scientific/medical_writing/investigators_brochure_synthesis_architect.prompt.md)
 
+## Secops
+
+- [OAuth Illicit Consent Grant Forensics Analyst](prompts/technical/security/secops/incident_response/oauth_illicit_consent_grant_forensics_analyst.prompt.md)
+
 ## Security
 
 - [Identity Threat Detection and Response Architect](prompts/technical/security/iam_security/identity_threat_detection_response_architect.prompt.md)

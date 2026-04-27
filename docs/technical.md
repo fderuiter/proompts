@@ -55,6 +55,7 @@ title: Technical
 - [Mechatronics Control Systems Architect](prompts/technical/hardware_engineering/mechatronics_control_systems_architect.prompt.md)
 - [Medical Device Cybersecurity Threat Modeling](prompts/technical/security/cybersecurity_threat_modeling.prompt.md)
 - [Non-Human Identity Lifecycle Architect](prompts/technical/security/iam_security/non_human_identity_lifecycle_architect.prompt.md)
+- [OAuth Illicit Consent Grant Forensics Analyst](prompts/technical/security/secops/incident_response/oauth_illicit_consent_grant_forensics_analyst.prompt.md)
 - [OT/SCADA Security Resilience Architect](prompts/technical/security/ot_scada_security_architect.prompt.md)
 - [PCB Layout Topology Reviewer](prompts/technical/hardware_engineering/pcb_layout_topology_reviewer.prompt.md)
 - [Post-Quantum Cryptography Migration Architect](prompts/technical/security/post_quantum_cryptography_migration_architect.prompt.md)
