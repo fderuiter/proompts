@@ -23,6 +23,7 @@ title: Scientific
 - [atiyah_singer_index_theorem_architect](prompts/scientific/mathematics/geometry/differential/atiyah_singer_index_theorem_architect.prompt.md)
 - [banach_space_operator_architect](prompts/scientific/mathematics/analysis/functional_analysis/banach_space_operator_architect.prompt.md)
 - [basal_ganglia_td_learning_architect](prompts/scientific/computational_theoretical_neuroscience/basal_ganglia_td_learning_architect.prompt.md)
+- [Batalin-Vilkovisky Quantization Architect](prompts/scientific/physics/quantum_field_theory/batalin_vilkovisky_quantization_architect.prompt.md)
 - [bayesian_epistemological_update_formalizer](prompts/scientific/philosophy/epistemology/formal_epistemology/bayesian_epistemological_update_formalizer.prompt.md)
 - [bayesian_hierarchical_model_architect](prompts/scientific/statistics/inference/bayesian_methods/bayesian_hierarchical_model_architect.prompt.md)
 - [bayesian_phylodynamic_inference_architect](prompts/scientific/computational_biology/bayesian_phylodynamic_inference_architect.prompt.md)
