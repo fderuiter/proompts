@@ -930,6 +930,7 @@
 [Decentralized Identity and Verifiable Credentials Architect](prompts/technical/architecture/decentralized_identity_verifiable_credentials_architect.prompt.md)
 [Distributed Actor Model Topology Architect](prompts/technical/architecture/distributed_actor_model_topology_architect.prompt.md)
 [Distributed Caching Strategy Architect](prompts/technical/architecture/distributed_caching_strategy_architect.prompt.md)
+[Distributed Circuit Breaker Bulkhead Architect](prompts/technical/architecture/distributed_circuit_breaker_bulkhead_architect.prompt.md)
 [Distributed Commit Log Topology Architect](prompts/technical/architecture/distributed_commit_log_topology_architect.prompt.md)
 [Distributed Database Clock Synchronization Architect](prompts/technical/architecture/distributed_database_clock_synchronization_architect.prompt.md)
 [Distributed Database Sharding Architect](prompts/technical/architecture/distributed_database_sharding_architect.prompt.md)
