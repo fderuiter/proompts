@@ -1,6 +1,7 @@
 # Quantum Field Theory Overview
 
 ## Prompts
+- **[Batalin-Vilkovisky Quantization Architect](batalin_vilkovisky_quantization_architect.prompt.yaml)**: Systematically formulates the rigorous master equation and anti-field formalism for quantizing generalized gauge theories via the Batalin-Vilkovisky (BV) mechanism.
 - **[BRST Quantization and Faddeev-Popov Ghost Architect](brst_quantization_faddeev_popov_architect.prompt.yaml)**: Formulates the rigorous BRST quantization of gauge theories, extracting the complete effective Lagrangian including Faddeev-Popov ghost terms and gauge-fixing structures.
 - **[Callan-Symanzik Beta Function Architect](callan_symanzik_beta_function_architect.prompt.yaml)**: Derives Callan-Symanzik equations, calculates beta functions at one-loop order, and analyzes renormalization group flow for theoretical quantum field models.
 - **[Chiral Anomaly Fujikawa Path Integral Architect](chiral_anomaly_fujikawa_path_integral_architect.prompt.yaml)**: Formulates the rigorous derivation of chiral anomalies using Fujikawa's path integral measure evaluation, extracting the anomalous divergence of the axial current via heat-kernel regularization.
