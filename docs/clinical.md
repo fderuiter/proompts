@@ -130,6 +130,7 @@ title: Clinical
 - [SDTM Device Deficiencies Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/15_sdtm_device_deficiencies_architect.prompt.md)
 - [SDTM Concomitant Medications Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/14_sdtm_concomitant_medications_mapping_architect.prompt.md)
 - [SDTM Device Deficiencies Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/15_sdtm_device_deficiencies_architect.prompt.md)
+- [SDTM Medical Device Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/08_sdtm_medical_device_mapping_architect.prompt.md)
 - [SDTM Pharmacokinetics Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/07_sdtm_pharmacokinetics_mapping_architect.prompt.md)
 - [SDTM Protocol Deviation Modeling Architect](prompts/clinical/data_management/cdisc_compliance_workflow/12_sdtm_protocol_deviation_modeling_architect.prompt.md)
 - [Semantic Interoperability Optimization](prompts/clinical/forms/semantic_interoperability.prompt.md)
