@@ -914,6 +914,7 @@
 [Decentralized Identity and Verifiable Credentials Architect](prompts/technical/architecture/decentralized_identity_verifiable_credentials_architect.prompt.md)
 [Distributed Actor Model Architect](prompts/technical/architecture/distributed_actor_model_architect.prompt.md)
 [Distributed Caching Strategy Architect](prompts/technical/architecture/distributed_caching_strategy_architect.prompt.md)
+[Distributed Change Data Capture Pipeline Architect](prompts/technical/architecture/distributed_change_data_capture_pipeline_architect.prompt.md)
 [Distributed Database Clock Synchronization Architect](prompts/technical/architecture/distributed_database_clock_synchronization_architect.prompt.md)
 [Distributed Database Sharding Architect](prompts/technical/architecture/distributed_database_sharding_architect.prompt.md)
 [Distributed Knowledge Graph Architect](prompts/technical/architecture/distributed_knowledge_graph_architect.prompt.md)
