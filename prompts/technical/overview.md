@@ -11,6 +11,7 @@
 - [Hardware Engineering/](hardware_engineering/overview.md)
 - [Languages/](languages/overview.md)
 - [Prompt Engineering/](prompt_engineering/overview.md)
+- [Recursive Logic/](recursive_logic/overview.md)
 - [Repository Refactoring/](repository_refactoring/overview.md)
 - [Security/](security/overview.md)
 - [Software Engineering/](software_engineering/overview.md)
