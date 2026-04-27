@@ -221,6 +221,7 @@ title: Scientific
 - [semantic_mutation_censorship_evasion_modeler](prompts/scientific/psychology/computational/network_contagion/semantic_mutation_censorship_evasion_modeler.prompt.md)
 - [Separation Logic Heap Entailment Architect](prompts/scientific/mathematics/formal_logic/separation_logic_heap_entailment_architect.prompt.md)
 - [serre_spectral_sequence_calculator](prompts/scientific/mathematics/topology/algebraic_topology/serre_spectral_sequence_calculator.prompt.md)
+- [signal_detection_theory_architect](prompts/scientific/psychology/cognitive/information_processing/signal_detection_theory_architect.prompt.md)
 - [Simulated Clinical Scenario Debrief](prompts/scientific/bioskills/bioskills_workflow/02_simulated_clinical_scenario_feedback.prompt.md)
 - [single_cell_rna_seq_trajectory_inference_architect](prompts/scientific/genetics/transcriptomics/single_cell_rna_seq_trajectory_inference_architect.prompt.md)
 - [spatial_metapopulation_seir_epidemiology_architect](prompts/scientific/ecology/population_dynamics/spatial_metapopulation_seir_epidemiology_architect.prompt.md)
