@@ -436,6 +436,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [bayesian_epistemological_update_formalizer](prompts/scientific/philosophy/epistemology/formal_epistemology/bayesian_epistemological_update_formalizer.prompt.md)
 - [cognitive_bias_epistemological_deconstructor](prompts/scientific/philosophy/epistemology/formal_epistemology/cognitive_bias_epistemological_deconstructor.prompt.md)
 - [epistemic_defeater_formal_analyzer](prompts/scientific/philosophy/epistemology/formal_epistemology/epistemic_defeater_formal_analyzer.prompt.md)
+- [epistemic_peer_disagreement_formalizer](prompts/scientific/philosophy/epistemology/formal_epistemology/epistemic_peer_disagreement_formalizer.prompt.md)
 
 ## Epro
 
