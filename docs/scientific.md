@@ -158,6 +158,7 @@ title: Scientific
 - [MCID Research and Summary](prompts/scientific/coa/mcid_definition.prompt.md)
 - [mereological_composition_analyzer](prompts/scientific/philosophy/metaphysics/ontology/mereological_composition_analyzer.prompt.md)
 - [metabolic_control_analysis_architect](prompts/scientific/cellular/metabolism/metabolic_control_analysis_architect.prompt.md)
+- [Metadynamics Free Energy Surface Architect](prompts/scientific/chemistry/computational/molecular_dynamics/metadynamics_free_energy_surface_architect.prompt.md)
 - [metagenomic_assembly_taxonomic_binning_architect](prompts/scientific/genetics/genomics/metagenomic_assembly_taxonomic_binning_architect.prompt.md)
 - [Metaphysical Dialectical Synthesizer](prompts/scientific/philosophy/metaphysics/ontology/metaphysical_dialectical_synthesizer.prompt.md)
 - [metaphysical_grounding_fundamentality_formalizer](prompts/scientific/philosophy/metaphysics/ontology/metaphysical_grounding_fundamentality_formalizer.prompt.md)
