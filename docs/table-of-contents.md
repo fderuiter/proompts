@@ -1046,6 +1046,7 @@
 [post_quantum_cryptography_migration_architect](prompts/technical/cryptography/post_quantum_cryptography_migration_architect.prompt.md)
 [bayesian_optimization_hyperparameter_architect](prompts/technical/data_science/bayesian_optimization_hyperparameter_architect.prompt.md)
 [Causal Discovery DAG Architect](prompts/technical/data_science/causal_discovery_dag_architect.prompt.md)
+[Concept Drift Mitigation Architect](prompts/technical/data_science/concept_drift_mitigation_architect.prompt.md)
 [Conversation Stochastic Modeler](prompts/technical/data_science/conversation_stochastic_modeler.prompt.md)
 [Federated Learning Differential Privacy Architect](prompts/technical/data_science/federated_learning_privacy_architect.prompt.md)
 [Reinforcement Learning Reward Function Architect](prompts/technical/data_science/reinforcement_learning_reward_function_architect.prompt.md)
