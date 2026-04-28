@@ -55,6 +55,7 @@
 [Quantitative Enterprise Value-at-Risk Architect](prompts/business/finance/quantitative_enterprise_value_at_risk_architect.prompt.md)
 [Quantitative Enterprise Working Capital CCC Architect](prompts/business/finance/quantitative_enterprise_working_capital_ccc_architect.prompt.md)
 [Quantitative M&A Accretion Dilution Architect](prompts/business/finance/quantitative_ma_accretion_dilution_architect.prompt.md)
+[Quantitative Markowitz Portfolio Optimization Architect](prompts/business/finance/quantitative_markowitz_portfolio_optimization_architect.prompt.md)
 [Quantitative Private Equity Dividend Recapitalization Architect](prompts/business/finance/quantitative_private_equity_dividend_recapitalization_architect.prompt.md)
 [Algorithmic Multi-Touch Attribution Architect](prompts/business/growth_engineering/algorithmic_multi_touch_attribution_architect.prompt.md)
 [Cross-Channel Behavioral Trigger Architect](prompts/business/growth_engineering/cross_channel_behavioral_trigger_architect.prompt.md)
