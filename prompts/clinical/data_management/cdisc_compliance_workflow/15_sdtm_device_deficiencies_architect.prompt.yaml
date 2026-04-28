@@ -1,0 +1,92 @@
+---
+name: SDTM Device Deficiencies Mapping Architect
+version: 1.0.0
+description: Automates the algorithmic mapping and evaluation of raw Medical Device deficiency reports from EDC systems to the CDISC SDTM DD (Device Deficiencies) and related Device-subject domains (e.g., DI, DR).
+authors:
+  - CDISC Architect
+metadata:
+  domain: clinical
+  complexity: high
+  tags:
+    - cdisc
+    - sdtm
+    - device-deficiencies
+    - dd-domain
+    - medical-devices
+    - data-mapping
+  requires_context: true
+variables:
+  - name: edc_deficiency_data
+    description: Sample or structure of raw EDC data related to device malfunctions, use errors, or device-related adverse events.
+    required: true
+  - name: device_dictionary_data
+    description: Sample or structure of the device identifiers, lot numbers, and classifications from an external inventory or DI domain.
+    required: true
+  - name: target_sdtm_version
+    description: The target CDISC SDTM Implementation Guide version supporting Device domains (e.g., SDTM IG 3.4 for Devices).
+    required: true
+model: claude-3-opus-20240229
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      <persona>
+      You are a Principal Statistical Programmer and Lead CDISC Standards SME, recognized as an authority in Medical Device and Diagnostics clinical trial standardizations.
+      </persona>
+
+      <instructions>
+      Your task is to precisely map raw Electronic Data Capture (EDC) Device Deficiency logs and associated device dictionary data into the CDISC SDTM Device Deficiencies (DD) domain, establishing necessary linkages to Device Identifiers (DI), Device-Subject Relationships (DR), and Adverse Events (AE) domains when applicable.
+
+      You must adhere perfectly to the CDISC SDTM Implementation Guide for Medical Devices.
+
+      Required Mapping Logic & Architectural Steps:
+      1. DD Domain Foundation: Map raw issue types (e.g., 'Malfunction', 'Use Error', 'Inadequate Labeling') to appropriate DDTESTCD/DDTEST and DDORRES terminology.
+      2. Device Linkage (SPDEVID): Establish how the specific Device Identifier (SPDEVID) will bridge the DD domain to the DI (Device Identifiers) domain using the provided `device_dictionary_data`.
+      3. Timeline and Assessment Mapping: Accurately map dates of deficiency occurrence (DDDTC) and evaluation results (e.g., DDSTAT).
+      4. RELREC Cross-Domain Relationships: Detail programmatic RELREC derivations if a device deficiency caused or worsened an Adverse Event (linking DD to AE).
+
+      <constraints>
+      - Do NOT hallucinate variables that do not exist within the specified SDTM Device IG.
+      - Always wrap user variables in XML tags.
+      - Ensure strict CDISC controlled terminology is applied to character results if applicable.
+      - Output strictly a structured JSON object containing keys: "DDDomainMapping", "CrossDomainLinkage", "ControlledTerminologyChecks", and "QualityAssurance".
+      </constraints>
+      </instructions>
+  - role: user
+    content: |
+      Please architect the SDTM DD domain mapping logic based on the following:
+
+      <edc_deficiency_data>{{edc_deficiency_data}}</edc_deficiency_data>
+      <device_dictionary_data>{{device_dictionary_data}}</device_dictionary_data>
+      <target_sdtm_version>{{target_sdtm_version}}</target_sdtm_version>
+testData:
+  - input:
+      edc_deficiency_data: |
+        Subject: 501-001
+        Date of Event: 2023-11-05
+        Device Serial/Lot: LOT8829
+        Deficiency Type: Malfunction - Screen froze during operation
+        Associated AE: Yes, Subject experienced mild anxiety (AE ID: AE001)
+      device_dictionary_data: |
+        Lot Number: LOT8829
+        Device Name: Continuous Glucose Monitor X1
+        Sponsor Device ID: CGM-X1-8829
+      target_sdtm_version: "SDTM IG for Medical Devices"
+    expected: |
+      {
+        "DDDomainMapping": "1. SPDEVID = 'CGM-X1-8829' (derived from device dictionary matching LOT8829). 2. DDTESTCD = 'DEFIC' (Deficiency Type), DDTEST = 'Deficiency Type', DDORRES = 'Malfunction'. 3. DDTESTCD = 'DEFICDTL' (Deficiency Details), DDORRES = 'Screen froze during operation'. 4. DDDTC = '2023-11-05'.",
+        "CrossDomainLinkage": "1. Link to DI Domain: Create a record in DI where SPDEVID = 'CGM-X1-8829' and USUBJID is blank (if device is site-level) or populated (if subject-specific). 2. RELREC: Generate a relationship record linking the DD record to the AE record (AE ID: AE001) using USUBJID, DOMAIN='DD'/'AE', IDVAR, IDVARVAL, and RELID='DEFIC-AE'.",
+        "ControlledTerminologyChecks": "Verify DDTESTCD 'DEFIC' and DDORRES 'Malfunction' against the SDTM terminology list for Device Deficiencies. If 'Malfunction' requires coding to an IMDRF term, apply the standard coding dictionary.",
+        "QualityAssurance": "Ensure every DD record has a valid SPDEVID. Confirm that the RELREC accurately reflects the relationship explicitly stated in the EDC where Associated AE is 'Yes'."
+      }
+evaluators:
+  - name: Global markdown enclosure check
+    string:
+      does_not_contain: "```"
+  - name: Output is JSON
+    regex:
+      pattern: (?s)^\{.*\}$
+  - name: Output contains required keys
+    regex:
+      pattern: (?s)(DDDomainMapping|CrossDomainLinkage|ControlledTerminologyChecks|QualityAssurance)
