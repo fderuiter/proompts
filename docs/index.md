@@ -514,6 +514,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [incrementality_causal_inference_modeler](prompts/growth/analytics/incrementality_causal_inference_modeler.prompt.md)
 - [cohort_retention_survival_analysis_architect](prompts/growth/lifecycle/cohort_retention_survival_analysis_architect.prompt.md)
 - [cross_channel_behavioral_trigger_architect](prompts/growth/lifecycle/cross_channel_behavioral_trigger_architect.prompt.md)
+- [nrr_expansion_propensity_architect](prompts/growth/lifecycle/nrr_expansion_propensity_architect.prompt.md)
 - [bayesian_media_mix_modeling_architect](prompts/growth/performance_marketing/bayesian_media_mix_modeling_architect.prompt.md)
 - [predictive_cac_payback_modeler](prompts/growth/performance_marketing/predictive_cac_payback_modeler.prompt.md)
 - [b2b_abm_pipeline_velocity_architect](prompts/growth/predictive_modeling/b2b_abm_pipeline_velocity_architect.prompt.md)
