@@ -1,6 +1,7 @@
 # Bayesian Methods Overview
 
 ## Prompts
+- **[approximate_bayesian_computation_architect](approximate_bayesian_computation_architect.prompt.yaml)**: Acts as a Principal Statistician to design and formulate mathematically rigorous Approximate Bayesian Computation (ABC) algorithms for likelihood-free inference.
 - **[bayesian_hierarchical_model_architect](bayesian_hierarchical_model_architect.prompt.yaml)**: Acts as a Principal Statistician to design and formulate complex Bayesian hierarchical models with custom priors and MCMC sampling strategies.
 - **[dirichlet_process_mixture_architect](dirichlet_process_mixture_architect.prompt.yaml)**: Acts as a Principal Statistician to formulate mathematically rigorous Nonparametric Bayesian models utilizing Dirichlet Process Mixture Models (DPMM) for cluster identification.
 - **[gaussian_process_regression_architect](gaussian_process_regression_architect.prompt.yaml)**: Acts as a Principal Statistician to design highly robust, mathematically rigorous Gaussian Process Regression (GPR) methodologies for non-parametric Bayesian inference over continuous function spaces.
