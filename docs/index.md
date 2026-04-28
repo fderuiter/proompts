@@ -533,6 +533,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Inference
 
+- [approximate_bayesian_computation_architect](prompts/scientific/statistics/inference/bayesian_methods/approximate_bayesian_computation_architect.prompt.md)
 - [bayesian_hierarchical_model_architect](prompts/scientific/statistics/inference/bayesian_methods/bayesian_hierarchical_model_architect.prompt.md)
 - [dirichlet_process_mixture_architect](prompts/scientific/statistics/inference/bayesian_methods/dirichlet_process_mixture_architect.prompt.md)
 - [gaussian_process_regression_architect](prompts/scientific/statistics/inference/bayesian_methods/gaussian_process_regression_architect.prompt.md)
