@@ -1102,6 +1102,7 @@
 [Zero-Day Incident Containment Architect](prompts/technical/security/zero_day_containment_architect.prompt.md)
 [Zero-Knowledge Proof Protocol Architect](prompts/technical/security/zero_knowledge_proof_protocol_architect.prompt.md)
 [Technical White Paper for Clinical Methodologies](prompts/technical/technical_writing/technical_white_paper_in_silico.prompt.md)
+[Chaos Engineering Resilience Architect](prompts/technical/testing/chaos_engineering_resilience_architect.prompt.md)
 [CSR Results and Safety Section](prompts/technical/technical_writing/technical_writer_workflow/01_csr_results_safety_section.prompt.md)
 [Investigator's Brochure Summary of Changes](prompts/technical/technical_writing/technical_writer_workflow/02_ib_detailed_soc.prompt.md)
 [SAE and Unanticipated Problem Reporting SOP](prompts/technical/technical_writing/technical_writer_workflow/03_sae_reporting_sop.prompt.md)
