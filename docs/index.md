@@ -471,6 +471,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [intuitionistic_logic_natural_deduction_generator](prompts/scientific/mathematics/foundations/proof_theory/intuitionistic_logic_natural_deduction_generator.prompt.md)
 - [forcing_poset_generic_extension_architect](prompts/scientific/mathematics/foundations/set_theory/forcing_poset_generic_extension_architect.prompt.md)
 - [large_cardinal_elementary_embedding_architect](prompts/scientific/mathematics/foundations/set_theory/large_cardinal_elementary_embedding_architect.prompt.md)
+- [transfinite_induction_well_ordering_architect](prompts/scientific/mathematics/foundations/set_theory/transfinite_induction_well_ordering_architect.prompt.md)
 - [Intuitionistic Logic Natural Deduction Prover](prompts/scientific/philosophy/logic/foundations/proof_theory/intuitionistic_logic_natural_deduction_prover.prompt.md)
 
 ## Genetics
