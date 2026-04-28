@@ -866,6 +866,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [item_response_theory_dif_analyzer](prompts/scientific/psychology/quantitative/psychometrics/item_response_theory_dif_analyzer.prompt.md)
 - [latent_profile_mixture_modeling_architect](prompts/scientific/psychology/quantitative/psychometrics/latent_profile_mixture_modeling_architect.prompt.md)
 - [longitudinal_measurement_invariance_evaluator](prompts/scientific/psychology/quantitative/psychometrics/longitudinal_measurement_invariance_evaluator.prompt.md)
+- [multidimensional_item_response_theory_architect](prompts/scientific/psychology/quantitative/psychometrics/multidimensional_item_response_theory_architect.prompt.md)
 - [network_psychometrics_architect](prompts/scientific/psychology/quantitative/psychometrics/network_psychometrics_architect.prompt.md)
 
 ## Regulatory
