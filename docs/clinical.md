@@ -21,6 +21,7 @@ title: Clinical
 - [CDASH Alignment](prompts/clinical/forms/cdash_alignment.prompt.md)
 - [CDASH Mapping & Completion-Guide Assistant](prompts/clinical/forms/clinical_prompts_workflow/03_cdash_mapping_completion_guide.prompt.md)
 - [CDISC CRF Architect](prompts/clinical/data_management/cdisc_crf_architect.prompt.md)
+- [CDISC Cross-Dataset Relational Architect](prompts/clinical/data_management/cdisc_compliance_workflow/16_cdisc_cross_dataset_relrec_suppqual_architect.prompt.md)
 - [CDISC SDTM/ADaM Mapping](prompts/clinical/data_management/cdisc_mapping.prompt.md)
 - [Central Reading Paradigm Design](prompts/clinical/imaging/imaging_workflow/03_central_reading_design.prompt.md)
 - [Clinical ETL Mapping Spec](prompts/clinical/data_management/data_management_etl_workflow/01_clinical_etl_mapping_spec.prompt.md)
