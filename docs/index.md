@@ -121,6 +121,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Corporate Capital Budgeting Investment Appraisal Architect](prompts/business/finance/corporate_capital_budgeting_investment_appraisal_architect.prompt.md)
 - [Corporate Financial Distress Predictive Altman Z-Score Architect](prompts/business/finance/corporate_financial_distress_predictive_altman_z_score_architect.prompt.md)
 - [Corporate Merger Arbitrage Deal Risk Architect](prompts/business/finance/corporate_merger_arbitrage_risk_architect.prompt.md)
+- [Quantitative Enterprise Value-at-Risk Architect](prompts/business/finance/quantitative_enterprise_value_at_risk_architect.prompt.md)
 - [Quantitative Enterprise Working Capital CCC Architect](prompts/business/finance/quantitative_enterprise_working_capital_ccc_architect.prompt.md)
 - [Quantitative M&A Accretion Dilution Architect](prompts/business/finance/quantitative_ma_accretion_dilution_architect.prompt.md)
 - [Quantitative Markowitz Portfolio Optimization Architect](prompts/business/finance/quantitative_markowitz_portfolio_optimization_architect.prompt.md)
@@ -274,6 +275,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Protocol to CDISC USDM v3.0 Converter](prompts/clinical/protocol/protocol_to_usdm_v3.prompt.md)
 - [SOP and TMF Document Synthesis](prompts/clinical/protocol/sop_tmf_document_synthesis.prompt.md)
 - [breakthrough_therapy_designation_rationale_architect](prompts/clinical/regulatory_affairs/breakthrough_therapy_designation_rationale_architect.prompt.md)
+- [fast_track_designation_request_architect](prompts/clinical/regulatory_affairs/fast_track_designation_request_architect.prompt.md)
 - [ind_clinical_hold_response_architect](prompts/clinical/regulatory_affairs/ind_clinical_hold_response_architect.prompt.md)
 - [investigators_brochure_safety_synthesizer](prompts/clinical/regulatory_affairs/investigators_brochure_safety_synthesizer.prompt.md)
 - [orphan_drug_designation_application_architect](prompts/clinical/regulatory_affairs/orphan_drug_designation_application_architect.prompt.md)
@@ -442,6 +444,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [bayesian_epistemological_update_formalizer](prompts/scientific/philosophy/epistemology/formal_epistemology/bayesian_epistemological_update_formalizer.prompt.md)
 - [cognitive_bias_epistemological_deconstructor](prompts/scientific/philosophy/epistemology/formal_epistemology/cognitive_bias_epistemological_deconstructor.prompt.md)
 - [epistemic_defeater_formal_analyzer](prompts/scientific/philosophy/epistemology/formal_epistemology/epistemic_defeater_formal_analyzer.prompt.md)
+- [epistemic_peer_disagreement_formalizer](prompts/scientific/philosophy/epistemology/formal_epistemology/epistemic_peer_disagreement_formalizer.prompt.md)
 
 ## Epro
 
@@ -471,8 +474,10 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [ultraproduct_los_theorem_architect](prompts/scientific/mathematics/foundations/model_theory/ultraproduct_los_theorem_architect.prompt.md)
 - [homotopy_type_theory_univalence_architect](prompts/scientific/mathematics/foundations/proof_theory/homotopy_type_theory_univalence_architect.prompt.md)
 - [intuitionistic_logic_natural_deduction_generator](prompts/scientific/mathematics/foundations/proof_theory/intuitionistic_logic_natural_deduction_generator.prompt.md)
+- [set_theoretic_forcing_architect](prompts/scientific/mathematics/foundations/proof_theory/set_theoretic_forcing_architect.prompt.md)
 - [forcing_poset_generic_extension_architect](prompts/scientific/mathematics/foundations/set_theory/forcing_poset_generic_extension_architect.prompt.md)
 - [large_cardinal_elementary_embedding_architect](prompts/scientific/mathematics/foundations/set_theory/large_cardinal_elementary_embedding_architect.prompt.md)
+- [transfinite_induction_well_ordering_architect](prompts/scientific/mathematics/foundations/set_theory/transfinite_induction_well_ordering_architect.prompt.md)
 - [Intuitionistic Logic Natural Deduction Prover](prompts/scientific/philosophy/logic/foundations/proof_theory/intuitionistic_logic_natural_deduction_prover.prompt.md)
 
 ## Genetics
@@ -541,6 +546,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Inference
 
+- [approximate_bayesian_computation_architect](prompts/scientific/statistics/inference/bayesian_methods/approximate_bayesian_computation_architect.prompt.md)
 - [bayesian_hierarchical_model_architect](prompts/scientific/statistics/inference/bayesian_methods/bayesian_hierarchical_model_architect.prompt.md)
 - [dirichlet_process_mixture_architect](prompts/scientific/statistics/inference/bayesian_methods/dirichlet_process_mixture_architect.prompt.md)
 - [gaussian_process_regression_architect](prompts/scientific/statistics/inference/bayesian_methods/gaussian_process_regression_architect.prompt.md)
@@ -704,6 +710,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [stiff_pde_numerical_stability_architect](prompts/scientific/mathematics/numerical_methods/stiff_pde_numerical_stability_architect.prompt.md)
 - [Symplectic Integrator Hamiltonian Systems Architect](prompts/scientific/mathematics/numerical_methods/symplectic_integrator_hamiltonian_systems_architect.prompt.md)
 - [Polynomial Optimization SDP Relaxation Architect](prompts/scientific/mathematics/optimization/polynomial_optimization_sdp_relaxation_architect.prompt.md)
+- [Robust Optimization Min-Max Architect](prompts/scientific/mathematics/optimization/robust_optimization_minmax_architect.prompt.md)
 - [Stochastic Multi-Objective Optimization Architect](prompts/scientific/mathematics/optimization/stochastic_optimization_architect.prompt.md)
 - [Topological Counterexample Generator](prompts/scientific/mathematics/topology/topological_counterexample_generator.prompt.md)
 
@@ -822,6 +829,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Feynman Rule Derivation Architect](prompts/scientific/physics/quantum_field_theory/feynman_rule_derivation_architect.prompt.md)
 - [Schwinger-Dyson Equation Architect](prompts/scientific/physics/quantum_field_theory/schwinger_dyson_equation_architect.prompt.md)
 - [Schwinger-Keldysh Non-Equilibrium Path Integral Architect](prompts/scientific/physics/quantum_field_theory/schwinger_keldysh_non_equilibrium_path_integral_architect.prompt.md)
+- [Ward-Takahashi Identity Path Integral Architect](prompts/scientific/physics/quantum_field_theory/ward_takahashi_identity_path_integral_architect.prompt.md)
 - [ads_cft_holographic_dictionary_architect](prompts/scientific/physics/string_theory/ads_cft_holographic_dictionary_architect.prompt.md)
 - [string_worldsheet_scattering_amplitude_architect](prompts/scientific/physics/string_theory/string_worldsheet_scattering_amplitude_architect.prompt.md)
 
@@ -860,6 +868,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [item_response_theory_dif_analyzer](prompts/scientific/psychology/quantitative/psychometrics/item_response_theory_dif_analyzer.prompt.md)
 - [latent_profile_mixture_modeling_architect](prompts/scientific/psychology/quantitative/psychometrics/latent_profile_mixture_modeling_architect.prompt.md)
 - [longitudinal_measurement_invariance_evaluator](prompts/scientific/psychology/quantitative/psychometrics/longitudinal_measurement_invariance_evaluator.prompt.md)
+- [multidimensional_item_response_theory_architect](prompts/scientific/psychology/quantitative/psychometrics/multidimensional_item_response_theory_architect.prompt.md)
 - [network_psychometrics_architect](prompts/scientific/psychology/quantitative/psychometrics/network_psychometrics_architect.prompt.md)
 
 ## Regulatory
@@ -1200,6 +1209,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 ## Stratification
 
 - [gentrification_displacement_spatial_inequality_architect](prompts/scientific/sociology/stratification/systemic_inequality/gentrification_displacement_spatial_inequality_architect.prompt.md)
+- [gini_coefficient_income_stratification_architect](prompts/scientific/sociology/stratification/systemic_inequality/gini_coefficient_income_stratification_architect.prompt.md)
 - [intergenerational_social_mobility_markov_chain_architect](prompts/scientific/sociology/stratification/systemic_inequality/intergenerational_social_mobility_markov_chain_architect.prompt.md)
 - [multidimensional_poverty_alkire_foster_architect](prompts/scientific/sociology/stratification/systemic_inequality/multidimensional_poverty_alkire_foster_architect.prompt.md)
 - [occupational_segregation_opportunity_hoarding_architect](prompts/scientific/sociology/stratification/systemic_inequality/occupational_segregation_opportunity_hoarding_architect.prompt.md)
@@ -1219,6 +1229,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Systems
 
+- [ambiguous_natural_language_fol_formalizer](prompts/scientific/formal_logic/systems/first_order_logic/ambiguous_natural_language_fol_formalizer.prompt.md)
 - [higher_order_unification_resolution_architect](prompts/scientific/formal_logic/systems/higher_order_logic/higher_order_unification_resolution_architect.prompt.md)
 - [Adaptive Control Loop Tuning Architect](prompts/scientific/mathematics/systems/control_theory/adaptive_control_loop_tuning_architect.prompt.md)
 - [Stochastic Model Predictive Control (MPC) Architect](prompts/scientific/mathematics/systems/control_theory/stochastic_mpc_architect.prompt.md)
