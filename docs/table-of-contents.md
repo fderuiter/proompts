@@ -195,6 +195,7 @@
 [ind_clinical_hold_response_architect](prompts/clinical/regulatory_affairs/ind_clinical_hold_response_architect.prompt.md)
 [investigators_brochure_safety_synthesizer](prompts/clinical/regulatory_affairs/investigators_brochure_safety_synthesizer.prompt.md)
 [orphan_drug_designation_application_architect](prompts/clinical/regulatory_affairs/orphan_drug_designation_application_architect.prompt.md)
+[rare_pediatric_disease_designation_architect](prompts/clinical/regulatory_affairs/rare_pediatric_disease_designation_architect.prompt.md)
 [SAE and Safety Reporting](prompts/clinical/safety/sae_safety_reporting.prompt.md)
 [Clinical Trial Agreement (CTA) Negotiation](prompts/clinical/site_acquisition/cta_negotiation.prompt.md)
 [Single IRB (sIRB) Plan Submission](prompts/clinical/site_acquisition/sirb_plan_submission.prompt.md)
