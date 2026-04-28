@@ -95,6 +95,7 @@ title: Scientific
 - [epistemic_defeater_formal_analyzer](prompts/scientific/philosophy/epistemology/formal_epistemology/epistemic_defeater_formal_analyzer.prompt.md)
 - [epistemic_logic_omniscience_paradox_resolver](prompts/scientific/philosophy/logic/philosophical_logic/epistemic_logic_omniscience_paradox_resolver.prompt.md)
 - [epistemic_modal_logic_kripke_evaluator](prompts/scientific/formal_logic/non_classical/modal_logic/epistemic_modal_logic_kripke_evaluator.prompt.md)
+- [epistemic_peer_disagreement_formalizer](prompts/scientific/philosophy/epistemology/formal_epistemology/epistemic_peer_disagreement_formalizer.prompt.md)
 - [ePRO Migration Equivalence Checker](prompts/scientific/coa/epro_migration_equivalence.prompt.md)
 - [EtO Sterilization Process FMEA](prompts/scientific/sterility/sterility_workflow/03_eto_sterilization_process_fmea.prompt.md)
 - [Evaluate Device–Tissue Interface Findings](prompts/scientific/pathology/pathology_study_workflow/02_device_tissue_interface_evaluation.prompt.md)
