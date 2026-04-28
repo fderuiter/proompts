@@ -15,6 +15,7 @@ title: Scientific
 - [affective_polarization_contagion_mapper](prompts/scientific/psychology/epidemiology/affective_polarization/affective_polarization_contagion_mapper.prompt.md)
 - [agm_belief_revision_formal_engine](prompts/scientific/philosophy/logic/philosophical_logic/agm_belief_revision_formal_engine.prompt.md)
 - [algorithmic_behavior_echo_chamber_modeler](prompts/scientific/psychology/computational/network_contagion/algorithmic_behavior_echo_chamber_modeler.prompt.md)
+- [algorithmic_misinformation_contagion_modeler](prompts/scientific/psychology/computational/network_contagion/algorithmic_misinformation_contagion_modeler.prompt.md)
 - [Applied Ethical Stress Tester](prompts/scientific/philosophy/ethics/normative_ethics/applied_ethical_stress_tester.prompt.md)
 - [astrocytic_tripartite_synapse_architect](prompts/scientific/computational_theoretical_neuroscience/astrocytic_tripartite_synapse_architect.prompt.md)
 - [astrocytic_tripartite_synapse_calcium_dynamics_architect](prompts/scientific/cellular/neurophysiology/astrocytic_tripartite_synapse_calcium_dynamics_architect.prompt.md)
