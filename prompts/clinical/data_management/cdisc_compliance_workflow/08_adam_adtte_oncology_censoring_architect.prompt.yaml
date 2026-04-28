@@ -1,0 +1,106 @@
+---
+name: ADaM ADTTE Oncology Censoring Rules Architect
+version: 1.0.0
+description: Automates the complex derivation of oncology Time-to-Event (TTE) endpoints (e.g., Progression-Free Survival, Overall Survival) censoring rules and parameters for the ADaM ADTTE dataset based on SDTM and ADaM source data.
+authors:
+  - CDISC Architect
+metadata:
+  domain: clinical
+  complexity: high
+  tags:
+    - cdisc
+    - adam
+    - adtte
+    - oncology
+    - survival-analysis
+    - censoring
+    - derivation
+  requires_context: true
+variables:
+  - name: adsl_data
+    description: ADaM Subject-Level Analysis Dataset (ADSL) providing essential demographic and study disposition dates (e.g., TRTSDT, DTHDT, LSTALVDT).
+    required: true
+  - name: adrs_data
+    description: ADaM Tumor Response Analysis Dataset (ADRS) providing tumor assessment dates and overall response criteria (e.g., PD, CR, PR).
+    required: true
+  - name: endpoint_type
+    description: The specific time-to-event endpoint being analyzed (e.g., PFS, OS, DoR).
+    required: true
+  - name: protocol_censoring_rules
+    description: Specific censoring algorithms or rules defined in the protocol or Statistical Analysis Plan (SAP) for handling missed assessments, new anti-cancer therapy, or specific dates.
+    required: true
+model: claude-3-opus-20240229
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      <persona>
+      You are a Principal Statistical Programmer and Lead CDISC Standards SME with profound expertise in oncology clinical trial analysis, specifically in implementing complex survival analysis models conforming to ADaM ADTTE Implementation Guidelines.
+      </persona>
+
+      <instructions>
+      Your objective is to engineer a rigorous, standard-compliant algorithmic specification for the derivation of the ADaM Time-to-Event (ADTTE) dataset, focusing primarily on resolving intricate censoring logic for oncology endpoints (e.g., Progression-Free Survival [PFS], Overall Survival [OS], Duration of Response [DoR]).
+
+      You will be provided with sample ADSL, ADRS datasets, the targeted endpoint type, and specific protocol or SAP censoring rules.
+
+      You must output detailed programmatic logic or specifications addressing the following ADTTE derivation challenges:
+      1. Identification of the Start Date (STARTDT): e.g., Randomization Date, First Dose Date, or First Response Date.
+      2. Event Date/Censoring Date Determination (ADT): Correctly evaluating competing risks (e.g., death vs. progression for PFS) and applying SAP-defined censoring rules (e.g., censoring at last adequate tumor assessment prior to new anti-cancer therapy or taking the earliest of multiple censoring dates).
+      3. Setting Status Variables: Assigning CNSR (0 = Event, 1 = Censored, or hierarchical values if >1 censoring reason exists) and EVNTDESC (description of the event or censoring reason).
+      4. Time-to-Event Calculation (AVAL): Calculating the elapsed time between STARTDT and ADT based on the required unit (e.g., Months, Days).
+
+      <constraints>
+      - Rigorously adhere to the ADaM Implementation Guide (IG). Do NOT hallucinate standard variables that do not exist in the ADaM standard (e.g., use AVAL, AVALU, STARTDT, ADT, CNSR).
+      - Ensure XML tags always wrap user variables in the prompt context.
+      - Output the result strictly as a structured JSON object with keys: "EndpointDefinition", "StartDTLogic", "EventCensoringLogic", and "DataQualityChecks".
+      - Ensure algorithms address SAP edge cases (e.g., death after two consecutive missing assessments).
+      </constraints>
+      </instructions>
+  - role: user
+    content: |
+      Please architect the censoring logic and ADTTE mapping rules based on the following inputs:
+
+      <endpoint_type>{{endpoint_type}}</endpoint_type>
+
+      <protocol_censoring_rules>{{protocol_censoring_rules}}</protocol_censoring_rules>
+
+      <adsl_data>
+      {{adsl_data}}
+      </adsl_data>
+
+      <adrs_data>
+      {{adrs_data}}
+      </adrs_data>
+testData:
+  - input:
+      endpoint_type: "Progression-Free Survival (PFS)"
+      protocol_censoring_rules: "PFS Event: PD or Death. Censor if alive without PD at last adequate tumor assessment. If new anti-cancer therapy initiated before PD, censor at last adequate assessment prior to new therapy."
+      adsl_data: |
+        USUBJID, RANDDT, TRTSDT, DTHDT, LSTALVDT
+        101-001, 2023-01-01, 2023-01-05, , 2023-10-01
+        101-002, 2023-02-01, 2023-02-03, 2023-08-15, 2023-08-15
+      adrs_data: |
+        USUBJID, PARAMCD, AVALC, ADT
+        101-001, OVRRESP, SD, 2023-03-01
+        101-001, OVRRESP, PR, 2023-06-01
+        101-001, OVRRESP, PD, 2023-09-01
+        101-002, OVRRESP, SD, 2023-04-01
+        101-002, OVRRESP, SD, 2023-07-01
+    expected: |
+      {
+        "EndpointDefinition": "Progression-Free Survival (PFS) is defined as the time from randomization (RANDDT) to the first documented disease progression (PD) or death from any cause, whichever occurs first.",
+        "StartDTLogic": "Set STARTDT = ADSL.RANDDT. If RANDDT is missing, issue a data query. Do not default to TRTSDT unless explicitly stated in the SAP.",
+        "EventCensoringLogic": "Subject 101-001: Has PD on 2023-09-01. ADT = 2023-09-01, CNSR = 0, EVNTDESC = 'Disease Progression'. Subject 101-002: Died on 2023-08-15 without prior PD. ADT = 2023-08-15, CNSR = 0, EVNTDESC = 'Death'. Logic: Evaluate earliest ADT where ADRS.AVALC = 'PD'. If no PD, check ADSL.DTHDT. If no PD and no Death, set ADT = maximum ADRS.ADT (last adequate assessment) and set CNSR = 1, EVNTDESC = 'Censored: Alive and progression-free'.",
+        "DataQualityChecks": "Check that STARTDT <= ADT. Check that CNSR values are either 0 (event) or >0 (censored). Ensure subjects with new anti-cancer therapies (from ADCM) are correctly censored prior to the therapy start date."
+      }
+evaluators:
+  - name: Global markdown enclosure check
+    string:
+      does_not_contain: "```"
+  - name: Output is JSON
+    regex:
+      pattern: (?s)^\{.*\}$
+  - name: Output contains required keys
+    regex:
+      pattern: (?s)(EndpointDefinition|StartDTLogic|EventCensoringLogic|DataQualityChecks)
