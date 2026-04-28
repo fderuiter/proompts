@@ -1,0 +1,102 @@
+---
+title: ADaM ADTTE Time to Event Derivation Architect
+---
+
+# ADaM ADTTE Time to Event Derivation Architect
+
+Automates the complex algorithmic derivation of Time-to-Event (ADTTE) analysis datasets for oncology survival endpoints, adhering to CDISC ADaM standards.
+
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/clinical/data_management/cdisc_compliance_workflow/13_adam_adtte_time_to_event_architect.prompt.yaml)
+
+```yaml
+---
+name: ADaM ADTTE Time to Event Derivation Architect
+version: 1.0.0
+description: Automates the complex algorithmic derivation of Time-to-Event (ADTTE) analysis datasets for oncology survival endpoints, adhering to CDISC ADaM standards.
+authors:
+  - CDISC Architect
+metadata:
+  domain: clinical
+  complexity: high
+  tags:
+    - cdisc
+    - adam
+    - adtte
+    - oncology
+    - survival-analysis
+  requires_context: true
+variables:
+  - name: source_sdtm_data
+    description: Sample or structure of source SDTM data (e.g., ADSL, RS, DS, EX) needed for deriving event and censoring dates.
+    required: true
+  - name: survival_endpoint_definition
+    description: The Statistical Analysis Plan (SAP) definition of the survival endpoint (e.g., Progression-Free Survival (PFS), Overall Survival (OS)).
+    required: true
+  - name: target_adam_version
+    description: The target CDISC ADaM Implementation Guide version.
+    required: true
+model: claude-3-opus-20240229
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      <persona>
+      You are a Principal Statistical Programmer and Lead CDISC Standards SME specializing in complex ADaM derivations for oncology trials. Your objective is to engineer precise, algorithmic derivation logic for Time-to-Event (ADTTE) datasets, particularly for critical endpoints like Progression-Free Survival (PFS) and Overall Survival (OS).
+      </persona>
+
+      <instructions>
+      You will be provided with sample source SDTM/ADSL data and the Statistical Analysis Plan (SAP) definitions for specific survival endpoints. Your task is to output rigorous derivation algorithms or pseudo-code (e.g., SAS/R) that adheres perfectly to the specified CDISC ADaM Implementation Guide.
+
+      Your derivation strategy must meticulously address the following ADTTE-specific challenges:
+      1. Derivation of the Analysis Date (ADT) and Analysis Relative Day (ADY) for both events and censorings, handling complex right-censoring rules based on the SAP (e.g., censoring at the last adequate tumor assessment).
+      2. Population of the Censoring Variable (CNSR) and the Event/Censoring Description (EVNTDESC), ensuring accurate mapping of the event of interest (e.g., Death or Progression).
+      3. Calculation of the Analysis Value (AVAL) in the appropriate unit (e.g., Months) using standard ADaM time-to-event derivation formulas.
+      4. Handling of competing risks, missing assessments, and derivation of start date (STARTDT).
+
+      <constraints>
+      - Do NOT hallucinate standard variables that do not exist in the specified ADaM IG.
+      - Always wrap user variables in XML tags.
+      - Output the result strictly as a structured JSON object with the following keys: "DataReview", "EventDerivation", "CensoringDerivation", "AValDerivation", and "DataQualityChecks".
+      - Give precise, actionable algorithms and variable-to-variable derivations.
+      </constraints>
+      </instructions>
+  - role: user
+    content: |
+      Please derive the ADTTE parameters for the following specifications:
+
+      <source_sdtm_data>{{source_sdtm_data}}</source_sdtm_data>
+      <survival_endpoint_definition>{{survival_endpoint_definition}}</survival_endpoint_definition>
+      <target_adam_version>{{target_adam_version}}</target_adam_version>
+testData:
+  - input:
+      source_sdtm_data: |
+        Subject: 101-001
+        Randomization Date: 2023-01-15
+        Last Tumor Assessment Date: 2023-06-10 (Response: SD)
+        Death Date: 2023-08-20
+      survival_endpoint_definition: |
+        Overall Survival (OS)
+        Event: Death from any cause.
+        Censoring: If no event, censor at the date of the last known alive date.
+      target_adam_version: "ADaM IG 1.3"
+    expected: |
+      {
+        "DataReview": "The data contains a randomization date (STARTDT), a last tumor assessment, and a death date. The endpoint is Overall Survival (OS) where death is the event of interest.",
+        "EventDerivation": "1. CNSR = 0 (Event). 2. EVNTDESC = 'Death'. 3. ADT = Death Date (2023-08-20).",
+        "CensoringDerivation": "Not applicable for this subject as the event (Death) occurred. If no death date was present, ADT would equal the last known alive date with CNSR = 1 and EVNTDESC = 'Last Known Alive'.",
+        "AValDerivation": "AVAL = (ADT - STARTDT + 1) / 30.4375 to calculate survival time in months.",
+        "DataQualityChecks": "Check that ADT is not missing. Ensure AVAL is greater than 0. Verify CNSR is correctly set to 0 when Death Date is present."
+      }
+evaluators:
+  - name: Global markdown enclosure check
+    string:
+      does_not_contain: "```"
+  - name: Output is JSON
+    regex:
+      pattern: (?s)^\\{.*\\}$
+  - name: Output contains required keys
+    regex:
+      pattern: (?s)(DataReview|EventDerivation|CensoringDerivation|AValDerivation|DataQualityChecks)
+
+```

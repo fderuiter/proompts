@@ -376,6 +376,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Pinnacle 21 Conformance Resolution Architect](prompts/clinical/data_management/cdisc_compliance_workflow/06_pinnacle21_conformance_resolution_architect.prompt.md)
 - [SDTM Trial Design Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/10_sdtm_trial_design_mapping_architect.prompt.md)
 - [SDTM Pharmacokinetics Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/07_sdtm_pharmacokinetics_mapping_architect.prompt.md)
+- [ADaM ADTTE Time to Event Derivation Architect](prompts/clinical/data_management/cdisc_compliance_workflow/13_adam_adtte_time_to_event_architect.prompt.md)
 - [SDTM Medical Device Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/08_sdtm_medical_device_mapping_architect.prompt.md)
 - [SDTM Cardiovascular Device Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/09_sdtm_cardiovascular_device_mapping_architect.prompt.md)
 - [SDTM Protocol Deviation Modeling Architect](prompts/clinical/data_management/cdisc_compliance_workflow/12_sdtm_protocol_deviation_modeling_architect.prompt.md)
