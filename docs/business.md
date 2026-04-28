@@ -79,6 +79,7 @@ title: Business
 - [Preventing Technical Debt](prompts/business/vp_tech_innovation/preventing_technical_debt.prompt.md)
 - [Private Equity Value Creation Architect](prompts/business/strategy/private_equity_value_creation_architect.prompt.md)
 - [Quantitative Corporate Portfolio Divestiture Architect](prompts/business/strategy/quantitative_corporate_portfolio_divestiture_architect.prompt.md)
+- [Quantitative Enterprise Value-at-Risk Architect](prompts/business/finance/quantitative_enterprise_value_at_risk_architect.prompt.md)
 - [Quantitative Enterprise Working Capital CCC Architect](prompts/business/finance/quantitative_enterprise_working_capital_ccc_architect.prompt.md)
 - [Quantitative FX Hedging Strategy Architect](prompts/business/cfo/quantitative_fx_hedging_strategy_architect.prompt.md)
 - [Quantitative M&A Accretion Dilution Architect](prompts/business/finance/quantitative_ma_accretion_dilution_architect.prompt.md)
