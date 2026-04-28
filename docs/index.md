@@ -706,6 +706,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [stiff_pde_numerical_stability_architect](prompts/scientific/mathematics/numerical_methods/stiff_pde_numerical_stability_architect.prompt.md)
 - [Symplectic Integrator Hamiltonian Systems Architect](prompts/scientific/mathematics/numerical_methods/symplectic_integrator_hamiltonian_systems_architect.prompt.md)
 - [Polynomial Optimization SDP Relaxation Architect](prompts/scientific/mathematics/optimization/polynomial_optimization_sdp_relaxation_architect.prompt.md)
+- [Robust Optimization Min-Max Architect](prompts/scientific/mathematics/optimization/robust_optimization_minmax_architect.prompt.md)
 - [Stochastic Multi-Objective Optimization Architect](prompts/scientific/mathematics/optimization/stochastic_optimization_architect.prompt.md)
 - [Topological Counterexample Generator](prompts/scientific/mathematics/topology/topological_counterexample_generator.prompt.md)
 

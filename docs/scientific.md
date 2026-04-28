@@ -223,6 +223,7 @@ title: Scientific
 - [Riemann Surface Analytic Continuation Architect](prompts/scientific/mathematics/analysis/complex_analysis/riemann_surface_analytic_continuation_architect.prompt.md)
 - [Riemannian Manifold Curvature Deriver](prompts/scientific/mathematics/geometry/differential/riemannian_manifold_curvature_deriver.prompt.md)
 - [Risk Assessment Expert](prompts/scientific/biosafety/biological_safety_workflow/01_risk_assessment_expert.prompt.md)
+- [Robust Optimization Min-Max Architect](prompts/scientific/mathematics/optimization/robust_optimization_minmax_architect.prompt.md)
 - [Sample-Size & Randomization Strategy](prompts/scientific/biostatistics/sample_size_randomization_strategy.prompt.md)
 - [Schwinger-Dyson Equation Architect](prompts/scientific/physics/quantum_field_theory/schwinger_dyson_equation_architect.prompt.md)
 - [Schwinger-Keldysh Non-Equilibrium Path Integral Architect](prompts/scientific/physics/quantum_field_theory/schwinger_keldysh_non_equilibrium_path_integral_architect.prompt.md)
