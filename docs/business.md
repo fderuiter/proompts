@@ -10,6 +10,7 @@ title: Business
 - [Algorithmic Dynamic Pricing & Yield Management Architect](prompts/business/strategy/algorithmic_dynamic_pricing_yield_management_architect.prompt.md)
 - [Algorithmic Multi-Touch Attribution Architect](prompts/business/growth_engineering/algorithmic_multi_touch_attribution_architect.prompt.md)
 - [Automated E-Discovery Reviewer](prompts/business/legal/automated_ediscovery_reviewer.prompt.md)
+- [Automated Financial Variance Analyst](prompts/business/finance/automated_financial_variance_analyst.prompt.md)
 - [blue_ocean_value_innovation_architect](prompts/business/strategy/blue_ocean_value_innovation_architect.prompt.md)
 - [Board Deck Narrative Generation](prompts/business/cfo/board_deck_narrative.prompt.md)
 - [Budget Variance Analysis](prompts/business/cfo/variance_analysis.prompt.md)

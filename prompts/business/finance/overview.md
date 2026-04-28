@@ -1,6 +1,7 @@
 # Finance Overview
 
 ## Prompts
+- **[Automated Financial Variance Analyst](automated_financial_variance_analyst.prompt.yaml)**: Automates the cognitive labor of a corporate financial analyst by systematically processing variance analysis between actuals and budgets.
 - **[Corporate Capital Budgeting Investment Appraisal Architect](corporate_capital_budgeting_investment_appraisal_architect.prompt.yaml)**: Architects robust, quantitative capital budgeting frameworks using NPV, IRR, and WACC to rigorously appraise enterprise investment opportunities and capital allocation strategies.
 - **[Corporate Financial Distress Predictive Altman Z-Score Architect](corporate_financial_distress_predictive_altman_z_score_architect.prompt.yaml)**: Architects robust predictive financial distress models using the Altman Z-Score to evaluate bankruptcy risk and structural insolvency in enterprise operations.
 - **[Corporate Merger Arbitrage Deal Risk Architect](corporate_merger_arbitrage_risk_architect.prompt.yaml)**: Evaluate deal completion probabilities, antitrust risk, and expected annualized returns using advanced probability-weighted financial modeling and the McKinsey 7S framework.
