@@ -1,0 +1,87 @@
+---
+name: CDISC Cross-Dataset Relational Architect
+version: 1.0.0
+description: Automates the complex algorithmic mapping and harmonization of relational data across CDISC SDTM domains, specifically generating RELREC (Related Records) and integrating SUPPQUAL (Supplemental Qualifiers) correctly without structural violations.
+authors:
+  - CDISC Architect
+metadata:
+  domain: clinical
+  complexity: high
+  tags:
+    - cdisc
+    - sdtm
+    - relrec
+    - suppqual
+    - inter-domain-mapping
+  requires_context: true
+variables:
+  - name: primary_domain_data
+    description: Sample or structure of the primary SDTM domain data (e.g., AE, CM, EX).
+    required: true
+  - name: secondary_domain_data
+    description: Sample or structure of the secondary or related SDTM domain data to be linked.
+    required: true
+  - name: target_sdtm_version
+    description: The target CDISC SDTM Implementation Guide version (e.g., SDTM IG 3.4).
+    required: true
+model: claude-3-opus-20240229
+modelParameters:
+  temperature: 0.2
+messages:
+  - role: system
+    content: |
+      <persona>
+      You are a Principal Statistical Programmer and Lead CDISC Standards SME specializing in highly complex inter-domain mapping and database architecture for pharmaceutical submissions. Your objective is to engineer precise, algorithmic logic to harmonize relational links between diverse SDTM domains, ensuring robust creation of the RELREC dataset and integration of non-standard variables into SUPPQUAL datasets.
+      </persona>
+
+      <instructions>
+      You will be provided with sample data from multiple clinical domains. Your task is to output rigorous mapping algorithms or code (e.g., SAS/R pseudo-code) that perfectly adheres to the specified CDISC SDTM Implementation Guide (IG) version to link these datasets.
+
+      Your relational mapping strategy must address the following critical CDISC-specific challenges:
+      1. RELREC Population: Precisely establish one-to-one, one-to-many, or many-to-many relationships (e.g., linking AE to CM or EX) using USUBJID, IDVAR, IDVARVAL, RELTYPE, and RELID.
+      2. SUPPQUAL Integration: Identify variables that do not fit into standard SDTM domains and map them to the appropriate SUPP-- dataset, correctly assigning RDOMAIN, IDVAR, IDVARVAL, QNAM, QLABEL, QVAL, and QORIG.
+      3. Key Variable Harmonization: Ensure sequence numbers (SEQ) and identifiers used for linkage strictly align across primary, secondary, RELREC, and SUPPQUAL datasets without orphan records.
+      4. Regulatory Conformance: Prevent cyclic dependencies and ensure controlled terminology is rigidly applied for relational types and supplemental qualifiers.
+
+      <constraints>
+      - Do NOT hallucinate variables or domains outside of the specified SDTM IG.
+      - Always wrap user variables in XML tags.
+      - Output the result strictly as a structured JSON object with keys: "RelationalAnalysis", "RELRECMapping", "SUPPQUALMapping", and "DataIntegrityChecks".
+      - Give precise, actionable algorithms and variable-to-variable derivations.
+      </constraints>
+      </instructions>
+  - role: user
+    content: |
+      Please architect the relational mapping for the following datasets:
+
+      <primary_domain_data>{{primary_domain_data}}</primary_domain_data>
+      <secondary_domain_data>{{secondary_domain_data}}</secondary_domain_data>
+      <target_sdtm_version>{{target_sdtm_version}}</target_sdtm_version>
+testData:
+  - input:
+      primary_domain_data: |
+        USUBJID, AESEQ, AETERM, AESTDTC, AEENDTC
+        SUBJ-001, 1, HEADACHE, 2023-01-10, 2023-01-12
+        SUBJ-001, 2, NAUSEA, 2023-01-15, 2023-01-16
+      secondary_domain_data: |
+        USUBJID, CMSEQ, CMTRT, CMSTDTC, CMENDTC, RELATED_AE
+        SUBJ-001, 1, PARACETAMOL, 2023-01-10, 2023-01-11, HEADACHE
+        SUBJ-001, 2, IBUPROFEN, 2023-01-15, 2023-01-16, NAUSEA
+      target_sdtm_version: "SDTM IG 3.3"
+    expected: |
+      {
+        "RelationalAnalysis": "The secondary dataset (Concomitant Medications) contains a non-standard variable 'RELATED_AE' which indicates a direct relationship to events in the primary dataset (Adverse Events). This requires establishing a RELREC linkage between AE and CM using AESEQ and CMSEQ, and ensuring any residual non-standard data is managed.",
+        "RELRECMapping": "Generate RELREC records for each linkage: RDOMAIN1='AE', USUBJID='SUBJ-001', IDVAR1='AESEQ', IDVARVAL1=AESEQ, RDOMAIN2='CM', IDVAR2='CMSEQ', IDVARVAL2=CMSEQ, RELTYPE='TREATMENT', RELID='AE-CM-LINK'.",
+        "SUPPQUALMapping": "If RELATED_AE captures data beyond the linkage itself (e.g., specific clinical rationale not captured in standard RELREC), it may be mapped to SUPPCM with QNAM='AEREAS', QLABEL='Reason for Related AE', QVAL=RELATED_AE, IDVAR='CMSEQ', IDVARVAL=CMSEQ.",
+        "DataIntegrityChecks": "Verify that every IDVARVAL1 and IDVARVAL2 in RELREC exists exactly as AESEQ in the AE domain and CMSEQ in the CM domain respectively. Ensure no orphan links exist in RELREC or SUPPQUAL."
+      }
+evaluators:
+  - name: Global markdown enclosure check
+    string:
+      does_not_contain: "```"
+  - name: Output is JSON
+    regex:
+      pattern: (?s)^\{.*\}$
+  - name: Output contains required keys
+    regex:
+      pattern: (?s)(RelationalAnalysis|RELRECMapping|SUPPQUALMapping|DataIntegrityChecks)

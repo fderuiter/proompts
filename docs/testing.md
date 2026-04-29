@@ -7,6 +7,7 @@ title: Testing
 ## Prompts
 - [Advanced Design Patterns: Fluent Interface](prompts/technical/testing/selenium_automation/fluent_interface_selenium.prompt.md)
 - [Architecture Design: Page Object Model](prompts/technical/testing/selenium_automation/pom_implementation.prompt.md)
+- [Chaos Engineering Resilience Architect](prompts/technical/testing/chaos_engineering_resilience_architect.prompt.md)
 - [Cross-Browser Infrastructure: Selenium Grid](prompts/technical/testing/selenium_automation/selenium_grid_setup.prompt.md)
 - [Design Verification Test Plan](prompts/technical/testing/testing_workflow/02_design_verification_test_plan.prompt.md)
 - [Driver Configuration: WebDriver Initialization](prompts/technical/testing/selenium_automation/webdriver_initialization.prompt.md)
