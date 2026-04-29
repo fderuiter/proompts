@@ -127,6 +127,7 @@ title: Scientific
 - [hamiltonian_monte_carlo_architect](prompts/scientific/statistics/inference/bayesian_methods/hamiltonian_monte_carlo_architect.prompt.md)
 - [Hands-On Procedure Coaching](prompts/scientific/bioskills/bioskills_workflow/01_hands_on_procedure_coaching.prompt.md)
 - [hank_macroeconomic_architect](prompts/scientific/economics/macroeconomics/heterogeneous_agents/hank_macroeconomic_architect.prompt.md)
+- [health_inequality_concentration_index_architect](prompts/scientific/sociology/stratification/systemic_inequality/health_inequality_concentration_index_architect.prompt.md)
 - [hidden_markov_model_architect](prompts/scientific/statistics/stochastic/markov_processes/hidden_markov_model_architect.prompt.md)
 - [high_dimensional_sparse_regression_architect](prompts/scientific/statistics/modeling/high_dimensional_analysis/high_dimensional_sparse_regression_architect.prompt.md)
 - [higher_homotopy_postnikov_tower_architect](prompts/scientific/mathematics/topology/algebraic_topology/higher_homotopy_postnikov_tower_architect.prompt.md)
