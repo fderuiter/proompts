@@ -1360,6 +1360,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Serverless Database Connection Pooling Architect](prompts/technical/architecture/serverless_database_connection_pooling_architect.prompt.md)
 - [Serverless Function Orchestration Architect](prompts/technical/architecture/serverless_function_orchestration_architect.prompt.md)
 - [Service Mesh Security Architect](prompts/technical/architecture/service_mesh_security_architect.prompt.md)
+- [Shadow Traffic and Dark Launch Architect](prompts/technical/architecture/shadow_traffic_dark_launch_architect.prompt.md)
 - [SOLID Codebase Analysis](prompts/technical/architecture/solid_codebase_analysis.prompt.md)
 - [Space-Based Architecture Designer](prompts/technical/architecture/space_based_architecture_designer.prompt.md)
 - [Spatial Geofencing Topology Architect](prompts/technical/architecture/spatial_geofencing_topology_architect.prompt.md)
