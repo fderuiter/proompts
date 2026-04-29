@@ -245,6 +245,7 @@
 [3D QSAR Pharmacophore Modeling Architect](prompts/scientific/chemistry/computational/cheminformatics/3d_qsar_pharmacophore_modeling_architect.prompt.md)
 [Free Energy Perturbation Architect](prompts/scientific/chemistry/computational/molecular_dynamics/free_energy_perturbation_architect.prompt.md)
 [Metadynamics Free Energy Surface Architect](prompts/scientific/chemistry/computational/molecular_dynamics/metadynamics_free_energy_surface_architect.prompt.md)
+[Temperature Replica Exchange Molecular Dynamics Architect](prompts/scientific/chemistry/computational/molecular_dynamics/replica_exchange_md_architect.prompt.md)
 [DFT Transition State Architect](prompts/scientific/chemistry/computational/quantum_chemistry/dft_transition_state_architect.prompt.md)
 [Non-Adiabatic Photodynamics Architect](prompts/scientific/chemistry/computational/quantum_chemistry/non_adiabatic_photodynamics_architect.prompt.md)
 [TD-DFT Excited-State Dynamics Architect](prompts/scientific/chemistry/computational/quantum_chemistry/td_dft_excited_state_dynamics_architect.prompt.md)
