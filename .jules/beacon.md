@@ -1,1 +1,0 @@
-- 2025-04-29: Added `docs/QUICKSTART.md` because the root `README.md` and `docs/index.md` lacked a simple, copy-pasteable onboarding guide for new developers to understand the "Prompts as Code" concept and run their first simulation.
