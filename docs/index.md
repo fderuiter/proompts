@@ -1394,6 +1394,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Forge - Script Reliability Agent](prompts/technical/devops/forge_script_reliability.prompt.md)
 - [gitops_continuous_delivery_architect](prompts/technical/devops/gitops_continuous_delivery_architect.prompt.md)
 - [Infrastructure as Code (IaC) Security Architect](prompts/technical/devops/infrastructure_as_code_security_architect.prompt.md)
+- [Infrastructure Configuration Drift Remediation Architect](prompts/technical/devops/infrastructure_configuration_drift_remediation_architect.prompt.md)
 - [Site Reliability SLO Error Budget Architect](prompts/technical/devops/site_reliability_slo_error_budget_architect.prompt.md)
 - [SRE Incident Postmortem RCA Architect](prompts/technical/devops/sre_incident_postmortem_rca_architect.prompt.md)
 - [Atlas Documentation Specialist](prompts/technical/documentation/atlas_documentation_specialist.prompt.md)
