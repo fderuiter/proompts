@@ -55,6 +55,7 @@ graph TD
 
 ## Docs
 
+- **[🚀 Quickstart: 5-Minute Onboarding](docs/QUICKSTART.md)** – Start here! Learn how to run your first simulation.
 - **[Full Table of Contents](docs/index.md)** – Browse all prompts by category
 - **[Usage Guide](docs/USAGE.md)** – Learn how to use and integrate prompts
 - **[Developer Scripts](tools/scripts/README.md)** – Tools for validating and maintaining the repo
