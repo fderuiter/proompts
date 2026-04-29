@@ -124,6 +124,7 @@ title: Scientific
 - [godel_incompleteness_arithmetization_engineer](prompts/scientific/mathematics/formal_logic/godel_incompleteness_arithmetization_engineer.prompt.md)
 - [graph_theoretical_connectome_analyzer](prompts/scientific/computational_theoretical_neuroscience/graph_theoretical_connectome_analyzer.prompt.md)
 - [gwas_polygenic_risk_score_architect](prompts/scientific/genetics/genomics/gwas_polygenic_risk_score_architect.prompt.md)
+- [hamiltonian_monte_carlo_architect](prompts/scientific/statistics/inference/bayesian_methods/hamiltonian_monte_carlo_architect.prompt.md)
 - [Hands-On Procedure Coaching](prompts/scientific/bioskills/bioskills_workflow/01_hands_on_procedure_coaching.prompt.md)
 - [hank_macroeconomic_architect](prompts/scientific/economics/macroeconomics/heterogeneous_agents/hank_macroeconomic_architect.prompt.md)
 - [hidden_markov_model_architect](prompts/scientific/statistics/stochastic/markov_processes/hidden_markov_model_architect.prompt.md)
