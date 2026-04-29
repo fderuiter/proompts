@@ -19,6 +19,7 @@ title: Meta
 - [Prompt Engineer Template](prompts/meta/meta_prompt_chain/02_L2_prompt-engineer.prompt.md)
 - [PromptCrafter GPT](prompts/meta/meta_prompt_chain/05_L5_promptcrafter_gpt.prompt.md)
 - [README Generator](prompts/meta/meta_prompt_chain/05_L5_readme-generator.prompt.md)
+- [Recursive Abductive Hypothesis Synthesizer](prompts/meta/agent_orchestration/recursive_abductive_hypothesis_synthesizer.prompt.md)
 - [Task Prototyper](prompts/meta/meta_prompt_chain/03_L3_task-prototyper.prompt.md)
 - [The Prompt Alchemist](prompts/meta/creative/the_prompt_alchemist.prompt.md)
 - [Vector Prompt Calibration Evaluator](prompts/meta/meta_prompt_chain/vector_calibration.prompt.md)
