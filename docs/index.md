@@ -723,6 +723,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [Dynamic Epistemic Drift Mitigator](prompts/meta/agent_orchestration/dynamic_epistemic_drift_mitigator.prompt.md)
 - [Fractal Epistemic Consensus Architect](prompts/meta/agent_orchestration/fractal_epistemic_consensus_architect.prompt.md)
+- [Recursive Abductive Hypothesis Synthesizer](prompts/meta/agent_orchestration/recursive_abductive_hypothesis_synthesizer.prompt.md)
 - [Vector Prompt Calibrator](prompts/meta/calibration/vector_prompt_calibrator.prompt.md)
 - [The Prompt Alchemist](prompts/meta/creative/the_prompt_alchemist.prompt.md)
 - [Master Ultrameta Prompt Architect](prompts/meta/meta_prompt_chain/00_L0_master-ultrameta.prompt.md)
