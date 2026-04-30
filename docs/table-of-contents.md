@@ -1023,6 +1023,7 @@
 [Multi-Tenant SaaS Architecture Designer](prompts/technical/architecture/multi_tenant_saas_architecture_designer.prompt.md)
 [Multi-Tier Disaggregated Memory CXL Architect](prompts/technical/architecture/multi_tier_disaggregated_memory_cxl_architect.prompt.md)
 [Offline-First Synchronization Architect](prompts/technical/architecture/offline_first_sync_architect.prompt.md)
+[Passwordless FIDO2 WebAuthn Architect](prompts/technical/architecture/passwordless_fido2_webauthn_architect.prompt.md)
 [Payment Gateway Idempotency Architect](prompts/technical/architecture/payment_gateway_idempotency_architect.prompt.md)
 [peer_to_peer_gossip_protocol_architect](prompts/technical/architecture/peer_to_peer_gossip_protocol_architect.prompt.md)
 [Petabyte-Scale Data Lakehouse Architect](prompts/technical/architecture/petabyte_scale_data_lakehouse_architect.prompt.md)
