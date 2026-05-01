@@ -104,6 +104,7 @@ title: Scientific
 - [exponential_random_graph_model_architect](prompts/scientific/sociology/methods/social_network_analysis/exponential_random_graph_model_architect.prompt.md)
 - [FDA Missing-Data Query Response](prompts/scientific/biostatistics/fda_missing_data_query_response.prompt.md)
 - [Feynman Rule Derivation Architect](prompts/scientific/physics/quantum_field_theory/feynman_rule_derivation_architect.prompt.md)
+- [financial_frictions_dsge_architect](prompts/scientific/economics/macroeconomics/dsge_modeling/financial_frictions_dsge_architect.prompt.md)
 - [first_order_logic_natural_language_translator](prompts/scientific/mathematics/formal_logic/first_order_logic_natural_language_translator.prompt.md)
 - [first_order_logic_semantic_tableau_generator](prompts/scientific/mathematics/formal_logic/first_order_logic_semantic_tableau_generator.prompt.md)
 - [first_order_logic_sequent_calculus_prover](prompts/scientific/mathematics/formal_logic/first_order_logic_sequent_calculus_prover.prompt.md)
