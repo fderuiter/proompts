@@ -17,51 +17,118 @@ metadata:
   domain: clinical
   complexity: medium
   tags:
-  - medical-imaging
-  - regulatory
-  - imaging
-  - data
-  - package
+    - medical-imaging
+    - regulatory
+    - imaging
+    - data
+    - package
   requires_context: false
-variables: []
+variables:
+  - name: study_summary
+    type: string
+    description: Key trial details including protocol, sites, and basic demographic
+      breakdown.
+  - name: metrics_data
+    type: string
+    description: Image-quality metrics from core lab assessment.
+  - name: reader_agreement
+    type: string
+    description: Reader agreement statistics (e.g., Cohen's kappa, Intraclass Correlation
+      Coefficient).
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: 'You are a medical writer on the imaging core lab submission team, expert in DICOM metadata and statistical imaging
-    endpoints. The sponsor is preparing a PMA for an AI-guided cardiac mapping device. Data come from three blinded independent
-    readers with adjudication. Endpoints include sensitivity and specificity versus gold-standard angiography.
+  - role: system
+    content: 'You are a medical writer on the imaging core lab submission team, expert
+      in DICOM metadata and statistical imaging endpoints. The sponsor is preparing
+      a PMA for an AI-guided cardiac mapping device. Data come from three blinded
+      independent readers with adjudication. Endpoints include sensitivity and specificity
+      versus gold-standard angiography.
 
 
-    1. Produce a one-page narrative overview covering purpose, endpoints, and datasets.
+      1. Produce a one-page narrative overview covering purpose, endpoints, and datasets.
 
-    2. Provide a table summarizing image-quality metrics and reader agreement (κ, ICC).
+      2. Provide a table summarizing image-quality metrics and reader agreement (κ,
+      ICC).
 
-    3. Describe the imaging data-handling process from capture to lock.
+      3. Describe the imaging data-handling process from capture to lock.
 
-    4. Include an appendix template for anticipated FDA questions.
+      4. Include an appendix template for anticipated FDA questions.
 
-    5. Cross-reference the ISO 13485 certification statement.
+      5. Cross-reference the ISO 13485 certification statement.
 
-    6. Keep the narrative within 300 words.
+      6. Keep the narrative within 300 words.
 
-    7. Present the table in Markdown format.
+      7. Present the table in Markdown format.
 
-    8. Ask clarifying questions if details are missing.
-
-
-    Limit the narrative to 300 words.'
-- role: user
-  content: '- `<<<study_summary>>>` – key trial details
-
-    - `<<<metrics_data>>>` – image-quality metrics
-
-    - `<<<reader_agreement>>>` – reader agreement statistics
+      8. Ask clarifying questions if details are missing.
 
 
-    Output format: Narrative text followed by a Markdown table and an appendix template.'
-testData: []
-evaluators: []
+      Limit the narrative to 300 words.'
+  - role: user
+    content: 'Please review the following inputs and generate the Regulatory Imaging
+      Data Package:
+
+
+      <study_summary>
+
+      {{study_summary}}
+
+      </study_summary>
+
+
+      <metrics_data>
+
+      {{metrics_data}}
+
+      </metrics_data>
+
+
+      <reader_agreement>
+
+      {{reader_agreement}}
+
+      </reader_agreement>
+
+
+      Output format: Narrative text followed by a Markdown table and an appendix template.'
+testData:
+  - variables:
+      study_summary: 'PMA Trial ''ECHO-AI-01'': 500 subjects enrolled across 10 US
+        sites. Blinded multi-reader multi-case (MRMC) design for AI-guided cardiac
+        mapping device vs. standard 12-lead ECG. Ground truth: invasive electrophysiology
+        study. Endpoints: Sensitivity and Specificity for localizing focal atrial
+        tachycardia.'
+      metrics_data: Overall image quality scored as 'Excellent' in 85% of cases, 'Diagnostic'
+        in 12%, and 'Non-diagnostic' in 3% due to motion artifact. Signal-to-noise
+        ratio averaged 24 dB.
+      reader_agreement: Fleiss' kappa for mapping localization = 0.82 (95% CI 0.78-0.86),
+        indicating excellent agreement across 3 independent adjudicators. ICC for
+        measured activation times = 0.91.
+    expected: A full narrative summary, markdown table with the metrics, and an appendix
+      template.
+  - variables:
+      study_summary: Trial 'ECHO-AI-01' partial interim dataset. Site 04 data delayed.
+      metrics_data: Image quality data missing for 40% of cohort due to corrupted
+        DICOM headers during site transfer. Preliminary data shows 15% non-diagnostic.
+      reader_agreement: Kappa pending complete adjudication. Preliminary ICC is 0.45
+        (poor agreement).
+    expected: Handles the missing data explicitly and flags the poor ICC in the narrative.
+  - variables:
+      study_summary: ''
+      metrics_data: ''
+      reader_agreement: ''
+    expected: Refusal or request for clarification due to lack of required data.
+evaluators:
+  - name: Check for Markdown Table
+    type: regex
+    pattern: \|.*\|
+  - name: Check for ISO 13485 reference
+    type: regex
+    pattern: (?i)ISO\s*13485
+  - name: Check for Appendix Template
+    type: regex
+    pattern: (?i)Appendix
 
 ```
