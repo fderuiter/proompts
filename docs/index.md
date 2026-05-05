@@ -277,6 +277,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [SOP and TMF Document Synthesis](prompts/clinical/protocol/sop_tmf_document_synthesis.prompt.md)
 - [breakthrough_therapy_designation_rationale_architect](prompts/clinical/regulatory_affairs/breakthrough_therapy_designation_rationale_architect.prompt.md)
 - [fast_track_designation_request_architect](prompts/clinical/regulatory_affairs/fast_track_designation_request_architect.prompt.md)
+- [fda_type_b_meeting_briefing_package_architect](prompts/clinical/regulatory_affairs/fda_type_b_meeting_briefing_package_architect.prompt.md)
 - [ind_clinical_hold_response_architect](prompts/clinical/regulatory_affairs/ind_clinical_hold_response_architect.prompt.md)
 - [investigators_brochure_safety_synthesizer](prompts/clinical/regulatory_affairs/investigators_brochure_safety_synthesizer.prompt.md)
 - [orphan_drug_designation_application_architect](prompts/clinical/regulatory_affairs/orphan_drug_designation_application_architect.prompt.md)

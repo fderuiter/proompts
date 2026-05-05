@@ -72,6 +72,7 @@ title: Clinical
 - [eu_mdr_clinical_evaluation_report_architect](prompts/clinical/medical_writing/eu_mdr_clinical_evaluation_report_architect.prompt.md)
 - [fast_track_designation_request_architect](prompts/clinical/regulatory_affairs/fast_track_designation_request_architect.prompt.md)
 - [FDA MDR/MDV Adverse-Event Narrative](prompts/clinical/safety/clinical_safety_workflow/02_fda_mdr_adverse_event_narrative.prompt.md)
+- [fda_type_b_meeting_briefing_package_architect](prompts/clinical/regulatory_affairs/fda_type_b_meeting_briefing_package_architect.prompt.md)
 - [Forecast Site-Level Drug Supply & Resupply Strategy](prompts/clinical/rtsm/rtsm_workflow/02_site_level_supply_resupply_strategy.prompt.md)
 - [icf_readability_compliance_architect](prompts/clinical/medical_writing/icf_readability_compliance_architect.prompt.md)
 - [ich_e2c_pbrer_benefit_risk_architect](prompts/clinical/pharmacovigilance/ich_e2c_pbrer_benefit_risk_architect.prompt.md)
