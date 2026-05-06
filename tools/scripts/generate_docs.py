@@ -2,6 +2,26 @@
 """
 ⚙️ Systems Core: Documentation Generator
 Refactored for Robustness, Scalability, and OCP.
+
+WHAT:
+This script generates the static Markdown documentation site structure in the `docs/` directory.
+It scans all prompts and workflows, organizes them by category (metadata-driven), and builds
+category index pages and individual workflow documentation pages.
+
+WHY:
+It treats documentation as a first-class build artifact, keeping the `docs/` site in perfect
+sync with the actual source code (`prompts/` and `workflows/`). By automating this process,
+we eliminate "Documentation Debt" and ensure developers always have an accurate, up-to-date
+reference for the system.
+
+HOW TO USE:
+Run this script from the root of the repository:
+
+    python3 tools/scripts/generate_docs.py
+
+> [!NOTE]
+> This script is automatically executed as part of the master validation suite (`test_all.py`).
+> It relies on `tools/scripts/docs_config.json` for directory configuration and structural mappings.
 """
 
 import sys
