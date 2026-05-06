@@ -277,6 +277,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [SOP and TMF Document Synthesis](prompts/clinical/protocol/sop_tmf_document_synthesis.prompt.md)
 - [breakthrough_therapy_designation_rationale_architect](prompts/clinical/regulatory_affairs/breakthrough_therapy_designation_rationale_architect.prompt.md)
 - [fast_track_designation_request_architect](prompts/clinical/regulatory_affairs/fast_track_designation_request_architect.prompt.md)
+- [fda_type_b_meeting_briefing_package_architect](prompts/clinical/regulatory_affairs/fda_type_b_meeting_briefing_package_architect.prompt.md)
 - [ind_clinical_hold_response_architect](prompts/clinical/regulatory_affairs/ind_clinical_hold_response_architect.prompt.md)
 - [investigators_brochure_safety_synthesizer](prompts/clinical/regulatory_affairs/investigators_brochure_safety_synthesizer.prompt.md)
 - [orphan_drug_designation_application_architect](prompts/clinical/regulatory_affairs/orphan_drug_designation_application_architect.prompt.md)
@@ -439,6 +440,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [longitudinal_trauma_propagation_modeler](prompts/scientific/epidemiology/global_mental_health/longitudinal_trauma_propagation_modeler.prompt.md)
 - [affective_polarization_contagion_mapper](prompts/scientific/psychology/epidemiology/affective_polarization/affective_polarization_contagion_mapper.prompt.md)
+- [algorithmic_cognitive_overload_epidemiological_mapper](prompts/scientific/psychology/epidemiology/global_mental_health/algorithmic_cognitive_overload_epidemiological_mapper.prompt.md)
 - [digital_phenotyping_epidemiological_surveillance_architect](prompts/scientific/psychology/epidemiology/global_mental_health/digital_phenotyping_epidemiological_surveillance_architect.prompt.md)
 - [multinational_longitudinal_intervention_architect](prompts/scientific/psychology/epidemiology/global_mental_health/multinational_longitudinal_intervention_architect.prompt.md)
 - [psychological_trauma_epidemiology_mapper](prompts/scientific/psychology/epidemiology/global_mental_health/psychological_trauma_epidemiology_mapper.prompt.md)
@@ -501,6 +503,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [projective_scheme_sheaf_cohomology_architect](prompts/scientific/mathematics/geometry/algebraic_geometry/projective_scheme_sheaf_cohomology_architect.prompt.md)
 - [atiyah_singer_index_theorem_architect](prompts/scientific/mathematics/geometry/differential/atiyah_singer_index_theorem_architect.prompt.md)
+- [Hodge Theory Harmonic Form Architect](prompts/scientific/mathematics/geometry/differential/hodge_theory_harmonic_form_architect.prompt.md)
 - [pseudo_riemannian_tensor_calculus_prover](prompts/scientific/mathematics/geometry/differential/pseudo_riemannian_tensor_calculus_prover.prompt.md)
 - [Riemannian Manifold Curvature Deriver](prompts/scientific/mathematics/geometry/differential/riemannian_manifold_curvature_deriver.prompt.md)
 
