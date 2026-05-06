@@ -1,2 +1,0 @@
-Vulnerability: Prompt corporate_merger_arbitrage_risk_architect.prompt.yaml accepted naked inputs without XML tags and lacked refusal instructions for unsafe out-of-domain queries.
-Fix: Added explicit XML tag wrapping for input variables and integrated a strict security constraint dictating a refusal JSON {"error": "unsafe"} for malicious inputs, alongside testing data to prevent regressions.
