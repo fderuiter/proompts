@@ -482,6 +482,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [ultraproduct_los_theorem_architect](prompts/scientific/mathematics/foundations/model_theory/ultraproduct_los_theorem_architect.prompt.md)
 - [homotopy_type_theory_univalence_architect](prompts/scientific/mathematics/foundations/proof_theory/homotopy_type_theory_univalence_architect.prompt.md)
 - [intuitionistic_logic_natural_deduction_generator](prompts/scientific/mathematics/foundations/proof_theory/intuitionistic_logic_natural_deduction_generator.prompt.md)
+- [non_standard_analysis_hyperreal_architect](prompts/scientific/mathematics/foundations/proof_theory/non_standard_analysis_hyperreal_architect.prompt.md)
 - [set_theoretic_forcing_architect](prompts/scientific/mathematics/foundations/proof_theory/set_theoretic_forcing_architect.prompt.md)
 - [forcing_poset_generic_extension_architect](prompts/scientific/mathematics/foundations/set_theory/forcing_poset_generic_extension_architect.prompt.md)
 - [large_cardinal_elementary_embedding_architect](prompts/scientific/mathematics/foundations/set_theory/large_cardinal_elementary_embedding_architect.prompt.md)
