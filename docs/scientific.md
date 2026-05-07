@@ -65,6 +65,7 @@ title: Scientific
 - [crispr_cas9_off_target_thermodynamic_architect](prompts/scientific/biology/genetics/genomics/crispr_cas9_off_target_thermodynamic_architect.prompt.md)
 - [Custom Axiomatic System Soundness Evaluator](prompts/scientific/mathematics/formal_logic/custom_axiomatic_system_soundness_evaluator.prompt.md)
 - [d_brane_worldvolume_effective_action_architect](prompts/scientific/physics/string_theory/brane_dynamics/d_brane_worldvolume_effective_action_architect.prompt.md)
+- [Dantzig-Wolfe Column Generation Architect](prompts/scientific/mathematics/optimization/dantzig_wolfe_column_generation_architect.prompt.md)
 - [deep_brain_stimulation_biophysical_architect](prompts/scientific/computational_theoretical_neuroscience/deep_brain_stimulation_biophysical_architect.prompt.md)
 - [dendritic_cable_theory_computation_architect](prompts/scientific/computational_theoretical_neuroscience/dendritic_cable_theory_computation_architect.prompt.md)
 - [Deontic Logic Normative Conflict Resolver](prompts/scientific/philosophy/logic/philosophical_logic/deontic_logic_normative_conflict_resolver.prompt.md)
