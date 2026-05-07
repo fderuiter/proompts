@@ -103,6 +103,7 @@
 [Leveraged Buyout Financial Structuring Architect](prompts/business/strategy/leveraged_buyout_financial_structuring_architect.prompt.md)
 [Platform Ecosystem Network Effects Architect](prompts/business/strategy/platform_ecosystem_network_effects_architect.prompt.md)
 [Post-Merger Integration Synergy Architect](prompts/business/strategy/post_merger_integration_synergy_architect.prompt.md)
+[Private Equity LP Co-Investment Structuring Architect](prompts/business/strategy/private_equity_lp_co_investment_structuring_architect.prompt.md)
 [Private Equity Value Creation Architect](prompts/business/strategy/private_equity_value_creation_architect.prompt.md)
 [Quantitative Corporate Portfolio Divestiture Architect](prompts/business/strategy/quantitative_corporate_portfolio_divestiture_architect.prompt.md)
 [Real Options Valuation Architect](prompts/business/strategy/real_options_valuation_architect.prompt.md)

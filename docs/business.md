@@ -78,6 +78,7 @@ title: Business
 - [Post-Mortem / Incident Report Summary](prompts/business/vp_tech_innovation/post_mortem_summary.prompt.md)
 - [Predictive RFM Churn Mitigation Architect](prompts/business/growth_engineering/predictive_rfm_churn_mitigation_architect.prompt.md)
 - [Preventing Technical Debt](prompts/business/vp_tech_innovation/preventing_technical_debt.prompt.md)
+- [Private Equity LP Co-Investment Structuring Architect](prompts/business/strategy/private_equity_lp_co_investment_structuring_architect.prompt.md)
 - [Private Equity Value Creation Architect](prompts/business/strategy/private_equity_value_creation_architect.prompt.md)
 - [Quantitative Corporate Portfolio Divestiture Architect](prompts/business/strategy/quantitative_corporate_portfolio_divestiture_architect.prompt.md)
 - [Quantitative Credit Risk Expected Loss Architect](prompts/business/finance/quantitative_credit_risk_expected_loss_architect.prompt.md)
