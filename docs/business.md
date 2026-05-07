@@ -84,6 +84,7 @@ title: Business
 - [Quantitative Enterprise Value-at-Risk Architect](prompts/business/finance/quantitative_enterprise_value_at_risk_architect.prompt.md)
 - [Quantitative Enterprise Working Capital CCC Architect](prompts/business/finance/quantitative_enterprise_working_capital_ccc_architect.prompt.md)
 - [Quantitative FX Hedging Strategy Architect](prompts/business/cfo/quantitative_fx_hedging_strategy_architect.prompt.md)
+- [Quantitative LBO Modeling Architect](prompts/business/finance/quantitative_lbo_modeling_architect.prompt.md)
 - [Quantitative M&A Accretion Dilution Architect](prompts/business/finance/quantitative_ma_accretion_dilution_architect.prompt.md)
 - [Quantitative Markowitz Portfolio Optimization Architect](prompts/business/finance/quantitative_markowitz_portfolio_optimization_architect.prompt.md)
 - [Quantitative Private Equity Dividend Recapitalization Architect](prompts/business/finance/quantitative_private_equity_dividend_recapitalization_architect.prompt.md)
