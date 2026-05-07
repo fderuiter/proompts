@@ -552,6 +552,7 @@
 [large_scale_axial_coding_framework_generator](prompts/scientific/sociology/methods/ethnographic_coding/large_scale_axial_coding_framework_generator.prompt.md)
 [blinder_oaxaca_decomposition_architect](prompts/scientific/sociology/methods/quantitative/blinder_oaxaca_decomposition_architect.prompt.md)
 [exponential_random_graph_model_architect](prompts/scientific/sociology/methods/social_network_analysis/exponential_random_graph_model_architect.prompt.md)
+[shotgun_metagenomic_assembly_binning_architect](prompts/scientific/microbiology/metagenomics/shotgun_metagenomic_assembly_binning_architect.prompt.md)
 [Bioburden Testing SOP](prompts/scientific/microbiology/microbiology_workflow/01_bioburden_testing_sop.prompt.md)
 [EO Sterilization Validation Protocol](prompts/scientific/microbiology/microbiology_workflow/02_eo_sterilization_validation_protocol.prompt.md)
 [Endotoxin Control & 510(k) Risk Plan](prompts/scientific/microbiology/microbiology_workflow/03_endotoxin_control_510k_risk_plan.prompt.md)
