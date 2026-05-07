@@ -89,6 +89,7 @@ title: Business
 - [Quantitative M&A Accretion Dilution Architect](prompts/business/finance/quantitative_ma_accretion_dilution_architect.prompt.md)
 - [Quantitative Markowitz Portfolio Optimization Architect](prompts/business/finance/quantitative_markowitz_portfolio_optimization_architect.prompt.md)
 - [Quantitative Private Equity Dividend Recapitalization Architect](prompts/business/finance/quantitative_private_equity_dividend_recapitalization_architect.prompt.md)
+- [Quantitative Product Portfolio Optimization Architect](prompts/business/strategy/quantitative_product_portfolio_optimization_architect.prompt.md)
 - [Rapid Proposal Builder](prompts/business/development/rapid_proposal_builder.prompt.md)
 - [Real Options Valuation Architect](prompts/business/strategy/real_options_valuation_architect.prompt.md)
 - [Red Account Turnaround Strategy](prompts/business/cx/red_account_turnaround.prompt.md)
