@@ -106,6 +106,7 @@
 [Private Equity LP Co-Investment Structuring Architect](prompts/business/strategy/private_equity_lp_co_investment_structuring_architect.prompt.md)
 [Private Equity Value Creation Architect](prompts/business/strategy/private_equity_value_creation_architect.prompt.md)
 [Quantitative Corporate Portfolio Divestiture Architect](prompts/business/strategy/quantitative_corporate_portfolio_divestiture_architect.prompt.md)
+[Quantitative Product Portfolio Optimization Architect](prompts/business/strategy/quantitative_product_portfolio_optimization_architect.prompt.md)
 [Real Options Valuation Architect](prompts/business/strategy/real_options_valuation_architect.prompt.md)
 [stochastic_market_entry_greenfield_architect](prompts/business/strategy/stochastic_market_entry_greenfield_architect.prompt.md)
 [Strategic Capital Allocation Architect](prompts/business/strategy/strategic_capital_allocation_architect.prompt.md)
