@@ -105,6 +105,7 @@
 [Post-Merger Integration Synergy Architect](prompts/business/strategy/post_merger_integration_synergy_architect.prompt.md)
 [Private Equity LP Co-Investment Structuring Architect](prompts/business/strategy/private_equity_lp_co_investment_structuring_architect.prompt.md)
 [Private Equity Value Creation Architect](prompts/business/strategy/private_equity_value_creation_architect.prompt.md)
+[quantitative_commercial_due_diligence_architect](prompts/business/strategy/quantitative_commercial_due_diligence_architect.prompt.md)
 [Quantitative Corporate Portfolio Divestiture Architect](prompts/business/strategy/quantitative_corporate_portfolio_divestiture_architect.prompt.md)
 [Quantitative Product Portfolio Optimization Architect](prompts/business/strategy/quantitative_product_portfolio_optimization_architect.prompt.md)
 [Real Options Valuation Architect](prompts/business/strategy/real_options_valuation_architect.prompt.md)
