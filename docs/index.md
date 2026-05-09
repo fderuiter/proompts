@@ -607,6 +607,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [counterfactual_semantics_stalnaker_lewis_evaluator](prompts/scientific/philosophy/logic/philosophical_logic/counterfactual_semantics_stalnaker_lewis_evaluator.prompt.md)
 - [Deontic Logic Normative Conflict Resolver](prompts/scientific/philosophy/logic/philosophical_logic/deontic_logic_normative_conflict_resolver.prompt.md)
 - [epistemic_logic_omniscience_paradox_resolver](prompts/scientific/philosophy/logic/philosophical_logic/epistemic_logic_omniscience_paradox_resolver.prompt.md)
+- [Free Logic Empty Names Formalizer](prompts/scientific/philosophy/logic/philosophical_logic/free_logic_empty_names_formalizer.prompt.md)
 - [Modal Logic Possible Worlds Evaluator](prompts/scientific/philosophy/logic/philosophical_logic/modal_logic_possible_worlds_evaluator.prompt.md)
 - [paraconsistent_logic_dialetheism_evaluator](prompts/scientific/philosophy/logic/philosophical_logic/paraconsistent_logic_dialetheism_evaluator.prompt.md)
 - [Temporal Logic Branching Time Evaluator](prompts/scientific/philosophy/logic/philosophical_logic/temporal_logic_branching_time_evaluator.prompt.md)
