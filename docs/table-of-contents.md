@@ -946,6 +946,7 @@
 [Generate an Executive Summary for the Final Report](prompts/management/study_director/study_director_workflow/03_executive_summary_final_report.prompt.md)
 [ambiguous_natural_language_fol_formalizer](prompts/scientific/formal_logic/systems/first_order_logic/ambiguous_natural_language_fol_formalizer.prompt.md)
 [higher_order_unification_resolution_architect](prompts/scientific/formal_logic/systems/higher_order_logic/higher_order_unification_resolution_architect.prompt.md)
+[constructive_intuitionistic_natural_deduction_prover](prompts/scientific/formal_logic/systems/intuitionistic_logic/constructive_intuitionistic_natural_deduction_prover.prompt.md)
 [Adaptive Control Loop Tuning Architect](prompts/scientific/mathematics/systems/control_theory/adaptive_control_loop_tuning_architect.prompt.md)
 [Stochastic Model Predictive Control (MPC) Architect](prompts/scientific/mathematics/systems/control_theory/stochastic_mpc_architect.prompt.md)
 [PAW Phase 1 - Tactical Recon](prompts/technical/software_engineering/tasks/paw/paw_01_tactical_recon.prompt.md)
