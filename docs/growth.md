@@ -16,4 +16,5 @@ title: Growth
 - [nrr_expansion_propensity_architect](prompts/growth/lifecycle/nrr_expansion_propensity_architect.prompt.md)
 - [predictive_cac_payback_modeler](prompts/growth/performance_marketing/predictive_cac_payback_modeler.prompt.md)
 - [predictive_churn_ltv_optimization_architect](prompts/growth/predictive_modeling/predictive_churn_ltv_optimization_architect.prompt.md)
+- [predictive_rfm_churn_mitigation_architect](prompts/growth/lifecycle/predictive_rfm_churn_mitigation_architect.prompt.md)
 - [product_led_growth_k_factor_architect](prompts/growth/product_marketing/product_led_growth_k_factor_architect.prompt.md)
