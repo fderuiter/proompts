@@ -23,6 +23,7 @@ title: Technical
 - [Autonomous Automation Agent Upgrade](prompts/technical/automation/autonomous_automation_agent_upgrade.prompt.md)
 - [bayesian_optimization_hyperparameter_architect](prompts/technical/data_science/bayesian_optimization_hyperparameter_architect.prompt.md)
 - [Causal Discovery DAG Architect](prompts/technical/data_science/causal_discovery_dag_architect.prompt.md)
+- [chaos_mesh_fault_injection_architect](prompts/technical/devops/chaos_mesh_fault_injection_architect.prompt.md)
 - [CI/CD Pipeline Poisoning Forensics Architect](prompts/technical/security/ci_cd_pipeline_poisoning_forensics_architect.prompt.md)
 - [Cloud IAM Least-Privilege Remediation Architect](prompts/technical/security/cloud_iam_least_privilege_remediation_architect.prompt.md)
 - [Cloud Identity Fabric Threat Hunting Architect](prompts/technical/security/secops/cloud_identity_fabric_threat_hunting_architect.prompt.md)
