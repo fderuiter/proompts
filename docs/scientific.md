@@ -56,6 +56,7 @@ title: Scientific
 - [collective_panic_cascade_architect](prompts/scientific/sociology/mass_behavior/collective_panic_cascade_architect.prompt.md)
 - [complex_ppi_network_mapper](prompts/scientific/molecular/proteomics/complex_ppi_network_mapper.prompt.md)
 - [Comprehensive Biocompatibility Test Matrix](prompts/scientific/biosafety/comprehensive_test_matrix.prompt.md)
+- [constructive_intuitionistic_natural_deduction_prover](prompts/scientific/formal_logic/systems/intuitionistic_logic/constructive_intuitionistic_natural_deduction_prover.prompt.md)
 - [Content Validity & Reliability Analysis](prompts/scientific/coa/content_validity_clinician_input.prompt.md)
 - [continuous_attractor_neural_network_architect](prompts/scientific/computational_theoretical_neuroscience/continuous_attractor_neural_network_architect.prompt.md)
 - [continuous_time_asset_pricing_architect](prompts/scientific/economics/finance/asset_pricing/continuous_time_asset_pricing_architect.prompt.md)

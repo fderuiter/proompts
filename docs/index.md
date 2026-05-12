@@ -1256,6 +1256,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [ambiguous_natural_language_fol_formalizer](prompts/scientific/formal_logic/systems/first_order_logic/ambiguous_natural_language_fol_formalizer.prompt.md)
 - [higher_order_unification_resolution_architect](prompts/scientific/formal_logic/systems/higher_order_logic/higher_order_unification_resolution_architect.prompt.md)
+- [constructive_intuitionistic_natural_deduction_prover](prompts/scientific/formal_logic/systems/intuitionistic_logic/constructive_intuitionistic_natural_deduction_prover.prompt.md)
 - [Adaptive Control Loop Tuning Architect](prompts/scientific/mathematics/systems/control_theory/adaptive_control_loop_tuning_architect.prompt.md)
 - [Stochastic Model Predictive Control (MPC) Architect](prompts/scientific/mathematics/systems/control_theory/stochastic_mpc_architect.prompt.md)
 
