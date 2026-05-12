@@ -12,5 +12,4 @@
 - [Meta/](meta/overview.md)
 - [Regulatory/](regulatory/overview.md)
 - [Scientific/](scientific/overview.md)
-- [Speculative/](speculative/overview.md)
 - [Technical/](technical/overview.md)
