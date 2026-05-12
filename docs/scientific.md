@@ -251,6 +251,7 @@ title: Scientific
 - [signal_detection_theory_architect](prompts/scientific/psychology/cognitive/information_processing/signal_detection_theory_architect.prompt.md)
 - [Simulated Clinical Scenario Debrief](prompts/scientific/bioskills/bioskills_workflow/02_simulated_clinical_scenario_feedback.prompt.md)
 - [single_cell_rna_seq_trajectory_inference_architect](prompts/scientific/genetics/transcriptomics/single_cell_rna_seq_trajectory_inference_architect.prompt.md)
+- [social_isolation_epidemiological_contagion_modeler](prompts/scientific/psychology/epidemiology/global_mental_health/social_isolation_epidemiological_contagion_modeler.prompt.md)
 - [spatial_metapopulation_seir_epidemiology_architect](prompts/scientific/ecology/population_dynamics/spatial_metapopulation_seir_epidemiology_architect.prompt.md)
 - [spatial_mismatch_employment_accessibility_modeler](prompts/scientific/sociology/stratification/systemic_inequality/spatial_mismatch_employment_accessibility_modeler.prompt.md)
 - [spatial_transcriptomics_cellular_communication_architect](prompts/scientific/genetics/transcriptomics/spatial_transcriptomics_cellular_communication_architect.prompt.md)

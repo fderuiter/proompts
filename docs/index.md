@@ -448,6 +448,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [digital_phenotyping_epidemiological_surveillance_architect](prompts/scientific/psychology/epidemiology/global_mental_health/digital_phenotyping_epidemiological_surveillance_architect.prompt.md)
 - [multinational_longitudinal_intervention_architect](prompts/scientific/psychology/epidemiology/global_mental_health/multinational_longitudinal_intervention_architect.prompt.md)
 - [psychological_trauma_epidemiology_mapper](prompts/scientific/psychology/epidemiology/global_mental_health/psychological_trauma_epidemiology_mapper.prompt.md)
+- [social_isolation_epidemiological_contagion_modeler](prompts/scientific/psychology/epidemiology/global_mental_health/social_isolation_epidemiological_contagion_modeler.prompt.md)
 
 ## Epistemology
 
