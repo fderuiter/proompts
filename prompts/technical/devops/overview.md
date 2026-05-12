@@ -1,6 +1,7 @@
 # Devops Overview
 
 ## Prompts
+- **[chaos_mesh_fault_injection_architect](chaos_mesh_fault_injection_architect.prompt.yaml)**: Architects rigorous, targeted chaos engineering experiments using Chaos Mesh in Kubernetes environments to empirically validate the resilience and self-healing mechanisms of cloud-native distributed systems.
 - **[Forge - Script Reliability Agent](forge_script_reliability.prompt.yaml)**: A reliability-obsessed agent who builds unbreakable development environments.
 - **[gitops_continuous_delivery_architect](gitops_continuous_delivery_architect.prompt.yaml)**: Designs and enforces rigorous GitOps continuous delivery architectures, translating desired state into precise declarative manifests, reconciliation loops, and progressive delivery pipelines (e.g., ArgoCD, Flux) for highly available Kubernetes topologies.
 - **[Infrastructure as Code (IaC) Security Architect](infrastructure_as_code_security_architect.prompt.yaml)**: Designs and enforces rigorous security policies, threat models, and compliance checks for Infrastructure as Code (IaC) deployments to prevent misconfigurations and vulnerabilities in cloud infrastructure.
