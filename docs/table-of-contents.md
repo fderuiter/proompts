@@ -108,6 +108,7 @@
 [quantitative_commercial_due_diligence_architect](prompts/business/strategy/quantitative_commercial_due_diligence_architect.prompt.md)
 [Quantitative Corporate Portfolio Divestiture Architect](prompts/business/strategy/quantitative_corporate_portfolio_divestiture_architect.prompt.md)
 [Quantitative Product Portfolio Optimization Architect](prompts/business/strategy/quantitative_product_portfolio_optimization_architect.prompt.md)
+[quantitative_shareholder_distribution_optimization_architect](prompts/business/strategy/quantitative_shareholder_distribution_optimization_architect.prompt.md)
 [Real Options Valuation Architect](prompts/business/strategy/real_options_valuation_architect.prompt.md)
 [stochastic_market_entry_greenfield_architect](prompts/business/strategy/stochastic_market_entry_greenfield_architect.prompt.md)
 [Strategic Capital Allocation Architect](prompts/business/strategy/strategic_capital_allocation_architect.prompt.md)

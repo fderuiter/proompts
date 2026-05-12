@@ -91,6 +91,7 @@ title: Business
 - [Quantitative Private Equity Dividend Recapitalization Architect](prompts/business/finance/quantitative_private_equity_dividend_recapitalization_architect.prompt.md)
 - [Quantitative Product Portfolio Optimization Architect](prompts/business/strategy/quantitative_product_portfolio_optimization_architect.prompt.md)
 - [quantitative_commercial_due_diligence_architect](prompts/business/strategy/quantitative_commercial_due_diligence_architect.prompt.md)
+- [quantitative_shareholder_distribution_optimization_architect](prompts/business/strategy/quantitative_shareholder_distribution_optimization_architect.prompt.md)
 - [Rapid Proposal Builder](prompts/business/development/rapid_proposal_builder.prompt.md)
 - [Real Options Valuation Architect](prompts/business/strategy/real_options_valuation_architect.prompt.md)
 - [Red Account Turnaround Strategy](prompts/business/cx/red_account_turnaround.prompt.md)
