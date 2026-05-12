@@ -514,6 +514,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Hodge Theory Harmonic Form Architect](prompts/scientific/mathematics/geometry/differential/hodge_theory_harmonic_form_architect.prompt.md)
 - [pseudo_riemannian_tensor_calculus_prover](prompts/scientific/mathematics/geometry/differential/pseudo_riemannian_tensor_calculus_prover.prompt.md)
 - [Riemannian Manifold Curvature Deriver](prompts/scientific/mathematics/geometry/differential/riemannian_manifold_curvature_deriver.prompt.md)
+- [symplectic_manifold_moment_map_architect](prompts/scientific/mathematics/geometry/differential/symplectic_manifold_moment_map_architect.prompt.md)
 
 ## Google Jules
 
