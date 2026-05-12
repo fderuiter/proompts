@@ -6,6 +6,7 @@ title: Clinical
 
 ## Prompts
 - [21 CFR Part 11 Compliance Verification](prompts/clinical/data_management/part_11_compliance_verification.prompt.md)
+- [ADaM ADAE TEAE and SMQ Derivation Architect](prompts/clinical/data_management/cdisc_compliance_workflow/19_adam_adae_teae_smq_derivation_architect.prompt.md)
 - [ADaM ADLB NCI-CTCAE and Hy's Law Toxicity Architect](prompts/clinical/data_management/cdisc_compliance_workflow/18_adam_adlb_hys_law_toxicity_architect.prompt.md)
 - [ADaM ADRS RECIST Derivation Architect](prompts/clinical/data_management/cdisc_compliance_workflow/05_adam_adrs_recist_derivation_architect.prompt.md)
 - [ADaM ADTTE Oncology Censoring Rules Architect](prompts/clinical/data_management/cdisc_compliance_workflow/08_adam_adtte_oncology_censoring_architect.prompt.md)
