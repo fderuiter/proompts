@@ -180,6 +180,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Real Options Valuation Architect](prompts/business/strategy/real_options_valuation_architect.prompt.md)
 - [stochastic_market_entry_greenfield_architect](prompts/business/strategy/stochastic_market_entry_greenfield_architect.prompt.md)
 - [Strategic Capital Allocation Architect](prompts/business/strategy/strategic_capital_allocation_architect.prompt.md)
+- [Strategic Global Outsourcing and Offshoring Architect](prompts/business/strategy/strategic_global_outsourcing_offshoring_architect.prompt.md)
 - [Strategic Product Cannibalization Architect](prompts/business/strategy/strategic_product_cannibalization_architect.prompt.md)
 - [Strategic Real Options Valuation Architect](prompts/business/strategy/strategic_real_options_valuation_architect.prompt.md)
 - [Supply Chain Antifragility Architect](prompts/business/strategy/supply_chain_antifragility_architect.prompt.md)
