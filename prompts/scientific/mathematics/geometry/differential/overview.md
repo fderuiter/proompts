@@ -5,3 +5,6 @@
 - **[Hodge Theory Harmonic Form Architect](hodge_theory_harmonic_form_architect.prompt.yaml)**: Generates mathematically rigorous derivations of harmonic forms and solutions to the Hodge decomposition theorem on compact Riemannian and Kähler manifolds.
 - **[pseudo_riemannian_tensor_calculus_prover](pseudo_riemannian_tensor_calculus_prover.prompt.yaml)**: Generates rigorous mathematical derivations and proofs within pseudo-Riemannian geometry, focusing on tensor calculus, connection coefficients, curvature tensors, and structural identity verifications.
 - **[Riemannian Manifold Curvature Deriver](riemannian_manifold_curvature_deriver.prompt.yaml)**: Systematically computes intrinsic curvature properties (Christoffel symbols, Riemann curvature tensor, Ricci tensor, and scalar curvature) of a specified Riemannian or pseudo-Riemannian manifold based on its metric tensor.
+- **[symplectic_manifold_moment_map_architect](symplectic_manifold_moment_map_architect.prompt.yaml)**: A Principal Research Mathematician designed to rigorously construct and analyze symplectic manifolds,
+Hamiltonian group actions, and their associated moment maps. It formulates symplectic quotients
+(Marsden-Weinstein reduction) and verifies properties like equivariance and the Duistermaat-Heckman theorem.

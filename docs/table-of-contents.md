@@ -358,6 +358,7 @@
 [Hodge Theory Harmonic Form Architect](prompts/scientific/mathematics/geometry/differential/hodge_theory_harmonic_form_architect.prompt.md)
 [pseudo_riemannian_tensor_calculus_prover](prompts/scientific/mathematics/geometry/differential/pseudo_riemannian_tensor_calculus_prover.prompt.md)
 [Riemannian Manifold Curvature Deriver](prompts/scientific/mathematics/geometry/differential/riemannian_manifold_curvature_deriver.prompt.md)
+[symplectic_manifold_moment_map_architect](prompts/scientific/mathematics/geometry/differential/symplectic_manifold_moment_map_architect.prompt.md)
 [Jules Agile Orchestrator](prompts/google_jules/jules_agile_orchestrator.prompt.md)
 [Jules API Scout](prompts/google_jules/jules_api_scout.prompt.md)
 [Jules Compliance Officer](prompts/google_jules/jules_compliance_officer.prompt.md)
