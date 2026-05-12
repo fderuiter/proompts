@@ -289,6 +289,7 @@
 [SDTM Device Deficiencies Mapping Architect](prompts/clinical/data_management/cdisc_compliance_workflow/15_sdtm_device_deficiencies_architect.prompt.md)
 [CDISC Cross-Dataset Relational Architect](prompts/clinical/data_management/cdisc_compliance_workflow/16_cdisc_cross_dataset_relrec_suppqual_architect.prompt.md)
 [Define-XML Analysis Results Metadata Architect](prompts/clinical/data_management/cdisc_compliance_workflow/17_define_xml_arm_generation_architect.prompt.md)
+[ADaM ADLB NCI-CTCAE and Hy's Law Toxicity Architect](prompts/clinical/data_management/cdisc_compliance_workflow/18_adam_adlb_hys_law_toxicity_architect.prompt.md)
 [Clinical ETL Mapping Spec](prompts/clinical/data_management/data_management_etl_workflow/01_clinical_etl_mapping_spec.prompt.md)
 [Clinical ETL Transformation QC](prompts/clinical/data_management/data_management_etl_workflow/02_clinical_etl_transformation_qc.prompt.md)
 [Clinical ETL Pipeline Review](prompts/clinical/data_management/data_management_etl_workflow/03_clinical_etl_pipeline_review.prompt.md)
