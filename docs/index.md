@@ -1141,6 +1141,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Sociology
 
+- [age_period_cohort_analysis_architect](prompts/scientific/sociology/demography/age_period_cohort_analysis_architect.prompt.md)
 - [intergenerational_social_mobility_markov_modeler](prompts/scientific/sociology/demography/intergenerational_social_mobility_markov_modeler.prompt.md)
 - [residential_segregation_spatial_inequality_modeler](prompts/scientific/sociology/demography/residential_segregation_spatial_inequality_modeler.prompt.md)
 - [institutional_isomorphism_lifecycle_modeler](prompts/scientific/sociology/institutions/institutional_isomorphism_lifecycle_modeler.prompt.md)
