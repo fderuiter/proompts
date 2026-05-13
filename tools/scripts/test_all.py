@@ -103,7 +103,7 @@ def main() -> int:
         "check_prompts": check_prompts_main,
         "validate_prompt_schema": validate_prompt_schema_main,
         "generate_overviews": lambda: run_command(["python3", "tools/scripts/generate_overviews.py"]),
-        # Docs are built artifacts now, so we generate them before running integrity checks.
+        # Docs are build artifacts now, so we generate them before running integrity checks.
         "update_docs_index": lambda: run_command(["python3", "tools/scripts/update_docs_index.py"]),
         "update_docs_index_check": lambda: update_docs_index_run(check=True),
         "generate_docs": lambda: run_command(["python3", "tools/scripts/generate_docs.py"]),
