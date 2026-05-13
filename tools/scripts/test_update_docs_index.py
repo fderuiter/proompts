@@ -111,7 +111,7 @@ class TestUpdateDocsIndexReadMeta(unittest.TestCase):
         self.assertEqual(title, "Test File Name")
 
     @patch('update_docs_index.load_yaml')
-    def test_read_meta_no_title_in_yaml(self, mock_load_yaml):
+    def test_read_meta_uses_filename_when_name_title_missing(self, mock_load_yaml):
         mock_load_yaml.return_value = {"metadata": {"tags": ["domain:business"]}}
         path = Path("prompts/category/subcategory/12_another-file.yaml")
 
