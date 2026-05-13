@@ -49,7 +49,7 @@ def get_prompt_tags(content: Dict[str, Any]) -> List[str]:
     if isinstance(legacy_tags, list):
         tags.extend(t for t in legacy_tags if isinstance(t, str))
 
-    return [tag.strip() for tag in tags if tag and tag.strip()]
+    return [clean for tag in tags if isinstance(tag, str) and (clean := tag.strip())]
 
 
 def derive_prompt_category(path: Path, root_dir: Path, content: Dict[str, Any] | None = None) -> str:
