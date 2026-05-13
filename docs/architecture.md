@@ -110,6 +110,7 @@ title: Architecture
 - [Real-Time Game State Synchronization Architect](prompts/technical/architecture/real_time_game_state_synchronization_architect.prompt.md)
 - [Real-Time ML Feature Store Architect](prompts/technical/architecture/real_time_ml_feature_store_architect.prompt.md)
 - [Real-Time Stream Processing Architect](prompts/technical/architecture/real_time_stream_processing_architect.prompt.md)
+- [Render Cloud Deployment Pipeline Architect](prompts/technical/architecture/render_cloud_deployment_pipeline_architect.prompt.md)
 - [Secure Supply Chain Attestation Architect](prompts/technical/architecture/secure_supply_chain_attestation_architect.prompt.md)
 - [Semantic Caching AI Gateway Architect](prompts/technical/architecture/semantic_caching_ai_gateway_architect.prompt.md)
 - [Server-Driven UI Architecture Designer](prompts/technical/architecture/server_driven_ui_architect.prompt.md)
