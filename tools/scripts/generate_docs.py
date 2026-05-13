@@ -85,6 +85,7 @@ class FileParser:
         Workflows: directory-based.
         """
         # Prompt scans pass parsed YAML data; workflow scans call this with data=None.
+        # Workflows remain directory-grouped for now because they don't use prompt tag taxonomy.
         if data is not None:
             return derive_prompt_category(path, root_dir, data)
 

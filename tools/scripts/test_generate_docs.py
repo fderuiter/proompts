@@ -48,6 +48,13 @@ class TestDeriveCategory(unittest.TestCase):
         data = {"metadata": {"tags": ["domain:technical", "topic:architecture"]}}
         self.assertEqual(FileParser.derive_category(path, root, data), "Technical")
 
+    def test_first_domain_tag_wins(self):
+        """Test first matching domain tag is used when multiple are present."""
+        root = Path("/repo/prompts")
+        path = root / "google_jules" / "test.prompt.yaml"
+        data = {"metadata": {"tags": ["domain:clinical", "domain:technical"]}}
+        self.assertEqual(FileParser.derive_category(path, root, data), "Clinical")
+
     def test_metadata_domain_fallback(self):
         """Test metadata domain is used when namespaced domain tag is absent."""
         root = Path("/repo/prompts")
