@@ -17,12 +17,13 @@ Example: `from utils import PROMPTS_DIR, iter_prompt_files, load_yaml`
 import re
 from pathlib import Path
 import yaml
-from typing import Iterator, Dict, Any, List, Set
+from typing import Iterator, Dict, Any, List, Optional, Set
 
 ROOT: Path = Path(__file__).resolve().parents[2]
 PROMPTS_DIR: Path = ROOT / "prompts"
 WORKFLOWS_DIR: Path = ROOT / "workflows"
 OVERVIEW_NAME: str = "overview.md"
+DOMAIN_TAG_PREFIX = "domain:"
 
 
 def _format_category(raw: str) -> str:
@@ -52,7 +53,7 @@ def get_prompt_tags(content: Dict[str, Any]) -> List[str]:
     return [tag.strip() for tag in tags if tag.strip()]
 
 
-def derive_prompt_category(path: Path, root_dir: Path, content: Dict[str, Any] | None = None) -> str:
+def derive_prompt_category(path: Path, root_dir: Path, content: Optional[Dict[str, Any]] = None) -> str:
     """
     Derive prompt category using lightweight tag taxonomy first, then metadata, then path.
     Priority:
@@ -62,7 +63,7 @@ def derive_prompt_category(path: Path, root_dir: Path, content: Dict[str, Any] |
     """
     data = content or {}
     for tag in get_prompt_tags(data):
-        if tag.lower().startswith("domain:"):
+        if tag.lower().startswith(DOMAIN_TAG_PREFIX):
             value = tag.split(":", 1)[1].strip()
             if value:
                 return _format_category(_domain_root(value))
