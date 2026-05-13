@@ -60,7 +60,7 @@ def run_command(command: list[str]) -> int:
 
 def ensure_generated_docs_not_tracked() -> int:
     """Ensure generated prompt/workflow docs are not committed to git."""
-    generated_paths = ["docs/prompts", "docs/workflows", "docs/index.md", "docs/table-of-contents.md", "docs/*.md"]
+    generated_paths = ["docs"]
     result = subprocess.run(
         ["git", "ls-files", *generated_paths],
         capture_output=True,
@@ -103,7 +103,7 @@ def main() -> int:
         "check_prompts": check_prompts_main,
         "validate_prompt_schema": validate_prompt_schema_main,
         "generate_overviews": lambda: run_command(["python3", "tools/scripts/generate_overviews.py"]),
-        # Docs are build artifacts now, so we generate them before running integrity checks.
+        # Docs are built artifacts now, so we generate them before running integrity checks.
         "update_docs_index": lambda: run_command(["python3", "tools/scripts/update_docs_index.py"]),
         "update_docs_index_check": lambda: update_docs_index_run(check=True),
         "generate_docs": lambda: run_command(["python3", "tools/scripts/generate_docs.py"]),
