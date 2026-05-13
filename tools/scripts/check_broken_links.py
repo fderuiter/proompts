@@ -19,6 +19,11 @@ ROOT_DIR = Path.cwd()
 # This is a simple regex and might miss some edge cases, but covers standard markdown links
 LINK_PATTERN = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
 
+def normalize_anchor(anchor: str) -> str:
+    """Normalize anchors using simplified GitHub-style formatting."""
+    anchor = anchor.strip().lower().replace(' ', '-')
+    return re.sub(r'[^\w\-]', '', anchor)
+
 def get_all_markdown_files() -> List[Path]:
     """Return a list of all markdown files to scan."""
     files = []
@@ -48,14 +53,13 @@ def get_anchors_in_file(path: Path) -> Set[str]:
             # Remove leading #'s and whitespace
             header = line.lstrip('#').strip()
             # Generate ID
-            anchor = header.lower().replace(' ', '-')
-            anchor = re.sub(r'[^\w\-]', '', anchor)
+            anchor = normalize_anchor(header)
             anchors.add(anchor)
     
     # HTML anchors: <a name="foo"> or <div id="foo">
     # Matches id="foo" or name="foo"
     for match in re.findall(r'(?:id|name)=["\']([^"\']+)["\']', content):
-        anchors.add(match)
+        anchors.add(normalize_anchor(match))
         
     return anchors
 
@@ -97,6 +101,7 @@ def check_link(source_file: Path, link: str, target_anchors_cache: dict) -> Tupl
 
     # Check anchor if present
     if anchor:
+        anchor = normalize_anchor(anchor)
         if str(target_file) not in target_anchors_cache:
             target_anchors_cache[str(target_file)] = get_anchors_in_file(target_file)
         
@@ -122,14 +127,18 @@ def main():
             print(f"❌ Error reading {file_path}: {e}")
             continue
 
-        for match in LINK_PATTERN.finditer(content):
-            text = match.group(1)
-            link = match.group(2)
-            
-            is_valid, error = check_link(file_path, link, target_anchors_cache)
-            if not is_valid:
-                print(f"❌ {file_path}:\n   [{text}]({link}) -> {error}")
-                broken_links_count += 1
+        for line_no, line in enumerate(content.splitlines(), start=1):
+            for match in LINK_PATTERN.finditer(line):
+                text = match.group(1)
+                link = match.group(2)
+
+                is_valid, error = check_link(file_path, link, target_anchors_cache)
+                if not is_valid:
+                    print(
+                        f"❌ {file_path}:{line_no}\n"
+                        f"   [{text}]({link}) -> {error}"
+                    )
+                    broken_links_count += 1
 
     if broken_links_count > 0:
         print(f"\nFound {broken_links_count} broken links.")

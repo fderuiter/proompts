@@ -28,7 +28,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Getting Started
 
-1. **Browse Categories**: Explore prompts by domain (e.g., [Clinical](clinical.md), [Software Engineering](software_engineering.md)).
+1. **Browse Categories**: Explore prompts by domain (e.g., [Clinical](clinical.md), [Technical](technical.md)).
 2. **Run Workflows**: Use our [Workflows Guide](workflow_guide.md) to learn how to chain multiple prompts together for complex tasks like "Idea to Epic".
 3. **Copy & Customize**: All prompts are in YAML format, ready to be used in your own tools or agents.
 
@@ -41,18 +41,14 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 ## Browse by Category
 
-- [Architecture](architecture.md)
 - [Business](business.md)
 - [Clinical](clinical.md)
 - [Communication](communication.md)
-- [Languages](languages.md)
 - [Management](management.md)
 - [Meta](meta.md)
 - [Regulatory](regulatory.md)
 - [Scientific](scientific.md)
-- [Software Engineering](software_engineering.md)
 - [Technical](technical.md)
-- [Testing](testing.md)
 - [Workflows](workflows.md)
 - [Workflows Usage Guide](workflows_usage.md)
 """
