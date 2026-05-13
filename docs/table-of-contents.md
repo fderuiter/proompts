@@ -1126,6 +1126,7 @@
 [dialectical_materialism_structural_crisis_modeler](prompts/scientific/sociology/theory/critical_frameworks/dialectical_materialism_structural_crisis_modeler.prompt.md)
 [asymptotic_distribution_mle_architect](prompts/scientific/statistics/theory/asymptotics/asymptotic_distribution_mle_architect.prompt.md)
 [empirical_process_theory_architect](prompts/scientific/statistics/theory/asymptotics/empirical_process_theory_architect.prompt.md)
+[local_asymptotic_normality_lecam_architect](prompts/scientific/statistics/theory/asymptotics/local_asymptotic_normality_lecam_architect.prompt.md)
 [Compassionate Analyst](prompts/clinical/therapy/music_therapy_workflow/01_compassionate_analyst.prompt.md)
 [ISO Strategist](prompts/clinical/therapy/music_therapy_workflow/02_iso_strategist.prompt.md)
 [Sonic Architect](prompts/clinical/therapy/music_therapy_workflow/03_sonic_architect.prompt.md)

@@ -164,6 +164,7 @@ title: Scientific
 - [lattice_boltzmann_multiphase_architect](prompts/scientific/applied_mathematics/physics/fluid_dynamics/lattice_boltzmann_multiphase_architect.prompt.md)
 - [Linear Logic Resource Proof Generator](prompts/scientific/mathematics/formal_logic/linear_logic_resource_proof_generator.prompt.md)
 - [linear_temporal_logic_model_checker](prompts/scientific/mathematics/formal_logic/linear_temporal_logic_model_checker.prompt.md)
+- [local_asymptotic_normality_lecam_architect](prompts/scientific/statistics/theory/asymptotics/local_asymptotic_normality_lecam_architect.prompt.md)
 - [local_polynomial_regression_discontinuity_architect](prompts/scientific/economics/econometrics/causal_inference/local_polynomial_regression_discontinuity_architect.prompt.md)
 - [log_gaussian_cox_process_architect](prompts/scientific/statistics/modeling/spatial_point_processes/log_gaussian_cox_process_architect.prompt.md)
 - [longitudinal_measurement_invariance_evaluator](prompts/scientific/psychology/quantitative/psychometrics/longitudinal_measurement_invariance_evaluator.prompt.md)
