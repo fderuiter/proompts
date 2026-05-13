@@ -84,6 +84,7 @@ class FileParser:
         Prompts: metadata/tags-first, with directory fallback.
         Workflows: directory-based.
         """
+        # Prompt scans pass parsed YAML data; workflow scans call this with data=None.
         if data is not None:
             return derive_prompt_category(path, root_dir, data)
 
