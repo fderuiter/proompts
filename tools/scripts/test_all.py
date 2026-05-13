@@ -33,6 +33,19 @@ from update_docs_index import run_update as update_docs_index_run
 from validate_prompt_schema import main as validate_prompt_schema_main
 
 MAX_DISPLAYED_TRACKED_FILES = 20
+STATIC_TOP_LEVEL_DOCS = {
+    "docs/BEST_PRACTICES.md",
+    "docs/QUICKSTART.md",
+    "docs/USAGE.md",
+    "docs/claude_prompting_guide.md",
+    "docs/google_prompting_guide.md",
+    "docs/gpt_5_2_prompting_guide.md",
+    "docs/json_to_yaml_migration.md",
+    "docs/overview.md",
+    "docs/system_architecture.md",
+    "docs/workflow_guide.md",
+    "docs/workflows_usage.md",
+}
 
 
 def run_command(command: list[str]) -> int:
@@ -47,31 +60,7 @@ def run_command(command: list[str]) -> int:
 
 def ensure_generated_docs_not_tracked() -> int:
     """Ensure generated prompt/workflow docs are not committed to git."""
-    generated_paths = [
-        "docs/prompts",
-        "docs/workflows",
-        "docs/index.md",
-        "docs/table-of-contents.md",
-        "docs/architecture.md",
-        "docs/business.md",
-        "docs/clinical.md",
-        "docs/communication.md",
-        "docs/computational.md",
-        "docs/google_jules.md",
-        "docs/growth.md",
-        "docs/languages.md",
-        "docs/lifestyle.md",
-        "docs/management.md",
-        "docs/meta.md",
-        "docs/regulatory.md",
-        "docs/scientific.md",
-        "docs/software_engineering.md",
-        "docs/speculative.md",
-        "docs/technical.md",
-        "docs/testing.md",
-        "docs/uncategorized.md",
-        "docs/workflows.md",
-    ]
+    generated_paths = ["docs/prompts", "docs/workflows", "docs/index.md", "docs/table-of-contents.md", "docs/*.md"]
     result = subprocess.run(
         ["git", "ls-files", *generated_paths],
         capture_output=True,
@@ -84,12 +73,23 @@ def ensure_generated_docs_not_tracked() -> int:
         return result.returncode
 
     tracked = [line for line in result.stdout.splitlines() if line.strip()]
-    if tracked:
+    generated_tracked = []
+    for path in tracked:
+        if path.startswith("docs/prompts/") or path.startswith("docs/workflows/"):
+            generated_tracked.append(path)
+            continue
+        if path in {"docs/index.md", "docs/table-of-contents.md"}:
+            generated_tracked.append(path)
+            continue
+        if path.startswith("docs/") and path.count("/") == 1 and path.endswith(".md") and path not in STATIC_TOP_LEVEL_DOCS:
+            generated_tracked.append(path)
+
+    if generated_tracked:
         print("Generated docs must not be committed to git:")
-        for path in tracked[:MAX_DISPLAYED_TRACKED_FILES]:
+        for path in generated_tracked[:MAX_DISPLAYED_TRACKED_FILES]:
             print(f" - {path}")
-        if len(tracked) > MAX_DISPLAYED_TRACKED_FILES:
-            print(f" ... and {len(tracked) - MAX_DISPLAYED_TRACKED_FILES} more")
+        if len(generated_tracked) > MAX_DISPLAYED_TRACKED_FILES:
+            print(f" ... and {len(generated_tracked) - MAX_DISPLAYED_TRACKED_FILES} more")
         return 1
 
     return 0
@@ -103,6 +103,7 @@ def main() -> int:
         "check_prompts": check_prompts_main,
         "validate_prompt_schema": validate_prompt_schema_main,
         "generate_overviews": lambda: run_command(["python3", "tools/scripts/generate_overviews.py"]),
+        # Docs are build artifacts now, so we generate them before running integrity checks.
         "update_docs_index": lambda: run_command(["python3", "tools/scripts/update_docs_index.py"]),
         "update_docs_index_check": lambda: update_docs_index_run(check=True),
         "generate_docs": lambda: run_command(["python3", "tools/scripts/generate_docs.py"]),
