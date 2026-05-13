@@ -52,4 +52,7 @@ docs/testing.md
 docs/uncategorized.md
 docs/workflows.md
 
+# Generated search index
+search.json
+
 ._*
