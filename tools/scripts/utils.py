@@ -24,6 +24,58 @@ PROMPTS_DIR: Path = ROOT / "prompts"
 WORKFLOWS_DIR: Path = ROOT / "workflows"
 OVERVIEW_NAME: str = "overview.md"
 
+
+def _format_category(raw: str) -> str:
+    """Convert machine tag/domain text into a human-readable category label."""
+    cleaned = raw.strip().replace("_", " ").replace("-", " ").replace("/", " ")
+    return " ".join(word.capitalize() for word in cleaned.split())
+
+
+def get_prompt_tags(content: Dict[str, Any]) -> List[str]:
+    """Return normalized tags from metadata.tags and legacy top-level tags."""
+    tags: List[str] = []
+    metadata = content.get("metadata")
+    if isinstance(metadata, dict):
+        meta_tags = metadata.get("tags")
+        if isinstance(meta_tags, list):
+            tags.extend(t for t in meta_tags if isinstance(t, str))
+
+    legacy_tags = content.get("tags")
+    if isinstance(legacy_tags, list):
+        tags.extend(t for t in legacy_tags if isinstance(t, str))
+
+    return [tag.strip() for tag in tags if tag and tag.strip()]
+
+
+def derive_prompt_category(path: Path, root_dir: Path, content: Dict[str, Any] | None = None) -> str:
+    """
+    Derive prompt category using lightweight tag taxonomy first, then metadata, then path.
+    Priority:
+    1) tags: domain:<value>
+    2) metadata.domain
+    3) legacy directory-based fallback
+    """
+    data = content or {}
+    for tag in get_prompt_tags(data):
+        if tag.lower().startswith("domain:"):
+            value = tag.split(":", 1)[1].strip()
+            if value:
+                return _format_category(value.split("/", 1)[0])
+
+    metadata = data.get("metadata")
+    if isinstance(metadata, dict):
+        domain = metadata.get("domain")
+        if isinstance(domain, str) and domain.strip():
+            return _format_category(domain.strip().split("/", 1)[0])
+
+    try:
+        relative = path.relative_to(root_dir)
+        if len(relative.parts) < 2:
+            return "Uncategorized"
+        return _format_category(relative.parts[0])
+    except ValueError:
+        return "Uncategorized"
+
 def load_yaml(path: Path) -> Dict[str, Any]:
     """
     Safely load a YAML file and return its contents as a dictionary.

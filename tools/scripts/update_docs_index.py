@@ -8,11 +8,11 @@ from collections import defaultdict
 from pathlib import Path
 
 try:
-    from utils import PROMPTS_DIR, ROOT, iter_prompt_files, load_yaml
+    from utils import PROMPTS_DIR, ROOT, iter_prompt_files, load_yaml, derive_prompt_category
 except ImportError:
     import sys
     sys.path.append(str(Path(__file__).parent))
-    from utils import PROMPTS_DIR, ROOT, iter_prompt_files, load_yaml
+    from utils import PROMPTS_DIR, ROOT, iter_prompt_files, load_yaml, derive_prompt_category
 
 DOCS_DIR = ROOT / "docs"
 
@@ -63,13 +63,10 @@ def read_meta(path: Path) -> tuple[str, str]:
     try:
         data = load_yaml(path)
         title = str(data.get("name") or data.get("title") or "").strip()
-        # Use parent's parent name for category, e.g. "clinical" for "prompts/clinical/adjudication"
-        category = path.parent.parent.name
-        if category == "prompts": # a prompt in a top-level category dir
-            category = path.parent.name
+        category = derive_prompt_category(path, PROMPTS_DIR, data)
 
     except Exception:
-        category = path.parent.name
+        category = derive_prompt_category(path, PROMPTS_DIR, {})
         title = ""
 
     if not title:

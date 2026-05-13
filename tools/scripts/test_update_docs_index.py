@@ -65,33 +65,39 @@ class TestUpdateDocsIndex(unittest.TestCase):
 class TestUpdateDocsIndexReadMeta(unittest.TestCase):
     @patch('update_docs_index.load_yaml')
     def test_read_meta_with_name(self, mock_load_yaml):
-        mock_load_yaml.return_value = {"name": "Test Prompt Name"}
+        mock_load_yaml.return_value = {
+            "name": "Test Prompt Name",
+            "metadata": {"tags": ["domain:clinical"]},
+        }
         path = Path("prompts/category/subcategory/test_file.yaml")
 
         category, title = read_meta(path)
 
-        self.assertEqual(category, "category")
+        self.assertEqual(category, "Clinical")
         self.assertEqual(title, "Test Prompt Name")
         mock_load_yaml.assert_called_once_with(path)
 
     @patch('update_docs_index.load_yaml')
     def test_read_meta_with_title(self, mock_load_yaml):
-        mock_load_yaml.return_value = {"title": "Test Prompt Title"}
+        mock_load_yaml.return_value = {
+            "title": "Test Prompt Title",
+            "metadata": {"domain": "regulatory/submissions"},
+        }
         path = Path("prompts/category/subcategory/test_file.yaml")
 
         category, title = read_meta(path)
 
-        self.assertEqual(category, "category")
+        self.assertEqual(category, "Regulatory")
         self.assertEqual(title, "Test Prompt Title")
 
     @patch('update_docs_index.load_yaml')
     def test_read_meta_empty_title_fallback(self, mock_load_yaml):
-        mock_load_yaml.return_value = {"name": ""}
+        mock_load_yaml.return_value = {"name": "", "tags": ["domain:technical"]}
         path = Path("prompts/category/subcategory/01_test_file_name.yaml")
 
         category, title = read_meta(path)
 
-        self.assertEqual(category, "category")
+        self.assertEqual(category, "Technical")
         self.assertEqual(title, "Test File Name")
 
     @patch('update_docs_index.load_yaml')
@@ -101,17 +107,17 @@ class TestUpdateDocsIndexReadMeta(unittest.TestCase):
 
         category, title = read_meta(path)
 
-        self.assertEqual(category, "subcategory")
+        self.assertEqual(category, "Uncategorized")
         self.assertEqual(title, "Test File Name")
 
     @patch('update_docs_index.load_yaml')
     def test_read_meta_no_title_in_yaml(self, mock_load_yaml):
-        mock_load_yaml.return_value = {}
+        mock_load_yaml.return_value = {"metadata": {"tags": ["domain:business"]}}
         path = Path("prompts/category/subcategory/12_another-file.yaml")
 
         category, title = read_meta(path)
 
-        self.assertEqual(category, "category")
+        self.assertEqual(category, "Business")
         self.assertEqual(title, "Another File")
 
 if __name__ == '__main__':

@@ -2,21 +2,16 @@
 
 Welcome to the Prompt Library! This directory is the core of our agentic framework, containing structured prompts that drive our AI agents across various domains.
 
-## Directory Map 🗺️
+## Discovery Model 🧭
 
-The prompts are organized by domain to ensure easy navigation and specialized context.
+We are moving away from deep folder nesting as the primary way to classify prompts.
+Use prompt metadata/tags for discovery and categorization:
 
-| Directory | Domain | Description |
-| :--- | :--- | :--- |
-| **[`business/`](./business)** | Business | Corporate functions including **Finance**, **HR**, and **Market Research**. |
-| **[`clinical/`](./clinical)** | Clinical | Comprehensive clinical trial operations, covering **Adjudication**, **CRA** tasks, **Data Management**, **Protocols**, **Safety**, and **Trial Execution**. |
-| **[`communication/`](./communication)** | Communication | Prompts for **Writing**, **Speaking**, and **Interpersonal Skills**. |
-| **[`lifestyle/`](./lifestyle)** | Lifestyle | Personal development, hobbies, and experimental living concepts like **Culinary** and **Memory**. |
-| **[`management/`](./management)** | Management | High-level decision-making prompts for **Leadership**, **Project Management**, and **Executive** roles. |
-| **[`meta/`](./meta)** | Meta | "Prompts for Prompts" - The engine room for **Prompt Engineering**, **Agent Creation**, and self-improving workflows. |
-| **[`regulatory/`](./regulatory)** | Regulatory | Critical frameworks for **Compliance**, **Quality Assurance**, and **Regulatory Strategy**. |
-| **[`scientific/`](./scientific)** | Scientific | Lab-focused prompts for **Biosafety**, **Microbiology**, **Pathology**, and **Sterility**. |
-| **[`technical/`](./technical)** | Technical | Engineering excellence: **Software Architecture**, **DevOps**, **Testing**, and **Codebase Analysis**. |
+- `domain:<value>` — primary grouping (examples: `domain:technical`, `domain:clinical`)
+- `topic:<value>` — subject area (examples: `topic:architecture`, `topic:qa`)
+- `capability:<value>` — intended task style (examples: `capability:analysis`, `capability:generation`)
+
+Directory layout can stay shallow/flat; docs and index tooling now derive categories from this taxonomy first.
 
 ## Prompt Structure 🏗️
 
@@ -81,7 +76,8 @@ We maintain a suite of tools in [`../tools/scripts/`](../tools/scripts) to manag
 
 ## Contributing 🤝
 
-1.  **Create**: Add your new `.prompt.yaml` file in the appropriate subdirectory.
+1.  **Create**: Add your new `.prompt.yaml` file under `prompts/` (prefer a shallow/flat layout).
 2.  **Document**: Ensure you provide a clear `description` and `inputs`.
-3.  **Test**: Add at least one test case in the `testData` field.
-4.  **Verify**: Run `python3 tools/scripts/check_prompts.py` to ensure your prompt is valid.
+3.  **Tag**: Add namespaced tags (`domain:`, `topic:`, `capability:`) in metadata where possible.
+4.  **Test**: Add at least one test case in the `testData` field.
+5.  **Verify**: Run `python3 tools/scripts/check_prompts.py` to ensure your prompt is valid.
