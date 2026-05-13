@@ -351,6 +351,7 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 - [Metadynamics Free Energy Surface Architect](prompts/scientific/chemistry/computational/molecular_dynamics/metadynamics_free_energy_surface_architect.prompt.md)
 - [Temperature Replica Exchange Molecular Dynamics Architect](prompts/scientific/chemistry/computational/molecular_dynamics/replica_exchange_md_architect.prompt.md)
 - [DFT Transition State Architect](prompts/scientific/chemistry/computational/quantum_chemistry/dft_transition_state_architect.prompt.md)
+- [Multireference Electronic Structure Architect](prompts/scientific/chemistry/computational/quantum_chemistry/multireference_electronic_structure_architect.prompt.md)
 - [Non-Adiabatic Photodynamics Architect](prompts/scientific/chemistry/computational/quantum_chemistry/non_adiabatic_photodynamics_architect.prompt.md)
 - [TD-DFT Excited-State Dynamics Architect](prompts/scientific/chemistry/computational/quantum_chemistry/td_dft_excited_state_dynamics_architect.prompt.md)
 - [algorithmic_behavior_echo_chamber_modeler](prompts/scientific/psychology/computational/network_contagion/algorithmic_behavior_echo_chamber_modeler.prompt.md)
