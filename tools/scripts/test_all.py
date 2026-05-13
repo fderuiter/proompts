@@ -81,7 +81,7 @@ def ensure_generated_docs_not_tracked() -> int:
         if path in {"docs/index.md", "docs/table-of-contents.md"}:
             generated_tracked.append(path)
             continue
-        if path.startswith("docs/") and path.count("/") == 1 and path.endswith(".md") and path not in STATIC_TOP_LEVEL_DOCS:
+        if is_top_level_docs_markdown_file(path) and path not in STATIC_TOP_LEVEL_DOCS:
             generated_tracked.append(path)
 
     if generated_tracked:
@@ -93,6 +93,11 @@ def ensure_generated_docs_not_tracked() -> int:
         return 1
 
     return 0
+
+
+def is_top_level_docs_markdown_file(path: str) -> bool:
+    """Return True when the path points to a Markdown file directly under docs/."""
+    return path.startswith("docs/") and path.count("/") == 1 and path.endswith(".md")
 
 
 def main() -> int:
