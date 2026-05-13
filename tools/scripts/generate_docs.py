@@ -32,7 +32,7 @@ import os # Needed for relpath calculation in strict paths
 from pathlib import Path
 from dataclasses import dataclass, field
 from typing import List, Dict, Optional, Any
-from utils import load_yaml
+from utils import load_yaml, derive_prompt_category
 
 # --- Configuration Loading (Extracted) ---
 def load_config() -> Dict[str, Any]:
@@ -78,27 +78,24 @@ class FileParser:
         return clean_name.replace('_', ' ').title()
 
     @staticmethod
-    def derive_category(path: Path, root_dir: Path) -> str:
+    def derive_category(path: Path, root_dir: Path, data: Optional[Dict[str, Any]] = None) -> str:
         """
-        Derives category from directory structure. 
-        Pattern: root / category / subfolder / file
+        Derives prompt/workflow category.
+        Prompts: metadata/tags-first, with directory fallback.
+        Workflows: directory-based.
         """
+        # Prompt scans pass parsed YAML data; workflow scan callers explicitly pass data=None.
+        # Workflows remain directory-grouped for now because they don't use prompt tag taxonomy.
+        if data is not None:
+            return derive_prompt_category(path, root_dir, data)
+
         try:
             relative = path.relative_to(root_dir)
             # If in root (e.g., prompts/README.md), it's Uncategorized
             if len(relative.parts) < 2:
                 return "Uncategorized"
-            
-            # Map top-level technical folders to cleaner names if needed
-            category_raw = relative.parts[0]
-            if category_raw == "technical" and len(relative.parts) > 1:
-                # Handle technical/architecture -> Architecture
-                sub = relative.parts[1]
-                if sub in ["architecture", "languages", "software_engineering", "testing"]:
-                    return sub.replace('_', ' ').title()
-                return "Technical"
-                
-            return category_raw.replace('_', ' ').title()
+
+            return relative.parts[0].replace('_', ' ').title()
         except ValueError:
             return "Uncategorized"
 
@@ -175,7 +172,7 @@ class DocumentationGenerator:
                 item = DocItem(
                     title=FileParser.derive_title(path, data),
                     path=page_path,
-                    category=FileParser.derive_category(path, prompts_dir),
+                    category=FileParser.derive_category(path, prompts_dir, data),
                     item_type='prompt'
                 )
                 self.items.append(item)

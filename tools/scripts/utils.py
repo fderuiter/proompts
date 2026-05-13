@@ -17,12 +17,70 @@ Example: `from utils import PROMPTS_DIR, iter_prompt_files, load_yaml`
 import re
 from pathlib import Path
 import yaml
-from typing import Iterator, Dict, Any, List, Set
+from typing import Iterator, Dict, Any, List, Optional, Set
 
 ROOT: Path = Path(__file__).resolve().parents[2]
 PROMPTS_DIR: Path = ROOT / "prompts"
 WORKFLOWS_DIR: Path = ROOT / "workflows"
 OVERVIEW_NAME: str = "overview.md"
+DOMAIN_TAG_PREFIX: str = "domain:"
+
+
+def _format_category(raw: str) -> str:
+    """Convert machine tag/domain text into a human-readable category label."""
+    cleaned = raw.strip().replace("_", " ").replace("-", " ").replace("/", " ")
+    return " ".join(word.capitalize() for word in cleaned.split())
+
+
+def _domain_root(value: str) -> str:
+    """Return top-level domain segment, e.g. `technical` from `technical/architecture`."""
+    return value.strip().split("/", 1)[0].strip()
+
+
+def get_prompt_tags(content: Dict[str, Any]) -> List[str]:
+    """Return normalized tags from metadata.tags and legacy top-level tags."""
+    tags: List[str] = []
+    metadata = content.get("metadata")
+    if isinstance(metadata, dict):
+        meta_tags = metadata.get("tags")
+        if isinstance(meta_tags, list):
+            tags.extend(t for t in meta_tags if isinstance(t, str))
+
+    legacy_tags = content.get("tags")
+    if isinstance(legacy_tags, list):
+        tags.extend(t for t in legacy_tags if isinstance(t, str))
+
+    return [tag.strip() for tag in tags if tag.strip()]
+
+
+def derive_prompt_category(path: Path, root_dir: Path, content: Optional[Dict[str, Any]] = None) -> str:
+    """
+    Derive prompt category using lightweight tag taxonomy first, then metadata, then path.
+    Priority:
+    1) tags: domain:<value>
+    2) metadata.domain
+    3) legacy directory-based fallback
+    """
+    data = content or {}
+    for tag in get_prompt_tags(data):
+        if tag.lower().startswith(DOMAIN_TAG_PREFIX):
+            value = tag.split(":", 1)[1].strip()
+            if value:
+                return _format_category(_domain_root(value))
+
+    metadata = data.get("metadata")
+    if isinstance(metadata, dict):
+        domain = metadata.get("domain")
+        if isinstance(domain, str) and domain.strip():
+            return _format_category(_domain_root(domain))
+
+    try:
+        relative = path.relative_to(root_dir)
+        if len(relative.parts) < 2:
+            return "Uncategorized"
+        return _format_category(relative.parts[0])
+    except ValueError:
+        return "Uncategorized"
 
 def load_yaml(path: Path) -> Dict[str, Any]:
     """
