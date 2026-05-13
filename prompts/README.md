@@ -11,6 +11,8 @@ Use prompt metadata/tags for discovery and categorization:
 - `topic:<value>` — subject area (examples: `topic:architecture`, `topic:qa`)
 - `capability:<value>` — intended task style (examples: `capability:analysis`, `capability:generation`)
 
+Use only one `domain:` tag per prompt. If multiple are present, discovery tooling uses the first matching `domain:` tag.
+
 Directory layout can stay shallow/flat; docs and index tooling now derive categories from this taxonomy first.
 
 ## Prompt Structure 🏗️
