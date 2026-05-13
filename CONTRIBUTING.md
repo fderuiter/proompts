@@ -70,7 +70,7 @@ All prompts must be written as `.prompt.yaml` files.
 
 ### Step 3: Run the Validation Pipeline
 
-Before committing, you **must** run the test suite. This ensures your YAML is valid, tests pass, and documentation is updated.
+Before committing, you **must** run the test suite. This ensures your YAML is valid, tests pass, and documentation can be generated.
 
 > [!WARNING]
 > Do not skip this step! The CI pipeline will fail your PR if these checks do not pass locally.
@@ -85,14 +85,8 @@ python3 tools/scripts/test_all.py
 *   `cleanup_mac_files`: Removes hidden macOS files (`._*`) that break parsing.
 *   `check_prompts`: Validates naming conventions and directory structures.
 *   `validate_prompt_schema`: Ensures your YAML matches the Pydantic schema (checks for missing fields or empty `testData`).
-*   `generate_docs` & `update_docs_index`: Automatically regenerates the Markdown documentation site based on your changes!
+*   `generate_docs` & `update_docs_index`: Generate the Markdown documentation site artifacts used in CI builds.
 *   `yamllint`: Checks for formatting issues.
-
-If `test_all.py` fails on documentation checks, you can force a regeneration by running:
-```bash
-python3 tools/scripts/generate_docs.py
-python3 tools/scripts/update_docs_index.py
-```
 
 ### Step 4: Submit Your Pull Request
 

@@ -228,9 +228,12 @@ If the inputs map exactly to what the `run_workflow.py` engine provides (e.g., v
 
 ## Documentation Maintenance
 
+> [!NOTE]
+> Generated docs artifacts are build outputs and should not be committed to git.
+
 ### `update_docs_index.py`
 
-Scans all prompt folders to regenerate the documentation index (`docs/index.md`) and table of contents. Keeps the docs site in sync with the file system.
+Scans all prompt folders to regenerate the documentation index (`docs/index.md`) and table of contents for documentation builds. Keeps the docs site in sync with the file system.
 
 **Usage:**
 
@@ -238,13 +241,13 @@ Scans all prompt folders to regenerate the documentation index (`docs/index.md`)
 # Update docs/index.md
 python3 tools/scripts/update_docs_index.py
 
-# Check if docs are up-to-date (for CI)
-python3 tools/scripts/update_docs_index.py --check
+# Regenerate docs index artifacts
+python3 tools/scripts/update_docs_index.py
 ```
 
 ### `generate_docs.py`
 
-Generates the static documentation site structure in `docs/`. It scans all prompts and workflows, organizes them by category (metadata-driven), and generates:
+Generates the static documentation site structure in `docs/` for CI/local builds. It scans all prompts and workflows, organizes them by category (metadata-driven), and generates:
 - Category index pages (e.g., `docs/clinical.md`)
 - Individual workflow documentation pages in `docs/workflows/`
 
