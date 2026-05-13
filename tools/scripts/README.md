@@ -240,9 +240,6 @@ Scans all prompt folders to regenerate the documentation index (`docs/index.md`)
 ```bash
 # Update docs/index.md
 python3 tools/scripts/update_docs_index.py
-
-# Regenerate docs index artifacts
-python3 tools/scripts/update_docs_index.py
 ```
 
 ### `generate_docs.py`
