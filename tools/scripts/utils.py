@@ -31,6 +31,11 @@ def _format_category(raw: str) -> str:
     return " ".join(word.capitalize() for word in cleaned.split())
 
 
+def _domain_root(value: str) -> str:
+    """Return top-level domain segment, e.g. `technical` from `technical/architecture`."""
+    return value.strip().split("/", 1)[0].strip()
+
+
 def get_prompt_tags(content: Dict[str, Any]) -> List[str]:
     """Return normalized tags from metadata.tags and legacy top-level tags."""
     tags: List[str] = []
@@ -60,13 +65,13 @@ def derive_prompt_category(path: Path, root_dir: Path, content: Dict[str, Any] |
         if tag.lower().startswith("domain:"):
             value = tag.split(":", 1)[1].strip()
             if value:
-                return _format_category(value.split("/", 1)[0])
+                return _format_category(_domain_root(value))
 
     metadata = data.get("metadata")
     if isinstance(metadata, dict):
         domain = metadata.get("domain")
         if isinstance(domain, str) and domain.strip():
-            return _format_category(domain.strip().split("/", 1)[0])
+            return _format_category(_domain_root(domain))
 
     try:
         relative = path.relative_to(root_dir)

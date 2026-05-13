@@ -29,11 +29,17 @@ class TestDeriveCategory(unittest.TestCase):
         path = root / "clinical" / "test.prompt.yaml"
         self.assertEqual(FileParser.derive_category(path, root, {}), "Clinical")
 
-    def test_nested_category(self):
-        """Test file in a nested category folder still returns the top-level category."""
+    def test_nested_category_legacy_fallback(self):
+        """Test nested folders still fall back to top-level directory category."""
         root = Path("/repo/prompts")
         path = root / "clinical" / "oncology" / "test.prompt.yaml"
         self.assertEqual(FileParser.derive_category(path, root, {}), "Clinical")
+
+    def test_none_data_uses_legacy_fallback(self):
+        """Test None metadata still uses folder-based fallback for compatibility."""
+        root = Path("/repo/prompts")
+        path = root / "clinical" / "test.prompt.yaml"
+        self.assertEqual(FileParser.derive_category(path, root, None), "Clinical")
 
     def test_domain_tag_takes_precedence(self):
         """Test namespaced domain tag overrides folder-based category."""
