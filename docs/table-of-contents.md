@@ -584,6 +584,7 @@
 [DMAIC Process Optimization Architect](prompts/business/operations/lean_six_sigma/dmaic_process_optimization_architect.prompt.md)
 [global_supply_chain_geopolitical_duress_architect](prompts/business/operations/supply_chain/global_supply_chain_geopolitical_duress_architect.prompt.md)
 [Global Supply Chain Resilience Architect](prompts/business/operations/supply_chain/global_supply_chain_resilience_architect.prompt.md)
+[Stochastic Multi-Echelon Inventory Optimization Architect](prompts/business/operations/supply_chain/stochastic_multi_echelon_inventory_optimization_architect.prompt.md)
 [Supply Chain Network Topology Optimization Architect](prompts/business/operations/supply_chain/supply_chain_network_topology_optimization_architect.prompt.md)
 [stochastic_multi_objective_optimization_architect](prompts/scientific/applied_mathematics/optimization/operations_research/stochastic_multi_objective_optimization_architect.prompt.md)
 [Enantioselective Catalytic Mechanism Architect](prompts/scientific/chemistry/organic/asymmetric_synthesis/enantioselective_catalytic_mechanism_architect.prompt.md)
