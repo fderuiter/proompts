@@ -23,7 +23,7 @@ ROOT: Path = Path(__file__).resolve().parents[2]
 PROMPTS_DIR: Path = ROOT / "prompts"
 WORKFLOWS_DIR: Path = ROOT / "workflows"
 OVERVIEW_NAME: str = "overview.md"
-DOMAIN_TAG_PREFIX = "domain:"
+DOMAIN_TAG_PREFIX: str = "domain:"
 
 
 def _format_category(raw: str) -> str:

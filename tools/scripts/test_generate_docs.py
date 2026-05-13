@@ -62,6 +62,13 @@ class TestDeriveCategory(unittest.TestCase):
         data = {"metadata": {"domain": "business/strategy", "tags": ["topic:finance"]}}
         self.assertEqual(FileParser.derive_category(path, root, data), "Business")
 
+    def test_metadata_without_domain_uses_legacy_fallback(self):
+        """Test metadata without domain information still falls back to directory."""
+        root = Path("/repo/prompts")
+        path = root / "scientific" / "test.prompt.yaml"
+        data = {"metadata": {"tags": ["topic:biology"]}}
+        self.assertEqual(FileParser.derive_category(path, root, data), "Scientific")
+
     def test_legacy_tags_supported(self):
         """Test top-level legacy tags are still supported for category derivation."""
         root = Path("/repo/prompts")
