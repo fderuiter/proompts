@@ -27,4 +27,29 @@ build/
 *.egg-info/
 site/
 
+# Generated documentation artifacts (built in CI)
+docs/prompts/
+docs/workflows/
+docs/index.md
+docs/table-of-contents.md
+docs/architecture.md
+docs/business.md
+docs/clinical.md
+docs/communication.md
+docs/computational.md
+docs/google_jules.md
+docs/growth.md
+docs/languages.md
+docs/lifestyle.md
+docs/management.md
+docs/meta.md
+docs/regulatory.md
+docs/scientific.md
+docs/software_engineering.md
+docs/speculative.md
+docs/technical.md
+docs/testing.md
+docs/uncategorized.md
+docs/workflows.md
+
 ._*

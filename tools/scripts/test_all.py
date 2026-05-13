@@ -43,15 +43,66 @@ def run_command(command: list[str]) -> int:
     return result.returncode
 
 
+def ensure_generated_docs_not_tracked() -> int:
+    """Ensure generated prompt/workflow docs are not committed to git."""
+    generated_paths = [
+        "docs/prompts",
+        "docs/workflows",
+        "docs/index.md",
+        "docs/table-of-contents.md",
+        "docs/architecture.md",
+        "docs/business.md",
+        "docs/clinical.md",
+        "docs/communication.md",
+        "docs/computational.md",
+        "docs/google_jules.md",
+        "docs/growth.md",
+        "docs/languages.md",
+        "docs/lifestyle.md",
+        "docs/management.md",
+        "docs/meta.md",
+        "docs/regulatory.md",
+        "docs/scientific.md",
+        "docs/software_engineering.md",
+        "docs/speculative.md",
+        "docs/technical.md",
+        "docs/testing.md",
+        "docs/uncategorized.md",
+        "docs/workflows.md",
+    ]
+    result = subprocess.run(
+        ["git", "ls-files", *generated_paths],
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        print("Error checking tracked generated docs:")
+        print(result.stdout)
+        print(result.stderr)
+        return result.returncode
+
+    tracked = [line for line in result.stdout.splitlines() if line.strip()]
+    if tracked:
+        print("Generated docs must not be committed to git:")
+        for path in tracked[:20]:
+            print(f" - {path}")
+        if len(tracked) > 20:
+            print(f" ... and {len(tracked) - 20} more")
+        return 1
+
+    return 0
+
+
 def main() -> int:
     """Run all checks and return final status."""
     checks = {
         "cleanup_mac_files": lambda: run_command(["find", ".", "-name", "._*", "-delete"]),
+        "enforce_generated_docs_untracked": ensure_generated_docs_not_tracked,
         "check_prompts": check_prompts_main,
         "validate_prompt_schema": validate_prompt_schema_main,
         "generate_overviews": lambda: run_command(["python3", "tools/scripts/generate_overviews.py"]),
-        "update_docs_index": lambda: update_docs_index_run(check=True),
-        "generate_docs": lambda: run_command(["python3", "tools/scripts/generate_docs.py", "--check"]),
+        "update_docs_index": lambda: update_docs_index_run(check=False),
+        "generate_docs": lambda: run_command(["python3", "tools/scripts/generate_docs.py"]),
         "check_broken_links": lambda: run_command(["python3", "tools/scripts/check_broken_links.py"]),
         "yamllint": lambda: run_command(["yamllint", "."]),
     }
