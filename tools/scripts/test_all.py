@@ -32,6 +32,8 @@ from check_prompts import main as check_prompts_main
 from update_docs_index import run_update as update_docs_index_run
 from validate_prompt_schema import main as validate_prompt_schema_main
 
+MAX_DISPLAYED_TRACKED_FILES = 20
+
 
 def run_command(command: list[str]) -> int:
     """Run a command and return its exit code."""
@@ -84,10 +86,10 @@ def ensure_generated_docs_not_tracked() -> int:
     tracked = [line for line in result.stdout.splitlines() if line.strip()]
     if tracked:
         print("Generated docs must not be committed to git:")
-        for path in tracked[:20]:
+        for path in tracked[:MAX_DISPLAYED_TRACKED_FILES]:
             print(f" - {path}")
-        if len(tracked) > 20:
-            print(f" ... and {len(tracked) - 20} more")
+        if len(tracked) > MAX_DISPLAYED_TRACKED_FILES:
+            print(f" ... and {len(tracked) - MAX_DISPLAYED_TRACKED_FILES} more")
         return 1
 
     return 0
@@ -101,8 +103,10 @@ def main() -> int:
         "check_prompts": check_prompts_main,
         "validate_prompt_schema": validate_prompt_schema_main,
         "generate_overviews": lambda: run_command(["python3", "tools/scripts/generate_overviews.py"]),
-        "update_docs_index": lambda: update_docs_index_run(check=False),
+        "update_docs_index": lambda: run_command(["python3", "tools/scripts/update_docs_index.py"]),
+        "update_docs_index_check": lambda: update_docs_index_run(check=True),
         "generate_docs": lambda: run_command(["python3", "tools/scripts/generate_docs.py"]),
+        "generate_docs_check": lambda: run_command(["python3", "tools/scripts/generate_docs.py", "--check"]),
         "check_broken_links": lambda: run_command(["python3", "tools/scripts/check_broken_links.py"]),
         "yamllint": lambda: run_command(["yamllint", "."]),
     }
