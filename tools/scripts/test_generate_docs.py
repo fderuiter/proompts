@@ -27,37 +27,40 @@ class TestDeriveCategory(unittest.TestCase):
         """Test file in a simple category folder."""
         root = Path("/repo/prompts")
         path = root / "clinical" / "test.prompt.yaml"
-        self.assertEqual(FileParser.derive_category(path, root), "Clinical")
+        self.assertEqual(FileParser.derive_category(path, root, {}), "Clinical")
 
     def test_nested_category(self):
         """Test file in a nested category folder still returns the top-level category."""
         root = Path("/repo/prompts")
         path = root / "clinical" / "oncology" / "test.prompt.yaml"
-        self.assertEqual(FileParser.derive_category(path, root), "Clinical")
+        self.assertEqual(FileParser.derive_category(path, root, {}), "Clinical")
 
-    def test_technical_architecture(self):
-        """Test special mapping for technical/architecture."""
+    def test_domain_tag_takes_precedence(self):
+        """Test namespaced domain tag overrides folder-based category."""
         root = Path("/repo/prompts")
-        path = root / "technical" / "architecture" / "test.prompt.yaml"
-        self.assertEqual(FileParser.derive_category(path, root), "Architecture")
+        path = root / "google_jules" / "test.prompt.yaml"
+        data = {"metadata": {"tags": ["domain:technical", "topic:architecture"]}}
+        self.assertEqual(FileParser.derive_category(path, root, data), "Technical")
 
-    def test_technical_software_engineering(self):
-        """Test special mapping for technical/software_engineering."""
+    def test_metadata_domain_fallback(self):
+        """Test metadata domain is used when namespaced domain tag is absent."""
         root = Path("/repo/prompts")
-        path = root / "technical" / "software_engineering" / "test.prompt.yaml"
-        self.assertEqual(FileParser.derive_category(path, root), "Software Engineering")
+        path = root / "misc" / "test.prompt.yaml"
+        data = {"metadata": {"domain": "business/strategy", "tags": ["topic:finance"]}}
+        self.assertEqual(FileParser.derive_category(path, root, data), "Business")
 
-    def test_technical_other(self):
-        """Test technical folder with no special subfolder mapping returns Technical."""
+    def test_legacy_tags_supported(self):
+        """Test top-level legacy tags are still supported for category derivation."""
         root = Path("/repo/prompts")
-        path = root / "technical" / "security" / "test.prompt.yaml"
-        self.assertEqual(FileParser.derive_category(path, root), "Technical")
+        path = root / "misc" / "test.prompt.yaml"
+        data = {"tags": ["domain:scientific", "topic:biology"]}
+        self.assertEqual(FileParser.derive_category(path, root, data), "Scientific")
 
     def test_category_with_underscores(self):
         """Test category name with underscores is formatted correctly."""
         root = Path("/repo/prompts")
         path = root / "data_management" / "test.prompt.yaml"
-        self.assertEqual(FileParser.derive_category(path, root), "Data Management")
+        self.assertEqual(FileParser.derive_category(path, root, {}), "Data Management")
 
     def test_not_in_root(self):
         """Test path not relative to root_dir returns Uncategorized."""

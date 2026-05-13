@@ -60,6 +60,7 @@ graph TD
 ### 1. Prompts as Code
 Prompts are defined in YAML files (`.prompt.yaml`) following a strict schema. This allows for:
 - **Structured Metadata**: Fields like `name`, `description`, `model`, and `parameters` provide clear context.
+- **Tag Taxonomy**: Namespaced tags (for example `domain:*`, `topic:*`, `capability:*`) power discovery without relying on deep folder hierarchies.
 - **Templating**: Jinja2 syntax (`{{variable}}`) enables dynamic content injection.
 - **Test Data**: Embedded test cases (`testData`) with expected outputs allow for deterministic validation.
 - **Evaluators**: Rules for validating model outputs (e.g., regex checks, python scripts) ensure quality.
@@ -91,7 +92,7 @@ Documentation is treated as a first-class build artifact, automatically generate
 
 ## Directory Structure
 
-- **`prompts/`**: The source of truth for all prompt definitions, organized by domain.
+- **`prompts/`**: The source of truth for all prompt definitions, with discovery driven by metadata tags rather than deep directory nesting.
 - **`workflows/`**: Workflow definitions that orchestrate prompts.
 - **`tools/scripts/`**: The build, validation, and maintenance toolchain.
 - **`docs/`**: The generated documentation site (Jekyll-ready).
