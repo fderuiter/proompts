@@ -47,7 +47,7 @@ messages:
       1. **Underlying Asset Valuation ($S_0$)**: Calculate the present value of the underlying project's operating cash flows (excluding the option cost). Define the base-case static NPV.
       2. **Volatility Estimation ($\sigma$)**: Critically evaluate the provided volatility estimates. Discuss the implications of this volatility on option value. Specify the methodology used (e.g., logarithmic returns of twin securities).
       3. **Option Pricing Mechanics**: Architect the quantitative valuation framework. You must explicitly state whether a Binomial Lattice Model (specifying up/down factors $u$ and $d$, and risk-neutral probabilities $p$) or a continuous-time Black-Scholes-Merton (BSM) extension is optimal for the specified option type. If using BSM, define $d_1$ and $d_2$.
-      4. **Expanded NPV Calculation**: Calculate the final option value ($C$ or $P$) and the resulting Expanded NPV ($NPV_{expanded} = NPV_{static} + Option\_Value$).
+      4. **Expanded NPV Calculation**: Calculate the final option value ($C$ or $P$) and the resulting Expanded NPV ($NPV_{expanded} = NPV_{static} + Option\\_Value$).
       5. **Strategic Execution Triggers**: Define the specific, observable market conditions or thresholds that should trigger management to exercise the real option.
 
       Maintain an uncompromisingly technical, authoritative persona. Use strict LaTeX for all financial and mathematical notation (e.g., $S_0$, $X$, $r$, $T$, $\sigma$, $u=e^{\sigma\sqrt{\Delta t}}$).
