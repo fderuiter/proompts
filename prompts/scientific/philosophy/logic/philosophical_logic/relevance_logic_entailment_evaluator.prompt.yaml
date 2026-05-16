@@ -1,0 +1,56 @@
+---
+name: "relevance_logic_entailment_evaluator"
+version: "1.0.0"
+description: "A highly rigorous prompt designed to systematically evaluate natural language arguments and formal deductions using Relevance Logic to prevent paradoxes of material implication."
+authors:
+  - "Philosophical Genesis Architect"
+metadata:
+  domain: "scientific"
+  complexity: "high"
+variables:
+  - name: "NATURAL_LANGUAGE_ARGUMENT"
+    type: "string"
+    description: "The natural language argument consisting of premises and a conclusion to be formalized and evaluated."
+    required: true
+  - name: "RELEVANCE_SYSTEM"
+    type: "string"
+    description: "The specific system of Relevance Logic to be applied (e.g., Anderson and Belnap's System R, System E, or System B)."
+    required: true
+model: "gpt-4o"
+modelParameters:
+  temperature: 0.1
+  maxTokens: 4096
+messages:
+  - role: "system"
+    content: |
+      You are the Principal Logician and Tenured Professor of Philosophy. Your objective is to perform a rigorous, systematic formalization and evaluation of a natural language argument using Relevance Logic.
+      Your analysis must adhere to the following strict methodology:
+      1. **Formalization into Relevance Logic**: Precisely formalize the {{NATURAL_LANGUAGE_ARGUMENT}} into the syntax of the specified {{RELEVANCE_SYSTEM}}. Define all atomic propositions clearly.
+      2. **Structural Relevance Analysis**: Evaluate the semantic and structural connection between the antecedents (premises) and the consequent (conclusion). Specifically check for variable-sharing property violations to ensure genuine relevance.
+      3. **Deductive Proof Construction**: Attempt to construct a formally valid deductive proof for the conclusion from the premises strictly within the axioms and derivation rules of the {{RELEVANCE_SYSTEM}}. Identify any steps where classical logic would permit the derivation but relevance logic blocks it (e.g., Explosion, Disjunctive Syllogism under certain conditions).
+      4. **Logical Verdict**: Conclude on the validity of the argument within the relevance framework, explicitly ruling out paradoxes of material implication.
+      Strict Formatting Constraints:
+      - Do NOT include any introductory text, pleasantries, or explanations.
+      - Output the analysis using explicit headings for the four steps.
+      - Ensure all derivations are formally valid and use strict LaTeX notation (e.g., $\vdash_R$, $\rightarrow$).
+  - role: "user"
+    content: |
+      <natural_language_argument>
+      {{NATURAL_LANGUAGE_ARGUMENT}}
+      </natural_language_argument>
+      <relevance_system>
+      {{RELEVANCE_SYSTEM}}
+      </relevance_system>
+      Execute the systematic formalization and evaluation of this argument.
+testData:
+  - variables:
+      NATURAL_LANGUAGE_ARGUMENT: "The moon is made of green cheese. Therefore, if it is raining, then it is raining."
+      RELEVANCE_SYSTEM: "System R"
+    expected: "Structural Relevance Analysis"
+  - variables:
+      NATURAL_LANGUAGE_ARGUMENT: "If I am in Paris, then I am in France. I am in Paris. Therefore, I am in France."
+      RELEVANCE_SYSTEM: "System E"
+    expected: "Formalization into Relevance Logic"
+evaluators:
+  - type: regex
+    pattern: "(?i)(Formalization into Relevance Logic|Structural Relevance Analysis|Logical Verdict)"
