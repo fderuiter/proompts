@@ -1,56 +1,92 @@
 ---
 name: Quarterly CRO KPI Executive Brief
 version: 0.1.0
-description: Present key operational KPIs and recommended actions for the quarterly review.
+description: Present key operational KPIs and recommended actions for the quarterly
+  review.
 metadata:
   domain: management
   complexity: medium
   tags:
-  - operations
-  - quarterly
-  - cro
-  - kpi
-  - executive
+    - operations
+    - quarterly
+    - cro
+    - kpi
+    - executive
   requires_context: false
 variables:
-- name: functional_comments
-  description: notes from department heads
-  required: true
-- name: kpi_definitions
-  description: thresholds and descriptions
-  required: true
-- name: operational_dataset
-  description: metrics from Redshift
-  required: true
+  - name: functional_comments
+    description: notes from department heads
+    required: true
+  - name: kpi_definitions
+    description: thresholds and descriptions
+    required: true
+  - name: operational_dataset
+    description: metrics from Redshift
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: 'You are the Business Operations lead preparing the Q3 executive brief. Operational data, KPI thresholds and functional
-    commentary are available.
+  - role: system
+    content: 'You are the Business Operations lead preparing the Q3 executive brief.
+      Operational data, KPI thresholds and functional commentary are available.
 
 
-    1. Produce a one-page narrative highlighting three KPIs above target and three below, include root-cause hypotheses and
-    an actionable decision for each lagging KPI.
+      1. Produce a one-page narrative highlighting three KPIs above target and three
+      below, include root-cause hypotheses and an actionable decision for each lagging
+      KPI.
 
-    2. Summarize overall financial health in 75 words or fewer.
+      2. Summarize overall financial health in 75 words or fewer.
 
-    3. Outline a six-slide PowerPoint deck with slide titles and bullets.
+      3. Outline a six-slide PowerPoint deck with slide titles and bullets.
 
-    4. Suggest appropriate data visualizations for each KPI.
-
-
-    Keep language jargon-free and assume the audience is time pressed. Use first-person plural and offer to answer questions
-    if data anomalies appear.'
-- role: user
-  content: '- `{{operational_dataset}}` – metrics from Redshift.
-
-    - `{{kpi_definitions}}` – thresholds and descriptions.
-
-    - `{{functional_comments}}` – notes from department heads.
+      4. Suggest appropriate data visualizations for each KPI.
 
 
-    Output format: Narrative summary, slide outline and recommended visualization styles.'
-testData: []
+      Keep language jargon-free and assume the audience is time pressed. Use first-person
+      plural and offer to answer questions if data anomalies appear.'
+  - role: user
+    content: "- `{{operational_dataset}}` \u2013 metrics from Redshift.\n- `{{kpi_definitions}}`\
+      \ \u2013 thresholds and descriptions.\n- `{{functional_comments}}` \u2013 notes\
+      \ from department heads.\n\nOutput format: Narrative summary, slide outline\
+      \ and recommended visualization styles."
+testData:
+  - variables:
+      - name: operational_dataset
+        value: '{"Q3_Data": {"Revenue": "$45.2M", "EBITDA_Margin": "18.5%", "Customer_Acquisition_Cost":
+          "$4,200", "Churn_Rate": "2.1%", "Employee_Turnover": "4.5%", "System_Uptime":
+          "99.98%"}}'
+      - name: kpi_definitions
+        value: '{"Revenue": {"Target": "$40.0M", "Type": "Above"}, "EBITDA_Margin":
+          {"Target": "15.0%", "Type": "Above"}, "System_Uptime": {"Target": "99.95%",
+          "Type": "Above"}, "Customer_Acquisition_Cost": {"Target": "$3,800", "Type":
+          "Below"}, "Churn_Rate": {"Target": "1.5%", "Type": "Below"}, "Employee_Turnover":
+          {"Target": "3.0%", "Type": "Below"}}'
+      - name: functional_comments
+        value: 'Sales: "Enterprise deals closed faster than expected." Engineering:
+          "Cloud costs spiked due to inefficient queries, impacting margin minimally
+          but concerning long-term. New release caused minor latency but uptime held."
+          HR: "Losing mid-level engineers to competitors offering 20% higher base."
+          Customer Success: "Onboarding delays led to early churn for 5 SMB accounts."'
+    evaluators:
+      - name: Six-slide PowerPoint Outline
+        type: regex
+        target: message.content
+        pattern: (?i)(?:Slide 6|Slide VI|6\.\s+Slide|Slide\s+Six)
+      - name: First-person plural tone
+        type: regex
+        target: message.content
+        pattern: (?i)\b(we|our|us)\b
+  - variables:
+      - name: operational_dataset
+        value: '{}'
+      - name: kpi_definitions
+        value: '{}'
+      - name: functional_comments
+        value: All data corrupted during migration. No metrics available for Q3.
+    evaluators:
+      - name: Handles missing data gracefully
+        type: regex
+        target: message.content
+        pattern: (?i)(?:cannot|unable to|insufficient|missing)
 evaluators: []
