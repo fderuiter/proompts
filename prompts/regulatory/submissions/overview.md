@@ -11,6 +11,7 @@
 - **[IDE Application Preparation](ide_application_preparation.prompt.yaml)**: Draft an Investigational Device Exemption (IDE) application, including risk analysis and investigational plans for clinical studies.
 - **[Investigational New Drug (IND) Architect](investigational_new_drug_ind_architect.prompt.yaml)**: Formulates rigorous, compliant Investigational New Drug (IND) applications (21 CFR Part 312), explicitly designed to translate preclinical pharmacology/toxicology into safe Phase 1 clinical protocols and prevent FDA clinical holds.
 - **[Medicare Coverage Request (IDE)](medicare_coverage_request_ide.prompt.yaml)**: Prepare a request packet for CMS reimbursement of an IDE study.
+- **[New Drug Application (NDA) Architect](new_drug_application_nda_architect.prompt.yaml)**: Formulates rigorous, compliant FDA New Drug Application (NDA) eCTD submissions for small molecule drugs, ensuring alignment with 21 CFR Part 314 and ICH M4 guidelines.
 - **[Parallel Review Request](parallel_review_request.prompt.yaml)**: Draft an email requesting enrollment in the Parallel Review program.
 - **[PMA Post-approval Reporting](pma_post_approval_reporting.prompt.yaml)**: Compile a summary of post-approval requirements, including clinical study data, manufacturing changes, and scientific literature.
 - **[PMA Supplement (CBE)](pma_supplement_cbe.prompt.yaml)**: Draft a 'Special PMA Supplement - Changes Being Effected' for safety warnings.
