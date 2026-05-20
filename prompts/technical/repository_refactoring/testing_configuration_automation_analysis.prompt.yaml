@@ -1,7 +1,6 @@
 name: Testing, Configuration, and Automation Analysis
 version: 0.1.0
-description: Analyze the repository's testing, configuration, and automation infrastructure
-  to ensure reliability and deployment readiness.
+description: Analyze the repository's testing, configuration, and automation infrastructure to ensure reliability and deployment readiness.
 metadata:
   domain: technical
   complexity: high
@@ -12,7 +11,10 @@ metadata:
   - automation
   - analysis
   requires_context: true
-variables: []
+variables:
+- name: repository_context
+  description: The context of the repository including current testing setup, CI/CD pipeline configuration, and deployment processes.
+  required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -58,6 +60,22 @@ messages:
     \ Is it automated, safe, and repeatable?\n\n**Output Format:**\nYour final output\
     \ must be a single markdown section. For each area of analysis, provide a clear\
     \ assessment of the current state and a list of prioritized, actionable recommendations\
-    \ for improvement."
-testData: []
-evaluators: []
+    \ for improvement.\n\n<repository_context>\n{{repository_context}}\n</repository_context>"
+testData:
+- input:
+    repository_context: |
+      Project: Node.js Backend API
+      Current Tests: 15 unit tests using Jest, coverage is 20%. No integration or E2E tests.
+      Configuration: .env files are committed to the repo, sometimes containing staging DB credentials.
+      CI/CD: GitHub Actions runs npm test on push. Deployment is manual via SSH to a single EC2 instance.
+  expected: Identifies low test coverage and missing integration/e2e tests. Flags committed .env files as a severe security risk. Recommends automating deployment and adding proper CI checks.
+evaluators:
+- name: Output must contain Testing Strategy Assessment
+  string:
+    contains: "Testing Strategy Assessment"
+- name: Output must contain Configuration Management
+  string:
+    contains: "Configuration Management"
+- name: Output must contain Automation and CI/CD
+  string:
+    contains: "Automation and CI/CD"
