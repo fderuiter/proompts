@@ -69,6 +69,13 @@ testData:
       Configuration: .env files are committed to the repo, sometimes containing staging DB credentials.
       CI/CD: GitHub Actions runs npm test on push. Deployment is manual via SSH to a single EC2 instance.
   expected: Identifies low test coverage and missing integration/e2e tests. Flags committed .env files as a severe security risk. Recommends automating deployment and adding proper CI checks.
+- input:
+    repository_context: |
+      Project: Python Backend API
+      Current Tests: pytest with 90% coverage.
+      Configuration: Hashicorp vault.
+      CI/CD: GitHub Actions CI with full deployment to EKS.
+  expected: Praises good test coverage and recommends adding performance tests.
 evaluators:
 - name: Output must contain Testing Strategy Assessment
   string:
