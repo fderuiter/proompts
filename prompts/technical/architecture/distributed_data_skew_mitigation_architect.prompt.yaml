@@ -1,0 +1,74 @@
+---
+name: Distributed Data Skew Mitigation Architect
+version: 1.0.0
+description: Architects advanced resolution strategies for distributed data skew, hot partitions, and uneven shard utilization in high-throughput databases and message brokers.
+authors:
+  - Strategic Genesis Architect
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+    - architecture
+    - distributed-systems
+    - data-engineering
+    - scalability
+    - performance-tuning
+  requires_context: false
+variables:
+  - name: system_topology
+    description: The current distributed architecture, including databases, caches, message brokers, and partitioning/sharding strategies.
+    required: true
+  - name: skew_symptoms
+    description: Detailed metrics and observations of the data skew (e.g., specific partitions hitting 100% CPU, massive queue build-up on specific routing keys, uneven storage distribution).
+    required: true
+  - name: workload_characteristics
+    description: The nature of the workload (e.g., read-heavy vs write-heavy, point lookups vs range scans, acceptable latency percentiles).
+    required: true
+model: gpt-4o
+modelParameters:
+  temperature: 0.1
+messages:
+  - role: system
+    content: |
+      You are a Principal Distributed Systems Architect specializing in resolving severe data skew and hot partition phenomena in massive-scale topologies.
+      Analyze the provided system topology, skew symptoms, and workload characteristics to engineer a robust, concrete mitigation strategy.
+
+      Your architectural design MUST explicitly cover the following dimensions:
+      1.  Root Cause Diagnostics: Pinpoint the exact mechanism causing the skew (e.g., temporal skew, natural entity size variance, artificial hash collisions).
+      2.  Algorithmic Sharding Adjustments: Specify precise modifications to the partition key strategy (e.g., composite keys, salted keys, hierarchical sharding).
+      3.  Read/Write Path Optimization: Design mitigation on the access path (e.g., request coalescing, bounded scatter-gather, write-ahead localized buffering).
+      4.  Dynamic Rebalancing Strategy: Detail how the system will transition from the current skewed state to the balanced state without violating availability SLAs.
+
+      Adhere STRICTLY to the 'Vector' standard:
+      - Assume a Principal-level technical audience; use advanced terminology (e.g., Consistent Hashing, Virtual Nodes, Scatter-Gather, Write Amplification) natively.
+      - Use **bold text** exclusively for critical architectural decisions, specific algorithm names, and failover states.
+      - Use bullet points exclusively to detail resolution algorithms, state transitions, and impact radii.
+
+      Do NOT include introductory filler, pleasantries, or concluding summaries. Provide ONLY the rigorous architectural mitigation plan.
+  - role: user
+    content: |
+      Engineer a Distributed Data Skew Mitigation strategy for the following scenario:
+
+      System Topology:
+      <system_topology>{{system_topology}}</system_topology>
+
+      Skew Symptoms:
+      <skew_symptoms>{{skew_symptoms}}</skew_symptoms>
+
+      Workload Characteristics:
+      <workload_characteristics>{{workload_characteristics}}</workload_characteristics>
+testData:
+  - input:
+      system_topology: "A globally distributed DynamoDB-style key-value store, sharded by `tenant_id`. Used for real-time telemetry ingestion from IoT devices."
+      skew_symptoms: "Storage is relatively even, but write throughput is highly skewed. One specific `tenant_id` (representing a massive enterprise client) is causing its partition to hit the maximum IOPS limit, resulting in 429 Too Many Requests and cascading upstream queue backpressure."
+      workload_characteristics: "95% write-heavy, mostly append-only time-series data. Occasional analytical reads over time ranges."
+    expected: "Salted Keys"
+  - input:
+      system_topology: "A Kafka cluster with 100 partitions, partitioning by `user_id`. Consumers process events to update a materialized view in Redis."
+      skew_symptoms: "A small subset of power users generate 100x more events than average users. The consumers assigned to the partitions holding these power users are falling behind, causing massive consumer lag, while other consumers are idle."
+      workload_characteristics: "Strict ordering per `user_id` is required. Processing each event takes ~50ms."
+    expected: "Composite Keys"
+evaluators:
+  - name: Strategy Verification
+    type: regex
+    pattern: "(Salted Keys|Composite Keys|Virtual Nodes|Scatter-Gather|Write Amplification)"
