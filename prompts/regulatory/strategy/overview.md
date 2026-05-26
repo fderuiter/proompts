@@ -8,6 +8,7 @@
 - **[Compliance Gap Assessment](compliance_gap_assessment.prompt.yaml)**: Evaluate organizational controls against a specified compliance framework and prioritize remediation.
 - **[Dual MDR / IVDR Conformity-Assessment Roadmap](dual_mdr_ivdr_roadmap.prompt.yaml)**: Develop a coordinated roadmap for simultaneous MDR and IVDR submissions.
 - **[EU MDR Technical-Documentation Gap Assessment](eu_mdr_gap_assessment.prompt.yaml)**: Identify deficiencies in technical documentation against EU MDR Annex II and III.
+- **[FDA De Novo Classification Request Architect](fda_de_novo_classification_request_architect.prompt.yaml)**: Architect rigorous, compliant FDA De Novo Classification Requests for novel medical devices, ensuring strict adherence to 21 CFR Part 860 and robust justification of special controls.
 - **[FDA Fast Track Designation Architect](fda_fast_track_designation_architect.prompt.yaml)**: Designs a rigorous, strategically aligned FDA Fast Track Designation application focusing on demonstrating an unmet medical need for a serious or life-threatening condition.
 - **[IDE Determination and Device Classification](ide_determination.prompt.yaml)**: Assess risk classification and draft rationale.
 - **[IND Determination and Application](ind_determination_application.prompt.yaml)**: Determine IND exemption and prepare dossier.
