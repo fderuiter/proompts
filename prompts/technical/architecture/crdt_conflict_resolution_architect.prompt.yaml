@@ -108,4 +108,13 @@ testData:
   - name: Refusal JSON
     type: regex
     pattern: '\{"error": "unsafe"\}'
-evaluators: []
+evaluators:
+- name: Mentions CRDT formulation
+  type: regex
+  pattern: (?i)(CRDT|Conflict-Free Replicated Data Type)
+- name: Mentions logical clocking
+  type: regex
+  pattern: (?i)(clock|causality|vector)
+- name: Mentions tombstone management
+  type: regex
+  pattern: (?i)(tombstone|garbage collection)
