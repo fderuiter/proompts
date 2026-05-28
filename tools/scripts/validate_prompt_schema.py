@@ -69,7 +69,7 @@ import json
 import re
 from enum import Enum
 from pathlib import Path
-from typing import Any, List, Optional
+from typing import Any, List, Optional, Dict
 
 from pydantic import BaseModel, ValidationError, field_validator, model_validator, Field
 
@@ -147,6 +147,7 @@ class PromptSchema(BaseModel):
     messages: List[Message] = Field(..., description="The sequence of messages that form the prompt.")
     testData: List[Any] = Field(..., description="List of test cases with inputs and expected outputs.")
     evaluators: List[Any] = Field(..., description="List of evaluators to validate the model's output.")
+    output_schema: Optional[Dict[str, Any]] = Field(None, description="Optional JSON schema for structural validation of the LLM output.")
     last_modified: Optional[str] = Field(None, description="Timestamp of the last modification (ISO 8601).")
 
     @field_validator("messages")
