@@ -12,8 +12,8 @@ metadata:
   - prioritizer
   requires_context: false
 variables:
-- name: PASTE project spreadsheet or JSON here
-  description: The PASTE project spreadsheet or JSON here to use for this prompt
+- name: project_data
+  description: The project_data to use for this prompt
   required: true
 - name: input
   description: The primary input or query text for the prompt
@@ -43,7 +43,7 @@ messages:
 
     """
 
-    {{PASTE project spreadsheet or JSON here}}
+    {{project_data}}
 
     """
 

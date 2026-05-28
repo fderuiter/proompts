@@ -161,8 +161,20 @@ class PromptSchema(BaseModel):
     def check_variables_match_content(self):
         """Cross-check {{var}} usage in messages against defined variables."""
         found_vars: set[str] = set()
+        invalid_vars: set[str] = set()
+        
         for msg in self.messages:
-            found_vars.update(VAR_PATTERN.findall(msg.content))
+            for match in VAR_PATTERN.findall(msg.content):
+                valid_match = re.match(r'^\s*([a-zA-Z0-9_.-]+)\s*$', match)
+                if valid_match:
+                    found_vars.add(valid_match.group(1))
+                else:
+                    invalid_vars.add(match)
+
+        if invalid_vars:
+            raise ValueError(
+                f"Migration Required: Variables contain invalid characters (only alphanumeric, underscores, dots, and hyphens are allowed): {invalid_vars}"
+            )
 
         defined_vars = {v.name for v in self.variables}
 
@@ -180,6 +192,28 @@ class PromptSchema(BaseModel):
             )
 
         return self
+
+    @model_validator(mode='after')
+    def check_test_data_types(self):
+        """Warn if testData contains non-string types that will be coerced to strings."""
+        if not self.testData:
+            return self
+            
+        for case in self.testData:
+            if isinstance(case, dict):
+                # Check inputs
+                inputs = case.get('inputs', {})
+                if isinstance(inputs, dict):
+                    for k, v in inputs.items():
+                        if not isinstance(v, str):
+                            print(f"Warning: Test data input '{k}' is of type {type(v).__name__}. The runtime engine will cast this to a string.")
+                
+                # Check expected
+                expected = case.get('expected')
+                if expected is not None and not isinstance(expected, str):
+                    print(f"Warning: Test data expected output is of type {type(expected).__name__}. The runtime engine will cast this to a string.")
+        return self
+
 
 
 def validate_file(file_path: Path, strict: bool = False) -> Optional[dict]:
@@ -205,7 +239,7 @@ def validate_file(file_path: Path, strict: bool = False) -> Optional[dict]:
             issues.append("only 1 test case")
         
         if not content.get('evaluators') or len(content.get('evaluators', [])) == 0:
-            issues.append("no evaluators")
+            issues.append("no evaluators (note: evaluator blocks are required for schema compliance but are bypassed during simulation)")
         
         if issues:
             print(f"Warning: {file_path} has {', '.join(issues)}")
