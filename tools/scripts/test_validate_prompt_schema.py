@@ -213,6 +213,69 @@ class TestPromptSchema(unittest.TestCase):
         self.assertTrue(var.required)
         self.assertIsNone(var.default)
 
+    def test_variables_with_invalid_characters_raises_error(self):
+        """Test that using variables with special characters raises a ValueError."""
+        data = {
+            **self.valid_data,
+            "messages": [
+                {"role": "system", "content": "You are helpful."},
+                {"role": "user", "content": "Hello {{ user!name }}"},
+            ],
+            "variables": [
+                {"name": "user!name", "description": "Invalid char", "required": True},
+            ]
+        }
+        with self.assertRaises(ValidationError) as cm:
+            PromptSchema(**data)
+        self.assertIn("Migration Required", str(cm.exception))
+
+    def test_variables_with_dots_and_hyphens_are_valid(self):
+        """Test that dot-notation and hyphens are valid in variable names."""
+        data = {
+            **self.valid_data,
+            "messages": [
+                {"role": "system", "content": "You are helpful."},
+                {"role": "user", "content": "Hello {{ user.id }} and {{ system-env }}"},
+            ],
+            "variables": [
+                {"name": "user.id", "description": "User ID", "required": True},
+                {"name": "system-env", "description": "System Env", "required": True},
+            ]
+        }
+        prompt = PromptSchema(**data)
+        self.assertEqual(len(prompt.variables), 2)
+
+    def test_variables_with_whitespace_are_valid(self):
+        """Test that whitespace inside braces is allowed and stripped."""
+        data = {
+            **self.valid_data,
+            "messages": [
+                {"role": "system", "content": "You are helpful."},
+                {"role": "user", "content": "Hello {{  user_name  }}"},
+            ],
+            "variables": [
+                {"name": "user_name", "description": "User Name", "required": True},
+            ]
+        }
+        prompt = PromptSchema(**data)
+        self.assertEqual(len(prompt.variables), 1)
+
+    def test_testdata_non_string_warning(self):
+        """Test that providing non-string test data prints a warning."""
+        data = {
+            **self.valid_data,
+            "testData": [
+                {"inputs": {"user_id": 123}, "expected": True}
+            ]
+        }
+        import io, contextlib
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            prompt = PromptSchema(**data)
+        output = buf.getvalue()
+        self.assertIn("Warning: Test data input 'user_id' is of type int.", output)
+        self.assertIn("Warning: Test data expected output is of type bool.", output)
+
 
 class TestComplexityLevel(unittest.TestCase):
     def test_valid_values(self):

@@ -14,10 +14,10 @@ metadata:
   - custom
   requires_context: true
 variables:
-- name: ' secrets.VAR '
+- name: secrets.VAR
   description: The secrets.VAR to use for this prompt
   required: true
-- name: ' var.VAR '
+- name: var.VAR
   description: The var.VAR to use for this prompt
   required: true
 - name: input

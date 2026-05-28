@@ -17,11 +17,11 @@ variables:
 - name: BUSINESS_GOAL
   description: high-level goal of the system
   required: true
-- name: LANGUAGES/FRAMEWORKS
+- name: LANGUAGES_FRAMEWORKS
   description: '`{{BUSINESS_GOAL}}`'
   required: true
 - name: PROJECT_NAME
-  description: '`{{LANGUAGES/FRAMEWORKS}}`'
+  description: '`{{LANGUAGES_FRAMEWORKS}}`'
   required: true
 model: gpt-4
 modelParameters:
@@ -36,17 +36,17 @@ messages:
     and actionable next steps.'
 - role: user
   content: "1. Explain that the assistant acts as a Test Architect analysing the supplied codebase.\n1. Provide the following\
-    \ context variables:\n   - `{{PROJECT_NAME}}`\n   - `{{LANGUAGES/FRAMEWORKS}}`\n   - `{{BUSINESS_GOAL}}`\n1. Direct the\
+    \ context variables:\n   - `{{PROJECT_NAME}}`\n   - `{{LANGUAGES_FRAMEWORKS}}`\n   - `{{BUSINESS_GOAL}}`\n1. Direct the\
     \ assistant to map the structure, user journeys, interfaces, data fixtures, non-functional requirements, edge cases, environment\
     \ details, test plan skeleton, and coverage gaps.\n1. Instruct it to return a markdown report with numbered sections covering\
     \ each topic.\n1. Tell the assistant to ask clarifying questions first if information is missing.\nInputs:\n- `{{PROJECT_NAME}}`\
-    \ – project identifier\n- `{{LANGUAGES/FRAMEWORKS}}` – primary tech stack\n- `{{BUSINESS_GOAL}}` – high-level goal of\
+    \ – project identifier\n- `{{LANGUAGES_FRAMEWORKS}}` – primary tech stack\n- `{{BUSINESS_GOAL}}` – high-level goal of\
     \ the system\nOutput format:\nMarkdown report with sections:\n\n1. Repository Overview\n1. Critical User Journeys\n1.\
     \ API / Interface Catalogue\n1. State & Data Requirements\n1. Non-Functional Requirements\n1. Edge Cases & Negative Paths\n\
     1. Environment & Tooling\n1. Proposed E2E Test Suite\n1. Coverage Gaps & Risk Register"
 testData:
 - vars:
-    LANGUAGES/FRAMEWORKS: example_LANGUAGES/FRAMEWORKS
+    LANGUAGES_FRAMEWORKS: example_LANGUAGES_FRAMEWORKS
     BUSINESS_GOAL: example_BUSINESS_GOAL
     PROJECT_NAME: example_PROJECT_NAME
   expected: 'Markdown report with sections:

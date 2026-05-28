@@ -12,8 +12,8 @@ metadata:
   - memo
   requires_context: false
 variables:
-- name: PASTE draft synopsis here
-  description: The PASTE draft synopsis here to use for this prompt
+- name: draft_synopsis
+  description: The draft_synopsis to use for this prompt
   required: true
 - name: input
   description: The primary input or query text for the prompt
@@ -30,7 +30,7 @@ messages:
     ```
 
 
-    {{PASTE draft synopsis here}}
+    {{draft_synopsis}}
 
     ```
 
