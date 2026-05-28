@@ -10,7 +10,7 @@ env/
 .env
 
 # IDEs
-.vscode/
+# .vscode/ (Removed to share IDE toolkit)
 .idea/
 .DS_Store
 

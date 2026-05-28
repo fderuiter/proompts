@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Simulate Workflow",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/tools/scripts/run_workflow.py",
+      "args": [
+        "${file}"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Enrich Prompt",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/tools/scripts/enrich_prompts.py",
+      "args": [
+        "${file}"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
