@@ -1,0 +1,17 @@
+{
+  "yaml.schemas": {
+    "./docs/schemas/prompt.schema.json": [
+      "prompts/**/*.yaml",
+      "prompts/**/*.yml"
+    ],
+    "./docs/schemas/workflow.schema.json": [
+      "workflows/**/*.yaml",
+      "workflows/**/*.yml"
+    ]
+  },
+  "yaml.customTags": [
+    "!include scalar"
+  ],
+  "yaml.validate": true,
+  "editor.formatOnSave": true
+}

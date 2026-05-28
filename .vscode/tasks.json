@@ -1,0 +1,52 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Simulate Workflow",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "tools/scripts/run_workflow.py",
+        "${file}"
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Enrich Prompt",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "tools/scripts/enrich_prompts.py",
+        "${file}"
+      ],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Sync Changes",
+      "type": "shell",
+      "command": "./scripts/sync.sh",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "Prompt Boilerplate": {
+    "scope": "yaml",
+    "prefix": "prompt",
+    "body": [
+      "name: \"${1:Prompt Name}\"",
+      "version: \"${2:0.1.0}\"",
+      "description: \"${3:Description of the prompt}\"",
+      "metadata:",
+      "  domain: \"${4|clinical,business,management,scientific,technical|}\"",
+      "  complexity: \"${5|low,medium,high|}\"",
+      "  tags:",
+      "    - ${6:tag}",
+      "model: \"${7:gpt-4}\"",
+      "modelParameters:",
+      "  temperature: ${8:0.7}",
+      "variables:",
+      "  - name: \"${9:input_text}\"",
+      "    description: \"${10:Description of input}\"",
+      "    required: true",
+      "messages:",
+      "  - role: \"system\"",
+      "    content: |",
+      "      ${11:System prompt here...}",
+      "  - role: \"user\"",
+      "    content: |",
+      "      {{ ${9:input_text} }}",
+      "testData:",
+      "  - inputs:",
+      "      ${9:input_text}: \"${12:Sample input}\"",
+      "    expected: \"${13:Expected output}\""
+    ],
+    "description": "Boilerplate for a new AI prompt file with mandatory metadata fields."
+  },
+  "Workflow Boilerplate": {
+    "scope": "yaml",
+    "prefix": "workflow",
+    "body": [
+      "name: \"${1:Workflow Name}\"",
+      "version: \"${2:0.1.0}\"",
+      "description: \"${3:Description of the workflow}\"",
+      "metadata:",
+      "  domain: \"${4|clinical,business,management,scientific,technical|}\"",
+      "  complexity: \"${5|low,medium,high|}\"",
+      "steps:",
+      "  - id: \"step1\"",
+      "    prompt: \"prompts/${6:path/to/prompt.yaml}\"",
+      "    inputs:",
+      "      ${7:input_var}: \"${8:value}\""
+    ],
+    "description": "Boilerplate for a new AI workflow file with mandatory metadata fields."
+  }
+}
