@@ -32,6 +32,7 @@ import argparse
 import logging
 import os
 import re
+import sys
 from typing import Any, Dict, Optional
 
 import yaml
@@ -136,7 +137,81 @@ def resolve_value(template_string: str, workflow_state: Dict[str, Any]) -> Any:
         logger.warning(f"Warning: Could not resolve value for template '{template_string}': {e}")
         return template_string
 
-def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any]) -> str:
+def generate_mock_test_cases(prompt_data: Dict[str, Any], required_vars: list, iteration: int = 0) -> list:
+    name_desc = (prompt_data.get('name', '') + " " + prompt_data.get('description', '')).lower()
+    
+    if "garden" in name_desc:
+        domain = "gardening"
+    elif "regulat" in name_desc or "audit" in name_desc or "compliance" in name_desc:
+        domain = "regulatory"
+    elif "code" in name_desc or "program" in name_desc or "python" in name_desc:
+        domain = "coding"
+    elif "clinic" in name_desc or "medical" in name_desc or "health" in name_desc or "patient" in name_desc:
+        domain = "clinical"
+    else:
+        domain = "general"
+
+    test_cases = []
+    
+    content_banks = {
+        "gardening": [
+            ("My tomato leaves are turning yellow.", "Yellowing leaves can indicate nitrogen deficiency. Apply a balanced organic fertilizer and ensure the soil is well-draining."),
+            ("When is the best time to prune roses?", "Prune your roses in late winter or early spring just as new buds begin to swell. Cut at a 45-degree angle."),
+            ("How often should I water my indoor fern?", "Water your fern when the top inch of soil feels dry. Ferns love humidity, so misting the leaves regularly also helps."),
+            ("What causes blossom end rot in peppers?", "Blossom end rot is typically caused by calcium deficiency and inconsistent watering. Maintain even soil moisture."),
+            ("How to get rid of aphids naturally?", "You can spray aphids off with a strong stream of water or apply a mixture of water and a few drops of dish soap.")
+        ],
+        "regulatory": [
+            ("Summarize the requirements for 21 CFR Part 11.", "Under 21 CFR Part 11, electronic records must be trustworthy, reliable, and generally equivalent to paper records. Audit trails are mandatory."),
+            ("What are the core elements of ISO 13485 design controls?", "ISO 13485 requires documented procedures for design and development planning, inputs, outputs, review, verification, validation, and transfer."),
+            ("What is the reporting timeframe for a serious adverse event under EU MDR?", "Under the EU MDR, a serious public health threat must be reported within 2 days, and death or unanticipated serious deterioration within 10 days."),
+            ("Explain the purpose of a 510(k) submission.", "A 510(k) is a premarket submission made to the FDA to demonstrate that the device to be marketed is at least as safe and effective as a legally marketed device."),
+            ("What are the documentation requirements for a CAPA?", "A CAPA must document the investigation of the nonconformity, root cause analysis, action plan, verification of effectiveness, and management review.")
+        ],
+        "coding": [
+            ("Write a function to reverse a string in Python.", "Here is the implementation:\n```python\ndef reverse_string(s):\n    return s[::-1]\n```"),
+            ("Explain the concept of RESTful APIs.", "RESTful APIs use standard HTTP methods (GET, POST, PUT, DELETE) and rely on stateless, client-server communication to manipulate resources identified by URIs."),
+            ("How do I handle exceptions in Java?", "Use a try-catch block:\n```java\ntry {\n    // code that may throw an exception\n} catch (Exception e) {\n    e.printStackTrace();\n}\n```"),
+            ("What is a Docker container?", "A Docker container is a lightweight, standalone, executable package that includes everything needed to run a piece of software, including the code, runtime, and system tools."),
+            ("Explain the difference between Git merge and rebase.", "Git merge combines the histories of two branches by creating a new merge commit, whereas rebase rewrites the commit history by moving the base of the branch.")
+        ],
+        "clinical": [
+            ("Patient presents with acute chest pain and shortness of breath.", "Immediate evaluation is required to rule out acute coronary syndrome or pulmonary embolism. Administer oxygen and order a 12-lead ECG and troponin levels."),
+            ("What is the standard first-line treatment for uncomplicated hypertension?", "First-line treatments typically include ACE inhibitors, ARBs, calcium channel blockers, or thiazide diuretics, depending on patient-specific factors."),
+            ("Analyze the following lab result: HbA1c 7.5%.", "An HbA1c of 7.5% indicates elevated blood glucose over the past 2-3 months, consistent with diabetes mellitus. Review the patient's current treatment plan and lifestyle modifications."),
+            ("What are the signs of anaphylaxis?", "Signs of anaphylaxis include hives, swelling of the face or throat, difficulty breathing, rapid heartbeat, and a sudden drop in blood pressure."),
+            ("Provide dosage guidelines for pediatric Amoxicillin.", "For children, the typical dosage of Amoxicillin is 20 to 40 mg/kg/day in divided doses every 8 hours, or 25 to 45 mg/kg/day in divided doses every 12 hours.")
+        ],
+        "general": [
+            ("Analyze this performance report and provide three key takeaways.", "1. Revenue increased by 15% QoQ.\n2. Customer retention remains stable at 92%.\n3. Operational costs increased slightly due to new software licenses."),
+            ("Draft a polite decline email for a vendor proposal.", "Dear [Vendor],\n\nThank you for your proposal. After careful consideration, we have decided not to move forward at this time. We will keep your information on file for future opportunities.\n\nBest regards,\n[Name]"),
+            ("Summarize the main benefits of remote work.", "Remote work offers flexibility, reduces commute time, and can increase productivity. It also allows companies to hire from a global talent pool."),
+            ("What is the best way to organize a project meeting?", "Set a clear agenda, invite only necessary stakeholders, keep the meeting strictly timed, and send out actionable minutes immediately afterward."),
+            ("Explain the importance of cybersecurity training for employees.", "Cybersecurity training helps employees recognize phishing attempts, manage passwords securely, and understand the impact of data breaches, significantly reducing organizational risk.")
+        ]
+    }
+
+    bank = content_banks[domain]
+    
+    for i in range(3):
+        idx = (i + (iteration * 3)) % len(bank)
+        input_val, expected_val = bank[idx]
+        
+        inputs_mock = {}
+        for var in required_vars:
+            inputs_mock[var] = input_val
+            
+        if not required_vars:
+             inputs_mock = {"input_text": input_val}
+
+        test_cases.append({
+            "inputs": inputs_mock,
+            "expected": [expected_val]
+        })
+    
+    return test_cases
+
+def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any], prompt_file: Optional[str] = None) -> str:
     """
     Simulates executing a prompt by substituting variables and returning a simulated output.
 
@@ -167,9 +242,61 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
         logger.info(f"  [{role}]: (Content hidden for security)")
 
     # Simulate output
+    # Check if we need to heal missing test data
+    if not prompt_data.get('testData'):
+        logger.info(f"No testData found for {prompt_data.get('name', 'Untitled Prompt')}.")
+        if sys.stdout.isatty() and not os.environ.get('CI'):
+            print(f"\n[Self-Healing] No testData found for '{prompt_data.get('name', 'Untitled Prompt')}'.")
+            print("To ensure deterministic simulation, generating 3 realistic input/output pairs...")
+            
+            required_vars = list(inputs.keys())
+            if not required_vars:
+                required_vars = []
+                for msg in prompt_data.get('messages', []):
+                    matches = re.findall(r"\{\{\s*([\w\.\-]+)\s*\}\}", msg.get('content', ''))
+                    required_vars.extend(matches)
+                required_vars = list(set(required_vars))
+
+            iteration = 0
+            while True:
+                test_cases = generate_mock_test_cases(prompt_data, required_vars, iteration)
+                print("\nProposed Test Data:")
+                print(yaml.dump(test_cases, sort_keys=False))
+                
+                choice = input("Approve (a), Reject (r), or Regenerate (g)? [a/r/g]: ").lower()
+                if choice == 'a':
+                    prompt_data['testData'] = test_cases
+                    if prompt_file:
+                        with open(prompt_file, 'w') as f:
+                            yaml.dump(prompt_data, f, sort_keys=False)
+                        print("[Self-Healing] Successfully updated YAML file.")
+                    break
+                elif choice == 'g':
+                    iteration += 1
+                elif choice == 'r':
+                    break
+
     # Try to find a matching test case in testData
     if prompt_data.get('testData'):
         for test_case in prompt_data['testData']:
+            # Schema Mismatch Recovery
+            if 'input' in test_case and 'inputs' not in test_case and 'vars' not in test_case:
+                logger.warning(f"Schema mismatch detected in {prompt_data.get('name', 'Untitled Prompt')}: 'input' key used instead of 'inputs' or 'vars'.")
+                if sys.stdout.isatty() and not os.environ.get('CI'):
+                    print("\n[Self-Healing] Detected unmatched variable key 'input'. The standard schema requires 'inputs' or 'vars'.")
+                    choice = input("Would you like to automatically heal this by mapping 'input' -> 'inputs'? (y/n): ")
+                    if choice.lower() == 'y':
+                        test_case['inputs'] = test_case.pop('input')
+                        if prompt_file:
+                            with open(prompt_file, 'w') as f:
+                                yaml.dump(prompt_data, f, sort_keys=False)
+                            print("[Self-Healing] Successfully updated YAML file.")
+                    else:
+                        pass
+                else:
+                    # In non-interactive mode, auto-heal in memory to continue simulation
+                    test_case['inputs'] = test_case.pop('input')
+
             # Check if expected inputs match actual inputs
             # Support both 'vars' (common in prompts) and 'inputs'
             expected_inputs = test_case.get('vars', test_case.get('inputs', {}))
@@ -256,7 +383,7 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
         logger.debug(f"Resolved prompt inputs: {list(prompt_inputs.keys())}")
 
         # 3. Simulate prompt execution
-        output = simulate_prompt_execution(prompt_data, prompt_inputs)
+        output = simulate_prompt_execution(prompt_data, prompt_inputs, prompt_file=prompt_file)
 
         # 4. Store the output in the workflow state
         workflow_state['steps'][step_id] = {'output': output}
