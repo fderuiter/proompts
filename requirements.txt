@@ -5,3 +5,5 @@ jinja2
 pytest
 mypy
 mkdocs-material>=9.0.0
+streamlit>=1.30.0
+graphviz
