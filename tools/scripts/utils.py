@@ -82,12 +82,38 @@ def derive_prompt_category(path: Path, root_dir: Path, content: Optional[Dict[st
     except ValueError:
         return "Uncategorized"
 
+from jinja2.sandbox import SandboxedEnvironment
+from jinja2 import FileSystemLoader, Undefined
+
+class KeepUndefined(Undefined):
+    def __getattr__(self, name):
+        return KeepUndefined(name=f"{self._undefined_name}.{name}")
+        
+    def __getitem__(self, key):
+        return KeepUndefined(name=f"{self._undefined_name}['{key}']")
+        
+    def __str__(self):
+        return f"{{{{ {self._undefined_name} }}}}"
+
+_jinja_env = None
+
+def _get_jinja_env():
+    global _jinja_env
+    if _jinja_env is None:
+        _jinja_env = SandboxedEnvironment(
+            loader=FileSystemLoader(str(PROMPTS_DIR)),
+            undefined=KeepUndefined
+        )
+    return _jinja_env
+
 def load_yaml(path: Path) -> Dict[str, Any]:
     """
     Safely load a YAML file and return its contents as a dictionary.
 
-    WHAT: Wrapper around yaml.safe_load that includes text decoding and basic error handling.
-    WHY: Prevents scripts from crashing completely if a single YAML file is malformed.
+    WHAT: Uses Sandboxed Jinja2 Environment to process template inheritance, 
+          then parses the resulting YAML safely.
+    WHY: Prevents scripts from crashing completely if a single YAML file is malformed,
+         and supports native template modularity.
     HOW: Pass a pathlib.Path object pointing to the YAML file.
 
     Args:
@@ -97,7 +123,13 @@ def load_yaml(path: Path) -> Dict[str, Any]:
         Dict[str, Any]: The parsed YAML data, or an empty dict if parsing fails.
     """
     try:
-        return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        text = path.read_text(encoding="utf-8")
+        env = _get_jinja_env()
+        # Process Jinja template inheritance and includes
+        template = env.from_string(text)
+        rendered_text = template.render()
+        
+        return yaml.safe_load(rendered_text) or {}
     except Exception as e:
         print(f"Error reading {path}: {e}")
         return {}

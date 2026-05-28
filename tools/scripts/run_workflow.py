@@ -62,13 +62,31 @@ def load_yaml(file_path: str) -> Optional[Dict[str, Any]]:
     with open(file_path, 'r') as f:
         return yaml.safe_load(f)
 
+from jinja2 import Undefined
+from jinja2.nativetypes import NativeEnvironment
+from jinja2.sandbox import SandboxedEnvironment
+
+class KeepUndefined(Undefined):
+    def __getattr__(self, name):
+        return KeepUndefined(name=f"{self._undefined_name}.{name}")
+        
+    def __getitem__(self, key):
+        return KeepUndefined(name=f"{self._undefined_name}['{key}']")
+        
+    def __str__(self):
+        return f"{{{{ {self._undefined_name} }}}}"
+
+class NativeSandboxedEnvironment(NativeEnvironment, SandboxedEnvironment):
+    pass
+
+_run_env = NativeSandboxedEnvironment(undefined=KeepUndefined)
+
 def safe_render(template: str, context: Dict[str, Any]) -> Any:
     """
     Safely renders a template string by replacing {{ variables }} with values from context.
 
-    This replaces Jinja2's from_string(template).render(**context) with a restricted
-    implementation that only supports simple path-based variable access, preventing
-    arbitrary code execution.
+    This uses a restricted Jinja2 SandboxedEnvironment to prevent
+    arbitrary code execution while allowing variable substitution and basic expressions.
 
     Args:
         template: The string containing template variables (e.g., 'Hello {{ name }}').
@@ -81,40 +99,13 @@ def safe_render(template: str, context: Dict[str, Any]) -> Any:
     if not isinstance(template, str) or "{{" not in template:
         return template
 
-    # Regex to find all {{ variable.path }} patterns
-    # Supports optional spaces: {{  var.path  }}
-    pattern = re.compile(r"\{\{\s*([\w\.\-]+)\s*\}\}")
-
-    # Special case: If the template is ONLY a single variable, preserve its native type
-    # e.g., template = '{{ steps.step1.output }}' and output is a list, return the list.
-    match = pattern.fullmatch(template.strip())
-    if match:
-        var_path = match.group(1)
-        val = _get_value_from_context(var_path, context)
-        # If the variable is missing, return the original template
-        return val if val is not None else template
-
-    # General case: string interpolation
-    def replace_match(match):
-        var_path = match.group(1)
-        val = _get_value_from_context(var_path, context)
-        return str(val) if val is not None else match.group(0)
-
-    return pattern.sub(replace_match, template)
-
-def _get_value_from_context(path: str, context: Dict[str, Any]) -> Any:
-    """Helper to traverse a nested dictionary using a dot-separated path."""
-    parts = path.split('.')
-    current = context
     try:
-        for part in parts:
-            if isinstance(current, dict) and part in current:
-                current = current[part]
-            else:
-                return None
-        return current
-    except (KeyError, TypeError):
-        return None
+        jinja_template = _run_env.from_string(template)
+        return jinja_template.render(**context)
+    except Exception as e:
+        logger.debug(f"Could not fully render template (vars might be missing): {e}")
+        return template
+
 
 def resolve_value(template_string: str, workflow_state: Dict[str, Any]) -> Any:
     """

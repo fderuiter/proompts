@@ -22,10 +22,14 @@ class TestResolveValue(unittest.TestCase):
         self.assertEqual(result, "result")
 
     def test_python_expression(self):
-        """Test evaluation of Python expressions is not allowed."""
+        """Test evaluation of Python expressions is allowed but safe."""
         state = {}
         result = resolve_value("{{ 1 + 1 }}", state)
-        self.assertEqual(result, "{{ 1 + 1 }}")
+        self.assertEqual(result, 2)
+        
+        # Test dangerous execution returns the original template (controlled rendering error)
+        result_dangerous = resolve_value("{{ self.__class__.__mro__[1].__subclasses__() }}", state)
+        self.assertEqual(result_dangerous, "{{ self.__class__.__mro__[1].__subclasses__() }}")
 
     def test_string_without_template(self):
         """Test string with no template markers returned as is."""
