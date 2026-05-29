@@ -8,11 +8,11 @@ from collections import defaultdict
 from pathlib import Path
 
 try:
-    from utils import PROMPTS_DIR, ROOT, iter_prompt_files, load_yaml, derive_prompt_category
+    from promptops.utils import PROMPTS_DIR, ROOT, iter_prompt_files, load_yaml, derive_prompt_category
 except ImportError:
     import sys
     sys.path.append(str(Path(__file__).parent))
-    from utils import PROMPTS_DIR, ROOT, iter_prompt_files, load_yaml, derive_prompt_category
+    from promptops.utils import PROMPTS_DIR, ROOT, iter_prompt_files, load_yaml, derive_prompt_category
 
 DOCS_DIR = ROOT / "docs"
 

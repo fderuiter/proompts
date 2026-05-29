@@ -6,10 +6,10 @@ from pathlib import Path
 import sys
 
 try:
-    from utils import ROOT, iter_prompt_files, load_yaml
+    from promptops.utils import ROOT, iter_prompt_files, load_yaml
 except ImportError:
     sys.path.append(str(Path(__file__).parent))
-    from utils import ROOT, iter_prompt_files, load_yaml
+    from promptops.utils import ROOT, iter_prompt_files, load_yaml
 
 def search(query: str, verbose: bool = False):
     query = query.lower()

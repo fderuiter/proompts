@@ -3,11 +3,11 @@ from __future__ import annotations
 from pathlib import Path
 
 try:
-    from utils import PROMPTS_DIR, load_yaml
+    from promptops.utils import PROMPTS_DIR, load_yaml
 except ImportError:
     import sys
     sys.path.append(str(Path(__file__).parent))
-    from utils import PROMPTS_DIR, load_yaml
+    from promptops.utils import PROMPTS_DIR, load_yaml
 
 import yaml
 

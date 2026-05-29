@@ -9,7 +9,7 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).parent))
 
 try:
-    from utils import ROOT, iter_prompt_files, load_yaml
+    from promptops.utils import ROOT, iter_prompt_files, load_yaml
 except ImportError:
     # Fallback if run from a different location without setting PYTHONPATH
     print("Error: Could not import utils. Please run from the repository root or tools/scripts directory.")

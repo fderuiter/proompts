@@ -19,7 +19,7 @@ except ImportError:
 sys.path.append(str(Path(__file__).parent))
 
 try:
-    from utils import PROMPTS_DIR, OVERVIEW_NAME
+    from promptops.utils import PROMPTS_DIR, OVERVIEW_NAME
 except ImportError:
     # Fallback if utils not found or running from elsewhere
     PROMPTS_DIR = Path(__file__).resolve().parents[2] / "prompts"

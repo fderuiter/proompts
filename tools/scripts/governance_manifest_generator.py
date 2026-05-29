@@ -9,7 +9,7 @@ import yaml
 # Ensure we can import from the current directory
 sys.path.append(str(Path(__file__).parent))
 try:
-    from utils import PROMPTS_DIR, iter_prompt_files, load_yaml, ROOT
+    from promptops.utils import PROMPTS_DIR, iter_prompt_files, load_yaml, ROOT
 except ImportError:
     ROOT = Path(__file__).resolve().parents[2]
     PROMPTS_DIR = ROOT / "prompts"

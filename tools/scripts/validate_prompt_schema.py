@@ -74,11 +74,11 @@ from typing import Any, List, Optional, Dict
 from pydantic import BaseModel, ValidationError, field_validator, model_validator, Field
 
 try:
-    from utils import ROOT, iter_prompt_files, load_yaml
+    from promptops.utils import ROOT, iter_prompt_files, load_yaml
 except ImportError:
     import sys
     sys.path.append(str(Path(__file__).parent))
-    from utils import ROOT, iter_prompt_files, load_yaml
+    from promptops.utils import ROOT, iter_prompt_files, load_yaml
 
 
 # ---------------------------------------------------------------------------

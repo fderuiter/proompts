@@ -7,11 +7,11 @@ from pathlib import Path
 import re
 
 try:
-    from utils import ROOT
+    from promptops.utils import ROOT
 except ImportError:
     import sys
     sys.path.append(str(Path(__file__).parent))
-    from utils import ROOT
+    from promptops.utils import ROOT
 
 TODO_FILE = "todo_fix.md"
 

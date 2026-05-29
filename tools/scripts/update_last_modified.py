@@ -26,10 +26,10 @@ from pathlib import Path
 import sys
 
 try:
-    from utils import ROOT
+    from promptops.utils import ROOT
 except ImportError:
     sys.path.append(str(Path(__file__).parent))
-    from utils import ROOT
+    from promptops.utils import ROOT
 
 def update_file(file_path: Path, check: bool = False) -> bool:
     """Update last_modified field in the file.

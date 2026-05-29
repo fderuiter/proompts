@@ -7,17 +7,17 @@ import sys
 
 # Add the current directory to sys.path to import utils
 sys.path.append(str(Path(__file__).parent))
-from utils import load_yaml, iter_prompt_files, iter_workflow_files
+from promptops.utils import load_yaml, iter_prompt_files, iter_workflow_files
 
 class TestUtils(unittest.TestCase):
-    @patch("utils.Path.read_text")
+    @patch("promptops.utils.Path.read_text")
     def test_load_yaml_success(self, mock_read_text):
         """Test load_yaml with valid YAML content."""
         mock_read_text.return_value = "name: test\nvalue: 123"
         result = load_yaml(Path("test.yaml"))
         self.assertEqual(result, {"name": "test", "value": 123})
 
-    @patch("utils.Path.read_text")
+    @patch("promptops.utils.Path.read_text")
     @patch("sys.stdout", new_callable=io.StringIO)
     def test_load_yaml_file_not_found(self, mock_stdout, mock_read_text):
         """Test load_yaml with a non-existent file."""
@@ -26,7 +26,7 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(result, {})
         self.assertIn("Error reading missing.yaml", mock_stdout.getvalue())
 
-    @patch("utils.Path.read_text")
+    @patch("promptops.utils.Path.read_text")
     @patch("sys.stdout", new_callable=io.StringIO)
     def test_load_yaml_invalid_yaml(self, mock_stdout, mock_read_text):
         """Test load_yaml with invalid YAML syntax."""

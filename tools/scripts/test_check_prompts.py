@@ -17,7 +17,7 @@ from check_prompts import (
     main,
     NAMING_RULES
 )
-from utils import OVERVIEW_NAME
+from promptops.utils import OVERVIEW_NAME
 
 class TestCheckPrompts(unittest.TestCase):
 
