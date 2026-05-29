@@ -63,7 +63,7 @@ def load_yaml(file_path: str) -> Optional[Dict[str, Any]]:
     with open(file_path, 'r') as f:
         return yaml.safe_load(f)
 
-from jinja2 import Undefined
+from jinja2 import Undefined, StrictUndefined
 from jinja2.nativetypes import NativeEnvironment
 from jinja2.sandbox import SandboxedEnvironment
 
@@ -81,8 +81,9 @@ class NativeSandboxedEnvironment(NativeEnvironment, SandboxedEnvironment):
     pass
 
 _run_env = NativeSandboxedEnvironment(undefined=KeepUndefined)
+_strict_run_env = NativeSandboxedEnvironment(undefined=StrictUndefined)
 
-def safe_render(template: str, context: Dict[str, Any]) -> Any:
+def safe_render(template: str, context: Dict[str, Any], strict_mode: bool = False) -> Any:
     """
     Safely renders a template string by replacing {{ variables }} with values from context.
 
@@ -92,6 +93,7 @@ def safe_render(template: str, context: Dict[str, Any]) -> Any:
     Args:
         template: The string containing template variables (e.g., 'Hello {{ name }}').
         context: The dictionary containing available variables.
+        strict_mode: If True, raises an error on undefined variables.
 
     Returns:
         The rendered value. If the template is exactly '{{ variable }}', it returns
@@ -100,15 +102,20 @@ def safe_render(template: str, context: Dict[str, Any]) -> Any:
     if not isinstance(template, str) or "{{" not in template:
         return template
 
+    env = _strict_run_env if strict_mode else _run_env
+
     try:
-        jinja_template = _run_env.from_string(template)
+        jinja_template = env.from_string(template)
         return jinja_template.render(**context)
     except Exception as e:
+        if strict_mode:
+            logger.error(f"Template Resolution Failed: {e} in template '{template}'")
+            raise ValueError(f"Strict Template Resolution Failed: {e}")
         logger.debug(f"Could not fully render template (vars might be missing): {e}")
         return template
 
 
-def resolve_value(template_string: str, workflow_state: Dict[str, Any]) -> Any:
+def resolve_value(template_string: str, workflow_state: Dict[str, Any], strict_mode: bool = False) -> Any:
     """
     Resolves a template string like '{{steps.step_id.output}}' from the workflow state.
 
@@ -118,13 +125,16 @@ def resolve_value(template_string: str, workflow_state: Dict[str, Any]) -> Any:
     Args:
         template_string: The string containing the template variable.
         workflow_state: The current state of the workflow containing inputs and steps.
+        strict_mode: If True, raises an error on failure.
 
     Returns:
         The resolved value if the template matches, otherwise the original string.
     """
     try:
-        return safe_render(template_string, workflow_state)
+        return safe_render(template_string, workflow_state, strict_mode)
     except Exception as e:
+        if strict_mode:
+            raise
         logger.warning(f"Warning: Could not resolve value for template '{template_string}': {e}")
         return template_string
 
@@ -202,7 +212,7 @@ def generate_mock_test_cases(prompt_data: Dict[str, Any], required_vars: list, i
     
     return test_cases
 
-def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any], prompt_file: Optional[str] = None) -> str:
+def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any], prompt_file: Optional[str] = None, strict_mode: bool = False) -> str:
     """
     Simulates executing a prompt by substituting variables and returning a simulated output.
 
@@ -213,6 +223,8 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
     Args:
         prompt_data: The prompt data loaded from the YAML file.
         inputs: A dictionary of mapped inputs for the prompt.
+        prompt_file: Optional path to the prompt file for self-healing.
+        strict_mode: If True, raises an error on undefined variables.
 
     Returns:
         The simulated output string from `testData`.
@@ -226,8 +238,10 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
         content = message.get('content', '')
 
         try:
-            content = safe_render(content, inputs)
+            content = safe_render(content, inputs, strict_mode)
         except Exception as e:
+            if strict_mode:
+                raise ValueError(f"Strict Template Resolution Failed in {prompt_data.get('name')}: {e}")
             logger.warning(f"Failed to render message content: {e}")
 
         logger.info(f"  [{role}]: (Content hidden for security)")
@@ -236,7 +250,7 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
     # Check if we need to heal missing test data
     if not prompt_data.get('testData'):
         logger.info(f"No testData found for {prompt_data.get('name', 'Untitled Prompt')}.")
-        if sys.stdout.isatty() and not os.environ.get('CI'):
+        if not strict_mode and sys.stdout.isatty() and not os.environ.get('CI'):
             print(f"\n[Self-Healing] No testData found for '{prompt_data.get('name', 'Untitled Prompt')}'.")
             print("To ensure deterministic simulation, generating 3 realistic input/output pairs...")
             
@@ -273,11 +287,14 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
             # Schema Mismatch Recovery
             if 'input' in test_case and 'inputs' not in test_case and 'vars' not in test_case:
                 logger.warning(f"Schema mismatch detected in {prompt_data.get('name', 'Untitled Prompt')}: 'input' key used instead of 'inputs' or 'vars'.")
-                if sys.stdout.isatty() and not os.environ.get('CI'):
+                if not strict_mode and sys.stdout.isatty() and not os.environ.get('CI'):
                     print("\n[Self-Healing] Detected unmatched variable key 'input'. The standard schema requires 'inputs' or 'vars'.")
                     choice = input("Would you like to automatically heal this by mapping 'input' -> 'inputs'? (y/n): ")
                     if choice.lower() == 'y':
-                        test_case['inputs'] = test_case.pop('input')
+                        if isinstance(test_case['input'], str):
+                            test_case['inputs'] = {'input': test_case.pop('input')}
+                        else:
+                            test_case['inputs'] = test_case.pop('input')
                         if prompt_file:
                             with open(prompt_file, 'w') as f:
                                 yaml.dump(prompt_data, f, sort_keys=False)
@@ -286,11 +303,17 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
                         pass
                 else:
                     # In non-interactive mode, auto-heal in memory to continue simulation
-                    test_case['inputs'] = test_case.pop('input')
+                    if isinstance(test_case['input'], str):
+                        test_case['inputs'] = {'input': test_case.pop('input')}
+                    else:
+                        test_case['inputs'] = test_case.pop('input')
 
             # Check if expected inputs match actual inputs
             # Support both 'vars' (common in prompts) and 'inputs'
             expected_inputs = test_case.get('vars', test_case.get('inputs', {}))
+            if isinstance(expected_inputs, str):
+                expected_inputs = {"input": expected_inputs}
+            
             match = True
             for k, v in expected_inputs.items():
                 # Convert both to string for comparison to handle potential type mismatches
@@ -314,7 +337,7 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
     return f"[Simulated output for prompt: {prompt_data.get('name', 'Untitled Prompt')}]"
 
 
-def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bool = True) -> Optional[Dict[str, Any]]:
+def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bool = True, strict_mode: bool = False) -> Optional[Dict[str, Any]]:
     """
     Loads and simulates a workflow from a given file path.
 
@@ -325,6 +348,7 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
         workflow_file: Path to the workflow YAML file.
         initial_inputs: Dictionary of initial inputs for the workflow.
         verbose: Whether to print detailed execution logs.
+        strict_mode: If True, fail aggressively on structural issues or missing templates.
 
     Returns:
         The final workflow state dictionary, or None if the workflow file could not be loaded.
@@ -344,6 +368,27 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
     if not workflow_data:
         return None
 
+    # Static Validation
+    defined_steps = set()
+    if strict_mode and 'testData' not in workflow_data:
+        logger.warning(f"Strict Mode: Workflow '{workflow_data.get('name', 'Untitled')}' is missing 'testData' field.")
+        
+    for step in workflow_data.get('steps', []):
+        step_id = step.get('step_id')
+        for var_name, template in step.get('map_inputs', {}).items():
+            if isinstance(template, str):
+                matches = re.findall(r'\{\{\s*steps\.([\w\-]+)\.', template)
+                for match in matches:
+                    if match not in defined_steps:
+                        msg = f"Step ID Mismatch: Step '{step_id}' references undefined step '{match}' in mapping '{var_name}'."
+                        if strict_mode:
+                            logger.error(msg)
+                            raise ValueError(msg)
+                        else:
+                            logger.warning(msg)
+        if step_id:
+            defined_steps.add(step_id)
+
     logger.info(f"Starting workflow simulation: {workflow_data.get('name', 'Untitled Workflow')}")
     logger.info("ℹ️  NOTE: Running in SIMULATION MODE. No API calls will be made.")
 
@@ -358,6 +403,18 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
         step_id = step['step_id']
         prompt_file = step['prompt_file']
 
+        # Adjust relative path resolving correctly if needed
+        # Assuming prompt_file is relative to the workflow file's directory or root
+        if not os.path.exists(prompt_file):
+             # Try relative to workflow dir
+             workflow_dir = os.path.dirname(workflow_file)
+             alt_prompt_file = os.path.join(workflow_dir, prompt_file)
+             if os.path.exists(alt_prompt_file):
+                 prompt_file = alt_prompt_file
+             else:
+                 # Try relative to root (assuming current working directory is root)
+                 pass
+
         logger.info(f"\n===== Simulating Step: {step_id} =====")
 
         # 1. Load the prompt file
@@ -369,12 +426,12 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
         # 2. Resolve inputs for the prompt
         prompt_inputs = {}
         for var_name, template in step.get('map_inputs', {}).items():
-            prompt_inputs[var_name] = resolve_value(template, workflow_state)
+            prompt_inputs[var_name] = resolve_value(template, workflow_state, strict_mode)
 
         logger.debug(f"Resolved prompt inputs: {list(prompt_inputs.keys())}")
 
         # 3. Simulate prompt execution
-        output = simulate_prompt_execution(prompt_data, prompt_inputs, prompt_file=prompt_file)
+        output = simulate_prompt_execution(prompt_data, prompt_inputs, prompt_file=prompt_file, strict_mode=strict_mode)
 
         # 4. Store the output in the workflow state
         workflow_state['steps'][step_id] = {'output': output}
@@ -395,8 +452,12 @@ def main():
     parser.add_argument("-i", "--input", action='append', help="Set a workflow input, e.g., -i name='value' (Not recommended for sensitive data)")
     parser.add_argument("-f", "--inputs-file", help="Path to a JSON or YAML file containing workflow inputs (Recommended for security)")
     parser.add_argument("-v", "--verbose", action="store_true", help="Increase output verbosity")
+    parser.add_argument("--strict", action="store_true", help="Run in strict mode (fails on structural errors or undefined variables)")
 
     args = parser.parse_args()
+
+    # Determine if we should implicitly use strict mode
+    strict_mode = args.strict or os.environ.get('CI') == 'true'
 
     # Setup logging early so that warnings/errors during argument parsing use the proper format
     setup_logging(args.verbose)
@@ -435,16 +496,40 @@ def main():
             else:
                 logger.warning(f"Invalid input format: {item}. Expected key=value")
 
-    final_state = run_workflow(args.workflow_file, initial_inputs, verbose=args.verbose)
+    # If no inputs provided, try to extract them from workflow testData
+    workflow_data = load_yaml(args.workflow_file)
+    if not initial_inputs and workflow_data and workflow_data.get('testData'):
+        logger.info(f"Using workflow-level testData for inputs.")
+        # We can either run all test scenarios or just the first one. Let's run all scenarios to fully validate.
+        for test_case in workflow_data['testData']:
+            inputs = test_case.get('inputs', test_case.get('vars', {}))
+            logger.info(f"\n[Running Workflow Test Scenario with inputs: {inputs}]")
+            try:
+                final_state = run_workflow(args.workflow_file, inputs, verbose=args.verbose, strict_mode=strict_mode)
+                if final_state:
+                    final_output_step_id = workflow_data.get('steps', [{}])[-1].get('step_id')
+                    if final_output_step_id:
+                        final_output = final_state['steps'][final_output_step_id]['output']
+                        logger.info(f"Scenario Output:\n{final_output}")
+            except Exception as e:
+                logger.error(f"Workflow test scenario failed: {e}")
+                sys.exit(1)
+        logger.info("\n===== Simulation Finished (All Scenarios) =====")
+    else:
+        try:
+            final_state = run_workflow(args.workflow_file, initial_inputs, verbose=args.verbose, strict_mode=strict_mode)
+        except Exception as e:
+            logger.error(f"Workflow simulation failed: {e}")
+            sys.exit(1)
 
-    if final_state:
-        logger.info("\n===== Simulation Finished =====")
-        workflow_data = load_yaml(args.workflow_file)
-        final_output_step_id = workflow_data.get('steps', [{}])[-1].get('step_id')
-        if final_output_step_id:
-            final_output = final_state['steps'][final_output_step_id]['output']
-            logger.info("Final workflow output:")
-            print(final_output) # Print final output to stdout regardless of logging level
+        if final_state:
+            logger.info("\n===== Simulation Finished =====")
+            workflow_data = load_yaml(args.workflow_file)
+            final_output_step_id = workflow_data.get('steps', [{}])[-1].get('step_id')
+            if final_output_step_id:
+                final_output = final_state['steps'][final_output_step_id]['output']
+                logger.info("Final workflow output:")
+                print(final_output) # Print final output to stdout regardless of logging level
 
 if __name__ == "__main__":
     main()
