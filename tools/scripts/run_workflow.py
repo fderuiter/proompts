@@ -99,7 +99,7 @@ def safe_render(template: str, context: Dict[str, Any], strict_mode: bool = Fals
         The rendered value. If the template is exactly '{{ variable }}', it returns
         the native type of the variable. Otherwise, it returns a string.
     """
-    if not isinstance(template, str) or "{{" not in template:
+    if not isinstance(template, str) or ("{{" not in template and "{%" not in template):
         return template
 
     env = _strict_run_env if strict_mode else _run_env
@@ -108,10 +108,15 @@ def safe_render(template: str, context: Dict[str, Any], strict_mode: bool = Fals
         jinja_template = env.from_string(template)
         return jinja_template.render(**context)
     except Exception as e:
+        if hasattr(e, 'lineno') and hasattr(e, 'message'):
+            msg = f"Line {e.lineno}: {e.message}"
+        else:
+            msg = str(e)
+            
         if strict_mode:
-            logger.error(f"Template Resolution Failed: {e} in template '{template}'")
-            raise ValueError(f"Strict Template Resolution Failed: {e}")
-        logger.debug(f"Could not fully render template (vars might be missing): {e}")
+            logger.error(f"Template Resolution Failed: {msg} in template '{template}'")
+            raise ValueError(f"Strict Template Resolution Failed: {msg}")
+        logger.debug(f"Could not fully render template (vars might be missing): {msg}")
         return template
 
 
@@ -212,9 +217,13 @@ def generate_mock_test_cases(prompt_data: Dict[str, Any], required_vars: list, i
     
     return test_cases
 
-def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any], prompt_file: Optional[str] = None, strict_mode: bool = False) -> str:
+_chaos_call_counter = 0
+_chaos_last_call_time = 0
+
+def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any], prompt_file: Optional[str] = None, strict_mode: bool = False, chaos_mode: bool = False, fidelity_report: Optional[Dict[str, bool]] = None) -> str:
     """
     Simulates executing a prompt by substituting variables and returning a simulated output.
+
 
     NOTE: This function does NOT call any LLM API (e.g., OpenAI). It looks for a matching
     test case in the prompt's `testData` field and returns the expected output. This allows
@@ -225,12 +234,105 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
         inputs: A dictionary of mapped inputs for the prompt.
         prompt_file: Optional path to the prompt file for self-healing.
         strict_mode: If True, raises an error on undefined variables.
+        chaos_mode: If True, injects stochastic latency and rate limits.
+        fidelity_report: Optional dictionary to track simulation features used.
 
     Returns:
         The simulated output string from `testData`.
     """
     logger.info("---")
     logger.info(f"Simulating prompt: {prompt_data.get('name', 'Untitled Prompt')}")
+
+    import time
+    import random
+
+    matched_test_case = None
+
+    # Try to find a matching test case in testData first to get mock evaluator results
+    if prompt_data.get('testData'):
+        for test_case in prompt_data['testData']:
+            # Schema Mismatch Recovery
+            if 'input' in test_case and 'inputs' not in test_case and 'vars' not in test_case:
+                logger.warning(f"Schema mismatch detected in {prompt_data.get('name', 'Untitled Prompt')}: 'input' key used instead of 'inputs' or 'vars'.")
+                if not strict_mode and sys.stdout.isatty() and not os.environ.get('CI'):
+                    print("\n[Self-Healing] Detected unmatched variable key 'input'. The standard schema requires 'inputs' or 'vars'.")
+                    choice = input("Would you like to automatically heal this by mapping 'input' -> 'inputs'? (y/n): ")
+                    if choice.lower() == 'y':
+                        if isinstance(test_case['input'], str):
+                            test_case['inputs'] = {'input': test_case.pop('input')}
+                        else:
+                            test_case['inputs'] = test_case.pop('input')
+                        if prompt_file:
+                            with open(prompt_file, 'w') as f:
+                                yaml.dump(prompt_data, f, sort_keys=False)
+                            print("[Self-Healing] Successfully updated YAML file.")
+                    else:
+                        pass
+                else:
+                    # In non-interactive mode, auto-heal in memory to continue simulation
+                    if isinstance(test_case['input'], str):
+                        test_case['inputs'] = {'input': test_case.pop('input')}
+                    else:
+                        test_case['inputs'] = test_case.pop('input')
+
+            expected_inputs = test_case.get('vars', test_case.get('inputs', {}))
+            if isinstance(expected_inputs, str):
+                expected_inputs = {"input": expected_inputs}
+            
+            match = True
+            for k, v in expected_inputs.items():
+                if k not in inputs or str(inputs[k]) != str(v):
+                    match = False
+                    break
+
+            if match:
+                logger.info("Found matching test case.")
+                matched_test_case = test_case
+                break
+
+        if not matched_test_case:
+            logger.info("No matching test case found. Using the first available test case.")
+            matched_test_case = prompt_data['testData'][0]
+
+    if matched_test_case:
+        if 'mock_evaluator_results' in matched_test_case:
+            inputs['mock_evaluator_results'] = matched_test_case['mock_evaluator_results']
+            if fidelity_report is not None:
+                fidelity_report['evaluators_mocked'] = True
+                
+        if chaos_mode:
+            global _chaos_call_counter
+            global _chaos_last_call_time
+            current_time = time.time()
+            if current_time - _chaos_last_call_time < 1.0:
+                _chaos_call_counter += 1
+            else:
+                _chaos_call_counter = 1
+            _chaos_last_call_time = current_time
+
+            if 'simulated_latency' in matched_test_case:
+                latency = float(matched_test_case['simulated_latency'])
+                logger.info(f"[Chaos Mode] Simulating latency of {latency} seconds...")
+                time.sleep(latency)
+                if fidelity_report is not None:
+                    fidelity_report['latency_simulated'] = True
+            
+            if 'forced_error_code' in matched_test_case:
+                code = str(matched_test_case['forced_error_code'])
+                logger.error(f"[Chaos Mode] Forced error code triggered: {code}")
+                if fidelity_report is not None:
+                    fidelity_report['rate_limits_simulated'] = True
+                if code == '429':
+                    raise Exception("RateLimitError: 429 Too Many Requests")
+                else:
+                    raise Exception(f"APIError: {code}")
+            else:
+                # Stochastic 429 if high-frequency call pattern detected (e.g. > 3 calls within a second) or 5% chance
+                if _chaos_call_counter > 3 or random.random() < 0.05:
+                    logger.error("[Chaos Mode] Stochastic 429 RateLimitError triggered due to high-frequency pattern!")
+                    if fidelity_report is not None:
+                        fidelity_report['rate_limits_simulated'] = True
+                    raise Exception("RateLimitError: 429 Too Many Requests")
 
     # Substitute variables in messages
     for message in prompt_data.get('messages', []):
@@ -246,7 +348,6 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
 
         logger.info(f"  [{role}]: (Content hidden for security)")
 
-    # Simulate output
     # Check if we need to heal missing test data
     if not prompt_data.get('testData'):
         logger.info(f"No testData found for {prompt_data.get('name', 'Untitled Prompt')}.")
@@ -275,69 +376,21 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
                         with open(prompt_file, 'w') as f:
                             yaml.dump(prompt_data, f, sort_keys=False)
                         print("[Self-Healing] Successfully updated YAML file.")
+                    matched_test_case = test_cases[0]
                     break
                 elif choice == 'g':
                     iteration += 1
                 elif choice == 'r':
                     break
 
-    # Try to find a matching test case in testData
-    if prompt_data.get('testData'):
-        for test_case in prompt_data['testData']:
-            # Schema Mismatch Recovery
-            if 'input' in test_case and 'inputs' not in test_case and 'vars' not in test_case:
-                logger.warning(f"Schema mismatch detected in {prompt_data.get('name', 'Untitled Prompt')}: 'input' key used instead of 'inputs' or 'vars'.")
-                if not strict_mode and sys.stdout.isatty() and not os.environ.get('CI'):
-                    print("\n[Self-Healing] Detected unmatched variable key 'input'. The standard schema requires 'inputs' or 'vars'.")
-                    choice = input("Would you like to automatically heal this by mapping 'input' -> 'inputs'? (y/n): ")
-                    if choice.lower() == 'y':
-                        if isinstance(test_case['input'], str):
-                            test_case['inputs'] = {'input': test_case.pop('input')}
-                        else:
-                            test_case['inputs'] = test_case.pop('input')
-                        if prompt_file:
-                            with open(prompt_file, 'w') as f:
-                                yaml.dump(prompt_data, f, sort_keys=False)
-                            print("[Self-Healing] Successfully updated YAML file.")
-                    else:
-                        pass
-                else:
-                    # In non-interactive mode, auto-heal in memory to continue simulation
-                    if isinstance(test_case['input'], str):
-                        test_case['inputs'] = {'input': test_case.pop('input')}
-                    else:
-                        test_case['inputs'] = test_case.pop('input')
+    if matched_test_case:
+        output = matched_test_case.get('expected', 'No expected output in test case.')
+        return output[0] if isinstance(output, list) else output
 
-            # Check if expected inputs match actual inputs
-            # Support both 'vars' (common in prompts) and 'inputs'
-            expected_inputs = test_case.get('vars', test_case.get('inputs', {}))
-            if isinstance(expected_inputs, str):
-                expected_inputs = {"input": expected_inputs}
-            
-            match = True
-            for k, v in expected_inputs.items():
-                # Convert both to string for comparison to handle potential type mismatches
-                # Note: We cast to string because testData inputs might be defined as ints/bools
-                # in YAML, but command-line inputs (-i) are parsed as strings.
-                if k not in inputs or str(inputs[k]) != str(v):
-                    match = False
-                    break
-
-            if match:
-                logger.info("Found matching test case. Using its expected output.")
-                output = test_case.get('expected', 'No expected output in test case.')
-                return output[0] if isinstance(output, list) else output
-
-        # If no match, use the first test case's output
-        logger.info("No matching test case found. Using the first available test case output.")
-        fallback_output = prompt_data['testData'][0].get('expected', 'Simulated output from first test case.')
-        return fallback_output[0] if isinstance(fallback_output, list) else fallback_output
-
-    # If no testData, return a generic placeholder
     return f"[Simulated output for prompt: {prompt_data.get('name', 'Untitled Prompt')}]"
 
 
-def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bool = True, strict_mode: bool = False) -> Optional[Dict[str, Any]]:
+def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bool = True, strict_mode: bool = False, chaos_mode: bool = False, fidelity_report: Optional[Dict[str, bool]] = None) -> Optional[Dict[str, Any]]:
     """
     Loads and simulates a workflow from a given file path.
 
@@ -431,7 +484,7 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
         logger.debug(f"Resolved prompt inputs: {list(prompt_inputs.keys())}")
 
         # 3. Simulate prompt execution
-        output = simulate_prompt_execution(prompt_data, prompt_inputs, prompt_file=prompt_file, strict_mode=strict_mode)
+        output = simulate_prompt_execution(prompt_data, prompt_inputs, prompt_file=prompt_file, strict_mode=strict_mode, chaos_mode=chaos_mode, fidelity_report=fidelity_report)
 
         # 4. Store the output in the workflow state
         workflow_state['steps'][step_id] = {'output': output}
@@ -453,6 +506,7 @@ def main():
     parser.add_argument("-f", "--inputs-file", help="Path to a JSON or YAML file containing workflow inputs (Recommended for security)")
     parser.add_argument("-v", "--verbose", action="store_true", help="Increase output verbosity")
     parser.add_argument("--strict", action="store_true", help="Run in strict mode (fails on structural errors or undefined variables)")
+    parser.add_argument("--chaos", action="store_true", help="Enable Chaos Mode (simulated latency and rate limits)")
 
     args = parser.parse_args()
 
@@ -468,7 +522,6 @@ def main():
     # Load inputs from file if provided
     if args.inputs_file:
         import json
-        import sys
         file_ext = args.inputs_file.split('.')[-1].lower()
         try:
             if file_ext in ['yaml', 'yml']:
@@ -496,6 +549,12 @@ def main():
             else:
                 logger.warning(f"Invalid input format: {item}. Expected key=value")
 
+    fidelity_report = {
+        'evaluators_mocked': False,
+        'rate_limits_simulated': False,
+        'latency_simulated': False
+    }
+
     # If no inputs provided, try to extract them from workflow testData
     workflow_data = load_yaml(args.workflow_file)
     if not initial_inputs and workflow_data and workflow_data.get('testData'):
@@ -505,7 +564,7 @@ def main():
             inputs = test_case.get('inputs', test_case.get('vars', {}))
             logger.info(f"\n[Running Workflow Test Scenario with inputs: {inputs}]")
             try:
-                final_state = run_workflow(args.workflow_file, inputs, verbose=args.verbose, strict_mode=strict_mode)
+                final_state = run_workflow(args.workflow_file, inputs, verbose=args.verbose, strict_mode=strict_mode, chaos_mode=args.chaos, fidelity_report=fidelity_report)
                 if final_state:
                     final_output_step_id = workflow_data.get('steps', [{}])[-1].get('step_id')
                     if final_output_step_id:
@@ -517,7 +576,7 @@ def main():
         logger.info("\n===== Simulation Finished (All Scenarios) =====")
     else:
         try:
-            final_state = run_workflow(args.workflow_file, initial_inputs, verbose=args.verbose, strict_mode=strict_mode)
+            final_state = run_workflow(args.workflow_file, initial_inputs, verbose=args.verbose, strict_mode=strict_mode, chaos_mode=args.chaos, fidelity_report=fidelity_report)
         except Exception as e:
             logger.error(f"Workflow simulation failed: {e}")
             sys.exit(1)
@@ -530,6 +589,11 @@ def main():
                 final_output = final_state['steps'][final_output_step_id]['output']
                 logger.info("Final workflow output:")
                 print(final_output) # Print final output to stdout regardless of logging level
+
+    print("\n[Simulation Fidelity Report]")
+    print(f"- Evaluators Mocked: {'Yes' if fidelity_report['evaluators_mocked'] else 'No'}")
+    print(f"- Rate Limits Simulated: {'Yes' if fidelity_report['rate_limits_simulated'] else 'No'}")
+    print(f"- Latency Simulated: {'Yes' if fidelity_report['latency_simulated'] else 'No'}")
 
 if __name__ == "__main__":
     main()
