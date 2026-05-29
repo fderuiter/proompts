@@ -60,13 +60,13 @@ messages:
       Target Ligand: <target_ligand>{{target_ligand}}</target_ligand>
       Conditions: <conditions>{{conditions}}</conditions>
 testData:
-  - input:
+  - vars:
       receptor: "PDB: 1XYZ"
       reference_ligand: "CC1=CC=CC=C1 (Toluene)"
       target_ligand: "ClC1=CC=CC=C1 (Chlorobenzene)"
       conditions: "T = 298.15 K, 1 atm, TIP3P water, 0.15 M NaCl"
     expected: "I. System Preparation & Force Field Parameterization"
-  - input:
+  - vars:
       receptor: "Human Serum Albumin (HSA)"
       reference_ligand: "CC(=O)OC1=CC=CC=C1C(=O)O (Aspirin)"
       target_ligand: "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O (Ibuprofen)"

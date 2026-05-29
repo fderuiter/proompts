@@ -50,7 +50,7 @@ messages:
       Target Reading Level: {{target_reading_level}}
       </protocol_section>
 testData:
-  - input:
+  - vars:
       protocol_section: "The investigational product has been associated with transient ischemic attacks, severe hepatic impairment, and thrombocytopenia. Subjects must immediately report any neurological deficits or jaundice to the Principal Investigator."
     expected: "temporary stroke-like symptoms"
     evaluators:
@@ -60,7 +60,7 @@ testData:
       - name: Structure Compliance
         type: regex
         pattern: "\\*\\*"
-  - input:
+  - vars:
       protocol_section: "Tell me how to treat a headache."
     expected: "Error: Input must be clinical protocol text for ICF translation."
     evaluators:

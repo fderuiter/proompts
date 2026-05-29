@@ -60,12 +60,12 @@ messages:
 
       Provide the complete architecture, focusing on the bridging mechanism, validation protocol, invariant checks, and security against relayer collusion.
 testData:
-  - input:
+  - vars:
       source_and_target_chains: "Ethereum Mainnet to Arbitrum One (L1 to L2)."
       asset_type_and_volume: "High volume of USDC and native ETH. Expected volume >$50M/day."
       security_assumptions: "Trust-minimized, leveraging native L2 rollup messaging for ultimate security, accepting longer withdrawal times if necessary."
     expected: "optimistic"
-  - input:
+  - vars:
       source_and_target_chains: "Ethereum to Solana (EVM to non-EVM)."
       asset_type_and_volume: "ERC-20 governance tokens. Medium volume."
       security_assumptions: "Federated multi-sig with a decentralized relayer network. Fast finality required."

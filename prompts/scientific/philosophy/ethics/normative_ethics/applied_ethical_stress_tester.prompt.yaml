@@ -45,10 +45,10 @@ messages:
 
       <ethical_dilemma>{{ethical_dilemma}}</ethical_dilemma>
 testData:
-  - input:
+  - vars:
       ethical_dilemma: "An autonomous vehicle experiences a sudden brake failure. It is hurtling towards a crosswalk where five pedestrians are walking. The only alternative is for the car's AI to swerve into a concrete barrier, which will certainly kill the single passenger inside."
     expected: "Dilemma Deconstruction"
-  - input:
+  - vars:
       ethical_dilemma: "A brilliant but deeply misanthropic medical researcher has discovered a cure for a rare, fatal disease. However, she refuses to release the formula unless the government agrees to publicly execute a specific individual she despises, who happens to be a convicted but currently paroled embezzler."
     expected: "Kantian Deontological Matrix"
 evaluators:

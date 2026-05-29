@@ -57,7 +57,7 @@ messages:
       **Light:** {{light_conditions}}
       **Aesthetic:** {{aesthetic_preference}}
 testData:
-  - input:
+  - vars:
       space_dimensions: "3x1m narrow balcony"
       light_conditions: "Dappled afternoon light, mostly shade"
       aesthetic_preference: "Cyber-Rococo with bioluminescent fungi"

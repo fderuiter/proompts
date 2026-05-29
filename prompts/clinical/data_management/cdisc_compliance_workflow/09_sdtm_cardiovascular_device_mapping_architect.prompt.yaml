@@ -71,7 +71,7 @@ messages:
       {{external_telemetry_data}}
       </external_telemetry_data>
 testData:
-  - input:
+  - vars:
       device_type: "Implantable Cardioverter Defibrillator (ICD)"
       target_standard: "SDTM IG 3.4"
       raw_edc_data: |

@@ -1,7 +1,7 @@
----
 name: IQ/OQ/PQ Validation
 version: 0.1.0
-description: Design and execute a series of IQ, OQ, and PQ validation tests for clinical systems.
+description: Design and execute a series of IQ, OQ, and PQ validation tests for clinical
+  systems.
 metadata:
   domain: clinical
   complexity: high
@@ -30,12 +30,15 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Clinical Systems Validation Specialist. Perform Installation Qualification (IQ), Operational Qualification
-    (OQ), and Performance Qualification (PQ) for clinical systems and verify that the CRF captures data as specified in the
-    protocol. Ensure compliance with 21 CFR Part 11, ICH GCP E6(R2), and FDA IQ/OQ/PQ Standards.
+  content: You are a Clinical Systems Validation Specialist. Perform Installation
+    Qualification (IQ), Operational Qualification (OQ), and Performance Qualification
+    (PQ) for clinical systems and verify that the CRF captures data as specified in
+    the protocol. Ensure compliance with 21 CFR Part 11, ICH GCP E6(R2), and FDA IQ/OQ/PQ
+    Standards.
 - role: user
-  content: 'Design and execute a series of IQ, OQ, and PQ validation tests for the new CDMS and compare CRF fields against
-    the protocol to ensure all required endpoints and variables are captured.
+  content: 'Design and execute a series of IQ, OQ, and PQ validation tests for the
+    new CDMS and compare CRF fields against the protocol to ensure all required endpoints
+    and variables are captured.
 
 
     Inputs:
@@ -55,7 +58,10 @@ messages:
 
     Markdown Validation Report with sections for IQ, OQ, PQ, and CRF Verification.'
 testData:
-- input: 'cdms_specs: "Version 2.0"
+- expected: 'Validation Report
+
+    '
+  vars: 'cdms_specs: "Version 2.0"
 
     validation_tests: "Test Case 1: Login"
 
@@ -64,9 +70,6 @@ testData:
     protocol: "Protocol A"
 
     crf_draft: "CRF v0.9"
-
-    '
-  expected: 'Validation Report
 
     '
 evaluators:

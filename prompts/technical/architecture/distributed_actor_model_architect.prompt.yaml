@@ -52,12 +52,12 @@ messages:
       Scale and Throughput:
       <user_query>{{scale_and_throughput}}</user_query>
 testData:
-  - input:
+  - vars:
       actor_framework: "Microsoft Orleans (.NET)"
       state_management: "Virtual actors (Grains) with state persisted to Azure Table Storage; requires high read-throughput for materialized views."
       scale_and_throughput: "10 million active grains, 50k messages per second, deployed across a multi-region Azure Kubernetes Service (AKS) cluster."
     expected: "Orleans"
-  - input:
+  - vars:
       actor_framework: "Akka Cluster (Scala)"
       state_management: "Event Sourced actors using Akka Persistence with Cassandra as the journal and snapshot store. CQRS architecture."
       scale_and_throughput: "Low latency trading system with 500k active actors, 100k messages/sec, requiring strict cluster singleton guarantees for order matching."

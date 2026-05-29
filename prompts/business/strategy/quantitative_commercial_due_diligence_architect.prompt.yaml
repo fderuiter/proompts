@@ -61,7 +61,7 @@ messages:
 
       Ensure all mathematical models, market sizing logic, and customer retention equations are explicitly defined in LaTeX. Deliver the CDD blueprint ready for an investment committee (IC) review.
 testData:
-  - input:
+  - vars:
       target_company_name: "Acme Cloud Infrastructure"
       industry_sector: "B2B IaaS / Cloud Computing"
       deal_thesis: "Acquire a regional cloud provider with strong local enterprise lock-in to accelerate geographic expansion and cross-sell higher margin cybersecurity services."

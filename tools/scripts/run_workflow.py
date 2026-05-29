@@ -247,6 +247,9 @@ def run_evaluators(output_text: str, prompt_evaluators: list) -> str:
         elif "python" in evaluator or "rule" in evaluator:
             rule = evaluator.get("python") or evaluator.get("rule")
             if rule:
+                if isinstance(rule, dict):
+                    rule = rule.get("code", "")
+                
                 local_vars = {"output": output_text, "re": re}
                 try:
                     if rule.strip().startswith("return "):

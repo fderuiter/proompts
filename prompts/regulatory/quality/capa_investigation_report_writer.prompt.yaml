@@ -1,4 +1,3 @@
----
 name: CAPA Investigation Report Writer
 version: 0.1.0
 description: Draft a formal CAPA investigation report for regulatory review.
@@ -30,11 +29,13 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: Act as a Technical Regulatory Writer. Your task is to write a formal CAPA Investigation Report based on rough notes
-    provided by the user. The report must be objective, concise, and professional, avoiding emotional language or speculation.
+  content: Act as a Technical Regulatory Writer. Your task is to write a formal CAPA
+    Investigation Report based on rough notes provided by the user. The report must
+    be objective, concise, and professional, avoiding emotional language or speculation.
     It must be ready for review by auditors or regulators.
 - role: user
-  content: 'Please write a formal CAPA Investigation Report based on the following rough notes:
+  content: 'Please write a formal CAPA Investigation Report based on the following
+    rough notes:
 
 
     **Incident:** <incident_summary>{{incident_summary}}</incident_summary>
@@ -58,13 +59,16 @@ messages:
 
     5. **Effectiveness Verification Criteria**'
 testData:
-- input:
-    incident_summary: 'Labeling machine X misprinted batch #123 with the wrong expiration date.'
-    root_cause: The operator manually entered the date instead of scanning the work order barcode, leading to a typo.
-    actions_taken: Updated the machine software to require barcode scanning; disabled manual entry for critical fields. Retrained
-      all operators.
-    effectiveness_check: Monitored the next 5 production runs; 100% of labels matched the work order.
-  expected: Investigation Methodology
+- expected: Investigation Methodology
+  vars:
+    incident_summary: 'Labeling machine X misprinted batch #123 with the wrong expiration
+      date.'
+    root_cause: The operator manually entered the date instead of scanning the work
+      order barcode, leading to a typo.
+    actions_taken: Updated the machine software to require barcode scanning; disabled
+      manual entry for critical fields. Retrained all operators.
+    effectiveness_check: Monitored the next 5 production runs; 100% of labels matched
+      the work order.
 evaluators:
 - name: Background
   regex:

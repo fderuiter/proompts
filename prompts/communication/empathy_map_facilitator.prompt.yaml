@@ -1,7 +1,6 @@
----
 name: Empathy-Map Facilitator
 version: 0.1.0
-description: Quickly capture a user persona’s voice and pain points.
+description: "Quickly capture a user persona\u2019s voice and pain points."
 metadata:
   domain: communication
   complexity: low
@@ -37,8 +36,7 @@ messages:
 - role: user
   content: '{{input}}'
 testData:
-- input: Busy parent using meal kits
-  expected: 'Says: "I need quick dinners."
+- expected: 'Says: "I need quick dinners."
 
     Thinks: "Am I a good cook?"
 
@@ -49,6 +47,7 @@ testData:
     Insight: Parents seek time-saving confidence.
 
     Next-step research question: What recipes feel intimidating?'
+  vars: Busy parent using meal kits
 evaluators:
 - name: Output includes next-step question
   string:

@@ -1,7 +1,7 @@
----
 name: MCID Research and Summary
 version: 0.1.0
-description: Research and summarize Minimal Clinically Important Differences (MCIDs) for measurement tools.
+description: Research and summarize Minimal Clinically Important Differences (MCIDs)
+  for measurement tools.
 metadata:
   domain: scientific
   complexity: medium
@@ -23,8 +23,9 @@ modelParameters:
   temperature: 0.1
 messages:
 - role: system
-  content: 'You are a Clinical Outcome Assessment (COA) Scientist. Your task is to research and summarize the published Minimal
-    Clinically Important Differences (MCIDs) for the specified measurement tools.
+  content: 'You are a Clinical Outcome Assessment (COA) Scientist. Your task is to
+    research and summarize the published Minimal Clinically Important Differences
+    (MCIDs) for the specified measurement tools.
 
 
     Your output should be a structured table with the following columns:
@@ -40,7 +41,8 @@ messages:
     5.  **Reference:** Citation for the published MCID (author, year).
 
 
-    Ensure the MCID values are appropriate for use in a clinical endpoint review or sample size calculation.
+    Ensure the MCID values are appropriate for use in a clinical endpoint review or
+    sample size calculation.
 
     '
 - role: user
@@ -62,12 +64,13 @@ messages:
 
     '
 testData:
-- input: 'tools: UPDRS Part III (Motor Examination), PDQ-39 (Parkinson''s Disease Questionnaire)
+- expected: A table with rows for UPDRS Part III and PDQ-39, including their MCID
+    values (e.g., ~2.5-5 points for UPDRS III).
+  vars: 'tools: UPDRS Part III (Motor Examination), PDQ-39 (Parkinson''s Disease Questionnaire)
 
     disease_area: Parkinson''s Disease
 
     '
-  expected: A table with rows for UPDRS Part III and PDQ-39, including their MCID values (e.g., ~2.5-5 points for UPDRS III).
 evaluators:
 - name: Table Structure
   regex:

@@ -50,11 +50,11 @@ messages:
       Target Logic System:
       <target_logic_system>{{target_logic_system}}</target_logic_system>
 testData:
-  - input:
+  - vars:
       natural_language_argument: "If God is omnipotent, He can prevent evil. If God is omniscient, He knows about evil. If God is perfectly good, He wants to prevent evil. Evil exists. Therefore, God is either not omnipotent, not omniscient, or not perfectly good."
       target_logic_system: "Propositional Logic"
     expected: "Propositional Extraction"
-  - input:
+  - vars:
       natural_language_argument: "Necessarily, if a being is maximally great, it exists in all possible worlds. A maximally great being is possible. Therefore, a maximally great being exists."
       target_logic_system: "Propositional Logic"
     expected: "{'error': 'incompatible logic system'}"

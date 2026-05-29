@@ -41,7 +41,7 @@ messages:
       {{cluster_workload_parameters}}
       </input>
 testData:
-  - input:
+  - vars:
       cluster_workload_parameters: "We are training a 500B parameter LLM using 3D parallelism across a cluster of 4096 H100 GPUs. The cluster must achieve a minimum of 60% Model Flops Utilization (MFU). We require synchronous training without blocking on I/O during checkpointing. Node failures must be tolerated without restarting the entire job from the last epoch, and the network must handle massive, frequent all-reduce traffic bursts."
     expected: "NCCL"
 evaluators:

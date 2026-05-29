@@ -40,7 +40,7 @@ messages:
       Cluster: {{target_cluster}}
       Provider: {{mesh_provider}}
 testData:
-  - input:
+  - vars:
       target_cluster: "Multi-tenant EKS cluster with 50+ microservices, requiring strict namespace isolation and external ingress rate limiting."
       mesh_provider: "Istio"
     expected: "mTLS"

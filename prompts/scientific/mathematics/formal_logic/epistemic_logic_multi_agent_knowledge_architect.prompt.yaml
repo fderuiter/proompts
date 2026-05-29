@@ -44,7 +44,7 @@ messages:
       </multi_agent_scenario>
       </input>
 testData:
-  - input:
+  - vars:
       multi_agent_scenario: "Consider three Byzantine generals who must agree to attack. They communicate via unreliable messengers. General A sends a message to General B. General B receives it but is unsure if A knows B received it. Formulate the conditions required for them to achieve common knowledge of the attack time, proving whether it is possible under unreliable communication (the Coordinated Attack Problem)."
     expected: "C_G \\varphi"
 evaluators:

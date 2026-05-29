@@ -51,7 +51,7 @@ messages:
       Security Constraints:
       {{security_constraints}}
 testData:
-  - input:
+  - vars:
       core_platform: "A high-throughput distributed message broker written in Rust needing dynamic message transformation plugins."
       plugin_requirements: "Plugins must execute under 5ms, consume max 16MB RAM, and support hot-reloading."
       security_constraints: "Strict isolation: zero network access, read-only file system access to specific directories, capability-based access control."

@@ -33,7 +33,7 @@ messages:
       Design the event-driven topology for the following requirements:
       {{domain_requirements}}
 testData:
-  - input:
+  - vars:
       domain_requirements: "We need an e-commerce checkout flow. When an order is placed, inventory must be reserved, payment processed, and shipping notified. If payment fails, inventory should be released."
     expected: "CQRS"
 evaluators:

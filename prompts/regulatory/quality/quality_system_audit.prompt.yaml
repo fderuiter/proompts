@@ -1,8 +1,7 @@
----
 name: Quality System Audit
 version: 0.1.0
-description: Generate an internal audit checklist or report focusing on design controls, production processes, and risk-based
-  decision making.
+description: Generate an internal audit checklist or report focusing on design controls,
+  production processes, and risk-based decision making.
 metadata:
   domain: regulatory
   complexity: low
@@ -20,7 +19,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -30,8 +30,8 @@ messages:
 
     ## Objective
 
-    Generate an internal audit checklist or report focusing on design controls, production processes, and risk-based decision
-    making.
+    Generate an internal audit checklist or report focusing on design controls, production
+    processes, and risk-based decision making.
 
 
     ## Output Format
@@ -47,8 +47,9 @@ messages:
 
     </input>'
 testData:
-- input: Quality Manual, Design History File (DHF) excerpts, SOPs, and previous audit reports. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: Quality Manual, Design History File (DHF) excerpts, SOPs, and previous audit
+    reports. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Verify

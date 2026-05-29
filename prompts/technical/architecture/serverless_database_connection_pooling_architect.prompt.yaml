@@ -61,13 +61,13 @@ messages:
 
       Provide a rigorous architectural model, component breakdown, and configuration strategy to solve the specified bottlenecks.
 testData:
-  - input:
+  - vars:
       cloud_provider: "AWS"
       database_engine: "PostgreSQL"
       expected_concurrency: "10,000 AWS Lambda concurrent executions"
       current_bottleneck: "Lambda bursts hit PostgreSQL max_connections limit, causing widespread 503 errors and transaction rollbacks during peak load."
     expected: "Amazon RDS Proxy"
-  - input:
+  - vars:
       cloud_provider: "GCP"
       database_engine: "Cloud SQL for PostgreSQL"
       expected_concurrency: "5,000 Cloud Run instances"

@@ -42,7 +42,7 @@ messages:
       Latency Requirements: {{latency_requirements}}
       </request>
 testData:
-  - input:
+  - vars:
       workload_profile: "High volume e-commerce checkout operations requiring immediate fraud detection analytics."
       latency_requirements: "Sub-50ms analytics response time over the last 15 minutes of transactional data."
     expected: "**MVCC**"

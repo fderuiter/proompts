@@ -1,6 +1,6 @@
----
 name: Stochastic Engineer
-description: Generates a Python Monte Carlo simulation script based on provided state definitions and transition matrix.
+description: Generates a Python Monte Carlo simulation script based on provided state
+  definitions and transition matrix.
 metadata:
   domain: technical
   complexity: high
@@ -12,23 +12,29 @@ metadata:
   requires_context: true
 variables:
 - name: architect_output
-  description: The output from the Stochastic Architect, containing state definitions and transition matrix.
+  description: The output from the Stochastic Architect, containing state definitions
+    and transition matrix.
   required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: "# Role\nYou are a Senior Python Developer and Simulation Specialist.\n\n# Task\nUsing the State definitions and\
-    \ Transition Matrix provided in the previous turn, write a robust Python script to perform a Monte Carlo Simulation.\n\
-    \n# Requirements\n1. **Model the Logic:** Implement the states and transition probabilities exactly as defined in the\
-    \ provided input.\n2. **Simulation Parameters:**\n   - Run **1,000 unique simulations** of the conversation flow.\n  \
-    \ - Track the path of each simulation until it hits an \"Absorbing State\" (a state with no exit, like \"Success\" or\
-    \ \"Failure\").\n3. **Outputs:** The script must print:\n   - The percentage of conversations ending in each Absorbing\
-    \ State.\n   - The average \"Cumulative Risk Score\" for the 1,000 runs.\n   - A list of the \"Most Common Path\" taken.\n\
-    4. **Library:** Use only standard libraries (`random`, `collections`) or `numpy` if necessary, but prioritize readability.\n\
-    5. **Constraints:** Do NOT output explanatory text or markdown outside the code block.\n\n# Output Format\nWrap your entire\
-    \ response in `<simulation_code>` tags, containing strictly the Python code block.\n"
+  content: "# Role\nYou are a Senior Python Developer and Simulation Specialist.\n\
+    \n# Task\nUsing the State definitions and Transition Matrix provided in the previous\
+    \ turn, write a robust Python script to perform a Monte Carlo Simulation.\n\n\
+    # Requirements\n1. **Model the Logic:** Implement the states and transition probabilities\
+    \ exactly as defined in the provided input.\n2. **Simulation Parameters:**\n \
+    \  - Run **1,000 unique simulations** of the conversation flow.\n   - Track the\
+    \ path of each simulation until it hits an \"Absorbing State\" (a state with no\
+    \ exit, like \"Success\" or \"Failure\").\n3. **Outputs:** The script must print:\n\
+    \   - The percentage of conversations ending in each Absorbing State.\n   - The\
+    \ average \"Cumulative Risk Score\" for the 1,000 runs.\n   - A list of the \"\
+    Most Common Path\" taken.\n4. **Library:** Use only standard libraries (`random`,\
+    \ `collections`) or `numpy` if necessary, but prioritize readability.\n5. **Constraints:**\
+    \ Do NOT output explanatory text or markdown outside the code block.\n\n# Output\
+    \ Format\nWrap your entire response in `<simulation_code>` tags, containing strictly\
+    \ the Python code block.\n"
 - role: user
   content: '# Context
 
@@ -43,16 +49,7 @@ messages:
 
     '
 testData:
-- input: '<stochastic_model>
-
-    State 1: Start (Risk: 0.0) -> State 2: End (Risk: 0.0)
-
-    Transition: Start -> End (1.0)
-
-    </stochastic_model>
-
-    '
-  expected: '<simulation_code>
+- expected: '<simulation_code>
 
     ```python
 
@@ -61,6 +58,15 @@ testData:
     ```
 
     </simulation_code>
+
+    '
+  vars: '<stochastic_model>
+
+    State 1: Start (Risk: 0.0) -> State 2: End (Risk: 0.0)
+
+    Transition: Start -> End (1.0)
+
+    </stochastic_model>
 
     '
 evaluators:

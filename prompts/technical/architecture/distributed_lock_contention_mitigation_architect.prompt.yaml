@@ -43,7 +43,7 @@ messages:
       {{contention_context}}
       </input>
 testData:
-  - input:
+  - vars:
       contention_context: "A distributed payment gateway processing 50,000 TPS. We use Redis Redlock to serialize operations against user wallets. Under flash sale conditions, lock acquisition times spike from 2ms to 400ms, causing massive timeout cascades and thread pool exhaustion on API gateways. We cannot double-spend, so strict consistency is mandatory."
     expected: "Fencing Token"
 evaluators:

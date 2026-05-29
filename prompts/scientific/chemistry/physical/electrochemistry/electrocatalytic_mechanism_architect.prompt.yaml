@@ -56,12 +56,12 @@ messages:
       Catalyst Surface: <catalyst_surface>{{catalyst_surface}}</catalyst_surface>
       Electrolyte Conditions: <electrolyte_conditions>{{electrolyte_conditions}}</electrolyte_conditions>
 testData:
-  - input:
+  - vars:
       reaction: "Oxygen Reduction Reaction (ORR)"
       catalyst_surface: "Pt(111)"
       electrolyte_conditions: "pH = 0 (0.1 M HClO4), aqueous"
     expected: "I. Elementary Reaction Pathway & Surface Intermediates"
-  - input:
+  - vars:
       reaction: "CO2 Reduction to Ethylene"
       catalyst_surface: "Cu(100)"
       electrolyte_conditions: "pH = 6.8 (0.1 M KHCO3), aqueous"

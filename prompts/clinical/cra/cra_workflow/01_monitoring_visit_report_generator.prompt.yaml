@@ -1,7 +1,7 @@
----
 name: Monitoring-Visit Report Generator
 version: 0.1.0
-description: Draft a monitoring visit report summarizing on-site activities, findings, follow-ups, and attachments.
+description: Draft a monitoring visit report summarizing on-site activities, findings,
+  follow-ups, and attachments.
 metadata:
   domain: clinical
   complexity: medium
@@ -20,54 +20,25 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: '**System (role):** You are a senior Clinical Quality Specialist with deep expertise in ICH-GCP and FDA 21 CFR
-    Part 312/812.
-
-
-    **User instruction:** Draft a concise Monitoring Visit Report summarizing today’s on-site activities, major findings,
-    and required follow-ups.
-
-    Context (insert between the triple quotes):
-
-    """
-
-    • Study: {Protocol ID} – {Study Title}
-
-    • Site No./PI: {Site ### – Dr. Name}
-
-    • Visit Type: {Pre-study | SIV | Interim | Close-out} on {YYYY-MM-DD}
-
-    • Key observations: {bullet list of SDV outcomes, IP accountability, consent form issues, etc.}
-
-    • Outstanding issues: {issue 1…n}
-
-    """
-
-
-    **Output format (markdown):**
-
-    1. **High-level Summary** (≤ 120 words)
-
-    2. **Critical Findings & Corrective Actions** (table: Finding │ Impact │ Action Owner │ Due Date)
-
-    3. **Follow-up Items for Next Visit** (bullet list)
-
-    4. **Attachments Logged** (TMF filenames)
-
-    ```'
+  content: "**System (role):** You are a senior Clinical Quality Specialist with deep\
+    \ expertise in ICH-GCP and FDA 21 CFR Part 312/812.\n\n**User instruction:** Draft\
+    \ a concise Monitoring Visit Report summarizing today\u2019s on-site activities,\
+    \ major findings, and required follow-ups.\nContext (insert between the triple\
+    \ quotes):\n\"\"\"\n\u2022 Study: {Protocol ID} \u2013 {Study Title}\n\u2022 Site\
+    \ No./PI: {Site ### \u2013 Dr. Name}\n\u2022 Visit Type: {Pre-study | SIV | Interim\
+    \ | Close-out} on {YYYY-MM-DD}\n\u2022 Key observations: {bullet list of SDV outcomes,\
+    \ IP accountability, consent form issues, etc.}\n\u2022 Outstanding issues: {issue\
+    \ 1\u2026n}\n\"\"\"\n\n**Output format (markdown):**\n1. **High-level Summary**\
+    \ (\u2264 120 words)\n2. **Critical Findings & Corrective Actions** (table: Finding\
+    \ \u2502 Impact \u2502 Action Owner \u2502 Due Date)\n3. **Follow-up Items for\
+    \ Next Visit** (bullet list)\n4. **Attachments Logged** (TMF filenames)\n```"
 - role: user
   content: '{{input}}'
 testData:
-- input: 'Study: P123 – Novel Therapy
-
-    Site No./PI: 101 – Dr. Greene
-
-    Visit Type: Interim on 2024-05-10
-
-    Key observations: IP storage temp deviation
-
-    Outstanding issues: Update delegation log'
-  expected: 1. **High-level Summary**
+- expected: 1. **High-level Summary**
+  vars: "Study: P123 \u2013 Novel Therapy\nSite No./PI: 101 \u2013 Dr. Greene\nVisit\
+    \ Type: Interim on 2024-05-10\nKey observations: IP storage temp deviation\nOutstanding\
+    \ issues: Update delegation log"
 evaluators:
 - name: Output starts with High-level Summary section
   string:

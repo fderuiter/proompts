@@ -49,7 +49,7 @@ messages:
       Output ONLY the raw YAML for the new prompt template. Do not include markdown code blocks
       like ```yaml. Just the raw text starting exactly with '---'.
 testData:
-  - input:
+  - vars:
       target_domain: "Personal Finance"
       existing_themes: "Budget trackers, investment summarizers, expense categorizers."
     expected: |

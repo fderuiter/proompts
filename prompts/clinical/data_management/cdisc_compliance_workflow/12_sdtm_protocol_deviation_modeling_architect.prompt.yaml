@@ -59,7 +59,7 @@ messages:
       <protocol_schedule>{{protocol_schedule}}</protocol_schedule>
       <target_sdtm_version>{{target_sdtm_version}}</target_sdtm_version>
 testData:
-  - input:
+  - vars:
       raw_deviation_data: |
         Subject ID: 501-002
         Deviation Date: 2023-11-15

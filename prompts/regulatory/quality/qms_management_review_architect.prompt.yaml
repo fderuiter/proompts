@@ -71,13 +71,13 @@ messages:
       {{QMS_METRICS_DATA}}
       </QMS_METRICS_DATA>
 testData:
-  - input:
+  - vars:
       REPORTING_PERIOD: "January 1, 2023 – December 31, 2023"
       PREVIOUS_REVIEW_ACTIONS: "Action 2022-01: Implement new eQMS software (Closed). Action 2022-02: Increase internal audit frequency for high-risk processes (Open, 75% complete)."
       REGULATORY_CHANGES: "Transition to EU MDR 2017/745 completed for Class IIa devices. No new FDA guidance impacting current product lines."
       QMS_METRICS_DATA: "Complaints: 142 total, 5% decrease YoY, top failure mode is packaging seal leaks. CAPAs: 12 opened, 10 closed, average cycle time 45 days. Audits: 2 external (zero major NCs), 12 internal (3 minor NCs related to document control). Supplier Quality: 98% OTD, 99% acceptance rate."
     expected: "A structured Management Review Report explicitly addressing all ISO 13485 clauses, noting the open previous action item, analyzing the packaging seal leak trend, and concluding on overall QMS effectiveness."
-  - input:
+  - vars:
       REPORTING_PERIOD: "H1 2024"
       PREVIOUS_REVIEW_ACTIONS: "All previous action items closed."
       REGULATORY_CHANGES: "FDA issued new final guidance on Cybersecurity in Medical Devices."

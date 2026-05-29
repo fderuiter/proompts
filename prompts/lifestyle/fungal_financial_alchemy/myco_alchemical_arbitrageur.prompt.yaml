@@ -58,7 +58,7 @@ messages:
       **Rot Factor (Decay Rate):** {{decomposition_rate}}
       **Magnum Opus (Goal):** {{transmutation_goal}}
 testData:
-  - input:
+  - vars:
       market_feed: "Tech stocks crashing, Gold rallying, heavy volume in put options."
       decomposition_rate: "High - panic selling is accelerating decay."
       transmutation_goal: "Extract stability from chaos (Hedge protection)."

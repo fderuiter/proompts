@@ -45,7 +45,7 @@ messages:
       {{input}}
       </concept>
 testData:
-  - input: A decentralized social media platform where users own their data.
+  - vars: A decentralized social media platform where users own their data.
     expected: |
       ## The Assault
       **The Black Hat**: Sybil attacks and identity spoofing could collapse the trust model.

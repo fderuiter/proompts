@@ -45,7 +45,7 @@ messages:
       Target Scale:
       {{target_scale}}
 testData:
-  - input:
+  - vars:
       traffic_profile: "Highly bursty traffic from mobile clients with strict sub-10ms latency budgets for rate limiting decisions. Includes abusive scraper bots."
       target_scale: "Peak loads of 500,000 RPS distributed globally across 4 AWS regions."
     expected: "Distributed Rate Limiting Strategy"

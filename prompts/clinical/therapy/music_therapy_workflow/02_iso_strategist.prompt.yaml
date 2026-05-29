@@ -32,7 +32,7 @@ messages:
       **Psychological Profile (from Step 1):**
       "{{psychological_profile}}"
 testData:
-  - input: |
+  - vars: |
       1. **Core Emotions:** High-functioning anxiety, exhaustion, futility, feeling unheard.
       2. **Key Themes:** Perfectionism, lack of recognition, powerlessness.
       3. **The "Venting Need":** Validation of exhaustion, release from the need to please.

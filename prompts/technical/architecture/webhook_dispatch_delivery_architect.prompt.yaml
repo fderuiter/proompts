@@ -40,7 +40,7 @@ messages:
       Design a comprehensive webhook dispatch and delivery architecture for the following scale and constraints:
       {{target_scale}}
 testData:
-  - input:
+  - vars:
       target_scale: "10,000 events per second average, peaking at 50,000 events per second. 5,000 distinct tenant endpoints. Strict ordered delivery not required, but at-least-once delivery is mandatory. Downstream endpoints vary wildly in latency and reliability."
     expected: "Circuit breaking"
 evaluators:

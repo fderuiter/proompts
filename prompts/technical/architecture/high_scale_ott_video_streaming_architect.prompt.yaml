@@ -50,7 +50,7 @@ messages:
       Scale and Latency:
       {{scale_and_latency}}
 testData:
-  - input:
+  - vars:
       ingestion_specs: "Live sports events ingested via redundant SRT streams from remote OB vans in 4K HDR."
       playback_requirements: "CMAF-based HLS/DASH for Smart TVs, Web, iOS, Android. Multi-DRM (FairPlay, Widevine) with CENC. Server-Side Ad Insertion (SSAI)."
       scale_and_latency: "Target 5 million concurrent viewers with sub-10 second glass-to-glass latency."

@@ -51,11 +51,11 @@ messages:
       Constraints: {{constraints}}
       </user_query>
 testData:
-  - input:
+  - vars:
       conjecture: "Every compact topological space is Hausdorff."
       constraints: "The space must be finite."
     expected: "Construct a finite topological space that is compact but not Hausdorff, such as the Sierpinski space."
-  - input:
+  - vars:
       conjecture: "Every separable, Hausdorff space is second-countable."
       constraints: "Consider the Sorgenfrey line or the Moore plane."
     expected: "Construct the Sorgenfrey line, prove it is separable and Hausdorff, and prove it is not second-countable."

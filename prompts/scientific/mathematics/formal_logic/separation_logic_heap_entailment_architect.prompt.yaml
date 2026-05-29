@@ -45,7 +45,7 @@ messages:
       </heap_verification_scenario>
       </input>
 testData:
-  - input:
+  - vars:
       heap_verification_scenario: "Verify an in-place list reversal algorithm. Formulate the loop invariant using a recursive predicate for a singly linked list segment (ls), and prove the entailment representing the pointer swing operation."
     expected: "\\ast"
 evaluators:

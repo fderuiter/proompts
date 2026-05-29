@@ -61,13 +61,13 @@ messages:
       Conditions: <conditions>{{conditions}}</conditions>
       Reaction Type: <reaction_type>{{reaction_type}}</reaction_type>
 testData:
-  - input:
+  - vars:
       precatalyst: "Tetrakis(triphenylphosphine)palladium(0)"
       reactants: "Ph-B(OH)2, Ph-Br, K2CO3"
       conditions: "T = 353 K, THF/H2O (4:1)"
       reaction_type: "Suzuki-Miyaura Cross-Coupling"
     expected: "I. Catalytic Cycle & Elementary Steps"
-  - input:
+  - vars:
       precatalyst: "[Rh(CO)2I2]-"
       reactants: "CH3OH, CO"
       conditions: "T = 450 K, P = 30 atm, H2O, HI promoter"

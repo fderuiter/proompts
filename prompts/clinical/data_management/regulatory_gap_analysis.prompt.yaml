@@ -1,4 +1,3 @@
----
 name: Regulatory Gap Analysis
 version: 0.1.0
 description: Assess regulatory compliance gaps in trial data processes.
@@ -28,8 +27,8 @@ messages:
 - role: user
   content: '{{input}}'
 testData:
-- input: Review data workflow for GDPR compliance.
-  expected: Highlights missing consent records.
+- expected: Highlights missing consent records.
+  vars: Review data workflow for GDPR compliance.
 evaluators:
 - name: Output mentions compliance
   string:

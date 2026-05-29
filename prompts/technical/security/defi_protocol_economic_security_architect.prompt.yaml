@@ -57,12 +57,12 @@ messages:
 
       Provide the complete economic security architecture, focusing on flash loan resilience, oracle manipulation defenses, core invariant formulation, and emergency mitigation mechanisms.
 testData:
-  - input:
+  - vars:
       protocol_type: "Collateralized Debt Position (CDP) lending platform accepting long-tail crypto assets."
       oracle_dependency: "Relies on a single Uniswap V3 pool spot price for long-tail asset valuation."
       tokenomics_model: "Algorithmic stablecoin minted against collateral, with liquidations rewarded in the stablecoin."
     expected: "TWAP"
-  - input:
+  - vars:
       protocol_type: "Yield Aggregator utilizing complex cross-chain vault strategies."
       oracle_dependency: "Chainlink price feeds aggregated across multiple L2 networks."
       tokenomics_model: "veTokenomics model locking governance tokens for boosted yield."

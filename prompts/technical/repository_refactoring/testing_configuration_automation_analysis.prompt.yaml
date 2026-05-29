@@ -1,6 +1,7 @@
 name: Testing, Configuration, and Automation Analysis
 version: 0.1.0
-description: Analyze the repository's testing, configuration, and automation infrastructure to ensure reliability and deployment readiness.
+description: Analyze the repository's testing, configuration, and automation infrastructure
+  to ensure reliability and deployment readiness.
 metadata:
   domain: technical
   complexity: high
@@ -13,7 +14,8 @@ metadata:
   requires_context: true
 variables:
 - name: repository_context
-  description: The context of the repository including current testing setup, CI/CD pipeline configuration, and deployment processes.
+  description: The context of the repository including current testing setup, CI/CD
+    pipeline configuration, and deployment processes.
   required: true
 model: gpt-4
 modelParameters:
@@ -62,27 +64,40 @@ messages:
     \ assessment of the current state and a list of prioritized, actionable recommendations\
     \ for improvement.\n\n<repository_context>\n{{repository_context}}\n</repository_context>"
 testData:
-- input:
-    repository_context: |
-      Project: Node.js Backend API
-      Current Tests: 15 unit tests using Jest, coverage is 20%. No integration or E2E tests.
-      Configuration: .env files are committed to the repo, sometimes containing staging DB credentials.
-      CI/CD: GitHub Actions runs npm test on push. Deployment is manual via SSH to a single EC2 instance.
-  expected: Identifies low test coverage and missing integration/e2e tests. Flags committed .env files as a severe security risk. Recommends automating deployment and adding proper CI checks.
-- input:
-    repository_context: |
-      Project: Python Backend API
+- expected: Identifies low test coverage and missing integration/e2e tests. Flags
+    committed .env files as a severe security risk. Recommends automating deployment
+    and adding proper CI checks.
+  vars:
+    repository_context: 'Project: Node.js Backend API
+
+      Current Tests: 15 unit tests using Jest, coverage is 20%. No integration or
+      E2E tests.
+
+      Configuration: .env files are committed to the repo, sometimes containing staging
+      DB credentials.
+
+      CI/CD: GitHub Actions runs npm test on push. Deployment is manual via SSH to
+      a single EC2 instance.
+
+      '
+- expected: Praises good test coverage and recommends adding performance tests.
+  vars:
+    repository_context: 'Project: Python Backend API
+
       Current Tests: pytest with 90% coverage.
+
       Configuration: Hashicorp vault.
+
       CI/CD: GitHub Actions CI with full deployment to EKS.
-  expected: Praises good test coverage and recommends adding performance tests.
+
+      '
 evaluators:
 - name: Output must contain Testing Strategy Assessment
   string:
-    contains: "Testing Strategy Assessment"
+    contains: Testing Strategy Assessment
 - name: Output must contain Configuration Management
   string:
-    contains: "Configuration Management"
+    contains: Configuration Management
 - name: Output must contain Automation and CI/CD
   string:
-    contains: "Automation and CI/CD"
+    contains: Automation and CI/CD

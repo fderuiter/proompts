@@ -50,12 +50,12 @@ messages:
       Developer Experience:
       <developer_experience>{{developer_experience}}</developer_experience>
 testData:
-  - input:
+  - vars:
       api_topology: "A hybrid mix of 200+ internal REST microservices on EKS, 15 external-facing GraphQL endpoints, and 3 legacy SOAP services on-premise."
       security_governance: "Mandatory mTLS between all nodes, external OIDC federation via Okta, strict ABAC, and compliance with GDPR data residency requirements."
       developer_experience: "Zero-touch self-service onboarding for external partners, automated API key provisioning with multi-tier rate limiting (Freemium/Pro), and real-time usage analytics dashboard."
     expected: "API Management"
-  - input:
+  - vars:
       api_topology: "Globally distributed mesh of async event streams (Kafka/AsyncAPI) and synchronous gRPC services spanning AWS and Azure."
       security_governance: "Zero-trust architecture with continuous token validation, dynamic WAF rules per tenant, and SOC2 compliant audit logging."
       developer_experience: "Unified developer portal with auto-generated SDKs in 5 languages, interactive Swagger/AsyncAPI documentation, and chargeback/FinOps integration for internal teams."

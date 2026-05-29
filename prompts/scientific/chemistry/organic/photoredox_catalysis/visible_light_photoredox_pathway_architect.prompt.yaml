@@ -55,12 +55,12 @@ messages:
       Substrates: <substrates>{{substrates}}</substrates>
       Coreactants: <coreactants>{{coreactants}}</coreactants>
 testData:
-  - input:
+  - vars:
       photocatalyst: "fac-Ir(ppy)3"
       substrates: "CC(=O)C1=CC=C(C=C1)Br (4-Bromoacetophenone) and C1=CC=CN=C1 (Pyridine)"
       coreactants: "N,N-Diisopropylethylamine (DIPEA) as sacrificial electron donor"
     expected: "I. Photophysical Parameters & System Thermodynamics"
-  - input:
+  - vars:
       photocatalyst: "[Ru(bpy)3]2+"
       substrates: "CC(C)(C)C(=O)O[N+]1=CC=CC=C1 (N-Acyloxyphthalimide derivative)"
       coreactants: "Ascorbic acid as electron donor, visible light irradiation (450 nm)"

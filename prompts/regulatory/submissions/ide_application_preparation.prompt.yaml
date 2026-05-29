@@ -1,8 +1,7 @@
----
 name: IDE Application Preparation
 version: 0.1.0
-description: Draft an Investigational Device Exemption (IDE) application, including risk analysis and investigational plans
-  for clinical studies.
+description: Draft an Investigational Device Exemption (IDE) application, including
+  risk analysis and investigational plans for clinical studies.
 metadata:
   domain: regulatory
   complexity: low
@@ -21,7 +20,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -31,8 +31,8 @@ messages:
 
     ## Objective
 
-    Draft an Investigational Device Exemption (IDE) application, including risk analysis and investigational plans for clinical
-    studies.
+    Draft an Investigational Device Exemption (IDE) application, including risk analysis
+    and investigational plans for clinical studies.
 
 
     ## Output Format
@@ -48,8 +48,9 @@ messages:
 
     </input>'
 testData:
-- input: Investigational plan, report of prior investigations, investigator agreements, and device labeling. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: Investigational plan, report of prior investigations, investigator agreements,
+    and device labeling. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Verify

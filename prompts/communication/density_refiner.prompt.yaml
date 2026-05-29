@@ -1,4 +1,3 @@
----
 name: Density Refiner
 version: 0.1.0
 description: Craft a concise yet information-rich summary of provided text.
@@ -18,7 +17,8 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'Use Chain-of-Density summarization to tighten coverage without length creep.
+  content: 'Use Chain-of-Density summarization to tighten coverage without length
+    creep.
 
 
     <!-- markdownlint-disable MD029 -->
@@ -39,8 +39,7 @@ messages:
 - role: user
   content: '{{input}}'
 testData:
-- input: Elephants migrate long distances for food and water.
-  expected: '**Gist**
+- expected: '**Gist**
 
     Elephants travel for food and water.
 
@@ -55,6 +54,7 @@ testData:
     **Reflection**
 
     Adding locations clarified context.'
+  vars: Elephants migrate long distances for food and water.
 evaluators:
 - name: Output includes dense summary
   string:

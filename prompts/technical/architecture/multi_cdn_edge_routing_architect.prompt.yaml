@@ -56,12 +56,12 @@ messages:
       3.  **Edge Routing Topology:** Whether steering is occurring at the DNS level, via an Edge Proxy/API Gateway, or through manifest manipulation (for video), and why.
       4.  **Failover & Eviction Matrix:** The exact metrics (e.g., origin timeout, 5xx rate, buffer underrun) that trigger automated vendor eviction.
 testData:
-  - input:
+  - vars:
       primary_workload_type: "Live Event Video Streaming (HLS/DASH)"
       routing_strategy: "Latency-Optimized with RUM-based failover"
       global_constraints: "Sub-2s latency, minimal rebuffering, strict 99.999% uptime SLA during peak concurrent viewership."
     expected: "Edge Routing Topology"
-  - input:
+  - vars:
       primary_workload_type: "High-Volume E-Commerce API (Dynamic JSON)"
       routing_strategy: "Active-Active Geographic with Cost Arbitration"
       global_constraints: "Must fulfill 10Gbps commit with CDN Provider A before shifting burst traffic to Provider B."

@@ -53,12 +53,12 @@ messages:
       Deployment Topology:
       <user_query>{{deployment_topology}}</user_query>
 testData:
-  - input:
+  - vars:
       storage_requirements: "50 Petabytes total capacity, predominantly large objects (10MB-5GB). 80% read, 20% write. Required durability is 11 nines (99.999999999%)."
       consistency_model: "Strong read-after-write consistency for new objects; eventual consistency for overwrites/deletes."
       deployment_topology: "Deployed across 3 independent availability zones within a single AWS region. Must withstand the loss of an entire AZ."
     expected: "Reed-Solomon"
-  - input:
+  - vars:
       storage_requirements: "1 Exabyte scale. Billions of small objects (10KB-100KB). Extremely high write throughput."
       consistency_model: "Eventual consistency is acceptable for all operations to maximize ingest throughput."
       deployment_topology: "Global deployment across North America, Europe, and Asia. Requests routed via Anycast DNS to the nearest ingest node."

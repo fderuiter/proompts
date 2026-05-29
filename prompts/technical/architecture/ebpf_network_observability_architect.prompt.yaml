@@ -48,11 +48,11 @@ messages:
       Telemetry Requirements:
       {{telemetry_requirements}}
 testData:
-  - input:
+  - vars:
       infrastructure_topology: "A hyper-scale multi-tenant Kubernetes environment across 3 AWS regions using Cilium CNI. Nodes run Amazon Linux 2023 with modern kernel support (5.15+)."
       telemetry_requirements: "Real-time L7 HTTP/gRPC latency profiling, unencrypted TLS handshake tracking, and sub-millisecond TCP retransmission detection, all exported to an OpenTelemetry collector."
     expected: "eBPF-based network observability architecture"
-  - input:
+  - vars:
       infrastructure_topology: "A legacy on-premise bare-metal cluster running mixed Ubuntu 18.04 and 20.04 (kernels 4.15 to 5.4), without Kubernetes. High-throughput 100Gbps network interfaces."
       telemetry_requirements: "Low-overhead L4 flow tracking, exact packet drop location within the kernel network stack, and DDoS mitigation routing exported to Kafka."
     expected: "eBPF-based network observability architecture"

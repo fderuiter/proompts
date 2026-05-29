@@ -1,7 +1,6 @@
----
 name: Stochastic Strategist
-description: Analyzes the stochastic model and simulation logic to provide strategic advice, identifying "Black Swan" paths
-  and leverage points.
+description: Analyzes the stochastic model and simulation logic to provide strategic
+  advice, identifying "Black Swan" paths and leverage points.
 metadata:
   domain: technical
   complexity: high
@@ -30,19 +29,21 @@ messages:
 
     # Task
 
-    Analyze the mathematical model and simulation logic we have just built to provide strategic advice.
+    Analyze the mathematical model and simulation logic we have just built to provide
+    strategic advice.
 
 
     # Analysis Required
 
-    1. **The "Black Swan" Path:** Identify a specific sequence of states that has a low probability but results in the highest
-    possible Risk Score.
+    1. **The "Black Swan" Path:** Identify a specific sequence of states that has
+    a low probability but results in the highest possible Risk Score.
 
-    2. **The "Leverage Point":** Identify ONE specific transition in the matrix (e.g., moving from "Objection" to "Clarification")
-    where a 10% increase in probability would most drastically improve the final success rate.
+    2. **The "Leverage Point":** Identify ONE specific transition in the matrix (e.g.,
+    moving from "Objection" to "Clarification") where a 10% increase in probability
+    would most drastically improve the final success rate.
 
-    3. **Intervention:** Propose a specific conversational script or tactic that a human could use to achieve that 10% probability
-    shift.
+    3. **Intervention:** Propose a specific conversational script or tactic that a
+    human could use to achieve that 10% probability shift.
 
 
     # Output Format
@@ -61,7 +62,8 @@ messages:
 - role: user
   content: '# Context
 
-    Base this analysis on the Matrix and Simulation logic established in the previous turns.
+    Base this analysis on the Matrix and Simulation logic established in the previous
+    turns.
 
 
     ## Architect''s Model (Matrix):
@@ -83,12 +85,7 @@ messages:
 
     '
 testData:
-- input: 'Architect: Matrix...
-
-    Engineer: Code...
-
-    '
-  expected: '<strategic_analysis>
+- expected: '<strategic_analysis>
 
     ## Black Swan Analysis
 
@@ -97,6 +94,11 @@ testData:
     ## Proposed Intervention
 
     </strategic_analysis>
+
+    '
+  vars: 'Architect: Matrix...
+
+    Engineer: Code...
 
     '
 evaluators:

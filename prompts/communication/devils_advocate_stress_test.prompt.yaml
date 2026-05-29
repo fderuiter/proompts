@@ -1,5 +1,4 @@
----
-name: Devil’s-Advocate Stress Test
+name: "Devil\u2019s-Advocate Stress Test"
 version: 0.1.0
 description: Act as a seasoned critic.
 metadata:
@@ -20,16 +19,13 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: '1. Present the three strongest arguments against this idea: ‹DESCRIBE IDEA›.
-
-    2. For each objection, cite a real or hypothetical example that illustrates the risk.
-
-    3. Then propose one mitigation strategy per objection.'
+  content: "1. Present the three strongest arguments against this idea: \u2039DESCRIBE\
+    \ IDEA\u203A.\n2. For each objection, cite a real or hypothetical example that\
+    \ illustrates the risk.\n3. Then propose one mitigation strategy per objection."
 - role: user
   content: '{{input}}'
 testData:
-- input: Launch a new social app
-  expected: 'Objection 1: crowded market; Example: many apps fail.
+- expected: 'Objection 1: crowded market; Example: many apps fail.
 
     Mitigation: offer unique community.
 
@@ -40,6 +36,7 @@ testData:
     Objection 3: low retention; Example: early churn.
 
     Mitigation: gamified rewards.'
+  vars: Launch a new social app
 evaluators:
 - name: Output lists mitigations
   string:

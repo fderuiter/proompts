@@ -40,7 +40,7 @@ messages:
       Workload: {{system_workload}}
       Cloud Provider: {{cloud_provider}}
 testData:
-  - input:
+  - vars:
       system_workload: "Global trading platform, 90% read / 10% write, sub-50ms latency target, strict consistency requirements for ledger updates."
       cloud_provider: "AWS"
     expected: "CRDT"

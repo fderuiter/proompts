@@ -53,12 +53,12 @@ messages:
       State Variables: <state_variables>{{state_variables}}</state_variables>
       Equation of State: <equation_of_state>{{equation_of_state}}</equation_of_state>
 testData:
-  - input:
+  - vars:
       mixture_components: "Methane (C), Ethane (CC), Propane (CCC)"
       state_variables: "T = 250 K, P = 30 bar, overall mole fractions z = [0.5, 0.3, 0.2]"
       equation_of_state: "Peng-Robinson EoS with van der Waals one-fluid mixing rules"
     expected: "I. Component & State Characterization"
-  - input:
+  - vars:
       mixture_components: "Water (O), Ethanol (CCO)"
       state_variables: "T = 350 K, P = 1.013 bar, equimolar overall mixture"
       equation_of_state: "NRTL activity coefficient model combined with ideal gas law for vapor phase"

@@ -1,7 +1,7 @@
----
 name: NGS Tumor Profiling Documentation
 version: 0.1.0
-description: Develop documentation supporting the clinical significance of mutations in an NGS-based tumor profiling panel.
+description: Develop documentation supporting the clinical significance of mutations
+  in an NGS-based tumor profiling panel.
 metadata:
   domain: regulatory
   complexity: low
@@ -21,7 +21,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -31,7 +32,8 @@ messages:
 
     ## Objective
 
-    Develop documentation supporting the clinical significance of mutations in an NGS-based tumor profiling panel.
+    Develop documentation supporting the clinical significance of mutations in an
+    NGS-based tumor profiling panel.
 
 
     ## Output Format
@@ -47,8 +49,9 @@ messages:
 
     </input>'
 testData:
-- input: Somatic mutations, professional guidelines, and method comparison data. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: Somatic mutations, professional guidelines, and method comparison data. (Example
+    data)
 evaluators:
 - name: Validation Check
   regex: (?i)Confirm

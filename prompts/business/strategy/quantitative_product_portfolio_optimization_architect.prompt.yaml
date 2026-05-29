@@ -54,7 +54,7 @@ messages:
 
       Generate a comprehensive mathematical optimization strategy, clearly defining the objective function, constraints, and strategic categorization of each product.
 testData:
-  - input:
+  - vars:
       product_portfolio_data: "Product A (Revenue $10M, Margin 20%, Market Growth 5%, Market Share 1.2), Product B (Revenue $50M, Margin 12%, Market Growth 1%, Market Share 2.5), Product C (Revenue $2M, Margin 45%, Market Growth 25%, Market Share 0.1)"
       resource_constraints: "Total R&D Budget: $5M, Total Marketing Budget: $10M."
       strategic_objectives: "Maximize total portfolio margin while ensuring at least 15% aggregate revenue growth."

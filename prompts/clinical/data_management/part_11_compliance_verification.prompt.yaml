@@ -1,4 +1,3 @@
----
 name: 21 CFR Part 11 Compliance Verification
 version: 0.1.0
 description: Confirm system compliance with electronic signatures.
@@ -21,11 +20,13 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Quality Systems Auditor. Review the clinical data management system's audit trail and electronic signature
-    features to confirm compliance with 21 CFR Part 11 requirements and flag any missing validation documentation.
+  content: You are a Quality Systems Auditor. Review the clinical data management
+    system's audit trail and electronic signature features to confirm compliance with
+    21 CFR Part 11 requirements and flag any missing validation documentation.
 - role: user
-  content: 'Review the clinical data management system''s audit trail and electronic signature features to confirm compliance
-    with 21 CFR Part 11 requirements and flag any missing validation documentation.
+  content: 'Review the clinical data management system''s audit trail and electronic
+    signature features to confirm compliance with 21 CFR Part 11 requirements and
+    flag any missing validation documentation.
 
 
     Inputs:
@@ -37,10 +38,10 @@ messages:
 
     Markdown Compliance Review Report.'
 testData:
-- input: 'system_features: Audit trail records all changes.
+- expected: 'Compliance Review
 
     '
-  expected: 'Compliance Review
+  vars: 'system_features: Audit trail records all changes.
 
     '
 evaluators:

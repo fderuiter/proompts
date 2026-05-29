@@ -1,4 +1,3 @@
----
 name: Digital Health Technology (DHT) Validation
 version: 0.1.0
 description: Create validation strategy for DHTs.
@@ -21,12 +20,14 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Digital Health Scientist. Create a validation strategy for using an accelerometer-derived stride velocity
-    endpoint in a trial, including requirements for algorithm freezing and software update plans. Reference FDA PDUFA VII
-    and EMA Guidance.
+  content: You are a Digital Health Scientist. Create a validation strategy for using
+    an accelerometer-derived stride velocity endpoint in a trial, including requirements
+    for algorithm freezing and software update plans. Reference FDA PDUFA VII and
+    EMA Guidance.
 - role: user
-  content: 'Create a validation strategy for using an accelerometer-derived stride velocity endpoint in a trial, including
-    requirements for algorithm freezing and software update plans.
+  content: 'Create a validation strategy for using an accelerometer-derived stride
+    velocity endpoint in a trial, including requirements for algorithm freezing and
+    software update plans.
 
 
     Inputs:
@@ -38,10 +39,10 @@ messages:
 
     Markdown Validation Strategy.'
 testData:
-- input: 'dht_specs: Accelerometer for gait analysis.
+- expected: 'Validation Strategy
 
     '
-  expected: 'Validation Strategy
+  vars: 'dht_specs: Accelerometer for gait analysis.
 
     '
 evaluators:

@@ -1,4 +1,3 @@
----
 name: Humanitarian Device Exemption (HDE)
 version: 0.1.0
 description: Explain why the health benefit of a HUD outweighs the risk of injury.
@@ -21,7 +20,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -47,8 +47,8 @@ messages:
 
     </input>'
 testData:
-- input: HUD designation and risk-benefit analysis of alternatives. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: HUD designation and risk-benefit analysis of alternatives. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Check

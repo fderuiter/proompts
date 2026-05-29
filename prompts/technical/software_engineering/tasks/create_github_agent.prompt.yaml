@@ -67,11 +67,11 @@ messages:
 
     </agent_requirements>'
 testData:
-- input: 'I want an agent named "Security Auditor" that checks for vulnerabilities.
+- vars: 'I want an agent named "Security Auditor" that checks for vulnerabilities.
 
     It should verify fixes by running tests.'
   expected: 'name: Security Auditor'
-- input: 'Create a "Documentation Bot" that only has read access.
+- vars: 'Create a "Documentation Bot" that only has read access.
 
     It should not be able to edit files or run commands.'
   expected: "tools:\n  - read"

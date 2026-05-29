@@ -50,17 +50,17 @@ messages:
       <device_information>{{device_information}}</device_information>
       <patient_impact>{{patient_impact}}</patient_impact>
 testData:
-  - input:
+  - vars:
       complaint_description: "The infusion pump stopped delivering medication unexpectedly during surgery, triggering a silent failure."
       device_information: "Class II life-supporting infusion pump."
       patient_impact: "The patient experienced a transient drop in blood pressure requiring administration of IV fluids to stabilize, extending the surgery by 30 minutes."
     expected: "Reportable"
-  - input:
+  - vars:
       complaint_description: "Patient 001-A failed screening during initial baseline tests."
       device_information: "Model X200 wearable."
       patient_impact: "None."
     expected: "Not Reportable"
-  - input:
+  - vars:
       complaint_description: ""
       device_information: ""
       patient_impact: ""

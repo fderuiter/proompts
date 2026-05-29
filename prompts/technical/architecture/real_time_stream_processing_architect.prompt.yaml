@@ -44,7 +44,7 @@ messages:
       {{streaming_requirements}}
       </input>
 testData:
-  - input:
+  - vars:
       streaming_requirements: "We need to process 500,000 telemetry events per second from IoT devices globally. Latency from ingestion to real-time dashboard updates must be under 200ms. The system must support complex windowed aggregations for anomaly detection and ensure exactly-once processing semantics."
     expected: "Apache Flink"
 evaluators:

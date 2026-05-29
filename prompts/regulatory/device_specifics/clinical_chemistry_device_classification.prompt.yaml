@@ -1,7 +1,7 @@
----
 name: Clinical Chemistry Device Classification
 version: 0.1.0
-description: Identify classification and regulatory requirements (general/special controls) for a clinical chemistry device.
+description: Identify classification and regulatory requirements (general/special
+  controls) for a clinical chemistry device.
 metadata:
   domain: regulatory
   complexity: low
@@ -21,7 +21,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -31,7 +32,8 @@ messages:
 
     ## Objective
 
-    Identify classification and regulatory requirements (general/special controls) for a clinical chemistry device.
+    Identify classification and regulatory requirements (general/special controls)
+    for a clinical chemistry device.
 
 
     ## Output Format
@@ -47,8 +49,8 @@ messages:
 
     </input>'
 testData:
-- input: Device name and intended use. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: Device name and intended use. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Verify

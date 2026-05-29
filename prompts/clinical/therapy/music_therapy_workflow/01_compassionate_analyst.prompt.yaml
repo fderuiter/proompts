@@ -34,7 +34,7 @@ messages:
       **Input Text:**
       "{{venting_text}}"
 testData:
-  - input: "I just feel like I'm running in circles. My boss keeps moving the goalposts, and I'm exhausted trying to please everyone. I feel invisible, like I'm screaming underwater and no one hears me."
+  - vars: "I just feel like I'm running in circles. My boss keeps moving the goalposts, and I'm exhausted trying to please everyone. I feel invisible, like I'm screaming underwater and no one hears me."
     expected: |
       1. **Core Emotions:** High-functioning anxiety, exhaustion, futility, feeling unheard.
       2. **Key Themes:** Perfectionism, lack of recognition, powerlessness.

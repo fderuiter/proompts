@@ -1,7 +1,7 @@
----
 name: Directed Food Laboratory Order Verification
 version: 0.1.0
-description: Review a Directed Food Laboratory Order to identify mandatory testing parameters.
+description: Review a Directed Food Laboratory Order to identify mandatory testing
+  parameters.
 metadata:
   domain: regulatory
   complexity: low
@@ -21,7 +21,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -47,8 +48,8 @@ messages:
 
     </input>'
 testData:
-- input: FDA issued Directed Food Laboratory Order. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: FDA issued Directed Food Laboratory Order. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Compare

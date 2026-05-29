@@ -58,12 +58,12 @@ messages:
 
       Proceed with the formal derivations.
 testData:
-  - input:
+  - vars:
       manifold_definition: "A 2-dimensional sphere $S^2$ of radius $r$."
       metric_tensor: "$ds^2 = r^2 d\\theta^2 + r^2 \\sin^2\\theta d\\phi^2$"
       derivations_requested: "Christoffel symbols, Riemann tensor, Ricci tensor, and Ricci scalar."
     expected: "Calculates $\\Gamma^\\theta_{\\phi\\phi} = -\\sin\\theta\\cos\\theta$, $\\Gamma^\\phi_{\\theta\\phi} = \\cot\\theta$, Ricci scalar $R = \\frac{2}{r^2}$."
-  - input:
+  - vars:
       manifold_definition: "The upper half-plane $\\mathbb{H}$."
       metric_tensor: "$ds^2 = \\frac{dx^2 + dy^2}{y^2}$"
       derivations_requested: "Ricci scalar."

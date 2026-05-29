@@ -68,7 +68,7 @@ messages:
 
       Output the derivation rules formatted as an ADaM mapping specification matrix (Parameter | Condition/Logic | AVALC | AVAL).
 testData:
-  - input:
+  - vars:
       sdtm_tu_data: |
         USUBJID, TULNKID, TULOC, TUSTRESC, VISITNUM
         SUBJ-01, TL01, LUNG, TARGET, 1

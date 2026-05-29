@@ -1,7 +1,7 @@
----
 name: Competitive-Bid Pricing & Margin Optimizer
 version: 0.1.0
-description: Compare competitor bids and internal costs to recommend a winning price with target margin.
+description: Compare competitor bids and internal costs to recommend a winning price
+  with target margin.
 metadata:
   domain: business
   complexity: high
@@ -30,33 +30,24 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: Act as my strategic pricing manager. We are bidding on a multi-year oncology study against two top-10 CROs.
+  content: Act as my strategic pricing manager. We are bidding on a multi-year oncology
+    study against two top-10 CROs.
 - role: user
-  content: '- `{{competitor_bids}}` – list of competitor prices (USD).
-
-    - `{{internal_cost}}` – our estimated delivery cost (USD).
-
-    - `{{target_margin}}` – desired profit margin percentage.
-
-    - `{{volume_adjustments}}` – optional volume or scope notes.
-
-
-    Start the response with **Bid Analysis -**.
-
-    Output format:
-
-    1. Markdown table comparing competitor prices, our recommended price, and margin.
-
-    2. Three bullet-point justification notes on win strategy.'
+  content: "- `{{competitor_bids}}` \u2013 list of competitor prices (USD).\n- `{{internal_cost}}`\
+    \ \u2013 our estimated delivery cost (USD).\n- `{{target_margin}}` \u2013 desired\
+    \ profit margin percentage.\n- `{{volume_adjustments}}` \u2013 optional volume\
+    \ or scope notes.\n\nStart the response with **Bid Analysis -**.\nOutput format:\n\
+    1. Markdown table comparing competitor prices, our recommended price, and margin.\n\
+    2. Three bullet-point justification notes on win strategy."
 testData:
-- input: 'competitor_bids: [1000000, 1100000]
+- expected: Bid Analysis -
+  vars: 'competitor_bids: [1000000, 1100000]
 
     internal_cost: 850000
 
     target_margin: 0.2
 
     volume_adjustments: none'
-  expected: Bid Analysis -
 evaluators:
 - name: Output should start with 'Bid Analysis -'
   string:

@@ -1,4 +1,3 @@
----
 name: Clinical ETL Transformation QC
 version: 0.1.0
 description: Define quality checks for clinical ETL transformations.
@@ -20,7 +19,8 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a quality engineer establishing validation checks for clinical ETL
+  content: 'You are a quality engineer establishing validation checks for clinical
+    ETL
 
     transformations.
 
@@ -31,10 +31,11 @@ messages:
     {{etl_mapping_spec}}
 
 
-    Based on this specification, define a comprehensive set of quality checks for the clinical ETL transformations.'
+    Based on this specification, define a comprehensive set of quality checks for
+    the clinical ETL transformations.'
 testData:
-- input: List QC checks for transforming lab results data.
-  expected: Mentions range validations and format consistency.
+- expected: Mentions range validations and format consistency.
+  vars: List QC checks for transforming lab results data.
 evaluators:
 - name: Output mentions validation
   string:

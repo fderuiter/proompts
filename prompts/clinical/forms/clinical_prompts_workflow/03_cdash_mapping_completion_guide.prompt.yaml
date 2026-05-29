@@ -1,4 +1,3 @@
----
 name: CDASH Mapping & Completion-Guide Assistant
 version: 0.1.0
 description: '- For every variable in the list, supply:'
@@ -21,19 +20,22 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: "• CDASH variable name  \n  • SDTM target domain.variable  \n  • Plain-language completion instruction (≤40 words)\
-    \  \n  • Controlled terminology / units  \n  • Allowed query logic (range checks, missing-data rules).\n- At the end,\
-    \ provide a one-page “Top 10 data-entry tips” bullet list.\n- Output in CSV-ready Markdown:\n  Variable | Domain | Instruction\
-    \ | Terminology/Units | Edit-Check\n- Think through the mapping logic first, then write the table."
+  content: "\u2022 CDASH variable name  \n  \u2022 SDTM target domain.variable  \n\
+    \  \u2022 Plain-language completion instruction (\u226440 words)  \n  \u2022 Controlled\
+    \ terminology / units  \n  \u2022 Allowed query logic (range checks, missing-data\
+    \ rules).\n- At the end, provide a one-page \u201CTop 10 data-entry tips\u201D\
+    \ bullet list.\n- Output in CSV-ready Markdown:\n  Variable | Domain | Instruction\
+    \ | Terminology/Units | Edit-Check\n- Think through the mapping logic first, then\
+    \ write the table."
 - role: user
   content: '{{input}}'
 testData:
-- input: 'HEIGHT
-
-    '
-  expected: 'Variable | Domain | Instruction | Terminology/Units | Edit-Check
+- expected: 'Variable | Domain | Instruction | Terminology/Units | Edit-Check
 
     HEIGHT | DM.HEIGHT | Record height in cm | cm | 30-250
+
+    '
+  vars: 'HEIGHT
 
     '
 evaluators:

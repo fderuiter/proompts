@@ -1,7 +1,7 @@
----
 name: Human Factors/Usability Summary
 version: 0.1.0
-description: Summarize usability testing results to demonstrate minimized use-related risks.
+description: Summarize usability testing results to demonstrate minimized use-related
+  risks.
 metadata:
   domain: regulatory
   complexity: low
@@ -21,7 +21,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -47,8 +48,8 @@ messages:
 
     </input>'
 testData:
-- input: Usability test protocols and summative data. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: Usability test protocols and summative data. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Review

@@ -56,7 +56,7 @@ messages:
       {{objective_evidence}}
       </objective_evidence>
 testData:
-  - input:
+  - vars:
       scar_details: "O-rings supplied in lot 492-B were found to have a diameter 0.5mm out of specification, leading to a minor leak during sub-assembly testing. Risk level: Moderate."
       supplier_response: "Root cause: Operator used the wrong extrusion die. Corrective Action: Retrained operator on reading the traveler and selecting the correct die. Preventative Action: Added a secondary sign-off on die selection."
       objective_evidence: "Training record signed by the operator and supervisor. Updated SOP requiring secondary sign-off."

@@ -1,4 +1,3 @@
----
 name: UAT Script Generator
 version: 0.1.0
 description: Generate a User Acceptance Testing (UAT) script with dummy data inputs.
@@ -26,11 +25,12 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a UAT Lead. Execute formal testing of the data repository build and audit log in a simulated real-world
-    environment. Adhere to GXP / GCP guidelines.
+  content: You are a UAT Lead. Execute formal testing of the data repository build
+    and audit log in a simulated real-world environment. Adhere to GXP / GCP guidelines.
 - role: user
-  content: 'Generate a User Acceptance Testing (UAT) script that includes dummy data inputs for this eCRF, including out-of-range
-    values to test the programmed edit checks and expected error messages.
+  content: 'Generate a User Acceptance Testing (UAT) script that includes dummy data
+    inputs for this eCRF, including out-of-range values to test the programmed edit
+    checks and expected error messages.
 
 
     Inputs:
@@ -44,16 +44,17 @@ messages:
 
     Output format:
 
-    Markdown UAT Script with Test Steps, Input Data, Expected Results, and Actual Results columns.'
+    Markdown UAT Script with Test Steps, Input Data, Expected Results, and Actual
+    Results columns.'
 testData:
-- input: 'uat_scope: "Verify Demographics module"
+- expected: '| Test Step | Input Data | Expected Result |
+
+    '
+  vars: 'uat_scope: "Verify Demographics module"
 
     dummy_data_reqs: "Patient age < 18 should fail"
 
     ecrf_design: "Field: Age, Type: Number, Min: 18"
-
-    '
-  expected: '| Test Step | Input Data | Expected Result |
 
     '
 evaluators:

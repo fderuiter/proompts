@@ -78,7 +78,7 @@ messages:
       Security Boundaries:
       <security_boundaries>{{security_boundaries}}</security_boundaries>
 testData:
-  - input:
+  - vars:
       monorepo_scale: "300 microservices across Go, Rust, and TypeScript. 5,000 engineers, 10,000 commits per day."
       ci_cd_constraints: "PR checks must complete in under 10 minutes. Builds must be deterministic."
       security_boundaries: "Fintech core services must be strictly isolated from experimental web frontends. Zero-trust internal network."

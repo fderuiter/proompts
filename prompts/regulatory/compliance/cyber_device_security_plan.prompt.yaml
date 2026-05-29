@@ -1,7 +1,7 @@
----
 name: Cyber Device Security Plan
 version: 0.1.0
-description: Draft a postmarket cybersecurity plan and Software Bill of Materials (SBOM).
+description: Draft a postmarket cybersecurity plan and Software Bill of Materials
+  (SBOM).
 metadata:
   domain: regulatory
   complexity: low
@@ -21,7 +21,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -47,8 +48,8 @@ messages:
 
     </input>'
 testData:
-- input: Software architecture and list of components. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: Software architecture and list of components. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Check

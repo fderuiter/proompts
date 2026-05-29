@@ -41,10 +41,10 @@ messages:
       {{financial_context}}
       </input>
 testData:
-  - input:
+  - vars:
       financial_context: "We are building a global B2B payments platform processing 5,000 TPS. The ledger must guarantee zero data loss, strict SOX compliance, and allow auditors to reconstruct the exact balance of any account at any millisecond in the past 7 years. Transactions often involve multi-currency conversions and split routing."
     expected: "append-only"
-  - input:
+  - vars:
       financial_context: "A crypto-fiat exchange requires a central internal ledger to reconcile on-chain deposits with internal fiat balances in real-time. Throughput is moderate (500 TPS), but strict mathematical proofs of solvency and non-repudiation of internal transfers are mandated by the regulator."
     expected: "CQRS"
 evaluators:

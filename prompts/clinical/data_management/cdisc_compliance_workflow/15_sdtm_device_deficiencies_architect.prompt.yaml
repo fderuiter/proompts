@@ -61,7 +61,7 @@ messages:
       <device_dictionary_data>{{device_dictionary_data}}</device_dictionary_data>
       <target_sdtm_version>{{target_sdtm_version}}</target_sdtm_version>
 testData:
-  - input:
+  - vars:
       edc_deficiency_data: |
         Subject: 501-001
         Date of Event: 2023-11-05

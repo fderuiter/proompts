@@ -68,7 +68,7 @@ messages:
 
       **Conclusion:** A summary of how these technologies converge to ensure protocol integrity.
 testData:
-  - input: |
+  - vars: |
       paper_title: "De-Risking Clinical Development: The Methodology of In Silico Trials"
       context_description: |
         We need to prove to our clients that our "In Silico" simulations are scientifically valid and not just a "black box." I am providing you with the core pillars of our offering.

@@ -1,4 +1,3 @@
----
 name: 'Driver Configuration: WebDriver Initialization'
 version: 0.1.0
 description: Initialize and configure WebDriver instances with specific browser options.
@@ -24,8 +23,9 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: Write a script to initialize a WebDriver (e.g., InternetExplorerDriver or ChromeDriver) using Capabilities/Options.
-    Configure proxy settings for HTTP, FTP, and SSL (e.g., 'localhost:8080'). If using Selenium Base, provide the 'sbase'
+  content: Write a script to initialize a WebDriver (e.g., InternetExplorerDriver
+    or ChromeDriver) using Capabilities/Options. Configure proxy settings for HTTP,
+    FTP, and SSL (e.g., 'localhost:8080'). If using Selenium Base, provide the 'sbase'
     command to install the latest driver executable to the correct directory.
 - role: user
   content: 'Create a WebDriver initialization script with the following requirements.
@@ -35,10 +35,10 @@ messages:
 
     Proxy: {{proxy_url}}'
 testData:
-- input: 'browser: Chrome
+- expected: ChromeOptions
+  vars: 'browser: Chrome
 
     proxy_url: localhost:8080'
-  expected: ChromeOptions
 evaluators:
 - name: Configures Options
   regex: Options

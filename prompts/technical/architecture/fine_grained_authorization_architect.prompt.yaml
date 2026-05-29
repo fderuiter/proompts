@@ -51,12 +51,12 @@ messages:
       Integration Ecosystem:
       {{integration_ecosystem}}
 testData:
-  - input:
+  - vars:
       authorization_model: "Multi-tenant B2B SaaS platform with nested organization units, team-based roles (admin, member), and resource-level permissions (document:read, document:write)."
       traffic_profile: "10,000 Check API requests per second globally, 99th percentile latency must be under 15ms. Write volume is 50 requests per second."
       integration_ecosystem: "Auth0 for Identity, 15 Go-based microservices, and a central PostgreSQL database holding current tenant hierarchies."
     expected: "ReBAC"
-  - input:
+  - vars:
       authorization_model: "Simple monolithic RBAC model with 3 fixed roles (Admin, User, Guest) and no resource-level boundaries."
       traffic_profile: "10 requests per minute."
       integration_ecosystem: "Single Node.js backend using local JWT validation."

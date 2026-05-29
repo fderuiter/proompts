@@ -1,7 +1,7 @@
----
 name: Financial Disclosure Certification
 version: 0.1.0
-description: Identify required financial disclosure forms and draft attestations for clinical investigators.
+description: Identify required financial disclosure forms and draft attestations for
+  clinical investigators.
 metadata:
   domain: regulatory
   complexity: low
@@ -20,7 +20,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -30,7 +31,8 @@ messages:
 
     ## Objective
 
-    Identify required financial disclosure forms and draft attestations for clinical investigators.
+    Identify required financial disclosure forms and draft attestations for clinical
+    investigators.
 
 
     ## Output Format
@@ -46,8 +48,8 @@ messages:
 
     </input>'
 testData:
-- input: Payment records and equity interest data. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: Payment records and equity interest data. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Cross\-reference

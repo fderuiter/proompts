@@ -1,4 +1,3 @@
----
 name: SOP Gap Analysis
 version: 0.1.0
 description: Identify gaps in data management standard operating procedures.
@@ -20,14 +19,15 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a process auditor evaluating data management SOPs to identify gaps.
+  content: 'You are a process auditor evaluating data management SOPs to identify
+    gaps.
 
     '
 - role: user
   content: '{{input}}'
 testData:
-- input: Review SOPs for data entry processes.
-  expected: Identifies missing version controls.
+- expected: Identifies missing version controls.
+  vars: Review SOPs for data entry processes.
 evaluators:
 - name: Output mentions SOP
   string:

@@ -56,7 +56,7 @@ messages:
       <root_cause_investigation>{{root_cause_investigation}}</root_cause_investigation>
       <corrective_action_plan>{{corrective_action_plan}}</corrective_action_plan>
 testData:
-  - input:
+  - vars:
       observation_text: "Procedures for design validation have not been adequately established to ensure devices conform to defined user needs and intended uses. Specifically, the design validation for device XYZ did not include testing under simulated use conditions with actual clinical users."
       background_context: "Device XYZ is a Class II software-in-a-medical-device (SiMD). Validation relied heavily on bench testing and internal engineering review. We lack a formal Human Factors engineering process."
       immediate_corrections: "Halted shipment of device XYZ. Initiated a retrospective use-error analysis and initiated contact with a third-party human factors consultancy."

@@ -1,7 +1,7 @@
----
 name: IRB Protocol Review
 version: 0.1.0
-description: Evaluate a clinical investigation protocol to ensure it meets IRB approval criteria.
+description: Evaluate a clinical investigation protocol to ensure it meets IRB approval
+  criteria.
 metadata:
   domain: regulatory
   complexity: low
@@ -20,7 +20,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -46,8 +47,8 @@ messages:
 
     </input>'
 testData:
-- input: Clinical protocol and informed consent forms. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: Clinical protocol and informed consent forms. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Verify

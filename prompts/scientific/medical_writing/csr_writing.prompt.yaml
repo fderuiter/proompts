@@ -1,4 +1,3 @@
----
 name: Clinical Study Report (CSR) Writing
 version: 0.1.0
 description: Draft Clinical Study Report sections.
@@ -21,11 +20,13 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Medical Writer. Draft the Clinical Study Report following the ICH E3 structure, integrating the final
-    statistical outputs and providing descriptive narratives for all serious adverse events.
+  content: You are a Medical Writer. Draft the Clinical Study Report following the
+    ICH E3 structure, integrating the final statistical outputs and providing descriptive
+    narratives for all serious adverse events.
 - role: user
-  content: 'Draft the Clinical Study Report following the ICH E3 structure, integrating the final statistical outputs and
-    providing descriptive narratives for all serious adverse events.
+  content: 'Draft the Clinical Study Report following the ICH E3 structure, integrating
+    the final statistical outputs and providing descriptive narratives for all serious
+    adverse events.
 
 
     Inputs:
@@ -37,10 +38,10 @@ messages:
 
     Markdown CSR Sections.'
 testData:
-- input: 'statistical_outputs: Efficacy data and SAE listings.
+- expected: 'Clinical Study Report
 
     '
-  expected: 'Clinical Study Report
+  vars: 'statistical_outputs: Efficacy data and SAE listings.
 
     '
 evaluators:

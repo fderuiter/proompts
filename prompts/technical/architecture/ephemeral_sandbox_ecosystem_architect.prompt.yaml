@@ -52,7 +52,7 @@ messages:
       Isolation Constraints:
       {{isolation_constraints}}
 testData:
-  - input:
+  - vars:
       target_workloads: "A monolithic legacy API and 15 event-driven microservices relying on PostgreSQL and Kafka."
       cloud_infrastructure: "AWS EKS with ArgoCD for deployment."
       isolation_constraints: "Strict namespace-level isolation, zero access to production IAM roles, and automated teardown after 4 hours of inactivity."

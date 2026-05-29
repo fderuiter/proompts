@@ -42,10 +42,10 @@ messages:
       Design an edge computing topology based on the following requirements:
       {{domain_requirements}}
 testData:
-  - input:
+  - vars:
       domain_requirements: "A smart agriculture platform needing real-time autonomous irrigation decisions in fields with intermittent 4G connectivity. Sensors measure soil moisture every minute. Battery life must exceed 5 years. Centralized analytics require daily roll-ups of soil data."
     expected: "Fog"
-  - input:
+  - vars:
       domain_requirements: "An automated guided vehicle (AGV) system in a smart factory. Requires sub-10ms latency for collision avoidance. Local factory network is highly reliable 5G, but external internet connection to the central cloud control plane is occasionally disrupted."
     expected: "Edge"
 evaluators:

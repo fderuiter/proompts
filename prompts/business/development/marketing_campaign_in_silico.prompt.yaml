@@ -98,7 +98,7 @@ messages:
       **Task:**
       Create a comprehensive Marketing Asset Package based on the provided information. Ensure all outputs are tailored to the specific needs and language of the target audience.
 testData:
-  - input:
+  - vars:
       service_suite_name: "Remote Patient Monitoring (RPM) Platform"
       target_audience: "Director of Clinical Operations at Mid-Sized Biotech"
       pain_points: |

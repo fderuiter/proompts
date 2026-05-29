@@ -67,7 +67,7 @@ messages:
       **Output Format:**
       Your final output must be a single markdown section with clear, well-defined headings for each part of the analysis. For each finding, provide a code snippet illustrating the issue and a clear recommendation for how to fix it.
 testData:
-  - input:
+  - vars:
       target_codebase_context: |
         def calcTotal(items):
             total = 0
@@ -79,7 +79,7 @@ testData:
                         pass
             return total
     expected: "Code Consistency"
-  - input:
+  - vars:
       target_codebase_context: ""
     expected: "No codebase context provided"
 evaluators:

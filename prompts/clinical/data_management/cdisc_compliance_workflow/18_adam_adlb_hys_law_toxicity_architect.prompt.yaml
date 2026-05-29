@@ -59,7 +59,7 @@ messages:
       <adsl_data>{{adsl_data}}</adsl_data>
       <protocol_toxicity_criteria>{{protocol_toxicity_criteria}}</protocol_toxicity_criteria>
 testData:
-  - input:
+  - vars:
       sdtm_lb_data: "Parameters: ALT, AST, BILI. Variables: LBTESTCD, LBORRES, LBSTRESN, LBSTNRLO, LBSTNRHI, LBDTC."
       adsl_data: "Variables: TRTSDT (Treatment Start Date), TRTEDT (Treatment End Date)."
       protocol_toxicity_criteria: "NCI-CTCAE v5.0. Hy's Law defined as: (ALT > 3x ULN OR AST > 3x ULN) AND BILI > 2x ULN concurrently within the same visit window."

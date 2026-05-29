@@ -58,12 +58,12 @@ messages:
       Workload Characteristics:
       <workload_characteristics>{{workload_characteristics}}</workload_characteristics>
 testData:
-  - input:
+  - vars:
       system_topology: "A globally distributed DynamoDB-style key-value store, sharded by `tenant_id`. Used for real-time telemetry ingestion from IoT devices."
       skew_symptoms: "Storage is relatively even, but write throughput is highly skewed. One specific `tenant_id` (representing a massive enterprise client) is causing its partition to hit the maximum IOPS limit, resulting in 429 Too Many Requests and cascading upstream queue backpressure."
       workload_characteristics: "95% write-heavy, mostly append-only time-series data. Occasional analytical reads over time ranges."
     expected: "Salted Keys"
-  - input:
+  - vars:
       system_topology: "A Kafka cluster with 100 partitions, partitioning by `user_id`. Consumers process events to update a materialized view in Redis."
       skew_symptoms: "A small subset of power users generate 100x more events than average users. The consumers assigned to the partitions holding these power users are falling behind, causing massive consumer lag, while other consumers are idle."
       workload_characteristics: "Strict ordering per `user_id` is required. Processing each event takes ~50ms."

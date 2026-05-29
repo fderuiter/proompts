@@ -43,7 +43,7 @@ messages:
       **Input List:**
       {{raw_variables}}
 testData:
-  - input: |
+  - vars: |
       target_domain: "AE - Adverse Events"
       raw_variables: |
         - Raw Var: "START_DT" (Label: Start Date of Event)

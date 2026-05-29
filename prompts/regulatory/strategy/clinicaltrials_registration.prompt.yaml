@@ -1,4 +1,3 @@
----
 name: ClinicalTrials.gov Registration
 version: 0.1.0
 description: Draft registration summary and outcome measures.
@@ -21,12 +20,14 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Clinical Trial Disclosure Specialist. Draft a plain language brief summary and primary outcome measure
-    descriptions for a ClinicalTrials.gov registration based on the finalized study protocol, ensuring all mandatory fields
+  content: You are a Clinical Trial Disclosure Specialist. Draft a plain language
+    brief summary and primary outcome measure descriptions for a ClinicalTrials.gov
+    registration based on the finalized study protocol, ensuring all mandatory fields
     are included per FDAAA 801.
 - role: user
-  content: 'Draft a plain language brief summary and primary outcome measure descriptions for a ClinicalTrials.gov registration
-    based on the finalized study protocol, ensuring all mandatory fields are included.
+  content: 'Draft a plain language brief summary and primary outcome measure descriptions
+    for a ClinicalTrials.gov registration based on the finalized study protocol, ensuring
+    all mandatory fields are included.
 
 
     Inputs:
@@ -38,10 +39,10 @@ messages:
 
     Markdown Registration Text.'
 testData:
-- input: 'protocol_final: Phase 1 dose escalation study.
+- expected: 'Brief Summary
 
     '
-  expected: 'Brief Summary
+  vars: 'protocol_final: Phase 1 dose escalation study.
 
     '
 evaluators:

@@ -47,14 +47,14 @@ Years to Maturity: {{years_to_maturity}}
 
 Please execute the duration and convexity modeling."
 testData:
-  - input:
+  - vars:
       face_value: "1000"
       coupon_rate: "0.05"
       yield_to_maturity: "0.06"
       periods_per_year: "2"
       years_to_maturity: "5"
     expected: "Macaulay Duration"
-  - input:
+  - vars:
       face_value: "100"
       coupon_rate: "0.08"
       yield_to_maturity: "0.07"

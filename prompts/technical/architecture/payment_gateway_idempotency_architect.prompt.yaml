@@ -53,12 +53,12 @@ messages:
       Consistency Constraints:
       {{consistency_constraints}}
 testData:
-  - input:
+  - vars:
       payment_rails: "Stripe and PayPal for global credit card processing."
       throughput_requirements: "10,000 TPS peak during flash sales, sub-second P99 latency."
       consistency_constraints: "Strict serializability required for payment initiation, eventual consistency acceptable for downstream ledger reconciliation."
     expected: "Outbox Pattern"
-  - input:
+  - vars:
       payment_rails: "Direct ACH integration and SEPA."
       throughput_requirements: "500 TPS sustained, mostly batch-oriented asynchronous processing."
       consistency_constraints: "Strong consistency required across all internal state transitions; no double-charging permitted under any partition scenario."

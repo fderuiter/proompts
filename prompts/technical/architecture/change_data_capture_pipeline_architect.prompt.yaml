@@ -45,7 +45,7 @@ messages:
       Source System: <source_system>{{source_system}}</source_system>
       Target Scale & Constraints: <target_scale>{{target_scale}}</target_scale>
 testData:
-  - input:
+  - vars:
       source_system: "PostgreSQL 14"
       target_scale: "Peak write load of 20,000 TPS. Requires sub-second end-to-end latency to the target data warehouse. Strict ordering and exactly-once processing required for financial transaction ledger."
     expected: "WAL"

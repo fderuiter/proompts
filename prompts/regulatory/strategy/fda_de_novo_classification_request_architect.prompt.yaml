@@ -50,11 +50,11 @@ messages:
       Risk Mitigation Strategy:
       {{risk_mitigation_strategy}}
 testData:
-  - input:
+  - vars:
       device_description: "A novel AI-driven wearable neuromodulation device intended to treat chronic insomnia by delivering targeted low-frequency electromagnetic pulses to the prefrontal cortex during sleep."
       risk_mitigation_strategy: "General controls including QSR compliance. Special controls proposed: electromagnetic compatibility (EMC) testing, software life cycle documentation, human factors validation, and a pivotal randomized sham-controlled clinical trial."
     expected: "De Novo Classification Request Strategy"
-  - input:
+  - vars:
       device_description: "A first-of-its-kind optical coherence tomography (OCT) imaging catheter equipped with real-time deep learning tissue classification for intraoperative margin assessment in solid tumor resections."
       risk_mitigation_strategy: "Special controls: in vivo diagnostic accuracy testing compared to histopathology, thermal safety evaluation of the optical probe, and rigorous cybersecurity risk management."
     expected: "Special Controls"

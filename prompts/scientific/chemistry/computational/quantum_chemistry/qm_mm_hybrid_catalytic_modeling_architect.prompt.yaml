@@ -57,12 +57,12 @@ messages:
       MM Environment (Protein/Solvent): <input>{{mm_environment}}</input>
       Theoretical Level Specification: <input>{{theoretical_level}}</input>
 testData:
-  - input:
+  - vars:
       active_site_system: "Fe(III)-heme, proximal His, and hydrogen peroxide substrate"
       mm_environment: "PDB: 1Hbg (Hemoglobin), TIP3P water sphere, neutralized with Na+"
       theoretical_level: "UB3LYP-D3(BJ)/def2-SVP (QM), CHARMM36 (MM), electronic embedding"
     expected: "I. QM/MM System Partitioning & Boundary Treatment"
-  - input:
+  - vars:
       active_site_system: "Zn(II), three His ligands, one coordinating water molecule"
       mm_environment: "PDB: 2CBA (Carbonic Anhydrase II), 0.15M NaCl, AMBER explicit solvent"
       theoretical_level: "M06-2X/6-311++G(d,p) (QM), ff14SB (MM), link-atom boundary"

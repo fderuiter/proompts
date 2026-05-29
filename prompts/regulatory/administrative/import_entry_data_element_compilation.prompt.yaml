@@ -1,7 +1,7 @@
----
 name: Import Entry Data Element Compilation
 version: 0.1.0
-description: Compile required identifying information (510(k), UFI, NDC, NDA) for electronic import entry of drugs or devices.
+description: Compile required identifying information (510(k), UFI, NDC, NDA) for
+  electronic import entry of drugs or devices.
 metadata:
   domain: regulatory
   complexity: low
@@ -21,7 +21,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -31,7 +32,8 @@ messages:
 
     ## Objective
 
-    Compile required identifying information (510(k), UFI, NDC, NDA) for electronic import entry of drugs or devices.
+    Compile required identifying information (510(k), UFI, NDC, NDA) for electronic
+    import entry of drugs or devices.
 
 
     ## Output Format
@@ -47,8 +49,9 @@ messages:
 
     </input>'
 testData:
-- input: Clearance documentation, registration numbers, and listing information. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: Clearance documentation, registration numbers, and listing information. (Example
+    data)
 evaluators:
 - name: Validation Check
   regex: (?i)Check

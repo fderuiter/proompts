@@ -50,7 +50,7 @@ messages:
       3. Impact on safety and effectiveness
       4. Regulatory conclusion (e.g., whether a new 510(k) is required)
 testData:
-  - input:
+  - vars:
       device_description: A software-based medical device for monitoring heart rate.
       intended_use: To continuously monitor and display heart rate in adults.
       proposed_change: Updating the user interface to change the color of the heart rate display from green to blue.

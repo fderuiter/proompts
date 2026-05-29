@@ -41,7 +41,7 @@ messages:
       {{system_requirements}}
       </input>
 testData:
-  - input:
+  - vars:
       system_requirements: "We are designing a global social media platform's user timeline and post storage. The system expects 50 billion new posts per day and extremely high read volume. Users primarily read their own timelines and those of people they follow, heavily biased towards recent posts. We must ensure sub-millisecond latency for timeline reads."
     expected: "sharding"
 evaluators:

@@ -58,7 +58,7 @@ messages:
       <adam_dataset_metadata>{{adam_dataset_metadata}}</adam_dataset_metadata>
       <target_define_xml_version>{{target_define_xml_version}}</target_define_xml_version>
 testData:
-  - input:
+  - vars:
       statistical_display_spec: |
         Display Name: Table 14.2.1.1 Incidence of Treatment-Emergent Adverse Events
         Reason: Pre-specified in SAP

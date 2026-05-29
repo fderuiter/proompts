@@ -51,7 +51,7 @@ messages:
       Latency & Consistency Targets:
       {{latency_and_consistency_targets}}
 testData:
-  - input:
+  - vars:
       game_genre_and_pacing: "Fast-paced, competitive 5v5 First-Person Shooter (FPS)."
       network_topology: "Dedicated authoritative servers hosted in multi-region cloud data centers, with clients connecting via reliable UDP."
       latency_and_consistency_targets: "Target 64Hz server tick rate, max 100ms latency for competitive viability, strict server authority with robust client-side prediction and lag compensation."
@@ -59,7 +59,7 @@ testData:
       game_genre_and_pacing: "Fast-paced, competitive 5v5 First-Person Shooter (FPS)."
       network_topology: "Dedicated authoritative servers hosted in multi-region cloud data centers, with clients connecting via reliable UDP."
       latency_and_consistency_targets: "Target 64Hz server tick rate, max 100ms latency for competitive viability, strict server authority with robust client-side prediction and lag compensation."
-  - input:
+  - vars:
       game_genre_and_pacing: "Massive Real-Time Strategy (RTS) with 10,000+ units on screen."
       network_topology: "Deterministic lockstep model over hybrid P2P with a relay server fallback."
       latency_and_consistency_targets: "Max 250ms input delay acceptable, strict absolute consistency required across all peers to prevent desyncs."

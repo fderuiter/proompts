@@ -52,7 +52,7 @@ messages:
 
       Provide the complete, step-by-step formal derivation covering the base case, successor case, and limit case.
 testData:
-  - input:
+  - vars:
       base_structure: "The Von Neumann universe $V$ stratified by the cumulative hierarchy $V_\\alpha$."
       inductive_property: "$V_\\alpha$ is a transitive set for all ordinals $\\alpha$."
       limit_case_condition: "For a limit ordinal $\\lambda$, $V_\\lambda = \\bigcup_{\\beta < \\lambda} V_\\beta$ preserves transitivity."
