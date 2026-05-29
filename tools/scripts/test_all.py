@@ -107,6 +107,7 @@ def main() -> int:
         "enforce_generated_docs_untracked": ensure_generated_docs_not_tracked,
         "check_prompts": check_prompts_main,
         "validate_prompt_schema": validate_prompt_schema_main,
+        "generate_compliance_manifest": lambda: run_command(["python3", "tools/scripts/governance_manifest_generator.py"]),
         "generate_overviews": lambda: run_command(["python3", "tools/scripts/generate_overviews.py"]),
         # Docs are build artifacts now, so we generate them before running integrity checks.
         "update_docs_index": lambda: run_command(["python3", "tools/scripts/update_docs_index.py"]),
