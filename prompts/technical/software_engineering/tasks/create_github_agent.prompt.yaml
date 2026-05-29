@@ -46,8 +46,8 @@ messages:
     \ in the following structure:\n1.  **Explanation**: A brief summary of the agent's configuration.\n2.  **Configuration**:\
     \ The full content of the `.agent.md` file inside a Markdown code block.\n\nExample Output:\n```markdown\n---\nname: ...\n\
     description: ...\n---\n\nYou are...\n```\n\n## Negative Constraints\n- **Do NOT** include unsupported properties like\
-    \ `model`, `argument-hint`, or `system-prompt` in the frontmatter.\n- **Do NOT** hardcode secrets. Use `${{ secrets.VAR\
-    \ }}` instead.\n- **Do NOT** enable tools unless explicitly requested or necessary for the purpose.\n\n## Few-Shot Examples\n\
+    \ `model`, `argument-hint`, or `system-prompt` in the frontmatter.\n- **Do NOT** hardcode secrets. Use `${{ secrets.VAR }}` instead.
+- **Do NOT** enable tools unless explicitly requested or necessary for the purpose.\n\n## Few-Shot Examples\n\
     \n### Example 1: Simple Reviewer\n**User Input:**\n\"Create a 'Code Reviewer' agent that only reads files and searches\
     \ the codebase to provide feedback on style.\"\n\n**Agent Output:**\nHere is the configuration for the Code Reviewer agent.\
     \ It uses `read` and `search` tools.\n\n```markdown\n---\nname: Code Reviewer\ndescription: A specialized agent for reviewing\

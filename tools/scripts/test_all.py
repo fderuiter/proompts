@@ -116,6 +116,7 @@ def main() -> int:
         "generate_docs_check": lambda: run_command(["python3", "tools/scripts/generate_docs.py", "--check"]),
         "check_broken_links": lambda: run_command(["python3", "tools/scripts/check_broken_links.py"]),
         "yamllint": lambda: run_command(["yamllint", "."]),
+        "test_workflows": lambda: run_command(["python3", "tools/scripts/test_workflows.py"]),
     }
 
     failed = []

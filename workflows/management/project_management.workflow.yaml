@@ -1,52 +1,60 @@
-name: "Project Management Workflow"
-description: "A workflow to create a project charter, risk register, status report, and timeline."
-
+name: Project Management Workflow
+description: A workflow to create a project charter, risk register, status report,
+  and timeline.
 inputs:
-  - name: "project_name"
-    description: "The name of the project."
-  - name: "project_description"
-    description: "A brief description of the project."
-  - name: "budget"
-    description: "The project budget."
-  - name: "deadline"
-    description: "The project deadline."
-  - name: "stakeholders"
-    description: "The project stakeholders."
-  - name: "business_outcome"
-    description: "The desired business outcome of the project."
-  - name: "update_notes"
-    description: "Raw update notes for the weekly status report."
-  - name: "project_type"
-    description: "The type of the project for the timeline."
-  - name: "objectives"
-    description: "The objectives for the timeline."
-  - name: "milestone_data"
-    description: "Milestone data for the timeline."
-
+- name: project_name
+  description: The name of the project.
+- name: project_description
+  description: A brief description of the project.
+- name: budget
+  description: The project budget.
+- name: deadline
+  description: The project deadline.
+- name: stakeholders
+  description: The project stakeholders.
+- name: business_outcome
+  description: The desired business outcome of the project.
+- name: update_notes
+  description: Raw update notes for the weekly status report.
+- name: project_type
+  description: The type of the project for the timeline.
+- name: objectives
+  description: The objectives for the timeline.
+- name: milestone_data
+  description: Milestone data for the timeline.
 steps:
-  - step_id: "project_charter"
-    prompt_file: "prompts/management/project_management/project_management_workflow/01_project_charter_scope.prompt.yaml"
-    map_inputs:
-      project_name: "{{inputs.project_name}}"
-      project_description: "{{inputs.project_description}}"
-      budget: "{{inputs.budget}}"
-      deadline: "{{inputs.deadline}}"
-      stakeholders: "{{inputs.stakeholders}}"
-      business_outcome: "{{inputs.business_outcome}}"
-
-  - step_id: "risk_register"
-    prompt_file: "prompts/management/project_management/project_management_workflow/02_risk_register_mitigation.prompt.yaml"
-    map_inputs:
-      project_overview: "{{steps.project_charter.output}}"
-
-  - step_id: "status_report"
-    prompt_file: "prompts/management/project_management/project_management_workflow/03_weekly_exec_status_report.prompt.yaml"
-    map_inputs:
-      update_notes: "{{inputs.update_notes}}"
-
-  - step_id: "timeline"
-    prompt_file: "prompts/management/project_management/project_management_workflow/04_detailed_project_blueprint_timeline.prompt.yaml"
-    map_inputs:
-      project_type: "{{inputs.project_type}}"
-      objectives: "{{inputs.objectives}}"
-      milestone_data: "{{inputs.milestone_data}}"
+- step_id: project_charter
+  prompt_file: prompts/management/project_management/project_management_workflow/01_project_charter_scope.prompt.yaml
+  map_inputs:
+    project_name: '{{inputs.project_name}}'
+    project_description: '{{inputs.project_description}}'
+    budget: '{{inputs.budget}}'
+    deadline: '{{inputs.deadline}}'
+    stakeholders: '{{inputs.stakeholders}}'
+    business_outcome: '{{inputs.business_outcome}}'
+- step_id: risk_register
+  prompt_file: prompts/management/project_management/project_management_workflow/02_risk_register_mitigation.prompt.yaml
+  map_inputs:
+    project_overview: '{{steps.project_charter.output}}'
+- step_id: status_report
+  prompt_file: prompts/management/project_management/project_management_workflow/03_weekly_exec_status_report.prompt.yaml
+  map_inputs:
+    update_notes: '{{inputs.update_notes}}'
+- step_id: timeline
+  prompt_file: prompts/management/project_management/project_management_workflow/04_detailed_project_blueprint_timeline.prompt.yaml
+  map_inputs:
+    project_type: '{{inputs.project_type}}'
+    objectives: '{{inputs.objectives}}'
+    milestone_data: '{{inputs.milestone_data}}'
+testData:
+- inputs:
+    project_type: Sample project_type
+    stakeholders: Sample stakeholders
+    milestone_data: Sample milestone_data
+    project_description: Sample project_description
+    update_notes: Sample update_notes
+    objectives: Sample objectives
+    project_name: Sample project_name
+    business_outcome: Sample business_outcome
+    deadline: Sample deadline
+    budget: Sample budget
