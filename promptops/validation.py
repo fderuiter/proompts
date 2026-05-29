@@ -2,7 +2,7 @@ import os
 import re
 from enum import Enum
 from pathlib import Path
-from typing import Any, List, Optional, Dict
+from typing import Any, List, Optional, Dict, Union
 
 from pydantic import BaseModel, ValidationError, field_validator, model_validator, Field
 from promptops.utils import load_yaml, iter_prompt_files, iter_workflow_files
@@ -104,10 +104,15 @@ class WorkflowInput(BaseModel):
     name: str = Field(...)
     description: Optional[str] = Field(None)
 
+class WorkflowEdge(BaseModel):
+    target: str = Field(...)
+    condition: Optional[str] = Field(None)
+
 class WorkflowStep(BaseModel):
     step_id: str = Field(...)
     prompt_file: str = Field(...)
     map_inputs: Dict[str, Any] = Field(...)
+    next: Optional[Union[str, List[Union[str, WorkflowEdge]]]] = Field(None)
 
 class WorkflowMetadata(BaseModel):
     domain: str = Field(...)
@@ -130,17 +135,36 @@ def analyze_workflow_dependencies(workflow_file: str, workflow_data: dict, root_
 
     # Dependency Graph (Circular & Forward reference detection)
     graph = {}
-    in_degree = {}
     step_ids = [step.step_id for step in wf.steps]
     
     for step_id in step_ids:
         graph[step_id] = []
-        in_degree[step_id] = 0
 
     global_inputs = {inp.name for inp in wf.inputs}
 
-    defined_so_far = set()
-    for step in wf.steps:
+    for i, step in enumerate(wf.steps):
+        targets = []
+        if step.next is not None:
+            if isinstance(step.next, str):
+                targets.append(step.next)
+            elif isinstance(step.next, list):
+                for edge in step.next:
+                    if isinstance(edge, str):
+                        targets.append(edge)
+                    elif isinstance(edge, WorkflowEdge):
+                        targets.append(edge.target)
+                    elif isinstance(edge, dict):
+                        targets.append(edge.get('target'))
+        else:
+            if i + 1 < len(wf.steps):
+                targets.append(wf.steps[i + 1].step_id)
+                
+        for t in targets:
+            if t not in step_ids:
+                issues.append(f"Step '{step.step_id}' references undefined next step '{t}'.")
+            else:
+                graph[step.step_id].append(t)
+
         for var_name, template in step.map_inputs.items():
             if not isinstance(template, str):
                 continue
@@ -151,32 +175,25 @@ def analyze_workflow_dependencies(workflow_file: str, workflow_data: dict, root_
                     issues.append(f"Step '{step.step_id}' mapping '{var_name}' refers to undefined global input '{inp_match}'.")
 
             # Check steps.*.output
-            steps_matches = re.findall(r'\{\{\s*steps\.([^\.\s]+)\.output\s*\}\}', template)
-            for step_match in steps_matches:
+            steps_matches = re.findall(r'\{\{\s*steps\.([^\.\s]+)\.(output|history)\s*\}\}', template)
+            for step_match, prop in steps_matches:
                 if step_match not in step_ids:
                     issues.append(f"Step '{step.step_id}' mapping '{var_name}' references undefined step '{step_match}'.")
-                elif step_match not in defined_so_far:
-                    issues.append(f"Step '{step.step_id}' depends on step '{step_match}' which has not been executed yet (forward or circular reference).")
-                else:
-                    graph[step_match].append(step.step_id)
-                    in_degree[step.step_id] += 1
 
-        defined_so_far.add(step.step_id)
-
-    # Check for circular dependencies globally
-    visited = 0
-    queue = [n for n in step_ids if in_degree[n] == 0]
-    
-    while queue:
-        node = queue.pop(0)
-        visited += 1
-        for neighbor in graph[node]:
-            in_degree[neighbor] -= 1
-            if in_degree[neighbor] == 0:
-                queue.append(neighbor)
+    # Detect disconnected components
+    if wf.steps:
+        start_node = wf.steps[0].step_id
+        visited = set()
+        queue = [start_node]
+        while queue:
+            node = queue.pop(0)
+            if node not in visited:
+                visited.add(node)
+                queue.extend(graph[node])
                 
-    if visited != len(step_ids):
-        issues.append(f"Circular dependency detected in workflow steps.")
+        unreachable = set(step_ids) - visited
+        if unreachable:
+            issues.append(f"Disconnected component(s) detected. The following steps are unreachable: {unreachable}")
 
     # Check Variable Contract
     for step in wf.steps:

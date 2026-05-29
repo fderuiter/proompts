@@ -537,29 +537,40 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
         "steps": {}
     }
 
-    # Execute each step in order
-    for step in workflow_data.get('steps', []):
+    steps_dict = {step['step_id']: step for step in workflow_data.get('steps', [])}
+    if not steps_dict:
+        return workflow_state
+
+    # Execute graph starting from the first step
+    current_step_id = workflow_data['steps'][0]['step_id']
+    
+    execution_counts = {step_id: 0 for step_id in steps_dict}
+    max_iterations = workflow_data.get('max_iterations', 10)
+
+    while current_step_id:
+        step = steps_dict[current_step_id]
         step_id = step['step_id']
+        
+        if execution_counts[step_id] >= max_iterations:
+            logger.error(f"Loop Limit Exceeded: Step '{step_id}' has been executed {execution_counts[step_id]} times. Terminating workflow.")
+            raise Exception("Loop Limit Exceeded")
+            
         prompt_file = step['prompt_file']
 
         # Adjust relative path resolving correctly if needed
-        # Assuming prompt_file is relative to the workflow file's directory or root
         if not os.path.exists(prompt_file):
-             # Try relative to workflow dir
              workflow_dir = os.path.dirname(workflow_file)
              alt_prompt_file = os.path.join(workflow_dir, prompt_file)
              if os.path.exists(alt_prompt_file):
                  prompt_file = alt_prompt_file
-             else:
-                 # Try relative to root (assuming current working directory is root)
-                 pass
 
-        logger.info(f"\n===== Simulating Step: {step_id} =====")
+        logger.info(f"\n===== Simulating Step: {step_id} (Iteration {execution_counts[step_id] + 1}) =====")
 
         # 1. Load the prompt file
         prompt_data = load_yaml(prompt_file)
         if not prompt_data:
             logger.warning(f"Skipping step {step_id} due to missing prompt file.")
+            current_step_id = None
             continue
 
         # 2. Resolve inputs for the prompt
@@ -572,9 +583,56 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
         # 3. Simulate prompt execution
         output = simulate_prompt_execution(prompt_data, prompt_inputs, prompt_file=prompt_file, strict_mode=strict_mode, chaos_mode=chaos_mode, fidelity_report=fidelity_report)
 
-        # 4. Store the output in the workflow state
-        workflow_state['steps'][step_id] = {'output': output}
+        # 4. Store the output in the workflow state (State Persistence)
+        if step_id not in workflow_state['steps']:
+            workflow_state['steps'][step_id] = {'output': output, 'history': [output], 'iterations': 1}
+        else:
+            workflow_state['steps'][step_id]['output'] = output
+            workflow_state['steps'][step_id]['history'].append(output)
+            workflow_state['steps'][step_id]['iterations'] += 1
+            
+        execution_counts[step_id] += 1
+        
         logger.debug(f"Step '{step_id}' produced output: (Content hidden for security)")
+
+        # 5. Determine the next step based on edge conditions
+        next_step_id = None
+        next_prop = step.get('next')
+        
+        if next_prop is not None:
+            if isinstance(next_prop, str):
+                next_step_id = next_prop
+            elif isinstance(next_prop, list):
+                for edge in next_prop:
+                    if isinstance(edge, str):
+                        next_step_id = edge
+                        break
+                    elif isinstance(edge, dict):
+                        condition = edge.get('condition')
+                        target = edge.get('target')
+                        if condition:
+                            try:
+                                rendered_cond = resolve_value(condition, workflow_state, strict_mode)
+                                if rendered_cond is True or str(rendered_cond).lower() == 'true':
+                                    next_step_id = target
+                                    break
+                            except Exception as e:
+                                logger.warning(f"Failed to evaluate condition '{condition}': {e}")
+                        else:
+                            # Unconditional edge
+                            next_step_id = target
+                            break
+        else:
+            # Fallback for backwards compatibility: implicit next step in array
+            idx = next((i for i, s in enumerate(workflow_data['steps']) if s['step_id'] == step_id), -1)
+            if idx != -1 and idx + 1 < len(workflow_data['steps']):
+                next_step_id = workflow_data['steps'][idx + 1]['step_id']
+                
+        if next_step_id and next_step_id not in steps_dict:
+            logger.error(f"Next step '{next_step_id}' not found in workflow steps.")
+            raise ValueError(f"Undefined next step: {next_step_id}")
+            
+        current_step_id = next_step_id
 
     return workflow_state
 
