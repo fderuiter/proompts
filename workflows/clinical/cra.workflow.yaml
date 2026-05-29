@@ -26,3 +26,9 @@ testData:
     pending_actions: Sample pending_actions
     study_info: Sample study_info
     visit_info: Sample visit_info
+version: 0.1.0
+metadata:
+  domain: clinical
+  topic: cra
+  complexity: medium
+  tags: []

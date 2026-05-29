@@ -22,3 +22,9 @@ steps:
 testData:
 - inputs:
     study_details: Sample study_details
+version: 0.1.0
+metadata:
+  domain: scientific
+  topic: pathology_study
+  complexity: medium
+  tags: []

@@ -22,3 +22,9 @@ testData:
 - inputs:
     procedure_name: Sample procedure_name
     procedure_notes: Sample procedure_notes
+version: 0.1.0
+metadata:
+  domain: scientific
+  topic: bioskills
+  complexity: medium
+  tags: []

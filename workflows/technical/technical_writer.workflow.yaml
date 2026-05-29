@@ -18,3 +18,9 @@ testData:
 - inputs:
     study_context: Sample study_context
     sponsor_requirements: Sample sponsor_requirements
+version: 0.1.0
+metadata:
+  domain: technical
+  topic: technical_writer
+  complexity: medium
+  tags: []

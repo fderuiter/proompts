@@ -39,3 +39,9 @@ testData:
     safety_listings: Sample safety_listings
     statistical_plan: Sample statistical_plan
     analysis_results: Sample analysis_results
+version: 0.1.0
+metadata:
+  domain: management
+  topic: vp_statistics
+  complexity: medium
+  tags: []

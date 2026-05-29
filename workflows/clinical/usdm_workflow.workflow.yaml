@@ -37,3 +37,9 @@ testData:
     protocol_text: Sample protocol_text
     protocol_objectives_text: Sample protocol_objectives_text
     protocol_soa_text: Sample protocol_soa_text
+version: 0.1.0
+metadata:
+  domain: clinical
+  topic: usdm_workflow
+  complexity: medium
+  tags: []

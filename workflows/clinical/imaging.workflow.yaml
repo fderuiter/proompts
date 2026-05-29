@@ -103,3 +103,9 @@ testData:
     central_reading_timepoints: Sample central_reading_timepoints
     charter_draft_endpoints: Sample charter_draft_endpoints
     qc_workflow_modalities: Sample qc_workflow_modalities
+version: 0.1.0
+metadata:
+  domain: clinical
+  topic: imaging
+  complexity: medium
+  tags: []

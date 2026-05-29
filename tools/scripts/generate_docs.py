@@ -137,6 +137,25 @@ class DocumentationGenerator:
     def __init__(self, root: Path):
         self.root = root
         self.items: List[DocItem] = []
+        self.prompt_to_workflows: Dict[Path, List[Dict[str, Any]]] = {}
+
+    def _build_relational_index(self):
+        wf_dir = self.root / CONFIG['dirs']['workflows']
+        if not wf_dir.exists():
+            return
+        for path in wf_dir.rglob("*"):
+            if path.name.startswith("._") or path.suffix not in {'.yaml', '.yml'} or '.workflow' not in path.name:
+                continue
+            data = load_yaml(path)
+            wf_title = FileParser.derive_title(path, data)
+            wf_rel_path = path.relative_to(self.root)
+            for step in data.get('steps', []):
+                prompt_file = step.get('prompt_file') or step.get('prompt')
+                if prompt_file:
+                    full_prompt_path = (self.root / prompt_file).resolve()
+                    if full_prompt_path not in self.prompt_to_workflows:
+                        self.prompt_to_workflows[full_prompt_path] = []
+                    self.prompt_to_workflows[full_prompt_path].append({'title': wf_title, 'path': wf_rel_path})
 
     def scan_prompts(self, check_mode: bool = False) -> bool:
         """
@@ -213,6 +232,17 @@ class DocumentationGenerator:
         except Exception as e:
             raw_content = f"# Error reading source file: {e}"
 
+        used_in_block = ""
+        resolved_source = source_path.resolve()
+        if resolved_source in self.prompt_to_workflows:
+            used_in_block = "## Used In\n\n"
+            for wf in sorted(self.prompt_to_workflows[resolved_source], key=lambda x: x['title']):
+                # Find the relative path from output docs page to the workflow docs page
+                wf_doc_path = self.root / CONFIG['dirs']['workflow_docs'] / wf['path'].stem.replace('.workflow', '')
+                wf_doc_path = wf_doc_path.with_suffix(".md")
+                rel_wf_doc = os.path.relpath(wf_doc_path, output_path.parent)
+                used_in_block += f"- [{wf['title']}]({rel_wf_doc})\n"
+
         content = f"""---
 title: {title}
 ---
@@ -220,6 +250,8 @@ title: {title}
 # {title}
 
 {desc}
+
+{used_in_block}
 
 [View Source YAML]({github_url})
 
@@ -273,7 +305,7 @@ title: {title}
                 item = DocItem(
                     title=FileParser.derive_title(path, data),
                     path=page_path, # Link to the generated MD, not the source YAML
-                    category=FileParser.derive_category(path, wf_dir),
+                    category=FileParser.derive_category(path, wf_dir, data),
                     item_type='workflow'
                 )
                 self.items.append(item)
@@ -304,6 +336,23 @@ title: {title}
 
         mermaid_block = f"## Workflow Diagram\n\n```mermaid\n{mermaid}\n```\n" if mermaid else ""
 
+        dependencies_block = ""
+        prompts_used = []
+        for step in data.get('steps', []):
+            prompt_ref = step.get('prompt_file') or step.get('prompt')
+            if prompt_ref:
+                # Resolve relative path from workflow docs page to prompt docs page
+                full_prompt_path = (self.root / prompt_ref).resolve()
+                try:
+                    rel_to_prompts = full_prompt_path.relative_to(self.root / CONFIG['dirs']['prompts'])
+                    prompt_doc_path = self.root / CONFIG['dirs']['docs'] / "prompts" / rel_to_prompts.with_suffix(".md")
+                    rel_prompt_doc = os.path.relpath(prompt_doc_path, output_path.parent)
+                    prompts_used.append(f"[{full_prompt_path.stem}]({rel_prompt_doc})")
+                except ValueError:
+                    prompts_used.append(f"`{prompt_ref}`")
+        if prompts_used:
+            dependencies_block = "## Dependencies\n\n" + "\n".join(f"- {p}" for p in prompts_used) + "\n\n"
+
         content = f"""---
 title: {title}
 ---
@@ -312,7 +361,7 @@ title: {title}
 
 {desc}
 
-{mermaid_block}
+{dependencies_block}{mermaid_block}
 [View Source YAML]({github_url})
 """
         if check_mode:
@@ -438,6 +487,8 @@ def main() -> None:
 
     if args.check:
         print("🔍 Checking documentation status...")
+
+    gen._build_relational_index()
 
     changes = gen.scan_prompts(check_mode=args.check)
     changes |= gen.scan_workflows(check_mode=args.check)

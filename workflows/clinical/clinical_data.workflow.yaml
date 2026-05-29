@@ -26,3 +26,9 @@ testData:
     edc_export_csv: Sample edc_export_csv
     edit_check_rules: Sample edit_check_rules
     dmp_section_requirements: Sample dmp_section_requirements
+version: 0.1.0
+metadata:
+  domain: clinical
+  topic: clinical_data
+  complexity: medium
+  tags: []

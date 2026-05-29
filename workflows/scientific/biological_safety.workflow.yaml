@@ -23,3 +23,9 @@ steps:
 testData:
 - inputs:
     medical_device_type: Sample medical_device_type
+version: 0.1.0
+metadata:
+  domain: scientific
+  topic: biological_safety
+  complexity: medium
+  tags: []
