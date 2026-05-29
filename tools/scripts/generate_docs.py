@@ -101,8 +101,8 @@ class FileParser:
 
 class WorkflowGrapher:
     """Specialized logic for Mermaid graph generation."""
-    RE_STEPS = re.compile(r'steps\.(\w+)\.output')
-    RE_INPUTS = re.compile(r'inputs\.(\w+)')
+    RE_STEPS = re.compile(r'steps\.([a-zA-Z0-9_-]+)\.(?:output|history)')
+    RE_INPUTS = re.compile(r'inputs\.([a-zA-Z0-9_-]+)')
     
     @staticmethod
     def generate(data: Dict[str, Any]) -> str:
@@ -114,22 +114,48 @@ class WorkflowGrapher:
         # Inputs
         for inp in data.get('inputs', []):
             name = inp.get('name', 'Unknown')
-            graph.append(f"    Input_{name}[Input: {name}] --> Steps")
+            graph.append(f"    Input_{name}[Input: {name}] -.-> Steps")
 
-        # Steps & Dependencies
-        for step in data.get('steps', []):
+        steps = data.get('steps', [])
+        
+        # Step Nodes & Control Flow
+        for i, step in enumerate(steps):
             step_id = step.get('step_id', 'unknown')
             graph.append(f"    {step_id}[Step: {step_id}]")
             
+            next_prop = step.get('next')
+            if next_prop is not None:
+                if isinstance(next_prop, str):
+                    graph.append(f"    {step_id} --> {next_prop}")
+                elif isinstance(next_prop, list):
+                    for edge in next_prop:
+                        if isinstance(edge, str):
+                            graph.append(f"    {step_id} --> {edge}")
+                        elif isinstance(edge, dict):
+                            target = edge.get('target', 'unknown')
+                            condition = edge.get('condition')
+                            if condition:
+                                cond_text = str(condition).replace('"', "'")
+                                graph.append(f"    {step_id} -->|\"{cond_text}\"| {target}")
+                            else:
+                                graph.append(f"    {step_id} --> {target}")
+            else:
+                if i + 1 < len(steps):
+                    next_step = steps[i+1].get('step_id', 'unknown')
+                    graph.append(f"    {step_id} --> {next_step}")
+
+        # Data Dependencies
+        for step in steps:
+            step_id = step.get('step_id', 'unknown')
             inputs_map = step.get('map_inputs', {})
             for val in inputs_map.values():
                 if isinstance(val, str):
                     # Dependency on other steps
                     for match in WorkflowGrapher.RE_STEPS.findall(val):
-                        graph.append(f"    {match} --> {step_id}")
+                        graph.append(f"    {match} -.->|data| {step_id}")
                     # Dependency on global inputs
                     for match in WorkflowGrapher.RE_INPUTS.findall(val):
-                        graph.append(f"    Input_{match} --> {step_id}")
+                        graph.append(f"    Input_{match} -.->|data| {step_id}")
                         
         return "\n".join(graph) if len(graph) > 1 else ""
 
