@@ -9,6 +9,12 @@ from promptops.utils import load_yaml, iter_prompt_files, iter_workflow_files
 
 VAR_PATTERN = re.compile(r'\{\{([^}]+)\}\}')
 
+
+class LifecycleStatus(str, Enum):
+    draft = 'draft'
+    stable = 'stable'
+    deprecated = 'deprecated'
+
 class ComplexityLevel(str, Enum):
     LOW = 'low'
     MEDIUM = 'medium'
@@ -39,6 +45,8 @@ class PromptMetadata(BaseModel):
 
 class PromptSchema(BaseModel):
     name: str = Field(...)
+    status: LifecycleStatus = Field(default=LifecycleStatus.draft)
+
     version: str = Field("0.1.0")
     description: str = Field(...)
     metadata: Optional[PromptMetadata] = Field(None)
@@ -118,8 +126,30 @@ class WorkflowMetadata(BaseModel):
     domain: str = Field(...)
     topic: Optional[str] = Field(None)
 
+
+    @model_validator(mode='after')
+    def check_placeholders_and_status(self):
+        if self.status != LifecycleStatus.stable:
+            return self
+
+        def check_obj(obj, path):
+            if isinstance(obj, str):
+                if re.search(r'\b(TBD|TODO|FIXME)\b', obj):
+                    raise ValueError(f"Stable prompt contains placeholder string at {path}: {obj}")
+            elif isinstance(obj, dict):
+                for k, v in obj.items():
+                    check_obj(v, f"{path}.{k}")
+            elif isinstance(obj, list):
+                for i, v in enumerate(obj):
+                    check_obj(v, f"{path}[{i}]")
+        
+        check_obj(self.model_dump(), "root")
+        return self
+
 class WorkflowSchema(BaseModel):
     name: str = Field(...)
+    status: LifecycleStatus = Field(default=LifecycleStatus.draft)
+
     description: Optional[str] = Field(None)
     metadata: Optional[WorkflowMetadata] = Field(None)
     inputs: List[WorkflowInput] = Field([])
@@ -234,59 +264,40 @@ def analyze_workflow_dependencies(workflow_file: str, workflow_data: dict, root_
             
     return issues
 
+
 def validate_prompts(directory: str, strict: bool = False) -> bool:
-    ok = True
-    seen_names = {}
     dir_path = os.environ.get('PROMPTOPS_REGISTRY', directory)
+    fatal_errors = []
     
+    all_prompt_files = set()
+    referenced_prompts = set()
+
     for file_path in iter_prompt_files(dir_path):
+        all_prompt_files.add(os.path.normpath(os.path.abspath(str(file_path))))
         content = load_yaml(str(file_path))
         if not content:
-            ok = False
+            fatal_errors.append(f"Failed to load {file_path}")
             continue
             
         try:
             PromptSchema(**content)
         except ValidationError as e:
-            print(f"Validation error in {file_path}:\n{e}")
-            ok = False
-            continue
+            fatal_errors.append(f"Validation error in {file_path}:\n{e}")
 
-        if strict:
-            issues = []
-            if not content.get('testData') or len(content.get('testData', [])) == 0:
-                issues.append("no testData")
-            elif len(content.get('testData', [])) == 1:
-                issues.append("only 1 test case")
-            
-            if not content.get('evaluators') or len(content.get('evaluators', [])) == 0:
-                issues.append("no evaluators")
-            
-            if issues:
-                print(f"Warning: {file_path} has {', '.join(issues)}")
-
-        name = content.get('name')
-        if name:
-            if name in seen_names:
-                print(f"Error: Duplicate name '{name}' found in:\n  - {seen_names[name]}\n  - {file_path}")
-                ok = False
-            else:
-                seen_names[name] = str(file_path)
-
-
-    # Validate Workflows
     for file_path in iter_workflow_files(dir_path):
         content = load_yaml(str(file_path))
-        if not content:
-            ok = False
-            continue
-            
-        issues = analyze_workflow_dependencies(str(file_path), content, dir_path)
-        if issues:
-            print(f"Validation error in workflow {file_path}:")
-            for issue in issues:
-                print(f"  - {issue}")
-            ok = False
+        if content:
+            for step in content.get('steps', []):
+                if 'prompt_file' in step:
+                    p_path = os.path.join(dir_path, step['prompt_file'])
+                    referenced_prompts.add(os.path.normpath(os.path.abspath(p_path)))
 
-    return ok
+    orphans = all_prompt_files - referenced_prompts
+    for orphan in orphans:
+        fatal_errors.append(f"Orphaned prompt file detected: {orphan}. It is not referenced by any active workflow.")
+
+    if fatal_errors:
+        raise RuntimeError("Registry validation failed with fatal errors:\n" + "\n".join(fatal_errors))
+
+    return True
 

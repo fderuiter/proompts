@@ -100,8 +100,6 @@ Top-level fields available in a prompt file include:
 - `testData` – example inputs with their expected outputs
 - `evaluators` – rules for verifying model responses
 
-See `docs/template_prompt.prompt.yaml` for a filled-out example.
-
 ## Prompt Workflows
 
 In addition to individual prompts, this repository supports **Prompt Workflows**,
@@ -135,7 +133,7 @@ It is recommended to run this script before committing changes.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed instructions on how to contribute.
 
-1. Create prompts as `.prompt.yaml` files that follow [`docs/template_prompt.prompt.yaml`](docs/template_prompt.prompt.yaml) and place them in the appropriate folder.
+1. Create prompts as `.prompt.yaml` files and place them in the appropriate folder.
 2. Review the [Best Practices Guide](docs/BEST_PRACTICES.md) for detailed guidance on creating high-quality prompts.
 3. Ensure your prompt includes:
    - Meaningful `testData` with realistic examples (at least 1-2 test cases)

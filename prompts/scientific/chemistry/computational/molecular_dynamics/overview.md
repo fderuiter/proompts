@@ -1,7 +1,0 @@
-# Molecular Dynamics Overview
-
-## Prompts
-- **[Free Energy Perturbation Architect](free_energy_perturbation_architect.prompt.yaml)**: Generates rigorous molecular dynamics simulation protocols for alchemical Free Energy Perturbation (FEP) calculations to predict relative binding free energies.
-- **[Metadynamics Free Energy Surface Architect](metadynamics_free_energy_surface_architect.prompt.yaml)**: Generates rigorous metadynamics simulation protocols for exploring complex free energy surfaces and identifying transition states.
-- **[Temperature Replica Exchange Molecular Dynamics Architect](replica_exchange_md_architect.prompt.yaml)**: Generates rigorous Temperature Replica Exchange Molecular Dynamics (T-REMD) simulation protocols for enhanced conformational sampling of complex biomolecules crossing high free-energy barriers.
-- **[Steered Molecular Dynamics Unbinding Architect](steered_molecular_dynamics_unbinding_architect.prompt.yaml)**: Generates rigorous steered molecular dynamics (SMD) simulation protocols for calculating protein-ligand unbinding kinetics, work distributions, and rupture forces using non-equilibrium physics and advanced reaction coordinate definitions.

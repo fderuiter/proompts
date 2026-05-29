@@ -25774,5 +25774,987 @@
         }
       ]
     }
+  ],
+  "2026-05-29T20:15:12.201477+00:00": [
+    {
+      "prompt_file": "prompts/scientific/sterility/sterility_workflow/01_sterility_validation_protocol_builder.prompt.yaml",
+      "prompt_version": "0.1.1",
+      "prompt_hash": "e7d5c6b0323977cc80127d30384843fcd4e6b8ccbb577d748d98d7fa45ad29e6",
+      "timestamp": "2026-05-29T20:15:12.201477+00:00",
+      "regulatory_identifiers": [
+        "ISO 11137",
+        "ISO 11737"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 11137",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        },
+        {
+          "standard": "ISO 11737",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/microbiology/microbiology_workflow/01_bioburden_testing_sop.prompt.yaml",
+      "prompt_version": "0.2.0",
+      "prompt_hash": "04ec921febb377f4bc916a23a36175b8607b4a4e1662004a25b44dd02530c765",
+      "timestamp": "2026-05-29T20:15:12.201477+00:00",
+      "regulatory_identifiers": [
+        "ISO 13485",
+        "ISO 11737"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 13485",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        },
+        {
+          "standard": "ISO 11737",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/microbiology/microbiology_workflow/02_eo_sterilization_validation_protocol.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "fba3dc7f00a7e56f28496a583db225ec7eefb60b9d88386c0ffba33f42855835",
+      "timestamp": "2026-05-29T20:15:12.201477+00:00",
+      "regulatory_identifiers": [
+        "ISO 11737",
+        "ISO 11135:2014"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 11737",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        },
+        {
+          "standard": "ISO 11135:2014",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/pathology/pathology_study_workflow/01_study_protocol_outline.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "2ffc94875a2e20d85b6c0e13e7403fd7195949b843da3a0da15284e94954b031",
+      "timestamp": "2026-05-29T20:15:12.201477+00:00",
+      "regulatory_identifiers": [
+        "ISO 10993",
+        "21 CFR 58"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 10993",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR 58",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/chemical_characterization/chemical_characterization_workflow/01_design_the_study.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "07ef77afe1f07979ac91c977666f57f5f970e41f55283e922ac3ec37cb79bba1",
+      "timestamp": "2026-05-29T20:15:12.201477+00:00",
+      "regulatory_identifiers": [
+        "ISO 10993"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 10993",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/chemical_characterization/chemical_characterization_workflow/03_write_the_regulatory_summary.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "a7a33c923f9765e0fecc3bf979537d95599474b968ae9ab31abc76c5287c87bb",
+      "timestamp": "2026-05-29T20:15:12.201477+00:00",
+      "regulatory_identifiers": [
+        "ISO 10993"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 10993",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/biosafety/biological_safety_workflow/01_risk_assessment_expert.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "aee5bf1f5e4c7e6527b09cea7c46237e8f6ccf79672ee59a4f0ee17ab93514d2",
+      "timestamp": "2026-05-29T20:15:12.201477+00:00",
+      "regulatory_identifiers": [
+        "ISO 14971",
+        "ISO 10993"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 14971",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "4.2",
+              "description": "Risk Analysis",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "5.1",
+              "description": "Risk Evaluation",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "6.1",
+              "description": "Risk Control",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 6.1."
+            }
+          ]
+        },
+        {
+          "standard": "ISO 10993",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/biosafety/biological_safety_workflow/03_regulatory_submission_support.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "294a6983933420f4f11c78e412352303147d312ae58e98237e422663704955de",
+      "timestamp": "2026-05-29T20:15:12.201477+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 820"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 820",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "820.100",
+              "description": "CAPA",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "820.30",
+              "description": "Design Controls",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/cra/cra_workflow/01_monitoring_visit_report_generator.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "0a69287d9e3445fe8795a50d5758c030a9f85954610f5df3fea00bb8d73344cf",
+      "timestamp": "2026-05-29T20:15:12.201477+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 312"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 312",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/imaging/imaging_workflow/01_imaging_charter_draft.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "099e5f6f6d108b74a1c812621cc01e25391aeadeaae647e173ffcc3a9e088cad",
+      "timestamp": "2026-05-29T20:15:12.201477+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/imaging/imaging_workflow/04_regulatory_imaging_charter_generator.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "f49b3068e44e2ad05e65636a8a69df87177161b4e94bea80f997faa80aea10a5",
+      "timestamp": "2026-05-29T20:15:12.201477+00:00",
+      "regulatory_identifiers": [
+        "ISO 13485",
+        "ISO 14155"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 13485",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        },
+        {
+          "standard": "ISO 14155",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/imaging/imaging_workflow/06_regulatory_imaging_data_package.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "4a68e4ccf7df35abae469547d60d99b216ce1c49d5d6bb34024c44228b20dda5",
+      "timestamp": "2026-05-29T20:15:12.201477+00:00",
+      "regulatory_identifiers": [
+        "ISO 13485"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 13485",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/imaging/imaging_workflow/05_image_acquisition_qc_workflow_blueprint.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "b6d47970c9eed7184cb904c7ee1c1769fdb13e4c7c4dd5a8224e2ff83bd063e2",
+      "timestamp": "2026-05-29T20:15:12.201477+00:00",
+      "regulatory_identifiers": [
+        "ISO 13485"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 13485",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/eclinical_integration/eclinical_integration_workflow/03_regulatory_validation_checklist.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "97a5b22b9c38b40fcaaae9f5b134ea0979b5db1486a351cf5127165ad43dc62d",
+      "timestamp": "2026-05-29T20:15:12.201477+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/safety/clinical_safety_workflow/02_fda_mdr_adverse_event_narrative.prompt.yaml",
+      "prompt_version": "0.2.0",
+      "prompt_hash": "134d7ba7381a3f6951b9a25e284d3a893161c8703855d4ad644cfb9bbca9aa42",
+      "timestamp": "2026-05-29T20:15:12.201477+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 803.52",
+        "21 CFR 803"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 803.52",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR 803",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/technical/technical_writing/technical_writer_workflow/03_sae_reporting_sop.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "b424bb9005621f003645d1673192b359fe2800ae1dc4a10bb5fad476a20ca637",
+      "timestamp": "2026-05-29T20:15:12.201477+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 312"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 312",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "2026-05-29T20:15:50.777536+00:00": [
+    {
+      "prompt_file": "prompts/scientific/sterility/sterility_workflow/01_sterility_validation_protocol_builder.prompt.yaml",
+      "prompt_version": "0.1.1",
+      "prompt_hash": "e7d5c6b0323977cc80127d30384843fcd4e6b8ccbb577d748d98d7fa45ad29e6",
+      "timestamp": "2026-05-29T20:15:50.777536+00:00",
+      "regulatory_identifiers": [
+        "ISO 11137",
+        "ISO 11737"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 11137",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        },
+        {
+          "standard": "ISO 11737",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/microbiology/microbiology_workflow/01_bioburden_testing_sop.prompt.yaml",
+      "prompt_version": "0.2.0",
+      "prompt_hash": "04ec921febb377f4bc916a23a36175b8607b4a4e1662004a25b44dd02530c765",
+      "timestamp": "2026-05-29T20:15:50.777536+00:00",
+      "regulatory_identifiers": [
+        "ISO 13485",
+        "ISO 11737"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 13485",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        },
+        {
+          "standard": "ISO 11737",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/microbiology/microbiology_workflow/02_eo_sterilization_validation_protocol.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "fba3dc7f00a7e56f28496a583db225ec7eefb60b9d88386c0ffba33f42855835",
+      "timestamp": "2026-05-29T20:15:50.777536+00:00",
+      "regulatory_identifiers": [
+        "ISO 11737",
+        "ISO 11135:2014"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 11737",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        },
+        {
+          "standard": "ISO 11135:2014",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/pathology/pathology_study_workflow/01_study_protocol_outline.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "2ffc94875a2e20d85b6c0e13e7403fd7195949b843da3a0da15284e94954b031",
+      "timestamp": "2026-05-29T20:15:50.777536+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 58",
+        "ISO 10993"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 58",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        },
+        {
+          "standard": "ISO 10993",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/chemical_characterization/chemical_characterization_workflow/01_design_the_study.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "07ef77afe1f07979ac91c977666f57f5f970e41f55283e922ac3ec37cb79bba1",
+      "timestamp": "2026-05-29T20:15:50.777536+00:00",
+      "regulatory_identifiers": [
+        "ISO 10993"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 10993",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/chemical_characterization/chemical_characterization_workflow/03_write_the_regulatory_summary.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "a7a33c923f9765e0fecc3bf979537d95599474b968ae9ab31abc76c5287c87bb",
+      "timestamp": "2026-05-29T20:15:50.777536+00:00",
+      "regulatory_identifiers": [
+        "ISO 10993"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 10993",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/biosafety/biological_safety_workflow/01_risk_assessment_expert.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "aee5bf1f5e4c7e6527b09cea7c46237e8f6ccf79672ee59a4f0ee17ab93514d2",
+      "timestamp": "2026-05-29T20:15:50.777536+00:00",
+      "regulatory_identifiers": [
+        "ISO 14971",
+        "ISO 10993"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 14971",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "4.2",
+              "description": "Risk Analysis",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "5.1",
+              "description": "Risk Evaluation",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "6.1",
+              "description": "Risk Control",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 6.1."
+            }
+          ]
+        },
+        {
+          "standard": "ISO 10993",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/biosafety/biological_safety_workflow/03_regulatory_submission_support.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "294a6983933420f4f11c78e412352303147d312ae58e98237e422663704955de",
+      "timestamp": "2026-05-29T20:15:50.777536+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 820"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 820",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "820.100",
+              "description": "CAPA",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "820.30",
+              "description": "Design Controls",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/cra/cra_workflow/01_monitoring_visit_report_generator.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "0a69287d9e3445fe8795a50d5758c030a9f85954610f5df3fea00bb8d73344cf",
+      "timestamp": "2026-05-29T20:15:50.777536+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 312"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 312",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/imaging/imaging_workflow/01_imaging_charter_draft.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "099e5f6f6d108b74a1c812621cc01e25391aeadeaae647e173ffcc3a9e088cad",
+      "timestamp": "2026-05-29T20:15:50.777536+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/imaging/imaging_workflow/04_regulatory_imaging_charter_generator.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "f49b3068e44e2ad05e65636a8a69df87177161b4e94bea80f997faa80aea10a5",
+      "timestamp": "2026-05-29T20:15:50.777536+00:00",
+      "regulatory_identifiers": [
+        "ISO 13485",
+        "ISO 14155"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 13485",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        },
+        {
+          "standard": "ISO 14155",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/imaging/imaging_workflow/06_regulatory_imaging_data_package.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "4a68e4ccf7df35abae469547d60d99b216ce1c49d5d6bb34024c44228b20dda5",
+      "timestamp": "2026-05-29T20:15:50.777536+00:00",
+      "regulatory_identifiers": [
+        "ISO 13485"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 13485",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/imaging/imaging_workflow/05_image_acquisition_qc_workflow_blueprint.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "b6d47970c9eed7184cb904c7ee1c1769fdb13e4c7c4dd5a8224e2ff83bd063e2",
+      "timestamp": "2026-05-29T20:15:50.777536+00:00",
+      "regulatory_identifiers": [
+        "ISO 13485"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 13485",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/eclinical_integration/eclinical_integration_workflow/03_regulatory_validation_checklist.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "97a5b22b9c38b40fcaaae9f5b134ea0979b5db1486a351cf5127165ad43dc62d",
+      "timestamp": "2026-05-29T20:15:50.777536+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/safety/clinical_safety_workflow/02_fda_mdr_adverse_event_narrative.prompt.yaml",
+      "prompt_version": "0.2.0",
+      "prompt_hash": "134d7ba7381a3f6951b9a25e284d3a893161c8703855d4ad644cfb9bbca9aa42",
+      "timestamp": "2026-05-29T20:15:50.777536+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 803",
+        "21 CFR 803.52"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 803",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR 803.52",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/technical/technical_writing/technical_writer_workflow/03_sae_reporting_sop.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "b424bb9005621f003645d1673192b359fe2800ae1dc4a10bb5fad476a20ca637",
+      "timestamp": "2026-05-29T20:15:50.777536+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 312"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 312",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    }
   ]
 }

@@ -147,10 +147,9 @@ def main() -> int:
         dirs_to_process = [root_dir] + [d for d in root_dir.rglob("*") if d.is_dir()]
 
         for directory in dirs_to_process:
-            if has_content(directory):
-                if ensure_overview(directory, content_cache):
-                    print(f"Generated overview for {directory}")
-                    changed = True
+            if ensure_overview(directory, content_cache):
+                print(f"Generated/Deleted overview for {directory}")
+                changed = True
                 
     return 0 if changed else 0
 

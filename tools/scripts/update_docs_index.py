@@ -43,10 +43,8 @@ Whether you are a Product Manager, Clinical Lead, or Software Engineer, this rep
 
 - [Business](business.md)
 - [Clinical](clinical.md)
-- [Communication](communication.md)
 - [Management](management.md)
 - [Meta](meta.md)
-- [Regulatory](regulatory.md)
 - [Scientific](scientific.md)
 - [Technical](technical.md)
 - [Workflows](workflows.md)
