@@ -56,10 +56,12 @@ yaml.add_representer(str, str_presenter)
 
 try:
     from promptops.utils import ROOT, extract_template_vars, iter_prompt_files, load_yaml
+    from promptops.persistence import update_yaml
 except ImportError:
     import sys
-    sys.path.append(str(Path(__file__).parent))
+    sys.path.append(str(Path(__file__).parent.parent.parent))
     from promptops.utils import ROOT, extract_template_vars, iter_prompt_files, load_yaml
+    from promptops.persistence import update_yaml
 
 PROMPTS_DIR = ROOT / "prompts"
 
@@ -365,112 +367,92 @@ def enrich_file(file_path: Path, dry_run: bool = False) -> bool:
         print(f"  SKIP (empty): {file_path}")
         return False
 
-    modified = False
-    parts = _path_parts(file_path)
-
-    # ── A. Fill in variable descriptions ────────────────────────────────
+    needs_enrichment = False
+    
+    # Quick check if it needs enrichment before using lock
     current_vars = content.get("variables", [])
     vars_in_template = extract_template_vars(content)
-    prompt_name = content.get("name", "")
-    prompt_desc = content.get("description", "")
-
-    # Extract prompt content for context
-    messages = content.get("messages", [])
-    system_prompt = next((m.get("content", "") for m in messages if m.get("role") == "system"), "")
-    user_prompt = next((m.get("content", "") for m in messages if m.get("role") == "user"), "")
-    combined_context = f"{system_prompt}\n{user_prompt}"
-
-    enriched_vars = []
+    
     for var in current_vars:
-        var_name = var.get("name")
-        if var_name not in vars_in_template:
-            modified = True
-            continue
-
-        if var.get("description") == "TODO" or not var.get("description"):
-            print(f"  Suggesting description for variable '{var_name}'...")
-            suggested_desc = suggest_variable_description(var_name, combined_context)
-            print(f"    Suggested: {suggested_desc}")
-
-            # Create new var dict to preserve order and fields
-            new_var = var.copy()
-            new_var["description"] = suggested_desc
-            enriched_vars.append(new_var)
-            modified = True
-        else:
-            enriched_vars.append(var)
-
-    # Add any missing variables from template that weren't in current_vars
-    existing_names = {v.get("name") for v in enriched_vars}
-    for v_name in vars_in_template:
-        if v_name not in existing_names:
-            print(f"  Adding missing variable '{v_name}' from template...")
-            new_desc = suggest_variable_description(v_name, combined_context)
-            enriched_vars.append({
-                "name": v_name,
-                "description": new_desc,
-                "required": True
-            })
-            modified = True
-
-    if modified:
-        content["variables"] = enriched_vars
-
-    # ── B. Add or complete metadata ─────────────────────────────────────
+        if var.get("name") not in vars_in_template:
+            needs_enrichment = True
+        elif var.get("description") == "TODO" or not var.get("description"):
+            needs_enrichment = True
+            
+    existing_names = {v.get("name") for v in current_vars}
+    if any(v not in existing_names for v in vars_in_template):
+        needs_enrichment = True
+        
     metadata = content.get("metadata")
-    # Handle missing or null metadata block
     if metadata is None:
-        metadata = {}
-        content["metadata"] = metadata
-        modified = True
-
-    # Infer values if missing
-    if "domain" not in metadata:
-        metadata["domain"] = infer_domain(parts)
-        modified = True
-    if "complexity" not in metadata:
-        metadata["complexity"] = infer_complexity(content)
-        modified = True
-    if "tags" not in metadata:
-        metadata["tags"] = infer_tags(parts, prompt_name)
-        modified = True
-    if "requires_context" not in metadata:
-        metadata["requires_context"] = infer_requires_context(content)
-        modified = True
-
-    if not modified:
+        needs_enrichment = True
+    elif any(k not in metadata for k in ("domain", "complexity", "tags", "requires_context")):
+        needs_enrichment = True
+        
+    if not needs_enrichment:
         print(f"  OK (already enriched): {file_path}")
         return False
-
+        
     if dry_run:
         print(f"  DRY-RUN would enrich: {file_path}")
         return True
 
-    # ── Write back ──────────────────────────────────────────────────────
-    # Reorder keys for readability: name, version, description, metadata,
-    # variables, model, modelParameters, messages, testData, evaluators
-    ordered: dict[str, Any] = {}
-    key_order = [
-        "name", "version", "description", "metadata", "variables",
-        "model", "modelParameters", "messages", "testData", "evaluators",
-        "last_modified",
-    ]
-    for k in key_order:
-        if k in content:
-            ordered[k] = content[k]
-    # Any remaining keys not in the predefined order
-    for k, v in content.items():
-        if k not in ordered:
-            ordered[k] = v
+    parts = _path_parts(file_path)
+    
+    with update_yaml(file_path) as content:
+        # Extract prompt content for context
+        messages = content.get("messages", [])
+        system_prompt = next((m.get("content", "") for m in messages if m.get("role") == "system"), "")
+        user_prompt = next((m.get("content", "") for m in messages if m.get("role") == "user"), "")
+        combined_context = f"{system_prompt}\n{user_prompt}"
+        
+        prompt_name = content.get("name", "")
 
-    yaml_text = yaml.dump(
-        ordered,
-        default_flow_style=False,
-        sort_keys=False,
-        allow_unicode=True,
-        width=120,
-    )
-    file_path.write_text("---\n" + yaml_text, encoding="utf-8")
+        # ── A. Fill in variable descriptions ────────────────────────────────
+        current_vars = content.get("variables", [])
+        
+        enriched_vars = []
+        for var in current_vars:
+            var_name = var.get("name")
+            if var_name not in vars_in_template:
+                continue
+                
+            if var.get("description") == "TODO" or not var.get("description"):
+                print(f"  Suggesting description for variable '{var_name}'...")
+                suggested_desc = suggest_variable_description(var_name, combined_context)
+                print(f"    Suggested: {suggested_desc}")
+
+                var["description"] = suggested_desc
+            enriched_vars.append(var)
+
+        existing_names = {v.get("name") for v in enriched_vars}
+        for v_name in vars_in_template:
+            if v_name not in existing_names:
+                print(f"  Adding missing variable '{v_name}' from template...")
+                new_desc = suggest_variable_description(v_name, combined_context)
+                enriched_vars.append({
+                    "name": v_name,
+                    "description": new_desc,
+                    "required": True
+                })
+        
+        content["variables"] = enriched_vars
+
+        # ── B. Add or complete metadata ─────────────────────────────────────
+        metadata = content.get("metadata")
+        if metadata is None:
+            metadata = {}
+            content["metadata"] = metadata
+            
+        if "domain" not in metadata:
+            metadata["domain"] = infer_domain(parts)
+        if "complexity" not in metadata:
+            metadata["complexity"] = infer_complexity(content)
+        if "tags" not in metadata:
+            metadata["tags"] = infer_tags(parts, prompt_name)
+        if "requires_context" not in metadata:
+            metadata["requires_context"] = infer_requires_context(content)
+
     print(f"  ENRICHED: {file_path}")
     return True
 

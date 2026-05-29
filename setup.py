@@ -9,6 +9,8 @@ setup(
         "PyYAML",
         "pydantic>=2.0.0",
         "jinja2",
+        "ruamel.yaml",
+        "filelock",
     ],
     entry_points={
         "console_scripts": [

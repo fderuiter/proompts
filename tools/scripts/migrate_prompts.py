@@ -39,10 +39,12 @@ from pathlib import Path
 
 try:
     from promptops.utils import ROOT, extract_template_vars, iter_prompt_files, load_yaml
+    from promptops.persistence import update_yaml
 except ImportError:
     import sys
-    sys.path.append(str(Path(__file__).parent))
+    sys.path.append(str(Path(__file__).parent.parent.parent))
     from promptops.utils import ROOT, extract_template_vars, iter_prompt_files, load_yaml
+    from promptops.persistence import update_yaml
 
 import yaml
 
@@ -61,32 +63,16 @@ def migrate_file(file_path: Path, dry_run: bool = False) -> bool:
 
     Returns True if the file was modified.
     """
+    # Quick check without locking to see if we need modifications
     content = load_yaml(file_path)
     if not content:
         print(f"  SKIP (empty/unparseable): {file_path}")
         return False
 
-    modified = False
+    needs_version = "version" not in content
+    needs_variables = "variables" not in content
 
-    # Add version if missing
-    if "version" not in content:
-        content["version"] = "0.1.0"
-        modified = True
-
-    # Add variables stubs if missing
-    if "variables" not in content:
-        vars_in_template = extract_template_vars(content)
-        if vars_in_template:
-            content["variables"] = [
-                {"name": v, "description": "TODO", "required": True}
-                for v in vars_in_template
-            ]
-            modified = True
-        else:
-            content["variables"] = []
-            modified = True
-
-    if not modified:
+    if not needs_version and not needs_variables:
         print(f"  OK (already migrated): {file_path}")
         return False
 
@@ -94,10 +80,21 @@ def migrate_file(file_path: Path, dry_run: bool = False) -> bool:
         print(f"  DRY-RUN would update: {file_path}")
         return True
 
-    # Write back — use default_flow_style=False for readable YAML
-    yaml_text = yaml.dump(content, default_flow_style=False, sort_keys=False,
-                          allow_unicode=True, width=120)
-    file_path.write_text("---\n" + yaml_text, encoding="utf-8")
+    # Perform lossless update
+    with update_yaml(file_path) as data:
+        if "version" not in data:
+            data["version"] = "0.1.0"
+        
+        if "variables" not in data:
+            vars_in_template = extract_template_vars(data)
+            if vars_in_template:
+                data["variables"] = [
+                    {"name": v, "description": "TODO", "required": True}
+                    for v in vars_in_template
+                ]
+            else:
+                data["variables"] = []
+
     print(f"  UPDATED: {file_path}")
     return True
 
