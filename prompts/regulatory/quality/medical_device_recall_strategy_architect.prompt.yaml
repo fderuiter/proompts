@@ -58,7 +58,7 @@ messages:
       {{distribution_scope}}
       </distribution_scope>
 testData:
-  - input:
+  - vars:
       issue_description: "Software bug in infusion pump firmware v2.1 causing an intermittent 10% over-delivery of medication when running in continuous mode."
       clinical_impact: "Potential for localized toxicity or adverse pharmacological effects depending on the medication infused. One unconfirmed report of patient hypotension."
       distribution_scope: "Global distribution; 4,500 units deployed across 120 hospitals in the US and EU over the last 6 months."

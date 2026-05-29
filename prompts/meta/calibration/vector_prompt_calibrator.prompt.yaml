@@ -58,7 +58,7 @@ messages:
       Please execute the operational workflow on the following draft prompt:
       <draft_prompt>{{draft_prompt}}</draft_prompt>
 testData:
-  - input:
+  - vars:
       draft_prompt: "You are a helpful AI assistant. Please write a polite email to my boss asking for a raise. Thank you."
     expected: |
       PR Title: Vector Calibration: Lead Compensation Strategist Upgrade

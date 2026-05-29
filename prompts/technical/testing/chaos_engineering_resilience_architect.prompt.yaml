@@ -78,7 +78,7 @@ messages:
       {{failure_hypotheses}}
       </failure_hypotheses>
 testData:
-  - input: |
+  - vars: |
       <system_architecture>
       Microservices architecture on EKS. API Gateway routing to an Order Service and Payment Service. Order Service publishes to a Kafka topic. Payment Service consumes from Kafka and writes to an Aurora PostgreSQL cluster. Redis is used for distributed locking.
       </system_architecture>

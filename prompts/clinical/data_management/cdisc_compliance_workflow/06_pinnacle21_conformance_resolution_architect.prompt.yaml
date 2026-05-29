@@ -67,7 +67,7 @@ messages:
       {{dataset_context}}
       </dataset_context>
 testData:
-  - input:
+  - vars:
       p21_rule_id: "SD1080"
       issue_description: "Missing value for --DECOD, when --TRT is provided"
       target_standard: "SDTM IG 3.3"

@@ -54,12 +54,12 @@ messages:
       HRMS Fragmentation Data: <hrms_fragmentation_data>{{hrms_fragmentation_data}}</hrms_fragmentation_data>
       NMR Data (1D/2D): <nmr_data>{{nmr_data}}</nmr_data>
 testData:
-  - input:
+  - vars:
       molecular_formula: "C9H8O4"
       hrms_fragmentation_data: "m/z 180.0423 [M+H]+, major fragments at m/z 162.0317 (-H2O), 138.0311 (-C2H2O), 120.0205 (-CO2)."
       nmr_data: "1H NMR (400 MHz, DMSO-d6): δ 12.00 (br s, 1H), 7.50 (d, J = 8.0 Hz, 1H), 7.20 (d, J = 8.0 Hz, 1H), 6.90 (t, J = 8.0 Hz, 1H), 2.25 (s, 3H). 13C NMR (100 MHz, DMSO-d6): δ 168.5, 165.2, 150.1, 133.4, 131.2, 126.0, 123.5, 116.2, 21.0. HMBC shows correlation from methyl protons to carbonyl carbon at 168.5."
     expected: "Acetylsalicylic acid"
-  - input:
+  - vars:
       molecular_formula: "C8H10N4O2"
       hrms_fragmentation_data: "m/z 195.0882 [M+H]+, fragments at m/z 138.0410, 109.0285."
       nmr_data: "1H NMR (400 MHz, CDCl3): δ 7.51 (s, 1H), 3.99 (s, 3H), 3.58 (s, 3H), 3.40 (s, 3H). 13C NMR (100 MHz, CDCl3): δ 155.4, 151.6, 148.8, 141.4, 107.6, 33.6, 29.7, 27.9. HMBC correlations confirm N-methyl positions on the purine ring system."

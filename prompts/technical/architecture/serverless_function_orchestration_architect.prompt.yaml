@@ -57,7 +57,7 @@ messages:
       Constraints and SLAs:
       <constraints_and_slas>{{constraints_and_slas}}</constraints_and_slas>
 testData:
-  - input:
+  - vars:
       business_workflow: "An e-commerce order fulfillment process involving payment processing, inventory deduction, shipping label generation, and customer notification."
       event_sources: "Triggered via REST API calls from an API Gateway. Downstream integrations include a third-party payment gateway and an internal shipping service."
       constraints_and_slas: "Strict idempotency required to prevent double charging. The payment step must complete within 5 seconds. If inventory deduction fails, the payment must be refunded. Maximum payload size between steps is 100KB."

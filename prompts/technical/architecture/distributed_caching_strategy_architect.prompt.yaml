@@ -52,7 +52,7 @@ messages:
       Non-Functional Requirements:
       {{non_functional_requirements}}
 testData:
-  - input:
+  - vars:
       system_workload: "Global e-commerce product catalog with a 99:1 read/write ratio. Traffic spikes by 50x during flash sales. Occasional massive price updates across thousands of SKUs."
       data_characteristics: "JSON objects averaging 5KB. Prices must be strongly consistent within 1 second globally. Inventory counts are highly volatile and require eventual consistency. No PII."
       non_functional_requirements: "Target 95% global cache hit rate, p99 read latency < 20ms at the edge, survive total failure of a regional cache cluster without cascading backend failure."

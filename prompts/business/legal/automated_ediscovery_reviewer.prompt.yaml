@@ -85,7 +85,8 @@ messages:
     : [\"list of strings\"]\n  },\n  \"anomaly_flag\": boolean (true if severe OCR/text\
     \ corruption detected)\n}\n"
 testData:
-- input:
+- expected: 'is_responsive": true'
+  vars:
     document_text: 'From: John Smith (CEO)
 
       To: Jane Doe (General Counsel)
@@ -103,23 +104,22 @@ testData:
       Alpha investments.
     responsive_issues: 1. Financial investments in Project Alpha. 2. Communications
       regarding SEC guidelines or regulatory exposure.
-  expected: 'is_responsive": true'
-- input:
+- expected: 'is_responsive": false'
+  vars:
     document_text: 'Lunch menu for the cafeteria next week: Monday is pizza, Tuesday
       is tacos. The cost of the new pizza oven was $5,000.'
     matter_description: Investigation into potential securities fraud related to Project
       Alpha investments.
     responsive_issues: 1. Financial investments in Project Alpha. 2. Communications
       regarding SEC guidelines or regulatory exposure.
-  expected: 'is_responsive": false'
-- input:
+- expected: '"anomaly_flag": true'
+  vars:
     document_text: "$#@!%^&*()_+ OCR ERROR 0x889F \n1110001010101 \nCORRUPTED DATA\
       \ STREAM\n$$$#%@^"
     matter_description: Investigation into potential securities fraud related to Project
       Alpha investments.
     responsive_issues: 1. Financial investments in Project Alpha. 2. Communications
       regarding SEC guidelines or regulatory exposure.
-  expected: '"anomaly_flag": true'
 evaluators:
 - name: Responsiveness True Regex
   type: regex

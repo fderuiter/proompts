@@ -37,7 +37,7 @@ messages:
       Design the micro-frontend architecture for the following requirements:
       <input>{{application_requirements}}</input>
 testData:
-  - input:
+  - vars:
       application_requirements: "We are migrating a massive monolithic e-commerce React application. We have separate teams for Product Discovery, Checkout, and User Profile. We need independent deployments but a seamless user experience without full page reloads."
     expected: "Module Federation"
 evaluators:

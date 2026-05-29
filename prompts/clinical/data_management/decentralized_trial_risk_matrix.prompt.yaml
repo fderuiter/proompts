@@ -1,4 +1,3 @@
----
 name: Decentralized Trial Risk Matrix
 version: 0.1.0
 description: Build a risk matrix for decentralized trials.
@@ -29,8 +28,8 @@ messages:
 - role: user
   content: '{{input}}'
 testData:
-- input: List potential risks for remote patient monitoring.
-  expected: Includes mitigation strategies and risk levels.
+- expected: Includes mitigation strategies and risk levels.
+  vars: List potential risks for remote patient monitoring.
 evaluators:
 - name: Output mentions risk
   string:

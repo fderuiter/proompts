@@ -1,4 +1,3 @@
----
 name: Part 11 Closed System Audit
 version: 0.1.0
 description: Audit a software supplier's closed system for electronic record integrity.
@@ -21,7 +20,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -47,8 +47,8 @@ messages:
 
     </input>'
 testData:
-- input: Record retrieval protocols and audit trail logs. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: Record retrieval protocols and audit trail logs. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Compare

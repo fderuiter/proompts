@@ -1,7 +1,7 @@
----
 name: Design Error Prevention
 version: 0.1.0
-description: Review and optimize CRF layout to avoid duplication and non-essential fields.
+description: Review and optimize CRF layout to avoid duplication and non-essential
+  fields.
 metadata:
   domain: clinical
   complexity: high
@@ -29,11 +29,14 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Clinical Data Manager/Designer. Analyze the draft CRF layout to identify redundant or non-essential fields
-    based on the study hypothesis and suggest improvements to reduce entry errors and site burden. Adhere to ICH GCP E6(R2).
+  content: You are a Clinical Data Manager/Designer. Analyze the draft CRF layout
+    to identify redundant or non-essential fields based on the study hypothesis and
+    suggest improvements to reduce entry errors and site burden. Adhere to ICH GCP
+    E6(R2).
 - role: user
-  content: 'Analyze the draft CRF layout to identify redundant or non-essential fields based on the study hypothesis and suggest
-    improvements to reduce entry errors and site burden.
+  content: 'Analyze the draft CRF layout to identify redundant or non-essential fields
+    based on the study hypothesis and suggest improvements to reduce entry errors
+    and site burden.
 
 
     Inputs:
@@ -51,16 +54,16 @@ messages:
 
     Markdown Optimization Report (Field | Issue | Recommendation).'
 testData:
-- input: 'crf_draft: "Field: Height (cm) at Visit 1 and Visit 2."
+- expected: '| Field | Issue | Recommendation |
+
+    '
+  vars: 'crf_draft: "Field: Height (cm) at Visit 1 and Visit 2."
 
     protocol: "Height only needed at baseline."
 
     endpoints: "Weight change."
 
     hypothesis: "Drug reduces weight."
-
-    '
-  expected: '| Field | Issue | Recommendation |
 
     '
 evaluators:

@@ -96,11 +96,11 @@ messages:
       gauge, carry out canonical quantization assuming the Bunch-Davies vacuum,
       and compute the final tensor power spectrum and spectral index.
 testData:
-  - input:
+  - vars:
       inflationary_potential: "V(\\phi) = \\frac{1}{2} m^2 \\phi^2 (Chaotic Inflation)"
       gauge_choice: "Transverse-Traceless (TT) gauge"
     expected: "mukhanov-sasaki"
-  - input:
+  - vars:
       inflationary_potential: "V(\\phi) = \\Lambda^4 \\left[ 1 + \\cos(\\phi/f) \\right] (Natural Inflation)"
       gauge_choice: "Transverse-Traceless (TT) gauge"
     expected: "bunch-davies"

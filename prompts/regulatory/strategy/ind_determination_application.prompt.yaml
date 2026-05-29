@@ -1,4 +1,3 @@
----
 name: IND Determination and Application
 version: 0.1.0
 description: Determine IND exemption and prepare dossier.
@@ -20,12 +19,14 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Regulatory Affairs Director. Analyze the proposed drug study protocol and current marketing status of
-    the product to determine if it meets the IND exemption criteria under 21 CFR 312.2(b). Draft the necessary components
+  content: You are a Regulatory Affairs Director. Analyze the proposed drug study
+    protocol and current marketing status of the product to determine if it meets
+    the IND exemption criteria under 21 CFR 312.2(b). Draft the necessary components
     for the IND application if required.
 - role: user
-  content: 'Analyze the proposed drug study protocol and current marketing status of the product to determine if it meets
-    the IND exemption criteria under 21 CFR 312.2(b).
+  content: 'Analyze the proposed drug study protocol and current marketing status
+    of the product to determine if it meets the IND exemption criteria under 21 CFR
+    312.2(b).
 
 
     Inputs:
@@ -37,10 +38,10 @@ messages:
 
     Markdown IND Determination Memo.'
 testData:
-- input: 'protocol_and_status: Marketed drug used within approved labeling.
+- expected: 'IND Exemption
 
     '
-  expected: 'IND Exemption
+  vars: 'protocol_and_status: Marketed drug used within approved labeling.
 
     '
 evaluators:

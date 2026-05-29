@@ -73,7 +73,7 @@ messages:
       {{adrs_data}}
       </adrs_data>
 testData:
-  - input:
+  - vars:
       endpoint_type: "Progression-Free Survival (PFS)"
       protocol_censoring_rules: "PFS Event: PD or Death. Censor if alive without PD at last adequate tumor assessment. If new anti-cancer therapy initiated before PD, censor at last adequate assessment prior to new therapy."
       adsl_data: |

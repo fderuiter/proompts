@@ -40,7 +40,7 @@ messages:
       {{application_context}}
       </input>
 testData:
-  - input:
+  - vars:
       application_context: "We are building an e-commerce application for iOS, Android, and Web. We want to be able to dynamically change the homepage layout, promotional banners, and product detail page structures during flash sales without requiring app store submissions. The system needs to support fallback UI if the network fails."
     expected: "Backend-for-Frontend"
 evaluators:

@@ -56,7 +56,7 @@ messages:
       Critical Tasks & URRA Highlights: {{critical_tasks}}
       </input>
 testData:
-  - input:
+  - vars:
       device_description: A pre-filled, single-use epinephrine autoinjector for emergency treatment of anaphylaxis.
       user_profiles: Lay users (patients, parents, caregivers) with no prior medical training.
       critical_tasks: Removing the safety cap, orienting the device correctly against the outer thigh, holding it in place for 10 seconds post-injection, checking the viewing window for drug delivery confirmation.

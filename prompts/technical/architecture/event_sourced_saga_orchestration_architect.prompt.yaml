@@ -46,7 +46,7 @@ messages:
 
       {{business_transaction_workflow}}
 testData:
-  - input:
+  - vars:
       business_transaction_workflow: "A multi-stage global e-commerce fulfillment process: 1. Reserve Inventory (Inventory Service), 2. Process Payment (Payment Gateway Service), 3. Schedule Freight Shipping (Logistics Service), 4. Deduct Loyalty Points (CRM Service). If shipping scheduling fails, payment must be refunded, and inventory released."
     expected: "compensating"
 evaluators:

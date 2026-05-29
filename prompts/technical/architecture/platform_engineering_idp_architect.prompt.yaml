@@ -50,7 +50,7 @@ messages:
       Operational Constraints:
       {{operational_constraints}}
 testData:
-  - input:
+  - vars:
       organization_context: "500+ engineers distributed globally, currently relying on a fragmented mix of Jenkins, bespoke Bash scripts, and manual Jira tickets for AWS infrastructure provisioning. Friction points: 3-week average time-to-first-commit for new services, high operational toil."
       target_capabilities: "A unified software catalog, self-service provisioning of ephemeral environments, automated Kubernetes deployment pipelines, and built-in metric tracking."
       operational_constraints: "Must utilize AWS EKS, enforce strict SOC2 compliance gates for all infrastructure changes, and integrate with an existing legacy on-premise Active Directory."

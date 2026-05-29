@@ -41,7 +41,7 @@ messages:
       {{system_requirements}}
       </input>
 testData:
-  - input:
+  - vars:
       system_requirements: "We are building an e-commerce platform's order management system. It expects extremely high write loads during flash sales (up to 10k orders/sec). Users need near real-time order status updates. The system must handle concurrent inventory reservations and payment processing reliably. We need a complete audit trail of every state change in an order's lifecycle."
     expected: "CQRS"
 evaluators:

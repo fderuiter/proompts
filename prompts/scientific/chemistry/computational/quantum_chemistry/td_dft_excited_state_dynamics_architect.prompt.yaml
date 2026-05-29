@@ -57,12 +57,12 @@ messages:
 
       Target Photophysical Properties: <photophysical_properties>{{photophysical_properties}}</photophysical_properties>
 testData:
-  - input:
+  - vars:
       molecular_system: "C1=CC(=CC=C1C2=CC=C(C=C2)N(C3=CC=CC=C3)C4=CC=CC=C4)C#N (4-(diphenylamino)benzonitrile)"
       solvent_environment: "Polar protic solvent: Methanol (using SMD model)"
       photophysical_properties: "Vertical excitation energies ($S_0 \rightarrow S_n$), oscillator strengths, and analysis of intramolecular charge transfer (ICT) states."
     expected: "I. Functional and Basis Set Selection Strategy"
-  - input:
+  - vars:
       molecular_system: "Facial tris(2-phenylpyridine)iridium(III) (fac-Ir(ppy)3)"
       solvent_environment: "Dichloromethane (PCM)"
       photophysical_properties: "Phosphorescence emission energy from the $T_1$ state, including spin-orbit coupling (SOC) matrix elements."

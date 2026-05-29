@@ -33,7 +33,7 @@ messages:
   - role: user
     content: "<user_query>Please design a comprehensive EU MDR Clinical Evaluation Report (CER) for the following device.\n\nDevice Description:\n{{device_description}}\n\nState of the Art:\n{{state_of_the_art}}\n\nClinical Data Summary:\n{{clinical_data_summary}}\n\nThe output must be structured according to MEDDEV 2.7/1 rev 4 guidelines, provide a critical appraisal of the data, and conclude on the conformity with GSPRs.</user_query>"
 testData:
-  - input:
+  - vars:
       device_description: "Class IIb absorbable surgical suture intended for soft tissue approximation."
       state_of_the_art: "Standard of care involves various absorbable synthetic and natural sutures. Complication rates include 2% infection and 1% dehiscence."
       clinical_data_summary: "Literature review identified 15 relevant articles. PMS data shows 0.5% complaint rate related to early absorption."

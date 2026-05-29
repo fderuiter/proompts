@@ -51,12 +51,12 @@ messages:
       Non-Functional Requirements:
       {{non_functional_requirements}}
 testData:
-  - input:
+  - vars:
       graph_topology: "Entity nodes ($|V| \approx 10^8$) and complex relationships ($|E| \approx 10^{10}$) representing semantic concepts extracted from scientific literature."
       query_patterns: "Read-heavy graph traversals up to depth $d=4$, computing shortest paths, coupled with real-time vector similarity search on node embeddings."
       non_functional_requirements: "Sub-100ms response time for 4-hop queries, 99.99% uptime, distributed across 3 Availability Zones, and seamless MPP."
     expected: "RAG|HNSW|partition keys"
-  - input:
+  - vars:
       graph_topology: "Sparse financial transaction graph with high edge density for specific entities, $10^9$ nodes."
       query_patterns: "Real-time fraud detection requiring sub-graph isomorphism checks and anomaly pattern matching."
       non_functional_requirements: "Sub-20ms latency for continuous graph stream processing."

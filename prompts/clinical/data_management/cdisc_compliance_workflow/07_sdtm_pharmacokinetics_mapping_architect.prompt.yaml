@@ -59,7 +59,7 @@ messages:
       <edc_dosing_data>{{edc_dosing_data}}</edc_dosing_data>
       <target_sdtm_version>{{target_sdtm_version}}</target_sdtm_version>
 testData:
-  - input:
+  - vars:
       vendor_data_extract: |
         Subject: 101-001
         Analyte: Plasma Compound X

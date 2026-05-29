@@ -1,7 +1,7 @@
----
 name: Reclassification Petitioning
 version: 0.1.0
-description: Prepare a statement of the basis for disagreement with a current device classification.
+description: Prepare a statement of the basis for disagreement with a current device
+  classification.
 metadata:
   domain: regulatory
   complexity: low
@@ -19,7 +19,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -45,8 +46,8 @@ messages:
 
     </input>'
 testData:
-- input: Device type, requested action, and scientific evidence. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: Device type, requested action, and scientific evidence. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Assess

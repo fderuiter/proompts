@@ -52,12 +52,12 @@ messages:
       Target Spectroscopic Techniques: <spectroscopic_techniques>{{spectroscopic_techniques}}</spectroscopic_techniques>
       Solvent System: <solvent_system>{{solvent_system}}</solvent_system>
 testData:
-  - input:
+  - vars:
       molecular_structure: "CC1=CC(=C(C(=C1C)C(C)(C)C)O)C"
       spectroscopic_techniques: "1H NMR, 13C NMR, HSQC, HMBC, HRMS"
       solvent_system: "CDCl3"
     expected: "I. Structural Connectivity Mapping & Exact Mass Analysis"
-  - input:
+  - vars:
       molecular_structure: "C1=CC(=CC=C1C(=O)O)NC(=O)C"
       spectroscopic_techniques: "COSY, NOESY, 1H NMR, 13C NMR"
       solvent_system: "DMSO-d6"

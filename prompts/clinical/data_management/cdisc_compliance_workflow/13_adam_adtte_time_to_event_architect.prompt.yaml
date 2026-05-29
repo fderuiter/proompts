@@ -58,7 +58,7 @@ messages:
       <survival_endpoint_definition>{{survival_endpoint_definition}}</survival_endpoint_definition>
       <target_adam_version>{{target_adam_version}}</target_adam_version>
 testData:
-  - input:
+  - vars:
       source_sdtm_data: |
         Subject: 101-001
         Randomization Date: 2023-01-15

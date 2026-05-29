@@ -1,4 +1,3 @@
----
 name: Hosting Cost Reduction ToT Plan
 version: 0.1.0
 description: Develop a tree-of-thought plan to reduce hosting costs.
@@ -29,8 +28,8 @@ messages:
 - role: user
   content: '{{input}}'
 testData:
-- input: ''
-  expected: ''
+- expected: ''
+  vars: ''
 evaluators:
 - name: Output is non-empty
   string:

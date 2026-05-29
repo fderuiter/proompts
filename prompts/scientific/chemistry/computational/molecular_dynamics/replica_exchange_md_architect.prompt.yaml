@@ -56,12 +56,12 @@ messages:
       Temperature Range: <temperature_range>{{temperature_range}}</temperature_range>
       Conditions: <conditions>{{conditions}}</conditions>
 testData:
-  - input:
+  - vars:
       molecular_system: "PDB: 1UBQ (Ubiquitin)"
       temperature_range: "280 K to 450 K"
       conditions: "TIP3P water, 0.15 M NaCl, 1 atm, exchange attempts every 2 ps"
     expected: "II. Temperature Ladder & Exchange Protocol"
-  - input:
+  - vars:
       molecular_system: "CC(C)CC1C(=O)NC(C(=O)N1)C(C)C (Cyclic dipeptide)"
       temperature_range: "300 K to 600 K"
       conditions: "Implicit solvent (GB), zero pressure, exchange attempts every 1 ps"

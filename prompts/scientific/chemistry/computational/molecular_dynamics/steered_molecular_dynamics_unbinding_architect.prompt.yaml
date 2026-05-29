@@ -59,12 +59,12 @@ messages:
       Ligand: <ligand>{{ligand}}</ligand>
       Conditions: <conditions>{{conditions}}</conditions>
 testData:
-  - input:
+  - vars:
       macromolecular_target: "PDB: 1STP (Streptavidin)"
       ligand: "Biotin"
       conditions: "T = 300 K, 1 atm, TIP3P water, 0.15 M NaCl"
     expected: "I. System Preparation & Thermodynamic Equilibration"
-  - input:
+  - vars:
       macromolecular_target: "PDB: 3CLN (Calmodulin)"
       ligand: "Ca2+ (Calcium ion)"
       conditions: "T = 298.15 K, 1 atm, explicit solvent"

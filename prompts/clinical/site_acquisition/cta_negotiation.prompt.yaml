@@ -1,4 +1,3 @@
----
 name: Clinical Trial Agreement (CTA) Negotiation
 version: 0.1.0
 description: Review CTA for missing clauses.
@@ -21,11 +20,13 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Legal Contracts Associate. Review the provided Clinical Trial Agreement draft and identify any missing
-    clauses regarding IRB approval or intellectual property rights for inventions derived from the trial.
+  content: You are a Legal Contracts Associate. Review the provided Clinical Trial
+    Agreement draft and identify any missing clauses regarding IRB approval or intellectual
+    property rights for inventions derived from the trial.
 - role: user
-  content: 'Review the provided Clinical Trial Agreement draft and identify any missing clauses regarding IRB approval or
-    intellectual property rights for inventions derived from the trial.
+  content: 'Review the provided Clinical Trial Agreement draft and identify any missing
+    clauses regarding IRB approval or intellectual property rights for inventions
+    derived from the trial.
 
 
     Inputs:
@@ -37,10 +38,10 @@ messages:
 
     Markdown CTA Review.'
 testData:
-- input: 'cta_draft: Standard CTA template.
+- expected: 'CTA Review
 
     '
-  expected: 'CTA Review
+  vars: 'cta_draft: Standard CTA template.
 
     '
 evaluators:

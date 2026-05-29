@@ -50,7 +50,7 @@ messages:
       Non-Functional Requirements:
       {{non_functional_requirements}}
 testData:
-  - input:
+  - vars:
       client_ecosystem: "iOS native app, Android native app, and a React-based SPA admin dashboard."
       backend_services: "30+ microservices communicating via gRPC internally, and one legacy monolithic SOAP service for billing."
       non_functional_requirements: "Target 99.99% availability, strict OIDC-based authentication, max 150ms latency for client edge requests, and DDoS protection."

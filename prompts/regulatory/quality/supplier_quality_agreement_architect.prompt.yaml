@@ -63,7 +63,7 @@ messages:
       Risk Classification: {{risk_classification}}
       Critical Requirements to Enforce: {{critical_requirements}}
 testData:
-  - input:
+  - vars:
       manufacturer_type: Class III Implantable Medical Device Manufacturer
       supplier_type: Contract Manufacturing Organization (CMO) for sterile packaging
       risk_classification: Critical (Direct impact on patient safety and product sterility)

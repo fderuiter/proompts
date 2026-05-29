@@ -45,10 +45,10 @@ messages:
     content: |
       <user_query>{{physical_system_spec}}</user_query>
 testData:
-  - input:
+  - vars:
       physical_system_spec: "A fleet of 500 autonomous delivery drones. Each drone transmits GPS, battery health, motor RPM, and wind resistance telemetry at 10Hz. We need to monitor current fleet status and predict battery drain based on simulated route weather conditions."
     expected: "MQTT"
-  - input:
+  - vars:
       physical_system_spec: "An industrial HVAC system in a 50-story smart building. Contains thousands of temperature, humidity, and airflow sensors updating every 30 seconds. Requires bidirectional control to optimize energy usage dynamically and predict compressor failures."
     expected: "Time-series"
 evaluators:

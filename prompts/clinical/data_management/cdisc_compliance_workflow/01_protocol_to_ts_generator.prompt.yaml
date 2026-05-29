@@ -43,7 +43,7 @@ messages:
       **Input Text:**
       {{protocol_synopsis}}
 testData:
-  - input: |
+  - vars: |
       protocol_synopsis: |
         This is a Phase 3, randomized, double-blind study to evaluate the efficacy of Drug X in combination with Pembrolizumab versus Placebo in patients with advanced melanoma.
         Key Inclusion Criteria:

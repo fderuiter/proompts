@@ -51,7 +51,7 @@ messages:
 
       Deliver the analysis strictly starting with 'ABSTRACTION_GRAPH:' followed by 'FAILURE_NODES:', 'METACOGNITIVE_CORRECTION:', and 'VERIFIED_OUTPUT:'.
 testData:
-  - input:
+  - vars:
       initial_output: "To optimize the factory's throughput, we should increase the conveyor belt speed by 50%. Since the current bottleneck is the packaging machine, which processes 100 units/min, and the belt delivers 80 units/min, increasing the belt speed to 120 units/min will eliminate the bottleneck and increase overall throughput to 120 units/min."
       objective_constraints: "The factory throughput cannot exceed the processing capacity of the slowest machine in the active operational path."
     expected: |

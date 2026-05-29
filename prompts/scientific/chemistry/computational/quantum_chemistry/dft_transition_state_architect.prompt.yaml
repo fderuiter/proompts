@@ -70,13 +70,13 @@ messages:
 
       4. The calculation of the Gibbs free energy of activation ($\Delta G^\ddagger$) and the predicted rate constant at 298.15 K.
 testData:
-  - input:
+  - vars:
       reactants: "C1=CC=CC=C1 + [Cl+]"
       products: "C1=CC(Cl)C=[C+]C=C1"
       functional_basis_set: "M06-2X/def2-TZVPP"
       solvent_model: "SMD (Solvent: Dichloromethane, eps=8.93)"
     expected: "M06-2X"
-  - input:
+  - vars:
       reactants: "C=C + [H+]"
       products: "CC+"
       functional_basis_set: "B3LYP/6-31G(d,p)"

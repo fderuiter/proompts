@@ -47,7 +47,7 @@ messages:
       <application_architecture>{{application_architecture}}</application_architecture>
       <risk_tolerance>{{risk_tolerance}}</risk_tolerance>
 testData:
-  - input:
+  - vars:
       deployment_environment: "Multi-region Kubernetes clusters across AWS and GCP using Istio service mesh."
       application_architecture: "Microservices backend with a heavily cached GraphQL supergraph and distributed edge caching."
       risk_tolerance: "Zero downtime required, max blast radius of 1% for new feature rollouts, mandatory automated rollbacks within 30 seconds of MTTR breach."

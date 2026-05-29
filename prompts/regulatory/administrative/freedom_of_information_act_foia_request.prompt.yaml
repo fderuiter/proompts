@@ -1,4 +1,3 @@
----
 name: Freedom of Information Act (FOIA) Request
 version: 0.1.0
 description: Draft a request for records regarding a specific 510(k) clearance.
@@ -21,7 +20,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -47,8 +47,9 @@ messages:
 
     </input>'
 testData:
-- input: Description of records sought and requester contact information. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: Description of records sought and requester contact information. (Example
+    data)
 evaluators:
 - name: Validation Check
   regex: (?i)Check

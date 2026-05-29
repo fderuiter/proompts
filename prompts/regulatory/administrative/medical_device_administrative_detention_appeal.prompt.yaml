@@ -1,7 +1,7 @@
----
 name: Medical Device Administrative Detention Appeal
 version: 0.1.0
-description: Draft a written appeal for an administrative detention order issued on a food item or medical device.
+description: Draft a written appeal for an administrative detention order issued on
+  a food item or medical device.
 metadata:
   domain: regulatory
   complexity: low
@@ -21,7 +21,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -31,7 +32,8 @@ messages:
 
     ## Objective
 
-    Draft a written appeal for an administrative detention order issued on a food item or medical device.
+    Draft a written appeal for an administrative detention order issued on a food
+    item or medical device.
 
 
     ## Output Format
@@ -47,8 +49,9 @@ messages:
 
     </input>'
 testData:
-- input: Detention order number, date received, and verified statement of ownership/proprietary interest. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: Detention order number, date received, and verified statement of ownership/proprietary
+    interest. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Verify

@@ -51,7 +51,7 @@ messages:
       Constraints & Guardrails:
       {{constraints}}
 testData:
-  - input:
+  - vars:
       functional_requirements: "A standalone, hosted GUI for authoring prompts, a visual workflow editor, and cloud-based version control system."
       constraints: "Schema Parity with existing YAML and Zero-Local Footprint."
     expected: "Frontend"

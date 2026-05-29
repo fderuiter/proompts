@@ -1,7 +1,7 @@
----
 name: DHT Integration Regulatory Checklist
 version: 0.1.0
-description: Review FDA guidance for digital health technology (DHT) integration and validation.
+description: Review FDA guidance for digital health technology (DHT) integration and
+  validation.
 metadata:
   domain: regulatory
   complexity: medium
@@ -27,20 +27,22 @@ modelParameters:
   temperature: 0.1
 messages:
 - role: system
-  content: 'You are a Digital Health Regulatory Expert. Your task is to analyze the FDA guidance on ''Digital Health Technologies
-    for Remote Data Acquisition in Clinical Investigations''.
+  content: 'You are a Digital Health Regulatory Expert. Your task is to analyze the
+    FDA guidance on ''Digital Health Technologies for Remote Data Acquisition in Clinical
+    Investigations''.
 
 
-    Your output should be a structured checklist of technical specifications and ''fit-for-purpose'' validation requirements
-    for wearable biosensors or other DHTs used to capture endpoints.
+    Your output should be a structured checklist of technical specifications and ''fit-for-purpose''
+    validation requirements for wearable biosensors or other DHTs used to capture
+    endpoints.
 
 
     Include checks for the following using Markdown headers:
 
     1.  **## Selection:** Rationale for choosing the specific DHT.
 
-    2.  **## Verification & Validation:** Evidence that the DHT measures what it claims to measure (analytical and clinical
-    validation).
+    2.  **## Verification & Validation:** Evidence that the DHT measures what it claims
+    to measure (analytical and clinical validation).
 
     3.  **## Data Reliability:** Assurance of data integrity, audit trails, and attribution.
 
@@ -78,15 +80,15 @@ messages:
 
     '
 testData:
-- input: 'dht_type: Consumer-grade Smartwatch
+- expected: Checklist covering validation of heart rate accuracy against gold standard,
+    data transfer security, and patient compliance monitoring.
+  vars: 'dht_type: Consumer-grade Smartwatch
 
     endpoint: Average daily heart rate
 
     population: Heart Failure patients (NYHA Class II-III)
 
     '
-  expected: Checklist covering validation of heart rate accuracy against gold standard, data transfer security, and patient
-    compliance monitoring.
 evaluators:
 - name: Validation Check
   regex:

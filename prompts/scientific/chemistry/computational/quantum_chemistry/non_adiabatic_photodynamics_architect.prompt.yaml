@@ -56,12 +56,12 @@ messages:
       Excitation Energy: <excitation_energy>{{excitation_energy}}</excitation_energy>
       Solvent Environment: <solvent_environment>{{solvent_environment}}</solvent_environment>
 testData:
-  - input:
+  - vars:
       molecule: "C1=CC=CC=C1 (Benzene)"
       excitation_energy: "254 nm, excitation to the S2 (pi-pi*) state"
       solvent_environment: "Gas phase, isolated molecule"
     expected: "I. Electronic Structure Framework & Active Space Selection"
-  - input:
+  - vars:
       molecule: "CC(=O)C (Acetone)"
       excitation_energy: "280 nm, n-pi* transition to the S1 state"
       solvent_environment: "Aqueous solution (TIP3P explicit water)"

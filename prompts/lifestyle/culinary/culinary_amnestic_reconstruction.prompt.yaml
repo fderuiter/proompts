@@ -64,7 +64,7 @@ messages:
       **Sensory Triggers**: {{sensory_triggers}}
       **Emotional Resonance**: {{emotional_resonance}}
 testData:
-  - input:
+  - vars:
       memory_fragment: "Sitting on the porch in a thunderstorm, eating something warm and sweet, watching the rain hit the hot pavement."
       sensory_triggers: "Petrichor, ozone, humidity, warm ceramic, distant thunder."
       emotional_resonance: "Safe but electrified."

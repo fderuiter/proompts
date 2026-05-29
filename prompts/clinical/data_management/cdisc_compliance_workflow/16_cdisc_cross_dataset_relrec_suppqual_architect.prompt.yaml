@@ -58,7 +58,7 @@ messages:
       <secondary_domain_data>{{secondary_domain_data}}</secondary_domain_data>
       <target_sdtm_version>{{target_sdtm_version}}</target_sdtm_version>
 testData:
-  - input:
+  - vars:
       primary_domain_data: |
         USUBJID, AESEQ, AETERM, AESTDTC, AEENDTC
         SUBJ-001, 1, HEADACHE, 2023-01-10, 2023-01-12

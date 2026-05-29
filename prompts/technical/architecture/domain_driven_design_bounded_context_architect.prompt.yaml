@@ -45,7 +45,7 @@ messages:
       {{domain_complexity_context}}
       </input>
 testData:
-  - input:
+  - vars:
       domain_complexity_context: "We are modernizing an e-commerce platform that has evolved into a monolithic ball of mud. The current system handles Product Catalog, Pricing, Inventory Management, Order Fulfillment, Payment Processing, and Shipping in a single database. The business wants to decouple the catalog and pricing for rapid iteration, while ensuring inventory never allows overselling. Order fulfillment requires orchestration across payment, warehouse management, and third-party logistics."
     expected: "Bounded Context Topology"
 evaluators:

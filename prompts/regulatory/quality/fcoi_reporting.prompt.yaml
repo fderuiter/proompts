@@ -1,4 +1,3 @@
----
 name: Financial Conflict of Interest (FCOI) Reporting
 version: 0.1.0
 description: Review disclosures and draft management plan.
@@ -21,11 +20,12 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Compliance Officer. Examine the investigator's SFI disclosure and determine if it could affect the conduct
-    of research, then draft the required management plan for reporting. Adhere to 42 CFR Part 50 Subpart F.
+  content: You are a Compliance Officer. Examine the investigator's SFI disclosure
+    and determine if it could affect the conduct of research, then draft the required
+    management plan for reporting. Adhere to 42 CFR Part 50 Subpart F.
 - role: user
-  content: 'Examine the investigator''s SFI disclosure and determine if it could affect the conduct of research, then draft
-    the required management plan for reporting.
+  content: 'Examine the investigator''s SFI disclosure and determine if it could affect
+    the conduct of research, then draft the required management plan for reporting.
 
 
     Inputs:
@@ -37,10 +37,10 @@ messages:
 
     Markdown Management Plan.'
 testData:
-- input: 'sfi_disclosure: Significant equity interest in sponsor.
+- expected: 'Management Plan
 
     '
-  expected: 'Management Plan
+  vars: 'sfi_disclosure: Significant equity interest in sponsor.
 
     '
 evaluators:

@@ -1,8 +1,7 @@
----
 name: 510(k) Substantial Equivalence Preparation
 version: 0.1.0
-description: Draft a substantial equivalence comparison and summary between a subject device and predicate(s) to demonstrate
-  safety and effectiveness.
+description: Draft a substantial equivalence comparison and summary between a subject
+  device and predicate(s) to demonstrate safety and effectiveness.
 metadata:
   domain: regulatory
   complexity: low
@@ -22,7 +21,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -32,8 +32,8 @@ messages:
 
     ## Objective
 
-    Draft a substantial equivalence comparison and summary between a subject device and predicate(s) to demonstrate safety
-    and effectiveness.
+    Draft a substantial equivalence comparison and summary between a subject device
+    and predicate(s) to demonstrate safety and effectiveness.
 
 
     ## Output Format
@@ -49,9 +49,9 @@ messages:
 
     </input>'
 testData:
-- input: Device description, indications for use, technological characteristics, performance data, and predicate device identification.
-    (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: Device description, indications for use, technological characteristics, performance
+    data, and predicate device identification. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Review

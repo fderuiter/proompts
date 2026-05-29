@@ -40,7 +40,7 @@ messages:
       Domain Boundaries: {{domain_boundaries}}
       Client Access Patterns: {{client_access_patterns}}
 testData:
-  - input:
+  - vars:
       domain_boundaries: "User Management (Auth, Profiles), E-Commerce (Products, Cart, Checkout), and Fulfillment (Inventory, Shipping)."
       client_access_patterns: "Mobile apps fetching deeply nested user dashboards and real-time inventory updates; web clients requiring high-throughput product catalog queries."
     expected: "AST"

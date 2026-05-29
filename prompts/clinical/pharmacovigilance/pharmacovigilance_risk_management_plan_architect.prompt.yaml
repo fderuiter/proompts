@@ -59,12 +59,12 @@ messages:
       3. **Risk Minimization Measures**: Detailed justification and design of routine and/or additional risk minimization activities.
       4. **Evaluation Strategy**: Concrete metrics for assessing the effectiveness of the proposed risk minimization measures.
 testData:
-  - input:
+  - vars:
       product_profile: "A novel oral Janus kinase (JAK) inhibitor indicated for the treatment of moderate to severe rheumatoid arthritis in adult patients who have had an inadequate response to methotrexate."
       safety_specification: "Important identified risks: Serious systemic infections (including tuberculosis and herpes zoster), major adverse cardiovascular events (MACE), venous thromboembolism (VTE). Important potential risks: Malignancy (excluding NMSC). Missing information: Long-term safety in patients over 75 years, safety during pregnancy."
       regulatory_framework: "EMA GVP Module V (EU-RMP)"
     expected: "Important identified risks"
-  - input:
+  - vars:
       product_profile: "A long-acting, highly potent transdermal opioid analgesic indicated for the management of severe chronic pain in opioid-tolerant adult patients."
       safety_specification: "Important identified risks: Respiratory depression, addiction/abuse/misuse, accidental exposure (especially in children), overdose. Important potential risks: Endocrine dysfunction. Missing information: Off-label use in pediatric populations."
       regulatory_framework: "FDA REMS (Risk Evaluation and Mitigation Strategy)"

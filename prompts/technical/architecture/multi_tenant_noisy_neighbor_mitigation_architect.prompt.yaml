@@ -40,7 +40,7 @@ messages:
       {{scale_context}}
       </input>
 testData:
-  - input:
+  - vars:
       scale_context: "We run a B2B SaaS platform with 10,000 tenants in a shared-pool database model using AWS Aurora PostgreSQL. Recently, one enterprise tenant running heavy analytical queries caused latencies to spike for hundreds of SMB tenants. We need a strategy to identify heavy queries, limit their concurrency, and potentially route them to read replicas or a separate queue dynamically."
     expected: "token bucket"
 evaluators:

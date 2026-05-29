@@ -1,7 +1,7 @@
----
 name: Risk-Based Monitoring (RBM) Plan Builder
 version: 0.1.0
-description: Develop a site-level risk-based monitoring plan with risk matrix, KRIs, and adaptive strategy.
+description: Develop a site-level risk-based monitoring plan with risk matrix, KRIs,
+  and adaptive strategy.
 metadata:
   domain: clinical
   complexity: medium
@@ -21,52 +21,31 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: '**System (role):** You are a clinical risk-management consultant.
-
-
-    **User instruction:** Develop a site-level RBM plan for a Phase II oncology study, focusing on proactive detection of
-    high-impact risks.
-
-
-    Context:
-
-    """
-
-    • Study phase/indication: Phase II, metastatic NSCLC
-
-    • Enrollment goal: 150 participants, 10 sites
-
-    • Known risk factors: high AE rate, complex biomarker sampling, decentralized ePRO
-
-    • Regulatory expectation: ICH E6 (R3) & FDA guidance on risk-based monitoring (2019)
-
-    """
-
-
-    **Deliverables (markdown):**
-
-    1. **Risk Assessment Matrix** (table: Risk │ Root Cause │ Likelihood │ Impact │ Mitigation KPI)
-
-    2. **Key Risk Indicators (KRIs)** (≤ 8, define calculation & alert threshold)
-
-    3. **Adaptive Monitoring Strategy** – outline trigger logic for remote vs. on-site, including minimum visit frequency
-
-    4. **Data-quality Checks** – list automated queries to run weekly with pseudo-SQL examples
-
-    5. **Escalation Pathway** – who is notified and within what timeline
-
-    ```'
+  content: "**System (role):** You are a clinical risk-management consultant.\n\n\
+    **User instruction:** Develop a site-level RBM plan for a Phase II oncology study,\
+    \ focusing on proactive detection of high-impact risks.\n\nContext:\n\"\"\"\n\u2022\
+    \ Study phase/indication: Phase II, metastatic NSCLC\n\u2022 Enrollment goal:\
+    \ 150 participants, 10 sites\n\u2022 Known risk factors: high AE rate, complex\
+    \ biomarker sampling, decentralized ePRO\n\u2022 Regulatory expectation: ICH E6\
+    \ (R3) & FDA guidance on risk-based monitoring (2019)\n\"\"\"\n\n**Deliverables\
+    \ (markdown):**\n1. **Risk Assessment Matrix** (table: Risk \u2502 Root Cause\
+    \ \u2502 Likelihood \u2502 Impact \u2502 Mitigation KPI)\n2. **Key Risk Indicators\
+    \ (KRIs)** (\u2264 8, define calculation & alert threshold)\n3. **Adaptive Monitoring\
+    \ Strategy** \u2013 outline trigger logic for remote vs. on-site, including minimum\
+    \ visit frequency\n4. **Data-quality Checks** \u2013 list automated queries to\
+    \ run weekly with pseudo-SQL examples\n5. **Escalation Pathway** \u2013 who is\
+    \ notified and within what timeline\n```"
 - role: user
   content: '{{input}}'
 testData:
-- input: 'Study phase/indication: Phase II, metastatic NSCLC
+- expected: 1. **Risk Assessment Matrix**
+  vars: 'Study phase/indication: Phase II, metastatic NSCLC
 
     Enrollment goal: 150 participants, 10 sites
 
     Known risk factors: high AE rate, complex biomarker sampling, decentralized ePRO
 
     Regulatory expectation: ICH E6 (R3) & FDA guidance on risk-based monitoring (2019)'
-  expected: 1. **Risk Assessment Matrix**
 evaluators:
 - name: Output starts with Risk Assessment Matrix section
   string:

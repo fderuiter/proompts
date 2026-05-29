@@ -1,7 +1,7 @@
----
 name: PMA Supplement (CBE)
 version: 0.1.0
-description: Draft a 'Special PMA Supplement - Changes Being Effected' for safety warnings.
+description: Draft a 'Special PMA Supplement - Changes Being Effected' for safety
+  warnings.
 metadata:
   domain: regulatory
   complexity: low
@@ -20,22 +20,10 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
-
-
-    ## Context
-
-    21 CFR 814.39(d)
-
-
-    ## Objective
-
-    Draft a ''Special PMA Supplement - Changes Being Effected'' for safety warnings.
-
-
-    ## Output Format
-
-    Formal letter marked ''Special PMA Supplement—CBE''.'
+  content: "You are an expert Regulatory Affairs Specialist capable of handling complex\
+    \ FDA and ISO compliance tasks.\n\n## Context\n21 CFR 814.39(d)\n\n## Objective\n\
+    Draft a 'Special PMA Supplement - Changes Being Effected' for safety warnings.\n\
+    \n## Output Format\nFormal letter marked 'Special PMA Supplement\u2014CBE'."
 - role: user
   content: 'Please perform the task using the following input data:
 
@@ -46,8 +34,8 @@ messages:
 
     </input>'
 testData:
-- input: New safety information and current labeling. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: New safety information and current labeling. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Compare

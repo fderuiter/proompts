@@ -1,8 +1,7 @@
----
 name: PMA Post-approval Reporting
 version: 0.1.0
-description: Compile a summary of post-approval requirements, including clinical study data, manufacturing changes, and scientific
-  literature.
+description: Compile a summary of post-approval requirements, including clinical study
+  data, manufacturing changes, and scientific literature.
 metadata:
   domain: regulatory
   complexity: low
@@ -21,7 +20,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -31,8 +31,8 @@ messages:
 
     ## Objective
 
-    Compile a summary of post-approval requirements, including clinical study data, manufacturing changes, and scientific
-    literature.
+    Compile a summary of post-approval requirements, including clinical study data,
+    manufacturing changes, and scientific literature.
 
 
     ## Output Format
@@ -48,8 +48,9 @@ messages:
 
     </input>'
 testData:
-- input: PMA approval order, study data, change logs, and bibliography of recent literature. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: PMA approval order, study data, change logs, and bibliography of recent literature.
+    (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Verify

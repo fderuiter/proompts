@@ -1,4 +1,3 @@
----
 name: Clinical ETL Pipeline Review
 version: 0.1.0
 description: Review the clinical ETL pipeline for accuracy and efficiency.
@@ -32,11 +31,11 @@ messages:
     {{etl_qc_plan}}
 
 
-    Based on this QC plan, and the implied mapping specification, review the entire clinical ETL pipeline for accuracy, efficiency,
-    and potential bottlenecks.'
+    Based on this QC plan, and the implied mapping specification, review the entire
+    clinical ETL pipeline for accuracy, efficiency, and potential bottlenecks.'
 testData:
-- input: Assess pipeline stages for bottlenecks.
-  expected: Identifies slow transformations and load issues.
+- expected: Identifies slow transformations and load issues.
+  vars: Assess pipeline stages for bottlenecks.
 evaluators:
 - name: Output mentions pipeline
   string:

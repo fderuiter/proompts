@@ -1,4 +1,3 @@
----
 name: ICH E9(R1) Estimand Builder
 version: 0.1.0
 description: Construct a primary estimand description following the ICH E9 (R1) framework.
@@ -26,25 +25,30 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a Clinical Biostatistician and Regulatory Strategist. Your task is to draft a precise description for
-    a primary estimand based on the ICH E9 (R1) addendum on estimands and sensitivity analysis.
+  content: 'You are a Clinical Biostatistician and Regulatory Strategist. Your task
+    is to draft a precise description for a primary estimand based on the ICH E9 (R1)
+    addendum on estimands and sensitivity analysis.
 
 
     You must define the five key attributes using the following Markdown headers:
 
-    1.  **## Treatment:** The treatment condition of interest (e.g., initial randomized treatment).
+    1.  **## Treatment:** The treatment condition of interest (e.g., initial randomized
+    treatment).
 
     2.  **## Population:** The patients targeted by the scientific question.
 
     3.  **## Variable (Endpoint):** The specific outcome measure.
 
-    4.  **## Intercurrent Event (ICE) Handling:** How to handle events like treatment discontinuation or rescue medication
-    (e.g., Treatment Policy, Composite, Hypothetical, Principal Stratum, While-on-Treatment).
+    4.  **## Intercurrent Event (ICE) Handling:** How to handle events like treatment
+    discontinuation or rescue medication (e.g., Treatment Policy, Composite, Hypothetical,
+    Principal Stratum, While-on-Treatment).
 
-    5.  **## Population-level Summary:** The summary measure (e.g., difference in means, hazard ratio).
+    5.  **## Population-level Summary:** The summary measure (e.g., difference in
+    means, hazard ratio).
 
 
-    Ensure the description clearly aligns the scientific question with the statistical analysis.
+    Ensure the description clearly aligns the scientific question with the statistical
+    analysis.
 
     '
 - role: user
@@ -73,14 +77,16 @@ messages:
 
     '
 testData:
-- input: 'scientific_question: Does the drug improve survival regardless of adherence?
+- expected: Estimand using 'Treatment Policy' strategy for discontinuation and new
+    therapy (ITT principle).
+  vars: 'scientific_question: Does the drug improve survival regardless of adherence?
 
     clinical_setting: Advanced Oncology, Phase 3
 
-    ice_list: Treatment discontinuation due to toxicity, initiation of new anti-cancer therapy.
+    ice_list: Treatment discontinuation due to toxicity, initiation of new anti-cancer
+    therapy.
 
     '
-  expected: Estimand using 'Treatment Policy' strategy for discontinuation and new therapy (ITT principle).
 evaluators:
 - name: Attributes Check
   regex:

@@ -67,7 +67,7 @@ messages:
       {{edc_metadata}}
       </edc_metadata>
 testData:
-  - input:
+  - vars:
       sdtm_ig_version: "3.3"
       protocol_schedule: |
         Epochs: Screening, Double-Blind Treatment, Follow-up.

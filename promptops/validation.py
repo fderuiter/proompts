@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any, List, Optional, Dict
 
 from pydantic import BaseModel, ValidationError, field_validator, model_validator, Field
-from promptops.utils import load_yaml, iter_prompt_files
+from promptops.utils import load_yaml, iter_prompt_files, iter_workflow_files
 
 VAR_PATTERN = re.compile(r'\{\{([^}]+)\}\}')
 
@@ -99,6 +99,124 @@ class PromptSchema(BaseModel):
 
         return self
 
+
+class WorkflowInput(BaseModel):
+    name: str = Field(...)
+    description: Optional[str] = Field(None)
+
+class WorkflowStep(BaseModel):
+    step_id: str = Field(...)
+    prompt_file: str = Field(...)
+    map_inputs: Dict[str, Any] = Field(...)
+
+class WorkflowMetadata(BaseModel):
+    domain: str = Field(...)
+    topic: Optional[str] = Field(None)
+
+class WorkflowSchema(BaseModel):
+    name: str = Field(...)
+    description: Optional[str] = Field(None)
+    metadata: Optional[WorkflowMetadata] = Field(None)
+    inputs: List[WorkflowInput] = Field([])
+    steps: List[WorkflowStep] = Field(...)
+    testData: Optional[List[Any]] = Field(None)
+
+def analyze_workflow_dependencies(workflow_file: str, workflow_data: dict, root_dir: str) -> List[str]:
+    issues = []
+    try:
+        wf = WorkflowSchema(**workflow_data)
+    except ValidationError as e:
+        return [f"Validation error: {e}"]
+
+    # Dependency Graph (Circular & Forward reference detection)
+    graph = {}
+    in_degree = {}
+    step_ids = [step.step_id for step in wf.steps]
+    
+    for step_id in step_ids:
+        graph[step_id] = []
+        in_degree[step_id] = 0
+
+    global_inputs = {inp.name for inp in wf.inputs}
+
+    defined_so_far = set()
+    for step in wf.steps:
+        for var_name, template in step.map_inputs.items():
+            if not isinstance(template, str):
+                continue
+            # Check inputs.*
+            inputs_matches = re.findall(r'\{\{\s*inputs\.([^}\s]+)\s*\}\}', template)
+            for inp_match in inputs_matches:
+                if inp_match not in global_inputs:
+                    issues.append(f"Step '{step.step_id}' mapping '{var_name}' refers to undefined global input '{inp_match}'.")
+
+            # Check steps.*.output
+            steps_matches = re.findall(r'\{\{\s*steps\.([^\.\s]+)\.output\s*\}\}', template)
+            for step_match in steps_matches:
+                if step_match not in step_ids:
+                    issues.append(f"Step '{step.step_id}' mapping '{var_name}' references undefined step '{step_match}'.")
+                elif step_match not in defined_so_far:
+                    issues.append(f"Step '{step.step_id}' depends on step '{step_match}' which has not been executed yet (forward or circular reference).")
+                else:
+                    graph[step_match].append(step.step_id)
+                    in_degree[step.step_id] += 1
+
+        defined_so_far.add(step.step_id)
+
+    # Check for circular dependencies globally
+    visited = 0
+    queue = [n for n in step_ids if in_degree[n] == 0]
+    
+    while queue:
+        node = queue.pop(0)
+        visited += 1
+        for neighbor in graph[node]:
+            in_degree[neighbor] -= 1
+            if in_degree[neighbor] == 0:
+                queue.append(neighbor)
+                
+    if visited != len(step_ids):
+        issues.append(f"Circular dependency detected in workflow steps.")
+
+    # Check Variable Contract
+    for step in wf.steps:
+        prompt_path = os.path.join(root_dir, step.prompt_file)
+        if not os.path.exists(prompt_path):
+            issues.append(f"Step '{step.step_id}' references missing prompt file: {step.prompt_file}")
+            continue
+            
+        prompt_content = load_yaml(prompt_path)
+        if not prompt_content:
+            issues.append(f"Failed to load prompt file: {step.prompt_file}")
+            continue
+            
+        try:
+            prompt_schema = PromptSchema(**prompt_content)
+        except ValidationError:
+            issues.append(f"Step '{step.step_id}' references invalid prompt file: {step.prompt_file}")
+            continue
+            
+        required_vars = {v.name for v in prompt_schema.variables if v.required}
+        
+        def flatten_keys(d, parent_key=''):
+            items = []
+            for k, v in d.items():
+                new_key = f"{parent_key}.{k}" if parent_key else k
+                if isinstance(v, dict):
+                    items.extend(flatten_keys(v, new_key))
+                else:
+                    items.append(new_key)
+            return items
+            
+        mapped_vars = set(flatten_keys(step.map_inputs))
+
+        
+        missing_vars = required_vars - mapped_vars
+        if missing_vars:
+            issues.append(f"Step '{step.step_id}' is missing mappings for required prompt variables: {missing_vars}")
+            
+    return issues
+
 def validate_prompts(directory: str, strict: bool = False) -> bool:
     ok = True
     seen_names = {}
@@ -138,4 +256,20 @@ def validate_prompts(directory: str, strict: bool = False) -> bool:
             else:
                 seen_names[name] = str(file_path)
 
+
+    # Validate Workflows
+    for file_path in iter_workflow_files(dir_path):
+        content = load_yaml(str(file_path))
+        if not content:
+            ok = False
+            continue
+            
+        issues = analyze_workflow_dependencies(str(file_path), content, dir_path)
+        if issues:
+            print(f"Validation error in workflow {file_path}:")
+            for issue in issues:
+                print(f"  - {issue}")
+            ok = False
+
     return ok
+

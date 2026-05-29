@@ -60,7 +60,7 @@ messages:
       <whodrug_coding_data>{{whodrug_coding_data}}</whodrug_coding_data>
       <target_sdtm_version>{{target_sdtm_version}}</target_sdtm_version>
 testData:
-  - input:
+  - vars:
       raw_edc_data: |
         Subject: 101-001
         Medication: Advil

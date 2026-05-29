@@ -44,7 +44,7 @@ messages:
       **Input Code:**
       {{programming_logic}}
 testData:
-  - input: |
+  - vars: |
       programming_logic: |
         if ADT < TRTSDT then PHASE = 'SCREENING';
         else if ADT > TRTEDT + 30 then PHASE = 'FOLLOW-UP';

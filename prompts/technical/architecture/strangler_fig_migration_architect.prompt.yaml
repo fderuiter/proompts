@@ -43,7 +43,7 @@ messages:
       Target State:
       {{target_state}}
 testData:
-  - input:
+  - vars:
       legacy_system: "A monolithic e-commerce application built on Ruby on Rails, using a single PostgreSQL database."
       target_state: "A set of microservices built with Go and Node.js, deployed on Kubernetes, each with its own database."
     expected: "Strangler Fig Migration Strategy"

@@ -52,7 +52,7 @@ messages:
     - Two tables: department-level compliance summary and study-level risk scores.
     - Narrative summary of up to 250 words addressed to the COO.
 testData:
-  - input: |
+  - vars: |
       training_records: |
         Employee_ID,Role,Study,Last_GCP_Date,Last_GDPR_Date
         1001,CRA,Study_A,2022-01-15,2023-05-10

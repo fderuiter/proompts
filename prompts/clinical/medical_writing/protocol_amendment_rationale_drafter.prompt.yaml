@@ -65,7 +65,7 @@ messages:
       </safety_impact>
       </inputs>
 testData:
-  - input:
+  - vars:
       proposed_changes: "Addition of a new cohort receiving a lower dose (10 mg) of the investigational product."
       scientific_justification: "Recent Phase 1b data suggests the 10 mg dose may provide comparable efficacy with reduced toxicity compared to the original 20 mg cohort."
       safety_impact: "Anticipated to reduce the incidence of dose-limiting toxicities without compromising ethical standards. Additional safety monitoring will be implemented."

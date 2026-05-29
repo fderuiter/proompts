@@ -65,7 +65,7 @@ messages:
       Concurrency Scale: {{concurrency_scale}}
       State Durability Requirements: {{state_durability_requirements}}
 testData:
-  - input: |
+  - vars: |
       Application Domain: Real-time multiplayer game world state synchronization
       Concurrency Scale: 5 million concurrent player actors, 500K state updates/sec
       State Durability Requirements: Event Sourced player state with Redis-backed snapshots, at-least-once message delivery.

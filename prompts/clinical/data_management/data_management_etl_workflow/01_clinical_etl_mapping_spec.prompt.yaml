@@ -1,4 +1,3 @@
----
 name: Clinical ETL Mapping Spec
 version: 0.1.0
 description: Create an ETL mapping specification for clinical data.
@@ -21,7 +20,8 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are an ETL specialist defining mapping specifications for clinical trial
+  content: 'You are an ETL specialist defining mapping specifications for clinical
+    trial
 
     data pipelines.
 
@@ -34,8 +34,8 @@ messages:
 
     Based on these requirements, create a detailed ETL mapping specification.'
 testData:
-- input: Map source patient records to target schema fields.
-  expected: Includes field-to-field mappings.
+- expected: Includes field-to-field mappings.
+  vars: Map source patient records to target schema fields.
 evaluators:
 - name: Output mentions mapping
   string:

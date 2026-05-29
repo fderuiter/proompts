@@ -30,7 +30,7 @@ messages:
     content: |
       Current workspace state: {{workspace_state}}
 testData:
-  - input:
+  - vars:
       workspace_state: "Modified autonomous_automation_agent.prompt.yaml to include new persona and constraints."
     expected: "Executing autonomous commit and PR generation for workspace state: Modified autonomous_automation_agent.prompt.yaml to include new persona and constraints."
 evaluators:

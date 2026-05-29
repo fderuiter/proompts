@@ -51,7 +51,7 @@ messages:
       Conflict Resolution Requirements:
       {{conflict_resolution_requirements}}
 testData:
-  - input:
+  - vars:
       data_model: "Collaborative text documents and nested JSON configuration objects modified by multiple concurrent users."
       client_topology: "Resource-constrained mobile clients with intermittent 3G connectivity and local SQLite storage."
       conflict_resolution_requirements: "Strict multi-master replication with automatic, deterministic conflict resolution preserving user intent without manual intervention."

@@ -73,7 +73,7 @@ messages:
       </proposed_pediatric_studies>
       </inputs>
 testData:
-  - input:
+  - vars:
       adult_clinical_data: "Phase 3 data demonstrates a 40% reduction in seizure frequency in adults with focal epilepsy. Steady-state clearance is linear."
       mechanism_of_action: "Selective antagonism of voltage-gated sodium channels (Nav1.1), stabilizing neuronal membranes."
       target_pediatric_condition: "Pediatric patients (1 month to <18 years) with inadequately controlled focal-onset seizures."

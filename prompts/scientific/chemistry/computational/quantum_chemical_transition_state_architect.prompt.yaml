@@ -52,12 +52,12 @@ messages:
       Thermodynamic Conditions: <conditions>{{conditions}}</conditions>
       Reaction Type: <reaction_type>{{reaction_type}}</reaction_type>
 testData:
-  - input:
+  - vars:
       reactants: "C1=CC=CC=C1, C=CC#N"
       conditions: "T = 298.15 K, 1 atm, gas phase"
       reaction_type: "Diels-Alder Cycloaddition"
     expected: "I. Structural & Energetic Modeling"
-  - input:
+  - vars:
       reactants: "CH3Cl, NaOH"
       conditions: "T = 310 K, 1 atm, aqueous solvent (implicit PCM)"
       reaction_type: "SN2 Nucleophilic Substitution"

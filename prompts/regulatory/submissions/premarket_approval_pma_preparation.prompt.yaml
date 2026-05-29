@@ -1,7 +1,7 @@
----
 name: Premarket Approval (PMA) Preparation
 version: 0.1.0
-description: Draft a detailed summary of a PMA application, including clinical investigation results and manufacturing history.
+description: Draft a detailed summary of a PMA application, including clinical investigation
+  results and manufacturing history.
 metadata:
   domain: regulatory
   complexity: low
@@ -21,7 +21,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -31,7 +32,8 @@ messages:
 
     ## Objective
 
-    Draft a detailed summary of a PMA application, including clinical investigation results and manufacturing history.
+    Draft a detailed summary of a PMA application, including clinical investigation
+    results and manufacturing history.
 
 
     ## Output Format
@@ -47,8 +49,9 @@ messages:
 
     </input>'
 testData:
-- input: Clinical results, nonclinical lab data, device characteristics, and marketing history. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: Clinical results, nonclinical lab data, device characteristics, and marketing
+    history. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Review

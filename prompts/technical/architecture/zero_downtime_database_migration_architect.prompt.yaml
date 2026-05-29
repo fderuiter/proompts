@@ -41,7 +41,7 @@ messages:
       {{migration_requirements}}
       </input>
 testData:
-  - input:
+  - vars:
       migration_requirements: "We are migrating from a self-hosted monolithic PostgreSQL 12 database (3TB data) to Amazon Aurora PostgreSQL. Our application is highly available and cannot sustain any write downtime. We have heavy read traffic and need a strategy that ensures no data loss, verifiable consistency, and the ability to instantly rollback if the new database exhibits latency spikes during the cutover."
     expected: "CDC"
 evaluators:

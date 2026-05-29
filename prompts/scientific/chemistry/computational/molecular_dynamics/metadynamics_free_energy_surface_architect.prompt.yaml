@@ -56,12 +56,12 @@ messages:
       Collective Variables: <collective_variables>{{collective_variables}}</collective_variables>
       Conditions: <conditions>{{conditions}}</conditions>
 testData:
-  - input:
+  - vars:
       molecular_system: "CC(=O)NC1=CC=C(O)C=C1 (Paracetamol)"
       collective_variables: "Torsion angle of the amide bond"
       conditions: "T = 298.15 K, 1 atm, TIP3P water"
     expected: "I. System Preparation & Equilibration"
-  - input:
+  - vars:
       molecular_system: "PDB: 2RH1 (beta-2 adrenergic receptor)"
       collective_variables: "Distance between TM3 and TM6 intracellular ends"
       conditions: "T = 310 K, 1 atm, POPC lipid bilayer, 0.15 M KCl"

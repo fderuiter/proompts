@@ -48,11 +48,11 @@ messages:
       Attack Vector Focus:
       {{attack_vector_focus}}
 testData:
-  - input:
+  - vars:
       target_hardware_architecture: "A custom 32-bit RISC-V SoC designed for IoT smart meters, featuring an unprotected hardware AES-128 coprocessor and a standard 5-stage pipeline without branch prediction. Clock speed is 50MHz, fabricated on a 65nm process."
       attack_vector_focus: "Differential Power Analysis (DPA) and Correlation Power Analysis (CPA) on the AES coprocessor."
     expected: "**Pearson correlation coefficient**"
-  - input:
+  - vars:
       target_hardware_architecture: "High-performance x86-64 server CPU with 3 levels of cache, out-of-order execution, and Intel SGX enabled. The target workload is an RSA-4096 signature generation routine running within the enclave."
       attack_vector_focus: "L3 Cache Timing Attacks (Prime+Probe) targeting the modular exponentiation."
     expected: "**Prime+Probe**"

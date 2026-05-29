@@ -31,7 +31,7 @@ messages:
   - role: user
     content: "Evaluate the following MDSAP audit finding and provide the final grade:\n\n<input>\nAudit Finding: {{audit_finding}}\nDirect QMS Impact: {{direct_qms_impact}}\nRepeat Finding: {{repeat_finding}}\n</input>\n\nProvide the grading rationale step-by-step and conclude with the final numerical grade."
 testData:
-  - input:
+  - vars:
       audit_finding: "The manufacturer failed to document the justification for sample size in the design verification protocol for the new infusion pump."
       direct_qms_impact: "yes"
       repeat_finding: "no"

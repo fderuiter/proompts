@@ -60,7 +60,7 @@ messages:
       <target_domains>{{target_domains}}</target_domains>
       <cdisc_ig_version>{{cdisc_ig_version}}</cdisc_ig_version>
 testData:
-  - input:
+  - vars:
       source_data_schema: |
         Table: EDC_DEVICE_LOG
         Columns:

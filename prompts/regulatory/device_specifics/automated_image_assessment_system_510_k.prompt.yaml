@@ -1,7 +1,7 @@
----
 name: Automated Image Assessment System 510(k)
 version: 0.1.0
-description: Draft a detailed device description for an automated image assessment system for microbial colonies.
+description: Draft a detailed device description for an automated image assessment
+  system for microbial colonies.
 metadata:
   domain: regulatory
   complexity: low
@@ -21,7 +21,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -31,7 +32,8 @@ messages:
 
     ## Objective
 
-    Draft a detailed device description for an automated image assessment system for microbial colonies.
+    Draft a detailed device description for an automated image assessment system for
+    microbial colonies.
 
 
     ## Output Format
@@ -47,8 +49,9 @@ messages:
 
     </input>'
 testData:
-- input: Technology details, software modules, and expert rules for colony assessment. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: Technology details, software modules, and expert rules for colony assessment.
+    (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Verify

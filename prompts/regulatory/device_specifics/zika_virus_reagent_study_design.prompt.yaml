@@ -1,7 +1,7 @@
----
 name: Zika Virus Reagent Study Design
 version: 0.1.0
-description: Draft a protocol for analytical performance studies to validate Zika virus serological reagents.
+description: Draft a protocol for analytical performance studies to validate Zika
+  virus serological reagents.
 metadata:
   domain: regulatory
   complexity: low
@@ -21,7 +21,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -31,7 +32,8 @@ messages:
 
     ## Objective
 
-    Draft a protocol for analytical performance studies to validate Zika virus serological reagents.
+    Draft a protocol for analytical performance studies to validate Zika virus serological
+    reagents.
 
 
     ## Output Format
@@ -47,8 +49,9 @@ messages:
 
     </input>'
 testData:
-- input: Reference material details, cross-reactivity targets, and specimen stability. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: Reference material details, cross-reactivity targets, and specimen stability.
+    (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Ensure

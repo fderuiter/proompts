@@ -47,7 +47,7 @@ messages:
       {{traversal_requirements}}
       </traversal_requirements>
 testData:
-  - input:
+  - vars:
       dataset_characteristics: "A global financial transaction network containing 50 billion nodes (Accounts, Entities, IP Addresses, Devices) and 300 billion edges (Transactions, Shared_Identifiers, Ownership). The network experiences high-velocity streaming inserts (10k ops/sec) with extreme density around specific institutional accounts (supernodes)."
       traversal_requirements: "Real-time fraud detection requires sub-100ms response times for finding complex cyclical paths (up to 6 hops) indicating money laundering rings. We must evaluate edge weights (transaction amounts) and time-windows (temporal graphs) dynamically during the traversal."
     expected: "(Neo4j|TigerGraph|Neptune|Gremlin|Cypher|supernode)"

@@ -61,7 +61,7 @@ messages:
       [NEW DOCUMENTATION SOURCE]
       {{input}}
 testData:
-  - input: |
+  - vars: |
       # My New Project
       This project is now deprecated. Please use the new v2 API.
     expected: |

@@ -64,12 +64,12 @@ messages:
       Primary Framework: <primary_normative_framework>{{primary_normative_framework}}</primary_normative_framework>
       Secondary Framework: <secondary_normative_framework>{{secondary_normative_framework}}</secondary_normative_framework>
 testData:
-  - input:
+  - vars:
       ethical_dilemma: "A fully autonomous vehicle is driving down a narrow road. Suddenly, a child runs into the street. The car's sensors calculate that it cannot brake in time. It has two choices: 1) Swerve into a solid wall, killing the single passenger inside the car, or 2) Maintain its course, hitting and killing the child. The car's programming must decide instantly."
       primary_normative_framework: "Kantian Deontology"
       secondary_normative_framework: "Act Utilitarianism"
     expected: "Dilemma Deconstruction"
-  - input:
+  - vars:
       ethical_dilemma: "A doctor has five patients who will die without immediate organ transplants (heart, two lungs, two kidneys). A healthy young traveler comes in for a routine checkup. The doctor realizes the traveler's organs are a perfect match for all five dying patients. Should the doctor secretly kill the healthy traveler to save the five patients?"
       primary_normative_framework: "Kantian Deontology"
       secondary_normative_framework: "Aesthetics"

@@ -1,4 +1,3 @@
----
 name: Public Hearing Participation
 version: 0.1.0
 description: Complete a Notice of Participation for a formal evidentiary public hearing.
@@ -20,7 +19,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -46,8 +46,8 @@ messages:
 
     </input>'
 testData:
-- input: Docket number, contact info, and specific interests. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: Docket number, contact info, and specific interests. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Confirm

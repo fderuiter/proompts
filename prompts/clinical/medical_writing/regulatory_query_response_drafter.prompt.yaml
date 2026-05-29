@@ -71,7 +71,7 @@ messages:
       </previous_submission_context>
       </inputs>
 testData:
-  - input:
+  - vars:
       health_authority_query: "Please provide clarification on the exact number of patients who discontinued the trial due to adverse events in the high-dose cohort, as Table 14.1.1 appears to conflict with Section 8.4 of the CSR."
       clinical_source_data: "Review of the clinical database confirms that 12 patients discontinued due to AEs in the high-dose cohort. Table 14.1.1 incorrectly listed 14 patients due to a programming error that included 2 patients who discontinued due to lack of efficacy. The narrative in Section 8.4 (stating 12 patients) is correct."
       previous_submission_context: "Original CSR submitted for Protocol 101, NDA 123456."
@@ -86,7 +86,7 @@ testData:
       - name: Restatement Check
         regex:
           pattern: '(?i)Table 14\.1\.1 appears to conflict'
-  - input:
+  - vars:
       health_authority_query: "Please provide the mechanism of action for the study drug and compare it to existing market alternatives."
       clinical_source_data: "No data available."
       previous_submission_context: "Initial IND submission."

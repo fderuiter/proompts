@@ -1,7 +1,7 @@
----
 name: Intended Use and Indications for Use Alignment
 version: 0.1.0
-description: Review 510(k) drafts to ensure 'Intended Use' and 'Indications for Use' are verbatim and consistent.
+description: Review 510(k) drafts to ensure 'Intended Use' and 'Indications for Use'
+  are verbatim and consistent.
 metadata:
   domain: regulatory
   complexity: low
@@ -21,7 +21,8 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
+  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
+    FDA and ISO compliance tasks.
 
 
     ## Context
@@ -31,7 +32,8 @@ messages:
 
     ## Objective
 
-    Review 510(k) drafts to ensure ''Intended Use'' and ''Indications for Use'' are verbatim and consistent.
+    Review 510(k) drafts to ensure ''Intended Use'' and ''Indications for Use'' are
+    verbatim and consistent.
 
 
     ## Output Format
@@ -47,8 +49,8 @@ messages:
 
     </input>'
 testData:
-- input: Full 510(k) draft including labeling and executive summary. (Example data)
-  expected: Expected output as per instructions.
+- expected: Expected output as per instructions.
+  vars: Full 510(k) draft including labeling and executive summary. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Cross\-reference

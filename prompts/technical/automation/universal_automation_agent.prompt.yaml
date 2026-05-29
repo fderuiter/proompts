@@ -55,7 +55,7 @@ messages:
 
       [OUTPUT FORMAT]: {{output_format}}
 testData:
-  - input:
+  - vars:
       task: "Extract keywords from text."
       context: "Artificial Intelligence is transforming industries by automating tasks and providing insights."
       constraints: "Return exactly 3 keywords. Comma separated. Lowercase."

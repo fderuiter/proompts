@@ -59,12 +59,12 @@ messages:
       3.  **Circuit Breaking & Rate Limiting:** To prevent the DLQ replay service from cascading failure upon the primary event consumers.
       4.  **Audit & Compliance Quarantine:** How unrecoverable "poison pills" are persisted for human intervention and regulatory auditing.
 testData:
-  - input:
+  - vars:
       broker_ecosystem: "Apache Kafka"
       remediation_pattern: "Automated Replay with Exponential Backoff"
       architecture_constraints: "Sub-50ms latency for primary topics, strict GDPR compliance for unrecoverable PII payloads."
     expected: "Failure Classification Matrix"
-  - input:
+  - vars:
       broker_ecosystem: "AWS SQS and EventBridge"
       remediation_pattern: "Poison Pill Quarantine and Alerting"
       architecture_constraints: "Serverless execution limits, maximum 14-day retention, low operational overhead."
