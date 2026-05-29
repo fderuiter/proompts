@@ -40,6 +40,39 @@ def setup_test_environment():
     with open(os.path.join(TEST_DIR, "prompt2.prompt.yaml"), 'w') as f:
         yaml.dump(prompt2_content, f)
 
+    # --- Create Mock Prompt 3 (Failing Evaluator) ---
+    prompt3_content = {
+        "name": "Test Prompt 3: Failing Evaluator",
+        "description": "Fails evaluation intentionally.",
+        "messages": [{"role": "user", "content": "Analyze: {{data}}"}],
+        "testData": [{
+            "inputs": {"data": "Bad Data"},
+            "expected": ["Output contains forbidden word"]
+        }],
+        "evaluators": [
+            {
+                "name": "Forbidden Word Checker",
+                "python": "return 'forbidden' not in output",
+                "action": "terminate"
+            }
+        ]
+    }
+    with open(os.path.join(TEST_DIR, "prompt3.prompt.yaml"), 'w') as f:
+        yaml.dump(prompt3_content, f)
+
+    # --- Create Mock Prompt 4 (Redact PII) ---
+    prompt4_content = {
+        "name": "Test Prompt 4: Redact PII",
+        "description": "Tests the global PII scanner redaction.",
+        "messages": [{"role": "user", "content": "Summarize: {{info}}"}],
+        "testData": [{
+            "inputs": {"info": "Patient details"},
+            "expected": ["Patient SSN is 123-45-6789."]
+        }]
+    }
+    with open(os.path.join(TEST_DIR, "prompt4.prompt.yaml"), 'w') as f:
+        yaml.dump(prompt4_content, f)
+
     # --- Create Mock Workflow ---
     workflow_content = {
         "name": "Test Workflow",
@@ -54,6 +87,11 @@ def setup_test_environment():
                 "step_id": "step2_emphasize",
                 "prompt_file": os.path.join(TEST_DIR, "prompt2.prompt.yaml"),
                 "map_inputs": {"phrase": "{{steps.step1_greet.output}}"}
+            },
+            {
+                "step_id": "step3_redact",
+                "prompt_file": os.path.join(TEST_DIR, "prompt4.prompt.yaml"),
+                "map_inputs": {"info": "Patient"}
             }
         ]
     }
@@ -89,6 +127,36 @@ def run_tests():
         step2_output = final_state["steps"]["step2_emphasize"]["output"]
         assert step2_output == "Hello, World!!!", f"FAIL: Step 2 output was '{step2_output}'"
         print("PASS: Step 2 output is correct.")
+
+        # Check output of third step (redaction)
+        step3_output = final_state["steps"]["step3_redact"]["output"]
+        assert "123-45-6789" not in step3_output, "FAIL: PII was not redacted!"
+        assert "[REDACTED]" in step3_output, "FAIL: Redaction marker missing!"
+        print("PASS: Step 3 output redacted PII correctly.")
+
+        # Test terminate action with prompt3
+        print("\n--- Running failing workflow test ---")
+        failing_workflow_content = {
+            "name": "Failing Workflow",
+            "inputs": [],
+            "steps": [
+                {
+                    "step_id": "step1_fail",
+                    "prompt_file": os.path.join(TEST_DIR, "prompt3.prompt.yaml"),
+                    "map_inputs": {"data": "Bad"}
+                }
+            ]
+        }
+        failing_workflow_path = os.path.join(TEST_DIR, "fail.workflow.yaml")
+        with open(failing_workflow_path, 'w') as f:
+            yaml.dump(failing_workflow_content, f)
+
+        try:
+            run_workflow(failing_workflow_path, {}, verbose=False)
+            assert False, "FAIL: Workflow should have terminated!"
+        except Exception as e:
+            assert "Evaluator failed" in str(e), f"FAIL: Unexpected exception: {e}"
+            print("PASS: Failing evaluator terminated workflow correctly.")
 
         print("\nAll tests passed successfully!")
 
