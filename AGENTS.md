@@ -13,7 +13,7 @@ This document provides the tribal knowledge, technical constraints, and operatio
 **Core Technologies**:
 - **Data Format**: YAML (`.prompt.yaml`, `.workflow.yaml`)
 - **Validation**: Python 3.x
-- **Documentation**: Jekyll (Markdown)
+- **Documentation**: MkDocs (Markdown)
 - **CI/CD**: GitHub Actions
 
 **Key Dependencies**: `pyyaml`, `yamllint`, `pydantic`, `jinja2`, `pytest`
@@ -31,10 +31,10 @@ pip install -r requirements.txt
 ### Validation & Testing
 ```bash
 # Run the full validation suite (includes schema, linting, docs check)
-python3 tools/scripts/test_all.py
+python3 engine/scripts/test_all.py
 
 # Run specific schema validation for prompts
-python3 tools/scripts/validate_prompt_schema.py
+python3 engine/scripts/validate_prompt_schema.py
 
 # Lint YAML files strictly
 yamllint .
@@ -43,7 +43,7 @@ yamllint .
 ### Documentation
 ```bash
 # Generate documentation indices and overviews
-python3 tools/scripts/generate_docs.py
+python3 engine/scripts/generate_docs.py
 ```
 
 ## 3. Testing & Validation
@@ -52,7 +52,7 @@ Testing in this repository means verifying **schema compliance** and **logic cor
 
 - **Schema Validation**: handled by `validate_prompt_schema.py`. Ensure all required fields (`name`, `model`, `messages`) are present.
 - **Logic Verification**: use the `testData` field in your prompt file. This allows simulation tools to verify the prompt's output against expected results.
-- **Workflow Simulation**: use `tools/scripts/run_workflow.py` to simulate complex multi-step prompt chains.
+- **Workflow Simulation**: use `engine/scripts/run_workflow.py` to simulate complex multi-step prompt chains.
 
 ## 4. Code Style & Conventions
 
@@ -109,5 +109,5 @@ evaluators:
   - `fix: correct typo in system message`
   - `docs: update usage guide`
 - **Pull Requests**:
-  - Must pass `tools/scripts/test_all.py` before submission.
+  - Must pass `engine/scripts/test_all.py` before submission.
   - Ensure no sensitive data (API keys, PII) is included in `testData`.

@@ -77,7 +77,7 @@ testData:
 You can search for prompts using the included script:
 
 ```bash
-python3 tools/scripts/search_prompts.py "code review"
+python3 engine/scripts/search_prompts.py "code review"
 ```
 
 ## Validation
@@ -85,5 +85,5 @@ python3 tools/scripts/search_prompts.py "code review"
 Before submitting a new prompt, run the validation suite:
 
 ```bash
-python3 tools/scripts/test_all.py
+python3 engine/scripts/test_all.py
 ```

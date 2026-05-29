@@ -17,13 +17,13 @@ Before submitting any changes, run the master validation script:
 
 ```bash
 # Runs linting, schema checks, and link verification
-python3 tools/scripts/test_all.py
+python3 engine/scripts/test_all.py
 ```
 
 ### 2. Optimize a Prompt
 Use the **Prompt Optimizer** to improve your prompt's quality:
 
-1. Copy content from [`tools/prompt_tools/L5_prompt_optimizer.prompt.yaml`](prompt_tools/L5_prompt_optimizer.prompt.yaml).
+1. Copy content from [`engine/prompt_tools/L5_prompt_optimizer.prompt.yaml`](prompt_tools/L5_prompt_optimizer.prompt.yaml).
 2. Paste into your LLM along with your draft prompt.
 
 ## 📚 Detailed Documentation

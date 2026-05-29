@@ -23,17 +23,17 @@ inferential descriptions for variables declared in the `messages` block.
 
 1. **Dry Run** (Preview changes without modifying files):
    ```bash
-   python3 tools/scripts/enrich_prompts.py --dry-run
+   python3 engine/scripts/enrich_prompts.py --dry-run
    ```
 
 2. **Enrich a Specific File**:
    ```bash
-   python3 tools/scripts/enrich_prompts.py --file prompts/my_prompt.prompt.yaml
+   python3 engine/scripts/enrich_prompts.py --file prompts/my_prompt.prompt.yaml
    ```
 
 3. **Enrich All Prompts**:
    ```bash
-   python3 tools/scripts/enrich_prompts.py
+   python3 engine/scripts/enrich_prompts.py
    ```
 """
 

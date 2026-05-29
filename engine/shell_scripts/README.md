@@ -3,13 +3,13 @@
 This directory contains high-level shell wrappers and maintenance scripts for the Proompts repository.
 
 > [!NOTE]
-> For more granular Python tools and utilities, check the [`tools/scripts/`](../tools/scripts/) directory.
+> For more granular Python tools and utilities, check the [`engine/scripts/`](../engine/scripts/) directory.
 
 ## Directory Map 🗺️
 
 | Script | Type | Description |
 | :--- | :--- | :--- |
-| **`validate_prompts.sh`** | 🐚 Shell | **The Master Validator.** Wrapper script that runs the full test suite (`tools/scripts/test_all.py`). Run this before every commit. |
+| **`validate_prompts.sh`** | 🐚 Shell | **The Master Validator.** Wrapper script that runs the full test suite (`engine/scripts/test_all.py`). Run this before every commit. |
 | **`apply_refactor.py`** | 🐍 Python | **Refactoring Utility.** Helper script to restructure prompts into workflow-specific directories and fix file references. |
 
 ## Usage 🚀
@@ -17,7 +17,7 @@ This directory contains high-level shell wrappers and maintenance scripts for th
 ### Validate the Repository
 
 ```bash
-./scripts/validate_prompts.sh
+./engine/shell_scripts/validate_prompts.sh
 ```
 
 ### Apply Refactoring
@@ -26,11 +26,11 @@ This script is used when reorganizing prompts into the standard workflow directo
 
 ```bash
 # Preview changes (Dry Run)
-python3 scripts/apply_refactor.py --dry-run
+python3 engine/shell_scripts/apply_refactor.py --dry-run
 
 # Apply changes (Move files)
-python3 scripts/apply_refactor.py
+python3 engine/shell_scripts/apply_refactor.py
 
 # Fix broken references in workflow files only
-python3 scripts/apply_refactor.py --fix-refs
+python3 engine/shell_scripts/apply_refactor.py --fix-refs
 ```

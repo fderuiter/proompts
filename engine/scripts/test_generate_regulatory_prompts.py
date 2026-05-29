@@ -3,7 +3,7 @@ import sys
 import os
 from pathlib import Path
 
-# Add the tools/scripts directory to sys.path to import generate_regulatory_prompts
+# Add the engine/scripts directory to sys.path to import generate_regulatory_prompts
 sys.path.append(str(Path(__file__).parent))
 
 from generate_regulatory_prompts import to_snake_case

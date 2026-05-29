@@ -19,7 +19,7 @@ healthy, documentation is up-to-date, and prompt schemas are valid.
 Run this script from the root of the repository before committing changes.
 
 ```bash
-python3 tools/scripts/test_all.py
+python3 engine/scripts/test_all.py
 ```
 """
 
@@ -107,14 +107,14 @@ def main() -> int:
         "enforce_generated_docs_untracked": ensure_generated_docs_not_tracked,
         "check_prompts": check_prompts_main,
         "validate_prompt_schema": validate_prompt_schema_main,
-        "generate_compliance_manifest": lambda: run_command(["python3", "tools/scripts/governance_manifest_generator.py"]),
-        "generate_overviews": lambda: run_command(["python3", "tools/scripts/generate_overviews.py"]),
+        "generate_compliance_manifest": lambda: run_command(["python3", "engine/scripts/governance_manifest_generator.py"]),
+        "generate_overviews": lambda: run_command(["python3", "engine/scripts/generate_overviews.py"]),
         # Docs are build artifacts now, so we generate them before running integrity checks.
-        "update_docs_index": lambda: run_command(["python3", "tools/scripts/update_docs_index.py"]),
+        "update_docs_index": lambda: run_command(["python3", "engine/scripts/update_docs_index.py"]),
         "update_docs_index_check": lambda: update_docs_index_run(check=True),
-        "generate_docs": lambda: run_command(["python3", "tools/scripts/generate_docs.py"]),
-        "generate_docs_check": lambda: run_command(["python3", "tools/scripts/generate_docs.py", "--check"]),
-        "check_broken_links": lambda: run_command(["python3", "tools/scripts/check_broken_links.py"]),
+        "generate_docs": lambda: run_command(["python3", "engine/scripts/generate_docs.py"]),
+        "generate_docs_check": lambda: run_command(["python3", "engine/scripts/generate_docs.py", "--check"]),
+        "check_broken_links": lambda: run_command(["python3", "engine/scripts/check_broken_links.py"]),
         "yamllint": lambda: run_command(["yamllint", "."]),
     }
 

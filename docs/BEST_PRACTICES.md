@@ -4,7 +4,7 @@ This guide outlines best practices for creating high-quality prompts in this rep
 
 **TL;DR - Validate your prompts:**
 ```bash
-python3 tools/scripts/test_all.py
+python3 engine/scripts/test_all.py
 ```
 
 ## Prompt File Structure
@@ -251,10 +251,10 @@ Before committing, validate your prompts:
 
 ```bash
 # Run all validation checks
-python3 tools/scripts/test_all.py
+python3 engine/scripts/test_all.py
 
 # Just validate schema
-python3 tools/scripts/validate_prompt_schema.py
+python3 engine/scripts/validate_prompt_schema.py
 
 # Check YAML syntax (matches both .yaml and .yml extensions)
 yamllint prompts/

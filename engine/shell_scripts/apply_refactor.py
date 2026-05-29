@@ -7,9 +7,9 @@ It identifies prompts used in workflows, moves them to dedicated subdirectories
 (e.g., prompts/clinical/protocol/protocol_workflow/), and updates file references.
 
 Usage:
-    python3 scripts/apply_refactor.py --dry-run   # Preview changes
-    python3 scripts/apply_refactor.py             # Apply file moves
-    python3 scripts/apply_refactor.py --fix-refs  # Fix references in workflow files
+    python3 engine/shell_scripts/apply_refactor.py --dry-run   # Preview changes
+    python3 engine/shell_scripts/apply_refactor.py             # Apply file moves
+    python3 engine/shell_scripts/apply_refactor.py --fix-refs  # Fix references in workflow files
 """
 
 import os

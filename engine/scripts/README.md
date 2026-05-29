@@ -4,11 +4,11 @@
 > **TL;DR - Quickstart for Validation**
 > Before committing any changes, run the master validation script from the repository root to check schemas, formatting, and update documentation:
 > ```bash
-> python3 tools/scripts/test_all.py
+> python3 engine/scripts/test_all.py
 > ```
 
 ## What is this?
-This directory is the "Engine Room" of the Proompts repository. It contains the core Python scripts responsible for CI/CD validation, workflow simulation, schema enforcement, and automated documentation generation.
+This directory contains the core Python scripts responsible for CI/CD validation, workflow simulation, schema enforcement, and automated documentation generation.
 
 ## Why does it exist?
 To maintain high standards across the prompt library. By automating schema checks and documentation generation, these scripts reduce manual overhead and prevent "Documentation Debt."
@@ -122,7 +122,7 @@ graph TD
 **Usage:**
 
 ```bash
-python3 tools/scripts/test_all.py
+python3 engine/scripts/test_all.py
 ```
 
 ### `check_prompts.py`
@@ -132,7 +132,7 @@ Checks YAML-based prompts (`*.prompt.yaml`) for basic file naming conventions an
 **Usage:**
 
 ```bash
-python3 tools/scripts/check_prompts.py
+python3 engine/scripts/check_prompts.py
 ```
 
 ### `validate_prompt_schema.py`
@@ -143,13 +143,13 @@ Validates that prompt YAML files adhere to the strict Pydantic schema. Checks fo
 
 ```bash
 # Validate all prompts
-python3 tools/scripts/validate_prompt_schema.py
+python3 engine/scripts/validate_prompt_schema.py
 
 # Strict mode (warns about empty testData)
-python3 tools/scripts/validate_prompt_schema.py --strict
+python3 engine/scripts/validate_prompt_schema.py --strict
 
 # Generate JSON Schema for IDE Intellisense
-python3 tools/scripts/validate_prompt_schema.py --json-schema > docs/schemas/prompt.schema.json
+python3 engine/scripts/validate_prompt_schema.py --json-schema > docs/schemas/prompt.schema.json
 ```
 
 ### `test_run_workflow.py`
@@ -159,7 +159,7 @@ A functional test for the `run_workflow.py` script. It creates a temporary envir
 **Usage:**
 
 ```bash
-python3 tools/scripts/test_run_workflow.py
+python3 engine/scripts/test_run_workflow.py
 ```
 
 ### `test_generate_overviews.py`
@@ -169,7 +169,7 @@ Unit tests for `generate_overviews.py`. Ensures that prompt titles are correctly
 **Usage:**
 
 ```bash
-python3 tools/scripts/test_generate_overviews.py
+python3 engine/scripts/test_generate_overviews.py
 ```
 
 ### `test_fix_markdown_issues.py`
@@ -179,7 +179,7 @@ Unit tests for `fix_markdown_issues.py`. Verifies the logic for correcting commo
 **Usage:**
 
 ```bash
-python3 tools/scripts/test_fix_markdown_issues.py
+python3 engine/scripts/test_fix_markdown_issues.py
 ```
 
 ### `test_utils.py`
@@ -189,7 +189,7 @@ Unit tests for `utils.py`. Ensures shared utility functions work as expected.
 **Usage:**
 
 ```bash
-python3 tools/scripts/test_utils.py
+python3 engine/scripts/test_utils.py
 ```
 
 ## Workflow Simulation
@@ -205,10 +205,10 @@ python3 tools/scripts/test_utils.py
 
 ```bash
 # Simulate a workflow with verbose output
-python3 tools/scripts/run_workflow.py path/to/workflow.workflow.yaml -v
+python3 engine/scripts/run_workflow.py path/to/workflow.workflow.yaml -v
 
 # Simulate with initial inputs
-python3 tools/scripts/run_workflow.py path/to/workflow.workflow.yaml -i user_name="Alice"
+python3 engine/scripts/run_workflow.py path/to/workflow.workflow.yaml -i user_name="Alice"
 ```
 
 **Workflow Input & testData Example:**
@@ -239,7 +239,7 @@ Scans all prompt folders to regenerate the documentation index (`docs/index.md`)
 
 ```bash
 # Update docs/index.md
-python3 tools/scripts/update_docs_index.py
+python3 engine/scripts/update_docs_index.py
 ```
 
 ### `generate_docs.py`
@@ -251,7 +251,7 @@ Generates the static documentation site structure in `docs/` for CI/local builds
 **Usage:**
 
 ```bash
-python3 tools/scripts/generate_docs.py
+python3 engine/scripts/generate_docs.py
 ```
 
 ### `check_broken_links.py`
@@ -264,7 +264,7 @@ Scans all Markdown files in `docs/` and `prompts/` for broken internal links. It
 **Usage:**
 
 ```bash
-python3 tools/scripts/check_broken_links.py
+python3 engine/scripts/check_broken_links.py
 ```
 
 ### `generate_overviews.py`
@@ -277,7 +277,7 @@ Automatically creates `overview.md` files in prompt directories.
 **Usage:**
 
 ```bash
-python3 tools/scripts/generate_overviews.py
+python3 engine/scripts/generate_overviews.py
 ```
 
 ### `generate_search_index.py`
@@ -287,7 +287,7 @@ Generates a `search.json` file in the repository root. This JSON file indexes al
 **Usage:**
 
 ```bash
-python3 tools/scripts/generate_search_index.py
+python3 engine/scripts/generate_search_index.py
 ```
 
 ### `fix_markdown_issues.py`
@@ -300,7 +300,7 @@ The `todo_fix.md` file must contain a list of files to process, formatted as a m
 
 ```bash
 # Ensure todo_fix.md exists in root, then run:
-python3 tools/scripts/fix_markdown_issues.py
+python3 engine/scripts/fix_markdown_issues.py
 ```
 
 ## Prompt Maintenance
@@ -313,10 +313,10 @@ Searches for prompts by keyword in the `name` or `description` fields.
 
 ```bash
 # Search for prompts containing "review"
-python3 tools/scripts/search_prompts.py review
+python3 engine/scripts/search_prompts.py review
 
 # Show full descriptions
-python3 tools/scripts/search_prompts.py "review" -v
+python3 engine/scripts/search_prompts.py "review" -v
 ```
 
 ### `update_last_modified.py`
@@ -327,13 +327,13 @@ Updates the `last_modified` field in the specified prompt files to the current U
 
 ```bash
 # Update a specific file
-python3 tools/scripts/update_last_modified.py prompts/my_prompt.prompt.yaml
+python3 engine/scripts/update_last_modified.py prompts/my_prompt.prompt.yaml
 
 # Update multiple files
-python3 tools/scripts/update_last_modified.py prompts/*.prompt.yaml
+python3 engine/scripts/update_last_modified.py prompts/*.prompt.yaml
 
 # Check if files need updating without modifying them
-python3 tools/scripts/update_last_modified.py prompts/my_prompt.prompt.yaml --check
+python3 engine/scripts/update_last_modified.py prompts/my_prompt.prompt.yaml --check
 ```
 
 ### `standardize_c_prompts.py`
@@ -343,7 +343,7 @@ Enforces standard fields (`purpose`, `context`, `instructions`, etc.) on prompts
 **Usage:**
 
 ```bash
-python3 tools/scripts/standardize_c_prompts.py
+python3 engine/scripts/standardize_c_prompts.py
 ```
 
 ### `migrate_prompts.py`
@@ -354,10 +354,10 @@ Migrates existing prompt YAML files to the new schema by adding `version` and `v
 
 ```bash
 # Migrate all prompts
-python3 tools/scripts/migrate_prompts.py
+python3 engine/scripts/migrate_prompts.py
 
 # Dry run to see what would change
-python3 tools/scripts/migrate_prompts.py --dry-run
+python3 engine/scripts/migrate_prompts.py --dry-run
 ```
 
 ### `enrich_prompts.py`
@@ -368,13 +368,13 @@ Enriches prompt YAML files with meaningful variable descriptions and metadata (d
 
 ```bash
 # Enrich all prompts
-python3 tools/scripts/enrich_prompts.py
+python3 engine/scripts/enrich_prompts.py
 
 # Enrich a specific file
-python3 tools/scripts/enrich_prompts.py --file prompts/my_prompt.prompt.yaml
+python3 engine/scripts/enrich_prompts.py --file prompts/my_prompt.prompt.yaml
 
 # Dry run
-python3 tools/scripts/enrich_prompts.py --dry-run
+python3 engine/scripts/enrich_prompts.py --dry-run
 ```
 
 ### `generate_regulatory_prompts.py`
@@ -384,7 +384,7 @@ Generates regulatory prompts based on a predefined list of tasks. Creates prompt
 **Usage:**
 
 ```bash
-python3 tools/scripts/generate_regulatory_prompts.py
+python3 engine/scripts/generate_regulatory_prompts.py
 ```
 
 ## Shared Libraries

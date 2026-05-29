@@ -29,7 +29,7 @@ If applicable, add screenshots to help explain your problem.
 
 **Validation Checks (if applicable)**
 Did you run the validation script? If so, what was the output?
-- [ ] Run `python3 tools/scripts/test_all.py`
+- [ ] Run `python3 engine/scripts/test_all.py`
 - Paste the output here.
 
 **Additional context**

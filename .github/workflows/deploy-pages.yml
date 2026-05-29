@@ -39,8 +39,8 @@ jobs:
       # uncomment and adjust the line below:
       - name: Generate Docs
         run: |
-          python tools/scripts/generate_docs.py
-          python tools/scripts/update_docs_index.py
+          python engine/scripts/generate_docs.py
+          python engine/scripts/update_docs_index.py
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

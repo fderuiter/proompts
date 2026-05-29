@@ -38,17 +38,17 @@ intellisense and validation while editing `.prompt.yaml` files.
 
 1. **Basic Validation** (Checks all required schema fields):
    ```bash
-   python3 tools/scripts/validate_prompt_schema.py
+   python3 engine/scripts/validate_prompt_schema.py
    ```
 
 2. **Strict Validation** (Warns if `testData` or `evaluators` are empty):
    ```bash
-   python3 tools/scripts/validate_prompt_schema.py --strict
+   python3 engine/scripts/validate_prompt_schema.py --strict
    ```
 
 3. **Generate JSON Schema** (Outputs schema for IDE intellisense):
    ```bash
-   python3 tools/scripts/validate_prompt_schema.py --json-schema > docs/schemas/prompt.schema.json
+   python3 engine/scripts/validate_prompt_schema.py --json-schema > docs/schemas/prompt.schema.json
    ```
 
 ### Example Valid `testData` Section
@@ -159,24 +159,25 @@ class PromptSchema(BaseModel):
 
     @model_validator(mode='after')
     def check_variables_match_content(self):
-        """Cross-check {{var}} usage in messages against defined variables."""
+        """Cross-check Jinja2 variable usage in messages against defined variables."""
+        from jinja2 import Environment, meta
+        env = Environment()
         found_vars: set[str] = set()
-        invalid_vars: set[str] = set()
         
         for msg in self.messages:
-            for match in VAR_PATTERN.findall(msg.content):
-                valid_match = re.match(r'^\s*([a-zA-Z0-9_.-]+)\s*$', match)
-                if valid_match:
-                    found_vars.add(valid_match.group(1))
-                else:
-                    invalid_vars.add(match)
+            try:
+                ast = env.parse(msg.content)
+                found_vars.update(meta.find_undeclared_variables(ast))
+            except Exception as e:
+                raise ValueError(f"Jinja2 parsing error in message content: {e}")
 
-        if invalid_vars:
-            raise ValueError(
-                f"Migration Required: Variables contain invalid characters (only alphanumeric, underscores, dots, and hyphens are allowed): {invalid_vars}"
-            )
+        # The Jinja2 AST parser inherently catches syntax errors, so we don't
+        # need to manually check for invalid characters via regex anymore.
 
-        defined_vars = {v.name for v in self.variables}
+        # For dot-notation variables (e.g. user.name), jinja2 `find_undeclared_variables` 
+        # returns the base variable ('user'). If the variables definition uses 'user.name', 
+        # we extract the base variable to match.
+        defined_vars = {v.name.split('.')[0] for v in self.variables}
 
         # Warn about defined-but-unused variables
         unused = defined_vars - found_vars

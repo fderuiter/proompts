@@ -78,7 +78,7 @@ Before committing, you **must** run the test suite. This ensures your YAML is va
 Run the master script from the repository root:
 
 ```bash
-python3 tools/scripts/test_all.py
+python3 engine/scripts/test_all.py
 ```
 
 **What this script does:**
@@ -94,7 +94,7 @@ python3 tools/scripts/test_all.py
 2.  **Push**: Push to your fork.
 3.  **PR**: Open a Pull Request against the `main` branch of the upstream repository.
     *   Include a brief description of what you added or fixed.
-    *   Confirm that you ran `python3 tools/scripts/test_all.py` locally.
+    *   Confirm that you ran `python3 engine/scripts/test_all.py` locally.
 
 ## Style Guide 🎨
 
@@ -105,4 +105,4 @@ python3 tools/scripts/test_all.py
 
 ## Need Help?
 
-If you run into issues, check the [`docs/BEST_PRACTICES.md`](docs/BEST_PRACTICES.md) or explore the [`tools/scripts/README.md`](tools/scripts/README.md) for more detailed information on our tooling. You can also open an issue to ask questions.
+If you run into issues, check the [`docs/BEST_PRACTICES.md`](docs/BEST_PRACTICES.md) or explore the [`engine/scripts/README.md`](engine/scripts/README.md) for more detailed information on our tooling. You can also open an issue to ask questions.

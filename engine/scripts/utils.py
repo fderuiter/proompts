@@ -175,11 +175,11 @@ def iter_workflow_files(root: Path = WORKFLOWS_DIR) -> Iterator[Path]:
 
 def extract_template_vars(content: Dict[str, Any]) -> List[str]:
     """
-    Extract all Jinja-style variable patterns `{{var}}` from prompt messages.
+    Extract all Jinja-style variables from prompt messages using Jinja2 parser.
 
     WHAT: Scans the 'messages' block of a prompt dictionary and extracts variables.
     WHY: Used by validation scripts to ensure all declared variables are actually utilized
-         in the prompt, and vice versa.
+         in the prompt, and vice versa. Eliminates Regex vs Jinja2 confusion.
     HOW: Pass the loaded YAML dictionary to this function.
 
     Args:
@@ -188,9 +188,12 @@ def extract_template_vars(content: Dict[str, Any]) -> List[str]:
     Returns:
         List[str]: A sorted list of unique variable names found in the template.
     """
+    from jinja2 import meta
     found: Set[str] = set()
+    env = _get_jinja_env()
     for msg in content.get("messages", []):
         text = msg.get("content", "")
         if isinstance(text, str):
-            found.update(re.findall(r'\{\{([^}]+)\}\}', text))
+            ast = env.parse(text)
+            found.update(meta.find_undeclared_variables(ast))
     return sorted(list(found))

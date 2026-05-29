@@ -66,16 +66,16 @@ Prompts are rarely used in isolation. They are typically chained together in **W
 
 ```bash
 # Example: Simulate the Agentic Coding workflow
-python3 tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app"
+python3 engine/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app"
 ```
 
 ## Tools 🛠️
 
-We maintain a suite of tools in [`../tools/scripts/`](../tools/scripts) to manage this library:
+We maintain a suite of tools in [`../engine/scripts/`](../engine/scripts) to manage this library:
 
-- **[`check_prompts.py`](../tools/scripts/check_prompts.py)**: Validates that all prompt files follow the required schema and naming conventions.
-- **[`generate_overviews.py`](../tools/scripts/generate_overviews.py)**: Automatically generates `overview.md` files for subdirectories.
-- **[`run_workflow.py`](../tools/scripts/run_workflow.py)**: The engine that executes workflows and prompts.
+- **[`check_prompts.py`](../engine/scripts/check_prompts.py)**: Validates that all prompt files follow the required schema and naming conventions.
+- **[`generate_overviews.py`](../engine/scripts/generate_overviews.py)**: Automatically generates `overview.md` files for subdirectories.
+- **[`run_workflow.py`](../engine/scripts/run_workflow.py)**: The engine that executes workflows and prompts.
 
 ## Contributing 🤝
 
@@ -83,4 +83,4 @@ We maintain a suite of tools in [`../tools/scripts/`](../tools/scripts) to manag
 2.  **Document**: Ensure you provide a clear `description` and `inputs`.
 3.  **Tag**: Add namespaced tags (`domain:`, `topic:`, `capability:`) in metadata where possible.
 4.  **Test**: Add at least one test case in the `testData` field.
-5.  **Verify**: Run `python3 tools/scripts/check_prompts.py` to ensure your prompt is valid.
+5.  **Verify**: Run `python3 engine/scripts/check_prompts.py` to ensure your prompt is valid.

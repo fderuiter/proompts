@@ -25,7 +25,7 @@ This directory contains **Meta-Prompts**, agent scripts, and specialized utiliti
 
 ## Why this directory exists?
 
-This directory exists as the **"Engine Room"** for Proompts developers. While `prompts/meta/` contains user-facing tools for general meta-prompting tasks, `tools/prompt_tools/` is specifically built to maintain and elevate the quality of *this* repository itself.
+While `prompts/meta/` contains user-facing tools for general meta-prompting tasks, `engine/prompt_tools/` is specifically built to maintain and elevate the quality of *this* repository itself.
 
 It houses the instructions and scripts used by LLMs to enforce our strict YAML schema, refactor directories, and systematically optimize our core product: the prompts.
 
@@ -92,7 +92,7 @@ These files follow the repository's standard schema and can be executed using th
 
 ```bash
 # Provide the task variable via the -i flag
-python3 tools/scripts/run_workflow.py tools/prompt_tools/L5_prompt_optimizer.prompt.yaml -i task="Write a Python script to scrape a website"
+python3 engine/scripts/run_workflow.py engine/prompt_tools/L5_prompt_optimizer.prompt.yaml -i task="Write a Python script to scrape a website"
 ```
 
 **Example: Running with Verbose Output**
@@ -100,7 +100,7 @@ python3 tools/scripts/run_workflow.py tools/prompt_tools/L5_prompt_optimizer.pro
 To see the exact inputs being passed into the prompt messages during the simulation:
 
 ```bash
-python3 tools/scripts/run_workflow.py tools/prompt_tools/L5_prompt_optimizer.prompt.yaml -i task="Draft a project brief" -v
+python3 engine/scripts/run_workflow.py engine/prompt_tools/L5_prompt_optimizer.prompt.yaml -i task="Draft a project brief" -v
 ```
 
 ---

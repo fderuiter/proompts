@@ -1,6 +1,6 @@
 # proompts
 
-[![Deploy Jekyll site](https://github.com/fderuiter/proompts/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/deploy-pages.yml)
+[![Deploy MkDocs site](https://github.com/fderuiter/proompts/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/deploy-pages.yml)
 [![YAML Validation](https://github.com/fderuiter/proompts/actions/workflows/yaml-validation.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/yaml-validation.yml)
 [![Repository Checks](https://github.com/fderuiter/proompts/actions/workflows/repo-checks.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/repo-checks.yml)
 
@@ -12,8 +12,8 @@ A curated set of prompts in YAML for AI-assisted product development, regulatory
 | :--- | :--- | :--- |
 | **[`prompts/`](prompts/)** | **The Core Library.** <br> YAML-based prompts organized by domain. | `business/`, `clinical/`, `technical/` |
 | **[`workflows/`](workflows/)** | **Chained Sequences.** <br> Multi-step prompt chains for complex tasks. | `technical/software_engineering/paw_workflow.workflow.yaml` |
-| **[`tools/`](tools/README.md)** | **The Engine Room.** <br> Utilities for maintenance and development. | [`scripts/`](tools/scripts/README.md) (Python), [`prompt_tools/`](tools/prompt_tools/README.md) (Meta-prompts) |
-| **[`scripts/`](scripts/)** | **Shell Wrappers.** <br> Convenience scripts for common tasks. | `validate_prompts.sh` |
+| **[`engine/`](engine/README.md)** | **The Engine Room.** <br> Utilities for maintenance and development. | [`scripts/`](engine/scripts/README.md) (Python), [`prompt_tools/`](engine/prompt_tools/README.md) (Meta-prompts) |
+| **[`engine/shell_scripts/`](engine/shell_scripts/)** | **Shell Wrappers.** <br> Convenience scripts for common tasks. | `validate_prompts.sh` |
 | **[`docs/`](docs/)** | **Knowledge Base.** <br> Guides, usage instructions, and generated docs. | `USAGE.md`, `BEST_PRACTICES.md` |
 
 
@@ -33,7 +33,7 @@ graph TD
     B -->|Contains| C1
     B -->|Contains| C2
 
-    subgraph "The Engine Room (scripts/)"
+    subgraph "The Engine Room (engine/)"
         D1(validate_prompts.sh)
         D2(apply_refactor.py)
     end
@@ -58,7 +58,7 @@ graph TD
 - **[🚀 Quickstart: 5-Minute Onboarding](docs/QUICKSTART.md)** – Start here! Learn how to run your first simulation.
 - **[Full Table of Contents](docs/index.md)** – Browse all prompts by category
 - **[Usage Guide](docs/USAGE.md)** – Learn how to use and integrate prompts
-- **[Developer Scripts](tools/scripts/README.md)** – Tools for validating and maintaining the repo
+- **[Developer Scripts](engine/scripts/README.md)** – Tools for validating and maintaining the repo
 - **[IDE JSON Schemas](docs/schemas/README.md)** – Configure your IDE for prompt and workflow validation
 
 ## Setup
@@ -76,7 +76,7 @@ To run validation scripts and tools locally, you need Python 3 and the required 
     ```
 3.  Run the validation script to verify everything is set up correctly:
     ```bash
-    ./scripts/validate_prompts.sh
+    ./engine/shell_scripts/validate_prompts.sh
     ```
 
 ## Prompt Schema
@@ -117,7 +117,7 @@ To learn more, see the [Prompt Workflows Documentation](docs/workflows.md).
 To run all validation checks (YAML linting, schema validation, documentation index verification) locally, use the provided script:
 
 ```bash
-python3 tools/scripts/test_all.py
+python3 engine/scripts/test_all.py
 ```
 
 This script runs the following checks:
@@ -143,7 +143,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed instructions on how to contr
    - Clear instructions and expected output format
 4. Before committing, run validation:
    ```bash
-   ./scripts/validate_prompts.sh
+   ./engine/shell_scripts/validate_prompts.sh
    ```
 5. If you create a new directory, an `overview.md` will be generated automatically by the workflow.
 

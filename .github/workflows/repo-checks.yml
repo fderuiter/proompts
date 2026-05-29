@@ -7,13 +7,13 @@ on:
       - 'prompts/**/*.prompt.yaml'
       - 'prompts/**/*.prompt.yml'
       - '.github/workflows/repo-checks.yml'
-      - 'tools/scripts/**'
+      - 'engine/scripts/**'
   pull_request:
     paths:
       - 'prompts/**/*.prompt.yaml'
       - 'prompts/**/*.prompt.yml'
       - '.github/workflows/repo-checks.yml'
-      - 'tools/scripts/**'
+      - 'engine/scripts/**'
 
 permissions:
   contents: read
@@ -31,4 +31,4 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run repository checks
-        run: python3 tools/scripts/test_all.py
+        run: python3 engine/scripts/test_all.py

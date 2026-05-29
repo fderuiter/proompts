@@ -17,13 +17,13 @@ network latency. It ensures your workflows are structurally sound before deploym
 
 HOW TO USE:
 Basic simulation:
-    python3 tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml
+    python3 engine/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml
 
 With custom initial inputs:
-    python3 tools/scripts/run_workflow.py path/to/workflow.workflow.yaml -i user_name="Alice"
+    python3 engine/scripts/run_workflow.py path/to/workflow.workflow.yaml -i user_name="Alice"
 
 With verbose logging (useful for debugging variable resolution):
-    python3 tools/scripts/run_workflow.py path/to/workflow.workflow.yaml -v
+    python3 engine/scripts/run_workflow.py path/to/workflow.workflow.yaml -v
 """
 
 from __future__ import annotations

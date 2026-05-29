@@ -22,7 +22,7 @@ naming patterns and that every directory has documentation.
 Run this script from the root of the repository:
 
 ```bash
-python3 tools/scripts/check_prompts.py
+python3 engine/scripts/check_prompts.py
 ```
 
 If successful, it exits with code 0. If it finds missing `overview.md` files or invalid names,

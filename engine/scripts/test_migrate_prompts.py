@@ -2,7 +2,7 @@ import unittest
 import sys
 from pathlib import Path
 
-# Add the tools/scripts directory to sys.path
+# Add the engine/scripts directory to sys.path
 sys.path.append(str(Path(__file__).parent))
 from migrate_prompts import extract_template_vars
 

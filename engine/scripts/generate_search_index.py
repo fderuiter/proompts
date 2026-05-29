@@ -12,7 +12,7 @@ try:
     from utils import ROOT, iter_prompt_files, load_yaml
 except ImportError:
     # Fallback if run from a different location without setting PYTHONPATH
-    print("Error: Could not import utils. Please run from the repository root or tools/scripts directory.")
+    print("Error: Could not import utils. Please run from the repository root or engine/scripts directory.")
     sys.exit(1)
 
 def generate_index(output_path: str = "search.json"):

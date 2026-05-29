@@ -227,23 +227,22 @@ class TestPromptSchema(unittest.TestCase):
         }
         with self.assertRaises(ValidationError) as cm:
             PromptSchema(**data)
-        self.assertIn("Migration Required", str(cm.exception))
+        self.assertIn("Jinja2 parsing error", str(cm.exception))
 
-    def test_variables_with_dots_and_hyphens_are_valid(self):
-        """Test that dot-notation and hyphens are valid in variable names."""
+    def test_variables_with_dots_are_valid(self):
+        """Test that dot-notation is valid in variable names."""
         data = {
             **self.valid_data,
             "messages": [
                 {"role": "system", "content": "You are helpful."},
-                {"role": "user", "content": "Hello {{ user.id }} and {{ system-env }}"},
+                {"role": "user", "content": "Hello {{ user.id }}"},
             ],
             "variables": [
                 {"name": "user.id", "description": "User ID", "required": True},
-                {"name": "system-env", "description": "System Env", "required": True},
             ]
         }
         prompt = PromptSchema(**data)
-        self.assertEqual(len(prompt.variables), 2)
+        self.assertEqual(len(prompt.variables), 1)
 
     def test_variables_with_whitespace_are_valid(self):
         """Test that whitespace inside braces is allowed and stripped."""

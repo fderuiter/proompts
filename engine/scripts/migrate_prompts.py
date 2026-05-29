@@ -24,12 +24,12 @@ automatically inserting missing structural fields such as `version` and `variabl
 
 1. **Dry Run** (Preview changes without modifying files):
    ```bash
-   python3 tools/scripts/migrate_prompts.py --dry-run
+   python3 engine/scripts/migrate_prompts.py --dry-run
    ```
 
 2. **Migrate All Prompts**:
    ```bash
-   python3 tools/scripts/migrate_prompts.py
+   python3 engine/scripts/migrate_prompts.py
    ```
 """
 
