@@ -143,12 +143,26 @@ class PromptSchema(BaseModel):
     metadata: Optional[PromptMetadata] = Field(None, description="Metadata for organization and categorization.")
     variables: List[InputVariable] = Field([], description="List of input variables used in the prompt template.")
     model: str = Field(..., description="The ID of the LLM model to use (e.g., 'gpt-4', 'claude-3-opus').")
+    safety_opt_out: bool = Field(False, description="Opt-out of Aegis safety injection.")
     modelParameters: ModelParameters = Field(..., description="Configuration parameters for the model.")
     messages: List[Message] = Field(..., description="The sequence of messages that form the prompt.")
     testData: List[Any] = Field(..., description="List of test cases with inputs and expected outputs.")
     evaluators: List[Any] = Field(..., description="List of evaluators to validate the model's output.")
     output_schema: Optional[Dict[str, Any]] = Field(None, description="Optional JSON schema for structural validation of the LLM output.")
     last_modified: Optional[str] = Field(None, description="Timestamp of the last modification (ISO 8601).")
+
+    @field_validator("evaluators")
+    @classmethod
+    def check_evaluators_logic(cls, v: List[Any]) -> List[Any]:
+        if v is None:
+            return v
+        for evaluator in v:
+            if not isinstance(evaluator, dict):
+                continue
+            valid_keys = {"python", "rule", "regex", "model", "type", "string", "includes_all", "regex_match", "string_match", "string_contains", "evaluator", "description"}
+            if not any(k in evaluator for k in valid_keys):
+                raise ValueError(f"Evaluator '{evaluator.get('name', 'Unknown')}' must map to executable logic.")
+        return v
 
     @field_validator("messages")
     @classmethod

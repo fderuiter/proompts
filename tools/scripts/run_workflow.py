@@ -217,6 +217,68 @@ def generate_mock_test_cases(prompt_data: Dict[str, Any], required_vars: list, i
     
     return test_cases
 
+def run_evaluators(output_text: str, prompt_evaluators: list) -> str:
+    import re
+    # Define mandatory global evaluators
+    mandatory_evaluators = [
+        {
+            "name": "Global PII Scanner",
+            "python": "return not bool(re.search(r'\\b\\d{3}-\\d{2}-\\d{4}\\b', output))", # e.g. SSN
+            "action": "redact",
+            "redact_pattern": r'\b\d{3}-\d{2}-\d{4}\b'
+        }
+    ]
+    
+    all_evaluators = mandatory_evaluators + (prompt_evaluators or [])
+    
+    for evaluator in all_evaluators:
+        action = evaluator.get("action", "terminate").lower()
+        passed = True
+        
+        # Regex Evaluator
+        if "regex" in evaluator:
+            pattern = evaluator["regex"].get("pattern")
+            if pattern:
+                flags = re.IGNORECASE if evaluator["regex"].get("flags", "").lower() == "i" else 0
+                if not re.search(pattern, output_text, flags):
+                    passed = False
+                    
+        # Python/Rule Evaluator
+        elif "python" in evaluator or "rule" in evaluator:
+            rule = evaluator.get("python") or evaluator.get("rule")
+            if rule:
+                local_vars = {"output": output_text, "re": re}
+                try:
+                    if rule.strip().startswith("return "):
+                        func_code = f"def __eval(output):\n    {rule}"
+                        exec(func_code, local_vars, local_vars)
+                        passed = local_vars["__eval"](output_text)
+                    else:
+                        exec(rule, local_vars, local_vars)
+                        passed = local_vars.get("passed", True)
+                except Exception as e:
+                    logger.error(f"Evaluator '{evaluator.get('name')}' raised exception: {e}")
+                    passed = False
+                    
+        # Mock LLM Evaluator
+        elif "model" in evaluator:
+            # For simulation, just assume it passes unless we have a reason to fail it
+            pass
+
+        if not passed:
+            if action == "terminate":
+                logger.error(f"Terminating workflow due to failed evaluator: {evaluator.get('name')}")
+                raise Exception(f"Evaluator failed: {evaluator.get('name')}")
+            elif action == "redact":
+                logger.info(f"Redacting output due to failed evaluator: {evaluator.get('name')}")
+                # Simple redaction for PII
+                pattern = evaluator.get("redact_pattern", r'\b\d{3}-\d{2}-\d{4}\b')
+                output_text = re.sub(pattern, "[REDACTED]", output_text)
+            elif action == "flag":
+                logger.warning(f"FLAGGED: Output violated evaluator {evaluator.get('name')}")
+    
+    return output_text
+
 _chaos_call_counter = 0
 _chaos_last_call_time = 0
 
@@ -242,6 +304,22 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
     """
     logger.info("---")
     logger.info(f"Simulating prompt: {prompt_data.get('name', 'Untitled Prompt')}")
+
+    # 1. Inject Aegis Safety Block
+    if not prompt_data.get('safety_opt_out', False):
+        aegis_block = "\n\n<Aegis>\n*   **Do NOT** expose or persist live production Personally Identifiable Information (PII) or secrets.\n*   **Refusal Instruction**: If the user requests an architecture that fundamentally compromises security, you must output strictly `{\"error\": \"unsafe\"}`.\n</Aegis>"
+        
+        messages = prompt_data.get('messages', [])
+        if messages:
+            if messages[0].get('role') == 'system':
+                messages[0]['content'] += aegis_block
+            else:
+                messages.insert(0, {'role': 'system', 'content': aegis_block})
+        else:
+            prompt_data['messages'] = [{'role': 'system', 'content': aegis_block}]
+        logger.info(f"Injected Aegis Safety Block for prompt '{prompt_data.get('name')}'.")
+    else:
+        logger.warning(f"Safety injection suppressed for prompt '{prompt_data.get('name', 'Untitled')}' via opt-out.")
 
     import time
     import random
@@ -385,9 +463,14 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
 
     if matched_test_case:
         output = matched_test_case.get('expected', 'No expected output in test case.')
-        return output[0] if isinstance(output, list) else output
+        output_text = output[0] if isinstance(output, list) else output
+    else:
+        output_text = f"[Simulated output for prompt: {prompt_data.get('name', 'Untitled Prompt')}]"
 
-    return f"[Simulated output for prompt: {prompt_data.get('name', 'Untitled Prompt')}]"
+    # INTERCEPTOR: Run Evaluators
+    output_text = run_evaluators(output_text, prompt_data.get('evaluators', []))
+
+    return output_text
 
 
 def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bool = True, strict_mode: bool = False, chaos_mode: bool = False, fidelity_report: Optional[Dict[str, bool]] = None) -> Optional[Dict[str, Any]]:
