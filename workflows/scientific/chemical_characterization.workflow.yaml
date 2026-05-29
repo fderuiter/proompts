@@ -30,3 +30,9 @@ testData:
     device_description: Sample device_description
     device_dose_ug_day: Sample device_dose_ug_day
     body_weight_kg: Sample body_weight_kg
+version: 0.1.0
+metadata:
+  domain: scientific
+  topic: chemical_characterization
+  complexity: medium
+  tags: []

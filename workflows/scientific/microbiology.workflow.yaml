@@ -23,3 +23,9 @@ testData:
 - inputs:
     device_description: Sample device_description
     device_name: Sample device_name
+version: 0.1.0
+metadata:
+  domain: scientific
+  topic: microbiology
+  complexity: medium
+  tags: []

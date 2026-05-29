@@ -52,3 +52,9 @@ testData:
     token_budget_l3: Sample token_budget_l3
     end_task: Sample end_task
     policy_block: Sample policy_block
+version: 0.1.0
+metadata:
+  domain: meta
+  topic: meta_prompt_chain
+  complexity: medium
+  tags: []

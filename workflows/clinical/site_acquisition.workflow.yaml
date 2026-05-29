@@ -37,7 +37,7 @@ steps:
     unique_site_strength: '{{inputs.unique_site_strength}}'
     study_synopsis: '{{inputs.study_synopsis}}'
     sponsor_name: '{{inputs.sponsor_name}}'
-    CRO_NAME: 'Acme CRO'
+    CRO_NAME: Acme CRO
 testData:
 - inputs:
     investigator_name: Sample investigator_name
@@ -48,3 +48,9 @@ testData:
     protocol_summary: Sample protocol_summary
     city_country: Sample city_country
     study_synopsis: Sample study_synopsis
+version: 0.1.0
+metadata:
+  domain: clinical
+  topic: site_acquisition
+  complexity: medium
+  tags: []

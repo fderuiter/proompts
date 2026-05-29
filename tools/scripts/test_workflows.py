@@ -12,6 +12,25 @@ import glob
 from pathlib import Path
 from run_workflow import run_workflow, load_yaml, setup_logging
 
+try:
+    from validate_prompt_schema import PromptMetadata
+except ImportError:
+    sys.path.append(str(Path(__file__).parent))
+    from validate_prompt_schema import PromptMetadata
+
+def validate_workflow_metadata(wf: Path, data: dict):
+    if 'metadata' not in data:
+        raise ValueError("Missing 'metadata' block")
+    
+    metadata = data['metadata']
+    if 'domain' not in metadata or not metadata['domain']:
+        raise ValueError("Missing mandatory 'domain' tag in metadata")
+    if 'topic' not in metadata or not metadata['topic']:
+        raise ValueError("Missing mandatory 'topic' tag in metadata")
+
+    # Validate against Pydantic model
+    PromptMetadata(**metadata)
+
 def main():
     setup_logging(verbose=False)
     
@@ -30,6 +49,13 @@ def main():
         workflow_data = load_yaml(str(wf))
         if not workflow_data:
             print(f"  ❌ Failed to parse YAML: {wf}")
+            failed.append(wf)
+            continue
+            
+        try:
+            validate_workflow_metadata(wf, workflow_data)
+        except Exception as e:
+            print(f"  ❌ Metadata validation failed: {e}")
             failed.append(wf)
             continue
             

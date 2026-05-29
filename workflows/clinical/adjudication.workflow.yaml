@@ -10,7 +10,7 @@ steps:
 - step_id: design_dashboard
   prompt_file: prompts/clinical/adjudication/adjudication_workflow/01_real_time_adjudication_dashboard.prompt.yaml
   map_inputs:
-    input: "Dashboard setup"
+    input: Dashboard setup
 - step_id: create_checklist
   prompt_file: prompts/clinical/adjudication/adjudication_workflow/02_source_document_endpoint_checklist.prompt.yaml
   map_inputs:
@@ -24,3 +24,9 @@ testData:
 - inputs:
     adjudication_log_csv: Sample adjudication_log_csv
     charter_excerpt: Sample charter_excerpt
+version: 0.1.0
+metadata:
+  domain: clinical
+  topic: adjudication
+  complexity: medium
+  tags: []

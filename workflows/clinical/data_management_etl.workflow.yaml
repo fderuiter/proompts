@@ -21,3 +21,9 @@ steps:
 testData:
 - inputs:
     etl_requirements: Sample etl_requirements
+version: 0.1.0
+metadata:
+  domain: clinical
+  topic: data_management_etl
+  complexity: medium
+  tags: []

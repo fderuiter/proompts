@@ -24,3 +24,9 @@ testData:
 - inputs:
     device_description: Sample device_description
     process_description: Sample process_description
+version: 0.1.0
+metadata:
+  domain: scientific
+  topic: sterility
+  complexity: medium
+  tags: []

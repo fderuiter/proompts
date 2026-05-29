@@ -26,3 +26,9 @@ testData:
     validation_info: Sample validation_info
     integration_description: Sample integration_description
     mapping_requirements: Sample mapping_requirements
+version: 0.1.0
+metadata:
+  domain: clinical
+  topic: eclinical_integration
+  complexity: medium
+  tags: []

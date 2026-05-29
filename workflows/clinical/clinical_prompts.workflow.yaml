@@ -23,3 +23,9 @@ testData:
 - inputs:
     variable_list: Sample variable_list
     protocol_summary: Sample protocol_summary
+version: 0.1.0
+metadata:
+  domain: clinical
+  topic: clinical_prompts
+  complexity: medium
+  tags: []

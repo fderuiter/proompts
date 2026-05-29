@@ -27,3 +27,9 @@ testData:
     analysis_goal: Sample analysis_goal
     existing_modules: Sample existing_modules
     audience_role: Sample audience_role
+version: 0.1.0
+metadata:
+  domain: management
+  topic: learning_development
+  complexity: medium
+  tags: []

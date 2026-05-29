@@ -26,3 +26,9 @@ testData:
     report_sections: Sample report_sections
     data_csv: Sample data_csv
     protocol_basics: Sample protocol_basics
+version: 0.1.0
+metadata:
+  domain: management
+  topic: study_director
+  complexity: medium
+  tags: []

@@ -26,3 +26,9 @@ testData:
     byod_requirements: Sample byod_requirements
     rollout_details: Sample rollout_details
     form_details: Sample form_details
+version: 0.1.0
+metadata:
+  domain: clinical
+  topic: epro
+  complexity: medium
+  tags: []

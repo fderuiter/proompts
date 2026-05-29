@@ -43,3 +43,9 @@ testData:
     business_goal: Sample business_goal
     project_name: Sample project_name
     device_name: Sample device_name
+version: 0.1.0
+metadata:
+  domain: technical
+  topic: testing
+  complexity: medium
+  tags: []

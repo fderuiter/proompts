@@ -26,3 +26,9 @@ testData:
     study_parameters: Sample study_parameters
     trial_enrollment: Sample trial_enrollment
     existing_sop: Sample existing_sop
+version: 0.1.0
+metadata:
+  domain: clinical
+  topic: rtsm
+  complexity: medium
+  tags: []

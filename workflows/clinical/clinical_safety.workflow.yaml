@@ -26,3 +26,9 @@ testData:
     post_market_data: Sample post_market_data
     adverse_event_data: Sample adverse_event_data
     surveillance_data: Sample surveillance_data
+version: 0.1.0
+metadata:
+  domain: clinical
+  topic: clinical_safety
+  complexity: medium
+  tags: []

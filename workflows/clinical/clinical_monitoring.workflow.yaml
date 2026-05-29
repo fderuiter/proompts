@@ -26,3 +26,9 @@ testData:
     site_performance_data: Sample site_performance_data
     mvr_report: Sample mvr_report
     monitoring_findings: Sample monitoring_findings
+version: 0.1.0
+metadata:
+  domain: clinical
+  topic: clinical_monitoring
+  complexity: medium
+  tags: []

@@ -58,3 +58,9 @@ testData:
     business_outcome: Sample business_outcome
     deadline: Sample deadline
     budget: Sample budget
+version: 0.1.0
+metadata:
+  domain: management
+  topic: project_management
+  complexity: medium
+  tags: []

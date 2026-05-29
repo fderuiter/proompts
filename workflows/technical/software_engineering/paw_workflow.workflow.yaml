@@ -34,3 +34,9 @@ testData:
     relevant_source_code: Sample relevant_source_code
     todo_content: Sample todo_content
     file_structure: Sample file_structure
+version: 0.1.0
+metadata:
+  domain: technical
+  topic: software_engineering
+  complexity: medium
+  tags: []

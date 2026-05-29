@@ -62,3 +62,9 @@ testData:
     starting_cash: Sample starting_cash
     base_costs: Sample base_costs
     notes: Sample notes
+version: 0.1.0
+metadata:
+  domain: business
+  topic: cfo
+  complexity: medium
+  tags: []

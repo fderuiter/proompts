@@ -21,3 +21,9 @@ steps:
 testData:
 - inputs:
     conversation_scenario: Sample conversation_scenario
+version: 0.1.0
+metadata:
+  domain: technical
+  topic: stochastic_model_chain
+  complexity: medium
+  tags: []

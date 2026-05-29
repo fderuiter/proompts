@@ -33,3 +33,9 @@ testData:
     draft_section: Sample draft_section
     summary_sheet: Sample summary_sheet
     process_information: Sample process_information
+version: 0.1.0
+metadata:
+  domain: clinical
+  topic: protocol
+  complexity: medium
+  tags: []

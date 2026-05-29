@@ -38,3 +38,9 @@ testData:
     device_or_assay: Sample device_or_assay
     market_report: Sample market_report
     device: Sample device
+version: 0.1.0
+metadata:
+  domain: business
+  topic: market_research
+  complexity: medium
+  tags: []

@@ -27,3 +27,9 @@ steps:
 testData:
 - inputs:
     venting_text: Sample venting_text
+version: 0.1.0
+metadata:
+  domain: clinical
+  topic: music_therapy
+  complexity: medium
+  tags: []

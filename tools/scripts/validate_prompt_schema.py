@@ -124,6 +124,7 @@ class InputVariable(BaseModel):
 
 class PromptMetadata(BaseModel):
     domain: str = Field(..., description="The business domain (e.g., 'clinical', 'technical').")
+    topic: Optional[str] = Field(None, description="The topic of the artifact.")
     complexity: ComplexityLevel = Field(..., description="The complexity level of the prompt.")
     tags: List[str] = Field([], description="A list of tags for categorization and search.")
     requires_context: bool = Field(False, description="Whether this prompt requires external context or previous conversation history.")
