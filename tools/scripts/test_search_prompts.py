@@ -13,7 +13,7 @@ from search_prompts import search
 
 # We need to provide paths that are relative to the actual ROOT
 # used in search_prompts. ROOT is usually /app if we are in this container
-from utils import ROOT
+from promptops.utils import ROOT
 
 class TestSearchPrompts(unittest.TestCase):
     @patch('search_prompts.load_yaml')

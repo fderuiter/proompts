@@ -32,7 +32,7 @@ import os # Needed for relpath calculation in strict paths
 from pathlib import Path
 from dataclasses import dataclass, field
 from typing import List, Dict, Optional, Any
-from utils import load_yaml, derive_prompt_category
+from promptops.utils import load_yaml, derive_prompt_category
 
 # --- Configuration Loading (Extracted) ---
 def load_config() -> Dict[str, Any]:

@@ -65,7 +65,7 @@ class TestExtractTemplateVars(unittest.TestCase):
                 {"content": "Hello {{ name }}, welcome to {{  place  }}!"}
             ]
         }
-        expected = ["  place  ", " name "]
+        expected = ["name", "place"]
         result = extract_template_vars(content)
         self.assertEqual(result, expected)
 

@@ -7,11 +7,11 @@ from pathlib import Path
 import sys
 
 try:
-    from utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, OVERVIEW_NAME
+    from promptops.utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, OVERVIEW_NAME
 except ImportError:
     import sys
     sys.path.append(str(Path(__file__).parent))
-    from utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, OVERVIEW_NAME
+    from promptops.utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, OVERVIEW_NAME
 
 
 def get_prompt_metadata(path: Path) -> tuple[str, str]:

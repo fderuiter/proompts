@@ -35,12 +35,12 @@ import re
 from pathlib import Path
 
 try:
-    from utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, iter_prompt_files, iter_workflow_files, OVERVIEW_NAME
+    from promptops.utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, iter_prompt_files, iter_workflow_files, OVERVIEW_NAME
 except ImportError:
     # Allow running from root or scripts dir
     import sys
     sys.path.append(str(Path(__file__).parent))
-    from utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, iter_prompt_files, iter_workflow_files, OVERVIEW_NAME
+    from promptops.utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, iter_prompt_files, iter_workflow_files, OVERVIEW_NAME
 
 
 NAMING_RULES = {
