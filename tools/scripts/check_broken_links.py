@@ -37,7 +37,7 @@ def get_all_markdown_files() -> List[Path]:
 
 def get_anchors_in_file(path: Path) -> Set[str]:
     """Extracts all anchors (headers and id attributes) from a file."""
-    anchors = set()
+    anchors: set[str] = set()
     try:
         content = path.read_text(encoding='utf-8')
     except Exception as e:

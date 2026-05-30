@@ -42,7 +42,7 @@ def update_file(file_path: Path, check: bool = False) -> bool:
         return False
 
     lines = content_text.splitlines()
-    new_lines = []
+    new_lines: list[str] = []
     found = False
     now_iso = datetime.now(timezone.utc).isoformat(timespec='seconds').replace('+00:00', 'Z')
 

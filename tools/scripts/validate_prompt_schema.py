@@ -281,7 +281,7 @@ def main() -> int:
         return 0
 
     ok = True
-    seen_names = {}  # name -> file_path
+    seen_names: dict[str, str] = {}  # name -> file_path
 
     for file_path in iter_prompt_files(ROOT):
         content = validate_file(file_path, strict=args.strict)
@@ -295,7 +295,7 @@ def main() -> int:
                 print(f"Error: Duplicate name '{name}' found in:\n  - {seen_names[name]}\n  - {file_path}")
                 ok = False
             else:
-                seen_names[name] = file_path
+                seen_names[name] = str(file_path)
 
     return 0 if ok else 1
 
