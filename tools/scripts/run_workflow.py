@@ -258,10 +258,10 @@ def run_evaluators(output_text: str, prompt_evaluators: list) -> str:
                     if rule.strip().startswith("return "):
                         func_code = f"def __eval(output):\n    {rule}"
                         exec(func_code, local_vars, local_vars)
-                        passed = local_vars["__eval"](output_text)
+                        passed = local_vars["__eval"](output_text)  # type: ignore
                     else:
                         exec(rule, local_vars, local_vars)
-                        passed = local_vars.get("passed", True)
+                        passed = bool(local_vars.get("passed", True))
                 except Exception as e:
                     logger.error(f"Evaluator '{evaluator.get('name')}' raised exception: {e}")
                     passed = False
@@ -286,7 +286,7 @@ def run_evaluators(output_text: str, prompt_evaluators: list) -> str:
     return output_text
 
 _chaos_call_counter = 0
-_chaos_last_call_time = 0
+_chaos_last_call_time = 0.0
 
 def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any], prompt_file: Optional[str] = None, strict_mode: bool = False, chaos_mode: bool = False, fidelity_report: Optional[Dict[str, bool]] = None) -> str:
     """

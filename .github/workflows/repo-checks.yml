@@ -1,19 +1,11 @@
 name: Repository Checks
-# Validate prompt files and overview.md presence
+# Validate prompt files, core logic, and UI
 
 on:
   push:
-    paths:
-      - 'prompts/**/*.prompt.yaml'
-      - 'prompts/**/*.prompt.yml'
-      - '.github/workflows/repo-checks.yml'
-      - 'tools/scripts/**'
+    branches:
+      - main
   pull_request:
-    paths:
-      - 'prompts/**/*.prompt.yaml'
-      - 'prompts/**/*.prompt.yml'
-      - '.github/workflows/repo-checks.yml'
-      - 'tools/scripts/**'
 
 permissions:
   contents: read
@@ -29,6 +21,6 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
       - name: Install dependencies
-        run: pip install -r requirements.txt
-      - name: Run repository checks
-        run: python3 tools/scripts/test_all.py
+        run: pip install tox
+      - name: Run all checks via Tox
+        run: tox

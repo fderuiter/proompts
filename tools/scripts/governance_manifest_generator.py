@@ -1,3 +1,4 @@
+from typing import Any
 import json
 import hashlib
 import re
@@ -10,15 +11,16 @@ import yaml
 sys.path.append(str(Path(__file__).parent))
 try:
     from promptops.utils import PROMPTS_DIR, iter_prompt_files, load_yaml, ROOT
-except ImportError:
+except Exception as e:
+    raise e
     ROOT = Path(__file__).resolve().parents[2]
     PROMPTS_DIR = ROOT / "prompts"
-    def iter_prompt_files(root=PROMPTS_DIR):
+    def iter_prompt_files(root: Any = PROMPTS_DIR) -> Any:
         for ext in ("*.prompt.yaml", "*.prompt.yml"):
             for p in root.rglob(ext):
                 if not p.name.startswith("._") and "site/" not in str(p):
                     yield p
-    def load_yaml(path):
+    def load_yaml(path: Any) -> Any:
         with open(path, 'r') as f:
             return yaml.safe_load(f)
 

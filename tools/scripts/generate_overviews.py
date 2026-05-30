@@ -37,7 +37,7 @@ def get_prompt_metadata(path: Path) -> tuple[str, str]:
 
 def generate_overview(directory: Path, content_cache: dict[Path, bool] | None = None) -> str:
     title = directory.name.replace("_", " ").title()
-    prompt_files = []
+    prompt_files: list[Path] = []
     for pattern in ("*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
         prompt_files.extend(directory.glob(pattern))
     
