@@ -17,7 +17,7 @@ repos:
     hooks:
       - id: check-prompts
         name: Check Prompts
-        entry: python3 tools/scripts/check_prompts.py
+        entry: promptops check
         language: system
         files: ^prompts/
         pass_filenames: false
@@ -30,7 +30,7 @@ repos:
 
       - id: validate-prompt-schema
         name: Validate Prompt Schema
-        entry: python3 tools/scripts/validate_prompt_schema.py
+        entry: promptops validate --strict
         language: system
         files: ^prompts/.*\.prompt\.yaml$
         pass_filenames: false

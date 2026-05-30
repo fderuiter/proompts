@@ -12,7 +12,7 @@ sys.path.append(str(Path(__file__).parent))
 from search_prompts import search
 
 # We need to provide paths that are relative to the actual ROOT
-# used in search_prompts. ROOT is usually /app if we are in this container
+# used in search_prompts. ROOT is dynamic and container agnostic
 from promptops.utils import ROOT
 
 class TestSearchPrompts(unittest.TestCase):

@@ -1,0 +1,86 @@
+import re
+from pathlib import Path
+
+from promptops.utils import load_yaml, iter_prompt_files, iter_workflow_files, OVERVIEW_NAME
+
+NAMING_RULES = {
+    "meta": re.compile(r"^L\d+_.*\.prompt\.ya?ml$", re.IGNORECASE),
+}
+
+def check_overview(directory: Path) -> bool:
+    if not (directory / OVERVIEW_NAME).exists():
+        print(f"Missing {OVERVIEW_NAME} in {directory}")
+        return False
+    return True
+
+def check_directory_contents(directory: Path) -> bool:
+    ok = True
+    for file in directory.iterdir():
+        if not file.is_file() or file.name.startswith('.'):
+            continue
+        name = file.name
+        if name.lower() in {OVERVIEW_NAME, "readme.md"} or name.lower().endswith(".workflow.md"):
+            continue
+
+        lower_name = name.lower()
+        is_yaml = (
+            lower_name.endswith(".prompt.yaml")
+            or lower_name.endswith(".prompt.yml")
+            or lower_name.endswith(".workflow.yaml")
+            or lower_name.endswith(".workflow.yml")
+        )
+
+        if not is_yaml:
+            print(f"{file} is not a recognised prompt or workflow file")
+            ok = False
+            continue
+    return ok
+
+def check_prompt_file(file: Path) -> bool:
+    ok = True
+    if not load_yaml(file):
+        print(f"Failed to parse {file}")
+        ok = False
+
+    directory = file.parent
+    if directory.name in NAMING_RULES and not file.name.endswith(".workflow.yaml") and not file.name.endswith(".workflow.yml"):
+        pattern = NAMING_RULES[directory.name]
+        if not pattern.match(file.name):
+            print(f"{file} does not match required pattern for {directory.name}")
+            ok = False
+
+    return ok
+
+def run_hygiene_checks(prompts_dir: Path, workflows_dir: Path) -> bool:
+    success = True
+    dirs_to_check = set()
+
+    for prompt_file in iter_prompt_files(prompts_dir):
+        if not check_prompt_file(prompt_file):
+            success = False
+
+        path = prompt_file.parent
+        while path != prompts_dir:
+             dirs_to_check.add(path)
+             if path == path.parent:
+                 break
+             path = path.parent
+
+    for workflow_file in iter_workflow_files(workflows_dir):
+        if not check_prompt_file(workflow_file):
+            success = False
+
+        path = workflow_file.parent
+        while path != workflows_dir:
+             dirs_to_check.add(path)
+             if path == path.parent:
+                 break
+             path = path.parent
+
+    for directory in dirs_to_check:
+        if not check_overview(directory):
+            success = False
+        if not check_directory_contents(directory):
+            success = False
+
+    return success

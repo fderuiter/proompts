@@ -1,9 +1,13 @@
 import argparse
 import sys
+from pathlib import Path
 from promptops.validation import validate_prompts
 from promptops.simulation import simulate_prompt
 from promptops.documentation import generate_docs
 from promptops.init import init_project
+from promptops.hygiene import run_hygiene_checks
+from promptops.governance import run_governance
+from promptops.utils import PROMPTS_DIR, WORKFLOWS_DIR
 
 def main():
     parser = argparse.ArgumentParser(description="PromptOps Toolkit CLI")
@@ -24,10 +28,16 @@ def main():
 
     # Docs
     docs_parser = subparsers.add_parser("docs", help="Generate prompt documentation")
-    docs_parser.add_argument("--dir", help="Directory containing prompts", default=".")
+    docs_parser.add_argument("--dir", help="Directory containing prompts", default=str(PROMPTS_DIR))
     docs_parser.add_argument("--out", help="Output directory for documentation", default="docs")
     docs_parser.add_argument("--repo-url", help="Base URL for source repository", default="")
     docs_parser.add_argument("--branch", help="Branch name for source repository links", default="main")
+
+    # Check / Hygiene
+    check_parser = subparsers.add_parser("check", help="Run hygiene checks on prompts and workflows")
+
+    # Governance
+    gov_parser = subparsers.add_parser("governance", help="Generate compliance manifest and gap report")
 
     args = parser.parse_args()
 
@@ -42,6 +52,12 @@ def main():
     elif args.command == "docs":
         generate_docs(args.dir, args.out, args.repo_url, args.branch)
         sys.exit(0)
+    elif args.command == "check":
+        success = run_hygiene_checks(PROMPTS_DIR, WORKFLOWS_DIR)
+        sys.exit(0 if success else 1)
+    elif args.command == "governance":
+        success = run_governance()
+        sys.exit(0 if success else 1)
 
 if __name__ == "__main__":
     main()

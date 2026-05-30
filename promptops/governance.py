@@ -3,33 +3,18 @@ import hashlib
 import re
 from datetime import datetime, timezone
 from pathlib import Path
-import sys
 import yaml
 
-# Ensure we can import from the current directory
-sys.path.append(str(Path(__file__).parent))
-try:
-    from promptops.utils import PROMPTS_DIR, iter_prompt_files, load_yaml, ROOT
-except ImportError:
-    ROOT = Path(__file__).resolve().parents[2]
-    PROMPTS_DIR = ROOT / "prompts"
-    def iter_prompt_files(root=PROMPTS_DIR):
-        for ext in ("*.prompt.yaml", "*.prompt.yml"):
-            for p in root.rglob(ext):
-                if not p.name.startswith("._") and "site/" not in str(p):
-                    yield p
-    def load_yaml(path):
-        with open(path, 'r') as f:
-            return yaml.safe_load(f)
+from promptops.utils import ROOT, PROMPTS_DIR, iter_prompt_files, load_yaml
 
 MANIFEST_DIR = ROOT / "governance"
-MANIFEST_DIR.mkdir(exist_ok=True)
 MANIFEST_FILE = MANIFEST_DIR / "compliance_manifest.json"
 GAP_REPORT_FILE = MANIFEST_DIR / "gap_report.json"
 KB_FILE = ROOT / "regulatory_kb.yaml"
 
 def generate_kb():
     if not KB_FILE.exists():
+        MANIFEST_DIR.mkdir(exist_ok=True, parents=True)
         kb = {
             "standards": {
                 "21 CFR Part 11": {
@@ -74,21 +59,15 @@ def extract_standards(text, kb):
     for std_name, std_data in kb['standards'].items():
         if std_name.upper() in text_upper:
             found.append(std_name)
-        # Regex to catch numeric variants
         elif re.search(r'\b' + std_name.replace(" ", r'\s+') + r'\b', text, re.IGNORECASE):
              found.append(std_name)
     return found
 
 def multi_step_reflection(prompt_data, standard_name, kb):
-    """
-    Simulates a multi-step reflection to generate a Statement of Applicability.
-    Verifies that prompt instructions actually satisfy the logic of a linked regulation.
-    """
     versions = kb['standards'][standard_name]['versions']
     latest_version = sorted(list(versions.keys()))[-1]
     clauses = versions[latest_version]['clauses']
     
-    # Extract text from prompt to test logic
     prompt_text = ""
     for msg in prompt_data.get('messages', []):
         prompt_text += msg.get('content', '')
@@ -96,8 +75,6 @@ def multi_step_reflection(prompt_data, standard_name, kb):
     
     statement_of_applicability = []
     for clause, desc in clauses.items():
-        # Check if the prompt actually satisfies the logic by looking for relevant terms
-        # This is a mock multi-step reflection process.
         keywords = desc.lower().split()
         match_count = sum(1 for kw in keywords if len(kw) > 3 and kw in prompt_text_lower)
         addressed = "Yes" if match_count > 0 else "No"
@@ -115,7 +92,8 @@ def multi_step_reflection(prompt_data, standard_name, kb):
         "statement_of_applicability": statement_of_applicability
     }
 
-def main():
+def run_governance():
+    MANIFEST_DIR.mkdir(exist_ok=True, parents=True)
     kb = generate_kb()
     
     manifest_data = {}
@@ -127,7 +105,6 @@ def main():
     snapshot_records = []
     gap_report = []
 
-    # Identify the previous snapshot for gap analysis
     previous_snapshot_id = None
     if manifest_data:
         previous_snapshot_id = sorted(manifest_data.keys())[-1]
@@ -143,10 +120,8 @@ def main():
         text = prompt_file.read_text(encoding="utf-8")
         found_standards = extract_standards(text, kb)
         
-        # Regex to correctly identify complex numeric standards missing from heuristics
         numeric_matches = re.findall(r'\b21 CFR(?: Part)? \d+(?:\.\d+)?\b', text, re.IGNORECASE)
         for m in numeric_matches:
-            # normalize space
             m = " ".join(m.split())
             if not any(std.upper() == m.upper() for std in found_standards):
                 found_standards.append(m)
@@ -170,7 +145,6 @@ def main():
                     mapping = multi_step_reflection(prompt_data, std, kb)
                     mappings.append(mapping)
                     
-                    # Check for gaps if there is a previous snapshot
                     if previous_snapshot_id and rel_path in prev_mappings:
                         prev_version = prev_mappings[rel_path].get(std)
                         curr_version = mapping["version"]
@@ -206,15 +180,12 @@ def main():
     with open(MANIFEST_FILE, 'w') as f:
         json.dump(manifest_data, f, indent=2)
         
+    with open(GAP_REPORT_FILE, 'w') as f:
+        json.dump(gap_report, f, indent=2)
+
     if gap_report:
-        with open(GAP_REPORT_FILE, 'w') as f:
-            json.dump(gap_report, f, indent=2)
         print(f"Generated compliance manifest. Gap report created with {len(gap_report)} outdated prompt mappings.")
     else:
-        # Create an empty gap report to show there are no gaps
-        with open(GAP_REPORT_FILE, 'w') as f:
-            json.dump([], f, indent=2)
         print(f"Generated compliance manifest with {len(snapshot_records)} records. No regulatory gaps detected.")
-
-if __name__ == "__main__":
-    main()
+        
+    return True

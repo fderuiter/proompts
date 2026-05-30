@@ -5,10 +5,8 @@ from typing import Any, Callable, Dict, Literal, Optional
 from pathlib import Path
 from pydantic import BaseModel, create_model, ValidationError
 
-import sys
-sys.path.append(str(Path(__file__).parent.parent / "tools" / "scripts"))
 from promptops.utils import load_yaml, ROOT
-from validate_prompt_schema import PromptSchema
+from promptops.validation import PromptSchema
 
 logger = logging.getLogger("proompts_guard")
 

@@ -28,9 +28,7 @@ from __future__ import annotations
 import subprocess
 import sys
 
-from check_prompts import main as check_prompts_main
 from update_docs_index import run_update as update_docs_index_run
-from validate_prompt_schema import main as validate_prompt_schema_main
 
 MAX_DISPLAYED_TRACKED_FILES = 20
 STATIC_TOP_LEVEL_DOCS = {
@@ -105,15 +103,14 @@ def main() -> int:
     checks = {
         "cleanup_mac_files": lambda: run_command(["find", ".", "-name", "._*", "-delete"]),
         "enforce_generated_docs_untracked": ensure_generated_docs_not_tracked,
-        "check_prompts": check_prompts_main,
-        "validate_prompt_schema": validate_prompt_schema_main,
-        "generate_compliance_manifest": lambda: run_command(["python3", "tools/scripts/governance_manifest_generator.py"]),
+        "check_prompts": lambda: run_command(["promptops", "check"]),
+        "validate_prompt_schema": lambda: run_command(["promptops", "validate", "--strict"]),
+        "generate_compliance_manifest": lambda: run_command(["promptops", "governance"]),
         "generate_overviews": lambda: run_command(["python3", "tools/scripts/generate_overviews.py"]),
         # Docs are build artifacts now, so we generate them before running integrity checks.
         "update_docs_index": lambda: run_command(["python3", "tools/scripts/update_docs_index.py"]),
         "update_docs_index_check": lambda: update_docs_index_run(check=True),
-        "generate_docs": lambda: run_command(["python3", "tools/scripts/generate_docs.py"]),
-        "generate_docs_check": lambda: run_command(["python3", "tools/scripts/generate_docs.py", "--check"]),
+        "generate_docs": lambda: run_command(["promptops", "docs"]),
         "check_broken_links": lambda: run_command(["python3", "tools/scripts/check_broken_links.py"]),
         "yamllint": lambda: run_command(["yamllint", "."]),
         "test_workflows": lambda: run_command(["python3", "tools/scripts/test_workflows.py"]),

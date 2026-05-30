@@ -17,8 +17,27 @@ class KeepUndefined(Undefined):
     def __str__(self):
         return f"{{{{ {self._undefined_name} }}}}"
 
+def find_repo_root() -> Path:
+    current = Path.cwd().resolve()
+    # First pass: look for .git
+    temp = current
+    while temp != temp.parent:
+        if (temp / ".git").exists():
+            return temp
+        temp = temp.parent
+        
+    # Second pass: look for prompts and workflows
+    temp = current
+    while temp != temp.parent:
+        if (temp / "prompts").is_dir() and (temp / "workflows").is_dir():
+            return temp
+        temp = temp.parent
+        
+    # Fallback to current directory
+    return current
+
 # Centralized Path Registry
-ROOT: Path = Path(__file__).resolve().parents[1]
+ROOT: Path = find_repo_root()
 PROMPTS_DIR: Path = ROOT / "prompts"
 WORKFLOWS_DIR: Path = ROOT / "workflows"
 OVERVIEW_NAME: str = "overview.md"

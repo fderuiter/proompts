@@ -39,6 +39,12 @@ class WorkflowGrapher:
         for step in data.get('steps', []):
             step_id = step.get('step_id', 'unknown')
             graph.append(f"    {step_id}[Step: {step_id}]")
+            
+            prompt_file = step.get('prompt_file')
+            if prompt_file:
+                prompt_node = prompt_file.replace('/', '_').replace('.', '_')
+                graph.append(f"    Prompt_{prompt_node}[[{prompt_file}]] -.-> {step_id}")
+                
             inputs_map = step.get('map_inputs', {})
             for val in inputs_map.values():
                 if isinstance(val, str):

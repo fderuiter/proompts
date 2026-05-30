@@ -12,11 +12,7 @@ import glob
 from pathlib import Path
 from run_workflow import run_workflow, load_yaml, setup_logging
 
-try:
-    from validate_prompt_schema import PromptMetadata
-except ImportError:
-    sys.path.append(str(Path(__file__).parent))
-    from validate_prompt_schema import PromptMetadata
+from promptops.validation import PromptMetadata
 
 def validate_workflow_metadata(wf: Path, data: dict):
     if 'metadata' not in data:

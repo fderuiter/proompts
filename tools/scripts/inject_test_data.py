@@ -3,7 +3,8 @@ import glob
 from pathlib import Path
 import re
 
-workflows = glob.glob("/app/workflows/**/*.workflow.yaml", recursive=True)
+from promptops.utils import WORKFLOWS_DIR
+workflows = glob.glob(str(WORKFLOWS_DIR / "**" / "*.workflow.yaml"), recursive=True)
 
 for wf in workflows:
     with open(wf, 'r') as f:

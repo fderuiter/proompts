@@ -39,7 +39,7 @@ jobs:
       # uncomment and adjust the line below:
       - name: Generate Docs
         run: |
-          python tools/scripts/generate_docs.py
+          promptops docs
           python tools/scripts/update_docs_index.py
 
       - name: Setup Pages

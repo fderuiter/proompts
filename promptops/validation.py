@@ -99,6 +99,25 @@ class PromptSchema(BaseModel):
 
         return self
 
+    @model_validator(mode='after')
+    def check_test_data_types(self):
+        """Warn if testData contains non-string types that will be coerced to strings."""
+        if not self.testData:
+            return self
+            
+        for case in self.testData:
+            if isinstance(case, dict):
+                inputs = case.get('inputs', {})
+                if isinstance(inputs, dict):
+                    for k, v in inputs.items():
+                        if not isinstance(v, str):
+                            print(f"Warning: Test data input '{k}' is of type {type(v).__name__}. The runtime engine will cast this to a string.")
+                
+                expected = case.get('expected')
+                if expected is not None and not isinstance(expected, str):
+                    print(f"Warning: Test data expected output is of type {type(expected).__name__}. The runtime engine will cast this to a string.")
+        return self
+
 
 class WorkflowInput(BaseModel):
     name: str = Field(...)

@@ -7,7 +7,7 @@ import streamlit as st
 import pandas as pd
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
-from tools.scripts.validate_prompt_schema import PromptSchema
+from promptops.validation import PromptSchema
 from pydantic import ValidationError
 
 st.set_page_config(page_title="Prompt Editor", layout="wide")
