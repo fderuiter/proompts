@@ -29,9 +29,12 @@ With verbose logging (useful for debugging variable resolution):
 from __future__ import annotations
 
 import argparse
+import hashlib
+import json
 import logging
 import os
 import re
+import shutil
 import sys
 from typing import Any, Dict, Optional
 
@@ -541,11 +544,33 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
     if not steps_dict:
         return workflow_state
 
+    # Checkpoint configuration
+    identifier_string = f"{os.path.abspath(workflow_file)}::{json.dumps(initial_inputs, sort_keys=True)}"
+    run_id = hashlib.md5(identifier_string.encode('utf-8')).hexdigest()
+    checkpoint_dir = os.path.join(os.getcwd(), ".checkpoints", run_id)
+    checkpoint_file = os.path.join(checkpoint_dir, "state.json")
+    os.makedirs(checkpoint_dir, exist_ok=True)
+
     # Execute graph starting from the first step
     current_step_id = workflow_data['steps'][0]['step_id']
     
     execution_counts = {step_id: 0 for step_id in steps_dict}
     max_iterations = workflow_data.get('max_iterations', 10)
+
+    # Resume from checkpoint if it exists
+    if os.path.exists(checkpoint_file):
+        try:
+            with open(checkpoint_file, 'r') as f:
+                checkpoint_data = json.load(f)
+            resume_step_id = checkpoint_data.get('next_step_id')
+            if resume_step_id and resume_step_id in steps_dict:
+                print(f"Resuming from step {resume_step_id}...")
+                logger.info(f"Resuming from step {resume_step_id}...")
+                workflow_state = checkpoint_data.get('workflow_state', workflow_state)
+                execution_counts = checkpoint_data.get('execution_counts', execution_counts)
+                current_step_id = resume_step_id
+        except Exception as e:
+            logger.warning(f"Failed to load checkpoint: {e}")
 
     while current_step_id:
         step = steps_dict[current_step_id]
@@ -633,6 +658,25 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
             raise ValueError(f"Undefined next step: {next_step_id}")
             
         current_step_id = next_step_id
+        
+        # Save checkpoint after successful step execution
+        try:
+            os.makedirs(checkpoint_dir, exist_ok=True)
+            with open(checkpoint_file, 'w') as f:
+                json.dump({
+                    "workflow_state": workflow_state,
+                    "execution_counts": execution_counts,
+                    "next_step_id": current_step_id
+                }, f)
+        except Exception as e:
+            logger.warning(f"Failed to save checkpoint: {e}")
+
+    # Clean up checkpoint on successful completion
+    if os.path.exists(checkpoint_dir):
+        try:
+            shutil.rmtree(checkpoint_dir)
+        except Exception as e:
+            logger.warning(f"Failed to clean up checkpoint directory: {e}")
 
     return workflow_state
 
