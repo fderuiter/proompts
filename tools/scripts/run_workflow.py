@@ -600,8 +600,72 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
 
         # 2. Resolve inputs for the prompt
         prompt_inputs = {}
+        
+        # Explicit mappings
         for var_name, template in step.get('map_inputs', {}).items():
             prompt_inputs[var_name] = resolve_value(template, workflow_state, strict_mode)
+
+        # Name-Based Inference Engine
+        required_vars = set()
+        optional_vars = set()
+        for v in prompt_data.get('variables', []):
+            if v.get('required', True):
+                required_vars.add(v['name'])
+            else:
+                optional_vars.add(v['name'])
+        
+        for msg in prompt_data.get('messages', []):
+            matches = re.findall(r"\{\{\s*([a-zA-Z0-9_]+)\s*\}\}", msg.get('content', ''))
+            for match in matches:
+                if match not in optional_vars:
+                    required_vars.add(match)
+
+        all_inferred_vars = required_vars | optional_vars
+
+        for var_name in all_inferred_vars:
+            top_level_var = var_name.split('.')[0]
+            if top_level_var in step.get('map_inputs', {}):
+                continue
+                
+            inferred = False
+            
+            # Contextual Namespace Resolution - Priority 1: Global inputs
+            if var_name in workflow_state.get('inputs', {}):
+                prompt_inputs[var_name] = workflow_state['inputs'][var_name]
+                inferred = True
+                logger.info(f"Auto-mapped '{var_name}' from global inputs.")
+            else:
+                # Priority 2: Output of most recent step(s)
+                for past_step_id in list(workflow_state.get('steps', {}).keys())[::-1]:
+                    past_output = workflow_state['steps'][past_step_id].get('output')
+                    
+                    if isinstance(past_output, dict) and var_name in past_output:
+                        prompt_inputs[var_name] = past_output[var_name]
+                        inferred = True
+                        logger.info(f"Auto-mapped '{var_name}' from step '{past_step_id}' dictionary output.")
+                        break
+                        
+                    if isinstance(past_output, str):
+                        try:
+                            parsed = json.loads(past_output)
+                            if isinstance(parsed, dict) and var_name in parsed:
+                                prompt_inputs[var_name] = parsed[var_name]
+                                inferred = True
+                                logger.info(f"Auto-mapped '{var_name}' from step '{past_step_id}' JSON output.")
+                                break
+                        except json.JSONDecodeError:
+                            pass
+                            
+                    if past_step_id == var_name:
+                        prompt_inputs[var_name] = past_output
+                        inferred = True
+                        logger.info(f"Auto-mapped '{var_name}' from step '{past_step_id}' output directly.")
+                        break
+                        
+            if not inferred and var_name in required_vars:
+                error_msg = f"Missing required variable '{var_name}' could not be automatically inferred."
+                logger.error(error_msg)
+                raise KeyError(error_msg)
 
         logger.debug(f"Resolved prompt inputs: {list(prompt_inputs.keys())}")
 
