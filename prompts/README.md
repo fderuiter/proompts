@@ -71,11 +71,11 @@ python3 tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflo
 
 ## Tools 🛠️
 
-We maintain a suite of tools in [`../tools/scripts/`](../tools/scripts) to manage this library:
+We maintain a suite of tools in [`../tools/tools/scripts/`](../tools/tools/scripts) to manage this library:
 
-- **[`check_prompts.py`](../tools/scripts/check_prompts.py)**: Validates that all prompt files follow the required schema and naming conventions.
-- **[`generate_overviews.py`](../tools/scripts/generate_overviews.py)**: Automatically generates `overview.md` files for subdirectories.
-- **[`run_workflow.py`](../tools/scripts/run_workflow.py)**: The engine that executes workflows and prompts.
+- **[`check_prompts.py`](../tools/tools/scripts/check_prompts.py)**: Validates that all prompt files follow the required schema and naming conventions.
+- **[`generate_overviews.py`](../tools/tools/scripts/generate_overviews.py)**: Automatically generates `overview.md` files for subdirectories.
+- **[`run_workflow.py`](../tools/tools/scripts/run_workflow.py)**: The engine that executes workflows and prompts.
 
 ## Contributing 🤝
 

@@ -1,20 +1,5 @@
----
-extends: default
-ignore:
-  - venv/
-  - "._*"
-  - .git/
-  - __pycache__/
-  - .pytest_cache/
-  - node_modules/
-  - .tox/
+ignore: |
+  .venv/
+  .tox/
+  **/__pycache__/
 
-rules:
-  line-length: disable
-  document-start: disable
-  truthy:
-    allowed-values: ['true', 'false', 'on']
-  indentation:
-    indent-sequences: whatever
-  empty-lines:
-    max: 3

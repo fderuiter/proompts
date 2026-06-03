@@ -7,12 +7,12 @@ STUDIO_DIR = Path(__file__).parent.parent / "studio"
 ROOT_DIR = Path(__file__).parent.parent
 
 def test_app_launches():
-    at = AppTest.from_file(str(STUDIO_DIR / "app.py"))
+    at = AppTest.from_file(str(STUDIO_DIR / "studio/app.py"))
     at.run()
     assert not at.exception
 
 def test_prompt_editor_launches_and_saves():
-    at = AppTest.from_file(str(STUDIO_DIR / "pages" / "1_📝_Prompt_Editor.py"))
+    at = AppTest.from_file(str(STUDIO_DIR / "studio/pages" / "1_📝_Prompt_Editor.py"))
     at.run()
     assert not at.exception
 
@@ -48,6 +48,7 @@ def test_prompt_editor_launches_and_saves():
     # Check if file was created
     test_file = ROOT_DIR / "prompts" / "test_new.prompt.yaml"
     assert test_file.exists()
+    test_file.unlink()
     
     # Clean up
     if test_file.exists():
@@ -55,7 +56,7 @@ def test_prompt_editor_launches_and_saves():
 
 
 def test_workflow_editor_launches_and_saves():
-    at = AppTest.from_file(str(STUDIO_DIR / "pages" / "2_🔄_Workflow_Editor.py"))
+    at = AppTest.from_file(str(STUDIO_DIR / "studio/pages" / "2_🔄_Workflow_Editor.py"))
     at.run()
     assert not at.exception
 
@@ -91,6 +92,7 @@ def test_workflow_editor_launches_and_saves():
     # Check if file was created
     test_file = ROOT_DIR / "workflows" / "test_new.workflow.yaml"
     assert test_file.exists()
+    test_file.unlink()
     
     # Clean up
     if test_file.exists():
