@@ -1,0 +1,14 @@
+[project]
+name = "tools"
+version = "0.1.0"
+description = "Developer Tools and Scripts"
+dependencies = [
+    "promptops",
+    "PyYAML",
+    "pydantic>=2.0.0"
+]
+requires-python = ">=3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

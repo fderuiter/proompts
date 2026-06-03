@@ -1,0 +1,157 @@
+#!/usr/bin/env python3
+"""Update `docs/index.md` and `docs/table-of-contents.md` from prompt metadata."""
+
+from __future__ import annotations
+
+import argparse
+from collections import defaultdict
+from pathlib import Path
+
+from promptops.utils import PROMPTS_DIR, ROOT, iter_prompt_files, load_yaml, derive_prompt_category
+
+DOCS_DIR = ROOT / "docs"
+
+INDEX_HEADER = """---
+title: Home
+---
+
+# Proompts
+
+Welcome to **Proompts**, a curated collection of high-quality prompts and workflows for AI-assisted product development, regulatory compliance, and clinical research.
+
+Whether you are a Product Manager, Clinical Lead, or Software Engineer, this repository provides the building blocks to operationalize LLMs in your daily work.
+
+## Getting Started
+
+1. **Browse Categories**: Explore prompts by domain (e.g., [Clinical](clinical.md), [Technical](technical.md)).
+2. **Run Workflows**: Use our [Workflows Guide](workflow_guide.md) to learn how to chain multiple prompts together for complex tasks like "Idea to Epic".
+3. **Copy & Customize**: All prompts are in YAML format, ready to be used in your own tools or agents.
+
+## Key Concepts
+
+- **Prompts**: Single-task instructions for an LLM (e.g., "Review this code", "Draft a protocol").
+- **Workflows**: Sequences of prompts that pass data from one step to the next to achieve a larger goal.
+- **Agents**: The AI systems that execute these prompts and workflows.
+- **System Architecture**: Read the [canonical guide](system_architecture.md) to understand Prompts as Code, the Simulation Engine, and the Validation Pipeline.
+
+## Browse by Category
+
+- [Business](business.md)
+- [Clinical](clinical.md)
+- [Communication](communication.md)
+- [Management](management.md)
+- [Meta](meta.md)
+- [Regulatory](regulatory.md)
+- [Scientific](scientific.md)
+- [Technical](technical.md)
+- [Workflows](workflows.md)
+- [Workflows Usage Guide](workflows_usage.md)
+"""
+
+
+def read_meta(path: Path) -> tuple[str, str]:
+    """Return category and title from a prompt file."""
+    try:
+        data = load_yaml(path)
+        title = str(data.get("name") or data.get("title") or "").strip()
+        category = derive_prompt_category(path, PROMPTS_DIR, data)
+
+    except Exception:
+        category = derive_prompt_category(path, PROMPTS_DIR, {})
+        title = ""
+
+    if not title:
+        name = path.stem
+        if "_" in name and name.split("_", 1)[0].isdigit():
+            name = name.split("_", 1)[1]
+        name = name.replace("_", " ").replace("-", " ")
+        title = " ".join(word.capitalize() for word in name.split())
+
+    return category, title
+
+
+def collect_prompts() -> dict[str, list[tuple[Path, str]]]:
+    """Group prompt file paths by category."""
+    groups: dict[str, list[tuple[Path, str]]] = defaultdict(list)
+    for path in iter_prompt_files(PROMPTS_DIR):
+        if not path.is_file():
+            continue
+        category, title = read_meta(path)
+        groups[category].append((path, title))
+    # sort files within each category
+    for cat in groups:
+        groups[cat].sort(key=lambda t: t[0])
+    return dict(sorted(groups.items()))
+
+
+def nice_title(name: str) -> str:
+    name = name.replace("_", " ").replace("-", " ")
+    return " ".join(word.capitalize() for word in name.split())
+
+
+def generate() -> tuple[str, str]:
+    """Generate index.md and table-of-contents.md content."""
+    groups = collect_prompts()
+
+    # Prepend the fixed header content to the generated index
+    index_lines = [INDEX_HEADER, "", "# All Prompts", ""]
+    toc_lines: list[str] = []
+
+    for category, items in groups.items():
+        index_lines.append(f"## {nice_title(category)}")
+        index_lines.append("")
+        for path, title in items:
+            # path is absolute path to the prompt yaml file
+            # we want to link to the generated markdown file in docs/prompts
+            # e.g. path: .../prompts/A/foo.prompt.yaml
+            # rel to prompts dir: A/foo.prompt.yaml
+            # markdown rel path: prompts/A/foo.md
+
+            rel_prompt = path.relative_to(PROMPTS_DIR)
+            rel_md = Path("prompts") / rel_prompt.with_suffix(".md")
+
+            link = f"[{title}]({rel_md.as_posix()})"
+            index_lines.append(f"- {link}")
+            toc_lines.append(link)
+        index_lines.append("")
+
+    index_content = "\n".join(index_lines).rstrip() + "\n"
+    toc_content = "\n".join(toc_lines).rstrip() + "\n"
+    return index_content, toc_content
+
+
+def write_files(index: str, toc: str) -> None:
+    (DOCS_DIR / "index.md").write_text(index, encoding="utf-8")
+    (DOCS_DIR / "table-of-contents.md").write_text(toc, encoding="utf-8")
+
+
+def check_files(index: str, toc: str) -> bool:
+    index_path = DOCS_DIR / "index.md"
+    toc_path = DOCS_DIR / "table-of-contents.md"
+    existing_index = index_path.read_text(encoding="utf-8") if index_path.exists() else ""
+    existing_toc = toc_path.read_text(encoding="utf-8") if toc_path.exists() else ""
+    return existing_index == index and existing_toc == toc
+
+
+def run_update(check: bool = False) -> int:
+    index, toc = generate()
+
+    if check:
+        if check_files(index, toc):
+            return 0
+        print("docs index out of date")
+        return 1
+
+    write_files(index, toc)
+    return 0
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Update documentation index")
+    parser.add_argument("--check", action="store_true", help="verify generated files are up to date")
+    args = parser.parse_args()
+    return run_update(check=args.check)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

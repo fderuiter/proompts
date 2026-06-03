@@ -1,0 +1,17 @@
+[project]
+name = "studio"
+version = "0.1.0"
+description = "Proompts Studio UI"
+dependencies = [
+    "promptops",
+    "tools",
+    "proompts-guard",
+    "streamlit>=1.30.0",
+    "pandas",
+    "graphviz"
+]
+requires-python = ">=3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

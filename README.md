@@ -12,7 +12,7 @@ A curated set of prompts in YAML for AI-assisted product development, regulatory
 | :--- | :--- | :--- |
 | **[`prompts/`](prompts/)** | **The Core Library.** <br> YAML-based prompts organized by domain. | `business/`, `clinical/`, `technical/` |
 | **[`workflows/`](workflows/)** | **Chained Sequences.** <br> Multi-step prompt chains for complex tasks. | `technical/software_engineering/paw_workflow.workflow.yaml` |
-| **[`tools/`](tools/README.md)** | **The Engine Room.** <br> Utilities for maintenance and development. | [`scripts/`](tools/scripts/README.md) (Python), [`prompt_tools/`](tools/prompt_tools/README.md) (Meta-prompts) |
+| **[`tools/`](tools/README.md)** | **The Engine Room.** <br> Utilities for maintenance and development. | [`scripts/`](tools/tools/scripts/README.md) (Python), [`prompt_tools/`](promptops/) (Meta-prompts) |
 | **[`scripts/`](scripts/)** | **Shell Wrappers.** <br> Convenience scripts for common tasks. | `validate_prompts.sh` |
 | **[`docs/`](docs/)** | **Knowledge Base.** <br> Guides, usage instructions, and generated docs. | `USAGE.md`, `BEST_PRACTICES.md` |
 
@@ -58,7 +58,7 @@ graph TD
 - **[🚀 Quickstart: 5-Minute Onboarding](docs/QUICKSTART.md)** – Start here! Learn how to run your first simulation.
 - **[Full Table of Contents](docs/index.md)** – Browse all prompts by category
 - **[Usage Guide](docs/USAGE.md)** – Learn how to use and integrate prompts
-- **[Developer Scripts](tools/scripts/README.md)** – Tools for validating and maintaining the repo
+- **[Developer Scripts](tools/tools/scripts/README.md)** – Tools for validating and maintaining the repo
 - **[IDE JSON Schemas](docs/schemas/README.md)** – Configure your IDE for prompt and workflow validation
 
 ## Setup
@@ -117,7 +117,7 @@ To learn more, see the [Prompt Workflows Documentation](docs/workflows.md).
 To run all validation checks (YAML linting, schema validation, documentation index verification) locally, use the provided script:
 
 ```bash
-python3 tools/scripts/test_all.py
+python3 tools/tools/scripts/test_all.py
 ```
 
 This script runs the following checks:

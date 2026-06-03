@@ -1,0 +1,37 @@
+[project]
+name = "proompts-workspace"
+version = "0.1.0"
+description = "Monorepo workspace for Proompts"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "promptops",
+    "tools",
+    "proompts-guard",
+    "studio"
+]
+
+[tool.uv.workspace]
+members = [
+    "promptops",
+    "tools",
+    "proompts_guard",
+    "studio"
+]
+
+[tool.uv.sources]
+promptops = { workspace = true }
+tools = { workspace = true }
+proompts-guard = { workspace = true }
+studio = { workspace = true }
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "tools/tools/scripts"]
+
+[dependency-groups]
+dev = [
+    "mkdocs-material>=9.7.6",
+    "mypy>=1.19.1",
+    "pytest>=8.4.2",
+    "yamllint>=1.37.1",
+]

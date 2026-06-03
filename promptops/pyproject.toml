@@ -1,0 +1,17 @@
+[project]
+name = "promptops"
+version = "0.1.0"
+description = "Enterprise PromptOps Toolkit"
+dependencies = [
+    "PyYAML",
+    "pydantic>=2.0.0",
+    "jinja2"
+]
+requires-python = ">=3.8"
+
+[project.scripts]
+promptops = "promptops.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -4,9 +4,8 @@ from unittest.mock import patch, MagicMock
 
 import sys
 from pathlib import Path
-sys.path.append(str(Path(__file__).parent.parent))
 
-from proompts_guard import guard, ProomptsValidationError
+from proompts_guard import guard, ProomptsValidationError  # type: ignore
 
 class TestProomptsGuard(unittest.TestCase):
     @patch("proompts_guard.middleware.load_yaml")
