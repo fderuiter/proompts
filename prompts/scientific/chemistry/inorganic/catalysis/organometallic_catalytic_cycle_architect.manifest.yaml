@@ -1,0 +1,11 @@
+---
+name: Organometallic Catalytic Cycle Architect
+description: 'Generates rigorous organometallic catalytic cycles, deriving complex
+  kinetic rate equations and analyzing thermodynamic intermediates utilizing strict
+  IUPAC nomenclature, transition metal coordination rules, and precise LaTeX formulations.
+
+  '
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: organometallic_catalytic_cycle_architect.prompt.yaml

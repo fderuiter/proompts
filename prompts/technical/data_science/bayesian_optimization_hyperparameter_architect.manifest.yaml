@@ -1,0 +1,9 @@
+---
+name: bayesian_optimization_hyperparameter_architect
+description: Designs highly robust, efficient Bayesian Optimization workflows for
+  hyperparameter tuning of complex machine learning architectures, ensuring systematic
+  exploration and exploitation.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: bayesian_optimization_hyperparameter_architect.prompt.yaml

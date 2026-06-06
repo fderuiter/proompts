@@ -1,0 +1,8 @@
+---
+name: TOGAF Phase A - Architecture Vision
+description: Guide for defining the Architecture Vision, stakeholders, and the Statement
+  of Architecture Work (The Mandate).
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: phase_a_vision.prompt.yaml

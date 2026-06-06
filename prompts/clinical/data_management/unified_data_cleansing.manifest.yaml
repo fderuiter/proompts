@@ -1,0 +1,8 @@
+---
+name: Unified Data Cleansing
+description: Outline a unified data cleansing approach for clinical trial datasets
+  with strict CDISC/SDTM compliance.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: unified_data_cleansing.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: To-Do List Template
+description: Track pending and completed development tasks.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: todo_generation.prompt.yaml

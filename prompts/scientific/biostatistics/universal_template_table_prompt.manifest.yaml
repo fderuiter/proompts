@@ -1,0 +1,8 @@
+---
+name: Universal Template-Table Prompt
+description: Create a formatted safety table from an ADaM ADAE dataset using either
+  R or SAS.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: universal_template_table_prompt.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: Cloud IAM Least-Privilege Remediation Architect
+description: Analyzes overly permissive cloud Identity and Access Management (IAM)
+  configurations and generates precise, least-privilege JSON/Terraform remediation
+  policies.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: cloud_iam_least_privilege_remediation_architect.prompt.yaml

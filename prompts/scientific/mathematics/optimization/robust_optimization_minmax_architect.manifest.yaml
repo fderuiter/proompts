@@ -1,0 +1,9 @@
+---
+name: Robust Optimization Min-Max Architect
+description: Formulates highly rigorous exact robust counterparts for optimization
+  problems subject to bounded parameter uncertainty, transforming intractable semi-infinite
+  programs into computationally tractable deterministic equivalents.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: robust_optimization_minmax_architect.prompt.yaml

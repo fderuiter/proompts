@@ -1,0 +1,9 @@
+---
+name: ind_clinical_hold_response_architect
+description: Synthesizes regulatory agency (e.g., FDA) Clinical Hold comments, sponsor
+  mitigation strategies, and protocol amendments into a rigorously structured, highly
+  persuasive Complete Response to Clinical Hold.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: ind_clinical_hold_response_architect.prompt.yaml

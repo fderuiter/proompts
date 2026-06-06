@@ -1,0 +1,8 @@
+---
+name: WebAssembly Sandboxed Plugin Architect
+description: Designs highly secure, performant, and sandboxed plugin architectures
+  leveraging WebAssembly (Wasm) and WASI for extensibility in core enterprise platforms.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: webassembly_sandboxed_plugin_architect.prompt.yaml

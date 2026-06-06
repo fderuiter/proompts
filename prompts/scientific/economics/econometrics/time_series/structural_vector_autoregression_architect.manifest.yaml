@@ -1,0 +1,9 @@
+---
+name: structural_vector_autoregression_architect
+description: Formulates rigorous Structural Vector Autoregression (SVAR) models for
+  macroeconomic shock identification, providing identification schemes, impulse response
+  functions (IRFs), and variance decompositions.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: structural_vector_autoregression_architect.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: CAPA Root Cause Investigator
+description: Deep-dive Root Cause Analysis (RCA) using Fishbone and 5 Whys methods.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: capa_root_cause_investigator.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: TD-DFT Excited-State Dynamics Architect
+description: Generates rigorous Time-Dependent Density Functional Theory (TD-DFT)
+  computational protocols to calculate and model excited-state dynamics, vertical
+  excitation energies, and photophysical properties of complex molecular systems.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: td_dft_excited_state_dynamics_architect.prompt.yaml

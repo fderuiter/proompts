@@ -1,0 +1,9 @@
+---
+name: Quantitative Credit Risk Expected Loss Architect
+description: Architects robust, quantitative credit risk modeling frameworks to calculate
+  Expected Loss (EL) and formulate restructuring strategies using the McKinsey 7S
+  framework for non-performing loans or distressed credit portfolios.
+domain: business
+topic: finance
+capability: forecasting
+prompt_ref: quantitative_credit_risk_expected_loss_architect.prompt.yaml

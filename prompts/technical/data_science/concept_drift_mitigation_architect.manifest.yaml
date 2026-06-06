@@ -1,0 +1,8 @@
+---
+name: Concept Drift Mitigation Architect
+description: Designs robust automated concept drift detection and mitigation pipelines
+  for continuous machine learning systems in production.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: concept_drift_mitigation_architect.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Psychometric Validation Methodology
+description: Apply Rasch and IRT models for COA validation and psychometric evidence
+  generation.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: psychometric_validation_methods.prompt.yaml

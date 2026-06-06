@@ -1,0 +1,9 @@
+---
+name: ADaM ADTTE Oncology Censoring Rules Architect
+description: Automates the complex derivation of oncology Time-to-Event (TTE) endpoints
+  (e.g., Progression-Free Survival, Overall Survival) censoring rules and parameters
+  for the ADaM ADTTE dataset based on SDTM and ADaM source data.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: 08_adam_adtte_oncology_censoring_architect.prompt.yaml

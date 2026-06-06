@@ -1,0 +1,11 @@
+---
+name: large_scale_axial_coding_framework_generator
+description: 'Systematically generates an automated, highly rigorous axial coding
+  framework for large-scale qualitative ethnographic data, focusing on thematic linkages
+  and theoretical paradigms within American Sociological Association (ASA) standards.
+
+  '
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: large_scale_axial_coding_framework_generator.prompt.yaml

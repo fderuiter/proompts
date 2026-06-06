@@ -1,0 +1,8 @@
+---
+name: Serverless Database Connection Pooling Architect
+description: Designs highly resilient, scalable serverless database connection pooling
+  architectures to prevent connection exhaustion.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: serverless_database_connection_pooling_architect.prompt.yaml

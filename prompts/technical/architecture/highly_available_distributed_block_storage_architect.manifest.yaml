@@ -1,0 +1,10 @@
+---
+name: highly_available_distributed_block_storage_architect
+description: A Strategic Genesis Architect to design massively scalable, low-latency,
+  and highly fault-tolerant distributed block storage topologies focusing on quorum
+  replication, distributed consensus (Raft/Paxos), write-ahead logging (WAL), and
+  storage tiering.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: highly_available_distributed_block_storage_architect.prompt.yaml

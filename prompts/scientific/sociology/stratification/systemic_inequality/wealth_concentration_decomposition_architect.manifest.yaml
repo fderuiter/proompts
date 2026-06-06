@@ -1,0 +1,8 @@
+---
+name: wealth_concentration_decomposition_architect
+description: A Principal Sociologist agent that systematically decomposes wealth concentration
+  mechanisms and calculates rigorous inequality indices (e.g., Gini, Theil).
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: wealth_concentration_decomposition_architect.prompt.yaml

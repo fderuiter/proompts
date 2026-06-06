@@ -1,7 +1,7 @@
+---
 name: Carrier Screening System 510(k)
 version: 0.1.0
-description: Compile technical information for an autosomal recessive carrier screening
-  gene mutation detection system.
+description: Compile technical information for an autosomal recessive carrier screening gene mutation detection system.
 metadata:
   domain: regulatory
   complexity: low
@@ -11,6 +11,7 @@ metadata:
   - screening
   - system
   - '510'
+  - domain:regulatory
   requires_context: true
 variables:
 - name: input
@@ -21,37 +22,27 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
-    FDA and ISO compliance tasks.
-
+  content: |-
+    You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
     ## Context
-
     21 CFR 866.5940
 
-
     ## Objective
-
-    Compile technical information for an autosomal recessive carrier screening gene
-    mutation detection system.
-
+    Compile technical information for an autosomal recessive carrier screening gene mutation detection system.
 
     ## Output Format
-
-    Comprehensive technical summary report.'
+    Comprehensive technical summary report.
 - role: user
-  content: 'Please perform the task using the following input data:
-
+  content: |-
+    Please perform the task using the following input data:
 
     <input>
-
-    {{input}}
-
-    </input>'
+    {{ input }}
+    </input>
 testData:
 - expected: Expected output as per instructions.
-  vars: Gene list (HUGO), variant coordinates, and clinical validity evidence. (Example
-    data)
+  vars: Gene list (HUGO), variant coordinates, and clinical validity evidence. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Check

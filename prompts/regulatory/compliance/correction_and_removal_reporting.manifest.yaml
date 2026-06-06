@@ -1,0 +1,7 @@
+---
+name: Correction and Removal Reporting
+description: Draft a written report to FDA for a device correction or removal.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: correction_and_removal_reporting.prompt.yaml

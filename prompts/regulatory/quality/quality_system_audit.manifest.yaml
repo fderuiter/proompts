@@ -1,0 +1,8 @@
+---
+name: Quality System Audit
+description: Generate an internal audit checklist or report focusing on design controls,
+  production processes, and risk-based decision making.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: quality_system_audit.prompt.yaml

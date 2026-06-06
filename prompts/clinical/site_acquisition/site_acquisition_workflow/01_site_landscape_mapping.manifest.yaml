@@ -1,0 +1,7 @@
+---
+name: Site Landscape Mapping & Prioritization
+description: Rank investigative sites for an upcoming study.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 01_site_landscape_mapping.prompt.yaml

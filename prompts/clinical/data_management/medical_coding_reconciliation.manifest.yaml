@@ -1,0 +1,8 @@
+---
+name: Medical Coding and Reconciliation Assistant
+description: Automatically predict and apply medical terms to clinical data, and perform
+  automated data reconciliation and query resolution within EDC builds.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: medical_coding_reconciliation.prompt.yaml

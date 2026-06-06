@@ -1,0 +1,8 @@
+---
+name: Database Read Replica Lag Mitigation Architect
+description: Architects robust mitigation strategies for read replica lag and eventual
+  consistency challenges in high-throughput distributed database topologies.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: database_read_replica_lag_mitigation_architect.prompt.yaml

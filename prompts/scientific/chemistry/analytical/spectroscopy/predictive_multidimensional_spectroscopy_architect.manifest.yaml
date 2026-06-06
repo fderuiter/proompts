@@ -1,0 +1,9 @@
+---
+name: Predictive Multidimensional Spectroscopy Architect
+description: Generates predictive structural modeling and analytical spectral profiles
+  for novel compounds, synthesizing multidimensional NMR and high-resolution mass
+  spectrometry data.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: predictive_multidimensional_spectroscopy_architect.prompt.yaml

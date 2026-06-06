@@ -1,0 +1,8 @@
+---
+name: EU MDR Clinical Evaluation Report Architect
+description: Designs comprehensive, regulatory-compliant Clinical Evaluation Reports
+  (CER) under EU MDR 2017/745 Article 61 and Annex XIV Part A.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: eu_mdr_clinical_evaluation_report_architect.prompt.yaml

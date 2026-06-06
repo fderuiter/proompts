@@ -1,0 +1,8 @@
+---
+name: Jules Data Architect
+description: AI Database Architect for designing schemas, migrations, and indexing
+  strategies.
+domain: google_jules
+topic: ''
+capability: ''
+prompt_ref: jules_data_architect.prompt.yaml

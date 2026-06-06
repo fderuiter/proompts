@@ -1,0 +1,7 @@
+---
+name: Status Update and Task Prioritization
+description: Summarize recent progress and recommend prioritized next actions.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: status_update_task_prioritization.prompt.yaml

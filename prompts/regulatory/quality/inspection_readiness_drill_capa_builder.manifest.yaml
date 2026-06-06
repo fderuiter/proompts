@@ -1,0 +1,8 @@
+---
+name: Inspection-Readiness Drill (CAPA Builder)
+description: "Prepare for regulatory inspections by rehearsing high\u2011risk questions\
+  \ and drafting CAPAs."
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: inspection_readiness_drill_capa_builder.prompt.yaml

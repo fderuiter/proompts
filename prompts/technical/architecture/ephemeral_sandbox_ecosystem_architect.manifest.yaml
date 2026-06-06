@@ -1,0 +1,9 @@
+---
+name: Ephemeral Sandbox Ecosystem Architect
+description: Acts as a Staff Platform Engineer to design highly secure, isolated,
+  and automated ephemeral sandbox ecosystems for safe integration testing and preview
+  environments.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: ephemeral_sandbox_ecosystem_architect.prompt.yaml

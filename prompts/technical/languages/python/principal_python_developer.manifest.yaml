@@ -1,0 +1,8 @@
+---
+name: Principal Python Developer
+description: A Principal Engineer's guide to Python development, focusing on architecture,
+  decoupling, robustness, concurrency, and observability.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: principal_python_developer.prompt.yaml

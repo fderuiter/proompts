@@ -1,0 +1,7 @@
+---
+name: CAPA Plan Builder for Monitoring Findings
+description: You are a **Regulatory Quality Advisor** specializing in ICH-GCP compliance.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 02_capa_plan_builder_for_monitoring_findings.prompt.yaml

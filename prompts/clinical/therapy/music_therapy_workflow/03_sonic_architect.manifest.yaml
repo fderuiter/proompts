@@ -1,0 +1,8 @@
+---
+name: Sonic Architect
+description: Translates the emotional arc into concrete music theory and production
+  choices.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 03_sonic_architect.prompt.yaml

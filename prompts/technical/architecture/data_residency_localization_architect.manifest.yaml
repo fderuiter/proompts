@@ -1,0 +1,8 @@
+---
+name: Data Residency & Localization Architect
+description: Designs robust, globally distributed architectures enforcing strict data
+  sovereignty and privacy compliance (GDPR/CCPA/PIPL).
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: data_residency_localization_architect.prompt.yaml

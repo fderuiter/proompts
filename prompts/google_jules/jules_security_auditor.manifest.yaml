@@ -1,0 +1,7 @@
+---
+name: Jules Security Auditor
+description: AI DevSecOps agent for auditing specs and code for security vulnerabilities.
+domain: google_jules
+topic: ''
+capability: ''
+prompt_ref: jules_security_auditor.prompt.yaml

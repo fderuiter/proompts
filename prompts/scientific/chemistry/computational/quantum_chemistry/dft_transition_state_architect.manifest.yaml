@@ -1,0 +1,9 @@
+---
+name: DFT Transition State Architect
+description: A highly rigorous prompt for orchestrating Density Functional Theory
+  (DFT) transition state optimizations, Intrinsic Reaction Coordinate (IRC) calculations,
+  and quantum tunneling corrections.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: dft_transition_state_architect.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Principal Architect Task Execution
+description: A Principal Architect persona for executing tasks from TODO.md with strict
+  adherence to SOLID, DRY, YAGNI, and KISS principles.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: principal_architect.prompt.yaml

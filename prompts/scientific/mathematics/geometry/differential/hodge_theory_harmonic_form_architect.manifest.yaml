@@ -1,0 +1,9 @@
+---
+name: Hodge Theory Harmonic Form Architect
+description: "Generates mathematically rigorous derivations of harmonic forms and\
+  \ solutions to the Hodge decomposition theorem on compact Riemannian and K\xE4hler\
+  \ manifolds."
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: hodge_theory_harmonic_form_architect.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: RFP Executive-Summary Generator
+description: Produce a persuasive executive summary for an RFP response.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: rfp_executive_summary_generator.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Literature & Regulatory Gap Analysis
+description: Identify evidence and regulatory gaps for a planned pivotal clinical
+  study.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: literature_regulatory_gap_analysis.prompt.yaml

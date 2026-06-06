@@ -1,0 +1,8 @@
+---
+name: eTMF Artifact Classifier
+description: Read document text and suggest appropriate eTMF artifact classification
+  and metadata assignments for incoming trial documents.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: etmf_artifact_classifier.prompt.yaml

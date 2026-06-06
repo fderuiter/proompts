@@ -1,0 +1,9 @@
+---
+name: Domain-Driven Design Bounded Context Architect
+description: Designs mathematically rigorous and logically coherent Domain-Driven
+  Design (DDD) bounded contexts, resolving complex domain intricacies through ubiquituous
+  language, aggregate boundaries, and context mapping.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: domain_driven_design_bounded_context_architect.prompt.yaml

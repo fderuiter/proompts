@@ -1,0 +1,8 @@
+---
+name: Senior Agile Transformation Coach (Retrospectives)
+description: Design a high-impact retrospective agenda tailored to team sentiment
+  and sprint outcomes, focusing on root cause analysis and actionable improvements.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: neutral_scrum_retro.prompt.yaml

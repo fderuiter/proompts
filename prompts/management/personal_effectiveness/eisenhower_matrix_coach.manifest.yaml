@@ -1,0 +1,7 @@
+---
+name: Eisenhower Matrix Coach
+description: Triage a to-do list using the Eisenhower Matrix.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: eisenhower_matrix_coach.prompt.yaml

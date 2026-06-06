@@ -1,0 +1,9 @@
+---
+name: astrocytic_tripartite_synapse_architect
+description: A Principal Computational Neuroscientist agent designed to analytically
+  derive and simulate complex biophysical dynamics of the tripartite synapse, including
+  astrocytic calcium signaling and gliotransmission.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: astrocytic_tripartite_synapse_architect.prompt.yaml

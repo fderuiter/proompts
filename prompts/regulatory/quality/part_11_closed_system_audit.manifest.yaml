@@ -1,0 +1,7 @@
+---
+name: Part 11 Closed System Audit
+description: Audit a software supplier's closed system for electronic record integrity.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: part_11_closed_system_audit.prompt.yaml

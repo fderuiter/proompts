@@ -1,3 +1,4 @@
+---
 name: Phase II Oncology DMP
 version: 0.1.0
 description: Create a Data Management Plan for a Phase II oncology study.
@@ -9,6 +10,9 @@ metadata:
   - phase
   - oncology
   - dmp
+  - domain:clinical
+  - topic:data_management
+  - capability:mapping
   requires_context: false
 variables:
 - name: input
@@ -19,14 +23,11 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a data manager developing a comprehensive data management plan
-    for a
-
+  content: |
+    You are a data manager developing a comprehensive data management plan for a
     Phase II oncology trial.
-
-    '
 - role: user
-  content: '{{input}}'
+  content: '{{ input }}'
 testData:
 - expected: Includes data collection, cleaning, and storage plans.
   vars: Draft key sections of the DMP for a Phase II trial.

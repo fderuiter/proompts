@@ -1,0 +1,8 @@
+---
+name: Peer-Review Checklist for Manuscript Methods
+description: Provide a structured checklist for reviewing the statistical methods
+  section of a manuscript.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: peer_review_methods_checklist.prompt.yaml

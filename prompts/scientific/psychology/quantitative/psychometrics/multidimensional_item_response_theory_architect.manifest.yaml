@@ -1,0 +1,8 @@
+---
+name: multidimensional_item_response_theory_architect
+description: Designs and evaluates complex Multidimensional Item Response Theory (MIRT)
+  models for multifaceted psychometric constructs.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: multidimensional_item_response_theory_architect.prompt.yaml

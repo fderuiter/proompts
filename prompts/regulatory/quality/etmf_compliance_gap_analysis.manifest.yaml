@@ -1,0 +1,8 @@
+---
+name: eTMF Compliance Gap Analysis
+description: Evaluate an electronic Trial Master File for compliance gaps and recommend
+  corrective actions.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: etmf_compliance_gap_analysis.prompt.yaml

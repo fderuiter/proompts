@@ -1,0 +1,8 @@
+---
+name: Regulatory-Landscape Radar
+description: "Provide a weekly snapshot of regulatory developments relevant to early\u2011\
+  phase oncology and rare\u2011disease trials."
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: regulatory_landscape_radar.prompt.yaml

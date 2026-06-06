@@ -1,0 +1,7 @@
+---
+name: ClinicalTrials.gov Registration
+description: Draft registration summary and outcome measures.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: clinicaltrials_registration.prompt.yaml

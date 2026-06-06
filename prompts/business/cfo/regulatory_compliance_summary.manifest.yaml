@@ -1,0 +1,7 @@
+---
+name: Regulatory Compliance Summary
+description: Summarize key financial disclosure changes for a specific regulation.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: regulatory_compliance_summary.prompt.yaml

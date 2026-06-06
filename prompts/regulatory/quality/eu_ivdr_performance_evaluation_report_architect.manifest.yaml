@@ -1,0 +1,8 @@
+---
+name: EU IVDR Performance Evaluation Report Architect
+description: Designs comprehensive, regulatory-compliant Performance Evaluation Reports
+  (PER) under EU IVDR 2017/746 Article 56 and Annex XIII.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: eu_ivdr_performance_evaluation_report_architect.prompt.yaml

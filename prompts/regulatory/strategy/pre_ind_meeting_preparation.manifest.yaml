@@ -1,0 +1,7 @@
+---
+name: Pre-IND Meeting Preparation
+description: Draft Pre-IND briefing package and questions.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: pre_ind_meeting_preparation.prompt.yaml

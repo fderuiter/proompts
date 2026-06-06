@@ -1,3 +1,4 @@
+---
 name: Informed Consent Process Optimization
 version: 0.1.0
 description: Review and rewrite ICF for readability.
@@ -10,6 +11,7 @@ metadata:
   - consent
   - process
   - optimization
+  - domain:clinical
   requires_context: false
 variables:
 - name: icf_text
@@ -20,24 +22,18 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Regulatory Affairs Specialist. Review the clinical trial informed
-    consent form to ensure it includes all basic elements required by 21 CFR 50.25.
-    Rewrite the technical sections into plain language suitable for an 8th-grade reading
-    level.
+  content: You are a Regulatory Affairs Specialist. Review the clinical trial informed consent form to ensure it includes
+    all basic elements required by 21 CFR 50.25. Rewrite the technical sections into plain language suitable for an 8th-grade
+    reading level.
 - role: user
-  content: 'Review the clinical trial informed consent form to ensure it includes
-    all basic elements required by 21 CFR 50.25. Rewrite the technical sections into
-    plain language suitable for an 8th-grade reading level.
-
+  content: |-
+    Review the clinical trial informed consent form to ensure it includes all basic elements required by 21 CFR 50.25. Rewrite the technical sections into plain language suitable for an 8th-grade reading level.
 
     Inputs:
-
-    - `{{icf_text}}`
-
+    - `{{ icf_text }}`
 
     Output format:
-
-    Markdown Revised ICF Text.'
+    Markdown Revised ICF Text.
 testData:
 - expected: 'Revised ICF
 

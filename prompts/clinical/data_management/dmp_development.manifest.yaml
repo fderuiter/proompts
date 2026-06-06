@@ -1,0 +1,7 @@
+---
+name: Data Management Plan (DMP) Development
+description: Create a DMP outlining data lifecycle and quality control.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: dmp_development.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Weekly Executive Status Report
+description: Summarize project progress for executive stakeholders in a concise weekly
+  report.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: 03_weekly_exec_status_report.prompt.yaml

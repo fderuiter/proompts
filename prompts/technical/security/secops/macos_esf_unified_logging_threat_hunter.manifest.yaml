@@ -1,0 +1,9 @@
+---
+name: macOS ESF Unified Logging Threat Hunter
+description: Formulates precise threat hunting queries and hypotheses targeting advanced
+  macOS persistent threats using the Endpoint Security Framework (ESF) and Unified
+  Logging.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: macos_esf_unified_logging_threat_hunter.prompt.yaml

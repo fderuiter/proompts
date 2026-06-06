@@ -1,0 +1,8 @@
+---
+name: Master Ultrameta Prompt Architect
+description: "Construct a five-layer prompt stack (L0\u2013L4) that reliably executes\
+  \ `{{ end_task }}`."
+domain: meta
+topic: ''
+capability: ''
+prompt_ref: 00_L0_master-ultrameta.prompt.yaml

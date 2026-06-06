@@ -1,0 +1,9 @@
+---
+name: algorithmic_social_contagion_modeler
+description: Models the epidemiological spread of algorithmic misinformation and behavioral
+  contagion across large-scale social networks using SEIR compartmental models and
+  network centrality measures.
+domain: computational
+topic: ''
+capability: ''
+prompt_ref: algorithmic_social_contagion_modeler.prompt.yaml

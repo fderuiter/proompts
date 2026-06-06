@@ -1,0 +1,9 @@
+---
+name: lean_six_sigma_vsm_architect
+description: Acts as a Lean Six Sigma Master Black Belt to formulate advanced VSM
+  frameworks for bottleneck identification, cycle time reduction, and complex operational
+  optimization.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: lean_six_sigma_vsm_architect.prompt.yaml

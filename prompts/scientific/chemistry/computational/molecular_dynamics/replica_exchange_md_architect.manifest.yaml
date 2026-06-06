@@ -1,0 +1,9 @@
+---
+name: Temperature Replica Exchange Molecular Dynamics Architect
+description: Generates rigorous Temperature Replica Exchange Molecular Dynamics (T-REMD)
+  simulation protocols for enhanced conformational sampling of complex biomolecules
+  crossing high free-energy barriers.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: replica_exchange_md_architect.prompt.yaml

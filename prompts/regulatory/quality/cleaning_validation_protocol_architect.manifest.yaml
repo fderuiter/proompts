@@ -1,0 +1,9 @@
+---
+name: Cleaning Validation Protocol Architect
+description: Formulates highly rigorous, FDA and EMA compliant Cleaning Validation
+  Protocols for pharmaceutical and medical device manufacturing, utilizing PDE and
+  MACO calculations.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: cleaning_validation_protocol_architect.prompt.yaml

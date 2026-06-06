@@ -1,0 +1,7 @@
+---
+name: ALCOA-C Data Integrity Checklist
+description: Ensure data integrity following ALCOA-C principles.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: alcoa_c_data_integrity_checklist.prompt.yaml

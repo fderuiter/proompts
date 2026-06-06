@@ -1,0 +1,8 @@
+---
+name: Change Control Regulatory Impact Assessor
+description: Perform rigorous regulatory impact assessments for proposed medical device
+  changes using FDA guidance.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: change_control_regulatory_impact_assessor.prompt.yaml

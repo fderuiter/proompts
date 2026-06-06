@@ -1,0 +1,7 @@
+---
+name: FDA Missing-Data Query Response
+description: Draft a response letter to an FDA information request about missing data.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: fda_missing_data_query_response.prompt.yaml

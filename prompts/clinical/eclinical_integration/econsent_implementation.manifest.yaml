@@ -1,0 +1,7 @@
+---
+name: eConsent Implementation Strategy
+description: Verify eConsent platform compliance and workflow.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: econsent_implementation.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Firmware and UEFI Bootkit Forensics Analyst
+description: Conducts expert-level digital forensics on low-level firmware, UEFI interfaces,
+  and persistent bootkits to uncover advanced persistent threats (APTs).
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: firmware_uefi_bootkit_forensics_analyst.prompt.yaml

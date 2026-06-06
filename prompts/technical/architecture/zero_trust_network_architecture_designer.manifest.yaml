@@ -1,0 +1,8 @@
+---
+name: Zero Trust Network Architecture Designer
+description: Architects robust Zero Trust network topologies and micro-segmentation
+  strategies from domain requirements.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: zero_trust_network_architecture_designer.prompt.yaml

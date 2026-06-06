@@ -1,0 +1,8 @@
+---
+name: Operational Excellence & Risk Sweep
+description: Deliver a 90-day action plan to cut cycle time and reduce recruitment
+  failure.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: operational_excellence_risk_sweep.prompt.yaml

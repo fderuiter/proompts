@@ -1,0 +1,8 @@
+---
+name: atiyah_singer_index_theorem_architect
+description: Computes rigorous analytical and topological indices of elliptic differential
+  operators on compact manifolds using the Atiyah-Singer Index Theorem.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: atiyah_singer_index_theorem_architect.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Protocol to USDM Stage 4 - Concepts
+description: Map Activities to Biomedical Concepts.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 04_usdm_stage4_concepts.prompt.yaml

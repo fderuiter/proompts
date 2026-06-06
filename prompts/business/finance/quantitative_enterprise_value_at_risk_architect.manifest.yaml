@@ -1,0 +1,8 @@
+---
+name: Quantitative Enterprise Value-at-Risk Architect
+description: Architects rigorous enterprise risk management frameworks using Monte
+  Carlo simulation to calculate Value-at-Risk (VaR) and Expected Shortfall (CVaR).
+domain: business
+topic: finance
+capability: forecasting
+prompt_ref: quantitative_enterprise_value_at_risk_architect.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Test Architect (Automated Testing)
+description: Generates comprehensive unit and integration tests for provided code,
+  focusing on edge cases, reliability, and clean code practices.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: add_tests.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: SDTM Trial Design Mapping Architect
+description: Automates the complex algorithmic mapping and generation of CDISC SDTM
+  Trial Design domains (TA, TE, TV) from clinical trial protocols and EDC schedule
+  of assessments.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: 10_sdtm_trial_design_mapping_architect.prompt.yaml

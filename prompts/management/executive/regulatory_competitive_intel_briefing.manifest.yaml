@@ -1,0 +1,8 @@
+---
+name: Regulatory and Competitive Intelligence Briefing
+description: Provide a Monday-morning briefing on regulatory changes and competitor
+  moves that may affect decentralized and hybrid trials.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: regulatory_competitive_intel_briefing.prompt.yaml

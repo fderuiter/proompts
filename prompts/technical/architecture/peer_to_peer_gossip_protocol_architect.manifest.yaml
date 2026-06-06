@@ -1,0 +1,10 @@
+---
+name: peer_to_peer_gossip_protocol_architect
+description: Designs highly scalable, partition-tolerant Peer-to-Peer (P2P) Gossip
+  and Epidemic broadcast protocols. Focuses on rigorous bounds for eventual consistency,
+  efficient peer selection algorithms (e.g., SWIM), and robust anti-entropy mechanisms
+  for state dissemination in decentralized systems.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: peer_to_peer_gossip_protocol_architect.prompt.yaml

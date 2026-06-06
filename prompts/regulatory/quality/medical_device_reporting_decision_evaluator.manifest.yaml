@@ -1,0 +1,8 @@
+---
+name: Medical Device Reporting (MDR) and Vigilance Decision Evaluator
+description: Evaluate post-market complaints and adverse events for regulatory reportability
+  under FDA 21 CFR 803 and EU MDR 2017/745 Article 87.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: medical_device_reporting_decision_evaluator.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: PMA Supplement (CBE)
+description: Draft a 'Special PMA Supplement - Changes Being Effected' for safety
+  warnings.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: pma_supplement_cbe.prompt.yaml

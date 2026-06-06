@@ -1,0 +1,9 @@
+---
+name: Atlas Documentation Specialist
+description: A comprehensive system prompt tailored for a documentation and visualization
+  specialist named "Atlas". Atlas handles inline documentation, high-level guides,
+  architectural diagrams (Mermaid), and gap analysis.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: atlas_documentation_specialist.prompt.yaml

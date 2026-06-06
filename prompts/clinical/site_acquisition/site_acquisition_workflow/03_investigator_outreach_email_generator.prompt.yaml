@@ -1,3 +1,4 @@
+---
 name: Personalized Investigator-Outreach Email Generator
 version: 0.1.0
 description: Craft a tailored outreach email to potential investigators.
@@ -10,6 +11,7 @@ metadata:
   - investigator-outreach
   - email
   - generator
+  - domain:clinical
   requires_context: false
 variables:
 - name: CRO_NAME
@@ -41,40 +43,41 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are the business-development lead at `{{CRO_NAME}}` contacting investigators
-    for a new study.
+  content: |-
+    You are the business-development lead at `{{ CRO_NAME }}` contacting investigators for a new study.
 
-
-    Craft a tailored outreach email to potential investigators.'
+    Craft a tailored outreach email to potential investigators.
 - role: user
-  content: "1. Use the provided variables to open with a site-specific hook referencing\
-    \ recent work.\n1. Summarize the study value proposition and why the investigator's\
-    \ patient mix aligns.\n1. Briefly explain the CRO support provided, such as rapid\
-    \ start-up and dedicated CTAs.\n1. Close with a clear CTA linking to a 15\u2011\
-    minute introductory call.\n\n  Inputs:\n  - `{{investigator_name}}` \u2013 principal\
-    \ investigator's full name\n  - `{{site_name}}` \u2013 institution or site name\n\
-    \  - `{{city_country}}` \u2013 site location\n  - `{{recent_relevant_trials}}`\
-    \ \u2013 notable recent trials at the site\n  - `{{unique_site_strength}}` \u2013\
-    \ distinctive capability or resource\n  - `{{study_synopsis}}` \u2013 brief summary\
-    \ of the study\n  - `{{sponsor_name}}` \u2013 sponsoring company\n\nOutput format:\n\
-    JSON object with `subject_line` and `email_body` fields.\n\nAdditional notes:\n\
-    Tone should be professional and collaborative. Keep the email between 180 and\
-    \ 220 words. If any variable is blank, ask for it rather than guessing."
+  content: |-
+    1. Use the provided variables to open with a site-specific hook referencing recent work.
+    1. Summarize the study value proposition and why the investigator's patient mix aligns.
+    1. Briefly explain the CRO support provided, such as rapid start-up and dedicated CTAs.
+    1. Close with a clear CTA linking to a 15‑minute introductory call.
+
+      Inputs:
+      - `{{ investigator_name }}` – principal investigator's full name
+      - `{{ site_name }}` – institution or site name
+      - `{{ city_country }}` – site location
+      - `{{ recent_relevant_trials }}` – notable recent trials at the site
+      - `{{ unique_site_strength }}` – distinctive capability or resource
+      - `{{ study_synopsis }}` – brief summary of the study
+      - `{{ sponsor_name }}` – sponsoring company
+
+    Output format:
+    JSON object with `subject_line` and `email_body` fields.
+
+    Additional notes:
+    Tone should be professional and collaborative. Keep the email between 180 and 220 words. If any variable is blank, ask for it rather than guessing.
 testData:
 - expected: '{'
-  vars: 'investigator_name: Dr. Smith
-
+  vars: |-
+    investigator_name: Dr. Smith
     site_name: City Hospital
-
     city_country: Chicago, USA
-
     recent_relevant_trials: Trial A
-
     unique_site_strength: Dedicated oncology center
-
     study_synopsis: Phase II lung cancer study
-
-    sponsor_name: ABC Pharma'
+    sponsor_name: ABC Pharma
 evaluators:
 - name: Output starts with '{'
   string:

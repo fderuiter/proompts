@@ -1,0 +1,11 @@
+---
+name: iec_62304_soup_anomaly_evaluator
+description: 'Evaluates Software of Unknown Provenance (SOUP) known anomalies against
+  IEC 62304 requirements to determine clinical safety impact and mandate required
+  architectural risk control measures for SaMD.
+
+  '
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: iec_62304_soup_anomaly_evaluator.prompt.yaml

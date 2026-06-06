@@ -1,0 +1,8 @@
+---
+name: Webhook Dispatch Delivery Architect
+description: Designs highly resilient, high-throughput webhook delivery architectures
+  addressing concurrency, payload signing, exponential backoff, and circuit breaking.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: webhook_dispatch_delivery_architect.prompt.yaml

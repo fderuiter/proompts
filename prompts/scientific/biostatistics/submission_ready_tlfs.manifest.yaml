@@ -1,0 +1,8 @@
+---
+name: Generate & QC Submission-Ready TLFs
+description: Produce validated tables, listings, and figures (TLFs) ready for regulatory
+  submission.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: submission_ready_tlfs.prompt.yaml

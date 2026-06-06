@@ -1,0 +1,9 @@
+---
+name: Data Privacy Clean Room Architect
+description: Designs highly secure, multi-party Data Clean Room architectures leveraging
+  privacy-enhancing technologies (PETs) like SMPC and TEEs for collaborative analytics
+  without data exposure.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: data_privacy_clean_room_architect.prompt.yaml

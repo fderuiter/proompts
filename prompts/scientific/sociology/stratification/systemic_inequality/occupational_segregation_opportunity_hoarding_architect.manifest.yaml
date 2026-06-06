@@ -1,0 +1,9 @@
+---
+name: occupational_segregation_opportunity_hoarding_architect
+description: A Principal Sociologist agent that systematically analyzes occupational
+  segregation and structural opportunity hoarding mechanisms, calculating rigorous
+  demographic inequality indices.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: occupational_segregation_opportunity_hoarding_architect.prompt.yaml

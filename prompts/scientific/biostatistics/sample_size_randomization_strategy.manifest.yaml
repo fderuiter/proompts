@@ -1,0 +1,8 @@
+---
+name: Sample-Size & Randomization Strategy
+description: Determine sample size and recommend a randomization strategy for a clinical
+  trial.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: sample_size_randomization_strategy.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Dual MDR / IVDR Conformity-Assessment Roadmap
+description: Develop a coordinated roadmap for simultaneous MDR and IVDR submissions.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: dual_mdr_ivdr_roadmap.prompt.yaml

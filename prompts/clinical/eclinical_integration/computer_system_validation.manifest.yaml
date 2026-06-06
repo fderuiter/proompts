@@ -1,0 +1,7 @@
+---
+name: Computer System Validation (CSV)
+description: Generate validation documents for EDC systems.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: computer_system_validation.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Inventory & Demand-Planning Simulation
+description: Create a forecast and inventory plan from historical demand data.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: inventory_demand_planning_simulation.prompt.yaml

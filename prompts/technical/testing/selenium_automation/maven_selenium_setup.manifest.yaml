@@ -1,0 +1,8 @@
+---
+name: 'Project Configuration: Maven Setup'
+description: Set up a Maven project structure and pom.xml file with necessary Selenium
+  client libraries.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: maven_selenium_setup.prompt.yaml

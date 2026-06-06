@@ -1,0 +1,8 @@
+---
+name: Jules System Designer
+description: AI Lead System Designer for creating rigid technical specifications from
+  high-level Epics.
+domain: google_jules
+topic: ''
+capability: ''
+prompt_ref: jules_system_designer.prompt.yaml

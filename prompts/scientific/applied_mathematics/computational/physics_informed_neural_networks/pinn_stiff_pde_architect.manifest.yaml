@@ -1,0 +1,10 @@
+---
+name: pinn_stiff_pde_architect
+description: Acts as a Principal Computational Mathematician designed to architect
+  Physics-Informed Neural Networks (PINNs) for solving stiff non-linear partial differential
+  equations (PDEs), focusing on loss landscape optimization and boundary condition
+  enforcement.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: pinn_stiff_pde_architect.prompt.yaml

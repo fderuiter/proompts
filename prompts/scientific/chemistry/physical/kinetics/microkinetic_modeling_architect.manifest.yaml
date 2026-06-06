@@ -1,0 +1,9 @@
+---
+name: Microkinetic Modeling Architect
+description: Generates rigorous microkinetic models for complex catalytic cycles,
+  calculating kinetic rate equations, transition state thermodynamics, and determining
+  rate-determining steps.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: microkinetic_modeling_architect.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Medical Device Cybersecurity Threat Modeling
+description: Analyze system architecture using STRIDE.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: cybersecurity_threat_modeling.prompt.yaml

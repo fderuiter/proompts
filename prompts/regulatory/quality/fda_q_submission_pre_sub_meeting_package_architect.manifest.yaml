@@ -1,0 +1,9 @@
+---
+name: fda_q_submission_pre_sub_meeting_package_architect
+description: Acts as a Principal Regulatory Affairs Architect to formulate highly
+  rigorous, strategic FDA Q-Submission (Pre-Sub) meeting packages for medical devices
+  and diagnostics.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: fda_q_submission_pre_sub_meeting_package_architect.prompt.yaml

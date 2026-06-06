@@ -1,0 +1,7 @@
+---
+name: Build vs. Buy Decision Matrix
+description: Create a weighted decision matrix for evaluating build vs. buy options.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: build_vs_buy_matrix.prompt.yaml

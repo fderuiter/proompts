@@ -1,0 +1,7 @@
+---
+name: 21 CFR Part 11 Compliance Verification
+description: Confirm system compliance with electronic signatures.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: part_11_compliance_verification.prompt.yaml

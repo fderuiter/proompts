@@ -1,0 +1,8 @@
+---
+name: Portfolio Resource and Budget Forecast
+description: "Generate a rolling 12\u2011month FTE and budget forecast for active\
+  \ trials."
+domain: management
+topic: ''
+capability: ''
+prompt_ref: portfolio_resource_budget_forecast.prompt.yaml

@@ -11,6 +11,7 @@ metadata:
   - gdpr
   - training
   - compliance
+  - domain:business
   requires_context: false
 variables:
 - name: training_records
@@ -45,22 +46,22 @@ messages:
     Here are the training records:
 
     <training_records>
-    {{training_records}}
+    {{ training_records }}
     </training_records>
 
     Output format:
     - Two tables: department-level compliance summary and study-level risk scores.
     - Narrative summary of up to 250 words addressed to the COO.
 testData:
-  - vars: |
-      training_records: |
-        Employee_ID,Role,Study,Last_GCP_Date,Last_GDPR_Date
-        1001,CRA,Study_A,2022-01-15,2023-05-10
-        1002,Project_Manager,Study_A,2023-06-20,2023-06-20
-        1003,Data_Manager,Study_B,2021-11-01,2022-12-01
-    expected: Compliance Risk Report
+- vars: |
+    training_records: |
+      Employee_ID,Role,Study,Last_GCP_Date,Last_GDPR_Date
+      1001,CRA,Study_A,2022-01-15,2023-05-10
+      1002,Project_Manager,Study_A,2023-06-20,2023-06-20
+      1003,Data_Manager,Study_B,2021-11-01,2022-12-01
+  expected: Compliance Risk Report
 evaluators:
-  - name: Output should not contain PII
-    regex:
-      pattern: (?i)(name|social security|ssn)
-      invert: true
+- name: Output should not contain PII
+  regex:
+    pattern: (?i)(name|social security|ssn)
+    invert: true

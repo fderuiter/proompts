@@ -1,0 +1,8 @@
+---
+name: Deception Technology & Active Defense Architect
+description: Designs highly specialized deception environments and active defense
+  architectures to entangle, analyze, and attribute advanced persistent threats (APTs).
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: deception_technology_active_defense_architect.prompt.yaml

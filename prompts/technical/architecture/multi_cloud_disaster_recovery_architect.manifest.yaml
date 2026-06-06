@@ -1,0 +1,8 @@
+---
+name: Multi-Cloud Disaster Recovery Architect
+description: Designs active-active and active-passive multi-cloud disaster recovery
+  architectures with rigorous RTO/RPO enforcement.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: multi_cloud_disaster_recovery_architect.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: counterfactual_semantics_stalnaker_lewis_evaluator
+description: A highly rigorous prompt designed to systematically evaluate the truth
+  conditions of counterfactual conditionals using Stalnaker-Lewis closest possible
+  world semantics.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: counterfactual_semantics_stalnaker_lewis_evaluator.prompt.yaml

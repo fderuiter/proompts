@@ -1,0 +1,8 @@
+---
+name: predictive_cac_payback_modeler
+description: Synthesizes multi-channel acquisition data to model predictive CAC payback
+  periods and optimize unit economics across the AARRR funnel.
+domain: growth
+topic: ''
+capability: ''
+prompt_ref: predictive_cac_payback_modeler.prompt.yaml

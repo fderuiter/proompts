@@ -1,3 +1,4 @@
+---
 name: Regulatory Compliance Verification
 version: 0.1.0
 description: Verify electronic records and signatures against 21 CFR Part 11.
@@ -9,47 +10,41 @@ metadata:
   - regulatory
   - compliance
   - verification
+  - domain:clinical
+  - topic:data_management
+  - capability:mapping
   requires_context: false
 variables:
 - name: audit_logs
   description: The audit logs to use for this prompt
   required: true
 - name: system_specs
-  description: 'Audit Trail Logs (sample): `{{audit_logs}}`'
+  description: 'Audit Trail Logs (sample): `{{ audit_logs }}`'
   required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Regulatory Compliance Officer. Ensure electronic records and
-    signatures comply with requirements for technical and procedural controls. Focus
-    on 21 CFR Part 11.
+  content: You are a Regulatory Compliance Officer. Ensure electronic records and signatures comply with requirements for
+    technical and procedural controls. Focus on 21 CFR Part 11.
 - role: user
-  content: 'Analyze the system specifications and verify if the audit trail captures
-    the printed name of the signer, the timestamp, and the meaning of the signature
-    as required by 21 CFR Part 11.
-
+  content: |-
+    Analyze the system specifications and verify if the audit trail captures the printed name of the signer, the timestamp, and the meaning of the signature as required by 21 CFR Part 11.
 
     Inputs:
-
-    - System Specifications: `{{system_specs}}`
-
-    - Audit Trail Logs (sample): `{{audit_logs}}`
-
+    - System Specifications: `{{ system_specs }}`
+    - Audit Trail Logs (sample): `{{ audit_logs }}`
 
     Output format:
-
-    Markdown Compliance Verification Checklist.'
+    Markdown Compliance Verification Checklist.
 testData:
 - expected: 'Compliance Verification Checklist
 
     '
-  vars: 'system_specs: "Signatures include name and date."
-
+  vars: |
+    system_specs: "Signatures include name and date."
     audit_logs: "Signed by John Doe at 2023-01-01."
-
-    '
 evaluators:
 - name: Printed Name Check
   string:

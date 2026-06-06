@@ -1,0 +1,9 @@
+---
+name: Quantitative FX Hedging Strategy Architect
+description: Formulates rigorous corporate Foreign Exchange (FX) risk mitigation strategies,
+  optimizing hedging portfolios using forward contracts, options, and natural hedges
+  to minimize earnings volatility under macroeconomic uncertainty.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: quantitative_fx_hedging_strategy_architect.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Clinical-Trial Protocol Creator
+description: Generate a full clinical-trial protocol from a one-page summary sheet.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 01_clinical_trial_protocol_creator.prompt.yaml

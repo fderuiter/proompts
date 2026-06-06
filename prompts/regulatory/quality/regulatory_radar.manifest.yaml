@@ -1,0 +1,7 @@
+---
+name: Regulatory Radar & Impact Report
+description: Track and assess recent regulatory changes that may impact the company.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: regulatory_radar.prompt.yaml

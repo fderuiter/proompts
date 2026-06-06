@@ -1,0 +1,8 @@
+---
+name: MDSAP Nonconformity Grading Evaluator
+description: Evaluate audit findings based on the GHTF/SG3/N19:2012 5-step grading
+  matrix, enforcing the 'Vector' standard.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: mdsap_nonconformity_grading_evaluator.prompt.yaml

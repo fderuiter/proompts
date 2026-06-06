@@ -12,6 +12,7 @@ metadata:
   - governance
   - clinical-operations
   - communication-matrix
+  - domain:management
   requires_context: true
 variables:
 - name: current_processes
@@ -50,7 +51,7 @@ messages:
 - role: user
   content: |
     <current_processes>
-    {{current_processes}}
+    {{ current_processes }}
     </current_processes>
 testData:
 - inputs:

@@ -1,0 +1,8 @@
+---
+name: LLM Distributed Training Architect
+description: Architects massive-scale distributed training infrastructure for Large
+  Language Models using 3D parallelism and RDMA clusters.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: llm_distributed_training_architect.prompt.yaml

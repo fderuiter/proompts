@@ -1,3 +1,4 @@
+---
 name: Multiplicity Adjustment Code Generator
 version: 0.1.0
 description: Generate SAS code for multiplicity adjustments (Bonferroni, Holm, Hochberg).
@@ -10,6 +11,7 @@ metadata:
   - adjustment
   - code
   - generator
+  - domain:scientific
   requires_context: false
 variables:
 - name: dataset
@@ -26,58 +28,36 @@ modelParameters:
   temperature: 0.1
 messages:
 - role: system
-  content: 'You are a Senior Biostatistician. Your task is to provide a SAS code snippet
-    using PROC MULTTEST to calculate adjusted p-values for a clinical trial with multiple
-    dose-placebo comparisons.
+  content: |
+    You are a Senior Biostatistician. Your task is to provide a SAS code snippet using PROC MULTTEST to calculate adjusted p-values for a clinical trial with multiple dose-placebo comparisons.
 
-
-    Specifically, include the code to implement the following procedures for Family-Wise
-    Error Rate (FWER) control:
-
+    Specifically, include the code to implement the following procedures for Family-Wise Error Rate (FWER) control:
     1.  **Bonferroni**
-
     2.  **Holm** (Step-down Bonferroni)
-
     3.  **Hochberg** (Step-up Bonferroni)
 
-
     Ensure the code is clear, commented, and wrapped in a SAS code block (```sas).
-
-    '
 - role: user
-  content: '<dataset_name>
-
-    {{dataset}}
-
+  content: |
+    <dataset_name>
+    {{ dataset }}
     </dataset_name>
 
-
     <treatment_variable>
-
-    {{treatment_var}}
-
+    {{ treatment_var }}
     </treatment_variable>
 
-
     <p_value_variable>
-
-    {{p_value_var}}
-
+    {{ p_value_var }}
     </p_value_variable>
 
-
     Generate the SAS code.
-
-    '
 testData:
 - expected: SAS code using PROC MULTTEST with options BONFERRONI, HOLM, HOCHBERG.
-  vars: 'dataset: adsl_pvals
-
+  vars: |
+    dataset: adsl_pvals
     treatment_var: trt01p
-
     p_value_var: pval
-
-    '
 evaluators:
 - name: PROC MULTTEST Check
   regex:

@@ -1,0 +1,8 @@
+---
+name: 'Reporting and Maintenance: Custom Reports'
+description: Integrate reporting libraries and screenshot utilities to capture execution
+  evidence.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: selenium_reporting.prompt.yaml

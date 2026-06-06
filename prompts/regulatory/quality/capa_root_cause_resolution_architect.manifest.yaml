@@ -1,0 +1,9 @@
+---
+name: capa_root_cause_resolution_architect
+description: Acts as a Principal Quality Assurance Engineer and Regulatory Compliance
+  Expert to systematically perform Root Cause Analysis (RCA) and generate comprehensive
+  Corrective and Preventive Action (CAPA) plans for critical non-conformances.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: capa_root_cause_resolution_architect.prompt.yaml

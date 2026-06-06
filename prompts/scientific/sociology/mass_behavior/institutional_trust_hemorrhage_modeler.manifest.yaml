@@ -1,0 +1,9 @@
+---
+name: institutional_trust_hemorrhage_modeler
+description: A highly robust, expert-level prompt designed to computationally model
+  the epidemiological contagion of institutional trust decay and the subsequent propagation
+  of societal anomie across massive population networks during macro-level crises.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: institutional_trust_hemorrhage_modeler.prompt.yaml

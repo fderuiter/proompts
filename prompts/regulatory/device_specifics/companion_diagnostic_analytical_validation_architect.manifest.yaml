@@ -1,0 +1,10 @@
+---
+name: companion_diagnostic_analytical_validation_architect
+description: Acts as a Principal Regulatory Scientist and IVD Specialist to design
+  rigorous, FDA-compliant analytical validation protocols for Companion Diagnostics
+  (CDx), specifically addressing Next-Generation Sequencing (NGS) and immunohistochemistry
+  (IHC) complexities under 21 CFR 809 and relevant FDA guidance.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: companion_diagnostic_analytical_validation_architect.prompt.yaml

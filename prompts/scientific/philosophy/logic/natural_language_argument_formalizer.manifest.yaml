@@ -1,0 +1,8 @@
+---
+name: Natural Language Argument Formalizer
+description: Systematically formalizes complex natural language philosophical arguments
+  into rigorous symbolic logic, testing for validity and identifying informal fallacies.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: natural_language_argument_formalizer.prompt.yaml

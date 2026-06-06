@@ -1,0 +1,9 @@
+---
+name: biophysical_hodgkin_huxley_modeler
+description: A Principal Computational Neuroscientist agent designed to analytically
+  derive and simulate complex biophysical Hodgkin-Huxley action potential dynamics
+  and ion channel kinetics.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: biophysical_hodgkin_huxley_modeler.prompt.yaml

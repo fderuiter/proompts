@@ -1,0 +1,8 @@
+---
+name: Content Validity & Reliability Analysis
+description: Analyze clinician interview transcripts for content validity and plan
+  inter-rater reliability.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: content_validity_clinician_input.prompt.yaml

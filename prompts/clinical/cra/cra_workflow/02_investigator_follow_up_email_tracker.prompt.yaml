@@ -1,7 +1,7 @@
+---
 name: Investigator Follow-up Email & Action-Item Tracker
 version: 0.1.0
-description: Compose a follow-up email to the PI summarizing visit findings and action
-  items, plus a tracking table.
+description: Compose a follow-up email to the PI summarizing visit findings and action items, plus a tracking table.
 metadata:
   domain: clinical
   complexity: medium
@@ -11,6 +11,7 @@ metadata:
   - follow-up
   - email
   - action-item
+  - domain:clinical
   requires_context: true
 variables:
 - name: input
@@ -21,23 +22,36 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: "**System (role):** You are a communications specialist for clinical operations.\n\
-    \n**User instruction:** Compose a professional email to the Principal Investigator\
-    \ summarizing visit findings and clearly assigning action items.\n\nContext (triple-quoted):\n\
-    \"\"\"\nStudy/Site: {Protocol ID} \u2014 {Site ###}\nVisit date: {YYYY-MM-DD}\n\
-    Pending actions:\n\u2022 {Finding A} \u2192 Action needed by {YYYY-MM-DD}\n\u2022\
-    \ {Finding B} \u2192 Action needed by {YYYY-MM-DD}\n\"\"\"\n\n**Output:**\n1.\
-    \ Polite greeting & purpose sentence\n2. Paragraph per action item: what, why\
-    \ it matters, deadline, how to confirm completion\n3. Closing with thanks and\
-    \ next-steps/reminder of next visit date\n4. After the email, generate a two-column\
-    \ table (Action \u2502 Status) to paste into the site\u2019s tracking log.\n```"
+  content: |-
+    **System (role):** You are a communications specialist for clinical operations.
+
+    **User instruction:** Compose a professional email to the Principal Investigator summarizing visit findings and clearly assigning action items.
+
+    Context (triple-quoted):
+    """
+    Study/Site: {Protocol ID} — {Site ###}
+    Visit date: {YYYY-MM-DD}
+    Pending actions:
+    • {Finding A} → Action needed by {YYYY-MM-DD}
+    • {Finding B} → Action needed by {YYYY-MM-DD}
+    """
+
+    **Output:**
+    1. Polite greeting & purpose sentence
+    2. Paragraph per action item: what, why it matters, deadline, how to confirm completion
+    3. Closing with thanks and next-steps/reminder of next visit date
+    4. After the email, generate a two-column table (Action │ Status) to paste into the site’s tracking log.
+    ```
 - role: user
-  content: '{{input}}'
+  content: '{{ input }}'
 testData:
 - expected: Dear
-  vars: "Study/Site: ABC123 \u2014 Site 002\nVisit date: 2024-06-15\nPending actions:\n\
-    \u2022 Update safety log \u2192 Action needed by 2024-06-30\n\u2022 Submit deviation\
-    \ report \u2192 Action needed by 2024-07-05"
+  vars: |-
+    Study/Site: ABC123 — Site 002
+    Visit date: 2024-06-15
+    Pending actions:
+    • Update safety log → Action needed by 2024-06-30
+    • Submit deviation report → Action needed by 2024-07-05
 evaluators:
 - name: Output starts with a greeting
   string:

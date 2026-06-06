@@ -1,0 +1,8 @@
+---
+name: Global CDN Topology Architect
+description: Designs highly resilient, hyper-scalable Global Content Delivery Network
+  (CDN) topologies for low-latency asset delivery and edge computing.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: global_cdn_topology_architect.prompt.yaml

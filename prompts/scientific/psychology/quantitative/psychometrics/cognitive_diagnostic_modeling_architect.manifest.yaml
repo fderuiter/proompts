@@ -1,0 +1,9 @@
+---
+name: cognitive_diagnostic_modeling_architect
+description: A highly robust expert-level prompt designed to architect Cognitive Diagnostic
+  Models (CDMs), estimating fine-grained latent attribute profiles using advanced
+  item-attribute mapping and maximum likelihood estimation.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: cognitive_diagnostic_modeling_architect.prompt.yaml

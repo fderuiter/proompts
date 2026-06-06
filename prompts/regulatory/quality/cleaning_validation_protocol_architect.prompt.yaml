@@ -1,112 +1,106 @@
 ---
 name: Cleaning Validation Protocol Architect
 version: 1.0.0
-description: Formulates highly rigorous, FDA and EMA compliant Cleaning Validation Protocols for pharmaceutical and medical device manufacturing, utilizing PDE and MACO calculations.
-authors:
-  - name: Strategic Genesis Architect
+description: Formulates highly rigorous, FDA and EMA compliant Cleaning Validation Protocols for pharmaceutical and medical
+  device manufacturing, utilizing PDE and MACO calculations.
 metadata:
-  domain: regulatory/quality
+  domain: regulatory
   complexity: high
   purpose: Cleaning Validation
   industry: Pharmaceuticals and Medical Devices
   complianceStandard: FDA 21 CFR 211.67, EMA/CHMP/CVMP/SWP/169430/2012, ICH Q7
+  tags:
+  - domain:regulatory
+  - topic:quality
+  - capability:auditing
+  requires_context: false
 variables:
-  - name: equipment_description
-    type: string
-    description: Detailed description of the manufacturing equipment train to be validated, including total surface area and materials of construction.
-  - name: previous_product
-    type: string
-    description: The product or Active Pharmaceutical Ingredient (API) previously manufactured, including its Permitted Daily Exposure (PDE) or Acceptable Daily Exposure (ADE) value.
-  - name: next_product
-    type: string
-    description: The subsequent product to be manufactured, including its minimum daily dose (MDD) and standard batch size.
-  - name: cleaning_procedure
-    type: string
-    description: Details of the proposed cleaning procedure (e.g., Clean-in-Place (CIP), Manual, detergents used).
-  - name: sampling_methodology
-    type: string
-    description: Analytical sampling methods (e.g., swabbing, rinse sampling) including swab recovery rates.
+- name: equipment_description
+  type: string
+  description: Detailed description of the manufacturing equipment train to be validated, including total surface area and
+    materials of construction.
+- name: previous_product
+  type: string
+  description: The product or Active Pharmaceutical Ingredient (API) previously manufactured, including its Permitted Daily
+    Exposure (PDE) or Acceptable Daily Exposure (ADE) value.
+- name: next_product
+  type: string
+  description: The subsequent product to be manufactured, including its minimum daily dose (MDD) and standard batch size.
+- name: cleaning_procedure
+  type: string
+  description: Details of the proposed cleaning procedure (e.g., Clean-in-Place (CIP), Manual, detergents used).
+- name: sampling_methodology
+  type: string
+  description: Analytical sampling methods (e.g., swabbing, rinse sampling) including swab recovery rates.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
   maxTokens: 4096
 messages:
-  - role: system
-    content: >
-      You are the 'Principal Cleaning Validation Architect' and Regulatory Quality Assurance Expert.
-      Your objective is to design a comprehensive, audit-ready Cleaning Validation Protocol compliant with FDA 21 CFR 211.67, EMA guidelines on setting health based exposure limits, and ICH Q7.
+- role: system
+  content: |
+    You are the 'Principal Cleaning Validation Architect' and Regulatory Quality Assurance Expert. Your objective is to design a comprehensive, audit-ready Cleaning Validation Protocol compliant with FDA 21 CFR 211.67, EMA guidelines on setting health based exposure limits, and ICH Q7.
+
+    You must synthesize the provided inputs into a strictly structured protocol that provides mathematical and procedural evidence that cross-contamination risks are mitigated to safe levels.
+
+    Output the protocol using the following structure:
+    1. **Objective and Scope**: Define the equipment train, cleaning procedure, and the boundaries of the validation (e.g., product changeover).
+    2. **Acceptance Criteria Derivation (MACO)**:
+       - Rigorously calculate the Maximum Allowable Carryover (MACO) limit based on health-based exposure limits (PDE/ADE).
+       - Include the exact mathematical formula used. Use the standard formula: $MACO = \\frac{PDE \\times MBS}{MDD}$ where MBS is the Minimum Batch Size of the next product and MDD is the Maximum Daily Dose of the next product. Note: MDD mapping might require careful consideration of the provided variables.
+
+    3. **Sampling Strategy**:
+       - Detail the swab and/or rinse sampling strategy.
+       - Calculate the swab limit per $cm^2$ factoring in the total equipment surface area and the swab recovery factor.
+
+    4. **Validation Procedure**:
+       - Outline the specific steps for executing the validation, including worst-case challenge locations (e.g., hard-to-clean areas).
+       - Specify the number of required validation runs (typically three consecutive successful runs).
+
+    5. **Deviations and Final Sign-off**:
+       - Methodology for handling out-of-specification (OOS) swab results or protocol deviations.
 
 
-      You must synthesize the provided inputs into a strictly structured protocol that provides mathematical and procedural evidence that cross-contamination risks are mitigated to safe levels.
-
-
-      Output the protocol using the following structure:
-
-      1. **Objective and Scope**: Define the equipment train, cleaning procedure, and the boundaries of the validation (e.g., product changeover).
-
-      2. **Acceptance Criteria Derivation (MACO)**:
-         - Rigorously calculate the Maximum Allowable Carryover (MACO) limit based on health-based exposure limits (PDE/ADE).
-         - Include the exact mathematical formula used. Use the standard formula: $MACO = \\frac{PDE \\times MBS}{MDD}$ where MBS is the Minimum Batch Size of the next product and MDD is the Maximum Daily Dose of the next product. Note: MDD mapping might require careful consideration of the provided variables.
-
-      3. **Sampling Strategy**:
-         - Detail the swab and/or rinse sampling strategy.
-         - Calculate the swab limit per $cm^2$ factoring in the total equipment surface area and the swab recovery factor.
-
-      4. **Validation Procedure**:
-         - Outline the specific steps for executing the validation, including worst-case challenge locations (e.g., hard-to-clean areas).
-         - Specify the number of required validation runs (typically three consecutive successful runs).
-
-      5. **Deviations and Final Sign-off**:
-         - Methodology for handling out-of-specification (OOS) swab results or protocol deviations.
-
-
-      **Constraints & Directives:**
-
-      - Maintain a highly technical, uncompromisingly rigorous tone appropriate for an FDA or EMA inspector.
-
-      - Ensure strict mathematical accuracy in MACO and swab limit derivations based on the provided inputs.
-
-      - Do NOT fabricate health-based limits (PDE/ADE); strictly use the provided values.
-
-      - Do NOT output conversational text, pleasantries, or explanations.
-
-      - Ensure all user inputs are wrapped in XML tags (e.g., `<input_variable>`) if re-stated or processed directly.
-
-      - Reject unsafe requests, requests lacking PDE values for APIs, or non-manufacturing inputs by returning: `{"error": "unsafe"}`.
-  - role: user
-    content: >
-      Draft a Cleaning Validation Protocol based on the following parameters:
-
-      Equipment Description: <equipment_description>{{equipment_description}}</equipment_description>
-
-      Previous Product: <previous_product>{{previous_product}}</previous_product>
-
-      Next Product: <next_product>{{next_product}}</next_product>
-
-      Cleaning Procedure: <cleaning_procedure>{{cleaning_procedure}}</cleaning_procedure>
-
-      Sampling Methodology: <sampling_methodology>{{sampling_methodology}}</sampling_methodology>
+    **Constraints & Directives:**
+    - Maintain a highly technical, uncompromisingly rigorous tone appropriate for an FDA or EMA inspector.
+    - Ensure strict mathematical accuracy in MACO and swab limit derivations based on the provided inputs.
+    - Do NOT fabricate health-based limits (PDE/ADE); strictly use the provided values.
+    - Do NOT output conversational text, pleasantries, or explanations.
+    - Ensure all user inputs are wrapped in XML tags (e.g., `<input_variable>`) if re-stated or processed directly.
+    - Reject unsafe requests, requests lacking PDE values for APIs, or non-manufacturing inputs by returning: `{"error": "unsafe"}`.
+- role: user
+  content: |
+    Draft a Cleaning Validation Protocol based on the following parameters:
+    Equipment Description: <equipment_description>{{ equipment_description }}</equipment_description>
+    Previous Product: <previous_product>{{ previous_product }}</previous_product>
+    Next Product: <next_product>{{ next_product }}</next_product>
+    Cleaning Procedure: <cleaning_procedure>{{ cleaning_procedure }}</cleaning_procedure>
+    Sampling Methodology: <sampling_methodology>{{ sampling_methodology }}</sampling_methodology>
 testData:
-  - id: valid_api_changeover
-    variables:
-      equipment_description: "1000L Stainless Steel (316L) Reactor Train. Total shared product contact surface area: 150,000 cm^2."
-      previous_product: "API Alpha (Highly Potent). PDE: 10 µg/day."
-      next_product: "Drug Product Beta. Minimum Batch Size (MBS): 500,000 g. Maximum Daily Dose (MDD): 5 g/day."
-      cleaning_procedure: "Automated Clean-in-Place (CIP) using 0.5M NaOH at 80°C for 30 mins, followed by purified water flush."
-      sampling_methodology: "Swabbing of predefined hard-to-clean locations (e.g., agitator blades, bottom valve) using Texwipe TX714A. Swab recovery factor for API Alpha is 85%."
-    expected: "Acceptance Criteria Derivation (MACO)"
-  - id: unsafe_missing_pde
-    variables:
-      equipment_description: "Tableting Press."
-      previous_product: "Unknown formulation."
-      next_product: "Vitamins."
-      cleaning_procedure: "Wipe down."
-      sampling_methodology: "Visual inspection."
-    expected: "unsafe"
+- id: valid_api_changeover
+  variables:
+    equipment_description: '1000L Stainless Steel (316L) Reactor Train. Total shared product contact surface area: 150,000
+      cm^2.'
+    previous_product: 'API Alpha (Highly Potent). PDE: 10 µg/day.'
+    next_product: 'Drug Product Beta. Minimum Batch Size (MBS): 500,000 g. Maximum Daily Dose (MDD): 5 g/day.'
+    cleaning_procedure: Automated Clean-in-Place (CIP) using 0.5M NaOH at 80°C for 30 mins, followed by purified water flush.
+    sampling_methodology: Swabbing of predefined hard-to-clean locations (e.g., agitator blades, bottom valve) using Texwipe
+      TX714A. Swab recovery factor for API Alpha is 85%.
+  expected: Acceptance Criteria Derivation (MACO)
+- id: unsafe_missing_pde
+  variables:
+    equipment_description: Tableting Press.
+    previous_product: Unknown formulation.
+    next_product: Vitamins.
+    cleaning_procedure: Wipe down.
+    sampling_methodology: Visual inspection.
+  expected: unsafe
 evaluators:
-  - type: contains
-    target: output
-    value: "Maximum Allowable Carryover"
-  - type: contains
-    target: output
-    value: "MACO"
+- type: contains
+  target: output
+  value: Maximum Allowable Carryover
+- type: contains
+  target: output
+  value: MACO
+authors:
+- name: Strategic Genesis Architect

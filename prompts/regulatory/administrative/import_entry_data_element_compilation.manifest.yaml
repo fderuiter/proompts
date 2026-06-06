@@ -1,0 +1,8 @@
+---
+name: Import Entry Data Element Compilation
+description: Compile required identifying information (510(k), UFI, NDC, NDA) for
+  electronic import entry of drugs or devices.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: import_entry_data_element_compilation.prompt.yaml

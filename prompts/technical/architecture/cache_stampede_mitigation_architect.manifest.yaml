@@ -1,0 +1,9 @@
+---
+name: Cache Stampede Mitigation Architect
+description: Designs highly resilient distributed caching architectures specifically
+  to mitigate and recover from cache stampedes (thundering herd problem) in high-throughput
+  systems.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: cache_stampede_mitigation_architect.prompt.yaml

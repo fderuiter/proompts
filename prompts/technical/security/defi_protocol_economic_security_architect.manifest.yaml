@@ -1,0 +1,11 @@
+---
+name: DeFi Protocol Economic Security Architect
+description: 'Expert-level prompt to architect and evaluate the economic security
+  of Decentralized Finance (DeFi) protocols, specifically targeting flash loan resilience,
+  oracle manipulation, and tokenomics stability.
+
+  '
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: defi_protocol_economic_security_architect.prompt.yaml

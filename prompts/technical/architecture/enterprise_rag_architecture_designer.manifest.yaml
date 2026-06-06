@@ -1,0 +1,8 @@
+---
+name: Enterprise RAG Architecture Designer
+description: Designs highly secure, hallucination-resistant, and high-throughput Retrieval-Augmented
+  Generation (RAG) architectures for enterprise LLM deployments.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: enterprise_rag_architecture_designer.prompt.yaml

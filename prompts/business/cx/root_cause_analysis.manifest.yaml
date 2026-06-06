@@ -1,0 +1,7 @@
+---
+name: Voice of Customer Root Cause Analysis
+description: Analyze raw feedback to identify root causes and quick wins.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: root_cause_analysis.prompt.yaml

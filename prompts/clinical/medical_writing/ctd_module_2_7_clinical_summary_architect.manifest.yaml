@@ -1,0 +1,8 @@
+---
+name: ctd_module_2_7_clinical_summary_architect
+description: Synthesizes complex clinical efficacy and safety data into a highly rigorous,
+  regulatory-compliant Common Technical Document (CTD) Module 2.7 Clinical Summary.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: ctd_module_2_7_clinical_summary_architect.prompt.yaml

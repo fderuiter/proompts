@@ -1,0 +1,8 @@
+---
+name: Preventing Technical Debt
+description: Justify technical debt reduction to non-technical stakeholders using
+  financial analogies.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: preventing_technical_debt.prompt.yaml

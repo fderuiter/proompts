@@ -1,0 +1,8 @@
+---
+name: Human Factors/Usability Summary
+description: Summarize usability testing results to demonstrate minimized use-related
+  risks.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: human_factors_usability_summary.prompt.yaml

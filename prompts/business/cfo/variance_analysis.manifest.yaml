@@ -1,0 +1,8 @@
+---
+name: Budget Variance Analysis
+description: Identify top variances in a budget-to-actuals report and draft explanations
+  for the Board.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: variance_analysis.prompt.yaml

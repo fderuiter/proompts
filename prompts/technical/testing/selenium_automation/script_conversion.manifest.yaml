@@ -1,0 +1,8 @@
+---
+name: 'Selenium Migration: Script Conversion'
+description: Translate recorded browser actions (Selenese) from Selenium IDE into
+  structured Java test scripts.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: script_conversion.prompt.yaml

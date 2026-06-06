@@ -10,10 +10,11 @@ metadata:
   - investor
   - faq
   - generation
+  - domain:business
   requires_context: true
 variables:
 - name: documents
-  description: '`{{documents}}`'
+  description: '`{{ documents }}`'
   required: true
 model: gpt-4
 modelParameters:
@@ -40,7 +41,7 @@ messages:
 
     Documents:
     <documents>
-    {{documents}}
+    {{ documents }}
     </documents>
 testData:
 - variables:

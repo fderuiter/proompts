@@ -1,0 +1,8 @@
+---
+name: FDA 483 Response Strategist
+description: Design comprehensive, regulatory-compliant responses to FDA Form 483
+  observations, employing an authoritative and structured corrective action strategy.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: fda_483_response_strategist.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Risk-Based Vendor Performance Improvement Plan
+description: Raise overall vendor performance and reduce operational risk.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: vendor_performance_improvement_plan.prompt.yaml

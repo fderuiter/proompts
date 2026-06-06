@@ -1,0 +1,9 @@
+---
+name: custom_axiomatic_system_soundness_evaluator
+description: Systematically verifies the soundness of custom, user-defined axiomatic
+  systems by rigorously evaluating whether every axiom is a logical validity and whether
+  every inference rule strictly preserves truth under the provided formal semantics.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: custom_axiomatic_system_soundness_evaluator.prompt.yaml

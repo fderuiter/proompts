@@ -1,0 +1,7 @@
+---
+name: 'Execution Optimization: Parallel Testing'
+description: Configure the automation suite to execute multiple tests simultaneously.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: parallel_execution.prompt.yaml

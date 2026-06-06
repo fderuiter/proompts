@@ -1,0 +1,10 @@
+---
+name: paraconsistent_logic_dialetheism_evaluator
+description: A highly rigorous prompt designed to systematically analyze and formalize
+  paradoxical statements using paraconsistent logic frameworks, specifically evaluating
+  them as potential dialetheias (true contradictions) without permitting deductive
+  explosion (ex contradictione quodlibet).
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: paraconsistent_logic_dialetheism_evaluator.prompt.yaml

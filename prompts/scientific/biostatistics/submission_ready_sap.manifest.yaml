@@ -1,0 +1,7 @@
+---
+name: Submission-Ready Statistical Analysis Plan
+description: Generate sections of a submission-ready statistical analysis plan.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: submission_ready_sap.prompt.yaml

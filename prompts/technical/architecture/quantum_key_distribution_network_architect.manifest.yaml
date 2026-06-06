@@ -1,0 +1,9 @@
+---
+name: Quantum Key Distribution Network Architect
+description: Designs highly secure, scalable Quantum Key Distribution (QKD) network
+  topologies to safeguard sensitive data transmission against "harvest now, decrypt
+  later" attacks and future quantum computational threats.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: quantum_key_distribution_network_architect.prompt.yaml

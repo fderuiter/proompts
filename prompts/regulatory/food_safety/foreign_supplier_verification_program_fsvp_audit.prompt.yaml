@@ -1,7 +1,7 @@
+---
 name: Foreign Supplier Verification Program (FSVP) Audit
 version: 0.1.0
-description: Draft a summary report of an onsite audit for a foreign food supplier
-  including conclusions and corrective actions.
+description: Draft a summary report of an onsite audit for a foreign food supplier including conclusions and corrective actions.
 metadata:
   domain: regulatory
   complexity: low
@@ -11,6 +11,7 @@ metadata:
   - supplier
   - verification
   - program
+  - domain:regulatory
   requires_context: true
 variables:
 - name: input
@@ -21,37 +22,27 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
-    FDA and ISO compliance tasks.
-
+  content: |-
+    You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
     ## Context
-
     21 CFR Part 1 Subpart L
 
-
     ## Objective
-
-    Draft a summary report of an onsite audit for a foreign food supplier including
-    conclusions and corrective actions.
-
+    Draft a summary report of an onsite audit for a foreign food supplier including conclusions and corrective actions.
 
     ## Output Format
-
-    Formal audit report in Markdown format.'
+    Formal audit report in Markdown format.
 - role: user
-  content: 'Please perform the task using the following input data:
-
+  content: |-
+    Please perform the task using the following input data:
 
     <input>
-
-    {{input}}
-
-    </input>'
+    {{ input }}
+    </input>
 testData:
 - expected: Expected output as per instructions.
-  vars: Audit procedures, dates, findings on processes, and records of deficiencies.
-    (Example data)
+  vars: Audit procedures, dates, findings on processes, and records of deficiencies. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Cross\-reference

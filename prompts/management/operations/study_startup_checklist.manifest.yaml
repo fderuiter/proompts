@@ -1,0 +1,7 @@
+---
+name: Study Start-Up Checklist & Timeline
+description: Provide an actionable checklist and timeline for Phase IIb study start-up.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: study_startup_checklist.prompt.yaml

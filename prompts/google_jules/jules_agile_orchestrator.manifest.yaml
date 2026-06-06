@@ -1,0 +1,8 @@
+---
+name: Jules Agile Orchestrator
+description: AI Product Engineering Lead for Agile project management, backlog refinement,
+  and atomic task decomposition.
+domain: google_jules
+topic: ''
+capability: ''
+prompt_ref: jules_agile_orchestrator.prompt.yaml

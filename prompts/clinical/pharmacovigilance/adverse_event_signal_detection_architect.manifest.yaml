@@ -1,0 +1,8 @@
+---
+name: adverse_event_signal_detection_architect
+description: Acts as a Principal Pharmacovigilance Scientist to perform advanced signal
+  detection and disproportionality analysis on post-market adverse event databases.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: adverse_event_signal_detection_architect.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: multidimensional_nmr_hrms_structure_elucidator
+description: Systematically deduces and fully elucidates complex molecular structures
+  using raw multi-dimensional NMR (1D, COSY, HSQC, HMBC, NOESY) and high-resolution
+  mass spectrometry (HRMS) fragmentation data.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: multidimensional_nmr_hrms_structure_elucidator.prompt.yaml

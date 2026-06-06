@@ -1,0 +1,8 @@
+---
+name: Deontic Logic Normative Conflict Resolver
+description: Systematically formalizes and resolves normative conflicts (e.g., moral
+  dilemmas) using Standard Deontic Logic (SDL) or advanced non-monotonic variations.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: deontic_logic_normative_conflict_resolver.prompt.yaml

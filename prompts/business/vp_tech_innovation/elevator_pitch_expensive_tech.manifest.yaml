@@ -1,0 +1,8 @@
+---
+name: Elevator Pitch for Expensive Tech
+description: Create a persuasive elevator pitch for expensive technology investments
+  focusing on business outcomes.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: elevator_pitch_expensive_tech.prompt.yaml

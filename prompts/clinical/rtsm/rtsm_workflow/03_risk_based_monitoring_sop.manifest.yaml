@@ -1,0 +1,8 @@
+---
+name: Create a Risk-Based Monitoring & Mitigation SOP for RTSM
+description: "Draft a standard operating procedure for risk\u2011based monitoring\
+  \ and mitigation in RTSM operations."
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 03_risk_based_monitoring_sop.prompt.yaml

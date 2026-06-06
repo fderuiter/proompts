@@ -1,0 +1,9 @@
+---
+name: psychological_trauma_epidemiology_mapper
+description: A highly robust, expert-level prompt to mathematically map the epidemiological
+  spread of psychological trauma across populations using big data proxies, enforcing
+  strict WHO and APA macro-level standards.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: psychological_trauma_epidemiology_mapper.prompt.yaml

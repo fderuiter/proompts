@@ -1,0 +1,8 @@
+---
+name: CSR Plain Language Summary Generator
+description: Generates a Plain Language Summary (PLS) from a Clinical Study Report
+  (CSR) following EU CTR 536/2014 requirements.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: csr_plain_language_summary_generator.prompt.yaml

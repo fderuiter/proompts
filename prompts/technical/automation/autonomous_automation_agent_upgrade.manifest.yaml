@@ -1,0 +1,8 @@
+---
+name: Autonomous Automation Agent Upgrade
+description: Executes a fully autonomous repository commit and generates a pull request
+  based on the current workspace state.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: autonomous_automation_agent_upgrade.prompt.yaml

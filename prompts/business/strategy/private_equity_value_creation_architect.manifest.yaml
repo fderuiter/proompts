@@ -1,0 +1,8 @@
+---
+name: Private Equity Value Creation Architect
+description: Designs highly rigorous, quantitative value creation plans and LBO optimization
+  models for private equity portfolio companies.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: private_equity_value_creation_architect.prompt.yaml

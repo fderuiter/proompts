@@ -1,0 +1,8 @@
+---
+name: Functional Data Analysis Architect
+description: Acts as a Principal Statistician to design robust nonparametric methodologies
+  for infinite-dimensional functional data.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: functional_data_analysis_architect.prompt.yaml

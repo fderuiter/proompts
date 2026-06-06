@@ -1,0 +1,8 @@
+---
+name: Investigator Follow-up Email & Action-Item Tracker
+description: Compose a follow-up email to the PI summarizing visit findings and action
+  items, plus a tracking table.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 02_investigator_follow_up_email_tracker.prompt.yaml

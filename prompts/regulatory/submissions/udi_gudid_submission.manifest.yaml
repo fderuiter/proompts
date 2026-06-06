@@ -1,0 +1,7 @@
+---
+name: UDI GUDID Submission
+description: Prepare a Device Identifier (DI) record for GUDID submission.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: udi_gudid_submission.prompt.yaml

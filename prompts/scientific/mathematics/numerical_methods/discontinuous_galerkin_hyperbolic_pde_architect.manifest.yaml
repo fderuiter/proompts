@@ -1,0 +1,8 @@
+---
+name: Discontinuous Galerkin Hyperbolic PDE Architect
+description: Engineers robust Discontinuous Galerkin (DG) schemes for solving non-linear
+  hyperbolic partial differential equations with shock capturing.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: discontinuous_galerkin_hyperbolic_pde_architect.prompt.yaml

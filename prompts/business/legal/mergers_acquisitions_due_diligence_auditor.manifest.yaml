@@ -1,0 +1,8 @@
+---
+name: Mergers and Acquisitions Due Diligence Auditor
+description: An agent designed to process data room artifacts, flag indemnity risks,
+  and generate risk matrices for asset purchase agreements.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: mergers_acquisitions_due_diligence_auditor.prompt.yaml

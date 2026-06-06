@@ -1,0 +1,8 @@
+---
+name: Breakthrough Device Designation Architect
+description: Formulates compelling FDA Breakthrough Device Designation (BDD) requests
+  based on statutory criteria of Section 515B of the FD&C Act.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: breakthrough_device_designation_architect.prompt.yaml

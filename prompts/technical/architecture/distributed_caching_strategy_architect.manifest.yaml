@@ -1,0 +1,9 @@
+---
+name: Distributed Caching Strategy Architect
+description: Designs highly resilient, multi-level distributed caching architectures,
+  handling cache topologies, invalidation strategies, and failure modes like cache
+  stampedes.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: distributed_caching_strategy_architect.prompt.yaml

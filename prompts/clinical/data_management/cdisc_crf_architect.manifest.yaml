@@ -1,0 +1,7 @@
+---
+name: CDISC CRF Architect
+description: Design CDASH/SDTM compliant CRFs from a Clinical Protocol.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: cdisc_crf_architect.prompt.yaml

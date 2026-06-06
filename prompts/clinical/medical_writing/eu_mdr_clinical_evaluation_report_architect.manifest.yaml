@@ -1,0 +1,9 @@
+---
+name: eu_mdr_clinical_evaluation_report_architect
+description: Synthesizes complex clinical, pre-clinical, and post-market data into
+  a regulatory-compliant Clinical Evaluation Report (CER) strictly aligned with EU
+  MDR (2017/745) and MEDDEV 2.7/1 Rev 4 requirements.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: eu_mdr_clinical_evaluation_report_architect.prompt.yaml

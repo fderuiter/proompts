@@ -1,0 +1,8 @@
+---
+name: Financial Disclosure Certification
+description: Identify required financial disclosure forms and draft attestations for
+  clinical investigators.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: financial_disclosure_certification.prompt.yaml

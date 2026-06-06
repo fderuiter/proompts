@@ -1,0 +1,7 @@
+---
+name: Sunshine Act and FMV Compliance Check
+description: Audit site-payment data for Sunshine Act reporting and FMV adherence.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: sunshine_act_fmv_compliance_check.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: ADaM ADTTE Time to Event Derivation Architect
+description: Automates the complex algorithmic derivation of Time-to-Event (ADTTE)
+  analysis datasets for oncology survival endpoints, adhering to CDISC ADaM standards.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: 13_adam_adtte_time_to_event_architect.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: Quantitative M&A Accretion Dilution Architect
+description: Architects rigorous M&A financial models, executing advanced accretion/dilution
+  analyses, target valuations, and synergy integrations to ensure unvarnished commercial
+  viability.
+domain: business
+topic: finance
+capability: forecasting
+prompt_ref: quantitative_ma_accretion_dilution_architect.prompt.yaml

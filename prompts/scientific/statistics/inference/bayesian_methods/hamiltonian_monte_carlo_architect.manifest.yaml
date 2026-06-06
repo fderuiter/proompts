@@ -1,0 +1,10 @@
+---
+name: hamiltonian_monte_carlo_architect
+description: Acts as a Principal Statistician to mathematically formulate and rigorously
+  design Hamiltonian Monte Carlo (HMC) and No-U-Turn Sampler (NUTS) algorithms for
+  high-dimensional Bayesian inference, optimizing symplectic integration and dynamic
+  trajectory lengths across complex posterior geometries.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: hamiltonian_monte_carlo_architect.prompt.yaml

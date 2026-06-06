@@ -1,0 +1,7 @@
+---
+name: Parallel Review Request
+description: Draft an email requesting enrollment in the Parallel Review program.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: parallel_review_request.prompt.yaml

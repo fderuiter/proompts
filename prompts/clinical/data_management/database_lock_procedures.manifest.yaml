@@ -1,0 +1,7 @@
+---
+name: Database Lock Procedures
+description: Review CRFs and prepare for database lock.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: database_lock_procedures.prompt.yaml

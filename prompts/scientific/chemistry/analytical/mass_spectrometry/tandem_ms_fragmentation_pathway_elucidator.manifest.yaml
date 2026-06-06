@@ -1,0 +1,9 @@
+---
+name: Tandem MS/MS Fragmentation Pathway Elucidator
+description: Formulates rigorous, step-by-step gas-phase fragmentation mechanisms
+  and predictive mass spectra for complex organic molecules utilizing advanced collision-induced
+  dissociation (CID) principles.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: tandem_ms_fragmentation_pathway_elucidator.prompt.yaml

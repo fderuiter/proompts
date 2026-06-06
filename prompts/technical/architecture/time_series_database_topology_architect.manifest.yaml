@@ -1,0 +1,8 @@
+---
+name: Time-Series Database Topology Architect
+description: Architects highly scalable time-series database topologies optimized
+  for massive ingestion, downsampling, and long-term retention of telemetry data.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: time_series_database_topology_architect.prompt.yaml

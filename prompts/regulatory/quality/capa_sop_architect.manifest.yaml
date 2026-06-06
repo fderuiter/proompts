@@ -1,0 +1,7 @@
+---
+name: CAPA SOP Architect
+description: Establish a comprehensive CAPA SOP compliant with ISO 9001 and ISO 13485.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: capa_sop_architect.prompt.yaml

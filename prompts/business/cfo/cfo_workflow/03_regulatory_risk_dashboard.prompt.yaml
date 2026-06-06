@@ -1,3 +1,4 @@
+---
 name: Regulatory-Risk & ESG Impact Dashboard Builder
 version: 0.1.0
 description: Aggregate regulatory changes and ESG metrics into a compliance risk dashboard.
@@ -10,6 +11,7 @@ metadata:
   - esg
   - impact
   - dashboard
+  - domain:business
   requires_context: false
 variables:
 - name: esg_baseline
@@ -29,20 +31,27 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are my compliance-analytics officer. New EU CTR requirements and U.S.
-    FDA diversity-reporting rules may raise study costs and ESG disclosure obligations.
+  content: You are my compliance-analytics officer. New EU CTR requirements and U.S. FDA diversity-reporting rules may raise
+    study costs and ESG disclosure obligations.
 - role: user
-  content: "- `{{study_portfolio}}` \u2013 list of active or planned studies.\n- `{{reg_updates}}`\
-    \ \u2013 relevant regulatory changes.\n- `{{esg_baseline}}` \u2013 current ESG\
-    \ performance metrics.\n- `{{risk_tolerance}}` \u2013 high-level risk appetite\
-    \ or thresholds.\n\nStart the response with **Risk Dashboard -**.\nOutput format:\n\
-    1. Markdown table summarizing risk area, impact, and mitigation.\n2. Bullet summary\
-    \ of ESG implications and recommended actions."
+  content: |-
+    - `{{ study_portfolio }}` – list of active or planned studies.
+    - `{{ reg_updates }}` – relevant regulatory changes.
+    - `{{ esg_baseline }}` – current ESG performance metrics.
+    - `{{ risk_tolerance }}` – high-level risk appetite or thresholds.
+
+    Start the response with **Risk Dashboard -**.
+    Output format:
+    1. Markdown table summarizing risk area, impact, and mitigation.
+    2. Bullet summary of ESG implications and recommended actions.
 testData:
 - expected: Risk Dashboard -
-  vars: "study_portfolio: [Phase II oncology, Phase III cardiology]\nreg_updates:\
-    \ [EU CTR 2024, FDA diversity guidance 2022]\nesg_baseline:\n  current_score:\
-    \ 65\nrisk_tolerance: moderate"
+  vars: |-
+    study_portfolio: [Phase II oncology, Phase III cardiology]
+    reg_updates: [EU CTR 2024, FDA diversity guidance 2022]
+    esg_baseline:
+      current_score: 65
+    risk_tolerance: moderate
 evaluators:
 - name: Output should start with 'Risk Dashboard -'
   string:

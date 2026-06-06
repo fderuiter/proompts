@@ -1,0 +1,7 @@
+---
+name: Source of Truth Harmonizer
+description: Harmonizes codebase documentation with a provided 'New Source of Truth'.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: source_of_truth_harmonizer.prompt.yaml

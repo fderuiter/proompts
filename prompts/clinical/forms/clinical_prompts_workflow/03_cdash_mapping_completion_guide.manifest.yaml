@@ -1,0 +1,7 @@
+---
+name: CDASH Mapping & Completion-Guide Assistant
+description: '- For every variable in the list, supply:'
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 03_cdash_mapping_completion_guide.prompt.yaml

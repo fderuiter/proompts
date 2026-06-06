@@ -1,0 +1,7 @@
+---
+name: Post-Market Safety Signal Trending
+description: Analyze post-market data to identify emerging safety signals.
+domain: clinical
+topic: safety
+capability: analysis
+prompt_ref: 03_post_market_safety_signal_trending.prompt.yaml

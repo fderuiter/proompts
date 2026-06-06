@@ -1,0 +1,9 @@
+---
+name: optimal_mechanism_design_architect
+description: Formulates optimal mechanism design frameworks leveraging the revelation
+  principle, incentive compatibility (IC), individual rationality (IR), and virtual
+  valuation equations.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: optimal_mechanism_design_architect.prompt.yaml

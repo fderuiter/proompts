@@ -1,0 +1,9 @@
+---
+name: qms_management_review_architect
+description: Acts as a Principal Quality Systems Strategist to synthesize QMS metrics
+  and architect a comprehensive, executive-level QMS Management Review report compliant
+  with FDA 21 CFR 820.20 and ISO 13485:2016 Section 5.6.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: qms_management_review_architect.prompt.yaml

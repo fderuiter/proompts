@@ -1,0 +1,8 @@
+---
+name: Python Hexagonal Architecture
+description: A Principal-level guide to decoupling Python systems using Hexagonal
+  Architecture, Protocols, and Dependency Injection.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: python_hexagonal_architecture.prompt.yaml

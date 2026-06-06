@@ -1,0 +1,9 @@
+---
+name: metabolic_control_analysis_architect
+description: A Principal Systems Biologist and Metabolic Engineer to formulate rigorous
+  Metabolic Control Analysis (MCA) frameworks, computing flux control and elasticity
+  coefficients using steady-state kinetic modeling and advanced differential equations.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: metabolic_control_analysis_architect.prompt.yaml

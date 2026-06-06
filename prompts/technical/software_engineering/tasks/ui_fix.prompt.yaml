@@ -11,6 +11,9 @@ metadata:
   - tweak
   - verification
   - security
+  - domain:technical
+  - topic:software_engineering
+  - capability:analysis
   requires_context: false
 variables:
 - name: component_path
@@ -46,7 +49,7 @@ messages:
     ```
 
     ## Instructions
-    1. Inspect `<component_path>{{component_path}}</component_path>` for layout issues.
+    1. Inspect `<component_path>{{ component_path }}</component_path>` for layout issues.
     2. Adjust styles or markup to achieve the requested change in `<user_request>`.
     3. Run frontend linters and build/tests to verify.
     4. Provide before/after snippets for the relevant CSS/HTML.
@@ -55,7 +58,7 @@ messages:
 - role: user
   content: |
     <user_request>
-    {{input}}
+    {{ input }}
     </user_request>
 testData:
 - inputs:

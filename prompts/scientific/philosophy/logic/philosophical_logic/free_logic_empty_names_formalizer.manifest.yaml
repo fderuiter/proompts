@@ -1,0 +1,10 @@
+---
+name: Free Logic Empty Names Formalizer
+description: A highly rigorous prompt designed to systematically formalize and evaluate
+  propositions containing non-denoting terms or empty names using designated Free
+  Logic semantics (Positive, Negative, or Neutral) to prevent ontological inflation
+  and deductive explosion.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: free_logic_empty_names_formalizer.prompt.yaml

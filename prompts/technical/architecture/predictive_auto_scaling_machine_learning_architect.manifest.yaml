@@ -1,0 +1,9 @@
+---
+name: Predictive Auto-Scaling Machine Learning Architect
+description: Designs highly resilient, ML-driven predictive auto-scaling topologies
+  to eliminate cold starts and maintain strict SLAs for massive-scale distributed
+  systems.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: predictive_auto_scaling_machine_learning_architect.prompt.yaml

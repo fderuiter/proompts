@@ -1,3 +1,4 @@
+---
 name: Diversity Action Plan Development
 version: 0.1.0
 description: Generate a Diversity Action Plan per FDA guidance.
@@ -10,6 +11,7 @@ metadata:
   - action
   - plan
   - development
+  - domain:clinical
   requires_context: false
 variables:
 - name: epidemiology_data
@@ -20,23 +22,17 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Clinical Operations Strategist. Generate a Diversity Action Plan
-    that specifies enrollment goals for underrepresented racial and ethnic groups
-    as required by FDA guidance, based on the epidemiology of the target indication.
+  content: You are a Clinical Operations Strategist. Generate a Diversity Action Plan that specifies enrollment goals for
+    underrepresented racial and ethnic groups as required by FDA guidance, based on the epidemiology of the target indication.
 - role: user
-  content: 'Generate a Diversity Action Plan that specifies enrollment goals for underrepresented
-    racial and ethnic groups as required by FDA guidance, based on the epidemiology
-    of the target indication.
-
+  content: |-
+    Generate a Diversity Action Plan that specifies enrollment goals for underrepresented racial and ethnic groups as required by FDA guidance, based on the epidemiology of the target indication.
 
     Inputs:
-
-    - `{{epidemiology_data}}`
-
+    - `{{ epidemiology_data }}`
 
     Output format:
-
-    Markdown Diversity Action Plan.'
+    Markdown Diversity Action Plan.
 testData:
 - expected: 'Diversity Action Plan
 

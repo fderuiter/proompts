@@ -1,0 +1,9 @@
+---
+name: Quantitative Black-Scholes Options Pricing Architect
+description: Architects mathematically rigorous Black-Scholes option pricing models,
+  calculating theoretical values and Greeks for European-style derivatives to hedge
+  portfolio volatility.
+domain: business
+topic: finance
+capability: forecasting
+prompt_ref: quantitative_black_scholes_options_pricing_architect.prompt.yaml

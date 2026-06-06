@@ -1,0 +1,8 @@
+---
+name: Distributed Vector Database Architect
+description: Designs highly scalable distributed vector database architectures for
+  trillion-scale embedding search, optimizing the recall-latency-cost frontier.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: distributed_vector_database_architect.prompt.yaml

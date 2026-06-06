@@ -1,0 +1,7 @@
+---
+name: Data-Quality Risk Heat Map
+description: Assess site-level data quality and recommend mitigation actions.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: 03_data_quality_risk_heatmap.prompt.yaml

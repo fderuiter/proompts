@@ -1,3 +1,4 @@
+---
 name: 'Execution Optimization: Parallel Testing'
 version: 0.1.0
 description: Configure the automation suite to execute multiple tests simultaneously.
@@ -10,6 +11,7 @@ metadata:
   - execution
   - optimization
   - parallel
+  - domain:technical
   requires_context: false
 variables:
 - name: language
@@ -20,21 +22,16 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: Configure a TestNG suite for parallel execution by providing a 'testng.xml'
-    file with the parallel attribute set to 'methods'. Additionally, develop a C#
-    or Java method to ensure thread safety (e.g., using 'ThreadLocal') and a 'Dispose'
-    routine to identify and kill browser processes (chrome, firefox, edge) to maintain
-    a clean state.
+  content: Configure a TestNG suite for parallel execution by providing a 'testng.xml' file with the parallel attribute set
+    to 'methods'. Additionally, develop a C# or Java method to ensure thread safety (e.g., using 'ThreadLocal') and a 'Dispose'
+    routine to identify and kill browser processes (chrome, firefox, edge) to maintain a clean state.
 - role: user
-  content: 'Create a parallel execution configuration for TestNG and a thread-safe
-    WebDriver factory.
-
+  content: |-
+    Create a parallel execution configuration for TestNG and a thread-safe WebDriver factory.
 
     <language>
-
-    {{language}}
-
-    </language>'
+    {{ language }}
+    </language>
 testData:
 - expected: ThreadLocal<WebDriver>
   vars: 'language: Java'

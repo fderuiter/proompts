@@ -1,0 +1,8 @@
+---
+name: Hostile Takeover Defense Matrix Architect
+description: Constructs a rigorous quantitative defense matrix and poison pill trigger
+  model for hostile takeovers.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: hostile_takeover_defense_matrix.prompt.yaml

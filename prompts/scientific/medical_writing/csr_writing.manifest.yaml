@@ -1,0 +1,7 @@
+---
+name: Clinical Study Report (CSR) Writing
+description: Draft Clinical Study Report sections.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: csr_writing.prompt.yaml

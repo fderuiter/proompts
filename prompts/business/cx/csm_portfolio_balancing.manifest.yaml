@@ -1,0 +1,7 @@
+---
+name: CSM Portfolio Balancing
+description: Propose a weighted scoring model to balance account loads among CSMs.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: csm_portfolio_balancing.prompt.yaml

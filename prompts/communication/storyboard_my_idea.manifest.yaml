@@ -1,0 +1,8 @@
+---
+name: Storyboard-My-Idea
+description: "Storyboard \u201C[PROJECT OR MESSAGE]\u201D for a 60-second explainer\
+  \ video:"
+domain: communication
+topic: ''
+capability: ''
+prompt_ref: storyboard_my_idea.prompt.yaml

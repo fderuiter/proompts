@@ -1,0 +1,8 @@
+---
+name: theil_t_index_inequality_decomposer
+description: A Principal Sociologist agent designed to execute rigorous Theil T Index
+  decompositions for analyzing between-group and within-group systemic inequality.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: theil_t_index_inequality_decomposer.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Negotiation Coach
+description: Prepare the user for salary negotiations by roleplaying as a manager
+  and offering feedback.
+domain: communication
+topic: ''
+capability: ''
+prompt_ref: negotiation_coach.prompt.yaml

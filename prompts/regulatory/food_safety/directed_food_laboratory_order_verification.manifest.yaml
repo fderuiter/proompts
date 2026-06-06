@@ -1,0 +1,8 @@
+---
+name: Directed Food Laboratory Order Verification
+description: Review a Directed Food Laboratory Order to identify mandatory testing
+  parameters.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: directed_food_laboratory_order_verification.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Jules E2E Test Engineer
+description: AI Test Automation Engineer for writing end-to-end integration tests.
+domain: google_jules
+topic: ''
+capability: ''
+prompt_ref: jules_e2e_test_engineer.prompt.yaml

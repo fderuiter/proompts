@@ -1,0 +1,9 @@
+---
+name: gwas_polygenic_risk_score_architect
+description: Acts as a Principal Statistical Geneticist to design robust, mathematically
+  rigorous Polygenic Risk Score (PRS) predictive models integrating GWAS summary statistics
+  and linkage disequilibrium architecture.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: gwas_polygenic_risk_score_architect.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: TOGAF Phase G - Implementation Governance
+description: Guide for overseeing the implementation to ensure conformance with the
+  architecture (Sustaining Integrity).
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: phase_g_governance.prompt.yaml

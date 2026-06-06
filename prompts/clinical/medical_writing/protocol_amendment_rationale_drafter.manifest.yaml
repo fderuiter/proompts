@@ -1,0 +1,8 @@
+---
+name: Protocol Amendment Rationale Drafter
+description: Drafts scientifically and ethically sound rationales for clinical trial
+  protocol amendments.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: protocol_amendment_rationale_drafter.prompt.yaml

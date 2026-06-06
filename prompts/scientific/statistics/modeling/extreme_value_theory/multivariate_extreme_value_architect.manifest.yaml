@@ -1,0 +1,8 @@
+---
+name: multivariate_extreme_value_architect
+description: Acts as a Principal Statistician to formally define, analyze, and estimate
+  Multivariate Extreme Value Theory (MEVT) models.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: multivariate_extreme_value_architect.prompt.yaml

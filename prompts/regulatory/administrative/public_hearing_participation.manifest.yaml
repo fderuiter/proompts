@@ -1,0 +1,7 @@
+---
+name: Public Hearing Participation
+description: Complete a Notice of Participation for a formal evidentiary public hearing.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: public_hearing_participation.prompt.yaml

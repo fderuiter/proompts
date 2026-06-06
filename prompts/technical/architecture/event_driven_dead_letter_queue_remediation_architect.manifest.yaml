@@ -1,0 +1,10 @@
+---
+name: Event-Driven Dead Letter Queue Remediation Architect
+description: Strategic Genesis Architect persona for designing advanced, automated
+  remediation frameworks for Dead Letter Queues (DLQs) in complex event-driven and
+  stream-processing architectures, ensuring message resilience, schema compatibility
+  handling, and poison pill quarantine.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: event_driven_dead_letter_queue_remediation_architect.prompt.yaml

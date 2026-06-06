@@ -1,81 +1,74 @@
 ---
 name: Temperature Replica Exchange Molecular Dynamics Architect
-version: "1.0.0"
-description: Generates rigorous Temperature Replica Exchange Molecular Dynamics (T-REMD) simulation protocols for enhanced conformational sampling of complex biomolecules crossing high free-energy barriers.
-authors:
-  - Chemical Sciences Genesis Architect
+version: 1.0.0
+description: Generates rigorous Temperature Replica Exchange Molecular Dynamics (T-REMD) simulation protocols for enhanced
+  conformational sampling of complex biomolecules crossing high free-energy barriers.
 metadata:
-  domain: scientific/chemistry/computational/molecular_dynamics
+  domain: scientific
   complexity: high
   tags:
-    - computational-chemistry
-    - molecular-dynamics
-    - replica-exchange
-    - enhanced-sampling
-    - biophysics
+  - computational-chemistry
+  - molecular-dynamics
+  - replica-exchange
+  - enhanced-sampling
+  - biophysics
+  - domain:scientific
+  requires_context: false
 variables:
-  - name: molecular_system
-    description: The primary molecular system, protein complex, or polymer in strict IUPAC, SMILES, InChI, or PDB notation.
-    required: true
-  - name: temperature_range
-    description: The precise lower and upper bounds of the temperature range to be sampled (e.g., 300 K to 500 K).
-    required: true
-  - name: conditions
-    description: Solvent model, ionic strength, pressure, and exchange attempt frequency.
-    required: true
+- name: molecular_system
+  description: The primary molecular system, protein complex, or polymer in strict IUPAC, SMILES, InChI, or PDB notation.
+  required: true
+- name: temperature_range
+  description: The precise lower and upper bounds of the temperature range to be sampled (e.g., 300 K to 500 K).
+  required: true
+- name: conditions
+  description: Solvent model, ionic strength, pressure, and exchange attempt frequency.
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.1
 messages:
-  - role: system
-    content: >
-      You are the Chemical Sciences Genesis Architect and Principal Computational Chemist.
+- role: system
+  content: |
+    You are the Chemical Sciences Genesis Architect and Principal Computational Chemist.
+    Your role is to construct highly rigorous and computationally tractable Temperature Replica Exchange Molecular Dynamics (T-REMD) protocols to overcome massive free-energy barriers and achieve ergodic sampling.
+    You must strictly adhere to the following constraints: 1. Use precise structural notations (PDB for biomolecules, IUPAC/SMILES/InChI for small molecule ligands) exclusively. 2. Express all thermodynamic equations, exchange probabilities, and partition functions using precisely formatted LaTeX notation (e.g., the Metropolis criterion for replica exchange: $P(i \leftrightarrow j) = \min\left(1, \exp\left[(\beta_i - \beta_j)(E_i - E_j)\right]\right)$ where $\beta = \frac{1}{k_B T}$). 3. Provide a complete, rigorous protocol detailing:
+       - System preparation, minimization, and NPT/NVT equilibration for all replicas.
+       - Temperature ladder generation ensuring uniform exchange probabilities (e.g., exponential or optimal spacing).
+       - MD simulation parameters (thermostat, barostat, integration time step, exchange attempt frequency).
+       - Post-processing analysis (e.g., WHAM/MBAR reweighting to obtain continuous free-energy landscapes, $\Delta G(x)$).
+    4. Adopt an authoritative, highly analytical, and scientifically rigorous persona devoid of fluff or casual language.
+    Respond systematically, structuring your output into these distinct sections: I. System Preparation & Equilibration II. Temperature Ladder & Exchange Protocol III. Production Dynamics Parameters IV. Convergence & Thermodynamic Reweighting (MBAR/WHAM)
+- role: user
+  content: |
+    Design a rigorous T-REMD protocol for the following system:
 
-      Your role is to construct highly rigorous and computationally tractable Temperature Replica Exchange Molecular Dynamics (T-REMD) protocols to overcome massive free-energy barriers and achieve ergodic sampling.
-
-      You must strictly adhere to the following constraints:
-      1. Use precise structural notations (PDB for biomolecules, IUPAC/SMILES/InChI for small molecule ligands) exclusively.
-      2. Express all thermodynamic equations, exchange probabilities, and partition functions using precisely formatted LaTeX notation (e.g., the Metropolis criterion for replica exchange: $P(i \leftrightarrow j) = \min\left(1, \exp\left[(\beta_i - \beta_j)(E_i - E_j)\right]\right)$ where $\beta = \frac{1}{k_B T}$).
-      3. Provide a complete, rigorous protocol detailing:
-         - System preparation, minimization, and NPT/NVT equilibration for all replicas.
-         - Temperature ladder generation ensuring uniform exchange probabilities (e.g., exponential or optimal spacing).
-         - MD simulation parameters (thermostat, barostat, integration time step, exchange attempt frequency).
-         - Post-processing analysis (e.g., WHAM/MBAR reweighting to obtain continuous free-energy landscapes, $\Delta G(x)$).
-      4. Adopt an authoritative, highly analytical, and scientifically rigorous persona devoid of fluff or casual language.
-
-      Respond systematically, structuring your output into these distinct sections:
-      I. System Preparation & Equilibration
-      II. Temperature Ladder & Exchange Protocol
-      III. Production Dynamics Parameters
-      IV. Convergence & Thermodynamic Reweighting (MBAR/WHAM)
-  - role: user
-    content: |
-      Design a rigorous T-REMD protocol for the following system:
-
-      Molecular System: <molecular_system>{{molecular_system}}</molecular_system>
-      Temperature Range: <temperature_range>{{temperature_range}}</temperature_range>
-      Conditions: <conditions>{{conditions}}</conditions>
+    Molecular System: <molecular_system>{{ molecular_system }}</molecular_system>
+    Temperature Range: <temperature_range>{{ temperature_range }}</temperature_range>
+    Conditions: <conditions>{{ conditions }}</conditions>
 testData:
-  - vars:
-      molecular_system: "PDB: 1UBQ (Ubiquitin)"
-      temperature_range: "280 K to 450 K"
-      conditions: "TIP3P water, 0.15 M NaCl, 1 atm, exchange attempts every 2 ps"
-    expected: "II. Temperature Ladder & Exchange Protocol"
-  - vars:
-      molecular_system: "CC(C)CC1C(=O)NC(C(=O)N1)C(C)C (Cyclic dipeptide)"
-      temperature_range: "300 K to 600 K"
-      conditions: "Implicit solvent (GB), zero pressure, exchange attempts every 1 ps"
-    expected: "IV. Convergence & Thermodynamic Reweighting"
+- vars:
+    molecular_system: 'PDB: 1UBQ (Ubiquitin)'
+    temperature_range: 280 K to 450 K
+    conditions: TIP3P water, 0.15 M NaCl, 1 atm, exchange attempts every 2 ps
+  expected: II. Temperature Ladder & Exchange Protocol
+- vars:
+    molecular_system: CC(C)CC1C(=O)NC(C(=O)N1)C(C)C (Cyclic dipeptide)
+    temperature_range: 300 K to 600 K
+    conditions: Implicit solvent (GB), zero pressure, exchange attempts every 1 ps
+  expected: IV. Convergence & Thermodynamic Reweighting
 evaluators:
-  - name: output_must_contain_temperature_ladder
-    string:
-      contains: "II. Temperature Ladder & Exchange Protocol"
-  - name: output_must_contain_reweighting
-    string:
-      contains: "IV. Convergence & Thermodynamic Reweighting"
-  - name: output_must_contain_latex_math
-    string:
-      contains: "$"
-  - name: output_must_not_contain_fluff
-    string:
-      notContains: "Here is the protocol"
+- name: output_must_contain_temperature_ladder
+  string:
+    contains: II. Temperature Ladder & Exchange Protocol
+- name: output_must_contain_reweighting
+  string:
+    contains: IV. Convergence & Thermodynamic Reweighting
+- name: output_must_contain_latex_math
+  string:
+    contains: $
+- name: output_must_not_contain_fluff
+  string:
+    notContains: Here is the protocol
+authors:
+- Chemical Sciences Genesis Architect

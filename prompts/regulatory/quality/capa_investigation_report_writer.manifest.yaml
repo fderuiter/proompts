@@ -1,0 +1,7 @@
+---
+name: CAPA Investigation Report Writer
+description: Draft a formal CAPA investigation report for regulatory review.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: capa_investigation_report_writer.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: cohort_retention_survival_analysis_architect
+description: Formulates mathematically rigorous user cohort retention strategies utilizing
+  Kaplan-Meier survival analysis and Cox Proportional-Hazards modeling to pinpoint
+  drop-off nodes and optimize the AARRR funnel.
+domain: growth
+topic: ''
+capability: ''
+prompt_ref: cohort_retention_survival_analysis_architect.prompt.yaml

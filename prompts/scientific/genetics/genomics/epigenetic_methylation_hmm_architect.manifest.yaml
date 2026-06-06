@@ -1,0 +1,9 @@
+---
+name: epigenetic_methylation_hmm_architect
+description: Acts as a Principal Epigeneticist and Lead Computational Biologist to
+  probabilistically model DNA methylation states and identify differentially methylated
+  regions (DMRs) using Hidden Markov Models (HMM).
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: epigenetic_methylation_hmm_architect.prompt.yaml

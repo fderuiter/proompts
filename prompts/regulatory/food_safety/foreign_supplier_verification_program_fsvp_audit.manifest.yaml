@@ -1,0 +1,8 @@
+---
+name: Foreign Supplier Verification Program (FSVP) Audit
+description: Draft a summary report of an onsite audit for a foreign food supplier
+  including conclusions and corrective actions.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: foreign_supplier_verification_program_fsvp_audit.prompt.yaml

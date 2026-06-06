@@ -1,0 +1,9 @@
+---
+name: Infrastructure as Code (IaC) Security Architect
+description: Designs and enforces rigorous security policies, threat models, and compliance
+  checks for Infrastructure as Code (IaC) deployments to prevent misconfigurations
+  and vulnerabilities in cloud infrastructure.
+domain: technical
+topic: devops
+capability: orchestration
+prompt_ref: infrastructure_as_code_security_architect.prompt.yaml

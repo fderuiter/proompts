@@ -1,0 +1,8 @@
+---
+name: homotopy_type_theory_univalence_architect
+description: Formulates rigorous proofs and topological type derivations utilizing
+  Homotopy Type Theory (HoTT) and the Univalence Axiom.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: homotopy_type_theory_univalence_architect.prompt.yaml

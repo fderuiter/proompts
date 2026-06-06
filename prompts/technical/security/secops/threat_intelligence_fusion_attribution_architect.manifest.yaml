@@ -1,0 +1,9 @@
+---
+name: Threat Intelligence Fusion Attribution Architect
+description: Synthesizes disparate Threat Intelligence (CTI) streams to mathematically
+  attribute advanced cyber intrusions to specific nation-state or e-crime threat actors
+  using Diamond Model and MITRE ATT&CK alignment.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: threat_intelligence_fusion_attribution_architect.prompt.yaml

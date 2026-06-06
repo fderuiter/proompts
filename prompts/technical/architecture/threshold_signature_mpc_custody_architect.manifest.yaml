@@ -1,0 +1,8 @@
+---
+name: Threshold Signature MPC Custody Architect
+description: Designs highly secure, institution-grade threshold signature schemes
+  (TSS) and multi-party computation (MPC) architectures for digital asset custody.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: threshold_signature_mpc_custody_architect.prompt.yaml

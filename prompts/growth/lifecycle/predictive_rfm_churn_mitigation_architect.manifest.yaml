@@ -1,0 +1,9 @@
+---
+name: predictive_rfm_churn_mitigation_architect
+description: Mathematically models predictive churn risks using Recency-Frequency-Monetary
+  (RFM) analysis and designs cross-channel behavioral trigger sequences for enterprise
+  SaaS retention.
+domain: growth
+topic: ''
+capability: ''
+prompt_ref: predictive_rfm_churn_mitigation_architect.prompt.yaml

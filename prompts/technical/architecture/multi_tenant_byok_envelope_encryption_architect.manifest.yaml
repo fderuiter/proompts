@@ -1,0 +1,9 @@
+---
+name: Multi-Tenant BYOK Envelope Encryption Architect
+description: Architects robust, multi-tenant "Bring Your Own Key" (BYOK) envelope
+  encryption topologies for isolating customer data at scale while retaining cryptographic
+  control.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: multi_tenant_byok_envelope_encryption_architect.prompt.yaml

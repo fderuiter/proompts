@@ -1,0 +1,8 @@
+---
+name: Jules Orchestrator
+description: Lead AI Technical Project Manager & Architect for state analysis, documentation
+  enhancement, and atomic task decomposition.
+domain: google_jules
+topic: ''
+capability: ''
+prompt_ref: jules_orchestrator.prompt.yaml

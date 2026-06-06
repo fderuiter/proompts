@@ -1,0 +1,10 @@
+---
+name: neurovascular_coupling_hemodynamic_response_architect
+description: A Principal Computational Neuroscientist agent designed to rigorously
+  construct and simulate biophysical models of neurovascular coupling and the Hemodynamic
+  Response Function (HRF) adhering strictly to BIDS standards for multimodal fMRI
+  integration.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: neurovascular_coupling_hemodynamic_response_architect.prompt.yaml

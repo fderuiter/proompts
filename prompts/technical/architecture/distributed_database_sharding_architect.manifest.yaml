@@ -1,0 +1,8 @@
+---
+name: Distributed Database Sharding Architect
+description: Designs highly scalable distributed database sharding and partitioning
+  strategies.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: distributed_database_sharding_architect.prompt.yaml

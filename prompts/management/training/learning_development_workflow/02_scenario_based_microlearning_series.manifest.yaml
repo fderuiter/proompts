@@ -1,0 +1,8 @@
+---
+name: Scenario-Based Microlearning Series
+description: Design short interactive modules that help CRO staff apply GCP principles
+  correctly during site visits.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: 02_scenario_based_microlearning_series.prompt.yaml

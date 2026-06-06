@@ -1,0 +1,9 @@
+---
+name: AWS Lambda Serverless Persistence Forensics Analyst
+description: Generates expert-level forensic analysis and response strategies for
+  detecting, reconstructing, and eradicating serverless persistence mechanisms, malicious
+  layer injection, and IAM role abuse in AWS Lambda environments.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: aws_lambda_serverless_persistence_forensics_analyst.prompt.yaml

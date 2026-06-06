@@ -1,0 +1,7 @@
+---
+name: Disruption Radar
+description: Identify emerging threats and startups that could disrupt core products.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: disruption_radar.prompt.yaml

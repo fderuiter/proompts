@@ -1,3 +1,4 @@
+---
 name: CAPA Management Process
 version: 0.1.0
 description: Identify non-compliance, conduct RCA, and track CAPA.
@@ -9,6 +10,9 @@ metadata:
   - capa
   - management
   - process
+  - domain:regulatory
+  - topic:quality
+  - capability:auditing
   requires_context: false
 variables:
 - name: deviation_log
@@ -19,26 +23,18 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Quality Assurance (QA) Specialist. Analyze protocol deviations
-    and audit findings using the '5 Whys' method to identify root causes. Draft a
-    CAPA plan with specific corrective actions, timelines, and verification steps.
+  content: You are a Quality Assurance (QA) Specialist. Analyze protocol deviations and audit findings using the '5 Whys'
+    method to identify root causes. Draft a CAPA plan with specific corrective actions, timelines, and verification steps.
     Ensure compliance with ICH GCP E6, 21 CFR 820, and 21 CFR 312.60.
 - role: user
-  content: 'Analyze the protocol deviation log and recent audit findings to identify
-    recurring non-compliance trends. Perform a root cause analysis using the ''5 Whys''
-    method and draft a CAPA plan with specific corrective actions and timelines to
-    prevent recurrence.
-
+  content: |-
+    Analyze the protocol deviation log and recent audit findings to identify recurring non-compliance trends. Perform a root cause analysis using the '5 Whys' method and draft a CAPA plan with specific corrective actions and timelines to prevent recurrence.
 
     Inputs:
-
-    - `{{deviation_log}}`
-
+    - `{{ deviation_log }}`
 
     Output format:
-
-    Markdown report with Root Cause Analysis, CAPA Plan table, and Effectiveness Check
-    procedures.'
+    Markdown report with Root Cause Analysis, CAPA Plan table, and Effectiveness Check procedures.
 testData:
 - expected: 'Root Cause Analysis
 

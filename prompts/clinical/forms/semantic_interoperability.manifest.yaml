@@ -1,0 +1,7 @@
+---
+name: Semantic Interoperability Optimization
+description: Bind clinical concepts in CRF questions to LOINC, SNOMED CT, or UCUM.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: semantic_interoperability.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Strategic Portfolio Prioritizer
+description: Rank proposed clinical projects by scientific merit, ROI, risk, and strategic
+  fit.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: strategic_portfolio_prioritizer.prompt.yaml

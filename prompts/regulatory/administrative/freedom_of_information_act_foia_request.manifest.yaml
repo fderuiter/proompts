@@ -1,0 +1,7 @@
+---
+name: Freedom of Information Act (FOIA) Request
+description: Draft a request for records regarding a specific 510(k) clearance.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: freedom_of_information_act_foia_request.prompt.yaml

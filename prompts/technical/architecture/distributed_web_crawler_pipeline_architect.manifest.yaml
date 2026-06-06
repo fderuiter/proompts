@@ -1,0 +1,9 @@
+---
+name: Distributed Web Crawler Pipeline Architect
+description: Designs highly scalable, fault-tolerant distributed web crawling pipelines
+  featuring advanced crawl frontier management, SimHash-based deduplication, and strict
+  politeness rate limiting.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: distributed_web_crawler_pipeline_architect.prompt.yaml

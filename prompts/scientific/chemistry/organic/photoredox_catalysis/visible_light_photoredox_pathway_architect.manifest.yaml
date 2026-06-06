@@ -1,0 +1,9 @@
+---
+name: Visible Light Photoredox Pathway Architect
+description: Formulates advanced visible-light photoredox catalytic cycles, calculating
+  redox potentials, thermodynamic feasibility, and predicting radical intermediate
+  pathways for complex transformations.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: visible_light_photoredox_pathway_architect.prompt.yaml

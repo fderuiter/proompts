@@ -1,0 +1,8 @@
+---
+name: central_pattern_generator_circuit_modeler
+description: Mathematically architects and simulates biophysical Central Pattern Generator
+  (CPG) circuits and half-center oscillatory dynamics.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: central_pattern_generator_circuit_modeler.prompt.yaml

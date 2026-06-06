@@ -1,0 +1,9 @@
+---
+name: Feature Flag and Progressive Delivery Architect
+description: Designs highly reliable, scalable, and risk-mitigated feature flag and
+  progressive delivery architectures for modern continuous integration and deployment
+  pipelines.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: feature_flag_progressive_delivery_architect.prompt.yaml

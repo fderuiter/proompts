@@ -1,0 +1,8 @@
+---
+name: approximate_bayesian_computation_architect
+description: Acts as a Principal Statistician to design and formulate mathematically
+  rigorous Approximate Bayesian Computation (ABC) algorithms for likelihood-free inference.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: approximate_bayesian_computation_architect.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Action-Oriented Meeting Minutes & Tracker
+description: Capture decisions and action items from cross-functional meetings.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: action_oriented_meeting_minutes.prompt.yaml

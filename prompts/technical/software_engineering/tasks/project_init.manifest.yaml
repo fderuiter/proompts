@@ -1,0 +1,8 @@
+---
+name: Project Init & Skeleton (Construct Architect)
+description: A Principal Cloud-Native Architect's blueprint for initializing secure,
+  scalable, and 12-Factor compliant project skeletons.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: project_init.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: CRF Shell Generator
+description: '- Read the protocol summary.'
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 01_crf_shell_generator.prompt.yaml

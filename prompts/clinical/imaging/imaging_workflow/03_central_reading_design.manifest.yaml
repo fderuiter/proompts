@@ -1,0 +1,7 @@
+---
+name: Central Reading Paradigm Design
+description: Recommend an efficient central reading model for an oncology trial.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 03_central_reading_design.prompt.yaml

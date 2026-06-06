@@ -1,0 +1,8 @@
+---
+name: Stochastic Strategist
+description: Analyzes the stochastic model and simulation logic to provide strategic
+  advice, identifying "Black Swan" paths and leverage points.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: 03_stochastic_strategist.prompt.yaml

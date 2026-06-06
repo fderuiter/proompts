@@ -1,0 +1,8 @@
+---
+name: Medical Device Recall Strategy Architect
+description: Designs comprehensive Health Hazard Evaluation (HHE) and recall execution
+  strategies, adhering strictly to the 'Vector' standard.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: medical_device_recall_strategy_architect.prompt.yaml

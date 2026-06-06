@@ -1,0 +1,7 @@
+---
+name: Executive Trial-Health Dashboard
+description: Summarize the health of active studies in a weekly dashboard.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: executive_trial_health_dashboard.prompt.yaml

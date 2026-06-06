@@ -1,3 +1,4 @@
+---
 name: Clinical Trial Document Archiving
 version: 0.1.0
 description: Develop archival strategy for TMF.
@@ -10,6 +11,9 @@ metadata:
   - trial
   - document
   - archiving
+  - domain:clinical
+  - topic:data_management
+  - capability:mapping
   requires_context: false
 variables:
 - name: tmf_details
@@ -20,22 +24,17 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Records Manager. Develop an archival strategy for the Trial Master
-    File (TMF) that includes environmental monitoring requirements and a 15-year data
-    retention schedule. Ensure compliance with ICH GCP Section 8.
+  content: You are a Records Manager. Develop an archival strategy for the Trial Master File (TMF) that includes environmental
+    monitoring requirements and a 15-year data retention schedule. Ensure compliance with ICH GCP Section 8.
 - role: user
-  content: 'Develop an archival strategy for the Trial Master File (TMF) that includes
-    environmental monitoring requirements and a 15-year data retention schedule.
-
+  content: |-
+    Develop an archival strategy for the Trial Master File (TMF) that includes environmental monitoring requirements and a 15-year data retention schedule.
 
     Inputs:
-
-    - `{{tmf_details}}`
-
+    - `{{ tmf_details }}`
 
     Output format:
-
-    Markdown Archival Strategy.'
+    Markdown Archival Strategy.
 testData:
 - expected: 'Archival Strategy
 

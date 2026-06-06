@@ -1,0 +1,9 @@
+---
+name: bayesian_vector_autoregression_architect
+description: Formulates rigorous Bayesian Vector Autoregression (BVAR) models for
+  macroeconomic forecasting and structural analysis, incorporating prior specification,
+  posterior inference, and structural identification.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: bayesian_vector_autoregression_architect.prompt.yaml

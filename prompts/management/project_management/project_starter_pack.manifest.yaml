@@ -1,0 +1,7 @@
+---
+name: Project Starter Pack Prompts
+description: Provide ready-to-copy prompt templates for common project documentation.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: project_starter_pack.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Product Brief Template
+description: Outline the high-level vision, features, and architecture for a new software
+  project.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: 01_product_brief.prompt.yaml

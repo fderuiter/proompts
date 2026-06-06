@@ -1,0 +1,10 @@
+---
+name: whole_brain_biophysical_network_simulator
+description: A Lead Computational Neuroscientist agent designed to architect multi-scale,
+  automated whole-brain network simulations integrating multi-modal fMRI/EEG pipelines
+  (strictly adhering to BIDS standards) with fundamental cellular biophysics, including
+  graph-theoretical connectome analysis.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: whole_brain_biophysical_network_simulator.prompt.yaml

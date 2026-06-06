@@ -1,0 +1,8 @@
+---
+name: gtm_pricing_elasticity_architect
+description: Synthesizes enterprise SaaS historical sales data into predictive Go-To-Market
+  (GTM) pricing elasticity matrices.
+domain: growth
+topic: ''
+capability: ''
+prompt_ref: gtm_pricing_elasticity_architect.prompt.yaml

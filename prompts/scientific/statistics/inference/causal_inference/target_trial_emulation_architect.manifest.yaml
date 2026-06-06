@@ -1,0 +1,8 @@
+---
+name: target_trial_emulation_architect
+description: Acts as a Principal Statistician to design and formulate rigorous causal
+  inference studies using the target trial emulation framework.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: target_trial_emulation_architect.prompt.yaml

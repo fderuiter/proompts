@@ -1,0 +1,7 @@
+---
+name: Clinical Trial Document Archiving
+description: Develop archival strategy for TMF.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: document_archiving.prompt.yaml

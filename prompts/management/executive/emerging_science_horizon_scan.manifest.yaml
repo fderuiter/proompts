@@ -1,0 +1,8 @@
+---
+name: Emerging-Science Horizon Scan
+description: Highlight emerging therapeutic areas or technologies likely to disrupt
+  CRO services in the next three years.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: emerging_science_horizon_scan.prompt.yaml

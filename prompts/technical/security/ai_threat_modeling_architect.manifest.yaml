@@ -1,0 +1,8 @@
+---
+name: ai_threat_modeling_architect
+description: Acts as a Principal AI Security Architect to conduct rigorous threat
+  modeling (STRIDE/MITRE ATLAS) on LLM-integrated architectures.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: ai_threat_modeling_architect.prompt.yaml

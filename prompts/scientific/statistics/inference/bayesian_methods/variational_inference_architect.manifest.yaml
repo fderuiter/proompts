@@ -1,0 +1,8 @@
+---
+name: variational_inference_architect
+description: Acts as a Principal Statistician to design and formulate complex Variational
+  Inference (VI) approximations for scalable Bayesian analysis.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: variational_inference_architect.prompt.yaml

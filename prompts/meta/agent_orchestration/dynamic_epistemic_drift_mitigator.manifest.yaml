@@ -1,0 +1,9 @@
+---
+name: Dynamic Epistemic Drift Mitigator
+description: An advanced meta-reasoning architecture that acts as a Genesis Architect
+  for mitigating semantic drift and dynamically updating epistemic states within recursive
+  multi-agent workflows.
+domain: meta
+topic: ''
+capability: ''
+prompt_ref: dynamic_epistemic_drift_mitigator.prompt.yaml

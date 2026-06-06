@@ -1,0 +1,8 @@
+---
+name: Investigator's Brochure Summary of Changes
+description: "Produce a detailed summary of changes for the annual Investigator\u2019\
+  s Brochure update."
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: 02_ib_detailed_soc.prompt.yaml

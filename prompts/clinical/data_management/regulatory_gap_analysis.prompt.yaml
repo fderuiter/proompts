@@ -1,3 +1,4 @@
+---
 name: Regulatory Gap Analysis
 version: 0.1.0
 description: Assess regulatory compliance gaps in trial data processes.
@@ -9,6 +10,9 @@ metadata:
   - regulatory
   - gap
   - analysis
+  - domain:clinical
+  - topic:data_management
+  - capability:mapping
   requires_context: false
 variables:
 - name: input
@@ -19,13 +23,11 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a compliance analyst evaluating clinical data management processes
-
+  content: |
+    You are a compliance analyst evaluating clinical data management processes
     for regulatory gaps.
-
-    '
 - role: user
-  content: '{{input}}'
+  content: '{{ input }}'
 testData:
 - expected: Highlights missing consent records.
   vars: Review data workflow for GDPR compliance.

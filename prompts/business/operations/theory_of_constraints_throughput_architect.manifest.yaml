@@ -1,0 +1,9 @@
+---
+name: Theory of Constraints Throughput Architect
+description: Formulates rigorous Theory of Constraints (ToC) throughput optimization
+  architectures, identifying and exploiting systemic bottlenecks using Drum-Buffer-Rope
+  scheduling and Throughput Accounting.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: theory_of_constraints_throughput_architect.prompt.yaml

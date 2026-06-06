@@ -1,0 +1,8 @@
+---
+name: ePRO Migration Equivalence Checker
+description: Assess measurement equivalence for migrating paper-based PRO instruments
+  to electronic modes.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: epro_migration_equivalence.prompt.yaml

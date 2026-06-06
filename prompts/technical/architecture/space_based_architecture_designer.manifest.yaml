@@ -1,0 +1,11 @@
+---
+name: Space-Based Architecture Designer
+description: 'Acts as a Strategic Genesis Architect to design extreme-scale, highly
+  concurrent Space-Based Architectures (SBA) leveraging distributed tuple spaces and
+  in-memory data grids to eliminate database bottlenecks.
+
+  '
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: space_based_architecture_designer.prompt.yaml

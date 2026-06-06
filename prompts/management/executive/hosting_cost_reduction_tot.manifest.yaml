@@ -1,0 +1,7 @@
+---
+name: Hosting Cost Reduction ToT Plan
+description: Develop a tree-of-thought plan to reduce hosting costs.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: hosting_cost_reduction_tot.prompt.yaml

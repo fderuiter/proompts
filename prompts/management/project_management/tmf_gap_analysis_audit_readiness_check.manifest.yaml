@@ -1,0 +1,8 @@
+---
+name: TMF Gap-Analysis and Audit Readiness Check
+description: Identify missing or outdated Trial Master File documents and propose
+  corrective actions.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: tmf_gap_analysis_audit_readiness_check.prompt.yaml

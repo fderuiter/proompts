@@ -1,0 +1,9 @@
+---
+name: Strategic Capital Allocation Architect
+description: Formulates mathematically rigorous capital allocation strategies optimizing
+  for Risk-Adjusted Return on Capital (RAROC) and WACC minimization under resource
+  constraints.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: strategic_capital_allocation_architect.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: CRO Trial-Performance KPI Dashboard Blueprint
+description: Outline metrics and visuals for a CRO trial-performance dashboard.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: cro_trial_performance_kpi_dashboard_blueprint.prompt.yaml

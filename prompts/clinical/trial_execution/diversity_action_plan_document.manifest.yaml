@@ -1,0 +1,7 @@
+---
+name: Diversity Action Plan Development
+description: Generate a Diversity Action Plan per FDA guidance.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: diversity_action_plan_document.prompt.yaml

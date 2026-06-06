@@ -1,0 +1,9 @@
+---
+name: mixed_frequency_dynamic_factor_nowcasting_architect
+description: Formulates rigorous Mixed-Frequency Dynamic Factor Models (MF-DFM) for
+  high-frequency macroeconomic nowcasting to handle ragged-edge data and state-space
+  estimation.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: mixed_frequency_dynamic_factor_nowcasting_architect.prompt.yaml

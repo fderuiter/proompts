@@ -1,0 +1,9 @@
+---
+name: APT Threat Hunting Hypothesis Generation Architect
+description: Acts as a Cybersecurity Genesis Architect to engineer rigorous, intelligence-driven
+  threat hunting hypotheses for proactive detection of Advanced Persistent Threats
+  (APTs) using cyber threat intelligence and MITRE ATT&CK mappings.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: apt_threat_hypothesis_generation_architect.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: multidimensional_poverty_alkire_foster_architect
+description: Operationalizes the Alkire-Foster (AF) method for calculating multidimensional
+  poverty indices, enforcing rigorous American Sociological Association (ASA) standards
+  and LaTeX formulas.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: multidimensional_poverty_alkire_foster_architect.prompt.yaml

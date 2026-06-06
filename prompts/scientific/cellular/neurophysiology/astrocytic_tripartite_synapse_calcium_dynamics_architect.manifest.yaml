@@ -1,0 +1,9 @@
+---
+name: astrocytic_tripartite_synapse_calcium_dynamics_architect
+description: A Lead Computational Neurophysiologist agent designed to derive mathematically
+  rigorous biophysical models of astrocytic-neuronal tripartite synapses, including
+  IP3-mediated calcium dynamics and gliotransmission.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: astrocytic_tripartite_synapse_calcium_dynamics_architect.prompt.yaml

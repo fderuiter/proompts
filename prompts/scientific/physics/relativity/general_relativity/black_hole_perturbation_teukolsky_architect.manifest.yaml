@@ -1,0 +1,9 @@
+---
+name: Black Hole Perturbation Teukolsky Architect
+description: Systematically derives the Teukolsky master equation for gravitational,
+  electromagnetic, and scalar perturbations on a Kerr black hole background using
+  the Newman-Penrose formalism.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: black_hole_perturbation_teukolsky_architect.prompt.yaml

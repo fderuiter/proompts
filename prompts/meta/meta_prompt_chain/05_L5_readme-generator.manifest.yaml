@@ -1,0 +1,8 @@
+---
+name: README Generator
+description: Scan an entire repository and produce a polished README.md covering everything
+  a new developer needs.
+domain: meta
+topic: ''
+capability: ''
+prompt_ref: 05_L5_readme-generator.prompt.yaml

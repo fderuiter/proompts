@@ -1,0 +1,8 @@
+---
+name: Supplier Corrective Action Request Evaluator
+description: Evaluates a Supplier Corrective Action Request (SCAR) response for adequacy,
+  regulatory compliance, and effectiveness under ISO 13485 and FDA 21 CFR 820.50.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: supplier_corrective_action_request_evaluator.prompt.yaml

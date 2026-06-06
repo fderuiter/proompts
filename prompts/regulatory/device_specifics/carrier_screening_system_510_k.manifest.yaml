@@ -1,0 +1,8 @@
+---
+name: Carrier Screening System 510(k)
+description: Compile technical information for an autosomal recessive carrier screening
+  gene mutation detection system.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: carrier_screening_system_510_k.prompt.yaml

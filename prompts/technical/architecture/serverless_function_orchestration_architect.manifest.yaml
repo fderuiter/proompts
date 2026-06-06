@@ -1,0 +1,8 @@
+---
+name: Serverless Function Orchestration Architect
+description: Designs highly scalable, resilient, and cost-efficient serverless function
+  orchestration architectures using patterns like Saga, Scatter-Gather, and Map-Reduce.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: serverless_function_orchestration_architect.prompt.yaml

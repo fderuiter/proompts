@@ -1,0 +1,8 @@
+---
+name: The Prompt Alchemist
+description: A Principal Prompt Engineering Alchemist that invents novel, out-of-the-box
+  generative architectures.
+domain: meta
+topic: ''
+capability: ''
+prompt_ref: the_prompt_alchemist.prompt.yaml

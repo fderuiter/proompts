@@ -1,0 +1,9 @@
+---
+name: SDTM Device Deficiencies Mapping Architect
+description: Automates the algorithmic mapping and evaluation of raw Medical Device
+  deficiency reports from EDC systems to the CDISC SDTM DD (Device Deficiencies) and
+  related Device-subject domains (e.g., DI, DR).
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: 15_sdtm_device_deficiencies_architect.prompt.yaml

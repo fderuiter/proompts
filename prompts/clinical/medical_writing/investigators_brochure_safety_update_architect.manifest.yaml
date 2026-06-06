@@ -1,0 +1,9 @@
+---
+name: Investigator's Brochure Safety Update Architect
+description: Synthesizes cumulative clinical and nonclinical safety data into an updated
+  Investigator's Brochure (IB) and strictly defines Reference Safety Information (RSI)
+  for expectedness assessments.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: investigators_brochure_safety_update_architect.prompt.yaml

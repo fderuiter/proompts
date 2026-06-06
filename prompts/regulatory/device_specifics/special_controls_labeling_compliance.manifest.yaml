@@ -1,0 +1,8 @@
+---
+name: Special Controls Labeling Compliance
+description: Generate mandatory labeling content, including warnings and limitations,
+  for HCV antibody tests.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: special_controls_labeling_compliance.prompt.yaml

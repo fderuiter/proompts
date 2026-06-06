@@ -1,0 +1,8 @@
+---
+name: TOGAF Phase H - Architecture Change Management
+description: Guide for managing the architecture lifecycle after deployment and handling
+  change requests (The Living Entity).
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: phase_h_change_management.prompt.yaml

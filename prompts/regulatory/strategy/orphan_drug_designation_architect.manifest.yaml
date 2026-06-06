@@ -1,0 +1,8 @@
+---
+name: Orphan Drug Designation Architect
+description: Formulates a compelling FDA Orphan Drug Designation (ODD) request incorporating
+  rigorous epidemiological analysis and medical plausibility rationale.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: orphan_drug_designation_architect.prompt.yaml

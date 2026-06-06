@@ -1,0 +1,9 @@
+---
+name: corporate_wargaming_scenario_planning_architect
+description: Architects rigorous corporate wargaming and macro-scenario planning simulations,
+  modeling multi-actor competitive dynamics, geopolitical shocks, and zero-sum industry
+  disruptions.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: corporate_wargaming_scenario_planning_architect.prompt.yaml

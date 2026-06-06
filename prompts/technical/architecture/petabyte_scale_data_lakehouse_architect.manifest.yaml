@@ -1,0 +1,8 @@
+---
+name: Petabyte-Scale Data Lakehouse Architect
+description: Designs highly scalable, governed, and performant Data Lakehouse architectures
+  for petabyte-scale analytics and AI/ML workloads.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: petabyte_scale_data_lakehouse_architect.prompt.yaml

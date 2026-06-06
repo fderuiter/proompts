@@ -1,0 +1,7 @@
+---
+name: Empathy-Map Facilitator
+description: "Quickly capture a user persona\u2019s voice and pain points."
+domain: communication
+topic: ''
+capability: ''
+prompt_ref: empathy_map_facilitator.prompt.yaml

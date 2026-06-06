@@ -1,0 +1,9 @@
+---
+name: fractional_calculus_pde_modeler
+description: Applied Mathematics Genesis Architect prompt for engineering rigorous
+  numerical schemes to solve Fractional Partial Differential Equations (FPDEs) modeling
+  anomalous diffusion and non-local transport phenomena.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: fractional_calculus_pde_modeler.prompt.yaml

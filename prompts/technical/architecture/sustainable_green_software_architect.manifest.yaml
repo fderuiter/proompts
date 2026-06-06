@@ -1,0 +1,11 @@
+---
+name: Sustainable Green Software Architect
+description: 'Acts as a Principal Green Software Architect to formulate comprehensive,
+  data-driven technical architectures optimized for carbon efficiency, energy proportionality,
+  and embodied carbon minimization across distributed systems.
+
+  '
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: sustainable_green_software_architect.prompt.yaml

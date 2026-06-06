@@ -1,3 +1,4 @@
+---
 name: Data Architecture Blueprint
 version: 0.1.0
 description: Draft a blueprint for clinical data architecture.
@@ -9,6 +10,9 @@ metadata:
   - data
   - architecture
   - blueprint
+  - domain:clinical
+  - topic:data_management
+  - capability:mapping
   requires_context: false
 variables:
 - name: input
@@ -23,7 +27,7 @@ messages:
 
     '
 - role: user
-  content: '{{input}}'
+  content: '{{ input }}'
 testData:
 - expected: Mentions staging, warehouse, and analytics layers.
   vars: Design a high-level architecture for storing clinical trial data.

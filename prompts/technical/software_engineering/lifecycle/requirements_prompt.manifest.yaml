@@ -1,0 +1,8 @@
+---
+name: RequirementsBot Prompt
+description: Guide an AI assistant to inspect a repository and generate a complete
+  `REQUIREMENTS.md` file.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: requirements_prompt.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Panel Debate
+description: Host a simulated debate among three experts on a chosen topic.
+domain: communication
+topic: ''
+capability: ''
+prompt_ref: panel_debate.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: DMAIC Process Optimization Architect
+description: Formulates rigorous Lean Six Sigma DMAIC optimization frameworks to eliminate
+  process defects and minimize operational variance.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: dmaic_process_optimization_architect.prompt.yaml

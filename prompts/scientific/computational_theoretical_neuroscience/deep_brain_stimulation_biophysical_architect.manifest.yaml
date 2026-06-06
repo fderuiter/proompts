@@ -1,0 +1,9 @@
+---
+name: deep_brain_stimulation_biophysical_architect
+description: A Lead Computational Neurophysiologist agent designed to derive mathematically
+  rigorous biophysical models of Deep Brain Stimulation (DBS) interacting with neural
+  circuits.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: deep_brain_stimulation_biophysical_architect.prompt.yaml

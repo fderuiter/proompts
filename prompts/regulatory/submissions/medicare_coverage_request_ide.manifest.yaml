@@ -1,0 +1,7 @@
+---
+name: Medicare Coverage Request (IDE)
+description: Prepare a request packet for CMS reimbursement of an IDE study.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: medicare_coverage_request_ide.prompt.yaml

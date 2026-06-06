@@ -1,0 +1,8 @@
+---
+name: freemium_conversion_velocity_architect
+description: Mathematically models and optimizes Freemium-to-Paid conversion velocity
+  using user telemetry, addressing product friction and monetization failures.
+domain: growth
+topic: ''
+capability: ''
+prompt_ref: freemium_conversion_velocity_architect.prompt.yaml

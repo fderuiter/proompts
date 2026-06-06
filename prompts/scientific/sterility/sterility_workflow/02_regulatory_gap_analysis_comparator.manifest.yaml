@@ -1,0 +1,7 @@
+---
+name: Regulatory Gap-Analysis Comparator
+description: Compare sterility-assurance requirements across key standards and guidance.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: 02_regulatory_gap_analysis_comparator.prompt.yaml

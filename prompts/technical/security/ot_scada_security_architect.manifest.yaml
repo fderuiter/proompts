@@ -1,0 +1,10 @@
+---
+name: OT/SCADA Security Resilience Architect
+description: Engineers robust zero-trust security architectures tailored for Operational
+  Technology (OT) and Supervisory Control and Data Acquisition (SCADA) systems, addressing
+  critical infrastructure vulnerabilities without jeopardizing uptime or deterministic
+  real-time constraints.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: ot_scada_security_architect.prompt.yaml

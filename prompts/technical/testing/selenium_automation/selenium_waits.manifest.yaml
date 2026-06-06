@@ -1,0 +1,8 @@
+---
+name: 'Synchronization Strategy: Explicit Waits'
+description: Replace brittle Thread.sleep() calls with dynamic Explicit or Fluent
+  waits.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: selenium_waits.prompt.yaml

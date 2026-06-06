@@ -1,0 +1,8 @@
+---
+name: Micro-Frontend Orchestration Architect
+description: Designs robust, scalable micro-frontend architectures, addressing orchestration,
+  state management, and routing strategies.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: micro_frontend_orchestration_architect.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: SaMD AI/ML PCCP Architect
+description: Design rigorous Predetermined Change Control Plans (PCCP) for AI/ML-enabled
+  Software as a Medical Device (SaMD) aligned with FDA guidance.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: samd_ai_pccp_architect.prompt.yaml

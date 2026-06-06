@@ -1,0 +1,8 @@
+---
+name: eBPF Network Observability Architect
+description: Architect highly efficient, low-overhead distributed network observability
+  and security instrumentation leveraging extended Berkeley Packet Filter (eBPF).
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: ebpf_network_observability_architect.prompt.yaml

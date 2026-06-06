@@ -1,0 +1,7 @@
+---
+name: Clinical ETL Pipeline Review
+description: Review the clinical ETL pipeline for accuracy and efficiency.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: 03_clinical_etl_pipeline_review.prompt.yaml

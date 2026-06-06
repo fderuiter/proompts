@@ -1,0 +1,8 @@
+---
+name: Vector Prompt Editor-in-Chief
+description: Reviews draft prompts, eliminates generic phrasing, and elevates them
+  with specific personas, precise constraints, and contextual framing.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: vector_prompt_editor_in_chief.prompt.yaml

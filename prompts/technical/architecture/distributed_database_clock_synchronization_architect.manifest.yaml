@@ -1,0 +1,9 @@
+---
+name: Distributed Database Clock Synchronization Architect
+description: Designs robust, highly accurate clock synchronization and logical time
+  topologies for globally distributed, multi-leader databases to prevent temporal
+  anomalies and ensure linearizability.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: distributed_database_clock_synchronization_architect.prompt.yaml

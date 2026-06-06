@@ -1,0 +1,7 @@
+---
+name: Imaging Charter Draft
+description: Create a study-specific imaging charter compliant with global regulations.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 01_imaging_charter_draft.prompt.yaml

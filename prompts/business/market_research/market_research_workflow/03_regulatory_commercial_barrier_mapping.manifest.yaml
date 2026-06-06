@@ -1,0 +1,8 @@
+---
+name: Regulatory & Commercial Barrier Mapping
+description: Assess hurdles for launching `<device>{{ device }}</device>` in major
+  markets.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: 03_regulatory_commercial_barrier_mapping.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: IEC 62366-1 Summative Usability Evaluation Protocol Architect
+description: Design comprehensive, regulatory-compliant Summative Usability Evaluation
+  Protocols under IEC 62366-1 and FDA Human Factors Engineering Guidance.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: iec_62366_summative_usability_protocol_architect.prompt.yaml

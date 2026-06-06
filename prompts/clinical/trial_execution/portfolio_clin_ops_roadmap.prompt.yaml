@@ -1,6 +1,7 @@
+---
 name: Portfolio-Level Clinical Operations Roadmap
 version: 0.1.0
-description: "Provide a 12\u2011month roadmap for a portfolio of clinical trials."
+description: Provide a 12‑month roadmap for a portfolio of clinical trials.
 metadata:
   domain: clinical
   complexity: medium
@@ -10,6 +11,7 @@ metadata:
   - clinical
   - operations
   - roadmap
+  - domain:clinical
   requires_context: false
 variables: []
 model: gpt-4o
@@ -17,20 +19,25 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: "You are an expert clinical\u2011operations strategist assisting the VP\
-    \ of Clinical Research at a global CRO managing 12 active Phase\_I\u2013III trials\
-    \ across oncology and rare\u2011disease portfolios. The roadmap must meet the\
-    \ KPIs of \u2264\_10\_% protocol deviation rate, first\u2011patient\u2011in cycle\
-    \ \u2264\_45\_days and on\u2011budget variance \u2264\_5\_%. Ask clarifying questions\
-    \ if any information is missing.\n\nTailor recommendations to achieve the stated\
-    \ KPIs."
+  content: |-
+    You are an expert clinical‑operations strategist assisting the VP of Clinical Research at a global CRO managing 12 active Phase I–III trials across oncology and rare‑disease portfolios. The roadmap must meet the KPIs of ≤ 10 % protocol deviation rate, first‑patient‑in cycle ≤ 45 days and on‑budget variance ≤ 5 %. Ask clarifying questions if any information is missing.
+
+    Tailor recommendations to achieve the stated KPIs.
 - role: user
-  content: "1. Outline quarterly milestones in a timeline view.\n2. Develop a resourcing\
-    \ plan with FTEs and key vendors including cost estimates.\n3. Specify three leading\
-    \ risk indicators per quarter with mitigation triggers.\n4. Suggest quick\u2011\
-    win actions achievable in \u2264\_30\_days to show early progress.\n\nInputs:\n\
-    - None\n\nOutput Format:\nTwo Markdown sections:\n\n- **Executive Summary** (\u2264\
-    \_150\_words)\n- **Detailed Roadmap** (table)"
+  content: |-
+    1. Outline quarterly milestones in a timeline view.
+    2. Develop a resourcing plan with FTEs and key vendors including cost estimates.
+    3. Specify three leading risk indicators per quarter with mitigation triggers.
+    4. Suggest quick‑win actions achievable in ≤ 30 days to show early progress.
+
+    Inputs:
+    - None
+
+    Output Format:
+    Two Markdown sections:
+
+    - **Executive Summary** (≤ 150 words)
+    - **Detailed Roadmap** (table)
 testData:
 - expected: 'Executive Summary
 

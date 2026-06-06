@@ -1,0 +1,9 @@
+---
+name: Federated Learning Topology Architect
+description: Architects secure, robust, and highly scalable federated learning distributed
+  topologies, emphasizing privacy-preserving model aggregation, secure multi-party
+  computation, and straggler mitigation.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: federated_learning_topology_architect.prompt.yaml

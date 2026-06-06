@@ -1,0 +1,8 @@
+---
+name: Risk-Based Monitoring (RBM) Plan Builder
+description: Develop a site-level risk-based monitoring plan with risk matrix, KRIs,
+  and adaptive strategy.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 03_rbm_plan_builder.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: cognitive_bias_epistemological_deconstructor
+description: A highly rigorous prompt designed to systematically deconstruct cognitive
+  biases within epistemological models using formal logic and dialectical analysis.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: cognitive_bias_epistemological_deconstructor.prompt.yaml

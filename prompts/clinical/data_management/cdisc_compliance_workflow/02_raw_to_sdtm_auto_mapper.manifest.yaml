@@ -1,0 +1,8 @@
+---
+name: Raw-to-SDTM Auto-Mapper
+description: Intelligently maps raw EDC variables to standard SDTM variables based
+  on fuzzy logic and context.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: 02_raw_to_sdtm_auto_mapper.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Electronic Data Capture Implementation
+description: Design eCRFs with built-in edit checks and automation.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: ecrf_implementation.prompt.yaml

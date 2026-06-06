@@ -1,0 +1,8 @@
+---
+name: Stochastic Architect
+description: Analyzes a conversation or scenario to map it into a formal Stochastic
+  State Model, defining states, risk scores, and a transition probability matrix.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: 01_stochastic_architect.prompt.yaml

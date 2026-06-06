@@ -1,0 +1,9 @@
+---
+name: Abbreviated New Drug Application (ANDA) Architect
+description: Formulates rigorous, compliant FDA Abbreviated New Drug Application (ANDA)
+  eCTD submissions for generic drugs, ensuring strict adherence to 21 CFR 314 and
+  demonstrating bioequivalence to a Reference Listed Drug (RLD).
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: abbreviated_new_drug_application_anda_architect.prompt.yaml

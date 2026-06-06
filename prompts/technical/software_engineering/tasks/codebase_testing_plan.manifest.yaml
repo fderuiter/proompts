@@ -1,0 +1,10 @@
+---
+name: Codebase Testing Plan
+description: As a Distinguished Quality Engineer, generate a comprehensive testing
+  strategy and implementation roadmap for an existing codebase. This includes risk
+  analysis, tooling selection, and a phased rollout plan aligned with modern CI/CD
+  practices.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: codebase_testing_plan.prompt.yaml

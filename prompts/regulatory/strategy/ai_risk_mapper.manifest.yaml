@@ -1,0 +1,7 @@
+---
+name: AI Risk Mapper
+description: Create a quick-look risk register for a specified AI system.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: ai_risk_mapper.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Simulated Clinical Scenario Debrief
+description: Provide constructive feedback after a simulated clinical scenario.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: 02_simulated_clinical_scenario_feedback.prompt.yaml

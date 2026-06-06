@@ -1,0 +1,9 @@
+---
+name: Advanced SOAR Playbook Engineering Architect
+description: Formulates precise, highly complex, and automated Security Orchestration,
+  Automation, and Response (SOAR) playbooks for resolving advanced security incidents
+  while minimizing Mean Time to Respond (MTTR).
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: advanced_soar_playbook_engineering_architect.prompt.yaml

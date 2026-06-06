@@ -1,0 +1,9 @@
+---
+name: IoT Digital Twin Architect
+description: Designs highly accurate, scalable, and synchronized digital twin architectures
+  for complex IoT ecosystems, ensuring real-time bidirectional state management and
+  predictive simulation capabilities.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: iot_digital_twin_architect.prompt.yaml

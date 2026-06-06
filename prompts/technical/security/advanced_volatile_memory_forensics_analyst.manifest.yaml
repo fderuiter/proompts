@@ -1,0 +1,8 @@
+---
+name: Advanced Volatile Memory Forensics Analyst
+description: Generates highly technical, precise volatile memory forensic analysis
+  workflows and advanced rootkit detection strategies for complex intrusions.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: advanced_volatile_memory_forensics_analyst.prompt.yaml

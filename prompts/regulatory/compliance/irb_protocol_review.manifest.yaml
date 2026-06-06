@@ -1,0 +1,8 @@
+---
+name: IRB Protocol Review
+description: Evaluate a clinical investigation protocol to ensure it meets IRB approval
+  criteria.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: irb_protocol_review.prompt.yaml

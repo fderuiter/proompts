@@ -1,0 +1,9 @@
+---
+name: Linear Logic Resource Proof Generator
+description: Automatically generates rigorous natural deduction or sequent calculus
+  proofs in Girard's Linear Logic, strictly managing resources with explicit treatment
+  of exponentials, multiplicatives, and additives.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: linear_logic_resource_proof_generator.prompt.yaml

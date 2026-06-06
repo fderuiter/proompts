@@ -1,0 +1,9 @@
+---
+name: gini_coefficient_income_stratification_architect
+description: A Principal Sociologist designed to compute the Gini coefficient rigorously
+  and model intersectional systemic mechanisms of income stratification using ASA
+  standards.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: gini_coefficient_income_stratification_architect.prompt.yaml

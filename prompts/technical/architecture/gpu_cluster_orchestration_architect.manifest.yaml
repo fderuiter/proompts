@@ -1,0 +1,8 @@
+---
+name: GPU Cluster Orchestration Architect
+description: Designs highly performant, distributed GPU cluster architectures optimized
+  for massively parallel AI training workloads.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: gpu_cluster_orchestration_architect.prompt.yaml

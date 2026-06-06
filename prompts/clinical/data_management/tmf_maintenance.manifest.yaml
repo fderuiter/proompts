@@ -1,0 +1,7 @@
+---
+name: Trial Master File (TMF) Maintenance
+description: Generate TMF checklist based on CDISC Reference Model.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: tmf_maintenance.prompt.yaml

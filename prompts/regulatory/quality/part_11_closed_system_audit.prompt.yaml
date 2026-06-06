@@ -1,3 +1,4 @@
+---
 name: Part 11 Closed System Audit
 version: 0.1.0
 description: Audit a software supplier's closed system for electronic record integrity.
@@ -10,6 +11,9 @@ metadata:
   - closed
   - system
   - audit
+  - domain:regulatory
+  - topic:quality
+  - capability:auditing
   requires_context: true
 variables:
 - name: input
@@ -20,32 +24,24 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
-    FDA and ISO compliance tasks.
-
+  content: |-
+    You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
     ## Context
-
     21 CFR Part 11
 
-
     ## Objective
-
-    Audit a software supplier''s closed system for electronic record integrity.
-
+    Audit a software supplier's closed system for electronic record integrity.
 
     ## Output Format
-
-    Audit report with checklist.'
+    Audit report with checklist.
 - role: user
-  content: 'Please perform the task using the following input data:
-
+  content: |-
+    Please perform the task using the following input data:
 
     <input>
-
-    {{input}}
-
-    </input>'
+    {{ input }}
+    </input>
 testData:
 - expected: Expected output as per instructions.
   vars: Record retrieval protocols and audit trail logs. (Example data)

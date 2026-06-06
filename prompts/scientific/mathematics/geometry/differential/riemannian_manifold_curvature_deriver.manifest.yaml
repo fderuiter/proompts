@@ -1,0 +1,11 @@
+---
+name: Riemannian Manifold Curvature Deriver
+description: 'Systematically computes intrinsic curvature properties (Christoffel
+  symbols, Riemann curvature tensor, Ricci tensor, and scalar curvature) of a specified
+  Riemannian or pseudo-Riemannian manifold based on its metric tensor.
+
+  '
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: riemannian_manifold_curvature_deriver.prompt.yaml

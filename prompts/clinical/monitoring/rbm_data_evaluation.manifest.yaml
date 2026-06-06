@@ -1,0 +1,8 @@
+---
+name: Risk-Based Monitoring Data Evaluation
+description: Remote evaluation of accumulating trial data to identify outliers and
+  data integrity problems.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: rbm_data_evaluation.prompt.yaml

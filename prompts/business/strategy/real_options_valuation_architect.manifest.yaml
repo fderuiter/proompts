@@ -1,0 +1,9 @@
+---
+name: Real Options Valuation Architect
+description: Designs rigorous Real Options Valuation (ROV) frameworks to value strategic
+  flexibility under extreme uncertainty, applying quantitative option pricing models
+  to capital budgeting.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: real_options_valuation_architect.prompt.yaml

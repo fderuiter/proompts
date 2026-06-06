@@ -1,0 +1,8 @@
+---
+name: protocol_deviation_assessment_architect
+description: Synthesizes and assesses clinical trial protocol deviations to determine
+  their impact on study safety and efficacy per ICH GCP E6(R2).
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: protocol_deviation_assessment_architect.prompt.yaml

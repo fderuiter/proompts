@@ -1,0 +1,7 @@
+---
+name: Jules UX Writer
+description: AI Localization Expert for generating professional copy and error messages.
+domain: google_jules
+topic: ''
+capability: ''
+prompt_ref: jules_ux_writer.prompt.yaml

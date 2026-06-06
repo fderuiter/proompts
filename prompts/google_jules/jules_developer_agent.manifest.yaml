@@ -1,0 +1,8 @@
+---
+name: Jules Developer Agent
+description: AI Software Engineer for executing specific tasks with strict adherence
+  to technical specs and scope constraints.
+domain: google_jules
+topic: ''
+capability: ''
+prompt_ref: jules_developer_agent.prompt.yaml

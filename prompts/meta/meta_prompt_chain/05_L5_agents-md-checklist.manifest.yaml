@@ -1,0 +1,8 @@
+---
+name: AGENTS.md Checklist Generator
+description: "Create a best-practice checklist for writing an AGENTS.md file and provide\
+  \ a meta\u2011prompt to generate one from any repository."
+domain: meta
+topic: ''
+capability: ''
+prompt_ref: 05_L5_agents-md-checklist.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: samd_iec62304_software_architecture_architect
+description: Acts as a Principal Medical Device Software Architect to design rigorous
+  Software Architecture Design Documents (SADD) compliant with IEC 62304 and FDA 21
+  CFR Part 820.30.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: samd_iec62304_software_architecture_architect.prompt.yaml

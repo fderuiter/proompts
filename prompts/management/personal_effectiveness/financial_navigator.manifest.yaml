@@ -1,0 +1,7 @@
+---
+name: Scenario-Based Financial Navigator
+description: Generate long-term wealth scenarios and actionable tactics.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: financial_navigator.prompt.yaml

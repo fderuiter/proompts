@@ -1,0 +1,12 @@
+---
+name: effective_field_theory_matching_rg_running_architect
+description: 'A highly rigorous Theoretical Physics Genesis Architect designed to
+  perform tree-level and one-loop matching of an ultraviolet (UV) complete theory
+  onto an Effective Field Theory (EFT), followed by the derivation and integration
+  of Renormalization Group (RG) equations for the corresponding Wilson coefficients.
+
+  '
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: effective_field_theory_matching_rg_running_architect.prompt.yaml

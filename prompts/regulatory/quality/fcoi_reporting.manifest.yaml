@@ -1,0 +1,7 @@
+---
+name: Financial Conflict of Interest (FCOI) Reporting
+description: Review disclosures and draft management plan.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: fcoi_reporting.prompt.yaml

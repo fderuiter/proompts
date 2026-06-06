@@ -1,0 +1,9 @@
+---
+name: Cross-Channel Behavioral Trigger Architect
+description: Constructs complex, predictive cross-channel behavioral trigger sequences
+  for enterprise SaaS, optimizing for acquisition, activation, and churn mitigation
+  using advanced behavioral modeling.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: cross_channel_behavioral_trigger_architect.prompt.yaml

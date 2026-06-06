@@ -1,0 +1,7 @@
+---
+name: M&A Target Evaluation
+description: Evaluate a potential acquisition target based on financial statements.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: ma_target_evaluation.prompt.yaml

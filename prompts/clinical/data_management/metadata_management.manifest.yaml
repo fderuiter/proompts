@@ -1,0 +1,7 @@
+---
+name: Metadata Management
+description: Extract and store standardized metadata for reuse.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: metadata_management.prompt.yaml

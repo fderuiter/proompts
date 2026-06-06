@@ -1,0 +1,9 @@
+---
+name: Regulatory Query Response Drafter
+description: Drafts precise, evidence-backed, and regulatory-compliant responses to
+  Health Authority (e.g., FDA/EMA) Information Requests (IRs) or queries regarding
+  clinical submissions.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: regulatory_query_response_drafter.prompt.yaml

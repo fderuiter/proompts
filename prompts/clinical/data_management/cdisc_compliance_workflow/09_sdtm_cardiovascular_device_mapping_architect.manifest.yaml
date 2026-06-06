@@ -1,0 +1,9 @@
+---
+name: SDTM Cardiovascular Device Mapping Architect
+description: Automates the complex algorithmic mapping of raw Electronic Data Capture
+  (EDC) data and external device telemetry for cardiovascular medical devices into
+  CDISC SDTM Device domains (e.g., DI, DU, DO, DR).
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: 09_sdtm_cardiovascular_device_mapping_architect.prompt.yaml

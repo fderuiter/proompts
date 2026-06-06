@@ -1,0 +1,8 @@
+---
+name: "Evaluate Device\u2013Tissue Interface Findings"
+description: Interpret histopathology results from implant studies and recommend next
+  steps.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: 02_device_tissue_interface_evaluation.prompt.yaml

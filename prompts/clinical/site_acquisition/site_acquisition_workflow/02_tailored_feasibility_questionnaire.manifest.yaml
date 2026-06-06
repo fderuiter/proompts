@@ -1,0 +1,8 @@
+---
+name: Tailored Feasibility-Questionnaire Builder
+description: Draft a site-feasibility questionnaire to confirm patient availability
+  and operational readiness.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 02_tailored_feasibility_questionnaire.prompt.yaml

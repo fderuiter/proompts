@@ -1,0 +1,8 @@
+---
+name: Strategic Real Options Valuation Architect
+description: Formulates rigorous real options valuation models for strategic investment
+  decisions under extreme uncertainty.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: strategic_real_options_valuation_architect.prompt.yaml

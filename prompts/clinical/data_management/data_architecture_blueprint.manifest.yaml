@@ -1,0 +1,7 @@
+---
+name: Data Architecture Blueprint
+description: Draft a blueprint for clinical data architecture.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: data_architecture_blueprint.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Non-Adiabatic Photodynamics Architect
+description: Generates highly specialized non-adiabatic molecular dynamics protocols,
+  computing excited-state decay pathways and conical intersection topographies.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: non_adiabatic_photodynamics_architect.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Site Selection and Enrollment Forecaster
+description: Analyze historical site performance and patient demographics to rank
+  investigative sites and predict enrollment timelines.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: site_enrollment_forecaster.prompt.yaml

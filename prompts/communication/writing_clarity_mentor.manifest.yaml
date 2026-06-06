@@ -1,0 +1,7 @@
+---
+name: Writing Clarity Mentor
+description: Improve a passage by highlighting issues and rewriting for clarity.
+domain: communication
+topic: ''
+capability: ''
+prompt_ref: writing_clarity_mentor.prompt.yaml

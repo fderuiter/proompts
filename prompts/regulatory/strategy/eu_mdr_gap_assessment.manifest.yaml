@@ -1,0 +1,8 @@
+---
+name: EU MDR Technical-Documentation Gap Assessment
+description: "Identify deficiencies in technical documentation against EU MDR Annex\_\
+  II and\_III."
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: eu_mdr_gap_assessment.prompt.yaml

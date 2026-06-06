@@ -1,0 +1,9 @@
+---
+name: Fine-Grained Authorization Architect
+description: Designs highly scalable, low-latency, and distributed Fine-Grained Authorization
+  (FGA) architectures using Relationship-Based Access Control (ReBAC) and Google Zanzibar
+  principles.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: fine_grained_authorization_architect.prompt.yaml

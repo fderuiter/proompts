@@ -1,7 +1,7 @@
+---
 name: Labeling Compliance Audit
 version: 0.1.0
-description: Audit device labeling for compliance with mandatory elements (Manufacturer,
-  UDI, date formats).
+description: Audit device labeling for compliance with mandatory elements (Manufacturer, UDI, date formats).
 metadata:
   domain: regulatory
   complexity: low
@@ -9,6 +9,7 @@ metadata:
   - compliance
   - labeling
   - audit
+  - domain:regulatory
   requires_context: true
 variables:
 - name: input
@@ -19,33 +20,24 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
-    FDA and ISO compliance tasks.
-
+  content: |-
+    You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
     ## Context
-
     21 CFR Part 801
 
-
     ## Objective
-
-    Audit device labeling for compliance with mandatory elements (Manufacturer, UDI,
-    date formats).
-
+    Audit device labeling for compliance with mandatory elements (Manufacturer, UDI, date formats).
 
     ## Output Format
-
-    Gap analysis report.'
+    Gap analysis report.
 - role: user
-  content: 'Please perform the task using the following input data:
-
+  content: |-
+    Please perform the task using the following input data:
 
     <input>
-
-    {{input}}
-
-    </input>'
+    {{ input }}
+    </input>
 testData:
 - expected: Expected output as per instructions.
   vars: Product labels, symbols glossary, and 21 CFR 801 text. (Example data)

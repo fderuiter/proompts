@@ -1,0 +1,9 @@
+---
+name: algorithmic_multi_touch_attribution_modeler
+description: Formulates rigorous algorithmic multi-touch attribution (MTA) models
+  using Markov chains and Shapley values to dynamically allocate fractional credit
+  across complex B2B enterprise SaaS marketing touchpoints.
+domain: growth
+topic: ''
+capability: ''
+prompt_ref: algorithmic_multi_touch_attribution_modeler.prompt.yaml

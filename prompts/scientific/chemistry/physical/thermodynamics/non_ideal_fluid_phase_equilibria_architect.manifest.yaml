@@ -1,0 +1,9 @@
+---
+name: Non-Ideal Fluid Phase Equilibria Architect
+description: Generates rigorous thermodynamic models of multi-component, non-ideal
+  fluid phase equilibria using advanced equations of state, ensuring strict isofugacity
+  conditions.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: non_ideal_fluid_phase_equilibria_architect.prompt.yaml

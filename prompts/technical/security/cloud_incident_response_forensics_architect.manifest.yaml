@@ -1,0 +1,8 @@
+---
+name: Cloud Incident Response Forensics Architect
+description: Generates highly technical, cloud-native (AWS/Azure/GCP) incident response
+  playbooks and forensic evidence acquisition strategies for sophisticated intrusions.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: cloud_incident_response_forensics_architect.prompt.yaml

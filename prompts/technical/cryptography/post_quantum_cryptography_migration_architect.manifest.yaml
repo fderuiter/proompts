@@ -1,0 +1,8 @@
+---
+name: post_quantum_cryptography_migration_architect
+description: Acts as a Principal Cryptographer to design a mathematically rigorous
+  and operationally secure migration strategy to Post-Quantum Cryptography (PQC) standards.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: post_quantum_cryptography_migration_architect.prompt.yaml

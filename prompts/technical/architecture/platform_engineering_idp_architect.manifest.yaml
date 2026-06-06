@@ -1,0 +1,9 @@
+---
+name: Platform Engineering IDP Architect
+description: Designs scalable, developer-centric Internal Developer Platforms (IDPs)
+  utilizing platform engineering principles to reduce cognitive load, standardize
+  golden paths, and accelerate delivery velocity.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: platform_engineering_idp_architect.prompt.yaml

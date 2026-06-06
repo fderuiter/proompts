@@ -1,3 +1,4 @@
+---
 name: Computer System Validation (CSV)
 version: 0.1.0
 description: Generate validation documents for EDC systems.
@@ -10,6 +11,7 @@ metadata:
   - system
   - validation
   - csv
+  - domain:clinical
   requires_context: false
 variables:
 - name: system_requirements
@@ -20,24 +22,18 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a CSV Engineer. Review the Electronic Data Capture (EDC) system
-    requirements and generate a User Acceptance Testing (UAT) script to validate compliance
-    with 21 CFR Part 11 requirements for electronic signatures and audit trails. Ensure
-    alignment with EU GMP Annex 11 and GAMP 5.
+  content: You are a CSV Engineer. Review the Electronic Data Capture (EDC) system requirements and generate a User Acceptance
+    Testing (UAT) script to validate compliance with 21 CFR Part 11 requirements for electronic signatures and audit trails.
+    Ensure alignment with EU GMP Annex 11 and GAMP 5.
 - role: user
-  content: 'Review the Electronic Data Capture (EDC) system requirements and generate
-    a User Acceptance Testing (UAT) script to validate compliance with 21 CFR Part
-    11 requirements for electronic signatures and audit trails.
-
+  content: |-
+    Review the Electronic Data Capture (EDC) system requirements and generate a User Acceptance Testing (UAT) script to validate compliance with 21 CFR Part 11 requirements for electronic signatures and audit trails.
 
     Inputs:
-
-    - `{{system_requirements}}`
-
+    - `{{ system_requirements }}`
 
     Output format:
-
-    Markdown UAT Script and Validation Summary.'
+    Markdown UAT Script and Validation Summary.
 testData:
 - expected: 'UAT Script
 

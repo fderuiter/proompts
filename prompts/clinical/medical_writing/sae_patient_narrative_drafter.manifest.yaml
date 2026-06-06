@@ -1,0 +1,9 @@
+---
+name: SAE Patient Narrative Drafter
+description: Synthesizes complex clinical trial data into regulatory-compliant Serious
+  Adverse Event (SAE) patient narratives for Clinical Study Reports (CSR) per ICH
+  E3 guidelines.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: sae_patient_narrative_drafter.prompt.yaml

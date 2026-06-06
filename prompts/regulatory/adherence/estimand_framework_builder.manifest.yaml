@@ -1,0 +1,7 @@
+---
+name: ICH E9(R1) Estimand Builder
+description: Construct a primary estimand description following the ICH E9 (R1) framework.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: estimand_framework_builder.prompt.yaml

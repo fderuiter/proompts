@@ -1,0 +1,8 @@
+---
+name: WASM Edge Serverless Runtime Architect
+description: Designs ultra-low-latency, multi-tenant WebAssembly (WASM) serverless
+  edge runtimes using strict linear memory isolation and capability-based security.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: wasm_edge_serverless_runtime_architect.prompt.yaml

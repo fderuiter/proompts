@@ -1,0 +1,8 @@
+---
+name: Bioburden Testing SOP
+description: "Draft a standard operating procedure for bioburden enumeration compliant\
+  \ with ISO 11737\u20111:2018."
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: 01_bioburden_testing_sop.prompt.yaml

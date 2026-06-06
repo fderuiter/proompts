@@ -1,0 +1,8 @@
+---
+name: rare_pediatric_disease_designation_architect
+description: Synthesizes disease demographics, seriousness, mechanism of action, and
+  scientific rationale into a rigorous Rare Pediatric Disease Designation (RPDD) request.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: rare_pediatric_disease_designation_architect.prompt.yaml

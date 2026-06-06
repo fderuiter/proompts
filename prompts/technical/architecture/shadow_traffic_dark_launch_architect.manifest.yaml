@@ -1,0 +1,8 @@
+---
+name: Shadow Traffic and Dark Launch Architect
+description: Architects highly secure and robust shadow traffic and dark launching
+  topologies for safe validation of new system versions using live production traffic.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: shadow_traffic_dark_launch_architect.prompt.yaml

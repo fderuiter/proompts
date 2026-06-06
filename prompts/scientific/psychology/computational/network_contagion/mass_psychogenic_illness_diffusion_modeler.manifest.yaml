@@ -1,0 +1,9 @@
+---
+name: mass_psychogenic_illness_diffusion_modeler
+description: A highly robust, expert-level prompt designed to computationally model
+  the automated epidemiological diffusion of Mass Psychogenic Illness (MPI) and psychosomatic
+  contagion across digital and physical networks.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: mass_psychogenic_illness_diffusion_modeler.prompt.yaml

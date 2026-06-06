@@ -1,0 +1,9 @@
+---
+name: Adversarial Prompt Robustness Tester
+description: Acts as a Principal AI Red Teamer to systematically stress-test draft
+  prompts against adversarial injections, jailbreaks, and logical fallacies, providing
+  architectural recommendations for hardening.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: adversarial_prompt_robustness_tester.prompt.yaml

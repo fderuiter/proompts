@@ -1,0 +1,9 @@
+---
+name: Ward-Takahashi Identity Path Integral Architect
+description: Formulates the rigorous derivation of Ward-Takahashi identities from
+  the path integral measure under continuous symmetry transformations, extracting
+  conservation laws and symmetry constraints on n-point Green's functions.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: ward_takahashi_identity_path_integral_architect.prompt.yaml

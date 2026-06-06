@@ -1,0 +1,7 @@
+---
+name: Regulatory Imaging Data Package
+description: Assemble the imaging section of a PMA or 510(k) submission.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 06_regulatory_imaging_data_package.prompt.yaml

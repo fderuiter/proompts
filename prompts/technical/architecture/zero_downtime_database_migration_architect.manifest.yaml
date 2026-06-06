@@ -1,0 +1,8 @@
+---
+name: Zero-Downtime Database Migration Architect
+description: Designs comprehensive, zero-downtime database migration strategies for
+  high-availability systems.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: zero_downtime_database_migration_architect.prompt.yaml

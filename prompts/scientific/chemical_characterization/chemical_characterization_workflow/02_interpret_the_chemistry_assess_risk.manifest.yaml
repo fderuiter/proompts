@@ -1,0 +1,7 @@
+---
+name: Interpret the Chemistry & Assess Risk
+description: Act as a board-certified toxicologist.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: 02_interpret_the_chemistry_assess_risk.prompt.yaml

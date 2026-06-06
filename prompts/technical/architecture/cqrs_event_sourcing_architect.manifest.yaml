@@ -1,0 +1,8 @@
+---
+name: CQRS and Event Sourcing Architect
+description: Designs highly scalable Command Query Responsibility Segregation (CQRS)
+  and Event Sourcing architectures.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: cqrs_event_sourcing_architect.prompt.yaml

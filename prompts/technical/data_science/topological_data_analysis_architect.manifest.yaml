@@ -1,0 +1,9 @@
+---
+name: Topological Data Analysis Architect
+description: Designs robust Topological Data Analysis (TDA) pipelines and persistent
+  homology workflows for extracting invariant shape features from high-dimensional,
+  noisy, or sparse data.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: topological_data_analysis_architect.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: large_cardinal_elementary_embedding_architect
+description: Acts as a Principal Set Theorist and Lead Logician to rigorously define
+  and analyze large cardinal axioms via elementary embeddings, explicitly establishing
+  critical points and derived measures.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: large_cardinal_elementary_embedding_architect.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Post-Mortem / Incident Report Summary
+description: Summarize technical post-mortems for a general company audience.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: post_mortem_summary.prompt.yaml

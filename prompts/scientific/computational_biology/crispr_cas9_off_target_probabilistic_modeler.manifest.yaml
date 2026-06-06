@@ -1,0 +1,8 @@
+---
+name: crispr_cas9_off_target_probabilistic_modeler
+description: Designs probabilistic modeling frameworks to predict CRISPR-Cas9 off-target
+  cleavage sites using thermodynamics and sequence alignment.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: crispr_cas9_off_target_probabilistic_modeler.prompt.yaml

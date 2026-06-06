@@ -1,0 +1,8 @@
+---
+name: Jules Test Generator
+description: A specialized prompt for Google Jules to autonomously generate comprehensive
+  test suites for existing code, ensuring high coverage and reliability.
+domain: google_jules
+topic: ''
+capability: ''
+prompt_ref: jules_test_gen.prompt.yaml

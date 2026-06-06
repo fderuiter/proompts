@@ -1,0 +1,9 @@
+---
+name: Temporal Logic Branching Time Evaluator
+description: A highly rigorous prompt designed to systematically evaluate temporal
+  propositions and branching time structures using Computation Tree Logic (CTL) or
+  Linear Temporal Logic (LTL) to map complex deterministic and non-deterministic pathways.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: temporal_logic_branching_time_evaluator.prompt.yaml

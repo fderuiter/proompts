@@ -1,0 +1,7 @@
+---
+name: "360\xB0 Operational KPI & Benchmark Review"
+description: Compare internal KPIs to industry benchmarks and propose improvements.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: operational_kpi_benchmark_review.prompt.yaml

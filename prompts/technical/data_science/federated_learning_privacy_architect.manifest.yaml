@@ -1,0 +1,9 @@
+---
+name: Federated Learning Differential Privacy Architect
+description: Designs highly secure, privacy-preserving Federated Learning architectures
+  using rigorous Differential Privacy (DP), Secure Multi-Party Computation (SMPC),
+  and Homomorphic Encryption (HE) for distributed data science pipelines.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: federated_learning_privacy_architect.prompt.yaml

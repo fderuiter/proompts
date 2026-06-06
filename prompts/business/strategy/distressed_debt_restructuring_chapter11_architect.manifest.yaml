@@ -1,0 +1,9 @@
+---
+name: Distressed Debt Restructuring Chapter 11 Architect
+description: Formulates rigorous Chapter 11 distressed debt restructuring models,
+  Cram-Down matrices, and Absolute Priority Rule (APR) waterfalls for corporate insolvency
+  turnarounds.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: distressed_debt_restructuring_chapter11_architect.prompt.yaml

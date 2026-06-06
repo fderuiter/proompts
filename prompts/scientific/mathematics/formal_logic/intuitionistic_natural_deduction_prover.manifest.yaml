@@ -1,0 +1,8 @@
+---
+name: intuitionistic_natural_deduction_prover
+description: Generates rigorous, step-by-step natural deduction proofs for sequents
+  in Intuitionistic Logic, enforcing constructive validity and strict LaTeX formatting.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: intuitionistic_natural_deduction_prover.prompt.yaml

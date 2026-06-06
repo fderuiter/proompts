@@ -1,0 +1,8 @@
+---
+name: Risk-Based Site Performance Dashboard
+description: You are an experienced **Clinical Monitoring Manager** at a global CRO
+  overseeing several Phase II oncology trials.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 01_risk_based_site_performance_dashboard.prompt.yaml

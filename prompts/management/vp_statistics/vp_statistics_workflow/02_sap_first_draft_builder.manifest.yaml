@@ -1,0 +1,8 @@
+---
+name: Statistical Analysis Plan Draft Builder
+description: Create the initial draft of a Statistical Analysis Plan (SAP) for a Phase
+  II oncology trial.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: 02_sap_first_draft_builder.prompt.yaml

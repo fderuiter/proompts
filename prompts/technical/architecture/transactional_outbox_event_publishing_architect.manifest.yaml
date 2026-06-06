@@ -1,0 +1,9 @@
+---
+name: transactional_outbox_event_publishing_architect
+description: Designs robust, fault-tolerant Transactional Outbox patterns for reliable
+  event publishing in microservices, ensuring dual-write atomicity and at-least-once
+  delivery guarantees.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: transactional_outbox_event_publishing_architect.prompt.yaml

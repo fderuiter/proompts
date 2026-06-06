@@ -1,0 +1,9 @@
+---
+name: FDA Breakthrough Device Designation Architect
+description: Formulates rigorous, compelling applications for the FDA Breakthrough
+  Devices Program, accelerating the development and review of novel medical devices
+  that address life-threatening or irreversibly debilitating diseases.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: fda_breakthrough_device_designation_architect.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: Autonomous Vehicle V2X Telemetry Architect
+description: Designs highly resilient, low-latency edge-to-cloud telemetry and V2X
+  (Vehicle-to-Everything) communication architectures for autonomous vehicle fleets,
+  optimizing data tiering, intermittent connectivity, and safety-critical state synchronization.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: autonomous_vehicle_v2x_telemetry_architect.prompt.yaml

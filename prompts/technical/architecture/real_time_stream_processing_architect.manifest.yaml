@@ -1,0 +1,8 @@
+---
+name: Real-Time Stream Processing Architect
+description: Designs highly scalable, fault-tolerant real-time data streaming and
+  processing architectures.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: real_time_stream_processing_architect.prompt.yaml

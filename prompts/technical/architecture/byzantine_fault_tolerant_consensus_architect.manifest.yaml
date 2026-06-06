@@ -1,0 +1,9 @@
+---
+name: byzantine_fault_tolerant_consensus_architect
+description: Designs robust Byzantine Fault Tolerant (BFT) consensus architectures
+  for building secure, highly reliable distributed systems resilient to malicious
+  actors and arbitrary node failures.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: byzantine_fault_tolerant_consensus_architect.prompt.yaml

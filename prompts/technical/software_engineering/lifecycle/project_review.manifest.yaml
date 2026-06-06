@@ -1,0 +1,7 @@
+---
+name: Project Review Checklist
+description: Verify completion of a coding project before finalizing.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: project_review.prompt.yaml

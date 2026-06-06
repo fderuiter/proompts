@@ -1,0 +1,8 @@
+---
+name: mu_recursive_function_derivation_architect
+description: Systematically derives formal definitions for computable functions using
+  the strict syntax of mu-recursive (partial recursive) functions.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: mu_recursive_function_derivation_architect.prompt.yaml

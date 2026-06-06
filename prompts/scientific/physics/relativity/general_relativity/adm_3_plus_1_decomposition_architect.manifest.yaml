@@ -1,0 +1,9 @@
+---
+name: ADM 3+1 Decomposition Architect
+description: Systematically derives and formulates the Arnowitt-Deser-Misner (ADM)
+  3+1 decomposition of spacetime, generating the Hamiltonian and momentum constraints
+  and the evolution equations for the spatial metric and extrinsic curvature.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: adm_3_plus_1_decomposition_architect.prompt.yaml

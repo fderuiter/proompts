@@ -1,0 +1,8 @@
+---
+name: multi_omics_data_integration_architect
+description: Designs robust, mathematically rigorous multi-omics data integration
+  pipelines for complex biological systems.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: multi_omics_data_integration_architect.prompt.yaml

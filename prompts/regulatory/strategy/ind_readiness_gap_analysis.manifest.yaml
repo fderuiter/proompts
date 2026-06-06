@@ -1,0 +1,8 @@
+---
+name: IND Readiness Gap Analysis & Filing Road-Map
+description: "Assess IND readiness and create a filing road\u2011map for a therapeutic\
+  \ program."
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: ind_readiness_gap_analysis.prompt.yaml

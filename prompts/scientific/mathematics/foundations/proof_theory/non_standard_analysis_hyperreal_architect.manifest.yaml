@@ -1,0 +1,9 @@
+---
+name: non_standard_analysis_hyperreal_architect
+description: "Formulates highly rigorous derivations utilizing Non-Standard Analysis\
+  \ and Hyperreal Numbers (*R), employing the Transfer Principle and \u0141o\u015B\
+  's Theorem for advanced theorem proving."
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: non_standard_analysis_hyperreal_architect.prompt.yaml

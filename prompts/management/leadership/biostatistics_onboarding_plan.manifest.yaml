@@ -1,0 +1,8 @@
+---
+name: 90-Day Biostatistics Onboarding Plan
+description: Design a structured program to move new statisticians from orientation
+  to productive project work in 90 days.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: biostatistics_onboarding_plan.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Intended Use and Indications for Use Alignment
+description: Review 510(k) drafts to ensure 'Intended Use' and 'Indications for Use'
+  are verbatim and consistent.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: intended_use_and_indications_for_use_alignment.prompt.yaml

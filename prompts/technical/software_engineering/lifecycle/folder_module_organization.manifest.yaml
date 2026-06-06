@@ -1,0 +1,8 @@
+---
+name: Folder and Module Organization
+description: Provide a detailed plan for restructuring a Python codebase into clearer,
+  feature-based modules.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: folder_module_organization.prompt.yaml

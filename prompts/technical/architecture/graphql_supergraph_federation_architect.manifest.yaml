@@ -1,0 +1,8 @@
+---
+name: GraphQL Supergraph Federation Architect
+description: Designs robust GraphQL supergraph federated architectures, establishing
+  subgraph boundaries and resolving cross-graph entities.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: graphql_supergraph_federation_architect.prompt.yaml

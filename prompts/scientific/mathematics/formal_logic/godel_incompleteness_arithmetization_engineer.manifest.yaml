@@ -1,0 +1,9 @@
+---
+name: godel_incompleteness_arithmetization_engineer
+description: "Systematically formalizes and calculates G\xF6del numbers for logical\
+  \ formulas, variables, and proof sequences to facilitate meta-mathematical reasoning\
+  \ in the context of G\xF6del's Incompleteness Theorems."
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: godel_incompleteness_arithmetization_engineer.prompt.yaml

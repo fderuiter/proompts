@@ -1,0 +1,8 @@
+---
+name: Worker Prompt
+description: Execute the concrete task defined by the L3 template and return structured
+  output.
+domain: meta
+topic: ''
+capability: ''
+prompt_ref: 04_L4_worker_prompt.prompt.yaml

@@ -1,0 +1,12 @@
+---
+name: CTD Module 2.5 Clinical Overview Architect
+description: 'Acts as a Principal Regulatory Medical Writer to synthesize complex
+  clinical data (biopharmaceutics, pharmacology, efficacy, safety) into a cohesive
+  Common Technical Document (CTD) Module 2.5 Clinical Overview for regulatory submission
+  (e.g., NDA/MAA).
+
+  '
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: ctd_module_2_5_clinical_overview_architect.prompt.yaml

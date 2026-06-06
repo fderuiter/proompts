@@ -1,0 +1,7 @@
+---
+name: Decentralized Trial Risk Matrix
+description: Build a risk matrix for decentralized trials.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: decentralized_trial_risk_matrix.prompt.yaml

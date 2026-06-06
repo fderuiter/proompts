@@ -1,0 +1,7 @@
+---
+name: QC Listing & Cross-check Prompt
+description: Automate a listing and QC cross-check between independent R and SAS runs.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: qc_listing_cross_check_prompt.prompt.yaml

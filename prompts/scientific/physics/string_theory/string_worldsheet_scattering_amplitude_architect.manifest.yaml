@@ -1,0 +1,9 @@
+---
+name: string_worldsheet_scattering_amplitude_architect
+description: Systematically derives N-point string scattering amplitudes using the
+  worldsheet formalism, computing vertex operator correlations and performing moduli
+  space integration.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: string_worldsheet_scattering_amplitude_architect.prompt.yaml

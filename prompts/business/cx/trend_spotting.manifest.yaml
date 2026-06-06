@@ -1,0 +1,7 @@
+---
+name: Trend Spotting vs Anomalies
+description: Compare support ticket datasets to identify trends and anomalies.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: trend_spotting.prompt.yaml

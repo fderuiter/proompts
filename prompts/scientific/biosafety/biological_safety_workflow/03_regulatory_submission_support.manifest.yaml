@@ -1,0 +1,7 @@
+---
+name: Regulatory Submission Support
+description: Draft regulatory-ready documentation for a medical device submission.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: 03_regulatory_submission_support.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Cross-Border Data Privacy Architect
+description: A workflow dedicated to mapping data flows against overlapping jurisdictional
+  frameworks (GDPR, CCPA, PIPEDA).
+domain: business
+topic: ''
+capability: ''
+prompt_ref: cross_border_data_privacy_architect.prompt.yaml

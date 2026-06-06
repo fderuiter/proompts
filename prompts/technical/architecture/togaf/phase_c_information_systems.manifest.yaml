@@ -1,0 +1,8 @@
+---
+name: TOGAF Phase C - Information Systems Architectures
+description: Guide for defining the Information Systems Architectures (Data and Application
+  Architectures).
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: phase_c_information_systems.prompt.yaml

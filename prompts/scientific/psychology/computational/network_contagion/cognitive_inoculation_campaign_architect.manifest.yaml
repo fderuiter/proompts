@@ -1,0 +1,10 @@
+---
+name: cognitive_inoculation_campaign_architect
+description: A highly analytical prompt designed to engineer population-scale, multi-platform
+  cognitive inoculation (pre-bunking) campaigns, formulating mathematical contagion
+  models and designing massive-scale data schemas to pre-emptively neutralize synthetic
+  misinformation vectors.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: cognitive_inoculation_campaign_architect.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: hodgkin_huxley_biophysical_modeler
+description: Generates highly rigorous, computationally sound biophysical models of
+  single-neuron action potential dynamics using the Hodgkin-Huxley formalism.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: hodgkin_huxley_biophysical_modeler.prompt.yaml

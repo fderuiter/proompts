@@ -1,0 +1,9 @@
+---
+name: Forensic Super Timeline Analysis Architect
+description: Generates expert-level digital forensics and incident response (DFIR)
+  super timeline analysis strategies, focusing on Plaso/log2timeline artifact correlation,
+  pivot points, and anomaly detection.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: forensic_super_timeline_analysis_architect.prompt.yaml

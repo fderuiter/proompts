@@ -1,0 +1,8 @@
+---
+name: Maintainability Codebase Analysis
+description: Improve code maintainability by addressing readability, organization,
+  and test quality.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: maintainability_codebase_analysis.prompt.yaml

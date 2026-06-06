@@ -1,0 +1,8 @@
+---
+name: GCP and GDPR Training Compliance Risk Report
+description: Generate a monthly assessment of staff training compliance for GCP and
+  GDPR regulations.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: gcp_gdpr_compliance_training_risk_report.prompt.yaml

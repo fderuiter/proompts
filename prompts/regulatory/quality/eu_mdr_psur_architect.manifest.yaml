@@ -1,0 +1,8 @@
+---
+name: EU MDR PSUR Architect
+description: Designs comprehensive, regulatory-compliant Periodic Safety Update Reports
+  (PSUR) under EU MDR 2017/745 Article 86 and MDCG 2022-21.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: eu_mdr_psur_architect.prompt.yaml

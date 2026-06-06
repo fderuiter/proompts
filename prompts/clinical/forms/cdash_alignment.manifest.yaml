@@ -1,0 +1,7 @@
+---
+name: CDASH Alignment
+description: Standardize clinical data collection fields using CDASH models.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: cdash_alignment.prompt.yaml

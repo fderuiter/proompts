@@ -1,0 +1,8 @@
+---
+name: Schwinger-Dyson Equation Architect
+description: A highly specialized theoretical physics prompt for the rigorous mathematical
+  derivation of non-perturbative Schwinger-Dyson equations for n-point Green's functions.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: schwinger_dyson_equation_architect.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: Distributed Actor Model Architect
+description: Designs highly concurrent, fault-tolerant distributed actor systems,
+  optimizing for message-passing semantics, location transparency, and supervision
+  trees.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: distributed_actor_model_architect.prompt.yaml

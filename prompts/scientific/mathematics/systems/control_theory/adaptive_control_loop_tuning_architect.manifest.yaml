@@ -1,0 +1,8 @@
+---
+name: Adaptive Control Loop Tuning Architect
+description: Formulates mathematically rigorous adaptive control loop tuning algorithms
+  for highly noisy, non-stationary dynamical systems under persistent disturbances.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: adaptive_control_loop_tuning_architect.prompt.yaml

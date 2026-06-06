@@ -1,0 +1,11 @@
+---
+name: Design the Study
+description: "You are a senior analytical chemist specializing in medical-device Extractables\
+  \ & Leachables (E&L). Using ISO 10993-18:2020 and FDA\u2019s 2024 draft \u201CChemical\
+  \ Analysis for Biocompatibility Assessment,\u201D create a detailed test plan for\
+  \ an exhaustive extractables study and a simulated-use leachables study of a device.\
+  \ Your plan must:"
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: 01_design_the_study.prompt.yaml

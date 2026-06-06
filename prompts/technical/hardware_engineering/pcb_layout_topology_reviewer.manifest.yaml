@@ -1,0 +1,8 @@
+---
+name: PCB Layout Topology Reviewer
+description: A prompt designed to evaluate printed circuit board schematics for signal
+  integrity, electromagnetic interference (EMI), and thermal dissipation compliance.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: pcb_layout_topology_reviewer.prompt.yaml

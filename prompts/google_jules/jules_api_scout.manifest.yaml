@@ -1,0 +1,8 @@
+---
+name: Jules API Scout
+description: AI Integration Specialist for researching live API contracts to prevent
+  hallucinations.
+domain: google_jules
+topic: ''
+capability: ''
+prompt_ref: jules_api_scout.prompt.yaml

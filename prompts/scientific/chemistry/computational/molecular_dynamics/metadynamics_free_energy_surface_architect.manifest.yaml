@@ -1,0 +1,8 @@
+---
+name: Metadynamics Free Energy Surface Architect
+description: Generates rigorous metadynamics simulation protocols for exploring complex
+  free energy surfaces and identifying transition states.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: metadynamics_free_energy_surface_architect.prompt.yaml

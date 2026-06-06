@@ -1,0 +1,9 @@
+---
+name: Software Supply Chain Provenance Architect
+description: Architects robust, mathematically sound, and SLSA-compliant software
+  supply chain security frameworks emphasizing cryptographic provenance, SBOM generation,
+  and zero-trust CI/CD orchestration.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: software_supply_chain_provenance_architect.prompt.yaml

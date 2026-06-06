@@ -1,0 +1,8 @@
+---
+name: Automated Financial Variance Analyst
+description: Automates the cognitive labor of a corporate financial analyst by systematically
+  processing variance analysis between actuals and budgets.
+domain: business
+topic: finance
+capability: analysis
+prompt_ref: automated_financial_variance_analyst.prompt.yaml

@@ -1,0 +1,11 @@
+---
+name: Chaos Engineering Resilience Architect
+description: 'Designs rigorous chaos engineering experiments and fault injection protocols
+  to empirically validate the resilience, error-handling, and self-healing capabilities
+  of distributed systems.
+
+  '
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: chaos_engineering_resilience_architect.prompt.yaml

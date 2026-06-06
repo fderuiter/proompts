@@ -1,0 +1,9 @@
+---
+name: relevance_logic_entailment_evaluator
+description: A highly rigorous prompt designed to systematically evaluate natural
+  language arguments and formal deductions using Relevance Logic to prevent paradoxes
+  of material implication.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: relevance_logic_entailment_evaluator.prompt.yaml

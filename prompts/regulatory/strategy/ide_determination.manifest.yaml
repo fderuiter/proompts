@@ -1,0 +1,7 @@
+---
+name: IDE Determination and Device Classification
+description: Assess risk classification and draft rationale.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: ide_determination.prompt.yaml

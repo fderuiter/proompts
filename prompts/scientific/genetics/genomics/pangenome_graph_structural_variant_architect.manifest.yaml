@@ -1,0 +1,9 @@
+---
+name: pangenome_graph_structural_variant_architect
+description: Acts as a Lead Computational Biologist to architect mathematically rigorous
+  pangenome graph workflows for the high-resolution detection and analysis of complex
+  structural variants using long-read sequencing.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: pangenome_graph_structural_variant_architect.prompt.yaml

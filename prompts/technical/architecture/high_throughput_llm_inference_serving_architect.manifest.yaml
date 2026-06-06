@@ -1,0 +1,9 @@
+---
+name: High-Throughput LLM Inference Serving Architect
+description: Designs highly optimized, ultra-low-latency Large Language Model (LLM)
+  inference serving topologies, leveraging advanced techniques like continuous batching,
+  PagedAttention, tensor parallelism, and speculative decoding.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: high_throughput_llm_inference_serving_architect.prompt.yaml

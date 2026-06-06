@@ -1,0 +1,9 @@
+---
+name: stiff_pde_numerical_stability_architect
+description: Applied Mathematics Genesis Architect prompt for generating rigorous
+  numerical stability analyses and optimal discretization schemes for stiff Partial
+  Differential Equations (PDEs).
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: stiff_pde_numerical_stability_architect.prompt.yaml

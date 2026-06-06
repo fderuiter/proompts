@@ -1,3 +1,4 @@
+---
 name: Vendor Qualification and Oversight
 version: 0.1.0
 description: Develop Vendor Oversight Plan and KPIs.
@@ -9,6 +10,7 @@ metadata:
   - vendor
   - qualification
   - oversight
+  - domain:management
   requires_context: false
 variables:
 - name: vendor_details
@@ -19,23 +21,17 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Vendor Manager. Develop a Vendor Oversight Plan for a CRO managing
-    monitoring services, including five key performance indicators for quality tracking
-    and a review of the transfer of sponsor obligations.
+  content: You are a Vendor Manager. Develop a Vendor Oversight Plan for a CRO managing monitoring services, including five
+    key performance indicators for quality tracking and a review of the transfer of sponsor obligations.
 - role: user
-  content: 'Develop a Vendor Oversight Plan for a CRO managing monitoring services,
-    including five key performance indicators for quality tracking and a review of
-    the transfer of sponsor obligations.
-
+  content: |-
+    Develop a Vendor Oversight Plan for a CRO managing monitoring services, including five key performance indicators for quality tracking and a review of the transfer of sponsor obligations.
 
     Inputs:
-
-    - `{{vendor_details}}`
-
+    - `{{ vendor_details }}`
 
     Output format:
-
-    Markdown Vendor Oversight Plan.'
+    Markdown Vendor Oversight Plan.
 testData:
 - expected: 'Vendor Oversight Plan
 

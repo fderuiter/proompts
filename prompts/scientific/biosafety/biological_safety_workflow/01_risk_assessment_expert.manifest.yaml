@@ -1,0 +1,8 @@
+---
+name: Risk Assessment Expert
+description: Provide a comprehensive biocompatibility risk assessment for a specified
+  device.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: 01_risk_assessment_expert.prompt.yaml

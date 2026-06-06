@@ -1,0 +1,8 @@
+---
+name: Air-Gapped Environment Deployment Architect
+description: Designs secure, resilient, and fully autonomous software deployment architectures
+  for highly restricted, completely air-gapped environments.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: air_gapped_environment_deployment_architect.prompt.yaml

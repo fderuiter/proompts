@@ -1,0 +1,8 @@
+---
+name: KPI Dashboard & Monthly Ops-Review Pack
+description: Summarize operational performance and highlight required actions for
+  the monthly review.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: kpi_dashboard_ops_review.prompt.yaml

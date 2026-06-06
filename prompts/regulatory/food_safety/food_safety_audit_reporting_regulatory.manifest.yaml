@@ -1,0 +1,8 @@
+---
+name: Food Safety Audit Reporting (Regulatory)
+description: Draft a regulatory audit report for an eligible entity after a food safety
+  audit.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: food_safety_audit_reporting_regulatory.prompt.yaml

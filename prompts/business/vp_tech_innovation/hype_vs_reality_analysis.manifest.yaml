@@ -1,0 +1,8 @@
+---
+name: Hype vs. Reality Analysis
+description: Evaluate a specific technology for pragmatic application, cutting through
+  the hype.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: hype_vs_reality_analysis.prompt.yaml

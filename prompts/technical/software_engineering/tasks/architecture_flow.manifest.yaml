@@ -1,0 +1,8 @@
+---
+name: Architecture Flow & Diagram Architect
+description: A Principal System Architect's guide to tracing request lifecycles, identifying
+  bottlenecks, and generating Mermaid diagrams.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: architecture_flow.prompt.yaml

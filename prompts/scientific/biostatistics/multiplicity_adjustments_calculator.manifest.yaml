@@ -1,0 +1,7 @@
+---
+name: Multiplicity Adjustment Code Generator
+description: Generate SAS code for multiplicity adjustments (Bonferroni, Holm, Hochberg).
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: multiplicity_adjustments_calculator.prompt.yaml

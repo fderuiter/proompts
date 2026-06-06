@@ -1,0 +1,9 @@
+---
+name: PII Tokenization Vault Architect
+description: Architect highly secure, isolated, and scalable PII (Personally Identifiable
+  Information) tokenization vaults to ensure compliance and robust data protection
+  in distributed systems.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: pii_tokenization_vault_architect.prompt.yaml

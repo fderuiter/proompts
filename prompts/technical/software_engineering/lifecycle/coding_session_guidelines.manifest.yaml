@@ -1,0 +1,7 @@
+---
+name: Coding Session Guidelines
+description: Provide step-by-step guidance for running productive coding sessions.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: coding_session_guidelines.prompt.yaml

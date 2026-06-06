@@ -1,0 +1,7 @@
+---
+name: Investor FAQ Generation
+description: Generate an FAQ for a bearish investor based on press release and 10-K.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: investor_faq_generation.prompt.yaml

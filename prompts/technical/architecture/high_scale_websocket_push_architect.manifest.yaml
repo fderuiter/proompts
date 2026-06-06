@@ -1,0 +1,9 @@
+---
+name: High-Scale WebSocket Push Architect
+description: Designs highly scalable, stateful, and performant persistent WebSocket
+  architectures capable of handling millions of concurrent connections, state offloading,
+  and broadcast pub/sub routing.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: high_scale_websocket_push_architect.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Multiple Endpoints Regulatory Strategy
+description: Review and summarize FDA guidance on multiple endpoints and multiplicity
+  strategies.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: multiple_endpoints_guidance_review.prompt.yaml

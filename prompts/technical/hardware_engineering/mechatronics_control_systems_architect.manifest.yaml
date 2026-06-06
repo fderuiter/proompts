@@ -1,0 +1,8 @@
+---
+name: Mechatronics Control Systems Architect
+description: A workflow bridging mechanical systems with software logic (PID controller
+  tuning, actuator timing algorithms).
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: mechatronics_control_systems_architect.prompt.yaml

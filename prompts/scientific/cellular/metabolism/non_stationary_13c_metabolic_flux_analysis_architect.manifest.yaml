@@ -1,0 +1,9 @@
+---
+name: non_stationary_13c_metabolic_flux_analysis_architect
+description: Acts as a Principal Systems Biologist to rigorously formulate and solve
+  Non-Stationary 13C Metabolic Flux Analysis (INST-13C-MFA) systems for determining
+  intracellular fluxes from dynamic isotopic labeling data.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: non_stationary_13c_metabolic_flux_analysis_architect.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: 'Driver Configuration: WebDriver Initialization'
+description: Initialize and configure WebDriver instances with specific browser options.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: webdriver_initialization.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Advanced Python Testing
+description: A comprehensive guide to Python testing, covering Pytest fixtures, Property-Based
+  Testing (Hypothesis), and Mutation Testing.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: advanced_python_testing.prompt.yaml

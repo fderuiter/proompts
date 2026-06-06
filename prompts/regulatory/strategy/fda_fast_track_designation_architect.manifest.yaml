@@ -1,0 +1,11 @@
+---
+name: FDA Fast Track Designation Architect
+description: 'Designs a rigorous, strategically aligned FDA Fast Track Designation
+  application focusing on demonstrating an unmet medical need for a serious or life-threatening
+  condition.
+
+  '
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: fda_fast_track_designation_architect.prompt.yaml

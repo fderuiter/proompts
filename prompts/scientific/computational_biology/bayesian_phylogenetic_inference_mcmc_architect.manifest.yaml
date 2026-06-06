@@ -1,0 +1,9 @@
+---
+name: bayesian_phylogenetic_inference_mcmc_architect
+description: Designs highly rigorous Bayesian phylogenetic inference models utilizing
+  Markov Chain Monte Carlo (MCMC) methods to resolve complex evolutionary trees from
+  multi-locus sequence data.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: bayesian_phylogenetic_inference_mcmc_architect.prompt.yaml

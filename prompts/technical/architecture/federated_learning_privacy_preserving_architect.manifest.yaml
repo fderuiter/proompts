@@ -1,0 +1,9 @@
+---
+name: Federated Learning Privacy-Preserving Architect
+description: Designs highly secure, privacy-preserving federated learning architectures
+  utilizing advanced cryptographic protocols to mitigate inference attacks across
+  distributed, non-IID data silos.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: federated_learning_privacy_preserving_architect.prompt.yaml

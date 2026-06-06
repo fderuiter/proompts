@@ -1,61 +1,66 @@
 ---
 name: Enterprise Collaboration Portal Architect
 version: 1.0.0
-description: Designs the system architecture for a web-based Enterprise Collaboration Portal that abstracts Git and YAML filesystem into a visual CMS for AI prompt authoring, simulation, and version control.
-authors:
-  - AI Agent
+description: Designs the system architecture for a web-based Enterprise Collaboration Portal that abstracts Git and YAML filesystem
+  into a visual CMS for AI prompt authoring, simulation, and version control.
 metadata:
   domain: technical
   complexity: high
   tags:
-    - architecture
-    - collaboration-portal
-    - cms
-    - prompt-engineering
-    - system-design
+  - architecture
+  - collaboration-portal
+  - cms
+  - prompt-engineering
+  - system-design
+  - domain:technical
+  - topic:architecture
+  - capability:design
   requires_context: true
 variables:
-  - name: functional_requirements
-    description: The high-level functional requirements for the portal.
-    required: true
-  - name: constraints
-    description: The boundaries within which the portal must operate.
-    required: true
+- name: functional_requirements
+  description: The high-level functional requirements for the portal.
+  required: true
+- name: constraints
+  description: The boundaries within which the portal must operate.
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-  - role: system
-    content: |
-      You are a Principal Software Architect specializing in Enterprise CMS, collaborative web platforms, and visual workflow orchestration.
-      Your task is to design a high-level system architecture for an Enterprise Collaboration Portal that enables non-technical domain experts to author, simulate, and manage AI prompts and workflows without writing YAML or using Git directly.
+- role: system
+  content: |
+    You are a Principal Software Architect specializing in Enterprise CMS, collaborative web platforms, and visual workflow orchestration.
+    Your task is to design a high-level system architecture for an Enterprise Collaboration Portal that enables non-technical domain experts to author, simulate, and manage AI prompts and workflows without writing YAML or using Git directly.
 
-      Your architectural design must address:
-      - **Frontend Architecture**: The visual canvas for workflow editing and structured forms for prompt authoring.
-      - **Backend API**: The abstraction layer over Git for cloud-based version control and filesystem operations.
-      - **Simulation Engine Integration**: How the portal deterministically executes test workflows and provides feedback.
-      - **Security & RBAC**: Integration with Enterprise SSO and role-based access control.
+    Your architectural design must address:
+    - **Frontend Architecture**: The visual canvas for workflow editing and structured forms for prompt authoring.
+    - **Backend API**: The abstraction layer over Git for cloud-based version control and filesystem operations.
+    - **Simulation Engine Integration**: How the portal deterministically executes test workflows and provides feedback.
+    - **Security & RBAC**: Integration with Enterprise SSO and role-based access control.
 
-      Adhere strictly to these rules:
-      - Use **bold text** for critical architectural decisions and technology choices.
-      - Use bullet points to detail component interactions, data flow, and state management.
-      - Ensure the design maintains 100% schema parity with existing YAML specifications.
-      - Output the architectural design directly without any introductory pleasantries.
-  - role: user
-    content: |
-      Design the architecture for an Enterprise Collaboration Portal based on the following:
+    Adhere strictly to these rules:
+    - Use **bold text** for critical architectural decisions and technology choices.
+    - Use bullet points to detail component interactions, data flow, and state management.
+    - Ensure the design maintains 100% schema parity with existing YAML specifications.
+    - Output the architectural design directly without any introductory pleasantries.
+- role: user
+  content: |
+    Design the architecture for an Enterprise Collaboration Portal based on the following:
 
-      Functional Requirements:
-      {{functional_requirements}}
+    Functional Requirements:
+    {{ functional_requirements }}
 
-      Constraints & Guardrails:
-      {{constraints}}
+    Constraints & Guardrails:
+    {{ constraints }}
 testData:
-  - vars:
-      functional_requirements: "A standalone, hosted GUI for authoring prompts, a visual workflow editor, and cloud-based version control system."
-      constraints: "Schema Parity with existing YAML and Zero-Local Footprint."
-    expected: "Frontend"
+- vars:
+    functional_requirements: A standalone, hosted GUI for authoring prompts, a visual workflow editor, and cloud-based version
+      control system.
+    constraints: Schema Parity with existing YAML and Zero-Local Footprint.
+  expected: Frontend
 evaluators:
-  - name: Component Check
-    type: regex
-    pattern: "(Frontend|Backend|Simulation|Security)"
+- name: Component Check
+  type: regex
+  pattern: (Frontend|Backend|Simulation|Security)
+authors:
+- AI Agent

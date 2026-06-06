@@ -1,0 +1,7 @@
+---
+name: CAPA Management Process
+description: Identify non-compliance, conduct RCA, and track CAPA.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: capa_management_process.prompt.yaml

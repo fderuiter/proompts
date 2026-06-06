@@ -1,0 +1,8 @@
+---
+name: Distributed Observability and Telemetry Architect
+description: A Principal Distributed Observability and Telemetry Architect to design
+  highly scalable, robust distributed observability and telemetry pipelines.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: distributed_observability_telemetry_architect.prompt.yaml

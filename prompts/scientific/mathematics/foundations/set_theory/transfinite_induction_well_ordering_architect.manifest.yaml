@@ -1,0 +1,11 @@
+---
+name: transfinite_induction_well_ordering_architect
+description: 'Acts as a Principal Set Theorist to rigorously formulate multi-step
+  proofs using transfinite induction and well-ordering principles over arbitrary ordinal
+  and cardinal structures.
+
+  '
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: transfinite_induction_well_ordering_architect.prompt.yaml

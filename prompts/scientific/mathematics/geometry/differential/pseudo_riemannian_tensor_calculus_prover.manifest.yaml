@@ -1,0 +1,11 @@
+---
+name: pseudo_riemannian_tensor_calculus_prover
+description: 'Generates rigorous mathematical derivations and proofs within pseudo-Riemannian
+  geometry, focusing on tensor calculus, connection coefficients, curvature tensors,
+  and structural identity verifications.
+
+  '
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: pseudo_riemannian_tensor_calculus_prover.prompt.yaml

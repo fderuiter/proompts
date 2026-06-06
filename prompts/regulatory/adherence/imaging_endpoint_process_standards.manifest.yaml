@@ -1,0 +1,7 @@
+---
+name: Imaging Endpoint Process Standards Checklist
+description: Review FDA guidance on imaging endpoints and create process checklists.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: imaging_endpoint_process_standards.prompt.yaml

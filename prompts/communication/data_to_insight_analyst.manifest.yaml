@@ -1,0 +1,7 @@
+---
+name: Data-to-Insight Analyst
+description: 'Here is a CSV (pasted or uploaded): [DATA].'
+domain: communication
+topic: ''
+capability: ''
+prompt_ref: data_to_insight_analyst.prompt.yaml

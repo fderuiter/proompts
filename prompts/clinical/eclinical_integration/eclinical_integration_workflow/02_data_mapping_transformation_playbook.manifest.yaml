@@ -1,0 +1,8 @@
+---
+name: Data Mapping and Transformation Playbook
+description: Provide a repeatable workflow for mapping JSON FHIR bundles to SDTM-compliant
+  tables.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 02_data_mapping_transformation_playbook.prompt.yaml

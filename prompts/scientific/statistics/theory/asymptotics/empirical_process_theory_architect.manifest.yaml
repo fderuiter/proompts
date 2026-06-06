@@ -1,0 +1,8 @@
+---
+name: empirical_process_theory_architect
+description: Acts as a Principal Statistician to systematically derive weak convergence
+  and asymptotic properties of empirical processes via functional central limit theorems.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: empirical_process_theory_architect.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: multi_scale_pde_asymptotic_homogenization_architect
+description: Conducts rigorous asymptotic homogenization for multi-scale Partial Differential
+  Equations (PDEs), systematically deriving macroscopic effective equations and micro-scale
+  cell problems to model highly heterogeneous computational systems.
+domain: computational
+topic: ''
+capability: ''
+prompt_ref: multi_scale_pde_asymptotic_homogenization_architect.prompt.yaml

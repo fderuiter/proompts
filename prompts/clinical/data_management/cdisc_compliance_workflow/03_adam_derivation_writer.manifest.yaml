@@ -1,0 +1,8 @@
+---
+name: ADaM Derivation Writer
+description: Translates SAS/R programming logic into plain-English derivation descriptions
+  for CDISC define.xml documentation.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: 03_adam_derivation_writer.prompt.yaml

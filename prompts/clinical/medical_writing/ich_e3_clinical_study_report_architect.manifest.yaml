@@ -1,0 +1,8 @@
+---
+name: ich_e3_clinical_study_report_architect
+description: Synthesizes complex clinical trial data into a rigorously structured,
+  compliant Clinical Study Report (CSR) per ICH E3 guidelines.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: ich_e3_clinical_study_report_architect.prompt.yaml

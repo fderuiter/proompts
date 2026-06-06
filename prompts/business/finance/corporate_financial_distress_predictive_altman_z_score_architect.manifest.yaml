@@ -1,0 +1,8 @@
+---
+name: Corporate Financial Distress Predictive Altman Z-Score Architect
+description: Architects robust predictive financial distress models using the Altman
+  Z-Score to evaluate bankruptcy risk and structural insolvency in enterprise operations.
+domain: business
+topic: finance
+capability: forecasting
+prompt_ref: corporate_financial_distress_predictive_altman_z_score_architect.prompt.yaml

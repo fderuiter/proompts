@@ -1,0 +1,9 @@
+---
+name: High-Throughput Distributed ID Generator Architect
+description: Designs highly scalable, strictly monotonic, globally unique identifier
+  (UUID/Snowflake/ULID) generation topologies capable of sustaining massive transaction
+  volumes in geographically distributed systems without collision.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: high_throughput_distributed_id_generator_architect.prompt.yaml

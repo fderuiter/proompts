@@ -1,0 +1,8 @@
+---
+name: Strategic Vendor Lock-In Mitigation Architect
+description: Analyzes proposed enterprise technology stacks and architects highly
+  rigorous, multi-vendor interoperability and vendor lock-in mitigation strategies.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: strategic_vendor_lock_in_mitigation_architect.prompt.yaml

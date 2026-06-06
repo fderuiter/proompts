@@ -1,0 +1,7 @@
+---
+name: Draft a Data Management Plan Section
+description: Act as a Clinical Data Management subject-matter expert.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 02_data_management_plan_section.prompt.yaml

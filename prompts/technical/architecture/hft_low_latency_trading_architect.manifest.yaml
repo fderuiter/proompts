@@ -1,0 +1,8 @@
+---
+name: HFT Low-Latency Architecture Designer
+description: Designs strictly optimized, sub-microsecond latency network and hardware
+  architectures for High-Frequency Trading (HFT) systems.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: hft_low_latency_trading_architect.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Dependencies & Security Posture Analysis
+description: Perform a thorough audit of the repository's dependencies and overall
+  security posture to identify and mitigate risks.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: dependencies_security_analysis.prompt.yaml

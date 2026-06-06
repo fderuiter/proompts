@@ -1,7 +1,7 @@
+---
 name: Special Controls Labeling Compliance
 version: 0.1.0
-description: Generate mandatory labeling content, including warnings and limitations,
-  for HCV antibody tests.
+description: Generate mandatory labeling content, including warnings and limitations, for HCV antibody tests.
 metadata:
   domain: regulatory
   complexity: low
@@ -11,6 +11,7 @@ metadata:
   - controls
   - labeling
   - compliance
+  - domain:regulatory
   requires_context: false
 variables:
 - name: input
@@ -21,37 +22,27 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
-    FDA and ISO compliance tasks.
-
+  content: |-
+    You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
     ## Context
-
     21 CFR 866.3169
 
-
     ## Objective
-
-    Generate mandatory labeling content, including warnings and limitations, for HCV
-    antibody tests.
-
+    Generate mandatory labeling content, including warnings and limitations, for HCV antibody tests.
 
     ## Output Format
-
-    Structured labeling text.'
+    Structured labeling text.
 - role: user
-  content: 'Please perform the task using the following input data:
-
+  content: |-
+    Please perform the task using the following input data:
 
     <input>
-
-    {{input}}
-
-    </input>'
+    {{ input }}
+    </input>
 testData:
 - expected: Expected output as per instructions.
-  vars: Specimen types, clinical population data, and performance characteristics.
-    (Example data)
+  vars: Specimen types, clinical population data, and performance characteristics. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Cross\-check

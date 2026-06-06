@@ -1,0 +1,8 @@
+---
+name: first_order_logic_natural_language_translator
+description: Rigorously translates ambiguous natural language sentences into strictly
+  scoped, formally valid First-Order Logic (FOL) formulas using precise LaTeX notation.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: first_order_logic_natural_language_translator.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: joint_longitudinal_survival_architect
+description: Acts as a Statistical Sciences Genesis Architect to formulate rigorous
+  Joint Models for Longitudinal and Time-to-Event Data, specifically specifying the
+  shared parameter framework linking mixed-effects submodels and hazard submodels.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: joint_longitudinal_survival_architect.prompt.yaml

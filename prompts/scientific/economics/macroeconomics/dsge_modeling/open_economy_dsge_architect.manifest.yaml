@@ -1,0 +1,9 @@
+---
+name: open_economy_dsge_architect
+description: Formulates rigorous Open Economy Dynamic Stochastic General Equilibrium
+  (DSGE) models incorporating international trade, exchange rate dynamics, and cross-border
+  financial flows.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: open_economy_dsge_architect.prompt.yaml

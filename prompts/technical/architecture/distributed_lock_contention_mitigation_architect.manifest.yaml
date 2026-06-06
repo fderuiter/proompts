@@ -1,0 +1,9 @@
+---
+name: Distributed Lock Contention Mitigation Architect
+description: Architects advanced resolution strategies for severe distributed lock
+  contention, resolving deadlocks, priority inversion, and throughput bottlenecks
+  in highly concurrent distributed systems.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: distributed_lock_contention_mitigation_architect.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Free Energy Perturbation Architect
+description: Generates rigorous molecular dynamics simulation protocols for alchemical
+  Free Energy Perturbation (FEP) calculations to predict relative binding free energies.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: free_energy_perturbation_architect.prompt.yaml

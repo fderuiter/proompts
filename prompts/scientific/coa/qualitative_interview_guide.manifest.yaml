@@ -1,0 +1,8 @@
+---
+name: Qualitative Interview Guide Generator
+description: Draft a qualitative patient interview guide for concept elicitation and
+  cognitive debriefing.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: qualitative_interview_guide.prompt.yaml

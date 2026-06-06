@@ -1,0 +1,8 @@
+---
+name: Rapid-Risk-Matrix
+description: "Act as a risk-manager. Objective: assess \u201C[PROJECT/PROCESS]\u201D\
+  ."
+domain: communication
+topic: ''
+capability: ''
+prompt_ref: rapid_risk_matrix.prompt.yaml

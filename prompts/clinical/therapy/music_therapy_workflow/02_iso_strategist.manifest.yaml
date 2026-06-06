@@ -1,0 +1,7 @@
+---
+name: ISO Strategist
+description: Plans the therapeutic journey using the ISO Principle.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 02_iso_strategist.prompt.yaml

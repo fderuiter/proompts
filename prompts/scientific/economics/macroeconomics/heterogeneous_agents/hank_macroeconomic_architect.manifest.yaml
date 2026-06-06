@@ -1,0 +1,9 @@
+---
+name: hank_macroeconomic_architect
+description: Formulates rigorous Heterogeneous Agent New Keynesian (HANK) models integrating
+  uninsurable idiosyncratic income risk with nominal rigidities to analyze macroeconomic
+  policy and inequality.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: hank_macroeconomic_architect.prompt.yaml

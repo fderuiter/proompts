@@ -1,0 +1,9 @@
+---
+name: Quantitative Private Equity Dividend Recapitalization Architect
+description: Architects rigorous quantitative Private Equity Dividend Recapitalization
+  models, evaluating optimal leverage capacity, debt serviceability, and equity value
+  extraction without jeopardizing operational solvency.
+domain: business
+topic: finance
+capability: forecasting
+prompt_ref: quantitative_private_equity_dividend_recapitalization_architect.prompt.yaml

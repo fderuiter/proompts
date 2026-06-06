@@ -1,0 +1,8 @@
+---
+name: Shelf-life Study Rationale
+description: Draft a rationale for correlating accelerated aging data with real-time
+  requirements.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: shelf_life_study_rationale.prompt.yaml

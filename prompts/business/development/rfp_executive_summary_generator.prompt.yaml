@@ -11,6 +11,7 @@ metadata:
   - executive-summary
   - generator
   - metric-qa-upgrade
+  - domain:business
   requires_context: false
 variables:
 - name: rfp_synopsis
@@ -82,7 +83,7 @@ messages:
     Review the provided RFP synopsis and generate the executive summary.
 
     <rfp_synopsis>
-    {{rfp_synopsis}}
+    {{ rfp_synopsis }}
     </rfp_synopsis>
 
     ## Output Format
@@ -112,9 +113,9 @@ testData:
   - name: Valid Header
     regex: ^## Executive Summary
   - name: Section - Understanding
-    regex: "### Understanding of Challenge"
+    regex: '### Understanding of Challenge'
   - name: Section - Solution
-    regex: "### Proposed Solution & Value"
+    regex: '### Proposed Solution & Value'
   - name: Addresses Key Challenges
     regex: (?i)(screen failure|biopsy|activation)
   - name: Quantified Proof Points
@@ -123,7 +124,7 @@ testData:
     regex: ^((?!As an AI).)*$
     flags: s
 - vars:
-    rfp_synopsis: ""
+    rfp_synopsis: ''
   expected: JSON error message.
   evaluators:
   - name: Refusal JSON

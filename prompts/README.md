@@ -84,3 +84,27 @@ We maintain a suite of tools in [`../tools/tools/scripts/`](../tools/tools/scrip
 3.  **Tag**: Add namespaced tags (`domain:`, `topic:`, `capability:`) in metadata where possible.
 4.  **Test**: Add at least one test case in the `testData` field.
 5.  **Verify**: Run `python3 tools/scripts/check_prompts.py` to ensure your prompt is valid.
+
+## System Taxonomy
+
+- domain: technical
+  - topic: software_engineering
+    - capability: analysis
+    - capability: generation
+  - topic: architecture
+    - capability: design
+  - topic: devops
+    - capability: orchestration
+- domain: clinical
+  - topic: safety
+    - capability: analysis
+    - capability: reporting
+  - topic: data_management
+    - capability: mapping
+- domain: business
+  - topic: finance
+    - capability: forecasting
+    - capability: analysis
+- domain: regulatory
+  - topic: quality
+    - capability: auditing

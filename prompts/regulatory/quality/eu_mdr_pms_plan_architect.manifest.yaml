@@ -1,0 +1,8 @@
+---
+name: EU MDR Post-Market Surveillance Plan Architect
+description: Design comprehensive, regulatory-compliant Post-Market Surveillance (PMS)
+  Plans under EU MDR 2017/745.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: eu_mdr_pms_plan_architect.prompt.yaml

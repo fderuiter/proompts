@@ -1,0 +1,11 @@
+---
+name: carceral_state_expansion_modeler
+description: 'Systematically models the systemic, demographic, and structural impacts
+  of the carceral state and mass incarceration on social stratification, utilizing
+  American Sociological Association (ASA) standards and rigorous inequality indices.
+
+  '
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: carceral_state_expansion_modeler.prompt.yaml

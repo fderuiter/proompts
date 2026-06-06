@@ -1,0 +1,8 @@
+---
+name: Competitive-Bid Pricing & Margin Optimizer
+description: Compare competitor bids and internal costs to recommend a winning price
+  with target margin.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: 02_competitive_bid_pricing.prompt.yaml

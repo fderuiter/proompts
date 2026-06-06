@@ -1,0 +1,7 @@
+---
+name: Density Refiner
+description: Craft a concise yet information-rich summary of provided text.
+domain: communication
+topic: ''
+capability: ''
+prompt_ref: density_refiner.prompt.yaml

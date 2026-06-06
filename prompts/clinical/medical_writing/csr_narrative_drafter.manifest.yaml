@@ -1,0 +1,8 @@
+---
+name: Clinical Study Report (CSR) Narrative Drafter
+description: Automate the drafting of patient narratives for Clinical Study Reports
+  (CSRs) by transforming clinical data into clear summaries with citations.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: csr_narrative_drafter.prompt.yaml

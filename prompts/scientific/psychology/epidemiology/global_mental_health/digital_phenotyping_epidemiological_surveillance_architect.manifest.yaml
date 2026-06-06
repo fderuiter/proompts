@@ -1,0 +1,10 @@
+---
+name: digital_phenotyping_epidemiological_surveillance_architect
+description: 'Designs massive-scale population psychiatric syndromic surveillance
+  using big data digital phenotyping proxies.
+
+  '
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: digital_phenotyping_epidemiological_surveillance_architect.prompt.yaml

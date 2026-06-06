@@ -1,0 +1,8 @@
+---
+name: Clinical Chemistry Device Classification
+description: Identify classification and regulatory requirements (general/special
+  controls) for a clinical chemistry device.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: clinical_chemistry_device_classification.prompt.yaml

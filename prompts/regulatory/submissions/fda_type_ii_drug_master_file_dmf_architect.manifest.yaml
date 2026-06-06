@@ -1,0 +1,9 @@
+---
+name: FDA Type II Drug Master File (DMF) Architect
+description: Formulates rigorous, compliant FDA Type II Drug Master File (DMF) submissions
+  for Drug Substances (APIs), ensuring strict adherence to FDA guidelines and ICH
+  M4Q eCTD Module 3 formatting.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: fda_type_ii_drug_master_file_dmf_architect.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Citizen Petition Preparation
+description: Draft a Citizen Petition requesting administrative action by the Commissioner.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: citizen_petition_preparation.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Retrieval-Augmented Answer Composer
+description: Provide concise, grounded answers using only supplied knowledge-base
+  files, with strict security boundaries.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: rag_composer.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Discrepancy Detection & Query Log Generator
+description: Examine a CSV dataset to detect discrepancies and generate a query log.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 01_discrepancy_detection_query_log.prompt.yaml

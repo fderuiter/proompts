@@ -1,0 +1,8 @@
+---
+name: Secure Supply Chain Attestation Architect
+description: Designs highly rigorous, cryptographically verifiable software supply
+  chain architectures to ensure end-to-end integrity and prevent dependency tampering.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: secure_supply_chain_attestation_architect.prompt.yaml

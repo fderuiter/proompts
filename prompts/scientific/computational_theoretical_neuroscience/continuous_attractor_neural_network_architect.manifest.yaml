@@ -1,0 +1,8 @@
+---
+name: continuous_attractor_neural_network_architect
+description: Designs highly rigorous, computationally sound continuous attractor neural
+  network (CANN) models for spatial navigation, memory, and cognitive representations.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: continuous_attractor_neural_network_architect.prompt.yaml

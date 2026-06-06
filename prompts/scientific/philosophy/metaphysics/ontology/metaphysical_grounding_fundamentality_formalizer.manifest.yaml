@@ -1,0 +1,9 @@
+---
+name: metaphysical_grounding_fundamentality_formalizer
+description: A highly rigorous prompt designed to systematically formalize and evaluate
+  relationships of metaphysical grounding, ontological dependence, and fundamentality
+  between entities or facts.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: metaphysical_grounding_fundamentality_formalizer.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Confidential Computing Enclave Architect
+description: Architects highly secure Trusted Execution Environments (TEEs) and confidential
+  computing solutions using secure enclaves, memory encryption, and remote attestation.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: confidential_computing_enclave_architect.prompt.yaml

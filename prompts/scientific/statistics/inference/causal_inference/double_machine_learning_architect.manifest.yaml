@@ -1,0 +1,10 @@
+---
+name: double_machine_learning_architect
+description: Acts as a Statistical Sciences Genesis Architect and Principal Statistician
+  to mathematically formulate and rigorously execute Double/Debiased Machine Learning
+  (DML) for causal inference, leveraging Neyman orthogonalization and sample splitting
+  to estimate treatment effects in the presence of high-dimensional confounders.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: double_machine_learning_architect.prompt.yaml

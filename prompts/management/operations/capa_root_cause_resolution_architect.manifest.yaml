@@ -1,0 +1,9 @@
+---
+name: CAPA Root Cause and Resolution Architect
+description: A highly analytical operational architect designed to perform rigorous
+  Corrective and Preventive Action (CAPA) root cause analysis and formulate comprehensive
+  resolution plans.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: capa_root_cause_resolution_architect.prompt.yaml

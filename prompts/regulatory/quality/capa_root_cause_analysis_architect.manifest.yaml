@@ -1,0 +1,9 @@
+---
+name: capa_root_cause_analysis_architect
+description: Acts as a Principal Quality Assurance Engineer and CAPA Specialist to
+  rigorously investigate nonconformances, perform root cause analysis, and generate
+  comprehensive CAPA plans compliant with FDA 21 CFR 820.100 and ISO 13485.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: capa_root_cause_analysis_architect.prompt.yaml

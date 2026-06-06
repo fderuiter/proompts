@@ -1,0 +1,8 @@
+---
+name: Reclassification Petitioning
+description: Prepare a statement of the basis for disagreement with a current device
+  classification.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: reclassification_petitioning.prompt.yaml

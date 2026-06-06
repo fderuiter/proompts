@@ -1,7 +1,7 @@
+---
 name: Patient Recruitment and Diversity Acceleration Plan
 version: 0.1.0
-description: "Boost enrollment and improve demographic diversity in a stalled Phase\_\
-  III study."
+description: Boost enrollment and improve demographic diversity in a stalled Phase III study.
 metadata:
   domain: clinical
   complexity: medium
@@ -11,6 +11,7 @@ metadata:
   - recruitment
   - diversity
   - acceleration
+  - domain:clinical
   requires_context: false
 variables: []
 model: gpt-4o
@@ -18,20 +19,22 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: "You are a patient\u2011engagement strategist. Enrollment has stalled at\
-    \ 45\_% of target in a Phase\_III rare\u2011disease study spanning 22 countries\
-    \ and 70 sites. The sponsor seeks recovery. The goal is to increase monthly randomizations\
-    \ by \u2265\_35\_% while aligning diversity with FDA\_2024 guidance. Maintain\
-    \ the current protocol and keep budget increases \u2264\_8\_%.\n\nAsk clarifying\
-    \ questions first if any information is missing."
+  content: |-
+    You are a patient‑engagement strategist. Enrollment has stalled at 45 % of target in a Phase III rare‑disease study spanning 22 countries and 70 sites. The sponsor seeks recovery. The goal is to increase monthly randomizations by ≥ 35 % while aligning diversity with FDA 2024 guidance. Maintain the current protocol and keep budget increases ≤ 8 %.
+
+    Ask clarifying questions first if any information is missing.
 - role: user
-  content: "1. Provide a data\u2011driven root\u2011cause analysis framework covering\
-    \ site performance, startup, outreach and eligibility.\n2. Propose country\u2011\
-    by\u2011country recruitment tactics such as community partnerships and telehealth\
-    \ pre\u2011screening.\n3. Estimate budget impact (\xB1\_15\_%) and ROI projection.\n\
-    4. Outline a metrics dashboard with leading and lagging indicators.\n\nInputs:\n\
-    - None\n\nOutput Format:\nConcise report (\u2264\_1\_000\_words) plus a one\u2011\
-    slide KPI dashboard sketch in text form."
+  content: |-
+    1. Provide a data‑driven root‑cause analysis framework covering site performance, startup, outreach and eligibility.
+    2. Propose country‑by‑country recruitment tactics such as community partnerships and telehealth pre‑screening.
+    3. Estimate budget impact (± 15 %) and ROI projection.
+    4. Outline a metrics dashboard with leading and lagging indicators.
+
+    Inputs:
+    - None
+
+    Output Format:
+    Concise report (≤ 1 000 words) plus a one‑slide KPI dashboard sketch in text form.
 testData:
 - expected: 'metrics dashboard
 

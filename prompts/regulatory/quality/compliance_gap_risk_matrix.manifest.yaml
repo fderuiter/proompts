@@ -1,0 +1,8 @@
+---
+name: Compliance Gap & Risk Matrix
+description: Quantify compliance gaps and associated risks against a selected standard
+  or law.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: compliance_gap_risk_matrix.prompt.yaml

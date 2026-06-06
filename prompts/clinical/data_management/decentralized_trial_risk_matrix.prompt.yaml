@@ -1,3 +1,4 @@
+---
 name: Decentralized Trial Risk Matrix
 version: 0.1.0
 description: Build a risk matrix for decentralized trials.
@@ -10,6 +11,9 @@ metadata:
   - trial
   - risk
   - matrix
+  - domain:clinical
+  - topic:data_management
+  - capability:mapping
   requires_context: false
 variables:
 - name: input
@@ -20,13 +24,11 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a risk analyst evaluating decentralized clinical trials through
-
+  content: |
+    You are a risk analyst evaluating decentralized clinical trials through
     structured risk matrices.
-
-    '
 - role: user
-  content: '{{input}}'
+  content: '{{ input }}'
 testData:
 - expected: Includes mitigation strategies and risk levels.
   vars: List potential risks for remote patient monitoring.

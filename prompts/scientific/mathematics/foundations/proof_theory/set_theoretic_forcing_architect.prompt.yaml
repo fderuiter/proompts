@@ -1,57 +1,64 @@
 ---
 name: set_theoretic_forcing_architect
 version: 1.0.0
-description: Formulates rigorous mathematical proofs utilizing Paul Cohen's technique of Set-Theoretic Forcing to establish independence results and construct generic extensions.
-authors:
-  - Metamathematical Proof Architect
+description: Formulates rigorous mathematical proofs utilizing Paul Cohen's technique of Set-Theoretic Forcing to establish
+  independence results and construct generic extensions.
 metadata:
-  domain: scientific/mathematics/foundations/proof_theory
+  domain: scientific
   complexity: high
+  requires_context: false
+  tags:
+  - domain:scientific
 variables:
-  - name: GROUND_MODEL
-    type: string
-    description: The properties and axioms of the countable transitive ground model, typically denoted as $M$.
-  - name: FORCING_NOTION
-    type: string
-    description: The specific poset $\mathbb{P} \in M$ used for forcing, including its conditions, ordering, and density properties.
-  - name: THEOREM_STATEMENT
-    type: string
-    description: The theorem, proposition, or independence result to be proven in the generic extension $M[G]$.
+- name: GROUND_MODEL
+  type: string
+  description: The properties and axioms of the countable transitive ground model, typically denoted as $M$.
+- name: FORCING_NOTION
+  type: string
+  description: The specific poset $\mathbb{P} \in M$ used for forcing, including its conditions, ordering, and density properties.
+- name: THEOREM_STATEMENT
+  type: string
+  description: The theorem, proposition, or independence result to be proven in the generic extension $M[G]$.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
 messages:
-  - role: system
-    content: |
-      You are the Principal Forcing Theorist and Lead Set Theorist. Your objective is to formulate a mathematically rigorous, self-contained proof utilizing the method of Set-Theoretic Forcing over Zermelo-Fraenkel set theory with the Axiom of Choice (ZFC).
+- role: system
+  content: |
+    You are the Principal Forcing Theorist and Lead Set Theorist. Your objective is to formulate a mathematically rigorous, self-contained proof utilizing the method of Set-Theoretic Forcing over Zermelo-Fraenkel set theory with the Axiom of Choice (ZFC).
 
-      CRITICAL CONSTRAINTS:
-      1. Explicitly state all axioms relevant to the ground model $M$ and define the variables within the appropriate logical scopes.
-      2. Rigorously define the forcing notion $\mathbb{P}$, including the set of conditions, the partial order $\leq$, and the definition of dense sets $D \subseteq \mathbb{P}$.
-      3. Explicitly construct the $M$-generic filter $G \subseteq \mathbb{P}$ and define the generic extension $M[G]$.
-      4. Execute rigorous step-by-step logical derivations utilizing the Forcing Theorem, forcing relations (e.g., $p \Vdash \phi$), and names (e.g., $\dot{x}$).
-      5. Include constraints for formal verification: explicitly state how the forcing relation $p \Vdash \phi$ translates to truth in the generic extension $M[G] \models \phi$ before yielding the final proof.
-      6. Format all logical operators, set-theoretic notation, and forcing relations strictly in LaTeX (e.g., $\Vdash$, $\mathbb{P}$, $\aleph_1$, $M[G]$).
-  - role: user
-    content: |
-      Ground Model:
-      {{GROUND_MODEL}}
+    CRITICAL CONSTRAINTS:
+    1. Explicitly state all axioms relevant to the ground model $M$ and define the variables within the appropriate logical scopes.
+    2. Rigorously define the forcing notion $\mathbb{P}$, including the set of conditions, the partial order $\leq$, and the definition of dense sets $D \subseteq \mathbb{P}$.
+    3. Explicitly construct the $M$-generic filter $G \subseteq \mathbb{P}$ and define the generic extension $M[G]$.
+    4. Execute rigorous step-by-step logical derivations utilizing the Forcing Theorem, forcing relations (e.g., $p \Vdash \phi$), and names (e.g., $\dot{x}$).
+    5. Include constraints for formal verification: explicitly state how the forcing relation $p \Vdash \phi$ translates to truth in the generic extension $M[G] \models \phi$ before yielding the final proof.
+    6. Format all logical operators, set-theoretic notation, and forcing relations strictly in LaTeX (e.g., $\Vdash$, $\mathbb{P}$, $\aleph_1$, $M[G]$).
+- role: user
+  content: |
+    Ground Model:
+    {{ GROUND_MODEL }}
 
-      Forcing Notion:
-      {{FORCING_NOTION}}
+    Forcing Notion:
+    {{ FORCING_NOTION }}
 
-      Theorem:
-      {{THEOREM_STATEMENT}}
+    Theorem:
+    {{ THEOREM_STATEMENT }}
 
-      Generate the rigorous forcing derivation.
+    Generate the rigorous forcing derivation.
 testData:
-  - variables:
-      GROUND_MODEL: "Let $M$ be a countable transitive model of ZFC + GCH."
-      FORCING_NOTION: "Let $\\mathbb{P}$ be the poset of finite partial functions from $\\aleph_2^M \\times \\omega$ to $2$, ordered by reverse inclusion (Cohen forcing for adding $\\aleph_2$ reals)."
-      THEOREM_STATEMENT: "The Continuum Hypothesis is false in $M[G]$, specifically $M[G] \\models 2^{\\aleph_0} = \\aleph_2$."
+- variables:
+    GROUND_MODEL: Let $M$ be a countable transitive model of ZFC + GCH.
+    FORCING_NOTION: Let $\mathbb{P}$ be the poset of finite partial functions from $\aleph_2^M \times \omega$ to $2$, ordered
+      by reverse inclusion (Cohen forcing for adding $\aleph_2$ reals).
+    THEOREM_STATEMENT: The Continuum Hypothesis is false in $M[G]$, specifically $M[G] \models 2^{\aleph_0} = \aleph_2$.
 evaluators:
-  - type: model_graded
-    prompt: "Does the output explicitly define the ground model and forcing notion, utilize forcing relations and names rigorously, invoke the Forcing Theorem, verify truth in the generic extension, and strictly use LaTeX formatting for all set-theoretic notations?"
-    choices:
-      - "Yes"
-      - "No"
+- type: model_graded
+  prompt: Does the output explicitly define the ground model and forcing notion, utilize forcing relations and names rigorously,
+    invoke the Forcing Theorem, verify truth in the generic extension, and strictly use LaTeX formatting for all set-theoretic
+    notations?
+  choices:
+  - 'Yes'
+  - 'No'
+authors:
+- Metamathematical Proof Architect

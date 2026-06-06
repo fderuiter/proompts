@@ -1,0 +1,8 @@
+---
+name: Project Charter and Scope Definition
+description: Create a complete project charter summarizing background, objectives,
+  scope, deliverables, and key risks.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: 01_project_charter_scope.prompt.yaml

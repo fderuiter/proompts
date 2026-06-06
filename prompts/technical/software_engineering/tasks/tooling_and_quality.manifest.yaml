@@ -1,0 +1,8 @@
+---
+name: Tooling & Quality Gates (DevEx Architect)
+description: A Distinguished Developer Experience Engineer's guide to enforcing code
+  quality, strict typing, and "fail-fast" CI/CD pipelines.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: tooling_and_quality.prompt.yaml

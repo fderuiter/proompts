@@ -1,0 +1,10 @@
+---
+name: spatio_temporal_geostatistical_spde_inla_architect
+description: Acts as a Statistical Sciences Genesis Architect to formulate rigorous
+  Spatio-Temporal Geostatistical Models using Gaussian Processes and Stochastic Partial
+  Differential Equations (SPDEs) approximated via Integrated Nested Laplace Approximations
+  (INLA).
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: spatio_temporal_geostatistical_spde_inla_architect.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive
+description: Clarify criteria, endpoints, and sample-size considerations for a medical
+  device trial.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: inclusion_exclusion_endpoints_sample_size.prompt.yaml

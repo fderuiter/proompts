@@ -1,0 +1,7 @@
+---
+name: Clinical Monitoring Plan Development
+description: Draft a risk-based Clinical Monitoring Plan.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: clinical_monitoring_plan.prompt.yaml

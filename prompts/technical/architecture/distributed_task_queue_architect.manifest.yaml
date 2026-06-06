@@ -1,0 +1,8 @@
+---
+name: Distributed Task Queue and Background Job Processing Architect
+description: Designs highly reliable, distributed task queue and background job processing
+  architectures for handling massive asynchronous workloads.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: distributed_task_queue_architect.prompt.yaml

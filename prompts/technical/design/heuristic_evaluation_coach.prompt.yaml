@@ -9,6 +9,7 @@ metadata:
   - design
   - heuristic-evaluation
   - coach
+  - domain:technical
   requires_context: true
 variables:
 - name: APP_NAME
@@ -19,25 +20,20 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a Lead UX Researcher and Heuristic Evaluation Coach. The Nielsen usability heuristics help uncover common design issues quickly.
-
+  content: |-
+    You are a Lead UX Researcher and Heuristic Evaluation Coach. The Nielsen usability heuristics help uncover common design issues quickly.
 
     1. Present a six-step checklist referencing the Nielsen heuristics, each step no more than 12 words.
-
     2. Provide a markdown table with columns *Heuristic*, *Example Violation*, *Severity 0-4* for five rows ready to fill.
-
     3. Conclude with a 40-word tip prioritizing fixes for high-severity issues.
-
     4. Limit the entire output to 120 words.
-
 
     Focus on clarity; do not exceed the word limit.
 
-
-    References: The Interaction Design Foundation, Behance'
+    References: The Interaction Design Foundation, Behance
 - role: user
   content: |-
-    <app_name>{{APP_NAME}}</app_name>
+    <app_name>{{ APP_NAME }}</app_name>
     — name of the app being critiqued.
 
 
@@ -52,4 +48,4 @@ testData:
 evaluators:
 - name: Has Markdown Table
   type: regex
-  pattern: "\\| Heuristic \\|"
+  pattern: \| Heuristic \|

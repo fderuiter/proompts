@@ -1,0 +1,9 @@
+---
+name: Distributed Data Skew Mitigation Architect
+description: Architects advanced resolution strategies for distributed data skew,
+  hot partitions, and uneven shard utilization in high-throughput databases and message
+  brokers.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: distributed_data_skew_mitigation_architect.prompt.yaml

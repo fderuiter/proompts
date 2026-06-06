@@ -1,0 +1,7 @@
+---
+name: Earnings Call Script Prep
+description: Prepare for tough analyst questions on an earnings call.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: earnings_call_script_prep.prompt.yaml

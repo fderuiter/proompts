@@ -1,0 +1,8 @@
+---
+name: PAW Phase 1 - Tactical Recon
+description: Phase 1 of the Principal Architect Workflow (PAW). Analyzes TODO.md and
+  file structure to generate a Tactical Brief.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: paw_01_tactical_recon.prompt.yaml

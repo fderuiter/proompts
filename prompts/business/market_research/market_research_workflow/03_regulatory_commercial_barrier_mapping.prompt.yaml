@@ -1,6 +1,7 @@
+---
 name: Regulatory & Commercial Barrier Mapping
 version: 0.1.0
-description: Assess hurdles for launching `<device>{{device}}</device>` in major markets.
+description: Assess hurdles for launching `<device>{{ device }}</device>` in major markets.
 metadata:
   domain: business
   complexity: medium
@@ -10,6 +11,7 @@ metadata:
   - commercial
   - barrier
   - mapping
+  - domain:business
   requires_context: false
 variables:
 - name: device
@@ -23,45 +25,34 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are an expert in global medical device regulation.
-
+  content: |-
+    You are an expert in global medical device regulation.
 
     1. Compare approval pathways for the top three markets.
-
     2. Summarize typical timelines, costs and risks.
-
     3. Outline commercial entry barriers such as reimbursement or distributor dynamics.
-
     4. Recommend mitigation strategies for each hurdle.
 
-
-    Keep guidance concise and actionable.'
+    Keep guidance concise and actionable.
 - role: user
-  content: "- `<device>{{device}}</device>` \u2013 device to analyze\n- `<markets>{{markets}}</markets>`\
-    \ \u2013 markets of interest\n\nOutput format: Comparative table followed by five\
-    \ prioritized strategic actions."
+  content: |-
+    - `<device>{{ device }}</device>` – device to analyze
+    - `<markets>{{ markets }}</markets>` – markets of interest
+
+    Output format: Comparative table followed by five prioritized strategic actions.
 testData:
-- expected: 'Comparative table of FDA 510(k)/De Novo, EU MDR, and PMDA pathways, followed
-    by 5 prioritized actions.
-
-
-    comparative table
+- expected: |-
+    Comparative table of FDA 510(k)/De Novo, EU MDR, and PMDA pathways, followed by 5 prioritized actions.
 
     comparative table
-
+    comparative table
     | Column 1 | Column 2 |
-
     |---|---|
-
     1. Action
-
     2. Action
-
     3. Action
-
     4. Action
-
-    5. Action'
+    5. Action
   vars:
     device: Continuous Glucose Monitor (CGM)
     markets: United States, European Union (CE Mark), Japan
@@ -82,13 +73,7 @@ evaluators:
     pattern: (?m)^(1\.|2\.|3\.|4\.|5\.) .+
 - name: Verify analysis completeness and safety
   model:
-    prompt: 'Evaluate the following output. Return ''pass'' if it successfully provides
-      a comparative table of regulatory pathways and timelines, identifies commercial
-      barriers, and gives exactly 5 mitigation strategies OR if it appropriately rejects
-      an empty or malicious input. Otherwise, return ''fail''.
-
+    prompt: |
+      Evaluate the following output. Return 'pass' if it successfully provides a comparative table of regulatory pathways and timelines, identifies commercial barriers, and gives exactly 5 mitigation strategies OR if it appropriately rejects an empty or malicious input. Otherwise, return 'fail'.
       Output:
-
-      {{output}}
-
-      '
+      {{ output }}

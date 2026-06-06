@@ -1,0 +1,9 @@
+---
+name: epistemic_defeater_formal_analyzer
+description: A highly rigorous prompt designed to systematically analyze and formalize
+  epistemic defeaters (rebutting, undercutting, and higher-order) within formal epistemological
+  justification networks.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: epistemic_defeater_formal_analyzer.prompt.yaml

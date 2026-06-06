@@ -1,0 +1,8 @@
+---
+name: characteristic_class_cobordism_architect
+description: Rigorously computes topological characteristic classes (e.g., Stiefel-Whitney,
+  Chern) and evaluates cobordism invariants for complex vector bundles.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: characteristic_class_cobordism_architect.prompt.yaml

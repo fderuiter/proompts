@@ -1,0 +1,9 @@
+---
+name: causal_inference_dag_architect
+description: Acts as a Principal Causal Inference Methodologist to design rigorous
+  counterfactual frameworks and Directed Acyclic Graphs (DAGs) for observational data
+  analysis.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: causal_inference_dag_architect.prompt.yaml

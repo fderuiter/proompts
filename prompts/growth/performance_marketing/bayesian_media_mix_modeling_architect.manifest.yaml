@@ -1,0 +1,9 @@
+---
+name: bayesian_media_mix_modeling_architect
+description: Formulates advanced Bayesian Media Mix Modeling (MMM) frameworks to estimate
+  incremental ROAS, optimize multi-channel budget allocation, and model ad stock and
+  diminishing returns.
+domain: growth
+topic: ''
+capability: ''
+prompt_ref: bayesian_media_mix_modeling_architect.prompt.yaml

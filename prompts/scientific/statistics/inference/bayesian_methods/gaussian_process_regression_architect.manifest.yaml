@@ -1,0 +1,9 @@
+---
+name: gaussian_process_regression_architect
+description: Acts as a Principal Statistician to design highly robust, mathematically
+  rigorous Gaussian Process Regression (GPR) methodologies for non-parametric Bayesian
+  inference over continuous function spaces.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: gaussian_process_regression_architect.prompt.yaml

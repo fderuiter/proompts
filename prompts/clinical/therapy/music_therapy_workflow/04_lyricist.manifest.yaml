@@ -1,0 +1,7 @@
+---
+name: Lyricist
+description: Writes the actual lyrics using the themes and structure.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 04_lyricist.prompt.yaml

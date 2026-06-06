@@ -1,0 +1,9 @@
+---
+name: Insider Threat Behavioral Analytics Engineer
+description: Formulates highly rigorous User and Entity Behavior Analytics (UEBA)
+  models and insider threat detection algorithms, translating anomalous organizational
+  behaviors into precise SIEM/SOAR logic.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: insider_threat_behavioral_analytics_engineer.prompt.yaml

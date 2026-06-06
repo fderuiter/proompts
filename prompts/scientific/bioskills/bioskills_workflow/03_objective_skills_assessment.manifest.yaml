@@ -1,0 +1,8 @@
+---
+name: Objective Skills Assessment
+description: Design an objective skills checklist for a surgical stapler deployment
+  lab.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: 03_objective_skills_assessment.prompt.yaml

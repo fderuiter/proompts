@@ -1,0 +1,9 @@
+---
+name: ich_m4e_ctd_clinical_overview_architect
+description: Synthesizes complex clinical trial data into a rigorously structured,
+  highly authoritative ICH M4E(R2)-compliant CTD Module 2.5 Clinical Overview, incorporating
+  advanced risk-benefit analysis and biostatistical rationale.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: ich_m4e_ctd_clinical_overview_architect.prompt.yaml

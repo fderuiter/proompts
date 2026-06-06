@@ -1,0 +1,9 @@
+---
+name: Quantum Chemical Transition State Architect
+description: Generates automated quantum mechanical transition state analyses and
+  complex kinetic rate equations using rigorous chemical thermodynamics and structural
+  guidelines.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: quantum_chemical_transition_state_architect.prompt.yaml

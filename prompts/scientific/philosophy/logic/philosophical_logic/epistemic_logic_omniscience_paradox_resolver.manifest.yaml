@@ -1,0 +1,8 @@
+---
+name: epistemic_logic_omniscience_paradox_resolver
+description: A highly rigorous prompt designed to systematically resolve the logical
+  omniscience paradox in epistemic logic models for resource-bounded agents.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: epistemic_logic_omniscience_paradox_resolver.prompt.yaml

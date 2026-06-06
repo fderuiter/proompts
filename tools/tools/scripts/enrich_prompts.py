@@ -62,126 +62,85 @@ PROMPTS_DIR = ROOT / "prompts"
 # 1.  Domain & tag inference from directory path
 # ────────────────────────────────────────────────────────────────────────────
 
-DOMAIN_MAP: dict[str, str] = {
-    "business":      "business",
-    "clinical":      "clinical",
-    "communication": "communication",
-    "management":    "management",
-    "meta":          "meta",
-    "regulatory":    "regulatory",
-    "scientific":    "scientific",
-    "technical":     "technical",
-}
-
-# Human-friendly labels for sub-directories used as tags
-TAG_LABELS: dict[str, str] = {
-    "cfo":                    "finance",
-    "cx":                     "customer-experience",
-    "hr_finance":             "hr-finance",
-    "market_research":        "market-research",
-    "vp_tech_innovation":     "tech-innovation",
-    "data_management":        "data-management",
-    "data":                   "data",
-    "eclinical_integration":  "eclinical-integration",
-    "epro":                   "epro",
-    "imaging":                "medical-imaging",
-    "medical_writing":        "medical-writing",
-    "monitoring":             "monitoring",
-    "protocol":               "protocol-design",
-    "rtsm":                   "rtsm",
-    "safety":                 "safety",
-    "site_acquisition":       "site-acquisition",
-    "trial_execution":        "trial-execution",
-    "adjudication":           "adjudication",
-    "cra":                    "cra",
-    "forms":                  "forms",
-    "clinical_research_manager": "clinical-research-management",
-    "executive":              "executive",
-    "innovation":             "innovation",
-    "leadership":             "leadership",
-    "medical_director":       "medical-director",
-    "operations":             "operations",
-    "personal_effectiveness": "personal-effectiveness",
-    "project_management":     "project-management",
-    "study_director":         "study-director",
-    "training":               "training",
-    "vp_statistics":          "statistics",
-    "adherence":              "regulatory-adherence",
-    "administrative":         "regulatory-admin",
-    "compliance":             "compliance",
-    "device_specifics":       "medical-devices",
-    "food_safety":            "food-safety",
-    "quality":                "quality",
-    "strategy":               "regulatory-strategy",
-    "submissions":            "submissions",
-    "biosafety":              "biosafety",
-    "bioskills":              "bioskills",
-    "biostatistics":          "biostatistics",
-    "chemical_characterization": "chemical-characterization",
-    "coa":                    "clinical-outcome-assessment",
-    "microbiology":           "microbiology",
-    "pathology":              "pathology",
-    "sterility":              "sterility",
-    "architecture":           "architecture",
-    "design":                 "design",
-    "devops":                 "devops",
-    "documentation":          "documentation",
-    "languages":              "programming-languages",
-    "repository_refactoring": "repository-refactoring",
-    "security":               "security",
-    "software_engineering":   "software-engineering",
-    "technical_writing":      "technical-writing",
-    "testing":                "testing",
-    "development":            "business-development",
-    "payment":                "payment",
-    "selenium_automation":    "selenium",
-    "lifecycle":              "sdlc",
-    "tasks":                  "engineering-tasks",
-    "python":                 "python",
-    "rust":                   "rust",
-    "typescript":             "typescript",
-}
-
-
 def _path_parts(file_path: Path) -> list[str]:
     """Return path parts relative to prompts dir."""
     try:
         rel = file_path.resolve().relative_to(PROMPTS_DIR.resolve())
     except ValueError:
         return []
-    return list(rel.parts[:-1])  # exclude filename
+    return list(rel.parts[:-1])
 
+def parse_taxonomy(readme_path: Path) -> dict:
+    import re
+    taxonomy = {}
+    current_domain = None
+    current_topic = None
 
-def infer_domain(parts: list[str]) -> str:
-    if parts:
-        return DOMAIN_MAP.get(parts[0], parts[0])
-    return "general"
+    if not readme_path.exists():
+        return taxonomy
 
+    lines = readme_path.read_text().splitlines()
+    for line in lines:
+        match = re.match(r'^(\s*)-\s*(?:\*\*)?(domain|topic|capability)(?:\*\*)?:\s*([a-zA-Z0-9_-]+)', line, re.IGNORECASE)
+        if match:
+            level_type = match.group(2).lower()
+            val = match.group(3)
 
-def infer_tags(parts: list[str], name: str) -> list[str]:
-    """Produce a short list of tags from path parts and prompt name."""
-    tags: list[str] = []
-    for p in parts[1:]:  # skip the domain itself
-        label = TAG_LABELS.get(p, p.replace("_", "-"))
-        if label not in tags:
-            tags.append(label)
-    # Split prompt name into individual words for tags
-    # Handle CamelCase, hyphens, underscores, and special chars
-    cleaned = re.sub(r'[^a-zA-Z0-9\s-]', ' ', name)
-    # Split CamelCase
-    cleaned = re.sub(r'([a-z])([A-Z])', r'\1 \2', cleaned)
-    name_words = cleaned.lower().split()
-    stop = {"a", "an", "the", "of", "for", "and", "to", "in", "is", "with",
-            "from", "by", "on", "my", "your", "i", "its", "it", "or", "as",
-            "be", "at", "im", "that", "this", "are", "eli5", "like", "up",
-            "how", "you", "me", "we", "so", "do", "can", "not", "no", "has",
-            "should", "would", "based", "s", "ii", "iii", "iv", "v"}
-    for w in name_words:
-        if len(w) > 2 and w not in stop and w not in tags:
-            tags.append(w)
-            if len(tags) >= 5:
+            if level_type == 'domain':
+                current_domain = val
+                current_topic = None
+                if current_domain not in taxonomy:
+                    taxonomy[current_domain] = {}
+            elif level_type == 'topic':
+                current_topic = val
+                if current_domain:
+                    if current_topic not in taxonomy[current_domain]:
+                        taxonomy[current_domain][current_topic] = []
+            elif level_type == 'capability':
+                if current_domain and current_topic:
+                    if val not in taxonomy[current_domain][current_topic]:
+                        taxonomy[current_domain][current_topic].append(val)
+    return taxonomy
+
+TAXONOMY = parse_taxonomy(PROMPTS_DIR / "README.md")
+
+def infer_taxonomy_metadata(parts: list[str], name: str, desc: str, taxonomy: dict):
+    domain = None
+    topic = None
+    capability = None
+    
+    if len(parts) > 0 and parts[0] in taxonomy:
+        domain = parts[0]
+        if len(parts) > 1 and parts[1] in taxonomy[domain]:
+            topic = parts[1]
+        
+    if not domain:
+        for d, topics in taxonomy.items():
+            if d in parts:
+                domain = d
                 break
-    return tags[:5]
+    
+    if domain and not topic:
+        topics = taxonomy[domain]
+        for t in topics:
+            if t in parts:
+                topic = t
+                break
+    
+    capabilities = []
+    if domain and topic and topic in taxonomy[domain]:
+        capabilities = taxonomy[domain][topic]
+    
+    name_desc = (name + " " + desc).lower()
+    for cap in capabilities:
+        if cap.lower() in name_desc:
+            capability = cap
+            break
+    
+    if not capability and capabilities:
+        capability = capabilities[0] if capabilities else None
+        
+    return domain, topic, capability
 
 
 # ────────────────────────────────────────────────────────────────────────────
@@ -419,26 +378,62 @@ def enrich_file(file_path: Path, dry_run: bool = False) -> bool:
         content["metadata"] = metadata
         modified = True
 
-    # Infer values if missing
-    if "domain" not in metadata:
-        metadata["domain"] = infer_domain(parts)
+    domain, topic, capability = infer_taxonomy_metadata(parts, prompt_name, prompt_desc, TAXONOMY)
+    
+    if not domain:
+        domain = parts[0] if parts else "general"
+
+    if metadata.get("domain") != domain:
+        metadata["domain"] = domain
         modified = True
+        
     if "complexity" not in metadata:
         metadata["complexity"] = infer_complexity(content)
         modified = True
-    if "tags" not in metadata:
-        metadata["tags"] = infer_tags(parts, prompt_name)
+        
+    tags = metadata.get("tags", [])
+    if not isinstance(tags, list):
+        tags = []
+        
+    new_tags = [t for t in tags if not t.startswith("domain:") and not t.startswith("topic:") and not t.startswith("capability:")]
+    
+    if domain:
+        new_tags.append(f"domain:{domain}")
+    if topic:
+        new_tags.append(f"topic:{topic}")
+    if capability:
+        new_tags.append(f"capability:{capability}")
+        
+    if set(tags) != set(new_tags) or len(tags) != len(new_tags):
+        metadata["tags"] = new_tags
         modified = True
+
     if "requires_context" not in metadata:
         metadata["requires_context"] = infer_requires_context(content)
         modified = True
 
+    # ── C. Generate Skill Manifest ──────────────────────────────────────
+    manifest_path = file_path.with_name(file_path.name.replace(".prompt.yaml", ".manifest.yaml"))
+    
+    manifest_data = {
+        "name": content.get("name", ""),
+        "description": content.get("description", ""),
+        "domain": metadata.get("domain", ""),
+        "topic": topic if topic else "",
+        "capability": capability if capability else "",
+        "prompt_ref": file_path.name
+    }
+    
+    if not dry_run:
+        manifest_yaml = yaml.dump(manifest_data, default_flow_style=False, sort_keys=False)
+        manifest_path.write_text("---\n" + manifest_yaml, encoding="utf-8")
+        
     if not modified:
-        print(f"  OK (already enriched): {file_path}")
+        print(f"  OK (already enriched, generated manifest): {file_path}")
         return False
 
     if dry_run:
-        print(f"  DRY-RUN would enrich: {file_path}")
+        print(f"  DRY-RUN would enrich and gen manifest: {file_path}")
         return True
 
     # ── Write back ──────────────────────────────────────────────────────
@@ -455,7 +450,7 @@ def enrich_file(file_path: Path, dry_run: bool = False) -> bool:
             ordered[k] = content[k]
     # Any remaining keys not in the predefined order
     for k, v in content.items():
-        if k not in ordered:
+        if k not in ordered and k != "tags":  # Delete root tags to clean up schema
             ordered[k] = v
 
     yaml_text = yaml.dump(
@@ -463,7 +458,7 @@ def enrich_file(file_path: Path, dry_run: bool = False) -> bool:
         default_flow_style=False,
         sort_keys=False,
         allow_unicode=True,
-        width=120,
+        width=float("inf"),
     )
     file_path.write_text("---\n" + yaml_text, encoding="utf-8")
     print(f"  ENRICHED: {file_path}")

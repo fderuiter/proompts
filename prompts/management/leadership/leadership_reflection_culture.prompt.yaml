@@ -9,6 +9,7 @@ metadata:
   - leadership
   - reflection
   - culture
+  - domain:management
   requires_context: false
 variables:
 - name: current_values
@@ -44,8 +45,8 @@ messages:
 - role: user
   content: |
     **Input Data:**
-    -   **Leadership Values:** <current_values>{{current_values}}</current_values>
-    -   **Team Context:** <team_context>{{team_context}}</team_context>
+    -   **Leadership Values:** <current_values>{{ current_values }}</current_values>
+    -   **Team Context:** <team_context>{{ team_context }}</team_context>
 
     **Output Format:**
     Provide a Markdown report with the following structure:

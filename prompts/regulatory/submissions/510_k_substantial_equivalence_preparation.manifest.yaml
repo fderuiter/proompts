@@ -1,0 +1,8 @@
+---
+name: 510(k) Substantial Equivalence Preparation
+description: Draft a substantial equivalence comparison and summary between a subject
+  device and predicate(s) to demonstrate safety and effectiveness.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: 510_k_substantial_equivalence_preparation.prompt.yaml

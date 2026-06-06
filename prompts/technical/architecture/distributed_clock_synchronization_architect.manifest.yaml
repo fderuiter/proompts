@@ -1,0 +1,9 @@
+---
+name: Distributed Clock Synchronization Architect
+description: Architects mathematically rigorous distributed clock synchronization
+  and logical time topologies to establish causality, resolve conflicts, and enforce
+  strict serializability in distributed systems.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: distributed_clock_synchronization_architect.prompt.yaml

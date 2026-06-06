@@ -1,0 +1,9 @@
+---
+name: Kubernetes Cluster Security Posture Architect
+description: Analyzes Kubernetes (K8s) cluster configurations, RBAC policies, and
+  manifest files to identify security misconfigurations and architect a hardened,
+  zero-trust container orchestration environment.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: kubernetes_cluster_security_posture_architect.prompt.yaml

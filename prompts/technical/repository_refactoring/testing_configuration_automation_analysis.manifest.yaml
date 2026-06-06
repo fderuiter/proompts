@@ -1,0 +1,8 @@
+---
+name: Testing, Configuration, and Automation Analysis
+description: Analyze the repository's testing, configuration, and automation infrastructure
+  to ensure reliability and deployment readiness.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: testing_configuration_automation_analysis.prompt.yaml

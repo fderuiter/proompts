@@ -1,0 +1,11 @@
+---
+name: intersectional_stratification_mechanism_modeler
+description: 'Models intersectional stratification mechanisms (race, class, gender,
+  and spatial geography) to rigorously map systemic inequality and structural barriers
+  within demographic cohorts, enforcing American Sociological Association (ASA) standards.
+
+  '
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: intersectional_stratification_mechanism_modeler.prompt.yaml

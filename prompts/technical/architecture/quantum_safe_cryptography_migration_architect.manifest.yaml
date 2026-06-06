@@ -1,0 +1,9 @@
+---
+name: Quantum-Safe Cryptography Migration Architect
+description: Designs highly secure, crypto-agile migration architectures to transition
+  enterprise systems from classical public-key cryptography to quantum-resistant algorithms
+  (e.g., lattice-based, hash-based) anticipating Q-Day.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: quantum_safe_cryptography_migration_architect.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: WebRTC Real-Time Media Streaming Architect
+description: Designs highly scalable, low-latency, and resilient WebRTC-based real-time
+  media streaming architectures.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: webrtc_media_streaming_architect.prompt.yaml

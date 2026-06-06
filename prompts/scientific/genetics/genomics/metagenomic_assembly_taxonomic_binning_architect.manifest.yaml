@@ -1,0 +1,8 @@
+---
+name: metagenomic_assembly_taxonomic_binning_architect
+description: Acts as a Principal Computational Biologist to architect scalable, high-resolution
+  metagenomic assembly and taxonomic binning pipelines for complex environmental microbiomes.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: metagenomic_assembly_taxonomic_binning_architect.prompt.yaml

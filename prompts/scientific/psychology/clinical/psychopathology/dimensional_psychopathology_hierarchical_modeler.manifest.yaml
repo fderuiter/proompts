@@ -1,0 +1,9 @@
+---
+name: dimensional_psychopathology_hierarchical_modeler
+description: Systematically maps complex clinical presentations onto dimensional psychopathology
+  frameworks (e.g., HiTOP), emphasizing the p-factor and hierarchical transdiagnostic
+  constructs.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: dimensional_psychopathology_hierarchical_modeler.prompt.yaml

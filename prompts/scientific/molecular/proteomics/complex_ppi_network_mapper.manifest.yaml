@@ -1,0 +1,9 @@
+---
+name: complex_ppi_network_mapper
+description: Acts as a Principal Computational Biologist to mathematically map, analyze,
+  and simulate complex protein-protein interaction (PPI) networks, modeling kinetic
+  binding affinities and network topologies.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: complex_ppi_network_mapper.prompt.yaml

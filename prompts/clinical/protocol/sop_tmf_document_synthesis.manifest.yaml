@@ -1,0 +1,8 @@
+---
+name: SOP and TMF Document Synthesis
+description: Provide a quick retrieval and synthesis of information from specific
+  internal SOPs and TMF documents to answer compliance or process queries.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: sop_tmf_document_synthesis.prompt.yaml

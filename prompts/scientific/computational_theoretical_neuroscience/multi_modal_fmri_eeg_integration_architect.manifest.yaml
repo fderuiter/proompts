@@ -1,0 +1,8 @@
+---
+name: multi_modal_fmri_eeg_integration_architect
+description: Designs advanced, mathematically rigorous multi-modal fMRI and EEG data
+  integration pipelines adhering strictly to BIDS standards.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: multi_modal_fmri_eeg_integration_architect.prompt.yaml

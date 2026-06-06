@@ -1,0 +1,7 @@
+---
+name: Regulatory and Validation Checklist
+description: Compile a compliance checklist for digital trial data integrations.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 03_regulatory_validation_checklist.prompt.yaml

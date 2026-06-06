@@ -1,0 +1,8 @@
+---
+name: IQ/OQ/PQ Validation
+description: Design and execute a series of IQ, OQ, and PQ validation tests for clinical
+  systems.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: iq_oq_pq_validation.prompt.yaml

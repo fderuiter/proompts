@@ -1,0 +1,8 @@
+---
+name: RA/QA Integrated Quality System Audit
+description: Prepare for a combined FDA QSR and EU MDR/IVDR audit by identifying quality-management
+  gaps and recommending improvements.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: raqa_integrated_quality_system_audit.prompt.yaml

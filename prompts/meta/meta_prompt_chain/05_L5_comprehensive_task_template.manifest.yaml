@@ -1,0 +1,8 @@
+---
+name: Comprehensive Task Template
+description: Provide a reusable prompt that guides an AI through planning, execution
+  and self-checking for any complex task.
+domain: meta
+topic: ''
+capability: ''
+prompt_ref: 05_L5_comprehensive_task_template.prompt.yaml

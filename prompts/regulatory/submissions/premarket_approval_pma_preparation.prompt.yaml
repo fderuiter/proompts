@@ -1,7 +1,7 @@
+---
 name: Premarket Approval (PMA) Preparation
 version: 0.1.0
-description: Draft a detailed summary of a PMA application, including clinical investigation
-  results and manufacturing history.
+description: Draft a detailed summary of a PMA application, including clinical investigation results and manufacturing history.
 metadata:
   domain: regulatory
   complexity: low
@@ -11,6 +11,7 @@ metadata:
   - approval
   - pma
   - preparation
+  - domain:regulatory
   requires_context: false
 variables:
 - name: input
@@ -21,37 +22,27 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
-    FDA and ISO compliance tasks.
-
+  content: |-
+    You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
     ## Context
-
     21 CFR Part 814
 
-
     ## Objective
-
-    Draft a detailed summary of a PMA application, including clinical investigation
-    results and manufacturing history.
-
+    Draft a detailed summary of a PMA application, including clinical investigation results and manufacturing history.
 
     ## Output Format
-
-    Formal structured summary as per 21 CFR 814.20(b)(3).'
+    Formal structured summary as per 21 CFR 814.20(b)(3).
 - role: user
-  content: 'Please perform the task using the following input data:
-
+  content: |-
+    Please perform the task using the following input data:
 
     <input>
-
-    {{input}}
-
-    </input>'
+    {{ input }}
+    </input>
 testData:
 - expected: Expected output as per instructions.
-  vars: Clinical results, nonclinical lab data, device characteristics, and marketing
-    history. (Example data)
+  vars: Clinical results, nonclinical lab data, device characteristics, and marketing history. (Example data)
 evaluators:
 - name: Validation Check
   regex: (?i)Review

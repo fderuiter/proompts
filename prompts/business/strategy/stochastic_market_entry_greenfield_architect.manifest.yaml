@@ -1,0 +1,10 @@
+---
+name: stochastic_market_entry_greenfield_architect
+description: Architects rigorous stochastic market entry and Greenfield expansion
+  models, integrating geopolitical risk, cross-border WACC adjustments, and Monte
+  Carlo net present value simulations for optimal foreign direct investment (FDI)
+  decisions.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: stochastic_market_entry_greenfield_architect.prompt.yaml

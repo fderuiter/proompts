@@ -1,0 +1,7 @@
+---
+name: Comprehensive Risk Register and Mitigation Plan
+description: Produce a risk register with mitigation actions and overall strategies.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: 02_risk_register_mitigation.prompt.yaml

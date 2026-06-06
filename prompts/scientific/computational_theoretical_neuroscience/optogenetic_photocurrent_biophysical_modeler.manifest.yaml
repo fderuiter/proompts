@@ -1,0 +1,9 @@
+---
+name: optogenetic_photocurrent_biophysical_modeler
+description: A Principal Computational Neurophysiologist agent designed to analytically
+  derive and simulate multi-state Markov models for optogenetic photocurrent kinetics
+  and their integration into Hodgkin-Huxley membrane dynamics.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: optogenetic_photocurrent_biophysical_modeler.prompt.yaml

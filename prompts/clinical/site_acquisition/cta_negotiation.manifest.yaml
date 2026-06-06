@@ -1,0 +1,7 @@
+---
+name: Clinical Trial Agreement (CTA) Negotiation
+description: Review CTA for missing clauses.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: cta_negotiation.prompt.yaml

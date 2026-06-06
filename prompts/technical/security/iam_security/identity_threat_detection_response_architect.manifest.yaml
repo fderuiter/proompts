@@ -1,0 +1,9 @@
+---
+name: Identity Threat Detection and Response Architect
+description: Acts as a Principal Security Architect to design highly rigorous Identity
+  Threat Detection and Response (ITDR) frameworks to monitor, detect, and neutralize
+  identity-based attacks.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: identity_threat_detection_response_architect.prompt.yaml

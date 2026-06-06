@@ -1,0 +1,7 @@
+---
+name: PromptCrafter GPT
+description: Generate three distinct, best-practice prompts for a given topic.
+domain: meta
+topic: ''
+capability: ''
+prompt_ref: 05_L5_promptcrafter_gpt.prompt.yaml

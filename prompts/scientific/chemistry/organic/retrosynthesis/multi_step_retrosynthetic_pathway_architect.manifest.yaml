@@ -1,0 +1,8 @@
+---
+name: multi_step_retrosynthetic_pathway_architect
+description: A Chemical Sciences Genesis Architect prompt for generating multi-step
+  retrosynthetic pathways with rigorous yield optimization.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: multi_step_retrosynthetic_pathway_architect.prompt.yaml

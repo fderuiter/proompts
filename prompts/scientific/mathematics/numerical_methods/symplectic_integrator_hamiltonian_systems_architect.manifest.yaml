@@ -1,0 +1,8 @@
+---
+name: Symplectic Integrator Hamiltonian Systems Architect
+description: Formulates structure-preserving numerical methods for long-term integration
+  of complex Hamiltonian systems, ensuring energy and momentum conservation.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: symplectic_integrator_hamiltonian_systems_architect.prompt.yaml

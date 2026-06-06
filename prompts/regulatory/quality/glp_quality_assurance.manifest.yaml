@@ -1,0 +1,8 @@
+---
+name: GLP Quality Assurance
+description: Prepare a statement for a nonclinical study report certifying inspection
+  dates.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: glp_quality_assurance.prompt.yaml

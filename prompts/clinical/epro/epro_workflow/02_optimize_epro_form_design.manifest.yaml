@@ -1,0 +1,7 @@
+---
+name: Optimize ePRO Form Design
+description: Improve ePRO form usability and data quality.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 02_optimize_epro_form_design.prompt.yaml

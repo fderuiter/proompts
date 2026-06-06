@@ -1,0 +1,9 @@
+---
+name: advanced_retrosynthetic_pathway_generator
+description: Generates highly optimized, multi-step retrosynthetic pathways for complex
+  organic molecules, evaluating thermodynamic feasibility, step-yield optimization,
+  and stereochemical control.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: advanced_retrosynthetic_pathway_generator.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Zero-Day Incident Containment Architect
+description: Generates tactical containment strategies and mitigation playbooks for
+  zero-day vulnerabilities.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: zero_day_containment_architect.prompt.yaml

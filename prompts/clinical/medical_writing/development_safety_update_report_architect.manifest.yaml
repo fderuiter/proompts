@@ -1,0 +1,8 @@
+---
+name: Development Safety Update Report Architect
+description: Synthesizes cumulative safety data into a comprehensive, regulatory-compliant
+  Development Safety Update Report (DSUR) per ICH E2F guidelines.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: development_safety_update_report_architect.prompt.yaml

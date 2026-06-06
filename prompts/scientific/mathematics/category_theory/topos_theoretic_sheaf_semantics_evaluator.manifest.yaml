@@ -1,0 +1,11 @@
+---
+name: topos_theoretic_sheaf_semantics_evaluator
+description: 'Acts as a Principal Research Logician and Category Theorist to rigorously
+  evaluate and translate mathematical theorems utilizing Topos Theory and Kripke-Joyal
+  sheaf semantics.
+
+  '
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: topos_theoretic_sheaf_semantics_evaluator.prompt.yaml

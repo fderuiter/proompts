@@ -1,0 +1,8 @@
+---
+name: investigators_brochure_synthesis_architect
+description: Synthesizes nonclinical, clinical, and CMC data into a regulatory-compliant
+  Investigator's Brochure (IB) following ICH E6(R2) guidelines.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: investigators_brochure_synthesis_architect.prompt.yaml

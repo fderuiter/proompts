@@ -1,0 +1,7 @@
+---
+name: Protocol to USDM Stage 2 - Rationale
+description: Extract Objectives, Endpoints, and Eligibility Criteria.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 02_usdm_stage2_rationale.prompt.yaml

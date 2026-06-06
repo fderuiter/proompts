@@ -1,0 +1,8 @@
+---
+name: Scenario-Based Clinical-Trial Cash-Flow Forecast
+description: Model 12-quarter cash flows under baseline, inflation, and recruitment
+  slowdown scenarios.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: 01_scenario_cash_flow_forecast.prompt.yaml

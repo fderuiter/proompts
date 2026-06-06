@@ -1,7 +1,7 @@
+---
 name: 'Framework Implementation: Data-Driven Testing'
 version: 0.1.0
-description: Utilize data providers to execute the same test logic with multiple sets
-  of data.
+description: Utilize data providers to execute the same test logic with multiple sets of data.
 metadata:
   domain: technical
   complexity: low
@@ -11,6 +11,7 @@ metadata:
   - framework
   - implementation
   - data-driven
+  - domain:technical
   requires_context: false
 variables: []
 model: gpt-4o
@@ -18,9 +19,8 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: Write a TestNG @DataProvider method in Java that returns a 2D object array
-    of credentials (usernames/passwords) and map it to a @Test method to perform data-driven
-    login verification.
+  content: Write a TestNG @DataProvider method in Java that returns a 2D object array of credentials (usernames/passwords)
+    and map it to a @Test method to perform data-driven login verification.
 - role: user
   content: Create a data-driven test for login functionality using TestNG DataProvider.
 testData:

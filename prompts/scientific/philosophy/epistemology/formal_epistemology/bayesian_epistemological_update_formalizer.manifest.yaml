@@ -1,0 +1,9 @@
+---
+name: bayesian_epistemological_update_formalizer
+description: A highly rigorous prompt designed to systematically evaluate probabilistic
+  updating, Bayesian conditionalization, and credence adjustments across complex epistemic
+  states.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: bayesian_epistemological_update_formalizer.prompt.yaml

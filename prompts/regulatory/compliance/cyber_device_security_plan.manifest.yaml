@@ -1,0 +1,8 @@
+---
+name: Cyber Device Security Plan
+description: Draft a postmarket cybersecurity plan and Software Bill of Materials
+  (SBOM).
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: cyber_device_security_plan.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Design a Robust Preclinical Pathology Study Protocol
+description: Outline a GLP-compliant pathology study plan for a medical device evaluation.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: 01_study_protocol_outline.prompt.yaml

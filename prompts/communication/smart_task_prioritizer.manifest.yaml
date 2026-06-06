@@ -1,0 +1,8 @@
+---
+name: Smart Task Prioritizer
+description: Transform a raw to-do list into a structured Prioritization Matrix (Impact/Urgency/Effort)
+  and an actionable Execution Plan.
+domain: communication
+topic: ''
+capability: ''
+prompt_ref: smart_task_prioritizer.prompt.yaml

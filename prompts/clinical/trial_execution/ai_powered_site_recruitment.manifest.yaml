@@ -1,0 +1,8 @@
+---
+name: AI-Powered Site and Recruitment Strategy
+description: Select optimal sites and anticipate dropout risks using simulated EHR
+  insights.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: ai_powered_site_recruitment.prompt.yaml

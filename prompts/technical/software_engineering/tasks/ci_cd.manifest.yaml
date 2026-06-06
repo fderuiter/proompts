@@ -1,0 +1,8 @@
+---
+name: Continuous Integration & Delivery (DevOps Architect)
+description: Design and implement secure, efficient, and scalable CI/CD pipelines
+  for AI-integrated applications.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: ci_cd.prompt.yaml

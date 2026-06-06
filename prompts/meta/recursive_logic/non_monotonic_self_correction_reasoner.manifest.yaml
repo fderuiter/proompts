@@ -1,0 +1,9 @@
+---
+name: Non-Monotonic Self-Correction Meta-Reasoner
+description: An advanced meta-reasoning prompt that mandates a non-monotonic epistemic
+  graph (Graph of Operations / Tree of Thoughts topology) to force dynamic self-correction,
+  hypothesis invalidation, and iterative refinement prior to synthesis.
+domain: meta
+topic: ''
+capability: ''
+prompt_ref: non_monotonic_self_correction_reasoner.prompt.yaml

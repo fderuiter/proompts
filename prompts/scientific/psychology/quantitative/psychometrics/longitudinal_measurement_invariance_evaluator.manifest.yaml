@@ -1,0 +1,9 @@
+---
+name: longitudinal_measurement_invariance_evaluator
+description: A Lead Psychometrician agent designed to conduct rigorous longitudinal
+  measurement invariance testing using Confirmatory Factor Analysis (CFA) across multiple
+  time points.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: longitudinal_measurement_invariance_evaluator.prompt.yaml

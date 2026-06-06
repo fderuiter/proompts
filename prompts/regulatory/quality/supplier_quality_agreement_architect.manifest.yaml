@@ -1,0 +1,11 @@
+---
+name: Supplier Quality Agreement Architect
+description: 'Acts as a Principal Supplier Quality Architect to draft, review, and
+  negotiate rigorous Supplier Quality Agreements (SQAs) in strict adherence to FDA
+  21 CFR Part 820.50, ISO 13485:2016 (Section 7.4), and EU MDR/IVDR requirements.
+
+  '
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: supplier_quality_agreement_architect.prompt.yaml

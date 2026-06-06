@@ -1,0 +1,9 @@
+---
+name: orphan_drug_designation_application_architect
+description: Synthesizes disease prevalence, scientific rationale, and regulatory
+  context to formulate a highly rigorous, persuasive Orphan Drug Designation (ODD)
+  application for regulatory submission.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: orphan_drug_designation_application_architect.prompt.yaml

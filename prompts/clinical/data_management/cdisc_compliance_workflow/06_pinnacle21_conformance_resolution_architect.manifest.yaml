@@ -1,0 +1,9 @@
+---
+name: Pinnacle 21 Conformance Resolution Architect
+description: Automates the resolution of complex Pinnacle 21 (P21) conformance rule
+  rejections by analyzing validation issues against CDISC Implementation Guides and
+  generating precise mitigation or mapping correction strategies.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: 06_pinnacle21_conformance_resolution_architect.prompt.yaml

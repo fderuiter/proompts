@@ -1,0 +1,9 @@
+---
+name: turing_degree_reduction_evaluator
+description: Systematically formalizes and evaluates Turing reductions and many-one
+  reductions between formal sets to classify their computational complexity and Turing
+  degrees.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: turing_degree_reduction_evaluator.prompt.yaml

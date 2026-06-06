@@ -1,0 +1,8 @@
+---
+name: Senior Python Developer
+description: A Senior Developer's guide to Python execution, focusing on idiomatic
+  code, maintainability, and code stewardship.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: senior_python_developer.prompt.yaml

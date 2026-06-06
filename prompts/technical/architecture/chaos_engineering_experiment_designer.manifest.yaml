@@ -1,0 +1,8 @@
+---
+name: Chaos Engineering Experiment Designer
+description: Designs targeted chaos engineering experiments to uncover systemic weaknesses
+  in distributed architectures.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: chaos_engineering_experiment_designer.prompt.yaml

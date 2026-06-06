@@ -1,0 +1,9 @@
+---
+name: Chiral Anomaly Fujikawa Path Integral Architect
+description: Formulates the rigorous derivation of chiral anomalies using Fujikawa's
+  path integral measure evaluation, extracting the anomalous divergence of the axial
+  current via heat-kernel regularization.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: chiral_anomaly_fujikawa_path_integral_architect.prompt.yaml

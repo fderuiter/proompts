@@ -1,0 +1,9 @@
+---
+name: ich_e2c_pbrer_benefit_risk_architect
+description: Acts as a Principal Pharmacovigilance Scientist to rigorously synthesize
+  cumulative post-marketing data into an ICH E2C(R2)-compliant Periodic Benefit-Risk
+  Evaluation Report (PBRER).
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: ich_e2c_pbrer_benefit_risk_architect.prompt.yaml

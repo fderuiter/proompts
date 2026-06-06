@@ -1,0 +1,9 @@
+---
+name: synaptic_plasticity_weight_update_architect
+description: A Lead Computational Neuroscientist agent designed to mathematically
+  formulate and analyze complex synaptic plasticity weight-update rules and learning
+  dynamics.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: synaptic_plasticity_weight_update_architect.prompt.yaml

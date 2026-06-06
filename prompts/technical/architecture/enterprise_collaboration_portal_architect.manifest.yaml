@@ -1,0 +1,9 @@
+---
+name: Enterprise Collaboration Portal Architect
+description: Designs the system architecture for a web-based Enterprise Collaboration
+  Portal that abstracts Git and YAML filesystem into a visual CMS for AI prompt authoring,
+  simulation, and version control.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: enterprise_collaboration_portal_architect.prompt.yaml

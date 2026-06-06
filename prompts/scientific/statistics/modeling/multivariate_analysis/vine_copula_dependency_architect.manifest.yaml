@@ -1,0 +1,8 @@
+---
+name: vine_copula_dependency_architect
+description: Acts as a Principal Statistician to mathematically formulate and optimize
+  high-dimensional Vine Copula models for complex, asymmetrical multivariate dependencies.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: vine_copula_dependency_architect.prompt.yaml

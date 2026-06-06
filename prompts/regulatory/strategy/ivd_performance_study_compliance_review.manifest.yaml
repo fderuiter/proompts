@@ -1,0 +1,8 @@
+---
+name: IVD Performance Study Compliance Review
+description: "Review an IVD performance study for compliance with MDCG\_2024\u2011\
+  4 and related guidance."
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: ivd_performance_study_compliance_review.prompt.yaml

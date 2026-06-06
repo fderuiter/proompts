@@ -1,0 +1,9 @@
+---
+name: investigators_brochure_safety_synthesizer
+description: Synthesizes complex nonclinical and clinical safety data into a highly
+  structured, regulatory-compliant Investigator's Brochure (IB) Safety Reference Section
+  per ICH E6(R2) guidelines.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: investigators_brochure_safety_synthesizer.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: HTAP Real-Time Analytics Architect
+description: Designs Hybrid Transactional/Analytical Processing (HTAP) architectures
+  bridging OLTP and OLAP workloads.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: htap_real_time_analytics_architect.prompt.yaml

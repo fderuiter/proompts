@@ -1,0 +1,9 @@
+---
+name: Petabyte Scale Distributed Object Storage Architect
+description: Designs massively scalable, highly available distributed object storage
+  architectures (similar to S3), focusing on erasure coding, metadata partitioning,
+  and multi-part upload throughput.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: petabyte_scale_distributed_object_storage_architect.prompt.yaml

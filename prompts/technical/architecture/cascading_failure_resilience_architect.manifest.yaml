@@ -1,0 +1,8 @@
+---
+name: Cascading Failure Resilience Architect
+description: Architects system-wide resilience patterns to mitigate cascading failures,
+  including circuit breaking, load shedding, bulkheads, and retry storm prevention.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: cascading_failure_resilience_architect.prompt.yaml

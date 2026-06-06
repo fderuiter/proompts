@@ -1,0 +1,8 @@
+---
+name: Technical Implementation Plan
+description: Detail the architecture, dependencies, and steps required to implement
+  a project.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: technical_implementation_plan.prompt.yaml

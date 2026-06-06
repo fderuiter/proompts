@@ -1,0 +1,10 @@
+---
+name: gamified_behavioral_addiction_contagion_modeler
+description: A mathematically rigorous, expert-level prompt designed to map and computationally
+  model the epidemiological spread of gamified digital addiction and compulsive behaviors
+  across massive population networks, utilizing WHO/APA macro-level standards and
+  multi-modal behavioral big data proxies.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: gamified_behavioral_addiction_contagion_modeler.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: Supply Chain Antifragility Architect
+description: Formulates mathematically rigorous supply chain antifragility and nearshoring
+  strategy architectures to optimize resilience against compounding macroeconomic,
+  geopolitical, and structural shocks.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: supply_chain_antifragility_architect.prompt.yaml

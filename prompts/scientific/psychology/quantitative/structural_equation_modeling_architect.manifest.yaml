@@ -1,0 +1,8 @@
+---
+name: structural_equation_modeling_architect
+description: Designs rigorous Structural Equation Models (SEM) for latent psychological
+  constructs, providing lavaan/Mplus syntax and fit evaluation criteria.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: structural_equation_modeling_architect.prompt.yaml

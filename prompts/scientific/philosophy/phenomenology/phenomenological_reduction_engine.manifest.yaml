@@ -1,0 +1,9 @@
+---
+name: phenomenological_reduction_engine
+description: A highly rigorous prompt designed to systematically deconstruct first-person
+  experiences using Husserlian phenomenological reduction, isolating eidetic invariants
+  while bracketing naturalistic assumptions.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: phenomenological_reduction_engine.prompt.yaml

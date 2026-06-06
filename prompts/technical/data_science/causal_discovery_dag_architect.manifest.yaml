@@ -1,0 +1,8 @@
+---
+name: Causal Discovery DAG Architect
+description: Designs highly robust causal discovery workflows and Structural Causal
+  Models (SCMs) for high-dimensional observational data.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: causal_discovery_dag_architect.prompt.yaml

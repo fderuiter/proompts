@@ -1,0 +1,8 @@
+---
+name: Protocol Reviewer and Gap-Analysis Coach
+description: Evaluate a clinical-trial protocol for patient experience, site feasibility,
+  and regulatory completeness.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 03_protocol_reviewer_gap_analysis_coach.prompt.yaml

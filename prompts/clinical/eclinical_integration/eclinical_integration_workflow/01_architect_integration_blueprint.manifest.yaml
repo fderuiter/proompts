@@ -1,0 +1,8 @@
+---
+name: Architect the Integration Blueprint
+description: Provide a structured plan for integrating site EHR systems with the sponsor's
+  EDC and CTMS.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 01_architect_integration_blueprint.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: UAT Script Generator
+description: Generate a User Acceptance Testing (UAT) script with dummy data inputs.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: uat_script_generator.prompt.yaml

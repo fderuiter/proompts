@@ -1,0 +1,8 @@
+---
+name: Strangler Fig Migration Architect
+description: Architect a Strangler Fig pattern migration from a legacy monolith to
+  microservices.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: strangler_fig_migration_architect.prompt.yaml

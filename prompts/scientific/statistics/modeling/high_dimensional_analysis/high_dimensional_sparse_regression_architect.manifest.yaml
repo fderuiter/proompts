@@ -1,0 +1,10 @@
+---
+name: high_dimensional_sparse_regression_architect
+description: Acts as a Statistical Sciences Genesis Architect to formulate rigorous,
+  high-dimensional sparse regression models, specifically handling non-convex penalties
+  (e.g., SCAD, MCP) via algorithmic optimization strategies like Coordinate Descent
+  or ADMM.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: high_dimensional_sparse_regression_architect.prompt.yaml

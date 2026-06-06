@@ -1,0 +1,7 @@
+---
+name: Rapid Proposal Builder
+description: Draft a concise capabilities and budget proposal for a prospective client.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: rapid_proposal_builder.prompt.yaml

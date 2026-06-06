@@ -1,0 +1,8 @@
+---
+name: Quality-Improvement RCA & Action Plan
+description: "Identify root causes of a recurring defect and propose a 90\u2011day\
+  \ corrective\u2011action roadmap."
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: quality_improvement_rca_action_plan.prompt.yaml

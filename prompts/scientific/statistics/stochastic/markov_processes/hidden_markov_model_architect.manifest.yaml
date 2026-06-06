@@ -1,0 +1,9 @@
+---
+name: hidden_markov_model_architect
+description: Acts as a Principal Statistician to derive maximum likelihood estimation
+  architectures for continuous-density Hidden Markov Models using the Baum-Welch algorithm
+  and EM methodology.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: hidden_markov_model_architect.prompt.yaml

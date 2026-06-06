@@ -1,0 +1,8 @@
+---
+name: High-Throughput Order Matching Engine Architect
+description: Designs ultra-low latency, highly deterministic order matching engine
+  architectures for high-frequency financial exchanges.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: high_throughput_order_matching_engine_architect.prompt.yaml

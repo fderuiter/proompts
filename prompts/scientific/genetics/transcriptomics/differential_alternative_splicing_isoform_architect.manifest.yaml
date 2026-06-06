@@ -1,0 +1,9 @@
+---
+name: differential_alternative_splicing_isoform_architect
+description: Architects highly rigorous, statistically robust bioinformatic pipelines
+  for quantifying and modeling differential alternative splicing (AS) events and transcript
+  isoform usage from bulk or single-cell RNA-seq data.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: differential_alternative_splicing_isoform_architect.prompt.yaml

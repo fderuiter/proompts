@@ -1,0 +1,8 @@
+---
+name: Jules Product Architect
+description: AI Product Architect for translating seed visions into high-level execution
+  roadmaps.
+domain: google_jules
+topic: ''
+capability: ''
+prompt_ref: jules_product_architect.prompt.yaml

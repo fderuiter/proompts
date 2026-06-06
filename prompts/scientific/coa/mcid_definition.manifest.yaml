@@ -1,0 +1,8 @@
+---
+name: MCID Research and Summary
+description: Research and summarize Minimal Clinically Important Differences (MCIDs)
+  for measurement tools.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: mcid_definition.prompt.yaml

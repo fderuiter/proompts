@@ -1,0 +1,11 @@
+---
+name: finops_cloud_cost_optimization_architect
+description: 'Analyzes existing cloud architectures to identify cost inefficiencies
+  and redesigns them using advanced FinOps principles, ensuring optimal resource utilization
+  without compromising performance SLAs.
+
+  '
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: finops_cloud_cost_optimization_architect.prompt.yaml

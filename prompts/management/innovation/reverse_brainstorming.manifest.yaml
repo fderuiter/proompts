@@ -1,0 +1,7 @@
+---
+name: Reverse Brainstorming
+description: Flip negative ideas into constructive solutions.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: reverse_brainstorming.prompt.yaml

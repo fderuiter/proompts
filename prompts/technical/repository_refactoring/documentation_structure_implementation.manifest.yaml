@@ -1,0 +1,8 @@
+---
+name: Documentation and Repository Structure Implementation
+description: Implement foundational improvements for the repository's structure and
+  documentation.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: documentation_structure_implementation.prompt.yaml

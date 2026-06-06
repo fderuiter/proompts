@@ -1,0 +1,8 @@
+---
+name: Patent Term Restoration Eligibility
+description: Determine if a medical product's review period qualifies for patent term
+  restoration.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: patent_term_restoration_eligibility.prompt.yaml

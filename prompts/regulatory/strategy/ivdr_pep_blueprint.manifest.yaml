@@ -1,0 +1,8 @@
+---
+name: IVDR Performance-Evaluation Plan Blueprint
+description: "Draft a comprehensive Performance\u2011Evaluation Plan (PEP) that satisfies\
+  \ Article\_56 and Annex\_XIII of the IVDR."
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: ivdr_pep_blueprint.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: graph_theoretical_connectome_analyzer
+description: A Principal Computational Neuroscientist agent designed to synthesize
+  and analyze whole-brain connectome data using advanced graph-theoretical metrics.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: graph_theoretical_connectome_analyzer.prompt.yaml

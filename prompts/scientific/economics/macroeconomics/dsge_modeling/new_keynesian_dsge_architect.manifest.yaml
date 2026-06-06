@@ -1,0 +1,8 @@
+---
+name: new_keynesian_dsge_architect
+description: Formulates rigorous New Keynesian Dynamic Stochastic General Equilibrium
+  (DSGE) models incorporating nominal rigidities, Taylor rules, and stochastic shocks.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: new_keynesian_dsge_architect.prompt.yaml

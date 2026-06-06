@@ -1,0 +1,9 @@
+---
+name: lattice_boltzmann_multiphase_architect
+description: Acts as a Principal Computational Physicist designed to architect highly
+  optimized Lattice Boltzmann Method (LBM) solvers for complex multiphase fluid dynamics,
+  addressing interfacial dynamics and high density ratios.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: lattice_boltzmann_multiphase_architect.prompt.yaml

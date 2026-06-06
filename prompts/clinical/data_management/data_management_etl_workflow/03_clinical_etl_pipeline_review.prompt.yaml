@@ -1,3 +1,4 @@
+---
 name: Clinical ETL Pipeline Review
 version: 0.1.0
 description: Review the clinical ETL pipeline for accuracy and efficiency.
@@ -10,6 +11,9 @@ metadata:
   - etl
   - pipeline
   - review
+  - domain:clinical
+  - topic:data_management
+  - capability:mapping
   requires_context: false
 variables:
 - name: etl_qc_plan
@@ -20,19 +24,15 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a reviewer auditing clinical ETL pipelines for accuracy and
-
+  content: |
+    You are a reviewer auditing clinical ETL pipelines for accuracy and
     efficiency.
-
-    '
 - role: user
-  content: 'Here is the ETL Quality Check plan:
+  content: |-
+    Here is the ETL Quality Check plan:
+    {{ etl_qc_plan }}
 
-    {{etl_qc_plan}}
-
-
-    Based on this QC plan, and the implied mapping specification, review the entire
-    clinical ETL pipeline for accuracy, efficiency, and potential bottlenecks.'
+    Based on this QC plan, and the implied mapping specification, review the entire clinical ETL pipeline for accuracy, efficiency, and potential bottlenecks.
 testData:
 - expected: Identifies slow transformations and load issues.
   vars: Assess pipeline stages for bottlenecks.

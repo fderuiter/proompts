@@ -1,0 +1,8 @@
+---
+name: 'Advanced Design Patterns: Fluent Interface'
+description: Extend Page Objects with method chaining to create a more readable test
+  API.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: fluent_interface_selenium.prompt.yaml

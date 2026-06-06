@@ -1,0 +1,8 @@
+---
+name: Virtual Waiting Room Fair Access Architect
+description: Designs highly scalable, fair-access virtual waiting room architectures
+  to protect downstream systems during massive traffic surges.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: virtual_waiting_room_fair_access_architect.prompt.yaml

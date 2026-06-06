@@ -1,0 +1,7 @@
+---
+name: Request for Designation (RFD) Submission
+description: Draft RFD for combination products.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: rfd_submission.prompt.yaml

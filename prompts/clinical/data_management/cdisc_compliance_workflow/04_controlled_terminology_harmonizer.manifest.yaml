@@ -1,0 +1,8 @@
+---
+name: Controlled Terminology Harmonizer
+description: Standardizes a list of values (e.g., Units) to CDISC Controlled Terminology
+  (NCI Preferred Terms).
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: 04_controlled_terminology_harmonizer.prompt.yaml

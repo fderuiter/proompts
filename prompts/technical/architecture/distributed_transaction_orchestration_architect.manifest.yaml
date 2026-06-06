@@ -1,0 +1,8 @@
+---
+name: Distributed Transaction Orchestration Architect
+description: Designs highly resilient, distributed transaction orchestration architectures
+  using Saga, 2PC, or TCC patterns across microservices to ensure data consistency.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: distributed_transaction_orchestration_architect.prompt.yaml

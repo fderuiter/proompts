@@ -1,0 +1,9 @@
+---
+name: Quantitative LBO Modeling Architect
+description: Architects mathematically rigorous Leveraged Buyout (LBO) financial models,
+  optimizing debt schedules, cash flow sweeps, and calculating IRR/MOIC for complex
+  private equity transactions.
+domain: business
+topic: finance
+capability: forecasting
+prompt_ref: quantitative_lbo_modeling_architect.prompt.yaml

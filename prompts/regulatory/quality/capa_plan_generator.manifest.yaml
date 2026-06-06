@@ -1,0 +1,8 @@
+---
+name: CAPA Plan Generator
+description: Generate a Corrective and Preventive Action (CAPA) plan based on audit
+  findings.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: capa_plan_generator.prompt.yaml

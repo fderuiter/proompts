@@ -1,0 +1,9 @@
+---
+name: High-Throughput Geospatial Indexing Architect
+description: Architects highly scalable, low-latency spatial index and geofencing
+  systems for real-time location tracking and spatiotemporal analytics at enterprise
+  scale.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: high_throughput_geospatial_indexing_architect.prompt.yaml

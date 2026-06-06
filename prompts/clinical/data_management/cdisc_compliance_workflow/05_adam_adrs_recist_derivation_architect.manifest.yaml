@@ -1,0 +1,8 @@
+---
+name: ADaM ADRS RECIST Derivation Architect
+description: Automates the complex derivation of oncology RECIST 1.1 criteria for
+  the ADaM ADRS (Tumor Response) domain based on raw EDC data and SDTM Tu/TR domains.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: 05_adam_adrs_recist_derivation_architect.prompt.yaml

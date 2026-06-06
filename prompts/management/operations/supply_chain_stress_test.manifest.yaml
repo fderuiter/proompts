@@ -1,0 +1,9 @@
+---
+name: Supply Chain Disruption Stochastic Stress Test Architect
+description: Conducts rigorous stochastic stress testing and resilience optimization
+  for global supply chain networks using node vulnerability analysis and disruption
+  modeling.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: supply_chain_stress_test.prompt.yaml

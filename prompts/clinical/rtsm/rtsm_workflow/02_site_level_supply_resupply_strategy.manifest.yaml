@@ -1,0 +1,7 @@
+---
+name: Forecast Site-Level Drug Supply & Resupply Strategy
+description: Plan site-level drug supply and resupply for an adaptive trial.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 02_site_level_supply_resupply_strategy.prompt.yaml

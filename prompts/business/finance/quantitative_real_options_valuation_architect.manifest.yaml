@@ -1,0 +1,9 @@
+---
+name: Quantitative Real Options Valuation Architect
+description: Models complex managerial flexibility in capital budgeting by designing
+  mathematically rigorous Real Options Valuation (ROV) frameworks using binomial lattices
+  and Black-Scholes-Merton extensions.
+domain: business
+topic: finance
+capability: forecasting
+prompt_ref: quantitative_real_options_valuation_architect.prompt.yaml

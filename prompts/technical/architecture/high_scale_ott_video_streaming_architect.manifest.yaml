@@ -1,0 +1,9 @@
+---
+name: High-Scale OTT Video Streaming Architect
+description: Designs highly resilient, massively scalable Over-The-Top (OTT) video
+  streaming pipelines with dynamic ABR encoding, DRM integrations, and global CDN
+  topologies.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: high_scale_ott_video_streaming_architect.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Lay Language Summary Creation
+description: Summarize trial results for lay audience with rigorous formatting and
+  safety checks.
+domain: communication
+topic: ''
+capability: ''
+prompt_ref: lay_language_summary.prompt.yaml

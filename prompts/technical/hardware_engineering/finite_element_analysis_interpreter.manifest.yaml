@@ -1,0 +1,8 @@
+---
+name: Finite Element Analysis (FEA) Interpreter
+description: An agent that analyzes stress, thermal, and vibration simulation outputs
+  to recommend geometric optimizations for mechanical parts.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: finite_element_analysis_interpreter.prompt.yaml

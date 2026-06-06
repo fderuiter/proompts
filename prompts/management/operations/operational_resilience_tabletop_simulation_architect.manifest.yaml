@@ -1,0 +1,9 @@
+---
+name: operational_resilience_tabletop_simulation_architect
+description: Acts as a Principal Business Continuity Director to design highly realistic,
+  cross-functional tabletop simulations for testing organizational resilience against
+  severe operational disruptions, strictly enforcing ISO 22301 standards.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: operational_resilience_tabletop_simulation_architect.prompt.yaml

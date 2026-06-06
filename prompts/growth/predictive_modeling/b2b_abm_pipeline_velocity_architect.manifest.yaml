@@ -1,0 +1,9 @@
+---
+name: b2b_abm_pipeline_velocity_architect
+description: Synthesizes B2B Account-Based Marketing (ABM) engagement telemetry into
+  predictive pipeline velocity models to systematically accelerate enterprise deal
+  cycles.
+domain: growth
+topic: ''
+capability: ''
+prompt_ref: b2b_abm_pipeline_velocity_architect.prompt.yaml

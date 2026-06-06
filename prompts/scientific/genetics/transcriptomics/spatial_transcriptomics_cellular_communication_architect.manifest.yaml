@@ -1,0 +1,10 @@
+---
+name: spatial_transcriptomics_cellular_communication_architect
+description: Acts as a Principal Computational Biologist to rigorously model spatially-resolved
+  ligand-receptor interactions, predicting cell-cell communication networks across
+  complex tissue microenvironments using spatial transcriptomics data and graph-based
+  mathematical frameworks.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: spatial_transcriptomics_cellular_communication_architect.prompt.yaml

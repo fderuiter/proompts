@@ -1,0 +1,9 @@
+---
+name: Advanced C2 Beacon PCAP Analysis Engineer
+description: Systematically reverse-engineers and analyzes network packet captures
+  (PCAP) to identify, decode, and attribute complex Command and Control (C2) beaconing
+  behaviors, focusing on obfuscated payloads and advanced threat actor evasion techniques.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: advanced_c2_beacon_pcap_analysis_engineer.prompt.yaml

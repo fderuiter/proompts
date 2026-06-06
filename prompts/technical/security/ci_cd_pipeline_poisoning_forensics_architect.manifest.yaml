@@ -1,0 +1,8 @@
+---
+name: CI/CD Pipeline Poisoning Forensics Architect
+description: Conducts rigorous forensic analysis of compromised CI/CD pipelines to
+  detect advanced pipeline poisoning and toxic deployment patterns.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: ci_cd_pipeline_poisoning_forensics_architect.prompt.yaml

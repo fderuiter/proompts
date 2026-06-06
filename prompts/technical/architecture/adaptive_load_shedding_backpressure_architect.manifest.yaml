@@ -1,0 +1,8 @@
+---
+name: Adaptive Load Shedding and Backpressure Architect
+description: Designs highly resilient, adaptive load shedding and backpressure mechanisms
+  for distributed systems to prevent cascading failures under extreme traffic surges.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: adaptive_load_shedding_backpressure_architect.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Investigator-Site Payment Forecast
+description: Produce a month-by-month cash-flow forecast for site payments.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: investigator_site_payment_forecast.prompt.yaml

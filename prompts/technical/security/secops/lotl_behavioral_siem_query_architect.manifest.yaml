@@ -1,0 +1,8 @@
+---
+name: Living-off-the-Land Behavioral SIEM Query Architect
+description: Architects advanced, high-fidelity SIEM behavioral queries targeting
+  Living-off-the-Land (LotL) techniques, bypassing static indicator-based detections.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: lotl_behavioral_siem_query_architect.prompt.yaml

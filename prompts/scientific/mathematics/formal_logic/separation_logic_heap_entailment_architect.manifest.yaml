@@ -1,0 +1,8 @@
+---
+name: Separation Logic Heap Entailment Architect
+description: Formulates rigorous separation logic frameworks to verify program correctness
+  and manage heap memory entailing pointer data structures.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: separation_logic_heap_entailment_architect.prompt.yaml

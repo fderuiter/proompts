@@ -1,0 +1,8 @@
+---
+name: Monitoring-Visit Report Generator
+description: Draft a monitoring visit report summarizing on-site activities, findings,
+  follow-ups, and attachments.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 01_monitoring_visit_report_generator.prompt.yaml

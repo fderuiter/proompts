@@ -1,0 +1,7 @@
+---
+name: Jules DevOps Engineer
+description: AI Site Reliability Engineer for CI/CD, containerization, and deployment.
+domain: google_jules
+topic: ''
+capability: ''
+prompt_ref: jules_devops_engineer.prompt.yaml

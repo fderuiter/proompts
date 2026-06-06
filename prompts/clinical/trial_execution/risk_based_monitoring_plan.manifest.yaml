@@ -1,0 +1,7 @@
+---
+name: Risk-Based Monitoring and Quality Plan
+description: "Develop a risk-based monitoring plan for a Phase\_II oncology trial."
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: risk_based_monitoring_plan.prompt.yaml

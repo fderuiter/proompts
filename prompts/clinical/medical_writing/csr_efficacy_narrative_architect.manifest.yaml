@@ -1,0 +1,9 @@
+---
+name: csr_efficacy_narrative_architect
+description: A Principal Medical Writer and Clinical Scientist prompt designed to
+  synthesize complex statistical outputs (TLFs) into rigorous, ICH E3-compliant clinical
+  efficacy narratives for Clinical Study Reports (CSRs).
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: csr_efficacy_narrative_architect.prompt.yaml

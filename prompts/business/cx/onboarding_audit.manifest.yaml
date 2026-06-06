@@ -1,0 +1,8 @@
+---
+name: Friction-Hunting Onboarding Audit
+description: Critique onboarding steps to identify friction and propose low-touch
+  alternatives.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: onboarding_audit.prompt.yaml

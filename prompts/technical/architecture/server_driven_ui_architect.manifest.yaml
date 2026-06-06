@@ -1,0 +1,8 @@
+---
+name: Server-Driven UI Architecture Designer
+description: Designs flexible, responsive Server-Driven UI (SDUI) architectures to
+  control layouts dynamically from the backend without client updates.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: server_driven_ui_architect.prompt.yaml

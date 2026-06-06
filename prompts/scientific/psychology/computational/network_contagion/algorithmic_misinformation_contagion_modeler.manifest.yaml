@@ -1,0 +1,10 @@
+---
+name: algorithmic_misinformation_contagion_modeler
+description: A highly robust, expert-level prompt designed to formulate mathematical
+  models and multi-modal big data architectures for predicting the onset, propagation,
+  and virality of algorithmic misinformation contagion across mass global network
+  topologies.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: algorithmic_misinformation_contagion_modeler.prompt.yaml

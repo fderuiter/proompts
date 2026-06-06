@@ -1,0 +1,8 @@
+---
+name: Real-Time Fraud Decision Engine Architect
+description: Designs highly scalable, ultra-low-latency real-time fraud decision engines
+  integrating stream processing, feature stores, and ML inference.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: real_time_fraud_decision_engine_architect.prompt.yaml

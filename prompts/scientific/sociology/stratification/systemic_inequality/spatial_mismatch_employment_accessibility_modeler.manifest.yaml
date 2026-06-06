@@ -1,0 +1,9 @@
+---
+name: spatial_mismatch_employment_accessibility_modeler
+description: A Principal Sociologist and Urban Demographer agent designed to rigorously
+  analyze the Spatial Mismatch Hypothesis, calculate employment accessibility gaps,
+  and model structural transit inequality using ASA standards.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: spatial_mismatch_employment_accessibility_modeler.prompt.yaml

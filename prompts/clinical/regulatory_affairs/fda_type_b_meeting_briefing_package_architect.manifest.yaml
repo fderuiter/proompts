@@ -1,0 +1,8 @@
+---
+name: fda_type_b_meeting_briefing_package_architect
+description: Synthesizes scientific, clinical, and CMC data to architect a highly
+  structured, regulatory-compliant FDA Type B Meeting Briefing Package.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: fda_type_b_meeting_briefing_package_architect.prompt.yaml

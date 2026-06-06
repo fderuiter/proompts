@@ -1,0 +1,9 @@
+---
+name: Algorithmic Multi-Touch Attribution Architect
+description: Constructs highly rigorous, algorithmic multi-touch attribution (MTA)
+  models using Markov chains and Shapley values, mapping fractional credit across
+  the AARRR funnel for enterprise performance marketing.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: algorithmic_multi_touch_attribution_architect.prompt.yaml

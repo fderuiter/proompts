@@ -1,0 +1,7 @@
+---
+name: SOLID Codebase Analysis
+description: Evaluate code against SOLID principles and suggest refactoring tasks.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: solid_codebase_analysis.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Offline-First Synchronization Architect
+description: Designs highly resilient, offline-first data synchronization and conflict
+  resolution architectures for occasionally connected distributed clients.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: offline_first_sync_architect.prompt.yaml

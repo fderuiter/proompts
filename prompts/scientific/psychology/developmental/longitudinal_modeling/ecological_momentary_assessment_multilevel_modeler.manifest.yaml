@@ -1,0 +1,9 @@
+---
+name: ecological_momentary_assessment_multilevel_modeler
+description: A Lead Psychometrician and Principal Methodologist agent designed to
+  architect rigorous Multilevel Models (MLM) for analyzing intensive longitudinal
+  Ecological Momentary Assessment (EMA) data.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: ecological_momentary_assessment_multilevel_modeler.prompt.yaml

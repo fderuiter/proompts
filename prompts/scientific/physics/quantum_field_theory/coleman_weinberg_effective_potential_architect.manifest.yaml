@@ -1,0 +1,9 @@
+---
+name: Coleman-Weinberg Effective Potential Architect
+description: Formulates the rigorous derivation of the one-loop Coleman-Weinberg effective
+  potential, demonstrating dynamical symmetry breaking via radiative corrections in
+  quantum field theories.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: coleman_weinberg_effective_potential_architect.prompt.yaml

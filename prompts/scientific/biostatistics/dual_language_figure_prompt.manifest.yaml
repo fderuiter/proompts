@@ -1,0 +1,8 @@
+---
+name: Dual-Language Figure Prompt
+description: "Generate a Kaplan\u2013Meier figure in both R and SAS from ADaM ADTTE\
+  \ data."
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: dual_language_figure_prompt.prompt.yaml

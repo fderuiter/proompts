@@ -1,0 +1,8 @@
+---
+name: System Design RFC Architect
+description: Draft a high-level Request for Comments (RFC) for a system design, focusing
+  on trade-offs, security, and scalability.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: design_md_template.prompt.yaml

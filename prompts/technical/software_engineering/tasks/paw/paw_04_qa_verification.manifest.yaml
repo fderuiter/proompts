@@ -1,0 +1,8 @@
+---
+name: PAW Phase 4 - Quality Assurance & Log
+description: Phase 4 of the Principal Architect Workflow (PAW). Verifies the implementation
+  and updates the TODO log.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: paw_04_qa_verification.prompt.yaml

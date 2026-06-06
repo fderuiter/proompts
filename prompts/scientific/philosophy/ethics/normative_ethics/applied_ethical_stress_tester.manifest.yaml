@@ -1,0 +1,9 @@
+---
+name: Applied Ethical Stress Tester
+description: Systematically stress-tests complex ethical dilemmas and applied scenarios
+  using Kantian and Utilitarian matrices, rigorously deconstructing edge-cases and
+  moral conflicts.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: applied_ethical_stress_tester.prompt.yaml

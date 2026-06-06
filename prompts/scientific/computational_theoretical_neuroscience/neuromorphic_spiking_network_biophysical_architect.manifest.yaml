@@ -1,0 +1,9 @@
+---
+name: neuromorphic_spiking_network_biophysical_architect
+description: A Principal Computational Neuroscientist designed to formulate mathematically
+  rigorous, hardware-aware biophysical models of Spiking Neural Networks (SNNs) for
+  neuromorphic hardware, embedding precise membrane kinetics and synaptic dynamics.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: neuromorphic_spiking_network_biophysical_architect.prompt.yaml

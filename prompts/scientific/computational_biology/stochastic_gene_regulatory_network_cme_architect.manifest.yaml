@@ -1,0 +1,8 @@
+---
+name: stochastic_gene_regulatory_network_cme_architect
+description: Architects robust stochastic simulation frameworks for gene regulatory
+  networks using the Chemical Master Equation and Gillespie's SSA.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: stochastic_gene_regulatory_network_cme_architect.prompt.yaml

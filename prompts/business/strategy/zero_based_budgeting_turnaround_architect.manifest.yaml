@@ -1,0 +1,9 @@
+---
+name: zero_based_budgeting_turnaround_architect
+description: Designs highly rigorous, quantitative Zero-Based Budgeting (ZBB) frameworks
+  for distressed enterprise turnarounds, enforcing strict cost-benefit justifications
+  and ROI-driven capital allocation.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: zero_based_budgeting_turnaround_architect.prompt.yaml

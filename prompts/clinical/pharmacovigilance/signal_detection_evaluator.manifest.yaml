@@ -1,0 +1,8 @@
+---
+name: signal_detection_evaluator
+description: A rigorous prompt for evaluating and validating pharmacovigilance safety
+  signals based on quantitative and qualitative data.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: signal_detection_evaluator.prompt.yaml

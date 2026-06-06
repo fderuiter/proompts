@@ -1,0 +1,8 @@
+---
+name: Multistudy Resource & Capacity Forecast Plan
+description: Outline a data-driven approach for forecasting resources across multiple
+  upcoming trials.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: multistudy_resource_capacity_forecast_plan.prompt.yaml

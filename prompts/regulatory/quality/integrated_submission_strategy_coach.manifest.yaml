@@ -1,0 +1,7 @@
+---
+name: Integrated Submission Strategy Coach
+description: Create a phased submission roadmap for Project Phoenix.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: integrated_submission_strategy_coach.prompt.yaml

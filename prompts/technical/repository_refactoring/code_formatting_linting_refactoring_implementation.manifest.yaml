@@ -1,0 +1,9 @@
+---
+name: Code Formatting, Linting, and Refactoring Implementation
+description: Improve the codebase's internal quality and consistency by introducing
+  and configuring a standard code formatter and a linter, and refactoring complex
+  code.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: code_formatting_linting_refactoring_implementation.prompt.yaml

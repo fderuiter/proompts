@@ -1,3 +1,4 @@
+---
 name: IDE Determination and Device Classification
 version: 0.1.0
 description: Assess risk classification and draft rationale.
@@ -10,6 +11,7 @@ metadata:
   - determination
   - device
   - classification
+  - domain:regulatory
   requires_context: false
 variables:
 - name: device_study_desc
@@ -20,24 +22,18 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Regulatory Affairs Medical Device Expert. Evaluate the medical
-    device study description to assess risk classification under 21 CFR 812.3(m) and
-    draft a rationale for an NSR determination or a De Novo classification request
+  content: You are a Regulatory Affairs Medical Device Expert. Evaluate the medical device study description to assess risk
+    classification under 21 CFR 812.3(m) and draft a rationale for an NSR determination or a De Novo classification request
     including risk mitigations.
 - role: user
-  content: 'Evaluate the medical device study description to assess risk classification
-    under 21 CFR 812.3(m) and draft a rationale for an NSR determination or a De Novo
-    classification request including risk mitigations.
-
+  content: |-
+    Evaluate the medical device study description to assess risk classification under 21 CFR 812.3(m) and draft a rationale for an NSR determination or a De Novo classification request including risk mitigations.
 
     Inputs:
-
-    - `{{device_study_desc}}`
-
+    - `{{ device_study_desc }}`
 
     Output format:
-
-    Markdown Risk Classification Rationale.'
+    Markdown Risk Classification Rationale.
 testData:
 - expected: 'Risk Classification
 

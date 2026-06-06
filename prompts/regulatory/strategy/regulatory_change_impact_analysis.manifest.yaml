@@ -1,0 +1,8 @@
+---
+name: Regulatory-Change Impact Analysis
+description: Assess how a new regulation affects company operations and outline a
+  phased response plan.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: regulatory_change_impact_analysis.prompt.yaml

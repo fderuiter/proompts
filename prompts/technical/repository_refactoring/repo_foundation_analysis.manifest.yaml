@@ -1,0 +1,8 @@
+---
+name: Repository Foundation & Developer Experience Analysis
+description: Analyze the repository's foundation and developer experience to prepare
+  it for future growth and easy onboarding.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: repo_foundation_analysis.prompt.yaml

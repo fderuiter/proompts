@@ -1,0 +1,9 @@
+---
+name: set_theoretic_forcing_architect
+description: Formulates rigorous mathematical proofs utilizing Paul Cohen's technique
+  of Set-Theoretic Forcing to establish independence results and construct generic
+  extensions.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: set_theoretic_forcing_architect.prompt.yaml

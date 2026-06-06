@@ -1,0 +1,7 @@
+---
+name: Statistical Analysis Plan (SAP) Development
+description: Draft a comprehensive SAP.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: sap_development.prompt.yaml

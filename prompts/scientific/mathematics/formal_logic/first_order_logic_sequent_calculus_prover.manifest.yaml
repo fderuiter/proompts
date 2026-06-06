@@ -1,0 +1,8 @@
+---
+name: first_order_logic_sequent_calculus_prover
+description: Systematically derives formal proofs for first-order logic formulas using
+  the Gentzen sequent calculus (LK).
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: first_order_logic_sequent_calculus_prover.prompt.yaml

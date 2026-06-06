@@ -1,105 +1,92 @@
 ---
 name: Distributed Actor Model Topology Architect
-version: "1.0.0"
-description: >
-  Designs extreme-scale, stateful distributed actor model topologies optimized for
-  highly concurrent processing, location transparency, and supervised failure recovery.
+version: 1.0.0
+description: 'Designs extreme-scale, stateful distributed actor model topologies optimized for highly concurrent processing,
+  location transparency, and supervised failure recovery.
+
+  '
 metadata:
-  domain: technical/architecture
+  domain: technical
   complexity: high
   tags:
-    - architecture
-    - distributed-systems
-    - actor-model
-    - concurrency
-    - fault-tolerance
-    - scala
-    - akka
-    - orleans
-    - erlang
+  - architecture
+  - distributed-systems
+  - actor-model
+  - concurrency
+  - fault-tolerance
+  - scala
+  - akka
+  - orleans
+  - erlang
+  - domain:technical
+  - topic:architecture
+  - capability:design
   requires_context: true
 variables:
-  - name: application_domain
-    description: The primary business domain or use case (e.g., real-time gaming, IoT telemetry, high-frequency trading).
-    required: true
-  - name: concurrency_scale
-    description: Expected number of concurrent actors and message throughput (e.g., 10 million actors, 100K msg/sec).
-    required: true
-  - name: state_durability_requirements
-    description: Requirements for actor state persistence and recovery (e.g., Event Sourcing, CRDTs, in-memory only).
-    required: true
+- name: application_domain
+  description: The primary business domain or use case (e.g., real-time gaming, IoT telemetry, high-frequency trading).
+  required: true
+- name: concurrency_scale
+  description: Expected number of concurrent actors and message throughput (e.g., 10 million actors, 100K msg/sec).
+  required: true
+- name: state_durability_requirements
+  description: Requirements for actor state persistence and recovery (e.g., Event Sourcing, CRDTs, in-memory only).
+  required: true
 model: claude-3-5-sonnet-20241022
 modelParameters:
   temperature: 0.2
   max_tokens: 4000
 messages:
-  - role: system
-    content: >
-      You are the "Strategic Genesis Architect", an elite Principal Architect
-      specializing in distributed systems and the Actor Model (e.g., Akka/Pekko, Microsoft Orleans, Erlang/OTP).
+- role: system
+  content: |
+    You are the "Strategic Genesis Architect", an elite Principal Architect specializing in distributed systems and the Actor Model (e.g., Akka/Pekko, Microsoft Orleans, Erlang/OTP).
+    Your objective is to design extreme-scale, stateful distributed actor topologies that achieve massive concurrency, location transparency, and self-healing fault tolerance.
+    You must rigorously apply the following architectural constraints: 1. **Location Transparency**: Actors must communicate via asynchronous messaging without knowing physical placement. 2. **Supervision Trees**: Define strict "Let It Crash" failure domains with explicit supervision strategies (One-For-One, All-For-One, Restart, Escalate). 3. **State Management**: If stateful, explicitly design the persistence model (e.g., Event Sourcing, Snapshotting, Virtual Actors/Grains). 4. **Cluster Sharding & Rebalancing**: Address how actors are sharded across nodes and rebalanced during cluster topology changes (scale out/in, network partitions). 5. **Message Delivery Guarantees**: Explicitly state the delivery semantics (At-Most-Once, At-Least-Once, Exactly-Once) and how idempotency is handled. 6. **Concurrency & Mailboxes**: Describe mailbox configurations (e.g., bounded vs. unbounded, priority queues) to prevent Out-Of-Memory (OOM) under backpressure.
+    Produce a comprehensive architectural design document containing: 1. **Topology Blueprint**: Core actor hierarchy and interaction flows. 2. **Cluster & Sharding Strategy**: Mechanism for distributing and locating actors. 3. **Fault Tolerance & Supervision**: Explicit supervision trees and recovery policies. 4. **State Persistence Model**: Mechanism for state recovery and consistency. 5. **Backpressure & Mailbox Tuning**: Strategies for handling message surges.
+    Adopt an authoritative, highly technical, and precise tone. Do not provide code examples unless necessary to illustrate a specific configuration or pattern (e.g., a specific supervisor strategy configuration).
+- role: user
+  content: |
+    Design a distributed actor model topology for the following specifications:
 
-      Your objective is to design extreme-scale, stateful distributed actor topologies that
-      achieve massive concurrency, location transparency, and self-healing fault tolerance.
-
-      You must rigorously apply the following architectural constraints:
-      1. **Location Transparency**: Actors must communicate via asynchronous messaging without knowing physical placement.
-      2. **Supervision Trees**: Define strict "Let It Crash" failure domains with explicit supervision strategies (One-For-One, All-For-One, Restart, Escalate).
-      3. **State Management**: If stateful, explicitly design the persistence model (e.g., Event Sourcing, Snapshotting, Virtual Actors/Grains).
-      4. **Cluster Sharding & Rebalancing**: Address how actors are sharded across nodes and rebalanced during cluster topology changes (scale out/in, network partitions).
-      5. **Message Delivery Guarantees**: Explicitly state the delivery semantics (At-Most-Once, At-Least-Once, Exactly-Once) and how idempotency is handled.
-      6. **Concurrency & Mailboxes**: Describe mailbox configurations (e.g., bounded vs. unbounded, priority queues) to prevent Out-Of-Memory (OOM) under backpressure.
-
-      Produce a comprehensive architectural design document containing:
-      1. **Topology Blueprint**: Core actor hierarchy and interaction flows.
-      2. **Cluster & Sharding Strategy**: Mechanism for distributing and locating actors.
-      3. **Fault Tolerance & Supervision**: Explicit supervision trees and recovery policies.
-      4. **State Persistence Model**: Mechanism for state recovery and consistency.
-      5. **Backpressure & Mailbox Tuning**: Strategies for handling message surges.
-
-      Adopt an authoritative, highly technical, and precise tone. Do not provide code examples unless necessary to illustrate a specific configuration or pattern (e.g., a specific supervisor strategy configuration).
-  - role: user
-    content: |
-      Design a distributed actor model topology for the following specifications:
-
-      Application Domain: {{application_domain}}
-      Concurrency Scale: {{concurrency_scale}}
-      State Durability Requirements: {{state_durability_requirements}}
+    Application Domain: {{ application_domain }}
+    Concurrency Scale: {{ concurrency_scale }}
+    State Durability Requirements: {{ state_durability_requirements }}
 testData:
-  - vars: |
-      Application Domain: Real-time multiplayer game world state synchronization
-      Concurrency Scale: 5 million concurrent player actors, 500K state updates/sec
-      State Durability Requirements: Event Sourced player state with Redis-backed snapshots, at-least-once message delivery.
-    expected: |
-      # Distributed Actor Model Topology: Real-time Multiplayer Game World
+- vars: |
+    Application Domain: Real-time multiplayer game world state synchronization
+    Concurrency Scale: 5 million concurrent player actors, 500K state updates/sec
+    State Durability Requirements: Event Sourced player state with Redis-backed snapshots, at-least-once message delivery.
+  expected: |
+    # Distributed Actor Model Topology: Real-time Multiplayer Game World
 
-      ## 1. Topology Blueprint
-      The actor hierarchy represents the game world spatial partitioning...
-      * `WorldGuardian`: Root supervisor.
-      * `RegionManager`: Shard regions managing spatial zones.
-      * `PlayerActor`: Leaf actors representing individual player sessions...
-      * `NPCBehaviorActor`: Autonomous entities within regions...
+    ## 1. Topology Blueprint
+    The actor hierarchy represents the game world spatial partitioning...
+    * `WorldGuardian`: Root supervisor.
+    * `RegionManager`: Shard regions managing spatial zones.
+    * `PlayerActor`: Leaf actors representing individual player sessions...
+    * `NPCBehaviorActor`: Autonomous entities within regions...
 
-      ## 2. Cluster & Sharding Strategy
-      Utilizes Cluster Sharding based on spatial hashing...
+    ## 2. Cluster & Sharding Strategy
+    Utilizes Cluster Sharding based on spatial hashing...
 
-      ## 3. Fault Tolerance & Supervision
-      Employs a "Let It Crash" philosophy with an All-For-One strategy at the Region level...
+    ## 3. Fault Tolerance & Supervision
+    Employs a "Let It Crash" philosophy with an All-For-One strategy at the Region level...
 
-      ## 4. State Persistence Model
-      Implements Event Sourcing for the `PlayerActor`...
+    ## 4. State Persistence Model
+    Implements Event Sourcing for the `PlayerActor`...
 
-      ## 5. Backpressure & Mailbox Tuning
-      Bounded mailboxes with drop-head policies for non-critical telemetry...
+    ## 5. Backpressure & Mailbox Tuning
+    Bounded mailboxes with drop-head policies for non-critical telemetry...
 evaluators:
-  - name: Ensure Supervision Trees are addressed
-    string:
-      contains: "Supervision"
-  - name: Ensure Cluster Sharding is addressed
-    string:
-      contains: "Sharding"
-  - name: Ensure State Persistence is addressed
-    string:
-      contains: "Persistence"
-  - name: Verify authoritative tone
-    regex:
-      pattern: "(?i)(topology blueprint|cluster.*sharding|fault tolerance|backpressure)"
+- name: Ensure Supervision Trees are addressed
+  string:
+    contains: Supervision
+- name: Ensure Cluster Sharding is addressed
+  string:
+    contains: Sharding
+- name: Ensure State Persistence is addressed
+  string:
+    contains: Persistence
+- name: Verify authoritative tone
+  regex:
+    pattern: (?i)(topology blueprint|cluster.*sharding|fault tolerance|backpressure)

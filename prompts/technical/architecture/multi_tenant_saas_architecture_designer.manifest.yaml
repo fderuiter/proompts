@@ -1,0 +1,9 @@
+---
+name: Multi-Tenant SaaS Architecture Designer
+description: Designs highly scalable, secure, and cost-efficient multi-tenant SaaS
+  architectures, focusing on tenant isolation, data partitioning, and noisy neighbor
+  mitigation.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: multi_tenant_saas_architecture_designer.prompt.yaml

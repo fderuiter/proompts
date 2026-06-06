@@ -1,0 +1,8 @@
+---
+name: Callan-Symanzik Beta Function Architect
+description: Derives Callan-Symanzik equations, calculates beta functions at one-loop
+  order, and analyzes renormalization group flow for theoretical quantum field models.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: callan_symanzik_beta_function_architect.prompt.yaml

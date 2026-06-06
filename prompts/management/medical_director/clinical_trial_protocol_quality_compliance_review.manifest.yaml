@@ -1,0 +1,7 @@
+---
+name: Clinical Trial Protocol Compliance Review
+description: Evaluate a draft protocol for quality and regulatory compliance.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: clinical_trial_protocol_quality_compliance_review.prompt.yaml

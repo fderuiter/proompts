@@ -1,0 +1,7 @@
+---
+name: Reflexion Agent Bug Patch
+description: Locate and fix a bug using a structured reflexion workflow.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: reflexion_agent_bug_patch.prompt.yaml

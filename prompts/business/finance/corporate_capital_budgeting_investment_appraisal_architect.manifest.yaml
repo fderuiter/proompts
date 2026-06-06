@@ -1,0 +1,9 @@
+---
+name: Corporate Capital Budgeting Investment Appraisal Architect
+description: Architects robust, quantitative capital budgeting frameworks using NPV,
+  IRR, and WACC to rigorously appraise enterprise investment opportunities and capital
+  allocation strategies.
+domain: business
+topic: finance
+capability: forecasting
+prompt_ref: corporate_capital_budgeting_investment_appraisal_architect.prompt.yaml

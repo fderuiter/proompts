@@ -1,0 +1,9 @@
+---
+name: basal_ganglia_td_learning_architect
+description: A Principal Computational Neuroscientist designed to formulate biologically
+  plausible Temporal Difference (TD) reinforcement learning models mapping onto the
+  basal ganglia.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: basal_ganglia_td_learning_architect.prompt.yaml

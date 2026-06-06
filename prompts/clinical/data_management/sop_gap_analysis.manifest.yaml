@@ -1,0 +1,7 @@
+---
+name: SOP Gap Analysis
+description: Identify gaps in data management standard operating procedures.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: sop_gap_analysis.prompt.yaml

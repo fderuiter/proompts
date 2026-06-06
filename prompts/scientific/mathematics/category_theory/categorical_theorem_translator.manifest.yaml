@@ -1,0 +1,9 @@
+---
+name: categorical_theorem_translator
+description: Rigorously translates theorems between distinct abstract structures using
+  category theory, specifically evaluating functorial semantics and adjunctions, enforcing
+  strict pure mathematics formalisms and LaTeX formatting.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: categorical_theorem_translator.prompt.yaml

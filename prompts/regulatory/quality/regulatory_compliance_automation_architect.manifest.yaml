@@ -1,0 +1,8 @@
+---
+name: regulatory_compliance_automation_architect
+description: Architects automated regulatory compliance and continuous monitoring
+  frameworks for heavily regulated environments.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: regulatory_compliance_automation_architect.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: stochastic_lotka_volterra_population_modeler
+description: Rigorously models stochastic multispecies population dynamics using generalized
+  Lotka-Volterra equations with environmental noise.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: stochastic_lotka_volterra_population_modeler.prompt.yaml

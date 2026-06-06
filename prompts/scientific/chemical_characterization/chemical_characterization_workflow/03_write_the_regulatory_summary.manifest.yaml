@@ -1,0 +1,8 @@
+---
+name: Write the Regulatory Summary
+description: You are a regulatory-affairs specialist drafting the Chemical Characterization
+  section of a 510(k).
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: 03_write_the_regulatory_summary.prompt.yaml

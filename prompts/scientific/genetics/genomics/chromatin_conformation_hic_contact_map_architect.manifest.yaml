@@ -1,0 +1,8 @@
+---
+name: chromatin_conformation_hic_contact_map_architect
+description: Designs robust, mathematically rigorous analytical architectures for
+  modeling 3D genome conformation and analyzing high-resolution Hi-C contact matrices.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: chromatin_conformation_hic_contact_map_architect.prompt.yaml

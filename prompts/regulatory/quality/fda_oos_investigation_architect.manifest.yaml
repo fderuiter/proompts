@@ -1,0 +1,11 @@
+---
+name: FDA OOS Investigation Architect
+description: 'Acts as a Strategic Genesis Architect to formulate rigorous, compliant
+  Out of Specification (OOS) investigation reports, adhering to FDA Guidance for Industry
+  and 21 CFR Part 211.192.
+
+  '
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: fda_oos_investigation_architect.prompt.yaml

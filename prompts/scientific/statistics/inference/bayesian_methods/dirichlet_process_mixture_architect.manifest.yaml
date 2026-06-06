@@ -1,0 +1,9 @@
+---
+name: dirichlet_process_mixture_architect
+description: Acts as a Principal Statistician to formulate mathematically rigorous
+  Nonparametric Bayesian models utilizing Dirichlet Process Mixture Models (DPMM)
+  for cluster identification.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: dirichlet_process_mixture_architect.prompt.yaml

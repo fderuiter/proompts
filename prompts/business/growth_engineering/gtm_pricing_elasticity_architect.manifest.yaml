@@ -1,0 +1,9 @@
+---
+name: GTM Pricing Elasticity Architect
+description: Constructs deeply rigorous Go-To-Market (GTM) pricing elasticity matrices,
+  modeling price sensitivity, optimal revenue maximization points, and willingness-to-pay
+  using advanced econometric frameworks.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: gtm_pricing_elasticity_architect.prompt.yaml

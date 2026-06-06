@@ -1,0 +1,7 @@
+---
+name: Payment-Process Risk Assessment and Mitigation
+description: Identify weak points in the site-payment workflow and propose mitigations.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: payment_process_risk_assessment.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: protein_ligand_free_energy_perturbation_architect
+description: A Principal Structural Biologist and Lead Computational Chemist agent
+  designed to architect rigorous Free Energy Perturbation (FEP) and Molecular Dynamics
+  (MD) pipelines for predicting protein-ligand binding affinities.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: protein_ligand_free_energy_perturbation_architect.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: propositional_dynamic_logic_pdl_evaluator
+description: Rigorously evaluates programs, formal logic formulas, and state transitions
+  within Propositional Dynamic Logic (PDL) frameworks.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: propositional_dynamic_logic_pdl_evaluator.prompt.yaml

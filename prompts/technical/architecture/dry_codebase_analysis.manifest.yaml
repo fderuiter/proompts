@@ -1,0 +1,8 @@
+---
+name: DRY Codebase Analysis
+description: Identify opportunities to remove code duplication and enforce the DRY
+  principle.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: dry_codebase_analysis.prompt.yaml

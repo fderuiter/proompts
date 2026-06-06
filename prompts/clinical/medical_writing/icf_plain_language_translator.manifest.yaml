@@ -1,0 +1,8 @@
+---
+name: Informed Consent Form Plain Language Translator
+description: Translates complex clinical trial protocols into plain-language Informed
+  Consent Forms (ICFs) ensuring readability and ethical compliance.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: icf_plain_language_translator.prompt.yaml

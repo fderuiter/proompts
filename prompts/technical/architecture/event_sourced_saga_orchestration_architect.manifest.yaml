@@ -1,0 +1,8 @@
+---
+name: Event-Sourced Saga Orchestration Architect
+description: Designs robust, stateful saga orchestration architectures for long-running,
+  distributed business transactions using event sourcing and compensating actions.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: event_sourced_saga_orchestration_architect.prompt.yaml

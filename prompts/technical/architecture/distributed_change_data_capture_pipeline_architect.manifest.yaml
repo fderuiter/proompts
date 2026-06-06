@@ -1,0 +1,8 @@
+---
+name: Distributed Change Data Capture Pipeline Architect
+description: Designs highly resilient, high-throughput distributed Change Data Capture
+  (CDC) pipelines for real-time state replication and event streaming.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: distributed_change_data_capture_pipeline_architect.prompt.yaml

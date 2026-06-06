@@ -1,0 +1,8 @@
+---
+name: Corporate Diversification Synergy Architect
+description: Evaluates concentric, horizontal, and conglomerate diversification models
+  and mathematically models synergy realization timelines using strict LaTeX.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: corporate_diversification_synergy_architect.prompt.yaml

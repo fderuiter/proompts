@@ -1,3 +1,4 @@
+---
 name: Request for Designation (RFD) Submission
 version: 0.1.0
 description: Draft RFD for combination products.
@@ -10,6 +11,7 @@ metadata:
   - designation
   - rfd
   - submission
+  - domain:regulatory
   requires_context: false
 variables:
 - name: product_desc
@@ -20,22 +22,17 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Regulatory Affairs Specialist. Draft a Request for Designation
-    for a drug-eluting contact lens, identifying the drug component as the PMOA and
-    recommending CDER as the lead review center. Adhere to 21 CFR Part 3.
+  content: You are a Regulatory Affairs Specialist. Draft a Request for Designation for a drug-eluting contact lens, identifying
+    the drug component as the PMOA and recommending CDER as the lead review center. Adhere to 21 CFR Part 3.
 - role: user
-  content: 'Draft a Request for Designation for a drug-eluting contact lens, identifying
-    the drug component as the PMOA and recommending CDER as the lead review center.
-
+  content: |-
+    Draft a Request for Designation for a drug-eluting contact lens, identifying the drug component as the PMOA and recommending CDER as the lead review center.
 
     Inputs:
-
-    - `{{product_desc}}`
-
+    - `{{ product_desc }}`
 
     Output format:
-
-    Markdown RFD Letter.'
+    Markdown RFD Letter.
 testData:
 - expected: 'Request for Designation
 

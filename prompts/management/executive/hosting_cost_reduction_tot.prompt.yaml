@@ -1,3 +1,4 @@
+---
 name: Hosting Cost Reduction ToT Plan
 version: 0.1.0
 description: Develop a tree-of-thought plan to reduce hosting costs.
@@ -10,6 +11,7 @@ metadata:
   - cost
   - reduction
   - plan
+  - domain:management
   requires_context: false
 variables:
 - name: input
@@ -20,13 +22,11 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a cost-optimization strategist using structured tree-of-thought
-
+  content: |
+    You are a cost-optimization strategist using structured tree-of-thought
     reasoning to reduce hosting expenses.
-
-    '
 - role: user
-  content: '{{input}}'
+  content: '{{ input }}'
 testData:
 - expected: ''
   vars: ''

@@ -1,0 +1,8 @@
+---
+name: Design Verification Test Plan
+description: Create a complete test plan for verifying that a medical device meets
+  its design requirements.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: 02_design_verification_test_plan.prompt.yaml

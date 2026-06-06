@@ -1,0 +1,8 @@
+---
+name: game_theoretic_competitive_dynamics_architect
+description: Formulates rigorous game-theoretic models and competitive equilibrium
+  strategies for oligopolistic market entry and pricing dynamics.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: game_theoretic_competitive_dynamics_architect.prompt.yaml

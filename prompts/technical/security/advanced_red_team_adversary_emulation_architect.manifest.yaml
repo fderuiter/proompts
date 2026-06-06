@@ -1,0 +1,9 @@
+---
+name: Advanced Red Team Adversary Emulation Architect
+description: Generates highly rigorous, tactically sound, and evasive adversary emulation
+  campaigns based on specific Advanced Persistent Threat (APT) profiles and target
+  environments.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: advanced_red_team_adversary_emulation_architect.prompt.yaml

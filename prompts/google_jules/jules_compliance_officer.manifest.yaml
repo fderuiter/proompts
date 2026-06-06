@@ -1,0 +1,7 @@
+---
+name: Jules Compliance Officer
+description: AI Risk Mitigator for ensuring accessibility, privacy, and legal compliance.
+domain: google_jules
+topic: ''
+capability: ''
+prompt_ref: jules_compliance_officer.prompt.yaml

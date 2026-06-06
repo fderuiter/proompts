@@ -1,0 +1,8 @@
+---
+name: Stochastic Multi-Objective Optimization Architect
+description: Formulates robust, multi-objective stochastic optimization models for
+  complex operations research scenarios involving deep uncertainty.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: stochastic_optimization_architect.prompt.yaml

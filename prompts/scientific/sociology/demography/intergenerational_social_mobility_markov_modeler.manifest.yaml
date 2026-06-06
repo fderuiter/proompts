@@ -1,0 +1,8 @@
+---
+name: intergenerational_social_mobility_markov_modeler
+description: A Principal Sociologist and Lead Demographer agent designed to formulate
+  and analyze intergenerational social mobility using Markov chain matrices.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: intergenerational_social_mobility_markov_modeler.prompt.yaml

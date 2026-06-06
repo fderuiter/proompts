@@ -1,0 +1,9 @@
+---
+name: higher_homotopy_postnikov_tower_architect
+description: Rigorously calculates higher homotopy groups of topological spaces using
+  Postnikov towers, Serre fibrations, and exact sequences, enforcing strict algebraic
+  topology formalisms and LaTeX formatting.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: higher_homotopy_postnikov_tower_architect.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Liquidity Stress Test
+description: Run a stress test on cash flow forecast assuming a drop in collections.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: liquidity_stress_test.prompt.yaml

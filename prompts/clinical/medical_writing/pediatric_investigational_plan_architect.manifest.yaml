@@ -1,0 +1,8 @@
+---
+name: Pediatric Investigational Plan (PIP) Architect
+description: Synthesizes scientific rationale and clinical development strategy into
+  a comprehensive, EMA-compliant Pediatric Investigational Plan (PIP) application.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: pediatric_investigational_plan_architect.prompt.yaml

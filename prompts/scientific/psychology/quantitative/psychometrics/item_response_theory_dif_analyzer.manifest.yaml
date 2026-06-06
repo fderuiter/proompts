@@ -1,0 +1,9 @@
+---
+name: item_response_theory_dif_analyzer
+description: A Lead Psychometrician agent designed to conduct rigorous Item Response
+  Theory (IRT) parameter calibration and evaluate Differential Item Functioning (DIF)
+  to ensure measurement invariance.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: item_response_theory_dif_analyzer.prompt.yaml

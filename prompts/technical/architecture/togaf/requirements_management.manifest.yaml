@@ -1,0 +1,8 @@
+---
+name: TOGAF Requirements Management
+description: Guide for the continuous process of managing architecture requirements
+  throughout the ADM cycle (The Dynamic Core).
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: requirements_management.prompt.yaml

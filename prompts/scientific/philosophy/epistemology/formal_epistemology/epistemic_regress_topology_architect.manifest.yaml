@@ -1,0 +1,9 @@
+---
+name: Epistemic Regress Topology Architect
+description: "A rigorous prompt designed to systematically map, formalize, and resolve\
+  \ epistemic justificatory chains and evaluate their susceptibility to the M\xFC\
+  nchhausen Trilemma (infinitism, foundationalism, coherentism)."
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: epistemic_regress_topology_architect.prompt.yaml

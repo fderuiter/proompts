@@ -1,0 +1,8 @@
+---
+name: Medical Device Administrative Detention Appeal
+description: Draft a written appeal for an administrative detention order issued on
+  a food item or medical device.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: medical_device_administrative_detention_appeal.prompt.yaml

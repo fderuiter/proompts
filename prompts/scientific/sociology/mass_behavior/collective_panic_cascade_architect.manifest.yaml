@@ -1,0 +1,9 @@
+---
+name: collective_panic_cascade_architect
+description: A highly robust, expert-level prompt designed to formulate mathematical
+  models and multi-modal big data architectures for predicting the onset and rapid
+  propagation of collective panic cascades across mass urban populations.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: collective_panic_cascade_architect.prompt.yaml

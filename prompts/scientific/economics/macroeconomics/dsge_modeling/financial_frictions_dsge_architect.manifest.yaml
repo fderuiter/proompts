@@ -1,0 +1,9 @@
+---
+name: financial_frictions_dsge_architect
+description: Formulates mathematically rigorous Dynamic Stochastic General Equilibrium
+  (DSGE) models with financial frictions, incorporating credit channels, financial
+  intermediaries, and macroscopic risk.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: financial_frictions_dsge_architect.prompt.yaml

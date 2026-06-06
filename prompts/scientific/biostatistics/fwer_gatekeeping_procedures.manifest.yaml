@@ -1,0 +1,8 @@
+---
+name: FWER Gatekeeping Procedure Code Generator
+description: Generate code for sequential and gatekeeping procedures to control Family-Wise
+  Error Rate (FWER).
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: fwer_gatekeeping_procedures.prompt.yaml

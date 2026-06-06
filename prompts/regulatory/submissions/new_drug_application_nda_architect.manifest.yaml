@@ -1,0 +1,8 @@
+---
+name: New Drug Application (NDA) Architect
+description: Formulates rigorous, compliant FDA New Drug Application (NDA) eCTD submissions
+  for small molecule drugs, ensuring strict adherence to 21 CFR 314 and ICH M4 guidelines.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: new_drug_application_nda_architect.prompt.yaml

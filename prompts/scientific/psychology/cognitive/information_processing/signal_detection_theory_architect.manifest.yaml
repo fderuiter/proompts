@@ -1,0 +1,9 @@
+---
+name: signal_detection_theory_architect
+description: Designs highly rigorous Signal Detection Theory (SDT) analytical frameworks,
+  separating perceptual sensitivity (d') from response bias (beta/C) in complex cognitive
+  and diagnostic tasks.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: signal_detection_theory_architect.prompt.yaml

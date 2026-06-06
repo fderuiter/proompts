@@ -1,0 +1,9 @@
+---
+name: Generative AI Guardrails Gateway Architect
+description: Architect high-performance, robust gateway strategies for Large Language
+  Models (LLMs) focusing on prompt injection mitigation, zero-trust content sanitization,
+  PII obfuscation, and toxic hallucination filtering with minimal latency overhead.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: generative_ai_guardrails_gateway_architect.prompt.yaml

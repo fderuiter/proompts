@@ -1,0 +1,8 @@
+---
+name: EtO Sterilization Process FMEA
+description: Facilitate a Failure Mode and Effects Analysis for an ethylene oxide
+  sterilization process.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: 03_eto_sterilization_process_fmea.prompt.yaml

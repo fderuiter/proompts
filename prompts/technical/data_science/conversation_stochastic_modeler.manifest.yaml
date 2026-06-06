@@ -1,0 +1,8 @@
+---
+name: Conversation Stochastic Modeler
+description: Maps human-to-human or human-to-AI interactions into a mathematical framework
+  to predict outcomes and quantify risk.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: conversation_stochastic_modeler.prompt.yaml

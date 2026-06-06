@@ -1,0 +1,9 @@
+---
+name: Distributed Circuit Breaker Resiliency Architect
+description: Architects robust distributed circuit breaker topologies for preventing
+  cascading failures in high-throughput microservice ecosystems, addressing dynamic
+  thresholding and cross-node state synchronization.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: distributed_circuit_breaker_resiliency_architect.prompt.yaml

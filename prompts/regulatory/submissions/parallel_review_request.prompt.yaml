@@ -1,3 +1,4 @@
+---
 name: Parallel Review Request
 version: 0.1.0
 description: Draft an email requesting enrollment in the Parallel Review program.
@@ -9,6 +10,7 @@ metadata:
   - parallel
   - review
   - request
+  - domain:regulatory
   requires_context: false
 variables:
 - name: input
@@ -19,32 +21,24 @@ modelParameters:
   temperature: 0.5
 messages:
 - role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
-    FDA and ISO compliance tasks.
-
+  content: |-
+    You are an expert Regulatory Affairs Specialist capable of handling complex FDA and ISO compliance tasks.
 
     ## Context
-
     FDA/CMS Program
 
-
     ## Objective
-
     Draft an email requesting enrollment in the Parallel Review program.
 
-
     ## Output Format
-
-    Formal professional email.'
+    Formal professional email.
 - role: user
-  content: 'Please perform the task using the following input data:
-
+  content: |-
+    Please perform the task using the following input data:
 
     <input>
-
-    {{input}}
-
-    </input>'
+    {{ input }}
+    </input>
 testData:
 - expected: Expected output as per instructions.
   vars: Regulatory history and public health impact statement. (Example data)

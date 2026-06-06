@@ -1,0 +1,8 @@
+---
+name: Meta Prompt Architect
+description: Design an L2 prompt that instructs a Prompt Engineer to create a domain-specific
+  template achieving `{{ end_task }}`.
+domain: meta
+topic: ''
+capability: ''
+prompt_ref: 01_L1_meta-prompt-architect.prompt.yaml

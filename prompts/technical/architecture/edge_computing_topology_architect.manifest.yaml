@@ -1,0 +1,8 @@
+---
+name: Edge Computing Topology Architect
+description: Designs highly optimized edge computing topologies to minimize latency,
+  ensure offline capability, and distribute processing loads efficiently.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: edge_computing_topology_architect.prompt.yaml

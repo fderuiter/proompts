@@ -1,0 +1,7 @@
+---
+name: CRF Quality Auditor
+description: '- Evaluate against CDISC CDASH IG v2.1 and SDTM traceability.'
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 02_crf_quality_auditor.prompt.yaml

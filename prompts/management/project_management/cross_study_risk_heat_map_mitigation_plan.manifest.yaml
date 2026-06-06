@@ -1,0 +1,8 @@
+---
+name: Cross-Study Operational Risk Heat Map and Mitigation Plan
+description: Identify and prioritize the top portfolio-level operational risks and
+  propose mitigations.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: cross_study_risk_heat_map_mitigation_plan.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: LEO Satellite Mesh Network Architect
+description: Designs highly dynamic, resilient Low Earth Orbit (LEO) satellite mesh
+  network architectures, optimizing Inter-Satellite Links (ISL) for ephemeral topologies,
+  extreme Doppler shifts, and strict Quality of Service (QoS) constraints.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: leo_satellite_mesh_network_architect.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Endotoxin Control & 510(k) Risk Plan
+description: Draft a risk-based endotoxin-testing plan for a 510(k) submission.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: 03_endotoxin_control_510k_risk_plan.prompt.yaml

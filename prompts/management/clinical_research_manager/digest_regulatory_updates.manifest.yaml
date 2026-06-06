@@ -1,0 +1,8 @@
+---
+name: Digest Regulatory Updates Affecting Protocol
+description: Analyze new regulatory guidance documents for impact on specific clinical
+  protocols, differentiating between mandatory and recommended actions.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: digest_regulatory_updates.prompt.yaml

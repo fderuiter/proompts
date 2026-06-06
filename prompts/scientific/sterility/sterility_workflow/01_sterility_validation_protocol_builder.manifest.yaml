@@ -1,0 +1,8 @@
+---
+name: Sterility-Validation Protocol Builder
+description: "Draft a complete validation protocol for a single-use Class\_II instrument\
+  \ sterilized by gamma irradiation, strictly adhering to ISO 11137 and FDA guidance."
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: 01_sterility_validation_protocol_builder.prompt.yaml

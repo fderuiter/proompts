@@ -1,0 +1,8 @@
+---
+name: Clinical Trial Protocol Synopsis Architect
+description: Synthesizes a comprehensive, regulatory-compliant Clinical Trial Protocol
+  Synopsis from raw study design parameters, objectives, and statistical assumptions.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: clinical_trial_protocol_synopsis_architect.prompt.yaml

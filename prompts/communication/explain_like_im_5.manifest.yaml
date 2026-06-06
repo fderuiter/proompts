@@ -1,0 +1,7 @@
+---
+name: "Explain-Like-I\u2019m-5 (ELI5)"
+description: "Explain \u2018[TOPIC]\u2019 as if I\u2019m five:"
+domain: communication
+topic: ''
+capability: ''
+prompt_ref: explain_like_im_5.prompt.yaml

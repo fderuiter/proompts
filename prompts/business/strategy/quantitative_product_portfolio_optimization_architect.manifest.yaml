@@ -1,0 +1,9 @@
+---
+name: Quantitative Product Portfolio Optimization Architect
+description: Architects highly rigorous, quantitative product portfolio optimization
+  strategies, integrating multi-criteria decision analysis (MCDA), the BCG Matrix,
+  and Mixed-Integer Linear Programming (MILP).
+domain: business
+topic: ''
+capability: ''
+prompt_ref: quantitative_product_portfolio_optimization_architect.prompt.yaml

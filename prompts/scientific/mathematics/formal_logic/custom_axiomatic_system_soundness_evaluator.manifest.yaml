@@ -1,0 +1,9 @@
+---
+name: Custom Axiomatic System Soundness Evaluator
+description: Evaluates the logical soundness of custom axiomatic systems by rigorously
+  proving that all axioms are valid under a specified formal semantics and that all
+  inference rules preserve truth.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: custom_axiomatic_system_soundness_evaluator.prompt.yaml

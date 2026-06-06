@@ -1,0 +1,8 @@
+---
+name: Market Landscape & Trend Analysis
+description: Summarize the global market for `{{ device_or_assay }}` and highlight
+  key trends.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: 01_market_landscape_trend_analysis.prompt.yaml

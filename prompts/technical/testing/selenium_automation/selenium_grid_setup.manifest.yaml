@@ -1,0 +1,7 @@
+---
+name: 'Cross-Browser Infrastructure: Selenium Grid'
+description: Configure a Selenium Grid Hub and Nodes to distribute test execution.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: selenium_grid_setup.prompt.yaml

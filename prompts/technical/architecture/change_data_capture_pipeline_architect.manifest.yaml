@@ -1,0 +1,8 @@
+---
+name: Change Data Capture Pipeline Architect
+description: Designs highly reliable, low-latency Change Data Capture (CDC) pipelines
+  for log-based database replication and stream processing.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: change_data_capture_pipeline_architect.prompt.yaml

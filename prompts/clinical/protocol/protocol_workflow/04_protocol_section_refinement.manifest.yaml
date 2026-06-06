@@ -1,0 +1,8 @@
+---
+name: Protocol Section Refinement
+description: Improve the eligibility criteria section of an IVD performance trial
+  protocol.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 04_protocol_section_refinement.prompt.yaml

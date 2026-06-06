@@ -1,0 +1,7 @@
+---
+name: Value-Based QBR Generator
+description: Create a concise, impact-focused Quarterly Business Review template.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: value_based_qbr.prompt.yaml

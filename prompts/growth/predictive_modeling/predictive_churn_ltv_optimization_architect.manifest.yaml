@@ -1,0 +1,8 @@
+---
+name: predictive_churn_ltv_optimization_architect
+description: Synthesizes enterprise SaaS customer behavior data into predictive churn
+  mitigation strategies and LTV optimization frameworks using rigorous RFM analysis.
+domain: growth
+topic: ''
+capability: ''
+prompt_ref: predictive_churn_ltv_optimization_architect.prompt.yaml

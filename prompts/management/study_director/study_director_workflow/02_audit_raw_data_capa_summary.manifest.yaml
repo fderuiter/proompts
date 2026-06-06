@@ -1,0 +1,7 @@
+---
+name: Audit Raw Data and Draft a CAPA Summary
+description: Review study data for deviations and produce a corrective-action plan.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: 02_audit_raw_data_capa_summary.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: RWE Regulatory Framework Summary
+description: Review the FDA Real-World Evidence (RWE) Framework and fitness-for-use
+  criteria.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: rwe_framework_summary.prompt.yaml

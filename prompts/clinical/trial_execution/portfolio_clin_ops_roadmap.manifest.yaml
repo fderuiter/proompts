@@ -1,0 +1,7 @@
+---
+name: Portfolio-Level Clinical Operations Roadmap
+description: "Provide a 12\u2011month roadmap for a portfolio of clinical trials."
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: portfolio_clin_ops_roadmap.prompt.yaml

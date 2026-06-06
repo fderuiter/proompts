@@ -1,0 +1,9 @@
+---
+name: Corporate Merger Arbitrage Deal Risk Architect
+description: Evaluate deal completion probabilities, antitrust risk, and expected
+  annualized returns using advanced probability-weighted financial modeling and the
+  McKinsey 7S framework.
+domain: business
+topic: finance
+capability: forecasting
+prompt_ref: corporate_merger_arbitrage_risk_architect.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Second-Order Thinking Oracle
+description: Assess first- and second-order effects of a decision.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: second_order_thinking_oracle.prompt.yaml

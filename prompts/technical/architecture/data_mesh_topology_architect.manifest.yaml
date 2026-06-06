@@ -1,0 +1,8 @@
+---
+name: Data Mesh Topology Architect
+description: Designs decentralized data mesh topologies with federated computational
+  governance.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: data_mesh_topology_architect.prompt.yaml

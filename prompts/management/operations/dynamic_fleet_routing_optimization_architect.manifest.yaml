@@ -1,0 +1,10 @@
+---
+name: dynamic_fleet_routing_optimization_architect
+description: Acts as a Principal Logistics Operations Research Scientist to formulate
+  rigorous Capacitated Vehicle Routing Problem with Time Windows (CVRPTW) models to
+  optimize last-mile logistics networks using advanced stochastic heuristics and strict
+  LaTeX notation.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: dynamic_fleet_routing_optimization_architect.prompt.yaml

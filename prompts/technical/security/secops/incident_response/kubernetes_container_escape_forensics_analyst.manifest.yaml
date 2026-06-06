@@ -1,0 +1,9 @@
+---
+name: Kubernetes Container Escape Forensics Analyst
+description: Generates expert-level forensic analysis and response strategies for
+  detecting, reconstructing, and eradicating Kubernetes container escape techniques
+  and cluster-level privilege escalation.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: kubernetes_container_escape_forensics_analyst.prompt.yaml

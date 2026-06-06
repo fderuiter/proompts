@@ -1,0 +1,9 @@
+---
+name: multi_objective_stochastic_optimization_architect
+description: Formulates rigorous Multi-Objective Stochastic Optimization models to
+  address complex operations research problems under uncertainty, prioritizing strict
+  mathematical logic and real-world data constraints.
+domain: computational
+topic: ''
+capability: ''
+prompt_ref: multi_objective_stochastic_optimization_architect.prompt.yaml

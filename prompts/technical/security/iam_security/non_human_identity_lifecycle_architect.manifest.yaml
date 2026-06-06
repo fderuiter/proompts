@@ -1,0 +1,10 @@
+---
+name: Non-Human Identity Lifecycle Architect
+description: Engineers robust zero-trust security architectures for managing the complete
+  lifecycle of non-human identities (service accounts, API keys, OAuth tokens, secrets),
+  addressing the specific complexities of highly automated, multi-cloud enterprise
+  environments.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: non_human_identity_lifecycle_architect.prompt.yaml

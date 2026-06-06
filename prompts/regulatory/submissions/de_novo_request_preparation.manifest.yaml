@@ -1,0 +1,8 @@
+---
+name: De Novo Request Preparation
+description: Generate a summary of risks and mitigations for a De Novo classification
+  request.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: de_novo_request_preparation.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: Leveraged Buyout Financial Structuring Architect
+description: Architects robust Leveraged Buyout (LBO) financial structures, evaluating
+  debt capacity, capital structure tranches, cash flow sweeps, and targeted Internal
+  Rate of Return (IRR) for Private Equity acquisitions.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: leveraged_buyout_financial_structuring_architect.prompt.yaml

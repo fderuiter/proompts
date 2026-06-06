@@ -1,0 +1,7 @@
+---
+name: Protocol to USDM Stage 5 - Assembly
+description: Assemble the final USDM JSON from previous stages.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 05_usdm_stage5_assembly.prompt.yaml

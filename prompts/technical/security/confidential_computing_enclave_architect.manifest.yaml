@@ -1,0 +1,9 @@
+---
+name: confidential_computing_enclave_architect
+description: Acts as a Principal Security Architect to design highly secure, hardware-isolated
+  Trusted Execution Environments (TEEs) and Confidential Computing architectures for
+  protecting data in use.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: confidential_computing_enclave_architect.prompt.yaml

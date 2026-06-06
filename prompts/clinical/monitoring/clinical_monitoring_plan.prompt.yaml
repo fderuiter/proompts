@@ -1,3 +1,4 @@
+---
 name: Clinical Monitoring Plan Development
 version: 0.1.0
 description: Draft a risk-based Clinical Monitoring Plan.
@@ -9,6 +10,7 @@ metadata:
   - clinical
   - plan
   - development
+  - domain:clinical
   requires_context: false
 variables:
 - name: trial_details
@@ -19,24 +21,18 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Clinical Research Associate (CRA) Lead. Draft a risk-based Clinical
-    Monitoring Plan (CMP) for the multicenter trial. Identify critical data points
-    for source data verification and analyze site performance metrics to identify
-    sites requiring targeted on-site visits.
+  content: You are a Clinical Research Associate (CRA) Lead. Draft a risk-based Clinical Monitoring Plan (CMP) for the multicenter
+    trial. Identify critical data points for source data verification and analyze site performance metrics to identify sites
+    requiring targeted on-site visits.
 - role: user
-  content: 'Draft a risk-based Clinical Monitoring Plan (CMP) for the multicenter
-    trial. Identify critical data points for source data verification and analyze
-    site performance metrics to identify sites requiring targeted on-site visits.
-
+  content: |-
+    Draft a risk-based Clinical Monitoring Plan (CMP) for the multicenter trial. Identify critical data points for source data verification and analyze site performance metrics to identify sites requiring targeted on-site visits.
 
     Inputs:
-
-    - `{{trial_details}}`
-
+    - `{{ trial_details }}`
 
     Output format:
-
-    Markdown Clinical Monitoring Plan.'
+    Markdown Clinical Monitoring Plan.
 testData:
 - expected: 'Clinical Monitoring Plan
 

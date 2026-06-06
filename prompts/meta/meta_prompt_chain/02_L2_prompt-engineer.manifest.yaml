@@ -1,0 +1,8 @@
+---
+name: Prompt Engineer Template
+description: Produce an L3 task template that enables a Task Prototyper to fulfil
+  `{{ end_task }}`.
+domain: meta
+topic: ''
+capability: ''
+prompt_ref: 02_L2_prompt-engineer.prompt.yaml

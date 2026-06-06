@@ -1,3 +1,4 @@
+---
 name: Medicare Coverage Analysis
 version: 0.1.0
 description: Determine qualifying status and billing justification.
@@ -9,6 +10,7 @@ metadata:
   - medicare
   - coverage
   - analysis
+  - domain:business
   requires_context: false
 variables:
 - name: schedule_of_events
@@ -19,24 +21,17 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Reimbursement Analyst. Compare the study protocol's schedule
-    of events with Medicare routine care guidelines to determine which labs should
-    be billed to the research account vs. patient insurance. Adhere to Medicare NCD
-    310.1.
+  content: You are a Reimbursement Analyst. Compare the study protocol's schedule of events with Medicare routine care guidelines
+    to determine which labs should be billed to the research account vs. patient insurance. Adhere to Medicare NCD 310.1.
 - role: user
-  content: 'Compare the study protocol''s schedule of events with Medicare routine
-    care guidelines to determine which labs should be billed to the research account
-    vs. patient insurance.
-
+  content: |-
+    Compare the study protocol's schedule of events with Medicare routine care guidelines to determine which labs should be billed to the research account vs. patient insurance.
 
     Inputs:
-
-    - `{{schedule_of_events}}`
-
+    - `{{ schedule_of_events }}`
 
     Output format:
-
-    Markdown Coverage Analysis Matrix.'
+    Markdown Coverage Analysis Matrix.
 testData:
 - expected: 'Coverage Analysis
 

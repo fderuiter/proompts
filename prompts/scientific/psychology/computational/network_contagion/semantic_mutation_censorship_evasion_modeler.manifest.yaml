@@ -1,0 +1,9 @@
+---
+name: semantic_mutation_censorship_evasion_modeler
+description: A highly robust, expert-level prompt designed to computationally model
+  the automated semantic mutation and evolutionary adaptation of psychological contagions
+  to evade algorithmic censorship within massive-scale networks.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: semantic_mutation_censorship_evasion_modeler.prompt.yaml

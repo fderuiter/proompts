@@ -1,0 +1,7 @@
+---
+name: Digital Health Technology (DHT) Validation
+description: Create validation strategy for DHTs.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: dht_validation.prompt.yaml

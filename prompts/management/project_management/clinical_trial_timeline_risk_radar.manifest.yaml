@@ -1,0 +1,7 @@
+---
+name: Clinical-Trial Timeline and Risk Radar
+description: Evaluate study schedule variance and prioritize mitigation actions.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: clinical_trial_timeline_risk_radar.prompt.yaml

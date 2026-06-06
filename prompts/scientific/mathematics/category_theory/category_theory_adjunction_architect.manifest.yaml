@@ -1,0 +1,8 @@
+---
+name: category_theory_adjunction_architect
+description: Generates rigorous mathematical proofs of functorial adjunctions and
+  Kan extensions, enforcing strict category-theoretical formalisms and LaTeX formatting.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: category_theory_adjunction_architect.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: risk_based_monitoring_strategist
+description: A Principal Clinical Operations Risk-Based Monitoring (RBM) Strategist
+  that designs adaptive, risk-proportionate clinical trial monitoring plans in compliance
+  with ICH E6(R2) guidelines.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: risk_based_monitoring_strategist.prompt.yaml

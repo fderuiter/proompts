@@ -1,0 +1,10 @@
+---
+name: social_isolation_epidemiological_contagion_modeler
+description: A highly robust, expert-level prompt designed to mathematically model
+  and systematically map the computational spread of social isolation and chronic
+  loneliness as a behavioral contagion across massive population networks utilizing
+  multi-modal epidemiological data proxies.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: social_isolation_epidemiological_contagion_modeler.prompt.yaml

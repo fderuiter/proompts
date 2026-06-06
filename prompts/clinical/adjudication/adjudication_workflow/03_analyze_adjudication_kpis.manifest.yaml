@@ -1,0 +1,7 @@
+---
+name: Analyze Adjudication KPIs
+description: Calculate adjudication performance metrics and recommend improvements.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 03_analyze_adjudication_kpis.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: quantitative_commercial_due_diligence_architect
+description: Architects highly rigorous, quantitative Commercial Due Diligence (CDD)
+  frameworks, evaluating market sizing (TAM/SAM/SOM), competitive moats, customer
+  lifetime value (LTV), and revenue defensibility for M&A and Private Equity transactions.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: quantitative_commercial_due_diligence_architect.prompt.yaml

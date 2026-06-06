@@ -1,0 +1,8 @@
+---
+name: Target Segment & User Needs Assessment
+description: Identify key user segments for `{{ device_or_assay }}` used in `{{ application
+  }}`.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: 02_target_segment_user_needs_assessment.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: ultraproduct_los_theorem_architect
+description: Acts as a Principal Mathematical Logician to rigorously formalize and
+  analyze ultraproducts of structures and apply \u0141o\u015b's Theorem for non-standard
+  models and compactness proofs.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: ultraproduct_los_theorem_architect.prompt.yaml

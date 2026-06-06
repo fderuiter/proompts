@@ -1,0 +1,8 @@
+---
+name: Establishment of Food Traceability Plan
+description: Create a structured traceability plan for a facility handling foods on
+  the Food Traceability List.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: establishment_of_food_traceability_plan.prompt.yaml

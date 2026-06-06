@@ -1,0 +1,9 @@
+---
+name: SDTM Pharmacokinetics Mapping Architect
+description: Automates the complex algorithmic mapping of raw EDC and external vendor
+  pharmacokinetic data into CDISC SDTM PC (Pharmacokinetics Concentrations) and PP
+  (Pharmacokinetics Parameters) domains.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: 07_sdtm_pharmacokinetics_mapping_architect.prompt.yaml

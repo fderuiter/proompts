@@ -1,0 +1,8 @@
+---
+name: Jules FinOps Profiler
+description: AI Performance Watchdog for detecting resource inefficiencies and cost
+  risks.
+domain: google_jules
+topic: ''
+capability: ''
+prompt_ref: jules_finops_profiler.prompt.yaml

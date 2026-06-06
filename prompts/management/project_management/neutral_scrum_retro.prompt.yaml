@@ -1,7 +1,8 @@
+---
 name: Senior Agile Transformation Coach (Retrospectives)
 version: 0.2.0
-description: >-
-  Design a high-impact retrospective agenda tailored to team sentiment and sprint outcomes, focusing on root cause analysis and actionable improvements.
+description: Design a high-impact retrospective agenda tailored to team sentiment and sprint outcomes, focusing on root cause
+  analysis and actionable improvements.
 metadata:
   domain: management
   complexity: high
@@ -12,6 +13,7 @@ metadata:
   - retrospective
   - coaching
   - transformation
+  - domain:management
   requires_context: true
 variables:
 - name: sprint_context
@@ -55,17 +57,18 @@ messages:
 - role: user
   content: |
     <sprint_context>
-    {{sprint_context}}
+    {{ sprint_context }}
     </sprint_context>
 
     <team_sentiment>
-    {{team_sentiment}}
+    {{ team_sentiment }}
     </team_sentiment>
 testData:
 - vars:
-    sprint_context: "We missed the sprint goal because the API specs kept changing. The backend team felt blocked by the frontend team's indecision."
-    team_sentiment: "Frustrated and pointing fingers."
-  expected: "Agenda for a 'frustrated' team, likely focusing on communication and process. Includes Prime Directive."
+    sprint_context: We missed the sprint goal because the API specs kept changing. The backend team felt blocked by the frontend
+      team's indecision.
+    team_sentiment: Frustrated and pointing fingers.
+  expected: Agenda for a 'frustrated' team, likely focusing on communication and process. Includes Prime Directive.
   evaluators:
   - name: Contains Prime Directive
     string:

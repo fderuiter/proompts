@@ -1,0 +1,7 @@
+---
+name: Civil Money Penalties Hearing Response
+description: Draft a formal 'Answer' to an FDA complaint seeking civil money penalties.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: civil_money_penalties_hearing_response.prompt.yaml

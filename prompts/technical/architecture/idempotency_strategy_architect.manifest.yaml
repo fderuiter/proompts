@@ -1,0 +1,8 @@
+---
+name: Idempotency and API Retry Strategy Architect
+description: Designs highly robust, distributed idempotency and retry architectures
+  for APIs and message-driven systems to prevent duplicate processing.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: idempotency_strategy_architect.prompt.yaml

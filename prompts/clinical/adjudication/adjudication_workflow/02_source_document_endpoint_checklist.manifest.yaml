@@ -1,0 +1,8 @@
+---
+name: Source Document and Endpoint Checklist
+description: Create a clear checklist of required documents and endpoint criteria
+  for clinical adjudication.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 02_source_document_endpoint_checklist.prompt.yaml

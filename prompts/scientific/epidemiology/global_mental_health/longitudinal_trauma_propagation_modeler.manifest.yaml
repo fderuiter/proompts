@@ -1,0 +1,9 @@
+---
+name: longitudinal_trauma_propagation_modeler
+description: Models the epidemiological propagation of psychological trauma across
+  massive longitudinal population datasets using advanced spatial-temporal network
+  equations and WHO mental health guidelines.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: longitudinal_trauma_propagation_modeler.prompt.yaml

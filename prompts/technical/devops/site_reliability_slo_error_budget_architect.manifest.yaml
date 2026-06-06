@@ -1,0 +1,8 @@
+---
+name: Site Reliability SLO Error Budget Architect
+description: Formulates rigorous Site Reliability Engineering (SRE) Service Level
+  Objectives (SLOs) and Error Budget management frameworks.
+domain: technical
+topic: devops
+capability: orchestration
+prompt_ref: site_reliability_slo_error_budget_architect.prompt.yaml

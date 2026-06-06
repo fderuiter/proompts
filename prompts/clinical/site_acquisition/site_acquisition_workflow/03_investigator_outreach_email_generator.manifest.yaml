@@ -1,0 +1,7 @@
+---
+name: Personalized Investigator-Outreach Email Generator
+description: Craft a tailored outreach email to potential investigators.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 03_investigator_outreach_email_generator.prompt.yaml

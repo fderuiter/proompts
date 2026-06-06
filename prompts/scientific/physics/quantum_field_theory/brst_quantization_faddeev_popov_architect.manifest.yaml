@@ -1,0 +1,9 @@
+---
+name: BRST Quantization and Faddeev-Popov Ghost Architect
+description: Formulates the rigorous BRST quantization of gauge theories, extracting
+  the complete effective Lagrangian including Faddeev-Popov ghost terms and gauge-fixing
+  structures.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: brst_quantization_faddeev_popov_architect.prompt.yaml

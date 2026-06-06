@@ -1,0 +1,9 @@
+---
+name: staggered_difference_in_differences_architect
+description: Formulates rigorous econometric identification strategies for panel data
+  with staggered treatment timing, addressing heterogeneous treatment effects using
+  modern DiD estimators.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: staggered_difference_in_differences_architect.prompt.yaml

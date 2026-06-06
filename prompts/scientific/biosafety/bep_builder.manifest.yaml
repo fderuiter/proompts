@@ -1,0 +1,8 @@
+---
+name: Biological Evaluation Plan Builder
+description: Draft a complete Biological Evaluation Plan (BEP) for a specified medical
+  device.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: bep_builder.prompt.yaml

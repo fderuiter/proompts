@@ -1,3 +1,4 @@
+---
 name: SOLID Codebase Analysis
 version: 0.2.0
 description: Evaluate code against SOLID principles and suggest refactoring tasks.
@@ -9,6 +10,9 @@ metadata:
   - solid
   - codebase
   - analysis
+  - domain:technical
+  - topic:architecture
+  - capability:design
   requires_context: false
 variables:
 - name: codebase
@@ -20,35 +24,47 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: "You are a Principal Software Architect assessing adherence to the SOLID\
-    \ object-oriented design principles.\nYour task is to review the provided codebase\
-    \ and produce concrete refactoring tasks for any violated SOLID principle.\n\n\
-    Output format: Generate a Markdown report with structured sections:\n1. **Executive\
-    \ Summary**: A brief overview of the codebase's adherence to SOLID.\n2. **Violations**:\
-    \ For each SOLID principle violated, provide:\n   - **Principle**: The name of\
-    \ the principle (e.g., Single Responsibility Principle).\n   - **Violation**:\
-    \ The specific code snippet and file (if available) that violates the principle.\n\
-    \   - **Refactoring Task**: A concrete, actionable suggestion to fix the violation.\n\
-    3. **Quick Wins**: A prioritized list of the top 3 refactoring tasks.\n\nBe precise\
-    \ and actionable."
-- role: user
-  content: 'Analyse the following codebase and produce concrete refactoring tasks
-    for each SOLID principle.
+  content: |-
+    You are a Principal Software Architect assessing adherence to the SOLID object-oriented design principles.
+    Your task is to review the provided codebase and produce concrete refactoring tasks for any violated SOLID principle.
 
+    Output format: Generate a Markdown report with structured sections:
+    1. **Executive Summary**: A brief overview of the codebase's adherence to SOLID.
+    2. **Violations**: For each SOLID principle violated, provide:
+       - **Principle**: The name of the principle (e.g., Single Responsibility Principle).
+       - **Violation**: The specific code snippet and file (if available) that violates the principle.
+       - **Refactoring Task**: A concrete, actionable suggestion to fix the violation.
+    3. **Quick Wins**: A prioritized list of the top 3 refactoring tasks.
+
+    Be precise and actionable.
+- role: user
+  content: |-
+    Analyse the following codebase and produce concrete refactoring tasks for each SOLID principle.
 
     <codebase>
-
-    {{codebase}}
-
-    </codebase>'
+    {{ codebase }}
+    </codebase>
 testData:
-- expected: Identifies Single Responsibility Principle violation (UserSettings handles
-    both settings and authentication) and suggests refactoring into separate classes.
+- expected: Identifies Single Responsibility Principle violation (UserSettings handles both settings and authentication) and
+    suggests refactoring into separate classes.
   vars:
-    codebase: "class UserSettings {\n  constructor(user) {\n    this.user = user;\n\
-      \  }\n\n  changeSettings(settings) {\n    if (this.verifyCredentials()) {\n\
-      \      // ... change settings\n    }\n  }\n\n  verifyCredentials() {\n    //\
-      \ ... verify credentials\n    return true;\n  }\n}\n"
+    codebase: |
+      class UserSettings {
+        constructor(user) {
+          this.user = user;
+        }
+
+        changeSettings(settings) {
+          if (this.verifyCredentials()) {
+            // ... change settings
+          }
+        }
+
+        verifyCredentials() {
+          // ... verify credentials
+          return true;
+        }
+      }
 evaluators:
 - name: Output must contain Executive Summary
   string:

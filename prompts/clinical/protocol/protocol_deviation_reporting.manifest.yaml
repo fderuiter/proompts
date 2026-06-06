@@ -1,0 +1,7 @@
+---
+name: Protocol Deviation Reporting
+description: Identify and report protocol deviations from clinical trial logs.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: protocol_deviation_reporting.prompt.yaml

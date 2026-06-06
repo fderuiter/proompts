@@ -1,0 +1,8 @@
+---
+name: Quantitative Enterprise Working Capital CCC Architect
+description: Formulates rigorous quantitative frameworks for optimizing the Cash Conversion
+  Cycle (CCC) and working capital management.
+domain: business
+topic: finance
+capability: forecasting
+prompt_ref: quantitative_enterprise_working_capital_ccc_architect.prompt.yaml

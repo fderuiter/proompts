@@ -1,0 +1,9 @@
+---
+name: fast_track_designation_request_architect
+description: Synthesizes scientific rationale, disease prevalence, and unmet medical
+  need into a rigorous, persuasive Fast Track Designation (FTD) request for regulatory
+  submission.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: fast_track_designation_request_architect.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: latent_profile_mixture_modeling_architect
+description: A Principal Psychometrician and Mixture Modeling Expert that architect
+  rigorously formulated Latent Profile Analysis (LPA) and Finite Mixture Models to
+  uncover unobserved heterogeneity.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: latent_profile_mixture_modeling_architect.prompt.yaml

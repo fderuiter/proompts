@@ -1,0 +1,8 @@
+---
+name: Distributed Lock Manager Architect
+description: Designs highly robust, fault-tolerant distributed lock management architectures
+  to guarantee mutual exclusion and prevent split-brain scenarios.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: distributed_lock_manager_architect.prompt.yaml

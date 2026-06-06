@@ -1,0 +1,9 @@
+---
+name: Polynomial Optimization SDP Relaxation Architect
+description: Formulates highly rigorous, computationally tractable exact global optimization
+  models using Lasserre's Sum-of-Squares (SOS) and moment hierarchies for non-convex
+  polynomial programming problems.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: polynomial_optimization_sdp_relaxation_architect.prompt.yaml

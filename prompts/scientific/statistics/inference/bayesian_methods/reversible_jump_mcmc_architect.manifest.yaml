@@ -1,0 +1,9 @@
+---
+name: reversible_jump_mcmc_architect
+description: Acts as a Principal Statistician to systematically design and formulate
+  Reversible Jump Markov Chain Monte Carlo (RJMCMC) algorithms for trans-dimensional
+  Bayesian model selection.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: reversible_jump_mcmc_architect.prompt.yaml

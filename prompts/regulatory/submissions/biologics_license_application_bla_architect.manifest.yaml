@@ -1,0 +1,9 @@
+---
+name: Biologics License Application (BLA) Architect
+description: Formulates rigorous, compliant FDA Biologics License Application (BLA)
+  eCTD submissions for biological products, ensuring alignment with 21 CFR 600-680
+  and ICH M4 guidelines.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: biologics_license_application_bla_architect.prompt.yaml

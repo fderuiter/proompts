@@ -1,0 +1,9 @@
+---
+name: ADaM ADLB NCI-CTCAE and Hy's Law Toxicity Architect
+description: Automates the rigorous algorithmic derivation of NCI-CTCAE toxicity grades,
+  complex baseline flagging, and eDISH (Hy's Law) criteria for the ADaM Laboratory
+  (ADLB) domain, strictly adhering to CDISC standards.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: 18_adam_adlb_hys_law_toxicity_architect.prompt.yaml

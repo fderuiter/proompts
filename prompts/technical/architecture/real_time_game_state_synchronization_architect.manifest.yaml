@@ -1,0 +1,9 @@
+---
+name: Real-Time Game State Synchronization Architect
+description: Designs highly responsive, authoritative, and partition-tolerant state
+  synchronization architectures for real-time multiplayer ecosystems, addressing lag
+  compensation and client-side prediction.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: real_time_game_state_synchronization_architect.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Distributed Rate Limiting Architect
+description: Architect a highly scalable, distributed rate limiting strategy for high-throughput
+  API gateways and microservices.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: distributed_rate_limiting_architect.prompt.yaml

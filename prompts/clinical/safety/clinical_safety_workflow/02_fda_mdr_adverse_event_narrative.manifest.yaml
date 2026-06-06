@@ -1,0 +1,8 @@
+---
+name: FDA MDR/MDV Adverse-Event Narrative
+description: '1. Extract: event date, patient age/sex, device identifiers, reporter
+  type.'
+domain: clinical
+topic: safety
+capability: analysis
+prompt_ref: 02_fda_mdr_adverse_event_narrative.prompt.yaml

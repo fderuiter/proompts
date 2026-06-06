@@ -1,0 +1,7 @@
+---
+name: Clinical ETL Mapping Spec
+description: Create an ETL mapping specification for clinical data.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: 01_clinical_etl_mapping_spec.prompt.yaml

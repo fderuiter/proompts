@@ -1,0 +1,7 @@
+---
+name: Executive Briefing Architect (TL;DR)
+description: Synthesize complex inputs into high-signal executive briefs.
+domain: communication
+topic: ''
+capability: ''
+prompt_ref: tldr_summarizer.prompt.yaml

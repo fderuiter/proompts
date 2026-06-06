@@ -1,0 +1,8 @@
+---
+name: Data Safety Monitoring Board Report Synthesizer
+description: Synthesizes unblinded clinical trial safety and efficacy data into a
+  comprehensive, confidential report for Data Safety Monitoring Board (DSMB) review.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: data_safety_monitoring_board_report_synthesizer.prompt.yaml

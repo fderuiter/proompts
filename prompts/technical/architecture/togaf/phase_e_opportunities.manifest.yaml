@@ -1,0 +1,8 @@
+---
+name: TOGAF Phase E - Opportunities & Solutions
+description: Guide for identifying delivery vehicles (projects), grouping gaps into
+  work packages, and creating the initial roadmap (The Strategic Bridge).
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: phase_e_opportunities.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: Schwinger-Keldysh Non-Equilibrium Path Integral Architect
+description: Formulates the rigorous Schwinger-Keldysh (in-in) closed-time path integral
+  formalism to compute real-time Green's functions and analyze non-equilibrium quantum
+  dynamics.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: schwinger_keldysh_non_equilibrium_path_integral_architect.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Epistemic Logic Multi-Agent Knowledge Architect
+description: Formulates rigorous multi-agent epistemic logic frameworks to model knowledge,
+  belief, and information dynamics in distributed systems.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: epistemic_logic_multi_agent_knowledge_architect.prompt.yaml

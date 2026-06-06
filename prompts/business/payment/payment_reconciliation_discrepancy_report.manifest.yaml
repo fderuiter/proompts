@@ -1,0 +1,7 @@
+---
+name: Payment Reconciliation and Discrepancy Report
+description: Identify and categorize payment discrepancies before study close-out.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: payment_reconciliation_discrepancy_report.prompt.yaml

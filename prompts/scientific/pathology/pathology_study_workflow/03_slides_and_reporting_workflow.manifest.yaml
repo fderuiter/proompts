@@ -1,0 +1,8 @@
+---
+name: Prepare Pathology Slides and Reporting Plan
+description: Plan slide preparation and review activities for a GLP cardiovascular
+  stent study.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: 03_slides_and_reporting_workflow.prompt.yaml

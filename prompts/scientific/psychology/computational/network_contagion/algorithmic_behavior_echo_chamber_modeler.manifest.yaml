@@ -1,0 +1,9 @@
+---
+name: algorithmic_behavior_echo_chamber_modeler
+description: A highly robust, expert-level prompt designed to computationally model
+  the automated propagation of algorithmic social contagion, mapping algorithmic behavior
+  echo chambers and misinformation networks across large-scale population data.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: algorithmic_behavior_echo_chamber_modeler.prompt.yaml

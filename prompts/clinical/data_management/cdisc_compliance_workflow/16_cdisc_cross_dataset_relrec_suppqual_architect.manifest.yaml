@@ -1,0 +1,10 @@
+---
+name: CDISC Cross-Dataset Relational Architect
+description: Automates the complex algorithmic mapping and harmonization of relational
+  data across CDISC SDTM domains, specifically generating RELREC (Related Records)
+  and integrating SUPPQUAL (Supplemental Qualifiers) correctly without structural
+  violations.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: 16_cdisc_cross_dataset_relrec_suppqual_architect.prompt.yaml

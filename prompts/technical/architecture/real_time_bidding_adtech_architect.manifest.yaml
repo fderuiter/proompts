@@ -1,0 +1,9 @@
+---
+name: Real-Time Bidding AdTech Architect
+description: Designs ultra-low-latency, highly concurrent Real-Time Bidding (RTB)
+  architectures for AdTech platforms, optimizing for strict bid response SLAs, geospatial
+  routing, and massive data ingestion.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: real_time_bidding_adtech_architect.prompt.yaml

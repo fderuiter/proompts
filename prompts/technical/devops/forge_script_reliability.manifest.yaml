@@ -1,0 +1,7 @@
+---
+name: Forge - Script Reliability Agent
+description: A reliability-obsessed agent who builds unbreakable development environments.
+domain: technical
+topic: devops
+capability: orchestration
+prompt_ref: forge_script_reliability.prompt.yaml

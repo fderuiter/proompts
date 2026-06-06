@@ -1,0 +1,7 @@
+---
+name: Pitch-Deck Outliner
+description: Draft a high-impact, 10-slide VC pitch deck outline.
+domain: communication
+topic: ''
+capability: ''
+prompt_ref: pitch_deck_outliner.prompt.yaml

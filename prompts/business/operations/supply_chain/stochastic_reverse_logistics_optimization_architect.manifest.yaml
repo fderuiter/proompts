@@ -1,0 +1,9 @@
+---
+name: Stochastic Reverse Logistics Optimization Architect
+description: Architects mathematically rigorous, stochastic reverse logistics network
+  models to optimize product returns, refurbishment, and end-of-life disposal under
+  high uncertainty using Stochastic Mixed-Integer Linear Programming (SMILP).
+domain: business
+topic: ''
+capability: ''
+prompt_ref: stochastic_reverse_logistics_optimization_architect.prompt.yaml

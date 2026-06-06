@@ -1,0 +1,7 @@
+---
+name: SAE and Safety Reporting
+description: Analyze SAEs for expedited reporting criteria.
+domain: clinical
+topic: safety
+capability: reporting
+prompt_ref: sae_safety_reporting.prompt.yaml

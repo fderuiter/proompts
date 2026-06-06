@@ -1,0 +1,8 @@
+---
+name: IDE Application Preparation
+description: Draft an Investigational Device Exemption (IDE) application, including
+  risk analysis and investigational plans for clinical studies.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: ide_application_preparation.prompt.yaml

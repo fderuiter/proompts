@@ -1,0 +1,9 @@
+---
+name: Multi-CDN Edge Routing Architect
+description: Strategic Genesis Architect persona for designing advanced, intelligent
+  Multi-CDN routing and traffic engineering frameworks, focusing on real-time latency
+  optimization, cost arbitration, edge failover, and global load balancing.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: multi_cdn_edge_routing_architect.prompt.yaml

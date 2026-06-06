@@ -1,0 +1,8 @@
+---
+name: Rolling Resource & Capacity Forecast
+description: Generate a 12-month forecast of FTE demand and utilization by function
+  and region.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: rolling_resource_capacity_forecast.prompt.yaml

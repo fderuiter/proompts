@@ -1,0 +1,10 @@
+---
+name: AI/ML Predetermined Change Control Plan Architect
+description: 'Formulates a rigorous AI/ML Predetermined Change Control Plan (PCCP)
+  for continuous learning algorithms, ensuring compliance with FDA and MDR regulations.
+
+  '
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: ai_ml_predetermined_change_control_plan_architect.prompt.yaml

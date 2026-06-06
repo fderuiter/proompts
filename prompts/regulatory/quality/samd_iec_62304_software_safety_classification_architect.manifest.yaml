@@ -1,0 +1,9 @@
+---
+name: samd_iec_62304_software_safety_classification_architect
+description: Acts as a Principal Medical Device Software Architect to rigorously evaluate
+  and assign IEC 62304 software safety classifications for Software as a Medical Device
+  (SaMD).
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: samd_iec_62304_software_safety_classification_architect.prompt.yaml

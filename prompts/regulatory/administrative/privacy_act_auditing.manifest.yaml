@@ -1,0 +1,7 @@
+---
+name: Privacy Act Auditing
+description: Draft a notice for a new FDA Privacy Act Record System.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: privacy_act_auditing.prompt.yaml

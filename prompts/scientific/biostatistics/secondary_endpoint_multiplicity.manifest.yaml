@@ -1,0 +1,7 @@
+---
+name: Secondary Endpoint Multiplicity Adjuster
+description: Apply Bonferroni-Holm (step-down) procedure to secondary efficacy endpoints.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: secondary_endpoint_multiplicity.prompt.yaml

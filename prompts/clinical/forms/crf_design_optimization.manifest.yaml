@@ -1,0 +1,8 @@
+---
+name: Design Error Prevention
+description: Review and optimize CRF layout to avoid duplication and non-essential
+  fields.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: crf_design_optimization.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Risk Management Analysis
+description: Perform a risk analysis (e.g., PHA) to identify potential hazards, hazardous
+  situations, and mitigation strategies.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: risk_management_analysis.prompt.yaml

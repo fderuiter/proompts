@@ -1,0 +1,9 @@
+---
+name: Multi-Region K8s Federation Architect
+description: Acts as an Expert-level Genesis Architect to systematically engineer
+  robust, fault-tolerant Multi-Region Active-Active Kubernetes Cluster Federation
+  architectures with globally distributed state synchronization.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: multi_region_k8s_federation_architect.prompt.yaml

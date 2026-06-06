@@ -1,0 +1,8 @@
+---
+name: calculus_of_constructions_proof_architect
+description: Formulates mathematically rigorous proofs and type derivations utilizing
+  the Calculus of Constructions (CoC).
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: calculus_of_constructions_proof_architect.prompt.yaml

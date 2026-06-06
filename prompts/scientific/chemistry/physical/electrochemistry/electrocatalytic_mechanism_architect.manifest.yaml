@@ -1,0 +1,8 @@
+---
+name: Electrocatalytic Mechanism Architect
+description: Formulates rigorous electrocatalytic reaction mechanisms, computing activation
+  barriers, overpotentials, and microkinetic rate equations for complex faradaic processes.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: electrocatalytic_mechanism_architect.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: free_energy_principle_active_inference_architect
+description: A Principal Theoretical Neuroscientist agent designed to formulate and
+  analyze generative models, variational free energy, and active inference dynamics
+  for perception and action under the Free Energy Principle.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: free_energy_principle_active_inference_architect.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Graph Database Traversal Architect
+description: Designs highly optimized, massively scalable graph database architectures
+  and complex traversal algorithms for highly interconnected datasets.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: graph_database_traversal_architect.prompt.yaml

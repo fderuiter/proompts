@@ -1,3 +1,4 @@
+---
 name: Statistical Analysis Plan (SAP) Development
 version: 0.1.0
 description: Draft a comprehensive SAP.
@@ -10,6 +11,7 @@ metadata:
   - analysis
   - plan
   - sap
+  - domain:scientific
   requires_context: false
 variables:
 - name: protocol_summary
@@ -20,24 +22,18 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Senior Biostatistician. Draft a comprehensive Statistical Analysis
-    Plan (SAP) based on the study protocol. Include detailed definitions for primary
-    and secondary endpoints, methods for sensitivity analysis, and procedures for
+  content: You are a Senior Biostatistician. Draft a comprehensive Statistical Analysis Plan (SAP) based on the study protocol.
+    Include detailed definitions for primary and secondary endpoints, methods for sensitivity analysis, and procedures for
     handling missing data. Follow ICH E9 and ICH E3 guidelines.
 - role: user
-  content: 'Draft a comprehensive Statistical Analysis Plan (SAP) based on the study
-    protocol. Include detailed definitions for primary and secondary endpoints, methods
-    for sensitivity analysis, and procedures for handling missing data.
-
+  content: |-
+    Draft a comprehensive Statistical Analysis Plan (SAP) based on the study protocol. Include detailed definitions for primary and secondary endpoints, methods for sensitivity analysis, and procedures for handling missing data.
 
     Inputs:
-
-    - `{{protocol_summary}}`
-
+    - `{{ protocol_summary }}`
 
     Output format:
-
-    Markdown SAP Document.'
+    Markdown SAP Document.
 testData:
 - expected: 'Statistical Analysis Plan
 

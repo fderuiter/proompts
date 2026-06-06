@@ -1,0 +1,8 @@
+---
+name: Phase II/III SAP Skeleton
+description: Provide a high-level statistical analysis plan skeleton for an adaptive
+  Phase II/III trial.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: phase_ii_iii_sap_skeleton.prompt.yaml

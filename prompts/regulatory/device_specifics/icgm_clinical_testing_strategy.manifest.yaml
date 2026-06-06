@@ -1,0 +1,7 @@
+---
+name: iCGM Clinical Testing Strategy
+description: Draft a clinical study plan to demonstrate accuracy for an iCGM system.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: icgm_clinical_testing_strategy.prompt.yaml

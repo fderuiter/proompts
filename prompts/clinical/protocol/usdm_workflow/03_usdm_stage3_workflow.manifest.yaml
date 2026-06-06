@@ -1,0 +1,7 @@
+---
+name: Protocol to USDM Stage 3 - Workflow
+description: Extract Encounters and Activities from Schedule of Activities.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 03_usdm_stage3_workflow.prompt.yaml

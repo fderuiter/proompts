@@ -1,0 +1,8 @@
+---
+name: Technical White Paper for Clinical Methodologies
+description: Generates a deep technical white paper or educational document for clinical
+  methodologies, focusing on scientific validity and regulatory context.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: technical_white_paper_in_silico.prompt.yaml

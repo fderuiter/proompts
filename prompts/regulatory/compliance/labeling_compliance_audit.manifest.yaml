@@ -1,0 +1,8 @@
+---
+name: Labeling Compliance Audit
+description: Audit device labeling for compliance with mandatory elements (Manufacturer,
+  UDI, date formats).
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: labeling_compliance_audit.prompt.yaml

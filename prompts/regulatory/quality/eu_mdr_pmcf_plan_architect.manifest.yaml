@@ -1,0 +1,8 @@
+---
+name: EU MDR PMCF Plan Architect
+description: Designs comprehensive, regulatory-compliant Post-Market Clinical Follow-up
+  (PMCF) Plans under EU MDR 2017/745 Annex XIV Part B.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: eu_mdr_pmcf_plan_architect.prompt.yaml

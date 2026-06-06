@@ -1,0 +1,8 @@
+---
+name: Forward-Looking Resource & Capacity Forecast
+description: Project FTE demand and recommend actions to balance capacity for the
+  next 90 days.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: forward_capacity_forecast.prompt.yaml

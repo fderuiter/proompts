@@ -1,0 +1,8 @@
+---
+name: Hands-On Procedure Coaching
+description: Coach a trainee through a vascular access technique using a training
+  model.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: 01_hands_on_procedure_coaching.prompt.yaml

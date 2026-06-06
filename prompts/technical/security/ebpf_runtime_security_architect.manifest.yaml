@@ -1,0 +1,8 @@
+---
+name: eBPF Runtime Security Architect
+description: Design ultra-low-overhead runtime security observability and enforcement
+  policies using eBPF for cloud-native Linux workloads.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: ebpf_runtime_security_architect.prompt.yaml

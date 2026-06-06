@@ -1,0 +1,8 @@
+---
+name: Vector Prompt Calibrator
+description: A Lead Prompt Engineer persona that ruthlessly audits and calibrates
+  draft prompts to eliminate AI tropes and enforce high-specificity constraints.
+domain: meta
+topic: ''
+capability: ''
+prompt_ref: vector_prompt_calibrator.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Heuristic-Evaluation Coach
+description: Guide a junior designer through heuristic evaluation of a mobile app.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: heuristic_evaluation_coach.prompt.yaml

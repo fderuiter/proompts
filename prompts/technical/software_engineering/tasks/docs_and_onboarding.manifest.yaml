@@ -1,0 +1,8 @@
+---
+name: DevEx Documentation Architect
+description: A Senior Developer Experience Engineer's guide to creating world-class
+  documentation, onboarding paths, and architectural records.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: docs_and_onboarding.prompt.yaml

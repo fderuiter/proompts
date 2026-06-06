@@ -1,0 +1,7 @@
+---
+name: Bug Finder & Fixer (OpenAI Codex)
+description: Reproduce and resolve a bug within the specified package or module.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: bug_fix.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: UI Tweak & Verification (Aegis Security)
+description: Resolve a minor UI regression and confirm the fix with build or test
+  steps, ensuring accessibility and security.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: ui_fix.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: Quantitative Markowitz Portfolio Optimization Architect
+description: Architects rigorous quantitative Markowitz Mean-Variance Optimization
+  models, evaluating optimal asset allocation, risk-adjusted returns, and efficient
+  frontier constraints.
+domain: business
+topic: finance
+capability: forecasting
+prompt_ref: quantitative_markowitz_portfolio_optimization_architect.prompt.yaml

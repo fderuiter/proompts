@@ -1,0 +1,8 @@
+---
+name: Patient-Centric BYOD ePRO Workflow
+description: Design a streamlined ePRO workflow that supports a BYOD model and maximizes
+  patient compliance.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 01_patient-centric_byod_workflow.prompt.yaml

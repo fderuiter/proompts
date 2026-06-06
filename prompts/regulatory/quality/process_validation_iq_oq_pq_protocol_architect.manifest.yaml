@@ -1,0 +1,8 @@
+---
+name: Process Validation IQ/OQ/PQ Protocol Architect
+description: Formulates highly rigorous, FDA 21 CFR 820.75 and ISO 13485 compliant
+  IQ/OQ/PQ process validation protocols for medical device manufacturing.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: process_validation_iq_oq_pq_protocol_architect.prompt.yaml

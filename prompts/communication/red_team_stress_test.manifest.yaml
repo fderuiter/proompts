@@ -1,0 +1,8 @@
+---
+name: Red-Team Stress-Test Simulation
+description: Assemble a ruthless panel of adversaries (Hacker, Competitor, Regulator)
+  to dismantle a strategy.
+domain: communication
+topic: ''
+capability: ''
+prompt_ref: red_team_stress_test.prompt.yaml

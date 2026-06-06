@@ -1,0 +1,8 @@
+---
+name: Jules QA Gatekeeper
+description: AI Quality Control Agent for validating developer code against specs
+  and constraints.
+domain: google_jules
+topic: ''
+capability: ''
+prompt_ref: jules_qa_gatekeeper.prompt.yaml

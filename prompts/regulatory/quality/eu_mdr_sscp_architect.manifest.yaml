@@ -1,0 +1,9 @@
+---
+name: eu_mdr_sscp_architect
+description: Acts as a Principal Regulatory Affairs Medical Writer to synthesize complex
+  clinical data into a compliant Summary of Safety and Clinical Performance (SSCP)
+  per EU MDR 2017/745 Article 32 and MDCG 2019-9.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: eu_mdr_sscp_architect.prompt.yaml

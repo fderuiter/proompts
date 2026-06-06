@@ -1,0 +1,7 @@
+---
+name: CDISC SDTM/ADaM Mapping
+description: Map raw clinical data to standardized CDISC SDTM and ADaM domains.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: cdisc_mapping.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: network_psychometrics_architect
+description: Formulates mathematically rigorous network psychometrics analyses, estimating
+  Gaussian Graphical Models (GGMs) to identify central symptom nodes and structural
+  bridge pathways in psychopathology.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: network_psychometrics_architect.prompt.yaml

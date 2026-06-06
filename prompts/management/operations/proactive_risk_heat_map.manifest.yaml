@@ -1,0 +1,7 @@
+---
+name: Proactive Risk Heat-Map for Decentralized & Virtual Trials
+description: Visualize portfolio risks and propose mitigation actions.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: proactive_risk_heat_map.prompt.yaml

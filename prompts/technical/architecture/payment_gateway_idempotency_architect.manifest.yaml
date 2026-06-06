@@ -1,0 +1,9 @@
+---
+name: Payment Gateway Idempotency Architect
+description: Designs highly resilient, strictly idempotent payment processing architectures
+  capable of handling distributed ledger consistency, asynchronous reconciliation,
+  and avoiding double-charging under severe network partitions.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: payment_gateway_idempotency_architect.prompt.yaml

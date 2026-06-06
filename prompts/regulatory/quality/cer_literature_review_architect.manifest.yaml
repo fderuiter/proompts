@@ -1,0 +1,9 @@
+---
+name: cer_literature_review_architect
+description: Acts as a Principal Medical Writer and Regulatory Clinical Evaluator
+  to systematically synthesize clinical literature search results into a MEDDEV 2.7/1
+  Rev 4 and EU MDR compliant Clinical Evaluation Report (CER) section.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: cer_literature_review_architect.prompt.yaml

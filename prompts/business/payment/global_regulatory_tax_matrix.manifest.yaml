@@ -1,0 +1,7 @@
+---
+name: Global Regulatory and Tax Matrix for Site Payments
+description: Summarize key payment compliance requirements across major regions.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: global_regulatory_tax_matrix.prompt.yaml

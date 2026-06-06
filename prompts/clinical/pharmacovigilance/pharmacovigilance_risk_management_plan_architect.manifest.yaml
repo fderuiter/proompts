@@ -1,0 +1,9 @@
+---
+name: Pharmacovigilance Risk Management Plan Architect
+description: Acts as a Principal Pharmacovigilance Risk Management Scientist to synthesize
+  complex post-market safety data into a highly rigorous, regulatory-compliant Risk
+  Management Plan (RMP) or Risk Evaluation and Mitigation Strategy (REMS).
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: pharmacovigilance_risk_management_plan_architect.prompt.yaml

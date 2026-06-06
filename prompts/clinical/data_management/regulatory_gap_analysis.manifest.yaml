@@ -1,0 +1,7 @@
+---
+name: Regulatory Gap Analysis
+description: Assess regulatory compliance gaps in trial data processes.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: regulatory_gap_analysis.prompt.yaml

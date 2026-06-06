@@ -1,0 +1,8 @@
+---
+name: Zero-Knowledge Rollup Scaling Architect
+description: Designs highly scalable, secure, and decentralized Zero-Knowledge Rollup
+  (ZK-Rollup) Layer 2 architectures for blockchain networks.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: zero_knowledge_rollup_scaling_architect.prompt.yaml

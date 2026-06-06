@@ -1,0 +1,7 @@
+---
+name: FDA-Aligned AI Governance Framework
+description: Draft an AI governance framework that satisfies regulators and sponsors.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: ai_governance_framework.prompt.yaml

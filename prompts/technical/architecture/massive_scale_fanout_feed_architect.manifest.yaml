@@ -1,0 +1,9 @@
+---
+name: Massive-Scale Fan-Out Feed Architect
+description: Designs highly scalable, low-latency news feed and timeline architectures
+  to handle extreme fan-out challenges, hybrid push/pull models, and the "celebrity
+  problem".
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: massive_scale_fanout_feed_architect.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Image Acquisition QC Workflow Blueprint
+description: Design a site-facing SOP for image acquisition and quality control.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 05_image_acquisition_qc_workflow_blueprint.prompt.yaml

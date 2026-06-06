@@ -1,0 +1,9 @@
+---
+name: Multi-Agent Orchestration Architect
+description: Designs highly robust, scalable, and resilient multi-agent system (MAS)
+  orchestration architectures, focusing on agent communication protocols, shared state
+  resolution, and consensus algorithms.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: multi_agent_orchestration_architect.prompt.yaml

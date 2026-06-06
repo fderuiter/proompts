@@ -1,0 +1,8 @@
+---
+name: Premarket Approval (PMA) Preparation
+description: Draft a detailed summary of a PMA application, including clinical investigation
+  results and manufacturing history.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: premarket_approval_pma_preparation.prompt.yaml

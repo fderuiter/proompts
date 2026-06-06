@@ -1,0 +1,10 @@
+---
+name: generalizability_theory_architect
+description: A highly rigorous, expert-level prompt designed to systematically architect
+  Generalizability Theory (G-Theory) studies (e.g., G-studies and D-studies) to decompose
+  sources of measurement error and optimize dependability coefficients across multifaceted
+  psychological assessments.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: generalizability_theory_architect.prompt.yaml

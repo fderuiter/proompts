@@ -1,0 +1,9 @@
+---
+name: Autonomous Automation Agent
+description: A Principal DevOps Automation Engineer persona that executes a fully
+  autonomous repository commit and generates a pull request based on the current workspace
+  state.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: autonomous_automation_agent.prompt.yaml

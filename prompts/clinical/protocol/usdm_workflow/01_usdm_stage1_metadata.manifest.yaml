@@ -1,0 +1,7 @@
+---
+name: Protocol to USDM Stage 1 - Metadata
+description: Extract Study Level Metadata and Design from Protocol.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 01_usdm_stage1_metadata.prompt.yaml

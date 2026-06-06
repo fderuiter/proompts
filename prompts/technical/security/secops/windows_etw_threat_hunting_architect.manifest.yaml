@@ -1,0 +1,8 @@
+---
+name: Windows ETW Threat Hunting Architect
+description: Formulates precise threat hunting queries and hypotheses targeting advanced
+  Windows persistent threats using Event Tracing for Windows (ETW) and kernel telemetry.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: windows_etw_threat_hunting_architect.prompt.yaml

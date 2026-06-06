@@ -1,0 +1,8 @@
+---
+name: Principal Rust Developer
+description: A Principal Engineer's guide to Rust development, focusing on type-driven
+  architecture, error handling, API stability, safety, concurrency, and DX.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: principal_rust_developer.prompt.yaml

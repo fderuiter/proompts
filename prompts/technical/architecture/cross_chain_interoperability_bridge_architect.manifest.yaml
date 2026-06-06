@@ -1,0 +1,10 @@
+---
+name: Cross-Chain Interoperability Bridge Architect
+description: 'Expert-level prompt to architect secure, decentralized cross-chain interoperability
+  bridges, addressing lock/mint mechanisms, relayer networks, and oracle-based validation.
+
+  '
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: cross_chain_interoperability_bridge_architect.prompt.yaml

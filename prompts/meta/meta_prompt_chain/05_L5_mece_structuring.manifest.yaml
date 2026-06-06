@@ -1,0 +1,8 @@
+---
+name: MECE Structuring Consultant
+description: Reorganize brainstorm ideas into three mutually exclusive, collectively
+  exhaustive buckets.
+domain: meta
+topic: ''
+capability: ''
+prompt_ref: 05_L5_mece_structuring.prompt.yaml

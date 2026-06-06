@@ -1,0 +1,7 @@
+---
+name: ClinRO User Manual Generator
+description: Draft a standardized user manual for ClinRO administration and training.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: clinro_training_manual.prompt.yaml

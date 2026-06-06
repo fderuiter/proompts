@@ -1,0 +1,8 @@
+---
+name: Prompt Engineer Fact Checker
+description: Rewrite an original prompt so it is clear, fully sourced and produces
+  accurate answers with inline citations.
+domain: meta
+topic: ''
+capability: ''
+prompt_ref: 05_L5_prompt_engineer_fact_checker.prompt.yaml

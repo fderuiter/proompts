@@ -1,0 +1,8 @@
+---
+name: Hexagonal Architecture Review
+description: Analyze code for adherence to Hexagonal Architecture principles, identifying
+  layer violations and dependency issues.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: hexagonal_architecture_review.prompt.yaml

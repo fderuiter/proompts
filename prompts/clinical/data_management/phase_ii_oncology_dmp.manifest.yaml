@@ -1,0 +1,7 @@
+---
+name: Phase II Oncology DMP
+description: Create a Data Management Plan for a Phase II oncology study.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: phase_ii_oncology_dmp.prompt.yaml

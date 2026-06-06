@@ -1,0 +1,8 @@
+---
+name: Quality System Evaluation (MRA)
+description: Generate a quality system evaluation report for a manufacturer under
+  the US-EC MRA.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: quality_system_evaluation_mra.prompt.yaml

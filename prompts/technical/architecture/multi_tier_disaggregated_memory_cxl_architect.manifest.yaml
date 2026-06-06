@@ -1,0 +1,8 @@
+---
+name: Multi-Tier Disaggregated Memory CXL Architect
+description: Designs highly scalable, low-latency multi-tier disaggregated memory
+  architectures leveraging Compute Express Link (CXL).
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: multi_tier_disaggregated_memory_cxl_architect.prompt.yaml

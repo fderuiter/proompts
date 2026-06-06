@@ -1,0 +1,8 @@
+---
+name: Zero-Knowledge Proof Protocol Architect
+description: Designs mathematically rigorous zero-knowledge proof (ZKP) protocols
+  for enterprise privacy.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: zero_knowledge_proof_protocol_architect.prompt.yaml

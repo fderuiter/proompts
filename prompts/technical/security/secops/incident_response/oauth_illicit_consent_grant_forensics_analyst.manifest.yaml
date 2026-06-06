@@ -1,0 +1,9 @@
+---
+name: OAuth Illicit Consent Grant Forensics Analyst
+description: Generates expert-level forensic analysis and response strategies for
+  identifying and eradicating OAuth 2.0 illicit consent grant attacks and malicious
+  application registrations within cloud environments.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: oauth_illicit_consent_grant_forensics_analyst.prompt.yaml

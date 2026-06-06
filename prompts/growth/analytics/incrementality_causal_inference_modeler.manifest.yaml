@@ -1,0 +1,8 @@
+---
+name: incrementality_causal_inference_modeler
+description: Formulates rigorous causal inference and incrementality testing frameworks
+  to isolate the true causal impact of marketing interventions across the AARRR funnel.
+domain: growth
+topic: ''
+capability: ''
+prompt_ref: incrementality_causal_inference_modeler.prompt.yaml

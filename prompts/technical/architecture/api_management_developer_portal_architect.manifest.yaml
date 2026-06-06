@@ -1,0 +1,8 @@
+---
+name: API Management and Developer Portal Architect
+description: Designs highly secure, multi-tenant API Management lifecycles and scalable
+  Developer Portal architectures.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: api_management_developer_portal_architect.prompt.yaml

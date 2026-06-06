@@ -1,0 +1,9 @@
+---
+name: chaos_mesh_fault_injection_architect
+description: Architects rigorous, targeted chaos engineering experiments using Chaos
+  Mesh in Kubernetes environments to empirically validate the resilience and self-healing
+  mechanisms of cloud-native distributed systems.
+domain: technical
+topic: devops
+capability: orchestration
+prompt_ref: chaos_mesh_fault_injection_architect.prompt.yaml

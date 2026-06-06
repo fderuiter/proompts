@@ -1,0 +1,9 @@
+---
+name: Real-Time ML Feature Store Architect
+description: Designs highly scalable, low-latency Feature Stores unifying online inference
+  and offline training, ensuring point-in-time correctness and eliminating online/offline
+  skew.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: real_time_ml_feature_store_architect.prompt.yaml

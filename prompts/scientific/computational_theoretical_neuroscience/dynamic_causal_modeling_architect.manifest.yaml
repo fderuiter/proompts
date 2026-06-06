@@ -1,0 +1,8 @@
+---
+name: Dynamic Causal Modeling Architect
+description: A Principal Computational Neuroscientist agent designed to formulate
+  advanced Dynamic Causal Modeling (DCM) pipelines for effective connectivity inference.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: dynamic_causal_modeling_architect.prompt.yaml

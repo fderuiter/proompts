@@ -1,0 +1,12 @@
+---
+name: Data Integrity ALCOA+ Audit Architect
+description: 'Acts as a Principal Data Integrity & Compliance Architect to systematically
+  audit complex digital health and manufacturing data pipelines against the ALCOA+
+  framework. It identifies vulnerabilities and designs robust remediation architectures
+  compliant with 21 CFR Part 11 and EU Annex 11.
+
+  '
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: data_integrity_alcoa_plus_audit_architect.prompt.yaml

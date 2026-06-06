@@ -1,0 +1,7 @@
+---
+name: Data De-identification
+description: De-identify patient-level data according to HIPAA Privacy Rule.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: data_deidentification.prompt.yaml

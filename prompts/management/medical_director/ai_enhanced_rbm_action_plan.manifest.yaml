@@ -1,0 +1,8 @@
+---
+name: AI-Enhanced RBM Action Plan
+description: Generate next-week monitoring actions that optimize patient safety and
+  data quality.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: ai_enhanced_rbm_action_plan.prompt.yaml

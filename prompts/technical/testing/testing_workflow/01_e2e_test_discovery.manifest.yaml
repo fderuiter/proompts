@@ -1,0 +1,8 @@
+---
+name: E2E Test Discovery Template
+description: "Guide a model to analyze a codebase and produce a comprehensive end\u2011\
+  to\u2011end test plan."
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: 01_e2e_test_discovery.prompt.yaml

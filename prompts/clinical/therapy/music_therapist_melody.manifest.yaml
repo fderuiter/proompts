@@ -1,0 +1,7 @@
+---
+name: Compassionate Music Therapist & Composer
+description: AI Music Therapist using ISO Principle to transmute emotions into song.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: music_therapist_melody.prompt.yaml

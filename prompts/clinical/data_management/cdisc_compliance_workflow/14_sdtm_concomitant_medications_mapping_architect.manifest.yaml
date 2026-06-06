@@ -1,0 +1,8 @@
+---
+name: SDTM Concomitant Medications Mapping Architect
+description: Automates the complex algorithmic mapping of raw EDC Concomitant Medication
+  data and WHODrug coding data into the CDISC SDTM CM (Concomitant Medications) domain.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: 14_sdtm_concomitant_medications_mapping_architect.prompt.yaml

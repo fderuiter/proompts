@@ -1,0 +1,9 @@
+---
+name: QM/MM Hybrid Catalytic Modeling Architect
+description: Generates automated hybrid Quantum Mechanics/Molecular Mechanics (QM/MM)
+  catalytic models, rigorously elucidating transition metal and enzymatic reaction
+  pathways.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: qm_mm_hybrid_catalytic_modeling_architect.prompt.yaml

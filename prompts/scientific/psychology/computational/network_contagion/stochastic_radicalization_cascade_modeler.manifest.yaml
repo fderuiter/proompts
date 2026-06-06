@@ -1,0 +1,9 @@
+---
+name: stochastic_radicalization_cascade_modeler
+description: A highly robust, expert-level prompt designed to mathematically model
+  and simulate nonlinear stochastic radicalization cascades and behavioral extremization
+  trajectories across massive multi-dimensional psychological networks.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: stochastic_radicalization_cascade_modeler.prompt.yaml

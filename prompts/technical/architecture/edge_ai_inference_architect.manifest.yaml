@@ -1,0 +1,8 @@
+---
+name: Edge AI Inference Architect
+description: Designs low-latency, bandwidth-constrained AI inference architectures
+  directly at the edge, featuring dynamic model swapping and secure OTA updates.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: edge_ai_inference_architect.prompt.yaml

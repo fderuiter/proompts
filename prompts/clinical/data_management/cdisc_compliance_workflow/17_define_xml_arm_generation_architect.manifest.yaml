@@ -1,0 +1,9 @@
+---
+name: Define-XML Analysis Results Metadata Architect
+description: Automates the complex structural generation and mapping of Analysis Results
+  Metadata (ARM) for Define-XML v2.1, ensuring precise linkage between statistical
+  displays (TLFs) and ADaM datasets.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: 17_define_xml_arm_generation_architect.prompt.yaml

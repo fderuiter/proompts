@@ -1,0 +1,7 @@
+---
+name: Single IRB (sIRB) Plan Submission
+description: Generate sIRB Plan and communication strategy.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: sirb_plan_submission.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Regulatory Filing Draft Builder
+description: "Produce a regulator\u2011ready draft document using provided financials\
+  \ and risk data."
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: regulatory_filing_draft_builder.prompt.yaml

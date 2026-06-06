@@ -1,0 +1,8 @@
+---
+name: Codebase Quality & Maintainability Analysis
+description: Conduct a deep analysis of the codebase's quality and maintainability
+  to identify key areas for refactoring.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: codebase_quality_analysis.prompt.yaml

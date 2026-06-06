@@ -1,0 +1,9 @@
+---
+name: multi_echelon_inventory_optimization_architect
+description: Formulates rigorous Multi-Echelon Inventory Optimization (MEIO) models
+  to minimize network-wide safety stock while maximizing service levels using advanced
+  stochastic modeling and LaTeX.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: multi_echelon_inventory_optimization_architect.prompt.yaml

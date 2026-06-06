@@ -1,0 +1,8 @@
+---
+name: Informed Consent Exception (Emergency)
+description: Draft IRB documentation for an exception from informed consent in emergency
+  research.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: informed_consent_exception_emergency.prompt.yaml

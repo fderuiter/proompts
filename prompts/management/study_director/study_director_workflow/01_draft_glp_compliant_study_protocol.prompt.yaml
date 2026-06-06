@@ -1,3 +1,4 @@
+---
 name: Draft a GLP-Compliant Study Protocol
 version: 0.1.0
 description: Produce a detailed study plan that satisfies OECD and FDA GLP regulations.
@@ -10,6 +11,7 @@ metadata:
   - glp-compliant
   - study
   - protocol
+  - domain:management
   requires_context: false
 variables:
 - name: protocol_basics
@@ -20,27 +22,34 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: "You are a senior toxicologist preparing a 28\u2011day oral toxicity study\
-    \ (OECD TG\_407) in Sprague\u2011Dawley rats for Test Article\_X to support an\
-    \ IND.\n\nReason step-by-step before writing but reveal only the final protocol."
+  content: |-
+    You are a senior toxicologist preparing a 28‑day oral toxicity study (OECD TG 407) in Sprague‑Dawley rats for Test Article X to support an IND.
+
+    Reason step-by-step before writing but reveal only the final protocol.
 - role: user
-  content: "1. Outline objectives and scientific rationale.\n2. Specify dose groups\
-    \ with rationale and mg kg\u207B\xB9 day\u207B\xB9 levels.\n3. Describe experimental\
-    \ design\u2014n/group, randomization, critical endpoints, and interim kills.\n\
-    4. Provide a Gantt-style timeline of milestones.\n5. List quality-assurance checkpoints\
-    \ and record-keeping requirements.\n6. Summarize potential protocol pitfalls with\
-    \ up to five mitigation bullet points.\n\nInputs:\n- `{{protocol_basics}}` \u2013\
-    \ any additional study parameters\n\nOutput Format:\n1. Numbered outline covering\
-    \ all requested sections\n2. CSV-ready risk-mitigation table with columns: Phase,\
-    \ Risk, Impact, Mitigation"
+  content: |-
+    1. Outline objectives and scientific rationale.
+    2. Specify dose groups with rationale and mg kg⁻¹ day⁻¹ levels.
+    3. Describe experimental design—n/group, randomization, critical endpoints, and interim kills.
+    4. Provide a Gantt-style timeline of milestones.
+    5. List quality-assurance checkpoints and record-keeping requirements.
+    6. Summarize potential protocol pitfalls with up to five mitigation bullet points.
+
+    Inputs:
+    - `{{ protocol_basics }}` – any additional study parameters
+
+    Output Format:
+    1. Numbered outline covering all requested sections
+    2. CSV-ready risk-mitigation table with columns: Phase, Risk, Impact, Mitigation
 testData:
-- expected: '1. Objectives and scientific rationale
-
+- expected: |
+    1. Objectives and scientific rationale
     Phase,Risk,Impact,Mitigation
-
-    '
-  vars: "protocol_basics: |\n  Test Article: Compound A\n  Species: Sprague-Dawley\
-    \ rats\n  Duration: 28 days\n"
+  vars: |
+    protocol_basics: |
+      Test Article: Compound A
+      Species: Sprague-Dawley rats
+      Duration: 28 days
 evaluators:
 - name: Includes mitigation table headers
   string:

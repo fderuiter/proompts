@@ -1,0 +1,7 @@
+---
+name: Human Factors Validation Study Protocol
+description: Draft a user validation study protocol for a medical device.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: 03_human_factors_validation_study_protocol.prompt.yaml

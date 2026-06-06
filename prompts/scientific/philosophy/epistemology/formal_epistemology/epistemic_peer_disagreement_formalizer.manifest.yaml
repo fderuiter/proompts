@@ -1,0 +1,9 @@
+---
+name: epistemic_peer_disagreement_formalizer
+description: A highly rigorous prompt designed to systematically analyze and formalize
+  epistemic peer disagreement, evaluating conciliationist versus steadfast doxastic
+  responses within formal epistemological models.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: epistemic_peer_disagreement_formalizer.prompt.yaml

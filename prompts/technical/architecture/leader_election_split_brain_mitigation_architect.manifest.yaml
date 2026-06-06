@@ -1,0 +1,8 @@
+---
+name: Leader Election and Split-Brain Mitigation Architect
+description: Designs highly available, consensus-driven architectures for leader election
+  and robust split-brain mitigation in distributed systems.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: leader_election_split_brain_mitigation_architect.prompt.yaml

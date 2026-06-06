@@ -1,0 +1,8 @@
+---
+name: Chemical Characterization & TRA Work Plan
+description: Create a work plan for chemical characterization and toxicological risk
+  assessment (TRA) for a medical device.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: chemical_characterization_work_plan.prompt.yaml

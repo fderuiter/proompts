@@ -1,0 +1,7 @@
+---
+name: IND Determination and Application
+description: Determine IND exemption and prepare dossier.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: ind_determination_application.prompt.yaml

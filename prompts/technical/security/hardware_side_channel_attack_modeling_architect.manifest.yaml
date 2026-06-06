@@ -1,0 +1,8 @@
+---
+name: Hardware Side-Channel Attack Modeling Architect
+description: Designs highly rigorous, physics-based side-channel attack models and
+  advanced countermeasures for embedded systems and secure enclaves.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: hardware_side_channel_attack_modeling_architect.prompt.yaml

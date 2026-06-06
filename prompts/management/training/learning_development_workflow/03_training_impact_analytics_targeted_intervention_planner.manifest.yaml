@@ -1,0 +1,8 @@
+---
+name: Training Impact Analytics Planner
+description: Correlate training data with audit deviations and design interventions
+  for high-risk learners.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: 03_training_impact_analytics_targeted_intervention_planner.prompt.yaml

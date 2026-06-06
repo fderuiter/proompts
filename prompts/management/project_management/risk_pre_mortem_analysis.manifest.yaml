@@ -1,0 +1,8 @@
+---
+name: Risk and Pre-Mortem Analysis
+description: Identify early failure points and mitigation strategies for a project
+  or study.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: risk_pre_mortem_analysis.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Off-Label Information Dissemination
+description: Prepare a mandatory disclosure statement for disseminating peer-reviewed
+  articles on unapproved uses.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: off_label_information_dissemination.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: agm_belief_revision_formal_engine
+description: "A highly rigorous prompt designed to systematically formalize and execute\
+  \ AGM (Alchourr\xF3n, G\xE4rdenfors, and Makinson) belief revision operators upon\
+  \ a formal knowledge base."
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: agm_belief_revision_formal_engine.prompt.yaml

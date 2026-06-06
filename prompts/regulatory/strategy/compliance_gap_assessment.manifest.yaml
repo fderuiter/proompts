@@ -1,0 +1,8 @@
+---
+name: Compliance Gap Assessment
+description: Evaluate organizational controls against a specified compliance framework
+  and prioritize remediation.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: compliance_gap_assessment.prompt.yaml

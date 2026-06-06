@@ -1,0 +1,8 @@
+---
+name: Trial-Design Optimisation Memo
+description: Rewrite a study synopsis to accelerate startup while maintaining statistical
+  power and budget.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: trial_design_optimisation_memo.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: SDTM Protocol Deviation Modeling Architect
+description: Automates the complex algorithmic mapping of raw EDC and CTMS protocol
+  deviation data into the CDISC SDTM DV (Protocol Deviations) domain.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: 12_sdtm_protocol_deviation_modeling_architect.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: Polyglot Monorepo Build Orchestration Architect
+description: Designs highly scalable, hermetic build and deployment orchestrations
+  for massive-scale enterprise polyglot monorepos, focusing on DAG-based dependency
+  resolution, intelligent caching, and bounded context isolation.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: polyglot_monorepo_build_orchestration_architect.prompt.yaml

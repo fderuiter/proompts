@@ -1,0 +1,8 @@
+---
+name: Pixar Story Spine Outline
+description: Guide the model in creating a short Pixar-style story outline for middle-grade
+  readers.
+domain: communication
+topic: ''
+capability: ''
+prompt_ref: story_spine_outline.prompt.yaml

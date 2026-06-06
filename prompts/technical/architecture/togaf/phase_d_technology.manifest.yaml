@@ -1,0 +1,8 @@
+---
+name: TOGAF Phase D - Technology Architecture
+description: Guide for defining the Technology Architecture (infrastructure, hardware,
+  networks).
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: phase_d_technology.prompt.yaml

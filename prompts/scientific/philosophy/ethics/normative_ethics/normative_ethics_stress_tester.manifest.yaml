@@ -1,0 +1,8 @@
+---
+name: Normative Ethics Stress Tester
+description: Systematically stress-tests complex, applied ethical dilemmas through
+  mutually exclusive normative matrices (e.g., Kantian Deontology vs. Act Utilitarianism).
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: normative_ethics_stress_tester.prompt.yaml

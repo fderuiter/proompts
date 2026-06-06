@@ -1,0 +1,7 @@
+---
+name: Legacy Modernization Strategy
+description: Create a phased roadmap for migrating legacy systems to modern architectures.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: legacy_modernization_strategy.prompt.yaml

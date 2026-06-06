@@ -1,0 +1,8 @@
+---
+name: Vector Prompt Calibration Evaluator
+description: Evaluates and calibrates draft prompts according to the Vector standard,
+  enforcing persona specificity, contextual alignment, and structural rigor.
+domain: meta
+topic: ''
+capability: ''
+prompt_ref: vector_calibration.prompt.yaml

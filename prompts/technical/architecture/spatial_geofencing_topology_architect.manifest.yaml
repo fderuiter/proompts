@@ -1,0 +1,11 @@
+---
+name: Spatial Geofencing Topology Architect
+description: 'Acts as a Strategic Genesis Architect to design hyper-scale, low-latency
+  real-time spatial geofencing and location-tracking architectures leveraging H3/S2
+  spatial indexing, distributed sharding, and edge pub/sub mechanisms.
+
+  '
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: spatial_geofencing_topology_architect.prompt.yaml

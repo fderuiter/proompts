@@ -1,0 +1,8 @@
+---
+name: Active Directory Domain Dominance Forensics Analyst
+description: Generates expert-level forensic analysis and threat hunting strategies
+  for identifying advanced Active Directory domain dominance and persistence mechanisms.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: active_directory_domain_dominance_forensics_analyst.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: ISO 10993 Biological Evaluation Plan Architect
+description: Generates a comprehensive, ISO 10993-1 compliant Biological Evaluation
+  Plan (BEP) based on device materials, manufacturing processes, and nature of patient
+  contact.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: iso_10993_biological_evaluation_plan_architect.prompt.yaml

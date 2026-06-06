@@ -1,0 +1,8 @@
+---
+name: Jules Concurrency Architect
+description: AI State Management Architect for defining async flows and race condition
+  handling.
+domain: google_jules
+topic: ''
+capability: ''
+prompt_ref: jules_concurrency_architect.prompt.yaml

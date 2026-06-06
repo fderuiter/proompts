@@ -1,0 +1,9 @@
+---
+name: fda_483_warning_letter_remediation_architect
+description: Acts as a Principal Regulatory Compliance Expert and Former FDA Investigator
+  to synthesize Form 483 observations into rigorous, systemic remediation plans and
+  warning letter responses.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: fda_483_warning_letter_remediation_architect.prompt.yaml

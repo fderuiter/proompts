@@ -1,0 +1,8 @@
+---
+name: higher_order_unification_resolution_architect
+description: Automates the rigorous resolution of higher-order unification problems
+  within the simply typed lambda calculus, utilizing Huet's unification algorithm.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: higher_order_unification_resolution_architect.prompt.yaml

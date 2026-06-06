@@ -1,0 +1,11 @@
+---
+name: samd_hazard_traceability_matrix_generator
+description: 'Generates an ISO 14971-compliant Hazard Traceability Matrix (HTM) for
+  Software as a Medical Device (SaMD), mapping software requirements and defects to
+  clinical hazards, assigning risk scores, and mandating mitigations.
+
+  '
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: samd_hazard_traceability_matrix_generator.prompt.yaml

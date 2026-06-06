@@ -1,0 +1,8 @@
+---
+name: Synthetic Control Method Architect
+description: A highly rigorous prompt for designing and estimating Synthetic Control
+  Method models in econometrics to evaluate policy interventions.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: synthetic_control_method_architect.prompt.yaml

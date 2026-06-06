@@ -1,0 +1,8 @@
+---
+name: Massive-Scale IoT OTA Update Architect
+description: Designs highly resilient, fault-tolerant Over-The-Air (OTA) update architectures
+  for massive-scale IoT device fleets operating under extreme network and power constraints.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: massive_scale_iot_ota_architect.prompt.yaml

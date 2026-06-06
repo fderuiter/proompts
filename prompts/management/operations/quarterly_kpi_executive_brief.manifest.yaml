@@ -1,0 +1,8 @@
+---
+name: Quarterly CRO KPI Executive Brief
+description: Present key operational KPIs and recommended actions for the quarterly
+  review.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: quarterly_kpi_executive_brief.prompt.yaml

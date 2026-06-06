@@ -1,0 +1,8 @@
+---
+name: Protocol Optimization and Risk Simulation
+description: Evaluate a draft clinical protocol and simulate the effects of simplifying
+  key elements.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: protocol_optimization_risk_simulation.prompt.yaml

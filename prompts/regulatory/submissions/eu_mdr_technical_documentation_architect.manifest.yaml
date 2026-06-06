@@ -1,0 +1,9 @@
+---
+name: EU MDR Technical Documentation Architect
+description: Formulates rigorous, compliant EU MDR Annex II and III technical documentation
+  for medical devices, ensuring alignment with General Safety and Performance Requirements
+  (GSPRs) and Notified Body expectations.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: eu_mdr_technical_documentation_architect.prompt.yaml

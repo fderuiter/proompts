@@ -1,0 +1,8 @@
+---
+name: Medical Device Reporting (MDR)
+description: Summarize an adverse event for mandatory electronic submission or develop
+  an MDR SOP.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: medical_device_reporting_mdr.prompt.yaml

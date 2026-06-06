@@ -1,0 +1,8 @@
+---
+name: Design Verification for BCR-ABL Tests
+description: Outline design verification and validation requirements for a BCR-ABL
+  quantitation test.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: design_verification_for_bcr_abl_tests.prompt.yaml

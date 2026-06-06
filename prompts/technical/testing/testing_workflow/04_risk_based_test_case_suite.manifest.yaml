@@ -1,0 +1,8 @@
+---
+name: Risk-Based Test Case Suite
+description: Generate a test-case suite prioritizing controls for high and medium
+  residual risks.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: 04_risk_based_test_case_suite.prompt.yaml

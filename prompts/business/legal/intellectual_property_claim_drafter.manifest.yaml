@@ -1,0 +1,8 @@
+---
+name: Intellectual Property Claim Drafter
+description: A prompt that enforces USPTO or EPO formatting constraints to translate
+  engineering specifications into defensible patent claims.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: intellectual_property_claim_drafter.prompt.yaml

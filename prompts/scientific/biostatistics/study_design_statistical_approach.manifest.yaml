@@ -1,0 +1,7 @@
+---
+name: Study Design and Statistical Approach
+description: Propose a clinical trial design with corresponding statistical approach.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: study_design_statistical_approach.prompt.yaml

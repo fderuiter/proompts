@@ -1,0 +1,7 @@
+---
+name: Prompt Optimizer 1.0
+description: Iteratively refine an instruction set for a given task.
+domain: general
+topic: ''
+capability: ''
+prompt_ref: L5_prompt_optimizer.prompt.yaml

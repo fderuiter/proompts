@@ -1,0 +1,9 @@
+---
+name: breakthrough_therapy_designation_rationale_architect
+description: Synthesizes preliminary clinical data, unmet medical need, and standard
+  of care to formulate a highly rigorous, persuasive Breakthrough Therapy Designation
+  (BTD) rationale for regulatory submission.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: breakthrough_therapy_designation_rationale_architect.prompt.yaml

@@ -1,0 +1,10 @@
+---
+name: AI Email Assistant Go/No-Go Vote
+description: 'Personas: UX designer, data scientist, CFO. Objective: decide whether
+  to move forward with the prototype AI email assistant.
+
+  '
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: email_assistant_go_no_go_vote.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Project Memory Notes
+description: Maintain a running log of architectural decisions and contextual notes
+  for the project.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: project_memory.prompt.yaml

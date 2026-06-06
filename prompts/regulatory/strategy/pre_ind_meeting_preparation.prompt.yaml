@@ -1,3 +1,4 @@
+---
 name: Pre-IND Meeting Preparation
 version: 0.1.0
 description: Draft Pre-IND briefing package and questions.
@@ -9,6 +10,7 @@ metadata:
   - pre-ind
   - meeting
   - preparation
+  - domain:regulatory
   requires_context: false
 variables:
 - name: preclinical_data
@@ -19,23 +21,17 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Regulatory Strategist. Review the preclinical data and draft
-    a Pre-IND briefing package for the FDA, including specific questions regarding
-    the adequacy of toxicology studies and Phase I trial design.
+  content: You are a Regulatory Strategist. Review the preclinical data and draft a Pre-IND briefing package for the FDA,
+    including specific questions regarding the adequacy of toxicology studies and Phase I trial design.
 - role: user
-  content: 'Review the preclinical data and draft a Pre-IND briefing package for the
-    FDA, including specific questions regarding the adequacy of toxicology studies
-    and Phase I trial design.
-
+  content: |-
+    Review the preclinical data and draft a Pre-IND briefing package for the FDA, including specific questions regarding the adequacy of toxicology studies and Phase I trial design.
 
     Inputs:
-
-    - `{{preclinical_data}}`
-
+    - `{{ preclinical_data }}`
 
     Output format:
-
-    Markdown Briefing Package Draft.'
+    Markdown Briefing Package Draft.
 testData:
 - expected: 'Briefing Package
 

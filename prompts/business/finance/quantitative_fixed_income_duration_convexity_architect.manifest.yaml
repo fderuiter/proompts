@@ -1,0 +1,8 @@
+---
+name: quantitative_fixed_income_duration_convexity_architect
+description: Architects mathematically rigorous fixed-income pricing and interest
+  rate risk models, calculating Macaulay Duration, Modified Duration, and Convexity.
+domain: business
+topic: finance
+capability: forecasting
+prompt_ref: quantitative_fixed_income_duration_convexity_architect.prompt.yaml

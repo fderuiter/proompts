@@ -1,0 +1,9 @@
+---
+name: Predictive RFM Churn Mitigation Architect
+description: Constructs deeply rigorous, predictive churn mitigation workflows using
+  advanced Recency-Frequency-Monetary (RFM) analysis and the AARRR funnel for enterprise
+  growth strategy.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: predictive_rfm_churn_mitigation_architect.prompt.yaml

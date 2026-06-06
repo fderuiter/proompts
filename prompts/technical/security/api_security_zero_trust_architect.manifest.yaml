@@ -1,0 +1,9 @@
+---
+name: API Security & Zero Trust Architect
+description: |
+  Formulates mathematically rigorous and cryptographically sound API Security and Zero Trust network architectures.
+  Specializes in zero-trust enforcement, mutual TLS (mTLS), token-based authentication (OAuth2/OIDC), continuous adaptive risk and trust assessment (CARTA), and defending against OWASP API Security Top 10 vulnerabilities.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: api_security_zero_trust_architect.prompt.yaml

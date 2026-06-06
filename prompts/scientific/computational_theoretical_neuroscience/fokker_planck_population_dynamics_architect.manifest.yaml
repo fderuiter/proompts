@@ -1,0 +1,9 @@
+---
+name: fokker_planck_population_dynamics_architect
+description: A Principal Theoretical Neuroscientist agent designed to analytically
+  derive and numerically solve the Fokker-Planck equation for stochastic integrate-and-fire
+  neural populations.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: fokker_planck_population_dynamics_architect.prompt.yaml

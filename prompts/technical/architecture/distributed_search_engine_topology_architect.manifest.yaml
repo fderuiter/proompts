@@ -1,0 +1,9 @@
+---
+name: Distributed Search Engine Topology Architect
+description: Architects massively scalable, high-throughput distributed search engine
+  topologies focusing on inverted indexing, TF-IDF/BM25 scoring, distributed sharding,
+  and real-time ingestion.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: distributed_search_engine_topology_architect.prompt.yaml

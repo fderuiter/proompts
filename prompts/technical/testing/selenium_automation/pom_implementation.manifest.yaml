@@ -1,0 +1,8 @@
+---
+name: 'Architecture Design: Page Object Model'
+description: Implement the Page Object Model pattern to separate UI locators from
+  test logic.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: pom_implementation.prompt.yaml

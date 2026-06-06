@@ -1,0 +1,8 @@
+---
+name: Build an Audit-Ready Site-Payment Schedule
+description: Generate a transparent investigator payment schedule that withstands
+  audit review.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: audit_ready_site_payment_schedule.prompt.yaml

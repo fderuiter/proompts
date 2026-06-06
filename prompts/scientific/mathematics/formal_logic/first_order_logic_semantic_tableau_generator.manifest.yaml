@@ -1,0 +1,8 @@
+---
+name: first_order_logic_semantic_tableau_generator
+description: Systematically constructs a formal semantic tableau (truth tree) to evaluate
+  the satisfiability and validity of first-order logic formulas.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: first_order_logic_semantic_tableau_generator.prompt.yaml

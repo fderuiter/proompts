@@ -1,0 +1,9 @@
+---
+name: Semantic Caching AI Gateway Architect
+description: Designs highly scalable AI Gateway architectures featuring advanced semantic
+  caching, context-aware routing, and embedding-based hit/miss evaluation for Large
+  Language Model (LLM) infrastructures.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: semantic_caching_ai_gateway_architect.prompt.yaml

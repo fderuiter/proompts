@@ -1,7 +1,7 @@
+---
 name: Risk-Based Test Case Suite
 version: 0.1.0
-description: Generate a test-case suite prioritizing controls for high and medium
-  residual risks.
+description: Generate a test-case suite prioritizing controls for high and medium residual risks.
 metadata:
   domain: technical
   complexity: medium
@@ -11,6 +11,7 @@ metadata:
   - test
   - case
   - suite
+  - domain:technical
   requires_context: false
 variables:
 - name: device_name
@@ -24,27 +25,33 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: "You are a risk-management analyst applying ISO\_14971. The device **{{device_name}}**\
-    \ is in the pre-clinical stage. Reference IEC\_62304 for software items when relevant.\
-    \ Provide rationales using standards, not web blogs. Ask up to three clarifying\
-    \ questions if data are missing.\n\nEnsure alignment with ISO\_14971 clauses\_\
-    6\u20137 and highlight any assumptions."
+  content: |-
+    You are a risk-management analyst applying ISO 14971. The device **{{ device_name }}** is in the pre-clinical stage. Reference IEC 62304 for software items when relevant. Provide rationales using standards, not web blogs. Ask up to three clarifying questions if data are missing.
+
+    Ensure alignment with ISO 14971 clauses 6–7 and highlight any assumptions.
 - role: user
-  content: "1. Build a Risk\u2011Control Traceability Matrix linking hazards to controls\
-    \ and test cases.\n2. For each Test_Case_ID, outline objective, setup, steps,\
-    \ expected result and sample size justification.\n3. Summarize any uncovered high\u2011\
-    risk areas needing additional controls.\n\nInputs:\n- `{{device_name}}` \u2013\
-    \ name of the device\n- `{{hazard_analysis_table}}` \u2013 hazard analysis data\n\
-    \nOutput Format:\n1. Markdown traceability matrix linking hazards, controls and\
-    \ test cases\n2. Detailed test-case catalog with objectives, setups, steps, expected\
-    \ results and sample size justification\n3. Summary of uncovered high-risk areas\
-    \ requiring additional controls"
+  content: |-
+    1. Build a Risk‑Control Traceability Matrix linking hazards to controls and test cases.
+    2. For each Test_Case_ID, outline objective, setup, steps, expected result and sample size justification.
+    3. Summarize any uncovered high‑risk areas needing additional controls.
+
+    Inputs:
+    - `{{ device_name }}` – name of the device
+    - `{{ hazard_analysis_table }}` – hazard analysis data
+
+    Output Format:
+    1. Markdown traceability matrix linking hazards, controls and test cases
+    2. Detailed test-case catalog with objectives, setups, steps, expected results and sample size justification
+    3. Summary of uncovered high-risk areas requiring additional controls
 testData:
 - expected: 'Risk-Control Traceability Matrix
 
     '
-  vars: "device_name: Cardiac Monitor\nhazard_analysis_table: |\n  Hazard_ID | Hazard\
-    \ | Control\n  H1        | Battery failure | Backup battery\n"
+  vars: |
+    device_name: Cardiac Monitor
+    hazard_analysis_table: |
+      Hazard_ID | Hazard | Control
+      H1        | Battery failure | Backup battery
 evaluators:
 - name: Output starts with 'Risk-Control Traceability Matrix'
   string:

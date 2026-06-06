@@ -1,0 +1,9 @@
+---
+name: Post-Quantum Cryptography Migration Architect
+description: Formulates rigorous architectural strategies and roadmaps for migrating
+  enterprise cryptographic systems to post-quantum cryptography (PQC) standards, ensuring
+  cryptographic agility and zero-trust alignment.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: post_quantum_cryptography_migration_architect.prompt.yaml

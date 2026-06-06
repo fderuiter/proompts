@@ -1,0 +1,9 @@
+---
+name: fully_homomorphic_encryption_circuit_architect
+description: Acts as a Principal Cryptographic Engineer and FHE Specialist to design
+  highly optimized Fully Homomorphic Encryption (FHE) circuits, select appropriate
+  schemes, and manage noise budgets.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: fully_homomorphic_encryption_circuit_architect.prompt.yaml

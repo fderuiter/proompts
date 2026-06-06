@@ -1,0 +1,8 @@
+---
+name: dependent_type_theory_judgment_derivation
+description: "Rigorously constructs and verifies formal type judgment derivations\
+  \ within Martin-L\xF6f Dependent Type Theory using the Curry-Howard correspondence."
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: dependent_type_theory_judgment_derivation.prompt.yaml

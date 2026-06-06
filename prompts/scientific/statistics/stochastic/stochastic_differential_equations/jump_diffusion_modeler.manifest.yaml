@@ -1,0 +1,8 @@
+---
+name: jump_diffusion_modeler
+description: Acts as a Principal Statistician to rigorously formulate and solve parametric
+  inference and simulation problems for Jump-Diffusion Stochastic Differential Equations.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: jump_diffusion_modeler.prompt.yaml

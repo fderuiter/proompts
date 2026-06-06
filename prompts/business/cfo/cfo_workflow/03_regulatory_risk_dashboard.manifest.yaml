@@ -1,0 +1,7 @@
+---
+name: Regulatory-Risk & ESG Impact Dashboard Builder
+description: Aggregate regulatory changes and ESG metrics into a compliance risk dashboard.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: 03_regulatory_risk_dashboard.prompt.yaml

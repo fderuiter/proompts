@@ -1,0 +1,8 @@
+---
+name: Automated Image Assessment System 510(k)
+description: Draft a detailed device description for an automated image assessment
+  system for microbial colonies.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: automated_image_assessment_system_510_k.prompt.yaml

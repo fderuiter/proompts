@@ -1,0 +1,9 @@
+---
+name: spatial_metapopulation_seir_epidemiology_architect
+description: A Principal Disease Ecologist and Mathematical Epidemiologist framework
+  to strictly model complex spatial meta-population pathogen transmission using coupled
+  differential equations.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: spatial_metapopulation_seir_epidemiology_architect.prompt.yaml

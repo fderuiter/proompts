@@ -1,0 +1,9 @@
+---
+name: nrr_expansion_propensity_architect
+description: Synthesizes enterprise SaaS historical usage and billing data into predictive
+  Net Revenue Retention (NRR) expansion matrices and cross-sell propensity scoring
+  workflows.
+domain: growth
+topic: ''
+capability: ''
+prompt_ref: nrr_expansion_propensity_architect.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: adm_spacetime_decomposition_architect
+description: Conducts rigorous 3+1 Arnowitt-Deser-Misner (ADM) decomposition of spacetime
+  metrics, extracting lapse, shift, and spatial metrics, and derives the associated
+  Hamiltonian and momentum constraints.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: adm_spacetime_decomposition_architect.prompt.yaml

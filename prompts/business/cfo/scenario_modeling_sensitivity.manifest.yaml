@@ -1,0 +1,8 @@
+---
+name: Scenario Modeling & Sensitivity Analysis
+description: Create three financial scenarios (Conservative, Base, and Aggressive)
+  based on historical data and market trends.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: scenario_modeling_sensitivity.prompt.yaml

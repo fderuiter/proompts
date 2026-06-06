@@ -1,0 +1,8 @@
+---
+name: Python Performance Optimization
+description: A Senior-level guide to optimizing Python code, focusing on profiling,
+  memory management, and GIL workarounds.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: python_performance_optimization.prompt.yaml

@@ -1,0 +1,11 @@
+---
+name: Steered Molecular Dynamics Unbinding Architect
+description: 'Generates rigorous steered molecular dynamics (SMD) simulation protocols
+  for calculating protein-ligand unbinding kinetics, work distributions, and rupture
+  forces using non-equilibrium physics and advanced reaction coordinate definitions.
+
+  '
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: steered_molecular_dynamics_unbinding_architect.prompt.yaml

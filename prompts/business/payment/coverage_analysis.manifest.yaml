@@ -1,0 +1,7 @@
+---
+name: Medicare Coverage Analysis
+description: Determine qualifying status and billing justification.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: coverage_analysis.prompt.yaml

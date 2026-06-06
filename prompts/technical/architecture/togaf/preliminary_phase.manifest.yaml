@@ -1,0 +1,8 @@
+---
+name: TOGAF Preliminary Phase
+description: Guide for establishing the Architecture Capability and defining the organizational
+  footprint (The Genesis of Architecture).
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: preliminary_phase.prompt.yaml

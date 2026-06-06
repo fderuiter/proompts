@@ -1,0 +1,8 @@
+---
+name: Dantzig-Wolfe Column Generation Architect
+description: Formulates highly rigorous Dantzig-Wolfe decomposition and Column Generation
+  models for large-scale, block-angular integer and linear programming problems.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: dantzig_wolfe_column_generation_architect.prompt.yaml

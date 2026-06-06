@@ -1,0 +1,9 @@
+---
+name: epistemic_modal_logic_kripke_evaluator
+description: Systematically evaluates multi-agent epistemic modal formulas within
+  specified Kripke structures (models), performing rigorous truth condition checks
+  and model checking.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: epistemic_modal_logic_kripke_evaluator.prompt.yaml

@@ -1,3 +1,4 @@
+---
 name: Clinical ETL Transformation QC
 version: 0.1.0
 description: Define quality checks for clinical ETL transformations.
@@ -9,6 +10,9 @@ metadata:
   - clinical
   - etl
   - transformation
+  - domain:clinical
+  - topic:data_management
+  - capability:mapping
   requires_context: false
 variables:
 - name: etl_mapping_spec
@@ -19,20 +23,15 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: 'You are a quality engineer establishing validation checks for clinical
-    ETL
-
+  content: |
+    You are a quality engineer establishing validation checks for clinical ETL
     transformations.
-
-    '
 - role: user
-  content: 'Here is the ETL mapping specification:
+  content: |-
+    Here is the ETL mapping specification:
+    {{ etl_mapping_spec }}
 
-    {{etl_mapping_spec}}
-
-
-    Based on this specification, define a comprehensive set of quality checks for
-    the clinical ETL transformations.'
+    Based on this specification, define a comprehensive set of quality checks for the clinical ETL transformations.
 testData:
 - expected: Mentions range validations and format consistency.
   vars: List QC checks for transforming lab results data.

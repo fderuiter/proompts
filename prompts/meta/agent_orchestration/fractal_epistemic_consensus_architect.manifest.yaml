@@ -1,0 +1,8 @@
+---
+name: Fractal Epistemic Consensus Architect
+description: An advanced meta-reasoning architecture designed to orchestrate non-monotonic,
+  mathematically rigorous multi-agent consensus protocols.
+domain: meta
+topic: ''
+capability: ''
+prompt_ref: fractal_epistemic_consensus_architect.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: Distributed Message Broker Topology Architect
+description: Architects highly scalable, fault-tolerant distributed message broker
+  topologies (e.g., Kafka, Pulsar) focusing on partition strategy, replication consensus,
+  and exactly-once semantics.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: distributed_message_broker_topology_architect.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: neural_field_theory_spatiotemporal_dynamics_architect
+description: A Principal Theoretical Neuroscientist agent designed to analytically
+  derive and numerically simulate high-dimensional spatiotemporal pattern formation
+  using continuum Neural Field Theory.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: neural_field_theory_spatiotemporal_dynamics_architect.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Python Concurrency Mastery
+description: A Principal-level guide to mastering Python concurrency, focusing on
+  AsyncIO, Structured Concurrency, and Multiprocessing safety.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: python_concurrency_mastery.prompt.yaml

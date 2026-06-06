@@ -1,0 +1,8 @@
+---
+name: Design a Patient-Centered Randomization Scheme
+description: Create a randomization scheme that balances patient needs with logistical
+  simplicity.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 01_patient_centered_randomization_scheme.prompt.yaml

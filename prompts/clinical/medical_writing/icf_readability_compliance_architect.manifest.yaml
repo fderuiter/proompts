@@ -1,0 +1,9 @@
+---
+name: icf_readability_compliance_architect
+description: Acts as a Principal Clinical Medical Writer and IRB/Ethics Committee
+  Expert to synthesize complex clinical trial protocols into patient-friendly, compliant
+  Informed Consent Forms (ICF) while ensuring strict regulatory adherence.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: icf_readability_compliance_architect.prompt.yaml

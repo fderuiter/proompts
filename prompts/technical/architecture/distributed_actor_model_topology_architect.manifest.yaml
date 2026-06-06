@@ -1,0 +1,11 @@
+---
+name: Distributed Actor Model Topology Architect
+description: 'Designs extreme-scale, stateful distributed actor model topologies optimized
+  for highly concurrent processing, location transparency, and supervised failure
+  recovery.
+
+  '
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: distributed_actor_model_topology_architect.prompt.yaml

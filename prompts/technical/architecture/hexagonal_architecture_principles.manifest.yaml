@@ -1,0 +1,8 @@
+---
+name: Hexagonal Architecture Principles
+description: Explain the core philosophy, skeleton, and benefits of Hexagonal Architecture
+  (Ports and Adapters).
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: hexagonal_architecture_principles.prompt.yaml

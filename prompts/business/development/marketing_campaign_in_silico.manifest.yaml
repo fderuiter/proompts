@@ -1,0 +1,8 @@
+---
+name: Marketing Campaign for Clinical Services
+description: Generates a comprehensive marketing asset package including landing page
+  copy, email sequence, and sell sheet for new clinical services.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: marketing_campaign_in_silico.prompt.yaml

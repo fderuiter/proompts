@@ -1,0 +1,8 @@
+---
+name: SRE Incident Postmortem RCA Architect
+description: Formulates rigorous, blameless Site Reliability Engineering (SRE) incident
+  postmortems and Root Cause Analyses (RCAs).
+domain: technical
+topic: devops
+capability: orchestration
+prompt_ref: sre_incident_postmortem_rca_architect.prompt.yaml

@@ -1,0 +1,10 @@
+---
+name: Underwater Acoustic Sensor Network Architect
+description: Designs highly resilient, ultra-low bandwidth Underwater Acoustic Sensor
+  Network (UWASN) architectures for marine observation, tactical surveillance, and
+  offshore exploration, optimizing for extreme propagation delay, high error rates,
+  and dynamic node mobility.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: underwater_acoustic_sensor_network_architect.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: intergenerational_mobility_modeler
+description: Models intergenerational social mobility using Markov chain matrices
+  and calculates structural inequality indices from raw demographic data, enforcing
+  American Sociological Association (ASA) standards.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: intergenerational_mobility_modeler.prompt.yaml

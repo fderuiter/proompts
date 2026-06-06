@@ -1,0 +1,7 @@
+---
+name: "Devil\u2019s-Advocate Stress Test"
+description: Act as a seasoned critic.
+domain: communication
+topic: ''
+capability: ''
+prompt_ref: devils_advocate_stress_test.prompt.yaml

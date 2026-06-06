@@ -1,0 +1,9 @@
+---
+name: single_cell_rna_seq_trajectory_inference_architect
+description: Acts as a Principal Computational Biologist to computationally model
+  single-cell RNA sequencing (scRNA-seq) cellular trajectories and infer pseudotime
+  dynamics using advanced dimensionality reduction and stochastic differential equations.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: single_cell_rna_seq_trajectory_inference_architect.prompt.yaml

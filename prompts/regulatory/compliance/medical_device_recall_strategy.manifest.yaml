@@ -1,0 +1,7 @@
+---
+name: Medical Device Recall Strategy
+description: Develop a mandatory recall strategy for a device posing health risks.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: medical_device_recall_strategy.prompt.yaml

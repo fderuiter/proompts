@@ -1,0 +1,7 @@
+---
+name: Board Deck Narrative Generation
+description: Draft the 'CFO Commentary' slide for a Board meeting.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: board_deck_narrative.prompt.yaml

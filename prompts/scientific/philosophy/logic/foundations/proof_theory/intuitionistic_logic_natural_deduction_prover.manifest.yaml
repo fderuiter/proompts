@@ -1,0 +1,8 @@
+---
+name: Intuitionistic Logic Natural Deduction Prover
+description: Systematically generates formal natural deduction proofs in intuitionistic
+  logic, explicitly avoiding the Law of Excluded Middle and Double Negation Elimination.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: intuitionistic_logic_natural_deduction_prover.prompt.yaml

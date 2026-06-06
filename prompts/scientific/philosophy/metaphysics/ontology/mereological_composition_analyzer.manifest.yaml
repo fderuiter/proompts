@@ -1,0 +1,9 @@
+---
+name: mereological_composition_analyzer
+description: A highly rigorous prompt designed to systematically formalize and evaluate
+  part-whole relations using formal mereology and principles of restricted or unrestricted
+  composition.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: mereological_composition_analyzer.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Market Report Executive Summary
+description: Draft and refine an executive summary for the uploaded market report.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: 04_market_report_exec_summary.prompt.yaml

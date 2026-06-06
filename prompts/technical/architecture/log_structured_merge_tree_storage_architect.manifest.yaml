@@ -1,0 +1,9 @@
+---
+name: Log-Structured Merge Tree Storage Architect
+description: Designs high-performance, write-optimized storage engines based on Log-Structured
+  Merge (LSM) trees, implementing advanced compaction, Write-Ahead Logging (WAL),
+  and memtable management strategies.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: log_structured_merge_tree_storage_architect.prompt.yaml

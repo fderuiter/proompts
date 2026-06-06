@@ -1,0 +1,8 @@
+---
+name: Service Mesh Security Architect
+description: Designs zero-trust mTLS communication policies and robust service mesh
+  architectures within Kubernetes environments.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: service_mesh_security_architect.prompt.yaml

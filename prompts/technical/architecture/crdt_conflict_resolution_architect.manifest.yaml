@@ -1,0 +1,9 @@
+---
+name: crdt_conflict_resolution_architect
+description: Designs robust Conflict-Free Replicated Data Type (CRDT) architectures
+  for building highly available, partition-tolerant distributed systems with strong
+  eventual consistency guarantees.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: crdt_conflict_resolution_architect.prompt.yaml

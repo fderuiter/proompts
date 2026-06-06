@@ -1,0 +1,7 @@
+---
+name: Audit Trail Review
+description: Review subject audit logs for compliance and data integrity.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: audit_trail_review.prompt.yaml

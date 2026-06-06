@@ -1,0 +1,9 @@
+---
+name: fda_de_novo_classification_request_architect
+description: Acts as a Principal Regulatory Affairs Architect to formulate rigorous,
+  strategic FDA De Novo Classification Requests, establishing novel regulatory pathways
+  and special controls for novel medical devices without a legally marketed predicate.
+domain: regulatory
+topic: quality
+capability: auditing
+prompt_ref: fda_de_novo_classification_request_architect.prompt.yaml

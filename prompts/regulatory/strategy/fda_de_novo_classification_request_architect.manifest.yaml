@@ -1,0 +1,9 @@
+---
+name: FDA De Novo Classification Request Architect
+description: Architect rigorous, compliant FDA De Novo Classification Requests for
+  novel medical devices, ensuring strict adherence to 21 CFR Part 860 and robust justification
+  of special controls.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: fda_de_novo_classification_request_architect.prompt.yaml

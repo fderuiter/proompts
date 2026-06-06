@@ -1,0 +1,7 @@
+---
+name: Task Prototyper
+description: Generate a domain-specific L3 prompt that accomplishes `{{ end_task }}`.
+domain: meta
+topic: ''
+capability: ''
+prompt_ref: 03_L3_task-prototyper.prompt.yaml

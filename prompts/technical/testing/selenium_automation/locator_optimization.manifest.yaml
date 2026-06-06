@@ -1,0 +1,7 @@
+---
+name: 'Framework Best Practices: Locator Strategy'
+description: Transition from brittle XPaths to robust locators like ID or CSS selectors.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: locator_optimization.prompt.yaml

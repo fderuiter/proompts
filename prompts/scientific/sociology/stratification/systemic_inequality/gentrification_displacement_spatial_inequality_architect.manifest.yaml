@@ -1,0 +1,9 @@
+---
+name: gentrification_displacement_spatial_inequality_architect
+description: A Principal Sociologist agent that systematically analyzes gentrification-induced
+  displacement and structural spatial inequality, calculating rigorous demographic
+  and spatial indices.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: gentrification_displacement_spatial_inequality_architect.prompt.yaml

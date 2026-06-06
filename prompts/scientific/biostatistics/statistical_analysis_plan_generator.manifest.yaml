@@ -1,0 +1,8 @@
+---
+name: Statistical Analysis Plan Generator
+description: Generate a comprehensive, regulatory-compliant (ICH E9) Statistical Analysis
+  Plan (SAP) for clinical trials.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: statistical_analysis_plan_generator.prompt.yaml

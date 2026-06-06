@@ -1,0 +1,8 @@
+---
+name: Automated E-Discovery Reviewer
+description: Automates the first-pass review of legal documents for relevance, privilege,
+  and key entity extraction during electronic discovery.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: automated_ediscovery_reviewer.prompt.yaml

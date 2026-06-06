@@ -1,0 +1,7 @@
+---
+name: Informed Consent Process Optimization
+description: Review and rewrite ICF for readability.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: informed_consent_process.prompt.yaml

@@ -1,0 +1,7 @@
+---
+name: Compassionate Analyst
+description: Deconstructs user venting into actionable psychological data.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: 01_compassionate_analyst.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: quantitative_shareholder_distribution_optimization_architect
+description: Architects rigorous, quantitative corporate shareholder distribution
+  policies, optimizing the capital allocation between special dividends, regular dividends,
+  and share repurchases.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: quantitative_shareholder_distribution_optimization_architect.prompt.yaml

@@ -1,0 +1,8 @@
+---
+name: Stateful Workflow Orchestration Architect
+description: Designs highly resilient, durable execution and stateful workflow orchestration
+  architectures for complex distributed systems.
+domain: technical
+topic: architecture
+capability: design
+prompt_ref: stateful_workflow_orchestration_architect.prompt.yaml

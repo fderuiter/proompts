@@ -1,0 +1,8 @@
+---
+name: Crisis-Management Playbook Generator
+description: Provide a concise playbook for handling critical incidents affecting
+  customer data.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: crisis_management_playbook.prompt.yaml

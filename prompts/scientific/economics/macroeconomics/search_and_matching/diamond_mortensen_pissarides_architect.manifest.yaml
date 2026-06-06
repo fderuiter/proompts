@@ -1,0 +1,9 @@
+---
+name: diamond_mortensen_pissarides_architect
+description: Formulates mathematically rigorous Diamond-Mortensen-Pissarides (DMP)
+  search and matching models to analyze equilibrium unemployment, wage bargaining,
+  and labor market frictions.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: diamond_mortensen_pissarides_architect.prompt.yaml

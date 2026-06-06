@@ -1,0 +1,8 @@
+---
+name: RTA Checklist Preparation
+description: Annotate the RTA checklist with page numbers and sections where requirements
+  are addressed in a 510(k).
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: rta_checklist_preparation.prompt.yaml

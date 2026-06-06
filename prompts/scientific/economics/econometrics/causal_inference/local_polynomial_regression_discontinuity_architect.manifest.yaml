@@ -1,0 +1,9 @@
+---
+name: local_polynomial_regression_discontinuity_architect
+description: Formulates rigorous nonparametric and local polynomial Regression Discontinuity
+  Design (RDD) estimators to identify local average treatment effects (LATE), accounting
+  for optimal bandwidth selection and robust bias correction.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: local_polynomial_regression_discontinuity_architect.prompt.yaml

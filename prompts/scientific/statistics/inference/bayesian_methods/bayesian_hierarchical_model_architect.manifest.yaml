@@ -1,0 +1,8 @@
+---
+name: bayesian_hierarchical_model_architect
+description: Acts as a Principal Statistician to design and formulate complex Bayesian
+  hierarchical models with custom priors and MCMC sampling strategies.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: bayesian_hierarchical_model_architect.prompt.yaml

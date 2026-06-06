@@ -1,0 +1,8 @@
+---
+name: APT Threat Hunting Query Engineer
+description: Translates high-level Advanced Persistent Threat (APT) TTPs into precise,
+  actionable SIEM queries for proactive threat hunting.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: apt_threat_hunting_query_engineer.prompt.yaml

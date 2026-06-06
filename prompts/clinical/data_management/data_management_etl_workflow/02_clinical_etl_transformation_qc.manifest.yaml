@@ -1,0 +1,7 @@
+---
+name: Clinical ETL Transformation QC
+description: Define quality checks for clinical ETL transformations.
+domain: clinical
+topic: data_management
+capability: mapping
+prompt_ref: 02_clinical_etl_transformation_qc.prompt.yaml

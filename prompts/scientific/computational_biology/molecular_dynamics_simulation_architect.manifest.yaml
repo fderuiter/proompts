@@ -1,0 +1,9 @@
+---
+name: molecular_dynamics_simulation_architect
+description: Designs highly rigorous, physics-based molecular dynamics (MD) simulation
+  protocols for complex biomolecular systems, strictly enforcing statistical mechanics
+  principles and standard force field parameterization.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: molecular_dynamics_simulation_architect.prompt.yaml

@@ -1,0 +1,9 @@
+---
+name: Cloud Identity Fabric Threat Hunting Architect
+description: Architects advanced, high-fidelity threat hunting strategies targeting
+  multi-cloud identity fabrics, focusing on anomalous lateral movement, federated
+  trust abuse, and stealthy token exfiltration.
+domain: technical
+topic: ''
+capability: ''
+prompt_ref: cloud_identity_fabric_threat_hunting_architect.prompt.yaml

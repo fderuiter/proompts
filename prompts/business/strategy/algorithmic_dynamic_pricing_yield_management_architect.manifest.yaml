@@ -1,0 +1,9 @@
+---
+name: Algorithmic Dynamic Pricing & Yield Management Architect
+description: Designs rigorous algorithmic dynamic pricing and yield management strategies
+  to optimize revenue maximization under constrained capacity, perishable inventory,
+  and stochastic demand.
+domain: business
+topic: ''
+capability: ''
+prompt_ref: algorithmic_dynamic_pricing_yield_management_architect.prompt.yaml

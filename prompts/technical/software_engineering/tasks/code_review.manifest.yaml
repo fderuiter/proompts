@@ -1,0 +1,8 @@
+---
+name: Code Review Assistant (Aegis Security)
+description: Conduct a comprehensive security-focused code review, identifying vulnerabilities,
+  logic flaws, and style issues with a structured report.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: code_review.prompt.yaml

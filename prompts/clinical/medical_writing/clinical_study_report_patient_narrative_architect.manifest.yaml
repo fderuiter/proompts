@@ -1,0 +1,8 @@
+---
+name: clinical_study_report_patient_narrative_architect
+description: Synthesizes complex clinical trial data into regulatory-compliant Patient
+  Narratives for Clinical Study Reports (CSR) per ICH E3 guidelines.
+domain: clinical
+topic: ''
+capability: ''
+prompt_ref: clinical_study_report_patient_narrative_architect.prompt.yaml

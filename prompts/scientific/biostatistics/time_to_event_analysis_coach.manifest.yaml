@@ -1,0 +1,7 @@
+---
+name: Time-to-Event Analysis Coach
+description: Guide a junior analyst through performing a time-to-event analysis.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: time_to_event_analysis_coach.prompt.yaml

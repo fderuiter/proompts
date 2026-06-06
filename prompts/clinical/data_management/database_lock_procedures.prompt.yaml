@@ -1,3 +1,4 @@
+---
 name: Database Lock Procedures
 version: 0.1.0
 description: Review CRFs and prepare for database lock.
@@ -9,6 +10,9 @@ metadata:
   - database
   - lock
   - procedures
+  - domain:clinical
+  - topic:data_management
+  - capability:mapping
   requires_context: true
 variables:
 - name: crf_status
@@ -19,23 +23,17 @@ modelParameters:
   temperature: 0.2
 messages:
 - role: system
-  content: You are a Data Management Lead. Review all Case Report Forms (CRFs) for
-    this trial and identify any missing pages, duplicate entries, or unresolved queries
-    to ensure the database is ready for locking. Adhere to 21 CFR Part 11 and GCP.
+  content: You are a Data Management Lead. Review all Case Report Forms (CRFs) for this trial and identify any missing pages,
+    duplicate entries, or unresolved queries to ensure the database is ready for locking. Adhere to 21 CFR Part 11 and GCP.
 - role: user
-  content: 'Review all Case Report Forms (CRFs) for this trial and identify any missing
-    pages, duplicate entries, or unresolved queries to ensure the database is ready
-    for locking.
-
+  content: |-
+    Review all Case Report Forms (CRFs) for this trial and identify any missing pages, duplicate entries, or unresolved queries to ensure the database is ready for locking.
 
     Inputs:
-
-    - `{{crf_status}}`
-
+    - `{{ crf_status }}`
 
     Output format:
-
-    Markdown Database Lock Readiness Report.'
+    Markdown Database Lock Readiness Report.
 testData:
 - expected: 'Database Lock Readiness
 

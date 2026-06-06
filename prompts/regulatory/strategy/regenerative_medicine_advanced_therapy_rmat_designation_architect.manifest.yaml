@@ -1,0 +1,8 @@
+---
+name: Regenerative Medicine Advanced Therapy RMAT Designation Architect
+description: Architects compelling RMAT designation requests to the FDA for cell therapies
+  and tissue engineering products.
+domain: regulatory
+topic: ''
+capability: ''
+prompt_ref: regenerative_medicine_advanced_therapy_rmat_designation_architect.prompt.yaml

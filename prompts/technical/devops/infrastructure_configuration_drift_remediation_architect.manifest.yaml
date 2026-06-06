@@ -1,0 +1,9 @@
+---
+name: Infrastructure Configuration Drift Remediation Architect
+description: Designs and enforces rigorous automated workflows to detect, analyze,
+  and remediate Infrastructure as Code (IaC) configuration drift, ensuring actual
+  cloud state perfectly matches declarative intent.
+domain: technical
+topic: devops
+capability: orchestration
+prompt_ref: infrastructure_configuration_drift_remediation_architect.prompt.yaml

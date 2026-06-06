@@ -1,0 +1,8 @@
+---
+name: Dunnett Adjustment R Code Generator
+description: Generate R code for Dunnett multiplicity adjustments using the 'multcomp'
+  package.
+domain: scientific
+topic: ''
+capability: ''
+prompt_ref: dunnett_adjustment_calculator.prompt.yaml

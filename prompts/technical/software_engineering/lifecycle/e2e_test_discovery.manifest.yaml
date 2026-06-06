@@ -1,0 +1,8 @@
+---
+name: E2E Test Discovery Lifecycle Template
+description: Provide a system prompt template that guides an LLM to analyse a codebase
+  and generate a comprehensive end-to-end test plan.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: e2e_test_discovery.prompt.yaml

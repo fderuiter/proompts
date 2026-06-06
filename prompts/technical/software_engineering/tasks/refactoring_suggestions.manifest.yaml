@@ -1,0 +1,8 @@
+---
+name: Refactoring Architect
+description: A Principal Software Architect's guide to surgical refactoring, focusing
+  on decoupling, testability, and debt remediation.
+domain: technical
+topic: software_engineering
+capability: analysis
+prompt_ref: refactoring_suggestions.prompt.yaml

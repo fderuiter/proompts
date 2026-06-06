@@ -1,0 +1,7 @@
+---
+name: Investor and Board Narrative Builder
+description: Craft a concise two-slide narrative for investors and board members.
+domain: management
+topic: ''
+capability: ''
+prompt_ref: investor_board_narrative_builder.prompt.yaml
