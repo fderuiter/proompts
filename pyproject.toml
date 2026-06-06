@@ -3,12 +3,15 @@ name = "proompts-workspace"
 version = "0.1.0"
 description = "Monorepo workspace for Proompts"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = [
     "promptops",
     "tools",
     "proompts-guard",
-    "studio"
+    "studio",
+    "mcp>=1.27.2",
+    "watchdog>=6.0.0",
+    "jsonschema>=4.26.0",
 ]
 
 [tool.uv.workspace]
