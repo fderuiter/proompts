@@ -48,6 +48,8 @@ class WorkflowGrapher:
                         graph.append(f"    Input_{match} --> {step_id}")
         return "\n".join(graph) if len(graph) > 1 else ""
 
+from promptops.skill_export import process_skills
+
 def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str = "main"):
     prompts_dir = os.environ.get('PROMPTOPS_REGISTRY', prompts_dir)
     prompts_path = Path(prompts_dir)
@@ -64,6 +66,8 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
     out_prompts_dir.mkdir(parents=True, exist_ok=True)
     out_workflows_dir = docs_path / "workflows"
     out_workflows_dir.mkdir(parents=True, exist_ok=True)
+    
+    process_skills(prompts_path, docs_path)
     
     for path in iter_prompt_files(str(prompts_path)):
         data = load_yaml(str(path))
