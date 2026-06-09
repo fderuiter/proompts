@@ -281,5 +281,5 @@ def process_skills(prompts_path: Path, docs_path: Path):
         if skill_content:
             write_skill_file(prompts_path, docs_path, path, skill_content, reconciler)
 
-    reconciler.reconcile()
+    reconciler.reconcile(prune_empty_dirs=False)
     generate_health_dashboard(docs_path, health_report)
