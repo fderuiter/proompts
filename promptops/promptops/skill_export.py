@@ -144,7 +144,7 @@ def render_skill(raw_content: str, raw_data: Any) -> tuple:
         })
     return (skill_content, errors)
 
-def write_skill_file(prompts_path: Path, docs_path: Path, path: Path, skill_content: str):
+def write_skill_file(prompts_path: Path, docs_path: Path, path: Path, skill_content: str) -> Path:
     """Handles clean_name, directories, SKILL.md equality check and write."""
     out_skills_dir = docs_path / "skills"
     clean_name = path.name.replace('.prompt.yaml', '').replace('.yaml', '')
@@ -157,9 +157,10 @@ def write_skill_file(prompts_path: Path, docs_path: Path, path: Path, skill_cont
     if skill_file.exists():
         existing_content = skill_file.read_text(encoding='utf-8')
         if existing_content == skill_content:
-            return
+            return skill_file
 
     skill_file.write_text(skill_content, encoding='utf-8')
+    return skill_file
 
 def generate_health_dashboard(docs_path: Path, health_report: List[Dict[str, Any]]):
     dashboard_path = docs_path / "skill_health.md"
@@ -186,10 +187,33 @@ def generate_health_dashboard(docs_path: Path, health_report: List[Dict[str, Any
 
     dashboard_path.write_text("\n".join(lines), encoding='utf-8')
 
+def cleanup_orphaned_skills(docs_path: Path, active_skills: Set[Path]):
+    out_skills_dir = docs_path / "skills"
+    if not out_skills_dir.exists():
+        return
+
+    active_paths = {p.resolve() for p in active_skills}
+
+    # Find all SKILL.md files
+    for root, dirs, files in os.walk(out_skills_dir, topdown=False):
+        for file in files:
+            if file == "SKILL.md":
+                file_path = Path(root) / file
+                if file_path.resolve() not in active_paths:
+                    file_path.unlink()
+        
+        # Now check if the directory is empty
+        try:
+            if Path(root).resolve() != out_skills_dir.resolve() and not os.listdir(root):
+                Path(root).rmdir()
+        except OSError:
+            pass
+
 def process_skills(prompts_path: Path, docs_path: Path):
     from promptops.utils import iter_prompt_files
 
     health_report = []
+    active_skills: Set[Path] = set()
 
     for path in iter_prompt_files(str(prompts_path)):
         errors = []
@@ -226,6 +250,9 @@ def process_skills(prompts_path: Path, docs_path: Path):
             })
 
         if skill_content:
-            write_skill_file(prompts_path, docs_path, path, skill_content)
+            skill_file = write_skill_file(prompts_path, docs_path, path, skill_content)
+            if skill_file:
+                active_skills.add(skill_file)
 
     generate_health_dashboard(docs_path, health_report)
+    cleanup_orphaned_skills(docs_path, active_skills)
