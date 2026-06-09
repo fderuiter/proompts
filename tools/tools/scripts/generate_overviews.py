@@ -7,6 +7,7 @@ from pathlib import Path
 import sys
 
 from promptops.utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, OVERVIEW_NAME
+from promptops.sync import DirectoryReconciler
 
 
 def get_prompt_metadata(path: Path) -> tuple[str, str]:
@@ -96,15 +97,15 @@ def generate_overview(directory: Path, content_cache: dict[Path, bool] | None = 
     return "\n".join(sections).rstrip() + "\n"
 
 
-def ensure_overview(directory: Path, content_cache: dict[Path, bool] | None = None) -> bool:
+def ensure_overview(directory: Path, content_cache: dict[Path, bool] | None = None, reconciler: 'DirectoryReconciler' = None) -> bool:
     path = directory / OVERVIEW_NAME
     content = generate_overview(directory, content_cache)
 
     if not content:
-        if path.exists():
-            path.unlink()
-            return True
         return False
+    
+    if reconciler:
+        return reconciler.write_file(path, content)
     
     if path.exists():
         if path.read_text(encoding="utf-8") == content:
@@ -137,15 +138,22 @@ def main() -> int:
     for root_dir in [PROMPTS_DIR, WORKFLOWS_DIR]:
         if not root_dir.exists():
             continue
+            
+        reconciler = DirectoryReconciler(root_dir, manage_pattern=OVERVIEW_NAME)
 
         # Include the root_dir itself in the list of directories to process
         dirs_to_process = [root_dir] + [d for d in root_dir.rglob("*") if d.is_dir()]
 
         for directory in dirs_to_process:
             if has_content(directory):
-                if ensure_overview(directory, content_cache):
+                if ensure_overview(directory, content_cache, reconciler):
                     print(f"Generated overview for {directory}")
                     changed = True
+                    
+        # Reconcile, but do not delete empty directories in the source tree
+        deleted = reconciler.reconcile(prune_empty_dirs=False)
+        if deleted > 0:
+            changed = True
                 
     return 0 if changed else 0
 

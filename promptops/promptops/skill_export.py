@@ -144,22 +144,25 @@ def render_skill(raw_content: str, raw_data: Any) -> tuple:
         })
     return (skill_content, errors)
 
-def write_skill_file(prompts_path: Path, docs_path: Path, path: Path, skill_content: str):
+def write_skill_file(prompts_path: Path, docs_path: Path, path: Path, skill_content: str, reconciler: 'DirectoryReconciler' = None):
     """Handles clean_name, directories, SKILL.md equality check and write."""
     out_skills_dir = docs_path / "skills"
     clean_name = path.name.replace('.prompt.yaml', '').replace('.yaml', '')
     rel_to_prompts = path.relative_to(prompts_path)
     skill_dir = out_skills_dir / rel_to_prompts.parent / clean_name
-    skill_dir.mkdir(parents=True, exist_ok=True)
-
+    
     skill_file = skill_dir / "SKILL.md"
 
-    if skill_file.exists():
-        existing_content = skill_file.read_text(encoding='utf-8')
-        if existing_content == skill_content:
-            return
+    if reconciler:
+        reconciler.write_file(skill_file, skill_content)
+    else:
+        skill_dir.mkdir(parents=True, exist_ok=True)
+        if skill_file.exists():
+            existing_content = skill_file.read_text(encoding='utf-8')
+            if existing_content == skill_content:
+                return
 
-    skill_file.write_text(skill_content, encoding='utf-8')
+        skill_file.write_text(skill_content, encoding='utf-8')
 
 def generate_health_dashboard(docs_path: Path, health_report: List[Dict[str, Any]]):
     dashboard_path = docs_path / "skill_health.md"
@@ -188,8 +191,12 @@ def generate_health_dashboard(docs_path: Path, health_report: List[Dict[str, Any
 
 def process_skills(prompts_path: Path, docs_path: Path):
     from promptops.utils import iter_prompt_files
+    from promptops.sync import DirectoryReconciler
 
     health_report = []
+    
+    out_skills_dir = docs_path / "skills"
+    reconciler = DirectoryReconciler(out_skills_dir, manage_pattern="SKILL.md")
 
     for path in iter_prompt_files(str(prompts_path)):
         errors = []
@@ -226,6 +233,7 @@ def process_skills(prompts_path: Path, docs_path: Path):
             })
 
         if skill_content:
-            write_skill_file(prompts_path, docs_path, path, skill_content)
+            write_skill_file(prompts_path, docs_path, path, skill_content, reconciler)
 
+    reconciler.reconcile()
     generate_health_dashboard(docs_path, health_report)
