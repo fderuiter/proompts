@@ -94,12 +94,12 @@ def detect_skill(raw_content: str, raw_data: Any) -> bool:
     """Implements 'skill' detection logic, returns bool."""
     is_skill = False
     if raw_data and isinstance(raw_data, dict):
-        metadata = raw_data.get("metadata", {})
-        tags = metadata.get("tags", [])
-        if "skill" in tags:
+        metadata = raw_data.get("metadata") or {}
+        tags = metadata.get("tags") or []
+        if "skill" in tags or "skills" in tags:
             is_skill = True
     else:
-        if "skill" in raw_content:
+        if "skill" in raw_content or "skills" in raw_content:
             is_skill = True
     return is_skill
 
