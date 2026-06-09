@@ -120,7 +120,21 @@ def validate_prompt_schema(raw_data: Any) -> List[Dict[str, Any]]:
     return errors
 
 def render_skill(raw_content: str, raw_data: Any) -> tuple:
-    """Sets up SandboxedEnvironment, checks Jinja parsing, calls generate_skill_content, returns (skill_content, errors_list)."""
+    """
+    Render a skill from raw prompt content and parsed YAML data.
+    
+    Parameters:
+        raw_content (str): The raw prompt file content (Jinja2 template text) to analyze for undeclared variables.
+        raw_data (Any): Parsed YAML content for the prompt (expected to be a dict when a skill should be generated).
+    
+    Returns:
+        tuple: A pair (skill_content, errors) where:
+            - skill_content (str | None): Generated skill markdown when rendering succeeds and `raw_data` is a dict; otherwise `None`.
+            - errors (List[Dict[str, Any]]): A list of error objects. Each error dict contains:
+                - `type` (str): Error category (e.g., "Jinja2 Syntax Error", "Skill Generation Error").
+                - `message` (str): Human-readable error message.
+                - `line` (int | str): Line number associated with the error when available, otherwise "N/A".
+    """
     errors = []
     skill_content = None
     try:
@@ -145,7 +159,18 @@ def render_skill(raw_content: str, raw_data: Any) -> tuple:
     return (skill_content, errors)
 
 def write_skill_file(prompts_path: Path, docs_path: Path, path: Path, skill_content: str, reconciler: 'DirectoryReconciler' = None):
-    """Handles clean_name, directories, SKILL.md equality check and write."""
+    """
+    Write or delegate writing of a skill's SKILL.md file into the docs skills directory for a given prompt file.
+    
+    Constructs the destination directory under `docs_path/skills` using `path` relative to `prompts_path` and a cleaned file name (removing `.prompt.yaml` or `.yaml`). If a `reconciler` is provided, delegates the write to `reconciler.write_file`; otherwise it ensures the target directory exists, skips writing when the existing SKILL.md content is identical to `skill_content`, and writes `skill_content` to SKILL.md when different or missing.
+    
+    Parameters:
+        prompts_path (Path): Root directory containing prompt source files.
+        docs_path (Path): Root directory for generated documentation.
+        path (Path): Path to the source prompt file that produced `skill_content`.
+        skill_content (str): The content to write into the SKILL.md file.
+        reconciler (DirectoryReconciler, optional): If provided, used to queue or manage file writes via its `write_file` method.
+    """
     out_skills_dir = docs_path / "skills"
     clean_name = path.name.replace('.prompt.yaml', '').replace('.yaml', '')
     rel_to_prompts = path.relative_to(prompts_path)
@@ -165,6 +190,18 @@ def write_skill_file(prompts_path: Path, docs_path: Path, path: Path, skill_cont
         skill_file.write_text(skill_content, encoding='utf-8')
 
 def generate_health_dashboard(docs_path: Path, health_report: List[Dict[str, Any]]):
+    """
+    Create or update a markdown dashboard summarizing parsing and validation errors for exported skills.
+    
+    Parameters:
+        docs_path (Path): Directory where the dashboard file `skill_health.md` will be written.
+        health_report (List[Dict[str, Any]]): A list of report objects, each with keys:
+            - `file` (str): Path or name of the prompt file.
+            - `errors` (List[Dict[str, Any]]): List of error objects, each containing:
+                - `type` (str): Error category (e.g., "YAML Parsing Error", "Validation Error").
+                - `message` (str): Human-readable error message.
+                - `line` (Union[int, str], optional): Line number associated with the error or "N/A".
+    """
     dashboard_path = docs_path / "skill_health.md"
 
     lines = [
@@ -190,6 +227,15 @@ def generate_health_dashboard(docs_path: Path, health_report: List[Dict[str, Any
     dashboard_path.write_text("\n".join(lines), encoding='utf-8')
 
 def process_skills(prompts_path: Path, docs_path: Path):
+    """
+    Process prompt files under prompts_path and generate skill documentation and a health dashboard.
+    
+    Iterates over prompt files discovered under prompts_path, parses and validates each prompt, renders skill content when the prompt is identified as a skill, and writes per-skill SKILL.md files into docs_path/skills using a DirectoryReconciler. Accumulates parsing, validation, and rendering errors into a health report and writes a consolidated skill_health.md to docs_path. Files that cannot be read are recorded as file-read errors; prompts that are not skills are skipped.
+    
+    Parameters:
+        prompts_path (Path): Root directory containing prompt files to process.
+        docs_path (Path): Output documentation directory where skills and the health dashboard are written.
+    """
     from promptops.utils import iter_prompt_files
     from promptops.sync import DirectoryReconciler
 

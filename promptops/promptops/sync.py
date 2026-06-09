@@ -9,10 +9,11 @@ class DirectoryReconciler:
     """
     def __init__(self, root_dir: Union[str, Path], manage_pattern: str = "*"):
         """
-        Args:
-            root_dir: The root directory to reconcile.
-            manage_pattern: Glob pattern of files this reconciler is managing.
-                            Untouched files matching this pattern will be deleted.
+        Initialize a DirectoryReconciler for managing files under a root directory.
+        
+        Parameters:
+            root_dir: Root directory whose contents will be reconciled (resolved to an absolute Path).
+            manage_pattern: Glob pattern of files to manage; files matching this pattern that are not marked as touched will be removed during reconciliation.
         """
         self.root_dir = Path(root_dir).resolve()
         self.manage_pattern = manage_pattern
@@ -20,15 +21,17 @@ class DirectoryReconciler:
 
     def write_file(self, path: Union[str, Path], content: str, encoding: str = 'utf-8') -> bool:
         """
-        Writes content to path if changed. Records path as touched.
+        Write content to the given file path and record the path as touched.
         
-        Args:
-            path: The file path to write.
-            content: The file content.
-            encoding: The text encoding (default 'utf-8').
-            
+        If the existing file contains identical text, the file is left unchanged.
+        
+        Parameters:
+            path (Union[str, Path]): Destination file path; will be resolved to an absolute Path.
+            content (str): Text to write to the file.
+            encoding (str): Text encoding to use when reading/writing (default 'utf-8').
+        
         Returns:
-            bool: True if the file was written/updated, False if it was unchanged.
+            bool: `True` if the file was created or updated, `False` if the existing file was unchanged.
         """
         path = Path(path).resolve()
         self.touched_files.add(path)
@@ -44,17 +47,22 @@ class DirectoryReconciler:
 
     def register_file(self, path: Union[str, Path]) -> None:
         """
-        Register a file as valid/managed without writing to it.
+        Mark a path as managed so it will be considered "touched" and not removed during reconciliation.
+        
+        Parameters:
+            path (str | Path): Path to the file to register; it is resolved to an absolute Path and added to the reconciler's tracked set. This does not create or modify the file.
         """
         self.touched_files.add(Path(path).resolve())
 
     def reconcile(self, prune_empty_dirs: bool = True) -> int:
         """
-        Remove un-touched files matching manage_pattern, and prune empty dirs.
+        Remove managed-pattern files under the reconciler's root that were not recorded as touched.
         
-        Args:
-            prune_empty_dirs: Whether to remove empty parent directories.
-            
+        If `prune_empty_dirs` is true, also remove empty subdirectories under the root (the root directory itself is not removed).
+        
+        Parameters:
+            prune_empty_dirs (bool): Whether to remove empty subdirectories under the root.
+        
         Returns:
             int: The number of stale files deleted.
         """
@@ -76,7 +84,14 @@ class DirectoryReconciler:
         return deleted_files
 
     def _prune_empty_dirs(self, current_dir: Path) -> None:
-        """Recursively remove empty directories."""
+        """
+        Recursively remove empty subdirectories under the specified directory, excluding the reconciler's root_dir.
+        
+        This visits child directories depth-first and removes any directory that becomes empty after pruning its children. The directory passed as `current_dir` itself will not be removed if it is equal to the instance's `root_dir`.
+        
+        Parameters:
+            current_dir (Path): Directory to inspect and prune of empty subdirectories.
+        """
         if not current_dir.is_dir():
             return
         
