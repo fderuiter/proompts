@@ -7,10 +7,19 @@ from pathlib import Path
 import sys
 
 from promptops.utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, OVERVIEW_NAME
+from promptops.sync import DirectoryReconciler
 
 
 def get_prompt_metadata(path: Path) -> tuple[str, str]:
-    """Return prompt title and description from a YAML file or fallback to filename."""
+    """
+    Extract the title and description for a prompt or workflow from a YAML file or, if missing, derive a title from the file name.
+    
+    Parameters:
+        path (Path): Path to the prompt/workflow YAML file.
+    
+    Returns:
+        tuple[str, str]: A two-tuple of `(title, description)`. `title` is taken from the YAML `name` or `title` field when present, otherwise derived from the filename (known suffixes removed, numeric leading index stripped, underscores converted to spaces, and title-cased). `description` is taken from the YAML `description` field or is an empty string. Both values are trimmed of surrounding whitespace.
+    """
     data = load_yaml(path)
     title = data.get("name") or data.get("title")
     description = data.get("description", "")
@@ -31,6 +40,22 @@ def get_prompt_metadata(path: Path) -> tuple[str, str]:
 
 
 def generate_overview(directory: Path, content_cache: dict[Path, bool] | None = None) -> str:
+    """
+    Generate a markdown overview for prompt and workflow files in a directory.
+    
+    Builds an "Overview" markdown document that lists prompt/workflow files directly under `directory`
+    and links to subdirectory overviews for subdirectories that contain prompt/workflow files.
+    If neither files nor subdirectories with content are found, returns an empty string.
+    
+    Parameters:
+        directory (Path): Directory to scan for `.prompt.yaml/.prompt.yml` and `.workflow.yaml/.workflow.yml` files.
+        content_cache (dict[Path, bool] | None): Optional cache mapping subdirectory Paths to a boolean indicating
+            whether that subdirectory (recursively) contains prompt/workflow files; when provided, it is consulted
+            and updated to avoid repeated recursive scans.
+    
+    Returns:
+        str: Generated markdown overview ending with a single newline, or an empty string if there is no content.
+    """
     title = directory.name.replace("_", " ").title()
     prompt_files: list[Path] = []
     for pattern in ("*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
@@ -96,15 +121,27 @@ def generate_overview(directory: Path, content_cache: dict[Path, bool] | None = 
     return "\n".join(sections).rstrip() + "\n"
 
 
-def ensure_overview(directory: Path, content_cache: dict[Path, bool] | None = None) -> bool:
+def ensure_overview(directory: Path, content_cache: dict[Path, bool] | None = None, reconciler: 'DirectoryReconciler' = None) -> bool:
+    """
+    Ensure an up-to-date overview.md exists for the given directory.
+    
+    Generates the overview content for `directory` and writes it to OVERVIEW_NAME if the generated content is non-empty and differs from the existing file (if any). When a `reconciler` is provided, writing is delegated to it instead of performing a direct file write.
+    
+    Parameters:
+        content_cache (dict[Path, bool] | None): Optional memoization mapping used to cache whether directories contain prompt/workflow files (recursively).
+        reconciler (DirectoryReconciler | None): Optional reconciler to handle writing/updating the overview file; if provided, `reconciler.write_file(path, content)` is called.
+    
+    Returns:
+        bool: `True` if an overview file was created or updated, `False` otherwise.
+    """
     path = directory / OVERVIEW_NAME
     content = generate_overview(directory, content_cache)
 
     if not content:
-        if path.exists():
-            path.unlink()
-            return True
         return False
+    
+    if reconciler:
+        return reconciler.write_file(path, content)
     
     if path.exists():
         if path.read_text(encoding="utf-8") == content:
@@ -115,6 +152,14 @@ def ensure_overview(directory: Path, content_cache: dict[Path, bool] | None = No
 
 
 def main() -> int:
+    """
+    Generate or update overview.md files for prompt and workflow directories.
+    
+    Scans the configured PROMPTS_DIR and WORKFLOWS_DIR (including subdirectories) for prompt/workflow definition files and creates or updates overview.md files using a DirectoryReconciler. Prints a line for each directory where an overview was generated.
+    
+    Returns:
+        int: Exit code; currently always `0`.
+    """
     changed = False
 
     # helper to check if directory has content (recursively)
@@ -137,15 +182,22 @@ def main() -> int:
     for root_dir in [PROMPTS_DIR, WORKFLOWS_DIR]:
         if not root_dir.exists():
             continue
+            
+        reconciler = DirectoryReconciler(root_dir, manage_pattern=OVERVIEW_NAME)
 
         # Include the root_dir itself in the list of directories to process
         dirs_to_process = [root_dir] + [d for d in root_dir.rglob("*") if d.is_dir()]
 
         for directory in dirs_to_process:
             if has_content(directory):
-                if ensure_overview(directory, content_cache):
+                if ensure_overview(directory, content_cache, reconciler):
                     print(f"Generated overview for {directory}")
                     changed = True
+                    
+        # Reconcile, but do not delete empty directories in the source tree
+        deleted = reconciler.reconcile(prune_empty_dirs=False)
+        if deleted > 0:
+            changed = True
                 
     return 0 if changed else 0
 
