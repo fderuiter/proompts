@@ -92,16 +92,19 @@ def parse_prompt_yaml(raw_content: str) -> tuple:
 
 def detect_skill(raw_content: str, raw_data: Any) -> bool:
     """Implements 'skill' detection logic, returns bool."""
-    is_skill = False
+    from promptops.tags import extract_tags, extract_tags_from_text
+    
     if raw_data and isinstance(raw_data, dict):
-        metadata = raw_data.get("metadata") or {}
-        tags = metadata.get("tags") or []
-        if "skill" in tags or "skills" in tags:
-            is_skill = True
-    else:
-        if "skill" in raw_content or "skills" in raw_content:
-            is_skill = True
-    return is_skill
+        tags = extract_tags(raw_data)
+        if "skill" in tags:
+            return True
+            
+    # Fallback to raw text extraction
+    text_tags = extract_tags_from_text(raw_content)
+    if "skill" in text_tags:
+        return True
+        
+    return False
 
 def validate_prompt_schema(raw_data: Any) -> List[Dict[str, Any]]:
     """Runs PromptSchema validation, returns validation errors list."""
