@@ -33,9 +33,22 @@ def generate_skill_content(data: Dict[str, Any], raw_data: Dict[str, Any], raw_c
         messages = data.get("messages", [])
 
     for msg in messages:
-        content = msg.get("content", "")
         role = msg.get("role", "unknown")
-        messages_text.append(f"[{role.upper()}]\n{content.strip()}")
+        
+        content = msg.get("content")
+        content_str = ""
+        if isinstance(content, list):
+            content_str = yaml.dump(content, sort_keys=False).strip()
+        elif content is not None:
+            content_str = str(content).strip()
+            
+        if content_str:
+            messages_text.append(f"[{role.upper()}]\n{content_str}")
+            
+        tool_calls = msg.get("tool_calls")
+        if tool_calls:
+            tc_yaml = yaml.dump(tool_calls, sort_keys=False, default_flow_style=False).strip()
+            messages_text.append(f"[TOOL_CALL]\n```yaml\n{tc_yaml}\n```")
 
     instructions = "\n\n".join(messages_text)
 

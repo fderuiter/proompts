@@ -31,13 +31,26 @@ def simulate_prompt(prompt_file: str, data_file: str) -> bool:
     messages = content.get('messages', [])
     for msg in messages:
         role = msg.get('role', 'unknown')
-        raw_content = msg.get('content', '')
-        
-        template = env.from_string(raw_content)
-        rendered = template.render(**mock_data)
+        raw_content = msg.get('content')
         
         print(f"\n[{role.upper()}]:")
-        print(rendered)
+        
+        if raw_content is not None:
+            if isinstance(raw_content, list):
+                content_str = yaml.dump(raw_content, sort_keys=False).strip()
+            else:
+                content_str = str(raw_content)
+                
+            template = env.from_string(content_str)
+            rendered = template.render(**mock_data)
+            print(rendered)
+            
+        tool_calls = msg.get('tool_calls')
+        if tool_calls:
+            print("[TOOL_CALL]:")
+            tc_yaml = yaml.dump(tool_calls, sort_keys=False, default_flow_style=False).strip()
+            print(tc_yaml)
+            
         print("-" * 40)
         
     return True

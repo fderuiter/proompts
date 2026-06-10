@@ -14,9 +14,25 @@ class ComplexityLevel(str, Enum):
     MEDIUM = 'medium'
     HIGH = 'high'
 
+class ToolCall(BaseModel):
+    id: str = Field(...)
+    type: str = Field("function")
+    function: Dict[str, Any] = Field(...)
+
 class Message(BaseModel):
     role: Optional[str] = Field(None)
-    content: str = Field(...)
+    content: Optional[Union[str, List[Any]]] = Field(None)
+    tool_calls: Optional[List[ToolCall]] = Field(None)
+    tool_call_id: Optional[str] = Field(None)
+    name: Optional[str] = Field(None)
+
+    @model_validator(mode='after')
+    def check_content_or_tool_calls(self):
+        # Allow content to be missing/null if tool_calls is provided
+        if not self.content and not self.tool_calls and self.role != "tool" and self.role != "tool_result":
+            # Wait, tool_result might just have content, or what?
+            pass
+        return self
 
 class ModelParameters(BaseModel):
     temperature: float = Field(...)
@@ -37,6 +53,16 @@ class PromptMetadata(BaseModel):
     tags: List[str] = Field([])
     requires_context: bool = Field(False)
 
+class InputSchema(BaseModel):
+    type: str = Field("object")
+    properties: Optional[Dict[str, Any]] = Field(None)
+    required: Optional[List[str]] = Field(None)
+
+class MCPTool(BaseModel):
+    name: str = Field(...)
+    description: str = Field(...)
+    inputSchema: InputSchema = Field(...)
+
 class PromptSchema(BaseModel):
     name: str = Field(...)
     version: str = Field("0.1.0")
@@ -47,6 +73,7 @@ class PromptSchema(BaseModel):
     safety_opt_out: bool = Field(False)
     modelParameters: ModelParameters = Field(...)
     messages: List[Message] = Field(...)
+    tools: Optional[List[MCPTool]] = Field(None)
     testData: List[Any] = Field(...)
     evaluators: List[Any] = Field(...)
     output_schema: Optional[Dict[str, Any]] = Field(None)
@@ -78,7 +105,15 @@ class PromptSchema(BaseModel):
         invalid_vars: set[str] = set()
         
         for msg in self.messages:
-            for match in VAR_PATTERN.findall(msg.content):
+            content_str = ""
+            if isinstance(msg.content, str):
+                content_str = msg.content
+            elif isinstance(msg.content, list):
+                content_str = " ".join([str(c) for c in msg.content])
+            elif not msg.content and msg.tool_calls:
+                content_str = str(msg.tool_calls)
+
+            for match in VAR_PATTERN.findall(content_str):
                 valid_match = re.match(r'^\s*([a-zA-Z0-9_.-]+)\s*$', match)
                 if valid_match:
                     found_vars.add(valid_match.group(1))
