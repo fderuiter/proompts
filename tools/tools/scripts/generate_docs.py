@@ -194,11 +194,20 @@ class DocumentationGenerator:
             bool: True if changes were detected or written, False otherwise.
         """
         prompts_dir = self.root / CONFIG['dirs']['prompts']
+        docs_dir = self.root / CONFIG['dirs']['docs']
         if not prompts_dir.exists():
             return False
 
         print(f"🔍 Scanning Prompts in {prompts_dir}...")
         changes_detected = False
+
+        from promptops.skill_export import process_skills
+        if not check_mode:
+            process_skills(prompts_dir, docs_dir)
+        else:
+            # We skip running process_skills in check_mode to avoid writing files,
+            # or we could make process_skills support check_mode.
+            pass
 
         # Ensure output dir exists
         (self.root / CONFIG['dirs']['docs'] / "prompts").mkdir(parents=True, exist_ok=True)
