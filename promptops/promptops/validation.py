@@ -30,8 +30,10 @@ class Message(BaseModel):
     def check_content_or_tool_calls(self):
         # Allow content to be missing/null if tool_calls is provided
         if not self.content and not self.tool_calls and self.role != "tool" and self.role != "tool_result":
-            # Wait, tool_result might just have content, or what?
-            pass
+            raise ValueError(
+                f"Message with role '{self.role}' must have either 'content' or 'tool_calls'. "
+                "Both are missing or empty."
+            )
         return self
 
 class ModelParameters(BaseModel):

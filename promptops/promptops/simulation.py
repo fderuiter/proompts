@@ -48,7 +48,20 @@ def simulate_prompt(prompt_file: str, data_file: str) -> bool:
         tool_calls = msg.get('tool_calls')
         if tool_calls:
             print("[TOOL_CALL]:")
-            tc_yaml = yaml.dump(tool_calls, sort_keys=False, default_flow_style=False).strip()
+            # Recursively render templated variables in tool_calls structure
+            def render_structure(obj, env, data):
+                if isinstance(obj, str):
+                    template = env.from_string(obj)
+                    return template.render(**data)
+                elif isinstance(obj, dict):
+                    return {k: render_structure(v, env, data) for k, v in obj.items()}
+                elif isinstance(obj, list):
+                    return [render_structure(item, env, data) for item in obj]
+                else:
+                    return obj
+
+            rendered_tool_calls = render_structure(tool_calls, env, mock_data)
+            tc_yaml = yaml.dump(rendered_tool_calls, sort_keys=False, default_flow_style=False).strip()
             print(tc_yaml)
             
         print("-" * 40)
