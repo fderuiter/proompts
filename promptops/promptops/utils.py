@@ -86,18 +86,8 @@ def _domain_root(value: str) -> str:
     return value.strip().split("/", 1)[0].strip()
 
 def get_prompt_tags(content: Dict[str, Any]) -> List[str]:
-    tags: List[str] = []
-    metadata = content.get("metadata")
-    if isinstance(metadata, dict):
-        meta_tags = metadata.get("tags")
-        if isinstance(meta_tags, list):
-            tags.extend(t for t in meta_tags if isinstance(t, str))
-
-    legacy_tags = content.get("tags")
-    if isinstance(legacy_tags, list):
-        tags.extend(t for t in legacy_tags if isinstance(t, str))
-
-    return [tag.strip() for tag in tags if tag.strip()]
+    from promptops.tags import extract_tags
+    return extract_tags(content)
 
 def derive_prompt_category(path: Path, root_dir: Path, content: Optional[Dict[str, Any]] = None) -> str:
     data = content or {}

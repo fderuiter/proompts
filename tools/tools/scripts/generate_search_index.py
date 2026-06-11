@@ -22,20 +22,13 @@ def generate_index(output_path: str = "search.json"):
             # Should not happen if iter_prompt_files uses ROOT/prompts
             continue
 
-        metadata = content.get("metadata", {})
-        tags = content.get('tags', [])
-        if isinstance(metadata, dict):
-            if "domain" in metadata:
-                tags.append(f"domain:{metadata['domain']}")
-            if "topic" in metadata and metadata["topic"]:
-                tags.append(f"topic:{metadata['topic']}")
-            if "tags" in metadata and isinstance(metadata["tags"], list):
-                tags.extend(metadata["tags"])
+        from promptops.tags import extract_tags
+        tags = extract_tags(content)
                 
         entry = {
             "title": content.get('name', str(rel_path)),
             "description": content.get('description', ''),
-            "tags": ", ".join(sorted(set(tags))),
+            "tags": ", ".join(tags),
             "url": str(rel_path),
             "type": "prompt"
         }
@@ -53,20 +46,13 @@ def generate_index(output_path: str = "search.json"):
             except ValueError:
                 continue
 
-            metadata = content.get("metadata", {})
-            tags = []
-            if isinstance(metadata, dict):
-                if "domain" in metadata:
-                    tags.append(f"domain:{metadata['domain']}")
-                if "topic" in metadata and metadata["topic"]:
-                    tags.append(f"topic:{metadata['topic']}")
-                if "tags" in metadata and isinstance(metadata["tags"], list):
-                    tags.extend(metadata["tags"])
+            from promptops.tags import extract_tags
+            tags = extract_tags(content)
 
             entry = {
                 "title": content.get('name', str(rel_path)),
                 "description": content.get('description', ''),
-                "tags": ", ".join(sorted(set(tags))),
+                "tags": ", ".join(tags),
                 "url": str(rel_path),
                 "type": "workflow"
             }
