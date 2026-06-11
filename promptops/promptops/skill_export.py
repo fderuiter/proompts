@@ -17,8 +17,6 @@ def extract_undeclared_variables(text: str) -> Set[str]:
         return jinja2.meta.find_undeclared_variables(ast)
     except jinja2.exceptions.TemplateSyntaxError as e:
         raise e
-    except Exception:
-        return set()
 
 def generate_skill_content(data: Dict[str, Any], raw_data: Dict[str, Any], raw_content: str, variables: Set[str] = None) -> str:
     description = data.get("description", "")
@@ -266,14 +264,21 @@ def process_skills(prompts_path: Path, docs_path: Path):
         raw_data, parse_errors = parse_prompt_yaml(raw_content)
         errors.extend(parse_errors)
 
-        if not detect_skill(raw_content, raw_data):
+        is_skill = detect_skill(raw_content, raw_data)
+
+        # If it's not a skill AND it has no YAML errors, we can safely skip it.
+        # But if it has YAML errors, we should report them because it might be a broken skill!
+        if not is_skill and not parse_errors:
             continue
 
-        validation_errors = validate_prompt_schema(raw_data)
-        errors.extend(validation_errors)
+        if is_skill:
+            validation_errors = validate_prompt_schema(raw_data)
+            errors.extend(validation_errors)
 
-        skill_content, render_errors = render_skill(raw_content, raw_data)
-        errors.extend(render_errors)
+            skill_content, render_errors = render_skill(raw_content, raw_data)
+            errors.extend(render_errors)
+        else:
+            skill_content = None
 
         if errors:
             health_report.append({
