@@ -5,6 +5,16 @@ from jinja2.sandbox import SandboxedEnvironment
 from promptops.utils import load_yaml
 
 def simulate_prompt(prompt_file: str, data_file: str) -> bool:
+    """
+    Simulate a prompt definition against mock input data, rendering message content and optional tool call arguments as Jinja2 templates and printing the results.
+    
+    Parameters:
+        prompt_file (str): Path to a prompt YAML file containing prompt metadata and a "messages" list.
+        data_file (str): Path to a mock data file (JSON or YAML) used as the template context.
+    
+    Returns:
+        bool: `True` if the prompt and mock data were loaded and all messages were processed; `False` if loading or parsing failed or if the data file is missing.
+    """
     try:
         content = load_yaml(prompt_file)
     except Exception as e:
@@ -50,6 +60,17 @@ def simulate_prompt(prompt_file: str, data_file: str) -> bool:
             print("[TOOL_CALL]:")
             # Recursively render templated variables in tool_calls structure
             def render_structure(obj, env, data):
+                """
+                Recursively renders all string values in a nested structure as Jinja templates using the provided environment and context.
+                
+                Parameters:
+                    obj: The input value to render; may be a string, dict, list, or any other type.
+                    env: A Jinja2 environment used to compile and render string templates.
+                    data: A mapping of context values supplied to template rendering.
+                
+                Returns:
+                    The same structure as `obj` with all strings replaced by their rendered results; dicts and lists are recreated with rendered children, and non-string, non-collection values are returned unchanged.
+                """
                 if isinstance(obj, str):
                     template = env.from_string(obj)
                     return template.render(**data)

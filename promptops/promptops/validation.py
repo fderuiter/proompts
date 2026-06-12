@@ -29,6 +29,15 @@ class Message(BaseModel):
     @model_validator(mode='after')
     def check_content_or_tool_calls(self):
         # Allow content to be missing/null if tool_calls is provided
+        """
+        Ensure a Message has either `content` or `tool_calls` unless its role is "tool" or "tool_result".
+        
+        Returns:
+            self: The validated Message instance.
+        
+        Raises:
+            ValueError: If both `content` and `tool_calls` are missing or empty for messages whose role is not "tool" or "tool_result".
+        """
         if not self.content and not self.tool_calls and self.role != "tool" and self.role != "tool_result":
             raise ValueError(
                 f"Message with role '{self.role}' must have either 'content' or 'tool_calls'. "
@@ -103,6 +112,18 @@ class PromptSchema(BaseModel):
 
     @model_validator(mode='after')
     def check_variables_match_content(self):
+        """
+        Validate that template variables referenced in message content or tool-call payloads are syntactically valid and match the prompt's declared variables.
+        
+        This validator:
+        - Extracts template variables from each message by scanning `msg.content` (uses the string directly, joins list elements with spaces when `content` is a list, or falls back to `str(msg.tool_calls)` when `content` is empty and `tool_calls` is present).
+        - Ensures each variable name matches the pattern `^[a-zA-Z0-9_.-]+$`; raises ValueError if any invalid variable names are found.
+        - Prints a warning for variables declared in `variables` but not used in any message.
+        - Raises ValueError if any variables are used in messages but not declared in `variables`.
+        
+        Returns:
+            self (PromptSchema): The validated model instance.
+        """
         found_vars: set[str] = set()
         invalid_vars: set[str] = set()
         

@@ -19,6 +19,22 @@ def extract_undeclared_variables(text: str) -> Set[str]:
         raise e
 
 def generate_skill_content(data: Dict[str, Any], raw_data: Dict[str, Any], raw_content: str, variables: Set[str] = None) -> str:
+    """
+    Generate a markdown skill document containing context, instructions, and input variable definitions.
+    
+    Parameters:
+        data (Dict[str, Any]): Parsed prompt-level metadata; may include "description", "messages", and "variables".
+        raw_data (Dict[str, Any]): The raw YAML-parsed content for the prompt; used first for "messages" if present.
+        raw_content (str): Original prompt text; used to extract undeclared template variables when `variables` is None.
+        variables (Set[str], optional): Explicit set of variable names to include in the <input> section. If omitted, undeclared variables are extracted from `raw_content`.
+    
+    Returns:
+        str: A markdown string with three sections:
+            - <context>: the `description` from `data` (empty string if absent).
+            - <instructions>: rendered message blocks derived from `raw_data["messages"]` (or `data["messages"]` as fallback). Each message with non-empty content is rendered as:
+                "[ROLE]\n{content}" where ROLE is uppercased; list-type content is YAML-serialized. If a message contains `tool_calls`, those are YAML-serialized and appended as a fenced YAML block prefixed by "[TOOL_CALL]".
+            - <input>: a sorted list of variables formatted as "- {name} (required|optional): {description}", where a variable's `required` flag defaults to True and `description` defaults to "No description provided.".
+    """
     description = data.get("description", "")
 
     if variables is None:
