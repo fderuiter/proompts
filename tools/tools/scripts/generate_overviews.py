@@ -121,7 +121,7 @@ def generate_overview(directory: Path, content_cache: dict[Path, bool] | None = 
     return "\n".join(sections).rstrip() + "\n"
 
 
-def ensure_overview(directory: Path, content_cache: dict[Path, bool] | None = None, reconciler: 'DirectoryReconciler' = None) -> bool:
+def ensure_overview(directory: Path, content_cache: dict[Path, bool] | None = None, reconciler: 'DirectoryReconciler' | None = None) -> bool:
     """
     Ensure an up-to-date overview.md exists for the given directory.
     

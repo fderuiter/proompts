@@ -93,7 +93,7 @@ class PromptSchema(BaseModel):
 
     @field_validator("evaluators")
     @classmethod
-    def check_evaluators_logic(cls, v: List[Any]) -> List[Any]:
+    def check_evaluators_logic(_cls, v: List[Any]) -> List[Any]:
         if v is None:
             return v
         for evaluator in v:
@@ -106,7 +106,7 @@ class PromptSchema(BaseModel):
 
     @field_validator("messages")
     @classmethod
-    def check_messages_length(cls, v: List[Message]) -> List[Message]:
+    def check_messages_length(_cls, v: List[Message]) -> List[Message]:
         if len(v) < 2:
             raise ValueError("messages list must have at least 2 items")
         return v
@@ -193,7 +193,7 @@ def analyze_workflow_dependencies(workflow_file: str, workflow_data: dict, root_
         return [f"Validation error: {e}"]
 
     # Dependency Graph (Circular & Forward reference detection)
-    graph = {}
+    graph: Dict[str, List[str]] = {}
     step_ids = [step.step_id for step in wf.steps]
     
     for step_id in step_ids:
@@ -295,7 +295,7 @@ def analyze_workflow_dependencies(workflow_file: str, workflow_data: dict, root_
 
 def validate_prompts(directory: str, strict: bool = False) -> bool:
     ok = True
-    seen_names = {}
+    seen_names: Dict[str, str] = {}
     dir_path = os.environ.get('PROMPTOPS_REGISTRY', directory)
     
     for file_path in iter_prompt_files(dir_path):

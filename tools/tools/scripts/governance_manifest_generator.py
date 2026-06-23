@@ -12,16 +12,6 @@ try:
     from promptops.utils import PROMPTS_DIR, iter_prompt_files, load_yaml, ROOT
 except Exception as e:
     raise e
-    from promptops.utils import ROOT
-    PROMPTS_DIR = ROOT / "prompts"
-    def iter_prompt_files(root: Any = PROMPTS_DIR) -> Any:
-        for ext in ("*.prompt.yaml", "*.prompt.yml"):
-            for p in root.rglob(ext):
-                if not p.name.startswith("._") and "site/" not in str(p):
-                    yield p
-    def load_yaml(path: Any) -> Any:
-        with open(path, 'r') as f:
-            return yaml.safe_load(f)
 
 MANIFEST_DIR = ROOT / "governance"
 MANIFEST_DIR.mkdir(exist_ok=True)

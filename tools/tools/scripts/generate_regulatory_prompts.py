@@ -31,7 +31,7 @@ def presenter(dumper, data):
 yaml.add_representer(StrPresenter, presenter)
 
 class IndentDumper(yaml.Dumper):
-    def increase_indent(self, flow=False, indentless=False):
+    def increase_indent(self, flow=False, _indentless=False):
         return super(IndentDumper, self).increase_indent(flow, False)
 
 TASKS = [

@@ -36,7 +36,7 @@ WORKFLOWS_DIR: Path = ROOT / "workflows"
 OVERVIEW_NAME: str = "overview.md"
 DOMAIN_TAG_PREFIX: str = "domain:"
 
-_jinja_envs = {}
+_jinja_envs: Dict[str, SandboxedEnvironment] = {}
 
 def get_jinja_env(base_dir: Optional[Union[str, Path]] = None) -> SandboxedEnvironment:
     if base_dir is None:
@@ -138,7 +138,7 @@ def iter_skill_manifests(root: Optional[Union[str, Path]] = None) -> Iterator[Pa
 def parse_skill_manifest(path: Path) -> Dict[str, Any]:
     import json
     text = path.read_text(encoding='utf-8')
-    metadata = {}
+    metadata: Dict[str, Any] = {}
     content = text
     if text.startswith("---"):
         parts = text.split("---", 2)

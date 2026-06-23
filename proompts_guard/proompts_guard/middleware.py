@@ -25,9 +25,10 @@ def json_schema_to_pydantic_fields(schema: Dict[str, Any]) -> Dict[str, Any]:
     properties = schema.get("properties", {})
     required = schema.get("required", [])
     
-    fields = {}
+    fields: Dict[str, Any] = {}
     for prop_name, prop_details in properties.items():
         prop_type = prop_details.get("type", "string")
+        py_type: Any
         
         if prop_type == "string":
             py_type = str
@@ -99,7 +100,7 @@ def evaluate_rules(response_text: str, evaluators: list[Dict[str, Any]]) -> None
             continue
         
         if "python" in evaluator:
-            local_vars = {"output": response_text}
+            local_vars: Dict[str, Any] = {"output": response_text}
             try:
                 if rule.strip().startswith("return "):
                     func_code = f"def __eval(output):\n    {rule}"
