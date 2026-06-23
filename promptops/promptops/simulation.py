@@ -3,6 +3,7 @@ import yaml
 from pathlib import Path
 from jinja2.sandbox import SandboxedEnvironment
 from promptops.utils import load_yaml
+from promptops import console
 
 def simulate_prompt(prompt_file: str, data_file: str) -> bool:
     """
@@ -18,12 +19,12 @@ def simulate_prompt(prompt_file: str, data_file: str) -> bool:
     try:
         content = load_yaml(prompt_file)
     except Exception as e:
-        print(f"Failed to load prompt: {e}")
+        console.error(f"Failed to load prompt: {e}")
         return False
         
     data_path = Path(data_file)
     if not data_path.exists():
-        print(f"Data file not found: {data_file}")
+        console.error(f"Data file not found: {data_file}")
         return False
         
     try:
@@ -32,18 +33,16 @@ def simulate_prompt(prompt_file: str, data_file: str) -> bool:
         else:
             mock_data = yaml.safe_load(data_path.read_text())
     except Exception as e:
-        print(f"Failed to load mock data: {e}")
+        console.error(f"Failed to load mock data: {e}")
         return False
         
     env = SandboxedEnvironment()
     
-    print(f"--- Simulating Prompt: {content.get('name', 'Unknown')} ---")
+    console.step_header(f"Simulating Prompt: {content.get('name', 'Unknown')}")
     messages = content.get('messages', [])
     for msg in messages:
         role = msg.get('role', 'unknown')
         raw_content = msg.get('content')
-        
-        print(f"\n[{role.upper()}]:")
         
         if raw_content is not None:
             if isinstance(raw_content, list):
@@ -53,11 +52,10 @@ def simulate_prompt(prompt_file: str, data_file: str) -> bool:
                 
             template = env.from_string(content_str)
             rendered = template.render(**mock_data)
-            print(rendered)
+            console.role_message(role, rendered)
             
         tool_calls = msg.get('tool_calls')
         if tool_calls:
-            print("[TOOL_CALL]:")
             # Recursively render templated variables in tool_calls structure
             def render_structure(obj, env, data):
                 """
@@ -83,8 +81,6 @@ def simulate_prompt(prompt_file: str, data_file: str) -> bool:
 
             rendered_tool_calls = render_structure(tool_calls, env, mock_data)
             tc_yaml = yaml.dump(rendered_tool_calls, sort_keys=False, default_flow_style=False).strip()
-            print(tc_yaml)
-            
-        print("-" * 40)
+            console.role_message("tool_call", tc_yaml)
         
     return True

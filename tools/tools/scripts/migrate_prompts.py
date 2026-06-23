@@ -81,6 +81,37 @@ def migrate_file(file_path: Path, dry_run: bool = False) -> bool:
             content["variables"] = []
             modified = True
 
+    # Ensure model and modelParameters exist
+    if "model" not in content:
+        content["model"] = "gpt-4o-mini"
+        modified = True
+    if "modelParameters" not in content:
+        content["modelParameters"] = {"temperature": 0.7}
+        modified = True
+
+    # Add testData and evaluators stubs if missing
+    if "testData" not in content:
+        content["testData"] = []
+        modified = True
+    if "evaluators" not in content:
+        content["evaluators"] = []
+        modified = True
+
+    # Add 'skill' tag if missing and in target pilots
+    target_pilots = ["google_jules", "cdisc_compliance_workflow"]
+    if any(pilot in str(file_path) for pilot in target_pilots):
+        metadata = content.get("metadata", {})
+        if not isinstance(metadata, dict):
+             metadata = {}
+        tags = metadata.get("tags", [])
+        if not isinstance(tags, list):
+             tags = []
+        if "skill" not in tags:
+            tags.append("skill")
+            metadata["tags"] = tags
+            content["metadata"] = metadata
+            modified = True
+
     if not modified:
         print(f"  OK (already migrated): {file_path}")
         return False
