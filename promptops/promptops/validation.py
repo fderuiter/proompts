@@ -6,6 +6,7 @@ from typing import Any, List, Optional, Dict, Union
 
 from pydantic import BaseModel, ValidationError, field_validator, model_validator, Field
 from promptops.utils import load_yaml, iter_prompt_files, iter_workflow_files
+from promptops import console
 
 VAR_PATTERN = re.compile(r'\{\{([^}]+)\}\}')
 
@@ -149,7 +150,7 @@ class PromptSchema(BaseModel):
         defined_vars = {v.name for v in self.variables}
         unused = defined_vars - found_vars
         if unused:
-            print(f"Warning: Variables defined but not used in prompt: {unused}")
+            console.warn(f"Variables defined but not used in prompt: {unused}")
 
         undefined = found_vars - defined_vars
         if undefined:
@@ -306,7 +307,7 @@ def validate_prompts(directory: str, strict: bool = False) -> bool:
         try:
             PromptSchema(**content)
         except ValidationError as e:
-            print(f"Validation error in {file_path}:\n{e}")
+            console.error(f"Validation error in {file_path}:\n{e}")
             ok = False
             continue
 
@@ -321,12 +322,12 @@ def validate_prompts(directory: str, strict: bool = False) -> bool:
                 issues.append("no evaluators")
             
             if issues:
-                print(f"Warning: {file_path} has {', '.join(issues)}")
+                console.warn(f"{file_path} has {', '.join(issues)}")
 
         name = content.get('name')
         if name:
             if name in seen_names:
-                print(f"Error: Duplicate name '{name}' found in:\n  - {seen_names[name]}\n  - {file_path}")
+                console.error(f"Duplicate name '{name}' found in:\n  - {seen_names[name]}\n  - {file_path}")
                 ok = False
             else:
                 seen_names[name] = str(file_path)
@@ -341,9 +342,9 @@ def validate_prompts(directory: str, strict: bool = False) -> bool:
             
         issues = analyze_workflow_dependencies(str(file_path), content, dir_path)
         if issues:
-            print(f"Validation error in workflow {file_path}:")
+            console.error(f"Validation error in workflow {file_path}:")
             for issue in issues:
-                print(f"  - {issue}")
+                console.error(f"  - {issue}")
             ok = False
 
     return ok
