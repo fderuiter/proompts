@@ -1,9 +1,3 @@
----
-layout: default
-title: Workflow Guide
-nav_order: 14
----
-
 # Workflow Guide 🔄
 
 Workflows are the powerhouse of this repository. They allow you to chain multiple prompts together into a coherent, multi-step process, passing data from one step to the next automatically.

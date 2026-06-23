@@ -19,8 +19,9 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
-      - name: Install dependencies
-        run: pip install tox
-      - name: Run all checks via Tox
-        run: tox
+      - name: Install uv
+        run: curl -LsSf https://astral.sh/uv/install.sh | sh
+      - name: Run all checks via validator
+        run: |
+          export PATH="$HOME/.cargo/bin:$PATH"
+          ./scripts/validate_prompts.sh

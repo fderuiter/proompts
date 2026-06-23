@@ -78,7 +78,7 @@ Before committing, you **must** run the test suite. This ensures your YAML is va
 Run the master script from the repository root:
 
 ```bash
-python3 tools/tools/scripts/test_all.py
+./scripts/validate_prompts.sh
 ```
 
 **What this script does:**
@@ -94,7 +94,7 @@ python3 tools/tools/scripts/test_all.py
 2.  **Push**: Push to your fork.
 3.  **PR**: Open a Pull Request against the `main` branch of the upstream repository.
     *   Include a brief description of what you added or fixed.
-    *   Confirm that you ran `python3 tools/tools/scripts/test_all.py` locally.
+    *   Confirm that you ran `./scripts/validate_prompts.sh` locally.
 
 ## Style Guide 🎨
 

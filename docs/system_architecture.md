@@ -1,10 +1,3 @@
----
-layout: default
-title: System Architecture
-nav_order: 1
-has_children: false
----
-
 # System Architecture
 
 ## Overview

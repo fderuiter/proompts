@@ -17,27 +17,27 @@ repos:
     hooks:
       - id: check-prompts
         name: Check Prompts
-        entry: python3 tools/scripts/check_prompts.py
+        entry: uv run python3 tools/tools/scripts/check_prompts.py
         language: system
         files: ^prompts/
         pass_filenames: false
 
       - id: update-last-modified
         name: Update Last Modified
-        entry: python3 tools/scripts/update_last_modified.py
+        entry: uv run python3 tools/tools/scripts/update_last_modified.py
         language: system
         files: ^prompts/.*\.prompt\.yaml$
 
       - id: validate-prompt-schema
         name: Validate Prompt Schema
-        entry: python3 tools/scripts/validate_prompt_schema.py
+        entry: uv run python3 tools/tools/scripts/validate_prompt_schema.py
         language: system
         files: ^prompts/.*\.prompt\.yaml$
         pass_filenames: false
 
       - id: update-docs-index
         name: Update Docs Index
-        entry: python3 tools/scripts/update_docs_index.py --check
+        entry: uv run python3 tools/tools/scripts/update_docs_index.py --check
         language: system
         files: ^prompts/
         pass_filenames: false
