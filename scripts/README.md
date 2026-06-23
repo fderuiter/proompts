@@ -9,7 +9,7 @@ This directory contains high-level shell wrappers and maintenance scripts for th
 
 | Script | Type | Description |
 | :--- | :--- | :--- |
-| **`validate_prompts.sh`** | 🐚 Shell | **The Master Validator.** Wrapper script that runs the full test suite (`tools/scripts/test_all.py`). Run this before every commit. |
+| **`validate_prompts.sh`** | 🐚 Shell | **The Master Validator.** Wrapper script that runs the full test suite using `uv run`. Run this before every commit. |
 | **`apply_refactor.py`** | 🐍 Python | **Refactoring Utility.** Helper script to restructure prompts into workflow-specific directories and fix file references. |
 
 ## Usage 🚀

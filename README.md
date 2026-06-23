@@ -117,7 +117,7 @@ To learn more, see the [Prompt Workflows Documentation](docs/workflows.md).
 To run all validation checks (YAML linting, schema validation, documentation index verification) locally, use the provided script:
 
 ```bash
-python3 tools/tools/scripts/test_all.py
+./scripts/validate_prompts.sh
 ```
 
 This script runs the following checks:
