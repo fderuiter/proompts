@@ -128,3 +128,52 @@ def extract_template_vars(content: Dict[str, Any]) -> List[str]:
                 # Actually, requirement 2: "Replace regex-based extraction with formal Abstract Syntax Tree (AST) parsing"
                 pass
     return sorted(list(found))
+
+def iter_skill_manifests(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:
+    root_path = Path(root) if root else PROMPTS_DIR
+    for p in root_path.rglob("skills.md"):
+        if not p.name.startswith("._") and "site/" not in str(p):
+            yield p
+
+def parse_skill_manifest(path: Path) -> Dict[str, Any]:
+    import json
+    text = path.read_text(encoding='utf-8')
+    metadata = {}
+    content = text
+    if text.startswith("---"):
+        parts = text.split("---", 2)
+        if len(parts) >= 3:
+            try:
+                metadata = yaml.safe_load(parts[1]) or {}
+                content = parts[2]
+            except:
+                pass
+    skills = []
+    import re
+    # Match skills and metadata
+    skill_blocks = re.split(r'## Skill: ', content)[1:]
+    for block in skill_blocks:
+        lines = block.splitlines()
+        name = lines[0].strip()
+        body = "\n".join(lines[1:])
+
+        # Extract metadata
+        meta_match = re.search(r'<!-- VALIDATION_METADATA: (.*?) -->', body)
+        vars_data = []
+        if meta_match:
+            try:
+                vars_data = json.loads(meta_match.group(1))
+            except:
+                pass
+
+        # Extract core instructions
+        instr_match = re.search(r'### Core Instructions\n```text\n(.*?)\n```', body, re.DOTALL)
+        instructions = instr_match.group(1) if instr_match else ""
+
+        skills.append({
+            "name": name,
+            "variables": vars_data,
+            "instructions": instructions,
+            "path": path
+        })
+    return {"metadata": metadata, "skills": skills, "path": path}
