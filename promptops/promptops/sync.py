@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from typing import Set, Union
+from promptops import console
 
 class DirectoryReconciler:
     """
@@ -73,7 +74,7 @@ class DirectoryReconciler:
         # Delete un-touched files
         for f in self.root_dir.rglob(self.manage_pattern):
             if f.is_file() and f.resolve() not in self.touched_files:
-                print(f"🗑️ Deleting stale file: {f}")
+                console.info(f"🗑️ Deleting stale file: {f}")
                 f.unlink()
                 deleted_files += 1
 
@@ -102,5 +103,5 @@ class DirectoryReconciler:
         # Do not delete root_dir
         if current_dir != self.root_dir:
             if not any(current_dir.iterdir()):
-                print(f"🗑️ Deleting empty directory: {current_dir}")
+                console.info(f"🗑️ Deleting empty directory: {current_dir}")
                 current_dir.rmdir()

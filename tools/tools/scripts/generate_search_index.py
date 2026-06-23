@@ -6,13 +6,42 @@ import sys
 from pathlib import Path
 
 
-from promptops.utils import ROOT, iter_prompt_files, load_yaml
+from promptops.utils import ROOT, iter_prompt_files, load_yaml, iter_skill_manifests, parse_skill_manifest
 
 def generate_index(output_path: str = "search.json"):
     search_data = []
 
+    # Track which directories have skill manifests
+    manifested_dirs = set()
+
+    # Iterate through all skill manifest files
+    for path in iter_skill_manifests(ROOT):
+        try:
+            manifest = parse_skill_manifest(path)
+            rel_path = path.relative_to(ROOT)
+            manifested_dirs.add(path.parent)
+
+            tags = manifest["metadata"].get("tags", [])
+            tags_str = ", ".join(tags) if isinstance(tags, list) else str(tags)
+
+            for skill in manifest["skills"]:
+                entry = {
+                    "title": skill["name"],
+                    "description": skill.get("description", ""),
+                    "tags": tags_str,
+                    "url": f"{rel_path}#skill-{skill['name'].lower().replace(' ', '-')}",
+                    "type": "skill"
+                }
+                search_data.append(entry)
+        except Exception as e:
+             print(f"Error indexing manifest {path}: {e}")
+
     # Iterate through all prompt files using the utility
     for path in iter_prompt_files(ROOT):
+        # Skip prompts that are covered by skill manifests
+        if path.parent in manifested_dirs:
+            continue
+
         content = load_yaml(path)
 
         # Calculate the web-accessible path relative to the repository root

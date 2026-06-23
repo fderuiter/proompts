@@ -1,14 +1,15 @@
 import os
 import json
 from pathlib import Path
-from typing import Dict, Any, Set, List
+from typing import Dict, Any, Set, List, Optional
 import jinja2.meta
 from jinja2.sandbox import SandboxedEnvironment
 import jinja2.exceptions
 import yaml
 from pydantic import ValidationError
 
-from promptops.validation import PromptSchema
+# To avoid circular imports, we don't import PromptSchema here if not needed
+# or we import it inside functions.
 
 def extract_undeclared_variables(text: str) -> Set[str]:
     env = SandboxedEnvironment()
@@ -18,305 +19,149 @@ def extract_undeclared_variables(text: str) -> Set[str]:
     except jinja2.exceptions.TemplateSyntaxError as e:
         raise e
 
-def generate_skill_content(data: Dict[str, Any], raw_data: Dict[str, Any], raw_content: str, variables: Set[str] = None) -> str:
-    """
-    Generate a markdown skill document containing context, instructions, and input variable definitions.
+def generate_skill_section(prompt_data: Dict[str, Any]) -> str:
+    """Generate a single skill section for a prompt."""
+    name = prompt_data.get("name", "Unnamed Skill")
+    description = prompt_data.get("description", "No description provided.")
     
-    Parameters:
-        data (Dict[str, Any]): Parsed prompt-level metadata; may include "description", "messages", and "variables".
-        raw_data (Dict[str, Any]): The raw YAML-parsed content for the prompt; used first for "messages" if present.
-        raw_content (str): Original prompt text; used to extract undeclared template variables when `variables` is None.
-        variables (Set[str], optional): Explicit set of variable names to include in the <input> section. If omitted, undeclared variables are extracted from `raw_content`.
-    
-    Returns:
-        str: A markdown string with three sections:
-            - <context>: the `description` from `data` (empty string if absent).
-            - <instructions>: rendered message blocks derived from `raw_data["messages"]` (or `data["messages"]` as fallback). Each message with non-empty content is rendered as:
-                "[ROLE]\n{content}" where ROLE is uppercased; list-type content is YAML-serialized. If a message contains `tool_calls`, those are YAML-serialized and appended as a fenced YAML block prefixed by "[TOOL_CALL]".
-            - <input>: a sorted list of variables formatted as "- {name} (required|optional): {description}", where a variable's `required` flag defaults to True and `description` defaults to "No description provided.".
-    """
-    description = data.get("description", "")
+    # Inputs table
+    variables = prompt_data.get("variables", [])
+    input_table = "| Variable | Type | Description | Required |\n| :--- | :--- | :--- | :--- |\n"
+    if not variables:
+        input_table += "| None | | | |\n"
+    for v in variables:
+        v_name = v.get("name", "")
+        v_type = "String"
+        v_desc = v.get("description", "No description provided.")
+        v_req = "Yes" if v.get("required", True) else "No"
+        input_table += f"| `{v_name}` | {v_type} | {v_desc} | {v_req} |\n"
 
-    if variables is None:
-        variables = extract_undeclared_variables(raw_content)
-
-    messages_text = []
-
-    messages = raw_data.get("messages", [])
-    if not messages:
-        messages = data.get("messages", [])
-
+    # Core Instructions
+    messages = prompt_data.get("messages", [])
+    instructions_blocks = []
     for msg in messages:
-        role = msg.get("role", "unknown")
-        
+        role = msg.get("role", "unknown").upper()
         content = msg.get("content")
-        content_str = ""
         if isinstance(content, list):
             content_str = yaml.dump(content, sort_keys=False).strip()
         elif content is not None:
             content_str = str(content).strip()
+        else:
+            content_str = ""
             
         if content_str:
-            messages_text.append(f"[{role.upper()}]\n{content_str}")
+            instructions_blocks.append(f"[{role}]\n{content_str}")
             
         tool_calls = msg.get("tool_calls")
         if tool_calls:
             tc_yaml = yaml.dump(tool_calls, sort_keys=False, default_flow_style=False).strip()
-            messages_text.append(f"[TOOL_CALL]\n```yaml\n{tc_yaml}\n```")
+            instructions_blocks.append(f"[TOOL_CALL]\n```yaml\n{tc_yaml}\n```")
 
-    instructions = "\n\n".join(messages_text)
+    instructions = "\n\n".join(instructions_blocks)
 
-    defined_vars = {v.get("name"): v for v in data.get("variables", [])}
+    # Response Mapping
+    response_mapping = "Expected JSON/YAML structure matching the schema rules."
+    if "metadata" in prompt_data and isinstance(prompt_data["metadata"], dict):
+        if "response_mapping" in prompt_data["metadata"]:
+             response_mapping = prompt_data["metadata"]["response_mapping"]
 
-    input_lines = []
-    for var in sorted(variables):
-        var_info = defined_vars.get(var, {})
-        desc = var_info.get("description", "No description provided.")
-        req = "required" if var_info.get("required", True) else "optional"
-        input_lines.append(f"- {var} ({req}): {desc}")
+    # Few-Shot Assertions
+    few_shots = []
+    test_data = prompt_data.get("testData", [])
+    for test in test_data:
+        inputs = test.get("vars", test.get("input", {}))
+        expected = test.get("expected", "")
+        if isinstance(inputs, dict):
+            input_ctx = yaml.dump(inputs, sort_keys=False, default_flow_style=True).strip()
+        else:
+            input_ctx = str(inputs)
+        few_shots.append(f"Input Context: \"{input_ctx}\"\nAsserted Output: \"{expected}\"")
 
-    input_def = "\n".join(input_lines)
+    few_shot_text = "\n\n".join(few_shots) if few_shots else "None provided."
 
-    skill_md = f"""<context>
+    # Store structured variables for runtime in a hidden comment block or similar?
+    # Better to have it parseable.
+    vars_json = json.dumps(variables)
+
+    section = f"""## Skill: {name}
+<!-- VALIDATION_METADATA: {vars_json} -->
+### Description
 {description}
-</context>
 
-<instructions>
-{instructions}
-</instructions>
+### Execution Context (Inputs)
+{input_table}
 
-<input>
-{input_def}
-</input>
+### Core Instructions
+```text
+{instructions.strip()}
+```
+
+### Response Mapping (Outputs)
+{response_mapping}
+
+### Few-Shot Assertions
+{few_shot_text}
 """
-    return skill_md
+    return section
 
-def read_prompt_file(path: Path) -> str:
-    """Reads text from a prompt file, returns raw_content or raises."""
-    return path.read_text(encoding='utf-8')
+def generate_skills_md(directory: Path, prompts_path: Path, prompts_data: List[Dict[str, Any]]) -> str:
+    """Generate the full skills.md content for a directory."""
+    rel_path = directory.relative_to(prompts_path)
+    domain_name = " ".join(word.capitalize() for word in str(rel_path).replace("_", " ").split("/"))
+    namespace = str(rel_path).replace("/", ".")
 
-def parse_prompt_yaml(raw_content: str) -> tuple:
-    """Returns (raw_data, errors_list) where errors come from YAML parse exceptions."""
-    errors = []
-    raw_data = None
-    try:
-        raw_data = yaml.safe_load(raw_content)
-    except yaml.YAMLError as e:
-        problem_mark = getattr(e, 'problem_mark', None)
-        line = problem_mark.line + 1 if problem_mark is not None else "N/A"
-        errors.append({
-            "type": "YAML Parsing Error",
-            "message": str(e),
-            "line": line
-        })
-    except Exception as e:
-        errors.append({
-            "type": "Unknown Error",
-            "message": str(e),
-            "line": "N/A"
-        })
-    return (raw_data, errors)
+    all_tags = set()
+    from promptops.tags import extract_tags
+    for data in prompts_data:
+        all_tags.update(extract_tags(data))
+
+    front_matter = ""
+    if all_tags:
+        front_matter = "---\n"
+        front_matter += "tags:\n"
+        for tag in sorted(all_tags):
+            front_matter += f"  - {tag}\n"
+        front_matter += "---\n\n"
+
+    header = f"# Domain Agent Skills: {domain_name}\n\n"
+    metadata = f"""## Metadata
+- **Domain Namespace:** {namespace}
+- **Target Runtime:** PromptOps / MCP Server
+- **Validation Schema:** docs/schemas/prompt.schema.json
+
+---
+"""
+    sections = [generate_skill_section(data) for data in prompts_data]
+    return front_matter + header + metadata + "\n" + "\n---\n\n".join(sections)
 
 def detect_skill(raw_content: str, raw_data: Any) -> bool:
-    """Implements 'skill' detection logic, returns bool."""
     from promptops.tags import extract_tags, extract_tags_from_text
-    
     if raw_data and isinstance(raw_data, dict):
-        tags = extract_tags(raw_data)
-        if "skill" in tags:
+        if "skill" in extract_tags(raw_data):
             return True
-            
-    # Fallback to raw text extraction
-    text_tags = extract_tags_from_text(raw_content)
-    if "skill" in text_tags:
-        return True
-        
-    return False
+    return "skill" in extract_tags_from_text(raw_content)
 
-def validate_prompt_schema(raw_data: Any) -> List[Dict[str, Any]]:
-    """Runs PromptSchema validation, returns validation errors list."""
-    errors = []
-    if raw_data is not None and isinstance(raw_data, dict):
-        try:
-            PromptSchema(**raw_data)
-        except ValidationError as e:
-            for err in e.errors():
-                loc = ".".join(map(str, err["loc"]))
-                errors.append({
-                    "type": "Validation Error",
-                    "message": f"{loc}: {err['msg']}",
-                    "line": "N/A"
-                })
-    return errors
-
-def render_skill(raw_content: str, raw_data: Any) -> tuple:
-    """
-    Render a skill from raw prompt content and parsed YAML data.
-    
-    Parameters:
-        raw_content (str): The raw prompt file content (Jinja2 template text) to analyze for undeclared variables.
-        raw_data (Any): Parsed YAML content for the prompt (expected to be a dict when a skill should be generated).
-    
-    Returns:
-        tuple: A pair (skill_content, errors) where:
-            - skill_content (str | None): Generated skill markdown when rendering succeeds and `raw_data` is a dict; otherwise `None`.
-            - errors (List[Dict[str, Any]]): A list of error objects. Each error dict contains:
-                - `type` (str): Error category (e.g., "Jinja2 Syntax Error", "Skill Generation Error").
-                - `message` (str): Human-readable error message.
-                - `line` (int | str): Line number associated with the error when available, otherwise "N/A".
-    """
-    errors = []
-    skill_content = None
-    try:
-        env = SandboxedEnvironment()
-        ast = env.parse(raw_content)
-        variables = jinja2.meta.find_undeclared_variables(ast)
-
-        if raw_data and isinstance(raw_data, dict):
-            skill_content = generate_skill_content(raw_data, raw_data, raw_content, variables)
-    except jinja2.exceptions.TemplateSyntaxError as e:
-        errors.append({
-            "type": "Jinja2 Syntax Error",
-            "message": e.message,
-            "line": e.lineno
-        })
-    except Exception as e:
-        errors.append({
-            "type": "Skill Generation Error",
-            "message": str(e),
-            "line": "N/A"
-        })
-    return (skill_content, errors)
-
-def write_skill_file(prompts_path: Path, docs_path: Path, path: Path, skill_content: str, reconciler: 'DirectoryReconciler' = None):
-    """
-    Write or delegate writing of a skill's SKILL.md file into the docs skills directory for a given prompt file.
-    
-    Constructs the destination directory under `docs_path/skills` using `path` relative to `prompts_path` and a cleaned file name (removing `.prompt.yaml` or `.yaml`). If a `reconciler` is provided, delegates the write to `reconciler.write_file`; otherwise it ensures the target directory exists, skips writing when the existing SKILL.md content is identical to `skill_content`, and writes `skill_content` to SKILL.md when different or missing.
-    
-    Parameters:
-        prompts_path (Path): Root directory containing prompt source files.
-        docs_path (Path): Root directory for generated documentation.
-        path (Path): Path to the source prompt file that produced `skill_content`.
-        skill_content (str): The content to write into the SKILL.md file.
-        reconciler (DirectoryReconciler, optional): If provided, used to queue or manage file writes via its `write_file` method.
-    """
-    out_skills_dir = docs_path / "skills"
-    clean_name = path.name.replace('.prompt.yaml', '').replace('.yaml', '')
-    rel_to_prompts = path.relative_to(prompts_path)
-    skill_dir = out_skills_dir / rel_to_prompts.parent / clean_name
-    
-    skill_file = skill_dir / "SKILL.md"
-
-    if reconciler:
-        reconciler.write_file(skill_file, skill_content)
-    else:
-        skill_dir.mkdir(parents=True, exist_ok=True)
-        if skill_file.exists():
-            existing_content = skill_file.read_text(encoding='utf-8')
-            if existing_content == skill_content:
-                return
-
-        skill_file.write_text(skill_content, encoding='utf-8')
-
-def generate_health_dashboard(docs_path: Path, health_report: List[Dict[str, Any]]):
-    """
-    Create or update a markdown dashboard summarizing parsing and validation errors for exported skills.
-    
-    Parameters:
-        docs_path (Path): Directory where the dashboard file `skill_health.md` will be written.
-        health_report (List[Dict[str, Any]]): A list of report objects, each with keys:
-            - `file` (str): Path or name of the prompt file.
-            - `errors` (List[Dict[str, Any]]): List of error objects, each containing:
-                - `type` (str): Error category (e.g., "YAML Parsing Error", "Validation Error").
-                - `message` (str): Human-readable error message.
-                - `line` (Union[int, str], optional): Line number associated with the error or "N/A".
-    """
-    dashboard_path = docs_path / "skill_health.md"
-
-    lines = [
-        "---",
-        "title: Skill Health",
-        "---",
-        "",
-        "# Skill Health Dashboard",
-        "",
-        "This dashboard highlights parsing and validation errors across all exported skills.",
-        ""
-    ]
-
-    if not health_report:
-        lines.append("🎉 **All skills are healthy!**")
-    else:
-        for report in health_report:
-            lines.append(f"## `{report['file']}`")
-            for err in report["errors"]:
-                lines.append(f"- **{err['type']}**: {err['message']} (Line: {err.get('line', 'N/A')})")
-            lines.append("")
-
-    dashboard_path.write_text("\n".join(lines), encoding='utf-8')
-
-def process_skills(prompts_path: Path, docs_path: Path):
-    """
-    Process prompt files under prompts_path and generate skill documentation and a health dashboard.
-    
-    Iterates over prompt files discovered under prompts_path, parses and validates each prompt, renders skill content when the prompt is identified as a skill, and writes per-skill SKILL.md files into docs_path/skills using a DirectoryReconciler. Accumulates parsing, validation, and rendering errors into a health report and writes a consolidated skill_health.md to docs_path. Files that cannot be read are recorded as file-read errors; prompts that are not skills are skipped.
-    
-    Parameters:
-        prompts_path (Path): Root directory containing prompt files to process.
-        docs_path (Path): Output documentation directory where skills and the health dashboard are written.
-    """
-    from promptops.utils import iter_prompt_files
-    from promptops.sync import DirectoryReconciler
-
-    health_report = []
-    
-    out_skills_dir = docs_path / "skills"
-    reconciler = DirectoryReconciler(out_skills_dir, manage_pattern="SKILL.md")
-
+def process_skills(prompts_path: Path, docs_path: Optional[Path] = None):
+    from promptops.utils import iter_prompt_files, load_yaml
+    prompts_by_dir: Dict[Path, List[Dict[str, Any]]] = {}
     for path in iter_prompt_files(str(prompts_path)):
-        errors = []
-
         try:
-            raw_content = read_prompt_file(path)
+            data = load_yaml(path)
+            raw_content = path.read_text(encoding='utf-8')
+            if not detect_skill(raw_content, data):
+                continue
+            parent = path.parent
+            if parent not in prompts_by_dir:
+                prompts_by_dir[parent] = []
+            prompts_by_dir[parent].append(data)
         except Exception as e:
-            health_report.append({
-                "file": str(path.relative_to(prompts_path)),
-                "errors": [{
-                    "type": "File Read Error",
-                    "message": str(e),
-                    "line": "N/A"
-                }]
-            })
-            continue
+            print(f"Error processing {path}: {e}")
 
-        raw_data, parse_errors = parse_prompt_yaml(raw_content)
-        errors.extend(parse_errors)
-
-        is_skill = detect_skill(raw_content, raw_data)
-
-        # If it's not a skill AND it has no YAML errors, we can safely skip it.
-        # But if it has YAML errors, we should report them because it might be a broken skill!
-        if not is_skill and not parse_errors:
-            continue
-
-        if is_skill:
-            validation_errors = validate_prompt_schema(raw_data)
-            errors.extend(validation_errors)
-
-            skill_content, render_errors = render_skill(raw_content, raw_data)
-            errors.extend(render_errors)
-        else:
-            skill_content = None
-
-        if errors:
-            health_report.append({
-                "file": str(path.relative_to(prompts_path)),
-                "errors": errors
-            })
-
-        if skill_content:
-            write_skill_file(prompts_path, docs_path, path, skill_content, reconciler)
-
-    reconciler.reconcile(prune_empty_dirs=False)
-    generate_health_dashboard(docs_path, health_report)
+    for directory, prompts_data in prompts_by_dir.items():
+        skills_content = generate_skills_md(directory, prompts_path, prompts_data)
+        (directory / "skills.md").write_text(skills_content, encoding='utf-8')
+        if docs_path:
+            rel = directory.relative_to(prompts_path)
+            out_dir = docs_path / "skills" / rel
+            out_dir.mkdir(parents=True, exist_ok=True)
+            (out_dir / "skills.md").write_text(skills_content, encoding='utf-8')

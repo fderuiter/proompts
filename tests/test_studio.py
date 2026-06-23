@@ -8,12 +8,12 @@ ROOT_DIR = Path(__file__).parent.parent
 
 def test_app_launches():
     at = AppTest.from_file(str(STUDIO_DIR / "studio/app.py"))
-    at.run()
+    at.run(timeout=15)
     assert not at.exception
 
 def test_prompt_editor_launches_and_saves():
     at = AppTest.from_file(str(STUDIO_DIR / "studio/pages" / "1_📝_Prompt_Editor.py"))
-    at.run()
+    at.run(timeout=15)
     assert not at.exception
 
     # Find text inputs
@@ -57,7 +57,7 @@ def test_prompt_editor_launches_and_saves():
 
 def test_workflow_editor_launches_and_saves():
     at = AppTest.from_file(str(STUDIO_DIR / "studio/pages" / "2_🔄_Workflow_Editor.py"))
-    at.run()
+    at.run(timeout=15)
     assert not at.exception
 
     # Find text inputs

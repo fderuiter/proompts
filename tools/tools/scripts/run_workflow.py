@@ -27,6 +27,10 @@ With verbose logging (useful for debugging variable resolution):
 """
 
 from __future__ import annotations
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../promptops")))
+from promptops import console
 
 import argparse
 import hashlib
@@ -308,8 +312,7 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
     Returns:
         The simulated output string from `testData`.
     """
-    logger.info("---")
-    logger.info(f"Simulating prompt: {prompt_data.get('name', 'Untitled Prompt')}")
+    console.step_header(f"Simulating prompt: {prompt_data.get('name', 'Untitled Prompt')}")
 
     # 1. Inject Aegis Safety Block
     if not prompt_data.get('safety_opt_out', False):
@@ -339,7 +342,7 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
             if 'input' in test_case and 'inputs' not in test_case and 'vars' not in test_case:
                 logger.warning(f"Schema mismatch detected in {prompt_data.get('name', 'Untitled Prompt')}: 'input' key used instead of 'inputs' or 'vars'.")
                 if not strict_mode and sys.stdout.isatty() and not os.environ.get('CI'):
-                    print("\n[Self-Healing] Detected unmatched variable key 'input'. The standard schema requires 'inputs' or 'vars'.")
+                    console.info("\n[Self-Healing] Detected unmatched variable key 'input'. The standard schema requires 'inputs' or 'vars'.")
                     choice = input("Would you like to automatically heal this by mapping 'input' -> 'inputs'? (y/n): ")
                     if choice.lower() == 'y':
                         if isinstance(test_case['input'], str):
@@ -349,7 +352,7 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
                         if prompt_file:
                             with open(prompt_file, 'w') as f:
                                 yaml.dump(prompt_data, f, sort_keys=False)
-                            print("[Self-Healing] Successfully updated YAML file.")
+                            console.info("[Self-Healing] Successfully updated YAML file.")
                     else:
                         pass
                 else:
@@ -430,14 +433,14 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
                 raise ValueError(f"Strict Template Resolution Failed in {prompt_data.get('name')}: {e}")
             logger.warning(f"Failed to render message content: {e}")
 
-        logger.info(f"  [{role}]: (Content hidden for security)")
+        console.role_message(role, "(Content hidden for security)")
 
     # Check if we need to heal missing test data
     if not prompt_data.get('testData'):
         logger.info(f"No testData found for {prompt_data.get('name', 'Untitled Prompt')}.")
         if not strict_mode and sys.stdout.isatty() and not os.environ.get('CI'):
-            print(f"\n[Self-Healing] No testData found for '{prompt_data.get('name', 'Untitled Prompt')}'.")
-            print("To ensure deterministic simulation, generating 3 realistic input/output pairs...")
+            console.info(f"\n[Self-Healing] No testData found for '{prompt_data.get('name', 'Untitled Prompt')}'.")
+            console.info("To ensure deterministic simulation, generating 3 realistic input/output pairs...")
             
             required_vars = list(inputs.keys())
             if not required_vars:
@@ -450,8 +453,8 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
             iteration = 0
             while True:
                 test_cases = generate_mock_test_cases(prompt_data, required_vars, iteration)
-                print("\nProposed Test Data:")
-                print(yaml.dump(test_cases, sort_keys=False))
+                console.info("\nProposed Test Data:")
+                console.info(yaml.dump(test_cases, sort_keys=False))
                 
                 choice = input("Approve (a), Reject (r), or Regenerate (g)? [a/r/g]: ").lower()
                 if choice == 'a':
@@ -459,7 +462,7 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
                     if prompt_file:
                         with open(prompt_file, 'w') as f:
                             yaml.dump(prompt_data, f, sort_keys=False)
-                        print("[Self-Healing] Successfully updated YAML file.")
+                        console.info("[Self-Healing] Successfully updated YAML file.")
                     matched_test_case = test_cases[0]
                     break
                 elif choice == 'g':
@@ -564,7 +567,7 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
                 checkpoint_data = json.load(f)
             resume_step_id = checkpoint_data.get('next_step_id')
             if resume_step_id and resume_step_id in steps_dict:
-                print(f"Resuming from step {resume_step_id}...")
+                console.info(f"Resuming from step {resume_step_id}...")
                 logger.info(f"Resuming from step {resume_step_id}...")
                 workflow_state = checkpoint_data.get('workflow_state', workflow_state)
                 execution_counts = checkpoint_data.get('execution_counts', execution_counts)
@@ -589,8 +592,6 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
              if os.path.exists(alt_prompt_file):
                  prompt_file = alt_prompt_file
 
-        logger.info(f"\n===== Simulating Step: {step_id} (Iteration {execution_counts[step_id] + 1}) =====")
-
         # 1. Load the prompt file
         prompt_data = load_yaml(prompt_file)
         if not prompt_data:
@@ -604,6 +605,8 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
             prompt_inputs[var_name] = resolve_value(template, workflow_state, strict_mode)
 
         logger.debug(f"Resolved prompt inputs: {list(prompt_inputs.keys())}")
+
+        console.step_header(f"Simulating Step: {step_id} (Iteration {execution_counts[step_id] + 1})")
 
         # 3. Simulate prompt execution
         output = simulate_prompt_execution(prompt_data, prompt_inputs, prompt_file=prompt_file, strict_mode=strict_mode, chaos_mode=chaos_mode, fidelity_report=fidelity_report)
@@ -695,8 +698,16 @@ def main():
     parser.add_argument("-v", "--verbose", action="store_true", help="Increase output verbosity")
     parser.add_argument("--strict", action="store_true", help="Run in strict mode (fails on structural errors or undefined variables)")
     parser.add_argument("--chaos", action="store_true", help="Enable Chaos Mode (simulated latency and rate limits)")
+    parser.add_argument("--no-color", action="store_true", help="Disable color output")
+    parser.add_argument("--json", action="store_true", help="Output Fidelity Report as JSON only")
 
     args = parser.parse_args()
+
+    if args.no_color:
+        console.set_no_color(True)
+        
+    if args.json:
+        console.set_json_mode(True)
 
     # Determine if we should implicitly use strict mode
     strict_mode = args.strict or os.environ.get('CI') == 'true'
@@ -750,7 +761,7 @@ def main():
         # We can either run all test scenarios or just the first one. Let's run all scenarios to fully validate.
         for test_case in workflow_data['testData']:
             inputs = test_case.get('inputs', test_case.get('vars', {}))
-            logger.info(f"\n[Running Workflow Test Scenario with inputs: {inputs}]")
+            console.step_header(f"Running Workflow Test Scenario with inputs: {inputs}")
             try:
                 final_state = run_workflow(args.workflow_file, inputs, verbose=args.verbose, strict_mode=strict_mode, chaos_mode=args.chaos, fidelity_report=fidelity_report)
                 if final_state:
@@ -761,7 +772,7 @@ def main():
             except Exception as e:
                 logger.error(f"Workflow test scenario failed: {e}")
                 sys.exit(1)
-        logger.info("\n===== Simulation Finished (All Scenarios) =====")
+        console.step_header("Simulation Finished (All Scenarios)")
     else:
         try:
             final_state = run_workflow(args.workflow_file, initial_inputs, verbose=args.verbose, strict_mode=strict_mode, chaos_mode=args.chaos, fidelity_report=fidelity_report)
@@ -770,18 +781,21 @@ def main():
             sys.exit(1)
 
         if final_state:
-            logger.info("\n===== Simulation Finished =====")
+            console.step_header("Simulation Finished")
             workflow_data = load_yaml(args.workflow_file)
             final_output_step_id = workflow_data.get('steps', [{}])[-1].get('step_id')
             if final_output_step_id:
                 final_output = final_state['steps'][final_output_step_id]['output']
                 logger.info("Final workflow output:")
-                print(final_output) # Print final output to stdout regardless of logging level
+                console.info(final_output) # Print final output to stdout regardless of logging level
 
-    print("\n[Simulation Fidelity Report]")
-    print(f"- Evaluators Mocked: {'Yes' if fidelity_report['evaluators_mocked'] else 'No'}")
-    print(f"- Rate Limits Simulated: {'Yes' if fidelity_report['rate_limits_simulated'] else 'No'}")
-    print(f"- Latency Simulated: {'Yes' if fidelity_report['latency_simulated'] else 'No'}")
+    if getattr(args, 'json', False):
+        console.json_output(fidelity_report)
+    else:
+        console.info("\n[Simulation Fidelity Report]")
+        console.info(f"- Evaluators Mocked: {'Yes' if fidelity_report['evaluators_mocked'] else 'No'}")
+        console.info(f"- Rate Limits Simulated: {'Yes' if fidelity_report['rate_limits_simulated'] else 'No'}")
+        console.info(f"- Latency Simulated: {'Yes' if fidelity_report['latency_simulated'] else 'No'}")
 
 if __name__ == "__main__":
     main()
