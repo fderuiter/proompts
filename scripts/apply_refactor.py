@@ -18,6 +18,7 @@ import re
 import shutil
 import argparse
 from collections import defaultdict
+from promptops.console import console
 
 # Regex for finding prompt_file in workflow yaml (to preserve comments)
 PROMPT_FILE_REGEX = re.compile(r'(prompt_file:\s*["\']?)([^"\']+)(["\']?)')
@@ -56,7 +57,7 @@ def get_workflow_definitions(workflows_dir):
                         'steps': data['steps']
                     })
                 except Exception as e:
-                    print(f"Error parsing workflow {path}: {e}")
+                    console.print(f"Error parsing workflow {path}: {e}")
                     
     return definitions
 
@@ -115,7 +116,7 @@ def plan_refactoring(prompts_root, workflows_root):
             else:
                  # Conflict! File used in multiple workflows?
                  if schema_map[p_path]['new_path'] != new_path:
-                     print(f"WARNING: Prompt {p_path} used in multiple workflows with different targets. Skipping move.")
+                     console.print(f"WARNING: Prompt {p_path} used in multiple workflows with different targets. Skipping move.")
                      del schema_map[p_path] 
                      # Also remove from workflow_prompts so it doesn't get processed
                      
@@ -173,23 +174,23 @@ def apply_changes(schema_map, meta_moves, standalone_moves, dry_run=False):
     for old_path, new_path in standalone_moves.items():
         all_moves[old_path] = new_path
 
-    print(f"Plan to move {len(all_moves)} files.")
+    console.print(f"Plan to move {len(all_moves)} files.")
 
     for old_path, new_path in all_moves.items():
         if dry_run:
-            print(f"[DRY RUN] Move {old_path} -> {new_path}")
+            console.print(f"[DRY RUN] Move {old_path} -> {new_path}")
         else:
             # Ensure target directory exists
             os.makedirs(os.path.dirname(new_path), exist_ok=True)
             # Move file
             try:
                 shutil.move(old_path, new_path)
-                print(f"Moved {old_path} -> {new_path}")
+                console.print(f"Moved {old_path} -> {new_path}")
             except Exception as e:
-                print(f"Error moving {old_path} to {new_path}: {e}")
+                console.print(f"Error moving {old_path} to {new_path}: {e}")
 
 def fix_references(prompts_root, workflows_root, dry_run=False):
-    print("=== Fixing Workflow References ===")
+    console.section("Fixing Workflow References")
 
     # Build prompt index for robust lookup
     prompt_index = defaultdict(list)
@@ -206,7 +207,7 @@ def fix_references(prompts_root, workflows_root, dry_run=False):
     for wf in definitions:
         wf_path = wf['path']
         wf_name = wf['name']
-        print(f"Checking {wf_name}...")
+        console.print(f"Checking {wf_name}...")
         
         updates = []
         
@@ -259,7 +260,7 @@ def fix_references(prompts_root, workflows_root, dry_run=False):
                     continue
 
         if updates:
-            print(f"Fixing {len(updates)} references in {wf_name}")
+            console.print(f"Fixing {len(updates)} references in {wf_name}")
             if not dry_run:
                 # Map old paths to new paths for lookup in replacement
                 update_dict = dict(updates)
@@ -298,6 +299,6 @@ if __name__ == "__main__":
     else:
         schema_map, meta_moves, standalone_moves = plan_refactoring(prompts_root, workflows_root)
         if not schema_map and not meta_moves and not standalone_moves:
-             print("No moves planned. Did you mean to run --fix-refs?")
+             console.print("No moves planned. Did you mean to run --fix-refs?")
         else:
              apply_changes(schema_map, meta_moves, standalone_moves, dry_run=args.dry_run)

@@ -4,6 +4,7 @@ import os
 import shutil
 import yaml
 from tools.scripts.run_workflow import run_workflow
+from promptops.console import console
 
 # Define the test directory
 TEST_DIR = "temp_test_workflow"
@@ -108,34 +109,34 @@ def cleanup_test_environment():
 
 def run_tests():
     """Sets up the environment, runs the test, and cleans up."""
-    print("--- Setting up test environment ---")
+    console.section("Setting up test environment")
     workflow_file = setup_test_environment()
 
-    print("\n--- Running workflow test ---")
+    console.section("Running workflow test")
     initial_inputs = {"user_name": "World"}
     # Set verbose=False to keep the test output clean
     final_state = run_workflow(workflow_file, initial_inputs, verbose=False)
 
-    print("\n--- Verifying results ---")
+    console.section("Verifying results")
     try:
         # Check output of first step
         step1_output = final_state["steps"]["step1_greet"]["output"]
         assert step1_output == "Hello, World!", f"FAIL: Step 1 output was '{step1_output}'"
-        print("PASS: Step 1 output is correct.")
+        console.print("PASS: Step 1 output is correct.")
 
         # Check output of second step
         step2_output = final_state["steps"]["step2_emphasize"]["output"]
         assert step2_output == "Hello, World!!!", f"FAIL: Step 2 output was '{step2_output}'"
-        print("PASS: Step 2 output is correct.")
+        console.print("PASS: Step 2 output is correct.")
 
         # Check output of third step (redaction)
         step3_output = final_state["steps"]["step3_redact"]["output"]
         assert "123-45-6789" not in step3_output, "FAIL: PII was not redacted!"
         assert "[REDACTED]" in step3_output, "FAIL: Redaction marker missing!"
-        print("PASS: Step 3 output redacted PII correctly.")
+        console.print("PASS: Step 3 output redacted PII correctly.")
 
         # Test terminate action with prompt3
-        print("\n--- Running failing workflow test ---")
+        console.section("Running failing workflow test")
         failing_workflow_content = {
             "name": "Failing Workflow",
             "inputs": [],
@@ -156,16 +157,16 @@ def run_tests():
             assert False, "FAIL: Workflow should have terminated!"
         except Exception as e:
             assert "Evaluator failed" in str(e), f"FAIL: Unexpected exception: {e}"
-            print("PASS: Failing evaluator terminated workflow correctly.")
+            console.print("PASS: Failing evaluator terminated workflow correctly.")
 
-        print("\nAll tests passed successfully!")
+        console.print("\nAll tests passed successfully!")
 
     except AssertionError as e:
-        print(e)
+        console.print(e)
     except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+        console.print(f"An unexpected error occurred: {e}")
     finally:
-        print("\n--- Cleaning up test environment ---")
+        console.section("Cleaning up test environment")
         cleanup_test_environment()
 
 if __name__ == "__main__":

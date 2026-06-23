@@ -10,6 +10,7 @@ errors, unresolved template variables, or missing step references.
 import sys
 import glob
 from pathlib import Path
+from promptops.console import console
 from tools.scripts.run_workflow import run_workflow, load_yaml, setup_logging
 
 from tools.scripts.validate_prompt_schema import PromptMetadata
@@ -40,19 +41,19 @@ def main():
     failed = []
     
     for wf in workflow_files:
-        print(f"Testing workflow: {wf.relative_to(base_dir)}")
+        console.print(f"Testing workflow: {wf.relative_to(base_dir)}")
         
         # Load to extract testData
         workflow_data = load_yaml(str(wf))
         if not workflow_data:
-            print(f"  ❌ Failed to parse YAML: {wf}")
+            console.print(f"  ❌ Failed to parse YAML: {wf}")
             failed.append(wf)
             continue
             
         try:
             validate_workflow_metadata(wf, workflow_data)
         except Exception as e:
-            print(f"  ❌ Metadata validation failed: {e}")
+            console.print(f"  ❌ Metadata validation failed: {e}")
             failed.append(wf)
             continue
             
@@ -65,7 +66,7 @@ def main():
                     # Run in strict mode
                     run_workflow(str(wf), inputs, verbose=False, strict_mode=True)
                 except Exception as e:
-                    print(f"  ❌ Simulation failed on scenario {i+1}: {e}")
+                    console.print(f"  ❌ Simulation failed on scenario {i+1}: {e}")
                     failed.append(wf)
                     break
         else:
@@ -73,16 +74,16 @@ def main():
             try:
                 run_workflow(str(wf), {}, verbose=False, strict_mode=True)
             except Exception as e:
-                print(f"  ❌ Simulation failed: {e}")
+                console.print(f"  ❌ Simulation failed: {e}")
                 failed.append(wf)
                 
     if failed:
-        print("\n❌ The following workflows have structural errors:")
+        console.print("\n❌ The following workflows have structural errors:")
         for wf in set(failed):
-            print(f"  - {wf.relative_to(base_dir)}")
+            console.print(f"  - {wf.relative_to(base_dir)}")
         sys.exit(1)
     else:
-        print("\n✅ All workflows validated successfully.")
+        console.print("\n✅ All workflows validated successfully.")
         sys.exit(0)
 
 if __name__ == "__main__":
