@@ -46,15 +46,6 @@ class DirectoryReconciler:
         path.write_text(content, encoding=encoding)
         return True
 
-    def register_file(self, path: Union[str, Path]) -> None:
-        """
-        Mark a path as managed so it will be considered "touched" and not removed during reconciliation.
-        
-        Parameters:
-            path (str | Path): Path to the file to register; it is resolved to an absolute Path and added to the reconciler's tracked set. This does not create or modify the file.
-        """
-        self.touched_files.add(Path(path).resolve())
-
     def reconcile(self, prune_empty_dirs: bool = True) -> int:
         """
         Remove managed-pattern files under the reconciler's root that were not recorded as touched.

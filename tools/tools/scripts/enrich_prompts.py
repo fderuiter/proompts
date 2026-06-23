@@ -336,17 +336,6 @@ def suggest_variable_description(var_name: str, context: str) -> str:
     return f"The {readable_name} to use for this prompt"
 
 
-def infer_variable_description(
-    var_name: str,
-    content: dict,
-    prompt_name: str,
-    prompt_description: str,
-) -> str:
-    """Backward compatibility wrapper for infer_variable_description."""
-    all_msg_text = "\n".join(m.get("content", "") for m in content.get("messages", []))
-    return suggest_variable_description(var_name, all_msg_text)
-
-
 # ────────────────────────────────────────────────────────────────────────────
 # 5.  Main enrichment logic
 # ────────────────────────────────────────────────────────────────────────────

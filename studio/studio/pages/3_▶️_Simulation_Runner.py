@@ -18,7 +18,7 @@ selected_file = st.selectbox("Select a workflow to simulate", workflow_files)
 
 if selected_file:
     file_path = os.path.join(base_dir, selected_file)
-    data = load_yaml(file_path)
+    data = load_yaml(file_path) or {}
     
     st.subheader("Global Inputs")
     initial_inputs = {}

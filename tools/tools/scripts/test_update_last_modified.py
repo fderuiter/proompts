@@ -137,7 +137,7 @@ class TestUpdateLastModified(unittest.TestCase):
     @patch("tools.scripts.update_last_modified.sys.argv", ["update_last_modified.py", "mock_file.yaml"])
     @patch("tools.scripts.update_last_modified.update_file", return_value=True)
     @patch("tools.scripts.update_last_modified.Path.is_file", return_value=True)
-    def test_main_with_files_updated(self, mock_is_file, mock_update_file):
+    def test_main_with_files_updated(self, _mock_is_file, mock_update_file):
         """Test main() returns 1 when valid files are updated."""
         from tools.scripts.update_last_modified import main
         with patch("sys.stdout", new_callable=io.StringIO) as mock_stdout:
@@ -147,7 +147,7 @@ class TestUpdateLastModified(unittest.TestCase):
     @patch("tools.scripts.update_last_modified.sys.argv", ["update_last_modified.py", "mock_file.yaml"])
     @patch("tools.scripts.update_last_modified.update_file", return_value=False)
     @patch("tools.scripts.update_last_modified.Path.is_file", return_value=True)
-    def test_main_with_files_not_updated(self, mock_is_file, mock_update_file):
+    def test_main_with_files_not_updated(self, _mock_is_file, mock_update_file):
         """Test main() returns 0 when valid files are not updated (already up-to-date)."""
         from tools.scripts.update_last_modified import main
         with patch("sys.stdout", new_callable=io.StringIO) as mock_stdout:
@@ -157,7 +157,7 @@ class TestUpdateLastModified(unittest.TestCase):
     @patch("tools.scripts.update_last_modified.sys.argv", ["update_last_modified.py", "--check", "mock_file.yaml"])
     @patch("tools.scripts.update_last_modified.update_file", return_value=True)
     @patch("tools.scripts.update_last_modified.Path.is_file", return_value=True)
-    def test_main_check_mode(self, mock_is_file, mock_update_file):
+    def test_main_check_mode(self, _mock_is_file, mock_update_file):
         """Test main() properly handles the --check flag."""
         from tools.scripts.update_last_modified import main
         with patch("sys.stdout", new_callable=io.StringIO) as mock_stdout:
@@ -168,7 +168,7 @@ class TestUpdateLastModified(unittest.TestCase):
     @patch("tools.scripts.update_last_modified.sys.argv", ["update_last_modified.py", "mock_file.txt"])
     @patch("tools.scripts.update_last_modified.update_file")
     @patch("tools.scripts.update_last_modified.Path.is_file", return_value=True)
-    def test_main_ignores_non_yaml_files(self, mock_is_file, mock_update_file):
+    def test_main_ignores_non_yaml_files(self, _mock_is_file, mock_update_file):
         """Test main() ignores files that do not end in .yaml or .yml."""
         from tools.scripts.update_last_modified import main
         self.assertEqual(main(), 0)

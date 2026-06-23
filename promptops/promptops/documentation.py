@@ -135,7 +135,7 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
                 item_type='workflow'
             ))
         
-    registry = {}
+    registry: Dict[str, Dict[str, List[DocItem]]] = {}
     for item in items:
         if item.category not in registry:
             registry[item.category] = {'prompt': [], 'workflow': []}
@@ -157,15 +157,15 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
         if types['prompt'] and category != "Workflows":
             md.append("## Prompts")
             for p in sorted(types['prompt'], key=lambda x: x.title.lower()):
-                rel = os.path.relpath(p.path, docs_path)
-                md.append(f"- [{p.title}]({rel})")
+                rel_path = os.path.relpath(p.path, docs_path)
+                md.append(f"- [{p.title}]({rel_path})")
                 
         if types['workflow']:
             if category != "Workflows":
                 md.append("\n## Workflows")
             for w in sorted(types['workflow'], key=lambda x: x.title.lower()):
-                rel = os.path.relpath(w.path, docs_path)
-                md.append(f"- [{w.title}]({rel})")
+                rel_path = os.path.relpath(w.path, docs_path)
+                md.append(f"- [{w.title}]({rel_path})")
                 
         out_path.write_text("\n".join(md), encoding='utf-8')
         

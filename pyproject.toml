@@ -36,5 +36,6 @@ dev = [
     "mkdocs-material>=9.7.6",
     "mypy>=1.19.1",
     "pytest>=8.4.2",
+    "vulture>=2.16",
     "yamllint>=1.37.1",
 ]

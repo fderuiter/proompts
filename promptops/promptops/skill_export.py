@@ -2,22 +2,11 @@ import os
 import json
 from pathlib import Path
 from typing import Dict, Any, Set, List, Optional
-import jinja2.meta
-from jinja2.sandbox import SandboxedEnvironment
-import jinja2.exceptions
 import yaml
 from pydantic import ValidationError
 
 # To avoid circular imports, we don't import PromptSchema here if not needed
 # or we import it inside functions.
-
-def extract_undeclared_variables(text: str) -> Set[str]:
-    env = SandboxedEnvironment()
-    try:
-        ast = env.parse(text)
-        return jinja2.meta.find_undeclared_variables(ast)
-    except jinja2.exceptions.TemplateSyntaxError as e:
-        raise e
 
 def generate_skill_section(prompt_data: Dict[str, Any]) -> str:
     """Generate a single skill section for a prompt."""
@@ -143,6 +132,8 @@ def detect_skill(raw_content: str, raw_data: Any) -> bool:
 
 def process_skills(prompts_path: Path, docs_path: Optional[Path] = None):
     from promptops.utils import iter_prompt_files, load_yaml
+    from promptops.sync import DirectoryReconciler
+    
     prompts_by_dir: Dict[Path, List[Dict[str, Any]]] = {}
     for path in iter_prompt_files(str(prompts_path)):
         try:
@@ -157,11 +148,18 @@ def process_skills(prompts_path: Path, docs_path: Optional[Path] = None):
         except Exception as e:
             print(f"Error processing {path}: {e}")
 
+    prompts_reconciler = DirectoryReconciler(prompts_path, manage_pattern="skills.md")
+    docs_reconciler = DirectoryReconciler(docs_path / "skills", manage_pattern="skills.md") if docs_path else None
+
     for directory, prompts_data in prompts_by_dir.items():
         skills_content = generate_skills_md(directory, prompts_path, prompts_data)
-        (directory / "skills.md").write_text(skills_content, encoding='utf-8')
-        if docs_path:
+        prompts_reconciler.write_file(directory / "skills.md", skills_content)
+        
+        if docs_reconciler and docs_path:
             rel = directory.relative_to(prompts_path)
             out_dir = docs_path / "skills" / rel
-            out_dir.mkdir(parents=True, exist_ok=True)
-            (out_dir / "skills.md").write_text(skills_content, encoding='utf-8')
+            docs_reconciler.write_file(out_dir / "skills.md", skills_content)
+            
+    prompts_reconciler.reconcile()
+    if docs_reconciler:
+        docs_reconciler.reconcile()
