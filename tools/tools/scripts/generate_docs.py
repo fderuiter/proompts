@@ -105,11 +105,43 @@ class WorkflowGrapher:
     RE_INPUTS = re.compile(r'inputs\.([a-zA-Z0-9_-]+)')
     
     @staticmethod
+    def _escape_mermaid_string(text: str) -> str:
+        if not text:
+            return ""
+        text = str(text)
+        text = text.replace('\\', '\\\\')
+        text = text.replace('"', '&quot;').replace("'", "&#39;")
+        text = text.replace('<', '&lt;').replace('>', '&gt;')
+        text = text.replace('\n', ' ').replace('\r', '')
+        return text.strip()
+
+    @staticmethod
     def generate(data: Dict[str, Any]) -> str:
         if 'steps' not in data and 'inputs' not in data:
             return ""
             
         graph = ["graph TD"]
+        
+        # Accessibility Metadata
+        name = WorkflowGrapher._escape_mermaid_string(data.get('name') or 'Workflow')
+        desc = WorkflowGrapher._escape_mermaid_string(data.get('description') or '')
+        
+        metadata = data.get('metadata') or {}
+        meta_parts = []
+        for key in ['domain', 'topic', 'tags']:
+            val = metadata.get(key)
+            if val:
+                if isinstance(val, list):
+                    val = f"[{', '.join(str(v) for v in val)}]"
+                meta_parts.append(f"{key.capitalize()}: {val}")
+        
+        if meta_parts:
+            meta_str = " | ".join(meta_parts)
+            desc = f"{desc} | {meta_str}" if desc else meta_str
+            
+        graph.append(f"    accTitle: {name}")
+        if desc:
+            graph.append(f"    accDescr: {desc}")
         
         # Inputs
         for inp in data.get('inputs', []):
