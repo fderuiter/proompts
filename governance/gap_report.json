@@ -1,1 +1,240 @@
-[]
+[
+  {
+    "prompt_file": "prompts/management/executive/digital_transformation_roadmap.prompt.yaml",
+    "standard": "21 CFR Part 11",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR Part 11 2024"
+  },
+  {
+    "prompt_file": "prompts/management/operations/operational_excellence_risk_sweep.prompt.yaml",
+    "standard": "21 CFR Part 11",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR Part 11 2024"
+  },
+  {
+    "prompt_file": "prompts/management/clinical_research_manager/digest_regulatory_updates.prompt.yaml",
+    "standard": "21 CFR Part 11",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR Part 11 2024"
+  },
+  {
+    "prompt_file": "prompts/clinical/eclinical_integration/computer_system_validation.prompt.yaml",
+    "standard": "21 CFR Part 11",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR Part 11 2024"
+  },
+  {
+    "prompt_file": "prompts/clinical/eclinical_integration/iq_oq_pq_validation.prompt.yaml",
+    "standard": "21 CFR Part 11",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR Part 11 2024"
+  },
+  {
+    "prompt_file": "prompts/clinical/forms/ecrf_implementation.prompt.yaml",
+    "standard": "21 CFR Part 11",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR Part 11 2024"
+  },
+  {
+    "prompt_file": "prompts/clinical/data_management/medical_coding_reconciliation.prompt.yaml",
+    "standard": "21 CFR Part 11",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR Part 11 2024"
+  },
+  {
+    "prompt_file": "prompts/clinical/data_management/part_11_compliance_verification.prompt.yaml",
+    "standard": "21 CFR Part 11",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR Part 11 2024"
+  },
+  {
+    "prompt_file": "prompts/clinical/data_management/database_lock_procedures.prompt.yaml",
+    "standard": "21 CFR Part 11",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR Part 11 2024"
+  },
+  {
+    "prompt_file": "prompts/clinical/data_management/dmp_development.prompt.yaml",
+    "standard": "21 CFR Part 11",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR Part 11 2024"
+  },
+  {
+    "prompt_file": "prompts/clinical/data_management/regulatory_compliance_verification.prompt.yaml",
+    "standard": "21 CFR Part 11",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR Part 11 2024"
+  },
+  {
+    "prompt_file": "prompts/clinical/data_management/audit_trail_review.prompt.yaml",
+    "standard": "21 CFR Part 11",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR Part 11 2024"
+  },
+  {
+    "prompt_file": "prompts/clinical/imaging/imaging_workflow/01_imaging_charter_draft.prompt.yaml",
+    "standard": "21 CFR Part 11",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR Part 11 2024"
+  },
+  {
+    "prompt_file": "prompts/clinical/eclinical_integration/eclinical_integration_workflow/03_regulatory_validation_checklist.prompt.yaml",
+    "standard": "21 CFR Part 11",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR Part 11 2024"
+  },
+  {
+    "prompt_file": "prompts/scientific/biosafety/biological_safety_workflow/03_regulatory_submission_support.prompt.yaml",
+    "standard": "21 CFR 820",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR 820 2024"
+  },
+  {
+    "prompt_file": "prompts/regulatory/strategy/samd_ai_pccp_architect.prompt.yaml",
+    "standard": "ISO 14971",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in ISO 14971 2024"
+  },
+  {
+    "prompt_file": "prompts/regulatory/strategy/strategic_regulatory_pathway_plan.prompt.yaml",
+    "standard": "ISO 14971",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in ISO 14971 2024"
+  },
+  {
+    "prompt_file": "prompts/regulatory/strategy/qmsr_gap_analysis.prompt.yaml",
+    "standard": "21 CFR 820",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR 820 2024"
+  },
+  {
+    "prompt_file": "prompts/regulatory/strategy/raqa_integrated_quality_system_audit.prompt.yaml",
+    "standard": "21 CFR 820",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR 820 2024"
+  },
+  {
+    "prompt_file": "prompts/regulatory/submissions/eu_mdr_technical_documentation_architect.prompt.yaml",
+    "standard": "ISO 14971",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in ISO 14971 2024"
+  },
+  {
+    "prompt_file": "prompts/regulatory/adherence/alcoa_c_data_integrity_checklist.prompt.yaml",
+    "standard": "21 CFR Part 11",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR Part 11 2024"
+  },
+  {
+    "prompt_file": "prompts/regulatory/quality/capa_plan_generator.prompt.yaml",
+    "standard": "21 CFR 820",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR 820 2024"
+  },
+  {
+    "prompt_file": "prompts/regulatory/quality/quality_system_evaluation_mra.prompt.yaml",
+    "standard": "21 CFR 820",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR 820 2024"
+  },
+  {
+    "prompt_file": "prompts/regulatory/quality/risk_management_analysis.prompt.yaml",
+    "standard": "21 CFR 820",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR 820 2024"
+  },
+  {
+    "prompt_file": "prompts/regulatory/quality/data_integrity_alcoa_plus_audit_architect.prompt.yaml",
+    "standard": "21 CFR Part 11",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR Part 11 2024"
+  },
+  {
+    "prompt_file": "prompts/regulatory/quality/part_11_closed_system_audit.prompt.yaml",
+    "standard": "21 CFR Part 11",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR Part 11 2024"
+  },
+  {
+    "prompt_file": "prompts/regulatory/quality/samd_iec_62304_software_safety_classification_architect.prompt.yaml",
+    "standard": "ISO 14971",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in ISO 14971 2024"
+  },
+  {
+    "prompt_file": "prompts/regulatory/quality/process_validation_iq_oq_pq_protocol_architect.prompt.yaml",
+    "standard": "21 CFR 820",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR 820 2024"
+  },
+  {
+    "prompt_file": "prompts/regulatory/quality/samd_hazard_traceability_matrix_generator.prompt.yaml",
+    "standard": "ISO 14971",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in ISO 14971 2024"
+  },
+  {
+    "prompt_file": "prompts/regulatory/quality/capa_management_process.prompt.yaml",
+    "standard": "21 CFR 820",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR 820 2024"
+  },
+  {
+    "prompt_file": "prompts/regulatory/quality/iec_62304_soup_anomaly_evaluator.prompt.yaml",
+    "standard": "ISO 14971",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in ISO 14971 2024"
+  },
+  {
+    "prompt_file": "prompts/regulatory/quality/qms_management_review_architect.prompt.yaml",
+    "standard": "21 CFR 820",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR 820 2024"
+  },
+  {
+    "prompt_file": "prompts/regulatory/quality/fda_csa_risk_based_testing_strategy_architect.prompt.yaml",
+    "standard": "21 CFR Part 11",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR Part 11 2024"
+  },
+  {
+    "prompt_file": "prompts/regulatory/quality/supplier_corrective_action_request_evaluator.prompt.yaml",
+    "standard": "21 CFR 820",
+    "old_version": "unknown",
+    "new_version": "2024",
+    "gap_analysis": "Prompt needs review against new clauses in 21 CFR 820 2024"
+  }
+]

@@ -140,6 +140,8 @@ def main():
                 m["standard"]: m["version"] for m in rec.get("compliance_mappings", [])
             }
 
+    processed_files = set()
+
     for prompt_file in iter_prompt_files():
         text = prompt_file.read_text(encoding="utf-8")
         found_standards = extract_standards(text, kb)
@@ -159,11 +161,13 @@ def main():
         
         found_standards = list(set(found_standards))
         
+        rel_path = str(prompt_file.relative_to(ROOT))
+        
         if found_standards:
             prompt_hash = hash_file(prompt_file)
             prompt_data = load_yaml(prompt_file)
             prompt_version = prompt_data.get('version', '1.0.0')
-            rel_path = str(prompt_file.relative_to(ROOT))
+            processed_files.add(rel_path)
             
             mappings = []
             for std in found_standards:
@@ -183,6 +187,18 @@ def main():
                                 "new_version": curr_version,
                                 "gap_analysis": f"Prompt needs review against new clauses in {std} {curr_version}"
                             })
+                            
+            # Check for missing standards that were previously present
+            if previous_snapshot_id and rel_path in prev_mappings:
+                for prev_std, prev_version in prev_mappings[rel_path].items():
+                    if prev_std not in found_standards:
+                        gap_report.append({
+                            "prompt_file": rel_path,
+                            "standard": prev_std,
+                            "old_version": prev_version,
+                            "new_version": None,
+                            "gap_analysis": f"Regulatory mapping for {prev_std} was removed or is missing."
+                        })
                 else:
                     mappings.append({
                         "standard": std,
@@ -201,6 +217,30 @@ def main():
                 "compliance_mappings": mappings
             }
             snapshot_records.append(record)
+            
+        elif previous_snapshot_id and rel_path in prev_mappings:
+            # File exists but all its standards were removed
+            for prev_std, prev_version in prev_mappings[rel_path].items():
+                gap_report.append({
+                    "prompt_file": rel_path,
+                    "standard": prev_std,
+                    "old_version": prev_version,
+                    "new_version": None,
+                    "gap_analysis": f"Regulatory mapping for {prev_std} was removed or is missing."
+                })
+            processed_files.add(rel_path)
+
+    if previous_snapshot_id:
+        for prev_file, stds in prev_mappings.items():
+            if prev_file not in processed_files:
+                for prev_std, prev_version in stds.items():
+                    gap_report.append({
+                        "prompt_file": prev_file,
+                        "standard": prev_std,
+                        "old_version": prev_version,
+                        "new_version": None,
+                        "gap_analysis": f"File removed or missing. Regulatory mapping for {prev_std} lost."
+                    })
 
     manifest_data[snapshot_id] = snapshot_records
     
