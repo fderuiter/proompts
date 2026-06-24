@@ -46,10 +46,27 @@ else:
     except Exception as e:
         st.error(f"Failed to load file: {e}")
         st.stop()
-    st.subheader(f"Editing: {selected_file}")
+st.subheader(f"Editing: {selected_file}")
 
-name = st.text_input("Name", value=data.get('name', ''))
-description = st.text_area("Description", value=data.get('description', ''))
+# Load schema to dynamically generate UI
+schema_path = os.path.join(base_dir, "docs", "schemas", "workflow.schema.json")
+schema = {}
+if os.path.exists(schema_path):
+    with open(schema_path, 'r') as f:
+        schema = json.load(f)
+
+properties = schema.get("properties", {})
+for field_name, field_info in properties.items():
+    if field_name not in ["inputs", "steps"]:
+        val = data.get(field_name, "")
+        label = field_info.get("description", field_name)
+        if field_info.get("type") == "string":
+            if "description" in field_name.lower():
+                data[field_name] = st.text_area(label, value=val)
+            else:
+                data[field_name] = st.text_input(label, value=val)
+        elif field_info.get("type") == "boolean":
+            data[field_name] = st.checkbox(label, value=bool(val))
 
 # Global Inputs Editor
 st.subheader("Global Inputs")
@@ -116,9 +133,6 @@ for i, step in enumerate(st.session_state['wf_steps']):
                 st.markdown(f"`{req_var}`")
             with mapping_col2:
                 # Provide a selectbox for easy picking, but allow custom text input as well
-                # Streamlit selectbox doesn't allow custom values easily unless we use a combo of select and text input.
-                
-                # Check if current_val is in options
                 options = list(available_mappings)
                 if current_val and current_val not in options:
                     options.append(current_val)
@@ -127,6 +141,67 @@ for i, step in enumerate(st.session_state['wf_steps']):
                 selected_mapping = st.selectbox(f"Map for {req_var}", options, index=sel_index, key=f"map_{i}_{req_var}")
                 st.session_state['wf_steps'][i]['map_inputs'][req_var] = selected_mapping
                 
+        st.markdown("**Step Transitions (Next)**")
+        if 'next' not in st.session_state['wf_steps'][i]:
+            st.session_state['wf_steps'][i]['next'] = []
+            
+        next_edges = st.session_state['wf_steps'][i]['next']
+        if not isinstance(next_edges, list):
+            # Normalize to list
+            if isinstance(next_edges, str):
+                next_edges = [{"target": next_edges}]
+            else:
+                next_edges = []
+            st.session_state['wf_steps'][i]['next'] = next_edges
+            
+        for e_idx, edge in enumerate(next_edges):
+            ecol1, ecol2, ecol3, ecol4 = st.columns([3, 2, 3, 1])
+            
+            # Logic Builder for condition
+            condition_str = edge.get("condition", "")
+            cond_var = ""
+            cond_op = "Always"
+            cond_val = ""
+            
+            if condition_str:
+                import re
+                m = re.match(r"\{\%\s*if\s+(.+)\s+(==|!=|>|<|>=|<=)\s+(.+)\s*\%\}true\{\%\s*endif\s*\%\}", condition_str)
+                if m:
+                    cond_var = m.group(1).strip()
+                    cond_op = m.group(2).strip()
+                    cond_val = m.group(3).strip().strip("'\"")
+                else:
+                    cond_op = "Custom Jinja2"
+                    cond_val = condition_str
+            
+            with ecol1:
+                if cond_op == "Custom Jinja2":
+                    st.text_input("Custom Condition", value=cond_val, key=f"cond_custom_{i}_{e_idx}", disabled=True)
+                else:
+                    target_var = st.selectbox("Condition Source", [""] + available_mappings, index=(available_mappings.index(f"{{{{{cond_var}}}}}") if f"{{{{{cond_var}}}}}" in available_mappings else 0) if cond_var else 0, key=f"cond_src_{i}_{e_idx}")
+            with ecol2:
+                selected_op = st.selectbox("Operator", ["Always", "==", "!=", ">", "<", "Custom Jinja2"], index=["Always", "==", "!=", ">", "<", "Custom Jinja2"].index(cond_op) if cond_op in ["Always", "==", "!=", ">", "<", "Custom Jinja2"] else 0, key=f"cond_op_{i}_{e_idx}")
+            with ecol3:
+                if selected_op not in ["Always", "Custom Jinja2"]:
+                    selected_val = st.text_input("Value", value=cond_val, key=f"cond_val_{i}_{e_idx}")
+                    if target_var:
+                        stripped_var = target_var.replace("{{", "").replace("}}", "")
+                        st.session_state['wf_steps'][i]['next'][e_idx]["condition"] = f"{{% if {stripped_var} {selected_op} '{selected_val}' %}}true{{% endif %}}"
+                elif selected_op == "Always":
+                    if "condition" in st.session_state['wf_steps'][i]['next'][e_idx]:
+                        del st.session_state['wf_steps'][i]['next'][e_idx]["condition"]
+                        
+            with ecol4:
+                # Target step
+                all_step_ids = [s.get("step_id") for s in st.session_state['wf_steps'] if s.get("step_id")]
+                target_idx = all_step_ids.index(edge.get("target")) if edge.get("target") in all_step_ids else 0
+                selected_target = st.selectbox("Target", all_step_ids, index=target_idx if all_step_ids else 0, key=f"cond_tgt_{i}_{e_idx}")
+                st.session_state['wf_steps'][i]['next'][e_idx]["target"] = selected_target
+
+        if st.button("Add Branch", key=f"add_branch_{i}"):
+            st.session_state['wf_steps'][i]['next'].append({"target": ""})
+            st.rerun()
+            
         if st.button("Remove Step", key=f"del_step_{i}"):
             st.session_state['wf_steps'].pop(i)
             st.rerun()
@@ -148,6 +223,15 @@ if steps:
         step_id = step.get('step_id', 'unknown')
         p_file = os.path.basename(step.get("prompt_file", ""))
         graph += f'  "{step_id}" [label="{step_id}\\n({p_file})"];\n'
+        
+        # Draw control flow edges based on 'next'
+        for next_edge in step.get('next', []):
+            if isinstance(next_edge, dict) and next_edge.get('target'):
+                target = next_edge.get('target')
+                condition = "conditional" if next_edge.get('condition') else "unconditional"
+                graph += f'  "{step_id}" -> "{target}" [color="red", style="dashed", label="{condition}"];\n'
+            elif isinstance(next_edge, str) and next_edge:
+                graph += f'  "{step_id}" -> "{next_edge}" [color="red", style="dashed", label="unconditional"];\n'
         
         # Draw edges based on inputs
         for input_var, input_val in step.get('map_inputs', {}).items():
@@ -175,8 +259,6 @@ if st.button("Save Workflow", type="primary"):
         st.error("File path must end with .workflow.yaml")
     else:
         try:
-            data['name'] = name
-            data['description'] = description
             data['inputs'] = edited_inputs_df.to_dict('records')
             data['steps'] = st.session_state['wf_steps']
             

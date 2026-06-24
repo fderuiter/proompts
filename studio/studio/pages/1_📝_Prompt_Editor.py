@@ -54,11 +54,31 @@ else:
     except Exception as e:
         st.error(f"Failed to load file: {e}")
         st.stop()
-    st.subheader(f"Editing: {selected_file}")
+st.subheader(f"Editing: {selected_file}")
 
-name = st.text_input("Name", value=data.get('name', ''))
-description = st.text_area("Description", value=data.get('description', ''))
-model = st.text_input("Model", value=data.get('model', ''))
+# Dynamically generate basic fields from schema
+basic_fields = ['name', 'description', 'model', 'version', 'safety_opt_out']
+for field_name in basic_fields:
+    field_info = PromptSchema.model_fields.get(field_name)
+    if not field_info: continue
+    
+    label = field_info.description or field_name
+    val = data.get(field_name, field_info.default if field_info.default is not ... else "")
+    
+    import typing
+    # Handle typing for Pydantic 2
+    if getattr(field_info.annotation, '__origin__', None) is typing.Union and type(None) in getattr(field_info.annotation, '__args__', []):
+        type_hint = getattr(field_info.annotation, '__args__')[0]
+    else:
+        type_hint = field_info.annotation
+        
+    if type_hint == str:
+        if field_name == "description":
+            data[field_name] = st.text_area(label, value=val or "")
+        else:
+            data[field_name] = st.text_input(label, value=val or "")
+    elif type_hint == bool:
+        data[field_name] = st.checkbox(label, value=bool(val))
 
 st.subheader("Model Parameters")
 model_params = data.get('modelParameters', {})
@@ -97,22 +117,120 @@ if st.button("Add Message"):
     st.rerun()
 
 st.subheader("Test Data & Evaluators")
-test_data_str = st.text_area("Test Data (JSON)", value=json.dumps(data.get('testData', []), indent=2), height=150)
-evaluators_str = st.text_area("Evaluators (JSON)", value=json.dumps(data.get('evaluators', []), indent=2), height=100)
+
+if 'testData' not in st.session_state:
+    st.session_state['testData'] = data.get('testData', [])
+if 'evaluators' not in st.session_state:
+    st.session_state['evaluators'] = data.get('evaluators', [])
+
+if 'current_file_td' not in st.session_state or st.session_state['current_file_td'] != selected_file:
+    st.session_state['current_file_td'] = selected_file
+    st.session_state['testData'] = data.get('testData', [])
+    st.session_state['evaluators'] = data.get('evaluators', [])
+
+st.markdown("### Test Data")
+for i, td in enumerate(st.session_state['testData']):
+    with st.expander(f"Test Case {i+1}"):
+        col1, col2, col3 = st.columns([4, 4, 1])
+        with col1:
+            st.markdown("**Inputs**")
+            inputs_json = td.get('inputs', td.get('input', {}))
+            
+            # Dynamically generate fields based on defined variables
+            updated_inputs = {}
+            for var in data.get('variables', []):
+                var_name = var.get('name')
+                if var_name:
+                    updated_inputs[var_name] = st.text_input(f"{var_name}", value=inputs_json.get(var_name, ""), key=f"td_inputs_{i}_{var_name}")
+            
+            if 'input' in td:
+                st.session_state['testData'][i]['input'] = updated_inputs
+            else:
+                st.session_state['testData'][i]['inputs'] = updated_inputs
+        with col2:
+            st.session_state['testData'][i]['expected'] = st.text_area(f"Expected Output", value=str(td.get('expected', '')), key=f"td_expected_{i}")
+        with col3:
+            if st.button("X", key=f"del_td_{i}"):
+                st.session_state['testData'].pop(i)
+                st.rerun()
+
+if st.button("Add Test Case"):
+    st.session_state['testData'].append({"inputs": {}, "expected": ""})
+    st.rerun()
+
+st.markdown("### Evaluators")
+for i, ev in enumerate(st.session_state['evaluators']):
+    with st.expander(f"Evaluator: {ev.get('name', 'New')}"):
+        col1, col2, col3 = st.columns([3, 6, 1])
+        with col1:
+            st.session_state['evaluators'][i]['name'] = st.text_input(f"Name", value=ev.get('name', ''), key=f"ev_name_{i}")
+        with col2:
+            st.markdown("**Logic Builder**")
+            
+            # Pre-parse common patterns from existing python strings
+            py_logic = ev.get('python', '')
+            eval_type = "Custom Python"
+            eval_target = ""
+            eval_value = ""
+            
+            if py_logic.startswith("len(output) > ") and py_logic[14:].isdigit():
+                eval_type = "Length >"
+                eval_value = py_logic[14:]
+            elif py_logic.startswith("len(output) < ") and py_logic[14:].isdigit():
+                eval_type = "Length <"
+                eval_value = py_logic[14:]
+            elif " in output" in py_logic and py_logic.startswith("'") and py_logic.split("'")[1]:
+                eval_type = "Contains"
+                eval_value = py_logic.split("'")[1]
+            elif " not in output" in py_logic and py_logic.startswith("'"):
+                eval_type = "Does Not Contain"
+                eval_value = py_logic.split("'")[1]
+            elif py_logic.startswith("re.search(") and "output" in py_logic:
+                eval_type = "Regex Match"
+                try:
+                    eval_value = py_logic.split("r'")[1].split("',")[0]
+                except:
+                    eval_value = ""
+            
+            subcol1, subcol2 = st.columns(2)
+            with subcol1:
+                sel_type = st.selectbox("Rule Type", ["Contains", "Does Not Contain", "Regex Match", "Length >", "Length <", "Custom Python"], index=["Contains", "Does Not Contain", "Regex Match", "Length >", "Length <", "Custom Python"].index(eval_type) if eval_type in ["Contains", "Does Not Contain", "Regex Match", "Length >", "Length <", "Custom Python"] else 5, key=f"ev_type_{i}")
+            
+            with subcol2:
+                if sel_type != "Custom Python":
+                    val = st.text_input("Value", value=eval_value, key=f"ev_val_{i}")
+                    if sel_type == "Contains":
+                        st.session_state['evaluators'][i]['python'] = f"'{val}' in output"
+                    elif sel_type == "Does Not Contain":
+                        st.session_state['evaluators'][i]['python'] = f"'{val}' not in output"
+                    elif sel_type == "Regex Match":
+                        st.session_state['evaluators'][i]['python'] = f"re.search(r'{val}', output)"
+                    elif sel_type == "Length >":
+                        st.session_state['evaluators'][i]['python'] = f"len(output) > {val if val.isdigit() else 0}"
+                    elif sel_type == "Length <":
+                        st.session_state['evaluators'][i]['python'] = f"len(output) < {val if val.isdigit() else 0}"
+                else:
+                    st.session_state['evaluators'][i]['python'] = st.text_area("Custom Python", value=py_logic, key=f"ev_py_{i}")
+        with col3:
+            if st.button("X", key=f"del_ev_{i}"):
+                st.session_state['evaluators'].pop(i)
+                st.rerun()
+
+if st.button("Add Evaluator"):
+    st.session_state['evaluators'].append({"name": "", "python": ""})
+    st.rerun()
 
 if st.button("Save Changes", type="primary"):
     if not new_file_path.endswith('.prompt.yaml'):
         st.error("File path must end with .prompt.yaml")
     else:
         try:
-            data['name'] = name
-            data['description'] = description
-            data['model'] = model
             data['modelParameters'].update({"temperature": temperature, "max_tokens": max_tokens})
             data['variables'] = edited_var_df.to_dict('records')
             data['messages'] = st.session_state['messages']
-            data['testData'] = json.loads(test_data_str)
-            data['evaluators'] = json.loads(evaluators_str)
+            data['testData'] = st.session_state['testData']
+            data['evaluators'] = st.session_state['evaluators']
+
             
             # Real-time validation
             PromptSchema(**data)
