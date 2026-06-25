@@ -197,6 +197,115 @@ class DocumentationGenerator:
         self.items: List[DocItem] = []
         self.prompt_to_workflows: Dict[Path, List[Dict[str, Any]]] = {}
 
+    def build_tool_registry(self, check_mode: bool = False) -> bool:
+        prompts_dir = self.root / CONFIG['dirs']['prompts']
+        docs_dir = self.root / CONFIG['dirs']['docs']
+        
+        manifested_tool_stems = set()
+        manifests = []
+        
+        from promptops.utils import iter_skill_manifests, parse_skill_manifest, iter_prompt_files
+        import hashlib
+        for path in iter_skill_manifests(str(prompts_dir)):
+            try:
+                manifest = parse_skill_manifest(path)
+                domain = manifest["metadata"].get("domain") or path.parent.name
+                manifests.append({"path": path, "domain": domain, "skills": manifest["skills"]})
+                for skill in manifest["skills"]:
+                    stem = re.sub(r'[^a-zA-Z0-9_-]', '_', skill["name"]).lower().strip('_')
+                    manifested_tool_stems.add(stem)
+            except Exception:
+                pass
+
+        tools_info = []
+        for path in iter_prompt_files(str(prompts_dir)):
+            try:
+                content = load_yaml(str(path))
+            except Exception:
+                continue
+            
+            name = content.get('name')
+            if not name:
+                name = path.name.replace(".prompt.yaml", "")
+                
+            original_name = name
+            name = re.sub(r'[^a-zA-Z0-9_-]', '_', name)
+            name = re.sub(r'_+', '_', name)
+            name = name.strip('_')
+            
+            hashed = False
+            if len(name) > 64:
+                h = hashlib.md5(str(path).encode()).hexdigest()[:6]
+                name = name[:57] + "_" + h
+                hashed = True
+                
+            tool_name = name
+            
+            overridden = False
+            overriding_manifest = None
+            if tool_name.lower() in manifested_tool_stems and (path.parent / "skills.md").exists():
+                overridden = True
+                overriding_manifest = str(path.parent / "skills.md")
+                
+            tools_info.append({
+                "path": str(path.relative_to(self.root)),
+                "original_name": original_name,
+                "tool_name": tool_name,
+                "hashed": hashed,
+                "overridden": overridden,
+                "overriding_manifest": str(Path(overriding_manifest).relative_to(self.root)) if overriding_manifest else None
+            })
+        
+        md = [
+            "---",
+            "title: Tool Registry",
+            "---",
+            "",
+            "# Automated Tool Registry",
+            "",
+            "This registry provides a complete view of how prompt files map to MCP tools.",
+            "",
+            "## Live Reloading Feature",
+            "",
+            "The MCP server includes watchdog-based hot-reloading capabilities. When you modify, add, or delete `.prompt.yaml` or `skills.md` files in the `prompts` directory, the server detects these changes and automatically updates the agent. You do not need to restart your Claude Desktop application or the MCP server for the changes to propagate.",
+            "",
+            "## Discovered Tools",
+            "",
+            "| Original Name | Transformed Name | Status |",
+            "|---------------|------------------|--------|"
+        ]
+        
+        for t in sorted(tools_info, key=lambda x: x["original_name"]):
+            status = []
+            if t["hashed"]:
+                status.append("Hashed (Length > 64)")
+            if t["overridden"]:
+                status.append(f"Overridden by `{t['overriding_manifest']}`")
+            if not status:
+                if t["original_name"] != t["tool_name"]:
+                    status.append("Sanitized")
+                else:
+                    status.append("OK")
+                    
+            status_str = ", ".join(status)
+            md.append(f"| `{t['original_name']}` | `{t['tool_name']}` | {status_str} |")
+            
+        out_path = docs_dir / "tool_registry.md"
+        content = "\n".join(md) + "\n"
+        
+        if check_mode:
+            if not out_path.exists():
+                print(f"❌ Missing file: {out_path}")
+                return True
+            elif out_path.read_text(encoding='utf-8') != content:
+                print(f"❌ Content mismatch: {out_path}")
+                return True
+            return False
+        else:
+            out_path.write_text(content, encoding='utf-8')
+            print(f"✅ Updated {out_path}")
+            return False
+
     def _build_relational_index(self):
         wf_dir = self.root / CONFIG['dirs']['workflows']
         if not wf_dir.exists():
@@ -560,6 +669,7 @@ def main() -> None:
     changes = gen.scan_prompts(check_mode=args.check)
     changes |= gen.scan_workflows(check_mode=args.check)
     changes |= gen.build_indices(check_mode=args.check)
+    changes |= gen.build_tool_registry(check_mode=args.check)
     
     if args.check:
         if changes:

@@ -5,6 +5,7 @@ tags:
   - mirrlees
   - optimal-taxation
   - public-economics
+  - skill
   - theory
 ---
 
