@@ -62,46 +62,6 @@ Asserted Output: "- "
 
 ---
 
-## Skill: Simulated Clinical Scenario Debrief
-<!-- VALIDATION_METADATA: [{"name": "procedure_notes", "description": "any notes from the session", "required": true}] -->
-### Description
-Provide constructive feedback after a simulated clinical scenario.
-
-### Execution Context (Inputs)
-| Variable | Type | Description | Required |
-| :--- | :--- | :--- | :--- |
-| `procedure_notes` | String | any notes from the session | Yes |
-
-
-### Core Instructions
-```text
-[SYSTEM]
-The trainee has completed an endoscopic device insertion on a cadaver model.
-
-Keep feedback concise and encouraging.
-
-[USER]
-1. Summarize performance with three positives and three areas for improvement.
-2. Ask one follow-up reflective question.
-3. Offer a corrective tip with brief rationale.
-4. Maintain a professional, supportive tone.
-
-Inputs:
-- `{{ procedure_notes }}` — any notes from the session
-
-Output format:
-Bullet points followed by a short reflective question.
-```
-
-### Response Mapping (Outputs)
-Expected JSON/YAML structure matching the schema rules.
-
-### Few-Shot Assertions
-Input Context: "{procedure_notes: example_procedure_notes}"
-Asserted Output: "- "
-
----
-
 ## Skill: Objective Skills Assessment
 <!-- VALIDATION_METADATA: [{"name": "procedure_name", "description": "specific stapler procedure if provided", "required": true}] -->
 ### Description
@@ -141,3 +101,43 @@ Expected JSON/YAML structure matching the schema rules.
 ### Few-Shot Assertions
 Input Context: "{procedure_name: example_procedure_name}"
 Asserted Output: "Markdown table:"
+
+---
+
+## Skill: Simulated Clinical Scenario Debrief
+<!-- VALIDATION_METADATA: [{"name": "procedure_notes", "description": "any notes from the session", "required": true}] -->
+### Description
+Provide constructive feedback after a simulated clinical scenario.
+
+### Execution Context (Inputs)
+| Variable | Type | Description | Required |
+| :--- | :--- | :--- | :--- |
+| `procedure_notes` | String | any notes from the session | Yes |
+
+
+### Core Instructions
+```text
+[SYSTEM]
+The trainee has completed an endoscopic device insertion on a cadaver model.
+
+Keep feedback concise and encouraging.
+
+[USER]
+1. Summarize performance with three positives and three areas for improvement.
+2. Ask one follow-up reflective question.
+3. Offer a corrective tip with brief rationale.
+4. Maintain a professional, supportive tone.
+
+Inputs:
+- `{{ procedure_notes }}` — any notes from the session
+
+Output format:
+Bullet points followed by a short reflective question.
+```
+
+### Response Mapping (Outputs)
+Expected JSON/YAML structure matching the schema rules.
+
+### Few-Shot Assertions
+Input Context: "{procedure_notes: example_procedure_notes}"
+Asserted Output: "- "
