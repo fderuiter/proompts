@@ -11,7 +11,7 @@ metadata:
     - computational-biology
     - crispr
     - cas9
-    - off
+    - "off"
     - target
     - skill
   requires_context: true
