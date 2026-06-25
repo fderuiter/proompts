@@ -1,12 +1,19 @@
----
 name: signal_detection_evaluator
 version: 1.0.0
-description: A rigorous prompt for evaluating and validating pharmacovigilance safety signals based on quantitative and qualitative data.
+description: A rigorous prompt for evaluating and validating pharmacovigilance 
+  safety signals based on quantitative and qualitative data.
 authors:
   - Strategic Genesis Architect
 metadata:
   domain: clinical/pharmacovigilance
   complexity: high
+  tags:
+    - pharmacovigilance
+    - signal
+    - detection
+    - evaluator
+    - skill
+  requires_context: true
 variables:
   - name: safety_data
     type: string
@@ -41,8 +48,10 @@ messages:
       </reference_safety_information>
 testData:
   - variables:
-      safety_data: "15 cases of Stevens-Johnson Syndrome reported with drug X in the past quarter. PRR: 4.5."
-      reference_safety_information: "SJS is not currently listed as an expected adverse event."
+      safety_data: "15 cases of Stevens-Johnson Syndrome reported with drug X in the
+        past quarter. PRR: 4.5."
+      reference_safety_information: "SJS is not currently listed as an expected adverse
+        event."
 evaluators:
   - type: contains
     value: "validated"

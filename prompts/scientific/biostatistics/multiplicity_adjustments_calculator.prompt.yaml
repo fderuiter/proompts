@@ -1,87 +1,90 @@
 name: Multiplicity Adjustment Code Generator
 version: 0.1.0
-description: Generate SAS code for multiplicity adjustments (Bonferroni, Holm, Hochberg).
+description: Generate SAS code for multiplicity adjustments (Bonferroni, Holm, 
+  Hochberg).
 metadata:
   domain: scientific
   complexity: medium
   tags:
-  - biostatistics
-  - multiplicity
-  - adjustment
-  - code
-  - generator
+    - biostatistics
+    - multiplicity
+    - adjustment
+    - code
+    - generator
+    - skill
   requires_context: false
 variables:
-- name: dataset
-  description: The data or dataset to analyze
-  required: true
-- name: p_value_var
-  description: The p value var to use for this prompt
-  required: true
-- name: treatment_var
-  description: The treatment var to use for this prompt
-  required: true
+  - name: dataset
+    description: The data or dataset to analyze
+    required: true
+  - name: p_value_var
+    description: The p value var to use for this prompt
+    required: true
+  - name: treatment_var
+    description: The treatment var to use for this prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.1
 messages:
-- role: system
-  content: 'You are a Senior Biostatistician. Your task is to provide a SAS code snippet
-    using PROC MULTTEST to calculate adjusted p-values for a clinical trial with multiple
-    dose-placebo comparisons.
+  - role: system
+    content: 'You are a Senior Biostatistician. Your task is to provide a SAS code
+      snippet using PROC MULTTEST to calculate adjusted p-values for a clinical trial
+      with multiple dose-placebo comparisons.
 
 
-    Specifically, include the code to implement the following procedures for Family-Wise
-    Error Rate (FWER) control:
+      Specifically, include the code to implement the following procedures for Family-Wise
+      Error Rate (FWER) control:
 
-    1.  **Bonferroni**
+      1.  **Bonferroni**
 
-    2.  **Holm** (Step-down Bonferroni)
+      2.  **Holm** (Step-down Bonferroni)
 
-    3.  **Hochberg** (Step-up Bonferroni)
-
-
-    Ensure the code is clear, commented, and wrapped in a SAS code block (```sas).
-
-    '
-- role: user
-  content: '<dataset_name>
-
-    {{dataset}}
-
-    </dataset_name>
+      3.  **Hochberg** (Step-up Bonferroni)
 
 
-    <treatment_variable>
+      Ensure the code is clear, commented, and wrapped in a SAS code block (```sas).
 
-    {{treatment_var}}
+      '
+  - role: user
+    content: '<dataset_name>
 
-    </treatment_variable>
+      {{dataset}}
 
-
-    <p_value_variable>
-
-    {{p_value_var}}
-
-    </p_value_variable>
+      </dataset_name>
 
 
-    Generate the SAS code.
+      <treatment_variable>
 
-    '
+      {{treatment_var}}
+
+      </treatment_variable>
+
+
+      <p_value_variable>
+
+      {{p_value_var}}
+
+      </p_value_variable>
+
+
+      Generate the SAS code.
+
+      '
 testData:
-- expected: SAS code using PROC MULTTEST with options BONFERRONI, HOLM, HOCHBERG.
-  vars: 'dataset: adsl_pvals
+  - expected: SAS code using PROC MULTTEST with options BONFERRONI, HOLM, 
+      HOCHBERG.
+    vars: 'dataset: adsl_pvals
 
-    treatment_var: trt01p
+      treatment_var: trt01p
 
-    p_value_var: pval
+      p_value_var: pval
 
-    '
+      '
 evaluators:
-- name: PROC MULTTEST Check
-  regex:
-    pattern: (?i)PROC MULTTEST
-- name: Methods Check
-  regex:
-    pattern: (?i)(BONFERRONI|HOLM|HOCHBERG)
+  - name: PROC MULTTEST Check
+    regex:
+      pattern: (?i)PROC MULTTEST
+  - name: Methods Check
+    regex:
+      pattern: (?i)(BONFERRONI|HOLM|HOCHBERG)

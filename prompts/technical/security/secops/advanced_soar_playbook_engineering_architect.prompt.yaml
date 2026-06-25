@@ -1,7 +1,8 @@
----
 name: Advanced SOAR Playbook Engineering Architect
 version: 1.0.0
-description: Formulates precise, highly complex, and automated Security Orchestration, Automation, and Response (SOAR) playbooks for resolving advanced security incidents while minimizing Mean Time to Respond (MTTR).
+description: Formulates precise, highly complex, and automated Security 
+  Orchestration, Automation, and Response (SOAR) playbooks for resolving 
+  advanced security incidents while minimizing Mean Time to Respond (MTTR).
 authors:
   - Cybersecurity Genesis Architect
 metadata:
@@ -13,18 +14,26 @@ metadata:
     - incident-response
     - automation
     - cybersecurity
+    - skill
+  requires_context: true
 variables:
   - name: incident_type
     type: string
-    description: The specific category of the security incident (e.g., Ransomware Outbreak, Cloud Data Exfiltration, Insider Threat Anomaly, APT Lateral Movement).
+    description: The specific category of the security incident (e.g., 
+      Ransomware Outbreak, Cloud Data Exfiltration, Insider Threat Anomaly, APT 
+      Lateral Movement).
     required: true
   - name: environment_stack
     type: string
-    description: Details of the technical environment, including SIEM, EDR, Firewall, IAM providers, and specific SOAR platform in use (e.g., Splunk SOAR, Cortex XSOAR, Azure Sentinel).
+    description: Details of the technical environment, including SIEM, EDR, 
+      Firewall, IAM providers, and specific SOAR platform in use (e.g., Splunk 
+      SOAR, Cortex XSOAR, Azure Sentinel).
     required: true
   - name: operational_constraints
     type: string
-    description: Restrictions on automation limits, such as requiring human-in-the-loop (HITL) approvals for destructive actions (e.g., isolating core business servers) vs. fully autonomous containment.
+    description: Restrictions on automation limits, such as requiring 
+      human-in-the-loop (HITL) approvals for destructive actions (e.g., 
+      isolating core business servers) vs. fully autonomous containment.
     required: true
 model: gpt-4o
 modelParameters:
@@ -62,14 +71,22 @@ messages:
 testData:
   - inputs:
       incident_type: "Suspected APT Lateral Movement via Pass-the-Hash"
-      environment_stack: "Splunk Enterprise Security (SIEM), CrowdStrike Falcon (EDR), Palo Alto Panorama, Microsoft Entra ID. SOAR platform: Cortex XSOAR."
-      operational_constraints: "Autonomous endpoint isolation is permitted for workstations. However, isolating Domain Controllers or critical database servers requires Tier 3 SOC Analyst HITL approval via Slack/Teams webhook."
-    expected: "Contains references to Cortex XSOAR, CrowdStrike API actions for containment, and explicit conditional logic for HITL approval when isolating Domain Controllers."
+      environment_stack: "Splunk Enterprise Security (SIEM), CrowdStrike Falcon (EDR),
+        Palo Alto Panorama, Microsoft Entra ID. SOAR platform: Cortex XSOAR."
+      operational_constraints: "Autonomous endpoint isolation is permitted for workstations.
+        However, isolating Domain Controllers or critical database servers requires
+        Tier 3 SOC Analyst HITL approval via Slack/Teams webhook."
+    expected: "Contains references to Cortex XSOAR, CrowdStrike API actions for containment,
+      and explicit conditional logic for HITL approval when isolating Domain Controllers."
   - inputs:
       incident_type: "AWS S3 Bucket Mass Data Exfiltration Anomaly"
-      environment_stack: "AWS CloudTrail, GuardDuty, Splunk SIEM, AWS IAM. SOAR platform: Splunk SOAR."
-      operational_constraints: "Zero autonomous destructive actions. Playbook must enrich AWS API logs, correlate with IAM roles, and present a containment decision (revoke IAM role, block IP via WAF) to an incident commander."
-    expected: "Contains AWS specific enrichment (CloudTrail/IAM) and clearly outlines a fully manual (HITL) containment decision phase."
+      environment_stack: "AWS CloudTrail, GuardDuty, Splunk SIEM, AWS IAM. SOAR platform:
+        Splunk SOAR."
+      operational_constraints: "Zero autonomous destructive actions. Playbook must
+        enrich AWS API logs, correlate with IAM roles, and present a containment decision
+        (revoke IAM role, block IP via WAF) to an incident commander."
+    expected: "Contains AWS specific enrichment (CloudTrail/IAM) and clearly outlines
+      a fully manual (HITL) containment decision phase."
 evaluators:
   - type: regex_match
     pattern: "(?i)Human-in-the-Loop|HITL|approval"

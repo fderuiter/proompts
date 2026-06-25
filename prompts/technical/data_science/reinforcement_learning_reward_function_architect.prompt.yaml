@@ -1,7 +1,7 @@
----
 name: Reinforcement Learning Reward Function Architect
 version: 1.0.0
-description: Designs mathematically rigorous, sparse/dense reward structures for multi-agent RL environments, explicitly mitigating reward hacking.
+description: Designs mathematically rigorous, sparse/dense reward structures for
+  multi-agent RL environments, explicitly mitigating reward hacking.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +13,19 @@ metadata:
     - reward-function
     - multi-agent
     - architecture
+    - skill
   requires_context: false
 variables:
   - name: environment_dynamics
-    description: Detailed description of the state space, action space, and transition dynamics of the multi-agent environment.
+    description: Detailed description of the state space, action space, and 
+      transition dynamics of the multi-agent environment.
     required: true
   - name: agent_objectives
     description: The primary goals and secondary constraints for the agents.
     required: true
   - name: known_exploits
-    description: Historical or theoretical reward hacking vectors that must be mitigated.
+    description: Historical or theoretical reward hacking vectors that must be 
+      mitigated.
     required: true
 model: gpt-4o
 modelParameters:
@@ -60,14 +63,18 @@ messages:
       <known_exploits>{{known_exploits}}</known_exploits>
 testData:
   - inputs:
-      environment_dynamics: "Gridworld where agents must navigate to distinct target zones while avoiding collisions. State space includes coordinates and velocities."
+      environment_dynamics: "Gridworld where agents must navigate to distinct target
+        zones while avoiding collisions. State space includes coordinates and velocities."
       agent_objectives: "Maximize target reach rate while minimizing collision penalties."
-      known_exploits: "Agents may spin in place to accumulate survival bonuses if survival is positively rewarded without progress."
+      known_exploits: "Agents may spin in place to accumulate survival bonuses if
+        survival is positively rewarded without progress."
     expected: "F(s, a, s')"
   - inputs:
-      environment_dynamics: "Partially observable environment with extreme latency and no access to the true goal state."
+      environment_dynamics: "Partially observable environment with extreme latency
+        and no access to the true goal state."
       agent_objectives: "Achieve the true goal state."
-      known_exploits: "Agents exploit the proxy metric completely uncorrelated with the true goal."
+      known_exploits: "Agents exploit the proxy metric completely uncorrelated with
+        the true goal."
     expected: "error"
 evaluators:
   - name: Terminology and Error Check

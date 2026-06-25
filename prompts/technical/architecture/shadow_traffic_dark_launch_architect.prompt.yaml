@@ -1,6 +1,18 @@
----
 name: Shadow Traffic and Dark Launch Architect
-description: Architects highly secure and robust shadow traffic and dark launching topologies for safe validation of new system versions using live production traffic.
+description: Architects highly secure and robust shadow traffic and dark 
+  launching topologies for safe validation of new system versions using live 
+  production traffic.
+metadata:
+  domain: technical
+  complexity: high
+  tags:
+    - architecture
+    - shadow
+    - traffic
+    - dark
+    - launch
+    - skill
+  requires_context: true
 authors:
   - Strategic Genesis Architect
 tags:
@@ -13,11 +25,14 @@ tags:
 version: 1.0.0
 variables:
   - name: current_architecture
-    description: A description of the current primary production architecture, including components, data stores, and third-party integrations.
+    description: A description of the current primary production architecture, 
+      including components, data stores, and third-party integrations.
   - name: target_deployment
-    description: A description of the new system version or component that needs to be validated using shadow traffic.
+    description: A description of the new system version or component that needs
+      to be validated using shadow traffic.
   - name: critical_constraints
-    description: Any hard constraints (e.g., latency limits on the primary path, strict prohibition of state mutations, specific PII obfuscation rules).
+    description: Any hard constraints (e.g., latency limits on the primary path,
+      strict prohibition of state mutations, specific PII obfuscation rules).
 model: claude-3-5-sonnet-20241022
 modelParameters:
   temperature: 0.1
@@ -70,9 +85,12 @@ messages:
       </critical_constraints>
 testData:
   - variables:
-      current_architecture: "A monolithic Ruby on Rails application backed by PostgreSQL, handling payments via Stripe."
-      target_deployment: "A new Go-based microservice designed to replace the core pricing calculation engine, currently embedded in the monolith."
-      critical_constraints: "The Go service must not charge actual credit cards via Stripe. Primary request latency cannot increase by more than 2ms."
+      current_architecture: "A monolithic Ruby on Rails application backed by PostgreSQL,
+        handling payments via Stripe."
+      target_deployment: "A new Go-based microservice designed to replace the core
+        pricing calculation engine, currently embedded in the monolith."
+      critical_constraints: "The Go service must not charge actual credit cards via
+        Stripe. Primary request latency cannot increase by more than 2ms."
     expected: "Envoy|Istio|Kafka|asynchronous|mock|stub"
 evaluators:
   - type: regex_match

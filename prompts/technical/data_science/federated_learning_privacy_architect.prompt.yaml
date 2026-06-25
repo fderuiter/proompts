@@ -1,7 +1,9 @@
----
 name: Federated Learning Differential Privacy Architect
 version: 1.0.0
-description: Designs highly secure, privacy-preserving Federated Learning architectures using rigorous Differential Privacy (DP), Secure Multi-Party Computation (SMPC), and Homomorphic Encryption (HE) for distributed data science pipelines.
+description: Designs highly secure, privacy-preserving Federated Learning 
+  architectures using rigorous Differential Privacy (DP), Secure Multi-Party 
+  Computation (SMPC), and Homomorphic Encryption (HE) for distributed data 
+  science pipelines.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -14,16 +16,20 @@ metadata:
     - smpc
     - cryptography
     - architecture
+    - skill
   requires_context: false
 variables:
   - name: network_topology
-    description: Detail regarding the client-server distribution, cross-silo vs cross-device nature, and communication bandwidth constraints.
+    description: Detail regarding the client-server distribution, cross-silo vs 
+      cross-device nature, and communication bandwidth constraints.
     required: true
   - name: privacy_budget
-    description: Strict constraints on epsilon (ε) and delta (δ) for differential privacy, and acceptable privacy-utility trade-offs.
+    description: Strict constraints on epsilon (ε) and delta (δ) for 
+      differential privacy, and acceptable privacy-utility trade-offs.
     required: true
   - name: threat_model
-    description: Assumed adversaries (e.g., honest-but-curious servers, malicious clients, data poisoning vectors, inference attacks).
+    description: Assumed adversaries (e.g., honest-but-curious servers, 
+      malicious clients, data poisoning vectors, inference attacks).
     required: true
 model: gpt-4o
 modelParameters:
@@ -58,16 +64,21 @@ messages:
       <threat_model>{{threat_model}}</threat_model>
 testData:
   - inputs:
-      network_topology: "Cross-silo federated learning across 5 major hospital networks with 10Gbps dedicated links. Synchronous updates."
+      network_topology: "Cross-silo federated learning across 5 major hospital networks
+        with 10Gbps dedicated links. Synchronous updates."
       privacy_budget: "Global DP requirement. ε = 1.0, δ = 1e-5."
-      threat_model: "Honest-but-curious aggregation server. Protection against membership inference attacks required."
+      threat_model: "Honest-but-curious aggregation server. Protection against membership
+        inference attacks required."
     expected: "SecAgg"
   - inputs:
-      network_topology: "Cross-device, 10 million mobile clients on edge networks with highly intermittent connectivity."
+      network_topology: "Cross-device, 10 million mobile clients on edge networks
+        with highly intermittent connectivity."
       privacy_budget: "Strict Local DP. ε = 0.005, δ = 0."
-      threat_model: "Malicious aggregation server and malicious clients attempting model poisoning."
+      threat_model: "Malicious aggregation server and malicious clients attempting
+        model poisoning."
     expected: "error"
 evaluators:
   - name: Cryptography and Privacy Terminology Check
     type: regex
-    pattern: "(?i)(Differential Privacy|DP|SMPC|Secure Aggregation|SecAgg|Homomorphic Encryption|error)"
+    pattern: "(?i)(Differential Privacy|DP|SMPC|Secure Aggregation|SecAgg|Homomorphic
+      Encryption|error)"

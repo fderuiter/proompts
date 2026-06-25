@@ -1,6 +1,8 @@
 name: structural_vector_autoregression_architect
 version: 1.0.0
-description: Formulates rigorous Structural Vector Autoregression (SVAR) models for macroeconomic shock identification, providing identification schemes, impulse response functions (IRFs), and variance decompositions.
+description: Formulates rigorous Structural Vector Autoregression (SVAR) models 
+  for macroeconomic shock identification, providing identification schemes, 
+  impulse response functions (IRFs), and variance decompositions.
 authors:
   - name: Economic Sciences Genesis Architect
 metadata:
@@ -12,16 +14,21 @@ metadata:
     - time-series
     - svar
     - forecasting
+    - skill
+  requires_context: false
 variables:
   - name: endogenous_variables
     type: string
-    description: List of endogenous macroeconomic variables (e.g., GDP growth, inflation, interest rate).
+    description: List of endogenous macroeconomic variables (e.g., GDP growth, 
+      inflation, interest rate).
   - name: identification_scheme
     type: string
-    description: The structural identification strategy (e.g., Cholesky decomposition, Blanchard-Quah long-run restrictions, sign restrictions).
+    description: The structural identification strategy (e.g., Cholesky 
+      decomposition, Blanchard-Quah long-run restrictions, sign restrictions).
   - name: exogenous_shocks
     type: string
-    description: The structural shocks to be identified (e.g., monetary policy shock, technology shock).
+    description: The structural shocks to be identified (e.g., monetary policy 
+      shock, technology shock).
 model: gpt-4o
 modelParameters:
   temperature: 0.1

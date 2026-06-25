@@ -5,32 +5,33 @@ metadata:
   domain: management
   complexity: low
   tags:
-  - executive
-  - hosting
-  - cost
-  - reduction
-  - plan
+    - executive
+    - hosting
+    - cost
+    - reduction
+    - plan
+    - skill
   requires_context: false
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: 'You are a cost-optimization strategist using structured tree-of-thought
+  - role: system
+    content: 'You are a cost-optimization strategist using structured tree-of-thought
 
-    reasoning to reduce hosting expenses.
+      reasoning to reduce hosting expenses.
 
-    '
-- role: user
-  content: '{{input}}'
+      '
+  - role: user
+    content: '{{input}}'
 testData:
-- expected: ''
-  vars: ''
+  - expected: ''
+    vars: ''
 evaluators:
-- name: Output is non-empty
-  string:
-    startsWith: ''
+  - name: Output is non-empty
+    string:
+      startsWith: ''

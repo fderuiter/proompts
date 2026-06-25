@@ -1,7 +1,8 @@
----
 name: Abbreviated New Drug Application (ANDA) Architect
 version: 1.0.0
-description: Formulates rigorous, compliant FDA Abbreviated New Drug Application (ANDA) eCTD submissions for generic drugs, ensuring strict adherence to 21 CFR 314 and demonstrating bioequivalence to a Reference Listed Drug (RLD).
+description: Formulates rigorous, compliant FDA Abbreviated New Drug Application
+  (ANDA) eCTD submissions for generic drugs, ensuring strict adherence to 21 CFR
+  314 and demonstrating bioequivalence to a Reference Listed Drug (RLD).
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -16,19 +17,24 @@ metadata:
     - submission
     - rld
     - regulatory-affairs
+    - skill
   requires_context: true
 variables:
   - name: generic_drug_name
-    description: The proposed generic drug name and active pharmaceutical ingredient.
+    description: The proposed generic drug name and active pharmaceutical 
+      ingredient.
     required: true
   - name: reference_listed_drug
-    description: The Reference Listed Drug (RLD) including its NDA number to which bioequivalence is being demonstrated.
+    description: The Reference Listed Drug (RLD) including its NDA number to 
+      which bioequivalence is being demonstrated.
     required: true
   - name: bioequivalence_summary
-    description: A high-level synthesis of in vivo or in vitro bioequivalence study outcomes.
+    description: A high-level synthesis of in vivo or in vitro bioequivalence 
+      study outcomes.
     required: true
   - name: q1_q2_formulation_details
-    description: Details regarding Qualitative (Q1) and Quantitative (Q2) formulation sameness to the RLD.
+    description: Details regarding Qualitative (Q1) and Quantitative (Q2) 
+      formulation sameness to the RLD.
     required: true
 model: gpt-4o
 modelParameters:
@@ -59,14 +65,27 @@ messages:
 testData:
   - generic_drug_name: Imatinib Mesylate Tablets, 100 mg and 400 mg
     reference_listed_drug: Gleevec (imatinib mesylate) Tablets, NDA 021588
-    bioequivalence_summary: Single-dose, randomized, two-period, two-sequence crossover fasting and fed studies demonstrating 90% CIs for Cmax and AUC within 80-125%.
-    q1_q2_formulation_details: The generic formulation is exactly Q1 and Q2 the same as the RLD, utilizing identical inactive ingredients in the same proportions.
-    expected: A structured ANDA blueprint highlighting bioequivalence (Module 5), CMC controls (Module 3), and Q1/Q2 sameness without clinical safety/efficacy trials.
+    bioequivalence_summary: Single-dose, randomized, two-period, two-sequence 
+      crossover fasting and fed studies demonstrating 90% CIs for Cmax and AUC 
+      within 80-125%.
+    q1_q2_formulation_details: The generic formulation is exactly Q1 and Q2 the 
+      same as the RLD, utilizing identical inactive ingredients in the same 
+      proportions.
+    expected: A structured ANDA blueprint highlighting bioequivalence (Module 
+      5), CMC controls (Module 3), and Q1/Q2 sameness without clinical 
+      safety/efficacy trials.
   - generic_drug_name: Albuterol Sulfate Inhalation Aerosol, 90 mcg/actuation
-    reference_listed_drug: ProAir HFA (albuterol sulfate) Inhalation Aerosol, NDA 021457
-    bioequivalence_summary: In vitro aerodynamic particle size distribution (APSD) studies and in vivo pharmacodynamic (bronchodilation) studies demonstrating equivalence per product-specific guidance.
-    q1_q2_formulation_details: Propellant and excipients match the RLD Q1/Q2 requirements; device actuation mechanisms mathematically correlated to the reference.
-    expected: A structured ANDA blueprint covering in vitro/in vivo BE strategies for complex drug-device combinations, emphasizing Module 3 device controls.
+    reference_listed_drug: ProAir HFA (albuterol sulfate) Inhalation Aerosol, 
+      NDA 021457
+    bioequivalence_summary: In vitro aerodynamic particle size distribution 
+      (APSD) studies and in vivo pharmacodynamic (bronchodilation) studies 
+      demonstrating equivalence per product-specific guidance.
+    q1_q2_formulation_details: Propellant and excipients match the RLD Q1/Q2 
+      requirements; device actuation mechanisms mathematically correlated to the
+      reference.
+    expected: A structured ANDA blueprint covering in vitro/in vivo BE 
+      strategies for complex drug-device combinations, emphasizing Module 3 
+      device controls.
 evaluators:
   - name: Mentions Module 3
     string:

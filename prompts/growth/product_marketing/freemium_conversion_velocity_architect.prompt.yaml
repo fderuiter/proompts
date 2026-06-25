@@ -1,17 +1,28 @@
----
 name: freemium_conversion_velocity_architect
 version: 1.0.0
-description: Mathematically models and optimizes Freemium-to-Paid conversion velocity using user telemetry, addressing product friction and monetization failures.
+description: Mathematically models and optimizes Freemium-to-Paid conversion 
+  velocity using user telemetry, addressing product friction and monetization 
+  failures.
 authors:
   - Growth Strategy Genesis Architect
 metadata:
   domain: growth/product_marketing
   complexity: high
+  tags:
+    - product-marketing
+    - freemium
+    - conversion
+    - velocity
+    - architect
+    - skill
+  requires_context: true
 variables:
   - name: user_telemetry
-    description: Behavioral data covering free tier usage, feature adoption rates, and drop-off points.
+    description: Behavioral data covering free tier usage, feature adoption 
+      rates, and drop-off points.
   - name: monetization_metrics
-    description: Current Free-to-Paid conversion rate, trial length, and upgrade trigger performance.
+    description: Current Free-to-Paid conversion rate, trial length, and upgrade
+      trigger performance.
   - name: financial_parameters
     description: Current ARPU, Churn Rate, Gross Margin, and Blended CAC.
 model: gpt-4o
@@ -49,18 +60,35 @@ messages:
       </financial_parameters>
 testData:
   - variables:
-      user_telemetry: "Users engage heavily with core features (Day 7 active: 70%), but advanced reporting features (gated) are only discovered by 12% of the free user base. 45% drop off immediately after hitting a hard paywall without context."
-      monetization_metrics: "Current Free-to-Paid conversion rate is 2.1%. Average time to convert is 42 days."
-      financial_parameters: "ARPU: $1200, Churn Rate: 4.2%, Gross Margin: 80%, Blended CAC: $850."
-    expected: "A comprehensive conversion optimization architecture mapping feature-level interventions to surface contextual upgrade triggers before hard paywalls, integrating AARRR constraints, and featuring exact LaTeX financial equations for Conversion Velocity ($V_c$), LTV, and ROAS."
+      user_telemetry: "Users engage heavily with core features (Day 7 active: 70%),
+        but advanced reporting features (gated) are only discovered by 12% of the
+        free user base. 45% drop off immediately after hitting a hard paywall without
+        context."
+      monetization_metrics: "Current Free-to-Paid conversion rate is 2.1%. Average
+        time to convert is 42 days."
+      financial_parameters: "ARPU: $1200, Churn Rate: 4.2%, Gross Margin: 80%, Blended
+        CAC: $850."
+    expected: "A comprehensive conversion optimization architecture mapping feature-level
+      interventions to surface contextual upgrade triggers before hard paywalls, integrating
+      AARRR constraints, and featuring exact LaTeX financial equations for Conversion
+      Velocity ($V_c$), LTV, and ROAS."
   - variables:
-      user_telemetry: "Insufficient or corrupted data: 'Null' values for all feature adoption metrics."
+      user_telemetry: "Insufficient or corrupted data: 'Null' values for all feature
+        adoption metrics."
       monetization_metrics: "N/A"
-      financial_parameters: "ARPU: N/A, Churn Rate: N/A, Gross Margin: N/A, Blended CAC: N/A."
-    expected: "An unvarnished assessment stating the telemetry is insufficient to model conversion velocity, refusing to hallucinate baseline metrics, while outlining the required mathematical framework (AARRR, LTV, ROAS, V_c in LaTeX) needed once valid usage data is secured."
+      financial_parameters: "ARPU: N/A, Churn Rate: N/A, Gross Margin: N/A, Blended
+        CAC: N/A."
+    expected: "An unvarnished assessment stating the telemetry is insufficient to
+      model conversion velocity, refusing to hallucinate baseline metrics, while outlining
+      the required mathematical framework (AARRR, LTV, ROAS, V_c in LaTeX) needed
+      once valid usage data is secured."
 evaluators:
   - "Output must explicitly contain the AARRR funnel framework applied to the data."
-  - "Output must contain the exact LaTeX formula for LTV: $LTV = \\frac{ARPU \\times \\text{Gross Margin}}{\\text{Churn Rate}}$"
-  - "Output must contain the exact LaTeX formula for ROAS: $ROAS = \\frac{\\text{Revenue}}{\\text{Cost}}$"
-  - "Output must contain the exact LaTeX formula for Conversion Velocity: $V_c = \\frac{\\text{Total Conversions}}{\\text{Time to Convert (Days)}}$"
-  - "Output must prescribe a specific, feature-level intervention matrix to optimize upgrade triggers or rigorously reject invalid data."
+  - "Output must contain the exact LaTeX formula for LTV: $LTV = \\frac{ARPU \\times
+    \\text{Gross Margin}}{\\text{Churn Rate}}$"
+  - "Output must contain the exact LaTeX formula for ROAS: $ROAS = \\frac{\\text{Revenue}}{\\\
+    text{Cost}}$"
+  - "Output must contain the exact LaTeX formula for Conversion Velocity: $V_c = \\
+    frac{\\text{Total Conversions}}{\\text{Time to Convert (Days)}}$"
+  - "Output must prescribe a specific, feature-level intervention matrix to optimize
+    upgrade triggers or rigorously reject invalid data."

@@ -1,21 +1,32 @@
----
 name: "vine_copula_dependency_architect"
 version: "1.0.0"
-description: "Acts as a Principal Statistician to mathematically formulate and optimize high-dimensional Vine Copula models for complex, asymmetrical multivariate dependencies."
+description: "Acts as a Principal Statistician to mathematically formulate and optimize
+  high-dimensional Vine Copula models for complex, asymmetrical multivariate dependencies."
 authors:
   - "Statistical Sciences Genesis Architect"
 metadata:
   domain: "statistical_sciences"
   complexity: "high"
+  tags:
+    - statistics
+    - modeling
+    - multivariate-analysis
+    - vine
+    - copula
+    - skill
+  requires_context: false
 variables:
   - name: "marginal_distributions"
-    description: "The specifications of the marginal distributions for each variable, including parametric families and estimation strategies."
+    description: "The specifications of the marginal distributions for each variable,
+      including parametric families and estimation strategies."
     required: true
   - name: "dependence_structure"
-    description: "The hypothesized high-dimensional dependence structure, describing tail dependence, asymmetry, and domain-specific relational constraints."
+    description: "The hypothesized high-dimensional dependence structure, describing
+      tail dependence, asymmetry, and domain-specific relational constraints."
     required: true
   - name: "graphical_model_type"
-    description: "The specific class of Vine Copula to be employed (e.g., C-vine, D-vine, or R-vine) and the criteria for structure selection."
+    description: "The specific class of Vine Copula to be employed (e.g., C-vine,
+      D-vine, or R-vine) and the criteria for structure selection."
     required: true
 model: "gpt-4o"
 modelParameters:
@@ -52,14 +63,20 @@ messages:
       <graphical_model_type>{{graphical_model_type}}</graphical_model_type>
 testData:
   - variables:
-      marginal_distributions: 'Skew-t distributions for capturing heavy tails and asymmetry in financial asset returns.'
-      dependence_structure: 'Strong lower tail dependence during market crashes, with heterogeneous asymmetrical pair-wise dependencies.'
-      graphical_model_type: 'R-vine (Regular vine) optimized via sequentially maximizing Kendall''s tau on the spanning trees.'
+      marginal_distributions: 'Skew-t distributions for capturing heavy tails and
+        asymmetry in financial asset returns.'
+      dependence_structure: 'Strong lower tail dependence during market crashes, with
+        heterogeneous asymmetrical pair-wise dependencies.'
+      graphical_model_type: 'R-vine (Regular vine) optimized via sequentially maximizing
+        Kendall''s tau on the spanning trees.'
     expected: "Sklar"
   - variables:
-      marginal_distributions: 'Non-parametric empirical cumulative distribution functions (ECDF) using pseudo-observations.'
-      dependence_structure: 'Spatial hierarchical dependence where a central hub variable influences all others directly.'
-      graphical_model_type: 'C-vine (Canonical vine) with the central hub variable at the root node of the first tree.'
+      marginal_distributions: 'Non-parametric empirical cumulative distribution functions
+        (ECDF) using pseudo-observations.'
+      dependence_structure: 'Spatial hierarchical dependence where a central hub variable
+        influences all others directly.'
+      graphical_model_type: 'C-vine (Canonical vine) with the central hub variable
+        at the root node of the first tree.'
     expected: "pair-copula|tree"
 evaluators:
   - type: "regex_match"

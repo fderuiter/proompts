@@ -5,48 +5,50 @@ metadata:
   domain: regulatory
   complexity: low
   tags:
-  - regulatory-strategy
-  - request
-  - designation
-  - rfd
-  - submission
+    - regulatory-strategy
+    - request
+    - designation
+    - rfd
+    - submission
+    - skill
   requires_context: false
 variables:
-- name: product_desc
-  description: The product or offering being discussed
-  required: true
+  - name: product_desc
+    description: The product or offering being discussed
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: You are a Regulatory Affairs Specialist. Draft a Request for Designation
-    for a drug-eluting contact lens, identifying the drug component as the PMOA and
-    recommending CDER as the lead review center. Adhere to 21 CFR Part 3.
-- role: user
-  content: 'Draft a Request for Designation for a drug-eluting contact lens, identifying
-    the drug component as the PMOA and recommending CDER as the lead review center.
+  - role: system
+    content: You are a Regulatory Affairs Specialist. Draft a Request for 
+      Designation for a drug-eluting contact lens, identifying the drug 
+      component as the PMOA and recommending CDER as the lead review center. 
+      Adhere to 21 CFR Part 3.
+  - role: user
+    content: 'Draft a Request for Designation for a drug-eluting contact lens, identifying
+      the drug component as the PMOA and recommending CDER as the lead review center.
 
 
-    Inputs:
+      Inputs:
 
-    - `{{product_desc}}`
+      - `{{product_desc}}`
 
 
-    Output format:
+      Output format:
 
-    Markdown RFD Letter.'
+      Markdown RFD Letter.'
 testData:
-- expected: 'Request for Designation
+  - expected: 'Request for Designation
 
-    '
-  vars: 'product_desc: Contact lens releasing antihistamine.
+      '
+    vars: 'product_desc: Contact lens releasing antihistamine.
 
-    '
+      '
 evaluators:
-- name: Primary Mode of Action
-  string:
-    contains: Primary Mode of Action
-- name: CDER
-  string:
-    contains: CDER
+  - name: Primary Mode of Action
+    string:
+      contains: Primary Mode of Action
+  - name: CDER
+    string:
+      contains: CDER

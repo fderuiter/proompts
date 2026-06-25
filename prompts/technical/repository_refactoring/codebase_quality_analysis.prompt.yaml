@@ -1,7 +1,7 @@
----
 name: Codebase Quality & Maintainability Analysis
 version: 0.2.0
-description: Conduct a deep analysis of the codebase's quality and maintainability to identify key areas for refactoring.
+description: Conduct a deep analysis of the codebase's quality and 
+  maintainability to identify key areas for refactoring.
 metadata:
   domain: technical
   complexity: high
@@ -11,10 +11,12 @@ metadata:
     - quality
     - maintainability
     - analysis
+    - skill
   requires_context: true
 variables:
   - name: target_codebase_context
-    description: The codebase content, relevant modules, and surrounding context to analyze.
+    description: The codebase content, relevant modules, and surrounding context
+      to analyze.
     required: true
 model: gpt-4o
 modelParameters:

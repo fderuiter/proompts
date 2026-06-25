@@ -1,7 +1,7 @@
----
 name: Leader Election and Split-Brain Mitigation Architect
 version: 1.0.0
-description: Designs highly available, consensus-driven architectures for leader election and robust split-brain mitigation in distributed systems.
+description: Designs highly available, consensus-driven architectures for leader
+  election and robust split-brain mitigation in distributed systems.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +13,21 @@ metadata:
     - high-availability
     - architecture
     - fault-tolerance
+    - skill
   requires_context: false
 variables:
   - name: cluster_topology
-    description: Details about the cluster nodes, cross-datacenter distribution, and network layout.
+    description: Details about the cluster nodes, cross-datacenter distribution,
+      and network layout.
     required: true
   - name: workload_requirements
-    description: Details on strictness of consistency vs availability, failover latency SLAs, and read/write access patterns during partition.
+    description: Details on strictness of consistency vs availability, failover 
+      latency SLAs, and read/write access patterns during partition.
     required: true
   - name: infrastructure_constraints
-    description: Specific constraints such as existing coordination services (ZooKeeper, etcd, Consul), deployment environments (Kubernetes, bare metal), and latency profiles.
+    description: Specific constraints such as existing coordination services 
+      (ZooKeeper, etcd, Consul), deployment environments (Kubernetes, bare 
+      metal), and latency profiles.
     required: true
 model: gpt-4o
 modelParameters:
@@ -58,12 +63,15 @@ messages:
 testData:
   - inputs:
       cluster_topology: "3 datacenters (US-East, US-West, EU-Central), 5 nodes total."
-      workload_requirements: "Strict linearizability, sub-second failover, no split-brain allowed during network partitions."
-      infrastructure_constraints: "etcd v3 available in all datacenters, 100ms round-trip latency between US and EU."
+      workload_requirements: "Strict linearizability, sub-second failover, no split-brain
+        allowed during network partitions."
+      infrastructure_constraints: "etcd v3 available in all datacenters, 100ms round-trip
+        latency between US and EU."
     expected: "Raft"
   - inputs:
       cluster_topology: "2 datacenters (Active-Active), 2 nodes total."
-      workload_requirements: "Strict linearizability, 5ms failover SLA, absolute guarantee against split-brain."
+      workload_requirements: "Strict linearizability, 5ms failover SLA, absolute guarantee
+        against split-brain."
       infrastructure_constraints: "No external tie-breaker or witness node available."
     expected: "error"
 evaluators:

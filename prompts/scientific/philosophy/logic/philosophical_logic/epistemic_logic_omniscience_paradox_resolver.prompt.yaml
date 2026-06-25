@@ -1,21 +1,32 @@
----
 name: "epistemic_logic_omniscience_paradox_resolver"
 version: "1.0.0"
-description: "A highly rigorous prompt designed to systematically resolve the logical omniscience paradox in epistemic logic models for resource-bounded agents."
+description: "A highly rigorous prompt designed to systematically resolve the logical
+  omniscience paradox in epistemic logic models for resource-bounded agents."
 authors:
   - "Philosophical Genesis Architect"
 metadata:
   domain: "scientific/philosophy/logic/philosophical_logic"
   complexity: "high"
+  tags:
+    - philosophy
+    - logic
+    - philosophical-logic
+    - epistemic
+    - omniscience
+    - skill
+  requires_context: false
 variables:
   - name: "EPISTEMIC_MODEL"
-    description: "The formal epistemic logic model under analysis (e.g., Standard Hintikka Kripke Semantics, Awareness Logic, Impossible Worlds Semantics)."
+    description: "The formal epistemic logic model under analysis (e.g., Standard
+      Hintikka Kripke Semantics, Awareness Logic, Impossible Worlds Semantics)."
     required: true
   - name: "AGENT_BOUNDS"
-    description: "The specific cognitive or computational constraints of the bounded agent (e.g., polynomial-time compute limit, working memory constraints)."
+    description: "The specific cognitive or computational constraints of the bounded
+      agent (e.g., polynomial-time compute limit, working memory constraints)."
     required: true
   - name: "LOGICAL_AXIOM"
-    description: "The specific problematic epistemic axiom causing omniscience (e.g., Closure under Material Implication, Knowledge of all Tautologies)."
+    description: "The specific problematic epistemic axiom causing omniscience (e.g.,
+      Closure under Material Implication, Knowledge of all Tautologies)."
     required: true
 model: "claude-3-opus"
 modelParameters:
@@ -63,4 +74,6 @@ testData:
     expected: "<dialectical_synthesis>"
 evaluators:
   - string:
-      regex: "(?i)<paradox_formalization>[\\s\\S]*?</paradox_formalization>[\\s\\S]*?<logical_deconstruction>[\\s\\S]*?</logical_deconstruction>[\\s\\S]*?<dialectical_synthesis>[\\s\\S]*?</dialectical_synthesis>[\\s\\S]*?<formal_resolution>[\\s\\S]*?</formal_resolution>"
+      regex: "(?i)<paradox_formalization>[\\s\\S]*?</paradox_formalization>[\\s\\\
+        S]*?<logical_deconstruction>[\\s\\S]*?</logical_deconstruction>[\\s\\S]*?<dialectical_synthesis>[\\\
+        s\\S]*?</dialectical_synthesis>[\\s\\S]*?<formal_resolution>[\\s\\S]*?</formal_resolution>"

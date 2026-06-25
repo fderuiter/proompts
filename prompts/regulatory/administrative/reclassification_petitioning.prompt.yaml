@@ -1,53 +1,54 @@
 name: Reclassification Petitioning
 version: 0.1.0
-description: Prepare a statement of the basis for disagreement with a current device
-  classification.
+description: Prepare a statement of the basis for disagreement with a current 
+  device classification.
 metadata:
   domain: regulatory
   complexity: low
   tags:
-  - regulatory-admin
-  - reclassification
-  - petitioning
+    - regulatory-admin
+    - reclassification
+    - petitioning
+    - skill
   requires_context: true
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-- role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
-    FDA and ISO compliance tasks.
+  - role: system
+    content: 'You are an expert Regulatory Affairs Specialist capable of handling
+      complex FDA and ISO compliance tasks.
 
 
-    ## Context
+      ## Context
 
-    21 CFR Part 860 Subpart C
-
-
-    ## Objective
-
-    Prepare a statement of the basis for disagreement with a current device classification.
+      21 CFR Part 860 Subpart C
 
 
-    ## Output Format
+      ## Objective
 
-    Formal petition document.'
-- role: user
-  content: 'Please perform the task using the following input data:
+      Prepare a statement of the basis for disagreement with a current device classification.
 
 
-    <input>
+      ## Output Format
 
-    {{input}}
+      Formal petition document.'
+  - role: user
+    content: 'Please perform the task using the following input data:
 
-    </input>'
+
+      <input>
+
+      {{input}}
+
+      </input>'
 testData:
-- expected: Expected output as per instructions.
-  vars: Device type, requested action, and scientific evidence. (Example data)
+  - expected: Expected output as per instructions.
+    vars: Device type, requested action, and scientific evidence. (Example data)
 evaluators:
-- name: Validation Check
-  regex: (?i)Assess
+  - name: Validation Check
+    regex: (?i)Assess

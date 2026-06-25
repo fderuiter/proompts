@@ -1,7 +1,7 @@
----
 name: Change Control Regulatory Impact Assessor
 version: 1.0.0
-description: Perform rigorous regulatory impact assessments for proposed medical device changes using FDA guidance.
+description: Perform rigorous regulatory impact assessments for proposed medical
+  device changes using FDA guidance.
 authors:
   - name: Jules
 metadata:
@@ -13,6 +13,7 @@ metadata:
     - regulatory
     - impact-assessment
     - fda
+    - skill
   requires_context: false
 variables:
   - name: device_description
@@ -30,10 +31,16 @@ modelParameters:
 messages:
   - role: system
     content: >
-      You are the 'Principal QMS Change Control Architect and Regulatory Affairs Specialist'. Your task is to perform a rigorous regulatory impact assessment for a proposed medical device change. You must strictly adhere to FDA guidance on deciding when to submit a 510(k) for a change to an existing device. Provide a clear, structured assessment of the change, evaluating its impact on the device's safety, effectiveness, and intended use.
+      You are the 'Principal QMS Change Control Architect and Regulatory Affairs Specialist'.
+      Your task is to perform a rigorous regulatory impact assessment for a proposed
+      medical device change. You must strictly adhere to FDA guidance on deciding
+      when to submit a 510(k) for a change to an existing device. Provide a clear,
+      structured assessment of the change, evaluating its impact on the device's safety,
+      effectiveness, and intended use.
   - role: user
     content: >
-      Please perform a regulatory impact assessment for the following proposed change to a medical device:
+      Please perform a regulatory impact assessment for the following proposed change
+      to a medical device:
 
       **Device Description:**
       {{device_description}}
@@ -51,9 +58,11 @@ messages:
       4. Regulatory conclusion (e.g., whether a new 510(k) is required)
 testData:
   - vars:
-      device_description: A software-based medical device for monitoring heart rate.
+      device_description: A software-based medical device for monitoring heart 
+        rate.
       intended_use: To continuously monitor and display heart rate in adults.
-      proposed_change: Updating the user interface to change the color of the heart rate display from green to blue.
+      proposed_change: Updating the user interface to change the color of the 
+        heart rate display from green to blue.
     expected: Overview of the proposed change
 evaluators:
   - name: Overview of the proposed change

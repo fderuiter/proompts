@@ -1,7 +1,8 @@
----
 name: Biologics License Application (BLA) Architect
 version: 1.0.0
-description: Formulates rigorous, compliant FDA Biologics License Application (BLA) eCTD submissions for biological products, ensuring alignment with 21 CFR 600-680 and ICH M4 guidelines.
+description: Formulates rigorous, compliant FDA Biologics License Application 
+  (BLA) eCTD submissions for biological products, ensuring alignment with 21 CFR
+  600-680 and ICH M4 guidelines.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -14,19 +15,24 @@ metadata:
     - ectd
     - submission
     - ich m4
+    - skill
   requires_context: true
 variables:
   - name: product_type
-    description: The type of biological product (e.g., monoclonal antibody, gene therapy, vaccine, blood product).
+    description: The type of biological product (e.g., monoclonal antibody, gene
+      therapy, vaccine, blood product).
     required: true
   - name: intended_indication
-    description: The explicit target disease or condition the biologic is intended to treat, prevent, or diagnose.
+    description: The explicit target disease or condition the biologic is 
+      intended to treat, prevent, or diagnose.
     required: true
   - name: clinical_phase
-    description: Current status of clinical development (e.g., Phase 3 completed, rolling submission).
+    description: Current status of clinical development (e.g., Phase 3 
+      completed, rolling submission).
     required: true
   - name: manufacturing_summary
-    description: High-level overview of the Chemistry, Manufacturing, and Controls (CMC) strategy and facility readiness.
+    description: High-level overview of the Chemistry, Manufacturing, and 
+      Controls (CMC) strategy and facility readiness.
     required: true
 model: gpt-4o
 modelParameters:
@@ -57,9 +63,13 @@ messages:
 testData:
   - product_type: Recombinant Adeno-Associated Virus (rAAV) Gene Therapy
     intended_indication: Treatment of adults with severe hemophilia A.
-    clinical_phase: Phase 3 pivotal trial completed; seeking accelerated approval based on surrogate endpoint (Factor VIII activity).
-    manufacturing_summary: Produced in HEK293 cells; downstream purification via affinity chromatography; facility undergoing concurrent PAI preparation.
-    expected: A highly structured BLA blueprint explicitly referencing eCTD Modules 1-5, specifically tailored for a gene therapy product requiring rigorous CMC and long-term follow-up considerations.
+    clinical_phase: Phase 3 pivotal trial completed; seeking accelerated 
+      approval based on surrogate endpoint (Factor VIII activity).
+    manufacturing_summary: Produced in HEK293 cells; downstream purification via
+      affinity chromatography; facility undergoing concurrent PAI preparation.
+    expected: A highly structured BLA blueprint explicitly referencing eCTD 
+      Modules 1-5, specifically tailored for a gene therapy product requiring 
+      rigorous CMC and long-term follow-up considerations.
 evaluators:
   - name: Mentions eCTD Modules
     string:

@@ -1,17 +1,29 @@
----
 name: "chaos_mesh_fault_injection_architect"
 version: "1.0.0"
-description: "Architects rigorous, targeted chaos engineering experiments using Chaos Mesh in Kubernetes environments to empirically validate the resilience and self-healing mechanisms of cloud-native distributed systems."
+description: "Architects rigorous, targeted chaos engineering experiments using Chaos
+  Mesh in Kubernetes environments to empirically validate the resilience and self-healing
+  mechanisms of cloud-native distributed systems."
 authors:
   - "Strategic Genesis Architect"
 metadata:
   domain: "technical/devops"
   complexity: "high"
+  tags:
+    - devops
+    - chaos
+    - mesh
+    - fault
+    - injection
+    - skill
+  requires_context: false
 variables:
   - name: system_architecture
-    description: "The specific microservices, data stores, or cloud-native components under test."
+    description: "The specific microservices, data stores, or cloud-native components
+      under test."
   - name: fault_hypothesis
-    description: "The targeted failure mode or steady-state hypothesis being validated (e.g., 'Network partition between frontend and payment service does not impact cart additions')."
+    description: "The targeted failure mode or steady-state hypothesis being validated
+      (e.g., 'Network partition between frontend and payment service does not impact
+      cart additions')."
 model: "claude-3-5-sonnet-20241022"
 modelParameters:
   temperature: 0.1
@@ -47,14 +59,23 @@ messages:
 testData:
   - inputs:
       variables:
-        system_architecture: "Microservices architecture utilizing gRPC for internal communication between a user service and an inventory service, deployed in a multi-zone EKS cluster."
-        fault_hypothesis: "Injecting 500ms of latency into 20% of network packets between the user service and inventory service will trigger the Istio circuit breaker, preventing cascading timeout failures in the frontend."
-    expected: "A detailed experiment plan including NetworkChaos CRD targeting the specific label selectors, steady-state definition, and abort conditions."
+        system_architecture: "Microservices architecture utilizing gRPC for internal
+          communication between a user service and an inventory service, deployed
+          in a multi-zone EKS cluster."
+        fault_hypothesis: "Injecting 500ms of latency into 20% of network packets
+          between the user service and inventory service will trigger the Istio circuit
+          breaker, preventing cascading timeout failures in the frontend."
+    expected: "A detailed experiment plan including NetworkChaos CRD targeting the
+      specific label selectors, steady-state definition, and abort conditions."
   - inputs:
       variables:
-        system_architecture: "Production multi-tenant Kubernetes cluster hosting 50+ diverse workloads including stateful databases."
-        fault_hypothesis: "Randomly terminate 80% of all running pods across the entire cluster without any specific label selectors or namespace boundaries to see what breaks."
-    expected: "Refusal to provide the unbounded chaos experiment, enforcing the need for a contained blast radius and a specific hypothesis."
+        system_architecture: "Production multi-tenant Kubernetes cluster hosting 50+
+          diverse workloads including stateful databases."
+        fault_hypothesis: "Randomly terminate 80% of all running pods across the entire
+          cluster without any specific label selectors or namespace boundaries to
+          see what breaks."
+    expected: "Refusal to provide the unbounded chaos experiment, enforcing the need
+      for a contained blast radius and a specific hypothesis."
 evaluators:
   - name: Chaos Mesh Concepts
     type: regex

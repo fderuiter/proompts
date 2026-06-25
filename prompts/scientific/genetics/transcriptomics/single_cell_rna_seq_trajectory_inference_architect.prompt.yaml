@@ -1,25 +1,38 @@
----
 name: "single_cell_rna_seq_trajectory_inference_architect"
 version: "1.0.0"
-description: "Acts as a Principal Computational Biologist to computationally model single-cell RNA sequencing (scRNA-seq) cellular trajectories and infer pseudotime dynamics using advanced dimensionality reduction and stochastic differential equations."
+description: "Acts as a Principal Computational Biologist to computationally model
+  single-cell RNA sequencing (scRNA-seq) cellular trajectories and infer pseudotime
+  dynamics using advanced dimensionality reduction and stochastic differential equations."
 authors:
   - "Biological Sciences Genesis Architect"
 metadata:
   domain: "genetics/transcriptomics"
   complexity: "high"
+  tags:
+    - genetics
+    - transcriptomics
+    - single
+    - cell
+    - rna
+    - skill
+  requires_context: false
 variables:
   - name: "count_matrix"
     type: "string"
-    description: "The raw or normalized single-cell RNA-seq count matrix (e.g., cell x gene matrix in sparse format or h5ad)."
+    description: "The raw or normalized single-cell RNA-seq count matrix (e.g., cell
+      x gene matrix in sparse format or h5ad)."
   - name: "cellular_metadata"
     type: "string"
-    description: "Associated metadata for the cells, such as experimental timepoints, spatial coordinates, or cluster annotations."
+    description: "Associated metadata for the cells, such as experimental timepoints,
+      spatial coordinates, or cluster annotations."
   - name: "trajectory_topology"
     type: "string"
-    description: "The expected underlying topology of the differentiation process (e.g., linear, bifurcating, multifurcating, or tree-structured)."
+    description: "The expected underlying topology of the differentiation process
+      (e.g., linear, bifurcating, multifurcating, or tree-structured)."
   - name: "velocity_data"
     type: "string"
-    description: "Optional spliced vs unspliced count matrices to incorporate RNA velocity kinetics into the trajectory."
+    description: "Optional spliced vs unspliced count matrices to incorporate RNA
+      velocity kinetics into the trajectory."
 model: "gpt-4o"
 modelParameters:
   temperature: 0.1
@@ -53,13 +66,18 @@ messages:
 testData:
   - inputs:
       count_matrix: "10x Genomics sparse matrix, 15,000 cells x 20,000 genes."
-      cellular_metadata: "Cells collected at E12.5, E14.5, and E16.5 embryonic days. Pre-clustered into 8 distinct populations."
-      trajectory_topology: "Bifurcating (a single progenitor state splitting into two terminal lineages)."
-      velocity_data: "Spliced and unspliced loom files available, high unspliced fraction in the E12.5 cluster."
+      cellular_metadata: "Cells collected at E12.5, E14.5, and E16.5 embryonic days.
+        Pre-clustered into 8 distinct populations."
+      trajectory_topology: "Bifurcating (a single progenitor state splitting into
+        two terminal lineages)."
+      velocity_data: "Spliced and unspliced loom files available, high unspliced fraction
+        in the E12.5 cluster."
     expected: "15,000 cells"
   - inputs:
-      count_matrix: "AnnData object containing 8,000 highly variable genes across 5,000 hematopoietic stem and progenitor cells."
-      cellular_metadata: "FACS-sorted HSPCs. Includes steady-state and acute stress response conditions."
+      count_matrix: "AnnData object containing 8,000 highly variable genes across
+        5,000 hematopoietic stem and progenitor cells."
+      cellular_metadata: "FACS-sorted HSPCs. Includes steady-state and acute stress
+        response conditions."
       trajectory_topology: "Multifurcating tree structure representing canonical hematopoiesis."
       velocity_data: "Not provided. Rely strictly on transcriptomic distance metrics."
     expected: "5,000 hematopoietic"

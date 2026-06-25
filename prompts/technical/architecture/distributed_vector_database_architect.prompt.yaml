@@ -1,7 +1,8 @@
----
 name: Distributed Vector Database Architect
 version: 1.0.0
-description: Designs highly scalable distributed vector database architectures for trillion-scale embedding search, optimizing the recall-latency-cost frontier.
+description: Designs highly scalable distributed vector database architectures 
+  for trillion-scale embedding search, optimizing the recall-latency-cost 
+  frontier.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,16 +14,20 @@ metadata:
     - machine-learning
     - distributed-systems
     - system-design
+    - skill
   requires_context: false
 variables:
   - name: vector_dimensionality_and_volume
-    description: Details about the embedding dimension (e.g., 768, 1536) and the total number of vectors (scale).
+    description: Details about the embedding dimension (e.g., 768, 1536) and the
+      total number of vectors (scale).
     required: true
   - name: search_requirements
-    description: Target QPS, recall SLAs, latency thresholds, and any complex metadata filtering requirements (pre/post-filtering).
+    description: Target QPS, recall SLAs, latency thresholds, and any complex 
+      metadata filtering requirements (pre/post-filtering).
     required: true
   - name: infrastructure_constraints
-    description: Restrictions regarding hardware (RAM, SSD types, GPU availability) and multi-region deployment targets.
+    description: Restrictions regarding hardware (RAM, SSD types, GPU 
+      availability) and multi-region deployment targets.
     required: true
 model: "gpt-4o"
 modelParameters:
@@ -64,8 +69,10 @@ messages:
 testData:
   - inputs:
       vector_dimensionality_and_volume: "10 billion vectors, 1536 dimensions."
-      search_requirements: "10,000 QPS, 95% recall@10, <50ms p99 latency, complex boolean pre-filtering."
-      infrastructure_constraints: "Multi-AZ AWS deployment, compute-heavy instances with NVMe SSDs, constrained RAM requiring mmap."
+      search_requirements: "10,000 QPS, 95% recall@10, <50ms p99 latency, complex
+        boolean pre-filtering."
+      infrastructure_constraints: "Multi-AZ AWS deployment, compute-heavy instances
+        with NVMe SSDs, constrained RAM requiring mmap."
     expected: "HNSW|IVF-PQ"
   - inputs:
       vector_dimensionality_and_volume: "1 trillion vectors, 768 dimensions."
@@ -80,4 +87,5 @@ testData:
 evaluators:
   - name: Vector DB Constraint Check
     type: regex
-    pattern: "(?i)(HNSW|IVF-PQ|mmap|Product Quantization|error.*unsafe|SLA mathematically incompatible)"
+    pattern: "(?i)(HNSW|IVF-PQ|mmap|Product Quantization|error.*unsafe|SLA mathematically
+      incompatible)"

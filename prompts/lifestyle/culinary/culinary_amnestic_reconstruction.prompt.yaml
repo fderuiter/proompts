@@ -12,15 +12,19 @@ metadata:
     - experimental
     - ai
     - cybernetics
+    - skill
+  requires_context: true
 variables:
   - name: memory_fragment
     description: The user's vague, fragmentary description of the food memory.
     required: true
   - name: sensory_triggers
-    description: Associated sensory details (smells, sounds, textures, lighting).
+    description: Associated sensory details (smells, sounds, textures, 
+      lighting).
     required: true
   - name: emotional_resonance
-    description: The feeling or emotion the user wants to recapture (e.g., safety, wonder, melancholy).
+    description: The feeling or emotion the user wants to recapture (e.g., 
+      safety, wonder, melancholy).
     required: true
 model: gpt-4o
 modelParameters:
@@ -65,7 +69,8 @@ messages:
       **Emotional Resonance**: {{emotional_resonance}}
 testData:
   - vars:
-      memory_fragment: "Sitting on the porch in a thunderstorm, eating something warm and sweet, watching the rain hit the hot pavement."
+      memory_fragment: "Sitting on the porch in a thunderstorm, eating something warm
+        and sweet, watching the rain hit the hot pavement."
       sensory_triggers: "Petrichor, ozone, humidity, warm ceramic, distant thunder."
       emotional_resonance: "Safe but electrified."
     expected: "Recipe for 'Thunderstorm Petrichor Soufflé' with ozone-infused foam."

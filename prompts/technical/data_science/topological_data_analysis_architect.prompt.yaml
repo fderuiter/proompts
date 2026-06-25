@@ -1,7 +1,8 @@
----
 name: Topological Data Analysis Architect
 version: 1.0.0
-description: Designs robust Topological Data Analysis (TDA) pipelines and persistent homology workflows for extracting invariant shape features from high-dimensional, noisy, or sparse data.
+description: Designs robust Topological Data Analysis (TDA) pipelines and 
+  persistent homology workflows for extracting invariant shape features from 
+  high-dimensional, noisy, or sparse data.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +14,20 @@ metadata:
     - topological-data-analysis
     - persistent-homology
     - architecture
+    - skill
   requires_context: false
 variables:
   - name: data_characteristics
-    description: Details about the high-dimensional data (e.g., metric space, manifold assumptions, noise level, sparsity, point cloud size).
+    description: Details about the high-dimensional data (e.g., metric space, 
+      manifold assumptions, noise level, sparsity, point cloud size).
     required: true
   - name: analytical_goals
-    description: The primary objective (e.g., identifying clusters, voids, persistent features, manifold learning, anomaly detection).
+    description: The primary objective (e.g., identifying clusters, voids, 
+      persistent features, manifold learning, anomaly detection).
     required: true
   - name: computational_constraints
-    description: Memory, time, or parallelization constraints for calculating Vietoris-Rips or \u010cech complexes.
+    description: Memory, time, or parallelization constraints for calculating 
+      Vietoris-Rips or \u010cech complexes.
     required: true
 model: gpt-4o
 modelParameters:
@@ -57,14 +62,18 @@ messages:
       <computational_constraints>{{computational_constraints}}</computational_constraints>
 testData:
   - inputs:
-      data_characteristics: "10,000 points in R^50, significant background noise, suspected circular structure."
-      analytical_goals: "Identify persistent 1-dimensional homology features robust to noise."
-      computational_constraints: "Moderate memory constraints, cannot compute full Vietoris-Rips beyond distance threshold."
+      data_characteristics: "10,000 points in R^50, significant background noise,
+        suspected circular structure."
+      analytical_goals: "Identify persistent 1-dimensional homology features robust
+        to noise."
+      computational_constraints: "Moderate memory constraints, cannot compute full
+        Vietoris-Rips beyond distance threshold."
     expected: "Mapper"
   - inputs:
       data_characteristics: "1 billion points in R^1000, unstructured noise."
       analytical_goals: "Compute full Betti-3 numbers."
-      computational_constraints: "8GB RAM limit, strict 1-hour time limit, no distributed computing."
+      computational_constraints: "8GB RAM limit, strict 1-hour time limit, no distributed
+        computing."
     expected: "error"
 evaluators:
   - name: TDA Terminology and Error Check

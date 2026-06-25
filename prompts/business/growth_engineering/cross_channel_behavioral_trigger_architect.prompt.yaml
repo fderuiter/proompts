@@ -1,7 +1,8 @@
----
 name: Cross-Channel Behavioral Trigger Architect
 version: "1.0.0"
-description: Constructs complex, predictive cross-channel behavioral trigger sequences for enterprise SaaS, optimizing for acquisition, activation, and churn mitigation using advanced behavioral modeling.
+description: Constructs complex, predictive cross-channel behavioral trigger 
+  sequences for enterprise SaaS, optimizing for acquisition, activation, and 
+  churn mitigation using advanced behavioral modeling.
 authors:
   - Growth Strategy Genesis Architect
 metadata:
@@ -12,15 +13,20 @@ metadata:
     - marketing-automation
     - retention-strategy
     - behavioral-science
+    - skill
+  requires_context: false
 variables:
   - name: user_telemetry_data
-    description: Detailed behavioral events, engagement scoring, and drop-off points within the application.
+    description: Detailed behavioral events, engagement scoring, and drop-off 
+      points within the application.
     required: true
   - name: channel_architecture
-    description: Available touchpoints (e.g., email, in-app modal, SMS, push) and their respective costs/constraints.
+    description: Available touchpoints (e.g., email, in-app modal, SMS, push) 
+      and their respective costs/constraints.
     required: true
   - name: financial_targets
-    description: Required metrics for Customer Lifetime Value, Customer Acquisition Cost, and Return on Ad Spend constraints.
+    description: Required metrics for Customer Lifetime Value, Customer 
+      Acquisition Cost, and Return on Ad Spend constraints.
     required: true
 model: gpt-4o
 modelParameters:
@@ -57,14 +63,19 @@ messages:
       </financial_targets>
 testData:
   - inputs:
-      user_telemetry_data: "Users stall during the third step of integration (API key generation). 40% drop-off at hour 48 post-signup."
-      channel_architecture: "Email (low cost, medium friction), In-app modals (zero cost, high friction), Account Executive call ($50/call)."
+      user_telemetry_data: "Users stall during the third step of integration (API
+        key generation). 40% drop-off at hour 48 post-signup."
+      channel_architecture: "Email (low cost, medium friction), In-app modals (zero
+        cost, high friction), Account Executive call ($50/call)."
       financial_targets: "LTV > $10,000, CAC < $2,000, 90-day payback period."
     expected: "Complex behavioral tree and AARRR analysis."
   - inputs:
-      user_telemetry_data: "Enterprise admins log in but fail to invite team members within the first 7 days."
-      channel_architecture: "Automated Slack integration alerts, direct mail (high cost), automated email sequences."
-      financial_targets: "ROAS > 3.0, Gross Margin > 75%, Net Revenue Retention > 110%."
+      user_telemetry_data: "Enterprise admins log in but fail to invite team members
+        within the first 7 days."
+      channel_architecture: "Automated Slack integration alerts, direct mail (high
+        cost), automated email sequences."
+      financial_targets: "ROAS > 3.0, Gross Margin > 75%, Net Revenue Retention >
+        110%."
     expected: "Multi-touch activation sequence with exact threshold mapping."
 evaluators:
   - name: Contains LTV Equation

@@ -1,8 +1,7 @@
----
 name: Quarterly CRO KPI Executive Brief
 version: 0.1.0
-description: Present key operational KPIs and recommended actions for the quarterly
-  review.
+description: Present key operational KPIs and recommended actions for the 
+  quarterly review.
 metadata:
   domain: management
   complexity: medium
@@ -12,6 +11,7 @@ metadata:
     - cro
     - kpi
     - executive
+    - skill
   requires_context: false
 variables:
   - name: functional_comments
@@ -46,10 +46,10 @@ messages:
       Keep language jargon-free and assume the audience is time pressed. Use first-person
       plural and offer to answer questions if data anomalies appear.'
   - role: user
-    content: "- `{{operational_dataset}}` \u2013 metrics from Redshift.\n- `{{kpi_definitions}}`\
-      \ \u2013 thresholds and descriptions.\n- `{{functional_comments}}` \u2013 notes\
-      \ from department heads.\n\nOutput format: Narrative summary, slide outline\
-      \ and recommended visualization styles."
+    content: "- `{{operational_dataset}}` – metrics from Redshift.\n- `{{kpi_definitions}}`
+      – thresholds and descriptions.\n- `{{functional_comments}}` – notes from department
+      heads.\n\nOutput format: Narrative summary, slide outline and recommended visualization
+      styles."
 testData:
   - variables:
       - name: operational_dataset

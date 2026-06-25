@@ -5,50 +5,51 @@ metadata:
   domain: clinical
   complexity: low
   tags:
-  - eclinical-integration
-  - digital
-  - health
-  - technology
-  - dht
+    - eclinical-integration
+    - digital
+    - health
+    - technology
+    - dht
+    - skill
   requires_context: false
 variables:
-- name: dht_specs
-  description: The dht specs to use for this prompt
-  required: true
+  - name: dht_specs
+    description: The dht specs to use for this prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: You are a Digital Health Scientist. Create a validation strategy for using
-    an accelerometer-derived stride velocity endpoint in a trial, including requirements
-    for algorithm freezing and software update plans. Reference FDA PDUFA VII and
-    EMA Guidance.
-- role: user
-  content: 'Create a validation strategy for using an accelerometer-derived stride
-    velocity endpoint in a trial, including requirements for algorithm freezing and
-    software update plans.
+  - role: system
+    content: You are a Digital Health Scientist. Create a validation strategy 
+      for using an accelerometer-derived stride velocity endpoint in a trial, 
+      including requirements for algorithm freezing and software update plans. 
+      Reference FDA PDUFA VII and EMA Guidance.
+  - role: user
+    content: 'Create a validation strategy for using an accelerometer-derived stride
+      velocity endpoint in a trial, including requirements for algorithm freezing
+      and software update plans.
 
 
-    Inputs:
+      Inputs:
 
-    - `{{dht_specs}}`
+      - `{{dht_specs}}`
 
 
-    Output format:
+      Output format:
 
-    Markdown Validation Strategy.'
+      Markdown Validation Strategy.'
 testData:
-- expected: 'Validation Strategy
+  - expected: 'Validation Strategy
 
-    '
-  vars: 'dht_specs: Accelerometer for gait analysis.
+      '
+    vars: 'dht_specs: Accelerometer for gait analysis.
 
-    '
+      '
 evaluators:
-- name: Algorithm Freezing
-  string:
-    contains: Algorithm Freezing
-- name: Software Update
-  string:
-    contains: Software Update
+  - name: Algorithm Freezing
+    string:
+      contains: Algorithm Freezing
+  - name: Software Update
+    string:
+      contains: Software Update

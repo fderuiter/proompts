@@ -1,12 +1,22 @@
----
 name: protein_ligand_free_energy_perturbation_architect
 version: 1.0.0
-description: A Principal Structural Biologist and Lead Computational Chemist agent designed to architect rigorous Free Energy Perturbation (FEP) and Molecular Dynamics (MD) pipelines for predicting protein-ligand binding affinities.
+description: A Principal Structural Biologist and Lead Computational Chemist 
+  agent designed to architect rigorous Free Energy Perturbation (FEP) and 
+  Molecular Dynamics (MD) pipelines for predicting protein-ligand binding 
+  affinities.
 authors:
   - Biological Sciences Genesis Architect
 metadata:
   domain: scientific
   complexity: high
+  tags:
+    - molecular
+    - proteomics
+    - protein
+    - ligand
+    - free
+    - skill
+  requires_context: false
 tags:
   - bioinformatics
   - structural-biology
@@ -14,11 +24,15 @@ tags:
   - molecular-dynamics
 variables:
   - name: protein_target
-    description: The specific target protein, including structure source or PDB ID (e.g., SARS-CoV-2 Mpro, PDB 6LU7).
+    description: The specific target protein, including structure source or PDB 
+      ID (e.g., SARS-CoV-2 Mpro, PDB 6LU7).
   - name: ligand_series
-    description: The set of congeneric ligands or chemical modifications being evaluated for relative binding free energy differences.
+    description: The set of congeneric ligands or chemical modifications being 
+      evaluated for relative binding free energy differences.
   - name: thermodynamic_cycle
-    description: The chosen alchemical transformation pathway and thermodynamic cycle definition (e.g., dual topology, single topology, defining lambda windows).
+    description: The chosen alchemical transformation pathway and thermodynamic 
+      cycle definition (e.g., dual topology, single topology, defining lambda 
+      windows).
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -48,16 +62,22 @@ messages:
 testData:
   - variables:
       protein_target: "SARS-CoV-2 Main Protease (Mpro) (PDB: 6Y2E)"
-      ligand_series: "A series of peptidomimetic inhibitors featuring a substitution of a methyl group to a trifluoromethyl group at the P2 position."
-      thermodynamic_cycle: "Relative binding free energy (RBFE) single topology alchemical transformation from methyl to trifluoromethyl."
+      ligand_series: "A series of peptidomimetic inhibitors featuring a substitution
+        of a methyl group to a trifluoromethyl group at the P2 position."
+      thermodynamic_cycle: "Relative binding free energy (RBFE) single topology alchemical
+        transformation from methyl to trifluoromethyl."
   - variables:
-      protein_target: "Epidermal Growth Factor Receptor (EGFR) Kinase Domain (PDB: 1M17)"
+      protein_target: "Epidermal Growth Factor Receptor (EGFR) Kinase Domain (PDB:
+        1M17)"
       ligand_series: "Erlotinib and its close halogenated derivatives."
-      thermodynamic_cycle: "Absolute binding free energy (ABFE) using double decoupling method, introducing restraints in the bound state."
+      thermodynamic_cycle: "Absolute binding free energy (ABFE) using double decoupling
+        method, introducing restraints in the bound state."
 evaluators:
   - name: checks_for_zwanzig_equation
     type: regex_match
-    regex: "\\\\Delta G = -k_B T \\\\ln \\\\langle e\\^\\{-\\\\beta \\\\Delta H\\} \\\\rangle_0"
+    regex: "\\\\Delta G = -k_B T \\\\ln \\\\langle e\\^\\{-\\\\beta \\\\Delta H\\\
+      } \\\\rangle_0"
   - name: checks_for_thermodynamic_cycle
     type: regex_match
-    regex: "\\\\Delta\\\\Delta G_\\{bind\\} = \\\\Delta G_\\{complex\\} - \\\\Delta G_\\{solvent\\}"
+    regex: "\\\\Delta\\\\Delta G_\\{bind\\} = \\\\Delta G_\\{complex\\} - \\\\Delta
+      G_\\{solvent\\}"

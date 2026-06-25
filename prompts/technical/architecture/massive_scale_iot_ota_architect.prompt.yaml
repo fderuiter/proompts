@@ -1,7 +1,8 @@
----
 name: Massive-Scale IoT OTA Update Architect
 version: 1.0.0
-description: Designs highly resilient, fault-tolerant Over-The-Air (OTA) update architectures for massive-scale IoT device fleets operating under extreme network and power constraints.
+description: Designs highly resilient, fault-tolerant Over-The-Air (OTA) update 
+  architectures for massive-scale IoT device fleets operating under extreme 
+  network and power constraints.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +14,21 @@ metadata:
     - ota
     - distributed-systems
     - resilience
+    - skill
   requires_context: false
 variables:
   - name: device_fleet_characteristics
-    description: Hardware profiles, embedded OS, storage limitations, and power availability (e.g., battery-operated sensors vs mains-powered edge nodes).
+    description: Hardware profiles, embedded OS, storage limitations, and power 
+      availability (e.g., battery-operated sensors vs mains-powered edge nodes).
     required: true
   - name: network_constraints
-    description: Connectivity protocols, bandwidth limitations, latency, and intermittency (e.g., LoRaWAN, NB-IoT, intermittent cellular).
+    description: Connectivity protocols, bandwidth limitations, latency, and 
+      intermittency (e.g., LoRaWAN, NB-IoT, intermittent cellular).
     required: true
   - name: rollout_and_scale
-    description: Total fleet size, target update cadence, and deployment strategies (e.g., multi-million fleet, progressive rollouts, staggered delivery).
+    description: Total fleet size, target update cadence, and deployment 
+      strategies (e.g., multi-million fleet, progressive rollouts, staggered 
+      delivery).
     required: true
 model: anthropic/claude-3-5-sonnet-20241022
 modelParameters:
@@ -57,16 +63,20 @@ messages:
       <user_query>{{rollout_and_scale}}</user_query>
 testData:
   - inputs:
-      device_fleet_characteristics: "Cortex-M4 MCUs, 2MB Flash, A/B partition support, battery-powered."
+      device_fleet_characteristics: "Cortex-M4 MCUs, 2MB Flash, A/B partition support,
+        battery-powered."
       network_constraints: "NB-IoT, high latency, max 100kbps throughput."
       rollout_and_scale: "5 million devices, phased canary rollout, weekly delta updates."
     expected: "delta compression"
   - inputs:
-      device_fleet_characteristics: "8-bit microcontrollers, 32KB Flash, no external storage, coin-cell battery."
+      device_fleet_characteristics: "8-bit microcontrollers, 32KB Flash, no external
+        storage, coin-cell battery."
       network_constraints: "LoRaWAN, extreme low bandwidth, 1% duty cycle."
-      rollout_and_scale: "Full zero-downtime A/B background firmware replacement across 1 million devices daily."
+      rollout_and_scale: "Full zero-downtime A/B background firmware replacement across
+        1 million devices daily."
     expected: "error"
 evaluators:
   - name: Expert Terminology Check
     type: regex
-    pattern: "(?i)(A/B partition|delta compression|cryptographic attestation|hardware root-of-trust|error)"
+    pattern: "(?i)(A/B partition|delta compression|cryptographic attestation|hardware
+      root-of-trust|error)"

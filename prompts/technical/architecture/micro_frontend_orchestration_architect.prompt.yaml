@@ -1,7 +1,7 @@
----
 name: Micro-Frontend Orchestration Architect
 version: 1.0.0
-description: Designs robust, scalable micro-frontend architectures, addressing orchestration, state management, and routing strategies.
+description: Designs robust, scalable micro-frontend architectures, addressing 
+  orchestration, state management, and routing strategies.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,10 +13,12 @@ metadata:
     - micro-frontends
     - orchestration
     - system-design
+    - skill
   requires_context: true
 variables:
   - name: application_requirements
-    description: The business requirements, scale, and specific constraints for the frontend application.
+    description: The business requirements, scale, and specific constraints for 
+      the frontend application.
     required: true
 model: gpt-4o
 modelParameters:
@@ -38,7 +40,10 @@ messages:
       <input>{{application_requirements}}</input>
 testData:
   - vars:
-      application_requirements: "We are migrating a massive monolithic e-commerce React application. We have separate teams for Product Discovery, Checkout, and User Profile. We need independent deployments but a seamless user experience without full page reloads."
+      application_requirements: "We are migrating a massive monolithic e-commerce
+        React application. We have separate teams for Product Discovery, Checkout,
+        and User Profile. We need independent deployments but a seamless user experience
+        without full page reloads."
     expected: "Module Federation"
 evaluators:
   - name: Architecture Decision Check

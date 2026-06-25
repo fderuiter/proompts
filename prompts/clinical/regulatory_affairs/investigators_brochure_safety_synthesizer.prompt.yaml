@@ -1,19 +1,31 @@
----
 name: investigators_brochure_safety_synthesizer
 version: 1.0.0
-description: Synthesizes complex nonclinical and clinical safety data into a highly structured, regulatory-compliant Investigator's Brochure (IB) Safety Reference Section per ICH E6(R2) guidelines.
+description: Synthesizes complex nonclinical and clinical safety data into a 
+  highly structured, regulatory-compliant Investigator's Brochure (IB) Safety 
+  Reference Section per ICH E6(R2) guidelines.
 authors:
   - Strategic Genesis Architect
 metadata:
   domain: clinical/regulatory_affairs
   complexity: high
+  tags:
+    - regulatory-affairs
+    - investigators
+    - brochure
+    - safety
+    - synthesizer
+    - skill
+  requires_context: true
 variables:
   - name: NONCLINICAL_SAFETY_DATA
-    description: Summary of recent nonclinical pharmacology and toxicology findings.
+    description: Summary of recent nonclinical pharmacology and toxicology 
+      findings.
   - name: CLINICAL_SAFETY_DATA
-    description: Summary of cumulative human clinical safety data and adverse events.
+    description: Summary of cumulative human clinical safety data and adverse 
+      events.
   - name: REFERENCE_SAFETY_INFORMATION
-    description: Current established Reference Safety Information (RSI) for the investigational product.
+    description: Current established Reference Safety Information (RSI) for the 
+      investigational product.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -49,7 +61,10 @@ messages:
 
       Ensure your synthesis strictly adheres to ICH E6(R2) standards, updating the core safety profile and highlighting any changes to the risk-benefit assessment.
 testData:
-  - NONCLINICAL_SAFETY_DATA: "28-day rat toxicology study showed reversible hepatocellular hypertrophy at 50 mg/kg/day."
-    CLINICAL_SAFETY_DATA: "Phase I trial (n=32) reported mild, transient elevations in AST/ALT in 3 subjects at the 25 mg dose cohort; no cases of Hy's Law."
-    REFERENCE_SAFETY_INFORMATION: "Current RSI notes potential for mild gastrointestinal distress. Hepatic events are currently unlisted."
+  - NONCLINICAL_SAFETY_DATA: "28-day rat toxicology study showed reversible hepatocellular
+      hypertrophy at 50 mg/kg/day."
+    CLINICAL_SAFETY_DATA: "Phase I trial (n=32) reported mild, transient elevations
+      in AST/ALT in 3 subjects at the 25 mg dose cohort; no cases of Hy's Law."
+    REFERENCE_SAFETY_INFORMATION: "Current RSI notes potential for mild gastrointestinal
+      distress. Hepatic events are currently unlisted."
 evaluators: []

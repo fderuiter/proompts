@@ -1,54 +1,55 @@
 name: De Novo Request Preparation
 version: 0.1.0
-description: Generate a summary of risks and mitigations for a De Novo classification
-  request.
+description: Generate a summary of risks and mitigations for a De Novo 
+  classification request.
 metadata:
   domain: regulatory
   complexity: low
   tags:
-  - submissions
-  - novo
-  - request
-  - preparation
+    - submissions
+    - novo
+    - request
+    - preparation
+    - skill
   requires_context: false
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-- role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
-    FDA and ISO compliance tasks.
+  - role: system
+    content: 'You are an expert Regulatory Affairs Specialist capable of handling
+      complex FDA and ISO compliance tasks.
 
 
-    ## Context
+      ## Context
 
-    21 CFR Part 860 Subpart D
-
-
-    ## Objective
-
-    Generate a summary of risks and mitigations for a De Novo classification request.
+      21 CFR Part 860 Subpart D
 
 
-    ## Output Format
+      ## Objective
 
-    Structured table or list.'
-- role: user
-  content: 'Please perform the task using the following input data:
+      Generate a summary of risks and mitigations for a De Novo classification request.
 
 
-    <input>
+      ## Output Format
 
-    {{input}}
+      Structured table or list.'
+  - role: user
+    content: 'Please perform the task using the following input data:
 
-    </input>'
+
+      <input>
+
+      {{input}}
+
+      </input>'
 testData:
-- expected: Expected output as per instructions.
-  vars: Probable risks and proposed mitigation measures. (Example data)
+  - expected: Expected output as per instructions.
+    vars: Probable risks and proposed mitigation measures. (Example data)
 evaluators:
-- name: Validation Check
-  regex: (?i)Review
+  - name: Validation Check
+    regex: (?i)Review

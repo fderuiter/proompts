@@ -5,50 +5,51 @@ metadata:
   domain: regulatory
   complexity: low
   tags:
-  - submissions
-  - medicare
-  - coverage
-  - request
-  - ide
+    - submissions
+    - medicare
+    - coverage
+    - request
+    - ide
+    - skill
   requires_context: false
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-- role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
-    FDA and ISO compliance tasks.
+  - role: system
+    content: 'You are an expert Regulatory Affairs Specialist capable of handling
+      complex FDA and ISO compliance tasks.
 
 
-    ## Context
+      ## Context
 
-    CMS Guidelines
-
-
-    ## Objective
-
-    Prepare a request packet for CMS reimbursement of an IDE study.
+      CMS Guidelines
 
 
-    ## Output Format
+      ## Objective
 
-    CMS request letter and crosswalk table.'
-- role: user
-  content: 'Please perform the task using the following input data:
+      Prepare a request packet for CMS reimbursement of an IDE study.
 
 
-    <input>
+      ## Output Format
 
-    {{input}}
+      CMS request letter and crosswalk table.'
+  - role: user
+    content: 'Please perform the task using the following input data:
 
-    </input>'
+
+      <input>
+
+      {{input}}
+
+      </input>'
 testData:
-- expected: Expected output as per instructions.
-  vars: FDA IDE approval letter and NCT number. (Example data)
+  - expected: Expected output as per instructions.
+    vars: FDA IDE approval letter and NCT number. (Example data)
 evaluators:
-- name: Validation Check
-  regex: (?i)Verify
+  - name: Validation Check
+    regex: (?i)Verify

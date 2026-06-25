@@ -1,16 +1,26 @@
----
 name: algorithmic_multi_touch_attribution_modeler
 version: 1.0.0
-description: Formulates rigorous algorithmic multi-touch attribution (MTA) models using Markov chains and Shapley values to dynamically allocate fractional credit across complex B2B enterprise SaaS marketing touchpoints.
+description: Formulates rigorous algorithmic multi-touch attribution (MTA) 
+  models using Markov chains and Shapley values to dynamically allocate 
+  fractional credit across complex B2B enterprise SaaS marketing touchpoints.
 authors:
   - Growth Strategy Genesis Architect
 metadata:
   domain: growth/analytics
   complexity: high
+  tags:
+    - analytics
+    - algorithmic
+    - multi
+    - touch
+    - attribution
+    - skill
+  requires_context: false
 variables:
   - name: customer_journey_data
     type: string
-    description: Raw sequence data of customer touchpoints and conversion outcomes.
+    description: Raw sequence data of customer touchpoints and conversion 
+      outcomes.
   - name: marketing_channels
     type: string
     description: List of active marketing channels and associated spend metrics.
@@ -43,11 +53,16 @@ messages:
 
       Please output the transition matrix, Shapley value calculations, and your finalized channel credit allocation.
 testData:
-  - customer_journey_data: "Path 1: Social -> Email -> Webinar -> Conversion (Value: $10k). Path 2: Organic Search -> Webinar -> Conversion (Value: $15k). Path 3: Paid Ads -> Social -> No Conversion."
-    marketing_channels: "Social (Spend: $2k), Email (Spend: $1k), Webinar (Spend: $5k), Organic Search (Spend: $0), Paid Ads (Spend: $8k)."
+  - customer_journey_data: "Path 1: Social -> Email -> Webinar -> Conversion (Value:
+      $10k). Path 2: Organic Search -> Webinar -> Conversion (Value: $15k). Path 3:
+      Paid Ads -> Social -> No Conversion."
+    marketing_channels: "Social (Spend: $2k), Email (Spend: $1k), Webinar (Spend:
+      $5k), Organic Search (Spend: $0), Paid Ads (Spend: $8k)."
 evaluators:
   - type: model_graded
-    prompt: "Evaluate if the response includes explicit Markov Chain and Shapley value calculations with LaTeX formatting for equations, and provides a clear channel credit allocation."
+    prompt: "Evaluate if the response includes explicit Markov Chain and Shapley value
+      calculations with LaTeX formatting for equations, and provides a clear channel
+      credit allocation."
     choices:
       - "pass"
       - "fail"

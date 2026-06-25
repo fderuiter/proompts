@@ -1,16 +1,25 @@
----
 name: multi_modal_fmri_eeg_integration_architect
 version: 1.0.0
-description: Designs advanced, mathematically rigorous multi-modal fMRI and EEG data integration pipelines adhering strictly to BIDS standards.
+description: Designs advanced, mathematically rigorous multi-modal fMRI and EEG 
+  data integration pipelines adhering strictly to BIDS standards.
 authors:
   - Neuroscience Genesis Architect
 metadata:
   domain: scientific/neuroscience
   complexity: high
+  tags:
+    - computational-theoretical-neuroscience
+    - multi
+    - modal
+    - fmri
+    - eeg
+    - skill
+  requires_context: false
 variables:
   - name: study_objectives
     type: string
-    description: The core scientific or clinical objectives of the multi-modal study.
+    description: The core scientific or clinical objectives of the multi-modal 
+      study.
   - name: eeg_specs
     type: string
     description: Technical specifications of the EEG recording setup.
@@ -48,7 +57,8 @@ messages:
       {{fmri_specs}}
       </fmri_specs>
 testData:
-  - study_objectives: "Investigate resting-state default mode network (DMN) dynamics and alpha-band microstates in early-stage Alzheimer's disease."
+  - study_objectives: "Investigate resting-state default mode network (DMN) dynamics
+      and alpha-band microstates in early-stage Alzheimer's disease."
     eeg_specs: "128-channel MR-compatible cap, 5kHz sampling rate, referenced to FCz."
     fmri_specs: "3T Siemens Prisma, multi-band EPI, TR=800ms, 2.5mm isotropic voxels."
 evaluators:

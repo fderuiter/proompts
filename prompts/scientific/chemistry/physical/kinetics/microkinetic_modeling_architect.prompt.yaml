@@ -1,7 +1,8 @@
----
 name: Microkinetic Modeling Architect
 version: "1.0.0"
-description: Generates rigorous microkinetic models for complex catalytic cycles, calculating kinetic rate equations, transition state thermodynamics, and determining rate-determining steps.
+description: Generates rigorous microkinetic models for complex catalytic 
+  cycles, calculating kinetic rate equations, transition state thermodynamics, 
+  and determining rate-determining steps.
 authors:
   - Chemical Sciences Genesis Architect
 metadata:
@@ -13,15 +14,21 @@ metadata:
     - microkinetic-modeling
     - catalysis
     - thermodynamics
+    - skill
+  requires_context: false
 variables:
   - name: catalytic_system
-    description: The catalyst structure, surface, or enzymatic active site (e.g., Pt(111), Ru-Macho).
+    description: The catalyst structure, surface, or enzymatic active site 
+      (e.g., Pt(111), Ru-Macho).
     type: string
   - name: reaction_network
-    description: The overall reaction network including reactants, intermediates, and products with strict stoichiometry and IUPAC/SMILES notation.
+    description: The overall reaction network including reactants, 
+      intermediates, and products with strict stoichiometry and IUPAC/SMILES 
+      notation.
     type: string
   - name: operating_conditions
-    description: The operating thermodynamic constraints including temperature, pressure, and initial partial pressures/concentrations.
+    description: The operating thermodynamic constraints including temperature, 
+      pressure, and initial partial pressures/concentrations.
     type: string
 model: gpt-4o
 modelParameters:
@@ -63,7 +70,8 @@ testData:
     expected: "I. Elementary Reaction Network"
   - variables:
       catalytic_system: "ZSM-5 Zeolite (Brønsted acid sites)"
-      reaction_network: "Methanol-to-Olefins (MTO): 2CH3OH <=> CH3OCH3 + H2O -> C2H4 + ..."
+      reaction_network: "Methanol-to-Olefins (MTO): 2CH3OH <=> CH3OCH3 + H2O -> C2H4
+        + ..."
       operating_conditions: "T = 623 K, P = 1 atm, WHSV = 1 h-1"
     expected: "III. Microkinetic Rate Derivation"
 evaluators:

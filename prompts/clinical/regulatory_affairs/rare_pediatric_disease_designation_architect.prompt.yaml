@@ -1,25 +1,39 @@
----
 name: rare_pediatric_disease_designation_architect
 version: 1.0.0
-description: Synthesizes disease demographics, seriousness, mechanism of action, and scientific rationale into a rigorous Rare Pediatric Disease Designation (RPDD) request.
+description: Synthesizes disease demographics, seriousness, mechanism of action,
+  and scientific rationale into a rigorous Rare Pediatric Disease Designation 
+  (RPDD) request.
 authors:
   - Strategic Genesis Architect
 metadata:
   domain: clinical/regulatory_affairs
   complexity: high
+  tags:
+    - regulatory-affairs
+    - rare
+    - pediatric
+    - disease
+    - designation
+    - skill
+  requires_context: true
 variables:
   - name: target_disease
     type: string
     description: The specific rare pediatric disease or condition.
   - name: pediatric_demographics
     type: string
-    description: Epidemiological data demonstrating the disease primarily affects individuals from birth to 18 years, including prevalence and manifestation details.
+    description: Epidemiological data demonstrating the disease primarily 
+      affects individuals from birth to 18 years, including prevalence and 
+      manifestation details.
   - name: disease_seriousness
     type: string
-    description: Clinical evidence demonstrating that the disease is a serious or life-threatening condition in the pediatric population.
+    description: Clinical evidence demonstrating that the disease is a serious 
+      or life-threatening condition in the pediatric population.
   - name: scientific_rationale
     type: string
-    description: The core scientific and clinical rationale providing a medically plausible basis for expecting the drug to be effective for the rare pediatric disease.
+    description: The core scientific and clinical rationale providing a 
+      medically plausible basis for expecting the drug to be effective for the 
+      rare pediatric disease.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -64,12 +78,24 @@ messages:
 testData:
   - variables:
       target_disease: "Spinal Muscular Atrophy (SMA) Type 1"
-      disease_seriousness: "SMA Type 1 is a severe, life-threatening neuromuscular disease characterized by progressive muscle weakness and atrophy. Without intervention, patients typically experience respiratory failure and death by 2 years of age."
-      pediatric_demographics: "SMA Type 1 manifests exclusively in the pediatric population, typically presenting before 6 months of age. Over 95% of patients diagnosed with SMA Type 1 are under the age of 18, meeting the criterion that the disease primarily affects individuals from birth to 18 years."
-      scientific_rationale: "In an SMNΔ7 mouse model of SMA, systemic administration of the investigational gene therapy vector XYZ-999 resulted in robust, widespread SMN protein expression in motor neurons and significantly extended survival compared to untreated controls. Early clinical data from an ongoing Phase 1/2 study in infants with SMA Type 1 show improved motor milestones and reduced need for ventilatory support."
+      disease_seriousness: "SMA Type 1 is a severe, life-threatening neuromuscular
+        disease characterized by progressive muscle weakness and atrophy. Without
+        intervention, patients typically experience respiratory failure and death
+        by 2 years of age."
+      pediatric_demographics: "SMA Type 1 manifests exclusively in the pediatric population,
+        typically presenting before 6 months of age. Over 95% of patients diagnosed
+        with SMA Type 1 are under the age of 18, meeting the criterion that the disease
+        primarily affects individuals from birth to 18 years."
+      scientific_rationale: "In an SMNΔ7 mouse model of SMA, systemic administration
+        of the investigational gene therapy vector XYZ-999 resulted in robust, widespread
+        SMN protein expression in motor neurons and significantly extended survival
+        compared to untreated controls. Early clinical data from an ongoing Phase
+        1/2 study in infants with SMA Type 1 show improved motor milestones and reduced
+        need for ventilatory support."
     expected: "A rigorously structured, highly formal RPDD rationale document."
 evaluators:
   - name: Structural Check
     type: string
     string:
-      regex: '(?si).*Executive Summary.*Disease Seriousness.*Pediatric Demographics and Manifestation.*Scientific Rationale.*Conclusion.*'
+      regex: '(?si).*Executive Summary.*Disease Seriousness.*Pediatric Demographics
+        and Manifestation.*Scientific Rationale.*Conclusion.*'

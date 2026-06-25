@@ -1,22 +1,34 @@
----
 name: bayesian_phylogenetic_inference_mcmc_architect
 version: 1.0.0
-description: Designs highly rigorous Bayesian phylogenetic inference models utilizing Markov Chain Monte Carlo (MCMC) methods to resolve complex evolutionary trees from multi-locus sequence data.
+description: Designs highly rigorous Bayesian phylogenetic inference models 
+  utilizing Markov Chain Monte Carlo (MCMC) methods to resolve complex 
+  evolutionary trees from multi-locus sequence data.
 authors:
   - Biological Sciences Genesis Architect
 metadata:
   domain: computational_biology
   complexity: high
+  tags:
+    - computational-biology
+    - bayesian
+    - phylogenetic
+    - inference
+    - mcmc
+    - skill
+  requires_context: true
 variables:
   - name: input_alignment_data
     type: string
-    description: The multi-locus sequence alignment data provided in strict FASTA format.
+    description: The multi-locus sequence alignment data provided in strict 
+      FASTA format.
   - name: substitution_model
     type: string
-    description: The explicit molecular evolutionary substitution model (e.g., GTR+I+G).
+    description: The explicit molecular evolutionary substitution model (e.g., 
+      GTR+I+G).
   - name: molecular_clock_prior
     type: string
-    description: The prior distribution specification for the molecular clock (e.g., Strict, Uncorrelated Lognormal Relaxed Clock).
+    description: The prior distribution specification for the molecular clock 
+      (e.g., Strict, Uncorrelated Lognormal Relaxed Clock).
   - name: var
     type: string
     description: A placeholder variable demonstrating XML tag wrapping.

@@ -39,6 +39,11 @@ if selected_file == "Create New...":
         "name": "",
         "version": "0.1.0",
         "description": "",
+        "metadata": {
+            "domain": "general",
+            "complexity": "low",
+            "tags": ["skill"]
+        },
         "model": "gpt-4",
         "modelParameters": {"temperature": 0.7, "max_tokens": 1000},
         "variables": [{"name": "input", "description": "User input"}],

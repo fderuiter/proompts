@@ -1,7 +1,8 @@
----
 name: Enterprise Collaboration Portal Architect
 version: 1.0.0
-description: Designs the system architecture for a web-based Enterprise Collaboration Portal that abstracts Git and YAML filesystem into a visual CMS for AI prompt authoring, simulation, and version control.
+description: Designs the system architecture for a web-based Enterprise 
+  Collaboration Portal that abstracts Git and YAML filesystem into a visual CMS 
+  for AI prompt authoring, simulation, and version control.
 authors:
   - AI Agent
 metadata:
@@ -13,6 +14,7 @@ metadata:
     - cms
     - prompt-engineering
     - system-design
+    - skill
   requires_context: true
 variables:
   - name: functional_requirements
@@ -52,7 +54,8 @@ messages:
       {{constraints}}
 testData:
   - vars:
-      functional_requirements: "A standalone, hosted GUI for authoring prompts, a visual workflow editor, and cloud-based version control system."
+      functional_requirements: "A standalone, hosted GUI for authoring prompts, a
+        visual workflow editor, and cloud-based version control system."
       constraints: "Schema Parity with existing YAML and Zero-Local Footprint."
     expected: "Frontend"
 evaluators:

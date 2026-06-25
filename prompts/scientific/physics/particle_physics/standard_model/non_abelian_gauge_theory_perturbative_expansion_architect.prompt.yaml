@@ -1,6 +1,7 @@
----
 name: Non-Abelian Gauge Theory Perturbative Expansion Architect
-description: A highly specialized theoretical physics prompt for generating rigorous mathematical derivations of perturbative expansions in non-Abelian gauge theories, including Faddeev-Popov ghosts and BRST symmetry.
+description: A highly specialized theoretical physics prompt for generating 
+  rigorous mathematical derivations of perturbative expansions in non-Abelian 
+  gauge theories, including Faddeev-Popov ghosts and BRST symmetry.
 version: 1.0.0
 authors:
   - name: Theoretical Physics Genesis Architect
@@ -13,15 +14,19 @@ metadata:
     - non-abelian-gauge-theory
     - quantum-field-theory
     - brst-symmetry
+    - skill
+  requires_context: false
 variables:
   - name: gauge_group
     description: The explicit symmetry group of the theory (e.g., SU(N)).
     required: true
   - name: loop_order
-    description: The loop order for the perturbative expansion (e.g., one-loop, two-loop).
+    description: The loop order for the perturbative expansion (e.g., one-loop, 
+      two-loop).
     required: true
   - name: gauge_fixing_condition
-    description: The mathematical gauge-fixing choice (e.g., covariant R_xi gauge).
+    description: The mathematical gauge-fixing choice (e.g., covariant R_xi 
+      gauge).
     required: true
 model: gpt-4o
 modelParameters:

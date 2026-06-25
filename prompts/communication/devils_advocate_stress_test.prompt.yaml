@@ -1,43 +1,44 @@
-name: "Devil\u2019s-Advocate Stress Test"
+name: "Devil’s-Advocate Stress Test"
 version: 0.1.0
 description: Act as a seasoned critic.
 metadata:
   domain: communication
   complexity: low
   tags:
-  - devil
-  - s-advocate
-  - stress
-  - test
+    - devil
+    - s-advocate
+    - stress
+    - test
+    - skill
   requires_context: false
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: "1. Present the three strongest arguments against this idea: \u2039DESCRIBE\
-    \ IDEA\u203A.\n2. For each objection, cite a real or hypothetical example that\
-    \ illustrates the risk.\n3. Then propose one mitigation strategy per objection."
-- role: user
-  content: '{{input}}'
+  - role: system
+    content: "1. Present the three strongest arguments against this idea: ‹DESCRIBE
+      IDEA›.\n2. For each objection, cite a real or hypothetical example that illustrates
+      the risk.\n3. Then propose one mitigation strategy per objection."
+  - role: user
+    content: '{{input}}'
 testData:
-- expected: 'Objection 1: crowded market; Example: many apps fail.
+  - expected: 'Objection 1: crowded market; Example: many apps fail.
 
-    Mitigation: offer unique community.
+      Mitigation: offer unique community.
 
-    Objection 2: privacy risk; Example: data leaks.
+      Objection 2: privacy risk; Example: data leaks.
 
-    Mitigation: strong encryption.
+      Mitigation: strong encryption.
 
-    Objection 3: low retention; Example: early churn.
+      Objection 3: low retention; Example: early churn.
 
-    Mitigation: gamified rewards.'
-  vars: Launch a new social app
+      Mitigation: gamified rewards.'
+    vars: Launch a new social app
 evaluators:
-- name: Output lists mitigations
-  string:
-    contains: Mitigation
+  - name: Output lists mitigations
+    string:
+      contains: Mitigation

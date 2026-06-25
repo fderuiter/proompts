@@ -1,4 +1,3 @@
----
 name: Data Integrity ALCOA+ Audit Architect
 version: 1.0.0
 description: >
@@ -15,19 +14,23 @@ metadata:
     - fda-compliance
     - 21-cfr-part-11
     - audit
+    - skill
   requires_context: true
 variables:
   - name: system_architecture
     type: string
-    description: Detailed description of the system architecture, including databases, applications, and network topologies.
+    description: Detailed description of the system architecture, including 
+      databases, applications, and network topologies.
     required: true
   - name: data_flow_description
     type: string
-    description: Comprehensive explanation of how data moves through the system, from creation and modification to archival and retrieval.
+    description: Comprehensive explanation of how data moves through the system,
+      from creation and modification to archival and retrieval.
     required: true
   - name: identified_vulnerabilities
     type: string
-    description: Any previously identified vulnerabilities, deviations, or gaps in data integrity controls.
+    description: Any previously identified vulnerabilities, deviations, or gaps 
+      in data integrity controls.
     required: false
     default: "None"
 model: gpt-4o
@@ -66,8 +69,10 @@ messages:
       {{identified_vulnerabilities}}
 testData:
   - variables:
-      system_architecture: "A centralized LIMS handling electronic batch records without active directory integration."
-      data_flow_description: "Operators manually enter results into a shared terminal. Data is saved to a local CSV file before being uploaded."
+      system_architecture: "A centralized LIMS handling electronic batch records without
+        active directory integration."
+      data_flow_description: "Operators manually enter results into a shared terminal.
+        Data is saved to a local CSV file before being uploaded."
       identified_vulnerabilities: "Shared generic logins, no audit trail for CSV modifications."
     expected: "ALCOA\\+"
 evaluators:

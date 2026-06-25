@@ -1,7 +1,8 @@
----
 name: WebAssembly Sandboxed Plugin Architect
 version: 1.0.0
-description: Designs highly secure, performant, and sandboxed plugin architectures leveraging WebAssembly (Wasm) and WASI for extensibility in core enterprise platforms.
+description: Designs highly secure, performant, and sandboxed plugin 
+  architectures leveraging WebAssembly (Wasm) and WASI for extensibility in core
+  enterprise platforms.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -14,16 +15,20 @@ metadata:
     - wasi
     - security
     - system-design
+    - skill
   requires_context: false
 variables:
   - name: core_platform
-    description: A description of the core enterprise platform that requires extensibility via plugins.
+    description: A description of the core enterprise platform that requires 
+      extensibility via plugins.
     required: true
   - name: plugin_requirements
-    description: The functional requirements, resource limits, and lifecycle events for the plugins.
+    description: The functional requirements, resource limits, and lifecycle 
+      events for the plugins.
     required: true
   - name: security_constraints
-    description: Security boundaries, required isolation levels, and compliance mandates.
+    description: Security boundaries, required isolation levels, and compliance 
+      mandates.
     required: true
 model: anthropic/claude-3-opus-20240229
 modelParameters:
@@ -52,9 +57,12 @@ messages:
       {{security_constraints}}
 testData:
   - vars:
-      core_platform: "A high-throughput distributed message broker written in Rust needing dynamic message transformation plugins."
-      plugin_requirements: "Plugins must execute under 5ms, consume max 16MB RAM, and support hot-reloading."
-      security_constraints: "Strict isolation: zero network access, read-only file system access to specific directories, capability-based access control."
+      core_platform: "A high-throughput distributed message broker written in Rust
+        needing dynamic message transformation plugins."
+      plugin_requirements: "Plugins must execute under 5ms, consume max 16MB RAM,
+        and support hot-reloading."
+      security_constraints: "Strict isolation: zero network access, read-only file
+        system access to specific directories, capability-based access control."
     expected: "WASI"
 evaluators:
   - name: Keyword Check

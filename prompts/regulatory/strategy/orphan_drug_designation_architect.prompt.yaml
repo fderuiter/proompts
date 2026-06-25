@@ -1,7 +1,8 @@
----
 name: Orphan Drug Designation Architect
 version: 1.0.0
-description: Formulates a compelling FDA Orphan Drug Designation (ODD) request incorporating rigorous epidemiological analysis and medical plausibility rationale.
+description: Formulates a compelling FDA Orphan Drug Designation (ODD) request 
+  incorporating rigorous epidemiological analysis and medical plausibility 
+  rationale.
 authors:
   - name: Jules
 metadata:
@@ -12,6 +13,8 @@ metadata:
     - fda
     - orphan-drug
     - epidemiology
+    - skill
+  requires_context: false
 variables:
   - name: drug_mechanism
     description: Detailed mechanism of action of the investigational drug.
@@ -20,7 +23,8 @@ variables:
     description: The specific rare disease or condition targeted.
     required: true
   - name: epidemiological_data
-    description: Current prevalence and incidence data for the target disease in the US.
+    description: Current prevalence and incidence data for the target disease in
+      the US.
     required: true
 model: gpt-4o
 modelParameters:
@@ -55,9 +59,12 @@ messages:
 
 testData:
   - inputs:
-      drug_mechanism: "AAV9 gene therapy delivering a functional copy of the SMN1 gene."
+      drug_mechanism: "AAV9 gene therapy delivering a functional copy of the SMN1
+        gene."
       disease_target: "Spinal Muscular Atrophy (SMA) Type 1"
-      epidemiological_data: "Incidence of 1 in 10,000 live births in the US. US annual birth rate is approximately 3.6 million. Median survival without intervention is <2 years."
+      epidemiological_data: "Incidence of 1 in 10,000 live births in the US. US annual
+        birth rate is approximately 3.6 million. Median survival without intervention
+        is <2 years."
     output: "Prevalence estimate derived mathematically"
 evaluators:
   - type: regex

@@ -5,49 +5,50 @@ metadata:
   domain: regulatory
   complexity: low
   tags:
-  - regulatory-admin
-  - privacy
-  - act
-  - auditing
+    - regulatory-admin
+    - privacy
+    - act
+    - auditing
+    - skill
   requires_context: false
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-- role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
-    FDA and ISO compliance tasks.
+  - role: system
+    content: 'You are an expert Regulatory Affairs Specialist capable of handling
+      complex FDA and ISO compliance tasks.
 
 
-    ## Context
+      ## Context
 
-    21 CFR Part 21.20
-
-
-    ## Objective
-
-    Draft a notice for a new FDA Privacy Act Record System.
+      21 CFR Part 21.20
 
 
-    ## Output Format
+      ## Objective
 
-    Federal Register notice format.'
-- role: user
-  content: 'Please perform the task using the following input data:
+      Draft a notice for a new FDA Privacy Act Record System.
 
 
-    <input>
+      ## Output Format
 
-    {{input}}
+      Federal Register notice format.'
+  - role: user
+    content: 'Please perform the task using the following input data:
 
-    </input>'
+
+      <input>
+
+      {{input}}
+
+      </input>'
 testData:
-- expected: Expected output as per instructions.
-  vars: System name, location, and categories of individuals. (Example data)
+  - expected: Expected output as per instructions.
+    vars: System name, location, and categories of individuals. (Example data)
 evaluators:
-- name: Validation Check
-  regex: (?i)Compare
+  - name: Validation Check
+    regex: (?i)Compare

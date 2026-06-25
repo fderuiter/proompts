@@ -8,6 +8,7 @@ metadata:
     - music
     - lyrics
     - creativity
+    - skill
   requires_context: false
 variables:
   - name: psychological_profile

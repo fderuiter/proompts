@@ -1,7 +1,8 @@
----
 name: Kubernetes Cluster Security Posture Architect
 version: 1.0.0
-description: Analyzes Kubernetes (K8s) cluster configurations, RBAC policies, and manifest files to identify security misconfigurations and architect a hardened, zero-trust container orchestration environment.
+description: Analyzes Kubernetes (K8s) cluster configurations, RBAC policies, 
+  and manifest files to identify security misconfigurations and architect a 
+  hardened, zero-trust container orchestration environment.
 authors:
   - Cybersecurity Genesis Architect
 metadata:
@@ -13,16 +14,20 @@ metadata:
     - cloud-native
     - rbac
     - zero-trust
+    - skill
   requires_context: true
 variables:
   - name: cluster_manifests
-    description: Raw Kubernetes YAML manifests, cluster configuration files, or Helm charts to be reviewed.
+    description: Raw Kubernetes YAML manifests, cluster configuration files, or 
+      Helm charts to be reviewed.
     required: true
   - name: rbac_policies
-    description: Existing Role, ClusterRole, RoleBinding, and ClusterRoleBinding definitions.
+    description: Existing Role, ClusterRole, RoleBinding, and ClusterRoleBinding
+      definitions.
     required: true
   - name: compliance_framework
-    description: Target compliance framework or baseline standard (e.g., CIS Kubernetes Benchmark, PCI-DSS, NSA/CISA Hardening Guidance).
+    description: Target compliance framework or baseline standard (e.g., CIS 
+      Kubernetes Benchmark, PCI-DSS, NSA/CISA Hardening Guidance).
     required: true
 model: gpt-4o
 modelParameters:
@@ -56,15 +61,21 @@ messages:
       </compliance_framework>
 testData:
   - inputs:
-      cluster_manifests: "Deployment yaml with securityContext: privileged: true and hostNetwork: true."
-      rbac_policies: "ClusterRoleBinding granting the 'default' ServiceAccount cluster-admin privileges."
+      cluster_manifests: "Deployment yaml with securityContext: privileged: true and
+        hostNetwork: true."
+      rbac_policies: "ClusterRoleBinding granting the 'default' ServiceAccount cluster-admin
+        privileges."
       compliance_framework: "CIS Kubernetes Benchmark v1.8.0"
-    expected: "Identifies the critical risk of privileged containers and hostNetwork, and remediates the cluster-admin RoleBinding."
+    expected: "Identifies the critical risk of privileged containers and hostNetwork,
+      and remediates the cluster-admin RoleBinding."
   - inputs:
-      cluster_manifests: "Namespace without any NetworkPolicies, exposing sensitive microservices."
-      rbac_policies: "Role allowing 'get', 'list', 'watch' on 'secrets' across all namespaces."
+      cluster_manifests: "Namespace without any NetworkPolicies, exposing sensitive
+        microservices."
+      rbac_policies: "Role allowing 'get', 'list', 'watch' on 'secrets' across all
+        namespaces."
       compliance_framework: "NSA/CISA Kubernetes Hardening Guidance"
-    expected: "Provides a default-deny NetworkPolicy and restricts secret access in RBAC to specific, scoped namespaces."
+    expected: "Provides a default-deny NetworkPolicy and restricts secret access in
+      RBAC to specific, scoped namespaces."
 evaluators:
   - type: regex_match
     pattern: "(?i)(NetworkPolicy|securityContext|Admission Controller|Gatekeeper|Kyverno)"

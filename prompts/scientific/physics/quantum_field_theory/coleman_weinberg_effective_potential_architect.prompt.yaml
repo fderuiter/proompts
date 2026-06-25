@@ -1,7 +1,8 @@
----
 name: Coleman-Weinberg Effective Potential Architect
 version: 1.0.0
-description: Formulates the rigorous derivation of the one-loop Coleman-Weinberg effective potential, demonstrating dynamical symmetry breaking via radiative corrections in quantum field theories.
+description: Formulates the rigorous derivation of the one-loop Coleman-Weinberg
+  effective potential, demonstrating dynamical symmetry breaking via radiative 
+  corrections in quantum field theories.
 authors:
   - name: Theoretical Physics Genesis Architect
 metadata:
@@ -13,16 +14,22 @@ metadata:
     - spontaneous-symmetry-breaking
     - effective-potential
     - coleman-weinberg
+    - skill
   requires_context: false
 variables:
   - name: classical_potential
-    description: The explicit mathematical form of the classical (tree-level) scalar potential, specifically lacking a negative mass-squared term.
+    description: The explicit mathematical form of the classical (tree-level) 
+      scalar potential, specifically lacking a negative mass-squared term.
     required: true
   - name: field_content
-    description: The full spectrum of fields coupling to the classical scalar background (e.g., scalar, Dirac fermions, gauge bosons) and their interaction Lagrangians.
+    description: The full spectrum of fields coupling to the classical scalar 
+      background (e.g., scalar, Dirac fermions, gauge bosons) and their 
+      interaction Lagrangians.
     required: true
   - name: renormalization_condition
-    description: The explicit renormalization conditions (e.g., specifying the renormalization scale M and the values of the potential's derivatives at M).
+    description: The explicit renormalization conditions (e.g., specifying the 
+      renormalization scale M and the values of the potential's derivatives at 
+      M).
     required: true
 model: gpt-4o
 modelParameters:
@@ -61,12 +68,18 @@ testData:
   - inputs:
       classical_potential: "V_{tree}(\\phi) = \\frac{\\lambda}{4!} \\phi^4"
       field_content: "Real massless scalar field \\phi with self-interaction"
-      renormalization_condition: "\\left. \\frac{d^2 V_{eff}}{d\\phi^2} \\right|_{\\phi=0} = 0, \\quad \\left. \\frac{d^4 V_{eff}}{d\\phi^4} \\right|_{\\phi=M} = \\lambda"
-    expected: "V_{eff} = \\frac{\\lambda}{4!} \\phi^4 + \\frac{\\lambda^2 \\phi^4}{256 \\pi^2} \\left( \\ln \\frac{\\phi^2}{M^2} - \\frac{25}{6} \\right)"
+      renormalization_condition: "\\left. \\frac{d^2 V_{eff}}{d\\phi^2} \\right|_{\\
+        phi=0} = 0, \\quad \\left. \\frac{d^4 V_{eff}}{d\\phi^4} \\right|_{\\phi=M}
+        = \\lambda"
+    expected: "V_{eff} = \\frac{\\lambda}{4!} \\phi^4 + \\frac{\\lambda^2 \\phi^4}{256
+      \\pi^2} \\left( \\ln \\frac{\\phi^2}{M^2} - \\frac{25}{6} \\right)"
   - inputs:
       classical_potential: "V_{tree}(\\phi) = \\frac{\\lambda}{4!} \\phi^4"
-      field_content: "Scalar field \\phi coupling to an Abelian gauge field A_\\mu with coupling e, such that the gauge boson mass is m_A = e\\phi"
-      renormalization_condition: "\\left. \\frac{d^2 V_{eff}}{d\\phi^2} \\right|_{\\phi=0} = 0, \\quad \\left. \\frac{d^4 V_{eff}}{d\\phi^4} \\right|_{\\phi=M} = \\lambda"
+      field_content: "Scalar field \\phi coupling to an Abelian gauge field A_\\mu
+        with coupling e, such that the gauge boson mass is m_A = e\\phi"
+      renormalization_condition: "\\left. \\frac{d^2 V_{eff}}{d\\phi^2} \\right|_{\\
+        phi=0} = 0, \\quad \\left. \\frac{d^4 V_{eff}}{d\\phi^4} \\right|_{\\phi=M}
+        = \\lambda"
     expected: "\\frac{3 e^4 \\phi^4}{64 \\pi^2}"
 evaluators:
   - name: Latex Notation Check

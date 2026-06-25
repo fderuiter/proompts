@@ -1,7 +1,8 @@
----
 name: Serverless Function Orchestration Architect
 version: 1.0.0
-description: Designs highly scalable, resilient, and cost-efficient serverless function orchestration architectures using patterns like Saga, Scatter-Gather, and Map-Reduce.
+description: Designs highly scalable, resilient, and cost-efficient serverless 
+  function orchestration architectures using patterns like Saga, Scatter-Gather,
+  and Map-Reduce.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,16 +14,21 @@ metadata:
     - orchestration
     - cloud-native
     - distributed-systems
+    - skill
   requires_context: false
 variables:
   - name: business_workflow
-    description: A description of the core business process that needs to be orchestrated (e.g., e-commerce order fulfillment, media transcoding pipeline, data ingestion).
+    description: A description of the core business process that needs to be 
+      orchestrated (e.g., e-commerce order fulfillment, media transcoding 
+      pipeline, data ingestion).
     required: true
   - name: event_sources
-    description: The primary event sources triggering the workflow and the integration points (e.g., API Gateway, S3 buckets, Kafka topics, SNS).
+    description: The primary event sources triggering the workflow and the 
+      integration points (e.g., API Gateway, S3 buckets, Kafka topics, SNS).
     required: true
   - name: constraints_and_slas
-    description: Key constraints such as idempotency requirements, retry limits, maximum execution time, payload size limits, and cost targets.
+    description: Key constraints such as idempotency requirements, retry limits,
+      maximum execution time, payload size limits, and cost targets.
     required: true
 model: gpt-4o
 modelParameters:
@@ -58,9 +64,14 @@ messages:
       <constraints_and_slas>{{constraints_and_slas}}</constraints_and_slas>
 testData:
   - vars:
-      business_workflow: "An e-commerce order fulfillment process involving payment processing, inventory deduction, shipping label generation, and customer notification."
-      event_sources: "Triggered via REST API calls from an API Gateway. Downstream integrations include a third-party payment gateway and an internal shipping service."
-      constraints_and_slas: "Strict idempotency required to prevent double charging. The payment step must complete within 5 seconds. If inventory deduction fails, the payment must be refunded. Maximum payload size between steps is 100KB."
+      business_workflow: "An e-commerce order fulfillment process involving payment
+        processing, inventory deduction, shipping label generation, and customer notification."
+      event_sources: "Triggered via REST API calls from an API Gateway. Downstream
+        integrations include a third-party payment gateway and an internal shipping
+        service."
+      constraints_and_slas: "Strict idempotency required to prevent double charging.
+        The payment step must complete within 5 seconds. If inventory deduction fails,
+        the payment must be refunded. Maximum payload size between steps is 100KB."
     expected: "Saga Pattern"
 evaluators:
   - name: Concept Check

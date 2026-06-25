@@ -1,22 +1,33 @@
----
 name: Custom Axiomatic System Soundness Evaluator
 version: 1.0.0
-description: Evaluates the logical soundness of custom axiomatic systems by rigorously proving that all axioms are valid under a specified formal semantics and that all inference rules preserve truth.
+description: Evaluates the logical soundness of custom axiomatic systems by 
+  rigorously proving that all axioms are valid under a specified formal 
+  semantics and that all inference rules preserve truth.
 authors:
   - Formal Logic Genesis Architect
 metadata:
   domain: scientific/mathematics/formal_logic
   complexity: high
+  tags:
+    - mathematics
+    - formal-logic
+    - custom
+    - axiomatic
+    - system
+    - skill
+  requires_context: false
 variables:
   - name: axioms
     type: string
     description: The set of formal axioms proposed for the logical system.
   - name: inference_rules
     type: string
-    description: The set of rules of inference (e.g., Modus Ponens, Necessitation) proposed for the logical system.
+    description: The set of rules of inference (e.g., Modus Ponens, 
+      Necessitation) proposed for the logical system.
   - name: formal_semantics
     type: string
-    description: The formal semantics (e.g., algebraic, Kripke, truth-functional) against which the system's soundness is evaluated.
+    description: The formal semantics (e.g., algebraic, Kripke, 
+      truth-functional) against which the system's soundness is evaluated.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -55,15 +66,21 @@ messages:
       </formal_semantics>
 testData:
   - inputs:
-      axioms: "A1: $A \to (B \to A)$ \nA2: $(A \to (B \to C)) \to ((A \to B) \to (A \to C))$"
+      axioms: "A1: $A \to (B \to A)$ \nA2: $(A \to (B \to C)) \to ((A \to B) \to (A
+        \to C))$"
       inference_rules: "Modus Ponens: From $A$ and $A \to B$, infer $B$."
-      formal_semantics: "Standard classical truth-functional semantics where $v(A \to B) = \text{False}$ iff $v(A) = \text{True}$ and $v(B) = \text{False}$."
+      formal_semantics: "Standard classical truth-functional semantics where $v(A
+        \to B) = \text{False}$ iff $v(A) = \text{True}$ and $v(B) = \text{False}$."
   - inputs:
       axioms: "A1: $\\Box A \\to A$"
       inference_rules: "Necessitation: From $\\vdash A$, infer $\\vdash \\Box A$."
-      formal_semantics: "Kripke semantics on frames $(W, R)$ where $R$ is strictly irreflexive and transitive."
+      formal_semantics: "Kripke semantics on frames $(W, R)$ where $R$ is strictly
+        irreflexive and transitive."
 evaluators:
   - type: regex
     pattern: "\\\\vDash|\\\\vdash|\\\\to|\\\\forall"
   - type: model_graded
-    prompt: "Did the model rigorously evaluate the soundness by checking axiom validity and inference rule truth-preservation using strict LaTeX formatting, and correctly identify if the system was unsound (e.g., the modal T axiom is unsound on irreflexive frames)?"
+    prompt: "Did the model rigorously evaluate the soundness by checking axiom validity
+      and inference rule truth-preservation using strict LaTeX formatting, and correctly
+      identify if the system was unsound (e.g., the modal T axiom is unsound on irreflexive
+      frames)?"

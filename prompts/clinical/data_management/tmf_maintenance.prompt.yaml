@@ -5,49 +5,51 @@ metadata:
   domain: clinical
   complexity: low
   tags:
-  - data-management
-  - trial
-  - master
-  - file
-  - tmf
+    - data-management
+    - trial
+    - master
+    - file
+    - tmf
+    - skill
   requires_context: true
 variables:
-- name: study_phase
-  description: The study phase to use for this prompt
-  required: true
+  - name: study_phase
+    description: The study phase to use for this prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: You are a TMF Specialist. Generate a checklist for the Trial Master File
-    (TMF) based on the CDISC TMF Reference Model, categorizing documents required
-    before, during, and after the clinical phase to ensure audit readiness.
-- role: user
-  content: 'Generate a checklist for the Trial Master File (TMF) based on the CDISC
-    TMF Reference Model, categorizing documents required before, during, and after
-    the clinical phase to ensure audit readiness.
+  - role: system
+    content: You are a TMF Specialist. Generate a checklist for the Trial Master
+      File (TMF) based on the CDISC TMF Reference Model, categorizing documents 
+      required before, during, and after the clinical phase to ensure audit 
+      readiness.
+  - role: user
+    content: 'Generate a checklist for the Trial Master File (TMF) based on the CDISC
+      TMF Reference Model, categorizing documents required before, during, and after
+      the clinical phase to ensure audit readiness.
 
 
-    Inputs:
+      Inputs:
 
-    - `{{study_phase}}`
+      - `{{study_phase}}`
 
 
-    Output format:
+      Output format:
 
-    Markdown TMF Checklist.'
+      Markdown TMF Checklist.'
 testData:
-- expected: 'TMF Checklist
+  - expected: 'TMF Checklist
 
-    '
-  vars: 'study_phase: Study Start-up.
+      '
+    vars: 'study_phase: Study Start-up.
 
-    '
+      '
 evaluators:
-- name: CDISC TMF Reference Model
-  string:
-    contains: CDISC TMF Reference Model
-- name: Audit Readiness
-  string:
-    contains: Audit Readiness
+  - name: CDISC TMF Reference Model
+    string:
+      contains: CDISC TMF Reference Model
+  - name: Audit Readiness
+    string:
+      contains: Audit Readiness

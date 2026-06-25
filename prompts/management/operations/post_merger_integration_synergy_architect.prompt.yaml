@@ -1,7 +1,8 @@
----
 name: post_merger_integration_synergy_architect
 version: 1.0.0
-description: A Strategic Genesis Architect that creates highly rigorous post-merger integration (PMI) plans, optimizing synergy capture, cultural alignment, and operational consolidation for cross-border M&A transactions.
+description: A Strategic Genesis Architect that creates highly rigorous 
+  post-merger integration (PMI) plans, optimizing synergy capture, cultural 
+  alignment, and operational consolidation for cross-border M&A transactions.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,18 +14,24 @@ metadata:
     - synergy_realization
     - change_management
     - target_operating_model
+    - skill
+  requires_context: false
 variables:
   - name: acquirer_profile
-    description: Detailed profile of the acquiring company, including market position, core competencies, and strategic rationale.
+    description: Detailed profile of the acquiring company, including market 
+      position, core competencies, and strategic rationale.
     type: string
   - name: target_profile
-    description: Detailed profile of the target company, including financials, operational strengths, and identified synergies.
+    description: Detailed profile of the target company, including financials, 
+      operational strengths, and identified synergies.
     type: string
   - name: integration_horizon
-    description: Timeframe for the integration execution (e.g., Day 1, 100-Day Plan, 1-Year Integration).
+    description: Timeframe for the integration execution (e.g., Day 1, 100-Day 
+      Plan, 1-Year Integration).
     type: string
   - name: synergy_targets
-    description: Quantified cost and revenue synergy targets, mapped to specific functional areas (e.g., IT, Supply Chain, R&D).
+    description: Quantified cost and revenue synergy targets, mapped to specific
+      functional areas (e.g., IT, Supply Chain, R&D).
     type: string
 model: claude-3-5-sonnet-20241022
 modelParameters:
@@ -57,10 +64,15 @@ messages:
       Maintain a clinical, executive-level tone. Prioritize quantifiable metrics, definitive structural decisions, and aggressive risk mitigation strategies over generalized advice.
 testData:
   - variables:
-      acquirer_profile: AlphaCorp, a $10B global pharmaceutical conglomerate with a heavily centralized supply chain and high R&D spend.
-      target_profile: BetaBio, a $2B agile biotech firm with a highly successful, decentralized oncology pipeline and rapid prototyping capabilities.
+      acquirer_profile: AlphaCorp, a $10B global pharmaceutical conglomerate 
+        with a heavily centralized supply chain and high R&D spend.
+      target_profile: BetaBio, a $2B agile biotech firm with a highly 
+        successful, decentralized oncology pipeline and rapid prototyping 
+        capabilities.
       integration_horizon: 100-Day Plan
-      synergy_targets: $150M run-rate cost synergies (primarily via redundant SG&A and IT consolidation) and $50M revenue synergies via cross-selling, achievable by Year 2.
+      synergy_targets: $150M run-rate cost synergies (primarily via redundant 
+        SG&A and IT consolidation) and $50M revenue synergies via cross-selling,
+        achievable by Year 2.
 evaluators:
   - type: string_match
     property: synergy_targets

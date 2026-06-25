@@ -1,7 +1,8 @@
----
 name: High-Scale WebSocket Push Architect
 version: 1.0.0
-description: Designs highly scalable, stateful, and performant persistent WebSocket architectures capable of handling millions of concurrent connections, state offloading, and broadcast pub/sub routing.
+description: Designs highly scalable, stateful, and performant persistent 
+  WebSocket architectures capable of handling millions of concurrent 
+  connections, state offloading, and broadcast pub/sub routing.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +14,20 @@ metadata:
     - pub-sub
     - architecture
     - stateful
+    - skill
   requires_context: false
 variables:
   - name: connection_scale
-    description: Information about the expected connection scale, peak concurrent users, and connection duration.
+    description: Information about the expected connection scale, peak 
+      concurrent users, and connection duration.
     required: true
   - name: broadcast_requirements
-    description: Details about message frequency, payload size, targeted vs global broadcasts, and delivery guarantees.
+    description: Details about message frequency, payload size, targeted vs 
+      global broadcasts, and delivery guarantees.
     required: true
   - name: infrastructure_constraints
-    description: Constraints on hardware, cloud providers, and allowable managed services vs self-hosted components.
+    description: Constraints on hardware, cloud providers, and allowable managed
+      services vs self-hosted components.
     required: true
 model: gpt-4o
 modelParameters:
@@ -58,12 +63,15 @@ messages:
 testData:
   - inputs:
       connection_scale: "10 million concurrent users, 30-minute average session duration."
-      broadcast_requirements: "1k targeted messages per second, 1KB payload, at-most-once delivery."
-      infrastructure_constraints: "AWS with EKS and ElastiCache. Must self-host the WebSocket gateway."
+      broadcast_requirements: "1k targeted messages per second, 1KB payload, at-most-once
+        delivery."
+      infrastructure_constraints: "AWS with EKS and ElastiCache. Must self-host the
+        WebSocket gateway."
     expected: "pub/sub backplane"
   - inputs:
       connection_scale: "100 million concurrent users, 5-minute average session duration."
-      broadcast_requirements: "1 million global broadcast messages per second, 100KB payload, exactly-once delivery."
+      broadcast_requirements: "1 million global broadcast messages per second, 100KB
+        payload, exactly-once delivery."
       infrastructure_constraints: "Single t2.micro instance."
     expected: "error"
 evaluators:

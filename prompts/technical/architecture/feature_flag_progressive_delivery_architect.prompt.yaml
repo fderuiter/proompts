@@ -1,7 +1,8 @@
----
 name: Feature Flag and Progressive Delivery Architect
 version: 1.0.0
-description: Designs highly reliable, scalable, and risk-mitigated feature flag and progressive delivery architectures for modern continuous integration and deployment pipelines.
+description: Designs highly reliable, scalable, and risk-mitigated feature flag 
+  and progressive delivery architectures for modern continuous integration and 
+  deployment pipelines.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +14,20 @@ metadata:
     - feature-flags
     - ci-cd
     - system-design
+    - skill
   requires_context: false
 variables:
   - name: deployment_environment
-    description: A description of the deployment targets and infrastructure (e.g., Kubernetes clusters, serverless platforms, edge nodes).
+    description: A description of the deployment targets and infrastructure 
+      (e.g., Kubernetes clusters, serverless platforms, edge nodes).
     required: true
   - name: application_architecture
-    description: An overview of the application topology, user segments, and state management mechanisms.
+    description: An overview of the application topology, user segments, and 
+      state management mechanisms.
     required: true
   - name: risk_tolerance
-    description: Acceptable thresholds for deployment failures, rollback requirements, and blast radius constraints.
+    description: Acceptable thresholds for deployment failures, rollback 
+      requirements, and blast radius constraints.
     required: true
 model: gpt-4o
 modelParameters:
@@ -48,11 +53,15 @@ messages:
       <risk_tolerance>{{risk_tolerance}}</risk_tolerance>
 testData:
   - vars:
-      deployment_environment: "Multi-region Kubernetes clusters across AWS and GCP using Istio service mesh."
-      application_architecture: "Microservices backend with a heavily cached GraphQL supergraph and distributed edge caching."
-      risk_tolerance: "Zero downtime required, max blast radius of 1% for new feature rollouts, mandatory automated rollbacks within 30 seconds of MTTR breach."
+      deployment_environment: "Multi-region Kubernetes clusters across AWS and GCP
+        using Istio service mesh."
+      application_architecture: "Microservices backend with a heavily cached GraphQL
+        supergraph and distributed edge caching."
+      risk_tolerance: "Zero downtime required, max blast radius of 1% for new feature
+        rollouts, mandatory automated rollbacks within 30 seconds of MTTR breach."
     expected: "Canary"
 evaluators:
   - name: Concept Check
     type: regex
-    pattern: "(?i)(Canary|Blue/Green|Dark Launch|Feature Toggle|Kill Switch|Blast Radius)"
+    pattern: "(?i)(Canary|Blue/Green|Dark Launch|Feature Toggle|Kill Switch|Blast
+      Radius)"

@@ -5,40 +5,40 @@ metadata:
   domain: clinical
   complexity: low
   tags:
-  - forms
-  - cdash
-  - mapping
-  - completion-guide
-  - assistant
+    - forms
+    - cdash
+    - mapping
+    - completion-guide
+    - assistant
+    - skill
   requires_context: false
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: "\u2022 CDASH variable name  \n  \u2022 SDTM target domain.variable  \n\
-    \  \u2022 Plain-language completion instruction (\u226440 words)  \n  \u2022 Controlled\
-    \ terminology / units  \n  \u2022 Allowed query logic (range checks, missing-data\
-    \ rules).\n- At the end, provide a one-page \u201CTop 10 data-entry tips\u201D\
-    \ bullet list.\n- Output in CSV-ready Markdown:\n  Variable | Domain | Instruction\
-    \ | Terminology/Units | Edit-Check\n- Think through the mapping logic first, then\
-    \ write the table."
-- role: user
-  content: '{{input}}'
+  - role: system
+    content: "• CDASH variable name  \n  • SDTM target domain.variable  \n  • Plain-language
+      completion instruction (≤40 words)  \n  • Controlled terminology / units  \n\
+      \  • Allowed query logic (range checks, missing-data rules).\n- At the end,
+      provide a one-page “Top 10 data-entry tips” bullet list.\n- Output in CSV-ready
+      Markdown:\n  Variable | Domain | Instruction | Terminology/Units | Edit-Check\n\
+      - Think through the mapping logic first, then write the table."
+  - role: user
+    content: '{{input}}'
 testData:
-- expected: 'Variable | Domain | Instruction | Terminology/Units | Edit-Check
+  - expected: 'Variable | Domain | Instruction | Terminology/Units | Edit-Check
 
-    HEIGHT | DM.HEIGHT | Record height in cm | cm | 30-250
+      HEIGHT | DM.HEIGHT | Record height in cm | cm | 30-250
 
-    '
-  vars: 'HEIGHT
+      '
+    vars: 'HEIGHT
 
-    '
+      '
 evaluators:
-- name: Output should start with CSV header
-  string:
-    startsWith: Variable | Domain | Instruction
+  - name: Output should start with CSV header
+    string:
+      startsWith: Variable | Domain | Instruction

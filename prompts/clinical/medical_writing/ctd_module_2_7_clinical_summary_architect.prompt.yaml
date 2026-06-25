@@ -1,25 +1,40 @@
----
 name: ctd_module_2_7_clinical_summary_architect
 version: 1.0.0
-description: Synthesizes complex clinical efficacy and safety data into a highly rigorous, regulatory-compliant Common Technical Document (CTD) Module 2.7 Clinical Summary.
+description: Synthesizes complex clinical efficacy and safety data into a highly
+  rigorous, regulatory-compliant Common Technical Document (CTD) Module 2.7 
+  Clinical Summary.
 authors:
   - name: Strategic Genesis Architect
 metadata:
   domain: clinical/medical_writing
   complexity: high
+  tags:
+    - medical-writing
+    - ctd
+    - module
+    - clinical
+    - summary
+    - skill
+  requires_context: true
 variables:
   - name: integrated_summary_efficacy
     type: string
-    description: Raw Integrated Summary of Efficacy (ISE) data, including primary/secondary endpoints, subgroup analyses, and statistical significance across pooled Phase II/III trials.
+    description: Raw Integrated Summary of Efficacy (ISE) data, including 
+      primary/secondary endpoints, subgroup analyses, and statistical 
+      significance across pooled Phase II/III trials.
   - name: integrated_summary_safety
     type: string
-    description: Raw Integrated Summary of Safety (ISS) data, including AE/SAE frequencies, laboratory abnormalities, vital signs, and special interest events.
+    description: Raw Integrated Summary of Safety (ISS) data, including AE/SAE 
+      frequencies, laboratory abnormalities, vital signs, and special interest 
+      events.
   - name: clinical_pharmacology_data
     type: string
-    description: Summary of biopharmaceutic studies, PK/PD results, and dose-response modeling from Phase I/II.
+    description: Summary of biopharmaceutic studies, PK/PD results, and 
+      dose-response modeling from Phase I/II.
   - name: target_indication
     type: string
-    description: The specific therapeutic indication sought for regulatory approval.
+    description: The specific therapeutic indication sought for regulatory 
+      approval.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -49,10 +64,21 @@ messages:
       <integrated_summary_efficacy>{{integrated_summary_efficacy}}</integrated_summary_efficacy>
       <integrated_summary_safety>{{integrated_summary_safety}}</integrated_summary_safety>
 testData:
-  - target_indication: "Treatment of adults with relapsed or refractory multiple myeloma who have received at least three prior therapies."
-    clinical_pharmacology_data: "Bioavailability: 85%. Tmax: 2.5 hours. Half-life: 48 hours. Primary metabolism via CYP3A4. No significant QT prolongation at therapeutic doses."
-    integrated_summary_efficacy: "Pooled Analysis (Study A and B, N=450). Overall Response Rate (ORR): 62% (95% CI: 55-69, p<0.0001). Median Progression-Free Survival (mPFS): 11.2 months vs 4.5 months in control (HR=0.45, 95% CI: 0.35-0.58). Subgroup analysis confirms benefit across all prespecified age and cytogenetic risk groups."
-    integrated_summary_safety: "Safety Population (N=500). Most common Treatment-Emergent AEs (TEAEs) >20%: Neutropenia (45%), Thrombocytopenia (30%), Fatigue (25%). Grade 3/4 Neutropenia: 22%. Discontinuation due to AEs: 8%. Serious Adverse Events (SAEs): 15%, primarily infection-related. No drug-induced liver injury (DILI) signals observed."
+  - target_indication: "Treatment of adults with relapsed or refractory multiple myeloma
+      who have received at least three prior therapies."
+    clinical_pharmacology_data: "Bioavailability: 85%. Tmax: 2.5 hours. Half-life:
+      48 hours. Primary metabolism via CYP3A4. No significant QT prolongation at therapeutic
+      doses."
+    integrated_summary_efficacy: "Pooled Analysis (Study A and B, N=450). Overall
+      Response Rate (ORR): 62% (95% CI: 55-69, p<0.0001). Median Progression-Free
+      Survival (mPFS): 11.2 months vs 4.5 months in control (HR=0.45, 95% CI: 0.35-0.58).
+      Subgroup analysis confirms benefit across all prespecified age and cytogenetic
+      risk groups."
+    integrated_summary_safety: "Safety Population (N=500). Most common Treatment-Emergent
+      AEs (TEAEs) >20%: Neutropenia (45%), Thrombocytopenia (30%), Fatigue (25%).
+      Grade 3/4 Neutropenia: 22%. Discontinuation due to AEs: 8%. Serious Adverse
+      Events (SAEs): 15%, primarily infection-related. No drug-induced liver injury
+      (DILI) signals observed."
 evaluators:
   - type: regex
     pattern: "(?i)Summary of Clinical Efficacy"

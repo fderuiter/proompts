@@ -1,7 +1,8 @@
----
 name: Edge Computing Topology Architect
 version: 1.0.0
-description: Designs highly optimized edge computing topologies to minimize latency, ensure offline capability, and distribute processing loads efficiently.
+description: Designs highly optimized edge computing topologies to minimize 
+  latency, ensure offline capability, and distribute processing loads 
+  efficiently.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,10 +14,13 @@ metadata:
     - iot
     - system-design
     - distributed-systems
+    - skill
   requires_context: false
 variables:
   - name: domain_requirements
-    description: The functional and non-functional requirements of the system, including latency constraints, device capabilities, and network reliability.
+    description: The functional and non-functional requirements of the system, 
+      including latency constraints, device capabilities, and network 
+      reliability.
     required: true
 model: gpt-4o
 modelParameters:
@@ -43,10 +47,16 @@ messages:
       {{domain_requirements}}
 testData:
   - vars:
-      domain_requirements: "A smart agriculture platform needing real-time autonomous irrigation decisions in fields with intermittent 4G connectivity. Sensors measure soil moisture every minute. Battery life must exceed 5 years. Centralized analytics require daily roll-ups of soil data."
+      domain_requirements: "A smart agriculture platform needing real-time autonomous
+        irrigation decisions in fields with intermittent 4G connectivity. Sensors
+        measure soil moisture every minute. Battery life must exceed 5 years. Centralized
+        analytics require daily roll-ups of soil data."
     expected: "Fog"
   - vars:
-      domain_requirements: "An automated guided vehicle (AGV) system in a smart factory. Requires sub-10ms latency for collision avoidance. Local factory network is highly reliable 5G, but external internet connection to the central cloud control plane is occasionally disrupted."
+      domain_requirements: "An automated guided vehicle (AGV) system in a smart factory.
+        Requires sub-10ms latency for collision avoidance. Local factory network is
+        highly reliable 5G, but external internet connection to the central cloud
+        control plane is occasionally disrupted."
     expected: "Edge"
 evaluators:
   - name: Concept Verification

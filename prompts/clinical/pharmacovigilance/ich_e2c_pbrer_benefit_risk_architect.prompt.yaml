@@ -1,24 +1,37 @@
----
 name: "ich_e2c_pbrer_benefit_risk_architect"
 version: "1.0.0"
-description: "Acts as a Principal Pharmacovigilance Scientist to rigorously synthesize cumulative post-marketing data into an ICH E2C(R2)-compliant Periodic Benefit-Risk Evaluation Report (PBRER)."
+description: "Acts as a Principal Pharmacovigilance Scientist to rigorously synthesize
+  cumulative post-marketing data into an ICH E2C(R2)-compliant Periodic Benefit-Risk
+  Evaluation Report (PBRER)."
 authors:
   - "Strategic Genesis Architect"
 metadata:
   domain: "clinical/pharmacovigilance"
   complexity: "high"
+  tags:
+    - pharmacovigilance
+    - ich
+    - e2c
+    - pbrer
+    - benefit
+    - skill
+  requires_context: true
 variables:
   - name: "product_information"
-    description: "Overview of the medicinal product, its approved indications, and the reporting interval."
+    description: "Overview of the medicinal product, its approved indications, and
+      the reporting interval."
     required: true
   - name: "cumulative_safety_data"
-    description: "Cumulative summary tabulations of serious and non-serious adverse events from post-marketing and clinical trial sources."
+    description: "Cumulative summary tabulations of serious and non-serious adverse
+      events from post-marketing and clinical trial sources."
     required: true
   - name: "new_safety_signals"
-    description: "Details of any new, ongoing, or closed safety signals evaluated during the reporting interval."
+    description: "Details of any new, ongoing, or closed safety signals evaluated
+      during the reporting interval."
     required: true
   - name: "efficacy_effectiveness_data"
-    description: "Summary of significant new efficacy or effectiveness information that impacts the benefit-risk profile."
+    description: "Summary of significant new efficacy or effectiveness information
+      that impacts the benefit-risk profile."
     required: true
 model: "gpt-4o"
 modelParameters:
@@ -47,10 +60,18 @@ messages:
       Efficacy and Effectiveness Data: <efficacy_effectiveness_data>{{efficacy_effectiveness_data}}</efficacy_effectiveness_data>
 testData:
   - inputs:
-      product_information: "Drug X (oral anticoagulant). Approved for prevention of stroke in non-valvular atrial fibrillation. Reporting interval: 01-Jan-2023 to 31-Dec-2023."
-      cumulative_safety_data: "Total exposure: 500,000 patient-years. Major bleeding events: 1,200 (cumulative 5,000). Intracranial hemorrhage: 150 (cumulative 600). Fatal outcomes: 50 (cumulative 200)."
-      new_safety_signals: "New signal of drug-induced liver injury (DILI) evaluated. 25 cases reported; 5 meet Hy's Law criteria. Signal remains ongoing pending further epidemiological study."
-      efficacy_effectiveness_data: "Real-world evidence study (N=50,000) confirms a 65% relative risk reduction in ischemic stroke compared to standard of care. No new loss of efficacy signals."
+      product_information: "Drug X (oral anticoagulant). Approved for prevention of
+        stroke in non-valvular atrial fibrillation. Reporting interval: 01-Jan-2023
+        to 31-Dec-2023."
+      cumulative_safety_data: "Total exposure: 500,000 patient-years. Major bleeding
+        events: 1,200 (cumulative 5,000). Intracranial hemorrhage: 150 (cumulative
+        600). Fatal outcomes: 50 (cumulative 200)."
+      new_safety_signals: "New signal of drug-induced liver injury (DILI) evaluated.
+        25 cases reported; 5 meet Hy's Law criteria. Signal remains ongoing pending
+        further epidemiological study."
+      efficacy_effectiveness_data: "Real-world evidence study (N=50,000) confirms
+        a 65% relative risk reduction in ischemic stroke compared to standard of care.
+        No new loss of efficacy signals."
     expected: "Integrated Benefit-Risk Analysis"
 evaluators:
   - type: "regex_match"

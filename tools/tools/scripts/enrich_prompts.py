@@ -115,7 +115,7 @@ TAG_LABELS: dict[str, str] = {
     "strategy":               "regulatory-strategy",
     "submissions":            "submissions",
     "biosafety":              "biosafety",
-    "bioskills":              "bioskills",
+    "bioskills":              "skill",
     "biostatistics":          "biostatistics",
     "chemical_characterization": "chemical-characterization",
     "coa":                    "clinical-outcome-assessment",

@@ -1,7 +1,9 @@
----
 name: collective_panic_cascade_architect
 version: 1.0.0
-description: A highly robust, expert-level prompt designed to formulate mathematical models and multi-modal big data architectures for predicting the onset and rapid propagation of collective panic cascades across mass urban populations.
+description: A highly robust, expert-level prompt designed to formulate 
+  mathematical models and multi-modal big data architectures for predicting the 
+  onset and rapid propagation of collective panic cascades across mass urban 
+  populations.
 authors:
   - Population Behavioral Sciences Genesis Architect
 metadata:
@@ -13,13 +15,27 @@ metadata:
     - Network Percolation Theory
     - Threshold Cascading Failures
     - Multi-modal Big Data Analytics
+  tags:
+    - sociology
+    - mass-behavior
+    - collective
+    - panic
+    - cascade
+    - skill
+  requires_context: false
 variables:
   - name: multi_modal_data_schema
-    description: Strict JSON/CSV schema definition detailing ingestion parameters for high-frequency financial transactions, mobile mobility data, and social media sentiment spikes for >10M agents.
+    description: Strict JSON/CSV schema definition detailing ingestion 
+      parameters for high-frequency financial transactions, mobile mobility 
+      data, and social media sentiment spikes for >10M agents.
   - name: macro_environmental_stressors
-    description: A JSON configuration mapping systemic external shocks (e.g., natural disasters, economic collapses, terror events) triggering the behavioral cascade.
+    description: A JSON configuration mapping systemic external shocks (e.g., 
+      natural disasters, economic collapses, terror events) triggering the 
+      behavioral cascade.
   - name: topological_intervention_objective
-    description: The targeted macro-level behavioral stabilization goal, such as modeling the required thresholds to arrest panic propagation using targeted public health interventions or algorithmic suppressions.
+    description: The targeted macro-level behavioral stabilization goal, such as
+      modeling the required thresholds to arrest panic propagation using 
+      targeted public health interventions or algorithmic suppressions.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -65,7 +81,10 @@ testData:
         "onset_latency_ms": 500,
         "population_exposure_density": 0.85
       }
-    topological_intervention_objective: Simulate the arrest of the behavioral panic cascade by deploying targeted geographic mobility restrictions and throttling high-velocity transaction nodes when negative arousal exceeds the 95th percentile.
+    topological_intervention_objective: Simulate the arrest of the behavioral 
+      panic cascade by deploying targeted geographic mobility restrictions and 
+      throttling high-velocity transaction nodes when negative arousal exceeds 
+      the 95th percentile.
   - multi_modal_data_schema: |
       {
         "nodes": [{"user_id": "string", "cognitive_immunity_index": "float", "baseline_trust_metric": "float", "cluster_id": "integer"}],
@@ -77,11 +96,16 @@ testData:
         "onset_latency_ms": 150,
         "population_exposure_density": 0.99
       }
-    topological_intervention_objective: Model the reduction of the behavioral reproduction number via the injection of high-trust public broadcast signals bridging isolated population clusters within 12 hours of onset.
+    topological_intervention_objective: Model the reduction of the behavioral 
+      reproduction number via the injection of high-trust public broadcast 
+      signals bridging isolated population clusters within 12 hours of onset.
 evaluators:
   - name: latex_notation_verification
     regex:
       pattern: \\(.*\\)
   - name: strictly_authoritative_persona_adherence
     model:
-      prompt: Assess the generated response. Ensure the language is highly technical, authoritative, objective, and completely avoids conversational filler, pleasantries, or sugarcoating the nature of mass psychological contagion and panic cascades.
+      prompt: Assess the generated response. Ensure the language is highly 
+        technical, authoritative, objective, and completely avoids 
+        conversational filler, pleasantries, or sugarcoating the nature of mass 
+        psychological contagion and panic cascades.

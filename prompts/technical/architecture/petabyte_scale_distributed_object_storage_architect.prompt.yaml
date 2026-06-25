@@ -1,7 +1,8 @@
----
 name: Petabyte Scale Distributed Object Storage Architect
 version: 1.0.0
-description: Designs massively scalable, highly available distributed object storage architectures (similar to S3), focusing on erasure coding, metadata partitioning, and multi-part upload throughput.
+description: Designs massively scalable, highly available distributed object 
+  storage architectures (similar to S3), focusing on erasure coding, metadata 
+  partitioning, and multi-part upload throughput.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,16 +14,21 @@ metadata:
     - object-storage
     - data-engineering
     - high-availability
+    - skill
   requires_context: false
 variables:
   - name: storage_requirements
-    description: Details regarding capacity (petabytes/exabytes), expected object sizes, read/write ratios, and target durability (e.g., 99.999999999%).
+    description: Details regarding capacity (petabytes/exabytes), expected 
+      object sizes, read/write ratios, and target durability (e.g., 
+      99.999999999%).
     required: true
   - name: consistency_model
-    description: The required consistency semantics (e.g., read-after-write, eventual consistency) for both data and metadata operations.
+    description: The required consistency semantics (e.g., read-after-write, 
+      eventual consistency) for both data and metadata operations.
     required: true
   - name: deployment_topology
-    description: Geographic distribution constraints, such as multi-region active-active deployment or latency constraints for edge caching.
+    description: Geographic distribution constraints, such as multi-region 
+      active-active deployment or latency constraints for edge caching.
     required: true
 model: gpt-4o
 modelParameters:
@@ -54,14 +60,20 @@ messages:
       <user_query>{{deployment_topology}}</user_query>
 testData:
   - vars:
-      storage_requirements: "50 Petabytes total capacity, predominantly large objects (10MB-5GB). 80% read, 20% write. Required durability is 11 nines (99.999999999%)."
-      consistency_model: "Strong read-after-write consistency for new objects; eventual consistency for overwrites/deletes."
-      deployment_topology: "Deployed across 3 independent availability zones within a single AWS region. Must withstand the loss of an entire AZ."
+      storage_requirements: "50 Petabytes total capacity, predominantly large objects
+        (10MB-5GB). 80% read, 20% write. Required durability is 11 nines (99.999999999%)."
+      consistency_model: "Strong read-after-write consistency for new objects; eventual
+        consistency for overwrites/deletes."
+      deployment_topology: "Deployed across 3 independent availability zones within
+        a single AWS region. Must withstand the loss of an entire AZ."
     expected: "Reed-Solomon"
   - vars:
-      storage_requirements: "1 Exabyte scale. Billions of small objects (10KB-100KB). Extremely high write throughput."
-      consistency_model: "Eventual consistency is acceptable for all operations to maximize ingest throughput."
-      deployment_topology: "Global deployment across North America, Europe, and Asia. Requests routed via Anycast DNS to the nearest ingest node."
+      storage_requirements: "1 Exabyte scale. Billions of small objects (10KB-100KB).
+        Extremely high write throughput."
+      consistency_model: "Eventual consistency is acceptable for all operations to
+        maximize ingest throughput."
+      deployment_topology: "Global deployment across North America, Europe, and Asia.
+        Requests routed via Anycast DNS to the nearest ingest node."
     expected: "Merkle"
 evaluators:
   - name: Terminology Check

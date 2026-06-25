@@ -1,7 +1,8 @@
----
 name: Predictive RFM Churn Mitigation Architect
 version: "1.0.0"
-description: Constructs deeply rigorous, predictive churn mitigation workflows using advanced Recency-Frequency-Monetary (RFM) analysis and the AARRR funnel for enterprise growth strategy.
+description: Constructs deeply rigorous, predictive churn mitigation workflows 
+  using advanced Recency-Frequency-Monetary (RFM) analysis and the AARRR funnel 
+  for enterprise growth strategy.
 authors:
   - Growth Strategy Genesis Architect
 metadata:
@@ -13,15 +14,20 @@ metadata:
     - rfm-analysis
     - retention-strategy
     - aarrr-funnel
+    - skill
+  requires_context: false
 variables:
   - name: customer_dataset
-    description: Raw cohort data including transaction logs, product usage frequency, support ticket volume, and account tenure.
+    description: Raw cohort data including transaction logs, product usage 
+      frequency, support ticket volume, and account tenure.
     required: true
   - name: financial_metrics
-    description: Key financial indicators such as ARPU, Gross Margin, and historic Churn Rate.
+    description: Key financial indicators such as ARPU, Gross Margin, and 
+      historic Churn Rate.
     required: true
   - name: growth_objectives
-    description: Strict retention targets and maximum allowable Customer Acquisition Cost (CAC) vs Lifetime Value (LTV) constraints.
+    description: Strict retention targets and maximum allowable Customer 
+      Acquisition Cost (CAC) vs Lifetime Value (LTV) constraints.
     required: true
 model: gpt-4o
 modelParameters:
@@ -58,14 +64,21 @@ messages:
       </growth_objectives>
 testData:
   - inputs:
-      customer_dataset: "Enterprise SaaS cohort: 5,000 users. Average recency: 45 days. Average frequency: 1.2 logins/week (down 40% QoQ). Support tickets up 15%."
-      financial_metrics: "ARPU: $1,200/mo. Gross Margin: 85%. Historic Churn Rate: 4.5% monthly."
-      growth_objectives: "Reduce monthly churn to < 2.5%. Target LTV:CAC ratio > 4:1. Maximum retention intervention cost per account: $300."
+      customer_dataset: "Enterprise SaaS cohort: 5,000 users. Average recency: 45
+        days. Average frequency: 1.2 logins/week (down 40% QoQ). Support tickets up
+        15%."
+      financial_metrics: "ARPU: $1,200/mo. Gross Margin: 85%. Historic Churn Rate:
+        4.5% monthly."
+      growth_objectives: "Reduce monthly churn to < 2.5%. Target LTV:CAC ratio > 4:1.
+        Maximum retention intervention cost per account: $300."
     expected: "Predictive RFM Churn Mitigation Workflow"
   - inputs:
-      customer_dataset: "D2C Subscription Box cohort: 15,000 active subs. Average recency: 30 days. Average frequency: 1 purchase/mo. 20% skips in last 2 months."
-      financial_metrics: "ARPU: $45/mo. Gross Margin: 40%. Historic Churn Rate: 8% monthly."
-      growth_objectives: "Decrease skip rate to 10% and overall churn to 5%. Ensure LTV remains above $200."
+      customer_dataset: "D2C Subscription Box cohort: 15,000 active subs. Average
+        recency: 30 days. Average frequency: 1 purchase/mo. 20% skips in last 2 months."
+      financial_metrics: "ARPU: $45/mo. Gross Margin: 40%. Historic Churn Rate: 8%
+        monthly."
+      growth_objectives: "Decrease skip rate to 10% and overall churn to 5%. Ensure
+        LTV remains above $200."
     expected: "Predictive RFM Churn Mitigation Workflow"
 evaluators:
   - name: Contains LTV Equation

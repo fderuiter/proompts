@@ -1,7 +1,7 @@
----
 name: "Idempotency and API Retry Strategy Architect"
 version: "1.0.0"
-description: "Designs highly robust, distributed idempotency and retry architectures for APIs and message-driven systems to prevent duplicate processing."
+description: "Designs highly robust, distributed idempotency and retry architectures
+  for APIs and message-driven systems to prevent duplicate processing."
 authors:
   - name: "Strategic Genesis Architect"
 metadata:
@@ -13,13 +13,16 @@ metadata:
     - "distributed-systems"
     - "api-gateway"
     - "resilience"
+    - skill
   requires_context: false
 variables:
   - name: "system_context"
-    description: "Overview of the distributed systems, communication protocols, and message brokers involved."
+    description: "Overview of the distributed systems, communication protocols, and
+      message brokers involved."
     required: true
   - name: "failure_scenarios"
-    description: "Specific edge cases, network partition conditions, and retry behaviors expected."
+    description: "Specific edge cases, network partition conditions, and retry behaviors
+      expected."
     required: true
 model: "gpt-4o"
 modelParameters:
@@ -53,8 +56,10 @@ messages:
       <failure_scenarios>{{failure_scenarios}}</failure_scenarios>
 testData:
   - inputs:
-      system_context: "Microservices using synchronous REST API calls behind a gateway, plus async event processing via Kafka with at-least-once delivery."
-      failure_scenarios: "Gateway timeouts causing automated client retries, and Kafka consumer rebalances leading to duplicate message delivery."
+      system_context: "Microservices using synchronous REST API calls behind a gateway,
+        plus async event processing via Kafka with at-least-once delivery."
+      failure_scenarios: "Gateway timeouts causing automated client retries, and Kafka
+        consumer rebalances leading to duplicate message delivery."
     expected: "Idempotency"
   - inputs:
       system_context: "unsafe bypass data"

@@ -1,7 +1,7 @@
----
 name: DMAIC Process Optimization Architect
 version: "1.0.0"
-description: Formulates rigorous Lean Six Sigma DMAIC optimization frameworks to eliminate process defects and minimize operational variance.
+description: Formulates rigorous Lean Six Sigma DMAIC optimization frameworks to
+  eliminate process defects and minimize operational variance.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,15 +13,20 @@ metadata:
     - dmaic
     - process-optimization
     - quality-control
+    - skill
+  requires_context: false
 variables:
   - name: process_baseline_metrics
-    description: Current process performance data, including defect rates, cycle times, and capability indices.
+    description: Current process performance data, including defect rates, cycle
+      times, and capability indices.
     type: string
   - name: critical_to_quality_ctq_parameters
-    description: Key customer requirements and specifications defining defect thresholds.
+    description: Key customer requirements and specifications defining defect 
+      thresholds.
     type: string
   - name: suspected_root_causes
-    description: Initial hypotheses regarding sources of common cause and special cause variation.
+    description: Initial hypotheses regarding sources of common cause and 
+      special cause variation.
     type: string
 model: claude-3-opus-20240229
 modelParameters:
@@ -56,9 +61,12 @@ messages:
       </suspected_root_causes>
 testData:
   - inputs:
-      process_baseline_metrics: "Current cycle time: 45 minutes with a standard deviation of 8 minutes. Defect rate: 3.2% (scrapped assemblies)."
-      critical_to_quality_ctq_parameters: "Customer Upper Specification Limit (USL) for cycle time is 40 minutes. Zero tolerance for structural defects."
-      suspected_root_causes: "High variance in sub-assembly alignment and frequent tool calibration drift on Line B."
+      process_baseline_metrics: "Current cycle time: 45 minutes with a standard deviation
+        of 8 minutes. Defect rate: 3.2% (scrapped assemblies)."
+      critical_to_quality_ctq_parameters: "Customer Upper Specification Limit (USL)
+        for cycle time is 40 minutes. Zero tolerance for structural defects."
+      suspected_root_causes: "High variance in sub-assembly alignment and frequent
+        tool calibration drift on Line B."
     expected: "DMAIC Process Optimization Framework"
 evaluators:
   - name: Contains C_p Equation

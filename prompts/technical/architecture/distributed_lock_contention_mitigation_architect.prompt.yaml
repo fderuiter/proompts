@@ -1,7 +1,8 @@
----
 name: Distributed Lock Contention Mitigation Architect
 version: 1.0.0
-description: Architects advanced resolution strategies for severe distributed lock contention, resolving deadlocks, priority inversion, and throughput bottlenecks in highly concurrent distributed systems.
+description: Architects advanced resolution strategies for severe distributed 
+  lock contention, resolving deadlocks, priority inversion, and throughput 
+  bottlenecks in highly concurrent distributed systems.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,10 +14,13 @@ metadata:
     - concurrency
     - performance-tuning
     - reliability
+    - skill
   requires_context: true
 variables:
   - name: contention_context
-    description: The current distributed architecture, locking mechanisms (e.g., Redis Redlock, ZooKeeper, etcd), workload concurrency patterns, observed bottlenecks, and strict consistency requirements.
+    description: The current distributed architecture, locking mechanisms (e.g.,
+      Redis Redlock, ZooKeeper, etcd), workload concurrency patterns, observed 
+      bottlenecks, and strict consistency requirements.
     required: true
 model: claude-3-opus-20240229
 modelParameters:
@@ -44,9 +48,14 @@ messages:
       </input>
 testData:
   - vars:
-      contention_context: "A distributed payment gateway processing 50,000 TPS. We use Redis Redlock to serialize operations against user wallets. Under flash sale conditions, lock acquisition times spike from 2ms to 400ms, causing massive timeout cascades and thread pool exhaustion on API gateways. We cannot double-spend, so strict consistency is mandatory."
+      contention_context: "A distributed payment gateway processing 50,000 TPS. We
+        use Redis Redlock to serialize operations against user wallets. Under flash
+        sale conditions, lock acquisition times spike from 2ms to 400ms, causing massive
+        timeout cascades and thread pool exhaustion on API gateways. We cannot double-spend,
+        so strict consistency is mandatory."
     expected: "Fencing Token"
 evaluators:
   - name: Concurrency Mitigation Component Validation
     type: regex
-    pattern: "(Contention Diagnostics|Lock Granularity|Optimistic Concurrency|Deadlock Resolution|Fencing Token)"
+    pattern: "(Contention Diagnostics|Lock Granularity|Optimistic Concurrency|Deadlock
+      Resolution|Fencing Token)"

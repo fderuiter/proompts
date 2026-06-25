@@ -1,25 +1,36 @@
----
 name: "metagenomic_assembly_taxonomic_binning_architect"
 version: "1.0.0"
-description: "Acts as a Principal Computational Biologist to architect scalable, high-resolution metagenomic assembly and taxonomic binning pipelines for complex environmental microbiomes."
+description: "Acts as a Principal Computational Biologist to architect scalable, high-resolution
+  metagenomic assembly and taxonomic binning pipelines for complex environmental microbiomes."
 authors:
   - "Biological Sciences Genesis Architect"
 metadata:
   domain: "genetics/genomics"
   complexity: "high"
+  tags:
+    - genetics
+    - genomics
+    - metagenomic
+    - assembly
+    - taxonomic
+    - skill
+  requires_context: false
 variables:
   - name: "environment_type"
     type: "string"
-    description: "The environmental source of the microbiome (e.g., human gut, deep-sea hydrothermal vent, soil rhizosphere)."
+    description: "The environmental source of the microbiome (e.g., human gut, deep-sea
+      hydrothermal vent, soil rhizosphere)."
   - name: "sequencing_technology"
     type: "string"
-    description: "The sequencing platform and strategy used (e.g., Illumina NovaSeq short-read, PacBio HiFi long-read, Oxford Nanopore)."
+    description: "The sequencing platform and strategy used (e.g., Illumina NovaSeq
+      short-read, PacBio HiFi long-read, Oxford Nanopore)."
   - name: "read_depth"
     type: "string"
     description: "The approximate sequencing depth or coverage expected per sample."
   - name: "taxonomic_resolution_target"
     type: "string"
-    description: "The desired level of taxonomic classification (e.g., strain-level, species-level)."
+    description: "The desired level of taxonomic classification (e.g., strain-level,
+      species-level)."
 model: "gpt-4o"
 modelParameters:
   temperature: 0.1

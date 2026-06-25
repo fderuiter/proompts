@@ -1,7 +1,8 @@
----
 name: "crispr_cas9_off_target_thermodynamic_architect"
 version: "1.0.0"
-description: "A highly rigorous biological genesis architect prompt designed to establish probabilistic models and map off-target cleavage events for CRISPR-Cas9 genome editing systems using thermodynamics, kinetic equations, and genomic alignments."
+description: "A highly rigorous biological genesis architect prompt designed to establish
+  probabilistic models and map off-target cleavage events for CRISPR-Cas9 genome editing
+  systems using thermodynamics, kinetic equations, and genomic alignments."
 metadata:
   domain: "scientific"
   complexity: "high"
@@ -12,6 +13,7 @@ metadata:
     - "crispr"
     - "bioinformatics"
     - "computational_biology"
+    - skill
   requires_context: false
 variables:
   - name: "target_sequence"
@@ -21,7 +23,8 @@ variables:
     description: "The targeted reference genome assembly (e.g., GRCh38, mm10)."
     required: true
   - name: "cas9_variant"
-    description: "The specific Cas9 variant and PAM sequence being utilized (e.g., SpCas9 NGG, SaCas9 NNGRRT)."
+    description: "The specific Cas9 variant and PAM sequence being utilized (e.g.,
+      SpCas9 NGG, SaCas9 NNGRRT)."
     required: true
 model: "gpt-4o"
 modelParameters:
@@ -65,14 +68,22 @@ testData:
       target_sequence: ">sgRNA_Target_01\nGAGTCCGAGCAGAAGAAGAA"
       reference_genome: "GRCh38 (Human)"
       cas9_variant: "SpCas9 (PAM: NGG)"
-    expected: "The model must generate a highly technical protocol including LaTeX equations for thermodynamic binding, algorithmic alignment strategy for GRCh38, and a FASTA formatted output of simulated off-target alignments."
+    expected: "The model must generate a highly technical protocol including LaTeX
+      equations for thermodynamic binding, algorithmic alignment strategy for GRCh38,
+      and a FASTA formatted output of simulated off-target alignments."
   - inputs:
       target_sequence: ">sgRNA_Target_02\nCGTGGTATCATCGATGACGT"
       reference_genome: "mm10 (Mouse)"
       cas9_variant: "SaCas9 (PAM: NNGRRT)"
-    expected: "The model must adapt the probabilistic modeling to account for the longer PAM requirements of SaCas9, generate appropriate mismatch penalty functions in LaTeX, and provide a pseudo-code workflow."
+    expected: "The model must adapt the probabilistic modeling to account for the
+      longer PAM requirements of SaCas9, generate appropriate mismatch penalty functions
+      in LaTeX, and provide a pseudo-code workflow."
 evaluators:
-  - rule: "Output contains valid LaTeX formatted mathematical equations for thermodynamics or kinetics."
-  - rule: "Output includes an algorithmic pipeline or pseudo-code for mapping genome-wide off-targets."
-  - rule: "Output strictly adheres to FASTA formatting when presenting nucleotide sequences."
-  - rule: "Output demonstrates a rigorous, advanced biological sciences persona without generic or simplified explanations."
+  - rule: "Output contains valid LaTeX formatted mathematical equations for thermodynamics
+      or kinetics."
+  - rule: "Output includes an algorithmic pipeline or pseudo-code for mapping genome-wide
+      off-targets."
+  - rule: "Output strictly adheres to FASTA formatting when presenting nucleotide
+      sequences."
+  - rule: "Output demonstrates a rigorous, advanced biological sciences persona without
+      generic or simplified explanations."

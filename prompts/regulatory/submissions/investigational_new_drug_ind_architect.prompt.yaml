@@ -1,7 +1,9 @@
----
 name: Investigational New Drug (IND) Architect
 version: 1.0.0
-description: Formulates rigorous, compliant Investigational New Drug (IND) applications (21 CFR Part 312), explicitly designed to translate preclinical pharmacology/toxicology into safe Phase 1 clinical protocols and prevent FDA clinical holds.
+description: Formulates rigorous, compliant Investigational New Drug (IND) 
+  applications (21 CFR Part 312), explicitly designed to translate preclinical 
+  pharmacology/toxicology into safe Phase 1 clinical protocols and prevent FDA 
+  clinical holds.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -14,19 +16,26 @@ metadata:
     - regulatory-submissions
     - phase-1
     - 21-cfr-312
+    - skill
   requires_context: true
 variables:
   - name: drug_substance_overview
-    description: High-level summary of the investigational drug's mechanism of action (MoA), target, and structural class.
+    description: High-level summary of the investigational drug's mechanism of 
+      action (MoA), target, and structural class.
     type: string
   - name: nonclinical_safety_summary
-    description: Summary of GLP pivotal toxicology studies, identifying the NOAEL (No Observed Adverse Effect Level), target organs of toxicity, and reversibility.
+    description: Summary of GLP pivotal toxicology studies, identifying the 
+      NOAEL (No Observed Adverse Effect Level), target organs of toxicity, and 
+      reversibility.
     type: string
   - name: clinical_protocol_design
-    description: Overview of the proposed Phase 1 study, including starting dose rationale, dosing regimen, patient population (or healthy volunteers), and safety monitoring plan.
+    description: Overview of the proposed Phase 1 study, including starting dose
+      rationale, dosing regimen, patient population (or healthy volunteers), and
+      safety monitoring plan.
     type: string
   - name: cmc_status
-    description: Brief status of Chemistry, Manufacturing, and Controls (CMC) readiness for Phase 1 clinical supply.
+    description: Brief status of Chemistry, Manufacturing, and Controls (CMC) 
+      readiness for Phase 1 clinical supply.
     type: string
 model: gpt-4o
 modelParameters:
@@ -55,11 +64,24 @@ messages:
 
       Provide a detailed, section-by-section blueprint focusing heavily on the critical safety rationale, dose justification, and risk mitigation strategies required to secure FDA authorization to proceed.
 testData:
-  - drug_substance_overview: A novel, highly selective oral small molecule inhibitor of kinase X, intended for the treatment of advanced solid tumors.
-    nonclinical_safety_summary: 28-day GLP tox in rats and dogs. NOAEL in dogs (most sensitive species) is 10 mg/kg/day. Target organ toxicity identified in the GI tract (reversible epithelial hyperplasia) and mild, transient transaminase elevation. No genotoxicity.
-    clinical_protocol_design: Phase 1a, First-in-Human (FIH), open-label, 3+3 dose-escalation study in patients with relapsed/refractory solid tumors. Proposed starting dose is 5 mg flat dose QD. Primary endpoint is safety and identifying the MTD/RP2D.
-    cmc_status: GMP drug substance synthesized; drug product formulated as powder in capsule (PIC). Stability data available for 3 months at accelerated conditions supporting clinical use.
-    expected: A structured IND blueprint emphasizing the MRSD calculation from the dog NOAEL (HED conversion), specific GI and liver toxicity monitoring in the Phase 1 protocol, and confirmation that PIC formulation is appropriate for Phase 1.
+  - drug_substance_overview: A novel, highly selective oral small molecule 
+      inhibitor of kinase X, intended for the treatment of advanced solid 
+      tumors.
+    nonclinical_safety_summary: 28-day GLP tox in rats and dogs. NOAEL in dogs 
+      (most sensitive species) is 10 mg/kg/day. Target organ toxicity identified
+      in the GI tract (reversible epithelial hyperplasia) and mild, transient 
+      transaminase elevation. No genotoxicity.
+    clinical_protocol_design: Phase 1a, First-in-Human (FIH), open-label, 3+3 
+      dose-escalation study in patients with relapsed/refractory solid tumors. 
+      Proposed starting dose is 5 mg flat dose QD. Primary endpoint is safety 
+      and identifying the MTD/RP2D.
+    cmc_status: GMP drug substance synthesized; drug product formulated as 
+      powder in capsule (PIC). Stability data available for 3 months at 
+      accelerated conditions supporting clinical use.
+    expected: A structured IND blueprint emphasizing the MRSD calculation from 
+      the dog NOAEL (HED conversion), specific GI and liver toxicity monitoring 
+      in the Phase 1 protocol, and confirmation that PIC formulation is 
+      appropriate for Phase 1.
 evaluators:
   - name: Mentions 21 CFR Part 312
     string:

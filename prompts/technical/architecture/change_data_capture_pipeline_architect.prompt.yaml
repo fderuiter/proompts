@@ -1,7 +1,7 @@
----
 name: Change Data Capture Pipeline Architect
 version: 1.0.0
-description: Designs highly reliable, low-latency Change Data Capture (CDC) pipelines for log-based database replication and stream processing.
+description: Designs highly reliable, low-latency Change Data Capture (CDC) 
+  pipelines for log-based database replication and stream processing.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -14,13 +14,16 @@ metadata:
     - stream-processing
     - kafka
     - debezium
+    - skill
   requires_context: false
 variables:
   - name: source_system
-    description: The source database system (e.g., PostgreSQL, MySQL, MongoDB, Oracle) from which to capture change data.
+    description: The source database system (e.g., PostgreSQL, MySQL, MongoDB, 
+      Oracle) from which to capture change data.
     required: true
   - name: target_scale
-    description: The expected volume, velocity, and consistency requirements for the CDC pipeline.
+    description: The expected volume, velocity, and consistency requirements for
+      the CDC pipeline.
     required: true
 model: gpt-4o
 modelParameters:
@@ -47,7 +50,9 @@ messages:
 testData:
   - vars:
       source_system: "PostgreSQL 14"
-      target_scale: "Peak write load of 20,000 TPS. Requires sub-second end-to-end latency to the target data warehouse. Strict ordering and exactly-once processing required for financial transaction ledger."
+      target_scale: "Peak write load of 20,000 TPS. Requires sub-second end-to-end
+        latency to the target data warehouse. Strict ordering and exactly-once processing
+        required for financial transaction ledger."
     expected: "WAL"
 evaluators:
   - name: CDC Mechanisms Check

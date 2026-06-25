@@ -1,40 +1,42 @@
 name: Compliance and Data Quality Monitoring Plan
 version: 0.1.0
-description: Design an AI-assisted monitoring plan to ensure compliance and data integrity.
+description: Design an AI-assisted monitoring plan to ensure compliance and data
+  integrity.
 metadata:
   domain: clinical
   complexity: medium
   tags:
-  - trial-execution
-  - compliance
-  - data
-  - quality
-  - monitoring
+    - trial-execution
+    - compliance
+    - data
+    - quality
+    - monitoring
+    - skill
   requires_context: true
 variables: []
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: "You are a compliance and data quality manager trained in AI-assisted clinical\
-    \ oversight and GCDMP standards. The plan must maintain GCP/GCDMP compliance,\
-    \ enable early detection of data anomalies and ensure timely resolution of protocol\
-    \ deviations.\n\nTailor the monitoring plan to the trial\u2019s risk profile."
-- role: user
-  content: "1. List the types of automated alerts and their trigger conditions.\n\
-    2. Specify the frequency of human\u2013AI reviews.\n3. Define the reporting cadence\
-    \ to sponsors and regulators.\n\nInputs:\n- None\n\nOutput Format:\nMarkdown sections:\n\
-    \n- **Part A:** Alert list (type, trigger condition)\n- **Part B:** Review schedule\
-    \ (who and how often)\n- **Part C:** Reporting plan (frequency, content, recipients)"
+  - role: system
+    content: "You are a compliance and data quality manager trained in AI-assisted
+      clinical oversight and GCDMP standards. The plan must maintain GCP/GCDMP compliance,
+      enable early detection of data anomalies and ensure timely resolution of protocol
+      deviations.\n\nTailor the monitoring plan to the trial’s risk profile."
+  - role: user
+    content: "1. List the types of automated alerts and their trigger conditions.\n\
+      2. Specify the frequency of human–AI reviews.\n3. Define the reporting cadence
+      to sponsors and regulators.\n\nInputs:\n- None\n\nOutput Format:\nMarkdown sections:\n\
+      \n- **Part A:** Alert list (type, trigger condition)\n- **Part B:** Review schedule
+      (who and how often)\n- **Part C:** Reporting plan (frequency, content, recipients)"
 testData:
-- expected: 'Part A:
+  - expected: 'Part A:
 
-    '
-  vars: 'Generate monitoring plan.
+      '
+    vars: 'Generate monitoring plan.
 
-    '
+      '
 evaluators:
-- name: Mentions reporting plan
-  string:
-    contains: Part C
+  - name: Mentions reporting plan
+    string:
+      contains: Part C

@@ -1,7 +1,9 @@
----
 name: ADM 3+1 Decomposition Architect
 version: 1.0.0
-description: Systematically derives and formulates the Arnowitt-Deser-Misner (ADM) 3+1 decomposition of spacetime, generating the Hamiltonian and momentum constraints and the evolution equations for the spatial metric and extrinsic curvature.
+description: Systematically derives and formulates the Arnowitt-Deser-Misner 
+  (ADM) 3+1 decomposition of spacetime, generating the Hamiltonian and momentum 
+  constraints and the evolution equations for the spatial metric and extrinsic 
+  curvature.
 authors:
   - name: Theoretical Physics Genesis Architect
 metadata:
@@ -13,16 +15,20 @@ metadata:
     - adm-decomposition
     - theoretical-physics
     - cosmology
+    - skill
   requires_context: false
 variables:
   - name: metric_ansatz
-    description: The 4-dimensional line element or metric ansatz to be decomposed (e.g., Alcubierre metric, FLRW).
+    description: The 4-dimensional line element or metric ansatz to be 
+      decomposed (e.g., Alcubierre metric, FLRW).
     required: true
   - name: matter_energy_momentum_tensor
-    description: The form of the matter energy-momentum tensor $T_{\mu\nu}$ (e.g., perfect fluid, vacuum, scalar field).
+    description: The form of the matter energy-momentum tensor $T_{\mu\nu}$ 
+      (e.g., perfect fluid, vacuum, scalar field).
     required: true
   - name: lapse_and_shift_conditions
-    description: Specific gauge choices or equations governing the lapse function $\alpha$ and shift vector $\beta^i$.
+    description: Specific gauge choices or equations governing the lapse 
+      function $\alpha$ and shift vector $\beta^i$.
     required: true
 model: gpt-4o
 modelParameters:
@@ -61,8 +67,10 @@ testData:
       lapse_and_shift_conditions: "Unspecified (general formulation)"
     expected: "\\mathcal{H}"
   - inputs:
-      metric_ansatz: "Friedmann-Lemaître-Robertson-Walker (FLRW) metric $ds^2 = -dt^2 + a(t)^2(dx^2+dy^2+dz^2)$"
-      matter_energy_momentum_tensor: "Perfect fluid $T_{\\mu\\nu} = (\\rho + P)u_\\mu u_\\nu + P g_{\\mu\\nu}$"
+      metric_ansatz: "Friedmann-Lemaître-Robertson-Walker (FLRW) metric $ds^2 = -dt^2
+        + a(t)^2(dx^2+dy^2+dz^2)$"
+      matter_energy_momentum_tensor: "Perfect fluid $T_{\\mu\\nu} = (\\rho + P)u_\\
+        mu u_\\nu + P g_{\\mu\\nu}$"
       lapse_and_shift_conditions: "Lapse $\\alpha = 1$, Shift $\\beta^i = 0$"
     expected: "\\gamma_{ij}"
 evaluators:

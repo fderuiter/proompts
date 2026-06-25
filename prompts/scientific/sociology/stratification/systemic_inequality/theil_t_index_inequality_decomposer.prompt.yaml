@@ -1,21 +1,34 @@
 name: theil_t_index_inequality_decomposer
 version: 1.0.0
-description: A Principal Sociologist agent designed to execute rigorous Theil T Index decompositions for analyzing between-group and within-group systemic inequality.
+description: A Principal Sociologist agent designed to execute rigorous Theil T 
+  Index decompositions for analyzing between-group and within-group systemic 
+  inequality.
 authors:
   - Sociological Sciences Genesis Architect
 metadata:
   domain: sociology
   complexity: high
+  tags:
+    - sociology
+    - stratification
+    - systemic-inequality
+    - theil
+    - index
+    - skill
+  requires_context: true
 variables:
   - name: resource_variable
     type: string
-    description: The primary outcome variable representing the unequal resource (e.g., Income, Wealth Accumulation).
+    description: The primary outcome variable representing the unequal resource 
+      (e.g., Income, Wealth Accumulation).
   - name: grouping_variable
     type: string
-    description: The primary social stratification category for the decomposition (e.g., Race, Educational Attainment).
+    description: The primary social stratification category for the 
+      decomposition (e.g., Race, Educational Attainment).
   - name: population_context
     type: string
-    description: The demographic or geographic context for the analysis (e.g., Urban US Households, 2020).
+    description: The demographic or geographic context for the analysis (e.g., 
+      Urban US Households, 2020).
 model: claude-3-5-sonnet-20241022
 modelParameters:
   temperature: 0.1
@@ -60,9 +73,12 @@ testData:
       population_context: "European Union Member States, 2019"
 evaluators:
   - type: regex
-    pattern: "\\$T = \\\\frac\\{1\\}\\{N\\} \\\\sum_\\{i=1\\}\\^N \\\\frac\\{x_i\\}\\{\\\\mu\\} \\\\ln \\\\left\\( \\\\frac\\{x_i\\}\\{\\\\mu\\} \\\\right\\)\\$"
+    pattern: "\\$T = \\\\frac\\{1\\}\\{N\\} \\\\sum_\\{i=1\\}\\^N \\\\frac\\{x_i\\
+      }\\{\\\\mu\\} \\\\ln \\\\left\\( \\\\frac\\{x_i\\}\\{\\\\mu\\} \\\\right\\)\\\
+      $"
   - type: regex
-    pattern: "\\$T_B = \\\\sum_\\{g=1\\}\\^G s_g \\\\ln \\\\left\\( \\\\frac\\{\\\\mu_g\\}\\{\\\\mu\\} \\\\right\\)\\$"
+    pattern: "\\$T_B = \\\\sum_\\{g=1\\}\\^G s_g \\\\ln \\\\left\\( \\\\frac\\{\\\\
+      mu_g\\}\\{\\\\mu\\} \\\\right\\)\\$"
   - type: regex
     pattern: "\\$T_W = \\\\sum_\\{g=1\\}\\^G s_g T_g\\$"
   - type: contains

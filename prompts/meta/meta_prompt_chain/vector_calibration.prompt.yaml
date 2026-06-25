@@ -1,7 +1,8 @@
----
 name: Vector Prompt Calibration Evaluator
 version: "1.0.0"
-description: Evaluates and calibrates draft prompts according to the Vector standard, enforcing persona specificity, contextual alignment, and structural rigor.
+description: Evaluates and calibrates draft prompts according to the Vector 
+  standard, enforcing persona specificity, contextual alignment, and structural 
+  rigor.
 metadata:
   domain: prompt_engineering
   complexity: high
@@ -9,6 +10,7 @@ metadata:
     - prompt_calibration
     - editor
     - meta
+    - skill
   requires_context: false
 variables:
   - name: draft_prompt
@@ -60,7 +62,8 @@ messages:
       <draft_prompt>{{draft_prompt}}</draft_prompt>
 testData:
   - vars:
-      draft_prompt: "You are a helpful assistant. Please write a crisis management plan for a data breach."
+      draft_prompt: "You are a helpful assistant. Please write a crisis management
+        plan for a data breach."
     expected: "Vector Calibration: Principal Crisis Response Architect"
 evaluators:
   - name: Vector output format

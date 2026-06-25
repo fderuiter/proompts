@@ -7,102 +7,104 @@ metadata:
   domain: clinical
   complexity: high
   tags:
-  - protocol
-  - cdisc
-  - usdm
-  - assembly
+    - protocol
+    - cdisc
+    - usdm
+    - assembly
+    - skill
   requires_context: true
 variables:
-- name: metadata_json
-  description: Output from Stage 1.
-  required: true
-- name: rationale_json
-  description: Output from Stage 2.
-  required: true
-- name: workflow_json
-  description: Output from Stage 3.
-  required: true
-- name: concepts_json
-  description: Output from Stage 4.
-  required: true
+  - name: metadata_json
+    description: Output from Stage 1.
+    required: true
+  - name: rationale_json
+    description: Output from Stage 2.
+    required: true
+  - name: workflow_json
+    description: Output from Stage 3.
+    required: true
+  - name: concepts_json
+    description: Output from Stage 4.
+    required: true
 messages:
-- role: system
-  content: 'You are a JSON Systems Integrator.
+  - role: system
+    content: 'You are a JSON Systems Integrator.
 
 
-    # Task
+      # Task
 
-    Merge these four JSON snippets into a single, valid CDISC USDM v3.0 JSON object.
+      Merge these four JSON snippets into a single, valid CDISC USDM v3.0 JSON object.
 
-    - Place `study_meta` at the root.
+      - Place `study_meta` at the root.
 
-    - Place `criteria` under the `study.criteria` array.
+      - Place `criteria` under the `study.criteria` array.
 
-    - Construct the `workflow` section using the `encounters`, `activities`, and `workflow_matrix`.
+      - Construct the `workflow` section using the `encounters`, `activities`, and
+      `workflow_matrix`.
 
-    - Ensure all ID references (e.g., `activityId` inside `workflow`) remain consistent.
-
-
-    # Output Requirement
-
-    Produce **only** the final JSON object. Do not add conversational text.
-
-    '
-- role: user
-  content: '# Inputs
-
-    1. Metadata:
-
-    <metadata_json>
-
-    {{metadata_json}}
-
-    </metadata_json>
+      - Ensure all ID references (e.g., `activityId` inside `workflow`) remain consistent.
 
 
-    2. Rationale:
+      # Output Requirement
 
-    <rationale_json>
+      Produce **only** the final JSON object. Do not add conversational text.
 
-    {{rationale_json}}
+      '
+  - role: user
+    content: '# Inputs
 
-    </rationale_json>
+      1. Metadata:
+
+      <metadata_json>
+
+      {{metadata_json}}
+
+      </metadata_json>
 
 
-    3. Workflow:
+      2. Rationale:
 
-    <workflow_json>
+      <rationale_json>
 
-    {{workflow_json}}
+      {{rationale_json}}
 
-    </workflow_json>
+      </rationale_json>
 
 
-    4. Concepts:
+      3. Workflow:
 
-    <concepts_json>
+      <workflow_json>
 
-    {{concepts_json}}
+      {{workflow_json}}
 
-    </concepts_json>
+      </workflow_json>
 
-    '
+
+      4. Concepts:
+
+      <concepts_json>
+
+      {{concepts_json}}
+
+      </concepts_json>
+
+      '
 testData:
-- expected: "{\n  \"study\": {\n    \"id\": \"123\"\n  }\n}\n"
-  vars: 'metadata_json: ''{"study_meta": {"id": "123"}}''
+  - expected: "{\n  \"study\": {\n    \"id\": \"123\"\n  }\n}\n"
+    vars: 'metadata_json: ''{"study_meta": {"id": "123"}}''
 
-    rationale_json: ''{"criteria": []}''
+      rationale_json: ''{"criteria": []}''
 
-    workflow_json: ''{"encounters": []}''
+      workflow_json: ''{"encounters": []}''
 
-    concepts_json: ''{"biomedicalConcepts": []}''
+      concepts_json: ''{"biomedicalConcepts": []}''
 
-    '
+      '
 evaluators:
-- name: Valid JSON
-  regex:
-    pattern: (?s)^[\s\S]*\{[\s\S]*\}[\s\S]*$
-- name: Contains study root
-  regex:
-    pattern: '(?s)"study"\s*:'
+  - name: Valid JSON
+    regex:
+      pattern: (?s)^[\s\S]*\{[\s\S]*\}[\s\S]*$
+  - name: Contains study root
+    regex:
+      pattern: '(?s)"study"\s*:'
 version: 0.1.0

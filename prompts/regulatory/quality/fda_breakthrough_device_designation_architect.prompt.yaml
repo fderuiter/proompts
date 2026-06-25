@@ -1,7 +1,9 @@
----
 name: FDA Breakthrough Device Designation Architect
 version: 1.0.0
-description: Formulates rigorous, compelling applications for the FDA Breakthrough Devices Program, accelerating the development and review of novel medical devices that address life-threatening or irreversibly debilitating diseases.
+description: Formulates rigorous, compelling applications for the FDA 
+  Breakthrough Devices Program, accelerating the development and review of novel
+  medical devices that address life-threatening or irreversibly debilitating 
+  diseases.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,19 +15,24 @@ metadata:
     - fda
     - breakthrough-device
     - medical-device
+    - skill
   requires_context: true
 variables:
   - name: device_description
     type: string
-    description: Detailed description of the medical device, its mechanism of action, and intended use.
+    description: Detailed description of the medical device, its mechanism of 
+      action, and intended use.
     required: true
   - name: target_disease_condition
     type: string
-    description: Clinical description of the life-threatening or irreversibly debilitating human disease or condition targeted by the device.
+    description: Clinical description of the life-threatening or irreversibly 
+      debilitating human disease or condition targeted by the device.
     required: true
   - name: comparative_standard_of_care
     type: string
-    description: The current standard of care and how the proposed device represents a breakthrough technology or offers significant advantages over existing approved/cleared alternatives.
+    description: The current standard of care and how the proposed device 
+      represents a breakthrough technology or offers significant advantages over
+      existing approved/cleared alternatives.
     required: true
 model: gpt-4o
 modelParameters:
@@ -69,11 +76,17 @@ messages:
       <comparative_standard_of_care>{{comparative_standard_of_care}}</comparative_standard_of_care>
 testData:
   - variables:
-      device_description: "An implantable, AI-driven neurostimulation device that dynamically modulates vagus nerve activity based on real-time inflammatory biomarkers."
-      target_disease_condition: "Refractory Crohn's Disease, characterized by severe, irreversible intestinal damage and life-threatening flare-ups."
-      comparative_standard_of_care: "Current standard of care involves systemic immunosuppressants and biologics, which fail in 30% of patients and carry high risks of opportunistic infections."
+      device_description: "An implantable, AI-driven neurostimulation device that
+        dynamically modulates vagus nerve activity based on real-time inflammatory
+        biomarkers."
+      target_disease_condition: "Refractory Crohn's Disease, characterized by severe,
+        irreversible intestinal damage and life-threatening flare-ups."
+      comparative_standard_of_care: "Current standard of care involves systemic immunosuppressants
+        and biologics, which fail in 30% of patients and carry high risks of opportunistic
+        infections."
     expected: "Criterion 1 Justification"
 evaluators:
   - name: Structural Validation
     type: regex
-    pattern: "(?i)(Criterion 1 Justification|Criterion 2 Justification|Data Generation Plan|Regulatory Strategy Roadmap)"
+    pattern: "(?i)(Criterion 1 Justification|Criterion 2 Justification|Data Generation
+      Plan|Regulatory Strategy Roadmap)"

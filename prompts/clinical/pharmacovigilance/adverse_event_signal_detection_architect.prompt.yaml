@@ -1,22 +1,33 @@
----
 name: adverse_event_signal_detection_architect
 version: 1.0.0
-description: Acts as a Principal Pharmacovigilance Scientist to perform advanced signal detection and disproportionality analysis on post-market adverse event databases.
+description: Acts as a Principal Pharmacovigilance Scientist to perform advanced
+  signal detection and disproportionality analysis on post-market adverse event 
+  databases.
 authors:
   - Strategic Genesis Architect
 metadata:
   domain: clinical/pharmacovigilance
   complexity: high
+  tags:
+    - pharmacovigilance
+    - adverse
+    - event
+    - signal
+    - detection
+    - skill
+  requires_context: true
 variables:
   - name: DRUG_NAME
     type: string
     description: The name of the suspect drug under investigation.
   - name: ADVERSE_EVENTS_DATA
     type: string
-    description: Raw line listing or aggregated reporting rates of adverse events from pharmacovigilance databases.
+    description: Raw line listing or aggregated reporting rates of adverse 
+      events from pharmacovigilance databases.
   - name: BACKGROUND_INCIDENCE
     type: string
-    description: Epidemiological background incidence rates for the adverse events of interest.
+    description: Epidemiological background incidence rates for the adverse 
+      events of interest.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -43,8 +54,10 @@ messages:
 testData:
   - inputs:
       DRUG_NAME: Zolpidem
-      ADVERSE_EVENTS_DATA: "Complex sleep behaviors: 120 reports; Total adverse events for drug: 5000."
-      BACKGROUND_INCIDENCE: "Complex sleep behaviors in general population: 2 per 100,000 patient-years."
+      ADVERSE_EVENTS_DATA: "Complex sleep behaviors: 120 reports; Total adverse events
+        for drug: 5000."
+      BACKGROUND_INCIDENCE: "Complex sleep behaviors in general population: 2 per
+        100,000 patient-years."
 evaluators:
   - type: contains
     value: Proportional Reporting Ratio

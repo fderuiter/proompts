@@ -1,12 +1,21 @@
----
 name: "hidden_markov_model_architect"
 version: "1.0.0"
-description: "Acts as a Principal Statistician to derive maximum likelihood estimation architectures for continuous-density Hidden Markov Models using the Baum-Welch algorithm and EM methodology."
+description: "Acts as a Principal Statistician to derive maximum likelihood estimation
+  architectures for continuous-density Hidden Markov Models using the Baum-Welch algorithm
+  and EM methodology."
 authors:
   - "Statistical Sciences Genesis Architect"
 metadata:
   domain: "statistical_sciences"
   complexity: "high"
+  tags:
+    - statistics
+    - stochastic
+    - markov-processes
+    - hidden
+    - markov
+    - skill
+  requires_context: false
 variables:
   - name: "observation_sequence"
     description: "The sequence of observed data vectors."
@@ -15,7 +24,8 @@ variables:
     description: "The number of hidden states in the Markov chain."
     required: true
   - name: "emission_distribution_type"
-    description: "The parametric family of the state-conditional emission probability distributions."
+    description: "The parametric family of the state-conditional emission probability
+      distributions."
     required: true
 model: "gpt-4o"
 modelParameters:
@@ -52,9 +62,11 @@ messages:
       <emission_distribution_type>{{emission_distribution_type}}</emission_distribution_type>
 testData:
   - inputs:
-      observation_sequence: 'A time series of $T=1000$ daily financial asset returns $y_t \in \mathbb{R}$.'
+      observation_sequence: 'A time series of $T=1000$ daily financial asset returns
+        $y_t \in \mathbb{R}$.'
       state_space_dimensionality: '$N = 3$ corresponding to distinct volatility regimes.'
-      emission_distribution_type: 'Gaussian distribution parameterized by state-dependent mean $\mu_i$ and variance $\sigma_i^2$.'
+      emission_distribution_type: 'Gaussian distribution parameterized by state-dependent
+        mean $\mu_i$ and variance $\sigma_i^2$.'
     expected: "Baum-Welch"
 evaluators:
   - type: "regex_match"

@@ -1,7 +1,7 @@
----
 name: Red-Team Stress-Test Simulation
 version: 0.2.0
-description: Assemble a ruthless panel of adversaries (Hacker, Competitor, Regulator) to dismantle a strategy.
+description: Assemble a ruthless panel of adversaries (Hacker, Competitor, 
+  Regulator) to dismantle a strategy.
 metadata:
   domain: communication
   complexity: high
@@ -10,6 +10,7 @@ metadata:
     - stress-test
     - strategy
     - simulation
+    - skill
   requires_context: false
 variables:
   - name: input

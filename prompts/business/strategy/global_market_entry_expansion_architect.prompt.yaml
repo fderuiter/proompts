@@ -1,7 +1,7 @@
----
 name: Global Market Entry Expansion Architect
 version: "1.0.0"
-description: Architects highly rigorous, data-driven global market entry strategies and international expansion blueprints.
+description: Architects highly rigorous, data-driven global market entry 
+  strategies and international expansion blueprints.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -12,15 +12,20 @@ metadata:
     - international-expansion
     - corporate-strategy
     - competitive-intelligence
+    - skill
+  requires_context: false
 variables:
   - name: target_market
-    description: The specific geographic region, country, or macroeconomic zone targeted for entry.
+    description: The specific geographic region, country, or macroeconomic zone 
+      targeted for entry.
     required: true
   - name: product_portfolio
-    description: The core products, services, or technologies intended for launch in the target market.
+    description: The core products, services, or technologies intended for 
+      launch in the target market.
     required: true
   - name: internal_capabilities
-    description: Current capital resources, supply chain maturity, and regulatory compliance posture.
+    description: Current capital resources, supply chain maturity, and 
+      regulatory compliance posture.
     required: true
 model: gpt-4o
 modelParameters:
@@ -28,17 +33,29 @@ modelParameters:
 messages:
   - role: system
     content: >
-      You are a Principal Global Strategy Consultant and Market Entry Architect. Your task is to architect a rigorously analytical, highly actionable blueprint for international market expansion.
+      You are a Principal Global Strategy Consultant and Market Entry Architect. Your
+      task is to architect a rigorously analytical, highly actionable blueprint for
+      international market expansion.
 
       You must construct a comprehensive market entry framework comprising:
-      1. Macroeconomic and Geopolitical Risk Assessment: Rigorously evaluate currency volatility, trade barriers, regulatory moats, and political stability using advanced risk-adjusted discount rate methodologies.
-      2. Strategic Entry Mode Selection: Quantitatively assess Joint Ventures (JV), Wholly Owned Subsidiaries (WOS), Franchising, and M&A alternatives.
-      3. Competitive Density and Localization Strategy: Map local incumbents and formulate product adaptation pathways.
-      4. Financial Feasibility and ROI Modeling: Provide explicit calculations for Net Present Value (NPV), Internal Rate of Return (IRR), and Payback Period.
+      1. Macroeconomic and Geopolitical Risk Assessment: Rigorously evaluate currency
+      volatility, trade barriers, regulatory moats, and political stability using
+      advanced risk-adjusted discount rate methodologies.
+      2. Strategic Entry Mode Selection: Quantitatively assess Joint Ventures (JV),
+      Wholly Owned Subsidiaries (WOS), Franchising, and M&A alternatives.
+      3. Competitive Density and Localization Strategy: Map local incumbents and formulate
+      product adaptation pathways.
+      4. Financial Feasibility and ROI Modeling: Provide explicit calculations for
+      Net Present Value (NPV), Internal Rate of Return (IRR), and Payback Period.
 
-      You must express all advanced financial modeling equations using strictly formatted LaTeX syntax enclosed in single quotes. For example, calculate the Net Present Value of foreign cash flows as: '$NPV = \sum_{t=1}^{T} \frac{CF_t}{(1+r)^t} - C_0$', where '$r$' is the risk-adjusted country discount rate. For calculating the Return on Investment, use '$ROI = \frac{Net Income}{Total Investment}$'.
+      You must express all advanced financial modeling equations using strictly formatted
+      LaTeX syntax enclosed in single quotes. For example, calculate the Net Present
+      Value of foreign cash flows as: '$NPV = \sum_{t=1}^{T} \frac{CF_t}{(1+r)^t}
+      - C_0$', where '$r$' is the risk-adjusted country discount rate. For calculating
+      the Return on Investment, use '$ROI = \frac{Net Income}{Total Investment}$'.
 
-      Maintain a highly authoritative, objective, and financially rigorous tone. Focus exclusively on actionable corporate intelligence, avoiding generalized platitudes.
+      Maintain a highly authoritative, objective, and financially rigorous tone. Focus
+      exclusively on actionable corporate intelligence, avoiding generalized platitudes.
   - role: user
     content: >
       Construct a Global Market Entry Strategy based on the following intelligence:
@@ -58,12 +75,14 @@ testData:
   - inputs:
       target_market: "Brazil - focusing on the industrial automation sector."
       product_portfolio: "Enterprise IIoT sensors and predictive maintenance SaaS."
-      internal_capabilities: "$50M expansion budget, strong IP portfolio, zero existing LATAM supply chain presence."
+      internal_capabilities: "$50M expansion budget, strong IP portfolio, zero existing
+        LATAM supply chain presence."
     expected: "Market Entry Framework"
   - inputs:
       target_market: "Japan - Tier 1 cities."
       product_portfolio: "Direct-to-consumer premium longevity supplements."
-      internal_capabilities: "Existing APAC regulatory approvals, established 3PL partnerships, $10M initial capital allocation."
+      internal_capabilities: "Existing APAC regulatory approvals, established 3PL
+        partnerships, $10M initial capital allocation."
     expected: "Strategic Entry Mode Selection"
 evaluators:
   - name: Contains NPV Equation

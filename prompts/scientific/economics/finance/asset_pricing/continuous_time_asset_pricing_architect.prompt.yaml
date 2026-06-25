@@ -1,6 +1,8 @@
 name: continuous_time_asset_pricing_architect
 version: 1.0.0
-description: Formulates continuous-time asset pricing models utilizing Ito calculus and stochastic discount factors, providing fundamental PDEs for asset valuation and risk premium derivations.
+description: Formulates continuous-time asset pricing models utilizing Ito 
+  calculus and stochastic discount factors, providing fundamental PDEs for asset
+  valuation and risk premium derivations.
 authors:
   - name: Economic Sciences Genesis Architect
 metadata:
@@ -12,16 +14,22 @@ metadata:
     - continuous-time
     - stochastic-calculus
     - macro-finance
+    - skill
+  requires_context: true
 variables:
   - name: underlying_dynamics
     type: string
-    description: The stochastic differential equation (SDE) governing the underlying state variable or asset (e.g., Geometric Brownian Motion, mean-reverting Ornstein-Uhlenbeck).
+    description: The stochastic differential equation (SDE) governing the 
+      underlying state variable or asset (e.g., Geometric Brownian Motion, 
+      mean-reverting Ornstein-Uhlenbeck).
   - name: investor_preferences
     type: string
-    description: The utility function or stochastic discount factor specification (e.g., CRRA, Epstein-Zin, habits).
+    description: The utility function or stochastic discount factor 
+      specification (e.g., CRRA, Epstein-Zin, habits).
   - name: asset_claim
     type: string
-    description: The specific cash flow or payoff structure being priced (e.g., European call option, long-term bond, equity dividend stream).
+    description: The specific cash flow or payoff structure being priced (e.g., 
+      European call option, long-term bond, equity dividend stream).
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -46,12 +54,17 @@ messages:
 
       Provide the full mathematical derivation of the pricing PDE, the SDF dynamics, and the specific risk premium for the asset claim.
 testData:
-  - underlying_dynamics: "Geometric Brownian Motion $dS_t = \\mu S_t dt + \\sigma S_t dW_t$"
-    investor_preferences: "Risk-neutral pricing (SDF assumes constant risk-free rate and zero risk premium)"
+  - underlying_dynamics: "Geometric Brownian Motion $dS_t = \\mu S_t dt + \\sigma
+      S_t dW_t$"
+    investor_preferences: "Risk-neutral pricing (SDF assumes constant risk-free rate
+      and zero risk premium)"
     asset_claim: "European Call Option with strike $K$ and maturity $T$"
-  - underlying_dynamics: "Aggregate consumption follows $dC_t = \\mu_c C_t dt + \\sigma_c C_t dW_t$"
-    investor_preferences: "Time-separable CRRA utility $U(C) = \\frac{C^{1-\\gamma}}{1-\\gamma}$"
-    asset_claim: "Equity market portfolio paying aggregate consumption as a continuous dividend"
+  - underlying_dynamics: "Aggregate consumption follows $dC_t = \\mu_c C_t dt + \\
+      sigma_c C_t dW_t$"
+    investor_preferences: "Time-separable CRRA utility $U(C) = \\frac{C^{1-\\gamma}}{1-\\\
+      gamma}$"
+    asset_claim: "Equity market portfolio paying aggregate consumption as a continuous
+      dividend"
 evaluators:
   - type: regex_match
     pattern: "\\\\frac\\{d \\\\Lambda_t\\}\\{\\\\Lambda_t\\}"

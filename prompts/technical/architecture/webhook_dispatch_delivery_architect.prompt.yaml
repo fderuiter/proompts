@@ -1,7 +1,8 @@
----
 name: Webhook Dispatch Delivery Architect
 version: 1.0.0
-description: Designs highly resilient, high-throughput webhook delivery architectures addressing concurrency, payload signing, exponential backoff, and circuit breaking.
+description: Designs highly resilient, high-throughput webhook delivery 
+  architectures addressing concurrency, payload signing, exponential backoff, 
+  and circuit breaking.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,10 +14,12 @@ metadata:
     - distributed-systems
     - resilience
     - event-driven
+    - skill
   requires_context: false
 variables:
   - name: target_scale
-    description: The expected webhook dispatch volume, peak concurrency requirements, and consumer ecosystem constraints.
+    description: The expected webhook dispatch volume, peak concurrency 
+      requirements, and consumer ecosystem constraints.
     required: true
 model: gpt-4o
 modelParameters:
@@ -41,7 +44,10 @@ messages:
       {{target_scale}}
 testData:
   - vars:
-      target_scale: "10,000 events per second average, peaking at 50,000 events per second. 5,000 distinct tenant endpoints. Strict ordered delivery not required, but at-least-once delivery is mandatory. Downstream endpoints vary wildly in latency and reliability."
+      target_scale: "10,000 events per second average, peaking at 50,000 events per
+        second. 5,000 distinct tenant endpoints. Strict ordered delivery not required,
+        but at-least-once delivery is mandatory. Downstream endpoints vary wildly
+        in latency and reliability."
     expected: "Circuit breaking"
 evaluators:
   - name: Resilience Mechanisms Check

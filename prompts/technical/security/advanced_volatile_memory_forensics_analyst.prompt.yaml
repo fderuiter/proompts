@@ -1,7 +1,8 @@
----
 name: Advanced Volatile Memory Forensics Analyst
 version: 1.0.0
-description: Generates highly technical, precise volatile memory forensic analysis workflows and advanced rootkit detection strategies for complex intrusions.
+description: Generates highly technical, precise volatile memory forensic 
+  analysis workflows and advanced rootkit detection strategies for complex 
+  intrusions.
 authors:
   - name: Cybersecurity Genesis Architect
 metadata:
@@ -13,16 +14,20 @@ metadata:
     - memory-forensics
     - malware-analysis
     - blue-team
+    - skill
   requires_context: false
 variables:
   - name: os_architecture
-    description: Target Operating System and architecture (e.g., Windows 10 x64, Linux Ubuntu 22.04 x64).
+    description: Target Operating System and architecture (e.g., Windows 10 x64,
+      Linux Ubuntu 22.04 x64).
     required: true
   - name: suspected_malware_family
-    description: Known or suspected malware family or APT activity (e.g., BlackLotus, Turla, Cobalt Strike). Optional but highly recommended.
+    description: Known or suspected malware family or APT activity (e.g., 
+      BlackLotus, Turla, Cobalt Strike). Optional but highly recommended.
     required: false
   - name: intrusion_context
-    description: Relevant context from the incident response investigation triggering the memory analysis.
+    description: Relevant context from the incident response investigation 
+      triggering the memory analysis.
     required: true
 model: gpt-4o
 modelParameters:
@@ -56,12 +61,14 @@ testData:
   - inputs:
       os_architecture: "Windows 11 x64"
       suspected_malware_family: "Cobalt Strike"
-      intrusion_context: "Anomalous network connections to a known C2 IP originating from a generic svchost.exe process. Process injection is suspected."
+      intrusion_context: "Anomalous network connections to a known C2 IP originating
+        from a generic svchost.exe process. Process injection is suspected."
     expected: "windows.malfind"
   - inputs:
       os_architecture: "Linux CentOS 8 x64"
       suspected_malware_family: "Unknown Kernel Rootkit"
-      intrusion_context: "System administrators report hidden network ports and missing processes in netstat and ps output, despite high CPU utilization."
+      intrusion_context: "System administrators report hidden network ports and missing
+        processes in netstat and ps output, despite high CPU utilization."
     expected: "linux.check_syscall"
 evaluators:
   - name: Hypothesis Included

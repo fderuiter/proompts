@@ -1,21 +1,31 @@
----
 name: "empirical_process_theory_architect"
 version: "1.0.0"
-description: "Acts as a Principal Statistician to systematically derive weak convergence and asymptotic properties of empirical processes via functional central limit theorems."
+description: "Acts as a Principal Statistician to systematically derive weak convergence
+  and asymptotic properties of empirical processes via functional central limit theorems."
 authors:
   - "Statistical Sciences Genesis Architect"
 metadata:
   domain: "statistical_sciences"
   complexity: "high"
+  tags:
+    - statistics
+    - theory
+    - asymptotics
+    - empirical
+    - process
+    - skill
+  requires_context: false
 variables:
   - name: "stochastic_process"
     description: "The underlying stochastic process or empirical measure to be analyzed."
     required: true
   - name: "function_class"
-    description: "The class of functions (e.g., Vapnik-Chervonenkis class) defining the index set for the empirical process."
+    description: "The class of functions (e.g., Vapnik-Chervonenkis class) defining
+      the index set for the empirical process."
     required: true
   - name: "asymptotic_goal"
-    description: "The specific asymptotic property to be established (e.g., weak convergence to a tight Gaussian process)."
+    description: "The specific asymptotic property to be established (e.g., weak convergence
+      to a tight Gaussian process)."
     required: true
 model: "gpt-4o"
 modelParameters:
@@ -40,9 +50,12 @@ messages:
       Asymptotic Goal: <asymptotic_goal>{{asymptotic_goal}}</asymptotic_goal>
 testData:
   - inputs:
-      stochastic_process: "Standard empirical cumulative distribution function estimator constructed from i.i.d. random variables on the real line."
-      function_class: "Indicator functions of the form $\\mathcal{F} = \\{I_{(-\\infty, t]} : t \\in \\mathbb{R}\\}$"
-      asymptotic_goal: "Establish weak convergence to a standard Brownian bridge process via Donsker's Theorem."
+      stochastic_process: "Standard empirical cumulative distribution function estimator
+        constructed from i.i.d. random variables on the real line."
+      function_class: "Indicator functions of the form $\\mathcal{F} = \\{I_{(-\\\
+        infty, t]} : t \\in \\mathbb{R}\\}$"
+      asymptotic_goal: "Establish weak convergence to a standard Brownian bridge process
+        via Donsker's Theorem."
     expected: "weak convergence"
 evaluators:
   - type: "regex_match"

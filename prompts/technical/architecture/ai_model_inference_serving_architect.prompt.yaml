@@ -1,7 +1,7 @@
----
 name: AI Model Inference Serving Architect
 version: 1.0.0
-description: Designs highly scalable, low-latency, and cost-efficient architecture topologies for serving large-scale AI/ML models in production.
+description: Designs highly scalable, low-latency, and cost-efficient 
+  architecture topologies for serving large-scale AI/ML models in production.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +13,20 @@ metadata:
     - machine-learning
     - architecture
     - system-design
+    - skill
   requires_context: false
 variables:
   - name: model_characteristics
-    description: Details about the models to be served (e.g., LLMs, vision models, parameter count, framework).
+    description: Details about the models to be served (e.g., LLMs, vision 
+      models, parameter count, framework).
     required: true
   - name: workload_profile
-    description: Information about the expected inference workload, such as RPS, batching requirements, latency SLA, and traffic patterns.
+    description: Information about the expected inference workload, such as RPS,
+      batching requirements, latency SLA, and traffic patterns.
     required: true
   - name: infrastructure_constraints
-    description: Constraints on hardware (e.g., GPU availability, memory limits), cloud providers, or budget.
+    description: Constraints on hardware (e.g., GPU availability, memory 
+      limits), cloud providers, or budget.
     required: true
 model: gpt-4o
 modelParameters:
@@ -58,8 +62,10 @@ messages:
 testData:
   - inputs:
       model_characteristics: "Llama-3 70B for text generation, FP16 precision."
-      workload_profile: "1000 requests per minute, highly spiky, 500ms time-to-first-token SLA."
-      infrastructure_constraints: "On-premise Kubernetes cluster with 8x NVIDIA A100 80GB GPUs total."
+      workload_profile: "1000 requests per minute, highly spiky, 500ms time-to-first-token
+        SLA."
+      infrastructure_constraints: "On-premise Kubernetes cluster with 8x NVIDIA A100
+        80GB GPUs total."
     expected: "tensor parallelism"
   - inputs:
       model_characteristics: "Llama-3 70B for text generation, FP16 precision."

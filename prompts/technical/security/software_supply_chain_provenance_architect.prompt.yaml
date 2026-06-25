@@ -1,7 +1,8 @@
----
 name: Software Supply Chain Provenance Architect
 version: 1.0.0
-description: Architects robust, mathematically sound, and SLSA-compliant software supply chain security frameworks emphasizing cryptographic provenance, SBOM generation, and zero-trust CI/CD orchestration.
+description: Architects robust, mathematically sound, and SLSA-compliant 
+  software supply chain security frameworks emphasizing cryptographic 
+  provenance, SBOM generation, and zero-trust CI/CD orchestration.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,13 +14,16 @@ metadata:
     - supply-chain
     - cryptography
     - slsa
+    - skill
   requires_context: false
 variables:
   - name: build_environment
-    description: Detailed specification of the CI/CD pipeline infrastructure, build runners, repository hosting, and existing artifact registries.
+    description: Detailed specification of the CI/CD pipeline infrastructure, 
+      build runners, repository hosting, and existing artifact registries.
     required: true
   - name: compliance_target
-    description: Target compliance frameworks or maturity models (e.g., SLSA Level 4, NIST SSDF, Executive Order 14028 requirements).
+    description: Target compliance frameworks or maturity models (e.g., SLSA 
+      Level 4, NIST SSDF, Executive Order 14028 requirements).
     required: true
 model: gpt-4o
 modelParameters:
@@ -49,13 +53,19 @@ messages:
       {{compliance_target}}
 testData:
   - inputs:
-      build_environment: "GitHub Actions using self-hosted Kubernetes runners, deploying container images to an Amazon Elastic Container Registry (ECR). The source code is hosted on GitHub."
+      build_environment: "GitHub Actions using self-hosted Kubernetes runners, deploying
+        container images to an Amazon Elastic Container Registry (ECR). The source
+        code is hosted on GitHub."
       compliance_target: "SLSA Level 3 and NIST SSDF"
-    expected: "Contains technical architecture for generating in-toto attestations, using Sigstore Cosign for image signing, and OIDC federation between GitHub Actions and AWS."
+    expected: "Contains technical architecture for generating in-toto attestations,
+      using Sigstore Cosign for image signing, and OIDC federation between GitHub
+      Actions and AWS."
   - inputs:
-      build_environment: "On-premise GitLab CI/CD with static virtual machine runners, pushing Java JAR artifacts to an internal Nexus Repository."
+      build_environment: "On-premise GitLab CI/CD with static virtual machine runners,
+        pushing Java JAR artifacts to an internal Nexus Repository."
       compliance_target: "SLSA Level 4 and Executive Order 14028"
-    expected: "Contains technical architecture for hermetic builds, ephemeral runner adoption, and CycloneDX SBOM generation."
+    expected: "Contains technical architecture for hermetic builds, ephemeral runner
+      adoption, and CycloneDX SBOM generation."
 evaluators:
   - name: Attestation and Provenance Check
     type: regex

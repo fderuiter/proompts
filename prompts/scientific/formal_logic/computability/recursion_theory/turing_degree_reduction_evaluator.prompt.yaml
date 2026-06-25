@@ -1,21 +1,33 @@
----
 name: turing_degree_reduction_evaluator
 version: 1.0.0
-description: Systematically formalizes and evaluates Turing reductions and many-one reductions between formal sets to classify their computational complexity and Turing degrees.
+description: Systematically formalizes and evaluates Turing reductions and 
+  many-one reductions between formal sets to classify their computational 
+  complexity and Turing degrees.
 authors:
   - name: Formal Logic Genesis Architect
 metadata:
   domain: scientific/formal_logic/computability/recursion_theory
   complexity: high
+  tags:
+    - formal-logic
+    - computability
+    - recursion-theory
+    - turing
+    - degree
+    - skill
+  requires_context: false
 variables:
   - name: source_set
-    description: The formal definition of the set $A$ (e.g., $HALT$, $K$) whose computability or Turing degree is being evaluated.
+    description: The formal definition of the set $A$ (e.g., $HALT$, $K$) whose 
+      computability or Turing degree is being evaluated.
     required: true
   - name: target_set
-    description: The formal definition of the target set $B$ to which $A$ is being reduced.
+    description: The formal definition of the target set $B$ to which $A$ is 
+      being reduced.
     required: true
   - name: reduction_type
-    description: The type of reduction to construct or evaluate, typically Many-One Reduction ($\leq_m$) or Turing Reduction ($\leq_T$).
+    description: The type of reduction to construct or evaluate, typically 
+      Many-One Reduction ($\leq_m$) or Turing Reduction ($\leq_T$).
     required: true
 model: claude-3-7-sonnet-20250219
 modelParameters:

@@ -1,46 +1,47 @@
 name: Write the Regulatory Summary
 version: 0.1.0
-description: You are a regulatory-affairs specialist drafting the Chemical Characterization
-  section of a 510(k).
+description: You are a regulatory-affairs specialist drafting the Chemical 
+  Characterization section of a 510(k).
 metadata:
   domain: scientific
   complexity: medium
   tags:
-  - chemical-characterization
-  - write
-  - regulatory
-  - summary
+    - chemical-characterization
+    - write
+    - regulatory
+    - summary
+    - skill
   requires_context: false
 variables:
-- name: risk_assessment_summary
-  description: A summary of the key information
-  required: true
+  - name: risk_assessment_summary
+    description: A summary of the key information
+    required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: 'You are a regulatory affairs specialist drafting chemical characterization
+  - role: system
+    content: 'You are a regulatory affairs specialist drafting chemical characterization
 
-    summaries for 510(k) submissions based on E&L study results.
+      summaries for 510(k) submissions based on E&L study results.
 
-    '
-- role: user
-  content: "Based on the following risk assessment summary, produce a 2-3-page executive\
-    \ summary that:\n{{risk_assessment_summary}}\n\nThe executive summary must accomplish\
-    \ the following:\n- Describes the E&L study design, extraction conditions, analytical\
-    \ methods, and AET calculation in reviewer-friendly language.\n- Presents key\
-    \ results (top five leachables and their MoS values) in a formatted table; place\
-    \ full datasets in an appendix.\n- Explains how the data satisfy ISO 10993-18:2020\
-    \ requirements and align with FDA\u2019s 2024 draft guidance deviations (e.g.,\
-    \ AET vs LOQ, uncertainty factor rationale).\n- States residual risks, associated\
-    \ risk-management measures, and a clear compliance conclusion.\n- Uses H2/H3 headings,\
-    \ bullet points, and avoids proprietary detail.\n\nAfter the summary, list any\
-    \ remaining inputs you require from me."
+      '
+  - role: user
+    content: "Based on the following risk assessment summary, produce a 2-3-page executive
+      summary that:\n{{risk_assessment_summary}}\n\nThe executive summary must accomplish
+      the following:\n- Describes the E&L study design, extraction conditions, analytical
+      methods, and AET calculation in reviewer-friendly language.\n- Presents key
+      results (top five leachables and their MoS values) in a formatted table; place
+      full datasets in an appendix.\n- Explains how the data satisfy ISO 10993-18:2020
+      requirements and align with FDA’s 2024 draft guidance deviations (e.g., AET
+      vs LOQ, uncertainty factor rationale).\n- States residual risks, associated
+      risk-management measures, and a clear compliance conclusion.\n- Uses H2/H3 headings,
+      bullet points, and avoids proprietary detail.\n\nAfter the summary, list any
+      remaining inputs you require from me."
 testData:
-- expected: Completion follows instructions.
-  vars: ''
+  - expected: Completion follows instructions.
+    vars: ''
 evaluators:
-- name: Output starts with an H2 heading
-  string:
-    startsWith: '##'
+  - name: Output starts with an H2 heading
+    string:
+      startsWith: '##'

@@ -1,7 +1,7 @@
----
 name: Vector Prompt Editor-in-Chief
 version: "1.1.1"
-description: Reviews draft prompts, eliminates generic phrasing, and elevates them with specific personas, precise constraints, and contextual framing.
+description: Reviews draft prompts, eliminates generic phrasing, and elevates 
+  them with specific personas, precise constraints, and contextual framing.
 metadata:
   domain: technical
   complexity: high
@@ -9,6 +9,8 @@ metadata:
     - prompt-engineering
     - calibration
     - optimization
+    - skill
+  requires_context: false
 variables:
   - name: draft_prompt
     description: The draft prompt submitted for calibration.
@@ -61,10 +63,13 @@ messages:
       </draft_prompt>
 testData:
   - variables:
-      draft_prompt: "You are a helpful assistant. Please write a polite email to a client explaining that their project will be delayed by two weeks due to unforeseen technical difficulties. Make sure to apologize and sound professional."
+      draft_prompt: "You are a helpful assistant. Please write a polite email to a
+        client explaining that their project will be delayed by two weeks due to unforeseen
+        technical difficulties. Make sure to apologize and sound professional."
     expected: "Vector Calibration"
   - variables:
-      draft_prompt: "I want you to be a good marketer and write me a sales copy for my new AI SaaS tool. It should be catchy and convert well."
+      draft_prompt: "I want you to be a good marketer and write me a sales copy for
+        my new AI SaaS tool. It should be catchy and convert well."
     expected: "Vector Calibration"
 evaluators:
   - name: Response should contain PR Title

@@ -1,7 +1,8 @@
----
 name: "Non-Monotonic Self-Correction Meta-Reasoner"
 version: "1.0.0"
-description: "An advanced meta-reasoning prompt that mandates a non-monotonic epistemic graph (Graph of Operations / Tree of Thoughts topology) to force dynamic self-correction, hypothesis invalidation, and iterative refinement prior to synthesis."
+description: "An advanced meta-reasoning prompt that mandates a non-monotonic epistemic
+  graph (Graph of Operations / Tree of Thoughts topology) to force dynamic self-correction,
+  hypothesis invalidation, and iterative refinement prior to synthesis."
 authors:
   - "AGI Genesis Architect"
 metadata:
@@ -12,10 +13,12 @@ metadata:
     - "recursive-logic"
     - "tree-of-thoughts"
     - "dynamic-epistemic-updating"
+    - skill
   requires_context: false
 variables:
   - name: "complex_problem_statement"
-    description: "The underlying complex problem requiring non-monotonic reasoning and dynamic hypothesis updating."
+    description: "The underlying complex problem requiring non-monotonic reasoning
+      and dynamic hypothesis updating."
     required: true
 model: "claude-3-opus-20240229"
 modelParameters:
@@ -52,7 +55,9 @@ messages:
       {{complex_problem_statement}}
 testData:
   - inputs:
-      complex_problem_statement: "Determine the optimal architectural approach for a multi-agent system resolving the Byzantine Generals Problem in an asynchronous network with high packet loss."
+      complex_problem_statement: "Determine the optimal architectural approach for
+        a multi-agent system resolving the Byzantine Generals Problem in an asynchronous
+        network with high packet loss."
     expected:
       - "<reasoning_graph>"
       - "<final_synthesis>"

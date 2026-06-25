@@ -5,49 +5,51 @@ metadata:
   domain: clinical
   complexity: low
   tags:
-  - site-acquisition
-  - clinical
-  - trial
-  - agreement
-  - cta
+    - site-acquisition
+    - clinical
+    - trial
+    - agreement
+    - cta
+    - skill
   requires_context: false
 variables:
-- name: cta_draft
-  description: The cta draft to use for this prompt
-  required: true
+  - name: cta_draft
+    description: The cta draft to use for this prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: You are a Legal Contracts Associate. Review the provided Clinical Trial
-    Agreement draft and identify any missing clauses regarding IRB approval or intellectual
-    property rights for inventions derived from the trial.
-- role: user
-  content: 'Review the provided Clinical Trial Agreement draft and identify any missing
-    clauses regarding IRB approval or intellectual property rights for inventions
-    derived from the trial.
+  - role: system
+    content: You are a Legal Contracts Associate. Review the provided Clinical 
+      Trial Agreement draft and identify any missing clauses regarding IRB 
+      approval or intellectual property rights for inventions derived from the 
+      trial.
+  - role: user
+    content: 'Review the provided Clinical Trial Agreement draft and identify any
+      missing clauses regarding IRB approval or intellectual property rights for inventions
+      derived from the trial.
 
 
-    Inputs:
+      Inputs:
 
-    - `{{cta_draft}}`
+      - `{{cta_draft}}`
 
 
-    Output format:
+      Output format:
 
-    Markdown CTA Review.'
+      Markdown CTA Review.'
 testData:
-- expected: 'CTA Review
+  - expected: 'CTA Review
 
-    '
-  vars: 'cta_draft: Standard CTA template.
+      '
+    vars: 'cta_draft: Standard CTA template.
 
-    '
+      '
 evaluators:
-- name: IRB Approval
-  string:
-    contains: IRB Approval
-- name: Intellectual Property
-  string:
-    contains: Intellectual Property
+  - name: IRB Approval
+    string:
+      contains: IRB Approval
+  - name: Intellectual Property
+    string:
+      contains: Intellectual Property

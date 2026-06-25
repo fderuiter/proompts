@@ -1,7 +1,8 @@
----
 name: PII Tokenization Vault Architect
 version: 1.0.0
-description: Architect highly secure, isolated, and scalable PII (Personally Identifiable Information) tokenization vaults to ensure compliance and robust data protection in distributed systems.
+description: Architect highly secure, isolated, and scalable PII (Personally 
+  Identifiable Information) tokenization vaults to ensure compliance and robust 
+  data protection in distributed systems.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,18 +14,22 @@ metadata:
     - pii
     - tokenization
     - data-privacy
+    - skill
   requires_context: false
 variables:
   - name: compliance_frameworks
-    description: Regulatory and compliance frameworks to adhere to (e.g., GDPR, CCPA, PCI-DSS, HIPAA).
+    description: Regulatory and compliance frameworks to adhere to (e.g., GDPR, 
+      CCPA, PCI-DSS, HIPAA).
     type: string
     required: true
   - name: throughput_latency_sla
-    description: Requirements for tokenization and detokenization throughput (e.g., TPS) and latency bounds (e.g., P99 < 5ms).
+    description: Requirements for tokenization and detokenization throughput 
+      (e.g., TPS) and latency bounds (e.g., P99 < 5ms).
     type: string
     required: true
   - name: encryption_key_management
-    description: Strategy and constraints for encryption key management (e.g., HSM, KMS, Bring Your Own Key, Key Rotation frequency).
+    description: Strategy and constraints for encryption key management (e.g., 
+      HSM, KMS, Bring Your Own Key, Key Rotation frequency).
     type: string
     required: true
 model: anthropic/claude-3-opus-20240229
@@ -70,10 +75,12 @@ testData:
   - variables:
       compliance_frameworks: "HIPAA."
       throughput_latency_sla: "10,000,000 TPS, P99 < 1ms."
-      encryption_key_management: "Synchronous external KMS call per transaction via public internet."
+      encryption_key_management: "Synchronous external KMS call per transaction via
+        public internet."
     expected: "error"
 evaluators:
   - name: Output Constraints Match
     type: regex
-    pattern: "(?i)(Format-Preserving Encryption|stateful tokenization|stateless tokenization|blind indexing|error)"
+    pattern: "(?i)(Format-Preserving Encryption|stateful tokenization|stateless tokenization|blind
+      indexing|error)"
     target: message.content

@@ -1,7 +1,8 @@
----
 name: FDA De Novo Classification Request Architect
 version: "1.0.0"
-description: Architect rigorous, compliant FDA De Novo Classification Requests for novel medical devices, ensuring strict adherence to 21 CFR Part 860 and robust justification of special controls.
+description: Architect rigorous, compliant FDA De Novo Classification Requests 
+  for novel medical devices, ensuring strict adherence to 21 CFR Part 860 and 
+  robust justification of special controls.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -15,13 +16,17 @@ metadata:
     - medical-device
     - regulatory-strategy
     - compliance
+    - skill
   requires_context: true
 variables:
   - name: device_description
-    description: Comprehensive description of the novel medical device, including mechanism of action, intended use, and technological characteristics.
+    description: Comprehensive description of the novel medical device, 
+      including mechanism of action, intended use, and technological 
+      characteristics.
     required: true
   - name: risk_mitigation_strategy
-    description: Proposed general and special controls to mitigate identified risks to health.
+    description: Proposed general and special controls to mitigate identified 
+      risks to health.
     required: true
 model: gpt-4o
 modelParameters:
@@ -29,17 +34,27 @@ modelParameters:
 messages:
   - role: system
     content: >
-      You are an elite Regulatory Affairs Strategist and FDA De Novo Classification Request Architect.
-      Your task is to formulate a rigorous, compliant De Novo classification strategy for a novel medical device lacking a legally marketed predicate.
-      You must strictly adhere to 21 CFR Part 860 and relevant FDA guidance for the De Novo pathway.
+      You are an elite Regulatory Affairs Strategist and FDA De Novo Classification
+      Request Architect.
+      Your task is to formulate a rigorous, compliant De Novo classification strategy
+      for a novel medical device lacking a legally marketed predicate.
+      You must strictly adhere to 21 CFR Part 860 and relevant FDA guidance for the
+      De Novo pathway.
 
       Your output must:
-      1. Establish a compelling justification that the device is novel and lacks a valid predicate device, warranting a De Novo request rather than a 510(k).
-      2. Construct a comprehensive benefit-risk profile demonstrating that the probable benefits outweigh the probable risks.
-      3. Define explicit, enforceable Special Controls (e.g., specific performance testing, software verification, labeling requirements) that, alongside General Controls, provide reasonable assurance of safety and effectiveness.
-      4. Recommend the appropriate regulatory class (Class I or Class II) and outline the required clinical and non-clinical data to support the application.
+      1. Establish a compelling justification that the device is novel and lacks a
+      valid predicate device, warranting a De Novo request rather than a 510(k).
+      2. Construct a comprehensive benefit-risk profile demonstrating that the probable
+      benefits outweigh the probable risks.
+      3. Define explicit, enforceable Special Controls (e.g., specific performance
+      testing, software verification, labeling requirements) that, alongside General
+      Controls, provide reasonable assurance of safety and effectiveness.
+      4. Recommend the appropriate regulatory class (Class I or Class II) and outline
+      the required clinical and non-clinical data to support the application.
 
-      Maintain an authoritative, precise, and highly technical regulatory tone. Use bullet points for risk/benefit factors and bold text for recommended Special Controls.
+      Maintain an authoritative, precise, and highly technical regulatory tone. Use
+      bullet points for risk/benefit factors and bold text for recommended Special
+      Controls.
   - role: user
     content: |
       Draft the De Novo classification strategy based on the following device and risk information:
@@ -51,12 +66,21 @@ messages:
       {{risk_mitigation_strategy}}
 testData:
   - vars:
-      device_description: "A novel AI-driven wearable neuromodulation device intended to treat chronic insomnia by delivering targeted low-frequency electromagnetic pulses to the prefrontal cortex during sleep."
-      risk_mitigation_strategy: "General controls including QSR compliance. Special controls proposed: electromagnetic compatibility (EMC) testing, software life cycle documentation, human factors validation, and a pivotal randomized sham-controlled clinical trial."
+      device_description: "A novel AI-driven wearable neuromodulation device intended
+        to treat chronic insomnia by delivering targeted low-frequency electromagnetic
+        pulses to the prefrontal cortex during sleep."
+      risk_mitigation_strategy: "General controls including QSR compliance. Special
+        controls proposed: electromagnetic compatibility (EMC) testing, software life
+        cycle documentation, human factors validation, and a pivotal randomized sham-controlled
+        clinical trial."
     expected: "De Novo Classification Request Strategy"
   - vars:
-      device_description: "A first-of-its-kind optical coherence tomography (OCT) imaging catheter equipped with real-time deep learning tissue classification for intraoperative margin assessment in solid tumor resections."
-      risk_mitigation_strategy: "Special controls: in vivo diagnostic accuracy testing compared to histopathology, thermal safety evaluation of the optical probe, and rigorous cybersecurity risk management."
+      device_description: "A first-of-its-kind optical coherence tomography (OCT)
+        imaging catheter equipped with real-time deep learning tissue classification
+        for intraoperative margin assessment in solid tumor resections."
+      risk_mitigation_strategy: "Special controls: in vivo diagnostic accuracy testing
+        compared to histopathology, thermal safety evaluation of the optical probe,
+        and rigorous cybersecurity risk management."
     expected: "Special Controls"
 evaluators:
   - name: Contains Special Controls formatting

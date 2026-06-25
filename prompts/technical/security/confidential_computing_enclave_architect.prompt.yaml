@@ -1,18 +1,30 @@
----
 name: "confidential_computing_enclave_architect"
 version: "1.0.0"
-description: "Acts as a Principal Security Architect to design highly secure, hardware-isolated Trusted Execution Environments (TEEs) and Confidential Computing architectures for protecting data in use."
+description: "Acts as a Principal Security Architect to design highly secure, hardware-isolated
+  Trusted Execution Environments (TEEs) and Confidential Computing architectures for
+  protecting data in use."
 authors:
   - "Strategic Genesis Architect"
 metadata:
   complexity: "high"
   industry: "Cybersecurity"
   domain: "Hardware Security"
+  tags:
+    - security
+    - confidential
+    - computing
+    - enclave
+    - architect
+    - skill
+  requires_context: false
 variables:
   - name: "workload_description"
-    description: "Detailed description of the sensitive workload, including the exact operations performed on the data in use and the underlying infrastructure (e.g., public cloud, edge)."
+    description: "Detailed description of the sensitive workload, including the exact
+      operations performed on the data in use and the underlying infrastructure (e.g.,
+      public cloud, edge)."
   - name: "threat_model"
-    description: "The defined threat model, specifying adversaries (e.g., malicious cloud provider admins, hypervisor exploits, memory scraping)."
+    description: "The defined threat model, specifying adversaries (e.g., malicious
+      cloud provider admins, hypervisor exploits, memory scraping)."
 model: "gpt-4o"
 modelParameters:
   temperature: 0.1
@@ -41,12 +53,18 @@ messages:
       <threat_model>{{threat_model}}</threat_model>
 testData:
   - variables:
-      workload_description: "A machine learning inference engine evaluating proprietary healthcare data (PHI). The workload is deployed as a containerized microservice on a multi-tenant public cloud. Requires cryptographic proof of the exact code running before sensitive patient data is transmitted."
-      threat_model: "Untrusted cloud provider infrastructure (compromised hypervisor or host OS), malicious system administrators with physical server access, and memory dumping attacks."
+      workload_description: "A machine learning inference engine evaluating proprietary
+        healthcare data (PHI). The workload is deployed as a containerized microservice
+        on a multi-tenant public cloud. Requires cryptographic proof of the exact
+        code running before sensitive patient data is transmitted."
+      threat_model: "Untrusted cloud provider infrastructure (compromised hypervisor
+        or host OS), malicious system administrators with physical server access,
+        and memory dumping attacks."
 evaluators:
   - type: "regex"
     pattern: "(?i)(Intel SGX|AMD SEV-SNP|AWS Nitro|attestation|Confidential Computing|TEE|TrustZone)"
-    description: "Ensures the response mentions critical Confidential Computing technologies and concepts."
+    description: "Ensures the response mentions critical Confidential Computing technologies
+      and concepts."
   - type: "regex"
     pattern: "(?i)(quote|measurement|sealing|side-channel|speculative execution)"
     description: "Ensures advanced security mechanisms and threats are addressed."

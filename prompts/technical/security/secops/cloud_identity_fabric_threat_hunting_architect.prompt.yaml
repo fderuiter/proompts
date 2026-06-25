@@ -1,7 +1,8 @@
----
 name: Cloud Identity Fabric Threat Hunting Architect
 version: 1.0.0
-description: Architects advanced, high-fidelity threat hunting strategies targeting multi-cloud identity fabrics, focusing on anomalous lateral movement, federated trust abuse, and stealthy token exfiltration.
+description: Architects advanced, high-fidelity threat hunting strategies 
+  targeting multi-cloud identity fabrics, focusing on anomalous lateral 
+  movement, federated trust abuse, and stealthy token exfiltration.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +14,22 @@ metadata:
     - threat-hunting
     - cloud-identity
     - iam
+    - skill
   requires_context: false
 variables:
   - name: identity_provider_telemetry
-    description: Details regarding available identity telemetry, logging sinks (e.g., CloudTrail, Azure AD Sign-in logs, Okta System Log), and retention policies.
+    description: Details regarding available identity telemetry, logging sinks 
+      (e.g., CloudTrail, Azure AD Sign-in logs, Okta System Log), and retention 
+      policies.
     required: true
   - name: target_threat_actor_profile
-    description: Specific TTPs (Tactics, Techniques, and Procedures) of the targeted threat actor (e.g., APT29, Scattered Spider) regarding identity abuse.
+    description: Specific TTPs (Tactics, Techniques, and Procedures) of the 
+      targeted threat actor (e.g., APT29, Scattered Spider) regarding identity 
+      abuse.
     required: true
   - name: multi_cloud_fabric_constraints
-    description: Information on the multi-cloud identity architecture (e.g., SAML/OIDC federations, conditional access policies, cross-tenant trusts).
+    description: Information on the multi-cloud identity architecture (e.g., 
+      SAML/OIDC federations, conditional access policies, cross-tenant trusts).
     required: true
 model: gpt-4o
 modelParameters:
@@ -57,16 +64,20 @@ messages:
       <user_query>{{multi_cloud_fabric_constraints}}</user_query>
 testData:
   - inputs:
-      identity_provider_telemetry: "Azure AD Sign-in and Audit logs, 90-day retention. Token issuance logs enabled."
+      identity_provider_telemetry: "Azure AD Sign-in and Audit logs, 90-day retention.
+        Token issuance logs enabled."
       target_threat_actor_profile: "APT29 utilizing Golden SAML and MFA exhaustion."
-      multi_cloud_fabric_constraints: "On-premise ADFS federated with Azure AD. AWS SSO via Azure AD."
+      multi_cloud_fabric_constraints: "On-premise ADFS federated with Azure AD. AWS
+        SSO via Azure AD."
     expected: "Pass-the-PRT|Golden SAML|OAuth consent phishing|telemetry fields"
   - inputs:
-      identity_provider_telemetry: "Basic AWS CloudTrail logs, no Okta System Logs available."
+      identity_provider_telemetry: "Basic AWS CloudTrail logs, no Okta System Logs
+        available."
       target_threat_actor_profile: "Scattered Spider targeting Okta session hijacking."
       multi_cloud_fabric_constraints: "Okta as primary IDP, but logs are not centralized."
     expected: "error"
 evaluators:
   - name: Expert Terminology Check
     type: regex
-    pattern: '(?i)(Pass-the-PRT|Golden SAML|OAuth consent phishing|service principal credential|token replay|error)'
+    pattern: '(?i)(Pass-the-PRT|Golden SAML|OAuth consent phishing|service principal
+      credential|token replay|error)'

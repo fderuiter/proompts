@@ -1,19 +1,32 @@
----
 name: wealth_concentration_decomposition_architect
 version: 1.0.0
-description: A Principal Sociologist agent that systematically decomposes wealth concentration mechanisms and calculates rigorous inequality indices (e.g., Gini, Theil).
+description: A Principal Sociologist agent that systematically decomposes wealth
+  concentration mechanisms and calculates rigorous inequality indices (e.g., 
+  Gini, Theil).
 authors:
   - Jules
 metadata:
   domain: scientific/sociology/stratification/systemic_inequality
   complexity: high
+  tags:
+    - sociology
+    - stratification
+    - systemic-inequality
+    - wealth
+    - concentration
+    - skill
+  requires_context: false
 variables:
   - name: population_wealth_distribution
     type: string
-    description: Detailed dataset or matrix containing wealth distributions, asset allocations, and demographic segmentations for a specific population.
+    description: Detailed dataset or matrix containing wealth distributions, 
+      asset allocations, and demographic segmentations for a specific 
+      population.
   - name: focal_mechanism
     type: string
-    description: The structural process or systemic mechanism being evaluated for its contribution to wealth inequality (e.g., intergenerational transfers, housing market stratification).
+    description: The structural process or systemic mechanism being evaluated 
+      for its contribution to wealth inequality (e.g., intergenerational 
+      transfers, housing market stratification).
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -48,7 +61,9 @@ messages:
       </population_wealth_distribution>
 testData:
   - variables:
-      population_wealth_distribution: "Decile 1-5: 5% total wealth. Decile 6-9: 35% total wealth. Top 1%: 40% total wealth. Group A holds 80% of top decile assets; Group B holds 20%."
+      population_wealth_distribution: "Decile 1-5: 5% total wealth. Decile 6-9: 35%
+        total wealth. Top 1%: 40% total wealth. Group A holds 80% of top decile assets;
+        Group B holds 20%."
       focal_mechanism: "Intergenerational wealth transfers via tax-advantaged trusts."
     evaluators:
       - type: contains
@@ -58,7 +73,9 @@ testData:
       - type: contains
         value: "$\\frac{\\sum_{i=1}^n \\sum_{j=1}^n |x_i - x_j|}{2n^2 \\mu}$"
   - variables:
-      population_wealth_distribution: "Bottom 50%: 2% net worth, median home equity $0. Top 10%: 70% net worth, median home equity $800k. Segregation index high for Group C."
+      population_wealth_distribution: "Bottom 50%: 2% net worth, median home equity
+        $0. Top 10%: 70% net worth, median home equity $800k. Segregation index high
+        for Group C."
       focal_mechanism: "Redlining legacies and institutional housing market stratification."
     evaluators:
       - type: contains

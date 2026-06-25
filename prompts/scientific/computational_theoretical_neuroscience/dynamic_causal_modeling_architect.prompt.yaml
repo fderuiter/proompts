@@ -1,19 +1,32 @@
----
 name: Dynamic Causal Modeling Architect
 version: 1.0.0
-description: A Principal Computational Neuroscientist agent designed to formulate advanced Dynamic Causal Modeling (DCM) pipelines for effective connectivity inference.
+description: A Principal Computational Neuroscientist agent designed to 
+  formulate advanced Dynamic Causal Modeling (DCM) pipelines for effective 
+  connectivity inference.
 authors:
   - Neuroscience Genesis Architect
 metadata:
   domain: computational_theoretical_neuroscience
   complexity: high
+  tags:
+    - computational-theoretical-neuroscience
+    - dynamic
+    - causal
+    - modeling
+    - architect
+    - skill
+  requires_context: false
 variables:
   - name: imaging_modality
-    description: The neuroimaging modality used to acquire the data (e.g., fMRI, EEG, MEG).
+    description: The neuroimaging modality used to acquire the data (e.g., fMRI,
+      EEG, MEG).
   - name: neural_mass_model
-    description: The specific biophysical generative model representing the underlying neuronal dynamics (e.g., Jansen-Rit, canonical microcircuit, Taylor model).
+    description: The specific biophysical generative model representing the 
+      underlying neuronal dynamics (e.g., Jansen-Rit, canonical microcircuit, 
+      Taylor model).
   - name: experimental_design
-    description: The cognitive task paradigm or resting-state condition detailing the driving inputs and modulatory contexts.
+    description: The cognitive task paradigm or resting-state condition 
+      detailing the driving inputs and modulatory contexts.
 model: "gpt-4o"
 modelParameters:
   temperature: 0.1
@@ -49,14 +62,22 @@ messages:
 testData:
   - inputs:
       imaging_modality: functional MRI (fMRI)
-      neural_mass_model: Two-state bilinear state equation coupled to the Balloon-Windkessel hemodynamic model
-      experimental_design: A visual attention block-design task, mapping driving inputs to V1 and attentional modulatory inputs to the V1-V5 forward connection.
-    expected: "A rigorous mathematical formulation of the bilinear DCM state equation and the Balloon-Windkessel forward model, explicitly defining A, B, and C matrices and the Variational Free Energy objective function."
+      neural_mass_model: Two-state bilinear state equation coupled to the 
+        Balloon-Windkessel hemodynamic model
+      experimental_design: A visual attention block-design task, mapping driving
+        inputs to V1 and attentional modulatory inputs to the V1-V5 forward 
+        connection.
+    expected: "A rigorous mathematical formulation of the bilinear DCM state equation
+      and the Balloon-Windkessel forward model, explicitly defining A, B, and C matrices
+      and the Variational Free Energy objective function."
   - inputs:
       imaging_modality: Electroencephalography (EEG)
       neural_mass_model: Canonical Cortical Microcircuit (CMC)
-      experimental_design: A mismatch negativity (MMN) auditory oddball paradigm investigating top-down prediction error suppression.
-    expected: "A comprehensive derivation of the CMC state equations, mapping driving inputs to layer 4 spiny stellate cells, including a mathematically explicit Variational Laplace inversion scheme."
+      experimental_design: A mismatch negativity (MMN) auditory oddball paradigm
+        investigating top-down prediction error suppression.
+    expected: "A comprehensive derivation of the CMC state equations, mapping driving
+      inputs to layer 4 spiny stellate cells, including a mathematically explicit
+      Variational Laplace inversion scheme."
 evaluators:
   - name: Verifies presence of Variational Free Energy equation in LaTeX
     string:

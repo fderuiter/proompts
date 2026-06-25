@@ -1,17 +1,28 @@
----
 name: linear_temporal_logic_model_checker
 version: 1.0.0
-description: Systematically evaluates Linear Temporal Logic (LTL) formulas over finite state transition systems (Kripke structures) to verify reactive system properties.
+description: Systematically evaluates Linear Temporal Logic (LTL) formulas over 
+  finite state transition systems (Kripke structures) to verify reactive system 
+  properties.
 authors:
   - Formal Logic Genesis Architect
 metadata:
   domain: scientific/mathematics/formal_logic
   complexity: high
+  tags:
+    - mathematics
+    - formal-logic
+    - linear
+    - temporal
+    - logic
+    - skill
+  requires_context: false
 variables:
   - name: transition_system
-    description: A formal description of the Kripke structure (states, initial states, transitions, labeling function).
+    description: A formal description of the Kripke structure (states, initial 
+      states, transitions, labeling function).
   - name: ltl_formula
-    description: The Linear Temporal Logic formula to be model-checked, using strict LaTeX syntax.
+    description: The Linear Temporal Logic formula to be model-checked, using 
+      strict LaTeX syntax.
 model: "gpt-4o"
 modelParameters:
   temperature: 0.1
@@ -42,11 +53,13 @@ messages:
       </ltl_formula>
 testData:
   - inputs:
-      transition_system: "States: {s0, s1}. Initial: s0. Transitions: s0 -> s1, s1 -> s1. Labels: L(s0) = {p}, L(s1) = {q}."
+      transition_system: "States: {s0, s1}. Initial: s0. Transitions: s0 -> s1, s1
+        -> s1. Labels: L(s0) = {p}, L(s1) = {q}."
       ltl_formula: '$\square \diamond q$'
     expected: '$\models$'
   - inputs:
-      transition_system: "States: {s0, s1}. Initial: s0. Transitions: s0 -> s0, s0 -> s1, s1 -> s1. Labels: L(s0) = {p}, L(s1) = {q}."
+      transition_system: "States: {s0, s1}. Initial: s0. Transitions: s0 -> s0, s0
+        -> s1, s1 -> s1. Labels: L(s0) = {p}, L(s1) = {q}."
       ltl_formula: '$\diamond q$'
     expected: 'counterexample trace'
 evaluators:

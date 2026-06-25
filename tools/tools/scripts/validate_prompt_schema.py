@@ -136,7 +136,7 @@ class PromptSchema(BaseModel):
     name: str = Field(..., description="A short, descriptive name for the prompt.")
     version: str = Field("0.1.0", description="Semantic version of the prompt.")
     description: str = Field(..., description="A detailed description of the prompt's purpose and usage.")
-    metadata: Optional[PromptMetadata] = Field(None, description="Metadata for organization and categorization.")
+    metadata: PromptMetadata = Field(..., description="Metadata for organization and categorization.")
     variables: List[InputVariable] = Field([], description="List of input variables used in the prompt template.")
     model: str = Field(..., description="The ID of the LLM model to use (e.g., 'gpt-4', 'claude-3-opus').")
     safety_opt_out: bool = Field(False, description="Opt-out of Aegis safety injection.")

@@ -1,8 +1,10 @@
----
 name: Riemann Surface Analytic Continuation Architect
 version: 1.0.0
 description: >
-  Systematically engineers rigorous analytic continuations and rigorously models Riemann surfaces for complex-valued functions, operating as a Principal Complex Analyst. Applies abstract structural analysis to identify branch points, monodromy groups, and construct global analytic functions.
+  Systematically engineers rigorous analytic continuations and rigorously models Riemann
+  surfaces for complex-valued functions, operating as a Principal Complex Analyst.
+  Applies abstract structural analysis to identify branch points, monodromy groups,
+  and construct global analytic functions.
 authors:
   - System
 metadata:
@@ -11,12 +13,23 @@ metadata:
   sub_domain: complex_analysis
   persona: Principal Complex Analyst
   expertise_level: expert
+  tags:
+    - mathematics
+    - analysis
+    - complex-analysis
+    - riemann
+    - surface
+    - skill
+  requires_context: false
 variables:
   - name: function_definition
-    description: "The local definition of the analytic function (e.g., a Taylor series or a functional equation) and its initial domain of holomorphy."
+    description: "The local definition of the analytic function (e.g., a Taylor series
+      or a functional equation) and its initial domain of holomorphy."
     type: string
   - name: topological_constraints
-    description: "Any topological features or boundary conditions imposed on the global domain, including potential singularities, branch cuts, or the topology of the underlying manifold."
+    description: "Any topological features or boundary conditions imposed on the global
+      domain, including potential singularities, branch cuts, or the topology of the
+      underlying manifold."
     type: string
 model: gpt-4o
 # model:
@@ -48,10 +61,13 @@ messages:
       Topological Constraints:
       {{topological_constraints}}
 testData:
-  - function_definition: "The power series f(z) = \\\\sum_{n=1}^{\\\\infty} \\\\frac{z^n}{n} converging in the unit disk |z| < 1."
+  - function_definition: "The power series f(z) = \\\\sum_{n=1}^{\\\\infty} \\\\frac{z^n}{n}
+      converging in the unit disk |z| < 1."
     topological_constraints: "The domain is restricted by a branch point at z = 1."
-  - function_definition: "The local solution to the algebraic equation w^3 - w + z = 0 near z = 0."
-    topological_constraints: "Consider the monodromy group action on the roots over the punctured complex plane."
+  - function_definition: "The local solution to the algebraic equation w^3 - w + z
+      = 0 near z = 0."
+    topological_constraints: "Consider the monodromy group action on the roots over
+      the punctured complex plane."
 evaluators:
   - type: syntax
     criteria: "The output must be strictly valid YAML starting with '---'."

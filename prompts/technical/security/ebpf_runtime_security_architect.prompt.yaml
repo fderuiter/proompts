@@ -1,7 +1,7 @@
----
 name: eBPF Runtime Security Architect
 version: 1.0.0
-description: Design ultra-low-overhead runtime security observability and enforcement policies using eBPF for cloud-native Linux workloads.
+description: Design ultra-low-overhead runtime security observability and 
+  enforcement policies using eBPF for cloud-native Linux workloads.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -14,16 +14,21 @@ metadata:
     - cloud-native
     - linux
     - observability
+    - skill
   requires_context: true
 variables:
   - name: workload_profile
-    description: Description of the cloud-native workload, including orchestrator (e.g., Kubernetes), base image, and primary application stack.
+    description: Description of the cloud-native workload, including 
+      orchestrator (e.g., Kubernetes), base image, and primary application 
+      stack.
     required: true
   - name: threat_vectors
-    description: Specific runtime threats to mitigate (e.g., container escape, fileless malware, reverse shells).
+    description: Specific runtime threats to mitigate (e.g., container escape, 
+      fileless malware, reverse shells).
     required: true
   - name: performance_constraints
-    description: Acceptable overhead limits (e.g., < 2% CPU, < 50ms latency addition) and throughput requirements.
+    description: Acceptable overhead limits (e.g., < 2% CPU, < 50ms latency 
+      addition) and throughput requirements.
     required: true
 model: gpt-4o
 modelParameters:
@@ -59,15 +64,24 @@ messages:
       </performance_constraints>
 testData:
   - inputs:
-      workload_profile: "High-throughput NGINX ingress controllers running in a multi-tenant Kubernetes cluster on Ubuntu 22.04."
-      threat_vectors: "Unauthorized execution of shells (e.g., /bin/bash, /bin/sh) within the container namespace; network data exfiltration to unknown external IPs."
-      performance_constraints: "Must add less than 1% CPU overhead per node; network latency impact must be < 1ms."
-    expected: "Contains specific references to BPF_PROG_TYPE_LSM for execve blocking and XDP for low-latency network filtering."
+      workload_profile: "High-throughput NGINX ingress controllers running in a multi-tenant
+        Kubernetes cluster on Ubuntu 22.04."
+      threat_vectors: "Unauthorized execution of shells (e.g., /bin/bash, /bin/sh)
+        within the container namespace; network data exfiltration to unknown external
+        IPs."
+      performance_constraints: "Must add less than 1% CPU overhead per node; network
+        latency impact must be < 1ms."
+    expected: "Contains specific references to BPF_PROG_TYPE_LSM for execve blocking
+      and XDP for low-latency network filtering."
   - inputs:
-      workload_profile: "Go-based microservices processing sensitive financial transactions, deployed on Alpine Linux containers."
-      threat_vectors: "Memory tampering (e.g., writing to /proc/meminfo or /dev/kmem); fileless malware execution via memfd_create."
-      performance_constraints: "Absolute minimal context switching; ring buffer event drops must be zero under high load."
-    expected: "Contains references to KRSI/LSM hooks to block memfd_create and eBPF Ring Buffer optimization strategies."
+      workload_profile: "Go-based microservices processing sensitive financial transactions,
+        deployed on Alpine Linux containers."
+      threat_vectors: "Memory tampering (e.g., writing to /proc/meminfo or /dev/kmem);
+        fileless malware execution via memfd_create."
+      performance_constraints: "Absolute minimal context switching; ring buffer event
+        drops must be zero under high load."
+    expected: "Contains references to KRSI/LSM hooks to block memfd_create and eBPF
+      Ring Buffer optimization strategies."
 evaluators:
   - type: regex_match
     pattern: "(?i)(BPF_PROG_TYPE_LSM|kprobe|tracepoint|XDP)"

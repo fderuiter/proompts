@@ -1,7 +1,7 @@
----
 name: Event-Driven Topology Designer
 version: 1.0.0
-description: Architects robust event-driven topologies and asynchronous workflows from domain requirements.
+description: Architects robust event-driven topologies and asynchronous 
+  workflows from domain requirements.
 metadata:
   domain: technical
   complexity: high
@@ -11,10 +11,12 @@ metadata:
     - eda
     - topology
     - system-design
+    - skill
   requires_context: true
 variables:
   - name: domain_requirements
-    description: The business context, domain events, and scalability requirements.
+    description: The business context, domain events, and scalability 
+      requirements.
     required: true
 model: gpt-4
 modelParameters:
@@ -34,7 +36,9 @@ messages:
       {{domain_requirements}}
 testData:
   - vars:
-      domain_requirements: "We need an e-commerce checkout flow. When an order is placed, inventory must be reserved, payment processed, and shipping notified. If payment fails, inventory should be released."
+      domain_requirements: "We need an e-commerce checkout flow. When an order is
+        placed, inventory must be reserved, payment processed, and shipping notified.
+        If payment fails, inventory should be released."
     expected: "CQRS"
 evaluators:
   - name: Acronym Check

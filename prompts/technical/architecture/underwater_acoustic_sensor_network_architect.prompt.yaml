@@ -1,7 +1,9 @@
----
 name: Underwater Acoustic Sensor Network Architect
 version: 1.0.0
-description: Designs highly resilient, ultra-low bandwidth Underwater Acoustic Sensor Network (UWASN) architectures for marine observation, tactical surveillance, and offshore exploration, optimizing for extreme propagation delay, high error rates, and dynamic node mobility.
+description: Designs highly resilient, ultra-low bandwidth Underwater Acoustic 
+  Sensor Network (UWASN) architectures for marine observation, tactical 
+  surveillance, and offshore exploration, optimizing for extreme propagation 
+  delay, high error rates, and dynamic node mobility.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,18 +15,24 @@ metadata:
     - sensor-networks
     - iot
     - edge-computing
+    - skill
   requires_context: false
 variables:
   - name: deployment_environment
-    description: Physical characteristics of the aquatic environment (e.g., depth, temperature gradients, salinity, ambient noise, multipath fading profiles).
+    description: Physical characteristics of the aquatic environment (e.g., 
+      depth, temperature gradients, salinity, ambient noise, multipath fading 
+      profiles).
     type: string
     required: true
   - name: node_topology
-    description: Description of the sensor nodes (static vs. mobile, AUVs, buoys), their energy constraints, and required sensing capabilities.
+    description: Description of the sensor nodes (static vs. mobile, AUVs, 
+      buoys), their energy constraints, and required sensing capabilities.
     type: string
     required: true
   - name: data_requirements
-    description: The type of data to be collected (e.g., periodic telemetry, event-driven alerts, compressed acoustic imaging) and associated latency/reliability SLAs.
+    description: The type of data to be collected (e.g., periodic telemetry, 
+      event-driven alerts, compressed acoustic imaging) and associated 
+      latency/reliability SLAs.
     type: string
     required: true
 model: anthropic/claude-3-opus-20240229
@@ -62,14 +70,19 @@ messages:
       </user_query>
 testData:
   - inputs:
-      deployment_environment: "Deep ocean, 4000m depth, high pressure, significant multipath fading."
-      node_topology: "100 static benthic nodes, 5 autonomous underwater vehicles (AUVs) as data mules, 1 surface gateway buoy."
-      data_requirements: "Hourly environmental telemetry (1KB/node) and immediate event-driven seismic anomaly alerts (5KB)."
+      deployment_environment: "Deep ocean, 4000m depth, high pressure, significant
+        multipath fading."
+      node_topology: "100 static benthic nodes, 5 autonomous underwater vehicles (AUVs)
+        as data mules, 1 surface gateway buoy."
+      data_requirements: "Hourly environmental telemetry (1KB/node) and immediate
+        event-driven seismic anomaly alerts (5KB)."
     expected: "delay-tolerant networking"
   - inputs:
-      deployment_environment: "Shallow coastal waters, high ambient noise from shipping, rapid temperature fluctuations."
+      deployment_environment: "Shallow coastal waters, high ambient noise from shipping,
+        rapid temperature fluctuations."
       node_topology: "Dense deployment of 500 static nodes."
-      data_requirements: "Continuous real-time 4K video streaming from all 500 nodes to a surface station with <10ms latency."
+      data_requirements: "Continuous real-time 4K video streaming from all 500 nodes
+        to a surface station with <10ms latency."
     expected: "error"
 evaluators:
   - name: Output Constraints Match

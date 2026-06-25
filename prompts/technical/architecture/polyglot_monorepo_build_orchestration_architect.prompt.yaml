@@ -1,7 +1,9 @@
----
 name: Polyglot Monorepo Build Orchestration Architect
 version: 1.0.0
-description: Designs highly scalable, hermetic build and deployment orchestrations for massive-scale enterprise polyglot monorepos, focusing on DAG-based dependency resolution, intelligent caching, and bounded context isolation.
+description: Designs highly scalable, hermetic build and deployment 
+  orchestrations for massive-scale enterprise polyglot monorepos, focusing on 
+  DAG-based dependency resolution, intelligent caching, and bounded context 
+  isolation.
 authors:
   - Repository Architecture Architect
 metadata:
@@ -13,16 +15,20 @@ metadata:
     - build-systems
     - devops
     - system-design
+    - skill
   requires_context: false
 variables:
   - name: monorepo_scale
-    description: The scale of the monorepo, including number of services, languages involved, and average commit frequency.
+    description: The scale of the monorepo, including number of services, 
+      languages involved, and average commit frequency.
     required: true
   - name: ci_cd_constraints
-    description: Constraints regarding CI/CD latency targets, compute resource limitations, and deployment strategies.
+    description: Constraints regarding CI/CD latency targets, compute resource 
+      limitations, and deployment strategies.
     required: true
   - name: security_boundaries
-    description: Security boundaries and compliance requirements across different domains within the monorepo.
+    description: Security boundaries and compliance requirements across 
+      different domains within the monorepo.
     required: true
 model: anthropic/claude-3-opus-20240229
 modelParameters:
@@ -79,9 +85,12 @@ messages:
       <security_boundaries>{{security_boundaries}}</security_boundaries>
 testData:
   - vars:
-      monorepo_scale: "300 microservices across Go, Rust, and TypeScript. 5,000 engineers, 10,000 commits per day."
-      ci_cd_constraints: "PR checks must complete in under 10 minutes. Builds must be deterministic."
-      security_boundaries: "Fintech core services must be strictly isolated from experimental web frontends. Zero-trust internal network."
+      monorepo_scale: "300 microservices across Go, Rust, and TypeScript. 5,000 engineers,
+        10,000 commits per day."
+      ci_cd_constraints: "PR checks must complete in under 10 minutes. Builds must
+        be deterministic."
+      security_boundaries: "Fintech core services must be strictly isolated from experimental
+        web frontends. Zero-trust internal network."
     expected: "DAG"
 evaluators:
   - name: Keyword Check

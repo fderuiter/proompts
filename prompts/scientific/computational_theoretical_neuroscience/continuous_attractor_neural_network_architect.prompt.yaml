@@ -1,19 +1,30 @@
----
 name: continuous_attractor_neural_network_architect
 version: 1.0.0
-description: Designs highly rigorous, computationally sound continuous attractor neural network (CANN) models for spatial navigation, memory, and cognitive representations.
+description: Designs highly rigorous, computationally sound continuous attractor
+  neural network (CANN) models for spatial navigation, memory, and cognitive 
+  representations.
 authors:
   - Neuroscience Genesis Architect
 metadata:
   domain: neuroscience
   complexity: high
+  tags:
+    - computational-theoretical-neuroscience
+    - continuous
+    - attractor
+    - neural
+    - network
+    - skill
+  requires_context: true
 variables:
   - name: dimensionality
     type: string
-    description: The dimensionality of the attractor manifold (e.g., 1D for head direction cells, 2D for grid cells/place cells).
+    description: The dimensionality of the attractor manifold (e.g., 1D for head
+      direction cells, 2D for grid cells/place cells).
   - name: plasticity_rule
     type: string
-    description: The synaptic plasticity learning rule governing the formation of the attractor topology (e.g., symmetric Hebbian, asymmetric STDP).
+    description: The synaptic plasticity learning rule governing the formation 
+      of the attractor topology (e.g., symmetric Hebbian, asymmetric STDP).
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -43,8 +54,10 @@ messages:
       Implementing the following synaptic plasticity rule to self-organize the connectivity:
       <plasticity_rule>{{plasticity_rule}}</plasticity_rule>
 testData:
-  - dimensionality: "1D ring attractor for head direction cells tracking continuous angular velocity."
-    plasticity_rule: "Spike-timing-dependent plasticity (STDP) with an asymmetric learning window to encode velocity-driven shifts in the bump of activity."
+  - dimensionality: "1D ring attractor for head direction cells tracking continuous
+      angular velocity."
+    plasticity_rule: "Spike-timing-dependent plasticity (STDP) with an asymmetric
+      learning window to encode velocity-driven shifts in the bump of activity."
     evaluators:
       - name: Connectivity Profile
         type: regex

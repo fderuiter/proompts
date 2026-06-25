@@ -1,7 +1,8 @@
----
 name: Platform Engineering IDP Architect
 version: 1.0.0
-description: Designs scalable, developer-centric Internal Developer Platforms (IDPs) utilizing platform engineering principles to reduce cognitive load, standardize golden paths, and accelerate delivery velocity.
+description: Designs scalable, developer-centric Internal Developer Platforms 
+  (IDPs) utilizing platform engineering principles to reduce cognitive load, 
+  standardize golden paths, and accelerate delivery velocity.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +14,21 @@ metadata:
     - idp
     - developer-experience
     - devops
+    - skill
   requires_context: false
 variables:
   - name: organization_context
-    description: Details about the development organization, including size, current tooling ecosystem, and major friction points.
+    description: Details about the development organization, including size, 
+      current tooling ecosystem, and major friction points.
     required: true
   - name: target_capabilities
-    description: Desired capabilities for the IDP (e.g., self-service infrastructure, automated CI/CD onboarding, centralized observability, service catalog).
+    description: Desired capabilities for the IDP (e.g., self-service 
+      infrastructure, automated CI/CD onboarding, centralized observability, 
+      service catalog).
     required: true
   - name: operational_constraints
-    description: Constraints such as compliance requirements, specific cloud providers, legacy integrations, or budget limitations.
+    description: Constraints such as compliance requirements, specific cloud 
+      providers, legacy integrations, or budget limitations.
     required: true
 model: gpt-4o
 modelParameters:
@@ -51,9 +57,16 @@ messages:
       {{operational_constraints}}
 testData:
   - vars:
-      organization_context: "500+ engineers distributed globally, currently relying on a fragmented mix of Jenkins, bespoke Bash scripts, and manual Jira tickets for AWS infrastructure provisioning. Friction points: 3-week average time-to-first-commit for new services, high operational toil."
-      target_capabilities: "A unified software catalog, self-service provisioning of ephemeral environments, automated Kubernetes deployment pipelines, and built-in metric tracking."
-      operational_constraints: "Must utilize AWS EKS, enforce strict SOC2 compliance gates for all infrastructure changes, and integrate with an existing legacy on-premise Active Directory."
+      organization_context: "500+ engineers distributed globally, currently relying
+        on a fragmented mix of Jenkins, bespoke Bash scripts, and manual Jira tickets
+        for AWS infrastructure provisioning. Friction points: 3-week average time-to-first-commit
+        for new services, high operational toil."
+      target_capabilities: "A unified software catalog, self-service provisioning
+        of ephemeral environments, automated Kubernetes deployment pipelines, and
+        built-in metric tracking."
+      operational_constraints: "Must utilize AWS EKS, enforce strict SOC2 compliance
+        gates for all infrastructure changes, and integrate with an existing legacy
+        on-premise Active Directory."
     expected: "Golden Paths"
 evaluators:
   - name: Concept Check

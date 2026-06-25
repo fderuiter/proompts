@@ -1,7 +1,7 @@
----
 name: Epistemic Logic Multi-Agent Knowledge Architect
 version: 1.0.0
-description: Formulates rigorous multi-agent epistemic logic frameworks to model knowledge, belief, and information dynamics in distributed systems.
+description: Formulates rigorous multi-agent epistemic logic frameworks to model
+  knowledge, belief, and information dynamics in distributed systems.
 authors:
   - Formal Logic Genesis Architect
 metadata:
@@ -13,10 +13,13 @@ metadata:
     - "kripke-semantics"
     - "multi-agent-systems"
     - "formal-verification"
+    - skill
   requires_context: true
 variables:
   - name: multi_agent_scenario
-    description: The complex multi-agent scenario involving partial observability, distributed knowledge, or belief revision that requires formal epistemic modeling.
+    description: The complex multi-agent scenario involving partial 
+      observability, distributed knowledge, or belief revision that requires 
+      formal epistemic modeling.
     required: true
 model: gpt-4o
 modelParameters:
@@ -45,7 +48,12 @@ messages:
       </input>
 testData:
   - vars:
-      multi_agent_scenario: "Consider three Byzantine generals who must agree to attack. They communicate via unreliable messengers. General A sends a message to General B. General B receives it but is unsure if A knows B received it. Formulate the conditions required for them to achieve common knowledge of the attack time, proving whether it is possible under unreliable communication (the Coordinated Attack Problem)."
+      multi_agent_scenario: "Consider three Byzantine generals who must agree to attack.
+        They communicate via unreliable messengers. General A sends a message to General
+        B. General B receives it but is unsure if A knows B received it. Formulate
+        the conditions required for them to achieve common knowledge of the attack
+        time, proving whether it is possible under unreliable communication (the Coordinated
+        Attack Problem)."
     expected: "C_G \\varphi"
 evaluators:
   - name: LaTeX Logic Syntax Enforcement

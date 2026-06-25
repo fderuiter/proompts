@@ -1,54 +1,57 @@
 name: Humanitarian Device Exemption (HDE)
 version: 0.1.0
-description: Explain why the health benefit of a HUD outweighs the risk of injury.
+description: Explain why the health benefit of a HUD outweighs the risk of 
+  injury.
 metadata:
   domain: regulatory
   complexity: low
   tags:
-  - submissions
-  - humanitarian
-  - device
-  - exemption
-  - hde
+    - submissions
+    - humanitarian
+    - device
+    - exemption
+    - hde
+    - skill
   requires_context: false
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-- role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
-    FDA and ISO compliance tasks.
+  - role: system
+    content: 'You are an expert Regulatory Affairs Specialist capable of handling
+      complex FDA and ISO compliance tasks.
 
 
-    ## Context
+      ## Context
 
-    21 CFR Part 814 Subpart H
-
-
-    ## Objective
-
-    Explain why the health benefit of a HUD outweighs the risk of injury.
+      21 CFR Part 814 Subpart H
 
 
-    ## Output Format
+      ## Objective
 
-    Formal narrative explanation.'
-- role: user
-  content: 'Please perform the task using the following input data:
+      Explain why the health benefit of a HUD outweighs the risk of injury.
 
 
-    <input>
+      ## Output Format
 
-    {{input}}
+      Formal narrative explanation.'
+  - role: user
+    content: 'Please perform the task using the following input data:
 
-    </input>'
+
+      <input>
+
+      {{input}}
+
+      </input>'
 testData:
-- expected: Expected output as per instructions.
-  vars: HUD designation and risk-benefit analysis of alternatives. (Example data)
+  - expected: Expected output as per instructions.
+    vars: HUD designation and risk-benefit analysis of alternatives. (Example 
+      data)
 evaluators:
-- name: Validation Check
-  regex: (?i)Check
+  - name: Validation Check
+    regex: (?i)Check

@@ -1,7 +1,8 @@
----
 name: Pediatric Investigational Plan (PIP) Architect
 version: 1.0.0
-description: Synthesizes scientific rationale and clinical development strategy into a comprehensive, EMA-compliant Pediatric Investigational Plan (PIP) application.
+description: Synthesizes scientific rationale and clinical development strategy 
+  into a comprehensive, EMA-compliant Pediatric Investigational Plan (PIP) 
+  application.
 authors:
   - name: Autonomous Genesis Engine
 metadata:
@@ -13,18 +14,24 @@ metadata:
     - clinical-development
     - pediatrics
     - ema-pip
+    - skill
+  requires_context: false
 variables:
   - name: adult_clinical_data
-    description: Summary of existing adult clinical data (pharmacokinetics, efficacy, safety).
+    description: Summary of existing adult clinical data (pharmacokinetics, 
+      efficacy, safety).
     required: true
   - name: mechanism_of_action
-    description: The proposed mechanism of action for the investigational product.
+    description: The proposed mechanism of action for the investigational 
+      product.
     required: true
   - name: target_pediatric_condition
-    description: The specific pediatric condition or disease targeted for the indication.
+    description: The specific pediatric condition or disease targeted for the 
+      indication.
     required: true
   - name: proposed_pediatric_studies
-    description: Outline of proposed pediatric studies, including PK/PD modeling, safety, and efficacy trials.
+    description: Outline of proposed pediatric studies, including PK/PD 
+      modeling, safety, and efficacy trials.
     required: true
 model: gpt-4o
 modelParameters:
@@ -74,15 +81,21 @@ messages:
       </inputs>
 testData:
   - vars:
-      adult_clinical_data: "Phase 3 data demonstrates a 40% reduction in seizure frequency in adults with focal epilepsy. Steady-state clearance is linear."
-      mechanism_of_action: "Selective antagonism of voltage-gated sodium channels (Nav1.1), stabilizing neuronal membranes."
-      target_pediatric_condition: "Pediatric patients (1 month to <18 years) with inadequately controlled focal-onset seizures."
-      proposed_pediatric_studies: "Study 1: Open-label PK/PD in children aged 2 to <18 years. Study 2: Double-blind, placebo-controlled efficacy trial in same age group. Deferral requested for neonates (<1 month)."
+      adult_clinical_data: "Phase 3 data demonstrates a 40% reduction in seizure frequency
+        in adults with focal epilepsy. Steady-state clearance is linear."
+      mechanism_of_action: "Selective antagonism of voltage-gated sodium channels
+        (Nav1.1), stabilizing neuronal membranes."
+      target_pediatric_condition: "Pediatric patients (1 month to <18 years) with
+        inadequately controlled focal-onset seizures."
+      proposed_pediatric_studies: "Study 1: Open-label PK/PD in children aged 2 to
+        <18 years. Study 2: Double-blind, placebo-controlled efficacy trial in same
+        age group. Deferral requested for neonates (<1 month)."
     expected: "## 1. Scientific Rationale and Unmet Medical Need"
     evaluators:
       - name: Header Structure Validation
         regex:
-          pattern: '(?s)## 1\. Scientific Rationale.*## 2\. Extrapolation Concept.*## 3\. Proposed Pediatric Clinical.*## 4\. Waiver and Deferral'
+          pattern: '(?s)## 1\. Scientific Rationale.*## 2\. Extrapolation Concept.*##
+            3\. Proposed Pediatric Clinical.*## 4\. Waiver and Deferral'
       - name: Content Inclusion Check
         regex:
           pattern: '(?i)(Nav1\.1|focal-onset seizures|PK/PD)'

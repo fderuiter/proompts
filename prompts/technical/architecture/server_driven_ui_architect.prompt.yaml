@@ -1,7 +1,7 @@
----
 name: Server-Driven UI Architecture Designer
 version: 1.0.0
-description: Designs flexible, responsive Server-Driven UI (SDUI) architectures to control layouts dynamically from the backend without client updates.
+description: Designs flexible, responsive Server-Driven UI (SDUI) architectures 
+  to control layouts dynamically from the backend without client updates.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,10 +13,12 @@ metadata:
     - system-design
     - mobile
     - frontend
+    - skill
   requires_context: true
 variables:
   - name: application_context
-    description: The business context, expected client platforms (e.g., iOS, Android, Web), and desired level of dynamic control.
+    description: The business context, expected client platforms (e.g., iOS, 
+      Android, Web), and desired level of dynamic control.
     required: true
 model: gpt-4o
 modelParameters:
@@ -41,7 +43,11 @@ messages:
       </input>
 testData:
   - vars:
-      application_context: "We are building an e-commerce application for iOS, Android, and Web. We want to be able to dynamically change the homepage layout, promotional banners, and product detail page structures during flash sales without requiring app store submissions. The system needs to support fallback UI if the network fails."
+      application_context: "We are building an e-commerce application for iOS, Android,
+        and Web. We want to be able to dynamically change the homepage layout, promotional
+        banners, and product detail page structures during flash sales without requiring
+        app store submissions. The system needs to support fallback UI if the network
+        fails."
     expected: "Backend-for-Frontend"
 evaluators:
   - name: Architecture Keyword Check

@@ -1,19 +1,30 @@
----
 name: stochastic_lotka_volterra_population_modeler
 version: 1.0.0
-description: "Rigorously models stochastic multispecies population dynamics using generalized Lotka-Volterra equations with environmental noise."
+description: "Rigorously models stochastic multispecies population dynamics using
+  generalized Lotka-Volterra equations with environmental noise."
 authors:
   - Biological Sciences Genesis Architect
 metadata:
   domain: ecology
   complexity: high
+  tags:
+    - ecology
+    - population-dynamics
+    - stochastic
+    - lotka
+    - volterra
+    - skill
+  requires_context: false
 variables:
   - name: species_network
-    description: "The adjacency matrix or interaction network describing the trophic interactions (predation, competition, mutualism) between species."
+    description: "The adjacency matrix or interaction network describing the trophic
+      interactions (predation, competition, mutualism) between species."
   - name: environmental_stochasticity
-    description: "The mathematical form and parameters for the stochastic noise driving environmental variability."
+    description: "The mathematical form and parameters for the stochastic noise driving
+      environmental variability."
   - name: spatial_configuration
-    description: "The metapopulation structure or continuous spatial domain, including migration rates or diffusion coefficients."
+    description: "The metapopulation structure or continuous spatial domain, including
+      migration rates or diffusion coefficients."
 model: openai/gpt-4o
 modelParameters:
   temperature: 0.1
@@ -46,9 +57,12 @@ messages:
 
       Provide the complete mathematical blueprint and stability analysis.
 testData:
-  - species_network: "A 5-species competitive guild with a keystone predator exhibiting a Holling Type II functional response."
-    environmental_stochasticity: "Correlated Gaussian white noise affecting the intrinsic growth rates."
-    spatial_configuration: "A two-patch metapopulation system with asymmetric dispersal rates."
+  - species_network: "A 5-species competitive guild with a keystone predator exhibiting
+      a Holling Type II functional response."
+    environmental_stochasticity: "Correlated Gaussian white noise affecting the intrinsic
+      growth rates."
+    spatial_configuration: "A two-patch metapopulation system with asymmetric dispersal
+      rates."
 evaluators:
   - type: regex
     pattern: "(?i)\\\\[a-zA-Z]+"

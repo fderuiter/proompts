@@ -1,7 +1,7 @@
----
 name: multi_step_retrosynthetic_pathway_architect
 version: 1.0.0
-description: A Chemical Sciences Genesis Architect prompt for generating multi-step retrosynthetic pathways with rigorous yield optimization.
+description: A Chemical Sciences Genesis Architect prompt for generating 
+  multi-step retrosynthetic pathways with rigorous yield optimization.
 metadata:
   domain: scientific
   complexity: high
@@ -11,15 +11,19 @@ metadata:
     - retrosynthesis
     - synthesis
     - molecular-design
+    - skill
   requires_context: true
 variables:
   - name: target_molecule_smiles
-    description: SMILES string of the target molecule for retrosynthetic analysis.
+    description: SMILES string of the target molecule for retrosynthetic 
+      analysis.
     required: true
   - name: synthetic_constraints
-    description: Constraints on the synthesis (e.g., maximum steps, starting material availability, cost, yield requirements).
+    description: Constraints on the synthesis (e.g., maximum steps, starting 
+      material availability, cost, yield requirements).
     required: false
-    default: "Maximize overall yield; minimize steps; prefer commercially available starting materials."
+    default: "Maximize overall yield; minimize steps; prefer commercially available
+      starting materials."
 model: gpt-4
 modelParameters:
   temperature: 0.2
@@ -62,7 +66,8 @@ messages:
 testData:
   - variables:
       target_molecule_smiles: "CC(C)(C)c1ccc(cc1)C(=O)O"
-      synthetic_constraints: "Maximize yield; start from readily available benzene derivatives."
+      synthetic_constraints: "Maximize yield; start from readily available benzene
+        derivatives."
     expected: "Synthesis plan for 4-tert-butylbenzoic acid"
 evaluators:
   - rule: "Output must contain valid SMILES strings for intermediates."

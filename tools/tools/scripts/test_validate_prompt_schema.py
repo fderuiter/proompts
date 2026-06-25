@@ -14,6 +14,11 @@ class TestPromptSchema(unittest.TestCase):
         self.valid_data = {
             "name": "Test Prompt",
             "description": "A test prompt description",
+            "metadata": {
+                "domain": "general",
+                "complexity": "low",
+                "tags": ["skill"]
+            },
             "model": "gpt-4",
             "modelParameters": {"temperature": 0.7},
             "messages": [
@@ -113,10 +118,13 @@ class TestPromptSchema(unittest.TestCase):
     # New: metadata field
     # ------------------------------------------------------------------
 
-    def test_metadata_defaults_to_none(self):
-        """Test that metadata defaults to None when missing."""
-        prompt = PromptSchema(**self.valid_data)
-        self.assertIsNone(prompt.metadata)
+    def test_metadata_required(self):
+        """Test that metadata is required."""
+        data = self.valid_data.copy()
+        del data["metadata"]
+        with self.assertRaises(ValidationError) as cm:
+            PromptSchema(**data)
+        self.assertIn("metadata", str(cm.exception))
 
     def test_metadata_valid(self):
         """Test a fully-populated metadata block."""

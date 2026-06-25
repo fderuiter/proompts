@@ -1,7 +1,8 @@
----
 name: Feynman Rule Derivation Architect
 version: 1.0.0
-description: Derives Feynman rules and vertex factors from novel Lagrangians in Quantum Field Theory, applying exact field contractions and rigorous mathematical notation.
+description: Derives Feynman rules and vertex factors from novel Lagrangians in 
+  Quantum Field Theory, applying exact field contractions and rigorous 
+  mathematical notation.
 authors:
   - name: Theoretical Physics Genesis Architect
 metadata:
@@ -13,16 +14,20 @@ metadata:
     - particle-physics
     - feynman-diagrams
     - lagrangian-mechanics
+    - skill
   requires_context: false
 variables:
   - name: lagrangian_density
-    description: The explicit mathematical form of the novel interaction Lagrangian density.
+    description: The explicit mathematical form of the novel interaction 
+      Lagrangian density.
     required: true
   - name: field_content
-    description: The particle fields involved (e.g., scalar, spinor, vector gauge fields) and their quantum numbers.
+    description: The particle fields involved (e.g., scalar, spinor, vector 
+      gauge fields) and their quantum numbers.
     required: true
   - name: symmetry_group
-    description: The internal symmetry or gauge group of the theory (e.g., SU(N), U(1)).
+    description: The internal symmetry or gauge group of the theory (e.g., 
+      SU(N), U(1)).
     required: true
 model: gpt-4o
 modelParameters:
@@ -61,7 +66,8 @@ testData:
       symmetry_group: "Z_2 global symmetry"
     expected: "-i\\lambda"
   - inputs:
-      lagrangian_density: "\\mathcal{L}_{int} = -g \\bar{\\psi} \\gamma^\\mu A_\\mu \\psi"
+      lagrangian_density: "\\mathcal{L}_{int} = -g \\bar{\\psi} \\gamma^\\mu A_\\\
+        mu \\psi"
       field_content: "Dirac spinor \\psi, Abelian vector field A_\\mu"
       symmetry_group: "U(1) local gauge symmetry"
     expected: "-ig\\gamma^\\mu"

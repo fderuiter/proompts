@@ -1,8 +1,9 @@
----
 name: Supplier Quality Agreement Architect
 version: "1.0.0"
 description: >
-  Acts as a Principal Supplier Quality Architect to draft, review, and negotiate rigorous Supplier Quality Agreements (SQAs) in strict adherence to FDA 21 CFR Part 820.50, ISO 13485:2016 (Section 7.4), and EU MDR/IVDR requirements.
+  Acts as a Principal Supplier Quality Architect to draft, review, and negotiate rigorous
+  Supplier Quality Agreements (SQAs) in strict adherence to FDA 21 CFR Part 820.50,
+  ISO 13485:2016 (Section 7.4), and EU MDR/IVDR requirements.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -15,19 +16,25 @@ metadata:
     - iso-13485
     - fda-21-cfr-820
     - eu-mdr
+    - skill
   requires_context: true
 variables:
   - name: manufacturer_type
-    description: The nature of the legal manufacturer (e.g., Medical Device, IVD, Combination Product).
+    description: The nature of the legal manufacturer (e.g., Medical Device, 
+      IVD, Combination Product).
     required: true
   - name: supplier_type
-    description: The classification of the supplier (e.g., Contract Manufacturer, Critical Component Supplier, Service Provider).
+    description: The classification of the supplier (e.g., Contract 
+      Manufacturer, Critical Component Supplier, Service Provider).
     required: true
   - name: risk_classification
-    description: The risk level associated with the supplied product/service (e.g., Critical, High, Medium).
+    description: The risk level associated with the supplied product/service 
+      (e.g., Critical, High, Medium).
     required: true
   - name: critical_requirements
-    description: Specific regulatory or operational constraints that must be explicitly governed in the SQA (e.g., unannounced audits, change notification periods).
+    description: Specific regulatory or operational constraints that must be 
+      explicitly governed in the SQA (e.g., unannounced audits, change 
+      notification periods).
     required: true
 model: gpt-4o
 modelParameters:
@@ -65,10 +72,15 @@ messages:
 testData:
   - vars:
       manufacturer_type: Class III Implantable Medical Device Manufacturer
-      supplier_type: Contract Manufacturing Organization (CMO) for sterile packaging
-      risk_classification: Critical (Direct impact on patient safety and product sterility)
-      critical_requirements: Mandatory 90-day advance notification for any raw material or process changes; unconditional access for unannounced EU MDR Notified Body audits.
-    expected: "1. SCOPE AND OBJECTIVES\nThis Supplier Quality Agreement (SQA) establishes the quality requirements..."
+      supplier_type: Contract Manufacturing Organization (CMO) for sterile 
+        packaging
+      risk_classification: Critical (Direct impact on patient safety and product
+        sterility)
+      critical_requirements: Mandatory 90-day advance notification for any raw 
+        material or process changes; unconditional access for unannounced EU MDR
+        Notified Body audits.
+    expected: "1. SCOPE AND OBJECTIVES\nThis Supplier Quality Agreement (SQA) establishes
+      the quality requirements..."
 evaluators:
   - name: Includes Change Control
     string:

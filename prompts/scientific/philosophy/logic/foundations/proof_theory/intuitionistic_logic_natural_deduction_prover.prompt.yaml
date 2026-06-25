@@ -1,7 +1,8 @@
----
 name: Intuitionistic Logic Natural Deduction Prover
 version: 1.0.0
-description: Systematically generates formal natural deduction proofs in intuitionistic logic, explicitly avoiding the Law of Excluded Middle and Double Negation Elimination.
+description: Systematically generates formal natural deduction proofs in 
+  intuitionistic logic, explicitly avoiding the Law of Excluded Middle and 
+  Double Negation Elimination.
 authors:
   - name: Formal Logic Genesis Architect
 metadata:
@@ -13,13 +14,17 @@ metadata:
     - intuitionistic-logic
     - natural-deduction
     - formal-verification
+    - skill
   requires_context: false
 variables:
   - name: premises
-    description: A comma-separated list of premises in first-order intuitionistic logic using standard LaTeX notation. If there are no premises (i.e., proving a theorem), state 'None'.
+    description: A comma-separated list of premises in first-order 
+      intuitionistic logic using standard LaTeX notation. If there are no 
+      premises (i.e., proving a theorem), state 'None'.
     required: true
   - name: conclusion
-    description: The target conclusion to be proven from the premises in first-order intuitionistic logic using standard LaTeX notation.
+    description: The target conclusion to be proven from the premises in 
+      first-order intuitionistic logic using standard LaTeX notation.
     required: true
 model: gpt-4o
 modelParameters:

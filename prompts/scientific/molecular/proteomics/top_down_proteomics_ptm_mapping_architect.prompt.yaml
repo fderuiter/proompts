@@ -1,25 +1,37 @@
----
 name: "top_down_proteomics_ptm_mapping_architect"
 version: "1.0.0"
-description: "Acts as a Principal Computational Biologist to model and decipher high-resolution top-down proteomics intact protein mass spectrometry data for combinatorial post-translational modification (PTM) mapping."
+description: "Acts as a Principal Computational Biologist to model and decipher high-resolution
+  top-down proteomics intact protein mass spectrometry data for combinatorial post-translational
+  modification (PTM) mapping."
 authors:
   - "Biological Sciences Genesis Architect"
 metadata:
   domain: "molecular/proteomics"
   complexity: "high"
+  tags:
+    - molecular
+    - proteomics
+    - top
+    - down
+    - ptm
+    - skill
+  requires_context: true
 variables:
   - name: "intact_mass_spectrum"
     type: "string"
-    description: "The raw or deconvoluted intact mass spectrum data (e.g., mzML, deconvoluted peak list)."
+    description: "The raw or deconvoluted intact mass spectrum data (e.g., mzML, deconvoluted
+      peak list)."
   - name: "target_protein_sequence"
     type: "string"
     description: "The canonical FASTA sequence of the target protein being analyzed."
   - name: "fragmentation_method"
     type: "string"
-    description: "The gas-phase dissociation technique employed (e.g., ECD, ETD, UVPD, HCD)."
+    description: "The gas-phase dissociation technique employed (e.g., ECD, ETD, UVPD,
+      HCD)."
   - name: "expected_ptm_space"
     type: "string"
-    description: "A constrained space of anticipated PTMs to map (e.g., phosphorylation, acetylation, methylation) including mass shifts."
+    description: "A constrained space of anticipated PTMs to map (e.g., phosphorylation,
+      acetylation, methylation) including mass shifts."
 model: "gpt-4o"
 modelParameters:
   temperature: 0.1
@@ -52,16 +64,20 @@ messages:
       Provide a comprehensive architectural blueprint of the identified proteoforms, mapping combinatorial PTMs, evaluating spectral scoring metrics, and governing mathematical dynamics of the spectral deconvolution.
 testData:
   - inputs:
-      intact_mass_spectrum: "Deconvoluted precursor mass 14,532.4 Da, fragment ions c3-c25, z4-z30."
+      intact_mass_spectrum: "Deconvoluted precursor mass 14,532.4 Da, fragment ions
+        c3-c25, z4-z30."
       target_protein_sequence: "MPEPAKSAPAPKKGSKKAVTKAQKKDGKKRKRSRKESYSVYVYKVLKQVHPDTGISSKAMGIMNSFVNDIFERIAGEASRLAHYNKRSTITSREIQTAVRLLLPGELAKHAVSEGTKAVTKYTSAK"
       fragmentation_method: "Electron Capture Dissociation (ECD)"
-      expected_ptm_space: "Acetylation (+42.01 Da) on K, Methylation (+14.02 Da) on K/R."
+      expected_ptm_space: "Acetylation (+42.01 Da) on K, Methylation (+14.02 Da) on
+        K/R."
     expected: "14,532"
   - inputs:
-      intact_mass_spectrum: "Precursor mass 18,345.1 Da. Extensive ETD fragmentation showing coverage of the N-terminal tail."
+      intact_mass_spectrum: "Precursor mass 18,345.1 Da. Extensive ETD fragmentation
+        showing coverage of the N-terminal tail."
       target_protein_sequence: "SGRGKQGGKARAKAKTRSSRAGLQFPVGRVHRLLRKGNYAERVGAGAPVYLAAVLEYLTAEILELAGNAARDNKKTRIIPRHLQLAIRNDEELNKLLGGVTIAQGGVLPNIQAVLLPKKTESHHKAKGK"
       fragmentation_method: "Electron Transfer Dissociation (ETD)"
-      expected_ptm_space: "Phosphorylation (+79.97 Da) on S/T/Y, Acetylation (+42.01 Da) on K."
+      expected_ptm_space: "Phosphorylation (+79.97 Da) on S/T/Y, Acetylation (+42.01
+        Da) on K."
     expected: "Phosphorylation"
 evaluators:
   - type: "includes"

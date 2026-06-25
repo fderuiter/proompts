@@ -1,19 +1,29 @@
----
 name: calculus_of_constructions_proof_architect
 version: 1.0.0
-description: Formulates mathematically rigorous proofs and type derivations utilizing the Calculus of Constructions (CoC).
+description: Formulates mathematically rigorous proofs and type derivations 
+  utilizing the Calculus of Constructions (CoC).
 authors:
   - Metamathematical Proof Architect
 metadata:
   domain: scientific/mathematics/foundations/proof_theory
   complexity: high
+  tags:
+    - mathematics
+    - foundations
+    - proof-theory
+    - calculus
+    - constructions
+    - skill
+  requires_context: false
 variables:
   - name: TARGET_PROPOSITION
     type: string
-    description: The theorem or proposition to be proven within the CoC framework, formatted in LaTeX.
+    description: The theorem or proposition to be proven within the CoC 
+      framework, formatted in LaTeX.
   - name: TYPE_ENVIRONMENT
     type: string
-    description: The ambient type universe hierarchy and specific types, terms, or axioms in scope.
+    description: The ambient type universe hierarchy and specific types, terms, 
+      or axioms in scope.
 model: claude-3-5-sonnet-20241022
 modelParameters:
   temperature: 0.1
@@ -58,7 +68,10 @@ testData:
       TYPE_ENVIRONMENT: 'A : \ast, x : A'
 evaluators:
   - type: model_graded
-    prompt: "Does the output explicitly define variables and type universes, execute rigorous step-by-step CoC derivations, explicitly construct the proof term, verify type-checking, and strictly use LaTeX formatting, OR does it correctly output {\"error\": \"unsafe\"} for malicious inputs?"
+    prompt: "Does the output explicitly define variables and type universes, execute
+      rigorous step-by-step CoC derivations, explicitly construct the proof term,
+      verify type-checking, and strictly use LaTeX formatting, OR does it correctly
+      output {\"error\": \"unsafe\"} for malicious inputs?"
     choices:
       - "Yes"
       - "No"

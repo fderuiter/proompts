@@ -1,55 +1,56 @@
 name: Off-Label Information Dissemination
 version: 0.1.0
-description: Prepare a mandatory disclosure statement for disseminating peer-reviewed
-  articles on unapproved uses.
+description: Prepare a mandatory disclosure statement for disseminating 
+  peer-reviewed articles on unapproved uses.
 metadata:
   domain: regulatory
   complexity: low
   tags:
-  - regulatory-adherence
-  - off-label
-  - information
-  - dissemination
+    - regulatory-adherence
+    - off-label
+    - information
+    - dissemination
+    - skill
   requires_context: false
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-- role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
-    FDA and ISO compliance tasks.
+  - role: system
+    content: 'You are an expert Regulatory Affairs Specialist capable of handling
+      complex FDA and ISO compliance tasks.
 
 
-    ## Context
+      ## Context
 
-    21 CFR Part 99
-
-
-    ## Objective
-
-    Prepare a mandatory disclosure statement for disseminating peer-reviewed articles
-    on unapproved uses.
+      21 CFR Part 99
 
 
-    ## Output Format
+      ## Objective
 
-    Prominently displayed warning statement.'
-- role: user
-  content: 'Please perform the task using the following input data:
+      Prepare a mandatory disclosure statement for disseminating peer-reviewed articles
+      on unapproved uses.
 
 
-    <input>
+      ## Output Format
 
-    {{input}}
+      Prominently displayed warning statement.'
+  - role: user
+    content: 'Please perform the task using the following input data:
 
-    </input>'
+
+      <input>
+
+      {{input}}
+
+      </input>'
 testData:
-- expected: Expected output as per instructions.
-  vars: Journal article and cleared labeling. (Example data)
+  - expected: Expected output as per instructions.
+    vars: Journal article and cleared labeling. (Example data)
 evaluators:
-- name: Validation Check
-  regex: (?i)Confirm
+  - name: Validation Check
+    regex: (?i)Confirm

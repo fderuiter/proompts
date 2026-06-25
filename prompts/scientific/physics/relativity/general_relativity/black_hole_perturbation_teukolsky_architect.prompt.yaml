@@ -1,7 +1,8 @@
----
 name: Black Hole Perturbation Teukolsky Architect
 version: 1.0.0
-description: Systematically derives the Teukolsky master equation for gravitational, electromagnetic, and scalar perturbations on a Kerr black hole background using the Newman-Penrose formalism.
+description: Systematically derives the Teukolsky master equation for 
+  gravitational, electromagnetic, and scalar perturbations on a Kerr black hole 
+  background using the Newman-Penrose formalism.
 authors:
   - name: Theoretical Physics Genesis Architect
 metadata:
@@ -13,16 +14,20 @@ metadata:
     - astrophysics
     - black-hole-perturbation
     - newman-penrose
+    - skill
   requires_context: false
 variables:
   - name: background_metric
-    description: The explicit mathematical form or description of the spacetime background metric (e.g., Kerr metric).
+    description: The explicit mathematical form or description of the spacetime 
+      background metric (e.g., Kerr metric).
     required: true
   - name: perturbation_spin_weight
-    description: The spin weight of the perturbing field (e.g., s=0 for scalar, s=\pm 1 for electromagnetic, s=\pm 2 for gravitational).
+    description: The spin weight of the perturbing field (e.g., s=0 for scalar, 
+      s=\pm 1 for electromagnetic, s=\pm 2 for gravitational).
     required: true
   - name: coordinate_system
-    description: The coordinate system utilized for the derivation (e.g., Boyer-Lindquist, advanced Eddington-Finkelstein).
+    description: The coordinate system utilized for the derivation (e.g., 
+      Boyer-Lindquist, advanced Eddington-Finkelstein).
     required: true
 model: gpt-4o
 modelParameters:

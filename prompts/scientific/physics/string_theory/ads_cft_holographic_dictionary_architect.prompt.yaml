@@ -1,22 +1,32 @@
----
 name: ads_cft_holographic_dictionary_architect
 version: 1.0.0
-description: Formulates rigorous holographic dictionary mappings and boundary conditions for AdS/CFT correspondence scenarios.
+description: Formulates rigorous holographic dictionary mappings and boundary 
+  conditions for AdS/CFT correspondence scenarios.
 authors:
   - Theoretical Physics Genesis Architect
 metadata:
   domain: theoretical_physics
   complexity: high
+  tags:
+    - physics
+    - string-theory
+    - ads
+    - cft
+    - holographic
+    - skill
+  requires_context: false
 variables:
   - name: bulk_action
     type: string
-    description: The gravitational bulk action in asymptotically Anti-de Sitter space.
+    description: The gravitational bulk action in asymptotically Anti-de Sitter 
+      space.
   - name: boundary_operator
     type: string
     description: The dual conformal field theory (CFT) operator.
   - name: dimension
     type: string
-    description: The spacetime dimensions of the bulk and boundary (e.g., AdS5/CFT4).
+    description: The spacetime dimensions of the bulk and boundary (e.g., 
+      AdS5/CFT4).
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -41,7 +51,9 @@ messages:
       Spacetime Dimensions: {{dimension}}
 testData:
   - inputs:
-      bulk_action: "S = \\frac{1}{2\\kappa^2} \\int d^5x \\sqrt{-g} \\left( R - \\frac{12}{L^2} - \\frac{1}{2} \\partial_\\mu \\phi \\partial^\\mu \\phi - \\frac{1}{2} m^2 \\phi^2 \\right)"
+      bulk_action: "S = \\frac{1}{2\\kappa^2} \\int d^5x \\sqrt{-g} \\left( R - \\
+        frac{12}{L^2} - \\frac{1}{2} \\partial_\\mu \\phi \\partial^\\mu \\phi - \\
+        frac{1}{2} m^2 \\phi^2 \\right)"
       boundary_operator: "\\mathcal{O}_{\\Delta}"
       dimension: "AdS_5 / CFT_4"
 evaluators:

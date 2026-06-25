@@ -5,32 +5,33 @@ metadata:
   domain: clinical
   complexity: low
   tags:
-  - data-management
-  - decentralized
-  - trial
-  - risk
-  - matrix
+    - data-management
+    - decentralized
+    - trial
+    - risk
+    - matrix
+    - skill
   requires_context: false
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: 'You are a risk analyst evaluating decentralized clinical trials through
+  - role: system
+    content: 'You are a risk analyst evaluating decentralized clinical trials through
 
-    structured risk matrices.
+      structured risk matrices.
 
-    '
-- role: user
-  content: '{{input}}'
+      '
+  - role: user
+    content: '{{input}}'
 testData:
-- expected: Includes mitigation strategies and risk levels.
-  vars: List potential risks for remote patient monitoring.
+  - expected: Includes mitigation strategies and risk levels.
+    vars: List potential risks for remote patient monitoring.
 evaluators:
-- name: Output mentions risk
-  string:
-    contains: risk
+  - name: Output mentions risk
+    string:
+      contains: risk

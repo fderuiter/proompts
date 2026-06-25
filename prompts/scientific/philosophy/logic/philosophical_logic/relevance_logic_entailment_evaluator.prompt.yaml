@@ -1,20 +1,31 @@
----
 name: "relevance_logic_entailment_evaluator"
 version: "1.0.0"
-description: "A highly rigorous prompt designed to systematically evaluate natural language arguments and formal deductions using Relevance Logic to prevent paradoxes of material implication."
+description: "A highly rigorous prompt designed to systematically evaluate natural
+  language arguments and formal deductions using Relevance Logic to prevent paradoxes
+  of material implication."
 authors:
   - "Philosophical Genesis Architect"
 metadata:
   domain: "scientific"
   complexity: "high"
+  tags:
+    - philosophy
+    - logic
+    - philosophical-logic
+    - relevance
+    - entailment
+    - skill
+  requires_context: false
 variables:
   - name: "NATURAL_LANGUAGE_ARGUMENT"
     type: "string"
-    description: "The natural language argument consisting of premises and a conclusion to be formalized and evaluated."
+    description: "The natural language argument consisting of premises and a conclusion
+      to be formalized and evaluated."
     required: true
   - name: "RELEVANCE_SYSTEM"
     type: "string"
-    description: "The specific system of Relevance Logic to be applied (e.g., Anderson and Belnap's System R, System E, or System B)."
+    description: "The specific system of Relevance Logic to be applied (e.g., Anderson
+      and Belnap's System R, System E, or System B)."
     required: true
 model: "gpt-4o"
 modelParameters:
@@ -44,13 +55,16 @@ messages:
       Execute the systematic formalization and evaluation of this argument.
 testData:
   - variables:
-      NATURAL_LANGUAGE_ARGUMENT: "The moon is made of green cheese. Therefore, if it is raining, then it is raining."
+      NATURAL_LANGUAGE_ARGUMENT: "The moon is made of green cheese. Therefore, if
+        it is raining, then it is raining."
       RELEVANCE_SYSTEM: "System R"
     expected: "Structural Relevance Analysis"
   - variables:
-      NATURAL_LANGUAGE_ARGUMENT: "If I am in Paris, then I am in France. I am in Paris. Therefore, I am in France."
+      NATURAL_LANGUAGE_ARGUMENT: "If I am in Paris, then I am in France. I am in Paris.
+        Therefore, I am in France."
       RELEVANCE_SYSTEM: "System E"
     expected: "Formalization into Relevance Logic"
 evaluators:
   - type: regex
-    pattern: "(?i)(Formalization into Relevance Logic|Structural Relevance Analysis|Logical Verdict)"
+    pattern: "(?i)(Formalization into Relevance Logic|Structural Relevance Analysis|Logical
+      Verdict)"

@@ -1,54 +1,56 @@
 name: 21 CFR Part 14 Auditing
 version: 0.1.0
-description: Audit advisory committee meeting minutes for compliance with record-keeping
-  elements.
+description: Audit advisory committee meeting minutes for compliance with 
+  record-keeping elements.
 metadata:
   domain: regulatory
   complexity: low
   tags:
-  - regulatory-admin
-  - cfr
-  - part
-  - auditing
+    - regulatory-admin
+    - cfr
+    - part
+    - auditing
+    - skill
   requires_context: false
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-- role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
-    FDA and ISO compliance tasks.
+  - role: system
+    content: 'You are an expert Regulatory Affairs Specialist capable of handling
+      complex FDA and ISO compliance tasks.
 
 
-    ## Context
+      ## Context
 
-    21 CFR Part 14
-
-
-    ## Objective
-
-    Audit advisory committee meeting minutes for compliance with record-keeping elements.
+      21 CFR Part 14
 
 
-    ## Output Format
+      ## Objective
 
-    Markdown compliance checklist.'
-- role: user
-  content: 'Please perform the task using the following input data:
+      Audit advisory committee meeting minutes for compliance with record-keeping
+      elements.
 
 
-    <input>
+      ## Output Format
 
-    {{input}}
+      Markdown compliance checklist.'
+  - role: user
+    content: 'Please perform the task using the following input data:
 
-    </input>'
+
+      <input>
+
+      {{input}}
+
+      </input>'
 testData:
-- expected: Expected output as per instructions.
-  vars: Minutes, attendee list, and information considered. (Example data)
+  - expected: Expected output as per instructions.
+    vars: Minutes, attendee list, and information considered. (Example data)
 evaluators:
-- name: Validation Check
-  regex: (?i)Verify
+  - name: Validation Check
+    regex: (?i)Verify

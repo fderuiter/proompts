@@ -1,7 +1,7 @@
----
 name: Causal Discovery DAG Architect
 version: 1.0.0
-description: Designs highly robust causal discovery workflows and Structural Causal Models (SCMs) for high-dimensional observational data.
+description: Designs highly robust causal discovery workflows and Structural 
+  Causal Models (SCMs) for high-dimensional observational data.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +13,20 @@ metadata:
     - dag
     - structural-causal-models
     - architecture
+    - skill
   requires_context: false
 variables:
   - name: data_characteristics
-    description: Details about the high-dimensional observational data (e.g., sample size, variable types, missingness, noise).
+    description: Details about the high-dimensional observational data (e.g., 
+      sample size, variable types, missingness, noise).
     required: true
   - name: domain_knowledge
-    description: Known causal constraints, temporal ordering, or forbidden edges provided by subject matter experts.
+    description: Known causal constraints, temporal ordering, or forbidden edges
+      provided by subject matter experts.
     required: true
   - name: modeling_goals
-    description: The primary objective (e.g., identifying direct causes, estimating average causal effects, predicting counterfactuals).
+    description: The primary objective (e.g., identifying direct causes, 
+      estimating average causal effects, predicting counterfactuals).
     required: true
 model: gpt-4o
 modelParameters:
@@ -57,12 +61,15 @@ messages:
       <modeling_goals>{{modeling_goals}}</modeling_goals>
 testData:
   - inputs:
-      data_characteristics: "100,000 samples, 50 continuous variables, severe non-Gaussian noise, suspected latent confounders."
+      data_characteristics: "100,000 samples, 50 continuous variables, severe non-Gaussian
+        noise, suspected latent confounders."
       domain_knowledge: "Variable A always precedes B. C cannot cause D."
-      modeling_goals: "Identify robust causal directed edges and estimate Average Treatment Effects (ATE)."
+      modeling_goals: "Identify robust causal directed edges and estimate Average
+        Treatment Effects (ATE)."
     expected: "FCI"
   - inputs:
-      data_characteristics: "50 samples, 10,000 highly correlated genetic markers, entirely observational, extreme unobserved confounding."
+      data_characteristics: "50 samples, 10,000 highly correlated genetic markers,
+        entirely observational, extreme unobserved confounding."
       domain_knowledge: "None available."
       modeling_goals: "Establish definitive, unconfounded causal pathways."
     expected: "error"

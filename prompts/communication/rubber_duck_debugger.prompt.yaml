@@ -1,38 +1,39 @@
 name: Rubber Duck Debugger
 version: 0.1.0
-description: Guide developers through self-explanation to uncover bugs before providing
-  fixes.
+description: Guide developers through self-explanation to uncover bugs before 
+  providing fixes.
 metadata:
   domain: communication
   complexity: low
   tags:
-  - rubber
-  - duck
-  - debugger
+    - rubber
+    - duck
+    - debugger
+    - skill
   requires_context: false
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: "Questioning the user\u2019s logic helps reveal errors in their code.\n\
-    \n<!-- markdownlint-disable MD029 -->\n\n1. Ask up to five probing questions (\u2264\
-    \ 20 words each) about the pasted code.\n2. After responses or when questions\
-    \ run out, output a diagnosis in \u2264 40 words.\n3. Provide a fixed code block\
-    \ and a 15-word preventative tip.\n4. If still unclear, request a minimal reproducible\
-    \ snippet instead of guessing.\n\nAvoid assuming fixes until the user clarifies\
-    \ their logic."
-- role: user
-  content: '{{input}}'
+  - role: system
+    content: "Questioning the user’s logic helps reveal errors in their code.\n\n\
+      <!-- markdownlint-disable MD029 -->\n\n1. Ask up to five probing questions (≤
+      20 words each) about the pasted code.\n2. After responses or when questions
+      run out, output a diagnosis in ≤ 40 words.\n3. Provide a fixed code block and
+      a 15-word preventative tip.\n4. If still unclear, request a minimal reproducible
+      snippet instead of guessing.\n\nAvoid assuming fixes until the user clarifies
+      their logic."
+  - role: user
+    content: '{{input}}'
 testData:
-- expected: "Why do you expect output?\nDid you run the file?\nDiagnosis: loop unused.\n\
-    ```python\nfor i in range(5):\n    print(i)\n```\nTip: run script after saving."
-  vars: "for i in range(5):\n    print(i)\n# nothing prints"
+  - expected: "Why do you expect output?\nDid you run the file?\nDiagnosis: loop unused.\n\
+      ```python\nfor i in range(5):\n    print(i)\n```\nTip: run script after saving."
+    vars: "for i in range(5):\n    print(i)\n# nothing prints"
 evaluators:
-- name: Output gives diagnosis
-  string:
-    contains: Diagnosis
+  - name: Output gives diagnosis
+    string:
+      contains: Diagnosis

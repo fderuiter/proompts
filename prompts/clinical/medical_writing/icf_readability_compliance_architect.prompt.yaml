@@ -1,12 +1,22 @@
----
 name: icf_readability_compliance_architect
 version: 1.0.0
-description: Acts as a Principal Clinical Medical Writer and IRB/Ethics Committee Expert to synthesize complex clinical trial protocols into patient-friendly, compliant Informed Consent Forms (ICF) while ensuring strict regulatory adherence.
+description: Acts as a Principal Clinical Medical Writer and IRB/Ethics 
+  Committee Expert to synthesize complex clinical trial protocols into 
+  patient-friendly, compliant Informed Consent Forms (ICF) while ensuring strict
+  regulatory adherence.
 authors:
   - Genesis Architect
 metadata:
   domain: clinical/medical_writing
   complexity: high
+  tags:
+    - medical-writing
+    - icf
+    - readability
+    - compliance
+    - architect
+    - skill
+  requires_context: false
 variables:
   - name: protocol_synopsis
     description: The protocol synopsis to translate.
@@ -42,7 +52,13 @@ messages:
 testData:
   - inputs:
       target_audience_reading_level: "6th Grade"
-      protocol_synopsis: "Phase III, randomized, double-blind, placebo-controlled trial evaluating efficacy and safety of a novel monoclonal antibody targeting the IL-6 receptor in patients with moderate-to-severe rheumatoid arthritis. Patients will undergo bi-weekly subcutaneous injections, regular phlebotomy for pharmacokinetic analysis, and MRI imaging of joint spaces. Severe adverse events include potential immunosuppression, opportunistic infections, and hypersensitivity reactions."
+      protocol_synopsis: "Phase III, randomized, double-blind, placebo-controlled
+        trial evaluating efficacy and safety of a novel monoclonal antibody targeting
+        the IL-6 receptor in patients with moderate-to-severe rheumatoid arthritis.
+        Patients will undergo bi-weekly subcutaneous injections, regular phlebotomy
+        for pharmacokinetic analysis, and MRI imaging of joint spaces. Severe adverse
+        events include potential immunosuppression, opportunistic infections, and
+        hypersensitivity reactions."
   - inputs:
       target_audience_reading_level: "8th Grade"
       protocol_synopsis: ""

@@ -1,7 +1,8 @@
----
 name: Distributed Web Crawler Pipeline Architect
 version: 1.0.0
-description: Designs highly scalable, fault-tolerant distributed web crawling pipelines featuring advanced crawl frontier management, SimHash-based deduplication, and strict politeness rate limiting.
+description: Designs highly scalable, fault-tolerant distributed web crawling 
+  pipelines featuring advanced crawl frontier management, SimHash-based 
+  deduplication, and strict politeness rate limiting.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +14,20 @@ metadata:
     - distributed-systems
     - data-pipeline
     - scraping
+    - skill
   requires_context: false
 variables:
   - name: target_scale
-    description: Details about the target domains, expected pages per second, and overall data volume.
+    description: Details about the target domains, expected pages per second, 
+      and overall data volume.
     required: true
   - name: compliance_constraints
-    description: Politeness policies, robots.txt adherence rules, and proxy rotation requirements.
+    description: Politeness policies, robots.txt adherence rules, and proxy 
+      rotation requirements.
     required: true
   - name: payload_processing
-    description: Downstream processing requirements such as HTML parsing, DOM rendering (headless), and near-duplicate detection.
+    description: Downstream processing requirements such as HTML parsing, DOM 
+      rendering (headless), and near-duplicate detection.
     required: true
 model: gpt-4o
 modelParameters:
@@ -57,12 +62,16 @@ messages:
       <user_query>{{payload_processing}}</user_query>
 testData:
   - inputs:
-      target_scale: "10,000 pages per second distributed across 50,000 global news domains."
-      compliance_constraints: "Strict robots.txt adherence, 1 second delay per domain, distributed proxy rotation."
-      payload_processing: "Extract article text, identify SimHash for deduplication, store in cloud object storage."
+      target_scale: "10,000 pages per second distributed across 50,000 global news
+        domains."
+      compliance_constraints: "Strict robots.txt adherence, 1 second delay per domain,
+        distributed proxy rotation."
+      payload_processing: "Extract article text, identify SimHash for deduplication,
+        store in cloud object storage."
     expected: "crawl frontier|SimHash|proxy rotation"
   - inputs:
-      target_scale: "1,000,000 pages per second focused on a single small e-commerce site."
+      target_scale: "1,000,000 pages per second focused on a single small e-commerce
+        site."
       compliance_constraints: "No delay, ignore robots.txt."
       payload_processing: "Extract pricing."
     expected: "error"

@@ -1,7 +1,8 @@
----
 name: Federated Learning Topology Architect
 version: 1.0.0
-description: Architects secure, robust, and highly scalable federated learning distributed topologies, emphasizing privacy-preserving model aggregation, secure multi-party computation, and straggler mitigation.
+description: Architects secure, robust, and highly scalable federated learning 
+  distributed topologies, emphasizing privacy-preserving model aggregation, 
+  secure multi-party computation, and straggler mitigation.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +14,22 @@ metadata:
     - federated-learning
     - privacy-preserving
     - distributed-systems
+    - skill
   requires_context: false
 variables:
   - name: client_distribution
-    description: Characteristics of the edge clients (e.g., millions of mobile devices, cross-silo enterprise nodes, heterogeneous compute, bandwidth constraints).
+    description: Characteristics of the edge clients (e.g., millions of mobile 
+      devices, cross-silo enterprise nodes, heterogeneous compute, bandwidth 
+      constraints).
     required: true
   - name: model_complexity
-    description: Architectural details of the global model (e.g., parameter size, neural network type, update frequency).
+    description: Architectural details of the global model (e.g., parameter 
+      size, neural network type, update frequency).
     required: true
   - name: privacy_security_constraints
-    description: Mandated privacy constraints and threat models (e.g., differential privacy requirements, Byzantine fault tolerance, homomorphic encryption needs).
+    description: Mandated privacy constraints and threat models (e.g., 
+      differential privacy requirements, Byzantine fault tolerance, homomorphic 
+      encryption needs).
     required: true
 model: gpt-4o
 modelParameters:
@@ -57,13 +64,18 @@ messages:
       <user_query>{{privacy_security_constraints}}</user_query>
 testData:
   - inputs:
-      client_distribution: "10 million heterogeneous mobile devices, highly volatile network connectivity, severe bandwidth constraints."
-      model_complexity: "10M parameter CNN for local image classification, daily update frequency."
-      privacy_security_constraints: "Strict local differential privacy (LDP) required, robust against Byzantine adversaries and server-side model inversion."
+      client_distribution: "10 million heterogeneous mobile devices, highly volatile
+        network connectivity, severe bandwidth constraints."
+      model_complexity: "10M parameter CNN for local image classification, daily update
+        frequency."
+      privacy_security_constraints: "Strict local differential privacy (LDP) required,
+        robust against Byzantine adversaries and server-side model inversion."
     expected: "(?i)(Secure Aggregation|FedAvg|Differential Privacy|DP-SGD|Byzantine|Hierarchical)"
   - inputs:
-      client_distribution: "Low-power IoT edge sensors with 2MB RAM and constrained LPWAN telemetry links."
-      model_complexity: "175 Billion parameter Transformer (LLM), requiring continuous fine-tuning."
+      client_distribution: "Low-power IoT edge sensors with 2MB RAM and constrained
+        LPWAN telemetry links."
+      model_complexity: "175 Billion parameter Transformer (LLM), requiring continuous
+        fine-tuning."
       privacy_security_constraints: "Fully Homomorphic Encryption (FHE) on all gradients."
     expected: "(?i)error"
 evaluators:

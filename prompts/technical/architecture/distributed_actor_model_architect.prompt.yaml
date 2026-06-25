@@ -1,7 +1,8 @@
----
 name: Distributed Actor Model Architect
 version: 1.0.0
-description: Designs highly concurrent, fault-tolerant distributed actor systems, optimizing for message-passing semantics, location transparency, and supervision trees.
+description: Designs highly concurrent, fault-tolerant distributed actor 
+  systems, optimizing for message-passing semantics, location transparency, and 
+  supervision trees.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,16 +14,20 @@ metadata:
     - distributed-systems
     - concurrency
     - fault-tolerance
+    - skill
   requires_context: false
 variables:
   - name: actor_framework
-    description: The specific actor framework or runtime being targeted (e.g., Akka, Orleans, Erlang/OTP, Proto.Actor).
+    description: The specific actor framework or runtime being targeted (e.g., 
+      Akka, Orleans, Erlang/OTP, Proto.Actor).
     required: true
   - name: state_management
-    description: Requirements regarding actor state persistence, event sourcing, or distributed caching.
+    description: Requirements regarding actor state persistence, event sourcing,
+      or distributed caching.
     required: true
   - name: scale_and_throughput
-    description: Expected number of active actors, message throughput, latency constraints, and cluster topology.
+    description: Expected number of active actors, message throughput, latency 
+      constraints, and cluster topology.
     required: true
 model: gpt-4o
 modelParameters:
@@ -54,13 +59,17 @@ messages:
 testData:
   - vars:
       actor_framework: "Microsoft Orleans (.NET)"
-      state_management: "Virtual actors (Grains) with state persisted to Azure Table Storage; requires high read-throughput for materialized views."
-      scale_and_throughput: "10 million active grains, 50k messages per second, deployed across a multi-region Azure Kubernetes Service (AKS) cluster."
+      state_management: "Virtual actors (Grains) with state persisted to Azure Table
+        Storage; requires high read-throughput for materialized views."
+      scale_and_throughput: "10 million active grains, 50k messages per second, deployed
+        across a multi-region Azure Kubernetes Service (AKS) cluster."
     expected: "Orleans"
   - vars:
       actor_framework: "Akka Cluster (Scala)"
-      state_management: "Event Sourced actors using Akka Persistence with Cassandra as the journal and snapshot store. CQRS architecture."
-      scale_and_throughput: "Low latency trading system with 500k active actors, 100k messages/sec, requiring strict cluster singleton guarantees for order matching."
+      state_management: "Event Sourced actors using Akka Persistence with Cassandra
+        as the journal and snapshot store. CQRS architecture."
+      scale_and_throughput: "Low latency trading system with 500k active actors, 100k
+        messages/sec, requiring strict cluster singleton guarantees for order matching."
     expected: "Akka"
 evaluators:
   - name: Terminology Check

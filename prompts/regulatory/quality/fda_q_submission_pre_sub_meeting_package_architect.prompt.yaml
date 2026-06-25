@@ -1,28 +1,41 @@
----
 name: "fda_q_submission_pre_sub_meeting_package_architect"
 version: "1.0.0"
-description: "Acts as a Principal Regulatory Affairs Architect to formulate highly rigorous, strategic FDA Q-Submission (Pre-Sub) meeting packages for medical devices and diagnostics."
+description: "Acts as a Principal Regulatory Affairs Architect to formulate highly
+  rigorous, strategic FDA Q-Submission (Pre-Sub) meeting packages for medical devices
+  and diagnostics."
 authors:
   - name: "Strategic Genesis Architect"
 metadata:
   domain: "regulatory/quality"
   complexity: "high"
+  tags:
+    - quality
+    - fda
+    - submission
+    - pre
+    - sub
+    - skill
+  requires_context: true
 variables:
   - name: "device_description"
     type: "string"
-    description: "Detailed description of the medical device, mechanism of action, and clinical context."
+    description: "Detailed description of the medical device, mechanism of action,
+      and clinical context."
   - name: "intended_use"
     type: "string"
     description: "Proposed Intended Use and Indications for Use statement."
   - name: "regulatory_strategy"
     type: "string"
-    description: "Proposed regulatory pathway (e.g., 510(k), De Novo, PMA) and primary predicate if applicable."
+    description: "Proposed regulatory pathway (e.g., 510(k), De Novo, PMA) and primary
+      predicate if applicable."
   - name: "background_information"
     type: "string"
-    description: "Relevant background information, prior FDA interactions, and product development status."
+    description: "Relevant background information, prior FDA interactions, and product
+      development status."
   - name: "proposed_questions"
     type: "string"
-    description: "Draft questions intended for FDA feedback across clinical, non-clinical, and regulatory domains."
+    description: "Draft questions intended for FDA feedback across clinical, non-clinical,
+      and regulatory domains."
 model: "gpt-4o"
 modelParameters:
   temperature: 0.1
@@ -61,11 +74,18 @@ messages:
 testData:
   - id: "valid_saas_diagnostic_pre_sub"
     variables:
-      device_description: "CardioVision 3.0: A cloud-based AI software intended to analyze echocardiogram images for early detection of heart failure."
-      intended_use: "For the quantitative analysis of cardiac ultrasound scans to aid in the evaluation of patients with suspected heart failure."
-      regulatory_strategy: "De Novo request, as no applicable predicate exists. Classification under a new software as a medical device (SaMD) regulation."
-      background_information: "Retrospective multi-center study completed with 500 patients. No prior FDA interactions."
-      proposed_questions: "1. Is our pivotal clinical study design, which enrolls 300 patients across 3 sites, acceptable to support a De Novo request? 2. Is our proposed cybersecurity framework, referencing FDA Guidance on Cybersecurity in Medical Devices, adequate?"
+      device_description: "CardioVision 3.0: A cloud-based AI software intended to
+        analyze echocardiogram images for early detection of heart failure."
+      intended_use: "For the quantitative analysis of cardiac ultrasound scans to
+        aid in the evaluation of patients with suspected heart failure."
+      regulatory_strategy: "De Novo request, as no applicable predicate exists. Classification
+        under a new software as a medical device (SaMD) regulation."
+      background_information: "Retrospective multi-center study completed with 500
+        patients. No prior FDA interactions."
+      proposed_questions: "1. Is our pivotal clinical study design, which enrolls
+        300 patients across 3 sites, acceptable to support a De Novo request? 2. Is
+        our proposed cybersecurity framework, referencing FDA Guidance on Cybersecurity
+        in Medical Devices, adequate?"
     expected: "Sponsor Position"
   - id: "ambiguous_input_missing_details"
     variables:

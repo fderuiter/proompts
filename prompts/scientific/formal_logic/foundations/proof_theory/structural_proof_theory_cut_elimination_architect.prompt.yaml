@@ -1,7 +1,7 @@
----
 name: structural_proof_theory_cut_elimination_architect
 version: 1.0.0
-description: Automates the execution of rigorous cut-elimination procedures (Gentzen's Hauptsatz) for logical sequents in the Sequent Calculus LK and LJ.
+description: Automates the execution of rigorous cut-elimination procedures 
+  (Gentzen's Hauptsatz) for logical sequents in the Sequent Calculus LK and LJ.
 authors:
   - name: Formal Logic Genesis Architect
 metadata:
@@ -13,13 +13,16 @@ metadata:
     - structural-proof-theory
     - sequent-calculus
     - cut-elimination
+    - skill
   requires_context: false
 variables:
   - name: sequent
-    description: The formal logical sequent to process, denoted rigorously using LaTeX.
+    description: The formal logical sequent to process, denoted rigorously using
+      LaTeX.
     required: true
   - name: calculus_system
-    description: Specify whether the derivation is in Classical Sequent Calculus (LK) or Intuitionistic Sequent Calculus (LJ).
+    description: Specify whether the derivation is in Classical Sequent Calculus
+      (LK) or Intuitionistic Sequent Calculus (LJ).
     required: true
 model: claude-3-opus-20240229
 modelParameters:
@@ -63,4 +66,5 @@ testData:
 evaluators:
   - type: expected_output
   - type: regex
-    pattern: "(\\\\vdash|\\\\vDash|\\\\rightarrow|\\\\land|\\\\lor|\\\\bot|\\\\forall|\\\\exists)"
+    pattern: "(\\\\vdash|\\\\vDash|\\\\rightarrow|\\\\land|\\\\lor|\\\\bot|\\\\forall|\\\
+      \\exists)"

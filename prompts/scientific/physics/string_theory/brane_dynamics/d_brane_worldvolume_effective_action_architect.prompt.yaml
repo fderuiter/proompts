@@ -1,22 +1,34 @@
----
 name: d_brane_worldvolume_effective_action_architect
 version: 1.0.0
-description: Derives the complete worldvolume effective action for a single D-brane (Dirac-Born-Infeld and Wess-Zumino terms) in a specified supergravity background.
+description: Derives the complete worldvolume effective action for a single 
+  D-brane (Dirac-Born-Infeld and Wess-Zumino terms) in a specified supergravity 
+  background.
 authors:
   - Theoretical Physics Genesis Architect
 metadata:
   domain: theoretical_physics
   complexity: high
+  tags:
+    - physics
+    - string-theory
+    - brane-dynamics
+    - brane
+    - worldvolume
+    - skill
+  requires_context: false
 variables:
   - name: p_brane
     type: string
-    description: The spatial dimensionality p of the Dp-brane (e.g., p=3 for a D3-brane).
+    description: The spatial dimensionality p of the Dp-brane (e.g., p=3 for a 
+      D3-brane).
   - name: background_fields
     type: string
-    description: The background supergravity fields including metric, dilaton, Kalb-Ramond field, and Ramond-Ramond forms.
+    description: The background supergravity fields including metric, dilaton, 
+      Kalb-Ramond field, and Ramond-Ramond forms.
   - name: worldvolume_fields
     type: string
-    description: The internal worldvolume gauge field and transverse scalar fields (Goldstone bosons of broken translation symmetry).
+    description: The internal worldvolume gauge field and transverse scalar 
+      fields (Goldstone bosons of broken translation symmetry).
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -42,8 +54,10 @@ messages:
 testData:
   - inputs:
       p_brane: "p = 3"
-      background_fields: "AdS_5 \\times S^5 metric, constant dilaton \\Phi = 0, B_2 = 0, C_4 = \\frac{r^4}{L^4} dt \\wedge dx_1 \\wedge dx_2 \\wedge dx_3"
-      worldvolume_fields: "U(1) gauge field F_2 = dA_1, transverse scalars \\Phi^I (I=1,...,6)"
+      background_fields: "AdS_5 \\times S^5 metric, constant dilaton \\Phi = 0, B_2
+        = 0, C_4 = \\frac{r^4}{L^4} dt \\wedge dx_1 \\wedge dx_2 \\wedge dx_3"
+      worldvolume_fields: "U(1) gauge field F_2 = dA_1, transverse scalars \\Phi^I
+        (I=1,...,6)"
 evaluators:
   - type: model_graded
     prompt: |

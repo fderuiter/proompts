@@ -1,6 +1,8 @@
----
 name: APT Threat Hunting Hypothesis Generation Architect
-description: Acts as a Cybersecurity Genesis Architect to engineer rigorous, intelligence-driven threat hunting hypotheses for proactive detection of Advanced Persistent Threats (APTs) using cyber threat intelligence and MITRE ATT&CK mappings.
+description: Acts as a Cybersecurity Genesis Architect to engineer rigorous, 
+  intelligence-driven threat hunting hypotheses for proactive detection of 
+  Advanced Persistent Threats (APTs) using cyber threat intelligence and MITRE 
+  ATT&CK mappings.
 version: 1.0.0
 authors:
   - Strategic Genesis Architect
@@ -13,13 +15,19 @@ metadata:
     - secops
     - mitre-attack
     - hypothesis-generation
+    - skill
+  requires_context: true
 variables:
   - name: threat_actor
-    description: The specific APT group or threat actor profile to target (e.g., APT29, Lazarus Group, FIN7).
+    description: The specific APT group or threat actor profile to target (e.g.,
+      APT29, Lazarus Group, FIN7).
   - name: target_environment
-    description: The technical environment or specific infrastructure being defended (e.g., Active Directory, Azure AD, EKS Clusters, macOS Endpoints).
+    description: The technical environment or specific infrastructure being 
+      defended (e.g., Active Directory, Azure AD, EKS Clusters, macOS 
+      Endpoints).
   - name: intelligence_feed_summary
-    description: Recent threat intelligence data, TTPs, or IOCs to base the hypothesis on.
+    description: Recent threat intelligence data, TTPs, or IOCs to base the 
+      hypothesis on.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -84,10 +92,14 @@ messages:
 testData:
   - threat_actor: "APT29 (Cozy Bear)"
     target_environment: "Azure Active Directory and Microsoft 365"
-    intelligence_feed_summary: "Recent CTI indicates APT29 is actively compromising dormant service principals and modifying OAuth application permissions to maintain persistent access and bypass MFA."
+    intelligence_feed_summary: "Recent CTI indicates APT29 is actively compromising
+      dormant service principals and modifying OAuth application permissions to maintain
+      persistent access and bypass MFA."
   - threat_actor: "Scattered Spider"
     target_environment: "Okta and Enterprise Endpoints"
-    intelligence_feed_summary: "Intelligence shows the actor utilizing SIM swapping and social engineering of Help Desk personnel to reset MFA factors and gain initial access, followed by rapid data exfiltration."
+    intelligence_feed_summary: "Intelligence shows the actor utilizing SIM swapping
+      and social engineering of Help Desk personnel to reset MFA factors and gain
+      initial access, followed by rapid data exfiltration."
 
 evaluators:
   - type: string_match

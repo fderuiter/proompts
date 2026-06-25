@@ -1,7 +1,7 @@
----
 name: Zero-Downtime Database Migration Architect
 version: 1.0.0
-description: Designs comprehensive, zero-downtime database migration strategies for high-availability systems.
+description: Designs comprehensive, zero-downtime database migration strategies 
+  for high-availability systems.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,10 +13,13 @@ metadata:
     - "migration"
     - "zero-downtime"
     - "sre"
+    - skill
   requires_context: true
 variables:
   - name: migration_requirements
-    description: The current database system, the target database system, acceptable replication latency, and business constraints for the migration.
+    description: The current database system, the target database system, 
+      acceptable replication latency, and business constraints for the 
+      migration.
     required: true
 model: gpt-4o
 modelParameters:
@@ -42,7 +45,12 @@ messages:
       </input>
 testData:
   - vars:
-      migration_requirements: "We are migrating from a self-hosted monolithic PostgreSQL 12 database (3TB data) to Amazon Aurora PostgreSQL. Our application is highly available and cannot sustain any write downtime. We have heavy read traffic and need a strategy that ensures no data loss, verifiable consistency, and the ability to instantly rollback if the new database exhibits latency spikes during the cutover."
+      migration_requirements: "We are migrating from a self-hosted monolithic PostgreSQL
+        12 database (3TB data) to Amazon Aurora PostgreSQL. Our application is highly
+        available and cannot sustain any write downtime. We have heavy read traffic
+        and need a strategy that ensures no data loss, verifiable consistency, and
+        the ability to instantly rollback if the new database exhibits latency spikes
+        during the cutover."
     expected: "CDC"
 evaluators:
   - name: Acronym Check

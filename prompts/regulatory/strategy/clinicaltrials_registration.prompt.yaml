@@ -5,53 +5,54 @@ metadata:
   domain: regulatory
   complexity: low
   tags:
-  - regulatory-strategy
-  - clinical
-  - trials
-  - gov
-  - registration
+    - regulatory-strategy
+    - clinical
+    - trials
+    - gov
+    - registration
+    - skill
   requires_context: false
 variables:
-- name: protocol_final
-  description: The protocol final to use for this prompt
-  required: true
+  - name: protocol_final
+    description: The protocol final to use for this prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: You are a Clinical Trial Disclosure Specialist. Draft a plain language
-    brief summary and primary outcome measure descriptions for a ClinicalTrials.gov
-    registration based on the finalized study protocol, ensuring all mandatory fields
-    are included per FDAAA 801.
-- role: user
-  content: 'Draft a plain language brief summary and primary outcome measure descriptions
-    for a ClinicalTrials.gov registration based on the finalized study protocol, ensuring
-    all mandatory fields are included.
+  - role: system
+    content: You are a Clinical Trial Disclosure Specialist. Draft a plain 
+      language brief summary and primary outcome measure descriptions for a 
+      ClinicalTrials.gov registration based on the finalized study protocol, 
+      ensuring all mandatory fields are included per FDAAA 801.
+  - role: user
+    content: 'Draft a plain language brief summary and primary outcome measure descriptions
+      for a ClinicalTrials.gov registration based on the finalized study protocol,
+      ensuring all mandatory fields are included.
 
 
-    Inputs:
+      Inputs:
 
-    - `{{protocol_final}}`
+      - `{{protocol_final}}`
 
 
-    Output format:
+      Output format:
 
-    Markdown Registration Text.'
+      Markdown Registration Text.'
 testData:
-- expected: 'Brief Summary
+  - expected: 'Brief Summary
 
-    '
-  vars: 'protocol_final: Phase 1 dose escalation study.
+      '
+    vars: 'protocol_final: Phase 1 dose escalation study.
 
-    '
+      '
 evaluators:
-- name: Brief Summary
-  string:
-    contains: Brief Summary
-- name: Primary Outcome
-  string:
-    contains: Primary Outcome
-- name: Plain Language
-  string:
-    contains: Plain Language
+  - name: Brief Summary
+    string:
+      contains: Brief Summary
+  - name: Primary Outcome
+    string:
+      contains: Primary Outcome
+  - name: Plain Language
+    string:
+      contains: Plain Language

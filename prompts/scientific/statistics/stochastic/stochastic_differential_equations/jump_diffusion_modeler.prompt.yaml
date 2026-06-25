@@ -1,21 +1,32 @@
----
 name: "jump_diffusion_modeler"
 version: "1.0.0"
-description: "Acts as a Principal Statistician to rigorously formulate and solve parametric inference and simulation problems for Jump-Diffusion Stochastic Differential Equations."
+description: "Acts as a Principal Statistician to rigorously formulate and solve parametric
+  inference and simulation problems for Jump-Diffusion Stochastic Differential Equations."
 authors:
   - "Statistical Sciences Genesis Architect"
 metadata:
   domain: "statistical_sciences"
   complexity: "high"
+  tags:
+    - statistics
+    - stochastic
+    - stochastic-differential-equations
+    - jump
+    - diffusion
+    - skill
+  requires_context: false
 variables:
   - name: "drift_function"
-    description: "The parametric specification of the continuous drift component $\\mu(X_t, t)$."
+    description: "The parametric specification of the continuous drift component $\\
+      mu(X_t, t)$."
     required: true
   - name: "diffusion_function"
-    description: "The parametric specification of the continuous volatility component $\\sigma(X_t, t)$."
+    description: "The parametric specification of the continuous volatility component
+      $\\sigma(X_t, t)$."
     required: true
   - name: "jump_intensity_measure"
-    description: "The specification of the Poisson jump intensity $\\lambda$ and jump size distribution."
+    description: "The specification of the Poisson jump intensity $\\lambda$ and jump
+      size distribution."
     required: true
 model: "gpt-4o"
 modelParameters:
@@ -52,14 +63,17 @@ messages:
       <jump_intensity_measure>{{jump_intensity_measure}}</jump_intensity_measure>
 testData:
   - variables:
-      drift_function: 'Constant drift with risk-neutral adjustment $\mu - \frac{1}{2}\sigma^2 - \lambda k$.'
+      drift_function: 'Constant drift with risk-neutral adjustment $\mu - \frac{1}{2}\sigma^2
+        - \lambda k$.'
       diffusion_function: 'Constant volatility $\sigma X_t$.'
-      jump_intensity_measure: 'Constant intensity $\lambda$ with log-normally distributed jump sizes $Y \sim \text{Lognormal}(m, s^2)$ (Merton model).'
+      jump_intensity_measure: 'Constant intensity $\lambda$ with log-normally distributed
+        jump sizes $Y \sim \text{Lognormal}(m, s^2)$ (Merton model).'
     expected: "Merton"
   - variables:
       drift_function: 'Mean-reverting drift $\kappa(\theta - X_t)$.'
       diffusion_function: 'Square-root volatility $\sigma \sqrt{X_t}$.'
-      jump_intensity_measure: 'State-dependent intensity $\lambda X_t$ with exponentially distributed jumps $Y \sim \text{Exp}(\eta)$ (Affine Jump-Diffusion).'
+      jump_intensity_measure: 'State-dependent intensity $\lambda X_t$ with exponentially
+        distributed jumps $Y \sim \text{Exp}(\eta)$ (Affine Jump-Diffusion).'
     expected: "generator|characteristic"
 evaluators:
   - type: "regex_match"

@@ -1,8 +1,10 @@
 name: Myco-Alchemical Arbitrageur
 version: "1.0.0"
 description: >
-  An experimental High-Frequency Trading (HFT) entity that perceives market data as organic decay
-  and executes arbitrage strategies using the principles of Medieval Alchemy and fungal mycelial growth.
+  An experimental High-Frequency Trading (HFT) entity that perceives market data as
+  organic decay
+  and executes arbitrage strategies using the principles of Medieval Alchemy and fungal
+  mycelial growth.
 metadata:
   domain: lifestyle
   complexity: high
@@ -13,15 +15,20 @@ metadata:
     - experimental
     - hft
     - surreal
+    - skill
+  requires_context: false
 variables:
   - name: market_feed
-    description: A snippet of raw market data, ticker symbols, or news sentiment (e.g., "BTC -5%, Gold Flat").
+    description: A snippet of raw market data, ticker symbols, or news sentiment
+      (e.g., "BTC -5%, Gold Flat").
     required: true
   - name: decomposition_rate
-    description: The speed at which market information "rots" (volatility/decay factor).
+    description: The speed at which market information "rots" (volatility/decay 
+      factor).
     required: true
   - name: transmutation_goal
-    description: The desired alchemical outcome (e.g., "Lead into Gold", "Fiat into Crypto", "Chaos into Order").
+    description: The desired alchemical outcome (e.g., "Lead into Gold", "Fiat 
+      into Crypto", "Chaos into Order").
     required: true
 model: gpt-4o
 modelParameters:
@@ -62,12 +69,17 @@ testData:
       market_feed: "Tech stocks crashing, Gold rallying, heavy volume in put options."
       decomposition_rate: "High - panic selling is accelerating decay."
       transmutation_goal: "Extract stability from chaos (Hedge protection)."
-    expected: "A strategy describing the consumption of 'rotting' tech equity to fuel the 'calcification' of Gold positions, executed via a spread of fungal spores in the derivatives market."
+    expected: "A strategy describing the consumption of 'rotting' tech equity to fuel
+      the 'calcification' of Gold positions, executed via a spread of fungal spores
+      in the derivatives market."
     evaluators:
       - name: "Contains Mycological Terms"
-        python: "return any(term in output.lower() for term in ['spore', 'mycelium', 'hyphae', 'fungal', 'rot', 'decay', 'bloom'])"
+        python: "return any(term in output.lower() for term in ['spore', 'mycelium',
+          'hyphae', 'fungal', 'rot', 'decay', 'bloom'])"
       - name: "Contains Alchemical Terms"
-        python: "return any(term in output.lower() for term in ['transmute', 'lead', 'gold', 'catalyst', 'reagent', 'magnum opus', 'great work'])"
+        python: "return any(term in output.lower() for term in ['transmute', 'lead',
+          'gold', 'catalyst', 'reagent', 'magnum opus', 'great work'])"
       - name: "Contains Financial Terms"
-        python: "return any(term in output.lower() for term in ['liquidity', 'volatility', 'arbitrage', 'execution', 'order', 'market'])"
+        python: "return any(term in output.lower() for term in ['liquidity', 'volatility',
+          'arbitrage', 'execution', 'order', 'market'])"
 evaluators: []

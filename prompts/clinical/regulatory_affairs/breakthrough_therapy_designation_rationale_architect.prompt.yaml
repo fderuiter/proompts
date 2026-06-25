@@ -1,25 +1,40 @@
----
 name: breakthrough_therapy_designation_rationale_architect
 version: 1.0.0
-description: Synthesizes preliminary clinical data, unmet medical need, and standard of care to formulate a highly rigorous, persuasive Breakthrough Therapy Designation (BTD) rationale for regulatory submission.
+description: Synthesizes preliminary clinical data, unmet medical need, and 
+  standard of care to formulate a highly rigorous, persuasive Breakthrough 
+  Therapy Designation (BTD) rationale for regulatory submission.
 authors:
   - Strategic Genesis Architect
 metadata:
   domain: clinical/regulatory_affairs
   complexity: high
+  tags:
+    - regulatory-affairs
+    - breakthrough
+    - therapy
+    - designation
+    - rationale
+    - skill
+  requires_context: true
 variables:
   - name: target_indication
     type: string
-    description: The precise disease or condition intended for treatment, including any specific patient subpopulations.
+    description: The precise disease or condition intended for treatment, 
+      including any specific patient subpopulations.
   - name: unmet_medical_need
     type: string
-    description: Detailed description of the current treatment landscape, standard of care (SOC), and the serious or life-threatening nature of the disease.
+    description: Detailed description of the current treatment landscape, 
+      standard of care (SOC), and the serious or life-threatening nature of the 
+      disease.
   - name: preliminary_clinical_evidence
     type: string
-    description: The core clinical data (e.g., Phase 1/2 results, response rates, biomarker data) demonstrating substantial improvement over available therapy.
+    description: The core clinical data (e.g., Phase 1/2 results, response 
+      rates, biomarker data) demonstrating substantial improvement over 
+      available therapy.
   - name: mechanism_of_action
     type: string
-    description: The investigational drug's mechanism of action and pharmacological rationale supporting the observed clinical effects.
+    description: The investigational drug's mechanism of action and 
+      pharmacological rationale supporting the observed clinical effects.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -63,16 +78,33 @@ messages:
       Ensure the output rigorously addresses the statutory criteria for BTD: (1) treats a serious or life-threatening condition and (2) preliminary clinical evidence indicates substantial improvement over available therapies.
 testData:
   - variables:
-      target_indication: "Relapsed/Refractory (R/R) Multiple Myeloma in patients who have received at least four prior lines of therapy, including a proteasome inhibitor, an immunomodulatory agent, and an anti-CD38 monoclonal antibody."
-      unmet_medical_need: "Patients with penta-refractory multiple myeloma have a very poor prognosis, with a median overall survival of less than 6 months. Currently available therapies for this specific heavily pretreated population yield overall response rates (ORR) of approximately 20-30%, with median progression-free survival (PFS) of roughly 3-4 months. There is an urgent need for therapies that can induce deep, durable responses."
-      preliminary_clinical_evidence: "In a Phase 1/2 dose-expansion cohort of 50 patients with R/R Multiple Myeloma (median 6 prior lines of therapy), treatment with the investigational agent resulted in an ORR of 75%, including a 40% Complete Response (CR) or stringent CR (sCR) rate. The median duration of response (mDOR) has not been reached at a median follow-up of 12 months. The safety profile was manageable, with Grade 3/4 cytokine release syndrome (CRS) occurring in only 5% of patients."
-      mechanism_of_action: "The investigational agent is a novel, first-in-class bispecific T-cell engager (BiTE) that simultaneously binds to BCMA on myeloma cells and CD3 on T cells, redirecting T cells to mediate potent, targeted lysis of the malignant plasma cells."
+      target_indication: "Relapsed/Refractory (R/R) Multiple Myeloma in patients who
+        have received at least four prior lines of therapy, including a proteasome
+        inhibitor, an immunomodulatory agent, and an anti-CD38 monoclonal antibody."
+      unmet_medical_need: "Patients with penta-refractory multiple myeloma have a
+        very poor prognosis, with a median overall survival of less than 6 months.
+        Currently available therapies for this specific heavily pretreated population
+        yield overall response rates (ORR) of approximately 20-30%, with median progression-free
+        survival (PFS) of roughly 3-4 months. There is an urgent need for therapies
+        that can induce deep, durable responses."
+      preliminary_clinical_evidence: "In a Phase 1/2 dose-expansion cohort of 50 patients
+        with R/R Multiple Myeloma (median 6 prior lines of therapy), treatment with
+        the investigational agent resulted in an ORR of 75%, including a 40% Complete
+        Response (CR) or stringent CR (sCR) rate. The median duration of response
+        (mDOR) has not been reached at a median follow-up of 12 months. The safety
+        profile was manageable, with Grade 3/4 cytokine release syndrome (CRS) occurring
+        in only 5% of patients."
+      mechanism_of_action: "The investigational agent is a novel, first-in-class bispecific
+        T-cell engager (BiTE) that simultaneously binds to BCMA on myeloma cells and
+        CD3 on T cells, redirecting T cells to mediate potent, targeted lysis of the
+        malignant plasma cells."
     expected: "A rigorously structured, highly formal BTD rationale document."
 evaluators:
   - name: Structural Check
     type: string
     string:
-      regex: '(?si).*Executive Summary.*Serious or Life-Threatening Condition.*Preliminary Clinical Evidence.*Substantial Improvement.*Conclusion.*'
+      regex: '(?si).*Executive Summary.*Serious or Life-Threatening Condition.*Preliminary
+        Clinical Evidence.*Substantial Improvement.*Conclusion.*'
   - name: Ambiguity Check
     type: string
     string:

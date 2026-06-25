@@ -5,55 +5,56 @@ metadata:
   domain: technical
   complexity: medium
   tags:
-  - testing
-  - human
-  - factors
-  - validation
-  - study
+    - testing
+    - human
+    - factors
+    - validation
+    - study
+    - skill
   requires_context: false
 variables:
-- name: class
-  description: device class
-  required: true
-- name: device_name
-  description: name of the device
-  required: true
+  - name: class
+    description: device class
+    required: true
+  - name: device_name
+    description: name of the device
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: "You are a human\u2011factors specialist preparing the design validation\
-    \ protocol for **{{device_name}}**. The plan must comply with FDA Human Factors\
-    \ Guidance, ISO\_62366\u20111 and ISO\_13485. Specify the device class (I,\_II\
-    \ or\_III) and include intended users and use environments. The protocol must\
-    \ demonstrate the device meets user needs and intended use per \xA7820.30(g).\
-    \ Maintain a formal tone suitable for a regulatory submission. Limit output to\
-    \ \u2264\_2\_000 words and ask any clarifying questions before proceeding.\n\n\
-    Confirm any missing design inputs before finalizing the protocol."
-- role: user
-  content: "1. Outline the purpose and regulatory basis.\n2. Define study objectives\
-    \ and success metrics.\n3. Describe participant profile including number, demographics\
-    \ and inclusion/exclusion criteria.\n4. Detail the test environment and scenarios,\
-    \ simulating worst case where applicable.\n5. Provide task analysis and data\u2011\
-    collection methods (quantitative and qualitative).\n6. Specify risk\u2011mitigation\
-    \ triggers and stop rules.\n7. Present the data analysis plan.\n8. List deliverables\
-    \ and acceptance criteria.\n\nInputs:\n- `{{device_name}}` \u2013 name of the\
-    \ device\n- `{{class}}` \u2013 device class\n\nOutput Format:\n1. Purpose and\
-    \ regulatory basis\n2. Objectives and success metrics\n3. Participant profile\n\
-    4. Test environment and scenarios\n5. Task analysis and data-collection methods\n\
-    6. Risk-mitigation triggers and stop rules\n7. Data analysis plan\n8. Deliverables\
-    \ and acceptance criteria"
+  - role: system
+    content: "You are a human‑factors specialist preparing the design validation protocol
+      for **{{device_name}}**. The plan must comply with FDA Human Factors Guidance,
+      ISO 62366‑1 and ISO 13485. Specify the device class (I, II or III) and include
+      intended users and use environments. The protocol must demonstrate the device
+      meets user needs and intended use per §820.30(g). Maintain a formal tone suitable
+      for a regulatory submission. Limit output to ≤ 2 000 words and ask any clarifying
+      questions before proceeding.\n\nConfirm any missing design inputs before finalizing
+      the protocol."
+  - role: user
+    content: "1. Outline the purpose and regulatory basis.\n2. Define study objectives
+      and success metrics.\n3. Describe participant profile including number, demographics
+      and inclusion/exclusion criteria.\n4. Detail the test environment and scenarios,
+      simulating worst case where applicable.\n5. Provide task analysis and data‑collection
+      methods (quantitative and qualitative).\n6. Specify risk‑mitigation triggers
+      and stop rules.\n7. Present the data analysis plan.\n8. List deliverables and
+      acceptance criteria.\n\nInputs:\n- `{{device_name}}` – name of the device\n\
+      - `{{class}}` – device class\n\nOutput Format:\n1. Purpose and regulatory basis\n\
+      2. Objectives and success metrics\n3. Participant profile\n4. Test environment
+      and scenarios\n5. Task analysis and data-collection methods\n6. Risk-mitigation
+      triggers and stop rules\n7. Data analysis plan\n8. Deliverables and acceptance
+      criteria"
 testData:
-- expected: 'Purpose and regulatory basis
+  - expected: 'Purpose and regulatory basis
 
-    '
-  vars: 'device_name: Smart Inhaler
+      '
+    vars: 'device_name: Smart Inhaler
 
-    class: II
+      class: II
 
-    '
+      '
 evaluators:
-- name: Output starts with 'Purpose and regulatory basis'
-  string:
-    startsWith: Purpose and regulatory basis
+  - name: Output starts with 'Purpose and regulatory basis'
+    string:
+      startsWith: Purpose and regulatory basis

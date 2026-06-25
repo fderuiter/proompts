@@ -1,54 +1,56 @@
 name: Citizen Petition Preparation
 version: 0.1.0
-description: Draft a Citizen Petition requesting administrative action by the Commissioner.
+description: Draft a Citizen Petition requesting administrative action by the 
+  Commissioner.
 metadata:
   domain: regulatory
   complexity: low
   tags:
-  - regulatory-admin
-  - citizen
-  - petition
-  - preparation
+    - regulatory-admin
+    - citizen
+    - petition
+    - preparation
+    - skill
   requires_context: false
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-- role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
-    FDA and ISO compliance tasks.
+  - role: system
+    content: 'You are an expert Regulatory Affairs Specialist capable of handling
+      complex FDA and ISO compliance tasks.
 
 
-    ## Context
+      ## Context
 
-    21 CFR Part 10.30
-
-
-    ## Objective
-
-    Draft a Citizen Petition requesting administrative action by the Commissioner.
+      21 CFR Part 10.30
 
 
-    ## Output Format
+      ## Objective
 
-    Structured petition following 21 CFR 10.30(b)(3) format.'
-- role: user
-  content: 'Please perform the task using the following input data:
+      Draft a Citizen Petition requesting administrative action by the Commissioner.
 
 
-    <input>
+      ## Output Format
 
-    {{input}}
+      Structured petition following 21 CFR 10.30(b)(3) format.'
+  - role: user
+    content: 'Please perform the task using the following input data:
 
-    </input>'
+
+      <input>
+
+      {{input}}
+
+      </input>'
 testData:
-- expected: Expected output as per instructions.
-  vars: Factual/legal grounds, action requested, and environmental impact assessment.
-    (Example data)
+  - expected: Expected output as per instructions.
+    vars: Factual/legal grounds, action requested, and environmental impact 
+      assessment. (Example data)
 evaluators:
-- name: Validation Check
-  regex: (?i)Verify
+  - name: Validation Check
+    regex: (?i)Verify

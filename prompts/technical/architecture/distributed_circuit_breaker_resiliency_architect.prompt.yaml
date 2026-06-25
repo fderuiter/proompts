@@ -1,7 +1,8 @@
----
 name: Distributed Circuit Breaker Resiliency Architect
 version: 1.0.0
-description: Architects robust distributed circuit breaker topologies for preventing cascading failures in high-throughput microservice ecosystems, addressing dynamic thresholding and cross-node state synchronization.
+description: Architects robust distributed circuit breaker topologies for 
+  preventing cascading failures in high-throughput microservice ecosystems, 
+  addressing dynamic thresholding and cross-node state synchronization.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,16 +14,20 @@ metadata:
     - microservices
     - distributed-systems
     - circuit-breaker
+    - skill
   requires_context: false
 variables:
   - name: topology_scale
-    description: The scale of the distributed system, including the number of nodes, inter-service call volumes, and geographic distribution.
+    description: The scale of the distributed system, including the number of 
+      nodes, inter-service call volumes, and geographic distribution.
     required: true
   - name: failure_modes
-    description: Anticipated failure modes, downstream latencies, and service degradation characteristics to mitigate.
+    description: Anticipated failure modes, downstream latencies, and service 
+      degradation characteristics to mitigate.
     required: true
   - name: resilience_constraints
-    description: Key constraints such as mean time to recovery (MTTR), fallback mechanisms, latency budgets, and state synchronization overhead limits.
+    description: Key constraints such as mean time to recovery (MTTR), fallback 
+      mechanisms, latency budgets, and state synchronization overhead limits.
     required: true
 model: gpt-4o
 modelParameters:
@@ -60,14 +65,20 @@ messages:
       <resilience_constraints>{{resilience_constraints}}</resilience_constraints>
 testData:
   - inputs:
-      topology_scale: "500 microservice nodes across 3 availability zones handling 100,000 RPS to a shared payment gateway."
-      failure_modes: "Payment gateway experiences sudden latency spikes causing thread pool exhaustion and cascading timeouts upstream."
-      resilience_constraints: "Sub-millisecond overhead for state checks, fast-trip on 5% error rate, and fallback to a local cache of pre-authorized tokens."
+      topology_scale: "500 microservice nodes across 3 availability zones handling
+        100,000 RPS to a shared payment gateway."
+      failure_modes: "Payment gateway experiences sudden latency spikes causing thread
+        pool exhaustion and cascading timeouts upstream."
+      resilience_constraints: "Sub-millisecond overhead for state checks, fast-trip
+        on 5% error rate, and fallback to a local cache of pre-authorized tokens."
     expected: "Sliding Window"
   - inputs:
-      topology_scale: "Global multi-region service mesh with 50,000 requests per second targeting a legacy monolithic database."
-      failure_modes: "Database connection pool saturation and frequent deadlocks leading to unpredictable query execution times."
-      resilience_constraints: "Must prevent database overload using adaptive concurrency limits and implement asynchronous degraded fallback responses."
+      topology_scale: "Global multi-region service mesh with 50,000 requests per second
+        targeting a legacy monolithic database."
+      failure_modes: "Database connection pool saturation and frequent deadlocks leading
+        to unpredictable query execution times."
+      resilience_constraints: "Must prevent database overload using adaptive concurrency
+        limits and implement asynchronous degraded fallback responses."
     expected: "Adaptive Concurrency"
 evaluators:
   - name: Concept Check

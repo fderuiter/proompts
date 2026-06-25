@@ -1,19 +1,31 @@
----
 name: multidimensional_item_response_theory_architect
 version: 1.0.0
-description: Designs and evaluates complex Multidimensional Item Response Theory (MIRT) models for multifaceted psychometric constructs.
+description: Designs and evaluates complex Multidimensional Item Response Theory
+  (MIRT) models for multifaceted psychometric constructs.
 authors:
   - Behavioral Sciences Genesis Architect
 metadata:
   domain: quantitative/psychometrics
   complexity: high
+  tags:
+    - psychology
+    - quantitative
+    - psychometrics
+    - multidimensional
+    - item
+    - skill
+  requires_context: false
 variables:
   - name: latent_dimensions
-    description: Description of the specific latent dimensions (traits) to be modeled and their hypothesized relationships.
+    description: Description of the specific latent dimensions (traits) to be 
+      modeled and their hypothesized relationships.
   - name: item_specifications
-    description: Details regarding the test items, including response formats (e.g., dichotomous, polytomous) and hypothesized item-to-dimension mappings.
+    description: Details regarding the test items, including response formats 
+      (e.g., dichotomous, polytomous) and hypothesized item-to-dimension 
+      mappings.
   - name: sample_characteristics
-    description: Characteristics of the target population and the sampling frame intended for model calibration.
+    description: Characteristics of the target population and the sampling frame
+      intended for model calibration.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -47,9 +59,13 @@ messages:
       </sample_characteristics>
 testData:
   - inputs:
-      latent_dimensions: Reading Comprehension and Vocabulary Knowledge, hypothesized to be highly correlated.
-      item_specifications: 30 items total; 15 discrete vocabulary items (dichotomous), 15 reading comprehension items based on passages (polytomous).
-      sample_characteristics: N = 2000 university students, diverse socioeconomic background.
+      latent_dimensions: Reading Comprehension and Vocabulary Knowledge, 
+        hypothesized to be highly correlated.
+      item_specifications: 30 items total; 15 discrete vocabulary items 
+        (dichotomous), 15 reading comprehension items based on passages 
+        (polytomous).
+      sample_characteristics: N = 2000 university students, diverse 
+        socioeconomic background.
     expected: mirt
 evaluators:
   - type: regex

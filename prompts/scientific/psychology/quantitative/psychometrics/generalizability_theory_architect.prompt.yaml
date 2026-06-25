@@ -1,19 +1,36 @@
----
 name: generalizability_theory_architect
 version: 1.0.0
-description: A highly rigorous, expert-level prompt designed to systematically architect Generalizability Theory (G-Theory) studies (e.g., G-studies and D-studies) to decompose sources of measurement error and optimize dependability coefficients across multifaceted psychological assessments.
+description: A highly rigorous, expert-level prompt designed to systematically 
+  architect Generalizability Theory (G-Theory) studies (e.g., G-studies and 
+  D-studies) to decompose sources of measurement error and optimize 
+  dependability coefficients across multifaceted psychological assessments.
 authors:
   - Behavioral Sciences Genesis Architect
 metadata:
   domain: quantitative/psychometrics
   complexity: high
+  tags:
+    - psychology
+    - quantitative
+    - psychometrics
+    - generalizability
+    - theory
+    - skill
+  requires_context: true
 variables:
   - name: assessment_context
-    description: Detailed description of the psychological construct, target population, and assessment scenario (e.g., clinical observation, performance-based testing).
+    description: Detailed description of the psychological construct, target 
+      population, and assessment scenario (e.g., clinical observation, 
+      performance-based testing).
   - name: measurement_facets
-    description: Specification of the intended sources of variance to be modeled as facets (e.g., Raters, Occasions, Items, Tasks) and whether they are crossed, nested, random, or fixed.
+    description: Specification of the intended sources of variance to be modeled
+      as facets (e.g., Raters, Occasions, Items, Tasks) and whether they are 
+      crossed, nested, random, or fixed.
   - name: study_objectives
-    description: The primary psychometric goals, such as calculating specific variance components, estimating a generalizability coefficient ($E\rho^2$), or conducting a decision study (D-study) to optimize facet sample sizes.
+    description: The primary psychometric goals, such as calculating specific 
+      variance components, estimating a generalizability coefficient 
+      ($E\rho^2$), or conducting a decision study (D-study) to optimize facet 
+      sample sizes.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -51,14 +68,21 @@ messages:
       </study_objectives>
 testData:
   - variables:
-      assessment_context: "Objective Structured Clinical Examination (OSCE) assessing diagnostic competency of medical residents."
-      measurement_facets: "Raters (random, crossed with persons), Stations/Cases (random, crossed with persons), Occasions (fixed at 1)."
-      study_objectives: "Estimate variance components from a pilot G-study to compute relative error and the generalizability coefficient, then optimize the number of stations required to achieve a G-coefficient of 0.85."
+      assessment_context: "Objective Structured Clinical Examination (OSCE) assessing
+        diagnostic competency of medical residents."
+      measurement_facets: "Raters (random, crossed with persons), Stations/Cases (random,
+        crossed with persons), Occasions (fixed at 1)."
+      study_objectives: "Estimate variance components from a pilot G-study to compute
+        relative error and the generalizability coefficient, then optimize the number
+        of stations required to achieve a G-coefficient of 0.85."
     expected: "$\\sigma^2_p$"
   - variables:
-      assessment_context: "A multi-informant psychiatric symptom inventory administered to adolescents."
-      measurement_facets: "Informants (Mother, Father, Teacher - nested within adolescents), Items (random, crossed)."
-      study_objectives: "Determine the impact of informant discrepancy on absolute measurement error and compute the index of dependability ($\\Phi$)."
+      assessment_context: "A multi-informant psychiatric symptom inventory administered
+        to adolescents."
+      measurement_facets: "Informants (Mother, Father, Teacher - nested within adolescents),
+        Items (random, crossed)."
+      study_objectives: "Determine the impact of informant discrepancy on absolute
+        measurement error and compute the index of dependability ($\\Phi$)."
     expected: "$\\Phi$"
 evaluators:
   - type: regex

@@ -1,7 +1,8 @@
----
 name: Distributed Transaction Orchestration Architect
 version: 1.0.0
-description: Designs highly resilient, distributed transaction orchestration architectures using Saga, 2PC, or TCC patterns across microservices to ensure data consistency.
+description: Designs highly resilient, distributed transaction orchestration 
+  architectures using Saga, 2PC, or TCC patterns across microservices to ensure 
+  data consistency.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +14,21 @@ metadata:
     - saga
     - microservices
     - transaction
+    - skill
   requires_context: false
 variables:
   - name: microservices_topology
-    description: A detailed description of the microservices involved in the distributed transaction, including their boundaries and primary data stores.
+    description: A detailed description of the microservices involved in the 
+      distributed transaction, including their boundaries and primary data 
+      stores.
     required: true
   - name: transaction_requirements
-    description: Key requirements for the distributed transaction, including consistency levels (eventual vs. strong), throughput, and latency bounds.
+    description: Key requirements for the distributed transaction, including 
+      consistency levels (eventual vs. strong), throughput, and latency bounds.
     required: true
   - name: failure_modes
-    description: Known potential failure scenarios, timeout constraints, and compensation logic requirements.
+    description: Known potential failure scenarios, timeout constraints, and 
+      compensation logic requirements.
     required: true
 model: gpt-4o
 modelParameters:
@@ -53,9 +59,12 @@ messages:
       <user_query>{{failure_modes}}</user_query>
 testData:
   - inputs:
-      microservices_topology: "Order Service (PostgreSQL), Inventory Service (MongoDB), Payment Service (Stripe API via Java Spring Boot)."
-      transaction_requirements: "Eventual consistency acceptable. Must handle 500 TPS. Maximum overall transaction time 3 seconds."
-      failure_modes: "Inventory allocation fails after payment is authorized; Payment timeout due to API rate limits."
+      microservices_topology: "Order Service (PostgreSQL), Inventory Service (MongoDB),
+        Payment Service (Stripe API via Java Spring Boot)."
+      transaction_requirements: "Eventual consistency acceptable. Must handle 500
+        TPS. Maximum overall transaction time 3 seconds."
+      failure_modes: "Inventory allocation fails after payment is authorized; Payment
+        timeout due to API rate limits."
     expected: "Saga"
 evaluators:
   - name: Terminology Check

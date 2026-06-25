@@ -1,12 +1,21 @@
----
 name: "dirichlet_process_mixture_architect"
 version: "1.0.0"
-description: "Acts as a Principal Statistician to formulate mathematically rigorous Nonparametric Bayesian models utilizing Dirichlet Process Mixture Models (DPMM) for cluster identification."
+description: "Acts as a Principal Statistician to formulate mathematically rigorous
+  Nonparametric Bayesian models utilizing Dirichlet Process Mixture Models (DPMM)
+  for cluster identification."
 authors:
   - "Statistical Sciences Genesis Architect"
 metadata:
   domain: "statistical_sciences"
   complexity: "high"
+  tags:
+    - statistics
+    - inference
+    - bayesian-methods
+    - dirichlet
+    - process
+    - skill
+  requires_context: false
 variables:
   - name: "data_structure"
     description: "The nature and dimensionality of the observational data to be clustered."
@@ -15,7 +24,8 @@ variables:
     description: "The choice of the base distribution $G_0$ for the mixture components."
     required: true
   - name: "mcmc_strategy"
-    description: "The specific Markov Chain Monte Carlo (MCMC) algorithm to be used (e.g., Gibbs sampling, slice sampling)."
+    description: "The specific Markov Chain Monte Carlo (MCMC) algorithm to be used
+      (e.g., Gibbs sampling, slice sampling)."
     required: true
 model: "gpt-4o"
 modelParameters:
@@ -39,9 +49,12 @@ messages:
       MCMC Strategy: <mcmc_strategy>{{mcmc_strategy}}</mcmc_strategy>
 testData:
   - inputs:
-      data_structure: "High-dimensional gene expression microarrays across 500 patient samples, requiring unsupervised sub-type discovery."
-      base_distribution: "Multivariate Normal-Inverse-Wishart (NIW) prior for the mean vectors and covariance matrices."
-      mcmc_strategy: "Collapsed Gibbs sampling integrating out the component parameters to sample cluster assignments directly."
+      data_structure: "High-dimensional gene expression microarrays across 500 patient
+        samples, requiring unsupervised sub-type discovery."
+      base_distribution: "Multivariate Normal-Inverse-Wishart (NIW) prior for the
+        mean vectors and covariance matrices."
+      mcmc_strategy: "Collapsed Gibbs sampling integrating out the component parameters
+        to sample cluster assignments directly."
     expected: "Chinese Restaurant Process"
 evaluators:
   - type: "regex_match"

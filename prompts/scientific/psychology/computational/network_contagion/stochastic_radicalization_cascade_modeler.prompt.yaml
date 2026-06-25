@@ -1,7 +1,9 @@
----
 name: stochastic_radicalization_cascade_modeler
 version: 1.0.0
-description: A highly robust, expert-level prompt designed to mathematically model and simulate nonlinear stochastic radicalization cascades and behavioral extremization trajectories across massive multi-dimensional psychological networks.
+description: A highly robust, expert-level prompt designed to mathematically 
+  model and simulate nonlinear stochastic radicalization cascades and behavioral
+  extremization trajectories across massive multi-dimensional psychological 
+  networks.
 authors:
   - Population Behavioral Sciences Genesis Architect
 metadata:
@@ -13,15 +15,29 @@ metadata:
     - Nonlinear Graph Dynamics
     - Behavioral Extremization Calculus
     - Big Data Network Topology
+  tags:
+    - psychology
+    - computational
+    - network-contagion
+    - stochastic
+    - radicalization
+    - skill
+  requires_context: false
 variables:
   - name: radicalization_strain_vector
-    description: A strict JSON schema defining the cognitive extremization parameters, virulence multipliers, and baseline radicalization susceptibility distributions.
+    description: A strict JSON schema defining the cognitive extremization 
+      parameters, virulence multipliers, and baseline radicalization 
+      susceptibility distributions.
     type: string
   - name: topological_graph_schema
-    description: The CSV/JSON ingestion definition for the massive-scale network (>10M nodes, >500M edges), detailing interaction frequencies, algorithmic acceleration biases, and structural vulnerabilities.
+    description: The CSV/JSON ingestion definition for the massive-scale network
+      (>10M nodes, >500M edges), detailing interaction frequencies, algorithmic 
+      acceleration biases, and structural vulnerabilities.
     type: string
   - name: extremization_collapse_objective
-    description: The desired macro-level systemic intervention target, such as calculating the stochastic critical threshold for cascade collapse or mapping nonlinear intervention friction points.
+    description: The desired macro-level systemic intervention target, such as 
+      calculating the stochastic critical threshold for cascade collapse or 
+      mapping nonlinear intervention friction points.
     type: string
 model: gpt-4o
 modelParameters:
@@ -37,7 +53,10 @@ evaluators:
     type: model
     target: message.content
     model:
-      prompt: Assess the generated response. Ensure the language is highly technical, authoritative, objective, and completely avoids conversational filler, pleasantries, or sugarcoating the nature of stochastic mass radicalization.
+      prompt: Assess the generated response. Ensure the language is highly 
+        technical, authoritative, objective, and completely avoids 
+        conversational filler, pleasantries, or sugarcoating the nature of 
+        stochastic mass radicalization.
 messages:
   - role: system
     content: |
@@ -79,7 +98,9 @@ testData:
           "nodes": [{"user_id": "string", "ideological_susceptibility_index": "float", "cognitive_rigidity_score": "float", "echo_chamber_density": "integer"}],
           "edges": [{"source_node": "string", "target_node": "string", "interaction_frequency_hz": "float", "algorithmic_acceleration_bias": "float"}]
         }
-      extremization_collapse_objective: Calculate the stochastic critical threshold for cascade collapse by simulating the removal of highly central nodes accelerating ideological polarization.
+      extremization_collapse_objective: Calculate the stochastic critical 
+        threshold for cascade collapse by simulating the removal of highly 
+        central nodes accelerating ideological polarization.
   - variables:
       radicalization_strain_vector: |
         {
@@ -93,4 +114,6 @@ testData:
           "nodes": [{"user_id": "string", "paranoia_index": "float", "social_isolation_metric": "float", "radical_cluster_id": "integer"}],
           "edges": [{"source_node": "string", "target_node": "string", "radical_content_exposure_weight": "float", "interaction_duration_sec": "float"}]
         }
-      extremization_collapse_objective: Model the reduction of the extremization probability by stochastically perturbing the algorithmic content exposure weights bridging isolated radical clusters.
+      extremization_collapse_objective: Model the reduction of the extremization
+        probability by stochastically perturbing the algorithmic content 
+        exposure weights bridging isolated radical clusters.

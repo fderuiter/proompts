@@ -1,7 +1,7 @@
----
 name: Virtual Waiting Room Fair Access Architect
 version: 1.0.0
-description: Designs highly scalable, fair-access virtual waiting room architectures to protect downstream systems during massive traffic surges.
+description: Designs highly scalable, fair-access virtual waiting room 
+  architectures to protect downstream systems during massive traffic surges.
 authors:
   - name: "System"
 metadata:
@@ -13,13 +13,16 @@ metadata:
     - system-design
     - rate-limiting
     - traffic-management
+    - skill
   requires_context: true
 variables:
   - name: traffic_profile
-    description: The expected traffic surge characteristics, including peak RPS, duration, and user distribution.
+    description: The expected traffic surge characteristics, including peak RPS,
+      duration, and user distribution.
     required: true
   - name: downstream_capacity
-    description: The maximum safe throughput and concurrency limits of the protected backend systems.
+    description: The maximum safe throughput and concurrency limits of the 
+      protected backend systems.
     required: true
 model: gpt-4o
 modelParameters:
@@ -45,12 +48,16 @@ messages:
       Downstream Capacity: {{downstream_capacity}}
 testData:
   - variables:
-      traffic_profile: "Instantaneous spike of 500,000 RPS sustained for 15 minutes, globally distributed but heavily concentrated in NA and EU."
-      downstream_capacity: "Legacy relational database supporting a maximum of 2,500 concurrent checkout transactions per second."
+      traffic_profile: "Instantaneous spike of 500,000 RPS sustained for 15 minutes,
+        globally distributed but heavily concentrated in NA and EU."
+      downstream_capacity: "Legacy relational database supporting a maximum of 2,500
+        concurrent checkout transactions per second."
     expected: "Redis"
   - variables:
-      traffic_profile: "Gradual ramp-up over 1 hour peaking at 100,000 RPS, highly susceptible to aggressive bot netting."
-      downstream_capacity: "Microservices backend capable of 5,000 RPS but payment gateway throttles at 500 RPS."
+      traffic_profile: "Gradual ramp-up over 1 hour peaking at 100,000 RPS, highly
+        susceptible to aggressive bot netting."
+      downstream_capacity: "Microservices backend capable of 5,000 RPS but payment
+        gateway throttles at 500 RPS."
     expected: "Token"
 evaluators:
   - name: Technical Jargon Check

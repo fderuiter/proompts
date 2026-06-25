@@ -1,19 +1,30 @@
----
 name: "paraconsistent_logic_dialetheism_evaluator"
 version: "1.0.0"
-description: "A highly rigorous prompt designed to systematically analyze and formalize paradoxical statements using paraconsistent logic frameworks, specifically evaluating them as potential dialetheias (true contradictions) without permitting deductive explosion (ex contradictione quodlibet)."
+description: "A highly rigorous prompt designed to systematically analyze and formalize
+  paradoxical statements using paraconsistent logic frameworks, specifically evaluating
+  them as potential dialetheias (true contradictions) without permitting deductive
+  explosion (ex contradictione quodlibet)."
 authors:
   - "Philosophical Genesis Architect"
 metadata:
   domain: "scientific"
   complexity: "high"
+  tags:
+    - philosophy
+    - logic
+    - philosophical-logic
+    - paraconsistent
+    - dialetheism
+    - skill
+  requires_context: false
 variables:
   - name: "TARGET_PARADOX"
     type: "string"
     description: "The paradoxical statement or argument ($P$) to be analyzed."
   - name: "PARACONSISTENT_SYSTEM"
     type: "string"
-    description: "The specific paraconsistent logical calculus to be applied (e.g., Logic of Paradox (LP), First-Degree Entailment (FDE))."
+    description: "The specific paraconsistent logical calculus to be applied (e.g.,
+      Logic of Paradox (LP), First-Degree Entailment (FDE))."
 model: "gpt-4o"
 modelParameters:
   temperature: 0.1
@@ -42,12 +53,14 @@ messages:
       Execute the systematic formalization and dialetheic evaluation of this paradox.
 evaluators:
   - type: "regex"
-    pattern: "(?i)(Formalization of the Paradox|Dialetheic Evaluation|Containment of Explosion)"
+    pattern: "(?i)(Formalization of the Paradox|Dialetheic Evaluation|Containment
+      of Explosion)"
     target: "message.content"
 testData:
   - variables:
       TARGET_PARADOX: "This sentence is false (The Liar Paradox)."
       PARACONSISTENT_SYSTEM: "Logic of Paradox (LP)"
   - variables:
-      TARGET_PARADOX: "The set of all sets that do not contain themselves contains itself if and only if it does not contain itself (Russell's Paradox)."
+      TARGET_PARADOX: "The set of all sets that do not contain themselves contains
+        itself if and only if it does not contain itself (Russell's Paradox)."
       PARACONSISTENT_SYSTEM: "First-Degree Entailment (FDE)"

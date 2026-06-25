@@ -1,7 +1,7 @@
----
 name: Source of Truth Harmonizer
 version: "1.0.0"
-description: Harmonizes codebase documentation with a provided 'New Source of Truth'.
+description: Harmonizes codebase documentation with a provided 'New Source of 
+  Truth'.
 metadata:
   domain: technical
   complexity: high
@@ -9,6 +9,7 @@ metadata:
     - documentation
     - refactoring
     - maintenance
+    - skill
   requires_context: true
 variables:
   - name: input

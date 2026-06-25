@@ -5,54 +5,55 @@ metadata:
   domain: clinical
   complexity: medium
   tags:
-  - forms
-  - cdash
-  - alignment
+    - forms
+    - cdash
+    - alignment
+    - skill
   requires_context: false
 variables:
-- name: cdash_guide
-  description: The cdash guide to use for this prompt
-  required: true
-- name: crf_draft
-  description: 'CDASH User Guide: `{{cdash_guide}}`'
-  required: true
+  - name: cdash_guide
+    description: The cdash guide to use for this prompt
+    required: true
+  - name: crf_draft
+    description: 'CDASH User Guide: `{{cdash_guide}}`'
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: You are a CDISC Standards Expert. Standardize clinical data collection
-    fields using CDASH models to facilitate easier flow into SDTM. Focus on Vital
-    Signs (VS) domain. Adhere to CDISC CDASH 2.0.
-- role: user
-  content: 'Reformat the data collection fields in this draft CRF to align with the
-    CDASH v2.1 standards for the Vital Signs (VS) domain, ensuring the inclusion of
-    standard indicator questions.
+  - role: system
+    content: You are a CDISC Standards Expert. Standardize clinical data 
+      collection fields using CDASH models to facilitate easier flow into SDTM. 
+      Focus on Vital Signs (VS) domain. Adhere to CDISC CDASH 2.0.
+  - role: user
+    content: 'Reformat the data collection fields in this draft CRF to align with
+      the CDASH v2.1 standards for the Vital Signs (VS) domain, ensuring the inclusion
+      of standard indicator questions.
 
 
-    Inputs:
+      Inputs:
 
-    - CRF Draft: `{{crf_draft}}`
+      - CRF Draft: `{{crf_draft}}`
 
-    - CDASH User Guide: `{{cdash_guide}}`
+      - CDASH User Guide: `{{cdash_guide}}`
 
 
-    Output format:
+      Output format:
 
-    Markdown CDASH Alignment Table (Draft Field -> CDASH Variable -> Question Text).'
+      Markdown CDASH Alignment Table (Draft Field -> CDASH Variable -> Question Text).'
 testData:
-- expected: '| Draft Field | CDASH Variable |
+  - expected: '| Draft Field | CDASH Variable |
 
-    '
-  vars: 'crf_draft: "Patient Height in inches."
+      '
+    vars: 'crf_draft: "Patient Height in inches."
 
-    cdash_guide: "Use VS.VSORRES, VS.VSORRESU."
+      cdash_guide: "Use VS.VSORRES, VS.VSORRESU."
 
-    '
+      '
 evaluators:
-- name: Alignment Table
-  string:
-    contains: '| Draft Field |'
-- name: CDASH Variable
-  string:
-    contains: VSORRES
+  - name: Alignment Table
+    string:
+      contains: '| Draft Field |'
+  - name: CDASH Variable
+    string:
+      contains: VSORRES

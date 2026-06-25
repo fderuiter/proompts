@@ -1,7 +1,8 @@
----
 name: bayesian_vector_autoregression_architect
 version: 1.0.0
-description: Formulates rigorous Bayesian Vector Autoregression (BVAR) models for macroeconomic forecasting and structural analysis, incorporating prior specification, posterior inference, and structural identification.
+description: Formulates rigorous Bayesian Vector Autoregression (BVAR) models 
+  for macroeconomic forecasting and structural analysis, incorporating prior 
+  specification, posterior inference, and structural identification.
 authors:
   - name: Economic Sciences Genesis Architect
 metadata:
@@ -14,19 +15,27 @@ metadata:
     - bvar
     - forecasting
     - bayesian
+    - skill
+  requires_context: false
 variables:
   - name: endogenous_variables
     type: string
-    description: List of endogenous macroeconomic variables to be modeled (e.g., Log Real GDP, Inflation, Policy Rate).
+    description: List of endogenous macroeconomic variables to be modeled (e.g.,
+      Log Real GDP, Inflation, Policy Rate).
   - name: prior_specification
     type: string
-    description: The choice of Bayesian prior distributions for the VAR parameters (e.g., Minnesota prior, Normal-Wishart, Independent Normal-Wishart).
+    description: The choice of Bayesian prior distributions for the VAR 
+      parameters (e.g., Minnesota prior, Normal-Wishart, Independent 
+      Normal-Wishart).
   - name: structural_identification
     type: string
-    description: Strategy for identifying structural shocks from the reduced form (e.g., recursive Cholesky, sign restrictions, zero and sign restrictions).
+    description: Strategy for identifying structural shocks from the reduced 
+      form (e.g., recursive Cholesky, sign restrictions, zero and sign 
+      restrictions).
   - name: forecast_horizon
     type: string
-    description: The desired horizon for unconditional forecasting or impulse response analysis.
+    description: The desired horizon for unconditional forecasting or impulse 
+      response analysis.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -53,9 +62,11 @@ messages:
 
       Provide the full mathematical specification of the reduced-form VAR, the explicit prior density formulas, the posterior derivations or sampling strategy, and the structural identification scheme to produce Impulse Response Functions (IRFs).
 testData:
-  - endogenous_variables: "Log Real GDP, Log CPI, Federal Funds Rate, 10-Year Treasury Yield"
+  - endogenous_variables: "Log Real GDP, Log CPI, Federal Funds Rate, 10-Year Treasury
+      Yield"
     prior_specification: "Independent Normal-Inverse-Wishart prior"
-    structural_identification: "Sign restrictions for a monetary policy shock (contractionary shock increases rates, lowers GDP and CPI)"
+    structural_identification: "Sign restrictions for a monetary policy shock (contractionary
+      shock increases rates, lowers GDP and CPI)"
     forecast_horizon: "24 quarters"
   - endogenous_variables: "Industrial Production, Employment, Consumer Price Index"
     prior_specification: "Minnesota prior (Litterman)"

@@ -1,7 +1,7 @@
----
 name: EU MDR PSUR Architect
 version: 1.0.0
-description: Designs comprehensive, regulatory-compliant Periodic Safety Update Reports (PSUR) under EU MDR 2017/745 Article 86 and MDCG 2022-21.
+description: Designs comprehensive, regulatory-compliant Periodic Safety Update 
+  Reports (PSUR) under EU MDR 2017/745 Article 86 and MDCG 2022-21.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -10,6 +10,13 @@ metadata:
   domain: regulatory/quality
   complexity: high
   complianceStandard: EU MDR 2017/745
+  tags:
+    - quality
+    - mdr
+    - psur
+    - architect
+    - skill
+  requires_context: true
 variables:
   - name: device_name
     type: string
@@ -22,10 +29,12 @@ variables:
     description: The timeframe covered by the PSUR.
   - name: pms_data_summary
     type: string
-    description: A summary of collected PMS data, including complaints, vigilance, and PMCF findings.
+    description: A summary of collected PMS data, including complaints, 
+      vigilance, and PMCF findings.
   - name: sales_volume
     type: string
-    description: The sales volume and estimated patient exposure during the reporting period.
+    description: The sales volume and estimated patient exposure during the 
+      reporting period.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -69,8 +78,12 @@ testData:
       device_name: "CardioFlow Stent System"
       device_class: "Class III"
       reporting_period: "01-Jan-2023 to 31-Dec-2023"
-      sales_volume: "50,000 units sold globally. Estimated patient exposure: 49,500 patients."
-      pms_data_summary: "120 complaints logged (0.24% rate). 5 reportable adverse events (non-fatal, minor vessel dissection). No FSCAs. PMCF registry shows 98% patency at 1 year. Literature review confirms known risks with no new hazards."
+      sales_volume: "50,000 units sold globally. Estimated patient exposure: 49,500
+        patients."
+      pms_data_summary: "120 complaints logged (0.24% rate). 5 reportable adverse
+        events (non-fatal, minor vessel dissection). No FSCAs. PMCF registry shows
+        98% patency at 1 year. Literature review confirms known risks with no new
+        hazards."
 evaluators:
   - type: contains
     target: output

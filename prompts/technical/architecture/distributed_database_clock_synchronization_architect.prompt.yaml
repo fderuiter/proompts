@@ -1,7 +1,8 @@
----
 name: Distributed Database Clock Synchronization Architect
 version: 1.0.0
-description: Designs robust, highly accurate clock synchronization and logical time topologies for globally distributed, multi-leader databases to prevent temporal anomalies and ensure linearizability.
+description: Designs robust, highly accurate clock synchronization and logical 
+  time topologies for globally distributed, multi-leader databases to prevent 
+  temporal anomalies and ensure linearizability.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +14,21 @@ metadata:
     - clock-synchronization
     - consensus
     - data-consistency
+    - skill
   requires_context: false
 variables:
   - name: physical_infrastructure
-    description: Details of the underlying hardware and network environment (e.g., bare-metal with atomic clocks, public cloud VMs with NTP, hybrid edge deployments).
+    description: Details of the underlying hardware and network environment 
+      (e.g., bare-metal with atomic clocks, public cloud VMs with NTP, hybrid 
+      edge deployments).
     required: true
   - name: consistency_requirements
-    description: Desired consistency models and isolation levels (e.g., strict serializability, external consistency, snapshot isolation).
+    description: Desired consistency models and isolation levels (e.g., strict 
+      serializability, external consistency, snapshot isolation).
     required: true
   - name: global_scale
-    description: Geographic distribution parameters, including cross-region latency profiles and expected transaction throughput.
+    description: Geographic distribution parameters, including cross-region 
+      latency profiles and expected transaction throughput.
     required: true
 model: anthropic/claude-3-opus-20240229
 modelParameters:
@@ -57,13 +63,16 @@ messages:
       <user_query>{{global_scale}}</user_query>
 testData:
   - inputs:
-      physical_infrastructure: "Global AWS deployments relying on Amazon Time Sync Service."
+      physical_infrastructure: "Global AWS deployments relying on Amazon Time Sync
+        Service."
       consistency_requirements: "Causal consistency and snapshot isolation."
       global_scale: "3 continents, 150ms average RTT, 10k TPS."
     expected: "Hybrid Logical Clocks"
   - inputs:
-      physical_infrastructure: "Commodity VMs over public internet with unmanaged NTP."
-      consistency_requirements: "Strict serializability and external consistency for global financial transactions."
+      physical_infrastructure: "Commodity VMs over public internet with unmanaged
+        NTP."
+      consistency_requirements: "Strict serializability and external consistency for
+        global financial transactions."
       global_scale: "Worldwide distribution, unpredictable jitter."
     expected: "error"
 evaluators:

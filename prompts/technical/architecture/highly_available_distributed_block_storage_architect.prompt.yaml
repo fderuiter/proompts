@@ -1,7 +1,9 @@
----
 name: highly_available_distributed_block_storage_architect
 version: 1.0.0
-description: A Strategic Genesis Architect to design massively scalable, low-latency, and highly fault-tolerant distributed block storage topologies focusing on quorum replication, distributed consensus (Raft/Paxos), write-ahead logging (WAL), and storage tiering.
+description: A Strategic Genesis Architect to design massively scalable, 
+  low-latency, and highly fault-tolerant distributed block storage topologies 
+  focusing on quorum replication, distributed consensus (Raft/Paxos), 
+  write-ahead logging (WAL), and storage tiering.
 authors:
   - "Strategic Genesis Architect"
 metadata:
@@ -13,13 +15,18 @@ metadata:
     - consensus
     - high-availability
     - system-design
+    - skill
+  requires_context: false
 variables:
   - name: storage_requirements
-    description: "Specific block storage requirements including IOPS, throughput, and capacity constraints."
+    description: "Specific block storage requirements including IOPS, throughput,
+      and capacity constraints."
   - name: fault_tolerance_level
-    description: "Required fault tolerance (e.g., tolerate N node failures, multi-zone/region availability)."
+    description: "Required fault tolerance (e.g., tolerate N node failures, multi-zone/region
+      availability)."
   - name: consistency_model
-    description: "The desired consistency model (e.g., strict linearizability, sequential consistency)."
+    description: "The desired consistency model (e.g., strict linearizability, sequential
+      consistency)."
 model: claude-3-opus-20240229
 modelParameters:
   temperature: 0.1
@@ -61,11 +68,15 @@ messages:
 
       Provide the complete architectural topology, explicitly addressing the core mandates.
 testData:
-  - storage_requirements: "1 Million IOPS per volume, 4KB random writes, P99 latency < 2ms, 100PB total capacity."
-    fault_tolerance_level: "Tolerate simultaneous failure of 2 Availability Zones within a region."
+  - storage_requirements: "1 Million IOPS per volume, 4KB random writes, P99 latency
+      < 2ms, 100PB total capacity."
+    fault_tolerance_level: "Tolerate simultaneous failure of 2 Availability Zones
+      within a region."
     consistency_model: "Strict linearizability for all read and write operations."
-  - storage_requirements: "Massive sequential throughput (10GB/s per volume) for HPC workloads, 512KB block size."
-    fault_tolerance_level: "Tolerate rack-level power failures and up to 3 individual node network partitions."
+  - storage_requirements: "Massive sequential throughput (10GB/s per volume) for HPC
+      workloads, 512KB block size."
+    fault_tolerance_level: "Tolerate rack-level power failures and up to 3 individual
+      node network partitions."
     consistency_model: "Sequential consistency with read-after-write guarantees."
 evaluators:
   - type: regex
@@ -76,7 +87,9 @@ evaluators:
     description: "Must explicitly detail the Write-Ahead Logging mechanism."
   - type: regex
     pattern: "(?i)(split-brain|network partition|quorum)"
-    description: "Must explicitly address split-brain and quorum mechanics for fault tolerance."
+    description: "Must explicitly address split-brain and quorum mechanics for fault
+      tolerance."
   - type: regex
     pattern: "(?i)(linearizability|consistency)"
-    description: "Must provide a rigorous explanation of how the requested consistency model is achieved."
+    description: "Must provide a rigorous explanation of how the requested consistency
+      model is achieved."

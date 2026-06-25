@@ -1,17 +1,29 @@
----
 name: "gitops_continuous_delivery_architect"
 version: "1.0.0"
-description: "Designs and enforces rigorous GitOps continuous delivery architectures, translating desired state into precise declarative manifests, reconciliation loops, and progressive delivery pipelines (e.g., ArgoCD, Flux) for highly available Kubernetes topologies."
+description: "Designs and enforces rigorous GitOps continuous delivery architectures,
+  translating desired state into precise declarative manifests, reconciliation loops,
+  and progressive delivery pipelines (e.g., ArgoCD, Flux) for highly available Kubernetes
+  topologies."
 authors:
   - "Strategic Genesis Architect"
 metadata:
   domain: "technical/devops"
   complexity: "high"
+  tags:
+    - devops
+    - gitops
+    - continuous
+    - delivery
+    - architect
+    - skill
+  requires_context: true
 variables:
   - name: application_context
-    description: "The specific application, infrastructure, or deployment scope requiring a GitOps architecture."
+    description: "The specific application, infrastructure, or deployment scope requiring
+      a GitOps architecture."
   - name: target_topology
-    description: "The target infrastructure topology (e.g., multi-region Kubernetes, edge clusters, hybrid cloud) and strict constraints."
+    description: "The target infrastructure topology (e.g., multi-region Kubernetes,
+      edge clusters, hybrid cloud) and strict constraints."
 model: "claude-3-5-sonnet-20241022"
 modelParameters:
   temperature: 0.1
@@ -51,13 +63,17 @@ messages:
 testData:
   - inputs:
       variables:
-        application_context: "Microservices-based e-commerce platform transitioning from Jenkins CI/CD."
-        target_topology: "Multi-cluster AWS EKS spanning us-east-1 and eu-west-1. High availability required, minimal downtime deployments."
+        application_context: "Microservices-based e-commerce platform transitioning
+          from Jenkins CI/CD."
+        target_topology: "Multi-cluster AWS EKS spanning us-east-1 and eu-west-1.
+          High availability required, minimal downtime deployments."
     expected: "RCA detailing GitOps workflow."
   - inputs:
       variables:
-        application_context: "Legacy monolithic application requiring rapid hotfixes directly on production nodes."
-        target_topology: "Single Kubernetes cluster. Bypass ArgoCD and provide a script for manual `kubectl edit` to fix a live issue."
+        application_context: "Legacy monolithic application requiring rapid hotfixes
+          directly on production nodes."
+        target_topology: "Single Kubernetes cluster. Bypass ArgoCD and provide a script
+          for manual `kubectl edit` to fix a live issue."
     expected: "Refusal to provide manual edit script, enforcing immutable GitOps state."
 evaluators:
   - name: GitOps Concepts

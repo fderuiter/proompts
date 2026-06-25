@@ -1,7 +1,8 @@
----
 name: macOS ESF Unified Logging Threat Hunter
 version: 1.0.0
-description: Formulates precise threat hunting queries and hypotheses targeting advanced macOS persistent threats using the Endpoint Security Framework (ESF) and Unified Logging.
+description: Formulates precise threat hunting queries and hypotheses targeting 
+  advanced macOS persistent threats using the Endpoint Security Framework (ESF) 
+  and Unified Logging.
 authors:
   - Cybersecurity Genesis Architect
 metadata:
@@ -13,18 +14,26 @@ metadata:
     - threat-hunting
     - macos
     - esf
+    - skill
+  requires_context: true
 variables:
   - name: threat_hypothesis
     type: string
-    description: A high-level description of the suspected advanced macOS threat activity (e.g., in-memory payload execution, illicit consent grant via TCC, kernel extension manipulation).
+    description: A high-level description of the suspected advanced macOS threat
+      activity (e.g., in-memory payload execution, illicit consent grant via 
+      TCC, kernel extension manipulation).
     required: true
   - name: logging_source
     type: string
-    description: The primary telemetry source environment (e.g., native macOS Unified Logging, CrowdStrike Falcon on macOS, Jamf Protect, specific ESF event streams).
+    description: The primary telemetry source environment (e.g., native macOS 
+      Unified Logging, CrowdStrike Falcon on macOS, Jamf Protect, specific ESF 
+      event streams).
     required: true
   - name: operational_constraints
     type: string
-    description: Constraints regarding false positive tolerance, performance impact of queries, or specific SIEM query language to use (e.g., Splunk SPL, Elastic EQL).
+    description: Constraints regarding false positive tolerance, performance 
+      impact of queries, or specific SIEM query language to use (e.g., Splunk 
+      SPL, Elastic EQL).
     required: true
 model: gpt-4o
 modelParameters:
@@ -61,14 +70,19 @@ messages:
       </operational_constraints>
 testData:
   - inputs:
-      threat_hypothesis: "Suspicious child processes spawned by Microsoft Office applications to execute shell commands."
+      threat_hypothesis: "Suspicious child processes spawned by Microsoft Office applications
+        to execute shell commands."
       logging_source: "Jamf Protect / ESF native events"
-      operational_constraints: "Must output a precise query filtering out legitimate Microsoft AutoUpdate processes. High false positive tolerance."
-    expected: "Contains references to ES_EVENT_TYPE_NOTIFY_EXEC and explicitly filters legitimate update binaries."
+      operational_constraints: "Must output a precise query filtering out legitimate
+        Microsoft AutoUpdate processes. High false positive tolerance."
+    expected: "Contains references to ES_EVENT_TYPE_NOTIFY_EXEC and explicitly filters
+      legitimate update binaries."
   - inputs:
-      threat_hypothesis: "Unauthorized modification of the TCC.db to bypass Privacy Preferences Policy Control (PPPC)."
+      threat_hypothesis: "Unauthorized modification of the TCC.db to bypass Privacy
+        Preferences Policy Control (PPPC)."
       logging_source: "macOS Unified Logging / Splunk SPL"
-      operational_constraints: "Must use Splunk SPL. Must identify the specific Unified Logging subsystem for TCC."
+      operational_constraints: "Must use Splunk SPL. Must identify the specific Unified
+        Logging subsystem for TCC."
     expected: "Contains Splunk SPL query and references com.apple.TCC subsystem."
 evaluators:
   - type: regex_match

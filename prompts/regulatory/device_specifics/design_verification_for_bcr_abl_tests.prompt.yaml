@@ -1,57 +1,58 @@
 name: Design Verification for BCR-ABL Tests
 version: 0.1.0
-description: Outline design verification and validation requirements for a BCR-ABL
-  quantitation test.
+description: Outline design verification and validation requirements for a 
+  BCR-ABL quantitation test.
 metadata:
   domain: regulatory
   complexity: low
   tags:
-  - medical-devices
-  - design
-  - verification
-  - bcr-abl
-  - tests
+    - medical-devices
+    - design
+    - verification
+    - bcr-abl
+    - tests
+    - skill
   requires_context: false
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-- role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
-    FDA and ISO compliance tasks.
+  - role: system
+    content: 'You are an expert Regulatory Affairs Specialist capable of handling
+      complex FDA and ISO compliance tasks.
 
 
-    ## Context
+      ## Context
 
-    21 CFR 866.6060
-
-
-    ## Objective
-
-    Outline design verification and validation requirements for a BCR-ABL quantitation
-    test.
+      21 CFR 866.6060
 
 
-    ## Output Format
+      ## Objective
 
-    Validation checklist or matrix.'
-- role: user
-  content: 'Please perform the task using the following input data:
+      Outline design verification and validation requirements for a BCR-ABL quantitation
+      test.
 
 
-    <input>
+      ## Output Format
 
-    {{input}}
+      Validation checklist or matrix.'
+  - role: user
+    content: 'Please perform the task using the following input data:
 
-    </input>'
+
+      <input>
+
+      {{input}}
+
+      </input>'
 testData:
-- expected: Expected output as per instructions.
-  vars: Variant types, IS conversion methodology, and calibration control data. (Example
-    data)
+  - expected: Expected output as per instructions.
+    vars: Variant types, IS conversion methodology, and calibration control 
+      data. (Example data)
 evaluators:
-- name: Validation Check
-  regex: (?i)Review
+  - name: Validation Check
+    regex: (?i)Review

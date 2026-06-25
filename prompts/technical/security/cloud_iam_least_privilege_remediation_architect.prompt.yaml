@@ -1,7 +1,8 @@
----
 name: Cloud IAM Least-Privilege Remediation Architect
 version: 1.0.0
-description: Analyzes overly permissive cloud Identity and Access Management (IAM) configurations and generates precise, least-privilege JSON/Terraform remediation policies.
+description: Analyzes overly permissive cloud Identity and Access Management 
+  (IAM) configurations and generates precise, least-privilege JSON/Terraform 
+  remediation policies.
 authors:
   - name: Cybersecurity Genesis Architect
 metadata:
@@ -13,13 +14,16 @@ metadata:
     - cloud-sec
     - iam
     - zero-trust
+    - skill
   requires_context: true
 variables:
   - name: current_iam_policy
-    description: The existing, potentially overly permissive IAM policy JSON or Terraform configuration.
+    description: The existing, potentially overly permissive IAM policy JSON or 
+      Terraform configuration.
     required: true
   - name: architecture_context
-    description: Business logic and resource access requirements (e.g., this role needs to read from S3 bucket X and write to DynamoDB table Y).
+    description: Business logic and resource access requirements (e.g., this 
+      role needs to read from S3 bucket X and write to DynamoDB table Y).
     required: true
 model: gpt-4o
 modelParameters:
@@ -56,12 +60,18 @@ messages:
 testData:
   - inputs:
       current_iam_policy: '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Action":["s3:*"],"Resource":["*"]},{"Effect":"Allow","Action":["iam:PassRole"],"Resource":["*"]}]}'
-      architecture_context: "This role is for an EC2 instance that strictly needs to read files from 'arn:aws:s3:::corporate-data-bucket/reports/' and write logs to 'arn:aws:s3:::corporate-logs-bucket/ec2/'. It needs to pass the 'arn:aws:iam::123456789012:role/TaskExecutionRole' to ECS tasks."
-    expected: "Contains precise S3 read/write actions, strict resource ARNs, and a constrained PassRole statement."
+      architecture_context: "This role is for an EC2 instance that strictly needs
+        to read files from 'arn:aws:s3:::corporate-data-bucket/reports/' and write
+        logs to 'arn:aws:s3:::corporate-logs-bucket/ec2/'. It needs to pass the 'arn:aws:iam::123456789012:role/TaskExecutionRole'
+        to ECS tasks."
+    expected: "Contains precise S3 read/write actions, strict resource ARNs, and a
+      constrained PassRole statement."
   - inputs:
       current_iam_policy: '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Action":["dynamodb:PutItem","dynamodb:Scan"],"Resource":["arn:aws:dynamodb:us-east-1:123456789012:table/*"]}]}'
-      architecture_context: "Lambda function needs to read/write specific items to the 'Users' table and requires encryption in transit."
-    expected: "Contains specific actions like PutItem, GetItem (instead of Scan), resource scoped to the 'Users' table, and aws:SecureTransport condition."
+      architecture_context: "Lambda function needs to read/write specific items to
+        the 'Users' table and requires encryption in transit."
+    expected: "Contains specific actions like PutItem, GetItem (instead of Scan),
+      resource scoped to the 'Users' table, and aws:SecureTransport condition."
 evaluators:
   - name: Vulnerability Assessment Included
     regex:

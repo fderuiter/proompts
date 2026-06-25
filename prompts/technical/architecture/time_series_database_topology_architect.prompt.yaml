@@ -1,7 +1,8 @@
----
 name: Time-Series Database Topology Architect
 version: 1.0.0
-description: Architects highly scalable time-series database topologies optimized for massive ingestion, downsampling, and long-term retention of telemetry data.
+description: Architects highly scalable time-series database topologies 
+  optimized for massive ingestion, downsampling, and long-term retention of 
+  telemetry data.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,16 +14,20 @@ metadata:
     - time-series
     - scalability
     - telemetry
+    - skill
   requires_context: false
 variables:
   - name: telemetry_profile
-    description: A description of the telemetry data being ingested (e.g., metric cardinality, data points per second, payload size).
+    description: A description of the telemetry data being ingested (e.g., 
+      metric cardinality, data points per second, payload size).
     required: true
   - name: querying_requirements
-    description: The expected read patterns (e.g., real-time dashboards, historical aggregation, complex alert evaluations).
+    description: The expected read patterns (e.g., real-time dashboards, 
+      historical aggregation, complex alert evaluations).
     required: true
   - name: retention_policy
-    description: The data lifecycle requirements, including raw data retention and downsampling tiers.
+    description: The data lifecycle requirements, including raw data retention 
+      and downsampling tiers.
     required: true
 model: gpt-4o
 modelParameters:
@@ -63,9 +68,13 @@ messages:
       </retention_policy>
 testData:
   - variables:
-      telemetry_profile: "Global IoT sensor network. 10 million active devices emitting 5 metrics every 10 seconds. High cardinality due to dynamic device IDs and firmware versions."
-      querying_requirements: "Real-time alerting on rolling 5-minute windows. Historical trend analysis requiring aggregations over 30-day periods."
-      retention_policy: "Raw data kept for 14 days. 1-minute rollups for 90 days. 1-hour rollups kept indefinitely in cold storage."
+      telemetry_profile: "Global IoT sensor network. 10 million active devices emitting
+        5 metrics every 10 seconds. High cardinality due to dynamic device IDs and
+        firmware versions."
+      querying_requirements: "Real-time alerting on rolling 5-minute windows. Historical
+        trend analysis requiring aggregations over 30-day periods."
+      retention_policy: "Raw data kept for 14 days. 1-minute rollups for 90 days.
+        1-hour rollups kept indefinitely in cold storage."
     evaluators:
       - type: includes
         target: message.content
@@ -74,9 +83,12 @@ testData:
         target: message.content
         pattern: "downsampl(ing|e)|rollup"
   - variables:
-      telemetry_profile: "High-frequency trading system metrics. 500k metrics/second with extreme micro-bursts. Strict ordering requirements."
-      querying_requirements: "Sub-millisecond query latency for the last 1-hour window. Minimal historical querying."
-      retention_policy: "Raw data retained in memory/fast NVMe for 24 hours. No downsampling required, dropped after 24 hours."
+      telemetry_profile: "High-frequency trading system metrics. 500k metrics/second
+        with extreme micro-bursts. Strict ordering requirements."
+      querying_requirements: "Sub-millisecond query latency for the last 1-hour window.
+        Minimal historical querying."
+      retention_policy: "Raw data retained in memory/fast NVMe for 24 hours. No downsampling
+        required, dropped after 24 hours."
     evaluators:
       - type: includes
         target: message.content

@@ -1,16 +1,28 @@
----
 name: health_inequality_concentration_index_architect
 version: 1.0.0
-description: A Principal Sociologist and Lead Social Epidemiologist agent designed to rigorously analyze systemic health disparities, calculate health inequality indices, and model structural stratification mechanisms using ASA standards.
+description: A Principal Sociologist and Lead Social Epidemiologist agent 
+  designed to rigorously analyze systemic health disparities, calculate health 
+  inequality indices, and model structural stratification mechanisms using ASA 
+  standards.
 authors:
   - Jules
 metadata:
   domain: scientific/sociology/stratification/systemic_inequality
   complexity: high
+  tags:
+    - sociology
+    - stratification
+    - systemic-inequality
+    - health
+    - inequality
+    - skill
+  requires_context: false
 variables:
   - name: socioeconomic_health_data
     type: string
-    description: Raw population-level dataset containing socioeconomic status (SES) indicators (e.g., income, education) paired with corresponding health outcomes (e.g., morbidity rates, life expectancy).
+    description: Raw population-level dataset containing socioeconomic status 
+      (SES) indicators (e.g., income, education) paired with corresponding 
+      health outcomes (e.g., morbidity rates, life expectancy).
   - name: focal_population
     type: string
     description: The demographic population, region, or cohort being analyzed.
@@ -46,7 +58,8 @@ messages:
       </socioeconomic_health_data>
 testData:
   - variables:
-      socioeconomic_health_data: "SES Decile 1: Income $15k, Morbidity 45%; SES Decile 5: Income $50k, Morbidity 25%; SES Decile 10: Income $150k, Morbidity 10%."
+      socioeconomic_health_data: "SES Decile 1: Income $15k, Morbidity 45%; SES Decile
+        5: Income $50k, Morbidity 25%; SES Decile 10: Income $150k, Morbidity 10%."
       focal_population: "National Urban Cohort, 2020-2023"
 evaluators:
   - type: contains

@@ -1,7 +1,9 @@
----
 name: Quantitative FX Hedging Strategy Architect
 version: "1.0.0"
-description: Formulates rigorous corporate Foreign Exchange (FX) risk mitigation strategies, optimizing hedging portfolios using forward contracts, options, and natural hedges to minimize earnings volatility under macroeconomic uncertainty.
+description: Formulates rigorous corporate Foreign Exchange (FX) risk mitigation
+  strategies, optimizing hedging portfolios using forward contracts, options, 
+  and natural hedges to minimize earnings volatility under macroeconomic 
+  uncertainty.
 authors:
   - Enterprise Strategy Genesis Architect
 metadata:
@@ -13,16 +15,23 @@ metadata:
     - fx-hedging
     - treasury
     - quantitative-finance
+    - skill
   requires_context: false
 variables:
   - name: currency_exposures
-    description: Detailed mapping of the enterprise's functional currency and projected net foreign currency exposures (accounts receivable, payable, and anticipated cash flows) across different time horizons.
+    description: Detailed mapping of the enterprise's functional currency and 
+      projected net foreign currency exposures (accounts receivable, payable, 
+      and anticipated cash flows) across different time horizons.
     required: true
   - name: macroeconomic_volatility_forecast
-    description: Current and projected exchange rate volatilities, interest rate differentials, and macro-geopolitical risk factors impacting the relevant currency pairs.
+    description: Current and projected exchange rate volatilities, interest rate
+      differentials, and macro-geopolitical risk factors impacting the relevant 
+      currency pairs.
     required: true
   - name: hedging_constraints_and_objectives
-    description: Corporate treasury policies, allowable derivative instruments (e.g., forwards, vanilla/exotic options), risk tolerance (e.g., Value at Risk limits), and hedge accounting (ASC 815/IFRS 9) requirements.
+    description: Corporate treasury policies, allowable derivative instruments 
+      (e.g., forwards, vanilla/exotic options), risk tolerance (e.g., Value at 
+      Risk limits), and hedge accounting (ASC 815/IFRS 9) requirements.
     required: true
 model: gpt-4o
 modelParameters:
@@ -60,13 +69,21 @@ messages:
       </hedging_constraints_and_objectives>
 testData:
   - variables:
-      currency_exposures: "USD functional currency. Expected EUR 50M accounts receivable in 6 months. EUR 10M accounts payable in 6 months."
-      macroeconomic_volatility_forecast: "EUR/USD Spot: 1.10. 6-month EUR interest rate: 3.5%. 6-month USD interest rate: 5.0%. High geopolitical volatility expected in Europe, skewing EUR depreciation."
-      hedging_constraints_and_objectives: "Target 80% hedge ratio on net exposure. Maximize downside protection while retaining 50% of upside potential. Must comply with ASC 815 cash flow hedge accounting."
+      currency_exposures: "USD functional currency. Expected EUR 50M accounts receivable
+        in 6 months. EUR 10M accounts payable in 6 months."
+      macroeconomic_volatility_forecast: "EUR/USD Spot: 1.10. 6-month EUR interest
+        rate: 3.5%. 6-month USD interest rate: 5.0%. High geopolitical volatility
+        expected in Europe, skewing EUR depreciation."
+      hedging_constraints_and_objectives: "Target 80% hedge ratio on net exposure.
+        Maximize downside protection while retaining 50% of upside potential. Must
+        comply with ASC 815 cash flow hedge accounting."
   - variables:
-      currency_exposures: "EUR functional currency. Expected USD 100M accounts payable in 12 months. USD 20M accounts receivable in 12 months."
-      macroeconomic_volatility_forecast: "EUR/USD Spot: 1.05. 12-month EUR interest rate: 4.0%. 12-month USD interest rate: 5.5%. Moderate to low volatility expected."
-      hedging_constraints_and_objectives: "Target 100% hedge ratio on net exposure. Absolute cost minimization. Must comply with IFRS 9 hedge accounting."
+      currency_exposures: "EUR functional currency. Expected USD 100M accounts payable
+        in 12 months. USD 20M accounts receivable in 12 months."
+      macroeconomic_volatility_forecast: "EUR/USD Spot: 1.05. 12-month EUR interest
+        rate: 4.0%. 12-month USD interest rate: 5.5%. Moderate to low volatility expected."
+      hedging_constraints_and_objectives: "Target 100% hedge ratio on net exposure.
+        Absolute cost minimization. Must comply with IFRS 9 hedge accounting."
 evaluators:
   - name: Contains Interest Rate Parity Equation
     type: regex

@@ -1,7 +1,8 @@
----
 name: Deception Technology & Active Defense Architect
 version: 1.0.0
-description: Designs highly specialized deception environments and active defense architectures to entangle, analyze, and attribute advanced persistent threats (APTs).
+description: Designs highly specialized deception environments and active 
+  defense architectures to entangle, analyze, and attribute advanced persistent 
+  threats (APTs).
 authors:
   - Cybersecurity Genesis Architect
 metadata:
@@ -13,13 +14,18 @@ metadata:
     - active-defense
     - apt
     - threat-intelligence
+    - skill
   requires_context: false
 variables:
   - name: target_environment
-    description: Detailed specification of the target network environment where deception technologies will be deployed (e.g., hybrid cloud, industrial control systems (ICS), highly segmented zero-trust corporate network).
+    description: Detailed specification of the target network environment where 
+      deception technologies will be deployed (e.g., hybrid cloud, industrial 
+      control systems (ICS), highly segmented zero-trust corporate network).
     required: true
   - name: adversary_profile
-    description: The known or hypothesized Advanced Persistent Threat (APT) profile, including specific TTPs (Tactics, Techniques, and Procedures), typical objectives, and operational behavior.
+    description: The known or hypothesized Advanced Persistent Threat (APT) 
+      profile, including specific TTPs (Tactics, Techniques, and Procedures), 
+      typical objectives, and operational behavior.
     required: true
 model: gpt-4o
 modelParameters:
@@ -49,12 +55,19 @@ messages:
       {{adversary_profile}}
 testData:
   - vars:
-      target_environment: "A highly segmented, on-premise Kubernetes cluster managing core financial trading applications, using Cilium for CNI and mutual TLS (mTLS) everywhere."
-      adversary_profile: "APT29 (Cozy Bear) focusing on stealthy lateral movement via compromised identities, exploiting container misconfigurations, and seeking persistent access to data lakes."
+      target_environment: "A highly segmented, on-premise Kubernetes cluster managing
+        core financial trading applications, using Cilium for CNI and mutual TLS (mTLS)
+        everywhere."
+      adversary_profile: "APT29 (Cozy Bear) focusing on stealthy lateral movement
+        via compromised identities, exploiting container misconfigurations, and seeking
+        persistent access to data lakes."
     expected: "**honeytokens**"
   - vars:
-      target_environment: "A multi-cloud environment spanning AWS and Azure, heavily reliant on serverless functions and federated IAM."
-      adversary_profile: "Scattered Spider (UNC3944), known for aggressive social engineering, MFA fatigue, and rapid exploitation of cloud identities to achieve data extortion."
+      target_environment: "A multi-cloud environment spanning AWS and Azure, heavily
+        reliant on serverless functions and federated IAM."
+      adversary_profile: "Scattered Spider (UNC3944), known for aggressive social
+        engineering, MFA fatigue, and rapid exploitation of cloud identities to achieve
+        data extortion."
     expected: "**fake AWS keys**"
 evaluators:
   - name: Active Defense Concepts Check

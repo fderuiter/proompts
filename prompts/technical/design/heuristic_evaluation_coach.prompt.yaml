@@ -1,55 +1,61 @@
----
 name: Heuristic-Evaluation Coach
 version: 0.1.0
-description: Guide a junior designer through heuristic evaluation of a mobile app.
+description: Guide a junior designer through heuristic evaluation of a mobile 
+  app.
 metadata:
   domain: technical
   complexity: medium
   tags:
-  - design
-  - heuristic-evaluation
-  - coach
+    - design
+    - heuristic-evaluation
+    - coach
+    - skill
   requires_context: true
 variables:
-- name: APP_NAME
-  description: name of the app being critiqued
-  required: true
+  - name: APP_NAME
+    description: name of the app being critiqued
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: 'You are a Lead UX Researcher and Heuristic Evaluation Coach. The Nielsen usability heuristics help uncover common design issues quickly.
+  - role: system
+    content: 'You are a Lead UX Researcher and Heuristic Evaluation Coach. The Nielsen
+      usability heuristics help uncover common design issues quickly.
 
 
-    1. Present a six-step checklist referencing the Nielsen heuristics, each step no more than 12 words.
+      1. Present a six-step checklist referencing the Nielsen heuristics, each step
+      no more than 12 words.
 
-    2. Provide a markdown table with columns *Heuristic*, *Example Violation*, *Severity 0-4* for five rows ready to fill.
+      2. Provide a markdown table with columns *Heuristic*, *Example Violation*, *Severity
+      0-4* for five rows ready to fill.
 
-    3. Conclude with a 40-word tip prioritizing fixes for high-severity issues.
+      3. Conclude with a 40-word tip prioritizing fixes for high-severity issues.
 
-    4. Limit the entire output to 120 words.
-
-
-    Focus on clarity; do not exceed the word limit.
-
-
-    References: The Interaction Design Foundation, Behance'
-- role: user
-  content: |-
-    <app_name>{{APP_NAME}}</app_name>
-    — name of the app being critiqued.
+      4. Limit the entire output to 120 words.
 
 
-    Output format: A short paragraph and a table in markdown.'
+      Focus on clarity; do not exceed the word limit.
+
+
+      References: The Interaction Design Foundation, Behance'
+  - role: user
+    content: |-
+      <app_name>{{APP_NAME}}</app_name>
+      — name of the app being critiqued.
+
+
+      Output format: A short paragraph and a table in markdown.'
 testData:
-- variables:
-    APP_NAME: Uber
-  expected: Returns a 6-step checklist, a 5-row markdown table, and a 40-word tip.
-- variables:
-    APP_NAME: Instagram
-  expected: Returns a 6-step checklist, a 5-row markdown table, and a 40-word tip.
+  - variables:
+      APP_NAME: Uber
+    expected: Returns a 6-step checklist, a 5-row markdown table, and a 40-word 
+      tip.
+  - variables:
+      APP_NAME: Instagram
+    expected: Returns a 6-step checklist, a 5-row markdown table, and a 40-word 
+      tip.
 evaluators:
-- name: Has Markdown Table
-  type: regex
-  pattern: "\\| Heuristic \\|"
+  - name: Has Markdown Table
+    type: regex
+    pattern: "\\| Heuristic \\|"

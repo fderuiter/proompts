@@ -1,7 +1,9 @@
----
 name: Recursive Metacognitive Error Corrector
 version: "1.0.0"
-description: An advanced meta-reasoning architecture that executes a Step-Back Abstraction Graph to identify logical inconsistencies, abstract structural dependencies, and systematically correct errors through recursive self-evaluation.
+description: An advanced meta-reasoning architecture that executes a Step-Back 
+  Abstraction Graph to identify logical inconsistencies, abstract structural 
+  dependencies, and systematically correct errors through recursive 
+  self-evaluation.
 authors:
   - AGI Genesis Architect
 metadata:
@@ -12,13 +14,16 @@ metadata:
     - meta-reasoning
     - self-correction
     - metacognition
+    - skill
   requires_context: true
 variables:
   - name: initial_output
-    description: The primary computational reasoning output or logical proof that requires metacognitive evaluation.
+    description: The primary computational reasoning output or logical proof 
+      that requires metacognitive evaluation.
     required: true
   - name: objective_constraints
-    description: The formal requirements and axiomatic constraints the output was supposed to satisfy.
+    description: The formal requirements and axiomatic constraints the output 
+      was supposed to satisfy.
     required: true
 model: gpt-4o
 modelParameters:
@@ -52,8 +57,13 @@ messages:
       Deliver the analysis strictly starting with 'ABSTRACTION_GRAPH:' followed by 'FAILURE_NODES:', 'METACOGNITIVE_CORRECTION:', and 'VERIFIED_OUTPUT:'.
 testData:
   - vars:
-      initial_output: "To optimize the factory's throughput, we should increase the conveyor belt speed by 50%. Since the current bottleneck is the packaging machine, which processes 100 units/min, and the belt delivers 80 units/min, increasing the belt speed to 120 units/min will eliminate the bottleneck and increase overall throughput to 120 units/min."
-      objective_constraints: "The factory throughput cannot exceed the processing capacity of the slowest machine in the active operational path."
+      initial_output: "To optimize the factory's throughput, we should increase the
+        conveyor belt speed by 50%. Since the current bottleneck is the packaging
+        machine, which processes 100 units/min, and the belt delivers 80 units/min,
+        increasing the belt speed to 120 units/min will eliminate the bottleneck and
+        increase overall throughput to 120 units/min."
+      objective_constraints: "The factory throughput cannot exceed the processing
+        capacity of the slowest machine in the active operational path."
     expected: |
       ABSTRACTION_GRAPH:
       Node 1: Bottleneck Capacity = 100 units/min

@@ -1,7 +1,7 @@
----
 name: Multi-Cloud Disaster Recovery Architect
 version: 1.0.0
-description: Designs active-active and active-passive multi-cloud disaster recovery architectures with rigorous RTO/RPO enforcement.
+description: Designs active-active and active-passive multi-cloud disaster 
+  recovery architectures with rigorous RTO/RPO enforcement.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +13,21 @@ metadata:
     - multi-cloud
     - resilience
     - system-design
+    - skill
   requires_context: false
 variables:
   - name: workload_criticality
-    description: Details regarding the critical components, their RTO (Recovery Time Objective), and RPO (Recovery Point Objective) requirements.
+    description: Details regarding the critical components, their RTO (Recovery 
+      Time Objective), and RPO (Recovery Point Objective) requirements.
     required: true
   - name: current_topology
-    description: Information about the existing single-cloud or hybrid topology and primary data stores.
+    description: Information about the existing single-cloud or hybrid topology 
+      and primary data stores.
     required: true
   - name: compliance_constraints
-    description: Details on data sovereignty, residency, and failover constraints (e.g., cross-region network costs, allowed secondary providers).
+    description: Details on data sovereignty, residency, and failover 
+      constraints (e.g., cross-region network costs, allowed secondary 
+      providers).
     required: true
 model: gpt-4o
 modelParameters:
@@ -57,12 +62,14 @@ testData:
   - inputs:
       workload_criticality: "Financial ledger with 0 RPO and < 5 second RTO."
       current_topology: "AWS us-east-1 running Aurora PostgreSQL."
-      compliance_constraints: "Secondary must be in GCP europe-west1 due to strict data residency laws."
+      compliance_constraints: "Secondary must be in GCP europe-west1 due to strict
+        data residency laws."
     expected: "error"
   - inputs:
       workload_criticality: "E-commerce catalog with 5 min RPO and 1 hour RTO."
       current_topology: "Azure East US running CosmosDB and AKS."
-      compliance_constraints: "Secondary in AWS us-east-1. Data replication costs must be minimized."
+      compliance_constraints: "Secondary in AWS us-east-1. Data replication costs
+        must be minimized."
     expected: "async"
 evaluators:
   - name: Expert Terminology Check

@@ -1,7 +1,8 @@
----
 name: Natural Language Argument Formalizer
 version: 1.0.0
-description: Systematically formalizes complex natural language philosophical arguments into rigorous symbolic logic, testing for validity and identifying informal fallacies.
+description: Systematically formalizes complex natural language philosophical 
+  arguments into rigorous symbolic logic, testing for validity and identifying 
+  informal fallacies.
 authors:
   - name: Philosophical Genesis Architect
 metadata:
@@ -13,13 +14,16 @@ metadata:
     - formalization
     - symbolic-logic
     - argument-analysis
+    - skill
   requires_context: false
 variables:
   - name: natural_language_argument
-    description: The complex philosophical argument expressed in natural language that needs to be formalized into symbolic logic.
+    description: The complex philosophical argument expressed in natural 
+      language that needs to be formalized into symbolic logic.
     required: true
   - name: target_logic_system
-    description: The specific formal logic system to use for the formalization (e.g., Propositional Logic, First-Order Logic, Modal Logic S5).
+    description: The specific formal logic system to use for the formalization 
+      (e.g., Propositional Logic, First-Order Logic, Modal Logic S5).
     required: true
 model: gpt-4o
 modelParameters:
@@ -51,14 +55,20 @@ messages:
       <target_logic_system>{{target_logic_system}}</target_logic_system>
 testData:
   - vars:
-      natural_language_argument: "If God is omnipotent, He can prevent evil. If God is omniscient, He knows about evil. If God is perfectly good, He wants to prevent evil. Evil exists. Therefore, God is either not omnipotent, not omniscient, or not perfectly good."
+      natural_language_argument: "If God is omnipotent, He can prevent evil. If God
+        is omniscient, He knows about evil. If God is perfectly good, He wants to
+        prevent evil. Evil exists. Therefore, God is either not omnipotent, not omniscient,
+        or not perfectly good."
       target_logic_system: "Propositional Logic"
     expected: "Propositional Extraction"
   - vars:
-      natural_language_argument: "Necessarily, if a being is maximally great, it exists in all possible worlds. A maximally great being is possible. Therefore, a maximally great being exists."
+      natural_language_argument: "Necessarily, if a being is maximally great, it exists
+        in all possible worlds. A maximally great being is possible. Therefore, a
+        maximally great being exists."
       target_logic_system: "Propositional Logic"
     expected: "{'error': 'incompatible logic system'}"
 evaluators:
   - name: Refusal or Extraction Check
     type: regex
-    pattern: "(\\{'error': 'incompatible logic system'\\}|Propositional Extraction|Validity Check)"
+    pattern: "(\\{'error': 'incompatible logic system'\\}|Propositional Extraction|Validity
+      Check)"

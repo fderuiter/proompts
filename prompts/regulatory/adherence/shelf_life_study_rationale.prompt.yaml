@@ -1,54 +1,56 @@
 name: Shelf-life Study Rationale
 version: 0.1.0
-description: Draft a rationale for correlating accelerated aging data with real-time
-  requirements.
+description: Draft a rationale for correlating accelerated aging data with 
+  real-time requirements.
 metadata:
   domain: regulatory
   complexity: low
   tags:
-  - regulatory-adherence
-  - shelf-life
-  - study
-  - rationale
+    - regulatory-adherence
+    - shelf-life
+    - study
+    - rationale
+    - skill
   requires_context: true
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-- role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
-    FDA and ISO compliance tasks.
+  - role: system
+    content: 'You are an expert Regulatory Affairs Specialist capable of handling
+      complex FDA and ISO compliance tasks.
 
 
-    ## Context
+      ## Context
 
-    21 CFR Part 801
-
-
-    ## Objective
-
-    Draft a rationale for correlating accelerated aging data with real-time requirements.
+      21 CFR Part 801
 
 
-    ## Output Format
+      ## Objective
 
-    Formal technical report.'
-- role: user
-  content: 'Please perform the task using the following input data:
+      Draft a rationale for correlating accelerated aging data with real-time requirements.
 
 
-    <input>
+      ## Output Format
 
-    {{input}}
+      Formal technical report.'
+  - role: user
+    content: 'Please perform the task using the following input data:
 
-    </input>'
+
+      <input>
+
+      {{input}}
+
+      </input>'
 testData:
-- expected: Expected output as per instructions.
-  vars: Material stability data, packaging type, and aging protocols. (Example data)
+  - expected: Expected output as per instructions.
+    vars: Material stability data, packaging type, and aging protocols. (Example
+      data)
 evaluators:
-- name: Validation Check
-  regex: (?i)Evaluate
+  - name: Validation Check
+    regex: (?i)Evaluate

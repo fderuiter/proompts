@@ -1,21 +1,34 @@
----
 name: "log_gaussian_cox_process_architect"
 version: "1.0.0"
-description: "Acts as a Principal Statistician to mathematically formulate and design advanced Log-Gaussian Cox Processes (LGCPs) for modeling complex spatial point patterns, including deriving intensity functions, specifying spatial covariance structures, and designing scalable inferential strategies via SPDE/INLA or MCMC."
+description: "Acts as a Principal Statistician to mathematically formulate and design
+  advanced Log-Gaussian Cox Processes (LGCPs) for modeling complex spatial point patterns,
+  including deriving intensity functions, specifying spatial covariance structures,
+  and designing scalable inferential strategies via SPDE/INLA or MCMC."
 authors:
   - "Statistical Sciences Genesis Architect"
 metadata:
   domain: "statistical_sciences"
   complexity: "high"
+  tags:
+    - statistics
+    - modeling
+    - spatial-point-processes
+    - log
+    - gaussian
+    - skill
+  requires_context: false
 variables:
   - name: "spatial_domain"
-    description: "The definition and characteristics of the spatial or spatio-temporal domain under study."
+    description: "The definition and characteristics of the spatial or spatio-temporal
+      domain under study."
     required: true
   - name: "point_pattern_data"
-    description: "The nature of the observed point pattern, including potential covariates and observation mechanisms."
+    description: "The nature of the observed point pattern, including potential covariates
+      and observation mechanisms."
     required: true
   - name: "inferential_objective"
-    description: "The primary goals of the inference, such as predicting latent spatial fields or estimating covariate effects."
+    description: "The primary goals of the inference, such as predicting latent spatial
+      fields or estimating covariate effects."
     required: true
 model: "gpt-4o"
 modelParameters:
@@ -44,9 +57,14 @@ messages:
       Inferential Objective: <inferential_objective>{{inferential_objective}}</inferential_objective>
 testData:
   - variables:
-      spatial_domain: "A heavily forested, non-convex continuous spatial region bounded by $R^2$ with complex topographical boundaries."
-      point_pattern_data: "Locations of a rare plant species, with high-resolution environmental covariates (elevation, soil pH, moisture index) available globally across the domain."
-      inferential_objective: "Simultaneously estimate the ecological effects of the covariates while predicting the continuous latent spatial field mapping unobserved environmental heterogeneity."
+      spatial_domain: "A heavily forested, non-convex continuous spatial region bounded
+        by $R^2$ with complex topographical boundaries."
+      point_pattern_data: "Locations of a rare plant species, with high-resolution
+        environmental covariates (elevation, soil pH, moisture index) available globally
+        across the domain."
+      inferential_objective: "Simultaneously estimate the ecological effects of the
+        covariates while predicting the continuous latent spatial field mapping unobserved
+        environmental heterogeneity."
 evaluators:
   - name: "intensity_latex"
     type: "regex"
@@ -55,4 +73,5 @@ evaluators:
   - name: "spde_inla_mention"
     type: "regex"
     target: "message.content"
-    pattern: "(?i)(SPDE|INLA|Stochastic Partial Differential Equation|Integrated Nested Laplace)"
+    pattern: "(?i)(SPDE|INLA|Stochastic Partial Differential Equation|Integrated Nested
+      Laplace)"

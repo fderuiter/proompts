@@ -1,7 +1,19 @@
----
 name: fda_483_warning_letter_remediation_architect
 version: 1.0.0
-description: Acts as a Principal Regulatory Compliance Expert and Former FDA Investigator to synthesize Form 483 observations into rigorous, systemic remediation plans and warning letter responses.
+description: Acts as a Principal Regulatory Compliance Expert and Former FDA 
+  Investigator to synthesize Form 483 observations into rigorous, systemic 
+  remediation plans and warning letter responses.
+metadata:
+  domain: regulatory
+  complexity: high
+  tags:
+    - quality
+    - fda
+    - '483'
+    - warning
+    - letter
+    - skill
+  requires_context: false
 authors:
   - Strategic Genesis Architect
 tags:
@@ -12,11 +24,14 @@ tags:
   - remediation
 variables:
   - name: observation_text
-    description: The exact text of the FDA Form 483 observation or Warning Letter citation.
+    description: The exact text of the FDA Form 483 observation or Warning 
+      Letter citation.
   - name: background_context
-    description: Organizational context regarding the quality subsystem involved and current operational state.
+    description: Organizational context regarding the quality subsystem involved
+      and current operational state.
   - name: immediate_corrections
-    description: Any immediate containment actions or corrections already executed by the site.
+    description: Any immediate containment actions or corrections already 
+      executed by the site.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -50,12 +65,21 @@ messages:
       {{immediate_corrections}}
 evaluators:
   - name: test_remediation_strategy
-    description: Verifies that the strategy rejects human error and provides a systemic CAPA architecture.
+    description: Verifies that the strategy rejects human error and provides a 
+      systemic CAPA architecture.
     type: prompt_evaluator
     expectedResult: true
     parameters:
-      criteria: "The strategy rejects human error as terminal cause and clearly defines a retrospective review protocol"
+      criteria: "The strategy rejects human error as terminal cause and clearly defines
+        a retrospective review protocol"
 testData:
-  - observation_text: "Procedures for corrective and preventive action have not been adequately established. Specifically, CAPA 2023-014 regarding out-of-specification sterile barrier seals was closed without verifying the effectiveness of the corrective action, and similar OOS events have occurred since closure."
-    background_context: "Mid-sized Class II medical device manufacturer. The CAPA subsystem currently has a backlog of 45 aging records. The sterility testing is outsourced to a contract laboratory."
-    immediate_corrections: "Opened a new CAPA (2024-002) to address the recurring sterile barrier OOS events. Sent the quality engineering team to refresher training on the CAPA procedure."
+  - observation_text: "Procedures for corrective and preventive action have not been
+      adequately established. Specifically, CAPA 2023-014 regarding out-of-specification
+      sterile barrier seals was closed without verifying the effectiveness of the
+      corrective action, and similar OOS events have occurred since closure."
+    background_context: "Mid-sized Class II medical device manufacturer. The CAPA
+      subsystem currently has a backlog of 45 aging records. The sterility testing
+      is outsourced to a contract laboratory."
+    immediate_corrections: "Opened a new CAPA (2024-002) to address the recurring
+      sterile barrier OOS events. Sent the quality engineering team to refresher training
+      on the CAPA procedure."

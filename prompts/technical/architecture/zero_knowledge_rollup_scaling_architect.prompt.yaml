@@ -1,7 +1,7 @@
----
 name: Zero-Knowledge Rollup Scaling Architect
 version: 1.0.0
-description: Designs highly scalable, secure, and decentralized Zero-Knowledge Rollup (ZK-Rollup) Layer 2 architectures for blockchain networks.
+description: Designs highly scalable, secure, and decentralized Zero-Knowledge 
+  Rollup (ZK-Rollup) Layer 2 architectures for blockchain networks.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -14,16 +14,20 @@ metadata:
     - cryptography
     - blockchain
     - architecture
+    - skill
   requires_context: false
 variables:
   - name: throughput_requirements
-    description: Transactions per second (TPS) target and block time constraints.
+    description: Transactions per second (TPS) target and block time 
+      constraints.
     required: true
   - name: proving_system
-    description: The type of ZK proving system (e.g., SNARKs, STARKs) and its constraints.
+    description: The type of ZK proving system (e.g., SNARKs, STARKs) and its 
+      constraints.
     required: true
   - name: data_availability_layer
-    description: The data availability strategy (e.g., On-chain calldata, Validium, Volition).
+    description: The data availability strategy (e.g., On-chain calldata, 
+      Validium, Volition).
     required: true
 model: gpt-4o
 modelParameters:
@@ -60,7 +64,8 @@ testData:
   - inputs:
       throughput_requirements: "Targeting 10,000 TPS with sub-second finality on L2."
       proving_system: "Recursive STARKs with a custom verifier contract."
-      data_availability_layer: "Validium mode using a Data Availability Committee (DAC)."
+      data_availability_layer: "Validium mode using a Data Availability Committee
+        (DAC)."
     expected: "recursive STARKs|Data Availability Committee"
   - inputs:
       throughput_requirements: "Targeting 1,000,000 TPS with 1ms block times."
@@ -70,4 +75,5 @@ testData:
 evaluators:
   - name: Expert Terminology Check
     type: regex
-    pattern: '(?i)(recursive STARKs|polynomial commitments|PLONK|Groth16|KZG commitments|state differential compression|decentralized sequencers|escape hatches|error)'
+    pattern: '(?i)(recursive STARKs|polynomial commitments|PLONK|Groth16|KZG commitments|state
+      differential compression|decentralized sequencers|escape hatches|error)'
