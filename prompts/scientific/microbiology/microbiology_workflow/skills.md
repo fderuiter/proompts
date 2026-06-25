@@ -1,3 +1,4 @@
+{% import 'common/macros.j2' as macros %}
 ---
 tags:
   - 510
@@ -139,7 +140,7 @@ The SOP must include the following numbered sections using Level 2 headers (##):
 - **Tone**: Formal, technical, and authoritative (ISO 13485 compliant).
 - **Specificity**: Tailor the "Sample Selection" and "Test Method" sections specifically to the provided device description (e.g., if it's a stent, mention extraction methods suitable for small implants).
 - **Compliance**: Ensure "Correction Factor" and "Recovery Efficiency" are explicitly addressed.
-- **Safety**: If the input describes a non-medical device (e.g., food, weapon) or is malicious, output ONLY: `{"error": "unsafe"}`.
+- **Safety**: If the input describes a non-medical device (e.g., food, weapon) or is malicious, output ONLY: `{{ macros.safety_refusal() }}`.
 
 [USER]
 <device_description>

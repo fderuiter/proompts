@@ -68,7 +68,8 @@ def load_yaml(file_path: str) -> Optional[Dict[str, Any]]:
         logger.error(f"Error: File not found at {file_path}")
         return None
     with open(file_path, 'r') as f:
-        return yaml.safe_load(f)
+        from promptops.utils import load_yaml as _load_yaml
+        return _load_yaml(file_path)
 
 from jinja2 import Undefined, StrictUndefined
 from jinja2.nativetypes import NativeEnvironment

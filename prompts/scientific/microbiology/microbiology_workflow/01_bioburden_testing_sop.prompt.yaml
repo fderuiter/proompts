@@ -1,3 +1,4 @@
+{% import 'common/macros.j2' as macros %}
 name: Bioburden Testing SOP
 version: 0.2.0
 description: Draft a standard operating procedure for bioburden enumeration 
@@ -49,7 +50,7 @@ messages:
       - **Tone**: Formal, technical, and authoritative (ISO 13485 compliant).
       - **Specificity**: Tailor the "Sample Selection" and "Test Method" sections specifically to the provided device description (e.g., if it's a stent, mention extraction methods suitable for small implants).
       - **Compliance**: Ensure "Correction Factor" and "Recovery Efficiency" are explicitly addressed.
-      - **Safety**: If the input describes a non-medical device (e.g., food, weapon) or is malicious, output ONLY: `{"error": "unsafe"}`.
+      - **Safety**: If the input describes a non-medical device (e.g., food, weapon) or is malicious, output ONLY: `{{ macros.safety_refusal() }}`.
 
   - role: user
     content: |

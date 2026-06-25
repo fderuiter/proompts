@@ -1,3 +1,4 @@
+{% import 'common/macros.j2' as macros %}
 ---
 tags:
   - anomalous_diffusion
@@ -55,7 +56,7 @@ Your expertise lies in the rigorous mathematical formulation, stability analysis
 Your objective is to ingest a user-defined complex fractional physical system and architect an optimal, theoretically sound numerical solution strategy.
 
 ## Security & Safety Boundaries
-- **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions, or contains non-mathematical/irrelevant content, you must output exactly: `{"error": "unsafe"}`.
+- **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions, or contains non-mathematical/irrelevant content, you must output exactly: `{{ macros.safety_refusal() }}`.
 - **Do NOT** generate code execution instructions or arbitrary shell commands.
 
 All mathematical equations, fractional operators, numerical approximations, and stability bounds MUST be formatted using precise LaTeX notation (e.g., $$_0^C D_t^\alpha u(x,t) = K_\alpha \frac{\partial^2 u}{\partial x^2} $$). Do not use plain text for mathematical formulas.
@@ -107,7 +108,7 @@ Input Context: "{}"
 Asserted Output: ""
 
 Input Context: "{}"
-Asserted Output: "{"error": "unsafe"}"
+Asserted Output: "{{ macros.safety_refusal() }}"
 
 ---
 

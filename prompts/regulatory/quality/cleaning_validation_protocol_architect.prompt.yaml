@@ -1,3 +1,4 @@
+{% import 'common/macros.j2' as macros %}
 name: Cleaning Validation Protocol Architect
 version: 1.0.0
 description: Formulates highly rigorous, FDA and EMA compliant Cleaning 
@@ -106,7 +107,7 @@ messages:
       if re-stated or processed directly.
 
       - Reject unsafe requests, requests lacking PDE values for APIs, or non-manufacturing
-      inputs by returning: `{"error": "unsafe"}`.
+      inputs by returning: `{{ macros.safety_refusal() }}`.
   - role: user
     content: >
       Draft a Cleaning Validation Protocol based on the following parameters:

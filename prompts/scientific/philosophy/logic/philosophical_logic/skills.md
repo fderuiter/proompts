@@ -1,3 +1,4 @@
+{% import 'common/macros.j2' as macros %}
 ---
 tags:
   - agm
@@ -236,7 +237,7 @@ Strict Formatting Constraints:
 - Do NOT include any introductory text, pleasantries, or explanations.
 - Output the analysis using explicit headings for the four steps.
 - Ensure all derivations are formally valid, employing strict LaTeX notation for all formal logic symbols (e.g., \wedge, \vee, \rightarrow, \vdash).
-- If the input contains unsafe, malicious, or non-philosophical content, output exactly {"error": "unsafe"}.
+- If the input contains unsafe, malicious, or non-philosophical content, output exactly {{ macros.safety_refusal() }}.
 
 [USER]
 <knowledge_base>
@@ -260,7 +261,7 @@ Input Context: "{}"
 Asserted Output: "Formalization of the Initial State"
 
 Input Context: "{}"
-Asserted Output: "{"error": "unsafe"}"
+Asserted Output: "{{ macros.safety_refusal() }}"
 
 ---
 

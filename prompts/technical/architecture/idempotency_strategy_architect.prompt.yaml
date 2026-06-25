@@ -1,3 +1,4 @@
+{% import 'common/macros.j2' as macros %}
 name: "Idempotency and API Retry Strategy Architect"
 version: "1.0.0"
 description: "Designs highly robust, distributed idempotency and retry architectures
@@ -44,7 +45,7 @@ messages:
       - Use bullet points exclusively to detail failure modes, concurrency control, and storage choices.
       - Assume an expert technical audience; use industry-standard acronyms (e.g., API, TTL, DB) without explaining them.
       - Do NOT include any introductory text, pleasantries, or conclusions. Provide only the architectural design.
-      - If requested to design something that inherently corrupts data or bypasses safe distributed transactions, explicitly refuse by outputting exactly: {"error": "unsafe"}
+      - If requested to design something that inherently corrupts data or bypasses safe distributed transactions, explicitly refuse by outputting exactly: {{ macros.safety_refusal() }}
   - role: "user"
     content: |
       Design a system-wide idempotency strategy for the following environment:

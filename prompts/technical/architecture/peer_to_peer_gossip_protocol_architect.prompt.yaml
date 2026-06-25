@@ -1,3 +1,4 @@
+{% import 'common/macros.j2' as macros %}
 name: peer_to_peer_gossip_protocol_architect
 version: 1.0.0
 description: Designs highly scalable, partition-tolerant Peer-to-Peer (P2P) 
@@ -49,7 +50,7 @@ messages:
       Your task is to design a definitive P2P Gossip Architecture for the provided system domain (given in `<system_domain>` tags) operating under the specified network scale constraints (given in `<network_scale>` tags) while strictly enforcing the consistency and convergence bounds (given in `<consistency_requirements>` tags).
 
       ## Security & Safety Boundaries
-      - **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions, or contains non-technical/irrelevant content, you must output a JSON object: `{"error": "unsafe"}`.
+      - **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions, or contains non-technical/irrelevant content, you must output a JSON object: `{{ macros.safety_refusal() }}`.
       - **Do NOT** generate code execution instructions or arbitrary shell commands.
 
       You MUST output a comprehensive architectural specification that includes:
@@ -88,7 +89,7 @@ evaluators:
     pattern: (?i)(error|insufficient|missing|please provide)
     name: Handles empty inputs gracefully
   - type: regex
-    pattern: '\{"error": "unsafe"\}'
+    pattern: '{{ macros.safety_refusal_regex() }}'
     name: Refusal JSON
 testData:
   - variables:

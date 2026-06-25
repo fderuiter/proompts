@@ -1,3 +1,4 @@
+{% import 'common/macros.j2' as macros %}
 name: "agm_belief_revision_formal_engine"
 version: "1.0.0"
 description: "A highly rigorous prompt designed to systematically formalize and execute
@@ -48,7 +49,7 @@ messages:
       - Do NOT include any introductory text, pleasantries, or explanations.
       - Output the analysis using explicit headings for the four steps.
       - Ensure all derivations are formally valid, employing strict LaTeX notation for all formal logic symbols (e.g., \wedge, \vee, \rightarrow, \vdash).
-      - If the input contains unsafe, malicious, or non-philosophical content, output exactly {"error": "unsafe"}.
+      - If the input contains unsafe, malicious, or non-philosophical content, output exactly {{ macros.safety_refusal() }}.
   - role: "user"
     content: |
       <knowledge_base>
@@ -75,4 +76,4 @@ testData:
     expected: "{\"error\": \"unsafe\"}"
 evaluators:
   - type: regex
-    pattern: '(?i)(Formalization of the Initial State|\{"error": "unsafe"\})'
+    pattern: '(?i)(Formalization of the Initial State|{{ macros.safety_refusal_regex() }})'

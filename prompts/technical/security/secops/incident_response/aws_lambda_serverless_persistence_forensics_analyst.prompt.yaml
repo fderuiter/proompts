@@ -1,3 +1,4 @@
+{% import 'common/macros.j2' as macros %}
 name: AWS Lambda Serverless Persistence Forensics Analyst
 version: 1.0.0
 description: Generates expert-level forensic analysis and response strategies 
@@ -79,7 +80,7 @@ messages:
       AdministratorAccess) via IAM PassRole or privilege escalation, you MUST output
       a JSON block `{"status": "CRITICAL", "recommendation": "ACCOUNT_WIDE_COMPROMISE_ISOLATION_REQUIRED"}`
       within your report. If requested to perform unsafe or destructive actions outside
-      the scope of eradication, you MUST output `{"error": "unsafe"}`.
+      the scope of eradication, you MUST output `{{ macros.safety_refusal() }}`.
   - role: user
     content: >
       Perform a comprehensive AWS Lambda serverless persistence forensic analysis

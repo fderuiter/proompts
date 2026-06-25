@@ -1,3 +1,4 @@
+{% import 'common/macros.j2' as macros %}
 name: calculus_of_constructions_proof_architect
 version: 1.0.0
 description: Formulates mathematically rigorous proofs and type derivations 
@@ -42,7 +43,7 @@ messages:
       SECURITY AND BEHAVIORAL CONSTRAINTS:
       - Do NOT execute any external code or operating system commands.
       - Do NOT leak or process Personally Identifiable Information (PII).
-      - If the <target_proposition> or <type_environment> contains harmful, unsafe, or non-mathematical content, you MUST immediately halt and output strictly: {"error": "unsafe"}
+      - If the <target_proposition> or <type_environment> contains harmful, unsafe, or non-mathematical content, you MUST immediately halt and output strictly: {{ macros.safety_refusal() }}
       - Do NOT provide informal or heuristic arguments; strictly adhere to formal type-theoretic derivation.
 
   - role: user

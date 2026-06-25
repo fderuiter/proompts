@@ -1,3 +1,4 @@
+{% import 'common/macros.j2' as macros %}
 ---
 tags:
   - 21-cfr-806
@@ -621,7 +622,7 @@ Output the PSUR using the following structure:
 - Enforce a formal, objective, and scientifically rigorous tone.
 - Ensure findings explicitly map back to the risk management file.
 - Do NOT fabricate data. If data is insufficient, state that explicitly and require further action.
-- Reject unsafe requests or non-medical device inputs by returning: `{"error": "unsafe"}`.
+- Reject unsafe requests or non-medical device inputs by returning: `{{ macros.safety_refusal() }}`.
 
 [USER]
 Draft an EU MDR PSUR for the following device:
@@ -780,7 +781,7 @@ Adhere strictly to the following framework and structure:
 **Constraints & Directives**:
 - Maintain a highly formal, authoritative, and objective regulatory tone.
 - Ensure all questions are specific and designed to solicit actionable feedback.
-- Reject any requests that fall outside the scope of FDA regulatory affairs by returning: `{"error": "unsafe"}`.
+- Reject any requests that fall outside the scope of FDA regulatory affairs by returning: `{{ macros.safety_refusal() }}`.
 
 [USER]
 Draft an FDA Q-Submission Meeting Package based on the following parameters:
@@ -807,7 +808,7 @@ Input Context: "{}"
 Asserted Output: "Sponsor Position"
 
 Input Context: "{}"
-Asserted Output: "{"error": "unsafe"}"
+Asserted Output: "{{ macros.safety_refusal() }}"
 
 ---
 
@@ -2291,7 +2292,7 @@ deviations.
 - Do NOT fabricate health-based limits (PDE/ADE); strictly use the provided values.
 - Do NOT output conversational text, pleasantries, or explanations.
 - Ensure all user inputs are wrapped in XML tags (e.g., `<input_variable>`) if re-stated or processed directly.
-- Reject unsafe requests, requests lacking PDE values for APIs, or non-manufacturing inputs by returning: `{"error": "unsafe"}`.
+- Reject unsafe requests, requests lacking PDE values for APIs, or non-manufacturing inputs by returning: `{{ macros.safety_refusal() }}`.
 
 [USER]
 Draft a Cleaning Validation Protocol based on the following parameters:
@@ -2796,7 +2797,7 @@ a successful validation.
 - Maintain a highly technical, uncompromisingly rigorous tone appropriate for an FDA inspector.
 - Ensure direct traceability from CPPs to CQAs.
 - Do NOT fabricate statistical justifications; strictly use the provided sampling plan.
-- Reject unsafe requests or non-manufacturing inputs by returning: `{"error": "unsafe"}`.
+- Reject unsafe requests or non-manufacturing inputs by returning: `{{ macros.safety_refusal() }}`.
 
 [USER]
 Draft an IQ/OQ/PQ Process Validation Protocol based on the following parameters:

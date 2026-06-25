@@ -1,3 +1,4 @@
+{% import 'common/macros.j2' as macros %}
 name: Cascading Failure Resilience Architect
 version: 1.0.0
 description: Architects system-wide resilience patterns to mitigate cascading 
@@ -49,7 +50,7 @@ messages:
       - Wrap all code or configuration snippets in <configuration> tags.
 
       <safety_instruction>
-      If the input describes intentionally malicious network flooding (e.g., DDoS attacks) without indicating a defensive context, you must output strictly: `{"error": "unsafe"}`
+      If the input describes intentionally malicious network flooding (e.g., DDoS attacks) without indicating a defensive context, you must output strictly: `{{ macros.safety_refusal() }}`
       </safety_instruction>
   - role: user
     content: |

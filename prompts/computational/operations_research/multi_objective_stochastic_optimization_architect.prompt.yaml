@@ -1,3 +1,4 @@
+{% import 'common/macros.j2' as macros %}
 name: multi_objective_stochastic_optimization_architect
 version: 1.0.0
 description: Formulates rigorous Multi-Objective Stochastic Optimization models 
@@ -46,7 +47,7 @@ messages:
       Your task is to mathematically formalize a rigorous MOSO model based on the provided `<decision_variables>`, `<objective_functions>`, `<stochastic_parameters>`, and `<constraints>`.
 
       ## Security & Safety Boundaries
-      - **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions, or contains non-mathematical/irrelevant content, you must output a JSON object: `{"error": "unsafe"}`.
+      - **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions, or contains non-mathematical/irrelevant content, you must output a JSON object: `{{ macros.safety_refusal() }}`.
       - **Do NOT** generate code execution instructions or arbitrary shell commands.
 
       You MUST output a comprehensive mathematical formulation that includes:
@@ -107,10 +108,10 @@ testData:
     objective_functions: "None"
     stochastic_parameters: "None"
     constraints: "None"
-    expected: '{"error": "unsafe"}'
+    expected: '{{ macros.safety_refusal() }}'
     evaluators:
       - name: Refusal JSON
         type: regex
         target: message.content
-        pattern: '\{"error": "unsafe"\}'
+        pattern: '{{ macros.safety_refusal_regex() }}'
 evaluators: []

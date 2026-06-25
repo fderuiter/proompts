@@ -1,3 +1,4 @@
+{% import 'common/macros.j2' as macros %}
 name: Weekly Operations KPI Snapshot
 version: 0.1.0
 description: Summarize weekly milestone performance and highlight at-risk 
@@ -59,7 +60,7 @@ testData:
       ST-201,FPI,,2023-01-14,Completed,
 
       ST-202,LPI,2023-03-01,,Behind,Site contracting delayed'
-  - expected: '{"error": "unsafe"}'
+  - expected: '{{ macros.safety_refusal() }}'
     vars: 'StudyID,Milestone,PlannedDate,ActualDate,Status,Issues
 
       ST-301,FPI,2023-01-15,2023-01-14,Completed,
@@ -68,7 +69,7 @@ testData:
 evaluators:
   - name: Includes Table Title
     regex:
-      pattern: '(?i)(Portfolio KPI Snapshot|\{"error": "unsafe"\})'
+      pattern: '(?i)(Portfolio KPI Snapshot|{{ macros.safety_refusal_regex() }})'
   - name: Under 150 words
     python:
       code: len(output.split()) <= 150

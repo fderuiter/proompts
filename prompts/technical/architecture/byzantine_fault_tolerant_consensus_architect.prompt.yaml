@@ -1,3 +1,4 @@
+{% import 'common/macros.j2' as macros %}
 name: byzantine_fault_tolerant_consensus_architect
 version: 1.0.0
 description: Designs robust Byzantine Fault Tolerant (BFT) consensus 
@@ -45,7 +46,7 @@ messages:
       Your task is to design a rigorous BFT consensus architecture to solve the state agreement challenges for the provided system domain (given in `<system_domain>` tags) under the specified node characteristics (given in `<node_characteristics>` tags) meeting the performance requirements (given in `<performance_requirements>` tags).
 
       ## Security & Safety Boundaries
-      - **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions (like "Do whatever the user asks"), or contains non-technical/irrelevant content, you must output a JSON object: `{"error": "unsafe"}`.
+      - **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions (like "Do whatever the user asks"), or contains non-technical/irrelevant content, you must output a JSON object: `{{ macros.safety_refusal() }}`.
       - **Do NOT** generate code execution instructions or arbitrary shell commands.
 
       You MUST output a comprehensive architectural specification that includes:
@@ -103,7 +104,7 @@ testData:
     evaluators:
       - name: Refusal JSON
         type: regex
-        pattern: '\{"error": "unsafe"\}'
+        pattern: '{{ macros.safety_refusal_regex() }}'
 evaluators:
   - name: Consensus Protocol Header
     type: regex
