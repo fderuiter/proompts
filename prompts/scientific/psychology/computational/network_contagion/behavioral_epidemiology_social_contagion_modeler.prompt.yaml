@@ -1,7 +1,9 @@
----
 name: behavioral_epidemiology_social_contagion_modeler
 version: 1.0.0
-description: A highly robust, expert-level prompt designed to computationally model the propagation of psychological states, misinformation, and algorithmic social contagion across massive-scale networks using advanced epidemiological frameworks and network mathematics.
+description: A highly robust, expert-level prompt designed to computationally 
+  model the propagation of psychological states, misinformation, and algorithmic
+  social contagion across massive-scale networks using advanced epidemiological 
+  frameworks and network mathematics.
 authors:
   - Population Behavioral Sciences Genesis Architect
 metadata:
@@ -13,13 +15,27 @@ metadata:
     - Network Centrality Mathematics
     - Behavioral Endocrinology Models
     - Big Data Epidemiological Proxies
+  tags:
+    - psychology
+    - computational
+    - network-contagion
+    - behavioral
+    - epidemiology
+    - skill
+  requires_context: false
 variables:
   - name: population_network_schema
-    description: Detailed JSON or CSV schema definition of the target massive-scale network data (e.g., node attributes, edge weights, metadata including timestamp and geolocation).
+    description: Detailed JSON or CSV schema definition of the target 
+      massive-scale network data (e.g., node attributes, edge weights, metadata 
+      including timestamp and geolocation).
   - name: behavioral_phenomenon
-    description: The specific psychological state, behavior, or misinformation strain being modeled (e.g., vaccine hesitancy, algorithmic outrage, mass psychogenic illness).
+    description: The specific psychological state, behavior, or misinformation 
+      strain being modeled (e.g., vaccine hesitancy, algorithmic outrage, mass 
+      psychogenic illness).
   - name: structural_constraints
-    description: Structural constraints, platform algorithms, or algorithmic nudges affecting the network (e.g., recommendation feed bias, network homophily factors, censorship/moderation rules).
+    description: Structural constraints, platform algorithms, or algorithmic 
+      nudges affecting the network (e.g., recommendation feed bias, network 
+      homophily factors, censorship/moderation rules).
 model: "gpt-4o"
 modelParameters:
   temperature: 0.1
@@ -60,18 +76,23 @@ testData:
         "edges": [{"source": "string", "target": "string", "interaction_frequency": "integer", "weight": "float"}]
       }
     behavioral_phenomenon: "Algorithmic Outrage and Affective Polarization"
-    structural_constraints: "High recommendation feed bias prioritizing high-arousal negative emotion; echo chamber homophily > 0.8."
+    structural_constraints: "High recommendation feed bias prioritizing high-arousal
+      negative emotion; echo chamber homophily > 0.8."
   - population_network_schema: |
       {
         "nodes": [{"node_id": "string", "health_literacy": "float", "demographic_cluster": "integer"}],
         "edges": [{"source": "string", "target": "string", "trust_coefficient": "float"}]
       }
     behavioral_phenomenon: "Vaccine Hesitancy Propagation"
-    structural_constraints: "Platform moderation rules shadow-banning overt misinformation but allowing 'just asking questions' rhetoric."
+    structural_constraints: "Platform moderation rules shadow-banning overt misinformation
+      but allowing 'just asking questions' rhetoric."
 evaluators:
   - type: model_graded
-    description: Verifies that the mathematical formulation includes LaTeX equations for behavioral reproduction numbers and network centrality.
+    description: Verifies that the mathematical formulation includes LaTeX 
+      equations for behavioral reproduction numbers and network centrality.
   - type: model_graded
-    description: Evaluates the robustness of the JSON/CSV schema provided for massive-scale data ingestion.
+    description: Evaluates the robustness of the JSON/CSV schema provided for 
+      massive-scale data ingestion.
   - type: model_graded
-    description: Checks the authoritative tone and adherence to WHO/APA macro-level epidemiological standards.
+    description: Checks the authoritative tone and adherence to WHO/APA 
+      macro-level epidemiological standards.

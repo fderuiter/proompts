@@ -1,7 +1,7 @@
----
 name: Concept Drift Mitigation Architect
 version: 1.0.0
-description: Designs robust automated concept drift detection and mitigation pipelines for continuous machine learning systems in production.
+description: Designs robust automated concept drift detection and mitigation 
+  pipelines for continuous machine learning systems in production.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +13,20 @@ metadata:
     - machine-learning
     - mlops
     - architecture
+    - skill
   requires_context: false
 variables:
   - name: model_characteristics
-    description: Details about the production machine learning model (e.g., model type, inference latency, prediction cadence).
+    description: Details about the production machine learning model (e.g., 
+      model type, inference latency, prediction cadence).
     required: true
   - name: data_characteristics
-    description: Details about the feature space and distribution properties (e.g., streaming velocity, feature types, seasonality).
+    description: Details about the feature space and distribution properties 
+      (e.g., streaming velocity, feature types, seasonality).
     required: true
   - name: business_constraints
-    description: Constraints regarding false positive adaptation, retraining cost, and downtime tolerance.
+    description: Constraints regarding false positive adaptation, retraining 
+      cost, and downtime tolerance.
     required: true
 model: gpt-4o
 modelParameters:
@@ -57,14 +61,20 @@ messages:
       <business_constraints>{{business_constraints}}</business_constraints>
 testData:
   - inputs:
-      model_characteristics: "Deep neural network for fraud detection, sub-10ms inference latency."
-      data_characteristics: "High-velocity streaming data, categorical and continuous features, sudden drift expected."
-      business_constraints: "Zero downtime allowed, false positive drift detection must be minimized, moderate retraining cost."
+      model_characteristics: "Deep neural network for fraud detection, sub-10ms inference
+        latency."
+      data_characteristics: "High-velocity streaming data, categorical and continuous
+        features, sudden drift expected."
+      business_constraints: "Zero downtime allowed, false positive drift detection
+        must be minimized, moderate retraining cost."
     expected: "ADWIN"
   - inputs:
-      model_characteristics: "Linear regression model for pricing, batch inference every 24 hours."
-      data_characteristics: "Low-velocity batch data, heavy seasonality, gradual drift expected."
-      business_constraints: "Zero-downtime requirement, extreme cost constraints precluding continuous retraining or shadow deployments."
+      model_characteristics: "Linear regression model for pricing, batch inference
+        every 24 hours."
+      data_characteristics: "Low-velocity batch data, heavy seasonality, gradual drift
+        expected."
+      business_constraints: "Zero-downtime requirement, extreme cost constraints precluding
+        continuous retraining or shadow deployments."
     expected: "error"
 evaluators:
   - name: Drift Terminology and Error Check

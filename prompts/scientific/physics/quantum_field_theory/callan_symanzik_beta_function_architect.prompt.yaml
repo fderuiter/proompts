@@ -1,7 +1,8 @@
----
 name: Callan-Symanzik Beta Function Architect
 version: 1.0.0
-description: Derives Callan-Symanzik equations, calculates beta functions at one-loop order, and analyzes renormalization group flow for theoretical quantum field models.
+description: Derives Callan-Symanzik equations, calculates beta functions at 
+  one-loop order, and analyzes renormalization group flow for theoretical 
+  quantum field models.
 authors:
   - name: Theoretical Physics Genesis Architect
 metadata:
@@ -12,16 +13,20 @@ metadata:
     - renormalization-group
     - theoretical-physics
     - particle-physics
+    - skill
   requires_context: false
 variables:
   - name: lagrangian_density
-    description: The explicit mathematical form of the bare Lagrangian density, including interaction terms.
+    description: The explicit mathematical form of the bare Lagrangian density, 
+      including interaction terms.
     required: true
   - name: regularization_scheme
-    description: The specified regularization scheme (e.g., Dimensional Regularization).
+    description: The specified regularization scheme (e.g., Dimensional 
+      Regularization).
     required: true
   - name: coupling_constant
-    description: The coupling constant for which the beta function is to be derived.
+    description: The coupling constant for which the beta function is to be 
+      derived.
     required: true
 model: gpt-4o
 modelParameters:
@@ -55,15 +60,19 @@ messages:
       <user_input>{{coupling_constant}}</user_input>
 testData:
   - inputs:
-      lagrangian_density: "\\mathcal{L} = \\frac{1}{2}(\\partial_\\mu \\phi)^2 - \\frac{1}{2}m^2\\phi^2 - \\frac{\\lambda}{4!}\\phi^4"
-      regularization_scheme: "Dimensional Regularization (d = 4 - \\epsilon) with MS-bar scheme"
+      lagrangian_density: "\\mathcal{L} = \\frac{1}{2}(\\partial_\\mu \\phi)^2 - \\
+        frac{1}{2}m^2\\phi^2 - \\frac{\\lambda}{4!}\\phi^4"
+      regularization_scheme: "Dimensional Regularization (d = 4 - \\epsilon) with
+        MS-bar scheme"
       coupling_constant: "\\lambda"
     evaluators:
       - name: Expected Beta Function Form
         type: regex
-        pattern: "(?s)\\beta\\(\\lambda\\)\\s*=\\s*\\\\frac\\{3\\lambda\\^2\\}\\{16\\\\pi\\^2\\}"
+        pattern: "(?s)\\beta\\(\\lambda\\)\\s*=\\s*\\\\frac\\{3\\lambda\\^2\\}\\{16\\\
+          \\pi\\^2\\}"
   - inputs:
-      lagrangian_density: "\\mathcal{L} = -\\frac{1}{4}F_{\\mu\\nu}F^{\\mu\\nu} + \\bar{\\psi}(i\\gamma^\\mu D_\\mu - m)\\psi"
+      lagrangian_density: "\\mathcal{L} = -\\frac{1}{4}F_{\\mu\\nu}F^{\\mu\\nu} +
+        \\bar{\\psi}(i\\gamma^\\mu D_\\mu - m)\\psi"
       regularization_scheme: "Dimensional Regularization (d = 4 - \\epsilon)"
       coupling_constant: "e"
     evaluators:

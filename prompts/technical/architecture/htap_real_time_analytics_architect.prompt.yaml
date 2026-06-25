@@ -1,7 +1,7 @@
----
 name: HTAP Real-Time Analytics Architect
 version: 1.0.0
-description: Designs Hybrid Transactional/Analytical Processing (HTAP) architectures bridging OLTP and OLAP workloads.
+description: Designs Hybrid Transactional/Analytical Processing (HTAP) 
+  architectures bridging OLTP and OLAP workloads.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,6 +13,7 @@ metadata:
     - oltp
     - olap
     - real-time-analytics
+    - skill
   requires_context: true
 variables:
   - name: workload_profile
@@ -43,8 +44,10 @@ messages:
       </request>
 testData:
   - vars:
-      workload_profile: "High volume e-commerce checkout operations requiring immediate fraud detection analytics."
-      latency_requirements: "Sub-50ms analytics response time over the last 15 minutes of transactional data."
+      workload_profile: "High volume e-commerce checkout operations requiring immediate
+        fraud detection analytics."
+      latency_requirements: "Sub-50ms analytics response time over the last 15 minutes
+        of transactional data."
     expected: "**MVCC**"
 evaluators:
   - name: Output Constraints

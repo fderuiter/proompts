@@ -1,7 +1,7 @@
----
 name: Regenerative Medicine Advanced Therapy RMAT Designation Architect
 version: 1.0.0
-description: Architects compelling RMAT designation requests to the FDA for cell therapies and tissue engineering products.
+description: Architects compelling RMAT designation requests to the FDA for cell
+  therapies and tissue engineering products.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,18 +13,24 @@ metadata:
     - rmat
     - cell-therapy
     - gene-therapy
+    - skill
+  requires_context: false
 variables:
   - name: therapy_description
-    description: Detailed description of the cell or gene therapy, tissue engineering product, or human cell and tissue product.
+    description: Detailed description of the cell or gene therapy, tissue 
+      engineering product, or human cell and tissue product.
     required: true
   - name: target_disease
-    description: The serious or life-threatening disease or condition the therapy aims to treat, modify, reverse, or cure.
+    description: The serious or life-threatening disease or condition the 
+      therapy aims to treat, modify, reverse, or cure.
     required: true
   - name: preliminary_clinical_evidence
-    description: Summary of available preliminary clinical evidence indicating the drug has the potential to address unmet medical needs.
+    description: Summary of available preliminary clinical evidence indicating 
+      the drug has the potential to address unmet medical needs.
     required: true
   - name: standard_of_care_comparison
-    description: Analysis comparing the preliminary clinical evidence of the therapy to the current standard of care.
+    description: Analysis comparing the preliminary clinical evidence of the 
+      therapy to the current standard of care.
     required: true
 model: gpt-4o
 modelParameters:
@@ -65,10 +71,15 @@ messages:
       Ensure the output strictly maps to the statutory criteria of Section 3033 of the 21st Century Cures Act and maintains an authoritative regulatory tone.
 testData:
   - inputs:
-      therapy_description: "An autologous CD19-directed chimeric antigen receptor (CAR) T-cell therapy."
+      therapy_description: "An autologous CD19-directed chimeric antigen receptor
+        (CAR) T-cell therapy."
       target_disease: "Relapsed or refractory large B-cell lymphoma."
-      preliminary_clinical_evidence: "Phase 1/2 trial (n=50) showed an overall response rate of 82% and a complete response rate of 54% at 6 months. Cytokine release syndrome was manageable."
-      standard_of_care_comparison: "Current standard of care (salvage chemotherapy) yields a complete response rate of approximately 7% in this heavily pretreated population."
+      preliminary_clinical_evidence: "Phase 1/2 trial (n=50) showed an overall response
+        rate of 82% and a complete response rate of 54% at 6 months. Cytokine release
+        syndrome was manageable."
+      standard_of_care_comparison: "Current standard of care (salvage chemotherapy)
+        yields a complete response rate of approximately 7% in this heavily pretreated
+        population."
     expected: "serious or life-threatening"
 evaluators:
   - name: Must address unmet medical need

@@ -1,4 +1,3 @@
----
 name: Integrated Submission Strategy Coach
 version: 0.1.0
 description: Create a phased submission roadmap for Project Phoenix.
@@ -6,55 +5,58 @@ metadata:
   domain: regulatory
   complexity: medium
   tags:
-  - quality
-  - integrated
-  - submission
-  - strategy
-  - coach
+    - quality
+    - integrated
+    - submission
+    - strategy
+    - coach
+    - skill
   requires_context: false
 variables:
-- name: project_details
-  description: additional program specifics
-  required: true
+  - name: project_details
+    description: additional program specifics
+    required: true
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: 'You are a **Reg-CMC Strategist** specializing in small-molecule oncology filings. First-in-human is planned for
-    Q4 2025 with a CMC budget of $8 million.
+  - role: system
+    content: 'You are a **Reg-CMC Strategist** specializing in small-molecule oncology
+      filings. First-in-human is planned for Q4 2025 with a CMC budget of $8 million.
 
 
-    Create a phased submission roadmap for Project Phoenix.'
-- role: user
-  content: '1. List all modules and key studies required through NDA (US) and MAA (EU).
+      Create a phased submission roadmap for Project Phoenix.'
+  - role: user
+    content: '1. List all modules and key studies required through NDA (US) and MAA
+      (EU).
 
-    1. Map interdependencies and critical-path activities.
+      1. Map interdependencies and critical-path activities.
 
-    1. Highlight the top five technical risks (e.g., stability, process validation) and mitigations — each ≤40 words.
+      1. Highlight the top five technical risks (e.g., stability, process validation)
+      and mitigations — each ≤40 words.
 
-    1. Produce a Gantt-style milestone table by quarter.
-
-
-    Inputs:
-
-    - `{{project_details}}` — additional program specifics.
+      1. Produce a Gantt-style milestone table by quarter.
 
 
-    Output format:
+      Inputs:
 
-    Section A – Executive timeline table
-
-    Section B – Risk register
-
-    Section C – 120-word next-step summary for the EVP and client sponsor
+      - `{{project_details}}` — additional program specifics.
 
 
-    Additional notes:
+      Output format:
 
-    Keep language concise and actionable.
+      Section A – Executive timeline table
+
+      Section B – Risk register
+
+      Section C – 120-word next-step summary for the EVP and client sponsor
 
 
-    <!-- markdownlint-enable MD022 MD029 MD036 -->'
+      Additional notes:
+
+      Keep language concise and actionable.
+
+
+      <!-- markdownlint-enable MD022 MD029 MD036 -->'
 testData: []
 evaluators: []

@@ -1,21 +1,36 @@
----
 name: Temporal Logic Branching Time Evaluator
 version: 1.0.0
-description: A highly rigorous prompt designed to systematically evaluate temporal propositions and branching time structures using Computation Tree Logic (CTL) or Linear Temporal Logic (LTL) to map complex deterministic and non-deterministic pathways.
+description: A highly rigorous prompt designed to systematically evaluate 
+  temporal propositions and branching time structures using Computation Tree 
+  Logic (CTL) or Linear Temporal Logic (LTL) to map complex deterministic and 
+  non-deterministic pathways.
 authors:
   - Philosophical Genesis Architect
 metadata:
   domain: scientific/philosophy/logic/philosophical_logic
   complexity: high
+  tags:
+    - philosophy
+    - logic
+    - philosophical-logic
+    - temporal
+    - branching
+    - skill
+  requires_context: false
 variables:
   - name: TEMPORAL_PROPOSITION
-    description: The temporal proposition or timeline sequence to be evaluated (e.g., "If an event occurs, it will eventually be followed by a necessary state.").
+    description: The temporal proposition or timeline sequence to be evaluated 
+      (e.g., "If an event occurs, it will eventually be followed by a necessary 
+      state.").
     required: true
   - name: LOGICAL_FRAMEWORK
-    description: The specific temporal logic framework to apply (e.g., Computation Tree Logic (CTL), Linear Temporal Logic (LTL), or CTL*).
+    description: The specific temporal logic framework to apply (e.g., 
+      Computation Tree Logic (CTL), Linear Temporal Logic (LTL), or CTL*).
     required: true
   - name: ONTOLOGICAL_DOMAIN
-    description: The specific ontological domain or context for the temporal structure (e.g., historical determinism, free will and open futures, computational state transitions).
+    description: The specific ontological domain or context for the temporal 
+      structure (e.g., historical determinism, free will and open futures, 
+      computational state transitions).
     required: true
 model: gpt-4o
 modelParameters:
@@ -54,12 +69,14 @@ messages:
       Execute the systematic evaluation of this temporal proposition within the specified temporal logic framework and ontological domain.
 testData:
   - variables:
-      TEMPORAL_PROPOSITION: "It is possible that a state of absolute peace will eventually be reached and maintained forever."
+      TEMPORAL_PROPOSITION: "It is possible that a state of absolute peace will eventually
+        be reached and maintained forever."
       LOGICAL_FRAMEWORK: "Computation Tree Logic (CTL)"
       ONTOLOGICAL_DOMAIN: "Historical Determinism"
     expected: "Formalization of the Temporal Structure"
   - variables:
-      TEMPORAL_PROPOSITION: "If an agent makes a choice, the alternative timeline immediately becomes inaccessible."
+      TEMPORAL_PROPOSITION: "If an agent makes a choice, the alternative timeline
+        immediately becomes inaccessible."
       LOGICAL_FRAMEWORK: "Branching Time Logic"
       ONTOLOGICAL_DOMAIN: "Free Will and Open Futures"
     expected: "Temporal Frame Construction"

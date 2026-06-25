@@ -1,6 +1,6 @@
----
 name: Intellectual Property Claim Drafter
-description: A prompt that enforces USPTO or EPO formatting constraints to translate engineering specifications into defensible patent claims.
+description: A prompt that enforces USPTO or EPO formatting constraints to 
+  translate engineering specifications into defensible patent claims.
 version: "1.0.0"
 metadata:
   domain: business
@@ -10,15 +10,19 @@ metadata:
     - patents
     - intellectual_property
     - engineering
+    - skill
+  requires_context: false
 variables:
   - name: engineering_spec
-    description: The technical engineering specifications or invention disclosure.
+    description: The technical engineering specifications or invention 
+      disclosure.
     required: true
   - name: patent_office
     description: The target patent office (e.g., USPTO, EPO).
     required: true
   - name: claim_type
-    description: The type of claim to draft (e.g., Apparatus, Method, System, Composition of Matter).
+    description: The type of claim to draft (e.g., Apparatus, Method, System, 
+      Composition of Matter).
     required: true
 model: gpt-4o
 modelParameters:

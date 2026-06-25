@@ -1,7 +1,8 @@
----
 name: WASM Edge Serverless Runtime Architect
 version: 1.0.0
-description: Designs ultra-low-latency, multi-tenant WebAssembly (WASM) serverless edge runtimes using strict linear memory isolation and capability-based security.
+description: Designs ultra-low-latency, multi-tenant WebAssembly (WASM) 
+  serverless edge runtimes using strict linear memory isolation and 
+  capability-based security.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -14,16 +15,20 @@ metadata:
     - wasi
     - isolation
     - architecture
+    - skill
   requires_context: false
 variables:
   - name: latency_constraints
-    description: Target cold-start times and strict execution latency thresholds at the edge.
+    description: Target cold-start times and strict execution latency thresholds
+      at the edge.
     required: true
   - name: integration_capabilities
-    description: Host capabilities to be delegated via WASI (e.g., HTTP requests, key-value stores).
+    description: Host capabilities to be delegated via WASI (e.g., HTTP 
+      requests, key-value stores).
     required: true
   - name: concurrency_model
-    description: The expected concurrent execution topology (e.g., actor model, parallel request handling).
+    description: The expected concurrent execution topology (e.g., actor model, 
+      parallel request handling).
     required: true
 model: gpt-4o
 modelParameters:
@@ -64,10 +69,12 @@ testData:
     expected: "linear memory isolation|ahead-of-time|Wasmtime"
   - inputs:
       latency_constraints: "10ms execution latency."
-      integration_capabilities: "Full unregulated root filesystem access and raw TCP socket binding."
+      integration_capabilities: "Full unregulated root filesystem access and raw TCP
+        socket binding."
       concurrency_model: "Shared memory threading."
     expected: "error"
 evaluators:
   - name: Expert Terminology Check
     type: regex
-    pattern: '(?i)(WebAssembly System Interface|linear memory isolation|capability-based security|ahead-of-time|Just-in-Time|actor model|Wasmtime|error)'
+    pattern: '(?i)(WebAssembly System Interface|linear memory isolation|capability-based
+      security|ahead-of-time|Just-in-Time|actor model|Wasmtime|error)'

@@ -1,19 +1,32 @@
----
 name: differential_diagnosis_mapping_architect
 version: 1.0.0
-description: Systematically synthesizes complex clinical presentations into an exhaustive differential diagnosis matrix mapping to DSM-5-TR and ICD-11 criteria.
+description: Systematically synthesizes complex clinical presentations into an 
+  exhaustive differential diagnosis matrix mapping to DSM-5-TR and ICD-11 
+  criteria.
 authors:
   - Behavioral Sciences Genesis Architect
 metadata:
   domain: clinical/psychopathology
   complexity: high
+  tags:
+    - psychology
+    - clinical
+    - psychopathology
+    - differential
+    - diagnosis
+    - skill
+  requires_context: false
 variables:
   - name: clinical_presentation
-    description: Comprehensive description of the patient's current symptoms, behavioral observations, and functional impairments.
+    description: Comprehensive description of the patient's current symptoms, 
+      behavioral observations, and functional impairments.
   - name: psychosocial_history
-    description: Detailed history including developmental milestones, trauma, medical comorbidities, and substance use.
+    description: Detailed history including developmental milestones, trauma, 
+      medical comorbidities, and substance use.
   - name: psychometric_data
-    description: Results from structured clinical interviews or self-report measures, including standardized scores (e.g., T-scores) and reliability indices.
+    description: Results from structured clinical interviews or self-report 
+      measures, including standardized scores (e.g., T-scores) and reliability 
+      indices.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -48,13 +61,22 @@ messages:
       </psychometric_data>
 testData:
   - inputs:
-      clinical_presentation: 28-year-old female presenting with chronic interpersonal instability, affective lability, and transient stress-related paranoid ideation. She reports intense fears of abandonment and chronic feelings of emptiness.
-      psychosocial_history: History of severe childhood emotional abuse and neglect. No current medical conditions. Intermittent cannabis use.
-      psychometric_data: PAI Borderline Features Scale $T$-score = 85. Cronbach's $\alpha$ for scale reliability = .89.
+      clinical_presentation: 28-year-old female presenting with chronic 
+        interpersonal instability, affective lability, and transient 
+        stress-related paranoid ideation. She reports intense fears of 
+        abandonment and chronic feelings of emptiness.
+      psychosocial_history: History of severe childhood emotional abuse and 
+        neglect. No current medical conditions. Intermittent cannabis use.
+      psychometric_data: PAI Borderline Features Scale $T$-score = 85. 
+        Cronbach's $\alpha$ for scale reliability = .89.
     expected: Borderline Personality Disorder
   - inputs:
-      clinical_presentation: 45-year-old male exhibiting grandiosity, decreased need for sleep (3 hours/night), pressured speech, and flight of ideas for the past 9 days. This was preceded by a 4-week period of anhedonia and psychomotor retardation.
-      psychosocial_history: Two prior episodes of severe depression. Family history of Bipolar I Disorder. No substance use in the past 6 months.
+      clinical_presentation: 45-year-old male exhibiting grandiosity, decreased 
+        need for sleep (3 hours/night), pressured speech, and flight of ideas 
+        for the past 9 days. This was preceded by a 4-week period of anhedonia 
+        and psychomotor retardation.
+      psychosocial_history: Two prior episodes of severe depression. Family 
+        history of Bipolar I Disorder. No substance use in the past 6 months.
       psychometric_data: YMRS total score = 32. QIDS-SR total score = 4.
     expected: Bipolar I Disorder
 evaluators:

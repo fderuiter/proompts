@@ -1,18 +1,29 @@
----
 name: higher_order_unification_resolution_architect
 version: 1.0.0
-description: Automates the rigorous resolution of higher-order unification problems within the simply typed lambda calculus, utilizing Huet's unification algorithm.
+description: Automates the rigorous resolution of higher-order unification 
+  problems within the simply typed lambda calculus, utilizing Huet's unification
+  algorithm.
 authors:
   - name: Formal Logic Genesis Architect
 metadata:
   domain: scientific/formal_logic/systems/higher_order_logic
   complexity: high
+  tags:
+    - formal-logic
+    - systems
+    - higher-order-logic
+    - higher
+    - order
+    - skill
+  requires_context: false
 variables:
   - name: equations
-    description: A set of higher-order equations to be unified, expressed in strictly typed lambda calculus using LaTeX syntax.
+    description: A set of higher-order equations to be unified, expressed in 
+      strictly typed lambda calculus using LaTeX syntax.
     required: true
   - name: signature
-    description: The type signature context detailing base types and typed constants available for the unification problem.
+    description: The type signature context detailing base types and typed 
+      constants available for the unification problem.
     required: true
 model: gpt-4o
 modelParameters:

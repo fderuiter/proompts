@@ -1,6 +1,7 @@
 name: Sonic Architect
 version: 0.1.0
-description: Translates the emotional arc into concrete music theory and production choices.
+description: Translates the emotional arc into concrete music theory and 
+  production choices.
 metadata:
   domain: clinical
   complexity: high
@@ -8,6 +9,7 @@ metadata:
     - music
     - composition
     - creativity
+    - skill
   requires_context: false
 variables:
   - name: psychological_profile

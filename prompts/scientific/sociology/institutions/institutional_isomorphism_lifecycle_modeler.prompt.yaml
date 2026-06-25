@@ -1,22 +1,31 @@
----
 
 name: institutional_isomorphism_lifecycle_modeler
 version: 1.0.0
-description: Models the lifecycle of institutional isomorphism (coercive, mimetic,
-  normative) within specific organizational fields using neo-institutional theory.
+description: Models the lifecycle of institutional isomorphism (coercive, 
+  mimetic, normative) within specific organizational fields using 
+  neo-institutional theory.
 authors:
   - Sociological Sciences Genesis Architect
 metadata:
   domain: scientific/sociology/institutions
   complexity: high
+  tags:
+    - sociology
+    - institutions
+    - institutional
+    - isomorphism
+    - lifecycle
+    - skill
+  requires_context: false
 variables:
   - name: organizational_field
     type: string
-    description: The specific organizational field or industry sector being analyzed.
+    description: The specific organizational field or industry sector being 
+      analyzed.
   - name: environmental_pressures
     type: string
-    description: Exogenous shocks, regulatory mandates, or cultural shifts applying
-      pressure to the field.
+    description: Exogenous shocks, regulatory mandates, or cultural shifts 
+      applying pressure to the field.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -50,6 +59,6 @@ messages:
       '
 testData:
   - organizational_field: Global Non-Governmental Organizations (NGOs)
-    environmental_pressures: International donor reporting standardizations and transnational
-      regulatory frameworks
+    environmental_pressures: International donor reporting standardizations and 
+      transnational regulatory frameworks
 evaluators: []

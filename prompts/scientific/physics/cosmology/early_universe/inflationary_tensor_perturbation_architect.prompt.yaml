@@ -17,6 +17,8 @@ metadata:
     - tensor-perturbations
     - gravitational-waves
     - quantum-field-theory
+    - skill
+  requires_context: true
 variables:
   - name: inflationary_potential
     description: >
@@ -54,7 +56,8 @@ messages:
           second order in tensor perturbations $h_{ij}$.
 
       3.  **Gauge Fixing**: You must strictly apply the provided gauge
-          `{{gauge_choice}}` (e.g., transverse-traceless $h^i_i = 0$, $\partial_i h^{ij} = 0$).
+          `{{gauge_choice}}` (e.g., transverse-traceless $h^i_i = 0$, $\partial_i
+      h^{ij} = 0$).
 
       4.  **Quantization Procedure**: You must promote the classical
           perturbations to quantum operators, define the conjugate momenta, and
@@ -101,7 +104,8 @@ testData:
       gauge_choice: "Transverse-Traceless (TT) gauge"
     expected: "mukhanov-sasaki"
   - vars:
-      inflationary_potential: "V(\\phi) = \\Lambda^4 \\left[ 1 + \\cos(\\phi/f) \\right] (Natural Inflation)"
+      inflationary_potential: "V(\\phi) = \\Lambda^4 \\left[ 1 + \\cos(\\phi/f) \\
+        right] (Natural Inflation)"
       gauge_choice: "Transverse-Traceless (TT) gauge"
     expected: "bunch-davies"
 evaluators:

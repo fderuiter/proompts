@@ -1,19 +1,30 @@
----
 name: advanced_retrosynthetic_pathway_generator
 version: 1.0.0
-description: Generates highly optimized, multi-step retrosynthetic pathways for complex organic molecules, evaluating thermodynamic feasibility, step-yield optimization, and stereochemical control.
+description: Generates highly optimized, multi-step retrosynthetic pathways for 
+  complex organic molecules, evaluating thermodynamic feasibility, step-yield 
+  optimization, and stereochemical control.
 authors:
   - Genesis Architect
 metadata:
   domain: scientific/chemistry/organic/retrosynthesis
   complexity: high
+  tags:
+    - chemistry
+    - organic
+    - retrosynthesis
+    - advanced
+    - retrosynthetic
+    - skill
+  requires_context: false
 variables:
   - name: target_molecule
     type: string
-    description: Target molecule specified in strict IUPAC nomenclature, SMILES, or InChI string.
+    description: Target molecule specified in strict IUPAC nomenclature, SMILES,
+      or InChI string.
   - name: starting_materials_constraints
     type: string
-    description: Constraints on starting materials, such as cost limits, commercial availability, or specific chiral pool requirements.
+    description: Constraints on starting materials, such as cost limits, 
+      commercial availability, or specific chiral pool requirements.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -39,7 +50,8 @@ messages:
       Constraints: <starting_materials_constraints>{{starting_materials_constraints}}</starting_materials_constraints>
 testData:
   - target_molecule: "O=C1C@@H(O)C@H(O)C@@H(O)C@@H(O)[C@H]1O (myo-Inositol)"
-    starting_materials_constraints: "Commercially available achiral starting materials, maximum $10/g, utilizing biocatalytic or organocatalytic resolution steps."
+    starting_materials_constraints: "Commercially available achiral starting materials,
+      maximum $10/g, utilizing biocatalytic or organocatalytic resolution steps."
 evaluators:
   - type: string_contains
     expected: "SMILES"

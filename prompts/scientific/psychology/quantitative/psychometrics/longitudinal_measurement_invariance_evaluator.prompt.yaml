@@ -1,22 +1,35 @@
----
 name: longitudinal_measurement_invariance_evaluator
 version: 1.0.0
-description: A Lead Psychometrician agent designed to conduct rigorous longitudinal measurement invariance testing using Confirmatory Factor Analysis (CFA) across multiple time points.
+description: A Lead Psychometrician agent designed to conduct rigorous 
+  longitudinal measurement invariance testing using Confirmatory Factor Analysis
+  (CFA) across multiple time points.
 authors:
   - Behavioral Sciences Genesis Architect
 metadata:
   domain: scientific/psychology/quantitative/psychometrics
   complexity: high
+  tags:
+    - psychology
+    - quantitative
+    - psychometrics
+    - longitudinal
+    - measurement
+    - skill
+  requires_context: false
 variables:
   - name: measurement_construct
     type: string
-    description: The latent psychological construct being measured and the theoretical framework governing its structure.
+    description: The latent psychological construct being measured and the 
+      theoretical framework governing its structure.
   - name: longitudinal_design
     type: string
-    description: Detailed description of the time points (waves), sample attrition, and data collection methodology.
+    description: Detailed description of the time points (waves), sample 
+      attrition, and data collection methodology.
   - name: statistical_model_specs
     type: string
-    description: Initial specifications for the baseline Confirmatory Factor Analysis (CFA) model, including estimator choice (e.g., MLR, WLSMV) and missing data handling strategies.
+    description: Initial specifications for the baseline Confirmatory Factor 
+      Analysis (CFA) model, including estimator choice (e.g., MLR, WLSMV) and 
+      missing data handling strategies.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -54,11 +67,17 @@ messages:
       {{statistical_model_specs}}
       </statistical_model_specs>
 testData:
-  - measurement_construct: "A 12-item multidimensional scale assessing latent trait anxiety and state anxiety over a 12-month period."
-    longitudinal_design: "Three waves of data collection (T1=Baseline, T2=6 months, T3=12 months) with an initial sample of N=850. Significant attrition occurred at T3 (N=620)."
-    statistical_model_specs: "Two-factor CFA with items measured on a 5-point Likert scale. Full Information Maximum Likelihood (FIML) with robust standard errors (MLR) will be used to handle missingness."
+  - measurement_construct: "A 12-item multidimensional scale assessing latent trait
+      anxiety and state anxiety over a 12-month period."
+    longitudinal_design: "Three waves of data collection (T1=Baseline, T2=6 months,
+      T3=12 months) with an initial sample of N=850. Significant attrition occurred
+      at T3 (N=620)."
+    statistical_model_specs: "Two-factor CFA with items measured on a 5-point Likert
+      scale. Full Information Maximum Likelihood (FIML) with robust standard errors
+      (MLR) will be used to handle missingness."
 evaluators:
   - type: regex
     pattern: "(?i)Configural|Metric|Scalar|Strict"
   - type: regex
-    pattern: "(?i)\\\\Delta\\\\text\\{CFI\\}|\\\\Delta\\\\chi\\^2|\\\\text\\{RMSEA\\}"
+    pattern: "(?i)\\\\Delta\\\\text\\{CFI\\}|\\\\Delta\\\\chi\\^2|\\\\text\\{RMSEA\\\
+      }"

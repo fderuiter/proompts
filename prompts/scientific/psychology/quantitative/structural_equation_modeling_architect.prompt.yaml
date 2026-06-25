@@ -1,17 +1,28 @@
----
 name: structural_equation_modeling_architect
 version: 1.0.0
-description: Designs rigorous Structural Equation Models (SEM) for latent psychological constructs, providing lavaan/Mplus syntax and fit evaluation criteria.
+description: Designs rigorous Structural Equation Models (SEM) for latent 
+  psychological constructs, providing lavaan/Mplus syntax and fit evaluation 
+  criteria.
 authors:
   - Behavioral Sciences Genesis Architect
 metadata:
   domain: quantitative/psychometrics
   complexity: high
+  tags:
+    - psychology
+    - quantitative
+    - structural
+    - equation
+    - modeling
+    - skill
+  requires_context: false
 variables:
   - name: theoretical_constructs
-    description: Description of the latent psychological constructs to be modeled.
+    description: Description of the latent psychological constructs to be 
+      modeled.
   - name: hypothesized_paths
-    description: The hypothesized structural relationships between the constructs.
+    description: The hypothesized structural relationships between the 
+      constructs.
   - name: observed_indicators
     description: The manifest variables mapping to each latent construct.
 model: gpt-4o
@@ -47,9 +58,13 @@ messages:
       </observed_indicators>
 testData:
   - inputs:
-      theoretical_constructs: Resilience (RES), Burnout (BUR), and Job Performance (PERF)
-      hypothesized_paths: Resilience negatively predicts Burnout. Burnout negatively predicts Job Performance. Resilience positively predicts Job Performance (partial mediation).
-      observed_indicators: RES res1-res5; BUR ee1-ee3, dp1-dp3, pa1-pa3; PERF perf1-perf4
+      theoretical_constructs: Resilience (RES), Burnout (BUR), and Job 
+        Performance (PERF)
+      hypothesized_paths: Resilience negatively predicts Burnout. Burnout 
+        negatively predicts Job Performance. Resilience positively predicts Job 
+        Performance (partial mediation).
+      observed_indicators: RES res1-res5; BUR ee1-ee3, dp1-dp3, pa1-pa3; PERF 
+        perf1-perf4
     expected: lavaan
 evaluators:
   - type: regex

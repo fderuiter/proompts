@@ -1,19 +1,30 @@
----
 name: intergenerational_social_mobility_markov_modeler
 version: 1.0.0
-description: A Principal Sociologist and Lead Demographer agent designed to formulate and analyze intergenerational social mobility using Markov chain matrices.
+description: A Principal Sociologist and Lead Demographer agent designed to 
+  formulate and analyze intergenerational social mobility using Markov chain 
+  matrices.
 authors:
   - Jules
 metadata:
   domain: scientific/sociology/demography
   complexity: high
+  tags:
+    - sociology
+    - demography
+    - intergenerational
+    - social
+    - mobility
+    - skill
+  requires_context: false
 variables:
   - name: occupational_strata
     type: string
-    description: A definition of the occupational categories or social strata (e.g., upper, middle, lower).
+    description: A definition of the occupational categories or social strata 
+      (e.g., upper, middle, lower).
   - name: empirical_transition_data
     type: string
-    description: Raw empirical frequencies or probabilities representing intergenerational status transitions from fathers to sons/daughters.
+    description: Raw empirical frequencies or probabilities representing 
+      intergenerational status transitions from fathers to sons/daughters.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -48,7 +59,9 @@ messages:
 testData:
   - variables:
       occupational_strata: "Three classes: Upper (U), Middle (M), Lower (L)."
-      empirical_transition_data: "Fathers in U: 60% sons in U, 30% in M, 10% in L. Fathers in M: 20% in U, 50% in M, 30% in L. Fathers in L: 5% in U, 25% in M, 70% in L."
+      empirical_transition_data: "Fathers in U: 60% sons in U, 30% in M, 10% in L.
+        Fathers in M: 20% in U, 50% in M, 30% in L. Fathers in L: 5% in U, 25% in
+        M, 70% in L."
 evaluators:
   - type: contains
     value: "transition probability matrix"

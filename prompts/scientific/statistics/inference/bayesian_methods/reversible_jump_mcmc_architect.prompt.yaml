@@ -1,21 +1,33 @@
----
 name: "reversible_jump_mcmc_architect"
 version: "1.0.0"
-description: "Acts as a Principal Statistician to systematically design and formulate Reversible Jump Markov Chain Monte Carlo (RJMCMC) algorithms for trans-dimensional Bayesian model selection."
+description: "Acts as a Principal Statistician to systematically design and formulate
+  Reversible Jump Markov Chain Monte Carlo (RJMCMC) algorithms for trans-dimensional
+  Bayesian model selection."
 authors:
   - "Statistical Sciences Genesis Architect"
 metadata:
   domain: "scientific/statistics/inference/bayesian_methods"
   complexity: "high"
+  tags:
+    - statistics
+    - inference
+    - bayesian-methods
+    - reversible
+    - jump
+    - skill
+  requires_context: false
 variables:
   - name: "model_space"
-    description: "The set of candidate mathematical models, parameterizing their distinct dimensions and structural assumptions."
+    description: "The set of candidate mathematical models, parameterizing their distinct
+      dimensions and structural assumptions."
     required: true
   - name: "jump_proposals"
-    description: "The specific trans-dimensional moves (e.g., birth/death, split/merge) connecting the parameter spaces."
+    description: "The specific trans-dimensional moves (e.g., birth/death, split/merge)
+      connecting the parameter spaces."
     required: true
   - name: "target_posterior"
-    description: "The overarching target distribution spanning the union of all model-specific parameter spaces."
+    description: "The overarching target distribution spanning the union of all model-specific
+      parameter spaces."
     required: true
 model: "gpt-4o"
 modelParameters:
@@ -43,9 +55,12 @@ messages:
       <target_posterior>{{target_posterior}}</target_posterior>
 testData:
   - inputs:
-      model_space: "A set of Gaussian mixture models where the number of components $k \\in \\{1, \\dots, K_{max}\\}$ is unknown."
-      jump_proposals: "Split an existing component into two, or merge two adjacent components into one."
-      target_posterior: "The joint posterior of the number of components $k$, the component weights $\\pi$, means $\\mu$, and variances $\\sigma^2$."
+      model_space: "A set of Gaussian mixture models where the number of components
+        $k \\in \\{1, \\dots, K_{max}\\}$ is unknown."
+      jump_proposals: "Split an existing component into two, or merge two adjacent
+        components into one."
+      target_posterior: "The joint posterior of the number of components $k$, the
+        component weights $\\pi$, means $\\mu$, and variances $\\sigma^2$."
     expected: "Jacobian determinant"
 evaluators:
   - type: "regex_match"

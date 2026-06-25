@@ -5,49 +5,50 @@ metadata:
   domain: scientific
   complexity: low
   tags:
-  - medical-writing
-  - clinical
-  - study
-  - report
-  - csr
+    - medical-writing
+    - clinical
+    - study
+    - report
+    - csr
+    - skill
   requires_context: false
 variables:
-- name: statistical_outputs
-  description: The statistical outputs to use for this prompt
-  required: true
+  - name: statistical_outputs
+    description: The statistical outputs to use for this prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: You are a Medical Writer. Draft the Clinical Study Report following the
-    ICH E3 structure, integrating the final statistical outputs and providing descriptive
-    narratives for all serious adverse events.
-- role: user
-  content: 'Draft the Clinical Study Report following the ICH E3 structure, integrating
-    the final statistical outputs and providing descriptive narratives for all serious
-    adverse events.
+  - role: system
+    content: You are a Medical Writer. Draft the Clinical Study Report following
+      the ICH E3 structure, integrating the final statistical outputs and 
+      providing descriptive narratives for all serious adverse events.
+  - role: user
+    content: 'Draft the Clinical Study Report following the ICH E3 structure, integrating
+      the final statistical outputs and providing descriptive narratives for all serious
+      adverse events.
 
 
-    Inputs:
+      Inputs:
 
-    - `{{statistical_outputs}}`
+      - `{{statistical_outputs}}`
 
 
-    Output format:
+      Output format:
 
-    Markdown CSR Sections.'
+      Markdown CSR Sections.'
 testData:
-- expected: 'Clinical Study Report
+  - expected: 'Clinical Study Report
 
-    '
-  vars: 'statistical_outputs: Efficacy data and SAE listings.
+      '
+    vars: 'statistical_outputs: Efficacy data and SAE listings.
 
-    '
+      '
 evaluators:
-- name: ICH E3
-  string:
-    contains: ICH E3
-- name: Safety Narratives
-  string:
-    contains: Safety Narratives
+  - name: ICH E3
+    string:
+      contains: ICH E3
+  - name: Safety Narratives
+    string:
+      contains: Safety Narratives

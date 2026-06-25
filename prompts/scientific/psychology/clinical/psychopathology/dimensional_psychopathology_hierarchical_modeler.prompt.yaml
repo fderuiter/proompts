@@ -1,19 +1,33 @@
----
 name: dimensional_psychopathology_hierarchical_modeler
 version: 1.0.0
-description: Systematically maps complex clinical presentations onto dimensional psychopathology frameworks (e.g., HiTOP), emphasizing the p-factor and hierarchical transdiagnostic constructs.
+description: Systematically maps complex clinical presentations onto dimensional
+  psychopathology frameworks (e.g., HiTOP), emphasizing the p-factor and 
+  hierarchical transdiagnostic constructs.
 authors:
   - Behavioral Sciences Genesis Architect
 metadata:
   domain: scientific/psychology/clinical/psychopathology
   complexity: high
+  tags:
+    - psychology
+    - clinical
+    - psychopathology
+    - dimensional
+    - hierarchical
+    - skill
+  requires_context: true
 variables:
   - name: clinical_presentation
-    description: Comprehensive description of the patient's current symptoms, behavioral observations, and longitudinal symptom trajectory.
+    description: Comprehensive description of the patient's current symptoms, 
+      behavioral observations, and longitudinal symptom trajectory.
   - name: psychosocial_context
-    description: Detailed contextual factors, including trauma exposure, developmental milestones, socioeconomic stressors, and family history of psychopathology.
+    description: Detailed contextual factors, including trauma exposure, 
+      developmental milestones, socioeconomic stressors, and family history of 
+      psychopathology.
   - name: psychometric_data
-    description: Results from structured dimensional assessments or self-report measures, including standardized scores and measurement reliability metrics.
+    description: Results from structured dimensional assessments or self-report 
+      measures, including standardized scores and measurement reliability 
+      metrics.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -54,14 +68,30 @@ messages:
       </psychometric_data>
 testData:
   - inputs:
-      clinical_presentation: A 24-year-old male presenting with chronic, pervasive negative affectivity, frequent episodes of non-suicidal self-injury (NSSI), transient paranoid ideation under stress, and impulsive substance use. He describes feeling fundamentally empty and reports intense, volatile interpersonal relationships.
-      psychosocial_context: History of severe childhood emotional abuse and neglect. Unstable employment history. Currently estranged from biological family.
-      psychometric_data: PID-5 trait assessment reveals significant elevations (T > 75) on Negative Affectivity, Detachment, and Antagonism domains. Overall reliability of the administration $\omega = .92$.
+      clinical_presentation: A 24-year-old male presenting with chronic, 
+        pervasive negative affectivity, frequent episodes of non-suicidal 
+        self-injury (NSSI), transient paranoid ideation under stress, and 
+        impulsive substance use. He describes feeling fundamentally empty and 
+        reports intense, volatile interpersonal relationships.
+      psychosocial_context: History of severe childhood emotional abuse and 
+        neglect. Unstable employment history. Currently estranged from 
+        biological family.
+      psychometric_data: PID-5 trait assessment reveals significant elevations 
+        (T > 75) on Negative Affectivity, Detachment, and Antagonism domains. 
+        Overall reliability of the administration $\omega = .92$.
     expected: "HiTOP framework"
   - inputs:
-      clinical_presentation: A 35-year-old female exhibiting severe anhedonia, psychomotor retardation, profound guilt, and recurrent panic attacks. She also reports a recent history of restricting food intake leading to significant weight loss, driven by a desire for control rather than body image distortion.
-      psychosocial_context: Recent sudden job loss and impending divorce. Family history of major depressive disorder and generalized anxiety disorder. No history of physical trauma.
-      psychometric_data: Inventory of Depression and Anxiety Symptoms (IDAS-II) reveals elevated General Depression ($T$-score = 82) and Panic ($T$-score = 78).
+      clinical_presentation: A 35-year-old female exhibiting severe anhedonia, 
+        psychomotor retardation, profound guilt, and recurrent panic attacks. 
+        She also reports a recent history of restricting food intake leading to 
+        significant weight loss, driven by a desire for control rather than body
+        image distortion.
+      psychosocial_context: Recent sudden job loss and impending divorce. Family
+        history of major depressive disorder and generalized anxiety disorder. 
+        No history of physical trauma.
+      psychometric_data: Inventory of Depression and Anxiety Symptoms (IDAS-II) 
+        reveals elevated General Depression ($T$-score = 82) and Panic 
+        ($T$-score = 78).
     expected: "Internalizing spectrum"
 evaluators:
   - type: regex

@@ -1,4 +1,3 @@
----
 name: Space-Based Architecture Designer
 version: 1.0.0
 description: >
@@ -14,6 +13,7 @@ metadata:
     - high-concurrency
     - distributed-systems
     - in-memory-data-grid
+    - skill
   requires_context: true
 variables:
   - name: scale_requirements
@@ -66,8 +66,10 @@ messages:
       </transactional_domain>
 testData:
   - inputs:
-      scale_requirements: "Sustained load of 500,000 TPS, sub-millisecond p99 latency, spanning 3 global regions with active-active topology."
-      transactional_domain: "High-Frequency Trading (HFT) order matching engine, real-time position keeping, and risk limit calculations."
+      scale_requirements: "Sustained load of 500,000 TPS, sub-millisecond p99 latency,
+        spanning 3 global regions with active-active topology."
+      transactional_domain: "High-Frequency Trading (HFT) order matching engine, real-time
+        position keeping, and risk limit calculations."
     expected: "Processing Unit (PU)"
 evaluators:
   - name: "Output must contain Space-Based Architecture concepts"

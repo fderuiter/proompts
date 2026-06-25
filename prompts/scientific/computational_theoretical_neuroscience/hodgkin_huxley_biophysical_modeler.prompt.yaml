@@ -1,19 +1,28 @@
----
 name: hodgkin_huxley_biophysical_modeler
 version: 1.0.0
-description: Generates highly rigorous, computationally sound biophysical models of single-neuron action potential dynamics using the Hodgkin-Huxley formalism.
+description: Generates highly rigorous, computationally sound biophysical models
+  of single-neuron action potential dynamics using the Hodgkin-Huxley formalism.
 authors:
   - Neuroscience Genesis Architect
 metadata:
   domain: neuroscience
   complexity: high
+  tags:
+    - computational-theoretical-neuroscience
+    - hodgkin
+    - huxley
+    - biophysical
+    - modeler
+    - skill
+  requires_context: false
 variables:
   - name: ion_channels
     type: string
     description: Specific ion channels and conductances to include in the model.
   - name: stimulus_protocol
     type: string
-    description: The current injection or synaptic stimulation protocol used to drive the neuron.
+    description: The current injection or synaptic stimulation protocol used to 
+      drive the neuron.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -44,8 +53,13 @@ messages:
       Subjected to the following stimulus protocol:
       <stimulus_protocol>{{stimulus_protocol}}</stimulus_protocol>
 testData:
-  - ion_channels: "Fast transient Na+ (Nav1.6) with kinetics from cortical pyramidal neurons, delayed rectifier K+ (Kv1.1) mediating spike repolarization, and a hyperpolarization-activated cyclic nucleotide-gated (HCN) channel driving the sag voltage."
-    stimulus_protocol: "A 500 ms hyperpolarizing prepulse of -150 pA to completely deinactivate HCN channels, followed immediately by a 200 ms depolarizing step of 400 pA to elicit a burst of action potentials."
+  - ion_channels: "Fast transient Na+ (Nav1.6) with kinetics from cortical pyramidal
+      neurons, delayed rectifier K+ (Kv1.1) mediating spike repolarization, and a
+      hyperpolarization-activated cyclic nucleotide-gated (HCN) channel driving the
+      sag voltage."
+    stimulus_protocol: "A 500 ms hyperpolarizing prepulse of -150 pA to completely
+      deinactivate HCN channels, followed immediately by a 200 ms depolarizing step
+      of 400 pA to elicit a burst of action potentials."
     evaluators:
       - name: Membrane Potential Equation
         type: regex

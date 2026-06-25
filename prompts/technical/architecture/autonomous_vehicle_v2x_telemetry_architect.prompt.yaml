@@ -1,7 +1,9 @@
----
 name: Autonomous Vehicle V2X Telemetry Architect
 version: 1.0.0
-description: Designs highly resilient, low-latency edge-to-cloud telemetry and V2X (Vehicle-to-Everything) communication architectures for autonomous vehicle fleets, optimizing data tiering, intermittent connectivity, and safety-critical state synchronization.
+description: Designs highly resilient, low-latency edge-to-cloud telemetry and 
+  V2X (Vehicle-to-Everything) communication architectures for autonomous vehicle
+  fleets, optimizing data tiering, intermittent connectivity, and 
+  safety-critical state synchronization.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,18 +15,24 @@ metadata:
     - telemetry
     - edge-computing
     - v2x
+    - skill
   requires_context: false
 variables:
   - name: fleet_sensor_profile
-    description: Characteristics of the vehicle sensor suite (e.g., LiDAR point cloud density, high-res camera bitrates, radar, IMU frequency) and total data generation rates.
+    description: Characteristics of the vehicle sensor suite (e.g., LiDAR point 
+      cloud density, high-res camera bitrates, radar, IMU frequency) and total 
+      data generation rates.
     type: string
     required: true
   - name: network_intermittency_model
-    description: The expected connectivity landscape, including 5G/LTE availability, dead zones, bandwidth limitations, and failover to satellite or V2X mesh networks.
+    description: The expected connectivity landscape, including 5G/LTE 
+      availability, dead zones, bandwidth limitations, and failover to satellite
+      or V2X mesh networks.
     type: string
     required: true
   - name: latency_critical_thresholds
-    description: SLAs defining the maximum allowable latency for safety-critical telemetry, cooperative perception, and remote teleoperation control loops.
+    description: SLAs defining the maximum allowable latency for safety-critical
+      telemetry, cooperative perception, and remote teleoperation control loops.
     type: string
     required: true
 model: anthropic/claude-3-opus-20240229
@@ -62,14 +70,19 @@ messages:
       </user_query>
 testData:
   - variables:
-      fleet_sensor_profile: "L4 AVs with 3x LiDAR (2M pts/sec), 8x 4K cameras (30fps), producing ~5TB/hour raw data per vehicle."
-      network_intermittency_model: "Urban 5G with ~95% coverage, occasional tunnel dead zones, LTE fallback."
-      latency_critical_thresholds: "<50ms for cooperative perception (V2V), <100ms for intersection collision warnings (V2I)."
+      fleet_sensor_profile: "L4 AVs with 3x LiDAR (2M pts/sec), 8x 4K cameras (30fps),
+        producing ~5TB/hour raw data per vehicle."
+      network_intermittency_model: "Urban 5G with ~95% coverage, occasional tunnel
+        dead zones, LTE fallback."
+      latency_critical_thresholds: "<50ms for cooperative perception (V2V), <100ms
+        for intersection collision warnings (V2I)."
     expected: "DDS"
   - variables:
       fleet_sensor_profile: "Mining dump trucks with dual LiDAR and thermal cameras."
-      network_intermittency_model: "Deep pit operations with zero cellular coverage, reliant entirely on high-latency Geo-satellite link with 800ms ping."
-      latency_critical_thresholds: "Requires <20ms round-trip for remote teleoperation intervention."
+      network_intermittency_model: "Deep pit operations with zero cellular coverage,
+        reliant entirely on high-latency Geo-satellite link with 800ms ping."
+      latency_critical_thresholds: "Requires <20ms round-trip for remote teleoperation
+        intervention."
     expected: "error"
 evaluators:
   - name: Output Constraints Match

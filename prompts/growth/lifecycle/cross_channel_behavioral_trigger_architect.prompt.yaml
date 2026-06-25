@@ -1,19 +1,30 @@
----
 name: cross_channel_behavioral_trigger_architect
 version: 1.0.0
-description: Synthesizes enterprise SaaS customer behavioral telemetry and constructs cross-channel behavioral trigger sequences to optimize user retention and conversion.
+description: Synthesizes enterprise SaaS customer behavioral telemetry and 
+  constructs cross-channel behavioral trigger sequences to optimize user 
+  retention and conversion.
 authors:
   - Growth Strategy Genesis Architect
 metadata:
   domain: growth/lifecycle
   complexity: high
+  tags:
+    - sdlc
+    - cross
+    - channel
+    - behavioral
+    - trigger
+    - skill
+  requires_context: false
 variables:
   - name: behavioral_telemetry
-    description: Complex customer event streams, product usage data, and drop-off points.
+    description: Complex customer event streams, product usage data, and 
+      drop-off points.
   - name: active_channels
     description: The current communication channels available for targeting.
   - name: target_retention_improvement
-    description: The targeted improvement in retention percentage or key conversion metrics.
+    description: The targeted improvement in retention percentage or key 
+      conversion metrics.
   - name: unit_economics
     description: Current ARPU, Churn Rate, Gross Margin, and marketing costs.
 model: gpt-4o
@@ -54,19 +65,30 @@ messages:
       </unit_economics>
 testData:
   - inputs:
-      behavioral_telemetry: "75% of users drop off at the 'Connect Integration' step (Day 3). Only 15% complete the 'First Analysis' event. High login frequency but shallow session depth."
+      behavioral_telemetry: "75% of users drop off at the 'Connect Integration' step
+        (Day 3). Only 15% complete the 'First Analysis' event. High login frequency
+        but shallow session depth."
       active_channels: "Email, In-App Modal, SMS."
       target_retention_improvement: "Increase 'First Analysis' completion by 25%."
       unit_economics: "ARPU: $1200, Churn Rate: 4%, Gross Margin: 80%, CAC: $400."
-    expected: "A brutal assessment of the drop-off, defining a cross-channel sequence (In-App Modal for context, Email for follow-up), anchored in the AARRR funnel. Must include LTV and ROAS calculations using LaTeX."
+    expected: "A brutal assessment of the drop-off, defining a cross-channel sequence
+      (In-App Modal for context, Email for follow-up), anchored in the AARRR funnel.
+      Must include LTV and ROAS calculations using LaTeX."
   - inputs:
       behavioral_telemetry: "Insufficient or corrupted data: 'N/A' for all events."
       active_channels: "N/A"
       target_retention_improvement: "100%"
       unit_economics: "ARPU: N/A, Churn Rate: N/A, Gross Margin: N/A, CAC: N/A."
-    expected: "An unvarnished assessment stating the telemetry data is insufficient to generate a reliable trigger sequence, refusing to hallucinate numbers, while outlining the required mathematical framework (AARRR, LTV, ROAS in LaTeX) needed once data is available."
+    expected: "An unvarnished assessment stating the telemetry data is insufficient
+      to generate a reliable trigger sequence, refusing to hallucinate numbers, while
+      outlining the required mathematical framework (AARRR, LTV, ROAS in LaTeX) needed
+      once data is available."
 evaluators:
-  - rule: "Output must explicitly contain the AARRR funnel framework applied to the data."
-  - rule: "Output must contain the exact LaTeX formula for LTV: $LTV = \\frac{ARPU \\times \\text{Gross Margin}}{\\text{Churn Rate}}$"
-  - rule: "Output must contain the exact LaTeX formula for ROAS: $ROAS = \\frac{\\text{Revenue}}{\\text{Cost}}$"
-  - rule: "Output must prescribe specific cross-channel behavioral trigger sequences or rigorously reject invalid data."
+  - rule: "Output must explicitly contain the AARRR funnel framework applied to the
+      data."
+  - rule: "Output must contain the exact LaTeX formula for LTV: $LTV = \\frac{ARPU
+      \\times \\text{Gross Margin}}{\\text{Churn Rate}}$"
+  - rule: "Output must contain the exact LaTeX formula for ROAS: $ROAS = \\frac{\\\
+      text{Revenue}}{\\text{Cost}}$"
+  - rule: "Output must prescribe specific cross-channel behavioral trigger sequences
+      or rigorously reject invalid data."

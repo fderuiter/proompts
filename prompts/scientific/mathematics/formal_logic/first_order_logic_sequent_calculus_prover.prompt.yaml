@@ -1,12 +1,20 @@
----
 name: first_order_logic_sequent_calculus_prover
 version: 1.0.0
-description: Systematically derives formal proofs for first-order logic formulas using the Gentzen sequent calculus (LK).
+description: Systematically derives formal proofs for first-order logic formulas
+  using the Gentzen sequent calculus (LK).
 authors:
   - Formal Logic Genesis Architect
 metadata:
   domain: scientific/mathematics/formal_logic
   complexity: high
+  tags:
+    - mathematics
+    - formal-logic
+    - first
+    - order
+    - logic
+    - skill
+  requires_context: false
 variables:
   - name: formula
     description: The first-order logic sequent to be proven, using LaTeX syntax.
@@ -41,7 +49,8 @@ testData:
     expected: '\exists R'
 evaluators:
   - type: contains
-    description: 'Ensures the output includes the turnstile symbol indicating sequent derivations.'
+    description: 'Ensures the output includes the turnstile symbol indicating sequent
+      derivations.'
     value: '\vdash'
   - type: contains
     description: 'Ensures the proof contains proper LaTeX logical operators.'

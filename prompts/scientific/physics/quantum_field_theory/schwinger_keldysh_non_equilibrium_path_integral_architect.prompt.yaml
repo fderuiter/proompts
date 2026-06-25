@@ -1,7 +1,8 @@
----
 name: Schwinger-Keldysh Non-Equilibrium Path Integral Architect
 version: 1.0.0
-description: Formulates the rigorous Schwinger-Keldysh (in-in) closed-time path integral formalism to compute real-time Green's functions and analyze non-equilibrium quantum dynamics.
+description: Formulates the rigorous Schwinger-Keldysh (in-in) closed-time path 
+  integral formalism to compute real-time Green's functions and analyze 
+  non-equilibrium quantum dynamics.
 authors:
   - name: Theoretical Physics Genesis Architect
 metadata:
@@ -12,16 +13,20 @@ metadata:
     - non-equilibrium-dynamics
     - schwinger-keldysh
     - theoretical-physics
+    - skill
   requires_context: false
 variables:
   - name: lagrangian_density
-    description: The explicit mathematical form of the system's Lagrangian density, including any time-dependent couplings.
+    description: The explicit mathematical form of the system's Lagrangian 
+      density, including any time-dependent couplings.
     required: true
   - name: initial_density_matrix
-    description: The functional form of the initial statistical density matrix $\rho(t_0)$.
+    description: The functional form of the initial statistical density matrix 
+      $\rho(t_0)$.
     required: true
   - name: observable
-    description: The specific real-time observable or n-point correlation function to be computed.
+    description: The specific real-time observable or n-point correlation 
+      function to be computed.
     required: true
 model: gpt-4o
 modelParameters:
@@ -54,12 +59,15 @@ messages:
       <user_query>{{observable}}</user_query>
 testData:
   - inputs:
-      lagrangian_density: "\\mathcal{L} = \\frac{1}{2}(\\partial_\\mu \\phi)(\\partial^\\mu \\phi) - \\frac{1}{2}m^2 \\phi^2 - \\frac{\\lambda}{4!}\\phi^4"
+      lagrangian_density: "\\mathcal{L} = \\frac{1}{2}(\\partial_\\mu \\phi)(\\partial^\\
+        mu \\phi) - \\frac{1}{2}m^2 \\phi^2 - \\frac{\\lambda}{4!}\\phi^4"
       initial_density_matrix: "\\rho(t_0) = \\frac{e^{-\\beta H_0}}{Z_0}"
-      observable: "G^R(x, x') = i \\theta(t-t') \\langle [\\phi(x), \\phi(x')] \\rangle"
+      observable: "G^R(x, x') = i \\theta(t-t') \\langle [\\phi(x), \\phi(x')] \\\
+        rangle"
     expected: "Z[J_+, J_-]"
   - inputs:
-      lagrangian_density: "\\mathcal{L} = \\bar{\\psi}(i\\gamma^\\mu \\partial_\\mu - m)\\psi - g \\bar{\\psi}\\gamma^\\mu \\psi A_\\mu"
+      lagrangian_density: "\\mathcal{L} = \\bar{\\psi}(i\\gamma^\\mu \\partial_\\\
+        mu - m)\\psi - g \\bar{\\psi}\\gamma^\\mu \\psi A_\\mu"
       initial_density_matrix: "\\rho(t_0) = |0\\rangle \\langle 0|"
       observable: "S^K(x, x') = -i \\langle [\\psi(x), \\bar{\\psi}(x')]_- \\rangle"
     expected: "Keldysh propagator"

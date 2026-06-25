@@ -1,7 +1,8 @@
----
 name: Living-off-the-Land Behavioral SIEM Query Architect
 version: 1.0.0
-description: Architects advanced, high-fidelity SIEM behavioral queries targeting Living-off-the-Land (LotL) techniques, bypassing static indicator-based detections.
+description: Architects advanced, high-fidelity SIEM behavioral queries 
+  targeting Living-off-the-Land (LotL) techniques, bypassing static 
+  indicator-based detections.
 authors:
   - name: Cybersecurity Genesis Architect
 metadata:
@@ -13,16 +14,21 @@ metadata:
     - siem
     - threat-hunting
     - lotl
+    - skill
   requires_context: false
 variables:
   - name: target_lotl_binary
-    description: The specific native OS binary being targeted for behavioral analysis (e.g., PowerShell, WMI, bitsadmin, certutil, bash, curl).
+    description: The specific native OS binary being targeted for behavioral 
+      analysis (e.g., PowerShell, WMI, bitsadmin, certutil, bash, curl).
     required: true
   - name: siem_platform_syntax
-    description: The target SIEM syntax required for the query output (e.g., Splunk SPL, KQL, Elastic EQL, CrowdStrike FQL).
+    description: The target SIEM syntax required for the query output (e.g., 
+      Splunk SPL, KQL, Elastic EQL, CrowdStrike FQL).
     required: true
   - name: baseline_noise_profile
-    description: Known legitimate environmental behaviors and administrative tasks that typically use the target binary, to be filtered out to reduce false positives.
+    description: Known legitimate environmental behaviors and administrative 
+      tasks that typically use the target binary, to be filtered out to reduce 
+      false positives.
     required: true
 model: gpt-4o
 modelParameters:
@@ -59,14 +65,17 @@ testData:
   - inputs:
       target_lotl_binary: "certutil.exe"
       siem_platform_syntax: "Splunk SPL"
-      baseline_noise_profile: "SCCM pushing legitimate certificates, standard AD CS enrollment tasks."
+      baseline_noise_profile: "SCCM pushing legitimate certificates, standard AD CS
+        enrollment tasks."
     expected: "ParentImage|CommandLine|SPL"
   - inputs:
       target_lotl_binary: "curl"
       siem_platform_syntax: "Elastic EQL"
-      baseline_noise_profile: "Legitimate developer activity downloading from internal artifact repositories (10.0.0.0/8)."
+      baseline_noise_profile: "Legitimate developer activity downloading from internal
+        artifact repositories (10.0.0.0/8)."
     expected: "EQL|process.parent.name|process.command_line"
 evaluators:
   - name: Expert Terminology Check
     type: regex
-    pattern: '(?i)(process lineage anomalies|command-line obfuscation|unmanaged execution|anomalous parent-child|suspicious paths|alert fatigue)'
+    pattern: '(?i)(process lineage anomalies|command-line obfuscation|unmanaged execution|anomalous
+      parent-child|suspicious paths|alert fatigue)'

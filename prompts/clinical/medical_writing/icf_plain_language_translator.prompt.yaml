@@ -1,7 +1,7 @@
----
 name: Informed Consent Form Plain Language Translator
 version: 1.0.0
-description: Translates complex clinical trial protocols into plain-language Informed Consent Forms (ICFs) ensuring readability and ethical compliance.
+description: Translates complex clinical trial protocols into plain-language 
+  Informed Consent Forms (ICFs) ensuring readability and ethical compliance.
 authors:
   - name: Jules
     role: Strategic Genesis Architect
@@ -14,10 +14,12 @@ metadata:
     - informed-consent
     - icf
     - regulatory
+    - skill
   requires_context: true
 variables:
   - name: protocol_section
-    description: The complex protocol text detailing study procedures, risks, or objectives.
+    description: The complex protocol text detailing study procedures, risks, or
+      objectives.
     required: true
   - name: target_reading_level
     description: The target reading level (e.g., 6th grade, 8th grade).
@@ -51,7 +53,10 @@ messages:
       </protocol_section>
 testData:
   - vars:
-      protocol_section: "The investigational product has been associated with transient ischemic attacks, severe hepatic impairment, and thrombocytopenia. Subjects must immediately report any neurological deficits or jaundice to the Principal Investigator."
+      protocol_section: "The investigational product has been associated with transient
+        ischemic attacks, severe hepatic impairment, and thrombocytopenia. Subjects
+        must immediately report any neurological deficits or jaundice to the Principal
+        Investigator."
     expected: "temporary stroke-like symptoms"
     evaluators:
       - name: Jargon Translation
@@ -66,5 +71,6 @@ testData:
     evaluators:
       - name: Refusal Mechanism
         type: regex
-        pattern: "Error: Input must be clinical protocol text for ICF translation\\."
+        pattern: "Error: Input must be clinical protocol text for ICF translation\\\
+          ."
 evaluators: []

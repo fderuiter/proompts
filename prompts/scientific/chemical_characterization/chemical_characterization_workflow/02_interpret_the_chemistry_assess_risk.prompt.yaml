@@ -5,50 +5,50 @@ metadata:
   domain: scientific
   complexity: medium
   tags:
-  - chemical-characterization
-  - interpret
-  - chemistry
-  - assess
-  - risk
+    - chemical-characterization
+    - interpret
+    - chemistry
+    - assess
+    - risk
+    - skill
   requires_context: false
 variables:
-- name: body_weight
-  description: The body weight to use for this prompt
-  required: true
-- name: device_dose
-  description: The device dose to use for this prompt
-  required: true
-- name: study_results
-  description: The study results to use for this prompt
-  required: true
+  - name: body_weight
+    description: The body weight to use for this prompt
+    required: true
+  - name: device_dose
+    description: The device dose to use for this prompt
+    required: true
+  - name: study_results
+    description: The study results to use for this prompt
+    required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: 'You are a board-certified toxicologist interpreting extractables and
+  - role: system
+    content: 'You are a board-certified toxicologist interpreting extractables and
 
-    leachables data to quantify patient risk and recommend follow-up actions.
+      leachables data to quantify patient risk and recommend follow-up actions.
 
-    '
-- role: user
-  content: "Here are the extractables/leachables results:\n{{study_results}}\n\nUsing\
-    \ those data, perform a risk assessment.\n- Calculate the Analytical Evaluation\
-    \ Threshold (AET) given:\n   - Patient body weight = {{body_weight}} kg\n   -\
-    \ Clinical dose = {{device_dose}} \xB5g day\u207B\xB9\n   - Show equations and\
-    \ intermediate steps.\n- Tag each compound as:\n   - \u201CBelow AET\u201D\n \
-    \  - \u201CAbove AET \u2013 identified\u201D\n   - \u201CAbove AET \u2013 unknown\u201D\
-    \n- For compounds above the AET, retrieve toxicological reference values (e.g.,\
-    \ TTC or DNEL), calculate the Margin of Safety (MoS), and flag any MoS < 1.\n\
-    - Summarize overall patient risk and recommend next actions (further ID work,\
-    \ in-vivo testing, justification memo, etc.).\n\nReturn a markdown table of results\
-    \ followed by a concise narrative. If any required inputs are missing, list the\
-    \ specific questions **before** performing the assessment.\n\\n<!-- markdownlint-enable\
-    \ MD007 -->"
+      '
+  - role: user
+    content: "Here are the extractables/leachables results:\n{{study_results}}\n\n\
+      Using those data, perform a risk assessment.\n- Calculate the Analytical Evaluation
+      Threshold (AET) given:\n   - Patient body weight = {{body_weight}} kg\n   -
+      Clinical dose = {{device_dose}} µg day⁻¹\n   - Show equations and intermediate
+      steps.\n- Tag each compound as:\n   - “Below AET”\n   - “Above AET – identified”\n\
+      \   - “Above AET – unknown”\n- For compounds above the AET, retrieve toxicological
+      reference values (e.g., TTC or DNEL), calculate the Margin of Safety (MoS),
+      and flag any MoS < 1.\n- Summarize overall patient risk and recommend next actions
+      (further ID work, in-vivo testing, justification memo, etc.).\n\nReturn a markdown
+      table of results followed by a concise narrative. If any required inputs are
+      missing, list the specific questions **before** performing the assessment.\n\
+      \\n<!-- markdownlint-enable MD007 -->"
 testData:
-- expected: Completion follows instructions.
-  vars: ''
+  - expected: Completion follows instructions.
+    vars: ''
 evaluators:
-- name: Output starts with a markdown table
-  string:
-    startsWith: '|'
+  - name: Output starts with a markdown table
+    string:
+      startsWith: '|'

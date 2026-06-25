@@ -1,20 +1,34 @@
 name: "fully_homomorphic_encryption_circuit_architect"
-description: "Acts as a Principal Cryptographic Engineer and FHE Specialist to design highly optimized Fully Homomorphic Encryption (FHE) circuits, select appropriate schemes, and manage noise budgets."
+description: "Acts as a Principal Cryptographic Engineer and FHE Specialist to design
+  highly optimized Fully Homomorphic Encryption (FHE) circuits, select appropriate
+  schemes, and manage noise budgets."
 version: "1.0.0"
 authors:
   - "Strategic Genesis Architect"
 metadata:
-  intent: "Design mathematically sound, resource-optimized FHE circuits for privacy-preserving computation over encrypted data."
+  intent: "Design mathematically sound, resource-optimized FHE circuits for privacy-preserving
+    computation over encrypted data."
   domain: "Technical"
   category: "Cryptography"
   complexity: "high"
+  tags:
+    - cryptography
+    - fully
+    - homomorphic
+    - encryption
+    - circuit
+    - skill
+  requires_context: false
 variables:
   - name: "computational_task"
-    description: "The plaintext function or logic to be evaluated homomorphically (e.g., matrix multiplication, logistic regression inference, private set intersection)."
+    description: "The plaintext function or logic to be evaluated homomorphically
+      (e.g., matrix multiplication, logistic regression inference, private set intersection)."
   - name: "performance_latency_constraints"
-    description: "Acceptable execution time bounds, throughput requirements, and hardware availability (e.g., CPU, GPU acceleration, ASIC constraints)."
+    description: "Acceptable execution time bounds, throughput requirements, and hardware
+      availability (e.g., CPU, GPU acceleration, ASIC constraints)."
   - name: "precision_data_requirements"
-    description: "Data types involved (integers, floating point), required precision, and expected depth of the multiplicative circuit."
+    description: "Data types involved (integers, floating point), required precision,
+      and expected depth of the multiplicative circuit."
 model: "gpt-4o"
 modelParameters:
   temperature: 0.1
@@ -57,12 +71,19 @@ messages:
       {{precision_data_requirements}}
       </precision_data_requirements>
 testData:
-  - computational_task: "Evaluating a pre-trained logistic regression model (inference only) on patient genomic data."
-    performance_latency_constraints: "Must complete within 5 seconds per inference request on standard cloud CPU instances; no GPU acceleration available."
-    precision_data_requirements: "Floating-point inputs bounded between [-10.0, 10.0] with at least 4 decimal places of precision; depth is approximately 5 to 7 multiplications depending on the activation function polynomial approximation."
-  - computational_task: "Private Information Retrieval (PIR) querying a database of 1 million records."
-    performance_latency_constraints: "Sub-second response time. GPU acceleration (NVIDIA A100) is available."
-    precision_data_requirements: "Boolean queries matching 256-bit identifiers. Exact match required (no approximations)."
+  - computational_task: "Evaluating a pre-trained logistic regression model (inference
+      only) on patient genomic data."
+    performance_latency_constraints: "Must complete within 5 seconds per inference
+      request on standard cloud CPU instances; no GPU acceleration available."
+    precision_data_requirements: "Floating-point inputs bounded between [-10.0, 10.0]
+      with at least 4 decimal places of precision; depth is approximately 5 to 7 multiplications
+      depending on the activation function polynomial approximation."
+  - computational_task: "Private Information Retrieval (PIR) querying a database of
+      1 million records."
+    performance_latency_constraints: "Sub-second response time. GPU acceleration (NVIDIA
+      A100) is available."
+    precision_data_requirements: "Boolean queries matching 256-bit identifiers. Exact
+      match required (no approximations)."
 evaluators:
   - type: "regex"
     pattern: "(?i)CKKS|BGV|BFV|TFHE|FHEW"

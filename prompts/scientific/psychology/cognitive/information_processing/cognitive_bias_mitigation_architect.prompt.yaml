@@ -1,19 +1,34 @@
----
 name: cognitive_bias_mitigation_architect
 version: 1.0.0
-description: A highly robust, expert-level prompt designed to computationally model and systematically mitigate cognitive biases and heuristics in complex decision-making frameworks under uncertainty using Signal Detection Theory and Bayesian updating.
+description: A highly robust, expert-level prompt designed to computationally 
+  model and systematically mitigate cognitive biases and heuristics in complex 
+  decision-making frameworks under uncertainty using Signal Detection Theory and
+  Bayesian updating.
 authors:
   - Behavioral Sciences Genesis Architect
 metadata:
   domain: cognitive/information_processing
   complexity: high
+  tags:
+    - psychology
+    - cognitive
+    - information-processing
+    - bias
+    - mitigation
+    - skill
+  requires_context: false
 variables:
   - name: decision_making_context
-    description: Detailed description of the complex decision-making environment, including available information, time constraints, and potential outcomes or payoffs.
+    description: Detailed description of the complex decision-making 
+      environment, including available information, time constraints, and 
+      potential outcomes or payoffs.
   - name: cognitive_vulnerabilities
-    description: Hypothesized cognitive biases, heuristics, or decision-making errors (e.g., base-rate neglect, confirmation bias, anchoring) present in the current process.
+    description: Hypothesized cognitive biases, heuristics, or decision-making 
+      errors (e.g., base-rate neglect, confirmation bias, anchoring) present in 
+      the current process.
   - name: statistical_base_rates
-    description: Empirical priors, statistical base rates, and hit/miss probability distributions associated with the decision matrix.
+    description: Empirical priors, statistical base rates, and hit/miss 
+      probability distributions associated with the decision matrix.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -47,14 +62,23 @@ messages:
       </statistical_base_rates>
 testData:
   - inputs:
-      decision_making_context: "Emergency room triage nurses assessing patients for acute myocardial infarction within a 5-minute time window."
-      cognitive_vulnerabilities: "Representativeness heuristic and confirmation bias leading to misdiagnosis in atypical presentations (e.g., females presenting with abdominal pain rather than chest pain)."
-      statistical_base_rates: "Base rate of AMI in triage population is 5%. Probability of atypical presentation given AMI is 30% in females. False alarm rate currently at 15%."
+      decision_making_context: "Emergency room triage nurses assessing patients for
+        acute myocardial infarction within a 5-minute time window."
+      cognitive_vulnerabilities: "Representativeness heuristic and confirmation bias
+        leading to misdiagnosis in atypical presentations (e.g., females presenting
+        with abdominal pain rather than chest pain)."
+      statistical_base_rates: "Base rate of AMI in triage population is 5%. Probability
+        of atypical presentation given AMI is 30% in females. False alarm rate currently
+        at 15%."
     expected: "Discriminability $d'$"
   - inputs:
-      decision_making_context: "Intelligence analysts evaluating satellite imagery to determine the presence of concealed military installations under high ambiguity."
-      cognitive_vulnerabilities: "Base-rate neglect and anchoring bias due to prior briefing expectations, resulting in an elevated false alarm rate."
-      statistical_base_rates: "Prior probability of installation $P(H) = 0.01$. Likelihood of signal given installation $P(E|H) = 0.85$. Likelihood of signal given no installation $P(E|\\neg H) = 0.10$."
+      decision_making_context: "Intelligence analysts evaluating satellite imagery
+        to determine the presence of concealed military installations under high ambiguity."
+      cognitive_vulnerabilities: "Base-rate neglect and anchoring bias due to prior
+        briefing expectations, resulting in an elevated false alarm rate."
+      statistical_base_rates: "Prior probability of installation $P(H) = 0.01$. Likelihood
+        of signal given installation $P(E|H) = 0.85$. Likelihood of signal given no
+        installation $P(E|\\neg H) = 0.10$."
     expected: "Bayesian updating"
 evaluators:
   - type: regex

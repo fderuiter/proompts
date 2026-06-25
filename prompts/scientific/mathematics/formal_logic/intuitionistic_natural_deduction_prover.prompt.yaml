@@ -1,19 +1,30 @@
----
 name: intuitionistic_natural_deduction_prover
 version: 1.0.0
-description: Generates rigorous, step-by-step natural deduction proofs for sequents in Intuitionistic Logic, enforcing constructive validity and strict LaTeX formatting.
+description: Generates rigorous, step-by-step natural deduction proofs for 
+  sequents in Intuitionistic Logic, enforcing constructive validity and strict 
+  LaTeX formatting.
 authors:
   - Formal Logic Genesis Architect
 metadata:
   domain: scientific/mathematics/formal_logic
   complexity: high
+  tags:
+    - mathematics
+    - formal-logic
+    - intuitionistic
+    - natural
+    - deduction
+    - skill
+  requires_context: false
 variables:
   - name: sequent
     type: string
-    description: The logical sequent or theorem to be proven (or refuted) in intuitionistic logic.
+    description: The logical sequent or theorem to be proven (or refuted) in 
+      intuitionistic logic.
   - name: proof_system
     type: string
-    description: The specific natural deduction system to use (e.g., Gentzen's NJ or Fitch-style).
+    description: The specific natural deduction system to use (e.g., Gentzen's 
+      NJ or Fitch-style).
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -58,4 +69,6 @@ evaluators:
   - type: regex
     pattern: "\\\\vdash|\\\\to|\\\\land|\\\\lor|\\\\bot"
   - type: model_graded
-    prompt: "Did the model correctly identify if the sequent is intuitionistically valid, avoiding classical fallacies like LEM or DNE, and providing a Kripke countermodel if invalid?"
+    prompt: "Did the model correctly identify if the sequent is intuitionistically
+      valid, avoiding classical fallacies like LEM or DNE, and providing a Kripke
+      countermodel if invalid?"

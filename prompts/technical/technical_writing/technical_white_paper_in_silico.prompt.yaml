@@ -1,7 +1,8 @@
----
 name: Technical White Paper for Clinical Methodologies
 version: 0.1.0
-description: Generates a deep technical white paper or educational document for clinical methodologies, focusing on scientific validity and regulatory context.
+description: Generates a deep technical white paper or educational document for 
+  clinical methodologies, focusing on scientific validity and regulatory 
+  context.
 metadata:
   domain: technical
   complexity: high
@@ -11,6 +12,7 @@ metadata:
     - clinical-trials
     - data-science
     - regulatory
+    - skill
   requires_context: true
 variables:
   - name: paper_title

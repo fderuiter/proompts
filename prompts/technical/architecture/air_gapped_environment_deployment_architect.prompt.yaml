@@ -1,7 +1,7 @@
----
 name: Air-Gapped Environment Deployment Architect
 version: 1.0.0
-description: Designs secure, resilient, and fully autonomous software deployment architectures for highly restricted, completely air-gapped environments.
+description: Designs secure, resilient, and fully autonomous software deployment
+  architectures for highly restricted, completely air-gapped environments.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +13,21 @@ metadata:
     - security
     - deployment
     - offline-first
+    - skill
   requires_context: false
 variables:
   - name: deployment_artifacts
-    description: Types of artifacts to deploy (e.g., OCI images, RPMs, Helm charts, binary blobs).
+    description: Types of artifacts to deploy (e.g., OCI images, RPMs, Helm 
+      charts, binary blobs).
     required: true
   - name: security_constraints
-    description: Physical and logical security constraints (e.g., data diode ingress, zero outbound routing, hardware tokens, specific compliance frameworks).
+    description: Physical and logical security constraints (e.g., data diode 
+      ingress, zero outbound routing, hardware tokens, specific compliance 
+      frameworks).
     required: true
   - name: operational_scale
-    description: Details regarding target infrastructure scale and update frequency (e.g., cluster size, nodes, release cadence).
+    description: Details regarding target infrastructure scale and update 
+      frequency (e.g., cluster size, nodes, release cadence).
     required: true
 model: anthropic/claude-3-opus-20240229
 modelParameters:
@@ -58,12 +63,14 @@ messages:
 testData:
   - inputs:
       deployment_artifacts: "Helm charts and container images."
-      security_constraints: "One-way data diode for ingress. Strict zero-trust internal network."
+      security_constraints: "One-way data diode for ingress. Strict zero-trust internal
+        network."
       operational_scale: "3 on-premise Kubernetes clusters, monthly updates."
     expected: "data diode"
   - inputs:
       deployment_artifacts: "NPM packages and uncompiled source code."
-      security_constraints: "Full manual physical review of all code by a security committee before any deployment."
+      security_constraints: "Full manual physical review of all code by a security
+        committee before any deployment."
       operational_scale: "Continuous deployment with updates every 5 minutes."
     expected: "error"
 evaluators:

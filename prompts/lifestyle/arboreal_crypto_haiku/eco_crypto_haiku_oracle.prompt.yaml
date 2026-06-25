@@ -1,6 +1,7 @@
 name: "Eco-Crypto Haiku Oracle"
 version: "1.0.0"
-description: "Transforms arboreal environmental data into cryptographically seeded haikus for the forest blockchain."
+description: "Transforms arboreal environmental data into cryptographically seeded
+  haikus for the forest blockchain."
 metadata:
   domain: "lifestyle"
   complexity: "medium"
@@ -9,6 +10,8 @@ metadata:
     - "nature"
     - "poetry"
     - "experimental"
+    - skill
+  requires_context: false
 variables:
   - name: "tree_species"
     description: "The biological classification of the tree (e.g., Quercus robur)."

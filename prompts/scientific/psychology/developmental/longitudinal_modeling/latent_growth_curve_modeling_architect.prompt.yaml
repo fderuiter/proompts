@@ -1,19 +1,31 @@
----
 name: latent_growth_curve_modeling_architect
 version: 1.0.0
-description: Mathematically formalizes longitudinal developmental trajectories using Latent Growth Curve Modeling (LGCM) and Structural Equation Modeling (SEM).
+description: Mathematically formalizes longitudinal developmental trajectories 
+  using Latent Growth Curve Modeling (LGCM) and Structural Equation Modeling 
+  (SEM).
 authors:
   - Behavioral Sciences Genesis Architect
 metadata:
   domain: developmental/longitudinal_modeling
   complexity: high
+  tags:
+    - psychology
+    - developmental
+    - longitudinal-modeling
+    - latent
+    - growth
+    - skill
+  requires_context: false
 variables:
   - name: longitudinal_construct
-    description: The developmental or psychological construct measured over time (e.g., depressive symptoms, cognitive decline).
+    description: The developmental or psychological construct measured over time
+      (e.g., depressive symptoms, cognitive decline).
   - name: measurement_occasions
-    description: Details of the longitudinal waves or measurement occasions, including exact time spacing and total number of waves.
+    description: Details of the longitudinal waves or measurement occasions, 
+      including exact time spacing and total number of waves.
   - name: time_invariant_covariates
-    description: Static predictors hypothesized to influence the initial status (intercept) or rate of change (slope) of the trajectory.
+    description: Static predictors hypothesized to influence the initial status 
+      (intercept) or rate of change (slope) of the trajectory.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -48,9 +60,12 @@ messages:
       </time_invariant_covariates>
 testData:
   - inputs:
-      longitudinal_construct: Trajectories of internalizing symptoms in adolescence.
-      measurement_occasions: 5 annual waves from ages 12 to 16. Spacing is strictly equidistant.
-      time_invariant_covariates: Baseline socio-economic status (SES) and biological sex.
+      longitudinal_construct: Trajectories of internalizing symptoms in 
+        adolescence.
+      measurement_occasions: 5 annual waves from ages 12 to 16. Spacing is 
+        strictly equidistant.
+      time_invariant_covariates: Baseline socio-economic status (SES) and 
+        biological sex.
 evaluators:
   - type: regex
     pattern: (?i)lavaan|Mplus

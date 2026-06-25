@@ -1,7 +1,7 @@
----
 name: High-Throughput Order Matching Engine Architect
 version: 1.0.0
-description: Designs ultra-low latency, highly deterministic order matching engine architectures for high-frequency financial exchanges.
+description: Designs ultra-low latency, highly deterministic order matching 
+  engine architectures for high-frequency financial exchanges.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +13,19 @@ metadata:
     - trading
     - order-matching
     - architecture
+    - skill
   requires_context: false
 variables:
   - name: throughput_requirements
     description: Orders per second and latency Service Level Agreements (SLAs).
     required: true
   - name: matching_algorithm
-    description: The type of matching logic (e.g., Price-Time Priority, Pro-Rata).
+    description: The type of matching logic (e.g., Price-Time Priority, 
+      Pro-Rata).
     required: true
   - name: deployment_topology
-    description: The hardware and network topology (e.g., FPGA-accelerated, bare-metal NUMA, cloud).
+    description: The hardware and network topology (e.g., FPGA-accelerated, 
+      bare-metal NUMA, cloud).
     required: true
 model: gpt-4o
 modelParameters:
@@ -59,7 +62,8 @@ testData:
   - inputs:
       throughput_requirements: "Targeting 5,000,000 TPS with sub-10 microsecond latency."
       matching_algorithm: "Strict Price-Time Priority (FIFO)."
-      deployment_topology: "Bare-metal Linux servers with Solarflare NICs and kernel bypass."
+      deployment_topology: "Bare-metal Linux servers with Solarflare NICs and kernel
+        bypass."
     expected: "LMAX Disruptor|kernel bypass"
   - inputs:
       throughput_requirements: "Targeting 10,000,000 TPS with 1 nanosecond latency."
@@ -69,4 +73,5 @@ testData:
 evaluators:
   - name: Expert Terminology Check
     type: regex
-    pattern: '(?i)(LMAX Disruptor|ring buffers|memory-mapped files|cache line padding|NUMA-aware allocation|lock-free|kernel bypass|DPDK|mechanical sympathy|error)'
+    pattern: '(?i)(LMAX Disruptor|ring buffers|memory-mapped files|cache line padding|NUMA-aware
+      allocation|lock-free|kernel bypass|DPDK|mechanical sympathy|error)'

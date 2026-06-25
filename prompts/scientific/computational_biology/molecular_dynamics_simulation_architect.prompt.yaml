@@ -1,7 +1,8 @@
----
 name: molecular_dynamics_simulation_architect
 version: 1.0.0
-description: Designs highly rigorous, physics-based molecular dynamics (MD) simulation protocols for complex biomolecular systems, strictly enforcing statistical mechanics principles and standard force field parameterization.
+description: Designs highly rigorous, physics-based molecular dynamics (MD) 
+  simulation protocols for complex biomolecular systems, strictly enforcing 
+  statistical mechanics principles and standard force field parameterization.
 authors:
   - Biological Sciences Genesis Architect
 metadata:
@@ -12,18 +13,23 @@ metadata:
     - computational-biophysics
     - statistical-mechanics
     - structural-biology
+    - skill
+  requires_context: false
 variables:
   - name: biological_system
     type: string
-    description: The biomolecular system to be simulated (e.g., GPCR embedded in a lipid bilayer, protein-ligand complex).
+    description: The biomolecular system to be simulated (e.g., GPCR embedded in
+      a lipid bilayer, protein-ligand complex).
     required: true
   - name: simulation_objectives
     type: string
-    description: The thermodynamic or kinetic goals of the simulation (e.g., binding free energy calculation, conformational sampling).
+    description: The thermodynamic or kinetic goals of the simulation (e.g., 
+      binding free energy calculation, conformational sampling).
     required: true
   - name: thermodynamic_ensemble
     type: string
-    description: The specified thermodynamic ensemble (e.g., NPT, NVT) and desired conditions (temperature, pressure).
+    description: The specified thermodynamic ensemble (e.g., NPT, NVT) and 
+      desired conditions (temperature, pressure).
     required: true
 model: gpt-4o
 modelParameters:
@@ -61,13 +67,17 @@ messages:
       Provide the complete architectural and mathematical blueprint.
 testData:
   - inputs:
-      biological_system: "M2 muscarinic acetylcholine receptor (GPCR) embedded in a POPC lipid bilayer with bound antagonist."
-      simulation_objectives: "Calculation of absolute binding free energy of the antagonist using alchemical free energy perturbation (FEP)."
+      biological_system: "M2 muscarinic acetylcholine receptor (GPCR) embedded in
+        a POPC lipid bilayer with bound antagonist."
+      simulation_objectives: "Calculation of absolute binding free energy of the antagonist
+        using alchemical free energy perturbation (FEP)."
       thermodynamic_ensemble: "NPT ensemble, T = 310 K, P = 1 atm, 0.15 M NaCl."
     expected: "CHARMM36"
   - inputs:
-      biological_system: "Intrinsically disordered protein (IDP) alpha-synuclein in aqueous solution."
-      simulation_objectives: "Extensive conformational sampling to derive the radius of gyration distribution and secondary structure propensities."
+      biological_system: "Intrinsically disordered protein (IDP) alpha-synuclein in
+        aqueous solution."
+      simulation_objectives: "Extensive conformational sampling to derive the radius
+        of gyration distribution and secondary structure propensities."
       thermodynamic_ensemble: "NVT ensemble, T = 300 K."
     expected: "Replica Exchange"
 evaluators:

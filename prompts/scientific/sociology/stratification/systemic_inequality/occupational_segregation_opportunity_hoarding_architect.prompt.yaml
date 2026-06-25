@@ -1,19 +1,32 @@
----
 name: occupational_segregation_opportunity_hoarding_architect
 version: 1.0.0
-description: A Principal Sociologist agent that systematically analyzes occupational segregation and structural opportunity hoarding mechanisms, calculating rigorous demographic inequality indices.
+description: A Principal Sociologist agent that systematically analyzes 
+  occupational segregation and structural opportunity hoarding mechanisms, 
+  calculating rigorous demographic inequality indices.
 authors:
   - Jules
 metadata:
   domain: scientific/sociology/stratification/systemic_inequality
   complexity: high
+  tags:
+    - sociology
+    - stratification
+    - systemic-inequality
+    - occupational
+    - segregation
+    - skill
+  requires_context: false
 variables:
   - name: occupational_demographic_distribution
     type: string
-    description: Detailed dataset or matrix containing employment distributions, occupational categories, and demographic segmentations for a specific labor market.
+    description: Detailed dataset or matrix containing employment distributions,
+      occupational categories, and demographic segmentations for a specific 
+      labor market.
   - name: institutional_closure_mechanism
     type: string
-    description: The structural process or systemic mechanism of social closure being evaluated for its contribution to opportunity hoarding (e.g., credentialism, informal referral networks, discriminatory licensing).
+    description: The structural process or systemic mechanism of social closure 
+      being evaluated for its contribution to opportunity hoarding (e.g., 
+      credentialism, informal referral networks, discriminatory licensing).
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -47,18 +60,25 @@ messages:
       </occupational_demographic_distribution>
 testData:
   - variables:
-      occupational_demographic_distribution: "Management Tier: 90% Group A, 10% Group B. Entry-Level Tier: 30% Group A, 70% Group B. Total labor force: 50% Group A, 50% Group B."
-      institutional_closure_mechanism: "Informal, homophilous referral networks in hiring and promotion (social capital hoarding)."
+      occupational_demographic_distribution: "Management Tier: 90% Group A, 10% Group
+        B. Entry-Level Tier: 30% Group A, 70% Group B. Total labor force: 50% Group
+        A, 50% Group B."
+      institutional_closure_mechanism: "Informal, homophilous referral networks in
+        hiring and promotion (social capital hoarding)."
     evaluators:
       - type: contains
         value: "Index of Dissimilarity"
       - type: contains
-        value: "$\\frac{1}{2} \\sum_{i=1}^{n} \\left| \\frac{a_i}{A} - \\frac{b_i}{B} \\right|$"
+        value: "$\\frac{1}{2} \\sum_{i=1}^{n} \\left| \\frac{a_i}{A} - \\frac{b_i}{B}
+          \\right|$"
       - type: contains
         value: "opportunity hoarding"
   - variables:
-      occupational_demographic_distribution: "Licensed Professionals: 85% Group C, 15% Group D. Unlicensed Support Staff: 40% Group C, 60% Group D. Mean Income: Professionals $120k, Support $40k."
-      institutional_closure_mechanism: "Exclusionary occupational licensing requirements and prohibitive credentialing costs."
+      occupational_demographic_distribution: "Licensed Professionals: 85% Group C,
+        15% Group D. Unlicensed Support Staff: 40% Group C, 60% Group D. Mean Income:
+        Professionals $120k, Support $40k."
+      institutional_closure_mechanism: "Exclusionary occupational licensing requirements
+        and prohibitive credentialing costs."
     evaluators:
       - type: contains
         value: "Index of Dissimilarity"
@@ -68,4 +88,5 @@ evaluators:
   - type: contains
     value: "Index of Dissimilarity"
   - type: contains
-    value: "$\\frac{1}{2} \\sum_{i=1}^{n} \\left| \\frac{a_i}{A} - \\frac{b_i}{B} \\right|$"
+    value: "$\\frac{1}{2} \\sum_{i=1}^{n} \\left| \\frac{a_i}{A} - \\frac{b_i}{B}
+      \\right|$"

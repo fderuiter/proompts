@@ -1,7 +1,8 @@
----
 name: "differential_alternative_splicing_isoform_architect"
 version: "1.0.0"
-description: "Architects highly rigorous, statistically robust bioinformatic pipelines for quantifying and modeling differential alternative splicing (AS) events and transcript isoform usage from bulk or single-cell RNA-seq data."
+description: "Architects highly rigorous, statistically robust bioinformatic pipelines
+  for quantifying and modeling differential alternative splicing (AS) events and transcript
+  isoform usage from bulk or single-cell RNA-seq data."
 authors:
   - "Biological Sciences Genesis Architect"
 metadata:
@@ -14,15 +15,22 @@ metadata:
     - "rna-seq"
     - "computational-biology"
     - "transcriptomics"
+    - skill
+  requires_context: true
 variables:
   - name: "input_data_type"
-    description: "The nature of the RNA-seq dataset (e.g., bulk RNA-seq, scRNA-seq, long-read pacing/Iso-Seq)."
+    description: "The nature of the RNA-seq dataset (e.g., bulk RNA-seq, scRNA-seq,
+      long-read pacing/Iso-Seq)."
   - name: "experimental_design"
-    description: "Detailed description of the experimental conditions, replicates, and biological context (e.g., knockout vs wildtype, developmental timecourse)."
+    description: "Detailed description of the experimental conditions, replicates,
+      and biological context (e.g., knockout vs wildtype, developmental timecourse)."
   - name: "reference_genome_annotation"
-    description: "Specific reference genome build (e.g., GRCh38, mm10) and transcript annotation file (e.g., GENCODE v43 GTF/GFF3)."
+    description: "Specific reference genome build (e.g., GRCh38, mm10) and transcript
+      annotation file (e.g., GENCODE v43 GTF/GFF3)."
   - name: "modeling_objective"
-    description: "The primary objective of the analysis (e.g., identifying differential exon usage, calculating Percent Spliced In (PSI), estimating full-length isoform abundance, differential splicing network analysis)."
+    description: "The primary objective of the analysis (e.g., identifying differential
+      exon usage, calculating Percent Spliced In (PSI), estimating full-length isoform
+      abundance, differential splicing network analysis)."
 model: "claude-3-opus-20240229"
 modelParameters:
   temperature: 0.1
@@ -58,14 +66,18 @@ messages:
 testData:
   - variables:
       input_data_type: "Deep-sequenced bulk RNA-seq (paired-end 150bp)"
-      experimental_design: "3 biological replicates of WT vs 3 replicates of SF3B1 mutant human cell lines"
+      experimental_design: "3 biological replicates of WT vs 3 replicates of SF3B1
+        mutant human cell lines"
       reference_genome_annotation: "GRCh38 primary assembly, GENCODE v43 GTF"
-      modeling_objective: "Identify and quantify differential alternative splicing events (exon skipping, intron retention) and calculate delta PSI."
+      modeling_objective: "Identify and quantify differential alternative splicing
+        events (exon skipping, intron retention) and calculate delta PSI."
     evaluators: []
   - variables:
       input_data_type: "PacBio Iso-Seq long-read transcriptomics"
-      experimental_design: "Mouse brain cortex at embryonic day 14.5 vs postnatal day 0, no biological replicates provided."
+      experimental_design: "Mouse brain cortex at embryonic day 14.5 vs postnatal
+        day 0, no biological replicates provided."
       reference_genome_annotation: "mm39, Ensembl release 110"
-      modeling_objective: "De novo full-length isoform discovery, structural classification of novel splice variants, and relative isoform abundance estimation."
+      modeling_objective: "De novo full-length isoform discovery, structural classification
+        of novel splice variants, and relative isoform abundance estimation."
     evaluators: []
 evaluators: []

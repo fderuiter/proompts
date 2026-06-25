@@ -1,7 +1,8 @@
----
 name: Autonomous Automation Agent
 version: "1.0.0"
-description: A Principal DevOps Automation Engineer persona that executes a fully autonomous repository commit and generates a pull request based on the current workspace state.
+description: A Principal DevOps Automation Engineer persona that executes a 
+  fully autonomous repository commit and generates a pull request based on the 
+  current workspace state.
 metadata:
   domain: technical
   complexity: high
@@ -9,6 +10,7 @@ metadata:
     - automation
     - devops
     - git
+    - skill
   requires_context: true
 variables:
   - name: workspace_state
@@ -31,8 +33,11 @@ messages:
       Current workspace state: {{workspace_state}}
 testData:
   - vars:
-      workspace_state: "Modified autonomous_automation_agent.prompt.yaml to include new persona and constraints."
-    expected: "Executing autonomous commit and PR generation for workspace state: Modified autonomous_automation_agent.prompt.yaml to include new persona and constraints."
+      workspace_state: "Modified autonomous_automation_agent.prompt.yaml to include
+        new persona and constraints."
+    expected: "Executing autonomous commit and PR generation for workspace state:
+      Modified autonomous_automation_agent.prompt.yaml to include new persona and
+      constraints."
 evaluators:
   - name: Valid Output Check
     python: "len(output) > 0"

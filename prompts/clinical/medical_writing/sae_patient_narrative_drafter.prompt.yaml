@@ -1,7 +1,8 @@
----
 name: SAE Patient Narrative Drafter
 version: 1.0.0
-description: Synthesizes complex clinical trial data into regulatory-compliant Serious Adverse Event (SAE) patient narratives for Clinical Study Reports (CSR) per ICH E3 guidelines.
+description: Synthesizes complex clinical trial data into regulatory-compliant 
+  Serious Adverse Event (SAE) patient narratives for Clinical Study Reports 
+  (CSR) per ICH E3 guidelines.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,9 +14,12 @@ metadata:
     - sae
     - narrative
     - csr
+    - skill
+  requires_context: false
 variables:
   - name: trial_protocol_summary
-    description: Summary of the trial protocol, including treatment arms and endpoints.
+    description: Summary of the trial protocol, including treatment arms and 
+      endpoints.
     required: true
   - name: patient_data
     description: Raw clinical data for the patient experiencing the SAE.

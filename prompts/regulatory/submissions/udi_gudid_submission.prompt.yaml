@@ -5,49 +5,50 @@ metadata:
   domain: regulatory
   complexity: low
   tags:
-  - submissions
-  - udi
-  - gudid
-  - submission
+    - submissions
+    - udi
+    - gudid
+    - submission
+    - skill
   requires_context: false
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-- role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
-    FDA and ISO compliance tasks.
+  - role: system
+    content: 'You are an expert Regulatory Affairs Specialist capable of handling
+      complex FDA and ISO compliance tasks.
 
 
-    ## Context
+      ## Context
 
-    21 CFR Part 830
-
-
-    ## Objective
-
-    Prepare a Device Identifier (DI) record for GUDID submission.
+      21 CFR Part 830
 
 
-    ## Output Format
+      ## Objective
 
-    Structured data list matching GUDID fields.'
-- role: user
-  content: 'Please perform the task using the following input data:
+      Prepare a Device Identifier (DI) record for GUDID submission.
 
 
-    <input>
+      ## Output Format
 
-    {{input}}
+      Structured data list matching GUDID fields.'
+  - role: user
+    content: 'Please perform the task using the following input data:
 
-    </input>'
+
+      <input>
+
+      {{input}}
+
+      </input>'
 testData:
-- expected: Expected output as per instructions.
-  vars: Device label, packaging levels, and GTIN data. (Example data)
+  - expected: Expected output as per instructions.
+    vars: Device label, packaging levels, and GTIN data. (Example data)
 evaluators:
-- name: Validation Check
-  regex: (?i)Cross\-check
+  - name: Validation Check
+    regex: (?i)Cross\-check

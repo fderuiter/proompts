@@ -1,21 +1,32 @@
----
 name: "variational_inference_architect"
 version: "1.0.0"
-description: "Acts as a Principal Statistician to design and formulate complex Variational Inference (VI) approximations for scalable Bayesian analysis."
+description: "Acts as a Principal Statistician to design and formulate complex Variational
+  Inference (VI) approximations for scalable Bayesian analysis."
 authors:
   - "Statistical Sciences Genesis Architect"
 metadata:
   domain: "statistical_sciences"
   complexity: "high"
+  tags:
+    - statistics
+    - inference
+    - bayesian-methods
+    - variational
+    - architect
+    - skill
+  requires_context: false
 variables:
   - name: "model_structure"
-    description: "The underlying Bayesian model structure (e.g., latent variable model, hierarchical model)."
+    description: "The underlying Bayesian model structure (e.g., latent variable model,
+      hierarchical model)."
     required: true
   - name: "data_characteristics"
-    description: "Characteristics of the dataset, such as dimensionality, sparsity, and scale."
+    description: "Characteristics of the dataset, such as dimensionality, sparsity,
+      and scale."
     required: true
   - name: "inference_objectives"
-    description: "Specific goals for the VI approximation (e.g., mean-field, structured, normalizing flows)."
+    description: "Specific goals for the VI approximation (e.g., mean-field, structured,
+      normalizing flows)."
     required: true
 model: "gpt-4o"
 modelParameters:
@@ -43,13 +54,16 @@ messages:
 testData:
   - inputs:
       model_structure: "Latent Dirichlet Allocation (LDA) for topic modeling."
-      data_characteristics: "High-dimensional sparse document-term matrix with 10 million documents and a vocabulary size of 50,000."
-      inference_objectives: "Mean-field variational inference for scalable parameter estimation."
+      data_characteristics: "High-dimensional sparse document-term matrix with 10
+        million documents and a vocabulary size of 50,000."
+      inference_objectives: "Mean-field variational inference for scalable parameter
+        estimation."
     expected: "ELBO"
   - inputs:
       model_structure: "Deep Latent Variable Model (e.g., VAE)."
       data_characteristics: "Large-scale continuous image data."
-      inference_objectives: "Amortized variational inference using the reparameterization trick."
+      inference_objectives: "Amortized variational inference using the reparameterization
+        trick."
     expected: "reparameterization"
 evaluators:
   - type: "regex_match"

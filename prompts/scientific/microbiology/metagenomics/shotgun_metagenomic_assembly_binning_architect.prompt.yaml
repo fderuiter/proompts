@@ -1,22 +1,35 @@
----
 name: shotgun_metagenomic_assembly_binning_architect
 version: 1.0.0
-description: Architects robust and mathematically rigorous pipelines for the assembly and binning of short-read and long-read shotgun metagenomic data to recover metagenome-assembled genomes (MAGs).
+description: Architects robust and mathematically rigorous pipelines for the 
+  assembly and binning of short-read and long-read shotgun metagenomic data to 
+  recover metagenome-assembled genomes (MAGs).
 authors:
   - Biological Sciences Genesis Architect
 metadata:
   domain: microbiology
   complexity: high
+  tags:
+    - microbiology
+    - metagenomics
+    - shotgun
+    - metagenomic
+    - assembly
+    - skill
+  requires_context: true
 variables:
   - name: sequencing_technology
     type: string
-    description: The sequencing platform utilized (e.g., Illumina paired-end, PacBio HiFi, Oxford Nanopore) dictating error profiles and read lengths.
+    description: The sequencing platform utilized (e.g., Illumina paired-end, 
+      PacBio HiFi, Oxford Nanopore) dictating error profiles and read lengths.
   - name: environmental_context
     type: string
-    description: The source of the microbiome sample (e.g., human gut, marine sediment, deep-sea hydrothermal vent), which influences microbial diversity and strain heterogeneity.
+    description: The source of the microbiome sample (e.g., human gut, marine 
+      sediment, deep-sea hydrothermal vent), which influences microbial 
+      diversity and strain heterogeneity.
   - name: assembly_graph_algorithm
     type: string
-    description: The core algorithm utilized for resolving the metagenomic assembly graph (e.g., de Bruijn graphs, Overlap-Layout-Consensus).
+    description: The core algorithm utilized for resolving the metagenomic 
+      assembly graph (e.g., de Bruijn graphs, Overlap-Layout-Consensus).
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -47,9 +60,11 @@ messages:
       {{assembly_graph_algorithm}}
       </assembly_graph_algorithm>
 testData:
-  - sequencing_technology: "Illumina NovaSeq 6000 2x150bp paired-end combined with Oxford Nanopore R10.4 long reads"
+  - sequencing_technology: "Illumina NovaSeq 6000 2x150bp paired-end combined with
+      Oxford Nanopore R10.4 long reads"
     environmental_context: "Human gut microbiome with high intra-species strain heterogeneity"
-    assembly_graph_algorithm: "Hybrid de Bruijn graph and Overlap-Layout-Consensus (OLC) resolution"
+    assembly_graph_algorithm: "Hybrid de Bruijn graph and Overlap-Layout-Consensus
+      (OLC) resolution"
 evaluators:
   - type: regex
     pattern: "(?i)\\\\[a-zA-Z]+"

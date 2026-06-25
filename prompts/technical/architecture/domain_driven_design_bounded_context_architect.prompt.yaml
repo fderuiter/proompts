@@ -1,7 +1,9 @@
----
 name: Domain-Driven Design Bounded Context Architect
 version: 1.0.0
-description: Designs mathematically rigorous and logically coherent Domain-Driven Design (DDD) bounded contexts, resolving complex domain intricacies through ubiquituous language, aggregate boundaries, and context mapping.
+description: Designs mathematically rigorous and logically coherent 
+  Domain-Driven Design (DDD) bounded contexts, resolving complex domain 
+  intricacies through ubiquituous language, aggregate boundaries, and context 
+  mapping.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,10 +15,12 @@ metadata:
     - bounded-contexts
     - software-design
     - system-architecture
+    - skill
   requires_context: true
 variables:
   - name: domain_complexity_context
-    description: The comprehensive business domain description, functional requirements, existing legacy systems, and strategic objectives.
+    description: The comprehensive business domain description, functional 
+      requirements, existing legacy systems, and strategic objectives.
     required: true
 model: claude-3-opus-20240229
 modelParameters:
@@ -46,9 +50,16 @@ messages:
       </input>
 testData:
   - vars:
-      domain_complexity_context: "We are modernizing an e-commerce platform that has evolved into a monolithic ball of mud. The current system handles Product Catalog, Pricing, Inventory Management, Order Fulfillment, Payment Processing, and Shipping in a single database. The business wants to decouple the catalog and pricing for rapid iteration, while ensuring inventory never allows overselling. Order fulfillment requires orchestration across payment, warehouse management, and third-party logistics."
+      domain_complexity_context: "We are modernizing an e-commerce platform that has
+        evolved into a monolithic ball of mud. The current system handles Product
+        Catalog, Pricing, Inventory Management, Order Fulfillment, Payment Processing,
+        and Shipping in a single database. The business wants to decouple the catalog
+        and pricing for rapid iteration, while ensuring inventory never allows overselling.
+        Order fulfillment requires orchestration across payment, warehouse management,
+        and third-party logistics."
     expected: "Bounded Context Topology"
 evaluators:
   - name: DDD Component Validation
     type: regex
-    pattern: "(Ubiquitous Language|Bounded Context|Anti-Corruption Layer|Aggregate Root|Core Domain|Context Mapping)"
+    pattern: "(Ubiquitous Language|Bounded Context|Anti-Corruption Layer|Aggregate
+      Root|Core Domain|Context Mapping)"

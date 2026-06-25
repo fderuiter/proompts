@@ -1,7 +1,8 @@
----
 name: Data Privacy Clean Room Architect
 version: 1.0.0
-description: Designs highly secure, multi-party Data Clean Room architectures leveraging privacy-enhancing technologies (PETs) like SMPC and TEEs for collaborative analytics without data exposure.
+description: Designs highly secure, multi-party Data Clean Room architectures 
+  leveraging privacy-enhancing technologies (PETs) like SMPC and TEEs for 
+  collaborative analytics without data exposure.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +14,20 @@ metadata:
     - privacy
     - cryptography
     - secure-multi-party-computation
+    - skill
   requires_context: false
 variables:
   - name: participating_entities
-    description: Details about the organizations involved, their trust boundaries, and the sensitivity of the datasets being shared.
+    description: Details about the organizations involved, their trust 
+      boundaries, and the sensitivity of the datasets being shared.
     required: true
   - name: analytical_workloads
-    description: Types of operations needed (e.g., set intersection, ML model training, aggregated reporting) and their performance requirements.
+    description: Types of operations needed (e.g., set intersection, ML model 
+      training, aggregated reporting) and their performance requirements.
     required: true
   - name: privacy_constraints
-    description: Regulatory and cryptographic requirements (e.g., GDPR, CCPA, differential privacy budgets, exact SMPC protocols).
+    description: Regulatory and cryptographic requirements (e.g., GDPR, CCPA, 
+      differential privacy budgets, exact SMPC protocols).
     required: true
 model: gpt-4o
 modelParameters:
@@ -57,16 +62,22 @@ messages:
       <user_query>{{privacy_constraints}}</user_query>
 testData:
   - inputs:
-      participating_entities: "Two competing ad-tech firms wanting audience overlap. High mutual distrust."
-      analytical_workloads: "Private Set Intersection (PSI) and aggregated conversion lift calculation. Batch processing."
-      privacy_constraints: "No raw PII leaves either network. Must use SMPC. Output must have epsilon=0.1 Differential Privacy."
+      participating_entities: "Two competing ad-tech firms wanting audience overlap.
+        High mutual distrust."
+      analytical_workloads: "Private Set Intersection (PSI) and aggregated conversion
+        lift calculation. Batch processing."
+      privacy_constraints: "No raw PII leaves either network. Must use SMPC. Output
+        must have epsilon=0.1 Differential Privacy."
     expected: "Secure Multi-Party Computation|Differential Privacy|trust boundaries"
   - inputs:
       participating_entities: "Three global banks."
-      analytical_workloads: "Real-time, sub-millisecond fraud detection ML inference on massive datasets across all banks combined."
-      privacy_constraints: "Must use Fully Homomorphic Encryption for all processing. Zero trust."
+      analytical_workloads: "Real-time, sub-millisecond fraud detection ML inference
+        on massive datasets across all banks combined."
+      privacy_constraints: "Must use Fully Homomorphic Encryption for all processing.
+        Zero trust."
     expected: "error"
 evaluators:
   - name: Expert Terminology Check
     type: regex
-    pattern: '(?i)(Secure Multi-Party Computation|Trusted Execution Environment|Homomorphic Encryption|Differential Privacy|trust boundaries|error)'
+    pattern: '(?i)(Secure Multi-Party Computation|Trusted Execution Environment|Homomorphic
+      Encryption|Differential Privacy|trust boundaries|error)'

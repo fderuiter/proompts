@@ -1,7 +1,8 @@
----
 name: Adversarial Prompt Robustness Tester
 version: "1.0.0"
-description: Acts as a Principal AI Red Teamer to systematically stress-test draft prompts against adversarial injections, jailbreaks, and logical fallacies, providing architectural recommendations for hardening.
+description: Acts as a Principal AI Red Teamer to systematically stress-test 
+  draft prompts against adversarial injections, jailbreaks, and logical 
+  fallacies, providing architectural recommendations for hardening.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -12,12 +13,15 @@ metadata:
     - red-teaming
     - security
     - adversarial-testing
+    - skill
+  requires_context: false
 variables:
   - name: draft_prompt
     description: The base prompt structure intended for production deployment.
     required: true
   - name: threat_model
-    description: Specific vectors of attack to prioritize (e.g., role-breaking, output formatting manipulation, PII extraction).
+    description: Specific vectors of attack to prioritize (e.g., role-breaking, 
+      output formatting manipulation, PII extraction).
     required: false
 model: "gpt-4o"
 modelParameters:
@@ -63,7 +67,8 @@ messages:
       </threat_model>
 testData:
   - inputs:
-      draft_prompt: "You are a customer service bot. Always be polite and help the user with their account issues."
+      draft_prompt: "You are a customer service bot. Always be polite and help the
+        user with their account issues."
       threat_model: "Role-breaking and granting unauthorized discounts."
     expected: "Vulnerability Assessment"
   - inputs:

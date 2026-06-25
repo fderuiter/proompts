@@ -1,7 +1,8 @@
----
 name: Federated Learning Privacy-Preserving Architect
 version: 1.0.0
-description: Designs highly secure, privacy-preserving federated learning architectures utilizing advanced cryptographic protocols to mitigate inference attacks across distributed, non-IID data silos.
+description: Designs highly secure, privacy-preserving federated learning 
+  architectures utilizing advanced cryptographic protocols to mitigate inference
+  attacks across distributed, non-IID data silos.
 metadata:
   domain: technical
   complexity: high
@@ -11,16 +12,21 @@ metadata:
     - privacy
     - cryptography
     - distributed-systems
+    - skill
   requires_context: false
 variables:
   - name: data_heterogeneity_context
-    description: Description of the non-IID data distribution and statistical heterogeneity across the client nodes.
+    description: Description of the non-IID data distribution and statistical 
+      heterogeneity across the client nodes.
     required: true
   - name: privacy_constraints
-    description: Requirements for cryptographic privacy guarantees, such as differential privacy bounds (epsilon, delta), secure multi-party computation (SMPC), or homomorphic encryption.
+    description: Requirements for cryptographic privacy guarantees, such as 
+      differential privacy bounds (epsilon, delta), secure multi-party 
+      computation (SMPC), or homomorphic encryption.
     required: true
   - name: aggregation_topology
-    description: Constraints around the parameter server topology (centralized vs. decentralized/peer-to-peer) and communication bandwidth limitations.
+    description: Constraints around the parameter server topology (centralized 
+      vs. decentralized/peer-to-peer) and communication bandwidth limitations.
     required: true
 model: gpt-4o
 modelParameters:
@@ -57,14 +63,19 @@ messages:
       </user_query>
 testData:
   - variables:
-      data_heterogeneity_context: "Highly non-IID medical imaging data distributed across 50 independent hospital networks."
-      privacy_constraints: "Strict compliance requiring Secure Aggregation and $(\\epsilon, \\delta)$-Differential Privacy with $\\epsilon=2.0$."
-      aggregation_topology: "Centralized parameter server with high-bandwidth optical links."
+      data_heterogeneity_context: "Highly non-IID medical imaging data distributed
+        across 50 independent hospital networks."
+      privacy_constraints: "Strict compliance requiring Secure Aggregation and $(\\
+        epsilon, \\delta)$-Differential Privacy with $\\epsilon=2.0$."
+      aggregation_topology: "Centralized parameter server with high-bandwidth optical
+        links."
     expected: "Secure Aggregation|Differential Privacy"
   - variables:
-      data_heterogeneity_context: "Extreme label skew across millions of edge mobile devices."
+      data_heterogeneity_context: "Extreme label skew across millions of edge mobile
+        devices."
       privacy_constraints: "Mandated local differential privacy with $\\epsilon=0.001$."
-      aggregation_topology: "Decentralized peer-to-peer gossip network over low-bandwidth cellular connections."
+      aggregation_topology: "Decentralized peer-to-peer gossip network over low-bandwidth
+        cellular connections."
     expected: "error"
 evaluators:
   - name: Technical Output Verification

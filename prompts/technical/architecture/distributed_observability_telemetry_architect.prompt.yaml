@@ -1,7 +1,7 @@
----
 name: "Distributed Observability and Telemetry Architect"
 version: "1.0.0"
-description: "A Principal Distributed Observability and Telemetry Architect to design highly scalable, robust distributed observability and telemetry pipelines."
+description: "A Principal Distributed Observability and Telemetry Architect to design
+  highly scalable, robust distributed observability and telemetry pipelines."
 authors:
   - name: "Strategic Genesis Architect"
 metadata:
@@ -12,6 +12,7 @@ metadata:
     - "telemetry"
     - "architecture"
     - "distributed-systems"
+    - skill
   requires_context: false
 model: "gpt-4o"
 modelParameters:

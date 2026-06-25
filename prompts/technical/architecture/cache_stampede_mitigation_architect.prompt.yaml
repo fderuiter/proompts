@@ -1,7 +1,8 @@
----
 name: Cache Stampede Mitigation Architect
 version: 1.0.0
-description: Designs highly resilient distributed caching architectures specifically to mitigate and recover from cache stampedes (thundering herd problem) in high-throughput systems.
+description: Designs highly resilient distributed caching architectures 
+  specifically to mitigate and recover from cache stampedes (thundering herd 
+  problem) in high-throughput systems.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +14,20 @@ metadata:
     - architecture
     - resilience
     - performance
+    - skill
   requires_context: false
 variables:
   - name: system_scale
-    description: Details about the read/write volume, spike characteristics, and acceptable latency.
+    description: Details about the read/write volume, spike characteristics, and
+      acceptable latency.
     required: true
   - name: caching_infrastructure
-    description: The underlying caching technologies in use (e.g., Redis Cluster, Memcached) and their constraints.
+    description: The underlying caching technologies in use (e.g., Redis 
+      Cluster, Memcached) and their constraints.
     required: true
   - name: data_characteristics
-    description: The nature of the cached data, including size, compute cost for regeneration, and staleness tolerance.
+    description: The nature of the cached data, including size, compute cost for
+      regeneration, and staleness tolerance.
     required: true
 model: gpt-4o
 modelParameters:
@@ -57,9 +62,11 @@ messages:
       <user_query>{{data_characteristics}}</user_query>
 testData:
   - inputs:
-      system_scale: "100,000 requests per second with instant spikes, 50ms latency SLA."
+      system_scale: "100,000 requests per second with instant spikes, 50ms latency
+        SLA."
       caching_infrastructure: "Redis Cluster, 3 shards, limited memory."
-      data_characteristics: "1MB serialized payload, takes 5 seconds to regenerate from the database, high tolerance for staleness."
+      data_characteristics: "1MB serialized payload, takes 5 seconds to regenerate
+        from the database, high tolerance for staleness."
     expected: "probabilistic early expiration|stale-while-revalidate"
   - inputs:
       system_scale: "10,000,000 requests per second, instant spikes."

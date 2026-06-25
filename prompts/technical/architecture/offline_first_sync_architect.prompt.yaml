@@ -1,7 +1,8 @@
----
 name: Offline-First Synchronization Architect
 version: 1.0.0
-description: Designs highly resilient, offline-first data synchronization and conflict resolution architectures for occasionally connected distributed clients.
+description: Designs highly resilient, offline-first data synchronization and 
+  conflict resolution architectures for occasionally connected distributed 
+  clients.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +14,20 @@ metadata:
     - synchronization
     - crdt
     - distributed-systems
+    - skill
   requires_context: false
 variables:
   - name: data_model
-    description: A description of the domain data model, entity relationships, and update frequency.
+    description: A description of the domain data model, entity relationships, 
+      and update frequency.
     required: true
   - name: client_topology
-    description: Details regarding the client devices (e.g., mobile, IoT), their storage constraints, and network reliability characteristics.
+    description: Details regarding the client devices (e.g., mobile, IoT), their
+      storage constraints, and network reliability characteristics.
     required: true
   - name: conflict_resolution_requirements
-    description: Specific requirements regarding data consistency, acceptable eventual consistency windows, and custom merge logic.
+    description: Specific requirements regarding data consistency, acceptable 
+      eventual consistency windows, and custom merge logic.
     required: true
 model: gpt-4o
 modelParameters:
@@ -52,9 +57,12 @@ messages:
       {{conflict_resolution_requirements}}
 testData:
   - vars:
-      data_model: "Collaborative text documents and nested JSON configuration objects modified by multiple concurrent users."
-      client_topology: "Resource-constrained mobile clients with intermittent 3G connectivity and local SQLite storage."
-      conflict_resolution_requirements: "Strict multi-master replication with automatic, deterministic conflict resolution preserving user intent without manual intervention."
+      data_model: "Collaborative text documents and nested JSON configuration objects
+        modified by multiple concurrent users."
+      client_topology: "Resource-constrained mobile clients with intermittent 3G connectivity
+        and local SQLite storage."
+      conflict_resolution_requirements: "Strict multi-master replication with automatic,
+        deterministic conflict resolution preserving user intent without manual intervention."
     expected: "CRDT"
 evaluators:
   - name: Terminology Check

@@ -1,7 +1,8 @@
----
 name: FDA Type II Drug Master File (DMF) Architect
 version: 1.0.0
-description: Formulates rigorous, compliant FDA Type II Drug Master File (DMF) submissions for Drug Substances (APIs), ensuring strict adherence to FDA guidelines and ICH M4Q eCTD Module 3 formatting.
+description: Formulates rigorous, compliant FDA Type II Drug Master File (DMF) 
+  submissions for Drug Substances (APIs), ensuring strict adherence to FDA 
+  guidelines and ICH M4Q eCTD Module 3 formatting.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -15,19 +16,24 @@ metadata:
     - ectd
     - cmc
     - regulatory-affairs
+    - skill
   requires_context: true
 variables:
   - name: active_pharmaceutical_ingredient
-    description: The chemical name, structure, and general properties of the Drug Substance (API).
+    description: The chemical name, structure, and general properties of the 
+      Drug Substance (API).
     required: true
   - name: manufacturing_process
-    description: A high-level summary of the synthetic route, including starting materials, critical process parameters, and intermediates.
+    description: A high-level summary of the synthetic route, including starting
+      materials, critical process parameters, and intermediates.
     required: true
   - name: impurity_profile
-    description: Summary of the strategy for controlling organic, inorganic, and mutagenic impurities (ICH M7).
+    description: Summary of the strategy for controlling organic, inorganic, and
+      mutagenic impurities (ICH M7).
     required: true
   - name: stability_data
-    description: Overview of the stability studies, container closure system, and proposed retest period.
+    description: Overview of the stability studies, container closure system, 
+      and proposed retest period.
     required: true
 model: gpt-4o
 modelParameters:
@@ -57,16 +63,33 @@ messages:
 
       Construct a rigorous, section-by-section blueprint detailing the exact content requirements, evidentiary thresholds, impurity justifications, and Module 3 (3.2.S) cross-references required to secure a "No Further Deficiencies" outcome upon FDA review.
 testData:
-  - active_pharmaceutical_ingredient: "Novel small molecule kinase inhibitor, highly crystalline, practically insoluble in water."
-    manufacturing_process: "4-step convergent synthesis from two commercially available regulatory starting materials. Step 3 is a critical bond-forming reaction utilizing a palladium catalyst."
-    impurity_profile: "3 specified organic impurities controlled at NMT 0.15%. Palladium residue controlled to <10 ppm. One potentially mutagenic intermediate controlled at TTC levels (ICH M7)."
-    stability_data: "24 months of long-term (25°C/60% RH) and 6 months accelerated (40°C/75% RH) data in double polyethylene bags inside an HDPE drum. Proposed retest period: 36 months."
-    expected: "A meticulously structured Type II DMF blueprint, rigidly segmented into eCTD Module 3.2.S, with specific emphasis on justifying starting materials (ICH Q11), controlling the palladium catalyst (ICH Q3D), and managing the mutagenic intermediate (ICH M7)."
-  - active_pharmaceutical_ingredient: "Semisynthetic broad-spectrum antibiotic derived from fermentation."
-    manufacturing_process: "2-step synthetic modification of a fermentation-derived advanced intermediate."
-    impurity_profile: "Complex impurity profile with multiple co-eluting degradants. Limits established based on historical batch data and qualification in toxicology studies."
-    stability_data: "12 months long-term (5°C) data in amber glass bottles. Proposed retest period: 18 months under refrigerated conditions."
-    expected: "A structured Type II DMF blueprint covering the complexities of semisynthetic APIs, emphasizing characterization (3.2.S.3) of the complex impurity profile and strict cold-chain stability controls (3.2.S.7)."
+  - active_pharmaceutical_ingredient: "Novel small molecule kinase inhibitor, highly
+      crystalline, practically insoluble in water."
+    manufacturing_process: "4-step convergent synthesis from two commercially available
+      regulatory starting materials. Step 3 is a critical bond-forming reaction utilizing
+      a palladium catalyst."
+    impurity_profile: "3 specified organic impurities controlled at NMT 0.15%. Palladium
+      residue controlled to <10 ppm. One potentially mutagenic intermediate controlled
+      at TTC levels (ICH M7)."
+    stability_data: "24 months of long-term (25°C/60% RH) and 6 months accelerated
+      (40°C/75% RH) data in double polyethylene bags inside an HDPE drum. Proposed
+      retest period: 36 months."
+    expected: "A meticulously structured Type II DMF blueprint, rigidly segmented
+      into eCTD Module 3.2.S, with specific emphasis on justifying starting materials
+      (ICH Q11), controlling the palladium catalyst (ICH Q3D), and managing the mutagenic
+      intermediate (ICH M7)."
+  - active_pharmaceutical_ingredient: "Semisynthetic broad-spectrum antibiotic derived
+      from fermentation."
+    manufacturing_process: "2-step synthetic modification of a fermentation-derived
+      advanced intermediate."
+    impurity_profile: "Complex impurity profile with multiple co-eluting degradants.
+      Limits established based on historical batch data and qualification in toxicology
+      studies."
+    stability_data: "12 months long-term (5°C) data in amber glass bottles. Proposed
+      retest period: 18 months under refrigerated conditions."
+    expected: "A structured Type II DMF blueprint covering the complexities of semisynthetic
+      APIs, emphasizing characterization (3.2.S.3) of the complex impurity profile
+      and strict cold-chain stability controls (3.2.S.7)."
 evaluators:
   - name: Mentions Module 3.2.S
     string:

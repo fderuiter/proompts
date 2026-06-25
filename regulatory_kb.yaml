@@ -29,3 +29,9 @@ standards:
           '4.2': Risk Analysis
           '5.1': Risk Evaluation
           '6.1': Risk Control
+metadata:
+  domain: general
+  complexity: low
+  tags:
+    - skill
+  requires_context: false

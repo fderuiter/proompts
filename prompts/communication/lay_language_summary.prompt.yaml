@@ -1,7 +1,7 @@
----
 name: Lay Language Summary Creation
 version: 0.2.0
-description: Summarize trial results for lay audience with rigorous formatting and safety checks.
+description: Summarize trial results for lay audience with rigorous formatting 
+  and safety checks.
 metadata:
   domain: communication
   complexity: low
@@ -11,6 +11,7 @@ metadata:
     - summary
     - creation
     - patient-advocacy
+    - skill
   requires_context: false
 variables:
   - name: technical_results
@@ -52,7 +53,8 @@ messages:
 testData:
   - vars:
       technical_results: >
-        A Phase III, randomized, double-blind, placebo-controlled trial evaluating the efficacy and safety of Drug X in 500 adult patients with severe asthma.
+        A Phase III, randomized, double-blind, placebo-controlled trial evaluating
+        the efficacy and safety of Drug X in 500 adult patients with severe asthma.
         Primary endpoint (reduction in exacerbation rate) was met with p<0.01.
         The most common adverse events were headache (10%) and nausea (5%).
         There were no serious adverse events reported in the treatment group.

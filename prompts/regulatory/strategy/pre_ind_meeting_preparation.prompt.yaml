@@ -5,48 +5,49 @@ metadata:
   domain: regulatory
   complexity: low
   tags:
-  - regulatory-strategy
-  - pre-ind
-  - meeting
-  - preparation
+    - regulatory-strategy
+    - pre-ind
+    - meeting
+    - preparation
+    - skill
   requires_context: false
 variables:
-- name: preclinical_data
-  description: The data or dataset to analyze
-  required: true
+  - name: preclinical_data
+    description: The data or dataset to analyze
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: You are a Regulatory Strategist. Review the preclinical data and draft
-    a Pre-IND briefing package for the FDA, including specific questions regarding
-    the adequacy of toxicology studies and Phase I trial design.
-- role: user
-  content: 'Review the preclinical data and draft a Pre-IND briefing package for the
-    FDA, including specific questions regarding the adequacy of toxicology studies
-    and Phase I trial design.
+  - role: system
+    content: You are a Regulatory Strategist. Review the preclinical data and 
+      draft a Pre-IND briefing package for the FDA, including specific questions
+      regarding the adequacy of toxicology studies and Phase I trial design.
+  - role: user
+    content: 'Review the preclinical data and draft a Pre-IND briefing package for
+      the FDA, including specific questions regarding the adequacy of toxicology studies
+      and Phase I trial design.
 
 
-    Inputs:
+      Inputs:
 
-    - `{{preclinical_data}}`
+      - `{{preclinical_data}}`
 
 
-    Output format:
+      Output format:
 
-    Markdown Briefing Package Draft.'
+      Markdown Briefing Package Draft.'
 testData:
-- expected: 'Briefing Package
+  - expected: 'Briefing Package
 
-    '
-  vars: 'preclinical_data: Toxicology study results.
+      '
+    vars: 'preclinical_data: Toxicology study results.
 
-    '
+      '
 evaluators:
-- name: Toxicology Studies
-  string:
-    contains: Toxicology Studies
-- name: Phase I Trial Design
-  string:
-    contains: Phase I Trial Design
+  - name: Toxicology Studies
+    string:
+      contains: Toxicology Studies
+  - name: Phase I Trial Design
+    string:
+      contains: Phase I Trial Design

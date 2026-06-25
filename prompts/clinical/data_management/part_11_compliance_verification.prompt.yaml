@@ -5,52 +5,54 @@ metadata:
   domain: clinical
   complexity: low
   tags:
-  - data-management
-  - cfr
-  - part
-  - compliance
-  - verification
+    - data-management
+    - cfr
+    - part
+    - compliance
+    - verification
+    - skill
   requires_context: true
 variables:
-- name: system_features
-  description: The system features to use for this prompt
-  required: true
+  - name: system_features
+    description: The system features to use for this prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: You are a Quality Systems Auditor. Review the clinical data management
-    system's audit trail and electronic signature features to confirm compliance with
-    21 CFR Part 11 requirements and flag any missing validation documentation.
-- role: user
-  content: 'Review the clinical data management system''s audit trail and electronic
-    signature features to confirm compliance with 21 CFR Part 11 requirements and
-    flag any missing validation documentation.
+  - role: system
+    content: You are a Quality Systems Auditor. Review the clinical data 
+      management system's audit trail and electronic signature features to 
+      confirm compliance with 21 CFR Part 11 requirements and flag any missing 
+      validation documentation.
+  - role: user
+    content: 'Review the clinical data management system''s audit trail and electronic
+      signature features to confirm compliance with 21 CFR Part 11 requirements and
+      flag any missing validation documentation.
 
 
-    Inputs:
+      Inputs:
 
-    - `{{system_features}}`
+      - `{{system_features}}`
 
 
-    Output format:
+      Output format:
 
-    Markdown Compliance Review Report.'
+      Markdown Compliance Review Report.'
 testData:
-- expected: 'Compliance Review
+  - expected: 'Compliance Review
 
-    '
-  vars: 'system_features: Audit trail records all changes.
+      '
+    vars: 'system_features: Audit trail records all changes.
 
-    '
+      '
 evaluators:
-- name: Audit Trail
-  string:
-    contains: Audit Trail
-- name: Electronic Signature
-  string:
-    contains: Electronic Signature
-- name: Validation Documentation
-  string:
-    contains: Validation Documentation
+  - name: Audit Trail
+    string:
+      contains: Audit Trail
+  - name: Electronic Signature
+    string:
+      contains: Electronic Signature
+  - name: Validation Documentation
+    string:
+      contains: Validation Documentation

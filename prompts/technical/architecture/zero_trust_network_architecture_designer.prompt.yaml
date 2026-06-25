@@ -1,7 +1,7 @@
----
 name: Zero Trust Network Architecture Designer
 version: 1.0.0
-description: Architects robust Zero Trust network topologies and micro-segmentation strategies from domain requirements.
+description: Architects robust Zero Trust network topologies and 
+  micro-segmentation strategies from domain requirements.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,10 +13,12 @@ metadata:
     - zta
     - topology
     - system-design
+    - skill
   requires_context: true
 variables:
   - name: domain_context
-    description: The business context, network boundaries, and compliance requirements.
+    description: The business context, network boundaries, and compliance 
+      requirements.
     required: true
 model: gpt-4o
 modelParameters:
@@ -36,7 +38,10 @@ messages:
       {{domain_context}}
 testData:
   - inputs:
-      domain_context: "We need an internal financial dashboard. When an employee accesses the dashboard, they must be authenticated, authorized for specific data tiers, and all transit must be encrypted. If authorization fails, the session must be terminated."
+      domain_context: "We need an internal financial dashboard. When an employee accesses
+        the dashboard, they must be authenticated, authorized for specific data tiers,
+        and all transit must be encrypted. If authorization fails, the session must
+        be terminated."
     expected: "mTLS"
 evaluators:
   - name: Acronym Check

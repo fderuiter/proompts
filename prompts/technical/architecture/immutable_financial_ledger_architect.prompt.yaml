@@ -1,7 +1,8 @@
----
 name: Immutable Financial Ledger Architect
 version: 1.0.0
-description: Designs strictly immutable, highly auditable financial ledger architectures enforcing dual-entry accounting, cryptographic tamper-evidence, and zero-loss event sourcing for enterprise banking and fintech platforms.
+description: Designs strictly immutable, highly auditable financial ledger 
+  architectures enforcing dual-entry accounting, cryptographic tamper-evidence, 
+  and zero-loss event sourcing for enterprise banking and fintech platforms.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,10 +14,12 @@ metadata:
     - ledger
     - immutability
     - event-sourcing
+    - skill
   requires_context: true
 variables:
   - name: financial_context
-    description: Context of the financial system, transaction volume, regulatory requirements (e.g., PCI-DSS, SOX), and latency constraints.
+    description: Context of the financial system, transaction volume, regulatory
+      requirements (e.g., PCI-DSS, SOX), and latency constraints.
     required: true
 model: gpt-4o
 modelParameters:
@@ -42,10 +45,17 @@ messages:
       </input>
 testData:
   - vars:
-      financial_context: "We are building a global B2B payments platform processing 5,000 TPS. The ledger must guarantee zero data loss, strict SOX compliance, and allow auditors to reconstruct the exact balance of any account at any millisecond in the past 7 years. Transactions often involve multi-currency conversions and split routing."
+      financial_context: "We are building a global B2B payments platform processing
+        5,000 TPS. The ledger must guarantee zero data loss, strict SOX compliance,
+        and allow auditors to reconstruct the exact balance of any account at any
+        millisecond in the past 7 years. Transactions often involve multi-currency
+        conversions and split routing."
     expected: "append-only"
   - vars:
-      financial_context: "A crypto-fiat exchange requires a central internal ledger to reconcile on-chain deposits with internal fiat balances in real-time. Throughput is moderate (500 TPS), but strict mathematical proofs of solvency and non-repudiation of internal transfers are mandated by the regulator."
+      financial_context: "A crypto-fiat exchange requires a central internal ledger
+        to reconcile on-chain deposits with internal fiat balances in real-time. Throughput
+        is moderate (500 TPS), but strict mathematical proofs of solvency and non-repudiation
+        of internal transfers are mandated by the regulator."
     expected: "CQRS"
 evaluators:
   - name: Architecture Keyword Check

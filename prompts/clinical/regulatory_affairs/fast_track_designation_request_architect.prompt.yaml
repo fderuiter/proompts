@@ -1,22 +1,38 @@
----
 name: fast_track_designation_request_architect
 version: 1.0.0
-description: Synthesizes scientific rationale, disease prevalence, and unmet medical need into a rigorous, persuasive Fast Track Designation (FTD) request for regulatory submission.
+description: Synthesizes scientific rationale, disease prevalence, and unmet 
+  medical need into a rigorous, persuasive Fast Track Designation (FTD) request 
+  for regulatory submission.
 authors:
   - Strategic Genesis Architect
 metadata:
   domain: clinical/regulatory_affairs
   complexity: high
+  tags:
+    - regulatory-affairs
+    - fast
+    - track
+    - designation
+    - request
+    - skill
+  requires_context: false
 variables:
   - name: disease_condition_description
     type: string
-    description: Detailed description of the serious or life-threatening disease or condition the drug intends to treat, including its severity, progression, and impact on daily functioning or survival.
+    description: Detailed description of the serious or life-threatening disease
+      or condition the drug intends to treat, including its severity, 
+      progression, and impact on daily functioning or survival.
   - name: unmet_medical_need
     type: string
-    description: Analysis of currently available therapies (if any) and how the proposed drug addresses a significant unmet medical need (e.g., lack of available therapy, superiority over existing therapy, or addressing a different mechanism).
+    description: Analysis of currently available therapies (if any) and how the 
+      proposed drug addresses a significant unmet medical need (e.g., lack of 
+      available therapy, superiority over existing therapy, or addressing a 
+      different mechanism).
   - name: nonclinical_and_clinical_data
     type: string
-    description: Summary of the relevant nonclinical data (in vitro, in vivo) and available clinical data that demonstrate the drug's potential to address the unmet medical need for the serious condition.
+    description: Summary of the relevant nonclinical data (in vitro, in vivo) 
+      and available clinical data that demonstrate the drug's potential to 
+      address the unmet medical need for the serious condition.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -56,20 +72,40 @@ messages:
       Ensure the output is rigorously structured and formally demonstrates that the criteria for Fast Track Designation are met.
 testData:
   - variables:
-      disease_condition_description: "Idiopathic Pulmonary Fibrosis (IPF) is a rare, progressive, and fatal fibrotic lung disease. It is characterized by irreversible loss of lung function, severe dyspnea, and significantly impaired quality of life. The median survival time from diagnosis is approximately 3 to 5 years."
-      unmet_medical_need: "While pirfenidone and nintedanib are approved for IPF, they only slow disease progression and are associated with significant gastrointestinal and hepatic toxicities that often lead to treatment discontinuation. There is currently no approved therapy that halts or reverses fibrosis, representing a profound unmet medical need."
-      nonclinical_and_clinical_data: "Our investigational drug, a novel selective inhibitor of the TGF-beta signaling pathway, has demonstrated a significant reduction in collagen deposition and lung fibrosis in bleomycin-induced mouse models. In a Phase 1b study (n=24), the drug was well-tolerated with no severe gastrointestinal or hepatic adverse events, and preliminary biomarker analysis showed a dose-dependent decrease in circulating pro-fibrotic markers."
-    expected: "A rigorously structured Fast Track Designation request covering the seriousness of IPF, the inadequacy of current therapies, and the supporting nonclinical/clinical data."
+      disease_condition_description: "Idiopathic Pulmonary Fibrosis (IPF) is a rare,
+        progressive, and fatal fibrotic lung disease. It is characterized by irreversible
+        loss of lung function, severe dyspnea, and significantly impaired quality
+        of life. The median survival time from diagnosis is approximately 3 to 5 years."
+      unmet_medical_need: "While pirfenidone and nintedanib are approved for IPF,
+        they only slow disease progression and are associated with significant gastrointestinal
+        and hepatic toxicities that often lead to treatment discontinuation. There
+        is currently no approved therapy that halts or reverses fibrosis, representing
+        a profound unmet medical need."
+      nonclinical_and_clinical_data: "Our investigational drug, a novel selective
+        inhibitor of the TGF-beta signaling pathway, has demonstrated a significant
+        reduction in collagen deposition and lung fibrosis in bleomycin-induced mouse
+        models. In a Phase 1b study (n=24), the drug was well-tolerated with no severe
+        gastrointestinal or hepatic adverse events, and preliminary biomarker analysis
+        showed a dose-dependent decrease in circulating pro-fibrotic markers."
+    expected: "A rigorously structured Fast Track Designation request covering the
+      seriousness of IPF, the inadequacy of current therapies, and the supporting
+      nonclinical/clinical data."
   - variables:
-      disease_condition_description: "Mild seasonal allergic rhinitis, characterized by transient sneezing and rhinorrhea during the spring."
-      unmet_medical_need: "Patients want a pill that tastes like strawberries instead of existing antihistamines."
-      nonclinical_and_clinical_data: "In vitro testing shows it blocks histamine receptors. Taste tests confirm strawberry flavor."
-    expected: "The request should fail to establish the condition as 'serious or life-threatening' and the unmet need as clinically significant, reflecting a failure to meet FTD criteria."
+      disease_condition_description: "Mild seasonal allergic rhinitis, characterized
+        by transient sneezing and rhinorrhea during the spring."
+      unmet_medical_need: "Patients want a pill that tastes like strawberries instead
+        of existing antihistamines."
+      nonclinical_and_clinical_data: "In vitro testing shows it blocks histamine receptors.
+        Taste tests confirm strawberry flavor."
+    expected: "The request should fail to establish the condition as 'serious or life-threatening'
+      and the unmet need as clinically significant, reflecting a failure to meet FTD
+      criteria."
 evaluators:
   - name: Structural Check
     type: string
     string:
-      regex: '(?si).*Executive Summary.*Serious or Life-Threatening Condition.*Unmet Medical Need.*Rationale for FTD.*Conclusion.*'
+      regex: '(?si).*Executive Summary.*Serious or Life-Threatening Condition.*Unmet
+        Medical Need.*Rationale for FTD.*Conclusion.*'
   - name: Regulatory Context Check
     type: string
     string:

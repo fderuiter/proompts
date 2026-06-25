@@ -5,30 +5,31 @@ metadata:
   domain: clinical
   complexity: low
   tags:
-  - data-management
-  - sop
-  - gap
-  - analysis
+    - data-management
+    - sop
+    - gap
+    - analysis
+    - skill
   requires_context: false
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: 'You are a process auditor evaluating data management SOPs to identify
-    gaps.
+  - role: system
+    content: 'You are a process auditor evaluating data management SOPs to identify
+      gaps.
 
-    '
-- role: user
-  content: '{{input}}'
+      '
+  - role: user
+    content: '{{input}}'
 testData:
-- expected: Identifies missing version controls.
-  vars: Review SOPs for data entry processes.
+  - expected: Identifies missing version controls.
+    vars: Review SOPs for data entry processes.
 evaluators:
-- name: Output mentions SOP
-  string:
-    contains: SOP
+  - name: Output mentions SOP
+    string:
+      contains: SOP

@@ -1,7 +1,7 @@
----
 name: Protocol Amendment Rationale Drafter
 version: 1.0.0
-description: Drafts scientifically and ethically sound rationales for clinical trial protocol amendments.
+description: Drafts scientifically and ethically sound rationales for clinical 
+  trial protocol amendments.
 authors:
   - name: Autonomous Genesis Engine
 metadata:
@@ -12,15 +12,19 @@ metadata:
     - clinical-trials
     - regulatory
     - protocol-amendment
+    - skill
+  requires_context: true
 variables:
   - name: proposed_changes
     description: The proposed changes to the clinical trial protocol.
     required: true
   - name: scientific_justification
-    description: The scientific and clinical reasons driving the proposed changes.
+    description: The scientific and clinical reasons driving the proposed 
+      changes.
     required: true
   - name: safety_impact
-    description: Any anticipated impact of the changes on patient safety or ethical considerations.
+    description: Any anticipated impact of the changes on patient safety or 
+      ethical considerations.
     required: true
 model: gpt-4o
 modelParameters:
@@ -66,14 +70,20 @@ messages:
       </inputs>
 testData:
   - vars:
-      proposed_changes: "Addition of a new cohort receiving a lower dose (10 mg) of the investigational product."
-      scientific_justification: "Recent Phase 1b data suggests the 10 mg dose may provide comparable efficacy with reduced toxicity compared to the original 20 mg cohort."
-      safety_impact: "Anticipated to reduce the incidence of dose-limiting toxicities without compromising ethical standards. Additional safety monitoring will be implemented."
+      proposed_changes: "Addition of a new cohort receiving a lower dose (10 mg) of
+        the investigational product."
+      scientific_justification: "Recent Phase 1b data suggests the 10 mg dose may
+        provide comparable efficacy with reduced toxicity compared to the original
+        20 mg cohort."
+      safety_impact: "Anticipated to reduce the incidence of dose-limiting toxicities
+        without compromising ethical standards. Additional safety monitoring will
+        be implemented."
     expected: "## 1. Summary of Changes"
     evaluators:
       - name: Header Validation
         regex:
-          pattern: '(?s)## 1\. Summary of Changes.*## 2\. Scientific Justification.*## 3\. Impact on Patient Safety and Ethics.*## 4\. Risk-Benefit Conclusion'
+          pattern: '(?s)## 1\. Summary of Changes.*## 2\. Scientific Justification.*##
+            3\. Impact on Patient Safety and Ethics.*## 4\. Risk-Benefit Conclusion'
       - name: Content Inclusion
         regex:
           pattern: '(?i)(10 mg|Phase 1b|dose-limiting toxicities)'

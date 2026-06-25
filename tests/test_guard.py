@@ -17,6 +17,7 @@ class TestProomptsGuard(unittest.TestCase):
             "description": "Test",
             "model": "gpt-4",
             "modelParameters": {"temperature": 0.0},
+            "metadata": {"domain": "test", "complexity": "low", "tags": ["skill"]},
             "messages": [{"role": "system", "content": "hello"}, {"role": "user", "content": "world"}],
             "testData": [],
             "evaluators": [],
@@ -46,6 +47,7 @@ class TestProomptsGuard(unittest.TestCase):
             "description": "Test",
             "model": "gpt-4",
             "modelParameters": {"temperature": 0.0},
+            "metadata": {"domain": "test", "complexity": "low", "tags": ["skill"]},
             "messages": [{"role": "system", "content": "hello"}, {"role": "user", "content": "world"}],
             "testData": [],
             "evaluators": [],
@@ -75,6 +77,7 @@ class TestProomptsGuard(unittest.TestCase):
             "description": "Test",
             "model": "gpt-4",
             "modelParameters": {"temperature": 0.0},
+            "metadata": {"domain": "test", "complexity": "low", "tags": ["skill"]},
             "messages": [{"role": "system", "content": "hello"}, {"role": "user", "content": "world"}],
             "testData": [],
             "evaluators": [

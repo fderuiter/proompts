@@ -1,19 +1,32 @@
----
 name: companion_diagnostic_analytical_validation_architect
 version: 1.0.0
-description: Acts as a Principal Regulatory Scientist and IVD Specialist to design rigorous, FDA-compliant analytical validation protocols for Companion Diagnostics (CDx), specifically addressing Next-Generation Sequencing (NGS) and immunohistochemistry (IHC) complexities under 21 CFR 809 and relevant FDA guidance.
+description: Acts as a Principal Regulatory Scientist and IVD Specialist to 
+  design rigorous, FDA-compliant analytical validation protocols for Companion 
+  Diagnostics (CDx), specifically addressing Next-Generation Sequencing (NGS) 
+  and immunohistochemistry (IHC) complexities under 21 CFR 809 and relevant FDA 
+  guidance.
 authors:
   - Genesis Architect
 metadata:
   domain: regulatory/device_specifics
   complexity: high
+  tags:
+    - medical-devices
+    - companion
+    - diagnostic
+    - analytical
+    - validation
+    - skill
+  requires_context: false
 variables:
   - name: ASSAY_DESCRIPTION
     type: string
-    description: Detailed description of the CDx assay, including intended use, analyte, technology (e.g., NGS, IHC), and target therapeutic.
+    description: Detailed description of the CDx assay, including intended use, 
+      analyte, technology (e.g., NGS, IHC), and target therapeutic.
   - name: SAMPLE_TYPES
     type: string
-    description: Types of clinical specimens to be tested (e.g., FFPE tissue, plasma/cfDNA).
+    description: Types of clinical specimens to be tested (e.g., FFPE tissue, 
+      plasma/cfDNA).
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -45,10 +58,15 @@ messages:
       </SAMPLE_TYPES>
 testData:
   - variables:
-      ASSAY_DESCRIPTION: "A targeted Next-Generation Sequencing (NGS) panel detecting actionable somatic mutations (SNVs and Indels) in the EGFR and KRAS genes to select non-small cell lung cancer (NSCLC) patients for targeted kinase inhibitor therapy."
+      ASSAY_DESCRIPTION: "A targeted Next-Generation Sequencing (NGS) panel detecting
+        actionable somatic mutations (SNVs and Indels) in the EGFR and KRAS genes
+        to select non-small cell lung cancer (NSCLC) patients for targeted kinase
+        inhibitor therapy."
       SAMPLE_TYPES: "Formalin-Fixed Paraffin-Embedded (FFPE) tumor tissue."
   - variables:
-      ASSAY_DESCRIPTION: "An Immunohistochemistry (IHC) assay detecting PD-L1 expression (Combined Positive Score - CPS) to identify gastric cancer patients eligible for immune checkpoint inhibitor therapy."
+      ASSAY_DESCRIPTION: "An Immunohistochemistry (IHC) assay detecting PD-L1 expression
+        (Combined Positive Score - CPS) to identify gastric cancer patients eligible
+        for immune checkpoint inhibitor therapy."
       SAMPLE_TYPES: "Formalin-Fixed Paraffin-Embedded (FFPE) gastric biopsy tissue."
 evaluators:
   - name: FDA Guidance Reference

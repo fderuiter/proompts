@@ -1,7 +1,7 @@
----
 name: CQRS and Event Sourcing Architect
 version: 1.0.0
-description: Designs highly scalable Command Query Responsibility Segregation (CQRS) and Event Sourcing architectures.
+description: Designs highly scalable Command Query Responsibility Segregation 
+  (CQRS) and Event Sourcing architectures.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,10 +13,12 @@ metadata:
     - "event-sourcing"
     - "scalability"
     - "system-design"
+    - skill
   requires_context: true
 variables:
   - name: system_requirements
-    description: The business context, domain boundaries, expected read/write loads, and consistency requirements.
+    description: The business context, domain boundaries, expected read/write 
+      loads, and consistency requirements.
     required: true
 model: gpt-4o
 modelParameters:
@@ -42,7 +44,11 @@ messages:
       </input>
 testData:
   - vars:
-      system_requirements: "We are building an e-commerce platform's order management system. It expects extremely high write loads during flash sales (up to 10k orders/sec). Users need near real-time order status updates. The system must handle concurrent inventory reservations and payment processing reliably. We need a complete audit trail of every state change in an order's lifecycle."
+      system_requirements: "We are building an e-commerce platform's order management
+        system. It expects extremely high write loads during flash sales (up to 10k
+        orders/sec). Users need near real-time order status updates. The system must
+        handle concurrent inventory reservations and payment processing reliably.
+        We need a complete audit trail of every state change in an order's lifecycle."
     expected: "CQRS"
 evaluators:
   - name: Acronym Check

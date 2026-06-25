@@ -1,23 +1,38 @@
----
 _engine_reasoning: |
   Conceptual Collision: Merging sociology of mass behavior, structural epidemiology, and institutional trust dynamics.
   Gap Analysis: The mass behavior repository includes panic cascades, but lacks a rigorous, population-scale model for predicting and mapping the systemic hemorrhage of institutional trust and the resulting spread of societal anomie during macro-level crises.
   Persona Synthesis: A highly authoritative, unvarnished "Principal Epidemiological Sociologist & Lead Mass Behavior Modeler" tasked with formulating rigorous mathematical models for population-scale trust decay.
 name: institutional_trust_hemorrhage_modeler
 version: 1.0.0
-description: A highly robust, expert-level prompt designed to computationally model the epidemiological contagion of institutional trust decay and the subsequent propagation of societal anomie across massive population networks during macro-level crises.
+description: A highly robust, expert-level prompt designed to computationally 
+  model the epidemiological contagion of institutional trust decay and the 
+  subsequent propagation of societal anomie across massive population networks 
+  during macro-level crises.
 authors:
   - Population Behavioral Sciences Genesis Architect
 metadata:
   domain: scientific
   complexity: high
   authoritative_persona: Principal Epidemiological Sociologist
+  tags:
+    - sociology
+    - mass-behavior
+    - institutional
+    - trust
+    - hemorrhage
+    - skill
+  requires_context: false
 variables:
   - name: population_network_schema
-    description: Strict JSON/CSV schema representing multi-million node demographic clustering, historical trust baselines, baseline anomie metrics, and interconnectivity density.
+    description: Strict JSON/CSV schema representing multi-million node 
+      demographic clustering, historical trust baselines, baseline anomie 
+      metrics, and interconnectivity density.
     type: string
   - name: macro_crisis_parameters
-    description: Key variables defining the macroeconomic shock, political scandal, or public health failure triggering the trust hemorrhage (e.g., severity index, velocity of information diffusion, institutional response latency).
+    description: Key variables defining the macroeconomic shock, political 
+      scandal, or public health failure triggering the trust hemorrhage (e.g., 
+      severity index, velocity of information diffusion, institutional response 
+      latency).
     type: string
 model: claude-3-opus-20240229
 modelParameters:
@@ -49,11 +64,15 @@ messages:
       Proceed with formulating the epidemiological trust decay equations, the big data ingestion pipeline, and predictive trajectories for anomie propagation.
 testData:
   - variables:
-      population_network_schema: "node_id: string, institutional_trust_index: float, socioeconomic_status: float, local_clustering_coefficient: float"
-      macro_crisis_parameters: "crisis_type: sudden_inflationary_shock, economic_hardship_index: 0.85, media_diffusion_rate: 0.6"
+      population_network_schema: "node_id: string, institutional_trust_index: float,
+        socioeconomic_status: float, local_clustering_coefficient: float"
+      macro_crisis_parameters: "crisis_type: sudden_inflationary_shock, economic_hardship_index:
+        0.85, media_diffusion_rate: 0.6"
   - variables:
-      population_network_schema: "node_id: string, baseline_anomie_score: float, civic_engagement_frequency: int"
-      macro_crisis_parameters: "crisis_type: prolonged_health_mandates, trust_decay_velocity: 0.22, enforcement_friction: 0.75"
+      population_network_schema: "node_id: string, baseline_anomie_score: float, civic_engagement_frequency:
+        int"
+      macro_crisis_parameters: "crisis_type: prolonged_health_mandates, trust_decay_velocity:
+        0.22, enforcement_friction: 0.75"
 evaluators:
   - type: regex
     pattern: "(?i)(json|csv)"

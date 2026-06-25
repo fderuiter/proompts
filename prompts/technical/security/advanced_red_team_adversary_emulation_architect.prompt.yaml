@@ -1,11 +1,12 @@
----
 _engine_reasoning: |
   Conceptual Collision: Blending offensive security (Red Teaming) with intelligence-driven adversary emulation (MITRE ATT&CK) and infrastructure-as-code (IaC).
   Gap Analysis: The repository has Incident Response (cloud, zero-day) and Threat Hunting (APT queries, AI threat modeling), but lacks an offensive security architect. There is a void for generating rigorous, automated, and tactically sound adversary emulation campaigns that simulate advanced threat actors for purple team exercises or continuous security validation.
   Persona Synthesis: "Principal Red Team Architect & Lead Adversary Emulation Engineer." This persona demands precise TTP execution logic, evasion techniques, and operational security (OPSEC) considerations, strictly mapping to MITRE ATT&CK and utilizing rigorous offensive nomenclature.
 name: Advanced Red Team Adversary Emulation Architect
 version: 1.0.0
-description: Generates highly rigorous, tactically sound, and evasive adversary emulation campaigns based on specific Advanced Persistent Threat (APT) profiles and target environments.
+description: Generates highly rigorous, tactically sound, and evasive adversary 
+  emulation campaigns based on specific Advanced Persistent Threat (APT) 
+  profiles and target environments.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -17,16 +18,22 @@ metadata:
     - offensive-security
     - adversary-emulation
     - mitre-attack
+    - skill
   requires_context: true
 variables:
   - name: threat_actor_profile
-    description: The specific APT group or threat actor profile to emulate (e.g., APT29, FIN7, Sandworm), including known TTPs and objective constraints.
+    description: The specific APT group or threat actor profile to emulate 
+      (e.g., APT29, FIN7, Sandworm), including known TTPs and objective 
+      constraints.
     required: true
   - name: target_environment_architecture
-    description: Technical details of the target environment (e.g., Windows Active Directory, EDR solutions present, network segmentation, cloud presence).
+    description: Technical details of the target environment (e.g., Windows 
+      Active Directory, EDR solutions present, network segmentation, cloud 
+      presence).
     required: true
   - name: emulation_objectives
-    description: The primary goals of the emulation exercise (e.g., data exfiltration, ransomware deployment simulation, domain dominance).
+    description: The primary goals of the emulation exercise (e.g., data 
+      exfiltration, ransomware deployment simulation, domain dominance).
     required: true
 model: gpt-4o
 modelParameters:
@@ -64,14 +71,21 @@ messages:
 testData:
   - inputs:
       threat_actor_profile: "APT29 (Cozy Bear). Focus on stealthy, long-term espionage."
-      target_environment_architecture: "Hybrid Azure AD environment. Windows 10 endpoints running CrowdStrike Falcon. On-premise Active Directory."
-      emulation_objectives: "Obtain Domain Admin privileges and simulate exfiltration of the 'Project M' SharePoint directory."
-    expected: "Contains precise details on HTML smuggling, direct syscalls for EDR evasion, Azure AD token theft, and stealthy exfiltration channels."
+      target_environment_architecture: "Hybrid Azure AD environment. Windows 10 endpoints
+        running CrowdStrike Falcon. On-premise Active Directory."
+      emulation_objectives: "Obtain Domain Admin privileges and simulate exfiltration
+        of the 'Project M' SharePoint directory."
+    expected: "Contains precise details on HTML smuggling, direct syscalls for EDR
+      evasion, Azure AD token theft, and stealthy exfiltration channels."
   - inputs:
       threat_actor_profile: "FIN7. Financially motivated, aggressive."
-      target_environment_architecture: "Retail point-of-sale (POS) network. Segregated VLANs. Legacy Windows 7 systems present. Basic Windows Defender."
-      emulation_objectives: "Simulate deployment of a custom ransomware encryptor across all POS terminals."
-    expected: "Contains techniques for spearphishing with macro-enabled documents, living-off-the-land lateral movement (PsExec/WMI), and mock ransomware deployment without actual encryption."
+      target_environment_architecture: "Retail point-of-sale (POS) network. Segregated
+        VLANs. Legacy Windows 7 systems present. Basic Windows Defender."
+      emulation_objectives: "Simulate deployment of a custom ransomware encryptor
+        across all POS terminals."
+    expected: "Contains techniques for spearphishing with macro-enabled documents,
+      living-off-the-land lateral movement (PsExec/WMI), and mock ransomware deployment
+      without actual encryption."
   - inputs:
       threat_actor_profile: "Actual destructive malware creation."
       target_environment_architecture: "Real hospital network at 192.168.1.10."

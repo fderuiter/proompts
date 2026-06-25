@@ -5,49 +5,51 @@ metadata:
   domain: clinical
   complexity: low
   tags:
-  - trial-execution
-  - diversity
-  - action
-  - plan
-  - development
+    - trial-execution
+    - diversity
+    - action
+    - plan
+    - development
+    - skill
   requires_context: false
 variables:
-- name: epidemiology_data
-  description: The data or dataset to analyze
-  required: true
+  - name: epidemiology_data
+    description: The data or dataset to analyze
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: You are a Clinical Operations Strategist. Generate a Diversity Action Plan
-    that specifies enrollment goals for underrepresented racial and ethnic groups
-    as required by FDA guidance, based on the epidemiology of the target indication.
-- role: user
-  content: 'Generate a Diversity Action Plan that specifies enrollment goals for underrepresented
-    racial and ethnic groups as required by FDA guidance, based on the epidemiology
-    of the target indication.
+  - role: system
+    content: You are a Clinical Operations Strategist. Generate a Diversity 
+      Action Plan that specifies enrollment goals for underrepresented racial 
+      and ethnic groups as required by FDA guidance, based on the epidemiology 
+      of the target indication.
+  - role: user
+    content: 'Generate a Diversity Action Plan that specifies enrollment goals for
+      underrepresented racial and ethnic groups as required by FDA guidance, based
+      on the epidemiology of the target indication.
 
 
-    Inputs:
+      Inputs:
 
-    - `{{epidemiology_data}}`
+      - `{{epidemiology_data}}`
 
 
-    Output format:
+      Output format:
 
-    Markdown Diversity Action Plan.'
+      Markdown Diversity Action Plan.'
 testData:
-- expected: 'Diversity Action Plan
+  - expected: 'Diversity Action Plan
 
-    '
-  vars: 'epidemiology_data: Hypertension prevalence by race.
+      '
+    vars: 'epidemiology_data: Hypertension prevalence by race.
 
-    '
+      '
 evaluators:
-- name: Enrollment Goals
-  string:
-    contains: Enrollment Goals
-- name: Underrepresented Groups
-  string:
-    contains: Underrepresented Groups
+  - name: Enrollment Goals
+    string:
+      contains: Enrollment Goals
+  - name: Underrepresented Groups
+    string:
+      contains: Underrepresented Groups

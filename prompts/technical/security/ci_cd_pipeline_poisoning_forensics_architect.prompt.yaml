@@ -1,7 +1,7 @@
----
 name: CI/CD Pipeline Poisoning Forensics Architect
 version: 1.0.0
-description: Conducts rigorous forensic analysis of compromised CI/CD pipelines to detect advanced pipeline poisoning and toxic deployment patterns.
+description: Conducts rigorous forensic analysis of compromised CI/CD pipelines 
+  to detect advanced pipeline poisoning and toxic deployment patterns.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,16 +13,20 @@ metadata:
     - ci-cd
     - devsecops
     - supply-chain
+    - skill
   requires_context: true
 variables:
   - name: pipeline_configuration
-    description: The compromised CI/CD configuration files (e.g., GitHub Actions workflows, GitLab CI YAML).
+    description: The compromised CI/CD configuration files (e.g., GitHub Actions
+      workflows, GitLab CI YAML).
     required: true
   - name: execution_logs
-    description: The build and deployment logs from the compromised pipeline run.
+    description: The build and deployment logs from the compromised pipeline 
+      run.
     required: true
   - name: incident_indicators
-    description: Initial indicators of compromise (IoCs) or suspicious activities observed.
+    description: Initial indicators of compromise (IoCs) or suspicious 
+      activities observed.
     required: true
 model: gpt-4o
 modelParameters:
@@ -71,8 +75,11 @@ testData:
       [INFO] Build successful.
       [WARN] Unexpected outbound connection to 198.51.100.23:80
       [INFO] Execution complete.
-    incident_indicators: Suspicious outbound network connection detected from the self-hosted runner during the build phase.
-    expected: A detailed forensic report identifying the malicious curl command as the pipeline poisoning vector, explaining the execution of arbitrary code, and recommending hardening of self-hosted runners.
+    incident_indicators: Suspicious outbound network connection detected from 
+      the self-hosted runner during the build phase.
+    expected: A detailed forensic report identifying the malicious curl command 
+      as the pipeline poisoning vector, explaining the execution of arbitrary 
+      code, and recommending hardening of self-hosted runners.
 evaluators:
   - name: Identifies Attack Vector
     string:

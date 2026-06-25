@@ -1,7 +1,8 @@
----
 name: GTM Pricing Elasticity Architect
 version: "1.0.0"
-description: Constructs deeply rigorous Go-To-Market (GTM) pricing elasticity matrices, modeling price sensitivity, optimal revenue maximization points, and willingness-to-pay using advanced econometric frameworks.
+description: Constructs deeply rigorous Go-To-Market (GTM) pricing elasticity 
+  matrices, modeling price sensitivity, optimal revenue maximization points, and
+  willingness-to-pay using advanced econometric frameworks.
 authors:
   - Growth Strategy Genesis Architect
 metadata:
@@ -13,15 +14,21 @@ metadata:
     - pricing-strategy
     - go-to-market
     - financial-modeling
+    - skill
+  requires_context: false
 variables:
   - name: product_value_proposition
-    description: Detailed breakdown of the core enterprise SaaS product, including unique value metrics, competitive differentiation, and feature gating.
+    description: Detailed breakdown of the core enterprise SaaS product, 
+      including unique value metrics, competitive differentiation, and feature 
+      gating.
     required: true
   - name: target_market_segments
-    description: Definitions of the targeted customer cohorts, including firmographics, current software spend, and alternative solutions.
+    description: Definitions of the targeted customer cohorts, including 
+      firmographics, current software spend, and alternative solutions.
     required: true
   - name: financial_constraints
-    description: Required Gross Margins, Customer Acquisition Costs (CAC), and overall target Return on Ad Spend (ROAS) constraints.
+    description: Required Gross Margins, Customer Acquisition Costs (CAC), and 
+      overall target Return on Ad Spend (ROAS) constraints.
     required: true
 model: gpt-4o
 modelParameters:
@@ -58,14 +65,19 @@ messages:
       </financial_constraints>
 testData:
   - inputs:
-      product_value_proposition: "Enterprise AI workflow automation platform. Reduces manual data entry by 80%. High switching costs once integrated."
-      target_market_segments: "Mid-market to Enterprise (500-5000 employees). Current spend on legacy solutions is $50k/year."
+      product_value_proposition: "Enterprise AI workflow automation platform. Reduces
+        manual data entry by 80%. High switching costs once integrated."
+      target_market_segments: "Mid-market to Enterprise (500-5000 employees). Current
+        spend on legacy solutions is $50k/year."
       financial_constraints: "Target Gross Margin > 80%. Target CAC payback < 9 months."
     expected: "GTM Pricing Elasticity Matrix and AARRR integration."
   - inputs:
-      product_value_proposition: "Developer-focused API for real-time video processing. Usage-based consumption."
-      target_market_segments: "B2B Startups and scale-ups. High sensitivity to baseline costs but scales with their success."
-      financial_constraints: "Must maintain 70% Gross Margin at high volume. LTV:CAC must be > 4:1."
+      product_value_proposition: "Developer-focused API for real-time video processing.
+        Usage-based consumption."
+      target_market_segments: "B2B Startups and scale-ups. High sensitivity to baseline
+        costs but scales with their success."
+      financial_constraints: "Must maintain 70% Gross Margin at high volume. LTV:CAC
+        must be > 4:1."
     expected: "Usage-based Elasticity Modeling and LTV/CAC calculus."
 evaluators:
   - name: Contains LTV Equation

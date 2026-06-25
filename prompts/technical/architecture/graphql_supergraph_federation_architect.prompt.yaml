@@ -1,7 +1,7 @@
----
 name: GraphQL Supergraph Federation Architect
 version: 1.0.0
-description: Designs robust GraphQL supergraph federated architectures, establishing subgraph boundaries and resolving cross-graph entities.
+description: Designs robust GraphQL supergraph federated architectures, 
+  establishing subgraph boundaries and resolving cross-graph entities.
 authors:
   - name: "System"
 metadata:
@@ -13,13 +13,16 @@ metadata:
     - federation
     - supergraph
     - system-design
+    - skill
   requires_context: true
 variables:
   - name: domain_boundaries
-    description: The distinct business domains, ownership, and entities that need to be unified under the supergraph.
+    description: The distinct business domains, ownership, and entities that 
+      need to be unified under the supergraph.
     required: true
   - name: client_access_patterns
-    description: The primary query vectors, expected query depth, and latency tolerance for the unified gateway.
+    description: The primary query vectors, expected query depth, and latency 
+      tolerance for the unified gateway.
     required: true
 model: gpt-4o
 modelParameters:
@@ -41,8 +44,11 @@ messages:
       Client Access Patterns: {{client_access_patterns}}
 testData:
   - vars:
-      domain_boundaries: "User Management (Auth, Profiles), E-Commerce (Products, Cart, Checkout), and Fulfillment (Inventory, Shipping)."
-      client_access_patterns: "Mobile apps fetching deeply nested user dashboards and real-time inventory updates; web clients requiring high-throughput product catalog queries."
+      domain_boundaries: "User Management (Auth, Profiles), E-Commerce (Products,
+        Cart, Checkout), and Fulfillment (Inventory, Shipping)."
+      client_access_patterns: "Mobile apps fetching deeply nested user dashboards
+        and real-time inventory updates; web clients requiring high-throughput product
+        catalog queries."
     expected: "AST"
 evaluators:
   - name: Acronym Check

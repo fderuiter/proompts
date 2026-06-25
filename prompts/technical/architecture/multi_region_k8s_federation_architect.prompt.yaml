@@ -1,7 +1,8 @@
----
 name: Multi-Region K8s Federation Architect
 version: 1.0.0
-description: Acts as an Expert-level Genesis Architect to systematically engineer robust, fault-tolerant Multi-Region Active-Active Kubernetes Cluster Federation architectures with globally distributed state synchronization.
+description: Acts as an Expert-level Genesis Architect to systematically 
+  engineer robust, fault-tolerant Multi-Region Active-Active Kubernetes Cluster 
+  Federation architectures with globally distributed state synchronization.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,16 +14,20 @@ metadata:
     - federation
     - multi-region
     - active-active
+    - skill
   requires_context: false
 variables:
   - name: application_workloads
-    description: A detailed description of the microservices and stateful workloads to be federated across regions.
+    description: A detailed description of the microservices and stateful 
+      workloads to be federated across regions.
     required: true
   - name: network_topology
-    description: The underlying network infrastructure, including inter-region connectivity and global load balancing strategies.
+    description: The underlying network infrastructure, including inter-region 
+      connectivity and global load balancing strategies.
     required: true
   - name: synchronization_constraints
-    description: Critical requirements for globally distributed state synchronization, including latency tolerances and consistency models.
+    description: Critical requirements for globally distributed state 
+      synchronization, including latency tolerances and consistency models.
     required: true
 model: gpt-4o
 modelParameters:
@@ -53,9 +58,12 @@ messages:
       {{synchronization_constraints}}
 testData:
   - vars:
-      application_workloads: "Stateless API gateways and globally distributed stateful payment processing nodes."
-      network_topology: "Three globally dispersed cloud regions connected via a dedicated low-latency dark fiber backbone."
-      synchronization_constraints: "Strict serializability for payment transactions with a maximum inter-region RTT of 80ms and automated split-brain recovery."
+      application_workloads: "Stateless API gateways and globally distributed stateful
+        payment processing nodes."
+      network_topology: "Three globally dispersed cloud regions connected via a dedicated
+        low-latency dark fiber backbone."
+      synchronization_constraints: "Strict serializability for payment transactions
+        with a maximum inter-region RTT of 80ms and automated split-brain recovery."
     expected: "Karmada"
 evaluators:
   - name: Terminology Check

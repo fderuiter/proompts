@@ -5,51 +5,52 @@ metadata:
   domain: regulatory
   complexity: low
   tags:
-  - regulatory-admin
-  - freedom
-  - information
-  - act
-  - foia
+    - regulatory-admin
+    - freedom
+    - information
+    - act
+    - foia
+    - skill
   requires_context: false
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-- role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
-    FDA and ISO compliance tasks.
+  - role: system
+    content: 'You are an expert Regulatory Affairs Specialist capable of handling
+      complex FDA and ISO compliance tasks.
 
 
-    ## Context
+      ## Context
 
-    21 CFR Part 20
-
-
-    ## Objective
-
-    Draft a request for records regarding a specific 510(k) clearance.
+      21 CFR Part 20
 
 
-    ## Output Format
+      ## Objective
 
-    Formal letter following 21 CFR 20.40.'
-- role: user
-  content: 'Please perform the task using the following input data:
+      Draft a request for records regarding a specific 510(k) clearance.
 
 
-    <input>
+      ## Output Format
 
-    {{input}}
+      Formal letter following 21 CFR 20.40.'
+  - role: user
+    content: 'Please perform the task using the following input data:
 
-    </input>'
+
+      <input>
+
+      {{input}}
+
+      </input>'
 testData:
-- expected: Expected output as per instructions.
-  vars: Description of records sought and requester contact information. (Example
-    data)
+  - expected: Expected output as per instructions.
+    vars: Description of records sought and requester contact information. 
+      (Example data)
 evaluators:
-- name: Validation Check
-  regex: (?i)Check
+  - name: Validation Check
+    regex: (?i)Check

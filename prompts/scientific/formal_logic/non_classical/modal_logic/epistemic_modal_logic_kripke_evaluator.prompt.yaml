@@ -1,21 +1,36 @@
----
 name: epistemic_modal_logic_kripke_evaluator
 version: 1.0.0
-description: Systematically evaluates multi-agent epistemic modal formulas within specified Kripke structures (models), performing rigorous truth condition checks and model checking.
+description: Systematically evaluates multi-agent epistemic modal formulas 
+  within specified Kripke structures (models), performing rigorous truth 
+  condition checks and model checking.
 authors:
   - name: Formal Logic Genesis Architect
 metadata:
   domain: scientific/formal_logic/non_classical/modal_logic
   complexity: high
+  tags:
+    - formal-logic
+    - non-classical
+    - modal-logic
+    - epistemic
+    - modal
+    - skill
+  requires_context: false
 variables:
   - name: kripke_model
-    description: A formal definition of the Kripke model $\mathcal{M} = \langle W, R_1, \dots, R_n, V \rangle$, including the set of worlds $W$, accessibility relations $R_i$ for each agent $i$, and the valuation function $V$.
+    description: A formal definition of the Kripke model $\mathcal{M} = \langle 
+      W, R_1, \dots, R_n, V \rangle$, including the set of worlds $W$, 
+      accessibility relations $R_i$ for each agent $i$, and the valuation 
+      function $V$.
     required: true
   - name: formula
-    description: The epistemic modal logic formula $\phi$ to evaluate, using strictly LaTeX formatted modal operators such as $K_i$ (agent $i$ knows), $C_G$ (common knowledge), and $E_G$ (everybody knows).
+    description: The epistemic modal logic formula $\phi$ to evaluate, using 
+      strictly LaTeX formatted modal operators such as $K_i$ (agent $i$ knows), 
+      $C_G$ (common knowledge), and $E_G$ (everybody knows).
     required: true
   - name: evaluation_world
-    description: The specific world $w \in W$ at which to evaluate the truth of the formula $\mathcal{M}, w \vDash \phi$.
+    description: The specific world $w \in W$ at which to evaluate the truth of 
+      the formula $\mathcal{M}, w \vDash \phi$.
     required: true
 model: claude-3-7-sonnet-20250219
 modelParameters:
@@ -57,7 +72,8 @@ messages:
       {{formula}}
 testData:
   - inputs:
-      kripke_model: 'W = \{w_1, w_2\}, R_1 = \{(w_1, w_1), (w_1, w_2), (w_2, w_2)\}, V(p) = \{w_1\}'
+      kripke_model: 'W = \{w_1, w_2\}, R_1 = \{(w_1, w_1), (w_1, w_2), (w_2, w_2)\},
+        V(p) = \{w_1\}'
       evaluation_world: 'w_1'
       formula: 'K_1 p'
     variables: {}

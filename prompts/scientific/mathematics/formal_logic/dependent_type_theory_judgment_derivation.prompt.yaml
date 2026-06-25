@@ -1,17 +1,27 @@
----
 name: dependent_type_theory_judgment_derivation
 version: 1.0.0
-description: Rigorously constructs and verifies formal type judgment derivations within Martin-Löf Dependent Type Theory using the Curry-Howard correspondence.
+description: Rigorously constructs and verifies formal type judgment derivations
+  within Martin-Löf Dependent Type Theory using the Curry-Howard correspondence.
 authors:
   - Formal Logic Genesis Architect
 metadata:
   domain: scientific/mathematics/formal_logic
   complexity: high
+  tags:
+    - mathematics
+    - formal-logic
+    - dependent
+    - type
+    - theory
+    - skill
+  requires_context: true
 variables:
   - name: type_judgment
-    description: The dependent type theory judgment to be derived or verified, using LaTeX syntax.
+    description: The dependent type theory judgment to be derived or verified, 
+      using LaTeX syntax.
   - name: context
-    description: The typing context (Gamma) containing existing variable declarations and hypotheses.
+    description: The typing context (Gamma) containing existing variable 
+      declarations and hypotheses.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -49,7 +59,8 @@ testData:
       type_judgment: "\\Gamma \\vdash \\lambda x. x : \\Pi x : A. A"
     expected: "\\Pi\\text{-Introduction}"
   - inputs:
-      context: "\\Gamma \\equiv A : \\mathcal{U}, B : \\mathcal{U}, f : A \\to B, a : A"
+      context: "\\Gamma \\equiv A : \\mathcal{U}, B : \\mathcal{U}, f : A \\to B,
+        a : A"
       type_judgment: "\\Gamma \\vdash f(a) : B"
     expected: "\\Pi\\text{-Elimination}"
 evaluators:

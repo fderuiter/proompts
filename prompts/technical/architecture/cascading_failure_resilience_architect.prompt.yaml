@@ -1,7 +1,8 @@
----
 name: Cascading Failure Resilience Architect
 version: 1.0.0
-description: Architects system-wide resilience patterns to mitigate cascading failures, including circuit breaking, load shedding, bulkheads, and retry storm prevention.
+description: Architects system-wide resilience patterns to mitigate cascading 
+  failures, including circuit breaking, load shedding, bulkheads, and retry 
+  storm prevention.
 authors:
   - System
 metadata:
@@ -13,13 +14,16 @@ metadata:
     - fault-tolerance
     - cascading-failures
     - load-shedding
+    - skill
   requires_context: true
 variables:
   - name: system_topology
-    description: A description of the distributed system topology, dependencies, and communication patterns.
+    description: A description of the distributed system topology, dependencies,
+      and communication patterns.
     type: string
   - name: failure_scenarios
-    description: Specific failure scenarios, latency bounds, and degradation tolerances to mitigate.
+    description: Specific failure scenarios, latency bounds, and degradation 
+      tolerances to mitigate.
     type: string
 model: gpt-4o
 modelParameters:
@@ -62,8 +66,12 @@ messages:
       Provide the complete resilience architecture.
 testData:
   - vars:
-      system_topology: "A microservices e-commerce platform with an API gateway routing to Order, Payment, and Inventory services. Payment relies on a third-party gateway."
-      failure_scenarios: "The third-party payment gateway experiences 30-second latency spikes and 15% error rates. We need to prevent the API gateway from exhausting threads and cascading the failure to the Inventory service."
+      system_topology: "A microservices e-commerce platform with an API gateway routing
+        to Order, Payment, and Inventory services. Payment relies on a third-party
+        gateway."
+      failure_scenarios: "The third-party payment gateway experiences 30-second latency
+        spikes and 15% error rates. We need to prevent the API gateway from exhausting
+        threads and cascading the failure to the Inventory service."
     expected: "Circuit Breaker"
 evaluators:
   - name: Resilience Check

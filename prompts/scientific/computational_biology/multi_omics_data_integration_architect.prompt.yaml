@@ -1,22 +1,32 @@
----
 name: multi_omics_data_integration_architect
 version: 1.0.0
-description: Designs robust, mathematically rigorous multi-omics data integration pipelines for complex biological systems.
+description: Designs robust, mathematically rigorous multi-omics data 
+  integration pipelines for complex biological systems.
 authors:
   - Biological Sciences Genesis Architect
 metadata:
   domain: computational_biology
   complexity: high
+  tags:
+    - computational-biology
+    - multi
+    - omics
+    - data
+    - integration
+    - skill
+  requires_context: false
 variables:
   - name: omics_types
     type: string
-    description: Types of omics data to integrate (e.g., transcriptomics, proteomics, metabolomics).
+    description: Types of omics data to integrate (e.g., transcriptomics, 
+      proteomics, metabolomics).
   - name: biological_system
     type: string
     description: The biological system or disease model under study.
   - name: integration_methodology
     type: string
-    description: The analytical approach for integration (e.g., joint Non-Negative Matrix Factorization).
+    description: The analytical approach for integration (e.g., joint 
+      Non-Negative Matrix Factorization).
 model: gpt-4o
 modelParameters:
   temperature: 0.1

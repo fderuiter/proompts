@@ -1,22 +1,35 @@
----
 name: dynamic_fleet_routing_optimization_architect
 version: 1.0.0
-description: Acts as a Principal Logistics Operations Research Scientist to formulate rigorous Capacitated Vehicle Routing Problem with Time Windows (CVRPTW) models to optimize last-mile logistics networks using advanced stochastic heuristics and strict LaTeX notation.
+description: Acts as a Principal Logistics Operations Research Scientist to 
+  formulate rigorous Capacitated Vehicle Routing Problem with Time Windows 
+  (CVRPTW) models to optimize last-mile logistics networks using advanced 
+  stochastic heuristics and strict LaTeX notation.
 authors:
   - Genesis Architect
 metadata:
   domain: management/operations
   complexity: high
+  tags:
+    - operations
+    - dynamic
+    - fleet
+    - routing
+    - optimization
+    - skill
+  requires_context: false
 variables:
   - name: ROUTING_NETWORK_DATA
     type: string
-    description: Geo-spatial nodes, arc costs, and warehouse structural parameters.
+    description: Geo-spatial nodes, arc costs, and warehouse structural 
+      parameters.
   - name: FLEET_CONSTRAINTS
     type: string
-    description: Fleet composition, capacity limits, shift regulations, and specific vehicle characteristics.
+    description: Fleet composition, capacity limits, shift regulations, and 
+      specific vehicle characteristics.
   - name: DELIVERY_TIME_WINDOWS
     type: string
-    description: Stochastic customer demand schedules, strict delivery time windows, and penalty costs for violations.
+    description: Stochastic customer demand schedules, strict delivery time 
+      windows, and penalty costs for violations.
 model: claude-3-7-sonnet-20250219
 modelParameters:
   temperature: 0.1

@@ -1,15 +1,24 @@
----
 name: predictive_cac_payback_modeler
 version: 1.0.0
-description: Synthesizes multi-channel acquisition data to model predictive CAC payback periods and optimize unit economics across the AARRR funnel.
+description: Synthesizes multi-channel acquisition data to model predictive CAC 
+  payback periods and optimize unit economics across the AARRR funnel.
 authors:
   - Growth Strategy Genesis Architect
 metadata:
   domain: growth/performance_marketing
   complexity: high
+  tags:
+    - performance-marketing
+    - predictive
+    - cac
+    - payback
+    - modeler
+    - skill
+  requires_context: false
 variables:
   - name: acquisition_cohort_data
-    description: Data containing multi-channel spend, lead volume, and conversion velocities for recent cohorts.
+    description: Data containing multi-channel spend, lead volume, and 
+      conversion velocities for recent cohorts.
   - name: blended_cac
     description: The current blended Customer Acquisition Cost.
   - name: arpu
@@ -55,14 +64,21 @@ messages:
       </gross_margin>
 testData:
   - inputs:
-      acquisition_cohort_data: "Cohort 1 (Paid Search): High initial conversion velocity, scaling CAC. Cohort 2 (Content/SEO): Low initial velocity, compounding ROI. Paid Search CAC is increasing by 15% MoM."
+      acquisition_cohort_data: "Cohort 1 (Paid Search): High initial conversion velocity,
+        scaling CAC. Cohort 2 (Content/SEO): Low initial velocity, compounding ROI.
+        Paid Search CAC is increasing by 15% MoM."
       blended_cac: "1200"
       arpu: "350"
       gross_margin: "0.80"
-    expected: "A comprehensive predictive CAC payback analysis mapping optimal budget reallocation from Paid Search to Content/SEO, integrating AARRR constraints, and featuring exact LaTeX financial equations for CAC Payback, LTV, and ROAS."
+    expected: "A comprehensive predictive CAC payback analysis mapping optimal budget
+      reallocation from Paid Search to Content/SEO, integrating AARRR constraints,
+      and featuring exact LaTeX financial equations for CAC Payback, LTV, and ROAS."
 evaluators:
   - "Output must explicitly contain the AARRR funnel framework applied to the data."
-  - "Output must contain the exact LaTeX formula for CAC Payback: $\\text{CAC Payback} = \\frac{CAC}{ARPU \\times \\text{Gross Margin}}$"
-  - "Output must contain the exact LaTeX formula for LTV: $LTV = \\frac{ARPU \\times \\text{Gross Margin}}{\\text{Churn Rate}}$"
-  - "Output must contain the exact LaTeX formula for ROAS: $ROAS = \\frac{\\text{Revenue}}{\\text{Cost}}$"
+  - "Output must contain the exact LaTeX formula for CAC Payback: $\\text{CAC Payback}
+    = \\frac{CAC}{ARPU \\times \\text{Gross Margin}}$"
+  - "Output must contain the exact LaTeX formula for LTV: $LTV = \\frac{ARPU \\times
+    \\text{Gross Margin}}{\\text{Churn Rate}}$"
+  - "Output must contain the exact LaTeX formula for ROAS: $ROAS = \\frac{\\text{Revenue}}{\\\
+    text{Cost}}$"
   - "Output must prescribe a specific budget reallocation matrix."

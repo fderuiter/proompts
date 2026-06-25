@@ -1,7 +1,8 @@
----
 name: Recursive Abductive Hypothesis Synthesizer
 version: "1.0.0"
-description: An advanced meta-reasoning architecture that executes a Counterfactual Abductive Synthesis Topology to autonomously generate, test, and refine novel explanatory hypotheses for anomalous data states.
+description: An advanced meta-reasoning architecture that executes a 
+  Counterfactual Abductive Synthesis Topology to autonomously generate, test, 
+  and refine novel explanatory hypotheses for anomalous data states.
 authors:
   - AGI Genesis Architect
 metadata:
@@ -12,13 +13,17 @@ metadata:
     - meta-reasoning
     - abductive-logic
     - agent-orchestration
+    - skill
   requires_context: true
 variables:
   - name: anomalous_phenomenon
-    description: The unexplained data state, observation, or systemic anomaly requiring a novel explanatory hypothesis.
+    description: The unexplained data state, observation, or systemic anomaly 
+      requiring a novel explanatory hypothesis.
     required: true
   - name: axiomatic_framework
-    description: The established domain constraints and known laws within which the hypothesis must operate without direct contradiction unless explicitly justified.
+    description: The established domain constraints and known laws within which 
+      the hypothesis must operate without direct contradiction unless explicitly
+      justified.
     required: true
 model: gpt-4o
 modelParameters:
@@ -51,8 +56,12 @@ messages:
       Deliver the analysis strictly starting with 'DEVIATION_VECTORS:' followed by 'FALSIFICATION_MATRIX:' and 'PRIME_HYPOTHESIS:'.
 testData:
   - variables:
-      anomalous_phenomenon: "An unsupervised multi-agent economy simulation spontaneously developed a deflationary spiral despite an algorithmic injection of fiat currency designed to maintain a 2% inflation target."
-      axiomatic_framework: "The agents are rational utility maximizers strictly bound by classical microeconomic price theory, and the money supply is exogenously controlled by a centralized smart contract."
+      anomalous_phenomenon: "An unsupervised multi-agent economy simulation spontaneously
+        developed a deflationary spiral despite an algorithmic injection of fiat currency
+        designed to maintain a 2% inflation target."
+      axiomatic_framework: "The agents are rational utility maximizers strictly bound
+        by classical microeconomic price theory, and the money supply is exogenously
+        controlled by a centralized smart contract."
     expected: |
       DEVIATION_VECTORS:
       1. Currency Injection Inefficacy: The injection of fiat currency failed to lower the purchasing power of the existing supply.

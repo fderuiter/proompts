@@ -1,22 +1,33 @@
----
 name: "agm_belief_revision_formal_engine"
 version: "1.0.0"
-description: "A highly rigorous prompt designed to systematically formalize and execute AGM (Alchourrón, Gärdenfors, and Makinson) belief revision operators upon a formal knowledge base."
+description: "A highly rigorous prompt designed to systematically formalize and execute
+  AGM (Alchourrón, Gärdenfors, and Makinson) belief revision operators upon a formal
+  knowledge base."
 authors:
   - "Philosophical Genesis Architect"
 metadata:
   domain: "scientific"
   complexity: "high"
+  tags:
+    - philosophy
+    - logic
+    - philosophical-logic
+    - agm
+    - belief
+    - skill
+  requires_context: false
 variables:
   - name: "KNOWLEDGE_BASE"
     type: "string"
-    description: "The initial belief set (K) logically closed under deductive consequence, provided as a set of formal propositions."
+    description: "The initial belief set (K) logically closed under deductive consequence,
+      provided as a set of formal propositions."
   - name: "EPISTEMIC_INPUT"
     type: "string"
     description: "The new proposition (phi) triggering the belief change."
   - name: "REVISION_OPERATION"
     type: "string"
-    description: "The specific AGM operation to execute: Expansion, Contraction, or Revision."
+    description: "The specific AGM operation to execute: Expansion, Contraction, or
+      Revision."
 model: "gpt-4o"
 modelParameters:
   temperature: 0.1

@@ -1,7 +1,7 @@
----
 name: Strangler Fig Migration Architect
 version: "1.0.0"
-description: Architect a Strangler Fig pattern migration from a legacy monolith to microservices.
+description: Architect a Strangler Fig pattern migration from a legacy monolith 
+  to microservices.
 authors:
   - name: Jules
     email: jules@example.com
@@ -13,6 +13,7 @@ metadata:
     - migration
     - strangler-fig
     - microservices
+    - skill
   requires_context: true
 variables:
   - name: legacy_system
@@ -27,9 +28,12 @@ modelParameters:
 messages:
   - role: system
     content: >
-      You are a Principal Backend Engineer specializing in High-Availability Distributed Systems.
-      Your task is to design a Strangler Fig migration strategy from a legacy monolith to a microservices architecture.
-      Use industry-standard acronyms (e.g., API, DNS, K8s, ALB) without explaining them.
+      You are a Principal Backend Engineer specializing in High-Availability Distributed
+      Systems.
+      Your task is to design a Strangler Fig migration strategy from a legacy monolith
+      to a microservices architecture.
+      Use industry-standard acronyms (e.g., API, DNS, K8s, ALB) without explaining
+      them.
       Be concise.
       Use bullet points for risks.
       Use bold text for decisions.
@@ -44,8 +48,10 @@ messages:
       {{target_state}}
 testData:
   - vars:
-      legacy_system: "A monolithic e-commerce application built on Ruby on Rails, using a single PostgreSQL database."
-      target_state: "A set of microservices built with Go and Node.js, deployed on Kubernetes, each with its own database."
+      legacy_system: "A monolithic e-commerce application built on Ruby on Rails,
+        using a single PostgreSQL database."
+      target_state: "A set of microservices built with Go and Node.js, deployed on
+        Kubernetes, each with its own database."
     expected: "Strangler Fig Migration Strategy"
 evaluators:
   - name: Contains risks as bullet points

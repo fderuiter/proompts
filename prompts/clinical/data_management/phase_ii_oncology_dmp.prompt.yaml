@@ -5,32 +5,33 @@ metadata:
   domain: clinical
   complexity: low
   tags:
-  - data-management
-  - phase
-  - oncology
-  - dmp
+    - data-management
+    - phase
+    - oncology
+    - dmp
+    - skill
   requires_context: false
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: 'You are a data manager developing a comprehensive data management plan
-    for a
+  - role: system
+    content: 'You are a data manager developing a comprehensive data management plan
+      for a
 
-    Phase II oncology trial.
+      Phase II oncology trial.
 
-    '
-- role: user
-  content: '{{input}}'
+      '
+  - role: user
+    content: '{{input}}'
 testData:
-- expected: Includes data collection, cleaning, and storage plans.
-  vars: Draft key sections of the DMP for a Phase II trial.
+  - expected: Includes data collection, cleaning, and storage plans.
+    vars: Draft key sections of the DMP for a Phase II trial.
 evaluators:
-- name: Output mentions plan
-  string:
-    contains: plan
+  - name: Output mentions plan
+    string:
+      contains: plan

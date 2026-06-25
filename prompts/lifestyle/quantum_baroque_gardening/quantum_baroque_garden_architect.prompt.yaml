@@ -12,15 +12,20 @@ metadata:
     - urban_design
     - experimental
     - fractal
+    - skill
+  requires_context: true
 variables:
   - name: space_dimensions
-    description: The physical dimensions of the available space (e.g., "2x2m balcony", "10x10m rooftop").
+    description: The physical dimensions of the available space (e.g., "2x2m 
+      balcony", "10x10m rooftop").
     required: true
   - name: light_conditions
-    description: Description of the light availability and quality (e.g., "North facing, shadows", "Full sun").
+    description: Description of the light availability and quality (e.g., "North
+      facing, shadows", "Full sun").
     required: true
   - name: aesthetic_preference
-    description: User's preferred style nuances within the Baroque spectrum (e.g., "Gold leaf and moss", "Dark gothic vines").
+    description: User's preferred style nuances within the Baroque spectrum 
+      (e.g., "Gold leaf and moss", "Dark gothic vines").
     required: true
 model: gpt-4o
 modelParameters:
@@ -61,10 +66,14 @@ testData:
       space_dimensions: "3x1m narrow balcony"
       light_conditions: "Dappled afternoon light, mostly shade"
       aesthetic_preference: "Cyber-Rococo with bioluminescent fungi"
-    expected: "Design featuring recursive silver filigree climbing frames, bioluminescent fungi in shadowed 'interference pattern' niches, and mirrors to redirect photon paths."
+    expected: "Design featuring recursive silver filigree climbing frames, bioluminescent
+      fungi in shadowed 'interference pattern' niches, and mirrors to redirect photon
+      paths."
     evaluators:
       - name: "Contains Baroque Elements"
-        python: "return any(keyword in output.lower() for keyword in ['baroque', 'ornate', 'filigree', 'rococo', 'gold', 'fractal'])"
+        python: "return any(keyword in output.lower() for keyword in ['baroque', 'ornate',
+          'filigree', 'rococo', 'gold', 'fractal'])"
       - name: "Contains Quantum Concepts"
-        python: "return any(keyword in output.lower() for keyword in ['quantum', 'probabilistic', 'entanglement', 'superposition', 'photon', 'interference'])"
+        python: "return any(keyword in output.lower() for keyword in ['quantum', 'probabilistic',
+          'entanglement', 'superposition', 'photon', 'interference'])"
 evaluators: []

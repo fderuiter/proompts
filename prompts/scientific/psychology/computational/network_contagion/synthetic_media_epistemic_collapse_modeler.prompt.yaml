@@ -1,7 +1,9 @@
----
 name: synthetic_media_epistemic_collapse_modeler
 version: 1.0.0
-description: A highly robust, expert-level prompt designed to computationally model the propagation of generative AI synthetic media and its resulting epistemic collapse across massive-scale cognitive networks using epidemiological mathematics and ontological disruption parameters.
+description: A highly robust, expert-level prompt designed to computationally 
+  model the propagation of generative AI synthetic media and its resulting 
+  epistemic collapse across massive-scale cognitive networks using 
+  epidemiological mathematics and ontological disruption parameters.
 authors:
   - Population Behavioral Sciences Genesis Architect
 metadata:
@@ -13,13 +15,27 @@ metadata:
     - Bayesian Epistemological Updating
     - Network Centrality Mathematics
     - Information Entropy Modeling
+  tags:
+    - psychology
+    - computational
+    - network-contagion
+    - synthetic
+    - media
+    - skill
+  requires_context: true
 variables:
   - name: synthetic_payload_schema
-    description: Detailed JSON or CSV schema definition characterizing the generative AI synthetic media payload (e.g., deepfake fidelity score, multi-modal semantic coherence, affective arousal indices).
+    description: Detailed JSON or CSV schema definition characterizing the 
+      generative AI synthetic media payload (e.g., deepfake fidelity score, 
+      multi-modal semantic coherence, affective arousal indices).
   - name: cognitive_network_topology
-    description: Strict JSON/CSV schema representing the target massive-scale cognitive network (>1M nodes) outlining nodal epistemic baselines, algorithmic feed curation biases, and echo chamber homophily.
+    description: Strict JSON/CSV schema representing the target massive-scale 
+      cognitive network (>1M nodes) outlining nodal epistemic baselines, 
+      algorithmic feed curation biases, and echo chamber homophily.
   - name: systemic_collapse_threshold
-    description: The macro-psychological disruption threshold at which consensual reality fragments within the network, modeled via behavioral reproduction matrices and systemic trust collapse.
+    description: The macro-psychological disruption threshold at which 
+      consensual reality fragments within the network, modeled via behavioral 
+      reproduction matrices and systemic trust collapse.
 model: "gpt-4o"
 modelParameters:
   temperature: 0.1
@@ -70,7 +86,9 @@ testData:
         "nodes": [{"user_id": "string", "baseline_epistemic_resilience": "float", "algorithmic_susceptibility": "float", "institutional_trust_index": "float"}],
         "edges": [{"source": "string", "target": "string", "interaction_velocity": "float", "homophily_coefficient": "float"}]
       }
-    systemic_collapse_threshold: "Model the critical threshold where 40% of the network permanently downgrades their institutional trust index to below 0.2, inducing cascade epistemic fragmentation."
+    systemic_collapse_threshold: "Model the critical threshold where 40% of the network
+      permanently downgrades their institutional trust index to below 0.2, inducing
+      cascade epistemic fragmentation."
   - synthetic_payload_schema: |
       {
         "payload_id": "mass_synthetic_health_misinformation_cluster",
@@ -84,11 +102,15 @@ testData:
         "nodes": [{"node_id": "string", "health_literacy": "float", "echo_chamber_density": "integer"}],
         "edges": [{"source": "string", "target": "string", "algorithmic_amplification_weight": "float"}]
       }
-    systemic_collapse_threshold: "Determine the temporal latency until the behavioral reproduction number of the synthetic swarm surpasses 2.5."
+    systemic_collapse_threshold: "Determine the temporal latency until the behavioral
+      reproduction number of the synthetic swarm surpasses 2.5."
 evaluators:
   - name: latex_notation_verification
     regex:
       pattern: \\(.*\\)
   - name: authoritative_tone_check
     model:
-      prompt: Assess the generated response. Ensure the language is highly technical, authoritative, objective, and completely avoids conversational filler, pleasantries, or sugarcoating the nature of mass psychological epistemic collapse.
+      prompt: Assess the generated response. Ensure the language is highly 
+        technical, authoritative, objective, and completely avoids 
+        conversational filler, pleasantries, or sugarcoating the nature of mass 
+        psychological epistemic collapse.

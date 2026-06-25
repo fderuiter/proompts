@@ -1,6 +1,7 @@
----
 name: Schwinger-Dyson Equation Architect
-description: A highly specialized theoretical physics prompt for the rigorous mathematical derivation of non-perturbative Schwinger-Dyson equations for n-point Green's functions.
+description: A highly specialized theoretical physics prompt for the rigorous 
+  mathematical derivation of non-perturbative Schwinger-Dyson equations for 
+  n-point Green's functions.
 version: 1.0.0
 authors:
   - name: Theoretical Physics Genesis Architect
@@ -13,15 +14,20 @@ metadata:
     - schwinger-dyson-equations
     - theoretical-physics
     - green-functions
+    - skill
+  requires_context: false
 variables:
   - name: target_lagrangian
-    description: The mathematical formulation of the target Lagrangian density (e.g., QED Lagrangian, scalar phi-fourth theory).
+    description: The mathematical formulation of the target Lagrangian density 
+      (e.g., QED Lagrangian, scalar phi-fourth theory).
     required: true
   - name: field_variable
-    description: The specific quantum field variable for which the equation is derived (e.g., fermion field psi, scalar field phi).
+    description: The specific quantum field variable for which the equation is 
+      derived (e.g., fermion field psi, scalar field phi).
     required: true
   - name: n_point_function
-    description: The specific n-point Green's function to be targeted (e.g., 2-point propagator, 3-point vertex).
+    description: The specific n-point Green's function to be targeted (e.g., 
+      2-point propagator, 3-point vertex).
     required: true
 model: gpt-4o
 modelParameters:
@@ -52,7 +58,8 @@ messages:
       N-Point Function: {{n_point_function}}
 testData:
   - inputs:
-      target_lagrangian: "\\mathcal{L} = \\frac{1}{2}(\\partial_\\mu \\phi)(\\partial^\\mu \\phi) - \\frac{1}{2}m^2\\phi^2 - \\frac{\\lambda}{4!}\\phi^4"
+      target_lagrangian: "\\mathcal{L} = \\frac{1}{2}(\\partial_\\mu \\phi)(\\partial^\\
+        mu \\phi) - \\frac{1}{2}m^2\\phi^2 - \\frac{\\lambda}{4!}\\phi^4"
       field_variable: "\\phi(x)"
       n_point_function: "2-point propagator"
     expected: "Schwinger-Dyson"

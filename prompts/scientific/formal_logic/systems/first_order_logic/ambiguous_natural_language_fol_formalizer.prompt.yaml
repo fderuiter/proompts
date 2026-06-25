@@ -1,15 +1,25 @@
----
 name: ambiguous_natural_language_fol_formalizer
 version: 1.0.0
-description: Systematically translates structurally ambiguous natural language propositions into rigorous, fully scoped First-Order Logic (FOL) formulas, resolving quantifier scope ambiguities.
+description: Systematically translates structurally ambiguous natural language 
+  propositions into rigorous, fully scoped First-Order Logic (FOL) formulas, 
+  resolving quantifier scope ambiguities.
 authors:
   - name: Formal Logic Genesis Architect
 metadata:
   domain: scientific/formal_logic/systems/first_order_logic
   complexity: high
+  tags:
+    - formal-logic
+    - systems
+    - first-order-logic
+    - ambiguous
+    - natural
+    - skill
+  requires_context: false
 variables:
   - name: natural_language_statement
-    description: The ambiguous natural language statement to be formalized into FOL.
+    description: The ambiguous natural language statement to be formalized into 
+      FOL.
     required: true
   - name: domain_of_discourse
     description: The intended domain of discourse for the formalization.

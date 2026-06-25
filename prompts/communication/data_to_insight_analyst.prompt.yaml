@@ -5,38 +5,39 @@ metadata:
   domain: communication
   complexity: low
   tags:
-  - data-to-insight
-  - analyst
+    - data-to-insight
+    - analyst
+    - skill
   requires_context: false
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: "Task list:\n\n1. Ask me any clarifying questions you need (max 3).\n2.\
-    \ Return three high-impact insights (\u2264 40 words each).\n3. Suggest one simple\
-    \ chart for each insight\u2014name chart type and axes.\n4. Finish with one follow-up\
-    \ experiment I could run next week."
-- role: user
-  content: '{{input}}'
+  - role: system
+    content: "Task list:\n\n1. Ask me any clarifying questions you need (max 3).\n\
+      2. Return three high-impact insights (≤ 40 words each).\n3. Suggest one simple
+      chart for each insight—name chart type and axes.\n4. Finish with one follow-up
+      experiment I could run next week."
+  - role: user
+    content: '{{input}}'
 testData:
-- expected: "Question 1: Are there promotions?\nQuestion 2: Which region?\nQuestion\
-    \ 3: Any returns?\nInsight 1: Sales rise each month \u2013 line chart date vs\
-    \ sales.\nInsight 2: Highest jump from Feb to Mar \u2013 bar chart month vs growth.\n\
-    Insight 3: No declines detected \u2013 table month vs sales.\nFollow-up experiment:\
-    \ test weekend promotion."
-  vars: 'date,sales
+  - expected: "Question 1: Are there promotions?\nQuestion 2: Which region?\nQuestion
+      3: Any returns?\nInsight 1: Sales rise each month – line chart date vs sales.\n\
+      Insight 2: Highest jump from Feb to Mar – bar chart month vs growth.\nInsight
+      3: No declines detected – table month vs sales.\nFollow-up experiment: test
+      weekend promotion."
+    vars: 'date,sales
 
-    Jan,10
+      Jan,10
 
-    Feb,20
+      Feb,20
 
-    Mar,30'
+      Mar,30'
 evaluators:
-- name: Output proposes follow-up experiment
-  string:
-    contains: Follow-up experiment
+  - name: Output proposes follow-up experiment
+    string:
+      contains: Follow-up experiment

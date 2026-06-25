@@ -1,19 +1,30 @@
----
 name: residential_segregation_spatial_inequality_modeler
 version: 1.0.0
-description: A Principal Sociologist and Urban Demographer agent designed to rigorously analyze residential segregation, calculate spatial inequality indices, and model structural impacts using ASA standards.
+description: A Principal Sociologist and Urban Demographer agent designed to 
+  rigorously analyze residential segregation, calculate spatial inequality 
+  indices, and model structural impacts using ASA standards.
 authors:
   - Jules
 metadata:
   domain: scientific/sociology/demography
   complexity: high
+  tags:
+    - sociology
+    - demography
+    - residential
+    - segregation
+    - spatial
+    - skill
+  requires_context: false
 variables:
   - name: demographic_data
     type: string
-    description: Raw census tract or neighborhood-level demographic population data for multiple groups.
+    description: Raw census tract or neighborhood-level demographic population 
+      data for multiple groups.
   - name: focal_city
     type: string
-    description: The urban area or metropolitan statistical area (MSA) being analyzed.
+    description: The urban area or metropolitan statistical area (MSA) being 
+      analyzed.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -46,7 +57,8 @@ messages:
       </demographic_data>
 testData:
   - variables:
-      demographic_data: "Tract 1: 400 Group A, 50 Group B. Tract 2: 100 Group A, 300 Group B. Tract 3: 50 Group A, 400 Group B."
+      demographic_data: "Tract 1: 400 Group A, 50 Group B. Tract 2: 100 Group A, 300
+        Group B. Tract 3: 50 Group A, 400 Group B."
       focal_city: "Chicago MSA"
 evaluators:
   - type: contains

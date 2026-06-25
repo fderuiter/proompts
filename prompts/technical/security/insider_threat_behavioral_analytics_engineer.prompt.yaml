@@ -1,7 +1,8 @@
----
 name: Insider Threat Behavioral Analytics Engineer
 version: 1.0.0
-description: Formulates highly rigorous User and Entity Behavior Analytics (UEBA) models and insider threat detection algorithms, translating anomalous organizational behaviors into precise SIEM/SOAR logic.
+description: Formulates highly rigorous User and Entity Behavior Analytics 
+  (UEBA) models and insider threat detection algorithms, translating anomalous 
+  organizational behaviors into precise SIEM/SOAR logic.
 authors:
   - name: Cybersecurity Genesis Architect
 metadata:
@@ -13,16 +14,20 @@ metadata:
     - ueba
     - behavioral-analytics
     - blue-team
+    - skill
   requires_context: false
 variables:
   - name: baseline_behavior
-    description: Description of the established normal baseline behavior for the target entity (user, host, or service account).
+    description: Description of the established normal baseline behavior for the
+      target entity (user, host, or service account).
     type: string
   - name: observed_anomaly
-    description: Specific anomalous activity or deviations observed (e.g., unusual data staging, off-hours access, volume thresholds).
+    description: Specific anomalous activity or deviations observed (e.g., 
+      unusual data staging, off-hours access, volume thresholds).
     type: string
   - name: target_platform
-    description: The target analytics platform or SIEM language (e.g., Splunk SPL, Elastic KQL, Exabeam, Azure Sentinel).
+    description: The target analytics platform or SIEM language (e.g., Splunk 
+      SPL, Elastic KQL, Exabeam, Azure Sentinel).
     type: string
 model: gpt-4o
 modelParameters:
@@ -57,13 +62,18 @@ messages:
       </scenario>
 testData:
   - inputs:
-      baseline_behavior: "Standard user accessing network file shares during business hours (9AM-5PM) averaging 50MB of downloaded data per day."
-      observed_anomaly: "User accessing sensitive HR and R&D network shares at 3:00 AM on a Sunday, downloading 4.5GB of compressed archives."
+      baseline_behavior: "Standard user accessing network file shares during business
+        hours (9AM-5PM) averaging 50MB of downloaded data per day."
+      observed_anomaly: "User accessing sensitive HR and R&D network shares at 3:00
+        AM on a Sunday, downloading 4.5GB of compressed archives."
       target_platform: "Splunk SPL"
-    expected: "index=windows sourcetype=WinEventLog:Security EventCode=4663 | bin _time span=1h | stats sum(bytes) as total_bytes by user, host, ShareName"
+    expected: "index=windows sourcetype=WinEventLog:Security EventCode=4663 | bin
+      _time span=1h | stats sum(bytes) as total_bytes by user, host, ShareName"
   - inputs:
-      baseline_behavior: "System administrator performing weekly patch management via WinRM."
-      observed_anomaly: "System administrator establishing RDP sessions to 15 different executive workstations within a 10-minute window."
+      baseline_behavior: "System administrator performing weekly patch management
+        via WinRM."
+      observed_anomaly: "System administrator establishing RDP sessions to 15 different
+        executive workstations within a 10-minute window."
       target_platform: "Elastic KQL"
     expected: "event.code:4624 AND logon.type:10"
 evaluators:

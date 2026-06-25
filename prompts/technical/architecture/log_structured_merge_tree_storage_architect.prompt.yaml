@@ -1,7 +1,8 @@
----
 name: Log-Structured Merge Tree Storage Architect
 version: 1.0.0
-description: Designs high-performance, write-optimized storage engines based on Log-Structured Merge (LSM) trees, implementing advanced compaction, Write-Ahead Logging (WAL), and memtable management strategies.
+description: Designs high-performance, write-optimized storage engines based on 
+  Log-Structured Merge (LSM) trees, implementing advanced compaction, 
+  Write-Ahead Logging (WAL), and memtable management strategies.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,18 +14,22 @@ metadata:
     - lsm-trees
     - databases
     - compaction
+    - skill
   requires_context: false
 variables:
   - name: workload_profile
-    description: Characteristics of the database workload (e.g., read/write ratio, point vs. range queries, bursty vs. sustained ingestion).
+    description: Characteristics of the database workload (e.g., read/write 
+      ratio, point vs. range queries, bursty vs. sustained ingestion).
     type: string
     required: true
   - name: hardware_constraints
-    description: Physical or virtual hardware limits including disk I/O (NVMe vs HDD), memory availability, and CPU cores.
+    description: Physical or virtual hardware limits including disk I/O (NVMe vs
+      HDD), memory availability, and CPU cores.
     type: string
     required: true
   - name: durability_requirements
-    description: SLA for data persistence, crash recovery RTO, and Write-Ahead Log (WAL) sync configurations.
+    description: SLA for data persistence, crash recovery RTO, and Write-Ahead 
+      Log (WAL) sync configurations.
     type: string
     required: true
 model: anthropic/claude-3-opus-20240229

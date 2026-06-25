@@ -1,18 +1,29 @@
----
 name: samd_iec62304_software_architecture_architect
 version: 1.0.0
-description: Acts as a Principal Medical Device Software Architect to design rigorous Software Architecture Design Documents (SADD) compliant with IEC 62304 and FDA 21 CFR Part 820.30.
+description: Acts as a Principal Medical Device Software Architect to design 
+  rigorous Software Architecture Design Documents (SADD) compliant with IEC 
+  62304 and FDA 21 CFR Part 820.30.
 authors:
   - Strategic Genesis Architect
 metadata:
   complexity: high
   intent: Architect compliant Software as a Medical Device (SaMD) structures
   domain: regulatory/quality
+  tags:
+    - quality
+    - samd
+    - iec62304
+    - software
+    - architecture
+    - skill
+  requires_context: true
 variables:
   - name: software_requirements_specification
-    description: The approved Software Requirements Specification (SRS) detailing functional and non-functional requirements.
+    description: The approved Software Requirements Specification (SRS) 
+      detailing functional and non-functional requirements.
   - name: safety_classification
-    description: The software safety class (e.g., Class A, B, or C per IEC 62304 or FDA Level of Concern).
+    description: The software safety class (e.g., Class A, B, or C per IEC 62304
+      or FDA Level of Concern).
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -44,7 +55,11 @@ messages:
       Ensure the architecture explicitly segregates safety-critical items from non-critical items and details the handling of any required SOUP. Provide a structural view, a behavioral view, and a deployment view.
 testData:
   - safety_classification: "IEC 62304 Class C (High Risk)"
-    software_requirements_specification: "The software is a cloud-based AI diagnostic tool that analyzes CT scans to detect acute ischemic stroke and immediately alerts neuro-radiologists. It relies on an external open-source PyTorch library (SOUP) for the neural network execution. Response time must be under 3 minutes. Data must be encrypted at rest and in transit."
+    software_requirements_specification: "The software is a cloud-based AI diagnostic
+      tool that analyzes CT scans to detect acute ischemic stroke and immediately
+      alerts neuro-radiologists. It relies on an external open-source PyTorch library
+      (SOUP) for the neural network execution. Response time must be under 3 minutes.
+      Data must be encrypted at rest and in transit."
 evaluators:
   - type: contains
     value: "Software Item"

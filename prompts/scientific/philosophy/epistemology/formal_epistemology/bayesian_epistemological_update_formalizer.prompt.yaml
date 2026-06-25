@@ -1,22 +1,34 @@
----
 name: "bayesian_epistemological_update_formalizer"
 version: "1.0.0"
-description: "A highly rigorous prompt designed to systematically evaluate probabilistic updating, Bayesian conditionalization, and credence adjustments across complex epistemic states."
+description: "A highly rigorous prompt designed to systematically evaluate probabilistic
+  updating, Bayesian conditionalization, and credence adjustments across complex epistemic
+  states."
 authors:
   - "Philosophical Genesis Architect"
 metadata:
   domain: "scientific"
   complexity: "high"
+  tags:
+    - philosophy
+    - epistemology
+    - formal-epistemology
+    - bayesian
+    - epistemological
+    - skill
+  requires_context: false
 variables:
   - name: "PRIOR_CREDENCES"
     type: "string"
-    description: "The initial probability distribution over a set of mutually exclusive and exhaustive hypotheses."
+    description: "The initial probability distribution over a set of mutually exclusive
+      and exhaustive hypotheses."
   - name: "NEW_EVIDENCE"
     type: "string"
-    description: "The newly acquired evidence, along with the likelihoods of observing this evidence given each hypothesis."
+    description: "The newly acquired evidence, along with the likelihoods of observing
+      this evidence given each hypothesis."
   - name: "UPDATING_RULE"
     type: "string"
-    description: "The specific epistemological updating mechanism to employ (e.g., Strict Conditionalization, Jeffrey Conditionalization)."
+    description: "The specific epistemological updating mechanism to employ (e.g.,
+      Strict Conditionalization, Jeffrey Conditionalization)."
 model: "gpt-4o"
 modelParameters:
   temperature: 0.1
@@ -54,7 +66,8 @@ testData:
     expected: "Formalization of Prior Epistemic State"
   - variables:
       PRIOR_CREDENCES: "P(Rain) = 0.3, P(No Rain) = 0.7"
-      NEW_EVIDENCE: "Observation of dark clouds. P(Clouds|Rain) = 0.8, P(Clouds|No Rain) = 0.2"
+      NEW_EVIDENCE: "Observation of dark clouds. P(Clouds|Rain) = 0.8, P(Clouds|No
+        Rain) = 0.2"
       UPDATING_RULE: "Strict Conditionalization"
     expected: "Bayesian Application"
 evaluators:

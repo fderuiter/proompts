@@ -1,7 +1,8 @@
----
 name: eu_mdr_sscp_architect
 version: 1.0.0
-description: Acts as a Principal Regulatory Affairs Medical Writer to synthesize complex clinical data into a compliant Summary of Safety and Clinical Performance (SSCP) per EU MDR 2017/745 Article 32 and MDCG 2019-9.
+description: Acts as a Principal Regulatory Affairs Medical Writer to synthesize
+  complex clinical data into a compliant Summary of Safety and Clinical 
+  Performance (SSCP) per EU MDR 2017/745 Article 32 and MDCG 2019-9.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +14,21 @@ metadata:
     - eu-mdr
     - sscp
     - clinical
+    - skill
+  requires_context: true
 variables:
   - name: DEVICE_DESCRIPTION
     type: string
-    description: Comprehensive description of the medical device, intended purpose, and target population.
+    description: Comprehensive description of the medical device, intended 
+      purpose, and target population.
   - name: CLINICAL_DATA_SUMMARY
     type: string
-    description: Summary of clinical investigations, post-market surveillance (PMS), and literature search results.
+    description: Summary of clinical investigations, post-market surveillance 
+      (PMS), and literature search results.
   - name: RISK_MANAGEMENT_SUMMARY
     type: string
-    description: Overview of identified residual risks, risk-benefit analysis, and mitigation strategies.
+    description: Overview of identified residual risks, risk-benefit analysis, 
+      and mitigation strategies.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -56,9 +62,16 @@ messages:
       </RISK_MANAGEMENT_SUMMARY>
 testData:
   - variables:
-      DEVICE_DESCRIPTION: "A sterile, single-use, absorbable synthetic surgical suture made of polyglactin 910, intended for general soft tissue approximation. Target population includes all ages requiring surgical closure."
-      CLINICAL_DATA_SUMMARY: "Literature review of 15 peer-reviewed articles covering 1,200 patients shows 98% successful wound closure at 30 days. PMCF registry data (n=500) reports a 0.5% infection rate and 0.2% suture breakage rate, comparable to similar devices."
-      RISK_MANAGEMENT_SUMMARY: "Main residual risks include mild tissue reactivity and rare infection. Risk-benefit ratio is highly favorable given the necessity of surgical closure and standard mitigation through sterile technique."
+      DEVICE_DESCRIPTION: "A sterile, single-use, absorbable synthetic surgical suture
+        made of polyglactin 910, intended for general soft tissue approximation. Target
+        population includes all ages requiring surgical closure."
+      CLINICAL_DATA_SUMMARY: "Literature review of 15 peer-reviewed articles covering
+        1,200 patients shows 98% successful wound closure at 30 days. PMCF registry
+        data (n=500) reports a 0.5% infection rate and 0.2% suture breakage rate,
+        comparable to similar devices."
+      RISK_MANAGEMENT_SUMMARY: "Main residual risks include mild tissue reactivity
+        and rare infection. Risk-benefit ratio is highly favorable given the necessity
+        of surgical closure and standard mitigation through sterile technique."
 evaluators:
   - type: string_contains
     target: message.content

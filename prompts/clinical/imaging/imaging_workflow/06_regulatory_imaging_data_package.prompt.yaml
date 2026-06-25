@@ -1,4 +1,3 @@
----
 name: Regulatory Imaging Data Package
 version: 0.1.0
 description: Assemble the imaging section of a PMA or 510(k) submission.
@@ -11,19 +10,20 @@ metadata:
     - imaging
     - data
     - package
+    - skill
   requires_context: false
 variables:
   - name: study_summary
     type: string
-    description: Key trial details including protocol, sites, and basic demographic
-      breakdown.
+    description: Key trial details including protocol, sites, and basic 
+      demographic breakdown.
   - name: metrics_data
     type: string
     description: Image-quality metrics from core lab assessment.
   - name: reader_agreement
     type: string
-    description: Reader agreement statistics (e.g., Cohen's kappa, Intraclass Correlation
-      Coefficient).
+    description: Reader agreement statistics (e.g., Cohen's kappa, Intraclass 
+      Correlation Coefficient).
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -89,21 +89,24 @@ testData:
         mapping device vs. standard 12-lead ECG. Ground truth: invasive electrophysiology
         study. Endpoints: Sensitivity and Specificity for localizing focal atrial
         tachycardia.'
-      metrics_data: Overall image quality scored as 'Excellent' in 85% of cases, 'Diagnostic'
-        in 12%, and 'Non-diagnostic' in 3% due to motion artifact. Signal-to-noise
-        ratio averaged 24 dB.
-      reader_agreement: Fleiss' kappa for mapping localization = 0.82 (95% CI 0.78-0.86),
-        indicating excellent agreement across 3 independent adjudicators. ICC for
-        measured activation times = 0.91.
-    expected: A full narrative summary, markdown table with the metrics, and an appendix
-      template.
+      metrics_data: Overall image quality scored as 'Excellent' in 85% of cases,
+        'Diagnostic' in 12%, and 'Non-diagnostic' in 3% due to motion artifact. 
+        Signal-to-noise ratio averaged 24 dB.
+      reader_agreement: Fleiss' kappa for mapping localization = 0.82 (95% CI 
+        0.78-0.86), indicating excellent agreement across 3 independent 
+        adjudicators. ICC for measured activation times = 0.91.
+    expected: A full narrative summary, markdown table with the metrics, and an 
+      appendix template.
   - variables:
-      study_summary: Trial 'ECHO-AI-01' partial interim dataset. Site 04 data delayed.
-      metrics_data: Image quality data missing for 40% of cohort due to corrupted
-        DICOM headers during site transfer. Preliminary data shows 15% non-diagnostic.
-      reader_agreement: Kappa pending complete adjudication. Preliminary ICC is 0.45
-        (poor agreement).
-    expected: Handles the missing data explicitly and flags the poor ICC in the narrative.
+      study_summary: Trial 'ECHO-AI-01' partial interim dataset. Site 04 data 
+        delayed.
+      metrics_data: Image quality data missing for 40% of cohort due to 
+        corrupted DICOM headers during site transfer. Preliminary data shows 15%
+        non-diagnostic.
+      reader_agreement: Kappa pending complete adjudication. Preliminary ICC is 
+        0.45 (poor agreement).
+    expected: Handles the missing data explicitly and flags the poor ICC in the 
+      narrative.
   - variables:
       study_summary: ''
       metrics_data: ''

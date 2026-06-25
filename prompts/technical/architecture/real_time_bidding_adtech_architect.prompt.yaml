@@ -1,7 +1,8 @@
----
 name: Real-Time Bidding AdTech Architect
 version: 1.0.0
-description: Designs ultra-low-latency, highly concurrent Real-Time Bidding (RTB) architectures for AdTech platforms, optimizing for strict bid response SLAs, geospatial routing, and massive data ingestion.
+description: Designs ultra-low-latency, highly concurrent Real-Time Bidding 
+  (RTB) architectures for AdTech platforms, optimizing for strict bid response 
+  SLAs, geospatial routing, and massive data ingestion.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,18 +14,22 @@ metadata:
     - real-time-bidding
     - low-latency
     - distributed-systems
+    - skill
   requires_context: false
 variables:
   - name: qps_target
-    description: The expected peak Queries Per Second (QPS) for incoming bid requests.
+    description: The expected peak Queries Per Second (QPS) for incoming bid 
+      requests.
     type: string
     required: true
   - name: latency_sla
-    description: Strict latency Service Level Agreement (SLA) for round-trip bid responses (e.g., < 100ms).
+    description: Strict latency Service Level Agreement (SLA) for round-trip bid
+      responses (e.g., < 100ms).
     type: string
     required: true
   - name: data_gravity
-    description: Constraints regarding user profile stores, fraud detection ML models, and geospatial distribution.
+    description: Constraints regarding user profile stores, fraud detection ML 
+      models, and geospatial distribution.
     type: string
     required: true
 model: anthropic/claude-3-opus-20240229
@@ -64,7 +69,8 @@ testData:
   - variables:
       qps_target: "500,000 QPS globally."
       latency_sla: "< 80ms round-trip to SSP."
-      data_gravity: "User profiles stored in Aerospike clusters replicated across 3 regions. ML inference models updated hourly."
+      data_gravity: "User profiles stored in Aerospike clusters replicated across
+        3 regions. ML inference models updated hourly."
     expected: "Aerospike|Anycast|load-shedding"
   - variables:
       qps_target: "2,000,000 QPS."

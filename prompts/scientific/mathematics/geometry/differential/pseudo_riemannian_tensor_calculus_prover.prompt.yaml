@@ -1,4 +1,3 @@
----
 name: pseudo_riemannian_tensor_calculus_prover
 version: 1.0.0
 description: >
@@ -10,6 +9,14 @@ authors:
 metadata:
   domain: pure_mathematics
   complexity: high
+  tags:
+    - mathematics
+    - geometry
+    - differential
+    - pseudo
+    - riemannian
+    - skill
+  requires_context: false
 variables:
   - name: manifold_definition
     type: string
@@ -46,7 +53,8 @@ messages:
 
       2. Rigorously derive the Christoffel symbols of the second kind.
 
-      3. Construct the Riemann curvature tensor, Ricci tensor, and scalar curvature if required.
+      3. Construct the Riemann curvature tensor, Ricci tensor, and scalar curvature
+      if required.
 
       4. Meticulously prove the stated theorem using proper tensorial index contraction
       and covariant differentiation rules.
@@ -65,7 +73,8 @@ messages:
 testData:
   - manifold_definition: >
       Let (M, g) be a 4-dimensional smooth pseudo-Riemannian manifold equipped
-      with the Schwarzschild metric in standard spherical coordinates (t, r, \theta, \phi).
+      with the Schwarzschild metric in standard spherical coordinates (t, r, \theta,
+      \phi).
     mathematical_theorem: >
       Prove that the covariant derivative of the metric tensor vanishes identically,
       \nabla_{\gamma} g_{\alpha \beta} = 0, using the explicit definition of the

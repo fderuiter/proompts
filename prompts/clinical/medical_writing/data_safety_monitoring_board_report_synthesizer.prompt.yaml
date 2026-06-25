@@ -1,7 +1,8 @@
----
 name: Data Safety Monitoring Board Report Synthesizer
 version: 1.0.0
-description: Synthesizes unblinded clinical trial safety and efficacy data into a comprehensive, confidential report for Data Safety Monitoring Board (DSMB) review.
+description: Synthesizes unblinded clinical trial safety and efficacy data into 
+  a comprehensive, confidential report for Data Safety Monitoring Board (DSMB) 
+  review.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,15 +14,21 @@ metadata:
     - dsmb
     - safety
     - efficacy
+    - skill
+  requires_context: true
 variables:
   - name: trial_protocol_summary
-    description: A brief summary of the trial protocol, including primary and secondary endpoints.
+    description: A brief summary of the trial protocol, including primary and 
+      secondary endpoints.
     required: true
   - name: unblinded_safety_data
-    description: Cumulative unblinded safety data, including Adverse Events (AEs), Serious Adverse Events (SAEs), and laboratory abnormalities by treatment arm.
+    description: Cumulative unblinded safety data, including Adverse Events 
+      (AEs), Serious Adverse Events (SAEs), and laboratory abnormalities by 
+      treatment arm.
     required: true
   - name: unblinded_efficacy_data
-    description: Interim unblinded efficacy data, including primary endpoint results and any key secondary endpoints by treatment arm.
+    description: Interim unblinded efficacy data, including primary endpoint 
+      results and any key secondary endpoints by treatment arm.
     required: true
 model: gpt-4o
 modelParameters:
@@ -71,17 +78,25 @@ messages:
       </inputs>
 testData:
   - vars:
-      trial_protocol_summary: "A Phase 3, randomized, double-blind study evaluating the efficacy and safety of Drug A versus Placebo in patients with severe asthma. Primary endpoint is reduction in asthma exacerbations over 12 months."
-      unblinded_safety_data: "Arm A (Drug A, N=200): 15 SAEs (7.5%), mostly respiratory infections. Arm B (Placebo, N=200): 10 SAEs (5.0%), mostly cardiovascular events. No deaths in either arm."
-      unblinded_efficacy_data: "Arm A (Drug A): 40% reduction in exacerbations from baseline. Arm B (Placebo): 15% reduction in exacerbations from baseline. p-value < 0.001."
+      trial_protocol_summary: "A Phase 3, randomized, double-blind study evaluating
+        the efficacy and safety of Drug A versus Placebo in patients with severe asthma.
+        Primary endpoint is reduction in asthma exacerbations over 12 months."
+      unblinded_safety_data: "Arm A (Drug A, N=200): 15 SAEs (7.5%), mostly respiratory
+        infections. Arm B (Placebo, N=200): 10 SAEs (5.0%), mostly cardiovascular
+        events. No deaths in either arm."
+      unblinded_efficacy_data: "Arm A (Drug A): 40% reduction in exacerbations from
+        baseline. Arm B (Placebo): 15% reduction in exacerbations from baseline. p-value
+        < 0.001."
     expected: "## 1. Protocol Overview"
     evaluators:
       - name: Header Structure Validation
         regex:
-          pattern: '(?s)## 1\. Protocol Overview.*## 2\. Unblinded Safety Data Synthesis.*## 3\. Unblinded Efficacy Data Synthesis.*## 4\. Overall Risk-Benefit Assessment'
+          pattern: '(?s)## 1\. Protocol Overview.*## 2\. Unblinded Safety Data Synthesis.*##
+            3\. Unblinded Efficacy Data Synthesis.*## 4\. Overall Risk-Benefit Assessment'
       - name: Content Inclusion Check
         regex:
-          pattern: '(?i)(asthma exacerbations|Arm A|Arm B|p-value < 0\.001|respiratory infections|cardiovascular events)'
+          pattern: '(?i)(asthma exacerbations|Arm A|Arm B|p-value < 0\.001|respiratory
+            infections|cardiovascular events)'
   - vars:
       trial_protocol_summary: "Write a short story about a brave knight."
       unblinded_safety_data: "The knight fought a dragon."

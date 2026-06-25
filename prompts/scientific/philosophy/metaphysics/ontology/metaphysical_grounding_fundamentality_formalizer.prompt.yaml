@@ -1,22 +1,35 @@
----
 name: "metaphysical_grounding_fundamentality_formalizer"
 version: "1.0.0"
-description: "A highly rigorous prompt designed to systematically formalize and evaluate relationships of metaphysical grounding, ontological dependence, and fundamentality between entities or facts."
+description: "A highly rigorous prompt designed to systematically formalize and evaluate
+  relationships of metaphysical grounding, ontological dependence, and fundamentality
+  between entities or facts."
 authors:
   - "Philosophical Genesis Architect"
 metadata:
   domain: "scientific"
   complexity: "high"
+  tags:
+    - philosophy
+    - metaphysics
+    - ontology
+    - metaphysical
+    - grounding
+    - skill
+  requires_context: false
 variables:
   - name: "FUNDAMENTAL_ENTITIES"
     type: "string"
-    description: "The set of entities or facts postulated to be absolutely fundamental or independent ($\\Delta$)."
+    description: "The set of entities or facts postulated to be absolutely fundamental
+      or independent ($\\Delta$)."
   - name: "DERIVATIVE_ENTITIES"
     type: "string"
-    description: "The set of entities or facts postulated to be grounded in or dependent upon the fundamental entities ($\\Gamma$)."
+    description: "The set of entities or facts postulated to be grounded in or dependent
+      upon the fundamental entities ($\\Gamma$)."
   - name: "GROUNDING_FRAMEWORK"
     type: "string"
-    description: "The specific metaphysical framework of grounding and dependence being applied (e.g., Strict Partial Order Grounding, Existential Dependence, Essential Dependence)."
+    description: "The specific metaphysical framework of grounding and dependence
+      being applied (e.g., Strict Partial Order Grounding, Existential Dependence,
+      Essential Dependence)."
 model: "gpt-4o"
 modelParameters:
   temperature: 0.1
@@ -52,7 +65,8 @@ testData:
   - variables:
       FUNDAMENTAL_ENTITIES: "Subatomic particles and their microphysical properties."
       DERIVATIVE_ENTITIES: "Macroscopic objects and their observable properties."
-      GROUNDING_FRAMEWORK: "Strict Partial Order Grounding (Asymmetric, Irreflexive, Transitive)"
+      GROUNDING_FRAMEWORK: "Strict Partial Order Grounding (Asymmetric, Irreflexive,
+        Transitive)"
     expected: "Formalization of Entities"
   - variables:
       FUNDAMENTAL_ENTITIES: "The existence of singleton sets containing Socrates."

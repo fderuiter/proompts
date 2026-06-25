@@ -1,7 +1,8 @@
----
 name: Distributed Data Skew Mitigation Architect
 version: 1.0.0
-description: Architects advanced resolution strategies for distributed data skew, hot partitions, and uneven shard utilization in high-throughput databases and message brokers.
+description: Architects advanced resolution strategies for distributed data 
+  skew, hot partitions, and uneven shard utilization in high-throughput 
+  databases and message brokers.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,16 +14,21 @@ metadata:
     - data-engineering
     - scalability
     - performance-tuning
+    - skill
   requires_context: false
 variables:
   - name: system_topology
-    description: The current distributed architecture, including databases, caches, message brokers, and partitioning/sharding strategies.
+    description: The current distributed architecture, including databases, 
+      caches, message brokers, and partitioning/sharding strategies.
     required: true
   - name: skew_symptoms
-    description: Detailed metrics and observations of the data skew (e.g., specific partitions hitting 100% CPU, massive queue build-up on specific routing keys, uneven storage distribution).
+    description: Detailed metrics and observations of the data skew (e.g., 
+      specific partitions hitting 100% CPU, massive queue build-up on specific 
+      routing keys, uneven storage distribution).
     required: true
   - name: workload_characteristics
-    description: The nature of the workload (e.g., read-heavy vs write-heavy, point lookups vs range scans, acceptable latency percentiles).
+    description: The nature of the workload (e.g., read-heavy vs write-heavy, 
+      point lookups vs range scans, acceptable latency percentiles).
     required: true
 model: gpt-4o
 modelParameters:
@@ -59,14 +65,24 @@ messages:
       <workload_characteristics>{{workload_characteristics}}</workload_characteristics>
 testData:
   - vars:
-      system_topology: "A globally distributed DynamoDB-style key-value store, sharded by `tenant_id`. Used for real-time telemetry ingestion from IoT devices."
-      skew_symptoms: "Storage is relatively even, but write throughput is highly skewed. One specific `tenant_id` (representing a massive enterprise client) is causing its partition to hit the maximum IOPS limit, resulting in 429 Too Many Requests and cascading upstream queue backpressure."
-      workload_characteristics: "95% write-heavy, mostly append-only time-series data. Occasional analytical reads over time ranges."
+      system_topology: "A globally distributed DynamoDB-style key-value store, sharded
+        by `tenant_id`. Used for real-time telemetry ingestion from IoT devices."
+      skew_symptoms: "Storage is relatively even, but write throughput is highly skewed.
+        One specific `tenant_id` (representing a massive enterprise client) is causing
+        its partition to hit the maximum IOPS limit, resulting in 429 Too Many Requests
+        and cascading upstream queue backpressure."
+      workload_characteristics: "95% write-heavy, mostly append-only time-series data.
+        Occasional analytical reads over time ranges."
     expected: "Salted Keys"
   - vars:
-      system_topology: "A Kafka cluster with 100 partitions, partitioning by `user_id`. Consumers process events to update a materialized view in Redis."
-      skew_symptoms: "A small subset of power users generate 100x more events than average users. The consumers assigned to the partitions holding these power users are falling behind, causing massive consumer lag, while other consumers are idle."
-      workload_characteristics: "Strict ordering per `user_id` is required. Processing each event takes ~50ms."
+      system_topology: "A Kafka cluster with 100 partitions, partitioning by `user_id`.
+        Consumers process events to update a materialized view in Redis."
+      skew_symptoms: "A small subset of power users generate 100x more events than
+        average users. The consumers assigned to the partitions holding these power
+        users are falling behind, causing massive consumer lag, while other consumers
+        are idle."
+      workload_characteristics: "Strict ordering per `user_id` is required. Processing
+        each event takes ~50ms."
     expected: "Composite Keys"
 evaluators:
   - name: Strategy Verification

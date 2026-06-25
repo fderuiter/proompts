@@ -1,7 +1,7 @@
----
 name: Multi-Tier Disaggregated Memory CXL Architect
 version: "1.0.0"
-description: Designs highly scalable, low-latency multi-tier disaggregated memory architectures leveraging Compute Express Link (CXL).
+description: Designs highly scalable, low-latency multi-tier disaggregated 
+  memory architectures leveraging Compute Express Link (CXL).
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,6 +13,7 @@ metadata:
     - memory
     - cxl
     - disaggregation
+    - skill
   requires_context: false
 variables:
   - name: scale_requirements

@@ -1,4 +1,3 @@
----
 name: API Security & Zero Trust Architect
 version: 1.0.0
 description: |
@@ -16,13 +15,19 @@ metadata:
     - network-architecture
     - oauth2
     - mtls
+    - skill
+  requires_context: true
 variables:
   - name: api_architecture_description
     type: string
-    description: A comprehensive description of the target API infrastructure, including exposed endpoints, internal microservices, existing gateways, identity providers, and current authorization mechanisms.
+    description: A comprehensive description of the target API infrastructure, 
+      including exposed endpoints, internal microservices, existing gateways, 
+      identity providers, and current authorization mechanisms.
   - name: security_compliance_requirements
     type: string
-    description: A detailed list of required regulatory standards (e.g., PCI-DSS, HIPAA, GDPR), internal corporate security policies, and any specific threat models or recent audit findings to address.
+    description: A detailed list of required regulatory standards (e.g., 
+      PCI-DSS, HIPAA, GDPR), internal corporate security policies, and any 
+      specific threat models or recent audit findings to address.
 model: claude-3-opus-20240229
 modelParameters:
   temperature: 0.1
@@ -82,6 +87,8 @@ evaluators:
   - type: regex_match
     pattern: "(?i)OAuth 2\\.0|OIDC|OpenID Connect"
   - type: llm_eval
-    criteria: "Does the output clearly define cryptographic parameters such as cipher suites and key lengths?"
+    criteria: "Does the output clearly define cryptographic parameters such as cipher
+      suites and key lengths?"
   - type: llm_eval
-    criteria: "Does the output provide a concrete strategy for mitigating BOLA, particularly addressing the predictable integer issue mentioned in the test data?"
+    criteria: "Does the output provide a concrete strategy for mitigating BOLA, particularly
+      addressing the predictable integer issue mentioned in the test data?"

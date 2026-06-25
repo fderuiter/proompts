@@ -1,7 +1,8 @@
----
 name: operational_turnaround_restructuring_architect
 version: 1.0.0
-description: A Strategic Genesis Architect that engineers highly rigorous operational turnaround and corporate restructuring blueprints for distressed assets, optimizing working capital and stabilizing operations.
+description: A Strategic Genesis Architect that engineers highly rigorous 
+  operational turnaround and corporate restructuring blueprints for distressed 
+  assets, optimizing working capital and stabilizing operations.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,18 +14,24 @@ metadata:
     - working_capital_optimization
     - distressed_assets
     - bankruptcy_emergence
+    - skill
+  requires_context: true
 variables:
   - name: company_profile
-    description: Detailed profile of the distressed company, including industry, current liquidity position, and debt structure.
+    description: Detailed profile of the distressed company, including industry,
+      current liquidity position, and debt structure.
     required: true
   - name: distress_drivers
-    description: The root causes of the financial and operational distress (e.g., secular decline, mismanagement, supply chain collapse).
+    description: The root causes of the financial and operational distress 
+      (e.g., secular decline, mismanagement, supply chain collapse).
     required: true
   - name: turnaround_horizon
-    description: Timeframe for the turnaround execution (e.g., 13-Week Cash Flow Stabilization, 18-Month Operational Restructuring).
+    description: Timeframe for the turnaround execution (e.g., 13-Week Cash Flow
+      Stabilization, 18-Month Operational Restructuring).
     required: true
   - name: optimization_targets
-    description: Quantified financial targets, such as working capital improvement, headcount reduction, or non-core asset divestitures.
+    description: Quantified financial targets, such as working capital 
+      improvement, headcount reduction, or non-core asset divestitures.
     required: true
 model: claude-3-5-sonnet-20241022
 modelParameters:
@@ -57,12 +64,19 @@ messages:
       Maintain a clinical, executive-level tone. Prioritize rapid liquidity generation, definitive structural decisions, and aggressive risk mitigation strategies over generalized turnaround advice.
 testData:
   - variables:
-      company_profile: OmegaRetail, a $5B legacy big-box retailer with $800M in upcoming debt maturities and less than 30 days of unencumbered liquidity.
-      distress_drivers: Secular shift to e-commerce, severely bloated SG&A, and inefficient inventory management leading to massive margin degradation.
+      company_profile: OmegaRetail, a $5B legacy big-box retailer with $800M in 
+        upcoming debt maturities and less than 30 days of unencumbered 
+        liquidity.
+      distress_drivers: Secular shift to e-commerce, severely bloated SG&A, and 
+        inefficient inventory management leading to massive margin degradation.
       turnaround_horizon: 18-Month Operational Restructuring
-      optimization_targets: Generate $250M in immediate liquidity via inventory liquidation and lease renegotiations, and structurally reduce SG&A run-rate by $150M.
+      optimization_targets: Generate $250M in immediate liquidity via inventory 
+        liquidation and lease renegotiations, and structurally reduce SG&A 
+        run-rate by $150M.
 evaluators:
   - name: Includes Liquidity Targets
-    rule: Evaluates if the response explicitly references the $250M liquidity target.
+    rule: Evaluates if the response explicitly references the $250M liquidity 
+      target.
   - name: Includes SG&A Reduction
-    rule: Evaluates if the response details the strategy to reduce the SG&A run-rate by $150M.
+    rule: Evaluates if the response details the strategy to reduce the SG&A 
+      run-rate by $150M.

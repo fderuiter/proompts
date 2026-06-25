@@ -1,7 +1,9 @@
----
 name: algorithmic_misinformation_contagion_modeler
 version: 1.0.0
-description: A highly robust, expert-level prompt designed to formulate mathematical models and multi-modal big data architectures for predicting the onset, propagation, and virality of algorithmic misinformation contagion across mass global network topologies.
+description: A highly robust, expert-level prompt designed to formulate 
+  mathematical models and multi-modal big data architectures for predicting the 
+  onset, propagation, and virality of algorithmic misinformation contagion 
+  across mass global network topologies.
 authors:
   - Population Behavioral Sciences Genesis Architect
 metadata:
@@ -13,13 +15,27 @@ metadata:
     - Network Percolation Theory
     - Threshold Cascading Failures
     - Multi-modal Big Data Analytics
+  tags:
+    - psychology
+    - computational
+    - network-contagion
+    - algorithmic
+    - misinformation
+    - skill
+  requires_context: false
 variables:
   - name: multi_modal_data_schema
-    description: Strict JSON/CSV schema definition detailing ingestion parameters for high-frequency social media engagement, behavioral telemetry, and psychometric profiles for >50M agents.
+    description: Strict JSON/CSV schema definition detailing ingestion 
+      parameters for high-frequency social media engagement, behavioral 
+      telemetry, and psychometric profiles for >50M agents.
   - name: network_virality_factors
-    description: A JSON configuration mapping systemic algorithmic amplification factors (e.g., recommender system biases, engagement thresholds, filter bubble isolation constraints) driving the contagion.
+    description: A JSON configuration mapping systemic algorithmic amplification
+      factors (e.g., recommender system biases, engagement thresholds, filter 
+      bubble isolation constraints) driving the contagion.
   - name: topological_intervention_objective
-    description: The targeted macro-level behavioral stabilization goal, such as modeling the required thresholds to arrest misinformation propagation using targeted cognitive inoculation or algorithmic dampening.
+    description: The targeted macro-level behavioral stabilization goal, such as
+      modeling the required thresholds to arrest misinformation propagation 
+      using targeted cognitive inoculation or algorithmic dampening.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -65,7 +81,10 @@ testData:
         "echo_chamber_isolation_density": 0.82,
         "recommender_system_bias_weight": 0.95
       }
-    topological_intervention_objective: Simulate the arrest of the behavioral misinformation cascade by deploying targeted algorithmic dampening on high-centrality nodes and injecting cognitive inoculation payloads when outrage arousal exceeds the 90th percentile.
+    topological_intervention_objective: Simulate the arrest of the behavioral 
+      misinformation cascade by deploying targeted algorithmic dampening on 
+      high-centrality nodes and injecting cognitive inoculation payloads when 
+      outrage arousal exceeds the 90th percentile.
   - multi_modal_data_schema: |
       {
         "nodes": [{"user_id": "string", "analytic_reasoning_index": "float", "baseline_trust_metric": "float", "cluster_id": "integer"}],
@@ -77,11 +96,17 @@ testData:
         "bot_network_amplification_rate": 2.15,
         "platform_moderation_latency_ms": 3600000
       }
-    topological_intervention_objective: Model the reduction of the behavioral reproduction number via the quarantine of highly infectious sub-graphs and the dynamic adjustment of platform recommendation weights within 4 hours of detection.
+    topological_intervention_objective: Model the reduction of the behavioral 
+      reproduction number via the quarantine of highly infectious sub-graphs and
+      the dynamic adjustment of platform recommendation weights within 4 hours 
+      of detection.
 evaluators:
   - name: latex_notation_verification
     regex:
       pattern: \\(.*\\)
   - name: strictly_authoritative_persona_adherence
     model:
-      prompt: Assess the generated response. Ensure the language is highly technical, authoritative, objective, and completely avoids conversational filler, pleasantries, or sugarcoating the nature of mass psychological contagion and misinformation cascades.
+      prompt: Assess the generated response. Ensure the language is highly 
+        technical, authoritative, objective, and completely avoids 
+        conversational filler, pleasantries, or sugarcoating the nature of mass 
+        psychological contagion and misinformation cascades.

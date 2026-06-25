@@ -1,15 +1,24 @@
----
 name: first_order_logic_semantic_tableau_generator
 version: 1.0.0
-description: Systematically constructs a formal semantic tableau (truth tree) to evaluate the satisfiability and validity of first-order logic formulas.
+description: Systematically constructs a formal semantic tableau (truth tree) to
+  evaluate the satisfiability and validity of first-order logic formulas.
 authors:
   - Formal Logic Genesis Architect
 metadata:
   domain: scientific/mathematics/formal_logic
   complexity: high
+  tags:
+    - mathematics
+    - formal-logic
+    - first
+    - order
+    - logic
+    - skill
+  requires_context: false
 variables:
   - name: formula
-    description: The first-order logic formula to be evaluated using semantic tableaux, strictly utilizing LaTeX syntax.
+    description: The first-order logic formula to be evaluated using semantic 
+      tableaux, strictly utilizing LaTeX syntax.
 model: "gpt-4o"
 modelParameters:
   temperature: 0.1
@@ -42,8 +51,10 @@ testData:
     expected: 'open branch'
 evaluators:
   - type: contains
-    description: 'Ensures the tableau output evaluates contradictions and correctly closes branches.'
+    description: 'Ensures the tableau output evaluates contradictions and correctly
+      closes branches.'
     value: '\\bot'
   - type: contains
-    description: 'Ensures the tableau applies proper first-order logic quantifier instantiation rules.'
+    description: 'Ensures the tableau applies proper first-order logic quantifier
+      instantiation rules.'
     value: '\\exists'

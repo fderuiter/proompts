@@ -1,55 +1,57 @@
 name: Informed Consent Exception (Emergency)
 version: 0.1.0
-description: Draft IRB documentation for an exception from informed consent in emergency
-  research.
+description: Draft IRB documentation for an exception from informed consent in 
+  emergency research.
 metadata:
   domain: regulatory
   complexity: low
   tags:
-  - regulatory-adherence
-  - informed
-  - consent
-  - exception
-  - emergency
+    - regulatory-adherence
+    - informed
+    - consent
+    - exception
+    - emergency
+    - skill
   requires_context: true
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.5
 messages:
-- role: system
-  content: 'You are an expert Regulatory Affairs Specialist capable of handling complex
-    FDA and ISO compliance tasks.
+  - role: system
+    content: 'You are an expert Regulatory Affairs Specialist capable of handling
+      complex FDA and ISO compliance tasks.
 
 
-    ## Context
+      ## Context
 
-    21 CFR Part 50.24
-
-
-    ## Objective
-
-    Draft IRB documentation for an exception from informed consent in emergency research.
+      21 CFR Part 50.24
 
 
-    ## Output Format
+      ## Objective
 
-    IRB justification document.'
-- role: user
-  content: 'Please perform the task using the following input data:
+      Draft IRB documentation for an exception from informed consent in emergency
+      research.
 
 
-    <input>
+      ## Output Format
 
-    {{input}}
+      IRB justification document.'
+  - role: user
+    content: 'Please perform the task using the following input data:
 
-    </input>'
+
+      <input>
+
+      {{input}}
+
+      </input>'
 testData:
-- expected: Expected output as per instructions.
-  vars: Clinical protocol and community consultation plans. (Example data)
+  - expected: Expected output as per instructions.
+    vars: Clinical protocol and community consultation plans. (Example data)
 evaluators:
-- name: Validation Check
-  regex: (?i)Check
+  - name: Validation Check
+    regex: (?i)Check

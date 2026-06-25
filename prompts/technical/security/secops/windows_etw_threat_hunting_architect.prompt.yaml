@@ -1,7 +1,8 @@
----
 name: Windows ETW Threat Hunting Architect
 version: 1.0.0
-description: Formulates precise threat hunting queries and hypotheses targeting advanced Windows persistent threats using Event Tracing for Windows (ETW) and kernel telemetry.
+description: Formulates precise threat hunting queries and hypotheses targeting 
+  advanced Windows persistent threats using Event Tracing for Windows (ETW) and 
+  kernel telemetry.
 authors:
   - Cybersecurity Genesis Architect
 metadata:
@@ -14,18 +15,26 @@ metadata:
     - windows
     - etw
     - telemetry
+    - skill
+  requires_context: false
 variables:
   - name: threat_hypothesis
     type: string
-    description: A high-level description of the suspected advanced Windows threat activity (e.g., direct syscall evasion, reflective DLL injection, kernel callback hijacking).
+    description: A high-level description of the suspected advanced Windows 
+      threat activity (e.g., direct syscall evasion, reflective DLL injection, 
+      kernel callback hijacking).
     required: true
   - name: logging_source
     type: string
-    description: The primary telemetry source environment (e.g., native ETW providers, Microsoft Defender for Endpoint, Sysmon, specific ETW event streams like Microsoft-Windows-Kernel-Process).
+    description: The primary telemetry source environment (e.g., native ETW 
+      providers, Microsoft Defender for Endpoint, Sysmon, specific ETW event 
+      streams like Microsoft-Windows-Kernel-Process).
     required: true
   - name: operational_constraints
     type: string
-    description: Constraints regarding false positive tolerance, performance impact of queries, or specific SIEM query language to use (e.g., KQL for Sentinel/MDE, Splunk SPL).
+    description: Constraints regarding false positive tolerance, performance 
+      impact of queries, or specific SIEM query language to use (e.g., KQL for 
+      Sentinel/MDE, Splunk SPL).
     required: true
 model: gpt-4o
 modelParameters:
@@ -62,14 +71,19 @@ messages:
       </operational_constraints>
 testData:
   - inputs:
-      threat_hypothesis: "In-memory execution of unbacked payloads using reflective DLL injection into legitimate processes."
+      threat_hypothesis: "In-memory execution of unbacked payloads using reflective
+        DLL injection into legitimate processes."
       logging_source: "Microsoft Defender for Endpoint (KQL)"
-      operational_constraints: "Must use KQL. Must cross-reference thread creation anomalies with unbacked memory regions."
-    expected: "Contains KQL query referencing Thread creation and Memory allocation events."
+      operational_constraints: "Must use KQL. Must cross-reference thread creation
+        anomalies with unbacked memory regions."
+    expected: "Contains KQL query referencing Thread creation and Memory allocation
+      events."
   - inputs:
-      threat_hypothesis: "Adversary attempting to blind EDR by patching EtwEventWrite in ntdll.dll."
+      threat_hypothesis: "Adversary attempting to blind EDR by patching EtwEventWrite
+        in ntdll.dll."
       logging_source: "Sysmon / Splunk SPL"
-      operational_constraints: "Must use Splunk SPL. High false positive tolerance. Focus on Sysmon Event ID 10 (ProcessAccess)."
+      operational_constraints: "Must use Splunk SPL. High false positive tolerance.
+        Focus on Sysmon Event ID 10 (ProcessAccess)."
     expected: "Contains Splunk SPL query and references Sysmon Event ID 10."
 evaluators:
   - type: regex_match

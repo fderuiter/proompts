@@ -1,6 +1,8 @@
 name: n_player_bayesian_nash_equilibrium_auction_architect
 version: 1.0.0
-description: Formulates rigorous n-player Bayesian Nash Equilibria (BNE) models for auction theory, providing bidding strategies, expected utilities, and revenue equivalence analyses.
+description: Formulates rigorous n-player Bayesian Nash Equilibria (BNE) models 
+  for auction theory, providing bidding strategies, expected utilities, and 
+  revenue equivalence analyses.
 authors:
   - name: Economic Sciences Genesis Architect
 metadata:
@@ -11,16 +13,20 @@ metadata:
     - game-theory
     - auction-theory
     - mechanism-design
+    - skill
+  requires_context: false
 variables:
   - name: number_of_bidders
     type: string
     description: The number of risk-neutral bidders, typically denoted as $n$.
   - name: valuation_distribution
     type: string
-    description: The distribution from which independent private values (IPV) or affiliated values are drawn (e.g., $U[0, 1]$, exponential).
+    description: The distribution from which independent private values (IPV) or
+      affiliated values are drawn (e.g., $U[0, 1]$, exponential).
   - name: auction_format
     type: string
-    description: The specific rules of the auction (e.g., First-Price Sealed-Bid, Second-Price, All-Pay).
+    description: The specific rules of the auction (e.g., First-Price 
+      Sealed-Bid, Second-Price, All-Pay).
 model: gpt-4o
 modelParameters:
   temperature: 0.1

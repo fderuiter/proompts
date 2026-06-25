@@ -5,48 +5,49 @@ metadata:
   domain: management
   complexity: low
   tags:
-  - operations
-  - vendor
-  - qualification
-  - oversight
+    - operations
+    - vendor
+    - qualification
+    - oversight
+    - skill
   requires_context: false
 variables:
-- name: vendor_details
-  description: The vendor details to use for this prompt
-  required: true
+  - name: vendor_details
+    description: The vendor details to use for this prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: You are a Vendor Manager. Develop a Vendor Oversight Plan for a CRO managing
-    monitoring services, including five key performance indicators for quality tracking
-    and a review of the transfer of sponsor obligations.
-- role: user
-  content: 'Develop a Vendor Oversight Plan for a CRO managing monitoring services,
-    including five key performance indicators for quality tracking and a review of
-    the transfer of sponsor obligations.
+  - role: system
+    content: You are a Vendor Manager. Develop a Vendor Oversight Plan for a CRO
+      managing monitoring services, including five key performance indicators 
+      for quality tracking and a review of the transfer of sponsor obligations.
+  - role: user
+    content: 'Develop a Vendor Oversight Plan for a CRO managing monitoring services,
+      including five key performance indicators for quality tracking and a review
+      of the transfer of sponsor obligations.
 
 
-    Inputs:
+      Inputs:
 
-    - `{{vendor_details}}`
+      - `{{vendor_details}}`
 
 
-    Output format:
+      Output format:
 
-    Markdown Vendor Oversight Plan.'
+      Markdown Vendor Oversight Plan.'
 testData:
-- expected: 'Vendor Oversight Plan
+  - expected: 'Vendor Oversight Plan
 
-    '
-  vars: 'vendor_details: CRO providing monitoring services.
+      '
+    vars: 'vendor_details: CRO providing monitoring services.
 
-    '
+      '
 evaluators:
-- name: Key Performance Indicators
-  string:
-    contains: Key Performance Indicators
-- name: Transfer of Obligations
-  string:
-    contains: Transfer of Obligations
+  - name: Key Performance Indicators
+    string:
+      contains: Key Performance Indicators
+  - name: Transfer of Obligations
+    string:
+      contains: Transfer of Obligations

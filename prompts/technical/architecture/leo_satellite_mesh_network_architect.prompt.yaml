@@ -1,7 +1,9 @@
----
 name: LEO Satellite Mesh Network Architect
 version: 1.0.0
-description: Designs highly dynamic, resilient Low Earth Orbit (LEO) satellite mesh network architectures, optimizing Inter-Satellite Links (ISL) for ephemeral topologies, extreme Doppler shifts, and strict Quality of Service (QoS) constraints.
+description: Designs highly dynamic, resilient Low Earth Orbit (LEO) satellite 
+  mesh network architectures, optimizing Inter-Satellite Links (ISL) for 
+  ephemeral topologies, extreme Doppler shifts, and strict Quality of Service 
+  (QoS) constraints.
 metadata:
   domain: technical
   complexity: high
@@ -11,16 +13,22 @@ metadata:
     - mesh-network
     - distributed-systems
     - networking
+    - skill
   requires_context: false
 variables:
   - name: orbital_mechanics_context
-    description: Description of the constellation topology, including the number of orbital planes, satellites per plane, altitude, and inclination.
+    description: Description of the constellation topology, including the number
+      of orbital planes, satellites per plane, altitude, and inclination.
     required: true
   - name: traffic_qos_constraints
-    description: Strict Quality of Service (QoS) requirements for data transmission, including latency budgets, bandwidth guarantees, and jitter tolerances.
+    description: Strict Quality of Service (QoS) requirements for data 
+      transmission, including latency budgets, bandwidth guarantees, and jitter 
+      tolerances.
     required: true
   - name: hardware_constraints
-    description: Physical and hardware limitations onboard the satellite, such as radiation-hardened compute capacity, power budgets for Inter-Satellite Links (ISL), and optical/RF transceiver constraints.
+    description: Physical and hardware limitations onboard the satellite, such 
+      as radiation-hardened compute capacity, power budgets for Inter-Satellite 
+      Links (ISL), and optical/RF transceiver constraints.
     required: true
 model: gpt-4o
 modelParameters:
@@ -57,13 +65,18 @@ messages:
       </user_query>
 testData:
   - variables:
-      orbital_mechanics_context: "Constellation of 600 satellites in 12 polar planes at 550km altitude."
-      traffic_qos_constraints: "Guaranteed 50ms end-to-end latency with 10Gbps guaranteed bandwidth for high-frequency trading data."
-      hardware_constraints: "4 optical ISL terminals per satellite, strictly limited by 50W transmission power and radiation-hardened FPGA routing logic."
+      orbital_mechanics_context: "Constellation of 600 satellites in 12 polar planes
+        at 550km altitude."
+      traffic_qos_constraints: "Guaranteed 50ms end-to-end latency with 10Gbps guaranteed
+        bandwidth for high-frequency trading data."
+      hardware_constraints: "4 optical ISL terminals per satellite, strictly limited
+        by 50W transmission power and radiation-hardened FPGA routing logic."
     expected: "Inter-Satellite Link|Free-Space Optical"
   - variables:
-      orbital_mechanics_context: "Walker Delta constellation of 1200 satellites at 1200km altitude."
-      traffic_qos_constraints: "Mandated 1ms global round-trip latency for ultra-responsive remote surgery."
+      orbital_mechanics_context: "Walker Delta constellation of 1200 satellites at
+        1200km altitude."
+      traffic_qos_constraints: "Mandated 1ms global round-trip latency for ultra-responsive
+        remote surgery."
       hardware_constraints: "RF ISLs with minimal onboard buffering."
     expected: "error"
 evaluators:

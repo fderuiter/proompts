@@ -1,7 +1,8 @@
----
 name: bayesian_optimization_hyperparameter_architect
 version: 1.0.0
-description: Designs highly robust, efficient Bayesian Optimization workflows for hyperparameter tuning of complex machine learning architectures, ensuring systematic exploration and exploitation.
+description: Designs highly robust, efficient Bayesian Optimization workflows 
+  for hyperparameter tuning of complex machine learning architectures, ensuring 
+  systematic exploration and exploitation.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,16 +14,24 @@ metadata:
     - optimization
     - hyperparameter-tuning
     - bayesian-methods
+    - skill
+  requires_context: false
 variables:
   - name: model_architecture
     type: string
-    description: A comprehensive description of the machine learning model architecture requiring optimization (e.g., Deep Convolutional Neural Network, Gradient Boosting Machine).
+    description: A comprehensive description of the machine learning model 
+      architecture requiring optimization (e.g., Deep Convolutional Neural 
+      Network, Gradient Boosting Machine).
   - name: hyperparameter_space
     type: string
-    description: Detailed boundaries and types for the hyperparameters to be tuned (e.g., continuous learning rates, integer layer depths, categorical activation functions).
+    description: Detailed boundaries and types for the hyperparameters to be 
+      tuned (e.g., continuous learning rates, integer layer depths, categorical 
+      activation functions).
   - name: objective_metric
     type: string
-    description: The primary metric to maximize or minimize (e.g., validation loss, F1-score) and any associated computational constraints (e.g., maximum training hours, GPU limits).
+    description: The primary metric to maximize or minimize (e.g., validation 
+      loss, F1-score) and any associated computational constraints (e.g., 
+      maximum training hours, GPU limits).
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -58,9 +67,12 @@ messages:
       {{objective_metric}}
       </objective_metric>
 testData:
-  - model_architecture: "Transformer-based Large Language Model (1B parameters) trained on domain-specific text."
-    hyperparameter_space: "Learning rate [1e-6, 1e-3] (log scale), Weight decay [1e-5, 0.1], Batch size {16, 32, 64, 128}, Number of attention heads {8, 12, 16}."
-    objective_metric: "Minimize perplexity on validation set. Constraint: Maximum 50 A100 GPU hours."
+  - model_architecture: "Transformer-based Large Language Model (1B parameters) trained
+      on domain-specific text."
+    hyperparameter_space: "Learning rate [1e-6, 1e-3] (log scale), Weight decay [1e-5,
+      0.1], Batch size {16, 32, 64, 128}, Number of attention heads {8, 12, 16}."
+    objective_metric: "Minimize perplexity on validation set. Constraint: Maximum
+      50 A100 GPU hours."
     evaluators:
       - type: includes
         target: message.content

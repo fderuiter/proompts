@@ -1,7 +1,7 @@
----
 name: Distributed Database Sharding Architect
 version: 1.0.0
-description: Designs highly scalable distributed database sharding and partitioning strategies.
+description: Designs highly scalable distributed database sharding and 
+  partitioning strategies.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,10 +13,12 @@ metadata:
     - "sharding"
     - "scalability"
     - "distributed-systems"
+    - skill
   requires_context: true
 variables:
   - name: system_requirements
-    description: The business context, expected data volume, read/write loads, latency constraints, and consistency requirements.
+    description: The business context, expected data volume, read/write loads, 
+      latency constraints, and consistency requirements.
     required: true
 model: gpt-4o
 modelParameters:
@@ -42,7 +44,11 @@ messages:
       </input>
 testData:
   - vars:
-      system_requirements: "We are designing a global social media platform's user timeline and post storage. The system expects 50 billion new posts per day and extremely high read volume. Users primarily read their own timelines and those of people they follow, heavily biased towards recent posts. We must ensure sub-millisecond latency for timeline reads."
+      system_requirements: "We are designing a global social media platform's user
+        timeline and post storage. The system expects 50 billion new posts per day
+        and extremely high read volume. Users primarily read their own timelines and
+        those of people they follow, heavily biased towards recent posts. We must
+        ensure sub-millisecond latency for timeline reads."
     expected: "sharding"
 evaluators:
   - name: Sharding Terminology Check

@@ -1,7 +1,8 @@
----
 name: psychological_trauma_epidemiology_mapper
 version: 1.0.0
-description: A highly robust, expert-level prompt to mathematically map the epidemiological spread of psychological trauma across populations using big data proxies, enforcing strict WHO and APA macro-level standards.
+description: A highly robust, expert-level prompt to mathematically map the 
+  epidemiological spread of psychological trauma across populations using big 
+  data proxies, enforcing strict WHO and APA macro-level standards.
 metadata:
   domain: scientific
   complexity: high
@@ -11,14 +12,19 @@ metadata:
     - global mental health
     - big data
     - trauma
+    - skill
   requires_context: true
 variables:
   - name: proxy_data_schema
-    description: The JSON/CSV schema representing millions of rows of big data proxies for trauma (e.g., social media linguistic markers, socioeconomic shocks).
+    description: The JSON/CSV schema representing millions of rows of big data 
+      proxies for trauma (e.g., social media linguistic markers, socioeconomic 
+      shocks).
     required: true
-    default: 'region_id: string, timestamp: string, linguistic_trauma_index: float, socioeconomic_shock_severity: float'
+    default: 'region_id: string, timestamp: string, linguistic_trauma_index: float,
+      socioeconomic_shock_severity: float'
   - name: epidemiological_parameters
-    description: Parameters defining the susceptibility and transmission dynamics of trauma within the population.
+    description: Parameters defining the susceptibility and transmission 
+      dynamics of trauma within the population.
     required: true
     default: 'baseline_susceptibility: 0.25, transmission_coefficient: 0.12'
 model: claude-3-opus-20240229
@@ -51,8 +57,10 @@ messages:
       Provide the resulting modeled projection, including equations and required epidemiological metrics, ensuring rigorous schema compliance.
 testData:
   - inputs:
-      proxy_data_schema: "region_id: string, crisis_volume: int, sentiment_score: float"
-      epidemiological_parameters: "baseline_susceptibility: 0.3, transmission_coefficient: 0.15"
+      proxy_data_schema: "region_id: string, crisis_volume: int, sentiment_score:
+        float"
+      epidemiological_parameters: "baseline_susceptibility: 0.3, transmission_coefficient:
+        0.15"
     expected: "R_0"
 evaluators:
   - rule: "Output must contain mathematical equations formatted in LaTeX."

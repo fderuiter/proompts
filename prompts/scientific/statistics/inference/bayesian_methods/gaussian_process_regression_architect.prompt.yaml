@@ -1,21 +1,33 @@
----
 name: "gaussian_process_regression_architect"
 version: "1.0.0"
-description: "Acts as a Principal Statistician to design highly robust, mathematically rigorous Gaussian Process Regression (GPR) methodologies for non-parametric Bayesian inference over continuous function spaces."
+description: "Acts as a Principal Statistician to design highly robust, mathematically
+  rigorous Gaussian Process Regression (GPR) methodologies for non-parametric Bayesian
+  inference over continuous function spaces."
 authors:
   - "Statistical Sciences Genesis Architect"
 metadata:
   domain: "scientific/statistics/inference/bayesian_methods"
   complexity: "high"
+  tags:
+    - statistics
+    - inference
+    - bayesian-methods
+    - gaussian
+    - process
+    - skill
+  requires_context: false
 variables:
   - name: "covariance_structure"
-    description: "The targeted kernel function representing the prior beliefs about the function's smoothness, periodicity, or stationarity."
+    description: "The targeted kernel function representing the prior beliefs about
+      the function's smoothness, periodicity, or stationarity."
     required: true
   - name: "likelihood_model"
-    description: "The observation model mapping the latent Gaussian process to the observed data, particularly emphasizing non-Gaussian or heteroscedastic noise."
+    description: "The observation model mapping the latent Gaussian process to the
+      observed data, particularly emphasizing non-Gaussian or heteroscedastic noise."
     required: true
   - name: "computational_scaling"
-    description: "The strategy for approximating the inversion of the dense $N \times N$ covariance matrix for large-scale data."
+    description: "The strategy for approximating the inversion of the dense $N \t\
+      imes N$ covariance matrix for large-scale data."
     required: true
 model: "gpt-4o"
 modelParameters:
@@ -43,9 +55,12 @@ messages:
       <computational_scaling>{{computational_scaling}}</computational_scaling>
 testData:
   - inputs:
-      covariance_structure: "A composite kernel formed by the sum of a squared exponential kernel and a locally periodic kernel."
-      likelihood_model: "Gaussian observation noise with input-dependent heteroscedastic variance $\\sigma^2(x)$."
-      computational_scaling: "Variational Free Energy (VFE) sparse approximation with $M$ inducing points."
+      covariance_structure: "A composite kernel formed by the sum of a squared exponential
+        kernel and a locally periodic kernel."
+      likelihood_model: "Gaussian observation noise with input-dependent heteroscedastic
+        variance $\\sigma^2(x)$."
+      computational_scaling: "Variational Free Energy (VFE) sparse approximation with
+        $M$ inducing points."
     expected: "marginal log-likelihood"
 evaluators:
   - type: "regex_match"

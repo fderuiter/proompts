@@ -1,7 +1,8 @@
----
 name: multi_objective_stochastic_optimization_architect
 version: 1.0.0
-description: Formulates rigorous Multi-Objective Stochastic Optimization models to address complex operations research problems under uncertainty, prioritizing strict mathematical logic and real-world data constraints.
+description: Formulates rigorous Multi-Objective Stochastic Optimization models 
+  to address complex operations research problems under uncertainty, 
+  prioritizing strict mathematical logic and real-world data constraints.
 authors:
   - Jules
 metadata:
@@ -12,19 +13,26 @@ metadata:
     - stochastic_optimization
     - applied_mathematics
     - mathematical_modeling
+    - skill
+  requires_context: false
 variables:
   - name: decision_variables
     type: string
-    description: Definitions of the decision variables, including domains (e.g., continuous, integer, binary).
+    description: Definitions of the decision variables, including domains (e.g.,
+      continuous, integer, binary).
   - name: objective_functions
     type: string
-    description: The multiple, potentially conflicting objective functions to optimize (e.g., maximize expected profit, minimize Conditional Value at Risk).
+    description: The multiple, potentially conflicting objective functions to 
+      optimize (e.g., maximize expected profit, minimize Conditional Value at 
+      Risk).
   - name: stochastic_parameters
     type: string
-    description: Description of the uncertain parameters and their probability distributions or scenario sets.
+    description: Description of the uncertain parameters and their probability 
+      distributions or scenario sets.
   - name: constraints
     type: string
-    description: The structural, logical, and probabilistic constraints governing the system.
+    description: The structural, logical, and probabilistic constraints 
+      governing the system.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -71,10 +79,17 @@ messages:
       {{constraints}}
       </constraints>
 testData:
-  - decision_variables: "x_{ijt}: continuous variable for vaccine distribution quantity from warehouse i to region j in time t. y_{i}: binary variable for leasing cold-chain warehouse i."
-    objective_functions: "1. Minimize the Expected Total Cost (leasing, transportation, spoilage). 2. Minimize the Conditional Value at Risk (CVaR) of the total unmet demand at a 95% confidence level."
-    stochastic_parameters: "Demand d_{jt}(\\omega) for region j at time t follows a log-normal distribution under scenario \\omega. Transportation disruption probability p_{ij}(\\omega) follows a Bernoulli process."
-    constraints: "Warehouse capacities are strict. Vaccine spoilage occurs if transit exceeds 48 hours. Budget for leasing is $50M."
+  - decision_variables: "x_{ijt}: continuous variable for vaccine distribution quantity
+      from warehouse i to region j in time t. y_{i}: binary variable for leasing cold-chain
+      warehouse i."
+    objective_functions: "1. Minimize the Expected Total Cost (leasing, transportation,
+      spoilage). 2. Minimize the Conditional Value at Risk (CVaR) of the total unmet
+      demand at a 95% confidence level."
+    stochastic_parameters: "Demand d_{jt}(\\omega) for region j at time t follows
+      a log-normal distribution under scenario \\omega. Transportation disruption
+      probability p_{ij}(\\omega) follows a Bernoulli process."
+    constraints: "Warehouse capacities are strict. Vaccine spoilage occurs if transit
+      exceeds 48 hours. Budget for leasing is $50M."
     evaluators:
       - name: Objective 1 Math Check
         type: regex

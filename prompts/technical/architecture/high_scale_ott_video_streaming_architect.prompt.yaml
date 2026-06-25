@@ -1,7 +1,8 @@
----
 name: High-Scale OTT Video Streaming Architect
 version: 1.0.0
-description: Designs highly resilient, massively scalable Over-The-Top (OTT) video streaming pipelines with dynamic ABR encoding, DRM integrations, and global CDN topologies.
+description: Designs highly resilient, massively scalable Over-The-Top (OTT) 
+  video streaming pipelines with dynamic ABR encoding, DRM integrations, and 
+  global CDN topologies.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,16 +14,21 @@ metadata:
     - video-streaming
     - system-design
     - cdn
+    - skill
   requires_context: false
 variables:
   - name: ingestion_specs
-    description: Details regarding live and VOD ingestion sources, raw mezzanine formats, and upstream contribution protocols (e.g., RTMP, SRT, Zixi).
+    description: Details regarding live and VOD ingestion sources, raw mezzanine
+      formats, and upstream contribution protocols (e.g., RTMP, SRT, Zixi).
     required: true
   - name: playback_requirements
-    description: Target device ecosystem, adaptive bitrate (ABR) profiles, supported manifest types (HLS, DASH), and specific Digital Rights Management (DRM) constraints (e.g., Widevine, FairPlay).
+    description: Target device ecosystem, adaptive bitrate (ABR) profiles, 
+      supported manifest types (HLS, DASH), and specific Digital Rights 
+      Management (DRM) constraints (e.g., Widevine, FairPlay).
     required: true
   - name: scale_and_latency
-    description: Peak concurrent viewership estimates and desired glass-to-glass latency constraints.
+    description: Peak concurrent viewership estimates and desired glass-to-glass
+      latency constraints.
     required: true
 model: gpt-4o
 modelParameters:
@@ -51,9 +57,12 @@ messages:
       {{scale_and_latency}}
 testData:
   - vars:
-      ingestion_specs: "Live sports events ingested via redundant SRT streams from remote OB vans in 4K HDR."
-      playback_requirements: "CMAF-based HLS/DASH for Smart TVs, Web, iOS, Android. Multi-DRM (FairPlay, Widevine) with CENC. Server-Side Ad Insertion (SSAI)."
-      scale_and_latency: "Target 5 million concurrent viewers with sub-10 second glass-to-glass latency."
+      ingestion_specs: "Live sports events ingested via redundant SRT streams from
+        remote OB vans in 4K HDR."
+      playback_requirements: "CMAF-based HLS/DASH for Smart TVs, Web, iOS, Android.
+        Multi-DRM (FairPlay, Widevine) with CENC. Server-Side Ad Insertion (SSAI)."
+      scale_and_latency: "Target 5 million concurrent viewers with sub-10 second glass-to-glass
+        latency."
     expected: "CMAF"
 evaluators:
   - name: Acronym Check

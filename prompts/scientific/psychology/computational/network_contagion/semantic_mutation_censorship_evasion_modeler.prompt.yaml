@@ -1,7 +1,9 @@
----
 name: semantic_mutation_censorship_evasion_modeler
 version: 1.0.0
-description: A highly robust, expert-level prompt designed to computationally model the automated semantic mutation and evolutionary adaptation of psychological contagions to evade algorithmic censorship within massive-scale networks.
+description: A highly robust, expert-level prompt designed to computationally 
+  model the automated semantic mutation and evolutionary adaptation of 
+  psychological contagions to evade algorithmic censorship within massive-scale 
+  networks.
 authors:
   - Population Behavioral Sciences Genesis Architect
 metadata:
@@ -13,13 +15,27 @@ metadata:
     - Natural Language Processing Mutagenesis
     - Network Contagion Mathematics
     - Information Theory
+  tags:
+    - psychology
+    - computational
+    - network-contagion
+    - semantic
+    - mutation
+    - skill
+  requires_context: false
 variables:
   - name: contagion_baseline_morphology
-    description: A strict JSON schema detailing the baseline cognitive strain, including its primary semantic vectors, arousal capacity, and initial algorithmic detection markers.
+    description: A strict JSON schema detailing the baseline cognitive strain, 
+      including its primary semantic vectors, arousal capacity, and initial 
+      algorithmic detection markers.
   - name: algorithmic_suppression_architecture
-    description: A CSV/JSON schema defining the censorship environment for >1M nodes and >100M edges, mapping moderation heuristic boundaries, detection thresholds, and network centrality of automated moderators.
+    description: A CSV/JSON schema defining the censorship environment for >1M 
+      nodes and >100M edges, mapping moderation heuristic boundaries, detection 
+      thresholds, and network centrality of automated moderators.
   - name: evolutionary_evasion_objective
-    description: The targeted macro-level modeling objective, such as calculating the mutation probability required to sustain an effective reproduction number > 1 under severe shadow-banning constraints.
+    description: The targeted macro-level modeling objective, such as 
+      calculating the mutation probability required to sustain an effective 
+      reproduction number > 1 under severe shadow-banning constraints.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -66,7 +82,9 @@ testData:
           "nodes": [{"user_id": "string", "moderation_susceptibility_index": "float", "semantic_flexibility_score": "float", "echo_chamber_density": "integer"}],
           "edges": [{"source_node": "string", "target_node": "string", "censorship_probability": "float", "interaction_velocity_hz": "float"}]
         }
-      evolutionary_evasion_objective: Model the semantic drift rate required to bypass a 95% automated deletion heuristic while maintaining sufficient cognitive arousal to sustain an effective reproduction rate > 1.2.
+      evolutionary_evasion_objective: Model the semantic drift rate required to 
+        bypass a 95% automated deletion heuristic while maintaining sufficient 
+        cognitive arousal to sustain an effective reproduction rate > 1.2.
   - variables:
       contagion_baseline_morphology: |
         {
@@ -80,11 +98,16 @@ testData:
           "nodes": [{"user_id": "string", "algorithmic_literacy_index": "float", "trust_network_metric": "float", "cluster_id": "integer"}],
           "edges": [{"source_node": "string", "target_node": "string", "shadow_ban_multiplier": "float", "interaction_duration_sec": "float"}]
         }
-      evolutionary_evasion_objective: Simulate the evolutionary topological routing of mutated semantic vectors through structural hole spanners to bypass heavily moderated central hubs.
+      evolutionary_evasion_objective: Simulate the evolutionary topological 
+        routing of mutated semantic vectors through structural hole spanners to 
+        bypass heavily moderated central hubs.
 evaluators:
   - name: latex_notation_verification
     regex:
       pattern: \\(.*\\)
   - name: strictly_authoritative_persona_adherence
     model:
-      prompt: Assess the generated response. Ensure the language is highly technical, authoritative, objective, and completely avoids conversational filler, pleasantries, or sugarcoating the nature of mass psychological contagion evolution.
+      prompt: Assess the generated response. Ensure the language is highly 
+        technical, authoritative, objective, and completely avoids 
+        conversational filler, pleasantries, or sugarcoating the nature of mass 
+        psychological contagion evolution.

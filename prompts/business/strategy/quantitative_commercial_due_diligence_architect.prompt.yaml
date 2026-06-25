@@ -1,7 +1,8 @@
----
 name: quantitative_commercial_due_diligence_architect
 version: 1.0.0
-description: "Architects highly rigorous, quantitative Commercial Due Diligence (CDD) frameworks, evaluating market sizing (TAM/SAM/SOM), competitive moats, customer lifetime value (LTV), and revenue defensibility for M&A and Private Equity transactions."
+description: "Architects highly rigorous, quantitative Commercial Due Diligence (CDD)
+  frameworks, evaluating market sizing (TAM/SAM/SOM), competitive moats, customer
+  lifetime value (LTV), and revenue defensibility for M&A and Private Equity transactions."
 authors:
   - "Strategic Genesis Architect"
 metadata:
@@ -13,22 +14,31 @@ metadata:
     - "Target Company Acquisition Evaluation"
     - "Market Sizing and Growth Forecasting"
     - "Customer Retention and Cohort Analysis"
+  tags:
+    - regulatory-strategy
+    - quantitative
+    - commercial
+    - due
+    - diligence
+    - skill
+  requires_context: true
 variables:
-- name: target_company_name
-  description: "Name of the acquisition target"
-  required: true
-- name: industry_sector
-  description: "Industry or sector of the target"
-  required: true
-- name: deal_thesis
-  description: "The core strategic rationale for the acquisition"
-  required: true
-- name: key_competitors
-  description: "Primary competitors in the market"
-  required: true
-- name: financial_metrics
-  description: "Key historical and projected financial metrics (e.g., Revenue, EBITDA margin)"
-  required: true
+  - name: target_company_name
+    description: "Name of the acquisition target"
+    required: true
+  - name: industry_sector
+    description: "Industry or sector of the target"
+    required: true
+  - name: deal_thesis
+    description: "The core strategic rationale for the acquisition"
+    required: true
+  - name: key_competitors
+    description: "Primary competitors in the market"
+    required: true
+  - name: financial_metrics
+    description: "Key historical and projected financial metrics (e.g., Revenue, EBITDA
+      margin)"
+    required: true
 model: claude-3-5-sonnet-20241022
 modelParameters:
   temperature: 0.1
@@ -64,10 +74,14 @@ testData:
   - vars:
       target_company_name: "Acme Cloud Infrastructure"
       industry_sector: "B2B IaaS / Cloud Computing"
-      deal_thesis: "Acquire a regional cloud provider with strong local enterprise lock-in to accelerate geographic expansion and cross-sell higher margin cybersecurity services."
+      deal_thesis: "Acquire a regional cloud provider with strong local enterprise
+        lock-in to accelerate geographic expansion and cross-sell higher margin cybersecurity
+        services."
       key_competitors: "AWS, Azure, Local Data Center Providers"
       financial_metrics: "$50M ARR, 85% Gross Margin, 115% NRR, 15% EBITDA Margin"
-    expectedOutput: "The output should formulate a quantitative CDD analysis incorporating TAM, SAM, SOM, CAC, LTV, and explicit LaTeX equations for market penetration and customer retention."
+    expectedOutput: "The output should formulate a quantitative CDD analysis incorporating
+      TAM, SAM, SOM, CAC, LTV, and explicit LaTeX equations for market penetration
+      and customer retention."
 evaluators:
   - type: regex_match
     property: content

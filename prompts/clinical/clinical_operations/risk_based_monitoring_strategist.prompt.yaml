@@ -1,6 +1,8 @@
 name: risk_based_monitoring_strategist
 version: 1.0.0
-description: A Principal Clinical Operations Risk-Based Monitoring (RBM) Strategist that designs adaptive, risk-proportionate clinical trial monitoring plans in compliance with ICH E6(R2) guidelines.
+description: A Principal Clinical Operations Risk-Based Monitoring (RBM) 
+  Strategist that designs adaptive, risk-proportionate clinical trial monitoring
+  plans in compliance with ICH E6(R2) guidelines.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -12,6 +14,8 @@ metadata:
     - ICH E6(R2)
     - clinical trials
     - quality management
+    - skill
+  requires_context: false
 variables:
   - name: PROTOCOL_SYNOPSIS
     description: A brief summary of the clinical trial protocol.
@@ -54,9 +58,15 @@ messages:
       {{KNOWN_RISK_FACTORS}}
       </KNOWN_RISK_FACTORS>
 testData:
-  - PROTOCOL_SYNOPSIS: "Phase 3, randomized, double-blind, placebo-controlled study evaluating the efficacy and safety of novel oral anticoagulant X in preventing recurrent DVT in high-risk patients over 12 months."
-    CRITICAL_DATA_VARIABLES: "Primary efficacy endpoint (recurrent DVT confirmed by ultrasound), Primary safety endpoint (major bleeding events per ISTH criteria), Investigational Product compliance, Informed Consent completion."
-    KNOWN_RISK_FACTORS: "High rate of concomitant medication use, subjective interpretation of minor bleeding events, potential for high participant dropout due to 12-month duration, complex blinding procedures."
+  - PROTOCOL_SYNOPSIS: "Phase 3, randomized, double-blind, placebo-controlled study
+      evaluating the efficacy and safety of novel oral anticoagulant X in preventing
+      recurrent DVT in high-risk patients over 12 months."
+    CRITICAL_DATA_VARIABLES: "Primary efficacy endpoint (recurrent DVT confirmed by
+      ultrasound), Primary safety endpoint (major bleeding events per ISTH criteria),
+      Investigational Product compliance, Informed Consent completion."
+    KNOWN_RISK_FACTORS: "High rate of concomitant medication use, subjective interpretation
+      of minor bleeding events, potential for high participant dropout due to 12-month
+      duration, complex blinding procedures."
 evaluators:
   - type: contains
     value: "Key Risk Indicators"

@@ -1,19 +1,32 @@
----
 name: nrr_expansion_propensity_architect
 version: 1.0.0
-description: Synthesizes enterprise SaaS historical usage and billing data into predictive Net Revenue Retention (NRR) expansion matrices and cross-sell propensity scoring workflows.
+description: Synthesizes enterprise SaaS historical usage and billing data into 
+  predictive Net Revenue Retention (NRR) expansion matrices and cross-sell 
+  propensity scoring workflows.
 authors:
   - Growth Strategy Genesis Architect
 metadata:
   domain: growth/lifecycle
   complexity: high
+  tags:
+    - sdlc
+    - nrr
+    - expansion
+    - propensity
+    - architect
+    - skill
+  requires_context: false
 variables:
   - name: customer_usage_telemetry
-    description: Telemetry data containing product feature adoption depth, active user counts, and API request volumes for existing enterprise accounts.
+    description: Telemetry data containing product feature adoption depth, 
+      active user counts, and API request volumes for existing enterprise 
+      accounts.
   - name: historical_billing_data
-    description: Historical billing increments, baseline MRR, and previous expansion events for the analyzed customer cohorts.
+    description: Historical billing increments, baseline MRR, and previous 
+      expansion events for the analyzed customer cohorts.
   - name: target_nrr
-    description: The target Net Revenue Retention (NRR) rate for the current fiscal quarter.
+    description: The target Net Revenue Retention (NRR) rate for the current 
+      fiscal quarter.
 model: gpt-4o
 modelParameters:
   temperature: 0.15
@@ -53,19 +66,32 @@ messages:
       </target_nrr>
 testData:
   - inputs:
-      customer_usage_telemetry: "Cohort Alpha: Approaching API rate limits (92% utilization), high daily active users. Cohort Beta: Low feature adoption depth, stagnant seat utilization."
-      historical_billing_data: "Cohort Alpha: Baseline MRR $50k, 1 previous expansion. Cohort Beta: Baseline MRR $25k, 0 previous expansions."
+      customer_usage_telemetry: "Cohort Alpha: Approaching API rate limits (92% utilization),
+        high daily active users. Cohort Beta: Low feature adoption depth, stagnant
+        seat utilization."
+      historical_billing_data: "Cohort Alpha: Baseline MRR $50k, 1 previous expansion.
+        Cohort Beta: Baseline MRR $25k, 0 previous expansions."
       target_nrr: "120%"
-    expected: "A rigorous cross-sell propensity matrix mapping automated upsell triggers for Cohort Alpha and contraction mitigation for Cohort Beta, enforcing 'DryRun' mode, and featuring exact LaTeX financial equations for NRR, LTV, and ROAS within the AARRR framework."
+    expected: "A rigorous cross-sell propensity matrix mapping automated upsell triggers
+      for Cohort Alpha and contraction mitigation for Cohort Beta, enforcing 'DryRun'
+      mode, and featuring exact LaTeX financial equations for NRR, LTV, and ROAS within
+      the AARRR framework."
   - inputs:
       customer_usage_telemetry: "Corrupted JSON telemetry string."
       historical_billing_data: "Missing data."
       target_nrr: "130%"
-    expected: "An unvarnished assessment refusing to hallucinate missing telemetry, rigorously citing the lack of data, enforcing 'DryRun' mode, while outlining the required mathematical NRR, LTV, and ROAS (in LaTeX) frameworks needed once data is available."
+    expected: "An unvarnished assessment refusing to hallucinate missing telemetry,
+      rigorously citing the lack of data, enforcing 'DryRun' mode, while outlining
+      the required mathematical NRR, LTV, and ROAS (in LaTeX) frameworks needed once
+      data is available."
 evaluators:
   - "Output must explicitly contain the AARRR funnel framework applied to the analysis."
-  - "Output must contain the exact LaTeX formula for NRR: $NRR = \\frac{\\text{Starting MRR} + \\text{Expansion MRR} - \\text{Contraction MRR} - \\text{Churn MRR}}{\\text{Starting MRR}}$"
-  - "Output must contain the exact LaTeX formula for LTV: $LTV = \\frac{ARPU \\times \\text{Gross Margin}}{\\text{Churn Rate}}$"
-  - "Output must contain the exact LaTeX formula for ROAS: $ROAS = \\frac{\\text{Revenue}}{\\text{Cost}}$"
+  - "Output must contain the exact LaTeX formula for NRR: $NRR = \\frac{\\text{Starting
+    MRR} + \\text{Expansion MRR} - \\text{Contraction MRR} - \\text{Churn MRR}}{\\
+    text{Starting MRR}}$"
+  - "Output must contain the exact LaTeX formula for LTV: $LTV = \\frac{ARPU \\times
+    \\text{Gross Margin}}{\\text{Churn Rate}}$"
+  - "Output must contain the exact LaTeX formula for ROAS: $ROAS = \\frac{\\text{Revenue}}{\\\
+    text{Cost}}$"
   - "Output must strictly enforce 'DryRun' mode and explicitly mention it."
   - "Output must contain 'Do NOT hallucinate' constraint."

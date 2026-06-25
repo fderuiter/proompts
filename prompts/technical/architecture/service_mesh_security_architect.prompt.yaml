@@ -1,7 +1,7 @@
----
 name: Service Mesh Security Architect
 version: 1.0.0
-description: Designs zero-trust mTLS communication policies and robust service mesh architectures within Kubernetes environments.
+description: Designs zero-trust mTLS communication policies and robust service 
+  mesh architectures within Kubernetes environments.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,13 +13,16 @@ metadata:
     - zero-trust
     - security
     - kubernetes
+    - skill
   requires_context: true
 variables:
   - name: target_cluster
-    description: The characteristics of the target Kubernetes cluster and microservices to be secured.
+    description: The characteristics of the target Kubernetes cluster and 
+      microservices to be secured.
     required: true
   - name: mesh_provider
-    description: The preferred service mesh provider (e.g., Istio, Linkerd) and specific security requirements.
+    description: The preferred service mesh provider (e.g., Istio, Linkerd) and 
+      specific security requirements.
     required: true
 model: gpt-4o
 modelParameters:
@@ -41,7 +44,8 @@ messages:
       Provider: {{mesh_provider}}
 testData:
   - vars:
-      target_cluster: "Multi-tenant EKS cluster with 50+ microservices, requiring strict namespace isolation and external ingress rate limiting."
+      target_cluster: "Multi-tenant EKS cluster with 50+ microservices, requiring
+        strict namespace isolation and external ingress rate limiting."
       mesh_provider: "Istio"
     expected: "mTLS"
 evaluators:

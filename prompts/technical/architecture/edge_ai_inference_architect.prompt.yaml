@@ -1,7 +1,8 @@
----
 name: Edge AI Inference Architect
 version: 1.0.0
-description: Designs low-latency, bandwidth-constrained AI inference architectures directly at the edge, featuring dynamic model swapping and secure OTA updates.
+description: Designs low-latency, bandwidth-constrained AI inference 
+  architectures directly at the edge, featuring dynamic model swapping and 
+  secure OTA updates.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +14,21 @@ metadata:
     - edge-computing
     - machine-learning
     - iot
+    - skill
   requires_context: false
 variables:
   - name: edge_device_constraints
-    description: Details regarding hardware limitations (e.g., memory, processing power, TPU/NPU availability) and network conditions at the edge.
+    description: Details regarding hardware limitations (e.g., memory, 
+      processing power, TPU/NPU availability) and network conditions at the 
+      edge.
     required: true
   - name: inference_sla
-    description: Strict Service Level Agreements (SLAs) for inference latency and throughput.
+    description: Strict Service Level Agreements (SLAs) for inference latency 
+      and throughput.
     required: true
   - name: security_compliance
-    description: Requirements for data privacy, local data processing, and secure model synchronization.
+    description: Requirements for data privacy, local data processing, and 
+      secure model synchronization.
     required: true
 model: gpt-4o
 modelParameters:
@@ -57,12 +63,14 @@ testData:
   - inputs:
       edge_device_constraints: "Raspberry Pi 4 with 4GB RAM, intermittent 3G connectivity."
       inference_sla: "Object detection latency < 10ms."
-      security_compliance: "All PII must remain on-device, models must be encrypted at rest."
+      security_compliance: "All PII must remain on-device, models must be encrypted
+        at rest."
     expected: "error"
   - inputs:
       edge_device_constraints: "NVIDIA Jetson Orin Nano, stable 5G connection."
       inference_sla: "Video stream anomaly detection latency < 50ms."
-      security_compliance: "Strict zero-trust authentication for OTA model updates, local aggregation only."
+      security_compliance: "Strict zero-trust authentication for OTA model updates,
+        local aggregation only."
     expected: "OTA"
 evaluators:
   - name: Expert Terminology Check

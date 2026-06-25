@@ -1,19 +1,32 @@
----
 name: multidimensional_poverty_alkire_foster_architect
 version: "1.0.0"
-description: Operationalizes the Alkire-Foster (AF) method for calculating multidimensional poverty indices, enforcing rigorous American Sociological Association (ASA) standards and LaTeX formulas.
+description: Operationalizes the Alkire-Foster (AF) method for calculating 
+  multidimensional poverty indices, enforcing rigorous American Sociological 
+  Association (ASA) standards and LaTeX formulas.
 authors:
   - Sociological Sciences Genesis Architect
 metadata:
   domain: sociology/stratification
   complexity: high
+  tags:
+    - sociology
+    - stratification
+    - systemic-inequality
+    - multidimensional
+    - poverty
+    - skill
+  requires_context: false
 variables:
   - name: household_microdata
-    description: Granular household survey data containing deprivation indicators across multiple dimensions (e.g., health, education, living standards).
+    description: Granular household survey data containing deprivation 
+      indicators across multiple dimensions (e.g., health, education, living 
+      standards).
   - name: deprivation_cutoffs
-    description: Thresholds for determining deprivation in each specific indicator.
+    description: Thresholds for determining deprivation in each specific 
+      indicator.
   - name: poverty_cutoff
-    description: The overall cross-dimensional poverty cutoff ($k$) identifying multidimensionally poor households.
+    description: The overall cross-dimensional poverty cutoff ($k$) identifying 
+      multidimensionally poor households.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -63,6 +76,10 @@ evaluators:
     pattern: "M_0 = H \\times A"
 testData:
   - variables:
-      household_microdata: "Household 1: Health (Deprived), Education (Deprived), Living Standards (Not Deprived). Household 2: Health (Not Deprived), Education (Deprived), Living Standards (Deprived). Household 3: Health (Not Deprived), Education (Not Deprived), Living Standards (Not Deprived)."
-      deprivation_cutoffs: "Health (1 indicator), Education (1 indicator), Living Standards (1 indicator). Each indicator has equal weight (1/3)."
+      household_microdata: "Household 1: Health (Deprived), Education (Deprived),
+        Living Standards (Not Deprived). Household 2: Health (Not Deprived), Education
+        (Deprived), Living Standards (Deprived). Household 3: Health (Not Deprived),
+        Education (Not Deprived), Living Standards (Not Deprived)."
+      deprivation_cutoffs: "Health (1 indicator), Education (1 indicator), Living
+        Standards (1 indicator). Each indicator has equal weight (1/3)."
       poverty_cutoff: "k = 1/3"

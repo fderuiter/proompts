@@ -1,15 +1,25 @@
----
 name: godel_incompleteness_arithmetization_engineer
 version: 1.0.0
-description: Systematically formalizes and calculates Gödel numbers for logical formulas, variables, and proof sequences to facilitate meta-mathematical reasoning in the context of Gödel's Incompleteness Theorems.
+description: Systematically formalizes and calculates Gödel numbers for logical 
+  formulas, variables, and proof sequences to facilitate meta-mathematical 
+  reasoning in the context of Gödel's Incompleteness Theorems.
 authors:
   - Formal Logic Genesis Architect
 metadata:
   domain: scientific/mathematics/formal_logic
   complexity: high
+  tags:
+    - mathematics
+    - formal-logic
+    - godel
+    - incompleteness
+    - arithmetization
+    - skill
+  requires_context: false
 variables:
   - name: expression
-    description: The first-order logic formula, sequence, or term to be arithmetized via Gödel numbering.
+    description: The first-order logic formula, sequence, or term to be 
+      arithmetized via Gödel numbering.
 model: "gpt-4o"
 modelParameters:
   temperature: 0.1

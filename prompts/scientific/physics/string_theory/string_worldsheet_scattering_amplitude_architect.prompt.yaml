@@ -1,7 +1,8 @@
----
 name: string_worldsheet_scattering_amplitude_architect
 version: 1.0.0
-description: Systematically derives N-point string scattering amplitudes using the worldsheet formalism, computing vertex operator correlations and performing moduli space integration.
+description: Systematically derives N-point string scattering amplitudes using 
+  the worldsheet formalism, computing vertex operator correlations and 
+  performing moduli space integration.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -14,15 +15,20 @@ metadata:
     - quantum-gravity
     - conformal-field-theory
     - worldsheet-formalism
+    - skill
+  requires_context: false
 variables:
   - name: string_type
-    description: The type of string theory (e.g., Bosonic, Type IIA/IIB Superstring, Heterotic).
+    description: The type of string theory (e.g., Bosonic, Type IIA/IIB 
+      Superstring, Heterotic).
     required: true
   - name: external_states
-    description: The explicit definitions of the N external asymptotic states and their corresponding vertex operators.
+    description: The explicit definitions of the N external asymptotic states 
+      and their corresponding vertex operators.
     required: true
   - name: kinematic_regime
-    description: The specified kinematic limit for analysis (e.g., Regge limit, hard scattering limit).
+    description: The specified kinematic limit for analysis (e.g., Regge limit, 
+      hard scattering limit).
     required: true
 model: gpt-4o
 modelParameters:
@@ -58,7 +64,8 @@ testData:
   - inputs:
       string_type: 'Open Bosonic String'
       external_states: '4 Tachyons (N=4)'
-      kinematic_regime: 'High-Energy Hard Scattering Limit (s \to \infty, s/t \text{ fixed})'
+      kinematic_regime: 'High-Energy Hard Scattering Limit (s \to \infty, s/t \text{
+        fixed})'
     expected: 'Veneziano'
 evaluators:
   - name: Ghost Inclusion Check

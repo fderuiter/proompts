@@ -1,7 +1,7 @@
----
 name: Breakthrough Device Designation Architect
 version: "1.0.0"
-description: Formulates compelling FDA Breakthrough Device Designation (BDD) requests based on statutory criteria of Section 515B of the FD&C Act.
+description: Formulates compelling FDA Breakthrough Device Designation (BDD) 
+  requests based on statutory criteria of Section 515B of the FD&C Act.
 authors:
   - name: Genesis Architect
 metadata:
@@ -12,22 +12,27 @@ metadata:
     - fda
     - breakthrough
     - bdd
+    - skill
   requires_context: true
 variables:
   - name: device_description
-    description: Detailed technical description of the medical device and its mechanism of action.
+    description: Detailed technical description of the medical device and its 
+      mechanism of action.
     required: true
   - name: proposed_indications_for_use
     description: The precise proposed Indications for Use (IFU) for the device.
     required: true
   - name: target_disease_condition
-    description: Detailed description of the target disease or condition, including its life-threatening or irreversibly debilitating nature.
+    description: Detailed description of the target disease or condition, 
+      including its life-threatening or irreversibly debilitating nature.
     required: true
   - name: standard_of_care_shortcomings
-    description: Analysis of the shortcomings of current standard of care alternatives.
+    description: Analysis of the shortcomings of current standard of care 
+      alternatives.
     required: true
   - name: clinical_evidence_summary
-    description: Summary of available non-clinical and clinical evidence demonstrating a reasonable expectation of clinical success.
+    description: Summary of available non-clinical and clinical evidence 
+      demonstrating a reasonable expectation of clinical success.
     required: true
 model: gpt-4o
 modelParameters:
@@ -88,17 +93,46 @@ messages:
 
       Ensure the output strictly maps to the statutory criteria of Section 515B and maintains an authoritative regulatory tone.
 testData:
-  - device_description: "A novel, implantable closed-loop neuromodulation system utilizing proprietary micro-electrode arrays to provide continuous, responsive vagus nerve stimulation."
-    proposed_indications_for_use: "For the adjunctive treatment of drug-resistant epilepsy (DRE) in adult patients (18 years of age and older) who experience frequent, disabling focal seizures and have failed trial of at least two anti-seizure medications."
-    target_disease_condition: "Drug-resistant epilepsy (DRE) is an irreversibly debilitating neurological condition characterized by recurrent, unprovoked seizures despite adequate trials of two tolerated and appropriately chosen anti-seizure medications. DRE leads to significant morbidity, increased mortality (SUDEP), and profound cognitive and psychosocial deficits."
-    standard_of_care_shortcomings: "Current SoC includes pharmacological therapy (ineffective in ~30% of patients), resective surgery (not suitable for all patients), and existing open-loop neuromodulation (suboptimal seizure reduction rates and high side-effect profiles due to continuous, non-targeted stimulation)."
-    clinical_evidence_summary: "A proof-of-concept first-in-human trial (n=15) demonstrated a 65% median reduction in focal seizure frequency at 6 months, compared to historical baselines of 30% with open-loop devices. No severe adverse events related to the implant procedure or stimulation were reported."
+  - device_description: "A novel, implantable closed-loop neuromodulation system utilizing
+      proprietary micro-electrode arrays to provide continuous, responsive vagus nerve
+      stimulation."
+    proposed_indications_for_use: "For the adjunctive treatment of drug-resistant
+      epilepsy (DRE) in adult patients (18 years of age and older) who experience
+      frequent, disabling focal seizures and have failed trial of at least two anti-seizure
+      medications."
+    target_disease_condition: "Drug-resistant epilepsy (DRE) is an irreversibly debilitating
+      neurological condition characterized by recurrent, unprovoked seizures despite
+      adequate trials of two tolerated and appropriately chosen anti-seizure medications.
+      DRE leads to significant morbidity, increased mortality (SUDEP), and profound
+      cognitive and psychosocial deficits."
+    standard_of_care_shortcomings: "Current SoC includes pharmacological therapy (ineffective
+      in ~30% of patients), resective surgery (not suitable for all patients), and
+      existing open-loop neuromodulation (suboptimal seizure reduction rates and high
+      side-effect profiles due to continuous, non-targeted stimulation)."
+    clinical_evidence_summary: "A proof-of-concept first-in-human trial (n=15) demonstrated
+      a 65% median reduction in focal seizure frequency at 6 months, compared to historical
+      baselines of 30% with open-loop devices. No severe adverse events related to
+      the implant procedure or stimulation were reported."
     expected: "Criterion 1"
-  - device_description: "An AI-powered, real-time hemodynamic monitoring software algorithm that ingests continuous waveforms from standard arterial lines to predict hypotensive episodes up to 15 minutes before they occur."
-    proposed_indications_for_use: "To provide real-time predictive alerts for the likelihood of an impending hypotensive event in adult patients undergoing major non-cardiac surgery in the operating room setting."
-    target_disease_condition: "Intraoperative hypotension (IOH) is a life-threatening condition associated with acute kidney injury (AKI), myocardial injury after noncardiac surgery (MINS), and increased 30-day mortality. Even brief periods of MAP < 65 mmHg cause irreversible end-organ hypoperfusion."
-    standard_of_care_shortcomings: "Current SoC is purely reactive, relying on clinicians to interpret lagging indicators on physiological monitors. Once hypotension is detected via standard alerts, the patient has already experienced tissue hypoperfusion."
-    clinical_evidence_summary: "Retrospective validation on a dataset of 50,000 surgical cases showed the algorithm predicted hypotensive events (MAP < 65 mmHg for > 1 min) with an AUC of 0.92 and a median advance warning of 12 minutes. A small prospective feasibility study (n=40) showed a 40% reduction in total time spent hypotensive compared to historical controls."
+  - device_description: "An AI-powered, real-time hemodynamic monitoring software
+      algorithm that ingests continuous waveforms from standard arterial lines to
+      predict hypotensive episodes up to 15 minutes before they occur."
+    proposed_indications_for_use: "To provide real-time predictive alerts for the
+      likelihood of an impending hypotensive event in adult patients undergoing major
+      non-cardiac surgery in the operating room setting."
+    target_disease_condition: "Intraoperative hypotension (IOH) is a life-threatening
+      condition associated with acute kidney injury (AKI), myocardial injury after
+      noncardiac surgery (MINS), and increased 30-day mortality. Even brief periods
+      of MAP < 65 mmHg cause irreversible end-organ hypoperfusion."
+    standard_of_care_shortcomings: "Current SoC is purely reactive, relying on clinicians
+      to interpret lagging indicators on physiological monitors. Once hypotension
+      is detected via standard alerts, the patient has already experienced tissue
+      hypoperfusion."
+    clinical_evidence_summary: "Retrospective validation on a dataset of 50,000 surgical
+      cases showed the algorithm predicted hypotensive events (MAP < 65 mmHg for >
+      1 min) with an AUC of 0.92 and a median advance warning of 12 minutes. A small
+      prospective feasibility study (n=40) showed a 40% reduction in total time spent
+      hypotensive compared to historical controls."
     expected: "life-threatening"
 evaluators:
   - name: Must address Criterion 1

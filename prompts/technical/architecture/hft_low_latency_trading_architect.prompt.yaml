@@ -1,7 +1,7 @@
----
 name: HFT Low-Latency Architecture Designer
 version: 1.0.0
-description: Designs strictly optimized, sub-microsecond latency network and hardware architectures for High-Frequency Trading (HFT) systems.
+description: Designs strictly optimized, sub-microsecond latency network and 
+  hardware architectures for High-Frequency Trading (HFT) systems.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,16 +13,22 @@ metadata:
     - low-latency
     - networking
     - trading-systems
+    - skill
   requires_context: false
 variables:
   - name: exchange_protocols
-    description: The market data and order entry protocols used by the target exchanges (e.g., FIX, ITCH, OUCH, multicast).
+    description: The market data and order entry protocols used by the target 
+      exchanges (e.g., FIX, ITCH, OUCH, multicast).
     required: true
   - name: hardware_constraints
-    description: Limitations or requirements regarding hardware (e.g., specific FPGA families, ASIC usage, NIC types like Solarflare or Mellanox, switch latency).
+    description: Limitations or requirements regarding hardware (e.g., specific 
+      FPGA families, ASIC usage, NIC types like Solarflare or Mellanox, switch 
+      latency).
     required: true
   - name: deployment_topology
-    description: Geographic and physical deployment requirements, such as colocation tier, cross-connect constraints, or microwave/millimeter-wave link availability.
+    description: Geographic and physical deployment requirements, such as 
+      colocation tier, cross-connect constraints, or microwave/millimeter-wave 
+      link availability.
     required: true
 model: gpt-4o
 modelParameters:
@@ -52,14 +58,20 @@ messages:
       {{deployment_topology}}
 testData:
   - vars:
-      exchange_protocols: "NASDAQ ITCH for market data (multicast), OUCH for order entry (TCP)."
-      hardware_constraints: "Must utilize Xilinx Ultrascale+ FPGAs for inline tick-to-trade, AMD EPYC high-frequency servers, and Exablaze/Cisco Nexus 3550-T L1 switches."
-      deployment_topology: "Colocated in NY4 (Secaucus) with direct cross-connects to NASDAQ matching engine; backup via dark fiber to CH4."
+      exchange_protocols: "NASDAQ ITCH for market data (multicast), OUCH for order
+        entry (TCP)."
+      hardware_constraints: "Must utilize Xilinx Ultrascale+ FPGAs for inline tick-to-trade,
+        AMD EPYC high-frequency servers, and Exablaze/Cisco Nexus 3550-T L1 switches."
+      deployment_topology: "Colocated in NY4 (Secaucus) with direct cross-connects
+        to NASDAQ matching engine; backup via dark fiber to CH4."
     expected: "FPGA"
   - vars:
       exchange_protocols: "CME MDP 3.0 (multicast UDP) and iLink 3 (TCP)."
-      hardware_constraints: "Software-based tick-to-trade running on Intel Xeon Gold overclocked servers with Solarflare X2522 NICs using Onload/TCPDirect kernel bypass."
-      deployment_topology: "Colocated in Aurora (CME DC) with active microwave link to NY4 for cross-market arbitrage."
+      hardware_constraints: "Software-based tick-to-trade running on Intel Xeon Gold
+        overclocked servers with Solarflare X2522 NICs using Onload/TCPDirect kernel
+        bypass."
+      deployment_topology: "Colocated in Aurora (CME DC) with active microwave link
+        to NY4 for cross-market arbitrage."
     expected: "Solarflare"
 evaluators:
   - name: Acronym Check

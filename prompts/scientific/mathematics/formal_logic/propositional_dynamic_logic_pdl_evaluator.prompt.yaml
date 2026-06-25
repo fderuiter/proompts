@@ -1,19 +1,31 @@
----
 name: propositional_dynamic_logic_pdl_evaluator
 version: 1.0.0
-description: Rigorously evaluates programs, formal logic formulas, and state transitions within Propositional Dynamic Logic (PDL) frameworks.
+description: Rigorously evaluates programs, formal logic formulas, and state 
+  transitions within Propositional Dynamic Logic (PDL) frameworks.
 authors:
   - Formal Logic Genesis Architect
 metadata:
   domain: scientific/mathematics/formal_logic
   complexity: high
+  tags:
+    - mathematics
+    - formal-logic
+    - propositional
+    - dynamic
+    - logic
+    - skill
+  requires_context: false
 variables:
   - name: program_alpha
-    description: The formal program ($\alpha$) describing state transitions, defined using PDL syntax (e.g., atomic programs, union $\cup$, composition $;$, Kleene star $^*$, and test $?$).
+    description: The formal program ($\alpha$) describing state transitions, 
+      defined using PDL syntax (e.g., atomic programs, union $\cup$, composition
+      $;$, Kleene star $^*$, and test $?$).
   - name: formula_phi
-    description: The propositional logic or PDL formula ($\phi$) to be evaluated against the program, using LaTeX syntax.
+    description: The propositional logic or PDL formula ($\phi$) to be evaluated
+      against the program, using LaTeX syntax.
   - name: kripke_model
-    description: The Kripke model structure defining states ($W$), transition relations ($R_\alpha$), and truth assignments ($V$).
+    description: The Kripke model structure defining states ($W$), transition 
+      relations ($R_\alpha$), and truth assignments ($V$).
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -56,7 +68,8 @@ testData:
       formula_phi: "\\langle a \\rangle p"
     expected: "w_1 \\vDash \\langle a \\rangle p"
   - inputs:
-      kripke_model: "W = \\{w_1, w_2, w_3\\}, R_a = \\{(w_1, w_2)\\}, R_b = \\{(w_2, w_3)\\}, V(q) = \\{w_3\\}"
+      kripke_model: "W = \\{w_1, w_2, w_3\\}, R_a = \\{(w_1, w_2)\\}, R_b = \\{(w_2,
+        w_3)\\}, V(q) = \\{w_3\\}"
       program_alpha: "\\alpha = a ; b"
       formula_phi: "[a ; b] q"
     expected: "w_1 \\vDash [a ; b] q"

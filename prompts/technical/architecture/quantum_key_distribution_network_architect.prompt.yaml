@@ -1,7 +1,8 @@
----
 name: Quantum Key Distribution Network Architect
 version: 1.0.0
-description: Designs highly secure, scalable Quantum Key Distribution (QKD) network topologies to safeguard sensitive data transmission against "harvest now, decrypt later" attacks and future quantum computational threats.
+description: Designs highly secure, scalable Quantum Key Distribution (QKD) 
+  network topologies to safeguard sensitive data transmission against "harvest 
+  now, decrypt later" attacks and future quantum computational threats.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,15 +14,21 @@ metadata:
     - cryptography
     - network-security
     - future-proofing
+    - skill
+  requires_context: true
 variables:
   - name: network_topology
-    description: Existing or target fiber optic and satellite network topology (e.g., dark fiber distance, repeater locations, point-to-point links).
+    description: Existing or target fiber optic and satellite network topology 
+      (e.g., dark fiber distance, repeater locations, point-to-point links).
     required: true
   - name: cryptographic_constraints
-    description: Existing cryptographic standards, key rotation frequency, and integration requirements with classical encryption (e.g., AES-256 MACsec/IPsec).
+    description: Existing cryptographic standards, key rotation frequency, and 
+      integration requirements with classical encryption (e.g., AES-256 
+      MACsec/IPsec).
     required: true
   - name: threat_model
-    description: Defined adversaries, operational environment, and acceptable quantum bit error rates (QBER).
+    description: Defined adversaries, operational environment, and acceptable 
+      quantum bit error rates (QBER).
     required: true
 model: anthropic/claude-3-opus-20240229
 modelParameters:
@@ -61,7 +68,8 @@ testData:
       threat_model: "State-sponsored adversaries with harvest-now-decrypt-later capabilities."
     expected: "BB84"
   - inputs:
-      network_topology: "1000km single continuous dark fiber link without any trusted nodes or repeaters."
+      network_topology: "1000km single continuous dark fiber link without any trusted
+        nodes or repeaters."
       cryptographic_constraints: "Continuous 256-bit key generation at 10 Gbps."
       threat_model: "Eavesdropping on optical channel."
     expected: "error"

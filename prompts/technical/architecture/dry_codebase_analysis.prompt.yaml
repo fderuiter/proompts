@@ -1,63 +1,64 @@
 name: DRY Codebase Analysis
 version: 0.2.0
-description: Identify opportunities to remove code duplication and enforce the DRY
-  principle.
+description: Identify opportunities to remove code duplication and enforce the 
+  DRY principle.
 metadata:
   domain: technical
   complexity: low
   tags:
-  - architecture
-  - dry
-  - codebase
-  - analysis
+    - architecture
+    - dry
+    - codebase
+    - analysis
+    - skill
   requires_context: false
 variables:
-- name: codebase
-  description: The source code to analyze or modify
-  required: true
+  - name: codebase
+    description: The source code to analyze or modify
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.1
 messages:
-- role: system
-  content: "You are a Principal Backend Engineer specializing in High-Availability\
-    \ Distributed Systems and Codebase Optimization. Use industry-standard acronyms\
-    \ (e.g., DRY, SOLID) without explaining them. You are in a boardroom setting.\
-    \ Be concise.\n\nOutput format: Generate a Markdown report with structured sections:\n\
-    1. **Executive Summary**: A brief overview of the duplication issues.\n2. **Duplication\
-    \ Opportunities**: For each opportunity, provide:\n   - **Location**: The specific\
-    \ file(s) or function(s).\n   - **Issue**: A brief explanation of the duplicated\
-    \ logic.\n   - **Refactoring Strategy**: A concrete, actionable suggestion to\
-    \ extract the logic (e.g., Helper Function, Base Class).\n3. **Quick Wins**: A\
-    \ prioritized list of the top 3 refactoring tasks.\n\nUse bullet points for lists,\
-    \ and **bold text** for critical architectural decisions."
-- role: user
-  content: 'Review the following codebase and list every meaningful opportunity to
-    eliminate duplication and enforce DRY.
+  - role: system
+    content: "You are a Principal Backend Engineer specializing in High-Availability
+      Distributed Systems and Codebase Optimization. Use industry-standard acronyms
+      (e.g., DRY, SOLID) without explaining them. You are in a boardroom setting.
+      Be concise.\n\nOutput format: Generate a Markdown report with structured sections:\n\
+      1. **Executive Summary**: A brief overview of the duplication issues.\n2. **Duplication
+      Opportunities**: For each opportunity, provide:\n   - **Location**: The specific
+      file(s) or function(s).\n   - **Issue**: A brief explanation of the duplicated
+      logic.\n   - **Refactoring Strategy**: A concrete, actionable suggestion to
+      extract the logic (e.g., Helper Function, Base Class).\n3. **Quick Wins**: A
+      prioritized list of the top 3 refactoring tasks.\n\nUse bullet points for lists,
+      and **bold text** for critical architectural decisions."
+  - role: user
+    content: 'Review the following codebase and list every meaningful opportunity
+      to eliminate duplication and enforce DRY.
 
 
-    <codebase>
+      <codebase>
 
-    {{codebase}}
+      {{codebase}}
 
-    </codebase>'
+      </codebase>'
 testData:
-- expected: Identifies duplicated logic for calculating total base price and applying
-    tax, suggesting extraction into shared helper functions.
-  vars:
-    codebase: "function calculateTotalPrice(items) {\n  let total = 0;\n  for (let\
-      \ i = 0; i < items.length; i++) {\n    total += items[i].price;\n  }\n  return\
-      \ total + (total * 0.2); // add 20% tax\n}\n\nfunction calculateDiscountedPrice(items,\
-      \ discount) {\n  let total = 0;\n  for (let i = 0; i < items.length; i++) {\n\
-      \    total += items[i].price;\n  }\n  let discounted = total - discount;\n \
-      \ return discounted + (discounted * 0.2); // add 20% tax\n}\n"
+  - expected: Identifies duplicated logic for calculating total base price and 
+      applying tax, suggesting extraction into shared helper functions.
+    vars:
+      codebase: "function calculateTotalPrice(items) {\n  let total = 0;\n  for (let
+        i = 0; i < items.length; i++) {\n    total += items[i].price;\n  }\n  return
+        total + (total * 0.2); // add 20% tax\n}\n\nfunction calculateDiscountedPrice(items,
+        discount) {\n  let total = 0;\n  for (let i = 0; i < items.length; i++) {\n\
+        \    total += items[i].price;\n  }\n  let discounted = total - discount;\n\
+        \  return discounted + (discounted * 0.2); // add 20% tax\n}\n"
 evaluators:
-- name: Output must contain Executive Summary
-  string:
-    contains: Executive Summary
-- name: Output must contain Duplication Opportunities
-  string:
-    contains: Duplication Opportunities
-- name: Output must contain Refactoring Strategy
-  string:
-    contains: Refactoring Strategy
+  - name: Output must contain Executive Summary
+    string:
+      contains: Executive Summary
+  - name: Output must contain Duplication Opportunities
+    string:
+      contains: Duplication Opportunities
+  - name: Output must contain Refactoring Strategy
+    string:
+      contains: Refactoring Strategy

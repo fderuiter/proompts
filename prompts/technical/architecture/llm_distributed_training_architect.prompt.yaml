@@ -1,7 +1,7 @@
----
 name: LLM Distributed Training Architect
 version: 1.0.0
-description: Architects massive-scale distributed training infrastructure for Large Language Models using 3D parallelism and RDMA clusters.
+description: Architects massive-scale distributed training infrastructure for 
+  Large Language Models using 3D parallelism and RDMA clusters.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +13,20 @@ metadata:
     - llm
     - machine-learning
     - performance
+    - skill
   requires_context: false
 variables:
   - name: model_architecture
-    description: Details about the LLM architecture, including parameter count, layers, and attention mechanisms.
+    description: Details about the LLM architecture, including parameter count, 
+      layers, and attention mechanisms.
     required: true
   - name: cluster_topology
-    description: Information about the compute cluster, including GPU types, interconnects (e.g., InfiniBand/RDMA), and node counts.
+    description: Information about the compute cluster, including GPU types, 
+      interconnects (e.g., InfiniBand/RDMA), and node counts.
     required: true
   - name: constraints
-    description: Budget constraints, maximum training time, or specific fault-tolerance requirements.
+    description: Budget constraints, maximum training time, or specific 
+      fault-tolerance requirements.
     required: true
 model: gpt-4o
 modelParameters:

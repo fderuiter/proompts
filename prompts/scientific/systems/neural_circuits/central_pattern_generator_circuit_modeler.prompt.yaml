@@ -1,7 +1,7 @@
----
 name: central_pattern_generator_circuit_modeler
 version: 1.0.0
-description: "Mathematically architects and simulates biophysical Central Pattern Generator (CPG) circuits and half-center oscillatory dynamics."
+description: "Mathematically architects and simulates biophysical Central Pattern
+  Generator (CPG) circuits and half-center oscillatory dynamics."
 authors:
   - "Neuroscience Genesis Architect"
 metadata:
@@ -9,15 +9,26 @@ metadata:
   sub_domain: "systems/neural_circuits"
   complexity: "high"
   task_type: "biophysical_modeling"
+  tags:
+    - systems
+    - neural-circuits
+    - central
+    - pattern
+    - generator
+    - skill
+  requires_context: false
 variables:
   - name: circuit_topology
-    description: "Description of the network architecture (e.g., reciprocal inhibition, ring attractor)."
+    description: "Description of the network architecture (e.g., reciprocal inhibition,
+      ring attractor)."
   - name: neuron_type
     description: "The type of neuronal model to employ (e.g., Hodgkin-Huxley, Morris-Lecar)."
   - name: synaptic_dynamics
-    description: "Details on synaptic transmission (e.g., graded, spike-mediated, short-term depression)."
+    description: "Details on synaptic transmission (e.g., graded, spike-mediated,
+      short-term depression)."
   - name: neuromodulation_target
-    description: "Specific ionic currents or synaptic parameters targeted for neuromodulatory control."
+    description: "Specific ionic currents or synaptic parameters targeted for neuromodulatory
+      control."
 model: "claude-3-5-sonnet-20241022"
 modelParameters:
   temperature: 0.1
@@ -57,20 +68,27 @@ messages:
 testData:
   - variables:
       circuit_topology: "Half-center oscillator with reciprocal inhibition."
-      neuron_type: "Two-compartment Morris-Lecar with an added hyperpolarization-activated inward current (Ih)."
-      synaptic_dynamics: "Fast spike-mediated GABAergic synapses with short-term synaptic depression."
-      neuromodulation_target: "Maximal conductance of the Ih current (g_h) to control oscillation frequency."
+      neuron_type: "Two-compartment Morris-Lecar with an added hyperpolarization-activated
+        inward current (Ih)."
+      synaptic_dynamics: "Fast spike-mediated GABAergic synapses with short-term synaptic
+        depression."
+      neuromodulation_target: "Maximal conductance of the Ih current (g_h) to control
+        oscillation frequency."
     evaluators:
       - type: "contains_all"
-        expected: ["$C_m \\frac{dV_m}{dt}$", "Morris-Lecar", "GABAergic", "short-term synaptic depression", "h_{\\infty}", "tau_h"]
+        expected: ["$C_m \\frac{dV_m}{dt}$", "Morris-Lecar", "GABAergic", "short-term
+              synaptic depression", "h_{\\infty}", "tau_h"]
   - variables:
       circuit_topology: "Triphasic ring attractor for controlling rhythmic peristalsis."
-      neuron_type: "Single-compartment Hodgkin-Huxley with transient low-threshold calcium current (IT)."
+      neuron_type: "Single-compartment Hodgkin-Huxley with transient low-threshold
+        calcium current (IT)."
       synaptic_dynamics: "Continuous graded inhibitory synapses."
-      neuromodulation_target: "Voltage-dependence of the IT current activation curve (V_1/2 shift)."
+      neuromodulation_target: "Voltage-dependence of the IT current activation curve
+        (V_1/2 shift)."
     evaluators:
       - type: "contains_all"
-        expected: ["$C_m \\frac{dV_m}{dt}$", "Hodgkin-Huxley", "graded inhibitory", "low-threshold calcium", "bifurcation"]
+        expected: ["$C_m \\frac{dV_m}{dt}$", "Hodgkin-Huxley", "graded inhibitory",
+          "low-threshold calcium", "bifurcation"]
 evaluators:
   - type: "contains_all"
     expected: [""]

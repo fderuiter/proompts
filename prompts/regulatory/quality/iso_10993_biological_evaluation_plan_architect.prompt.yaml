@@ -1,6 +1,8 @@
 name: ISO 10993 Biological Evaluation Plan Architect
 version: 1.0.0
-description: Generates a comprehensive, ISO 10993-1 compliant Biological Evaluation Plan (BEP) based on device materials, manufacturing processes, and nature of patient contact.
+description: Generates a comprehensive, ISO 10993-1 compliant Biological 
+  Evaluation Plan (BEP) based on device materials, manufacturing processes, and 
+  nature of patient contact.
 authors:
   - name: Autonomous Genesis Engine
 metadata:
@@ -12,18 +14,24 @@ metadata:
     - iso-10993
     - risk-management
     - medical-device
+    - skill
+  requires_context: true
 variables:
   - name: device_description
-    description: Detailed description of the medical device, including its intended use and indications.
+    description: Detailed description of the medical device, including its 
+      intended use and indications.
     required: true
   - name: patient_contact
-    description: Nature and duration of body contact (e.g., permanent implant, short-term mucosal contact).
+    description: Nature and duration of body contact (e.g., permanent implant, 
+      short-term mucosal contact).
     required: true
   - name: materials_list
-    description: Comprehensive list of all materials in the final finished device, including any colorants or additives.
+    description: Comprehensive list of all materials in the final finished 
+      device, including any colorants or additives.
     required: true
   - name: manufacturing_processes
-    description: Summary of manufacturing processes (e.g., sterilization methods, machining, cleaning agents) that could introduce residuals.
+    description: Summary of manufacturing processes (e.g., sterilization 
+      methods, machining, cleaning agents) that could introduce residuals.
     required: true
 model: gpt-4o
 modelParameters:
@@ -65,11 +73,16 @@ messages:
       {{manufacturing_processes}}
       </manufacturing_processes>
 testData:
-  - device_description: "A peripheral intravenous (IV) catheter used for administering fluids."
-    patient_contact: "Externally communicating device, circulating blood contact, prolonged duration (24 hrs to 30 days)."
-    materials_list: "Polyurethane (PU) catheter tube, Stainless Steel 304 insertion needle."
+  - device_description: "A peripheral intravenous (IV) catheter used for administering
+      fluids."
+    patient_contact: "Externally communicating device, circulating blood contact,
+      prolonged duration (24 hrs to 30 days)."
+    materials_list: "Polyurethane (PU) catheter tube, Stainless Steel 304 insertion
+      needle."
     manufacturing_processes: "Extrusion, injection molding, EtO sterilization."
-    expected: "Generates a comprehensive BEP prioritizing chemical characterization and justifying testing waivers based on long-standing clinical history of PU and 304 SS, while noting EtO residuals must be evaluated per ISO 10993-7."
+    expected: "Generates a comprehensive BEP prioritizing chemical characterization
+      and justifying testing waivers based on long-standing clinical history of PU
+      and 304 SS, while noting EtO residuals must be evaluated per ISO 10993-7."
 evaluators:
   - name: Includes Categorization Header
     string:

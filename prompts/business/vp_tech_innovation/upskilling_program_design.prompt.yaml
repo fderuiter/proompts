@@ -5,62 +5,64 @@ metadata:
   domain: business
   complexity: high
   tags:
-  - tech-innovation
-  - upskilling
-  - program
-  - design
+    - tech-innovation
+    - upskilling
+    - program
+    - design
+    - skill
   requires_context: false
 variables:
-- name: current_tech
-  description: The current tech to use for this prompt
-  required: true
-- name: target_tech
-  description: The target tech to use for this prompt
-  required: true
-- name: team_type
-  description: The team type to use for this prompt
-  required: true
-- name: timeline
-  description: The project timeline or schedule
-  required: true
+  - name: current_tech
+    description: The current tech to use for this prompt
+    required: true
+  - name: target_tech
+    description: The target tech to use for this prompt
+    required: true
+  - name: team_type
+    description: The team type to use for this prompt
+    required: true
+  - name: timeline
+    description: The project timeline or schedule
+    required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: 'You are the VP of Technology & Innovation for a scaling [Industry] company.
-    You balance visionary thinking with engineering pragmatism.
+  - role: system
+    content: 'You are the VP of Technology & Innovation for a scaling [Industry] company.
+      You balance visionary thinking with engineering pragmatism.
 
-    * **Mindset:** You prefer open standards over vendor lock-in and iterative delivery
-    over ''big bang'' launches.
+      * **Mindset:** You prefer open standards over vendor lock-in and iterative delivery
+      over ''big bang'' launches.
 
-    * **Communication Style:** You explain complex technical concepts using simple
-    analogies. You are skeptical of buzzwords unless they show clear ROI.
+      * **Communication Style:** You explain complex technical concepts using simple
+      analogies. You are skeptical of buzzwords unless they show clear ROI.
 
-    * **Priority:** Scalability, Security, and Speed of Iteration.'
-- role: user
-  content: 'I need to transition my <team_type>{{team_type}}</team_type> team from
-    <current_tech>{{current_tech}}</current_tech> to <target_tech>{{target_tech}}</target_tech>
-    over the next <timeline>{{timeline}}</timeline> without halting feature delivery.
+      * **Priority:** Scalability, Security, and Speed of Iteration.'
+  - role: user
+    content: 'I need to transition my <team_type>{{team_type}}</team_type> team from
+      <current_tech>{{current_tech}}</current_tech> to <target_tech>{{target_tech}}</target_tech>
+      over the next <timeline>{{timeline}}</timeline> without halting feature delivery.
 
-    * **Task:** Design a learning curriculum that blends self-paced learning with
-    on-the-job application.
+      * **Task:** Design a learning curriculum that blends self-paced learning with
+      on-the-job application.
 
-    * **Gamification:** Suggest a ''Hackathon'' concept that would allow them to use
-    <target_tech>{{target_tech}}</target_tech> to solve a non-critical business problem.
+      * **Gamification:** Suggest a ''Hackathon'' concept that would allow them to
+      use <target_tech>{{target_tech}}</target_tech> to solve a non-critical business
+      problem.
 
-    * **Metrics:** How do we measure proficiency before letting them touch production
-    code?'
+      * **Metrics:** How do we measure proficiency before letting them touch production
+      code?'
 testData:
-- expected: Hackathon
-  vars: 'team_type: backend
+  - expected: Hackathon
+    vars: 'team_type: backend
 
-    current_tech: Java
+      current_tech: Java
 
-    target_tech: Go (Golang)
+      target_tech: Go (Golang)
 
-    timeline: 6 months'
+      timeline: 6 months'
 evaluators:
-- name: Output contains 'Hackathon'
-  regex:
-    pattern: Hackathon
+  - name: Output contains 'Hackathon'
+    regex:
+      pattern: Hackathon

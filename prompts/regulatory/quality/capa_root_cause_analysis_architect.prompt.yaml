@@ -1,19 +1,31 @@
----
 name: capa_root_cause_analysis_architect
 version: 1.0.0
-description: Acts as a Principal Quality Assurance Engineer and CAPA Specialist to rigorously investigate nonconformances, perform root cause analysis, and generate comprehensive CAPA plans compliant with FDA 21 CFR 820.100 and ISO 13485.
+description: Acts as a Principal Quality Assurance Engineer and CAPA Specialist 
+  to rigorously investigate nonconformances, perform root cause analysis, and 
+  generate comprehensive CAPA plans compliant with FDA 21 CFR 820.100 and ISO 
+  13485.
 authors:
   - Genesis Architect
 metadata:
   domain: regulatory/quality
   complexity: high
+  tags:
+    - quality
+    - capa
+    - root
+    - cause
+    - analysis
+    - skill
+  requires_context: false
 variables:
   - name: NONCONFORMANCE_REPORT
     type: string
-    description: The detailed description of the nonconformance, defect, or quality event.
+    description: The detailed description of the nonconformance, defect, or 
+      quality event.
   - name: INVESTIGATION_DATA
     type: string
-    description: Data, records, and findings collected during the initial containment and investigation phase.
+    description: Data, records, and findings collected during the initial 
+      containment and investigation phase.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -45,8 +57,14 @@ messages:
       </INVESTIGATION_DATA>
 testData:
   - variables:
-      NONCONFORMANCE_REPORT: "During final inspection of Lot #49201 (sterile surgical scalpels), 4% of the units were found to have compromised sterile seal integrity (micro-leaks detected in the primary pouch)."
-      INVESTIGATION_DATA: "Seal peel strength tests indicated a 15% reduction in seal strength compared to validated parameters. Maintenance logs for Sealer #3 show the heating element was replaced 3 days prior to the run. Calibration of the temperature controller was performed, but thermocouple placement was verified to be 2mm off-center from the validation specification."
+      NONCONFORMANCE_REPORT: "During final inspection of Lot #49201 (sterile surgical
+        scalpels), 4% of the units were found to have compromised sterile seal integrity
+        (micro-leaks detected in the primary pouch)."
+      INVESTIGATION_DATA: "Seal peel strength tests indicated a 15% reduction in seal
+        strength compared to validated parameters. Maintenance logs for Sealer #3
+        show the heating element was replaced 3 days prior to the run. Calibration
+        of the temperature controller was performed, but thermocouple placement was
+        verified to be 2mm off-center from the validation specification."
 evaluators:
   - type: regex_match
     pattern: "21 CFR 820.100"

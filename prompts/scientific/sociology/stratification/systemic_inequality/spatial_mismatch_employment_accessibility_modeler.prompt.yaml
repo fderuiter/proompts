@@ -1,22 +1,36 @@
----
 name: spatial_mismatch_employment_accessibility_modeler
 version: 1.0.0
-description: A Principal Sociologist and Urban Demographer agent designed to rigorously analyze the Spatial Mismatch Hypothesis, calculate employment accessibility gaps, and model structural transit inequality using ASA standards.
+description: A Principal Sociologist and Urban Demographer agent designed to 
+  rigorously analyze the Spatial Mismatch Hypothesis, calculate employment 
+  accessibility gaps, and model structural transit inequality using ASA 
+  standards.
 authors:
   - "Sociological Sciences Genesis Architect"
 metadata:
   domain: scientific/sociology/stratification/systemic_inequality
   complexity: high
+  tags:
+    - sociology
+    - stratification
+    - systemic-inequality
+    - spatial
+    - mismatch
+    - skill
+  requires_context: false
 variables:
   - name: residential_demographics
     type: string
-    description: Raw census tract or neighborhood-level demographic population data for multiple residential zones.
+    description: Raw census tract or neighborhood-level demographic population 
+      data for multiple residential zones.
   - name: employment_hubs
     type: string
-    description: Data detailing the spatial distribution of major employment hubs, job densities, and skill-level requirements across the metropolitan statistical area (MSA).
+    description: Data detailing the spatial distribution of major employment 
+      hubs, job densities, and skill-level requirements across the metropolitan 
+      statistical area (MSA).
   - name: transit_infrastructure
     type: string
-    description: Information on public transit infrastructure, commuting times, and accessibility metrics linking residential zones to employment hubs.
+    description: Information on public transit infrastructure, commuting times, 
+      and accessibility metrics linking residential zones to employment hubs.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -57,9 +71,14 @@ messages:
       </transit_infrastructure>
 testData:
   - variables:
-      residential_demographics: "Zone A (Inner City): 85% minority, median income $28,000, 10,000 residents. Zone B (Suburbs): 10% minority, median income $85,000, 15,000 residents."
-      employment_hubs: "Hub 1 (Suburban Edge): 5,000 new entry-level logistics jobs. Hub 2 (Downtown Core): 3,000 high-skill knowledge economy jobs."
-      transit_infrastructure: "Zone A to Hub 1: No direct public transit; 90-minute commute with 2 transfers. Zone B to Hub 1: Direct highway access; 15-minute commute."
+      residential_demographics: "Zone A (Inner City): 85% minority, median income
+        $28,000, 10,000 residents. Zone B (Suburbs): 10% minority, median income $85,000,
+        15,000 residents."
+      employment_hubs: "Hub 1 (Suburban Edge): 5,000 new entry-level logistics jobs.
+        Hub 2 (Downtown Core): 3,000 high-skill knowledge economy jobs."
+      transit_infrastructure: "Zone A to Hub 1: No direct public transit; 90-minute
+        commute with 2 transfers. Zone B to Hub 1: Direct highway access; 15-minute
+        commute."
 evaluators:
   - type: contains
     value: "Spatial Mismatch Hypothesis"

@@ -1,54 +1,55 @@
 name: Competitive-Bid Pricing & Margin Optimizer
 version: 0.1.0
-description: Compare competitor bids and internal costs to recommend a winning price
-  with target margin.
+description: Compare competitor bids and internal costs to recommend a winning 
+  price with target margin.
 metadata:
   domain: business
   complexity: high
   tags:
-  - finance
-  - competitive-bid
-  - pricing
-  - margin
-  - optimizer
+    - finance
+    - competitive-bid
+    - pricing
+    - margin
+    - optimizer
+    - skill
   requires_context: false
 variables:
-- name: competitor_bids
-  description: list of competitor prices (USD)
-  required: true
-- name: internal_cost
-  description: our estimated delivery cost (USD)
-  required: true
-- name: target_margin
-  description: desired profit margin percentage
-  required: true
-- name: volume_adjustments
-  description: optional volume or scope notes
-  required: true
+  - name: competitor_bids
+    description: list of competitor prices (USD)
+    required: true
+  - name: internal_cost
+    description: our estimated delivery cost (USD)
+    required: true
+  - name: target_margin
+    description: desired profit margin percentage
+    required: true
+  - name: volume_adjustments
+    description: optional volume or scope notes
+    required: true
 model: gpt-4
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: Act as my strategic pricing manager. We are bidding on a multi-year oncology
-    study against two top-10 CROs.
-- role: user
-  content: "- `{{competitor_bids}}` \u2013 list of competitor prices (USD).\n- `{{internal_cost}}`\
-    \ \u2013 our estimated delivery cost (USD).\n- `{{target_margin}}` \u2013 desired\
-    \ profit margin percentage.\n- `{{volume_adjustments}}` \u2013 optional volume\
-    \ or scope notes.\n\nStart the response with **Bid Analysis -**.\nOutput format:\n\
-    1. Markdown table comparing competitor prices, our recommended price, and margin.\n\
-    2. Three bullet-point justification notes on win strategy."
+  - role: system
+    content: Act as my strategic pricing manager. We are bidding on a multi-year
+      oncology study against two top-10 CROs.
+  - role: user
+    content: "- `{{competitor_bids}}` – list of competitor prices (USD).\n- `{{internal_cost}}`
+      – our estimated delivery cost (USD).\n- `{{target_margin}}` – desired profit
+      margin percentage.\n- `{{volume_adjustments}}` – optional volume or scope notes.\n\
+      \nStart the response with **Bid Analysis -**.\nOutput format:\n1. Markdown table
+      comparing competitor prices, our recommended price, and margin.\n2. Three bullet-point
+      justification notes on win strategy."
 testData:
-- expected: Bid Analysis -
-  vars: 'competitor_bids: [1000000, 1100000]
+  - expected: Bid Analysis -
+    vars: 'competitor_bids: [1000000, 1100000]
 
-    internal_cost: 850000
+      internal_cost: 850000
 
-    target_margin: 0.2
+      target_margin: 0.2
 
-    volume_adjustments: none'
+      volume_adjustments: none'
 evaluators:
-- name: Output should start with 'Bid Analysis -'
-  string:
-    startsWith: Bid Analysis -
+  - name: Output should start with 'Bid Analysis -'
+    string:
+      startsWith: Bid Analysis -

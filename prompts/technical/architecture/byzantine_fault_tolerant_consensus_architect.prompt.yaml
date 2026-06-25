@@ -1,7 +1,8 @@
----
 name: byzantine_fault_tolerant_consensus_architect
 version: 1.0.0
-description: Designs robust Byzantine Fault Tolerant (BFT) consensus architectures for building secure, highly reliable distributed systems resilient to malicious actors and arbitrary node failures.
+description: Designs robust Byzantine Fault Tolerant (BFT) consensus 
+  architectures for building secure, highly reliable distributed systems 
+  resilient to malicious actors and arbitrary node failures.
 authors:
   - Jules
 metadata:
@@ -13,16 +14,23 @@ metadata:
     - consensus
     - byzantine_fault_tolerance
     - security
+    - skill
+  requires_context: false
 variables:
   - name: system_domain
     type: string
-    description: The business domain and the specific distributed system that requires consensus (e.g., blockchain network, mission-critical aerospace control system, distributed financial ledger).
+    description: The business domain and the specific distributed system that 
+      requires consensus (e.g., blockchain network, mission-critical aerospace 
+      control system, distributed financial ledger).
   - name: node_characteristics
     type: string
-    description: Description of the node landscape, including total number of nodes, trust boundaries, geographical distribution, and likelihood of malicious compromise.
+    description: Description of the node landscape, including total number of 
+      nodes, trust boundaries, geographical distribution, and likelihood of 
+      malicious compromise.
   - name: performance_requirements
     type: string
-    description: The required transaction throughput, latency for finality, and network bandwidth constraints.
+    description: The required transaction throughput, latency for finality, and 
+      network bandwidth constraints.
 model: gpt-4o
 modelParameters:
   temperature: 0.2
@@ -68,8 +76,11 @@ messages:
 testData:
   - variables:
       system_domain: Project Delta distributed financial settlement ledger
-      node_characteristics: 100 globally distributed validator nodes run by independent financial institutions. High trust but potential for targeted state-sponsored attacks.
-      performance_requirements: Sub-second finality, 10,000 TPS, moderate bandwidth availability.
+      node_characteristics: 100 globally distributed validator nodes run by 
+        independent financial institutions. High trust but potential for 
+        targeted state-sponsored attacks.
+      performance_requirements: Sub-second finality, 10,000 TPS, moderate 
+        bandwidth availability.
     evaluators:
       - type: regex
         pattern: (?i)(HotStuff|PBFT|Tendermint)

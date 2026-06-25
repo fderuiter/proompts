@@ -1,7 +1,8 @@
----
 name: New Drug Application (NDA) Architect
 version: 1.0.0
-description: Formulates rigorous, compliant FDA New Drug Application (NDA) eCTD submissions for small molecule drugs, ensuring strict adherence to 21 CFR 314 and ICH M4 guidelines.
+description: Formulates rigorous, compliant FDA New Drug Application (NDA) eCTD 
+  submissions for small molecule drugs, ensuring strict adherence to 21 CFR 314 
+  and ICH M4 guidelines.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -15,19 +16,25 @@ metadata:
     - submission
     - ich m4
     - regulatory-affairs
+    - skill
   requires_context: true
 variables:
   - name: active_pharmaceutical_ingredient
-    description: The generic name or chemical structure classification of the primary small molecule active ingredient.
+    description: The generic name or chemical structure classification of the 
+      primary small molecule active ingredient.
     required: true
   - name: intended_indication
-    description: The specific therapeutic indication or target disease state for which the drug is seeking FDA approval.
+    description: The specific therapeutic indication or target disease state for
+      which the drug is seeking FDA approval.
     required: true
   - name: clinical_evidence_summary
-    description: A high-level synthesis of pivotal Phase 3 clinical trial outcomes demonstrating safety and efficacy.
+    description: A high-level synthesis of pivotal Phase 3 clinical trial 
+      outcomes demonstrating safety and efficacy.
     required: true
   - name: cmc_overview
-    description: Overview of the Chemistry, Manufacturing, and Controls (CMC) strategy, including synthetic route, drug substance, and drug product specifications.
+    description: Overview of the Chemistry, Manufacturing, and Controls (CMC) 
+      strategy, including synthetic route, drug substance, and drug product 
+      specifications.
     required: true
 model: gpt-4o
 modelParameters:
@@ -57,10 +64,17 @@ messages:
       Construct a rigorous, section-by-section blueprint detailing the exact content requirements, evidentiary thresholds, and module cross-references required to secure FDA CDER approval.
 testData:
   - active_pharmaceutical_ingredient: Novel selective kinase inhibitor (NME)
-    intended_indication: Treatment of adult patients with advanced or metastatic solid tumors harboring specific actionable mutations.
-    clinical_evidence_summary: Two pivotal Phase 3, randomized, double-blind trials demonstrating a statistically significant improvement in Progression-Free Survival (PFS) and Objective Response Rate (ORR) compared to standard of care.
-    cmc_overview: Synthetic route consists of 5 linear steps; drug product is a film-coated oral tablet; 12-month accelerated stability data available.
-    expected: A meticulously structured NDA blueprint, rigidly segmented into eCTD Modules 1-5, with specific emphasis on ISE/ISS integration in Module 5 and rigorous small molecule impurity controls in Module 3.
+    intended_indication: Treatment of adult patients with advanced or metastatic
+      solid tumors harboring specific actionable mutations.
+    clinical_evidence_summary: Two pivotal Phase 3, randomized, double-blind 
+      trials demonstrating a statistically significant improvement in 
+      Progression-Free Survival (PFS) and Objective Response Rate (ORR) compared
+      to standard of care.
+    cmc_overview: Synthetic route consists of 5 linear steps; drug product is a 
+      film-coated oral tablet; 12-month accelerated stability data available.
+    expected: A meticulously structured NDA blueprint, rigidly segmented into 
+      eCTD Modules 1-5, with specific emphasis on ISE/ISS integration in Module 
+      5 and rigorous small molecule impurity controls in Module 3.
 evaluators:
   - name: Mentions eCTD Modules
     string:

@@ -1,7 +1,8 @@
----
 name: Strategic Vendor Lock-In Mitigation Architect
 version: "1.0.0"
-description: Analyzes proposed enterprise technology stacks and architects highly rigorous, multi-vendor interoperability and vendor lock-in mitigation strategies.
+description: Analyzes proposed enterprise technology stacks and architects 
+  highly rigorous, multi-vendor interoperability and vendor lock-in mitigation 
+  strategies.
 authors:
   - Genesis Architect
 metadata:
@@ -12,14 +13,18 @@ metadata:
     - architecture
     - risk-mitigation
     - technology-strategy
+    - skill
+  requires_context: false
 variables:
   - name: PROPOSED_TECH_STACK
     type: string
-    description: The current or proposed enterprise technology stack, including cloud providers, SaaS, and proprietary platforms.
+    description: The current or proposed enterprise technology stack, including 
+      cloud providers, SaaS, and proprietary platforms.
     required: true
   - name: BUSINESS_OBJECTIVES
     type: string
-    description: The primary business goals and constraints (e.g., time-to-market, budget limits, compliance requirements).
+    description: The primary business goals and constraints (e.g., 
+      time-to-market, budget limits, compliance requirements).
     required: true
 model: gpt-4o
 modelParameters:
@@ -50,11 +55,16 @@ messages:
       </BUSINESS_OBJECTIVES>
 testData:
   - variables:
-      PROPOSED_TECH_STACK: "AWS Serverless (Lambda, DynamoDB, API Gateway, Cognito). Primary CI/CD via AWS CodePipeline. Data analytics via AWS Redshift."
-      BUSINESS_OBJECTIVES: "Launch MVP within 3 months. Budget constrained. Need to maintain optionality to move to Azure or GCP within 2 years if enterprise pricing models change."
+      PROPOSED_TECH_STACK: "AWS Serverless (Lambda, DynamoDB, API Gateway, Cognito).
+        Primary CI/CD via AWS CodePipeline. Data analytics via AWS Redshift."
+      BUSINESS_OBJECTIVES: "Launch MVP within 3 months. Budget constrained. Need to
+        maintain optionality to move to Azure or GCP within 2 years if enterprise
+        pricing models change."
   - variables:
-      PROPOSED_TECH_STACK: "Azure Native (Azure Functions, CosmosDB, Azure AD). Heavy reliance on proprietary Azure ML Studio workflows."
-      BUSINESS_OBJECTIVES: "Strict EU GDPR compliance. Must ensure absolute data portability and ability to deploy on-premise in the future."
+      PROPOSED_TECH_STACK: "Azure Native (Azure Functions, CosmosDB, Azure AD). Heavy
+        reliance on proprietary Azure ML Studio workflows."
+      BUSINESS_OBJECTIVES: "Strict EU GDPR compliance. Must ensure absolute data portability
+        and ability to deploy on-premise in the future."
 evaluators:
   - type: regex_match
     pattern: '(?i)mitigation'

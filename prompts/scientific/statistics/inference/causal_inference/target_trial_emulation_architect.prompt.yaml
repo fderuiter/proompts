@@ -1,12 +1,20 @@
----
 name: "target_trial_emulation_architect"
 version: "1.0.0"
-description: "Acts as a Principal Statistician to design and formulate rigorous causal inference studies using the target trial emulation framework."
+description: "Acts as a Principal Statistician to design and formulate rigorous causal
+  inference studies using the target trial emulation framework."
 authors:
   - "Statistical Sciences Genesis Architect"
 metadata:
   domain: "statistical_sciences"
   complexity: "high"
+  tags:
+    - statistics
+    - inference
+    - causal-inference
+    - target
+    - trial
+    - skill
+  requires_context: false
 variables:
   - name: "observational_data_structure"
     description: "The structure and nature of the available observational data."
@@ -39,9 +47,13 @@ messages:
       Confounding Factors: <confounding_factors>{{confounding_factors}}</confounding_factors>
 testData:
   - inputs:
-      observational_data_structure: "Longitudinal electronic health records spanning 10 years, including diagnosis codes, prescriptions, and demographic data."
-      causal_question: "What is the comparative effectiveness of starting statin therapy versus no statin therapy on the 5-year risk of major adverse cardiovascular events (MACE) in adults over 50?"
-      confounding_factors: "Age, baseline cholesterol levels, blood pressure, comorbidities, smoking status, and frequency of clinical visits."
+      observational_data_structure: "Longitudinal electronic health records spanning
+        10 years, including diagnosis codes, prescriptions, and demographic data."
+      causal_question: "What is the comparative effectiveness of starting statin therapy
+        versus no statin therapy on the 5-year risk of major adverse cardiovascular
+        events (MACE) in adults over 50?"
+      confounding_factors: "Age, baseline cholesterol levels, blood pressure, comorbidities,
+        smoking status, and frequency of clinical visits."
     expected: "inverse probability weighting"
 evaluators:
   - type: "regex_match"

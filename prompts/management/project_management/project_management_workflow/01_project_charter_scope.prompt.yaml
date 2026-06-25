@@ -1,7 +1,7 @@
----
 name: Project Charter and Scope Definition
 version: 0.2.0
-description: Create a complete project charter summarizing background, objectives, scope, deliverables, and key risks.
+description: Create a complete project charter summarizing background, 
+  objectives, scope, deliverables, and key risks.
 metadata:
   domain: management
   complexity: high
@@ -11,6 +11,7 @@ metadata:
     - charter
     - scope
     - definition
+    - skill
   requires_context: true
 variables:
   - name: budget
@@ -19,7 +20,8 @@ variables:
     required: true
   - name: business_outcome
     type: string
-    description: The desired business impact and measurable results of the project.
+    description: The desired business impact and measurable results of the 
+      project.
     required: true
   - name: deadline
     type: string
@@ -35,7 +37,8 @@ variables:
     required: true
   - name: stakeholders
     type: string
-    description: The key individuals, groups, or sponsors involved in the project.
+    description: The key individuals, groups, or sponsors involved in the 
+      project.
     required: true
 model: gpt-4o
 modelParameters:
@@ -89,11 +92,13 @@ messages:
 testData:
   - inputs:
       project_name: Project Alpha Migration
-      project_description: Migrate legacy on-prem CRM to a cloud-based SaaS solution.
+      project_description: Migrate legacy on-prem CRM to a cloud-based SaaS 
+        solution.
       budget: "$500,000"
       deadline: "2024-12-31"
       stakeholders: CEO, VP of Sales, IT Director
-      business_outcome: Increase sales efficiency by 15% and reduce IT maintenance overhead.
+      business_outcome: Increase sales efficiency by 15% and reduce IT 
+        maintenance overhead.
     expected: "Markdown document with all H2 sections and table."
     evaluators:
       - type: regex

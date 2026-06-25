@@ -1,22 +1,34 @@
----
 name: "epistemic_defeater_formal_analyzer"
 version: "1.0.0"
-description: "A highly rigorous prompt designed to systematically analyze and formalize epistemic defeaters (rebutting, undercutting, and higher-order) within formal epistemological justification networks."
+description: "A highly rigorous prompt designed to systematically analyze and formalize
+  epistemic defeaters (rebutting, undercutting, and higher-order) within formal epistemological
+  justification networks."
 authors:
   - "Philosophical Genesis Architect"
 metadata:
   domain: "scientific"
   complexity: "high"
+  tags:
+    - philosophy
+    - epistemology
+    - formal-epistemology
+    - epistemic
+    - defeater
+    - skill
+  requires_context: false
 variables:
   - name: "TARGET_PROPOSITION"
     type: "string"
-    description: "The initial proposition ($P$) believed by the epistemic agent, along with its initial justification ($J$)."
+    description: "The initial proposition ($P$) believed by the epistemic agent, along
+      with its initial justification ($J$)."
   - name: "DEFEATER_CANDIDATE"
     type: "string"
-    description: "The new evidence or proposition ($D$) that potentially acts as a defeater for the justification of $P$."
+    description: "The new evidence or proposition ($D$) that potentially acts as a
+      defeater for the justification of $P$."
   - name: "EPISTEMIC_FRAMEWORK"
     type: "string"
-    description: "The underlying epistemological theory governing the justification (e.g., Evidentialism, Reliabilism, Internalist Foundationalism)."
+    description: "The underlying epistemological theory governing the justification
+      (e.g., Evidentialism, Reliabilism, Internalist Foundationalism)."
 model: "gpt-4o"
 modelParameters:
   temperature: 0.1
@@ -48,8 +60,10 @@ messages:
       Execute the systematic formalization and analysis of this epistemic defeater.
 testData:
   - variables:
-      TARGET_PROPOSITION: "I see a red object in front of me; therefore, there is a red object in front of me."
-      DEFEATER_CANDIDATE: "I am told by a reliable source that there are hidden red lights illuminating the area."
+      TARGET_PROPOSITION: "I see a red object in front of me; therefore, there is
+        a red object in front of me."
+      DEFEATER_CANDIDATE: "I am told by a reliable source that there are hidden red
+        lights illuminating the area."
       EPISTEMIC_FRAMEWORK: "Internalist Foundationalism"
     expected: "Typological Classification of the Defeater"
   - variables:
@@ -59,4 +73,5 @@ testData:
     expected: "Formalization of the Initial Epistemic State"
 evaluators:
   - type: regex
-    pattern: "(?i)(Typological Classification|Formalization of the Initial Epistemic State)"
+    pattern: "(?i)(Typological Classification|Formalization of the Initial Epistemic
+      State)"

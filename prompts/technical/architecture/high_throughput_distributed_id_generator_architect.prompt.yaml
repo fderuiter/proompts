@@ -1,7 +1,9 @@
----
 name: High-Throughput Distributed ID Generator Architect
 version: 1.0.0
-description: Designs highly scalable, strictly monotonic, globally unique identifier (UUID/Snowflake/ULID) generation topologies capable of sustaining massive transaction volumes in geographically distributed systems without collision.
+description: Designs highly scalable, strictly monotonic, globally unique 
+  identifier (UUID/Snowflake/ULID) generation topologies capable of sustaining 
+  massive transaction volumes in geographically distributed systems without 
+  collision.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +15,20 @@ metadata:
     - snowflake
     - scalability
     - architecture
+    - skill
   requires_context: false
 variables:
   - name: scale_requirements
-    description: Details regarding the required ID generation rate (e.g., millions per second), peak throughput, and allowable latency.
+    description: Details regarding the required ID generation rate (e.g., 
+      millions per second), peak throughput, and allowable latency.
     required: true
   - name: ordering_semantics
-    description: The required ordering guarantees (e.g., strictly monotonic, k-ordered, purely random) and the granularity of time alignment.
+    description: The required ordering guarantees (e.g., strictly monotonic, 
+      k-ordered, purely random) and the granularity of time alignment.
     required: true
   - name: deployment_topology
-    description: The geographical layout of the data centers, network boundaries, and synchronization constraints.
+    description: The geographical layout of the data centers, network 
+      boundaries, and synchronization constraints.
     required: true
 model: gpt-4o
 modelParameters:
@@ -57,16 +63,20 @@ messages:
       <user_query>{{deployment_topology}}</user_query>
 testData:
   - inputs:
-      scale_requirements: "1 million IDs per second per datacenter, p99 latency < 1ms."
+      scale_requirements: "1 million IDs per second per datacenter, p99 latency <
+        1ms."
       ordering_semantics: "k-ordered within 1 millisecond, sortable by time."
       deployment_topology: "3 global regions (US, EU, AP), 500 nodes per region."
     expected: "bit allocation|epoch displacement|clock skew mitigation"
   - inputs:
       scale_requirements: "10 million IDs per second globally."
-      ordering_semantics: "Strict global monotonicity across all datacenters, exact sub-millisecond sorting."
-      deployment_topology: "Multi-region active-active clusters separated by high latency WAN."
+      ordering_semantics: "Strict global monotonicity across all datacenters, exact
+        sub-millisecond sorting."
+      deployment_topology: "Multi-region active-active clusters separated by high
+        latency WAN."
     expected: "error"
 evaluators:
   - name: Expert Terminology Check
     type: regex
-    pattern: '(?i)(bit allocation|clock skew mitigation|epoch displacement|logical sequence truncation|error)'
+    pattern: '(?i)(bit allocation|clock skew mitigation|epoch displacement|logical
+      sequence truncation|error)'

@@ -5,31 +5,32 @@ metadata:
   domain: clinical
   complexity: low
   tags:
-  - data-management
-  - regulatory
-  - gap
-  - analysis
+    - data-management
+    - regulatory
+    - gap
+    - analysis
+    - skill
   requires_context: false
 variables:
-- name: input
-  description: The primary input or query text for the prompt
-  required: true
+  - name: input
+    description: The primary input or query text for the prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: 'You are a compliance analyst evaluating clinical data management processes
+  - role: system
+    content: 'You are a compliance analyst evaluating clinical data management processes
 
-    for regulatory gaps.
+      for regulatory gaps.
 
-    '
-- role: user
-  content: '{{input}}'
+      '
+  - role: user
+    content: '{{input}}'
 testData:
-- expected: Highlights missing consent records.
-  vars: Review data workflow for GDPR compliance.
+  - expected: Highlights missing consent records.
+    vars: Review data workflow for GDPR compliance.
 evaluators:
-- name: Output mentions compliance
-  string:
-    contains: compliance
+  - name: Output mentions compliance
+    string:
+      contains: compliance

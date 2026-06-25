@@ -1,7 +1,9 @@
----
 name: Supply Chain Network Topology Optimization Architect
 version: "1.0.0"
-description: Architects mathematically rigorous supply chain network topologies, optimizing facility location, capacity allocation, and distribution flows under multi-echelon constraints using mixed-integer linear programming (MILP) frameworks.
+description: Architects mathematically rigorous supply chain network topologies,
+  optimizing facility location, capacity allocation, and distribution flows 
+  under multi-echelon constraints using mixed-integer linear programming (MILP) 
+  frameworks.
 authors:
   - Enterprise Strategy Genesis Architect
 metadata:
@@ -12,17 +14,24 @@ metadata:
     - supply-chain
     - network-optimization
     - mathematical-modeling
+    - skill
+  requires_context: false
 variables:
   - name: demand_nodes_and_volumes
-    description: Detail the spatial distribution of demand nodes (markets, customers) and their projected volume requirements, including seasonality and volatility parameters.
+    description: Detail the spatial distribution of demand nodes (markets, 
+      customers) and their projected volume requirements, including seasonality 
+      and volatility parameters.
     required: true
     type: string
   - name: candidate_facility_locations
-    description: Provide candidate facility locations (plants, distribution centers), including fixed establishment costs, variable processing costs, and maximum capacity limits.
+    description: Provide candidate facility locations (plants, distribution 
+      centers), including fixed establishment costs, variable processing costs, 
+      and maximum capacity limits.
     required: true
     type: string
   - name: transportation_and_flow_constraints
-    description: Specify multi-echelon transportation costs, lead times, modal constraints, and flow conservation requirements across the network.
+    description: Specify multi-echelon transportation costs, lead times, modal 
+      constraints, and flow conservation requirements across the network.
     required: true
     type: string
 model: claude-3-opus-20240229
@@ -58,19 +67,30 @@ messages:
       </transportation_and_flow_constraints>
 testData:
   - inputs:
-      demand_nodes_and_volumes: "15 major metropolitan markets in North America requiring 2.5M units annually. High seasonality with Q4 peaks representing 40% of total volume."
-      candidate_facility_locations: "5 candidate DCs: Atlanta, Dallas, Chicago, Reno, Allentown. Fixed costs range from $5M to $8M annually, capacities capped at 800K units each."
-      transportation_and_flow_constraints: "Inbound freight via rail/FTL at $0.15/unit-mile. Outbound last-mile via parcel network at $0.45/unit-mile. Maximum transit time constraint of 2 days to 90% of demand."
+      demand_nodes_and_volumes: "15 major metropolitan markets in North America requiring
+        2.5M units annually. High seasonality with Q4 peaks representing 40% of total
+        volume."
+      candidate_facility_locations: "5 candidate DCs: Atlanta, Dallas, Chicago, Reno,
+        Allentown. Fixed costs range from $5M to $8M annually, capacities capped at
+        800K units each."
+      transportation_and_flow_constraints: "Inbound freight via rail/FTL at $0.15/unit-mile.
+        Outbound last-mile via parcel network at $0.45/unit-mile. Maximum transit
+        time constraint of 2 days to 90% of demand."
     expected: "Network Design Matrix"
   - inputs:
-      demand_nodes_and_volumes: "Global APAC footprint with primary demand in Tokyo, Shanghai, and Sydney totaling 5M TEUs. Steady-state demand with low volatility."
-      candidate_facility_locations: "Candidate transshipment hubs in Singapore, Hong Kong, and Busan. Variable processing costs differ by 15% across hubs."
-      transportation_and_flow_constraints: "Ocean freight lanes constrained by port congestion. Flow conservation requires direct shipment routes for perishable goods bypassing hubs."
+      demand_nodes_and_volumes: "Global APAC footprint with primary demand in Tokyo,
+        Shanghai, and Sydney totaling 5M TEUs. Steady-state demand with low volatility."
+      candidate_facility_locations: "Candidate transshipment hubs in Singapore, Hong
+        Kong, and Busan. Variable processing costs differ by 15% across hubs."
+      transportation_and_flow_constraints: "Ocean freight lanes constrained by port
+        congestion. Flow conservation requires direct shipment routes for perishable
+        goods bypassing hubs."
     expected: "MILP Objective Function"
 evaluators:
   - name: Contains Objective Function Equation
     string:
-      contains: "\\text{Minimize } Z = \\sum_{i \\in I} f_i y_i + \\sum_{i \\in I} \\sum_{j \\in J} c_{ij} x_{ij}"
+      contains: "\\text{Minimize } Z = \\sum_{i \\in I} f_i y_i + \\sum_{i \\in I}
+        \\sum_{j \\in J} c_{ij} x_{ij}"
   - name: Contains Flow Conservation Equation
     string:
       contains: "\\sum_{i \\in I} x_{ij} = D_j"

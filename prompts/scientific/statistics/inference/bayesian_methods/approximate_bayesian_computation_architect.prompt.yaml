@@ -1,21 +1,31 @@
----
 name: "approximate_bayesian_computation_architect"
 version: "1.0.0"
-description: "Acts as a Principal Statistician to design and formulate mathematically rigorous Approximate Bayesian Computation (ABC) algorithms for likelihood-free inference."
+description: "Acts as a Principal Statistician to design and formulate mathematically
+  rigorous Approximate Bayesian Computation (ABC) algorithms for likelihood-free inference."
 authors:
   - "Statistical Sciences Genesis Architect"
 metadata:
   domain: "statistical_sciences"
   complexity: "high"
+  tags:
+    - statistics
+    - inference
+    - bayesian-methods
+    - approximate
+    - bayesian
+    - skill
+  requires_context: false
 variables:
   - name: "data_generating_process"
-    description: "The structural definition and computational mechanism of the generative model."
+    description: "The structural definition and computational mechanism of the generative
+      model."
     required: true
   - name: "summary_statistics"
     description: "The set of chosen summary statistics for dimensionality reduction."
     required: true
   - name: "distance_metric"
-    description: "The mathematical distance metric for comparing simulated and observed data."
+    description: "The mathematical distance metric for comparing simulated and observed
+      data."
     required: true
 model: "claude-3-opus-20240229"
 modelParameters:
@@ -43,9 +53,12 @@ messages:
       Distance Metric: <distance_metric>{{distance_metric}}</distance_metric>
 testData:
   - inputs:
-      data_generating_process: "A stochastic differential equation (SDE) model of ecological population dynamics with unobserved birth/death rates."
-      summary_statistics: "Autocovariance function at lag 1 and 2, and the mean log-abundance over time."
-      distance_metric: "Mahalanobis distance weighted by the inverse empirical covariance matrix of the simulated summaries."
+      data_generating_process: "A stochastic differential equation (SDE) model of
+        ecological population dynamics with unobserved birth/death rates."
+      summary_statistics: "Autocovariance function at lag 1 and 2, and the mean log-abundance
+        over time."
+      distance_metric: "Mahalanobis distance weighted by the inverse empirical covariance
+        matrix of the simulated summaries."
     expected: "ABC-SMC"
 evaluators:
   - type: "regex_match"

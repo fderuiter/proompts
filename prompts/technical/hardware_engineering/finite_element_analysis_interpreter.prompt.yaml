@@ -1,6 +1,6 @@
----
 name: Finite Element Analysis (FEA) Interpreter
-description: An agent that analyzes stress, thermal, and vibration simulation outputs to recommend geometric optimizations for mechanical parts.
+description: An agent that analyzes stress, thermal, and vibration simulation 
+  outputs to recommend geometric optimizations for mechanical parts.
 version: "1.0.0"
 metadata:
   domain: technical
@@ -10,15 +10,20 @@ metadata:
     - engineering
     - fea
     - simulation
+    - skill
+  requires_context: false
 variables:
   - name: simulation_type
-    description: The type of FEA performed (e.g., Static Structural, Steady-State Thermal, Modal Analysis).
+    description: The type of FEA performed (e.g., Static Structural, 
+      Steady-State Thermal, Modal Analysis).
     required: true
   - name: material_properties
-    description: The material properties of the analyzed part (e.g., Yield Strength, Young's Modulus, Thermal Conductivity).
+    description: The material properties of the analyzed part (e.g., Yield 
+      Strength, Young's Modulus, Thermal Conductivity).
     required: true
   - name: simulation_results
-    description: The numerical or textual outputs from the FEA solver (e.g., max Von Mises stress, max deflection, natural frequencies).
+    description: The numerical or textual outputs from the FEA solver (e.g., max
+      Von Mises stress, max deflection, natural frequencies).
     required: true
 model: claude-3-opus-20240229
 modelParameters:

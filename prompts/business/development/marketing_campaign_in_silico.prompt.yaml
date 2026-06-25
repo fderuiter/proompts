@@ -1,7 +1,7 @@
----
 name: Marketing Campaign for Clinical Services
 version: 0.1.1
-description: Generates a comprehensive marketing asset package including landing page copy, email sequence, and sell sheet for new clinical services.
+description: Generates a comprehensive marketing asset package including landing
+  page copy, email sequence, and sell sheet for new clinical services.
 metadata:
   domain: business
   complexity: medium
@@ -11,6 +11,7 @@ metadata:
     - copywriting
     - clinical-services
     - b2b
+    - skill
   requires_context: true
 variables:
   - name: service_suite_name
@@ -143,7 +144,8 @@ testData:
 evaluators:
   - name: Structure Check
     regex:
-      pattern: "# Marketing Asset Package:.*\\n+## 1. Landing Page Hook\\n+.*\\n+## 2. Cold Email Sequence\\n+.*\\n+## 3. Sell Sheet Copy"
+      pattern: "# Marketing Asset Package:.*\\n+## 1. Landing Page Hook\\n+.*\\n+##
+        2. Cold Email Sequence\\n+.*\\n+## 3. Sell Sheet Copy"
       flags: "s"
   - name: No Buzzwords
     regex:

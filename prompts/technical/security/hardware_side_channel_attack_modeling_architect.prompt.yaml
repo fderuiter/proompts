@@ -1,7 +1,7 @@
----
 name: Hardware Side-Channel Attack Modeling Architect
 version: 1.0.0
-description: Designs highly rigorous, physics-based side-channel attack models and advanced countermeasures for embedded systems and secure enclaves.
+description: Designs highly rigorous, physics-based side-channel attack models 
+  and advanced countermeasures for embedded systems and secure enclaves.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,13 +13,18 @@ metadata:
     - side-channel
     - cryptography
     - embedded-systems
+    - skill
   requires_context: false
 variables:
   - name: target_hardware_architecture
-    description: Detailed specification of the target hardware, including CPU microarchitecture, memory hierarchy, execution pipelines, and existing secure enclaves (e.g., SGX, TrustZone).
+    description: Detailed specification of the target hardware, including CPU 
+      microarchitecture, memory hierarchy, execution pipelines, and existing 
+      secure enclaves (e.g., SGX, TrustZone).
     required: true
   - name: attack_vector_focus
-    description: The specific class of side-channel vectors to model (e.g., Power Analysis (DPA/CPA), Electromagnetic Emission (EMA), Cache Timing, Fault Injection).
+    description: The specific class of side-channel vectors to model (e.g., 
+      Power Analysis (DPA/CPA), Electromagnetic Emission (EMA), Cache Timing, 
+      Fault Injection).
     required: true
 model: gpt-4o
 modelParameters:
@@ -49,12 +54,19 @@ messages:
       {{attack_vector_focus}}
 testData:
   - vars:
-      target_hardware_architecture: "A custom 32-bit RISC-V SoC designed for IoT smart meters, featuring an unprotected hardware AES-128 coprocessor and a standard 5-stage pipeline without branch prediction. Clock speed is 50MHz, fabricated on a 65nm process."
-      attack_vector_focus: "Differential Power Analysis (DPA) and Correlation Power Analysis (CPA) on the AES coprocessor."
+      target_hardware_architecture: "A custom 32-bit RISC-V SoC designed for IoT smart
+        meters, featuring an unprotected hardware AES-128 coprocessor and a standard
+        5-stage pipeline without branch prediction. Clock speed is 50MHz, fabricated
+        on a 65nm process."
+      attack_vector_focus: "Differential Power Analysis (DPA) and Correlation Power
+        Analysis (CPA) on the AES coprocessor."
     expected: "**Pearson correlation coefficient**"
   - vars:
-      target_hardware_architecture: "High-performance x86-64 server CPU with 3 levels of cache, out-of-order execution, and Intel SGX enabled. The target workload is an RSA-4096 signature generation routine running within the enclave."
-      attack_vector_focus: "L3 Cache Timing Attacks (Prime+Probe) targeting the modular exponentiation."
+      target_hardware_architecture: "High-performance x86-64 server CPU with 3 levels
+        of cache, out-of-order execution, and Intel SGX enabled. The target workload
+        is an RSA-4096 signature generation routine running within the enclave."
+      attack_vector_focus: "L3 Cache Timing Attacks (Prime+Probe) targeting the modular
+        exponentiation."
     expected: "**Prime+Probe**"
 evaluators:
   - name: Attack Methodology Check

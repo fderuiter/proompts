@@ -5,50 +5,51 @@ metadata:
   domain: clinical
   complexity: low
   tags:
-  - trial-execution
-  - informed
-  - consent
-  - process
-  - optimization
+    - trial-execution
+    - informed
+    - consent
+    - process
+    - optimization
+    - skill
   requires_context: false
 variables:
-- name: icf_text
-  description: The text content to process
-  required: true
+  - name: icf_text
+    description: The text content to process
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: You are a Regulatory Affairs Specialist. Review the clinical trial informed
-    consent form to ensure it includes all basic elements required by 21 CFR 50.25.
-    Rewrite the technical sections into plain language suitable for an 8th-grade reading
-    level.
-- role: user
-  content: 'Review the clinical trial informed consent form to ensure it includes
-    all basic elements required by 21 CFR 50.25. Rewrite the technical sections into
-    plain language suitable for an 8th-grade reading level.
+  - role: system
+    content: You are a Regulatory Affairs Specialist. Review the clinical trial 
+      informed consent form to ensure it includes all basic elements required by
+      21 CFR 50.25. Rewrite the technical sections into plain language suitable 
+      for an 8th-grade reading level.
+  - role: user
+    content: 'Review the clinical trial informed consent form to ensure it includes
+      all basic elements required by 21 CFR 50.25. Rewrite the technical sections
+      into plain language suitable for an 8th-grade reading level.
 
 
-    Inputs:
+      Inputs:
 
-    - `{{icf_text}}`
+      - `{{icf_text}}`
 
 
-    Output format:
+      Output format:
 
-    Markdown Revised ICF Text.'
+      Markdown Revised ICF Text.'
 testData:
-- expected: 'Revised ICF
+  - expected: 'Revised ICF
 
-    '
-  vars: 'icf_text: The investigational product is a monoclonal antibody...
+      '
+    vars: 'icf_text: The investigational product is a monoclonal antibody...
 
-    '
+      '
 evaluators:
-- name: 8th-grade reading level
-  string:
-    contains: 8th-grade reading level
-- name: Basic Elements
-  string:
-    contains: Basic Elements
+  - name: 8th-grade reading level
+    string:
+      contains: 8th-grade reading level
+  - name: Basic Elements
+    string:
+      contains: Basic Elements

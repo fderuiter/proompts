@@ -1,17 +1,30 @@
----
 name: intergenerational_social_mobility_markov_chain_architect
 version: "1.0.0"
-description: Formulates transition probability matrices using Markov chains to map intergenerational social mobility and systemic stratification, adhering to ASA standards.
+description: Formulates transition probability matrices using Markov chains to 
+  map intergenerational social mobility and systemic stratification, adhering to
+  ASA standards.
 authors:
   - Sociological Sciences Genesis Architect
 metadata:
   domain: sociology/stratification
   complexity: high
+  tags:
+    - sociology
+    - stratification
+    - systemic-inequality
+    - intergenerational
+    - social
+    - skill
+  requires_context: false
 variables:
   - name: longitudinal_mobility_data
-    description: Granular, multi-generational socio-economic status (SES) or occupational class data mapping parents' status (origin) to offspring's status (destination).
+    description: Granular, multi-generational socio-economic status (SES) or 
+      occupational class data mapping parents' status (origin) to offspring's 
+      status (destination).
   - name: class_schema
-    description: The specified class schema (e.g., Erikson-Goldthorpe-Portocarero (EGP) class schema) defining the discrete states of the Markov process.
+    description: The specified class schema (e.g., 
+      Erikson-Goldthorpe-Portocarero (EGP) class schema) defining the discrete 
+      states of the Markov process.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -57,5 +70,10 @@ evaluators:
     pattern: "M(P) = \\frac{k - \\text{tr}(P)}{k - 1}"
 testData:
   - variables:
-      longitudinal_mobility_data: "Fathers in Class I (Service/Professional): 100 sons, 60 stayed Class I, 30 moved to Class II (Intermediate), 10 moved to Class III (Working). Fathers in Class II: 100 sons, 20 moved to Class I, 50 stayed Class II, 30 moved to Class III. Fathers in Class III: 100 sons, 10 moved to Class I, 20 moved to Class II, 70 stayed Class III."
-      class_schema: "Simplified 3-class schema: I (Service/Professional), II (Intermediate/Routine Non-manual), III (Working/Manual)."
+      longitudinal_mobility_data: "Fathers in Class I (Service/Professional): 100
+        sons, 60 stayed Class I, 30 moved to Class II (Intermediate), 10 moved to
+        Class III (Working). Fathers in Class II: 100 sons, 20 moved to Class I, 50
+        stayed Class II, 30 moved to Class III. Fathers in Class III: 100 sons, 10
+        moved to Class I, 20 moved to Class II, 70 stayed Class III."
+      class_schema: "Simplified 3-class schema: I (Service/Professional), II (Intermediate/Routine
+        Non-manual), III (Working/Manual)."

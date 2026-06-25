@@ -1,6 +1,6 @@
----
 name: Mergers and Acquisitions Due Diligence Auditor
-description: An agent designed to process data room artifacts, flag indemnity risks, and generate risk matrices for asset purchase agreements.
+description: An agent designed to process data room artifacts, flag indemnity 
+  risks, and generate risk matrices for asset purchase agreements.
 version: "1.0.0"
 metadata:
   domain: business
@@ -10,12 +10,15 @@ metadata:
     - mergers
     - acquisitions
     - due_diligence
+    - skill
+  requires_context: true
 variables:
   - name: contract_text
     description: The text of the contract or data room artifact to analyze.
     required: true
   - name: transaction_type
-    description: The type of M&A transaction (e.g., Asset Purchase, Stock Purchase, Merger).
+    description: The type of M&A transaction (e.g., Asset Purchase, Stock 
+      Purchase, Merger).
     required: true
   - name: jurisdiction
     description: The applicable legal jurisdiction governing the agreement.

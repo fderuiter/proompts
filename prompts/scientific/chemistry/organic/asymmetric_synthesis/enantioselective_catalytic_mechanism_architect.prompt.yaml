@@ -1,7 +1,8 @@
----
 name: "Enantioselective Catalytic Mechanism Architect"
 version: "1.0.0"
-description: "Generates rigorous transition state models and kinetic pathways for enantioselective catalytic mechanisms, utilizing exact stereochemical constraints and non-covalent interactions."
+description: "Generates rigorous transition state models and kinetic pathways for
+  enantioselective catalytic mechanisms, utilizing exact stereochemical constraints
+  and non-covalent interactions."
 authors:
   - "Chemical Sciences Genesis Architect"
 metadata:
@@ -13,16 +14,20 @@ metadata:
     - "catalysis"
     - "stereochemistry"
     - "transition-state"
+    - skill
   requires_context: false
 variables:
   - name: "catalyst_structure"
-    description: "The complete structure of the chiral catalyst (e.g., MacMillan imidazolidinone, BINAP-Ru, squaramide organocatalyst) using IUPAC name or SMILES/InChI."
+    description: "The complete structure of the chiral catalyst (e.g., MacMillan imidazolidinone,
+      BINAP-Ru, squaramide organocatalyst) using IUPAC name or SMILES/InChI."
     required: true
   - name: "substrates"
-    description: "The prochiral substrates involved in the reaction using exact SMILES or InChI strings."
+    description: "The prochiral substrates involved in the reaction using exact SMILES
+      or InChI strings."
     required: true
   - name: "conditions"
-    description: "Reaction conditions including solvent system, temperature, and specific additives (e.g., base, molecular sieves)."
+    description: "Reaction conditions including solvent system, temperature, and specific
+      additives (e.g., base, molecular sieves)."
     required: true
 model: "gpt-4o"
 modelParameters:
@@ -59,7 +64,8 @@ testData:
     expected: "I. Catalyst Activation & Substrate Pre-Organization"
   - vars:
       catalyst_structure: "1-(3,5-bis(trifluoromethyl)phenyl)-3-((1R,2R)-2-(dimethylamino)cyclohexyl)thiourea"
-      substrates: "O=C=NC1=CC=CC=C1 (Phenyl isocyanate), CC(C)(C)OC(=O)C(F)(F)F (Boc-protected imine)"
+      substrates: "O=C=NC1=CC=CC=C1 (Phenyl isocyanate), CC(C)(C)OC(=O)C(F)(F)F (Boc-protected
+        imine)"
       conditions: "T = 298 K, Toluene, 4A molecular sieves"
     expected: "III. Origin of Stereocontrol"
 evaluators:

@@ -1,7 +1,7 @@
----
 name: Distributed Lock Manager Architect
 version: 1.0.0
-description: Designs highly robust, fault-tolerant distributed lock management architectures to guarantee mutual exclusion and prevent split-brain scenarios.
+description: Designs highly robust, fault-tolerant distributed lock management 
+  architectures to guarantee mutual exclusion and prevent split-brain scenarios.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +13,21 @@ metadata:
     - lock-management
     - architecture
     - system-design
+    - skill
   requires_context: false
 variables:
   - name: scale_requirements
-    description: <xml>Details about expected scale, concurrent lock requests, and lock contention rates.</xml>
+    description: <xml>Details about expected scale, concurrent lock requests, 
+      and lock contention rates.</xml>
     required: true
   - name: consistency_tolerance
-    description: <xml>Requirements regarding strong vs eventual consistency, network partition handling (CAP theorem constraints).</xml>
+    description: <xml>Requirements regarding strong vs eventual consistency, 
+      network partition handling (CAP theorem constraints).</xml>
     required: true
   - name: infrastructure_environment
-    description: <xml>Deployment environment specifics (e.g., multi-region cloud, on-premise, mixed), available backing stores (e.g., Redis, ZooKeeper, etcd).</xml>
+    description: <xml>Deployment environment specifics (e.g., multi-region 
+      cloud, on-premise, mixed), available backing stores (e.g., Redis, 
+      ZooKeeper, etcd).</xml>
     required: true
 model: gpt-4o
 modelParameters:

@@ -1,12 +1,21 @@
----
 name: intergenerational_mobility_modeler
 version: "1.0.0"
-description: Models intergenerational social mobility using Markov chain matrices and calculates structural inequality indices from raw demographic data, enforcing American Sociological Association (ASA) standards.
+description: Models intergenerational social mobility using Markov chain 
+  matrices and calculates structural inequality indices from raw demographic 
+  data, enforcing American Sociological Association (ASA) standards.
 authors:
   - Sociological Sciences Genesis Architect
 metadata:
   domain: sociology/stratification
   complexity: high
+  tags:
+    - sociology
+    - stratification
+    - intergenerational
+    - mobility
+    - modeler
+    - skill
+  requires_context: false
 variables:
   - name: transition_data
     description: Demographic transition data for social mobility modeling.
@@ -41,8 +50,11 @@ messages:
       Provide the methodological breakdown, the formal transition matrix, the inequality indices with their LaTeX formulas, and an unvarnished sociological interpretation of the systemic mobility barriers and institutional isomorphism present in the data.
 testData:
   - inputs:
-      transition_data: "Lower to Lower: 0.65, Lower to Middle: 0.30, Lower to Upper: 0.05; Middle to Lower: 0.20, Middle to Middle: 0.60, Middle to Upper: 0.20; Upper to Lower: 0.05, Upper to Middle: 0.15, Upper to Upper: 0.80"
-      population_distribution: "Quintile 1 (Lowest): 4%, Quintile 2: 9%, Quintile 3: 15%, Quintile 4: 22%, Quintile 5 (Highest): 50%"
+      transition_data: "Lower to Lower: 0.65, Lower to Middle: 0.30, Lower to Upper:
+        0.05; Middle to Lower: 0.20, Middle to Middle: 0.60, Middle to Upper: 0.20;
+        Upper to Lower: 0.05, Upper to Middle: 0.15, Upper to Upper: 0.80"
+      population_distribution: "Quintile 1 (Lowest): 4%, Quintile 2: 9%, Quintile
+        3: 15%, Quintile 4: 22%, Quintile 5 (Highest): 50%"
     expected: "Gini coefficient"
 evaluators:
   - type: includes

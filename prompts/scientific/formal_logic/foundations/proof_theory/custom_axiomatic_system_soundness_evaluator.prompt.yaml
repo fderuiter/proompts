@@ -1,21 +1,36 @@
----
 name: custom_axiomatic_system_soundness_evaluator
 version: 1.0.0
-description: Systematically verifies the soundness of custom, user-defined axiomatic systems by rigorously evaluating whether every axiom is a logical validity and whether every inference rule strictly preserves truth under the provided formal semantics.
+description: Systematically verifies the soundness of custom, user-defined 
+  axiomatic systems by rigorously evaluating whether every axiom is a logical 
+  validity and whether every inference rule strictly preserves truth under the 
+  provided formal semantics.
 authors:
   - name: Formal Logic Genesis Architect
 metadata:
   domain: scientific/formal_logic/foundations/proof_theory
   complexity: high
+  tags:
+    - formal-logic
+    - foundations
+    - proof-theory
+    - custom
+    - axiomatic
+    - skill
+  requires_context: false
 variables:
   - name: axioms
-    description: The formal set of axioms or axiomatic schemas denoted as $\Sigma$, explicitly formulated using standard logical syntax.
+    description: The formal set of axioms or axiomatic schemas denoted as 
+      $\Sigma$, explicitly formulated using standard logical syntax.
     required: true
   - name: inference_rules
-    description: The set of deductive inference rules denoted as $\mathcal{R}$ (e.g., $\frac{\phi, \phi \rightarrow \psi}{\psi}$), defining the syntactic derivation ($\vdash$).
+    description: The set of deductive inference rules denoted as $\mathcal{R}$ 
+      (e.g., $\frac{\phi, \phi \rightarrow \psi}{\psi}$), defining the syntactic
+      derivation ($\vdash$).
     required: true
   - name: formal_semantics
-    description: The semantic structures, valid interpretations, and explicit truth conditions defining the satisfaction relation ($\vDash$) for the system's language.
+    description: The semantic structures, valid interpretations, and explicit 
+      truth conditions defining the satisfaction relation ($\vDash$) for the 
+      system's language.
     required: true
 model: claude-3-7-sonnet-20250219
 modelParameters:
@@ -60,7 +75,8 @@ testData:
   - inputs:
       axioms: 'A_1: \phi \rightarrow (\psi \rightarrow \phi)'
       inference_rules: 'Modus Ponens: \frac{\phi, \phi \rightarrow \psi}{\psi}'
-      formal_semantics: 'Standard classical propositional logic semantics with truth values \{0, 1\} and standard truth tables for \rightarrow.'
+      formal_semantics: 'Standard classical propositional logic semantics with truth
+        values \{0, 1\} and standard truth tables for \rightarrow.'
     variables: {}
   - inputs:
       axioms: 'A_1: \phi \rightarrow \psi'
@@ -72,5 +88,6 @@ evaluators:
     pattern: '\\vDash'
     target: message.content
   - type: regex
-    pattern: '(VERIFIED: The axiomatic system is SOUND|FAIL: The axiomatic system is UNSOUND)'
+    pattern: '(VERIFIED: The axiomatic system is SOUND|FAIL: The axiomatic system
+      is UNSOUND)'
     target: message.content

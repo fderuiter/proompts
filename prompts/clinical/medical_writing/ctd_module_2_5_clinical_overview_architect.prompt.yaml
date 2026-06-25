@@ -1,4 +1,3 @@
----
 name: CTD Module 2.5 Clinical Overview Architect
 version: 1.0.0
 description: >
@@ -16,6 +15,7 @@ metadata:
     - ctd
     - module-2.5
     - clinical-overview
+    - skill
   requires_context: true
 variables:
   - name: clinical_data_summary
@@ -86,14 +86,24 @@ messages:
       </clinical_data_summary>
 testData:
   - vars:
-      target_indication: "Treatment of moderate-to-severe plaque psoriasis in adult patients who are candidates for systemic therapy."
-      product_information: "XenoMab is a fully human IgG1 monoclonal antibody targeting IL-23. Administered via subcutaneous injection (100 mg) at Week 0, Week 4, and every 12 weeks thereafter."
-      clinical_data_summary: "Biopharmaceutics: Absolute bioavailability 75%. PK: Tmax 5 days, half-life 28 days. Efficacy: Two Phase 3 trials (N=1200). PASI 90 at Week 16 achieved in 75% of XenoMab patients vs 10% placebo (p<0.001). Safety: Most common AEs were upper respiratory tract infections (15%). No increased risk of major adverse cardiovascular events (MACE). Serious infections occurred in 1.2% of patients."
+      target_indication: "Treatment of moderate-to-severe plaque psoriasis in adult
+        patients who are candidates for systemic therapy."
+      product_information: "XenoMab is a fully human IgG1 monoclonal antibody targeting
+        IL-23. Administered via subcutaneous injection (100 mg) at Week 0, Week 4,
+        and every 12 weeks thereafter."
+      clinical_data_summary: "Biopharmaceutics: Absolute bioavailability 75%. PK:
+        Tmax 5 days, half-life 28 days. Efficacy: Two Phase 3 trials (N=1200). PASI
+        90 at Week 16 achieved in 75% of XenoMab patients vs 10% placebo (p<0.001).
+        Safety: Most common AEs were upper respiratory tract infections (15%). No
+        increased risk of major adverse cardiovascular events (MACE). Serious infections
+        occurred in 1.2% of patients."
     expected: "2.5.1 Product Development Rationale"
     evaluators:
       - name: CTD Structure Validation
         regex:
-          pattern: '(?s)2\.5\.1 Product Development Rationale.*2\.5\.2 Overview of Biopharmaceutics.*2\.5\.3 Overview of Clinical Pharmacology.*2\.5\.4 Overview of Efficacy.*2\.5\.5 Overview of Safety.*2\.5\.6 Benefits and Risks Conclusions'
+          pattern: '(?s)2\.5\.1 Product Development Rationale.*2\.5\.2 Overview of
+            Biopharmaceutics.*2\.5\.3 Overview of Clinical Pharmacology.*2\.5\.4 Overview
+            of Efficacy.*2\.5\.5 Overview of Safety.*2\.5\.6 Benefits and Risks Conclusions'
       - name: Efficacy Data Presence
         regex:
           pattern: '(?s)PASI 90.*75%.*10%.*p<0\.001'
@@ -109,5 +119,6 @@ testData:
     evaluators:
       - name: Refusal Mechanism Validation
         regex:
-          pattern: '\{"error": "unsafe", "reason": "Violation of regulatory drafting guidelines\."\}'
+          pattern: '\{"error": "unsafe", "reason": "Violation of regulatory drafting
+            guidelines\."\}'
 evaluators: []

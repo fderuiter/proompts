@@ -1,7 +1,7 @@
----
 name: Serverless Database Connection Pooling Architect
 version: "1.0.0"
-description: Designs highly resilient, scalable serverless database connection pooling architectures to prevent connection exhaustion.
+description: Designs highly resilient, scalable serverless database connection 
+  pooling architectures to prevent connection exhaustion.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,12 +13,15 @@ metadata:
     - database
     - connection-pooling
     - scalability
+    - skill
+  requires_context: true
 variables:
   - name: cloud_provider
     description: The target cloud provider (e.g., AWS, GCP, Azure).
     required: true
   - name: database_engine
-    description: The relational database engine (e.g., PostgreSQL, MySQL, Aurora).
+    description: The relational database engine (e.g., PostgreSQL, MySQL, 
+      Aurora).
     required: true
   - name: expected_concurrency
     description: Expected peak concurrent serverless function invocations.
@@ -65,13 +68,16 @@ testData:
       cloud_provider: "AWS"
       database_engine: "PostgreSQL"
       expected_concurrency: "10,000 AWS Lambda concurrent executions"
-      current_bottleneck: "Lambda bursts hit PostgreSQL max_connections limit, causing widespread 503 errors and transaction rollbacks during peak load."
+      current_bottleneck: "Lambda bursts hit PostgreSQL max_connections limit, causing
+        widespread 503 errors and transaction rollbacks during peak load."
     expected: "Amazon RDS Proxy"
   - vars:
       cloud_provider: "GCP"
       database_engine: "Cloud SQL for PostgreSQL"
       expected_concurrency: "5,000 Cloud Run instances"
-      current_bottleneck: "Cloud Run auto-scaling creates too many direct connections, exhausting primary instance resources and causing high latency during TLS handshakes."
+      current_bottleneck: "Cloud Run auto-scaling creates too many direct connections,
+        exhausting primary instance resources and causing high latency during TLS
+        handshakes."
     expected: "PgBouncer"
 evaluators:
   - name: Mentions caching or proxying

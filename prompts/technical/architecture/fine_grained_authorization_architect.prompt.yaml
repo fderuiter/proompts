@@ -1,7 +1,8 @@
----
 name: Fine-Grained Authorization Architect
 version: 1.0.0
-description: Designs highly scalable, low-latency, and distributed Fine-Grained Authorization (FGA) architectures using Relationship-Based Access Control (ReBAC) and Google Zanzibar principles.
+description: Designs highly scalable, low-latency, and distributed Fine-Grained 
+  Authorization (FGA) architectures using Relationship-Based Access Control 
+  (ReBAC) and Google Zanzibar principles.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -14,16 +15,23 @@ metadata:
     - rebac
     - zanzibar
     - system-design
+    - skill
   requires_context: false
 variables:
   - name: authorization_model
-    description: A comprehensive description of the underlying authorization requirements, resource hierarchies, and relationship definitions (e.g., owner, editor, viewer, parent-child inheritance).
+    description: A comprehensive description of the underlying authorization 
+      requirements, resource hierarchies, and relationship definitions (e.g., 
+      owner, editor, viewer, parent-child inheritance).
     required: true
   - name: traffic_profile
-    description: High-level overview of expected read/write throughput, latency SLA constraints for authorization checks, and geographical distribution of requests.
+    description: High-level overview of expected read/write throughput, latency 
+      SLA constraints for authorization checks, and geographical distribution of
+      requests.
     required: true
   - name: integration_ecosystem
-    description: Details regarding existing identity providers (IdP), microservices needing authorization enforcement, and data sources for relationship synchronization.
+    description: Details regarding existing identity providers (IdP), 
+      microservices needing authorization enforcement, and data sources for 
+      relationship synchronization.
     required: true
 model: gpt-4o
 modelParameters:
@@ -52,12 +60,17 @@ messages:
       {{integration_ecosystem}}
 testData:
   - vars:
-      authorization_model: "Multi-tenant B2B SaaS platform with nested organization units, team-based roles (admin, member), and resource-level permissions (document:read, document:write)."
-      traffic_profile: "10,000 Check API requests per second globally, 99th percentile latency must be under 15ms. Write volume is 50 requests per second."
-      integration_ecosystem: "Auth0 for Identity, 15 Go-based microservices, and a central PostgreSQL database holding current tenant hierarchies."
+      authorization_model: "Multi-tenant B2B SaaS platform with nested organization
+        units, team-based roles (admin, member), and resource-level permissions (document:read,
+        document:write)."
+      traffic_profile: "10,000 Check API requests per second globally, 99th percentile
+        latency must be under 15ms. Write volume is 50 requests per second."
+      integration_ecosystem: "Auth0 for Identity, 15 Go-based microservices, and a
+        central PostgreSQL database holding current tenant hierarchies."
     expected: "ReBAC"
   - vars:
-      authorization_model: "Simple monolithic RBAC model with 3 fixed roles (Admin, User, Guest) and no resource-level boundaries."
+      authorization_model: "Simple monolithic RBAC model with 3 fixed roles (Admin,
+        User, Guest) and no resource-level boundaries."
       traffic_profile: "10 requests per minute."
       integration_ecosystem: "Single Node.js backend using local JWT validation."
     expected: "ACL"

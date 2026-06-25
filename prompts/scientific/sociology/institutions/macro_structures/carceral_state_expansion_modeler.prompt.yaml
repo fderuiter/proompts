@@ -1,18 +1,31 @@
----
 name: carceral_state_expansion_modeler
 version: "1.0.0"
 description: >
-  Systematically models the systemic, demographic, and structural impacts of the carceral state and mass incarceration on social stratification, utilizing American Sociological Association (ASA) standards and rigorous inequality indices.
+  Systematically models the systemic, demographic, and structural impacts of the carceral
+  state and mass incarceration on social stratification, utilizing American Sociological
+  Association (ASA) standards and rigorous inequality indices.
 authors:
   - Sociological Sciences Genesis Architect
 metadata:
   domain: sociology/institutions/macro_structures
   complexity: high
+  tags:
+    - sociology
+    - institutions
+    - macro-structures
+    - carceral
+    - state
+    - skill
+  requires_context: true
 variables:
   - name: demographic_incarceration_data
-    description: Raw demographic and socioeconomic data outlining incarceration rates, recidivism, and targeted population distributions over a specified period.
+    description: Raw demographic and socioeconomic data outlining incarceration 
+      rates, recidivism, and targeted population distributions over a specified 
+      period.
   - name: systemic_institutional_context
-    description: The broader macro-structural context (e.g., specific legislation, policing strategies, sentencing guidelines) driving carceral expansion in the target field.
+    description: The broader macro-structural context (e.g., specific 
+      legislation, policing strategies, sentencing guidelines) driving carceral 
+      expansion in the target field.
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -42,17 +55,26 @@ messages:
       Provide a comprehensive macro-structural analysis. Output must include a rigorous methodological approach, the structural stratification model, application of relevant mathematical indices in LaTeX (e.g., Gini, Index of Dissimilarity), and a critical assessment of the institutional mechanisms perpetuating systemic inequality.
 testData:
   - inputs:
-      demographic_incarceration_data: "Incarceration rate per 100k: Group A (1,500), Group B (250). Post-release employment rate within 1 year: 35%. Intergenerational poverty likelihood increase: 40% for children of incarcerated parents."
-      systemic_institutional_context: "Implementation of mandatory minimum sentencing laws and targeted hyper-policing in predominantly Group A urban neighborhoods over a two-decade period."
+      demographic_incarceration_data: "Incarceration rate per 100k: Group A (1,500),
+        Group B (250). Post-release employment rate within 1 year: 35%. Intergenerational
+        poverty likelihood increase: 40% for children of incarcerated parents."
+      systemic_institutional_context: "Implementation of mandatory minimum sentencing
+        laws and targeted hyper-policing in predominantly Group A urban neighborhoods
+        over a two-decade period."
     expected: "\\$G ="
   - inputs:
-      demographic_incarceration_data: "Spatial mapping of parolee residences shows 80% concentration in 3 specific zip codes with median incomes 50% below the metropolitan average."
-      systemic_institutional_context: "Three-strikes laws combined with systemic disinvestment in public housing and community-based rehabilitation programs."
+      demographic_incarceration_data: "Spatial mapping of parolee residences shows
+        80% concentration in 3 specific zip codes with median incomes 50% below the
+        metropolitan average."
+      systemic_institutional_context: "Three-strikes laws combined with systemic disinvestment
+        in public housing and community-based rehabilitation programs."
     expected: "\\$D ="
 evaluators:
   - type: regex
     description: "Ensure the Gini coefficient LaTeX formula is present."
-    pattern: '\\$G = \\frac\{\\sum_\{i=1\}\^n \\sum_\{j=1\}\^n \|x_i - x_j\|\}\{2n\^2 \\mu\}\\$'
+    pattern: '\\$G = \\frac\{\\sum_\{i=1\}\^n \\sum_\{j=1\}\^n \|x_i - x_j\|\}\{2n\^2
+      \\mu\}\\$'
   - type: regex
     description: "Ensure the Index of Dissimilarity LaTeX formula is present."
-    pattern: '\\$D = \\frac\{1\}\{2\} \\sum_\{i=1\}\^\{n\} \\left\| \\frac\{a_i\}\{A\} - \\frac\{b_i\}\{B\} \\right\|\\$'
+    pattern: '\\$D = \\frac\{1\}\{2\} \\sum_\{i=1\}\^\{n\} \\left\| \\frac\{a_i\}\{A\}
+      - \\frac\{b_i\}\{B\} \\right\|\\$'

@@ -1,6 +1,7 @@
----
 name: Symplectic Integrator Hamiltonian Systems Architect
-description: Formulates structure-preserving numerical methods for long-term integration of complex Hamiltonian systems, ensuring energy and momentum conservation.
+description: Formulates structure-preserving numerical methods for long-term 
+  integration of complex Hamiltonian systems, ensuring energy and momentum 
+  conservation.
 version: 1.0.0
 authors:
   - Applied Mathematics Genesis Architect
@@ -12,13 +13,19 @@ metadata:
     - hamiltonian-mechanics
     - symplectic-methods
     - computational-physics
+    - skill
+  requires_context: false
 variables:
   - name: HAMILTONIAN_FUNCTION
-    description: The mathematical expression of the Hamiltonian $H(q, p)$, defining the kinetic and potential energy of the system.
+    description: The mathematical expression of the Hamiltonian $H(q, p)$, 
+      defining the kinetic and potential energy of the system.
   - name: TIME_DOMAIN_CONSTRAINTS
-    description: Specifications regarding the total integration time, required time step sizes, and frequency of solution output.
+    description: Specifications regarding the total integration time, required 
+      time step sizes, and frequency of solution output.
   - name: CONSERVATION_TOLERANCES
-    description: Strict numerical tolerances for the conservation of energy, phase-space volume, and other integrals of motion (e.g., angular momentum).
+    description: Strict numerical tolerances for the conservation of energy, 
+      phase-space volume, and other integrals of motion (e.g., angular 
+      momentum).
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -67,15 +74,24 @@ messages:
       </conservation_tolerances>
 testData:
   - inputs:
-      HAMILTONIAN_FUNCTION: "$H(q, p) = \\frac{1}{2m} p^2 + V(q)$, where $V(q) = \\epsilon \\left[ \\left( \\frac{\\sigma}{q} \\right)^{12} - 2 \\left( \\frac{\\sigma}{q} \\right)^6 \\right]$ is the Lennard-Jones potential for a multi-particle system."
-      TIME_DOMAIN_CONSTRAINTS: "Total simulated time $T = 10^6$ units, requiring discrete steps $\\Delta t \\sim 10^{-3}$ to capture fast vibrational modes."
-      CONSERVATION_TOLERANCES: "Relative energy drift $\\frac{|H(t) - H(0)|}{H(0)} < 10^{-5}$ over the entire integration period."
+      HAMILTONIAN_FUNCTION: "$H(q, p) = \\frac{1}{2m} p^2 + V(q)$, where $V(q) = \\
+        epsilon \\left[ \\left( \\frac{\\sigma}{q} \\right)^{12} - 2 \\left( \\frac{\\
+        sigma}{q} \\right)^6 \\right]$ is the Lennard-Jones potential for a multi-particle
+        system."
+      TIME_DOMAIN_CONSTRAINTS: "Total simulated time $T = 10^6$ units, requiring discrete
+        steps $\\Delta t \\sim 10^{-3}$ to capture fast vibrational modes."
+      CONSERVATION_TOLERANCES: "Relative energy drift $\\frac{|H(t) - H(0)|}{H(0)}
+        < 10^{-5}$ over the entire integration period."
     expected: |-
       Equations of Motion
   - inputs:
-      HAMILTONIAN_FUNCTION: "The general N-body problem Hamiltonian in 3D: $H(q, p) = \\sum_{i=1}^N \\frac{\\|p_i\\|^2}{2m_i} - G \\sum_{1 \\le i < j \\le N} \\frac{m_i m_j}{\\|q_i - q_j\\|}$"
-      TIME_DOMAIN_CONSTRAINTS: "Integration of the Solar System over 1 billion years; step sizes must adapt to planetary close encounters."
-      CONSERVATION_TOLERANCES: "Strict preservation of total angular momentum $L = \\sum q_i \\times p_i$ to machine precision."
+      HAMILTONIAN_FUNCTION: "The general N-body problem Hamiltonian in 3D: $H(q, p)
+        = \\sum_{i=1}^N \\frac{\\|p_i\\|^2}{2m_i} - G \\sum_{1 \\le i < j \\le N}
+        \\frac{m_i m_j}{\\|q_i - q_j\\|}$"
+      TIME_DOMAIN_CONSTRAINTS: "Integration of the Solar System over 1 billion years;
+        step sizes must adapt to planetary close encounters."
+      CONSERVATION_TOLERANCES: "Strict preservation of total angular momentum $L =
+        \\sum q_i \\times p_i$ to machine precision."
     expected: |-
       Geometric Properties & Proofs
 evaluators:

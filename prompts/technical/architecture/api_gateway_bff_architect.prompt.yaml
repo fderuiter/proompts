@@ -1,7 +1,7 @@
----
 name: API Gateway and BFF Architect
 version: 1.0.0
-description: Designs highly scalable, secure, and performant API Gateway and Backend-for-Frontend (BFF) architectures for microservices ecosystems.
+description: Designs highly scalable, secure, and performant API Gateway and 
+  Backend-for-Frontend (BFF) architectures for microservices ecosystems.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,16 +13,20 @@ metadata:
     - bff
     - microservices
     - system-design
+    - skill
   requires_context: false
 variables:
   - name: client_ecosystem
-    description: A description of the various client types consuming the APIs (e.g., mobile apps, single-page applications, third-party consumers).
+    description: A description of the various client types consuming the APIs 
+      (e.g., mobile apps, single-page applications, third-party consumers).
     required: true
   - name: backend_services
-    description: An overview of the microservices topology, their communication protocols, and any legacy systems involved.
+    description: An overview of the microservices topology, their communication 
+      protocols, and any legacy systems involved.
     required: true
   - name: non_functional_requirements
-    description: Key requirements such as latency, throughput, security, and high availability targets.
+    description: Key requirements such as latency, throughput, security, and 
+      high availability targets.
     required: true
 model: gpt-4o
 modelParameters:
@@ -51,9 +55,12 @@ messages:
       {{non_functional_requirements}}
 testData:
   - vars:
-      client_ecosystem: "iOS native app, Android native app, and a React-based SPA admin dashboard."
-      backend_services: "30+ microservices communicating via gRPC internally, and one legacy monolithic SOAP service for billing."
-      non_functional_requirements: "Target 99.99% availability, strict OIDC-based authentication, max 150ms latency for client edge requests, and DDoS protection."
+      client_ecosystem: "iOS native app, Android native app, and a React-based SPA
+        admin dashboard."
+      backend_services: "30+ microservices communicating via gRPC internally, and
+        one legacy monolithic SOAP service for billing."
+      non_functional_requirements: "Target 99.99% availability, strict OIDC-based
+        authentication, max 150ms latency for client edge requests, and DDoS protection."
     expected: "BFF"
 evaluators:
   - name: Acronym Check

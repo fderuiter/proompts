@@ -1,25 +1,38 @@
----
 name: "gwas_polygenic_risk_score_architect"
 version: "1.0.0"
-description: "Acts as a Principal Statistical Geneticist to design robust, mathematically rigorous Polygenic Risk Score (PRS) predictive models integrating GWAS summary statistics and linkage disequilibrium architecture."
+description: "Acts as a Principal Statistical Geneticist to design robust, mathematically
+  rigorous Polygenic Risk Score (PRS) predictive models integrating GWAS summary statistics
+  and linkage disequilibrium architecture."
 authors:
   - "Biological Sciences Genesis Architect"
 metadata:
   domain: "genetics/genomics"
   complexity: "high"
+  tags:
+    - genetics
+    - genomics
+    - gwas
+    - polygenic
+    - risk
+    - skill
+  requires_context: false
 variables:
   - name: "gwas_summary_statistics"
     type: "string"
-    description: "The input Genome-Wide Association Study (GWAS) summary statistics including effect sizes, standard errors, and p-values (e.g., PLINK or VCF format)."
+    description: "The input Genome-Wide Association Study (GWAS) summary statistics
+      including effect sizes, standard errors, and p-values (e.g., PLINK or VCF format)."
   - name: "linkage_disequilibrium_reference"
     type: "string"
-    description: "The reference panel used for modeling Linkage Disequilibrium (LD) structure (e.g., 1000 Genomes Project)."
+    description: "The reference panel used for modeling Linkage Disequilibrium (LD)
+      structure (e.g., 1000 Genomes Project)."
   - name: "target_phenotype"
     type: "string"
-    description: "The complex trait or disease architecture being modeled (e.g., Type 2 Diabetes, Schizophrenia)."
+    description: "The complex trait or disease architecture being modeled (e.g., Type
+      2 Diabetes, Schizophrenia)."
   - name: "statistical_methodology"
     type: "string"
-    description: "The algorithmic approach for PRS computation (e.g., LDpred2, PRS-CS, or Clumping and Thresholding)."
+    description: "The algorithmic approach for PRS computation (e.g., LDpred2, PRS-CS,
+      or Clumping and Thresholding)."
 model: "gpt-4o"
 modelParameters:
   temperature: 0.1

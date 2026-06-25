@@ -1,7 +1,8 @@
----
 name: Ephemeral Sandbox Ecosystem Architect
 version: 1.0.0
-description: Acts as a Staff Platform Engineer to design highly secure, isolated, and automated ephemeral sandbox ecosystems for safe integration testing and preview environments.
+description: Acts as a Staff Platform Engineer to design highly secure, 
+  isolated, and automated ephemeral sandbox ecosystems for safe integration 
+  testing and preview environments.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -13,16 +14,20 @@ metadata:
     - ephemeral
     - testing
     - platform-engineering
+    - skill
   requires_context: false
 variables:
   - name: target_workloads
-    description: A detailed description of the microservices, databases, and third-party integrations to be replicated in the sandbox.
+    description: A detailed description of the microservices, databases, and 
+      third-party integrations to be replicated in the sandbox.
     required: true
   - name: cloud_infrastructure
-    description: The underlying cloud provider and orchestrator (e.g., AWS EKS, GCP GKE) hosting the ephemeral environments.
+    description: The underlying cloud provider and orchestrator (e.g., AWS EKS, 
+      GCP GKE) hosting the ephemeral environments.
     required: true
   - name: isolation_constraints
-    description: Critical security, networking, and data sanitization requirements to ensure the sandbox is fully isolated from production.
+    description: Critical security, networking, and data sanitization 
+      requirements to ensure the sandbox is fully isolated from production.
     required: true
 model: gpt-4o
 modelParameters:
@@ -53,9 +58,11 @@ messages:
       {{isolation_constraints}}
 testData:
   - vars:
-      target_workloads: "A monolithic legacy API and 15 event-driven microservices relying on PostgreSQL and Kafka."
+      target_workloads: "A monolithic legacy API and 15 event-driven microservices
+        relying on PostgreSQL and Kafka."
       cloud_infrastructure: "AWS EKS with ArgoCD for deployment."
-      isolation_constraints: "Strict namespace-level isolation, zero access to production IAM roles, and automated teardown after 4 hours of inactivity."
+      isolation_constraints: "Strict namespace-level isolation, zero access to production
+        IAM roles, and automated teardown after 4 hours of inactivity."
     expected: "NetworkPolicies"
 evaluators:
   - name: Terminology Check

@@ -1,7 +1,7 @@
----
 name: SaMD AI/ML PCCP Architect
 version: 1.0.0
-description: Design rigorous Predetermined Change Control Plans (PCCP) for AI/ML-enabled Software as a Medical Device (SaMD) aligned with FDA guidance.
+description: Design rigorous Predetermined Change Control Plans (PCCP) for 
+  AI/ML-enabled Software as a Medical Device (SaMD) aligned with FDA guidance.
 metadata:
   domain: regulatory
   complexity: high
@@ -12,16 +12,20 @@ metadata:
     - change-control
     - fda
     - software
+    - skill
   requires_context: false
 variables:
   - name: device_description
-    description: Detailed description of the SaMD, its intended use, and core AI/ML functionalities.
+    description: Detailed description of the SaMD, its intended use, and core 
+      AI/ML functionalities.
     required: true
   - name: proposed_modifications
-    description: Scope of anticipated post-market modifications to the AI/ML model (e.g., performance improvements, new data inputs).
+    description: Scope of anticipated post-market modifications to the AI/ML 
+      model (e.g., performance improvements, new data inputs).
     required: true
   - name: algorithm_architecture
-    description: Brief overview of the AI/ML algorithm (e.g., Deep Learning, CNN, Random Forest) and its training methodology.
+    description: Brief overview of the AI/ML algorithm (e.g., Deep Learning, 
+      CNN, Random Forest) and its training methodology.
     required: true
 model: gpt-4o
 modelParameters:
@@ -77,14 +81,24 @@ messages:
       Ensure the output strictly adheres to the required structure and FDA constraints.
 testData:
   - inputs:
-      device_description: "A cloud-based SaMD that analyzes adult chest X-rays to detect the presence of pulmonary nodules."
-      proposed_modifications: "Periodic retraining of the algorithm using newly acquired, site-specific chest X-ray images to improve sensitivity and reduce false positive rates across diverse demographic populations. No new disease states will be added."
-      algorithm_architecture: "A Convolutional Neural Network (CNN) based on a ResNet-50 architecture, pre-trained on ImageNet and fine-tuned on a proprietary dataset of annotated chest X-rays."
+      device_description: "A cloud-based SaMD that analyzes adult chest X-rays to
+        detect the presence of pulmonary nodules."
+      proposed_modifications: "Periodic retraining of the algorithm using newly acquired,
+        site-specific chest X-ray images to improve sensitivity and reduce false positive
+        rates across diverse demographic populations. No new disease states will be
+        added."
+      algorithm_architecture: "A Convolutional Neural Network (CNN) based on a ResNet-50
+        architecture, pre-trained on ImageNet and fine-tuned on a proprietary dataset
+        of annotated chest X-rays."
     expected: "# Predetermined Change Control Plan"
   - inputs:
-      device_description: "A mobile application intended to measure and track user heart rate variability (HRV) using the smartphone camera for general wellness."
-      proposed_modifications: "Continuous, online learning where the model updates its weights on the user's phone in real-time based on single unverified readings to 'personalize' the output."
-      algorithm_architecture: "A simple Long Short-Term Memory (LSTM) network processing the photoplethysmogram (PPG) signal extracted from video frames."
+      device_description: "A mobile application intended to measure and track user
+        heart rate variability (HRV) using the smartphone camera for general wellness."
+      proposed_modifications: "Continuous, online learning where the model updates
+        its weights on the user's phone in real-time based on single unverified readings
+        to 'personalize' the output."
+      algorithm_architecture: "A simple Long Short-Term Memory (LSTM) network processing
+        the photoplethysmogram (PPG) signal extracted from video frames."
     expected: "Impact Assessment"
 evaluators:
   - name: FDA Pillar Check - Modifications

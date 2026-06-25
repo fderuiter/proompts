@@ -1,7 +1,8 @@
----
 name: physics_informed_neural_network_architect
 version: 1.0.0
-description: Designs robust Physics-Informed Neural Network (PINN) architectures for solving complex nonlinear Partial Differential Equations (PDEs), ensuring physical constraint enforcement and numerical stability.
+description: Designs robust Physics-Informed Neural Network (PINN) architectures
+  for solving complex nonlinear Partial Differential Equations (PDEs), ensuring 
+  physical constraint enforcement and numerical stability.
 authors:
   - Jules
 metadata:
@@ -13,16 +14,21 @@ metadata:
     - pde
     - pinn
     - computational_science
+    - skill
+  requires_context: false
 variables:
   - name: pde_system
     type: string
-    description: The system of partial differential equations (PDEs) in LaTeX format.
+    description: The system of partial differential equations (PDEs) in LaTeX 
+      format.
   - name: boundary_conditions
     type: string
-    description: Description of the initial and boundary conditions (Dirichlet, Neumann, Robin) and domain geometry.
+    description: Description of the initial and boundary conditions (Dirichlet, 
+      Neumann, Robin) and domain geometry.
   - name: problem_type
     type: string
-    description: Whether the problem is a forward problem (solving the PDE) or an inverse problem (parameter discovery).
+    description: Whether the problem is a forward problem (solving the PDE) or 
+      an inverse problem (parameter discovery).
 model: gpt-4o
 modelParameters:
   temperature: 0.1
@@ -63,8 +69,10 @@ messages:
       {{problem_type}}
       </problem_type>
 testData:
-  - pde_system: "\\frac{\\partial u}{\\partial t} + u \\frac{\\partial u}{\\partial x} = \\nu \\frac{\\partial^2 u}{\\partial x^2}"
-    boundary_conditions: "x \\in [-1, 1], t \\in [0, 1]. u(t, -1) = u(t, 1) = 0. u(0, x) = -\\sin(\\pi x)."
+  - pde_system: "\\frac{\\partial u}{\\partial t} + u \\frac{\\partial u}{\\partial
+      x} = \\nu \\frac{\\partial^2 u}{\\partial x^2}"
+    boundary_conditions: "x \\in [-1, 1], t \\in [0, 1]. u(t, -1) = u(t, 1) = 0. u(0,
+      x) = -\\sin(\\pi x)."
     problem_type: "forward problem"
     evaluators:
       - type: includes

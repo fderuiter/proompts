@@ -5,38 +5,39 @@ metadata:
   domain: clinical
   complexity: low
   tags:
-  - data-management
-  - clinical
-  - etl
-  - transformation
+    - data-management
+    - clinical
+    - etl
+    - transformation
+    - skill
   requires_context: false
 variables:
-- name: etl_mapping_spec
-  description: The etl mapping spec to use for this prompt
-  required: true
+  - name: etl_mapping_spec
+    description: The etl mapping spec to use for this prompt
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: 'You are a quality engineer establishing validation checks for clinical
-    ETL
+  - role: system
+    content: 'You are a quality engineer establishing validation checks for clinical
+      ETL
 
-    transformations.
+      transformations.
 
-    '
-- role: user
-  content: 'Here is the ETL mapping specification:
+      '
+  - role: user
+    content: 'Here is the ETL mapping specification:
 
-    {{etl_mapping_spec}}
+      {{etl_mapping_spec}}
 
 
-    Based on this specification, define a comprehensive set of quality checks for
-    the clinical ETL transformations.'
+      Based on this specification, define a comprehensive set of quality checks for
+      the clinical ETL transformations.'
 testData:
-- expected: Mentions range validations and format consistency.
-  vars: List QC checks for transforming lab results data.
+  - expected: Mentions range validations and format consistency.
+    vars: List QC checks for transforming lab results data.
 evaluators:
-- name: Output mentions validation
-  string:
-    contains: validation
+  - name: Output mentions validation
+    string:
+      contains: validation

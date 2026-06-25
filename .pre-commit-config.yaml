@@ -41,3 +41,9 @@ repos:
         language: system
         files: ^prompts/
         pass_filenames: false
+metadata:
+  domain: general
+  complexity: low
+  tags:
+    - skill
+  requires_context: false

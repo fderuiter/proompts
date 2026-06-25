@@ -1,10 +1,10 @@
----
 name: Cross-Chain Interoperability Bridge Architect
 version: "1.0.0"
 authors:
   - Strategic Genesis Architect
 description: >
-  Expert-level prompt to architect secure, decentralized cross-chain interoperability bridges,
+  Expert-level prompt to architect secure, decentralized cross-chain interoperability
+  bridges,
   addressing lock/mint mechanisms, relayer networks, and oracle-based validation.
 metadata:
   domain: technical/architecture
@@ -15,15 +15,20 @@ metadata:
     - cross-chain
     - interoperability
     - defi
+    - skill
+  requires_context: false
 variables:
   - name: source_and_target_chains
-    description: "The specific blockchain networks involved (e.g., Ethereum Mainnet to Solana, EVM to non-EVM)."
+    description: "The specific blockchain networks involved (e.g., Ethereum Mainnet
+      to Solana, EVM to non-EVM)."
     required: true
   - name: asset_type_and_volume
-    description: "The type of assets being bridged (e.g., ERC-20, NFTs, native tokens) and expected daily transaction volume."
+    description: "The type of assets being bridged (e.g., ERC-20, NFTs, native tokens)
+      and expected daily transaction volume."
     required: true
   - name: security_assumptions
-    description: "The required trust model and security assumptions (e.g., trustless, multi-sig federation, optimistic verification)."
+    description: "The required trust model and security assumptions (e.g., trustless,
+      multi-sig federation, optimistic verification)."
     required: true
 model: gpt-4o
 modelParameters:
@@ -62,18 +67,23 @@ messages:
 testData:
   - vars:
       source_and_target_chains: "Ethereum Mainnet to Arbitrum One (L1 to L2)."
-      asset_type_and_volume: "High volume of USDC and native ETH. Expected volume >$50M/day."
-      security_assumptions: "Trust-minimized, leveraging native L2 rollup messaging for ultimate security, accepting longer withdrawal times if necessary."
+      asset_type_and_volume: "High volume of USDC and native ETH. Expected volume
+        >$50M/day."
+      security_assumptions: "Trust-minimized, leveraging native L2 rollup messaging
+        for ultimate security, accepting longer withdrawal times if necessary."
     expected: "optimistic"
   - vars:
       source_and_target_chains: "Ethereum to Solana (EVM to non-EVM)."
       asset_type_and_volume: "ERC-20 governance tokens. Medium volume."
-      security_assumptions: "Federated multi-sig with a decentralized relayer network. Fast finality required."
+      security_assumptions: "Federated multi-sig with a decentralized relayer network.
+        Fast finality required."
     expected: "multi-sig"
 evaluators:
   - name: Mechanism Check
-    python: "'lock' in output.lower() or 'mint' in output.lower() or 'liquidity' in output.lower()"
+    python: "'lock' in output.lower() or 'mint' in output.lower() or 'liquidity' in
+      output.lower()"
   - name: Security Mechanism Check
-    python: "'invariant' in output.lower() or 'oracle' in output.lower() or 'relayer' in output.lower() or 'collusion' in output.lower()"
+    python: "'invariant' in output.lower() or 'oracle' in output.lower() or 'relayer'
+      in output.lower() or 'collusion' in output.lower()"
   - name: Cross-Chain Mention
     python: "'cross-chain' in output.lower() or 'bridge' in output.lower()"

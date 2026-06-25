@@ -5,62 +5,63 @@ metadata:
   domain: clinical
   complexity: medium
   tags:
-  - forms
-  - electronic
-  - data
-  - capture
-  - implementation
+    - forms
+    - electronic
+    - data
+    - capture
+    - implementation
+    - skill
   requires_context: false
 variables:
-- name: dcp
-  description: The dcp to use for this prompt
-  required: true
-- name: dmp
-  description: 'Data Clean Plan (DCP): `{{dcp}}`'
-  required: true
-- name: protocol
-  description: 'Data Management Plan (DMP): `{{dmp}}`'
-  required: true
+  - name: dcp
+    description: The dcp to use for this prompt
+    required: true
+  - name: dmp
+    description: 'Data Clean Plan (DCP): `{{dcp}}`'
+    required: true
+  - name: protocol
+    description: 'Data Management Plan (DMP): `{{dmp}}`'
+    required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.2
 messages:
-- role: system
-  content: You are an EDC Developer. Design electronic Case Report Forms (eCRFs) with
-    built-in edit checks, branching logic, and automatic data generation. Adhere to
-    21 CFR Part 11 and CDISC CDASH.
-- role: user
-  content: 'Create an eCRF template for the protocol that includes automated logic
-    for site identifiers and field-level edit checks to minimize data entry discrepancies.
+  - role: system
+    content: You are an EDC Developer. Design electronic Case Report Forms 
+      (eCRFs) with built-in edit checks, branching logic, and automatic data 
+      generation. Adhere to 21 CFR Part 11 and CDISC CDASH.
+  - role: user
+    content: 'Create an eCRF template for the protocol that includes automated logic
+      for site identifiers and field-level edit checks to minimize data entry discrepancies.
 
 
-    Inputs:
+      Inputs:
 
-    - Clinical Protocol: `{{protocol}}`
+      - Clinical Protocol: `{{protocol}}`
 
-    - Data Management Plan (DMP): `{{dmp}}`
+      - Data Management Plan (DMP): `{{dmp}}`
 
-    - Data Clean Plan (DCP): `{{dcp}}`
+      - Data Clean Plan (DCP): `{{dcp}}`
 
 
-    Output format:
+      Output format:
 
-    Markdown eCRF Specification (Field | Type | Logic/Check).'
+      Markdown eCRF Specification (Field | Type | Logic/Check).'
 testData:
-- expected: '| Field | Type | Logic/Check |
+  - expected: '| Field | Type | Logic/Check |
 
-    '
-  vars: 'protocol: "Collect Systolic BP. Range 80-200."
+      '
+    vars: 'protocol: "Collect Systolic BP. Range 80-200."
 
-    dmp: "Standard checks apply."
+      dmp: "Standard checks apply."
 
-    dcp: "Query if out of range."
+      dcp: "Query if out of range."
 
-    '
+      '
 evaluators:
-- name: Spec Table
-  string:
-    contains: '| Field |'
-- name: Edit Check
-  string:
-    contains: Range
+  - name: Spec Table
+    string:
+      contains: '| Field |'
+  - name: Edit Check
+    string:
+      contains: Range

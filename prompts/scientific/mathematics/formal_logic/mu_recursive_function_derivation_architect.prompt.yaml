@@ -1,15 +1,24 @@
----
 name: mu_recursive_function_derivation_architect
 version: 1.0.0
-description: Systematically derives formal definitions for computable functions using the strict syntax of mu-recursive (partial recursive) functions.
+description: Systematically derives formal definitions for computable functions 
+  using the strict syntax of mu-recursive (partial recursive) functions.
 authors:
   - Formal Logic Genesis Architect
 metadata:
   domain: scientific/mathematics/formal_logic
   complexity: high
+  tags:
+    - mathematics
+    - formal-logic
+    - recursive
+    - function
+    - derivation
+    - skill
+  requires_context: false
 variables:
   - name: function_description
-    description: The informal mathematical description or target computable function to be rigorously formalized into mu-recursive functions.
+    description: The informal mathematical description or target computable 
+      function to be rigorously formalized into mu-recursive functions.
 model: "gpt-4o"
 modelParameters:
   temperature: 0.1
@@ -38,12 +47,15 @@ testData:
       function_description: 'Addition of two natural numbers, f(x, y) = x + y'
     expected: 'primitive recursion'
   - inputs:
-      function_description: 'The partially computable function f(x) that is undefined everywhere.'
+      function_description: 'The partially computable function f(x) that is undefined
+        everywhere.'
     expected: '\mu'
 evaluators:
   - type: contains
-    description: 'Ensures the output evaluates composition or recursion structures using \mu operator.'
+    description: 'Ensures the output evaluates composition or recursion structures
+      using \mu operator.'
     value: '\mu'
   - type: contains
-    description: 'Ensures the formalization uses basic projection functions or basic axioms.'
+    description: 'Ensures the formalization uses basic projection functions or basic
+      axioms.'
     value: 'P_'

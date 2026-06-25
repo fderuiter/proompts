@@ -1,7 +1,8 @@
----
 name: Semantic Caching AI Gateway Architect
 version: 1.0.0
-description: Designs highly scalable AI Gateway architectures featuring advanced semantic caching, context-aware routing, and embedding-based hit/miss evaluation for Large Language Model (LLM) infrastructures.
+description: Designs highly scalable AI Gateway architectures featuring advanced
+  semantic caching, context-aware routing, and embedding-based hit/miss 
+  evaluation for Large Language Model (LLM) infrastructures.
 authors:
   - name: Strategic Genesis Architect
 metadata:
@@ -13,16 +14,20 @@ metadata:
     - llm
     - vector-database
     - architecture
+    - skill
   requires_context: false
 variables:
   - name: traffic_scale
-    description: Details about the requests per second, peak concurrency, and latency constraints.
+    description: Details about the requests per second, peak concurrency, and 
+      latency constraints.
     required: true
   - name: embedding_models
-    description: The embedding models used for query vectorization and their latency/cost implications.
+    description: The embedding models used for query vectorization and their 
+      latency/cost implications.
     required: true
   - name: cache_hit_heuristics
-    description: The parameters for determining semantic similarity (e.g., cosine similarity thresholds, context matching rules).
+    description: The parameters for determining semantic similarity (e.g., 
+      cosine similarity thresholds, context matching rules).
     required: true
 model: gpt-4o
 modelParameters:
@@ -57,7 +62,8 @@ messages:
       <user_query>{{cache_hit_heuristics}}</user_query>
 testData:
   - inputs:
-      traffic_scale: "10,000 requests per second with strict 200ms latency SLA for cache hits."
+      traffic_scale: "10,000 requests per second with strict 200ms latency SLA for
+        cache hits."
       embedding_models: "Fast text-embedding-3-small (latency ~50ms), RedisVL backend."
       cache_hit_heuristics: "Cosine similarity >= 0.95, strict tenant isolation."
     expected: "exact-match fast path|vector database sharding"
@@ -69,4 +75,5 @@ testData:
 evaluators:
   - name: Expert Terminology Check
     type: regex
-    pattern: '(?i)(semantic similarity clustering|cosine distance|vector database sharding|exact-match fast path|stale-while-revalidate|error)'
+    pattern: '(?i)(semantic similarity clustering|cosine distance|vector database
+      sharding|exact-match fast path|stale-while-revalidate|error)'

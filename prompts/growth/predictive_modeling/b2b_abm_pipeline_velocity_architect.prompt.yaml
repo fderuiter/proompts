@@ -1,24 +1,36 @@
----
 name: b2b_abm_pipeline_velocity_architect
 version: 1.0.0
-description: Synthesizes B2B Account-Based Marketing (ABM) engagement telemetry into predictive pipeline velocity models to systematically accelerate enterprise deal cycles.
+description: Synthesizes B2B Account-Based Marketing (ABM) engagement telemetry 
+  into predictive pipeline velocity models to systematically accelerate 
+  enterprise deal cycles.
 authors:
   - Growth Strategy Genesis Architect
 metadata:
   domain: growth/predictive_modeling
   complexity: high
+  tags:
+    - predictive-modeling
+    - b2b
+    - abm
+    - pipeline
+    - velocity
+    - skill
+  requires_context: true
 variables:
   - name: abm_engagement_telemetry
-    description: Intent signals and multi-threading engagement metrics across target enterprise accounts.
+    description: Intent signals and multi-threading engagement metrics across 
+      target enterprise accounts.
     type: string
   - name: opportunity_stage_durations
-    description: Historical time spent in each sales cycle stage per account tier.
+    description: Historical time spent in each sales cycle stage per account 
+      tier.
     type: string
   - name: historical_win_rates
     description: Baseline conversion rates from initial SQL to Closed Won.
     type: string
   - name: deal_size_distribution
-    description: Distribution of Average Contract Value (ACV) across targeted accounts.
+    description: Distribution of Average Contract Value (ACV) across targeted 
+      accounts.
     type: string
 model: gpt-4o
 modelParameters:
@@ -59,7 +71,8 @@ messages:
       </deal_size_distribution>
 testData:
   - variables:
-      abm_engagement_telemetry: "High single-thread engagement (VP level only) across 50 Tier-1 accounts. Zero technical buyer engagement."
+      abm_engagement_telemetry: "High single-thread engagement (VP level only) across
+        50 Tier-1 accounts. Zero technical buyer engagement."
       opportunity_stage_durations: "Average 120 days in 'Technical Validation' stage."
       historical_win_rates: "18% from SQL to Closed Won."
       deal_size_distribution: "Average Contract Value (ACV): $150k."

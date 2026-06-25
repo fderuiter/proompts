@@ -1,7 +1,9 @@
----
 name: affective_polarization_contagion_mapper
 version: 1.0.0
-description: A highly robust, expert-level prompt designed to computationally model the automated propagation of affective polarization and out-group hostility across massive population networks using epidemiological and multi-modal data proxies.
+description: A highly robust, expert-level prompt designed to computationally 
+  model the automated propagation of affective polarization and out-group 
+  hostility across massive population networks using epidemiological and 
+  multi-modal data proxies.
 authors:
   - Population Behavioral Sciences Genesis Architect
 metadata:
@@ -13,16 +15,23 @@ metadata:
     - affective polarization
     - public health
     - mass behavior
+    - skill
   requires_context: true
 variables:
   - name: multimodal_data_schema
-    description: The JSON/CSV schema representing millions of rows of massive population multi-modal data proxies (e.g., social media linguistic markers, geolocation sentiment density, media consumption records).
+    description: The JSON/CSV schema representing millions of rows of massive 
+      population multi-modal data proxies (e.g., social media linguistic 
+      markers, geolocation sentiment density, media consumption records).
     required: true
-    default: 'node_id: string, timestamp: string, outgroup_hostility_index: float, echo_chamber_isolation_score: float'
+    default: 'node_id: string, timestamp: string, outgroup_hostility_index: float,
+      echo_chamber_isolation_score: float'
   - name: algorithmic_contagion_parameters
-    description: Parameters defining the automated algorithmic acceleration and epidemiological transmission dynamics of out-group hostility within the population network.
+    description: Parameters defining the automated algorithmic acceleration and 
+      epidemiological transmission dynamics of out-group hostility within the 
+      population network.
     required: true
-    default: 'algorithmic_acceleration_factor: 1.45, baseline_transmission_rate: 0.18, network_density: 0.62'
+    default: 'algorithmic_acceleration_factor: 1.45, baseline_transmission_rate: 0.18,
+      network_density: 0.62'
 model: claude-3-opus-20240229
 modelParameters:
   temperature: 0.1
@@ -53,9 +62,12 @@ messages:
       Provide the resulting mathematically rigorous model projection, including predictive trajectories, necessary epidemiological network equations in LaTeX, and strict compliance to the big data ingestion schema.
 testData:
   - inputs:
-      multimodal_data_schema: "node_id: string, sentiment_valence: float, political_homophily: float"
-      algorithmic_contagion_parameters: "algorithmic_acceleration_factor: 1.5, baseline_transmission_rate: 0.2, network_density: 0.7"
+      multimodal_data_schema: "node_id: string, sentiment_valence: float, political_homophily:
+        float"
+      algorithmic_contagion_parameters: "algorithmic_acceleration_factor: 1.5, baseline_transmission_rate:
+        0.2, network_density: 0.7"
     expected: "R_0"
 evaluators:
   - rule: "Output must contain mathematical equations formatted in LaTeX."
-  - rule: "Output must adhere strictly to WHO and APA macro-level epidemiological standards."
+  - rule: "Output must adhere strictly to WHO and APA macro-level epidemiological
+      standards."

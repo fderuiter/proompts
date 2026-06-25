@@ -1,7 +1,7 @@
----
 name: Real-Time Stream Processing Architect
 version: 1.0.0
-description: Designs highly scalable, fault-tolerant real-time data streaming and processing architectures.
+description: Designs highly scalable, fault-tolerant real-time data streaming 
+  and processing architectures.
 authors:
   - Strategic Genesis Architect
 metadata:
@@ -14,10 +14,12 @@ metadata:
     - kafka
     - flink
     - data-engineering
+    - skill
   requires_context: false
 variables:
   - name: streaming_requirements
-    description: The specific business requirements, data volume, velocity, and latency constraints for the streaming pipeline.
+    description: The specific business requirements, data volume, velocity, and 
+      latency constraints for the streaming pipeline.
     required: true
 model: gpt-4o
 modelParameters:
@@ -45,7 +47,10 @@ messages:
       </input>
 testData:
   - vars:
-      streaming_requirements: "We need to process 500,000 telemetry events per second from IoT devices globally. Latency from ingestion to real-time dashboard updates must be under 200ms. The system must support complex windowed aggregations for anomaly detection and ensure exactly-once processing semantics."
+      streaming_requirements: "We need to process 500,000 telemetry events per second
+        from IoT devices globally. Latency from ingestion to real-time dashboard updates
+        must be under 200ms. The system must support complex windowed aggregations
+        for anomaly detection and ensure exactly-once processing semantics."
     expected: "Apache Flink"
 evaluators:
   - name: Architecture Completeness

@@ -1,7 +1,9 @@
----
 name: OT/SCADA Security Resilience Architect
 version: 1.0.0
-description: Engineers robust zero-trust security architectures tailored for Operational Technology (OT) and Supervisory Control and Data Acquisition (SCADA) systems, addressing critical infrastructure vulnerabilities without jeopardizing uptime or deterministic real-time constraints.
+description: Engineers robust zero-trust security architectures tailored for 
+  Operational Technology (OT) and Supervisory Control and Data Acquisition 
+  (SCADA) systems, addressing critical infrastructure vulnerabilities without 
+  jeopardizing uptime or deterministic real-time constraints.
 authors:
   - name: Cybersecurity Genesis Architect
 metadata:
@@ -13,13 +15,19 @@ metadata:
     - ot
     - scada
     - critical-infrastructure
+    - skill
   requires_context: true
 variables:
   - name: industrial_control_environment
-    description: Detailed description of the OT/SCADA environment, including PLCs, RTUs, HMI interfaces, industrial protocols in use (e.g., Modbus TCP, DNP3, CIP), and the Purdue Enterprise Reference Architecture level integrations.
+    description: Detailed description of the OT/SCADA environment, including 
+      PLCs, RTUs, HMI interfaces, industrial protocols in use (e.g., Modbus TCP,
+      DNP3, CIP), and the Purdue Enterprise Reference Architecture level 
+      integrations.
     required: true
   - name: operational_constraints
-    description: The real-time processing requirements, acceptable downtime windows, legacy equipment limitations, and safety-critical functions that must not be interrupted.
+    description: The real-time processing requirements, acceptable downtime 
+      windows, legacy equipment limitations, and safety-critical functions that 
+      must not be interrupted.
     required: true
 model: gpt-4o
 modelParameters:
@@ -51,9 +59,16 @@ messages:
       </operational_constraints>
 testData:
   - inputs:
-      industrial_control_environment: "A water purification plant using legacy Siemens S7 PLCs communicating over unauthenticated S7Comm protocol to a Windows 7 based HMI at Level 2. The corporate IT network (Level 4) occasionally pulls historian data via a direct SQL connection."
-      operational_constraints: "The plant must maintain continuous water pressure. PLCs cannot be patched or replaced. Maximum allowable network latency is 10ms. Uptime requirement is 99.999%."
-    expected: "Contains an IDMZ architecture blocking direct SQL, implementation of read-only data diodes for historian replication, passive S7Comm DPI for anomaly detection, and compensating controls for Windows 7 HMIs."
+      industrial_control_environment: "A water purification plant using legacy Siemens
+        S7 PLCs communicating over unauthenticated S7Comm protocol to a Windows 7
+        based HMI at Level 2. The corporate IT network (Level 4) occasionally pulls
+        historian data via a direct SQL connection."
+      operational_constraints: "The plant must maintain continuous water pressure.
+        PLCs cannot be patched or replaced. Maximum allowable network latency is 10ms.
+        Uptime requirement is 99.999%."
+    expected: "Contains an IDMZ architecture blocking direct SQL, implementation of
+      read-only data diodes for historian replication, passive S7Comm DPI for anomaly
+      detection, and compensating controls for Windows 7 HMIs."
 evaluators:
   - name: Purdue Segmentation Included
     regex:

@@ -1,7 +1,8 @@
----
 name: BRST Quantization and Faddeev-Popov Ghost Architect
 version: 1.0.0
-description: Formulates the rigorous BRST quantization of gauge theories, extracting the complete effective Lagrangian including Faddeev-Popov ghost terms and gauge-fixing structures.
+description: Formulates the rigorous BRST quantization of gauge theories, 
+  extracting the complete effective Lagrangian including Faddeev-Popov ghost 
+  terms and gauge-fixing structures.
 authors:
   - name: Theoretical Physics Genesis Architect
 metadata:
@@ -13,16 +14,19 @@ metadata:
     - gauge-theory
     - brst-symmetry
     - faddeev-popov
+    - skill
   requires_context: false
 variables:
   - name: classical_action
-    description: The explicit mathematical form of the classical gauge-invariant action.
+    description: The explicit mathematical form of the classical gauge-invariant
+      action.
     required: true
   - name: gauge_transformation
     description: The infinitesimal gauge transformations of the fields involved.
     required: true
   - name: gauge_fixing_condition
-    description: The specific functional form of the gauge-fixing condition (e.g., Lorentz gauge, $R_\\xi$ gauge).
+    description: The specific functional form of the gauge-fixing condition 
+      (e.g., Lorentz gauge, $R_\\xi$ gauge).
     required: true
 model: gpt-4o
 modelParameters:
@@ -56,13 +60,17 @@ messages:
       <user_query>{{gauge_fixing_condition}}</user_query>
 testData:
   - inputs:
-      classical_action: "S = -\\frac{1}{4} \\int d^4x F_{\\mu\\nu}^a F^{\\mu\\nu, a}"
-      gauge_transformation: "\\delta A_\\mu^a = \\partial_\\mu \\alpha^a + g f^{abc} A_\\mu^b \\alpha^c"
+      classical_action: "S = -\\frac{1}{4} \\int d^4x F_{\\mu\\nu}^a F^{\\mu\\nu,
+        a}"
+      gauge_transformation: "\\delta A_\\mu^a = \\partial_\\mu \\alpha^a + g f^{abc}
+        A_\\mu^b \\alpha^c"
       gauge_fixing_condition: "G^a[A] = \\partial^\\mu A_\\mu^a"
     expected: "s \\bar{c}^a = B^a"
   - inputs:
-      classical_action: "S = \\int d^4x \\left( -\\frac{1}{4} F_{\\mu\\nu} F^{\\mu\\nu} + |D_\\mu \\phi|^2 - V(\\phi) \\right)"
-      gauge_transformation: "\\delta A_\\mu = \\partial_\\mu \\alpha, \\quad \\delta \\phi = i e \\alpha \\phi"
+      classical_action: "S = \\int d^4x \\left( -\\frac{1}{4} F_{\\mu\\nu} F^{\\mu\\
+        nu} + |D_\\mu \\phi|^2 - V(\\phi) \\right)"
+      gauge_transformation: "\\delta A_\\mu = \\partial_\\mu \\alpha, \\quad \\delta
+        \\phi = i e \\alpha \\phi"
       gauge_fixing_condition: "G = \\partial^\\mu A_\\mu"
     expected: "s c = 0"
 evaluators:

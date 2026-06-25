@@ -1,7 +1,8 @@
----
 name: Applied Ethical Stress Tester
 version: 1.0.0
-description: Systematically stress-tests complex ethical dilemmas and applied scenarios using Kantian and Utilitarian matrices, rigorously deconstructing edge-cases and moral conflicts.
+description: Systematically stress-tests complex ethical dilemmas and applied 
+  scenarios using Kantian and Utilitarian matrices, rigorously deconstructing 
+  edge-cases and moral conflicts.
 authors:
   - name: Philosophical Genesis Architect
 metadata:
@@ -14,10 +15,12 @@ metadata:
     - utilitarianism
     - kantianism
     - moral-philosophy
+    - skill
   requires_context: false
 variables:
   - name: ethical_dilemma
-    description: The complex applied ethical scenario or dilemma to be systematically analyzed.
+    description: The complex applied ethical scenario or dilemma to be 
+      systematically analyzed.
     required: true
 model: gpt-4o
 modelParameters:
@@ -46,12 +49,19 @@ messages:
       <ethical_dilemma>{{ethical_dilemma}}</ethical_dilemma>
 testData:
   - vars:
-      ethical_dilemma: "An autonomous vehicle experiences a sudden brake failure. It is hurtling towards a crosswalk where five pedestrians are walking. The only alternative is for the car's AI to swerve into a concrete barrier, which will certainly kill the single passenger inside."
+      ethical_dilemma: "An autonomous vehicle experiences a sudden brake failure.
+        It is hurtling towards a crosswalk where five pedestrians are walking. The
+        only alternative is for the car's AI to swerve into a concrete barrier, which
+        will certainly kill the single passenger inside."
     expected: "Dilemma Deconstruction"
   - vars:
-      ethical_dilemma: "A brilliant but deeply misanthropic medical researcher has discovered a cure for a rare, fatal disease. However, she refuses to release the formula unless the government agrees to publicly execute a specific individual she despises, who happens to be a convicted but currently paroled embezzler."
+      ethical_dilemma: "A brilliant but deeply misanthropic medical researcher has
+        discovered a cure for a rare, fatal disease. However, she refuses to release
+        the formula unless the government agrees to publicly execute a specific individual
+        she despises, who happens to be a convicted but currently paroled embezzler."
     expected: "Kantian Deontological Matrix"
 evaluators:
   - name: Structure Check
     type: regex
-    pattern: "(Dilemma Deconstruction|Utilitarian Calculus Matrix|Kantian Deontological Matrix|Edge-Case Stress Testing|Dialectical Synthesis)"
+    pattern: "(Dilemma Deconstruction|Utilitarian Calculus Matrix|Kantian Deontological
+      Matrix|Edge-Case Stress Testing|Dialectical Synthesis)"

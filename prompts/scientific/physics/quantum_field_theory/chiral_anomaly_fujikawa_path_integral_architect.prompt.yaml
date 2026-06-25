@@ -1,7 +1,8 @@
----
 name: Chiral Anomaly Fujikawa Path Integral Architect
 version: 1.0.0
-description: Formulates the rigorous derivation of chiral anomalies using Fujikawa's path integral measure evaluation, extracting the anomalous divergence of the axial current via heat-kernel regularization.
+description: Formulates the rigorous derivation of chiral anomalies using 
+  Fujikawa's path integral measure evaluation, extracting the anomalous 
+  divergence of the axial current via heat-kernel regularization.
 authors:
   - name: Theoretical Physics Genesis Architect
 metadata:
@@ -14,16 +15,20 @@ metadata:
     - fujikawa-method
     - path-integral
     - topological-invariants
+    - skill
   requires_context: false
 variables:
   - name: gauge_group
-    description: The Lie group under which the fermion fields transform (e.g., U(1) for QED, SU(N) for QCD).
+    description: The Lie group under which the fermion fields transform (e.g., 
+      U(1) for QED, SU(N) for QCD).
     required: true
   - name: fermion_representation
-    description: The representation of the gauge group in which the chiral fermions reside.
+    description: The representation of the gauge group in which the chiral 
+      fermions reside.
     required: true
   - name: spacetime_dimension
-    description: The spacetime dimension in which the anomaly is being evaluated (typically even, e.g., d=4, d=2).
+    description: The spacetime dimension in which the anomaly is being evaluated
+      (typically even, e.g., d=4, d=2).
     required: true
 model: gpt-4o
 modelParameters:
@@ -61,7 +66,8 @@ testData:
       gauge_group: "U(1)"
       fermion_representation: "Fundamental (electron)"
       spacetime_dimension: "4"
-    expected: "\\frac{e^2}{16\\pi^2} \\epsilon^{\\mu\\nu\\rho\\sigma} F_{\\mu\\nu} F_{\\rho\\sigma}"
+    expected: "\\frac{e^2}{16\\pi^2} \\epsilon^{\\mu\\nu\\rho\\sigma} F_{\\mu\\nu}
+      F_{\\rho\\sigma}"
   - inputs:
       gauge_group: "SU(N)"
       fermion_representation: "Fundamental representation"
