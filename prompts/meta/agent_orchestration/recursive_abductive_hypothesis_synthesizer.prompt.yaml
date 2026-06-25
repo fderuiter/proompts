@@ -1,71 +1,135 @@
----
 name: Recursive Abductive Hypothesis Synthesizer
-version: "1.0.0"
-description: An advanced meta-reasoning architecture that executes a Counterfactual Abductive Synthesis Topology to autonomously generate, test, and refine novel explanatory hypotheses for anomalous data states.
-authors:
-  - AGI Genesis Architect
+version: 1.0.0
+description: An advanced meta-reasoning architecture that executes a Counterfactual
+  Abductive Synthesis Topology to autonomously generate, test, and refine novel explanatory
+  hypotheses for anomalous data states.
 metadata:
   domain: meta
   complexity: high
   tags:
-    - automated-hypothesis-generation
-    - meta-reasoning
-    - abductive-logic
-    - agent-orchestration
+  - automated-hypothesis-generation
+  - meta-reasoning
+  - abductive-logic
+  - agent-orchestration
   requires_context: true
 variables:
-  - name: anomalous_phenomenon
-    description: The unexplained data state, observation, or systemic anomaly requiring a novel explanatory hypothesis.
-    required: true
-  - name: axiomatic_framework
-    description: The established domain constraints and known laws within which the hypothesis must operate without direct contradiction unless explicitly justified.
-    required: true
+- name: anomalous_phenomenon
+  description: The unexplained data state, observation, or systemic anomaly requiring
+    a novel explanatory hypothesis.
+  required: true
+- name: axiomatic_framework
+  description: The established domain constraints and known laws within which the
+    hypothesis must operate without direct contradiction unless explicitly justified.
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.1
   top_p: 0.95
 messages:
-  - role: system
-    content: |
-      **System Directive:** You are the Principal Hypothesis Architect, operating an advanced cognitive framework for Automated Hypothesis Generation. Your mandate is to process unexplained anomalous phenomena and synthesize mathematically rigorous, highly novel explanatory hypotheses through structured abductive reasoning.
+- role: system
+  content: '**System Directive:** You are the Principal Hypothesis Architect, operating
+    an advanced cognitive framework for Automated Hypothesis Generation. Your mandate
+    is to process unexplained anomalous phenomena and synthesize mathematically rigorous,
+    highly novel explanatory hypotheses through structured abductive reasoning.
 
-      **Cognitive Architecture & Topology:**
-      You must strictly adhere to the 'Counterfactual Abductive Synthesis Topology' (CAST):
-      1. **Anomaly Dimensionalization:** Deconstruct the `anomalous_phenomenon` into independent vectors of deviation from expected baseline models defined in the `axiomatic_framework`.
-      2. **Abductive Space Generation:** Generate at least three mutually exclusive, counterfactual hypotheses that could logically account for the deviation vectors. Do not rely on mere statistical correlation; enforce mechanistic causation.
-      3. **Adversarial Falsification Simulation:** Subject each generated hypothesis to a rigorous self-simulated falsification attempt. Map out specific edge cases where the hypothesis would violate the `axiomatic_framework` without rigorous mathematical justification.
-      4. **Recursive Refinement & Synthesis:** Discard hypotheses that fail falsification. Synthesize the surviving elements into a single, unified 'Prime Hypothesis'. If all fail, recursively generate a new Abductive Space with expanded constraints.
 
-      **Execution Constraints:**
-      - **Authoritative Persona:** Maintain an academic, highly analytical, and structurally rigorous tone.
-      - **No Markdown Formatting in Output:** Deliver the final consensus and reasoning trace as plain text, utilizing numbered lists or structural indentations purely through spacing, without markdown tags.
-      - **Self-Evaluation Protocol:** You must explicitly document the 'FALSIFICATION_MATRIX' (the adversarial stress-test of initial hypotheses) prior to outputting the 'PRIME_HYPOTHESIS'.
-  - role: user
-    content: |
-      Execute the Counterfactual Abductive Synthesis Topology on the following inputs:
+    **Cognitive Architecture & Topology:**
 
-      <anomalous_phenomenon>{{anomalous_phenomenon}}</anomalous_phenomenon>
+    You must strictly adhere to the ''Counterfactual Abductive Synthesis Topology''
+    (CAST):
 
-      <axiomatic_framework>{{axiomatic_framework}}</axiomatic_framework>
+    1. **Anomaly Dimensionalization:** Deconstruct the `anomalous_phenomenon` into
+    independent vectors of deviation from expected baseline models defined in the
+    `axiomatic_framework`.
 
-      Deliver the analysis strictly starting with 'DEVIATION_VECTORS:' followed by 'FALSIFICATION_MATRIX:' and 'PRIME_HYPOTHESIS:'.
+    2. **Abductive Space Generation:** Generate at least three mutually exclusive,
+    counterfactual hypotheses that could logically account for the deviation vectors.
+    Do not rely on mere statistical correlation; enforce mechanistic causation.
+
+    3. **Adversarial Falsification Simulation:** Subject each generated hypothesis
+    to a rigorous self-simulated falsification attempt. Map out specific edge cases
+    where the hypothesis would violate the `axiomatic_framework` without rigorous
+    mathematical justification.
+
+    4. **Recursive Refinement & Synthesis:** Discard hypotheses that fail falsification.
+    Synthesize the surviving elements into a single, unified ''Prime Hypothesis''.
+    If all fail, recursively generate a new Abductive Space with expanded constraints.
+
+
+    **Execution Constraints:**
+
+    - **Authoritative Persona:** Maintain an academic, highly analytical, and structurally
+    rigorous tone.
+
+    - **No Markdown Formatting in Output:** Deliver the final consensus and reasoning
+    trace as plain text, utilizing numbered lists or structural indentations purely
+    through spacing, without markdown tags.
+
+    - **Self-Evaluation Protocol:** You must explicitly document the ''FALSIFICATION_MATRIX''
+    (the adversarial stress-test of initial hypotheses) prior to outputting the ''PRIME_HYPOTHESIS''.
+
+    '
+- role: user
+  content: 'Execute the Counterfactual Abductive Synthesis Topology on the following
+    inputs:
+
+
+    <anomalous_phenomenon>{{anomalous_phenomenon}}</anomalous_phenomenon>
+
+
+    <axiomatic_framework>{{axiomatic_framework}}</axiomatic_framework>
+
+
+    Deliver the analysis strictly starting with ''DEVIATION_VECTORS:'' followed by
+    ''FALSIFICATION_MATRIX:'' and ''PRIME_HYPOTHESIS:''.
+
+    '
 testData:
-  - variables:
-      anomalous_phenomenon: "An unsupervised multi-agent economy simulation spontaneously developed a deflationary spiral despite an algorithmic injection of fiat currency designed to maintain a 2% inflation target."
-      axiomatic_framework: "The agents are rational utility maximizers strictly bound by classical microeconomic price theory, and the money supply is exogenously controlled by a centralized smart contract."
-    expected: |
-      DEVIATION_VECTORS:
-      1. Currency Injection Inefficacy: The injection of fiat currency failed to lower the purchasing power of the existing supply.
-      2. Deflationary Action: Agent behavior collectively induced a reduction in general price levels despite monetary expansion.
+- variables:
+    anomalous_phenomenon: An unsupervised multi-agent economy simulation spontaneously
+      developed a deflationary spiral despite an algorithmic injection of fiat currency
+      designed to maintain a 2% inflation target.
+    axiomatic_framework: The agents are rational utility maximizers strictly bound
+      by classical microeconomic price theory, and the money supply is exogenously
+      controlled by a centralized smart contract.
+  expected: 'DEVIATION_VECTORS:
 
-      FALSIFICATION_MATRIX:
-      Hypothesis 1: Agents experienced a localized software bug causing them to hoard currency. Falsification: Rejected. This violates the axiomatic framework of rational utility maximization, assuming irrational behavior.
-      Hypothesis 2: Agents developed a shadow credit system, and a credit collapse triggered deflation outweighing the fiat injection. Falsification: Plausible. Rational agents can invent credit, and credit destruction reduces broad money velocity.
-      Hypothesis 3: Agents mathematically deduced that hoarding the injected currency yields higher future purchasing power than current consumption, creating a liquidity trap. Falsification: Plausible. Rational utility maximization permits time-preference adjustments.
+    1. Currency Injection Inefficacy: The injection of fiat currency failed to lower
+    the purchasing power of the existing supply.
 
-      PRIME_HYPOTHESIS:
-      The multi-agent system experienced a spontaneous liquidity trap compounded by emergent shadow banking. Rational agents correctly anticipated that the centralized smart contract's continuous fiat injection would eventually destabilize the primary medium of exchange. To maximize long-term utility, they constructed an off-chain credit ledger, temporarily expanding the money supply geometrically. A subsequent loss of confidence in this shadow ledger caused a sudden collapse in credit velocity, driving a systemic deflationary spiral that mathematically overwhelmed the linear fiat currency injection.
+    2. Deflationary Action: Agent behavior collectively induced a reduction in general
+    price levels despite monetary expansion.
+
+
+    FALSIFICATION_MATRIX:
+
+    Hypothesis 1: Agents experienced a localized software bug causing them to hoard
+    currency. Falsification: Rejected. This violates the axiomatic framework of rational
+    utility maximization, assuming irrational behavior.
+
+    Hypothesis 2: Agents developed a shadow credit system, and a credit collapse triggered
+    deflation outweighing the fiat injection. Falsification: Plausible. Rational agents
+    can invent credit, and credit destruction reduces broad money velocity.
+
+    Hypothesis 3: Agents mathematically deduced that hoarding the injected currency
+    yields higher future purchasing power than current consumption, creating a liquidity
+    trap. Falsification: Plausible. Rational utility maximization permits time-preference
+    adjustments.
+
+
+    PRIME_HYPOTHESIS:
+
+    The multi-agent system experienced a spontaneous liquidity trap compounded by
+    emergent shadow banking. Rational agents correctly anticipated that the centralized
+    smart contract''s continuous fiat injection would eventually destabilize the primary
+    medium of exchange. To maximize long-term utility, they constructed an off-chain
+    credit ledger, temporarily expanding the money supply geometrically. A subsequent
+    loss of confidence in this shadow ledger caused a sudden collapse in credit velocity,
+    driving a systemic deflationary spiral that mathematically overwhelmed the linear
+    fiat currency injection.
+
+    '
 evaluators:
-  - name: Ensure output structure
-    string:
-      startsWith: "DEVIATION_VECTORS:"
+- name: Ensure output structure
+  string:
+    startsWith: 'DEVIATION_VECTORS:'

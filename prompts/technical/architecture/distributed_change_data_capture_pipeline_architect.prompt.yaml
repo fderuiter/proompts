@@ -2,8 +2,6 @@ name: Distributed Change Data Capture Pipeline Architect
 version: 1.0.0
 description: Designs highly resilient, high-throughput distributed Change Data Capture
   (CDC) pipelines for real-time state replication and event streaming.
-authors:
-- Strategic Genesis Architect
 metadata:
   domain: technical
   complexity: high

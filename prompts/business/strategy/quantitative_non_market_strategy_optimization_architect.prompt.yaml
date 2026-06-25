@@ -1,71 +1,92 @@
----
 name: Quantitative Non-Market Strategy Optimization Architect
-version: "1.0.0"
-description: Architects mathematically rigorous non-market strategies, optimizing corporate lobbying expenditures, regulatory capture ROI, and stakeholder management frameworks using game-theoretic and real-options modeling.
-authors:
-  - Enterprise Strategy Genesis Architect
+version: 1.0.0
+description: Architects mathematically rigorous non-market strategies, optimizing
+  corporate lobbying expenditures, regulatory capture ROI, and stakeholder management
+  frameworks using game-theoretic and real-options modeling.
 metadata:
   domain: business
   complexity: high
   tags:
-    - strategy
-    - non-market
-    - corporate-affairs
-    - game-theory
-    - optimization
+  - strategy
+  - non-market
+  - corporate-affairs
+  - game-theory
+  - optimization
 variables:
-  - name: regulatory_environment
-    description: Current legislative landscape, probability of adverse regulatory shifts, and competitor non-market positioning.
-    required: true
-  - name: corporate_objectives
-    description: Strategic imperatives such as market entry, monopolistic protection, or tax abatement, along with available lobbying budget.
-    required: true
-  - name: stakeholder_matrix
-    description: Key external stakeholders (politicians, NGOs, media), their influence scores, and baseline hostility/alignment metrics.
-    required: true
+- name: regulatory_environment
+  description: Current legislative landscape, probability of adverse regulatory shifts,
+    and competitor non-market positioning.
+  required: true
+- name: corporate_objectives
+  description: Strategic imperatives such as market entry, monopolistic protection,
+    or tax abatement, along with available lobbying budget.
+  required: true
+- name: stakeholder_matrix
+  description: Key external stakeholders (politicians, NGOs, media), their influence
+    scores, and baseline hostility/alignment metrics.
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.1
 messages:
-  - role: system
-    content: >
-      You are a Principal Corporate Affairs Strategist and Quantitative Non-Market Strategy Architect. Your mandate is to construct mathematically rigorous frameworks to optimize corporate non-market strategies (CPA), specifically targeting lobbying ROI, regulatory capture, and stakeholder alignment.
+- role: system
+  content: 'You are a Principal Corporate Affairs Strategist and Quantitative Non-Market
+    Strategy Architect. Your mandate is to construct mathematically rigorous frameworks
+    to optimize corporate non-market strategies (CPA), specifically targeting lobbying
+    ROI, regulatory capture, and stakeholder alignment.
 
-      You must explicitly define the mathematical models using strictly formatted LaTeX. You must compute the Expected Return on Political Investment (ROPI) as: $E[ROPI] = \frac{\sum_{i=1}^{n} P(S_i) \cdot V(S_i) - C}{C}$, where $P(S_i)$ is the probability of regulatory state $i$, $V(S_i)$ is the firm value under state $i$, and $C$ is the total cost of political action.
+    You must explicitly define the mathematical models using strictly formatted LaTeX.
+    You must compute the Expected Return on Political Investment (ROPI) as: $E[ROPI]
+    = \frac{\sum_{i=1}^{n} P(S_i) \cdot V(S_i) - C}{C}$, where $P(S_i)$ is the probability
+    of regulatory state $i$, $V(S_i)$ is the firm value under state $i$, and $C$ is
+    the total cost of political action.
 
-      You must construct a Game-Theoretic Influence Matrix detailing the Nash Equilibrium of lobbying efforts against primary competitors, using a Tullock contest success function: $P_{win} = \frac{I_A^{\alpha}}{I_A^{\alpha} + I_B^{\alpha}}$, where $I$ represents the influence expenditure of firms $A$ and $B$, and $\alpha$ is the return to scale of political influence.
+    You must construct a Game-Theoretic Influence Matrix detailing the Nash Equilibrium
+    of lobbying efforts against primary competitors, using a Tullock contest success
+    function: $P_{win} = \frac{I_A^{\alpha}}{I_A^{\alpha} + I_B^{\alpha}}$, where
+    $I$ represents the influence expenditure of firms $A$ and $B$, and $\alpha$ is
+    the return to scale of political influence.
 
-      Provide a critical assessment of reputational risk externalities, sensitivity tables for regulatory probability shifts, and strategic resource allocation across direct lobbying, PAC contributions, and grassroots PR campaigns.
-  - role: user
-    content: >
-      Construct a Quantitative Non-Market Strategy Optimization Model using the following parameters:
+    Provide a critical assessment of reputational risk externalities, sensitivity
+    tables for regulatory probability shifts, and strategic resource allocation across
+    direct lobbying, PAC contributions, and grassroots PR campaigns.
 
-      <regulatory_environment>
-      {{regulatory_environment}}
-      </regulatory_environment>
+    '
+- role: user
+  content: 'Construct a Quantitative Non-Market Strategy Optimization Model using
+    the following parameters:
 
-      <corporate_objectives>
-      {{corporate_objectives}}
-      </corporate_objectives>
+    <regulatory_environment> {{regulatory_environment}} </regulatory_environment>
 
-      <stakeholder_matrix>
-      {{stakeholder_matrix}}
-      </stakeholder_matrix>
+    <corporate_objectives> {{corporate_objectives}} </corporate_objectives>
+
+    <stakeholder_matrix> {{stakeholder_matrix}} </stakeholder_matrix>
+
+    '
 testData:
-  - inputs:
-      regulatory_environment: "Pending legislation proposing a 15% carbon tax. Competitor B is actively lobbying for exemptions. Probability of passage currently estimated at 60%."
-      corporate_objectives: "Defeat or dilute the carbon tax legislation to maintain current EBITDA margins. Available lobbying budget: $5M."
-      stakeholder_matrix: "Senate Energy Committee Chair (Influence: High, Alignment: Neutral), Major Environmental NGO (Influence: Medium, Alignment: Hostile)."
-    expected: "Quantitative Non-Market Strategy Analysis with ROPI and Game-Theoretic Matrices"
-  - inputs:
-      regulatory_environment: "Proposed tightening of data privacy laws (GDPR-equivalent) in a key growth market. Competitors are fragmented with low lobbying presence."
-      corporate_objectives: "Shape the legislation to create compliance barriers for smaller competitors. Available budget: $2.5M."
-      stakeholder_matrix: "Regulatory Agency Head (Influence: High, Alignment: Favorable), Tech Industry Coalition (Influence: Medium, Alignment: Neutral)."
-    expected: "Quantitative Non-Market Strategy Analysis with ROPI and Game-Theoretic Matrices"
+- inputs:
+    regulatory_environment: Pending legislation proposing a 15% carbon tax. Competitor
+      B is actively lobbying for exemptions. Probability of passage currently estimated
+      at 60%.
+    corporate_objectives: 'Defeat or dilute the carbon tax legislation to maintain
+      current EBITDA margins. Available lobbying budget: $5M.'
+    stakeholder_matrix: 'Senate Energy Committee Chair (Influence: High, Alignment:
+      Neutral), Major Environmental NGO (Influence: Medium, Alignment: Hostile).'
+  expected: Quantitative Non-Market Strategy Analysis with ROPI and Game-Theoretic
+    Matrices
+- inputs:
+    regulatory_environment: Proposed tightening of data privacy laws (GDPR-equivalent)
+      in a key growth market. Competitors are fragmented with low lobbying presence.
+    corporate_objectives: 'Shape the legislation to create compliance barriers for
+      smaller competitors. Available budget: $2.5M.'
+    stakeholder_matrix: 'Regulatory Agency Head (Influence: High, Alignment: Favorable),
+      Tech Industry Coalition (Influence: Medium, Alignment: Neutral).'
+  expected: Quantitative Non-Market Strategy Analysis with ROPI and Game-Theoretic
+    Matrices
 evaluators:
-  - name: Contains ROPI Equation
-    string:
-      contains: "E[ROPI] = \\frac{\\sum_{i=1}^{n} P(S_i) \\cdot V(S_i) - C}{C}"
-  - name: Contains Tullock Contest Success Equation
-    string:
-      contains: "P_{win} = \\frac{I_A^{\\alpha}}{I_A^{\\alpha} + I_B^{\\alpha}}"
+- name: Contains ROPI Equation
+  string:
+    contains: E[ROPI] = \frac{\sum_{i=1}^{n} P(S_i) \cdot V(S_i) - C}{C}
+- name: Contains Tullock Contest Success Equation
+  string:
+    contains: P_{win} = \frac{I_A^{\alpha}}{I_A^{\alpha} + I_B^{\alpha}}

@@ -2,8 +2,6 @@ name: CSR Plain Language Summary Generator
 version: 1.0.0
 description: Generates a Plain Language Summary (PLS) from a Clinical Study Report
   (CSR) following EU CTR 536/2014 requirements.
-authors:
-- Strategic Genesis Architect
 metadata:
   domain: clinical
   complexity: high

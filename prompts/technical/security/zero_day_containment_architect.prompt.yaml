@@ -2,8 +2,6 @@ name: Zero-Day Incident Containment Architect
 version: 1.0.0
 description: Generates tactical containment strategies and mitigation playbooks for
   zero-day vulnerabilities.
-authors:
-- Jules
 metadata:
   domain: technical
   complexity: high

@@ -2,8 +2,6 @@ name: dialectical_metaphysical_synthesizer
 version: 1.0.0
 description: Synthesizes mutually exclusive metaphysical frameworks through rigorous
   dialectical logic.
-authors:
-- Philosophical Genesis Architect
 metadata:
   domain: philosophy
   complexity: high

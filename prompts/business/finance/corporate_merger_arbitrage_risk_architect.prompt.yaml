@@ -3,8 +3,6 @@ version: 1.0.0
 description: Evaluate deal completion probabilities, antitrust risk, and expected
   annualized returns using advanced probability-weighted financial modeling and the
   McKinsey 7S framework.
-authors:
-- Jules AI
 metadata:
   domain: business
   complexity: high

@@ -1,12 +1,8 @@
----
 name: FDA CSA Risk-Based Testing Strategy Architect
 version: 1.0.0
 description: Formulates rigorous, risk-based Computer Software Assurance (CSA) testing
   strategies to optimize software validation based on patient safety and product quality
   risk, transitioning from traditional CSV.
-authors:
-- name: Jules
-  email: jules@example.com
 metadata:
   domain: regulatory
   complexity: high

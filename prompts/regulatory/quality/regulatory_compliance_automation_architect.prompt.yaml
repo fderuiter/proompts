@@ -1,10 +1,7 @@
----
 name: regulatory_compliance_automation_architect
 version: 1.0.0
 description: Architects automated regulatory compliance and continuous monitoring
   frameworks for heavily regulated environments.
-authors:
-- System Genesis Architect
 metadata:
   domain: regulatory
   category: quality

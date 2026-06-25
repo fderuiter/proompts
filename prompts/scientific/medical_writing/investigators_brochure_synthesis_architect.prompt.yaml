@@ -2,8 +2,6 @@ name: investigators_brochure_synthesis_architect
 version: 1.0.0
 description: Synthesizes nonclinical, clinical, and CMC data into a regulatory-compliant
   Investigator's Brochure (IB) following ICH E6(R2) guidelines.
-authors:
-- name: Genesis Architect
 metadata:
   domain: scientific/medical_writing
   complexity: high

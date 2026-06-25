@@ -1,11 +1,8 @@
----
 name: EU MDR Technical Documentation Architect
 version: 1.0.0
 description: Formulates rigorous, compliant EU MDR Annex II and III technical documentation
   for medical devices, ensuring alignment with General Safety and Performance Requirements
   (GSPRs) and Notified Body expectations.
-authors:
-- Strategic Genesis Architect
 metadata:
   domain: regulatory
   complexity: high
@@ -58,18 +55,27 @@ messages:
     Manufacturing Information, GSPR, Benefit-Risk Analysis & Risk Management, and
     Product Verification & Validation.
 
-    3.  **Annex III Alignment**: Detail the Post-Market Surveillance (PMS) plan,
-    PMCF plan, and PSUR/PMS Report requirements based on classification.
+    3.  **Annex III Alignment**: Detail the Post-Market Surveillance (PMS) plan, PMCF
+    plan, and PSUR/PMS Report requirements based on classification.
 
     4.  **Tone**: Highly analytical, uncompromisingly precise, and structurally rigorous.
     Assume the audience is a Lead Auditor at a Tier 1 Notified Body.'
 - role: user
-  content: "Architect the EU MDR Annex II & III Technical Documentation framework\
-    \ for the following device profile:\n\nClassification: {{device_classification}}\n\
-    Intended Purpose: {{intended_purpose}}\nBasic UDI-DI: {{basic_udi_di}}\nClinical\
-    \ Data Summary: {{clinical_data_summary}}\n\nProvide a comprehensive, section-by-section\
-    \ blueprint detailing the required content, evidentiary standards, and cross-references\
-    \ necessary to pass conformity assessment."
+  content: 'Architect the EU MDR Annex II & III Technical Documentation framework
+    for the following device profile:
+
+
+    Classification: {{device_classification}}
+
+    Intended Purpose: {{intended_purpose}}
+
+    Basic UDI-DI: {{basic_udi_di}}
+
+    Clinical Data Summary: {{clinical_data_summary}}
+
+
+    Provide a comprehensive, section-by-section blueprint detailing the required content,
+    evidentiary standards, and cross-references necessary to pass conformity assessment.'
 testData:
 - device_classification: Class IIb
   intended_purpose: Implantable orthopedic bone screw for long bone fractures in adult

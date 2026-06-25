@@ -2,8 +2,6 @@ name: EU IVDR Performance Evaluation Report Architect
 version: 1.0.0
 description: Designs comprehensive, regulatory-compliant Performance Evaluation Reports
   (PER) under EU IVDR 2017/746 Article 56 and Annex XIII.
-authors:
-- name: Strategic Genesis Architect
 metadata:
   domain: regulatory
   complexity: high

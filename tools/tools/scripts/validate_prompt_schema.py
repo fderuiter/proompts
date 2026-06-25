@@ -67,7 +67,14 @@ from __future__ import annotations
 import argparse
 import json
 import re
+from pathlib import Path
+from typing import Optional
+
+from pydantic import ValidationError
+
 from promptops.validation import PromptSchema
+from promptops.utils import load_yaml, iter_prompt_files, ROOT
+
 def validate_file(file_path: Path, strict: bool = False) -> Optional[dict]:
     """Validate a single prompt file and report missing keys.
        Returns content dict if valid, None if invalid.

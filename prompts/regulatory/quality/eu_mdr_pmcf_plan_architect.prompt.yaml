@@ -2,8 +2,6 @@ name: EU MDR PMCF Plan Architect
 version: 1.0.0
 description: Designs comprehensive, regulatory-compliant Post-Market Clinical Follow-up
   (PMCF) Plans under EU MDR 2017/745 Annex XIV Part B.
-authors:
-- name: Strategic Genesis Architect
 metadata:
   domain: regulatory
   complexity: high
