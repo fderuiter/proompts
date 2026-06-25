@@ -18,11 +18,7 @@ prompt_files = [os.path.relpath(f, base_dir) for f in prompt_files]
 
 selected_file = st.selectbox("Select a workflow to edit", ["Create New..."] + workflow_files)
 
-def load_yaml(path):
-    if not os.path.exists(path):
-        return {}
-    with open(path, 'r') as f:
-        return yaml.safe_load(f)
+from promptops.utils import load_yaml
 
 def save_yaml(path, data):
     os.makedirs(os.path.dirname(path), exist_ok=True)

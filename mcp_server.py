@@ -61,7 +61,7 @@ def build_schema(prompt_content_or_vars):
     if isinstance(prompt_content_or_vars, list):
         variables = prompt_content_or_vars
     else:
-        variables = prompt_content_or_vars.get('variables') or prompt_content_or_vars.get('vars') or prompt_content_or_vars.get('inputs')
+        variables = prompt_content_or_vars.get('variables')
 
     properties = {}
     required = []

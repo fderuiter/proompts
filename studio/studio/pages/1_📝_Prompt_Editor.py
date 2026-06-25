@@ -20,12 +20,7 @@ prompt_files = [os.path.relpath(f, base_dir) for f in prompt_files]
 selected_file = st.selectbox("Select a prompt to edit", ["Create New..."] + prompt_files)
 
 from typing import Dict, Any
-
-def load_yaml(path: str) -> Dict[str, Any]:
-    if not os.path.exists(path):
-        return {}
-    with open(path, 'r') as f:
-        return yaml.safe_load(f) or {}
+from promptops.utils import load_yaml
 
 def save_yaml(path: str, data: Dict[str, Any]) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)

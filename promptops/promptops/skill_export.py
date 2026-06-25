@@ -58,7 +58,7 @@ def generate_skill_section(prompt_data: Dict[str, Any]) -> str:
     few_shots = []
     test_data = prompt_data.get("testData", [])
     for test in test_data:
-        inputs = test.get("vars", test.get("input", {}))
+        inputs = test.get("inputs", {})
         expected = test.get("expected", "")
         if isinstance(inputs, dict):
             input_ctx = yaml.dump(inputs, sort_keys=False, default_flow_style=True).strip()

@@ -4,8 +4,9 @@ from pathlib import Path
 import yaml
 from typing import Iterator, Dict, Any, List, Optional, Set, Union
 
+from jinja2.nativetypes import NativeEnvironment
 from jinja2.sandbox import SandboxedEnvironment
-from jinja2 import FileSystemLoader, Undefined, meta, Environment
+from jinja2 import FileSystemLoader, Undefined, StrictUndefined, meta, Environment
 
 class KeepUndefined(Undefined):
     def __getattr__(self, name):
@@ -16,6 +17,9 @@ class KeepUndefined(Undefined):
         
     def __str__(self):
         return f"{{{{ {self._undefined_name} }}}}"
+
+class NativeSandboxedEnvironment(NativeEnvironment, SandboxedEnvironment):
+    pass
 
 # Centralized Path Registry
 def _find_root() -> Path:
@@ -36,18 +40,19 @@ WORKFLOWS_DIR: Path = ROOT / "workflows"
 OVERVIEW_NAME: str = "overview.md"
 DOMAIN_TAG_PREFIX: str = "domain:"
 
-_jinja_envs: Dict[str, SandboxedEnvironment] = {}
+_jinja_envs: Dict[str, NativeSandboxedEnvironment] = {}
 
-def get_jinja_env(base_dir: Optional[Union[str, Path]] = None) -> SandboxedEnvironment:
+def get_jinja_env(base_dir: Optional[Union[str, Path]] = None, strict_mode: bool = False) -> NativeSandboxedEnvironment:
     if base_dir is None:
         base_dir = PROMPTS_DIR
     base_dir_str = str(base_dir)
-    if base_dir_str not in _jinja_envs:
-        _jinja_envs[base_dir_str] = SandboxedEnvironment(
+    env_key = f"{base_dir_str}_{strict_mode}"
+    if env_key not in _jinja_envs:
+        _jinja_envs[env_key] = NativeSandboxedEnvironment(
             loader=FileSystemLoader(base_dir_str),
-            undefined=KeepUndefined
+            undefined=StrictUndefined if strict_mode else KeepUndefined
         )
-    return _jinja_envs[base_dir_str]
+    return _jinja_envs[env_key]
 
 def load_yaml(path: Union[str, Path]) -> Dict[str, Any]:
     path_obj = Path(path)
@@ -115,17 +120,23 @@ def extract_template_vars(content: Dict[str, Any]) -> List[str]:
     found: Set[str] = set()
     env = Environment()
     for msg in content.get("messages", []):
-        text = msg.get("content", "")
-        if isinstance(text, str):
+        content_val = msg.get("content")
+        tool_calls = msg.get("tool_calls")
+        
+        text = ""
+        if isinstance(content_val, str):
+            text = content_val
+        elif isinstance(content_val, list):
+            text = " ".join([str(c) for c in content_val])
+        elif not content_val and tool_calls:
+            text = str(tool_calls)
+            
+        if text:
             try:
                 ast = env.parse(text)
                 vars_in_text = meta.find_undeclared_variables(ast)
                 found.update(vars_in_text)
             except Exception:
-                # Fallback or just skip on parse errors?
-                # Using AST could throw TemplateSyntaxError if there's malformed jinja, 
-                # but standard execution would also fail. We should ideally just let it pass or extract via regex as fallback?
-                # Actually, requirement 2: "Replace regex-based extraction with formal Abstract Syntax Tree (AST) parsing"
                 pass
     return sorted(list(found))
 

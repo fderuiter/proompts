@@ -4,7 +4,7 @@ from enum import Enum
 from pathlib import Path
 from typing import Any, List, Optional, Dict, Union
 
-from pydantic import BaseModel, ValidationError, field_validator, model_validator, Field
+from pydantic import BaseModel, ValidationError, field_validator, model_validator, Field, ConfigDict
 from promptops.utils import load_yaml, iter_prompt_files, iter_workflow_files
 from promptops import console
 
@@ -76,6 +76,7 @@ class MCPTool(BaseModel):
     inputSchema: InputSchema = Field(...)
 
 class PromptSchema(BaseModel):
+    model_config = ConfigDict(extra='forbid')
     name: str = Field(...)
     version: str = Field("0.1.0")
     description: str = Field(...)
@@ -110,6 +111,22 @@ class PromptSchema(BaseModel):
         if len(v) < 2:
             raise ValueError("messages list must have at least 2 items")
         return v
+
+    @model_validator(mode='after')
+    def check_test_data_types(self):
+        """Warn if testData contains non-string types that will be coerced to strings."""
+        if not self.testData:
+            return self
+        for item in self.testData:
+            if isinstance(item, dict):
+                inputs = item.get("inputs", {})
+                for k, v in inputs.items():
+                    if not isinstance(v, str):
+                        print(f"Warning: Test data input '{k}' is of type {type(v).__name__}.")
+                expected = item.get("expected")
+                if expected is not None and not isinstance(expected, str):
+                    print(f"Warning: Test data expected output is of type {type(expected).__name__}.")
+        return self
 
     @model_validator(mode='after')
     def check_variables_match_content(self):
@@ -178,6 +195,7 @@ class WorkflowMetadata(BaseModel):
     topic: Optional[str] = Field(None)
 
 class WorkflowSchema(BaseModel):
+    model_config = ConfigDict(extra='forbid')
     name: str = Field(...)
     description: Optional[str] = Field(None)
     metadata: Optional[WorkflowMetadata] = Field(None)

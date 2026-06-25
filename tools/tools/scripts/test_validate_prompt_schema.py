@@ -4,7 +4,7 @@ from pathlib import Path
 from pydantic import ValidationError
 
 
-from tools.scripts.validate_prompt_schema import (
+from promptops.validation import (
     PromptSchema, Message, ModelParameters,
     ComplexityLevel, InputVariable, PromptMetadata,
 )

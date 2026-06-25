@@ -12,7 +12,7 @@ import glob
 from pathlib import Path
 from tools.scripts.run_workflow import run_workflow, load_yaml, setup_logging
 
-from tools.scripts.validate_prompt_schema import PromptMetadata
+from promptops.validation import PromptMetadata
 
 def validate_workflow_metadata(wf: Path, data: dict):
     if 'metadata' not in data:
@@ -60,7 +60,7 @@ def main():
         
         if test_data:
             for i, test_case in enumerate(test_data):
-                inputs = test_case.get('inputs', test_case.get('vars', {}))
+                inputs = test_case.get('inputs', {})
                 try:
                     # Run in strict mode
                     run_workflow(str(wf), inputs, verbose=False, strict_mode=True)

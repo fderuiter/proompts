@@ -43,6 +43,7 @@ import sys
 from typing import Any, Dict, Optional
 
 import yaml
+from promptops.utils import load_yaml, get_jinja_env, extract_template_vars
 
 # Configure logger
 logger = logging.getLogger(__name__)
@@ -53,42 +54,6 @@ def setup_logging(verbose: bool = False) -> None:
     logging.basicConfig(level=level, format='%(levelname)s: %(message)s')
     # Ensure module logger follows the level
     logger.setLevel(level)
-
-def load_yaml(file_path: str) -> Optional[Dict[str, Any]]:
-    """
-    Loads a YAML file from the given path.
-
-    Args:
-        file_path: The path to the YAML file.
-
-    Returns:
-        The parsed YAML content as a dictionary, or None if the file is not found.
-    """
-    if not os.path.exists(file_path):
-        logger.error(f"Error: File not found at {file_path}")
-        return None
-    with open(file_path, 'r') as f:
-        return yaml.safe_load(f)
-
-from jinja2 import Undefined, StrictUndefined
-from jinja2.nativetypes import NativeEnvironment
-from jinja2.sandbox import SandboxedEnvironment
-
-class KeepUndefined(Undefined):
-    def __getattr__(self, name):
-        return KeepUndefined(name=f"{self._undefined_name}.{name}")
-        
-    def __getitem__(self, key):
-        return KeepUndefined(name=f"{self._undefined_name}['{key}']")
-        
-    def __str__(self):
-        return f"{{{{ {self._undefined_name} }}}}"
-
-class NativeSandboxedEnvironment(NativeEnvironment, SandboxedEnvironment):
-    pass
-
-_run_env = NativeSandboxedEnvironment(undefined=KeepUndefined)
-_strict_run_env = NativeSandboxedEnvironment(undefined=StrictUndefined)
 
 def safe_render(template: str, context: Dict[str, Any], strict_mode: bool = False) -> Any:
     """
@@ -109,7 +74,7 @@ def safe_render(template: str, context: Dict[str, Any], strict_mode: bool = Fals
     if not isinstance(template, str) or ("{{" not in template and "{%" not in template):
         return template
 
-    env = _strict_run_env if strict_mode else _run_env
+    env = get_jinja_env(strict_mode=strict_mode)
 
     try:
         jinja_template = env.from_string(template)
@@ -339,10 +304,10 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
     if prompt_data.get('testData'):
         for test_case in prompt_data['testData']:
             # Schema Mismatch Recovery
-            if 'input' in test_case and 'inputs' not in test_case and 'vars' not in test_case:
-                logger.warning(f"Schema mismatch detected in {prompt_data.get('name', 'Untitled Prompt')}: 'input' key used instead of 'inputs' or 'vars'.")
+            if 'input' in test_case and 'inputs' not in test_case:
+                logger.warning(f"Schema mismatch detected in {prompt_data.get('name', 'Untitled Prompt')}: 'input' key used instead of 'inputs'.")
                 if not strict_mode and sys.stdout.isatty() and not os.environ.get('CI'):
-                    console.info("\n[Self-Healing] Detected unmatched variable key 'input'. The standard schema requires 'inputs' or 'vars'.")
+                    console.info("\n[Self-Healing] Detected unmatched variable key 'input'. The standard schema requires 'inputs'.")
                     choice = input("Would you like to automatically heal this by mapping 'input' -> 'inputs'? (y/n): ")
                     if choice.lower() == 'y':
                         if isinstance(test_case['input'], str):
@@ -362,7 +327,7 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
                     else:
                         test_case['inputs'] = test_case.pop('input')
 
-            expected_inputs = test_case.get('vars', test_case.get('inputs', {}))
+            expected_inputs = test_case.get('inputs', {})
             if isinstance(expected_inputs, str):
                 expected_inputs = {"input": expected_inputs}
             
@@ -444,11 +409,7 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
             
             required_vars = list(inputs.keys())
             if not required_vars:
-                required_vars = []
-                for msg in prompt_data.get('messages', []):
-                    matches = re.findall(r"\{\{\s*([\w\.\-]+)\s*\}\}", msg.get('content', ''))
-                    required_vars.extend(matches)
-                required_vars = list(set(required_vars))
+                required_vars = extract_template_vars(prompt_data)
 
             iteration = 0
             while True:
@@ -760,7 +721,7 @@ def main():
         logger.info(f"Using workflow-level testData for inputs.")
         # We can either run all test scenarios or just the first one. Let's run all scenarios to fully validate.
         for test_case in workflow_data['testData']:
-            inputs = test_case.get('inputs', test_case.get('vars', {}))
+            inputs = test_case.get('inputs', {})
             console.step_header(f"Running Workflow Test Scenario with inputs: {inputs}")
             try:
                 final_state = run_workflow(args.workflow_file, inputs, verbose=args.verbose, strict_mode=strict_mode, chaos_mode=args.chaos, fidelity_report=fidelity_report)
