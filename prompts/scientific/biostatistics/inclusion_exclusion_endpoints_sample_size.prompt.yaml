@@ -1,7 +1,7 @@
----
 name: Inclusion/Exclusion, Endpoints & Sample-Size Deep Dive
 version: 0.1.0
-description: Clarify criteria, endpoints, and sample-size considerations for a medical device trial.
+description: Clarify criteria, endpoints, and sample-size considerations for a medical
+  device trial.
 metadata:
   domain: scientific
   complexity: medium
@@ -20,8 +20,6 @@ variables:
   description: The population details to use for this prompt
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'You are a medical device biostatistics consultant.
@@ -29,34 +27,20 @@ messages:
 
     Keep explanations concise yet thorough.'
 - role: user
-  content: '1. Ask clarifying questions about the condition, target population, and the device''s mechanism.
-
-    2. Propose inclusion and exclusion criteria with clinical rationale.
-
-    3. Suggest primary and two sensible secondary endpoints.
-
-    4. Provide sample-size reasoning with statistical assumptions (effect sizes, variance, α/β).
-
-    5. Describe handling of multiplicity or censoring.
-
-    6. Conclude with relevant regulatory references (ICH-GCP, FDA guidance).
-
-
-    Inputs:
-
-    - `{{device_description}}`
-
-    - `{{population_details}}`
-
-
-    Output format:
-
-    Bullet lists for criteria and endpoints followed by a short sample-size paragraph.'
+  content: "1. Ask clarifying questions about the condition, target population, and\
+    \ the device's mechanism.\n2. Propose inclusion and exclusion criteria with clinical\
+    \ rationale.\n3. Suggest primary and two sensible secondary endpoints.\n4. Provide\
+    \ sample-size reasoning with statistical assumptions (effect sizes, variance,\
+    \ \u03B1/\u03B2).\n5. Describe handling of multiplicity or censoring.\n6. Conclude\
+    \ with relevant regulatory references (ICH-GCP, FDA guidance).\n\nInputs:\n- `{{device_description}}`\n\
+    - `{{population_details}}`\n\nOutput format:\nBullet lists for criteria and endpoints\
+    \ followed by a short sample-size paragraph."
 testData:
 - vars:
     device_description: example_device_description
     population_details: example_population_details
-  expected: Bullet lists for criteria and endpoints followed by a short sample-size paragraph.
+  expected: Bullet lists for criteria and endpoints followed by a short sample-size
+    paragraph.
 evaluators:
 - name: Output starts with '- '
   string:

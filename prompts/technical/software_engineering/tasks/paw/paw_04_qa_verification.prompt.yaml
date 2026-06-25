@@ -19,8 +19,6 @@ variables:
   description: The original TODO.md file.
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.1
 messages:
 - role: system
   content: "You are the **Principal Architect**. Review the implementation against\

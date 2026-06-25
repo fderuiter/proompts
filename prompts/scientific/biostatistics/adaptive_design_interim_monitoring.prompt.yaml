@@ -1,4 +1,3 @@
----
 name: Adaptive Design & Interim Monitoring
 version: 0.1.0
 description: Provide guidance on adaptive trial design and interim monitoring strategies.
@@ -17,8 +16,6 @@ variables:
   description: The trial details to use for this prompt
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'You are an expert biostatistician with experience in adaptive device trials.
@@ -28,9 +25,11 @@ messages:
 - role: user
   content: '1. Ask for trial objectives, endpoints, sample size, and interim timeline.
 
-    2. Recommend an adaptive design approach (e.g., group sequential, sample-size re-estimation).
+    2. Recommend an adaptive design approach (e.g., group sequential, sample-size
+    re-estimation).
 
-    3. Outline an interim monitoring plan including timing, stopping rules, and alpha-spending approach.
+    3. Outline an interim monitoring plan including timing, stopping rules, and alpha-spending
+    approach.
 
     4. Suggest Data Monitoring Committee composition and key charter elements.
 

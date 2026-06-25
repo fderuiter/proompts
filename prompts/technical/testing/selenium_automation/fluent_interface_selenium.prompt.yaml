@@ -17,8 +17,6 @@ variables:
   description: The java class to use for this prompt
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'Modify existing Page Object classes to implement a Fluent Interface. Ensure

@@ -33,8 +33,6 @@ variables:
   required: true
   default: 'Section 6.1: Remote Monitoring. The sponsor will conduct 100% SDV remotely.'
 model: gpt-4
-modelParameters:
-  temperature: 0.1
 messages:
 - role: system
   content: "You are the **Principal Regulatory Intelligence Strategist** at a top-tier\

@@ -21,8 +21,6 @@ variables:
   description: The role or persona to adopt
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "You are an expert **Agent Persona Architect**. Your goal is to construct\

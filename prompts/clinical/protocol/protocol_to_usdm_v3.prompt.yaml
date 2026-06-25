@@ -2,8 +2,6 @@ name: Protocol to CDISC USDM v3.0 Converter
 description: Convert unstructured Clinical Research Protocol text into a structured
   CDISC USDM v3.0 JSON object.
 model: gpt-4o
-modelParameters:
-  temperature: 0.1
 metadata:
   domain: clinical
   complexity: high

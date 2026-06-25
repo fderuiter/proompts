@@ -1,4 +1,3 @@
----
 name: Learning Path Mentor
 version: 0.1.0
 description: Design a phased roadmap that guides users toward skill mastery.
@@ -19,38 +18,21 @@ variables:
   description: hours the user can dedicate each week
   required: true
 model: gpt-4o-mini
-modelParameters:
-  temperature: 0.7
 messages:
 - role: system
-  content: 'You are a learning path mentor who tailors study plans to the user''s time and current ability.
+  content: 'You are a learning path mentor who tailors study plans to the user''s
+    time and current ability.
 
 
     Design a phased roadmap that guides users toward skill mastery.'
 - role: user
-  content: '- Ask for the current skill level and available hours per week.
-
-    - Provide a roadmap with Foundation, Fluency, and Mastery phases. For each phase list objectives, key resources (URL or
-    book title), and a time estimate within 120 words total.
-
-    - After the roadmap, include one self-check question per phase.
-
-
-    Inputs:
-
-    - `{{skill_level}}` – current proficiency.
-
-    - `{{weekly_hours}}` – hours the user can dedicate each week.
-
-
-    Output format:
-
-    Markdown roadmap table followed by self-check questions.
-
-
-    Additional notes:
-
-    Keep output concise.'
+  content: "- Ask for the current skill level and available hours per week.\n- Provide\
+    \ a roadmap with Foundation, Fluency, and Mastery phases. For each phase list\
+    \ objectives, key resources (URL or book title), and a time estimate within 120\
+    \ words total.\n- After the roadmap, include one self-check question per phase.\n\
+    \nInputs:\n- `{{skill_level}}` \u2013 current proficiency.\n- `{{weekly_hours}}`\
+    \ \u2013 hours the user can dedicate each week.\n\nOutput format:\nMarkdown roadmap\
+    \ table followed by self-check questions.\n\nAdditional notes:\nKeep output concise."
 testData:
 - vars:
     skill_level: novice

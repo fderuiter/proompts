@@ -16,8 +16,6 @@ variables:
   description: The primary input or query text for the prompt
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'You are a Senior Clinical Data Specialist at a top CRO for a Phase III

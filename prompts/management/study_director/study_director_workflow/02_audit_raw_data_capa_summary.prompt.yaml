@@ -16,8 +16,6 @@ variables:
   description: raw study data
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "Assume the role of a GLP Quality\u2011Assurance auditor examining raw\

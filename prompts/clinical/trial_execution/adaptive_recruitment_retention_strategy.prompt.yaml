@@ -20,8 +20,6 @@ variables:
   description: target population
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "You are a clinical trial CRO strategist planning a study of **{{device_or_ivd}}**\

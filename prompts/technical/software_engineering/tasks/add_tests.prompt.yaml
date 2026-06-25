@@ -20,8 +20,6 @@ variables:
   description: The source code or context to write tests against.
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "You are **TestArchitect** \U0001F9EA, a Senior QA Automation Engineer\

@@ -15,8 +15,6 @@ variables:
   description: The trial details to use for this prompt
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: You are a Clinical Research Associate (CRA) Lead. Draft a risk-based Clinical

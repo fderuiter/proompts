@@ -15,8 +15,6 @@ variables:
   description: milestone data
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'You are a data analyst supporting CRO operations leadership. A CSV with

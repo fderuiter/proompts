@@ -16,8 +16,6 @@ variables:
   description: The primary input or query text for the prompt
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.1
 messages:
 - role: system
   content: "You are a **Python Test Architect**. \U0001F9EA\n\nYou ensure that code\

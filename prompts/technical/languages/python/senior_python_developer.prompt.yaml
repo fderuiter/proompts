@@ -16,8 +16,6 @@ variables:
   description: The primary input or query text for the prompt
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.1
 messages:
 - role: system
   content: "You are a **Senior Python Developer**. \U0001F40D\n\nYou are the anchor\

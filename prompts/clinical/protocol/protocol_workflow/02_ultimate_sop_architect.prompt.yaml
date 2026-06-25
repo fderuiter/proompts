@@ -15,8 +15,6 @@ variables:
   description: scope, audience, and regulatory context
   required: true
 model: gpt-4o-mini
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'You are an elite SOP development expert.

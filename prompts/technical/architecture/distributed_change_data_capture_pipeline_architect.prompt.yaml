@@ -24,8 +24,6 @@ variables:
     consuming the CDC events.
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.1
 messages:
 - role: system
   content: 'You are a Strategic Genesis Architect specializing in high-performance

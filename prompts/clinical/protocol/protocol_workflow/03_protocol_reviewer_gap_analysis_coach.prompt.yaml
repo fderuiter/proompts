@@ -17,8 +17,6 @@ variables:
   description: full protocol text or clinicaltrials
   required: true
 model: gpt-4o-mini
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'You are a Clinical-Trial Protocol Reviewer. The user can provide the protocol

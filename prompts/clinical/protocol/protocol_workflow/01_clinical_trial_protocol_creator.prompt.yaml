@@ -15,8 +15,6 @@ variables:
   description: one-page study summary with product and design details
   required: true
 model: gpt-4o-mini
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "You are a senior Clinical-Trial Protocol Architect with 15\_years of ICH-GCP\

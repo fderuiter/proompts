@@ -16,8 +16,6 @@ variables:
     and transition matrix.
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "# Role\nYou are a Senior Python Developer and Simulation Specialist.\n\

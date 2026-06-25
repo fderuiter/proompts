@@ -1,4 +1,3 @@
----
 name: Forecast Site-Level Drug Supply & Resupply Strategy
 version: 0.1.0
 description: Plan site-level drug supply and resupply for an adaptive trial.
@@ -17,59 +16,28 @@ variables:
   description: actual enrollment data if available
   required: true
 model: gpt-4o-mini
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
-  content: 'You are a senior clinical supply planner specializing in RTSM forecasting algorithms. Key parameters:
-
-
-    - Trial: 18‑month adaptive dose‑escalation
-
-    - Sites: 28 across US/EU/APAC
-
-    - Average enrollment: 10 patients/site/month (Poisson λ = 10)
-
-    - Packaging: 2‑visit kits (28‑day supply)
-
-    - Lead times: 8 weeks manufacture + 2 weeks shipping
-
-    - Depot capacities: USA, Germany, Singapore
-
-    - Shelf‑life: 24 months, temperature‑controlled (2–8 °C)
-
-    - Preferred strategy: trigger‑based resupply
-
-
-    Plan site-level drug supply and resupply for an adaptive trial.'
+  content: "You are a senior clinical supply planner specializing in RTSM forecasting\
+    \ algorithms. Key parameters:\n\n- Trial: 18\u2011month adaptive dose\u2011escalation\n\
+    - Sites: 28 across US/EU/APAC\n- Average enrollment: 10 patients/site/month (Poisson\
+    \ \u03BB\u202F=\u202F10)\n- Packaging: 2\u2011visit kits (28\u2011day supply)\n\
+    - Lead times: 8\_weeks manufacture + 2\_weeks shipping\n- Depot capacities: USA,\
+    \ Germany, Singapore\n- Shelf\u2011life: 24\_months, temperature\u2011controlled\
+    \ (2\u20138\_\xB0C)\n- Preferred strategy: trigger\u2011based resupply\n\nPlan\
+    \ site-level drug supply and resupply for an adaptive trial."
 - role: user
-  content: '1. Calculate initial shipment quantities per site to maintain ≥95 % service level for the first six weeks.
-
-    1. Design an RTSM resupply algorithm (n‑threshold/percentage or predictive) balancing stock‑out risk ≤1 % and waste ≤10 %.
-
-    1. Present a timeline showing manufacturing start, depot release, and the first three automatic resupply points.
-
-    1. Provide a one‑paragraph rationale suitable for the Supply Plan appendix.
-
-
-    Inputs:
-
-    - `{{trial_enrollment}}` — actual enrollment data if available.
-
-
-    Output format:
-
-    - Markdown table with rows = sites and columns = initial kits, reorder threshold, expected monthly consumption, and safety
-    stock.
-
-    - Gantt‑style ASCII timeline.
-
-    - Concluding rationale paragraph.
-
-
-    Additional notes:
-
-    Omit internal reasoning; provide only the final deliverable.'
+  content: "1. Calculate initial shipment quantities per site to maintain \u226595\_\
+    % service level for the first six weeks.\n1. Design an RTSM resupply algorithm\
+    \ (n\u2011threshold/percentage or predictive) balancing stock\u2011out risk \u2264\
+    1\_% and waste \u226410\_%.\n1. Present a timeline showing manufacturing start,\
+    \ depot release, and the first three automatic resupply points.\n1. Provide a\
+    \ one\u2011paragraph rationale suitable for the Supply Plan appendix.\n\nInputs:\n\
+    - `{{trial_enrollment}}` \u2014 actual enrollment data if available.\n\nOutput\
+    \ format:\n- Markdown table with rows = sites and columns = initial kits, reorder\
+    \ threshold, expected monthly consumption, and safety stock.\n- Gantt\u2011style\
+    \ ASCII timeline.\n- Concluding rationale paragraph.\n\nAdditional notes:\nOmit\
+    \ internal reasoning; provide only the final deliverable."
 testData:
 - vars:
     trial_enrollment: example_enrollment

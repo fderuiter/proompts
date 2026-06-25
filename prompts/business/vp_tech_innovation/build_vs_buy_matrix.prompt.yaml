@@ -22,8 +22,6 @@ variables:
   description: The vendor to use for this prompt
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'You are the VP of Technology & Innovation for a scaling [Industry] company.

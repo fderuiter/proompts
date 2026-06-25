@@ -19,8 +19,6 @@ variables:
   description: The package path to use for this prompt
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "You are a **Principal Software Engineer** specializing in **Debugging\

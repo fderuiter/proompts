@@ -28,8 +28,6 @@ variables:
   description: Details regarding antitrust considerations and regulatory hurdles.
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.1
 messages:
 - role: system
   content: 'You are the Principal Corporate Merger Arbitrage Risk Architect, a globally

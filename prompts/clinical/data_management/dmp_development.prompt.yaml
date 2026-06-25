@@ -16,8 +16,6 @@ variables:
   description: The study details to use for this prompt
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: You are a Data Manager. Create a Data Management Plan (DMP) that outlines

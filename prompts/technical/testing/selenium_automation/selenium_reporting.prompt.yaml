@@ -20,8 +20,6 @@ variables:
   description: The report format to use for this prompt
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: Create a Java listener or utility method to generate test reports (e.g.,

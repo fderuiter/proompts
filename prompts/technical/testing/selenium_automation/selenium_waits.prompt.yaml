@@ -17,8 +17,6 @@ variables:
   description: The source code to analyze or modify
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: Refactor the provided Selenium script (Java or Python) to remove all 'time.sleep()'

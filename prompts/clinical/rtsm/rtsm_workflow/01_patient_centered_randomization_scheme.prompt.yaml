@@ -1,7 +1,7 @@
----
 name: Design a Patient-Centered Randomization Scheme
 version: 0.1.0
-description: Create a randomization scheme that balances patient needs with logistical simplicity.
+description: Create a randomization scheme that balances patient needs with logistical
+  simplicity.
 metadata:
   domain: clinical
   complexity: medium
@@ -17,37 +17,27 @@ variables:
   description: any additional trial details
   required: true
 model: gpt-4o-mini
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
-  content: 'You are an RTSM architect with 10 years of global Phase 3 experience. Key study parameters:
-
-
-    - Phase: 3
-
-    - Sites: 42
-
-    - Arms: active 1 : placebo 1
-
-    - Stratification: region (3 levels) and prior therapy (yes/no)
-
-    - Blinding: double‑dummy
-
-    - Desired balance: 1:1 per stratum
-
-    - Regulatory regions: FDA, EMA, PMDA
-
-
-    Create a randomization scheme that balances patient needs with logistical simplicity.'
+  content: "You are an RTSM architect with 10\_years of global Phase\_3 experience.\
+    \ Key study parameters:\n\n- Phase: 3\n- Sites: 42\n- Arms: active\_1 : placebo\_\
+    1\n- Stratification: region (3\_levels) and prior therapy (yes/no)\n- Blinding:\
+    \ double\u2011dummy\n- Desired balance: 1:1 per stratum\n- Regulatory regions:\
+    \ FDA, EMA, PMDA\n\nCreate a randomization scheme that balances patient needs\
+    \ with logistical simplicity."
 - role: user
-  content: "1. Propose the optimal randomization method (permuted blocks, dynamic/minimization, etc.).\n1. Justify block sizes\
-    \ or algorithm parameters to minimize predictability while maintaining simplicity.\n1. Draft a concise randomization specification\
-    \ (≤600 words) covering:\n   - Algorithm description and parameters.\n   - Seed management and audit‑trail requirements.\n\
-    \   - Dummy‑code structure and masking plan.\n   - Simulation results showing expected imbalance <2 patients per arm within\
-    \ each stratum at N = 600.\n\nInputs:\n- `{{study_parameters}}` — any additional trial details.\n\nOutput format:\n- 4‑bullet\
-    \ executive summary.\n- Specification in a markdown table (sections as rows, <80 chars per cell).\n- No internal reasoning—only\
-    \ the final deliverable.\n\nAdditional notes:\nEnsure the scheme is ready for RTSM vendor implementation."
+  content: "1. Propose the optimal randomization method (permuted blocks, dynamic/minimization,\
+    \ etc.).\n1. Justify block sizes or algorithm parameters to minimize predictability\
+    \ while maintaining simplicity.\n1. Draft a concise randomization specification\
+    \ (\u2264600\_words) covering:\n   - Algorithm description and parameters.\n \
+    \  - Seed management and audit\u2011trail requirements.\n   - Dummy\u2011code\
+    \ structure and masking plan.\n   - Simulation results showing expected imbalance\
+    \ <2 patients per arm within each stratum at N\u202F=\u202F600.\n\nInputs:\n-\
+    \ `{{study_parameters}}` \u2014 any additional trial details.\n\nOutput format:\n\
+    - 4\u2011bullet executive summary.\n- Specification in a markdown table (sections\
+    \ as rows, <80\_chars per cell).\n- No internal reasoning\u2014only the final\
+    \ deliverable.\n\nAdditional notes:\nEnsure the scheme is ready for RTSM vendor\
+    \ implementation."
 testData:
 - vars:
     study_parameters: example_study_parameters

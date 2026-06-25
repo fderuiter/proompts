@@ -15,8 +15,6 @@ variables:
   description: The protocol and status to use for this prompt
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: You are a Regulatory Affairs Director. Analyze the proposed drug study

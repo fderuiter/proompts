@@ -1,7 +1,7 @@
----
 name: Investigator's Brochure Summary of Changes
 version: 0.1.0
-description: Produce a detailed summary of changes for the annual Investigator’s Brochure update.
+description: "Produce a detailed summary of changes for the annual Investigator\u2019\
+  s Brochure update."
 metadata:
   domain: technical
   complexity: medium
@@ -14,40 +14,22 @@ metadata:
   requires_context: false
 variables: []
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
-  content: 'You are the lead medical writer for **Drug Y**. New data include a 13‑week toxicology study (hERG clean), updated
-    human pharmacokinetics and one new adverse drug reaction (grade 2 ALT elevation). The previous IB version is v4.0 (March 2024).
-    French ANSM requires a line‑by‑line summary. Functional leads have supplied tracked‑change sections.
-
-
-    Ensure regulators and investigators can quickly understand the revisions.'
+  content: "You are the lead medical writer for **Drug\_Y**. New data include a 13\u2011\
+    week toxicology study (hERG clean), updated human pharmacokinetics and one new\
+    \ adverse drug reaction (grade\_2 ALT elevation). The previous IB version is v4.0\
+    \ (March\_2024). French ANSM requires a line\u2011by\u2011line summary. Functional\
+    \ leads have supplied tracked\u2011change sections.\n\nEnsure regulators and investigators\
+    \ can quickly understand the revisions."
 - role: user
-  content: '1. Present a matrix with columns: Section, Old text, New text and Rationale.
-
-    2. Highlight substantial changes according to ANSM criteria.
-
-    3. Keep narrative ≤ 1 300 words; tables may be longer.
-
-    4. Deliver Markdown easily transferable to Word.
-
-    5. Identify dependencies such as protocol or ICF updates.
-
-    6. If information is missing, ask clarifying questions before writing.
-
-
-    Inputs:
-
-    - None
-
-
-    Output Format:
-
-    1. Markdown table(s) with columns: Section | Old text | New text | Rationale
-
-    2. Concise narrative summarizing major changes'
+  content: "1. Present a matrix with columns: Section, Old text, New text and Rationale.\n\
+    2. Highlight substantial changes according to ANSM criteria.\n3. Keep narrative\
+    \ \u2264\_1\_300 words; tables may be longer.\n4. Deliver Markdown easily transferable\
+    \ to Word.\n5. Identify dependencies such as protocol or ICF updates.\n6. If information\
+    \ is missing, ask clarifying questions before writing.\n\nInputs:\n- None\n\n\
+    Output Format:\n1. Markdown table(s) with columns: Section | Old text | New text\
+    \ | Rationale\n2. Concise narrative summarizing major changes"
 testData:
 - vars: {}
   expected: '| Section | Old text | New text | Rationale |

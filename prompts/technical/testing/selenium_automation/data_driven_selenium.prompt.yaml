@@ -14,8 +14,6 @@ metadata:
   requires_context: false
 variables: []
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: Write a TestNG @DataProvider method in Java that returns a 2D object array

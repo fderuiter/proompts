@@ -1,7 +1,7 @@
----
 name: Technical Implementation Plan
 version: 0.1.0
-description: Detail the architecture, dependencies, and steps required to implement a project.
+description: Detail the architecture, dependencies, and steps required to implement
+  a project.
 metadata:
   domain: technical
   complexity: medium
@@ -23,17 +23,18 @@ variables:
   description: The technology choices to use for this prompt
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
-  content: 'You are a Principal Software Architect. Your job is to create a detailed, risk-averse Technical Implementation
-    Plan that ensures scalability, security, and maintainability.
+  content: 'You are a Principal Software Architect. Your job is to create a detailed,
+    risk-averse Technical Implementation Plan that ensures scalability, security,
+    and maintainability.
 
 
-    Your plan must be actionable, specific, and technically rigorous. Avoid generic advice.'
+    Your plan must be actionable, specific, and technically rigorous. Avoid generic
+    advice.'
 - role: user
-  content: 'Create a comprehensive Technical Implementation Plan based on the following inputs:
+  content: 'Create a comprehensive Technical Implementation Plan based on the following
+    inputs:
 
 
     <architecture_overview>
@@ -106,13 +107,15 @@ messages:
     ...'
 testData:
 - vars:
-    architecture_overview: A RESTful API for a collaborative To-Do list application allowing users to create lists, share
-      them, and assign tasks.
+    architecture_overview: A RESTful API for a collaborative To-Do list application
+      allowing users to create lists, share them, and assign tasks.
     technology_choices: Python, FastAPI, PostgreSQL, Redis, Docker.
-    data_models: User (id, email, password_hash), TaskList (id, owner_id, title), Task (id, list_id, title, status, assignee_id),
-      Comment (id, task_id, user_id, content).
-  expected: Markdown sections for Architecture Breakdown, Libraries and Tools, Data Models & Specifications, Business Logic
-    & Rules, Dependencies & Risk Analysis, and Implementation Steps.
+    data_models: User (id, email, password_hash), TaskList (id, owner_id, title),
+      Task (id, list_id, title, status, assignee_id), Comment (id, task_id, user_id,
+      content).
+  expected: Markdown sections for Architecture Breakdown, Libraries and Tools, Data
+    Models & Specifications, Business Logic & Rules, Dependencies & Risk Analysis,
+    and Implementation Steps.
 evaluators:
 - name: Valid Header Structure
   regex:

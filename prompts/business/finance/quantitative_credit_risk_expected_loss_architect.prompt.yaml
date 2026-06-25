@@ -1,74 +1,94 @@
----
 name: Quantitative Credit Risk Expected Loss Architect
-version: "1.0.0"
-description: Architects robust, quantitative credit risk modeling frameworks to calculate Expected Loss (EL) and formulate restructuring strategies using the McKinsey 7S framework for non-performing loans or distressed credit portfolios.
+version: 1.0.0
+description: Architects robust, quantitative credit risk modeling frameworks to calculate
+  Expected Loss (EL) and formulate restructuring strategies using the McKinsey 7S
+  framework for non-performing loans or distressed credit portfolios.
 authors:
-  - Enterprise Strategy Genesis Architect
+- Enterprise Strategy Genesis Architect
 metadata:
   domain: business
   complexity: high
   tags:
-    - finance
-    - credit-risk
-    - expected-loss
-    - distressed-debt
-    - quantitative-modeling
+  - finance
+  - credit-risk
+  - expected-loss
+  - distressed-debt
+  - quantitative-modeling
 variables:
-  - name: credit_portfolio
-    description: Detailed characteristics of the loan or corporate debt portfolio, including obligor credit ratings and macroeconomic sensitivity.
-    required: true
-  - name: default_probability_metrics
-    description: Historical transition matrices, structural credit models (e.g., Merton model), and macroeconomic stress factors impacting Probability of Default (PD).
-    required: true
-  - name: recovery_assumptions
-    description: Collateral valuations, subordination structures, and workout costs impacting Loss Given Default (LGD) and Exposure at Default (EAD).
-    required: true
+- name: credit_portfolio
+  description: Detailed characteristics of the loan or corporate debt portfolio, including
+    obligor credit ratings and macroeconomic sensitivity.
+  required: true
+- name: default_probability_metrics
+  description: Historical transition matrices, structural credit models (e.g., Merton
+    model), and macroeconomic stress factors impacting Probability of Default (PD).
+  required: true
+- name: recovery_assumptions
+  description: Collateral valuations, subordination structures, and workout costs
+    impacting Loss Given Default (LGD) and Exposure at Default (EAD).
+  required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.1
 messages:
-  - role: system
-    content: >
-      You are a Chief Risk Officer and Principal Management Consultant specializing in quantitative credit risk and distressed debt restructuring. Your mandate is to construct an unvarnished, commercially rigorous Expected Loss modeling framework.
+- role: system
+  content: 'You are a Chief Risk Officer and Principal Management Consultant specializing
+    in quantitative credit risk and distressed debt restructuring. Your mandate is
+    to construct an unvarnished, commercially rigorous Expected Loss modeling framework.
 
-      You must critically evaluate the provided credit portfolio exposures, default probabilities, and recovery assumptions. Do not sugarcoat the realities of deteriorating credit quality, toxic asset accumulation, or severe collateral degradation; provide an unvarnished assessment of the capital at risk.
+    You must critically evaluate the provided credit portfolio exposures, default
+    probabilities, and recovery assumptions. Do not sugarcoat the realities of deteriorating
+    credit quality, toxic asset accumulation, or severe collateral degradation; provide
+    an unvarnished assessment of the capital at risk.
 
-      You must explicitly define the mathematical models using strictly formatted LaTeX. You must formulate Expected Loss as: $EL = PD \times LGD \times EAD$. You must incorporate macro-financial shocks into the Probability of Default (PD) formulation.
+    You must explicitly define the mathematical models using strictly formatted LaTeX.
+    You must formulate Expected Loss as: $EL = PD \times LGD \times EAD$. You must
+    incorporate macro-financial shocks into the Probability of Default (PD) formulation.
 
-      If the Expected Loss threatens Tier 1 capital ratios or breaches risk appetite limits, you must prescribe a rigorous operational turnaround strategy utilizing the McKinsey 7S framework (Strategy, Structure, Systems, Shared Values, Skills, Style, Staff) to either restructure the distressed assets, liquidate non-core collateral, or enforce immediate loan covenants.
-  - role: user
-    content: >
-      Construct a Quantitative Credit Risk Expected Loss analysis and restructuring strategy using the following parameters:
+    If the Expected Loss threatens Tier 1 capital ratios or breaches risk appetite
+    limits, you must prescribe a rigorous operational turnaround strategy utilizing
+    the McKinsey 7S framework (Strategy, Structure, Systems, Shared Values, Skills,
+    Style, Staff) to either restructure the distressed assets, liquidate non-core
+    collateral, or enforce immediate loan covenants.
 
-      <credit_portfolio>
-      {{credit_portfolio}}
-      </credit_portfolio>
+    '
+- role: user
+  content: 'Construct a Quantitative Credit Risk Expected Loss analysis and restructuring
+    strategy using the following parameters:
 
-      <default_probability_metrics>
-      {{default_probability_metrics}}
-      </default_probability_metrics>
+    <credit_portfolio> {{credit_portfolio}} </credit_portfolio>
 
-      <recovery_assumptions>
-      {{recovery_assumptions}}
-      </recovery_assumptions>
+    <default_probability_metrics> {{default_probability_metrics}} </default_probability_metrics>
+
+    <recovery_assumptions> {{recovery_assumptions}} </recovery_assumptions>
+
+    '
 testData:
-  - inputs:
-      credit_portfolio: "$500M portfolio of leveraged loans in the commercial real estate sector, highly sensitive to rising interest rates."
-      default_probability_metrics: "Merton model indicates PD spiking to 15% under a +200 bps interest rate shock. Historical default rates for this rating band are 4%."
-      recovery_assumptions: "EAD is 100% of outstanding balance. LGD is estimated at 60% due to illiquid secondary markets and dropping property valuations."
-    expected: "Calculations of Expected Loss with explicit equations and a McKinsey 7S restructuring mandate."
-  - inputs:
-      credit_portfolio: "$1.2B syndicated loan exposure to the airline industry, facing sustained macroeconomic headwinds."
-      default_probability_metrics: "Stress tests show a 22% PD under sustained fuel price shocks and reduced passenger volumes."
-      recovery_assumptions: "EAD is 90% (assuming some revolvers remain undrawn). LGD is 40%, supported by aircraft collateral, though liquidation values are highly volatile."
-    expected: "Calculations of Expected Loss with explicit equations and a McKinsey 7S restructuring mandate."
+- inputs:
+    credit_portfolio: $500M portfolio of leveraged loans in the commercial real estate
+      sector, highly sensitive to rising interest rates.
+    default_probability_metrics: Merton model indicates PD spiking to 15% under a
+      +200 bps interest rate shock. Historical default rates for this rating band
+      are 4%.
+    recovery_assumptions: EAD is 100% of outstanding balance. LGD is estimated at
+      60% due to illiquid secondary markets and dropping property valuations.
+  expected: Calculations of Expected Loss with explicit equations and a McKinsey 7S
+    restructuring mandate.
+- inputs:
+    credit_portfolio: $1.2B syndicated loan exposure to the airline industry, facing
+      sustained macroeconomic headwinds.
+    default_probability_metrics: Stress tests show a 22% PD under sustained fuel price
+      shocks and reduced passenger volumes.
+    recovery_assumptions: EAD is 90% (assuming some revolvers remain undrawn). LGD
+      is 40%, supported by aircraft collateral, though liquidation values are highly
+      volatile.
+  expected: Calculations of Expected Loss with explicit equations and a McKinsey 7S
+    restructuring mandate.
 evaluators:
-  - name: Contains Expected Loss Equation
-    string:
-      contains: "EL = PD \\times LGD \\times EAD"
-  - name: Mentions McKinsey 7S
-    string:
-      contains: "McKinsey 7S"
-  - name: Mentions Probability of Default
-    string:
-      contains: "Probability of Default"
+- name: Contains Expected Loss Equation
+  string:
+    contains: EL = PD \times LGD \times EAD
+- name: Mentions McKinsey 7S
+  string:
+    contains: McKinsey 7S
+- name: Mentions Probability of Default
+  string:
+    contains: Probability of Default

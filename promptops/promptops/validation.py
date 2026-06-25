@@ -4,7 +4,7 @@ from enum import Enum
 from pathlib import Path
 from typing import Any, List, Optional, Dict, Union
 
-from pydantic import BaseModel, ValidationError, field_validator, model_validator, Field
+from pydantic import BaseModel, ValidationError, field_validator, model_validator, Field, ConfigDict, AliasChoices
 from promptops.utils import load_yaml, iter_prompt_files, iter_workflow_files
 from promptops import console
 
@@ -47,11 +47,12 @@ class Message(BaseModel):
         return self
 
 class ModelParameters(BaseModel):
+    model_config = ConfigDict(extra='forbid', populate_by_name=True)
     temperature: float = Field(...)
-    max_tokens: Optional[int] = Field(None)
-    top_p: Optional[float] = Field(None)
-    frequency_penalty: Optional[float] = Field(None)
-    presence_penalty: Optional[float] = Field(None)
+    max_tokens: Optional[int] = Field(None, validation_alias=AliasChoices('max_tokens', 'maxTokens'))
+    top_p: Optional[float] = Field(None, validation_alias=AliasChoices('top_p', 'topP'))
+    frequency_penalty: Optional[float] = Field(None, validation_alias=AliasChoices('frequency_penalty', 'frequencyPenalty'))
+    presence_penalty: Optional[float] = Field(None, validation_alias=AliasChoices('presence_penalty', 'presencePenalty'))
 
 class InputVariable(BaseModel):
     name: str = Field(...)
@@ -76,6 +77,7 @@ class MCPTool(BaseModel):
     inputSchema: InputSchema = Field(...)
 
 class PromptSchema(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
     name: str = Field(...)
     version: str = Field("0.1.0")
     description: str = Field(...)

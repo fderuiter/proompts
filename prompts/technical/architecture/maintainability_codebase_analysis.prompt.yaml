@@ -16,8 +16,6 @@ variables:
   description: The source code to analyze or modify
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.1
 messages:
 - role: system
   content: "You are a Principal Software Architect with 15 years of experience in\

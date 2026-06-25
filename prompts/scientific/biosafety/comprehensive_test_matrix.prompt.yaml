@@ -1,4 +1,3 @@
----
 name: Comprehensive Biocompatibility Test Matrix
 version: 0.1.0
 description: Generate a detailed biocompatibility test matrix for a medical device.
@@ -17,35 +16,18 @@ variables:
   description: materials and clinical-use scenario
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
-  content: 'You are the lead biocompatibility scientist at an ISO 17025-accredited lab. Follow the FDA-modified ISO 10993
-    endpoint matrix.
-
-
-    Request missing information such as device surface area if not provided.'
+  content: "You are the lead biocompatibility scientist at an ISO\_17025-accredited\
+    \ lab. Follow the FDA-modified ISO\_10993 endpoint matrix.\n\nRequest missing\
+    \ information such as device surface area if not provided."
 - role: user
-  content: '1. For each endpoint, specify test type (in vitro, in vivo, or NAM).
-
-    2. List the relevant standard and edition (ISO/ASTM/USP).
-
-    3. Provide sample conditioning and extraction details per FDA guidance.
-
-    4. Note acceptance criteria and rationale.
-
-    5. Suggest potential NAM replacements to reduce animal use.
-
-
-    Inputs:
-
-    - `{{device_materials}}` — materials and clinical-use scenario
-
-
-    Output format:
-
-    Two-level markdown table followed by concise explanatory notes.'
+  content: "1. For each endpoint, specify test type (in\_vitro, in\_vivo, or NAM).\n\
+    2. List the relevant standard and edition (ISO/ASTM/USP).\n3. Provide sample conditioning\
+    \ and extraction details per FDA guidance.\n4. Note acceptance criteria and rationale.\n\
+    5. Suggest potential NAM replacements to reduce animal use.\n\nInputs:\n- `{{device_materials}}`\
+    \ \u2014 materials and clinical-use scenario\n\nOutput format:\nTwo-level markdown\
+    \ table followed by concise explanatory notes."
 testData:
 - vars:
     device_materials: example_device_materials

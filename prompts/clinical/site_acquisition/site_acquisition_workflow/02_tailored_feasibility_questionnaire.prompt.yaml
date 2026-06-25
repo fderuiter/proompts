@@ -16,8 +16,6 @@ variables:
   description: draft study synopsis
   required: true
 model: gpt-4o-mini
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'You are a clinical-feasibility specialist with 15 years of experience

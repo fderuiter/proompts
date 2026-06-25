@@ -1,7 +1,7 @@
----
 name: Project Memory Notes
 version: 0.1.0
-description: Maintain a running log of architectural decisions and contextual notes for the project.
+description: Maintain a running log of architectural decisions and contextual notes
+  for the project.
 metadata:
   domain: technical
   complexity: low
@@ -14,8 +14,6 @@ metadata:
   requires_context: true
 variables: []
 model: gpt-4
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'Use `memory.md` to preserve important information between coding sessions.
@@ -40,7 +38,8 @@ messages:
     Markdown file with sections **Current Project State** and **Contextual Notes**.'
 testData:
 - vars: {}
-  expected: Markdown file with sections **Current Project State** and **Contextual Notes**.
+  expected: Markdown file with sections **Current Project State** and **Contextual
+    Notes**.
 evaluators:
 - name: Output starts with 'Current Project State'
   string:

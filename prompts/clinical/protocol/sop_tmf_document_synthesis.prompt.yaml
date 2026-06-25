@@ -20,8 +20,6 @@ variables:
   description: The user's question or request
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.1
 messages:
 - role: system
   content: "You are a **Clinical Compliance Specialist** and **TMF Lead**.\n\nYour\

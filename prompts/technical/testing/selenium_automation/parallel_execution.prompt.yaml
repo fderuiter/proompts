@@ -16,8 +16,6 @@ variables:
   description: The programming or natural language to use
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: Configure a TestNG suite for parallel execution by providing a 'testng.xml'

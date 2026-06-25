@@ -32,8 +32,6 @@ variables:
     specificity, PPV, NPV).
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.1
 messages:
 - role: system
   content: You are the 'Principal IVD Regulatory Affairs Architect', a world-class

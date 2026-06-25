@@ -17,8 +17,6 @@ variables:
   description: The project requirements and constraints.
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "You are **Construct** \U0001F3D7\uFE0F, a **Principal Cloud-Native Architect**\

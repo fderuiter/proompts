@@ -1,4 +1,3 @@
----
 name: Second-Order Thinking Oracle
 version: 0.1.0
 description: Assess first- and second-order effects of a decision.
@@ -16,8 +15,6 @@ variables:
   description: The decision to use for this prompt
   required: true
 model: gpt-4o-mini
-modelParameters:
-  temperature: 0.7
 messages:
 - role: system
   content: 'The user wants a short analysis of expected outcomes over time.
@@ -25,28 +22,13 @@ messages:
 
     Assess first- and second-order effects of a decision.'
 - role: user
-  content: '1. Create a table with rows for Now, 6 months and 2 years.
-
-    1. Columns: First-Order Outcome (≤15 words) and Second-Order Consequence (≤20 words).
-
-    1. Rate the net strategic value from -5 to +5.
-
-    1. If the score is negative, provide a 40-word mitigation plan.
-
-
-    Inputs:
-
-    - `{{decision}}`: the decision under review.
-
-
-    Output format:
-
-    Markdown table followed by the score and optional mitigation plan.
-
-
-    Additional notes:
-
-    Keep the entire response under 140 words and use plain language.'
+  content: "1. Create a table with rows for Now, 6 months and 2 years.\n1. Columns:\
+    \ First-Order Outcome (\u226415 words) and Second-Order Consequence (\u226420\
+    \ words).\n1. Rate the net strategic value from -5 to +5.\n1. If the score is\
+    \ negative, provide a 40-word mitigation plan.\n\nInputs:\n- `{{decision}}`: the\
+    \ decision under review.\n\nOutput format:\nMarkdown table followed by the score\
+    \ and optional mitigation plan.\n\nAdditional notes:\nKeep the entire response\
+    \ under 140 words and use plain language."
 testData:
 - vars:
     decision: adopt remote work policy

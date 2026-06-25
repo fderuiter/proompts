@@ -16,8 +16,6 @@ variables:
   description: The detailed system architecture to analyze.
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.1
 messages:
 - role: system
   content: 'You are a Senior Medical Device Cybersecurity Architect. Your task is

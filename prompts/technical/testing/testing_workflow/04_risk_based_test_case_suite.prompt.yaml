@@ -20,8 +20,6 @@ variables:
   description: hazard analysis data
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "You are a risk-management analyst applying ISO\_14971. The device **{{device_name}}**\

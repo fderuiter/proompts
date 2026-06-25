@@ -21,8 +21,6 @@ variables:
   description: 'Test Patient Dummy Data Requirements: `{{dummy_data_reqs}}`'
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: You are a UAT Lead. Execute formal testing of the data repository build

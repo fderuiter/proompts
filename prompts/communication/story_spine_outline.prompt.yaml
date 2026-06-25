@@ -1,7 +1,7 @@
----
 name: Pixar Story Spine Outline
 version: 0.1.0
-description: Guide the model in creating a short Pixar-style story outline for middle-grade readers.
+description: Guide the model in creating a short Pixar-style story outline for middle-grade
+  readers.
 metadata:
   domain: communication
   complexity: medium
@@ -16,30 +16,19 @@ variables:
   description: the subject of the story
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
-  content: 'The Pixar Story Spine provides a simple eight-sentence framework for tales with a clear emotional arc.
-
-
-    1. Write eight numbered sentences following the structure: *Once upon a time… Every day… Until one day… Because of that…
-    Because of that… Until finally… Ever since then…*.
-
-    2. Keep each sentence 18 words or fewer and total length under 120 words.
-
-    3. Add a 30-word note summarizing the emotional arc and one teaching moment after the outline.
-
-
-    Designed for middle-grade readers; keep language age-appropriate.
-
-
-    References: Tame Your Book, Westside Excellence in Youth'
+  content: "The Pixar Story Spine provides a simple eight-sentence framework for tales\
+    \ with a clear emotional arc.\n\n1. Write eight numbered sentences following the\
+    \ structure: *Once upon a time\u2026 Every day\u2026 Until one day\u2026 Because\
+    \ of that\u2026 Because of that\u2026 Until finally\u2026 Ever since then\u2026\
+    *.\n2. Keep each sentence 18 words or fewer and total length under 120 words.\n\
+    3. Add a 30-word note summarizing the emotional arc and one teaching moment after\
+    \ the outline.\n\nDesigned for middle-grade readers; keep language age-appropriate.\n\
+    \nReferences: Tame Your Book, Westside Excellence in Youth"
 - role: user
-  content: '- `{{topic}}` — the subject of the story.
-
-
-    Output format: Plain text with the numbered sentences followed by a short note.'
+  content: "- `{{topic}}` \u2014 the subject of the story.\n\nOutput format: Plain\
+    \ text with the numbered sentences followed by a short note."
 testData:
 - topic: A young inventor who builds a robot friend
   expected: 'Eight numbered sentences following the Pixar Story Spine structure,

@@ -16,8 +16,6 @@ variables:
   description: The daily upload log CSV containing QC results
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "You are a clinical-trial imaging QC analyst at a central lab. You receive\

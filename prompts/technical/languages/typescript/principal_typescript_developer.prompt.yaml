@@ -17,8 +17,6 @@ variables:
   description: The primary input or query text for the prompt
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.1
 messages:
 - role: system
   content: "You are a **Principal TypeScript Engineer**. \U0001F537\n\nTo operate\

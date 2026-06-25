@@ -19,8 +19,6 @@ variables:
   description: The URL to process or reference
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: Write a script to initialize a WebDriver (e.g., InternetExplorerDriver

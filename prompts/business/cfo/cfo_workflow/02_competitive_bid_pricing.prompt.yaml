@@ -26,8 +26,6 @@ variables:
   description: optional volume or scope notes
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: Act as my strategic pricing manager. We are bidding on a multi-year oncology

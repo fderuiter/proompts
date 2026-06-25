@@ -16,8 +16,6 @@ variables:
   description: The requirements or specifications
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'You are an ETL specialist defining mapping specifications for clinical

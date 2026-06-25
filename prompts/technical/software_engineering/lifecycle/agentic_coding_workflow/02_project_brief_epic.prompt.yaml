@@ -1,4 +1,3 @@
----
 name: Project Brief for Epic
 version: 0.1.0
 description: Summarize a project epic with key features, rules, and success metrics.
@@ -29,43 +28,24 @@ variables:
   description: measurements of success
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
-  content: 'Use this brief to capture the high-level scope of a significant project milestone or epic.
+  content: 'Use this brief to capture the high-level scope of a significant project
+    milestone or epic.
 
 
     Keep each list concise and focused on actionable information.'
 - role: user
-  content: '1. Describe the overall project goal.
-
-    1. List key features or milestones to achieve.
-
-    1. Outline important data models and entities.
-
-    1. Specify critical business rules or logic.
-
-    1. Define success metrics for performance or engagement.
-
-    1. Add any additional technical details or constraints.
-
-    Inputs:
-
-    - `{{project_description}}` – summary of the epic
-
-    - `{{key_features}}` – features or milestones
-
-    - `{{data_models}}` – entities and types
-
-    - `{{business_rules}}` – domain logic
-
-    - `{{success_metrics}}` – measurements of success
-
-    Output format:
-
-    Markdown sections titled **Project Description**, **Key Features**, **Technical Entities & Data Models**, **Business Rules
-    & Logic**, **Success Metrics**, and **Additional Implementation Details**.'
+  content: "1. Describe the overall project goal.\n1. List key features or milestones\
+    \ to achieve.\n1. Outline important data models and entities.\n1. Specify critical\
+    \ business rules or logic.\n1. Define success metrics for performance or engagement.\n\
+    1. Add any additional technical details or constraints.\nInputs:\n- `{{project_description}}`\
+    \ \u2013 summary of the epic\n- `{{key_features}}` \u2013 features or milestones\n\
+    - `{{data_models}}` \u2013 entities and types\n- `{{business_rules}}` \u2013 domain\
+    \ logic\n- `{{success_metrics}}` \u2013 measurements of success\nOutput format:\n\
+    Markdown sections titled **Project Description**, **Key Features**, **Technical\
+    \ Entities & Data Models**, **Business Rules & Logic**, **Success Metrics**, and\
+    \ **Additional Implementation Details**."
 testData:
 - vars:
     success_metrics: example_success_metrics
@@ -73,8 +53,9 @@ testData:
     data_models: example_data_models
     key_features: example_key_features
     project_description: example_project_description
-  expected: Markdown sections titled **Project Description**, **Key Features**, **Technical Entities & Data Models**, **Business
-    Rules & Logic**, **Success Metrics**, and **Additional Implementation Details**.
+  expected: Markdown sections titled **Project Description**, **Key Features**, **Technical
+    Entities & Data Models**, **Business Rules & Logic**, **Success Metrics**, and
+    **Additional Implementation Details**.
 evaluators:
 - name: Output starts with 'Project Description'
   string:

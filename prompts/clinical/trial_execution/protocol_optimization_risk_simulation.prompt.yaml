@@ -17,8 +17,6 @@ variables:
   description: proposed protocol text
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "You are a clinical operations expert with extensive experience in protocol\

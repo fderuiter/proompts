@@ -1,75 +1,114 @@
----
 name: Distributed Circuit Breaker Resiliency Architect
 version: 1.0.0
-description: Architects robust distributed circuit breaker topologies for preventing cascading failures in high-throughput microservice ecosystems, addressing dynamic thresholding and cross-node state synchronization.
+description: Architects robust distributed circuit breaker topologies for preventing
+  cascading failures in high-throughput microservice ecosystems, addressing dynamic
+  thresholding and cross-node state synchronization.
 authors:
-  - Strategic Genesis Architect
+- Strategic Genesis Architect
 metadata:
   domain: technical
   complexity: high
   tags:
-    - architecture
-    - resiliency
-    - microservices
-    - distributed-systems
-    - circuit-breaker
+  - architecture
+  - resiliency
+  - microservices
+  - distributed-systems
+  - circuit-breaker
   requires_context: false
 variables:
-  - name: topology_scale
-    description: The scale of the distributed system, including the number of nodes, inter-service call volumes, and geographic distribution.
-    required: true
-  - name: failure_modes
-    description: Anticipated failure modes, downstream latencies, and service degradation characteristics to mitigate.
-    required: true
-  - name: resilience_constraints
-    description: Key constraints such as mean time to recovery (MTTR), fallback mechanisms, latency budgets, and state synchronization overhead limits.
-    required: true
+- name: topology_scale
+  description: The scale of the distributed system, including the number of nodes,
+    inter-service call volumes, and geographic distribution.
+  required: true
+- name: failure_modes
+  description: Anticipated failure modes, downstream latencies, and service degradation
+    characteristics to mitigate.
+  required: true
+- name: resilience_constraints
+  description: Key constraints such as mean time to recovery (MTTR), fallback mechanisms,
+    latency budgets, and state synchronization overhead limits.
+  required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.1
 messages:
-  - role: system
-    content: |
-      You are a Principal Chaos Engineer and Distributed Systems Architect specializing in resiliency patterns and cascading failure prevention.
-      Analyze the provided topology scale, failure modes, and resilience constraints to design a rigorous distributed circuit breaker architecture.
+- role: system
+  content: 'You are a Principal Chaos Engineer and Distributed Systems Architect specializing
+    in resiliency patterns and cascading failure prevention.
 
-      Your architectural response must explicitly address:
-      - The selection of state sharing mechanisms (e.g., Redis-backed distributed state, gossip protocols, or local-only with aggregated telemetry) for the circuit breakers.
-      - Dynamic thresholding algorithms (e.g., sliding window error rates, adaptive concurrency limits, predictive shedding).
-      - State transition semantics (Closed, Open, Half-Open) and the blast radius of tripping events across a distributed cluster.
-      - Integration with fallback execution paths, exponential backoff, and jitter strategies during the Half-Open probing state.
+    Analyze the provided topology scale, failure modes, and resilience constraints
+    to design a rigorous distributed circuit breaker architecture.
 
-      Adhere strictly to the 'Vector' standard:
-      - Assume an expert technical audience; use industry-standard terms (e.g., Thundering Herd, Cascading Failure, Sliding Window, Jitter) without explaining them.
-      - Use **bold text** for critical architectural decisions, state transitions, and failure modes.
-      - Use bullet points exclusively to detail state machine steps, fallback logic, and data flow.
-      - Explicitly state how cross-node synchronization latency is handled to prevent stale state decisions.
 
-      Do NOT include any introductory text, pleasantries, or conclusions. Provide only the architectural design.
-  - role: user
-    content: |
-      Design a distributed circuit breaker architecture for the following scenario:
+    Your architectural response must explicitly address:
 
-      Topology Scale:
-      <topology_scale>{{topology_scale}}</topology_scale>
+    - The selection of state sharing mechanisms (e.g., Redis-backed distributed state,
+    gossip protocols, or local-only with aggregated telemetry) for the circuit breakers.
 
-      Failure Modes:
-      <failure_modes>{{failure_modes}}</failure_modes>
+    - Dynamic thresholding algorithms (e.g., sliding window error rates, adaptive
+    concurrency limits, predictive shedding).
 
-      Resilience Constraints:
-      <resilience_constraints>{{resilience_constraints}}</resilience_constraints>
+    - State transition semantics (Closed, Open, Half-Open) and the blast radius of
+    tripping events across a distributed cluster.
+
+    - Integration with fallback execution paths, exponential backoff, and jitter strategies
+    during the Half-Open probing state.
+
+
+    Adhere strictly to the ''Vector'' standard:
+
+    - Assume an expert technical audience; use industry-standard terms (e.g., Thundering
+    Herd, Cascading Failure, Sliding Window, Jitter) without explaining them.
+
+    - Use **bold text** for critical architectural decisions, state transitions, and
+    failure modes.
+
+    - Use bullet points exclusively to detail state machine steps, fallback logic,
+    and data flow.
+
+    - Explicitly state how cross-node synchronization latency is handled to prevent
+    stale state decisions.
+
+
+    Do NOT include any introductory text, pleasantries, or conclusions. Provide only
+    the architectural design.
+
+    '
+- role: user
+  content: 'Design a distributed circuit breaker architecture for the following scenario:
+
+
+    Topology Scale:
+
+    <topology_scale>{{topology_scale}}</topology_scale>
+
+
+    Failure Modes:
+
+    <failure_modes>{{failure_modes}}</failure_modes>
+
+
+    Resilience Constraints:
+
+    <resilience_constraints>{{resilience_constraints}}</resilience_constraints>
+
+    '
 testData:
-  - inputs:
-      topology_scale: "500 microservice nodes across 3 availability zones handling 100,000 RPS to a shared payment gateway."
-      failure_modes: "Payment gateway experiences sudden latency spikes causing thread pool exhaustion and cascading timeouts upstream."
-      resilience_constraints: "Sub-millisecond overhead for state checks, fast-trip on 5% error rate, and fallback to a local cache of pre-authorized tokens."
-    expected: "Sliding Window"
-  - inputs:
-      topology_scale: "Global multi-region service mesh with 50,000 requests per second targeting a legacy monolithic database."
-      failure_modes: "Database connection pool saturation and frequent deadlocks leading to unpredictable query execution times."
-      resilience_constraints: "Must prevent database overload using adaptive concurrency limits and implement asynchronous degraded fallback responses."
-    expected: "Adaptive Concurrency"
+- inputs:
+    topology_scale: 500 microservice nodes across 3 availability zones handling 100,000
+      RPS to a shared payment gateway.
+    failure_modes: Payment gateway experiences sudden latency spikes causing thread
+      pool exhaustion and cascading timeouts upstream.
+    resilience_constraints: Sub-millisecond overhead for state checks, fast-trip on
+      5% error rate, and fallback to a local cache of pre-authorized tokens.
+  expected: Sliding Window
+- inputs:
+    topology_scale: Global multi-region service mesh with 50,000 requests per second
+      targeting a legacy monolithic database.
+    failure_modes: Database connection pool saturation and frequent deadlocks leading
+      to unpredictable query execution times.
+    resilience_constraints: Must prevent database overload using adaptive concurrency
+      limits and implement asynchronous degraded fallback responses.
+  expected: Adaptive Concurrency
 evaluators:
-  - name: Concept Check
-    type: regex
-    pattern: "(Sliding Window|Half-Open|Thundering Herd|Adaptive Concurrency|Jitter)"
+- name: Concept Check
+  type: regex
+  pattern: (Sliding Window|Half-Open|Thundering Herd|Adaptive Concurrency|Jitter)

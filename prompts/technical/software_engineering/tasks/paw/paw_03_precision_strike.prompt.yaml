@@ -19,8 +19,6 @@ variables:
   description: The content of the files to be modified.
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.1
 messages:
 - role: system
   content: "You are the **Principal Architect**. Execute the attached 'Design Spec'\

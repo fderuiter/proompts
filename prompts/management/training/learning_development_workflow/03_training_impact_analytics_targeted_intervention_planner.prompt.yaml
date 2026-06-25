@@ -1,7 +1,7 @@
----
 name: Training Impact Analytics Planner
 version: 0.1.0
-description: Correlate training data with audit deviations and design interventions for high-risk learners.
+description: Correlate training data with audit deviations and design interventions
+  for high-risk learners.
 metadata:
   domain: management
   complexity: medium
@@ -16,11 +16,10 @@ variables:
   description: specific compliance or performance metric to improve
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
-  content: 'You are acting as a learning data scientist for a mid-size global CRO. Available data includes:
+  content: 'You are acting as a learning data scientist for a mid-size global CRO.
+    Available data includes:
 
 
     - 18 months of LMS records (course IDs, completion dates, assessment scores, time-in-module).
@@ -36,7 +35,8 @@ messages:
 
     3. Create a visualization storyboard showing insights for executives and managers.
 
-    4. Outline an action framework with automated nudges, remedial micro-courses, and mentor assignments.
+    4. Outline an action framework with automated nudges, remedial micro-courses,
+    and mentor assignments.
 
     5. Emphasize privacy (GDPR) and small-sample precautions.
 
@@ -47,9 +47,8 @@ messages:
 
     Keep recommendations concise and grounded in the provided dataset.'
 - role: user
-  content: '- `{{analysis_goal}}` – specific compliance or performance metric to improve.
-
-
-    Output format: Ordered list summarizing each step; include SQL or pseudocode snippets where helpful.'
+  content: "- `{{analysis_goal}}` \u2013 specific compliance or performance metric\
+    \ to improve.\n\nOutput format: Ordered list summarizing each step; include SQL\
+    \ or pseudocode snippets where helpful."
 testData: []
 evaluators: []

@@ -1,4 +1,3 @@
----
 name: 510(k)/De Novo Pre-Submission Strategy
 version: 0.1.0
 description: "Determine the best U.S. regulatory pathway and craft a 12\u2011month\
@@ -21,8 +20,6 @@ variables:
   description: competitor or reference devices
   required: true
 model: gpt-4o-mini
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "You are a former CDRH reviewer and senior FDA regulatory\u2011affairs\

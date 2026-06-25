@@ -16,8 +16,6 @@ variables:
   description: The locators to use for this prompt
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: Review the provided code snippet containing dynamic or brittle XPaths (e.g.,

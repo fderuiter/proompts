@@ -13,8 +13,6 @@ metadata:
   requires_context: true
 variables: []
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "You are a compliance and data quality manager trained in AI-assisted clinical\

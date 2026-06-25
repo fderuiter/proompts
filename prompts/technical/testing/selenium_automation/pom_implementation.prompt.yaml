@@ -17,8 +17,6 @@ variables:
   description: The html source to use for this prompt
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: Act as a Selenium automation expert. Create a Java class following the

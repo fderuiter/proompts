@@ -22,8 +22,6 @@ variables:
   description: The requirements or specifications
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'You are a Clinical Trial Manager and COA Specialist. Your task is to draft

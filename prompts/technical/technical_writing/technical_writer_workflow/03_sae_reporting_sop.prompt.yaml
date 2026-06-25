@@ -20,8 +20,6 @@ variables:
   description: specific reporting timelines or requirements from the sponsor
   required: false
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "You are a Senior Technical Writer specializing in Clinical Quality Assurance\

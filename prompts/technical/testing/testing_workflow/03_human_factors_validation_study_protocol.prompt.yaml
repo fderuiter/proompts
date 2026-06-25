@@ -19,8 +19,6 @@ variables:
   description: name of the device
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "You are a human\u2011factors specialist preparing the design validation\

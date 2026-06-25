@@ -16,8 +16,6 @@ variables:
   description: The data or dataset to analyze
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: You are a Clinical Operations Strategist. Generate a Diversity Action Plan

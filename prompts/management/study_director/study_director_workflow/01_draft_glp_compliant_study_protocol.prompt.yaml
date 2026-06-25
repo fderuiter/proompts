@@ -16,8 +16,6 @@ variables:
   description: any additional study parameters
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "You are a senior toxicologist preparing a 28\u2011day oral toxicity study\

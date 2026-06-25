@@ -17,8 +17,6 @@ variables:
   description: name of the device
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "You are a senior regulatory test engineer working on a Class\_II medical\

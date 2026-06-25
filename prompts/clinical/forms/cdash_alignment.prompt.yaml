@@ -17,8 +17,6 @@ variables:
   description: 'CDASH User Guide: `{{cdash_guide}}`'
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: You are a CDISC Standards Expert. Standardize clinical data collection

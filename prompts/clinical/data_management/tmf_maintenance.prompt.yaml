@@ -16,8 +16,6 @@ variables:
   description: The study phase to use for this prompt
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: You are a TMF Specialist. Generate a checklist for the Trial Master File

@@ -49,18 +49,66 @@ def get_jinja_env(base_dir: Optional[Union[str, Path]] = None) -> SandboxedEnvir
         )
     return _jinja_envs[base_dir_str]
 
+def _deep_merge(dict1: dict, dict2: dict) -> dict:
+    result = dict1.copy()
+    for key, value in dict2.items():
+        if key in result and isinstance(result[key], dict) and isinstance(value, dict):
+            result[key] = _deep_merge(result[key], value)
+        else:
+            result[key] = value
+    return result
+
 def load_yaml(path: Union[str, Path]) -> Dict[str, Any]:
-    path_obj = Path(path)
+    path_obj = Path(path).resolve()
     try:
         text = path_obj.read_text(encoding="utf-8")
-        # To match identical validation and execution inheritance, we use PROMPTS_DIR as base
-        # for prompts, or the file's parent for generic files.
-        # But tools/scripts/utils.py used PROMPTS_DIR directly for all inheritance:
-        # env = _get_jinja_env()  (which hardcodes PROMPTS_DIR)
         env = get_jinja_env(PROMPTS_DIR)
         template = env.from_string(text)
         rendered_text = template.render()
-        return yaml.safe_load(rendered_text) or {}
+        data = yaml.safe_load(rendered_text) or {}
+
+        # Only apply inheritance to prompt files
+        if path_obj.name.endswith(".prompt.yaml") or path_obj.name.endswith(".prompt.yml"):
+            defaults = {}
+            current_dir = path_obj.parent
+            # Traverse up to PROMPTS_DIR (or stop if we hit root or don't see it)
+            dirs_to_check = []
+            while current_dir != current_dir.parent:
+                dirs_to_check.insert(0, current_dir)
+                if current_dir == PROMPTS_DIR or current_dir.name == "prompts":
+                    break
+                current_dir = current_dir.parent
+            
+            for d in dirs_to_check:
+                defaults_file = d / "defaults.yaml"
+                if defaults_file.exists():
+                    try:
+                        d_text = defaults_file.read_text(encoding="utf-8")
+                        d_template = env.from_string(d_text)
+                        d_data = yaml.safe_load(d_template.render()) or {}
+                        defaults = _deep_merge(defaults, d_data)
+                    except Exception as e:
+                        print(f"Error reading {defaults_file}: {e}")
+            
+            # Merge defaults with prompt data (prompt data overrides defaults)
+            if defaults:
+                data = _deep_merge(defaults, data)
+
+            # Normalize modelParameters aliases to prevent duplicate keys during extra='forbid' validation
+            if "modelParameters" in data and isinstance(data["modelParameters"], dict):
+                aliases = {
+                    "maxTokens": "max_tokens",
+                    "topP": "top_p",
+                    "frequencyPenalty": "frequency_penalty",
+                    "presencePenalty": "presence_penalty"
+                }
+                for old_key, new_key in aliases.items():
+                    if old_key in data["modelParameters"]:
+                        if new_key not in data["modelParameters"]:
+                            data["modelParameters"][new_key] = data["modelParameters"][old_key]
+                        del data["modelParameters"][old_key]
+
+        return data
     except Exception as e:
         print(f"Error reading {path}: {e}")
         return {}

@@ -16,8 +16,6 @@ variables:
   description: The cta draft to use for this prompt
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: You are a Legal Contracts Associate. Review the provided Clinical Trial

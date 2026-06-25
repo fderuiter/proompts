@@ -37,8 +37,6 @@ variables:
   description: distinctive capability or resource
   required: true
 model: gpt-4o-mini
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'You are the business-development lead at `{{CRO_NAME}}` contacting investigators

@@ -1,7 +1,7 @@
----
 name: Regulatory Filing Draft Builder
 version: 0.1.0
-description: Produce a regulator‑ready draft document using provided financials and risk data.
+description: "Produce a regulator\u2011ready draft document using provided financials\
+  \ and risk data."
 metadata:
   domain: regulatory
   complexity: high
@@ -26,7 +26,7 @@ variables:
   description: The SPECIFIC GUIDELINE to use for this prompt
   required: true
 - name: financial_data
-  description: Data Sheet 1
+  description: "Data Sheet\_1"
   required: true
 - name: prior_filing
   description: previous submission
@@ -35,25 +35,28 @@ variables:
   description: risk factors
   required: true
 model: gpt-4o-mini
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
-  content: 'You are a compliance‑documentation specialist writing for `{{REGULATOR}}` and following `{{SPECIFIC_GUIDELINE}}`.
-    Tone is formal and objective. Financials come from Data Sheet 1, risk factors from the memo dated `{{DATE}}`, and prior
-    filings from Appendix C.
-
-
-    Produce a regulator‑ready draft document using provided financials and risk data.'
+  content: "You are a compliance\u2011documentation specialist writing for `{{REGULATOR}}`\
+    \ and following `{{SPECIFIC_GUIDELINE}}`. Tone is formal and objective. Financials\
+    \ come from Data Sheet\_1, risk factors from the memo dated `{{DATE}}`, and prior\
+    \ filings from Appendix\_C.\n\nProduce a regulator\u2011ready draft document using\
+    \ provided financials and risk data."
 - role: user
-  content: "1. Draft the `{{DOCUMENT_TYPE}}` using the structure:\n\n   I. Cover Page\n   II. Business Overview\n   III. Management’s\
-    \ Discussion & Analysis\n   IV. Financial Statements (summarized tables)\n   V. Risk Factors (ranked)\n   VI. Compliance\
-    \ Declarations\n\n1. Cross‑check figures against Data Sheet 1 and flag discrepancies over 1 %.\n1. Insert `Reviewer-Comment`\
-    \ placeholders wherever data is missing.\n1. Conclude with a self‑assessment table rating Accuracy, Completeness, Clarity,\
-    \ and Timeliness on a 1‑5 scale.\n1. Deliver in GitHub‑Flavored Markdown so teams can redline easily.\n1. Do not fabricate\
-    \ numbers; leave blank if data is absent.\n1. Keep each section ≤400 words unless otherwise noted.\n1. Provide three follow‑up\
-    \ questions that would improve accuracy.\n\nInputs:\n- `{{financial_data}}` — Data Sheet 1.\n- `{{risk_memo}}` — risk\
-    \ factors.\n- `{{prior_filing}}` — previous submission.\n\nOutput format:\nGFM document with clearly marked sections and\
-    \ the final self‑assessment table.\n\nAdditional notes:\nMaintain a regulator‑friendly tone and highlight missing information."
+  content: "1. Draft the `{{DOCUMENT_TYPE}}` using the structure:\n\n   I. Cover Page\n\
+    \   II. Business Overview\n   III. Management\u2019s Discussion & Analysis\n \
+    \  IV. Financial Statements (summarized tables)\n   V. Risk Factors (ranked)\n\
+    \   VI. Compliance Declarations\n\n1. Cross\u2011check figures against Data Sheet\_\
+    1 and flag discrepancies over 1\_%.\n1. Insert `Reviewer-Comment` placeholders\
+    \ wherever data is missing.\n1. Conclude with a self\u2011assessment table rating\
+    \ Accuracy, Completeness, Clarity, and Timeliness on a 1\u20115 scale.\n1. Deliver\
+    \ in GitHub\u2011Flavored Markdown so teams can redline easily.\n1. Do not fabricate\
+    \ numbers; leave blank if data is absent.\n1. Keep each section \u2264400\_words\
+    \ unless otherwise noted.\n1. Provide three follow\u2011up questions that would\
+    \ improve accuracy.\n\nInputs:\n- `{{financial_data}}` \u2014 Data Sheet\_1.\n\
+    - `{{risk_memo}}` \u2014 risk factors.\n- `{{prior_filing}}` \u2014 previous submission.\n\
+    \nOutput format:\nGFM document with clearly marked sections and the final self\u2011\
+    assessment table.\n\nAdditional notes:\nMaintain a regulator\u2011friendly tone\
+    \ and highlight missing information."
 testData: []
 evaluators: []

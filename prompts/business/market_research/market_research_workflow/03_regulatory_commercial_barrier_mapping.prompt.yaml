@@ -19,8 +19,6 @@ variables:
   description: markets of interest
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'You are an expert in global medical device regulation.

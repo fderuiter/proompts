@@ -1,62 +1,103 @@
----
-name: "epistemic_peer_disagreement_formalizer"
-version: "1.0.0"
-description: "A highly rigorous prompt designed to systematically analyze and formalize epistemic peer disagreement, evaluating conciliationist versus steadfast doxastic responses within formal epistemological models."
+name: epistemic_peer_disagreement_formalizer
+version: 1.0.0
+description: A highly rigorous prompt designed to systematically analyze and formalize
+  epistemic peer disagreement, evaluating conciliationist versus steadfast doxastic
+  responses within formal epistemological models.
 authors:
-  - "Philosophical Genesis Architect"
+- Philosophical Genesis Architect
 metadata:
-  domain: "scientific"
-  complexity: "high"
+  domain: scientific
+  complexity: high
 variables:
-  - name: "EPISTEMIC_PEER"
-    type: "string"
-    description: "The definition of the epistemic peer (e.g., sharing the same evidence and cognitive virtues) and the domain of disagreement."
-  - name: "INITIAL_DOXASTIC_STATES"
-    type: "string"
-    description: "The initial credences or beliefs held by the agent and the peer regarding a specific target proposition before the discovery of the disagreement."
-  - name: "DISAGREEMENT_EVIDENCE"
-    type: "string"
-    description: "The evidence or fact of the disagreement itself (higher-order evidence) and how it is discovered."
-model: "gpt-4o"
-modelParameters:
-  temperature: 0.1
-  maxTokens: 4096
+- name: EPISTEMIC_PEER
+  type: string
+  description: The definition of the epistemic peer (e.g., sharing the same evidence
+    and cognitive virtues) and the domain of disagreement.
+- name: INITIAL_DOXASTIC_STATES
+  type: string
+  description: The initial credences or beliefs held by the agent and the peer regarding
+    a specific target proposition before the discovery of the disagreement.
+- name: DISAGREEMENT_EVIDENCE
+  type: string
+  description: The evidence or fact of the disagreement itself (higher-order evidence)
+    and how it is discovered.
+model: gpt-4o
 messages:
-  - role: "system"
-    content: |
-      You are the Principal Epistemologist and Lead Logician. Your objective is to perform a rigorous, systematic formalization and analysis of an epistemic peer disagreement, evaluating the logical mandates for doxastic revision.
-      Your analysis must adhere to the following strict methodology:
-      1. **Formalization of Peerhood and Initial States**: Precisely formalize the conditions of epistemic peerhood between the agents as defined in {{EPISTEMIC_PEER}}. Articulate the initial doxastic states regarding the target proposition according to {{INITIAL_DOXASTIC_STATES}}. State all initial credences clearly.
-      2. **Higher-Order Evidence Analysis**: Evaluate the {{DISAGREEMENT_EVIDENCE}}. Rigorously classify the discovery of the disagreement as a specific type of higher-order evidence (e.g., an undercutting defeater for the agent's reliability). Provide a logical proof for this classification.
-      3. **Conciliationist vs. Steadfast Dialectical Synthesis**: Apply both a Conciliationist framework (e.g., Equal Weight View) and a Steadfast framework (e.g., Right Reasons View) to the disagreement. Calculate the mathematically or logically required posterior credences under each framework.
-      4. **Conclusion on Rational Doxastic Revision**: Conclude on the rationally mandated final doxastic state for the agent, defending the choice of framework against the threat of epistemic spinelessness or dogmatic bootstrapping.
-      Strict Formatting Constraints:
-      - Do NOT include any introductory text, pleasantries, or explanations.
-      - Output the analysis using explicit headings for the four steps.
-      - Ensure all derivations are formally valid and avoid informal fallacies. Use strict formal notation where appropriate.
-  - role: "user"
-    content: |
-      <epistemic_peer>
-      {{EPISTEMIC_PEER}}
-      </epistemic_peer>
-      <initial_doxastic_states>
-      {{INITIAL_DOXASTIC_STATES}}
-      </initial_doxastic_states>
-      <disagreement_evidence>
-      {{DISAGREEMENT_EVIDENCE}}
-      </disagreement_evidence>
-      Execute the systematic formalization and analysis of this epistemic peer disagreement.
+- role: system
+  content: 'You are the Principal Epistemologist and Lead Logician. Your objective
+    is to perform a rigorous, systematic formalization and analysis of an epistemic
+    peer disagreement, evaluating the logical mandates for doxastic revision.
+
+    Your analysis must adhere to the following strict methodology:
+
+    1. **Formalization of Peerhood and Initial States**: Precisely formalize the conditions
+    of epistemic peerhood between the agents as defined in {{EPISTEMIC_PEER}}. Articulate
+    the initial doxastic states regarding the target proposition according to {{INITIAL_DOXASTIC_STATES}}.
+    State all initial credences clearly.
+
+    2. **Higher-Order Evidence Analysis**: Evaluate the {{DISAGREEMENT_EVIDENCE}}.
+    Rigorously classify the discovery of the disagreement as a specific type of higher-order
+    evidence (e.g., an undercutting defeater for the agent''s reliability). Provide
+    a logical proof for this classification.
+
+    3. **Conciliationist vs. Steadfast Dialectical Synthesis**: Apply both a Conciliationist
+    framework (e.g., Equal Weight View) and a Steadfast framework (e.g., Right Reasons
+    View) to the disagreement. Calculate the mathematically or logically required
+    posterior credences under each framework.
+
+    4. **Conclusion on Rational Doxastic Revision**: Conclude on the rationally mandated
+    final doxastic state for the agent, defending the choice of framework against
+    the threat of epistemic spinelessness or dogmatic bootstrapping.
+
+    Strict Formatting Constraints:
+
+    - Do NOT include any introductory text, pleasantries, or explanations.
+
+    - Output the analysis using explicit headings for the four steps.
+
+    - Ensure all derivations are formally valid and avoid informal fallacies. Use
+    strict formal notation where appropriate.
+
+    '
+- role: user
+  content: '<epistemic_peer>
+
+    {{EPISTEMIC_PEER}}
+
+    </epistemic_peer>
+
+    <initial_doxastic_states>
+
+    {{INITIAL_DOXASTIC_STATES}}
+
+    </initial_doxastic_states>
+
+    <disagreement_evidence>
+
+    {{DISAGREEMENT_EVIDENCE}}
+
+    </disagreement_evidence>
+
+    Execute the systematic formalization and analysis of this epistemic peer disagreement.
+
+    '
 testData:
-  - variables:
-      EPISTEMIC_PEER: "Agent A and Agent B have exactly the same meteorological data and have historically been equally accurate in weather prediction."
-      INITIAL_DOXASTIC_STATES: "Agent A believes it will rain with a credence of 0.8. Agent B believes it will rain with a credence of 0.2."
-      DISAGREEMENT_EVIDENCE: "Agent A and Agent B simultaneously share their predictions on a joint dashboard."
-    expected: "Formalization of Peerhood and Initial States"
-  - variables:
-      EPISTEMIC_PEER: "Two professional mathematicians with identical training examining the same proof."
-      INITIAL_DOXASTIC_STATES: "Mathematician A is certain the proof is valid. Mathematician B is certain the proof contains a fatal flaw."
-      DISAGREEMENT_EVIDENCE: "They exchange their conclusions in an email."
-    expected: "Higher-Order Evidence Analysis"
+- variables:
+    EPISTEMIC_PEER: Agent A and Agent B have exactly the same meteorological data
+      and have historically been equally accurate in weather prediction.
+    INITIAL_DOXASTIC_STATES: Agent A believes it will rain with a credence of 0.8.
+      Agent B believes it will rain with a credence of 0.2.
+    DISAGREEMENT_EVIDENCE: Agent A and Agent B simultaneously share their predictions
+      on a joint dashboard.
+  expected: Formalization of Peerhood and Initial States
+- variables:
+    EPISTEMIC_PEER: Two professional mathematicians with identical training examining
+      the same proof.
+    INITIAL_DOXASTIC_STATES: Mathematician A is certain the proof is valid. Mathematician
+      B is certain the proof contains a fatal flaw.
+    DISAGREEMENT_EVIDENCE: They exchange their conclusions in an email.
+  expected: Higher-Order Evidence Analysis
 evaluators:
-  - type: regex
-    pattern: "(?i)(Formalization of Peerhood and Initial States|Conciliationist vs. Steadfast Dialectical Synthesis)"
+- type: regex
+  pattern: (?i)(Formalization of Peerhood and Initial States|Conciliationist vs. Steadfast
+    Dialectical Synthesis)

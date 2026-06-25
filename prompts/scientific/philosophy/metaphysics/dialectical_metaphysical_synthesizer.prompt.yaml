@@ -20,9 +20,6 @@ variables:
   description: The specific philosophical problem to address (e.g., The Hard Problem
     of Consciousness).
 model: gpt-4o
-modelParameters:
-  temperature: 0.1
-  maxTokens: 4096
 messages:
 - role: system
   content: 'You are the Principal Metaphysician and Dialectical Synthesis Expert.

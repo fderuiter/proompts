@@ -20,8 +20,6 @@ variables:
   description: 'HIPAA eighteen direct identifiers list: `{{identifiers_list}}`'
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'You are a Data Privacy Officer. De-identify patient-level data by recoding

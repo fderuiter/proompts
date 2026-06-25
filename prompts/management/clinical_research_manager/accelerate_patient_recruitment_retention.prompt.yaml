@@ -44,8 +44,6 @@ variables:
   required: true
   default: slow site activation, 25% screen-fail rate
 model: gpt-4
-modelParameters:
-  temperature: 0.1
 messages:
 - role: system
   content: "You are the **Global Head of Patient Recruitment & Retention** at a top-tier\

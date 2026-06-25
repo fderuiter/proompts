@@ -1,7 +1,7 @@
----
 name: IVD Performance Study Compliance Review
 version: 0.1.0
-description: Review an IVD performance study for compliance with MDCG 2024‑4 and related guidance.
+description: "Review an IVD performance study for compliance with MDCG\_2024\u2011\
+  4 and related guidance."
 metadata:
   domain: regulatory
   complexity: medium
@@ -17,37 +17,19 @@ variables:
   description: summary of the performance study design
   required: true
 model: gpt-4o-mini
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
-  content: 'You are advising on an EU IVDR performance study. The user needs guidance on adverse‑event reporting, summary
-    forms, and risk mitigation, plus alignment with Swissmedic and UK requirements.
-
-
-    Review an IVD performance study for compliance with MDCG 2024‑4 and related guidance.'
+  content: "You are advising on an EU IVDR performance study. The user needs guidance\
+    \ on adverse\u2011event reporting, summary forms, and risk mitigation, plus alignment\
+    \ with Swissmedic and UK requirements.\n\nReview an IVD performance study for\
+    \ compliance with MDCG\_2024\u20114 and related guidance."
 - role: user
-  content: '1. Walk through MDCG 2024‑4 compliance steps for the study.
-
-    1. Detail adverse‑event and event‑reporting procedures and required summary forms.
-
-    1. Recommend risk‑mitigation strategies.
-
-    1. Advise on harmonizing with Swissmedic and UK guidance.
-
-
-    Inputs:
-
-    - `{{study_overview}}` — summary of the performance study design.
-
-
-    Output format:
-
-    Bulleted guidance followed by a short summary paragraph.
-
-
-    Additional notes:
-
-    Use clear references to MDCG 2024‑4 and related authorities.'
+  content: "1. Walk through MDCG\_2024\u20114 compliance steps for the study.\n1.\
+    \ Detail adverse\u2011event and event\u2011reporting procedures and required summary\
+    \ forms.\n1. Recommend risk\u2011mitigation strategies.\n1. Advise on harmonizing\
+    \ with Swissmedic and UK guidance.\n\nInputs:\n- `{{study_overview}}` \u2014 summary\
+    \ of the performance study design.\n\nOutput format:\nBulleted guidance followed\
+    \ by a short summary paragraph.\n\nAdditional notes:\nUse clear references to\
+    \ MDCG\_2024\u20114 and related authorities."
 testData: []
 evaluators: []

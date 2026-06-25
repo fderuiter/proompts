@@ -14,8 +14,6 @@ variables:
   description: The primary input or query text for the prompt
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "You are a **Principal Negotiation Strategist** and **Roleplay Facilitator**.\

@@ -1,4 +1,3 @@
----
 name: Inventory & Demand-Planning Simulation
 version: 0.1.0
 description: Create a forecast and inventory plan from historical demand data.
@@ -16,8 +15,6 @@ variables:
   description: CSV data with past demand and costs
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'You are a supply-chain data scientist specializing in inventory optimization.
@@ -36,10 +33,8 @@ messages:
 
     Use chain-of-thought internally but do not expose it.'
 - role: user
-  content: '- `{{inventory_csv}}` – CSV data with past demand and costs.
-
-
-    Output format: JSON with keys `forecast`, `inventory_plan` and `risks`, followed by a methodology note not exceeding 120
-    words.'
+  content: "- `{{inventory_csv}}` \u2013 CSV data with past demand and costs.\n\n\
+    Output format: JSON with keys `forecast`, `inventory_plan` and `risks`, followed\
+    \ by a methodology note not exceeding 120 words."
 testData: []
 evaluators: []

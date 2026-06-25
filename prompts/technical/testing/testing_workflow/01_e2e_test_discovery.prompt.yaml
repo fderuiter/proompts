@@ -23,8 +23,6 @@ variables:
   description: name of the project
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "This prompt is used with a repository URL or zipped source tree for **{{project_name}}**.\

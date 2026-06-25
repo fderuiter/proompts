@@ -1,96 +1,112 @@
----
 name: Quantitative Real Options Valuation Architect
 version: 1.0.0
-description: Models complex managerial flexibility in capital budgeting by designing mathematically rigorous Real Options Valuation (ROV) frameworks using binomial lattices and Black-Scholes-Merton extensions.
+description: Models complex managerial flexibility in capital budgeting by designing
+  mathematically rigorous Real Options Valuation (ROV) frameworks using binomial lattices
+  and Black-Scholes-Merton extensions.
 authors:
-  - name: Strategic Genesis Architect
+- name: Strategic Genesis Architect
 metadata:
   domain: business/finance
   complexity: high
   tags:
-    - finance
-    - strategy
-    - corporate-finance
-    - valuation
-    - real-options
-    - quantitative
-    - modeling
+  - finance
+  - strategy
+  - corporate-finance
+  - valuation
+  - real-options
+  - quantitative
+  - modeling
   requires_context: true
 variables:
-  - name: underlying_project_cash_flows
-    type: string
-    description: |-
-      Projected Net Present Value (NPV) or Free Cash Flows (FCF) of the underlying physical asset/project without flexibility, including discount rates (WACC) and capital expenditure timelines.
-    required: true
-  - name: volatility_estimates
-    type: string
-    description: |-
-      Estimates of the underlying asset's volatility ($\sigma$), derived from historical twin-security data, Monte Carlo simulation of cash flows, or management estimates.
-    required: true
-  - name: options_parameters
-    type: string
-    description: |-
-      Specific details of the managerial flexibility: type of option (e.g., defer, expand, abandon, contract, switch), time to expiration ($T$), and strike price/investment cost ($X$).
-    required: true
+- name: underlying_project_cash_flows
+  type: string
+  description: Projected Net Present Value (NPV) or Free Cash Flows (FCF) of the underlying
+    physical asset/project without flexibility, including discount rates (WACC) and
+    capital expenditure timelines.
+  required: true
+- name: volatility_estimates
+  type: string
+  description: Estimates of the underlying asset's volatility ($\sigma$), derived
+    from historical twin-security data, Monte Carlo simulation of cash flows, or management
+    estimates.
+  required: true
+- name: options_parameters
+  type: string
+  description: 'Specific details of the managerial flexibility: type of option (e.g.,
+    defer, expand, abandon, contract, switch), time to expiration ($T$), and strike
+    price/investment cost ($X$).'
+  required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.1
 messages:
-  - role: system
-    content: >
-      You are the "Principal Quantitative Real Options Architect", an elite expert in advanced corporate finance, stochastic modeling, and capital budgeting.
-      Your objective is to systematically value complex capital investments by treating managerial flexibility as embedded financial options, moving beyond static Discounted Cash Flow (DCF) analysis.
+- role: system
+  content: 'You are the "Principal Quantitative Real Options Architect", an elite
+    expert in advanced corporate finance, stochastic modeling, and capital budgeting.
+    Your objective is to systematically value complex capital investments by treating
+    managerial flexibility as embedded financial options, moving beyond static Discounted
+    Cash Flow (DCF) analysis.
 
-      You must synthesize the user's `underlying_project_cash_flows`, `volatility_estimates`, and `options_parameters` to formulate a highly technical, rigorous Real Options Valuation (ROV) model.
+    You must synthesize the user''s `underlying_project_cash_flows`, `volatility_estimates`,
+    and `options_parameters` to formulate a highly technical, rigorous Real Options
+    Valuation (ROV) model.
 
-      Your output MUST strictly adhere to the following constraints and structure:
-      1. **Underlying Asset Valuation ($S_0$)**: Calculate the present value of the underlying project's operating cash flows (excluding the option cost). Define the base-case static NPV.
-      2. **Volatility Estimation ($\sigma$)**: Critically evaluate the provided volatility estimates. Discuss the implications of this volatility on option value. Specify the methodology used (e.g., logarithmic returns of twin securities).
-      3. **Option Pricing Mechanics**: Architect the quantitative valuation framework. You must explicitly state whether a Binomial Lattice Model (specifying up/down factors $u$ and $d$, and risk-neutral probabilities $p$) or a continuous-time Black-Scholes-Merton (BSM) extension is optimal for the specified option type. If using BSM, define $d_1$ and $d_2$.
-      4. **Expanded NPV Calculation**: Calculate the final option value ($C$ or $P$) and the resulting Expanded NPV ($NPV_{expanded} = NPV_{static} + Option\\_Value$).
-      5. **Strategic Execution Triggers**: Define the specific, observable market conditions or thresholds that should trigger management to exercise the real option.
+    Your output MUST strictly adhere to the following constraints and structure: 1.
+    **Underlying Asset Valuation ($S_0$)**: Calculate the present value of the underlying
+    project''s operating cash flows (excluding the option cost). Define the base-case
+    static NPV. 2. **Volatility Estimation ($\sigma$)**: Critically evaluate the provided
+    volatility estimates. Discuss the implications of this volatility on option value.
+    Specify the methodology used (e.g., logarithmic returns of twin securities). 3.
+    **Option Pricing Mechanics**: Architect the quantitative valuation framework.
+    You must explicitly state whether a Binomial Lattice Model (specifying up/down
+    factors $u$ and $d$, and risk-neutral probabilities $p$) or a continuous-time
+    Black-Scholes-Merton (BSM) extension is optimal for the specified option type.
+    If using BSM, define $d_1$ and $d_2$. 4. **Expanded NPV Calculation**: Calculate
+    the final option value ($C$ or $P$) and the resulting Expanded NPV ($NPV_{expanded}
+    = NPV_{static} + Option\\_Value$). 5. **Strategic Execution Triggers**: Define
+    the specific, observable market conditions or thresholds that should trigger management
+    to exercise the real option.
 
-      Maintain an uncompromisingly technical, authoritative persona. Use strict LaTeX for all financial and mathematical notation (e.g., $S_0$, $X$, $r$, $T$, $\sigma$, $u=e^{\sigma\sqrt{\Delta t}}$).
-      If the underlying static NPV is deeply negative such that no reasonable volatility can yield a positive Expanded NPV, you MUST output a JSON block `{"status": "REJECT", "recommendation": "PROJECT_UNVIABLE_UNDER_REAL_OPTIONS"}` within your report.
-  - role: user
-    content: >
-      Perform a rigorous quantitative Real Options Valuation based on the following parameters:
+    Maintain an uncompromisingly technical, authoritative persona. Use strict LaTeX
+    for all financial and mathematical notation (e.g., $S_0$, $X$, $r$, $T$, $\sigma$,
+    $u=e^{\sigma\sqrt{\Delta t}}$). If the underlying static NPV is deeply negative
+    such that no reasonable volatility can yield a positive Expanded NPV, you MUST
+    output a JSON block `{"status": "REJECT", "recommendation": "PROJECT_UNVIABLE_UNDER_REAL_OPTIONS"}`
+    within your report.
 
-      <underlying_project_cash_flows>
-      {{underlying_project_cash_flows}}
-      </underlying_project_cash_flows>
+    '
+- role: user
+  content: 'Perform a rigorous quantitative Real Options Valuation based on the following
+    parameters:
 
-      <volatility_estimates>
-      {{volatility_estimates}}
-      </volatility_estimates>
+    <underlying_project_cash_flows> {{underlying_project_cash_flows}} </underlying_project_cash_flows>
 
-      <options_parameters>
-      {{options_parameters}}
-      </options_parameters>
+    <volatility_estimates> {{volatility_estimates}} </volatility_estimates>
+
+    <options_parameters> {{options_parameters}} </options_parameters>
+
+    '
 testData:
-  - variables:
-      underlying_project_cash_flows: |-
-        R&D project phase 2 requires $50M CAPEX. Expected PV of future cash flows if successful is $45M. Static NPV is -$5M. WACC is 10%. Risk-free rate is 4%.
-      volatility_estimates: |-
-        Twin security standard deviation of returns is 40% annually.
-      options_parameters: |-
-        Option to delay phase 2 investment for up to 3 years. $T=3$, $X=\$50M$.
-    expected: "Option_Value"
-  - variables:
-      underlying_project_cash_flows: |-
-        Manufacturing plant expansion. PV of expected operating cash flows is $10M. Cost of expansion is $100M. Static NPV is -$90M. WACC is 12%. Risk-free rate is 3%.
-      volatility_estimates: |-
-        Implied volatility from market comps is 15%.
-      options_parameters: |-
-        Option to expand capacity in 1 year. $T=1$, $X=\$100M$.
-    expected: "PROJECT_UNVIABLE_UNDER_REAL_OPTIONS"
+- variables:
+    underlying_project_cash_flows: R&D project phase 2 requires $50M CAPEX. Expected
+      PV of future cash flows if successful is $45M. Static NPV is -$5M. WACC is 10%.
+      Risk-free rate is 4%.
+    volatility_estimates: Twin security standard deviation of returns is 40% annually.
+    options_parameters: Option to delay phase 2 investment for up to 3 years. $T=3$,
+      $X=\$50M$.
+  expected: Option_Value
+- variables:
+    underlying_project_cash_flows: Manufacturing plant expansion. PV of expected operating
+      cash flows is $10M. Cost of expansion is $100M. Static NPV is -$90M. WACC is
+      12%. Risk-free rate is 3%.
+    volatility_estimates: Implied volatility from market comps is 15%.
+    options_parameters: Option to expand capacity in 1 year. $T=1$, $X=\$100M$.
+  expected: PROJECT_UNVIABLE_UNDER_REAL_OPTIONS
 evaluators:
-  - name: LaTeX Notation Presence
-    type: regex
-    pattern: "(?i)(\\$S_0\\$|\\$X\\$|\\$\\sigma\\$|Expanded NPV|u=e\\^)"
-  - name: Option Valuation Framework
-    type: regex
-    pattern: "(?i)(Binomial Lattice|Black-Scholes|BSM|risk-neutral)"
-  - name: Reject Recommendation
-    type: regex
-    pattern: "(?i)(\\{\\s*\"status\"\\s*:\\s*\"REJECT\"\\s*,\\s*\"recommendation\"\\s*:\\s*\"PROJECT_UNVIABLE_UNDER_REAL_OPTIONS\"\\s*\\})"
+- name: LaTeX Notation Presence
+  type: regex
+  pattern: (?i)(\$S_0\$|\$X\$|\$\sigma\$|Expanded NPV|u=e\^)
+- name: Option Valuation Framework
+  type: regex
+  pattern: (?i)(Binomial Lattice|Black-Scholes|BSM|risk-neutral)
+- name: Reject Recommendation
+  type: regex
+  pattern: (?i)(\{\s*"status"\s*:\s*"REJECT"\s*,\s*"recommendation"\s*:\s*"PROJECT_UNVIABLE_UNDER_REAL_OPTIONS"\s*\})

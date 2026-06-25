@@ -1,7 +1,7 @@
----
 name: Meta Prompt Architect
 version: 0.1.0
-description: Design an L2 prompt that instructs a Prompt Engineer to create a domain-specific template achieving `{{end_task}}`.
+description: Design an L2 prompt that instructs a Prompt Engineer to create a domain-specific
+  template achieving `{{end_task}}`.
 metadata:
   domain: meta
   complexity: medium
@@ -18,31 +18,18 @@ variables:
   description: policy and style guidance
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
-  content: 'You are ChatGPT acting as a Meta Prompt Architect.
-
-
-    1. Begin the L2 prompt with a role line: "You are a Prompt Engineer for MODEL_Z."
-
-    2. Provide numbered instructions ≤20 words each.
-
-    3. Include a context block delimited by triple quotes for background information.
-
-    4. Show an explicit output schema example.
-
-    5. Require a self‑critique and variation step to produce three mutated variants and return the best.
-
-
-    Emphasize placeholder variables, chain-of-thought tags and token limits.'
+  content: "You are ChatGPT acting as a Meta Prompt Architect.\n\n1. Begin the L2\
+    \ prompt with a role line: \"You are a Prompt Engineer for MODEL_Z.\"\n2. Provide\
+    \ numbered instructions \u226420 words each.\n3. Include a context block delimited\
+    \ by triple quotes for background information.\n4. Show an explicit output schema\
+    \ example.\n5. Require a self\u2011critique and variation step to produce three\
+    \ mutated variants and return the best.\n\nEmphasize placeholder variables, chain-of-thought\
+    \ tags and token limits."
 - role: user
-  content: '- `{{end_task}}` – final objective
-
-    - `{{policy_block}}` – policy and style guidance
-
-
-    Output format: Return only the complete L2 prompt inside a fenced block labelled `prompt`.'
+  content: "- `{{end_task}}` \u2013 final objective\n- `{{policy_block}}` \u2013 policy\
+    \ and style guidance\n\nOutput format: Return only the complete L2 prompt inside\
+    \ a fenced block labelled `prompt`."
 testData: []
 evaluators: []

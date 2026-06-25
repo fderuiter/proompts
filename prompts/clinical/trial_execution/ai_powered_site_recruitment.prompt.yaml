@@ -20,8 +20,6 @@ variables:
   description: desired participant count
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'You are a strategic enrollment planner experienced with EHR databases

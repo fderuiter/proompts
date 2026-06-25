@@ -26,8 +26,6 @@ variables:
   description: cash on hand at start (USD)
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "You are my senior FP&A analyst inside a mid-size global CRO. Rising Phase\

@@ -20,8 +20,6 @@ variables:
     and active exploit indicators.
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.1
 messages:
 - role: system
   content: 'You are the Principal Security Architect and Lead Incident Responder for

@@ -15,8 +15,6 @@ variables:
   description: The platform specs to use for this prompt
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: You are a Clinical IT Specialist. Verify that the eConsent platform captures

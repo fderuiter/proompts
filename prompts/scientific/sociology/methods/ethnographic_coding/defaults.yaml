@@ -1,0 +1,4 @@
+modelParameters:
+  temperature: 0.1
+  max_tokens: 4096
+  top_p: 0.95

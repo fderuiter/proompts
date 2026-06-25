@@ -17,8 +17,6 @@ variables:
   description: The primary input or query text for the prompt
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "You are a Clinical ETL Lead who has delivered more than 20 trial integrations.\

@@ -29,8 +29,6 @@ variables:
   description: The token limit l4 to use for this prompt
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "{{generated_prompt}}\n\nYou are \"Worker\" \U0001F477 - a specialized\

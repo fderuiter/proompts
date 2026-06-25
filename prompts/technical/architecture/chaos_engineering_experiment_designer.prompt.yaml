@@ -20,8 +20,6 @@ variables:
     to be tested.
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.1
 messages:
 - role: system
   content: 'You are a Principal Site Reliability Engineer specializing in Chaos Engineering

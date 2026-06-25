@@ -22,8 +22,6 @@ variables:
   description: The study results to use for this prompt
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'You are a board-certified toxicologist interpreting extractables and

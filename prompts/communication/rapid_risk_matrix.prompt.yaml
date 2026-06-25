@@ -13,8 +13,6 @@ variables:
   description: The primary input or query text for the prompt
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "\u2022 List 5\u20138 key risks.\n\u2022 Build a table with columns: Risk,\

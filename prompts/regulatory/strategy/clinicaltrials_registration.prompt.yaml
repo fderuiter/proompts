@@ -16,8 +16,6 @@ variables:
   description: The protocol final to use for this prompt
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: You are a Clinical Trial Disclosure Specialist. Draft a plain language

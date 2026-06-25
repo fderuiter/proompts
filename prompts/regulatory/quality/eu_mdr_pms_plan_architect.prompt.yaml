@@ -24,8 +24,6 @@ variables:
     events.
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.1
 messages:
 - role: system
   content: Act as a Principal Post-Market Regulatory Affairs Architect specializing

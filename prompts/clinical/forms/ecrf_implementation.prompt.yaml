@@ -22,8 +22,6 @@ variables:
   description: 'Data Management Plan (DMP): `{{dmp}}`'
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: You are an EDC Developer. Design electronic Case Report Forms (eCRFs) with

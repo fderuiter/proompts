@@ -1,7 +1,7 @@
----
 name: Create a Risk-Based Monitoring & Mitigation SOP for RTSM
 version: 0.1.0
-description: Draft a standard operating procedure for risk‑based monitoring and mitigation in RTSM operations.
+description: "Draft a standard operating procedure for risk\u2011based monitoring\
+  \ and mitigation in RTSM operations."
 metadata:
   domain: clinical
   complexity: medium
@@ -17,45 +17,25 @@ variables:
   description: any current procedures
   required: true
 model: gpt-4o-mini
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
-  content: 'You are a GxP compliance officer. Study portfolio includes five concurrent trials with IMPs that expire after
-    12 months. Integrated systems: RTSM ↔ EDC ↔ temperature‑monitoring IoT. Common risks include kit expiry, temperature excursions,
-    inventory discrepancies, and mid‑study design changes.
-
-
-    Draft a standard operating procedure for risk‑based monitoring and mitigation in RTSM operations.'
+  content: "You are a GxP compliance officer. Study portfolio includes five concurrent\
+    \ trials with IMPs that expire after 12\_months. Integrated systems: RTSM\_\u2194\
+    \_EDC\_\u2194\_temperature\u2011monitoring IoT. Common risks include kit expiry,\
+    \ temperature excursions, inventory discrepancies, and mid\u2011study design changes.\n\
+    \nDraft a standard operating procedure for risk\u2011based monitoring and mitigation\
+    \ in RTSM operations."
 - role: user
-  content: '1. List the top ten RTSM operational risks ranked by severity × likelihood.
-
-    1. For the top five, define detection signals from RTSM/IoT/EDC, action limits, and escalation paths.
-
-    1. Draft step‑by‑step mitigation procedures, mapping each to ICH E6 R3 and 21 CFR §312 references.
-
-    1. Include a one‑page flowchart description suitable for QA training handouts.
-
-
-    Inputs:
-
-    - `{{existing_sop}}` — any current procedures.
-
-
-    Output format:
-
-    - Two‑column markdown table: Risk \| Detection & Escalation Path.
-
-    - Numbered mitigation procedures (≤150 words each).
-
-    - Text description of the flowchart for later diagramming.
-
-    - Provide only the final SOP content.
-
-
-    Additional notes:
-
-    Avoid internal reasoning in the output.'
+  content: "1. List the top ten RTSM operational risks ranked by severity \xD7 likelihood.\n\
+    1. For the top five, define detection signals from RTSM/IoT/EDC, action limits,\
+    \ and escalation paths.\n1. Draft step\u2011by\u2011step mitigation procedures,\
+    \ mapping each to ICH\_E6\_R3 and 21\_CFR \xA7312 references.\n1. Include a one\u2011\
+    page flowchart description suitable for QA training handouts.\n\nInputs:\n- `{{existing_sop}}`\
+    \ \u2014 any current procedures.\n\nOutput format:\n- Two\u2011column markdown\
+    \ table: Risk\_\\| Detection & Escalation Path.\n- Numbered mitigation procedures\
+    \ (\u2264150\_words each).\n- Text description of the flowchart for later diagramming.\n\
+    - Provide only the final SOP content.\n\nAdditional notes:\nAvoid internal reasoning\
+    \ in the output."
 testData:
 - vars:
     existing_sop: example_sop

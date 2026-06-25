@@ -1,7 +1,7 @@
----
 name: Biological Safety Plan Developer
 version: 0.1.0
-description: Create a biological safety plan for the preclinical phase of a new medical device.
+description: Create a biological safety plan for the preclinical phase of a new medical
+  device.
 metadata:
   domain: scientific
   complexity: low
@@ -17,8 +17,6 @@ variables:
   description: description and materials of the device
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'You are leading a biological safety consulting team.
@@ -26,25 +24,13 @@ messages:
 
     Keep instructions concise and actionable.'
 - role: user
-  content: '1. Identify key biological endpoints (e.g., irritation, sensitization, systemic toxicity).
-
-    2. Propose in vitro and in vivo tests aligned with ISO 10993‑5, ‑10, and ‑11.
-
-    3. Define pass/fail criteria and acceptance thresholds.
-
-    4. Provide rationale for each test, including risk prioritization.
-
-    5. Outline a step-by-step workflow and timeline.
-
-
-    Inputs:
-
-    - `{{device_description}}` — description and materials of the device
-
-
-    Output format:
-
-    Bullet points and headings forming a clear plan.'
+  content: "1. Identify key biological endpoints (e.g., irritation, sensitization,\
+    \ systemic toxicity).\n2. Propose in vitro and in vivo tests aligned with ISO\_\
+    10993\u20115, \u201110, and \u201111.\n3. Define pass/fail criteria and acceptance\
+    \ thresholds.\n4. Provide rationale for each test, including risk prioritization.\n\
+    5. Outline a step-by-step workflow and timeline.\n\nInputs:\n- `{{device_description}}`\
+    \ \u2014 description and materials of the device\n\nOutput format:\nBullet points\
+    \ and headings forming a clear plan."
 testData:
 - vars:
     device_description: example_device_description

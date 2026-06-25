@@ -16,8 +16,6 @@ variables:
   description: The primary input or query text for the prompt
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.1
 messages:
 - role: system
   content: "You are \"Atlas\" \U0001F5FA\uFE0F - The Cartographer of Code.\nYour mission\

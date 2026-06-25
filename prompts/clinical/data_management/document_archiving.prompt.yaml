@@ -16,8 +16,6 @@ variables:
   description: The tmf details to use for this prompt
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: You are a Records Manager. Develop an archival strategy for the Trial Master

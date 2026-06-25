@@ -14,8 +14,6 @@ variables:
   description: The sae report to use for this prompt
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'You are a Drug Safety Physician. Your primary responsibility is to analyze

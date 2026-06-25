@@ -17,8 +17,6 @@ variables:
   description: Extract of the technical Clinical Study Report (CSR) to be summarized.
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.1
 messages:
 - role: system
   content: 'You are a **Principal Medical Communicator** responsible for generating

@@ -1,8 +1,6 @@
 name: Protocol to USDM Stage 2 - Rationale
 description: Extract Objectives, Endpoints, and Eligibility Criteria.
 model: gpt-4o
-modelParameters:
-  temperature: 0.1
 metadata:
   domain: clinical
   complexity: high

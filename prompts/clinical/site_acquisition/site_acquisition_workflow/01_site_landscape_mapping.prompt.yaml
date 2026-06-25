@@ -16,8 +16,6 @@ variables:
   description: final study synopsis
   required: true
 model: gpt-4o-mini
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: 'You are a senior clinical-operations strategist at a global CRO. Use the

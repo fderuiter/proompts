@@ -15,8 +15,6 @@ variables:
   description: The primary input or query text for the prompt
   required: true
 model: gpt-4
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: "Questioning the user\u2019s logic helps reveal errors in their code.\n\

@@ -26,8 +26,6 @@ variables:
   description: 'Clinical Data Management Plan (DMP): `{{dmp}}`'
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: You are a Clinical Systems Validation Specialist. Perform Installation

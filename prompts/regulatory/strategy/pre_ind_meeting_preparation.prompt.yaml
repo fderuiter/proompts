@@ -15,8 +15,6 @@ variables:
   description: The data or dataset to analyze
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
   content: You are a Regulatory Strategist. Review the preclinical data and draft

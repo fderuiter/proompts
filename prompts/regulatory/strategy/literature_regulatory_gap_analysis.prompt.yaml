@@ -1,7 +1,7 @@
----
 name: Literature & Regulatory Gap Analysis
 version: 0.1.0
-description: Identify evidence and regulatory gaps for a planned pivotal clinical study.
+description: Identify evidence and regulatory gaps for a planned pivotal clinical
+  study.
 metadata:
   domain: regulatory
   complexity: medium
@@ -20,38 +20,23 @@ variables:
   description: proposed indication for use
   required: true
 model: gpt-4o-mini
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
-  content: 'You are an expert clinical trial strategist. The user plans a pivotal study of `{{device_or_ivd}}` for `{{target_indication}}`.
+  content: 'You are an expert clinical trial strategist. The user plans a pivotal
+    study of `{{device_or_ivd}}` for `{{target_indication}}`.
 
 
     Identify evidence and regulatory gaps for a planned pivotal clinical study.'
 - role: user
-  content: '1. Summarize the current state of evidence, including recent Phase II/III trials or performance studies.
-
-    1. Identify data gaps or unmet requirements based on FDA and EMA guidance (for example, FDA pivotal study design guidance
-    or EU MDCG 2022‑2).
-
-    1. Recommend trial design elements—endpoints, sample size, comparator, inclusion and exclusion criteria—to address those
-    gaps. Provide references where appropriate.
-
-
-    Inputs:
-
-    - `{{device_or_ivd}}` — description of the medical device or IVD.
-
-    - `{{target_indication}}` — proposed indication for use.
-
-
-    Output format:
-
-    Markdown bullet list or table summarizing findings and recommendations.
-
-
-    Additional notes:
-
-    Keep the analysis concise and reference authoritative guidance documents.'
+  content: "1. Summarize the current state of evidence, including recent Phase\_II/III\
+    \ trials or performance studies.\n1. Identify data gaps or unmet requirements\
+    \ based on FDA and EMA guidance (for example, FDA pivotal study design guidance\
+    \ or EU MDCG\_2022\u20112).\n1. Recommend trial design elements\u2014endpoints,\
+    \ sample size, comparator, inclusion and exclusion criteria\u2014to address those\
+    \ gaps. Provide references where appropriate.\n\nInputs:\n- `{{device_or_ivd}}`\
+    \ \u2014 description of the medical device or IVD.\n- `{{target_indication}}`\
+    \ \u2014 proposed indication for use.\n\nOutput format:\nMarkdown bullet list\
+    \ or table summarizing findings and recommendations.\n\nAdditional notes:\nKeep\
+    \ the analysis concise and reference authoritative guidance documents."
 testData: []
 evaluators: []

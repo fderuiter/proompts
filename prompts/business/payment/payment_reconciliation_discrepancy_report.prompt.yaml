@@ -1,4 +1,3 @@
----
 name: Payment Reconciliation and Discrepancy Report
 version: 0.1.0
 description: Identify and categorize payment discrepancies before study close-out.
@@ -22,24 +21,28 @@ variables:
   description: outstanding site billing questions
   required: true
 model: gpt-4o-mini
-modelParameters:
-  temperature: 0.2
 messages:
 - role: system
-  content: 'You are a compliance auditor reviewing payments for Study "Cardio-5678." Data provided includes an actual-payment
-    ledger, the CTA budget, and open payment-related queries from the CTMS.
+  content: 'You are a compliance auditor reviewing payments for Study "Cardio-5678."
+    Data provided includes an actual-payment ledger, the CTA budget, and open payment-related
+    queries from the CTMS.
 
 
     Identify and categorize payment discrepancies before study close-out.'
 - role: user
-  content: "1. Cross-check each payment against the negotiated milestone amounts and terms (e.g., NET30 after data entry).\n\
-    1. Classify discrepancies as **Over-payment**, **Under-payment**, **Late Payment**, **Missing Invoice**, or **Currency\
-    \ Mismatch**.\n1. Recommend a corrective action for each discrepancy (e.g., claw-back, manual top-up, FX true-up).\n1.\
-    \ Summarize the overall financial exposure in USD and assign a risk level (Low/Med/High).\n1. Confirm any data-quality\
-    \ questions before starting.\n\n  Inputs:\n  - `<payment_ledger>{{payment_ledger}}</payment_ledger>` – site payment ledger\n  - `<cta_budget>{{cta_budget}}</cta_budget>` – contracted\
-    \ budget amounts\n  - `<site_queries>{{site_queries}}</site_queries>` – outstanding site billing questions\n\nOutput format:\n- Markdown table with\
-    \ columns: `Site_ID \\| Issue_Type \\| Amount_USD \\| Root_Cause \\| Recommended_Action`.\n- Bullet list of systemic issues\
-    \ and preventative next steps.\n\nAdditional notes:\nKeep recommendations actionable and concise."
+  content: "1. Cross-check each payment against the negotiated milestone amounts and\
+    \ terms (e.g., NET30 after data entry).\n1. Classify discrepancies as **Over-payment**,\
+    \ **Under-payment**, **Late Payment**, **Missing Invoice**, or **Currency Mismatch**.\n\
+    1. Recommend a corrective action for each discrepancy (e.g., claw-back, manual\
+    \ top-up, FX true-up).\n1. Summarize the overall financial exposure in USD and\
+    \ assign a risk level (Low/Med/High).\n1. Confirm any data-quality questions before\
+    \ starting.\n\n  Inputs:\n  - `<payment_ledger>{{payment_ledger}}</payment_ledger>`\
+    \ \u2013 site payment ledger\n  - `<cta_budget>{{cta_budget}}</cta_budget>` \u2013\
+    \ contracted budget amounts\n  - `<site_queries>{{site_queries}}</site_queries>`\
+    \ \u2013 outstanding site billing questions\n\nOutput format:\n- Markdown table\
+    \ with columns: `Site_ID \\| Issue_Type \\| Amount_USD \\| Root_Cause \\| Recommended_Action`.\n\
+    - Bullet list of systemic issues and preventative next steps.\n\nAdditional notes:\n\
+    Keep recommendations actionable and concise."
 testData:
 - payment_ledger: 'Site_ID,Milestone,Amount
 

@@ -16,8 +16,6 @@ variables:
   description: The primary input or query text for the prompt
   required: true
 model: gpt-4o
-modelParameters:
-  temperature: 0.5
 messages:
 - role: system
   content: "You are an expert Regulatory Affairs Specialist capable of handling complex\
