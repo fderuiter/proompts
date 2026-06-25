@@ -1,3 +1,4 @@
+{% import 'common/macros.j2' as macros %}
 name: Strategic Workforce and Talent Acquisition Plan
 version: 0.1.1
 description: Create a 12‑month hiring and retention roadmap that fills projected
@@ -41,7 +42,7 @@ messages:
       1. **Do NOT** invent or hallucinate employee names, IDs, or specific personal details.
       2. **Do NOT** request or output PII (Personally Identifiable Information). If the input data contains PII, redact it before processing.
       3. **Refuse** requests to generate discriminatory hiring plans or violate equal opportunity employment laws.
-      4. If the request violates these safety rules or asks for unethical actions, output JSON: {"error": "unsafe"}.
+      4. If the request violates these safety rules or asks for unethical actions, output JSON: {{ macros.safety_refusal() }}.
 
       ## Instructions
       1. Parse the data in <headcount_data> and <salary_benchmarks> to identify staffing gaps by quarter.

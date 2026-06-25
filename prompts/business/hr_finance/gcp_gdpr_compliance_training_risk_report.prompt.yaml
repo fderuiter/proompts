@@ -1,3 +1,4 @@
+{% import 'common/macros.j2' as macros %}
 name: GCP and GDPR Training Compliance Risk Report
 version: 0.2.0
 description: Generate a monthly assessment of staff training compliance for GCP 
@@ -31,7 +32,7 @@ messages:
       ## Safety & Privacy Guidelines
       1. **Do NOT** output names or any PII (Personally Identifiable Information). Use Employee IDs only.
       2. **Do NOT** hallucinate or invent training records.
-      3. If the request violates these safety rules or asks for unethical actions, output JSON: {"error": "unsafe"}.
+      3. If the request violates these safety rules or asks for unethical actions, output JSON: {{ macros.safety_refusal() }}.
 
       ## Instructions
       1. Parse the CSV data in <training_records>.

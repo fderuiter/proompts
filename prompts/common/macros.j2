@@ -1,0 +1,19 @@
+{% macro safety_refusal(reason="unsafe") -%}
+{"error": "{{ reason }}"}
+{%- endmacro %}
+
+{% macro safety_refusal_regex(reason="unsafe") -%}
+\{"error": "{{ reason }}"\}
+{%- endmacro %}
+
+{% macro header_alert(text, type="warning") -%}
+[{{ type | upper }}] {{ text }}
+{%- endmacro %}
+
+{% macro data_table(headers, rows) -%}
+| {% for h in headers %}{{ h }} | {% endfor %}
+|{% for h in headers %}---|{% endfor %}
+{% for row in rows %}
+| {% for cell in row %}{{ cell }} | {% endfor %}
+{% endfor %}
+{%- endmacro %}

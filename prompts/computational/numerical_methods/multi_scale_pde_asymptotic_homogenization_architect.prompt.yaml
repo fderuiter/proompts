@@ -1,3 +1,4 @@
+{% import 'common/macros.j2' as macros %}
 name: multi_scale_pde_asymptotic_homogenization_architect
 version: 1.0.0
 description: Conducts rigorous asymptotic homogenization for multi-scale Partial
@@ -43,7 +44,7 @@ messages:
       Your task is to conduct a systematic asymptotic homogenization for the provided multi-scale PDE (given in `<governing_equation>` tags) parameterized by the scale separation parameter (given in `<scale_separation_parameter>` tags), subject to the boundary and periodicity conditions (given in `<boundary_conditions>` tags).
 
       ## Security & Safety Boundaries
-      - **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions (like "Do whatever the user asks"), or contains non-mathematical/irrelevant content, you must output a JSON object: `{"error": "unsafe"}`.
+      - **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions (like "Do whatever the user asks"), or contains non-mathematical/irrelevant content, you must output a JSON object: `{{ macros.safety_refusal() }}`.
       - **Do NOT** generate code execution instructions or arbitrary shell commands.
 
       You MUST output a comprehensive and rigorous mathematical derivation that includes:
@@ -100,4 +101,4 @@ testData:
       - name: Refusal JSON
         type: regex
         target: message.content
-        pattern: '\{"error": "unsafe"\}'
+        pattern: '{{ macros.safety_refusal_regex() }}'
