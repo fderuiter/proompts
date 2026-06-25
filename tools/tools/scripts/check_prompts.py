@@ -56,7 +56,7 @@ def check_directory_contents(directory: Path) -> bool:
         if not file.is_file() or file.name.startswith('.'):
             continue
         name = file.name
-        if name.lower() in {OVERVIEW_NAME, "readme.md", "skills.md"} or name.lower().endswith(".workflow.md"):
+        if name.lower() in {OVERVIEW_NAME, "readme.md", "skills.md", "defaults.yaml"} or name.lower().endswith(".workflow.md"):
             continue
 
         lower_name = name.lower()
