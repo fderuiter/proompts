@@ -3,7 +3,7 @@
 This directory contains high-level shell wrappers and maintenance scripts for the Proompts repository.
 
 > [!NOTE]
-> For more granular Python tools and utilities, check the [`tools/scripts/`](../tools/scripts/) directory.
+> For more granular Python tools and utilities, check the [`tools/tools/scripts/`](../tools/tools/scripts/) directory.
 
 ## Directory Map 🗺️
 

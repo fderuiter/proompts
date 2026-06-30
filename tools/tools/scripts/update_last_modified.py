@@ -14,10 +14,10 @@ updates to a prompt without requiring developers to manually edit timestamps.
 HOW:
 Usage:
     # Update specific files
-    python3 tools/scripts/update_last_modified.py prompts/my_prompt.prompt.yaml
+    python3 tools/tools/scripts/update_last_modified.py prompts/my_prompt.prompt.yaml
 
     # Dry-run check (returns non-zero if updates are needed, but modifies nothing)
-    python3 tools/scripts/update_last_modified.py prompts/my_prompt.prompt.yaml --check
+    python3 tools/tools/scripts/update_last_modified.py prompts/my_prompt.prompt.yaml --check
 """
 
 import argparse

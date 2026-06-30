@@ -17,11 +17,11 @@ reference for the system.
 HOW TO USE:
 Run this script from the root of the repository:
 
-    python3 tools/scripts/generate_docs.py
+    python3 tools/tools/scripts/generate_docs.py
 
 > [!NOTE]
-> This script is automatically executed as part of the master validation suite (`test_all.py`).
-> It relies on `tools/scripts/docs_config.json` for directory configuration and structural mappings.
+> This script is automatically executed as part of the master validation suite (`validate_prompts.sh`).
+> It relies on `tools/tools/scripts/docs_config.json` for directory configuration and structural mappings.
 """
 
 import sys
@@ -673,7 +673,7 @@ def main() -> None:
     
     if args.check:
         if changes:
-             print("❌ Documentation is out of date. Run 'tools/scripts/generate_docs.py' to update.")
+             print("❌ Documentation is out of date. Run 'tools/tools/scripts/generate_docs.py' to update.")
              sys.exit(1)
         else:
              print("✅ Documentation is up-to-date.")

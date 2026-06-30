@@ -5,7 +5,7 @@
       "name": "Simulate Workflow",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}/tools/scripts/run_workflow.py",
+      "program": "${workspaceFolder}/tools/tools/scripts/run_workflow.py",
       "args": [
         "${file}"
       ],
@@ -16,7 +16,7 @@
       "name": "Enrich Prompt",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}/tools/scripts/enrich_prompts.py",
+      "program": "${workspaceFolder}/tools/tools/scripts/enrich_prompts.py",
       "args": [
         "${file}"
       ],

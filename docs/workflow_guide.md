@@ -4,7 +4,7 @@ Workflows are the powerhouse of this repository. They allow you to chain multipl
 
 **TL;DR - Run a workflow simulation:**
 ```bash
-python3 tools/scripts/run_workflow.py workflows/technical/software_engineering/paw_workflow.workflow.yaml -i product_concept="A new app idea"
+python3 tools/tools/scripts/run_workflow.py workflows/technical/software_engineering/paw_workflow.workflow.yaml -i product_concept="A new app idea"
 ```
 
 > [!NOTE]
@@ -139,7 +139,7 @@ steps:
 Test your workflow using the simulation engine (no API keys required):
 
 ```bash
-python3 tools/scripts/run_workflow.py workflows/communication/joke_generator.workflow.yaml
+python3 tools/tools/scripts/run_workflow.py workflows/communication/joke_generator.workflow.yaml
 ```
 
 You should see the output flow from the first step (Topic) to the second step (Joke).
@@ -179,7 +179,7 @@ We provide a Python script to simulate workflow execution locally without making
 **Command:**
 
 ```bash
-python3 tools/scripts/run_workflow.py path/to/workflow.workflow.yaml [options]
+python3 tools/tools/scripts/run_workflow.py path/to/workflow.workflow.yaml [options]
 ```
 
 **Options:**
@@ -195,7 +195,7 @@ python3 tools/scripts/run_workflow.py path/to/workflow.workflow.yaml [options]
 
 ```bash
 # Simulate the 'Idea to Epic' workflow
-python3 tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml \
+python3 tools/tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml \
   -i product_concept="A specialized AI for writing documentation"
 ```
 
@@ -220,7 +220,7 @@ Common issues when building workflows:
 
 ### "YAML Syntax Error"
 **Cause:** Incorrect indentation or invalid YAML structure.
-**Fix:** Use a YAML linter or `python3 tools/scripts/validate_prompt_schema.py` to check your files.
+**Fix:** Use a YAML linter or `python3 tools/tools/scripts/validate_prompt_schema.py` to check your files.
 
 ---
 

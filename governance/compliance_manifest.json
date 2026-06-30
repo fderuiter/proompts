@@ -70214,5 +70214,3726 @@
         }
       ]
     }
+  ],
+  "2026-06-30T14:36:26.227378+00:00": [
+    {
+      "prompt_file": "prompts/technical/technical_writing/technical_writer_workflow/03_sae_reporting_sop.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "3f1fd0e4bb624fd8ebe13422a1ce2248afff2332ed8871db5d9ae8b49d782d49",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 312"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 312",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/technical/testing/testing_workflow/04_risk_based_test_case_suite.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "080e10b34441b716695ed209ccfb5ef6d22b4b7e19e1506510ee38d5d7698df3",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 14971"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 14971",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "4.2",
+              "description": "Risk Analysis",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 4.2."
+            },
+            {
+              "clause": "5.1",
+              "description": "Risk Evaluation",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 5.1."
+            },
+            {
+              "clause": "6.1",
+              "description": "Risk Control",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 6.1."
+            }
+          ]
+        },
+        {
+          "standard": "ISO 14971",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/business/strategy/strategic_global_outsourcing_offshoring_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "9a8f3f63c9979758326f6f48a645e3c952a8b27b749e932ce37da12755de5ec0",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 27001"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 27001",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/safety/sae_safety_reporting.prompt.yaml",
+      "prompt_version": "0.1.2",
+      "prompt_hash": "5b369a2ff1466100597475af4257b0301d11e1d7009ff8d216e566f3606e35c9",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 312.32"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 312.32",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/forms/ecrf_implementation.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "f8202f25570847bbe914a21974e60bc7ba387de7a934cf81feb646ef84208cd1",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR Part 11",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/eclinical_integration/iq_oq_pq_validation.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "b9ffe674684a675de3a525837fd3a8684dd998a66b5b8bbed3654d20281c15aa",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 11.10."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR Part 11",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/eclinical_integration/econsent_implementation.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "e37d99ddb8707a340f86fb73564319107e6647ccc95ad381869d19d75ed9801b",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 50.25"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 50.25",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/eclinical_integration/computer_system_validation.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "c280c861fb5b0e3e34a08313601929fd65bb6fe126c04c62d0781e45f41dacaa",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 11.50."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR Part 11",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/trial_execution/informed_consent_process.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "b697f4ffc8db5192edbec055880ebe8f83ad834205b5a6a48fc0c15f244f63da",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 50.25"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 50.25",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/medical_writing/icf_readability_compliance_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "094d36ea6a2ad3176c7edcce0964a513672e65c4367e3951a3e41627e242f6ce",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 50"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 50",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/medical_writing/eu_mdr_clinical_evaluation_report_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "b9d0a5c9d29020fecc8a9872481cfd7e88c7fb2558703c3f0c127dd1d7e45963",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 10993"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 10993",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/data_management/dmp_development.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "7e0b66595ca996c87ad6e585be483f5fe07aeb163221b0add9c8f44484521745",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR Part 11",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/data_management/unified_data_cleansing.prompt.yaml",
+      "prompt_version": "0.2.1",
+      "prompt_hash": "a321d7df50ee18450cf59994ddd313e12ca6a891ea5e70e7e2cfb902b74eeb07",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 8601"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 8601",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/data_management/regulatory_compliance_verification.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "7acf1759c499f3a0856e9722138d990861027e793d0f67a4715f97b7eb400816",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 11.10."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 11.50."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR Part 11",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/data_management/cdisc_mapping.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "a3511d305222ee80839aa12003ae3cdc6f3dab4c18eaa2a6537ef57322e9dd2f",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 8601"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 8601",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/data_management/audit_trail_review.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "3ae04c3e3427d518f5e03ebc05d39013c4494744a249d3c87b4a5bcc70aea74b",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 11.50."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR Part 11",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/data_management/database_lock_procedures.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "e61a9fe656183b4f9fe9a055806953eb12dae1c3d5a05edcb36b2e0baf4995ce",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR Part 11",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/data_management/part_11_compliance_verification.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "130fcd9f84a8a0c0210f26d6bd2bed0676bda305b29ffe555fc12c9466269f98",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 11.10."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 11.50."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR Part 11",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/data_management/medical_coding_reconciliation.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "3e4051f3fafd29396278c49cea3b6bc02c45b7d53bcb7ddd1761aefda4df0d71",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR Part 11",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/safety/clinical_safety_workflow/02_fda_mdr_adverse_event_narrative.prompt.yaml",
+      "prompt_version": "0.2.0",
+      "prompt_hash": "49925b4f21897f3c86b66dc380a231a669cc7e249307ece9b15094dbb827acbe",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 803",
+        "21 CFR 803.52"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 803.52",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/imaging/imaging_workflow/06_regulatory_imaging_data_package.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "b04a3d4d9d4a7cb8fffc1b4d8f47b3220c70fe106ade48d0ec9111b4536bae3f",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 13485"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 13485",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/imaging/imaging_workflow/01_imaging_charter_draft.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "7212830133d175cdd3d908e34e1ee6cb6d941093fde230a57c910f9911411082",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR Part 11",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/imaging/imaging_workflow/05_image_acquisition_qc_workflow_blueprint.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "0ca45edb42efba23f77937659ff73cd9225bf12e4b9fd37e5fb0e00a8c0e941b",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 13485"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 13485",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/imaging/imaging_workflow/04_regulatory_imaging_charter_generator.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "5f6906bdbabcdba03146277d8dc58de683de8706836934b6d443e0b797dfc0d0",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 13485",
+        "ISO 14155"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 14155",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/eclinical_integration/eclinical_integration_workflow/03_regulatory_validation_checklist.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "d17e5ed794a31f6f59629bafb2a61ef0b625ed67952ebea91204050d4c343aa0",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR Part 11",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/eclinical_integration/eclinical_integration_workflow/01_architect_integration_blueprint.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "86ee8c9a8e1ca58a0f5487f45835eddc42708b6364b3f728b5365044ff4ae03d",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR Part 11",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/cra/cra_workflow/01_monitoring_visit_report_generator.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "92cb4c32b9db048832119cc54de7228a93e78c559b4643625306cb024e32e271",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 312"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 312",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/data_management/cdisc_compliance_workflow/09_sdtm_cardiovascular_device_mapping_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "71d514af4382f45005a722b9f42d3bc6af78597027089ef438b3c99dbb99a6e0",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 8601"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 8601",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/clinical/data_management/cdisc_compliance_workflow/14_sdtm_concomitant_medications_mapping_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "15364694456748adb0a9c06ab4b348b97006c8c010f55d2e8ecd5b2949b8ba09",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 8601"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 8601",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/adherence/shelf_life_study_rationale.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "42d0f9b86ebfb97520df8b46592c60fd07d88af8d3add66ec0dcaad2e4df5157",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 801"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 801",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/adherence/intended_use_and_indications_for_use_alignment.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "8a15490c9584f9f03d905e4081d7943a7ecae82c3536730d4977790c5ed170e5",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 801.4"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 801.4",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/adherence/off_label_information_dissemination.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "c9c1437d8db0248fadb4a1ab762f0231331ac705970f9f9344a48f9722476e75",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 99"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 99",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/adherence/alcoa_c_data_integrity_checklist.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "ea0f768c08a7040fd63ae5c48b0f053d67da5fd21cea3d02451582a1610196e3",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 11.10."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR Part 11",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/adherence/informed_consent_exception_emergency.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "6fbbe083c496f1024a3e1bf802e71ad9982476580b837a0550611841185d33b3",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 50.24"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 50.24",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/food_safety/foreign_supplier_verification_program_fsvp_audit.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "f42c1ea3886eec7deb03764d02274755ee1d4c9d3f114517366226b4fd7700fd",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 1"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 1",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/food_safety/directed_food_laboratory_order_verification.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "9f8944fb54a398c08f41e99acf274f0fbc9d98e7c7b2001bab078d7cfa160278",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 1"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 1",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/food_safety/food_safety_audit_reporting_regulatory.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "e3e151f8ae23b3d83e622800cad7eb8e14bd8987ef436fefa57458a6735d1732",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 1"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 1",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/food_safety/establishment_of_food_traceability_plan.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "619c7106a93a2320aca9382727d41db51aad3a20598b1cf613d34cabc1c9d876",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 1"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 1",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/strategy/fda_de_novo_classification_request_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "f2f0f55b6b486c5656f5fd1978a20e8393fdd030483cb4cabfe178298d9d79f2",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 860"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 860",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/strategy/ide_determination.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "8f7534e870d22d1a97c1714626c8eab4b2f4349ad6ed62d5fc1b03208726384d",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 812.3"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 812.3",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/strategy/samd_ai_pccp_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "22886e152c59d80a2efd4e17bd3c804c561c7aca3863347091243e1ec314084b",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 14971"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 14971",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "4.2",
+              "description": "Risk Analysis",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 4.2."
+            },
+            {
+              "clause": "5.1",
+              "description": "Risk Evaluation",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 5.1."
+            },
+            {
+              "clause": "6.1",
+              "description": "Risk Control",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 6.1."
+            }
+          ]
+        },
+        {
+          "standard": "ISO 14971",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/strategy/strategic_regulatory_pathway_plan.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "d74dbcb03d0c615e77cbfca2981fa38c1fdb6e90d61d6652fe7ad67a9974b447",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 14971"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 14971",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "4.2",
+              "description": "Risk Analysis",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "5.1",
+              "description": "Risk Evaluation",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "6.1",
+              "description": "Risk Control",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "ISO 14971",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/strategy/orphan_drug_designation_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "514872867cb260344457a189a001d2743a10dd8c7ddbb58ab3b2f5afef22ce90",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 316"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 316",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/strategy/ind_determination_application.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "7042fea58d3974605e82304c699066810bfe4ebe7883b958eb032a4da4b97b68",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 312.2"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 312.2",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/strategy/raqa_integrated_quality_system_audit.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "7e335b9bccb135f2e288c2d4c1e7c0a237b45e00501c0e13b92bcbe2b4478e98",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 13485",
+        "21 CFR 820"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 820",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "820.100",
+              "description": "CAPA",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 820.100."
+            },
+            {
+              "clause": "820.30",
+              "description": "Design Controls",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 820.30."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR 820",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/strategy/rfd_submission.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "a655206b5a673f72051fd02ab8053143260717f9648c7268eed1fee3a51d14ba",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 3"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 3",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/strategy/qmsr_gap_analysis.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "c15d72a20b9075b2210aa9af367ce8a8ce4bde5e6ef748a91b26c64522d34211",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 820"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 820",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "820.100",
+              "description": "CAPA",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "820.30",
+              "description": "Design Controls",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR 820",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/device_specifics/icgm_clinical_testing_strategy.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "77c00903aa65e78e97fbee1a19b47b775cc749515a2859681f715743b908634b",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 862.1355"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 862.1355",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/device_specifics/special_controls_labeling_compliance.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "da36289278e69a805d34e38d798b3350f0dd0c5621f4320b8b14c4ce70a4250d",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 866.3169"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 866.3169",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/device_specifics/companion_diagnostic_analytical_validation_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "6fea91cd50463549d4314a0f1cec387c6e1538a3b8187c9b32763f1984f25e02",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 809.10",
+        "21 CFR 809"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 809",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/device_specifics/ngs_tumor_profiling_documentation.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "235010a0957a54f78b647b2d9383530f73c6900150df633ba980740b500accb0",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 866.6080"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 866.6080",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/device_specifics/automated_image_assessment_system_510_k.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "9c1b198a632f56183ddbf5f03bd6d1a684bad7d6f0f67b9b3229996b9a76c5f3",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 866.2190"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 866.2190",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/device_specifics/carrier_screening_system_510_k.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "3c2b6329f698e820ce04625db60105b86b39ca4ae0617bbab4786928aa799d79",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 866.5940"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 866.5940",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/device_specifics/zika_virus_reagent_study_design.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "5ac6d1b2bb74ae67bca23aefbc3dee11d0b2f4addb1e3813ee6093ec37532d25",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 866.3935"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 866.3935",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/device_specifics/design_verification_for_bcr_abl_tests.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "8d048485df86c45669a50cfb175ff4c2407749cd28696dd6d349fac054ae0ea9",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 866.6060"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 866.6060",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/device_specifics/clinical_chemistry_device_classification.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "ec51d8ff656d07a4b4fb2fd8add0ec7cff8e94490df45219cb6ecb1138e1fd07",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 862"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 862",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/compliance/irb_protocol_review.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "00f7734b777f437a3a10a72128e50779125a327c19a1cb29d7d5574bb4d55d94",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 56"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 56",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/compliance/labeling_compliance_audit.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "93f46246c9b4fac8de4d942e5e0d70eeba7b4153779a08ed6de2fe63c35cbd5c",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 801",
+        "21 CFR Part 801"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 801",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/compliance/correction_and_removal_reporting.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "1df86cb9ad276100ea37386967dedf29d45a99c7fd28ec72b50e76441fe32d39",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 806",
+        "21 CFR 806.10"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 806.10",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/compliance/medical_device_recall_strategy.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "2ef2ee7287c93ea9bba4022fe71d0dc1d174e9a5f8f7ad8c1dedb989c6d0d9c2",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 810"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 810",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/fda_csa_risk_based_testing_strategy_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "098516708f4f3d2a59a924887fdfd6d3d8f9430201dd8c3eb616402beb7bfc96",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR Part 11",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/medical_device_reporting_decision_evaluator.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "5db8d12d8aaa3b24198d884c949e89b548a49772536707f5250be65b144d992a",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 803"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 803",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/capa_root_cause_analysis_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "7424a322255b6a2c0a94ca1c7417f2c6bb83d11db4859871875acf6327fceb66",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 13485",
+        "ISO 13485:2016",
+        "21 CFR 820.100",
+        "21 CFR 820",
+        "21 CFR Part 820.100"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 820",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "820.100",
+              "description": "CAPA",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 820.100."
+            },
+            {
+              "clause": "820.30",
+              "description": "Design Controls",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR Part 820.100",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/capa_root_cause_resolution_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "cd120d662295e96eaa2a4bd66bf1679d3d8c6db052a47f6f41b1249fc8fb3287",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 820",
+        "ISO 13485"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 13485",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/samd_iec_62304_software_safety_classification_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "3872f84192b142cdb96f19fb0705d8e20cb4f8c60bb0cd686794ef55d4a0f8cf",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 14971"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 14971",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "4.2",
+              "description": "Risk Analysis",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 4.2."
+            },
+            {
+              "clause": "5.1",
+              "description": "Risk Evaluation",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 5.1."
+            },
+            {
+              "clause": "6.1",
+              "description": "Risk Control",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 6.1."
+            }
+          ]
+        },
+        {
+          "standard": "ISO 14971",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/data_integrity_alcoa_plus_audit_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "5cc9ae047c3a8c4869938ff877ad719441a749b1e50afb340dcc700e3474b367",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 11.10."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR Part 11",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/capa_sop_architect.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "481ab297ed54aebd4f200c0e90ae9dc89848cd1646187b1a2dbe0cee00110b8c",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 9001",
+        "ISO 13485"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 13485",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/qms_management_review_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "f517e24ade276fc56f38b537c3b76a650e53235237c5357efdd189e2a380e4b7",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 13485",
+        "21 CFR 820",
+        "ISO 13485:2016",
+        "21 CFR 820.20"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 820",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "820.100",
+              "description": "CAPA",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 820.100."
+            },
+            {
+              "clause": "820.30",
+              "description": "Design Controls",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR 820.20",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/quality_system_audit.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "937e368f3790e912a94c4b06f0f7173e9eaf7597c68c5654543165fcc8d3a193",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 820"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 820",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/capa_plan_generator.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "0edaa9c9219f10ca6f901742c1c94d8a4804af7400ec784b433da74c22430e29",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 820"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 820",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "820.100",
+              "description": "CAPA",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 820.100."
+            },
+            {
+              "clause": "820.30",
+              "description": "Design Controls",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR 820",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/glp_quality_assurance.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "cb57b3a3c14e2821a68b65e1c78735c1c7a23654b0d43bd5010c076c21e34f24",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 58.35"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 58.35",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/supplier_corrective_action_request_evaluator.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "9b23e37e67e627dbe0ca990d9254f5dfdf2d005083230f3649255c7994c2ccf2",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 820.50",
+        "ISO 13485",
+        "21 CFR 820",
+        "ISO 13485:2016"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 820",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "820.100",
+              "description": "CAPA",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "820.30",
+              "description": "Design Controls",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "ISO 13485:2016",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/quality_system_evaluation_mra.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "104a027c028ad6b5cf173c9cdb0b183b4ef63ffc979b72d04773d7cceb901ced",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 820"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 820",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "820.100",
+              "description": "CAPA",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 820.100."
+            },
+            {
+              "clause": "820.30",
+              "description": "Design Controls",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR 820",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/medical_device_recall_strategy_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "3760200908b21391fbe67a253ca69f7117ec69e242138bc391e382f666ca8400",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 806"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 806",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/iso_10993_biological_evaluation_plan_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "4b384e1fd7884ba1c18b85ce8102dffd626c168d471523b8334288619163bfb0",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 10993"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 10993",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/risk_management_analysis.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "75396f5fcfe7c73371c84dfb71b37efe983f12cc83a411539cd41ebe0c5ae267",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 14971",
+        "21 CFR 820",
+        "21 CFR 820.30"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 14971",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "4.2",
+              "description": "Risk Analysis",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 4.2."
+            },
+            {
+              "clause": "5.1",
+              "description": "Risk Evaluation",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 5.1."
+            },
+            {
+              "clause": "6.1",
+              "description": "Risk Control",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 6.1."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR 820",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "820.100",
+              "description": "CAPA",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 820.100."
+            },
+            {
+              "clause": "820.30",
+              "description": "Design Controls",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR 820.30",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/fda_483_warning_letter_remediation_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "ee60d209184f89390dec55f59e747e6b9b65a72e3c794bdc80f8d52406c5484c",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 820",
+        "21 CFR Part 211"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 211",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/fda_oos_investigation_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "2d67f843ea48b1336bd6ca9726ac16cf2cee3915e8ca17ee9f483fd21ea449a6",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 211.192"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 211.192",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/iec_62304_soup_anomaly_evaluator.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "3612eb231205ae30ef42808eda8f093a17241055ba2487bcde975080805cf251",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 14971",
+        "ISO 14971:2019"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 14971",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "4.2",
+              "description": "Risk Analysis",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 4.2."
+            },
+            {
+              "clause": "5.1",
+              "description": "Risk Evaluation",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 5.1."
+            },
+            {
+              "clause": "6.1",
+              "description": "Risk Control",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 6.1."
+            }
+          ]
+        },
+        {
+          "standard": "ISO 14971:2019",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/cleaning_validation_protocol_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "3116f606c7dd0e16f3fd41bf42ec867b2400ffb8b51353f7aaa2be22abcec45d",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 211.67"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 211.67",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/part_11_closed_system_audit.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "35a35596c72b12287323346eac105e4547ca7ea4055c8443cef04dbbbb3d4607",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 11.10."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR Part 11",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/samd_hazard_traceability_matrix_generator.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "3f128275d54d042a327e1cb9a307ff9b7f924f879414db8c3330d31241e9b09c",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 14971",
+        "ISO 14971:2019"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 14971",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "4.2",
+              "description": "Risk Analysis",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 4.2."
+            },
+            {
+              "clause": "5.1",
+              "description": "Risk Evaluation",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 5.1."
+            },
+            {
+              "clause": "6.1",
+              "description": "Risk Control",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 6.1."
+            }
+          ]
+        },
+        {
+          "standard": "ISO 14971:2019",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/supplier_quality_agreement_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "be3ec3331877bbf9295ac5ac6c97db44713b0743f95005ec04296e44ad7cd585",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 820.50",
+        "ISO 13485:2016"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 13485:2016",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/process_validation_iq_oq_pq_protocol_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "6ef874f1633a840840fb9736c8a386a985d1c33d01bd5d9065f4fcf032b21954",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 820.75",
+        "ISO 13485",
+        "21 CFR 820",
+        "ISO 13485:2016"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 820",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "820.100",
+              "description": "CAPA",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "820.30",
+              "description": "Design Controls",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 820.30."
+            }
+          ]
+        },
+        {
+          "standard": "ISO 13485:2016",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/capa_management_process.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "0eef0b5a834b3201e18803a1dd1f826579038f37d665c66a753c2f622a89dfdf",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 820"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 820",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "820.100",
+              "description": "CAPA",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 820.100."
+            },
+            {
+              "clause": "820.30",
+              "description": "Design Controls",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR 820",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/samd_iec62304_software_architecture_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "5aec540a2735867b9ee7b465c7096ce108c9fa1cff8b1247450e3d92918defe2",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 820.30",
+        "ISO 14971"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 14971",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "4.2",
+              "description": "Risk Analysis",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 4.2."
+            },
+            {
+              "clause": "5.1",
+              "description": "Risk Evaluation",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 5.1."
+            },
+            {
+              "clause": "6.1",
+              "description": "Risk Control",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 6.1."
+            }
+          ]
+        },
+        {
+          "standard": "ISO 14971",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/quality/fda_510k_substantial_equivalence_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "ecc3dc55e37cb6331cc56ec6b6d1fdbd25b9ef3f9e9c1d794c14f4379c8d31b4",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 10993"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 10993",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/administrative/financial_disclosure_certification.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "84dd6202c316014d9dc18a3e2347d32f8fdc0173db8a4601052c37cdc208eb02",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 54"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 54",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/administrative/freedom_of_information_act_foia_request.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "8bea11ee50b986a8b3491ddd99c361e161d778b6ca09869fa54f3d6a31fbc9ce",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 20",
+        "21 CFR 20.40"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 20.40",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/administrative/21_cfr_part_14_auditing.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "2c322da4ade46ba292152b8b359b76b5daf204f87e472b9db04d1669905dd233",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 14"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 14",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/administrative/privacy_act_auditing.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "1cc110eadb4ee7260444075256b8ee13f06f2b8d588b8aeefd964baaf242f9bb",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 21.20"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 21.20",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/administrative/citizen_petition_preparation.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "a3f2abe93114561eaf6c88b68586d2cda75f75b9e2e89209ed19a837c4a83b5f",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 10.30",
+        "21 CFR Part 10.30"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 10.30",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/administrative/public_hearing_participation.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "cfe6c8ab2c76976aeaa44336ccb684735ede41848189b8e36a4b7a904faf7e94",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 12.45",
+        "21 CFR Part 12"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 12",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/administrative/civil_money_penalties_hearing_response.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "43d2735f93809756869f1282cb0eac65053925b769e183b901c68b21e539c64d",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 17"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 17",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/administrative/import_entry_data_element_compilation.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "f4bc048ab65a9605ca2dbf98e1d713db8cde5f5fc326de503acd98dc5816c27c",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 1"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 1",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/administrative/reclassification_petitioning.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "ae6108e89046423d3af2c27606a3955f273f1505e374d7d26be8cd303a10c6ba",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 860"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 860",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/administrative/medical_device_administrative_detention_appeal.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "162c867a4e9be42631bc75a0623ea6d1cecea54ca73bc1ff6fbad8d5041af1b7",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 1.402"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 1.402",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/administrative/patent_term_restoration_eligibility.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "a9ef45d3848a3423b5e6267ab8a18cddb6feb627d72d6c5ff391c4651cae3f7b",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 60"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 60",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/submissions/de_novo_request_preparation.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "61cf72537887ec027e8838861584f5aedd1f267248ad4b8fa4b90c1d56c8a992",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 860"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 860",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/submissions/new_drug_application_nda_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "7aab528ca6047ca4f76c2a91c95b3bc3584f27cdbdc12a0136e82fd4fa9ad777",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 314",
+        "21 CFR Part 314"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 314",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/submissions/premarket_approval_pma_preparation.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "fef97e7cccac04f4d5423d40f40d427da57c010e7cf415b09c653ae507c08436",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 814",
+        "21 CFR 814.20"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 814.20",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/submissions/ide_application_preparation.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "990b9ce594f4e2691cc723c6502dc698a60b21772d2dc168773ac34431ac779b",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 812.25",
+        "21 CFR Part 812"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 812",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/submissions/combination_product_jurisdiction.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "9348d00511587517e5a5f20ffd01d86a6e2f057189bdc9bd841ee8a2c4a549af",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 3"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 3",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/submissions/abbreviated_new_drug_application_anda_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "324f68c51ad3cdf7620c81e4e715232ac1eadc5f3fbc02eb67fdc5c4dcdeb6bf",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 314"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 314",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/submissions/pma_post_approval_reporting.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "d4f3d75acef31e1fad3a5615eb5968e5a012778ce1cbef2f04359b75737aa06c",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 814.82"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 814.82",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/submissions/eu_mdr_technical_documentation_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "386f4d09654ce8d4f660780ad532935e18e9c5741083f5e29b832c56fec93167",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 14971",
+        "ISO 14971:2019"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 14971",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "4.2",
+              "description": "Risk Analysis",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 4.2."
+            },
+            {
+              "clause": "5.1",
+              "description": "Risk Evaluation",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 5.1."
+            },
+            {
+              "clause": "6.1",
+              "description": "Risk Control",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 6.1."
+            }
+          ]
+        },
+        {
+          "standard": "ISO 14971:2019",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/submissions/humanitarian_device_exemption_hde.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "701e41448d49d1bb2b26bc9d3caecce931182fb465a3e31eead44c327a539d24",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 814"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 814",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/submissions/udi_gudid_submission.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "ba611748b74bdd3876c1a0324069d078b31a962c1f2e17b621e49c2192389614",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 830"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 830",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/submissions/510_k_substantial_equivalence_preparation.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "cd583e717904654715295940347fde7ccc6810b7cac92e283207e479d06f96e5",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 807",
+        "21 CFR 807.92"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 807.92",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/regulatory/submissions/investigational_new_drug_ind_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "8ca7d8e7a122a3a6623f654d7fd54ce9e59f27bca5d2ce402ed459e0468a1bfa",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 312"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 312",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/biosafety/bep_builder.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "5d3ad64598bce25ab5bc1c81eeed333433c9ad71192a4a7cb2a86a5c718541a7",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 10993"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 10993",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/biosafety/biological_safety_workflow/01_risk_assessment_expert.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "3d6f8f773650e99da8b719c4dd0cd093ca259d689b8b6f9aa11cc64f27beb828",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 14971",
+        "ISO 10993"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 14971",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "4.2",
+              "description": "Risk Analysis",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "5.1",
+              "description": "Risk Evaluation",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "6.1",
+              "description": "Risk Control",
+              "addressed": "Yes",
+              "evidence": "Instruction implicitly addresses 6.1."
+            }
+          ]
+        },
+        {
+          "standard": "ISO 10993",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/biosafety/biological_safety_workflow/03_regulatory_submission_support.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "9b32d3183e0edba5420c4e8a244ef7a2377df54929e55e61b924ad6d76e1c606",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 820"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 820",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "820.100",
+              "description": "CAPA",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "820.30",
+              "description": "Design Controls",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR 820",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/chemical_characterization/chemical_characterization_workflow/03_write_the_regulatory_summary.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "ed5aefd1d6d12a5eab6f656a0264c5a8e97dfa986ba55465a884c55f27beffd6",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 10993"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 10993",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/chemical_characterization/chemical_characterization_workflow/01_design_the_study.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "5b77e91776e263b150a9606d0f1200c7c999cd2a88c82a0cecf931511ec0a7c9",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 10993"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 10993",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/microbiology/microbiology_workflow/01_bioburden_testing_sop.prompt.yaml",
+      "prompt_version": "0.2.0",
+      "prompt_hash": "237f87e4069ec0ef3cdf08e7afcb6a44b7b66d579317037bdcd0fb5cb8e08c9d",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 13485",
+        "ISO 11737"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 11737",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/microbiology/microbiology_workflow/02_eo_sterilization_validation_protocol.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "dcab1f5768725bd2f2a93cc5937f84657daa11bdf3f8f8112ed05b9301362c1c",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 11135:2014",
+        "ISO 11737"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 11737",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/pathology/pathology_study_workflow/01_study_protocol_outline.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "74a9594d2c3e8728ccfa57996b8dc68e1120319b84f38c6adb78cc072880bb8f",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 58",
+        "ISO 10993"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 10993",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/scientific/sterility/sterility_workflow/01_sterility_validation_protocol_builder.prompt.yaml",
+      "prompt_version": "0.1.1",
+      "prompt_hash": "47a664f90f98c9b9f286b104a917f5f2001306be300ee502f8c1e4f455e69908",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 11737",
+        "ISO 11137"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 11137",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/management/medical_director/clinical_trial_protocol_quality_compliance_review.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "ea7924a355a9b518884cba5cb1e56524aa74dd3231dc3903ba6d30af255e8810",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR 312"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR 312",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/management/operations/capa_root_cause_resolution_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "f030e11c70770c2a59001f692440e0d94bf960b983730198cfeb5e1e2ec71471",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 9001"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 9001",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/management/operations/operational_resilience_tabletop_simulation_architect.prompt.yaml",
+      "prompt_version": "1.0.0",
+      "prompt_hash": "5faa64dac674102c37fadd037f0cd91adf4fabd800d01ee4df2d473660f587c8",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 22301"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 22301",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/management/operations/operational_excellence_risk_sweep.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "7d60b26033741fcddb16e72feedfd4fec2a72fd3487df7c405511f47e2829933",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR Part 11",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/management/executive/crisis_management_playbook.prompt.yaml",
+      "prompt_version": "0.1.0",
+      "prompt_hash": "c0a027fee7e900a257a36600800840ff04723539883a43e28794f57e62ab554e",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "ISO 22361"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "ISO 22361",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/management/executive/digital_transformation_roadmap.prompt.yaml",
+      "prompt_version": "0.2.0",
+      "prompt_hash": "9b4bbc7da2447b0cea4c43dc40d303c1566f4801dec8f2cf0e9336a0b58484de",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR Part 11",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prompt_file": "prompts/management/clinical_research_manager/digest_regulatory_updates.prompt.yaml",
+      "prompt_version": "0.2.0",
+      "prompt_hash": "669353d82da29e6c36d2b7c1b8015e46384519d84f8ba2e2dcc479488f85a074",
+      "timestamp": "2026-06-30T14:36:26.227378+00:00",
+      "regulatory_identifiers": [
+        "21 CFR Part 11"
+      ],
+      "compliance_mappings": [
+        {
+          "standard": "21 CFR Part 11",
+          "version": "2024",
+          "statement_of_applicability": [
+            {
+              "clause": "11.10",
+              "description": "Controls for closed systems",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            },
+            {
+              "clause": "11.50",
+              "description": "Signature manifestations",
+              "addressed": "No",
+              "evidence": "Marked as non-applicable for this prompt version."
+            }
+          ]
+        },
+        {
+          "standard": "21 CFR Part 11",
+          "version": "unknown",
+          "statement_of_applicability": [
+            {
+              "clause": "N/A",
+              "description": "Numeric standard auto-identified",
+              "addressed": "Pending",
+              "evidence": "Awaiting manual KB update"
+            }
+          ]
+        }
+      ]
+    }
   ]
 }

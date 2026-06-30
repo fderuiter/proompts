@@ -15,10 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `CONTRIBUTING.md` guide.
 - GitHub Issue and Pull Request templates.
 - `.pre-commit-config.yaml` for automated validation.
-- Duplicate name validation in `tools/scripts/validate_prompt_schema.py`.
-- `tools/scripts/search_prompts.py` for searching prompts.
+- Duplicate name validation in `tools/tools/scripts/validate_prompt_schema.py`.
+- `tools/tools/scripts/search_prompts.py` for searching prompts.
 - `docs/USAGE.md`.
-- `tools/scripts/update_last_modified.py`.
+- `tools/tools/scripts/update_last_modified.py`.
 
 ### Changed
 - `README.md` with explicit setup and validation instructions.

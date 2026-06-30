@@ -38,17 +38,17 @@ intellisense and validation while editing `.prompt.yaml` files.
 
 1. **Basic Validation** (Checks all required schema fields):
    ```bash
-   python3 tools/scripts/validate_prompt_schema.py
+   python3 tools/tools/scripts/validate_prompt_schema.py
    ```
 
 2. **Strict Validation** (Warns if `testData` or `evaluators` are empty):
    ```bash
-   python3 tools/scripts/validate_prompt_schema.py --strict
+   python3 tools/tools/scripts/validate_prompt_schema.py --strict
    ```
 
 3. **Generate JSON Schema** (Outputs schema for IDE intellisense):
    ```bash
-   python3 tools/scripts/validate_prompt_schema.py --json-schema > docs/schemas/prompt.schema.json
+   python3 tools/tools/scripts/validate_prompt_schema.py --json-schema > docs/schemas/prompt.schema.json
    ```
 
 ### Example Valid `testData` Section

@@ -26,7 +26,7 @@ pip install -r requirements.txt
 Let's find a prompt to test. Use the search script to find a "Code Reviewer":
 
 ```bash
-python3 tools/scripts/search_prompts.py "code review"
+python3 tools/tools/scripts/search_prompts.py "code review"
 ```
 
 ### 3. Run a Workflow Simulation
@@ -36,20 +36,20 @@ Let's simulate the **Agentic Coding Workflow** (which chains multiple engineerin
 
 ```bash
 # Run the workflow and provide a starting variable (-i)
-python3 tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app"
+python3 tools/tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app"
 ```
 
 > [!TIP]
 > Add the `-v` (verbose) flag to see exactly how inputs map to the prompts at each step!
 > ```bash
-> python3 tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app" -v
+> python3 tools/tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app" -v
 > ```
 
 ### 4. Verify your changes
 Before pushing any new prompts or documentation, you must run the validation suite to ensure schemas and links are intact:
 
 ```bash
-python3 tools/scripts/test_all.py
+./scripts/validate_prompts.sh
 ```
 
 ## 📚 What's Next?

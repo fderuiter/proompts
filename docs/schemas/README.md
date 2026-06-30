@@ -6,7 +6,7 @@ This directory contains JSON Schemas generated from the repository's validation 
 
 | Schema File | Description | Source Script |
 | :--- | :--- | :--- |
-| [`prompt.schema.json`](./prompt.schema.json) | Validates `.prompt.yaml` files. | `tools/scripts/validate_prompt_schema.py` |
+| [`prompt.schema.json`](./prompt.schema.json) | Validates `.prompt.yaml` files. | `tools/tools/scripts/validate_prompt_schema.py` |
 | [`workflow.schema.json`](./workflow.schema.json) | Validates `.workflow.yaml` files. | Manual (Schema defined in docs) |
 
 ## How to Configure VS Code
@@ -44,8 +44,8 @@ Repeat the process for the Workflow Schema:
 
 ## Updating the Schema
 
-If you modify the `PromptSchema` class in `tools/scripts/validate_prompt_schema.py`, you must regenerate the schema file:
+If you modify the `PromptSchema` class in `tools/tools/scripts/validate_prompt_schema.py`, you must regenerate the schema file:
 
 ```bash
-python3 tools/scripts/validate_prompt_schema.py --json-schema > docs/schemas/prompt.schema.json
+python3 tools/tools/scripts/validate_prompt_schema.py --json-schema > docs/schemas/prompt.schema.json
 ```

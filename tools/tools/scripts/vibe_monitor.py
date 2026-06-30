@@ -47,7 +47,7 @@ class VibeMonitor:
             return test_data[0].get("variables", [{"name": "mock", "value": "synthetic mock data"}])
         return [{"name": "mock", "value": "fallback synthetic data"}]
 
-    def _simulate_llm_judge(self, prompt_name, prompt_content, synthetic_data):
+    def _simulate_llm_judge(self, prompt_name, synthetic_data):
         """
         Simulate an LLM-as-a-judge with multi-persona evaluators (UX, Data Science, CFO).
         In a real scenario, this would call the LLM API using the LLM_API_KEY.
@@ -116,7 +116,7 @@ class VibeMonitor:
             synthetic_data = self.extract_synthetic_data(data)
             
             # Evaluate using LLM-as-a-judge
-            eval_result = self._simulate_llm_judge(p, data, synthetic_data)
+            eval_result = self._simulate_llm_judge(p, synthetic_data)
             
             category = str(p.relative_to(ROOT / "prompts")).split('/')[0]
             
