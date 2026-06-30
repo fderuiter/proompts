@@ -10,22 +10,22 @@ inputs:
   description: The content of the relevant source files identified for the task.
 steps:
 - step_id: tactical_recon
-  prompt_file: prompts/technical/software_engineering/tasks/paw/paw_01_tactical_recon.prompt.yaml
+  prompt_file: prompts/technical/software_engineering/tasks/paw/paw_01_tactical_recon.prompt.md
   map_inputs:
     todo_content: '{{inputs.todo_content}}'
     file_structure: '{{inputs.file_structure}}'
 - step_id: architectural_blueprint
-  prompt_file: prompts/technical/software_engineering/tasks/paw/paw_02_architectural_blueprint.prompt.yaml
+  prompt_file: prompts/technical/software_engineering/tasks/paw/paw_02_architectural_blueprint.prompt.md
   map_inputs:
     tactical_brief: '{{steps.tactical_recon.output}}'
     relevant_source_code: '{{inputs.relevant_source_code}}'
 - step_id: precision_strike
-  prompt_file: prompts/technical/software_engineering/tasks/paw/paw_03_precision_strike.prompt.yaml
+  prompt_file: prompts/technical/software_engineering/tasks/paw/paw_03_precision_strike.prompt.md
   map_inputs:
     design_spec: '{{steps.architectural_blueprint.output}}'
     relevant_source_code: '{{inputs.relevant_source_code}}'
 - step_id: qa_verification
-  prompt_file: prompts/technical/software_engineering/tasks/paw/paw_04_qa_verification.prompt.yaml
+  prompt_file: prompts/technical/software_engineering/tasks/paw/paw_04_qa_verification.prompt.md
   map_inputs:
     implementation_code: '{{steps.precision_strike.output}}'
     todo_content: '{{inputs.todo_content}}'

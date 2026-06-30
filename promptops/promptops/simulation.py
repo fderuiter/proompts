@@ -26,7 +26,7 @@ def simulate_prompt(prompt_file: str, data_file: str) -> bool:
                 from promptops.utils import parse_skill_manifest
                 manifest = parse_skill_manifest(skills_md)
                 
-                stem = path_obj.name.replace('.prompt.yaml', '').replace('.prompt.yml', '')
+                stem = path_obj.name.replace('.prompt.md', '').replace('.prompt.yml', '')
                 stem_clean = re.sub(r'^\d+_', '', stem).replace('_', ' ').lower()
                 
                 for skill in manifest.get("skills", []):

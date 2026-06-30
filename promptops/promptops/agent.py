@@ -10,7 +10,7 @@ from promptops.utils import iter_prompt_files, load_yaml, iter_skill_manifests, 
 def get_tool_name(path: Path, content: dict) -> Tuple[str, str]:
     name = content.get('name')
     if not name:
-        name = path.name.replace(".prompt.yaml", "")
+        name = path.name.replace(".prompt.md", "")
         
     original_name = name
     name = re.sub(r'[^a-zA-Z0-9_-]', '_', name)

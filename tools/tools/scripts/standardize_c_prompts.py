@@ -19,7 +19,7 @@ REQUIRED_SECTIONS = [
 OPTIONAL_SECTIONS = ["additional_notes", "example_usage", "references"]
 
 for d in sorted([p for p in PROMPTS_DIR.iterdir() if p.is_dir() and p.name.startswith("c")]):
-    for path in sorted(d.glob("*.prompt.yaml")):
+    for path in sorted(d.glob("*.prompt.md")):
         data = load_yaml(path) or {}
         prompt = data.get("prompt", {})
         changed = False

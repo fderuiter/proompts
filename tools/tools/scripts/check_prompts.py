@@ -38,7 +38,7 @@ from promptops.utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, iter_prompt_f
 
 
 NAMING_RULES = {
-    "meta": re.compile(r"^L\d+_.*\.prompt\.ya?ml$", re.IGNORECASE),
+    "meta": re.compile(r"^L\d+_.*\.prompt\.(ya?ml|md)$", re.IGNORECASE),
 }
 
 
@@ -62,7 +62,7 @@ def check_directory_contents(directory: Path) -> bool:
             continue
 
         lower_name = name.lower()
-        is_prompt = lower_name.endswith(".prompt.yaml") or lower_name.endswith(".prompt.yml")
+        is_prompt = lower_name.endswith(".prompt.md") or lower_name.endswith(".prompt.yml")
         is_workflow = lower_name.endswith(".workflow.yaml") or lower_name.endswith(".workflow.yml")
 
         if has_manifest and is_prompt:

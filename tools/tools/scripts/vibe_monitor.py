@@ -37,7 +37,7 @@ class VibeMonitor:
         base_dir = ROOT
         prompts_dir = base_dir / "prompts"
         files = []
-        files.extend(prompts_dir.rglob("*.prompt.yaml"))
+        files.extend(prompts_dir.rglob("*.prompt.md"))
         files.extend(prompts_dir.rglob("*.prompt.yml"))
         return files
 

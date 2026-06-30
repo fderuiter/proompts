@@ -14,7 +14,7 @@ st.title("Prompt Editor")
 
 from promptops.utils import ROOT
 base_dir = str(ROOT)
-prompt_files = glob.glob(os.path.join(base_dir, "prompts", "**", "*.prompt.yaml"), recursive=True)
+prompt_files = glob.glob(os.path.join(base_dir, "prompts", "**", "*.prompt.md"), recursive=True)
 prompt_files = [os.path.relpath(f, base_dir) for f in prompt_files]
 
 selected_file = st.selectbox("Select a prompt to edit", ["Create New..."] + prompt_files)
@@ -34,7 +34,7 @@ def save_yaml(path: str, data: Dict[str, Any]) -> None:
 
 if selected_file == "Create New...":
     st.subheader("Create New Prompt")
-    new_file_path = st.text_input("File Path (e.g., prompts/my_prompt.prompt.yaml)")
+    new_file_path = st.text_input("File Path (e.g., prompts/my_prompt.prompt.md)")
     data: Dict[str, Any] = {
         "name": "",
         "version": "0.1.0",
@@ -226,8 +226,8 @@ if st.button("Add Evaluator"):
     st.rerun()
 
 if st.button("Save Changes", type="primary"):
-    if not new_file_path.endswith('.prompt.yaml'):
-        st.error("File path must end with .prompt.yaml")
+    if not new_file_path.endswith('.prompt.md'):
+        st.error("File path must end with .prompt.md")
     else:
         try:
             data['modelParameters'].update({"temperature": temperature, "max_tokens": max_tokens})

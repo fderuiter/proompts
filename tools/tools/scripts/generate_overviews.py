@@ -28,7 +28,7 @@ def get_prompt_metadata(path: Path) -> tuple[str, str]:
         return str(title).strip(), str(description).strip()
 
     name = path.name
-    for ext in (".prompt.yaml", ".prompt.yml", ".workflow.yaml", ".workflow.yml"):
+    for ext in (".prompt.md", ".prompt.yml", ".workflow.yaml", ".workflow.yml"):
         if name.lower().endswith(ext):
             name = name[: -len(ext)]
             break
@@ -48,7 +48,7 @@ def generate_overview(directory: Path, content_cache: dict[Path, bool] | None = 
     If neither files nor subdirectories with content are found, returns an empty string.
     
     Parameters:
-        directory (Path): Directory to scan for `.prompt.yaml/.prompt.yml` and `.workflow.yaml/.workflow.yml` files.
+        directory (Path): Directory to scan for `.prompt.md/.prompt.yml` and `.workflow.yaml/.workflow.yml` files.
         content_cache (dict[Path, bool] | None): Optional cache mapping subdirectory Paths to a boolean indicating
             whether that subdirectory (recursively) contains prompt/workflow files; when provided, it is consulted
             and updated to avoid repeated recursive scans.
@@ -58,7 +58,7 @@ def generate_overview(directory: Path, content_cache: dict[Path, bool] | None = 
     """
     title = directory.name.replace("_", " ").title()
     prompt_files: list[Path] = []
-    for pattern in ("*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
+    for pattern in ("*.prompt.md", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
         prompt_files.extend(directory.glob(pattern))
     
     # Filter out hidden files (e.g. ._ files on Mac)
@@ -81,7 +81,7 @@ def generate_overview(directory: Path, content_cache: dict[Path, bool] | None = 
             if content_cache is not None and child in content_cache:
                 has_sub_prompts = content_cache[child]
             else:
-                for pattern in ("*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
+                for pattern in ("*.prompt.md", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
                     try:
                         next(child.rglob(pattern))
                         has_sub_prompts = True
@@ -168,7 +168,7 @@ def main() -> int:
     def has_content(d: Path) -> bool:
         if d in content_cache:
             return content_cache[d]
-        for pattern in ("*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
+        for pattern in ("*.prompt.md", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
             try:
                 next(d.rglob(pattern))
                 content_cache[d] = True

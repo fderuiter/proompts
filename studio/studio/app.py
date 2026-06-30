@@ -9,7 +9,7 @@ st.title("Proompts Studio")
 st.markdown("""
 Welcome to the Proompts Studio! 
 Use the sidebar to navigate between:
-- **Prompt Editor**: Visual editor for `.prompt.yaml` files
+- **Prompt Editor**: Visual editor for `.prompt.md` files
 - **Workflow Editor**: Visual editor for `.workflow.yaml` files 
 - **Simulation Runner**: Run zero-cost simulations
 - **Git Sync**: Sync your changes to the repository

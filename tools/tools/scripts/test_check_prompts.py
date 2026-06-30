@@ -46,7 +46,7 @@ class TestCheckPrompts(unittest.TestCase):
             dir_path = Path(temp_dir)
 
             # Create valid files
-            (dir_path / "test.prompt.yaml").touch()
+            (dir_path / "test.prompt.md").touch()
             (dir_path / "test2.prompt.yml").touch()
             (dir_path / OVERVIEW_NAME).touch()
             (dir_path / "readme.md").touch()
@@ -82,7 +82,7 @@ class TestCheckPrompts(unittest.TestCase):
 
         with tempfile.TemporaryDirectory() as temp_dir:
             dir_path = Path(temp_dir)
-            file_path = dir_path / "test.prompt.yaml"
+            file_path = dir_path / "test.prompt.md"
             file_path.touch()
 
             result = check_prompt_file(file_path)
@@ -97,7 +97,7 @@ class TestCheckPrompts(unittest.TestCase):
 
         with tempfile.TemporaryDirectory() as temp_dir:
             dir_path = Path(temp_dir)
-            file_path = dir_path / "test.prompt.yaml"
+            file_path = dir_path / "test.prompt.md"
             file_path.touch()
 
             result = check_prompt_file(file_path)
@@ -114,7 +114,7 @@ class TestCheckPrompts(unittest.TestCase):
             meta_dir = base_dir / "meta"
             meta_dir.mkdir()
 
-            file_path = meta_dir / "L01_test.prompt.yaml"
+            file_path = meta_dir / "L01_test.prompt.md"
             file_path.touch()
 
             result = check_prompt_file(file_path)
@@ -131,7 +131,7 @@ class TestCheckPrompts(unittest.TestCase):
             meta_dir = base_dir / "meta"
             meta_dir.mkdir()
 
-            file_path = meta_dir / "invalid.prompt.yaml"
+            file_path = meta_dir / "invalid.prompt.md"
             file_path.touch()
 
             result = check_prompt_file(file_path)
@@ -148,8 +148,8 @@ class TestCheckPrompts(unittest.TestCase):
     def test_main_success(self, mock_prompts_dir, mock_workflows_dir, mock_iter_prompts, mock_iter_workflows, mock_check_prompt, mock_check_overview, mock_check_dir):
         """Test main when all checks pass."""
         # Set up mock iter_prompt_files to yield a couple of files
-        prompt1 = mock_prompts_dir / "dir1" / "test1.prompt.yaml"
-        prompt2 = mock_prompts_dir / "dir2" / "test2.prompt.yaml"
+        prompt1 = mock_prompts_dir / "dir1" / "test1.prompt.md"
+        prompt2 = mock_prompts_dir / "dir2" / "test2.prompt.md"
         mock_iter_prompts.return_value = [prompt1, prompt2]
 
         workflow1 = mock_workflows_dir / "flow1" / "test1.workflow.yaml"
@@ -176,7 +176,7 @@ class TestCheckPrompts(unittest.TestCase):
     @patch('tools.scripts.check_prompts.PROMPTS_DIR', new_callable=lambda: Path('/fake/prompts'))
     def test_main_prompt_file_fails(self, mock_prompts_dir, mock_iter, mock_check_prompt, mock_check_overview, mock_check_dir):
         """Test main when check_prompt_file fails."""
-        prompt1 = mock_prompts_dir / "dir1" / "test1.prompt.yaml"
+        prompt1 = mock_prompts_dir / "dir1" / "test1.prompt.md"
         mock_iter.return_value = [prompt1]
 
         mock_check_prompt.return_value = False
@@ -194,7 +194,7 @@ class TestCheckPrompts(unittest.TestCase):
     @patch('tools.scripts.check_prompts.PROMPTS_DIR', new_callable=lambda: Path('/fake/prompts'))
     def test_main_overview_fails(self, mock_prompts_dir, mock_iter, mock_check_prompt, mock_check_overview, mock_check_dir):
         """Test main when check_overview fails."""
-        prompt1 = mock_prompts_dir / "dir1" / "test1.prompt.yaml"
+        prompt1 = mock_prompts_dir / "dir1" / "test1.prompt.md"
         mock_iter.return_value = [prompt1]
 
         mock_check_prompt.return_value = True
@@ -212,7 +212,7 @@ class TestCheckPrompts(unittest.TestCase):
     @patch('tools.scripts.check_prompts.PROMPTS_DIR', new_callable=lambda: Path('/fake/prompts'))
     def test_main_directory_contents_fails(self, mock_prompts_dir, mock_iter, mock_check_prompt, mock_check_overview, mock_check_dir):
         """Test main when check_directory_contents fails."""
-        prompt1 = mock_prompts_dir / "dir1" / "test1.prompt.yaml"
+        prompt1 = mock_prompts_dir / "dir1" / "test1.prompt.md"
         mock_iter.return_value = [prompt1]
 
         mock_check_prompt.return_value = True

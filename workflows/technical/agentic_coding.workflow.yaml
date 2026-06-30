@@ -6,14 +6,14 @@ inputs:
   description: A short description of the product idea to be developed.
 steps:
 - step_id: generate_product_brief
-  prompt_file: prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/01_product_brief.prompt.yaml
+  prompt_file: prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/01_product_brief.prompt.md
   map_inputs:
     vision: '{{inputs.product_concept}}'
     features: TBD
     architecture: TBD
     context_notes: None
 - step_id: create_project_epics
-  prompt_file: prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/02_project_brief_epic.prompt.yaml
+  prompt_file: prompts/technical/software_engineering/lifecycle/agentic_coding_workflow/02_project_brief_epic.prompt.md
   map_inputs:
     project_description: '{{steps.generate_product_brief.output}}'
     key_features: TBD
