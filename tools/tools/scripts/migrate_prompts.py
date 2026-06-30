@@ -117,6 +117,9 @@ def migrate_file(file_path: Path, dry_run: bool = False) -> bool:
             content["metadata"] = metadata
             modified = True
 
+    if file_path.suffix in ('.yaml', '.yml'):
+        modified = True
+
     if not modified:
         print(f"  OK (already migrated): {file_path}")
         return False
@@ -132,11 +135,41 @@ def migrate_file(file_path: Path, dry_run: bool = False) -> bool:
         print(f"  SKIP (invalid schema or syntax after migration): {file_path}\n  {e}")
         return False
 
+    # Remove messages from YAML content
+    messages = content.pop("messages", [])
+    md_lines = []
+    for msg in messages:
+        role = msg.get("role", "system")
+        md_content = msg.get("content", "")
+        if isinstance(md_content, list):
+            md_content = " ".join([str(c) for c in md_content])
+        elif not md_content and msg.get("tool_calls"):
+            md_content = str(msg.get("tool_calls"))
+            
+        md_content = md_content.strip()
+        if role == "system":
+            md_lines.append(f"## Purpose\n{md_content}\n")
+        elif role == "user":
+            md_lines.append(f"## Instructions\n{md_content}\n")
+        else:
+            md_lines.append(f"## {role.capitalize()}\n{md_content}\n")
+
     # Write back — use default_flow_style=False for readable YAML
     yaml_text = yaml.dump(content, default_flow_style=False, sort_keys=False,
                           allow_unicode=True, width=120)
-    file_path.write_text("---\n" + yaml_text, encoding="utf-8")
-    print(f"  UPDATED: {file_path}")
+    
+    new_text = f"---\n{yaml_text}---\n\n" + "\n".join(md_lines)
+    
+    # Write to new .md file and remove old .yaml file if different
+    new_file_path = file_path
+    if file_path.suffix in ('.yaml', '.yml'):
+        new_file_path = file_path.with_name(file_path.name.replace(".prompt.yaml", ".prompt.md").replace(".prompt.yml", ".prompt.md"))
+        
+    new_file_path.write_text(new_text, encoding="utf-8")
+    if new_file_path != file_path:
+        file_path.unlink()
+        
+    print(f"  UPDATED: {new_file_path}")
     return True
 
 

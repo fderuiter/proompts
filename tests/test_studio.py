@@ -19,12 +19,12 @@ def test_prompt_editor_launches_and_saves():
     # Find text inputs
     file_path_ti = None
     for ti in at.text_input:
-        if ti.label == "File Path (e.g., prompts/my_prompt.prompt.yaml)":
+        if ti.label == "File Path (e.g., prompts/my_prompt.prompt.md)":
             file_path_ti = ti
             break
             
     assert file_path_ti is not None
-    file_path_ti.set_value("prompts/test_new.prompt.yaml")
+    file_path_ti.set_value("prompts/test_new.prompt.md")
     
     # Click save
     save_btn = None
@@ -46,7 +46,7 @@ def test_prompt_editor_launches_and_saves():
     assert success_found, "App did not report successful save"
     
     # Check if file was created
-    test_file = ROOT_DIR / "prompts" / "test_new.prompt.yaml"
+    test_file = ROOT_DIR / "prompts" / "test_new.prompt.md"
     assert test_file.exists()
     test_file.unlink()
     

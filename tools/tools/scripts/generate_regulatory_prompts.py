@@ -507,7 +507,7 @@ def to_snake_case(text):
 def get_next_number(directory):
     if not directory.exists():
         return 1
-    existing = [f for f in directory.glob("*.prompt.yaml")]
+    existing = [f for f in directory.glob("*.prompt.md")]
     max_num = 0
     for f in existing:
         match = re.match(r'(\d+)_', f.name)
@@ -521,7 +521,7 @@ def generate_prompt_yaml(task, category_dir):
     # Check if file already exists with any number
     existing_file = None
     if category_dir.exists():
-        for f in category_dir.glob(f"*_{snake_name}.prompt.yaml"):
+        for f in category_dir.glob(f"*_{snake_name}.prompt.md"):
             existing_file = f
             break
 
@@ -530,7 +530,7 @@ def generate_prompt_yaml(task, category_dir):
         print(f"Updating existing {filepath}")
     else:
         number = get_next_number(category_dir)
-        filename = f"{number:02d}_{snake_name}.prompt.yaml"
+        filename = f"{number:02d}_{snake_name}.prompt.md"
         filepath = category_dir / filename
         print(f"Creating new {filepath}")
 
@@ -589,7 +589,7 @@ def update_overview(directory):
     # Use a list to collect lines instead of string concatenation
     lines = [f"# {title} Overview\n\n"]
 
-    prompts = sorted(directory.glob("*.prompt.yaml"))
+    prompts = sorted(directory.glob("*.prompt.md"))
     for p in prompts:
         try:
             with open(p, 'r') as f:

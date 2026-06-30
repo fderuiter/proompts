@@ -606,7 +606,7 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
                 manifest = parse_skill_manifest(skills_md)
                 
                 # Heuristic match by name
-                stem = path_obj.name.replace('.prompt.yaml', '').replace('.prompt.yml', '')
+                stem = path_obj.name.replace('.prompt.md', '').replace('.prompt.yml', '')
                 stem_clean = re.sub(r'^\d+_', '', stem).replace('_', ' ').lower()
                 
                 for skill in manifest.get("skills", []):

@@ -16,8 +16,8 @@ class TestGenerateSearchIndex(unittest.TestCase):
     @patch('tools.scripts.generate_search_index.print')
     def test_generate_index_success(self, mock_print, mock_file, mock_load_yaml, mock_iter, mock_root):
         mock_iter.return_value = [
-            Path('/fake/root/prompts/test1.prompt.yaml'),
-            Path('/fake/root/prompts/test2.prompt.yaml')
+            Path('/fake/root/prompts/test1.prompt.md'),
+            Path('/fake/root/prompts/test2.prompt.md')
         ]
 
         mock_load_yaml.side_effect = [
@@ -42,12 +42,12 @@ class TestGenerateSearchIndex(unittest.TestCase):
         self.assertEqual(data[0]["title"], "Test 1")
         self.assertEqual(data[0]["description"], "Desc 1")
         self.assertEqual(data[0]["tags"], "tag1, tag2")
-        self.assertEqual(data[0]["url"], "prompts/test1.prompt.yaml")
+        self.assertEqual(data[0]["url"], "prompts/test1.prompt.md")
 
-        self.assertEqual(data[1]["title"], "prompts/test2.prompt.yaml")
+        self.assertEqual(data[1]["title"], "prompts/test2.prompt.md")
         self.assertEqual(data[1]["description"], "Desc 2")
         self.assertEqual(data[1]["tags"], "")
-        self.assertEqual(data[1]["url"], "prompts/test2.prompt.yaml")
+        self.assertEqual(data[1]["url"], "prompts/test2.prompt.md")
 
         mock_print.assert_called_once()
 
@@ -59,7 +59,7 @@ class TestGenerateSearchIndex(unittest.TestCase):
     def test_generate_index_value_error(self, mock_print, mock_file, mock_load_yaml, mock_iter, mock_root):
         # File not relative to ROOT
         mock_iter.return_value = [
-            Path('/other/path/test.prompt.yaml')
+            Path('/other/path/test.prompt.md')
         ]
         mock_load_yaml.return_value = {}
 
@@ -79,7 +79,7 @@ class TestGenerateSearchIndex(unittest.TestCase):
     @patch('tools.scripts.generate_search_index.print')
     def test_generate_index_default_output(self, mock_print, mock_file, mock_load_yaml, mock_iter, mock_root):
         mock_iter.return_value = [
-            Path('/fake/root/prompts/test.prompt.yaml')
+            Path('/fake/root/prompts/test.prompt.md')
         ]
         mock_load_yaml.return_value = {"name": "Test"}
 

@@ -60,6 +60,31 @@ def load_yaml(path: Union[str, Path]) -> Dict[str, Any]:
         env = get_jinja_env(PROMPTS_DIR)
         template = env.from_string(text)
         rendered_text = template.render()
+        
+        if rendered_text.startswith("---"):
+            parts = rendered_text.split("---", 2)
+            if len(parts) >= 3:
+                data = yaml.safe_load(parts[1]) or {}
+                content = parts[2]
+                
+                messages = data.get("messages", [])
+                blocks = re.split(r'^##\s+(.*)$', content, flags=re.MULTILINE)
+                for i in range(1, len(blocks), 2):
+                    header = blocks[i].strip()
+                    body = blocks[i+1].strip()
+                    if not body:
+                        continue
+                        
+                    role = header.lower()
+                    if role == 'purpose':
+                        role = 'system'
+                    elif role == 'instructions':
+                        role = 'user'
+                        
+                    messages.append({"role": role, "content": body})
+                data["messages"] = messages
+                return data
+                
         return yaml.safe_load(rendered_text) or {}
     except Exception as e:
         print(f"Error reading {path}: {e}")
@@ -67,7 +92,7 @@ def load_yaml(path: Union[str, Path]) -> Dict[str, Any]:
 
 def iter_prompt_files(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:
     root_path = Path(root) if root else PROMPTS_DIR
-    for ext in ("*.prompt.yaml", "*.prompt.yml"):
+    for ext in ("*.prompt.yaml", "*.prompt.yml", "*.prompt.md"):
         for p in root_path.rglob(ext):
             if not p.name.startswith("._") and "site/" not in str(p):
                 yield p

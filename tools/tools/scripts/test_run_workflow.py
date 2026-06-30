@@ -24,7 +24,7 @@ def setup_test_environment():
             "expected": ["Hello, World!"]
         }]
     }
-    with open(os.path.join(TEST_DIR, "prompt1.prompt.yaml"), 'w') as f:
+    with open(os.path.join(TEST_DIR, "prompt1.prompt.md"), 'w') as f:
         yaml.dump(prompt1_content, f)
 
     # --- Create Mock Prompt 2 ---
@@ -37,7 +37,7 @@ def setup_test_environment():
             "expected": ["Hello, World!!!"]
         }]
     }
-    with open(os.path.join(TEST_DIR, "prompt2.prompt.yaml"), 'w') as f:
+    with open(os.path.join(TEST_DIR, "prompt2.prompt.md"), 'w') as f:
         yaml.dump(prompt2_content, f)
 
     # --- Create Mock Prompt 3 (Failing Evaluator) ---
@@ -57,7 +57,7 @@ def setup_test_environment():
             }
         ]
     }
-    with open(os.path.join(TEST_DIR, "prompt3.prompt.yaml"), 'w') as f:
+    with open(os.path.join(TEST_DIR, "prompt3.prompt.md"), 'w') as f:
         yaml.dump(prompt3_content, f)
 
     # --- Create Mock Prompt 4 (Redact PII) ---
@@ -70,7 +70,7 @@ def setup_test_environment():
             "expected": ["Patient SSN is 123-45-6789."]
         }]
     }
-    with open(os.path.join(TEST_DIR, "prompt4.prompt.yaml"), 'w') as f:
+    with open(os.path.join(TEST_DIR, "prompt4.prompt.md"), 'w') as f:
         yaml.dump(prompt4_content, f)
 
     # --- Create Mock Workflow ---
@@ -80,17 +80,17 @@ def setup_test_environment():
         "steps": [
             {
                 "step_id": "step1_greet",
-                "prompt_file": os.path.join(TEST_DIR, "prompt1.prompt.yaml"),
+                "prompt_file": os.path.join(TEST_DIR, "prompt1.prompt.md"),
                 "map_inputs": {"name": "{{inputs.user_name}}"}
             },
             {
                 "step_id": "step2_emphasize",
-                "prompt_file": os.path.join(TEST_DIR, "prompt2.prompt.yaml"),
+                "prompt_file": os.path.join(TEST_DIR, "prompt2.prompt.md"),
                 "map_inputs": {"phrase": "{{steps.step1_greet.output}}"}
             },
             {
                 "step_id": "step3_redact",
-                "prompt_file": os.path.join(TEST_DIR, "prompt4.prompt.yaml"),
+                "prompt_file": os.path.join(TEST_DIR, "prompt4.prompt.md"),
                 "map_inputs": {"info": "Patient"}
             }
         ]
@@ -142,7 +142,7 @@ def run_tests():
             "steps": [
                 {
                     "step_id": "step1_fail",
-                    "prompt_file": os.path.join(TEST_DIR, "prompt3.prompt.yaml"),
+                    "prompt_file": os.path.join(TEST_DIR, "prompt3.prompt.md"),
                     "map_inputs": {"data": "Bad"}
                 }
             ]

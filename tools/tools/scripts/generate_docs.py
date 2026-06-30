@@ -226,7 +226,7 @@ class DocumentationGenerator:
             
             name = content.get('name')
             if not name:
-                name = path.name.replace(".prompt.yaml", "")
+                name = path.name.replace(".prompt.md", "")
                 
             original_name = name
             name = re.sub(r'[^a-zA-Z0-9_-]', '_', name)
@@ -267,7 +267,7 @@ class DocumentationGenerator:
             "",
             "## Live Reloading Feature",
             "",
-            "The MCP server includes watchdog-based hot-reloading capabilities. When you modify, add, or delete `.prompt.yaml` or `skills.md` files in the `prompts` directory, the server detects these changes and automatically updates the agent. You do not need to restart your Claude Desktop application or the MCP server for the changes to propagate.",
+            "The MCP server includes watchdog-based hot-reloading capabilities. When you modify, add, or delete `.prompt.md` or `skills.md` files in the `prompts` directory, the server detects these changes and automatically updates the agent. You do not need to restart your Claude Desktop application or the MCP server for the changes to propagate.",
             "",
             "## Discovered Tools",
             "",
@@ -378,7 +378,7 @@ class DocumentationGenerator:
         Generates or checks the Markdown page for a single prompt.
 
         Args:
-            source_path: The filesystem path to the source `.prompt.yaml` file.
+            source_path: The filesystem path to the source `.prompt.md` file.
             data: The parsed YAML data dictionary.
             check_mode: If True, only checks if the generated content matches the existing file.
 
@@ -391,7 +391,7 @@ class DocumentationGenerator:
         # Calculate output path: docs/prompts/category/filename.md
         # relative_path = source_path.relative_to(self.root / CONFIG['dirs']['prompts'])
         # Actually, let's just mirror the structure under prompts/
-        # source: prompts/A/B/foo.prompt.yaml
+        # source: prompts/A/B/foo.prompt.md
         # output: docs/prompts/A/B/foo.md
 
         rel_to_prompts = source_path.relative_to(self.root / CONFIG['dirs']['prompts'])

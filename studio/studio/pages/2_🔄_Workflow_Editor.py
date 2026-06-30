@@ -13,7 +13,7 @@ base_dir = str(ROOT)
 workflow_files = glob.glob(os.path.join(base_dir, "workflows", "**", "*.workflow.yaml"), recursive=True)
 workflow_files = [os.path.relpath(f, base_dir) for f in workflow_files]
 
-prompt_files = glob.glob(os.path.join(base_dir, "prompts", "**", "*.prompt.yaml"), recursive=True)
+prompt_files = glob.glob(os.path.join(base_dir, "prompts", "**", "*.prompt.md"), recursive=True)
 prompt_files = [os.path.relpath(f, base_dir) for f in prompt_files]
 
 selected_file = st.selectbox("Select a workflow to edit", ["Create New..."] + workflow_files)

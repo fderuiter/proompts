@@ -39,13 +39,13 @@ class TestUtils(unittest.TestCase):
             root = Path(temp_dir)
 
             # Create prompt files
-            (root / "prompt1.prompt.yaml").touch()
+            (root / "prompt1.prompt.md").touch()
             (root / "prompt2.prompt.yml").touch()
 
             # Create subdirectory
             subdir = root / "subdir"
             subdir.mkdir()
-            (subdir / "prompt3.prompt.yaml").touch()
+            (subdir / "prompt3.prompt.md").touch()
 
             # Create non-prompt files
             (root / "readme.md").touch()
@@ -57,9 +57,9 @@ class TestUtils(unittest.TestCase):
 
             # Check results
             expected_files = {
-                root / "prompt1.prompt.yaml",
+                root / "prompt1.prompt.md",
                 root / "prompt2.prompt.yml",
-                subdir / "prompt3.prompt.yaml"
+                subdir / "prompt3.prompt.md"
             }
 
             self.assertEqual(len(results), 3)
@@ -81,7 +81,7 @@ class TestUtils(unittest.TestCase):
 
             # Create non-workflow files
             (root / "readme.md").touch()
-            (root / "prompt1.prompt.yaml").touch()
+            (root / "prompt1.prompt.md").touch()
 
             # Get results
             results = list(iter_workflow_files(root))

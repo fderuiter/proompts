@@ -10,15 +10,15 @@ inputs:
   description: Draft CTD modules and tables for the executive summary.
 steps:
 - step_id: draft_protocol
-  prompt_file: prompts/management/study_director/study_director_workflow/01_draft_glp_compliant_study_protocol.prompt.yaml
+  prompt_file: prompts/management/study_director/study_director_workflow/01_draft_glp_compliant_study_protocol.prompt.md
   map_inputs:
     protocol_basics: '{{inputs.protocol_basics}}'
 - step_id: audit_data
-  prompt_file: prompts/management/study_director/study_director_workflow/02_audit_raw_data_capa_summary.prompt.yaml
+  prompt_file: prompts/management/study_director/study_director_workflow/02_audit_raw_data_capa_summary.prompt.md
   map_inputs:
     data_csv: '{{inputs.data_csv}}'
 - step_id: executive_summary
-  prompt_file: prompts/management/study_director/study_director_workflow/03_executive_summary_final_report.prompt.yaml
+  prompt_file: prompts/management/study_director/study_director_workflow/03_executive_summary_final_report.prompt.md
   map_inputs:
     report_sections: '{{inputs.report_sections}}'
 testData:
