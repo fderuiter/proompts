@@ -7,8 +7,8 @@
 
 | Directory | Type | Purpose |
 | :--- | :--- | :--- |
-| **[`scripts/`](scripts/README.md)** | 🐍 Python | **Automation & Validation.** Executable code for CI/CD, linting, doc generation, and testing. <br> *Key tool: `test_all.py`* |
-| **[`prompt_tools/`](prompt_tools/README.md)** | 🧠 Prompts | **Meta-Prompting.** LLM-based tools for refining, sanitizing, and architecting other prompts. <br> *Key tool: `L5_prompt_optimizer`* |
+| **[`scripts/`](tools/scripts/README.md)** | 🐍 Python | **Automation & Validation.** Executable code for CI/CD, linting, doc generation, and testing. <br> *Key tool: `validate_prompts.sh`* |
+| **[`prompt_tools/`](tools/prompt_tools/README.md)** | 🧠 Prompts | **Meta-Prompting.** LLM-based tools for refining, sanitizing, and architecting other prompts. <br> *Key tool: `L5_prompt_optimizer`* |
 
 ## 🚀 Quick Start
 
@@ -17,16 +17,16 @@ Before submitting any changes, run the master validation script:
 
 ```bash
 # Runs linting, schema checks, and link verification
-python3 tools/scripts/test_all.py
+./scripts/validate_prompts.sh
 ```
 
 ### 2. Optimize a Prompt
 Use the **Prompt Optimizer** to improve your prompt's quality:
 
-1. Copy content from [`tools/prompt_tools/L5_prompt_optimizer.prompt.yaml`](prompt_tools/L5_prompt_optimizer.prompt.yaml).
+1. Copy content from [`tools/tools/prompt_tools/L5_prompt_optimizer.prompt.yaml`](tools/prompt_tools/L5_prompt_optimizer.prompt.yaml).
 2. Paste into your LLM along with your draft prompt.
 
 ## 📚 Detailed Documentation
 
-- **[Developer Scripts (Python)](scripts/README.md)**: Full API reference for `validate_prompt_schema.py`, `generate_docs.py`, etc.
-- **[Prompt Engineering Tools](prompt_tools/README.md)**: Guide for using the meta-prompts to maintain the repo.
+- **[Developer Scripts (Python)](tools/scripts/README.md)**: Full API reference for `validate_prompt_schema.py`, `generate_docs.py`, etc.
+- **[Prompt Engineering Tools](tools/prompt_tools/README.md)**: Guide for using the meta-prompts to maintain the repo.

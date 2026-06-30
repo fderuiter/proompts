@@ -39,3 +39,8 @@ dev = [
     "vulture>=2.16",
     "yamllint>=1.37.1",
 ]
+
+[tool.vulture]
+paths = [".", "scripts/", "promptops", "tools", "proompts_guard", "studio"]
+exclude = [".venv", "build", "dist", ".git", ".github", ".vscode", "scripts/apply_refactor.py"]
+min_confidence = 70

@@ -66,7 +66,7 @@ Prompts are rarely used in isolation. They are typically chained together in **W
 
 ```bash
 # Example: Simulate the Agentic Coding workflow
-python3 tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app"
+python3 tools/tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app"
 ```
 
 ## Tools 🛠️
@@ -83,4 +83,4 @@ We maintain a suite of tools in [`../tools/tools/scripts/`](../tools/tools/scrip
 2.  **Document**: Ensure you provide a clear `description` and `inputs`.
 3.  **Tag**: Add namespaced tags (`domain:`, `topic:`, `capability:`) in metadata where possible.
 4.  **Test**: Add at least one test case in the `testData` field.
-5.  **Verify**: Run `python3 tools/scripts/check_prompts.py` to ensure your prompt is valid.
+5.  **Verify**: Run `python3 tools/tools/scripts/check_prompts.py` to ensure your prompt is valid.

@@ -15,7 +15,7 @@ The simulation engine allows you to test your workflows locally. It reads variab
 To run a workflow with a single input via the command line:
 
 ```bash
-python3 tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app"
+python3 tools/tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app"
 ```
 
 ### 2. Supply Inputs via a File
@@ -27,7 +27,7 @@ For workflows requiring many inputs, or when inputs contain sensitive data, use 
 # product_concept: "A secure messaging platform"
 # target_audience: "Enterprise customers"
 
-python3 tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -f inputs.yaml
+python3 tools/tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -f inputs.yaml
 ```
 
 ### 3. Run in Verbose Mode
@@ -35,7 +35,7 @@ python3 tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflo
 To debug a workflow and see the exact inputs being passed to each step during execution, use the `-v` (verbose) flag:
 
 ```bash
-python3 tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app" -v
+python3 tools/tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app" -v
 ```
 
 ## 🔍 How it works

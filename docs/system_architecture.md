@@ -19,7 +19,7 @@ graph TD
     B -->|Contains| C1
     B -->|Contains| C2
 
-    subgraph "The Engine Room (tools/scripts/)"
+    subgraph "The Engine Room (tools/tools/scripts/)"
         D1(check_prompts.py)
         D2(validate_prompt_schema.py)
         D3(run_workflow.py)
@@ -68,9 +68,9 @@ Workflows chain multiple prompts together to achieve complex, multi-step goals. 
 A unique feature of this repository is the ability to **simulate** workflow execution without incurring LLM costs or requiring API keys.
 - **Deterministic Replay**: The engine uses the `testData` field in prompt files to mock LLM responses.
 - **Validation**: This allows developers to verify variable mapping, conditional logic, and overall workflow integrity before deploying to a live model.
-- **Usage**: `python3 tools/scripts/run_workflow.py path/to/workflow.workflow.yaml`
+- **Usage**: `python3 tools/tools/scripts/run_workflow.py path/to/workflow.workflow.yaml`
 
-### 4. The Validation Pipeline (`test_all.py`)
+### 4. The Validation Pipeline (`validate_prompts.sh`)
 A comprehensive suite of scripts ensures repository health and consistency.
 - **`validate_prompt_schema.py`**: Enforces strict Pydantic schemas on all prompt YAML files.
 - **`check_prompts.py`**: Verifies file naming conventions and ensures every directory has an `overview.md`.
@@ -87,5 +87,5 @@ Documentation is treated as a first-class build artifact, automatically generate
 
 - **`prompts/`**: The source of truth for all prompt definitions, with discovery driven by metadata tags rather than deep directory nesting.
 - **`workflows/`**: Workflow definitions that orchestrate prompts.
-- **`tools/scripts/`**: The build, validation, and maintenance toolchain.
+- **`tools/tools/scripts/`**: The build, validation, and maintenance toolchain.
 - **`docs/`**: The generated documentation site (Jekyll-ready).

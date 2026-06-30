@@ -11,7 +11,7 @@ echo "Checking prompt formats..."
 uv run python3 tools/tools/scripts/check_prompts.py || exit 1
 
 echo "Checking for dead code..."
-uv run vulture promptops tools proompts_guard studio --min-confidence 70 || exit 1
+uv run vulture || exit 1
 
 echo "Validating prompt schemas..."
 uv run python3 tools/tools/scripts/validate_prompt_schema.py || exit 1

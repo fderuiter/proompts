@@ -92,7 +92,7 @@ These files follow the repository's standard schema and can be executed using th
 
 ```bash
 # Provide the task variable via the -i flag
-python3 tools/scripts/run_workflow.py tools/prompt_tools/L5_prompt_optimizer.prompt.yaml -i task="Write a Python script to scrape a website"
+python3 tools/tools/scripts/run_workflow.py tools/prompt_tools/L5_prompt_optimizer.prompt.yaml -i task="Write a Python script to scrape a website"
 ```
 
 **Example: Running with Verbose Output**
@@ -100,7 +100,7 @@ python3 tools/scripts/run_workflow.py tools/prompt_tools/L5_prompt_optimizer.pro
 To see the exact inputs being passed into the prompt messages during the simulation:
 
 ```bash
-python3 tools/scripts/run_workflow.py tools/prompt_tools/L5_prompt_optimizer.prompt.yaml -i task="Draft a project brief" -v
+python3 tools/tools/scripts/run_workflow.py tools/prompt_tools/L5_prompt_optimizer.prompt.yaml -i task="Draft a project brief" -v
 ```
 
 ---
