@@ -68,16 +68,15 @@ class TestExtractTemplateVars(unittest.TestCase):
         self.assertEqual(result, expected)
 
     def test_incomplete_variables(self):
-        """Test that incomplete/malformed variable syntax is ignored."""
+        """Test that incomplete/malformed variable syntax raises an error."""
         content = {
             "messages": [
                 {"content": "Hello {{name}, welcome to {place}}!"},
                 {"content": "This is {test}."}
             ]
         }
-        expected = []
-        result = extract_template_vars(content)
-        self.assertEqual(result, expected)
+        with self.assertRaises(ValueError):
+            extract_template_vars(content)
 
     def test_empty_content(self):
         """Test with empty string as content."""

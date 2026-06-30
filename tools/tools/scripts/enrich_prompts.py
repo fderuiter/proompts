@@ -344,9 +344,18 @@ def enrich_file(file_path: Path, dry_run: bool = False) -> bool:
     """Enrich a single prompt file with descriptions and metadata.
     Returns True if the file was modified.
     """
+    from pydantic import ValidationError
+    from promptops.validation import PromptSchema
+    
     content = load_yaml(file_path)
     if not content:
         print(f"  SKIP (empty): {file_path}")
+        return False
+
+    try:
+        PromptSchema(**content)
+    except Exception as e:
+        print(f"  SKIP (invalid schema or syntax): {file_path}\n  {e}")
         return False
 
     modified = False

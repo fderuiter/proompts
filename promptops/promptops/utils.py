@@ -121,12 +121,8 @@ def extract_template_vars(content: Dict[str, Any]) -> List[str]:
                 ast = env.parse(text)
                 vars_in_text = meta.find_undeclared_variables(ast)
                 found.update(vars_in_text)
-            except Exception:
-                # Fallback or just skip on parse errors?
-                # Using AST could throw TemplateSyntaxError if there's malformed jinja, 
-                # but standard execution would also fail. We should ideally just let it pass or extract via regex as fallback?
-                # Actually, requirement 2: "Replace regex-based extraction with formal Abstract Syntax Tree (AST) parsing"
-                pass
+            except Exception as e:
+                raise ValueError(f"Failed to parse template for variables: {e}")
     return sorted(list(found))
 
 def iter_skill_manifests(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:

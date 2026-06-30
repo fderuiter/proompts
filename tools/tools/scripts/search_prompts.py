@@ -8,10 +8,18 @@ import sys
 from promptops.utils import ROOT, iter_prompt_files, load_yaml
 
 def search(query: str, verbose: bool = False):
+    from promptops.validation import PromptSchema
+    
     query = query.lower()
     found = 0
     for path in iter_prompt_files(ROOT):
         content = load_yaml(path)
+        
+        try:
+            PromptSchema(**content)
+        except Exception:
+            continue
+            
         name = content.get('name', '').lower()
         description = content.get('description', '').lower()
 
