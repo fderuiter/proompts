@@ -54,6 +54,7 @@ Before pushing any new prompts or documentation, you must run the validation sui
 
 ## 📚 What's Next?
 Now that you understand the mechanics, check out these deeper guides:
+- **[Agent Integration](mcp_integration.md):** Connect the prompt library to Claude Desktop using the Model Context Protocol (MCP).
 - **[Usage Guide](USAGE.md):** How to integrate these prompts with real LLM APIs in Python.
 - **[Workflow Guide](workflow_guide.md):** Learn how to build your own `.workflow.yaml` files.
 - **[Best Practices](BEST_PRACTICES.md):** The definitive guide to writing high-quality prompts.
