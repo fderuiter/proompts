@@ -52,6 +52,8 @@ def check_overview(directory: Path) -> bool:
 def check_directory_contents(directory: Path) -> bool:
     """Check for unrecognized files in the directory."""
     ok = True
+    has_manifest = (directory / "skills.md").exists()
+    
     for file in directory.iterdir():
         if not file.is_file() or file.name.startswith('.'):
             continue
@@ -60,14 +62,14 @@ def check_directory_contents(directory: Path) -> bool:
             continue
 
         lower_name = name.lower()
-        is_yaml = (
-            lower_name.endswith(".prompt.yaml")
-            or lower_name.endswith(".prompt.yml")
-            or lower_name.endswith(".workflow.yaml")
-            or lower_name.endswith(".workflow.yml")
-        )
+        is_prompt = lower_name.endswith(".prompt.yaml") or lower_name.endswith(".prompt.yml")
+        is_workflow = lower_name.endswith(".workflow.yaml") or lower_name.endswith(".workflow.yml")
 
-        if not is_yaml:
+        if has_manifest and is_prompt:
+            print(f"Error: {file} is redundant because a skills.md manifest exists in {directory}")
+            ok = False
+
+        if not (is_prompt or is_workflow):
             print(f"{file} is not a recognised prompt or workflow file")
             ok = False
             continue

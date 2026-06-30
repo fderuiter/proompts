@@ -167,13 +167,47 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
                 pass
 
         # Extract core instructions
-        instr_match = re.search(r'### Core Instructions\n```text\n(.*?)\n```', body, re.DOTALL)
-        instructions = instr_match.group(1) if instr_match else ""
+        instr_match = re.search(r'### Core Instructions\n```text\n(.*?)```', body, re.DOTALL)
+        instructions = instr_match.group(1).strip() if instr_match else ""
+
+        # Render instructions using jinja to evaluate any macros (like load_yaml does)
+        try:
+            from promptops.utils import get_jinja_env, PROMPTS_DIR
+            env = get_jinja_env(PROMPTS_DIR)
+            if 'macros.' in instructions and not '{% import' in instructions:
+                instructions = '{% import "common/macros.j2" as macros %}\n' + instructions
+            template = env.from_string(instructions)
+            instructions = template.render()
+        except Exception as e:
+            pass
+
+        # Extract description
+        desc_match = re.search(r'### Description\n(.*?)(?=\n### |$)', body, re.DOTALL)
+        description = desc_match.group(1).strip() if desc_match else ""
+
+        # Extract Few-Shot Assertions / testData
+        test_data = []
+        few_shot_match = re.search(r'### Few-Shot Assertions\n(.*)', body, re.DOTALL)
+        if few_shot_match:
+            few_shots_text = few_shot_match.group(1).strip()
+            # simple parser for Input Context: "..." \n Asserted Output: "..."
+            import ast
+            blocks = re.findall(r'Input Context:\s*"(.*?)"\nAsserted Output:\s*"(.*?)"', few_shots_text, re.DOTALL)
+            for inp_str, out_str in blocks:
+                try:
+                    inp_dict = yaml.safe_load(inp_str)
+                    if not isinstance(inp_dict, dict):
+                        inp_dict = {"input": inp_str}
+                except:
+                    inp_dict = {"input": inp_str}
+                test_data.append({"inputs": inp_dict, "expected": [out_str]})
 
         skills.append({
             "name": name,
+            "description": description,
             "variables": vars_data,
             "instructions": instructions,
+            "testData": test_data,
             "path": path
         })
     return {"metadata": metadata, "skills": skills, "path": path}

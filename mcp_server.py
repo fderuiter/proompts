@@ -116,9 +116,6 @@ async def handle_list_tools() -> list[types.Tool]:
         active_session = None
     tools = []
     
-    # Track manifested tools to avoid double exposure
-    manifested_tool_stems = set()
-
     logger.info("Scanning for skill manifests...")
     from promptops.utils import iter_skill_manifests, parse_skill_manifest
     for path in iter_skill_manifests(PROMPTS_DIR):
@@ -134,36 +131,9 @@ async def handle_list_tools() -> list[types.Tool]:
                     description=skill.get("description", "Agent Skill"),
                     inputSchema=build_schema(skill.get("variables", []))
                 ))
-                manifested_tool_stems.add(stem)
         except Exception as e:
             logger.error(f"Error parsing manifest {path}: {e}")
 
-    logger.info("Scanning for individual prompt files...")
-    for path in iter_prompt_files(PROMPTS_DIR):
-        try:
-            content = load_yaml(path)
-            PromptSchema(**content)
-            
-            tool_name = get_tool_name(path, content)
-
-            # Skip if covered by manifest in the same directory (heuristic)
-            if tool_name.lower() in manifested_tool_stems and (path.parent / "skills.md").exists():
-                continue
-
-            desc = content.get('description', "A prompt tool")
-            if not desc or desc == "Placeholder description" or desc.lower() == "placeholder description":
-                desc = "A prompt tool"
-                
-            input_schema = build_schema(content)
-            
-            tools.append(types.Tool(
-                name=tool_name,
-                description=desc,
-                inputSchema=input_schema
-            ))
-        except Exception as e:
-            pass
-            
     logger.info(f"Discovered {len(tools)} tools.")
     return tools
 
@@ -195,30 +165,6 @@ async def handle_call_tool(name: str, arguments: dict | None) -> list[types.Text
         except:
             continue
 
-    # Fallback to individual prompts
-    for path in iter_prompt_files(PROMPTS_DIR):
-        try:
-            content = load_yaml(path)
-            if get_tool_name(path, content).lower() == name.lower():
-                with tempfile.NamedTemporaryFile(mode='w+', suffix='.json', delete=False) as f:
-                    json.dump(arguments, f)
-                    temp_file_name = f.name
-                
-                captured_output = io.StringIO()
-                with contextlib.redirect_stdout(captured_output):
-                    success = simulate_prompt(str(path), temp_file_name)
-                
-                Path(temp_file_name).unlink()
-                if not success:
-                    raise ValueError("Prompt simulation failed")
-
-                return [types.TextContent(
-                    type="text",
-                    text=captured_output.getvalue()
-                )]
-        except:
-            continue
-            
     raise ValueError(f"Tool not found: {name}")
 
 async def run():
