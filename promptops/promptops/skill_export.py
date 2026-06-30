@@ -134,7 +134,7 @@ def process_skills(prompts_path: Path, docs_path: Optional[Path] = None):
     from promptops.utils import iter_prompt_files, load_yaml
     from promptops.sync import DirectoryReconciler
     
-    prompts_by_dir: Dict[Path, List[Dict[str, Any]]] = {}
+    prompts_by_dir: Dict[Path, List[Path]] = {}
     for path in iter_prompt_files(str(prompts_path)):
         try:
             data = load_yaml(path)
@@ -144,22 +144,31 @@ def process_skills(prompts_path: Path, docs_path: Optional[Path] = None):
             parent = path.parent
             if parent not in prompts_by_dir:
                 prompts_by_dir[parent] = []
-            prompts_by_dir[parent].append(data)
+            prompts_by_dir[parent].append(path)
         except Exception as e:
             print(f"Error processing {path}: {e}")
 
-    prompts_reconciler = DirectoryReconciler(prompts_path, manage_pattern="skills.md")
     docs_reconciler = DirectoryReconciler(docs_path / "skills", manage_pattern="skills.md") if docs_path else None
 
-    for directory, prompts_data in prompts_by_dir.items():
+    # Migration: consolidate any remaining loose files into skills.md and purge them
+    for directory, prompt_paths in prompts_by_dir.items():
+        prompts_data = [load_yaml(p) for p in prompt_paths]
         skills_content = generate_skills_md(directory, prompts_path, prompts_data)
-        prompts_reconciler.write_file(directory / "skills.md", skills_content)
+        skills_file = directory / "skills.md"
+        skills_file.write_text(skills_content, encoding='utf-8')
         
-        if docs_reconciler and docs_path:
-            rel = directory.relative_to(prompts_path)
-            out_dir = docs_path / "skills" / rel
-            docs_reconciler.write_file(out_dir / "skills.md", skills_content)
+        # Mandatory purge
+        for p in prompt_paths:
+            print(f"Purging source file: {p}")
+            p.unlink()
             
-    prompts_reconciler.reconcile()
-    if docs_reconciler:
+    # For docs, copy the persistent manifest files
+    if docs_reconciler and docs_path:
+        for root, dirs, files in os.walk(prompts_path):
+            if "skills.md" in files:
+                directory = Path(root)
+                rel = directory.relative_to(prompts_path)
+                out_dir = docs_path / "skills" / rel
+                skills_content = (directory / "skills.md").read_text(encoding='utf-8')
+                docs_reconciler.write_file(out_dir / "skills.md", skills_content)
         docs_reconciler.reconcile()

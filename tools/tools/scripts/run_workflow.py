@@ -40,6 +40,7 @@ import os
 import re
 import shutil
 import sys
+from pathlib import Path
 from typing import Any, Dict, Optional
 
 import yaml
@@ -71,7 +72,7 @@ def load_yaml(file_path: str) -> Optional[Dict[str, Any]]:
         from promptops.utils import load_yaml as _load_yaml
         return _load_yaml(file_path)
 
-from jinja2 import Undefined, StrictUndefined
+from jinja2 import Undefined, StrictUndefined, FileSystemLoader
 from jinja2.nativetypes import NativeEnvironment
 from jinja2.sandbox import SandboxedEnvironment
 
@@ -88,8 +89,9 @@ class KeepUndefined(Undefined):
 class NativeSandboxedEnvironment(NativeEnvironment, SandboxedEnvironment):
     pass
 
-_run_env = NativeSandboxedEnvironment(undefined=KeepUndefined)
-_strict_run_env = NativeSandboxedEnvironment(undefined=StrictUndefined)
+from promptops.utils import PROMPTS_DIR
+_run_env = NativeSandboxedEnvironment(loader=FileSystemLoader(str(PROMPTS_DIR)), undefined=KeepUndefined)
+_strict_run_env = NativeSandboxedEnvironment(loader=FileSystemLoader(str(PROMPTS_DIR)), undefined=StrictUndefined)
 
 def safe_render(template: str, context: Dict[str, Any], strict_mode: bool = False) -> Any:
     """
@@ -593,10 +595,35 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
              if os.path.exists(alt_prompt_file):
                  prompt_file = alt_prompt_file
 
-        # 1. Load the prompt file
+        # 1. Load the prompt file or extract from skills.md
         prompt_data = load_yaml(prompt_file)
         if not prompt_data:
-            logger.warning(f"Skipping step {step_id} due to missing prompt file.")
+            # Fallback to skills.md
+            path_obj = Path(prompt_file)
+            skills_md = path_obj.parent / "skills.md"
+            if skills_md.exists():
+                from promptops.utils import parse_skill_manifest
+                manifest = parse_skill_manifest(skills_md)
+                
+                # Heuristic match by name
+                stem = path_obj.name.replace('.prompt.yaml', '').replace('.prompt.yml', '')
+                stem_clean = re.sub(r'^\d+_', '', stem).replace('_', ' ').lower()
+                
+                for skill in manifest.get("skills", []):
+                    skill_name_clean = skill["name"].lower().replace('_', ' ')
+                    if stem_clean in skill_name_clean or skill_name_clean in stem_clean or skill["name"].replace(' ', '_').lower() in stem:
+                        prompt_data = {
+                            "name": skill["name"],
+                            "description": skill.get("description", ""),
+                            "variables": skill.get("variables", []),
+                            "messages": [{"role": "system", "content": skill.get("instructions", "")}],
+                            "testData": skill.get("testData", [])
+                        }
+                        logger.info(f"Loaded skill '{skill['name']}' from manifest {skills_md}")
+                        break
+
+        if not prompt_data:
+            logger.warning(f"Skipping step {step_id} due to missing prompt file or skill.")
             current_step_id = None
             continue
 
