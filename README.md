@@ -53,6 +53,10 @@ graph TD
     class C1,C2 highlight;
 ```
 
+## Integrations
+
+- **[Model Context Protocol (MCP)](docs/mcp_integration.md)** – Learn how to expose the local prompt library as tools for Claude Desktop and other MCP-compatible AI agents.
+
 ## Docs
 
 - **[🚀 Quickstart: 5-Minute Onboarding](docs/QUICKSTART.md)** – Start here! Learn how to run your first simulation.
