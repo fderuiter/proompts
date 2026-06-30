@@ -1,5 +1,6 @@
 import os
 import re
+import jinja2
 from enum import Enum
 from pathlib import Path
 from typing import Any, List, Optional, Dict, Union
@@ -117,6 +118,7 @@ class PromptSchema(BaseModel):
         Validate that template variables referenced in message content or tool-call payloads are syntactically valid and match the prompt's declared variables.
         
         This validator:
+        - Checks the Jinja2 syntax of each message content. Raises ValueError if the syntax is invalid.
         - Extracts template variables from each message by scanning `msg.content` (uses the string directly, joins list elements with spaces when `content` is a list, or falls back to `str(msg.tool_calls)` when `content` is empty and `tool_calls` is present).
         - Ensures each variable name matches the pattern `^[a-zA-Z0-9_.-]+$`; raises ValueError if any invalid variable names are found.
         - Prints a warning for variables declared in `variables` but not used in any message.
@@ -128,6 +130,8 @@ class PromptSchema(BaseModel):
         found_vars: set[str] = set()
         invalid_vars: set[str] = set()
         
+        env = jinja2.Environment()
+        
         for msg in self.messages:
             content_str = ""
             if isinstance(msg.content, str):
@@ -136,6 +140,11 @@ class PromptSchema(BaseModel):
                 content_str = " ".join([str(c) for c in msg.content])
             elif not msg.content and msg.tool_calls:
                 content_str = str(msg.tool_calls)
+
+            try:
+                env.parse(content_str)
+            except jinja2.exceptions.TemplateSyntaxError as e:
+                raise ValueError(f"Jinja2 syntax error: {e.message} at line {e.lineno}")
 
             for match in VAR_PATTERN.findall(content_str):
                 valid_match = re.match(r'^\s*([a-zA-Z0-9_.-]+)\s*$', match)

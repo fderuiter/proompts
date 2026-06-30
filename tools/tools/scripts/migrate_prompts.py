@@ -70,7 +70,12 @@ def migrate_file(file_path: Path, dry_run: bool = False) -> bool:
 
     # Add variables stubs if missing
     if "variables" not in content:
-        vars_in_template = extract_template_vars(content)
+        try:
+            vars_in_template = extract_template_vars(content)
+        except ValueError as e:
+            print(f"  SKIP (invalid syntax): {file_path}\n  {e}")
+            return False
+            
         if vars_in_template:
             content["variables"] = [
                 {"name": v, "description": "TODO", "required": True}
@@ -119,6 +124,13 @@ def migrate_file(file_path: Path, dry_run: bool = False) -> bool:
     if dry_run:
         print(f"  DRY-RUN would update: {file_path}")
         return True
+
+    try:
+        from promptops.validation import PromptSchema
+        PromptSchema(**content)
+    except Exception as e:
+        print(f"  SKIP (invalid schema or syntax after migration): {file_path}\n  {e}")
+        return False
 
     # Write back — use default_flow_style=False for readable YAML
     yaml_text = yaml.dump(content, default_flow_style=False, sort_keys=False,
