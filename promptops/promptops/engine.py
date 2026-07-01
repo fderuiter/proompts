@@ -427,16 +427,42 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
     # Substitute variables in messages
     for message in prompt_data.get('messages', []):
         role = message.get('role', 'user')
-        content = message.get('content', '')
+        raw_content = message.get('content', '')
 
         try:
-            content = safe_render(content, inputs, strict_mode)
+            rendered = safe_render(raw_content, inputs, strict_mode)
+            if not isinstance(rendered, str):
+                import yaml
+                content_to_print = yaml.dump(rendered, sort_keys=False).strip()
+            else:
+                content_to_print = rendered
         except Exception as e:
             if strict_mode:
                 raise ValueError(f"Strict Template Resolution Failed in {prompt_data.get('name')}: {e}")
             logger.warning(f"Failed to render message content: {e}")
+            content_to_print = str(raw_content)
 
-        console.role_message(role, "(Content hidden for security)")
+        console.role_message(role, content_to_print)
+        
+        # Render tool calls
+        tool_calls = message.get('tool_calls')
+        if tool_calls:
+            try:
+                def render_structure(obj, context):
+                    if isinstance(obj, str):
+                        return safe_render(obj, context, strict_mode)
+                    elif isinstance(obj, dict):
+                        return {k: render_structure(v, context) for k, v in obj.items()}
+                    elif isinstance(obj, list):
+                        return [render_structure(item, context) for item in obj]
+                    return obj
+                
+                rendered_tc = render_structure(tool_calls, inputs)
+                import yaml
+                tc_yaml = yaml.dump(rendered_tc, sort_keys=False).strip()
+                console.role_message("tool_call", tc_yaml)
+            except Exception as e:
+                logger.warning(f"Failed to render tool calls: {e}")
 
     # Check if we need to heal missing test data
     if not prompt_data.get('testData'):
@@ -485,15 +511,15 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
     return output_text
 
 
-def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bool = True, strict_mode: bool = False, chaos_mode: bool = False, fidelity_report: Optional[Dict[str, bool]] = None) -> Optional[Dict[str, Any]]:
+def run(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bool = True, strict_mode: bool = False, chaos_mode: bool = False, fidelity_report: Optional[Dict[str, bool]] = None) -> Optional[Dict[str, Any]]:
     """
-    Loads and simulates a workflow from a given file path.
+    Loads and simulates a workflow or prompt from a given file path.
 
     This function orchestrates the flow of data between steps but mocks the actual
     intelligence using the `simulate_prompt_execution` function.
 
     Args:
-        workflow_file: Path to the workflow YAML file.
+        workflow_file: Path to the workflow or prompt YAML file.
         initial_inputs: Dictionary of initial inputs for the workflow.
         verbose: Whether to print detailed execution logs.
         strict_mode: If True, fail aggressively on structural issues or missing templates.
@@ -512,9 +538,36 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
          logging.basicConfig(level=logger.level, format='%(levelname)s: %(message)s')
 
 
-    workflow_data = load_yaml(workflow_file)
-    if not workflow_data:
+    data = load_yaml(workflow_file)
+    if not data:
         return None
+
+    # Handle single prompts by treating them as 1-step workflows
+    if workflow_file.endswith('.prompt.yaml'):
+        variables = data.get('variables', [])
+        map_inputs = {}
+        
+        if isinstance(variables, list):
+            for var in variables:
+                name = var.get('name') if isinstance(var, dict) else var
+                if name:
+                    map_inputs[name] = f"{{{{ inputs.{name} }}}}"
+        elif isinstance(variables, dict):
+            for name in variables.keys():
+                map_inputs[name] = f"{{{{ inputs.{name} }}}}"
+                
+        workflow_data = {
+            "name": data.get("name", "Single Prompt Workflow"),
+            "steps": [
+                {
+                    "step_id": "step_1",
+                    "prompt_file": workflow_file,
+                    "map_inputs": map_inputs
+                }
+            ]
+        }
+    else:
+        workflow_data = data
 
     # Static Validation
     defined_steps = set()

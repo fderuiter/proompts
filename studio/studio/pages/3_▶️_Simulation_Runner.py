@@ -3,18 +3,19 @@ import os
 import glob
 import streamlit as st
 
-from tools.scripts.run_workflow import run_workflow, load_yaml
+from promptops.engine import run as run_workflow
+from promptops.utils import load_yaml
 
 st.set_page_config(page_title="Simulation Runner", layout="wide")
 st.title("Simulation Runner")
-st.markdown("Validate your workflow correctly resolves variables across all steps before final submission.")
+st.markdown("Validate your workflow or prompt correctly resolves variables across all steps before final submission.")
 
 from promptops.utils import ROOT
 base_dir = str(ROOT)
-workflow_files = glob.glob(os.path.join(base_dir, "workflows", "**", "*.workflow.yaml"), recursive=True)
-workflow_files = [os.path.relpath(f, base_dir) for f in workflow_files]
+asset_files = glob.glob(os.path.join(base_dir, "workflows", "**", "*.workflow.yaml"), recursive=True) + glob.glob(os.path.join(base_dir, "prompts", "**", "*.prompt.yaml"), recursive=True)
+asset_files = [os.path.relpath(f, base_dir) for f in asset_files]
 
-selected_file = st.selectbox("Select a workflow to simulate", workflow_files)
+selected_file = st.selectbox("Select an asset to simulate", asset_files)
 
 if selected_file:
     file_path = os.path.join(base_dir, selected_file)
@@ -24,12 +25,20 @@ if selected_file:
     initial_inputs = {}
     
     # Try to determine inputs
-    # If the workflow defines `inputs`, list them
-    if data and 'inputs' in data:
-        for inp in data['inputs']:
-            name = inp.get('name', 'unknown')
-            desc = inp.get('description', '')
-            initial_inputs[name] = st.text_input(f"{name} ({desc})", value="")
+    # If the workflow defines `inputs` or prompt defines `variables`, list them
+    vars_list = data.get('inputs') or data.get('variables', [])
+    if vars_list:
+        if isinstance(vars_list, list):
+            for var in vars_list:
+                name = var.get('name') if isinstance(var, dict) else var
+                desc = var.get('description', '') if isinstance(var, dict) else ''
+                if name:
+                    initial_inputs[name] = st.text_input(f"{name} ({desc})", value="")
+        elif isinstance(vars_list, dict):
+            for name, desc in vars_list.items():
+                initial_inputs[name] = st.text_input(f"{name} ({desc})", value="")
+                
+    chaos_mode = st.checkbox("Enable Chaos Mode (Simulate failures and latency)")
             
     if st.button("Run Simulation", type="primary"):
         with st.spinner("Simulating..."):
@@ -42,18 +51,22 @@ if selected_file:
                 handler = logging.StreamHandler(log_stream)
                 handler.setFormatter(logging.Formatter('%(levelname)s: %(message)s'))
                 
-                logger = logging.getLogger('tools.scripts.run_workflow')
+                logger = logging.getLogger('promptops.engine')
                 logger.setLevel(logging.DEBUG)
                 logger.handlers = [handler]
                 
-                final_state = run_workflow(file_path, initial_inputs, verbose=True)
+                final_state = run_workflow(file_path, initial_inputs, verbose=True, chaos_mode=chaos_mode)
                 
                 st.subheader("Simulation Output")
                 st.code(log_stream.getvalue(), language="text")
                 
                 if final_state:
                     st.success("Simulation finished successfully.")
-                    final_output_step_id = data.get('steps', [{}])[-1].get('step_id')
+                    if 'steps' in data:
+                        final_output_step_id = data.get('steps', [{}])[-1].get('step_id')
+                    else:
+                        final_output_step_id = 'step_1'
+                        
                     if final_output_step_id and final_output_step_id in final_state['steps']:
                         final_output = final_state['steps'][final_output_step_id]['output']
                         st.subheader("Final Workflow Output")
