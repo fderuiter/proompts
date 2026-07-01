@@ -6,7 +6,8 @@ from pathlib import Path
 from typing import Any, List, Optional, Dict, Union
 
 from pydantic import BaseModel, ValidationError, field_validator, model_validator, Field
-from promptops.utils import load_yaml, iter_prompt_files, iter_workflow_files
+from promptops.utils import load_yaml
+from promptops.registry import AssetRegistry
 from promptops.engine import run_workflow
 from promptops import console
 
@@ -61,8 +62,10 @@ class InputVariable(BaseModel):
     required: bool = Field(True)
     default: Optional[Any] = Field(None)
 
-class PromptMetadata(BaseModel):
+class AssetMetadata(BaseModel):
     domain: str = Field(...)
+
+class PromptMetadata(AssetMetadata):
     complexity: ComplexityLevel = Field(...)
     tags: List[str] = Field([])
     requires_context: bool = Field(False)
@@ -77,8 +80,14 @@ class MCPTool(BaseModel):
     description: str = Field(...)
     inputSchema: InputSchema = Field(...)
 
-class PromptSchema(BaseModel):
+class Asset(BaseModel):
+    type: str = Field(...)
     name: str = Field(...)
+    description: Optional[str] = Field(None)
+    id: Optional[str] = Field(None)
+    file_path: Optional[str] = Field(None)
+
+class PromptSchema(Asset):
     version: str = Field("0.1.0")
     description: str = Field(...)
     metadata: Optional[PromptMetadata] = Field(None)
@@ -203,13 +212,10 @@ class WorkflowStep(BaseModel):
     map_inputs: Dict[str, Any] = Field(...)
     next: Optional[Union[str, List[Union[str, WorkflowEdge]]]] = Field(None)
 
-class WorkflowMetadata(BaseModel):
-    domain: str = Field(...)
+class WorkflowMetadata(AssetMetadata):
     topic: str = Field(...)
 
-class WorkflowSchema(BaseModel):
-    name: str = Field(...)
-    description: Optional[str] = Field(None)
+class WorkflowSchema(Asset):
     metadata: Optional[WorkflowMetadata] = Field(None)
     inputs: List[WorkflowInput] = Field([])
     steps: List[WorkflowStep] = Field(...)
@@ -382,11 +388,20 @@ def validate_prompts(directory: str, strict: bool = False) -> bool:
     dir_path = os.environ.get('PROMPTOPS_REGISTRY', directory)
     dirs_to_check = set()
     
+    registry = AssetRegistry(dir_path)
+    
     NAMING_RULES = {
-        "meta": re.compile(r"^L\d+_.*\.prompt\.(ya?ml|md)$", re.IGNORECASE),
+        "meta": re.compile(r"^L\d+_.*\.prompt\.(ya?ml|md)$", re.IGNORECASE)
     }
 
-    for file_path in iter_prompt_files(dir_path):
+    # Discover and process assets
+    assets = registry.discover_assets()
+    
+    for content in assets:
+        file_path_str = content.get('file_path')
+        if not file_path_str:
+            continue
+        file_path = Path(file_path_str)
         
         # Collect directory to check hygiene later
         path = file_path.parent
@@ -403,85 +418,61 @@ def validate_prompts(directory: str, strict: bool = False) -> bool:
                 console.error(f"{file_path} does not match required pattern for {file_path.parent.name}")
                 ok = False
 
-        content = load_yaml(str(file_path))
-        if not content:
-            ok = False
-            continue
-            
-        try:
-            PromptSchema(**content)
-        except ValidationError as e:
-            console.error(f"Validation error in {file_path}:\n{e}")
-            ok = False
-            continue
-
-        if strict:
-            issues = []
-            if not content.get('testData') or len(content.get('testData', [])) == 0:
-                issues.append("no testData")
-            elif len(content.get('testData', [])) == 1:
-                issues.append("only 1 test case")
-            
-            if not content.get('evaluators') or len(content.get('evaluators', [])) == 0:
-                issues.append("no evaluators")
-            
-            if issues:
-                console.warn(f"{file_path} has {', '.join(issues)}")
-
-        name = content.get('name')
-        if name:
-            if name in seen_names:
-                console.error(f"Duplicate name '{name}' found in:\n  - {seen_names[name]}\n  - {file_path}")
+        asset_type = content.get('type')
+        if asset_type == 'prompt':
+            try:
+                PromptSchema(**content)
+            except ValidationError as e:
+                console.error(f"Validation error in {file_path}:\n{e}")
                 ok = False
-            else:
-                seen_names[name] = str(file_path)
+                continue
 
+            if strict:
+                issues = []
+                if not content.get('testData') or len(content.get('testData', [])) == 0:
+                    issues.append("no testData")
+                elif len(content.get('testData', [])) == 1:
+                    issues.append("only 1 test case")
+                
+                if not content.get('evaluators') or len(content.get('evaluators', [])) == 0:
+                    issues.append("no evaluators")
+                
+                if issues:
+                    console.warn(f"{file_path} has {', '.join(issues)}")
 
-    # Validate Workflows
-    for file_path in iter_workflow_files(dir_path):
-        # Collect directory to check hygiene later
-        path = file_path.parent
-        base_path = Path(dir_path).resolve()
-        while path != base_path and base_path in path.parents:
-            dirs_to_check.add(path)
-            path = path.parent
-        if file_path.parent == base_path:
-            dirs_to_check.add(base_path)
-
-        if file_path.parent.name in NAMING_RULES and not file_path.name.endswith(".workflow.yaml") and not file_path.name.endswith(".workflow.yml"):
-            if not NAMING_RULES[file_path.parent.name].match(file_path.name):
-                console.error(f"{file_path} does not match required pattern for {file_path.parent.name}")
-                ok = False
-
-        content = load_yaml(str(file_path))
-        if not content:
-            ok = False
-            continue
-            
-        issues = analyze_workflow_dependencies(str(file_path), content, dir_path)
-        if issues:
-            console.error(f"Validation error in workflow {file_path}:")
-            for issue in issues:
-                console.error(f"  - {issue}")
-            ok = False
-
-        if strict:
-            test_data = content.get('testData', [])
-            if test_data:
-                for i, test_case in enumerate(test_data):
-                    inputs = test_case.get('inputs', test_case.get('vars', {}))
-                    try:
-                        run_workflow(str(file_path), inputs, verbose=False, strict_mode=True)
-                    except Exception as e:
-                        console.error(f"Simulation failed on {file_path} scenario {i+1}: {e}")
-                        ok = False
-                        break
-            else:
-                try:
-                    run_workflow(str(file_path), {}, verbose=False, strict_mode=True)
-                except Exception as e:
-                    console.error(f"Simulation failed on {file_path}: {e}")
+            name = content.get('name')
+            if name:
+                if name in seen_names:
+                    console.error(f"Duplicate name '{name}' found in:\n  - {seen_names[name]}\n  - {file_path}")
                     ok = False
+                else:
+                    seen_names[name] = str(file_path)
+
+        elif asset_type == 'workflow':
+            issues = analyze_workflow_dependencies(str(file_path), content, dir_path)
+            if issues:
+                console.error(f"Validation error in workflow {file_path}:")
+                for issue in issues:
+                    console.error(f"  - {issue}")
+                ok = False
+
+            if strict:
+                test_data = content.get('testData', [])
+                if test_data:
+                    for i, test_case in enumerate(test_data):
+                        inputs = test_case.get('inputs', test_case.get('vars', {}))
+                        try:
+                            run_workflow(str(file_path), inputs, verbose=False, strict_mode=True)
+                        except Exception as e:
+                            console.error(f"Simulation failed on {file_path} scenario {i+1}: {e}")
+                            ok = False
+                            break
+                else:
+                    try:
+                        run_workflow(str(file_path), {}, verbose=False, strict_mode=True)
+                    except Exception as e:
+                        console.error(f"Simulation failed on {file_path}: {e}")
+                        ok = False
 
     # Check directory hygiene
     for directory in dirs_to_check:

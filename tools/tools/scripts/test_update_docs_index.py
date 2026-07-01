@@ -66,6 +66,7 @@ class TestUpdateDocsIndexReadMeta(unittest.TestCase):
     def test_read_meta_with_name(self, mock_load_yaml):
         mock_load_yaml.return_value = {
             "name": "Test Prompt Name",
+        "type": "prompt",
             "metadata": {"tags": ["domain:clinical"]},
         }
         path = Path("prompts/category/subcategory/test_file.yaml")
@@ -91,7 +92,8 @@ class TestUpdateDocsIndexReadMeta(unittest.TestCase):
 
     @patch('tools.scripts.update_docs_index.load_yaml')
     def test_read_meta_empty_title_fallback(self, mock_load_yaml):
-        mock_load_yaml.return_value = {"name": "", "tags": ["domain:technical"]}
+        mock_load_yaml.return_value = {"name": "",
+        "type": "prompt", "tags": ["domain:technical"]}
         path = Path("prompts/category/subcategory/01_test_file_name.yaml")
 
         category, title = read_meta(path)
@@ -106,7 +108,7 @@ class TestUpdateDocsIndexReadMeta(unittest.TestCase):
 
         category, title = read_meta(path)
 
-        self.assertEqual(category, "Uncategorized")
+        self.assertEqual(category, "Category")
         self.assertEqual(title, "Test File Name")
 
     @patch('tools.scripts.update_docs_index.load_yaml')

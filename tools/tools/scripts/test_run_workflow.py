@@ -17,10 +17,12 @@ def setup_test_environment():
     # --- Create Mock Prompt 1 ---
     prompt1_content = {
         "name": "Test Prompt 1: Greeter",
+        "type": "prompt",
         "description": "Takes a name and says hello.",
         "messages": [{"role": "user", "content": "Hello, {{name}}!"}],
         "testData": [{
             "inputs": {"name": "World"},
+        "type": "prompt",
             "expected": ["Hello, World!"]
         }]
     }
@@ -30,6 +32,7 @@ def setup_test_environment():
     # --- Create Mock Prompt 2 ---
     prompt2_content = {
         "name": "Test Prompt 2: Exclamation",
+        "type": "prompt",
         "description": "Adds an exclamation mark to a phrase.",
         "messages": [{"role": "user", "content": "Add emphasis to: {{phrase}}"}],
         "testData": [{
@@ -43,6 +46,7 @@ def setup_test_environment():
     # --- Create Mock Prompt 3 (Failing Evaluator) ---
     prompt3_content = {
         "name": "Test Prompt 3: Failing Evaluator",
+        "type": "prompt",
         "description": "Fails evaluation intentionally.",
         "messages": [{"role": "user", "content": "Analyze: {{data}}"}],
         "testData": [{
@@ -52,6 +56,7 @@ def setup_test_environment():
         "evaluators": [
             {
                 "name": "Forbidden Word Checker",
+        "type": "prompt",
                 "python": "return 'forbidden' not in output",
                 "action": "terminate"
             }
@@ -63,6 +68,7 @@ def setup_test_environment():
     # --- Create Mock Prompt 4 (Redact PII) ---
     prompt4_content = {
         "name": "Test Prompt 4: Redact PII",
+        "type": "prompt",
         "description": "Tests the global PII scanner redaction.",
         "messages": [{"role": "user", "content": "Summarize: {{info}}"}],
         "testData": [{
@@ -76,7 +82,9 @@ def setup_test_environment():
     # --- Create Mock Workflow ---
     workflow_content = {
         "name": "Test Workflow",
+        "type": "prompt",
         "inputs": [{"name": "user_name"}],
+        "type": "prompt",
         "steps": [
             {
                 "step_id": "step1_greet",
@@ -138,6 +146,7 @@ def run_tests():
         print("\n--- Running failing workflow test ---")
         failing_workflow_content = {
             "name": "Failing Workflow",
+        "type": "prompt",
             "inputs": [],
             "steps": [
                 {

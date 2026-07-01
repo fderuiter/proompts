@@ -80,17 +80,18 @@ def load_yaml(path: Union[str, Path]) -> Dict[str, Any]:
         return {}
 
 def iter_prompt_files(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:
-    root_path = Path(root) if root else PROMPTS_DIR
-    for ext in ("*.prompt.yaml", "*.prompt.yml", "*.prompt.md"):
-        for p in root_path.rglob(ext):
-            if not p.name.startswith("._") and "site/" not in str(p):
-                yield p
+    from promptops.registry import AssetRegistry
+    registry = AssetRegistry(root)
+    for asset in registry.discover_assets():
+        if asset['type'] == 'prompt':
+            yield Path(asset['file_path'])
 
 def iter_workflow_files(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:
-    root_path = Path(root) if root else WORKFLOWS_DIR
-    for p in root_path.rglob("*.workflow.yaml"):
-        if not p.name.startswith("._") and "site/" not in str(p):
-            yield p
+    from promptops.registry import AssetRegistry
+    registry = AssetRegistry(root)
+    for asset in registry.discover_assets():
+        if asset['type'] == 'workflow':
+            yield Path(asset['file_path'])
 
 def _format_category(raw: str) -> str:
     cleaned = raw.strip().replace("_", " ").replace("-", " ").replace("/", " ")
@@ -104,26 +105,8 @@ def get_prompt_tags(content: Dict[str, Any]) -> List[str]:
     return extract_tags(content)
 
 def derive_prompt_category(path: Path, root_dir: Path, content: Optional[Dict[str, Any]] = None) -> str:
-    data = content or {}
-    for tag in get_prompt_tags(data):
-        if tag.lower().startswith(DOMAIN_TAG_PREFIX):
-            value = tag.split(":", 1)[1].strip()
-            if value:
-                return _format_category(_domain_root(value))
-
-    metadata = data.get("metadata")
-    if isinstance(metadata, dict):
-        domain = metadata.get("domain")
-        if isinstance(domain, str) and domain.strip():
-            return _format_category(_domain_root(domain))
-
-    try:
-        relative = path.relative_to(root_dir)
-        if len(relative.parts) < 2:
-            return "Uncategorized"
-        return _format_category(relative.parts[0])
-    except ValueError:
-        return "Uncategorized"
+    from promptops.registry import AssetRegistry
+    return AssetRegistry.derive_category(content or {}, path)
 
 def extract_template_vars(content: Dict[str, Any]) -> List[str]:
     found: Set[str] = set()

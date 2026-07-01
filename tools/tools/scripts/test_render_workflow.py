@@ -16,6 +16,7 @@ class TestRenderWorkflow(unittest.TestCase):
         # Mock data with mermaid content
         data = {
             'name': 'Test Workflow',
+        'type': 'prompt',
             'description': 'A test workflow.',
             'steps': [
                 {'step_id': 'step1', 'map_inputs': {'input1': 'inputs.foo'}}
@@ -50,6 +51,7 @@ class TestRenderWorkflow(unittest.TestCase):
         # Mock data without steps/inputs -> no mermaid
         data = {
             'name': 'Simple Workflow',
+        'type': 'prompt',
             'description': 'No diagram needed.'
         }
 

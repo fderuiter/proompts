@@ -21,7 +21,8 @@ class TestGenerateSearchIndex(unittest.TestCase):
         ]
 
         mock_load_yaml.side_effect = [
-            {"name": "Test 1", "description": "Desc 1", "tags": ["tag1", "tag2"]},
+            {"name": "Test 1",
+        "type": "prompt", "description": "Desc 1", "tags": ["tag1", "tag2"]},
             {"description": "Desc 2"} # Missing name and tags to test fallbacks
         ]
 

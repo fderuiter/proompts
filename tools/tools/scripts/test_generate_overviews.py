@@ -9,7 +9,8 @@ class TestGetPromptMetadata(unittest.TestCase):
     @patch("tools.scripts.generate_overviews.load_yaml")
     def test_metadata_from_yaml_name(self, mock_load_yaml):
         """Test metadata extraction when 'name' is present in YAML."""
-        mock_load_yaml.return_value = {"name": "Test Name", "description": "A test description."}
+        mock_load_yaml.return_value = {"name": "Test Name",
+        "type": "prompt", "description": "A test description."}
         path = Path("path/to/test.prompt.md")
         self.assertEqual(get_prompt_metadata(path), ("Test Name", "A test description."))
 
@@ -23,7 +24,8 @@ class TestGetPromptMetadata(unittest.TestCase):
     @patch("tools.scripts.generate_overviews.load_yaml")
     def test_title_priority(self, mock_load_yaml):
         """Test that 'name' takes precedence over 'title'."""
-        mock_load_yaml.return_value = {"name": "Priority Name", "title": "Secondary Title", "description": "Desc"}
+        mock_load_yaml.return_value = {"name": "Priority Name",
+        "type": "prompt", "title": "Secondary Title", "description": "Desc"}
         path = Path("path/to/test.prompt.md")
         self.assertEqual(get_prompt_metadata(path), ("Priority Name", "Desc"))
 
@@ -58,7 +60,8 @@ class TestGetPromptMetadata(unittest.TestCase):
     @patch("tools.scripts.generate_overviews.load_yaml")
     def test_metadata_from_workflow(self, mock_load_yaml):
         """Test metadata extraction from .workflow.yaml file."""
-        mock_load_yaml.return_value = {"name": "My Workflow", "description": "Workflow desc"}
+        mock_load_yaml.return_value = {"name": "My Workflow",
+        "type": "prompt", "description": "Workflow desc"}
         path = Path("path/to/my_workflow.workflow.yaml")
         self.assertEqual(get_prompt_metadata(path), ("My Workflow", "Workflow desc"))
 

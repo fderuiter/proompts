@@ -13,6 +13,7 @@ class TestPromptSchema(unittest.TestCase):
     def setUp(self):
         self.valid_data = {
             "name": "Test Prompt",
+        "type": "prompt",
             "description": "A test prompt description",
             "metadata": {
                 "domain": "general",
@@ -173,8 +174,10 @@ class TestPromptSchema(unittest.TestCase):
                 {"role": "user", "content": "Summarize: {{input}}"},
             ],
             "variables": [
-                {"name": "input", "description": "Text to summarize", "required": True},
-                {"name": "style", "description": "Tone of response", "required": False, "default": "formal"},
+                {"name": "input",
+        "type": "prompt", "description": "Text to summarize", "required": True},
+                {"name": "style",
+        "type": "prompt", "description": "Tone of response", "required": False, "default": "formal"},
             ]
         }
         prompt = PromptSchema(**data)
@@ -204,7 +207,8 @@ class TestPromptSchema(unittest.TestCase):
                 {"role": "user", "content": "Hello!"},
             ],
             "variables": [
-                {"name": "unused_var", "description": "Not used anywhere"},
+                {"name": "unused_var",
+        "type": "prompt", "description": "Not used anywhere"},
             ]
         }
         import io, contextlib
@@ -228,7 +232,8 @@ class TestPromptSchema(unittest.TestCase):
                 {"role": "user", "content": "Hello {{ user!name }}"},
             ],
             "variables": [
-                {"name": "user!name", "description": "Invalid char", "required": True},
+                {"name": "user!name",
+        "type": "prompt", "description": "Invalid char", "required": True},
             ]
         }
         with self.assertRaises(ValidationError) as cm:
@@ -244,8 +249,10 @@ class TestPromptSchema(unittest.TestCase):
                 {"role": "user", "content": "Hello {{ user.id }} and {{ system-env }}"},
             ],
             "variables": [
-                {"name": "user.id", "description": "User ID", "required": True},
-                {"name": "system-env", "description": "System Env", "required": True},
+                {"name": "user.id",
+        "type": "prompt", "description": "User ID", "required": True},
+                {"name": "system-env",
+        "type": "prompt", "description": "System Env", "required": True},
             ]
         }
         prompt = PromptSchema(**data)
@@ -260,7 +267,8 @@ class TestPromptSchema(unittest.TestCase):
                 {"role": "user", "content": "Hello {{  user_name  }}"},
             ],
             "variables": [
-                {"name": "user_name", "description": "User Name", "required": True},
+                {"name": "user_name",
+        "type": "prompt", "description": "User Name", "required": True},
             ]
         }
         prompt = PromptSchema(**data)

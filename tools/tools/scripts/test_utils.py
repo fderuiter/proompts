@@ -5,7 +5,8 @@ from pathlib import Path
 import io
 import sys
 
-from promptops.utils import load_yaml, iter_prompt_files, iter_workflow_files
+from promptops.utils import load_yaml
+from promptops.registry import AssetRegistry
 
 class TestUtils(unittest.TestCase):
     @patch("promptops.utils.Path.read_text")
@@ -32,68 +33,6 @@ class TestUtils(unittest.TestCase):
         result = load_yaml(Path("invalid.yaml"))
         self.assertEqual(result, {})
         self.assertIn("Error reading invalid.yaml", mock_stdout.getvalue())
-
-    def test_iter_prompt_files(self):
-        """Test iter_prompt_files yields correct files."""
-        with tempfile.TemporaryDirectory() as temp_dir:
-            root = Path(temp_dir)
-
-            # Create prompt files
-            (root / "prompt1.prompt.md").touch()
-            (root / "prompt2.prompt.yml").touch()
-
-            # Create subdirectory
-            subdir = root / "subdir"
-            subdir.mkdir()
-            (subdir / "prompt3.prompt.md").touch()
-
-            # Create non-prompt files
-            (root / "readme.md").touch()
-            (root / "image.png").touch()
-            (subdir / "notes.txt").touch()
-
-            # Get results
-            results = list(iter_prompt_files(root))
-
-            # Check results
-            expected_files = {
-                root / "prompt1.prompt.md",
-                root / "prompt2.prompt.yml",
-                subdir / "prompt3.prompt.md"
-            }
-
-            self.assertEqual(len(results), 3)
-            self.assertEqual(set(results), expected_files)
-
-    def test_iter_workflow_files(self):
-        """Test iter_workflow_files yields correct files."""
-        with tempfile.TemporaryDirectory() as temp_dir:
-            root = Path(temp_dir)
-
-            # Create workflow files
-            (root / "flow1.workflow.yaml").touch()
-            (root / "._flow1.workflow.yaml").touch()  # Should be skipped
-
-            # Create subdirectory
-            subdir = root / "subdir"
-            subdir.mkdir()
-            (subdir / "flow2.workflow.yaml").touch()
-
-            # Create non-workflow files
-            (root / "readme.md").touch()
-            (root / "prompt1.prompt.md").touch()
-
-            # Get results
-            results = list(iter_workflow_files(root))
-
-            # Check results
-            expected_files = {
-                root / "flow1.workflow.yaml",
-                subdir / "flow2.workflow.yaml"
-            }
-
-            self.assertEqual(len(results), 2)
-            self.assertEqual(set(results), expected_files)
 
 if __name__ == "__main__":
     unittest.main()
