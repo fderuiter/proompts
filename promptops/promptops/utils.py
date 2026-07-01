@@ -50,31 +50,38 @@ def load_yaml(path: Union[str, Path]) -> Dict[str, Any]:
         template = env.from_string(text)
         rendered_text = template.render()
         
-        if rendered_text.startswith("---"):
-            parts = rendered_text.split("---", 2)
-            if len(parts) >= 3:
-                data = yaml.safe_load(parts[1]) or {}
-                content = parts[2]
-                
-                messages = data.get("messages", [])
-                blocks = re.split(r'^##\s+(.*)$', content, flags=re.MULTILINE)
-                for i in range(1, len(blocks), 2):
-                    header = blocks[i].strip()
-                    body = blocks[i+1].strip()
-                    if not body:
-                        continue
-                        
-                    role = header.lower()
-                    if role == 'purpose':
-                        role = 'system'
-                    elif role == 'instructions':
-                        role = 'user'
-                        
-                    messages.append({"role": role, "content": body})
-                data["messages"] = messages
-                return data
-                
-        return yaml.safe_load(rendered_text) or {}
+        if rendered_text is None:
+            rendered_text = ""
+            
+        if isinstance(rendered_text, str):
+            if rendered_text.startswith("---"):
+                parts = rendered_text.split("---", 2)
+                if len(parts) >= 3:
+                    data = yaml.safe_load(parts[1]) or {}
+                    content = parts[2]
+                    
+                    messages = data.get("messages", [])
+                    blocks = re.split(r'^##\s+(.*)$', content, flags=re.MULTILINE)
+                    for i in range(1, len(blocks), 2):
+                        header = blocks[i].strip()
+                        body = blocks[i+1].strip()
+                        if not body:
+                            continue
+                            
+                        role = header.lower()
+                        if role == 'purpose':
+                            role = 'system'
+                        elif role == 'instructions':
+                            role = 'user'
+                            
+                        messages.append({"role": role, "content": body})
+                    data["messages"] = messages
+                    return data
+                    
+            return yaml.safe_load(rendered_text) or {}
+        elif isinstance(rendered_text, dict):
+            return rendered_text
+        return {}
     except Exception as e:
         print(f"Error reading {path}: {e}")
         return {}

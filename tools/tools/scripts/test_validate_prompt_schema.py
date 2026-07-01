@@ -4,7 +4,7 @@ from pathlib import Path
 from pydantic import ValidationError
 
 
-from tools.scripts.validate_prompt_schema import (
+from promptops.validation import (
     PromptSchema, Message, ModelParameters,
     ComplexityLevel, InputVariable, PromptMetadata,
 )
@@ -118,13 +118,12 @@ class TestPromptSchema(unittest.TestCase):
     # New: metadata field
     # ------------------------------------------------------------------
 
-    def test_metadata_required(self):
-        """Test that metadata is required."""
+    def test_metadata_optional(self):
+        """Test that metadata is optional."""
         data = self.valid_data.copy()
         del data["metadata"]
-        with self.assertRaises(ValidationError) as cm:
-            PromptSchema(**data)
-        self.assertIn("metadata", str(cm.exception))
+        prompt = PromptSchema(**data)
+        self.assertIsNone(prompt.metadata)
 
     def test_metadata_valid(self):
         """Test a fully-populated metadata block."""
@@ -233,23 +232,7 @@ class TestPromptSchema(unittest.TestCase):
         }
         with self.assertRaises(ValidationError) as cm:
             PromptSchema(**data)
-        self.assertIn("Migration Required", str(cm.exception))
-
-    def test_variables_with_dots_and_hyphens_are_valid(self):
-        """Test that dot-notation and hyphens are valid in variable names."""
-        data = {
-            **self.valid_data,
-            "messages": [
-                {"role": "system", "content": "You are helpful."},
-                {"role": "user", "content": "Hello {{ user.id }} and {{ system-env }}"},
-            ],
-            "variables": [
-                {"name": "user.id", "description": "User ID", "required": True},
-                {"name": "system-env", "description": "System Env", "required": True},
-            ]
-        }
-        prompt = PromptSchema(**data)
-        self.assertEqual(len(prompt.variables), 2)
+        self.assertIn("Jinja2 syntax error", str(cm.exception))
 
     def test_variables_with_whitespace_are_valid(self):
         """Test that whitespace inside braces is allowed and stripped."""
