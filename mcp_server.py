@@ -38,7 +38,7 @@ class PromptDirHandler(FileSystemEventHandler):
             logger.info(f"File change detected: {event.src_path}")
             if active_session and main_loop:
                 asyncio.run_coroutine_threadsafe(
-                    active_session.send_tool_list_changed()
+                    active_session.send_tool_list_changed(),
                     main_loop
                 )
 
@@ -59,21 +59,21 @@ def build_schema(prompt_content_or_vars):
                     if not name:
                         continue
                     properties[name] = {
-                        "type": "string"
+                        "type": "string",
                         "description": var.get('description', f"The {name} input.")
                     }
                     if var.get('required', True):
                         required.append(name)
                 elif isinstance(var, str):
                     properties[var] = {
-                        "type": "string"
+                        "type": "string",
                         "description": f"The {var} input."
                     }
                     required.append(var)
         elif isinstance(variables, dict):
             for name, desc in variables.items():
                 properties[name] = {
-                    "type": "string"
+                    "type": "string",
                     "description": str(desc) if desc else f"The {name} input."
                 }
                 required.append(name)
@@ -81,14 +81,14 @@ def build_schema(prompt_content_or_vars):
         extracted_vars = extract_template_vars(prompt_content_or_vars)
         for var in extracted_vars:
             properties[var] = {
-                "type": "string"
+                "type": "string",
                 "description": f"The {var} input."
             }
             required.append(var)
             
     return {
-        "type": "object"
-        "properties": properties
+        "type": "object",
+        "properties": properties,
         "required": required
     }
 
@@ -112,8 +112,8 @@ async def handle_list_tools() -> list[types.Tool]:
                 full_name = f"{domain}_{stem}".lower()
 
                 tools.append(types.Tool(
-                    name=full_name
-                    description=skill.get("description", "Agent Skill")
+                    name=full_name,
+                    description=skill.get("description", "Agent Skill"),
                     inputSchema=build_schema(skill.get("variables", []))
                 ))
         except Exception as e:
@@ -128,8 +128,8 @@ async def handle_list_tools() -> list[types.Tool]:
             name = asset['id']
             desc_default = "Prompt Tool" if asset['type'] == 'prompt' else "Workflow Tool"
             tools.append(types.Tool(
-                name=name
-                description=asset.get("description", desc_default)
+                name=name,
+                description=asset.get("description", desc_default),
                 inputSchema=build_schema(asset)
             ))
         except Exception as e:
@@ -141,8 +141,8 @@ async def handle_list_tools() -> list[types.Tool]:
             name = asset['id']
             desc_default = "Prompt Tool" if asset['type'] == 'prompt' else "Workflow Tool"
             tools.append(types.Tool(
-                name=name
-                description=asset.get("description", desc_default)
+                name=name,
+                description=asset.get("description", desc_default),
                 inputSchema=build_schema(asset)
             ))
         except Exception as e:
@@ -204,16 +204,16 @@ async def handle_call_tool(name: str, arguments: dict | None) -> list[types.Text
 
                 if full_name == name:
                     content = {
-                        "name": skill["name"]
-                        "description": skill.get("description", "")
-                        "variables": skill.get("variables", [])
-                        "messages": [{"role": "system", "content": skill.get("instructions", "")}]
+                        "name": skill["name"],
+                        "description": skill.get("description", ""),
+                        "variables": skill.get("variables", []),
+                        "messages": [{"role": "system", "content": skill.get("instructions", "")}],
                         "testData": skill.get("testData", [])
                     }
                     fidelity = {}
                     out = simulate_prompt_execution(content, arguments, prompt_file=str(path), strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
                     return [types.TextContent(
-                        type="text"
+                        type="text",
                         text=f"--- Executing Skill: {skill['name']} ---\n\n{out}"
                     )]
         except:
@@ -233,17 +233,17 @@ async def run():
 
     async with stdio_server() as (read_stream, write_stream):
         await server.run(
-            read_stream
-            write_stream
+            read_stream,
+            write_stream,
             InitializationOptions(
-                server_name="DynamicProompts"
-                server_version="0.1.0"
+                server_name="DynamicProompts",
+                server_version="0.1.0",
                 capabilities=server.get_capabilities(
                     notification_options=NotificationOptions(
-                        prompts_changed=True
-                        resources_changed=True
+                        prompts_changed=True,
+                        resources_changed=True,
                         tools_changed=True
-                    )
+                    ),
                     experimental_capabilities={}
                 )
             )

@@ -90,9 +90,9 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
             output_file.write_text(content, encoding='utf-8')
             
             items.append(DocItem(
-                title=title
-                path=output_file
-                category=category
+                title=title,
+                path=output_file,
+                category=category,
                 item_type='prompt'
             ))
             
@@ -117,9 +117,9 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
             output_file.write_text(content, encoding='utf-8')
             
             items.append(DocItem(
-                title=title
-                path=output_file
-                category=category
+                title=title,
+                path=output_file,
+                category=category,
                 item_type='workflow'
             ))
         
