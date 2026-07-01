@@ -355,44 +355,12 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
             skills_md = path_obj.parent / "skills.md"
             if skills_md.exists():
                 from promptops.utils import parse_skill_manifest
+                from promptops.resolver import resolve_skill_from_path
                 manifest = parse_skill_manifest(skills_md)
                 
-                def get_words(text):
-                    words = set()
-                    for w in re.findall(r'[a-z]+|[0-9]+', text.lower()):
-                        if w.isdigit():
-                            words.add(str(int(w)))
-                        else:
-                            words.add(w)
-                    return words
-
-                stem = path_obj.name.replace('.prompt.md', '').replace('.prompt.yml', '')
-                stem_clean = re.sub(r'^\d+_', '', stem).lower()
-                stem_words = get_words(stem_clean)
+                best_match = resolve_skill_from_path(path_obj, manifest.get("skills", []))
                 
-                best_match = None
-                best_score = 0
-                best_skill_len = float('inf')
-                skills_list = manifest.get("skills", [])
-                for skill in skills_list:
-                    skill_name_clean = skill["name"].lower()
-                    skill_words = get_words(skill_name_clean)
-                    
-                    score = len(stem_words & skill_words)
-                    if score > best_score or (score > 0 and score == best_score and len(skill_words) < best_skill_len):
-                        best_score = score
-                        best_match = skill
-                        best_skill_len = len(skill_words)
-                
-                if not best_match or best_score == 0:
-                    m = re.match(r'^(\d+)_', stem)
-                    if m:
-                        idx = int(m.group(1)) - 1
-                        if 0 <= idx < len(skills_list):
-                            best_match = skills_list[idx]
-                            best_score = 1
-                
-                if best_match and best_score > 0:
+                if best_match:
                     prompt_data = {
                         "name": best_match["name"],
                         "description": best_match.get("description", ""),
