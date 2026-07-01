@@ -8,10 +8,64 @@ from pydantic import ValidationError
 # To avoid circular imports, we don't import PromptSchema here if not needed
 # or we import it inside functions.
 
+def _generate_skill_description(prompt_data: Dict[str, Any]) -> str:
+    fallback_desc = prompt_data.get("description", "No description provided.")
+    api_key = os.environ.get("LLM_API_KEY_SHADOW") or os.environ.get("LLM_API_KEY")
+    if not api_key:
+        return fallback_desc
+
+    context_data = {
+        "name": prompt_data.get("name", "Unnamed Skill"),
+        "variables": prompt_data.get("variables", []),
+        "messages": prompt_data.get("messages", [])
+    }
+    
+    system_msg = (
+        "You are an expert technical documentation specialist. "
+        "Analyze the provided prompt instructions, tool calls, and variables. "
+        "Generate a concise, objective, and technically accurate summary of the prompt's behavior "
+        "and execution context. This description will be used in a skills.md manifest. "
+        "Return ONLY the description text, with no markdown code blocks, quotes, or conversational filler."
+    )
+    
+    payload = {
+        "model": "gpt-4o-mini",
+        "messages": [
+            {"role": "system", "content": system_msg},
+            {"role": "user", "content": json.dumps(context_data, indent=2)}
+        ],
+        "temperature": 0.0
+    }
+    
+    import urllib.request
+    import urllib.error
+    
+    req = urllib.request.Request(
+        "https://api.openai.com/v1/chat/completions",
+        headers={
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {api_key}"
+        },
+        data=json.dumps(payload).encode("utf-8")
+    )
+    
+    try:
+        with urllib.request.urlopen(req, timeout=10) as response:
+            result = json.loads(response.read().decode("utf-8"))
+            content = result["choices"][0]["message"]["content"]
+            content = content.strip().strip('"').strip("'").strip()
+            if content:
+                return content
+    except Exception as e:
+        print(f"LLM API call failed for description generation: {e}")
+        pass
+        
+    return fallback_desc
+
 def generate_skill_section(prompt_data: Dict[str, Any]) -> str:
     """Generate a single skill section for a prompt."""
     name = prompt_data.get("name", "Unnamed Skill")
-    description = prompt_data.get("description", "No description provided.")
+    description = _generate_skill_description(prompt_data)
     
     # Inputs table
     variables = prompt_data.get("variables", [])
