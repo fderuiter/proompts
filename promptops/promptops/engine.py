@@ -357,21 +357,50 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
                 from promptops.utils import parse_skill_manifest
                 manifest = parse_skill_manifest(skills_md)
                 
+                def get_words(text):
+                    words = set()
+                    for w in re.findall(r'[a-z]+|[0-9]+', text.lower()):
+                        if w.isdigit():
+                            words.add(str(int(w)))
+                        else:
+                            words.add(w)
+                    return words
+
                 stem = path_obj.name.replace('.prompt.md', '').replace('.prompt.yml', '')
-                stem_clean = re.sub(r'^\d+_', '', stem).replace('_', ' ').lower()
+                stem_clean = re.sub(r'^\d+_', '', stem).lower()
+                stem_words = get_words(stem_clean)
                 
-                for skill in manifest.get("skills", []):
-                    skill_name_clean = skill["name"].lower().replace('_', ' ')
-                    if stem_clean in skill_name_clean or skill_name_clean in stem_clean or skill["name"].replace(' ', '_').lower() in stem:
-                        prompt_data = {
-                            "name": skill["name"],
-                            "description": skill.get("description", ""),
-                            "variables": skill.get("variables", []),
-                            "messages": [{"role": "system", "content": skill.get("instructions", "")}],
-                            "testData": skill.get("testData", [])
-                        }
-                        logger.info(f"Loaded skill '{skill['name']}' from manifest {skills_md}")
-                        break
+                best_match = None
+                best_score = 0
+                best_skill_len = float('inf')
+                skills_list = manifest.get("skills", [])
+                for skill in skills_list:
+                    skill_name_clean = skill["name"].lower()
+                    skill_words = get_words(skill_name_clean)
+                    
+                    score = len(stem_words & skill_words)
+                    if score > best_score or (score > 0 and score == best_score and len(skill_words) < best_skill_len):
+                        best_score = score
+                        best_match = skill
+                        best_skill_len = len(skill_words)
+                
+                if not best_match or best_score == 0:
+                    m = re.match(r'^(\d+)_', stem)
+                    if m:
+                        idx = int(m.group(1)) - 1
+                        if 0 <= idx < len(skills_list):
+                            best_match = skills_list[idx]
+                            best_score = 1
+                
+                if best_match and best_score > 0:
+                    prompt_data = {
+                        "name": best_match["name"],
+                        "description": best_match.get("description", ""),
+                        "variables": best_match.get("variables", []),
+                        "messages": [{"role": "system", "content": best_match.get("instructions", "")}],
+                        "testData": best_match.get("testData", [])
+                    }
+                    logger.info(f"Loaded skill '{best_match['name']}' from manifest {skills_md}")
 
         if not prompt_data:
             logger.warning(f"Skipping step {step_id} due to missing prompt file or skill.")
