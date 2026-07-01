@@ -179,9 +179,7 @@ async def handle_call_tool(name: str, arguments: dict | None) -> list[types.Text
             if content and get_tool_name(path, content) == name:
                 fidelity = {}
                 out = simulate_prompt_execution(content, arguments, prompt_file=str(path), strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
-                return [types.TextContent(type="text", text=f"--- Executing Prompt: {content.get('name')} ---
-
-{out}")]
+                return [types.TextContent(type="text", text=f"--- Executing Prompt: {content.get('name')} ---\n\n{out}")]
         except:
             continue
 
@@ -196,9 +194,7 @@ async def handle_call_tool(name: str, arguments: dict | None) -> list[types.Text
                     final_output_step_id = content.get('steps', [{}])[-1].get('step_id')
                     if final_output_step_id and final_output_step_id in state['steps']:
                         out = state['steps'][final_output_step_id]['output']
-                return [types.TextContent(type="text", text=f"--- Executing Workflow: {content.get('name')} ---
-
-{out}")]
+                return [types.TextContent(type="text", text=f"--- Executing Workflow: {content.get('name')} ---\n\n{out}")]
         except:
             continue
 
@@ -223,9 +219,7 @@ async def handle_call_tool(name: str, arguments: dict | None) -> list[types.Text
                     out = simulate_prompt_execution(content, arguments, prompt_file=str(path), strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
                     return [types.TextContent(
                         type="text",
-                        text=f"--- Executing Skill: {skill['name']} ---
-
-{out}"
+                        text=f"--- Executing Skill: {skill['name']} ---\n\n{out}"
                     )]
         except:
             continue
