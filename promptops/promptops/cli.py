@@ -40,6 +40,11 @@ def main():
     agent_discovery = agent_subparsers.add_parser("discovery", help="Show tool discovery and override report")
     agent_discovery.add_argument("--dir", help="Directory containing prompts", default="prompts")
 
+    # Vibe
+    vibe_parser = subparsers.add_parser("vibe", help="Run full-fidelity vibe audit")
+    vibe_parser.add_argument("--budget-cap", type=float, default=10.0, help="Maximum budget for LLM API calls")
+    vibe_parser.add_argument("--coverage", type=str, default="universal", help="Coverage mode")
+
     args = parser.parse_args()
 
     if args.command == "init":
@@ -58,6 +63,10 @@ def main():
             generate_config(args.dir)
         elif args.agent_command == "discovery":
             discovery_report(args.dir)
+    elif args.command == "vibe":
+        from promptops.vibe import run_vibe_audit
+        run_vibe_audit(budget_cap=args.budget_cap, coverage=args.coverage)
+        sys.exit(0)  # Non-blocking execution
 
 if __name__ == "__main__":
     main()
