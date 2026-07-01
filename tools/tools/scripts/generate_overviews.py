@@ -58,7 +58,7 @@ def generate_overview(directory: Path, content_cache: dict[Path, bool] | None = 
     """
     title = directory.name.replace("_", " ").title()
     prompt_files: list[Path] = []
-    for pattern in ("*.prompt.md", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
+    for pattern in ("*.prompt.md", "*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml", "skills.md"):
         prompt_files.extend(directory.glob(pattern))
     
     # Filter out hidden files (e.g. ._ files on Mac)
@@ -168,7 +168,7 @@ def main() -> int:
     def has_content(d: Path) -> bool:
         if d in content_cache:
             return content_cache[d]
-        for pattern in ("*.prompt.md", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
+        for pattern in ("*.prompt.md", "*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml", "skills.md"):
             try:
                 next(d.rglob(pattern))
                 content_cache[d] = True

@@ -1079,7 +1079,7 @@ Your goal is to help users create valid, effective, and secure custom agent conf
 - **MCP Servers**:
   - `github` (out-of-the-box, e.g., `github/read_issue`)
   - `playwright` (out-of-the-box, e.g., `playwright/click`)
-- **Variables**: Supports `$VAR`, `${VAR}`, `${{ secrets.VAR }}`, `${{ var.VAR }}`.
+- **Variables**: Supports `$VAR`, `${VAR}`, `{% raw %}${{ secrets.VAR }}{% endraw %}`, `{% raw %}${{ var.VAR }}{% endraw %}`.
 
 ## Input Schema
 The user will provide `<agent_requirements>` which may include:
@@ -1105,7 +1105,7 @@ You are...
 
 ## Negative Constraints
 - **Do NOT** include unsupported properties like `model`, `argument-hint`, or `system-prompt` in the frontmatter.
-- **Do NOT** hardcode secrets. Use `${{ secrets.VAR }}` instead. - **Do NOT** enable tools unless explicitly requested or necessary for the purpose.
+- **Do NOT** hardcode secrets. Use `{% raw %}${{ secrets.VAR }}{% endraw %}` instead. - **Do NOT** enable tools unless explicitly requested or necessary for the purpose.
 
 ## Few-Shot Examples
 

@@ -191,6 +191,20 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
         except Exception as e:
             pass
 
+        # Split instructions into messages
+        messages = []
+        import re
+        blocks = re.split(r'^\[(system|user|assistant|tool_call|tool_result|tool)\]\n', instructions, flags=re.MULTILINE)
+        if len(blocks) > 1:
+            for i in range(1, len(blocks), 2):
+                role = blocks[i].lower()
+                content = blocks[i+1].strip()
+                if content:
+                    messages.append({"role": role, "content": content})
+        else:
+            if instructions.strip():
+                messages.append({"role": "system", "content": instructions.strip()})
+
         # Extract description
         desc_match = re.search(r'### Description\n(.*?)(?=\n### |$)', body, re.DOTALL)
         description = desc_match.group(1).strip() if desc_match else ""
@@ -216,6 +230,7 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
             "name": name,
             "description": description,
             "variables": vars_data,
+            "messages": messages,
             "instructions": instructions,
             "testData": test_data,
             "path": path

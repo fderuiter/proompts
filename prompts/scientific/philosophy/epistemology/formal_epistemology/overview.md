@@ -1,8 +1,4 @@
 # Formal Epistemology Overview
 
 ## Prompts
-- **[bayesian_epistemological_update_formalizer](bayesian_epistemological_update_formalizer.prompt.yaml)**: A highly rigorous prompt designed to systematically evaluate probabilistic updating, Bayesian conditionalization, and credence adjustments across complex epistemic states.
-- **[cognitive_bias_epistemological_deconstructor](cognitive_bias_epistemological_deconstructor.prompt.yaml)**: A highly rigorous prompt designed to systematically deconstruct cognitive biases within epistemological models using formal logic and dialectical analysis.
-- **[epistemic_defeater_formal_analyzer](epistemic_defeater_formal_analyzer.prompt.yaml)**: A highly rigorous prompt designed to systematically analyze and formalize epistemic defeaters (rebutting, undercutting, and higher-order) within formal epistemological justification networks.
-- **[epistemic_peer_disagreement_formalizer](epistemic_peer_disagreement_formalizer.prompt.yaml)**: A highly rigorous prompt designed to systematically analyze and formalize epistemic peer disagreement, evaluating conciliationist versus steadfast doxastic responses within formal epistemological models.
-- **[Epistemic Regress Topology Architect](epistemic_regress_topology_architect.prompt.yaml)**: A rigorous prompt designed to systematically map, formalize, and resolve epistemic justificatory chains and evaluate their susceptibility to the Münchhausen Trilemma (infinitism, foundationalism, coherentism).
+- [Skills.Md](skills.md)
