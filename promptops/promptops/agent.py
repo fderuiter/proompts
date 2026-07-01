@@ -6,22 +6,7 @@ from pathlib import Path
 from typing import Tuple, List, Dict, Any
 
 from promptops.utils import iter_prompt_files, load_yaml, iter_skill_manifests, parse_skill_manifest
-
-def get_tool_name(path: Path, content: dict) -> Tuple[str, str]:
-    name = content.get('name')
-    if not name:
-        name = path.name.replace(".prompt.md", "")
-        
-    original_name = name
-    name = re.sub(r'[^a-zA-Z0-9_-]', '_', name)
-    name = re.sub(r'_+', '_', name)
-    name = name.strip('_')
-    
-    if len(name) > 64:
-        h = hashlib.md5(str(path).encode()).hexdigest()[:6]
-        name = name[:57] + "_" + h
-        
-    return original_name, name
+from promptops.resolver import get_tool_name
 
 def get_tools_info(prompts_dir: Path) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
     manifested_tool_stems = set()

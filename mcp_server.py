@@ -9,6 +9,8 @@ import logging
 from pathlib import Path
 import jsonschema
 
+from promptops.resolver import get_tool_name_mcp
+
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
@@ -40,22 +42,6 @@ class PromptDirHandler(FileSystemEventHandler):
                     active_session.send_tool_list_changed(),
                     main_loop
                 )
-
-def get_tool_name(path: Path, content: dict) -> str:
-    name = content.get('name')
-    if not name:
-        name = path.name.replace(".prompt.yaml", "")
-        
-    name = re.sub(r'[^a-zA-Z0-9_-]', '_', name)
-    name = re.sub(r'_+', '_', name)
-    name = name.strip('_')
-    
-    if len(name) > 64:
-        import hashlib
-        h = hashlib.md5(str(path).encode()).hexdigest()[:6]
-        name = name[:57] + "_" + h
-        
-    return name
 
 def build_schema(prompt_content_or_vars):
     if isinstance(prompt_content_or_vars, list):
@@ -139,7 +125,7 @@ async def handle_list_tools() -> list[types.Tool]:
         try:
             content = load_yaml(path)
             if not content: continue
-            name = get_tool_name(path, content)
+            name = get_tool_name_mcp(path, content)
             tools.append(types.Tool(
                 name=name,
                 description=content.get("description", "Prompt Tool"),
@@ -153,7 +139,7 @@ async def handle_list_tools() -> list[types.Tool]:
         try:
             content = load_yaml(path)
             if not content: continue
-            name = get_tool_name(path, content)
+            name = get_tool_name_mcp(path, content)
             tools.append(types.Tool(
                 name=name,
                 description=content.get("description", "Workflow Tool"),
@@ -176,7 +162,7 @@ async def handle_call_tool(name: str, arguments: dict | None) -> list[types.Text
     for path in iter_prompt_files(PROMPTS_DIR):
         try:
             content = load_yaml(path)
-            if content and get_tool_name(path, content) == name:
+            if content and get_tool_name_mcp(path, content) == name:
                 fidelity = {}
                 out = simulate_prompt_execution(content, arguments, prompt_file=str(path), strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
                 return [types.TextContent(type="text", text=f"--- Executing Prompt: {content.get('name')} ---\n\n{out}")]
@@ -186,7 +172,7 @@ async def handle_call_tool(name: str, arguments: dict | None) -> list[types.Text
     for path in iter_workflow_files(WORKFLOWS_DIR):
         try:
             content = load_yaml(path)
-            if content and get_tool_name(path, content) == name:
+            if content and get_tool_name_mcp(path, content) == name:
                 fidelity = {}
                 state = run_workflow(str(path), arguments, verbose=False, strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
                 out = ""
