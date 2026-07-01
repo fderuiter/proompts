@@ -18,7 +18,8 @@ def get_tool_name(path: Path, content: dict) -> Tuple[str, str]:
     name = name.strip('_')
     
     if len(name) > 64:
-        h = hashlib.md5(str(path).encode()).hexdigest()[:6]
+        hash_input = f"{path}::{original_name}"
+        h = hashlib.md5(hash_input.encode()).hexdigest()[:6]
         name = name[:57] + "_" + h
         
     return original_name, name
