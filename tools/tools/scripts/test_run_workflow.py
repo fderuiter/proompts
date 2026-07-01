@@ -3,7 +3,7 @@ from __future__ import annotations
 import os
 import shutil
 import yaml
-from promptops.engine import run as run_workflow
+from promptops.engine import run_workflow
 
 # Define the test directory
 TEST_DIR = "temp_test_workflow"

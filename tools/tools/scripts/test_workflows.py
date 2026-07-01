@@ -10,7 +10,9 @@ errors, unresolved template variables, or missing step references.
 import sys
 import glob
 from pathlib import Path
-from promptops.engine import run as run_workflow, load_yaml, setup_logging
+from promptops.engine import run_workflow
+from promptops.utils import load_yaml
+import logging
 
 from tools.scripts.validate_prompt_schema import PromptMetadata
 
@@ -28,7 +30,7 @@ def validate_workflow_metadata(wf: Path, data: dict):
     PromptMetadata(**metadata)
 
 def main():
-    setup_logging(verbose=False)
+    logging.basicConfig(level=logging.INFO)
     
     # We will import run_workflow function directly and set strict_mode=True
     from promptops.utils import ROOT
