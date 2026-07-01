@@ -29,4 +29,4 @@ jobs:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY_SHADOW }}
         run: |
           export PATH="$HOME/.cargo/bin:$PATH"
-          uv run python3 tools/tools/scripts/vibe_monitor.py --coverage universal --budget-cap 10.0
+          uv run promptops vibe --coverage universal --budget-cap 10.0
