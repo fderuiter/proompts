@@ -19,7 +19,7 @@ repos:
         name: Check Prompts
         entry: uv run python3 tools/tools/scripts/check_prompts.py
         language: system
-        files: ^prompts/
+        files: ^(prompts|workflows)/.*
         pass_filenames: false
 
       - id: update-last-modified
@@ -32,7 +32,7 @@ repos:
         name: Validate Prompt Schema
         entry: uv run python3 tools/tools/scripts/validate_prompt_schema.py
         language: system
-        files: ^prompts/.*\.prompt\.yaml$
+        files: ^(prompts|workflows)/.*
         pass_filenames: false
 
       - id: update-docs-index
