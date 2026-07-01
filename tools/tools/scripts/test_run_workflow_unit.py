@@ -4,7 +4,7 @@ import os
 
 # Add the directory containing run_workflow.py to the system path
 
-from tools.scripts.run_workflow import resolve_value
+from promptops.engine import resolve_value
 
 class TestResolveValue(unittest.TestCase):
 

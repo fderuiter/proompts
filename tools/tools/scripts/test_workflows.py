@@ -10,7 +10,7 @@ errors, unresolved template variables, or missing step references.
 import sys
 import glob
 from pathlib import Path
-from tools.scripts.run_workflow import run_workflow, load_yaml, setup_logging
+from promptops.engine import run as run_workflow, load_yaml, setup_logging
 
 from tools.scripts.validate_prompt_schema import PromptMetadata
 

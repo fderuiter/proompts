@@ -1,7 +1,6 @@
 import json
 import yaml
 from pathlib import Path
-from jinja2.sandbox import SandboxedEnvironment
 from promptops.utils import load_yaml
 from promptops import console
 
@@ -16,39 +15,6 @@ def simulate_prompt(prompt_file: str, data_file: str) -> bool:
     Returns:
         bool: `True` if the prompt and mock data were loaded and all messages were processed; `False` if loading or parsing failed or if the data file is missing.
     """
-    try:
-        content = load_yaml(prompt_file)
-        if not content:
-            import re
-            path_obj = Path(prompt_file)
-            skills_md = path_obj.parent / "skills.md"
-            if skills_md.exists():
-                from promptops.utils import parse_skill_manifest
-                manifest = parse_skill_manifest(skills_md)
-                
-                stem = path_obj.name.replace('.prompt.md', '').replace('.prompt.yml', '')
-                stem_clean = re.sub(r'^\d+_', '', stem).replace('_', ' ').lower()
-                
-                for skill in manifest.get("skills", []):
-                    skill_name_clean = skill["name"].lower().replace('_', ' ')
-                    if stem_clean in skill_name_clean or skill_name_clean in stem_clean or skill["name"].replace(' ', '_').lower() in stem:
-                        content = {
-                            "name": skill["name"],
-                            "description": skill.get("description", ""),
-                            "variables": skill.get("variables", []),
-                            "messages": [{"role": "system", "content": skill.get("instructions", "")}],
-                            "testData": skill.get("testData", [])
-                        }
-                        break
-        
-        if not content:
-            console.error(f"Failed to load prompt: {prompt_file} (Not found in files or manifest)")
-            return False
-            
-    except Exception as e:
-        console.error(f"Failed to load prompt: {e}")
-        return False
-        
     data_path = Path(data_file)
     if not data_path.exists():
         console.error(f"Data file not found: {data_file}")
@@ -63,53 +29,6 @@ def simulate_prompt(prompt_file: str, data_file: str) -> bool:
         console.error(f"Failed to load mock data: {e}")
         return False
         
-    from promptops.utils import PROMPTS_DIR
-    from jinja2 import FileSystemLoader
-    env = SandboxedEnvironment(loader=FileSystemLoader(str(PROMPTS_DIR)))
-    
-    console.step_header(f"Simulating Prompt: {content.get('name', 'Unknown')}")
-    messages = content.get('messages', [])
-    for msg in messages:
-        role = msg.get('role', 'unknown')
-        raw_content = msg.get('content')
-        
-        if raw_content is not None:
-            if isinstance(raw_content, list):
-                content_str = yaml.dump(raw_content, sort_keys=False).strip()
-            else:
-                content_str = str(raw_content)
-                
-            template = env.from_string(content_str)
-            rendered = template.render(**mock_data)
-            console.role_message(role, rendered)
-            
-        tool_calls = msg.get('tool_calls')
-        if tool_calls:
-            # Recursively render templated variables in tool_calls structure
-            def render_structure(obj, env, data):
-                """
-                Recursively renders all string values in a nested structure as Jinja templates using the provided environment and context.
-                
-                Parameters:
-                    obj: The input value to render; may be a string, dict, list, or any other type.
-                    env: A Jinja2 environment used to compile and render string templates.
-                    data: A mapping of context values supplied to template rendering.
-                
-                Returns:
-                    The same structure as `obj` with all strings replaced by their rendered results; dicts and lists are recreated with rendered children, and non-string, non-collection values are returned unchanged.
-                """
-                if isinstance(obj, str):
-                    template = env.from_string(obj)
-                    return template.render(**data)
-                elif isinstance(obj, dict):
-                    return {k: render_structure(v, env, data) for k, v in obj.items()}
-                elif isinstance(obj, list):
-                    return [render_structure(item, env, data) for item in obj]
-                else:
-                    return obj
-
-            rendered_tool_calls = render_structure(tool_calls, env, mock_data)
-            tc_yaml = yaml.dump(rendered_tool_calls, sort_keys=False, default_flow_style=False).strip()
-            console.role_message("tool_call", tc_yaml)
-        
-    return True
+    from promptops.engine import run
+    result = run(prompt_file, mock_data, verbose=True)
+    return result is not None
