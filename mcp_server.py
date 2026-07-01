@@ -17,7 +17,7 @@ from mcp.server.models import InitializationOptions
 from mcp.server.stdio import stdio_server
 import mcp.types as types
 
-from promptops.utils import iter_prompt_files, load_yaml, extract_template_vars, iter_skill_manifests, parse_skill_manifest
+from promptops.utils import iter_prompt_files, iter_workflow_files, load_yaml, extract_template_vars, iter_skill_manifests, parse_skill_manifest, WORKFLOWS_DIR
 from promptops.validation import PromptSchema
 from promptops.simulation import simulate_prompt
 
@@ -117,7 +117,7 @@ async def handle_list_tools() -> list[types.Tool]:
     tools = []
     
     logger.info("Scanning for skill manifests...")
-    from promptops.utils import iter_skill_manifests, parse_skill_manifest
+    from promptops.utils import iter_skill_manifests, parse_skill_manifest, iter_prompt_files, iter_workflow_files, WORKFLOWS_DIR
     for path in iter_skill_manifests(PROMPTS_DIR):
         try:
             manifest = parse_skill_manifest(path)
@@ -134,6 +134,34 @@ async def handle_list_tools() -> list[types.Tool]:
         except Exception as e:
             logger.error(f"Error parsing manifest {path}: {e}")
 
+    logger.info("Scanning for individual prompt files...")
+    for path in iter_prompt_files(PROMPTS_DIR):
+        try:
+            content = load_yaml(path)
+            if not content: continue
+            name = get_tool_name(path, content)
+            tools.append(types.Tool(
+                name=name,
+                description=content.get("description", "Prompt Tool"),
+                inputSchema=build_schema(content)
+            ))
+        except Exception as e:
+            logger.error(f"Error parsing prompt {path}: {e}")
+
+    logger.info("Scanning for workflow files...")
+    for path in iter_workflow_files(WORKFLOWS_DIR):
+        try:
+            content = load_yaml(path)
+            if not content: continue
+            name = get_tool_name(path, content)
+            tools.append(types.Tool(
+                name=name,
+                description=content.get("description", "Workflow Tool"),
+                inputSchema=build_schema(content)
+            ))
+        except Exception as e:
+            logger.error(f"Error parsing workflow {path}: {e}")
+
     logger.info(f"Discovered {len(tools)} tools.")
     return tools
 
@@ -142,6 +170,38 @@ async def handle_call_tool(name: str, arguments: dict | None) -> list[types.Text
     if arguments is None:
         arguments = {}
         
+    from promptops.utils import iter_skill_manifests, parse_skill_manifest, iter_prompt_files, iter_workflow_files, WORKFLOWS_DIR
+    from promptops.engine import simulate_prompt_execution, run_workflow
+
+    for path in iter_prompt_files(PROMPTS_DIR):
+        try:
+            content = load_yaml(path)
+            if content and get_tool_name(path, content) == name:
+                fidelity = {}
+                out = simulate_prompt_execution(content, arguments, prompt_file=str(path), strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
+                return [types.TextContent(type="text", text=f"--- Executing Prompt: {content.get('name')} ---
+
+{out}")]
+        except:
+            continue
+
+    for path in iter_workflow_files(WORKFLOWS_DIR):
+        try:
+            content = load_yaml(path)
+            if content and get_tool_name(path, content) == name:
+                fidelity = {}
+                state = run_workflow(str(path), arguments, verbose=False, strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
+                out = ""
+                if state:
+                    final_output_step_id = content.get('steps', [{}])[-1].get('step_id')
+                    if final_output_step_id and final_output_step_id in state['steps']:
+                        out = state['steps'][final_output_step_id]['output']
+                return [types.TextContent(type="text", text=f"--- Executing Workflow: {content.get('name')} ---
+
+{out}")]
+        except:
+            continue
+
     # Check skill manifests
     for path in iter_skill_manifests(PROMPTS_DIR):
         try:
@@ -152,15 +212,20 @@ async def handle_call_tool(name: str, arguments: dict | None) -> list[types.Text
                 full_name = f"{domain}_{stem}".lower()
 
                 if full_name == name:
-                    from jinja2.sandbox import SandboxedEnvironment
-                    env = SandboxedEnvironment()
-                    instructions = skill["instructions"]
-                    template = env.from_string(instructions)
-                    rendered = template.render(**arguments)
-
+                    content = {
+                        "name": skill["name"],
+                        "description": skill.get("description", ""),
+                        "variables": skill.get("variables", []),
+                        "messages": [{"role": "system", "content": skill.get("instructions", "")}],
+                        "testData": skill.get("testData", [])
+                    }
+                    fidelity = {}
+                    out = simulate_prompt_execution(content, arguments, prompt_file=str(path), strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
                     return [types.TextContent(
                         type="text",
-                        text=f"--- Executing Skill: {skill['name']} ---\n\n{rendered}"
+                        text=f"--- Executing Skill: {skill['name']} ---
+
+{out}"
                     )]
         except:
             continue

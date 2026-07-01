@@ -36,18 +36,6 @@ WORKFLOWS_DIR: Path = ROOT / "workflows"
 OVERVIEW_NAME: str = "overview.md"
 DOMAIN_TAG_PREFIX: str = "domain:"
 
-_jinja_envs: Dict[str, SandboxedEnvironment] = {}
-
-def get_jinja_env(base_dir: Optional[Union[str, Path]] = None) -> SandboxedEnvironment:
-    if base_dir is None:
-        base_dir = PROMPTS_DIR
-    base_dir_str = str(base_dir)
-    if base_dir_str not in _jinja_envs:
-        _jinja_envs[base_dir_str] = SandboxedEnvironment(
-            loader=FileSystemLoader(base_dir_str),
-            undefined=KeepUndefined
-        )
-    return _jinja_envs[base_dir_str]
 
 def load_yaml(path: Union[str, Path]) -> Dict[str, Any]:
     path_obj = Path(path)
@@ -57,7 +45,8 @@ def load_yaml(path: Union[str, Path]) -> Dict[str, Any]:
         # for prompts, or the file's parent for generic files.
         # But tools/scripts/utils.py used PROMPTS_DIR directly for all inheritance:
         # env = _get_jinja_env()  (which hardcodes PROMPTS_DIR)
-        env = get_jinja_env(PROMPTS_DIR)
+        from promptops.engine import get_jinja_env
+        env = get_jinja_env(base_dir=str(PROMPTS_DIR))
         template = env.from_string(text)
         rendered_text = template.render()
         
@@ -193,8 +182,8 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
 
         # Render instructions using jinja to evaluate any macros (like load_yaml does)
         try:
-            from promptops.utils import get_jinja_env, PROMPTS_DIR
-            env = get_jinja_env(PROMPTS_DIR)
+            from promptops.engine import get_jinja_env
+            env = get_jinja_env(base_dir=str(PROMPTS_DIR))
             if 'macros.' in instructions and not '{% import' in instructions:
                 instructions = '{% import "common/macros.j2" as macros %}\n' + instructions
             template = env.from_string(instructions)

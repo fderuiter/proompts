@@ -1,21 +1,11 @@
 import json
 import yaml
 from pathlib import Path
-from jinja2.sandbox import SandboxedEnvironment
 from promptops.utils import load_yaml
 from promptops import console
+from promptops.engine import simulate_prompt_execution
 
-def simulate_prompt(prompt_file: str, data_file: str) -> bool:
-    """
-    Simulate a prompt definition against mock input data, rendering message content and optional tool call arguments as Jinja2 templates and printing the results.
-    
-    Parameters:
-        prompt_file (str): Path to a prompt YAML file containing prompt metadata and a "messages" list.
-        data_file (str): Path to a mock data file (JSON or YAML) used as the template context.
-    
-    Returns:
-        bool: `True` if the prompt and mock data were loaded and all messages were processed; `False` if loading or parsing failed or if the data file is missing.
-    """
+def simulate_prompt(prompt_file: str, data_file: str, chaos_mode: bool = False, strict_mode: bool = False) -> bool:
     try:
         content = load_yaml(prompt_file)
         if not content:
@@ -63,53 +53,18 @@ def simulate_prompt(prompt_file: str, data_file: str) -> bool:
         console.error(f"Failed to load mock data: {e}")
         return False
         
-    from promptops.utils import PROMPTS_DIR
-    from jinja2 import FileSystemLoader
-    env = SandboxedEnvironment(loader=FileSystemLoader(str(PROMPTS_DIR)))
-    
-    console.step_header(f"Simulating Prompt: {content.get('name', 'Unknown')}")
-    messages = content.get('messages', [])
-    for msg in messages:
-        role = msg.get('role', 'unknown')
-        raw_content = msg.get('content')
-        
-        if raw_content is not None:
-            if isinstance(raw_content, list):
-                content_str = yaml.dump(raw_content, sort_keys=False).strip()
-            else:
-                content_str = str(raw_content)
-                
-            template = env.from_string(content_str)
-            rendered = template.render(**mock_data)
-            console.role_message(role, rendered)
-            
-        tool_calls = msg.get('tool_calls')
-        if tool_calls:
-            # Recursively render templated variables in tool_calls structure
-            def render_structure(obj, env, data):
-                """
-                Recursively renders all string values in a nested structure as Jinja templates using the provided environment and context.
-                
-                Parameters:
-                    obj: The input value to render; may be a string, dict, list, or any other type.
-                    env: A Jinja2 environment used to compile and render string templates.
-                    data: A mapping of context values supplied to template rendering.
-                
-                Returns:
-                    The same structure as `obj` with all strings replaced by their rendered results; dicts and lists are recreated with rendered children, and non-string, non-collection values are returned unchanged.
-                """
-                if isinstance(obj, str):
-                    template = env.from_string(obj)
-                    return template.render(**data)
-                elif isinstance(obj, dict):
-                    return {k: render_structure(v, env, data) for k, v in obj.items()}
-                elif isinstance(obj, list):
-                    return [render_structure(item, env, data) for item in obj]
-                else:
-                    return obj
-
-            rendered_tool_calls = render_structure(tool_calls, env, mock_data)
-            tc_yaml = yaml.dump(rendered_tool_calls, sort_keys=False, default_flow_style=False).strip()
-            console.role_message("tool_call", tc_yaml)
-        
-    return True
+    try:
+        fidelity_report = {}
+        output = simulate_prompt_execution(
+            content, 
+            mock_data, 
+            prompt_file=prompt_file, 
+            strict_mode=strict_mode, 
+            chaos_mode=chaos_mode,
+            fidelity_report=fidelity_report
+        )
+        console.info(f"\nFinal Output:\n{output}")
+        return True
+    except Exception as e:
+        console.error(f"Simulation failed: {e}")
+        return False
