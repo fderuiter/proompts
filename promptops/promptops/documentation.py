@@ -2,7 +2,8 @@ import os
 from pathlib import Path
 from dataclasses import dataclass
 from typing import List, Dict, Optional, Any
-from promptops.utils import load_yaml, derive_prompt_category, iter_prompt_files, iter_workflow_files
+from promptops.utils import load_yaml
+from promptops.registry import AssetRegistry
 import re
 
 @dataclass(frozen=True)
@@ -13,16 +14,6 @@ class DocItem:
     item_type: str
     description: str = ""
     graph_mermaid: Optional[str] = None
-
-class FileParser:
-    RE_NUMERIC_PREFIX = re.compile(r'^\d+_')
-    @staticmethod
-    def derive_title(path: Path, data: Dict[str, Any]) -> str:
-        if name := data.get('name') or data.get('title'):
-            return str(name).strip()
-        stem = path.stem.replace('.workflow', '')
-        clean_name = FileParser.RE_NUMERIC_PREFIX.sub('', stem)
-        return clean_name.replace('_', ' ').title()
 
 class WorkflowGrapher:
     RE_STEPS = re.compile(r'steps\.(\w+)\.output')
@@ -69,44 +60,48 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
     
     process_skills(prompts_path, docs_path)
     
-    for path in iter_prompt_files(str(prompts_path)):
-        data = load_yaml(str(path))
-        title = FileParser.derive_title(path, data)
+    registry_service = AssetRegistry(prompts_dir)
+    assets = registry_service.discover_assets()
+    
+    for data in assets:
+        path = Path(data['file_path'])
+        title = data['name']
         desc = data.get('description', 'No description provided.')
+        item_type = data['type']
+        category = data['category']
         
-        rel_to_prompts = path.relative_to(prompts_path)
-        output_file = out_prompts_dir / rel_to_prompts.with_suffix(".md")
-        output_file.parent.mkdir(parents=True, exist_ok=True)
-        
-        if repo_url:
-            github_url = f"{repo_url}/blob/{branch}/{path.relative_to(prompts_path.parent)}"
-            link_md = f"[View Source YAML]({github_url})"
-        else:
-            link_md = ""
+        if item_type == 'prompt':
+            rel_to_prompts = path.relative_to(prompts_path)
+            output_file = out_prompts_dir / rel_to_prompts.with_suffix(".md")
+            output_file.parent.mkdir(parents=True, exist_ok=True)
             
-        try:
-            raw_content = path.read_text(encoding='utf-8')
-        except Exception as e:
-            raw_content = f"# Error reading source file: {e}"
+            if repo_url:
+                github_url = f"{repo_url}/blob/{branch}/{path.relative_to(prompts_path.parent)}"
+                link_md = f"[View Source YAML]({github_url})"
+            else:
+                link_md = ""
+                
+            try:
+                raw_content = path.read_text(encoding='utf-8')
+            except Exception as e:
+                raw_content = f"# Error reading source file: {e}"
+                
+            content = f"---\ntitle: {title}\n---\n\n# {title}\n\n{desc}\n\n{link_md}\n\n```yaml\n{raw_content}\n```\n"
+            output_file.write_text(content, encoding='utf-8')
             
-        content = f"---\ntitle: {title}\n---\n\n# {title}\n\n{desc}\n\n{link_md}\n\n```yaml\n{raw_content}\n```\n"
-        output_file.write_text(content, encoding='utf-8')
-        
-        items.append(DocItem(
-            title=title,
-            path=output_file,
-            category=derive_prompt_category(path, prompts_path, data),
-            item_type='prompt'
-        ))
-        
-    workflows_path = prompts_path.parent / "workflows"
-    if workflows_path.exists():
-        for path in iter_workflow_files(str(workflows_path)):
-            data = load_yaml(str(path))
-            title = FileParser.derive_title(path, data)
-            desc = data.get('description', 'No description provided.')
+            items.append(DocItem(
+                title=title
+                path=output_file
+                category=category
+                item_type='prompt'
+            ))
+            
+        elif item_type == 'workflow':
+            workflows_path = prompts_path.parent / "workflows"
+            if not workflows_path.exists():
+                continue
+                
             mermaid = WorkflowGrapher.generate(data)
-            
             filename = path.stem.replace('.workflow', '') + ".md"
             output_file = out_workflows_dir / filename
             output_file.parent.mkdir(parents=True, exist_ok=True)
@@ -118,20 +113,13 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
                 link_md = ""
                 
             mermaid_block = f"## Workflow Diagram\n\n```mermaid\n{mermaid}\n```\n" if mermaid else ""
-            
             content = f"---\ntitle: {title}\n---\n\n# {title}\n\n{desc}\n\n{mermaid_block}\n{link_md}\n"
             output_file.write_text(content, encoding='utf-8')
             
-            try:
-                rel = path.relative_to(workflows_path)
-                category = rel.parts[0].replace('_', ' ').title() if len(rel.parts) > 1 else "Uncategorized"
-            except:
-                category = "Uncategorized"
-                
             items.append(DocItem(
-                title=title,
-                path=output_file,
-                category=category,
+                title=title
+                path=output_file
+                category=category
                 item_type='workflow'
             ))
         

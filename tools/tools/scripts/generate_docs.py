@@ -229,15 +229,9 @@ class DocumentationGenerator:
                 name = path.name.replace(".prompt.md", "")
                 
             original_name = name
-            name = re.sub(r'[^a-zA-Z0-9_-]', '_', name)
-            name = re.sub(r'_+', '_', name)
-            name = name.strip('_')
-            
-            hashed = False
-            if len(name) > 64:
-                h = hashlib.md5(str(path).encode()).hexdigest()[:6]
-                name = name[:57] + "_" + h
-                hashed = True
+            from promptops.registry import AssetRegistry
+            name = AssetRegistry.generate_id(name)
+            hashed = len(name) > 64
                 
             tool_name = name
             

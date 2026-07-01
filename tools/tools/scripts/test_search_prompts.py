@@ -9,6 +9,7 @@ from tools.scripts.search_prompts import search
 def create_valid_mock_prompt(name, description):
     return {
         'name': name,
+        'type': 'prompt',
         'description': description,
         'version': '0.1.0',
         'metadata': {'domain': 'test', 'complexity': 'low', 'tags': [], 'requires_context': False},

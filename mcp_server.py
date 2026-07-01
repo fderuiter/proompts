@@ -17,8 +17,9 @@ from mcp.server.models import InitializationOptions
 from mcp.server.stdio import stdio_server
 import mcp.types as types
 
-from promptops.utils import iter_prompt_files, iter_workflow_files, load_yaml, extract_template_vars, iter_skill_manifests, parse_skill_manifest, WORKFLOWS_DIR
+from promptops.utils import load_yaml, extract_template_vars, iter_skill_manifests, parse_skill_manifest, WORKFLOWS_DIR
 from promptops.validation import PromptSchema
+from promptops.registry import AssetRegistry
 from promptops.simulation import simulate_prompt
 
 # Setup basic logging to stderr
@@ -33,29 +34,13 @@ main_loop = None
 
 class PromptDirHandler(FileSystemEventHandler):
     def on_any_event(self, event):
-        if event.src_path.endswith('.prompt.yaml') or event.src_path.endswith('skills.md'):
+        if event.src_path.endswith('.prompt.yaml') or event.src_path.endswith('skills.md') or event.src_path.endswith('.workflow.yaml') or event.src_path.endswith('.workflow.yml'):
             logger.info(f"File change detected: {event.src_path}")
             if active_session and main_loop:
                 asyncio.run_coroutine_threadsafe(
-                    active_session.send_tool_list_changed(),
+                    active_session.send_tool_list_changed()
                     main_loop
                 )
-
-def get_tool_name(path: Path, content: dict) -> str:
-    name = content.get('name')
-    if not name:
-        name = path.name.replace(".prompt.yaml", "")
-        
-    name = re.sub(r'[^a-zA-Z0-9_-]', '_', name)
-    name = re.sub(r'_+', '_', name)
-    name = name.strip('_')
-    
-    if len(name) > 64:
-        import hashlib
-        h = hashlib.md5(str(path).encode()).hexdigest()[:6]
-        name = name[:57] + "_" + h
-        
-    return name
 
 def build_schema(prompt_content_or_vars):
     if isinstance(prompt_content_or_vars, list):
@@ -74,21 +59,21 @@ def build_schema(prompt_content_or_vars):
                     if not name:
                         continue
                     properties[name] = {
-                        "type": "string",
+                        "type": "string"
                         "description": var.get('description', f"The {name} input.")
                     }
                     if var.get('required', True):
                         required.append(name)
                 elif isinstance(var, str):
                     properties[var] = {
-                        "type": "string",
+                        "type": "string"
                         "description": f"The {var} input."
                     }
                     required.append(var)
         elif isinstance(variables, dict):
             for name, desc in variables.items():
                 properties[name] = {
-                    "type": "string",
+                    "type": "string"
                     "description": str(desc) if desc else f"The {name} input."
                 }
                 required.append(name)
@@ -96,14 +81,14 @@ def build_schema(prompt_content_or_vars):
         extracted_vars = extract_template_vars(prompt_content_or_vars)
         for var in extracted_vars:
             properties[var] = {
-                "type": "string",
+                "type": "string"
                 "description": f"The {var} input."
             }
             required.append(var)
             
     return {
-        "type": "object",
-        "properties": properties,
+        "type": "object"
+        "properties": properties
         "required": required
     }
 
@@ -117,7 +102,7 @@ async def handle_list_tools() -> list[types.Tool]:
     tools = []
     
     logger.info("Scanning for skill manifests...")
-    from promptops.utils import iter_skill_manifests, parse_skill_manifest, iter_prompt_files, iter_workflow_files, WORKFLOWS_DIR
+    from promptops.utils import iter_skill_manifests, parse_skill_manifest, WORKFLOWS_DIR
     for path in iter_skill_manifests(PROMPTS_DIR):
         try:
             manifest = parse_skill_manifest(path)
@@ -127,40 +112,41 @@ async def handle_list_tools() -> list[types.Tool]:
                 full_name = f"{domain}_{stem}".lower()
 
                 tools.append(types.Tool(
-                    name=full_name,
-                    description=skill.get("description", "Agent Skill"),
+                    name=full_name
+                    description=skill.get("description", "Agent Skill")
                     inputSchema=build_schema(skill.get("variables", []))
                 ))
         except Exception as e:
             logger.error(f"Error parsing manifest {path}: {e}")
 
-    logger.info("Scanning for individual prompt files...")
-    for path in iter_prompt_files(PROMPTS_DIR):
+    logger.info("Scanning for individual prompt files and workflow files using AssetRegistry...")
+    
+    # Use central registry to get all unified assets
+    registry_prompts = AssetRegistry(PROMPTS_DIR)
+    for asset in registry_prompts.discover_assets():
         try:
-            content = load_yaml(path)
-            if not content: continue
-            name = get_tool_name(path, content)
+            name = asset['id']
+            desc_default = "Prompt Tool" if asset['type'] == 'prompt' else "Workflow Tool"
             tools.append(types.Tool(
-                name=name,
-                description=content.get("description", "Prompt Tool"),
-                inputSchema=build_schema(content)
+                name=name
+                description=asset.get("description", desc_default)
+                inputSchema=build_schema(asset)
             ))
         except Exception as e:
-            logger.error(f"Error parsing prompt {path}: {e}")
-
-    logger.info("Scanning for workflow files...")
-    for path in iter_workflow_files(WORKFLOWS_DIR):
+            logger.error(f"Error parsing asset {asset['file_path']}: {e}")
+            
+    registry_workflows = AssetRegistry(WORKFLOWS_DIR)
+    for asset in registry_workflows.discover_assets():
         try:
-            content = load_yaml(path)
-            if not content: continue
-            name = get_tool_name(path, content)
+            name = asset['id']
+            desc_default = "Prompt Tool" if asset['type'] == 'prompt' else "Workflow Tool"
             tools.append(types.Tool(
-                name=name,
-                description=content.get("description", "Workflow Tool"),
-                inputSchema=build_schema(content)
+                name=name
+                description=asset.get("description", desc_default)
+                inputSchema=build_schema(asset)
             ))
         except Exception as e:
-            logger.error(f"Error parsing workflow {path}: {e}")
+            logger.error(f"Error parsing asset {asset['file_path']}: {e}")
 
     logger.info(f"Discovered {len(tools)} tools.")
     return tools
@@ -170,33 +156,42 @@ async def handle_call_tool(name: str, arguments: dict | None) -> list[types.Text
     if arguments is None:
         arguments = {}
         
-    from promptops.utils import iter_skill_manifests, parse_skill_manifest, iter_prompt_files, iter_workflow_files, WORKFLOWS_DIR
+    from promptops.utils import iter_skill_manifests, parse_skill_manifest, WORKFLOWS_DIR
     from promptops.engine import simulate_prompt_execution, run_workflow
 
-    for path in iter_prompt_files(PROMPTS_DIR):
-        try:
-            content = load_yaml(path)
-            if content and get_tool_name(path, content) == name:
+    registry_prompts = AssetRegistry(PROMPTS_DIR)
+    for asset in registry_prompts.discover_assets():
+        if asset['id'] == name:
+            if asset['type'] == 'prompt':
                 fidelity = {}
-                out = simulate_prompt_execution(content, arguments, prompt_file=str(path), strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
-                return [types.TextContent(type="text", text=f"--- Executing Prompt: {content.get('name')} ---\n\n{out}")]
-        except:
-            continue
-
-    for path in iter_workflow_files(WORKFLOWS_DIR):
-        try:
-            content = load_yaml(path)
-            if content and get_tool_name(path, content) == name:
+                out = simulate_prompt_execution(asset, arguments, prompt_file=str(asset['file_path']), strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
+                return [types.TextContent(type="text", text=f"--- Executing Prompt: {asset.get('name')} ---\n\n{out}")]
+            elif asset['type'] == 'workflow':
                 fidelity = {}
-                state = run_workflow(str(path), arguments, verbose=False, strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
+                state = run_workflow(str(asset['file_path']), arguments, verbose=False, strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
                 out = ""
                 if state:
-                    final_output_step_id = content.get('steps', [{}])[-1].get('step_id')
+                    final_output_step_id = asset.get('steps', [{}])[-1].get('step_id')
                     if final_output_step_id and final_output_step_id in state['steps']:
                         out = state['steps'][final_output_step_id]['output']
-                return [types.TextContent(type="text", text=f"--- Executing Workflow: {content.get('name')} ---\n\n{out}")]
-        except:
-            continue
+                return [types.TextContent(type="text", text=f"--- Executing Workflow: {asset.get('name')} ---\n\n{out}")]
+                
+    registry_workflows = AssetRegistry(WORKFLOWS_DIR)
+    for asset in registry_workflows.discover_assets():
+        if asset['id'] == name:
+            if asset['type'] == 'prompt':
+                fidelity = {}
+                out = simulate_prompt_execution(asset, arguments, prompt_file=str(asset['file_path']), strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
+                return [types.TextContent(type="text", text=f"--- Executing Prompt: {asset.get('name')} ---\n\n{out}")]
+            elif asset['type'] == 'workflow':
+                fidelity = {}
+                state = run_workflow(str(asset['file_path']), arguments, verbose=False, strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
+                out = ""
+                if state:
+                    final_output_step_id = asset.get('steps', [{}])[-1].get('step_id')
+                    if final_output_step_id and final_output_step_id in state['steps']:
+                        out = state['steps'][final_output_step_id]['output']
+                return [types.TextContent(type="text", text=f"--- Executing Workflow: {asset.get('name')} ---\n\n{out}")]
 
     # Check skill manifests
     for path in iter_skill_manifests(PROMPTS_DIR):
@@ -209,16 +204,16 @@ async def handle_call_tool(name: str, arguments: dict | None) -> list[types.Text
 
                 if full_name == name:
                     content = {
-                        "name": skill["name"],
-                        "description": skill.get("description", ""),
-                        "variables": skill.get("variables", []),
-                        "messages": [{"role": "system", "content": skill.get("instructions", "")}],
+                        "name": skill["name"]
+                        "description": skill.get("description", "")
+                        "variables": skill.get("variables", [])
+                        "messages": [{"role": "system", "content": skill.get("instructions", "")}]
                         "testData": skill.get("testData", [])
                     }
                     fidelity = {}
                     out = simulate_prompt_execution(content, arguments, prompt_file=str(path), strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
                     return [types.TextContent(
-                        type="text",
+                        type="text"
                         text=f"--- Executing Skill: {skill['name']} ---\n\n{out}"
                     )]
         except:
@@ -238,19 +233,19 @@ async def run():
 
     async with stdio_server() as (read_stream, write_stream):
         await server.run(
-            read_stream,
-            write_stream,
+            read_stream
+            write_stream
             InitializationOptions(
-                server_name="DynamicProompts",
-                server_version="0.1.0",
+                server_name="DynamicProompts"
+                server_version="0.1.0"
                 capabilities=server.get_capabilities(
                     notification_options=NotificationOptions(
-                        prompts_changed=True,
-                        resources_changed=True,
+                        prompts_changed=True
+                        resources_changed=True
                         tools_changed=True
-                    ),
-                    experimental_capabilities={},
-                ),
+                    )
+                    experimental_capabilities={}
+                )
             )
         )
     

@@ -13,13 +13,8 @@ def get_tool_name(path: Path, content: dict) -> Tuple[str, str]:
         name = path.name.replace(".prompt.md", "")
         
     original_name = name
-    name = re.sub(r'[^a-zA-Z0-9_-]', '_', name)
-    name = re.sub(r'_+', '_', name)
-    name = name.strip('_')
-    
-    if len(name) > 64:
-        h = hashlib.md5(str(path).encode()).hexdigest()[:6]
-        name = name[:57] + "_" + h
+    from promptops.registry import AssetRegistry
+    name = AssetRegistry.generate_id(name)
         
     return original_name, name
 
