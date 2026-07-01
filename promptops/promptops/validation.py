@@ -7,6 +7,7 @@ from typing import Any, List, Optional, Dict, Union
 
 from pydantic import BaseModel, ValidationError, field_validator, model_validator, Field
 from promptops.utils import load_yaml, iter_prompt_files, iter_workflow_files
+from promptops.engine import run_workflow
 from promptops import console
 
 VAR_PATTERN = re.compile(r'\{\{([^}]+)\}\}')
@@ -119,7 +120,7 @@ class PromptSchema(BaseModel):
         
         This validator:
         - Checks the Jinja2 syntax of each message content. Raises ValueError if the syntax is invalid.
-        - Extracts template variables from each message by scanning `msg.content` (uses the string directly, joins list elements with spaces when `content` is a list, or falls back to `str(msg.tool_calls)` when `content` is empty and `tool_calls` is present).
+        - Extracts template variables from each message using Jinja2 AST parsing.
         - Ensures each variable name matches the pattern `^[a-zA-Z0-9_.-]+$`; raises ValueError if any invalid variable names are found.
         - Prints a warning for variables declared in `variables` but not used in any message.
         - Raises ValueError if any variables are used in messages but not declared in `variables`.
@@ -142,16 +143,16 @@ class PromptSchema(BaseModel):
                 content_str = str(msg.tool_calls)
 
             try:
-                env.parse(content_str)
+                ast = env.parse(content_str)
+                vars_in_text = jinja2.meta.find_undeclared_variables(ast)
+                found_vars.update(vars_in_text)
             except jinja2.exceptions.TemplateSyntaxError as e:
                 raise ValueError(f"Jinja2 syntax error: {e.message} at line {e.lineno}")
 
-            for match in VAR_PATTERN.findall(content_str):
-                valid_match = re.match(r'^\s*([a-zA-Z0-9_.-]+)\s*$', match)
-                if valid_match:
-                    found_vars.add(valid_match.group(1))
-                else:
-                    invalid_vars.add(match)
+            for var in vars_in_text:
+                valid_match = re.match(r'^[a-zA-Z0-9_.-]+$', var)
+                if not valid_match:
+                    invalid_vars.add(var)
 
         if invalid_vars:
             raise ValueError(f"Migration Required: Variables contain invalid characters: {invalid_vars}")
@@ -167,6 +168,26 @@ class PromptSchema(BaseModel):
 
         return self
 
+    @model_validator(mode='after')
+    def check_test_data_types(self):
+        """Warn if testData contains non-string types that will be coerced to strings."""
+        if not self.testData:
+            return self
+            
+        for case in self.testData:
+            if isinstance(case, dict):
+                # Check inputs
+                inputs = case.get('inputs', {})
+                if isinstance(inputs, dict):
+                    for k, v in inputs.items():
+                        if not isinstance(v, str):
+                            console.warn(f"Test data input '{k}' is of type {type(v).__name__}. The runtime engine will cast this to a string.")
+                
+                # Check expected
+                expected = case.get('expected')
+                if expected is not None and not isinstance(expected, str):
+                    console.warn(f"Test data expected output is of type {type(expected).__name__}. The runtime engine will cast this to a string.")
+        return self
 
 class WorkflowInput(BaseModel):
     name: str = Field(...)
@@ -184,7 +205,7 @@ class WorkflowStep(BaseModel):
 
 class WorkflowMetadata(BaseModel):
     domain: str = Field(...)
-    topic: Optional[str] = Field(None)
+    topic: str = Field(...)
 
 class WorkflowSchema(BaseModel):
     name: str = Field(...)
@@ -266,22 +287,75 @@ def analyze_workflow_dependencies(workflow_file: str, workflow_data: dict, root_
     # Check Variable Contract
     for step in wf.steps:
         prompt_path = os.path.join(root_dir, step.prompt_file)
-        if not os.path.exists(prompt_path):
-            issues.append(f"Step '{step.step_id}' references missing prompt file: {step.prompt_file}")
-            continue
+        prompt_content = None
+        
+        if os.path.exists(prompt_path):
+            prompt_content = load_yaml(prompt_path)
             
-        prompt_content = load_yaml(prompt_path)
+        required_vars = set()
+        found_valid = False
+            
         if not prompt_content:
-            issues.append(f"Failed to load prompt file: {step.prompt_file}")
-            continue
-            
-        try:
-            prompt_schema = PromptSchema(**prompt_content)
-        except ValidationError:
-            issues.append(f"Step '{step.step_id}' references invalid prompt file: {step.prompt_file}")
-            continue
-            
-        required_vars = {v.name for v in prompt_schema.variables if v.required}
+            path_obj = Path(prompt_path)
+            skills_md = path_obj.parent / "skills.md"
+            if skills_md.exists():
+                from promptops.utils import parse_skill_manifest
+                manifest = parse_skill_manifest(skills_md)
+                
+                def get_words(text):
+                    words = set()
+                    for w in re.findall(r'[a-z]+|[0-9]+', text.lower()):
+                        if w.isdigit():
+                            words.add(str(int(w)))
+                        else:
+                            words.add(w)
+                    return words
+
+                stem = path_obj.name.replace('.prompt.md', '').replace('.prompt.yml', '')
+                stem_clean = re.sub(r'^\d+_', '', stem).lower()
+                stem_words = get_words(stem_clean)
+                
+                best_match = None
+                best_score = 0
+                best_skill_len = float('inf')
+                skills_list = manifest.get("skills", [])
+                for skill in skills_list:
+                    skill_name_clean = skill["name"].lower()
+                    skill_words = get_words(skill_name_clean)
+                    
+                    score = len(stem_words & skill_words)
+                    if score > best_score or (score > 0 and score == best_score and len(skill_words) < best_skill_len):
+                        best_score = score
+                        best_match = skill
+                        best_skill_len = len(skill_words)
+                
+                if not best_match or best_score == 0:
+                    m = re.match(r'^(\d+)_', stem)
+                    if m:
+                        idx = int(m.group(1)) - 1
+                        if 0 <= idx < len(skills_list):
+                            best_match = skills_list[idx]
+                            best_score = 1
+                
+                if best_match and best_score > 0:
+                    found_valid = True
+                    for v in best_match.get("variables", []):
+                        if isinstance(v, str):
+                            required_vars.add(v)
+                        elif isinstance(v, dict):
+                            if v.get("required", True):
+                                required_vars.add(v.get("name", "unknown"))
+
+            if not found_valid:
+                issues.append(f"Step '{step.step_id}' references missing prompt file or skill: {step.prompt_file}")
+                continue
+        else:
+            try:
+                prompt_schema = PromptSchema(**prompt_content)
+                required_vars = {v.name for v in prompt_schema.variables if v.required}
+            except ValidationError:
+                issues.append(f"Step '{step.step_id}' references invalid prompt file: {step.prompt_file}")
+                continue
         
         def flatten_keys(d, parent_key=''):
             items = []
@@ -306,8 +380,29 @@ def validate_prompts(directory: str, strict: bool = False) -> bool:
     ok = True
     seen_names: Dict[str, str] = {}
     dir_path = os.environ.get('PROMPTOPS_REGISTRY', directory)
+    dirs_to_check = set()
     
+    NAMING_RULES = {
+        "meta": re.compile(r"^L\d+_.*\.prompt\.(ya?ml|md)$", re.IGNORECASE),
+    }
+
     for file_path in iter_prompt_files(dir_path):
+        
+        # Collect directory to check hygiene later
+        path = file_path.parent
+        base_path = Path(dir_path).resolve()
+        while path != base_path and base_path in path.parents:
+            dirs_to_check.add(path)
+            path = path.parent
+        # Include if file is directly in dir_path
+        if file_path.parent == base_path:
+            dirs_to_check.add(base_path)
+
+        if file_path.parent.name in NAMING_RULES and not file_path.name.endswith(".workflow.yaml") and not file_path.name.endswith(".workflow.yml"):
+            if not NAMING_RULES[file_path.parent.name].match(file_path.name):
+                console.error(f"{file_path} does not match required pattern for {file_path.parent.name}")
+                ok = False
+
         content = load_yaml(str(file_path))
         if not content:
             ok = False
@@ -344,6 +439,20 @@ def validate_prompts(directory: str, strict: bool = False) -> bool:
 
     # Validate Workflows
     for file_path in iter_workflow_files(dir_path):
+        # Collect directory to check hygiene later
+        path = file_path.parent
+        base_path = Path(dir_path).resolve()
+        while path != base_path and base_path in path.parents:
+            dirs_to_check.add(path)
+            path = path.parent
+        if file_path.parent == base_path:
+            dirs_to_check.add(base_path)
+
+        if file_path.parent.name in NAMING_RULES and not file_path.name.endswith(".workflow.yaml") and not file_path.name.endswith(".workflow.yml"):
+            if not NAMING_RULES[file_path.parent.name].match(file_path.name):
+                console.error(f"{file_path} does not match required pattern for {file_path.parent.name}")
+                ok = False
+
         content = load_yaml(str(file_path))
         if not content:
             ok = False
@@ -355,6 +464,50 @@ def validate_prompts(directory: str, strict: bool = False) -> bool:
             for issue in issues:
                 console.error(f"  - {issue}")
             ok = False
+
+        if strict:
+            test_data = content.get('testData', [])
+            if test_data:
+                for i, test_case in enumerate(test_data):
+                    inputs = test_case.get('inputs', test_case.get('vars', {}))
+                    try:
+                        run_workflow(str(file_path), inputs, verbose=False, strict_mode=True)
+                    except Exception as e:
+                        console.error(f"Simulation failed on {file_path} scenario {i+1}: {e}")
+                        ok = False
+                        break
+            else:
+                try:
+                    run_workflow(str(file_path), {}, verbose=False, strict_mode=True)
+                except Exception as e:
+                    console.error(f"Simulation failed on {file_path}: {e}")
+                    ok = False
+
+    # Check directory hygiene
+    for directory in dirs_to_check:
+        if not (directory / "overview.md").exists():
+            console.error(f"Missing overview.md in {directory}")
+            ok = False
+            
+        has_manifest = (directory / "skills.md").exists()
+        for file in directory.iterdir():
+            if not file.is_file() or file.name.startswith('.'):
+                continue
+            name = file.name
+            lower_name = name.lower()
+            if lower_name in {"overview.md", "readme.md", "skills.md"} or lower_name.endswith(".workflow.md"):
+                continue
+
+            is_prompt = lower_name.endswith(".prompt.md") or lower_name.endswith(".prompt.yml") or lower_name.endswith(".prompt.yaml")
+            is_workflow = lower_name.endswith(".workflow.yaml") or lower_name.endswith(".workflow.yml")
+
+            if has_manifest and is_prompt:
+                console.error(f"Error: {file} is redundant because a skills.md manifest exists in {directory}")
+                ok = False
+
+            if not (is_prompt or is_workflow):
+                console.error(f"{file} is not a recognised prompt or workflow file")
+                ok = False
 
     return ok
 
