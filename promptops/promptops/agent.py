@@ -6,10 +6,9 @@ from pathlib import Path
 from typing import Tuple, List, Dict, Any
 
 from promptops.utils import iter_prompt_files, load_yaml, iter_skill_manifests, parse_skill_manifest
-from promptops.resolver import get_tool_name
+from promptops.resolver import get_tool_name, resolve_skill_from_path
 
 def get_tools_info(prompts_dir: Path) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
-    manifested_tool_stems = set()
     manifests = []
     
     for path in iter_skill_manifests(str(prompts_dir)):
@@ -17,9 +16,6 @@ def get_tools_info(prompts_dir: Path) -> Tuple[List[Dict[str, Any]], List[Dict[s
             manifest = parse_skill_manifest(path)
             domain = manifest["metadata"].get("domain") or path.parent.name
             manifests.append({"path": str(path), "domain": domain, "skills": manifest["skills"]})
-            for skill in manifest["skills"]:
-                stem = re.sub(r'[^a-zA-Z0-9_-]', '_', skill["name"]).lower().strip('_')
-                manifested_tool_stems.add(stem)
         except Exception:
             pass
 
@@ -34,9 +30,16 @@ def get_tools_info(prompts_dir: Path) -> Tuple[List[Dict[str, Any]], List[Dict[s
         
         overridden = False
         overriding_manifest = None
-        if tool_name.lower() in manifested_tool_stems and (path.parent / "skills.md").exists():
-            overridden = True
-            overriding_manifest = str(path.parent / "skills.md")
+        skills_md_path = path.parent / "skills.md"
+        if skills_md_path.exists():
+            try:
+                manifest = parse_skill_manifest(skills_md_path)
+                match = resolve_skill_from_path(path, manifest.get("skills", []))
+                if match:
+                    overridden = True
+                    overriding_manifest = str(skills_md_path)
+            except Exception:
+                pass
             
         tools_info.append({
             "path": str(path),

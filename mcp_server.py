@@ -109,8 +109,7 @@ async def handle_list_tools() -> list[types.Tool]:
             manifest = parse_skill_manifest(path)
             domain = manifest["metadata"].get("domain") or path.parent.name
             for skill in manifest["skills"]:
-                stem = re.sub(r'[^a-zA-Z0-9_-]', '_', skill["name"]).lower().strip('_')
-                full_name = f"{domain}_{stem}".lower()
+                full_name = get_tool_name_mcp(path, skill)
 
                 tools.append(types.Tool(
                     name=full_name,
@@ -190,8 +189,7 @@ async def handle_call_tool(name: str, arguments: dict | None) -> list[types.Text
             manifest = parse_skill_manifest(path)
             domain = manifest["metadata"].get("domain") or path.parent.name
             for skill in manifest["skills"]:
-                stem = re.sub(r'[^a-zA-Z0-9_-]', '_', skill["name"]).lower().strip('_')
-                full_name = f"{domain}_{stem}".lower()
+                full_name = get_tool_name_mcp(path, skill)
 
                 if full_name == name:
                     content = {
