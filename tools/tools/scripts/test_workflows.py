@@ -14,7 +14,7 @@ from promptops.engine import run_workflow
 from promptops.utils import load_yaml
 import logging
 
-from tools.scripts.validate_prompt_schema import PromptMetadata
+from promptops.validation import PromptMetadata
 
 def validate_workflow_metadata(wf: Path, data: dict):
     if 'metadata' not in data:

@@ -519,6 +519,14 @@ title: {title}
             if prompt_ref:
                 # Resolve relative path from workflow docs page to prompt docs page
                 full_prompt_path = (self.root / prompt_ref).resolve()
+                if not full_prompt_path.exists():
+                    # Fallback to skills.md in that directory
+                    skills_md = full_prompt_path.parent / "skills.md"
+                    if skills_md.exists():
+                        rel_skills_md = os.path.relpath(skills_md, output_path.parent)
+                        prompts_used.append(f"[{full_prompt_path.stem}]({rel_skills_md})")
+                        continue
+
                 try:
                     rel_to_prompts = full_prompt_path.relative_to(self.root / CONFIG['dirs']['prompts'])
                     prompt_doc_path = self.root / CONFIG['dirs']['docs'] / "prompts" / rel_to_prompts.with_suffix(".md")

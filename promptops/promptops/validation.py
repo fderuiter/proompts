@@ -286,7 +286,8 @@ def analyze_workflow_dependencies(workflow_file: str, workflow_data: dict, root_
 
     # Check Variable Contract
     for step in wf.steps:
-        prompt_path = os.path.join(root_dir, step.prompt_file)
+        from promptops.utils import ROOT
+        prompt_path = os.path.join(str(ROOT), step.prompt_file)
         prompt_content = None
         
         if os.path.exists(prompt_path):

@@ -50,31 +50,38 @@ def load_yaml(path: Union[str, Path]) -> Dict[str, Any]:
         template = env.from_string(text)
         rendered_text = template.render()
         
-        if rendered_text.startswith("---"):
-            parts = rendered_text.split("---", 2)
-            if len(parts) >= 3:
-                data = yaml.safe_load(parts[1]) or {}
-                content = parts[2]
-                
-                messages = data.get("messages", [])
-                blocks = re.split(r'^##\s+(.*)$', content, flags=re.MULTILINE)
-                for i in range(1, len(blocks), 2):
-                    header = blocks[i].strip()
-                    body = blocks[i+1].strip()
-                    if not body:
-                        continue
-                        
-                    role = header.lower()
-                    if role == 'purpose':
-                        role = 'system'
-                    elif role == 'instructions':
-                        role = 'user'
-                        
-                    messages.append({"role": role, "content": body})
-                data["messages"] = messages
-                return data
-                
-        return yaml.safe_load(rendered_text) or {}
+        if rendered_text is None:
+            rendered_text = ""
+            
+        if isinstance(rendered_text, str):
+            if rendered_text.startswith("---"):
+                parts = rendered_text.split("---", 2)
+                if len(parts) >= 3:
+                    data = yaml.safe_load(parts[1]) or {}
+                    content = parts[2]
+                    
+                    messages = data.get("messages", [])
+                    blocks = re.split(r'^##\s+(.*)$', content, flags=re.MULTILINE)
+                    for i in range(1, len(blocks), 2):
+                        header = blocks[i].strip()
+                        body = blocks[i+1].strip()
+                        if not body:
+                            continue
+                            
+                        role = header.lower()
+                        if role == 'purpose':
+                            role = 'system'
+                        elif role == 'instructions':
+                            role = 'user'
+                            
+                        messages.append({"role": role, "content": body})
+                    data["messages"] = messages
+                    return data
+                    
+            return yaml.safe_load(rendered_text) or {}
+        elif isinstance(rendered_text, dict):
+            return rendered_text
+        return {}
     except Exception as e:
         print(f"Error reading {path}: {e}")
         return {}
@@ -191,6 +198,20 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
         except Exception as e:
             pass
 
+        # Split instructions into messages
+        messages = []
+        import re
+        blocks = re.split(r'^\[(system|user|assistant|tool_call|tool_result|tool)\]\n', instructions, flags=re.MULTILINE)
+        if len(blocks) > 1:
+            for i in range(1, len(blocks), 2):
+                role = blocks[i].lower()
+                content = blocks[i+1].strip()
+                if content:
+                    messages.append({"role": role, "content": content})
+        else:
+            if instructions.strip():
+                messages.append({"role": "system", "content": instructions.strip()})
+
         # Extract description
         desc_match = re.search(r'### Description\n(.*?)(?=\n### |$)', body, re.DOTALL)
         description = desc_match.group(1).strip() if desc_match else ""
@@ -216,6 +237,7 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
             "name": name,
             "description": description,
             "variables": vars_data,
+            "messages": messages,
             "instructions": instructions,
             "testData": test_data,
             "path": path
