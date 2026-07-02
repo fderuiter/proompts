@@ -130,6 +130,10 @@ def run_evaluators(output_text: str, prompt_evaluators: list) -> str:
                 output_text = re.sub(pattern, "[REDACTED]", output_text)
             elif action == "flag":
                 logger.warning(f"FLAGGED: Output violated evaluator {evaluator.get('name')}")
+            elif action == "self-heal":
+                logger.info(f"Evaluator '{evaluator.get('name')}' failed. Initiating self-healing.")
+                from promptops import console
+                output_text = console.ask_input(f"Evaluator '{evaluator.get('name')}' failed. Please provide a correction for the output: ")
     
     return output_text
 

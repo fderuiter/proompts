@@ -1,9 +1,22 @@
 import json
 import sys
 import os
+from typing import Optional, Callable
 
 _no_color = False
 _json_mode = False
+
+class ConsoleInterface:
+    def print(self, msg: str):
+        print(msg)
+    def ask_input(self, prompt: str) -> str:
+        return input(prompt)
+
+_current_console = ConsoleInterface()
+
+def set_console(console: ConsoleInterface):
+    global _current_console
+    _current_console = console
 
 def set_no_color(value: bool):
     global _no_color
@@ -16,7 +29,10 @@ def set_json_mode(value: bool):
 def _print(msg: str):
     if _json_mode:
         return
-    print(msg)
+    _current_console.print(msg)
+
+def ask_input(prompt: str) -> str:
+    return _current_console.ask_input(prompt)
 
 def _color(msg: str, color_code: str) -> str:
     if _no_color or os.environ.get('NO_COLOR'):
@@ -44,5 +60,6 @@ def success(msg: str):
 
 def json_output(data: dict):
     if _json_mode:
-        print(json.dumps(data, indent=2))
+        _current_console.print(json.dumps(data, indent=2))
+
 

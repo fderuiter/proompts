@@ -19,16 +19,8 @@ prompt_files = [os.path.relpath(f, base_dir) for f in prompt_files]
 
 selected_file = st.selectbox("Select a workflow to edit", ["Create New..."] + workflow_files)
 
-def load_yaml(path):
-    if not os.path.exists(path):
-        return {}
-    with open(path, 'r') as f:
-        return yaml.safe_load(f)
-
-def save_yaml(path, data):
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, 'w') as f:
-        yaml.dump(data, f, sort_keys=False, allow_unicode=True, default_flow_style=False)
+from promptops.utils import load_yaml, save_yaml
+from promptops.validation import WorkflowSchema
 
 if selected_file == "Create New...":
     st.subheader("Create New Workflow")
@@ -43,7 +35,7 @@ else:
     new_file_path = selected_file
     file_path = os.path.join(base_dir, selected_file)
     try:
-        data = load_yaml(file_path)
+        data = load_yaml(file_path, raw=True)
     except Exception as e:
         st.error(f"Failed to load file: {e}")
         st.stop()
@@ -263,13 +255,8 @@ if st.button("Save Workflow", type="primary"):
             data['inputs'] = edited_inputs_df.to_dict('records')
             data['steps'] = st.session_state['wf_steps']
             
-            # Use jsonschema if available to validate
-            schema_path = os.path.join(base_dir, "docs", "schemas", "workflow.schema.json")
-            if os.path.exists(schema_path):
-                import jsonschema
-                with open(schema_path, 'r') as f:
-                    schema = json.load(f)
-                jsonschema.validate(instance=data, schema=schema)
+            # Real-time validation using Pydantic
+            WorkflowSchema(**data)
                 
             full_path = os.path.join(base_dir, new_file_path)
             save_yaml(full_path, data)
