@@ -54,6 +54,7 @@ def load_yaml(path: Union[str, Path]) -> Dict[str, Any]:
             rendered_text = ""
             
         if isinstance(rendered_text, str):
+            rendered_text = rendered_text.lstrip()
             if rendered_text.startswith("---"):
                 parts = rendered_text.split("---", 2)
                 if len(parts) >= 3:

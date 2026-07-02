@@ -9,34 +9,30 @@ This dashboard provides an aggregate view of prompt and skill compliance across 
 ## Compliance Summary
 
 - **Total Prompts:** 1173
-- **L5-Compliant Prompts:** 1 (0.1%)
+- **L5-Compliant Prompts:** 0 (0.0%)
 
 ## Autonomy Levels
 
 | Level | Count |
 |-------|-------|
-| L5 | 1 |
-| Unknown | 1172 |
+| Unknown | 1173 |
 
 ## Maturity Status
 
 | Status | Count |
 |--------|-------|
-| Production-Ready | 1 |
-| Unknown | 1172 |
+| Unknown | 1173 |
 
 ## Visualizations
 
 ### Autonomy Distribution
 ```mermaid
 pie title Autonomy Levels
-    "L5" : 1
-    "Unknown" : 1172
+    "Unknown" : 1173
 ```
 
 ### Maturity Distribution
 ```mermaid
 pie title Maturity Status
-    "Production-Ready" : 1
-    "Unknown" : 1172
+    "Unknown" : 1173
 ```

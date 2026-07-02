@@ -383,7 +383,7 @@ def validate_prompts(directory: str, strict: bool = False) -> bool:
     ok = True
     seen_names: Dict[str, str] = {}
     dir_path = os.environ.get('PROMPTOPS_REGISTRY', directory)
-    dirs_to_check = set()
+    dirs_to_check: Set[Path] = set()
     
     NAMING_RULES = {
         "meta": re.compile(r"^L\d+_.*\.prompt\.(ya?ml|md)$", re.IGNORECASE),

@@ -4,6 +4,7 @@ import glob
 import yaml
 import json
 import streamlit as st
+from typing import Any
 
 st.set_page_config(page_title="Workflow Editor", layout="wide")
 st.title("Workflow Editor")
@@ -32,7 +33,7 @@ def save_yaml(path, data):
 if selected_file == "Create New...":
     st.subheader("Create New Workflow")
     new_file_path = st.text_input("File Path (e.g., workflows/my_workflow.workflow.yaml)")
-    data = {
+    data: dict[str, Any] = {
         "name": "",
         "description": "",
         "inputs": [],

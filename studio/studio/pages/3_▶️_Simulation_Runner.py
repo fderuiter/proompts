@@ -64,7 +64,7 @@ if selected_file:
                 logger.setLevel(logging.DEBUG)
                 logger.handlers = [handler]
                 
-                fidelity_report = {}
+                fidelity_report: dict[str, Any] = {}
                 
                 if asset_type == "Workflow":
                     final_state = run_workflow(file_path, initial_inputs, verbose=True, chaos_mode=chaos_mode, strict_mode=strict_mode, fidelity_report=fidelity_report)
