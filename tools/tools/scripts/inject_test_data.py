@@ -1,9 +1,23 @@
+"""
+inject_test_data.py: Data Injection Utility
+
+WHAT:
+This script scans all `.workflow.yaml` files in the `workflows/` directory. If a workflow is missing the `testData` field, it automatically inspects the required inputs from the step mappings and injects a mock `testData` block.
+
+WHY:
+Ensures all workflows have baseline test data for simulation and validation without requiring manual data entry for every single required input.
+
+HOW TO USE:
+python3 tools/tools/scripts/inject_test_data.py
+"""
+
 import yaml
 import glob
 from pathlib import Path
 import re
 
-workflows = glob.glob("/app/workflows/**/*.workflow.yaml", recursive=True)
+ROOT_DIR = Path(__file__).resolve().parents[3]
+workflows = glob.glob(str(ROOT_DIR / "workflows/**/*.workflow.yaml"), recursive=True)
 
 for wf in workflows:
     with open(wf, 'r') as f:
