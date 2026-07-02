@@ -32,7 +32,8 @@ import os # Needed for relpath calculation in strict paths
 from pathlib import Path
 from dataclasses import dataclass, field
 from typing import List, Dict, Optional, Any
-from promptops.utils import load_yaml, derive_prompt_category
+from promptops.utils import load_yaml, derive_category, derive_title
+from promptops.documentation import WorkflowGrapher
 
 # --- Configuration Loading (Extracted) ---
 def load_config() -> Dict[str, Any]:
@@ -60,136 +61,6 @@ class DocItem:
     item_type: str  # 'prompt' or 'workflow'
     description: str = ""
     graph_mermaid: Optional[str] = None
-
-class FileParser:
-    """Encapsulates logic for extracting metadata from files."""
-    RE_NUMERIC_PREFIX = re.compile(r'^\d+_')
-
-    @staticmethod
-    def derive_title(path: Path, data: Dict[str, Any]) -> str:
-        """Derives title from metadata or strictly formatted filename."""
-        if name := data.get('name') or data.get('title'):
-            return str(name).strip()
-        
-        # Fallback: Robust filename parsing
-        stem = path.stem.replace('.workflow', '')
-        # Remove leading numbers (e.g., 01_filename -> filename)
-        clean_name = FileParser.RE_NUMERIC_PREFIX.sub('', stem)
-        return clean_name.replace('_', ' ').title()
-
-    @staticmethod
-    def derive_category(path: Path, root_dir: Path, data: Optional[Dict[str, Any]] = None) -> str:
-        """
-        Derives prompt/workflow category.
-        Prompts: metadata/tags-first, with directory fallback.
-        Workflows: directory-based.
-        """
-        # Prompt scans pass parsed YAML data; workflow scan callers explicitly pass data=None.
-        # Workflows remain directory-grouped for now because they don't use prompt tag taxonomy.
-        if data is not None:
-            return derive_prompt_category(path, root_dir, data)
-
-        try:
-            relative = path.relative_to(root_dir)
-            # If in root (e.g., prompts/README.md), it's Uncategorized
-            if len(relative.parts) < 2:
-                return "Uncategorized"
-
-            return relative.parts[0].replace('_', ' ').title()
-        except ValueError:
-            return "Uncategorized"
-
-class WorkflowGrapher:
-    """Specialized logic for Mermaid graph generation."""
-    RE_STEPS = re.compile(r'steps\.([a-zA-Z0-9_-]+)\.(?:output|history)')
-    RE_INPUTS = re.compile(r'inputs\.([a-zA-Z0-9_-]+)')
-    
-    @staticmethod
-    def _escape_mermaid_string(text: str) -> str:
-        if not text:
-            return ""
-        text = str(text)
-        text = text.replace('\\', '\\\\')
-        text = text.replace('"', '&quot;').replace("'", "&#39;")
-        text = text.replace('<', '&lt;').replace('>', '&gt;')
-        text = text.replace('\n', ' ').replace('\r', '')
-        return text.strip()
-
-    @staticmethod
-    def generate(data: Dict[str, Any]) -> str:
-        if 'steps' not in data and 'inputs' not in data:
-            return ""
-            
-        graph = ["graph TD"]
-        
-        # Accessibility Metadata
-        name = WorkflowGrapher._escape_mermaid_string(data.get('name') or 'Workflow')
-        desc = WorkflowGrapher._escape_mermaid_string(data.get('description') or '')
-        
-        metadata = data.get('metadata') or {}
-        meta_parts = []
-        for key in ['domain', 'topic', 'tags']:
-            val = metadata.get(key)
-            if val:
-                if isinstance(val, list):
-                    val = f"[{', '.join(str(v) for v in val)}]"
-                meta_parts.append(f"{key.capitalize()}: {val}")
-        
-        if meta_parts:
-            meta_str = " | ".join(meta_parts)
-            desc = f"{desc} | {meta_str}" if desc else meta_str
-            
-        graph.append(f"    accTitle: {name}")
-        if desc:
-            graph.append(f"    accDescr: {desc}")
-        
-        # Inputs
-        for inp in data.get('inputs', []):
-            name = inp.get('name', 'Unknown')
-            graph.append(f"    Input_{name}[Input: {name}] -.-> Steps")
-
-        steps = data.get('steps', [])
-        
-        # Step Nodes & Control Flow
-        for i, step in enumerate(steps):
-            step_id = step.get('step_id', 'unknown')
-            graph.append(f"    {step_id}[Step: {step_id}]")
-            
-            next_prop = step.get('next')
-            if next_prop is not None:
-                if isinstance(next_prop, str):
-                    graph.append(f"    {step_id} --> {next_prop}")
-                elif isinstance(next_prop, list):
-                    for edge in next_prop:
-                        if isinstance(edge, str):
-                            graph.append(f"    {step_id} --> {edge}")
-                        elif isinstance(edge, dict):
-                            target = edge.get('target', 'unknown')
-                            condition = edge.get('condition')
-                            if condition:
-                                cond_text = str(condition).replace('"', "'")
-                                graph.append(f"    {step_id} -->|\"{cond_text}\"| {target}")
-                            else:
-                                graph.append(f"    {step_id} --> {target}")
-            else:
-                if i + 1 < len(steps):
-                    next_step = steps[i+1].get('step_id', 'unknown')
-                    graph.append(f"    {step_id} --> {next_step}")
-
-        # Data Dependencies
-        for step in steps:
-            step_id = step.get('step_id', 'unknown')
-            inputs_map = step.get('map_inputs', {})
-            for val in inputs_map.values():
-                if isinstance(val, str):
-                    # Dependency on other steps
-                    for match in WorkflowGrapher.RE_STEPS.findall(val):
-                        graph.append(f"    {match} -.->|data| {step_id}")
-                    # Dependency on global inputs
-                    for match in WorkflowGrapher.RE_INPUTS.findall(val):
-                        graph.append(f"    Input_{match} -.->|data| {step_id}")
-                        
-        return "\n".join(graph) if len(graph) > 1 else ""
 
 class DocumentationGenerator:
     def __init__(self, root: Path):
@@ -324,7 +195,7 @@ class DocumentationGenerator:
         
         manifested_tool_stems = set()
         
-        from promptops.utils import iter_skill_manifests, parse_skill_manifest, iter_prompt_files, iter_workflow_files, extract_template_vars
+        from promptops.utils import iter_skill_manifests, parse_skill_manifest, iter_prompt_files, iter_workflow_files, extract_template_vars, get_tool_name_mcp
         import hashlib
         
         skills_info = []
@@ -335,12 +206,9 @@ class DocumentationGenerator:
             try:
                 manifest = parse_skill_manifest(p)
                 for skill in manifest["skills"]:
-                    stem = re.sub(r'[^a-zA-Z0-9_-]', '_', skill["name"]).lower().strip('_')
+                    tool_name = get_tool_name_mcp(p, skill)
+                    stem = tool_name.lower()
                     manifested_tool_stems.add(stem)
-                    
-                    tool_name = skill["name"]
-                    tool_name = re.sub(r'[^a-zA-Z0-9_-]', '_', tool_name)
-                    tool_name = re.sub(r'_+', '_', tool_name).strip('_')
                     
                     vars_list = skill.get("variables", [])
                     vars_str = ", ".join(v.get("name", v) if isinstance(v, dict) else str(v) for v in vars_list) if vars_list else "None"
@@ -362,20 +230,7 @@ class DocumentationGenerator:
             except Exception:
                 continue
             
-            name = content_yaml.get('name')
-            if not name:
-                name = p.name.replace(".prompt.md", "")
-                
-            original_name = name
-            name = re.sub(r'[^a-zA-Z0-9_-]', '_', name)
-            name = re.sub(r'_+', '_', name)
-            name = name.strip('_')
-            
-            if len(name) > 64:
-                h = hashlib.md5(str(p).encode()).hexdigest()[:6]
-                name = name[:57] + "_" + h
-                
-            tool_name = name
+            tool_name = get_tool_name_mcp(p, content_yaml)
             
             if tool_name.lower() in manifested_tool_stems and (p.parent / "skills.md").exists():
                 continue
@@ -413,13 +268,7 @@ class DocumentationGenerator:
             except Exception:
                 continue
                 
-            name = content_yaml.get('name')
-            if not name:
-                name = p.name.replace(".workflow.yaml", "")
-                
-            name = re.sub(r'[^a-zA-Z0-9_-]', '_', name)
-            name = re.sub(r'_+', '_', name)
-            tool_name = name.strip('_')
+            tool_name = get_tool_name_mcp(p, content_yaml)
             
             vars_list = content_yaml.get("variables") or content_yaml.get("vars") or content_yaml.get("inputs")
             if isinstance(vars_list, list):
@@ -495,7 +344,7 @@ class DocumentationGenerator:
             if path.name.startswith("._") or path.suffix not in {'.yaml', '.yml'} or '.workflow' not in path.name:
                 continue
             data = load_yaml(path)
-            wf_title = FileParser.derive_title(path, data)
+            wf_title = derive_title(path, data)
             wf_rel_path = path.relative_to(self.root)
             for step in data.get('steps', []):
                 prompt_file = step.get('prompt_file') or step.get('prompt')
@@ -546,9 +395,9 @@ class DocumentationGenerator:
                     changes_detected = True
 
                 item = DocItem(
-                    title=FileParser.derive_title(path, data),
+                    title=derive_title(path, data),
                     path=page_path,
-                    category=FileParser.derive_category(path, prompts_dir, data),
+                    category=derive_category(path, prompts_dir, data),
                     item_type='prompt'
                 )
                 self.items.append(item)
@@ -566,7 +415,7 @@ class DocumentationGenerator:
         Returns:
             tuple[Path, bool]: A tuple containing the output Path and a boolean indicating if changes occurred.
         """
-        title = FileParser.derive_title(source_path, data)
+        title = derive_title(source_path, data)
         desc = data.get('description', 'No description provided.')
 
         # Calculate output path: docs/prompts/category/filename.md
@@ -680,9 +529,9 @@ title: {title}
                     changes_detected = True
                 
                 item = DocItem(
-                    title=FileParser.derive_title(path, data),
+                    title=derive_title(path, data),
                     path=page_path, # Link to the generated MD, not the source YAML
-                    category=FileParser.derive_category(path, wf_dir, data),
+                    category=derive_category(path, wf_dir, data),
                     item_type='workflow'
                 )
                 self.items.append(item)
@@ -700,7 +549,7 @@ title: {title}
         Returns:
             tuple[Path, bool]: A tuple containing the output Path and a boolean indicating if changes occurred.
         """
-        title = FileParser.derive_title(source_path, data)
+        title = derive_title(source_path, data)
         desc = data.get('description', 'No description provided.')
         mermaid = WorkflowGrapher.generate(data)
         
