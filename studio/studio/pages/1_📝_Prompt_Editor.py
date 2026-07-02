@@ -45,7 +45,7 @@ if selected_file == "Create New...":
             "tags": ["skill"]
         },
         "model": "gpt-4",
-        "modelParameters": {"temperature": 0.7, "max_tokens": 1000},
+        "modelParameters": {"temperature": 0.1, "max_tokens": 1000},
         "variables": [{"name": "input", "description": "User input"}],
         "messages": [{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": "{{input}}"}],
         "testData": [{"inputs": {"input": "test"}, "expected": "Output"}],
@@ -89,7 +89,7 @@ st.subheader("Model Parameters")
 model_params = data.get('modelParameters', {})
 col1, col2 = st.columns(2)
 with col1:
-    temperature = st.number_input("Temperature", min_value=0.0, max_value=2.0, value=float(model_params.get('temperature', 0.7)), step=0.1)
+    temperature = st.number_input("Temperature", min_value=0.0, max_value=2.0, value=float(model_params.get('temperature', 0.1)), step=0.1)
 with col2:
     max_tokens = st.number_input("Max Tokens", min_value=1, value=int(model_params.get('max_tokens', 1000)), step=100)
 
