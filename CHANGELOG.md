@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GitHub Issue and Pull Request templates.
 - `.pre-commit-config.yaml` for automated validation.
 - Duplicate name validation in `tools/tools/scripts/validate_prompt_schema.py`.
-- `tools/tools/scripts/search_prompts.py` for searching prompts.
+- `promptops search` for searching prompts.
 - `docs/USAGE.md`.
 - `tools/tools/scripts/update_last_modified.py`.
 

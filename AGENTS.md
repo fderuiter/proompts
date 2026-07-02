@@ -52,7 +52,7 @@ Testing in this repository means verifying **schema compliance** and **logic cor
 
 - **Schema Validation**: handled by `validate_prompt_schema.py`. Ensure all required fields (`name`, `model`, `messages`) are present.
 - **Logic Verification**: use the `testData` field in your prompt file. This allows simulation tools to verify the prompt's output against expected results.
-- **Workflow Simulation**: use `tools/tools/scripts/run_workflow.py` to simulate complex multi-step prompt chains.
+- **Workflow Simulation**: use `promptops workflow` to simulate complex multi-step prompt chains.
 
 ## 4. Code Style & Conventions
 

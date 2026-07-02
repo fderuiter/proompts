@@ -1,5 +1,19 @@
 #!/usr/bin/env python3
-"""Create ``overview.md`` files for prompt directories if missing."""
+"""
+Generate Overviews Script
+
+## What is this?
+This script automatically creates ``overview.md`` files for prompt directories if they are missing.
+
+## Why use it?
+- **Maintains Consistency:** Ensures all prompt directories have the required documentation file.
+- **Reduces Boilerplate:** Saves developers time by generating the standard overview structure.
+
+## How to use it?
+```bash
+python3 tools/tools/scripts/generate_overviews.py
+```
+"""
 
 from __future__ import annotations
 

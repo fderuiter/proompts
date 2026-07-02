@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 governance_manifest_generator.py: Governance Manifest Generator
 

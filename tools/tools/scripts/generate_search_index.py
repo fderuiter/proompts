@@ -1,5 +1,19 @@
 #!/usr/bin/env python3
-"""Generates a search.json index for the static site."""
+"""
+Generate Search Index Script
+
+## What is this?
+This script generates a `search.json` index file for the static documentation site.
+
+## Why use it?
+- **Enables Searchability:** Allows the documentation frontend to provide real-time search across prompts and workflows.
+- **Aggregates Metadata:** Extracts titles, descriptions, and tags from YAML files into a single, optimized JSON payload.
+
+## How to use it?
+```bash
+python3 tools/tools/scripts/generate_search_index.py
+```
+"""
 
 import json
 import sys

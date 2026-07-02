@@ -1,12 +1,11 @@
 import os
 import re
-import jinja2
 from enum import Enum
 from pathlib import Path
 from typing import Any, List, Optional, Dict, Union, Set
 
 from pydantic import BaseModel, ValidationError, field_validator, model_validator, Field
-from promptops.utils import load_yaml, iter_prompt_files, iter_workflow_files
+from promptops.utils import load_yaml, iter_prompt_files, iter_workflow_files, extract_vars_from_text
 from promptops import console
 
 VAR_PATTERN = re.compile(r'\{\{([^}]+)\}\}')
@@ -134,8 +133,6 @@ class PromptSchema(BaseModel):
         found_vars: set[str] = set()
         invalid_vars: set[str] = set()
         
-        env = jinja2.Environment()
-        
         for msg in self.messages:
             content_str = ""
             if isinstance(msg.content, str):
@@ -146,19 +143,10 @@ class PromptSchema(BaseModel):
                 content_str = str(msg.tool_calls)
 
             try:
-                ast = env.parse(content_str)
-                vars_in_text = jinja2.meta.find_undeclared_variables(ast)
-                
-                # Extract variables wrapped in XML tags
-                ignore_tags = {"br", "p", "b", "i", "div", "span", "ul", "li", "ol", "html", "body", "head", "title", "table", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "a", "img", "strong", "em", "hr", "meta", "link", "script", "style", "svg", "path", "text", "aegis"}
-                xml_tags = re.findall(r'<([a-zA-Z0-9_]+)>', content_str)
-                for tag in xml_tags:
-                    if tag.lower() not in ignore_tags:
-                        vars_in_text.add(tag)
-                        
+                vars_in_text = extract_vars_from_text(content_str)
                 found_vars.update(vars_in_text)
-            except jinja2.exceptions.TemplateSyntaxError as e:
-                raise ValueError(f"Jinja2 syntax error: {e.message} at line {e.lineno}")
+            except ValueError as e:
+                raise ValueError(str(e))
 
             for var in vars_in_text:
                 valid_match = re.match(r'^[a-zA-Z0-9_.-]+$', var)

@@ -239,7 +239,6 @@ def main():
     elif args.command == "generate-cli-docs":
         # Generate markdown documentation for the parser
         import io
-        from contextlib import redirect_stdout
         out = []
         out.append("# PromptOps CLI Reference\n")
         out.append("This document is auto-generated from the CLI definition. Do not edit manually.\n")

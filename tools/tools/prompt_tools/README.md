@@ -74,7 +74,7 @@ Most tools in this directory are designed to be used with an LLM (like ChatGPT o
 ### Prerequisites
 
 > [!WARNING]
-> Before running any Python-based workflow scripts (like `run_workflow.py`), ensure you are at the root of the repository and have installed the required dependencies:
+> Before running any Python-based workflow scripts (like `promptops workflow`), ensure you are at the root of the repository and have installed the required dependencies:
 > ```bash
 > pip install -r requirements.txt
 > ```
@@ -92,7 +92,7 @@ These files follow the repository's standard schema and can be executed using th
 
 ```bash
 # Provide the task variable via the -i flag
-python3 tools/tools/scripts/run_workflow.py tools/prompt_tools/L5_prompt_optimizer.prompt.yaml -i task="Write a Python script to scrape a website"
+promptops workflow tools/prompt_tools/L5_prompt_optimizer.prompt.yaml -i task="Write a Python script to scrape a website"
 ```
 
 **Example: Running with Verbose Output**
@@ -100,7 +100,7 @@ python3 tools/tools/scripts/run_workflow.py tools/prompt_tools/L5_prompt_optimiz
 To see the exact inputs being passed into the prompt messages during the simulation:
 
 ```bash
-python3 tools/tools/scripts/run_workflow.py tools/prompt_tools/L5_prompt_optimizer.prompt.yaml -i task="Draft a project brief" -v
+promptops workflow tools/prompt_tools/L5_prompt_optimizer.prompt.yaml -i task="Draft a project brief" -v
 ```
 
 ---

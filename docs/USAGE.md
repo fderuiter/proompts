@@ -77,7 +77,7 @@ testData:
 You can search for prompts using the included script:
 
 ```bash
-python3 tools/tools/scripts/search_prompts.py "code review"
+promptops search "code review"
 ```
 
 ## Validation
