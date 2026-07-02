@@ -269,9 +269,6 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
         # Split instructions into messages
         messages = []
         import re
-        if name == "Agent Persona Generator":
-            print(f"DEBUG: '{instructions}'")
-            print(f"DEBUG blocks: {re.split(r'^\[(system|user|assistant|tool_call|tool_result|tool)\]\s*$', instructions, flags=re.MULTILINE | re.IGNORECASE)}")
         blocks = re.split(r'^\[(system|user|assistant|tool_call|tool_result|tool)\][\r\n]+', instructions, flags=re.MULTILINE | re.IGNORECASE)
         if len(blocks) > 1:
             for i in range(1, len(blocks), 2):
