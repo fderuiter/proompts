@@ -18,8 +18,7 @@ steps:
 - step_id: analyze_kpis
   prompt_file: prompts/clinical/adjudication/adjudication_workflow/03_analyze_adjudication_kpis.prompt.md
   map_inputs:
-    adjudication_log:
-      csv: '{{inputs.adjudication_log_csv}}'
+    adjudication_log: '{{inputs.adjudication_log_csv}}'
 testData:
 - inputs:
     adjudication_log_csv: Sample adjudication_log_csv
