@@ -9,5 +9,4 @@ streamlit>=1.30.0
 graphviz
 -e ./promptops
 -e ./tools
--e ./proompts_guard
 -e ./studio

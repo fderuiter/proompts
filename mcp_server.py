@@ -162,9 +162,12 @@ async def handle_call_tool(name: str, arguments: dict | None) -> list[types.Text
         try:
             content = load_yaml(path)
             if content and get_tool_name_mcp(path, content) == name:
-                fidelity = {}
-                out = simulate_prompt_execution(content, arguments, prompt_file=str(path), strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
-                return [types.TextContent(type="text", text=f"--- Executing Prompt: {content.get('name')} ---\n\n{out}")]
+                try:
+                    fidelity = {}
+                    out = simulate_prompt_execution(content, arguments, prompt_file=str(path), strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
+                    return [types.TextContent(type="text", text=f"--- Executing Prompt: {content.get('name')} ---\n\n{out}")]
+                except Exception as e:
+                    return [types.TextContent(type="text", text=f"--- Execution Error ---\n\nValidation or execution failed for '{name}': {e}")]
         except:
             continue
 
@@ -172,14 +175,17 @@ async def handle_call_tool(name: str, arguments: dict | None) -> list[types.Text
         try:
             content = load_yaml(path)
             if content and get_tool_name_mcp(path, content) == name:
-                fidelity = {}
-                state = run_workflow(str(path), arguments, verbose=False, strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
-                out = ""
-                if state:
-                    final_output_step_id = content.get('steps', [{}])[-1].get('step_id')
-                    if final_output_step_id and final_output_step_id in state['steps']:
-                        out = state['steps'][final_output_step_id]['output']
-                return [types.TextContent(type="text", text=f"--- Executing Workflow: {content.get('name')} ---\n\n{out}")]
+                try:
+                    fidelity = {}
+                    state = run_workflow(str(path), arguments, verbose=False, strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
+                    out = ""
+                    if state:
+                        final_output_step_id = content.get('steps', [{}])[-1].get('step_id')
+                        if final_output_step_id and final_output_step_id in state['steps']:
+                            out = state['steps'][final_output_step_id]['output']
+                    return [types.TextContent(type="text", text=f"--- Executing Workflow: {content.get('name')} ---\n\n{out}")]
+                except Exception as e:
+                    return [types.TextContent(type="text", text=f"--- Execution Error ---\n\nValidation or execution failed for '{name}': {e}")]
         except:
             continue
 
@@ -192,19 +198,22 @@ async def handle_call_tool(name: str, arguments: dict | None) -> list[types.Text
                 full_name = get_tool_name_mcp(path, skill)
 
                 if full_name == name:
-                    content = {
-                        "name": skill["name"],
-                        "description": skill.get("description", ""),
-                        "variables": skill.get("variables", []),
-                        "messages": [{"role": "system", "content": skill.get("instructions", "")}],
-                        "testData": skill.get("testData", [])
-                    }
-                    fidelity = {}
-                    out = simulate_prompt_execution(content, arguments, prompt_file=str(path), strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
-                    return [types.TextContent(
-                        type="text",
-                        text=f"--- Executing Skill: {skill['name']} ---\n\n{out}"
-                    )]
+                    try:
+                        content = {
+                            "name": skill["name"],
+                            "description": skill.get("description", ""),
+                            "variables": skill.get("variables", []),
+                            "messages": [{"role": "system", "content": skill.get("instructions", "")}],
+                            "testData": skill.get("testData", [])
+                        }
+                        fidelity = {}
+                        out = simulate_prompt_execution(content, arguments, prompt_file=str(path), strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
+                        return [types.TextContent(
+                            type="text",
+                            text=f"--- Executing Skill: {skill['name']} ---\n\n{out}"
+                        )]
+                    except Exception as e:
+                        return [types.TextContent(type="text", text=f"--- Execution Error ---\n\nValidation or execution failed for '{name}': {e}")]
         except:
             continue
 

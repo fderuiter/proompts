@@ -1,3 +1,4 @@
+from promptops.validation import ProomptsValidationError, validate_response
 from typing import Dict, Any, Optional
 import json
 import logging
@@ -122,7 +123,7 @@ def run_evaluators(output_text: str, prompt_evaluators: list) -> str:
         if not passed:
             if action == "terminate":
                 logger.error(f"Terminating workflow due to failed evaluator: {evaluator.get('name')}")
-                raise Exception(f"Evaluator failed: {evaluator.get('name')}")
+                raise ProomptsValidationError(f"Evaluator failed: {evaluator.get('name')}")
             elif action == "redact":
                 logger.info(f"Redacting output due to failed evaluator: {evaluator.get('name')}")
                 pattern = evaluator.get("redact_pattern", r'\b\d{3}-\d{2}-\d{4}\b')
@@ -260,7 +261,11 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
     else:
         output_text = f"[Simulated output for prompt: {prompt_data.get('name', 'Untitled Prompt')}]"
 
-    output_text = run_evaluators(output_text, prompt_data.get('evaluators', []))
+    try:
+        output_text = validate_response(output_text, prompt_data.get('output_schema'), prompt_data.get('evaluators', []))
+    except ProomptsValidationError as e:
+        logger.error(f"Simulation failed for {prompt_data.get('name')}: {e}")
+        raise ValueError(f"Output schema validation failed: {e}")
 
     return output_text
 
