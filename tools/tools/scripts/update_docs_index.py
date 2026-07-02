@@ -7,7 +7,7 @@ import argparse
 from collections import defaultdict
 from pathlib import Path
 
-from promptops.utils import PROMPTS_DIR, ROOT, iter_prompt_files, load_yaml, derive_prompt_category
+from promptops.utils import PROMPTS_DIR, ROOT, iter_prompt_files, load_yaml, derive_category
 
 DOCS_DIR = ROOT / "docs"
 
@@ -52,10 +52,10 @@ def read_meta(path: Path) -> tuple[str, str]:
     try:
         data = load_yaml(path)
         title = str(data.get("name") or data.get("title") or "").strip()
-        category = derive_prompt_category(path, PROMPTS_DIR, data)
+        category = derive_category(path, PROMPTS_DIR, data)
 
     except Exception:
-        category = derive_prompt_category(path, PROMPTS_DIR, {})
+        category = derive_category(path, PROMPTS_DIR, {})
         title = ""
 
     if not title:
