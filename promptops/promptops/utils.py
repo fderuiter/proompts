@@ -38,19 +38,22 @@ OVERVIEW_NAME: str = "overview.md"
 DOMAIN_TAG_PREFIX: str = "domain:"
 
 
-def load_yaml(path: Union[str, Path]) -> Dict[str, Any]:
+def load_yaml(path: Union[str, Path], raw: bool = False) -> Dict[str, Any]:
     path_obj = Path(path)
     try:
         text = path_obj.read_text(encoding="utf-8")
-        # To match identical validation and execution inheritance, we use PROMPTS_DIR as base
-        # for prompts, or the file's parent for generic files.
-        # But tools/scripts/utils.py used PROMPTS_DIR directly for all inheritance:
-        # env = _get_jinja_env()  (which hardcodes PROMPTS_DIR)
-        from promptops.engine import get_jinja_env
-        env = get_jinja_env(base_dir=str(PROMPTS_DIR))
-        template = env.from_string(text)
-        rendered_text = template.render()
-        
+        if not raw:
+            # To match identical validation and execution inheritance, we use PROMPTS_DIR as base
+            # for prompts, or the file's parent for generic files.
+            # But tools/scripts/utils.py used PROMPTS_DIR directly for all inheritance:
+            # env = _get_jinja_env()  (which hardcodes PROMPTS_DIR)
+            from promptops.engine import get_jinja_env
+            env = get_jinja_env(base_dir=str(PROMPTS_DIR))
+            template = env.from_string(text)
+            rendered_text = template.render()
+        else:
+            rendered_text = text
+            
         if rendered_text is None:
             rendered_text = ""
             
@@ -84,8 +87,16 @@ def load_yaml(path: Union[str, Path]) -> Dict[str, Any]:
         elif isinstance(rendered_text, dict):
             return rendered_text
         return {}
+    except FileNotFoundError:
+        return {}
     except Exception as e:
         return {}
+
+def save_yaml(path: Union[str, Path], data: Dict[str, Any]) -> None:
+    path_obj = Path(path)
+    path_obj.parent.mkdir(parents=True, exist_ok=True)
+    with path_obj.open('w', encoding='utf-8') as f:
+        yaml.dump(data, f, sort_keys=False, allow_unicode=True, default_flow_style=False)
 
 def iter_prompt_files(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:
     root_path = Path(root) if root else PROMPTS_DIR

@@ -6,7 +6,6 @@ import io
 import re
 import logging
 from pathlib import Path
-import jsonschema
 from typing import Any
 
 from promptops.utils import get_tool_name_mcp

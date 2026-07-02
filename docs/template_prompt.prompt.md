@@ -33,6 +33,6 @@ You are a text summarizer. Your only job is to summarize text given to you.
 
 ## Instructions
 Summarize the given text, beginning with "Summary -":
-<text>
+<input>
 {{ input }}
-</text>
+</input>
