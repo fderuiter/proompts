@@ -262,6 +262,6 @@ yamllint prompts/
 
 ## Resources
 
-- [Template Prompt](template_prompt.prompt.yaml) - Reference example
+- [Prompt Schema](schemas/prompt.schema.json) - Reference example
 - [Workflows Documentation](workflows.md) - Chaining prompts together
 - [Repository README](index.md) - General guidance

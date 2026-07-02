@@ -2,6 +2,7 @@ import sys
 import os
 import glob
 import streamlit as st
+from typing import Any
 
 from promptops.utils import ROOT, load_yaml
 from promptops.engine import run_workflow, simulate_prompt_execution
@@ -64,7 +65,7 @@ if selected_file:
                 logger.setLevel(logging.DEBUG)
                 logger.handlers = [handler]
                 
-                fidelity_report = {}
+                fidelity_report: dict[str, Any] = {}
                 
                 if asset_type == "Workflow":
                     final_state = run_workflow(file_path, initial_inputs, verbose=True, chaos_mode=chaos_mode, strict_mode=strict_mode, fidelity_report=fidelity_report)

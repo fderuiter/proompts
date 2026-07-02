@@ -128,7 +128,7 @@ def validate_file(filepath: Path):
     in_block = False
     lang = None
     block_start_line = 0
-    code_lines = []
+    code_lines: list[str] = []
     
     for i, line in enumerate(lines):
         stripped = line.strip()
