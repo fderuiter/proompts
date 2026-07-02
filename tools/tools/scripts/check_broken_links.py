@@ -1,7 +1,19 @@
 #!/usr/bin/env python3
 """
-🔗 Broken Link Checker
-Scans Markdown files for broken internal links and missing anchors.
+Broken Link Checker
+
+## What is this?
+Scans Markdown files for broken internal links and missing anchors across the documentation and prompt directories.
+
+## Why use it?
+- **Maintains Documentation Quality:** Ensures users don't encounter dead ends while navigating the repository.
+- **Automated Validation:** Catches broken links during CI/CD or local testing before they are merged.
+
+## How to use it?
+Run this script from the root of the repository:
+```bash
+python3 tools/tools/scripts/check_broken_links.py
+```
 """
 
 import re

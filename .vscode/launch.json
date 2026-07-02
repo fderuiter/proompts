@@ -5,7 +5,7 @@
       "name": "Simulate Workflow",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}/tools/tools/scripts/run_workflow.py",
+      "program": "${workspaceFolder}/promptops workflow",
       "args": [
         "${file}"
       ],

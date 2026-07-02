@@ -6,7 +6,7 @@
       "type": "shell",
       "command": "python3",
       "args": [
-        "tools/tools/scripts/run_workflow.py",
+        "promptops workflow",
         "${file}"
       ],
       "group": {
