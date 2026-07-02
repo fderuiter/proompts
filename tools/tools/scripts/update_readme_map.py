@@ -33,7 +33,7 @@ def get_detailed_usage(filepath):
     return None
 
 def main():
-    scripts_dir = Path('/app/tools/tools/scripts')
+    scripts_dir = Path(__file__).parent.resolve()
     readme_path = scripts_dir / 'README.md'
     
     scripts = []

@@ -16,7 +16,8 @@ import glob
 from pathlib import Path
 import re
 
-workflows = glob.glob("/app/workflows/**/*.workflow.yaml", recursive=True)
+ROOT_DIR = Path(__file__).resolve().parents[3]
+workflows = glob.glob(str(ROOT_DIR / "workflows/**/*.workflow.yaml"), recursive=True)
 
 for wf in workflows:
     with open(wf, 'r') as f:
