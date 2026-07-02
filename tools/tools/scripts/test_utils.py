@@ -22,7 +22,6 @@ class TestUtils(unittest.TestCase):
         mock_read_text.side_effect = FileNotFoundError("File not found")
         result = load_yaml(Path("missing.yaml"))
         self.assertEqual(result, {})
-        self.assertIn("Error reading missing.yaml", mock_stdout.getvalue())
 
     @patch("promptops.utils.Path.read_text")
     @patch("sys.stdout", new_callable=io.StringIO)

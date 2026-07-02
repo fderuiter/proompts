@@ -17,8 +17,12 @@ variables:
 model: gpt-4o
 modelParameters:
   temperature: 0.2
-testData: []
-evaluators: []
+testData:
+- task: "Write a short poem about a cat."
+  expected: "poem about a cat"
+evaluators:
+- name: Output should contain V1
+  string_contains: "## V1"
 ---
 
 ## Purpose

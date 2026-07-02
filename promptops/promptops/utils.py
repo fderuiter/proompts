@@ -86,6 +86,8 @@ def load_yaml(path: Union[str, Path], raw: bool = False) -> Dict[str, Any]:
         elif isinstance(rendered_text, dict):
             return rendered_text
         return {}
+    except FileNotFoundError:
+        return {}
     except Exception as e:
         print(f"Error reading {path}: {e}")
         return {}
