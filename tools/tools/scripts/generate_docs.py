@@ -197,6 +197,127 @@ class DocumentationGenerator:
         self.items: List[DocItem] = []
         self.prompt_to_workflows: Dict[Path, List[Dict[str, Any]]] = {}
 
+    def build_maturity_dashboard(self, check_mode: bool = False) -> bool:
+        print("📊 Generating Maturity Dashboard...")
+        prompts_dir = self.root / CONFIG['dirs']['prompts']
+        docs_dir = self.root / CONFIG['dirs']['docs']
+        
+        from promptops.utils import iter_skill_manifests, parse_skill_manifest, iter_prompt_files
+        
+        total_prompts = 0
+        l5_count = 0
+        autonomy_counts = {}
+        maturity_counts = {}
+        
+        # Process skills.md manifests
+        for path in iter_skill_manifests(str(prompts_dir)):
+            try:
+                manifest = parse_skill_manifest(path)
+                for skill in manifest.get("skills", []):
+                    total_prompts += 1
+                    meta = skill.get("metadata", {})
+                    autonomy = meta.get("autonomy", "Unknown")
+                    maturity = meta.get("maturity", "Unknown")
+                    
+                    autonomy_counts[autonomy] = autonomy_counts.get(autonomy, 0) + 1
+                    maturity_counts[maturity] = maturity_counts.get(maturity, 0) + 1
+                    if autonomy == "L5":
+                        l5_count += 1
+            except Exception:
+                pass
+                
+        # Process individual .prompt files
+        for path in iter_prompt_files(str(prompts_dir)):
+            try:
+                content = load_yaml(str(path))
+            except Exception:
+                continue
+                
+            total_prompts += 1
+            meta = content.get("metadata", {})
+            autonomy = meta.get("autonomy", "Unknown")
+            maturity = meta.get("maturity", "Unknown")
+            
+            autonomy_counts[autonomy] = autonomy_counts.get(autonomy, 0) + 1
+            maturity_counts[maturity] = maturity_counts.get(maturity, 0) + 1
+            if autonomy == "L5":
+                l5_count += 1
+                
+        percentage_l5 = (l5_count / total_prompts * 100) if total_prompts > 0 else 0
+        
+        md = [
+            "---",
+            "title: Maturity Dashboard",
+            "---",
+            "",
+            "# 📊 Maturity Dashboard",
+            "",
+            "This dashboard provides an aggregate view of prompt and skill compliance across the library.",
+            "",
+            "## Compliance Summary",
+            "",
+            f"- **Total Prompts:** {total_prompts}",
+            f"- **L5-Compliant Prompts:** {l5_count} ({percentage_l5:.1f}%)",
+            "",
+            "## Autonomy Levels",
+            "",
+            "| Level | Count |",
+            "|-------|-------|"
+        ]
+        
+        for k, v in sorted(autonomy_counts.items()):
+            md.append(f"| {k} | {v} |")
+            
+        md.extend([
+            "",
+            "## Maturity Status",
+            "",
+            "| Status | Count |",
+            "|--------|-------|"
+        ])
+        
+        for k, v in sorted(maturity_counts.items()):
+            md.append(f"| {k} | {v} |")
+            
+        # Mermaid pie charts for visualization
+        md.extend([
+            "",
+            "## Visualizations",
+            "",
+            "### Autonomy Distribution",
+            "```mermaid",
+            "pie title Autonomy Levels"
+        ])
+        for k, v in sorted(autonomy_counts.items()):
+            md.append(f'    "{k}" : {v}')
+        md.append("```")
+        
+        md.extend([
+            "",
+            "### Maturity Distribution",
+            "```mermaid",
+            "pie title Maturity Status"
+        ])
+        for k, v in sorted(maturity_counts.items()):
+            md.append(f'    "{k}" : {v}')
+        md.append("```\n")
+        
+        out_path = docs_dir / "maturity_dashboard.md"
+        content = "\n".join(md)
+        
+        if check_mode:
+            if not out_path.exists():
+                print(f"❌ Missing file: {out_path}")
+                return True
+            elif out_path.read_text(encoding='utf-8') != content:
+                print(f"❌ Content mismatch: {out_path}")
+                return True
+            return False
+        else:
+            out_path.write_text(content, encoding='utf-8')
+            print(f"✅ Updated {out_path}")
+            return False
+
     def build_tool_registry(self, check_mode: bool = False) -> bool:
         prompts_dir = self.root / CONFIG['dirs']['prompts']
         docs_dir = self.root / CONFIG['dirs']['docs']
@@ -402,6 +523,25 @@ class DocumentationGenerator:
         # Link to GitHub source for the button
         rel_path_from_root = source_path.relative_to(self.root)
         github_url = f"https://github.com/fderuiter/proompts/blob/main/{rel_path_from_root}"
+        
+        metadata = data.get('metadata', {})
+        autonomy = metadata.get('autonomy')
+        maturity = metadata.get('maturity')
+        
+        tags = []
+        badges = []
+        if autonomy:
+            tags.append(autonomy)
+            badges.append(f"![Autonomy: {autonomy}](https://img.shields.io/badge/Autonomy-{autonomy}-blue)")
+        if maturity:
+            tags.append(maturity)
+            badges.append(f"![Maturity: {maturity}](https://img.shields.io/badge/Maturity-{maturity}-green)")
+            
+        tags_block = ""
+        if tags:
+            tags_block = "tags:\n" + "\n".join(f"  - {t}" for t in tags)
+            
+        badge_str = " " + " ".join(badges) if badges else ""
 
         try:
             raw_content = source_path.read_text(encoding='utf-8')
@@ -421,9 +561,10 @@ class DocumentationGenerator:
 
         content = f"""---
 title: {title}
+{tags_block}
 ---
 
-# {title}
+# {title}{badge_str}
 
 {desc}
 
@@ -678,6 +819,7 @@ def main() -> None:
     changes |= gen.scan_workflows(check_mode=args.check)
     changes |= gen.build_indices(check_mode=args.check)
     changes |= gen.build_tool_registry(check_mode=args.check)
+    changes |= gen.build_maturity_dashboard(check_mode=args.check)
     
     if args.check:
         if changes:
