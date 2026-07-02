@@ -197,101 +197,113 @@ class DocumentationGenerator:
         self.items: List[DocItem] = []
         self.prompt_to_workflows: Dict[Path, List[Dict[str, Any]]] = {}
 
-    def build_tool_registry(self, check_mode: bool = False) -> bool:
+    def build_maturity_dashboard(self, check_mode: bool = False) -> bool:
+        print("📊 Generating Maturity Dashboard...")
         prompts_dir = self.root / CONFIG['dirs']['prompts']
         docs_dir = self.root / CONFIG['dirs']['docs']
         
-        manifested_tool_stems = set()
-        manifests = []
-        
         from promptops.utils import iter_skill_manifests, parse_skill_manifest, iter_prompt_files
-        import hashlib
+        
+        total_prompts = 0
+        l5_count = 0
+        autonomy_counts = {}
+        maturity_counts = {}
+        
+        # Process skills.md manifests
         for path in iter_skill_manifests(str(prompts_dir)):
             try:
                 manifest = parse_skill_manifest(path)
-                domain = manifest["metadata"].get("domain") or path.parent.name
-                manifests.append({"path": path, "domain": domain, "skills": manifest["skills"]})
-                for skill in manifest["skills"]:
-                    stem = re.sub(r'[^a-zA-Z0-9_-]', '_', skill["name"]).lower().strip('_')
-                    manifested_tool_stems.add(stem)
+                for skill in manifest.get("skills", []):
+                    total_prompts += 1
+                    meta = skill.get("metadata", {})
+                    autonomy = meta.get("autonomy", "Unknown")
+                    maturity = meta.get("maturity", "Unknown")
+                    
+                    autonomy_counts[autonomy] = autonomy_counts.get(autonomy, 0) + 1
+                    maturity_counts[maturity] = maturity_counts.get(maturity, 0) + 1
+                    if autonomy == "L5":
+                        l5_count += 1
             except Exception:
                 pass
-
-        tools_info = []
+                
+        # Process individual .prompt files
         for path in iter_prompt_files(str(prompts_dir)):
             try:
                 content = load_yaml(str(path))
             except Exception:
                 continue
-            
-            name = content.get('name')
-            if not name:
-                name = path.name.replace(".prompt.md", "")
                 
-            original_name = name
-            name = re.sub(r'[^a-zA-Z0-9_-]', '_', name)
-            name = re.sub(r'_+', '_', name)
-            name = name.strip('_')
+            total_prompts += 1
+            meta = content.get("metadata", {})
+            autonomy = meta.get("autonomy", "Unknown")
+            maturity = meta.get("maturity", "Unknown")
             
-            hashed = False
-            if len(name) > 64:
-                h = hashlib.md5(str(path).encode()).hexdigest()[:6]
-                name = name[:57] + "_" + h
-                hashed = True
+            autonomy_counts[autonomy] = autonomy_counts.get(autonomy, 0) + 1
+            maturity_counts[maturity] = maturity_counts.get(maturity, 0) + 1
+            if autonomy == "L5":
+                l5_count += 1
                 
-            tool_name = name
-            
-            overridden = False
-            overriding_manifest = None
-            if tool_name.lower() in manifested_tool_stems and (path.parent / "skills.md").exists():
-                overridden = True
-                overriding_manifest = str(path.parent / "skills.md")
-                
-            tools_info.append({
-                "path": str(path.relative_to(self.root)),
-                "original_name": original_name,
-                "tool_name": tool_name,
-                "hashed": hashed,
-                "overridden": overridden,
-                "overriding_manifest": str(Path(overriding_manifest).relative_to(self.root)) if overriding_manifest else None
-            })
+        percentage_l5 = (l5_count / total_prompts * 100) if total_prompts > 0 else 0
         
         md = [
             "---",
-            "title: Tool Registry",
+            "title: Maturity Dashboard",
             "---",
             "",
-            "# Automated Tool Registry",
+            "# 📊 Maturity Dashboard",
             "",
-            "This registry provides a complete view of how prompt files map to MCP tools.",
+            "This dashboard provides an aggregate view of prompt and skill compliance across the library.",
             "",
-            "## Live Reloading Feature",
+            "## Compliance Summary",
             "",
-            "The MCP server includes watchdog-based hot-reloading capabilities. When you modify, add, or delete `.prompt.md` or `skills.md` files in the `prompts` directory, the server detects these changes and automatically updates the agent. You do not need to restart your Claude Desktop application or the MCP server for the changes to propagate.",
+            f"- **Total Prompts:** {total_prompts}",
+            f"- **L5-Compliant Prompts:** {l5_count} ({percentage_l5:.1f}%)",
             "",
-            "## Discovered Tools",
+            "## Autonomy Levels",
             "",
-            "| Original Name | Transformed Name | Status |",
-            "|---------------|------------------|--------|"
+            "| Level | Count |",
+            "|-------|-------|"
         ]
         
-        for t in sorted(tools_info, key=lambda x: x["original_name"]):
-            status = []
-            if t["hashed"]:
-                status.append("Hashed (Length > 64)")
-            if t["overridden"]:
-                status.append(f"Overridden by `{t['overriding_manifest']}`")
-            if not status:
-                if t["original_name"] != t["tool_name"]:
-                    status.append("Sanitized")
-                else:
-                    status.append("OK")
-                    
-            status_str = ", ".join(status)
-            md.append(f"| `{t['original_name']}` | `{t['tool_name']}` | {status_str} |")
+        for k, v in sorted(autonomy_counts.items()):
+            md.append(f"| {k} | {v} |")
             
-        out_path = docs_dir / "tool_registry.md"
-        content = "\n".join(md) + "\n"
+        md.extend([
+            "",
+            "## Maturity Status",
+            "",
+            "| Status | Count |",
+            "|--------|-------|"
+        ])
+        
+        for k, v in sorted(maturity_counts.items()):
+            md.append(f"| {k} | {v} |")
+            
+        # Mermaid pie charts for visualization
+        md.extend([
+            "",
+            "## Visualizations",
+            "",
+            "### Autonomy Distribution",
+            "```mermaid",
+            "pie title Autonomy Levels"
+        ])
+        for k, v in sorted(autonomy_counts.items()):
+            md.append(f'    "{k}" : {v}')
+        md.append("```")
+        
+        md.extend([
+            "",
+            "### Maturity Distribution",
+            "```mermaid",
+            "pie title Maturity Status"
+        ])
+        for k, v in sorted(maturity_counts.items()):
+            md.append(f'    "{k}" : {v}')
+        md.append("```\n")
+        
+        out_path = docs_dir / "maturity_dashboard.md"
+        content = "\n".join(md)
         
         if check_mode:
             if not out_path.exists():
@@ -304,6 +316,175 @@ class DocumentationGenerator:
         else:
             out_path.write_text(content, encoding='utf-8')
             print(f"✅ Updated {out_path}")
+            return False
+
+    def build_tool_registry(self, check_mode: bool = False) -> bool:
+        prompts_dir = self.root / CONFIG['dirs']['prompts']
+        docs_dir = self.root / CONFIG['dirs']['docs']
+        
+        manifested_tool_stems = set()
+        
+        from promptops.utils import iter_skill_manifests, parse_skill_manifest, iter_prompt_files, iter_workflow_files, extract_template_vars
+        import hashlib
+        
+        skills_info = []
+        prompts_info = []
+        workflows_info = []
+        
+        for p in iter_skill_manifests(str(prompts_dir)):
+            try:
+                manifest = parse_skill_manifest(p)
+                for skill in manifest["skills"]:
+                    stem = re.sub(r'[^a-zA-Z0-9_-]', '_', skill["name"]).lower().strip('_')
+                    manifested_tool_stems.add(stem)
+                    
+                    tool_name = skill["name"]
+                    tool_name = re.sub(r'[^a-zA-Z0-9_-]', '_', tool_name)
+                    tool_name = re.sub(r'_+', '_', tool_name).strip('_')
+                    
+                    vars_list = skill.get("variables", [])
+                    vars_str = ", ".join(v.get("name", v) if isinstance(v, dict) else str(v) for v in vars_list) if vars_list else "None"
+                    
+                    desc = skill.get("description", "Agent Skill")
+                    desc = desc.replace("\n", " ").strip() if desc else "Agent Skill"
+                    
+                    skills_info.append({
+                        "name": tool_name,
+                        "desc": desc[:100],
+                        "inputs": vars_str
+                    })
+            except Exception:
+                pass
+
+        for p in iter_prompt_files(str(prompts_dir)):
+            try:
+                content_yaml = load_yaml(str(p))
+            except Exception:
+                continue
+            
+            name = content_yaml.get('name')
+            if not name:
+                name = p.name.replace(".prompt.md", "")
+                
+            original_name = name
+            name = re.sub(r'[^a-zA-Z0-9_-]', '_', name)
+            name = re.sub(r'_+', '_', name)
+            name = name.strip('_')
+            
+            if len(name) > 64:
+                h = hashlib.md5(str(p).encode()).hexdigest()[:6]
+                name = name[:57] + "_" + h
+                
+            tool_name = name
+            
+            if tool_name.lower() in manifested_tool_stems and (p.parent / "skills.md").exists():
+                continue
+                
+            vars_list = content_yaml.get("variables") or content_yaml.get("vars") or content_yaml.get("inputs")
+            if not vars_list:
+                try:
+                    vars_list = extract_template_vars(content_yaml)
+                except Exception:
+                    vars_list = []
+            
+            if isinstance(vars_list, list):
+                vars_str = ", ".join(v.get("name", v) if isinstance(v, dict) else str(v) for v in vars_list)
+            elif isinstance(vars_list, dict):
+                vars_str = ", ".join(vars_list.keys())
+            else:
+                vars_str = "None"
+                
+            if not vars_str:
+                vars_str = "None"
+                
+            desc = content_yaml.get("description", "Prompt Tool")
+            desc = desc.replace("\n", " ").strip() if desc else "Prompt Tool"
+                
+            prompts_info.append({
+                "name": tool_name,
+                "desc": desc[:100],
+                "inputs": vars_str
+            })
+            
+        workflows_dir = self.root / CONFIG['dirs']['workflows']
+        for p in iter_workflow_files(str(workflows_dir)):
+            try:
+                content_yaml = load_yaml(str(p))
+            except Exception:
+                continue
+                
+            name = content_yaml.get('name')
+            if not name:
+                name = p.name.replace(".workflow.yaml", "")
+                
+            name = re.sub(r'[^a-zA-Z0-9_-]', '_', name)
+            name = re.sub(r'_+', '_', name)
+            tool_name = name.strip('_')
+            
+            vars_list = content_yaml.get("variables") or content_yaml.get("vars") or content_yaml.get("inputs")
+            if isinstance(vars_list, list):
+                vars_str = ", ".join(v.get("name", v) if isinstance(v, dict) else str(v) for v in vars_list)
+            elif isinstance(vars_list, dict):
+                vars_str = ", ".join(vars_list.keys())
+            else:
+                vars_str = "None"
+                
+            if not vars_str:
+                vars_str = "None"
+                
+            desc = content_yaml.get("description", "Workflow Tool")
+            desc = desc.replace("\n", " ").strip() if desc else "Workflow Tool"
+                
+            workflows_info.append({
+                "name": tool_name,
+                "desc": desc[:100],
+                "inputs": vars_str
+            })
+            
+        mcp_doc = docs_dir / "mcp_integration.md"
+        if not mcp_doc.exists():
+            return False
+            
+        mcp_content = mcp_doc.read_text(encoding='utf-8')
+        
+        new_section = "<!-- TOOL_REGISTRY_START -->\n"
+        new_section += "## Available Tools\n\n"
+        
+        new_section += "### Workflows\n\n"
+        new_section += "| Tool Name | Description | Inputs |\n"
+        new_section += "|-----------|-------------|--------|\n"
+        for t in sorted(workflows_info, key=lambda x: x["name"]):
+            new_section += f"| `{t['name']}` | {t['desc']} | `{t['inputs']}` |\n"
+        new_section += "\n"
+        
+        new_section += "### Prompts\n\n"
+        new_section += "| Tool Name | Description | Inputs |\n"
+        new_section += "|-----------|-------------|--------|\n"
+        for t in sorted(prompts_info, key=lambda x: x["name"]):
+            new_section += f"| `{t['name']}` | {t['desc']} | `{t['inputs']}` |\n"
+        new_section += "\n"
+        
+        new_section += "### Skills\n\n"
+        new_section += "| Tool Name | Description | Inputs |\n"
+        new_section += "|-----------|-------------|--------|\n"
+        for t in sorted(skills_info, key=lambda x: x["name"]):
+            new_section += f"| `{t['name']}` | {t['desc']} | `{t['inputs']}` |\n"
+        new_section += "\n"
+        new_section += "<!-- TOOL_REGISTRY_END -->"
+        
+        if "<!-- TOOL_REGISTRY_START -->" in mcp_content:
+            new_mcp_content = re.sub(r'<!-- TOOL_REGISTRY_START -->.*<!-- TOOL_REGISTRY_END -->', new_section, mcp_content, flags=re.DOTALL)
+        else:
+            new_mcp_content = mcp_content + "\n\n" + new_section
+            
+        if check_mode:
+            if mcp_content != new_mcp_content:
+                print(f"❌ Content mismatch: {mcp_doc}")
+                return True
+            return False
+        else:
+            mcp_doc.write_text(new_mcp_content, encoding='utf-8')
+            print(f"✅ Updated {mcp_doc}")
             return False
 
     def _build_relational_index(self):
@@ -402,6 +583,25 @@ class DocumentationGenerator:
         # Link to GitHub source for the button
         rel_path_from_root = source_path.relative_to(self.root)
         github_url = f"https://github.com/fderuiter/proompts/blob/main/{rel_path_from_root}"
+        
+        metadata = data.get('metadata', {})
+        autonomy = metadata.get('autonomy')
+        maturity = metadata.get('maturity')
+        
+        tags = []
+        badges = []
+        if autonomy:
+            tags.append(autonomy)
+            badges.append(f"![Autonomy: {autonomy}](https://img.shields.io/badge/Autonomy-{autonomy}-blue)")
+        if maturity:
+            tags.append(maturity)
+            badges.append(f"![Maturity: {maturity}](https://img.shields.io/badge/Maturity-{maturity}-green)")
+            
+        tags_block = ""
+        if tags:
+            tags_block = "tags:\n" + "\n".join(f"  - {t}" for t in tags)
+            
+        badge_str = " " + " ".join(badges) if badges else ""
 
         try:
             raw_content = source_path.read_text(encoding='utf-8')
@@ -421,9 +621,10 @@ class DocumentationGenerator:
 
         content = f"""---
 title: {title}
+{tags_block}
 ---
 
-# {title}
+# {title}{badge_str}
 
 {desc}
 
@@ -678,6 +879,7 @@ def main() -> None:
     changes |= gen.scan_workflows(check_mode=args.check)
     changes |= gen.build_indices(check_mode=args.check)
     changes |= gen.build_tool_registry(check_mode=args.check)
+    changes |= gen.build_maturity_dashboard(check_mode=args.check)
     
     if args.check:
         if changes:
