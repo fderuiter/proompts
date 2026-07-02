@@ -53,14 +53,23 @@ options:
 ### `promptops simulate`
 
 ```text
-usage: promptops simulate [-h] --data DATA file
+usage: promptops simulate [-h] [-f FILE_FLAG] -i DATA [--strict] [--chaos]
+                          [-v] [--json] [--no-color]
+                          [file]
 
 positional arguments:
-  file         Path to prompt file
+  file                  Path to prompt file
 
 options:
-  -h, --help   show this help message and exit
-  --data DATA  Path to JSON/YAML file with mock data
+  -h, --help            show this help message and exit
+  -f FILE_FLAG, --file FILE_FLAG
+                        Path to prompt file (alias)
+  -i DATA, --data DATA  Path to JSON/YAML file with mock data
+  --strict              Enable strict validation
+  --chaos               Enable chaos mode
+  -v, --verbose         Increase verbosity
+  --json                Enable JSON output mode
+  --no-color            Disable colored output
 
 ```
 
