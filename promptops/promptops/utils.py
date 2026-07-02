@@ -239,7 +239,7 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
                     inp_dict = {"input": inp_str}
                 test_data.append({"inputs": inp_dict, "expected": [out_str]})
 
-        skills.append({
+        skill_dict = {
             "name": name,
             "description": description,
             "variables": vars_data,
@@ -248,5 +248,19 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
             "instructions": instructions,
             "testData": test_data,
             "path": path
-        })
+        }
+        
+        # Trigger strict schema validation for the skill section
+        from promptops.validation import PromptSchema
+        try:
+            # Inject defaults for fields required by PromptSchema but not normally present in skills.md
+            val_dict = skill_dict.copy()
+            val_dict.setdefault("model", "default")
+            val_dict.setdefault("modelParameters", {"temperature": 0.0})
+            val_dict.setdefault("evaluators", [])
+            PromptSchema(**val_dict)
+        except Exception as e:
+            raise ValueError(f"Schema validation failed for skill '{name}' in {path}: {e}")
+
+        skills.append(skill_dict)
     return {"metadata": metadata, "skills": skills, "path": path}
