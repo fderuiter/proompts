@@ -77,8 +77,8 @@ class DocumentationGenerator:
         
         total_prompts = 0
         l5_count = 0
-        autonomy_counts = {}
-        maturity_counts = {}
+        autonomy_counts: dict[str, int] = {}
+        maturity_counts: dict[str, int] = {}
         
         # Process skills.md manifests
         for path in iter_skill_manifests(str(prompts_dir)):
@@ -174,18 +174,18 @@ class DocumentationGenerator:
         md.append("```\n")
         
         out_path = docs_dir / "maturity_dashboard.md"
-        content = "\n".join(md)
+        md_content = "\n".join(md)
         
         if check_mode:
             if not out_path.exists():
                 print(f"❌ Missing file: {out_path}")
                 return True
-            elif out_path.read_text(encoding='utf-8') != content:
+            elif out_path.read_text(encoding='utf-8') != md_content:
                 print(f"❌ Content mismatch: {out_path}")
                 return True
             return False
         else:
-            out_path.write_text(content, encoding='utf-8')
+            out_path.write_text(md_content, encoding='utf-8')
             print(f"✅ Updated {out_path}")
             return False
 

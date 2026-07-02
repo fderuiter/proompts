@@ -7,6 +7,7 @@ import re
 import logging
 from pathlib import Path
 import jsonschema
+from typing import Any
 
 from promptops.utils import get_tool_name_mcp
 
@@ -161,7 +162,7 @@ async def handle_call_tool(name: str, arguments: dict | None) -> list[types.Text
         try:
             content = load_yaml(path)
             if content and get_tool_name_mcp(path, content) == name:
-                fidelity = {}
+                fidelity: dict[str, Any] = {}
                 out = simulate_prompt_execution(content, arguments, prompt_file=str(path), strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
                 return [types.TextContent(type="text", text=f"--- Executing Prompt: {content.get('name')} ---\n\n{out}")]
         except:

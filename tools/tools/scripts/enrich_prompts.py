@@ -228,8 +228,8 @@ def infer_requires_context(content: dict) -> bool:
 # ────────────────────────────────────────────────────────────────────────────
 
 def _extract_surrounding_context(text: str, var_name: str, window: int = 120) -> str:
-    """Return snippet of text surrounding {{var_name}}."""
-    pattern = r'\{\{' + re.escape(var_name) + r'\}\}'
+    """Return snippet of text surrounding {{var_name}} or <var_name>."""
+    pattern = r'(?:\{\{|<)' + re.escape(var_name) + r'(?:\}\}|>)'
     m = re.search(pattern, text)
     if not m:
         return ""
@@ -241,12 +241,12 @@ def _extract_surrounding_context(text: str, var_name: str, window: int = 120) ->
 def _infer_description_from_inline_label(text: str, var_name: str) -> str | None:
     """Try to extract `{{var}} – description` or ``{{var}}`` – description patterns."""
     patterns = [
-        # `{{var}}` – description  or  `{{var}}` — description
-        r'`?\{\{' + re.escape(var_name) + r'\}\}`?\s*[–—\-]+\s*(.+?)(?:\n|$|;|\.|\\n)',
+        # `{{var}}` – description  or  `{{var}}` — description or `<var>` - description
+        r'`?(?:\{\{|<)' + re.escape(var_name) + r'(?:\}\}|>)`?\s*[–—\-]+\s*(.+?)(?:\n|$|;|\.|\\n)',
         # var_name: description (as in inline documentation)
         r'(?:^|\n)\s*[-*]?\s*' + re.escape(var_name) + r'\s*[:=]\s*(.+?)(?:\n|$)',
         # Label: {{var}} (reverse mapping)
-        r'(?:^|\n)\s*[-*]?\s*(.+?)\s*[:=]\s*`?\{\{' + re.escape(var_name) + r'\}\}`?',
+        r'(?:^|\n)\s*[-*]?\s*(.+?)\s*[:=]\s*`?(?:\{\{|<)' + re.escape(var_name) + r'(?:\}\}|>)`?',
     ]
     for pat in patterns:
         m = re.search(pat, text, re.IGNORECASE)
@@ -261,6 +261,10 @@ def _infer_description_from_inline_label(text: str, var_name: str) -> str | None
 # Common variable name → fallback description mapping
 COMMON_VAR_DESCRIPTIONS: dict[str, str] = {
     "input":               "The primary input or query text for the prompt",
+    "user_query":          "The exact natural language query provided by the user",
+    "user_input":          "The primary input provided by the user",
+    "system_context":      "The background rules or operational context for the AI system",
+    "system_prompt":       "The system prompt or background instructions for the model",
     "topic":               "The subject or topic to address",
     "text":                "The text content to process",
     "context":             "Background context or supporting information",
@@ -327,7 +331,8 @@ def suggest_variable_description(var_name: str, context: str) -> str:
         return COMMON_VAR_DESCRIPTIONS[key]
 
     # 4. Partial match: check if variable name contains a known key
-    for known_key, desc in COMMON_VAR_DESCRIPTIONS.items():
+    # Check longer keys first to avoid partial matching on short substrings (e.g., 'text' matching 'system_context')
+    for known_key, desc in sorted(COMMON_VAR_DESCRIPTIONS.items(), key=lambda item: len(item[0]), reverse=True):
         if known_key in key or key in known_key:
             return desc
 
@@ -363,7 +368,7 @@ def enrich_file(file_path: Path, dry_run: bool = False) -> bool:
 
     # ── A. Fill in variable descriptions ────────────────────────────────
     current_vars = content.get("variables", [])
-    vars_in_template = extract_template_vars(content)
+    vars_in_template = set(extract_template_vars(content))
     prompt_name = content.get("name", "")
     prompt_desc = content.get("description", "")
 

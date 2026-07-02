@@ -55,6 +55,7 @@ def load_yaml(path: Union[str, Path]) -> Dict[str, Any]:
             rendered_text = ""
             
         if isinstance(rendered_text, str):
+            rendered_text = rendered_text.lstrip()
             if rendered_text.startswith("---"):
                 parts = rendered_text.split("---", 2)
                 if len(parts) >= 3:
@@ -169,6 +170,7 @@ def get_tool_name_mcp(path: Path, content: dict) -> str:
 def extract_template_vars(content: Dict[str, Any]) -> List[str]:
     found: Set[str] = set()
     env = Environment()
+    ignore_tags = {"br", "p", "b", "i", "div", "span", "ul", "li", "ol", "html", "body", "head", "title", "table", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "a", "img", "strong", "em", "hr", "meta", "link", "script", "style", "svg", "path"}
     for msg in content.get("messages", []):
         text = msg.get("content", "")
         if isinstance(text, str):
@@ -178,6 +180,12 @@ def extract_template_vars(content: Dict[str, Any]) -> List[str]:
                 found.update(vars_in_text)
             except Exception as e:
                 raise ValueError(f"Failed to parse template for variables: {e}")
+            
+            # Extract variables wrapped in XML tags
+            xml_tags = re.findall(r'<([a-zA-Z0-9_]+)>', text)
+            for tag in xml_tags:
+                if tag.lower() not in ignore_tags:
+                    found.add(tag)
     return sorted(list(found))
 
 def iter_skill_manifests(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:

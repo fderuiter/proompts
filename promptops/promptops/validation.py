@@ -3,7 +3,7 @@ import re
 import jinja2
 from enum import Enum
 from pathlib import Path
-from typing import Any, List, Optional, Dict, Union
+from typing import Any, List, Optional, Dict, Union, Set
 
 from pydantic import BaseModel, ValidationError, field_validator, model_validator, Field
 from promptops.utils import load_yaml, iter_prompt_files, iter_workflow_files
@@ -149,6 +149,14 @@ class PromptSchema(BaseModel):
             try:
                 ast = env.parse(content_str)
                 vars_in_text = jinja2.meta.find_undeclared_variables(ast)
+                
+                # Extract variables wrapped in XML tags
+                ignore_tags = {"br", "p", "b", "i", "div", "span", "ul", "li", "ol", "html", "body", "head", "title", "table", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "a", "img", "strong", "em", "hr", "meta", "link", "script", "style", "svg", "path"}
+                xml_tags = re.findall(r'<([a-zA-Z0-9_]+)>', content_str)
+                for tag in xml_tags:
+                    if tag.lower() not in ignore_tags:
+                        vars_in_text.add(tag)
+                        
                 found_vars.update(vars_in_text)
             except jinja2.exceptions.TemplateSyntaxError as e:
                 raise ValueError(f"Jinja2 syntax error: {e.message} at line {e.lineno}")
@@ -384,7 +392,7 @@ def validate_prompts(directory: str, strict: bool = False) -> bool:
     ok = True
     seen_names: Dict[str, str] = {}
     dir_path = os.environ.get('PROMPTOPS_REGISTRY', directory)
-    dirs_to_check = set()
+    dirs_to_check: Set[Path] = set()
     
     NAMING_RULES = {
         "meta": re.compile(r"^L\d+_.*\.prompt\.(ya?ml|md)$", re.IGNORECASE),
@@ -488,13 +496,13 @@ def validate_prompts(directory: str, strict: bool = False) -> bool:
                     ok = False
 
     # Check directory hygiene
-    for directory in dirs_to_check:
-        if not (directory / "overview.md").exists():
-            console.error(f"Missing overview.md in {directory}")
+    for d in dirs_to_check:
+        if not (d / "overview.md").exists():
+            console.error(f"Missing overview.md in {d}")
             ok = False
             
-        has_manifest = (directory / "skills.md").exists()
-        for file in directory.iterdir():
+        has_manifest = (d / "skills.md").exists()
+        for file in d.iterdir():
             if not file.is_file() or file.name.startswith('.'):
                 continue
             name = file.name

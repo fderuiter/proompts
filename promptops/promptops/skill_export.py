@@ -1,5 +1,6 @@
 import os
 import json
+import re
 from pathlib import Path
 from typing import Dict, Any, Set, List, Optional
 import yaml
@@ -7,6 +8,11 @@ from pydantic import ValidationError
 
 # To avoid circular imports, we don't import PromptSchema here if not needed
 # or we import it inside functions.
+
+def _redact(text: str) -> str:
+    if not isinstance(text, str):
+        return text
+    return re.sub(r'\b\d{3}-\d{2}-\d{4}\b', '[REDACTED]', text)
 
 def _generate_skill_description(prompt_data: Dict[str, Any]) -> str:
     fallback_desc = prompt_data.get("description", "No description provided.")
@@ -112,7 +118,7 @@ def generate_skill_section(prompt_data: Dict[str, Any]) -> str:
             tc_yaml = yaml.dump(tool_calls, sort_keys=False, default_flow_style=False).strip()
             instructions_blocks.append(f"[TOOL_CALL]\n```yaml\n{tc_yaml}\n```")
 
-    instructions = "\n\n".join(instructions_blocks)
+    instructions = _redact("\n\n".join(instructions_blocks))
 
     # Response Mapping
     response_mapping = "Expected JSON/YAML structure matching the schema rules."
@@ -130,7 +136,7 @@ def generate_skill_section(prompt_data: Dict[str, Any]) -> str:
             input_ctx = yaml.dump(inputs, sort_keys=False, default_flow_style=True).strip()
         else:
             input_ctx = str(inputs)
-        few_shots.append(f"Input Context: \"{input_ctx}\"\nAsserted Output: \"{expected}\"")
+        few_shots.append(f"Input Context: \"{_redact(input_ctx)}\"\nAsserted Output: \"{_redact(str(expected))}\"")
 
     few_shot_text = "\n\n".join(few_shots) if few_shots else "None provided."
 
@@ -140,7 +146,7 @@ def generate_skill_section(prompt_data: Dict[str, Any]) -> str:
         "variables": variables,
         "metadata": metadata
     }
-    vars_json = json.dumps(validation_data)
+    vars_json = _redact(json.dumps(validation_data))
 
     section = f"""## Skill: {name}{badge_str}
 <!-- VALIDATION_METADATA: {vars_json} -->

@@ -54,7 +54,7 @@ def simulate_prompt(prompt_file: str, data_file: str, chaos_mode: bool = False, 
         return False
         
     try:
-        fidelity_report = {}
+        fidelity_report: dict = {}
         output = simulate_prompt_execution(
             content, 
             mock_data, 
