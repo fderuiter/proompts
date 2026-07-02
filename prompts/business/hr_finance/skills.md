@@ -77,7 +77,7 @@ Asserted Output: "Markdown table reflecting missing staffing hours"
 ---
 
 ## Skill: Strategic Workforce and Talent Acquisition Plan
-<!-- VALIDATION_METADATA: [{"name": "cro_name", "description": "The name or identifier", "required": true}, {"name": "headcount_data", "description": "role breakdown with trial timelines and turnover rates", "required": true}, {"name": "salary_benchmarks", "description": "market compensation data", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "cro_name", "description": "The name or identifier", "required": true}, {"name": "headcount_data", "description": "role breakdown with trial timelines and turnover rates", "required": true}, {"name": "salary_benchmarks", "description": "market compensation data", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Create a 12‑month hiring and retention roadmap that fills projected staffing gaps while keeping turnover under 12%.
 
@@ -141,7 +141,7 @@ Asserted Output: ""
 ---
 
 ## Skill: GCP and GDPR Training Compliance Risk Report
-<!-- VALIDATION_METADATA: [{"name": "training_records", "description": "CSV of staff training dates by role and study", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "training_records", "description": "CSV of staff training dates by role and study", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Generate a monthly assessment of staff training compliance for GCP and GDPR regulations.
 

@@ -19,7 +19,7 @@ tags:
 ---
 
 ## Skill: Universal Automation Agent
-<!-- VALIDATION_METADATA: [{"name": "task", "description": "Describe the specific action to be automated.", "required": true}, {"name": "context", "description": "Provide the raw data, text, or background information required to complete the task.", "required": true}, {"name": "constraints", "description": "List any strict limitations (e.g., word count, formatting restrictions, tone, forbidden actions).", "required": true}, {"name": "output_format", "description": "Define exactly how the final deliverable should look.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "task", "description": "Describe the specific action to be automated.", "required": true}, {"name": "context", "description": "Provide the raw data, text, or background information required to complete the task.", "required": true}, {"name": "constraints", "description": "List any strict limitations (e.g., word count, formatting restrictions, tone, forbidden actions).", "required": true}, {"name": "output_format", "description": "Define exactly how the final deliverable should look.", "required": true}, {"name": "thought_process", "description": "Auto-extracted variable thought_process", "required": false}] -->
 ### Description
 An elite, highly adaptable automation agent that executes specific tasks based on strict constraints and context.
 

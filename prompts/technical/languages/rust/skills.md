@@ -20,7 +20,7 @@ tags:
 ---
 
 ## Skill: Rust Architectural Patterns
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "Armed", "description": "Auto-extracted variable Armed", "required": false}, {"name": "Flying", "description": "Auto-extracted variable Flying", "required": false}, {"name": "Idle", "description": "Auto-extracted variable Idle", "required": false}, {"name": "State", "description": "Auto-extracted variable State", "required": false}, {"name": "T", "description": "Auto-extracted variable T", "required": false}, {"name": "Wrapper", "description": "Auto-extracted variable Wrapper", "required": false}, {"name": "native_ctx_t", "description": "Auto-extracted variable native_ctx_t", "required": false}] -->
 ### Description
 Deep dive into Typestate and Zero-Cost FFI abstractions for Principal-level Rust.
 
@@ -142,7 +142,7 @@ Asserted Output: "## 📐 Pattern Selection"
 ---
 
 ## Skill: Principal Rust Developer
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "Connected", "description": "Auto-extracted variable Connected", "required": false}] -->
 ### Description
 A Principal Engineer's guide to Rust development, focusing on type-driven architecture, error handling, API stability, safety, concurrency, and DX.
 

@@ -17,7 +17,7 @@ tags:
 ---
 
 ## Skill: The Prompt Alchemist
-<!-- VALIDATION_METADATA: [{"name": "target_domain", "description": "The general category or industry to invent a prompt for (e.g., Clinical, Software Engineering, Everyday Life, Culinary Arts).", "required": true}, {"name": "existing_themes", "description": "A brief list of standard or existing prompt types to explicitly avoid generating.", "required": false}] -->
+<!-- VALIDATION_METADATA: [{"name": "target_domain", "description": "The general category or industry to invent a prompt for (e.g., Clinical, Software Engineering, Everyday Life, Culinary Arts).", "required": true}, {"name": "existing_themes", "description": "A brief list of standard or existing prompt types to explicitly avoid generating.", "required": false}, {"name": "avoid", "description": "Auto-extracted variable avoid", "required": false}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 A Principal Prompt Engineering Alchemist that invents novel, out-of-the-box generative architectures.
 

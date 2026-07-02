@@ -678,7 +678,7 @@ None provided.
 ---
 
 ## Skill: dynamic_fleet_routing_optimization_architect
-<!-- VALIDATION_METADATA: [{"name": "ROUTING_NETWORK_DATA", "type": "string", "description": "Geo-spatial nodes, arc costs, and warehouse structural parameters."}, {"name": "FLEET_CONSTRAINTS", "type": "string", "description": "Fleet composition, capacity limits, shift regulations, and specific vehicle characteristics."}, {"name": "DELIVERY_TIME_WINDOWS", "type": "string", "description": "Stochastic customer demand schedules, strict delivery time windows, and penalty costs for violations."}] -->
+<!-- VALIDATION_METADATA: [{"name": "ROUTING_NETWORK_DATA", "type": "string", "description": "Geo-spatial nodes, arc costs, and warehouse structural parameters."}, {"name": "FLEET_CONSTRAINTS", "type": "string", "description": "Fleet composition, capacity limits, shift regulations, and specific vehicle characteristics."}, {"name": "DELIVERY_TIME_WINDOWS", "type": "string", "description": "Stochastic customer demand schedules, strict delivery time windows, and penalty costs for violations."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "security_boundary", "description": "Auto-extracted variable security_boundary", "required": false}] -->
 ### Description
 Acts as a Principal Logistics Operations Research Scientist to formulate rigorous Capacitated Vehicle Routing Problem with Time Windows (CVRPTW) models to optimize last-mile logistics networks using advanced stochastic heuristics and strict LaTeX notation.
 
@@ -852,7 +852,7 @@ None provided.
 ---
 
 ## Skill: Supply Chain Disruption Stochastic Stress Test Architect
-<!-- VALIDATION_METADATA: [{"name": "supply_chain_network_data", "description": "Detailed specifications of the supply chain network, including nodes, lead times, and inventory buffers.", "required": true}, {"name": "disruption_scenario", "description": "The specific disruption event to model and stress test against the network.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "supply_chain_network_data", "description": "Detailed specifications of the supply chain network, including nodes, lead times, and inventory buffers.", "required": true}, {"name": "disruption_scenario", "description": "The specific disruption event to model and stress test against the network.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Conducts rigorous stochastic stress testing and resilience optimization for global supply chain networks using node vulnerability analysis and disruption modeling.
 
@@ -950,7 +950,7 @@ Asserted Output: "Immediate Containment Protocol.*5 Whys.*Corrective Action Plan
 ---
 
 ## Skill: Weekly Operations KPI Snapshot
-<!-- VALIDATION_METADATA: [{"name": "milestone_csv", "description": "milestone data", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "milestone_csv", "description": "milestone data", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Summarize weekly milestone performance and highlight at-risk studies.
 

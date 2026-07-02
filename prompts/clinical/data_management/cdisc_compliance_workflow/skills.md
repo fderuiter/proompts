@@ -71,7 +71,7 @@ tags:
 ---
 
 ## Skill: ADaM ADTTE Oncology Censoring Rules Architect
-<!-- VALIDATION_METADATA: [{"name": "adsl_data", "description": "ADaM Subject-Level Analysis Dataset (ADSL) providing essential demographic and study disposition dates (e.g., TRTSDT, DTHDT, LSTALVDT).", "required": true}, {"name": "adrs_data", "description": "ADaM Tumor Response Analysis Dataset (ADRS) providing tumor assessment dates and overall response criteria (e.g., PD, CR, PR).", "required": true}, {"name": "endpoint_type", "description": "The specific time-to-event endpoint being analyzed (e.g., PFS, OS, DoR).", "required": true}, {"name": "protocol_censoring_rules", "description": "Specific censoring algorithms or rules defined in the protocol or Statistical Analysis Plan (SAP) for handling missed assessments, new anti-cancer therapy, or specific dates.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "adsl_data", "description": "ADaM Subject-Level Analysis Dataset (ADSL) providing essential demographic and study disposition dates (e.g., TRTSDT, DTHDT, LSTALVDT).", "required": true}, {"name": "adrs_data", "description": "ADaM Tumor Response Analysis Dataset (ADRS) providing tumor assessment dates and overall response criteria (e.g., PD, CR, PR).", "required": true}, {"name": "endpoint_type", "description": "The specific time-to-event endpoint being analyzed (e.g., PFS, OS, DoR).", "required": true}, {"name": "protocol_censoring_rules", "description": "Specific censoring algorithms or rules defined in the protocol or Statistical Analysis Plan (SAP) for handling missed assessments, new anti-cancer therapy, or specific dates.", "required": true}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}, {"name": "instructions", "description": "Auto-extracted variable instructions", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Automates the complex derivation of oncology Time-to-Event (TTE) endpoints (e.g., Progression-Free Survival, Overall Survival) censoring rules and parameters for the ADaM ADTTE dataset based on SDTM and ADaM source data.
 
@@ -163,7 +163,7 @@ Asserted Output: "{
 ---
 
 ## Skill: Define-XML Analysis Results Metadata Architect
-<!-- VALIDATION_METADATA: [{"name": "statistical_display_spec", "description": "Sample or structure of the statistical display specification (e.g., Table 14.1.1 Demographics).", "required": true}, {"name": "adam_dataset_metadata", "description": "Metadata defining the underlying ADaM datasets and variables used for the analysis.", "required": true}, {"name": "target_define_xml_version", "description": "The target Define-XML standard version (e.g., Define-XML v2.1).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "statistical_display_spec", "description": "Sample or structure of the statistical display specification (e.g., Table 14.1.1 Demographics).", "required": true}, {"name": "adam_dataset_metadata", "description": "Metadata defining the underlying ADaM datasets and variables used for the analysis.", "required": true}, {"name": "target_define_xml_version", "description": "The target Define-XML standard version (e.g., Define-XML v2.1).", "required": true}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}, {"name": "instructions", "description": "Auto-extracted variable instructions", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Automates the complex structural generation and mapping of Analysis Results Metadata (ARM) for Define-XML v2.1, ensuring precise linkage between statistical displays (TLFs) and ADaM datasets.
 
@@ -236,7 +236,7 @@ Asserted Output: "{
 ---
 
 ## Skill: SDTM Medical Device Mapping Architect
-<!-- VALIDATION_METADATA: [{"name": "source_data_schema", "description": "The schema and sample data of the raw EDC or external medical device source data.", "required": true}, {"name": "target_domains", "description": "The specific CDISC SDTM Device domains to map to (e.g., DI, DO, DU, DE).", "required": true}, {"name": "cdisc_ig_version", "description": "The specific CDISC SDTM Implementation Guide version (e.g., SDTM IG 3.4).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "source_data_schema", "description": "The schema and sample data of the raw EDC or external medical device source data.", "required": true}, {"name": "target_domains", "description": "The specific CDISC SDTM Device domains to map to (e.g., DI, DO, DU, DE).", "required": true}, {"name": "cdisc_ig_version", "description": "The specific CDISC SDTM Implementation Guide version (e.g., SDTM IG 3.4).", "required": true}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}, {"name": "instructions", "description": "Auto-extracted variable instructions", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Automates the complex algorithmic mapping of raw EDC and external medical device data into CDISC SDTM Device domains (e.g., DI, DO, DU, DE) with strict adherence to CDISC Implementation Guides.
 
@@ -365,7 +365,7 @@ Otherwise derived as 'TREATMENT'.
 ---
 
 ## Skill: Pinnacle 21 Conformance Resolution Architect
-<!-- VALIDATION_METADATA: [{"name": "p21_rule_id", "description": "The specific Pinnacle 21 rule ID that triggered the rejection (e.g., SD0063).", "required": true}, {"name": "issue_description", "description": "The description of the validation issue as reported by Pinnacle 21.", "required": true}, {"name": "dataset_context", "description": "The relevant variables and sample data from the dataset where the issue occurred.", "required": true}, {"name": "target_standard", "description": "The target CDISC standard and version (e.g., SDTM IG 3.3, ADaM IG 1.3).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "p21_rule_id", "description": "The specific Pinnacle 21 rule ID that triggered the rejection (e.g., SD0063).", "required": true}, {"name": "issue_description", "description": "The description of the validation issue as reported by Pinnacle 21.", "required": true}, {"name": "dataset_context", "description": "The relevant variables and sample data from the dataset where the issue occurred.", "required": true}, {"name": "target_standard", "description": "The target CDISC standard and version (e.g., SDTM IG 3.3, ADaM IG 1.3).", "required": true}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}, {"name": "instructions", "description": "Auto-extracted variable instructions", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Automates the resolution of complex Pinnacle 21 (P21) conformance rule rejections by analyzing validation issues against CDISC Implementation Guides and generating precise mitigation or mapping correction strategies.
 
@@ -443,7 +443,7 @@ Asserted Output: "{
 ---
 
 ## Skill: SDTM Trial Design Mapping Architect
-<!-- VALIDATION_METADATA: [{"name": "protocol_schedule", "description": "The Schedule of Assessments or study epoch definitions from the clinical protocol.", "required": true}, {"name": "edc_metadata", "description": "EDC metadata containing visit schedules and arm allocations.", "required": true}, {"name": "sdtm_ig_version", "description": "The target SDTM Implementation Guide version (e.g., 3.3, 3.4).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "protocol_schedule", "description": "The Schedule of Assessments or study epoch definitions from the clinical protocol.", "required": true}, {"name": "edc_metadata", "description": "EDC metadata containing visit schedules and arm allocations.", "required": true}, {"name": "sdtm_ig_version", "description": "The target SDTM Implementation Guide version (e.g., 3.3, 3.4).", "required": true}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}, {"name": "instructions", "description": "Auto-extracted variable instructions", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Automates the complex algorithmic mapping and generation of CDISC SDTM Trial Design domains (TA, TE, TV) from clinical trial protocols and EDC schedule of assessments.
 
@@ -535,7 +535,7 @@ Asserted Output: "{
 ---
 
 ## Skill: SDTM Device Deficiencies Mapping Architect
-<!-- VALIDATION_METADATA: [{"name": "edc_deficiency_data", "description": "Sample or structure of raw EDC data related to device malfunctions, use errors, or device-related adverse events.", "required": true}, {"name": "device_dictionary_data", "description": "Sample or structure of the device identifiers, lot numbers, and classifications from an external inventory or DI domain.", "required": true}, {"name": "target_sdtm_version", "description": "The target CDISC SDTM Implementation Guide version supporting Device domains (e.g., SDTM IG 3.4 for Devices).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "edc_deficiency_data", "description": "Sample or structure of raw EDC data related to device malfunctions, use errors, or device-related adverse events.", "required": true}, {"name": "device_dictionary_data", "description": "Sample or structure of the device identifiers, lot numbers, and classifications from an external inventory or DI domain.", "required": true}, {"name": "target_sdtm_version", "description": "The target CDISC SDTM Implementation Guide version supporting Device domains (e.g., SDTM IG 3.4 for Devices).", "required": true}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}, {"name": "instructions", "description": "Auto-extracted variable instructions", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Automates the algorithmic mapping and evaluation of raw Medical Device deficiency reports from EDC systems to the CDISC SDTM DD (Device Deficiencies) and related Device-subject domains (e.g., DI, DR).
 
@@ -613,7 +613,7 @@ Asserted Output: "{
 ---
 
 ## Skill: CDISC Cross-Dataset Relational Architect
-<!-- VALIDATION_METADATA: [{"name": "primary_domain_data", "description": "Sample or structure of the primary SDTM domain data (e.g., AE, CM, EX).", "required": true}, {"name": "secondary_domain_data", "description": "Sample or structure of the secondary or related SDTM domain data to be linked.", "required": true}, {"name": "target_sdtm_version", "description": "The target CDISC SDTM Implementation Guide version (e.g., SDTM IG 3.4).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "primary_domain_data", "description": "Sample or structure of the primary SDTM domain data (e.g., AE, CM, EX).", "required": true}, {"name": "secondary_domain_data", "description": "Sample or structure of the secondary or related SDTM domain data to be linked.", "required": true}, {"name": "target_sdtm_version", "description": "The target CDISC SDTM Implementation Guide version (e.g., SDTM IG 3.4).", "required": true}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}, {"name": "instructions", "description": "Auto-extracted variable instructions", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Automates the complex algorithmic mapping and harmonization of relational data across CDISC SDTM domains, specifically generating RELREC (Related Records) and integrating SUPPQUAL (Supplemental Qualifiers) correctly without structural violations.
 
@@ -738,7 +738,7 @@ Asserted Output: "[
 ---
 
 ## Skill: Controlled Terminology Harmonizer
-<!-- VALIDATION_METADATA: [{"name": "value_list", "description": "A list of values to standardize.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "value_list", "description": "A list of values to standardize.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Standardizes a list of values (e.g., Units) to CDISC Controlled Terminology (NCI Preferred Terms).
 
@@ -806,7 +806,7 @@ Asserted Output: "{{ macros.safety_refusal() }}
 ---
 
 ## Skill: SDTM Pharmacokinetics Mapping Architect
-<!-- VALIDATION_METADATA: [{"name": "vendor_data_extract", "description": "Sample or structure of the external PK vendor data (e.g., concentration values, BLQ/LLOQ markers, actual timepoints).", "required": true}, {"name": "edc_dosing_data", "description": "Sample or structure of the raw EDC dosing data (e.g., EX domain equivalents, nominal timepoints).", "required": true}, {"name": "target_sdtm_version", "description": "The target CDISC SDTM Implementation Guide version (e.g., SDTM IG 3.4).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "vendor_data_extract", "description": "Sample or structure of the external PK vendor data (e.g., concentration values, BLQ/LLOQ markers, actual timepoints).", "required": true}, {"name": "edc_dosing_data", "description": "Sample or structure of the raw EDC dosing data (e.g., EX domain equivalents, nominal timepoints).", "required": true}, {"name": "target_sdtm_version", "description": "The target CDISC SDTM Implementation Guide version (e.g., SDTM IG 3.4).", "required": true}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}, {"name": "instructions", "description": "Auto-extracted variable instructions", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Automates the complex algorithmic mapping of raw EDC and external vendor pharmacokinetic data into CDISC SDTM PC (Pharmacokinetics Concentrations) and PP (Pharmacokinetics Parameters) domains.
 
@@ -884,7 +884,7 @@ Asserted Output: "{
 ---
 
 ## Skill: ADaM ADTTE Time to Event Derivation Architect
-<!-- VALIDATION_METADATA: [{"name": "source_sdtm_data", "description": "Sample or structure of source SDTM data (e.g., ADSL, RS, DS, EX) needed for deriving event and censoring dates.", "required": true}, {"name": "survival_endpoint_definition", "description": "The Statistical Analysis Plan (SAP) definition of the survival endpoint (e.g., Progression-Free Survival (PFS), Overall Survival (OS)).", "required": true}, {"name": "target_adam_version", "description": "The target CDISC ADaM Implementation Guide version.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "source_sdtm_data", "description": "Sample or structure of source SDTM data (e.g., ADSL, RS, DS, EX) needed for deriving event and censoring dates.", "required": true}, {"name": "survival_endpoint_definition", "description": "The Statistical Analysis Plan (SAP) definition of the survival endpoint (e.g., Progression-Free Survival (PFS), Overall Survival (OS)).", "required": true}, {"name": "target_adam_version", "description": "The target CDISC ADaM Implementation Guide version.", "required": true}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}, {"name": "instructions", "description": "Auto-extracted variable instructions", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Automates the complex algorithmic derivation of Time-to-Event (ADTTE) analysis datasets for oncology survival endpoints, adhering to CDISC ADaM standards.
 
@@ -1017,7 +1017,7 @@ ISPVID,Sponsor Identity,Global Pharma Inc.,
 ---
 
 ## Skill: SDTM Protocol Deviation Modeling Architect
-<!-- VALIDATION_METADATA: [{"name": "raw_deviation_data", "description": "Sample or structure of the raw protocol deviation data from EDC or CTMS (e.g., deviation date, description, category, severity).", "required": true}, {"name": "protocol_schedule", "description": "Summary of the protocol schedule of assessments or visit windows to cross-reference deviations against.", "required": true}, {"name": "target_sdtm_version", "description": "The target CDISC SDTM Implementation Guide version (e.g., SDTM IG 3.4).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "raw_deviation_data", "description": "Sample or structure of the raw protocol deviation data from EDC or CTMS (e.g., deviation date, description, category, severity).", "required": true}, {"name": "protocol_schedule", "description": "Summary of the protocol schedule of assessments or visit windows to cross-reference deviations against.", "required": true}, {"name": "target_sdtm_version", "description": "The target CDISC SDTM Implementation Guide version (e.g., SDTM IG 3.4).", "required": true}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}, {"name": "instructions", "description": "Auto-extracted variable instructions", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Automates the complex algorithmic mapping of raw EDC and CTMS protocol deviation data into the CDISC SDTM DV (Protocol Deviations) domain.
 
@@ -1089,7 +1089,7 @@ Asserted Output: "{
 ---
 
 ## Skill: SDTM Cardiovascular Device Mapping Architect
-<!-- VALIDATION_METADATA: [{"name": "device_type", "description": "The type of cardiovascular device being tracked (e.g., Pacemaker, ICD, TAVR valve, Stent).", "required": true}, {"name": "raw_edc_data", "description": "Sample raw EDC extraction containing device attributes, implantation details, or follow-up assessments.", "required": true}, {"name": "external_telemetry_data", "description": "Sample of external telemetry data or device interrogation logs, if applicable.", "required": false}, {"name": "target_standard", "description": "The target CDISC standard and version (e.g., SDTM IG 3.4, SDTM Device IG).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "device_type", "description": "The type of cardiovascular device being tracked (e.g., Pacemaker, ICD, TAVR valve, Stent).", "required": true}, {"name": "raw_edc_data", "description": "Sample raw EDC extraction containing device attributes, implantation details, or follow-up assessments.", "required": true}, {"name": "external_telemetry_data", "description": "Sample of external telemetry data or device interrogation logs, if applicable.", "required": false}, {"name": "target_standard", "description": "The target CDISC standard and version (e.g., SDTM IG 3.4, SDTM Device IG).", "required": true}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}, {"name": "instructions", "description": "Auto-extracted variable instructions", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Automates the complex algorithmic mapping of raw Electronic Data Capture (EDC) data and external device telemetry for cardiovascular medical devices into CDISC SDTM Device domains (e.g., DI, DU, DO, DR).
 
@@ -1175,7 +1175,7 @@ Asserted Output: "{
 ---
 
 ## Skill: ADaM ADLB NCI-CTCAE and Hy's Law Toxicity Architect
-<!-- VALIDATION_METADATA: [{"name": "sdtm_lb_data", "description": "Input raw SDTM LB (Laboratory Test Results) dataset specification or structure, including baseline flags, normal limits, and standard units.", "required": true}, {"name": "adsl_data", "description": "Associated Subject Level Analysis Dataset (ADSL) variables, specifically treatment start and end dates for AVISIT derivation.", "required": true}, {"name": "protocol_toxicity_criteria", "description": "Specific study protocol criteria, referencing the target NCI-CTCAE version and specific eDISH bounds for Hy's Law evaluation.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "sdtm_lb_data", "description": "Input raw SDTM LB (Laboratory Test Results) dataset specification or structure, including baseline flags, normal limits, and standard units.", "required": true}, {"name": "adsl_data", "description": "Associated Subject Level Analysis Dataset (ADSL) variables, specifically treatment start and end dates for AVISIT derivation.", "required": true}, {"name": "protocol_toxicity_criteria", "description": "Specific study protocol criteria, referencing the target NCI-CTCAE version and specific eDISH bounds for Hy's Law evaluation.", "required": true}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}, {"name": "instructions", "description": "Auto-extracted variable instructions", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Automates the rigorous algorithmic derivation of NCI-CTCAE toxicity grades, complex baseline flagging, and eDISH (Hy's Law) criteria for the ADaM Laboratory (ADLB) domain, strictly adhering to CDISC standards.
 
@@ -1239,7 +1239,7 @@ Asserted Output: "{
 ---
 
 ## Skill: SDTM Concomitant Medications Mapping Architect
-<!-- VALIDATION_METADATA: [{"name": "raw_edc_data", "description": "Sample or structure of the raw EDC Concomitant Medications data (e.g., Medication Name, Start/End Dates, Indication).", "required": true}, {"name": "whodrug_coding_data", "description": "Sample or structure of the WHODrug dictionary coding results (e.g., Verbatim Term, Preferred Term, ATC Classification).", "required": true}, {"name": "target_sdtm_version", "description": "The target CDISC SDTM Implementation Guide version (e.g., SDTM IG 3.4).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "raw_edc_data", "description": "Sample or structure of the raw EDC Concomitant Medications data (e.g., Medication Name, Start/End Dates, Indication).", "required": true}, {"name": "whodrug_coding_data", "description": "Sample or structure of the WHODrug dictionary coding results (e.g., Verbatim Term, Preferred Term, ATC Classification).", "required": true}, {"name": "target_sdtm_version", "description": "The target CDISC SDTM Implementation Guide version (e.g., SDTM IG 3.4).", "required": true}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}, {"name": "instructions", "description": "Auto-extracted variable instructions", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Automates the complex algorithmic mapping of raw EDC Concomitant Medication data and WHODrug coding data into the CDISC SDTM CM (Concomitant Medications) domain.
 

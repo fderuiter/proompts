@@ -104,7 +104,7 @@ Asserted Output: "| Finding | Risk Level | Action |
 ---
 
 ## Skill: RBQM Anomaly Detection
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "site_data", "description": "Auto-extracted variable site_data", "required": false}] -->
 ### Description
 Identify data outliers, anomalies, and atypical patient patterns in real-time across clinical trial datasets to flag potential risks or misconduct.
 

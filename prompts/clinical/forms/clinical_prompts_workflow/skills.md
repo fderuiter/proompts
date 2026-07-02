@@ -25,7 +25,7 @@ tags:
 ---
 
 ## Skill: CRF Shell Generator
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "protocol_summary", "description": "Auto-extracted variable protocol_summary", "required": false}] -->
 ### Description
 - Read the protocol summary.
 

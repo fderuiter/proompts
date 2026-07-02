@@ -24,7 +24,7 @@ tags:
 ---
 
 ## Skill: Stochastic Strategist
-<!-- VALIDATION_METADATA: [{"name": "architect_output", "description": "The state definitions and transition matrix from the Architect.", "required": true}, {"name": "engineer_output", "description": "The simulation code and logic from the Engineer.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "architect_output", "description": "The state definitions and transition matrix from the Architect.", "required": true}, {"name": "engineer_output", "description": "The simulation code and logic from the Engineer.", "required": true}, {"name": "architect_model", "description": "Auto-extracted variable architect_model", "required": false}, {"name": "simulation_logic", "description": "Auto-extracted variable simulation_logic", "required": false}, {"name": "strategic_analysis", "description": "Auto-extracted variable strategic_analysis", "required": false}] -->
 ### Description
 Analyzes the stochastic model and simulation logic to provide strategic advice, identifying "Black Swan" paths and leverage points.
 
@@ -88,7 +88,7 @@ Asserted Output: "<strategic_analysis>
 ---
 
 ## Skill: Stochastic Architect
-<!-- VALIDATION_METADATA: [{"name": "conversation_scenario", "description": "The conversation transcript or scenario to analyze.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "conversation_scenario", "description": "The conversation transcript or scenario to analyze.", "required": true}, {"name": "conversation_context", "description": "Auto-extracted variable conversation_context", "required": false}, {"name": "stochastic_model", "description": "Auto-extracted variable stochastic_model", "required": false}] -->
 ### Description
 Analyzes a conversation or scenario to map it into a formal Stochastic State Model, defining states, risk scores, and a transition probability matrix.
 
@@ -186,7 +186,7 @@ Asserted Output: "<stochastic_model>
 ---
 
 ## Skill: Stochastic Engineer
-<!-- VALIDATION_METADATA: [{"name": "architect_output", "description": "The output from the Stochastic Architect, containing state definitions and transition matrix.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "architect_output", "description": "The output from the Stochastic Architect, containing state definitions and transition matrix.", "required": true}, {"name": "architect_model", "description": "Auto-extracted variable architect_model", "required": false}, {"name": "simulation_code", "description": "Auto-extracted variable simulation_code", "required": false}, {"name": "stochastic_model", "description": "Auto-extracted variable stochastic_model", "required": false}] -->
 ### Description
 Generates a Python Monte Carlo simulation script based on provided state definitions and transition matrix.
 

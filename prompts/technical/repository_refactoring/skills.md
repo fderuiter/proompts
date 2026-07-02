@@ -128,7 +128,7 @@ Asserted Output: "Praises good test coverage and recommends adding performance t
 ---
 
 ## Skill: Codebase Quality & Maintainability Analysis
-<!-- VALIDATION_METADATA: [{"name": "target_codebase_context", "description": "The codebase content, relevant modules, and surrounding context to analyze.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "target_codebase_context", "description": "The codebase content, relevant modules, and surrounding context to analyze.", "required": true}, {"name": "codebase_context", "description": "Auto-extracted variable codebase_context", "required": false}] -->
 ### Description
 Conduct a deep analysis of the codebase's quality and maintainability to identify key areas for refactoring.
 
@@ -202,7 +202,7 @@ Asserted Output: "No codebase context provided"
 ---
 
 ## Skill: Test Suite Enhancement and CI Pipeline Implementation
-<!-- VALIDATION_METADATA: [{"name": "repo_context", "description": "Background information on the repository and its testing framework constraints.", "required": true}, {"name": "target_code", "description": "The target module or application code to write tests for.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "repo_context", "description": "Background information on the repository and its testing framework constraints.", "required": true}, {"name": "target_code", "description": "The target module or application code to write tests for.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Build the automated quality gates for this repository by increasing test coverage, adding meaningful unit tests, and introducing a basic CI pipeline.
 
@@ -286,7 +286,7 @@ Asserted Output: "Returns refusal json."
 ---
 
 ## Skill: Repository Foundation & Developer Experience Analysis
-<!-- VALIDATION_METADATA: [{"name": "repo_structure", "description": "The directory structure of the repository.", "required": true}, {"name": "file_contents", "description": "The contents of the key foundational files in the repository.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "repo_structure", "description": "The directory structure of the repository.", "required": true}, {"name": "file_contents", "description": "The contents of the key foundational files in the repository.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Analyze the repository's foundation and developer experience to prepare it for future growth and easy onboarding.
 

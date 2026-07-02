@@ -7,7 +7,7 @@ from pydantic import BaseModel, create_model, ValidationError
 
 import sys
 from promptops.utils import load_yaml, ROOT
-from tools.scripts.validate_prompt_schema import PromptSchema
+from promptops.validation import PromptSchema
 
 logger = logging.getLogger("proompts_guard")
 

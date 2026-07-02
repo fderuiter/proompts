@@ -36,7 +36,7 @@ tags:
 ---
 
 ## Skill: Qualitative Interview Guide Generator
-<!-- VALIDATION_METADATA: [{"name": "areas_of_interest", "description": "The areas of interest to use for this prompt", "required": true}, {"name": "disease", "description": "The disease to use for this prompt", "required": true}, {"name": "pro_instrument", "description": "The pro instrument to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "areas_of_interest", "description": "The areas of interest to use for this prompt", "required": true}, {"name": "disease", "description": "The disease to use for this prompt", "required": true}, {"name": "pro_instrument", "description": "The pro instrument to use for this prompt", "required": true}, {"name": "target_disease", "description": "Auto-extracted variable target_disease", "required": false}] -->
 ### Description
 Draft a qualitative patient interview guide for concept elicitation and cognitive debriefing.
 
@@ -94,7 +94,7 @@ Asserted Output: "A structured interview guide with concept elicitation question
 ---
 
 ## Skill: Psychometric Validation Methodology
-<!-- VALIDATION_METADATA: [{"name": "dataset_description", "description": "The data or dataset to analyze", "required": true}, {"name": "instrument_name", "description": "The name or identifier", "required": true}, {"name": "target_population", "description": "The target population to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "dataset_description", "description": "The data or dataset to analyze", "required": true}, {"name": "instrument_name", "description": "The name or identifier", "required": true}, {"name": "target_population", "description": "The target population to use for this prompt", "required": true}, {"name": "coa_instrument", "description": "Auto-extracted variable coa_instrument", "required": false}, {"name": "dataset_characteristics", "description": "Auto-extracted variable dataset_characteristics", "required": false}] -->
 ### Description
 Apply Rasch and IRT models for COA validation and psychometric evidence generation.
 
@@ -151,7 +151,7 @@ Asserted Output: "A plan/report covering Rasch analysis (fit statistics), PCA of
 ---
 
 ## Skill: Content Validity & Reliability Analysis
-<!-- VALIDATION_METADATA: [{"name": "clinro_description", "description": "A description of the subject", "required": true}, {"name": "disease", "description": "The disease to use for this prompt", "required": true}, {"name": "interview_data", "description": "The data or dataset to analyze", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "clinro_description", "description": "A description of the subject", "required": true}, {"name": "disease", "description": "The disease to use for this prompt", "required": true}, {"name": "interview_data", "description": "The data or dataset to analyze", "required": true}, {"name": "clinro_instrument_description", "description": "Auto-extracted variable clinro_instrument_description", "required": false}, {"name": "target_disease", "description": "Auto-extracted variable target_disease", "required": false}] -->
 ### Description
 Analyze clinician interview transcripts for content validity and plan inter-rater reliability.
 
@@ -210,7 +210,7 @@ Asserted Output: "Identification of erythema, induration, lichenification. Plan 
 ---
 
 ## Skill: MCID Research and Summary
-<!-- VALIDATION_METADATA: [{"name": "disease_area", "description": "The disease area to use for this prompt", "required": true}, {"name": "tools", "description": "The tools to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "disease_area", "description": "The disease area to use for this prompt", "required": true}, {"name": "tools", "description": "The tools to use for this prompt", "required": true}, {"name": "measurement_tools", "description": "Auto-extracted variable measurement_tools", "required": false}] -->
 ### Description
 Research and summarize Minimal Clinically Important Differences (MCIDs) for measurement tools.
 
@@ -259,7 +259,7 @@ Asserted Output: "A table with rows for UPDRS Part III and PDQ-39, including the
 ---
 
 ## Skill: ClinRO User Manual Generator
-<!-- VALIDATION_METADATA: [{"name": "clinro_name", "description": "The name or identifier", "required": true}, {"name": "measurement_type", "description": "The measurement type to use for this prompt", "required": true}, {"name": "requirements", "description": "The requirements or specifications", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "clinro_name", "description": "The name or identifier", "required": true}, {"name": "measurement_type", "description": "The measurement type to use for this prompt", "required": true}, {"name": "requirements", "description": "The requirements or specifications", "required": true}, {"name": "clinro_instrument", "description": "Auto-extracted variable clinro_instrument", "required": false}, {"name": "specific_requirements", "description": "Auto-extracted variable specific_requirements", "required": false}] -->
 ### Description
 Draft a standardized user manual for ClinRO administration and training.
 
@@ -315,7 +315,7 @@ Asserted Output: "Instructions on assessing area percentage, severity scoring (0
 ---
 
 ## Skill: ePRO Migration Equivalence Checker
-<!-- VALIDATION_METADATA: [{"name": "device_type", "description": "The device type to use for this prompt", "required": true}, {"name": "features", "description": "The features to use for this prompt", "required": true}, {"name": "paper_instrument_name", "description": "The name or identifier", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "device_type", "description": "The device type to use for this prompt", "required": true}, {"name": "features", "description": "The features to use for this prompt", "required": true}, {"name": "paper_instrument_name", "description": "The name or identifier", "required": true}, {"name": "electronic_device", "description": "Auto-extracted variable electronic_device", "required": false}, {"name": "key_features_to_migrate", "description": "Auto-extracted variable key_features_to_migrate", "required": false}, {"name": "original_instrument", "description": "Auto-extracted variable original_instrument", "required": false}] -->
 ### Description
 Assess measurement equivalence for migrating paper-based PRO instruments to electronic modes.
 

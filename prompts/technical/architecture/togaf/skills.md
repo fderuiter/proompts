@@ -33,7 +33,7 @@ tags:
 ---
 
 ## Skill: TOGAF Phase A - Architecture Vision
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "request", "description": "Auto-extracted variable request", "required": false}] -->
 ### Description
 Guide for defining the Architecture Vision, stakeholders, and the Statement of Architecture Work (The Mandate).
 
@@ -92,7 +92,7 @@ None provided.
 ---
 
 ## Skill: TOGAF Phase F - Migration Planning
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "request", "description": "Auto-extracted variable request", "required": false}] -->
 ### Description
 Guide for creating the detailed Implementation and Migration Plan and prioritizing work packages (Refined Planning).
 
@@ -151,7 +151,7 @@ None provided.
 ---
 
 ## Skill: TOGAF Phase E - Opportunities & Solutions
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "request", "description": "Auto-extracted variable request", "required": false}] -->
 ### Description
 Guide for identifying delivery vehicles (projects), grouping gaps into work packages, and creating the initial roadmap (The Strategic Bridge).
 
@@ -211,7 +211,7 @@ None provided.
 ---
 
 ## Skill: TOGAF Preliminary Phase
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "request", "description": "Auto-extracted variable request", "required": false}] -->
 ### Description
 Guide for establishing the Architecture Capability and defining the organizational footprint (The Genesis of Architecture).
 
@@ -286,7 +286,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: TOGAF Phase H - Architecture Change Management
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "request", "description": "Auto-extracted variable request", "required": false}] -->
 ### Description
 Guide for managing the architecture lifecycle after deployment and handling change requests (The Living Entity).
 
@@ -344,7 +344,7 @@ None provided.
 ---
 
 ## Skill: TOGAF Phase G - Implementation Governance
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "request", "description": "Auto-extracted variable request", "required": false}] -->
 ### Description
 Guide for overseeing the implementation to ensure conformance with the architecture (Sustaining Integrity).
 
@@ -406,7 +406,7 @@ None provided.
 ---
 
 ## Skill: TOGAF Requirements Management
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "request", "description": "Auto-extracted variable request", "required": false}] -->
 ### Description
 Guide for the continuous process of managing architecture requirements throughout the ADM cycle (The Dynamic Core).
 
@@ -465,7 +465,7 @@ None provided.
 ---
 
 ## Skill: TOGAF Phase B - Business Architecture
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "request", "description": "Auto-extracted variable request", "required": false}] -->
 ### Description
 Guide for defining the Business Architecture, baseline/target states, and gap analysis (The Core Engine).
 
@@ -527,7 +527,7 @@ None provided.
 ---
 
 ## Skill: TOGAF Phase D - Technology Architecture
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "request", "description": "Auto-extracted variable request", "required": false}] -->
 ### Description
 Guide for defining the Technology Architecture (infrastructure, hardware, networks).
 
@@ -600,7 +600,7 @@ Asserted Output: "Invalid input detected or missing context. Please provide the 
 ---
 
 ## Skill: TOGAF Phase C - Information Systems Architectures
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "request", "description": "Auto-extracted variable request", "required": false}] -->
 ### Description
 Guide for defining the Information Systems Architectures (Data and Application Architectures).
 

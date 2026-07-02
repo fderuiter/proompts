@@ -196,7 +196,7 @@ Asserted Output: "Markdown checklist confirming each step was completed."
 ---
 
 ## Skill: Reflexion Agent Bug Patch
-<!-- VALIDATION_METADATA: [{"name": "code", "description": "The source code to analyze or modify", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "code", "description": "The source code to analyze or modify", "required": true}, {"name": "code_snippet", "description": "Auto-extracted variable code_snippet", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Locate and fix a bug using a structured reflexion workflow.
 

@@ -23,7 +23,7 @@ tags:
 ---
 
 ## Skill: multi_scale_pde_asymptotic_homogenization_architect
-<!-- VALIDATION_METADATA: [{"name": "governing_equation", "type": "string", "description": "The original multi-scale partial differential equation (PDE) in strict LaTeX format."}, {"name": "scale_separation_parameter", "type": "string", "description": "The small parameter (e.g., \\epsilon) defining the scale separation between macro and micro scales."}, {"name": "boundary_conditions", "type": "string", "description": "The macroscopic boundary conditions and periodicity assumptions for the micro-scale domain (e.g., unit cell Y)."}] -->
+<!-- VALIDATION_METADATA: [{"name": "governing_equation", "type": "string", "description": "The original multi-scale partial differential equation (PDE) in strict LaTeX format."}, {"name": "scale_separation_parameter", "type": "string", "description": "The small parameter (e.g., \\epsilon) defining the scale separation between macro and micro scales."}, {"name": "boundary_conditions", "type": "string", "description": "The macroscopic boundary conditions and periodicity assumptions for the micro-scale domain (e.g., unit cell Y)."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Conducts rigorous asymptotic homogenization for multi-scale Partial Differential Equations (PDEs), systematically deriving macroscopic effective equations and micro-scale cell problems to model highly heterogeneous computational systems.
 
@@ -86,7 +86,7 @@ Asserted Output: ""
 ---
 
 ## Skill: physics_informed_neural_network_architect
-<!-- VALIDATION_METADATA: [{"name": "pde_system", "type": "string", "description": "The system of partial differential equations (PDEs) in LaTeX format."}, {"name": "boundary_conditions", "type": "string", "description": "Description of the initial and boundary conditions (Dirichlet, Neumann, Robin) and domain geometry."}, {"name": "problem_type", "type": "string", "description": "Whether the problem is a forward problem (solving the PDE) or an inverse problem (parameter discovery)."}] -->
+<!-- VALIDATION_METADATA: [{"name": "pde_system", "type": "string", "description": "The system of partial differential equations (PDEs) in LaTeX format."}, {"name": "boundary_conditions", "type": "string", "description": "Description of the initial and boundary conditions (Dirichlet, Neumann, Robin) and domain geometry."}, {"name": "problem_type", "type": "string", "description": "Whether the problem is a forward problem (solving the PDE) or an inverse problem (parameter discovery)."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Designs robust Physics-Informed Neural Network (PINN) architectures for solving complex nonlinear Partial Differential Equations (PDEs), ensuring physical constraint enforcement and numerical stability.
 

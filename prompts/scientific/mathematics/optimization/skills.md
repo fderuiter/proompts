@@ -29,7 +29,7 @@ tags:
 ---
 
 ## Skill: Stochastic Multi-Objective Optimization Architect
-<!-- VALIDATION_METADATA: [{"name": "SCENARIO_DESCRIPTION", "description": "Detailed description of the operations research or systems engineering problem, including constraints and objectives."}, {"name": "UNCERTAINTY_SOURCES", "description": "Detailed explanation of the stochastic elements and sources of deep uncertainty affecting the model parameters."}, {"name": "DECISION_VARIABLES", "description": "Description of the continuous, integer, or binary decision variables to be determined by the model."}] -->
+<!-- VALIDATION_METADATA: [{"name": "SCENARIO_DESCRIPTION", "description": "Detailed description of the operations research or systems engineering problem, including constraints and objectives."}, {"name": "UNCERTAINTY_SOURCES", "description": "Detailed explanation of the stochastic elements and sources of deep uncertainty affecting the model parameters."}, {"name": "DECISION_VARIABLES", "description": "Description of the continuous, integer, or binary decision variables to be determined by the model."}, {"name": "decision_variables", "description": "Auto-extracted variable decision_variables", "required": false}, {"name": "scenario_description", "description": "Auto-extracted variable scenario_description", "required": false}, {"name": "uncertainty_sources", "description": "Auto-extracted variable uncertainty_sources", "required": false}] -->
 ### Description
 Formulates robust, multi-objective stochastic optimization models for complex operations research scenarios involving deep uncertainty.
 
@@ -69,7 +69,7 @@ Asserted Output: "Multi-Objective Formulation"
 ---
 
 ## Skill: Polynomial Optimization SDP Relaxation Architect
-<!-- VALIDATION_METADATA: [{"name": "POLYNOMIAL_OBJECTIVE", "description": "Detailed description of the non-convex polynomial objective function to be minimized or maximized."}, {"name": "POLYNOMIAL_CONSTRAINTS", "description": "Detailed description of the semi-algebraic set defining the feasible region (inequalities and equations)."}, {"name": "RELAXATION_ORDER", "description": "The desired hierarchy relaxation order (d) or an analysis of how to determine the optimal order based on degree and sparsity."}] -->
+<!-- VALIDATION_METADATA: [{"name": "POLYNOMIAL_OBJECTIVE", "description": "Detailed description of the non-convex polynomial objective function to be minimized or maximized."}, {"name": "POLYNOMIAL_CONSTRAINTS", "description": "Detailed description of the semi-algebraic set defining the feasible region (inequalities and equations)."}, {"name": "RELAXATION_ORDER", "description": "The desired hierarchy relaxation order (d) or an analysis of how to determine the optimal order based on degree and sparsity."}, {"name": "polynomial_constraints", "description": "Auto-extracted variable polynomial_constraints", "required": false}, {"name": "polynomial_objective", "description": "Auto-extracted variable polynomial_objective", "required": false}, {"name": "relaxation_order", "description": "Auto-extracted variable relaxation_order", "required": false}] -->
 ### Description
 Formulates highly rigorous, computationally tractable exact global optimization models using Lasserre's Sum-of-Squares (SOS) and moment hierarchies for non-convex polynomial programming problems.
 
@@ -109,7 +109,7 @@ Asserted Output: "Sparsity Exploitation"
 ---
 
 ## Skill: Dantzig-Wolfe Column Generation Architect
-<!-- VALIDATION_METADATA: [{"name": "COMPACT_FORMULATION", "description": "Detailed description of the original compact integer/linear programming problem with complicating constraints and block-angular structure."}, {"name": "BLOCK_STRUCTURE", "description": "Specification of the independent block structures or subproblem definitions that allow for decomposition."}, {"name": "PRICING_LOGIC", "description": "Details regarding the generation of new columns, the structure of the pricing subproblem(s), and the calculation of reduced costs."}] -->
+<!-- VALIDATION_METADATA: [{"name": "COMPACT_FORMULATION", "description": "Detailed description of the original compact integer/linear programming problem with complicating constraints and block-angular structure."}, {"name": "BLOCK_STRUCTURE", "description": "Specification of the independent block structures or subproblem definitions that allow for decomposition."}, {"name": "PRICING_LOGIC", "description": "Details regarding the generation of new columns, the structure of the pricing subproblem(s), and the calculation of reduced costs."}, {"name": "block_structure", "description": "Auto-extracted variable block_structure", "required": false}, {"name": "compact_formulation", "description": "Auto-extracted variable compact_formulation", "required": false}, {"name": "pricing_logic", "description": "Auto-extracted variable pricing_logic", "required": false}] -->
 ### Description
 Formulates highly rigorous Dantzig-Wolfe decomposition and Column Generation models for large-scale, block-angular integer and linear programming problems.
 
@@ -149,7 +149,7 @@ Asserted Output: "Restricted Master Problem (RMP)"
 ---
 
 ## Skill: Robust Optimization Min-Max Architect
-<!-- VALIDATION_METADATA: [{"name": "NOMINAL_PROBLEM", "description": "Detailed description of the nominal deterministic optimization problem, including the objective function and constraints."}, {"name": "UNCERTAIN_PARAMETERS", "description": "Detailed description of the parameters subject to uncertainty and their bounds or intervals."}, {"name": "UNCERTAINTY_SET_GEOMETRY", "description": "Specification of the geometry of the uncertainty set (e.g., box, polyhedral, ellipsoidal, budgeted/Bertsimas-Sim) modeling the parameter variations."}] -->
+<!-- VALIDATION_METADATA: [{"name": "NOMINAL_PROBLEM", "description": "Detailed description of the nominal deterministic optimization problem, including the objective function and constraints."}, {"name": "UNCERTAIN_PARAMETERS", "description": "Detailed description of the parameters subject to uncertainty and their bounds or intervals."}, {"name": "UNCERTAINTY_SET_GEOMETRY", "description": "Specification of the geometry of the uncertainty set (e.g., box, polyhedral, ellipsoidal, budgeted/Bertsimas-Sim) modeling the parameter variations."}, {"name": "nominal_problem", "description": "Auto-extracted variable nominal_problem", "required": false}, {"name": "uncertain_parameters", "description": "Auto-extracted variable uncertain_parameters", "required": false}, {"name": "uncertainty_set_geometry", "description": "Auto-extracted variable uncertainty_set_geometry", "required": false}] -->
 ### Description
 Formulates highly rigorous exact robust counterparts for optimization problems subject to bounded parameter uncertainty, transforming intractable semi-infinite programs into computationally tractable deterministic equivalents.
 

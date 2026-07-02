@@ -239,7 +239,7 @@ Asserted Output: ""
 ---
 
 ## Skill: Firmware and UEFI Bootkit Forensics Analyst
-<!-- VALIDATION_METADATA: [{"name": "suspicious_artifact", "description": "Provide details of the extracted binary, memory dump, SPI flash read, or anomalous behavior observed during the boot process (e.g., modified DXE drivers, unknown PE32+ sections, compromised SEC phase).", "required": true}, {"name": "environment_context", "description": "Target architecture details (e.g., Intel ME/CSME version, specific motherboard/chipset, BIOS vendor, secure boot status, TPM PCR values).", "required": true}, {"name": "objective", "description": "State the specific goal (e.g., reverse engineer the payload, trace the persistence mechanism, analyze SPI flash integrity, assess bypasses of Secure Boot/Boot Guard).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "suspicious_artifact", "description": "Provide details of the extracted binary, memory dump, SPI flash read, or anomalous behavior observed during the boot process (e.g., modified DXE drivers, unknown PE32+ sections, compromised SEC phase).", "required": true}, {"name": "environment_context", "description": "Target architecture details (e.g., Intel ME/CSME version, specific motherboard/chipset, BIOS vendor, secure boot status, TPM PCR values).", "required": true}, {"name": "objective", "description": "State the specific goal (e.g., reverse engineer the payload, trace the persistence mechanism, analyze SPI flash integrity, assess bypasses of Secure Boot/Boot Guard).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Conducts expert-level digital forensics on low-level firmware, UEFI interfaces, and persistent bootkits to uncover advanced persistent threats (APTs).
 
@@ -416,7 +416,7 @@ Asserted Output: "Contains Splunk SPL query and references Sysmon Event ID 10."
 ---
 
 ## Skill: Cloud Identity Fabric Threat Hunting Architect
-<!-- VALIDATION_METADATA: [{"name": "identity_provider_telemetry", "description": "Details regarding available identity telemetry, logging sinks (e.g., CloudTrail, Azure AD Sign-in logs, Okta System Log), and retention policies.", "required": true}, {"name": "target_threat_actor_profile", "description": "Specific TTPs (Tactics, Techniques, and Procedures) of the targeted threat actor (e.g., APT29, Scattered Spider) regarding identity abuse.", "required": true}, {"name": "multi_cloud_fabric_constraints", "description": "Information on the multi-cloud identity architecture (e.g., SAML/OIDC federations, conditional access policies, cross-tenant trusts).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "identity_provider_telemetry", "description": "Details regarding available identity telemetry, logging sinks (e.g., CloudTrail, Azure AD Sign-in logs, Okta System Log), and retention policies.", "required": true}, {"name": "target_threat_actor_profile", "description": "Specific TTPs (Tactics, Techniques, and Procedures) of the targeted threat actor (e.g., APT29, Scattered Spider) regarding identity abuse.", "required": true}, {"name": "multi_cloud_fabric_constraints", "description": "Information on the multi-cloud identity architecture (e.g., SAML/OIDC federations, conditional access policies, cross-tenant trusts).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Architects advanced, high-fidelity threat hunting strategies targeting multi-cloud identity fabrics, focusing on anomalous lateral movement, federated trust abuse, and stealthy token exfiltration.
 
@@ -530,7 +530,7 @@ Asserted Output: "A Sigma rule capturing Event ID 4769, TicketEncryptionType 0x1
 ---
 
 ## Skill: Living-off-the-Land Behavioral SIEM Query Architect
-<!-- VALIDATION_METADATA: [{"name": "target_lotl_binary", "description": "The specific native OS binary being targeted for behavioral analysis (e.g., PowerShell, WMI, bitsadmin, certutil, bash, curl).", "required": true}, {"name": "siem_platform_syntax", "description": "The target SIEM syntax required for the query output (e.g., Splunk SPL, KQL, Elastic EQL, CrowdStrike FQL).", "required": true}, {"name": "baseline_noise_profile", "description": "Known legitimate environmental behaviors and administrative tasks that typically use the target binary, to be filtered out to reduce false positives.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "target_lotl_binary", "description": "The specific native OS binary being targeted for behavioral analysis (e.g., PowerShell, WMI, bitsadmin, certutil, bash, curl).", "required": true}, {"name": "siem_platform_syntax", "description": "The target SIEM syntax required for the query output (e.g., Splunk SPL, KQL, Elastic EQL, CrowdStrike FQL).", "required": true}, {"name": "baseline_noise_profile", "description": "Known legitimate environmental behaviors and administrative tasks that typically use the target binary, to be filtered out to reduce false positives.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Architects advanced, high-fidelity SIEM behavioral queries targeting Living-off-the-Land (LotL) techniques, bypassing static indicator-based detections.
 

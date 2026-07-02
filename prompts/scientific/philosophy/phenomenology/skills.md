@@ -19,7 +19,7 @@ tags:
 ---
 
 ## Skill: phenomenological_reduction_engine
-<!-- VALIDATION_METADATA: [{"name": "LIVED_EXPERIENCE", "description": "The specific first-person account or lived experience to be analyzed (e.g., the perception of a failing tool, the feeling of acute anxiety).", "required": true}, {"name": "TARGET_PHENOMENON", "description": "The core phenomenon embedded within the lived experience that is the focus of the reduction.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "LIVED_EXPERIENCE", "description": "The specific first-person account or lived experience to be analyzed (e.g., the perception of a failing tool, the feeling of acute anxiety).", "required": true}, {"name": "TARGET_PHENOMENON", "description": "The core phenomenon embedded within the lived experience that is the focus of the reduction.", "required": true}, {"name": "lived_experience", "description": "Auto-extracted variable lived_experience", "required": false}, {"name": "target_phenomenon", "description": "Auto-extracted variable target_phenomenon", "required": false}] -->
 ### Description
 A highly rigorous prompt designed to systematically deconstruct first-person experiences using Husserlian phenomenological reduction, isolating eidetic invariants while bracketing naturalistic assumptions.
 

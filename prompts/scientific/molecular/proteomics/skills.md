@@ -30,7 +30,7 @@ tags:
 ---
 
 ## Skill: complex_ppi_network_mapper
-<!-- VALIDATION_METADATA: [{"name": "protein_target_list", "type": "string", "description": "A comprehensive list or FASTA file of the protein targets under study."}, {"name": "interaction_database", "type": "string", "description": "The reference database for primary interactome data (e.g., STRING, BioGRID)."}, {"name": "kinetic_parameters", "type": "string", "description": "Known binding affinities (Kd) or kinetic rates (kon, koff) for specific nodes."}, {"name": "network_model_type", "type": "string", "description": "The mathematical topology or dynamical model to apply (e.g., Scale-free network, Mass-action kinetics)."}] -->
+<!-- VALIDATION_METADATA: [{"name": "protein_target_list", "type": "string", "description": "A comprehensive list or FASTA file of the protein targets under study."}, {"name": "interaction_database", "type": "string", "description": "The reference database for primary interactome data (e.g., STRING, BioGRID)."}, {"name": "kinetic_parameters", "type": "string", "description": "Known binding affinities (Kd) or kinetic rates (kon, koff) for specific nodes."}, {"name": "network_model_type", "type": "string", "description": "The mathematical topology or dynamical model to apply (e.g., Scale-free network, Mass-action kinetics)."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}] -->
 ### Description
 Acts as a Principal Computational Biologist to mathematically map, analyze, and simulate complex protein-protein interaction (PPI) networks, modeling kinetic binding affinities and network topologies.
 
@@ -132,7 +132,7 @@ Asserted Output: ""
 ---
 
 ## Skill: top_down_proteomics_ptm_mapping_architect
-<!-- VALIDATION_METADATA: [{"name": "intact_mass_spectrum", "type": "string", "description": "The raw or deconvoluted intact mass spectrum data (e.g., mzML, deconvoluted peak list)."}, {"name": "target_protein_sequence", "type": "string", "description": "The canonical FASTA sequence of the target protein being analyzed."}, {"name": "fragmentation_method", "type": "string", "description": "The gas-phase dissociation technique employed (e.g., ECD, ETD, UVPD, HCD)."}, {"name": "expected_ptm_space", "type": "string", "description": "A constrained space of anticipated PTMs to map (e.g., phosphorylation, acetylation, methylation) including mass shifts."}] -->
+<!-- VALIDATION_METADATA: [{"name": "intact_mass_spectrum", "type": "string", "description": "The raw or deconvoluted intact mass spectrum data (e.g., mzML, deconvoluted peak list)."}, {"name": "target_protein_sequence", "type": "string", "description": "The canonical FASTA sequence of the target protein being analyzed."}, {"name": "fragmentation_method", "type": "string", "description": "The gas-phase dissociation technique employed (e.g., ECD, ETD, UVPD, HCD)."}, {"name": "expected_ptm_space", "type": "string", "description": "A constrained space of anticipated PTMs to map (e.g., phosphorylation, acetylation, methylation) including mass shifts."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}] -->
 ### Description
 Acts as a Principal Computational Biologist to model and decipher high-resolution top-down proteomics intact protein mass spectrometry data for combinatorial post-translational modification (PTM) mapping.
 
