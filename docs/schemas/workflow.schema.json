@@ -1,69 +1,184 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Workflow Schema",
-  "description": "Schema definition for a Workflow file.",
-  "type": "object",
+  "$defs": {
+    "WorkflowEdge": {
+      "properties": {
+        "target": {
+          "title": "Target",
+          "type": "string"
+        },
+        "condition": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Condition"
+        }
+      },
+      "required": [
+        "target"
+      ],
+      "title": "WorkflowEdge",
+      "type": "object"
+    },
+    "WorkflowInput": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "WorkflowInput",
+      "type": "object"
+    },
+    "WorkflowMetadata": {
+      "properties": {
+        "domain": {
+          "title": "Domain",
+          "type": "string"
+        },
+        "topic": {
+          "title": "Topic",
+          "type": "string"
+        }
+      },
+      "required": [
+        "domain",
+        "topic"
+      ],
+      "title": "WorkflowMetadata",
+      "type": "object"
+    },
+    "WorkflowStep": {
+      "properties": {
+        "step_id": {
+          "title": "Step Id",
+          "type": "string"
+        },
+        "prompt_file": {
+          "title": "Prompt File",
+          "type": "string"
+        },
+        "map_inputs": {
+          "additionalProperties": true,
+          "title": "Map Inputs",
+          "type": "object"
+        },
+        "next": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "$ref": "#/$defs/WorkflowEdge"
+                  }
+                ]
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Next"
+        }
+      },
+      "required": [
+        "step_id",
+        "prompt_file",
+        "map_inputs"
+      ],
+      "title": "WorkflowStep",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Description"
+    },
+    "metadata": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/WorkflowMetadata"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "inputs": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/WorkflowInput"
+      },
+      "title": "Inputs",
+      "type": "array"
+    },
+    "steps": {
+      "items": {
+        "$ref": "#/$defs/WorkflowStep"
+      },
+      "title": "Steps",
+      "type": "array"
+    },
+    "testData": {
+      "anyOf": [
+        {
+          "items": {},
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Testdata"
+    }
+  },
   "required": [
     "name",
     "steps"
   ],
-  "properties": {
-    "name": {
-      "type": "string",
-      "description": "A short, human-readable name for the workflow."
-    },
-    "description": {
-      "type": "string",
-      "description": "A concise description of what the workflow accomplishes."
-    },
-    "inputs": {
-      "type": "array",
-      "description": "A list of global inputs that the workflow requires.",
-      "items": {
-        "type": "object",
-        "required": [
-          "name"
-        ],
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "The name of the input variable."
-          },
-          "description": {
-            "type": "string",
-            "description": "A description of what this input represents."
-          }
-        }
-      }
-    },
-    "steps": {
-      "type": "array",
-      "description": "An ordered list of prompt execution steps that make up the workflow.",
-      "items": {
-        "type": "object",
-        "required": [
-          "step_id",
-          "prompt_file",
-          "map_inputs"
-        ],
-        "properties": {
-          "step_id": {
-            "type": "string",
-            "description": "A unique identifier for the step within the workflow."
-          },
-          "prompt_file": {
-            "type": "string",
-            "description": "The path to the .prompt.yaml file to be executed in this step."
-          },
-          "map_inputs": {
-            "type": "object",
-            "description": "An object that maps the variables required by the prompt to their data sources.",
-            "additionalProperties": {
-              "type": "string"
-            }
-          }
-        }
-      }
-    }
-  }
+  "title": "WorkflowSchema",
+  "type": "object"
 }

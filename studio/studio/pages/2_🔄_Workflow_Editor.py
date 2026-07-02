@@ -42,11 +42,7 @@ else:
 st.subheader(f"Editing: {selected_file}")
 
 # Load schema to dynamically generate UI
-schema_path = os.path.join(base_dir, "docs", "schemas", "workflow.schema.json")
-schema = {}
-if os.path.exists(schema_path):
-    with open(schema_path, 'r') as f:
-        schema = json.load(f)
+schema = WorkflowSchema.model_json_schema()
 
 properties = schema.get("properties", {})
 for field_name, field_info in properties.items():
@@ -60,6 +56,21 @@ for field_name, field_info in properties.items():
                 data[field_name] = st.text_input(label, value=val)
         elif field_info.get("type") == "boolean":
             data[field_name] = st.checkbox(label, value=bool(val))
+        elif field_name == "metadata":
+            st.subheader("Metadata")
+            if "metadata" not in data or not data["metadata"]:
+                data["metadata"] = {}
+            meta_schema = schema.get("$defs", {}).get("WorkflowMetadata", {}).get("properties", {})
+            for m_key, m_info in meta_schema.items():
+                m_val = data["metadata"].get(m_key, "")
+                if m_info.get("type") == "boolean":
+                    data["metadata"][m_key] = st.checkbox(m_key, value=bool(m_val), key=f"wf_meta_{m_key}")
+                elif m_info.get("type") == "array":
+                    m_val_str = ", ".join(m_val) if isinstance(m_val, list) else ""
+                    res = st.text_input(m_key, value=m_val_str, key=f"wf_meta_{m_key}")
+                    data["metadata"][m_key] = [x.strip() for x in res.split(",") if x.strip()]
+                else:
+                    data["metadata"][m_key] = st.text_input(m_key, value=m_val, key=f"wf_meta_{m_key}")
 
 # Global Inputs Editor
 st.subheader("Global Inputs")

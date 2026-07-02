@@ -1,0 +1,39 @@
+{
+  "properties": {
+    "type": {
+      "default": "object",
+      "title": "Type",
+      "type": "string"
+    },
+    "properties": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Properties"
+    },
+    "required": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Required"
+    }
+  },
+  "title": "InputSchema",
+  "type": "object"
+}

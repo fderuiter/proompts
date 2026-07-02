@@ -52,27 +52,38 @@ else:
 st.subheader(f"Editing: {selected_file}")
 
 # Dynamically generate basic fields from schema
-basic_fields = ['name', 'description', 'model', 'version', 'safety_opt_out']
-for field_name in basic_fields:
-    field_info = PromptSchema.model_fields.get(field_name)
-    if not field_info: continue
-    
-    label = field_info.description or field_name
-    val = data.get(field_name, field_info.default if field_info.default is not ... else "")
-    
-    import typing
-    # Handle typing for Pydantic 2
-    if getattr(field_info.annotation, '__origin__', None) is typing.Union and type(None) in getattr(field_info.annotation, '__args__', []):
-        type_hint = getattr(field_info.annotation, '__args__')[0]
-    else:
-        type_hint = field_info.annotation
+schema = PromptSchema.model_json_schema()
+properties = schema.get("properties", {})
+skip_fields = ["variables", "messages", "testData", "evaluators", "modelParameters", "tools", "output_schema", "last_modified"]
+
+for field_name, field_info in properties.items():
+    if field_name in skip_fields:
+        continue
         
-    if type_hint == str:
+    val = data.get(field_name, "")
+    label = field_info.get("title", field_name)
+    
+    if field_name == "metadata":
+        st.subheader("Metadata")
+        if "metadata" not in data or not data["metadata"]:
+            data["metadata"] = {}
+        meta_schema = schema.get("$defs", {}).get("PromptMetadata", {}).get("properties", {})
+        for m_key, m_info in meta_schema.items():
+            m_val = data["metadata"].get(m_key, "")
+            if m_info.get("type") == "boolean":
+                data["metadata"][m_key] = st.checkbox(m_info.get("title", m_key), value=bool(m_val), key=f"meta_{m_key}")
+            elif m_info.get("type") == "array":
+                m_val_str = ", ".join(m_val) if isinstance(m_val, list) else ""
+                res = st.text_input(m_info.get("title", m_key), value=m_val_str, key=f"meta_{m_key}")
+                data["metadata"][m_key] = [x.strip() for x in res.split(",") if x.strip()]
+            else:
+                data["metadata"][m_key] = st.text_input(m_info.get("title", m_key), value=m_val, key=f"meta_{m_key}")
+    elif field_info.get("type") == "string":
         if field_name == "description":
-            data[field_name] = st.text_area(label, value=val or "")
+            data[field_name] = st.text_area(label, value=val)
         else:
-            data[field_name] = st.text_input(label, value=val or "")
-    elif type_hint == bool:
+            data[field_name] = st.text_input(label, value=val)
+    elif field_info.get("type") == "boolean":
         data[field_name] = st.checkbox(label, value=bool(val))
 
 st.subheader("Model Parameters")

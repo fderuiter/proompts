@@ -6,13 +6,13 @@ This document is auto-generated from the CLI definition. Do not edit manually.
 
 ```text
 usage: promptops [-h]
-                 {init,validate,simulate,docs,agent,vibe,workflow,search,generate-cli-docs}
+                 {init,validate,simulate,docs,agent,vibe,workflow,search,export-schemas,generate-cli-docs}
                  ...
 
 PromptOps Toolkit CLI
 
 positional arguments:
-  {init,validate,simulate,docs,agent,vibe,workflow,search,generate-cli-docs}
+  {init,validate,simulate,docs,agent,vibe,workflow,search,export-schemas,generate-cli-docs}
     init                Initialize PromptOps in the current repository
     validate            Validate prompt files
     simulate            Simulate a prompt
@@ -21,6 +21,7 @@ positional arguments:
     vibe                Run full-fidelity vibe audit
     workflow            Simulate a workflow execution
     search              Search prompts by keyword
+    export-schemas      Export JSON schemas for core validation models
     generate-cli-docs   Generate CLI documentation markdown
 
 options:
@@ -173,5 +174,16 @@ positional arguments:
 options:
   -h, --help     show this help message and exit
   -v, --verbose  Show description
+
+```
+
+### `promptops export-schemas`
+
+```text
+usage: promptops export-schemas [-h] [--out-dir OUT_DIR]
+
+options:
+  -h, --help         show this help message and exit
+  --out-dir OUT_DIR  Output directory for JSON schemas
 
 ```

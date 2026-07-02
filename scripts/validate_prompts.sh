@@ -17,6 +17,13 @@ if ! git diff --exit-code docs/CLI.md > /dev/null; then
     exit 1
 fi
 
+echo "Validating schemas are synchronized..."
+uv run promptops export-schemas --out-dir docs/schemas
+if ! git diff --exit-code docs/schemas > /dev/null; then
+    echo "ERROR: Schema files are out of sync. Please run 'uv run promptops export-schemas --out-dir docs/schemas' and commit the changes."
+    exit 1
+fi
+
 echo "Checking for dead code..."
 uv run vulture || exit 1
 

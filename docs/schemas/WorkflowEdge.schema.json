@@ -1,0 +1,25 @@
+{
+  "properties": {
+    "target": {
+      "title": "Target",
+      "type": "string"
+    },
+    "condition": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Condition"
+    }
+  },
+  "required": [
+    "target"
+  ],
+  "title": "WorkflowEdge",
+  "type": "object"
+}

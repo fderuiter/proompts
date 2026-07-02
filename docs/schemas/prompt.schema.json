@@ -9,21 +9,57 @@
       "title": "ComplexityLevel",
       "type": "string"
     },
+    "InputSchema": {
+      "properties": {
+        "type": {
+          "default": "object",
+          "title": "Type",
+          "type": "string"
+        },
+        "properties": {
+          "anyOf": [
+            {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Properties"
+        },
+        "required": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Required"
+        }
+      },
+      "title": "InputSchema",
+      "type": "object"
+    },
     "InputVariable": {
       "properties": {
         "name": {
-          "description": "The name of the variable as used in the template (e.g., 'input_text').",
           "title": "Name",
           "type": "string"
         },
         "description": {
-          "description": "A description of what this variable represents.",
           "title": "Description",
           "type": "string"
         },
         "required": {
           "default": true,
-          "description": "Whether this variable is mandatory.",
           "title": "Required",
           "type": "boolean"
         },
@@ -35,7 +71,6 @@
             }
           ],
           "default": null,
-          "description": "A default value for the variable if not provided.",
           "title": "Default"
         }
       },
@@ -44,6 +79,28 @@
         "description"
       ],
       "title": "InputVariable",
+      "type": "object"
+    },
+    "MCPTool": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "inputSchema": {
+          "$ref": "#/$defs/InputSchema"
+        }
+      },
+      "required": [
+        "name",
+        "description",
+        "inputSchema"
+      ],
+      "title": "MCPTool",
       "type": "object"
     },
     "Message": {
@@ -58,18 +115,64 @@
             }
           ],
           "default": null,
-          "description": "The role of the message sender (e.g., 'system', 'user', 'assistant').",
           "title": "Role"
         },
         "content": {
-          "description": "The content of the message. Can contain Jinja2 variables like {{var}}.",
-          "title": "Content",
-          "type": "string"
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "items": {},
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Content"
+        },
+        "tool_calls": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/ToolCall"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tool Calls"
+        },
+        "tool_call_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tool Call Id"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
         }
       },
-      "required": [
-        "content"
-      ],
       "title": "Message",
       "type": "object"
     },
@@ -77,10 +180,10 @@
       "properties": {
         "temperature": {
           "description": "Controls randomness (0.0-2.0)",
-          "title": "Temperature",
-          "type": "number",
+          "maximum": 2.0,
           "minimum": 0.0,
-          "maximum": 2.0
+          "title": "Temperature",
+          "type": "number"
         },
         "max_tokens": {
           "anyOf": [
@@ -92,7 +195,6 @@
             }
           ],
           "default": null,
-          "description": "The maximum number of tokens to generate.",
           "title": "Max Tokens"
         },
         "top_p": {
@@ -105,7 +207,6 @@
             }
           ],
           "default": null,
-          "description": "The nucleus sampling probability.",
           "title": "Top P"
         },
         "frequency_penalty": {
@@ -118,7 +219,6 @@
             }
           ],
           "default": null,
-          "description": "The frequency penalty parameter.",
           "title": "Frequency Penalty"
         },
         "presence_penalty": {
@@ -131,7 +231,6 @@
             }
           ],
           "default": null,
-          "description": "The presence penalty parameter.",
           "title": "Presence Penalty"
         }
       },
@@ -144,17 +243,14 @@
     "PromptMetadata": {
       "properties": {
         "domain": {
-          "description": "The business domain (e.g., 'clinical', 'technical').",
           "title": "Domain",
           "type": "string"
         },
         "complexity": {
-          "$ref": "#/$defs/ComplexityLevel",
-          "description": "The complexity level of the prompt."
+          "$ref": "#/$defs/ComplexityLevel"
         },
         "tags": {
           "default": [],
-          "description": "A list of tags for categorization and search.",
           "items": {
             "type": "string"
           },
@@ -163,9 +259,32 @@
         },
         "requires_context": {
           "default": false,
-          "description": "Whether this prompt requires external context or previous conversation history.",
           "title": "Requires Context",
           "type": "boolean"
+        },
+        "autonomy": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Autonomy"
+        },
+        "maturity": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Maturity"
         }
       },
       "required": [
@@ -174,23 +293,43 @@
       ],
       "title": "PromptMetadata",
       "type": "object"
+    },
+    "ToolCall": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "type": {
+          "default": "function",
+          "title": "Type",
+          "type": "string"
+        },
+        "function": {
+          "additionalProperties": true,
+          "title": "Function",
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "function"
+      ],
+      "title": "ToolCall",
+      "type": "object"
     }
   },
-  "description": "Schema definition for a Prompt file.",
   "properties": {
     "name": {
-      "description": "A short, descriptive name for the prompt.",
       "title": "Name",
       "type": "string"
     },
     "version": {
       "default": "0.1.0",
-      "description": "Semantic version of the prompt.",
       "title": "Version",
       "type": "string"
     },
     "description": {
-      "description": "A detailed description of the prompt's purpose and usage.",
       "title": "Description",
       "type": "string"
     },
@@ -203,12 +342,10 @@
           "type": "null"
         }
       ],
-      "default": null,
-      "description": "Metadata for organization and categorization."
+      "default": null
     },
     "variables": {
       "default": [],
-      "description": "List of input variables used in the prompt template.",
       "items": {
         "$ref": "#/$defs/InputVariable"
       },
@@ -216,33 +353,61 @@
       "type": "array"
     },
     "model": {
-      "description": "The ID of the LLM model to use (e.g., 'gpt-4', 'claude-3-opus').",
       "title": "Model",
       "type": "string"
     },
+    "safety_opt_out": {
+      "default": false,
+      "title": "Safety Opt Out",
+      "type": "boolean"
+    },
     "modelParameters": {
-      "$ref": "#/$defs/ModelParameters",
-      "description": "Configuration parameters for the model."
+      "$ref": "#/$defs/ModelParameters"
     },
     "messages": {
-      "description": "The sequence of messages that form the prompt.",
       "items": {
         "$ref": "#/$defs/Message"
       },
       "title": "Messages",
       "type": "array"
     },
+    "tools": {
+      "anyOf": [
+        {
+          "items": {
+            "$ref": "#/$defs/MCPTool"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Tools"
+    },
     "testData": {
-      "description": "List of test cases with inputs and expected outputs.",
       "items": {},
       "title": "Testdata",
       "type": "array"
     },
     "evaluators": {
-      "description": "List of evaluators to validate the model's output.",
       "items": {},
       "title": "Evaluators",
       "type": "array"
+    },
+    "output_schema": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Output Schema"
     },
     "last_modified": {
       "anyOf": [
@@ -254,7 +419,6 @@
         }
       ],
       "default": null,
-      "description": "Timestamp of the last modification (ISO 8601).",
       "title": "Last Modified"
     }
   },

@@ -1,0 +1,24 @@
+{
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "type": {
+      "default": "function",
+      "title": "Type",
+      "type": "string"
+    },
+    "function": {
+      "additionalProperties": true,
+      "title": "Function",
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "function"
+  ],
+  "title": "ToolCall",
+  "type": "object"
+}
