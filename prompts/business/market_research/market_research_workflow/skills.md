@@ -31,7 +31,7 @@ tags:
 ---
 
 ## Skill: Target Segment & User Needs Assessment
-<!-- VALIDATION_METADATA: [{"name": "application", "description": "clinical application", "required": true}, {"name": "device_or_assay", "description": "device or assay type", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "application", "description": "clinical application", "required": true}, {"name": "device_or_assay", "description": "device or assay type", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Identify key user segments for `{{ device_or_assay }}` used in `{{ application }}`.
 
@@ -144,7 +144,7 @@ Asserted Output: "1. Initial Summary
 ---
 
 ## Skill: Market Landscape & Trend Analysis
-<!-- VALIDATION_METADATA: [{"name": "device_or_assay", "description": "The device or assay to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "device_or_assay", "description": "The device or assay to use for this prompt", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Summarize the global market for `{{ device_or_assay }}` and highlight key trends.
 

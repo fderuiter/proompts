@@ -19,7 +19,7 @@ tags:
 ---
 
 ## Skill: Topological Counterexample Generator
-<!-- VALIDATION_METADATA: [{"name": "conjecture", "description": "The false conjecture or property requirement for which a topological counterexample is needed.", "required": true}, {"name": "constraints", "description": "Specific constraints the counterexample space must satisfy (e.g., must be Hausdorff but not regular, must have an uncountable basis).", "required": false}] -->
+<!-- VALIDATION_METADATA: [{"name": "conjecture", "description": "The false conjecture or property requirement for which a topological counterexample is needed.", "required": true}, {"name": "constraints", "description": "Specific constraints the counterexample space must satisfy (e.g., must be Hausdorff but not regular, must have an uncountable basis).", "required": false}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Generates precise, logically rigorous counterexamples in point-set, algebraic, or differential topology to disprove false conjectures or illustrate nuanced separation axioms, compactness properties, and connectedness behavior.
 

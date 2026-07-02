@@ -19,7 +19,7 @@ tags:
 ---
 
 ## Skill: jump_diffusion_modeler
-<!-- VALIDATION_METADATA: [{"name": "drift_function", "description": "The parametric specification of the continuous drift component $\\ mu(X_t, t)$.", "required": true}, {"name": "diffusion_function", "description": "The parametric specification of the continuous volatility component $\\sigma(X_t, t)$.", "required": true}, {"name": "jump_intensity_measure", "description": "The specification of the Poisson jump intensity $\\lambda$ and jump size distribution.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "drift_function", "description": "The parametric specification of the continuous drift component $\\ mu(X_t, t)$.", "required": true}, {"name": "diffusion_function", "description": "The parametric specification of the continuous volatility component $\\sigma(X_t, t)$.", "required": true}, {"name": "jump_intensity_measure", "description": "The specification of the Poisson jump intensity $\\lambda$ and jump size distribution.", "required": true}, {"name": "directives", "description": "Auto-extracted variable directives", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Acts as a Principal Statistician to rigorously formulate and solve parametric inference and simulation problems for Jump-Diffusion Stochastic Differential Equations.
 

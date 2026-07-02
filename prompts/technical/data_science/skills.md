@@ -260,7 +260,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: Conversation Stochastic Modeler
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The conversation transcript or scenario to analyze.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The conversation transcript or scenario to analyze.", "required": true}, {"name": "conversation_transcript", "description": "Auto-extracted variable conversation_transcript", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Maps human-to-human or human-to-AI interactions into a mathematical framework to predict outcomes and quantify risk.
 

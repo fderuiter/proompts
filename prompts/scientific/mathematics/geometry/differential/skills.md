@@ -131,7 +131,7 @@ Asserted Output: ""
 ---
 
 ## Skill: Riemannian Manifold Curvature Deriver
-<!-- VALIDATION_METADATA: [{"name": "manifold_definition", "description": "A formal description of the manifold and its coordinates (e.g., a 2-sphere with standard spherical coordinates).", "required": true}, {"name": "metric_tensor", "description": "The metric tensor $g_{\\mu\\nu}$ given in coordinates (e.g., $ds^2 = d\\theta^2 + \\sin^2(\\theta) d\\phi^2$).", "required": true}, {"name": "derivations_requested", "description": "Specific curvature quantities to compute (e.g., Christoffel symbols, Riemann tensor, Ricci scalar).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "manifold_definition", "description": "A formal description of the manifold and its coordinates (e.g., a 2-sphere with standard spherical coordinates).", "required": true}, {"name": "metric_tensor", "description": "The metric tensor $g_{\\mu\\nu}$ given in coordinates (e.g., $ds^2 = d\\theta^2 + \\sin^2(\\theta) d\\phi^2$).", "required": true}, {"name": "derivations_requested", "description": "Specific curvature quantities to compute (e.g., Christoffel symbols, Riemann tensor, Ricci scalar).", "required": true}, {"name": "computation_request", "description": "Auto-extracted variable computation_request", "required": false}, {"name": "manifold_context", "description": "Auto-extracted variable manifold_context", "required": false}] -->
 ### Description
 Systematically computes intrinsic curvature properties (Christoffel symbols, Riemann curvature tensor, Ricci tensor, and scalar curvature) of a specified Riemannian or pseudo-Riemannian manifold based on its metric tensor.
 

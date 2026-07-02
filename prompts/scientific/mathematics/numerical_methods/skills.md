@@ -34,7 +34,7 @@ tags:
 ---
 
 ## Skill: fractional_calculus_pde_modeler
-<!-- VALIDATION_METADATA: [{"name": "fractional_pde_system", "type": "string", "description": "The governing fractional partial differential equation system formatted in strict LaTeX."}, {"name": "fractional_operator_definition", "type": "string", "description": "The specific definition of the fractional derivative used (e.g., Caputo, Riemann-Liouville, Riesz) and its order."}, {"name": "boundary_initial_conditions", "type": "string", "description": "Initial conditions and potentially non-local boundary conditions formatted in strict LaTeX."}, {"name": "computational_domain", "type": "string", "description": "The spatial and temporal domain over which the system must be resolved."}] -->
+<!-- VALIDATION_METADATA: [{"name": "fractional_pde_system", "type": "string", "description": "The governing fractional partial differential equation system formatted in strict LaTeX."}, {"name": "fractional_operator_definition", "type": "string", "description": "The specific definition of the fractional derivative used (e.g., Caputo, Riemann-Liouville, Riesz) and its order."}, {"name": "boundary_initial_conditions", "type": "string", "description": "Initial conditions and potentially non-local boundary conditions formatted in strict LaTeX."}, {"name": "computational_domain", "type": "string", "description": "The spatial and temporal domain over which the system must be resolved."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Applied Mathematics Genesis Architect prompt for engineering rigorous numerical schemes to solve Fractional Partial Differential Equations (FPDEs) modeling anomalous diffusion and non-local transport phenomena.
 
@@ -113,7 +113,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Discontinuous Galerkin Hyperbolic PDE Architect
-<!-- VALIDATION_METADATA: [{"name": "PDE_SYSTEM", "description": "Detailed mathematical description of the hyperbolic PDE system, including flux vectors, source terms, and initial/boundary conditions."}, {"name": "DOMAIN_GEOMETRY", "description": "Specification of the computational domain, mesh topology, and element types (e.g., simplicial, hexahedral)."}, {"name": "NUMERICAL_REQUIREMENTS", "description": "Desired order of accuracy, numerical flux functions (e.g., Roe, Lax-Friedrichs), and time integration schemes (e.g., SSP-RK)."}] -->
+<!-- VALIDATION_METADATA: [{"name": "PDE_SYSTEM", "description": "Detailed mathematical description of the hyperbolic PDE system, including flux vectors, source terms, and initial/boundary conditions."}, {"name": "DOMAIN_GEOMETRY", "description": "Specification of the computational domain, mesh topology, and element types (e.g., simplicial, hexahedral)."}, {"name": "NUMERICAL_REQUIREMENTS", "description": "Desired order of accuracy, numerical flux functions (e.g., Roe, Lax-Friedrichs), and time integration schemes (e.g., SSP-RK)."}, {"name": "domain_geometry", "description": "Auto-extracted variable domain_geometry", "required": false}, {"name": "numerical_requirements", "description": "Auto-extracted variable numerical_requirements", "required": false}, {"name": "pde_system", "description": "Auto-extracted variable pde_system", "required": false}] -->
 ### Description
 Engineers robust Discontinuous Galerkin (DG) schemes for solving non-linear hyperbolic partial differential equations with shock capturing.
 
@@ -226,7 +226,7 @@ Asserted Output: ""
 ---
 
 ## Skill: Symplectic Integrator Hamiltonian Systems Architect
-<!-- VALIDATION_METADATA: [{"name": "HAMILTONIAN_FUNCTION", "description": "The mathematical expression of the Hamiltonian $H(q, p)$, defining the kinetic and potential energy of the system."}, {"name": "TIME_DOMAIN_CONSTRAINTS", "description": "Specifications regarding the total integration time, required time step sizes, and frequency of solution output."}, {"name": "CONSERVATION_TOLERANCES", "description": "Strict numerical tolerances for the conservation of energy, phase-space volume, and other integrals of motion (e.g., angular momentum)."}] -->
+<!-- VALIDATION_METADATA: [{"name": "HAMILTONIAN_FUNCTION", "description": "The mathematical expression of the Hamiltonian $H(q, p)$, defining the kinetic and potential energy of the system."}, {"name": "TIME_DOMAIN_CONSTRAINTS", "description": "Specifications regarding the total integration time, required time step sizes, and frequency of solution output."}, {"name": "CONSERVATION_TOLERANCES", "description": "Strict numerical tolerances for the conservation of energy, phase-space volume, and other integrals of motion (e.g., angular momentum)."}, {"name": "conservation_tolerances", "description": "Auto-extracted variable conservation_tolerances", "required": false}, {"name": "hamiltonian_function", "description": "Auto-extracted variable hamiltonian_function", "required": false}, {"name": "time_domain_constraints", "description": "Auto-extracted variable time_domain_constraints", "required": false}] -->
 ### Description
 Formulates structure-preserving numerical methods for long-term integration of complex Hamiltonian systems, ensuring energy and momentum conservation.
 

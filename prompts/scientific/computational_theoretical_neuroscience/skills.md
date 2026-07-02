@@ -220,7 +220,7 @@ Asserted Output: ""
 ---
 
 ## Skill: optogenetic_photocurrent_biophysical_modeler
-<!-- VALIDATION_METADATA: [{"name": "opsin_type", "description": "The specific optogenetic actuator being modeled (e.g., ChR2, NpHR, ArchT) and its biophysical variants."}, {"name": "light_stimulation_protocol", "description": "The precise optical stimulation parameters, including irradiance (mW/mm^2), wavelength (nm), pulse width, and frequency."}, {"name": "neuronal_geometry", "description": "The spatial distribution of the opsin expression (e.g., somatic vs. dendritic localization) and underlying host membrane properties."}] -->
+<!-- VALIDATION_METADATA: [{"name": "opsin_type", "description": "The specific optogenetic actuator being modeled (e.g., ChR2, NpHR, ArchT) and its biophysical variants."}, {"name": "light_stimulation_protocol", "description": "The precise optical stimulation parameters, including irradiance (mW/mm^2), wavelength (nm), pulse width, and frequency."}, {"name": "neuronal_geometry", "description": "The spatial distribution of the opsin expression (e.g., somatic vs. dendritic localization) and underlying host membrane properties."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 A Principal Computational Neurophysiologist agent designed to analytically derive and simulate multi-state Markov models for optogenetic photocurrent kinetics and their integration into Hodgkin-Huxley membrane dynamics.
 
@@ -299,7 +299,7 @@ Asserted Output: "A detailed description of the value update rule and how tonic 
 ---
 
 ## Skill: neurovascular_coupling_hemodynamic_response_architect
-<!-- VALIDATION_METADATA: [{"name": "neural_activity_profile", "description": "Specifies the spatio-temporal dynamics of the simulated local field potentials or synaptic activity driving the neurovascular response."}, {"name": "vascular_architecture", "description": "Details the structural and resistive properties of the local pial arteries, penetrating arterioles, and capillary bed geometries."}, {"name": "input_bids_metadata", "description": "<var>{{ input_bids_metadata }}</var> Contextual experimental metadata mapped explicitly to Brain Imaging Data Structure (BIDS) standards."}] -->
+<!-- VALIDATION_METADATA: [{"name": "neural_activity_profile", "description": "Specifies the spatio-temporal dynamics of the simulated local field potentials or synaptic activity driving the neurovascular response."}, {"name": "vascular_architecture", "description": "Details the structural and resistive properties of the local pial arteries, penetrating arterioles, and capillary bed geometries."}, {"name": "input_bids_metadata", "description": "<var>{{ input_bids_metadata }}</var> Contextual experimental metadata mapped explicitly to Brain Imaging Data Structure (BIDS) standards."}, {"name": "var", "description": "Auto-extracted variable var", "required": false}] -->
 ### Description
 A Principal Computational Neuroscientist agent designed to rigorously construct and simulate biophysical models of neurovascular coupling and the Hemodynamic Response Function (HRF) adhering strictly to BIDS standards for multimodal fMRI integration.
 
@@ -411,7 +411,7 @@ Asserted Output: "A rigorous mathematical mapping of the continuous GIF equation
 ---
 
 ## Skill: neural_manifold_state_space_analyzer
-<!-- VALIDATION_METADATA: [{"name": "input_data_format", "description": "Specifies the format and structure of the high-dimensional neural population recordings (e.g., NWB, Neuropixels spike trains)."}, {"name": "dimensionality_reduction_method", "description": "The specific manifold learning or dimensionality reduction technique to be employed (e.g., PCA, jPCA, LFADS, Isomap, TDA)."}, {"name": "dynamical_system_constraints", "description": "The constraints or assumptions regarding the underlying autonomous or input-driven dynamical system governing the latent state."}] -->
+<!-- VALIDATION_METADATA: [{"name": "input_data_format", "description": "Specifies the format and structure of the high-dimensional neural population recordings (e.g., NWB, Neuropixels spike trains)."}, {"name": "dimensionality_reduction_method", "description": "The specific manifold learning or dimensionality reduction technique to be employed (e.g., PCA, jPCA, LFADS, Isomap, TDA)."}, {"name": "dynamical_system_constraints", "description": "The constraints or assumptions regarding the underlying autonomous or input-driven dynamical system governing the latent state."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 A Principal Theoretical Neuroscientist agent designed to rigorously extract and analyze low-dimensional latent dynamics and topological structures from high-dimensional neural population recordings.
 
@@ -633,7 +633,7 @@ Asserted Output: "A comprehensive analysis pipeline incorporating Degree Central
 ---
 
 ## Skill: hodgkin_huxley_biophysical_modeler
-<!-- VALIDATION_METADATA: [{"name": "ion_channels", "type": "string", "description": "Specific ion channels and conductances to include in the model."}, {"name": "stimulus_protocol", "type": "string", "description": "The current injection or synaptic stimulation protocol used to drive the neuron."}] -->
+<!-- VALIDATION_METADATA: [{"name": "ion_channels", "type": "string", "description": "Specific ion channels and conductances to include in the model."}, {"name": "stimulus_protocol", "type": "string", "description": "The current injection or synaptic stimulation protocol used to drive the neuron."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Generates highly rigorous, computationally sound biophysical models of single-neuron action potential dynamics using the Hodgkin-Huxley formalism.
 
@@ -740,7 +740,7 @@ Asserted Output: "An authoritative derivation addressing the computational insta
 ---
 
 ## Skill: continuous_attractor_neural_network_architect
-<!-- VALIDATION_METADATA: [{"name": "dimensionality", "type": "string", "description": "The dimensionality of the attractor manifold (e.g., 1D for head direction cells, 2D for grid cells/place cells)."}, {"name": "plasticity_rule", "type": "string", "description": "The synaptic plasticity learning rule governing the formation of the attractor topology (e.g., symmetric Hebbian, asymmetric STDP)."}] -->
+<!-- VALIDATION_METADATA: [{"name": "dimensionality", "type": "string", "description": "The dimensionality of the attractor manifold (e.g., 1D for head direction cells, 2D for grid cells/place cells)."}, {"name": "plasticity_rule", "type": "string", "description": "The synaptic plasticity learning rule governing the formation of the attractor topology (e.g., symmetric Hebbian, asymmetric STDP)."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Designs highly rigorous, computationally sound continuous attractor neural network (CANN) models for spatial navigation, memory, and cognitive representations.
 

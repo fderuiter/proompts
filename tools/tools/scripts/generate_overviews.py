@@ -95,7 +95,7 @@ def generate_overview(directory: Path, content_cache: dict[Path, bool] | None = 
             if content_cache is not None and child in content_cache:
                 has_sub_prompts = content_cache[child]
             else:
-                for pattern in ("*.prompt.md", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml"):
+                for pattern in ("*.prompt.md", "*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml", "skills.md"):
                     try:
                         next(child.rglob(pattern))
                         has_sub_prompts = True

@@ -26,7 +26,7 @@ tags:
 ---
 
 ## Skill: FDA MDR/MDV Adverse-Event Narrative
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 1. Extract: event date, patient age/sex, device identifiers, reporter type.
 
@@ -96,7 +96,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Clinical Safety Synopsis for EU MDR CER
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "user_input", "description": "Auto-extracted variable user_input", "required": false}] -->
 ### Description
 Provide a concise clinical safety synopsis for the EU MDR Clinical Evaluation Report.
 

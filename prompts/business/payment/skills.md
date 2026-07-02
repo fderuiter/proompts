@@ -168,7 +168,7 @@ Asserted Output: "| Region |"
 ---
 
 ## Skill: Investigator-Site Payment Forecast
-<!-- VALIDATION_METADATA: [{"name": "enrollment_curve", "description": "expected enrollment percentage per month", "required": true}, {"name": "fx_rates", "description": "FX rate sheet name", "required": true}, {"name": "site_data", "description": "Site ID, country, contract currency, enrollment target, and milestone amounts", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "enrollment_curve", "description": "expected enrollment percentage per month", "required": true}, {"name": "fx_rates", "description": "FX rate sheet name", "required": true}, {"name": "site_data", "description": "Site ID, country, contract currency, enrollment target, and milestone amounts", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Produce a month-by-month cash-flow forecast for site payments.
 

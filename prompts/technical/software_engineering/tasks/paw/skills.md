@@ -90,7 +90,7 @@ Asserted Output: "unsafe_input"
 ---
 
 ## Skill: PAW Phase 3 - Precision Strike
-<!-- VALIDATION_METADATA: [{"name": "design_spec", "description": "The Design Spec from Phase 2.", "required": true}, {"name": "relevant_source_code", "description": "The content of the files to be modified.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "design_spec", "description": "The Design Spec from Phase 2.", "required": true}, {"name": "relevant_source_code", "description": "The content of the files to be modified.", "required": true}, {"name": "answer", "description": "Auto-extracted variable answer", "required": false}] -->
 ### Description
 Phase 3 of the Principal Architect Workflow (PAW). Implements the design spec with surgical accuracy.
 

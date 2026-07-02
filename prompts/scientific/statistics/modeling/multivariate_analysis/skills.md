@@ -19,7 +19,7 @@ tags:
 ---
 
 ## Skill: vine_copula_dependency_architect
-<!-- VALIDATION_METADATA: [{"name": "marginal_distributions", "description": "The specifications of the marginal distributions for each variable, including parametric families and estimation strategies.", "required": true}, {"name": "dependence_structure", "description": "The hypothesized high-dimensional dependence structure, describing tail dependence, asymmetry, and domain-specific relational constraints.", "required": true}, {"name": "graphical_model_type", "description": "The specific class of Vine Copula to be employed (e.g., C-vine, D-vine, or R-vine) and the criteria for structure selection.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "marginal_distributions", "description": "The specifications of the marginal distributions for each variable, including parametric families and estimation strategies.", "required": true}, {"name": "dependence_structure", "description": "The hypothesized high-dimensional dependence structure, describing tail dependence, asymmetry, and domain-specific relational constraints.", "required": true}, {"name": "graphical_model_type", "description": "The specific class of Vine Copula to be employed (e.g., C-vine, D-vine, or R-vine) and the criteria for structure selection.", "required": true}, {"name": "directives", "description": "Auto-extracted variable directives", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Acts as a Principal Statistician to mathematically formulate and optimize high-dimensional Vine Copula models for complex, asymmetrical multivariate dependencies.
 

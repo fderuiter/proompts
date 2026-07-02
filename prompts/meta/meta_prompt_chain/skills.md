@@ -43,7 +43,7 @@ tags:
 ---
 
 ## Skill: Agent Persona Generator
-<!-- VALIDATION_METADATA: [{"name": "context", "description": "Additional context or background information for the persona", "required": true}, {"name": "goal", "description": "The goal or desired outcome", "required": true}, {"name": "role", "description": "The role or persona to adopt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "context", "description": "Additional context or background information for the persona", "required": true}, {"name": "goal", "description": "The goal or desired outcome", "required": true}, {"name": "role", "description": "The role or persona to adopt", "required": true}, {"name": "TEST_COMMAND", "description": "Auto-extracted variable TEST_COMMAND", "required": false}] -->
 ### Description
 Generate detailed, high-integrity agent personas based on a provided role and goal, using a strict structural framework.
 
@@ -371,7 +371,7 @@ Asserted Output: "Vector Calibration: Principal Crisis Response Architect"
 ---
 
 ## Skill: Worker Prompt
-<!-- VALIDATION_METADATA: [{"name": "generated_prompt", "description": "The generated prompt to use for this prompt", "required": true}, {"name": "input_block", "description": "specific data", "required": true}, {"name": "output_schema", "description": "required JSON schema", "required": true}, {"name": "policy_block", "description": "Policy and style guide text for guardrails", "required": true}, {"name": "task_description", "description": "The task or objective to accomplish", "required": true}, {"name": "token_limit_l4", "description": "The token limit l4 to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "generated_prompt", "description": "The generated prompt to use for this prompt", "required": true}, {"name": "input_block", "description": "specific data", "required": true}, {"name": "output_schema", "description": "required JSON schema", "required": true}, {"name": "policy_block", "description": "Policy and style guide text for guardrails", "required": true}, {"name": "task_description", "description": "The task or objective to accomplish", "required": true}, {"name": "token_limit_l4", "description": "The token limit l4 to use for this prompt", "required": true}, {"name": "answer", "description": "Auto-extracted variable answer", "required": false}, {"name": "input_data", "description": "Auto-extracted variable input_data", "required": false}, {"name": "thinking", "description": "Auto-extracted variable thinking", "required": false}] -->
 ### Description
 Execute the concrete task defined by the L3 template and return structured output.
 
@@ -519,7 +519,7 @@ None provided.
 ---
 
 ## Skill: Prompt Engineer Template
-<!-- VALIDATION_METADATA: [{"name": "end_task", "description": "final objective", "required": true}, {"name": "generated_prompt", "description": "The generated prompt to use for this prompt", "required": true}, {"name": "token_budget_l3", "description": "Budget details or financial constraints", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "end_task", "description": "final objective", "required": true}, {"name": "generated_prompt", "description": "The generated prompt to use for this prompt", "required": true}, {"name": "token_budget_l3", "description": "Budget details or financial constraints", "required": true}, {"name": "answer", "description": "Auto-extracted variable answer", "required": false}, {"name": "thinking", "description": "Auto-extracted variable thinking", "required": false}] -->
 ### Description
 Produce an L3 task template that enables a Task Prototyper to fulfil `{{ end_task }}`.
 
@@ -684,7 +684,7 @@ None provided.
 ---
 
 ## Skill: Task Prototyper
-<!-- VALIDATION_METADATA: [{"name": "end_task", "description": "final objective", "required": true}, {"name": "generated_prompt", "description": "The generated prompt to use for this prompt", "required": true}, {"name": "policy_block", "description": "policy and style guidance", "required": true}, {"name": "token_budget_l3", "description": "Budget details or financial constraints", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "end_task", "description": "final objective", "required": true}, {"name": "generated_prompt", "description": "The generated prompt to use for this prompt", "required": true}, {"name": "policy_block", "description": "policy and style guidance", "required": true}, {"name": "token_budget_l3", "description": "Budget details or financial constraints", "required": true}, {"name": "answer", "description": "Auto-extracted variable answer", "required": false}, {"name": "thinking", "description": "Auto-extracted variable thinking", "required": false}] -->
 ### Description
 Generate a domain-specific L3 prompt that accomplishes `{{ end_task }}`.
 

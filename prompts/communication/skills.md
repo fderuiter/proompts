@@ -76,7 +76,7 @@ tags:
 ---
 
 ## Skill: Pitch-Deck Outliner
-<!-- VALIDATION_METADATA: [{"name": "business_idea", "description": "The core business concept or startup description.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "business_idea", "description": "The core business concept or startup description.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Draft a high-impact, 10-slide VC pitch deck outline.
 
@@ -146,7 +146,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Red-Team Stress-Test Simulation
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The concept or strategy to stress-test.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The concept or strategy to stress-test.", "required": true}, {"name": "concept", "description": "Auto-extracted variable concept", "required": false}] -->
 ### Description
 Assemble a ruthless panel of adversaries (Hacker, Competitor, Regulator) to dismantle a strategy.
 
@@ -248,7 +248,7 @@ Takeaway: Every refill protects the ocean."
 ---
 
 ## Skill: Smart Task Prioritizer
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "A raw list of tasks or to-do items.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "A raw list of tasks or to-do items.", "required": true}, {"name": "task_list", "description": "Auto-extracted variable task_list", "required": false}] -->
 ### Description
 Transform a raw to-do list into a structured Prioritization Matrix (Impact/Urgency/Effort) and an actionable Execution Plan.
 
@@ -325,7 +325,7 @@ Asserted Output: "{"error": "unsafe", "reason": "Input violates safety or releva
 ---
 
 ## Skill: Socratic-Coach
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 You are a Master Socratic Coach guiding the user through deep reflection and critical thinking.
 
@@ -383,7 +383,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Lay Language Summary Creation
-<!-- VALIDATION_METADATA: [{"name": "technical_results", "description": "The technical results to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "technical_results", "description": "The technical results to use for this prompt", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Summarize trial results for lay audience with rigorous formatting and safety checks.
 
@@ -651,7 +651,7 @@ Tip: run script after saving."
 ---
 
 ## Skill: Principal Science Communicator (Analogy Engine)
-<!-- VALIDATION_METADATA: [{"name": "concept", "description": "The complex scientific or abstract concept to be explained.", "required": true}, {"name": "target_audience", "description": "The knowledge level of the audience (e.g., Child, High School Student, Grad Student, Executive).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "concept", "description": "The complex scientific or abstract concept to be explained.", "required": true}, {"name": "target_audience", "description": "The knowledge level of the audience (e.g., Child, High School Student, Grad Student, Executive).", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Deconstruct complex concepts and map them to intuitive physical realities using rigorous cognitive science principles.
 
@@ -717,7 +717,7 @@ Asserted Output: "JSON error message."
 ---
 
 ## Skill: 80/20 Crash Course
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "subject", "description": "Auto-extracted variable subject", "required": false}] -->
 ### Description
 Teach me the essentials of [SUBJECT] using the Pareto Principle:
 
@@ -981,7 +981,7 @@ Monitor top risks: inspect rails weekly; check weather alerts."
 ---
 
 ## Skill: Negotiation Coach
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "user_scenario", "description": "Auto-extracted variable user_scenario", "required": false}] -->
 ### Description
 Prepare the user for salary negotiations by roleplaying as a manager and offering feedback.
 
@@ -1099,7 +1099,7 @@ improved version using plain language, and actionable writing tip."
 ---
 
 ## Skill: Explain-Like-I’m-5 (ELI5)
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "topic", "description": "Auto-extracted variable topic", "required": false}] -->
 ### Description
 Explain ‘[TOPIC]’ as if I’m five:
 

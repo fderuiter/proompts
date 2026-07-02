@@ -115,7 +115,7 @@ Asserted Output: "Bullet summary followed by short explanatory paragraphs."
 ---
 
 ## Skill: Dunnett Adjustment R Code Generator
-<!-- VALIDATION_METADATA: [{"name": "control_label", "description": "The control label to use for this prompt", "required": true}, {"name": "dataframe", "description": "The data or dataset to analyze", "required": true}, {"name": "dose_var", "description": "The dose var to use for this prompt", "required": true}, {"name": "response_var", "description": "The response var to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "control_label", "description": "The control label to use for this prompt", "required": true}, {"name": "dataframe", "description": "The data or dataset to analyze", "required": true}, {"name": "dose_var", "description": "The dose var to use for this prompt", "required": true}, {"name": "response_var", "description": "The response var to use for this prompt", "required": true}, {"name": "control_group_label", "description": "Auto-extracted variable control_group_label", "required": false}, {"name": "dataframe_name", "description": "Auto-extracted variable dataframe_name", "required": false}, {"name": "dose_variable", "description": "Auto-extracted variable dose_variable", "required": false}, {"name": "response_variable", "description": "Auto-extracted variable response_variable", "required": false}] -->
 ### Description
 Generate R code for Dunnett multiplicity adjustments using the 'multcomp' package.
 
@@ -448,7 +448,7 @@ Asserted Output: "Word-style Markdown outline with H1/H2 sections plus the appen
 ---
 
 ## Skill: FWER Gatekeeping Procedure Code Generator
-<!-- VALIDATION_METADATA: [{"name": "alpha", "description": "The alpha to use for this prompt", "required": true}, {"name": "endpoints", "description": "The endpoints to use for this prompt", "required": true}, {"name": "language", "description": "The programming or natural language to use", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "alpha", "description": "The alpha to use for this prompt", "required": true}, {"name": "endpoints", "description": "The endpoints to use for this prompt", "required": true}, {"name": "language", "description": "The programming or natural language to use", "required": true}, {"name": "alpha_level", "description": "Auto-extracted variable alpha_level", "required": false}] -->
 ### Description
 Generate code for sequential and gatekeeping procedures to control Family-Wise Error Rate (FWER).
 
@@ -591,7 +591,7 @@ Asserted Output: "Two pristine code blocks: first in R, then in SAS."
 ---
 
 ## Skill: Secondary Endpoint Multiplicity Adjuster
-<!-- VALIDATION_METADATA: [{"name": "endpoints", "description": "The endpoints to use for this prompt", "required": true}, {"name": "p_values", "description": "The p values to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "endpoints", "description": "The endpoints to use for this prompt", "required": true}, {"name": "p_values", "description": "The p values to use for this prompt", "required": true}, {"name": "raw_p_values", "description": "Auto-extracted variable raw_p_values", "required": false}, {"name": "secondary_endpoints", "description": "Auto-extracted variable secondary_endpoints", "required": false}] -->
 ### Description
 Apply Bonferroni-Holm (step-down) procedure to secondary efficacy endpoints.
 
@@ -638,7 +638,7 @@ Asserted Output: "Report showing ordered p-values, adjusted calculation, and con
 ---
 
 ## Skill: Multiplicity Adjustment Code Generator
-<!-- VALIDATION_METADATA: [{"name": "dataset", "description": "The data or dataset to analyze", "required": true}, {"name": "p_value_var", "description": "The p value var to use for this prompt", "required": true}, {"name": "treatment_var", "description": "The treatment var to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "dataset", "description": "The data or dataset to analyze", "required": true}, {"name": "p_value_var", "description": "The p value var to use for this prompt", "required": true}, {"name": "treatment_var", "description": "The treatment var to use for this prompt", "required": true}, {"name": "dataset_name", "description": "Auto-extracted variable dataset_name", "required": false}, {"name": "p_value_variable", "description": "Auto-extracted variable p_value_variable", "required": false}, {"name": "treatment_variable", "description": "Auto-extracted variable treatment_variable", "required": false}] -->
 ### Description
 Generate SAS code for multiplicity adjustments (Bonferroni, Holm, Hochberg).
 
@@ -774,7 +774,7 @@ Asserted Output: "Three code blocks followed by a diff table or pass message."
 ---
 
 ## Skill: Statistical Analysis Plan Generator
-<!-- VALIDATION_METADATA: [{"name": "study_details", "description": "XML-wrapped details including phase, indication, and objectives (e.g., `<study_phase>Phase III</study_phase>`).", "required": true}, {"name": "population", "description": "Target patient population and eligibility criteria.", "required": true}, {"name": "intervention", "description": "Test product details (dose, regimen).", "required": true}, {"name": "control", "description": "Comparator details (placebo or active control).", "required": true}, {"name": "endpoints", "description": "Primary and secondary efficacy/safety endpoints.", "required": true}, {"name": "statistical_methods", "description": "Key statistical assumptions (e.g., alpha, power, randomization).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "study_details", "description": "XML-wrapped details including phase, indication, and objectives (e.g., `<study_phase>Phase III</study_phase>`).", "required": true}, {"name": "population", "description": "Target patient population and eligibility criteria.", "required": true}, {"name": "intervention", "description": "Test product details (dose, regimen).", "required": true}, {"name": "control", "description": "Comparator details (placebo or active control).", "required": true}, {"name": "endpoints", "description": "Primary and secondary efficacy/safety endpoints.", "required": true}, {"name": "statistical_methods", "description": "Key statistical assumptions (e.g., alpha, power, randomization).", "required": true}, {"name": "indication", "description": "Auto-extracted variable indication", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "objective", "description": "Auto-extracted variable objective", "required": false}, {"name": "phase", "description": "Auto-extracted variable phase", "required": false}, {"name": "study_phase", "description": "Auto-extracted variable study_phase", "required": false}] -->
 ### Description
 Generate a comprehensive, regulatory-compliant (ICH E9) Statistical Analysis Plan (SAP) for clinical trials.
 

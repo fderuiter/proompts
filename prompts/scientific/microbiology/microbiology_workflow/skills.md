@@ -26,7 +26,7 @@ tags:
 ---
 
 ## Skill: Endotoxin Control & 510(k) Risk Plan
-<!-- VALIDATION_METADATA: [{"name": "device_name", "description": "device under submission", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "device_name", "description": "device under submission", "required": true}, {"name": "85", "description": "Auto-extracted variable 85", "required": false}] -->
 ### Description
 Draft a risk-based endotoxin-testing plan for a 510(k) submission.
 
@@ -101,7 +101,7 @@ None provided.
 ---
 
 ## Skill: Bioburden Testing SOP
-<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "Detailed description of the medical device for bioburden assessment.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "Detailed description of the medical device for bioburden assessment.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Draft a standard operating procedure for bioburden enumeration compliant with ISO 11737‑1:2018.
 

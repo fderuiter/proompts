@@ -45,7 +45,7 @@ tags:
 ---
 
 ## Skill: Competitor-Positioning Brief
-<!-- VALIDATION_METADATA: [{"name": "public_sources", "description": "The public sources to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "public_sources", "description": "The public sources to use for this prompt", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Provide a competitor comparison to highlight differentiators for an upcoming board review.
 
@@ -234,7 +234,7 @@ Our Remote Patient Monitoring (RPM) Platform bridges the gap. By equipping patie
 ---
 
 ## Skill: Market-Intelligence Radar
-<!-- VALIDATION_METADATA: [{"name": "company_size", "description": "The target size of the companies (e.g., Startup, Mid-cap, Big Pharma).", "required": true}, {"name": "geography_focus", "description": "The geographical region to focus on (e.g., North America, EU).", "required": true}, {"name": "preferred_areas", "description": "The therapeutic areas of interest (e.g., Oncology, CNS).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "company_size", "description": "The target size of the companies (e.g., Startup, Mid-cap, Big Pharma).", "required": true}, {"name": "geography_focus", "description": "The geographical region to focus on (e.g., North America, EU).", "required": true}, {"name": "preferred_areas", "description": "The therapeutic areas of interest (e.g., Oncology, CNS).", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Prioritize high-potential biotech or pharma companies for partnership opportunities.
 
@@ -335,7 +335,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Rapid Proposal Builder
-<!-- VALIDATION_METADATA: [{"name": "client_name", "description": "The name or identifier of the client.", "required": true}, {"name": "input", "description": "The project requirements or RFP synopsis.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "client_name", "description": "The name or identifier of the client.", "required": true}, {"name": "input", "description": "The project requirements or RFP synopsis.", "required": true}, {"name": "client_details", "description": "Auto-extracted variable client_details", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "project_requirements", "description": "Auto-extracted variable project_requirements", "required": false}] -->
 ### Description
 Draft a concise capabilities and budget proposal for a prospective client.
 
@@ -555,7 +555,7 @@ Asserted Output: "JSON error message."
 ---
 
 ## Skill: Emerging-Market Opportunity Scan
-<!-- VALIDATION_METADATA: [{"name": "market_data_sources", "description": "The data or dataset to analyze", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "market_data_sources", "description": "The data or dataset to analyze", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "market_data", "description": "Auto-extracted variable market_data", "required": false}] -->
 ### Description
 Identify high-growth therapeutic areas or sponsor segments for CRO services.
 
@@ -642,7 +642,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: 90-Day Pipeline Health & Next-Best-Action Review
-<!-- VALIDATION_METADATA: [{"name": "crm_csv", "description": "The crm csv to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "crm_csv", "description": "The crm csv to use for this prompt", "required": true}, {"name": "crm_data", "description": "Auto-extracted variable crm_data", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Assess the health of the sales pipeline and recommend next-best actions.
 

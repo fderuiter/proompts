@@ -40,7 +40,7 @@ tags:
 ---
 
 ## Skill: counterfactual_semantics_stalnaker_lewis_evaluator
-<!-- VALIDATION_METADATA: [{"name": "COUNTERFACTUAL_STATEMENT", "type": "string", "description": "The counterfactual conditional to evaluate, formalized as A box-arrow C ($A \\square \\rightarrow C$)."}, {"name": "BACKGROUND_FACTS", "type": "string", "description": "The set of background facts and nomological laws holding in the actual world ($w_@$) relevant to the conditional."}, {"name": "SIMILARITY_METRIC", "type": "string", "description": "The specific metric or criteria for assessing the overall comparative similarity between possible worlds ($w_1 \\leq_w w_2$)."}] -->
+<!-- VALIDATION_METADATA: [{"name": "COUNTERFACTUAL_STATEMENT", "type": "string", "description": "The counterfactual conditional to evaluate, formalized as A box-arrow C ($A \\square \\rightarrow C$)."}, {"name": "BACKGROUND_FACTS", "type": "string", "description": "The set of background facts and nomological laws holding in the actual world ($w_@$) relevant to the conditional."}, {"name": "SIMILARITY_METRIC", "type": "string", "description": "The specific metric or criteria for assessing the overall comparative similarity between possible worlds ($w_1 \\leq_w w_2$)."}, {"name": "background_facts", "description": "Auto-extracted variable background_facts", "required": false}, {"name": "counterfactual_statement", "description": "Auto-extracted variable counterfactual_statement", "required": false}, {"name": "similarity_metric", "description": "Auto-extracted variable similarity_metric", "required": false}] -->
 ### Description
 A highly rigorous prompt designed to systematically evaluate the truth conditions of counterfactual conditionals using Stalnaker-Lewis closest possible world semantics.
 
@@ -95,7 +95,7 @@ Asserted Output: "Truth Condition Evaluation"
 ---
 
 ## Skill: Temporal Logic Branching Time Evaluator
-<!-- VALIDATION_METADATA: [{"name": "TEMPORAL_PROPOSITION", "description": "The temporal proposition or timeline sequence to be evaluated (e.g., \"If an event occurs, it will eventually be followed by a necessary state.\").", "required": true}, {"name": "LOGICAL_FRAMEWORK", "description": "The specific temporal logic framework to apply (e.g., Computation Tree Logic (CTL), Linear Temporal Logic (LTL), or CTL*).", "required": true}, {"name": "ONTOLOGICAL_DOMAIN", "description": "The specific ontological domain or context for the temporal structure (e.g., historical determinism, free will and open futures, computational state transitions).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "TEMPORAL_PROPOSITION", "description": "The temporal proposition or timeline sequence to be evaluated (e.g., \"If an event occurs, it will eventually be followed by a necessary state.\").", "required": true}, {"name": "LOGICAL_FRAMEWORK", "description": "The specific temporal logic framework to apply (e.g., Computation Tree Logic (CTL), Linear Temporal Logic (LTL), or CTL*).", "required": true}, {"name": "ONTOLOGICAL_DOMAIN", "description": "The specific ontological domain or context for the temporal structure (e.g., historical determinism, free will and open futures, computational state transitions).", "required": true}, {"name": "logical_framework", "description": "Auto-extracted variable logical_framework", "required": false}, {"name": "ontological_domain", "description": "Auto-extracted variable ontological_domain", "required": false}, {"name": "temporal_proposition", "description": "Auto-extracted variable temporal_proposition", "required": false}] -->
 ### Description
 A highly rigorous prompt designed to systematically evaluate temporal propositions and branching time structures using Computation Tree Logic (CTL) or Linear Temporal Logic (LTL) to map complex deterministic and non-deterministic pathways.
 
@@ -153,7 +153,7 @@ Asserted Output: "Temporal Frame Construction"
 ---
 
 ## Skill: epistemic_logic_omniscience_paradox_resolver
-<!-- VALIDATION_METADATA: [{"name": "EPISTEMIC_MODEL", "description": "The formal epistemic logic model under analysis (e.g., Standard Hintikka Kripke Semantics, Awareness Logic, Impossible Worlds Semantics).", "required": true}, {"name": "AGENT_BOUNDS", "description": "The specific cognitive or computational constraints of the bounded agent (e.g., polynomial-time compute limit, working memory constraints).", "required": true}, {"name": "LOGICAL_AXIOM", "description": "The specific problematic epistemic axiom causing omniscience (e.g., Closure under Material Implication, Knowledge of all Tautologies).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "EPISTEMIC_MODEL", "description": "The formal epistemic logic model under analysis (e.g., Standard Hintikka Kripke Semantics, Awareness Logic, Impossible Worlds Semantics).", "required": true}, {"name": "AGENT_BOUNDS", "description": "The specific cognitive or computational constraints of the bounded agent (e.g., polynomial-time compute limit, working memory constraints).", "required": true}, {"name": "LOGICAL_AXIOM", "description": "The specific problematic epistemic axiom causing omniscience (e.g., Closure under Material Implication, Knowledge of all Tautologies).", "required": true}, {"name": "agent_bounds", "description": "Auto-extracted variable agent_bounds", "required": false}, {"name": "dialectical_synthesis", "description": "Auto-extracted variable dialectical_synthesis", "required": false}, {"name": "epistemic_model", "description": "Auto-extracted variable epistemic_model", "required": false}, {"name": "formal_resolution", "description": "Auto-extracted variable formal_resolution", "required": false}, {"name": "logical_axiom", "description": "Auto-extracted variable logical_axiom", "required": false}, {"name": "logical_deconstruction", "description": "Auto-extracted variable logical_deconstruction", "required": false}, {"name": "paradox_formalization", "description": "Auto-extracted variable paradox_formalization", "required": false}] -->
 ### Description
 A highly rigorous prompt designed to systematically resolve the logical omniscience paradox in epistemic logic models for resource-bounded agents.
 
@@ -209,7 +209,7 @@ Asserted Output: "<dialectical_synthesis>"
 ---
 
 ## Skill: agm_belief_revision_formal_engine
-<!-- VALIDATION_METADATA: [{"name": "KNOWLEDGE_BASE", "type": "string", "description": "The initial belief set (K) logically closed under deductive consequence, provided as a set of formal propositions."}, {"name": "EPISTEMIC_INPUT", "type": "string", "description": "The new proposition (phi) triggering the belief change."}, {"name": "REVISION_OPERATION", "type": "string", "description": "The specific AGM operation to execute: Expansion, Contraction, or Revision."}] -->
+<!-- VALIDATION_METADATA: [{"name": "KNOWLEDGE_BASE", "type": "string", "description": "The initial belief set (K) logically closed under deductive consequence, provided as a set of formal propositions."}, {"name": "EPISTEMIC_INPUT", "type": "string", "description": "The new proposition (phi) triggering the belief change."}, {"name": "REVISION_OPERATION", "type": "string", "description": "The specific AGM operation to execute: Expansion, Contraction, or Revision."}, {"name": "epistemic_input", "description": "Auto-extracted variable epistemic_input", "required": false}, {"name": "knowledge_base", "description": "Auto-extracted variable knowledge_base", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "revision_operation", "description": "Auto-extracted variable revision_operation", "required": false}] -->
 ### Description
 A highly rigorous prompt designed to systematically formalize and execute AGM (Alchourrón, Gärdenfors, and Makinson) belief revision operators upon a formal knowledge base.
 
@@ -266,7 +266,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Free Logic Empty Names Formalizer
-<!-- VALIDATION_METADATA: [{"name": "PROPOSITION", "description": "The natural language proposition containing at least one potentially empty name or non-denoting term (e.g., \"Pegasus is a flying horse\").", "required": true}, {"name": "FREE_LOGIC_SYSTEM", "description": "The specific Free Logic semantics to apply (e.g., Positive Free Logic, Negative Free Logic, Neutral Free Logic, or Supervaluationist Free Logic).", "required": true}, {"name": "ONTOLOGICAL_DOMAIN", "description": "The specified domain of quantification, explicitly distinguishing between the inner domain of existent objects and the outer domain of non-existent objects (if applicable).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "PROPOSITION", "description": "The natural language proposition containing at least one potentially empty name or non-denoting term (e.g., \"Pegasus is a flying horse\").", "required": true}, {"name": "FREE_LOGIC_SYSTEM", "description": "The specific Free Logic semantics to apply (e.g., Positive Free Logic, Negative Free Logic, Neutral Free Logic, or Supervaluationist Free Logic).", "required": true}, {"name": "ONTOLOGICAL_DOMAIN", "description": "The specified domain of quantification, explicitly distinguishing between the inner domain of existent objects and the outer domain of non-existent objects (if applicable).", "required": true}, {"name": "free_logic_system", "description": "Auto-extracted variable free_logic_system", "required": false}, {"name": "ontological_domain", "description": "Auto-extracted variable ontological_domain", "required": false}, {"name": "proposition", "description": "Auto-extracted variable proposition", "required": false}] -->
 ### Description
 A highly rigorous prompt designed to systematically formalize and evaluate propositions containing non-denoting terms or empty names using designated Free Logic semantics (Positive, Negative, or Neutral) to prevent ontological inflation and deductive explosion.
 
@@ -310,7 +310,7 @@ Asserted Output: "Existential Import & Quantificational Analysis"
 ---
 
 ## Skill: Modal Logic Possible Worlds Evaluator
-<!-- VALIDATION_METADATA: [{"name": "MODAL_PROPOSITION", "description": "The modal proposition or counterfactual statement to be evaluated (e.g., \"If kangaroos had no tails, they would topple over\").", "required": true}, {"name": "ACCESSIBILITY_RELATION", "description": "The specific modal accessibility relation framework to apply (e.g., S5 Equivalence Relation, S4 Reflexive and Transitive Relation).", "required": true}, {"name": "ONTOLOGICAL_DOMAIN", "description": "The specific ontological domain or metaphysical context for the possible worlds (e.g., physical necessity, logical necessity, epistemic possibility).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "MODAL_PROPOSITION", "description": "The modal proposition or counterfactual statement to be evaluated (e.g., \"If kangaroos had no tails, they would topple over\").", "required": true}, {"name": "ACCESSIBILITY_RELATION", "description": "The specific modal accessibility relation framework to apply (e.g., S5 Equivalence Relation, S4 Reflexive and Transitive Relation).", "required": true}, {"name": "ONTOLOGICAL_DOMAIN", "description": "The specific ontological domain or metaphysical context for the possible worlds (e.g., physical necessity, logical necessity, epistemic possibility).", "required": true}, {"name": "accessibility_relation", "description": "Auto-extracted variable accessibility_relation", "required": false}, {"name": "modal_proposition", "description": "Auto-extracted variable modal_proposition", "required": false}, {"name": "ontological_domain", "description": "Auto-extracted variable ontological_domain", "required": false}] -->
 ### Description
 A highly rigorous prompt designed to systematically evaluate modal propositions and counterfactual statements using Kripke semantics and precisely defined accessibility relations.
 
@@ -353,7 +353,7 @@ Asserted Output: "Kripke Frame Construction"
 ---
 
 ## Skill: Deontic Logic Normative Conflict Resolver
-<!-- VALIDATION_METADATA: [{"name": "normative_conflict", "description": "The natural language description of the normative conflict or moral dilemma.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "normative_conflict", "description": "The natural language description of the normative conflict or moral dilemma.", "required": true}, {"name": "conflict", "description": "Auto-extracted variable conflict", "required": false}] -->
 ### Description
 Systematically formalizes and resolves normative conflicts (e.g., moral dilemmas) using Standard Deontic Logic (SDL) or advanced non-monotonic variations.
 
@@ -397,7 +397,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: relevance_logic_entailment_evaluator
-<!-- VALIDATION_METADATA: [{"name": "NATURAL_LANGUAGE_ARGUMENT", "type": "string", "description": "The natural language argument consisting of premises and a conclusion to be formalized and evaluated.", "required": true}, {"name": "RELEVANCE_SYSTEM", "type": "string", "description": "The specific system of Relevance Logic to be applied (e.g., Anderson and Belnap's System R, System E, or System B).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "NATURAL_LANGUAGE_ARGUMENT", "type": "string", "description": "The natural language argument consisting of premises and a conclusion to be formalized and evaluated.", "required": true}, {"name": "RELEVANCE_SYSTEM", "type": "string", "description": "The specific system of Relevance Logic to be applied (e.g., Anderson and Belnap's System R, System E, or System B).", "required": true}, {"name": "natural_language_argument", "description": "Auto-extracted variable natural_language_argument", "required": false}, {"name": "relevance_system", "description": "Auto-extracted variable relevance_system", "required": false}] -->
 ### Description
 A highly rigorous prompt designed to systematically evaluate natural language arguments and formal deductions using Relevance Logic to prevent paradoxes of material implication.
 
@@ -445,7 +445,7 @@ Asserted Output: "Formalization into Relevance Logic"
 ---
 
 ## Skill: paraconsistent_logic_dialetheism_evaluator
-<!-- VALIDATION_METADATA: [{"name": "TARGET_PARADOX", "type": "string", "description": "The paradoxical statement or argument ($P$) to be analyzed."}, {"name": "PARACONSISTENT_SYSTEM", "type": "string", "description": "The specific paraconsistent logical calculus to be applied (e.g., Logic of Paradox (LP), First-Degree Entailment (FDE))."}] -->
+<!-- VALIDATION_METADATA: [{"name": "TARGET_PARADOX", "type": "string", "description": "The paradoxical statement or argument ($P$) to be analyzed."}, {"name": "PARACONSISTENT_SYSTEM", "type": "string", "description": "The specific paraconsistent logical calculus to be applied (e.g., Logic of Paradox (LP), First-Degree Entailment (FDE))."}, {"name": "paraconsistent_system", "description": "Auto-extracted variable paraconsistent_system", "required": false}, {"name": "target_paradox", "description": "Auto-extracted variable target_paradox", "required": false}] -->
 ### Description
 A highly rigorous prompt designed to systematically analyze and formalize paradoxical statements using paraconsistent logic frameworks, specifically evaluating them as potential dialetheias (true contradictions) without permitting deductive explosion (ex contradictione quodlibet).
 
