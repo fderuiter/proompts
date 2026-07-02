@@ -1,12 +1,52 @@
 import argparse
 import sys
+import os
+import json
+import logging
 from promptops.validation import validate_prompts
 from promptops.simulation import simulate_prompt
 from promptops.documentation import generate_docs
 from promptops.init import init_project
 from promptops.agent import generate_config, discovery_report
+from promptops.utils import load_yaml, ROOT, iter_prompt_files
+from promptops.engine import run_workflow
+from promptops import console
 
-def main():
+logger = logging.getLogger(__name__)
+
+def setup_logging(verbose: bool = False) -> None:
+    level = logging.DEBUG if verbose else logging.INFO
+    logging.basicConfig(level=level, format='%(levelname)s: %(message)s')
+    logger.setLevel(level)
+
+def search_prompts_func(query: str, verbose: bool = False):
+    from promptops.validation import PromptSchema
+    
+    query = query.lower()
+    found = 0
+    for path in iter_prompt_files(ROOT):
+        content = load_yaml(path)
+        
+        try:
+            PromptSchema(**content)
+        except Exception:
+            continue
+            
+        name = content.get('name', '').lower()
+        description = content.get('description', '').lower()
+
+        if query in name or query in description:
+            found += 1
+            print(f"Match: {content.get('name')} ({path.relative_to(ROOT)})")
+            if verbose and content.get('description'):
+                 print(f"  Description: {content.get('description')}")
+            if verbose:
+                print()
+
+    if found == 0:
+        print(f"No prompts found matching '{query}'.")
+
+def get_parser():
     parser = argparse.ArgumentParser(description="PromptOps Toolkit CLI")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
@@ -45,6 +85,30 @@ def main():
     vibe_parser.add_argument("--budget-cap", type=float, default=10.0, help="Maximum budget for LLM API calls")
     vibe_parser.add_argument("--coverage", type=str, default="universal", help="Coverage mode")
 
+    # Workflow
+    workflow_parser = subparsers.add_parser("workflow", help="Simulate a workflow execution")
+    workflow_parser.add_argument("workflow_file", help="Path to the .workflow.yaml file.")
+    workflow_parser.add_argument("-i", "--input", action='append', help="Set a workflow input, e.g., -i name='value'")
+    workflow_parser.add_argument("-f", "--inputs-file", help="Path to a JSON or YAML file containing workflow inputs")
+    workflow_parser.add_argument("-v", "--verbose", action="store_true", help="Increase output verbosity")
+    workflow_parser.add_argument("--strict", action="store_true", help="Run in strict mode")
+    workflow_parser.add_argument("--chaos", action="store_true", help="Enable Chaos Mode")
+    workflow_parser.add_argument("--no-color", action="store_true", help="Disable color output")
+    workflow_parser.add_argument("--json", action="store_true", help="Output Fidelity Report as JSON only")
+
+    # Search
+    search_parser = subparsers.add_parser("search", help="Search prompts by keyword")
+    search_parser.add_argument("query", help="Keyword to search for")
+    search_parser.add_argument("-v", "--verbose", action="store_true", help="Show description")
+    
+    # Doc-gen (internal/hidden or explicit)
+    docgen_parser = subparsers.add_parser("generate-cli-docs", help="Generate CLI documentation markdown")
+    docgen_parser.add_argument("--output", help="Output markdown file", default="docs/CLI.md")
+
+    return parser
+
+def main():
+    parser = get_parser()
     args = parser.parse_args()
 
     if args.command == "init":
@@ -66,7 +130,133 @@ def main():
     elif args.command == "vibe":
         from promptops.vibe import run_vibe_audit
         run_vibe_audit(budget_cap=args.budget_cap, coverage=args.coverage)
-        sys.exit(0)  # Non-blocking execution
+        sys.exit(0)
+    elif args.command == "search":
+        search_prompts_func(args.query, args.verbose)
+    elif args.command == "workflow":
+        if args.no_color:
+            console.set_no_color(True)
+        if args.json:
+            console.set_json_mode(True)
+
+        strict_mode = args.strict or os.environ.get('CI') == 'true'
+        setup_logging(args.verbose)
+
+        initial_inputs = {}
+
+        if args.inputs_file:
+            file_ext = args.inputs_file.split('.')[-1].lower()
+            try:
+                if file_ext in ['yaml', 'yml']:
+                    file_inputs = load_yaml(args.inputs_file)
+                    if file_inputs is None:
+                        sys.exit(1)
+                    initial_inputs.update(file_inputs)
+                elif file_ext == 'json':
+                    with open(args.inputs_file, 'r') as f:
+                        initial_inputs.update(json.load(f))
+                else:
+                    logger.error(f"Unsupported inputs file extension '{file_ext}'.")
+                    sys.exit(1)
+            except Exception as e:
+                logger.error(f"Failed to load inputs file {args.inputs_file}: {e}")
+                sys.exit(1)
+
+        if args.input:
+            for item in args.input:
+                if '=' in item:
+                    key, value = item.split('=', 1)
+                    initial_inputs[key] = value
+                else:
+                    logger.warning(f"Invalid input format: {item}. Expected key=value")
+
+        fidelity_report = {
+            'evaluators_mocked': False,
+            'rate_limits_simulated': False,
+            'latency_simulated': False
+        }
+
+        workflow_data = load_yaml(args.workflow_file)
+        if not initial_inputs and workflow_data and workflow_data.get('testData'):
+            for test_case in workflow_data['testData']:
+                inputs = test_case.get('inputs', test_case.get('vars', {}))
+                console.step_header(f"Running Workflow Test Scenario with inputs: {inputs}")
+                try:
+                    final_state = run_workflow(args.workflow_file, inputs, verbose=args.verbose, strict_mode=strict_mode, chaos_mode=args.chaos, fidelity_report=fidelity_report)
+                    if final_state:
+                        final_output_step_id = workflow_data.get('steps', [{}])[-1].get('step_id')
+                        if final_output_step_id:
+                            final_output = final_state['steps'][final_output_step_id]['output']
+                            logger.info(f"Scenario Output:\n{final_output}")
+                except Exception as e:
+                    logger.error(f"Workflow test scenario failed: {e}")
+                    sys.exit(1)
+            console.step_header("Simulation Finished (All Scenarios)")
+        else:
+            try:
+                final_state = run_workflow(args.workflow_file, initial_inputs, verbose=args.verbose, strict_mode=strict_mode, chaos_mode=args.chaos, fidelity_report=fidelity_report)
+            except Exception as e:
+                logger.error(f"Workflow simulation failed: {e}")
+                sys.exit(1)
+
+            if final_state:
+                console.step_header("Simulation Finished")
+                final_output_step_id = workflow_data.get('steps', [{}])[-1].get('step_id')
+                if final_output_step_id:
+                    final_output = final_state['steps'][final_output_step_id]['output']
+                    logger.info("Final workflow output:")
+                    console.info(final_output)
+
+        if getattr(args, 'json', False):
+            console.json_output(fidelity_report)
+        else:
+            console.info("\n[Simulation Fidelity Report]")
+            console.info(f"- Evaluators Mocked: {'Yes' if fidelity_report['evaluators_mocked'] else 'No'}")
+            console.info(f"- Rate Limits Simulated: {'Yes' if fidelity_report['rate_limits_simulated'] else 'No'}")
+            console.info(f"- Latency Simulated: {'Yes' if fidelity_report['latency_simulated'] else 'No'}")
+    elif args.command == "generate-cli-docs":
+        # Generate markdown documentation for the parser
+        import io
+        from contextlib import redirect_stdout
+        out = []
+        out.append("# PromptOps CLI Reference\n")
+        out.append("This document is auto-generated from the CLI definition. Do not edit manually.\n")
+        
+        # Main parser help
+        out.append("## `promptops`\n")
+        out.append("```text")
+        out.append(parser.format_help())
+        out.append("```\n")
+        
+        subparsers_actions = [
+            action for action in parser._actions 
+            if isinstance(action, argparse._SubParsersAction)
+        ]
+        
+        for subparsers_action in subparsers_actions:
+            for choice, subparser in subparsers_action.choices.items():
+                if choice == "generate-cli-docs":
+                    continue
+                out.append(f"### `promptops {choice}`\n")
+                out.append("```text")
+                out.append(subparser.format_help())
+                out.append("```\n")
+                
+                # Check for sub-subparsers (like agent)
+                sub_subparsers_actions = [
+                    a for a in subparser._actions 
+                    if isinstance(a, argparse._SubParsersAction)
+                ]
+                for ssa in sub_subparsers_actions:
+                    for subchoice, subsubparser in ssa.choices.items():
+                        out.append(f"#### `promptops {choice} {subchoice}`\n")
+                        out.append("```text")
+                        out.append(subsubparser.format_help())
+                        out.append("```\n")
+
+        with open(args.output, "w") as f:
+            f.write("\n".join(out))
+        print(f"Generated CLI docs at {args.output}")
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,168 @@
+# PromptOps CLI Reference
+
+This document is auto-generated from the CLI definition. Do not edit manually.
+
+## `promptops`
+
+```text
+usage: promptops [-h]
+                 {init,validate,simulate,docs,agent,vibe,workflow,search,generate-cli-docs}
+                 ...
+
+PromptOps Toolkit CLI
+
+positional arguments:
+  {init,validate,simulate,docs,agent,vibe,workflow,search,generate-cli-docs}
+    init                Initialize PromptOps in the current repository
+    validate            Validate prompt files
+    simulate            Simulate a prompt
+    docs                Generate prompt documentation
+    agent               Agent configuration and discovery
+    vibe                Run full-fidelity vibe audit
+    workflow            Simulate a workflow execution
+    search              Search prompts by keyword
+    generate-cli-docs   Generate CLI documentation markdown
+
+options:
+  -h, --help            show this help message and exit
+
+```
+
+### `promptops init`
+
+```text
+usage: promptops init [-h]
+
+options:
+  -h, --help  show this help message and exit
+
+```
+
+### `promptops validate`
+
+```text
+usage: promptops validate [-h] [--dir DIR] [--strict]
+
+options:
+  -h, --help  show this help message and exit
+  --dir DIR   Directory containing prompts
+  --strict    Enable strict validation
+
+```
+
+### `promptops simulate`
+
+```text
+usage: promptops simulate [-h] --data DATA file
+
+positional arguments:
+  file         Path to prompt file
+
+options:
+  -h, --help   show this help message and exit
+  --data DATA  Path to JSON/YAML file with mock data
+
+```
+
+### `promptops docs`
+
+```text
+usage: promptops docs [-h] [--dir DIR] [--out OUT] [--repo-url REPO_URL]
+                      [--branch BRANCH]
+
+options:
+  -h, --help           show this help message and exit
+  --dir DIR            Directory containing prompts
+  --out OUT            Output directory for documentation
+  --repo-url REPO_URL  Base URL for source repository
+  --branch BRANCH      Branch name for source repository links
+
+```
+
+### `promptops agent`
+
+```text
+usage: promptops agent [-h] {config,discovery} ...
+
+positional arguments:
+  {config,discovery}
+    config            Generate MCP configuration for agent clients
+    discovery         Show tool discovery and override report
+
+options:
+  -h, --help          show this help message and exit
+
+```
+
+#### `promptops agent config`
+
+```text
+usage: promptops agent config [-h] [--dir DIR]
+
+options:
+  -h, --help  show this help message and exit
+  --dir DIR   Directory containing prompts
+
+```
+
+#### `promptops agent discovery`
+
+```text
+usage: promptops agent discovery [-h] [--dir DIR]
+
+options:
+  -h, --help  show this help message and exit
+  --dir DIR   Directory containing prompts
+
+```
+
+### `promptops vibe`
+
+```text
+usage: promptops vibe [-h] [--budget-cap BUDGET_CAP] [--coverage COVERAGE]
+
+options:
+  -h, --help            show this help message and exit
+  --budget-cap BUDGET_CAP
+                        Maximum budget for LLM API calls
+  --coverage COVERAGE   Coverage mode
+
+```
+
+### `promptops workflow`
+
+```text
+usage: promptops workflow [-h] [-i INPUT] [-f INPUTS_FILE] [-v] [--strict]
+                          [--chaos] [--no-color] [--json]
+                          workflow_file
+
+positional arguments:
+  workflow_file         Path to the .workflow.yaml file.
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        Set a workflow input, e.g., -i name='value'
+  -f INPUTS_FILE, --inputs-file INPUTS_FILE
+                        Path to a JSON or YAML file containing workflow inputs
+  -v, --verbose         Increase output verbosity
+  --strict              Run in strict mode
+  --chaos               Enable Chaos Mode
+  --no-color            Disable color output
+  --json                Output Fidelity Report as JSON only
+
+```
+
+### `promptops search`
+
+```text
+usage: promptops search [-h] [-v] query
+
+positional arguments:
+  query          Keyword to search for
+
+options:
+  -h, --help     show this help message and exit
+  -v, --verbose  Show description
+
+```

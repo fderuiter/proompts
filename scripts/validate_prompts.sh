@@ -10,6 +10,13 @@ uv run pytest || exit 1
 echo "Validating prompts and workflows with CLI..."
 uv run promptops validate --strict || exit 1
 
+echo "Validating CLI documentation is synchronized..."
+uv run promptops generate-cli-docs
+if ! git diff --exit-code docs/CLI.md > /dev/null; then
+    echo "ERROR: CLI documentation is out of sync. Please run 'uv run promptops generate-cli-docs' and commit the changes."
+    exit 1
+fi
+
 echo "Checking for dead code..."
 uv run vulture || exit 1
 
