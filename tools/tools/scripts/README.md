@@ -95,6 +95,7 @@ pip install -r requirements.txt
 | **`test_workflows.py`** | 🐍 Python | Test Workflows Script |
 | **`update_docs_index.py`** | 🐍 Python | Update `docs/index.md` and `docs/table-of-contents.md` from prompt metadata. |
 | **`update_last_modified.py`** | 🐍 Python | This script updates the `last_modified` metadata field in prompt YAML files to the current UTC time. If the field is missing, it injects it at the top of the file (or immediately after the `name` field). |
+| **`validate_docs_snippets.py`** | 🐍 Python | Lightweight Script Validator |
 | **`validate_prompt_schema.py`** | 🐍 Python | Validate Prompt Schema & Generate JSON Schema |
 
 ## Core Simulation & Governance Scripts
