@@ -4,7 +4,7 @@ from unittest.mock import patch
 from pathlib import Path
 from promptops.utils import ROOT
 
-from tools.scripts.search_prompts import search
+from promptops.cli import search_prompts_func as search
 
 def create_valid_mock_prompt(name, description):
     return {
@@ -22,8 +22,8 @@ def create_valid_mock_prompt(name, description):
 
 class TestSearchPrompts(unittest.TestCase):
 
-    @patch('tools.scripts.search_prompts.load_yaml')
-    @patch('tools.scripts.search_prompts.iter_prompt_files')
+    @patch('promptops.cli.load_yaml')
+    @patch('promptops.cli.iter_prompt_files')
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_search_match_name(self, mock_stdout, mock_iter, mock_load):
         mock_iter.return_value = [ROOT / 'prompts/test/fake1.yaml']
@@ -32,8 +32,8 @@ class TestSearchPrompts(unittest.TestCase):
         output = mock_stdout.getvalue()
         self.assertIn("Match: Test Prompt", output)
 
-    @patch('tools.scripts.search_prompts.load_yaml')
-    @patch('tools.scripts.search_prompts.iter_prompt_files')
+    @patch('promptops.cli.load_yaml')
+    @patch('promptops.cli.iter_prompt_files')
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_search_match_description(self, mock_stdout, mock_iter, mock_load):
         mock_iter.return_value = [ROOT / 'prompts/test/fake1.yaml']
@@ -42,8 +42,8 @@ class TestSearchPrompts(unittest.TestCase):
         output = mock_stdout.getvalue()
         self.assertIn("Match: Other Prompt", output)
 
-    @patch('tools.scripts.search_prompts.load_yaml')
-    @patch('tools.scripts.search_prompts.iter_prompt_files')
+    @patch('promptops.cli.load_yaml')
+    @patch('promptops.cli.iter_prompt_files')
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_search_no_match(self, mock_stdout, mock_iter, mock_load):
         mock_iter.return_value = [ROOT / 'prompts/test/fake1.yaml']
@@ -52,8 +52,8 @@ class TestSearchPrompts(unittest.TestCase):
         output = mock_stdout.getvalue()
         self.assertIn("No prompts found matching 'xyz123'", output)
 
-    @patch('tools.scripts.search_prompts.load_yaml')
-    @patch('tools.scripts.search_prompts.iter_prompt_files')
+    @patch('promptops.cli.load_yaml')
+    @patch('promptops.cli.iter_prompt_files')
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_search_verbose(self, mock_stdout, mock_iter, mock_load):
         mock_iter.return_value = [ROOT / 'prompts/test/fake1.yaml']
@@ -63,8 +63,8 @@ class TestSearchPrompts(unittest.TestCase):
         self.assertIn("Match: Test Prompt", output)
         self.assertIn("Description: A prompt for testing", output)
 
-    @patch('tools.scripts.search_prompts.load_yaml')
-    @patch('tools.scripts.search_prompts.iter_prompt_files')
+    @patch('promptops.cli.load_yaml')
+    @patch('promptops.cli.iter_prompt_files')
     @patch('sys.stdout', new_callable=io.StringIO)
     def test_search_multiple_matches(self, mock_stdout, mock_iter, mock_load):
         mock_iter.return_value = [
