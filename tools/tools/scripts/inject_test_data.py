@@ -1,22 +1,18 @@
-#!/usr/bin/env python3
 """
-Inject Test Data Script
+inject_test_data.py: Data Injection Utility
 
-## What is this?
-This script scans all `.workflow.yaml` files and automatically injects a boilerplate `testData` array if it is missing, based on the input variables detected in the workflow steps.
-
-## Why use it?
-- **Accelerates Testing:** Provides a quick baseline for workflow developers to start simulating their chains without manually writing the entire testData block.
-- **Maintains Consistency:** Ensures all workflows have a testData schema ready for `promptops workflow` simulation.
+WHAT:
+This script scans all `.workflow.yaml` files in the `workflows/` directory. If a workflow is missing the `testData` field, it automatically inspects the required inputs from the step mappings and injects a mock `testData` block.
 
 > [!WARNING]
-> **Manual Setup Required:**
+> Manual Setup Required:
 > This script currently hardcodes the target path as `/app/workflows/`, which is not a standard repository directory unless you are running inside a specific container structure. You must manually ensure this path exists or modify the script locally before execution.
 
-## How to use it?
-```bash
+WHY:
+Ensures all workflows have baseline test data for simulation and validation without requiring manual data entry for every single required input.
+
+HOW TO USE:
 python3 tools/tools/scripts/inject_test_data.py
-```
 """
 
 import yaml
@@ -24,7 +20,8 @@ import glob
 from pathlib import Path
 import re
 
-workflows = glob.glob("/app/workflows/**/*.workflow.yaml", recursive=True)
+ROOT_DIR = Path(__file__).resolve().parents[3]
+workflows = glob.glob(str(ROOT_DIR / "workflows/**/*.workflow.yaml"), recursive=True)
 
 for wf in workflows:
     with open(wf, 'r') as f:

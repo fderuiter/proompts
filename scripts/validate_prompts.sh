@@ -20,6 +20,9 @@ fi
 echo "Checking for dead code..."
 uv run vulture || exit 1
 
+echo "Updating tools script inventory..."
+uv run python3 tools/tools/scripts/update_readme_map.py || exit 1
+
 echo "Updating baseline governance manifest..."
 uv run python3 tools/tools/scripts/governance_manifest_generator.py || exit 1
 
