@@ -107,6 +107,10 @@ def get_parser():
     search_parser.add_argument("query", help="Keyword to search for")
     search_parser.add_argument("-v", "--verbose", action="store_true", help="Show description")
     
+    # Export Schemas
+    export_parser = subparsers.add_parser("export-schemas", help="Export JSON schemas for core validation models")
+    export_parser.add_argument("--out-dir", help="Output directory for JSON schemas", default="docs/schemas")
+    
     # Doc-gen (internal/hidden or explicit)
     docgen_parser = subparsers.add_parser("generate-cli-docs", help="Generate CLI documentation markdown")
     docgen_parser.add_argument("--output", help="Output markdown file", default="docs/CLI.md")
@@ -155,6 +159,35 @@ def main():
         sys.exit(0)
     elif args.command == "search":
         search_prompts_func(args.query, args.verbose)
+    elif args.command == "export-schemas":
+        import os
+        import json
+        from promptops.validation import (
+            ToolCall, Message, ModelParameters, InputVariable,
+            PromptMetadata, InputSchema, MCPTool, PromptSchema, WorkflowInput,
+            WorkflowEdge, WorkflowStep, WorkflowMetadata, WorkflowSchema
+        )
+        models = {
+            "ToolCall": ToolCall, "Message": Message, "ModelParameters": ModelParameters, "InputVariable": InputVariable,
+            "PromptMetadata": PromptMetadata, "InputSchema": InputSchema, "MCPTool": MCPTool, "PromptSchema": PromptSchema, "WorkflowInput": WorkflowInput,
+            "WorkflowEdge": WorkflowEdge, "WorkflowStep": WorkflowStep, "WorkflowMetadata": WorkflowMetadata, "WorkflowSchema": WorkflowSchema
+        }
+        
+        os.makedirs(args.out_dir, exist_ok=True)
+        
+        for name, model in models.items():
+            filename = f"{name}.schema.json"
+            if name == "PromptSchema": filename = "prompt.schema.json"
+            elif name == "WorkflowSchema": filename = "workflow.schema.json"
+            
+            path = os.path.join(args.out_dir, filename)
+            schema = model.model_json_schema()
+            with open(path, 'w') as f:
+                json.dump(schema, f, indent=2)
+                f.write('\n')
+        
+        print(f"Exported {len(models)} schemas to {args.out_dir}")
+        sys.exit(0)
     elif args.command == "workflow":
         if args.no_color:
             console.set_no_color(True)

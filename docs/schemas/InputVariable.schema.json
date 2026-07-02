@@ -1,0 +1,33 @@
+{
+  "properties": {
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "type": "string"
+    },
+    "required": {
+      "default": true,
+      "title": "Required",
+      "type": "boolean"
+    },
+    "default": {
+      "anyOf": [
+        {},
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Default"
+    }
+  },
+  "required": [
+    "name",
+    "description"
+  ],
+  "title": "InputVariable",
+  "type": "object"
+}

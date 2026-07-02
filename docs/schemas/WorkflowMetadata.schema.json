@@ -1,0 +1,18 @@
+{
+  "properties": {
+    "domain": {
+      "title": "Domain",
+      "type": "string"
+    },
+    "topic": {
+      "title": "Topic",
+      "type": "string"
+    }
+  },
+  "required": [
+    "domain",
+    "topic"
+  ],
+  "title": "WorkflowMetadata",
+  "type": "object"
+}

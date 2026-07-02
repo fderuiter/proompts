@@ -1,0 +1,65 @@
+{
+  "$defs": {
+    "ComplexityLevel": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "title": "ComplexityLevel",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "domain": {
+      "title": "Domain",
+      "type": "string"
+    },
+    "complexity": {
+      "$ref": "#/$defs/ComplexityLevel"
+    },
+    "tags": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Tags",
+      "type": "array"
+    },
+    "requires_context": {
+      "default": false,
+      "title": "Requires Context",
+      "type": "boolean"
+    },
+    "autonomy": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Autonomy"
+    },
+    "maturity": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Maturity"
+    }
+  },
+  "required": [
+    "domain",
+    "complexity"
+  ],
+  "title": "PromptMetadata",
+  "type": "object"
+}

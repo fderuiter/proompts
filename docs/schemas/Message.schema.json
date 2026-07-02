@@ -1,0 +1,99 @@
+{
+  "$defs": {
+    "ToolCall": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "type": {
+          "default": "function",
+          "title": "Type",
+          "type": "string"
+        },
+        "function": {
+          "additionalProperties": true,
+          "title": "Function",
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "function"
+      ],
+      "title": "ToolCall",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "role": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Role"
+    },
+    "content": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "items": {},
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Content"
+    },
+    "tool_calls": {
+      "anyOf": [
+        {
+          "items": {
+            "$ref": "#/$defs/ToolCall"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Tool Calls"
+    },
+    "tool_call_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Tool Call Id"
+    },
+    "name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Name"
+    }
+  },
+  "title": "Message",
+  "type": "object"
+}

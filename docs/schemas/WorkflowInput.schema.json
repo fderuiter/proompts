@@ -1,0 +1,25 @@
+{
+  "properties": {
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Description"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "title": "WorkflowInput",
+  "type": "object"
+}
