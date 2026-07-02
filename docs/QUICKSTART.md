@@ -26,23 +26,23 @@ pip install -r requirements.txt
 Let's find a prompt to test. Use the search script to find a "Code Reviewer":
 
 ```bash
-python3 tools/tools/scripts/search_prompts.py "code review"
+promptops search "code review"
 ```
 
 ### 3. Run a Workflow Simulation
-We don't need an API key to test our logic! Our `run_workflow.py` engine simulates LLM responses using the `testData` embedded in our prompts.
+We don't need an API key to test our logic! Our `promptops workflow` engine simulates LLM responses using the `testData` embedded in our prompts.
 
 Let's simulate the **Agentic Coding Workflow** (which chains multiple engineering prompts together):
 
 ```bash
 # Run the workflow and provide a starting variable (-i)
-python3 tools/tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app"
+promptops workflow workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app"
 ```
 
 > [!TIP]
 > Add the `-v` (verbose) flag to see exactly how inputs map to the prompts at each step!
 > ```bash
-> python3 tools/tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app" -v
+> promptops workflow workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app" -v
 > ```
 
 ### 4. Verify your changes

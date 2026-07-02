@@ -1,3 +1,20 @@
+#!/usr/bin/env python3
+"""
+Governance Manifest Generator
+
+## What is this?
+This script updates the baseline governance manifest and generates gap reports based on the regulatory knowledge base (`regulatory_kb.yaml`).
+
+## Why use it?
+- **Ensures Compliance:** Tracks changes in regulatory requirements and maps them to existing prompts.
+- **Identifies Gaps:** Highlights areas where prompt coverage is missing or non-compliant with the latest policies.
+
+## How to use it?
+```bash
+python3 tools/tools/scripts/governance_manifest_generator.py
+```
+"""
+
 from typing import Any
 import json
 import hashlib

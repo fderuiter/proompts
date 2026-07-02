@@ -39,14 +39,14 @@ graph TD
 
 ## Simulation 🚀
 
-You can **simulate** workflow execution using the `run_workflow.py` script. This validates the variable passing and logic flow using the `testData` embedded in the prompt files.
+You can **simulate** workflow execution using the `promptops workflow` script. This validates the variable passing and logic flow using the `testData` embedded in the prompt files.
 
 > [!NOTE]
 > This simulation does NOT make API calls to LLMs. It is a cost-free way to verify your workflow's integrity.
 
 ```bash
 # Example: Simulate the Agentic Coding workflow
-python3 tools/tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app"
+promptops workflow workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app"
 ```
 
 ## Documentation 📄

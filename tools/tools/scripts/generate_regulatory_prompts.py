@@ -1,7 +1,19 @@
 #!/usr/bin/env python3
 """
-Generate regulatory prompts based on a predefined list of tasks.
-This script creates prompt files in the appropriate directories under prompts/regulatory/.
+Generate Regulatory Prompts
+
+## What is this?
+This script generates regulatory prompts based on a predefined list of tasks.
+It creates prompt files in the appropriate directories under `prompts/regulatory/`.
+
+## Why use it?
+- **Bulk Creation:** Quickly bootstraps the directory structure and initial files for regulatory prompts.
+- **Enforces Standards:** Ensures the generated prompts follow the expected schemas and naming conventions from the start.
+
+## How to use it?
+```bash
+python3 tools/tools/scripts/generate_regulatory_prompts.py
+```
 """
 
 import os

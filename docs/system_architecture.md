@@ -22,7 +22,7 @@ graph TD
     subgraph "The Engine Room (tools/tools/scripts/)"
         D1(check_prompts.py)
         D2(validate_prompt_schema.py)
-        D3(run_workflow.py)
+        D3(promptops workflow)
         D4(generate_docs.py)
     end
 
@@ -64,11 +64,11 @@ Workflows chain multiple prompts together to achieve complex, multi-step goals. 
 - **State Management**: Outputs from one step can be passed as inputs to subsequent steps using `{{steps.step_id.output}}`.
 - **Visualizations**: Workflow diagrams are automatically generated to visualize the flow of data.
 
-### 3. The Simulation Engine (`run_workflow.py`)
+### 3. The Simulation Engine (`promptops workflow`)
 A unique feature of this repository is the ability to **simulate** workflow execution without incurring LLM costs or requiring API keys.
 - **Deterministic Replay**: The engine uses the `testData` field in prompt files to mock LLM responses.
 - **Validation**: This allows developers to verify variable mapping, conditional logic, and overall workflow integrity before deploying to a live model.
-- **Usage**: `python3 tools/tools/scripts/run_workflow.py path/to/workflow.workflow.yaml`
+- **Usage**: `promptops workflow path/to/workflow.workflow.yaml`
 
 ### 4. The Validation Pipeline (`validate_prompts.sh`)
 A comprehensive suite of scripts ensures repository health and consistency.

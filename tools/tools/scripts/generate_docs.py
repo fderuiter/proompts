@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
 """
-⚙️ Systems Core: Documentation Generator
-Refactored for Robustness, Scalability, and OCP.
+Systems Core: Documentation Generator
 
-WHAT:
+## What is this?
 This script generates the static Markdown documentation site structure in the `docs/` directory.
 It scans all prompts and workflows, organizes them by category (metadata-driven), and builds
 category index pages and individual workflow documentation pages.
 
-WHY:
+## Why use it?
 It treats documentation as a first-class build artifact, keeping the `docs/` site in perfect
 sync with the actual source code (`prompts/` and `workflows/`). By automating this process,
 we eliminate "Documentation Debt" and ensure developers always have an accurate, up-to-date
 reference for the system.
 
-HOW TO USE:
+## How to use it?
 Run this script from the root of the repository:
-
-    python3 tools/tools/scripts/generate_docs.py
+```bash
+python3 tools/tools/scripts/generate_docs.py
+```
 
 > [!NOTE]
 > This script is automatically executed as part of the master validation suite (`validate_prompts.sh`).
@@ -30,7 +30,7 @@ import json
 import re
 import os # Needed for relpath calculation in strict paths
 from pathlib import Path
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import List, Dict, Optional, Any
 from promptops.utils import load_yaml, derive_prompt_category
 

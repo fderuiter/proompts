@@ -4,7 +4,7 @@ title: Workflows Usage
 
 # Workflows Usage Guide 🚀
 
-The `run_workflow.py` script is a powerful tool to execute sequences of prompts dynamically. This page provides practical usage examples and details about how to run and verify your workflows.
+The `promptops workflow` script is a powerful tool to execute sequences of prompts dynamically. This page provides practical usage examples and details about how to run and verify your workflows.
 
 ## 🛠️ Usage Examples
 
@@ -15,7 +15,7 @@ The simulation engine allows you to test your workflows locally. It reads variab
 To run a workflow with a single input via the command line:
 
 ```bash
-python3 tools/tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app"
+promptops workflow workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app"
 ```
 
 ### 2. Supply Inputs via a File
@@ -27,7 +27,7 @@ For workflows requiring many inputs, or when inputs contain sensitive data, use 
 # product_concept: "A secure messaging platform"
 # target_audience: "Enterprise customers"
 
-python3 tools/tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -f inputs.yaml
+promptops workflow workflows/technical/agentic_coding.workflow.yaml -f inputs.yaml
 ```
 
 ### 3. Run in Verbose Mode
@@ -35,12 +35,12 @@ python3 tools/tools/scripts/run_workflow.py workflows/technical/agentic_coding.w
 To debug a workflow and see the exact inputs being passed to each step during execution, use the `-v` (verbose) flag:
 
 ```bash
-python3 tools/tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app" -v
+promptops workflow workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app" -v
 ```
 
 ## 🔍 How it works
 
-The `run_workflow.py` script does **NOT** make actual LLM calls. It utilizes the `testData` field found within the corresponding `.prompt.yaml` files.
+The `promptops workflow` script does **NOT** make actual LLM calls. It utilizes the `testData` field found within the corresponding `.prompt.yaml` files.
 
 If a prompt's inputs match the variables specified in a `testData` entry, the simulator will return that specific `expected` string. Otherwise, it will return the first available test output, or a generic placeholder.
 

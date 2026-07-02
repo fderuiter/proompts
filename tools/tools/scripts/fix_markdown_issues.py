@@ -1,5 +1,23 @@
 #!/usr/bin/env python3
-"""Automatically fix common Markdown issues listed in todo_fix.md."""
+"""
+Fix Markdown Issues Script
+
+## What is this?
+This script automatically resolves common Markdown formatting issues (like trailing spaces, missing blank lines, and malformed code blocks) for files listed in an external manifest.
+
+## Why use it?
+- **Improves Consistency:** Automatically standardizes formatting across large amounts of documentation.
+- **Saves Time:** Fixes tedious syntax issues without manual intervention.
+
+> [!WARNING]
+> **Manual Setup Required:**
+> This script relies on a non-existent external manifest file named `todo_fix.md` in the repository root. You must manually create this file and populate it with a bulleted list of file paths (e.g., `- ./docs/README.md`) before running this script.
+
+## How to use it?
+```bash
+python3 tools/tools/scripts/fix_markdown_issues.py
+```
+"""
 
 from __future__ import annotations
 

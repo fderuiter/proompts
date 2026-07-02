@@ -62,11 +62,11 @@ For detailed guidance, see [Best Practices Guide](../docs/BEST_PRACTICES.md).
 Prompts are rarely used in isolation. They are typically chained together in **Workflows**.
 
 - **Workflows**: Defined in the [`../workflows/`](../workflows) directory (organized by domain), workflows orchestrate multiple prompts to achieve complex goals.
-- **Simulation**: You can simulate workflows using the `run_workflow.py` script to test logic without API costs.
+- **Simulation**: You can simulate workflows using the `promptops workflow` script to test logic without API costs.
 
 ```bash
 # Example: Simulate the Agentic Coding workflow
-python3 tools/tools/scripts/run_workflow.py workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app"
+promptops workflow workflows/technical/agentic_coding.workflow.yaml -i product_concept="A new time-tracking app"
 ```
 
 ## Tools 🛠️
@@ -75,7 +75,7 @@ We maintain a suite of tools in [`../tools/tools/scripts/`](../tools/tools/scrip
 
 - **[`check_prompts.py`](../tools/tools/scripts/check_prompts.py)**: Validates that all prompt files follow the required schema and naming conventions.
 - **[`generate_overviews.py`](../tools/tools/scripts/generate_overviews.py)**: Automatically generates `overview.md` files for subdirectories.
-- **[`run_workflow.py`](../tools/tools/scripts/run_workflow.py)**: The engine that executes workflows and prompts.
+- **`promptops workflow`**: The engine that executes workflows and prompts.
 
 ## Contributing 🤝
 

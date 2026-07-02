@@ -13,41 +13,6 @@ This directory is the "Engine Room" of the Proompts repository. It contains the 
 ## Why does it exist?
 To maintain high standards across the prompt library. By automating schema checks and documentation generation, these scripts reduce manual overhead and prevent "Documentation Debt."
 
-## How does it work?
-The scripts operate as a pipeline. The master script (`validate_prompts.sh`) acts as the entry point, orchestrating validation and documentation tasks.
-
-### The CI/CD Pipeline
-
-```mermaid
-graph TD
-    %% Define Nodes
-    A[Developer Commits] -->|Triggers| B(validate_prompts.sh)
-
-    subgraph "Validation Phase"
-        C1[check_prompts.py]
-        C2[validate_prompt_schema.py]
-        C3[yamllint]
-    end
-
-    subgraph "Documentation Phase"
-        D1[update_docs_index.py]
-        D2[generate_docs.py]
-        D3[check_broken_links.py]
-    end
-
-    B -->|1. Validates| C1
-    B -->|2. Validates| C2
-    B -->|3. Validates| C3
-
-    B -->|4. Updates| D1
-    B -->|5. Generates| D2
-    B -->|6. Scans| D3
-
-    classDef default fill:#f9f9f9,stroke:#333,stroke-width:1px;
-    classDef highlight fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
-    class B highlight;
-```
-
 ## Prerequisites
 
 Before running these scripts, ensure you have the required dependencies installed:
@@ -56,344 +21,85 @@ Before running these scripts, ensure you have the required dependencies installe
 pip install -r requirements.txt
 ```
 
-## Table of Contents
-
-- [Developer Scripts \& Utilities](#developer-scripts--utilities)
-  - [Prerequisites](#prerequisites)
-  - [Table of Contents](#table-of-contents)
-  - [Validation \& Testing](#validation--testing)
-    - [`validate_prompts.sh`](#validate_promptssh)
-    - [`check_prompts.py`](#check_promptspy)
-    - [`validate_prompt_schema.py`](#validate_prompt_schemapy)
-    - [`test_run_workflow.py`](#test_run_workflowpy)
-    - [`test_generate_workflow_diagrams.py`](#test_generate_workflow_diagramspy)
-    - [`test_generate_overviews.py`](#test_generate_overviewspy)
-    - [`test_fix_markdown_issues.py`](#test_fix_markdown_issuespy)
-    - [`test_utils.py`](#test_utilspy)
-  - [Workflow Simulation](#workflow-simulation)
-    - [`run_workflow.py`](#run_workflowpy)
-  - [Documentation Maintenance](#documentation-maintenance)
-    - [`update_docs_index.py`](#update_docs_indexpy)
-    - [`generate_docs.py`](#generate_docspy)
-    - [`check_broken_links.py`](#check_broken_linkspy)
-    - [`generate_overviews.py`](#generate_overviewspy)
-    - [`generate_search_index.py`](#generate_search_indexpy)
-    - [`fix_markdown_issues.py`](#fix_markdown_issuespy)
-  - [Prompt Maintenance](#prompt-maintenance)
-    - [`search_prompts.py`](#search_promptspy)
-    - [`update_last_modified.py`](#update_last_modifiedpy)
-    - [`standardize_c_prompts.py`](#standardize_c_promptspy)
-    - [`migrate_prompts.py`](#migrate_promptspy)
-    - [`enrich_prompts.py`](#enrich_promptspy)
-    - [`generate_regulatory_prompts.py`](#generate_regulatory_promptspy)
-  - [Shared Libraries](#shared-libraries)
-    - [`utils.py`](#utilspy)
-
----
-
-## Validation & Testing
-
-### `validate_prompts.sh`
-
-**The Master Runner.** Runs all repository validation checks in sequence.
-**Key Steps:**
-1.  **Validation**: Runs `check_prompts`, `vulture`, `validate_prompt_schema`, `test_workflows`, and `governance_manifest_generator`.
-
-**Pipeline Visualization:**
-
-```mermaid
-graph TD
-    A[Start: validate_prompts.sh] --> B[1. pytest]
-    B --> C[2. check_prompts]
-    C --> D[3. vulture]
-    D --> E[4. validate_prompt_schema]
-    E --> F[5. test_workflows]
-    F --> G[6. governance_manifest_generator]
-    G --> H[End: All Checks Passed]
-
-    classDef process fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
-    class B,C,D,E,F,G process;
-```
-
-**Usage:**
-
-```bash
-./scripts/validate_prompts.sh
-```
-
-### `check_prompts.py`
-
-Checks YAML-based prompts (`*.prompt.yaml`) for basic file naming conventions and ensures every prompt directory has an `overview.md` file.
-
-**Usage:**
-
-```bash
-python3 tools/tools/scripts/check_prompts.py
-```
-
-### `validate_prompt_schema.py`
-
-Validates that prompt YAML files adhere to the strict Pydantic schema. Checks for required fields like `name`, `description`, `messages`, `testData`, and `evaluators`.
-
-**Usage:**
-
-```bash
-# Validate all prompts
-python3 tools/tools/scripts/validate_prompt_schema.py
-
-# Strict mode (warns about empty testData)
-python3 tools/tools/scripts/validate_prompt_schema.py --strict
-
-# Generate JSON Schema for IDE Intellisense
-python3 tools/tools/scripts/validate_prompt_schema.py --json-schema > docs/schemas/prompt.schema.json
-```
-
-### `test_run_workflow.py`
-
-A functional test for the `run_workflow.py` script. It creates a temporary environment with mock prompts and workflows, runs them, and verifies the output.
-
-**Usage:**
-
-```bash
-python3 tools/tools/scripts/test_run_workflow.py
-```
-
-### `test_generate_overviews.py`
-
-Unit tests for `generate_overviews.py`. Ensures that prompt titles are correctly extracted from YAML files (prioritizing `name`, then `title`, then filename fallback) and that overview files are generated properly.
-
-**Usage:**
-
-```bash
-python3 tools/tools/scripts/test_generate_overviews.py
-```
-
-### `test_fix_markdown_issues.py`
-
-Unit tests for `fix_markdown_issues.py`. Verifies the logic for correcting common Markdown formatting errors, such as trailing whitespace, header spacing, and list indentation.
-
-**Usage:**
-
-```bash
-python3 tools/tools/scripts/test_fix_markdown_issues.py
-```
-
-### `test_utils.py`
-
-Unit tests for `utils.py`. Ensures shared utility functions work as expected.
-
-**Usage:**
-
-```bash
-python3 tools/tools/scripts/test_utils.py
-```
-
-## Workflow Simulation
-
-### `run_workflow.py`
-
-**The Simulation Engine.** Simulates the execution of a prompt workflow defined in a `.workflow.yaml` file.
-
-> [!NOTE]
-> This script **does not make API calls** to LLMs. Instead, it uses the `testData` field in your prompt files to deterministically simulate outputs. This allows for rapid testing of workflow logic and variable passing without incurring costs.
-
-**Usage:**
-
-```bash
-# Simulate a workflow with verbose output
-python3 tools/tools/scripts/run_workflow.py path/to/workflow.workflow.yaml -v
-
-# Simulate with initial inputs
-python3 tools/tools/scripts/run_workflow.py path/to/workflow.workflow.yaml -i user_name="Alice"
-```
-
-**Workflow Input & testData Example:**
-
-To successfully simulate a workflow step, your prompt file must contain a `testData` array that matches the inputs passed to it:
-
-```yaml
-# In your prompt.yaml file:
-testData:
-  - inputs:
-      user_name: "Alice"
-      role: "admin"
-    expected: "Hello Admin Alice, welcome to the system."
-```
-
-If the inputs map exactly to what the `run_workflow.py` engine provides (e.g., via `-i user_name="Alice" -i role="admin"`), the simulator returns the `expected` string.
-
-## Documentation Maintenance
-
-> [!NOTE]
-> Generated docs artifacts are build outputs and should not be committed to git.
-
-### `update_docs_index.py`
-
-Scans all prompt folders to regenerate the documentation index (`docs/index.md`) and table of contents for documentation builds. Keeps the docs site in sync with the file system.
-
-**Usage:**
-
-```bash
-# Update docs/index.md
-python3 tools/tools/scripts/update_docs_index.py
-```
-
-### `generate_docs.py`
-
-Generates the static documentation site structure in `docs/` for CI/local builds. It scans all prompts and workflows, organizes them by category (metadata-driven), and generates:
-- Category index pages (e.g., `docs/clinical.md`)
-- Individual workflow documentation pages in `docs/workflows/`
-
-**Usage:**
-
-```bash
-python3 tools/tools/scripts/generate_docs.py
-```
+## Available Scripts
 
 ### `check_broken_links.py`
-
-Scans all Markdown files in `docs/` and `prompts/` for broken internal links. It validates:
-- Relative file paths
-- Anchors (e.g., `#section`)
-- Directory links (valid if directory exists)
-
+**Purpose:** Scans Markdown files for broken internal links and missing anchors across the documentation and prompt directories.
 **Usage:**
-
 ```bash
 python3 tools/tools/scripts/check_broken_links.py
 ```
 
-### `generate_overviews.py`
+### `check_prompts.py`
+**Purpose:** Performs structural and naming validation on the `prompts/` and `workflows/` directories to ensure repository consistency. Enforces that prompts follow required naming patterns and that every directory has documentation.
+**Usage:**
+```bash
+python3 tools/tools/scripts/check_prompts.py
+```
 
-Automatically creates `overview.md` files in prompt directories.
-- **Recursive**: Scans for subdirectories containing prompts and links them in a "Categories" section.
-- **Cleanup**: Removes `overview.md` files if a directory becomes empty.
-- **Filtering**: Ignores hidden files (e.g., `._*`) to prevent broken links.
+### `enrich_prompts.py`
+**Purpose:** Scans prompt YAML files and automatically enriches them with missing metadata (such as `domain`, `complexity`, `tags`, and `requires_context`) and inferential descriptions for variables declared in the `messages` block.
+**Usage:**
+```bash
+python3 tools/tools/scripts/enrich_prompts.py
+```
+
+### `fix_markdown_issues.py`
+**Purpose:** Automatically resolves common Markdown formatting issues (like trailing spaces, missing blank lines, and malformed code blocks) for files listed in an external manifest.
+> [!WARNING]
+> **Manual Setup Required:**
+> This script relies on a non-existent external manifest file named `todo_fix.md` in the repository root. You must manually create this file and populate it with a bulleted list of file paths (e.g., `- ./docs/README.md`) before running this script.
 
 **Usage:**
+```bash
+python3 tools/tools/scripts/fix_markdown_issues.py
+```
 
+### `generate_docs.py`
+**Purpose:** Generates the static Markdown documentation site structure in the `docs/` directory. Scans all prompts and workflows, organizes them by category, and builds category index pages and individual workflow pages.
+**Usage:**
+```bash
+python3 tools/tools/scripts/generate_docs.py
+```
+
+### `generate_overviews.py`
+**Purpose:** Automatically creates `overview.md` files for prompt directories if they are missing.
+**Usage:**
 ```bash
 python3 tools/tools/scripts/generate_overviews.py
 ```
 
-### `generate_search_index.py`
-
-Generates a `search.json` file in the repository root. This JSON file indexes all prompts with their titles, descriptions, and tags, enabling the search functionality on the documentation site.
-
-**Usage:**
-
-```bash
-python3 tools/tools/scripts/generate_search_index.py
-```
-
-### `fix_markdown_issues.py`
-
-Reads `todo_fix.md` (a list of file paths) and automatically corrects common Markdown formatting issues such as list indentation, header spacing, and trailing whitespace.
-
-The `todo_fix.md` file must contain a list of files to process, formatted as a markdown list where each line starts with `- ./` and ends with `.md`.
-
-**Usage:**
-
-```bash
-# Ensure todo_fix.md exists in root, then run:
-python3 tools/tools/scripts/fix_markdown_issues.py
-```
-
-## Prompt Maintenance
-
-### `search_prompts.py`
-
-Searches for prompts by keyword in the `name` or `description` fields.
-
-**Usage:**
-
-```bash
-# Search for prompts containing "review"
-python3 tools/tools/scripts/search_prompts.py review
-
-# Show full descriptions
-python3 tools/tools/scripts/search_prompts.py "review" -v
-```
-
-### `update_last_modified.py`
-
-Updates the `last_modified` field in the specified prompt files to the current UTC time. If the field is missing, it adds it after `name` or at the top of the file.
-
-**Usage:**
-
-```bash
-# Update a specific file
-python3 tools/tools/scripts/update_last_modified.py prompts/my_prompt.prompt.yaml
-
-# Update multiple files
-python3 tools/tools/scripts/update_last_modified.py prompts/*.prompt.yaml
-
-# Check if files need updating without modifying them
-python3 tools/tools/scripts/update_last_modified.py prompts/my_prompt.prompt.yaml --check
-```
-
-### `standardize_c_prompts.py`
-
-Enforces standard fields (`purpose`, `context`, `instructions`, etc.) on prompts within directories starting with 'c' (e.g., `prompts/communication`). Useful for bulk updates.
-
-**Usage:**
-
-```bash
-python3 tools/tools/scripts/standardize_c_prompts.py
-```
-
-### `migrate_prompts.py`
-
-Migrates existing prompt YAML files to the new schema by adding `version` and `variables` fields if they are missing.
-
-**Usage:**
-
-```bash
-# Migrate all prompts
-python3 tools/tools/scripts/migrate_prompts.py
-
-# Dry run to see what would change
-python3 tools/tools/scripts/migrate_prompts.py --dry-run
-```
-
-### `enrich_prompts.py`
-
-Enriches prompt YAML files with meaningful variable descriptions and metadata (domain, complexity, tags, requires_context) based on the file path and content.
-
-**Usage:**
-
-```bash
-# Enrich all prompts
-python3 tools/tools/scripts/enrich_prompts.py
-
-# Enrich a specific file
-python3 tools/tools/scripts/enrich_prompts.py --file prompts/my_prompt.prompt.yaml
-
-# Dry run
-python3 tools/tools/scripts/enrich_prompts.py --dry-run
-```
-
 ### `generate_regulatory_prompts.py`
-
-Generates regulatory prompts based on a predefined list of tasks. Creates prompt files in the appropriate directories under `prompts/regulatory/`.
-
+**Purpose:** Generates regulatory prompts based on a predefined list of tasks, creating prompt files in the appropriate directories under `prompts/regulatory/`.
 **Usage:**
-
 ```bash
 python3 tools/tools/scripts/generate_regulatory_prompts.py
 ```
 
-## Shared Libraries
+### `generate_search_index.py`
+**Purpose:** Generates a `search.json` index file for the static documentation site, extracting titles, descriptions, and tags from YAML files.
+**Usage:**
+```bash
+python3 tools/tools/scripts/generate_search_index.py
+```
 
-### `utils.py`
+### `governance_manifest_generator.py`
+**Purpose:** Updates the baseline governance manifest and generates gap reports based on the regulatory knowledge base (`regulatory_kb.yaml`).
+**Usage:**
+```bash
+python3 tools/tools/scripts/governance_manifest_generator.py
+```
 
-Contains shared constants and helper functions used by multiple scripts.
+### `inject_test_data.py`
+**Purpose:** Scans all `.workflow.yaml` files and automatically injects a boilerplate `testData` array if it is missing, based on the input variables detected in the workflow steps.
+> [!WARNING]
+> **Manual Setup Required:**
+> This script currently hardcodes the target path as `/app/workflows/`, which is not a standard repository directory unless you are running inside a specific container structure. You must manually ensure this path exists or modify the script locally before execution.
 
-- `ROOT`: Path to the repository root.
-- `PROMPTS_DIR`: Path to the `prompts/` directory.
-- `load_yaml(path)`: Safely loads YAML files.
-- `iter_prompt_files(root)`: Recursively yields all prompt files **(skips macOS `._` resource forks)**.
-- `iter_workflow_files(root)`: Recursively yields all workflow files **(skips macOS `._` resource forks)**.
+**Usage:**
+```bash
+python3 tools/tools/scripts/inject_test_data.py
+```
 
 ---
 
