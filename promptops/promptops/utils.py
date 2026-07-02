@@ -211,9 +211,15 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
         # Extract metadata
         meta_match = re.search(r'<!-- VALIDATION_METADATA: (.*?) -->', body)
         vars_data = []
+        skill_metadata = {}
         if meta_match:
             try:
-                vars_data = json.loads(meta_match.group(1))
+                parsed_meta = json.loads(meta_match.group(1))
+                if isinstance(parsed_meta, list):
+                    vars_data = parsed_meta
+                elif isinstance(parsed_meta, dict):
+                    vars_data = parsed_meta.get("variables", [])
+                    skill_metadata = parsed_meta.get("metadata", {})
             except:
                 pass
 
@@ -271,6 +277,7 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
             "name": name,
             "description": description,
             "variables": vars_data,
+            "metadata": skill_metadata,
             "messages": messages,
             "instructions": instructions,
             "testData": test_data,

@@ -9,6 +9,7 @@ Prompts are stored as `.prompt.yaml` files. The previous JSON format has been re
 ## Essential Guides
 
 - **[Agent Integration](mcp_integration.md)** - Guide to connecting prompts as tools to Claude Desktop using MCP
+- **[Defining Skills](defining_skills.md)** - Guide on authoring and metadata formatting for tool-based skills
 - **[Best Practices Guide](BEST_PRACTICES.md)** - Comprehensive guide for creating high-quality prompts
 - **[Google Prompting Guide](google_prompting_guide.md)** - Official Google strategies for effective prompt design
 - **[Claude Prompting Guide](claude_prompting_guide.md)** - Comprehensive guide to prompt engineering techniques for Claude's latest models
