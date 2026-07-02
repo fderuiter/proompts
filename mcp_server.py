@@ -9,7 +9,7 @@ import logging
 from pathlib import Path
 import jsonschema
 
-from promptops.resolver import get_tool_name_mcp
+from promptops.utils import get_tool_name_mcp
 
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler

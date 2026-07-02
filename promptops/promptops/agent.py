@@ -6,7 +6,8 @@ from pathlib import Path
 from typing import Tuple, List, Dict, Any
 
 from promptops.utils import iter_prompt_files, load_yaml, iter_skill_manifests, parse_skill_manifest
-from promptops.resolver import get_tool_name, resolve_skill_from_path
+from promptops.utils import get_tool_name
+from promptops.resolver import resolve_skill_from_path
 
 def get_tools_info(prompts_dir: Path) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
     manifests = []

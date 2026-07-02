@@ -61,8 +61,10 @@ class InputVariable(BaseModel):
     required: bool = Field(True)
     default: Optional[Any] = Field(None)
 
-class PromptMetadata(BaseModel):
+class BaseMetadata(BaseModel):
     domain: str = Field(...)
+
+class PromptMetadata(BaseMetadata):
     complexity: ComplexityLevel = Field(...)
     tags: List[str] = Field([])
     requires_context: bool = Field(False)
@@ -203,8 +205,7 @@ class WorkflowStep(BaseModel):
     map_inputs: Dict[str, Any] = Field(...)
     next: Optional[Union[str, List[Union[str, WorkflowEdge]]]] = Field(None)
 
-class WorkflowMetadata(BaseModel):
-    domain: str = Field(...)
+class WorkflowMetadata(BaseMetadata):
     topic: str = Field(...)
 
 class WorkflowSchema(BaseModel):
