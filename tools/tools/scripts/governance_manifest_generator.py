@@ -23,15 +23,20 @@ import yaml
 
 # Ensure we can import from the current directory
 try:
-    from promptops.utils import PROMPTS_DIR, iter_prompt_files, load_yaml, ROOT
+    from promptops.utils import (
+        PROMPTS_DIR, 
+        iter_prompt_files, 
+        load_yaml, 
+        ROOT,
+        MANIFEST_DIR,
+        MANIFEST_FILE,
+        GAP_REPORT_FILE,
+        KB_FILE
+    )
 except Exception as e:
     raise e
 
-MANIFEST_DIR = ROOT / "governance"
-MANIFEST_DIR.mkdir(exist_ok=True)
-MANIFEST_FILE = MANIFEST_DIR / "compliance_manifest.json"
-GAP_REPORT_FILE = MANIFEST_DIR / "gap_report.json"
-KB_FILE = ROOT / "regulatory_kb.yaml"
+MANIFEST_DIR.mkdir(parents=True, exist_ok=True)
 
 def generate_kb():
     if not KB_FILE.exists():

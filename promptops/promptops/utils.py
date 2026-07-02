@@ -37,6 +37,12 @@ WORKFLOWS_DIR: Path = ROOT / "workflows"
 OVERVIEW_NAME: str = "overview.md"
 DOMAIN_TAG_PREFIX: str = "domain:"
 
+# Centralized Governance Paths
+MANIFEST_DIR: Path = ROOT / "promptops" / "governance"
+MANIFEST_FILE: Path = MANIFEST_DIR / "compliance_manifest.json"
+GAP_REPORT_FILE: Path = MANIFEST_DIR / "gap_report.json"
+KB_FILE: Path = ROOT / "promptops" / "regulatory_kb.yaml"
+
 
 def deep_merge(base: Any, override: Any) -> Any:
     """Deep merge two dictionaries. override takes precedence."""
@@ -55,7 +61,7 @@ def load_yaml(path: Union[str, Path], raw: bool = False) -> Dict[str, Any]:
     try:
         text = path_obj.read_text(encoding="utf-8")
         
-        inherited_config = {}
+        inherited_config: Dict[str, Any] = {}
         macros_text = ""
         
         try:

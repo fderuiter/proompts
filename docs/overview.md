@@ -20,8 +20,8 @@ Prompts are stored as `.prompt.yaml` files. The previous JSON format has been re
 
 ## Quick Links
 
-- [Index](index.md) - Full documentation index
-- [Table of Contents](table-of-contents.md) - Complete prompt catalog
+- [Index](../README.md) - Full documentation index
+- [Table of Contents](../README.md) - Complete prompt catalog
  - Detailed prompt listings
 
 ## Prompt Categories
