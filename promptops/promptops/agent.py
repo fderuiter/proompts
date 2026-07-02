@@ -5,8 +5,8 @@ import hashlib
 from pathlib import Path
 from typing import Tuple, List, Dict, Any
 
-from promptops.utils import iter_prompt_files, load_yaml, iter_skill_manifests, parse_skill_manifest, iter_workflow_files, WORKFLOWS_DIR
-from promptops.resolver import get_tool_name, resolve_skill_from_path
+from promptops.utils import iter_prompt_files, load_yaml, iter_skill_manifests, parse_skill_manifest, iter_workflow_files, WORKFLOWS_DIR, get_tool_name, get_tool_name_mcp
+from promptops.resolver import resolve_skill_from_path
 
 def get_tools_info(prompts_dir: Path) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]]]:
     manifests = []
@@ -21,9 +21,7 @@ def get_tools_info(prompts_dir: Path) -> Tuple[List[Dict[str, Any]], List[Dict[s
             manifests.append({"path": str(path), "domain": domain, "skills": manifest["skills"]})
             
             for skill in manifest["skills"]:
-                tool_name = skill["name"]
-                tool_name = re.sub(r'[^a-zA-Z0-9_-]', '_', tool_name)
-                tool_name = re.sub(r'_+', '_', tool_name).strip('_')
+                tool_name = get_tool_name_mcp(path, skill)
                 manifested_tool_names.add(tool_name.lower())
                 skills.append({
                     "original_name": skill["name"],

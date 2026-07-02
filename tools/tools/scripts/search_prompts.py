@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Search prompts by keyword."""
 import sys
 import subprocess
 

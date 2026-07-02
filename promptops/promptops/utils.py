@@ -1,8 +1,9 @@
 import re
 import os
+import hashlib
 from pathlib import Path
 import yaml
-from typing import Iterator, Dict, Any, List, Optional, Set, Union
+from typing import Iterator, Dict, Any, List, Optional, Set, Union, Tuple
 
 from jinja2.sandbox import SandboxedEnvironment
 from jinja2 import FileSystemLoader, Undefined, meta, Environment
@@ -119,7 +120,7 @@ def get_prompt_tags(content: Dict[str, Any]) -> List[str]:
     from promptops.tags import extract_tags
     return extract_tags(content)
 
-def derive_prompt_category(path: Path, root_dir: Path, content: Optional[Dict[str, Any]] = None) -> str:
+def derive_category(path: Path, root_dir: Path, content: Optional[Dict[str, Any]] = None) -> str:
     data = content or {}
     for tag in get_prompt_tags(data):
         if tag.lower().startswith(DOMAIN_TAG_PREFIX):
@@ -140,6 +141,39 @@ def derive_prompt_category(path: Path, root_dir: Path, content: Optional[Dict[st
         return _format_category(relative.parts[0])
     except ValueError:
         return "Uncategorized"
+
+def derive_title(path: Path, data: Dict[str, Any]) -> str:
+    if name := data.get('name') or data.get('title'):
+        return str(name).strip()
+    stem = path.stem.replace('.workflow', '').replace('.prompt', '')
+    clean_name = re.sub(r'^\d+_', '', stem)
+    return clean_name.replace('_', ' ').title()
+
+def get_tool_name(path: Path, content: dict) -> Tuple[str, str]:
+    """
+    Returns (original_name, sanitized_name).
+    Handles unified normalization and hashing for truncation.
+    """
+    name = content.get('name')
+    if not name:
+        name = path.name.replace(".workflow.yaml", "").replace(".prompt.yaml", "").replace(".prompt.yml", "").replace(".prompt.md", "")
+        
+    original_name = name
+    name = re.sub(r'[^a-zA-Z0-9_-]', '_', name)
+    name = re.sub(r'_+', '_', name)
+    name = name.strip('_')
+    
+    if len(name) > 64:
+        hash_input = f"{path}::{original_name}"
+        hash_suffix = hashlib.md5(hash_input.encode('utf-8')).hexdigest()[:8]
+        name = f"{name[:55]}_{hash_suffix}"
+        
+    return original_name, name
+
+def get_tool_name_mcp(path: Path, content: dict) -> str:
+    """Wrapper that just returns the sanitized name for MCP server."""
+    _, sanitized = get_tool_name(path, content)
+    return sanitized
 
 def extract_template_vars(content: Dict[str, Any]) -> List[str]:
     found: Set[str] = set()

@@ -8,7 +8,7 @@ from datetime import datetime
 from pathlib import Path
 import yaml
 
-from promptops.utils import ROOT, iter_prompt_files, iter_skill_manifests, parse_skill_manifest, load_yaml, derive_prompt_category
+from promptops.utils import ROOT, iter_prompt_files, iter_skill_manifests, parse_skill_manifest, load_yaml, derive_category
 
 COST_PER_PROMPT_EVAL = 0.005
 MAX_BUDGET = 10.0
@@ -145,7 +145,7 @@ class VibeMonitor:
                 
                 # Evaluate
                 eval_result = self._simulate_llm_judge(name, data)
-                category = derive_prompt_category(p, ROOT / "prompts", data)
+                category = derive_category(p, ROOT / "prompts", data)
                 
                 self.results.append({
                     "file": str(p.name),
