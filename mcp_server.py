@@ -20,7 +20,7 @@ from mcp.server.stdio import stdio_server
 import mcp.types as types
 
 from promptops.utils import iter_prompt_files, iter_workflow_files, load_yaml, extract_template_vars, iter_skill_manifests, parse_skill_manifest, WORKFLOWS_DIR
-from promptops.validation import PromptSchema
+from promptops.validation import PromptSchema, ProomptsValidationError
 from promptops.simulation import simulate_prompt
 
 # Setup basic logging to stderr
@@ -166,8 +166,10 @@ async def handle_call_tool(name: str, arguments: dict | None) -> list[types.Text
                     fidelity: dict[str, Any] = {}
                     out = simulate_prompt_execution(content, arguments, prompt_file=str(path), strict_mode=False, chaos_mode=False, fidelity_report=fidelity)
                     return [types.TextContent(type="text", text=f"--- Executing Prompt: {content.get('name')} ---\n\n{out}")]
+                except ProomptsValidationError as e:
+                    return [types.TextContent(type="text", text=f"--- Validation Error ---\n\nResponse validation failed for '{name}': {e}")]
                 except Exception as e:
-                    return [types.TextContent(type="text", text=f"--- Execution Error ---\n\nValidation or execution failed for '{name}': {e}")]
+                    return [types.TextContent(type="text", text=f"--- Execution Error ---\n\nExecution failed for '{name}': {e}")]
         except:
             continue
 
@@ -184,8 +186,10 @@ async def handle_call_tool(name: str, arguments: dict | None) -> list[types.Text
                         if final_output_step_id and final_output_step_id in state['steps']:
                             out = state['steps'][final_output_step_id]['output']
                     return [types.TextContent(type="text", text=f"--- Executing Workflow: {content.get('name')} ---\n\n{out}")]
+                except ProomptsValidationError as e:
+                    return [types.TextContent(type="text", text=f"--- Validation Error ---\n\nResponse validation failed for '{name}': {e}")]
                 except Exception as e:
-                    return [types.TextContent(type="text", text=f"--- Execution Error ---\n\nValidation or execution failed for '{name}': {e}")]
+                    return [types.TextContent(type="text", text=f"--- Execution Error ---\n\nExecution failed for '{name}': {e}")]
         except:
             continue
 
@@ -212,8 +216,10 @@ async def handle_call_tool(name: str, arguments: dict | None) -> list[types.Text
                             type="text",
                             text=f"--- Executing Skill: {skill['name']} ---\n\n{out}"
                         )]
+                    except ProomptsValidationError as e:
+                        return [types.TextContent(type="text", text=f"--- Validation Error ---\n\nResponse validation failed for '{name}': {e}")]
                     except Exception as e:
-                        return [types.TextContent(type="text", text=f"--- Execution Error ---\n\nValidation or execution failed for '{name}': {e}")]
+                        return [types.TextContent(type="text", text=f"--- Execution Error ---\n\nExecution failed for '{name}': {e}")]
         except:
             continue
 
