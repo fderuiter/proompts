@@ -19,7 +19,7 @@ tags:
 ---
 
 ## Skill: Tandem MS/MS Fragmentation Pathway Elucidator
-<!-- VALIDATION_METADATA: [{"name": "precursor_ion", "description": "IUPAC name or SMILES string of the intact precursor molecule.", "required": true}, {"name": "ionization_mode", "description": "Specific ionization technique and polarity (e.g., ESI(+), MALDI(-), EI).", "required": true}, {"name": "tandem_ms_conditions", "description": "Relevant parameters such as collision energy, collision gas, and activation method (e.g., Low-Energy CID with N2, HCD).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "precursor_ion", "description": "IUPAC name or SMILES string of the intact precursor molecule.", "required": true}, {"name": "ionization_mode", "description": "Specific ionization technique and polarity (e.g., ESI(+), MALDI(-), EI).", "required": true}, {"name": "tandem_ms_conditions", "description": "Relevant parameters such as collision energy, collision gas, and activation method (e.g., Low-Energy CID with N2, HCD).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Formulates rigorous, step-by-step gas-phase fragmentation mechanisms and predictive mass spectra for complex organic molecules utilizing advanced collision-induced dissociation (CID) principles.
 

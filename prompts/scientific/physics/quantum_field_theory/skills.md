@@ -42,7 +42,7 @@ tags:
 ---
 
 ## Skill: Chiral Anomaly Fujikawa Path Integral Architect
-<!-- VALIDATION_METADATA: [{"name": "gauge_group", "description": "The Lie group under which the fermion fields transform (e.g., U(1) for QED, SU(N) for QCD).", "required": true}, {"name": "fermion_representation", "description": "The representation of the gauge group in which the chiral fermions reside.", "required": true}, {"name": "spacetime_dimension", "description": "The spacetime dimension in which the anomaly is being evaluated (typically even, e.g., d=4, d=2).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "gauge_group", "description": "The Lie group under which the fermion fields transform (e.g., U(1) for QED, SU(N) for QCD).", "required": true}, {"name": "fermion_representation", "description": "The representation of the gauge group in which the chiral fermions reside.", "required": true}, {"name": "spacetime_dimension", "description": "The spacetime dimension in which the anomaly is being evaluated (typically even, e.g., d=4, d=2).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Formulates the rigorous derivation of chiral anomalies using Fujikawa's path integral measure evaluation, extracting the anomalous divergence of the axial current via heat-kernel regularization.
 
@@ -97,7 +97,7 @@ Asserted Output: "\text{tr}(G_{\mu\nu} \tilde{G}^{\mu\nu})"
 ---
 
 ## Skill: Ward-Takahashi Identity Path Integral Architect
-<!-- VALIDATION_METADATA: [{"name": "generating_functional", "description": "The explicit mathematical form of the path integral generating functional with source terms.", "required": true}, {"name": "symmetry_transformation", "description": "The continuous local or global symmetry transformation of the fields involved.", "required": true}, {"name": "field_measure", "description": "The functional integration measure of the involved fields.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "generating_functional", "description": "The explicit mathematical form of the path integral generating functional with source terms.", "required": true}, {"name": "symmetry_transformation", "description": "The continuous local or global symmetry transformation of the fields involved.", "required": true}, {"name": "field_measure", "description": "The functional integration measure of the involved fields.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Formulates the rigorous derivation of Ward-Takahashi identities from the path integral measure under continuous symmetry transformations, extracting conservation laws and symmetry constraints on n-point Green's functions.
 
@@ -147,7 +147,7 @@ Asserted Output: "\partial_\mu \langle j^\mu(x) \rangle = \langle \bar{\psi}(x) 
 ---
 
 ## Skill: Coleman-Weinberg Effective Potential Architect
-<!-- VALIDATION_METADATA: [{"name": "classical_potential", "description": "The explicit mathematical form of the classical (tree-level) scalar potential, specifically lacking a negative mass-squared term.", "required": true}, {"name": "field_content", "description": "The full spectrum of fields coupling to the classical scalar background (e.g., scalar, Dirac fermions, gauge bosons) and their interaction Lagrangians.", "required": true}, {"name": "renormalization_condition", "description": "The explicit renormalization conditions (e.g., specifying the renormalization scale M and the values of the potential's derivatives at M).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "classical_potential", "description": "The explicit mathematical form of the classical (tree-level) scalar potential, specifically lacking a negative mass-squared term.", "required": true}, {"name": "field_content", "description": "The full spectrum of fields coupling to the classical scalar background (e.g., scalar, Dirac fermions, gauge bosons) and their interaction Lagrangians.", "required": true}, {"name": "renormalization_condition", "description": "The explicit renormalization conditions (e.g., specifying the renormalization scale M and the values of the potential's derivatives at M).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Formulates the rigorous derivation of the one-loop Coleman-Weinberg effective potential, demonstrating dynamical symmetry breaking via radiative corrections in quantum field theories.
 
@@ -281,7 +281,7 @@ Asserted Output: ""
 ---
 
 ## Skill: Callan-Symanzik Beta Function Architect
-<!-- VALIDATION_METADATA: [{"name": "lagrangian_density", "description": "The explicit mathematical form of the bare Lagrangian density, including interaction terms.", "required": true}, {"name": "regularization_scheme", "description": "The specified regularization scheme (e.g., Dimensional Regularization).", "required": true}, {"name": "coupling_constant", "description": "The coupling constant for which the beta function is to be derived.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "lagrangian_density", "description": "The explicit mathematical form of the bare Lagrangian density, including interaction terms.", "required": true}, {"name": "regularization_scheme", "description": "The specified regularization scheme (e.g., Dimensional Regularization).", "required": true}, {"name": "coupling_constant", "description": "The coupling constant for which the beta function is to be derived.", "required": true}, {"name": "user_input", "description": "Auto-extracted variable user_input", "required": false}] -->
 ### Description
 Derives Callan-Symanzik equations, calculates beta functions at one-loop order, and analyzes renormalization group flow for theoretical quantum field models.
 
@@ -386,7 +386,7 @@ Asserted Output: "Z[J]"
 ---
 
 ## Skill: Feynman Rule Derivation Architect
-<!-- VALIDATION_METADATA: [{"name": "lagrangian_density", "description": "The explicit mathematical form of the novel interaction Lagrangian density.", "required": true}, {"name": "field_content", "description": "The particle fields involved (e.g., scalar, spinor, vector gauge fields) and their quantum numbers.", "required": true}, {"name": "symmetry_group", "description": "The internal symmetry or gauge group of the theory (e.g., SU(N), U(1)).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "lagrangian_density", "description": "The explicit mathematical form of the novel interaction Lagrangian density.", "required": true}, {"name": "field_content", "description": "The particle fields involved (e.g., scalar, spinor, vector gauge fields) and their quantum numbers.", "required": true}, {"name": "symmetry_group", "description": "The internal symmetry or gauge group of the theory (e.g., SU(N), U(1)).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Derives Feynman rules and vertex factors from novel Lagrangians in Quantum Field Theory, applying exact field contractions and rigorous mathematical notation.
 
@@ -440,7 +440,7 @@ Asserted Output: "-ig\gamma^\mu"
 ---
 
 ## Skill: Schwinger-Keldysh Non-Equilibrium Path Integral Architect
-<!-- VALIDATION_METADATA: [{"name": "lagrangian_density", "description": "The explicit mathematical form of the system's Lagrangian density, including any time-dependent couplings.", "required": true}, {"name": "initial_density_matrix", "description": "The functional form of the initial statistical density matrix $\\rho(t_0)$.", "required": true}, {"name": "observable", "description": "The specific real-time observable or n-point correlation function to be computed.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "lagrangian_density", "description": "The explicit mathematical form of the system's Lagrangian density, including any time-dependent couplings.", "required": true}, {"name": "initial_density_matrix", "description": "The functional form of the initial statistical density matrix $\\rho(t_0)$.", "required": true}, {"name": "observable", "description": "The specific real-time observable or n-point correlation function to be computed.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Formulates the rigorous Schwinger-Keldysh (in-in) closed-time path integral formalism to compute real-time Green's functions and analyze non-equilibrium quantum dynamics.
 
@@ -493,7 +493,7 @@ Asserted Output: "Keldysh propagator"
 ---
 
 ## Skill: BRST Quantization and Faddeev-Popov Ghost Architect
-<!-- VALIDATION_METADATA: [{"name": "classical_action", "description": "The explicit mathematical form of the classical gauge-invariant action.", "required": true}, {"name": "gauge_transformation", "description": "The infinitesimal gauge transformations of the fields involved.", "required": true}, {"name": "gauge_fixing_condition", "description": "The specific functional form of the gauge-fixing condition (e.g., Lorentz gauge, $R_\\\\xi$ gauge).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "classical_action", "description": "The explicit mathematical form of the classical gauge-invariant action.", "required": true}, {"name": "gauge_transformation", "description": "The infinitesimal gauge transformations of the fields involved.", "required": true}, {"name": "gauge_fixing_condition", "description": "The specific functional form of the gauge-fixing condition (e.g., Lorentz gauge, $R_\\\\xi$ gauge).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Formulates the rigorous BRST quantization of gauge theories, extracting the complete effective Lagrangian including Faddeev-Popov ghost terms and gauge-fixing structures.
 

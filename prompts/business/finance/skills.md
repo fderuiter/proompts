@@ -98,7 +98,7 @@ Asserted Output: "Enterprise Value-at-Risk and Hedging Strategy"
 ---
 
 ## Skill: Quantitative Black-Scholes Options Pricing Architect
-<!-- VALIDATION_METADATA: [{"name": "underlying_asset_parameters", "description": "Specify the current spot price, historical or implied volatility, and dividend yield of the underlying asset.", "required": true, "type": "string"}, {"name": "contract_specifications", "description": "Detail the option type (call/put), strike price, and time to expiration (in years).", "required": true, "type": "string"}, {"name": "risk_free_rate_environment", "description": "Outline the current continuous compounding risk-free interest rate applicable to the option's maturity.", "required": true, "type": "string"}] -->
+<!-- VALIDATION_METADATA: [{"name": "underlying_asset_parameters", "description": "Specify the current spot price, historical or implied volatility, and dividend yield of the underlying asset.", "required": true, "type": "string"}, {"name": "contract_specifications", "description": "Detail the option type (call/put), strike price, and time to expiration (in years).", "required": true, "type": "string"}, {"name": "risk_free_rate_environment", "description": "Outline the current continuous compounding risk-free interest rate applicable to the option's maturity.", "required": true, "type": "string"}, {"name": "input", "description": "Auto-extracted variable input", "required": false}] -->
 ### Description
 Architects mathematically rigorous Black-Scholes option pricing models, calculating theoretical values and Greeks for European-style derivatives to hedge portfolio volatility.
 
@@ -179,7 +179,7 @@ Asserted Output: "Tangency Portfolio Optimization"
 ---
 
 ## Skill: Corporate Merger Arbitrage Deal Risk Architect
-<!-- VALIDATION_METADATA: [{"name": "target_company", "description": "The target company in the proposed merger or acquisition.", "required": true}, {"name": "acquiring_company", "description": "The acquiring company in the proposed transaction.", "required": true}, {"name": "deal_terms", "description": "Key terms of the deal including offer price, current stock prices, and expected timeline.", "required": true}, {"name": "regulatory_landscape", "description": "Details regarding antitrust considerations and regulatory hurdles.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "target_company", "description": "The target company in the proposed merger or acquisition.", "required": true}, {"name": "acquiring_company", "description": "The acquiring company in the proposed transaction.", "required": true}, {"name": "deal_terms", "description": "Key terms of the deal including offer price, current stock prices, and expected timeline.", "required": true}, {"name": "regulatory_landscape", "description": "Details regarding antitrust considerations and regulatory hurdles.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Evaluate deal completion probabilities, antitrust risk, and expected annualized returns using advanced probability-weighted financial modeling and the McKinsey 7S framework.
 
@@ -580,7 +580,7 @@ Asserted Output: "Evaluation showing significant early risks, high WACC due to l
 ---
 
 ## Skill: Automated Financial Variance Analyst
-<!-- VALIDATION_METADATA: [{"name": "financial_data", "description": "JSON or CSV formatted financial data containing Actuals and Budgets.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "financial_data", "description": "JSON or CSV formatted financial data containing Actuals and Budgets.", "required": true}, {"name": "float", "description": "Auto-extracted variable float", "required": false}, {"name": "integer", "description": "Auto-extracted variable integer", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "string", "description": "Auto-extracted variable string", "required": false}] -->
 ### Description
 Automates the cognitive labor of a corporate financial analyst by systematically processing variance analysis between actuals and budgets.
 

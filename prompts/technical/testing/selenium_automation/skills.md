@@ -81,7 +81,7 @@ Asserted Output: "setProxy"
 ---
 
 ## Skill: Synchronization Strategy: Explicit Waits
-<!-- VALIDATION_METADATA: [{"name": "code_snippet", "description": "The source code to analyze or modify", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "code_snippet", "description": "The source code to analyze or modify", "required": true}, {"name": "code", "description": "Auto-extracted variable code", "required": false}] -->
 ### Description
 Replace brittle Thread.sleep() calls with dynamic Explicit or Fluent waits.
 
@@ -388,7 +388,7 @@ Asserted Output: "@DataProvider"
 ---
 
 ## Skill: Project Configuration: Maven Setup
-<!-- VALIDATION_METADATA: [{"name": "java_version", "description": "The java version to use for this prompt", "required": true}, {"name": "test_framework", "description": "The test framework to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "java_version", "description": "The java version to use for this prompt", "required": true}, {"name": "test_framework", "description": "The test framework to use for this prompt", "required": true}, {"name": "artifactId", "description": "Auto-extracted variable artifactId", "required": false}] -->
 ### Description
 Set up a Maven project structure and pom.xml file with necessary Selenium client libraries.
 
@@ -456,7 +456,7 @@ Asserted Output: "implements ITestListener"
 ---
 
 ## Skill: Execution Optimization: Parallel Testing
-<!-- VALIDATION_METADATA: [{"name": "language", "description": "The programming or natural language to use", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "language", "description": "The programming or natural language to use", "required": true}, {"name": "WebDriver", "description": "Auto-extracted variable WebDriver", "required": false}] -->
 ### Description
 Configure the automation suite to execute multiple tests simultaneously.
 

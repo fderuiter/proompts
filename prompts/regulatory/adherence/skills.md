@@ -52,7 +52,7 @@ tags:
 ---
 
 ## Skill: Imaging Endpoint Process Standards Checklist
-<!-- VALIDATION_METADATA: [{"name": "endpoint", "description": "The endpoint to use for this prompt", "required": true}, {"name": "modality", "description": "The modality to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "endpoint", "description": "The endpoint to use for this prompt", "required": true}, {"name": "modality", "description": "The modality to use for this prompt", "required": true}, {"name": "imaging_modality", "description": "Auto-extracted variable imaging_modality", "required": false}, {"name": "primary_endpoint", "description": "Auto-extracted variable primary_endpoint", "required": false}] -->
 ### Description
 Review FDA guidance on imaging endpoints and create process checklists.
 
@@ -101,7 +101,7 @@ Asserted Output: "Checklist for MRI scanner standardization (field strength), co
 ---
 
 ## Skill: RWE Regulatory Framework Summary
-<!-- VALIDATION_METADATA: [{"name": "data_source", "description": "The data or dataset to analyze", "required": true}, {"name": "use_case", "description": "The use case to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "data_source", "description": "The data or dataset to analyze", "required": true}, {"name": "use_case", "description": "The use case to use for this prompt", "required": true}, {"name": "intended_use", "description": "Auto-extracted variable intended_use", "required": false}, {"name": "rwd_source", "description": "Auto-extracted variable rwd_source", "required": false}] -->
 ### Description
 Review the FDA Real-World Evidence (RWE) Framework and fitness-for-use criteria.
 
@@ -149,7 +149,7 @@ Asserted Output: "Summary highlighting challenges of EHR (missing data, unstruct
 ---
 
 ## Skill: DHT Integration Regulatory Checklist
-<!-- VALIDATION_METADATA: [{"name": "dht_type", "description": "The dht type to use for this prompt", "required": true}, {"name": "endpoint", "description": "The endpoint to use for this prompt", "required": true}, {"name": "population", "description": "The population to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "dht_type", "description": "The dht type to use for this prompt", "required": true}, {"name": "endpoint", "description": "The endpoint to use for this prompt", "required": true}, {"name": "population", "description": "The population to use for this prompt", "required": true}, {"name": "target_population", "description": "Auto-extracted variable target_population", "required": false}] -->
 ### Description
 Review FDA guidance for digital health technology (DHT) integration and validation.
 
@@ -248,7 +248,7 @@ Asserted Output: "Expected output as per instructions."
 ---
 
 ## Skill: ICH E9(R1) Estimand Builder
-<!-- VALIDATION_METADATA: [{"name": "clinical_setting", "description": "The clinical setting to use for this prompt", "required": true}, {"name": "ice_list", "description": "The ice list to use for this prompt", "required": true}, {"name": "scientific_question", "description": "The question to answer", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "clinical_setting", "description": "The clinical setting to use for this prompt", "required": true}, {"name": "ice_list", "description": "The ice list to use for this prompt", "required": true}, {"name": "scientific_question", "description": "The question to answer", "required": true}, {"name": "key_intercurrent_events", "description": "Auto-extracted variable key_intercurrent_events", "required": false}] -->
 ### Description
 Construct a primary estimand description following the ICH E9 (R1) framework.
 
@@ -345,7 +345,7 @@ Asserted Output: "Expected output as per instructions."
 ---
 
 ## Skill: Multiple Endpoints Regulatory Strategy
-<!-- VALIDATION_METADATA: [{"name": "issues", "description": "The issues to use for this prompt", "required": true}, {"name": "therapeutic_area", "description": "The therapeutic area to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "issues", "description": "The issues to use for this prompt", "required": true}, {"name": "therapeutic_area", "description": "The therapeutic area to use for this prompt", "required": true}, {"name": "multiplicity_issues", "description": "Auto-extracted variable multiplicity_issues", "required": false}] -->
 ### Description
 Review and summarize FDA guidance on multiple endpoints and multiplicity strategies.
 

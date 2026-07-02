@@ -1144,7 +1144,7 @@ None provided.
 ---
 
 ## Skill: RA/QA Integrated Quality System Audit
-<!-- VALIDATION_METADATA: [{"name": "qms_documents", "description": "current procedures and records", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "qms_documents", "description": "current procedures and records", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Prepare for a combined FDA QSR and EU MDR/IVDR audit by identifying quality-management gaps and recommending improvements.
 

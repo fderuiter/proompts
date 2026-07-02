@@ -56,7 +56,7 @@ Asserted Output: "Data Validation & Cleaning includes automated edit checks in M
 ---
 
 ## Skill: Discrepancy Detection & Query Log Generator
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "csv", "description": "Auto-extracted variable csv", "required": false}] -->
 ### Description
 Examine a CSV dataset to detect discrepancies and generate a query log.
 

@@ -225,7 +225,7 @@ Asserted Output: "RAROC Optimization Matrix"
 ---
 
 ## Skill: Quantitative Buy-and-Build Roll-Up Strategy Architect
-<!-- VALIDATION_METADATA: [{"name": "platform_acquisition_details", "description": "Detail the financial and operational metrics of the initial platform acquisition, including revenue, EBITDA margins, and core capabilities.", "required": true, "type": "string"}, {"name": "add_on_target_criteria", "description": "Specify the exact quantitative thresholds and qualitative criteria for subsequent add-on acquisitions.", "required": true, "type": "string"}, {"name": "synergy_integration_targets", "description": "Define the target synergy realization timelines, integration velocity expectations, and multiple arbitrage goals.", "required": true, "type": "string"}] -->
+<!-- VALIDATION_METADATA: [{"name": "platform_acquisition_details", "description": "Detail the financial and operational metrics of the initial platform acquisition, including revenue, EBITDA margins, and core capabilities.", "required": true, "type": "string"}, {"name": "add_on_target_criteria", "description": "Specify the exact quantitative thresholds and qualitative criteria for subsequent add-on acquisitions.", "required": true, "type": "string"}, {"name": "synergy_integration_targets", "description": "Define the target synergy realization timelines, integration velocity expectations, and multiple arbitrage goals.", "required": true, "type": "string"}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Architects rigorous, highly quantitative Buy-and-Build and industry Roll-Up strategies, modeling synergy realization, integration velocity, and multiple arbitrage for PE sponsors and corporate acquirers.
 
@@ -309,7 +309,7 @@ Asserted Output: "Multi-Echelon Network Redesign"
 ---
 
 ## Skill: quantitative_shareholder_distribution_optimization_architect
-<!-- VALIDATION_METADATA: [{"name": "financial_statements", "description": "Current balance sheet, income statement, and cash flow projections.", "required": true}, {"name": "cost_of_capital", "description": "The firm's Weighted Average Cost of Capital (WACC), marginal tax rates, and cost of debt/equity parameters.", "required": true}, {"name": "investor_composition", "description": "Demographic or institutional breakdown of the current shareholder base (e.g., dividend-seeking retail, growth-focused institutional).", "required": true}, {"name": "macroeconomic_constraints", "description": "Regulatory, tax, or broader macroeconomic constraints impacting dividend issuance vs share repurchases.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "financial_statements", "description": "Current balance sheet, income statement, and cash flow projections.", "required": true}, {"name": "cost_of_capital", "description": "The firm's Weighted Average Cost of Capital (WACC), marginal tax rates, and cost of debt/equity parameters.", "required": true}, {"name": "investor_composition", "description": "Demographic or institutional breakdown of the current shareholder base (e.g., dividend-seeking retail, growth-focused institutional).", "required": true}, {"name": "macroeconomic_constraints", "description": "Regulatory, tax, or broader macroeconomic constraints impacting dividend issuance vs share repurchases.", "required": true}, {"name": "aegis_constraints", "description": "Auto-extracted variable aegis_constraints", "required": false}, {"name": "var", "description": "Auto-extracted variable var", "required": false}] -->
 ### Description
 Architects rigorous, quantitative corporate shareholder distribution policies, optimizing the capital allocation between special dividends, regular dividends, and share repurchases.
 
@@ -1779,7 +1779,7 @@ Asserted Output: "error.*unsafe"
 ---
 
 ## Skill: game_theoretic_competitive_dynamics_architect
-<!-- VALIDATION_METADATA: [{"name": "MARKET_DATA", "type": "string", "description": "Raw market intelligence, competitor profiles, and historical pricing data."}, {"name": "STRATEGIC_OBJECTIVE", "type": "string", "description": "The primary objective of the acting firm."}] -->
+<!-- VALIDATION_METADATA: [{"name": "MARKET_DATA", "type": "string", "description": "Raw market intelligence, competitor profiles, and historical pricing data."}, {"name": "STRATEGIC_OBJECTIVE", "type": "string", "description": "The primary objective of the acting firm."}, {"name": "market_data", "description": "Auto-extracted variable market_data", "required": false}, {"name": "strategic_objective", "description": "Auto-extracted variable strategic_objective", "required": false}] -->
 ### Description
 Formulates rigorous game-theoretic models and competitive equilibrium strategies for oligopolistic market entry and pricing dynamics.
 

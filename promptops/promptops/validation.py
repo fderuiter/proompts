@@ -496,6 +496,24 @@ def validate_prompts(directory: str, strict: bool = False) -> bool:
                     console.error(f"Simulation failed on {file_path}: {e}")
                     ok = False
 
+    # Validate Skill Manifests
+    from promptops.utils import iter_skill_manifests, parse_skill_manifest
+    for file_path in iter_skill_manifests(dir_path):
+        # Collect directory to check hygiene later
+        path = file_path.parent
+        base_path = Path(dir_path).resolve()
+        while path != base_path and base_path in path.parents:
+            dirs_to_check.add(path)
+            path = path.parent
+        if file_path.parent == base_path:
+            dirs_to_check.add(base_path)
+            
+        try:
+            parse_skill_manifest(file_path)
+        except Exception as e:
+            console.error(f"Manifest validation error in {file_path}:\n{e}")
+            ok = False
+
     # Check directory hygiene
     for d in dirs_to_check:
         if not (d / "overview.md").exists():

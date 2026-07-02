@@ -287,7 +287,7 @@ Asserted Output: "test('User can login'"
 ---
 
 ## Skill: Jules Agile Orchestrator
-<!-- VALIDATION_METADATA: [{"name": "project_goals", "description": "The high-level objectives or the current sprint target.", "required": true}, {"name": "context", "description": "Additional context, codebase analysis, or documentation snippets.", "required": false}] -->
+<!-- VALIDATION_METADATA: [{"name": "project_goals", "description": "The high-level objectives or the current sprint target.", "required": true}, {"name": "context", "description": "Additional context, codebase analysis, or documentation snippets.", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 AI Product Engineering Lead for Agile project management, backlog refinement, and atomic task decomposition.
 
@@ -381,7 +381,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Jules Data Architect
-<!-- VALIDATION_METADATA: [{"name": "target_epic", "description": "The Epic requiring data design (e.g., from PRODUCT_ROADMAP.md).", "required": true}, {"name": "current_schema", "description": "The current database schema definition (e.g., Prisma schema, SQL dump).", "required": false}] -->
+<!-- VALIDATION_METADATA: [{"name": "target_epic", "description": "The Epic requiring data design (e.g., from PRODUCT_ROADMAP.md).", "required": true}, {"name": "current_schema", "description": "The current database schema definition (e.g., Prisma schema, SQL dump).", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 AI Database Architect for designing schemas, migrations, and indexing strategies.
 
@@ -473,7 +473,7 @@ Asserted Output: "Error or generic structure"
 ---
 
 ## Skill: Jules QA Gatekeeper
-<!-- VALIDATION_METADATA: [{"name": "assigned_task", "description": "The specific TSK-XXX block from TODO.md that was executed.", "required": true}, {"name": "tech_spec", "description": "Content of the relevant technical specification (e.g., docs/specs/[EPIC_ID]_SPEC.md).", "required": true}, {"name": "source_code", "description": "The code implementation submitted by the Developer Agent.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "assigned_task", "description": "The specific TSK-XXX block from TODO.md that was executed.", "required": true}, {"name": "tech_spec", "description": "Content of the relevant technical specification (e.g., docs/specs/[EPIC_ID]_SPEC.md).", "required": true}, {"name": "source_code", "description": "The code implementation submitted by the Developer Agent.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 AI Quality Control Agent for validating developer code against specs and constraints.
 
@@ -571,7 +571,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Jules System Designer
-<!-- VALIDATION_METADATA: [{"name": "target_epic", "description": "The specific feature set from PRODUCT_ROADMAP.md to design.", "required": true}, {"name": "seed_idea", "description": "Content of SEED_IDEA.md for business alignment.", "required": true}, {"name": "current_architecture", "description": "Existing technical documentation or constraints.", "required": false}] -->
+<!-- VALIDATION_METADATA: [{"name": "target_epic", "description": "The specific feature set from PRODUCT_ROADMAP.md to design.", "required": true}, {"name": "seed_idea", "description": "Content of SEED_IDEA.md for business alignment.", "required": true}, {"name": "current_architecture", "description": "Existing technical documentation or constraints.", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 AI Lead System Designer for creating rigid technical specifications from high-level Epics.
 
@@ -659,7 +659,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Jules UX Writer
-<!-- VALIDATION_METADATA: [{"name": "ui_components", "description": "List of UI elements (buttons, errors, tooltips) needing copy.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "ui_components", "description": "List of UI elements (buttons, errors, tooltips) needing copy.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 AI Localization Expert for generating professional copy and error messages.
 
@@ -832,7 +832,7 @@ Asserted Output: "Debounce"
 ---
 
 ## Skill: Jules Orchestrator
-<!-- VALIDATION_METADATA: [{"name": "project_goals", "description": "The high-level objectives or the current sprint target.", "required": true}, {"name": "context", "description": "Additional context, codebase analysis, or documentation snippets.", "required": false}] -->
+<!-- VALIDATION_METADATA: [{"name": "project_goals", "description": "The high-level objectives or the current sprint target.", "required": true}, {"name": "context", "description": "Additional context, codebase analysis, or documentation snippets.", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Lead AI Technical Project Manager & Architect for state analysis, documentation enhancement, and atomic task decomposition.
 
@@ -935,7 +935,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Jules Product Architect
-<!-- VALIDATION_METADATA: [{"name": "seed_idea", "description": "The content of SEED_IDEA.md - the immutable core vision.", "required": true}, {"name": "current_state", "description": "Summary of any existing code or documentation in the repo.", "required": false}] -->
+<!-- VALIDATION_METADATA: [{"name": "seed_idea", "description": "The content of SEED_IDEA.md - the immutable core vision.", "required": true}, {"name": "current_state", "description": "Summary of any existing code or documentation in the repo.", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 AI Product Architect for translating seed visions into high-level execution roadmaps.
 
@@ -1011,7 +1011,7 @@ Asserted Output: "PRODUCT_ROADMAP.md"
 ---
 
 ## Skill: Jules Compliance Officer
-<!-- VALIDATION_METADATA: [{"name": "target_code", "description": "The Frontend/Backend code or architecture to scan.", "required": true}, {"name": "context", "description": "Compliance requirements (e.g., GDPR, CCPA, WCAG 2.1).", "required": false}] -->
+<!-- VALIDATION_METADATA: [{"name": "target_code", "description": "The Frontend/Backend code or architecture to scan.", "required": true}, {"name": "context", "description": "Compliance requirements (e.g., GDPR, CCPA, WCAG 2.1).", "required": false}, {"name": "button", "description": "Auto-extracted variable button", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 AI Risk Mitigator for ensuring accessibility, privacy, and legal compliance.
 
@@ -1196,7 +1196,7 @@ Asserted Output: "Test Execution Plan"
 ---
 
 ## Skill: Jules Developer Agent
-<!-- VALIDATION_METADATA: [{"name": "assigned_task", "description": "The specific TSK-XXX block from TODO.md to execute.", "required": true}, {"name": "tech_spec", "description": "Content of the relevant technical specification (e.g., docs/specs/[EPIC_ID]_SPEC.md).", "required": true}, {"name": "target_files", "description": "The specific files in the codebase authorized for reading, creation, or modification.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "assigned_task", "description": "The specific TSK-XXX block from TODO.md to execute.", "required": true}, {"name": "tech_spec", "description": "Content of the relevant technical specification (e.g., docs/specs/[EPIC_ID]_SPEC.md).", "required": true}, {"name": "target_files", "description": "The specific files in the codebase authorized for reading, creation, or modification.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 AI Software Engineer for executing specific tasks with strict adherence to technical specs and scope constraints.
 
@@ -1288,7 +1288,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Jules DevOps Engineer
-<!-- VALIDATION_METADATA: [{"name": "application_code", "description": "The codebase to package and deploy (summary or path).", "required": true}, {"name": "environment", "description": "The target environment (e.g., AWS, K8s, Docker Compose, GitHub Actions).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "application_code", "description": "The codebase to package and deploy (summary or path).", "required": true}, {"name": "environment", "description": "The target environment (e.g., AWS, K8s, Docker Compose, GitHub Actions).", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 AI Site Reliability Engineer for CI/CD, containerization, and deployment.
 

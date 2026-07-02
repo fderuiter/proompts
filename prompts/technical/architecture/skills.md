@@ -327,7 +327,7 @@ tags:
 ---
 
 ## Skill: Micro-Frontend Orchestration Architect
-<!-- VALIDATION_METADATA: [{"name": "application_requirements", "description": "The business requirements, scale, and specific constraints for the frontend application.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "application_requirements", "description": "The business requirements, scale, and specific constraints for the frontend application.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}] -->
 ### Description
 Designs robust, scalable micro-frontend architectures, addressing orchestration, state management, and routing strategies.
 
@@ -367,7 +367,7 @@ Asserted Output: "Module Federation"
 ---
 
 ## Skill: Shadow Traffic and Dark Launch Architect
-<!-- VALIDATION_METADATA: [{"name": "current_architecture", "description": "A description of the current primary production architecture, including components, data stores, and third-party integrations."}, {"name": "target_deployment", "description": "A description of the new system version or component that needs to be validated using shadow traffic."}, {"name": "critical_constraints", "description": "Any hard constraints (e.g., latency limits on the primary path, strict prohibition of state mutations, specific PII obfuscation rules)."}] -->
+<!-- VALIDATION_METADATA: [{"name": "current_architecture", "description": "A description of the current primary production architecture, including components, data stores, and third-party integrations."}, {"name": "target_deployment", "description": "A description of the new system version or component that needs to be validated using shadow traffic."}, {"name": "critical_constraints", "description": "Any hard constraints (e.g., latency limits on the primary path, strict prohibition of state mutations, specific PII obfuscation rules)."}, {"name": "Aegis", "description": "Auto-extracted variable Aegis", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Architects highly secure and robust shadow traffic and dark launching topologies for safe validation of new system versions using live production traffic.
 
@@ -496,7 +496,7 @@ Asserted Output: "Saga Pattern"
 ---
 
 ## Skill: Hexagonal Architecture Review
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "code", "description": "Auto-extracted variable code", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Analyze code for adherence to Hexagonal Architecture principles, identifying layer violations and dependency issues.
 
@@ -589,7 +589,7 @@ Asserted Output: "Violation: Domain Objects depending on Infrastructure code.
 ---
 
 ## Skill: Space-Based Architecture Designer
-<!-- VALIDATION_METADATA: [{"name": "scale_requirements", "description": "Detailed non-functional requirements including expected transactions per second (TPS), latency constraints, and total concurrent user load.\n", "required": true}, {"name": "transactional_domain", "description": "Description of the domain entities, bounded contexts, and the nature of the transactions (e.g., financial trading, real-time betting, inventory allocation).\n", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "scale_requirements", "description": "Detailed non-functional requirements including expected transactions per second (TPS), latency constraints, and total concurrent user load.\n", "required": true}, {"name": "transactional_domain", "description": "Description of the domain entities, bounded contexts, and the nature of the transactions (e.g., financial trading, real-time betting, inventory allocation).\n", "required": true}, {"name": "xml", "description": "Auto-extracted variable xml", "required": false}] -->
 ### Description
 Acts as a Strategic Genesis Architect to design extreme-scale, highly concurrent Space-Based Architectures (SBA) leveraging distributed tuple spaces and in-memory data grids to eliminate database bottlenecks.
 
@@ -650,7 +650,7 @@ Asserted Output: "Processing Unit (PU)"
 ---
 
 ## Skill: Polyglot Monorepo Build Orchestration Architect
-<!-- VALIDATION_METADATA: [{"name": "monorepo_scale", "description": "The scale of the monorepo, including number of services, languages involved, and average commit frequency.", "required": true}, {"name": "ci_cd_constraints", "description": "Constraints regarding CI/CD latency targets, compute resource limitations, and deployment strategies.", "required": true}, {"name": "security_boundaries", "description": "Security boundaries and compliance requirements across different domains within the monorepo.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "monorepo_scale", "description": "The scale of the monorepo, including number of services, languages involved, and average commit frequency.", "required": true}, {"name": "ci_cd_constraints", "description": "Constraints regarding CI/CD latency targets, compute resource limitations, and deployment strategies.", "required": true}, {"name": "security_boundaries", "description": "Security boundaries and compliance requirements across different domains within the monorepo.", "required": true}, {"name": "Aegis", "description": "Auto-extracted variable Aegis", "required": false}] -->
 ### Description
 Designs highly scalable, hermetic build and deployment orchestrations for massive-scale enterprise polyglot monorepos, focusing on DAG-based dependency resolution, intelligent caching, and bounded context isolation.
 
@@ -728,7 +728,7 @@ Asserted Output: "DAG"
 ---
 
 ## Skill: Distributed Observability and Telemetry Architect
-<!-- VALIDATION_METADATA: [{"name": "system_architecture", "description": "Description of the current system architecture.", "required": true}, {"name": "scale_requirements", "description": "Requirements for scale, throughput, and retention.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "system_architecture", "description": "Description of the current system architecture.", "required": true}, {"name": "scale_requirements", "description": "Requirements for scale, throughput, and retention.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 A Principal Distributed Observability and Telemetry Architect to design highly scalable, robust distributed observability and telemetry pipelines.
 
@@ -858,7 +858,7 @@ Asserted Output: "CRDT"
 ---
 
 ## Skill: Cache Stampede Mitigation Architect
-<!-- VALIDATION_METADATA: [{"name": "system_scale", "description": "Details about the read/write volume, spike characteristics, and acceptable latency.", "required": true}, {"name": "caching_infrastructure", "description": "The underlying caching technologies in use (e.g., Redis Cluster, Memcached) and their constraints.", "required": true}, {"name": "data_characteristics", "description": "The nature of the cached data, including size, compute cost for regeneration, and staleness tolerance.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "system_scale", "description": "Details about the read/write volume, spike characteristics, and acceptable latency.", "required": true}, {"name": "caching_infrastructure", "description": "The underlying caching technologies in use (e.g., Redis Cluster, Memcached) and their constraints.", "required": true}, {"name": "data_characteristics", "description": "The nature of the cached data, including size, compute cost for regeneration, and staleness tolerance.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly resilient distributed caching architectures specifically to mitigate and recover from cache stampedes (thundering herd problem) in high-throughput systems.
 
@@ -913,7 +913,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: Distributed Web Crawler Pipeline Architect
-<!-- VALIDATION_METADATA: [{"name": "target_scale", "description": "Details about the target domains, expected pages per second, and overall data volume.", "required": true}, {"name": "compliance_constraints", "description": "Politeness policies, robots.txt adherence rules, and proxy rotation requirements.", "required": true}, {"name": "payload_processing", "description": "Downstream processing requirements such as HTML parsing, DOM rendering (headless), and near-duplicate detection.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "target_scale", "description": "Details about the target domains, expected pages per second, and overall data volume.", "required": true}, {"name": "compliance_constraints", "description": "Politeness policies, robots.txt adherence rules, and proxy rotation requirements.", "required": true}, {"name": "payload_processing", "description": "Downstream processing requirements such as HTML parsing, DOM rendering (headless), and near-duplicate detection.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly scalable, fault-tolerant distributed web crawling pipelines featuring advanced crawl frontier management, SimHash-based deduplication, and strict politeness rate limiting.
 
@@ -968,7 +968,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: High-Throughput Geospatial Indexing Architect
-<!-- VALIDATION_METADATA: [{"name": "requirements", "description": "The technical requirements and scale for the geospatial indexing architecture.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "requirements", "description": "The technical requirements and scale for the geospatial indexing architecture.", "required": true}, {"name": "Aegis", "description": "Auto-extracted variable Aegis", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Architects highly scalable, low-latency spatial index and geofencing systems for real-time location tracking and spatiotemporal analytics at enterprise scale.
 
@@ -1031,7 +1031,7 @@ Asserted Output: ""
 ---
 
 ## Skill: Distributed Actor Model Architect
-<!-- VALIDATION_METADATA: [{"name": "actor_framework", "description": "The specific actor framework or runtime being targeted (e.g., Akka, Orleans, Erlang/OTP, Proto.Actor).", "required": true}, {"name": "state_management", "description": "Requirements regarding actor state persistence, event sourcing, or distributed caching.", "required": true}, {"name": "scale_and_throughput", "description": "Expected number of active actors, message throughput, latency constraints, and cluster topology.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "actor_framework", "description": "The specific actor framework or runtime being targeted (e.g., Akka, Orleans, Erlang/OTP, Proto.Actor).", "required": true}, {"name": "state_management", "description": "Requirements regarding actor state persistence, event sourcing, or distributed caching.", "required": true}, {"name": "scale_and_throughput", "description": "Expected number of active actors, message throughput, latency constraints, and cluster topology.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly concurrent, fault-tolerant distributed actor systems, optimizing for message-passing semantics, location transparency, and supervision trees.
 
@@ -1140,7 +1140,7 @@ Asserted Output: "Contains an architecture defining idempotent producers (enable
 ---
 
 ## Skill: Distributed Database Clock Synchronization Architect
-<!-- VALIDATION_METADATA: [{"name": "physical_infrastructure", "description": "Details of the underlying hardware and network environment (e.g., bare-metal with atomic clocks, public cloud VMs with NTP, hybrid edge deployments).", "required": true}, {"name": "consistency_requirements", "description": "Desired consistency models and isolation levels (e.g., strict serializability, external consistency, snapshot isolation).", "required": true}, {"name": "global_scale", "description": "Geographic distribution parameters, including cross-region latency profiles and expected transaction throughput.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "physical_infrastructure", "description": "Details of the underlying hardware and network environment (e.g., bare-metal with atomic clocks, public cloud VMs with NTP, hybrid edge deployments).", "required": true}, {"name": "consistency_requirements", "description": "Desired consistency models and isolation levels (e.g., strict serializability, external consistency, snapshot isolation).", "required": true}, {"name": "global_scale", "description": "Geographic distribution parameters, including cross-region latency profiles and expected transaction throughput.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs robust, highly accurate clock synchronization and logical time topologies for globally distributed, multi-leader databases to prevent temporal anomalies and ensure linearizability.
 
@@ -1195,7 +1195,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: GPU Cluster Orchestration Architect
-<!-- VALIDATION_METADATA: [{"name": "cluster_workload_parameters", "description": "Details regarding the scale of the AI training jobs, model parallelism strategies (e.g., pipeline, tensor), networking constraints, and fault tolerance requirements.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "cluster_workload_parameters", "description": "Details regarding the scale of the AI training jobs, model parallelism strategies (e.g., pipeline, tensor), networking constraints, and fault tolerance requirements.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}] -->
 ### Description
 Designs highly performant, distributed GPU cluster architectures optimized for massively parallel AI training workloads.
 
@@ -1241,7 +1241,7 @@ Asserted Output: "NCCL"
 ---
 
 ## Skill: Real-Time Fraud Decision Engine Architect
-<!-- VALIDATION_METADATA: [{"name": "traffic_profile", "description": "Transaction volumes, peak TPS, and required latency SLA (e.g., sub-50ms).", "required": true}, {"name": "data_sources", "description": "Description of incoming event streams, batch historical data, and third-party API enrichments.", "required": true}, {"name": "model_characteristics", "description": "Types of ML models (e.g., tree-based, deep learning, graph neural networks) and their inference latency constraints.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "traffic_profile", "description": "Transaction volumes, peak TPS, and required latency SLA (e.g., sub-50ms).", "required": true}, {"name": "data_sources", "description": "Description of incoming event streams, batch historical data, and third-party API enrichments.", "required": true}, {"name": "model_characteristics", "description": "Types of ML models (e.g., tree-based, deep learning, graph neural networks) and their inference latency constraints.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly scalable, ultra-low-latency real-time fraud decision engines integrating stream processing, feature stores, and ML inference.
 
@@ -1296,7 +1296,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: Log-Structured Merge Tree Storage Architect
-<!-- VALIDATION_METADATA: [{"name": "workload_profile", "description": "Characteristics of the database workload (e.g., read/write ratio, point vs. range queries, bursty vs. sustained ingestion).", "type": "string", "required": true}, {"name": "hardware_constraints", "description": "Physical or virtual hardware limits including disk I/O (NVMe vs HDD), memory availability, and CPU cores.", "type": "string", "required": true}, {"name": "durability_requirements", "description": "SLA for data persistence, crash recovery RTO, and Write-Ahead Log (WAL) sync configurations.", "type": "string", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "workload_profile", "description": "Characteristics of the database workload (e.g., read/write ratio, point vs. range queries, bursty vs. sustained ingestion).", "type": "string", "required": true}, {"name": "hardware_constraints", "description": "Physical or virtual hardware limits including disk I/O (NVMe vs HDD), memory availability, and CPU cores.", "type": "string", "required": true}, {"name": "durability_requirements", "description": "SLA for data persistence, crash recovery RTO, and Write-Ahead Log (WAL) sync configurations.", "type": "string", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs high-performance, write-optimized storage engines based on Log-Structured Merge (LSM) trees, implementing advanced compaction, Write-Ahead Logging (WAL), and memtable management strategies.
 
@@ -1406,7 +1406,7 @@ Asserted Output: ""
 ---
 
 ## Skill: Cell-Based Architecture Designer
-<!-- VALIDATION_METADATA: [{"name": "system_scale_requirements", "description": "High-level scale metrics including RPS, data volume, and concurrency targets.", "required": true}, {"name": "availability_targets", "description": "SLA/SLO requirements including RTO, RPO, and specific fault-tolerance capabilities needed.", "required": true}, {"name": "traffic_patterns", "description": "Expected traffic distribution, regional skew, and read/write ratios.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "system_scale_requirements", "description": "High-level scale metrics including RPS, data volume, and concurrency targets.", "required": true}, {"name": "availability_targets", "description": "SLA/SLO requirements including RTO, RPO, and specific fault-tolerance capabilities needed.", "required": true}, {"name": "traffic_patterns", "description": "Expected traffic distribution, regional skew, and read/write ratios.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Architects robust, hyper-scalable, and blast-radius-contained distributed systems using advanced Cell-Based Architecture (CBA) patterns.
 
@@ -1595,7 +1595,7 @@ Asserted Output: ""
 ---
 
 ## Skill: Petabyte-Scale Data Lakehouse Architect
-<!-- VALIDATION_METADATA: [{"name": "data_requirements", "description": "The scale, variety (structured/unstructured), velocity of data ingestion, compliance constraints, and expected read/write access patterns.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "data_requirements", "description": "The scale, variety (structured/unstructured), velocity of data ingestion, compliance constraints, and expected read/write access patterns.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}] -->
 ### Description
 Designs highly scalable, governed, and performant Data Lakehouse architectures for petabyte-scale analytics and AI/ML workloads.
 
@@ -1651,7 +1651,7 @@ Asserted Output: "Medallion"
 ---
 
 ## Skill: Massive-Scale Fan-Out Feed Architect
-<!-- VALIDATION_METADATA: [{"name": "user_base_scale", "description": "Details about the total active users, expected read/write throughput, and geographic distribution.", "required": true}, {"name": "connection_graph_density", "description": "Characteristics of the social graph, including average connections per user and the presence of extreme outliers (celebrities/influencers).", "required": true}, {"name": "feed_ranking_requirements", "description": "Requirements for timeline generation, such as chronological vs. algorithmic ranking, and acceptable staleness SLA.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "user_base_scale", "description": "Details about the total active users, expected read/write throughput, and geographic distribution.", "required": true}, {"name": "connection_graph_density", "description": "Characteristics of the social graph, including average connections per user and the presence of extreme outliers (celebrities/influencers).", "required": true}, {"name": "feed_ranking_requirements", "description": "Requirements for timeline generation, such as chronological vs. algorithmic ranking, and acceptable staleness SLA.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly scalable, low-latency news feed and timeline architectures to handle extreme fan-out challenges, hybrid push/pull models, and the "celebrity problem".
 
@@ -1706,7 +1706,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: Hexagonal Architecture Principles
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "request", "description": "Auto-extracted variable request", "required": false}] -->
 ### Description
 Explain the core philosophy, skeleton, and benefits of Hexagonal Architecture (Ports and Adapters).
 
@@ -1763,7 +1763,7 @@ None provided.
 ---
 
 ## Skill: Distributed Transaction Orchestration Architect
-<!-- VALIDATION_METADATA: [{"name": "microservices_topology", "description": "A detailed description of the microservices involved in the distributed transaction, including their boundaries and primary data stores.", "required": true}, {"name": "transaction_requirements", "description": "Key requirements for the distributed transaction, including consistency levels (eventual vs. strong), throughput, and latency bounds.", "required": true}, {"name": "failure_modes", "description": "Known potential failure scenarios, timeout constraints, and compensation logic requirements.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "microservices_topology", "description": "A detailed description of the microservices involved in the distributed transaction, including their boundaries and primary data stores.", "required": true}, {"name": "transaction_requirements", "description": "Key requirements for the distributed transaction, including consistency levels (eventual vs. strong), throughput, and latency bounds.", "required": true}, {"name": "failure_modes", "description": "Known potential failure scenarios, timeout constraints, and compensation logic requirements.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly resilient, distributed transaction orchestration architectures using Saga, 2PC, or TCC patterns across microservices to ensure data consistency.
 
@@ -1811,7 +1811,7 @@ Asserted Output: "Saga"
 ---
 
 ## Skill: Federated Learning Privacy-Preserving Architect
-<!-- VALIDATION_METADATA: [{"name": "data_heterogeneity_context", "description": "Description of the non-IID data distribution and statistical heterogeneity across the client nodes.", "required": true}, {"name": "privacy_constraints", "description": "Requirements for cryptographic privacy guarantees, such as differential privacy bounds (epsilon, delta), secure multi-party computation (SMPC), or homomorphic encryption.", "required": true}, {"name": "aggregation_topology", "description": "Constraints around the parameter server topology (centralized vs. decentralized/peer-to-peer) and communication bandwidth limitations.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "data_heterogeneity_context", "description": "Description of the non-IID data distribution and statistical heterogeneity across the client nodes.", "required": true}, {"name": "privacy_constraints", "description": "Requirements for cryptographic privacy guarantees, such as differential privacy bounds (epsilon, delta), secure multi-party computation (SMPC), or homomorphic encryption.", "required": true}, {"name": "aggregation_topology", "description": "Constraints around the parameter server topology (centralized vs. decentralized/peer-to-peer) and communication bandwidth limitations.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly secure, privacy-preserving federated learning architectures utilizing advanced cryptographic protocols to mitigate inference attacks across distributed, non-IID data silos.
 
@@ -1923,7 +1923,7 @@ Asserted Output: "Continuous Batching"
 ---
 
 ## Skill: Adaptive Load Shedding and Backpressure Architect
-<!-- VALIDATION_METADATA: [{"name": "traffic_profile", "description": "Characteristics of the incoming traffic load and request types (e.g., peak RPS, synchronous vs. asynchronous, payload sizes).", "type": "string", "required": true}, {"name": "downstream_dependencies", "description": "The internal/external downstream systems and their respective capacity limits, latency SLAs, and failure modes.", "type": "string", "required": true}, {"name": "business_criticality_tiers", "description": "Definitions of request criticality (e.g., tier-0 payment processing vs. tier-3 telemetry ingestion) for prioritization.", "type": "string", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "traffic_profile", "description": "Characteristics of the incoming traffic load and request types (e.g., peak RPS, synchronous vs. asynchronous, payload sizes).", "type": "string", "required": true}, {"name": "downstream_dependencies", "description": "The internal/external downstream systems and their respective capacity limits, latency SLAs, and failure modes.", "type": "string", "required": true}, {"name": "business_criticality_tiers", "description": "Definitions of request criticality (e.g., tier-0 payment processing vs. tier-3 telemetry ingestion) for prioritization.", "type": "string", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly resilient, adaptive load shedding and backpressure mechanisms for distributed systems to prevent cascading failures under extreme traffic surges.
 
@@ -2022,7 +2022,7 @@ Asserted Output: "Audit & Compliance Quarantine"
 ---
 
 ## Skill: Distributed Vector Database Architect
-<!-- VALIDATION_METADATA: [{"name": "vector_dimensionality_and_volume", "description": "Details about the embedding dimension (e.g., 768, 1536) and the total number of vectors (scale).", "required": true}, {"name": "search_requirements", "description": "Target QPS, recall SLAs, latency thresholds, and any complex metadata filtering requirements (pre/post-filtering).", "required": true}, {"name": "infrastructure_constraints", "description": "Restrictions regarding hardware (RAM, SSD types, GPU availability) and multi-region deployment targets.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "vector_dimensionality_and_volume", "description": "Details about the embedding dimension (e.g., 768, 1536) and the total number of vectors (scale).", "required": true}, {"name": "search_requirements", "description": "Target QPS, recall SLAs, latency thresholds, and any complex metadata filtering requirements (pre/post-filtering).", "required": true}, {"name": "infrastructure_constraints", "description": "Restrictions regarding hardware (RAM, SSD types, GPU availability) and multi-region deployment targets.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly scalable distributed vector database architectures for trillion-scale embedding search, optimizing the recall-latency-cost frontier.
 
@@ -2246,7 +2246,7 @@ Asserted Output: ""
 ---
 
 ## Skill: AI Model Inference Serving Architect
-<!-- VALIDATION_METADATA: [{"name": "model_characteristics", "description": "Details about the models to be served (e.g., LLMs, vision models, parameter count, framework).", "required": true}, {"name": "workload_profile", "description": "Information about the expected inference workload, such as RPS, batching requirements, latency SLA, and traffic patterns.", "required": true}, {"name": "infrastructure_constraints", "description": "Constraints on hardware (e.g., GPU availability, memory limits), cloud providers, or budget.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "model_characteristics", "description": "Details about the models to be served (e.g., LLMs, vision models, parameter count, framework).", "required": true}, {"name": "workload_profile", "description": "Information about the expected inference workload, such as RPS, batching requirements, latency SLA, and traffic patterns.", "required": true}, {"name": "infrastructure_constraints", "description": "Constraints on hardware (e.g., GPU availability, memory limits), cloud providers, or budget.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly scalable, low-latency, and cost-efficient architecture topologies for serving large-scale AI/ML models in production.
 
@@ -2301,7 +2301,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: Autonomous Vehicle V2X Telemetry Architect
-<!-- VALIDATION_METADATA: [{"name": "fleet_sensor_profile", "description": "Characteristics of the vehicle sensor suite (e.g., LiDAR point cloud density, high-res camera bitrates, radar, IMU frequency) and total data generation rates.", "type": "string", "required": true}, {"name": "network_intermittency_model", "description": "The expected connectivity landscape, including 5G/LTE availability, dead zones, bandwidth limitations, and failover to satellite or V2X mesh networks.", "type": "string", "required": true}, {"name": "latency_critical_thresholds", "description": "SLAs defining the maximum allowable latency for safety-critical telemetry, cooperative perception, and remote teleoperation control loops.", "type": "string", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "fleet_sensor_profile", "description": "Characteristics of the vehicle sensor suite (e.g., LiDAR point cloud density, high-res camera bitrates, radar, IMU frequency) and total data generation rates.", "type": "string", "required": true}, {"name": "network_intermittency_model", "description": "The expected connectivity landscape, including 5G/LTE availability, dead zones, bandwidth limitations, and failover to satellite or V2X mesh networks.", "type": "string", "required": true}, {"name": "latency_critical_thresholds", "description": "SLAs defining the maximum allowable latency for safety-critical telemetry, cooperative perception, and remote teleoperation control loops.", "type": "string", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly resilient, low-latency edge-to-cloud telemetry and V2X (Vehicle-to-Everything) communication architectures for autonomous vehicle fleets, optimizing data tiering, intermittent connectivity, and safety-critical state synchronization.
 
@@ -2358,7 +2358,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: Domain-Driven Design Bounded Context Architect
-<!-- VALIDATION_METADATA: [{"name": "domain_complexity_context", "description": "The comprehensive business domain description, functional requirements, existing legacy systems, and strategic objectives.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "domain_complexity_context", "description": "The comprehensive business domain description, functional requirements, existing legacy systems, and strategic objectives.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}] -->
 ### Description
 Designs mathematically rigorous and logically coherent Domain-Driven Design (DDD) bounded contexts, resolving complex domain intricacies through ubiquituous language, aggregate boundaries, and context mapping.
 
@@ -2444,7 +2444,7 @@ Asserted Output: "Architecture document detailing strict data residency."
 ---
 
 ## Skill: Multi-Cloud Disaster Recovery Architect
-<!-- VALIDATION_METADATA: [{"name": "workload_criticality", "description": "Details regarding the critical components, their RTO (Recovery Time Objective), and RPO (Recovery Point Objective) requirements.", "required": true}, {"name": "current_topology", "description": "Information about the existing single-cloud or hybrid topology and primary data stores.", "required": true}, {"name": "compliance_constraints", "description": "Details on data sovereignty, residency, and failover constraints (e.g., cross-region network costs, allowed secondary providers).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "workload_criticality", "description": "Details regarding the critical components, their RTO (Recovery Time Objective), and RPO (Recovery Point Objective) requirements.", "required": true}, {"name": "current_topology", "description": "Information about the existing single-cloud or hybrid topology and primary data stores.", "required": true}, {"name": "compliance_constraints", "description": "Details on data sovereignty, residency, and failover constraints (e.g., cross-region network costs, allowed secondary providers).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs active-active and active-passive multi-cloud disaster recovery architectures with rigorous RTO/RPO enforcement.
 
@@ -2600,7 +2600,7 @@ Asserted Output: "Edge"
 ---
 
 ## Skill: Semantic Caching AI Gateway Architect
-<!-- VALIDATION_METADATA: [{"name": "traffic_scale", "description": "Details about the requests per second, peak concurrency, and latency constraints.", "required": true}, {"name": "embedding_models", "description": "The embedding models used for query vectorization and their latency/cost implications.", "required": true}, {"name": "cache_hit_heuristics", "description": "The parameters for determining semantic similarity (e.g., cosine similarity thresholds, context matching rules).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "traffic_scale", "description": "Details about the requests per second, peak concurrency, and latency constraints.", "required": true}, {"name": "embedding_models", "description": "The embedding models used for query vectorization and their latency/cost implications.", "required": true}, {"name": "cache_hit_heuristics", "description": "The parameters for determining semantic similarity (e.g., cosine similarity thresholds, context matching rules).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly scalable AI Gateway architectures featuring advanced semantic caching, context-aware routing, and embedding-based hit/miss evaluation for Large Language Model (LLM) infrastructures.
 
@@ -2655,7 +2655,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: PII Tokenization Vault Architect
-<!-- VALIDATION_METADATA: [{"name": "compliance_frameworks", "description": "Regulatory and compliance frameworks to adhere to (e.g., GDPR, CCPA, PCI-DSS, HIPAA).", "type": "string", "required": true}, {"name": "throughput_latency_sla", "description": "Requirements for tokenization and detokenization throughput (e.g., TPS) and latency bounds (e.g., P99 < 5ms).", "type": "string", "required": true}, {"name": "encryption_key_management", "description": "Strategy and constraints for encryption key management (e.g., HSM, KMS, Bring Your Own Key, Key Rotation frequency).", "type": "string", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "compliance_frameworks", "description": "Regulatory and compliance frameworks to adhere to (e.g., GDPR, CCPA, PCI-DSS, HIPAA).", "type": "string", "required": true}, {"name": "throughput_latency_sla", "description": "Requirements for tokenization and detokenization throughput (e.g., TPS) and latency bounds (e.g., P99 < 5ms).", "type": "string", "required": true}, {"name": "encryption_key_management", "description": "Strategy and constraints for encryption key management (e.g., HSM, KMS, Bring Your Own Key, Key Rotation frequency).", "type": "string", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Architect highly secure, isolated, and scalable PII (Personally Identifiable Information) tokenization vaults to ensure compliance and robust data protection in distributed systems.
 
@@ -2712,7 +2712,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: Petabyte Scale Distributed Object Storage Architect
-<!-- VALIDATION_METADATA: [{"name": "storage_requirements", "description": "Details regarding capacity (petabytes/exabytes), expected object sizes, read/write ratios, and target durability (e.g., 99.999999999%).", "required": true}, {"name": "consistency_model", "description": "The required consistency semantics (e.g., read-after-write, eventual consistency) for both data and metadata operations.", "required": true}, {"name": "deployment_topology", "description": "Geographic distribution constraints, such as multi-region active-active deployment or latency constraints for edge caching.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "storage_requirements", "description": "Details regarding capacity (petabytes/exabytes), expected object sizes, read/write ratios, and target durability (e.g., 99.999999999%).", "required": true}, {"name": "consistency_model", "description": "The required consistency semantics (e.g., read-after-write, eventual consistency) for both data and metadata operations.", "required": true}, {"name": "deployment_topology", "description": "Geographic distribution constraints, such as multi-region active-active deployment or latency constraints for edge caching.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs massively scalable, highly available distributed object storage architectures (similar to S3), focusing on erasure coding, metadata partitioning, and multi-part upload throughput.
 
@@ -2923,7 +2923,7 @@ Asserted Output: "CQRS"
 ---
 
 ## Skill: CQRS and Event Sourcing Architect
-<!-- VALIDATION_METADATA: [{"name": "system_requirements", "description": "The business context, domain boundaries, expected read/write loads, and consistency requirements.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "system_requirements", "description": "The business context, domain boundaries, expected read/write loads, and consistency requirements.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}] -->
 ### Description
 Designs highly scalable Command Query Responsibility Segregation (CQRS) and Event Sourcing architectures.
 
@@ -3180,7 +3180,7 @@ Asserted Output: ""
 ---
 
 ## Skill: Real-Time Bidding AdTech Architect
-<!-- VALIDATION_METADATA: [{"name": "qps_target", "description": "The expected peak Queries Per Second (QPS) for incoming bid requests.", "type": "string", "required": true}, {"name": "latency_sla", "description": "Strict latency Service Level Agreement (SLA) for round-trip bid responses (e.g., < 100ms).", "type": "string", "required": true}, {"name": "data_gravity", "description": "Constraints regarding user profile stores, fraud detection ML models, and geospatial distribution.", "type": "string", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "qps_target", "description": "The expected peak Queries Per Second (QPS) for incoming bid requests.", "type": "string", "required": true}, {"name": "latency_sla", "description": "Strict latency Service Level Agreement (SLA) for round-trip bid responses (e.g., < 100ms).", "type": "string", "required": true}, {"name": "data_gravity", "description": "Constraints regarding user profile stores, fraud detection ML models, and geospatial distribution.", "type": "string", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs ultra-low-latency, highly concurrent Real-Time Bidding (RTB) architectures for AdTech platforms, optimizing for strict bid response SLAs, geospatial routing, and massive data ingestion.
 
@@ -3237,7 +3237,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: High-Scale WebSocket Push Architect
-<!-- VALIDATION_METADATA: [{"name": "connection_scale", "description": "Information about the expected connection scale, peak concurrent users, and connection duration.", "required": true}, {"name": "broadcast_requirements", "description": "Details about message frequency, payload size, targeted vs global broadcasts, and delivery guarantees.", "required": true}, {"name": "infrastructure_constraints", "description": "Constraints on hardware, cloud providers, and allowable managed services vs self-hosted components.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "connection_scale", "description": "Information about the expected connection scale, peak concurrent users, and connection duration.", "required": true}, {"name": "broadcast_requirements", "description": "Details about message frequency, payload size, targeted vs global broadcasts, and delivery guarantees.", "required": true}, {"name": "infrastructure_constraints", "description": "Constraints on hardware, cloud providers, and allowable managed services vs self-hosted components.", "required": true}, {"name": "user_input", "description": "Auto-extracted variable user_input", "required": false}] -->
 ### Description
 Designs highly scalable, stateful, and performant persistent WebSocket architectures capable of handling millions of concurrent connections, state offloading, and broadcast pub/sub routing.
 
@@ -3407,7 +3407,7 @@ Asserted Output: "PgBouncer"
 ---
 
 ## Skill: Real-Time Stream Processing Architect
-<!-- VALIDATION_METADATA: [{"name": "streaming_requirements", "description": "The specific business requirements, data volume, velocity, and latency constraints for the streaming pipeline.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "streaming_requirements", "description": "The specific business requirements, data volume, velocity, and latency constraints for the streaming pipeline.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}] -->
 ### Description
 Designs highly scalable, fault-tolerant real-time data streaming and processing architectures.
 
@@ -3453,7 +3453,7 @@ Asserted Output: "Apache Flink"
 ---
 
 ## Skill: Massive-Scale IoT OTA Update Architect
-<!-- VALIDATION_METADATA: [{"name": "device_fleet_characteristics", "description": "Hardware profiles, embedded OS, storage limitations, and power availability (e.g., battery-operated sensors vs mains-powered edge nodes).", "required": true}, {"name": "network_constraints", "description": "Connectivity protocols, bandwidth limitations, latency, and intermittency (e.g., LoRaWAN, NB-IoT, intermittent cellular).", "required": true}, {"name": "rollout_and_scale", "description": "Total fleet size, target update cadence, and deployment strategies (e.g., multi-million fleet, progressive rollouts, staggered delivery).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "device_fleet_characteristics", "description": "Hardware profiles, embedded OS, storage limitations, and power availability (e.g., battery-operated sensors vs mains-powered edge nodes).", "required": true}, {"name": "network_constraints", "description": "Connectivity protocols, bandwidth limitations, latency, and intermittency (e.g., LoRaWAN, NB-IoT, intermittent cellular).", "required": true}, {"name": "rollout_and_scale", "description": "Total fleet size, target update cadence, and deployment strategies (e.g., multi-million fleet, progressive rollouts, staggered delivery).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly resilient, fault-tolerant Over-The-Air (OTA) update architectures for massive-scale IoT device fleets operating under extreme network and power constraints.
 
@@ -3553,7 +3553,7 @@ Asserted Output: "Token"
 ---
 
 ## Skill: Generative AI Guardrails Gateway Architect
-<!-- VALIDATION_METADATA: [{"name": "threat_landscape", "description": "Specific vulnerabilities or attack vectors to mitigate (e.g., adaptive jailbreaks, system prompt extraction).", "required": true}, {"name": "latency_constraints", "description": "Permissible delay overhead introduced by the security gateway evaluations.", "required": true}, {"name": "regulatory_compliance", "description": "Relevant data protection mandates (e.g., GDPR, HIPAA) enforcing strict PII/PHI scrubbing rules.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "threat_landscape", "description": "Specific vulnerabilities or attack vectors to mitigate (e.g., adaptive jailbreaks, system prompt extraction).", "required": true}, {"name": "latency_constraints", "description": "Permissible delay overhead introduced by the security gateway evaluations.", "required": true}, {"name": "regulatory_compliance", "description": "Relevant data protection mandates (e.g., GDPR, HIPAA) enforcing strict PII/PHI scrubbing rules.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Architect high-performance, robust gateway strategies for Large Language Models (LLMs) focusing on prompt injection mitigation, zero-trust content sanitization, PII obfuscation, and toxic hallucination filtering with minimal latency overhead.
 
@@ -3608,7 +3608,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: Quantum-Safe Cryptography Migration Architect
-<!-- VALIDATION_METADATA: [{"name": "current_cryptographic_inventory", "description": "Details of the existing cryptographic landscape, including TLS versions, PKI infrastructure, key exchange mechanisms (e.g., RSA, ECC), and data-at-rest encryption.", "type": "string", "required": true}, {"name": "performance_latency_constraints", "description": "Strict bounds on acceptable overhead for key generation, encapsulation/decapsulation, and signature verification, specifically addressing the larger key sizes of PQC algorithms.", "type": "string", "required": true}, {"name": "system_components", "description": "The hardware and software components involved, including HSMs, load balancers, IoT edge devices, and legacy mainframes.", "type": "string", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "current_cryptographic_inventory", "description": "Details of the existing cryptographic landscape, including TLS versions, PKI infrastructure, key exchange mechanisms (e.g., RSA, ECC), and data-at-rest encryption.", "type": "string", "required": true}, {"name": "performance_latency_constraints", "description": "Strict bounds on acceptable overhead for key generation, encapsulation/decapsulation, and signature verification, specifically addressing the larger key sizes of PQC algorithms.", "type": "string", "required": true}, {"name": "system_components", "description": "The hardware and software components involved, including HSMs, load balancers, IoT edge devices, and legacy mainframes.", "type": "string", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly secure, crypto-agile migration architectures to transition enterprise systems from classical public-key cryptography to quantum-resistant algorithms (e.g., lattice-based, hash-based) anticipating Q-Day.
 
@@ -3663,7 +3663,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: Distributed Secrets Management Topology Architect
-<!-- VALIDATION_METADATA: [{"name": "scale_and_distribution", "description": "Details about the multi-region deployment, request throughput for secret retrieval, and availability SLA.", "required": true}, {"name": "authentication_and_identity", "description": "The underlying identity providers (e.g., OIDC, SPIFFE/SPIRE, IAM roles) and trust domains.", "required": true}, {"name": "secret_characteristics", "description": "The types of secrets (e.g., static API keys, dynamic database credentials, PKI certificates) and their required rotation frequencies.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "scale_and_distribution", "description": "Details about the multi-region deployment, request throughput for secret retrieval, and availability SLA.", "required": true}, {"name": "authentication_and_identity", "description": "The underlying identity providers (e.g., OIDC, SPIFFE/SPIRE, IAM roles) and trust domains.", "required": true}, {"name": "secret_characteristics", "description": "The types of secrets (e.g., static API keys, dynamic database credentials, PKI certificates) and their required rotation frequencies.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly secure, highly available distributed secrets management topologies with dynamic rotation, ephemeral credentials, and strict identity-based access control.
 
@@ -3718,7 +3718,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: Distributed Change Data Capture Pipeline Architect
-<!-- VALIDATION_METADATA: [{"name": "source_database", "description": "The upstream database technology, version, and volume characteristics from which CDC events are generated.", "required": true}, {"name": "target_system", "description": "The downstream systems (e.g., Kafka, data warehouses, search indexes) consuming the CDC events.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "source_database", "description": "The upstream database technology, version, and volume characteristics from which CDC events are generated.", "required": true}, {"name": "target_system", "description": "The downstream systems (e.g., Kafka, data warehouses, search indexes) consuming the CDC events.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Designs highly resilient, high-throughput distributed Change Data Capture (CDC) pipelines for real-time state replication and event streaming.
 
@@ -3972,7 +3972,7 @@ Asserted Output: "CMAF"
 ---
 
 ## Skill: Chaos Engineering Experiment Designer
-<!-- VALIDATION_METADATA: [{"name": "target_architecture", "description": "The system architecture, components, and expected steady-state behaviors to be tested.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "target_architecture", "description": "The system architecture, components, and expected steady-state behaviors to be tested.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Designs targeted chaos engineering experiments to uncover systemic weaknesses in distributed architectures.
 
@@ -4029,7 +4029,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Predictive Auto-Scaling Machine Learning Architect
-<!-- VALIDATION_METADATA: [{"name": "workload_patterns", "description": "Characteristics of the historical and real-time workload (e.g., diurnal cycles, unpredictable bursts, request latency requirements).", "required": true}, {"name": "infrastructure_constraints", "description": "Hardware, cloud provider limits, or underlying container orchestration constraints (e.g., node provisioning latency, max cluster size).", "required": true}, {"name": "predictive_model_specifications", "description": "Details regarding the machine learning model used for time-series forecasting (e.g., LSTM, ARIMA, Prophet) and retraining latency.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "workload_patterns", "description": "Characteristics of the historical and real-time workload (e.g., diurnal cycles, unpredictable bursts, request latency requirements).", "required": true}, {"name": "infrastructure_constraints", "description": "Hardware, cloud provider limits, or underlying container orchestration constraints (e.g., node provisioning latency, max cluster size).", "required": true}, {"name": "predictive_model_specifications", "description": "Details regarding the machine learning model used for time-series forecasting (e.g., LSTM, ARIMA, Prophet) and retraining latency.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly resilient, ML-driven predictive auto-scaling topologies to eliminate cold starts and maintain strict SLAs for massive-scale distributed systems.
 
@@ -4086,7 +4086,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: WebRTC Real-Time Media Streaming Architect
-<!-- VALIDATION_METADATA: [{"name": "streaming_use_case", "description": "Details about the streaming use case (e.g., live broadcasting, interactive conferencing, cloud gaming).", "required": true}, {"name": "scale_and_latency_requirements", "description": "Expected number of concurrent participants, viewers, and latency SLA (e.g., sub-500ms).", "required": true}, {"name": "network_and_infrastructure_constraints", "description": "Constraints on network conditions, regions, cloud providers, or budget.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "streaming_use_case", "description": "Details about the streaming use case (e.g., live broadcasting, interactive conferencing, cloud gaming).", "required": true}, {"name": "scale_and_latency_requirements", "description": "Expected number of concurrent participants, viewers, and latency SLA (e.g., sub-500ms).", "required": true}, {"name": "network_and_infrastructure_constraints", "description": "Constraints on network conditions, regions, cloud providers, or budget.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly scalable, low-latency, and resilient WebRTC-based real-time media streaming architectures.
 
@@ -4191,7 +4191,7 @@ Asserted Output: ""
 ---
 
 ## Skill: Passwordless FIDO2 WebAuthn Architect
-<!-- VALIDATION_METADATA: [{"name": "application_context", "description": "Context of the application, including target audience and regulatory compliance needs.", "required": true}, {"name": "identity_provider", "description": "Identity provider integration requirements (e.g., Auth0, Okta, custom).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "application_context", "description": "Context of the application, including target audience and regulatory compliance needs.", "required": true}, {"name": "identity_provider", "description": "Identity provider integration requirements (e.g., Auth0, Okta, custom).", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "var", "description": "Auto-extracted variable var", "required": false}] -->
 ### Description
 Designs highly secure, phishing-resistant passwordless authentication architectures utilizing FIDO2 and WebAuthn standards.
 
@@ -4226,7 +4226,7 @@ Asserted Output: "A comprehensive FIDO2 WebAuthn architecture detailing relying 
 ---
 
 ## Skill: HTAP Real-Time Analytics Architect
-<!-- VALIDATION_METADATA: [{"name": "workload_profile", "description": "Details of the current transaction and analytical workloads.", "type": "string"}, {"name": "latency_requirements", "description": "Acceptable latency constraints for analytics.", "type": "string"}] -->
+<!-- VALIDATION_METADATA: [{"name": "workload_profile", "description": "Details of the current transaction and analytical workloads.", "type": "string"}, {"name": "latency_requirements", "description": "Acceptable latency constraints for analytics.", "type": "string"}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "request", "description": "Auto-extracted variable request", "required": false}] -->
 ### Description
 Designs Hybrid Transactional/Analytical Processing (HTAP) architectures bridging OLTP and OLAP workloads.
 
@@ -4268,7 +4268,7 @@ Asserted Output: "**MVCC**"
 ---
 
 ## Skill: Global CDN Topology Architect
-<!-- VALIDATION_METADATA: [{"name": "asset_profiles", "description": "A detailed description of the assets to be delivered (e.g., static assets, dynamic API responses, streaming media) and their sizes.", "required": true}, {"name": "traffic_patterns", "description": "A detailed description of global traffic distribution, request rates, and burst characteristics.", "required": true}, {"name": "caching_requirements", "description": "Strict requirements for TTLs, cache invalidation strategies, and edge-side inclusion/processing.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "asset_profiles", "description": "A detailed description of the assets to be delivered (e.g., static assets, dynamic API responses, streaming media) and their sizes.", "required": true}, {"name": "traffic_patterns", "description": "A detailed description of global traffic distribution, request rates, and burst characteristics.", "required": true}, {"name": "caching_requirements", "description": "Strict requirements for TTLs, cache invalidation strategies, and edge-side inclusion/processing.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly resilient, hyper-scalable Global Content Delivery Network (CDN) topologies for low-latency asset delivery and edge computing.
 
@@ -4317,7 +4317,7 @@ Asserted Output: "Origin Shielding"
 ---
 
 ## Skill: byzantine_fault_tolerant_consensus_architect
-<!-- VALIDATION_METADATA: [{"name": "system_domain", "type": "string", "description": "The business domain and the specific distributed system that requires consensus (e.g., blockchain network, mission-critical aerospace control system, distributed financial ledger)."}, {"name": "node_characteristics", "type": "string", "description": "Description of the node landscape, including total number of nodes, trust boundaries, geographical distribution, and likelihood of malicious compromise."}, {"name": "performance_requirements", "type": "string", "description": "The required transaction throughput, latency for finality, and network bandwidth constraints."}] -->
+<!-- VALIDATION_METADATA: [{"name": "system_domain", "type": "string", "description": "The business domain and the specific distributed system that requires consensus (e.g., blockchain network, mission-critical aerospace control system, distributed financial ledger)."}, {"name": "node_characteristics", "type": "string", "description": "Description of the node landscape, including total number of nodes, trust boundaries, geographical distribution, and likelihood of malicious compromise."}, {"name": "performance_requirements", "type": "string", "description": "The required transaction throughput, latency for finality, and network bandwidth constraints."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Designs robust Byzantine Fault Tolerant (BFT) consensus architectures for building secure, highly reliable distributed systems resilient to malicious actors and arbitrary node failures.
 
@@ -4385,7 +4385,7 @@ Asserted Output: ""
 ---
 
 ## Skill: Server-Driven UI Architecture Designer
-<!-- VALIDATION_METADATA: [{"name": "application_context", "description": "The business context, expected client platforms (e.g., iOS, Android, Web), and desired level of dynamic control.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "application_context", "description": "The business context, expected client platforms (e.g., iOS, Android, Web), and desired level of dynamic control.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}] -->
 ### Description
 Designs flexible, responsive Server-Driven UI (SDUI) architectures to control layouts dynamically from the backend without client updates.
 
@@ -4476,7 +4476,7 @@ Asserted Output: "Canary"
 ---
 
 ## Skill: Leader Election and Split-Brain Mitigation Architect
-<!-- VALIDATION_METADATA: [{"name": "cluster_topology", "description": "Details about the cluster nodes, cross-datacenter distribution, and network layout.", "required": true}, {"name": "workload_requirements", "description": "Details on strictness of consistency vs availability, failover latency SLAs, and read/write access patterns during partition.", "required": true}, {"name": "infrastructure_constraints", "description": "Specific constraints such as existing coordination services (ZooKeeper, etcd, Consul), deployment environments (Kubernetes, bare metal), and latency profiles.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "cluster_topology", "description": "Details about the cluster nodes, cross-datacenter distribution, and network layout.", "required": true}, {"name": "workload_requirements", "description": "Details on strictness of consistency vs availability, failover latency SLAs, and read/write access patterns during partition.", "required": true}, {"name": "infrastructure_constraints", "description": "Specific constraints such as existing coordination services (ZooKeeper, etcd, Consul), deployment environments (Kubernetes, bare metal), and latency profiles.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly available, consensus-driven architectures for leader election and robust split-brain mitigation in distributed systems.
 
@@ -4531,7 +4531,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: Zero-Downtime Database Migration Architect
-<!-- VALIDATION_METADATA: [{"name": "migration_requirements", "description": "The current database system, the target database system, acceptable replication latency, and business constraints for the migration.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "migration_requirements", "description": "The current database system, the target database system, acceptable replication latency, and business constraints for the migration.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}] -->
 ### Description
 Designs comprehensive, zero-downtime database migration strategies for high-availability systems.
 
@@ -4617,7 +4617,7 @@ Asserted Output: "AST"
 ---
 
 ## Skill: LLM Distributed Training Architect
-<!-- VALIDATION_METADATA: [{"name": "model_architecture", "description": "Details about the LLM architecture, including parameter count, layers, and attention mechanisms.", "required": true}, {"name": "cluster_topology", "description": "Information about the compute cluster, including GPU types, interconnects (e.g., InfiniBand/RDMA), and node counts.", "required": true}, {"name": "constraints", "description": "Budget constraints, maximum training time, or specific fault-tolerance requirements.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "model_architecture", "description": "Details about the LLM architecture, including parameter count, layers, and attention mechanisms.", "required": true}, {"name": "cluster_topology", "description": "Information about the compute cluster, including GPU types, interconnects (e.g., InfiniBand/RDMA), and node counts.", "required": true}, {"name": "constraints", "description": "Budget constraints, maximum training time, or specific fault-tolerance requirements.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Architects massive-scale distributed training infrastructure for Large Language Models using 3D parallelism and RDMA clusters.
 
@@ -4735,7 +4735,7 @@ Asserted Output: "{'error': 'unsafe'}"
 ---
 
 ## Skill: peer_to_peer_gossip_protocol_architect
-<!-- VALIDATION_METADATA: [{"name": "system_domain", "type": "string", "description": "The business context and exact function of the distributed system (e.g., decentralized sensor network, peer-to-peer file sharing index, globally distributed configuration management)."}, {"name": "network_scale", "type": "string", "description": "Quantitative constraints of the network, including the number of nodes, churn rate (join/leave frequency), and degree of connectivity (e.g., partial vs. dense)."}, {"name": "consistency_requirements", "type": "string", "description": "Strict parameters for convergence bounds, acceptable state divergence windows, and entropy resolution targets (e.g., time-to-inconsistency resolution, required message overhead limits)."}] -->
+<!-- VALIDATION_METADATA: [{"name": "system_domain", "type": "string", "description": "The business context and exact function of the distributed system (e.g., decentralized sensor network, peer-to-peer file sharing index, globally distributed configuration management)."}, {"name": "network_scale", "type": "string", "description": "Quantitative constraints of the network, including the number of nodes, churn rate (join/leave frequency), and degree of connectivity (e.g., partial vs. dense)."}, {"name": "consistency_requirements", "type": "string", "description": "Strict parameters for convergence bounds, acceptable state divergence windows, and entropy resolution targets (e.g., time-to-inconsistency resolution, required message overhead limits)."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Designs highly scalable, partition-tolerant Peer-to-Peer (P2P) Gossip and Epidemic broadcast protocols. Focuses on rigorous bounds for eventual consistency, efficient peer selection algorithms (e.g., SWIM), and robust anti-entropy mechanisms for state dissemination in decentralized systems.
 
@@ -4847,7 +4847,7 @@ Asserted Output: "WAL"
 ---
 
 ## Skill: Distributed Lock Manager Architect
-<!-- VALIDATION_METADATA: [{"name": "scale_requirements", "description": "<xml>Details about expected scale, concurrent lock requests, and lock contention rates.</xml>", "required": true}, {"name": "consistency_tolerance", "description": "<xml>Requirements regarding strong vs eventual consistency, network partition handling (CAP theorem constraints).</xml>", "required": true}, {"name": "infrastructure_environment", "description": "<xml>Deployment environment specifics (e.g., multi-region cloud, on-premise, mixed), available backing stores (e.g., Redis, ZooKeeper, etcd).</xml>", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "scale_requirements", "description": "<xml>Details about expected scale, concurrent lock requests, and lock contention rates.</xml>", "required": true}, {"name": "consistency_tolerance", "description": "<xml>Requirements regarding strong vs eventual consistency, network partition handling (CAP theorem constraints).</xml>", "required": true}, {"name": "infrastructure_environment", "description": "<xml>Deployment environment specifics (e.g., multi-region cloud, on-premise, mixed), available backing stores (e.g., Redis, ZooKeeper, etcd).</xml>", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}, {"name": "xml", "description": "Auto-extracted variable xml", "required": false}] -->
 ### Description
 Designs highly robust, fault-tolerant distributed lock management architectures to guarantee mutual exclusion and prevent split-brain scenarios.
 
@@ -5119,7 +5119,7 @@ Asserted Output: "Solarflare"
 ---
 
 ## Skill: Distributed Database Sharding Architect
-<!-- VALIDATION_METADATA: [{"name": "system_requirements", "description": "The business context, expected data volume, read/write loads, latency constraints, and consistency requirements.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "system_requirements", "description": "The business context, expected data volume, read/write loads, latency constraints, and consistency requirements.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}] -->
 ### Description
 Designs highly scalable distributed database sharding and partitioning strategies.
 
@@ -5164,7 +5164,7 @@ Asserted Output: "sharding"
 ---
 
 ## Skill: Multi-Tenant SaaS Architecture Designer
-<!-- VALIDATION_METADATA: [{"name": "saas_requirements", "description": "The business context, expected tenant scale, regulatory compliance needs, and performance SLAs.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "saas_requirements", "description": "The business context, expected tenant scale, regulatory compliance needs, and performance SLAs.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}] -->
 ### Description
 Designs highly scalable, secure, and cost-efficient multi-tenant SaaS architectures, focusing on tenant isolation, data partitioning, and noisy neighbor mitigation.
 
@@ -5208,7 +5208,7 @@ Asserted Output: "Silo"
 ---
 
 ## Skill: WASM Edge Serverless Runtime Architect
-<!-- VALIDATION_METADATA: [{"name": "latency_constraints", "description": "Target cold-start times and strict execution latency thresholds at the edge.", "required": true}, {"name": "integration_capabilities", "description": "Host capabilities to be delegated via WASI (e.g., HTTP requests, key-value stores).", "required": true}, {"name": "concurrency_model", "description": "The expected concurrent execution topology (e.g., actor model, parallel request handling).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "latency_constraints", "description": "Target cold-start times and strict execution latency thresholds at the edge.", "required": true}, {"name": "integration_capabilities", "description": "Host capabilities to be delegated via WASI (e.g., HTTP requests, key-value stores).", "required": true}, {"name": "concurrency_model", "description": "The expected concurrent execution topology (e.g., actor model, parallel request handling).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs ultra-low-latency, multi-tenant WebAssembly (WASM) serverless edge runtimes using strict linear memory isolation and capability-based security.
 
@@ -5263,7 +5263,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: crdt_conflict_resolution_architect
-<!-- VALIDATION_METADATA: [{"name": "system_domain", "type": "string", "description": "The business domain and the specific distributed state that needs to be synchronized (e.g., collaborative text editing, shopping cart, distributed counters)."}, {"name": "network_characteristics", "type": "string", "description": "Description of the network constraints, partition likelihood, latency expectations, and offline capabilities required."}, {"name": "data_complexity", "type": "string", "description": "The structure and complexity of the replicated data, including nested objects, arrays, or text sequences."}] -->
+<!-- VALIDATION_METADATA: [{"name": "system_domain", "type": "string", "description": "The business domain and the specific distributed state that needs to be synchronized (e.g., collaborative text editing, shopping cart, distributed counters)."}, {"name": "network_characteristics", "type": "string", "description": "Description of the network constraints, partition likelihood, latency expectations, and offline capabilities required."}, {"name": "data_complexity", "type": "string", "description": "The structure and complexity of the replicated data, including nested objects, arrays, or text sequences."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Designs robust Conflict-Free Replicated Data Type (CRDT) architectures for building highly available, partition-tolerant distributed systems with strong eventual consistency guarantees.
 
@@ -5326,7 +5326,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: High-Throughput Distributed ID Generator Architect
-<!-- VALIDATION_METADATA: [{"name": "scale_requirements", "description": "Details regarding the required ID generation rate (e.g., millions per second), peak throughput, and allowable latency.", "required": true}, {"name": "ordering_semantics", "description": "The required ordering guarantees (e.g., strictly monotonic, k-ordered, purely random) and the granularity of time alignment.", "required": true}, {"name": "deployment_topology", "description": "The geographical layout of the data centers, network boundaries, and synchronization constraints.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "scale_requirements", "description": "Details regarding the required ID generation rate (e.g., millions per second), peak throughput, and allowable latency.", "required": true}, {"name": "ordering_semantics", "description": "The required ordering guarantees (e.g., strictly monotonic, k-ordered, purely random) and the granularity of time alignment.", "required": true}, {"name": "deployment_topology", "description": "The geographical layout of the data centers, network boundaries, and synchronization constraints.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly scalable, strictly monotonic, globally unique identifier (UUID/Snowflake/ULID) generation topologies capable of sustaining massive transaction volumes in geographically distributed systems without collision.
 
@@ -5381,7 +5381,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: Hexagonal Architecture Implementation
-<!-- VALIDATION_METADATA: [{"name": "implementation_query", "description": "The specific implementation scenario or question (e.g., \"How do I integrate Stripe?\").", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "implementation_query", "description": "The specific implementation scenario or question (e.g., \"How do I integrate Stripe?\").", "required": true}, {"name": "scenario", "description": "Auto-extracted variable scenario", "required": false}] -->
 ### Description
 Expert guidance on implementing Hexagonal Architecture, focusing on data flow, dependency inversion, and component placement.
 
@@ -5524,7 +5524,7 @@ Asserted Output: "mTLS"
 ---
 
 ## Skill: High-Throughput Order Matching Engine Architect
-<!-- VALIDATION_METADATA: [{"name": "throughput_requirements", "description": "Orders per second and latency Service Level Agreements (SLAs).", "required": true}, {"name": "matching_algorithm", "description": "The type of matching logic (e.g., Price-Time Priority, Pro-Rata).", "required": true}, {"name": "deployment_topology", "description": "The hardware and network topology (e.g., FPGA-accelerated, bare-metal NUMA, cloud).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "throughput_requirements", "description": "Orders per second and latency Service Level Agreements (SLAs).", "required": true}, {"name": "matching_algorithm", "description": "The type of matching logic (e.g., Price-Time Priority, Pro-Rata).", "required": true}, {"name": "deployment_topology", "description": "The hardware and network topology (e.g., FPGA-accelerated, bare-metal NUMA, cloud).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs ultra-low latency, highly deterministic order matching engine architectures for high-frequency financial exchanges.
 
@@ -5579,7 +5579,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: IoT Digital Twin Architect
-<!-- VALIDATION_METADATA: [{"name": "physical_system_spec", "description": "The physical properties, sensor topologies, operational constraints, and telemetry frequencies of the target IoT system.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "physical_system_spec", "description": "The physical properties, sensor topologies, operational constraints, and telemetry frequencies of the target IoT system.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly accurate, scalable, and synchronized digital twin architectures for complex IoT ecosystems, ensuring real-time bidirectional state management and predictive simulation capabilities.
 
@@ -5726,7 +5726,7 @@ Asserted Output: "ACL"
 ---
 
 ## Skill: Multi-Tier Disaggregated Memory CXL Architect
-<!-- VALIDATION_METADATA: [{"name": "scale_requirements", "description": "Details regarding memory capacity and latency constraints.", "required": true}, {"name": "compute_topology", "description": "Types of compute instances connecting to the memory pool.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "scale_requirements", "description": "Details regarding memory capacity and latency constraints.", "required": true}, {"name": "compute_topology", "description": "Types of compute instances connecting to the memory pool.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly scalable, low-latency multi-tier disaggregated memory architectures leveraging Compute Express Link (CXL).
 
@@ -5820,7 +5820,7 @@ Asserted Output: "Identifies poor variable naming (`d`, `a`, `e`), lack of separ
 ---
 
 ## Skill: Multi-Tenant Noisy Neighbor Mitigation Architect
-<!-- VALIDATION_METADATA: [{"name": "scale_context", "description": "Context of the multi-tenant scale, tenant isolation strategy (e.g., pool, silo), and acceptable latencies/SLAs.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "scale_context", "description": "Context of the multi-tenant scale, tenant isolation strategy (e.g., pool, silo), and acceptable latencies/SLAs.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}] -->
 ### Description
 Designs highly resilient architecture frameworks to detect, throttle, and mitigate noisy neighbor scenarios in massive-scale multi-tenant SaaS environments.
 
@@ -5864,7 +5864,7 @@ Asserted Output: "token bucket"
 ---
 
 ## Skill: Sustainable Green Software Architect
-<!-- VALIDATION_METADATA: [{"name": "system_requirements", "description": "Detailed functional and non-functional requirements of the proposed system including throughput, latency, and expected user load.\n", "required": true}, {"name": "deployment_environment", "description": "Information about the target infrastructure (e.g., cloud provider, region, on-premises hardware, edge devices).\n", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "system_requirements", "description": "Detailed functional and non-functional requirements of the proposed system including throughput, latency, and expected user load.\n", "required": true}, {"name": "deployment_environment", "description": "Information about the target infrastructure (e.g., cloud provider, region, on-premises hardware, edge devices).\n", "required": true}, {"name": "xml", "description": "Auto-extracted variable xml", "required": false}] -->
 ### Description
 Acts as a Principal Green Software Architect to formulate comprehensive, data-driven technical architectures optimized for carbon efficiency, energy proportionality, and embodied carbon minimization across distributed systems.
 
@@ -5925,7 +5925,7 @@ Asserted Output: "SCI = ((E \times I) + M) \text{ per } R"
 ---
 
 ## Skill: Distributed Lock Contention Mitigation Architect
-<!-- VALIDATION_METADATA: [{"name": "contention_context", "description": "The current distributed architecture, locking mechanisms (e.g., Redis Redlock, ZooKeeper, etcd), workload concurrency patterns, observed bottlenecks, and strict consistency requirements.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "contention_context", "description": "The current distributed architecture, locking mechanisms (e.g., Redis Redlock, ZooKeeper, etcd), workload concurrency patterns, observed bottlenecks, and strict consistency requirements.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}] -->
 ### Description
 Architects advanced resolution strategies for severe distributed lock contention, resolving deadlocks, priority inversion, and throughput bottlenecks in highly concurrent distributed systems.
 
@@ -6094,7 +6094,7 @@ Asserted Output: "Control Plane"
 ---
 
 ## Skill: Confidential Computing Enclave Architect
-<!-- VALIDATION_METADATA: [{"name": "requirements", "description": "The technical requirements and constraints for the confidential computing architecture.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "requirements", "description": "The technical requirements and constraints for the confidential computing architecture.", "required": true}, {"name": "Aegis", "description": "Auto-extracted variable Aegis", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Architects highly secure Trusted Execution Environments (TEEs) and confidential computing solutions using secure enclaves, memory encryption, and remote attestation.
 
@@ -6157,7 +6157,7 @@ Asserted Output: ""
 ---
 
 ## Skill: Secure Supply Chain Attestation Architect
-<!-- VALIDATION_METADATA: [{"name": "build_environment", "description": "Details of the CI/CD pipeline and artifact generation environment (e.g., ephemeral runners, self-hosted build nodes, distributed build systems).", "type": "string", "required": true}, {"name": "compliance_requirements", "description": "Regulatory and industry standards required (e.g., SLSA Level 4, NIST SSDF, FedRAMP).", "type": "string", "required": true}, {"name": "ecosystem_dependencies", "description": "Characteristics of the software ecosystem, including language package managers (e.g., npm, PyPI) and container registries.", "type": "string", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "build_environment", "description": "Details of the CI/CD pipeline and artifact generation environment (e.g., ephemeral runners, self-hosted build nodes, distributed build systems).", "type": "string", "required": true}, {"name": "compliance_requirements", "description": "Regulatory and industry standards required (e.g., SLSA Level 4, NIST SSDF, FedRAMP).", "type": "string", "required": true}, {"name": "ecosystem_dependencies", "description": "Characteristics of the software ecosystem, including language package managers (e.g., npm, PyPI) and container registries.", "type": "string", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly rigorous, cryptographically verifiable software supply chain architectures to ensure end-to-end integrity and prevent dependency tampering.
 
@@ -6214,7 +6214,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: Underwater Acoustic Sensor Network Architect
-<!-- VALIDATION_METADATA: [{"name": "deployment_environment", "description": "Physical characteristics of the aquatic environment (e.g., depth, temperature gradients, salinity, ambient noise, multipath fading profiles).", "type": "string", "required": true}, {"name": "node_topology", "description": "Description of the sensor nodes (static vs. mobile, AUVs, buoys), their energy constraints, and required sensing capabilities.", "type": "string", "required": true}, {"name": "data_requirements", "description": "The type of data to be collected (e.g., periodic telemetry, event-driven alerts, compressed acoustic imaging) and associated latency/reliability SLAs.", "type": "string", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "deployment_environment", "description": "Physical characteristics of the aquatic environment (e.g., depth, temperature gradients, salinity, ambient noise, multipath fading profiles).", "type": "string", "required": true}, {"name": "node_topology", "description": "Description of the sensor nodes (static vs. mobile, AUVs, buoys), their energy constraints, and required sensing capabilities.", "type": "string", "required": true}, {"name": "data_requirements", "description": "The type of data to be collected (e.g., periodic telemetry, event-driven alerts, compressed acoustic imaging) and associated latency/reliability SLAs.", "type": "string", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly resilient, ultra-low bandwidth Underwater Acoustic Sensor Network (UWASN) architectures for marine observation, tactical surveillance, and offshore exploration, optimizing for extreme propagation delay, high error rates, and dynamic node mobility.
 
@@ -6271,7 +6271,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: Federated Learning Topology Architect
-<!-- VALIDATION_METADATA: [{"name": "client_distribution", "description": "Characteristics of the edge clients (e.g., millions of mobile devices, cross-silo enterprise nodes, heterogeneous compute, bandwidth constraints).", "required": true}, {"name": "model_complexity", "description": "Architectural details of the global model (e.g., parameter size, neural network type, update frequency).", "required": true}, {"name": "privacy_security_constraints", "description": "Mandated privacy constraints and threat models (e.g., differential privacy requirements, Byzantine fault tolerance, homomorphic encryption needs).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "client_distribution", "description": "Characteristics of the edge clients (e.g., millions of mobile devices, cross-silo enterprise nodes, heterogeneous compute, bandwidth constraints).", "required": true}, {"name": "model_complexity", "description": "Architectural details of the global model (e.g., parameter size, neural network type, update frequency).", "required": true}, {"name": "privacy_security_constraints", "description": "Mandated privacy constraints and threat models (e.g., differential privacy requirements, Byzantine fault tolerance, homomorphic encryption needs).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Architects secure, robust, and highly scalable federated learning distributed topologies, emphasizing privacy-preserving model aggregation, secure multi-party computation, and straggler mitigation.
 
@@ -6326,7 +6326,7 @@ Asserted Output: "(?i)error"
 ---
 
 ## Skill: Data Mesh Topology Architect
-<!-- VALIDATION_METADATA: [{"name": "domain_requirements", "description": "The business context, data domains, and analytical requirements.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "domain_requirements", "description": "The business context, data domains, and analytical requirements.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Designs decentralized data mesh topologies with federated computational governance.
 
@@ -6373,7 +6373,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Stateful Workflow Orchestration Architect
-<!-- VALIDATION_METADATA: [{"name": "workflow_requirements", "description": "Details about the complex workflows to be orchestrated, including step dependencies, compensation logic, and expected failure modes.", "type": "string"}, {"name": "scale_and_throughput", "description": "Quantitative targets for execution concurrency, events per second, and overall system load.", "type": "string"}, {"name": "durability_and_latency_sla", "description": "Specific SLAs regarding state persistence durability, recovery time objectives (RTO), and execution latency.", "type": "string"}] -->
+<!-- VALIDATION_METADATA: [{"name": "workflow_requirements", "description": "Details about the complex workflows to be orchestrated, including step dependencies, compensation logic, and expected failure modes.", "type": "string"}, {"name": "scale_and_throughput", "description": "Quantitative targets for execution concurrency, events per second, and overall system load.", "type": "string"}, {"name": "durability_and_latency_sla", "description": "Specific SLAs regarding state persistence durability, recovery time objectives (RTO), and execution latency.", "type": "string"}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly resilient, durable execution and stateful workflow orchestration architectures for complex distributed systems.
 
@@ -6428,7 +6428,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: transactional_outbox_event_publishing_architect
-<!-- VALIDATION_METADATA: [{"name": "bounded_context", "type": "string", "description": "The specific bounded context or microservice domain generating the events (e.g., Order Management System, Payment Gateway)."}, {"name": "primary_database", "type": "string", "description": "The primary operational database technology used by the microservice (e.g., PostgreSQL, MySQL, MongoDB)."}, {"name": "event_broker", "type": "string", "description": "The target message broker or event streaming platform (e.g., Apache Kafka, RabbitMQ, AWS EventBridge)."}, {"name": "latency_throughput_requirements", "type": "string", "description": "Non-functional requirements regarding maximum acceptable event publishing latency and expected throughput (e.g., Sub-50ms latency, 10,000 events/sec)."}] -->
+<!-- VALIDATION_METADATA: [{"name": "bounded_context", "type": "string", "description": "The specific bounded context or microservice domain generating the events (e.g., Order Management System, Payment Gateway)."}, {"name": "primary_database", "type": "string", "description": "The primary operational database technology used by the microservice (e.g., PostgreSQL, MySQL, MongoDB)."}, {"name": "event_broker", "type": "string", "description": "The target message broker or event streaming platform (e.g., Apache Kafka, RabbitMQ, AWS EventBridge)."}, {"name": "latency_throughput_requirements", "type": "string", "description": "Non-functional requirements regarding maximum acceptable event publishing latency and expected throughput (e.g., Sub-50ms latency, 10,000 events/sec)."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Designs robust, fault-tolerant Transactional Outbox patterns for reliable event publishing in microservices, ensuring dual-write atomicity and at-least-once delivery guarantees.
 
@@ -6658,7 +6658,7 @@ Asserted Output: "DLQ"
 ---
 
 ## Skill: Idempotency and API Retry Strategy Architect
-<!-- VALIDATION_METADATA: [{"name": "system_context", "description": "Overview of the distributed systems, communication protocols, and message brokers involved.", "required": true}, {"name": "failure_scenarios", "description": "Specific edge cases, network partition conditions, and retry behaviors expected.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "system_context", "description": "Overview of the distributed systems, communication protocols, and message brokers involved.", "required": true}, {"name": "failure_scenarios", "description": "Specific edge cases, network partition conditions, and retry behaviors expected.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Designs highly robust, distributed idempotency and retry architectures for APIs and message-driven systems to prevent duplicate processing.
 
@@ -6711,7 +6711,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: Quantum Key Distribution Network Architect
-<!-- VALIDATION_METADATA: [{"name": "network_topology", "description": "Existing or target fiber optic and satellite network topology (e.g., dark fiber distance, repeater locations, point-to-point links).", "required": true}, {"name": "cryptographic_constraints", "description": "Existing cryptographic standards, key rotation frequency, and integration requirements with classical encryption (e.g., AES-256 MACsec/IPsec).", "required": true}, {"name": "threat_model", "description": "Defined adversaries, operational environment, and acceptable quantum bit error rates (QBER).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "network_topology", "description": "Existing or target fiber optic and satellite network topology (e.g., dark fiber distance, repeater locations, point-to-point links).", "required": true}, {"name": "cryptographic_constraints", "description": "Existing cryptographic standards, key rotation frequency, and integration requirements with classical encryption (e.g., AES-256 MACsec/IPsec).", "required": true}, {"name": "threat_model", "description": "Defined adversaries, operational environment, and acceptable quantum bit error rates (QBER).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly secure, scalable Quantum Key Distribution (QKD) network topologies to safeguard sensitive data transmission against "harvest now, decrypt later" attacks and future quantum computational threats.
 
@@ -6921,7 +6921,7 @@ Asserted Output: "Traffic Engineering Algorithms"
 ---
 
 ## Skill: Threshold Signature MPC Custody Architect
-<!-- VALIDATION_METADATA: [{"name": "key_generation_protocol", "description": "Distributed key generation (DKG) mechanisms and trusted dealer considerations.", "required": true}, {"name": "signing_threshold", "description": "Required participant threshold (e.g., t-of-n) and quorum constraints.", "required": true}, {"name": "key_refresh_policy", "description": "Proactive secret sharing (PSS) and dynamic key rotation policies.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "key_generation_protocol", "description": "Distributed key generation (DKG) mechanisms and trusted dealer considerations.", "required": true}, {"name": "signing_threshold", "description": "Required participant threshold (e.g., t-of-n) and quorum constraints.", "required": true}, {"name": "key_refresh_policy", "description": "Proactive secret sharing (PSS) and dynamic key rotation policies.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly secure, institution-grade threshold signature schemes (TSS) and multi-party computation (MPC) architectures for digital asset custody.
 
@@ -6976,7 +6976,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: Immutable Financial Ledger Architect
-<!-- VALIDATION_METADATA: [{"name": "financial_context", "description": "Context of the financial system, transaction volume, regulatory requirements (e.g., PCI-DSS, SOX), and latency constraints.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "financial_context", "description": "Context of the financial system, transaction volume, regulatory requirements (e.g., PCI-DSS, SOX), and latency constraints.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}] -->
 ### Description
 Designs strictly immutable, highly auditable financial ledger architectures enforcing dual-entry accounting, cryptographic tamper-evidence, and zero-loss event sourcing for enterprise banking and fintech platforms.
 
@@ -7077,7 +7077,7 @@ Asserted Output: "WASI"
 ---
 
 ## Skill: Zero-Knowledge Rollup Scaling Architect
-<!-- VALIDATION_METADATA: [{"name": "throughput_requirements", "description": "Transactions per second (TPS) target and block time constraints.", "required": true}, {"name": "proving_system", "description": "The type of ZK proving system (e.g., SNARKs, STARKs) and its constraints.", "required": true}, {"name": "data_availability_layer", "description": "The data availability strategy (e.g., On-chain calldata, Validium, Volition).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "throughput_requirements", "description": "Transactions per second (TPS) target and block time constraints.", "required": true}, {"name": "proving_system", "description": "The type of ZK proving system (e.g., SNARKs, STARKs) and its constraints.", "required": true}, {"name": "data_availability_layer", "description": "The data availability strategy (e.g., On-chain calldata, Validium, Volition).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly scalable, secure, and decentralized Zero-Knowledge Rollup (ZK-Rollup) Layer 2 architectures for blockchain networks.
 
@@ -7132,7 +7132,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: Multi-Tenant BYOK Envelope Encryption Architect
-<!-- VALIDATION_METADATA: [{"name": "tenant_isolation_level", "description": "The required degree of isolation (e.g., shared DB with logical isolation, dedicated DB per tenant, isolated compute enclaves).", "type": "string", "required": true}, {"name": "key_hierarchy_requirements", "description": "Specific constraints on the KMS, DEK (Data Encryption Key), and KEK (Key Encryption Key) lifecycle, including rotation and revocation.", "type": "string", "required": true}, {"name": "throughput_latency_sla", "description": "Performance constraints for the cryptographic operations (e.g., millions of rows per minute, sub-millisecond P99 latency).", "type": "string", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "tenant_isolation_level", "description": "The required degree of isolation (e.g., shared DB with logical isolation, dedicated DB per tenant, isolated compute enclaves).", "type": "string", "required": true}, {"name": "key_hierarchy_requirements", "description": "Specific constraints on the KMS, DEK (Data Encryption Key), and KEK (Key Encryption Key) lifecycle, including rotation and revocation.", "type": "string", "required": true}, {"name": "throughput_latency_sla", "description": "Performance constraints for the cryptographic operations (e.g., millions of rows per minute, sub-millisecond P99 latency).", "type": "string", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Architects robust, multi-tenant "Bring Your Own Key" (BYOK) envelope encryption topologies for isolating customer data at scale while retaining cryptographic control.
 
@@ -7307,7 +7307,7 @@ Asserted Output: "MPP|sharding strategies"
 ---
 
 ## Skill: Air-Gapped Environment Deployment Architect
-<!-- VALIDATION_METADATA: [{"name": "deployment_artifacts", "description": "Types of artifacts to deploy (e.g., OCI images, RPMs, Helm charts, binary blobs).", "required": true}, {"name": "security_constraints", "description": "Physical and logical security constraints (e.g., data diode ingress, zero outbound routing, hardware tokens, specific compliance frameworks).", "required": true}, {"name": "operational_scale", "description": "Details regarding target infrastructure scale and update frequency (e.g., cluster size, nodes, release cadence).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "deployment_artifacts", "description": "Types of artifacts to deploy (e.g., OCI images, RPMs, Helm charts, binary blobs).", "required": true}, {"name": "security_constraints", "description": "Physical and logical security constraints (e.g., data diode ingress, zero outbound routing, hardware tokens, specific compliance frameworks).", "required": true}, {"name": "operational_scale", "description": "Details regarding target infrastructure scale and update frequency (e.g., cluster size, nodes, release cadence).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs secure, resilient, and fully autonomous software deployment architectures for highly restricted, completely air-gapped environments.
 
@@ -7362,7 +7362,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: LEO Satellite Mesh Network Architect
-<!-- VALIDATION_METADATA: [{"name": "orbital_mechanics_context", "description": "Description of the constellation topology, including the number of orbital planes, satellites per plane, altitude, and inclination.", "required": true}, {"name": "traffic_qos_constraints", "description": "Strict Quality of Service (QoS) requirements for data transmission, including latency budgets, bandwidth guarantees, and jitter tolerances.", "required": true}, {"name": "hardware_constraints", "description": "Physical and hardware limitations onboard the satellite, such as radiation-hardened compute capacity, power budgets for Inter-Satellite Links (ISL), and optical/RF transceiver constraints.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "orbital_mechanics_context", "description": "Description of the constellation topology, including the number of orbital planes, satellites per plane, altitude, and inclination.", "required": true}, {"name": "traffic_qos_constraints", "description": "Strict Quality of Service (QoS) requirements for data transmission, including latency budgets, bandwidth guarantees, and jitter tolerances.", "required": true}, {"name": "hardware_constraints", "description": "Physical and hardware limitations onboard the satellite, such as radiation-hardened compute capacity, power budgets for Inter-Satellite Links (ISL), and optical/RF transceiver constraints.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly dynamic, resilient Low Earth Orbit (LEO) satellite mesh network architectures, optimizing Inter-Satellite Links (ISL) for ephemeral topologies, extreme Doppler shifts, and strict Quality of Service (QoS) constraints.
 
@@ -7419,7 +7419,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: Data Privacy Clean Room Architect
-<!-- VALIDATION_METADATA: [{"name": "participating_entities", "description": "Details about the organizations involved, their trust boundaries, and the sensitivity of the datasets being shared.", "required": true}, {"name": "analytical_workloads", "description": "Types of operations needed (e.g., set intersection, ML model training, aggregated reporting) and their performance requirements.", "required": true}, {"name": "privacy_constraints", "description": "Regulatory and cryptographic requirements (e.g., GDPR, CCPA, differential privacy budgets, exact SMPC protocols).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "participating_entities", "description": "Details about the organizations involved, their trust boundaries, and the sensitivity of the datasets being shared.", "required": true}, {"name": "analytical_workloads", "description": "Types of operations needed (e.g., set intersection, ML model training, aggregated reporting) and their performance requirements.", "required": true}, {"name": "privacy_constraints", "description": "Regulatory and cryptographic requirements (e.g., GDPR, CCPA, differential privacy budgets, exact SMPC protocols).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs highly secure, multi-party Data Clean Room architectures leveraging privacy-enhancing technologies (PETs) like SMPC and TEEs for collaborative analytics without data exposure.
 
@@ -7474,7 +7474,7 @@ Asserted Output: "error"
 ---
 
 ## Skill: Edge AI Inference Architect
-<!-- VALIDATION_METADATA: [{"name": "edge_device_constraints", "description": "Details regarding hardware limitations (e.g., memory, processing power, TPU/NPU availability) and network conditions at the edge.", "required": true}, {"name": "inference_sla", "description": "Strict Service Level Agreements (SLAs) for inference latency and throughput.", "required": true}, {"name": "security_compliance", "description": "Requirements for data privacy, local data processing, and secure model synchronization.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "edge_device_constraints", "description": "Details regarding hardware limitations (e.g., memory, processing power, TPU/NPU availability) and network conditions at the edge.", "required": true}, {"name": "inference_sla", "description": "Strict Service Level Agreements (SLAs) for inference latency and throughput.", "required": true}, {"name": "security_compliance", "description": "Requirements for data privacy, local data processing, and secure model synchronization.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs low-latency, bandwidth-constrained AI inference architectures directly at the edge, featuring dynamic model swapping and secure OTA updates.
 
@@ -7527,7 +7527,7 @@ Asserted Output: "OTA"
 ---
 
 ## Skill: Cascading Failure Resilience Architect
-<!-- VALIDATION_METADATA: [{"name": "system_topology", "description": "A description of the distributed system topology, dependencies, and communication patterns.", "type": "string"}, {"name": "failure_scenarios", "description": "Specific failure scenarios, latency bounds, and degradation tolerances to mitigate.", "type": "string"}] -->
+<!-- VALIDATION_METADATA: [{"name": "system_topology", "description": "A description of the distributed system topology, dependencies, and communication patterns.", "type": "string"}, {"name": "failure_scenarios", "description": "Specific failure scenarios, latency bounds, and degradation tolerances to mitigate.", "type": "string"}, {"name": "configuration", "description": "Auto-extracted variable configuration", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "safety_instruction", "description": "Auto-extracted variable safety_instruction", "required": false}, {"name": "scenarios", "description": "Auto-extracted variable scenarios", "required": false}, {"name": "topology", "description": "Auto-extracted variable topology", "required": false}] -->
 ### Description
 Architects system-wide resilience patterns to mitigate cascading failures, including circuit breaking, load shedding, bulkheads, and retry storm prevention.
 

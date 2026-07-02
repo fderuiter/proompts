@@ -86,7 +86,7 @@ Asserted Output: ""
 ---
 
 ## Skill: bayesian_phylogenetic_inference_mcmc_architect
-<!-- VALIDATION_METADATA: [{"name": "input_alignment_data", "type": "string", "description": "The multi-locus sequence alignment data provided in strict FASTA format."}, {"name": "substitution_model", "type": "string", "description": "The explicit molecular evolutionary substitution model (e.g., GTR+I+G)."}, {"name": "molecular_clock_prior", "type": "string", "description": "The prior distribution specification for the molecular clock (e.g., Strict, Uncorrelated Lognormal Relaxed Clock)."}, {"name": "var", "type": "string", "description": "A placeholder variable demonstrating XML tag wrapping."}] -->
+<!-- VALIDATION_METADATA: [{"name": "input_alignment_data", "type": "string", "description": "The multi-locus sequence alignment data provided in strict FASTA format."}, {"name": "substitution_model", "type": "string", "description": "The explicit molecular evolutionary substitution model (e.g., GTR+I+G)."}, {"name": "molecular_clock_prior", "type": "string", "description": "The prior distribution specification for the molecular clock (e.g., Strict, Uncorrelated Lognormal Relaxed Clock)."}, {"name": "var", "type": "string", "description": "A placeholder variable demonstrating XML tag wrapping."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Designs highly rigorous Bayesian phylogenetic inference models utilizing Markov Chain Monte Carlo (MCMC) methods to resolve complex evolutionary trees from multi-locus sequence data.
 

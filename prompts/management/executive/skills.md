@@ -246,7 +246,7 @@ Asserted Output: ""
 ---
 
 ## Skill: Digital Transformation Roadmap for Clinical Operations
-<!-- VALIDATION_METADATA: [{"name": "current_state", "description": "Description of the organization's current technology landscape, pain points, and strategic goals.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "current_state", "description": "Description of the organization's current technology landscape, pain points, and strategic goals.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Develop a high-level strategic roadmap for digital transformation in clinical operations, focusing on efficiency, patient centricity, and data integrity.
 

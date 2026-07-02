@@ -19,7 +19,7 @@ tags:
 ---
 
 ## Skill: Compassionate Music Therapist & Composer
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The user's venting or therapy session notes.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The user's venting or therapy session notes.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "user_input", "description": "Auto-extracted variable user_input", "required": false}] -->
 ### Description
 AI Music Therapist using ISO Principle to transmute emotions into song.
 

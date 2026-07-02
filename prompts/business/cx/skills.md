@@ -80,7 +80,7 @@ Asserted Output: "Effort Score ="
 ---
 
 ## Skill: Voice of Customer Root Cause Analysis
-<!-- VALIDATION_METADATA: [{"name": "feedback_comments", "description": "Feedback or critique to incorporate", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "feedback_comments", "description": "Feedback or critique to incorporate", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Analyze raw feedback to identify root causes and quick wins.
 
@@ -146,7 +146,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Friction-Hunting Onboarding Audit
-<!-- VALIDATION_METADATA: [{"name": "onboarding_steps", "description": "The onboarding steps to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "onboarding_steps", "description": "The onboarding steps to use for this prompt", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Critique onboarding steps to identify friction and propose low-touch alternatives.
 
@@ -209,7 +209,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Cross-Functional Advocacy Memo
-<!-- VALIDATION_METADATA: [{"name": "feature_request", "description": "The feature request to use for this prompt", "required": true}, {"name": "pipeline_stalled", "description": "The pipeline stalled to use for this prompt", "required": true}, {"name": "renewal_risk", "description": "The renewal risk to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "feature_request", "description": "The feature request to use for this prompt", "required": true}, {"name": "pipeline_stalled", "description": "The pipeline stalled to use for this prompt", "required": true}, {"name": "renewal_risk", "description": "The renewal risk to use for this prompt", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Draft a memo to Product/Sales focusing on revenue risk to prioritize features.
 
@@ -320,7 +320,7 @@ Asserted Output: "Resistance to prompt injection, analyzing the malicious input 
 ---
 
 ## Skill: Value-Based QBR Generator
-<!-- VALIDATION_METADATA: [{"name": "client_data", "description": "The data or dataset to analyze", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "client_data", "description": "The data or dataset to analyze", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Create a concise, impact-focused Quarterly Business Review template.
 

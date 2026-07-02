@@ -250,7 +250,7 @@ Asserted Output: ""
 ---
 
 ## Skill: Separation Logic Heap Entailment Architect
-<!-- VALIDATION_METADATA: [{"name": "heap_verification_scenario", "description": "The complex program verification scenario involving heap memory, pointer manipulation, and spatial constraints that requires formal separation logic modeling.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "heap_verification_scenario", "description": "The complex program verification scenario involving heap memory, pointer manipulation, and spatial constraints that requires formal separation logic modeling.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}] -->
 ### Description
 Formulates rigorous separation logic frameworks to verify program correctness and manage heap memory entailing pointer data structures.
 
@@ -297,7 +297,7 @@ Asserted Output: "\ast"
 ---
 
 ## Skill: Custom Axiomatic System Soundness Evaluator
-<!-- VALIDATION_METADATA: [{"name": "axioms", "type": "string", "description": "The set of formal axioms proposed for the logical system."}, {"name": "inference_rules", "type": "string", "description": "The set of rules of inference (e.g., Modus Ponens, Necessitation) proposed for the logical system."}, {"name": "formal_semantics", "type": "string", "description": "The formal semantics (e.g., algebraic, Kripke, truth-functional) against which the system's soundness is evaluated."}] -->
+<!-- VALIDATION_METADATA: [{"name": "axioms", "type": "string", "description": "The set of formal axioms proposed for the logical system."}, {"name": "inference_rules", "type": "string", "description": "The set of rules of inference (e.g., Modus Ponens, Necessitation) proposed for the logical system."}, {"name": "formal_semantics", "type": "string", "description": "The formal semantics (e.g., algebraic, Kripke, truth-functional) against which the system's soundness is evaluated."}, {"name": "system_directive", "description": "Auto-extracted variable system_directive", "required": false}] -->
 ### Description
 Evaluates the logical soundness of custom axiomatic systems by rigorously proving that all axioms are valid under a specified formal semantics and that all inference rules preserve truth.
 
@@ -355,7 +355,7 @@ Asserted Output: ""
 ---
 
 ## Skill: first_order_logic_natural_language_translator
-<!-- VALIDATION_METADATA: [{"name": "natural_language_sentence", "description": "The ambiguous natural language sentence to be translated into a formally valid First-Order Logic formula."}, {"name": "domain_of_discourse", "description": "The intended domain of discourse and specific predicate/constant interpretations to use for the translation."}] -->
+<!-- VALIDATION_METADATA: [{"name": "natural_language_sentence", "description": "The ambiguous natural language sentence to be translated into a formally valid First-Order Logic formula."}, {"name": "domain_of_discourse", "description": "The intended domain of discourse and specific predicate/constant interpretations to use for the translation."}, {"name": "sentence", "description": "Auto-extracted variable sentence", "required": false}] -->
 ### Description
 Rigorously translates ambiguous natural language sentences into strictly scoped, formally valid First-Order Logic (FOL) formulas using precise LaTeX notation.
 
@@ -490,7 +490,7 @@ Asserted Output: "\mu"
 ---
 
 ## Skill: Epistemic Logic Multi-Agent Knowledge Architect
-<!-- VALIDATION_METADATA: [{"name": "multi_agent_scenario", "description": "The complex multi-agent scenario involving partial observability, distributed knowledge, or belief revision that requires formal epistemic modeling.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "multi_agent_scenario", "description": "The complex multi-agent scenario involving partial observability, distributed knowledge, or belief revision that requires formal epistemic modeling.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}] -->
 ### Description
 Formulates rigorous multi-agent epistemic logic frameworks to model knowledge, belief, and information dynamics in distributed systems.
 

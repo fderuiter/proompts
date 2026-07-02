@@ -95,7 +95,7 @@ Asserted Output: "Refusal or request for clarification due to lack of required d
 ---
 
 ## Skill: Imaging Charter Draft
-<!-- VALIDATION_METADATA: [] -->
+<!-- VALIDATION_METADATA: [{"name": "endpoints", "description": "Auto-extracted variable endpoints", "required": false}, {"name": "list", "description": "Auto-extracted variable list", "required": false}, {"name": "modalities", "description": "Auto-extracted variable modalities", "required": false}, {"name": "protocol_synopsis", "description": "Auto-extracted variable protocol_synopsis", "required": false}, {"name": "regulations", "description": "Auto-extracted variable regulations", "required": false}, {"name": "sites", "description": "Auto-extracted variable sites", "required": false}] -->
 ### Description
 Create a study-specific imaging charter compliant with global regulations.
 
@@ -149,7 +149,7 @@ None provided.
 ---
 
 ## Skill: Site Upload QC and Query Generator
-<!-- VALIDATION_METADATA: [{"name": "upload_log_csv", "description": "The daily upload log CSV containing QC results", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "upload_log_csv", "description": "The daily upload log CSV containing QC results", "required": true}, {"name": "Site_ID", "description": "Auto-extracted variable Site_ID", "required": false}] -->
 ### Description
 Automate QC of imaging uploads and craft site queries.
 
@@ -249,7 +249,7 @@ Asserted Output: "{"error": "Invalid or unsafe input"}"
 ---
 
 ## Skill: Central Reading Paradigm Design
-<!-- VALIDATION_METADATA: [] -->
+<!-- VALIDATION_METADATA: [{"name": "budget", "description": "Auto-extracted variable budget", "required": false}, {"name": "disease", "description": "Auto-extracted variable disease", "required": false}, {"name": "endpoints", "description": "Auto-extracted variable endpoints", "required": false}, {"name": "reader_pool_size", "description": "Auto-extracted variable reader_pool_size", "required": false}, {"name": "timepoints", "description": "Auto-extracted variable timepoints", "required": false}] -->
 ### Description
 Recommend an efficient central reading model for an oncology trial.
 
@@ -299,7 +299,7 @@ None provided.
 ---
 
 ## Skill: Regulatory Imaging Charter Generator
-<!-- VALIDATION_METADATA: [] -->
+<!-- VALIDATION_METADATA: [{"name": "endpoint_description", "description": "Auto-extracted variable endpoint_description", "required": false}, {"name": "modalities", "description": "Auto-extracted variable modalities", "required": false}, {"name": "regions", "description": "Auto-extracted variable regions", "required": false}, {"name": "study_overview", "description": "Auto-extracted variable study_overview", "required": false}] -->
 ### Description
 Generate an imaging charter that satisfies FDA and ISO requirements.
 
@@ -340,7 +340,7 @@ None provided.
 ---
 
 ## Skill: Image Acquisition QC Workflow Blueprint
-<!-- VALIDATION_METADATA: [] -->
+<!-- VALIDATION_METADATA: [{"name": "modalities", "description": "Auto-extracted variable modalities", "required": false}, {"name": "study_description", "description": "Auto-extracted variable study_description", "required": false}] -->
 ### Description
 Design a site-facing SOP for image acquisition and quality control.
 

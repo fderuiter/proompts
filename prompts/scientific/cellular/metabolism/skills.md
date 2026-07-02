@@ -76,7 +76,7 @@ Asserted Output: ""
 ---
 
 ## Skill: non_stationary_13c_metabolic_flux_analysis_architect
-<!-- VALIDATION_METADATA: [{"name": "isotope_labeling_data", "type": "string", "description": "Dynamic time-series mass isotopomer distribution (MID) data acquired via LC-MS/MS or GC-MS."}, {"name": "carbon_atom_transitions", "type": "string", "description": "The defined atom transition network mapping carbon backbones through the specific biochemical pathways."}, {"name": "physiological_steady_state", "type": "string", "description": "The macroscopic physiological parameters defining the steady state (e.g., cell dry weight, specific growth rate, substrate uptake)."}] -->
+<!-- VALIDATION_METADATA: [{"name": "isotope_labeling_data", "type": "string", "description": "Dynamic time-series mass isotopomer distribution (MID) data acquired via LC-MS/MS or GC-MS."}, {"name": "carbon_atom_transitions", "type": "string", "description": "The defined atom transition network mapping carbon backbones through the specific biochemical pathways."}, {"name": "physiological_steady_state", "type": "string", "description": "The macroscopic physiological parameters defining the steady state (e.g., cell dry weight, specific growth rate, substrate uptake)."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}, {"name": "input_wrapper", "description": "Auto-extracted variable input_wrapper", "required": false}] -->
 ### Description
 Acts as a Principal Systems Biologist to rigorously formulate and solve Non-Stationary 13C Metabolic Flux Analysis (INST-13C-MFA) systems for determining intracellular fluxes from dynamic isotopic labeling data.
 
@@ -133,7 +133,7 @@ Asserted Output: ""
 ---
 
 ## Skill: genome_scale_metabolic_flux_modeler
-<!-- VALIDATION_METADATA: [{"name": "metabolic_network", "type": "string", "description": "The stoichiometric matrix or biochemical reaction network defining the cellular metabolism."}, {"name": "objective_function", "type": "string", "description": "The targeted biological objective for optimization (e.g., biomass maximization, target metabolite overproduction)."}, {"name": "environmental_constraints", "type": "string", "description": "Nutrient availability, exchange reaction bounds, and thermodynamic constraints defining the simulation environment."}] -->
+<!-- VALIDATION_METADATA: [{"name": "metabolic_network", "type": "string", "description": "The stoichiometric matrix or biochemical reaction network defining the cellular metabolism."}, {"name": "objective_function", "type": "string", "description": "The targeted biological objective for optimization (e.g., biomass maximization, target metabolite overproduction)."}, {"name": "environmental_constraints", "type": "string", "description": "Nutrient availability, exchange reaction bounds, and thermodynamic constraints defining the simulation environment."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}] -->
 ### Description
 Acts as a Principal Systems Biologist to systematically formulate, analyze, and optimize Genome-Scale Metabolic Models (GEMs) using Flux Balance Analysis (FBA) and advanced constraint-based methods.
 

@@ -96,7 +96,7 @@ tags:
 ---
 
 ## Skill: red_team_exploit_chain_architect
-<!-- VALIDATION_METADATA: [{"name": "target_environment", "description": "Detailed description of the target network architecture, OS versions, and known defensive controls (e.g., EDR, WAF, SIEM)."}, {"name": "initial_foothold", "description": "The starting point or initial vector (e.g., compromised low-privileged user, external web vulnerability)."}, {"name": "objective", "description": "The ultimate goal of the Red Team operation (e.g., Domain Admin compromise, exfiltration of specific database)."}] -->
+<!-- VALIDATION_METADATA: [{"name": "target_environment", "description": "Detailed description of the target network architecture, OS versions, and known defensive controls (e.g., EDR, WAF, SIEM)."}, {"name": "initial_foothold", "description": "The starting point or initial vector (e.g., compromised low-privileged user, external web vulnerability)."}, {"name": "objective", "description": "The ultimate goal of the Red Team operation (e.g., Domain Admin compromise, exfiltration of specific database)."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Acts as a Principal Offensive Security Architect to engineer advanced, multi-staged exploit chains, bypassing defense-in-depth controls for Red Team operations.
 
@@ -311,7 +311,7 @@ Asserted Output: "A detailed forensic report identifying the malicious curl comm
 ---
 
 ## Skill: API Security & Zero Trust Architect
-<!-- VALIDATION_METADATA: [{"name": "api_architecture_description", "type": "string", "description": "A comprehensive description of the target API infrastructure, including exposed endpoints, internal microservices, existing gateways, identity providers, and current authorization mechanisms."}, {"name": "security_compliance_requirements", "type": "string", "description": "A detailed list of required regulatory standards (e.g., PCI-DSS, HIPAA, GDPR), internal corporate security policies, and any specific threat models or recent audit findings to address."}] -->
+<!-- VALIDATION_METADATA: [{"name": "api_architecture_description", "type": "string", "description": "A comprehensive description of the target API infrastructure, including exposed endpoints, internal microservices, existing gateways, identity providers, and current authorization mechanisms."}, {"name": "security_compliance_requirements", "type": "string", "description": "A detailed list of required regulatory standards (e.g., PCI-DSS, HIPAA, GDPR), internal corporate security policies, and any specific threat models or recent audit findings to address."}, {"name": "architecture_description", "description": "Auto-extracted variable architecture_description", "required": false}, {"name": "compliance_requirements", "description": "Auto-extracted variable compliance_requirements", "required": false}] -->
 ### Description
 Formulates mathematically rigorous and cryptographically sound API Security and Zero Trust network architectures.
 Specializes in zero-trust enforcement, mutual TLS (mTLS), token-based authentication (OAuth2/OIDC), continuous adaptive risk and trust assessment (CARTA), and defending against OWASP API Security Top 10 vulnerabilities.
@@ -493,7 +493,7 @@ Asserted Output: "circuit breaker"
 ---
 
 ## Skill: APT Threat Hunting Query Engineer
-<!-- VALIDATION_METADATA: [{"name": "apt_ttp_description", "description": "High-level description of the APT Tactics, Techniques, and Procedures (TTPs) or zero-day behavior to hunt.", "required": true}, {"name": "target_siem_platform", "description": "The target SIEM platform and query language (e.g., Splunk SPL, KQL, Elastic EQL).", "required": true}, {"name": "log_sources", "description": "Specific log sources or indexes available for hunting (e.g., Sysmon, Windows Security Events, AWS CloudTrail).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "apt_ttp_description", "description": "High-level description of the APT Tactics, Techniques, and Procedures (TTPs) or zero-day behavior to hunt.", "required": true}, {"name": "target_siem_platform", "description": "The target SIEM platform and query language (e.g., Splunk SPL, KQL, Elastic EQL).", "required": true}, {"name": "log_sources", "description": "Specific log sources or indexes available for hunting (e.g., Sysmon, Windows Security Events, AWS CloudTrail).", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Translates high-level Advanced Persistent Threat (APT) TTPs into precise, actionable SIEM queries for proactive threat hunting.
 
@@ -733,7 +733,7 @@ Asserted Output: "Provides a default-deny NetworkPolicy and restricts secret acc
 ---
 
 ## Skill: Cloud Incident Response Forensics Architect
-<!-- VALIDATION_METADATA: [{"name": "cloud_environment", "description": "The specific cloud provider and architecture details (e.g., AWS EKS, Azure Entra ID, GCP Compute).", "required": true}, {"name": "incident_indicators", "description": "Initial indicators of compromise (IoCs), anomalous logs, or active alerts triggering the response.", "required": true}, {"name": "critical_assets", "description": "The high-value assets or data stores potentially exposed during the incident.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "cloud_environment", "description": "The specific cloud provider and architecture details (e.g., AWS EKS, Azure Entra ID, GCP Compute).", "required": true}, {"name": "incident_indicators", "description": "Initial indicators of compromise (IoCs), anomalous logs, or active alerts triggering the response.", "required": true}, {"name": "critical_assets", "description": "The high-value assets or data stores potentially exposed during the incident.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Generates highly technical, cloud-native (AWS/Azure/GCP) incident response playbooks and forensic evidence acquisition strategies for sophisticated intrusions.
 
@@ -885,7 +885,7 @@ Asserted Output: "Focus on SLH-DSA or stateful hash-based signatures for firmwar
 ---
 
 ## Skill: Insider Threat Behavioral Analytics Engineer
-<!-- VALIDATION_METADATA: [{"name": "baseline_behavior", "description": "Description of the established normal baseline behavior for the target entity (user, host, or service account).", "type": "string"}, {"name": "observed_anomaly", "description": "Specific anomalous activity or deviations observed (e.g., unusual data staging, off-hours access, volume thresholds).", "type": "string"}, {"name": "target_platform", "description": "The target analytics platform or SIEM language (e.g., Splunk SPL, Elastic KQL, Exabeam, Azure Sentinel).", "type": "string"}] -->
+<!-- VALIDATION_METADATA: [{"name": "baseline_behavior", "description": "Description of the established normal baseline behavior for the target entity (user, host, or service account).", "type": "string"}, {"name": "observed_anomaly", "description": "Specific anomalous activity or deviations observed (e.g., unusual data staging, off-hours access, volume thresholds).", "type": "string"}, {"name": "target_platform", "description": "The target analytics platform or SIEM language (e.g., Splunk SPL, Elastic KQL, Exabeam, Azure Sentinel).", "type": "string"}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "scenario", "description": "Auto-extracted variable scenario", "required": false}] -->
 ### Description
 Formulates highly rigorous User and Entity Behavior Analytics (UEBA) models and insider threat detection algorithms, translating anomalous organizational behaviors into precise SIEM/SOAR logic.
 
@@ -1355,7 +1355,7 @@ Asserted Output: "Contains steps to disable the preview pane/font rendering serv
 ---
 
 ## Skill: Advanced Red Team Adversary Emulation Architect
-<!-- VALIDATION_METADATA: [{"name": "threat_actor_profile", "description": "The specific APT group or threat actor profile to emulate (e.g., APT29, FIN7, Sandworm), including known TTPs and objective constraints.", "required": true}, {"name": "target_environment_architecture", "description": "Technical details of the target environment (e.g., Windows Active Directory, EDR solutions present, network segmentation, cloud presence).", "required": true}, {"name": "emulation_objectives", "description": "The primary goals of the emulation exercise (e.g., data exfiltration, ransomware deployment simulation, domain dominance).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "threat_actor_profile", "description": "The specific APT group or threat actor profile to emulate (e.g., APT29, FIN7, Sandworm), including known TTPs and objective constraints.", "required": true}, {"name": "target_environment_architecture", "description": "Technical details of the target environment (e.g., Windows Active Directory, EDR solutions present, network segmentation, cloud presence).", "required": true}, {"name": "emulation_objectives", "description": "The primary goals of the emulation exercise (e.g., data exfiltration, ransomware deployment simulation, domain dominance).", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "unsafe_input", "description": "Auto-extracted variable unsafe_input", "required": false}] -->
 ### Description
 Generates highly rigorous, tactically sound, and evasive adversary emulation campaigns based on specific Advanced Persistent Threat (APT) profiles and target environments.
 

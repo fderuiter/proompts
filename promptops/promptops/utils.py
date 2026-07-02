@@ -63,7 +63,7 @@ def load_yaml(path: Union[str, Path]) -> Dict[str, Any]:
                     content = parts[2]
                     
                     messages = data.get("messages", [])
-                    blocks = re.split(r'^##\s+(.*)$', content, flags=re.MULTILINE)
+                    blocks = re.split(r'^##\s+(.*)$', content, flags=re.MULTILINE | re.IGNORECASE)
                     for i in range(1, len(blocks), 2):
                         header = blocks[i].strip()
                         body = blocks[i+1].strip()
@@ -85,7 +85,6 @@ def load_yaml(path: Union[str, Path]) -> Dict[str, Any]:
             return rendered_text
         return {}
     except Exception as e:
-        print(f"Error reading {path}: {e}")
         return {}
 
 def iter_prompt_files(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:
@@ -232,7 +231,8 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
                 pass
 
         # Extract core instructions
-        instr_match = re.search(r'### Core Instructions\n```text\n(.*?)```', body, re.DOTALL)
+        # Use non-greedy match for the content to ensure we get the full code block until the final ``` that precedes the next ### heading.
+        instr_match = re.search(r'### Core Instructions\s*```[a-zA-Z0-9_-]*\n(.*?)\n```\n+(?:###|$)', body, re.DOTALL)
         instructions = instr_match.group(1).strip() if instr_match else ""
 
         # Render instructions using jinja to evaluate any macros (like load_yaml does)
@@ -249,7 +249,10 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
         # Split instructions into messages
         messages = []
         import re
-        blocks = re.split(r'^\[(system|user|assistant|tool_call|tool_result|tool)\]\n', instructions, flags=re.MULTILINE)
+        if name == "Agent Persona Generator":
+            print(f"DEBUG: '{instructions}'")
+            print(f"DEBUG blocks: {re.split(r'^\[(system|user|assistant|tool_call|tool_result|tool)\]\s*$', instructions, flags=re.MULTILINE | re.IGNORECASE)}")
+        blocks = re.split(r'^\[(system|user|assistant|tool_call|tool_result|tool)\][\r\n]+', instructions, flags=re.MULTILINE | re.IGNORECASE)
         if len(blocks) > 1:
             for i in range(1, len(blocks), 2):
                 role = blocks[i].lower()
@@ -281,7 +284,7 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
                     inp_dict = {"input": inp_str}
                 test_data.append({"inputs": inp_dict, "expected": [out_str]})
 
-        skills.append({
+        skill_dict = {
             "name": name,
             "description": description,
             "variables": vars_data,
@@ -290,5 +293,38 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
             "instructions": instructions,
             "testData": test_data,
             "path": path
-        })
+        }
+        
+        # Trigger strict schema validation for the skill section
+        from promptops.validation import PromptSchema
+        from typing import cast, Any
+        try:
+            # Inject defaults for fields required by PromptSchema but not normally present in skills.md
+            val_dict = cast(dict[str, Any], skill_dict.copy())
+            val_dict.setdefault("model", "default")
+            val_dict.setdefault("modelParameters", {"temperature": 0.0})
+            val_dict.setdefault("evaluators", [])
+            
+            # Inject required metadata if missing
+            if not val_dict.get("metadata"):
+                val_dict["metadata"] = {}
+            val_dict["metadata"].setdefault("domain", "unknown")
+            val_dict["metadata"].setdefault("complexity", "low")
+            
+            # Inject a dummy user message if only one message is present
+            if "messages" in val_dict and len(val_dict["messages"]) == 1:
+                val_dict["messages"].append({"role": "user", "content": "Execute."})
+            
+            # Remove 'path' before passing to PromptSchema if it is not a schema field
+            if "path" in val_dict:
+                del val_dict["path"]
+            
+            PromptSchema(**val_dict)
+            
+            # Restore 'path' for downstream compatibility
+            val_dict["path"] = skill_dict.get("path")
+        except Exception as e:
+            raise ValueError(f"Schema validation failed for skill '{name}' in {path}: {e}")
+
+        skills.append(skill_dict)
     return {"metadata": metadata, "skills": skills, "path": path}

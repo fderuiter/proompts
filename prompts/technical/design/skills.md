@@ -25,7 +25,7 @@ tags:
 ---
 
 ## Skill: AI Email Assistant Go/No-Go Vote
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "user_input", "description": "Auto-extracted variable user_input", "required": false}] -->
 ### Description
 Personas: UX designer, data scientist, CFO. Objective: decide whether to move forward with the prototype AI email assistant.
 
@@ -72,7 +72,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Heuristic-Evaluation Coach
-<!-- VALIDATION_METADATA: [{"name": "APP_NAME", "description": "name of the app being critiqued", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "APP_NAME", "description": "name of the app being critiqued", "required": true}, {"name": "app_name", "description": "Auto-extracted variable app_name", "required": false}] -->
 ### Description
 Guide a junior designer through heuristic evaluation of a mobile app.
 
@@ -117,7 +117,7 @@ Asserted Output: "Returns a 6-step checklist, a 5-row markdown table, and a 40-w
 ---
 
 ## Skill: System Design RFC Architect
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The feature request, problem statement, or system requirements.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The feature request, problem statement, or system requirements.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "requirements", "description": "Auto-extracted variable requirements", "required": false}] -->
 ### Description
 Draft a high-level Request for Comments (RFC) for a system design, focusing on trade-offs, security, and scalability.
 
