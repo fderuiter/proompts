@@ -5,21 +5,36 @@ import hashlib
 from pathlib import Path
 from typing import Tuple, List, Dict, Any
 
-from promptops.utils import iter_prompt_files, load_yaml, iter_skill_manifests, parse_skill_manifest
+from promptops.utils import iter_prompt_files, load_yaml, iter_skill_manifests, parse_skill_manifest, iter_workflow_files, WORKFLOWS_DIR
 from promptops.resolver import get_tool_name, resolve_skill_from_path
 
-def get_tools_info(prompts_dir: Path) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+def get_tools_info(prompts_dir: Path) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]]]:
     manifests = []
+    skills = []
+    
+    manifested_tool_names = set()
     
     for path in iter_skill_manifests(str(prompts_dir)):
         try:
             manifest = parse_skill_manifest(path)
             domain = manifest["metadata"].get("domain") or path.parent.name
             manifests.append({"path": str(path), "domain": domain, "skills": manifest["skills"]})
+            
+            for skill in manifest["skills"]:
+                tool_name = skill["name"]
+                tool_name = re.sub(r'[^a-zA-Z0-9_-]', '_', tool_name)
+                tool_name = re.sub(r'_+', '_', tool_name).strip('_')
+                manifested_tool_names.add(tool_name.lower())
+                skills.append({
+                    "original_name": skill["name"],
+                    "tool_name": tool_name,
+                    "path": str(path)
+                })
         except Exception:
             pass
 
     tools_info = []
+    prompts = []
     for path in iter_prompt_files(str(prompts_dir)):
         try:
             content = load_yaml(str(path))
@@ -40,6 +55,17 @@ def get_tools_info(prompts_dir: Path) -> Tuple[List[Dict[str, Any]], List[Dict[s
                     overriding_manifest = str(skills_md_path)
             except Exception:
                 pass
+                
+        if not overridden and tool_name.lower() in manifested_tool_names and skills_md_path.exists():
+             overridden = True
+             overriding_manifest = str(skills_md_path)
+             
+        if not overridden:
+            prompts.append({
+                "original_name": original_name,
+                "tool_name": tool_name,
+                "path": str(path)
+            })
             
         tools_info.append({
             "path": str(path),
@@ -49,8 +75,22 @@ def get_tools_info(prompts_dir: Path) -> Tuple[List[Dict[str, Any]], List[Dict[s
             "overridden": overridden,
             "overriding_manifest": overriding_manifest
         })
+        
+    workflows = []
+    for path in iter_workflow_files(str(WORKFLOWS_DIR)):
+        try:
+            content = load_yaml(str(path))
+        except Exception:
+            continue
+            
+        original_name, tool_name = get_tool_name(path, content)
+        workflows.append({
+            "original_name": original_name,
+            "tool_name": tool_name,
+            "path": str(path)
+        })
     
-    return tools_info, manifests
+    return tools_info, manifests, prompts, skills, workflows
 
 def generate_config(prompts_dir: str):
     root = Path(prompts_dir).resolve().parent
@@ -73,9 +113,22 @@ def generate_config(prompts_dir: str):
 
 def discovery_report(prompts_dir: str):
     prompts_dir_path = Path(prompts_dir).resolve()
-    tools_info, manifests = get_tools_info(prompts_dir_path)
+    tools_info, manifests, prompts, skills, workflows = get_tools_info(prompts_dir_path)
     
     print("=== Discovery Report ===")
+    
+    print("\n--- Workflows ---")
+    for t in sorted(workflows, key=lambda x: x["tool_name"]):
+        print(f"- {t['tool_name']}")
+        
+    print("\n--- Prompts ---")
+    for t in sorted(prompts, key=lambda x: x["tool_name"]):
+        print(f"- {t['tool_name']}")
+        
+    print("\n--- Skills ---")
+    for t in sorted(skills, key=lambda x: x["tool_name"]):
+        print(f"- {t['tool_name']}")
+        
     print("\n--- Tool Name Transformations ---")
     for t in sorted(tools_info, key=lambda x: x["original_name"]):
         if t["tool_name"] != t["original_name"]:
