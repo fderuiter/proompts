@@ -13,23 +13,19 @@ def simulate_prompt(prompt_file: str, data_file: str, chaos_mode: bool = False, 
             path_obj = Path(prompt_file)
             skills_md = path_obj.parent / "skills.md"
             if skills_md.exists():
-                from promptops.utils import parse_skill_manifest
+                from promptops.utils import parse_skill_manifest, resolve_skill_from_path
                 manifest = parse_skill_manifest(skills_md)
+                skills_list = manifest.get("skills", [])
                 
-                stem = path_obj.name.replace('.prompt.md', '').replace('.prompt.yml', '')
-                stem_clean = re.sub(r'^\d+_', '', stem).replace('_', ' ').lower()
-                
-                for skill in manifest.get("skills", []):
-                    skill_name_clean = skill["name"].lower().replace('_', ' ')
-                    if stem_clean in skill_name_clean or skill_name_clean in stem_clean or skill["name"].replace(' ', '_').lower() in stem:
-                        content = {
-                            "name": skill["name"],
-                            "description": skill.get("description", ""),
-                            "variables": skill.get("variables", []),
-                            "messages": [{"role": "system", "content": skill.get("instructions", "")}],
-                            "testData": skill.get("testData", [])
-                        }
-                        break
+                best_match = resolve_skill_from_path(path_obj, skills_list)
+                if best_match:
+                    content = {
+                        "name": best_match["name"],
+                        "description": best_match.get("description", ""),
+                        "variables": best_match.get("variables", []),
+                        "messages": [{"role": "system", "content": best_match.get("instructions", "")}],
+                        "testData": best_match.get("testData", [])
+                    }
         
         if not content:
             console.error(f"Failed to load prompt: {prompt_file} (Not found in files or manifest)")
