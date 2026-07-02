@@ -147,6 +147,14 @@ class PromptSchema(BaseModel):
             try:
                 ast = env.parse(content_str)
                 vars_in_text = jinja2.meta.find_undeclared_variables(ast)
+                
+                # Extract variables wrapped in XML tags
+                ignore_tags = {"br", "p", "b", "i", "div", "span", "ul", "li", "ol", "html", "body", "head", "title", "table", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "a", "img", "strong", "em", "hr", "meta", "link", "script", "style", "svg", "path"}
+                xml_tags = re.findall(r'<([a-zA-Z0-9_]+)>', content_str)
+                for tag in xml_tags:
+                    if tag.lower() not in ignore_tags:
+                        vars_in_text.add(tag)
+                        
                 found_vars.update(vars_in_text)
             except jinja2.exceptions.TemplateSyntaxError as e:
                 raise ValueError(f"Jinja2 syntax error: {e.message} at line {e.lineno}")
