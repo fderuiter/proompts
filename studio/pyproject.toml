@@ -5,7 +5,6 @@ description = "Proompts Studio UI"
 dependencies = [
     "promptops",
     "tools",
-    "proompts-guard",
     "streamlit>=1.30.0",
     "pandas",
     "graphviz"

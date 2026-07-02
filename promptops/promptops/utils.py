@@ -170,7 +170,7 @@ def get_tool_name_mcp(path: Path, content: dict) -> str:
 def extract_template_vars(content: Dict[str, Any]) -> List[str]:
     found: Set[str] = set()
     env = Environment()
-    ignore_tags = {"br", "p", "b", "i", "div", "span", "ul", "li", "ol", "html", "body", "head", "title", "table", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "a", "img", "strong", "em", "hr", "meta", "link", "script", "style", "svg", "path"}
+    ignore_tags = {"br", "p", "b", "i", "div", "span", "ul", "li", "ol", "html", "body", "head", "title", "table", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "a", "img", "strong", "em", "hr", "meta", "link", "script", "style", "svg", "path", "text", "aegis"}
     for msg in content.get("messages", []):
         text = msg.get("content", "")
         if isinstance(text, str):
