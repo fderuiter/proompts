@@ -135,8 +135,6 @@ class PromptSchema(BaseModel):
         found_vars: set[str] = set()
         invalid_vars: set[str] = set()
         
-        env = jinja2.Environment()
-        
         for msg in self.messages:
             content_str = ""
             if isinstance(msg.content, str):

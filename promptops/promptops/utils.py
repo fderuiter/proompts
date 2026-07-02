@@ -166,14 +166,15 @@ def get_tool_name_mcp(path: Path, content: dict) -> str:
     _, sanitized = get_tool_name(path, content)
     return sanitized
 
+_JINJA_ENV = Environment()
+_IGNORE_XML_TAGS = {"br", "p", "b", "i", "div", "span", "ul", "li", "ol", "html", "body", "head", "title", "table", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "a", "img", "strong", "em", "hr", "meta", "link", "script", "style", "svg", "path", "text"}
+
 def extract_vars_from_text(text: str) -> Set[str]:
     """Extracts Jinja and XML variables from a single text string."""
     found: Set[str] = set()
-    env = Environment()
-    ignore_tags = {"br", "p", "b", "i", "div", "span", "ul", "li", "ol", "html", "body", "head", "title", "table", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "a", "img", "strong", "em", "hr", "meta", "link", "script", "style", "svg", "path", "text"}
     
     try:
-        ast = env.parse(text)
+        ast = _JINJA_ENV.parse(text)
         vars_in_text = meta.find_undeclared_variables(ast)
         found.update(vars_in_text)
     except Exception as e:
@@ -182,7 +183,7 @@ def extract_vars_from_text(text: str) -> Set[str]:
     # Extract variables wrapped in XML tags
     xml_tags = re.findall(r'<([a-zA-Z0-9_]+)>', text)
     for tag in xml_tags:
-        if tag.lower() not in ignore_tags:
+        if tag.lower() not in _IGNORE_XML_TAGS:
             found.add(tag)
             
     return found
