@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 from dataclasses import dataclass
 from typing import List, Dict, Optional, Any
-from promptops.utils import load_yaml, derive_prompt_category, iter_prompt_files, iter_workflow_files
+from promptops.utils import load_yaml, derive_category, iter_prompt_files, iter_workflow_files, derive_title
 import re
 
 @dataclass(frozen=True)
@@ -13,16 +13,6 @@ class DocItem:
     item_type: str
     description: str = ""
     graph_mermaid: Optional[str] = None
-
-class FileParser:
-    RE_NUMERIC_PREFIX = re.compile(r'^\d+_')
-    @staticmethod
-    def derive_title(path: Path, data: Dict[str, Any]) -> str:
-        if name := data.get('name') or data.get('title'):
-            return str(name).strip()
-        stem = path.stem.replace('.workflow', '')
-        clean_name = FileParser.RE_NUMERIC_PREFIX.sub('', stem)
-        return clean_name.replace('_', ' ').title()
 
 class WorkflowGrapher:
     RE_STEPS = re.compile(r'steps\.(\w+)\.output')
@@ -71,7 +61,7 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
     
     for path in iter_prompt_files(str(prompts_path)):
         data = load_yaml(str(path))
-        title = FileParser.derive_title(path, data)
+        title = derive_title(path, data)
         desc = data.get('description', 'No description provided.')
         
         rel_to_prompts = path.relative_to(prompts_path)
@@ -95,7 +85,7 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
         items.append(DocItem(
             title=title,
             path=output_file,
-            category=derive_prompt_category(path, prompts_path, data),
+            category=derive_category(path, prompts_path, data),
             item_type='prompt'
         ))
         
@@ -103,7 +93,7 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
     if workflows_path.exists():
         for path in iter_workflow_files(str(workflows_path)):
             data = load_yaml(str(path))
-            title = FileParser.derive_title(path, data)
+            title = derive_title(path, data)
             desc = data.get('description', 'No description provided.')
             mermaid = WorkflowGrapher.generate(data)
             
@@ -122,11 +112,7 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
             content = f"---\ntitle: {title}\n---\n\n# {title}\n\n{desc}\n\n{mermaid_block}\n{link_md}\n"
             output_file.write_text(content, encoding='utf-8')
             
-            try:
-                rel = path.relative_to(workflows_path)
-                category = rel.parts[0].replace('_', ' ').title() if len(rel.parts) > 1 else "Uncategorized"
-            except:
-                category = "Uncategorized"
+            category = derive_category(path, workflows_path, data)
                 
             items.append(DocItem(
                 title=title,

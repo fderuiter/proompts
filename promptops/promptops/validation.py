@@ -49,7 +49,7 @@ class Message(BaseModel):
         return self
 
 class ModelParameters(BaseModel):
-    temperature: float = Field(...)
+    temperature: float = Field(..., ge=0.0, le=2.0, description="Controls randomness (0.0-2.0)")
     max_tokens: Optional[int] = Field(None)
     top_p: Optional[float] = Field(None)
     frequency_penalty: Optional[float] = Field(None)
@@ -61,8 +61,10 @@ class InputVariable(BaseModel):
     required: bool = Field(True)
     default: Optional[Any] = Field(None)
 
-class PromptMetadata(BaseModel):
+class BaseMetadata(BaseModel):
     domain: str = Field(...)
+
+class PromptMetadata(BaseMetadata):
     complexity: ComplexityLevel = Field(...)
     tags: List[str] = Field([])
     requires_context: bool = Field(False)
@@ -205,8 +207,7 @@ class WorkflowStep(BaseModel):
     map_inputs: Dict[str, Any] = Field(...)
     next: Optional[Union[str, List[Union[str, WorkflowEdge]]]] = Field(None)
 
-class WorkflowMetadata(BaseModel):
-    domain: str = Field(...)
+class WorkflowMetadata(BaseMetadata):
     topic: str = Field(...)
 
 class WorkflowSchema(BaseModel):
