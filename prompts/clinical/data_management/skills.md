@@ -542,7 +542,7 @@ Asserted Output: "| Source Variable | Target Variable | Transformation |
 ---
 
 ## Skill: Data De-identification
-<!-- VALIDATION_METADATA: [{"name": "code_key_logic", "description": "The source code to analyze or modify", "required": true}, {"name": "identifiers_list", "description": "Code key generation logic: `{{ code_key_logic }}`", "required": true}, {"name": "raw_data", "description": "HIPAA eighteen direct identifiers list: `{{ identifiers_list }}`", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "code_key_logic", "description": "The source code to analyze or modify", "required": true}, {"name": "identifiers_list", "description": "Code key generation logic: `{{ code_key_logic }}`", "required": true}, {"name": "raw_data", "description": "HIPAA eighteen direct identifiers list: `{{ identifiers_list }}`", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 De-identify patient-level data according to HIPAA Privacy Rule.
 
@@ -664,7 +664,7 @@ Asserted Output: "Data Management Plan
 ---
 
 ## Skill: eTMF Artifact Classifier
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "document_text", "description": "Auto-extracted variable document_text", "required": false}, {"name": "tmf_metadata", "description": "Auto-extracted variable tmf_metadata", "required": false}] -->
 ### Description
 Read document text and suggest appropriate eTMF artifact classification and metadata assignments for incoming trial documents.
 
@@ -752,7 +752,7 @@ Asserted Output: "Identifies missing version controls."
 ---
 
 ## Skill: Medical Coding and Reconciliation Assistant
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "clinical_data", "description": "Auto-extracted variable clinical_data", "required": false}] -->
 ### Description
 Automatically predict and apply medical terms to clinical data, and perform automated data reconciliation and query resolution within EDC builds.
 

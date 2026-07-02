@@ -156,7 +156,7 @@ Asserted Output: "Expected output as per instructions."
 ---
 
 ## Skill: Food Safety Audit Reporting (Regulatory)
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Draft a regulatory audit report for an eligible entity after a food safety audit.
 

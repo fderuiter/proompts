@@ -18,7 +18,7 @@ tags:
 ---
 
 ## Skill: SAE and Safety Reporting
-<!-- VALIDATION_METADATA: [{"name": "sae_report", "description": "The sae report to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "sae_report", "description": "The sae report to use for this prompt", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Analyze SAEs for expedited reporting criteria.
 

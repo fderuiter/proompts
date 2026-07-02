@@ -71,7 +71,7 @@ Asserted Output: "- **Metrics Summary Table**
 ---
 
 ## Skill: Real-Time Adjudication Visibility Dashboard
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The input query from the user, containing any specific constraints or parameters.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The input query from the user, containing any specific constraints or parameters.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Design a dashboard that provides real-time visibility into clinical endpoint adjudication workflows.
 

@@ -161,7 +161,7 @@ Asserted Output: "{
 ---
 
 ## Skill: Protocol Deviation Reporting
-<!-- VALIDATION_METADATA: [{"name": "trial_logs", "description": "The clinical trial logs to scan for deviations.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "trial_logs", "description": "The clinical trial logs to scan for deviations.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Identify and report protocol deviations from clinical trial logs.
 
@@ -254,7 +254,7 @@ Asserted Output: "{{ macros.safety_refusal() }}
 ---
 
 ## Skill: SOP and TMF Document Synthesis
-<!-- VALIDATION_METADATA: [{"name": "documents", "description": "The documents to use for this prompt", "required": true}, {"name": "query", "description": "The user's question or request", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "documents", "description": "The documents to use for this prompt", "required": true}, {"name": "query", "description": "The user's question or request", "required": true}, {"name": "context_documents", "description": "Auto-extracted variable context_documents", "required": false}] -->
 ### Description
 Provide a quick retrieval and synthesis of information from specific internal SOPs and TMF documents to answer compliance or process queries.
 

@@ -303,7 +303,7 @@ Asserted Output: ""
 ---
 
 ## Skill: Clinical Trial Protocol Synopsis Architect
-<!-- VALIDATION_METADATA: [{"name": "study_parameters", "description": "Raw study design parameters including phase, objectives, endpoints, population, and statistical assumptions.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "study_parameters", "description": "Raw study design parameters including phase, objectives, endpoints, population, and statistical assumptions.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Synthesizes a comprehensive, regulatory-compliant Clinical Trial Protocol Synopsis from raw study design parameters, objectives, and statistical assumptions.
 
@@ -407,7 +407,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Data Safety Monitoring Board Report Synthesizer
-<!-- VALIDATION_METADATA: [{"name": "trial_protocol_summary", "description": "A brief summary of the trial protocol, including primary and secondary endpoints.", "required": true}, {"name": "unblinded_safety_data", "description": "Cumulative unblinded safety data, including Adverse Events (AEs), Serious Adverse Events (SAEs), and laboratory abnormalities by treatment arm.", "required": true}, {"name": "unblinded_efficacy_data", "description": "Interim unblinded efficacy data, including primary endpoint results and any key secondary endpoints by treatment arm.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "trial_protocol_summary", "description": "A brief summary of the trial protocol, including primary and secondary endpoints.", "required": true}, {"name": "unblinded_safety_data", "description": "Cumulative unblinded safety data, including Adverse Events (AEs), Serious Adverse Events (SAEs), and laboratory abnormalities by treatment arm.", "required": true}, {"name": "unblinded_efficacy_data", "description": "Interim unblinded efficacy data, including primary endpoint results and any key secondary endpoints by treatment arm.", "required": true}, {"name": "formatting_constraints", "description": "Auto-extracted variable formatting_constraints", "required": false}, {"name": "inputs", "description": "Auto-extracted variable inputs", "required": false}, {"name": "instructions", "description": "Auto-extracted variable instructions", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Synthesizes unblinded clinical trial safety and efficacy data into a comprehensive, confidential report for Data Safety Monitoring Board (DSMB) review.
 
@@ -484,7 +484,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: SAE Patient Narrative Drafter
-<!-- VALIDATION_METADATA: [{"name": "trial_protocol_summary", "description": "Summary of the trial protocol, including treatment arms and endpoints.", "required": true}, {"name": "patient_data", "description": "Raw clinical data for the patient experiencing the SAE.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "trial_protocol_summary", "description": "Summary of the trial protocol, including treatment arms and endpoints.", "required": true}, {"name": "patient_data", "description": "Raw clinical data for the patient experiencing the SAE.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Synthesizes complex clinical trial data into regulatory-compliant Serious Adverse Event (SAE) patient narratives for Clinical Study Reports (CSR) per ICH E3 guidelines.
 
@@ -572,7 +572,7 @@ Asserted Output: ""
 ---
 
 ## Skill: Protocol Amendment Rationale Drafter
-<!-- VALIDATION_METADATA: [{"name": "proposed_changes", "description": "The proposed changes to the clinical trial protocol.", "required": true}, {"name": "scientific_justification", "description": "The scientific and clinical reasons driving the proposed changes.", "required": true}, {"name": "safety_impact", "description": "Any anticipated impact of the changes on patient safety or ethical considerations.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "proposed_changes", "description": "The proposed changes to the clinical trial protocol.", "required": true}, {"name": "scientific_justification", "description": "The scientific and clinical reasons driving the proposed changes.", "required": true}, {"name": "safety_impact", "description": "Any anticipated impact of the changes on patient safety or ethical considerations.", "required": true}, {"name": "formatting_constraints", "description": "Auto-extracted variable formatting_constraints", "required": false}, {"name": "inputs", "description": "Auto-extracted variable inputs", "required": false}, {"name": "instructions", "description": "Auto-extracted variable instructions", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Drafts scientifically and ethically sound rationales for clinical trial protocol amendments.
 
@@ -779,7 +779,7 @@ Asserted Output: "{"error": "unsafe", "reason": "Violation of regulatory draftin
 ---
 
 ## Skill: Pediatric Investigational Plan (PIP) Architect
-<!-- VALIDATION_METADATA: [{"name": "adult_clinical_data", "description": "Summary of existing adult clinical data (pharmacokinetics, efficacy, safety).", "required": true}, {"name": "mechanism_of_action", "description": "The proposed mechanism of action for the investigational product.", "required": true}, {"name": "target_pediatric_condition", "description": "The specific pediatric condition or disease targeted for the indication.", "required": true}, {"name": "proposed_pediatric_studies", "description": "Outline of proposed pediatric studies, including PK/PD modeling, safety, and efficacy trials.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "adult_clinical_data", "description": "Summary of existing adult clinical data (pharmacokinetics, efficacy, safety).", "required": true}, {"name": "mechanism_of_action", "description": "The proposed mechanism of action for the investigational product.", "required": true}, {"name": "target_pediatric_condition", "description": "The specific pediatric condition or disease targeted for the indication.", "required": true}, {"name": "proposed_pediatric_studies", "description": "Outline of proposed pediatric studies, including PK/PD modeling, safety, and efficacy trials.", "required": true}, {"name": "formatting_constraints", "description": "Auto-extracted variable formatting_constraints", "required": false}, {"name": "inputs", "description": "Auto-extracted variable inputs", "required": false}, {"name": "instructions", "description": "Auto-extracted variable instructions", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Synthesizes scientific rationale and clinical development strategy into a comprehensive, EMA-compliant Pediatric Investigational Plan (PIP) application.
 
@@ -853,7 +853,7 @@ Asserted Output: "## 1. Scientific Rationale and Unmet Medical Need"
 ---
 
 ## Skill: eu_mdr_clinical_evaluation_report_architect
-<!-- VALIDATION_METADATA: [{"name": "device_data", "description": "Comprehensive data set including device description, intended purpose, clinical data, pre-clinical data, and post-market surveillance (PMS) data.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "device_data", "description": "Comprehensive data set including device description, intended purpose, clinical data, pre-clinical data, and post-market surveillance (PMS) data.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Synthesizes complex clinical, pre-clinical, and post-market data into a regulatory-compliant Clinical Evaluation Report (CER) strictly aligned with EU MDR (2017/745) and MEDDEV 2.7/1 Rev 4 requirements.
 
@@ -947,7 +947,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Regulatory Query Response Drafter
-<!-- VALIDATION_METADATA: [{"name": "health_authority_query", "description": "The exact text of the query or Information Request (IR) received from the regulatory agency.", "required": true}, {"name": "clinical_source_data", "description": "Relevant excerpts from clinical study reports, datasets, or literature to base the response on.", "required": true}, {"name": "previous_submission_context", "description": "Context on the previously submitted dossier or document that triggered the query.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "health_authority_query", "description": "The exact text of the query or Information Request (IR) received from the regulatory agency.", "required": true}, {"name": "clinical_source_data", "description": "Relevant excerpts from clinical study reports, datasets, or literature to base the response on.", "required": true}, {"name": "previous_submission_context", "description": "Context on the previously submitted dossier or document that triggered the query.", "required": true}, {"name": "formatting_constraints", "description": "Auto-extracted variable formatting_constraints", "required": false}, {"name": "inputs", "description": "Auto-extracted variable inputs", "required": false}, {"name": "instructions", "description": "Auto-extracted variable instructions", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Drafts precise, evidence-backed, and regulatory-compliant responses to Health Authority (e.g., FDA/EMA) Information Requests (IRs) or queries regarding clinical submissions.
 
@@ -1026,7 +1026,7 @@ Asserted Output: "{"error": "insufficient_source_data"}"
 ---
 
 ## Skill: Development Safety Update Report Architect
-<!-- VALIDATION_METADATA: [{"name": "safety_data", "type": "string", "description": "Cumulative safety data including serious adverse events (SAEs), line listings, and summary tabulations.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "safety_data", "type": "string", "description": "Cumulative safety data including serious adverse events (SAEs), line listings, and summary tabulations.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Synthesizes cumulative safety data into a comprehensive, regulatory-compliant Development Safety Update Report (DSUR) per ICH E2F guidelines.
 
@@ -1122,7 +1122,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Investigator's Brochure Safety Update Architect
-<!-- VALIDATION_METADATA: [{"name": "current_rsi", "description": "The existing Reference Safety Information (RSI) from the current version of the Investigator's Brochure.", "required": true}, {"name": "cumulative_safety_data", "description": "New clinical safety data, including Serious Adverse Events (SAEs) and Suspected Unexpected Serious Adverse Reactions (SUSARs) from the reporting period.", "required": true}, {"name": "nonclinical_findings", "description": "Recent nonclinical (e.g., toxicology, pharmacology) safety findings.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "current_rsi", "description": "The existing Reference Safety Information (RSI) from the current version of the Investigator's Brochure.", "required": true}, {"name": "cumulative_safety_data", "description": "New clinical safety data, including Serious Adverse Events (SAEs) and Suspected Unexpected Serious Adverse Reactions (SUSARs) from the reporting period.", "required": true}, {"name": "nonclinical_findings", "description": "Recent nonclinical (e.g., toxicology, pharmacology) safety findings.", "required": true}, {"name": "formatting_constraints", "description": "Auto-extracted variable formatting_constraints", "required": false}, {"name": "inputs", "description": "Auto-extracted variable inputs", "required": false}, {"name": "instructions", "description": "Auto-extracted variable instructions", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Synthesizes cumulative clinical and nonclinical safety data into an updated Investigator's Brochure (IB) and strictly defines Reference Safety Information (RSI) for expectedness assessments.
 

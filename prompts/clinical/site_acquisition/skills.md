@@ -101,7 +101,7 @@ Asserted Output: "sIRB Plan
 ---
 
 ## Skill: Site Selection and Enrollment Forecaster
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "feasibility_data", "description": "Auto-extracted variable feasibility_data", "required": false}] -->
 ### Description
 Analyze historical site performance and patient demographics to rank investigative sites and predict enrollment timelines.
 

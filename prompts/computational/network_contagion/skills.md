@@ -20,7 +20,7 @@ tags:
 ---
 
 ## Skill: algorithmic_social_contagion_modeler
-<!-- VALIDATION_METADATA: [{"name": "network_topology", "type": "string", "description": "Description of the network structure (e.g., scale-free, small-world)"}, {"name": "contagion_parameters", "type": "string", "description": "JSON defining transmission rate, recovery rate, and algorithmic amplification factors"}, {"name": "population_size", "type": "string", "description": "Number of nodes in the simulated digital population"}] -->
+<!-- VALIDATION_METADATA: [{"name": "network_topology", "type": "string", "description": "Description of the network structure (e.g., scale-free, small-world)"}, {"name": "contagion_parameters", "type": "string", "description": "JSON defining transmission rate, recovery rate, and algorithmic amplification factors"}, {"name": "population_size", "type": "string", "description": "Number of nodes in the simulated digital population"}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Models the epidemiological spread of algorithmic misinformation and behavioral contagion across large-scale social networks using SEIR compartmental models and network centrality measures.
 

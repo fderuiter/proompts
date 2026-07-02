@@ -129,7 +129,7 @@ Asserted Output: "M&A Analysis"
 ---
 
 ## Skill: Investor FAQ Generation
-<!-- VALIDATION_METADATA: [{"name": "documents", "description": "`{{ documents }}`", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "documents", "description": "`{{ documents }}`", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Generate an FAQ for a bearish investor based on press release and 10-K.
 
@@ -175,7 +175,7 @@ Asserted Output: "Investor FAQ"
 ---
 
 ## Skill: Earnings Call Script Prep
-<!-- VALIDATION_METADATA: [{"name": "challenge", "description": "The challenge to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "challenge", "description": "The challenge to use for this prompt", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Prepare for tough analyst questions on an earnings call.
 
@@ -257,7 +257,7 @@ None provided.
 ---
 
 ## Skill: Liquidity Stress Test
-<!-- VALIDATION_METADATA: [{"name": "drop_percentage", "description": "The drop percentage to use for this prompt", "required": true}, {"name": "forecast", "description": "`{{ forecast }}`", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "drop_percentage", "description": "The drop percentage to use for this prompt", "required": true}, {"name": "forecast", "description": "`{{ forecast }}`", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Run a stress test on cash flow forecast assuming a drop in collections.
 
@@ -311,7 +311,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Board Deck Narrative Generation
-<!-- VALIDATION_METADATA: [{"name": "context", "description": "Background context or supporting information", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "context", "description": "Background context or supporting information", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Draft the 'CFO Commentary' slide for a Board meeting.
 

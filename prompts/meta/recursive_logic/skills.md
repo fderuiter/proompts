@@ -18,7 +18,7 @@ tags:
 ---
 
 ## Skill: Non-Monotonic Self-Correction Meta-Reasoner
-<!-- VALIDATION_METADATA: [{"name": "complex_problem_statement", "description": "The underlying complex problem requiring non-monotonic reasoning and dynamic hypothesis updating.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "complex_problem_statement", "description": "The underlying complex problem requiring non-monotonic reasoning and dynamic hypothesis updating.", "required": true}, {"name": "epistemic_update", "description": "Auto-extracted variable epistemic_update", "required": false}, {"name": "final_synthesis", "description": "Auto-extracted variable final_synthesis", "required": false}, {"name": "reasoning_graph", "description": "Auto-extracted variable reasoning_graph", "required": false}] -->
 ### Description
 An advanced meta-reasoning prompt that mandates a non-monotonic epistemic graph (Graph of Operations / Tree of Thoughts topology) to force dynamic self-correction, hypothesis invalidation, and iterative refinement prior to synthesis.
 

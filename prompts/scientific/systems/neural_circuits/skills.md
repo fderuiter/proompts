@@ -20,7 +20,7 @@ tags:
 ---
 
 ## Skill: central_pattern_generator_circuit_modeler
-<!-- VALIDATION_METADATA: [{"name": "circuit_topology", "description": "Description of the network architecture (e.g., reciprocal inhibition, ring attractor)."}, {"name": "neuron_type", "description": "The type of neuronal model to employ (e.g., Hodgkin-Huxley, Morris-Lecar)."}, {"name": "synaptic_dynamics", "description": "Details on synaptic transmission (e.g., graded, spike-mediated, short-term depression)."}, {"name": "neuromodulation_target", "description": "Specific ionic currents or synaptic parameters targeted for neuromodulatory control."}] -->
+<!-- VALIDATION_METADATA: [{"name": "circuit_topology", "description": "Description of the network architecture (e.g., reciprocal inhibition, ring attractor)."}, {"name": "neuron_type", "description": "The type of neuronal model to employ (e.g., Hodgkin-Huxley, Morris-Lecar)."}, {"name": "synaptic_dynamics", "description": "Details on synaptic transmission (e.g., graded, spike-mediated, short-term depression)."}, {"name": "neuromodulation_target", "description": "Specific ionic currents or synaptic parameters targeted for neuromodulatory control."}, {"name": "important_security_constraints", "description": "Auto-extracted variable important_security_constraints", "required": false}, {"name": "input", "description": "Auto-extracted variable input", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Mathematically architects and simulates biophysical Central Pattern Generator (CPG) circuits and half-center oscillatory dynamics.
 

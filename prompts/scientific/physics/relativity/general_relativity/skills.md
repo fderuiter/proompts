@@ -80,7 +80,7 @@ Asserted Output: "\gamma_{ij}"
 ---
 
 ## Skill: Black Hole Perturbation Teukolsky Architect
-<!-- VALIDATION_METADATA: [{"name": "background_metric", "description": "The explicit mathematical form or description of the spacetime background metric (e.g., Kerr metric).", "required": true}, {"name": "perturbation_spin_weight", "description": "The spin weight of the perturbing field (e.g., s=0 for scalar, s=\\pm 1 for electromagnetic, s=\\pm 2 for gravitational).", "required": true}, {"name": "coordinate_system", "description": "The coordinate system utilized for the derivation (e.g., Boyer-Lindquist, advanced Eddington-Finkelstein).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "background_metric", "description": "The explicit mathematical form or description of the spacetime background metric (e.g., Kerr metric).", "required": true}, {"name": "perturbation_spin_weight", "description": "The spin weight of the perturbing field (e.g., s=0 for scalar, s=\\pm 1 for electromagnetic, s=\\pm 2 for gravitational).", "required": true}, {"name": "coordinate_system", "description": "The coordinate system utilized for the derivation (e.g., Boyer-Lindquist, advanced Eddington-Finkelstein).", "required": true}, {"name": "user_input", "description": "Auto-extracted variable user_input", "required": false}] -->
 ### Description
 Systematically derives the Teukolsky master equation for gravitational, electromagnetic, and scalar perturbations on a Kerr black hole background using the Newman-Penrose formalism.
 
@@ -133,7 +133,7 @@ Asserted Output: "\phi_2"
 ---
 
 ## Skill: adm_spacetime_decomposition_architect
-<!-- VALIDATION_METADATA: [{"name": "spacetime_metric", "description": "The explicit mathematical form of the 4-dimensional Lorentzian metric tensor to be decomposed.", "required": true}, {"name": "foliation_parameter", "description": "The time coordinate or scalar field defining the spacelike hypersurfaces.", "required": true}, {"name": "gauge_condition", "description": "The specific gauge choices for the lapse function and shift vector (e.g., maximal slicing, zero shift).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "spacetime_metric", "description": "The explicit mathematical form of the 4-dimensional Lorentzian metric tensor to be decomposed.", "required": true}, {"name": "foliation_parameter", "description": "The time coordinate or scalar field defining the spacelike hypersurfaces.", "required": true}, {"name": "gauge_condition", "description": "The specific gauge choices for the lapse function and shift vector (e.g., maximal slicing, zero shift).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Conducts rigorous 3+1 Arnowitt-Deser-Misner (ADM) decomposition of spacetime metrics, extracting lapse, shift, and spatial metrics, and derives the associated Hamiltonian and momentum constraints.
 

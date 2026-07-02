@@ -28,7 +28,7 @@ tags:
 ---
 
 ## Skill: calculus_of_constructions_proof_architect
-<!-- VALIDATION_METADATA: [{"name": "TARGET_PROPOSITION", "type": "string", "description": "The theorem or proposition to be proven within the CoC framework, formatted in LaTeX."}, {"name": "TYPE_ENVIRONMENT", "type": "string", "description": "The ambient type universe hierarchy and specific types, terms, or axioms in scope."}] -->
+<!-- VALIDATION_METADATA: [{"name": "TARGET_PROPOSITION", "type": "string", "description": "The theorem or proposition to be proven within the CoC framework, formatted in LaTeX."}, {"name": "TYPE_ENVIRONMENT", "type": "string", "description": "The ambient type universe hierarchy and specific types, terms, or axioms in scope."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "target_proposition", "description": "Auto-extracted variable target_proposition", "required": false}, {"name": "type_environment", "description": "Auto-extracted variable type_environment", "required": false}] -->
 ### Description
 Formulates mathematically rigorous proofs and type derivations utilizing the Calculus of Constructions (CoC).
 
@@ -219,7 +219,7 @@ Asserted Output: ""
 ---
 
 ## Skill: non_standard_analysis_hyperreal_architect
-<!-- VALIDATION_METADATA: [{"name": "THEOREM_STATEMENT", "type": "string", "description": "The theorem or proposition to be proven within the Non-Standard Analysis framework, formatted in LaTeX."}, {"name": "FORMAL_SYSTEM_CONTEXT", "type": "string", "description": "The ambient formal system context, including specific infinitesimals, unlimited numbers, or ultrafilter properties."}] -->
+<!-- VALIDATION_METADATA: [{"name": "THEOREM_STATEMENT", "type": "string", "description": "The theorem or proposition to be proven within the Non-Standard Analysis framework, formatted in LaTeX."}, {"name": "FORMAL_SYSTEM_CONTEXT", "type": "string", "description": "The ambient formal system context, including specific infinitesimals, unlimited numbers, or ultrafilter properties."}, {"name": "context", "description": "Auto-extracted variable context", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "theorem", "description": "Auto-extracted variable theorem", "required": false}] -->
 ### Description
 Formulates highly rigorous derivations utilizing Non-Standard Analysis and Hyperreal Numbers (*R), employing the Transfer Principle and Łoś's Theorem for advanced theorem proving.
 

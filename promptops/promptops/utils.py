@@ -297,9 +297,10 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
         
         # Trigger strict schema validation for the skill section
         from promptops.validation import PromptSchema
+        from typing import cast, Any
         try:
             # Inject defaults for fields required by PromptSchema but not normally present in skills.md
-            val_dict = skill_dict.copy()
+            val_dict = cast(dict[str, Any], skill_dict.copy())
             val_dict.setdefault("model", "default")
             val_dict.setdefault("modelParameters", {"temperature": 0.0})
             val_dict.setdefault("evaluators", [])
@@ -314,7 +315,14 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
             if "messages" in val_dict and len(val_dict["messages"]) == 1:
                 val_dict["messages"].append({"role": "user", "content": "Execute."})
             
+            # Remove 'path' before passing to PromptSchema if it is not a schema field
+            if "path" in val_dict:
+                del val_dict["path"]
+            
             PromptSchema(**val_dict)
+            
+            # Restore 'path' for downstream compatibility
+            val_dict["path"] = skill_dict.get("path")
         except Exception as e:
             raise ValueError(f"Schema validation failed for skill '{name}' in {path}: {e}")
 

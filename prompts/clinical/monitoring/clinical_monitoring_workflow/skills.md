@@ -64,7 +64,7 @@ Asserted Output: "Summary of Critical Gaps"
 ---
 
 ## Skill: Risk-Based Site Performance Dashboard
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "site_data", "description": "Auto-extracted variable site_data", "required": false}] -->
 ### Description
 You are an experienced **Clinical Monitoring Manager** at a global CRO overseeing several Phase II oncology trials.
 

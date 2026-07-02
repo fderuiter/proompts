@@ -19,7 +19,7 @@ tags:
 ---
 
 ## Skill: hidden_markov_model_architect
-<!-- VALIDATION_METADATA: [{"name": "observation_sequence", "description": "The sequence of observed data vectors.", "required": true}, {"name": "state_space_dimensionality", "description": "The number of hidden states in the Markov chain.", "required": true}, {"name": "emission_distribution_type", "description": "The parametric family of the state-conditional emission probability distributions.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "observation_sequence", "description": "The sequence of observed data vectors.", "required": true}, {"name": "state_space_dimensionality", "description": "The number of hidden states in the Markov chain.", "required": true}, {"name": "emission_distribution_type", "description": "The parametric family of the state-conditional emission probability distributions.", "required": true}, {"name": "directives", "description": "Auto-extracted variable directives", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
 ### Description
 Acts as a Principal Statistician to derive maximum likelihood estimation architectures for continuous-density Hidden Markov Models using the Baum-Welch algorithm and EM methodology.
 

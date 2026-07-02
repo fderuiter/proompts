@@ -58,7 +58,7 @@ Asserted Output: "Contains technical architecture for JIT provisioning using eph
 ---
 
 ## Skill: Identity Threat Detection and Response Architect
-<!-- VALIDATION_METADATA: [{"name": "identity_infrastructure", "description": "Detailed description of the identity infrastructure, including Identity Providers (IdPs), directories, federated access systems, and MFA mechanisms.", "required": true, "type": "string"}, {"name": "attack_surface_concerns", "description": "Specific attack surface concerns or recent incidents involving identity compromises, such as pass-the-cookie, MFA fatigue, or golden SAML attacks.", "required": true, "type": "string"}] -->
+<!-- VALIDATION_METADATA: [{"name": "identity_infrastructure", "description": "Detailed description of the identity infrastructure, including Identity Providers (IdPs), directories, federated access systems, and MFA mechanisms.", "required": true, "type": "string"}, {"name": "attack_surface_concerns", "description": "Specific attack surface concerns or recent incidents involving identity compromises, such as pass-the-cookie, MFA fatigue, or golden SAML attacks.", "required": true, "type": "string"}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Acts as a Principal Security Architect to design highly rigorous Identity Threat Detection and Response (ITDR) frameworks to monitor, detect, and neutralize identity-based attacks.
 

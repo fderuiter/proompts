@@ -63,7 +63,7 @@ tags:
 ---
 
 ## Skill: Architecture Flow & Diagram Architect
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The entry point or API endpoint to trace (e.g., 'POST /api/users')", "required": true}, {"name": "context", "description": "Optional code snippets or file paths relevant to the request flow", "required": false, "default": ""}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The entry point or API endpoint to trace (e.g., 'POST /api/users')", "required": true}, {"name": "context", "description": "Optional code snippets or file paths relevant to the request flow", "required": false, "default": ""}, {"name": "entry_point", "description": "Auto-extracted variable entry_point", "required": false}] -->
 ### Description
 A Principal System Architect's guide to tracing request lifecycles, identifying bottlenecks, and generating Mermaid diagrams.
 
@@ -139,7 +139,7 @@ Asserted Output: "unsafe_input"
 ---
 
 ## Skill: Code Review Assistant (Aegis Security)
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The git diff or code snippet to review.", "required": true}, {"name": "context", "description": "Optional context about the application (e.g., framework, threat model).", "required": false}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The git diff or code snippet to review.", "required": true}, {"name": "context", "description": "Optional context about the application (e.g., framework, threat model).", "required": false}, {"name": "diff", "description": "Auto-extracted variable diff", "required": false}, {"name": "thinking", "description": "Auto-extracted variable thinking", "required": false}] -->
 ### Description
 Conduct a comprehensive security-focused code review, identifying vulnerabilities, logic flaws, and style issues with a structured report.
 
@@ -283,7 +283,7 @@ Asserted Output: "Invalid input"
 ---
 
 ## Skill: Tooling & Quality Gates (DevEx Architect)
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The project stack and requirements (e.g., \"Python FastAPI\", \"React TypeScript\").", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The project stack and requirements (e.g., \"Python FastAPI\", \"React TypeScript\").", "required": true}, {"name": "project_context", "description": "Auto-extracted variable project_context", "required": false}] -->
 ### Description
 A Distinguished Developer Experience Engineer's guide to enforcing code quality, strict typing, and "fail-fast" CI/CD pipelines.
 
@@ -388,7 +388,7 @@ Asserted Output: "## ⚙️ Configuration"
 ---
 
 ## Skill: UI Tweak & Verification (Aegis Security)
-<!-- VALIDATION_METADATA: [{"name": "component_path", "description": "The component path to use for this prompt", "required": true}, {"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "component_path", "description": "The component path to use for this prompt", "required": true}, {"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "user_request", "description": "Auto-extracted variable user_request", "required": false}] -->
 ### Description
 Resolve a minor UI regression and confirm the fix with build or test steps, ensuring accessibility and security.
 
@@ -546,7 +546,7 @@ Asserted Output: "unsafe_input"
 ---
 
 ## Skill: Test Architect (Automated Testing)
-<!-- VALIDATION_METADATA: [{"name": "files", "description": "The list of filenames to generate tests for.", "required": true}, {"name": "input", "description": "The source code or context to write tests against.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "files", "description": "The list of filenames to generate tests for.", "required": true}, {"name": "input", "description": "The source code or context to write tests against.", "required": true}, {"name": "code_context", "description": "Auto-extracted variable code_context", "required": false}, {"name": "thinking", "description": "Auto-extracted variable thinking", "required": false}] -->
 ### Description
 Generates comprehensive unit and integration tests for provided code, focusing on edge cases, reliability, and clean code practices.
 
@@ -672,7 +672,7 @@ Asserted Output: "Test Plan"
 ---
 
 ## Skill: Refactoring Architect
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "code_snippet", "description": "Auto-extracted variable code_snippet", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 A Principal Software Architect's guide to surgical refactoring, focusing on decoupling, testability, and debt remediation.
 
@@ -784,7 +784,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Retrieval-Augmented Answer Composer
-<!-- VALIDATION_METADATA: [{"name": "FILES", "description": "knowledge-base documents to search", "required": true}, {"name": "QUESTION", "description": "user question", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "FILES", "description": "knowledge-base documents to search", "required": true}, {"name": "QUESTION", "description": "user question", "required": true}, {"name": "knowledge_base", "description": "Auto-extracted variable knowledge_base", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Provide concise, grounded answers using only supplied knowledge-base files, with strict security boundaries.
 
@@ -866,7 +866,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Security Vulnerability Hunt (Aegis)
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The C/C++ source code to analyze.", "required": true}, {"name": "package_path", "description": "The file path of the source code.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The C/C++ source code to analyze.", "required": true}, {"name": "package_path", "description": "The file path of the source code.", "required": true}, {"name": "code_context", "description": "Auto-extracted variable code_context", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "metadata", "description": "Auto-extracted variable metadata", "required": false}] -->
 ### Description
 Locate and fix memory-safety vulnerabilities in C/C++ code with a structured analysis.
 
@@ -1040,7 +1040,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: GitHub Custom Agent Creator
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "agent_requirements", "description": "Auto-extracted variable agent_requirements", "required": false}] -->
 ### Description
 Expertly craft configuration files for GitHub Custom Agents with strict YAML frontmatter and structured Markdown instructions.
 
@@ -1178,7 +1178,7 @@ Asserted Output: "tools:
 ---
 
 ## Skill: Project Init & Skeleton (Construct Architect)
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The project requirements and constraints.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The project requirements and constraints.", "required": true}, {"name": "project_requirements", "description": "Auto-extracted variable project_requirements", "required": false}] -->
 ### Description
 A Principal Cloud-Native Architect's blueprint for initializing secure, scalable, and 12-Factor compliant project skeletons.
 
@@ -1289,7 +1289,7 @@ Asserted Output: "## 📂 Directory Structure"
 ---
 
 ## Skill: Codebase Testing Plan
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "project_context", "description": "Auto-extracted variable project_context", "required": false}] -->
 ### Description
 As a Distinguished Quality Engineer, generate a comprehensive testing strategy and implementation roadmap for an existing codebase. This includes risk analysis, tooling selection, and a phased rollout plan aligned with modern CI/CD practices.
 
@@ -1406,7 +1406,7 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: Continuous Integration & Delivery (DevOps Architect)
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}, {"name": "project_requirements", "description": "Auto-extracted variable project_requirements", "required": false}] -->
 ### Description
 Design and implement secure, efficient, and scalable CI/CD pipelines for AI-integrated applications.
 
@@ -1491,7 +1491,7 @@ Asserted Output: ""
 ---
 
 ## Skill: Bug Finder & Fixer (OpenAI Codex)
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "package_path", "description": "The package path to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "package_path", "description": "The package path to use for this prompt", "required": true}, {"name": "bug_report", "description": "Auto-extracted variable bug_report", "required": false}, {"name": "context", "description": "Auto-extracted variable context", "required": false}, {"name": "module", "description": "Auto-extracted variable module", "required": false}] -->
 ### Description
 Reproduce and resolve a bug within the specified package or module.
 
@@ -1572,7 +1572,7 @@ Asserted Output: "clarification"
 ---
 
 ## Skill: DevEx Documentation Architect
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "context", "description": "Auto-extracted variable context", "required": false}] -->
 ### Description
 A Senior Developer Experience Engineer's guide to creating world-class documentation, onboarding paths, and architectural records.
 

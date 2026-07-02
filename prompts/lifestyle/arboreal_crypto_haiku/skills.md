@@ -18,7 +18,7 @@ tags:
 ---
 
 ## Skill: Eco-Crypto Haiku Oracle
-<!-- VALIDATION_METADATA: [{"name": "tree_species", "description": "The biological classification of the tree (e.g., Quercus robur).", "required": true}, {"name": "growth_ring_width_mm", "description": "The measured width of the current growth ring in millimeters.", "required": true}, {"name": "carbon_isotope_ratio", "description": "The delta-13C value indicating water stress.", "required": true}, {"name": "block_hash", "description": "The SHA-256 hash of the previous block in the forest chain.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "tree_species", "description": "The biological classification of the tree (e.g., Quercus robur).", "required": true}, {"name": "growth_ring_width_mm", "description": "The measured width of the current growth ring in millimeters.", "required": true}, {"name": "carbon_isotope_ratio", "description": "The delta-13C value indicating water stress.", "required": true}, {"name": "block_hash", "description": "The SHA-256 hash of the previous block in the forest chain.", "required": true}, {"name": "arboreal_packet", "description": "Auto-extracted variable arboreal_packet", "required": false}, {"name": "growth", "description": "Auto-extracted variable growth", "required": false}, {"name": "isotope", "description": "Auto-extracted variable isotope", "required": false}, {"name": "prev_hash", "description": "Auto-extracted variable prev_hash", "required": false}, {"name": "species", "description": "Auto-extracted variable species", "required": false}] -->
 ### Description
 Transforms arboreal environmental data into cryptographically seeded haikus for the forest blockchain.
 

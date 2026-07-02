@@ -41,7 +41,7 @@ tags:
 ---
 
 ## Skill: investigators_brochure_safety_synthesizer
-<!-- VALIDATION_METADATA: [{"name": "NONCLINICAL_SAFETY_DATA", "description": "Summary of recent nonclinical pharmacology and toxicology findings."}, {"name": "CLINICAL_SAFETY_DATA", "description": "Summary of cumulative human clinical safety data and adverse events."}, {"name": "REFERENCE_SAFETY_INFORMATION", "description": "Current established Reference Safety Information (RSI) for the investigational product."}] -->
+<!-- VALIDATION_METADATA: [{"name": "NONCLINICAL_SAFETY_DATA", "description": "Summary of recent nonclinical pharmacology and toxicology findings."}, {"name": "CLINICAL_SAFETY_DATA", "description": "Summary of cumulative human clinical safety data and adverse events."}, {"name": "REFERENCE_SAFETY_INFORMATION", "description": "Current established Reference Safety Information (RSI) for the investigational product."}, {"name": "clinical_safety_data", "description": "Auto-extracted variable clinical_safety_data", "required": false}, {"name": "nonclinical_safety_data", "description": "Auto-extracted variable nonclinical_safety_data", "required": false}, {"name": "reference_safety_information", "description": "Auto-extracted variable reference_safety_information", "required": false}] -->
 ### Description
 Synthesizes complex nonclinical and clinical safety data into a highly structured, regulatory-compliant Investigator's Brochure (IB) Safety Reference Section per ICH E6(R2) guidelines.
 
@@ -219,7 +219,7 @@ Asserted Output: "Exception or refusal."
 ---
 
 ## Skill: breakthrough_therapy_designation_rationale_architect
-<!-- VALIDATION_METADATA: [{"name": "target_indication", "type": "string", "description": "The precise disease or condition intended for treatment, including any specific patient subpopulations."}, {"name": "unmet_medical_need", "type": "string", "description": "Detailed description of the current treatment landscape, standard of care (SOC), and the serious or life-threatening nature of the disease."}, {"name": "preliminary_clinical_evidence", "type": "string", "description": "The core clinical data (e.g., Phase 1/2 results, response rates, biomarker data) demonstrating substantial improvement over available therapy."}, {"name": "mechanism_of_action", "type": "string", "description": "The investigational drug's mechanism of action and pharmacological rationale supporting the observed clinical effects."}] -->
+<!-- VALIDATION_METADATA: [{"name": "target_indication", "type": "string", "description": "The precise disease or condition intended for treatment, including any specific patient subpopulations."}, {"name": "unmet_medical_need", "type": "string", "description": "Detailed description of the current treatment landscape, standard of care (SOC), and the serious or life-threatening nature of the disease."}, {"name": "preliminary_clinical_evidence", "type": "string", "description": "The core clinical data (e.g., Phase 1/2 results, response rates, biomarker data) demonstrating substantial improvement over available therapy."}, {"name": "mechanism_of_action", "type": "string", "description": "The investigational drug's mechanism of action and pharmacological rationale supporting the observed clinical effects."}, {"name": "prelimedy_clinical_evidence", "description": "Auto-extracted variable prelimedy_clinical_evidence", "required": false}] -->
 ### Description
 Synthesizes preliminary clinical data, unmet medical need, and standard of care to formulate a highly rigorous, persuasive Breakthrough Therapy Designation (BTD) rationale for regulatory submission.
 
@@ -403,7 +403,7 @@ Asserted Output: "A rigorously structured, highly formal ODD rationale document.
 ---
 
 ## Skill: fda_type_b_meeting_briefing_package_architect
-<!-- VALIDATION_METADATA: [{"name": "meeting_objectives", "type": "string", "description": "Primary goals of the Type B meeting, such as agreeing on Phase 3 trial design or CMC scale-up strategy."}, {"name": "background_data", "type": "string", "description": "Comprehensive summary of available pre-clinical, clinical, and CMC data relevant to the product."}, {"name": "sponsor_questions", "type": "string", "description": "Specific questions posed by the sponsor to the FDA, categorized by discipline (e.g., Clinical, Nonclinical, CMC)."}] -->
+<!-- VALIDATION_METADATA: [{"name": "meeting_objectives", "type": "string", "description": "Primary goals of the Type B meeting, such as agreeing on Phase 3 trial design or CMC scale-up strategy."}, {"name": "background_data", "type": "string", "description": "Comprehensive summary of available pre-clinical, clinical, and CMC data relevant to the product."}, {"name": "sponsor_questions", "type": "string", "description": "Specific questions posed by the sponsor to the FDA, categorized by discipline (e.g., Clinical, Nonclinical, CMC)."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Synthesizes scientific, clinical, and CMC data to architect a highly structured, regulatory-compliant FDA Type B Meeting Briefing Package.
 

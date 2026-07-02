@@ -29,7 +29,7 @@ tags:
 ---
 
 ## Skill: adverse_event_signal_detection_architect
-<!-- VALIDATION_METADATA: [{"name": "DRUG_NAME", "type": "string", "description": "The name of the suspect drug under investigation."}, {"name": "ADVERSE_EVENTS_DATA", "type": "string", "description": "Raw line listing or aggregated reporting rates of adverse events from pharmacovigilance databases."}, {"name": "BACKGROUND_INCIDENCE", "type": "string", "description": "Epidemiological background incidence rates for the adverse events of interest."}] -->
+<!-- VALIDATION_METADATA: [{"name": "DRUG_NAME", "type": "string", "description": "The name of the suspect drug under investigation."}, {"name": "ADVERSE_EVENTS_DATA", "type": "string", "description": "Raw line listing or aggregated reporting rates of adverse events from pharmacovigilance databases."}, {"name": "BACKGROUND_INCIDENCE", "type": "string", "description": "Epidemiological background incidence rates for the adverse events of interest."}, {"name": "background", "description": "Auto-extracted variable background", "required": false}, {"name": "data", "description": "Auto-extracted variable data", "required": false}, {"name": "drug", "description": "Auto-extracted variable drug", "required": false}] -->
 ### Description
 Acts as a Principal Pharmacovigilance Scientist to perform advanced signal detection and disproportionality analysis on post-market adverse event databases.
 

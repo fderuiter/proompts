@@ -79,7 +79,7 @@ Asserted Output: "III. TD-DFT Property Calculation Protocol"
 ---
 
 ## Skill: QM/MM Hybrid Catalytic Modeling Architect
-<!-- VALIDATION_METADATA: [{"name": "active_site_system", "description": "The explicit QM region components including metal centers, ligands, or reacting residues (e.g., PDB residue ranges or SMILES).", "required": true}, {"name": "mm_environment", "description": "The molecular mechanics environment, including solvation models, counterions, and surrounding protein/matrix structure (e.g., full PDB target).", "required": true}, {"name": "theoretical_level", "description": "The required QM level of theory and MM forcefield (e.g., B3LYP-D3/def2-TZVP for QM, AMBER ff14SB/TIP3P for MM).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "active_site_system", "description": "The explicit QM region components including metal centers, ligands, or reacting residues (e.g., PDB residue ranges or SMILES).", "required": true}, {"name": "mm_environment", "description": "The molecular mechanics environment, including solvation models, counterions, and surrounding protein/matrix structure (e.g., full PDB target).", "required": true}, {"name": "theoretical_level", "description": "The required QM level of theory and MM forcefield (e.g., B3LYP-D3/def2-TZVP for QM, AMBER ff14SB/TIP3P for MM).", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Generates automated hybrid Quantum Mechanics/Molecular Mechanics (QM/MM) catalytic models, rigorously elucidating transition metal and enzymatic reaction pathways.
 

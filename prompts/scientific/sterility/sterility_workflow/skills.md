@@ -69,7 +69,7 @@ Asserted Output: "Markdown table with FMEA columns followed by a bullet list sum
 ---
 
 ## Skill: Sterility-Validation Protocol Builder
-<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "Detailed description of the medical device, including materials and configuration.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "Detailed description of the medical device, including materials and configuration.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Draft a complete validation protocol for a single-use Class II instrument sterilized by gamma irradiation, strictly adhering to ISO 11137 and FDA guidance.
 
@@ -146,7 +146,7 @@ Asserted Output: "Refusal for non-medical/vague input."
 ---
 
 ## Skill: Regulatory Gap-Analysis Comparator
-<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "brief description of the device", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "brief description of the device", "required": true}, {"name": "text", "description": "Auto-extracted variable text", "required": false}] -->
 ### Description
 Compare sterility-assurance requirements across key standards and guidance.
 

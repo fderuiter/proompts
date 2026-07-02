@@ -148,7 +148,7 @@ Asserted Output: "An unvarnished assessment refusing to model churn due to inval
 ---
 
 ## Skill: cohort_retention_survival_analysis_architect
-<!-- VALIDATION_METADATA: [{"name": "cohort_definition", "description": "The defining characteristics of the user cohort (e.g., Enterprise SaaS users acquired via Q3 LinkedIn Paid Social, D2C mobile app users with LTV > $500).", "type": "string"}, {"name": "retention_metric", "description": "The specific metric used to define active retention (e.g., Weekly Active Users (WAU), Net Revenue Retention (NRR), Order frequency).", "type": "string"}, {"name": "current_churn_rate", "description": "The current baseline churn or drop-off rate observed in this cohort over a defined time horizon (e.g., 45% churn at Day 30).", "type": "string"}] -->
+<!-- VALIDATION_METADATA: [{"name": "cohort_definition", "description": "The defining characteristics of the user cohort (e.g., Enterprise SaaS users acquired via Q3 LinkedIn Paid Social, D2C mobile app users with LTV > $500).", "type": "string"}, {"name": "retention_metric", "description": "The specific metric used to define active retention (e.g., Weekly Active Users (WAU), Net Revenue Retention (NRR), Order frequency).", "type": "string"}, {"name": "current_churn_rate", "description": "The current baseline churn or drop-off rate observed in this cohort over a defined time horizon (e.g., 45% churn at Day 30).", "type": "string"}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Formulates mathematically rigorous user cohort retention strategies utilizing Kaplan-Meier survival analysis and Cox Proportional-Hazards modeling to pinpoint drop-off nodes and optimize the AARRR funnel.
 

@@ -584,7 +584,7 @@ Asserted Output: ""
 ---
 
 ## Skill: EU MDR PSUR Architect
-<!-- VALIDATION_METADATA: [{"name": "device_name", "type": "string", "description": "The name of the medical device."}, {"name": "device_class", "type": "string", "description": "The risk classification of the device (e.g., IIa, IIb, III)."}, {"name": "reporting_period", "type": "string", "description": "The timeframe covered by the PSUR."}, {"name": "pms_data_summary", "type": "string", "description": "A summary of collected PMS data, including complaints, vigilance, and PMCF findings."}, {"name": "sales_volume", "type": "string", "description": "The sales volume and estimated patient exposure during the reporting period."}] -->
+<!-- VALIDATION_METADATA: [{"name": "device_name", "type": "string", "description": "The name of the medical device."}, {"name": "device_class", "type": "string", "description": "The risk classification of the device (e.g., IIa, IIb, III)."}, {"name": "reporting_period", "type": "string", "description": "The timeframe covered by the PSUR."}, {"name": "pms_data_summary", "type": "string", "description": "A summary of collected PMS data, including complaints, vigilance, and PMCF findings."}, {"name": "sales_volume", "type": "string", "description": "The sales volume and estimated patient exposure during the reporting period."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Designs comprehensive, regulatory-compliant Periodic Safety Update Reports (PSUR) under EU MDR 2017/745 Article 86 and MDCG 2022-21.
 
@@ -749,7 +749,7 @@ None provided.
 ---
 
 ## Skill: fda_q_submission_pre_sub_meeting_package_architect
-<!-- VALIDATION_METADATA: [{"name": "device_description", "type": "string", "description": "Detailed description of the medical device, mechanism of action, and clinical context."}, {"name": "intended_use", "type": "string", "description": "Proposed Intended Use and Indications for Use statement."}, {"name": "regulatory_strategy", "type": "string", "description": "Proposed regulatory pathway (e.g., 510(k), De Novo, PMA) and primary predicate if applicable."}, {"name": "background_information", "type": "string", "description": "Relevant background information, prior FDA interactions, and product development status."}, {"name": "proposed_questions", "type": "string", "description": "Draft questions intended for FDA feedback across clinical, non-clinical, and regulatory domains."}] -->
+<!-- VALIDATION_METADATA: [{"name": "device_description", "type": "string", "description": "Detailed description of the medical device, mechanism of action, and clinical context."}, {"name": "intended_use", "type": "string", "description": "Proposed Intended Use and Indications for Use statement."}, {"name": "regulatory_strategy", "type": "string", "description": "Proposed regulatory pathway (e.g., 510(k), De Novo, PMA) and primary predicate if applicable."}, {"name": "background_information", "type": "string", "description": "Relevant background information, prior FDA interactions, and product development status."}, {"name": "proposed_questions", "type": "string", "description": "Draft questions intended for FDA feedback across clinical, non-clinical, and regulatory domains."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Acts as a Principal Regulatory Affairs Architect to formulate highly rigorous, strategic FDA Q-Submission (Pre-Sub) meeting packages for medical devices and diagnostics.
 
@@ -1034,7 +1034,7 @@ None provided.
 ---
 
 ## Skill: MDSAP Nonconformity Grading Evaluator
-<!-- VALIDATION_METADATA: [{"name": "audit_finding", "description": "The raw observation or finding from the MDSAP audit.", "required": true}, {"name": "direct_qms_impact", "description": "Whether the nonconformity has a direct Quality Management System impact (yes/no).", "required": true}, {"name": "repeat_finding", "description": "Whether this is a repeat finding from previous audits (yes/no).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "audit_finding", "description": "The raw observation or finding from the MDSAP audit.", "required": true}, {"name": "direct_qms_impact", "description": "Whether the nonconformity has a direct Quality Management System impact (yes/no).", "required": true}, {"name": "repeat_finding", "description": "Whether this is a repeat finding from previous audits (yes/no).", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}, {"name": "mdsap_evaluation", "description": "Auto-extracted variable mdsap_evaluation", "required": false}] -->
 ### Description
 Evaluate audit findings based on the GHTF/SG3/N19:2012 5-step grading matrix, enforcing the 'Vector' standard.
 
@@ -1123,7 +1123,7 @@ Asserted Output: ""
 ---
 
 ## Skill: cer_literature_review_architect
-<!-- VALIDATION_METADATA: [{"name": "DEVICE_DESCRIPTION", "type": "string", "description": "Detailed description of the medical device and its intended purpose."}, {"name": "LITERATURE_DATA", "type": "string", "description": "Extracted data from clinical literature searches."}] -->
+<!-- VALIDATION_METADATA: [{"name": "DEVICE_DESCRIPTION", "type": "string", "description": "Detailed description of the medical device and its intended purpose."}, {"name": "LITERATURE_DATA", "type": "string", "description": "Extracted data from clinical literature searches."}, {"name": "device_description", "description": "Auto-extracted variable device_description", "required": false}, {"name": "literature_data", "description": "Auto-extracted variable literature_data", "required": false}] -->
 ### Description
 Acts as a Principal Medical Writer and Regulatory Clinical Evaluator to systematically synthesize clinical literature search results into a MEDDEV 2.7/1 Rev 4 and EU MDR compliant Clinical Evaluation Report (CER) section.
 
@@ -1696,7 +1696,7 @@ Asserted Output: "Expected output as per instructions."
 ---
 
 ## Skill: IEC 62366-1 Summative Usability Evaluation Protocol Architect
-<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "A brief summary of the medical device, including its intended use and primary physical/software interfaces.", "required": true}, {"name": "user_profiles", "description": "A description of the intended user populations (e.g., clinicians, lay users, patients).", "required": true}, {"name": "critical_tasks", "description": "A list of use scenarios and critical tasks derived from the Use-Related Risk Analysis (URRA).", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "A brief summary of the medical device, including its intended use and primary physical/software interfaces.", "required": true}, {"name": "user_profiles", "description": "A description of the intended user populations (e.g., clinicians, lay users, patients).", "required": true}, {"name": "critical_tasks", "description": "A list of use scenarios and critical tasks derived from the Use-Related Risk Analysis (URRA).", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}, {"name": "usability_protocol", "description": "Auto-extracted variable usability_protocol", "required": false}] -->
 ### Description
 Design comprehensive, regulatory-compliant Summative Usability Evaluation Protocols under IEC 62366-1 and FDA Human Factors Engineering Guidance.
 
@@ -1751,7 +1751,7 @@ Asserted Output: "Objective and Scope"
 ---
 
 ## Skill: EU MDR Clinical Evaluation Report Architect
-<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "Detailed description of the medical device, including intended purpose, indications, contraindications, and risk class.", "required": true}, {"name": "state_of_the_art", "description": "Summary of the clinical background and state of the art in the corresponding medical field.", "required": true}, {"name": "clinical_data_summary", "description": "Summary of the clinical data generated from literature, clinical investigations, and post-market surveillance.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "Detailed description of the medical device, including intended purpose, indications, contraindications, and risk class.", "required": true}, {"name": "state_of_the_art", "description": "Summary of the clinical background and state of the art in the corresponding medical field.", "required": true}, {"name": "clinical_data_summary", "description": "Summary of the clinical data generated from literature, clinical investigations, and post-market surveillance.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
 ### Description
 Designs comprehensive, regulatory-compliant Clinical Evaluation Reports (CER) under EU MDR 2017/745 Article 61 and Annex XIV Part A.
 
@@ -1880,7 +1880,7 @@ Asserted Output: ""
 ---
 
 ## Skill: EU MDR Post-Market Surveillance Plan Architect
-<!-- VALIDATION_METADATA: [{"name": "device_class", "description": "The risk classification of the medical device (e.g., Class IIa, IIb, III).", "required": true}, {"name": "intended_purpose", "description": "A brief summary of the device's intended clinical purpose.", "required": true}, {"name": "market_history", "description": "A high-level overview of the device's market history and known adverse events.", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "device_class", "description": "The risk classification of the medical device (e.g., Class IIa, IIb, III).", "required": true}, {"name": "intended_purpose", "description": "A brief summary of the device's intended clinical purpose.", "required": true}, {"name": "market_history", "description": "A high-level overview of the device's market history and known adverse events.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}, {"name": "pms_plan", "description": "Auto-extracted variable pms_plan", "required": false}] -->
 ### Description
 Design comprehensive, regulatory-compliant Post-Market Surveillance (PMS) Plans under EU MDR 2017/745.
 
@@ -2245,7 +2245,7 @@ Asserted Output: ""
 ---
 
 ## Skill: Cleaning Validation Protocol Architect
-<!-- VALIDATION_METADATA: [{"name": "equipment_description", "type": "string", "description": "Detailed description of the manufacturing equipment train to be validated, including total surface area and materials of construction."}, {"name": "previous_product", "type": "string", "description": "The product or Active Pharmaceutical Ingredient (API) previously manufactured, including its Permitted Daily Exposure (PDE) or Acceptable Daily Exposure (ADE) value."}, {"name": "next_product", "type": "string", "description": "The subsequent product to be manufactured, including its minimum daily dose (MDD) and standard batch size."}, {"name": "cleaning_procedure", "type": "string", "description": "Details of the proposed cleaning procedure (e.g., Clean-in-Place (CIP), Manual, detergents used)."}, {"name": "sampling_methodology", "type": "string", "description": "Analytical sampling methods (e.g., swabbing, rinse sampling) including swab recovery rates."}] -->
+<!-- VALIDATION_METADATA: [{"name": "equipment_description", "type": "string", "description": "Detailed description of the manufacturing equipment train to be validated, including total surface area and materials of construction."}, {"name": "previous_product", "type": "string", "description": "The product or Active Pharmaceutical Ingredient (API) previously manufactured, including its Permitted Daily Exposure (PDE) or Acceptable Daily Exposure (ADE) value."}, {"name": "next_product", "type": "string", "description": "The subsequent product to be manufactured, including its minimum daily dose (MDD) and standard batch size."}, {"name": "cleaning_procedure", "type": "string", "description": "Details of the proposed cleaning procedure (e.g., Clean-in-Place (CIP), Manual, detergents used)."}, {"name": "sampling_methodology", "type": "string", "description": "Analytical sampling methods (e.g., swabbing, rinse sampling) including swab recovery rates."}, {"name": "input_variable", "description": "Auto-extracted variable input_variable", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Formulates highly rigorous, FDA and EMA compliant Cleaning Validation Protocols for pharmaceutical and medical device manufacturing, utilizing PDE and MACO calculations.
 
@@ -2748,7 +2748,7 @@ None provided.
 ---
 
 ## Skill: Process Validation IQ/OQ/PQ Protocol Architect
-<!-- VALIDATION_METADATA: [{"name": "equipment_description", "type": "string", "description": "Detailed description of the manufacturing equipment or software to be validated."}, {"name": "process_parameters", "type": "string", "description": "Critical Process Parameters (CPPs) and their operating ranges (e.g., temperature, pressure, time)."}, {"name": "quality_attributes", "type": "string", "description": "Critical Quality Attributes (CQAs) of the output product and the required acceptance criteria."}, {"name": "sampling_plan", "type": "string", "description": "Statistical rationale and sampling plan for validation testing (e.g., AQL, confidence/reliability levels)."}, {"name": "anticipated_worst_case", "type": "string", "description": "Identified worst-case conditions or challenge scenarios to be tested during OQ/PQ."}] -->
+<!-- VALIDATION_METADATA: [{"name": "equipment_description", "type": "string", "description": "Detailed description of the manufacturing equipment or software to be validated."}, {"name": "process_parameters", "type": "string", "description": "Critical Process Parameters (CPPs) and their operating ranges (e.g., temperature, pressure, time)."}, {"name": "quality_attributes", "type": "string", "description": "Critical Quality Attributes (CQAs) of the output product and the required acceptance criteria."}, {"name": "sampling_plan", "type": "string", "description": "Statistical rationale and sampling plan for validation testing (e.g., AQL, confidence/reliability levels)."}, {"name": "anticipated_worst_case", "type": "string", "description": "Identified worst-case conditions or challenge scenarios to be tested during OQ/PQ."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
 ### Description
 Formulates highly rigorous, FDA 21 CFR 820.75 and ISO 13485 compliant IQ/OQ/PQ process validation protocols for medical device manufacturing.
 
