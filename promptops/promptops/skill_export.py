@@ -73,6 +73,18 @@ def generate_skill_section(prompt_data: Dict[str, Any]) -> str:
     name = prompt_data.get("name", "Unnamed Skill")
     description = _generate_skill_description(prompt_data)
     
+    metadata = prompt_data.get("metadata", {})
+    autonomy = metadata.get("autonomy")
+    maturity = metadata.get("maturity")
+    
+    badges = []
+    if autonomy:
+        badges.append(f"![Autonomy: {autonomy}](https://img.shields.io/badge/Autonomy-{autonomy}-blue)")
+    if maturity:
+        badges.append(f"![Maturity: {maturity}](https://img.shields.io/badge/Maturity-{maturity}-green)")
+    
+    badge_str = " " + " ".join(badges) if badges else ""
+    
     # Inputs table
     variables = prompt_data.get("variables", [])
     input_table = "| Variable | Type | Description | Required |\n| :--- | :--- | :--- | :--- |\n"
@@ -130,9 +142,13 @@ def generate_skill_section(prompt_data: Dict[str, Any]) -> str:
 
     # Store structured variables for runtime in a hidden comment block or similar?
     # Better to have it parseable.
-    vars_json = _redact(json.dumps(variables))
+    validation_data = {
+        "variables": variables,
+        "metadata": metadata
+    }
+    vars_json = _redact(json.dumps(validation_data))
 
-    section = f"""## Skill: {name}
+    section = f"""## Skill: {name}{badge_str}
 <!-- VALIDATION_METADATA: {vars_json} -->
 ### Description
 {description}
@@ -230,5 +246,47 @@ def process_skills(prompts_path: Path, docs_path: Optional[Path] = None):
                 rel = directory.relative_to(prompts_path)
                 out_dir = docs_path / "skills" / rel
                 skills_content = (directory / "skills.md").read_text(encoding='utf-8')
+                
+                # Dynamically inject badges for MkDocs
+                from promptops.utils import parse_skill_manifest
+                try:
+                    manifest = parse_skill_manifest(directory / "skills.md")
+                    
+                    # Also append tags for MkDocs search indexing if any skill has tags
+                    doc_tags = set()
+                    
+                    for skill in manifest.get("skills", []):
+                        meta = skill.get("metadata", {})
+                        autonomy = meta.get("autonomy")
+                        maturity = meta.get("maturity")
+                        
+                        if autonomy: doc_tags.add(autonomy)
+                        if maturity: doc_tags.add(maturity)
+                        
+                        badges = []
+                        if autonomy:
+                            badges.append(f"![Autonomy: {autonomy}](https://img.shields.io/badge/Autonomy-{autonomy}-blue)")
+                        if maturity:
+                            badges.append(f"![Maturity: {maturity}](https://img.shields.io/badge/Maturity-{maturity}-green)")
+                            
+                        if badges:
+                            badge_str = " " + " ".join(badges)
+                            # Replace the header for this skill to include the badge
+                            old_header = f"## Skill: {skill['name']}"
+                            if old_header in skills_content:
+                                skills_content = skills_content.replace(old_header, old_header + badge_str)
+                    
+                    if doc_tags:
+                        tags_block = "tags:\n" + "\n".join(f"  - {t}" for t in doc_tags)
+                        import re
+                        if re.search(r'^---\n', skills_content, re.MULTILINE):
+                            # Inject into existing frontmatter
+                            skills_content = re.sub(r'^---\n', f"---\n{tags_block}\n", skills_content, count=1, flags=re.MULTILINE)
+                        else:
+                            skills_content = f"---\n{tags_block}\n---\n\n" + skills_content
+                                
+                except Exception as e:
+                    print(f"Error injecting badges into {directory / 'skills.md'}: {e}")
+                
                 docs_reconciler.write_file(out_dir / "skills.md", skills_content)
         docs_reconciler.reconcile()

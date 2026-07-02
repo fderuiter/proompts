@@ -35,7 +35,7 @@ main_loop = None
 
 class PromptDirHandler(FileSystemEventHandler):
     def on_any_event(self, event):
-        if event.src_path.endswith('.prompt.yaml') or event.src_path.endswith('skills.md'):
+        if event.src_path.endswith('.prompt.yaml') or event.src_path.endswith('skills.md') or event.src_path.endswith('.workflow.yaml'):
             logger.info(f"File change detected: {event.src_path}")
             if active_session and main_loop:
                 asyncio.run_coroutine_threadsafe(
@@ -216,9 +216,18 @@ async def run():
     
     observer = Observer()
     handler = PromptDirHandler()
+    
+    # Watch prompts directory
     observer.schedule(handler, path=PROMPTS_DIR, recursive=True)
-    observer.start()
     logger.info(f"Started monitoring {PROMPTS_DIR} for changes.")
+    
+    # Watch workflows directory
+    workflows_path = str(WORKFLOWS_DIR)
+    if Path(workflows_path).exists():
+        observer.schedule(handler, path=workflows_path, recursive=True)
+        logger.info(f"Started monitoring {workflows_path} for changes.")
+        
+    observer.start()
 
     async with stdio_server() as (read_stream, write_stream):
         await server.run(

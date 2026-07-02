@@ -66,6 +66,8 @@ class PromptMetadata(BaseModel):
     complexity: ComplexityLevel = Field(...)
     tags: List[str] = Field([])
     requires_context: bool = Field(False)
+    autonomy: Optional[str] = Field(None)
+    maturity: Optional[str] = Field(None)
 
 class InputSchema(BaseModel):
     type: str = Field("object")
