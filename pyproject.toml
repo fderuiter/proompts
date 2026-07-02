@@ -7,7 +7,6 @@ requires-python = ">=3.10"
 dependencies = [
     "promptops",
     "tools",
-    "proompts-guard",
     "studio",
     "mcp>=1.27.2",
     "watchdog>=6.0.0",
@@ -18,14 +17,12 @@ dependencies = [
 members = [
     "promptops",
     "tools",
-    "proompts_guard",
     "studio"
 ]
 
 [tool.uv.sources]
 promptops = { workspace = true }
 tools = { workspace = true }
-proompts-guard = { workspace = true }
 studio = { workspace = true }
 
 [tool.pytest.ini_options]
@@ -41,6 +38,6 @@ dev = [
 ]
 
 [tool.vulture]
-paths = [".", "scripts/", "promptops", "tools", "proompts_guard", "studio"]
+paths = [".", "scripts/", "promptops", "tools", "studio"]
 exclude = [".venv", "build", "dist", ".git", ".github", ".vscode", "scripts/apply_refactor.py"]
 min_confidence = 70

@@ -178,7 +178,7 @@ def get_tool_name_mcp(path: Path, content: dict) -> str:
     return sanitized
 
 _JINJA_ENV = Environment()
-_IGNORE_XML_TAGS = {"br", "p", "b", "i", "div", "span", "ul", "li", "ol", "html", "body", "head", "title", "table", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "a", "img", "strong", "em", "hr", "meta", "link", "script", "style", "svg", "path", "text"}
+_IGNORE_XML_TAGS = {"br", "p", "b", "i", "div", "span", "ul", "li", "ol", "html", "body", "head", "title", "table", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "a", "img", "strong", "em", "hr", "meta", "link", "script", "style", "svg", "path", "text", "aegis"}
 
 def extract_vars_from_text(text: str) -> Set[str]:
     """Extracts Jinja and XML variables from a single text string."""
@@ -269,9 +269,6 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
         # Split instructions into messages
         messages = []
         import re
-        if name == "Agent Persona Generator":
-            print(f"DEBUG: '{instructions}'")
-            print(f"DEBUG blocks: {re.split(r'^\[(system|user|assistant|tool_call|tool_result|tool)\]\s*$', instructions, flags=re.MULTILINE | re.IGNORECASE)}")
         blocks = re.split(r'^\[(system|user|assistant|tool_call|tool_result|tool)\][\r\n]+', instructions, flags=re.MULTILINE | re.IGNORECASE)
         if len(blocks) > 1:
             for i in range(1, len(blocks), 2):

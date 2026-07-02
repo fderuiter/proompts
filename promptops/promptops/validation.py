@@ -6,7 +6,6 @@ from typing import Any, List, Optional, Dict, Union, Set
 
 from pydantic import BaseModel, ValidationError, field_validator, model_validator, Field
 from promptops.utils import load_yaml, iter_prompt_files, iter_workflow_files, extract_vars_from_text
-from promptops.engine import run_workflow
 from promptops import console
 
 VAR_PATTERN = re.compile(r'\{\{([^}]+)\}\}')
@@ -471,6 +470,7 @@ def validate_prompts(directory: str, strict: bool = False) -> bool:
                 for i, test_case in enumerate(test_data):
                     inputs = test_case.get('inputs', test_case.get('vars', {}))
                     try:
+                        from promptops.engine import run_workflow
                         run_workflow(str(file_path), inputs, verbose=False, strict_mode=True)
                     except Exception as e:
                         console.error(f"Simulation failed on {file_path} scenario {i+1}: {e}")
@@ -478,6 +478,7 @@ def validate_prompts(directory: str, strict: bool = False) -> bool:
                         break
             else:
                 try:
+                    from promptops.engine import run_workflow
                     run_workflow(str(file_path), {}, verbose=False, strict_mode=True)
                 except Exception as e:
                     console.error(f"Simulation failed on {file_path}: {e}")
@@ -529,3 +530,97 @@ def validate_prompts(directory: str, strict: bool = False) -> bool:
 
     return ok
 
+
+
+import json
+from pydantic import create_model
+
+def json_schema_to_pydantic_fields(schema: Dict[str, Any]) -> Dict[str, Any]:
+    if schema.get("type") != "object":
+        raise ValueError("Only 'object' type is supported for root output_schema.")
+    
+    properties = schema.get("properties", {})
+    required = schema.get("required", [])
+    
+    fields: Dict[str, Any] = {}
+    for prop_name, prop_details in properties.items():
+        prop_type = prop_details.get("type", "string")
+        py_type: Any
+        
+        if prop_type == "string":
+            py_type = str
+        elif prop_type == "integer":
+            py_type = int
+        elif prop_type == "number":
+            py_type = float
+        elif prop_type == "boolean":
+            py_type = bool
+        elif prop_type == "array":
+            items = prop_details.get("items", {})
+            item_type = items.get("type", "string")
+            if item_type == "string":
+                py_type = list[str]
+            elif item_type == "integer":
+                py_type = list[int]
+            elif item_type == "number":
+                py_type = list[float]
+            elif item_type == "boolean":
+                py_type = list[bool]
+            else:
+                py_type = list[Any]
+        elif prop_type == "object":
+            py_type = dict
+        else:
+            py_type = Any
+            
+        if prop_name in required:
+            fields[prop_name] = (py_type, ...)
+        else:
+            fields[prop_name] = (Optional[py_type], None)
+            
+    return fields
+
+def validate_response(response_text: str, output_schema: Optional[Dict[str, Any]] = None, evaluators: Optional[list] = None) -> str:
+    if output_schema:
+        cleaned_text = response_text.strip()
+        if cleaned_text.startswith("```json"):
+            cleaned_text = cleaned_text[7:]
+        elif cleaned_text.startswith("```"):
+            cleaned_text = cleaned_text[3:]
+        if cleaned_text.endswith("```"):
+            cleaned_text = cleaned_text[:-3]
+        cleaned_text = cleaned_text.strip()
+        
+        try:
+            parsed_json = json.loads(cleaned_text)
+        except json.JSONDecodeError:
+            raise ProomptsValidationError("Response is not valid JSON.")
+            
+        fields = json_schema_to_pydantic_fields(output_schema)
+        DynamicModel = create_model("DynamicOutputModel", **fields)
+        
+        try:
+            DynamicModel.model_validate(parsed_json)
+        except ValidationError as ve:
+            errors = ve.errors()
+            if errors:
+                error = errors[0]
+                loc = ".".join([str(l) for l in error.get("loc", [])])
+                msg = error.get("msg", "")
+                error_type = error.get("type", "")
+                if error_type == "missing":
+                    raise ProomptsValidationError(f"missing required field: '{loc}'")
+                else:
+                    raise ProomptsValidationError(f"field '{loc}' failed validation: {msg}")
+            raise ProomptsValidationError(f"Validation error: {ve}")
+            
+    if evaluators:
+        from promptops.engine import run_evaluators
+        response_text = run_evaluators(response_text, evaluators)
+    return response_text
+
+class ProomptsGuardError(Exception):
+    pass
+
+class ProomptsValidationError(ProomptsGuardError):
+    pass

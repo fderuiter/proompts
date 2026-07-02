@@ -246,6 +246,26 @@ def main():
                         "gap_analysis": f"File removed or missing. Regulatory mapping for {prev_std} lost."
                     })
 
+    # Check if the new snapshot is functionally identical to the previous one
+    if previous_snapshot_id:
+        prev_records = manifest_data[previous_snapshot_id]
+        
+        # Helper to strip timestamp for comparison
+        def strip_ts(records):
+            return [{k: v for k, v in r.items() if k != 'timestamp'} for r in records]
+            
+        if strip_ts(snapshot_records) == strip_ts(prev_records):
+            # No changes detected, do not append a new snapshot
+            if gap_report:
+                with open(GAP_REPORT_FILE, 'w') as f:
+                    json.dump(gap_report, f, indent=2)
+                print(f"Generated compliance manifest. Gap report created with {len(gap_report)} outdated prompt mappings.")
+            else:
+                with open(GAP_REPORT_FILE, 'w') as f:
+                    json.dump([], f, indent=2)
+                print(f"No changes detected in prompts. Manifest unchanged. No regulatory gaps detected.")
+            return
+
     manifest_data[snapshot_id] = snapshot_records
     
     with open(MANIFEST_FILE, 'w') as f:
