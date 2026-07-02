@@ -167,25 +167,33 @@ def get_tool_name_mcp(path: Path, content: dict) -> str:
     _, sanitized = get_tool_name(path, content)
     return sanitized
 
-def extract_template_vars(content: Dict[str, Any]) -> List[str]:
+def extract_vars_from_text(text: str) -> Set[str]:
+    """Extracts Jinja and XML variables from a single text string."""
     found: Set[str] = set()
     env = Environment()
     ignore_tags = {"br", "p", "b", "i", "div", "span", "ul", "li", "ol", "html", "body", "head", "title", "table", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "a", "img", "strong", "em", "hr", "meta", "link", "script", "style", "svg", "path"}
+    
+    try:
+        ast = env.parse(text)
+        vars_in_text = meta.find_undeclared_variables(ast)
+        found.update(vars_in_text)
+    except Exception as e:
+        raise ValueError(f"Failed to parse template for variables: {e}")
+    
+    # Extract variables wrapped in XML tags
+    xml_tags = re.findall(r'<([a-zA-Z0-9_]+)>', text)
+    for tag in xml_tags:
+        if tag.lower() not in ignore_tags:
+            found.add(tag)
+            
+    return found
+
+def extract_template_vars(content: Dict[str, Any]) -> List[str]:
+    found: Set[str] = set()
     for msg in content.get("messages", []):
         text = msg.get("content", "")
         if isinstance(text, str):
-            try:
-                ast = env.parse(text)
-                vars_in_text = meta.find_undeclared_variables(ast)
-                found.update(vars_in_text)
-            except Exception as e:
-                raise ValueError(f"Failed to parse template for variables: {e}")
-            
-            # Extract variables wrapped in XML tags
-            xml_tags = re.findall(r'<([a-zA-Z0-9_]+)>', text)
-            for tag in xml_tags:
-                if tag.lower() not in ignore_tags:
-                    found.add(tag)
+            found.update(extract_vars_from_text(text))
     return sorted(list(found))
 
 def iter_skill_manifests(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:
