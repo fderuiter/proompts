@@ -84,7 +84,6 @@ def load_yaml(path: Union[str, Path]) -> Dict[str, Any]:
             return rendered_text
         return {}
     except Exception as e:
-        print(f"Error reading {path}: {e}")
         return {}
 
 def iter_prompt_files(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:

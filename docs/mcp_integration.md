@@ -165,7 +165,7 @@ For developers looking to understand or modify the underlying server, the MCP se
 | `Air-Gapped_Environment_Deployment_Architect` | Designs secure, resilient, and fully autonomous software deployment architectures for highly restric | `deployment_artifacts, security_constraints, operational_scale` |
 | `Algorithmic_Dynamic_Pricing_Yield_Management_Architect` | Designs rigorous algorithmic dynamic pricing and yield management strategies to optimize revenue max | `capacity_constraints, demand_stochasticity, pricing_objective` |
 | `Algorithmic_Multi-Touch_Attribution_Architect` | Constructs highly rigorous, algorithmic multi-touch attribution (MTA) models using Markov chains and | `user_journey_data, channel_costs, business_constraints` |
-| `Analyze_Adjudication_KPIs` | Calculate adjudication performance metrics and recommend improvements. | `adjudication_log.csv` |
+| `Analyze_Adjudication_KPIs` | Calculate adjudication performance metrics and recommend improvements. | `adjudication_log` |
 | `Applied_Ethical_Stress_Tester` | Systematically stress-tests complex ethical dilemmas and applied scenarios using Kantian and Utilita | `ethical_dilemma` |
 | `Architect_the_Integration_Blueprint` | Provide a structured plan for integrating site EHR systems with the sponsor's EDC and CTMS. | `input` |
 | `Architecture_Design_Page_Object_Model` | Implement the Page Object Model pattern to separate UI locators from test logic. | `html_source` |
@@ -463,7 +463,7 @@ For developers looking to understand or modify the underlying server, the MCP se
 | `Generate_QC_Submission-Ready_TLFs` | Produce validated tables, listings, and figures (TLFs) ready for regulatory submission. | `adae_path, adlb_path, adsl_path` |
 | `Generate_an_Executive_Summary_for_the_Final_Report` | Write a concise executive summary of a non-clinical study report. | `report_sections` |
 | `Generative_AI_Guardrails_Gateway_Architect` | Architect high-performance, robust gateway strategies for Large Language Models (LLMs) focusing on p | `threat_landscape, latency_constraints, regulatory_compliance` |
-| `GitHub_Custom_Agent_Creator` | Expertly craft configuration files for GitHub Custom Agents with strict YAML frontmatter and structu | `secrets.VAR, var.VAR, input` |
+| `GitHub_Custom_Agent_Creator` | Expertly craft configuration files for GitHub Custom Agents with strict YAML frontmatter and structu | `input` |
 | `Global_CDN_Topology_Architect` | Designs highly resilient, hyper-scalable Global Content Delivery Network (CDN) topologies for low-la | `asset_profiles, traffic_patterns, caching_requirements` |
 | `Global_Market_Entry_Expansion_Architect` | Architects highly rigorous, data-driven global market entry strategies and international expansion b | `target_market, product_portfolio, internal_capabilities` |
 | `Global_Regulatory_and_Tax_Matrix_for_Site_Payments` | Summarize key payment compliance requirements across major regions. | `regional_guidelines` |
@@ -777,7 +777,7 @@ For developers looking to understand or modify the underlying server, the MCP se
 | `Red_Account_Turnaround_Strategy` | Draft a re-engagement playbook for at-risk high-value accounts. | `account_details` |
 | `Refactoring_Architect` | A Principal Software Architect's guide to surgical refactoring, focusing on decoupling, testability, | `input` |
 | `Reflexion_Agent_Bug_Patch` | Locate and fix a bug using a structured reflexion workflow. | `code` |
-| `Regenerative_Medicine_Advanced_Therapy_RMAT_Designation_Architect` | Architects compelling RMAT designation requests to the FDA for cell therapies and tissue engineering | `therapy_description, target_disease, preliminary_clinical_evidence, standard_of_care_comparison` |
+| `Regenerative_Medicine_Advanced_Therapy_RMAT_Designation_daf043a1` | Architects compelling RMAT designation requests to the FDA for cell therapies and tissue engineering | `therapy_description, target_disease, preliminary_clinical_evidence, standard_of_care_comparison` |
 | `Regulatory-Change_Impact_Analysis` | Assess how a new regulation affects company operations and outline a phased response plan. | `COMPANY, EFFECTIVE_DATE, INDUSTRY_AND_REGION, REGULATION_NAME, company_profile, regulation_text` |
 | `Regulatory-Landscape_Radar` | Provide a weekly snapshot of regulatory developments relevant to early‑phase oncology and rare‑disea | `portfolio_snapshot` |
 | `Regulatory-Risk_ESG_Impact_Dashboard_Builder` | Aggregate regulatory changes and ESG metrics into a compliance risk dashboard. | `esg_baseline, reg_updates, risk_tolerance, study_portfolio` |

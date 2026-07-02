@@ -53,7 +53,7 @@ All prompts must be written as `.prompt.yaml` files.
 
 > [!NOTE]
 > **Schema is Strict!**
-> Your YAML must follow the exact structure defined in [`docs/template_prompt.prompt.yaml`](docs/template_prompt.prompt.yaml).
+> Your YAML must follow the exact structure defined in [`docs/template_prompt.prompt.md`](docs/template_prompt.prompt.md).
 
 1.  **Create the File**:
     *   **Standalone Prompts**: Place directly in the appropriate category folder (e.g., `prompts/business/market_research.prompt.yaml`). Do *not* number the filename.
