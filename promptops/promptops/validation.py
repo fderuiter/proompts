@@ -49,7 +49,7 @@ class Message(BaseModel):
         return self
 
 class ModelParameters(BaseModel):
-    temperature: float = Field(...)
+    temperature: float = Field(..., ge=0.0, le=2.0, description="Controls randomness (0.0-2.0)")
     max_tokens: Optional[int] = Field(None)
     top_p: Optional[float] = Field(None)
     frequency_penalty: Optional[float] = Field(None)

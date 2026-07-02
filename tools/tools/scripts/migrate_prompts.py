@@ -91,7 +91,7 @@ def migrate_file(file_path: Path, dry_run: bool = False) -> bool:
         content["model"] = "gpt-4o-mini"
         modified = True
     if "modelParameters" not in content:
-        content["modelParameters"] = {"temperature": 0.7}
+        content["modelParameters"] = {"temperature": 0.1}
         modified = True
 
     # Add testData and evaluators stubs if missing
