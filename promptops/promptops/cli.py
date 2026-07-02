@@ -60,8 +60,14 @@ def get_parser():
 
     # Simulate
     simulate_parser = subparsers.add_parser("simulate", help="Simulate a prompt")
-    simulate_parser.add_argument("file", help="Path to prompt file")
-    simulate_parser.add_argument("--data", help="Path to JSON/YAML file with mock data", required=True)
+    simulate_parser.add_argument("file", nargs="?", help="Path to prompt file")
+    simulate_parser.add_argument("-f", "--file", dest="file_flag", help="Path to prompt file (alias)")
+    simulate_parser.add_argument("-i", "--data", dest="data", help="Path to JSON/YAML file with mock data", required=True)
+    simulate_parser.add_argument("--strict", action="store_true", help="Enable strict validation")
+    simulate_parser.add_argument("--chaos", action="store_true", help="Enable chaos mode")
+    simulate_parser.add_argument("-v", "--verbose", action="store_true", help="Increase verbosity")
+    simulate_parser.add_argument("--json", action="store_true", help="Enable JSON output mode")
+    simulate_parser.add_argument("--no-color", action="store_true", help="Disable colored output")
 
     # Docs
     docs_parser = subparsers.add_parser("docs", help="Generate prompt documentation")
@@ -117,7 +123,23 @@ def main():
         success = validate_prompts(args.dir, strict=args.strict)
         sys.exit(0 if success else 1)
     elif args.command == "simulate":
-        success = simulate_prompt(args.file, args.data)
+        target_file = args.file_flag or args.file
+        if not target_file:
+            simulate_parser.error("Prompt file must be provided either as a positional argument or via -f/--file")
+            
+        import logging
+        if args.verbose:
+            logging.basicConfig(level=logging.DEBUG, format='%(levelname)s: %(message)s')
+            logging.getLogger().setLevel(logging.DEBUG)
+        else:
+            logging.basicConfig(level=logging.WARNING, format='%(levelname)s: %(message)s')
+            logging.getLogger().setLevel(logging.WARNING)
+            
+        from promptops.console import set_json_mode, set_no_color
+        set_json_mode(args.json)
+        set_no_color(args.no_color)
+            
+        success = simulate_prompt(target_file, args.data, chaos_mode=args.chaos, strict_mode=args.strict)
         sys.exit(0 if success else 1)
     elif args.command == "docs":
         generate_docs(args.dir, args.out, args.repo_url, args.branch)
