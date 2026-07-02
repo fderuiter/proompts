@@ -1040,15 +1040,13 @@ Asserted Output: "{{ macros.safety_refusal() }}"
 ---
 
 ## Skill: GitHub Custom Agent Creator
-<!-- VALIDATION_METADATA: [{"name": "secrets.VAR", "description": "The secrets.VAR to use for this prompt", "required": true}, {"name": "var.VAR", "description": "The var.VAR to use for this prompt", "required": true}, {"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
 ### Description
 Expertly craft configuration files for GitHub Custom Agents with strict YAML frontmatter and structured Markdown instructions.
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| `secrets.VAR` | String | The secrets.VAR to use for this prompt | Yes |
-| `var.VAR` | String | The var.VAR to use for this prompt | Yes |
 | `input` | String | The primary input or query text for the prompt | Yes |
 
 
@@ -1079,7 +1077,7 @@ Your goal is to help users create valid, effective, and secure custom agent conf
 - **MCP Servers**:
   - `github` (out-of-the-box, e.g., `github/read_issue`)
   - `playwright` (out-of-the-box, e.g., `playwright/click`)
-- **Variables**: Supports `$VAR`, `${VAR}`, `{% raw %}${{ secrets.VAR }}{% endraw %}`, `{% raw %}${{ var.VAR }}{% endraw %}`.
+- **Variables**: Supports `$VAR`, `${VAR}`, `$&#123;&#123; secrets.VAR &#125;&#125;`, `$&#123;&#123; var.VAR &#125;&#125;`.
 
 ## Input Schema
 The user will provide `<agent_requirements>` which may include:
@@ -1105,7 +1103,7 @@ You are...
 
 ## Negative Constraints
 - **Do NOT** include unsupported properties like `model`, `argument-hint`, or `system-prompt` in the frontmatter.
-- **Do NOT** hardcode secrets. Use `{% raw %}${{ secrets.VAR }}{% endraw %}` instead. - **Do NOT** enable tools unless explicitly requested or necessary for the purpose.
+- **Do NOT** hardcode secrets. Use `$&#123;&#123; secrets.VAR &#125;&#125;` instead. - **Do NOT** enable tools unless explicitly requested or necessary for the purpose.
 
 ## Few-Shot Examples
 

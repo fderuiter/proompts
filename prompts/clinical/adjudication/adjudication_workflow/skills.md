@@ -24,20 +24,20 @@ tags:
 ---
 
 ## Skill: Analyze Adjudication KPIs
-<!-- VALIDATION_METADATA: [{"name": "adjudication_log.csv", "description": "event log export", "required": true}] -->
+<!-- VALIDATION_METADATA: [{"name": "adjudication_log", "description": "event log export", "required": true}] -->
 ### Description
 Calculate adjudication performance metrics and recommend improvements.
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
-| `adjudication_log.csv` | String | event log export | Yes |
+| `adjudication_log` | String | event log export | Yes |
 
 
 ### Core Instructions
 ```text
 [SYSTEM]
-- CSV file `adjudication_log.csv` lists all events in an oncology trial.
+- CSV file `adjudication_log` lists all events in an oncology trial.
 - Leadership expects a plan to reduce median cycle time by 20%.
 
 Request a data dictionary if any column in the CSV is ambiguous before starting the analysis.
@@ -51,7 +51,7 @@ Request a data dictionary if any column in the CSV is ambiguous before starting 
 3. Recommend at least five concrete process changes tied to these metrics that would achieve the target reduction.
 
 Inputs:
-- `{{ adjudication_log.csv }}` – event log export
+- `{{ adjudication_log }}` – event log export
 
 Output format:
 - **Metrics Summary Table**
@@ -63,7 +63,7 @@ Output format:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{adjudication_log.csv: example_adjudication_log.csv}"
+Input Context: "{adjudication_log: example_adjudication_log.csv}"
 Asserted Output: "- **Metrics Summary Table**
 - Embedded charts or download links for each PNG
 - Bullet list of recommendations"
