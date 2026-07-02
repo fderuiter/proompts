@@ -363,8 +363,7 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
             path_obj = Path(prompt_file)
             skills_md = path_obj.parent / "skills.md"
             if skills_md.exists():
-                from promptops.utils import parse_skill_manifest
-                from promptops.resolver import resolve_skill_from_path
+                from promptops.utils import parse_skill_manifest, resolve_skill_from_path
                 manifest = parse_skill_manifest(skills_md)
                 
                 best_match = resolve_skill_from_path(path_obj, manifest.get("skills", []))
