@@ -1,3 +1,16 @@
+"""
+governance_manifest_generator.py: Governance Manifest Generator
+
+WHAT:
+This script scans prompt files and generates a regulatory compliance manifest (`compliance_manifest.json`) and a gap report (`gap_report.json`) against predefined standards like 21 CFR Part 11 and ISO 13485.
+
+WHY:
+Ensures that clinical and regulatory prompts contain the necessary metadata, evaluation rules, and traceability required for compliance in regulated environments.
+
+HOW TO USE:
+python3 tools/tools/scripts/governance_manifest_generator.py
+"""
+
 from typing import Any
 import json
 import hashlib
