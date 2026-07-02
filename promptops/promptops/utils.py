@@ -171,7 +171,7 @@ def extract_vars_from_text(text: str) -> Set[str]:
     """Extracts Jinja and XML variables from a single text string."""
     found: Set[str] = set()
     env = Environment()
-    ignore_tags = {"br", "p", "b", "i", "div", "span", "ul", "li", "ol", "html", "body", "head", "title", "table", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "a", "img", "strong", "em", "hr", "meta", "link", "script", "style", "svg", "path"}
+    ignore_tags = {"br", "p", "b", "i", "div", "span", "ul", "li", "ol", "html", "body", "head", "title", "table", "tr", "td", "th", "h1", "h2", "h3", "h4", "h5", "h6", "a", "img", "strong", "em", "hr", "meta", "link", "script", "style", "svg", "path", "text"}
     
     try:
         ast = env.parse(text)
