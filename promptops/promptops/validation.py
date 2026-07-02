@@ -3,7 +3,7 @@ import re
 import jinja2
 from enum import Enum
 from pathlib import Path
-from typing import Any, List, Optional, Dict, Union
+from typing import Any, List, Optional, Dict, Union, Set
 
 from pydantic import BaseModel, ValidationError, field_validator, model_validator, Field
 from promptops.utils import load_yaml, iter_prompt_files, iter_workflow_files
@@ -487,13 +487,13 @@ def validate_prompts(directory: str, strict: bool = False) -> bool:
                     ok = False
 
     # Check directory hygiene
-    for directory in dirs_to_check:
-        if not (directory / "overview.md").exists():
-            console.error(f"Missing overview.md in {directory}")
+    for d in dirs_to_check:
+        if not (d / "overview.md").exists():
+            console.error(f"Missing overview.md in {d}")
             ok = False
             
-        has_manifest = (directory / "skills.md").exists()
-        for file in directory.iterdir():
+        has_manifest = (d / "skills.md").exists()
+        for file in d.iterdir():
             if not file.is_file() or file.name.startswith('.'):
                 continue
             name = file.name
