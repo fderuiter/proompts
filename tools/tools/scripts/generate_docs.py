@@ -33,6 +33,7 @@ from pathlib import Path
 from dataclasses import dataclass, field
 from typing import List, Dict, Optional, Any
 from promptops.utils import load_yaml, derive_category, derive_title
+from promptops.documentation import WorkflowGrapher
 
 # --- Configuration Loading (Extracted) ---
 def load_config() -> Dict[str, Any]:
