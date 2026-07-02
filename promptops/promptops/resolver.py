@@ -1,33 +1,7 @@
-import hashlib
 import re
 from pathlib import Path
 from typing import Tuple, Optional, Any, Dict, List
-
-def get_tool_name(path: Path, content: dict) -> Tuple[str, str]:
-    """
-    Returns (original_name, sanitized_name).
-    Handles unified normalization and hashing for truncation.
-    """
-    name = content.get('name')
-    if not name:
-        name = path.name.replace(".prompt.yaml", "").replace(".prompt.yml", "").replace(".prompt.md", "")
-        
-    original_name = name
-    name = re.sub(r'[^a-zA-Z0-9_-]', '_', name)
-    name = re.sub(r'_+', '_', name)
-    name = name.strip('_')
-    
-    if len(name) > 64:
-        hash_input = f"{path}::{original_name}"
-        h = hashlib.md5(hash_input.encode()).hexdigest()[:6]
-        name = name[:57] + "_" + h
-        
-    return original_name, name
-
-def get_tool_name_mcp(path: Path, content: dict) -> str:
-    """Wrapper that just returns the sanitized name for MCP server."""
-    _, sanitized = get_tool_name(path, content)
-    return sanitized
+from promptops.utils import get_tool_name, get_tool_name_mcp
 
 def _get_words(text: str) -> set:
     words = set()
