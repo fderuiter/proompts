@@ -14,29 +14,7 @@ class DocItem:
     description: str = ""
     graph_mermaid: Optional[str] = None
 
-class WorkflowGrapher:
-    RE_STEPS = re.compile(r'steps\.(\w+)\.output')
-    RE_INPUTS = re.compile(r'inputs\.(\w+)')
-    
-    @staticmethod
-    def generate(data: Dict[str, Any]) -> str:
-        if 'steps' not in data and 'inputs' not in data:
-            return ""
-        graph = ["graph TD"]
-        for inp in data.get('inputs', []):
-            name = inp.get('name', 'Unknown')
-            graph.append(f"    Input_{name}[Input: {name}] --> Steps")
-        for step in data.get('steps', []):
-            step_id = step.get('step_id', 'unknown')
-            graph.append(f"    {step_id}[Step: {step_id}]")
-            inputs_map = step.get('map_inputs', {})
-            for val in inputs_map.values():
-                if isinstance(val, str):
-                    for match in WorkflowGrapher.RE_STEPS.findall(val):
-                        graph.append(f"    {match} --> {step_id}")
-                    for match in WorkflowGrapher.RE_INPUTS.findall(val):
-                        graph.append(f"    Input_{match} --> {step_id}")
-        return "\n".join(graph) if len(graph) > 1 else ""
+
 
 from promptops.skill_export import process_skills
 
@@ -95,7 +73,16 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
             data = load_yaml(str(path))
             title = derive_title(path, data)
             desc = data.get('description', 'No description provided.')
-            mermaid = WorkflowGrapher.generate(data)
+            
+            try:
+                from promptops.validation import WorkflowSchema
+                from promptops.visualization import MermaidGrapher
+                wf = WorkflowSchema(**data)
+                mermaid = MermaidGrapher.generate(wf)
+            except Exception as e:
+                print(f"Error parsing {path} for mermaid generation: {e}")
+                mermaid = ""
+
             
             filename = path.stem.replace('.workflow', '') + ".md"
             output_file = out_workflows_dir / filename

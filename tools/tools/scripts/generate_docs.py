@@ -33,7 +33,8 @@ from pathlib import Path
 from dataclasses import dataclass
 from typing import List, Dict, Optional, Any
 from promptops.utils import load_yaml, derive_category, derive_title
-from promptops.documentation import WorkflowGrapher
+from promptops.visualization import MermaidGrapher
+from promptops.validation import WorkflowSchema
 
 # --- Configuration Loading (Extracted) ---
 def load_config() -> Dict[str, Any]:
@@ -551,7 +552,12 @@ title: {title}
         """
         title = derive_title(source_path, data)
         desc = data.get('description', 'No description provided.')
-        mermaid = WorkflowGrapher.generate(data)
+        try:
+            wf = WorkflowSchema(**data)
+            mermaid = MermaidGrapher.generate(wf)
+        except Exception as e:
+            print(f"Error generating mermaid graph: {e}")
+            mermaid = "" 
         
         filename = source_path.stem.replace('.workflow', '') + ".md"
         output_path = self.root / CONFIG['dirs']['workflow_docs'] / filename

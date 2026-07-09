@@ -218,43 +218,21 @@ st.subheader("Visualizer")
 steps = st.session_state['wf_steps']
 
 if steps:
-    graph = "digraph G {\n"
-    graph += "  rankdir=LR;\n"
-    graph += "  node [shape=box, style=filled, fillcolor=lightblue];\n"
-    
-    # Track which steps output are used
-    for step in steps:
-        step_id = step.get('step_id', 'unknown')
-        p_file = os.path.basename(step.get("prompt_file", ""))
-        graph += f'  "{step_id}" [label="{step_id}\\n({p_file})"];\n'
-        
-        # Draw control flow edges based on 'next'
-        for next_edge in step.get('next', []):
-            if isinstance(next_edge, dict) and next_edge.get('target'):
-                target = next_edge.get('target')
-                condition = "conditional" if next_edge.get('condition') else "unconditional"
-                graph += f'  "{step_id}" -> "{target}" [color="red", style="dashed", label="{condition}"];\n'
-            elif isinstance(next_edge, str) and next_edge:
-                graph += f'  "{step_id}" -> "{next_edge}" [color="red", style="dashed", label="unconditional"];\n'
-        
-        # Draw edges based on inputs
-        for input_var, input_val in step.get('map_inputs', {}).items():
-            if isinstance(input_val, str) and input_val.startswith('{{') and input_val.endswith('}}'):
-                inner = input_val[2:-2].strip()
-                if inner.startswith('steps.'):
-                    parts = inner.split('.')
-                    if len(parts) >= 2:
-                        source_step = parts[1]
-                        graph += f'  "{source_step}" -> "{step_id}" [label="{input_var}"];\n'
-                elif inner.startswith('inputs.'):
-                    parts = inner.split('.')
-                    if len(parts) >= 2:
-                        source_input = parts[1]
-                        graph += f'  "INPUT_{source_input}" [shape=ellipse, fillcolor=lightgreen];\n'
-                        graph += f'  "INPUT_{source_input}" -> "{step_id}" [label="{input_var}"];\n'
-                        
-    graph += "}\n"
-    st.graphviz_chart(graph)
+    from promptops.validation import WorkflowSchema
+    from promptops.visualization import MermaidGrapher
+    from streamlit_mermaid import st_mermaid
+    try:
+        temp_data = dict(data)
+        temp_data['inputs'] = edited_inputs_df.to_dict('records')
+        temp_data['steps'] = steps
+        wf = WorkflowSchema(**temp_data)
+        mermaid_code = MermaidGrapher.generate(wf)
+        if mermaid_code:
+            st_mermaid(mermaid_code, height=500)
+        else:
+            st.info("Graph is empty.")
+    except Exception as e:
+        st.warning(f"Could not generate visualizer yet: {e}")
 else:
     st.info("No steps defined yet.")
 
