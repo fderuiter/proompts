@@ -7,7 +7,7 @@ dependencies = [
     "tools",
     "streamlit>=1.30.0",
     "pandas",
-    "graphviz"
+    "streamlit-mermaid",
 ]
 requires-python = ">=3.8"
 
