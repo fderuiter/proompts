@@ -18,7 +18,7 @@ class TestRenderWorkflow(unittest.TestCase):
             'name': 'Test Workflow',
             'description': 'A test workflow.',
             'steps': [
-                {'step_id': 'step1', 'map_inputs': {'input1': 'inputs.foo'}}
+                {'step_id': 'step1', 'prompt_file': 'test.prompt.yaml', 'map_inputs': {'input1': 'inputs.foo'}}
             ],
             'inputs': [{'name': 'foo'}]
         }
@@ -44,7 +44,7 @@ class TestRenderWorkflow(unittest.TestCase):
             self.assertIn("## Workflow Diagram", content)
             self.assertIn("```mermaid", content)
             self.assertIn("graph TD", content)
-            self.assertIn("Input_foo", content)
+            self.assertIn("INPUT_foo", content)
 
     def test_render_workflow_without_mermaid(self):
         # Mock data without steps/inputs -> no mermaid
