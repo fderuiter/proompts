@@ -99,132 +99,152 @@ variables = data.get('variables', [])
 var_df = pd.DataFrame(variables) if variables else pd.DataFrame(columns=["name", "description"])
 edited_var_df = st.data_editor(var_df, num_rows="dynamic", key="var_editor")
 
-st.subheader("Messages")
-if 'messages' not in st.session_state:
-    st.session_state['messages'] = data.get('messages', [])
+@st.fragment
+def render_messages():
+    st.subheader("Messages")
+    if 'messages' not in st.session_state:
+        st.session_state['messages'] = data.get('messages', [])
 
-if 'current_file' not in st.session_state or st.session_state['current_file'] != selected_file:
-    st.session_state['current_file'] = selected_file
-    st.session_state['messages'] = data.get('messages', [])
-    
-for i, msg in enumerate(st.session_state['messages']):
-    col1, col2, col3 = st.columns([2, 8, 1])
-    with col1:
-        st.session_state['messages'][i]['role'] = st.selectbox(f"Role {i}", ["system", "user", "assistant"], index=["system", "user", "assistant"].index(msg.get('role', 'user')), key=f"role_{i}")
-    with col2:
-        st.session_state['messages'][i]['content'] = st.text_area(f"Content {i}", value=msg.get('content', ''), key=f"content_{i}")
-    with col3:
-        if st.button("X", key=f"del_{i}"):
-            st.session_state['messages'].pop(i)
-            st.rerun()
+    if 'current_file' not in st.session_state or st.session_state['current_file'] != selected_file:
+        st.session_state['current_file'] = selected_file
+        st.session_state['messages'] = data.get('messages', [])
+        
+    def delete_message(idx):
+        st.session_state['messages'].pop(idx)
+        st.toast("Message deleted")
 
-if st.button("Add Message"):
-    st.session_state['messages'].append({"role": "user", "content": ""})
-    st.rerun()
+    def add_message():
+        st.session_state['messages'].append({"role": "user", "content": ""})
+        st.toast("Message added")
 
-st.subheader("Test Data & Evaluators")
-
-if 'testData' not in st.session_state:
-    st.session_state['testData'] = data.get('testData', [])
-if 'evaluators' not in st.session_state:
-    st.session_state['evaluators'] = data.get('evaluators', [])
-
-if 'current_file_td' not in st.session_state or st.session_state['current_file_td'] != selected_file:
-    st.session_state['current_file_td'] = selected_file
-    st.session_state['testData'] = data.get('testData', [])
-    st.session_state['evaluators'] = data.get('evaluators', [])
-
-st.markdown("### Test Data")
-for i, td in enumerate(st.session_state['testData']):
-    with st.expander(f"Test Case {i+1}"):
-        col1, col2, col3 = st.columns([4, 4, 1])
+    for i, msg in enumerate(st.session_state['messages']):
+        col1, col2, col3 = st.columns([2, 8, 1])
         with col1:
-            st.markdown("**Inputs**")
-            inputs_json = td.get('inputs', td.get('input', {}))
-            
-            # Dynamically generate fields based on defined variables
-            updated_inputs = {}
-            for var in data.get('variables', []):
-                var_name = var.get('name')
-                if var_name:
-                    updated_inputs[var_name] = st.text_input(f"{var_name}", value=inputs_json.get(var_name, ""), key=f"td_inputs_{i}_{var_name}")
-            
-            if 'input' in td:
-                st.session_state['testData'][i]['input'] = updated_inputs
-            else:
-                st.session_state['testData'][i]['inputs'] = updated_inputs
+            st.session_state['messages'][i]['role'] = st.selectbox(f"Role {i}", ["system", "user", "assistant"], index=["system", "user", "assistant"].index(msg.get('role', 'user')), key=f"role_{i}")
         with col2:
-            st.session_state['testData'][i]['expected'] = st.text_area(f"Expected Output", value=str(td.get('expected', '')), key=f"td_expected_{i}")
+            st.session_state['messages'][i]['content'] = st.text_area(f"Content {i}", value=msg.get('content', ''), key=f"content_{i}")
         with col3:
-            if st.button("X", key=f"del_td_{i}"):
-                st.session_state['testData'].pop(i)
-                st.rerun()
+            st.button("X", key=f"del_{i}", on_click=delete_message, args=(i,))
 
-if st.button("Add Test Case"):
-    st.session_state['testData'].append({"inputs": {}, "expected": ""})
-    st.rerun()
+    st.button("Add Message", on_click=add_message)
 
-st.markdown("### Evaluators")
-for i, ev in enumerate(st.session_state['evaluators']):
-    with st.expander(f"Evaluator: {ev.get('name', 'New')}"):
-        col1, col2, col3 = st.columns([3, 6, 1])
-        with col1:
-            st.session_state['evaluators'][i]['name'] = st.text_input(f"Name", value=ev.get('name', ''), key=f"ev_name_{i}")
-        with col2:
-            st.markdown("**Logic Builder**")
-            
-            # Pre-parse common patterns from existing python strings
-            py_logic = ev.get('python', '')
-            eval_type = "Custom Python"
-            eval_target = ""
-            eval_value = ""
-            
-            if py_logic.startswith("len(output) > ") and py_logic[14:].isdigit():
-                eval_type = "Length >"
-                eval_value = py_logic[14:]
-            elif py_logic.startswith("len(output) < ") and py_logic[14:].isdigit():
-                eval_type = "Length <"
-                eval_value = py_logic[14:]
-            elif " in output" in py_logic and py_logic.startswith("'") and py_logic.split("'")[1]:
-                eval_type = "Contains"
-                eval_value = py_logic.split("'")[1]
-            elif " not in output" in py_logic and py_logic.startswith("'"):
-                eval_type = "Does Not Contain"
-                eval_value = py_logic.split("'")[1]
-            elif py_logic.startswith("re.search(") and "output" in py_logic:
-                eval_type = "Regex Match"
-                try:
-                    eval_value = py_logic.split("r'")[1].split("',")[0]
-                except:
-                    eval_value = ""
-            
-            subcol1, subcol2 = st.columns(2)
-            with subcol1:
-                sel_type = st.selectbox("Rule Type", ["Contains", "Does Not Contain", "Regex Match", "Length >", "Length <", "Custom Python"], index=["Contains", "Does Not Contain", "Regex Match", "Length >", "Length <", "Custom Python"].index(eval_type) if eval_type in ["Contains", "Does Not Contain", "Regex Match", "Length >", "Length <", "Custom Python"] else 5, key=f"ev_type_{i}")
-            
-            with subcol2:
-                if sel_type != "Custom Python":
-                    val = st.text_input("Value", value=eval_value, key=f"ev_val_{i}")
-                    if sel_type == "Contains":
-                        st.session_state['evaluators'][i]['python'] = f"'{val}' in output"
-                    elif sel_type == "Does Not Contain":
-                        st.session_state['evaluators'][i]['python'] = f"'{val}' not in output"
-                    elif sel_type == "Regex Match":
-                        st.session_state['evaluators'][i]['python'] = f"re.search(r'{val}', output)"
-                    elif sel_type == "Length >":
-                        st.session_state['evaluators'][i]['python'] = f"len(output) > {val if val.isdigit() else 0}"
-                    elif sel_type == "Length <":
-                        st.session_state['evaluators'][i]['python'] = f"len(output) < {val if val.isdigit() else 0}"
+render_messages()
+
+@st.fragment
+def render_test_data_and_evaluators():
+    st.subheader("Test Data & Evaluators")
+
+    if 'testData' not in st.session_state:
+        st.session_state['testData'] = data.get('testData', [])
+    if 'evaluators' not in st.session_state:
+        st.session_state['evaluators'] = data.get('evaluators', [])
+
+    if 'current_file_td' not in st.session_state or st.session_state['current_file_td'] != selected_file:
+        st.session_state['current_file_td'] = selected_file
+        st.session_state['testData'] = data.get('testData', [])
+        st.session_state['evaluators'] = data.get('evaluators', [])
+
+    def delete_test_case(idx):
+        st.session_state['testData'].pop(idx)
+        st.toast("Test case deleted")
+
+    def add_test_case():
+        st.session_state['testData'].append({"inputs": {}, "expected": ""})
+        st.toast("Test case added")
+
+    def delete_evaluator(idx):
+        st.session_state['evaluators'].pop(idx)
+        st.toast("Evaluator deleted")
+
+    def add_evaluator():
+        st.session_state['evaluators'].append({"name": "", "python": ""})
+        st.toast("Evaluator added")
+
+    st.markdown("### Test Data")
+    for i, td in enumerate(st.session_state['testData']):
+        with st.expander(f"Test Case {i+1}"):
+            col1, col2, col3 = st.columns([4, 4, 1])
+            with col1:
+                st.markdown("**Inputs**")
+                inputs_json = td.get('inputs', td.get('input', {}))
+                
+                # Dynamically generate fields based on defined variables
+                updated_inputs = {}
+                for var in data.get('variables', []):
+                    var_name = var.get('name')
+                    if var_name:
+                        updated_inputs[var_name] = st.text_input(f"{var_name}", value=inputs_json.get(var_name, ""), key=f"td_inputs_{i}_{var_name}")
+                
+                if 'input' in td:
+                    st.session_state['testData'][i]['input'] = updated_inputs
                 else:
-                    st.session_state['evaluators'][i]['python'] = st.text_area("Custom Python", value=py_logic, key=f"ev_py_{i}")
-        with col3:
-            if st.button("X", key=f"del_ev_{i}"):
-                st.session_state['evaluators'].pop(i)
-                st.rerun()
+                    st.session_state['testData'][i]['inputs'] = updated_inputs
+            with col2:
+                st.session_state['testData'][i]['expected'] = st.text_area(f"Expected Output", value=str(td.get('expected', '')), key=f"td_expected_{i}")
+            with col3:
+                st.button("X", key=f"del_td_{i}", on_click=delete_test_case, args=(i,))
 
-if st.button("Add Evaluator"):
-    st.session_state['evaluators'].append({"name": "", "python": ""})
-    st.rerun()
+    st.button("Add Test Case", on_click=add_test_case)
+
+    st.markdown("### Evaluators")
+    for i, ev in enumerate(st.session_state['evaluators']):
+        with st.expander(f"Evaluator: {ev.get('name', 'New')}"):
+            col1, col2, col3 = st.columns([3, 6, 1])
+            with col1:
+                st.session_state['evaluators'][i]['name'] = st.text_input(f"Name", value=ev.get('name', ''), key=f"ev_name_{i}")
+            with col2:
+                st.markdown("**Logic Builder**")
+                
+                # Pre-parse common patterns from existing python strings
+                py_logic = ev.get('python', '')
+                eval_type = "Custom Python"
+                eval_target = ""
+                eval_value = ""
+                
+                if py_logic.startswith("len(output) > ") and py_logic[14:].isdigit():
+                    eval_type = "Length >"
+                    eval_value = py_logic[14:]
+                elif py_logic.startswith("len(output) < ") and py_logic[14:].isdigit():
+                    eval_type = "Length <"
+                    eval_value = py_logic[14:]
+                elif " in output" in py_logic and py_logic.startswith("'") and py_logic.split("'")[1]:
+                    eval_type = "Contains"
+                    eval_value = py_logic.split("'")[1]
+                elif " not in output" in py_logic and py_logic.startswith("'"):
+                    eval_type = "Does Not Contain"
+                    eval_value = py_logic.split("'")[1]
+                elif py_logic.startswith("re.search(") and "output" in py_logic:
+                    eval_type = "Regex Match"
+                    try:
+                        eval_value = py_logic.split("r'")[1].split("',")[0]
+                    except:
+                        eval_value = ""
+                
+                subcol1, subcol2 = st.columns(2)
+                with subcol1:
+                    sel_type = st.selectbox("Rule Type", ["Contains", "Does Not Contain", "Regex Match", "Length >", "Length <", "Custom Python"], index=["Contains", "Does Not Contain", "Regex Match", "Length >", "Length <", "Custom Python"].index(eval_type) if eval_type in ["Contains", "Does Not Contain", "Regex Match", "Length >", "Length <", "Custom Python"] else 5, key=f"ev_type_{i}")
+                
+                with subcol2:
+                    if sel_type != "Custom Python":
+                        val = st.text_input("Value", value=eval_value, key=f"ev_val_{i}")
+                        if sel_type == "Contains":
+                            st.session_state['evaluators'][i]['python'] = f"'{val}' in output"
+                        elif sel_type == "Does Not Contain":
+                            st.session_state['evaluators'][i]['python'] = f"'{val}' not in output"
+                        elif sel_type == "Regex Match":
+                            st.session_state['evaluators'][i]['python'] = f"re.search(r'{val}', output)"
+                        elif sel_type == "Length >":
+                            st.session_state['evaluators'][i]['python'] = f"len(output) > {val if val.isdigit() else 0}"
+                        elif sel_type == "Length <":
+                            st.session_state['evaluators'][i]['python'] = f"len(output) < {val if val.isdigit() else 0}"
+                    else:
+                        st.session_state['evaluators'][i]['python'] = st.text_area("Custom Python", value=py_logic, key=f"ev_py_{i}")
+            with col3:
+                st.button("X", key=f"del_ev_{i}", on_click=delete_evaluator, args=(i,))
+
+    st.button("Add Evaluator", on_click=add_evaluator)
+
+render_test_data_and_evaluators()
 
 if st.button("Save Changes", type="primary"):
     if not new_file_path.endswith('.prompt.md'):
@@ -244,6 +264,7 @@ if st.button("Save Changes", type="primary"):
             full_path = os.path.join(base_dir, new_file_path)
             save_yaml(full_path, data)
             st.success("Saved successfully and validated!")
+            st.toast("Prompt saved")
         except json.JSONDecodeError as e:
             st.error(f"JSON Parsing Error: {e}")
         except ValidationError as e:
