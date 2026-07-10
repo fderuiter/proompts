@@ -74,7 +74,7 @@ pip install -r requirements.txt
 | **`test_check_prompts.py`** | 🐍 Python | Test check_overview when OVERVIEW_NAME exists. |
 | **`test_enrich_prompts.py`** | 🐍 Python | Test with an empty dictionary. |
 | **`test_fix_markdown_issues.py`** | 🐍 Python | No description provided. |
-| **`test_generate_docs.py`** | 🐍 Python | Test file in the root directory returns Uncategorized. |
+| **`test_generate_docs.py`** | 🐍 Python | Test that markdown files are synced from workflows/ to docs/workflows/ and links are rewritten. |
 | **`test_generate_overviews.py`** | 🐍 Python | Test metadata extraction when 'name' is present in YAML. |
 | **`test_generate_regulatory_prompts.py`** | 🐍 Python | No description provided. |
 | **`test_generate_search_index.py`** | 🐍 Python | No description provided. |

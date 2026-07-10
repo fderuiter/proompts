@@ -498,6 +498,96 @@ title: {title}
             output_path.write_text(content, encoding='utf-8')
             return output_path, False
 
+    def sync_markdown_assets(self, check_mode: bool = False) -> bool:
+        """
+        Synchronizes raw markdown assets from workflows/ to the published documentation folder.
+        Uses shared discovery utility to skip YAML files and only target markdown files.
+        """
+        import re, urllib.parse, os
+        print("🔄 Syncing Workflow Markdown Assets...")
+        wf_dir = self.root / CONFIG['dirs']['workflows']
+        docs_dir = self.root / CONFIG['dirs']['workflow_docs']
+        
+        if not wf_dir.exists():
+            return False
+
+        from promptops.utils import iter_markdown_files
+        changes_detected = False
+
+        def rewrite_link(match, source_path, new_md_file):
+            text = match.group(1)
+            link = match.group(2)
+            if link.startswith(('http://', 'https://', 'mailto:', '#')):
+                return match.group(0)
+                
+            parsed = urllib.parse.urlparse(link)
+            path_part = parsed.path
+            anchor = parsed.fragment
+            
+            if path_part.startswith('/'):
+                target_abs = self.root / path_part.lstrip('/')
+            else:
+                target_abs = (source_path.parent / path_part).resolve()
+                
+            if target_abs.name.endswith('.workflow.yaml'):
+                stem = target_abs.name.replace('.workflow.yaml', '')
+                target_dest = self.root / CONFIG['dirs']['workflow_docs'] / f"{stem}.md"
+            elif target_abs.name.endswith('.prompt.yaml') or target_abs.name.endswith('.prompt.yml'):
+                try:
+                    rel = target_abs.relative_to(self.root / CONFIG['dirs']['prompts'])
+                    target_dest = self.root / CONFIG['dirs']['docs'] / "prompts" / rel.with_suffix(".md")
+                except ValueError:
+                    target_dest = target_abs
+            else:
+                if target_abs.is_file() and target_abs.suffix == '.md':
+                    try:
+                        rel = target_abs.relative_to(self.root / CONFIG['dirs']['workflows'])
+                        target_dest = self.root / CONFIG['dirs']['workflow_docs'] / rel
+                    except ValueError:
+                        target_dest = target_abs
+                else:
+                    target_dest = target_abs
+                    
+            try:
+                new_rel = os.path.relpath(target_dest, new_md_file.parent)
+                if anchor:
+                    new_rel += f"#{anchor}"
+                return f"[{text}]({new_rel})"
+            except ValueError:
+                return match.group(0)
+
+        for md_file in iter_markdown_files(wf_dir):
+            rel_path = md_file.relative_to(wf_dir)
+            out_path = docs_dir / rel_path
+            
+            try:
+                content = md_file.read_text(encoding='utf-8')
+            except Exception as e:
+                print(f"❌ Error reading {md_file}: {e}")
+                continue
+
+            rewritten_content = re.sub(
+                r'\[([^\]]+)\]\(([^)]+)\)',
+                lambda m: rewrite_link(m, md_file, out_path),
+                content
+            )
+
+            if check_mode:
+                if not out_path.exists():
+                    print(f"❌ Missing synced file: {out_path}")
+                    changes_detected = True
+                elif out_path.read_text(encoding='utf-8') != rewritten_content:
+                    print(f"❌ Content mismatch for synced file: {out_path}")
+                    changes_detected = True
+            else:
+                out_path.parent.mkdir(parents=True, exist_ok=True)
+                if not out_path.exists() or out_path.read_text(encoding='utf-8') != rewritten_content:
+                    out_path.write_text(rewritten_content, encoding='utf-8')
+                    print(f"✅ Synced and rewrote links for {md_file.name}")
+                    changes_detected = True
+
+        return changes_detected
+
     def scan_workflows(self, check_mode: bool = False) -> bool:
         """
         Scans the workflows directory for YAML files, generating a Markdown page for each.
@@ -732,6 +822,7 @@ def main() -> None:
 
     changes = gen.scan_prompts(check_mode=args.check)
     changes |= gen.scan_workflows(check_mode=args.check)
+    changes |= gen.sync_markdown_assets(check_mode=args.check)
     changes |= gen.build_indices(check_mode=args.check)
     changes |= gen.build_tool_registry(check_mode=args.check)
     changes |= gen.build_maturity_dashboard(check_mode=args.check)
