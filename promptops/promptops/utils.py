@@ -182,6 +182,14 @@ def iter_workflow_files(root: Optional[Union[str, Path]] = None) -> Iterator[Pat
         if not p.name.startswith("._") and "site/" not in str(p):
             yield p
 
+def iter_markdown_files(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:
+    """Iterate over all Markdown files recursively, skipping hidden/system files."""
+    root_path = Path(root) if root else Path.cwd()
+    for p in root_path.rglob("*.md"):
+        if not p.name.startswith("._") and "site/" not in str(p):
+            yield p
+
+
 def _format_category(raw: str) -> str:
     cleaned = raw.strip().replace("_", " ").replace("-", " ").replace("/", " ")
     return " ".join(word.capitalize() for word in cleaned.split())

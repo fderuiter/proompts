@@ -2,12 +2,50 @@ import unittest
 from pathlib import Path
 import sys
 import os
-from unittest.mock import MagicMock
+from unittest.mock import MagicMock, patch
 
 # Mock yaml before importing generate_docs since it might not be installed
 sys.modules["yaml"] = MagicMock()
 
 from promptops.utils import derive_category
+from tools.scripts.generate_docs import DocumentationGenerator
+
+class TestSyncMarkdownAssets(unittest.TestCase):
+    @patch("tools.scripts.generate_docs.CONFIG", {'dirs': {'workflows': 'workflows', 'workflow_docs': 'docs/workflows', 'prompts': 'prompts', 'docs': 'docs'}})
+    @patch("promptops.utils.iter_markdown_files")
+    def test_sync_markdown_assets(self, mock_iter):
+        """Test that markdown files are synced from workflows/ to docs/workflows/ and links are rewritten."""
+        import tempfile
+        import shutil
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            wf_dir = root / "workflows"
+            docs_dir = root / "docs" / "workflows"
+            wf_dir.mkdir(parents=True)
+            
+            # Setup a fake markdown file
+            md_file = wf_dir / "overview.md"
+            md_content = "Link to [Workflow](test.workflow.yaml) and [Schema](../docs/schema.md)"
+            md_file.write_text(md_content)
+
+            # Setup the iter mock
+            mock_iter.return_value = [md_file]
+
+            gen = DocumentationGenerator(root)
+            changes = gen.sync_markdown_assets()
+
+            self.assertTrue(changes)
+            self.assertTrue((docs_dir / "overview.md").exists())
+            
+            # Verify links are rewritten correctly
+            synced_content = (docs_dir / "overview.md").read_text()
+            self.assertIn("[Workflow](test.md)", synced_content)
+            self.assertIn("[Schema](../schema.md)", synced_content)
+
+            # Re-running shouldn't cause changes
+            changes_again = gen.sync_markdown_assets()
+            self.assertFalse(changes_again)
 
 class TestDeriveCategory(unittest.TestCase):
     def test_root_file(self):

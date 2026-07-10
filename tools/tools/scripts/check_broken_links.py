@@ -25,7 +25,10 @@ from typing import List, Tuple, Set
 # Configuration
 DOCS_DIR = Path("docs")
 PROMPTS_DIR = Path("prompts")
+WORKFLOWS_DIR = Path("workflows")
 ROOT_DIR = Path.cwd()
+
+from promptops.utils import iter_markdown_files
 
 # Regex to find links: [text](url)
 # This is a simple regex and might miss some edge cases, but covers standard markdown links
@@ -40,9 +43,11 @@ def get_all_markdown_files() -> List[Path]:
     """Return a list of all markdown files to scan."""
     files = []
     if DOCS_DIR.exists():
-        files.extend([p for p in DOCS_DIR.rglob("*.md") if not p.name.startswith("._")])
+        files.extend(list(iter_markdown_files(DOCS_DIR)))
     if PROMPTS_DIR.exists():
-        files.extend([p for p in PROMPTS_DIR.rglob("*.md") if not p.name.startswith("._")])
+        files.extend(list(iter_markdown_files(PROMPTS_DIR)))
+    if WORKFLOWS_DIR.exists():
+        files.extend(list(iter_markdown_files(WORKFLOWS_DIR)))
     # Also check root files like README.md, CONTRIBUTING.md
     files.extend([p for p in ROOT_DIR.glob("*.md") if not p.name.startswith("._")])
     return files
