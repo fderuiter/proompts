@@ -20,7 +20,7 @@ from __future__ import annotations
 from pathlib import Path
 import sys
 
-from promptops.utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, OVERVIEW_NAME
+from promptops.utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, OVERVIEW_NAME, _is_valid_file
 from promptops.sync import DirectoryReconciler
 
 
@@ -75,8 +75,8 @@ def generate_overview(directory: Path, content_cache: dict[Path, bool] | None = 
     for pattern in ("*.prompt.md", "*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml", "skills.md"):
         prompt_files.extend(directory.glob(pattern))
     
-    # Filter out hidden files (e.g. ._ files on Mac)
-    prompt_files = [f for f in prompt_files if not f.name.startswith('.')]
+    # Filter out hidden files and invalid paths
+    prompt_files = [f for f in prompt_files if _is_valid_file(f)]
 
     lines = []
     for file in sorted(prompt_files):
@@ -96,12 +96,12 @@ def generate_overview(directory: Path, content_cache: dict[Path, bool] | None = 
                 has_sub_prompts = content_cache[child]
             else:
                 for pattern in ("*.prompt.md", "*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml", "skills.md"):
-                    try:
-                        next(child.rglob(pattern))
-                        has_sub_prompts = True
+                    for f in child.rglob(pattern):
+                        if _is_valid_file(f):
+                            has_sub_prompts = True
+                            break
+                    if has_sub_prompts:
                         break
-                    except StopIteration:
-                        continue
                 if content_cache is not None:
                     content_cache[child] = has_sub_prompts
 
@@ -183,12 +183,10 @@ def main() -> int:
         if d in content_cache:
             return content_cache[d]
         for pattern in ("*.prompt.md", "*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml", "skills.md"):
-            try:
-                next(d.rglob(pattern))
-                content_cache[d] = True
-                return True
-            except StopIteration:
-                continue
+            for f in d.rglob(pattern):
+                if _is_valid_file(f):
+                    content_cache[d] = True
+                    return True
         content_cache[d] = False
         return False
 

@@ -1,6 +1,5 @@
 import sys
 import os
-import glob
 import yaml
 import json
 import streamlit as st
@@ -9,13 +8,10 @@ from typing import Any
 st.set_page_config(page_title="Workflow Editor", layout="wide")
 st.title("Workflow Editor")
 
-from promptops.utils import ROOT
+from promptops.utils import ROOT, iter_workflow_files, iter_prompt_files
 base_dir = str(ROOT)
-workflow_files = glob.glob(os.path.join(base_dir, "workflows", "**", "*.workflow.yaml"), recursive=True)
-workflow_files = [os.path.relpath(f, base_dir) for f in workflow_files]
-
-prompt_files = glob.glob(os.path.join(base_dir, "prompts", "**", "*.prompt.md"), recursive=True)
-prompt_files = [os.path.relpath(f, base_dir) for f in prompt_files]
+workflow_files = [os.path.relpath(str(f), base_dir) for f in iter_workflow_files()]
+prompt_files = [os.path.relpath(str(f), base_dir) for f in iter_prompt_files() if str(f).endswith('.prompt.md')]
 
 selected_file = st.selectbox("Select a workflow to edit", ["Create New..."] + workflow_files)
 
@@ -237,8 +233,8 @@ else:
     st.info("No steps defined yet.")
 
 if st.button("Save Workflow", type="primary"):
-    if not new_file_path.endswith('.workflow.yaml'):
-        st.error("File path must end with .workflow.yaml")
+    if not new_file_path.endswith('.workflow.yaml') and not new_file_path.endswith('.workflow.yml'):
+        st.error("File path must end with .workflow.yaml or .workflow.yml")
     else:
         try:
             data['inputs'] = edited_inputs_df.to_dict('records')

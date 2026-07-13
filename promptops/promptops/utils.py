@@ -169,24 +169,33 @@ def save_yaml(path: Union[str, Path], data: Dict[str, Any]) -> None:
     with path_obj.open('w', encoding='utf-8') as f:
         yaml.dump(data, f, sort_keys=False, allow_unicode=True, default_flow_style=False)
 
+def _is_valid_file(p: Path) -> bool:
+    if p.name.startswith("._") or p.name == ".DS_Store":
+        return False
+    parts = p.parts
+    if "site" in parts or "docs_build" in parts:
+        return False
+    return True
+
 def iter_prompt_files(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:
     root_path = Path(root) if root else PROMPTS_DIR
     for ext in ("*.prompt.yaml", "*.prompt.yml", "*.prompt.md"):
         for p in root_path.rglob(ext):
-            if not p.name.startswith("._") and "site/" not in str(p):
+            if _is_valid_file(p):
                 yield p
 
 def iter_workflow_files(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:
     root_path = Path(root) if root else WORKFLOWS_DIR
-    for p in root_path.rglob("*.workflow.yaml"):
-        if not p.name.startswith("._") and "site/" not in str(p):
-            yield p
+    for ext in ("*.workflow.yaml", "*.workflow.yml"):
+        for p in root_path.rglob(ext):
+            if _is_valid_file(p):
+                yield p
 
 def iter_markdown_files(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:
     """Iterate over all Markdown files recursively, skipping hidden/system files."""
     root_path = Path(root) if root else Path.cwd()
     for p in root_path.rglob("*.md"):
-        if not p.name.startswith("._") and "site/" not in str(p):
+        if _is_valid_file(p):
             yield p
 
 
@@ -289,7 +298,7 @@ def extract_template_vars(content: Dict[str, Any]) -> List[str]:
 def iter_skill_manifests(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:
     root_path = Path(root) if root else PROMPTS_DIR
     for p in root_path.rglob("skills.md"):
-        if not p.name.startswith("._") and "site/" not in str(p):
+        if _is_valid_file(p):
             yield p
 
 def parse_skill_manifest(path: Path) -> Dict[str, Any]:

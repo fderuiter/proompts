@@ -8,7 +8,6 @@ errors, unresolved template variables, or missing step references.
 """
 
 import sys
-import glob
 from pathlib import Path
 from promptops.engine import run_workflow
 from promptops.utils import load_yaml
@@ -33,11 +32,10 @@ def main():
     logging.basicConfig(level=logging.INFO)
     
     # We will import run_workflow function directly and set strict_mode=True
-    from promptops.utils import ROOT
+    from promptops.utils import ROOT, iter_workflow_files
     base_dir = ROOT
-    workflows_dir = base_dir / "workflows"
     
-    workflow_files = workflows_dir.rglob("*.workflow.yaml")
+    workflow_files = iter_workflow_files(base_dir)
     
     failed = []
     

@@ -27,8 +27,8 @@ class TestGenerateSearchIndex(unittest.TestCase):
 
         generate_index("custom_search.json")
 
-        # Verify iter_prompt_files called with ROOT
-        mock_iter.assert_called_once_with(mock_root)
+        # Verify iter_prompt_files called with PROMPTS_DIR
+        mock_iter.assert_called_once_with(mock_root / "prompts")
 
         # Verify file opened correctly
         mock_file.assert_called_once_with(mock_root / "custom_search.json", 'w', encoding='utf-8')
