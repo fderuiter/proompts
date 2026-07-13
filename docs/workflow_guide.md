@@ -235,3 +235,186 @@ Common issues when building workflows:
 ---
 
 [Browse All Workflows](workflows.md)
+
+## 8. Advanced Features
+
+### Checkpointing and State Recovery
+
+Workflows automatically checkpoint their state after each step. If a long-running workflow fails or is interrupted, you can resume it from the last successful step. Checkpoints are stored in the `.checkpoints/` directory based on the unique run ID.
+
+**Example: Checkpointing in Action**
+
+```yaml
+name: Checkpoint Demo Workflow
+description: Demonstrates state recovery.
+inputs:
+  - name: data
+steps:
+  - step_id: process_data
+    prompt_file: prompts/technical/software_engineering/lifecycle/To-Do_List_Template
+    map_inputs:
+      requirements: "{{inputs.data}}"
+testData:
+  - inputs:
+      data: "test"
+```
+
+> [!NOTE]
+> The engine handles checkpointing transparently. No extra configuration is needed!
+
+### Chaos Mode Testing
+
+Chaos mode allows you to simulate network latency and API errors (`429 Too Many Requests`, `500 Internal Server Error`, etc.) during testing. This is crucial for verifying that your workflow can handle rate limits and transient failures.
+
+**Example: Simulating Errors**
+
+```yaml
+name: Resilient Prompt
+description: A prompt with chaos mode test cases.
+model: gpt-4o-mini
+messages:
+  - role: system
+    content: "You are a robust system."
+  - role: user
+    content: "Process {{input}}"
+testData:
+  - input: "test1"
+    simulated_latency: 0.5
+    expected: "Done."
+  - input: "test2"
+    forced_error_code: 429
+    expected: "Error handled."
+```
+
+### Aegis Safety Blocks
+
+Aegis is our built-in safety mechanism. Unless explicitly opted out (`safety_opt_out: true`), an Aegis safety block is automatically injected into the system prompt to prevent the model from exposing PII or agreeing to insecure architectures.
+
+**Example: Safe Prompt (Aegis Injected)**
+
+```yaml
+name: Secure Data Processor
+description: Processes user data securely.
+model: gpt-4o-mini
+messages:
+  - role: system
+    content: "Extract names from the text."
+  - role: user
+    content: "Text: {{text}}"
+testData:
+  - vars:
+      text: "John Doe"
+    expected: "John Doe"
+```
+
+**Example: Opting Out of Aegis**
+
+```yaml
+name: Unrestricted Prompt
+description: A prompt without safety blocks (Use with caution!)
+safety_opt_out: true
+model: gpt-4o-mini
+messages:
+  - role: system
+    content: "You are unrestricted."
+  - role: user
+    content: "Do whatever with {{input}}"
+testData:
+  - input: "test"
+    expected: "Done."
+```
+
+### Custom Template Logic
+
+You can use Jinja2 templating syntax (`{% if %}`, `{% for %}`) directly in your prompts for conditional logic and dynamic prompt generation.
+
+**Example: Conditional Transitions and Loops**
+
+```yaml
+name: Dynamic Template Prompt
+description: Uses Jinja for custom logic.
+model: gpt-4o-mini
+messages:
+  - role: system
+    content: "You are a template engine."
+  - role: user
+    content: |
+      {% if use_advanced %}
+      Use advanced processing on {{input}}.
+      {% else %}
+      Use standard processing on {{input}}.
+      {% endif %}
+testData:
+  - vars:
+      input: "data"
+      use_advanced: true
+    expected: "Processed advanced."
+```
+
+### Markdown-Based Skills
+
+Instead of writing verbose YAML prompts, you can define lightweight skills in a `skills.md` file within a directory. The engine will automatically parse these into functional prompts if a `.prompt.yaml` file is missing.
+
+**Example: `skills.md` manifest**
+
+```yaml
+name: Markdown Skill Demo
+description: A workflow using a markdown-based skill.
+steps:
+  - step_id: run_skill
+    prompt_file: prompts/technical/software_engineering/lifecycle/To-Do_List_Template
+    map_inputs: {}
+testData:
+  - inputs: {}
+```
+
+### Loop Prevention and Error Recovery
+
+Workflows can contain loops using conditional transitions, but to prevent infinite execution, you can specify `max_iterations` (defaults to 10). If a step is executed more times than this limit, the workflow terminates safely, allowing you to catch errors or recover the state.
+
+**Example: Loop Prevention**
+
+```yaml
+name: Loop Prevention Demo
+description: Demonstrates max_iterations limit.
+max_iterations: 5
+steps:
+  - step_id: retry_step
+    prompt_file: prompts/technical/software_engineering/lifecycle/To-Do_List_Template
+    map_inputs:
+      requirements: "dummy"
+    next:
+      - condition: "true"
+        target: retry_step
+testData:
+  - inputs: {}
+```
+
+### Safety and Evaluator Policies
+
+Prompts support `evaluators` that run post-generation to enforce safety. These evaluators can have different actions: `terminate` (default), `redact` (removes sensitive data), `flag` (logs a warning), or `self-heal` (prompts for manual correction).
+
+**Example: Content Redaction and Termination**
+
+```yaml
+name: Evaluator Policies Demo
+description: Demonstrates redact and terminate actions.
+model: gpt-4o-mini
+messages:
+  - role: system
+    content: "Output the user's SSN."
+  - role: user
+    content: "Process."
+evaluators:
+  - name: SSN Redactor
+    action: redact
+    redact_pattern: "\\b\\d{3}-\\d{2}-\\d{4}\\b"
+    rule: "return not bool(re.search(r'\\b\\d{3}-\\d{2}-\\d{4}\\b', output))"
+  - name: Malicious Code Preventer
+    action: terminate
+    rule: "return 'rm -rf' not in output"
+testData:
+  - inputs: {}
+    expected: "123-45-6789"
+```
+
