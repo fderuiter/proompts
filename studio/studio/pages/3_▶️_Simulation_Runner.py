@@ -1,6 +1,5 @@
 import sys
 import os
-import glob
 import streamlit as st
 from typing import Any
 import threading
@@ -9,7 +8,7 @@ import time
 import logging
 import io
 
-from promptops.utils import ROOT, load_yaml
+from promptops.utils import ROOT, load_yaml, iter_workflow_files, iter_prompt_files
 from promptops.engine import run_workflow, simulate_prompt_execution
 from promptops.console import ConsoleInterface, set_console
 from streamlit.runtime.scriptrunner import add_script_run_ctx
@@ -31,19 +30,14 @@ class StreamlitThreadConsole(ConsoleInterface):
         self.out_q.put({"type": "input", "prompt": prompt})
         while True:
             try:
-                # We do a blocking get but with timeout so it doesn't hang forever
-                # Actually, blocking get is fine inside the background thread.
                 res = self.in_q.get(timeout=0.5)
                 return res
             except queue.Empty:
                 pass
 
 base_dir = str(ROOT)
-workflow_files = glob.glob(os.path.join(base_dir, "workflows", "**", "*.workflow.yaml"), recursive=True)
-workflow_files = [os.path.relpath(f, base_dir) for f in workflow_files]
-
-prompt_files = glob.glob(os.path.join(base_dir, "prompts", "**", "*.prompt.yaml"), recursive=True) + glob.glob(os.path.join(base_dir, "prompts", "**", "*.prompt.md"), recursive=True)
-prompt_files = [os.path.relpath(f, base_dir) for f in prompt_files]
+workflow_files = [os.path.relpath(str(f), base_dir) for f in iter_workflow_files()]
+prompt_files = [os.path.relpath(str(f), base_dir) for f in iter_prompt_files()]
 
 asset_type = st.radio("Asset Type to Simulate", ["Prompt", "Workflow"])
 

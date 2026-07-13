@@ -1,6 +1,5 @@
 import sys
 import os
-import glob
 import yaml
 import json
 import streamlit as st
@@ -12,10 +11,9 @@ from pydantic import ValidationError
 st.set_page_config(page_title="Prompt Editor", layout="wide")
 st.title("Prompt Editor")
 
-from promptops.utils import ROOT
+from promptops.utils import ROOT, iter_prompt_files
 base_dir = str(ROOT)
-prompt_files = glob.glob(os.path.join(base_dir, "prompts", "**", "*.prompt.md"), recursive=True)
-prompt_files = [os.path.relpath(f, base_dir) for f in prompt_files]
+prompt_files = [os.path.relpath(str(f), base_dir) for f in iter_prompt_files() if str(f).endswith('.prompt.md')]
 
 selected_file = st.selectbox("Select a prompt to edit", ["Create New..."] + prompt_files)
 

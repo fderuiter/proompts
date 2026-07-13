@@ -33,7 +33,7 @@ main_loop = None
 
 class PromptDirHandler(FileSystemEventHandler):
     def on_any_event(self, event):
-        if event.src_path.endswith('.prompt.yaml') or event.src_path.endswith('skills.md') or event.src_path.endswith('.workflow.yaml'):
+        if event.src_path.endswith(('.prompt.yaml', '.prompt.yml', '.prompt.md', 'skills.md', '.workflow.yaml', '.workflow.yml')):
             logger.info(f"File change detected: {event.src_path}")
             if active_session and main_loop:
                 asyncio.run_coroutine_threadsafe(

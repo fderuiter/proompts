@@ -16,12 +16,13 @@ python3 tools/tools/scripts/inject_test_data.py
 """
 
 import yaml
-import glob
 from pathlib import Path
 import re
 
+from promptops.utils import iter_workflow_files
+
 ROOT_DIR = Path(__file__).resolve().parents[3]
-workflows = glob.glob(str(ROOT_DIR / "workflows/**/*.workflow.yaml"), recursive=True)
+workflows = iter_workflow_files(ROOT_DIR)
 
 for wf in workflows:
     with open(wf, 'r') as f:
