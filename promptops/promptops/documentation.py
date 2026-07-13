@@ -142,4 +142,25 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
                 
         out_path.write_text("\n".join(md), encoding='utf-8')
         
+    # Generate index.md
+    index_path = docs_path / "index.md"
+    index_md = [
+        "---",
+        "title: Knowledge Base Home",
+        "---",
+        "",
+        "# Proompts Knowledge Base",
+        "",
+        "Welcome to the Proompts documentation. Select a category below:",
+        ""
+    ]
+    
+    for category in sorted(registry.keys()):
+        if not any(registry[category].values()):
+            continue
+        filename = category.lower().replace(" ", "_") + ".md"
+        index_md.append(f"- [{category}]({filename})")
+        
+    index_path.write_text("\n".join(index_md), encoding='utf-8')
+    print(f"Generated index.md at {index_path}")
     print(f"Documentation generated at {output_dir}")

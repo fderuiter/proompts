@@ -15,31 +15,18 @@ repos:
 
   - repo: local
     hooks:
-      - id: check-prompts
-        name: Check Prompts
-        entry: uv run python3 tools/tools/scripts/check_prompts.py
+      - id: promptops-validate
+        name: Validate and Format Prompts
+        entry: uv run promptops validate
         language: system
         files: ^(prompts|workflows)/.*
-        pass_filenames: false
+        pass_filenames: true
 
-      - id: update-last-modified
-        name: Update Last Modified
-        entry: uv run python3 tools/tools/scripts/update_last_modified.py
-        language: system
-        files: ^prompts/.*\.prompt\.yaml$
-
-      - id: validate-prompt-schema
-        name: Validate Prompt Schema
-        entry: uv run python3 tools/tools/scripts/validate_prompt_schema.py
-        language: system
-        files: ^(prompts|workflows)/.*
-        pass_filenames: false
-
-      - id: update-docs-index
+      - id: promptops-docs
         name: Update Docs Index
-        entry: uv run python3 tools/tools/scripts/update_docs_index.py --check
+        entry: uv run promptops docs
         language: system
-        files: ^prompts/
+        files: ^(prompts|workflows)/.*
         pass_filenames: false
 metadata:
   domain: general

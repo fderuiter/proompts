@@ -71,8 +71,8 @@ If you are modifying the Python generation scripts or need to force a documentat
 
 ```bash
 # Generates the category pages and workflow diagrams
-python3 tools/tools/scripts/generate_docs.py
+promptops docs
 
 # Updates the main index.md and table-of-contents.md
-python3 tools/tools/scripts/update_docs_index.py
+python3 promptops docs
 ```

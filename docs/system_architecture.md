@@ -80,7 +80,7 @@ A comprehensive suite of scripts ensures repository health and consistency.
 ### 5. Documentation Generation
 Documentation is treated as a first-class build artifact, automatically generated from the source code.
 - **`generate_docs.py`**: Scans the repository to build the static site structure in `docs/`.
-- **`update_docs_index.py`**: Regenerates the main `docs/index.md` based on current prompt metadata.
+- **`promptops docs`**: Regenerates the main `docs/index.md` based on current prompt metadata.
 - **Workflow Diagrams**: Integrated into the documentation generation process, visualizing `.workflow.yaml` files using Mermaid.js.
 
 ## Directory Structure

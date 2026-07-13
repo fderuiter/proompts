@@ -343,7 +343,56 @@ def analyze_workflow_dependencies(workflow_file: str, workflow_data: dict, root_
             
     return issues
 
-def validate_prompts(directory: str, strict: bool = False) -> bool:
+def update_last_modified(file_path: Path) -> bool:
+    from datetime import datetime, timezone
+    try:
+        content_text = file_path.read_text(encoding="utf-8")
+    except Exception as e:
+        console.error(f"Error reading {file_path}: {e}")
+        return False
+
+    lines = content_text.splitlines()
+    found = False
+    now_iso = datetime.now(timezone.utc).isoformat(timespec='seconds').replace('+00:00', 'Z')
+    modified = False
+
+    for i, line in enumerate(lines):
+        if line.strip().startswith('last_modified:'):
+            indent = line[:line.find('last_modified:')]
+            new_line = f"{indent}last_modified: {now_iso}"
+            if new_line != line:
+                lines[i] = new_line
+                modified = True
+            found = True
+            break
+
+    if not found:
+        final_lines = []
+        name_found = False
+        for line in lines:
+            final_lines.append(line)
+            if not name_found and line.strip().startswith('name:'):
+                indent = line[:line.find('name:')]
+                final_lines.append(f"{indent}last_modified: {now_iso}")
+                modified = True
+                name_found = True
+
+        if not name_found:
+             if len(final_lines) > 0 and final_lines[0].strip() == '---':
+                 final_lines.insert(1, f"last_modified: {now_iso}")
+                 modified = True
+             else:
+                 final_lines.insert(0, f"last_modified: {now_iso}")
+                 modified = True
+        lines = final_lines
+
+    if modified:
+        file_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        console.info(f"Updated last_modified in {file_path}")
+        return True
+    return False
+
+def validate_prompts(directory: str, strict: bool = False, files: Optional[List[str]] = None) -> bool:
     ok = True
     seen_names: Dict[str, str] = {}
     dir_path = os.environ.get('PROMPTOPS_REGISTRY', directory)
@@ -352,6 +401,12 @@ def validate_prompts(directory: str, strict: bool = False) -> bool:
     NAMING_RULES = {
         "meta": re.compile(r"^L\d+_.*\.prompt\.(ya?ml|md)$", re.IGNORECASE),
     }
+
+    if files:
+        for f in files:
+            path = Path(f)
+            if path.is_file() and path.name.endswith(('.prompt.yaml', '.prompt.yml')):
+                update_last_modified(path)
 
     for file_path in iter_prompt_files(dir_path):
         
