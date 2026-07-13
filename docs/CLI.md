@@ -42,7 +42,10 @@ options:
 ### `promptops validate`
 
 ```text
-usage: promptops validate [-h] [--dir DIR] [--strict]
+usage: promptops validate [-h] [--dir DIR] [--strict] [files ...]
+
+positional arguments:
+  files       Specific files to validate and format (updates last_modified)
 
 options:
   -h, --help  show this help message and exit
