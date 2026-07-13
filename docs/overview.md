@@ -14,14 +14,14 @@ Prompts are stored as `.prompt.yaml` files. The previous JSON format has been re
 - **[Google Prompting Guide](google_prompting_guide.md)** - Official Google strategies for effective prompt design
 - **[Claude Prompting Guide](claude_prompting_guide.md)** - Comprehensive guide to prompt engineering techniques for Claude's latest models
 - **[GPT-5.2 Prompting Guide](gpt_5_2_prompting_guide.md)** - Official OpenAI strategies for GPT-5.2
-- **[Template Prompt](template_prompt.prompt.md)** - Reference Markdown example for new prompts
+- **[Template Prompt](https://github.com/fderuiter/proompts/tree/main/prompts)** - Reference Markdown example for new prompts
 - **[Prompt Schema](schemas/prompt.schema.json)** - Reference JSON schema for new prompts
 - [Workflows Documentation](workflows.md) - Guide to chaining prompts together
 
 ## Quick Links
 
-- [Index](../README.md) - Full documentation index
-- [Table of Contents](../README.md) - Complete prompt catalog
+- [Index](https://github.com/fderuiter/proompts/blob/main/README.md) - Full documentation index
+- [Table of Contents](https://github.com/fderuiter/proompts/blob/main/README.md) - Complete prompt catalog
  - Detailed prompt listings
 
 ## Prompt Categories

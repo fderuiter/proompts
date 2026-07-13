@@ -17,7 +17,7 @@ repos:
     hooks:
       - id: promptops-validate
         name: Validate and Format Prompts
-        entry: uv run promptops validate
+        entry: uv run promptops validate --strict
         language: system
         files: ^(prompts|workflows)/.*
         pass_filenames: true
@@ -28,9 +28,3 @@ repos:
         language: system
         files: ^(prompts|workflows)/.*
         pass_filenames: false
-metadata:
-  domain: general
-  complexity: low
-  tags:
-    - skill
-  requires_context: false
