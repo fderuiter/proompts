@@ -60,7 +60,7 @@ This will output a comprehensive report showing:
 
 ## Server Implementation Details
 
-For developers looking to understand or modify the underlying server, the MCP server is implemented in [`mcp_server.py`](../mcp_server.py) at the root of the repository. It uses `watchdog` to monitor the `prompts/` directory for live changes and automatically notifies the client when tools are updated.
+For developers looking to understand or modify the underlying server, the MCP server is implemented in [`mcp_server.py`](https://github.com/fderuiter/proompts/blob/main/mcp_server.py) at the root of the repository. It uses `watchdog` to monitor the `prompts/` directory for live changes and automatically notifies the client when tools are updated.
 
 
 <!-- TOOL_REGISTRY_START -->

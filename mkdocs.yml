@@ -26,9 +26,3 @@ markdown_extensions:
   - admonition
 
 docs_dir: docs
-metadata:
-  domain: general
-  complexity: low
-  tags:
-    - skill
-  requires_context: false

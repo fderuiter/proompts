@@ -262,7 +262,7 @@ yamllint prompts/
 
 ## Resources
 
-- [Template Prompt](template_prompt.prompt.md) - Reference Markdown example
+- [Template Prompt](https://github.com/fderuiter/proompts/tree/main/prompts) - Reference Markdown example
 - [Prompt Schema](schemas/prompt.schema.json) - Reference JSON schema
 - [Workflows Documentation](workflows.md) - Chaining prompts together
-- [Repository README](../README.md) - General guidance
+- [Repository README](https://github.com/fderuiter/proompts/blob/main/README.md) - General guidance
