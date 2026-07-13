@@ -35,8 +35,7 @@ jobs:
       - name: Generate Docs
         run: |
           export PATH="$HOME/.cargo/bin:$PATH"
-          uv run python tools/tools/scripts/generate_docs.py
-          uv run python tools/tools/scripts/update_docs_index.py
+          uv run promptops docs
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

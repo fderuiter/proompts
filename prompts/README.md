@@ -73,7 +73,7 @@ promptops workflow workflows/technical/agentic_coding.workflow.yaml -i product_c
 
 We maintain a suite of tools in [`../tools/tools/scripts/`](../tools/tools/scripts) to manage this library:
 
-- **[`check_prompts.py`](../tools/tools/scripts/check_prompts.py)**: Validates that all prompt files follow the required schema and naming conventions.
+- **[`promptops validate`)**: Validates that all prompt files follow the required schema and naming conventions.
 - **[`generate_overviews.py`](../tools/tools/scripts/generate_overviews.py)**: Automatically generates `overview.md` files for subdirectories.
 - **`promptops workflow`**: The engine that executes workflows and prompts.
 
@@ -83,4 +83,4 @@ We maintain a suite of tools in [`../tools/tools/scripts/`](../tools/tools/scrip
 2.  **Document**: Ensure you provide a clear `description` and `inputs`.
 3.  **Tag**: Add namespaced tags (`domain:`, `topic:`, `capability:`) in metadata where possible.
 4.  **Test**: Add at least one test case in the `testData` field.
-5.  **Verify**: Run `python3 tools/tools/scripts/check_prompts.py` to ensure your prompt is valid.
+5.  **Verify**: Run `promptops validate` to ensure your prompt is valid.

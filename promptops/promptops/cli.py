@@ -57,6 +57,7 @@ def get_parser():
     validate_parser = subparsers.add_parser("validate", help="Validate prompt files")
     validate_parser.add_argument("--dir", help="Directory containing prompts", default=".")
     validate_parser.add_argument("--strict", action="store_true", help="Enable strict validation")
+    validate_parser.add_argument("files", nargs="*", help="Specific files to validate and format (updates last_modified)")
 
     # Simulate
     simulate_parser = subparsers.add_parser("simulate", help="Simulate a prompt")
@@ -124,7 +125,7 @@ def main():
     if args.command == "init":
         init_project()
     elif args.command == "validate":
-        success = validate_prompts(args.dir, strict=args.strict)
+        success = validate_prompts(args.dir, strict=args.strict, files=args.files)
         sys.exit(0 if success else 1)
     elif args.command == "simulate":
         target_file = args.file_flag or args.file
