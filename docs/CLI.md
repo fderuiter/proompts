@@ -81,7 +81,7 @@ options:
 
 ```text
 usage: promptops docs [-h] [--dir DIR] [--out OUT] [--repo-url REPO_URL]
-                      [--branch BRANCH]
+                      [--branch BRANCH] [--check]
 
 options:
   -h, --help           show this help message and exit
@@ -89,6 +89,7 @@ options:
   --out OUT            Output directory for documentation
   --repo-url REPO_URL  Base URL for source repository
   --branch BRANCH      Branch name for source repository links
+  --check              Check for documentation drift without modifying files
 
 ```
 
