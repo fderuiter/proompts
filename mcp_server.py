@@ -17,7 +17,7 @@ from mcp.server.models import InitializationOptions
 from mcp.server.stdio import stdio_server
 import mcp.types as types
 
-from promptops.utils import iter_prompt_files, iter_workflow_files, load_yaml, extract_template_vars, iter_skill_manifests, parse_skill_manifest, WORKFLOWS_DIR
+from promptops.utils import iter_prompt_files, iter_workflow_files, load_yaml, extract_template_vars, iter_skill_manifests, parse_skill_manifest, WORKFLOWS_DIR, PROMPTS_DIR
 from promptops.validation import PromptSchema, ProomptsValidationError
 from promptops.simulation import simulate_prompt
 
@@ -25,7 +25,6 @@ from promptops.simulation import simulate_prompt
 logging.basicConfig(level=logging.INFO, stream=sys.stderr)
 logger = logging.getLogger(__name__)
 
-PROMPTS_DIR = "prompts"
 
 server = Server("DynamicProompts")
 active_session = None
@@ -231,7 +230,7 @@ async def run():
     handler = PromptDirHandler()
     
     # Watch prompts directory
-    observer.schedule(handler, path=PROMPTS_DIR, recursive=True)
+    observer.schedule(handler, path=str(PROMPTS_DIR), recursive=True)
     logger.info(f"Started monitoring {PROMPTS_DIR} for changes.")
     
     # Watch workflows directory
