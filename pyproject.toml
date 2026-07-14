@@ -10,7 +10,6 @@ dependencies = [
     "studio",
     "mcp>=1.27.2",
     "watchdog>=6.0.0",
-    "jsonschema>=4.26.0",
 ]
 
 [tool.uv.workspace]

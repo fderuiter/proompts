@@ -10,7 +10,6 @@ Before configuring the MCP server, ensure your local environment meets the follo
 - **Required Libraries:**
   - `mcp` (>= 1.27.2)
   - `watchdog` (>= 6.0.0)
-  - `jsonschema` (>= 4.26.0)
   - `promptops` (internal toolkit)
 
 *Note: All dependencies are installed automatically when you run `pip install -r requirements.txt` in an active virtual environment.*
