@@ -16,35 +16,53 @@ class DocItem:
 
 
 
-from promptops.skill_export import process_skills
+from promptops.skill_export import process_skills, detect_skill
 
-def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str = "main"):
+def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str = "main", check: bool = False) -> bool:
     prompts_dir = os.environ.get('PROMPTOPS_REGISTRY', prompts_dir)
     prompts_path = Path(prompts_dir)
     docs_path = Path(output_dir)
+    sync_ok = True
     
     if not prompts_path.exists():
         print(f"Directory {prompts_dir} does not exist.")
-        return
+        return False
 
     items = []
     
-    docs_path.mkdir(parents=True, exist_ok=True)
-    out_prompts_dir = docs_path / "prompts"
-    out_prompts_dir.mkdir(parents=True, exist_ok=True)
-    out_workflows_dir = docs_path / "workflows"
-    out_workflows_dir.mkdir(parents=True, exist_ok=True)
-    
-    process_skills(prompts_path, docs_path)
+    if not check:
+        docs_path.mkdir(parents=True, exist_ok=True)
+        out_prompts_dir = docs_path / "prompts"
+        out_prompts_dir.mkdir(parents=True, exist_ok=True)
+        out_workflows_dir = docs_path / "workflows"
+        out_workflows_dir.mkdir(parents=True, exist_ok=True)
+        
+        process_skills(prompts_path, docs_path)
+    else:
+        out_prompts_dir = docs_path / "prompts"
+        out_workflows_dir = docs_path / "workflows"
     
     for path in iter_prompt_files(str(prompts_path)):
+        try:
+            raw_content = path.read_text(encoding='utf-8')
+        except Exception as e:
+            raw_content = f"# Error reading source file: {e}"
+        
         data = load_yaml(str(path))
+        if data is None:
+            continue
+            
+        if check and detect_skill(raw_content, data):
+            continue
+
         title = derive_title(path, data)
         desc = data.get('description', 'No description provided.')
         
         rel_to_prompts = path.relative_to(prompts_path)
         output_file = out_prompts_dir / rel_to_prompts.with_suffix(".md")
-        output_file.parent.mkdir(parents=True, exist_ok=True)
+        
+        if not check:
+            output_file.parent.mkdir(parents=True, exist_ok=True)
         
         if repo_url:
             github_url = f"{repo_url}/blob/{branch}/{path.relative_to(prompts_path.parent)}"
@@ -52,13 +70,17 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
         else:
             link_md = ""
             
-        try:
-            raw_content = path.read_text(encoding='utf-8')
-        except Exception as e:
-            raw_content = f"# Error reading source file: {e}"
-            
         content = f"---\ntitle: {title}\n---\n\n# {title}\n\n{desc}\n\n{link_md}\n\n```yaml\n{raw_content}\n```\n"
-        output_file.write_text(content, encoding='utf-8')
+        
+        if check:
+            if not output_file.exists():
+                print(f"Drift detected: Missing file {output_file}")
+                sync_ok = False
+            elif output_file.read_text(encoding='utf-8') != content:
+                print(f"Drift detected: Content mismatch in {output_file}")
+                sync_ok = False
+        else:
+            output_file.write_text(content, encoding='utf-8')
         
         items.append(DocItem(
             title=title,
@@ -71,6 +93,8 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
     if workflows_path.exists():
         for path in iter_workflow_files(str(workflows_path)):
             data = load_yaml(str(path))
+            if data is None:
+                continue
             title = derive_title(path, data)
             desc = data.get('description', 'No description provided.')
             
@@ -86,7 +110,9 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
             
             filename = path.stem.replace('.workflow', '') + ".md"
             output_file = out_workflows_dir / filename
-            output_file.parent.mkdir(parents=True, exist_ok=True)
+            
+            if not check:
+                output_file.parent.mkdir(parents=True, exist_ok=True)
             
             if repo_url:
                 github_url = f"{repo_url}/blob/{branch}/{path.relative_to(workflows_path.parent)}"
@@ -97,7 +123,16 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
             mermaid_block = f"## Workflow Diagram\n\n```mermaid\n{mermaid}\n```\n" if mermaid else ""
             
             content = f"---\ntitle: {title}\n---\n\n# {title}\n\n{desc}\n\n{mermaid_block}\n{link_md}\n"
-            output_file.write_text(content, encoding='utf-8')
+            
+            if check:
+                if not output_file.exists():
+                    print(f"Drift detected: Missing workflow file {output_file}")
+                    sync_ok = False
+                elif output_file.read_text(encoding='utf-8') != content:
+                    print(f"Drift detected: Content mismatch in workflow {output_file}")
+                    sync_ok = False
+            else:
+                output_file.write_text(content, encoding='utf-8')
             
             category = derive_category(path, workflows_path, data)
                 
@@ -140,7 +175,16 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
                 rel_path = os.path.relpath(w.path, docs_path)
                 md.append(f"- [{w.title}]({rel_path})")
                 
-        out_path.write_text("\n".join(md), encoding='utf-8')
+        content = "\n".join(md)
+        if check:
+            if not out_path.exists():
+                print(f"Drift detected: Missing category file {out_path}")
+                sync_ok = False
+            elif out_path.read_text(encoding='utf-8') != content:
+                print(f"Drift detected: Content mismatch in category {out_path}")
+                sync_ok = False
+        else:
+            out_path.write_text(content, encoding='utf-8')
         
     # Generate index.md
     index_path = docs_path / "index.md"
@@ -161,6 +205,22 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
         filename = category.lower().replace(" ", "_") + ".md"
         index_md.append(f"- [{category}]({filename})")
         
-    index_path.write_text("\n".join(index_md), encoding='utf-8')
-    print(f"Generated index.md at {index_path}")
-    print(f"Documentation generated at {output_dir}")
+    content = "\n".join(index_md)
+    if check:
+        if not index_path.exists():
+            print(f"Drift detected: Missing index file {index_path}")
+            sync_ok = False
+        elif index_path.read_text(encoding='utf-8') != content:
+            print(f"Drift detected: Content mismatch in index {index_path}")
+            sync_ok = False
+        if sync_ok:
+            print("Documentation is up to date.")
+        else:
+            print("Documentation drift detected.")
+    else:
+        index_path.write_text(content, encoding='utf-8')
+        print(f"Generated index.md at {index_path}")
+        print(f"Documentation generated at {output_dir}")
+        
+    return sync_ok
+
