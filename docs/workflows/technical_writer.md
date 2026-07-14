@@ -10,15 +10,18 @@ A workflow for drafting a CSR results and safety section, an Investigator's Broc
 
 ```mermaid
 graph TD
-    INPUT_study_context([Input: study_context])
-    INPUT_sponsor_requirements([Input: sponsor_requirements])
-    csr_section[csr_section<br><i>01_csr_results_safety_section.prompt.md</i>]
+    classDef stepNode fill:#1a5f7a,stroke:var(--md-default-fg-color,var(--text-color,#0d3a4d)),stroke-width:2px,color:#ffffff;
+    classDef inputNode fill:#2c5e43,stroke:var(--md-default-fg-color,var(--text-color,#183b27)),stroke-width:2px,color:#ffffff;
+    INPUT_study_context([Input: study_context]):::inputNode
+    INPUT_sponsor_requirements([Input: sponsor_requirements]):::inputNode
+    csr_section[csr_section<br><i>01_csr_results_safety_section.prompt.md</i>]:::stepNode
     csr_section -->|sequential| ib_summary
-    ib_summary[ib_summary<br><i>02_ib_detailed_soc.prompt.md</i>]
+    ib_summary[ib_summary<br><i>02_ib_detailed_soc.prompt.md</i>]:::stepNode
     ib_summary -->|sequential| sae_sop
-    sae_sop[sae_sop<br><i>03_sae_reporting_sop.prompt.md</i>]
+    sae_sop[sae_sop<br><i>03_sae_reporting_sop.prompt.md</i>]:::stepNode
     INPUT_study_context -. study_context .-> sae_sop
     INPUT_sponsor_requirements -. sponsor_requirements .-> sae_sop
+    linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;
 ```
 
 
