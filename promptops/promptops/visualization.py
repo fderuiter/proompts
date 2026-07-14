@@ -8,15 +8,19 @@ class MermaidGrapher:
         
         graph = ["graph TD"]
         
+        # Add high-contrast style classes
+        graph.append("    classDef stepNode fill:#1a5f7a,stroke:#0d3a4d,stroke-width:2px,color:#ffffff;")
+        graph.append("    classDef inputNode fill:#2c5e43,stroke:#183b27,stroke-width:2px,color:#ffffff;")
+        
         # Add inputs
         for inp in wf.inputs:
-            graph.append(f"    INPUT_{inp.name}([Input: {inp.name}])")
+            graph.append(f"    INPUT_{inp.name}([Input: {inp.name}]):::inputNode")
             
         # Add steps and edges
         for step in wf.steps:
             step_id = step.step_id
             p_file = step.prompt_file.split('/')[-1]
-            graph.append(f"    {step_id}[{step_id}<br><i>{p_file}</i>]")
+            graph.append(f"    {step_id}[{step_id}<br><i>{p_file}</i>]:::stepNode")
             
             # Map inputs (Data flow)
             for var_name, input_val in step.map_inputs.items():
@@ -49,5 +53,8 @@ class MermaidGrapher:
                 if step_idx + 1 < len(wf.steps):
                     next_step = wf.steps[step_idx + 1]
                     graph.append(f"    {step_id} -->|sequential| {next_step.step_id}")
+        
+        # Add default link style
+        graph.append("    linkStyle default stroke:#767676,stroke-width:2px;")
                         
         return "\n".join(graph) if len(graph) > 1 else ""
