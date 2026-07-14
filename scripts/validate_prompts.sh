@@ -24,6 +24,12 @@ if ! git diff --exit-code docs/schemas > /dev/null; then
     exit 1
 fi
 
+echo "Validating prompt documentation is synchronized..."
+uv run promptops docs --check || {
+    echo "ERROR: Prompt documentation is out of sync. Please run 'uv run promptops docs' and commit the changes."
+    exit 1
+}
+
 echo "Checking for dead code..."
 uv run vulture || exit 1
 

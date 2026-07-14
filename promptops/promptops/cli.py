@@ -76,6 +76,7 @@ def get_parser():
     docs_parser.add_argument("--out", help="Output directory for documentation", default="docs")
     docs_parser.add_argument("--repo-url", help="Base URL for source repository", default="")
     docs_parser.add_argument("--branch", help="Branch name for source repository links", default="main")
+    docs_parser.add_argument("--check", action="store_true", help="Check for documentation drift without modifying files")
 
     # Agent
     agent_parser = subparsers.add_parser("agent", help="Agent configuration and discovery")
@@ -147,7 +148,9 @@ def main():
         success = simulate_prompt(target_file, args.data, chaos_mode=args.chaos, strict_mode=args.strict)
         sys.exit(0 if success else 1)
     elif args.command == "docs":
-        generate_docs(args.dir, args.out, args.repo_url, args.branch)
+        success = generate_docs(args.dir, args.out, args.repo_url, args.branch, check=args.check)
+        if args.check and not success:
+            sys.exit(1)
         sys.exit(0)
     elif args.command == "agent":
         if args.agent_command == "config":
