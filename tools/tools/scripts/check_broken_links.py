@@ -22,13 +22,11 @@ import urllib.parse
 from pathlib import Path
 from typing import List, Tuple, Set
 
-# Configuration
-DOCS_DIR = Path("docs")
-PROMPTS_DIR = Path("prompts")
-WORKFLOWS_DIR = Path("workflows")
-ROOT_DIR = Path.cwd()
+from promptops.utils import iter_markdown_files, ROOT, PROMPTS_DIR, WORKFLOWS_DIR
 
-from promptops.utils import iter_markdown_files
+# Configuration
+DOCS_DIR = ROOT / "docs"
+ROOT_DIR = ROOT
 
 # Regex to find links: [text](url)
 # This is a simple regex and might miss some edge cases, but covers standard markdown links
