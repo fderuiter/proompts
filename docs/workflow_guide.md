@@ -164,7 +164,7 @@ graph TD
 ```
 
 > [!TIP]
-> You can view these diagrams in the [Workflows List](workflows.md) by clicking on any workflow.
+> You can view these diagrams in the [Workflows List](../workflows/README.md) by clicking on any workflow.
 
 ---
 
@@ -234,7 +234,7 @@ Common issues when building workflows:
 
 ---
 
-[Browse All Workflows](workflows.md)
+[Browse All Workflows](../workflows/README.md)
 
 ## 8. Advanced Features
 

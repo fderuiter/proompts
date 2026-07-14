@@ -16,7 +16,7 @@ Prompts are stored as `.prompt.yaml` files. The previous JSON format has been re
 - **[GPT-5.2 Prompting Guide](gpt_5_2_prompting_guide.md)** - Official OpenAI strategies for GPT-5.2
 - **[Template Prompt](https://github.com/fderuiter/proompts/tree/main/prompts)** - Reference Markdown example for new prompts
 - **[Prompt Schema](schemas/prompt.schema.json)** - Reference JSON schema for new prompts
-- [Workflows Documentation](workflows.md) - Guide to chaining prompts together
+- [Workflows Documentation](workflow_guide.md) - Guide to chaining prompts together
 
 ## Quick Links
 
@@ -26,12 +26,12 @@ Prompts are stored as `.prompt.yaml` files. The previous JSON format has been re
 
 ## Prompt Categories
 
-- [Business](business.md) - Corporate functions (Finance, HR, Market Research)
-- [Clinical](clinical.md) - Clinical trial operations
-- [Management](management.md) - Leadership and project management
-- [Meta](meta.md) - Prompt engineering and agent creation
-- [Scientific](scientific.md) - Laboratory and research prompts
-- [Technical](technical.md) - Software engineering and DevOps
+- [Business](../prompts/business/overview.md) - Corporate functions (Finance, HR, Market Research)
+- [Clinical](../prompts/clinical/overview.md) - Clinical trial operations
+- [Management](../prompts/management/overview.md) - Leadership and project management
+- [Meta](../prompts/meta/overview.md) - Prompt engineering and agent creation
+- [Scientific](../prompts/scientific/overview.md) - Laboratory and research prompts
+- [Technical](../prompts/technical/overview.md) - Software engineering and DevOps
 
 ## Historical References
 
