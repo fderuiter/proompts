@@ -168,7 +168,7 @@ class VibeMonitor:
         # Load history
         history = {}
         if history_path.exists():
-            with open(history_path, 'r') as f:
+            with open(history_path, 'r', encoding='utf-8') as f:
                 try:
                     history = json.load(f)
                 except json.JSONDecodeError:
@@ -186,10 +186,10 @@ class VibeMonitor:
             history[p_name].append({"date": timestamp, "score": r["score"]})
             history[p_name] = history[p_name][-5:]
             
-        with open(history_path, 'w') as f:
+        with open(history_path, 'w', encoding='utf-8') as f:
             json.dump(history, f, indent=2)
         
-        with open(dashboard_path, 'w') as f:
+        with open(dashboard_path, 'w', encoding='utf-8') as f:
             f.write("# Vibe Monitor Quality Dashboard\n\n")
             f.write(f"**Last Audit:** {timestamp}\n")
             f.write(f"**Total Prompts Audited:** {total_audited}\n")

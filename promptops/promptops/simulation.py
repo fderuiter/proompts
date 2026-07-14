@@ -42,9 +42,9 @@ def simulate_prompt(prompt_file: str, data_file: str, chaos_mode: bool = False, 
         
     try:
         if data_path.suffix == '.json':
-            mock_data = json.loads(data_path.read_text())
+            mock_data = json.loads(data_path.read_text(encoding='utf-8'))
         else:
-            mock_data = yaml.safe_load(data_path.read_text())
+            mock_data = yaml.safe_load(data_path.read_text(encoding='utf-8'))
     except Exception as e:
         console.error(f"Failed to load mock data: {e}")
         return False

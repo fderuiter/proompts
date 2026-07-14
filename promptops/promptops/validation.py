@@ -185,7 +185,7 @@ class PromptSchema(BaseModel):
                 # Check expected
                 expected = case.get('expected')
                 if expected is not None and not isinstance(expected, str):
-                    console.warn(f"Test data expected output is of type {type(expected).__name__}. The runtime engine will cast this to a string.")
+                    import traceback; traceback.print_stack(limit=5); console.warn(f"Test data expected output is of type {type(expected).__name__}. The runtime engine will cast this to a string.")
         return self
 
 class WorkflowInput(BaseModel):

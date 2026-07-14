@@ -5,7 +5,7 @@ for root, dirs, files in os.walk('prompts'):
     for file in files:
         if file.endswith('.yaml') or file.endswith('.md'):
             path = os.path.join(root, file)
-            with open(path, 'r') as f:
+            with open(path, 'r', encoding="utf-8") as f:
                 content = f.read()
 
             if '{"error": "unsafe"}' in content:
@@ -22,6 +22,6 @@ for root, dirs, files in os.walk('prompts'):
                 content = content.replace('{"error": "unsafe"}', '{{ macros.safety_refusal() }}')
                 
                 if content != original_content:
-                    with open(path, 'w') as f:
+                    with open(path, 'w', encoding="utf-8") as f:
                         f.write(content)
                     print(f"Refactored {path}")

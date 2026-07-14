@@ -25,7 +25,7 @@ ROOT_DIR = Path(__file__).resolve().parents[3]
 workflows = iter_workflow_files(ROOT_DIR)
 
 for wf in workflows:
-    with open(wf, 'r') as f:
+    with open(wf, 'r', encoding='utf-8') as f:
         data = yaml.safe_load(f)
     
     if 'testData' not in data:
@@ -50,6 +50,6 @@ for wf in workflows:
             }
         ]
         
-        with open(wf, 'w') as f:
+        with open(wf, 'w', encoding='utf-8') as f:
             yaml.dump(data, f, sort_keys=False)
 

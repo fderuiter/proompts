@@ -10,7 +10,7 @@ def init_project():
     schema_dir = Path("schemas")
     schema_dir.mkdir(exist_ok=True)
     schema_path = schema_dir / "prompt.schema.json"
-    schema_path.write_text(json.dumps(PromptSchema.model_json_schema(), indent=2))
+    schema_path.write_text(json.dumps(PromptSchema.model_json_schema(), indent=2), encoding='utf-8')
     print(f"Created schema at {schema_path}")
     
     # Create github action
@@ -39,7 +39,7 @@ jobs:
       - name: Validate Prompts
         run: promptops validate --dir prompts --strict
 """
-    action_path.write_text(action_content)
+    action_path.write_text(action_content, encoding='utf-8')
     print(f"Created GitHub Action at {action_path}")
     
     # Create test template
@@ -55,7 +55,7 @@ def test_simulation():
     # simulate_prompt("prompts/my_prompt.yaml", "tests/mock_data.json")
     pass
 """
-    test_path.write_text(test_content)
+    test_path.write_text(test_content, encoding='utf-8')
     print(f"Created simulation test template at {test_path}")
     
     print("Initialization complete!")

@@ -36,7 +36,7 @@ HEADER_RE = re.compile(r"^(#+)([^#\s])")
 
 def load_paths(todo_path: Path):
     paths = []
-    with todo_path.open() as f:
+    with todo_path.open(encoding='utf-8') as f:
         for line in f:
             line = line.strip()
             if line.startswith("- ./") and line.endswith(".md"):
@@ -198,7 +198,7 @@ def fix_codeblock_spacing(lines):
 
 
 def process_file(path: Path):
-    text = path.read_text().splitlines()
+    text = path.read_text(encoding='utf-8').splitlines()
     original = list(text)
     text = fix_trailing_spaces(text)
     text = fix_front_matter(text)
@@ -211,7 +211,7 @@ def process_file(path: Path):
     text = escape_bare_pipes(text)
     text = fix_multiple_blank_lines(text)
     if text != original:
-        path.write_text("\n".join(text) + "\n")
+        path.write_text("\n".join(text) + "\n", encoding='utf-8')
         return True
     return False
 
