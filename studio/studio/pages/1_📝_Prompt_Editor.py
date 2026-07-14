@@ -111,6 +111,59 @@ for i, msg in enumerate(st.session_state['messages']):
         st.session_state['messages'][i]['role'] = st.selectbox(f"Role {i}", ["system", "user", "assistant"], index=["system", "user", "assistant"].index(msg.get('role', 'user')), key=f"role_{i}")
     with col2:
         st.session_state['messages'][i]['content'] = st.text_area(f"Content {i}", value=msg.get('content', ''), key=f"content_{i}")
+        
+        btn_col1, btn_col2, btn_col3 = st.columns([2, 2, 6])
+        if btn_col1.button("✨ Optimize", key=f"opt_{i}"):
+            st.session_state[f"show_opt_diff_{i}"] = True
+            st.session_state[f"show_san_diff_{i}"] = False
+        if btn_col2.button("🧹 Sanitize", key=f"san_{i}"):
+            st.session_state[f"show_san_diff_{i}"] = True
+            st.session_state[f"show_opt_diff_{i}"] = False
+            
+        if st.session_state.get(f"show_opt_diff_{i}"):
+            st.markdown("**Optimization Proposed Changes (Side-by-Side):**")
+            diff_col1, diff_col2 = st.columns(2)
+            original = st.session_state['messages'][i]['content']
+            from tools import optimize_prompt
+            proposed = optimize_prompt(original)
+            
+            with diff_col1:
+                st.text_area("Original", value=original, disabled=True, key=f"orig_opt_{i}", height=150)
+            with diff_col2:
+                st.text_area("Optimized", value=proposed, disabled=True, key=f"prop_opt_{i}", height=150)
+                
+            ac_col1, ac_col2, _ = st.columns([2, 2, 6])
+            if ac_col1.button("✅ Accept", key=f"acc_opt_{i}"):
+                st.session_state['messages'][i]['content'] = proposed
+                st.session_state[f"content_{i}"] = proposed
+                st.session_state[f"show_opt_diff_{i}"] = False
+                st.rerun()
+            if ac_col2.button("❌ Reject", key=f"rej_opt_{i}"):
+                st.session_state[f"show_opt_diff_{i}"] = False
+                st.rerun()
+
+        if st.session_state.get(f"show_san_diff_{i}"):
+            st.markdown("**Sanitization Proposed Changes (Side-by-Side):**")
+            diff_col1, diff_col2 = st.columns(2)
+            original = st.session_state['messages'][i]['content']
+            from tools import sanitize_prompt
+            proposed = sanitize_prompt(original)
+            
+            with diff_col1:
+                st.text_area("Original", value=original, disabled=True, key=f"orig_san_{i}", height=150)
+            with diff_col2:
+                st.text_area("Sanitized", value=proposed, disabled=True, key=f"prop_san_{i}", height=150)
+                
+            ac_col1, ac_col2, _ = st.columns([2, 2, 6])
+            if ac_col1.button("✅ Accept", key=f"acc_san_{i}"):
+                st.session_state['messages'][i]['content'] = proposed
+                st.session_state[f"content_{i}"] = proposed
+                st.session_state[f"show_san_diff_{i}"] = False
+                st.rerun()
+            if ac_col2.button("❌ Reject", key=f"rej_san_{i}"):
+                st.session_state[f"show_san_diff_{i}"] = False
+                st.rerun()
+
     with col3:
         if st.button("X", key=f"del_{i}"):
             st.session_state['messages'].pop(i)
