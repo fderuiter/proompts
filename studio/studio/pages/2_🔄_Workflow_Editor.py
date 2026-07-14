@@ -214,10 +214,11 @@ st.subheader("Visualizer")
 steps = st.session_state['wf_steps']
 
 if steps:
-    from promptops.validation import WorkflowSchema
-    from promptops.visualization import MermaidGrapher
-    from streamlit_mermaid import st_mermaid
     try:
+        from promptops.validation import WorkflowSchema
+        from promptops.visualization import MermaidGrapher
+        from streamlit_mermaid import st_mermaid
+        
         temp_data = dict(data)
         temp_data['inputs'] = edited_inputs_df.to_dict('records')
         temp_data['steps'] = steps
@@ -227,6 +228,9 @@ if steps:
             st_mermaid(mermaid_code, height=500)
         else:
             st.info("Graph is empty.")
+    except ImportError:
+        st.warning("Visualizer package is missing. The Workflow Editor remains functional, but graph rendering is disabled.")
+        st.info("To enable graph visualizations, please install the visualizer extra: `pip install .[visualizer]`")
     except Exception as e:
         st.warning(f"Could not generate visualizer yet: {e}")
 else:
