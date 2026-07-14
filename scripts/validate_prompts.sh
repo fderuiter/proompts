@@ -33,5 +33,7 @@ uv run python3 tools/tools/scripts/test_docs_snippets.py || exit 1
 echo "Updating baseline governance manifest..."
 uv run python3 tools/tools/scripts/governance_manifest_generator.py || exit 1
 
+echo "Checking for broken links..."
+uv run python3 tools/tools/scripts/check_broken_links.py || exit 1
 
 echo "All checks passed!"

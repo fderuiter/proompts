@@ -114,7 +114,7 @@ Workflows are defined in `.workflow.yaml` files and call prompts located in dedi
 workflow subfolders (e.g., `prompts/clinical/protocol/protocol_workflow/`).
 included runner script.
 
-To learn more, see the [Prompt Workflows Documentation](docs/workflows.md).
+To learn more, see the [Prompt Workflows Documentation](docs/workflow_guide.md).
 
 ## Validation
 
@@ -139,7 +139,7 @@ It is recommended to run this script before committing changes.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed instructions on how to contribute.
 
-1. Create prompts as `.prompt.yaml` or `.prompt.md` files that follow [`docs/schemas/prompt.schema.json`](docs/schemas/prompt.schema.json) and place them in the appropriate folder. You can use [`docs/template_prompt.prompt.md`](docs/template_prompt.prompt.md) as a starting point.
+1. Create prompts as `.prompt.yaml` or `.prompt.md` files that follow [`docs/schemas/prompt.schema.json`](docs/schemas/prompt.schema.json) and place them in the appropriate folder.
 2. Review the [Best Practices Guide](docs/BEST_PRACTICES.md) for detailed guidance on creating high-quality prompts.
 3. Ensure your prompt includes:
    - Meaningful `testData` with realistic examples (at least 1-2 test cases)
