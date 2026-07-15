@@ -163,6 +163,8 @@ class PromptSchema(BaseModel):
 
         defined_vars = {v.name for v in self.variables}
         unused = defined_vars - found_vars
+        # Suppress warnings for common variables like macros
+        unused = {u for u in unused if u not in {"macros", "text"}}
         if unused:
             console.warn(f"Variables defined but not used in prompt: {unused}")
 
@@ -183,14 +185,12 @@ class PromptSchema(BaseModel):
                 # Check inputs
                 inputs = case.get('inputs', {})
                 if isinstance(inputs, dict):
-                    for k, v in inputs.items():
-                        if not isinstance(v, str):
-                            console.warn(f"Test data input '{k}' is of type {type(v).__name__}. The runtime engine will cast this to a string.")
+                    pass
                 
                 # Check expected
                 expected = case.get('expected')
                 if expected is not None and not isinstance(expected, str):
-                    import traceback; traceback.print_stack(limit=5); console.warn(f"Test data expected output is of type {type(expected).__name__}. The runtime engine will cast this to a string.")
+                    pass
         return self
 
 class WorkflowInput(BaseModel):

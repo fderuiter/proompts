@@ -1,3 +1,4 @@
+import subprocess
 import sys
 import json
 import asyncio
@@ -34,11 +35,14 @@ class PromptDirHandler(FileSystemEventHandler):
     def on_any_event(self, event):
         if event.src_path.endswith(('.prompt.yaml', '.prompt.yml', '.prompt.md', 'skills.md', '.workflow.yaml', '.workflow.yml')):
             logger.info(f"File change detected: {event.src_path}")
+            # Trigger document rebuild without blocking
+            subprocess.Popen(["uv", "run", "promptops", "docs"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             if active_session and main_loop:
                 asyncio.run_coroutine_threadsafe(
                     active_session.send_tool_list_changed(),
                     main_loop
                 )
+
 
 def build_schema(prompt_content_or_vars):
     if isinstance(prompt_content_or_vars, list):
