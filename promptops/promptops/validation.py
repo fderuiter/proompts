@@ -15,6 +15,10 @@ class ComplexityLevel(str, Enum):
     MEDIUM = 'medium'
     HIGH = 'high'
 
+class StatusLevel(str, Enum):
+    DRAFT = 'draft'
+    ACTIVE = 'active'
+
 class ToolCall(BaseModel):
     id: str = Field(...)
     type: str = Field("function")
@@ -61,6 +65,7 @@ class InputVariable(BaseModel):
 
 class BaseMetadata(BaseModel):
     domain: str = Field(...)
+    status: Optional[StatusLevel] = Field(default=StatusLevel.ACTIVE)
 
 class PromptMetadata(BaseMetadata):
     complexity: ComplexityLevel = Field(...)
@@ -430,6 +435,9 @@ def validate_prompts(directory: str, strict: bool = False, files: Optional[List[
             ok = False
             continue
             
+        if content.get('metadata', {}).get('status') == 'draft':
+            continue
+            
         try:
             PromptSchema(**content)
         except ValidationError as e:
@@ -478,6 +486,9 @@ def validate_prompts(directory: str, strict: bool = False, files: Optional[List[
         content = load_yaml(str(file_path))
         if not content:
             ok = False
+            continue
+            
+        if content.get('metadata', {}).get('status') == 'draft':
             continue
             
         issues = analyze_workflow_dependencies(str(file_path), content, dir_path)

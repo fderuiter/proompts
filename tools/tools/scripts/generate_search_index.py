@@ -59,6 +59,8 @@ def generate_index(output_path: str = "search.json"):
             continue
 
         content = load_yaml(path)
+        if content.get('metadata', {}).get('status') == 'draft':
+            continue
 
         # Calculate the web-accessible path relative to the repository root
         try:
@@ -84,6 +86,8 @@ def generate_index(output_path: str = "search.json"):
     if workflows_dir.exists():
         for path in iter_workflow_files(workflows_dir):
             content = load_yaml(path)
+            if content.get('metadata', {}).get('status') == 'draft':
+                continue
             try:
                 rel_path = path.relative_to(ROOT)
             except ValueError:

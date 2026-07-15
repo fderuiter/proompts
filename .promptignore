@@ -1,0 +1,16 @@
+# Ignore system files
+.DS_Store
+._*
+
+# Ignore python cache
+__pycache__/
+*.pyc
+
+# Ignore docs build and virtual environments
+site/
+docs_build/
+.venv/
+env/
+
+# Ignore draft prompts in a specific temp directory (example)
+temp_drafts/

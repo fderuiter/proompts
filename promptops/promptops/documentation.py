@@ -52,6 +52,9 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
         if data is None:
             continue
             
+        if data.get('metadata', {}).get('status') == 'draft':
+            continue
+            
         if check and detect_skill(raw_content, data):
             continue
 
@@ -95,6 +98,10 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
             data = load_yaml(str(path))
             if data is None:
                 continue
+                
+            if data.get('metadata', {}).get('status') == 'draft':
+                continue
+                
             title = derive_title(path, data)
             desc = data.get('description', 'No description provided.')
             

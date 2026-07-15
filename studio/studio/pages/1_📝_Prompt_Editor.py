@@ -30,7 +30,8 @@ if selected_file == "Create New...":
         "metadata": {
             "domain": "general",
             "complexity": "low",
-            "tags": ["skill"]
+            "tags": ["skill"],
+            "status": "active"
         },
         "model": "gpt-4",
         "modelParameters": {"temperature": 0.1, "max_tokens": 1000},
@@ -67,7 +68,7 @@ for field_name, field_info in properties.items():
             data["metadata"] = {}
         meta_schema = schema.get("$defs", {}).get("PromptMetadata", {}).get("properties", {})
         for m_key, m_info in meta_schema.items():
-            m_val = data["metadata"].get(m_key, "")
+            m_val = data["metadata"].get(m_key, m_info.get("default", ""))
             if m_info.get("type") == "boolean":
                 data["metadata"][m_key] = st.checkbox(m_info.get("title", m_key), value=bool(m_val), key=f"meta_{m_key}")
             elif m_info.get("type") == "array":
