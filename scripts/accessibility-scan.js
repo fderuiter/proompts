@@ -11,7 +11,7 @@ async function getHtmlFiles(dir, fileList = []) {
     const stat = await fs.promises.stat(filePath);
     if (stat.isDirectory()) {
       await getHtmlFiles(filePath, fileList);
-    } else if (file.endsWith('.html')) {
+    } else if (file.endsWith('.html') && !file.endsWith('404.html')) {
       fileList.push(filePath);
     }
   }
