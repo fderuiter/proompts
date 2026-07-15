@@ -3,6 +3,7 @@ import os
 import hashlib
 from pathlib import Path
 import yaml
+import pathspec
 from typing import Iterator, Dict, Any, List, Optional, Set, Union, Tuple
 
 from jinja2.sandbox import SandboxedEnvironment
@@ -36,6 +37,64 @@ PROMPTS_DIR: Path = ROOT / "prompts"
 WORKFLOWS_DIR: Path = ROOT / "workflows"
 OVERVIEW_NAME: str = "overview.md"
 DOMAIN_TAG_PREFIX: str = "domain:"
+
+_IGNORE_SPEC: Optional[pathspec.PathSpec] = None
+
+def _get_ignore_spec() -> pathspec.PathSpec:
+    global _IGNORE_SPEC
+    if _IGNORE_SPEC is not None:
+        return _IGNORE_SPEC
+
+    ignore_file = ROOT / ".promptignore"
+    lines = []
+    if ignore_file.exists():
+        try:
+            lines = ignore_file.read_text(encoding='utf-8').splitlines()
+        except Exception:
+            pass
+    _IGNORE_SPEC = pathspec.PathSpec.from_lines('gitignore', lines)
+    return _IGNORE_SPEC
+
+def _iter_files_with_ignore(root_path: Path, extensions: Tuple[str, ...]) -> Iterator[Path]:
+    spec = _get_ignore_spec()
+    
+    for root, dirs, files in os.walk(root_path):
+        current_dir = Path(root)
+        try:
+            rel_current = current_dir.relative_to(ROOT).as_posix()
+        except ValueError:
+            rel_current = current_dir.relative_to(root_path).as_posix()
+            
+        # Prune dirs
+        valid_dirs = []
+        for d in dirs:
+            if d.startswith("._") or d in (".git", ".github", "site", "docs_build"):
+                continue
+            dir_path = current_dir / d
+            try:
+                rel_dir = dir_path.relative_to(ROOT).as_posix() + "/"
+            except ValueError:
+                rel_dir = dir_path.relative_to(root_path).as_posix() + "/"
+                
+            if not spec.match_file(rel_dir) and not spec.match_file(rel_dir.rstrip('/')):
+                valid_dirs.append(d)
+                
+        dirs[:] = valid_dirs
+        
+        for f in files:
+            if f.startswith("._") or f == ".DS_Store":
+                continue
+            if not any(f.endswith(ext.lstrip("*")) for ext in extensions):
+                continue
+                
+            file_path = current_dir / f
+            try:
+                rel_file = file_path.relative_to(ROOT).as_posix()
+            except ValueError:
+                rel_file = file_path.relative_to(root_path).as_posix()
+                
+            if not spec.match_file(rel_file):
+                yield file_path
 
 # Centralized Governance Paths
 MANIFEST_DIR: Path = ROOT / "promptops" / "governance"
@@ -179,24 +238,16 @@ def _is_valid_file(p: Path) -> bool:
 
 def iter_prompt_files(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:
     root_path = Path(root) if root else PROMPTS_DIR
-    for ext in ("*.prompt.yaml", "*.prompt.yml", "*.prompt.md"):
-        for p in root_path.rglob(ext):
-            if _is_valid_file(p):
-                yield p
+    yield from _iter_files_with_ignore(root_path, ("*.prompt.yaml", "*.prompt.yml", "*.prompt.md"))
 
 def iter_workflow_files(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:
     root_path = Path(root) if root else WORKFLOWS_DIR
-    for ext in ("*.workflow.yaml", "*.workflow.yml"):
-        for p in root_path.rglob(ext):
-            if _is_valid_file(p):
-                yield p
+    yield from _iter_files_with_ignore(root_path, ("*.workflow.yaml", "*.workflow.yml"))
 
 def iter_markdown_files(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:
     """Iterate over all Markdown files recursively, skipping hidden/system files."""
     root_path = Path(root) if root else Path.cwd()
-    for p in root_path.rglob("*.md"):
-        if _is_valid_file(p):
-            yield p
+    yield from _iter_files_with_ignore(root_path, ("*.md",))
 
 
 def _format_category(raw: str) -> str:

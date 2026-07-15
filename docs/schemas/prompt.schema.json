@@ -246,6 +246,17 @@
           "title": "Domain",
           "type": "string"
         },
+        "status": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/StatusLevel"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "active"
+        },
         "complexity": {
           "$ref": "#/$defs/ComplexityLevel"
         },
@@ -293,6 +304,14 @@
       ],
       "title": "PromptMetadata",
       "type": "object"
+    },
+    "StatusLevel": {
+      "enum": [
+        "draft",
+        "active"
+      ],
+      "title": "StatusLevel",
+      "type": "string"
     },
     "ToolCall": {
       "properties": {

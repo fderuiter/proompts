@@ -1,5 +1,13 @@
 {
   "$defs": {
+    "StatusLevel": {
+      "enum": [
+        "draft",
+        "active"
+      ],
+      "title": "StatusLevel",
+      "type": "string"
+    },
     "WorkflowEdge": {
       "properties": {
         "target": {
@@ -55,6 +63,17 @@
         "domain": {
           "title": "Domain",
           "type": "string"
+        },
+        "status": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/StatusLevel"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "active"
         },
         "topic": {
           "title": "Topic",
