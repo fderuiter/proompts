@@ -10,8 +10,8 @@ A workflow to create, review, and refine a clinical trial protocol.
 
 ```mermaid
 graph TD
-    classDef stepNode fill:#1a5f7a,stroke:#0d3a4d,stroke-width:2px,color:#ffffff;
-    classDef inputNode fill:#2c5e43,stroke:#183b27,stroke-width:2px,color:#ffffff;
+    classDef stepNode fill:#1a5f7a,stroke:var(--md-default-fg-color,var(--text-color,#0d3a4d)),stroke-width:2px,color:#ffffff;
+    classDef inputNode fill:#2c5e43,stroke:var(--md-default-fg-color,var(--text-color,#183b27)),stroke-width:2px,color:#ffffff;
     INPUT_summary_sheet([Input: summary_sheet]):::inputNode
     INPUT_process_information([Input: process_information]):::inputNode
     INPUT_condition([Input: condition]):::inputNode
@@ -28,7 +28,7 @@ graph TD
     protocol_refinement[protocol_refinement<br><i>04_protocol_section_refinement.prompt.md</i>]:::stepNode
     INPUT_condition -. condition .-> protocol_refinement
     INPUT_draft_section -. draft_section .-> protocol_refinement
-    linkStyle default stroke:#767676,stroke-width:2px;
+    linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;
 ```
 
 

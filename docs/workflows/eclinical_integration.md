@@ -10,8 +10,8 @@ A workflow for architecting an integration blueprint, creating a data mapping pl
 
 ```mermaid
 graph TD
-    classDef stepNode fill:#1a5f7a,stroke:#0d3a4d,stroke-width:2px,color:#ffffff;
-    classDef inputNode fill:#2c5e43,stroke:#183b27,stroke-width:2px,color:#ffffff;
+    classDef stepNode fill:#1a5f7a,stroke:var(--md-default-fg-color,var(--text-color,#0d3a4d)),stroke-width:2px,color:#ffffff;
+    classDef inputNode fill:#2c5e43,stroke:var(--md-default-fg-color,var(--text-color,#183b27)),stroke-width:2px,color:#ffffff;
     INPUT_integration_description([Input: integration_description]):::inputNode
     INPUT_mapping_requirements([Input: mapping_requirements]):::inputNode
     INPUT_validation_info([Input: validation_info]):::inputNode
@@ -23,7 +23,7 @@ graph TD
     mapping_playbook -->|sequential| validation_checklist
     validation_checklist[validation_checklist<br><i>03_regulatory_validation_checklist.prompt.md</i>]:::stepNode
     INPUT_validation_info -. input .-> validation_checklist
-    linkStyle default stroke:#767676,stroke-width:2px;
+    linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;
 ```
 
 

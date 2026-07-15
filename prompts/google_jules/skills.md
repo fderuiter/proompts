@@ -1348,7 +1348,7 @@ name: Deploy ...
 
 ### ORCHESTRATION (docker-compose.yml / k8s.yaml):
 ```yaml
-version: '3.8' ...
+version: '3.8'
 ```
 
 [USER]

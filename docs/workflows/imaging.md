@@ -10,8 +10,8 @@ A workflow for various imaging-related tasks, including charter drafting, QC, ce
 
 ```mermaid
 graph TD
-    classDef stepNode fill:#1a5f7a,stroke:#0d3a4d,stroke-width:2px,color:#ffffff;
-    classDef inputNode fill:#2c5e43,stroke:#183b27,stroke-width:2px,color:#ffffff;
+    classDef stepNode fill:#1a5f7a,stroke:var(--md-default-fg-color,var(--text-color,#0d3a4d)),stroke-width:2px,color:#ffffff;
+    classDef inputNode fill:#2c5e43,stroke:var(--md-default-fg-color,var(--text-color,#183b27)),stroke-width:2px,color:#ffffff;
     INPUT_charter_draft_protocol_synopsis([Input: charter_draft_protocol_synopsis]):::inputNode
     INPUT_charter_draft_modalities([Input: charter_draft_modalities]):::inputNode
     INPUT_charter_draft_endpoints([Input: charter_draft_endpoints]):::inputNode
@@ -63,7 +63,7 @@ graph TD
     INPUT_data_package_study_summary -. study_summary .-> regulatory_imaging_data_package
     INPUT_data_package_metrics_data -. metrics_data .-> regulatory_imaging_data_package
     INPUT_data_package_reader_agreement -. reader_agreement .-> regulatory_imaging_data_package
-    linkStyle default stroke:#767676,stroke-width:2px;
+    linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;
 ```
 
 

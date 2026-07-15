@@ -10,8 +10,8 @@ A workflow for coaching, feedback, and assessment of bioskills.
 
 ```mermaid
 graph TD
-    classDef stepNode fill:#1a5f7a,stroke:#0d3a4d,stroke-width:2px,color:#ffffff;
-    classDef inputNode fill:#2c5e43,stroke:#183b27,stroke-width:2px,color:#ffffff;
+    classDef stepNode fill:#1a5f7a,stroke:var(--md-default-fg-color,var(--text-color,#0d3a4d)),stroke-width:2px,color:#ffffff;
+    classDef inputNode fill:#2c5e43,stroke:var(--md-default-fg-color,var(--text-color,#183b27)),stroke-width:2px,color:#ffffff;
     INPUT_procedure_name([Input: procedure_name]):::inputNode
     INPUT_procedure_notes([Input: procedure_notes]):::inputNode
     coaching[coaching<br><i>01_hands_on_procedure_coaching.prompt.md</i>]:::stepNode
@@ -22,7 +22,7 @@ graph TD
     feedback -->|sequential| assessment
     assessment[assessment<br><i>03_objective_skills_assessment.prompt.md</i>]:::stepNode
     INPUT_procedure_name -. procedure_name .-> assessment
-    linkStyle default stroke:#767676,stroke-width:2px;
+    linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;
 ```
 
 

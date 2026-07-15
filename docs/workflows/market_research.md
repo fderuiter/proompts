@@ -10,8 +10,8 @@ A workflow for market landscape analysis, user needs assessment, barrier mapping
 
 ```mermaid
 graph TD
-    classDef stepNode fill:#1a5f7a,stroke:#0d3a4d,stroke-width:2px,color:#ffffff;
-    classDef inputNode fill:#2c5e43,stroke:#183b27,stroke-width:2px,color:#ffffff;
+    classDef stepNode fill:#1a5f7a,stroke:var(--md-default-fg-color,var(--text-color,#0d3a4d)),stroke-width:2px,color:#ffffff;
+    classDef inputNode fill:#2c5e43,stroke:var(--md-default-fg-color,var(--text-color,#183b27)),stroke-width:2px,color:#ffffff;
     INPUT_device_or_assay([Input: device_or_assay]):::inputNode
     INPUT_application([Input: application]):::inputNode
     INPUT_device([Input: device]):::inputNode
@@ -30,7 +30,7 @@ graph TD
     barrier_mapping -->|sequential| executive_summary
     executive_summary[executive_summary<br><i>04_market_report_exec_summary.prompt.md</i>]:::stepNode
     INPUT_market_report -. market_report .-> executive_summary
-    linkStyle default stroke:#767676,stroke-width:2px;
+    linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;
 ```
 
 

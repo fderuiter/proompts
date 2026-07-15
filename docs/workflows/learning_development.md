@@ -10,8 +10,8 @@ A workflow for creating a competency-based onboarding blueprint, a scenario-base
 
 ```mermaid
 graph TD
-    classDef stepNode fill:#1a5f7a,stroke:#0d3a4d,stroke-width:2px,color:#ffffff;
-    classDef inputNode fill:#2c5e43,stroke:#183b27,stroke-width:2px,color:#ffffff;
+    classDef stepNode fill:#1a5f7a,stroke:var(--md-default-fg-color,var(--text-color,#0d3a4d)),stroke-width:2px,color:#ffffff;
+    classDef inputNode fill:#2c5e43,stroke:var(--md-default-fg-color,var(--text-color,#183b27)),stroke-width:2px,color:#ffffff;
     INPUT_existing_modules([Input: existing_modules]):::inputNode
     INPUT_audience_role([Input: audience_role]):::inputNode
     INPUT_analysis_goal([Input: analysis_goal]):::inputNode
@@ -23,7 +23,7 @@ graph TD
     microlearning_series -->|sequential| analytics_plan
     analytics_plan[analytics_plan<br><i>03_training_impact_analytics_targeted_intervention_planner.prompt.md</i>]:::stepNode
     INPUT_analysis_goal -. analysis_goal .-> analytics_plan
-    linkStyle default stroke:#767676,stroke-width:2px;
+    linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;
 ```
 
 

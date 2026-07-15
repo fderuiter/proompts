@@ -10,8 +10,8 @@ A workflow for financial forecasting, competitive bid pricing, and regulatory ri
 
 ```mermaid
 graph TD
-    classDef stepNode fill:#1a5f7a,stroke:#0d3a4d,stroke-width:2px,color:#ffffff;
-    classDef inputNode fill:#2c5e43,stroke:#183b27,stroke-width:2px,color:#ffffff;
+    classDef stepNode fill:#1a5f7a,stroke:var(--md-default-fg-color,var(--text-color,#0d3a4d)),stroke-width:2px,color:#ffffff;
+    classDef inputNode fill:#2c5e43,stroke:var(--md-default-fg-color,var(--text-color,#183b27)),stroke-width:2px,color:#ffffff;
     INPUT_base_revenue([Input: base_revenue]):::inputNode
     INPUT_base_costs([Input: base_costs]):::inputNode
     INPUT_starting_cash([Input: starting_cash]):::inputNode
@@ -41,7 +41,7 @@ graph TD
     INPUT_reg_updates -. reg_updates .-> risk_dashboard
     INPUT_esg_baseline -. esg_baseline .-> risk_dashboard
     INPUT_risk_tolerance -. risk_tolerance .-> risk_dashboard
-    linkStyle default stroke:#767676,stroke-width:2px;
+    linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;
 ```
 
 

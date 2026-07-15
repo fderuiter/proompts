@@ -359,7 +359,7 @@ You must use the following Markdown structure:
 
 ### `.github/workflows/quality.yml`
 ```yaml
-...
+name: Quality Check
 ```
 
 ## 📦 Dependencies
