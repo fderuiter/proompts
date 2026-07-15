@@ -10,8 +10,8 @@ A workflow that implements the full meta-prompt generative chain.
 
 ```mermaid
 graph TD
-    classDef stepNode fill:#1a5f7a,stroke:#0d3a4d,stroke-width:2px,color:#ffffff;
-    classDef inputNode fill:#2c5e43,stroke:#183b27,stroke-width:2px,color:#ffffff;
+    classDef stepNode fill:#1a5f7a,stroke:var(--md-default-fg-color,var(--text-color,#0d3a4d)),stroke-width:2px,color:#ffffff;
+    classDef inputNode fill:#2c5e43,stroke:var(--md-default-fg-color,var(--text-color,#183b27)),stroke-width:2px,color:#ffffff;
     INPUT_end_task([Input: end_task]):::inputNode
     INPUT_policy_block([Input: policy_block]):::inputNode
     INPUT_token_budget_l3([Input: token_budget_l3]):::inputNode
@@ -41,7 +41,7 @@ graph TD
     INPUT_output_schema -. output_schema .-> execute_task
     INPUT_policy_block -. policy_block .-> execute_task
     INPUT_token_limit_l4 -. token_limit_l4 .-> execute_task
-    linkStyle default stroke:#767676,stroke-width:2px;
+    linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;
 ```
 
 

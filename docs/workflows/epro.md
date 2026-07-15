@@ -10,8 +10,8 @@ A workflow for designing a patient-centric BYOD workflow, optimizing ePRO form d
 
 ```mermaid
 graph TD
-    classDef stepNode fill:#1a5f7a,stroke:#0d3a4d,stroke-width:2px,color:#ffffff;
-    classDef inputNode fill:#2c5e43,stroke:#183b27,stroke-width:2px,color:#ffffff;
+    classDef stepNode fill:#1a5f7a,stroke:var(--md-default-fg-color,var(--text-color,#0d3a4d)),stroke-width:2px,color:#ffffff;
+    classDef inputNode fill:#2c5e43,stroke:var(--md-default-fg-color,var(--text-color,#183b27)),stroke-width:2px,color:#ffffff;
     INPUT_byod_requirements([Input: byod_requirements]):::inputNode
     INPUT_form_details([Input: form_details]):::inputNode
     INPUT_rollout_details([Input: rollout_details]):::inputNode
@@ -23,7 +23,7 @@ graph TD
     form_design -->|sequential| adoption_plan
     adoption_plan[adoption_plan<br><i>03_epro_adoption_plan_for_sponsors.prompt.md</i>]:::stepNode
     INPUT_rollout_details -. input .-> adoption_plan
-    linkStyle default stroke:#767676,stroke-width:2px;
+    linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;
 ```
 
 

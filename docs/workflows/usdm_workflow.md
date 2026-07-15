@@ -10,8 +10,8 @@ A 5-stage chain to convert unstructured Clinical Protocol text into CDISC USDM v
 
 ```mermaid
 graph TD
-    classDef stepNode fill:#1a5f7a,stroke:#0d3a4d,stroke-width:2px,color:#ffffff;
-    classDef inputNode fill:#2c5e43,stroke:#183b27,stroke-width:2px,color:#ffffff;
+    classDef stepNode fill:#1a5f7a,stroke:var(--md-default-fg-color,var(--text-color,#0d3a4d)),stroke-width:2px,color:#ffffff;
+    classDef inputNode fill:#2c5e43,stroke:var(--md-default-fg-color,var(--text-color,#183b27)),stroke-width:2px,color:#ffffff;
     INPUT_protocol_text([Input: protocol_text]):::inputNode
     INPUT_protocol_objectives_text([Input: protocol_objectives_text]):::inputNode
     INPUT_protocol_soa_text([Input: protocol_soa_text]):::inputNode
@@ -32,7 +32,7 @@ graph TD
     stage2_rationale -. rationale_json .-> stage5_assembly
     stage3_workflow -. workflow_json .-> stage5_assembly
     stage4_concepts -. concepts_json .-> stage5_assembly
-    linkStyle default stroke:#767676,stroke-width:2px;
+    linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;
 ```
 
 

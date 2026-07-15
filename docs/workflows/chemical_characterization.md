@@ -10,8 +10,8 @@ A workflow to design a chemical characterization study, assess the risks from th
 
 ```mermaid
 graph TD
-    classDef stepNode fill:#1a5f7a,stroke:#0d3a4d,stroke-width:2px,color:#ffffff;
-    classDef inputNode fill:#2c5e43,stroke:#183b27,stroke-width:2px,color:#ffffff;
+    classDef stepNode fill:#1a5f7a,stroke:var(--md-default-fg-color,var(--text-color,#0d3a4d)),stroke-width:2px,color:#ffffff;
+    classDef inputNode fill:#2c5e43,stroke:var(--md-default-fg-color,var(--text-color,#183b27)),stroke-width:2px,color:#ffffff;
     INPUT_device_description([Input: device_description]):::inputNode
     INPUT_body_weight_kg([Input: body_weight_kg]):::inputNode
     INPUT_device_dose_ug_day([Input: device_dose_ug_day]):::inputNode
@@ -25,7 +25,7 @@ graph TD
     assess_risk -->|sequential| write_summary
     write_summary[write_summary<br><i>03_write_the_regulatory_summary.prompt.md</i>]:::stepNode
     assess_risk -. risk_assessment_summary .-> write_summary
-    linkStyle default stroke:#767676,stroke-width:2px;
+    linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;
 ```
 
 

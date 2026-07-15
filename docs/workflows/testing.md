@@ -10,8 +10,8 @@ A workflow for end-to-end test discovery, design verification, human factors val
 
 ```mermaid
 graph TD
-    classDef stepNode fill:#1a5f7a,stroke:#0d3a4d,stroke-width:2px,color:#ffffff;
-    classDef inputNode fill:#2c5e43,stroke:#183b27,stroke-width:2px,color:#ffffff;
+    classDef stepNode fill:#1a5f7a,stroke:var(--md-default-fg-color,var(--text-color,#0d3a4d)),stroke-width:2px,color:#ffffff;
+    classDef inputNode fill:#2c5e43,stroke:var(--md-default-fg-color,var(--text-color,#183b27)),stroke-width:2px,color:#ffffff;
     INPUT_project_name([Input: project_name]):::inputNode
     INPUT_languages_frameworks([Input: languages_frameworks]):::inputNode
     INPUT_business_goal([Input: business_goal]):::inputNode
@@ -33,7 +33,7 @@ graph TD
     risk_based_test_suite[risk_based_test_suite<br><i>04_risk_based_test_case_suite.prompt.md</i>]:::stepNode
     INPUT_device_name -. device_name .-> risk_based_test_suite
     INPUT_hazard_analysis_table -. hazard_analysis_table .-> risk_based_test_suite
-    linkStyle default stroke:#767676,stroke-width:2px;
+    linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;
 ```
 
 

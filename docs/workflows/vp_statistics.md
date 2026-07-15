@@ -10,8 +10,8 @@ A workflow for creating an interim results executive brief, a statistical analys
 
 ```mermaid
 graph TD
-    classDef stepNode fill:#1a5f7a,stroke:#0d3a4d,stroke-width:2px,color:#ffffff;
-    classDef inputNode fill:#2c5e43,stroke:#183b27,stroke-width:2px,color:#ffffff;
+    classDef stepNode fill:#1a5f7a,stroke:var(--md-default-fg-color,var(--text-color,#0d3a4d)),stroke-width:2px,color:#ffffff;
+    classDef inputNode fill:#2c5e43,stroke:var(--md-default-fg-color,var(--text-color,#183b27)),stroke-width:2px,color:#ffffff;
     INPUT_analysis_results([Input: analysis_results]):::inputNode
     INPUT_statistical_plan([Input: statistical_plan]):::inputNode
     INPUT_safety_listings([Input: safety_listings]):::inputNode
@@ -29,7 +29,7 @@ graph TD
     data_quality_heatmap[data_quality_heatmap<br><i>03_data_quality_risk_heatmap.prompt.md</i>]:::stepNode
     INPUT_raw_eds_dump -. raw_eds_dump .-> data_quality_heatmap
     INPUT_query_log -. query_log .-> data_quality_heatmap
-    linkStyle default stroke:#767676,stroke-width:2px;
+    linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;
 ```
 
 

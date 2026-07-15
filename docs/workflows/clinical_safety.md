@@ -10,8 +10,8 @@ A workflow for creating a clinical safety synopsis, an adverse event narrative, 
 
 ```mermaid
 graph TD
-    classDef stepNode fill:#1a5f7a,stroke:#0d3a4d,stroke-width:2px,color:#ffffff;
-    classDef inputNode fill:#2c5e43,stroke:#183b27,stroke-width:2px,color:#ffffff;
+    classDef stepNode fill:#1a5f7a,stroke:var(--md-default-fg-color,var(--text-color,#0d3a4d)),stroke-width:2px,color:#ffffff;
+    classDef inputNode fill:#2c5e43,stroke:var(--md-default-fg-color,var(--text-color,#183b27)),stroke-width:2px,color:#ffffff;
     INPUT_surveillance_data([Input: surveillance_data]):::inputNode
     INPUT_adverse_event_data([Input: adverse_event_data]):::inputNode
     INPUT_post_market_data([Input: post_market_data]):::inputNode
@@ -23,7 +23,7 @@ graph TD
     adverse_event_narrative -->|sequential| safety_signal_trending
     safety_signal_trending[safety_signal_trending<br><i>03_post_market_safety_signal_trending.prompt.md</i>]:::stepNode
     INPUT_post_market_data -. input .-> safety_signal_trending
-    linkStyle default stroke:#767676,stroke-width:2px;
+    linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;
 ```
 
 

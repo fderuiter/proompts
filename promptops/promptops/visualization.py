@@ -1,4 +1,5 @@
 from promptops.validation import WorkflowSchema
+from promptops.theme import ThemeSync
 
 class MermaidGrapher:
     @staticmethod
@@ -9,8 +10,8 @@ class MermaidGrapher:
         graph = ["graph TD"]
         
         # Add high-contrast style classes
-        graph.append("    classDef stepNode fill:#1a5f7a,stroke:#0d3a4d,stroke-width:2px,color:#ffffff;")
-        graph.append("    classDef inputNode fill:#2c5e43,stroke:#183b27,stroke-width:2px,color:#ffffff;")
+        graph.append(f"    {ThemeSync.get_step_node_class()}")
+        graph.append(f"    {ThemeSync.get_input_node_class()}")
         
         # Add inputs
         for inp in wf.inputs:
@@ -55,6 +56,6 @@ class MermaidGrapher:
                     graph.append(f"    {step_id} -->|sequential| {next_step.step_id}")
         
         # Add default link style
-        graph.append("    linkStyle default stroke:#767676,stroke-width:2px;")
+        graph.append(f"    {ThemeSync.get_edge_style()}")
                         
         return "\n".join(graph) if len(graph) > 1 else ""
