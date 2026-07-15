@@ -9,7 +9,7 @@ from promptops.utils import ROOT
 
 def main():
     docs_dir = ROOT / "docs"
-    md_files = list(docs_dir.rglob("*.md"))
+    md_files = [f for f in docs_dir.rglob("*.md") if "skills" not in f.parts]
     
     yaml_pattern = re.compile(r'```yaml\n(.*?)\n```', re.DOTALL)
     

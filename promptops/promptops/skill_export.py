@@ -246,8 +246,12 @@ def process_skills(prompts_path: Path, docs_path: Optional[Path] = None):
     # For docs, copy the persistent manifest files
     if docs_reconciler and docs_path:
         for root, dirs, files in os.walk(prompts_path):
-            # Exclude docs, .git, venv etc. from traversal
-            dirs[:] = [d for d in dirs if d not in (".git", "venv", ".venv", "__pycache__") and not (Path(root) == prompts_path and d == docs_path.name)]
+            # Exclude standard directories and prevent infinite traversal into docs_path
+            dirs[:] = [
+                d for d in dirs
+                if d not in (".git", "venv", ".venv", "__pycache__")
+                and (Path(root) / d).resolve() != docs_path.resolve()
+            ]
             if "skills.md" in files:
                 directory = Path(root)
                 rel = directory.relative_to(prompts_path)
