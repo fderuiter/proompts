@@ -64,7 +64,6 @@ pip install -r requirements.txt
 | **`enrich_prompts.py`** | 🐍 Python | Enrich Prompt Files - Automation Script |
 | **`fix_markdown_issues.py`** | 🐍 Python | Fix Markdown Issues Script |
 | **`generate_overviews.py`** | 🐍 Python | Generate Overviews Script |
-| **`generate_regulatory_prompts.py`** | 🐍 Python | Generate Regulatory Prompts |
 | **`generate_search_index.py`** | 🐍 Python | Generate Search Index Script |
 | **`governance_manifest_generator.py`** | 🐍 Python | This script scans prompt files and generates a regulatory compliance manifest (`compliance_manifest.json`) and a gap report (`gap_report.json`) against predefined standards like 21 CFR Part 11 and ISO 13485. |
 | **`inject_test_data.py`** | 🐍 Python | This script scans all `.workflow.yaml` files in the `workflows/` directory. If a workflow is missing the `testData` field, it automatically inspects the required inputs from the step mappings and injects a mock `testData` block. > [!WARNING] > Manual Setup Required: > This script currently hardcodes the target path as `/app/workflows/`, which is not a standard repository directory unless you are running inside a specific container structure. You must manually ensure this path exists or modify the script locally before execution. |
@@ -72,7 +71,6 @@ pip install -r requirements.txt
 | **`test_enrich_prompts.py`** | 🐍 Python | Test with an empty dictionary. |
 | **`test_fix_markdown_issues.py`** | 🐍 Python | No description provided. |
 | **`test_generate_overviews.py`** | 🐍 Python | Test metadata extraction when 'name' is present in YAML. |
-| **`test_generate_regulatory_prompts.py`** | 🐍 Python | No description provided. |
 | **`test_generate_search_index.py`** | 🐍 Python | No description provided. |
 | **`test_print.py`** | 🐍 Python | No description provided. |
 | **`test_workflows.py`** | 🐍 Python | Test Workflows Script |
