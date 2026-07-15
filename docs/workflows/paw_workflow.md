@@ -10,8 +10,8 @@ A state-machine workflow for disciplined software engineering tasks, enforcing D
 
 ```mermaid
 graph TD
-    classDef stepNode fill:#1a5f7a,stroke:#0d3a4d,stroke-width:2px,color:#ffffff;
-    classDef inputNode fill:#2c5e43,stroke:#183b27,stroke-width:2px,color:#ffffff;
+    classDef stepNode fill:#1a5f7a,stroke:var(--md-default-fg-color,var(--text-color,#0d3a4d)),stroke-width:2px,color:#ffffff;
+    classDef inputNode fill:#2c5e43,stroke:var(--md-default-fg-color,var(--text-color,#183b27)),stroke-width:2px,color:#ffffff;
     INPUT_todo_content([Input: todo_content]):::inputNode
     INPUT_file_structure([Input: file_structure]):::inputNode
     INPUT_relevant_source_code([Input: relevant_source_code]):::inputNode
@@ -30,7 +30,7 @@ graph TD
     qa_verification[qa_verification<br><i>paw_04_qa_verification.prompt.md</i>]:::stepNode
     precision_strike -. implementation_code .-> qa_verification
     INPUT_todo_content -. todo_content .-> qa_verification
-    linkStyle default stroke:#767676,stroke-width:2px;
+    linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;
 ```
 
 

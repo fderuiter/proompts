@@ -10,8 +10,8 @@ A workflow for site landscape mapping, feasibility questionnaire building, and i
 
 ```mermaid
 graph TD
-    classDef stepNode fill:#1a5f7a,stroke:#0d3a4d,stroke-width:2px,color:#ffffff;
-    classDef inputNode fill:#2c5e43,stroke:#183b27,stroke-width:2px,color:#ffffff;
+    classDef stepNode fill:#1a5f7a,stroke:var(--md-default-fg-color,var(--text-color,#0d3a4d)),stroke-width:2px,color:#ffffff;
+    classDef inputNode fill:#2c5e43,stroke:var(--md-default-fg-color,var(--text-color,#183b27)),stroke-width:2px,color:#ffffff;
     INPUT_protocol_summary([Input: protocol_summary]):::inputNode
     INPUT_investigator_name([Input: investigator_name]):::inputNode
     INPUT_site_name([Input: site_name]):::inputNode
@@ -34,7 +34,7 @@ graph TD
     INPUT_unique_site_strength -. unique_site_strength .-> outreach_email
     INPUT_study_synopsis -. study_synopsis .-> outreach_email
     INPUT_sponsor_name -. sponsor_name .-> outreach_email
-    linkStyle default stroke:#767676,stroke-width:2px;
+    linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;
 ```
 
 

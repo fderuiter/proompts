@@ -10,8 +10,8 @@ A workflow to create a project charter, risk register, status report, and timeli
 
 ```mermaid
 graph TD
-    classDef stepNode fill:#1a5f7a,stroke:#0d3a4d,stroke-width:2px,color:#ffffff;
-    classDef inputNode fill:#2c5e43,stroke:#183b27,stroke-width:2px,color:#ffffff;
+    classDef stepNode fill:#1a5f7a,stroke:var(--md-default-fg-color,var(--text-color,#0d3a4d)),stroke-width:2px,color:#ffffff;
+    classDef inputNode fill:#2c5e43,stroke:var(--md-default-fg-color,var(--text-color,#183b27)),stroke-width:2px,color:#ffffff;
     INPUT_project_name([Input: project_name]):::inputNode
     INPUT_project_description([Input: project_description]):::inputNode
     INPUT_budget([Input: budget]):::inputNode
@@ -40,7 +40,7 @@ graph TD
     INPUT_project_type -. project_type .-> timeline
     INPUT_objectives -. objectives .-> timeline
     INPUT_milestone_data -. milestone_data .-> timeline
-    linkStyle default stroke:#767676,stroke-width:2px;
+    linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;
 ```
 
 

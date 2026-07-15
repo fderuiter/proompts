@@ -10,8 +10,8 @@ A workflow for generating a monitoring visit report, tracking investigator follo
 
 ```mermaid
 graph TD
-    classDef stepNode fill:#1a5f7a,stroke:#0d3a4d,stroke-width:2px,color:#ffffff;
-    classDef inputNode fill:#2c5e43,stroke:#183b27,stroke-width:2px,color:#ffffff;
+    classDef stepNode fill:#1a5f7a,stroke:var(--md-default-fg-color,var(--text-color,#0d3a4d)),stroke-width:2px,color:#ffffff;
+    classDef inputNode fill:#2c5e43,stroke:var(--md-default-fg-color,var(--text-color,#183b27)),stroke-width:2px,color:#ffffff;
     INPUT_visit_info([Input: visit_info]):::inputNode
     INPUT_pending_actions([Input: pending_actions]):::inputNode
     INPUT_study_info([Input: study_info]):::inputNode
@@ -23,7 +23,7 @@ graph TD
     email_tracker -->|sequential| rbm_plan_builder
     rbm_plan_builder[rbm_plan_builder<br><i>03_rbm_plan_builder.prompt.md</i>]:::stepNode
     INPUT_study_info -. input .-> rbm_plan_builder
-    linkStyle default stroke:#767676,stroke-width:2px;
+    linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;
 ```
 
 
