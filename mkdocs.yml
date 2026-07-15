@@ -26,3 +26,6 @@ markdown_extensions:
   - admonition
 
 docs_dir: docs
+
+extra_javascript:
+  - js/explorer.js

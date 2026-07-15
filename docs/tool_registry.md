@@ -12,5 +12,5 @@ The MCP server includes watchdog-based hot-reloading capabilities. When you modi
 
 ## Discovered Tools
 
-| Original Name | Transformed Name | Status |
-|---------------|------------------|--------|
+<div id="tool-explorer"></div>
+<script src="../js/explorer.js"></script>
