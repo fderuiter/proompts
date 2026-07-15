@@ -481,3 +481,25 @@ def resolve_skill_from_path(path: Path, skills_list: List[Dict[str, Any]]) -> Op
     if best_match and best_score > 0:
         return best_match
     return None
+
+def resolve_fallback_prompt(path_obj: Path) -> Optional[Dict[str, Any]]:
+    """
+    Resolves a missing prompt file by searching for and extracting skills from a central markdown manifest.
+    Preserves multi-role message arrays when building the fallback prompt.
+    """
+    skills_md = path_obj.parent / "skills.md"
+    if skills_md.exists():
+        manifest = parse_skill_manifest(skills_md)
+        best_match = resolve_skill_from_path(path_obj, manifest.get("skills", []))
+        if best_match:
+            messages = best_match.get("messages")
+            if not messages:
+                messages = [{"role": "system", "content": best_match.get("instructions", "")}]
+            return {
+                "name": best_match["name"],
+                "description": best_match.get("description", ""),
+                "variables": best_match.get("variables", []),
+                "messages": messages,
+                "testData": best_match.get("testData", [])
+            }
+    return None
