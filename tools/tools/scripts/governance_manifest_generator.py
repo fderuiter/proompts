@@ -68,9 +68,9 @@ def generate_kb():
                 }
             }
         }
-        with open(KB_FILE, 'w') as f:
+        with open(KB_FILE, 'w', encoding='utf-8') as f:
             yaml.dump(kb, f)
-    with open(KB_FILE, 'r') as f:
+    with open(KB_FILE, 'r', encoding='utf-8') as f:
         return yaml.safe_load(f)
 
 def hash_file(path):
@@ -130,7 +130,7 @@ def main():
     
     manifest_data = {}
     if MANIFEST_FILE.exists():
-        with open(MANIFEST_FILE, 'r') as f:
+        with open(MANIFEST_FILE, 'r', encoding='utf-8') as f:
             manifest_data = json.load(f)
             
     snapshot_id = datetime.now(timezone.utc).isoformat()
@@ -262,27 +262,27 @@ def main():
         if strip_ts(snapshot_records) == strip_ts(prev_records):
             # No changes detected, do not append a new snapshot
             if gap_report:
-                with open(GAP_REPORT_FILE, 'w') as f:
+                with open(GAP_REPORT_FILE, 'w', encoding='utf-8') as f:
                     json.dump(gap_report, f, indent=2)
                 print(f"Generated compliance manifest. Gap report created with {len(gap_report)} outdated prompt mappings.")
             else:
-                with open(GAP_REPORT_FILE, 'w') as f:
+                with open(GAP_REPORT_FILE, 'w', encoding='utf-8') as f:
                     json.dump([], f, indent=2)
                 print(f"No changes detected in prompts. Manifest unchanged. No regulatory gaps detected.")
             return
 
     manifest_data[snapshot_id] = snapshot_records
     
-    with open(MANIFEST_FILE, 'w') as f:
+    with open(MANIFEST_FILE, 'w', encoding='utf-8') as f:
         json.dump(manifest_data, f, indent=2)
         
     if gap_report:
-        with open(GAP_REPORT_FILE, 'w') as f:
+        with open(GAP_REPORT_FILE, 'w', encoding='utf-8') as f:
             json.dump(gap_report, f, indent=2)
         print(f"Generated compliance manifest. Gap report created with {len(gap_report)} outdated prompt mappings.")
     else:
         # Create an empty gap report to show there are no gaps
-        with open(GAP_REPORT_FILE, 'w') as f:
+        with open(GAP_REPORT_FILE, 'w', encoding='utf-8') as f:
             json.dump([], f, indent=2)
         print(f"Generated compliance manifest with {len(snapshot_records)} records. No regulatory gaps detected.")
 

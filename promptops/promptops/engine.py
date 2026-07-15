@@ -330,7 +330,7 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
 
     if os.path.exists(checkpoint_file):
         try:
-            with open(checkpoint_file, 'r') as f:
+            with open(checkpoint_file, 'r', encoding='utf-8') as f:
                 checkpoint_data = json.load(f)
             resume_step_id = checkpoint_data.get('next_step_id')
             if resume_step_id and resume_step_id in steps_dict:
@@ -440,7 +440,7 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
         
         try:
             os.makedirs(checkpoint_dir, exist_ok=True)
-            with open(checkpoint_file, 'w') as f:
+            with open(checkpoint_file, 'w', encoding='utf-8') as f:
                 json.dump({
                     "workflow_state": workflow_state,
                     "execution_counts": execution_counts,

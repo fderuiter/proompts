@@ -590,7 +590,7 @@ def generate_prompt_yaml(task, category_dir):
         ]
     }
 
-    with open(filepath, 'w') as f:
+    with open(filepath, 'w', encoding='utf-8') as f:
         f.write("---\n")
         yaml.dump(content, f, Dumper=IndentDumper, sort_keys=False, width=1000)
 
@@ -604,7 +604,7 @@ def update_overview(directory):
     prompts = sorted(directory.glob("*.prompt.md"))
     for p in prompts:
         try:
-            with open(p, 'r') as f:
+            with open(p, 'r', encoding='utf-8') as f:
                 docs = list(yaml.load_all(f, Loader=SafeLoader))
                 data = docs[0] if docs else {}
                 name = data.get('name', p.stem)
@@ -613,7 +613,7 @@ def update_overview(directory):
 
         lines.append(f"- [{name}]({p.name})\n")
 
-    with open(overview_file, 'w') as f:
+    with open(overview_file, 'w', encoding='utf-8') as f:
         f.write("".join(lines))
     print(f"Updated {overview_file}")
 

@@ -16,7 +16,7 @@ def main():
     has_errors = False
     
     for md_file in md_files:
-        content = md_file.read_text()
+        content = md_file.read_text(encoding='utf-8')
         snippets = yaml_pattern.findall(content)
         
         for idx, snippet in enumerate(snippets):
@@ -30,7 +30,7 @@ def main():
                 if "steps" in parsed:
                     test_data = parsed.get("testData", [])
                     tmp_file = md_file.parent / f"tmp_snippet_{idx}.workflow.yaml"
-                    tmp_file.write_text(snippet)
+                    tmp_file.write_text(snippet, encoding='utf-8')
                     
                     try:
                         inputs = {}

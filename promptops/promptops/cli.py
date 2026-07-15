@@ -186,7 +186,7 @@ def main():
             
             path = os.path.join(args.out_dir, filename)
             schema = model.model_json_schema()
-            with open(path, 'w') as f:
+            with open(path, 'w', encoding='utf-8') as f:
                 json.dump(schema, f, indent=2)
                 f.write('\n')
         
@@ -212,7 +212,7 @@ def main():
                         sys.exit(1)
                     initial_inputs.update(file_inputs)
                 elif file_ext == 'json':
-                    with open(args.inputs_file, 'r') as f:
+                    with open(args.inputs_file, 'r', encoding='utf-8') as f:
                         initial_inputs.update(json.load(f))
                 else:
                     logger.error(f"Unsupported inputs file extension '{file_ext}'.")
@@ -312,7 +312,7 @@ def main():
                         out.append(subsubparser.format_help())
                         out.append("```\n")
 
-        with open(args.output, "w") as f:
+        with open(args.output, "w", encoding='utf-8') as f:
             f.write("\n".join(out))
         print(f"Generated CLI docs at {args.output}")
 

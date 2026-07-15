@@ -207,9 +207,11 @@ def detect_skill(raw_content: str, raw_data: Any) -> bool:
     return "skill" in extract_tags_from_text(raw_content)
 
 def process_skills(prompts_path: Path, docs_path: Optional[Path] = None):
+    print('DEBUG: Entering process_skills')
     from promptops.utils import iter_prompt_files, load_yaml
     from promptops.sync import DirectoryReconciler
     
+    print('DEBUG: Start iter_prompt_files')
     prompts_by_dir: Dict[Path, List[Path]] = {}
     for path in iter_prompt_files(str(prompts_path)):
         try:
@@ -224,14 +226,17 @@ def process_skills(prompts_path: Path, docs_path: Optional[Path] = None):
         except Exception as e:
             print(f"Error processing {path}: {e}")
 
+    print('DEBUG: Finished iter_prompt_files')
     docs_reconciler = DirectoryReconciler(docs_path / "skills", manage_pattern="skills.md") if docs_path else None
 
     # Migration: consolidate any remaining loose files into skills.md and purge them
+    print('DEBUG: Starting migration loop')
     for directory, prompt_paths in prompts_by_dir.items():
+        print(f'DEBUG: Migrating {directory}'); import time; t0=time.time()
         prompts_data = [load_yaml(p) for p in prompt_paths]
-        skills_content = generate_skills_md(directory, prompts_path, prompts_data)
+        skills_content = generate_skills_md(directory, prompts_path, prompts_data); print(f'DEBUG: generate_skills_md took {time.time()-t0:.2f}s')
         skills_file = directory / "skills.md"
-        skills_file.write_text(skills_content, encoding='utf-8')
+        skills_file.write_text(skills_content, encoding='utf-8'); print(f'DEBUG: wrote file took {time.time()-t0:.2f}s')
         
         # Mandatory purge
         for p in prompt_paths:

@@ -4,7 +4,7 @@ from pathlib import Path
 
 def get_script_info(filepath):
     """Extracts description from docstring or file header."""
-    with open(filepath, 'r') as f:
+    with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
     
     # Try to find WHAT: section in docstring
@@ -25,7 +25,7 @@ def get_script_info(filepath):
     return "No description provided."
 
 def get_detailed_usage(filepath):
-    with open(filepath, 'r') as f:
+    with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
     how_match = re.search(r'HOW TO USE:\s*(.*?)\n\s*(?:"""|$)', content, re.DOTALL)
     if how_match:
@@ -70,7 +70,7 @@ def main():
                 detailed_docs.append(f"### `{script}`\n\n**Description:** {desc_clean}\n\n**Usage Example:**\n```bash\n{usage}\n```\n")
     
     # Read existing README.md
-    with open(readme_path, 'r') as f:
+    with open(readme_path, 'r', encoding='utf-8') as f:
         readme_content = f.read()
     
     # We will replace everything from "## Validation & Testing" to the end (excluding the Return link)
@@ -90,7 +90,7 @@ def main():
     
     new_sections += "---\n\n[Return to Documentation Index](../../docs/index.md)\n"
     
-    with open(readme_path, 'w') as f:
+    with open(readme_path, 'w', encoding='utf-8') as f:
         f.write(base_content + new_sections)
 
 if __name__ == '__main__':
