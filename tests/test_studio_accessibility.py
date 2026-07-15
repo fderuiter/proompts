@@ -1,15 +1,29 @@
 import subprocess
 import time
+from pathlib import Path
 import pytest
 from playwright.sync_api import sync_playwright
 from axe_playwright_python.sync_playwright import Axe
 
 @pytest.fixture(scope="module")
 def streamlit_server():
+    repo_root = Path(__file__).resolve().parents[1]
+    app_path = repo_root / "studio" / "studio" / "app.py"
+
     # Start the Streamlit server
     process = subprocess.Popen(
-        ["uv", "run", "streamlit", "run", "studio/studio/app.py", "--server.port", "8502", "--server.headless", "true"],
-        cwd="/app",
+        [
+            "uv",
+            "run",
+            "streamlit",
+            "run",
+            str(app_path),
+            "--server.port",
+            "8502",
+            "--server.headless",
+            "true",
+        ],
+        cwd=str(repo_root),
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE
     )
