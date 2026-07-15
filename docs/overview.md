@@ -26,12 +26,12 @@ Prompts are stored as `.prompt.yaml` files. The previous JSON format has been re
 
 ## Prompt Categories
 
-- [Business](../prompts/business/overview.md) - Corporate functions (Finance, HR, Market Research)
-- [Clinical](../prompts/clinical/overview.md) - Clinical trial operations
-- [Management](../prompts/management/overview.md) - Leadership and project management
-- [Meta](../prompts/meta/overview.md) - Prompt engineering and agent creation
-- [Scientific](../prompts/scientific/overview.md) - Laboratory and research prompts
-- [Technical](../prompts/technical/overview.md) - Software engineering and DevOps
+- [Business](https://github.com/fderuiter/proompts/tree/main/prompts/business/overview.md) - Corporate functions (Finance, HR, Market Research)
+- [Clinical](https://github.com/fderuiter/proompts/tree/main/prompts/clinical/overview.md) - Clinical trial operations
+- [Management](https://github.com/fderuiter/proompts/tree/main/prompts/management/overview.md) - Leadership and project management
+- [Meta](https://github.com/fderuiter/proompts/tree/main/prompts/meta/overview.md) - Prompt engineering and agent creation
+- [Scientific](https://github.com/fderuiter/proompts/tree/main/prompts/scientific/overview.md) - Laboratory and research prompts
+- [Technical](https://github.com/fderuiter/proompts/tree/main/prompts/technical/overview.md) - Software engineering and DevOps
 
 ## Historical References
 
