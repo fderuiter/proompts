@@ -361,22 +361,10 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
         prompt_data = load_yaml(prompt_file) if os.path.exists(prompt_file) else {}
         if not prompt_data:
             path_obj = Path(prompt_file)
-            skills_md = path_obj.parent / "skills.md"
-            if skills_md.exists():
-                from promptops.utils import parse_skill_manifest, resolve_skill_from_path
-                manifest = parse_skill_manifest(skills_md)
-                
-                best_match = resolve_skill_from_path(path_obj, manifest.get("skills", []))
-                
-                if best_match:
-                    prompt_data = {
-                        "name": best_match["name"],
-                        "description": best_match.get("description", ""),
-                        "variables": best_match.get("variables", []),
-                        "messages": [{"role": "system", "content": best_match.get("instructions", "")}],
-                        "testData": best_match.get("testData", [])
-                    }
-                    logger.info(f"Loaded skill '{best_match['name']}' from manifest {skills_md}")
+            from promptops.utils import resolve_fallback_prompt
+            prompt_data = resolve_fallback_prompt(path_obj)
+            if prompt_data:
+                logger.info(f"Loaded skill '{prompt_data['name']}' from manifest {path_obj.parent / 'skills.md'}")
 
         if not prompt_data:
             logger.warning(f"Skipping step {step_id} due to missing prompt file or skill.")

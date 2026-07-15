@@ -9,23 +9,9 @@ def simulate_prompt(prompt_file: str, data_file: str, chaos_mode: bool = False, 
     try:
         content = load_yaml(prompt_file)
         if not content:
-            import re
             path_obj = Path(prompt_file)
-            skills_md = path_obj.parent / "skills.md"
-            if skills_md.exists():
-                from promptops.utils import parse_skill_manifest, resolve_skill_from_path
-                manifest = parse_skill_manifest(skills_md)
-                skills_list = manifest.get("skills", [])
-                
-                best_match = resolve_skill_from_path(path_obj, skills_list)
-                if best_match:
-                    content = {
-                        "name": best_match["name"],
-                        "description": best_match.get("description", ""),
-                        "variables": best_match.get("variables", []),
-                        "messages": [{"role": "system", "content": best_match.get("instructions", "")}],
-                        "testData": best_match.get("testData", [])
-                    }
+            from promptops.utils import resolve_fallback_prompt
+            content = resolve_fallback_prompt(path_obj)
         
         if not content:
             console.error(f"Failed to load prompt: {prompt_file} (Not found in files or manifest)")
