@@ -2327,19 +2327,26 @@ dependencies = [
     { name = "pandas", version = "2.3.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "pandas", version = "3.0.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "promptops" },
+    { name = "pydantic" },
+    { name = "pyyaml" },
     { name = "streamlit" },
+]
+
+[package.optional-dependencies]
+visualizer = [
     { name = "streamlit-mermaid" },
-    { name = "tools" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "pandas" },
     { name = "promptops", editable = "promptops" },
+    { name = "pydantic" },
+    { name = "pyyaml" },
     { name = "streamlit", specifier = ">=1.30.0" },
-    { name = "streamlit-mermaid" },
-    { name = "tools", editable = "tools" },
+    { name = "streamlit-mermaid", marker = "extra == 'visualizer'" },
 ]
+provides-extras = ["visualizer"]
 
 [[package]]
 name = "tenacity"

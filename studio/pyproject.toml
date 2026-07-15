@@ -4,12 +4,15 @@ version = "0.1.0"
 description = "Proompts Studio UI"
 dependencies = [
     "promptops",
-    "tools",
     "streamlit>=1.30.0",
     "pandas",
-    "streamlit-mermaid",
+    "PyYAML",
+    "pydantic",
 ]
 requires-python = ">=3.8"
+
+[project.optional-dependencies]
+visualizer = ["streamlit-mermaid"]
 
 [build-system]
 requires = ["hatchling"]
