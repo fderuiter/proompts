@@ -1,14 +1,3 @@
----
-tags:
-  - domain:public_economics/optimal_tax_theory
-  - mechanism-design
-  - mirrlees
-  - optimal-taxation
-  - public-economics
-  - skill
-  - theory
----
-
 # Domain Agent Skills: Scientific Economics Public economics Optimal tax theory
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: mirrleesian_optimal_income_tax_architect
-<!-- VALIDATION_METADATA: [{"name": "agent_utility", "type": "string", "description": "The utility function representing agents' preferences over consumption and labor/income (e.g., quasi-linear in labor, fully non-separable)."}, {"name": "skill_distribution", "type": "string", "description": "The continuous probability density function characterizing the exogenous distribution of skills/types across the population."}, {"name": "social_welfare_function", "type": "string", "description": "The social planner's objective function aggregating individual utilities (e.g., Utilitarian, Rawlsian, Generalized Bergson-Samuelson)."}, {"name": "government_revenue_requirement", "type": "string", "description": "The exogenous revenue requirement the government must raise, balancing the aggregate resource constraint."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "agent_utility", "type": "string", "description": "The utility function representing agents' preferences over consumption and labor/income (e.g., quasi-linear in labor, fully non-separable)."}, {"name": "skill_distribution", "type": "string", "description": "The continuous probability density function characterizing the exogenous distribution of skills/types across the population."}, {"name": "social_welfare_function", "type": "string", "description": "The social planner's objective function aggregating individual utilities (e.g., Utilitarian, Rawlsian, Generalized Bergson-Samuelson)."}, {"name": "government_revenue_requirement", "type": "string", "description": "The exogenous revenue requirement the government must raise, balancing the aggregate resource constraint."}], "metadata": {}} -->
 ### Description
 Formulates rigorous Mirrleesian optimal nonlinear income tax models utilizing mechanism design and social welfare maximization frameworks.
 
@@ -57,8 +46,20 @@ Provide the full derivation of the optimality conditions via the Hamiltonian met
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

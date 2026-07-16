@@ -1,14 +1,3 @@
----
-tags:
-  - copula
-  - domain:statistical_sciences
-  - modeling
-  - multivariate-analysis
-  - skill
-  - statistics
-  - vine
----
-
 # Domain Agent Skills: Scientific Statistics Modeling Multivariate analysis
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: vine_copula_dependency_architect
-<!-- VALIDATION_METADATA: [{"name": "marginal_distributions", "description": "The specifications of the marginal distributions for each variable, including parametric families and estimation strategies.", "required": true}, {"name": "dependence_structure", "description": "The hypothesized high-dimensional dependence structure, describing tail dependence, asymmetry, and domain-specific relational constraints.", "required": true}, {"name": "graphical_model_type", "description": "The specific class of Vine Copula to be employed (e.g., C-vine, D-vine, or R-vine) and the criteria for structure selection.", "required": true}, {"name": "directives", "description": "Auto-extracted variable directives", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "marginal_distributions", "description": "The specifications of the marginal distributions for each variable, including parametric families and estimation strategies.", "required": true}, {"name": "dependence_structure", "description": "The hypothesized high-dimensional dependence structure, describing tail dependence, asymmetry, and domain-specific relational constraints.", "required": true}, {"name": "graphical_model_type", "description": "The specific class of Vine Copula to be employed (e.g., C-vine, D-vine, or R-vine) and the criteria for structure selection.", "required": true}, {"name": "directives", "description": "Auto-extracted variable directives", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}], "metadata": {}} -->
 ### Description
 Acts as a Principal Statistician to mathematically formulate and optimize high-dimensional Vine Copula models for complex, asymmetrical multivariate dependencies.
 
@@ -29,6 +18,8 @@ Acts as a Principal Statistician to mathematically formulate and optimize high-d
 | `marginal_distributions` | String | The specifications of the marginal distributions for each variable, including parametric families and estimation strategies. | Yes |
 | `dependence_structure` | String | The hypothesized high-dimensional dependence structure, describing tail dependence, asymmetry, and domain-specific relational constraints. | Yes |
 | `graphical_model_type` | String | The specific class of Vine Copula to be employed (e.g., C-vine, D-vine, or R-vine) and the criteria for structure selection. | Yes |
+| `directives` | String | Auto-extracted variable directives | No |
+| `persona` | String | Auto-extracted variable persona | No |
 
 
 ### Core Instructions
@@ -67,8 +58,20 @@ Construct the rigorous mathematical framework and estimation architecture for th
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Sklar"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Sklar']
+```
 
-Input Context: "{}"
-Asserted Output: "pair-copula|tree"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['pair-copula|tree']
+```

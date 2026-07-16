@@ -1,14 +1,3 @@
----
-tags:
-  - catalysis
-  - charge-transfer
-  - domain:scientific/chemistry/physical/electrochemistry
-  - electrochemistry
-  - microkinetics
-  - physical-chemistry
-  - skill
----
-
 # Domain Agent Skills: Scientific Chemistry Physical Electrochemistry
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: Electrocatalytic Mechanism Architect
-<!-- VALIDATION_METADATA: [{"name": "reaction", "description": "The overall electrocatalytic reaction (e.g., Oxygen Reduction Reaction, CO2 Reduction).", "required": true}, {"name": "catalyst_surface", "description": "The exact catalyst surface composition and facet (e.g., Pt(111), Cu(100)).", "required": true}, {"name": "electrolyte_conditions", "description": "The pH, ion concentration, and solvent environment.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "reaction", "description": "The overall electrocatalytic reaction (e.g., Oxygen Reduction Reaction, CO2 Reduction).", "required": true}, {"name": "catalyst_surface", "description": "The exact catalyst surface composition and facet (e.g., Pt(111), Cu(100)).", "required": true}, {"name": "electrolyte_conditions", "description": "The pH, ion concentration, and solvent environment.", "required": true}], "metadata": {}} -->
 ### Description
 Formulates rigorous electrocatalytic reaction mechanisms, computing activation barriers, overpotentials, and microkinetic rate equations for complex faradaic processes.
 
@@ -59,10 +48,20 @@ Electrolyte Conditions: <electrolyte_conditions>{{ electrolyte_conditions }}</el
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{reaction: Oxygen Reduction Reaction (ORR), catalyst_surface: Pt(111), electrolyte_conditions: 'pH
-    = 0 (0.1 M HClO4), aqueous'}"
-Asserted Output: "I. Elementary Reaction Pathway & Surface Intermediates"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['I. Elementary Reaction Pathway & Surface Intermediates']
+```
 
-Input Context: "{reaction: CO2 Reduction to Ethylene, catalyst_surface: Cu(100), electrolyte_conditions: 'pH
-    = 6.8 (0.1 M KHCO3), aqueous'}"
-Asserted Output: "III. Potential-Determining Step & Overpotential Calculation"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['III. Potential-Determining Step & Overpotential Calculation']
+```

@@ -1,15 +1,3 @@
----
-tags:
-  - bioinformatics
-  - biology
-  - computational_biology
-  - crispr
-  - domain:scientific
-  - genetics
-  - genomics
-  - skill
----
-
 # Domain Agent Skills: Scientific Biology Genetics Genomics
 
 ## Metadata
@@ -20,7 +8,7 @@ tags:
 ---
 
 ## Skill: crispr_cas9_off_target_thermodynamic_architect
-<!-- VALIDATION_METADATA: [{"name": "target_sequence", "description": "The primary 20-nt target sgRNA sequence in FASTA format.", "required": true}, {"name": "reference_genome", "description": "The targeted reference genome assembly (e.g., GRCh38, mm10).", "required": true}, {"name": "cas9_variant", "description": "The specific Cas9 variant and PAM sequence being utilized (e.g., SpCas9 NGG, SaCas9 NNGRRT).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "target_sequence", "description": "The primary 20-nt target sgRNA sequence in FASTA format.", "required": true}, {"name": "reference_genome", "description": "The targeted reference genome assembly (e.g., GRCh38, mm10).", "required": true}, {"name": "cas9_variant", "description": "The specific Cas9 variant and PAM sequence being utilized (e.g., SpCas9 NGG, SaCas9 NNGRRT).", "required": true}], "metadata": {}} -->
 ### Description
 A highly rigorous biological genesis architect prompt designed to establish probabilistic models and map off-target cleavage events for CRISPR-Cas9 genome editing systems using thermodynamics, kinetic equations, and genomic alignments.
 
@@ -70,8 +58,20 @@ Your analysis must include:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "The model must generate a highly technical protocol including LaTeX equations for thermodynamic binding, algorithmic alignment strategy for GRCh38, and a FASTA formatted output of simulated off-target alignments."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['The model must generate a highly technical protocol including LaTeX equations for thermodynamic binding, algorithmic alignment strategy for GRCh38, and a FASTA formatted output of simulated off-target alignments.']
+```
 
-Input Context: "{}"
-Asserted Output: "The model must adapt the probabilistic modeling to account for the longer PAM requirements of SaCas9, generate appropriate mismatch penalty functions in LaTeX, and provide a pseudo-code workflow."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['The model must adapt the probabilistic modeling to account for the longer PAM requirements of SaCas9, generate appropriate mismatch penalty functions in LaTeX, and provide a pseudo-code workflow.']
+```

@@ -1,22 +1,3 @@
----
-tags:
-  - cash-flow
-  - clinical-trial
-  - competitive-bid
-  - dashboard
-  - domain:business
-  - esg
-  - finance
-  - forecast
-  - impact
-  - margin
-  - optimizer
-  - pricing
-  - regulatory-risk
-  - scenario-based
-  - skill
----
-
 # Domain Agent Skills: Business Cfo Cfo workflow
 
 ## Metadata
@@ -27,7 +8,7 @@ tags:
 ---
 
 ## Skill: Competitive-Bid Pricing & Margin Optimizer
-<!-- VALIDATION_METADATA: [{"name": "competitor_bids", "description": "list of competitor prices (USD)", "required": true}, {"name": "internal_cost", "description": "our estimated delivery cost (USD)", "required": true}, {"name": "target_margin", "description": "desired profit margin percentage", "required": true}, {"name": "volume_adjustments", "description": "optional volume or scope notes", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "competitor_bids", "description": "list of competitor prices (USD)", "required": true}, {"name": "internal_cost", "description": "our estimated delivery cost (USD)", "required": true}, {"name": "target_margin", "description": "desired profit margin percentage", "required": true}, {"name": "volume_adjustments", "description": "optional volume or scope notes", "required": true}], "metadata": {}} -->
 ### Description
 Compare competitor bids and internal costs to recommend a winning price with target margin.
 
@@ -61,16 +42,19 @@ Output format:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "competitor_bids: [1000000, 1100000]
-internal_cost: 850000
-target_margin: 0.2
-volume_adjustments: none"
-Asserted Output: "Bid Analysis -"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Bid Analysis -']
+```
 
 ---
 
 ## Skill: Regulatory-Risk & ESG Impact Dashboard Builder
-<!-- VALIDATION_METADATA: [{"name": "esg_baseline", "description": "current ESG performance metrics", "required": true}, {"name": "reg_updates", "description": "relevant regulatory changes", "required": true}, {"name": "risk_tolerance", "description": "high-level risk appetite or thresholds", "required": true}, {"name": "study_portfolio", "description": "list of active or planned studies", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "esg_baseline", "description": "current ESG performance metrics", "required": true}, {"name": "reg_updates", "description": "relevant regulatory changes", "required": true}, {"name": "risk_tolerance", "description": "high-level risk appetite or thresholds", "required": true}, {"name": "study_portfolio", "description": "list of active or planned studies", "required": true}], "metadata": {}} -->
 ### Description
 Aggregate regulatory changes and ESG metrics into a compliance risk dashboard.
 
@@ -104,17 +88,19 @@ Output format:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "study_portfolio: [Phase II oncology, Phase III cardiology]
-reg_updates: [EU CTR 2024, FDA diversity guidance 2022]
-esg_baseline:
-  current_score: 65
-risk_tolerance: moderate"
-Asserted Output: "Risk Dashboard -"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Risk Dashboard -']
+```
 
 ---
 
 ## Skill: Scenario-Based Clinical-Trial Cash-Flow Forecast
-<!-- VALIDATION_METADATA: [{"name": "base_costs", "description": "baseline quarterly costs (USD)", "required": true}, {"name": "base_revenue", "description": "baseline quarterly revenue (USD)", "required": true}, {"name": "notes", "description": "assumptions or upcoming events", "required": true}, {"name": "starting_cash", "description": "cash on hand at start (USD)", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "base_costs", "description": "baseline quarterly costs (USD)", "required": true}, {"name": "base_revenue", "description": "baseline quarterly revenue (USD)", "required": true}, {"name": "notes", "description": "assumptions or upcoming events", "required": true}, {"name": "starting_cash", "description": "cash on hand at start (USD)", "required": true}], "metadata": {}} -->
 ### Description
 Model 12-quarter cash flows under baseline, inflation, and recruitment slowdown scenarios.
 
@@ -153,5 +139,11 @@ Inputs:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Scenario Forecast -"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Scenario Forecast -']
+```

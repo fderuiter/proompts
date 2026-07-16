@@ -1,14 +1,3 @@
----
-tags:
-  - atlas
-  - documentation
-  - domain:technical
-  - maintenance
-  - refactoring
-  - skill
-  - specialist
----
-
 # Domain Agent Skills: Technical Documentation
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: Source of Truth Harmonizer
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The new documentation source text to align with.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The new documentation source text to align with.", "required": true}], "metadata": {}} -->
 ### Description
 Harmonizes codebase documentation with a provided 'New Source of Truth'.
 
@@ -78,16 +67,19 @@ Output Deliverable:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "# My New Project
-This project is now deprecated. Please use the new v2 API.
-"
-Asserted Output: "Updates documentation to reflect deprecation and point to v2 API.
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Updates documentation to reflect deprecation and point to v2 API.\n']
+```
 
 ---
 
 ## Skill: Atlas Documentation Specialist
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 A comprehensive system prompt tailored for a documentation and visualization specialist named "Atlas". Atlas handles inline documentation, high-level guides, architectural diagrams (Mermaid), and gap analysis.
 
@@ -257,5 +249,11 @@ If the codebase is fully documented and no improvements, diagrams, or guides can
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Act as Atlas. Review the current repository file list and content. Begin your Survey step."
-Asserted Output: "Survey -"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Survey -']
+```

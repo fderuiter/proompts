@@ -1,17 +1,3 @@
----
-tags:
-  - asymptotic
-  - asymptotics
-  - distribution
-  - domain:scientific/statistics/theory/asymptotics
-  - domain:statistical_sciences
-  - empirical
-  - process
-  - skill
-  - statistics
-  - theory
----
-
 # Domain Agent Skills: Scientific Statistics Theory Asymptotics
 
 ## Metadata
@@ -22,7 +8,7 @@ tags:
 ---
 
 ## Skill: asymptotic_distribution_mle_architect
-<!-- VALIDATION_METADATA: [{"name": "model_likelihood", "type": "string", "description": "The likelihood function or data generating process."}, {"name": "parameters", "type": "string", "description": "The parameter space and true parameter values, indicating if they lie on the boundary."}, {"name": "non_standard_conditions", "type": "string", "description": "Specific violations of standard regularity conditions (e.g., boundary of parameter space, non-differentiability, singular Fisher information)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "model_likelihood", "type": "string", "description": "The likelihood function or data generating process."}, {"name": "parameters", "type": "string", "description": "The parameter space and true parameter values, indicating if they lie on the boundary."}, {"name": "non_standard_conditions", "type": "string", "description": "Specific violations of standard regularity conditions (e.g., boundary of parameter space, non-differentiability, singular Fisher information)."}], "metadata": {}} -->
 ### Description
 Acts as a Statistical Sciences Genesis Architect and Principal Statistician to rigorously derive the asymptotic distribution of Maximum Likelihood Estimators (MLEs) and test statistics under non-standard conditions.
 
@@ -51,16 +37,28 @@ Provide a comprehensive, step-by-step mathematical derivation of the asymptotic 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: empirical_process_theory_architect
-<!-- VALIDATION_METADATA: [{"name": "stochastic_process", "description": "The underlying stochastic process or empirical measure to be analyzed.", "required": true}, {"name": "function_class", "description": "The class of functions (e.g., Vapnik-Chervonenkis class) defining the index set for the empirical process.", "required": true}, {"name": "asymptotic_goal", "description": "The specific asymptotic property to be established (e.g., weak convergence to a tight Gaussian process).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "stochastic_process", "description": "The underlying stochastic process or empirical measure to be analyzed.", "required": true}, {"name": "function_class", "description": "The class of functions (e.g., Vapnik-Chervonenkis class) defining the index set for the empirical process.", "required": true}, {"name": "asymptotic_goal", "description": "The specific asymptotic property to be established (e.g., weak convergence to a tight Gaussian process).", "required": true}], "metadata": {}} -->
 ### Description
 Acts as a Principal Statistician to systematically derive weak convergence and asymptotic properties of empirical processes via functional central limit theorems.
 
@@ -96,5 +94,11 @@ Asymptotic Goal: <asymptotic_goal>{{ asymptotic_goal }}</asymptotic_goal>
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "weak convergence"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['weak convergence']
+```

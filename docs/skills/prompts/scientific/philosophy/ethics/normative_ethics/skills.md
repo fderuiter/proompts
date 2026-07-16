@@ -1,17 +1,3 @@
----
-tags:
-  - applied-ethics
-  - domain:scientific
-  - ethics
-  - kantianism
-  - moral-philosophy
-  - normative-ethics
-  - philosophy
-  - skill
-  - stress-testing
-  - utilitarianism
----
-
 # Domain Agent Skills: Scientific Philosophy Ethics Normative ethics
 
 ## Metadata
@@ -22,7 +8,7 @@ tags:
 ---
 
 ## Skill: Normative Ethics Stress Tester
-<!-- VALIDATION_METADATA: [{"name": "ethical_dilemma", "description": "A complex, highly detailed applied ethical dilemma that needs systematic analysis.", "required": true}, {"name": "primary_normative_framework", "description": "The first normative ethical framework to apply (e.g., Kantian Deontology).", "required": true}, {"name": "secondary_normative_framework", "description": "The second, competing normative ethical framework to apply (e.g., Act Utilitarianism).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "ethical_dilemma", "description": "A complex, highly detailed applied ethical dilemma that needs systematic analysis.", "required": true}, {"name": "primary_normative_framework", "description": "The first normative ethical framework to apply (e.g., Kantian Deontology).", "required": true}, {"name": "secondary_normative_framework", "description": "The second, competing normative ethical framework to apply (e.g., Act Utilitarianism).", "required": true}], "metadata": {}} -->
 ### Description
 Systematically stress-tests complex, applied ethical dilemmas through mutually exclusive normative matrices (e.g., Kantian Deontology vs. Act Utilitarianism).
 
@@ -76,26 +62,28 @@ Secondary Framework: <secondary_normative_framework>{{ secondary_normative_frame
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{ethical_dilemma: 'A fully autonomous vehicle is driving down a narrow road. Suddenly,
-    a child runs into the street. The car''s sensors calculate that it cannot brake
-    in time. It has two choices: 1) Swerve into a solid wall, killing the single passenger
-    inside the car, or 2) Maintain its course, hitting and killing the child. The
-    car''s programming must decide instantly.', primary_normative_framework: Kantian
-    Deontology, secondary_normative_framework: Act Utilitarianism}"
-Asserted Output: "Dilemma Deconstruction"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Dilemma Deconstruction']
+```
 
-Input Context: "{ethical_dilemma: 'A doctor has five patients who will die without immediate organ
-    transplants (heart, two lungs, two kidneys). A healthy young traveler comes in
-    for a routine checkup. The doctor realizes the traveler''s organs are a perfect
-    match for all five dying patients. Should the doctor secretly kill the healthy
-    traveler to save the five patients?', primary_normative_framework: Kantian Deontology,
-  secondary_normative_framework: Aesthetics}"
-Asserted Output: "{'error': 'invalid normative framework'}"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["{'error': 'invalid normative framework'}"]
+```
 
 ---
 
 ## Skill: Applied Ethical Stress Tester
-<!-- VALIDATION_METADATA: [{"name": "ethical_dilemma", "description": "The complex applied ethical scenario or dilemma to be systematically analyzed.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "ethical_dilemma", "description": "The complex applied ethical scenario or dilemma to be systematically analyzed.", "required": true}], "metadata": {}} -->
 ### Description
 Systematically stress-tests complex ethical dilemmas and applied scenarios using Kantian and Utilitarian matrices, rigorously deconstructing edge-cases and moral conflicts.
 
@@ -133,14 +121,20 @@ Analyze the following ethical dilemma:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{ethical_dilemma: 'An autonomous vehicle experiences a sudden brake failure. It is
-    hurtling towards a crosswalk where five pedestrians are walking. The only alternative
-    is for the car''s AI to swerve into a concrete barrier, which will certainly kill
-    the single passenger inside.'}"
-Asserted Output: "Dilemma Deconstruction"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Dilemma Deconstruction']
+```
 
-Input Context: "{ethical_dilemma: 'A brilliant but deeply misanthropic medical researcher has discovered
-    a cure for a rare, fatal disease. However, she refuses to release the formula
-    unless the government agrees to publicly execute a specific individual she despises,
-    who happens to be a convicted but currently paroled embezzler.'}"
-Asserted Output: "Kantian Deontological Matrix"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Kantian Deontological Matrix']
+```

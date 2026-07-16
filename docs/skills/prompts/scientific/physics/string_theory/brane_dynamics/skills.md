@@ -1,14 +1,3 @@
----
-tags:
-  - brane
-  - brane-dynamics
-  - domain:theoretical_physics
-  - physics
-  - skill
-  - string-theory
-  - worldvolume
----
-
 # Domain Agent Skills: Scientific Physics String theory Brane dynamics
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: d_brane_worldvolume_effective_action_architect
-<!-- VALIDATION_METADATA: [{"name": "p_brane", "type": "string", "description": "The spatial dimensionality p of the Dp-brane (e.g., p=3 for a D3-brane)."}, {"name": "background_fields", "type": "string", "description": "The background supergravity fields including metric, dilaton, Kalb-Ramond field, and Ramond-Ramond forms."}, {"name": "worldvolume_fields", "type": "string", "description": "The internal worldvolume gauge field and transverse scalar fields (Goldstone bosons of broken translation symmetry)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "p_brane", "type": "string", "description": "The spatial dimensionality p of the Dp-brane (e.g., p=3 for a D3-brane)."}, {"name": "background_fields", "type": "string", "description": "The background supergravity fields including metric, dilaton, Kalb-Ramond field, and Ramond-Ramond forms."}, {"name": "worldvolume_fields", "type": "string", "description": "The internal worldvolume gauge field and transverse scalar fields (Goldstone bosons of broken translation symmetry)."}], "metadata": {}} -->
 ### Description
 Derives the complete worldvolume effective action for a single D-brane (Dirac-Born-Infeld and Wess-Zumino terms) in a specified supergravity background.
 
@@ -56,5 +45,11 @@ Worldvolume Fields: {{ worldvolume_fields }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

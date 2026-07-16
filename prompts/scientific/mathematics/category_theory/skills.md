@@ -1,21 +1,3 @@
----
-tags:
-  - adjunction
-  - categorical
-  - category
-  - category-theory
-  - domain:pure_mathematics
-  - domain:scientific/mathematics/category_theory
-  - mathematics
-  - sheaf
-  - skill
-  - theorem
-  - theoretic
-  - theory
-  - topos
-  - translator
----
-
 # Domain Agent Skills: Scientific Mathematics Category theory
 
 ## Metadata
@@ -26,7 +8,7 @@ tags:
 ---
 
 ## Skill: category_theory_adjunction_architect
-<!-- VALIDATION_METADATA: [{"name": "source_category", "type": "string", "description": "The abstract algebraic or topological source category."}, {"name": "target_category", "type": "string", "description": "The abstract algebraic or topological target category."}, {"name": "functor_definition", "type": "string", "description": "The formal definition of the functor acting between the categories."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "source_category", "type": "string", "description": "The abstract algebraic or topological source category."}, {"name": "target_category", "type": "string", "description": "The abstract algebraic or topological target category."}, {"name": "functor_definition", "type": "string", "description": "The formal definition of the functor acting between the categories."}], "metadata": {}} -->
 ### Description
 Generates rigorous mathematical proofs of functorial adjunctions and Kan extensions, enforcing strict category-theoretical formalisms and LaTeX formatting.
 
@@ -58,13 +40,19 @@ Construct the adjoint(s) and rigorously prove the adjunction for the following c
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: categorical_theorem_translator
-<!-- VALIDATION_METADATA: [{"name": "source_theorem", "type": "string", "description": "The abstract algebraic, topological, or logical theorem to be translated."}, {"name": "source_category", "type": "string", "description": "The formal source category of the given theorem."}, {"name": "target_category", "type": "string", "description": "The formal target category to translate the theorem into."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "source_theorem", "type": "string", "description": "The abstract algebraic, topological, or logical theorem to be translated."}, {"name": "source_category", "type": "string", "description": "The formal source category of the given theorem."}, {"name": "target_category", "type": "string", "description": "The formal target category to translate the theorem into."}], "metadata": {}} -->
 ### Description
 Rigorously translates theorems between distinct abstract structures using category theory, specifically evaluating functorial semantics and adjunctions, enforcing strict pure mathematics formalisms and LaTeX formatting.
 
@@ -96,16 +84,21 @@ Translate the following theorem strictly using category theory:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: topos_theoretic_sheaf_semantics_evaluator
-<!-- VALIDATION_METADATA: [{"name": "source_category", "description": "The source category or topos (e.g., Set, topological space topos)", "type": "string"}, {"name": "target_topos", "description": "The target elementary topos or Grothendieck topos", "type": "string"}, {"name": "theorem_statement", "description": "The mathematical theorem or logical formula to be evaluated", "type": "string"}, {"name": "forcing_condition", "description": "The specific geometric morphism or subobject classifier condition", "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "source_category", "description": "The source category or topos (e.g., Set, topological space topos)", "type": "string"}, {"name": "target_topos", "description": "The target elementary topos or Grothendieck topos", "type": "string"}, {"name": "theorem_statement", "description": "The mathematical theorem or logical formula to be evaluated", "type": "string"}, {"name": "forcing_condition", "description": "The specific geometric morphism or subobject classifier condition", "type": "string"}], "metadata": {}} -->
 ### Description
 Acts as a Principal Research Logician and Category Theorist to rigorously evaluate and translate mathematical theorems utilizing Topos Theory and Kripke-Joyal sheaf semantics.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -132,5 +125,11 @@ Provide the formal translation into the Mitchell-Bénabou language, apply the Kr
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

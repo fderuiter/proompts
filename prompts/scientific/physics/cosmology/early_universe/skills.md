@@ -1,15 +1,3 @@
----
-tags:
-  - cosmology
-  - domain:physics
-  - gravitational-waves
-  - inflation
-  - quantum-field-theory
-  - skill
-  - tensor-perturbations
-  - theoretical-physics
----
-
 # Domain Agent Skills: Scientific Physics Cosmology Early universe
 
 ## Metadata
@@ -20,10 +8,9 @@ tags:
 ---
 
 ## Skill: Inflationary Tensor Perturbation Architect
-<!-- VALIDATION_METADATA: [{"name": "inflationary_potential", "description": "The functional form of the inflaton potential V(\\phi), determining the background dynamics and slow-roll parameters.\n", "required": true}, {"name": "gauge_choice", "description": "The specified gauge for perturbation analysis (e.g., transverse-traceless gauge).\n", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "inflationary_potential", "description": "The functional form of the inflaton potential V(\\phi), determining the background dynamics and slow-roll parameters.\n", "required": true}, {"name": "gauge_choice", "description": "The specified gauge for perturbation analysis (e.g., transverse-traceless gauge).\n", "required": true}], "metadata": {}} -->
 ### Description
 Acts as a Theoretical Physics Genesis Architect to mathematically derive the primordial tensor power spectrum and quantize gravitational wave perturbations during cosmic inflation.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -90,10 +77,20 @@ Ensure you perform a rigorous second-order expansion, apply the specified gauge,
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{inflationary_potential: 'V(\phi) = \frac{1}{2} m^2 \phi^2 (Chaotic Inflation)', gauge_choice: Transverse-Traceless
-    (TT) gauge}"
-Asserted Output: "mukhanov-sasaki"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['mukhanov-sasaki']
+```
 
-Input Context: "{inflationary_potential: 'V(\phi) = \Lambda^4 \left[ 1 + \cos(\phi/f) \ right] (Natural
-    Inflation)', gauge_choice: Transverse-Traceless (TT) gauge}"
-Asserted Output: "bunch-davies"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['bunch-davies']
+```

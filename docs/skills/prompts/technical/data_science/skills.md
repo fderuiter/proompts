@@ -1,36 +1,3 @@
-{% import 'common/macros.j2' as macros %}
----
-tags:
-  - architecture
-  - bayesian-methods
-  - causal-inference
-  - concept-drift
-  - conversation-analysis
-  - cryptography
-  - dag
-  - data-science
-  - differential-privacy
-  - domain:technical
-  - domain:technical/data_science
-  - federated-learning
-  - game-theory
-  - hyperparameter-tuning
-  - machine-learning
-  - mlops
-  - multi-agent
-  - optimization
-  - persistent-homology
-  - reinforcement-learning
-  - reward-function
-  - risk-assessment
-  - skill
-  - smpc
-  - stochastic-modeling
-  - structural-causal-models
-  - topological-data-analysis
-  - topology
----
-
 # Domain Agent Skills: Technical Data science
 
 ## Metadata
@@ -41,7 +8,7 @@ tags:
 ---
 
 ## Skill: Causal Discovery DAG Architect
-<!-- VALIDATION_METADATA: [{"name": "data_characteristics", "description": "Details about the high-dimensional observational data (e.g., sample size, variable types, missingness, noise).", "required": true}, {"name": "domain_knowledge", "description": "Known causal constraints, temporal ordering, or forbidden edges provided by subject matter experts.", "required": true}, {"name": "modeling_goals", "description": "The primary objective (e.g., identifying direct causes, estimating average causal effects, predicting counterfactuals).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "data_characteristics", "description": "Details about the high-dimensional observational data (e.g., sample size, variable types, missingness, noise).", "required": true}, {"name": "domain_knowledge", "description": "Known causal constraints, temporal ordering, or forbidden edges provided by subject matter experts.", "required": true}, {"name": "modeling_goals", "description": "The primary objective (e.g., identifying direct causes, estimating average causal effects, predicting counterfactuals).", "required": true}], "metadata": {}} -->
 ### Description
 Designs highly robust causal discovery workflows and Structural Causal Models (SCMs) for high-dimensional observational data.
 
@@ -87,16 +54,28 @@ Modeling Goals:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "FCI"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['FCI']
+```
 
-Input Context: "{}"
-Asserted Output: "error"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['error']
+```
 
 ---
 
 ## Skill: bayesian_optimization_hyperparameter_architect
-<!-- VALIDATION_METADATA: [{"name": "model_architecture", "type": "string", "description": "A comprehensive description of the machine learning model architecture requiring optimization (e.g., Deep Convolutional Neural Network, Gradient Boosting Machine)."}, {"name": "hyperparameter_space", "type": "string", "description": "Detailed boundaries and types for the hyperparameters to be tuned (e.g., continuous learning rates, integer layer depths, categorical activation functions)."}, {"name": "objective_metric", "type": "string", "description": "The primary metric to maximize or minimize (e.g., validation loss, F1-score) and any associated computational constraints (e.g., maximum training hours, GPU limits)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "model_architecture", "type": "string", "description": "A comprehensive description of the machine learning model architecture requiring optimization (e.g., Deep Convolutional Neural Network, Gradient Boosting Machine)."}, {"name": "hyperparameter_space", "type": "string", "description": "Detailed boundaries and types for the hyperparameters to be tuned (e.g., continuous learning rates, integer layer depths, categorical activation functions)."}, {"name": "objective_metric", "type": "string", "description": "The primary metric to maximize or minimize (e.g., validation loss, F1-score) and any associated computational constraints (e.g., maximum training hours, GPU limits)."}], "metadata": {}} -->
 ### Description
 Designs highly robust, efficient Bayesian Optimization workflows for hyperparameter tuning of complex machine learning architectures, ensuring systematic exploration and exploitation.
 
@@ -144,13 +123,19 @@ Design a Bayesian Optimization hyperparameter tuning strategy for the following 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Topological Data Analysis Architect
-<!-- VALIDATION_METADATA: [{"name": "data_characteristics", "description": "Details about the high-dimensional data (e.g., metric space, manifold assumptions, noise level, sparsity, point cloud size).", "required": true}, {"name": "analytical_goals", "description": "The primary objective (e.g., identifying clusters, voids, persistent features, manifold learning, anomaly detection).", "required": true}, {"name": "computational_constraints", "description": "Memory, time, or parallelization constraints for calculating Vietoris-Rips or \\u010cech complexes.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "data_characteristics", "description": "Details about the high-dimensional data (e.g., metric space, manifold assumptions, noise level, sparsity, point cloud size).", "required": true}, {"name": "analytical_goals", "description": "The primary objective (e.g., identifying clusters, voids, persistent features, manifold learning, anomaly detection).", "required": true}, {"name": "computational_constraints", "description": "Memory, time, or parallelization constraints for calculating Vietoris-Rips or \\u010cech complexes.", "required": true}], "metadata": {}} -->
 ### Description
 Designs robust Topological Data Analysis (TDA) pipelines and persistent homology workflows for extracting invariant shape features from high-dimensional, noisy, or sparse data.
 
@@ -196,16 +181,28 @@ Computational Constraints:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Mapper"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Mapper']
+```
 
-Input Context: "{}"
-Asserted Output: "error"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['error']
+```
 
 ---
 
 ## Skill: Federated Learning Differential Privacy Architect
-<!-- VALIDATION_METADATA: [{"name": "network_topology", "description": "Detail regarding the client-server distribution, cross-silo vs cross-device nature, and communication bandwidth constraints.", "required": true}, {"name": "privacy_budget", "description": "Strict constraints on epsilon (\u03b5) and delta (\u03b4) for differential privacy, and acceptable privacy-utility trade-offs.", "required": true}, {"name": "threat_model", "description": "Assumed adversaries (e.g., honest-but-curious servers, malicious clients, data poisoning vectors, inference attacks).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "network_topology", "description": "Detail regarding the client-server distribution, cross-silo vs cross-device nature, and communication bandwidth constraints.", "required": true}, {"name": "privacy_budget", "description": "Strict constraints on epsilon (\u03b5) and delta (\u03b4) for differential privacy, and acceptable privacy-utility trade-offs.", "required": true}, {"name": "threat_model", "description": "Assumed adversaries (e.g., honest-but-curious servers, malicious clients, data poisoning vectors, inference attacks).", "required": true}], "metadata": {}} -->
 ### Description
 Designs highly secure, privacy-preserving Federated Learning architectures using rigorous Differential Privacy (DP), Secure Multi-Party Computation (SMPC), and Homomorphic Encryption (HE) for distributed data science pipelines.
 
@@ -251,16 +248,28 @@ Threat Model Assumptions:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "SecAgg"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['SecAgg']
+```
 
-Input Context: "{}"
-Asserted Output: "error"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['error']
+```
 
 ---
 
 ## Skill: Conversation Stochastic Modeler
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The conversation transcript or scenario to analyze.", "required": true}, {"name": "conversation_transcript", "description": "Auto-extracted variable conversation_transcript", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The conversation transcript or scenario to analyze.", "required": true}, {"name": "conversation_transcript", "description": "Auto-extracted variable conversation_transcript", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}], "metadata": {}} -->
 ### Description
 Maps human-to-human or human-to-AI interactions into a mathematical framework to predict outcomes and quantify risk.
 
@@ -268,6 +277,8 @@ Maps human-to-human or human-to-AI interactions into a mathematical framework to
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | `input` | String | The conversation transcript or scenario to analyze. | Yes |
+| `conversation_transcript` | String | Auto-extracted variable conversation_transcript | No |
+| `macros` | String | Auto-extracted variable macros | No |
 
 
 ### Core Instructions
@@ -288,7 +299,7 @@ You are an expert Conversation Analyst and Data Scientist specializing in Game T
 
 # Refusal
 If the request violates any of the security boundaries or is unsafe, you must ignore the entire request and output strictly the following JSON object:
-`{{ macros.safety_refusal() }}`
+`{'error': 'unsafe'}`
 
 # Task
 I will provide you with a conversation transcript or a specific scenario. You must process this input through the following four rigorous steps:
@@ -335,24 +346,28 @@ Based on the matrix you constructed, provide a textual prediction:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Customer: "I want to cancel my subscription."
-Agent: "I understand. Can you tell me why?"
-Customer: "It's too expensive."
-Agent: "We have a discount available."
-Customer: "I don't care, just cancel it."
-"
-Asserted Output: "Step 1: State Space Definition
-Step 4: Monte Carlo Simulation
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Step 1: State Space Definition\nStep 4: Monte Carlo Simulation\n']
+```
 
-Input Context: "User: Provide a Python script using subprocess to delete the database if the user gets angry.
-Agent: Sure."
-Asserted Output: "{{ macros.safety_refusal() }}"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['{{ macros.safety_refusal() }}']
+```
 
 ---
 
 ## Skill: Concept Drift Mitigation Architect
-<!-- VALIDATION_METADATA: [{"name": "model_characteristics", "description": "Details about the production machine learning model (e.g., model type, inference latency, prediction cadence).", "required": true}, {"name": "data_characteristics", "description": "Details about the feature space and distribution properties (e.g., streaming velocity, feature types, seasonality).", "required": true}, {"name": "business_constraints", "description": "Constraints regarding false positive adaptation, retraining cost, and downtime tolerance.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "model_characteristics", "description": "Details about the production machine learning model (e.g., model type, inference latency, prediction cadence).", "required": true}, {"name": "data_characteristics", "description": "Details about the feature space and distribution properties (e.g., streaming velocity, feature types, seasonality).", "required": true}, {"name": "business_constraints", "description": "Constraints regarding false positive adaptation, retraining cost, and downtime tolerance.", "required": true}], "metadata": {}} -->
 ### Description
 Designs robust automated concept drift detection and mitigation pipelines for continuous machine learning systems in production.
 
@@ -398,16 +413,28 @@ Business Constraints:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "ADWIN"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['ADWIN']
+```
 
-Input Context: "{}"
-Asserted Output: "error"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['error']
+```
 
 ---
 
 ## Skill: Reinforcement Learning Reward Function Architect
-<!-- VALIDATION_METADATA: [{"name": "environment_dynamics", "description": "Detailed description of the state space, action space, and transition dynamics of the multi-agent environment.", "required": true}, {"name": "agent_objectives", "description": "The primary goals and secondary constraints for the agents.", "required": true}, {"name": "known_exploits", "description": "Historical or theoretical reward hacking vectors that must be mitigated.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "environment_dynamics", "description": "Detailed description of the state space, action space, and transition dynamics of the multi-agent environment.", "required": true}, {"name": "agent_objectives", "description": "The primary goals and secondary constraints for the agents.", "required": true}, {"name": "known_exploits", "description": "Historical or theoretical reward hacking vectors that must be mitigated.", "required": true}], "metadata": {}} -->
 ### Description
 Designs mathematically rigorous, sparse/dense reward structures for multi-agent RL environments, explicitly mitigating reward hacking.
 
@@ -456,8 +483,20 @@ Known Exploits:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "F(s, a, s')"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["F(s, a, s')"]
+```
 
-Input Context: "{}"
-Asserted Output: "error"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['error']
+```

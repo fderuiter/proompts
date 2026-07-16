@@ -1,14 +1,3 @@
----
-tags:
-  - argument-analysis
-  - domain:scientific
-  - formalization
-  - logic
-  - philosophy
-  - skill
-  - symbolic-logic
----
-
 # Domain Agent Skills: Scientific Philosophy Logic
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: Natural Language Argument Formalizer
-<!-- VALIDATION_METADATA: [{"name": "natural_language_argument", "description": "The complex philosophical argument expressed in natural language that needs to be formalized into symbolic logic.", "required": true}, {"name": "target_logic_system", "description": "The specific formal logic system to use for the formalization (e.g., Propositional Logic, First-Order Logic, Modal Logic S5).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "natural_language_argument", "description": "The complex philosophical argument expressed in natural language that needs to be formalized into symbolic logic.", "required": true}, {"name": "target_logic_system", "description": "The specific formal logic system to use for the formalization (e.g., Propositional Logic, First-Order Logic, Modal Logic S5).", "required": true}], "metadata": {}} -->
 ### Description
 Systematically formalizes complex natural language philosophical arguments into rigorous symbolic logic, testing for validity and identifying informal fallacies.
 
@@ -61,13 +50,20 @@ Target Logic System:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{natural_language_argument: 'If God is omnipotent, He can prevent evil. If God is
-    omniscient, He knows about evil. If God is perfectly good, He wants to prevent
-    evil. Evil exists. Therefore, God is either not omnipotent, not omniscient, or
-    not perfectly good.', target_logic_system: Propositional Logic}"
-Asserted Output: "Propositional Extraction"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Propositional Extraction']
+```
 
-Input Context: "{natural_language_argument: 'Necessarily, if a being is maximally great, it exists
-    in all possible worlds. A maximally great being is possible. Therefore, a maximally
-    great being exists.', target_logic_system: Propositional Logic}"
-Asserted Output: "{'error': 'incompatible logic system'}"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["{'error': 'incompatible logic system'}"]
+```

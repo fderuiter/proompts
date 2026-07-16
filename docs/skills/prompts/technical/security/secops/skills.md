@@ -1,43 +1,3 @@
----
-tags:
-  - apt
-  - attribution
-  - automation
-  - blue-team
-  - bootkit
-  - cloud-identity
-  - cti
-  - cybersecurity
-  - detection-engineering
-  - dfir
-  - digital-forensics
-  - domain:technical
-  - domain:technical/security
-  - domain:technical/security/secops
-  - esf
-  - etw
-  - firmware
-  - forensics
-  - hypothesis-generation
-  - iam
-  - incident-response
-  - lotl
-  - macos
-  - mitre-attack
-  - secops
-  - security
-  - siem
-  - sigma
-  - skill
-  - soar
-  - telemetry
-  - threat-hunting
-  - threat-intelligence
-  - timeline-analysis
-  - uefi
-  - windows
----
-
 # Domain Agent Skills: Technical Security Secops
 
 ## Metadata
@@ -48,7 +8,7 @@ tags:
 ---
 
 ## Skill: Threat Intelligence Fusion Attribution Architect
-<!-- VALIDATION_METADATA: [{"name": "intrusion_iocs", "type": "string", "description": "Raw Indicators of Compromise (IoCs) and behavioral artifacts recovered from the incident (e.g., C2 IPs, YARA rule hits, specific malware hashes, unique mutexes).", "required": true}, {"name": "victimology", "type": "string", "description": "Specifics of the targeted organization, including industry vertical, geographic footprint, and high-value data accessed or targeted (e.g., European aerospace engineering schematics).", "required": true}, {"name": "infrastructure_analysis", "type": "string", "description": "External analysis of the adversary infrastructure, including registrar details, ASN, TLS certificate pivots, and historical passive DNS records.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "intrusion_iocs", "type": "string", "description": "Raw Indicators of Compromise (IoCs) and behavioral artifacts recovered from the incident (e.g., C2 IPs, YARA rule hits, specific malware hashes, unique mutexes).", "required": true}, {"name": "victimology", "type": "string", "description": "Specifics of the targeted organization, including industry vertical, geographic footprint, and high-value data accessed or targeted (e.g., European aerospace engineering schematics).", "required": true}, {"name": "infrastructure_analysis", "type": "string", "description": "External analysis of the adversary infrastructure, including registrar details, ASN, TLS certificate pivots, and historical passive DNS records.", "required": true}], "metadata": {}} -->
 ### Description
 Synthesizes disparate Threat Intelligence (CTI) streams to mathematically attribute advanced cyber intrusions to specific nation-state or e-crime threat actors using Diamond Model and MITRE ATT&CK alignment.
 
@@ -94,16 +54,28 @@ Execute a formal threat intelligence fusion and attribution analysis based on th
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "High confidence attribution pointing towards a Chinese state-sponsored APT (e.g., APT41, Mustang Panda). Explicitly maps the PlugX usage, geopolitical victimology, and Diamond Model analysis."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['High confidence attribution pointing towards a Chinese state-sponsored APT (e.g., APT41, Mustang Panda). Explicitly maps the PlugX usage, geopolitical victimology, and Diamond Model analysis.']
+```
 
-Input Context: "{}"
-Asserted Output: "High confidence attribution to a Ransomware-as-a-Service (RaaS) affiliate or group (e.g., ALPHV/BlackCat, LockBit). Focuses on financial motivation and typical e-crime TTPs."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['High confidence attribution to a Ransomware-as-a-Service (RaaS) affiliate or group (e.g., ALPHV/BlackCat, LockBit). Focuses on financial motivation and typical e-crime TTPs.']
+```
 
 ---
 
 ## Skill: Advanced SOAR Playbook Engineering Architect
-<!-- VALIDATION_METADATA: [{"name": "incident_type", "type": "string", "description": "The specific category of the security incident (e.g., Ransomware Outbreak, Cloud Data Exfiltration, Insider Threat Anomaly, APT Lateral Movement).", "required": true}, {"name": "environment_stack", "type": "string", "description": "Details of the technical environment, including SIEM, EDR, Firewall, IAM providers, and specific SOAR platform in use (e.g., Splunk SOAR, Cortex XSOAR, Azure Sentinel).", "required": true}, {"name": "operational_constraints", "type": "string", "description": "Restrictions on automation limits, such as requiring human-in-the-loop (HITL) approvals for destructive actions (e.g., isolating core business servers) vs. fully autonomous containment.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "incident_type", "type": "string", "description": "The specific category of the security incident (e.g., Ransomware Outbreak, Cloud Data Exfiltration, Insider Threat Anomaly, APT Lateral Movement).", "required": true}, {"name": "environment_stack", "type": "string", "description": "Details of the technical environment, including SIEM, EDR, Firewall, IAM providers, and specific SOAR platform in use (e.g., Splunk SOAR, Cortex XSOAR, Azure Sentinel).", "required": true}, {"name": "operational_constraints", "type": "string", "description": "Restrictions on automation limits, such as requiring human-in-the-loop (HITL) approvals for destructive actions (e.g., isolating core business servers) vs. fully autonomous containment.", "required": true}], "metadata": {}} -->
 ### Description
 Formulates precise, highly complex, and automated Security Orchestration, Automation, and Response (SOAR) playbooks for resolving advanced security incidents while minimizing Mean Time to Respond (MTTR).
 
@@ -151,16 +123,28 @@ Design an advanced SOAR playbook based on the following parameters:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Contains references to Cortex XSOAR, CrowdStrike API actions for containment, and explicit conditional logic for HITL approval when isolating Domain Controllers."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Contains references to Cortex XSOAR, CrowdStrike API actions for containment, and explicit conditional logic for HITL approval when isolating Domain Controllers.']
+```
 
-Input Context: "{}"
-Asserted Output: "Contains AWS specific enrichment (CloudTrail/IAM) and clearly outlines a fully manual (HITL) containment decision phase."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Contains AWS specific enrichment (CloudTrail/IAM) and clearly outlines a fully manual (HITL) containment decision phase.']
+```
 
 ---
 
 ## Skill: APT Threat Hunting Hypothesis Generation Architect
-<!-- VALIDATION_METADATA: [{"name": "threat_actor", "description": "The specific APT group or threat actor profile to target (e.g., APT29, Lazarus Group, FIN7)."}, {"name": "target_environment", "description": "The technical environment or specific infrastructure being defended (e.g., Active Directory, Azure AD, EKS Clusters, macOS Endpoints)."}, {"name": "intelligence_feed_summary", "description": "Recent threat intelligence data, TTPs, or IOCs to base the hypothesis on."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "threat_actor", "description": "The specific APT group or threat actor profile to target (e.g., APT29, Lazarus Group, FIN7)."}, {"name": "target_environment", "description": "The technical environment or specific infrastructure being defended (e.g., Active Directory, Azure AD, EKS Clusters, macOS Endpoints)."}, {"name": "intelligence_feed_summary", "description": "Recent threat intelligence data, TTPs, or IOCs to base the hypothesis on."}], "metadata": {}} -->
 ### Description
 Acts as a Cybersecurity Genesis Architect to engineer rigorous, intelligence-driven threat hunting hypotheses for proactive detection of Advanced Persistent Threats (APTs) using cyber threat intelligence and MITRE ATT&CK mappings.
 
@@ -230,16 +214,28 @@ Intelligence Summary: <intelligence_feed_summary>{{ intelligence_feed_summary }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Firmware and UEFI Bootkit Forensics Analyst
-<!-- VALIDATION_METADATA: [{"name": "suspicious_artifact", "description": "Provide details of the extracted binary, memory dump, SPI flash read, or anomalous behavior observed during the boot process (e.g., modified DXE drivers, unknown PE32+ sections, compromised SEC phase).", "required": true}, {"name": "environment_context", "description": "Target architecture details (e.g., Intel ME/CSME version, specific motherboard/chipset, BIOS vendor, secure boot status, TPM PCR values).", "required": true}, {"name": "objective", "description": "State the specific goal (e.g., reverse engineer the payload, trace the persistence mechanism, analyze SPI flash integrity, assess bypasses of Secure Boot/Boot Guard).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "suspicious_artifact", "description": "Provide details of the extracted binary, memory dump, SPI flash read, or anomalous behavior observed during the boot process (e.g., modified DXE drivers, unknown PE32+ sections, compromised SEC phase).", "required": true}, {"name": "environment_context", "description": "Target architecture details (e.g., Intel ME/CSME version, specific motherboard/chipset, BIOS vendor, secure boot status, TPM PCR values).", "required": true}, {"name": "objective", "description": "State the specific goal (e.g., reverse engineer the payload, trace the persistence mechanism, analyze SPI flash integrity, assess bypasses of Secure Boot/Boot Guard).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}], "metadata": {}} -->
 ### Description
 Conducts expert-level digital forensics on low-level firmware, UEFI interfaces, and persistent bootkits to uncover advanced persistent threats (APTs).
 
@@ -249,6 +245,7 @@ Conducts expert-level digital forensics on low-level firmware, UEFI interfaces, 
 | `suspicious_artifact` | String | Provide details of the extracted binary, memory dump, SPI flash read, or anomalous behavior observed during the boot process (e.g., modified DXE drivers, unknown PE32+ sections, compromised SEC phase). | Yes |
 | `environment_context` | String | Target architecture details (e.g., Intel ME/CSME version, specific motherboard/chipset, BIOS vendor, secure boot status, TPM PCR values). | Yes |
 | `objective` | String | State the specific goal (e.g., reverse engineer the payload, trace the persistence mechanism, analyze SPI flash integrity, assess bypasses of Secure Boot/Boot Guard). | Yes |
+| `user_query` | String | Auto-extracted variable user_query | No |
 
 
 ### Core Instructions
@@ -293,16 +290,28 @@ Objective:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "DXE|Secure Boot|CHIPSEC|UEFITool|PE32+"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['DXE|Secure Boot|CHIPSEC|UEFITool|PE32+']
+```
 
-Input Context: "{}"
-Asserted Output: "SMM|SMI handler|SMRAM"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['SMM|SMI handler|SMRAM']
+```
 
 ---
 
 ## Skill: macOS ESF Unified Logging Threat Hunter
-<!-- VALIDATION_METADATA: [{"name": "threat_hypothesis", "type": "string", "description": "A high-level description of the suspected advanced macOS threat activity (e.g., in-memory payload execution, illicit consent grant via TCC, kernel extension manipulation).", "required": true}, {"name": "logging_source", "type": "string", "description": "The primary telemetry source environment (e.g., native macOS Unified Logging, CrowdStrike Falcon on macOS, Jamf Protect, specific ESF event streams).", "required": true}, {"name": "operational_constraints", "type": "string", "description": "Constraints regarding false positive tolerance, performance impact of queries, or specific SIEM query language to use (e.g., Splunk SPL, Elastic EQL).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "threat_hypothesis", "type": "string", "description": "A high-level description of the suspected advanced macOS threat activity (e.g., in-memory payload execution, illicit consent grant via TCC, kernel extension manipulation).", "required": true}, {"name": "logging_source", "type": "string", "description": "The primary telemetry source environment (e.g., native macOS Unified Logging, CrowdStrike Falcon on macOS, Jamf Protect, specific ESF event streams).", "required": true}, {"name": "operational_constraints", "type": "string", "description": "Constraints regarding false positive tolerance, performance impact of queries, or specific SIEM query language to use (e.g., Splunk SPL, Elastic EQL).", "required": true}], "metadata": {}} -->
 ### Description
 Formulates precise threat hunting queries and hypotheses targeting advanced macOS persistent threats using the Endpoint Security Framework (ESF) and Unified Logging.
 
@@ -350,16 +359,28 @@ Design an advanced macOS threat hunting blueprint based on the following paramet
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Contains references to ES_EVENT_TYPE_NOTIFY_EXEC and explicitly filters legitimate update binaries."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Contains references to ES_EVENT_TYPE_NOTIFY_EXEC and explicitly filters legitimate update binaries.']
+```
 
-Input Context: "{}"
-Asserted Output: "Contains Splunk SPL query and references com.apple.TCC subsystem."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Contains Splunk SPL query and references com.apple.TCC subsystem.']
+```
 
 ---
 
 ## Skill: Windows ETW Threat Hunting Architect
-<!-- VALIDATION_METADATA: [{"name": "threat_hypothesis", "type": "string", "description": "A high-level description of the suspected advanced Windows threat activity (e.g., direct syscall evasion, reflective DLL injection, kernel callback hijacking).", "required": true}, {"name": "logging_source", "type": "string", "description": "The primary telemetry source environment (e.g., native ETW providers, Microsoft Defender for Endpoint, Sysmon, specific ETW event streams like Microsoft-Windows-Kernel-Process).", "required": true}, {"name": "operational_constraints", "type": "string", "description": "Constraints regarding false positive tolerance, performance impact of queries, or specific SIEM query language to use (e.g., KQL for Sentinel/MDE, Splunk SPL).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "threat_hypothesis", "type": "string", "description": "A high-level description of the suspected advanced Windows threat activity (e.g., direct syscall evasion, reflective DLL injection, kernel callback hijacking).", "required": true}, {"name": "logging_source", "type": "string", "description": "The primary telemetry source environment (e.g., native ETW providers, Microsoft Defender for Endpoint, Sysmon, specific ETW event streams like Microsoft-Windows-Kernel-Process).", "required": true}, {"name": "operational_constraints", "type": "string", "description": "Constraints regarding false positive tolerance, performance impact of queries, or specific SIEM query language to use (e.g., KQL for Sentinel/MDE, Splunk SPL).", "required": true}], "metadata": {}} -->
 ### Description
 Formulates precise threat hunting queries and hypotheses targeting advanced Windows persistent threats using Event Tracing for Windows (ETW) and kernel telemetry.
 
@@ -407,16 +428,28 @@ Design an advanced Windows threat hunting blueprint based on the following param
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Contains KQL query referencing Thread creation and Memory allocation events."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Contains KQL query referencing Thread creation and Memory allocation events.']
+```
 
-Input Context: "{}"
-Asserted Output: "Contains Splunk SPL query and references Sysmon Event ID 10."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Contains Splunk SPL query and references Sysmon Event ID 10.']
+```
 
 ---
 
 ## Skill: Cloud Identity Fabric Threat Hunting Architect
-<!-- VALIDATION_METADATA: [{"name": "identity_provider_telemetry", "description": "Details regarding available identity telemetry, logging sinks (e.g., CloudTrail, Azure AD Sign-in logs, Okta System Log), and retention policies.", "required": true}, {"name": "target_threat_actor_profile", "description": "Specific TTPs (Tactics, Techniques, and Procedures) of the targeted threat actor (e.g., APT29, Scattered Spider) regarding identity abuse.", "required": true}, {"name": "multi_cloud_fabric_constraints", "description": "Information on the multi-cloud identity architecture (e.g., SAML/OIDC federations, conditional access policies, cross-tenant trusts).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "identity_provider_telemetry", "description": "Details regarding available identity telemetry, logging sinks (e.g., CloudTrail, Azure AD Sign-in logs, Okta System Log), and retention policies.", "required": true}, {"name": "target_threat_actor_profile", "description": "Specific TTPs (Tactics, Techniques, and Procedures) of the targeted threat actor (e.g., APT29, Scattered Spider) regarding identity abuse.", "required": true}, {"name": "multi_cloud_fabric_constraints", "description": "Information on the multi-cloud identity architecture (e.g., SAML/OIDC federations, conditional access policies, cross-tenant trusts).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}], "metadata": {}} -->
 ### Description
 Architects advanced, high-fidelity threat hunting strategies targeting multi-cloud identity fabrics, focusing on anomalous lateral movement, federated trust abuse, and stealthy token exfiltration.
 
@@ -426,6 +459,7 @@ Architects advanced, high-fidelity threat hunting strategies targeting multi-clo
 | `identity_provider_telemetry` | String | Details regarding available identity telemetry, logging sinks (e.g., CloudTrail, Azure AD Sign-in logs, Okta System Log), and retention policies. | Yes |
 | `target_threat_actor_profile` | String | Specific TTPs (Tactics, Techniques, and Procedures) of the targeted threat actor (e.g., APT29, Scattered Spider) regarding identity abuse. | Yes |
 | `multi_cloud_fabric_constraints` | String | Information on the multi-cloud identity architecture (e.g., SAML/OIDC federations, conditional access policies, cross-tenant trusts). | Yes |
+| `user_query` | String | Auto-extracted variable user_query | No |
 
 
 ### Core Instructions
@@ -462,16 +496,28 @@ Multi-Cloud Fabric Constraints:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Pass-the-PRT|Golden SAML|OAuth consent phishing|telemetry fields"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Pass-the-PRT|Golden SAML|OAuth consent phishing|telemetry fields']
+```
 
-Input Context: "{}"
-Asserted Output: "error"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['error']
+```
 
 ---
 
 ## Skill: Advanced Sigma Rule Detection Architect
-<!-- VALIDATION_METADATA: [{"name": "threat_behavior", "description": "Highly specific description of the threat behavior, attacker technique, or evasion method to detect (e.g., 'Process hollowing via CreateProcessW and NtUnmapViewOfSection', 'Suspicious WMI event consumer creation').", "required": true}, {"name": "targeted_log_sources", "description": "The primary event telemetry required (e.g., Sysmon Event ID 1, 8, 10; Windows Security 4688; AWS CloudTrail; Zeek HTTP logs).", "required": true}, {"name": "environmental_tuning", "description": "Specific baseline noise or expected false positives to exclude (e.g., 'Ignore execution from C:\\\\Program Files\\\\AuthorizedApp\\\\', 'Exclude domain administrator accounts').", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "threat_behavior", "description": "Highly specific description of the threat behavior, attacker technique, or evasion method to detect (e.g., 'Process hollowing via CreateProcessW and NtUnmapViewOfSection', 'Suspicious WMI event consumer creation').", "required": true}, {"name": "targeted_log_sources", "description": "The primary event telemetry required (e.g., Sysmon Event ID 1, 8, 10; Windows Security 4688; AWS CloudTrail; Zeek HTTP logs).", "required": true}, {"name": "environmental_tuning", "description": "Specific baseline noise or expected false positives to exclude (e.g., 'Ignore execution from C:\\\\Program Files\\\\AuthorizedApp\\\\', 'Exclude domain administrator accounts').", "required": true}], "metadata": {}} -->
 ### Description
 Architects robust, highly-optimized, cross-platform Sigma detection rules tailored for uncovering complex evasion techniques and living-off-the-land (LotL) binaries.
 
@@ -521,16 +567,28 @@ Develop a production-ready Sigma rule based on the following detection requireme
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A valid Sigma rule using process_creation category, capturing certutil.exe with flags like '-urlcache' or '-decode', and explicit filters for the SYSTEM account and C:\Windows\System32\ path."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["A valid Sigma rule using process_creation category, capturing certutil.exe with flags like '-urlcache' or '-decode', and explicit filters for the SYSTEM account and C:\\Windows\\System32\\ path."]
+```
 
-Input Context: "{}"
-Asserted Output: "A Sigma rule capturing Event ID 4769, TicketEncryptionType 0x17, with explicit filters for ServiceName ending in '$' or 'krbtgt'."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["A Sigma rule capturing Event ID 4769, TicketEncryptionType 0x17, with explicit filters for ServiceName ending in '$' or 'krbtgt'."]
+```
 
 ---
 
 ## Skill: Living-off-the-Land Behavioral SIEM Query Architect
-<!-- VALIDATION_METADATA: [{"name": "target_lotl_binary", "description": "The specific native OS binary being targeted for behavioral analysis (e.g., PowerShell, WMI, bitsadmin, certutil, bash, curl).", "required": true}, {"name": "siem_platform_syntax", "description": "The target SIEM syntax required for the query output (e.g., Splunk SPL, KQL, Elastic EQL, CrowdStrike FQL).", "required": true}, {"name": "baseline_noise_profile", "description": "Known legitimate environmental behaviors and administrative tasks that typically use the target binary, to be filtered out to reduce false positives.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "target_lotl_binary", "description": "The specific native OS binary being targeted for behavioral analysis (e.g., PowerShell, WMI, bitsadmin, certutil, bash, curl).", "required": true}, {"name": "siem_platform_syntax", "description": "The target SIEM syntax required for the query output (e.g., Splunk SPL, KQL, Elastic EQL, CrowdStrike FQL).", "required": true}, {"name": "baseline_noise_profile", "description": "Known legitimate environmental behaviors and administrative tasks that typically use the target binary, to be filtered out to reduce false positives.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}], "metadata": {}} -->
 ### Description
 Architects advanced, high-fidelity SIEM behavioral queries targeting Living-off-the-Land (LotL) techniques, bypassing static indicator-based detections.
 
@@ -540,6 +598,7 @@ Architects advanced, high-fidelity SIEM behavioral queries targeting Living-off-
 | `target_lotl_binary` | String | The specific native OS binary being targeted for behavioral analysis (e.g., PowerShell, WMI, bitsadmin, certutil, bash, curl). | Yes |
 | `siem_platform_syntax` | String | The target SIEM syntax required for the query output (e.g., Splunk SPL, KQL, Elastic EQL, CrowdStrike FQL). | Yes |
 | `baseline_noise_profile` | String | Known legitimate environmental behaviors and administrative tasks that typically use the target binary, to be filtered out to reduce false positives. | Yes |
+| `user_query` | String | Auto-extracted variable user_query | No |
 
 
 ### Core Instructions
@@ -576,16 +635,28 @@ Baseline Noise Profile:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "ParentImage|CommandLine|SPL"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['ParentImage|CommandLine|SPL']
+```
 
-Input Context: "{}"
-Asserted Output: "EQL|process.parent.name|process.command_line"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['EQL|process.parent.name|process.command_line']
+```
 
 ---
 
 ## Skill: Forensic Super Timeline Analysis Architect
-<!-- VALIDATION_METADATA: [{"name": "intrusion_context", "description": "High-level overview of the incident, known compromised hosts, and suspected timeline of compromise (e.g., 'Suspected lateral movement via WMI on Oct 12th between 02:00 and 04:00 UTC').", "required": true}, {"name": "artifacts_collected", "description": "The types of forensic artifacts available for timeline generation (e.g., 'MFT, USN Journal, Windows Event Logs, Registry Hives, Prefetch, Amcache').", "required": true}, {"name": "specific_threat_indicators", "description": "Any known IoCs, threat actor behaviors, or specific anomalies to focus the timeline analysis around (e.g., 'Execution of unknown binaries in C:\\PerfLogs, anomalous RDP logons').", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "intrusion_context", "description": "High-level overview of the incident, known compromised hosts, and suspected timeline of compromise (e.g., 'Suspected lateral movement via WMI on Oct 12th between 02:00 and 04:00 UTC').", "required": true}, {"name": "artifacts_collected", "description": "The types of forensic artifacts available for timeline generation (e.g., 'MFT, USN Journal, Windows Event Logs, Registry Hives, Prefetch, Amcache').", "required": true}, {"name": "specific_threat_indicators", "description": "Any known IoCs, threat actor behaviors, or specific anomalies to focus the timeline analysis around (e.g., 'Execution of unknown binaries in C:\\PerfLogs, anomalous RDP logons').", "required": true}], "metadata": {}} -->
 ### Description
 Generates expert-level digital forensics and incident response (DFIR) super timeline analysis strategies, focusing on Plaso/log2timeline artifact correlation, pivot points, and anomaly detection.
 
@@ -631,8 +702,20 @@ Develop a forensic super timeline analysis strategy based on the following intru
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A detailed analysis strategy focusing on the VPN user's NTUSER.DAT, filtering PsExec execution, and identifying $MFT timestamp anomalies."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["A detailed analysis strategy focusing on the VPN user's NTUSER.DAT, filtering PsExec execution, and identifying $MFT timestamp anomalies."]
+```
 
-Input Context: "{}"
-Asserted Output: "A comprehensive super timeline approach correlating SRUM network bytes with Prefetch/Amcache execution times, filtering for the anomalous 'svchost.exe' path."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["A comprehensive super timeline approach correlating SRUM network bytes with Prefetch/Amcache execution times, filtering for the anomalous 'svchost.exe' path."]
+```

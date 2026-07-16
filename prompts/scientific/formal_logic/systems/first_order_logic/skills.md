@@ -1,14 +1,3 @@
----
-tags:
-  - ambiguous
-  - domain:scientific/formal_logic/systems/first_order_logic
-  - first-order-logic
-  - formal-logic
-  - natural
-  - skill
-  - systems
----
-
 # Domain Agent Skills: Scientific Formal logic Systems First order logic
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: ambiguous_natural_language_fol_formalizer
-<!-- VALIDATION_METADATA: [{"name": "natural_language_statement", "description": "The ambiguous natural language statement to be formalized into FOL.", "required": true}, {"name": "domain_of_discourse", "description": "The intended domain of discourse for the formalization.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "natural_language_statement", "description": "The ambiguous natural language statement to be formalized into FOL.", "required": true}, {"name": "domain_of_discourse", "description": "The intended domain of discourse for the formalization.", "required": true}], "metadata": {}} -->
 ### Description
 Systematically translates structurally ambiguous natural language propositions into rigorous, fully scoped First-Order Logic (FOL) formulas, resolving quantifier scope ambiguities.
 
@@ -65,8 +54,20 @@ Please execute a formal FOL translation for the following configuration.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

@@ -1,17 +1,3 @@
----
-tags:
-  - causal-inference
-  - domain:scientific/statistics/inference/causal_inference
-  - domain:statistical_sciences
-  - double
-  - inference
-  - machine
-  - skill
-  - statistics
-  - target
-  - trial
----
-
 # Domain Agent Skills: Scientific Statistics Inference Causal inference
 
 ## Metadata
@@ -22,7 +8,7 @@ tags:
 ---
 
 ## Skill: double_machine_learning_architect
-<!-- VALIDATION_METADATA: [{"name": "causal_parameter", "type": "string", "description": "The target causal estimand (e.g., Average Treatment Effect (ATE), Local Average Treatment Effect (LATE), or partially linear regression coefficient)."}, {"name": "nuisance_functions", "type": "string", "description": "The machine learning models and estimation strategies used for nuisance parameters (e.g., outcome regression, propensity score, instrument prediction)."}, {"name": "structural_equations", "type": "string", "description": "The structural causal model (SCM) or underlying data generating process highlighting high-dimensional covariates and the exact treatment mechanism."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "causal_parameter", "type": "string", "description": "The target causal estimand (e.g., Average Treatment Effect (ATE), Local Average Treatment Effect (LATE), or partially linear regression coefficient)."}, {"name": "nuisance_functions", "type": "string", "description": "The machine learning models and estimation strategies used for nuisance parameters (e.g., outcome regression, propensity score, instrument prediction)."}, {"name": "structural_equations", "type": "string", "description": "The structural causal model (SCM) or underlying data generating process highlighting high-dimensional covariates and the exact treatment mechanism."}], "metadata": {}} -->
 ### Description
 Acts as a Statistical Sciences Genesis Architect and Principal Statistician to mathematically formulate and rigorously execute Double/Debiased Machine Learning (DML) for causal inference, leveraging Neyman orthogonalization and sample splitting to estimate treatment effects in the presence of high-dimensional confounders.
 
@@ -51,16 +37,28 @@ Provide a comprehensive, step-by-step mathematical derivation of the Neyman-orth
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: target_trial_emulation_architect
-<!-- VALIDATION_METADATA: [{"name": "observational_data_structure", "description": "The structure and nature of the available observational data.", "required": true}, {"name": "causal_question", "description": "The specific causal question to be answered.", "required": true}, {"name": "confounding_factors", "description": "Identified or suspected confounding variables.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "observational_data_structure", "description": "The structure and nature of the available observational data.", "required": true}, {"name": "causal_question", "description": "The specific causal question to be answered.", "required": true}, {"name": "confounding_factors", "description": "Identified or suspected confounding variables.", "required": true}], "metadata": {}} -->
 ### Description
 Acts as a Principal Statistician to design and formulate rigorous causal inference studies using the target trial emulation framework.
 
@@ -95,5 +93,11 @@ Confounding Factors: <confounding_factors>{{ confounding_factors }}</confounding
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "inverse probability weighting"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['inverse probability weighting']
+```

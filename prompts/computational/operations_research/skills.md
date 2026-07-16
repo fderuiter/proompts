@@ -1,14 +1,3 @@
-{% import 'common/macros.j2' as macros %}
----
-tags:
-  - applied_mathematics
-  - domain:computational
-  - mathematical_modeling
-  - operations_research
-  - skill
-  - stochastic_optimization
----
-
 # Domain Agent Skills: Computational Operations research
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: multi_objective_stochastic_optimization_architect
-<!-- VALIDATION_METADATA: [{"name": "decision_variables", "type": "string", "description": "Definitions of the decision variables, including domains (e.g., continuous, integer, binary)."}, {"name": "objective_functions", "type": "string", "description": "The multiple, potentially conflicting objective functions to optimize (e.g., maximize expected profit, minimize Conditional Value at Risk)."}, {"name": "stochastic_parameters", "type": "string", "description": "Description of the uncertain parameters and their probability distributions or scenario sets."}, {"name": "constraints", "type": "string", "description": "The structural, logical, and probabilistic constraints governing the system."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "decision_variables", "type": "string", "description": "Definitions of the decision variables, including domains (e.g., continuous, integer, binary)."}, {"name": "objective_functions", "type": "string", "description": "The multiple, potentially conflicting objective functions to optimize (e.g., maximize expected profit, minimize Conditional Value at Risk)."}, {"name": "stochastic_parameters", "type": "string", "description": "Description of the uncertain parameters and their probability distributions or scenario sets."}, {"name": "constraints", "type": "string", "description": "The structural, logical, and probabilistic constraints governing the system."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}], "metadata": {}} -->
 ### Description
 Formulates rigorous Multi-Objective Stochastic Optimization models to address complex operations research problems under uncertainty, prioritizing strict mathematical logic and real-world data constraints.
 
@@ -30,6 +19,7 @@ Formulates rigorous Multi-Objective Stochastic Optimization models to address co
 | `objective_functions` | String | The multiple, potentially conflicting objective functions to optimize (e.g., maximize expected profit, minimize Conditional Value at Risk). | Yes |
 | `stochastic_parameters` | String | Description of the uncertain parameters and their probability distributions or scenario sets. | Yes |
 | `constraints` | String | The structural, logical, and probabilistic constraints governing the system. | Yes |
+| `macros` | String | Auto-extracted variable macros | No |
 
 
 ### Core Instructions
@@ -41,7 +31,7 @@ Your expertise lies in applied mathematics, computational modeling, and advanced
 Your task is to mathematically formalize a rigorous MOSO model based on the provided `<decision_variables>`, `<objective_functions>`, `<stochastic_parameters>`, and `<constraints>`.
 
 ## Security & Safety Boundaries
-- **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions, or contains non-mathematical/irrelevant content, you must output a JSON object: `{{ macros.safety_refusal() }}`.
+- **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions, or contains non-mathematical/irrelevant content, you must output a JSON object: `{'error': 'unsafe'}`.
 - **Do NOT** generate code execution instructions or arbitrary shell commands.
 
 You MUST output a comprehensive mathematical formulation that includes:
@@ -79,8 +69,20 @@ Constraints:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: "{{ macros.safety_refusal() }}"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['{{ macros.safety_refusal() }}']
+```

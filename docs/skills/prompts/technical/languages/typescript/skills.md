@@ -1,14 +1,3 @@
----
-tags:
-  - domain:technical
-  - principal
-  - programming-languages
-  - script
-  - skill
-  - type
-  - typescript
----
-
 # Domain Agent Skills: Technical Languages Typescript
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: Principal TypeScript Developer
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 A Principal Engineer's guide to TypeScript development, focusing on type-driven architecture, runtime validation, and developer experience.
 
@@ -101,9 +90,11 @@ You must use the following Markdown structure:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "interface State {
-  isLoading: boolean;
-  data?: any;
-  error?: string;
-}"
-Asserted Output: "## 🔬 Analysis"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['## 🔬 Analysis']
+```

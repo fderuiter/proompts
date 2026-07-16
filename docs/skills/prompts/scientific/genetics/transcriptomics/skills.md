@@ -1,22 +1,3 @@
----
-tags:
-  - alternative-splicing
-  - cell
-  - cellular
-  - communication
-  - computational-biology
-  - domain:genetics
-  - domain:genetics/transcriptomics
-  - genetics
-  - isoform-quantification
-  - rna
-  - rna-seq
-  - single
-  - skill
-  - spatial
-  - transcriptomics
----
-
 # Domain Agent Skills: Scientific Genetics Transcriptomics
 
 ## Metadata
@@ -27,7 +8,7 @@ tags:
 ---
 
 ## Skill: spatial_transcriptomics_cellular_communication_architect
-<!-- VALIDATION_METADATA: [{"name": "spatial_count_matrix", "type": "string", "description": "The spot-by-gene or single-cell-by-gene count matrix (e.g., AnnData/h5ad format or Seurat Spatial object) containing spatially resolved transcriptomic data."}, {"name": "spatial_coordinates", "type": "string", "description": "The 2D or 3D spatial coordinate matrix (e.g., tissue coordinates in micrometers) mapping directly to the count matrix."}, {"name": "ligand_receptor_database", "type": "string", "description": "The reference database of known ligand-receptor pairs and protein complexes (e.g., CellPhoneDB, NicheNet, or a custom compiled list)."}, {"name": "tissue_microenvironment_metadata", "type": "string", "description": "Metadata detailing tissue architecture, histopathological annotations, and identified cell types or spot deconvolution fractions."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "spatial_count_matrix", "type": "string", "description": "The spot-by-gene or single-cell-by-gene count matrix (e.g., AnnData/h5ad format or Seurat Spatial object) containing spatially resolved transcriptomic data."}, {"name": "spatial_coordinates", "type": "string", "description": "The 2D or 3D spatial coordinate matrix (e.g., tissue coordinates in micrometers) mapping directly to the count matrix."}, {"name": "ligand_receptor_database", "type": "string", "description": "The reference database of known ligand-receptor pairs and protein complexes (e.g., CellPhoneDB, NicheNet, or a custom compiled list)."}, {"name": "tissue_microenvironment_metadata", "type": "string", "description": "Metadata detailing tissue architecture, histopathological annotations, and identified cell types or spot deconvolution fractions."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}], "metadata": {}} -->
 ### Description
 Acts as a Principal Computational Biologist to rigorously model spatially-resolved ligand-receptor interactions, predicting cell-cell communication networks across complex tissue microenvironments using spatial transcriptomics data and graph-based mathematical frameworks.
 
@@ -38,6 +19,7 @@ Acts as a Principal Computational Biologist to rigorously model spatially-resolv
 | `spatial_coordinates` | String | The 2D or 3D spatial coordinate matrix (e.g., tissue coordinates in micrometers) mapping directly to the count matrix. | Yes |
 | `ligand_receptor_database` | String | The reference database of known ligand-receptor pairs and protein complexes (e.g., CellPhoneDB, NicheNet, or a custom compiled list). | Yes |
 | `tissue_microenvironment_metadata` | String | Metadata detailing tissue architecture, histopathological annotations, and identified cell types or spot deconvolution fractions. | Yes |
+| `constraints` | String | Auto-extracted variable constraints | No |
 
 
 ### Core Instructions
@@ -71,16 +53,28 @@ Provide the complete mathematical framework, algorithmic pipeline, and spatial i
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "10x Visium"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['10x Visium']
+```
 
-Input Context: "{}"
-Asserted Output: "MERFISH"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['MERFISH']
+```
 
 ---
 
 ## Skill: single_cell_rna_seq_trajectory_inference_architect
-<!-- VALIDATION_METADATA: [{"name": "count_matrix", "type": "string", "description": "The raw or normalized single-cell RNA-seq count matrix (e.g., cell x gene matrix in sparse format or h5ad)."}, {"name": "cellular_metadata", "type": "string", "description": "Associated metadata for the cells, such as experimental timepoints, spatial coordinates, or cluster annotations."}, {"name": "trajectory_topology", "type": "string", "description": "The expected underlying topology of the differentiation process (e.g., linear, bifurcating, multifurcating, or tree-structured)."}, {"name": "velocity_data", "type": "string", "description": "Optional spliced vs unspliced count matrices to incorporate RNA velocity kinetics into the trajectory."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "count_matrix", "type": "string", "description": "The raw or normalized single-cell RNA-seq count matrix (e.g., cell x gene matrix in sparse format or h5ad)."}, {"name": "cellular_metadata", "type": "string", "description": "Associated metadata for the cells, such as experimental timepoints, spatial coordinates, or cluster annotations."}, {"name": "trajectory_topology", "type": "string", "description": "The expected underlying topology of the differentiation process (e.g., linear, bifurcating, multifurcating, or tree-structured)."}, {"name": "velocity_data", "type": "string", "description": "Optional spliced vs unspliced count matrices to incorporate RNA velocity kinetics into the trajectory."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}], "metadata": {}} -->
 ### Description
 Acts as a Principal Computational Biologist to computationally model single-cell RNA sequencing (scRNA-seq) cellular trajectories and infer pseudotime dynamics using advanced dimensionality reduction and stochastic differential equations.
 
@@ -91,6 +85,7 @@ Acts as a Principal Computational Biologist to computationally model single-cell
 | `cellular_metadata` | String | Associated metadata for the cells, such as experimental timepoints, spatial coordinates, or cluster annotations. | Yes |
 | `trajectory_topology` | String | The expected underlying topology of the differentiation process (e.g., linear, bifurcating, multifurcating, or tree-structured). | Yes |
 | `velocity_data` | String | Optional spliced vs unspliced count matrices to incorporate RNA velocity kinetics into the trajectory. | Yes |
+| `constraints` | String | Auto-extracted variable constraints | No |
 
 
 ### Core Instructions
@@ -124,16 +119,28 @@ Provide the complete mathematical framework, algorithmic pipeline, and dynamic c
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "15,000 cells"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['15,000 cells']
+```
 
-Input Context: "{}"
-Asserted Output: "5,000 hematopoietic"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['5,000 hematopoietic']
+```
 
 ---
 
 ## Skill: differential_alternative_splicing_isoform_architect
-<!-- VALIDATION_METADATA: [{"name": "input_data_type", "description": "The nature of the RNA-seq dataset (e.g., bulk RNA-seq, scRNA-seq, long-read pacing/Iso-Seq)."}, {"name": "experimental_design", "description": "Detailed description of the experimental conditions, replicates, and biological context (e.g., knockout vs wildtype, developmental timecourse)."}, {"name": "reference_genome_annotation", "description": "Specific reference genome build (e.g., GRCh38, mm10) and transcript annotation file (e.g., GENCODE v43 GTF/GFF3)."}, {"name": "modeling_objective", "description": "The primary objective of the analysis (e.g., identifying differential exon usage, calculating Percent Spliced In (PSI), estimating full-length isoform abundance, differential splicing network analysis)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input_data_type", "description": "The nature of the RNA-seq dataset (e.g., bulk RNA-seq, scRNA-seq, long-read pacing/Iso-Seq)."}, {"name": "experimental_design", "description": "Detailed description of the experimental conditions, replicates, and biological context (e.g., knockout vs wildtype, developmental timecourse)."}, {"name": "reference_genome_annotation", "description": "Specific reference genome build (e.g., GRCh38, mm10) and transcript annotation file (e.g., GENCODE v43 GTF/GFF3)."}, {"name": "modeling_objective", "description": "The primary objective of the analysis (e.g., identifying differential exon usage, calculating Percent Spliced In (PSI), estimating full-length isoform abundance, differential splicing network analysis)."}], "metadata": {}} -->
 ### Description
 Architects highly rigorous, statistically robust bioinformatic pipelines for quantifying and modeling differential alternative splicing (AS) events and transcript isoform usage from bulk or single-cell RNA-seq data.
 
@@ -179,8 +186,20 @@ Modeling Objective: <modeling_objective>{{ modeling_objective }}</modeling_objec
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

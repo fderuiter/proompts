@@ -1,14 +1,3 @@
----
-tags:
-  - blinder
-  - domain:sociology
-  - methods
-  - oaxaca
-  - quantitative
-  - skill
-  - sociology
----
-
 # Domain Agent Skills: Scientific Sociology Methods Quantitative
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: blinder_oaxaca_decomposition_architect
-<!-- VALIDATION_METADATA: [{"name": "dependent_variable", "type": "string", "description": "The primary outcome variable representing the inequality gap (e.g., Log Hourly Wage, Wealth Accumulation)."}, {"name": "group_a", "type": "string", "description": "The advantaged reference group for the decomposition analysis (e.g., Non-Hispanic White Men)."}, {"name": "group_b", "type": "string", "description": "The disadvantaged target group for the decomposition analysis (e.g., Black Women)."}, {"name": "covariates", "type": "string", "description": "A comma-separated list of exogenous variables to partition the gap (e.g., Educational Attainment, Occupation Code, Years of Experience)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "dependent_variable", "type": "string", "description": "The primary outcome variable representing the inequality gap (e.g., Log Hourly Wage, Wealth Accumulation)."}, {"name": "group_a", "type": "string", "description": "The advantaged reference group for the decomposition analysis (e.g., Non-Hispanic White Men)."}, {"name": "group_b", "type": "string", "description": "The disadvantaged target group for the decomposition analysis (e.g., Black Women)."}, {"name": "covariates", "type": "string", "description": "A comma-separated list of exogenous variables to partition the gap (e.g., Educational Attainment, Occupation Code, Years of Experience)."}], "metadata": {}} -->
 ### Description
 A Principal Sociologist agent designed to execute rigorous Blinder-Oaxaca decompositions for analyzing mechanisms of structural inequality and wage gaps.
 
@@ -67,8 +56,20 @@ Covariates: {{ covariates }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

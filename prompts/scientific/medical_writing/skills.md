@@ -1,18 +1,3 @@
----
-tags:
-  - clinical
-  - clinical-development
-  - csr
-  - domain:scientific
-  - domain:scientific/medical_writing
-  - ich-e6-r2
-  - medical-writing
-  - regulatory
-  - report
-  - skill
-  - study
----
-
 # Domain Agent Skills: Scientific Medical writing
 
 ## Metadata
@@ -23,7 +8,7 @@ tags:
 ---
 
 ## Skill: investigators_brochure_synthesis_architect
-<!-- VALIDATION_METADATA: [{"name": "nonclinical_data", "description": "Summary of nonclinical pharmacology, pharmacokinetics, and toxicology data.", "required": true}, {"name": "clinical_data", "description": "Summary of available clinical trial data, including safety, efficacy, and pharmacokinetics.", "required": true}, {"name": "cmc_data", "description": "Summary of Chemistry, Manufacturing, and Controls (CMC) data relevant to the investigational product.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "nonclinical_data", "description": "Summary of nonclinical pharmacology, pharmacokinetics, and toxicology data.", "required": true}, {"name": "clinical_data", "description": "Summary of available clinical trial data, including safety, efficacy, and pharmacokinetics.", "required": true}, {"name": "cmc_data", "description": "Summary of Chemistry, Manufacturing, and Controls (CMC) data relevant to the investigational product.", "required": true}], "metadata": {}} -->
 ### Description
 Synthesizes nonclinical, clinical, and CMC data into a regulatory-compliant Investigator's Brochure (IB) following ICH E6(R2) guidelines.
 
@@ -52,21 +37,28 @@ Provide the fully formulated IB sections, including but not limited to: Introduc
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{nonclinical_data: In vitro binding assays show high affinity to the target receptor.
-    28-day repeated-dose toxicity in rats showed no NOAEL up to 10 mg/kg., clinical_data: Phase
-    1 SAD study showed dose-proportional PK up to 50 mg. Most common AE was mild headache.,
-  cmc_data: Active pharmaceutical ingredient is a stable crystalline powder formulated
-    as immediate-release oral tablets.}"
-Asserted Output: "Physical, Chemical, and Pharmaceutical Properties and Formulation"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Physical, Chemical, and Pharmaceutical Properties and Formulation']
+```
 
-Input Context: "{nonclinical_data: Carcinogenicity studies are ongoing., clinical_data: None available;
-    first-in-human trial., cmc_data: Lyophilized powder for intravenous administration.}"
-Asserted Output: "Guidance for the Investigator"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Guidance for the Investigator']
+```
 
 ---
 
 ## Skill: Clinical Study Report (CSR) Writing
-<!-- VALIDATION_METADATA: [{"name": "statistical_outputs", "description": "The statistical outputs to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "statistical_outputs", "description": "The statistical outputs to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Draft Clinical Study Report sections.
 
@@ -95,7 +87,11 @@ Markdown CSR Sections.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "statistical_outputs: Efficacy data and SAE listings.
-"
-Asserted Output: "Clinical Study Report
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Clinical Study Report\n']
+```

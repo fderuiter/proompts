@@ -1,14 +1,3 @@
----
-tags:
-  - diffusion
-  - domain:statistical_sciences
-  - jump
-  - skill
-  - statistics
-  - stochastic
-  - stochastic-differential-equations
----
-
 # Domain Agent Skills: Scientific Statistics Stochastic Stochastic differential equations
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: jump_diffusion_modeler
-<!-- VALIDATION_METADATA: [{"name": "drift_function", "description": "The parametric specification of the continuous drift component $\\ mu(X_t, t)$.", "required": true}, {"name": "diffusion_function", "description": "The parametric specification of the continuous volatility component $\\sigma(X_t, t)$.", "required": true}, {"name": "jump_intensity_measure", "description": "The specification of the Poisson jump intensity $\\lambda$ and jump size distribution.", "required": true}, {"name": "directives", "description": "Auto-extracted variable directives", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "drift_function", "description": "The parametric specification of the continuous drift component $\\ mu(X_t, t)$.", "required": true}, {"name": "diffusion_function", "description": "The parametric specification of the continuous volatility component $\\sigma(X_t, t)$.", "required": true}, {"name": "jump_intensity_measure", "description": "The specification of the Poisson jump intensity $\\lambda$ and jump size distribution.", "required": true}, {"name": "directives", "description": "Auto-extracted variable directives", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}], "metadata": {}} -->
 ### Description
 Acts as a Principal Statistician to rigorously formulate and solve parametric inference and simulation problems for Jump-Diffusion Stochastic Differential Equations.
 
@@ -29,6 +18,8 @@ Acts as a Principal Statistician to rigorously formulate and solve parametric in
 | `drift_function` | String | The parametric specification of the continuous drift component $\ mu(X_t, t)$. | Yes |
 | `diffusion_function` | String | The parametric specification of the continuous volatility component $\sigma(X_t, t)$. | Yes |
 | `jump_intensity_measure` | String | The specification of the Poisson jump intensity $\lambda$ and jump size distribution. | Yes |
+| `directives` | String | Auto-extracted variable directives | No |
+| `persona` | String | Auto-extracted variable persona | No |
 
 
 ### Core Instructions
@@ -67,8 +58,20 @@ Construct the rigorous mathematical framework and simulation architecture for th
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Merton"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Merton']
+```
 
-Input Context: "{}"
-Asserted Output: "generator|characteristic"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['generator|characteristic']
+```

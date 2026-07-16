@@ -1,14 +1,3 @@
----
-tags:
-  - domain:macroeconomics/heterogeneous_agents
-  - hank
-  - heterogeneous-agents
-  - inequality
-  - macroeconomics
-  - monetary-policy
-  - skill
----
-
 # Domain Agent Skills: Scientific Economics Macroeconomics Heterogeneous agents
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: hank_macroeconomic_architect
-<!-- VALIDATION_METADATA: [{"name": "household_heterogeneity", "type": "string", "description": "The nature of household heterogeneity (e.g., uninsurable idiosyncratic earnings risk following an AR(1) process, borrowing constraints)."}, {"name": "nominal_rigidities", "type": "string", "description": "The specific form of nominal rigidities in price setting (e.g., Calvo pricing, state-dependent pricing) affecting the Phillips Curve."}, {"name": "monetary_fiscal_policy", "type": "string", "description": "The interplay between monetary policy (e.g., Taylor rule) and fiscal policy (e.g., debt issuance, progressive taxation, transfers)."}, {"name": "exogenous_shocks", "type": "string", "description": "The aggregate structural shocks (e.g., monetary policy shock, aggregate TFP shock)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "household_heterogeneity", "type": "string", "description": "The nature of household heterogeneity (e.g., uninsurable idiosyncratic earnings risk following an AR(1) process, borrowing constraints)."}, {"name": "nominal_rigidities", "type": "string", "description": "The specific form of nominal rigidities in price setting (e.g., Calvo pricing, state-dependent pricing) affecting the Phillips Curve."}, {"name": "monetary_fiscal_policy", "type": "string", "description": "The interplay between monetary policy (e.g., Taylor rule) and fiscal policy (e.g., debt issuance, progressive taxation, transfers)."}, {"name": "exogenous_shocks", "type": "string", "description": "The aggregate structural shocks (e.g., monetary policy shock, aggregate TFP shock)."}], "metadata": {}} -->
 ### Description
 Formulates rigorous Heterogeneous Agent New Keynesian (HANK) models integrating uninsurable idiosyncratic income risk with nominal rigidities to analyze macroeconomic policy and inequality.
 
@@ -65,8 +54,20 @@ Provide the full mathematical formulation including the household's optimization
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

@@ -1,16 +1,3 @@
----
-tags:
-  - domain:sociology/stratification
-  - intergenerational
-  - intersectional
-  - mechanism
-  - mobility
-  - modeler
-  - skill
-  - sociology
-  - stratification
----
-
 # Domain Agent Skills: Scientific Sociology Stratification
 
 ## Metadata
@@ -21,7 +8,7 @@ tags:
 ---
 
 ## Skill: intergenerational_mobility_modeler
-<!-- VALIDATION_METADATA: [{"name": "transition_data", "description": "Demographic transition data for social mobility modeling."}, {"name": "population_distribution", "description": "Current population distribution by quintile or class."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "transition_data", "description": "Demographic transition data for social mobility modeling."}, {"name": "population_distribution", "description": "Current population distribution by quintile or class."}], "metadata": {}} -->
 ### Description
 Models intergenerational social mobility using Markov chain matrices and calculates structural inequality indices from raw demographic data, enforcing American Sociological Association (ASA) standards.
 
@@ -61,16 +48,21 @@ Provide the methodological breakdown, the formal transition matrix, the inequali
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Gini coefficient"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Gini coefficient']
+```
 
 ---
 
 ## Skill: intersectional_stratification_mechanism_modeler
-<!-- VALIDATION_METADATA: [{"name": "demographic_cohort_data", "description": "Detailed dataset of a specific demographic cohort, including intersected variables such as income, educational attainment, racial categorization, gender identity, and spatial or geographical markers.\n"}, {"name": "institutional_context", "description": "The prevailing institutional or structural environment (e.g., specific housing markets, labor sectors, or educational systems) within which the cohort data is situated.\n"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "demographic_cohort_data", "description": "Detailed dataset of a specific demographic cohort, including intersected variables such as income, educational attainment, racial categorization, gender identity, and spatial or geographical markers.\n"}, {"name": "institutional_context", "description": "The prevailing institutional or structural environment (e.g., specific housing markets, labor sectors, or educational systems) within which the cohort data is situated.\n"}], "metadata": {}} -->
 ### Description
 Models intersectional stratification mechanisms (race, class, gender, and spatial geography) to rigorously map systemic inequality and structural barriers within demographic cohorts, enforcing American Sociological Association (ASA) standards.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -110,5 +102,11 @@ Provide the methodological breakdown, structural inequality mapping, the formal 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Gini coefficient"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Gini coefficient']
+```

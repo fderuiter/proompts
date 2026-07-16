@@ -1,27 +1,3 @@
----
-tags:
-  - analysis
-  - architect
-  - behavioral
-  - channel
-  - churn
-  - cohort
-  - cross
-  - domain:growth
-  - domain:growth/lifecycle
-  - expansion
-  - mitigation
-  - nrr
-  - predictive
-  - propensity
-  - retention
-  - rfm
-  - sdlc
-  - skill
-  - survival
-  - trigger
----
-
 # Domain Agent Skills: Growth Lifecycle
 
 ## Metadata
@@ -32,7 +8,7 @@ tags:
 ---
 
 ## Skill: cross_channel_behavioral_trigger_architect
-<!-- VALIDATION_METADATA: [{"name": "behavioral_telemetry", "description": "Complex customer event streams, product usage data, and drop-off points."}, {"name": "active_channels", "description": "The current communication channels available for targeting."}, {"name": "target_retention_improvement", "description": "The targeted improvement in retention percentage or key conversion metrics."}, {"name": "unit_economics", "description": "Current ARPU, Churn Rate, Gross Margin, and marketing costs."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "behavioral_telemetry", "description": "Complex customer event streams, product usage data, and drop-off points."}, {"name": "active_channels", "description": "The current communication channels available for targeting."}, {"name": "target_retention_improvement", "description": "The targeted improvement in retention percentage or key conversion metrics."}, {"name": "unit_economics", "description": "Current ARPU, Churn Rate, Gross Margin, and marketing costs."}], "metadata": {}} -->
 ### Description
 Synthesizes enterprise SaaS customer behavioral telemetry and constructs cross-channel behavioral trigger sequences to optimize user retention and conversion.
 
@@ -83,16 +59,28 @@ Execute a critical gap analysis and develop cross-channel behavioral trigger seq
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A brutal assessment of the drop-off, defining a cross-channel sequence (In-App Modal for context, Email for follow-up), anchored in the AARRR funnel. Must include LTV and ROAS calculations using LaTeX."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A brutal assessment of the drop-off, defining a cross-channel sequence (In-App Modal for context, Email for follow-up), anchored in the AARRR funnel. Must include LTV and ROAS calculations using LaTeX.']
+```
 
-Input Context: "{}"
-Asserted Output: "An unvarnished assessment stating the telemetry data is insufficient to generate a reliable trigger sequence, refusing to hallucinate numbers, while outlining the required mathematical framework (AARRR, LTV, ROAS in LaTeX) needed once data is available."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['An unvarnished assessment stating the telemetry data is insufficient to generate a reliable trigger sequence, refusing to hallucinate numbers, while outlining the required mathematical framework (AARRR, LTV, ROAS in LaTeX) needed once data is available.']
+```
 
 ---
 
 ## Skill: predictive_rfm_churn_mitigation_architect
-<!-- VALIDATION_METADATA: [{"name": "rfm_telemetry", "description": "Quantitative user data containing recency of last login, frequency of active sessions, and monetary value generated per user cohort."}, {"name": "churn_indicators", "description": "Specific leading indicators of churn such as declining usage vectors, ignored notifications, or downgraded license tiers."}, {"name": "commercial_parameters", "description": "High-level financial parameters including ARPU, Gross Margin, and historical Churn Rate."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "rfm_telemetry", "description": "Quantitative user data containing recency of last login, frequency of active sessions, and monetary value generated per user cohort."}, {"name": "churn_indicators", "description": "Specific leading indicators of churn such as declining usage vectors, ignored notifications, or downgraded license tiers."}, {"name": "commercial_parameters", "description": "High-level financial parameters including ARPU, Gross Margin, and historical Churn Rate."}], "metadata": {}} -->
 ### Description
 Mathematically models predictive churn risks using Recency-Frequency-Monetary (RFM) analysis and designs cross-channel behavioral trigger sequences for enterprise SaaS retention.
 
@@ -139,16 +127,28 @@ Execute a critical gap analysis and develop a predictive RFM churn mitigation wo
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A highly analytical assessment correctly identifying Cohort A as high-churn risk via RFM scoring, featuring a multi-channel intervention sequence (e.g., automated high-touch CSM outreach, in-app modal intercepts), applying AARRR retention logic, and explicitly including the LaTeX formulas for LTV, ROAS, and the RFM index."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A highly analytical assessment correctly identifying Cohort A as high-churn risk via RFM scoring, featuring a multi-channel intervention sequence (e.g., automated high-touch CSM outreach, in-app modal intercepts), applying AARRR retention logic, and explicitly including the LaTeX formulas for LTV, ROAS, and the RFM index.']
+```
 
-Input Context: "{}"
-Asserted Output: "An unvarnished assessment refusing to model churn due to invalid telemetry, refusing to hallucinate baseline RFM metrics, while outlining the required mathematical framework (AARRR, LTV, ROAS, RFM index in LaTeX) necessary once data is restored."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['An unvarnished assessment refusing to model churn due to invalid telemetry, refusing to hallucinate baseline RFM metrics, while outlining the required mathematical framework (AARRR, LTV, ROAS, RFM index in LaTeX) necessary once data is restored.']
+```
 
 ---
 
 ## Skill: cohort_retention_survival_analysis_architect
-<!-- VALIDATION_METADATA: [{"name": "cohort_definition", "description": "The defining characteristics of the user cohort (e.g., Enterprise SaaS users acquired via Q3 LinkedIn Paid Social, D2C mobile app users with LTV > $500).", "type": "string"}, {"name": "retention_metric", "description": "The specific metric used to define active retention (e.g., Weekly Active Users (WAU), Net Revenue Retention (NRR), Order frequency).", "type": "string"}, {"name": "current_churn_rate", "description": "The current baseline churn or drop-off rate observed in this cohort over a defined time horizon (e.g., 45% churn at Day 30).", "type": "string"}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "cohort_definition", "description": "The defining characteristics of the user cohort (e.g., Enterprise SaaS users acquired via Q3 LinkedIn Paid Social, D2C mobile app users with LTV > $500).", "type": "string"}, {"name": "retention_metric", "description": "The specific metric used to define active retention (e.g., Weekly Active Users (WAU), Net Revenue Retention (NRR), Order frequency).", "type": "string"}, {"name": "current_churn_rate", "description": "The current baseline churn or drop-off rate observed in this cohort over a defined time horizon (e.g., 45% churn at Day 30).", "type": "string"}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}], "metadata": {}} -->
 ### Description
 Formulates mathematically rigorous user cohort retention strategies utilizing Kaplan-Meier survival analysis and Cox Proportional-Hazards modeling to pinpoint drop-off nodes and optimize the AARRR funnel.
 
@@ -158,6 +158,7 @@ Formulates mathematically rigorous user cohort retention strategies utilizing Ka
 | `cohort_definition` | String | The defining characteristics of the user cohort (e.g., Enterprise SaaS users acquired via Q3 LinkedIn Paid Social, D2C mobile app users with LTV > $500). | Yes |
 | `retention_metric` | String | The specific metric used to define active retention (e.g., Weekly Active Users (WAU), Net Revenue Retention (NRR), Order frequency). | Yes |
 | `current_churn_rate` | String | The current baseline churn or drop-off rate observed in this cohort over a defined time horizon (e.g., 45% churn at Day 30). | Yes |
+| `user_query` | String | Auto-extracted variable user_query | No |
 
 
 ### Core Instructions
@@ -195,19 +196,37 @@ Current Churn Rate: {{ current_churn_rate }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: nrr_expansion_propensity_architect
-<!-- VALIDATION_METADATA: [{"name": "customer_usage_telemetry", "description": "Telemetry data containing product feature adoption depth, active user counts, and API request volumes for existing enterprise accounts."}, {"name": "historical_billing_data", "description": "Historical billing increments, baseline MRR, and previous expansion events for the analyzed customer cohorts."}, {"name": "target_nrr", "description": "The target Net Revenue Retention (NRR) rate for the current fiscal quarter."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "customer_usage_telemetry", "description": "Telemetry data containing product feature adoption depth, active user counts, and API request volumes for existing enterprise accounts."}, {"name": "historical_billing_data", "description": "Historical billing increments, baseline MRR, and previous expansion events for the analyzed customer cohorts."}, {"name": "target_nrr", "description": "The target Net Revenue Retention (NRR) rate for the current fiscal quarter."}], "metadata": {}} -->
 ### Description
 Synthesizes enterprise SaaS historical usage and billing data into predictive Net Revenue Retention (NRR) expansion matrices and cross-sell propensity scoring workflows.
 
@@ -258,8 +277,20 @@ Execute a critical gap analysis and develop a predictive NRR expansion workflow 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A rigorous cross-sell propensity matrix mapping automated upsell triggers for Cohort Alpha and contraction mitigation for Cohort Beta, enforcing 'DryRun' mode, and featuring exact LaTeX financial equations for NRR, LTV, and ROAS within the AARRR framework."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["A rigorous cross-sell propensity matrix mapping automated upsell triggers for Cohort Alpha and contraction mitigation for Cohort Beta, enforcing 'DryRun' mode, and featuring exact LaTeX financial equations for NRR, LTV, and ROAS within the AARRR framework."]
+```
 
-Input Context: "{}"
-Asserted Output: "An unvarnished assessment refusing to hallucinate missing telemetry, rigorously citing the lack of data, enforcing 'DryRun' mode, while outlining the required mathematical NRR, LTV, and ROAS (in LaTeX) frameworks needed once data is available."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["An unvarnished assessment refusing to hallucinate missing telemetry, rigorously citing the lack of data, enforcing 'DryRun' mode, while outlining the required mathematical NRR, LTV, and ROAS (in LaTeX) frameworks needed once data is available."]
+```

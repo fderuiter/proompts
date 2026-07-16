@@ -1,14 +1,3 @@
----
-tags:
-  - catalysis
-  - domain:scientific
-  - inorganic-chemistry
-  - kinetic-modeling
-  - organometallic
-  - reaction-mechanism
-  - skill
----
-
 # Domain Agent Skills: Scientific Chemistry Inorganic Catalysis
 
 ## Metadata
@@ -19,10 +8,9 @@ tags:
 ---
 
 ## Skill: Organometallic Catalytic Cycle Architect
-<!-- VALIDATION_METADATA: [{"name": "precatalyst", "description": "The initial organometallic species or precatalyst, specified using strict IUPAC nomenclature or structural formula.", "required": true}, {"name": "reactants", "description": "Substrates and reagents involved in the catalytic process, using SMILES, InChI strings, or precise chemical formulas.", "required": true}, {"name": "conditions", "description": "Thermodynamic conditions (e.g., Temperature, Pressure, Solvent, additives).", "required": true}, {"name": "reaction_type", "description": "The type of catalytic transformation (e.g., cross-coupling, olefin metathesis, hydroformylation).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "precatalyst", "description": "The initial organometallic species or precatalyst, specified using strict IUPAC nomenclature or structural formula.", "required": true}, {"name": "reactants", "description": "Substrates and reagents involved in the catalytic process, using SMILES, InChI strings, or precise chemical formulas.", "required": true}, {"name": "conditions", "description": "Thermodynamic conditions (e.g., Temperature, Pressure, Solvent, additives).", "required": true}, {"name": "reaction_type", "description": "The type of catalytic transformation (e.g., cross-coupling, olefin metathesis, hydroformylation).", "required": true}], "metadata": {}} -->
 ### Description
 Generates rigorous organometallic catalytic cycles, deriving complex kinetic rate equations and analyzing thermodynamic intermediates utilizing strict IUPAC nomenclature, transition metal coordination rules, and precise LaTeX formulations.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -54,11 +42,20 @@ Reaction Type: <reaction_type>{{ reaction_type }}</reaction_type>
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{precatalyst: Tetrakis(triphenylphosphine)palladium(0), reactants: 'Ph-B(OH)2, Ph-Br,
-    K2CO3', conditions: 'T = 353 K, THF/H2O (4:1)', reaction_type: Suzuki-Miyaura
-    Cross-Coupling}"
-Asserted Output: "I. Catalytic Cycle & Elementary Steps"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['I. Catalytic Cycle & Elementary Steps']
+```
 
-Input Context: "{precatalyst: '[Rh(CO)2I2]-', reactants: 'CH3OH, CO', conditions: 'T = 450 K, P =
-    30 atm, H2O, HI promoter', reaction_type: Monsanto Acetic Acid Process}"
-Asserted Output: "III. Kinetic Rate Law Derivation"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['III. Kinetic Rate Law Derivation']
+```

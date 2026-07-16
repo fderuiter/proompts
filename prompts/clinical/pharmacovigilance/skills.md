@@ -1,24 +1,3 @@
----
-tags:
-  - adverse
-  - benefit
-  - detection
-  - domain:clinical/pharmacovigilance
-  - e2c
-  - evaluator
-  - event
-  - ich
-  - pbrer
-  - pharmacovigilance
-  - regulatory
-  - rems
-  - risk-management
-  - rmp
-  - safety-strategy
-  - signal
-  - skill
----
-
 # Domain Agent Skills: Clinical Pharmacovigilance
 
 ## Metadata
@@ -29,7 +8,7 @@ tags:
 ---
 
 ## Skill: adverse_event_signal_detection_architect
-<!-- VALIDATION_METADATA: [{"name": "DRUG_NAME", "type": "string", "description": "The name of the suspect drug under investigation."}, {"name": "ADVERSE_EVENTS_DATA", "type": "string", "description": "Raw line listing or aggregated reporting rates of adverse events from pharmacovigilance databases."}, {"name": "BACKGROUND_INCIDENCE", "type": "string", "description": "Epidemiological background incidence rates for the adverse events of interest."}, {"name": "background", "description": "Auto-extracted variable background", "required": false}, {"name": "data", "description": "Auto-extracted variable data", "required": false}, {"name": "drug", "description": "Auto-extracted variable drug", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "DRUG_NAME", "type": "string", "description": "The name of the suspect drug under investigation."}, {"name": "ADVERSE_EVENTS_DATA", "type": "string", "description": "Raw line listing or aggregated reporting rates of adverse events from pharmacovigilance databases."}, {"name": "BACKGROUND_INCIDENCE", "type": "string", "description": "Epidemiological background incidence rates for the adverse events of interest."}, {"name": "background", "description": "Auto-extracted variable background", "required": false}, {"name": "data", "description": "Auto-extracted variable data", "required": false}, {"name": "drug", "description": "Auto-extracted variable drug", "required": false}], "metadata": {}} -->
 ### Description
 Acts as a Principal Pharmacovigilance Scientist to perform advanced signal detection and disproportionality analysis on post-market adverse event databases.
 
@@ -39,6 +18,9 @@ Acts as a Principal Pharmacovigilance Scientist to perform advanced signal detec
 | `DRUG_NAME` | String | The name of the suspect drug under investigation. | Yes |
 | `ADVERSE_EVENTS_DATA` | String | Raw line listing or aggregated reporting rates of adverse events from pharmacovigilance databases. | Yes |
 | `BACKGROUND_INCIDENCE` | String | Epidemiological background incidence rates for the adverse events of interest. | Yes |
+| `background` | String | Auto-extracted variable background | No |
+| `data` | String | Auto-extracted variable data | No |
+| `drug` | String | Auto-extracted variable drug | No |
 
 
 ### Core Instructions
@@ -67,13 +49,19 @@ Background Incidence: <background>{{ BACKGROUND_INCIDENCE }}</background>
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Pharmacovigilance Risk Management Plan Architect
-<!-- VALIDATION_METADATA: [{"name": "product_profile", "description": "Comprehensive profile of the medicinal product, including mechanism of action, indication, and target population.", "required": true}, {"name": "safety_specification", "description": "Detailed safety data including identified risks, potential risks, and missing information derived from clinical trials and post-market surveillance.", "required": true}, {"name": "regulatory_framework", "description": "The targeted regulatory authority and specific guidelines (e.g., EMA GVP Module V, FDA REMS).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "product_profile", "description": "Comprehensive profile of the medicinal product, including mechanism of action, indication, and target population.", "required": true}, {"name": "safety_specification", "description": "Detailed safety data including identified risks, potential risks, and missing information derived from clinical trials and post-market surveillance.", "required": true}, {"name": "regulatory_framework", "description": "The targeted regulatory authority and specific guidelines (e.g., EMA GVP Module V, FDA REMS).", "required": true}], "metadata": {}} -->
 ### Description
 Acts as a Principal Pharmacovigilance Risk Management Scientist to synthesize complex post-market safety data into a highly rigorous, regulatory-compliant Risk Management Plan (RMP) or Risk Evaluation and Mitigation Strategy (REMS).
 
@@ -121,28 +109,28 @@ Ensure the output rigorously addresses:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{product_profile: A novel oral Janus kinase (JAK) inhibitor indicated for the treatment
-    of moderate to severe rheumatoid arthritis in adult patients who have had an inadequate
-    response to methotrexate., safety_specification: 'Important identified risks:
-    Serious systemic infections (including tuberculosis and herpes zoster), major
-    adverse cardiovascular events (MACE), venous thromboembolism (VTE). Important
-    potential risks: Malignancy (excluding NMSC). Missing information: Long-term safety
-    in patients over 75 years, safety during pregnancy.', regulatory_framework: EMA
-    GVP Module V (EU-RMP)}"
-Asserted Output: "Important identified risks"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Important identified risks']
+```
 
-Input Context: "{product_profile: 'A long-acting, highly potent transdermal opioid analgesic indicated
-    for the management of severe chronic pain in opioid-tolerant adult patients.',
-  safety_specification: 'Important identified risks: Respiratory depression, addiction/abuse/misuse,
-    accidental exposure (especially in children), overdose. Important potential risks:
-    Endocrine dysfunction. Missing information: Off-label use in pediatric populations.',
-  regulatory_framework: FDA REMS (Risk Evaluation and Mitigation Strategy)}"
-Asserted Output: "Elements to Assure Safe Use (ETASU)"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Elements to Assure Safe Use (ETASU)']
+```
 
 ---
 
 ## Skill: ich_e2c_pbrer_benefit_risk_architect
-<!-- VALIDATION_METADATA: [{"name": "product_information", "description": "Overview of the medicinal product, its approved indications, and the reporting interval.", "required": true}, {"name": "cumulative_safety_data", "description": "Cumulative summary tabulations of serious and non-serious adverse events from post-marketing and clinical trial sources.", "required": true}, {"name": "new_safety_signals", "description": "Details of any new, ongoing, or closed safety signals evaluated during the reporting interval.", "required": true}, {"name": "efficacy_effectiveness_data", "description": "Summary of significant new efficacy or effectiveness information that impacts the benefit-risk profile.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "product_information", "description": "Overview of the medicinal product, its approved indications, and the reporting interval.", "required": true}, {"name": "cumulative_safety_data", "description": "Cumulative summary tabulations of serious and non-serious adverse events from post-marketing and clinical trial sources.", "required": true}, {"name": "new_safety_signals", "description": "Details of any new, ongoing, or closed safety signals evaluated during the reporting interval.", "required": true}, {"name": "efficacy_effectiveness_data", "description": "Summary of significant new efficacy or effectiveness information that impacts the benefit-risk profile.", "required": true}], "metadata": {}} -->
 ### Description
 Acts as a Principal Pharmacovigilance Scientist to rigorously synthesize cumulative post-marketing data into an ICH E2C(R2)-compliant Periodic Benefit-Risk Evaluation Report (PBRER).
 
@@ -183,13 +171,19 @@ Efficacy and Effectiveness Data: <efficacy_effectiveness_data>{{ efficacy_effect
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Integrated Benefit-Risk Analysis"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Integrated Benefit-Risk Analysis']
+```
 
 ---
 
 ## Skill: signal_detection_evaluator
-<!-- VALIDATION_METADATA: [{"name": "safety_data", "type": "string", "description": "The raw safety data or line listings to be evaluated."}, {"name": "reference_safety_information", "type": "string", "description": "The current RSI or investigator brochure."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "safety_data", "type": "string", "description": "The raw safety data or line listings to be evaluated."}, {"name": "reference_safety_information", "type": "string", "description": "The current RSI or investigator brochure."}], "metadata": {}} -->
 ### Description
 A rigorous prompt for evaluating and validating pharmacovigilance safety signals based on quantitative and qualitative data.
 
@@ -228,5 +222,11 @@ Reference Safety Information:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

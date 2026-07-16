@@ -1,22 +1,3 @@
----
-tags:
-  - action
-  - ai-enhanced
-  - clinical
-  - compliance
-  - domain:management
-  - medical-director
-  - pharmacovigilance
-  - plan
-  - prioritization
-  - protocol
-  - rbm
-  - safety
-  - signal
-  - skill
-  - trial
----
-
 # Domain Agent Skills: Management Medical director
 
 ## Metadata
@@ -27,7 +8,7 @@ tags:
 ---
 
 ## Skill: Pharmacovigilance Safety Signal Prioritization
-<!-- VALIDATION_METADATA: [{"name": "ae_listing", "description": "adverse-event listings in CSV", "required": true}, {"name": "benchmark_rates", "description": "historical placebo incidence rates", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "ae_listing", "description": "adverse-event listings in CSV", "required": true}, {"name": "benchmark_rates", "description": "historical placebo incidence rates", "required": true}], "metadata": {}} -->
 ### Description
 Detect emerging safety signals and recommend follow-up actions.
 
@@ -67,7 +48,7 @@ None provided.
 ---
 
 ## Skill: Clinical Trial Protocol Compliance Review
-<!-- VALIDATION_METADATA: [{"name": "protocol_text", "description": "draft protocol or attachment", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "protocol_text", "description": "draft protocol or attachment", "required": true}], "metadata": {}} -->
 ### Description
 Evaluate a draft protocol for quality and regulatory compliance.
 
@@ -107,7 +88,7 @@ None provided.
 ---
 
 ## Skill: AI-Enhanced RBM Action Plan
-<!-- VALIDATION_METADATA: [{"name": "site_metrics", "description": "per-site metrics CSV", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "site_metrics", "description": "per-site metrics CSV", "required": true}], "metadata": {}} -->
 ### Description
 Generate next-week monitoring actions that optimize patient safety and data quality.
 

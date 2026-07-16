@@ -1,18 +1,3 @@
----
-tags:
-  - assessment
-  - clinical
-  - coaching
-  - debrief
-  - domain:scientific
-  - hands-on
-  - objective
-  - procedure
-  - scenario
-  - simulated
-  - skill
----
-
 # Domain Agent Skills: Scientific Bioskills Bioskills workflow
 
 ## Metadata
@@ -23,7 +8,7 @@ tags:
 ---
 
 ## Skill: Hands-On Procedure Coaching
-<!-- VALIDATION_METADATA: [{"name": "procedure_name", "description": "specific procedure being practiced", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "procedure_name", "description": "specific procedure being practiced", "required": true}], "metadata": {}} -->
 ### Description
 Coach a trainee through a vascular access technique using a training model.
 
@@ -57,13 +42,19 @@ Bullet list of steps and checkpoints.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{procedure_name: example_procedure_name}"
-Asserted Output: "- "
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['- ']
+```
 
 ---
 
 ## Skill: Objective Skills Assessment
-<!-- VALIDATION_METADATA: [{"name": "procedure_name", "description": "specific stapler procedure if provided", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "procedure_name", "description": "specific stapler procedure if provided", "required": true}], "metadata": {}} -->
 ### Description
 Design an objective skills checklist for a surgical stapler deployment lab.
 
@@ -99,13 +90,19 @@ Markdown table:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{procedure_name: example_procedure_name}"
-Asserted Output: "Markdown table:"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Markdown table:']
+```
 
 ---
 
 ## Skill: Simulated Clinical Scenario Debrief
-<!-- VALIDATION_METADATA: [{"name": "procedure_notes", "description": "any notes from the session", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "procedure_notes", "description": "any notes from the session", "required": true}], "metadata": {}} -->
 ### Description
 Provide constructive feedback after a simulated clinical scenario.
 
@@ -139,5 +136,11 @@ Bullet points followed by a short reflective question.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{procedure_notes: example_procedure_notes}"
-Asserted Output: "- "
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['- ']
+```

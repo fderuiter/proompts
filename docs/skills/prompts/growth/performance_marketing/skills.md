@@ -1,18 +1,3 @@
----
-tags:
-  - bayesian
-  - cac
-  - domain:growth/performance_marketing
-  - media
-  - mix
-  - modeler
-  - modeling
-  - payback
-  - performance-marketing
-  - predictive
-  - skill
----
-
 # Domain Agent Skills: Growth Performance marketing
 
 ## Metadata
@@ -23,7 +8,7 @@ tags:
 ---
 
 ## Skill: predictive_cac_payback_modeler
-<!-- VALIDATION_METADATA: [{"name": "acquisition_cohort_data", "description": "Data containing multi-channel spend, lead volume, and conversion velocities for recent cohorts."}, {"name": "blended_cac", "description": "The current blended Customer Acquisition Cost."}, {"name": "arpu", "description": "Average Revenue Per User."}, {"name": "gross_margin", "description": "The gross margin percentage."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "acquisition_cohort_data", "description": "Data containing multi-channel spend, lead volume, and conversion velocities for recent cohorts."}, {"name": "blended_cac", "description": "The current blended Customer Acquisition Cost."}, {"name": "arpu", "description": "Average Revenue Per User."}, {"name": "gross_margin", "description": "The gross margin percentage."}], "metadata": {}} -->
 ### Description
 Synthesizes multi-channel acquisition data to model predictive CAC payback periods and optimize unit economics across the AARRR funnel.
 
@@ -75,13 +60,19 @@ Execute a critical gap analysis and develop a predictive CAC payback optimizatio
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A comprehensive predictive CAC payback analysis mapping optimal budget reallocation from Paid Search to Content/SEO, integrating AARRR constraints, and featuring exact LaTeX financial equations for CAC Payback, LTV, and ROAS."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A comprehensive predictive CAC payback analysis mapping optimal budget reallocation from Paid Search to Content/SEO, integrating AARRR constraints, and featuring exact LaTeX financial equations for CAC Payback, LTV, and ROAS.']
+```
 
 ---
 
 ## Skill: bayesian_media_mix_modeling_architect
-<!-- VALIDATION_METADATA: [{"name": "historical_spend_data", "description": "Time-series data of marketing spend across multiple channels."}, {"name": "sales_revenue_data", "description": "Time-series data of corresponding sales or revenue."}, {"name": "control_variables", "description": "Exogenous factors such as seasonality, macroeconomics, or pricing changes."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "historical_spend_data", "description": "Time-series data of marketing spend across multiple channels."}, {"name": "sales_revenue_data", "description": "Time-series data of corresponding sales or revenue."}, {"name": "control_variables", "description": "Exogenous factors such as seasonality, macroeconomics, or pricing changes."}], "metadata": {}} -->
 ### Description
 Formulates advanced Bayesian Media Mix Modeling (MMM) frameworks to estimate incremental ROAS, optimize multi-channel budget allocation, and model ad stock and diminishing returns.
 
@@ -129,5 +120,11 @@ Execute a critical gap analysis and develop a Bayesian Media Mix Modeling (MMM) 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A comprehensive Bayesian MMM architecture defining adstock transformations, diminishing return functions, prior distributions, and an optimization framework for budget reallocation, integrating AARRR constraints and exact LaTeX mathematical notation."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A comprehensive Bayesian MMM architecture defining adstock transformations, diminishing return functions, prior distributions, and an optimization framework for budget reallocation, integrating AARRR constraints and exact LaTeX mathematical notation.']
+```

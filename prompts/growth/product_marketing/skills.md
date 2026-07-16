@@ -1,18 +1,3 @@
----
-tags:
-  - architect
-  - conversion
-  - domain:growth/product_marketing
-  - factor
-  - freemium
-  - growth
-  - led
-  - product
-  - product-marketing
-  - skill
-  - velocity
----
-
 # Domain Agent Skills: Growth Product marketing
 
 ## Metadata
@@ -23,7 +8,7 @@ tags:
 ---
 
 ## Skill: freemium_conversion_velocity_architect
-<!-- VALIDATION_METADATA: [{"name": "user_telemetry", "description": "Behavioral data covering free tier usage, feature adoption rates, and drop-off points."}, {"name": "monetization_metrics", "description": "Current Free-to-Paid conversion rate, trial length, and upgrade trigger performance."}, {"name": "financial_parameters", "description": "Current ARPU, Churn Rate, Gross Margin, and Blended CAC."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "user_telemetry", "description": "Behavioral data covering free tier usage, feature adoption rates, and drop-off points."}, {"name": "monetization_metrics", "description": "Current Free-to-Paid conversion rate, trial length, and upgrade trigger performance."}, {"name": "financial_parameters", "description": "Current ARPU, Churn Rate, Gross Margin, and Blended CAC."}], "metadata": {}} -->
 ### Description
 Mathematically models and optimizes Freemium-to-Paid conversion velocity using user telemetry, addressing product friction and monetization failures.
 
@@ -70,16 +55,28 @@ Execute a critical gap analysis and develop a Freemium-to-Paid conversion veloci
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A comprehensive conversion optimization architecture mapping feature-level interventions to surface contextual upgrade triggers before hard paywalls, integrating AARRR constraints, and featuring exact LaTeX financial equations for Conversion Velocity ($V_c$), LTV, and ROAS."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A comprehensive conversion optimization architecture mapping feature-level interventions to surface contextual upgrade triggers before hard paywalls, integrating AARRR constraints, and featuring exact LaTeX financial equations for Conversion Velocity ($V_c$), LTV, and ROAS.']
+```
 
-Input Context: "{}"
-Asserted Output: "An unvarnished assessment stating the telemetry is insufficient to model conversion velocity, refusing to hallucinate baseline metrics, while outlining the required mathematical framework (AARRR, LTV, ROAS, V_c in LaTeX) needed once valid usage data is secured."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['An unvarnished assessment stating the telemetry is insufficient to model conversion velocity, refusing to hallucinate baseline metrics, while outlining the required mathematical framework (AARRR, LTV, ROAS, V_c in LaTeX) needed once valid usage data is secured.']
+```
 
 ---
 
 ## Skill: product_led_growth_k_factor_architect
-<!-- VALIDATION_METADATA: [{"name": "product_telemetry", "description": "Raw telemetry covering user onboarding flow, core action activation rates, and natural sharing inflection points."}, {"name": "referral_metrics", "description": "Current invitation rates per user, conversion rates of those invitations, and referral channel performance."}, {"name": "unit_economics", "description": "Current ARPU, Churn Rate, Gross Margin, and blended CAC."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "product_telemetry", "description": "Raw telemetry covering user onboarding flow, core action activation rates, and natural sharing inflection points."}, {"name": "referral_metrics", "description": "Current invitation rates per user, conversion rates of those invitations, and referral channel performance."}, {"name": "unit_economics", "description": "Current ARPU, Churn Rate, Gross Margin, and blended CAC."}], "metadata": {}} -->
 ### Description
 Formulates advanced Product-Led Growth (PLG) viral loop architectures, modeling K-Factor optimization and intrinsic referral mechanics to mathematically accelerate organic acquisition.
 
@@ -126,8 +123,20 @@ Execute a critical gap analysis and develop a PLG viral loop optimization workfl
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A comprehensive PLG viral loop architecture mapping feature-level interventions to surface the 'Invite Teammate' function during core onboarding, integrating AARRR constraints, and featuring exact LaTeX financial equations for K-Factor ($K = i \times c$), LTV, and ROAS."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["A comprehensive PLG viral loop architecture mapping feature-level interventions to surface the 'Invite Teammate' function during core onboarding, integrating AARRR constraints, and featuring exact LaTeX financial equations for K-Factor ($K = i \\times c$), LTV, and ROAS."]
+```
 
-Input Context: "{}"
-Asserted Output: "An unvarnished assessment stating the telemetry is insufficient to model viral loops, refusing to hallucinate baseline metrics, while outlining the required mathematical framework (AARRR, LTV, ROAS, K-Factor in LaTeX) needed once valid PLG data is secured."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['An unvarnished assessment stating the telemetry is insufficient to model viral loops, refusing to hallucinate baseline metrics, while outlining the required mathematical framework (AARRR, LTV, ROAS, K-Factor in LaTeX) needed once valid PLG data is secured.']
+```

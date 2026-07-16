@@ -1,14 +1,3 @@
----
-tags:
-  - analytical-chemistry
-  - domain:scientific/chemistry/analytical/mass_spectrometry
-  - fragmentation
-  - gas-phase-kinetics
-  - mass-spectrometry
-  - skill
-  - structural-elucidation
----
-
 # Domain Agent Skills: Scientific Chemistry Analytical Mass spectrometry
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: Tandem MS/MS Fragmentation Pathway Elucidator
-<!-- VALIDATION_METADATA: [{"name": "precursor_ion", "description": "IUPAC name or SMILES string of the intact precursor molecule.", "required": true}, {"name": "ionization_mode", "description": "Specific ionization technique and polarity (e.g., ESI(+), MALDI(-), EI).", "required": true}, {"name": "tandem_ms_conditions", "description": "Relevant parameters such as collision energy, collision gas, and activation method (e.g., Low-Energy CID with N2, HCD).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "precursor_ion", "description": "IUPAC name or SMILES string of the intact precursor molecule.", "required": true}, {"name": "ionization_mode", "description": "Specific ionization technique and polarity (e.g., ESI(+), MALDI(-), EI).", "required": true}, {"name": "tandem_ms_conditions", "description": "Relevant parameters such as collision energy, collision gas, and activation method (e.g., Low-Energy CID with N2, HCD).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}], "metadata": {}} -->
 ### Description
 Formulates rigorous, step-by-step gas-phase fragmentation mechanisms and predictive mass spectra for complex organic molecules utilizing advanced collision-induced dissociation (CID) principles.
 
@@ -29,6 +18,7 @@ Formulates rigorous, step-by-step gas-phase fragmentation mechanisms and predict
 | `precursor_ion` | String | IUPAC name or SMILES string of the intact precursor molecule. | Yes |
 | `ionization_mode` | String | Specific ionization technique and polarity (e.g., ESI(+), MALDI(-), EI). | Yes |
 | `tandem_ms_conditions` | String | Relevant parameters such as collision energy, collision gas, and activation method (e.g., Low-Energy CID with N2, HCD). | Yes |
+| `user_query` | String | Auto-extracted variable user_query | No |
 
 
 ### Core Instructions
@@ -62,8 +52,20 @@ Tandem MS Conditions:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "m/z 110.0600"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['m/z 110.0600']
+```
 
-Input Context: "{}"
-Asserted Output: "b_2"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['b_2']
+```

@@ -1,18 +1,3 @@
----
-tags:
-  - analysis
-  - cbt
-  - composition
-  - creativity
-  - domain:clinical
-  - iso-principle
-  - lyrics
-  - music
-  - planning
-  - skill
-  - therapy
----
-
 # Domain Agent Skills: Clinical Therapy Music therapy workflow
 
 ## Metadata
@@ -23,7 +8,7 @@ tags:
 ---
 
 ## Skill: Compassionate Analyst
-<!-- VALIDATION_METADATA: [{"name": "venting_text", "description": "The user's venting text.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "venting_text", "description": "The user's venting text.", "required": true}], "metadata": {}} -->
 ### Description
 Deconstructs user venting into actionable psychological data.
 
@@ -56,17 +41,19 @@ Please identify:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "I just feel like I'm running in circles. My boss keeps moving the goalposts, and I'm exhausted trying to please everyone. I feel invisible, like I'm screaming underwater and no one hears me."
-Asserted Output: "1. **Core Emotions:** High-functioning anxiety, exhaustion, futility, feeling unheard.
-2. **Key Themes:** Perfectionism, lack of recognition, powerlessness.
-3. **The "Venting Need":** Validation of exhaustion, release from the need to please.
-4. **Metaphors:** Running in circles, moving goalposts, screaming underwater.
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['1. **Core Emotions:** High-functioning anxiety, exhaustion, futility, feeling unheard.\n2. **Key Themes:** Perfectionism, lack of recognition, powerlessness.\n3. **The ']
+```
 
 ---
 
 ## Skill: ISO Strategist
-<!-- VALIDATION_METADATA: [{"name": "psychological_profile", "description": "The structured psychological profile from Step 1.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "psychological_profile", "description": "The structured psychological profile from Step 1.", "required": true}], "metadata": {}} -->
 ### Description
 Plans the therapeutic journey using the ISO Principle.
 
@@ -97,21 +84,19 @@ Please determine:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "1. **Core Emotions:** High-functioning anxiety, exhaustion, futility, feeling unheard.
-2. **Key Themes:** Perfectionism, lack of recognition, powerlessness.
-3. **The "Venting Need":** Validation of exhaustion, release from the need to please.
-4. **Metaphors:** Running in circles, moving goalposts, screaming underwater.
-"
-Asserted Output: "**Therapeutic Arc**
-1. **Point A (Current State):** High anxiety, frantic energy but feeling stuck (running in circles), muffled screams (underwater).
-2. **Point B (Target State):** Grounded, calm, visible/heard.
-3. **The Pivot Point:** The bridge where the "water" breaks or the "running" stops, shifting from frantic to steady.
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['**Therapeutic Arc**\n1. **Point A (Current State):** High anxiety, frantic energy but feeling stuck (running in circles), muffled screams (underwater).\n2. **Point B (Target State):** Grounded, calm, visible/heard.\n3. **The Pivot Point:** The bridge where the ']
+```
 
 ---
 
 ## Skill: Sonic Architect
-<!-- VALIDATION_METADATA: [{"name": "psychological_profile", "description": "The structured psychological profile from Step 1.", "required": true}, {"name": "therapeutic_arc", "description": "The therapeutic arc from Step 2.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "psychological_profile", "description": "The structured psychological profile from Step 1.", "required": true}, {"name": "therapeutic_arc", "description": "The therapeutic arc from Step 2.", "required": true}], "metadata": {}} -->
 ### Description
 Translates the emotional arc into concrete music theory and production choices.
 
@@ -148,23 +133,19 @@ Create a **Musical Blueprint** containing:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{psychological_profile: '1. **Core Emotions:** High-functioning anxiety...
-
-    ', therapeutic_arc: '1. **Point A (Current State):** High anxiety...
-
-    '}"
-Asserted Output: "**Musical Blueprint**
-1. **Genre & Vibe:** Dream Pop / Shoegaze.
-2. **Tempo (BPM):** 110 BPM (driving but washed out).
-3. **Key Signature:** E Major (heavily reverb-drenched).
-4. **Instrumentation:** Distorted synthesizer pads, repetitive drum loop.
-5. **Vocal Style:** Distant, layered vocals.
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['**Musical Blueprint**\n1. **Genre & Vibe:** Dream Pop / Shoegaze.\n2. **Tempo (BPM):** 110 BPM (driving but washed out).\n3. **Key Signature:** E Major (heavily reverb-drenched).\n4. **Instrumentation:** Distorted synthesizer pads, repetitive drum loop.\n5. **Vocal Style:** Distant, layered vocals.\n']
+```
 
 ---
 
 ## Skill: Lyricist
-<!-- VALIDATION_METADATA: [{"name": "psychological_profile", "description": "The structured psychological profile from Step 1.", "required": true}, {"name": "therapeutic_arc", "description": "The therapeutic arc from Step 2.", "required": true}, {"name": "musical_blueprint", "description": "The musical blueprint from Step 3.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "psychological_profile", "description": "The structured psychological profile from Step 1.", "required": true}, {"name": "therapeutic_arc", "description": "The therapeutic arc from Step 2.", "required": true}, {"name": "musical_blueprint", "description": "The musical blueprint from Step 3.", "required": true}], "metadata": {}} -->
 ### Description
 Writes the actual lyrics using the themes and structure.
 
@@ -203,9 +184,11 @@ Write the full lyrics for this song.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{psychological_profile: '...', therapeutic_arc: '...', musical_blueprint: '...'}"
-Asserted Output: "[Verse 1]
-Running on the treadmill...
-[Chorus]
-...
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['[Verse 1]\nRunning on the treadmill...\n[Chorus]\n...\n']
+```

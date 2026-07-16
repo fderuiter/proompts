@@ -1,14 +1,3 @@
----
-tags:
-  - applied-mathematics
-  - computational
-  - domain:scientific/applied_mathematics/computational/physics_informed_neural_networks
-  - physics-informed-neural-networks
-  - pinn
-  - skill
-  - stiff
----
-
 # Domain Agent Skills: Scientific Applied mathematics Computational Physics informed neural networks
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: pinn_stiff_pde_architect
-<!-- VALIDATION_METADATA: [{"name": "governing_equation", "type": "string", "description": "The explicit non-linear, stiff PDE to be modeled (e.g., Allen-Cahn, viscous Burgers', or stiff Navier-Stokes)."}, {"name": "boundary_and_initial_conditions", "type": "string", "description": "The exact spatial and temporal constraints, including Dirichlet, Neumann, or periodic boundary conditions."}, {"name": "stiffness_challenge", "type": "string", "description": "The primary source of numerical stiffness (e.g., singularly perturbed terms, multi-scale dynamics, or sharp boundary layers)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "governing_equation", "type": "string", "description": "The explicit non-linear, stiff PDE to be modeled (e.g., Allen-Cahn, viscous Burgers', or stiff Navier-Stokes)."}, {"name": "boundary_and_initial_conditions", "type": "string", "description": "The exact spatial and temporal constraints, including Dirichlet, Neumann, or periodic boundary conditions."}, {"name": "stiffness_challenge", "type": "string", "description": "The primary source of numerical stiffness (e.g., singularly perturbed terms, multi-scale dynamics, or sharp boundary layers)."}], "metadata": {}} -->
 ### Description
 Acts as a Principal Computational Mathematician designed to architect Physics-Informed Neural Networks (PINNs) for solving stiff non-linear partial differential equations (PDEs), focusing on loss landscape optimization and boundary condition enforcement.
 
@@ -48,8 +37,20 @@ Provide a comprehensive, step-by-step architectural design. Formulate the exact 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

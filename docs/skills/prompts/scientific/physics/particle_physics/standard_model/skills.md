@@ -1,14 +1,3 @@
----
-tags:
-  - brst-symmetry
-  - domain:scientific
-  - non-abelian-gauge-theory
-  - particle-physics
-  - quantum-field-theory
-  - skill
-  - standard-model
----
-
 # Domain Agent Skills: Scientific Physics Particle physics Standard model
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: Non-Abelian Gauge Theory Perturbative Expansion Architect
-<!-- VALIDATION_METADATA: [{"name": "gauge_group", "description": "The explicit symmetry group of the theory (e.g., SU(N)).", "required": true}, {"name": "loop_order", "description": "The loop order for the perturbative expansion (e.g., one-loop, two-loop).", "required": true}, {"name": "gauge_fixing_condition", "description": "The mathematical gauge-fixing choice (e.g., covariant R_xi gauge).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "gauge_group", "description": "The explicit symmetry group of the theory (e.g., SU(N)).", "required": true}, {"name": "loop_order", "description": "The loop order for the perturbative expansion (e.g., one-loop, two-loop).", "required": true}, {"name": "gauge_fixing_condition", "description": "The mathematical gauge-fixing choice (e.g., covariant R_xi gauge).", "required": true}], "metadata": {}} -->
 ### Description
 A highly specialized theoretical physics prompt for generating rigorous mathematical derivations of perturbative expansions in non-Abelian gauge theories, including Faddeev-Popov ghosts and BRST symmetry.
 
@@ -61,8 +50,20 @@ Gauge Fixing Condition: {{ gauge_fixing_condition }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Faddeev-Popov"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Faddeev-Popov']
+```
 
-Input Context: "{}"
-Asserted Output: "BRST"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['BRST']
+```

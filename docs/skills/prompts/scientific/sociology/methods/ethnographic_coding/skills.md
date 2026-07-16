@@ -1,14 +1,3 @@
----
-tags:
-  - domain:sociology
-  - ethnographic-coding
-  - large
-  - methods
-  - scale
-  - skill
-  - sociology
----
-
 # Domain Agent Skills: Scientific Sociology Methods Ethnographic coding
 
 ## Metadata
@@ -19,10 +8,9 @@ tags:
 ---
 
 ## Skill: large_scale_axial_coding_framework_generator
-<!-- VALIDATION_METADATA: [{"name": "ethnographic_data_context", "description": "A comprehensive summary or sample of the large-scale qualitative ethnographic data (e.g., transcripts, field notes, observational logs) to be coded.\n"}, {"name": "primary_theoretical_paradigm", "description": "The primary sociological paradigm or theoretical framework (e.g., symbolic interactionism, conflict theory, critical race theory) to guide the axial coding.\n"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "ethnographic_data_context", "description": "A comprehensive summary or sample of the large-scale qualitative ethnographic data (e.g., transcripts, field notes, observational logs) to be coded.\n"}, {"name": "primary_theoretical_paradigm", "description": "The primary sociological paradigm or theoretical framework (e.g., symbolic interactionism, conflict theory, critical race theory) to guide the axial coding.\n"}], "metadata": {}} -->
 ### Description
 Systematically generates an automated, highly rigorous axial coding framework for large-scale qualitative ethnographic data, focusing on thematic linkages and theoretical paradigms within American Sociological Association (ASA) standards.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -48,8 +36,20 @@ Generate a comprehensive axial coding framework based on the following context.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

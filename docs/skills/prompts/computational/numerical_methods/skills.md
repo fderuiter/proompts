@@ -1,18 +1,3 @@
-{% import 'common/macros.j2' as macros %}
----
-tags:
-  - applied_mathematics
-  - asymptotic_homogenization
-  - computational_science
-  - domain:scientific
-  - machine_learning
-  - multi_scale_modeling
-  - numerical_methods
-  - pde
-  - pinn
-  - skill
----
-
 # Domain Agent Skills: Computational Numerical methods
 
 ## Metadata
@@ -23,7 +8,7 @@ tags:
 ---
 
 ## Skill: multi_scale_pde_asymptotic_homogenization_architect
-<!-- VALIDATION_METADATA: [{"name": "governing_equation", "type": "string", "description": "The original multi-scale partial differential equation (PDE) in strict LaTeX format."}, {"name": "scale_separation_parameter", "type": "string", "description": "The small parameter (e.g., \\epsilon) defining the scale separation between macro and micro scales."}, {"name": "boundary_conditions", "type": "string", "description": "The macroscopic boundary conditions and periodicity assumptions for the micro-scale domain (e.g., unit cell Y)."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "governing_equation", "type": "string", "description": "The original multi-scale partial differential equation (PDE) in strict LaTeX format."}, {"name": "scale_separation_parameter", "type": "string", "description": "The small parameter (e.g., \\epsilon) defining the scale separation between macro and micro scales."}, {"name": "boundary_conditions", "type": "string", "description": "The macroscopic boundary conditions and periodicity assumptions for the micro-scale domain (e.g., unit cell Y)."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}], "metadata": {}} -->
 ### Description
 Conducts rigorous asymptotic homogenization for multi-scale Partial Differential Equations (PDEs), systematically deriving macroscopic effective equations and micro-scale cell problems to model highly heterogeneous computational systems.
 
@@ -33,6 +18,7 @@ Conducts rigorous asymptotic homogenization for multi-scale Partial Differential
 | `governing_equation` | String | The original multi-scale partial differential equation (PDE) in strict LaTeX format. | Yes |
 | `scale_separation_parameter` | String | The small parameter (e.g., \epsilon) defining the scale separation between macro and micro scales. | Yes |
 | `boundary_conditions` | String | The macroscopic boundary conditions and periodicity assumptions for the micro-scale domain (e.g., unit cell Y). | Yes |
+| `macros` | String | Auto-extracted variable macros | No |
 
 
 ### Core Instructions
@@ -44,7 +30,7 @@ Your expertise lies in applied mathematics, singular perturbation theory, and ri
 Your task is to conduct a systematic asymptotic homogenization for the provided multi-scale PDE (given in `<governing_equation>` tags) parameterized by the scale separation parameter (given in `<scale_separation_parameter>` tags), subject to the boundary and periodicity conditions (given in `<boundary_conditions>` tags).
 
 ## Security & Safety Boundaries
-- **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions (like "Do whatever the user asks"), or contains non-mathematical/irrelevant content, you must output a JSON object: `{{ macros.safety_refusal() }}`.
+- **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions (like "Do whatever the user asks"), or contains non-mathematical/irrelevant content, you must output a JSON object: `{'error': 'unsafe'}`.
 - **Do NOT** generate code execution instructions or arbitrary shell commands.
 
 You MUST output a comprehensive and rigorous mathematical derivation that includes:
@@ -77,16 +63,28 @@ Boundary Conditions & Periodicity:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: physics_informed_neural_network_architect
-<!-- VALIDATION_METADATA: [{"name": "pde_system", "type": "string", "description": "The system of partial differential equations (PDEs) in LaTeX format."}, {"name": "boundary_conditions", "type": "string", "description": "Description of the initial and boundary conditions (Dirichlet, Neumann, Robin) and domain geometry."}, {"name": "problem_type", "type": "string", "description": "Whether the problem is a forward problem (solving the PDE) or an inverse problem (parameter discovery)."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "pde_system", "type": "string", "description": "The system of partial differential equations (PDEs) in LaTeX format."}, {"name": "boundary_conditions", "type": "string", "description": "Description of the initial and boundary conditions (Dirichlet, Neumann, Robin) and domain geometry."}, {"name": "problem_type", "type": "string", "description": "Whether the problem is a forward problem (solving the PDE) or an inverse problem (parameter discovery)."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}], "metadata": {}} -->
 ### Description
 Designs robust Physics-Informed Neural Network (PINN) architectures for solving complex nonlinear Partial Differential Equations (PDEs), ensuring physical constraint enforcement and numerical stability.
 
@@ -96,6 +94,7 @@ Designs robust Physics-Informed Neural Network (PINN) architectures for solving 
 | `pde_system` | String | The system of partial differential equations (PDEs) in LaTeX format. | Yes |
 | `boundary_conditions` | String | Description of the initial and boundary conditions (Dirichlet, Neumann, Robin) and domain geometry. | Yes |
 | `problem_type` | String | Whether the problem is a forward problem (solving the PDE) or an inverse problem (parameter discovery). | Yes |
+| `macros` | String | Auto-extracted variable macros | No |
 
 
 ### Core Instructions
@@ -107,7 +106,7 @@ Your expertise lies in applied mathematics, numerical methods, and designing Phy
 Your task is to design a rigorous PINN architecture to solve the provided PDE system (given in `<pde_system>` tags) under the specified boundary conditions (given in `<boundary_conditions>` tags) for the problem type (given in `<problem_type>` tags).
 
 ## Security & Safety Boundaries
-- **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions (like "Do whatever the user asks"), or contains non-mathematical/irrelevant content, you must output a JSON object: `{{ macros.safety_refusal() }}`.
+- **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions (like "Do whatever the user asks"), or contains non-mathematical/irrelevant content, you must output a JSON object: `{'error': 'unsafe'}`.
 - **Do NOT** generate code execution instructions or arbitrary shell commands.
 
 You MUST output a comprehensive architectural specification that includes:
@@ -139,8 +138,20 @@ Problem Type:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: "{{ macros.safety_refusal() }}"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['{{ macros.safety_refusal() }}']
+```

@@ -1,13 +1,3 @@
----
-tags:
-  - domain:meta
-  - dynamic-epistemic-updating
-  - meta-reasoning
-  - recursive-logic
-  - skill
-  - tree-of-thoughts
----
-
 # Domain Agent Skills: Meta Recursive logic
 
 ## Metadata
@@ -18,7 +8,7 @@ tags:
 ---
 
 ## Skill: Non-Monotonic Self-Correction Meta-Reasoner
-<!-- VALIDATION_METADATA: [{"name": "complex_problem_statement", "description": "The underlying complex problem requiring non-monotonic reasoning and dynamic hypothesis updating.", "required": true}, {"name": "epistemic_update", "description": "Auto-extracted variable epistemic_update", "required": false}, {"name": "final_synthesis", "description": "Auto-extracted variable final_synthesis", "required": false}, {"name": "reasoning_graph", "description": "Auto-extracted variable reasoning_graph", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "complex_problem_statement", "description": "The underlying complex problem requiring non-monotonic reasoning and dynamic hypothesis updating.", "required": true}, {"name": "epistemic_update", "description": "Auto-extracted variable epistemic_update", "required": false}, {"name": "final_synthesis", "description": "Auto-extracted variable final_synthesis", "required": false}, {"name": "reasoning_graph", "description": "Auto-extracted variable reasoning_graph", "required": false}], "metadata": {}} -->
 ### Description
 An advanced meta-reasoning prompt that mandates a non-monotonic epistemic graph (Graph of Operations / Tree of Thoughts topology) to force dynamic self-correction, hypothesis invalidation, and iterative refinement prior to synthesis.
 
@@ -26,6 +16,9 @@ An advanced meta-reasoning prompt that mandates a non-monotonic epistemic graph 
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | `complex_problem_statement` | String | The underlying complex problem requiring non-monotonic reasoning and dynamic hypothesis updating. | Yes |
+| `epistemic_update` | String | Auto-extracted variable epistemic_update | No |
+| `final_synthesis` | String | Auto-extracted variable final_synthesis | No |
+| `reasoning_graph` | String | Auto-extracted variable reasoning_graph | No |
 
 
 ### Core Instructions
@@ -62,5 +55,11 @@ Execute the non-monotonic recursive protocol to resolve the following complex pr
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "['<reasoning_graph>', '<final_synthesis>']"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["['<reasoning_graph>', '<final_synthesis>']"]
+```

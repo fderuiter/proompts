@@ -1,14 +1,3 @@
----
-tags:
-  - domain:scientific/formal_logic/systems/higher_order_logic
-  - formal-logic
-  - higher
-  - higher-order-logic
-  - order
-  - skill
-  - systems
----
-
 # Domain Agent Skills: Scientific Formal logic Systems Higher order logic
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: higher_order_unification_resolution_architect
-<!-- VALIDATION_METADATA: [{"name": "equations", "description": "A set of higher-order equations to be unified, expressed in strictly typed lambda calculus using LaTeX syntax.", "required": true}, {"name": "signature", "description": "The type signature context detailing base types and typed constants available for the unification problem.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "equations", "description": "A set of higher-order equations to be unified, expressed in strictly typed lambda calculus using LaTeX syntax.", "required": true}, {"name": "signature", "description": "The type signature context detailing base types and typed constants available for the unification problem.", "required": true}], "metadata": {}} -->
 ### Description
 Automates the rigorous resolution of higher-order unification problems within the simply typed lambda calculus, utilizing Huet's unification algorithm.
 
@@ -65,8 +54,20 @@ Please execute a formal higher-order unification resolution for the following ty
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

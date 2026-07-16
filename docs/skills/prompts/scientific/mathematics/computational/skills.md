@@ -1,13 +1,3 @@
----
-tags:
-  - computational-fluid-dynamics
-  - deep-learning
-  - domain:computational_mathematics
-  - pde
-  - pinn
-  - skill
----
-
 # Domain Agent Skills: Scientific Mathematics Computational
 
 ## Metadata
@@ -18,7 +8,7 @@ tags:
 ---
 
 ## Skill: Physics-Informed Neural Network (PINN) Architect
-<!-- VALIDATION_METADATA: [{"name": "GOVERNING_EQUATIONS", "description": "Detailed description of the governing stiff nonlinear partial differential equations (e.g., Navier-Stokes, Kuramoto-Sivashinsky) to be solved, including source terms and physical parameters."}, {"name": "DOMAIN_AND_BOUNDARIES", "description": "Specification of the spatiotemporal domain, initial conditions (ICs), and boundary conditions (BCs) (e.g., Dirichlet, Neumann, periodic)."}, {"name": "ARCHITECTURE_CONSTRAINTS", "description": "Any constraints or preferences regarding the neural network architecture (e.g., multi-fidelity, adaptive activation functions, Fourier features, hard vs. soft constraint enforcement)."}, {"name": "architecture_constraints", "description": "Auto-extracted variable architecture_constraints", "required": false}, {"name": "domain_and_boundaries", "description": "Auto-extracted variable domain_and_boundaries", "required": false}, {"name": "governing_equations", "description": "Auto-extracted variable governing_equations", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "GOVERNING_EQUATIONS", "description": "Detailed description of the governing stiff nonlinear partial differential equations (e.g., Navier-Stokes, Kuramoto-Sivashinsky) to be solved, including source terms and physical parameters."}, {"name": "DOMAIN_AND_BOUNDARIES", "description": "Specification of the spatiotemporal domain, initial conditions (ICs), and boundary conditions (BCs) (e.g., Dirichlet, Neumann, periodic)."}, {"name": "ARCHITECTURE_CONSTRAINTS", "description": "Any constraints or preferences regarding the neural network architecture (e.g., multi-fidelity, adaptive activation functions, Fourier features, hard vs. soft constraint enforcement)."}, {"name": "architecture_constraints", "description": "Auto-extracted variable architecture_constraints", "required": false}, {"name": "domain_and_boundaries", "description": "Auto-extracted variable domain_and_boundaries", "required": false}, {"name": "governing_equations", "description": "Auto-extracted variable governing_equations", "required": false}], "metadata": {}} -->
 ### Description
 Formulates rigorous, structurally sound physics-informed neural network architectures for solving stiff nonlinear partial differential equations (PDEs).
 
@@ -28,6 +18,9 @@ Formulates rigorous, structurally sound physics-informed neural network architec
 | `GOVERNING_EQUATIONS` | String | Detailed description of the governing stiff nonlinear partial differential equations (e.g., Navier-Stokes, Kuramoto-Sivashinsky) to be solved, including source terms and physical parameters. | Yes |
 | `DOMAIN_AND_BOUNDARIES` | String | Specification of the spatiotemporal domain, initial conditions (ICs), and boundary conditions (BCs) (e.g., Dirichlet, Neumann, periodic). | Yes |
 | `ARCHITECTURE_CONSTRAINTS` | String | Any constraints or preferences regarding the neural network architecture (e.g., multi-fidelity, adaptive activation functions, Fourier features, hard vs. soft constraint enforcement). | Yes |
+| `architecture_constraints` | String | Auto-extracted variable architecture_constraints | No |
+| `domain_and_boundaries` | String | Auto-extracted variable domain_and_boundaries | No |
+| `governing_equations` | String | Auto-extracted variable governing_equations | No |
 
 
 ### Core Instructions
@@ -49,8 +42,20 @@ Please formulate the PINN architecture and training strategy for the following s
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Composite Loss Function Formulation"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Composite Loss Function Formulation']
+```
 
-Input Context: "{}"
-Asserted Output: "Network Mapping and Ansatz"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Network Mapping and Ansatz']
+```

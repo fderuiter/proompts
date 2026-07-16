@@ -1,14 +1,3 @@
----
-tags:
-  - cheminformatics
-  - computational-chemistry
-  - domain:scientific
-  - molecular-design
-  - pharmacophore-modeling
-  - qsar
-  - skill
----
-
 # Domain Agent Skills: Scientific Chemistry Computational Cheminformatics
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: 3D QSAR Pharmacophore Modeling Architect
-<!-- VALIDATION_METADATA: [{"name": "input_compounds", "description": "A comprehensive list of the reference compounds with binding affinities, formatted strictly as SMILES or InChI strings alongside IUPAC names.", "type": "string"}, {"name": "target_macromolecule", "description": "The identity and structural characteristics of the binding target (e.g., protein, nucleic acid) if known, or 'ligand-based' if structurally uncharacterized.", "type": "string"}, {"name": "target_property", "description": "The primary quantitative endpoint being modeled (e.g., pIC50, Kd, inhibitory constant).", "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input_compounds", "description": "A comprehensive list of the reference compounds with binding affinities, formatted strictly as SMILES or InChI strings alongside IUPAC names.", "type": "string"}, {"name": "target_macromolecule", "description": "The identity and structural characteristics of the binding target (e.g., protein, nucleic acid) if known, or 'ligand-based' if structurally uncharacterized.", "type": "string"}, {"name": "target_property", "description": "The primary quantitative endpoint being modeled (e.g., pIC50, Kd, inhibitory constant).", "type": "string"}], "metadata": {}} -->
 ### Description
 Generates expert-level 3D Quantitative Structure-Activity Relationship (QSAR) models and pharmacophore hypotheses for novel molecular series, strictly adhering to IUPAC, SMILES/InChI notations, and precise energetic mapping.
 
@@ -56,5 +45,11 @@ Target Property:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

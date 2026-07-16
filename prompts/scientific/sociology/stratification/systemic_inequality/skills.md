@@ -1,33 +1,3 @@
----
-tags:
-  - coefficient
-  - concentration
-  - displacement
-  - domain:scientific/sociology/stratification
-  - domain:scientific/sociology/stratification/systemic_inequality
-  - domain:sociology
-  - domain:sociology/stratification
-  - gentrification
-  - gini
-  - health
-  - index
-  - inequality
-  - intergenerational
-  - mismatch
-  - multidimensional
-  - occupational
-  - poverty
-  - segregation
-  - skill
-  - social
-  - sociology
-  - spatial
-  - stratification
-  - systemic-inequality
-  - theil
-  - wealth
----
-
 # Domain Agent Skills: Scientific Sociology Stratification Systemic inequality
 
 ## Metadata
@@ -38,7 +8,7 @@ tags:
 ---
 
 ## Skill: theil_t_index_inequality_decomposer
-<!-- VALIDATION_METADATA: [{"name": "resource_variable", "type": "string", "description": "The primary outcome variable representing the unequal resource (e.g., Income, Wealth Accumulation)."}, {"name": "grouping_variable", "type": "string", "description": "The primary social stratification category for the decomposition (e.g., Race, Educational Attainment)."}, {"name": "population_context", "type": "string", "description": "The demographic or geographic context for the analysis (e.g., Urban US Households, 2020)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "resource_variable", "type": "string", "description": "The primary outcome variable representing the unequal resource (e.g., Income, Wealth Accumulation)."}, {"name": "grouping_variable", "type": "string", "description": "The primary social stratification category for the decomposition (e.g., Race, Educational Attainment)."}, {"name": "population_context", "type": "string", "description": "The demographic or geographic context for the analysis (e.g., Urban US Households, 2020)."}], "metadata": {}} -->
 ### Description
 A Principal Sociologist agent designed to execute rigorous Theil T Index decompositions for analyzing between-group and within-group systemic inequality.
 
@@ -85,16 +55,28 @@ Population Context: {{ population_context }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: health_inequality_concentration_index_architect
-<!-- VALIDATION_METADATA: [{"name": "socioeconomic_health_data", "type": "string", "description": "Raw population-level dataset containing socioeconomic status (SES) indicators (e.g., income, education) paired with corresponding health outcomes (e.g., morbidity rates, life expectancy)."}, {"name": "focal_population", "type": "string", "description": "The demographic population, region, or cohort being analyzed."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "socioeconomic_health_data", "type": "string", "description": "Raw population-level dataset containing socioeconomic status (SES) indicators (e.g., income, education) paired with corresponding health outcomes (e.g., morbidity rates, life expectancy)."}, {"name": "focal_population", "type": "string", "description": "The demographic population, region, or cohort being analyzed."}], "metadata": {}} -->
 ### Description
 A Principal Sociologist and Lead Social Epidemiologist agent designed to rigorously analyze systemic health disparities, calculate health inequality indices, and model structural stratification mechanisms using ASA standards.
 
@@ -137,13 +119,19 @@ Using the following socioeconomic and health dataset:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: multidimensional_poverty_alkire_foster_architect
-<!-- VALIDATION_METADATA: [{"name": "household_microdata", "description": "Granular household survey data containing deprivation indicators across multiple dimensions (e.g., health, education, living standards)."}, {"name": "deprivation_cutoffs", "description": "Thresholds for determining deprivation in each specific indicator."}, {"name": "poverty_cutoff", "description": "The overall cross-dimensional poverty cutoff ($k$) identifying multidimensionally poor households."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "household_microdata", "description": "Granular household survey data containing deprivation indicators across multiple dimensions (e.g., health, education, living standards)."}, {"name": "deprivation_cutoffs", "description": "Thresholds for determining deprivation in each specific indicator."}, {"name": "poverty_cutoff", "description": "The overall cross-dimensional poverty cutoff ($k$) identifying multidimensionally poor households."}], "metadata": {}} -->
 ### Description
 Operationalizes the Alkire-Foster (AF) method for calculating multidimensional poverty indices, enforcing rigorous American Sociological Association (ASA) standards and LaTeX formulas.
 
@@ -191,13 +179,19 @@ Provide the methodological breakdown, calculate the indices ($H$, $A$, and $M_0$
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: gini_coefficient_income_stratification_architect
-<!-- VALIDATION_METADATA: [{"name": "income_data", "type": "string", "description": "Raw income distribution data across quintiles, deciles, or granular longitudinal data sets."}, {"name": "demographic_strata", "type": "string", "description": "Relevant demographic factors (e.g., race, gender, education level) associated with the income dataset."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "income_data", "type": "string", "description": "Raw income distribution data across quintiles, deciles, or granular longitudinal data sets."}, {"name": "demographic_strata", "type": "string", "description": "Relevant demographic factors (e.g., race, gender, education level) associated with the income dataset."}], "metadata": {}} -->
 ### Description
 A Principal Sociologist designed to compute the Gini coefficient rigorously and model intersectional systemic mechanisms of income stratification using ASA standards.
 
@@ -239,13 +233,19 @@ Please compute the Gini coefficient and analyze the systemic stratification dyna
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: wealth_concentration_decomposition_architect
-<!-- VALIDATION_METADATA: [{"name": "population_wealth_distribution", "type": "string", "description": "Detailed dataset or matrix containing wealth distributions, asset allocations, and demographic segmentations for a specific population."}, {"name": "focal_mechanism", "type": "string", "description": "The structural process or systemic mechanism being evaluated for its contribution to wealth inequality (e.g., intergenerational transfers, housing market stratification)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "population_wealth_distribution", "type": "string", "description": "Detailed dataset or matrix containing wealth distributions, asset allocations, and demographic segmentations for a specific population."}, {"name": "focal_mechanism", "type": "string", "description": "The structural process or systemic mechanism being evaluated for its contribution to wealth inequality (e.g., intergenerational transfers, housing market stratification)."}], "metadata": {}} -->
 ### Description
 A Principal Sociologist agent that systematically decomposes wealth concentration mechanisms and calculates rigorous inequality indices (e.g., Gini, Theil).
 
@@ -290,16 +290,28 @@ Using the provided population wealth and demographic dataset:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: intergenerational_social_mobility_markov_chain_architect
-<!-- VALIDATION_METADATA: [{"name": "longitudinal_mobility_data", "description": "Granular, multi-generational socio-economic status (SES) or occupational class data mapping parents' status (origin) to offspring's status (destination)."}, {"name": "class_schema", "description": "The specified class schema (e.g., Erikson-Goldthorpe-Portocarero (EGP) class schema) defining the discrete states of the Markov process."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "longitudinal_mobility_data", "description": "Granular, multi-generational socio-economic status (SES) or occupational class data mapping parents' status (origin) to offspring's status (destination)."}, {"name": "class_schema", "description": "The specified class schema (e.g., Erikson-Goldthorpe-Portocarero (EGP) class schema) defining the discrete states of the Markov process."}], "metadata": {}} -->
 ### Description
 Formulates transition probability matrices using Markov chains to map intergenerational social mobility and systemic stratification, adhering to ASA standards.
 
@@ -342,13 +354,19 @@ Provide the methodological breakdown, construct the transition matrix elements (
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: spatial_mismatch_employment_accessibility_modeler
-<!-- VALIDATION_METADATA: [{"name": "residential_demographics", "type": "string", "description": "Raw census tract or neighborhood-level demographic population data for multiple residential zones."}, {"name": "employment_hubs", "type": "string", "description": "Data detailing the spatial distribution of major employment hubs, job densities, and skill-level requirements across the metropolitan statistical area (MSA)."}, {"name": "transit_infrastructure", "type": "string", "description": "Information on public transit infrastructure, commuting times, and accessibility metrics linking residential zones to employment hubs."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "residential_demographics", "type": "string", "description": "Raw census tract or neighborhood-level demographic population data for multiple residential zones."}, {"name": "employment_hubs", "type": "string", "description": "Data detailing the spatial distribution of major employment hubs, job densities, and skill-level requirements across the metropolitan statistical area (MSA)."}, {"name": "transit_infrastructure", "type": "string", "description": "Information on public transit infrastructure, commuting times, and accessibility metrics linking residential zones to employment hubs."}], "metadata": {}} -->
 ### Description
 A Principal Sociologist and Urban Demographer agent designed to rigorously analyze the Spatial Mismatch Hypothesis, calculate employment accessibility gaps, and model structural transit inequality using ASA standards.
 
@@ -400,13 +418,19 @@ Transit Infrastructure:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: gentrification_displacement_spatial_inequality_architect
-<!-- VALIDATION_METADATA: [{"name": "spatial_demographic_data", "type": "string", "description": "Detailed neighborhood-level dataset containing socioeconomic status (SES), racial demographics, rent trajectories, and eviction rates over time."}, {"name": "urban_policy_mechanism", "type": "string", "description": "The structural process or urban policy driving spatial transformation (e.g., transit-oriented development, exclusionary zoning, tax increment financing)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "spatial_demographic_data", "type": "string", "description": "Detailed neighborhood-level dataset containing socioeconomic status (SES), racial demographics, rent trajectories, and eviction rates over time."}, {"name": "urban_policy_mechanism", "type": "string", "description": "The structural process or urban policy driving spatial transformation (e.g., transit-oriented development, exclusionary zoning, tax increment financing)."}], "metadata": {}} -->
 ### Description
 A Principal Sociologist agent that systematically analyzes gentrification-induced displacement and structural spatial inequality, calculating rigorous demographic and spatial indices.
 
@@ -451,19 +475,37 @@ Using the provided spatial demographic dataset:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: occupational_segregation_opportunity_hoarding_architect
-<!-- VALIDATION_METADATA: [{"name": "occupational_demographic_distribution", "type": "string", "description": "Detailed dataset or matrix containing employment distributions, occupational categories, and demographic segmentations for a specific labor market."}, {"name": "institutional_closure_mechanism", "type": "string", "description": "The structural process or systemic mechanism of social closure being evaluated for its contribution to opportunity hoarding (e.g., credentialism, informal referral networks, discriminatory licensing)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "occupational_demographic_distribution", "type": "string", "description": "Detailed dataset or matrix containing employment distributions, occupational categories, and demographic segmentations for a specific labor market."}, {"name": "institutional_closure_mechanism", "type": "string", "description": "The structural process or systemic mechanism of social closure being evaluated for its contribution to opportunity hoarding (e.g., credentialism, informal referral networks, discriminatory licensing)."}], "metadata": {}} -->
 ### Description
 A Principal Sociologist agent that systematically analyzes occupational segregation and structural opportunity hoarding mechanisms, calculating rigorous demographic inequality indices.
 
@@ -507,8 +549,20 @@ Using the provided occupational demographic dataset:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

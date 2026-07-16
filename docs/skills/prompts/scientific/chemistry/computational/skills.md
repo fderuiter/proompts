@@ -1,14 +1,3 @@
----
-tags:
-  - computational-chemistry
-  - domain:scientific
-  - kinetics
-  - physical-chemistry
-  - quantum-mechanics
-  - skill
-  - transition-state-modeling
----
-
 # Domain Agent Skills: Scientific Chemistry Computational
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: Quantum Chemical Transition State Architect
-<!-- VALIDATION_METADATA: [{"name": "reactants", "description": "The chemical reactants, formatted explicitly as SMILES or InChI strings or strict IUPAC names.", "required": true}, {"name": "conditions", "description": "The specified thermodynamic conditions (e.g., Temperature, Pressure, Solvent).", "required": true}, {"name": "reaction_type", "description": "The class of chemical reaction (e.g., Diels-Alder, SN2, catalytic hydroformylation).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "reactants", "description": "The chemical reactants, formatted explicitly as SMILES or InChI strings or strict IUPAC names.", "required": true}, {"name": "conditions", "description": "The specified thermodynamic conditions (e.g., Temperature, Pressure, Solvent).", "required": true}, {"name": "reaction_type", "description": "The class of chemical reaction (e.g., Diels-Alder, SN2, catalytic hydroformylation).", "required": true}], "metadata": {}} -->
 ### Description
 Generates automated quantum mechanical transition state analyses and complex kinetic rate equations using rigorous chemical thermodynamics and structural guidelines.
 
@@ -51,10 +40,20 @@ Reaction Type: <reaction_type>{{ reaction_type }}</reaction_type>
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{reactants: 'C1=CC=CC=C1, C=CC#N', conditions: 'T = 298.15 K, 1 atm, gas phase', reaction_type: Diels-Alder
-    Cycloaddition}"
-Asserted Output: "I. Structural & Energetic Modeling"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['I. Structural & Energetic Modeling']
+```
 
-Input Context: "{reactants: 'CH3Cl, NaOH', conditions: 'T = 310 K, 1 atm, aqueous solvent (implicit
-    PCM)', reaction_type: SN2 Nucleophilic Substitution}"
-Asserted Output: "II. Transition State Characterization"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['II. Transition State Characterization']
+```

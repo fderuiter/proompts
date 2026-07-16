@@ -1,14 +1,3 @@
----
-tags:
-  - chemical-engineering
-  - domain:scientific/chemistry/physical/thermodynamics
-  - equation-of-state
-  - phase-equilibria
-  - physical-chemistry
-  - skill
-  - thermodynamics
----
-
 # Domain Agent Skills: Scientific Chemistry Physical Thermodynamics
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: Non-Ideal Fluid Phase Equilibria Architect
-<!-- VALIDATION_METADATA: [{"name": "mixture_components", "description": "The chemical components of the mixture, provided as precise IUPAC names or SMILES/InChI strings.", "required": true}, {"name": "state_variables", "description": "The macroscopic thermodynamic conditions (e.g., Temperature, Pressure, overall composition).", "required": true}, {"name": "equation_of_state", "description": "The specified Equation of State (EoS) to be utilized for modeling (e.g., Peng-Robinson, SRK, PC-SAFT, UNIFAC).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "mixture_components", "description": "The chemical components of the mixture, provided as precise IUPAC names or SMILES/InChI strings.", "required": true}, {"name": "state_variables", "description": "The macroscopic thermodynamic conditions (e.g., Temperature, Pressure, overall composition).", "required": true}, {"name": "equation_of_state", "description": "The specified Equation of State (EoS) to be utilized for modeling (e.g., Peng-Robinson, SRK, PC-SAFT, UNIFAC).", "required": true}], "metadata": {}} -->
 ### Description
 Generates rigorous thermodynamic models of multi-component, non-ideal fluid phase equilibria using advanced equations of state, ensuring strict isofugacity conditions.
 
@@ -61,12 +50,20 @@ Equation of State: <equation_of_state>{{ equation_of_state }}</equation_of_state
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{mixture_components: 'Methane (C), Ethane (CC), Propane (CCC)', state_variables: 'T
-    = 250 K, P = 30 bar, overall mole fractions z = [0.5, 0.3, 0.2]', equation_of_state: Peng-Robinson
-    EoS with van der Waals one-fluid mixing rules}"
-Asserted Output: "I. Component & State Characterization"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['I. Component & State Characterization']
+```
 
-Input Context: "{mixture_components: 'Water (O), Ethanol (CCO)', state_variables: 'T = 350 K, P =
-    1.013 bar, equimolar overall mixture', equation_of_state: NRTL activity coefficient
-    model combined with ideal gas law for vapor phase}"
-Asserted Output: "III. Isofugacity Criteria & Fugacity Coefficient Derivation"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['III. Isofugacity Criteria & Fugacity Coefficient Derivation']
+```

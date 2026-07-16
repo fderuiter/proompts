@@ -1,12 +1,3 @@
----
-tags:
-  - agentic-workflow
-  - creative-ideation
-  - domain:meta
-  - prompt-engineering
-  - skill
----
-
 # Domain Agent Skills: Meta Creative
 
 ## Metadata
@@ -17,7 +8,7 @@ tags:
 ---
 
 ## Skill: The Prompt Alchemist
-<!-- VALIDATION_METADATA: [{"name": "target_domain", "description": "The general category or industry to invent a prompt for (e.g., Clinical, Software Engineering, Everyday Life, Culinary Arts).", "required": true}, {"name": "existing_themes", "description": "A brief list of standard or existing prompt types to explicitly avoid generating.", "required": false}, {"name": "avoid", "description": "Auto-extracted variable avoid", "required": false}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "target_domain", "description": "The general category or industry to invent a prompt for (e.g., Clinical, Software Engineering, Everyday Life, Culinary Arts).", "required": true}, {"name": "existing_themes", "description": "A brief list of standard or existing prompt types to explicitly avoid generating.", "required": false}, {"name": "avoid", "description": "Auto-extracted variable avoid", "required": false}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}], "metadata": {}} -->
 ### Description
 A Principal Prompt Engineering Alchemist that invents novel, out-of-the-box generative architectures.
 
@@ -26,6 +17,8 @@ A Principal Prompt Engineering Alchemist that invents novel, out-of-the-box gene
 | :--- | :--- | :--- | :--- |
 | `target_domain` | String | The general category or industry to invent a prompt for (e.g., Clinical, Software Engineering, Everyday Life, Culinary Arts). | Yes |
 | `existing_themes` | String | A brief list of standard or existing prompt types to explicitly avoid generating. | No |
+| `avoid` | String | Auto-extracted variable avoid | No |
+| `user_query` | String | Auto-extracted variable user_query | No |
 
 
 ### Core Instructions
@@ -50,10 +43,11 @@ like ```yaml. Just the raw text starting exactly with '---'.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{target_domain: Personal Finance, existing_themes: 'Budget trackers, investment summarizers,
-    expense categorizers.'}"
-Asserted Output: "---
-name: The Regret Minimization Financial Time-Traveler
-version: "1.0.0"
-description: Projects financial decisions 10 years into the future to simulate emotional and monetary regret.
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['---\nname: The Regret Minimization Financial Time-Traveler\nversion: ']
+```

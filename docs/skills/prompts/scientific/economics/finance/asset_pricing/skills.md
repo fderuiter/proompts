@@ -1,14 +1,3 @@
----
-tags:
-  - asset-pricing
-  - continuous-time
-  - domain:finance/asset_pricing
-  - finance
-  - macro-finance
-  - skill
-  - stochastic-calculus
----
-
 # Domain Agent Skills: Scientific Economics Finance Asset pricing
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: continuous_time_asset_pricing_architect
-<!-- VALIDATION_METADATA: [{"name": "underlying_dynamics", "type": "string", "description": "The stochastic differential equation (SDE) governing the underlying state variable or asset (e.g., Geometric Brownian Motion, mean-reverting Ornstein-Uhlenbeck)."}, {"name": "investor_preferences", "type": "string", "description": "The utility function or stochastic discount factor specification (e.g., CRRA, Epstein-Zin, habits)."}, {"name": "asset_claim", "type": "string", "description": "The specific cash flow or payoff structure being priced (e.g., European call option, long-term bond, equity dividend stream)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "underlying_dynamics", "type": "string", "description": "The stochastic differential equation (SDE) governing the underlying state variable or asset (e.g., Geometric Brownian Motion, mean-reverting Ornstein-Uhlenbeck)."}, {"name": "investor_preferences", "type": "string", "description": "The utility function or stochastic discount factor specification (e.g., CRRA, Epstein-Zin, habits)."}, {"name": "asset_claim", "type": "string", "description": "The specific cash flow or payoff structure being priced (e.g., European call option, long-term bond, equity dividend stream)."}], "metadata": {}} -->
 ### Description
 Formulates continuous-time asset pricing models utilizing Ito calculus and stochastic discount factors, providing fundamental PDEs for asset valuation and risk premium derivations.
 
@@ -56,8 +45,20 @@ Provide the full mathematical derivation of the pricing PDE, the SDF dynamics, a
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

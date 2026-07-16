@@ -1,14 +1,3 @@
----
-tags:
-  - affective polarization
-  - domain:scientific
-  - epidemiology
-  - mass behavior
-  - psychology
-  - public health
-  - skill
----
-
 # Domain Agent Skills: Scientific Psychology Epidemiology Affective polarization
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: affective_polarization_contagion_mapper
-<!-- VALIDATION_METADATA: [{"name": "multimodal_data_schema", "description": "The JSON/CSV schema representing millions of rows of massive population multi-modal data proxies (e.g., social media linguistic markers, geolocation sentiment density, media consumption records).", "required": true, "default": "node_id: string, timestamp: string, outgroup_hostility_index: float, echo_chamber_isolation_score: float"}, {"name": "algorithmic_contagion_parameters", "description": "Parameters defining the automated algorithmic acceleration and epidemiological transmission dynamics of out-group hostility within the population network.", "required": true, "default": "algorithmic_acceleration_factor: 1.45, baseline_transmission_rate: 0.18, network_density: 0.62"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "multimodal_data_schema", "description": "The JSON/CSV schema representing millions of rows of massive population multi-modal data proxies (e.g., social media linguistic markers, geolocation sentiment density, media consumption records).", "required": true, "default": "node_id: string, timestamp: string, outgroup_hostility_index: float, echo_chamber_isolation_score: float"}, {"name": "algorithmic_contagion_parameters", "description": "Parameters defining the automated algorithmic acceleration and epidemiological transmission dynamics of out-group hostility within the population network.", "required": true, "default": "algorithmic_acceleration_factor: 1.45, baseline_transmission_rate: 0.18, network_density: 0.62"}], "metadata": {}} -->
 ### Description
 A highly robust, expert-level prompt designed to computationally model the automated propagation of affective polarization and out-group hostility across massive population networks using epidemiological and multi-modal data proxies.
 
@@ -57,5 +46,11 @@ Provide the resulting mathematically rigorous model projection, including predic
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "R_0"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['R_0']
+```

@@ -1,14 +1,3 @@
----
-tags:
-  - data
-  - domain:statistical_sciences
-  - functional
-  - inference
-  - nonparametric-methods
-  - skill
-  - statistics
----
-
 # Domain Agent Skills: Scientific Statistics Inference Nonparametric methods
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: Functional Data Analysis Architect
-<!-- VALIDATION_METADATA: [{"name": "data_characteristics", "description": "The underlying characteristics of the functional data (e.g., discretely observed, noisy).", "required": true}, {"name": "analytical_objective", "description": "The primary statistical objective (e.g., functional regression, curve alignment, principal component analysis).", "required": true}, {"name": "computational_constraints", "description": "Any relevant computational or specific methodological constraints.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "data_characteristics", "description": "The underlying characteristics of the functional data (e.g., discretely observed, noisy).", "required": true}, {"name": "analytical_objective", "description": "The primary statistical objective (e.g., functional regression, curve alignment, principal component analysis).", "required": true}, {"name": "computational_constraints", "description": "Any relevant computational or specific methodological constraints.", "required": true}], "metadata": {}} -->
 ### Description
 Acts as a Principal Statistician to design robust nonparametric methodologies for infinite-dimensional functional data.
 
@@ -54,5 +43,11 @@ Computational Constraints: <computational_constraints>{{ computational_constrain
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "functional principal component analysis"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['functional principal component analysis']
+```

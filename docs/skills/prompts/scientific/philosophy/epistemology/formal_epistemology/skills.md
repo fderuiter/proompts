@@ -1,21 +1,3 @@
----
-tags:
-  - bayesian
-  - bias
-  - cognitive
-  - defeater
-  - domain:scientific
-  - domain:scientific/philosophy/epistemology/formal_epistemology
-  - epistemic
-  - epistemological
-  - epistemology
-  - formal-epistemology
-  - peer
-  - philosophy
-  - regress
-  - skill
----
-
 # Domain Agent Skills: Scientific Philosophy Epistemology Formal epistemology
 
 ## Metadata
@@ -26,7 +8,7 @@ tags:
 ---
 
 ## Skill: epistemic_defeater_formal_analyzer
-<!-- VALIDATION_METADATA: [{"name": "TARGET_PROPOSITION", "type": "string", "description": "The initial proposition ($P$) believed by the epistemic agent, along with its initial justification ($J$)."}, {"name": "DEFEATER_CANDIDATE", "type": "string", "description": "The new evidence or proposition ($D$) that potentially acts as a defeater for the justification of $P$."}, {"name": "EPISTEMIC_FRAMEWORK", "type": "string", "description": "The underlying epistemological theory governing the justification (e.g., Evidentialism, Reliabilism, Internalist Foundationalism)."}, {"name": "defeater_candidate", "description": "Auto-extracted variable defeater_candidate", "required": false}, {"name": "epistemic_framework", "description": "Auto-extracted variable epistemic_framework", "required": false}, {"name": "target_proposition", "description": "Auto-extracted variable target_proposition", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "TARGET_PROPOSITION", "type": "string", "description": "The initial proposition ($P$) believed by the epistemic agent, along with its initial justification ($J$)."}, {"name": "DEFEATER_CANDIDATE", "type": "string", "description": "The new evidence or proposition ($D$) that potentially acts as a defeater for the justification of $P$."}, {"name": "EPISTEMIC_FRAMEWORK", "type": "string", "description": "The underlying epistemological theory governing the justification (e.g., Evidentialism, Reliabilism, Internalist Foundationalism)."}, {"name": "defeater_candidate", "description": "Auto-extracted variable defeater_candidate", "required": false}, {"name": "epistemic_framework", "description": "Auto-extracted variable epistemic_framework", "required": false}, {"name": "target_proposition", "description": "Auto-extracted variable target_proposition", "required": false}], "metadata": {}} -->
 ### Description
 A highly rigorous prompt designed to systematically analyze and formalize epistemic defeaters (rebutting, undercutting, and higher-order) within formal epistemological justification networks.
 
@@ -36,6 +18,9 @@ A highly rigorous prompt designed to systematically analyze and formalize episte
 | `TARGET_PROPOSITION` | String | The initial proposition ($P$) believed by the epistemic agent, along with its initial justification ($J$). | Yes |
 | `DEFEATER_CANDIDATE` | String | The new evidence or proposition ($D$) that potentially acts as a defeater for the justification of $P$. | Yes |
 | `EPISTEMIC_FRAMEWORK` | String | The underlying epistemological theory governing the justification (e.g., Evidentialism, Reliabilism, Internalist Foundationalism). | Yes |
+| `defeater_candidate` | String | Auto-extracted variable defeater_candidate | No |
+| `epistemic_framework` | String | Auto-extracted variable epistemic_framework | No |
+| `target_proposition` | String | Auto-extracted variable target_proposition | No |
 
 
 ### Core Instructions
@@ -69,16 +54,28 @@ Execute the systematic formalization and analysis of this epistemic defeater.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Typological Classification of the Defeater"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Typological Classification of the Defeater']
+```
 
-Input Context: "{}"
-Asserted Output: "Formalization of the Initial Epistemic State"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Formalization of the Initial Epistemic State']
+```
 
 ---
 
 ## Skill: cognitive_bias_epistemological_deconstructor
-<!-- VALIDATION_METADATA: [{"name": "EPISTEMOLOGICAL_MODEL", "description": "The epistemological framework or model under analysis (e.g., Reliabilism, Bayesian Epistemology).", "required": true}, {"name": "COGNITIVE_BIAS", "description": "The specific cognitive bias to be deconstructed within the model (e.g., Confirmation Bias, Base Rate Fallacy).", "required": true}, {"name": "EPISTEMIC_CONTEXT", "description": "The context or domain of knowledge in which the bias is operating (e.g., scientific inquiry, judicial decision-making).", "required": true}, {"name": "cognitive_bias", "description": "Auto-extracted variable cognitive_bias", "required": false}, {"name": "epistemic_context", "description": "Auto-extracted variable epistemic_context", "required": false}, {"name": "epistemological_model", "description": "Auto-extracted variable epistemological_model", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "EPISTEMOLOGICAL_MODEL", "description": "The epistemological framework or model under analysis (e.g., Reliabilism, Bayesian Epistemology).", "required": true}, {"name": "COGNITIVE_BIAS", "description": "The specific cognitive bias to be deconstructed within the model (e.g., Confirmation Bias, Base Rate Fallacy).", "required": true}, {"name": "EPISTEMIC_CONTEXT", "description": "The context or domain of knowledge in which the bias is operating (e.g., scientific inquiry, judicial decision-making).", "required": true}, {"name": "cognitive_bias", "description": "Auto-extracted variable cognitive_bias", "required": false}, {"name": "epistemic_context", "description": "Auto-extracted variable epistemic_context", "required": false}, {"name": "epistemological_model", "description": "Auto-extracted variable epistemological_model", "required": false}], "metadata": {}} -->
 ### Description
 A highly rigorous prompt designed to systematically deconstruct cognitive biases within epistemological models using formal logic and dialectical analysis.
 
@@ -88,6 +85,9 @@ A highly rigorous prompt designed to systematically deconstruct cognitive biases
 | `EPISTEMOLOGICAL_MODEL` | String | The epistemological framework or model under analysis (e.g., Reliabilism, Bayesian Epistemology). | Yes |
 | `COGNITIVE_BIAS` | String | The specific cognitive bias to be deconstructed within the model (e.g., Confirmation Bias, Base Rate Fallacy). | Yes |
 | `EPISTEMIC_CONTEXT` | String | The context or domain of knowledge in which the bias is operating (e.g., scientific inquiry, judicial decision-making). | Yes |
+| `cognitive_bias` | String | Auto-extracted variable cognitive_bias | No |
+| `epistemic_context` | String | Auto-extracted variable epistemic_context | No |
+| `epistemological_model` | String | Auto-extracted variable epistemological_model | No |
 
 
 ### Core Instructions
@@ -122,16 +122,28 @@ Execute the systematic deconstruction of this bias within the specified model an
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Formalization of the Epistemological Model"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Formalization of the Epistemological Model']
+```
 
-Input Context: "{}"
-Asserted Output: "Logical Deconstruction of Bias"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Logical Deconstruction of Bias']
+```
 
 ---
 
 ## Skill: Epistemic Regress Topology Architect
-<!-- VALIDATION_METADATA: [{"name": "EPISTEMIC_CLAIM", "description": "The core proposition or belief requiring justification (e.g., \"The external world exists independent of our perception\").", "required": true}, {"name": "JUSTIFICATION_FRAMEWORK", "description": "The specific epistemic framework to be applied (e.g., Classical Foundationalism, Holistic Coherentism, Epistemic Infinitism).", "required": true}, {"name": "DEFEATER_CONDITION", "description": "A formal defeater or counter-evidence that threatens the justificatory chain.", "required": true}, {"name": "defeater_condition", "description": "Auto-extracted variable defeater_condition", "required": false}, {"name": "epistemic_claim", "description": "Auto-extracted variable epistemic_claim", "required": false}, {"name": "justification_framework", "description": "Auto-extracted variable justification_framework", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "EPISTEMIC_CLAIM", "description": "The core proposition or belief requiring justification (e.g., \"The external world exists independent of our perception\").", "required": true}, {"name": "JUSTIFICATION_FRAMEWORK", "description": "The specific epistemic framework to be applied (e.g., Classical Foundationalism, Holistic Coherentism, Epistemic Infinitism).", "required": true}, {"name": "DEFEATER_CONDITION", "description": "A formal defeater or counter-evidence that threatens the justificatory chain.", "required": true}, {"name": "defeater_condition", "description": "Auto-extracted variable defeater_condition", "required": false}, {"name": "epistemic_claim", "description": "Auto-extracted variable epistemic_claim", "required": false}, {"name": "justification_framework", "description": "Auto-extracted variable justification_framework", "required": false}], "metadata": {}} -->
 ### Description
 A rigorous prompt designed to systematically map, formalize, and resolve epistemic justificatory chains and evaluate their susceptibility to the Münchhausen Trilemma (infinitism, foundationalism, coherentism).
 
@@ -141,6 +153,9 @@ A rigorous prompt designed to systematically map, formalize, and resolve epistem
 | `EPISTEMIC_CLAIM` | String | The core proposition or belief requiring justification (e.g., "The external world exists independent of our perception"). | Yes |
 | `JUSTIFICATION_FRAMEWORK` | String | The specific epistemic framework to be applied (e.g., Classical Foundationalism, Holistic Coherentism, Epistemic Infinitism). | Yes |
 | `DEFEATER_CONDITION` | String | A formal defeater or counter-evidence that threatens the justificatory chain. | Yes |
+| `defeater_condition` | String | Auto-extracted variable defeater_condition | No |
+| `epistemic_claim` | String | Auto-extracted variable epistemic_claim | No |
+| `justification_framework` | String | Auto-extracted variable justification_framework | No |
 
 
 ### Core Instructions
@@ -165,16 +180,28 @@ Execute the systematic mapping and evaluation of this epistemic justificatory ch
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Formalization of the Justificatory Topology"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Formalization of the Justificatory Topology']
+```
 
-Input Context: "{}"
-Asserted Output: "Trilemma Classification & Framework Application"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Trilemma Classification & Framework Application']
+```
 
 ---
 
 ## Skill: epistemic_peer_disagreement_formalizer
-<!-- VALIDATION_METADATA: [{"name": "EPISTEMIC_PEER", "type": "string", "description": "The definition of the epistemic peer (e.g., sharing the same evidence and cognitive virtues) and the domain of disagreement."}, {"name": "INITIAL_DOXASTIC_STATES", "type": "string", "description": "The initial credences or beliefs held by the agent and the peer regarding a specific target proposition before the discovery of the disagreement."}, {"name": "DISAGREEMENT_EVIDENCE", "type": "string", "description": "The evidence or fact of the disagreement itself (higher-order evidence) and how it is discovered."}, {"name": "disagreement_evidence", "description": "Auto-extracted variable disagreement_evidence", "required": false}, {"name": "epistemic_peer", "description": "Auto-extracted variable epistemic_peer", "required": false}, {"name": "initial_doxastic_states", "description": "Auto-extracted variable initial_doxastic_states", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "EPISTEMIC_PEER", "type": "string", "description": "The definition of the epistemic peer (e.g., sharing the same evidence and cognitive virtues) and the domain of disagreement."}, {"name": "INITIAL_DOXASTIC_STATES", "type": "string", "description": "The initial credences or beliefs held by the agent and the peer regarding a specific target proposition before the discovery of the disagreement."}, {"name": "DISAGREEMENT_EVIDENCE", "type": "string", "description": "The evidence or fact of the disagreement itself (higher-order evidence) and how it is discovered."}, {"name": "disagreement_evidence", "description": "Auto-extracted variable disagreement_evidence", "required": false}, {"name": "epistemic_peer", "description": "Auto-extracted variable epistemic_peer", "required": false}, {"name": "initial_doxastic_states", "description": "Auto-extracted variable initial_doxastic_states", "required": false}], "metadata": {}} -->
 ### Description
 A highly rigorous prompt designed to systematically analyze and formalize epistemic peer disagreement, evaluating conciliationist versus steadfast doxastic responses within formal epistemological models.
 
@@ -184,6 +211,9 @@ A highly rigorous prompt designed to systematically analyze and formalize episte
 | `EPISTEMIC_PEER` | String | The definition of the epistemic peer (e.g., sharing the same evidence and cognitive virtues) and the domain of disagreement. | Yes |
 | `INITIAL_DOXASTIC_STATES` | String | The initial credences or beliefs held by the agent and the peer regarding a specific target proposition before the discovery of the disagreement. | Yes |
 | `DISAGREEMENT_EVIDENCE` | String | The evidence or fact of the disagreement itself (higher-order evidence) and how it is discovered. | Yes |
+| `disagreement_evidence` | String | Auto-extracted variable disagreement_evidence | No |
+| `epistemic_peer` | String | Auto-extracted variable epistemic_peer | No |
+| `initial_doxastic_states` | String | Auto-extracted variable initial_doxastic_states | No |
 
 
 ### Core Instructions
@@ -217,16 +247,28 @@ Execute the systematic formalization and analysis of this epistemic peer disagre
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Formalization of Peerhood and Initial States"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Formalization of Peerhood and Initial States']
+```
 
-Input Context: "{}"
-Asserted Output: "Higher-Order Evidence Analysis"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Higher-Order Evidence Analysis']
+```
 
 ---
 
 ## Skill: bayesian_epistemological_update_formalizer
-<!-- VALIDATION_METADATA: [{"name": "PRIOR_CREDENCES", "type": "string", "description": "The initial probability distribution over a set of mutually exclusive and exhaustive hypotheses."}, {"name": "NEW_EVIDENCE", "type": "string", "description": "The newly acquired evidence, along with the likelihoods of observing this evidence given each hypothesis."}, {"name": "UPDATING_RULE", "type": "string", "description": "The specific epistemological updating mechanism to employ (e.g., Strict Conditionalization, Jeffrey Conditionalization)."}, {"name": "new_evidence", "description": "Auto-extracted variable new_evidence", "required": false}, {"name": "prior_credences", "description": "Auto-extracted variable prior_credences", "required": false}, {"name": "updating_rule", "description": "Auto-extracted variable updating_rule", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "PRIOR_CREDENCES", "type": "string", "description": "The initial probability distribution over a set of mutually exclusive and exhaustive hypotheses."}, {"name": "NEW_EVIDENCE", "type": "string", "description": "The newly acquired evidence, along with the likelihoods of observing this evidence given each hypothesis."}, {"name": "UPDATING_RULE", "type": "string", "description": "The specific epistemological updating mechanism to employ (e.g., Strict Conditionalization, Jeffrey Conditionalization)."}, {"name": "new_evidence", "description": "Auto-extracted variable new_evidence", "required": false}, {"name": "prior_credences", "description": "Auto-extracted variable prior_credences", "required": false}, {"name": "updating_rule", "description": "Auto-extracted variable updating_rule", "required": false}], "metadata": {}} -->
 ### Description
 A highly rigorous prompt designed to systematically evaluate probabilistic updating, Bayesian conditionalization, and credence adjustments across complex epistemic states.
 
@@ -236,6 +278,9 @@ A highly rigorous prompt designed to systematically evaluate probabilistic updat
 | `PRIOR_CREDENCES` | String | The initial probability distribution over a set of mutually exclusive and exhaustive hypotheses. | Yes |
 | `NEW_EVIDENCE` | String | The newly acquired evidence, along with the likelihoods of observing this evidence given each hypothesis. | Yes |
 | `UPDATING_RULE` | String | The specific epistemological updating mechanism to employ (e.g., Strict Conditionalization, Jeffrey Conditionalization). | Yes |
+| `new_evidence` | String | Auto-extracted variable new_evidence | No |
+| `prior_credences` | String | Auto-extracted variable prior_credences | No |
+| `updating_rule` | String | Auto-extracted variable updating_rule | No |
 
 
 ### Core Instructions
@@ -269,8 +314,20 @@ Execute the systematic formalization and analysis of this Bayesian epistemic upd
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Formalization of Prior Epistemic State"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Formalization of Prior Epistemic State']
+```
 
-Input Context: "{}"
-Asserted Output: "Bayesian Application"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Bayesian Application']
+```

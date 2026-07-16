@@ -1,14 +1,3 @@
----
-tags:
-  - analysis
-  - complex-analysis
-  - domain:pure_mathematics
-  - mathematics
-  - riemann
-  - skill
-  - surface
----
-
 # Domain Agent Skills: Scientific Mathematics Analysis Complex analysis
 
 ## Metadata
@@ -19,10 +8,9 @@ tags:
 ---
 
 ## Skill: Riemann Surface Analytic Continuation Architect
-<!-- VALIDATION_METADATA: [{"name": "function_definition", "description": "The local definition of the analytic function (e.g., a Taylor series or a functional equation) and its initial domain of holomorphy.", "type": "string"}, {"name": "topological_constraints", "description": "Any topological features or boundary conditions imposed on the global domain, including potential singularities, branch cuts, or the topology of the underlying manifold.", "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "function_definition", "description": "The local definition of the analytic function (e.g., a Taylor series or a functional equation) and its initial domain of holomorphy.", "type": "string"}, {"name": "topological_constraints", "description": "Any topological features or boundary conditions imposed on the global domain, including potential singularities, branch cuts, or the topology of the underlying manifold.", "type": "string"}], "metadata": {}} -->
 ### Description
 Systematically engineers rigorous analytic continuations and rigorously models Riemann surfaces for complex-valued functions, operating as a Principal Complex Analyst. Applies abstract structural analysis to identify branch points, monodromy groups, and construct global analytic functions.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -59,8 +47,20 @@ Topological Constraints:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

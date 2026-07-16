@@ -1,20 +1,3 @@
----
-tags:
-  - architect
-  - blueprint
-  - checklist
-  - data
-  - domain:clinical
-  - eclinical-integration
-  - integration
-  - mapping
-  - playbook
-  - regulatory
-  - skill
-  - transformation
-  - validation
----
-
 # Domain Agent Skills: Clinical Eclinical integration Eclinical integration workflow
 
 ## Metadata
@@ -25,7 +8,7 @@ tags:
 ---
 
 ## Skill: Regulatory and Validation Checklist
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Compile a compliance checklist for digital trial data integrations.
 
@@ -54,15 +37,19 @@ If any regulation is ambiguous, ask for clarification before proceeding.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Prepare validation checklist for integrating wearable device data.
-"
-Asserted Output: "Checklist noting 21 CFR Part 11 and GDPR requirements with supporting evidence artifacts.
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Checklist noting 21 CFR Part 11 and GDPR requirements with supporting evidence artifacts.\n']
+```
 
 ---
 
 ## Skill: Architect the Integration Blueprint
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Provide a structured plan for integrating site EHR systems with the sponsor's EDC and CTMS.
 
@@ -92,15 +79,19 @@ Ask clarifying questions if any assumption is unclear before answering.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Outline a blueprint for integrating cardiology EHR data.
-"
-Asserted Output: "High-level architecture with FHIR resources mapped to SDTM domains and risk mitigations.
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['High-level architecture with FHIR resources mapped to SDTM domains and risk mitigations.\n']
+```
 
 ---
 
 ## Skill: Data Mapping and Transformation Playbook
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Provide a repeatable workflow for mapping JSON FHIR bundles to SDTM-compliant tables.
 
@@ -130,7 +121,11 @@ Ask questions if source vocabularies, platforms, or validation depth are unclear
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Provide mapping approach for a sample FHIR Observation bundle.
-"
-Asserted Output: "ETL workflow with tools, quality checks, and SDTM mapping examples.
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['ETL workflow with tools, quality checks, and SDTM mapping examples.\n']
+```

@@ -1,47 +1,3 @@
----
-tags:
-  - alcoa-c
-  - alignment
-  - builder
-  - checklist
-  - consent
-  - data
-  - dht
-  - dissemination
-  - domain:regulatory
-  - emergency
-  - endpoint
-  - endpoints
-  - estimand
-  - exception
-  - factors
-  - framework
-  - human
-  - ich
-  - imaging
-  - indications
-  - information
-  - informed
-  - integration
-  - integrity
-  - intended
-  - multiple
-  - off-label
-  - process
-  - rationale
-  - regulatory
-  - regulatory-adherence
-  - rwe
-  - shelf-life
-  - skill
-  - standards
-  - strategy
-  - study
-  - summary
-  - usability
-  - use
----
-
 # Domain Agent Skills: Regulatory Adherence
 
 ## Metadata
@@ -52,7 +8,7 @@ tags:
 ---
 
 ## Skill: Imaging Endpoint Process Standards Checklist
-<!-- VALIDATION_METADATA: [{"name": "endpoint", "description": "The endpoint to use for this prompt", "required": true}, {"name": "modality", "description": "The modality to use for this prompt", "required": true}, {"name": "imaging_modality", "description": "Auto-extracted variable imaging_modality", "required": false}, {"name": "primary_endpoint", "description": "Auto-extracted variable primary_endpoint", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "endpoint", "description": "The endpoint to use for this prompt", "required": true}, {"name": "modality", "description": "The modality to use for this prompt", "required": true}, {"name": "imaging_modality", "description": "Auto-extracted variable imaging_modality", "required": false}, {"name": "primary_endpoint", "description": "Auto-extracted variable primary_endpoint", "required": false}], "metadata": {}} -->
 ### Description
 Review FDA guidance on imaging endpoints and create process checklists.
 
@@ -61,6 +17,8 @@ Review FDA guidance on imaging endpoints and create process checklists.
 | :--- | :--- | :--- | :--- |
 | `endpoint` | String | The endpoint to use for this prompt | Yes |
 | `modality` | String | The modality to use for this prompt | Yes |
+| `imaging_modality` | String | Auto-extracted variable imaging_modality | No |
+| `primary_endpoint` | String | Auto-extracted variable primary_endpoint | No |
 
 
 ### Core Instructions
@@ -93,15 +51,19 @@ Generate the process standards checklist.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "modality: Brain MRI
-endpoint: Progression-Free Survival (PFS) in Glioblastoma
-"
-Asserted Output: "Checklist for MRI scanner standardization (field strength), contrast timing, and blinded central review process."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Checklist for MRI scanner standardization (field strength), contrast timing, and blinded central review process.']
+```
 
 ---
 
 ## Skill: RWE Regulatory Framework Summary
-<!-- VALIDATION_METADATA: [{"name": "data_source", "description": "The data or dataset to analyze", "required": true}, {"name": "use_case", "description": "The use case to use for this prompt", "required": true}, {"name": "intended_use", "description": "Auto-extracted variable intended_use", "required": false}, {"name": "rwd_source", "description": "Auto-extracted variable rwd_source", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "data_source", "description": "The data or dataset to analyze", "required": true}, {"name": "use_case", "description": "The use case to use for this prompt", "required": true}, {"name": "intended_use", "description": "Auto-extracted variable intended_use", "required": false}, {"name": "rwd_source", "description": "Auto-extracted variable rwd_source", "required": false}], "metadata": {}} -->
 ### Description
 Review the FDA Real-World Evidence (RWE) Framework and fitness-for-use criteria.
 
@@ -110,6 +72,8 @@ Review the FDA Real-World Evidence (RWE) Framework and fitness-for-use criteria.
 | :--- | :--- | :--- | :--- |
 | `data_source` | String | The data or dataset to analyze | Yes |
 | `use_case` | String | The use case to use for this prompt | Yes |
+| `intended_use` | String | Auto-extracted variable intended_use | No |
+| `rwd_source` | String | Auto-extracted variable rwd_source | No |
 
 
 ### Core Instructions
@@ -141,15 +105,19 @@ Generate the RWE framework summary.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "data_source: Electronic Health Records (EHR) from a national oncology network.
-use_case: Supporting a label expansion for a rare cancer subtype.
-"
-Asserted Output: "Summary highlighting challenges of EHR (missing data, unstructured notes) and need for rigorous chart abstraction and validation."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Summary highlighting challenges of EHR (missing data, unstructured notes) and need for rigorous chart abstraction and validation.']
+```
 
 ---
 
 ## Skill: DHT Integration Regulatory Checklist
-<!-- VALIDATION_METADATA: [{"name": "dht_type", "description": "The dht type to use for this prompt", "required": true}, {"name": "endpoint", "description": "The endpoint to use for this prompt", "required": true}, {"name": "population", "description": "The population to use for this prompt", "required": true}, {"name": "target_population", "description": "Auto-extracted variable target_population", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "dht_type", "description": "The dht type to use for this prompt", "required": true}, {"name": "endpoint", "description": "The endpoint to use for this prompt", "required": true}, {"name": "population", "description": "The population to use for this prompt", "required": true}, {"name": "target_population", "description": "Auto-extracted variable target_population", "required": false}], "metadata": {}} -->
 ### Description
 Review FDA guidance for digital health technology (DHT) integration and validation.
 
@@ -159,6 +127,7 @@ Review FDA guidance for digital health technology (DHT) integration and validati
 | `dht_type` | String | The dht type to use for this prompt | Yes |
 | `endpoint` | String | The endpoint to use for this prompt | Yes |
 | `population` | String | The population to use for this prompt | Yes |
+| `target_population` | String | Auto-extracted variable target_population | No |
 
 
 ### Core Instructions
@@ -197,16 +166,19 @@ Generate the validation checklist.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "dht_type: Consumer-grade Smartwatch
-endpoint: Average daily heart rate
-population: Heart Failure patients (NYHA Class II-III)
-"
-Asserted Output: "Checklist covering validation of heart rate accuracy against gold standard, data transfer security, and patient compliance monitoring."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Checklist covering validation of heart rate accuracy against gold standard, data transfer security, and patient compliance monitoring.']
+```
 
 ---
 
 ## Skill: Intended Use and Indications for Use Alignment
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Review 510(k) drafts to ensure 'Intended Use' and 'Indications for Use' are verbatim and consistent.
 
@@ -242,13 +214,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Full 510(k) draft including labeling and executive summary. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: ICH E9(R1) Estimand Builder
-<!-- VALIDATION_METADATA: [{"name": "clinical_setting", "description": "The clinical setting to use for this prompt", "required": true}, {"name": "ice_list", "description": "The ice list to use for this prompt", "required": true}, {"name": "scientific_question", "description": "The question to answer", "required": true}, {"name": "key_intercurrent_events", "description": "Auto-extracted variable key_intercurrent_events", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "clinical_setting", "description": "The clinical setting to use for this prompt", "required": true}, {"name": "ice_list", "description": "The ice list to use for this prompt", "required": true}, {"name": "scientific_question", "description": "The question to answer", "required": true}, {"name": "key_intercurrent_events", "description": "Auto-extracted variable key_intercurrent_events", "required": false}], "metadata": {}} -->
 ### Description
 Construct a primary estimand description following the ICH E9 (R1) framework.
 
@@ -258,6 +236,7 @@ Construct a primary estimand description following the ICH E9 (R1) framework.
 | `clinical_setting` | String | The clinical setting to use for this prompt | Yes |
 | `ice_list` | String | The ice list to use for this prompt | Yes |
 | `scientific_question` | String | The question to answer | Yes |
+| `key_intercurrent_events` | String | Auto-extracted variable key_intercurrent_events | No |
 
 
 ### Core Instructions
@@ -294,16 +273,19 @@ Draft the estimand description.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "scientific_question: Does the drug improve survival regardless of adherence?
-clinical_setting: Advanced Oncology, Phase 3
-ice_list: Treatment discontinuation due to toxicity, initiation of new anti-cancer therapy.
-"
-Asserted Output: "Estimand using 'Treatment Policy' strategy for discontinuation and new therapy (ITT principle)."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["Estimand using 'Treatment Policy' strategy for discontinuation and new therapy (ITT principle)."]
+```
 
 ---
 
 ## Skill: Off-Label Information Dissemination
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Prepare a mandatory disclosure statement for disseminating peer-reviewed articles on unapproved uses.
 
@@ -339,13 +321,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Journal article and cleared labeling. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: Multiple Endpoints Regulatory Strategy
-<!-- VALIDATION_METADATA: [{"name": "issues", "description": "The issues to use for this prompt", "required": true}, {"name": "therapeutic_area", "description": "The therapeutic area to use for this prompt", "required": true}, {"name": "multiplicity_issues", "description": "Auto-extracted variable multiplicity_issues", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "issues", "description": "The issues to use for this prompt", "required": true}, {"name": "therapeutic_area", "description": "The therapeutic area to use for this prompt", "required": true}, {"name": "multiplicity_issues", "description": "Auto-extracted variable multiplicity_issues", "required": false}], "metadata": {}} -->
 ### Description
 Review and summarize FDA guidance on multiple endpoints and multiplicity strategies.
 
@@ -354,6 +342,7 @@ Review and summarize FDA guidance on multiple endpoints and multiplicity strateg
 | :--- | :--- | :--- | :--- |
 | `issues` | String | The issues to use for this prompt | Yes |
 | `therapeutic_area` | String | The therapeutic area to use for this prompt | Yes |
+| `multiplicity_issues` | String | Auto-extracted variable multiplicity_issues | No |
 
 
 ### Core Instructions
@@ -385,15 +374,19 @@ Generate the guidance summary.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "therapeutic_area: Oncology
-issues: Two primary endpoints (PFS and OS) and one key secondary endpoint (ORR).
-"
-Asserted Output: "Summary advising on splitting alpha between PFS/OS or using hierarchical testing, and handling potential unblinding after progression."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Summary advising on splitting alpha between PFS/OS or using hierarchical testing, and handling potential unblinding after progression.']
+```
 
 ---
 
 ## Skill: Informed Consent Exception (Emergency)
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Draft IRB documentation for an exception from informed consent in emergency research.
 
@@ -429,13 +422,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Clinical protocol and community consultation plans. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: ALCOA-C Data Integrity Checklist
-<!-- VALIDATION_METADATA: [{"name": "site_role", "description": "The role or persona to adopt", "required": true}, {"name": "system_type", "description": "The system type to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "site_role", "description": "The role or persona to adopt", "required": true}, {"name": "system_type", "description": "The system type to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Ensure data integrity following ALCOA-C principles.
 
@@ -480,15 +479,19 @@ Generate the ALCOA-C checklist.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "system_type: Direct Data Capture (DDC) Tablet
-site_role: Clinical Research Coordinator (CRC)
-"
-Asserted Output: "Checklist for CRC ensuring tablet entries are time-stamped, user-specific, and synced daily."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Checklist for CRC ensuring tablet entries are time-stamped, user-specific, and synced daily.']
+```
 
 ---
 
 ## Skill: Shelf-life Study Rationale
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Draft a rationale for correlating accelerated aging data with real-time requirements.
 
@@ -524,13 +527,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Material stability data, packaging type, and aging protocols. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: Human Factors/Usability Summary
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Summarize usability testing results to demonstrate minimized use-related risks.
 
@@ -566,5 +575,11 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Usability test protocols and summative data. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```

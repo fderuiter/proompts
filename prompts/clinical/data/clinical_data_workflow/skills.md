@@ -1,22 +1,3 @@
----
-tags:
-  - builder
-  - data
-  - detection
-  - discrepancy
-  - domain:clinical
-  - draft
-  - edit-check
-  - log
-  - management
-  - new
-  - plan
-  - query
-  - section
-  - skill
-  - specification
----
-
 # Domain Agent Skills: Clinical Data Clinical data workflow
 
 ## Metadata
@@ -27,7 +8,7 @@ tags:
 ---
 
 ## Skill: Draft a Data Management Plan Section
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Act as a Clinical Data Management subject-matter expert.
 
@@ -50,13 +31,19 @@ Act as a Clinical Data Management subject-matter expert.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Include handling of out-of-range lab values."
-Asserted Output: "Data Validation & Cleaning includes automated edit checks in Medidata Rave to flag out-of-range lab values."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Data Validation & Cleaning includes automated edit checks in Medidata Rave to flag out-of-range lab values.']
+```
 
 ---
 
 ## Skill: Discrepancy Detection & Query Log Generator
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "csv", "description": "Auto-extracted variable csv", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "csv", "description": "Auto-extracted variable csv", "required": false}], "metadata": {}} -->
 ### Description
 Examine a CSV dataset to detect discrepancies and generate a query log.
 
@@ -64,6 +51,7 @@ Examine a CSV dataset to detect discrepancies and generate a query log.
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | `input` | String | The primary input or query text for the prompt | Yes |
+| `csv` | String | Auto-extracted variable csv | No |
 
 
 ### Core Instructions
@@ -89,19 +77,28 @@ Output format: Markdown table
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Subject_ID,Visit,Field,Value
-001,Baseline,Age,34
-002,Baseline,Age,28"
-Asserted Output: "No data discrepancies detected."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['No data discrepancies detected.']
+```
 
-Input Context: "Subject_ID,Visit,Field,Value
-003,Baseline,Age,-5"
-Asserted Output: "| 003 | Baseline | Age |"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['| 003 | Baseline | Age |']
+```
 
 ---
 
 ## Skill: Edit-Check Specification Builder for New eCRF Fields
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Create edit-check specifications for the new Concomitant Medication module in Medidata Rave.
 
@@ -125,6 +122,11 @@ You are a Clinical Data Specialist configuring Medidata Rave.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Field: CMSTDTC, CMENDTC
-Rule: End Date must be on or after Start Date."
-Asserted Output: "IF CMENDTC < CMSTDTC THEN raise query "End Date precedes Start Date.""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['IF CMENDTC < CMSTDTC THEN raise query ']
+```

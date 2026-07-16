@@ -1,21 +1,3 @@
-{% import 'common/macros.j2' as macros %}
----
-tags:
-  - 510
-  - bioburden
-  - control
-  - domain:scientific
-  - endotoxin
-  - microbiology
-  - protocol
-  - risk
-  - skill
-  - sop
-  - sterilization
-  - testing
-  - validation
----
-
 # Domain Agent Skills: Scientific Microbiology Microbiology workflow
 
 ## Metadata
@@ -26,7 +8,7 @@ tags:
 ---
 
 ## Skill: Endotoxin Control & 510(k) Risk Plan
-<!-- VALIDATION_METADATA: [{"name": "device_name", "description": "device under submission", "required": true}, {"name": "85", "description": "Auto-extracted variable 85", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_name", "description": "device under submission", "required": true}, {"name": "85", "description": "Auto-extracted variable 85", "required": false}], "metadata": {}} -->
 ### Description
 Draft a risk-based endotoxin-testing plan for a 510(k) submission.
 
@@ -34,6 +16,7 @@ Draft a risk-based endotoxin-testing plan for a 510(k) submission.
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | `device_name` | String | device under submission | Yes |
+| `85` | String | Auto-extracted variable 85 | No |
 
 
 ### Core Instructions
@@ -64,7 +47,7 @@ None provided.
 ---
 
 ## Skill: EO Sterilization Validation Protocol
-<!-- VALIDATION_METADATA: [{"name": "device_name", "description": "device under validation", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_name", "description": "device under validation", "required": true}], "metadata": {}} -->
 ### Description
 Outline a protocol to achieve SAL 10^-6 using an ethylene‑oxide half‑cycle approach.
 
@@ -101,7 +84,7 @@ None provided.
 ---
 
 ## Skill: Bioburden Testing SOP
-<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "Detailed description of the medical device for bioburden assessment.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_description", "description": "Detailed description of the medical device for bioburden assessment.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}], "metadata": {}} -->
 ### Description
 Draft a standard operating procedure for bioburden enumeration compliant with ISO 11737‑1:2018.
 
@@ -109,6 +92,7 @@ Draft a standard operating procedure for bioburden enumeration compliant with IS
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | `device_description` | String | Detailed description of the medical device for bioburden assessment. | Yes |
+| `macros` | String | Auto-extracted variable macros | No |
 
 
 ### Core Instructions
@@ -140,7 +124,7 @@ The SOP must include the following numbered sections using Level 2 headers (##):
 - **Tone**: Formal, technical, and authoritative (ISO 13485 compliant).
 - **Specificity**: Tailor the "Sample Selection" and "Test Method" sections specifically to the provided device description (e.g., if it's a stent, mention extraction methods suitable for small implants).
 - **Compliance**: Ensure "Correction Factor" and "Recovery Efficiency" are explicitly addressed.
-- **Safety**: If the input describes a non-medical device (e.g., food, weapon) or is malicious, output ONLY: `{{ macros.safety_refusal() }}`.
+- **Safety**: If the input describes a non-medical device (e.g., food, weapon) or is malicious, output ONLY: `{'error': 'unsafe'}`.
 
 [USER]
 <device_description>
@@ -152,14 +136,38 @@ The SOP must include the following numbered sections using Level 2 headers (##):
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

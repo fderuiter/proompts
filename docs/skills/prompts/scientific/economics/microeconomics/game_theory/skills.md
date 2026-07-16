@@ -1,13 +1,3 @@
----
-tags:
-  - auction-theory
-  - domain:microeconomics/game_theory
-  - game-theory
-  - mechanism-design
-  - microeconomics
-  - skill
----
-
 # Domain Agent Skills: Scientific Economics Microeconomics Game theory
 
 ## Metadata
@@ -18,7 +8,7 @@ tags:
 ---
 
 ## Skill: n_player_bayesian_nash_equilibrium_auction_architect
-<!-- VALIDATION_METADATA: [{"name": "number_of_bidders", "type": "string", "description": "The number of risk-neutral bidders, typically denoted as $n$."}, {"name": "valuation_distribution", "type": "string", "description": "The distribution from which independent private values (IPV) or affiliated values are drawn (e.g., $U[0, 1]$, exponential)."}, {"name": "auction_format", "type": "string", "description": "The specific rules of the auction (e.g., First-Price Sealed-Bid, Second-Price, All-Pay)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "number_of_bidders", "type": "string", "description": "The number of risk-neutral bidders, typically denoted as $n$."}, {"name": "valuation_distribution", "type": "string", "description": "The distribution from which independent private values (IPV) or affiliated values are drawn (e.g., $U[0, 1]$, exponential)."}, {"name": "auction_format", "type": "string", "description": "The specific rules of the auction (e.g., First-Price Sealed-Bid, Second-Price, All-Pay)."}], "metadata": {}} -->
 ### Description
 Formulates rigorous n-player Bayesian Nash Equilibria (BNE) models for auction theory, providing bidding strategies, expected utilities, and revenue equivalence analyses.
 
@@ -54,8 +44,20 @@ Provide the full mathematical derivation, the explicit bidding strategy $\beta(v
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

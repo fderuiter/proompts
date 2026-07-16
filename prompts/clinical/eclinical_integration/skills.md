@@ -1,24 +1,3 @@
----
-tags:
-  - computer
-  - consent
-  - csv
-  - dht
-  - digital
-  - domain:clinical
-  - eclinical-integration
-  - generator
-  - health
-  - implementation
-  - script
-  - skill
-  - strategy
-  - system
-  - technology
-  - uat
-  - validation
----
-
 # Domain Agent Skills: Clinical Eclinical integration
 
 ## Metadata
@@ -29,7 +8,7 @@ tags:
 ---
 
 ## Skill: Computer System Validation (CSV)
-<!-- VALIDATION_METADATA: [{"name": "system_requirements", "description": "The requirements or specifications", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "system_requirements", "description": "The requirements or specifications", "required": true}], "metadata": {}} -->
 ### Description
 Generate validation documents for EDC systems.
 
@@ -58,15 +37,19 @@ Markdown UAT Script and Validation Summary.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "system_requirements: EDC system with e-signature modules.
-"
-Asserted Output: "UAT Script
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['UAT Script\n']
+```
 
 ---
 
 ## Skill: IQ/OQ/PQ Validation
-<!-- VALIDATION_METADATA: [{"name": "cdms_specs", "description": "Validation tests: `{{ validation_tests }}`", "required": true}, {"name": "crf_draft", "description": "The crf draft to use for this prompt", "required": true}, {"name": "dmp", "description": "Clinical Protocol: `{{ protocol }}`", "required": true}, {"name": "protocol", "description": "CRF Design Draft: `{{ crf_draft }}`", "required": true}, {"name": "validation_tests", "description": "Clinical Data Management Plan (DMP): `{{ dmp }}`", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "cdms_specs", "description": "Validation tests: `{{ validation_tests }}`", "required": true}, {"name": "crf_draft", "description": "The crf draft to use for this prompt", "required": true}, {"name": "dmp", "description": "Clinical Protocol: `{{ protocol }}`", "required": true}, {"name": "protocol", "description": "CRF Design Draft: `{{ crf_draft }}`", "required": true}, {"name": "validation_tests", "description": "Clinical Data Management Plan (DMP): `{{ dmp }}`", "required": true}], "metadata": {}} -->
 ### Description
 Design and execute a series of IQ, OQ, and PQ validation tests for clinical systems.
 
@@ -103,19 +86,19 @@ Markdown Validation Report with sections for IQ, OQ, PQ, and CRF Verification.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "cdms_specs: "Version 2.0"
-validation_tests: "Test Case 1: Login"
-dmp: "DMP v1"
-protocol: "Protocol A"
-crf_draft: "CRF v0.9"
-"
-Asserted Output: "Validation Report
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Validation Report\n']
+```
 
 ---
 
 ## Skill: eConsent Implementation Strategy
-<!-- VALIDATION_METADATA: [{"name": "platform_specs", "description": "The platform specs to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "platform_specs", "description": "The platform specs to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Verify eConsent platform compliance and workflow.
 
@@ -144,15 +127,19 @@ Markdown report with Workflow Diagram description and Compliance Checklist.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "platform_specs: Vendor X eConsent solution.
-"
-Asserted Output: "Identity Verification
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Identity Verification\n']
+```
 
 ---
 
 ## Skill: UAT Script Generator
-<!-- VALIDATION_METADATA: [{"name": "dummy_data_reqs", "description": "eCRF Design: `{{ ecrf_design }}`", "required": true}, {"name": "ecrf_design", "description": "The ecrf design to use for this prompt", "required": true}, {"name": "uat_scope", "description": "Test Patient Dummy Data Requirements: `{{ dummy_data_reqs }}`", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "dummy_data_reqs", "description": "eCRF Design: `{{ ecrf_design }}`", "required": true}, {"name": "ecrf_design", "description": "The ecrf design to use for this prompt", "required": true}, {"name": "uat_scope", "description": "Test Patient Dummy Data Requirements: `{{ dummy_data_reqs }}`", "required": true}], "metadata": {}} -->
 ### Description
 Generate a User Acceptance Testing (UAT) script with dummy data inputs.
 
@@ -185,17 +172,19 @@ Markdown UAT Script with Test Steps, Input Data, Expected Results, and Actual Re
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "uat_scope: "Verify Demographics module"
-dummy_data_reqs: "Patient age < 18 should fail"
-ecrf_design: "Field: Age, Type: Number, Min: 18"
-"
-Asserted Output: "| Test Step | Input Data | Expected Result |
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['| Test Step | Input Data | Expected Result |\n']
+```
 
 ---
 
 ## Skill: Digital Health Technology (DHT) Validation
-<!-- VALIDATION_METADATA: [{"name": "dht_specs", "description": "The dht specs to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "dht_specs", "description": "The dht specs to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Create validation strategy for DHTs.
 
@@ -224,7 +213,11 @@ Markdown Validation Strategy.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "dht_specs: Accelerometer for gait analysis.
-"
-Asserted Output: "Validation Strategy
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Validation Strategy\n']
+```

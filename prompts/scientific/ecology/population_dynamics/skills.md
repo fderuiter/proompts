@@ -1,20 +1,3 @@
----
-tags:
-  - domain:ecology
-  - ecology
-  - lotka
-  - mathematical-epidemiology
-  - metapopulation
-  - population-dynamics
-  - seir
-  - seir-modeling
-  - skill
-  - spatial
-  - spatial-dynamics
-  - stochastic
-  - volterra
----
-
 # Domain Agent Skills: Scientific Ecology Population dynamics
 
 ## Metadata
@@ -25,7 +8,7 @@ tags:
 ---
 
 ## Skill: spatial_metapopulation_seir_epidemiology_architect
-<!-- VALIDATION_METADATA: [{"name": "host_species_description", "type": "string", "description": "Detailed characteristics of the primary host population, including natural mortality and birth rates."}, {"name": "inter_patch_migration_network", "type": "string", "description": "The topology or mathematical structure of the migration/connectivity network between habitat patches (e.g., gravity model, adjacency matrix)."}, {"name": "stochastic_forcing_conditions", "type": "string", "description": "Environmental or demographic stochasticity acting upon the transmission coefficient or carrying capacities."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "host_species_description", "type": "string", "description": "Detailed characteristics of the primary host population, including natural mortality and birth rates."}, {"name": "inter_patch_migration_network", "type": "string", "description": "The topology or mathematical structure of the migration/connectivity network between habitat patches (e.g., gravity model, adjacency matrix)."}, {"name": "stochastic_forcing_conditions", "type": "string", "description": "Environmental or demographic stochasticity acting upon the transmission coefficient or carrying capacities."}], "metadata": {}} -->
 ### Description
 A Principal Disease Ecologist and Mathematical Epidemiologist framework to strictly model complex spatial meta-population pathogen transmission using coupled differential equations.
 
@@ -69,16 +52,28 @@ Stochastic Forcing Conditions:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: stochastic_lotka_volterra_population_modeler
-<!-- VALIDATION_METADATA: [{"name": "species_network", "description": "The adjacency matrix or interaction network describing the trophic interactions (predation, competition, mutualism) between species."}, {"name": "environmental_stochasticity", "description": "The mathematical form and parameters for the stochastic noise driving environmental variability."}, {"name": "spatial_configuration", "description": "The metapopulation structure or continuous spatial domain, including migration rates or diffusion coefficients."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "species_network", "description": "The adjacency matrix or interaction network describing the trophic interactions (predation, competition, mutualism) between species."}, {"name": "environmental_stochasticity", "description": "The mathematical form and parameters for the stochastic noise driving environmental variability."}, {"name": "spatial_configuration", "description": "The metapopulation structure or continuous spatial domain, including migration rates or diffusion coefficients."}], "metadata": {}} -->
 ### Description
 Rigorously models stochastic multispecies population dynamics using generalized Lotka-Volterra equations with environmental noise.
 
@@ -123,5 +118,11 @@ Provide the complete mathematical blueprint and stability analysis.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

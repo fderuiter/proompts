@@ -1,14 +1,3 @@
----
-tags:
-  - ai
-  - cybernetics
-  - domain:lifestyle
-  - experimental
-  - gastronomy
-  - memory
-  - skill
----
-
 # Domain Agent Skills: Lifestyle Culinary
 
 ## Metadata
@@ -19,10 +8,9 @@ tags:
 ---
 
 ## Skill: Culinary Amnestic Reconstruction Engine (CARE)
-<!-- VALIDATION_METADATA: [{"name": "memory_fragment", "description": "The user's vague, fragmentary description of the food memory.", "required": true}, {"name": "sensory_triggers", "description": "Associated sensory details (smells, sounds, textures, lighting).", "required": true}, {"name": "emotional_resonance", "description": "The feeling or emotion the user wants to recapture (e.g., safety, wonder, melancholy).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "memory_fragment", "description": "The user's vague, fragmentary description of the food memory.", "required": true}, {"name": "sensory_triggers", "description": "Associated sensory details (smells, sounds, textures, lighting).", "required": true}, {"name": "emotional_resonance", "description": "The feeling or emotion the user wants to recapture (e.g., safety, wonder, melancholy).", "required": true}], "metadata": {}} -->
 ### Description
 A cybernetic gastronomy system that reconstructs forgotten food memories into precise molecular recipes based on sensory fragments and emotional residue.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -75,8 +63,11 @@ Output the result in strict Markdown.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{memory_fragment: 'Sitting on the porch in a thunderstorm, eating something warm and
-    sweet, watching the rain hit the hot pavement.', sensory_triggers: 'Petrichor,
-    ozone, humidity, warm ceramic, distant thunder.', emotional_resonance: Safe but
-    electrified.}"
-Asserted Output: "Recipe for 'Thunderstorm Petrichor Soufflé' with ozone-infused foam."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["Recipe for 'Thunderstorm Petrichor Soufflé' with ozone-infused foam."]
+```

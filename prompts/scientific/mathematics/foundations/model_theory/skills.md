@@ -1,16 +1,3 @@
----
-tags:
-  - domain:scientific/mathematics/foundations/model_theory
-  - foundations
-  - los
-  - mathematics
-  - model
-  - model-theory
-  - skill
-  - theoretic
-  - ultraproduct
----
-
 # Domain Agent Skills: Scientific Mathematics Foundations Model theory
 
 ## Metadata
@@ -21,12 +8,11 @@ tags:
 ---
 
 ## Skill: model_theoretic_type_space_architect
-<!-- VALIDATION_METADATA: [{"name": "first_order_theory", "description": "The formal first-order theory $T$ in a specified signature $\\mathcal{L}$ (e.g., theory of algebraically closed fields).", "type": "string"}, {"name": "type_space_domain", "description": "The parameter set $A$ and the specific tuples for the Stone space $S_n(A)$.", "type": "string"}, {"name": "structural_property", "description": "The model-theoretic property or conjecture to verify (e.g., $\\omega$-stability, existence of prime models, omitting types).", "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "first_order_theory", "description": "The formal first-order theory $T$ in a specified signature $\\mathcal{L}$ (e.g., theory of algebraically closed fields).", "type": "string"}, {"name": "type_space_domain", "description": "The parameter set $A$ and the specific tuples for the Stone space $S_n(A)$.", "type": "string"}, {"name": "structural_property", "description": "The model-theoretic property or conjecture to verify (e.g., $\\omega$-stability, existence of prime models, omitting types).", "type": "string"}], "metadata": {}} -->
 ### Description
 A Principal Research Logician and Model Theorist designed to rigorously analyze
 type spaces of first-order theories, formalize stability classifications, and evaluate
 Omitting Types theorems for advanced abstract structures.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -52,13 +38,19 @@ Provide the formal translation of the theory, a strict topological analysis of t
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: ultraproduct_los_theorem_architect
-<!-- VALIDATION_METADATA: [{"name": "signature", "description": "The first-order signature (language) \\mathcal{L} detailing constants, functions, and relation symbols."}, {"name": "index_set", "description": "The index set I and the specific non-principal ultrafilter U over I used in the ultraproduct construction."}, {"name": "structures", "description": "The indexed family of \\mathcal{L}-structures \\{\\mathcal{M}_i\\}_{i \\in I} used to build the ultraproduct."}, {"name": "logical_statement", "description": "The first-order \\mathcal{L}-sentence or formula \\varphi to be evaluated via \\u0141o\\u015b's Theorem."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "signature", "description": "The first-order signature (language) \\mathcal{L} detailing constants, functions, and relation symbols."}, {"name": "index_set", "description": "The index set I and the specific non-principal ultrafilter U over I used in the ultraproduct construction."}, {"name": "structures", "description": "The indexed family of \\mathcal{L}-structures \\{\\mathcal{M}_i\\}_{i \\in I} used to build the ultraproduct."}, {"name": "logical_statement", "description": "The first-order \\mathcal{L}-sentence or formula \\varphi to be evaluated via \\u0141o\\u015b's Theorem."}], "metadata": {}} -->
 ### Description
 Acts as a Principal Mathematical Logician to rigorously formalize and analyze ultraproducts of structures and apply \u0141o\u015b's Theorem for non-standard models and compactness proofs.
 
@@ -87,5 +79,11 @@ Rigorously detail the equivalence relation $\sim_U$, define the ultraproduct str
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

@@ -1,73 +1,3 @@
-{% import 'common/macros.j2' as macros %}
----
-tags:
-  - active
-  - analyzer
-  - architect
-  - astrocytic
-  - attractor
-  - basal
-  - biophysical
-  - brain
-  - cable
-  - causal
-  - computation
-  - computational-theoretical-neuroscience
-  - connectome
-  - continuous
-  - coupling
-  - deep
-  - dendritic
-  - domain:computational_theoretical_neuroscience
-  - domain:neuroscience
-  - domain:scientific
-  - domain:scientific/neuroscience
-  - dynamic
-  - dynamics
-  - eeg
-  - energy
-  - field
-  - fmri
-  - fokker
-  - free
-  - ganglia
-  - graph
-  - hemodynamic
-  - hodgkin
-  - huxley
-  - learning
-  - manifold
-  - modal
-  - modeler
-  - modeling
-  - multi
-  - network
-  - neural
-  - neuromorphic
-  - neurovascular
-  - optogenetic
-  - photocurrent
-  - planck
-  - plasticity
-  - population
-  - principle
-  - response
-  - skill
-  - space
-  - spatiotemporal
-  - spiking
-  - state
-  - stimulation
-  - synapse
-  - synaptic
-  - theoretical
-  - theory
-  - tripartite
-  - update
-  - weight
-  - whole
----
-
 # Domain Agent Skills: Scientific Computational theoretical neuroscience
 
 ## Metadata
@@ -78,7 +8,7 @@ tags:
 ---
 
 ## Skill: deep_brain_stimulation_biophysical_architect
-<!-- VALIDATION_METADATA: [{"name": "stimulation_parameters", "description": "The properties of the extracellular electrical stimulation, including waveform shape, frequency, pulse width, and amplitude.", "type": "string"}, {"name": "target_neural_circuit", "description": "The neuroanatomical target and the specific cellular populations involved (e.g., Subthalamic Nucleus (STN) to Globus Pallidus interna (GPi)).", "type": "string"}, {"name": "electrode_geometry", "description": "The spatial configuration and biophysical properties of the stimulating electrode and surrounding tissue (e.g., anisotropic conductivity).", "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "stimulation_parameters", "description": "The properties of the extracellular electrical stimulation, including waveform shape, frequency, pulse width, and amplitude.", "type": "string"}, {"name": "target_neural_circuit", "description": "The neuroanatomical target and the specific cellular populations involved (e.g., Subthalamic Nucleus (STN) to Globus Pallidus interna (GPi)).", "type": "string"}, {"name": "electrode_geometry", "description": "The spatial configuration and biophysical properties of the stimulating electrode and surrounding tissue (e.g., anisotropic conductivity).", "type": "string"}], "metadata": {}} -->
 ### Description
 A Lead Computational Neurophysiologist agent designed to derive mathematically rigorous biophysical models of Deep Brain Stimulation (DBS) interacting with neural circuits.
 
@@ -124,16 +54,28 @@ Construct a rigorous biophysical model and analyze the expected neurocomputation
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A rigorous mathematical formulation featuring the volume conductor equation, derivation of the activating function $\\frac{\\partial^2 V_e}{\ \partial x^2}$ along myelinated fibers, and modified cable equation."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A rigorous mathematical formulation featuring the volume conductor equation, derivation of the activating function $\\\\frac{\\\\partial^2 V_e}{\\ \\partial x^2}$ along myelinated fibers, and modified cable equation.']
+```
 
-Input Context: "{}"
-Asserted Output: "An authoritative derivation of the extracellular potential field considering anisotropic conductivity tensors $\\sigma$, modified cable equation $c_m \ \frac{\\partial V_m}{\\partial t} = \\frac{1}{r_i} \\frac{\\partial^2 V_m}{\\partial x^2} - i_{ion} + \\frac{1}{r_i} \\frac{\\partial^2 V_e}{\ \partial x^2}$, and boundary condition specification."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['An authoritative derivation of the extracellular potential field considering anisotropic conductivity tensors $\\\\sigma$, modified cable equation $c_m \\ \\frac{\\\\partial V_m}{\\\\partial t} = \\\\frac{1}{r_i} \\\\frac{\\\\partial^2 V_m}{\\\\partial x^2} - i_{ion} + \\\\frac{1}{r_i} \\\\frac{\\\\partial^2 V_e}{\\ \\partial x^2}$, and boundary condition specification.']
+```
 
 ---
 
 ## Skill: multi_modal_fmri_eeg_integration_architect
-<!-- VALIDATION_METADATA: [{"name": "study_objectives", "type": "string", "description": "The core scientific or clinical objectives of the multi-modal study."}, {"name": "eeg_specs", "type": "string", "description": "Technical specifications of the EEG recording setup."}, {"name": "fmri_specs", "type": "string", "description": "Technical specifications of the fMRI acquisition sequence."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "study_objectives", "type": "string", "description": "The core scientific or clinical objectives of the multi-modal study."}, {"name": "eeg_specs", "type": "string", "description": "Technical specifications of the EEG recording setup."}, {"name": "fmri_specs", "type": "string", "description": "Technical specifications of the fMRI acquisition sequence."}], "metadata": {}} -->
 ### Description
 Designs advanced, mathematically rigorous multi-modal fMRI and EEG data integration pipelines adhering strictly to BIDS standards.
 
@@ -178,13 +120,19 @@ Please design a multi-modal integration pipeline for the following study:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: astrocytic_tripartite_synapse_architect
-<!-- VALIDATION_METADATA: [{"name": "synaptic_elements", "description": "The specific pre-synaptic, post-synaptic, and astrocytic components being modeled, including their spatial geometry."}, {"name": "signaling_pathways", "description": "A comprehensive list of astrocytic GPCRs, IP3 kinetics, calcium channels, and gliotransmitter release mechanisms."}, {"name": "stimulus_protocol", "description": "The precise experimental pre-synaptic firing pattern or exogenous neurotransmitter application protocol."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "synaptic_elements", "description": "The specific pre-synaptic, post-synaptic, and astrocytic components being modeled, including their spatial geometry."}, {"name": "signaling_pathways", "description": "A comprehensive list of astrocytic GPCRs, IP3 kinetics, calcium channels, and gliotransmitter release mechanisms."}, {"name": "stimulus_protocol", "description": "The precise experimental pre-synaptic firing pattern or exogenous neurotransmitter application protocol."}], "metadata": {}} -->
 ### Description
 A Principal Computational Neuroscientist agent designed to analytically derive and simulate complex biophysical dynamics of the tripartite synapse, including astrocytic calcium signaling and gliotransmission.
 
@@ -214,13 +162,19 @@ Construct a rigorous biophysical model and analyze the expected neurocomputation
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: optogenetic_photocurrent_biophysical_modeler
-<!-- VALIDATION_METADATA: [{"name": "opsin_type", "description": "The specific optogenetic actuator being modeled (e.g., ChR2, NpHR, ArchT) and its biophysical variants."}, {"name": "light_stimulation_protocol", "description": "The precise optical stimulation parameters, including irradiance (mW/mm^2), wavelength (nm), pulse width, and frequency."}, {"name": "neuronal_geometry", "description": "The spatial distribution of the opsin expression (e.g., somatic vs. dendritic localization) and underlying host membrane properties."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "opsin_type", "description": "The specific optogenetic actuator being modeled (e.g., ChR2, NpHR, ArchT) and its biophysical variants."}, {"name": "light_stimulation_protocol", "description": "The precise optical stimulation parameters, including irradiance (mW/mm^2), wavelength (nm), pulse width, and frequency."}, {"name": "neuronal_geometry", "description": "The spatial distribution of the opsin expression (e.g., somatic vs. dendritic localization) and underlying host membrane properties."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}], "metadata": {}} -->
 ### Description
 A Principal Computational Neurophysiologist agent designed to analytically derive and simulate multi-state Markov models for optogenetic photocurrent kinetics and their integration into Hodgkin-Huxley membrane dynamics.
 
@@ -230,6 +184,7 @@ A Principal Computational Neurophysiologist agent designed to analytically deriv
 | `opsin_type` | String | The specific optogenetic actuator being modeled (e.g., ChR2, NpHR, ArchT) and its biophysical variants. | Yes |
 | `light_stimulation_protocol` | String | The precise optical stimulation parameters, including irradiance (mW/mm^2), wavelength (nm), pulse width, and frequency. | Yes |
 | `neuronal_geometry` | String | The spatial distribution of the opsin expression (e.g., somatic vs. dendritic localization) and underlying host membrane properties. | Yes |
+| `macros` | String | Auto-extracted variable macros | No |
 
 
 ### Core Instructions
@@ -248,19 +203,37 @@ Construct a rigorous biophysical Markov model and analyze the expected neurocomp
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A rigorous analytical derivation of a 3-state or 4-state Markov model for ChR2, including the required LaTeX equations for membrane voltage ($C_m \frac{dV_m}{dt} = -I_{ion} + I_{ext}$) and the Nernst equation, integrated into the host dynamics."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A rigorous analytical derivation of a 3-state or 4-state Markov model for ChR2, including the required LaTeX equations for membrane voltage ($C_m \\frac{dV_m}{dt} = -I_{ion} + I_{ext}$) and the Nernst equation, integrated into the host dynamics.']
+```
 
-Input Context: "{}"
-Asserted Output: "A detailed biophysical formulation of the chloride pump kinetics and resulting hyperpolarizing photocurrent, utilizing appropriate LaTeX biophysical equations and Markov state transitions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A detailed biophysical formulation of the chloride pump kinetics and resulting hyperpolarizing photocurrent, utilizing appropriate LaTeX biophysical equations and Markov state transitions.']
+```
 
-Input Context: "{}"
-Asserted Output: "{{ macros.safety_refusal() }}"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['{{ macros.safety_refusal() }}']
+```
 
 ---
 
 ## Skill: basal_ganglia_td_learning_architect
-<!-- VALIDATION_METADATA: [{"name": "associative_learning_paradigm", "description": "The behavioral task or learning paradigm (e.g., Pavlovian conditioning, instrumental learning, multi-armed bandit)."}, {"name": "basal_ganglia_circuitry_constraints", "description": "Specific neuroanatomical and synaptic assumptions (e.g., D1/D2 dichotomy, cortico-striatal connectivity, actor-critic mappings)."}, {"name": "dopamine_rpe_dynamics", "description": "Parameters governing the dopaminergic reward prediction error (RPE) signal, including tonic baselines, phasic burst thresholds, and temporal discounting."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "associative_learning_paradigm", "description": "The behavioral task or learning paradigm (e.g., Pavlovian conditioning, instrumental learning, multi-armed bandit)."}, {"name": "basal_ganglia_circuitry_constraints", "description": "Specific neuroanatomical and synaptic assumptions (e.g., D1/D2 dichotomy, cortico-striatal connectivity, actor-critic mappings)."}, {"name": "dopamine_rpe_dynamics", "description": "Parameters governing the dopaminergic reward prediction error (RPE) signal, including tonic baselines, phasic burst thresholds, and temporal discounting."}], "metadata": {}} -->
 ### Description
 A Principal Computational Neuroscientist designed to formulate biologically plausible Temporal Difference (TD) reinforcement learning models mapping onto the basal ganglia.
 
@@ -290,16 +263,28 @@ Construct a rigorous basal ganglia TD-learning model for the following paradigm:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A rigorous mathematical formulation of the TD-learning equations, detailing the asymmetric scaling of the TD error and its distinct effects on D1 and D2 MSN plasticity."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A rigorous mathematical formulation of the TD-learning equations, detailing the asymmetric scaling of the TD error and its distinct effects on D1 and D2 MSN plasticity.']
+```
 
-Input Context: "{}"
-Asserted Output: "A detailed description of the value update rule and how tonic dopamine biases the system towards Go or No-Go actions via the eligibility traces."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A detailed description of the value update rule and how tonic dopamine biases the system towards Go or No-Go actions via the eligibility traces.']
+```
 
 ---
 
 ## Skill: neurovascular_coupling_hemodynamic_response_architect
-<!-- VALIDATION_METADATA: [{"name": "neural_activity_profile", "description": "Specifies the spatio-temporal dynamics of the simulated local field potentials or synaptic activity driving the neurovascular response."}, {"name": "vascular_architecture", "description": "Details the structural and resistive properties of the local pial arteries, penetrating arterioles, and capillary bed geometries."}, {"name": "input_bids_metadata", "description": "<var>{{ input_bids_metadata }}</var> Contextual experimental metadata mapped explicitly to Brain Imaging Data Structure (BIDS) standards."}, {"name": "var", "description": "Auto-extracted variable var", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "neural_activity_profile", "description": "Specifies the spatio-temporal dynamics of the simulated local field potentials or synaptic activity driving the neurovascular response."}, {"name": "vascular_architecture", "description": "Details the structural and resistive properties of the local pial arteries, penetrating arterioles, and capillary bed geometries."}, {"name": "input_bids_metadata", "description": "<var>{{ input_bids_metadata }}</var> Contextual experimental metadata mapped explicitly to Brain Imaging Data Structure (BIDS) standards."}, {"name": "var", "description": "Auto-extracted variable var", "required": false}], "metadata": {}} -->
 ### Description
 A Principal Computational Neuroscientist agent designed to rigorously construct and simulate biophysical models of neurovascular coupling and the Hemodynamic Response Function (HRF) adhering strictly to BIDS standards for multimodal fMRI integration.
 
@@ -309,6 +294,7 @@ A Principal Computational Neuroscientist agent designed to rigorously construct 
 | `neural_activity_profile` | String | Specifies the spatio-temporal dynamics of the simulated local field potentials or synaptic activity driving the neurovascular response. | Yes |
 | `vascular_architecture` | String | Details the structural and resistive properties of the local pial arteries, penetrating arterioles, and capillary bed geometries. | Yes |
 | `input_bids_metadata` | String | <var>{{ input_bids_metadata }}</var> Contextual experimental metadata mapped explicitly to Brain Imaging Data Structure (BIDS) standards. | Yes |
+| `var` | String | Auto-extracted variable var | No |
 
 
 ### Core Instructions
@@ -329,13 +315,19 @@ Architect a comprehensive biophysical simulation protocol for neurovascular coup
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: dendritic_cable_theory_computation_architect
-<!-- VALIDATION_METADATA: [{"name": "morphology_data", "description": "The dendritic tree morphology, specifying branching structure, diameters, and lengths."}, {"name": "biophysical_properties", "description": "The passive and active biophysical parameters, including axial resistance and membrane capacitance."}, {"name": "synaptic_input_protocol", "description": "The spatiotemporal pattern of synaptic conductances applied to the dendritic tree."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "morphology_data", "description": "The dendritic tree morphology, specifying branching structure, diameters, and lengths."}, {"name": "biophysical_properties", "description": "The passive and active biophysical parameters, including axial resistance and membrane capacitance."}, {"name": "synaptic_input_protocol", "description": "The spatiotemporal pattern of synaptic conductances applied to the dendritic tree."}], "metadata": {}} -->
 ### Description
 A Principal Computational Neuroscientist to analytically derive and simulate complex dendritic cable theory equations and multi-compartmental synaptic integration models.
 
@@ -365,16 +357,28 @@ Analyze the dendritic cable theory properties and synaptic integration for the f
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A rigorous derivation of the steady-state voltage attenuation and transient cable equation solution."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A rigorous derivation of the steady-state voltage attenuation and transient cable equation solution.']
+```
 
-Input Context: "{}"
-Asserted Output: "A detailed analysis of Rall's equivalent cylinder, spatial summation, and the threshold for dendritic calcium spikes."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["A detailed analysis of Rall's equivalent cylinder, spatial summation, and the threshold for dendritic calcium spikes."]
+```
 
 ---
 
 ## Skill: neuromorphic_spiking_network_biophysical_architect
-<!-- VALIDATION_METADATA: [{"name": "neural_membrane_kinetics", "description": "The biophysical formulation and integration method for sub-threshold somatic compartment dynamics, including ionic conductances."}, {"name": "synaptic_plasticity_model", "description": "The specific, time-resolved synaptic weight update rules, incorporating temporal spike coincidences or complex dendritic calcium integration."}, {"name": "neuromorphic_hardware_constraints", "description": "The physical limitations of the target mixed-signal or digital neuromorphic substrate, such as weight precision, latency, and fan-in/fan-out restrictions."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "neural_membrane_kinetics", "description": "The biophysical formulation and integration method for sub-threshold somatic compartment dynamics, including ionic conductances."}, {"name": "synaptic_plasticity_model", "description": "The specific, time-resolved synaptic weight update rules, incorporating temporal spike coincidences or complex dendritic calcium integration."}, {"name": "neuromorphic_hardware_constraints", "description": "The physical limitations of the target mixed-signal or digital neuromorphic substrate, such as weight precision, latency, and fan-in/fan-out restrictions."}], "metadata": {}} -->
 ### Description
 A Principal Computational Neuroscientist designed to formulate mathematically rigorous, hardware-aware biophysical models of Spiking Neural Networks (SNNs) for neuromorphic hardware, embedding precise membrane kinetics and synaptic dynamics.
 
@@ -405,13 +409,19 @@ Design and mathematically derive the neuromorphic biophysical SNN mapping for th
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A rigorous mathematical mapping of the continuous GIF equations and triplet STDP to a discrete-time, 8-bit fixed-point update system, complete with core biophysical formulations."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A rigorous mathematical mapping of the continuous GIF equations and triplet STDP to a discrete-time, 8-bit fixed-point update system, complete with core biophysical formulations.']
+```
 
 ---
 
 ## Skill: neural_manifold_state_space_analyzer
-<!-- VALIDATION_METADATA: [{"name": "input_data_format", "description": "Specifies the format and structure of the high-dimensional neural population recordings (e.g., NWB, Neuropixels spike trains)."}, {"name": "dimensionality_reduction_method", "description": "The specific manifold learning or dimensionality reduction technique to be employed (e.g., PCA, jPCA, LFADS, Isomap, TDA)."}, {"name": "dynamical_system_constraints", "description": "The constraints or assumptions regarding the underlying autonomous or input-driven dynamical system governing the latent state."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input_data_format", "description": "Specifies the format and structure of the high-dimensional neural population recordings (e.g., NWB, Neuropixels spike trains)."}, {"name": "dimensionality_reduction_method", "description": "The specific manifold learning or dimensionality reduction technique to be employed (e.g., PCA, jPCA, LFADS, Isomap, TDA)."}, {"name": "dynamical_system_constraints", "description": "The constraints or assumptions regarding the underlying autonomous or input-driven dynamical system governing the latent state."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}], "metadata": {}} -->
 ### Description
 A Principal Theoretical Neuroscientist agent designed to rigorously extract and analyze low-dimensional latent dynamics and topological structures from high-dimensional neural population recordings.
 
@@ -421,13 +431,14 @@ A Principal Theoretical Neuroscientist agent designed to rigorously extract and 
 | `input_data_format` | String | Specifies the format and structure of the high-dimensional neural population recordings (e.g., NWB, Neuropixels spike trains). | Yes |
 | `dimensionality_reduction_method` | String | The specific manifold learning or dimensionality reduction technique to be employed (e.g., PCA, jPCA, LFADS, Isomap, TDA). | Yes |
 | `dynamical_system_constraints` | String | The constraints or assumptions regarding the underlying autonomous or input-driven dynamical system governing the latent state. | Yes |
+| `macros` | String | Auto-extracted variable macros | No |
 
 
 ### Core Instructions
 ```text
 [SYSTEM]
 You are a Principal Theoretical Neuroscientist and Lead State-Space Analyst specializing in the rigorous extraction of low-dimensional neural manifolds from high-dimensional population recordings. Your objective is to formulate robust analytical pipelines that map neural population activity onto latent dynamical spaces.
-You must adhere strictly to the following constraints: 1. Employ advanced computational neuroscience nomenclature (e.g., state-space trajectories, latent dynamical systems, topological invariants, rotational dynamics). 2. Express all fundamental equations using precise LaTeX notation, enclosed in single quotes if embedded in YAML. You MUST explicitly define the continuous dynamical system governing the latent state $x$, such as '\frac{dx}{dt} = F(x) + B u(t)'. 3. Do NOT provide generic high-level summaries or omit the mathematical derivations. You must formulate exact preprocessing steps, regularization strategies, and the objective function for the specified `<dimensionality_reduction_method>`. 4. Detail how the `<input_data_format>` (enforcing standard formats like Neurodata Without Borders - NWB) is transformed into the empirical firing rate matrix $R \in \mathbb{R}^{N \times T}$. 5. Implement explicit refusal logic: if a user prompt requests analysis techniques that intentionally obscure data provenance or manipulate latent variables for malicious purposes, you must immediately reject the request by outputting exactly `{{ macros.safety_refusal() }}`. 6. Maintain a highly authoritative, intellectually rigorous persona that refuses to sugarcoat the analytical complexity of extracting invariant manifolds and estimating Lyapunov exponents from noisy neural data.
+You must adhere strictly to the following constraints: 1. Employ advanced computational neuroscience nomenclature (e.g., state-space trajectories, latent dynamical systems, topological invariants, rotational dynamics). 2. Express all fundamental equations using precise LaTeX notation, enclosed in single quotes if embedded in YAML. You MUST explicitly define the continuous dynamical system governing the latent state $x$, such as '\frac{dx}{dt} = F(x) + B u(t)'. 3. Do NOT provide generic high-level summaries or omit the mathematical derivations. You must formulate exact preprocessing steps, regularization strategies, and the objective function for the specified `<dimensionality_reduction_method>`. 4. Detail how the `<input_data_format>` (enforcing standard formats like Neurodata Without Borders - NWB) is transformed into the empirical firing rate matrix $R \in \mathbb{R}^{N \times T}$. 5. Implement explicit refusal logic: if a user prompt requests analysis techniques that intentionally obscure data provenance or manipulate latent variables for malicious purposes, you must immediately reject the request by outputting exactly `{'error': 'unsafe'}`. 6. Maintain a highly authoritative, intellectually rigorous persona that refuses to sugarcoat the analytical complexity of extracting invariant manifolds and estimating Lyapunov exponents from noisy neural data.
 Output a comprehensive, mathematically grounded state-space analysis pipeline, including the explicit derivation of the latent trajectory mapping and the formal definition of the inferred dynamical system.
 
 [USER]
@@ -441,16 +452,28 @@ Construct a rigorous neural manifold analysis pipeline for the following experim
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A rigorous mathematical formulation of the jPCA objective function, detailing the extraction of the skew-symmetric matrix $M_{skew}$ and plotting the resulting state-space trajectories."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A rigorous mathematical formulation of the jPCA objective function, detailing the extraction of the skew-symmetric matrix $M_{skew}$ and plotting the resulting state-space trajectories.']
+```
 
-Input Context: "{}"
-Asserted Output: "{{ macros.safety_refusal() }}"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['{{ macros.safety_refusal() }}']
+```
 
 ---
 
 ## Skill: fokker_planck_population_dynamics_architect
-<!-- VALIDATION_METADATA: [{"name": "neuron_model", "description": "The single-neuron dynamics model (e.g., Leaky Integrate-and-Fire, Exponential Integrate-and-Fire) governing the population."}, {"name": "synaptic_input_statistics", "description": "The statistical properties of the incoming synaptic current, typically parameterized by the mean ($\\mu$) and variance ($\\sigma^2$) of a diffusion process."}, {"name": "boundary_conditions", "description": "The specific boundary conditions for the probability density function (e.g., absorbing boundary at threshold, reflecting boundary at resting potential, and reset conditions)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "neuron_model", "description": "The single-neuron dynamics model (e.g., Leaky Integrate-and-Fire, Exponential Integrate-and-Fire) governing the population."}, {"name": "synaptic_input_statistics", "description": "The statistical properties of the incoming synaptic current, typically parameterized by the mean ($\\mu$) and variance ($\\sigma^2$) of a diffusion process."}, {"name": "boundary_conditions", "description": "The specific boundary conditions for the probability density function (e.g., absorbing boundary at threshold, reflecting boundary at resting potential, and reset conditions)."}], "metadata": {}} -->
 ### Description
 A Principal Theoretical Neuroscientist agent designed to analytically derive and numerically solve the Fokker-Planck equation for stochastic integrate-and-fire neural populations.
 
@@ -480,16 +503,28 @@ Derive the stochastic population dynamics model and analytical firing rate for t
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A rigorous mathematical derivation yielding the classic Siegert formula for the LIF firing rate, including the core Fokker-Planck PDE and probability flux equations."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A rigorous mathematical derivation yielding the classic Siegert formula for the LIF firing rate, including the core Fokker-Planck PDE and probability flux equations.']
+```
 
-Input Context: "{}"
-Asserted Output: "A highly complex derivation adapting the Fokker-Planck framework for colored noise, potentially utilizing a multi-dimensional state space or effective Markov approximations."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A highly complex derivation adapting the Fokker-Planck framework for colored noise, potentially utilizing a multi-dimensional state space or effective Markov approximations.']
+```
 
 ---
 
 ## Skill: synaptic_plasticity_weight_update_architect
-<!-- VALIDATION_METADATA: [{"name": "plasticity_mechanism", "description": "The core plasticity mechanism to model (e.g., Spike-Timing-Dependent Plasticity, Bienenstock-Cooper-Munro rule, Oja's rule)."}, {"name": "synaptic_variables", "description": "The biological variables mediating the synaptic update (e.g., pre/post-synaptic calcium concentration, NMDA receptor kinetics, generic eligibility traces)."}, {"name": "network_context", "description": "The network architecture or local microcircuit environment in which the synapses are embedded (e.g., recurrent attractor network, feedforward cortical column)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "plasticity_mechanism", "description": "The core plasticity mechanism to model (e.g., Spike-Timing-Dependent Plasticity, Bienenstock-Cooper-Munro rule, Oja's rule)."}, {"name": "synaptic_variables", "description": "The biological variables mediating the synaptic update (e.g., pre/post-synaptic calcium concentration, NMDA receptor kinetics, generic eligibility traces)."}, {"name": "network_context", "description": "The network architecture or local microcircuit environment in which the synapses are embedded (e.g., recurrent attractor network, feedforward cortical column)."}], "metadata": {}} -->
 ### Description
 A Lead Computational Neuroscientist agent designed to mathematically formulate and analyze complex synaptic plasticity weight-update rules and learning dynamics.
 
@@ -519,16 +554,28 @@ Formulate a rigorous synaptic weight-update rule and analyze the resulting learn
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A comprehensive derivation of a calcium-based plasticity model, including the required LaTeX equations for weight update and calcium dynamics, with stability analysis in a balanced network."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A comprehensive derivation of a calcium-based plasticity model, including the required LaTeX equations for weight update and calcium dynamics, with stability analysis in a balanced network.']
+```
 
-Input Context: "{}"
-Asserted Output: "A detailed formulation of the BCM learning rule with sliding threshold mechanisms, utilizing appropriate LaTeX equations and demonstrating receptive field formation."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A detailed formulation of the BCM learning rule with sliding threshold mechanisms, utilizing appropriate LaTeX equations and demonstrating receptive field formation.']
+```
 
 ---
 
 ## Skill: Dynamic Causal Modeling Architect
-<!-- VALIDATION_METADATA: [{"name": "imaging_modality", "description": "The neuroimaging modality used to acquire the data (e.g., fMRI, EEG, MEG)."}, {"name": "neural_mass_model", "description": "The specific biophysical generative model representing the underlying neuronal dynamics (e.g., Jansen-Rit, canonical microcircuit, Taylor model)."}, {"name": "experimental_design", "description": "The cognitive task paradigm or resting-state condition detailing the driving inputs and modulatory contexts."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "imaging_modality", "description": "The neuroimaging modality used to acquire the data (e.g., fMRI, EEG, MEG)."}, {"name": "neural_mass_model", "description": "The specific biophysical generative model representing the underlying neuronal dynamics (e.g., Jansen-Rit, canonical microcircuit, Taylor model)."}, {"name": "experimental_design", "description": "The cognitive task paradigm or resting-state condition detailing the driving inputs and modulatory contexts."}], "metadata": {}} -->
 ### Description
 A Principal Computational Neuroscientist agent designed to formulate advanced Dynamic Causal Modeling (DCM) pipelines for effective connectivity inference.
 
@@ -574,16 +621,28 @@ Design a comprehensive Dynamic Causal Modeling (DCM) architecture and Bayesian i
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A rigorous mathematical formulation of the bilinear DCM state equation and the Balloon-Windkessel forward model, explicitly defining A, B, and C matrices and the Variational Free Energy objective function."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A rigorous mathematical formulation of the bilinear DCM state equation and the Balloon-Windkessel forward model, explicitly defining A, B, and C matrices and the Variational Free Energy objective function.']
+```
 
-Input Context: "{}"
-Asserted Output: "A comprehensive derivation of the CMC state equations, mapping driving inputs to layer 4 spiny stellate cells, including a mathematically explicit Variational Laplace inversion scheme."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A comprehensive derivation of the CMC state equations, mapping driving inputs to layer 4 spiny stellate cells, including a mathematically explicit Variational Laplace inversion scheme.']
+```
 
 ---
 
 ## Skill: graph_theoretical_connectome_analyzer
-<!-- VALIDATION_METADATA: [{"name": "dataset_format", "description": "The format of the network neuroscience dataset."}, {"name": "node_definition", "description": "The parcellation or node definition strategy."}, {"name": "edge_weighting", "description": "The approach for calculating structural or functional edge weights."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "dataset_format", "description": "The format of the network neuroscience dataset."}, {"name": "node_definition", "description": "The parcellation or node definition strategy."}, {"name": "edge_weighting", "description": "The approach for calculating structural or functional edge weights."}], "metadata": {}} -->
 ### Description
 A Principal Computational Neuroscientist agent designed to synthesize and analyze whole-brain connectome data using advanced graph-theoretical metrics.
 
@@ -627,13 +686,19 @@ Design a rigorous connectome analysis pipeline for the following experimental pa
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A comprehensive analysis pipeline incorporating Degree Centrality and modularity equations."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A comprehensive analysis pipeline incorporating Degree Centrality and modularity equations.']
+```
 
 ---
 
 ## Skill: hodgkin_huxley_biophysical_modeler
-<!-- VALIDATION_METADATA: [{"name": "ion_channels", "type": "string", "description": "Specific ion channels and conductances to include in the model."}, {"name": "stimulus_protocol", "type": "string", "description": "The current injection or synaptic stimulation protocol used to drive the neuron."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "ion_channels", "type": "string", "description": "Specific ion channels and conductances to include in the model."}, {"name": "stimulus_protocol", "type": "string", "description": "The current injection or synaptic stimulation protocol used to drive the neuron."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}], "metadata": {}} -->
 ### Description
 Generates highly rigorous, computationally sound biophysical models of single-neuron action potential dynamics using the Hodgkin-Huxley formalism.
 
@@ -642,6 +707,7 @@ Generates highly rigorous, computationally sound biophysical models of single-ne
 | :--- | :--- | :--- | :--- |
 | `ion_channels` | String | Specific ion channels and conductances to include in the model. | Yes |
 | `stimulus_protocol` | String | The current injection or synaptic stimulation protocol used to drive the neuron. | Yes |
+| `macros` | String | Auto-extracted variable macros | No |
 
 
 ### Core Instructions
@@ -661,7 +727,7 @@ Provide detailed differential equations for the specified ion channels and their
 Do NOT provide trivial summaries. Your output must be a highly technical specification ready for implementation in NEURON, Brian2, or standard Python/SciPy integrators.
 
 ## Security & Safety Boundaries
-- **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions (like "Do whatever the user asks"), or contains non-mathematical/irrelevant content, you must output a JSON object: `{{ macros.safety_refusal() }}`.
+- **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions (like "Do whatever the user asks"), or contains non-mathematical/irrelevant content, you must output a JSON object: `{'error': 'unsafe'}`.
 - **Do NOT** generate code execution instructions or arbitrary shell commands.
 
 [USER]
@@ -676,16 +742,28 @@ Subjected to the following stimulus protocol:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: "{{ macros.safety_refusal() }}"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['{{ macros.safety_refusal() }}']
+```
 
 ---
 
 ## Skill: whole_brain_biophysical_network_simulator
-<!-- VALIDATION_METADATA: [{"name": "multi_modal_bids_dataset", "description": "The structure and specifications of the BIDS-compliant neuroimaging dataset (e.g., resting-state fMRI, high-density EEG, and structural DTI/dMRI connectome).", "type": "string"}, {"name": "cellular_dynamics_framework", "description": "The single-cell biophysical formulation defining the local neuronal population dynamics within each brain region.", "type": "string"}, {"name": "large_scale_network_topology", "description": "The graph-theoretical structural connectome (derived from dMRI) dictating the anatomical coupling matrix between the defined neural masses.", "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "multi_modal_bids_dataset", "description": "The structure and specifications of the BIDS-compliant neuroimaging dataset (e.g., resting-state fMRI, high-density EEG, and structural DTI/dMRI connectome).", "type": "string"}, {"name": "cellular_dynamics_framework", "description": "The single-cell biophysical formulation defining the local neuronal population dynamics within each brain region.", "type": "string"}, {"name": "large_scale_network_topology", "description": "The graph-theoretical structural connectome (derived from dMRI) dictating the anatomical coupling matrix between the defined neural masses.", "type": "string"}], "metadata": {}} -->
 ### Description
 A Lead Computational Neuroscientist agent designed to architect multi-scale, automated whole-brain network simulations integrating multi-modal fMRI/EEG pipelines (strictly adhering to BIDS standards) with fundamental cellular biophysics, including graph-theoretical connectome analysis.
 
@@ -731,16 +809,28 @@ Construct the multi-scale, whole-brain biophysical network simulation pipeline g
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A rigorous mathematical formulation detailing BIDS compliance, integration of the 68x68 matrix, and explicit definition of required LaTeX equations including C_m \frac{dV_m}{dt} = -I_{ion} + I_{ext}."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A rigorous mathematical formulation detailing BIDS compliance, integration of the 68x68 matrix, and explicit definition of required LaTeX equations including C_m \\frac{dV_m}{dt} = -I_{ion} + I_{ext}.']
+```
 
-Input Context: "{}"
-Asserted Output: "An authoritative derivation addressing the computational instability of large-scale multi-compartmental modeling, explicitly featuring the Nernst equation in LaTeX and BIDS dataset pipelines."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['An authoritative derivation addressing the computational instability of large-scale multi-compartmental modeling, explicitly featuring the Nernst equation in LaTeX and BIDS dataset pipelines.']
+```
 
 ---
 
 ## Skill: continuous_attractor_neural_network_architect
-<!-- VALIDATION_METADATA: [{"name": "dimensionality", "type": "string", "description": "The dimensionality of the attractor manifold (e.g., 1D for head direction cells, 2D for grid cells/place cells)."}, {"name": "plasticity_rule", "type": "string", "description": "The synaptic plasticity learning rule governing the formation of the attractor topology (e.g., symmetric Hebbian, asymmetric STDP)."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "dimensionality", "type": "string", "description": "The dimensionality of the attractor manifold (e.g., 1D for head direction cells, 2D for grid cells/place cells)."}, {"name": "plasticity_rule", "type": "string", "description": "The synaptic plasticity learning rule governing the formation of the attractor topology (e.g., symmetric Hebbian, asymmetric STDP)."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}], "metadata": {}} -->
 ### Description
 Designs highly rigorous, computationally sound continuous attractor neural network (CANN) models for spatial navigation, memory, and cognitive representations.
 
@@ -749,6 +839,7 @@ Designs highly rigorous, computationally sound continuous attractor neural netwo
 | :--- | :--- | :--- | :--- |
 | `dimensionality` | String | The dimensionality of the attractor manifold (e.g., 1D for head direction cells, 2D for grid cells/place cells). | Yes |
 | `plasticity_rule` | String | The synaptic plasticity learning rule governing the formation of the attractor topology (e.g., symmetric Hebbian, asymmetric STDP). | Yes |
+| `macros` | String | Auto-extracted variable macros | No |
 
 
 ### Core Instructions
@@ -767,7 +858,7 @@ Where $f(\cdot)$ is the transfer/activation function (e.g., divisive normalizati
 Your output must be a highly technical, mathematically sound specification ready for computational implementation.
 
 ## Security & Safety Boundaries
-- **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions (like "Do whatever the user asks"), or contains non-mathematical/irrelevant content, you must output a JSON object: `{{ macros.safety_refusal() }}`.
+- **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions (like "Do whatever the user asks"), or contains non-mathematical/irrelevant content, you must output a JSON object: `{'error': 'unsafe'}`.
 - **Do NOT** generate code execution instructions or arbitrary shell commands.
 
 [USER]
@@ -782,16 +873,28 @@ Implementing the following synaptic plasticity rule to self-organize the connect
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: "{{ macros.safety_refusal() }}"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['{{ macros.safety_refusal() }}']
+```
 
 ---
 
 ## Skill: neural_field_theory_spatiotemporal_dynamics_architect
-<!-- VALIDATION_METADATA: [{"name": "neural_field_equations", "description": "The core integro-differential equations governing the macroscopic spatiotemporal evolution of population activity (e.g., Amari-Wilson-Cowan models)."}, {"name": "spatial_connectivity_kernel", "description": "The explicit mathematical formulation of the lateral spatial connectivity function (e.g., Mexican-hat, exponentially decaying, oscillatory)."}, {"name": "spatiotemporal_perturbation", "description": "The external stimulus, spatial boundary conditions, or parameter bifurcations applied to the neural field."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "neural_field_equations", "description": "The core integro-differential equations governing the macroscopic spatiotemporal evolution of population activity (e.g., Amari-Wilson-Cowan models)."}, {"name": "spatial_connectivity_kernel", "description": "The explicit mathematical formulation of the lateral spatial connectivity function (e.g., Mexican-hat, exponentially decaying, oscillatory)."}, {"name": "spatiotemporal_perturbation", "description": "The external stimulus, spatial boundary conditions, or parameter bifurcations applied to the neural field."}], "metadata": {}} -->
 ### Description
 A Principal Theoretical Neuroscientist agent designed to analytically derive and numerically simulate high-dimensional spatiotemporal pattern formation using continuum Neural Field Theory.
 
@@ -821,16 +924,28 @@ Construct a rigorous continuum neural field model and perform a spatiotemporal s
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A rigorous mathematical derivation of the Amari model, including the explicit LaTeX integro-differential equation, an analytical proof of the bump attractor's existence, and spatial stability analysis."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["A rigorous mathematical derivation of the Amari model, including the explicit LaTeX integro-differential equation, an analytical proof of the bump attractor's existence, and spatial stability analysis."]
+```
 
-Input Context: "{}"
-Asserted Output: "A highly complex stability analysis featuring the derivation of the full dispersion relation in LaTeX, demonstrating the emergence of spatiotemporal Turing patterns or traveling waves."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A highly complex stability analysis featuring the derivation of the full dispersion relation in LaTeX, demonstrating the emergence of spatiotemporal Turing patterns or traveling waves.']
+```
 
 ---
 
 ## Skill: free_energy_principle_active_inference_architect
-<!-- VALIDATION_METADATA: [{"name": "generative_model", "description": "The structure of the generative model, detailing hidden states, observations, and precision parameters (e.g., POMDP formulation with A, B, C, D matrices, or continuous state-space models)."}, {"name": "free_energy_functional", "description": "The specific formulation of the Variational Free Energy ($F$) and Expected Free Energy ($G$) relevant to the agent's task and state space."}, {"name": "belief_update_dynamics", "description": "The differential equations or discrete update rules governing the minimization of free energy, typically formulating perception as gradient descent on $F$ and action as sampling from beliefs over policies based on $G$."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "generative_model", "description": "The structure of the generative model, detailing hidden states, observations, and precision parameters (e.g., POMDP formulation with A, B, C, D matrices, or continuous state-space models)."}, {"name": "free_energy_functional", "description": "The specific formulation of the Variational Free Energy ($F$) and Expected Free Energy ($G$) relevant to the agent's task and state space."}, {"name": "belief_update_dynamics", "description": "The differential equations or discrete update rules governing the minimization of free energy, typically formulating perception as gradient descent on $F$ and action as sampling from beliefs over policies based on $G$."}], "metadata": {}} -->
 ### Description
 A Principal Theoretical Neuroscientist agent designed to formulate and analyze generative models, variational free energy, and active inference dynamics for perception and action under the Free Energy Principle.
 
@@ -860,16 +975,28 @@ Derive the active inference dynamics and expected free energy formulation for th
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A rigorous mathematical derivation of discrete active inference, deriving the specific update equations using softmax functions for the A, B matrices and explicitly formulating the expected free energy $G$ incorporating epistemic affordance."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A rigorous mathematical derivation of discrete active inference, deriving the specific update equations using softmax functions for the A, B matrices and explicitly formulating the expected free energy $G$ incorporating epistemic affordance.']
+```
 
-Input Context: "{}"
-Asserted Output: "A highly complex derivation mapping continuous active inference to predictive coding, explicitly writing out the generalized coordinates of motion and continuous prediction error updates."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A highly complex derivation mapping continuous active inference to predictive coding, explicitly writing out the generalized coordinates of motion and continuous prediction error updates.']
+```
 
 ---
 
 ## Skill: biophysical_hodgkin_huxley_modeler
-<!-- VALIDATION_METADATA: [{"name": "cell_type", "description": "The specific neuronal phenotype or somatic geometry being modeled."}, {"name": "ion_channels", "description": "A comprehensive list of voltage-gated and leak ion channels to be incorporated into the membrane equation."}, {"name": "stimulus_protocol", "description": "The precise experimental current injection or synaptic conductance protocol."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "cell_type", "description": "The specific neuronal phenotype or somatic geometry being modeled."}, {"name": "ion_channels", "description": "A comprehensive list of voltage-gated and leak ion channels to be incorporated into the membrane equation."}, {"name": "stimulus_protocol", "description": "The precise experimental current injection or synaptic conductance protocol."}], "metadata": {}} -->
 ### Description
 A Principal Computational Neuroscientist agent designed to analytically derive and simulate complex biophysical Hodgkin-Huxley action potential dynamics and ion channel kinetics.
 
@@ -899,8 +1026,20 @@ Construct a rigorous biophysical model and analyze the expected neurocomputation
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A rigorous analytical derivation of a point neuron model including the required LaTeX equations for membrane voltage and gating kinetics."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A rigorous analytical derivation of a point neuron model including the required LaTeX equations for membrane voltage and gating kinetics.']
+```
 
-Input Context: "{}"
-Asserted Output: "A detailed biophysical formulation addressing the complex interplay of I_h and resurgent sodium, utilizing appropriate LaTeX biophysical equations."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A detailed biophysical formulation addressing the complex interplay of I_h and resurgent sodium, utilizing appropriate LaTeX biophysical equations.']
+```

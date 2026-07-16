@@ -1,19 +1,3 @@
----
-tags:
-  - analytics
-  - blueprint
-  - competency-based
-  - domain:management
-  - impact
-  - microlearning
-  - onboarding
-  - planner
-  - scenario-based
-  - series
-  - skill
-  - training
----
-
 # Domain Agent Skills: Management Training Learning development workflow
 
 ## Metadata
@@ -24,7 +8,7 @@ tags:
 ---
 
 ## Skill: Competency-Based Onboarding Blueprint
-<!-- VALIDATION_METADATA: [{"name": "existing_modules", "description": "reference to reusable SOP content", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "existing_modules", "description": "reference to reusable SOP content", "required": true}], "metadata": {}} -->
 ### Description
 Create an onboarding program that reduces time to independent monitoring to six weeks or less.
 
@@ -65,7 +49,7 @@ None provided.
 ---
 
 ## Skill: Training Impact Analytics Planner
-<!-- VALIDATION_METADATA: [{"name": "analysis_goal", "description": "specific compliance or performance metric to improve", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "analysis_goal", "description": "specific compliance or performance metric to improve", "required": true}], "metadata": {}} -->
 ### Description
 Correlate training data with audit deviations and design interventions for high-risk learners.
 
@@ -109,7 +93,7 @@ None provided.
 ---
 
 ## Skill: Scenario-Based Microlearning Series
-<!-- VALIDATION_METADATA: [{"name": "audience_role", "description": "primary learner roles (e", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "audience_role", "description": "primary learner roles (e", "required": true}], "metadata": {}} -->
 ### Description
 Design short interactive modules that help CRO staff apply GCP principles correctly during site visits.
 

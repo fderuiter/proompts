@@ -1,14 +1,3 @@
----
-tags:
-  - arellano-bond
-  - domain:econometrics/panel_data
-  - econometrics
-  - gmm
-  - panel-data
-  - skill
-  - system-gmm
----
-
 # Domain Agent Skills: Scientific Economics Econometrics Panel data
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: dynamic_panel_gmm_architect
-<!-- VALIDATION_METADATA: [{"name": "dependent_variable", "type": "string", "description": "The primary endogenous dependent variable to be analyzed dynamically over time and across entities."}, {"name": "exogenous_regressors", "type": "string", "description": "Strictly exogenous control variables that do not correlate with past, present, or future error terms."}, {"name": "endogenous_regressors", "type": "string", "description": "Endogenous or predetermined variables (other than the lagged dependent variable) that require instrumentation."}, {"name": "gmm_estimator_type", "type": "string", "description": "The type of GMM estimator to formulate (e.g., Difference GMM / Arellano-Bond, System GMM / Blundell-Bond)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "dependent_variable", "type": "string", "description": "The primary endogenous dependent variable to be analyzed dynamically over time and across entities."}, {"name": "exogenous_regressors", "type": "string", "description": "Strictly exogenous control variables that do not correlate with past, present, or future error terms."}, {"name": "endogenous_regressors", "type": "string", "description": "Endogenous or predetermined variables (other than the lagged dependent variable) that require instrumentation."}, {"name": "gmm_estimator_type", "type": "string", "description": "The type of GMM estimator to formulate (e.g., Difference GMM / Arellano-Bond, System GMM / Blundell-Bond)."}], "metadata": {}} -->
 ### Description
 Formulates rigorous dynamic panel data estimators using Generalized Method of Moments (GMM), specifically Arellano-Bond (Difference GMM) and Blundell-Bond (System GMM), addressing endogeneity and panel bias.
 
@@ -65,8 +54,20 @@ Provide the explicit structural equation, the transformation (if Difference GMM)
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

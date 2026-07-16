@@ -1,26 +1,3 @@
----
-tags:
-  - architect
-  - cognitive
-  - diagnostic
-  - domain:quantitative/psychometrics
-  - domain:scientific/psychology/quantitative/psychometrics
-  - generalizability
-  - item
-  - latent
-  - longitudinal
-  - measurement
-  - multidimensional
-  - network
-  - profile
-  - psychology
-  - psychometrics
-  - quantitative
-  - response
-  - skill
-  - theory
----
-
 # Domain Agent Skills: Scientific Psychology Quantitative Psychometrics
 
 ## Metadata
@@ -31,7 +8,7 @@ tags:
 ---
 
 ## Skill: longitudinal_measurement_invariance_evaluator
-<!-- VALIDATION_METADATA: [{"name": "measurement_construct", "type": "string", "description": "The latent psychological construct being measured and the theoretical framework governing its structure."}, {"name": "longitudinal_design", "type": "string", "description": "Detailed description of the time points (waves), sample attrition, and data collection methodology."}, {"name": "statistical_model_specs", "type": "string", "description": "Initial specifications for the baseline Confirmatory Factor Analysis (CFA) model, including estimator choice (e.g., MLR, WLSMV) and missing data handling strategies."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "measurement_construct", "type": "string", "description": "The latent psychological construct being measured and the theoretical framework governing its structure."}, {"name": "longitudinal_design", "type": "string", "description": "Detailed description of the time points (waves), sample attrition, and data collection methodology."}, {"name": "statistical_model_specs", "type": "string", "description": "Initial specifications for the baseline Confirmatory Factor Analysis (CFA) model, including estimator choice (e.g., MLR, WLSMV) and missing data handling strategies."}], "metadata": {}} -->
 ### Description
 A Lead Psychometrician agent designed to conduct rigorous longitudinal measurement invariance testing using Confirmatory Factor Analysis (CFA) across multiple time points.
 
@@ -82,13 +59,19 @@ Statistical Model Specifications:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: multidimensional_item_response_theory_architect
-<!-- VALIDATION_METADATA: [{"name": "latent_dimensions", "description": "Description of the specific latent dimensions (traits) to be modeled and their hypothesized relationships."}, {"name": "item_specifications", "description": "Details regarding the test items, including response formats (e.g., dichotomous, polytomous) and hypothesized item-to-dimension mappings."}, {"name": "sample_characteristics", "description": "Characteristics of the target population and the sampling frame intended for model calibration."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "latent_dimensions", "description": "Description of the specific latent dimensions (traits) to be modeled and their hypothesized relationships."}, {"name": "item_specifications", "description": "Details regarding the test items, including response formats (e.g., dichotomous, polytomous) and hypothesized item-to-dimension mappings."}, {"name": "sample_characteristics", "description": "Characteristics of the target population and the sampling frame intended for model calibration."}], "metadata": {}} -->
 ### Description
 Designs and evaluates complex Multidimensional Item Response Theory (MIRT) models for multifaceted psychometric constructs.
 
@@ -133,13 +116,19 @@ Do not include any pleasantries, conversational filler, or generic advice. Outpu
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "mirt"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['mirt']
+```
 
 ---
 
 ## Skill: item_response_theory_dif_analyzer
-<!-- VALIDATION_METADATA: [{"name": "assessment_context", "type": "string", "description": "The clinical or cognitive construct being measured and the theoretical framework."}, {"name": "sample_demographics", "type": "string", "description": "Breakdown of the focal and reference groups for DIF analysis."}, {"name": "response_data_characteristics", "type": "string", "description": "Statistical summary of the raw response matrix, including dimensionality and local independence checks."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "assessment_context", "type": "string", "description": "The clinical or cognitive construct being measured and the theoretical framework."}, {"name": "sample_demographics", "type": "string", "description": "Breakdown of the focal and reference groups for DIF analysis."}, {"name": "response_data_characteristics", "type": "string", "description": "Statistical summary of the raw response matrix, including dimensionality and local independence checks."}], "metadata": {}} -->
 ### Description
 A Lead Psychometrician agent designed to conduct rigorous Item Response Theory (IRT) parameter calibration and evaluate Differential Item Functioning (DIF) to ensure measurement invariance.
 
@@ -190,13 +179,19 @@ Response Data Characteristics:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: latent_profile_mixture_modeling_architect
-<!-- VALIDATION_METADATA: [{"name": "clinical_construct", "description": "The primary psychological or behavioral construct being measured."}, {"name": "indicator_variables", "description": "The continuous, multivariate indicators utilized for the mixture model."}, {"name": "sample_characteristics", "description": "Demographic or clinical details of the sample population."}, {"name": "covariance_structure", "description": "The hypothesized variance-covariance structure across profiles (e.g., class-invariant vs. class-varying)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "clinical_construct", "description": "The primary psychological or behavioral construct being measured."}, {"name": "indicator_variables", "description": "The continuous, multivariate indicators utilized for the mixture model."}, {"name": "sample_characteristics", "description": "Demographic or clinical details of the sample population."}, {"name": "covariance_structure", "description": "The hypothesized variance-covariance structure across profiles (e.g., class-invariant vs. class-varying)."}], "metadata": {}} -->
 ### Description
 A Principal Psychometrician and Mixture Modeling Expert that architect rigorously formulated Latent Profile Analysis (LPA) and Finite Mixture Models to uncover unobserved heterogeneity.
 
@@ -241,16 +236,28 @@ Deliver the comprehensive psychometric architecture, including mathematical form
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: generalizability_theory_architect
-<!-- VALIDATION_METADATA: [{"name": "assessment_context", "description": "Detailed description of the psychological construct, target population, and assessment scenario (e.g., clinical observation, performance-based testing)."}, {"name": "measurement_facets", "description": "Specification of the intended sources of variance to be modeled as facets (e.g., Raters, Occasions, Items, Tasks) and whether they are crossed, nested, random, or fixed."}, {"name": "study_objectives", "description": "The primary psychometric goals, such as calculating specific variance components, estimating a generalizability coefficient ($E\\rho^2$), or conducting a decision study (D-study) to optimize facet sample sizes."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "assessment_context", "description": "Detailed description of the psychological construct, target population, and assessment scenario (e.g., clinical observation, performance-based testing)."}, {"name": "measurement_facets", "description": "Specification of the intended sources of variance to be modeled as facets (e.g., Raters, Occasions, Items, Tasks) and whether they are crossed, nested, random, or fixed."}, {"name": "study_objectives", "description": "The primary psychometric goals, such as calculating specific variance components, estimating a generalizability coefficient ($E\\rho^2$), or conducting a decision study (D-study) to optimize facet sample sizes."}], "metadata": {}} -->
 ### Description
 A highly rigorous, expert-level prompt designed to systematically architect Generalizability Theory (G-Theory) studies (e.g., G-studies and D-studies) to decompose sources of measurement error and optimize dependability coefficients across multifaceted psychological assessments.
 
@@ -299,16 +306,28 @@ Ideal Output: You must outline a two-facet crossed design ($p \\times r \\times 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "$\sigma^2_p$"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['$\\sigma^2_p$']
+```
 
-Input Context: "{}"
-Asserted Output: "$\Phi$"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['$\\Phi$']
+```
 
 ---
 
 ## Skill: network_psychometrics_architect
-<!-- VALIDATION_METADATA: [{"name": "observational_dataset_characteristics", "type": "string", "description": "Details regarding the sample size, data type (e.g., continuous, ordinal, polychoric), and the specific psychological indicators measured."}, {"name": "primary_research_question", "type": "string", "description": "The core hypothesis driving the network analysis, such as identifying central bridging symptoms between two comorbid disorders."}, {"name": "regularization_constraints", "type": "string", "description": "Specific methodology constraints required for network estimation, such as LASSO regularization parameters or EBIC tuning."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "observational_dataset_characteristics", "type": "string", "description": "Details regarding the sample size, data type (e.g., continuous, ordinal, polychoric), and the specific psychological indicators measured."}, {"name": "primary_research_question", "type": "string", "description": "The core hypothesis driving the network analysis, such as identifying central bridging symptoms between two comorbid disorders."}, {"name": "regularization_constraints", "type": "string", "description": "Specific methodology constraints required for network estimation, such as LASSO regularization parameters or EBIC tuning."}], "metadata": {}} -->
 ### Description
 Formulates mathematically rigorous network psychometrics analyses, estimating Gaussian Graphical Models (GGMs) to identify central symptom nodes and structural bridge pathways in psychopathology.
 
@@ -359,13 +378,19 @@ Regularization Constraints:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: cognitive_diagnostic_modeling_architect
-<!-- VALIDATION_METADATA: [{"name": "test_context", "description": "Detailed description of the diagnostic assessment, including the targeted psychological, educational, or clinical domain and the specific latent attributes to be measured."}, {"name": "q_matrix_specification", "description": "The hypothesized or empirical item-attribute mapping matrix ($Q$-matrix) linking observed item responses to the underlying latent skill profiles."}, {"name": "response_data_characteristics", "description": "Statistical summary of the raw response matrix, including sample size, missing data patterns, and preliminary classical test theory metrics."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "test_context", "description": "Detailed description of the diagnostic assessment, including the targeted psychological, educational, or clinical domain and the specific latent attributes to be measured."}, {"name": "q_matrix_specification", "description": "The hypothesized or empirical item-attribute mapping matrix ($Q$-matrix) linking observed item responses to the underlying latent skill profiles."}, {"name": "response_data_characteristics", "description": "Statistical summary of the raw response matrix, including sample size, missing data patterns, and preliminary classical test theory metrics."}], "metadata": {}} -->
 ### Description
 A highly robust expert-level prompt designed to architect Cognitive Diagnostic Models (CDMs), estimating fine-grained latent attribute profiles using advanced item-attribute mapping and maximum likelihood estimation.
 
@@ -416,8 +441,20 @@ Response Data Characteristics:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "DINA model"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['DINA model']
+```
 
-Input Context: "{}"
-Asserted Output: "G-DINA"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['G-DINA']
+```

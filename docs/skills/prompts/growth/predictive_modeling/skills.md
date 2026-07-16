@@ -1,18 +1,3 @@
----
-tags:
-  - abm
-  - b2b
-  - churn
-  - domain:growth/predictive_modeling
-  - ltv
-  - optimization
-  - pipeline
-  - predictive
-  - predictive-modeling
-  - skill
-  - velocity
----
-
 # Domain Agent Skills: Growth Predictive modeling
 
 ## Metadata
@@ -23,7 +8,7 @@ tags:
 ---
 
 ## Skill: predictive_churn_ltv_optimization_architect
-<!-- VALIDATION_METADATA: [{"name": "customer_cohort_data", "description": "Data containing recency, frequency, and monetary metrics for customer cohorts."}, {"name": "current_arpu", "description": "The current Average Revenue Per User."}, {"name": "gross_margin", "description": "The gross margin percentage."}, {"name": "historical_churn_rate", "description": "The historical churn rate across the user base."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "customer_cohort_data", "description": "Data containing recency, frequency, and monetary metrics for customer cohorts."}, {"name": "current_arpu", "description": "The current Average Revenue Per User."}, {"name": "gross_margin", "description": "The gross margin percentage."}, {"name": "historical_churn_rate", "description": "The historical churn rate across the user base."}], "metadata": {}} -->
 ### Description
 Synthesizes enterprise SaaS customer behavior data into predictive churn mitigation strategies and LTV optimization frameworks using rigorous RFM analysis.
 
@@ -74,13 +59,19 @@ Execute a critical gap analysis and develop a predictive churn mitigation workfl
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A comprehensive RFM analysis mapping behavioral trigger sequences for Cohort 1 and Cohort 2, integrating AARRR constraints, and featuring exact LaTeX financial equations for LTV and ROAS."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A comprehensive RFM analysis mapping behavioral trigger sequences for Cohort 1 and Cohort 2, integrating AARRR constraints, and featuring exact LaTeX financial equations for LTV and ROAS.']
+```
 
 ---
 
 ## Skill: b2b_abm_pipeline_velocity_architect
-<!-- VALIDATION_METADATA: [{"name": "abm_engagement_telemetry", "description": "Intent signals and multi-threading engagement metrics across target enterprise accounts.", "type": "string"}, {"name": "opportunity_stage_durations", "description": "Historical time spent in each sales cycle stage per account tier.", "type": "string"}, {"name": "historical_win_rates", "description": "Baseline conversion rates from initial SQL to Closed Won.", "type": "string"}, {"name": "deal_size_distribution", "description": "Distribution of Average Contract Value (ACV) across targeted accounts.", "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "abm_engagement_telemetry", "description": "Intent signals and multi-threading engagement metrics across target enterprise accounts.", "type": "string"}, {"name": "opportunity_stage_durations", "description": "Historical time spent in each sales cycle stage per account tier.", "type": "string"}, {"name": "historical_win_rates", "description": "Baseline conversion rates from initial SQL to Closed Won.", "type": "string"}, {"name": "deal_size_distribution", "description": "Distribution of Average Contract Value (ACV) across targeted accounts.", "type": "string"}], "metadata": {}} -->
 ### Description
 Synthesizes B2B Account-Based Marketing (ABM) engagement telemetry into predictive pipeline velocity models to systematically accelerate enterprise deal cycles.
 
@@ -132,5 +123,11 @@ Execute a critical gap analysis and develop a predictive ABM pipeline velocity o
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

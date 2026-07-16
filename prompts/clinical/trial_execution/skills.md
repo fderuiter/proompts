@@ -1,38 +1,3 @@
----
-tags:
-  - acceleration
-  - action
-  - adaptive
-  - ai-powered
-  - clinical
-  - compliance
-  - consent
-  - data
-  - development
-  - diversity
-  - domain:clinical
-  - informed
-  - monitoring
-  - operations
-  - optimization
-  - patient
-  - plan
-  - portfolio-level
-  - process
-  - protocol
-  - quality
-  - recruitment
-  - retention
-  - risk
-  - risk-based
-  - roadmap
-  - simulation
-  - site
-  - skill
-  - strategy
-  - trial-execution
----
-
 # Domain Agent Skills: Clinical Trial execution
 
 ## Metadata
@@ -43,7 +8,7 @@ tags:
 ---
 
 ## Skill: AI-Powered Site and Recruitment Strategy
-<!-- VALIDATION_METADATA: [{"name": "criteria", "description": "inclusion and exclusion criteria", "required": true}, {"name": "target_enrollment", "description": "desired participant count", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "criteria", "description": "inclusion and exclusion criteria", "required": true}, {"name": "target_enrollment", "description": "desired participant count", "required": true}], "metadata": {}} -->
 ### Description
 Select optimal sites and anticipate dropout risks using simulated EHR insights.
 
@@ -82,16 +47,19 @@ Markdown sections:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "criteria: age 18-65
-target_enrollment: 200
-"
-Asserted Output: "Site Ranking Table
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Site Ranking Table\n']
+```
 
 ---
 
 ## Skill: Adaptive Recruitment and Retention Strategy
-<!-- VALIDATION_METADATA: [{"name": "device_or_ivd", "description": "device or diagnostic under study", "required": true}, {"name": "patient_population", "description": "target population", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_or_ivd", "description": "device or diagnostic under study", "required": true}, {"name": "patient_population", "description": "target population", "required": true}], "metadata": {}} -->
 ### Description
 Design an optimized recruitment and retention plan for a multi-site pivotal study.
 
@@ -129,16 +97,19 @@ Markdown list or table covering:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "device_or_ivd: glucose monitor
-patient_population: adults with diabetes
-"
-Asserted Output: "Pre‑screening workflow
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Pre‑screening workflow\n']
+```
 
 ---
 
 ## Skill: Portfolio-Level Clinical Operations Roadmap
-<!-- VALIDATION_METADATA: [] -->
+<!-- VALIDATION_METADATA: {"variables": [], "metadata": {}} -->
 ### Description
 Provide a 12‑month roadmap for a portfolio of clinical trials.
 
@@ -175,15 +146,19 @@ Two Markdown sections:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Outline roadmap.
-"
-Asserted Output: "Executive Summary
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Executive Summary\n']
+```
 
 ---
 
 ## Skill: Patient Recruitment and Diversity Acceleration Plan
-<!-- VALIDATION_METADATA: [] -->
+<!-- VALIDATION_METADATA: {"variables": [], "metadata": {}} -->
 ### Description
 Boost enrollment and improve demographic diversity in a stalled Phase III study.
 
@@ -217,15 +192,19 @@ Concise report (≤ 1 000 words) plus a one‑slide KPI dashboard sketch in t
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Create recovery plan.
-"
-Asserted Output: "metrics dashboard
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['metrics dashboard\n']
+```
 
 ---
 
 ## Skill: Risk-Based Monitoring and Quality Plan
-<!-- VALIDATION_METADATA: [] -->
+<!-- VALIDATION_METADATA: {"variables": [], "metadata": {}} -->
 ### Description
 Develop a risk-based monitoring plan for a Phase II oncology trial.
 
@@ -259,15 +238,19 @@ Output Format:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Create plan.
-"
-Asserted Output: "risk register
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['risk register\n']
+```
 
 ---
 
 ## Skill: Protocol Optimization and Risk Simulation
-<!-- VALIDATION_METADATA: [{"name": "draft_protocol", "description": "proposed protocol text", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "draft_protocol", "description": "proposed protocol text", "required": true}], "metadata": {}} -->
 ### Description
 Evaluate a draft clinical protocol and simulate the effects of simplifying key elements.
 
@@ -306,15 +289,19 @@ Markdown sections:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Draft includes 12 visits and 50 inclusion criteria.
-"
-Asserted Output: "Section A:
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Section A:\n']
+```
 
 ---
 
 ## Skill: Compliance and Data Quality Monitoring Plan
-<!-- VALIDATION_METADATA: [] -->
+<!-- VALIDATION_METADATA: {"variables": [], "metadata": {}} -->
 ### Description
 Design an AI-assisted monitoring plan to ensure compliance and data integrity.
 
@@ -351,15 +338,19 @@ Markdown sections:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Generate monitoring plan.
-"
-Asserted Output: "Part A:
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Part A:\n']
+```
 
 ---
 
 ## Skill: Diversity Action Plan Development
-<!-- VALIDATION_METADATA: [{"name": "epidemiology_data", "description": "The data or dataset to analyze", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "epidemiology_data", "description": "The data or dataset to analyze", "required": true}], "metadata": {}} -->
 ### Description
 Generate a Diversity Action Plan per FDA guidance.
 
@@ -388,15 +379,19 @@ Markdown Diversity Action Plan.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "epidemiology_data: Hypertension prevalence by race.
-"
-Asserted Output: "Diversity Action Plan
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Diversity Action Plan\n']
+```
 
 ---
 
 ## Skill: Informed Consent Process Optimization
-<!-- VALIDATION_METADATA: [{"name": "icf_text", "description": "The text content to process", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "icf_text", "description": "The text content to process", "required": true}], "metadata": {}} -->
 ### Description
 Review and rewrite ICF for readability.
 
@@ -425,7 +420,11 @@ Markdown Revised ICF Text.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "icf_text: The investigational product is a monoclonal antibody...
-"
-Asserted Output: "Revised ICF
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Revised ICF\n']
+```

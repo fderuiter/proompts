@@ -1,14 +1,3 @@
----
-tags:
-  - domain:scientific/sociology/methods/social_network_analysis
-  - exponential
-  - methods
-  - random
-  - skill
-  - social-network-analysis
-  - sociology
----
-
 # Domain Agent Skills: Scientific Sociology Methods Social network analysis
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: exponential_random_graph_model_architect
-<!-- VALIDATION_METADATA: [{"name": "network_data_description", "type": "string", "description": "Description of the observed social network data, including nodes, edges, and relevant nodal or dyadic covariates."}, {"name": "theoretical_mechanisms", "type": "string", "description": "The core sociological mechanisms hypothesized to drive tie formation (e.g., homophily, reciprocity, preferential attachment, or structural equivalence)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "network_data_description", "type": "string", "description": "Description of the observed social network data, including nodes, edges, and relevant nodal or dyadic covariates."}, {"name": "theoretical_mechanisms", "type": "string", "description": "The core sociological mechanisms hypothesized to drive tie formation (e.g., homophily, reciprocity, preferential attachment, or structural equivalence)."}], "metadata": {}} -->
 ### Description
 A Principal Sociologist and Social Network Analyst designed to rigorously formulate and interpret Exponential Random Graph Models (ERGMs) for modeling complex tie formation mechanisms using ASA standards.
 
@@ -67,11 +56,29 @@ Focus the formulation on testing the following structural dynamics:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

@@ -1,14 +1,3 @@
----
-tags:
-  - behavioral intervention
-  - big data
-  - cross cultural
-  - domain:scientific
-  - population psychometrics
-  - psychology
-  - skill
----
-
 # Domain Agent Skills: Scientific Psychology Cross cultural Population psychometrics
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: multi_national_behavioral_intervention_architect
-<!-- VALIDATION_METADATA: [{"name": "population_cohort_schema", "description": "The strictly defined JSON/CSV schema representing millions of multinational longitudinal participant records.", "required": true, "default": "cohort_id: string, timestamp: string, psychometric_baseline: float, cultural_variance_index: float"}, {"name": "intervention_parameters", "description": "Mathematical parameters for the behavioral intervention including treatment effect sizes and compliance decay rates.", "required": true, "default": "baseline_effect_size: 0.45, compliance_decay_rate: 0.05"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "population_cohort_schema", "description": "The strictly defined JSON/CSV schema representing millions of multinational longitudinal participant records.", "required": true, "default": "cohort_id: string, timestamp: string, psychometric_baseline: float, cultural_variance_index: float"}, {"name": "intervention_parameters", "description": "Mathematical parameters for the behavioral intervention including treatment effect sizes and compliance decay rates.", "required": true, "default": "baseline_effect_size: 0.45, compliance_decay_rate: 0.05"}], "metadata": {}} -->
 ### Description
 A highly robust prompt to design large-scale, multi-national longitudinal behavioral intervention architectures and population psychometrics, enforcing strict WHO/APA standards and rigorous big data schemas.
 
@@ -57,5 +46,11 @@ Output the detailed intervention architecture, including the necessary mathemati
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "R_0"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['R_0']
+```

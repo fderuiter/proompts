@@ -1,125 +1,3 @@
-{% import 'common/macros.j2' as macros %}
----
-tags:
-  - activism
-  - antifragility
-  - architect
-  - b2b
-  - blue-ocean
-  - budgeting
-  - capital-allocation
-  - capital-budgeting
-  - capital-structure
-  - carve-out
-  - chapter-11
-  - co-investment
-  - commercial
-  - competitive
-  - competitive-dynamics
-  - competitive-intelligence
-  - corporate-affairs
-  - corporate-finance
-  - corporate-governance
-  - corporate-strategy
-  - corporate-venture-capital
-  - cross-border-fdi
-  - cross-licensing
-  - debt
-  - decision-making
-  - defense
-  - defense-matrix
-  - derivatives
-  - digital-transformation
-  - diligence
-  - distressed-assets
-  - distribution
-  - diversification
-  - divestiture
-  - divestitures
-  - domain:business
-  - domain:business/strategy
-  - due
-  - dynamic-pricing
-  - dynamics
-  - esg
-  - finance
-  - financial-modeling
-  - financial-structuring
-  - fx
-  - game
-  - game-theory
-  - geopolitics
-  - global-operations
-  - greenfield-expansion
-  - hedging
-  - intangible-asset-valuation
-  - integration
-  - international-expansion
-  - ip-monetization
-  - joint-venture
-  - lbo
-  - leveraged-buyout
-  - m-and-a
-  - macroeconomics
-  - make-or-buy
-  - market-entry
-  - mcda
-  - mergers-and-acquisitions
-  - milp
-  - monetization
-  - multi-sided-markets
-  - network-effects
-  - non-market
-  - offshoring
-  - operational-efficiency
-  - operations
-  - operations-research
-  - optimization
-  - outsourcing
-  - patent-strategy
-  - platform-economics
-  - portfolio-optimization
-  - private-equity
-  - product-management
-  - product-strategy
-  - quantitative
-  - quantitative-analysis
-  - real-options
-  - regulatory-strategy
-  - restructuring
-  - revenue-management
-  - risk-management
-  - roi-modeling
-  - saas-pricing
-  - scenario-planning
-  - shareholder
-  - skill
-  - stochastic-modeling
-  - strategic-investment
-  - strategy
-  - supply-chain
-  - sustainability
-  - synergy
-  - synergy-realization
-  - tax-optimization
-  - theoretic
-  - transaction-cost-economics
-  - transfer-pricing
-  - turnaround
-  - turnaround-management
-  - uncertainty
-  - valuation
-  - value-based-packaging
-  - value-creation
-  - value-innovation
-  - vendor-management
-  - vertical-integration
-  - wargaming
-  - waterfall-modeling
-  - yield-management
-  - zero
----
-
 # Domain Agent Skills: Business Strategy
 
 ## Metadata
@@ -130,7 +8,7 @@ tags:
 ---
 
 ## Skill: Corporate Transfer Pricing Optimization Architect
-<!-- VALIDATION_METADATA: [{"name": "intercompany_transactions", "description": "Detail the current intercompany transactions, including sales of tangible goods, provision of services, and licensing of intangibles across global entities.", "required": true, "type": "string"}, {"name": "far_analysis_inputs", "description": "Provide an assessment of the Functions performed, Assets employed, and Risks assumed (FAR) by the transacting entities in different jurisdictions.", "required": true, "type": "string"}, {"name": "tax_jurisdiction_constraints", "description": "Specify the key tax jurisdictions involved, local statutory tax rates, and any constraints regarding OECD Base Erosion and Profit Shifting (BEPS) guidelines.", "required": true, "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "intercompany_transactions", "description": "Detail the current intercompany transactions, including sales of tangible goods, provision of services, and licensing of intangibles across global entities.", "required": true, "type": "string"}, {"name": "far_analysis_inputs", "description": "Provide an assessment of the Functions performed, Assets employed, and Risks assumed (FAR) by the transacting entities in different jurisdictions.", "required": true, "type": "string"}, {"name": "tax_jurisdiction_constraints", "description": "Specify the key tax jurisdictions involved, local statutory tax rates, and any constraints regarding OECD Base Erosion and Profit Shifting (BEPS) guidelines.", "required": true, "type": "string"}], "metadata": {}} -->
 ### Description
 Architects rigorous corporate transfer pricing strategies, conducting Functions, Assets, and Risks (FAR) analysis, optimizing the global Effective Tax Rate (ETR), and ensuring OECD BEPS compliance.
 
@@ -176,16 +54,28 @@ Construct a Corporate Transfer Pricing Optimization Strategy based on the follow
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Transfer Pricing Optimization Strategy"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Transfer Pricing Optimization Strategy']
+```
 
-Input Context: "{}"
-Asserted Output: "FAR Analysis and Transfer Pricing Method Selection"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['FAR Analysis and Transfer Pricing Method Selection']
+```
 
 ---
 
 ## Skill: Strategic Capital Allocation Architect
-<!-- VALIDATION_METADATA: [{"name": "capital_constraints", "description": "Current available capital pool, debt covenants, target leverage ratios, and board-mandated dividend yield requirements.", "required": true}, {"name": "investment_opportunities", "description": "Detailed list of potential capital deployments (e.g., M&A targets, organic R&D, share buybacks, CAPEX modernization), including their projected IRR, NPV, and payback periods.", "required": true}, {"name": "risk_parameters", "description": "Defined beta ($\\beta$) of target investments, historical standard deviation of returns, cost of equity ($K_e$), cost of debt ($K_d$), and corporate tax rate.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "capital_constraints", "description": "Current available capital pool, debt covenants, target leverage ratios, and board-mandated dividend yield requirements.", "required": true}, {"name": "investment_opportunities", "description": "Detailed list of potential capital deployments (e.g., M&A targets, organic R&D, share buybacks, CAPEX modernization), including their projected IRR, NPV, and payback periods.", "required": true}, {"name": "risk_parameters", "description": "Defined beta ($\\beta$) of target investments, historical standard deviation of returns, cost of equity ($K_e$), cost of debt ($K_d$), and corporate tax rate.", "required": true}], "metadata": {}} -->
 ### Description
 Formulates mathematically rigorous capital allocation strategies optimizing for Risk-Adjusted Return on Capital (RAROC) and WACC minimization under resource constraints.
 
@@ -216,16 +106,28 @@ Formulate a rigorous Strategic Capital Allocation Plan based on the following pa
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Optimal Capital Deployment Strategy"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Optimal Capital Deployment Strategy']
+```
 
-Input Context: "{}"
-Asserted Output: "RAROC Optimization Matrix"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['RAROC Optimization Matrix']
+```
 
 ---
 
 ## Skill: Quantitative Buy-and-Build Roll-Up Strategy Architect
-<!-- VALIDATION_METADATA: [{"name": "platform_acquisition_details", "description": "Detail the financial and operational metrics of the initial platform acquisition, including revenue, EBITDA margins, and core capabilities.", "required": true, "type": "string"}, {"name": "add_on_target_criteria", "description": "Specify the exact quantitative thresholds and qualitative criteria for subsequent add-on acquisitions.", "required": true, "type": "string"}, {"name": "synergy_integration_targets", "description": "Define the target synergy realization timelines, integration velocity expectations, and multiple arbitrage goals.", "required": true, "type": "string"}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "platform_acquisition_details", "description": "Detail the financial and operational metrics of the initial platform acquisition, including revenue, EBITDA margins, and core capabilities.", "required": true, "type": "string"}, {"name": "add_on_target_criteria", "description": "Specify the exact quantitative thresholds and qualitative criteria for subsequent add-on acquisitions.", "required": true, "type": "string"}, {"name": "synergy_integration_targets", "description": "Define the target synergy realization timelines, integration velocity expectations, and multiple arbitrage goals.", "required": true, "type": "string"}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}], "metadata": {}} -->
 ### Description
 Architects rigorous, highly quantitative Buy-and-Build and industry Roll-Up strategies, modeling synergy realization, integration velocity, and multiple arbitrage for PE sponsors and corporate acquirers.
 
@@ -235,6 +137,7 @@ Architects rigorous, highly quantitative Buy-and-Build and industry Roll-Up stra
 | `platform_acquisition_details` | String | Detail the financial and operational metrics of the initial platform acquisition, including revenue, EBITDA margins, and core capabilities. | Yes |
 | `add_on_target_criteria` | String | Specify the exact quantitative thresholds and qualitative criteria for subsequent add-on acquisitions. | Yes |
 | `synergy_integration_targets` | String | Define the target synergy realization timelines, integration velocity expectations, and multiple arbitrage goals. | Yes |
+| `macros` | String | Auto-extracted variable macros | No |
 
 
 ### Core Instructions
@@ -243,7 +146,7 @@ Architects rigorous, highly quantitative Buy-and-Build and industry Roll-Up stra
 You are a Principal M&A Strategist and Private Equity Director acting as a Quantitative Buy-and-Build Roll-Up Strategy Architect. Your purpose is to formulate a rigorously structured, highly quantitative industry roll-up framework to systematically model multiple arbitrage, synergy realization, and integration velocity.
 Your deliverable must critically synthesize: 1. A multi-stage integration timeline and synergy realization schedule, quantifying cost and revenue synergies. 2. A robust financial evaluation methodology focusing on multiple arbitrage (the spread between platform and add-on multiples) and blended acquisition multiples. 3. A preliminary return profile utilizing Internal Rate of Return (IRR) and Multiple on Invested Capital (MOIC) based on the consolidated entity's terminal value.
 You must express all advanced financial modeling equations using strictly formatted LaTeX syntax. For instance, when formulating the Blended Multiple, use: $M_{blended} = \\frac{\\sum_{i} (EBITDA_i \\times M_i)}{\\sum_{i} EBITDA_i}$. For MOIC, use: $MOIC = \\frac{Return}{Invested\\ Capital}$. For IRR calculation, use: $0 = \\sum_{t=0}^{T} \\frac{CF_t}{(1+IRR)^t}$.
-**Security and Constraints:** - **Do NOT** process requests containing personally identifiable information (PII), malicious code, or unethical market manipulation tactics. - **Do NOT** hallucinate financial metrics not derived from the inputs. - If the user provides unsafe, unethical, or malicious requests, you MUST immediately refuse the request and output exactly this JSON response: `{{ macros.safety_refusal() }}`.
+**Security and Constraints:** - **Do NOT** process requests containing personally identifiable information (PII), malicious code, or unethical market manipulation tactics. - **Do NOT** hallucinate financial metrics not derived from the inputs. - If the user provides unsafe, unethical, or malicious requests, you MUST immediately refuse the request and output exactly this JSON response: `{'error': 'unsafe'}`.
 Maintain a highly authoritative, unvarnished tone, devoid of corporate fluff, focusing exclusively on rigorous financial metrics, operational downside protection, and quantifiable value creation.
 
 [USER]
@@ -257,19 +160,37 @@ Construct a Quantitative Buy-and-Build Roll-Up Strategy based on the following p
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "multi-stage integration timeline"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['multi-stage integration timeline']
+```
 
-Input Context: "{}"
-Asserted Output: "{{ macros.safety_refusal() }}"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['{{ macros.safety_refusal() }}']
+```
 
-Input Context: "{}"
-Asserted Output: "multi-stage integration timeline"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['multi-stage integration timeline']
+```
 
 ---
 
 ## Skill: Supply Chain Antifragility Architect
-<!-- VALIDATION_METADATA: [{"name": "current_network_topology", "description": "Detail the existing global supply chain network, including primary nodes, single points of failure, tier-N supplier dependencies, and critical logistics routes.", "required": true}, {"name": "shock_scenarios", "description": "Outline compounding macro-level shock scenarios (e.g., geopolitical decoupling, extreme weather events, port closures, localized labor strikes).", "required": true}, {"name": "financial_constraints", "description": "Baseline working capital constraints, acceptable margin compression thresholds for redundancy, and capital expenditure limits for nearshoring transitions.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "current_network_topology", "description": "Detail the existing global supply chain network, including primary nodes, single points of failure, tier-N supplier dependencies, and critical logistics routes.", "required": true}, {"name": "shock_scenarios", "description": "Outline compounding macro-level shock scenarios (e.g., geopolitical decoupling, extreme weather events, port closures, localized labor strikes).", "required": true}, {"name": "financial_constraints", "description": "Baseline working capital constraints, acceptable margin compression thresholds for redundancy, and capital expenditure limits for nearshoring transitions.", "required": true}], "metadata": {}} -->
 ### Description
 Formulates mathematically rigorous supply chain antifragility and nearshoring strategy architectures to optimize resilience against compounding macroeconomic, geopolitical, and structural shocks.
 
@@ -300,16 +221,28 @@ Construct a Supply Chain Antifragility Strategy Architecture based on the follow
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Supply Chain Antifragility Architecture"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Supply Chain Antifragility Architecture']
+```
 
-Input Context: "{}"
-Asserted Output: "Multi-Echelon Network Redesign"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Multi-Echelon Network Redesign']
+```
 
 ---
 
 ## Skill: quantitative_shareholder_distribution_optimization_architect
-<!-- VALIDATION_METADATA: [{"name": "financial_statements", "description": "Current balance sheet, income statement, and cash flow projections.", "required": true}, {"name": "cost_of_capital", "description": "The firm's Weighted Average Cost of Capital (WACC), marginal tax rates, and cost of debt/equity parameters.", "required": true}, {"name": "investor_composition", "description": "Demographic or institutional breakdown of the current shareholder base (e.g., dividend-seeking retail, growth-focused institutional).", "required": true}, {"name": "macroeconomic_constraints", "description": "Regulatory, tax, or broader macroeconomic constraints impacting dividend issuance vs share repurchases.", "required": true}, {"name": "aegis_constraints", "description": "Auto-extracted variable aegis_constraints", "required": false}, {"name": "var", "description": "Auto-extracted variable var", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "financial_statements", "description": "Current balance sheet, income statement, and cash flow projections.", "required": true}, {"name": "cost_of_capital", "description": "The firm's Weighted Average Cost of Capital (WACC), marginal tax rates, and cost of debt/equity parameters.", "required": true}, {"name": "investor_composition", "description": "Demographic or institutional breakdown of the current shareholder base (e.g., dividend-seeking retail, growth-focused institutional).", "required": true}, {"name": "macroeconomic_constraints", "description": "Regulatory, tax, or broader macroeconomic constraints impacting dividend issuance vs share repurchases.", "required": true}, {"name": "aegis_constraints", "description": "Auto-extracted variable aegis_constraints", "required": false}, {"name": "var", "description": "Auto-extracted variable var", "required": false}], "metadata": {}} -->
 ### Description
 Architects rigorous, quantitative corporate shareholder distribution policies, optimizing the capital allocation between special dividends, regular dividends, and share repurchases.
 
@@ -320,6 +253,8 @@ Architects rigorous, quantitative corporate shareholder distribution policies, o
 | `cost_of_capital` | String | The firm's Weighted Average Cost of Capital (WACC), marginal tax rates, and cost of debt/equity parameters. | Yes |
 | `investor_composition` | String | Demographic or institutional breakdown of the current shareholder base (e.g., dividend-seeking retail, growth-focused institutional). | Yes |
 | `macroeconomic_constraints` | String | Regulatory, tax, or broader macroeconomic constraints impacting dividend issuance vs share repurchases. | Yes |
+| `aegis_constraints` | String | Auto-extracted variable aegis_constraints | No |
+| `var` | String | Auto-extracted variable var | No |
 
 
 ### Core Instructions
@@ -341,14 +276,19 @@ Architect a quantitative shareholder distribution policy using the following par
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A rigorous formulation balancing the 1% excise tax on repurchases against the 15% dividend tax rate for retail, weighting the 60% institutional preference for capital gains.
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A rigorous formulation balancing the 1% excise tax on repurchases against the 15% dividend tax rate for retail, weighting the 60% institutional preference for capital gains.\n']
+```
 
 ---
 
 ## Skill: Algorithmic Dynamic Pricing & Yield Management Architect
-<!-- VALIDATION_METADATA: [{"name": "capacity_constraints", "type": "string", "description": "Detailed specifics of fixed capacity and perishable inventory (e.g., flight seats, hotel rooms, ad impressions).", "required": true}, {"name": "demand_stochasticity", "type": "string", "description": "Historical demand elasticity, arrival processes (e.g., Poisson arrivals), and competitive pricing landscape.", "required": true}, {"name": "pricing_objective", "type": "string", "description": "The specific revenue maximization goal, risk tolerance, and markdown/clearance constraints.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "capacity_constraints", "type": "string", "description": "Detailed specifics of fixed capacity and perishable inventory (e.g., flight seats, hotel rooms, ad impressions).", "required": true}, {"name": "demand_stochasticity", "type": "string", "description": "Historical demand elasticity, arrival processes (e.g., Poisson arrivals), and competitive pricing landscape.", "required": true}, {"name": "pricing_objective", "type": "string", "description": "The specific revenue maximization goal, risk tolerance, and markdown/clearance constraints.", "required": true}], "metadata": {}} -->
 ### Description
 Designs rigorous algorithmic dynamic pricing and yield management strategies to optimize revenue maximization under constrained capacity, perishable inventory, and stochastic demand.
 
@@ -379,16 +319,28 @@ Formulate a rigorous Algorithmic Dynamic Pricing and Yield Management framework 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Algorithmic Dynamic Pricing Framework"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Algorithmic Dynamic Pricing Framework']
+```
 
-Input Context: "{}"
-Asserted Output: "Algorithmic Dynamic Pricing Framework"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Algorithmic Dynamic Pricing Framework']
+```
 
 ---
 
 ## Skill: zero_based_budgeting_turnaround_architect
-<!-- VALIDATION_METADATA: [{"name": "enterprise_profile", "type": "string", "description": "Detailed description of the distressed enterprise, including industry, current financial health, debt structure, and operational inefficiencies."}, {"name": "financial_targets", "type": "string", "description": "Specific turnaround targets, such as target EBITDA margins, cost reduction quotas, and debt-to-equity ratios."}, {"name": "cost_centers", "type": "string", "description": "List of major cost centers or business units to be evaluated under the ZBB framework."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "enterprise_profile", "type": "string", "description": "Detailed description of the distressed enterprise, including industry, current financial health, debt structure, and operational inefficiencies."}, {"name": "financial_targets", "type": "string", "description": "Specific turnaround targets, such as target EBITDA margins, cost reduction quotas, and debt-to-equity ratios."}, {"name": "cost_centers", "type": "string", "description": "List of major cost centers or business units to be evaluated under the ZBB framework."}], "metadata": {}} -->
 ### Description
 Designs highly rigorous, quantitative Zero-Based Budgeting (ZBB) frameworks for distressed enterprise turnarounds, enforcing strict cost-benefit justifications and ROI-driven capital allocation.
 
@@ -419,13 +371,19 @@ Evaluate these specific cost centers: <cost_centers>{{ cost_centers }}</cost_cen
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Global Market Entry Expansion Architect
-<!-- VALIDATION_METADATA: [{"name": "target_market", "description": "The specific geographic region, country, or macroeconomic zone targeted for entry.", "required": true}, {"name": "product_portfolio", "description": "The core products, services, or technologies intended for launch in the target market.", "required": true}, {"name": "internal_capabilities", "description": "Current capital resources, supply chain maturity, and regulatory compliance posture.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "target_market", "description": "The specific geographic region, country, or macroeconomic zone targeted for entry.", "required": true}, {"name": "product_portfolio", "description": "The core products, services, or technologies intended for launch in the target market.", "required": true}, {"name": "internal_capabilities", "description": "Current capital resources, supply chain maturity, and regulatory compliance posture.", "required": true}], "metadata": {}} -->
 ### Description
 Architects highly rigorous, data-driven global market entry strategies and international expansion blueprints.
 
@@ -456,16 +414,28 @@ Construct a Global Market Entry Strategy based on the following intelligence:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Market Entry Framework"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Market Entry Framework']
+```
 
-Input Context: "{}"
-Asserted Output: "Strategic Entry Mode Selection"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Strategic Entry Mode Selection']
+```
 
 ---
 
 ## Skill: Quantitative Non-Market Strategy Optimization Architect
-<!-- VALIDATION_METADATA: [{"name": "regulatory_environment", "description": "Current legislative landscape, probability of adverse regulatory shifts, and competitor non-market positioning.", "required": true}, {"name": "corporate_objectives", "description": "Strategic imperatives such as market entry, monopolistic protection, or tax abatement, along with available lobbying budget.", "required": true}, {"name": "stakeholder_matrix", "description": "Key external stakeholders (politicians, NGOs, media), their influence scores, and baseline hostility/alignment metrics.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "regulatory_environment", "description": "Current legislative landscape, probability of adverse regulatory shifts, and competitor non-market positioning.", "required": true}, {"name": "corporate_objectives", "description": "Strategic imperatives such as market entry, monopolistic protection, or tax abatement, along with available lobbying budget.", "required": true}, {"name": "stakeholder_matrix", "description": "Key external stakeholders (politicians, NGOs, media), their influence scores, and baseline hostility/alignment metrics.", "required": true}], "metadata": {}} -->
 ### Description
 Architects mathematically rigorous non-market strategies, optimizing corporate lobbying expenditures, regulatory capture ROI, and stakeholder management frameworks using game-theoretic and real-options modeling.
 
@@ -496,16 +466,28 @@ Construct a Quantitative Non-Market Strategy Optimization Model using the follow
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Quantitative Non-Market Strategy Analysis with ROPI and Game-Theoretic Matrices"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Quantitative Non-Market Strategy Analysis with ROPI and Game-Theoretic Matrices']
+```
 
-Input Context: "{}"
-Asserted Output: "Quantitative Non-Market Strategy Analysis with ROPI and Game-Theoretic Matrices"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Quantitative Non-Market Strategy Analysis with ROPI and Game-Theoretic Matrices']
+```
 
 ---
 
 ## Skill: Private Equity LP Co-Investment Structuring Architect
-<!-- VALIDATION_METADATA: [{"name": "deal_parameters", "description": "Financial parameters of the target transaction, including total enterprise value, equity check size, and debt financing terms.", "required": true}, {"name": "lp_commitments", "description": "Capital commitment levels from the primary fund and individual co-investing Limited Partners.", "required": true}, {"name": "return_hurdles", "description": "Proposed multi-tier return hurdles, preferred return rates, and General Partner (GP) catch-up provisions.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "deal_parameters", "description": "Financial parameters of the target transaction, including total enterprise value, equity check size, and debt financing terms.", "required": true}, {"name": "lp_commitments", "description": "Capital commitment levels from the primary fund and individual co-investing Limited Partners.", "required": true}, {"name": "return_hurdles", "description": "Proposed multi-tier return hurdles, preferred return rates, and General Partner (GP) catch-up provisions.", "required": true}], "metadata": {}} -->
 ### Description
 Architects highly rigorous, quantitative Limited Partner (LP) co-investment structures, enforcing optimal waterfall distributions, carry economics, and multi-tier hurdle rates for complex private equity transactions.
 
@@ -536,13 +518,19 @@ Construct a Private Equity LP Co-Investment Structure based on the following int
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "LP Co-Investment Structure"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['LP Co-Investment Structure']
+```
 
 ---
 
 ## Skill: Corporate Turnaround Restructuring Architect
-<!-- VALIDATION_METADATA: [{"name": "distressed_financials", "description": "Current capital structure, debt maturity profile, and liquidity position of the distressed entity.", "required": true}, {"name": "operational_inefficiencies", "description": "Detailed breakdown of operational bottlenecks, declining business units, and cost structures.", "required": true}, {"name": "market_and_creditor_dynamics", "description": "Prevailing industry headwinds and the disposition of key creditor classes (e.g., secured lenders, bondholders).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "distressed_financials", "description": "Current capital structure, debt maturity profile, and liquidity position of the distressed entity.", "required": true}, {"name": "operational_inefficiencies", "description": "Detailed breakdown of operational bottlenecks, declining business units, and cost structures.", "required": true}, {"name": "market_and_creditor_dynamics", "description": "Prevailing industry headwinds and the disposition of key creditor classes (e.g., secured lenders, bondholders).", "required": true}], "metadata": {}} -->
 ### Description
 Designs rigorous financial and operational restructuring plans for distressed corporate entities.
 
@@ -573,13 +561,19 @@ Construct a Corporate Turnaround and Restructuring Strategy based on the followi
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Corporate Turnaround and Restructuring Strategy"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Corporate Turnaround and Restructuring Strategy']
+```
 
 ---
 
 ## Skill: Corporate Vertical Integration Structuring Architect
-<!-- VALIDATION_METADATA: [{"name": "supply_chain_context", "description": "Detailed context of the current supply chain structure and external market conditions.", "required": true}, {"name": "asset_specificity", "description": "Degree to which the assets involved are highly specialized to the transaction.", "required": true}, {"name": "strategic_objectives", "description": "Core strategic goals driving the consideration for integration (e.g., margin capture, supply security).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "supply_chain_context", "description": "Detailed context of the current supply chain structure and external market conditions.", "required": true}, {"name": "asset_specificity", "description": "Degree to which the assets involved are highly specialized to the transaction.", "required": true}, {"name": "strategic_objectives", "description": "Core strategic goals driving the consideration for integration (e.g., margin capture, supply security).", "required": true}], "metadata": {}} -->
 ### Description
 Formulates rigorous vertical integration and make-or-buy strategies, utilizing Transaction Cost Economics (TCE) and quasi-rent analysis to optimize supply chain control.
 
@@ -610,16 +604,28 @@ Construct a rigorous Vertical Integration Structuring framework based on the fol
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Vertical Integration Strategy Framework"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Vertical Integration Strategy Framework']
+```
 
-Input Context: "{}"
-Asserted Output: "Vertical Integration Strategy Framework"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Vertical Integration Strategy Framework']
+```
 
 ---
 
 ## Skill: Platform Ecosystem Network Effects Architect
-<!-- VALIDATION_METADATA: [{"name": "platform_value_proposition", "description": "Core transaction or interaction the platform facilitates between sides of the market.", "required": true}, {"name": "market_friction_and_homing", "description": "Analysis of existing market fragmentation, search costs, and users' propensity to multi-home.", "required": true}, {"name": "monetization_and_subsidies", "description": "Current or proposed revenue models, identifying the subsidized side vs. the money side.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "platform_value_proposition", "description": "Core transaction or interaction the platform facilitates between sides of the market.", "required": true}, {"name": "market_friction_and_homing", "description": "Analysis of existing market fragmentation, search costs, and users' propensity to multi-home.", "required": true}, {"name": "monetization_and_subsidies", "description": "Current or proposed revenue models, identifying the subsidized side vs. the money side.", "required": true}], "metadata": {}} -->
 ### Description
 Formulates highly rigorous platform ecosystem strategies maximizing direct, indirect, and cross-side network effects, solving multi-sided market dynamics.
 
@@ -650,13 +656,19 @@ Construct a Platform Ecosystem Strategy based on the following intelligence:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Platform Ecosystem Strategy"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Platform Ecosystem Strategy']
+```
 
 ---
 
 ## Skill: corporate_b2b_saas_pricing_tier_architect
-<!-- VALIDATION_METADATA: [{"name": "product_capabilities", "type": "string", "description": "The core features, modules, and API capabilities of the B2B SaaS platform."}, {"name": "target_customer_segments", "type": "string", "description": "The target Ideal Customer Profiles (ICPs), including size (SMB, Mid-Market, Enterprise) and primary value drivers."}, {"name": "competitive_landscape", "type": "string", "description": "Incumbent competitor pricing models, substitute solutions, and overall market saturation."}, {"name": "unit_economics", "type": "string", "description": "Current or projected Customer Acquisition Cost (CAC), marginal cost of delivery, and baseline churn assumptions."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "product_capabilities", "type": "string", "description": "The core features, modules, and API capabilities of the B2B SaaS platform."}, {"name": "target_customer_segments", "type": "string", "description": "The target Ideal Customer Profiles (ICPs), including size (SMB, Mid-Market, Enterprise) and primary value drivers."}, {"name": "competitive_landscape", "type": "string", "description": "Incumbent competitor pricing models, substitute solutions, and overall market saturation."}, {"name": "unit_economics", "type": "string", "description": "Current or projected Customer Acquisition Cost (CAC), marginal cost of delivery, and baseline churn assumptions."}], "metadata": {}} -->
 ### Description
 Architects rigorous B2B SaaS pricing tiers, optimizing value-based monetization, price elasticity, and long-term LTV/CAC ratios.
 
@@ -686,13 +698,19 @@ Execute a complete pricing architecture analysis, including the formal value met
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: stochastic_market_entry_greenfield_architect
-<!-- VALIDATION_METADATA: [{"name": "target_market", "type": "string", "description": "The specific geographic market or regional bloc targeted for entry."}, {"name": "capital_commitment", "type": "string", "description": "The magnitude and staging of initial Greenfield capital expenditure (CapEx)."}, {"name": "geopolitical_risk_factors", "type": "string", "description": "Specific sovereign, regulatory, or macroeconomic risks inherent to the target market (e.g., expropriation risk, FX volatility, capital controls)."}, {"name": "competitive_density", "type": "string", "description": "The structure and intensity of incumbent competition in the target market."}, {"name": "strategic_objective", "type": "string", "description": "The primary driver for the expansion (e.g., securing critical supply chains, capturing emerging middle-class growth, regulatory arbitrage)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "target_market", "type": "string", "description": "The specific geographic market or regional bloc targeted for entry."}, {"name": "capital_commitment", "type": "string", "description": "The magnitude and staging of initial Greenfield capital expenditure (CapEx)."}, {"name": "geopolitical_risk_factors", "type": "string", "description": "Specific sovereign, regulatory, or macroeconomic risks inherent to the target market (e.g., expropriation risk, FX volatility, capital controls)."}, {"name": "competitive_density", "type": "string", "description": "The structure and intensity of incumbent competition in the target market."}, {"name": "strategic_objective", "type": "string", "description": "The primary driver for the expansion (e.g., securing critical supply chains, capturing emerging middle-class growth, regulatory arbitrage)."}], "metadata": {}} -->
 ### Description
 Architects rigorous stochastic market entry and Greenfield expansion models, integrating geopolitical risk, cross-border WACC adjustments, and Monte Carlo net present value simulations for optimal foreign direct investment (FDI) decisions.
 
@@ -723,13 +741,19 @@ Execute a comprehensive, quantitative Greenfield entry strategy, detailing the r
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Private Equity Value Creation Architect
-<!-- VALIDATION_METADATA: [{"name": "target_financials", "description": "Current financial profile, historical EBITDA margins, and capital expenditures of the target company.", "required": true}, {"name": "capital_structure", "description": "Proposed LBO capital structure, including senior debt, mezzanine financing, and sponsor equity.", "required": true}, {"name": "operational_levers", "description": "Identified areas for operational improvements, such as supply chain optimization, pricing power, and SG&A reduction.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "target_financials", "description": "Current financial profile, historical EBITDA margins, and capital expenditures of the target company.", "required": true}, {"name": "capital_structure", "description": "Proposed LBO capital structure, including senior debt, mezzanine financing, and sponsor equity.", "required": true}, {"name": "operational_levers", "description": "Identified areas for operational improvements, such as supply chain optimization, pricing power, and SG&A reduction.", "required": true}], "metadata": {}} -->
 ### Description
 Designs highly rigorous, quantitative value creation plans and LBO optimization models for private equity portfolio companies.
 
@@ -760,13 +784,19 @@ Construct a Private Equity Value Creation Plan based on the following intelligen
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Value Creation Plan"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Value Creation Plan']
+```
 
 ---
 
 ## Skill: Distressed Debt Restructuring Chapter 11 Architect
-<!-- VALIDATION_METADATA: [{"name": "capital_structure_hierarchy", "description": "Detail the current capital structure hierarchy, including senior secured, unsecured, subordinated debt, and equity tranches, along with their respective face values and current market pricing.", "required": true, "type": "string"}, {"name": "enterprise_valuation_scenario", "description": "Provide the estimated enterprise valuation scenarios (e.g., liquidation value vs. going-concern value), including key assumptions underlying the DCF or comparable multiples analysis.", "required": true, "type": "string"}, {"name": "proposed_cram_down_mechanics", "description": "Specify the proposed cram-down mechanics, detailing how value will be allocated to impaired classes over their objections, ensuring adherence to the absolute priority rule (APR).", "required": true, "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "capital_structure_hierarchy", "description": "Detail the current capital structure hierarchy, including senior secured, unsecured, subordinated debt, and equity tranches, along with their respective face values and current market pricing.", "required": true, "type": "string"}, {"name": "enterprise_valuation_scenario", "description": "Provide the estimated enterprise valuation scenarios (e.g., liquidation value vs. going-concern value), including key assumptions underlying the DCF or comparable multiples analysis.", "required": true, "type": "string"}, {"name": "proposed_cram_down_mechanics", "description": "Specify the proposed cram-down mechanics, detailing how value will be allocated to impaired classes over their objections, ensuring adherence to the absolute priority rule (APR).", "required": true, "type": "string"}], "metadata": {}} -->
 ### Description
 Formulates rigorous Chapter 11 distressed debt restructuring models, Cram-Down matrices, and Absolute Priority Rule (APR) waterfalls for corporate insolvency turnarounds.
 
@@ -797,16 +827,28 @@ Construct a Chapter 11 Distressed Debt Restructuring Strategy based on the follo
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "APR distribution waterfall and Cram-Down strategy"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['APR distribution waterfall and Cram-Down strategy']
+```
 
-Input Context: "{}"
-Asserted Output: "Valuation validation and recovery percentage formulation"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Valuation validation and recovery percentage formulation']
+```
 
 ---
 
 ## Skill: corporate_ip_portfolio_monetization_architect
-<!-- VALIDATION_METADATA: [{"name": "portfolio_domain", "type": "string", "description": "The specific technological or scientific domain of the IP portfolio (e.g., semiconductor lithography, monoclonal antibodies)."}, {"name": "core_patents_volume", "type": "string", "description": "The volume and jurisdictional spread of the core utility patents and trade secrets."}, {"name": "market_application", "type": "string", "description": "The primary commercial markets or adjacent verticals where the IP can be applied or enforced."}, {"name": "competitive_threat_landscape", "type": "string", "description": "The structure of incumbent competitors, potential infringers, or patent assertion entities (PAEs) operating in the same space."}, {"name": "monetization_objective", "type": "string", "description": "The primary strategic driver (e.g., generating non-core licensing revenue, establishing defensive cross-licensing moats, pure IP divestiture)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "portfolio_domain", "type": "string", "description": "The specific technological or scientific domain of the IP portfolio (e.g., semiconductor lithography, monoclonal antibodies)."}, {"name": "core_patents_volume", "type": "string", "description": "The volume and jurisdictional spread of the core utility patents and trade secrets."}, {"name": "market_application", "type": "string", "description": "The primary commercial markets or adjacent verticals where the IP can be applied or enforced."}, {"name": "competitive_threat_landscape", "type": "string", "description": "The structure of incumbent competitors, potential infringers, or patent assertion entities (PAEs) operating in the same space."}, {"name": "monetization_objective", "type": "string", "description": "The primary strategic driver (e.g., generating non-core licensing revenue, establishing defensive cross-licensing moats, pure IP divestiture)."}], "metadata": {}} -->
 ### Description
 Architects rigorous intellectual property (IP) portfolio monetization and patent capitalization strategies, optimizing licensing revenue, defensive posturing, and cross-licensing valuations.
 
@@ -837,16 +879,28 @@ Execute a comprehensive, quantitative IP monetization strategy, detailing the Re
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Hostile Takeover Defense Matrix Architect
-<!-- VALIDATION_METADATA: [{"name": "company_financials", "description": "Current financial state and capitalization table of the target company.", "required": true}, {"name": "acquirer_profile", "description": "Intelligence on the hostile acquirer, including their funding and historical tactics.", "required": true}, {"name": "market_conditions", "description": "Prevailing market dynamics, interest rates, and regulatory environment.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "company_financials", "description": "Current financial state and capitalization table of the target company.", "required": true}, {"name": "acquirer_profile", "description": "Intelligence on the hostile acquirer, including their funding and historical tactics.", "required": true}, {"name": "market_conditions", "description": "Prevailing market dynamics, interest rates, and regulatory environment.", "required": true}], "metadata": {}} -->
 ### Description
 Constructs a rigorous quantitative defense matrix and poison pill trigger model for hostile takeovers.
 
@@ -877,13 +931,19 @@ Construct a Hostile Takeover Defense Matrix based on the following intelligence:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Hostile Takeover Defense Matrix"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Hostile Takeover Defense Matrix']
+```
 
 ---
 
 ## Skill: corporate_fx_hedging_currency_risk_architect
-<!-- VALIDATION_METADATA: [{"name": "currency_exposures", "description": "Detailed schedule of expected foreign currency cash flows, including currencies, volumes, and timing.", "required": true}, {"name": "risk_tolerance", "description": "The corporation's documented risk appetite, maximum allowable Value at Risk (VaR), and hedge accounting constraints.", "required": true}, {"name": "market_conditions", "description": "Current forward curves, implied volatilities, and macroeconomic interest rate differentials impacting the currency pairs.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "currency_exposures", "description": "Detailed schedule of expected foreign currency cash flows, including currencies, volumes, and timing.", "required": true}, {"name": "risk_tolerance", "description": "The corporation's documented risk appetite, maximum allowable Value at Risk (VaR), and hedge accounting constraints.", "required": true}, {"name": "market_conditions", "description": "Current forward curves, implied volatilities, and macroeconomic interest rate differentials impacting the currency pairs.", "required": true}], "metadata": {}} -->
 ### Description
 Formulates highly rigorous corporate foreign exchange (FX) hedging and currency risk mitigation strategies using quantitative finance models and derivative instruments.
 
@@ -924,16 +984,28 @@ Formulate an FX hedging strategy based on the following parameters:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Strategy utilizing forward contracts for EUR and potentially options for JPY to cap downside."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Strategy utilizing forward contracts for EUR and potentially options for JPY to cap downside.']
+```
 
-Input Context: "{}"
-Asserted Output: "Recommendation for vanilla call options or a participating forward structure to allow upside."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Recommendation for vanilla call options or a participating forward structure to allow upside.']
+```
 
 ---
 
 ## Skill: Corporate Venture Capital Strategy Architect
-<!-- VALIDATION_METADATA: [{"name": "parent_company_strategy", "description": "Core strategic objectives, current capability gaps, and long-term vision of the parent corporation.", "required": true}, {"name": "technology_threat_landscape", "description": "Emerging disruptive technologies, competitor CVC activities, and market shifts threatening the parent's core business.", "required": true}, {"name": "target_startup_profile", "description": "Financials, technology readiness level, and operational metrics of the prospective startup investment.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "parent_company_strategy", "description": "Core strategic objectives, current capability gaps, and long-term vision of the parent corporation.", "required": true}, {"name": "technology_threat_landscape", "description": "Emerging disruptive technologies, competitor CVC activities, and market shifts threatening the parent's core business.", "required": true}, {"name": "target_startup_profile", "description": "Financials, technology readiness level, and operational metrics of the prospective startup investment.", "required": true}], "metadata": {}} -->
 ### Description
 Designs highly rigorous, quantitatively backed Corporate Venture Capital (CVC) investment theses and portfolio optimization models.
 
@@ -964,13 +1036,19 @@ Construct a Corporate Venture Capital Strategy based on the following intelligen
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Corporate Venture Capital Strategy"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Corporate Venture Capital Strategy']
+```
 
 ---
 
 ## Skill: blue_ocean_value_innovation_architect
-<!-- VALIDATION_METADATA: [{"name": "industry_context", "type": "string", "description": "Detailed description of the target industry, including key players, traditional competitive factors, and customer pain points.", "required": true}, {"name": "strategic_objective", "type": "string", "description": "The overarching goal of the blue ocean shift (e.g., maximizing non-customer conversion, radical cost reduction).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "industry_context", "type": "string", "description": "Detailed description of the target industry, including key players, traditional competitive factors, and customer pain points.", "required": true}, {"name": "strategic_objective", "type": "string", "description": "The overarching goal of the blue ocean shift (e.g., maximizing non-customer conversion, radical cost reduction).", "required": true}], "metadata": {}} -->
 ### Description
 Acts as a Principal Blue Ocean Strategy Architect to formulate rigorous value innovation models, constructing ERRC grids and uncontested market space strategies.
 
@@ -1009,13 +1087,19 @@ Strategic Objective: {{ strategic_objective }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Real Options Valuation Architect
-<!-- VALIDATION_METADATA: [{"name": "investment_scenario", "description": "Detailed context of the strategic investment, including initial capital outlay, expected cash flows, and time horizon.", "required": true}, {"name": "uncertainty_factors", "description": "Key volatility drivers and sources of extreme uncertainty (e.g., market demand, regulatory shifts, technological obsolescence).", "required": true}, {"name": "strategic_flexibilities", "description": "Available managerial options (e.g., option to defer, expand, abandon, or switch).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "investment_scenario", "description": "Detailed context of the strategic investment, including initial capital outlay, expected cash flows, and time horizon.", "required": true}, {"name": "uncertainty_factors", "description": "Key volatility drivers and sources of extreme uncertainty (e.g., market demand, regulatory shifts, technological obsolescence).", "required": true}, {"name": "strategic_flexibilities", "description": "Available managerial options (e.g., option to defer, expand, abandon, or switch).", "required": true}], "metadata": {}} -->
 ### Description
 Designs rigorous Real Options Valuation (ROV) frameworks to value strategic flexibility under extreme uncertainty, applying quantitative option pricing models to capital budgeting.
 
@@ -1046,16 +1130,28 @@ Construct a rigorous Real Options Valuation framework based on the following str
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Real Options Valuation Framework"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Real Options Valuation Framework']
+```
 
-Input Context: "{}"
-Asserted Output: "Real Options Valuation Framework"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Real Options Valuation Framework']
+```
 
 ---
 
 ## Skill: Leveraged Buyout Financial Structuring Architect
-<!-- VALIDATION_METADATA: [{"name": "target_financials", "type": "string", "description": "Historical and projected EBITDA, maintenance CapEx, working capital requirements, and free cash flow generation.", "required": true}, {"name": "debt_markets", "type": "string", "description": "Current leveraged loan and high-yield bond market conditions, including SOFR rates, credit spreads, and leverage multiples.", "required": true}, {"name": "sponsor_returns", "type": "string", "description": "Private equity sponsor's target IRR, entry multiple, expected exit multiple, and investment time horizon.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "target_financials", "type": "string", "description": "Historical and projected EBITDA, maintenance CapEx, working capital requirements, and free cash flow generation.", "required": true}, {"name": "debt_markets", "type": "string", "description": "Current leveraged loan and high-yield bond market conditions, including SOFR rates, credit spreads, and leverage multiples.", "required": true}, {"name": "sponsor_returns", "type": "string", "description": "Private equity sponsor's target IRR, entry multiple, expected exit multiple, and investment time horizon.", "required": true}], "metadata": {}} -->
 ### Description
 Architects robust Leveraged Buyout (LBO) financial structures, evaluating debt capacity, capital structure tranches, cash flow sweeps, and targeted Internal Rate of Return (IRR) for Private Equity acquisitions.
 
@@ -1086,16 +1182,28 @@ Formulate a rigorous Leveraged Buyout (LBO) Financial Structuring framework base
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "LBO Financial Structuring Framework"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['LBO Financial Structuring Framework']
+```
 
-Input Context: "{}"
-Asserted Output: "LBO Financial Structuring Framework"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['LBO Financial Structuring Framework']
+```
 
 ---
 
 ## Skill: Quantitative M&A Target Screening Architect
-<!-- VALIDATION_METADATA: [{"name": "investment_mandate", "description": "Detail the core investment mandate, including strategic rationale, geographic focus, industry sector, and acceptable risk parameters.", "required": true, "type": "string"}, {"name": "quantitative_screening_criteria", "description": "Specify the exact quantitative thresholds required, such as minimum Revenue, EBITDA margins, historical growth rates, or maximum leverage ratios.", "required": true, "type": "string"}, {"name": "valuation_multiples", "description": "Provide the target range for valuation multiples (e.g., EV/EBITDA, P/E) and the desired hurdle rate or Internal Rate of Return (IRR).", "required": true, "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "investment_mandate", "description": "Detail the core investment mandate, including strategic rationale, geographic focus, industry sector, and acceptable risk parameters.", "required": true, "type": "string"}, {"name": "quantitative_screening_criteria", "description": "Specify the exact quantitative thresholds required, such as minimum Revenue, EBITDA margins, historical growth rates, or maximum leverage ratios.", "required": true, "type": "string"}, {"name": "valuation_multiples", "description": "Provide the target range for valuation multiples (e.g., EV/EBITDA, P/E) and the desired hurdle rate or Internal Rate of Return (IRR).", "required": true, "type": "string"}], "metadata": {}} -->
 ### Description
 Architects rigorous quantitative screening models for Mergers & Acquisitions (M&A) target identification, applying advanced financial criteria, strategic fit scoring, and valuation multiples.
 
@@ -1126,16 +1234,28 @@ Construct a Quantitative M&A Target Screening Strategy based on the following in
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Multi-stage quantitative funnel"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Multi-stage quantitative funnel']
+```
 
-Input Context: "{}"
-Asserted Output: "Financial evaluation methodology"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Financial evaluation methodology']
+```
 
 ---
 
 ## Skill: corporate_wargaming_scenario_planning_architect
-<!-- VALIDATION_METADATA: [{"name": "industry_context", "type": "string", "description": "The specific industry, market structure (e.g., oligopoly, hyper-competitive), and primary economic drivers."}, {"name": "primary_actor", "type": "string", "description": "The focal company or entity undertaking the scenario planning."}, {"name": "key_competitors", "type": "string", "description": "List of major competitors, challengers, or disruptive market entrants."}, {"name": "macroeconomic_shocks", "type": "string", "description": "Specific exogenous shocks to simulate (e.g., hyperinflation, geopolitical conflict, rapid technological obsolescence)."}, {"name": "strategic_horizon", "type": "string", "description": "The timeframe for the simulation (e.g., 3-year tactical, 10-year structural shift)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "industry_context", "type": "string", "description": "The specific industry, market structure (e.g., oligopoly, hyper-competitive), and primary economic drivers."}, {"name": "primary_actor", "type": "string", "description": "The focal company or entity undertaking the scenario planning."}, {"name": "key_competitors", "type": "string", "description": "List of major competitors, challengers, or disruptive market entrants."}, {"name": "macroeconomic_shocks", "type": "string", "description": "Specific exogenous shocks to simulate (e.g., hyperinflation, geopolitical conflict, rapid technological obsolescence)."}, {"name": "strategic_horizon", "type": "string", "description": "The timeframe for the simulation (e.g., 3-year tactical, 10-year structural shift)."}], "metadata": {}} -->
 ### Description
 Architects rigorous corporate wargaming and macro-scenario planning simulations, modeling multi-actor competitive dynamics, geopolitical shocks, and zero-sum industry disruptions.
 
@@ -1166,13 +1286,19 @@ Execute a complete multi-turn scenario analysis, including the formal game-theor
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Quantitative Corporate Portfolio Divestiture Architect
-<!-- VALIDATION_METADATA: [{"name": "portfolio_assets", "description": "Detailed breakdown of current corporate portfolio including business units, historical EBITDA, capital intensity, and strategic alignment.", "required": true}, {"name": "financial_constraints", "description": "Parent company capital structure, WACC, debt covenants, and liquidity requirements.", "required": true}, {"name": "market_multiples", "description": "Prevailing sector trading multiples, M&A transaction comparables, and buyer universe dynamics.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "portfolio_assets", "description": "Detailed breakdown of current corporate portfolio including business units, historical EBITDA, capital intensity, and strategic alignment.", "required": true}, {"name": "financial_constraints", "description": "Parent company capital structure, WACC, debt covenants, and liquidity requirements.", "required": true}, {"name": "market_multiples", "description": "Prevailing sector trading multiples, M&A transaction comparables, and buyer universe dynamics.", "required": true}], "metadata": {}} -->
 ### Description
 Optimizes corporate portfolios and divestitures using rigorous financial modeling.
 
@@ -1203,13 +1329,19 @@ Construct a Quantitative Corporate Portfolio Divestiture Strategy based on the f
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Divestiture Strategy"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Divestiture Strategy']
+```
 
 ---
 
 ## Skill: Cross-Border Joint Venture Structuring Architect
-<!-- VALIDATION_METADATA: [{"name": "partner_profiles", "description": "Profiles of the partnering entities, their strategic objectives, and their relative bargaining power.", "required": true, "type": "string"}, {"name": "regulatory_jurisdictions", "description": "The primary regulatory jurisdictions involved, including foreign direct investment (FDI) restrictions and antitrust considerations.", "required": true, "type": "string"}, {"name": "contribution_matrix", "description": "The proposed matrix of contributions including capital, intellectual property, operational assets, and human resources.", "required": true, "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "partner_profiles", "description": "Profiles of the partnering entities, their strategic objectives, and their relative bargaining power.", "required": true, "type": "string"}, {"name": "regulatory_jurisdictions", "description": "The primary regulatory jurisdictions involved, including foreign direct investment (FDI) restrictions and antitrust considerations.", "required": true, "type": "string"}, {"name": "contribution_matrix", "description": "The proposed matrix of contributions including capital, intellectual property, operational assets, and human resources.", "required": true, "type": "string"}], "metadata": {}} -->
 ### Description
 Formulates rigorous, strategic cross-border joint venture (JV) structuring architectures.
 
@@ -1240,16 +1372,28 @@ Construct a Cross-Border Joint Venture Structuring Plan based on the following p
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Cross-Border Joint Venture Structuring Plan"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Cross-Border Joint Venture Structuring Plan']
+```
 
-Input Context: "{}"
-Asserted Output: "Governance framework and IP ring-fencing strategy"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Governance framework and IP ring-fencing strategy']
+```
 
 ---
 
 ## Skill: Strategic Global Outsourcing and Offshoring Architect
-<!-- VALIDATION_METADATA: [{"name": "operational_scope", "description": "Detailed boundaries of the business processes or IT functions slated for global delivery, including current headcount and technology baseline.", "required": true}, {"name": "vendor_risk_profile", "description": "Stated risk appetite regarding data security, geopolitical exposure, IP protection, and business continuity planning (BCP) in target geographies.", "required": true}, {"name": "financial_arbitrage_targets", "description": "Specific cost reduction targets, transition budget constraints, and expected steady-state return on investment (ROI) metrics.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "operational_scope", "description": "Detailed boundaries of the business processes or IT functions slated for global delivery, including current headcount and technology baseline.", "required": true}, {"name": "vendor_risk_profile", "description": "Stated risk appetite regarding data security, geopolitical exposure, IP protection, and business continuity planning (BCP) in target geographies.", "required": true}, {"name": "financial_arbitrage_targets", "description": "Specific cost reduction targets, transition budget constraints, and expected steady-state return on investment (ROI) metrics.", "required": true}], "metadata": {}} -->
 ### Description
 Architects rigorous global delivery models, executing complex business process outsourcing (BPO) and IT outsourcing (ITO) strategies with optimal geographic footprints and vendor governance.
 
@@ -1280,16 +1424,28 @@ Construct a Strategic Global Outsourcing and Offshoring Model based on the follo
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Global Outsourcing Strategy and Vendor Governance Plan"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Global Outsourcing Strategy and Vendor Governance Plan']
+```
 
-Input Context: "{}"
-Asserted Output: "Clinical Offshoring Location Strategy and BOT Financial Model"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Clinical Offshoring Location Strategy and BOT Financial Model']
+```
 
 ---
 
 ## Skill: Post-Merger Integration Synergy Architect
-<!-- VALIDATION_METADATA: [{"name": "target_operating_model", "description": "Detail the current and future state of operations, structural overlaps, and specific technology stack consolidation goals.", "required": true}, {"name": "financial_synergies", "description": "Baseline cost structure, targeted headcount reductions, procurement savings targets, and projected revenue cross-sell opportunities.", "required": true}, {"name": "cultural_integration", "description": "Identified cultural friction points between acquirer and target, focusing on compensation structures, leadership styles, and change management.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "target_operating_model", "description": "Detail the current and future state of operations, structural overlaps, and specific technology stack consolidation goals.", "required": true}, {"name": "financial_synergies", "description": "Baseline cost structure, targeted headcount reductions, procurement savings targets, and projected revenue cross-sell opportunities.", "required": true}, {"name": "cultural_integration", "description": "Identified cultural friction points between acquirer and target, focusing on compensation structures, leadership styles, and change management.", "required": true}], "metadata": {}} -->
 ### Description
 Architects rigorous, actionable Post-Merger Integration (PMI) synergy realization plans, quantifying operational, financial, and cultural harmonization using advanced frameworks.
 
@@ -1320,16 +1476,28 @@ Construct a Post-Merger Integration Synergy Realization Plan based on the follow
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "PMI Synergy Realization Plan"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['PMI Synergy Realization Plan']
+```
 
-Input Context: "{}"
-Asserted Output: "Technology Integration and Talent Harmonization Strategy"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Technology Integration and Talent Harmonization Strategy']
+```
 
 ---
 
 ## Skill: Strategic Product Cannibalization Architect
-<!-- VALIDATION_METADATA: [{"name": "legacy_product", "description": "Details of the existing legacy product, including revenue, margin, market share, and anticipated decline trajectory.", "required": true}, {"name": "new_product", "description": "Details of the new innovative product, including projected adoption rate, pricing, margin, and overlap with the legacy product customer base.", "required": true}, {"name": "market_dynamics", "description": "Current competitive landscape, potential for external disruption, and overall market growth rate.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "legacy_product", "description": "Details of the existing legacy product, including revenue, margin, market share, and anticipated decline trajectory.", "required": true}, {"name": "new_product", "description": "Details of the new innovative product, including projected adoption rate, pricing, margin, and overlap with the legacy product customer base.", "required": true}, {"name": "market_dynamics", "description": "Current competitive landscape, potential for external disruption, and overall market growth rate.", "required": true}], "metadata": {}} -->
 ### Description
 Formulates rigorous corporate strategy to manage controlled product cannibalization, utilizing quantitative NPV thresholding and the McKinsey 7S framework.
 
@@ -1360,16 +1528,28 @@ Formulate a rigorous Strategic Product Cannibalization Plan based on the followi
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Strategic Cannibalization Plan for Cloud Transition"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Strategic Cannibalization Plan for Cloud Transition']
+```
 
-Input Context: "{}"
-Asserted Output: "Strategic Cannibalization Plan for EV Transition"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Strategic Cannibalization Plan for EV Transition']
+```
 
 ---
 
 ## Skill: Corporate ESG Carbon Abatement Strategy Architect
-<!-- VALIDATION_METADATA: [{"name": "current_emissions_profile", "description": "Baseline Scope 1, 2, and 3 GHG emissions data, identifying primary emissions hotspots across operations and the value chain.", "required": true, "type": "string"}, {"name": "capital_constraints", "description": "Financial parameters including the designated CapEx budget for sustainability initiatives, current hurdle rates, and expected payback periods.", "required": true, "type": "string"}, {"name": "regulatory_landscape", "description": "Relevant carbon pricing mechanisms, impending compliance mandates (e.g., CSRD, SEC climate rules), and target net-zero deadlines.", "required": true, "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "current_emissions_profile", "description": "Baseline Scope 1, 2, and 3 GHG emissions data, identifying primary emissions hotspots across operations and the value chain.", "required": true, "type": "string"}, {"name": "capital_constraints", "description": "Financial parameters including the designated CapEx budget for sustainability initiatives, current hurdle rates, and expected payback periods.", "required": true, "type": "string"}, {"name": "regulatory_landscape", "description": "Relevant carbon pricing mechanisms, impending compliance mandates (e.g., CSRD, SEC climate rules), and target net-zero deadlines.", "required": true, "type": "string"}], "metadata": {}} -->
 ### Description
 Architects rigorous, financially quantified enterprise ESG transition and carbon abatement strategies, deploying Marginal Abatement Cost Curves (MACC) and internal carbon pricing models.
 
@@ -1394,16 +1574,28 @@ Construct a Corporate ESG Carbon Abatement Strategy based on the following enter
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "MACC Analysis and Decarbonization Portfolio"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['MACC Analysis and Decarbonization Portfolio']
+```
 
-Input Context: "{}"
-Asserted Output: "Internal Carbon Pricing and Abatement Strategy"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Internal Carbon Pricing and Abatement Strategy']
+```
 
 ---
 
 ## Skill: Corporate Geopolitical Risk Mitigation Architect
-<!-- VALIDATION_METADATA: [{"name": "supply_chain_exposure", "type": "string", "description": "Current global footprint, critical supplier dependencies, and logistics vulnerabilities across geopolitical fault lines.", "required": true}, {"name": "regulatory_sanctions_environment", "type": "string", "description": "Existing and anticipated tariffs, trade restrictions, export controls, and sovereign sanctions impacting operations.", "required": true}, {"name": "financial_vulnerability", "type": "string", "description": "Revenue concentration by region, localized asset exposure, and foreign currency volatility driven by geopolitical events.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "supply_chain_exposure", "type": "string", "description": "Current global footprint, critical supplier dependencies, and logistics vulnerabilities across geopolitical fault lines.", "required": true}, {"name": "regulatory_sanctions_environment", "type": "string", "description": "Existing and anticipated tariffs, trade restrictions, export controls, and sovereign sanctions impacting operations.", "required": true}, {"name": "financial_vulnerability", "type": "string", "description": "Revenue concentration by region, localized asset exposure, and foreign currency volatility driven by geopolitical events.", "required": true}], "metadata": {}} -->
 ### Description
 Architects robust corporate geopolitical risk mitigation strategies, evaluating supply chain vulnerabilities, tariff and sanction exposures, and sovereign risk.
 
@@ -1434,16 +1626,28 @@ Formulate a rigorous Corporate Geopolitical Risk Mitigation framework based on t
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Strategic Real Options Valuation Architect
-<!-- VALIDATION_METADATA: [{"name": "underlying_asset_parameters", "description": "Current value of the underlying strategic asset, expected cash flows, and time to expiration.", "required": true}, {"name": "volatility_and_risk", "description": "Estimated volatility of the underlying asset returns and the risk-free rate.", "required": true}, {"name": "strategic_flexibility", "description": "Types of real options available (e.g., option to expand, delay, or abandon) and exercise costs.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "underlying_asset_parameters", "description": "Current value of the underlying strategic asset, expected cash flows, and time to expiration.", "required": true}, {"name": "volatility_and_risk", "description": "Estimated volatility of the underlying asset returns and the risk-free rate.", "required": true}, {"name": "strategic_flexibility", "description": "Types of real options available (e.g., option to expand, delay, or abandon) and exercise costs.", "required": true}], "metadata": {}} -->
 ### Description
 Formulates rigorous real options valuation models for strategic investment decisions under extreme uncertainty.
 
@@ -1475,13 +1679,19 @@ Construct a strategic real options valuation framework based on the following pa
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Real Options Valuation"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Real Options Valuation']
+```
 
 ---
 
 ## Skill: Corporate Diversification Synergy Architect
-<!-- VALIDATION_METADATA: [{"name": "current_portfolio", "description": "Detailed breakdown of the enterprise's current business segments, core competencies, and historical ROIC.", "required": true}, {"name": "proposed_diversification_target", "description": "Specifications of the proposed diversification strategy (concentric, horizontal, or conglomerate), including target market sizing and asset profile.", "required": true}, {"name": "resource_constraints", "description": "Details regarding capital constraints, integration bandwidth, and target timeline for synergy realization.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "current_portfolio", "description": "Detailed breakdown of the enterprise's current business segments, core competencies, and historical ROIC.", "required": true}, {"name": "proposed_diversification_target", "description": "Specifications of the proposed diversification strategy (concentric, horizontal, or conglomerate), including target market sizing and asset profile.", "required": true}, {"name": "resource_constraints", "description": "Details regarding capital constraints, integration bandwidth, and target timeline for synergy realization.", "required": true}], "metadata": {}} -->
 ### Description
 Evaluates concentric, horizontal, and conglomerate diversification models and mathematically models synergy realization timelines using strict LaTeX.
 
@@ -1512,13 +1722,19 @@ Construct a Corporate Diversification Synergy Realization Model based on the fol
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Corporate Diversification Synergy Realization Model"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Corporate Diversification Synergy Realization Model']
+```
 
 ---
 
 ## Skill: Corporate Capital Structure Optimization Architect
-<!-- VALIDATION_METADATA: [{"name": "financial_distress_indicators", "description": "Detail the company's current financial distress indicators, including unsustainable debt levels, liquidity crunches, covenant breaches, or declining operating margins.", "required": true, "type": "string"}, {"name": "capital_allocation_inefficiencies", "description": "Provide an assessment of current capital allocation inefficiencies, such as bloated operational structures, unprofitable business segments, or misaligned capex.", "required": true, "type": "string"}, {"name": "target_leverage_ratios", "description": "Specify the target leverage ratios, desired credit rating, and any constraints regarding debt refinancing or equity dilution.", "required": true, "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "financial_distress_indicators", "description": "Detail the company's current financial distress indicators, including unsustainable debt levels, liquidity crunches, covenant breaches, or declining operating margins.", "required": true, "type": "string"}, {"name": "capital_allocation_inefficiencies", "description": "Provide an assessment of current capital allocation inefficiencies, such as bloated operational structures, unprofitable business segments, or misaligned capex.", "required": true, "type": "string"}, {"name": "target_leverage_ratios", "description": "Specify the target leverage ratios, desired credit rating, and any constraints regarding debt refinancing or equity dilution.", "required": true, "type": "string"}], "metadata": {}} -->
 ### Description
 Architects rigorous corporate capital structure optimization strategies, conducting zero-based budgeting (ZBB) frameworks, leverage modeling, and structural capital reallocation for enterprise turnarounds.
 
@@ -1549,16 +1765,28 @@ Construct a Corporate Capital Structure Optimization Strategy based on the follo
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Turnaround Strategy Plan"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Turnaround Strategy Plan']
+```
 
-Input Context: "{}"
-Asserted Output: "ZBB Framework and Capital Restructuring"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['ZBB Framework and Capital Restructuring']
+```
 
 ---
 
 ## Skill: Activist Investor Defense Strategy Architect
-<!-- VALIDATION_METADATA: [{"name": "current_vulnerabilities", "description": "Detail the company's current vulnerabilities, including underperforming business units, bloated cost structures, governance weaknesses, or capital allocation inefficiencies.", "required": true, "type": "string"}, {"name": "financial_baseline", "description": "Provide baseline financial metrics including Total Shareholder Return (TSR), peer valuation multiples, leverage ratios, and current capital return policies.", "required": true, "type": "string"}, {"name": "activist_profile", "description": "Identify the known or anticipated activist investor profile, their historical playbooks, AUM, and typical time horizon.", "required": true, "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "current_vulnerabilities", "description": "Detail the company's current vulnerabilities, including underperforming business units, bloated cost structures, governance weaknesses, or capital allocation inefficiencies.", "required": true, "type": "string"}, {"name": "financial_baseline", "description": "Provide baseline financial metrics including Total Shareholder Return (TSR), peer valuation multiples, leverage ratios, and current capital return policies.", "required": true, "type": "string"}, {"name": "activist_profile", "description": "Identify the known or anticipated activist investor profile, their historical playbooks, AUM, and typical time horizon.", "required": true, "type": "string"}], "metadata": {}} -->
 ### Description
 Architects rigorous, actionable activist investor defense strategies, conducting vulnerability assessments, Sum-of-the-Parts (SOTP) valuation analysis, and proxy fight readiness planning.
 
@@ -1589,16 +1817,28 @@ Construct an Activist Investor Defense Strategy Plan based on the following inte
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Defense Strategy Plan"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Defense Strategy Plan']
+```
 
-Input Context: "{}"
-Asserted Output: "Vulnerability Assessment and Mitigation"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Vulnerability Assessment and Mitigation']
+```
 
 ---
 
 ## Skill: Corporate Digital Transformation ROI Architect
-<!-- VALIDATION_METADATA: [{"name": "legacy_technology_debt", "description": "Detail the current state of legacy technology infrastructure, operational bottlenecks, and silos dragging down efficiency.", "required": true, "type": "string"}, {"name": "target_digital_capabilities", "description": "Specify the desired target operating model, core digital capabilities to be acquired or built, and anticipated strategic outcomes.", "required": true, "type": "string"}, {"name": "transformation_constraints", "description": "Outline financial constraints, cultural resistance factors, change management risks, and required timeline for payback.", "required": true, "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "legacy_technology_debt", "description": "Detail the current state of legacy technology infrastructure, operational bottlenecks, and silos dragging down efficiency.", "required": true, "type": "string"}, {"name": "target_digital_capabilities", "description": "Specify the desired target operating model, core digital capabilities to be acquired or built, and anticipated strategic outcomes.", "required": true, "type": "string"}, {"name": "transformation_constraints", "description": "Outline financial constraints, cultural resistance factors, change management risks, and required timeline for payback.", "required": true, "type": "string"}], "metadata": {}} -->
 ### Description
 Architects rigorous enterprise digital transformation roadmaps, modeling technology ROI, capability synergies, and organizational change management to ensure quantifiable value creation.
 
@@ -1629,16 +1869,28 @@ Construct a Corporate Digital Transformation ROI Strategy based on the following
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Digital Transformation ROI Strategy"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Digital Transformation ROI Strategy']
+```
 
-Input Context: "{}"
-Asserted Output: "McKinsey 7S Alignment and Modernization Roadmap"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['McKinsey 7S Alignment and Modernization Roadmap']
+```
 
 ---
 
 ## Skill: quantitative_commercial_due_diligence_architect
-<!-- VALIDATION_METADATA: [{"name": "target_company_name", "description": "Name of the acquisition target", "required": true}, {"name": "industry_sector", "description": "Industry or sector of the target", "required": true}, {"name": "deal_thesis", "description": "The core strategic rationale for the acquisition", "required": true}, {"name": "key_competitors", "description": "Primary competitors in the market", "required": true}, {"name": "financial_metrics", "description": "Key historical and projected financial metrics (e.g., Revenue, EBITDA margin)", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "target_company_name", "description": "Name of the acquisition target", "required": true}, {"name": "industry_sector", "description": "Industry or sector of the target", "required": true}, {"name": "deal_thesis", "description": "The core strategic rationale for the acquisition", "required": true}, {"name": "key_competitors", "description": "Primary competitors in the market", "required": true}, {"name": "financial_metrics", "description": "Key historical and projected financial metrics (e.g., Revenue, EBITDA margin)", "required": true}], "metadata": {}} -->
 ### Description
 Architects highly rigorous, quantitative Commercial Due Diligence (CDD) frameworks, evaluating market sizing (TAM/SAM/SOM), competitive moats, customer lifetime value (LTV), and revenue defensibility for M&A and Private Equity transactions.
 
@@ -1685,17 +1937,19 @@ Ensure all mathematical models, market sizing logic, and customer retention equa
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{target_company_name: Acme Cloud Infrastructure, industry_sector: B2B IaaS / Cloud
-    Computing, deal_thesis: Acquire a regional cloud provider with strong local enterprise
-    lock-in to accelerate geographic expansion and cross-sell higher margin cybersecurity
-    services., key_competitors: 'AWS, Azure, Local Data Center Providers', financial_metrics: '$50M
-    ARR, 85% Gross Margin, 115% NRR, 15% EBITDA Margin'}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Quantitative Product Portfolio Optimization Architect
-<!-- VALIDATION_METADATA: [{"name": "product_portfolio_data", "description": "Detailed financial and operational data for each product in the portfolio (e.g., margins, revenues, market share, growth rates).", "required": true}, {"name": "resource_constraints", "description": "Capital allocation limits, R&D budgets, production capacities, and other operational constraints.", "required": true}, {"name": "strategic_objectives", "description": "Long-term corporate goals, acceptable risk profiles, and targeted market penetration metrics.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "product_portfolio_data", "description": "Detailed financial and operational data for each product in the portfolio (e.g., margins, revenues, market share, growth rates).", "required": true}, {"name": "resource_constraints", "description": "Capital allocation limits, R&D budgets, production capacities, and other operational constraints.", "required": true}, {"name": "strategic_objectives", "description": "Long-term corporate goals, acceptable risk profiles, and targeted market penetration metrics.", "required": true}], "metadata": {}} -->
 ### Description
 Architects highly rigorous, quantitative product portfolio optimization strategies, integrating multi-criteria decision analysis (MCDA), the BCG Matrix, and Mixed-Integer Linear Programming (MILP).
 
@@ -1726,17 +1980,19 @@ Generate a comprehensive mathematical optimization strategy, clearly defining th
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{product_portfolio_data: 'Product A (Revenue $10M, Margin 20%, Market Growth 5%, Market
-    Share 1.2), Product B (Revenue $50M, Margin 12%, Market Growth 1%, Market Share
-    2.5), Product C (Revenue $2M, Margin 45%, Market Growth 25%, Market Share 0.1)',
-  resource_constraints: 'Total R&D Budget: $5M, Total Marketing Budget: $10M.', strategic_objectives: Maximize
-    total portfolio margin while ensuring at least 15% aggregate revenue growth.}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Corporate Spin-Off Carve-Out Architect
-<!-- VALIDATION_METADATA: [{"name": "conglomerate_portfolio_composition", "description": "Detail the current conglomerate portfolio, identifying the parent core business and the distinct operational unit designated for spin-off or carve-out, including conflicting growth trajectories.", "required": true, "type": "string"}, {"name": "sum_of_the_parts_valuation_gap", "description": "Provide the quantitative sum-of-the-parts (SOTP) valuation analysis, highlighting the specific conglomerate discount and the projected standalone valuation multiples for both entities.", "required": true, "type": "string"}, {"name": "stranded_cost_and_tsa_constraints", "description": "Specify the entangled operational dependencies, shared services, expected stranded costs at the parent level, and the required scope/duration of Transition Service Agreements (TSAs).", "required": true, "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "conglomerate_portfolio_composition", "description": "Detail the current conglomerate portfolio, identifying the parent core business and the distinct operational unit designated for spin-off or carve-out, including conflicting growth trajectories.", "required": true, "type": "string"}, {"name": "sum_of_the_parts_valuation_gap", "description": "Provide the quantitative sum-of-the-parts (SOTP) valuation analysis, highlighting the specific conglomerate discount and the projected standalone valuation multiples for both entities.", "required": true, "type": "string"}, {"name": "stranded_cost_and_tsa_constraints", "description": "Specify the entangled operational dependencies, shared services, expected stranded costs at the parent level, and the required scope/duration of Transition Service Agreements (TSAs).", "required": true, "type": "string"}], "metadata": {}} -->
 ### Description
 Architects highly rigorous corporate spin-off and carve-out strategies, formulating parentco/spinco capital structures, transition service agreements (TSAs), and stranded cost mitigation plans to maximize sum-of-the-parts (SOTP) valuation.
 
@@ -1767,19 +2023,37 @@ Construct a Corporate Spin-Off Carve-Out Strategy based on the following intelli
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "SOTP reconciliation and TSA wind-down framework"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['SOTP reconciliation and TSA wind-down framework']
+```
 
-Input Context: "{}"
-Asserted Output: "Capitalization model and stranded cost mitigation"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Capitalization model and stranded cost mitigation']
+```
 
-Input Context: "{}"
-Asserted Output: "error.*unsafe"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['error.*unsafe']
+```
 
 ---
 
 ## Skill: game_theoretic_competitive_dynamics_architect
-<!-- VALIDATION_METADATA: [{"name": "MARKET_DATA", "type": "string", "description": "Raw market intelligence, competitor profiles, and historical pricing data."}, {"name": "STRATEGIC_OBJECTIVE", "type": "string", "description": "The primary objective of the acting firm."}, {"name": "market_data", "description": "Auto-extracted variable market_data", "required": false}, {"name": "strategic_objective", "description": "Auto-extracted variable strategic_objective", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "MARKET_DATA", "type": "string", "description": "Raw market intelligence, competitor profiles, and historical pricing data."}, {"name": "STRATEGIC_OBJECTIVE", "type": "string", "description": "The primary objective of the acting firm."}, {"name": "market_data", "description": "Auto-extracted variable market_data", "required": false}, {"name": "strategic_objective", "description": "Auto-extracted variable strategic_objective", "required": false}], "metadata": {}} -->
 ### Description
 Formulates rigorous game-theoretic models and competitive equilibrium strategies for oligopolistic market entry and pricing dynamics.
 
@@ -1788,6 +2062,8 @@ Formulates rigorous game-theoretic models and competitive equilibrium strategies
 | :--- | :--- | :--- | :--- |
 | `MARKET_DATA` | String | Raw market intelligence, competitor profiles, and historical pricing data. | Yes |
 | `STRATEGIC_OBJECTIVE` | String | The primary objective of the acting firm. | Yes |
+| `market_data` | String | Auto-extracted variable market_data | No |
+| `strategic_objective` | String | Auto-extracted variable strategic_objective | No |
 
 
 ### Core Instructions
@@ -1819,5 +2095,11 @@ Analyze the following competitive landscape and formulate a strategic response:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

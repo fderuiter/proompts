@@ -1,22 +1,3 @@
----
-tags:
-  - biocompatibility
-  - biological
-  - biosafety
-  - builder
-  - characterization
-  - chemical
-  - comprehensive
-  - domain:scientific
-  - evaluation
-  - matrix
-  - plan
-  - skill
-  - test
-  - tra
-  - work
----
-
 # Domain Agent Skills: Scientific Biosafety
 
 ## Metadata
@@ -27,7 +8,7 @@ tags:
 ---
 
 ## Skill: Biological Evaluation Plan Builder
-<!-- VALIDATION_METADATA: [{"name": "device_details", "description": "materials, manufacturing method, contact category, duration, and use environment", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_details", "description": "materials, manufacturing method, contact category, duration, and use environment", "required": true}], "metadata": {}} -->
 ### Description
 Draft a complete Biological Evaluation Plan (BEP) for a specified medical device.
 
@@ -61,13 +42,19 @@ Executive-summary paragraph followed by a markdown table and bulleted notes.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{device_details: example_device_details}"
-Asserted Output: "Executive-summary paragraph followed by a markdown table and bulleted notes."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Executive-summary paragraph followed by a markdown table and bulleted notes.']
+```
 
 ---
 
 ## Skill: Chemical Characterization & TRA Work Plan
-<!-- VALIDATION_METADATA: [{"name": "device_information", "description": "materials, intended use, and patient exposure duration", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_information", "description": "materials, intended use, and patient exposure duration", "required": true}], "metadata": {}} -->
 ### Description
 Create a work plan for chemical characterization and toxicological risk assessment (TRA) for a medical device.
 
@@ -104,13 +91,19 @@ Numbered work plan followed by a short summary paragraph.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{device_information: example_device_information}"
-Asserted Output: "Numbered work plan followed by a short summary paragraph."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Numbered work plan followed by a short summary paragraph.']
+```
 
 ---
 
 ## Skill: Comprehensive Biocompatibility Test Matrix
-<!-- VALIDATION_METADATA: [{"name": "device_materials", "description": "materials and clinical-use scenario", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_materials", "description": "materials and clinical-use scenario", "required": true}], "metadata": {}} -->
 ### Description
 Generate a detailed biocompatibility test matrix for a medical device.
 
@@ -145,5 +138,11 @@ Two-level markdown table followed by concise explanatory notes.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{device_materials: example_device_materials}"
-Asserted Output: "Two-level markdown table followed by concise explanatory notes."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Two-level markdown table followed by concise explanatory notes.']
+```

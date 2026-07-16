@@ -1,19 +1,3 @@
----
-tags:
-  - ads
-  - cft
-  - conformal-field-theory
-  - domain:scientific
-  - domain:theoretical_physics
-  - holographic
-  - physics
-  - quantum-gravity
-  - scattering-amplitudes
-  - skill
-  - string-theory
-  - worldsheet-formalism
----
-
 # Domain Agent Skills: Scientific Physics String theory
 
 ## Metadata
@@ -24,7 +8,7 @@ tags:
 ---
 
 ## Skill: ads_cft_holographic_dictionary_architect
-<!-- VALIDATION_METADATA: [{"name": "bulk_action", "type": "string", "description": "The gravitational bulk action in asymptotically Anti-de Sitter space."}, {"name": "boundary_operator", "type": "string", "description": "The dual conformal field theory (CFT) operator."}, {"name": "dimension", "type": "string", "description": "The spacetime dimensions of the bulk and boundary (e.g., AdS5/CFT4)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "bulk_action", "type": "string", "description": "The gravitational bulk action in asymptotically Anti-de Sitter space."}, {"name": "boundary_operator", "type": "string", "description": "The dual conformal field theory (CFT) operator."}, {"name": "dimension", "type": "string", "description": "The spacetime dimensions of the bulk and boundary (e.g., AdS5/CFT4)."}], "metadata": {}} -->
 ### Description
 Formulates rigorous holographic dictionary mappings and boundary conditions for AdS/CFT correspondence scenarios.
 
@@ -61,13 +45,19 @@ Spacetime Dimensions: {{ dimension }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: string_worldsheet_scattering_amplitude_architect
-<!-- VALIDATION_METADATA: [{"name": "string_type", "description": "The type of string theory (e.g., Bosonic, Type IIA/IIB Superstring, Heterotic).", "required": true}, {"name": "external_states", "description": "The explicit definitions of the N external asymptotic states and their corresponding vertex operators.", "required": true}, {"name": "kinematic_regime", "description": "The specified kinematic limit for analysis (e.g., Regge limit, hard scattering limit).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "string_type", "description": "The type of string theory (e.g., Bosonic, Type IIA/IIB Superstring, Heterotic).", "required": true}, {"name": "external_states", "description": "The explicit definitions of the N external asymptotic states and their corresponding vertex operators.", "required": true}, {"name": "kinematic_regime", "description": "The specified kinematic limit for analysis (e.g., Regge limit, hard scattering limit).", "required": true}], "metadata": {}} -->
 ### Description
 Systematically derives N-point string scattering amplitudes using the worldsheet formalism, computing vertex operator correlations and performing moduli space integration.
 
@@ -106,8 +96,20 @@ Compute the vertex operator correlations, execute the moduli space integration, 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Virasoro-Shapiro"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Virasoro-Shapiro']
+```
 
-Input Context: "{}"
-Asserted Output: "Veneziano"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Veneziano']
+```

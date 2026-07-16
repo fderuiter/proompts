@@ -1,14 +1,3 @@
----
-tags:
-  - domain:scientific/sociology/institutions
-  - institutional
-  - institutions
-  - isomorphism
-  - lifecycle
-  - skill
-  - sociology
----
-
 # Domain Agent Skills: Scientific Sociology Institutions
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: institutional_isomorphism_lifecycle_modeler
-<!-- VALIDATION_METADATA: [{"name": "organizational_field", "type": "string", "description": "The specific organizational field or industry sector being analyzed."}, {"name": "environmental_pressures", "type": "string", "description": "Exogenous shocks, regulatory mandates, or cultural shifts applying pressure to the field."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "organizational_field", "type": "string", "description": "The specific organizational field or industry sector being analyzed."}, {"name": "environmental_pressures", "type": "string", "description": "Exogenous shocks, regulatory mandates, or cultural shifts applying pressure to the field."}], "metadata": {}} -->
 ### Description
 Models the lifecycle of institutional isomorphism (coercive, mimetic, normative) within specific organizational fields using neo-institutional theory.
 
@@ -51,5 +40,11 @@ Environmental Pressures: {{ environmental_pressures }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

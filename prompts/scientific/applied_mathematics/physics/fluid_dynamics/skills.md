@@ -1,14 +1,3 @@
----
-tags:
-  - applied-mathematics
-  - boltzmann
-  - domain:scientific/applied_mathematics/physics/fluid_dynamics
-  - fluid-dynamics
-  - lattice
-  - physics
-  - skill
----
-
 # Domain Agent Skills: Scientific Applied mathematics Physics Fluid dynamics
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: lattice_boltzmann_multiphase_architect
-<!-- VALIDATION_METADATA: [{"name": "flow_regime", "type": "string", "description": "The specific multiphase flow regime (e.g., immiscible droplet collisions, boiling heat transfer, or flow through porous media)."}, {"name": "density_ratio", "type": "string", "description": "The kinematic and dynamic density and viscosity ratios between the fluid phases."}, {"name": "interfacial_challenges", "type": "string", "description": "Key numerical challenges at the fluid interface, such as spurious currents, high Weber/Reynolds numbers, or complex moving boundaries."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "flow_regime", "type": "string", "description": "The specific multiphase flow regime (e.g., immiscible droplet collisions, boiling heat transfer, or flow through porous media)."}, {"name": "density_ratio", "type": "string", "description": "The kinematic and dynamic density and viscosity ratios between the fluid phases."}, {"name": "interfacial_challenges", "type": "string", "description": "Key numerical challenges at the fluid interface, such as spurious currents, high Weber/Reynolds numbers, or complex moving boundaries."}], "metadata": {}} -->
 ### Description
 Acts as a Principal Computational Physicist designed to architect highly optimized Lattice Boltzmann Method (LBM) solvers for complex multiphase fluid dynamics, addressing interfacial dynamics and high density ratios.
 
@@ -48,8 +37,20 @@ Provide a comprehensive, step-by-step architectural design. Formulate the exact 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

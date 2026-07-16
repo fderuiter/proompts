@@ -1,38 +1,3 @@
----
-tags:
-  - agent
-  - agents
-  - architect
-  - checker
-  - checklist
-  - coding
-  - comprehensive
-  - consultant
-  - crafter
-  - domain:meta
-  - domain:prompt_engineering
-  - editor
-  - engineer
-  - fact
-  - generator
-  - gpt
-  - master
-  - mece
-  - meta
-  - persona
-  - plan
-  - prompt
-  - prompt_calibration
-  - prototyper
-  - readme
-  - skill
-  - structuring
-  - task
-  - template
-  - ultrameta
-  - worker
----
-
 # Domain Agent Skills: Meta Meta prompt chain
 
 ## Metadata
@@ -43,7 +8,7 @@ tags:
 ---
 
 ## Skill: Agent Persona Generator
-<!-- VALIDATION_METADATA: [{"name": "context", "description": "Additional context or background information for the persona", "required": true}, {"name": "goal", "description": "The goal or desired outcome", "required": true}, {"name": "role", "description": "The role or persona to adopt", "required": true}, {"name": "TEST_COMMAND", "description": "Auto-extracted variable TEST_COMMAND", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "context", "description": "Additional context or background information for the persona", "required": true}, {"name": "goal", "description": "The goal or desired outcome", "required": true}, {"name": "role", "description": "The role or persona to adopt", "required": true}, {"name": "TEST_COMMAND", "description": "Auto-extracted variable TEST_COMMAND", "required": false}], "metadata": {}} -->
 ### Description
 Generate detailed, high-integrity agent personas based on a provided role and goal, using a strict structural framework.
 
@@ -53,6 +18,7 @@ Generate detailed, high-integrity agent personas based on a provided role and go
 | `context` | String | Additional context or background information for the persona | Yes |
 | `goal` | String | The goal or desired outcome | Yes |
 | `role` | String | The role or persona to adopt | Yes |
+| `TEST_COMMAND` | String | Auto-extracted variable TEST_COMMAND | No |
 
 
 ### Core Instructions
@@ -174,18 +140,28 @@ Context: {{ context }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{role: Senior Backend Engineer, goal: Build scalable microservices with Python and
-    FastAPI., context: Legacy monolith migration.}"
-Asserted Output: "Role: Senior Backend Engineer"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Role: Senior Backend Engineer']
+```
 
-Input Context: "{role: Security Auditor, goal: Review codebase for vulnerabilities., context: Focus
-    on OWASP Top 10.}"
-Asserted Output: "Archetype: The"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Archetype: The']
+```
 
 ---
 
 ## Skill: PromptCrafter GPT
-<!-- VALIDATION_METADATA: [{"name": "optional_flags", "description": "optional modifiers", "required": true}, {"name": "target_audience", "description": "optional audience description", "required": true}, {"name": "topic", "description": "subject matter", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "optional_flags", "description": "optional modifiers", "required": true}, {"name": "target_audience", "description": "optional audience description", "required": true}, {"name": "topic", "description": "subject matter", "required": true}], "metadata": {}} -->
 ### Description
 Generate three distinct, best-practice prompts for a given topic.
 
@@ -227,7 +203,7 @@ None provided.
 ---
 
 ## Skill: Comprehensive Task Template
-<!-- VALIDATION_METADATA: [{"name": "expert_role", "description": "role the agent should assume", "required": true}, {"name": "task", "description": "description of the task", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "expert_role", "description": "role the agent should assume", "required": true}, {"name": "task", "description": "description of the task", "required": true}], "metadata": {}} -->
 ### Description
 Provide a reusable prompt that guides an AI through planning, execution and self-checking for any complex task.
 
@@ -267,7 +243,7 @@ None provided.
 ---
 
 ## Skill: Meta Prompt Architect
-<!-- VALIDATION_METADATA: [{"name": "end_task", "description": "final objective", "required": true}, {"name": "policy_block", "description": "policy and style guidance", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "end_task", "description": "final objective", "required": true}, {"name": "policy_block", "description": "policy and style guidance", "required": true}], "metadata": {}} -->
 ### Description
 Design an L2 prompt that instructs a Prompt Engineer to create a domain-specific template achieving `{{ end_task }}`.
 
@@ -307,7 +283,7 @@ None provided.
 ---
 
 ## Skill: Vector Prompt Calibration Evaluator
-<!-- VALIDATION_METADATA: [{"name": "draft_prompt", "type": "string", "description": "The uncalibrated draft prompt to be reviewed and upgraded."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "draft_prompt", "type": "string", "description": "The uncalibrated draft prompt to be reviewed and upgraded."}], "metadata": {}} -->
 ### Description
 Evaluates and calibrates draft prompts according to the Vector standard, enforcing persona specificity, contextual alignment, and structural rigor.
 
@@ -364,14 +340,19 @@ Please calibrate the following draft prompt:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{draft_prompt: You are a helpful assistant. Please write a crisis management plan
-    for a data breach.}"
-Asserted Output: "Vector Calibration: Principal Crisis Response Architect"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Vector Calibration: Principal Crisis Response Architect']
+```
 
 ---
 
 ## Skill: Worker Prompt
-<!-- VALIDATION_METADATA: [{"name": "generated_prompt", "description": "The generated prompt to use for this prompt", "required": true}, {"name": "input_block", "description": "specific data", "required": true}, {"name": "output_schema", "description": "required JSON schema", "required": true}, {"name": "policy_block", "description": "Policy and style guide text for guardrails", "required": true}, {"name": "task_description", "description": "The task or objective to accomplish", "required": true}, {"name": "token_limit_l4", "description": "The token limit l4 to use for this prompt", "required": true}, {"name": "answer", "description": "Auto-extracted variable answer", "required": false}, {"name": "input_data", "description": "Auto-extracted variable input_data", "required": false}, {"name": "thinking", "description": "Auto-extracted variable thinking", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "generated_prompt", "description": "The generated prompt to use for this prompt", "required": true}, {"name": "input_block", "description": "specific data", "required": true}, {"name": "output_schema", "description": "required JSON schema", "required": true}, {"name": "policy_block", "description": "Policy and style guide text for guardrails", "required": true}, {"name": "task_description", "description": "The task or objective to accomplish", "required": true}, {"name": "token_limit_l4", "description": "The token limit l4 to use for this prompt", "required": true}, {"name": "answer", "description": "Auto-extracted variable answer", "required": false}, {"name": "input_data", "description": "Auto-extracted variable input_data", "required": false}, {"name": "thinking", "description": "Auto-extracted variable thinking", "required": false}], "metadata": {}} -->
 ### Description
 Execute the concrete task defined by the L3 template and return structured output.
 
@@ -384,6 +365,9 @@ Execute the concrete task defined by the L3 template and return structured outpu
 | `policy_block` | String | Policy and style guide text for guardrails | Yes |
 | `task_description` | String | The task or objective to accomplish | Yes |
 | `token_limit_l4` | String | The token limit l4 to use for this prompt | Yes |
+| `answer` | String | Auto-extracted variable answer | No |
+| `input_data` | String | Auto-extracted variable input_data | No |
+| `thinking` | String | Auto-extracted variable thinking | No |
 
 
 ### Core Instructions
@@ -433,16 +417,28 @@ Output format: Only the JSON inside `<answer>` tags.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "<answer>{ "json": "valid", "error": "none" }</answer>"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['<answer>{ ']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: README Generator
-<!-- VALIDATION_METADATA: [{"name": "repo_access", "description": "repository path or URL", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "repo_access", "description": "repository path or URL", "required": true}], "metadata": {}} -->
 ### Description
 Scan an entire repository and produce a polished README.md covering everything a new developer needs.
 
@@ -480,7 +476,7 @@ None provided.
 ---
 
 ## Skill: Prompt Engineer Fact Checker
-<!-- VALIDATION_METADATA: [{"name": "original_prompt", "description": "the user\u2019s starting prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "original_prompt", "description": "the user\u2019s starting prompt", "required": true}], "metadata": {}} -->
 ### Description
 Rewrite an original prompt so it is clear, fully sourced and produces accurate answers with inline citations.
 
@@ -519,7 +515,7 @@ None provided.
 ---
 
 ## Skill: Prompt Engineer Template
-<!-- VALIDATION_METADATA: [{"name": "end_task", "description": "final objective", "required": true}, {"name": "generated_prompt", "description": "The generated prompt to use for this prompt", "required": true}, {"name": "token_budget_l3", "description": "Budget details or financial constraints", "required": true}, {"name": "answer", "description": "Auto-extracted variable answer", "required": false}, {"name": "thinking", "description": "Auto-extracted variable thinking", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "end_task", "description": "final objective", "required": true}, {"name": "generated_prompt", "description": "The generated prompt to use for this prompt", "required": true}, {"name": "token_budget_l3", "description": "Budget details or financial constraints", "required": true}, {"name": "answer", "description": "Auto-extracted variable answer", "required": false}, {"name": "thinking", "description": "Auto-extracted variable thinking", "required": false}], "metadata": {}} -->
 ### Description
 Produce an L3 task template that enables a Task Prototyper to fulfil `{{ end_task }}`.
 
@@ -529,6 +525,8 @@ Produce an L3 task template that enables a Task Prototyper to fulfil `{{ end_tas
 | `end_task` | String | final objective | Yes |
 | `generated_prompt` | String | The generated prompt to use for this prompt | Yes |
 | `token_budget_l3` | String | Budget details or financial constraints | Yes |
+| `answer` | String | Auto-extracted variable answer | No |
+| `thinking` | String | Auto-extracted variable thinking | No |
 
 
 ### Core Instructions
@@ -569,7 +567,7 @@ None provided.
 ---
 
 ## Skill: AGENTS.md Checklist Generator
-<!-- VALIDATION_METADATA: [{"name": "repo_url", "description": "URL of the target repository", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "repo_url", "description": "URL of the target repository", "required": true}], "metadata": {}} -->
 ### Description
 Create a best-practice checklist for writing an AGENTS.md file and provide a meta‑prompt to generate one from any repository.
 
@@ -606,7 +604,7 @@ None provided.
 ---
 
 ## Skill: Master Ultrameta Prompt Architect
-<!-- VALIDATION_METADATA: [{"name": "end_task", "description": "final objective", "required": true}, {"name": "policy_block", "description": "policy and style guide text", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "end_task", "description": "final objective", "required": true}, {"name": "policy_block", "description": "policy and style guide text", "required": true}], "metadata": {}} -->
 ### Description
 Construct a five-layer prompt stack (L0–L4) that reliably executes `{{ end_task }}`.
 
@@ -646,7 +644,7 @@ None provided.
 ---
 
 ## Skill: MECE Structuring Consultant
-<!-- VALIDATION_METADATA: [{"name": "LIST", "description": "the brainstorm items to reorganize", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "LIST", "description": "the brainstorm items to reorganize", "required": true}], "metadata": {}} -->
 ### Description
 Reorganize brainstorm ideas into three mutually exclusive, collectively exhaustive buckets.
 
@@ -684,7 +682,7 @@ None provided.
 ---
 
 ## Skill: Task Prototyper
-<!-- VALIDATION_METADATA: [{"name": "end_task", "description": "final objective", "required": true}, {"name": "generated_prompt", "description": "The generated prompt to use for this prompt", "required": true}, {"name": "policy_block", "description": "policy and style guidance", "required": true}, {"name": "token_budget_l3", "description": "Budget details or financial constraints", "required": true}, {"name": "answer", "description": "Auto-extracted variable answer", "required": false}, {"name": "thinking", "description": "Auto-extracted variable thinking", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "end_task", "description": "final objective", "required": true}, {"name": "generated_prompt", "description": "The generated prompt to use for this prompt", "required": true}, {"name": "policy_block", "description": "policy and style guidance", "required": true}, {"name": "token_budget_l3", "description": "Budget details or financial constraints", "required": true}, {"name": "answer", "description": "Auto-extracted variable answer", "required": false}, {"name": "thinking", "description": "Auto-extracted variable thinking", "required": false}], "metadata": {}} -->
 ### Description
 Generate a domain-specific L3 prompt that accomplishes `{{ end_task }}`.
 
@@ -695,6 +693,8 @@ Generate a domain-specific L3 prompt that accomplishes `{{ end_task }}`.
 | `generated_prompt` | String | The generated prompt to use for this prompt | Yes |
 | `policy_block` | String | policy and style guidance | Yes |
 | `token_budget_l3` | String | Budget details or financial constraints | Yes |
+| `answer` | String | Auto-extracted variable answer | No |
+| `thinking` | String | Auto-extracted variable thinking | No |
 
 
 ### Core Instructions
@@ -734,7 +734,7 @@ None provided.
 ---
 
 ## Skill: AI Coding Agent Plan Generator
-<!-- VALIDATION_METADATA: [{"name": "repo_access", "description": "summary of repository access provided", "required": true}, {"name": "task_description", "description": "plain-language statement of the work", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "repo_access", "description": "summary of repository access provided", "required": true}, {"name": "task_description", "description": "plain-language statement of the work", "required": true}], "metadata": {}} -->
 ### Description
 Provide a structured plan for completing a coding task in an existing repository.
 

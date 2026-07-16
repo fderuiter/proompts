@@ -1,22 +1,3 @@
----
-tags:
-  - builder
-  - capa
-  - dashboard
-  - domain:clinical
-  - findings
-  - monitoring
-  - mvr
-  - performance
-  - plan
-  - quality
-  - report
-  - risk-based
-  - site
-  - skill
-  - visit
----
-
 # Domain Agent Skills: Clinical Monitoring Clinical monitoring workflow
 
 ## Metadata
@@ -27,7 +8,7 @@ tags:
 ---
 
 ## Skill: Monitoring Visit Report (MVR) Quality Critique
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 You are a **Senior Monitoring Oversight Lead** conducting quality review of a draft **Monitoring Visit Report (MVR)**.
 
@@ -57,14 +38,19 @@ You are a **Senior Monitoring Oversight Lead** conducting quality review of a dr
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "section: AE/SAE reporting
-text: Adverse events were summarized but severity grading was omitted."
-Asserted Output: "Summary of Critical Gaps"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Summary of Critical Gaps']
+```
 
 ---
 
 ## Skill: Risk-Based Site Performance Dashboard
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "site_data", "description": "Auto-extracted variable site_data", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "site_data", "description": "Auto-extracted variable site_data", "required": false}], "metadata": {}} -->
 ### Description
 You are an experienced **Clinical Monitoring Manager** at a global CRO overseeing several Phase II oncology trials.
 
@@ -72,6 +58,7 @@ You are an experienced **Clinical Monitoring Manager** at a global CRO overseein
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | `input` | String | The primary input or query text for the prompt | Yes |
+| `site_data` | String | Auto-extracted variable site_data | No |
 
 
 ### Core Instructions
@@ -104,25 +91,19 @@ Input data will be provided within `<site_data>` tags.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "sites:
-  - id: S101
-    protocol_deviations: 4
-    query_aging_days: 12
-    ip_accountability_issues: 2
-    enrollment_lapse_days: 5
-    training_compliance: 95
-  - id: S102
-    protocol_deviations: 1
-    query_aging_days: 8
-    ip_accountability_issues: 0
-    enrollment_lapse_days: 0
-    training_compliance: 98"
-Asserted Output: "Rank | Site ID | Composite Score | Key Drivers | Mitigation Plan | Target Date"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Rank | Site ID | Composite Score | Key Drivers | Mitigation Plan | Target Date']
+```
 
 ---
 
 ## Skill: CAPA Plan Builder for Monitoring Findings
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 You are a **Regulatory Quality Advisor** specializing in ICH-GCP compliance.
 
@@ -151,7 +132,11 @@ You are a **Regulatory Quality Advisor** specializing in ICH-GCP compliance.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "issues:
-  - Missing signatures on consent forms
-  - Late adverse event reporting"
-Asserted Output: "Issue | Root Cause | Corrective Action | Preventive Action | Owner | Due Date | Effectiveness Check"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Issue | Root Cause | Corrective Action | Preventive Action | Owner | Due Date | Effectiveness Check']
+```

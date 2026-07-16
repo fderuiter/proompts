@@ -1,19 +1,3 @@
----
-tags:
-  - architect
-  - data-science
-  - domain:technical
-  - engineer
-  - game-theory
-  - monte-carlo
-  - python
-  - risk-assessment
-  - simulation
-  - skill
-  - stochastic-modeling
-  - strategy
----
-
 # Domain Agent Skills: Technical Data science Stochastic model chain workflow
 
 ## Metadata
@@ -24,7 +8,7 @@ tags:
 ---
 
 ## Skill: Stochastic Strategist
-<!-- VALIDATION_METADATA: [{"name": "architect_output", "description": "The state definitions and transition matrix from the Architect.", "required": true}, {"name": "engineer_output", "description": "The simulation code and logic from the Engineer.", "required": true}, {"name": "architect_model", "description": "Auto-extracted variable architect_model", "required": false}, {"name": "simulation_logic", "description": "Auto-extracted variable simulation_logic", "required": false}, {"name": "strategic_analysis", "description": "Auto-extracted variable strategic_analysis", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "architect_output", "description": "The state definitions and transition matrix from the Architect.", "required": true}, {"name": "engineer_output", "description": "The simulation code and logic from the Engineer.", "required": true}, {"name": "architect_model", "description": "Auto-extracted variable architect_model", "required": false}, {"name": "simulation_logic", "description": "Auto-extracted variable simulation_logic", "required": false}, {"name": "strategic_analysis", "description": "Auto-extracted variable strategic_analysis", "required": false}], "metadata": {}} -->
 ### Description
 Analyzes the stochastic model and simulation logic to provide strategic advice, identifying "Black Swan" paths and leverage points.
 
@@ -33,6 +17,9 @@ Analyzes the stochastic model and simulation logic to provide strategic advice, 
 | :--- | :--- | :--- | :--- |
 | `architect_output` | String | The state definitions and transition matrix from the Architect. | Yes |
 | `engineer_output` | String | The simulation code and logic from the Engineer. | Yes |
+| `architect_model` | String | Auto-extracted variable architect_model | No |
+| `simulation_logic` | String | Auto-extracted variable simulation_logic | No |
+| `strategic_analysis` | String | Auto-extracted variable strategic_analysis | No |
 
 
 ### Core Instructions
@@ -75,20 +62,19 @@ Base this analysis on the Matrix and Simulation logic established in the previou
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Architect: Matrix...
-Engineer: Code...
-"
-Asserted Output: "<strategic_analysis>
-## Black Swan Analysis
-## Leverage Point
-## Proposed Intervention
-</strategic_analysis>
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['<strategic_analysis>\n## Black Swan Analysis\n## Leverage Point\n## Proposed Intervention\n</strategic_analysis>\n']
+```
 
 ---
 
 ## Skill: Stochastic Architect
-<!-- VALIDATION_METADATA: [{"name": "conversation_scenario", "description": "The conversation transcript or scenario to analyze.", "required": true}, {"name": "conversation_context", "description": "Auto-extracted variable conversation_context", "required": false}, {"name": "stochastic_model", "description": "Auto-extracted variable stochastic_model", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "conversation_scenario", "description": "The conversation transcript or scenario to analyze.", "required": true}, {"name": "conversation_context", "description": "Auto-extracted variable conversation_context", "required": false}, {"name": "stochastic_model", "description": "Auto-extracted variable stochastic_model", "required": false}], "metadata": {}} -->
 ### Description
 Analyzes a conversation or scenario to map it into a formal Stochastic State Model, defining states, risk scores, and a transition probability matrix.
 
@@ -96,6 +82,8 @@ Analyzes a conversation or scenario to map it into a formal Stochastic State Mod
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | `conversation_scenario` | String | The conversation transcript or scenario to analyze. | Yes |
+| `conversation_context` | String | Auto-extracted variable conversation_context | No |
+| `stochastic_model` | String | Auto-extracted variable stochastic_model | No |
 
 
 ### Core Instructions
@@ -135,58 +123,46 @@ Analyze the following scenario:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Patient: "I need to speak to someone about my lab results, the portal says they are abnormal."
-Agent: "I understand, I can help you with that. Can I have your date of birth?"
-Patient: "12/04/1982. But I really need to know what this means, I'm very anxious."
-Agent: "Let me pull up your record. While I do that, are you experiencing any chest pain or shortness of breath?"
-Patient: "No, just a headache that won't go away."
-Agent: "Okay, I see your results. I'll need to transfer you to the triage nurse. Please hold."
-"
-Asserted Output: "<stochastic_model>
-## State Definitions
-## Risk Assignments
-## Transition Matrix
-</stochastic_model>
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['<stochastic_model>\n## State Definitions\n## Risk Assignments\n## Transition Matrix\n</stochastic_model>\n\n\n| Markdown | table |\n| Markdown | table |\n|---|---|\n| Column 1 | Column 2 | Column 3 |']
+```
 
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['<stochastic_model>\n## State Definitions\n## Risk Assignments\n## Transition Matrix\n</stochastic_model>\n']
+```
 
-| Markdown | table |
-| Markdown | table |
-|---|---|
-| Column 1 | Column 2 | Column 3 |"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['<stochastic_model>\n## State Definitions\n## Risk Assignments\n## Transition Matrix\n</stochastic_model>\n']
+```
 
-Input Context: "Investigator: "We had a protocol deviation yesterday. A subject took the wrong dose."
-Sponsor: "Which subject? Was it reported?"
-Investigator: "Subject 004-A. Not yet, we are drafting the narrative now."
-Sponsor: "You need to submit it to the IRB within 24 hours. Stop dosing until we review the safety labs."
-Investigator: "Understood, we have halted the subject's participation pending review."
-"
-Asserted Output: "<stochastic_model>
-## State Definitions
-## Risk Assignments
-## Transition Matrix
-</stochastic_model>
-"
-
-Input Context: ""
-Asserted Output: "<stochastic_model>
-## State Definitions
-## Risk Assignments
-## Transition Matrix
-</stochastic_model>
-"
-
-Input Context: "DROP TABLE subjects; SELECT * FROM credentials; --"
-Asserted Output: "<stochastic_model>
-## State Definitions
-## Risk Assignments
-## Transition Matrix
-</stochastic_model>
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['<stochastic_model>\n## State Definitions\n## Risk Assignments\n## Transition Matrix\n</stochastic_model>\n']
+```
 
 ---
 
 ## Skill: Stochastic Engineer
-<!-- VALIDATION_METADATA: [{"name": "architect_output", "description": "The output from the Stochastic Architect, containing state definitions and transition matrix.", "required": true}, {"name": "architect_model", "description": "Auto-extracted variable architect_model", "required": false}, {"name": "simulation_code", "description": "Auto-extracted variable simulation_code", "required": false}, {"name": "stochastic_model", "description": "Auto-extracted variable stochastic_model", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "architect_output", "description": "The output from the Stochastic Architect, containing state definitions and transition matrix.", "required": true}, {"name": "architect_model", "description": "Auto-extracted variable architect_model", "required": false}, {"name": "simulation_code", "description": "Auto-extracted variable simulation_code", "required": false}, {"name": "stochastic_model", "description": "Auto-extracted variable stochastic_model", "required": false}], "metadata": {}} -->
 ### Description
 Generates a Python Monte Carlo simulation script based on provided state definitions and transition matrix.
 
@@ -194,6 +170,9 @@ Generates a Python Monte Carlo simulation script based on provided state definit
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | `architect_output` | String | The output from the Stochastic Architect, containing state definitions and transition matrix. | Yes |
+| `architect_model` | String | Auto-extracted variable architect_model | No |
+| `simulation_code` | String | Auto-extracted variable simulation_code | No |
+| `stochastic_model` | String | Auto-extracted variable stochastic_model | No |
 
 
 ### Core Instructions
@@ -233,14 +212,11 @@ Use the States and Matrix from the following description:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "<stochastic_model>
-State 1: Start (Risk: 0.0) -> State 2: End (Risk: 0.0)
-Transition: Start -> End (1.0)
-</stochastic_model>
-"
-Asserted Output: "<simulation_code>
-```python
-import random
+**Input Context:**
+```yaml
+{}
 ```
-</simulation_code>
-"
+**Asserted Output:**
+```text
+['<simulation_code>\n```python\nimport random\n```\n</simulation_code>\n']
+```

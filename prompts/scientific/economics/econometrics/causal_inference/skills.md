@@ -1,21 +1,3 @@
----
-tags:
-  - applied-microeconomics
-  - causal-inference
-  - control
-  - difference-in-differences
-  - domain:econometrics
-  - domain:economics/econometrics/causal_inference
-  - econometrics
-  - economics
-  - local-polynomial
-  - nonparametrics
-  - panel-data
-  - regression-discontinuity
-  - skill
-  - synthetic
----
-
 # Domain Agent Skills: Scientific Economics Econometrics Causal inference
 
 ## Metadata
@@ -26,7 +8,7 @@ tags:
 ---
 
 ## Skill: staggered_difference_in_differences_architect
-<!-- VALIDATION_METADATA: [{"name": "data_structure", "type": "string", "description": "The nature of the panel data (e.g., balanced vs unbalanced panel, frequency of observations, N and T dimensions)."}, {"name": "treatment_assignment", "type": "string", "description": "The mechanism of treatment timing and whether treatment is absorbing or reversible."}, {"name": "heterogeneity_concerns", "type": "string", "description": "Expected variations in treatment effects over time (dynamic effects) or across cohorts (cohort-specific effects)."}, {"name": "identifying_assumptions", "type": "string", "description": "The specific parallel trends assumptions required (e.g., unconditional vs conditional on covariates)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "data_structure", "type": "string", "description": "The nature of the panel data (e.g., balanced vs unbalanced panel, frequency of observations, N and T dimensions)."}, {"name": "treatment_assignment", "type": "string", "description": "The mechanism of treatment timing and whether treatment is absorbing or reversible."}, {"name": "heterogeneity_concerns", "type": "string", "description": "Expected variations in treatment effects over time (dynamic effects) or across cohorts (cohort-specific effects)."}, {"name": "identifying_assumptions", "type": "string", "description": "The specific parallel trends assumptions required (e.g., unconditional vs conditional on covariates)."}], "metadata": {}} -->
 ### Description
 Formulates rigorous econometric identification strategies for panel data with staggered treatment timing, addressing heterogeneous treatment effects using modern DiD estimators.
 
@@ -66,16 +48,28 @@ Provide the formal definition of the cohort-time specific estimands $ATT(g,t)$, 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: local_polynomial_regression_discontinuity_architect
-<!-- VALIDATION_METADATA: [{"name": "running_variable", "type": "string", "description": "The continuous assignment or running variable and the specific cutoff threshold determining treatment status."}, {"name": "treatment_fuzziness", "type": "string", "description": "Whether the design is sharp (deterministic assignment at the cutoff) or fuzzy (probabilistic assignment jump)."}, {"name": "bandwidth_preferences", "type": "string", "description": "Preferences or constraints regarding bandwidth selection (e.g., Mean Squared Error (MSE) optimal, Coverage Error Rate (CER) optimal)."}, {"name": "specification_concerns", "type": "string", "description": "Potential threats to identification, such as running variable manipulation (McCrary density test) or discontinuities in baseline covariates."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "running_variable", "type": "string", "description": "The continuous assignment or running variable and the specific cutoff threshold determining treatment status."}, {"name": "treatment_fuzziness", "type": "string", "description": "Whether the design is sharp (deterministic assignment at the cutoff) or fuzzy (probabilistic assignment jump)."}, {"name": "bandwidth_preferences", "type": "string", "description": "Preferences or constraints regarding bandwidth selection (e.g., Mean Squared Error (MSE) optimal, Coverage Error Rate (CER) optimal)."}, {"name": "specification_concerns", "type": "string", "description": "Potential threats to identification, such as running variable manipulation (McCrary density test) or discontinuities in baseline covariates."}], "metadata": {}} -->
 ### Description
 Formulates rigorous nonparametric and local polynomial Regression Discontinuity Design (RDD) estimators to identify local average treatment effects (LATE), accounting for optimal bandwidth selection and robust bias correction.
 
@@ -115,16 +109,28 @@ Provide the formal definition of the target estimand $\tau_{RDD}$, outline the l
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Synthetic Control Method Architect
-<!-- VALIDATION_METADATA: [{"name": "treatment_unit", "description": "The specific entity or region that received the policy intervention (e.g., 'California', 'West Germany').", "required": true}, {"name": "donor_pool", "description": "A description of the untreated units available to form the synthetic control (e.g., '38 other US states that did not pass Proposition 99').", "required": true}, {"name": "outcome_variable", "description": "The target variable to evaluate the treatment effect on (e.g., 'per capita cigarette sales', 'GDP per capita').", "required": true}, {"name": "predictors", "description": "A list of pre-intervention characteristics used to match the treated unit (e.g., 'GDP, trade openness, schooling').", "required": true}, {"name": "intervention_time", "description": "The exact time period when the intervention occurred (e.g., '1988', '1990').", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "treatment_unit", "description": "The specific entity or region that received the policy intervention (e.g., 'California', 'West Germany').", "required": true}, {"name": "donor_pool", "description": "A description of the untreated units available to form the synthetic control (e.g., '38 other US states that did not pass Proposition 99').", "required": true}, {"name": "outcome_variable", "description": "The target variable to evaluate the treatment effect on (e.g., 'per capita cigarette sales', 'GDP per capita').", "required": true}, {"name": "predictors", "description": "A list of pre-intervention characteristics used to match the treated unit (e.g., 'GDP, trade openness, schooling').", "required": true}, {"name": "intervention_time", "description": "The exact time period when the intervention occurred (e.g., '1988', '1990').", "required": true}], "metadata": {}} -->
 ### Description
 A highly rigorous prompt for designing and estimating Synthetic Control Method models in econometrics to evaluate policy interventions.
 
@@ -164,5 +170,11 @@ Provide the full mathematical formulation, optimization strategy, and the precis
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

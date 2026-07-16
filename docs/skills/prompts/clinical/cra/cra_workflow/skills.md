@@ -1,21 +1,3 @@
----
-tags:
-  - action-item
-  - cra
-  - domain:clinical
-  - email
-  - follow-up
-  - generator
-  - investigator
-  - monitoring
-  - monitoring-visit
-  - plan
-  - rbm
-  - report
-  - risk-based
-  - skill
----
-
 # Domain Agent Skills: Clinical Cra Cra workflow
 
 ## Metadata
@@ -26,7 +8,7 @@ tags:
 ---
 
 ## Skill: Risk-Based Monitoring (RBM) Plan Builder
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Develop a site-level risk-based monitoring plan with risk matrix, KRIs, and adaptive strategy.
 
@@ -67,16 +49,19 @@ Context:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Study phase/indication: Phase II, metastatic NSCLC
-Enrollment goal: 150 participants, 10 sites
-Known risk factors: high AE rate, complex biomarker sampling, decentralized ePRO
-Regulatory expectation: ICH E6 (R3) & FDA guidance on risk-based monitoring (2019)"
-Asserted Output: "1. **Risk Assessment Matrix**"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['1. **Risk Assessment Matrix**']
+```
 
 ---
 
 ## Skill: Investigator Follow-up Email & Action-Item Tracker
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Compose a follow-up email to the PI summarizing visit findings and action items, plus a tracking table.
 
@@ -117,17 +102,19 @@ Pending actions:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Study/Site: ABC123 — Site 002
-Visit date: 2024-06-15
-Pending actions:
-• Update safety log → Action needed by 2024-06-30
-• Submit deviation report → Action needed by 2024-07-05"
-Asserted Output: "Dear"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Dear']
+```
 
 ---
 
 ## Skill: Monitoring-Visit Report Generator
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Draft a monitoring visit report summarizing on-site activities, findings, follow-ups, and attachments.
 
@@ -167,9 +154,11 @@ Context (insert between the triple quotes):
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Study: P123 – Novel Therapy
-Site No./PI: 101 – Dr. Greene
-Visit Type: Interim on 2024-05-10
-Key observations: IP storage temp deviation
-Outstanding issues: Update delegation log"
-Asserted Output: "1. **High-level Summary**"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['1. **High-level Summary**']
+```

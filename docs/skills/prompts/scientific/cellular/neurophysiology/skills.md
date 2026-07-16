@@ -1,14 +1,3 @@
----
-tags:
-  - astrocytic
-  - cellular
-  - domain:scientific
-  - neurophysiology
-  - skill
-  - synapse
-  - tripartite
----
-
 # Domain Agent Skills: Scientific Cellular Neurophysiology
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: astrocytic_tripartite_synapse_calcium_dynamics_architect
-<!-- VALIDATION_METADATA: [{"name": "astrocyte_geometry", "description": "The structural dimensions and compartmentalization of the astrocyte (e.g., soma, primary processes, fine perisynaptic astrocytic processes or PAPs).", "type": "string"}, {"name": "neurotransmitter_pathways", "description": "The specific presynaptic neurotransmitter release mechanisms and corresponding astrocytic G-protein coupled receptor (GPCR) bindings.", "type": "string"}, {"name": "gliotransmission_mechanism", "description": "The mode of astrocytic glutamate/ATP release and its feedback effect on presynaptic/postsynaptic neuronal targets.", "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "astrocyte_geometry", "description": "The structural dimensions and compartmentalization of the astrocyte (e.g., soma, primary processes, fine perisynaptic astrocytic processes or PAPs).", "type": "string"}, {"name": "neurotransmitter_pathways", "description": "The specific presynaptic neurotransmitter release mechanisms and corresponding astrocytic G-protein coupled receptor (GPCR) bindings.", "type": "string"}, {"name": "gliotransmission_mechanism", "description": "The mode of astrocytic glutamate/ATP release and its feedback effect on presynaptic/postsynaptic neuronal targets.", "type": "string"}], "metadata": {}} -->
 ### Description
 A Lead Computational Neurophysiologist agent designed to derive mathematically rigorous biophysical models of astrocytic-neuronal tripartite synapses, including IP3-mediated calcium dynamics and gliotransmission.
 
@@ -65,8 +54,20 @@ Construct a rigorous biophysical model and analyze the expected neurocomputation
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A rigorous mathematical formulation featuring the Li-Rinzel model for IP3-mediated CICR, demonstrating calcium wave propagation and defining \frac{d[Ca^{2+}]}{dt} and \frac{d[IP_3]}{dt} in LaTeX."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A rigorous mathematical formulation featuring the Li-Rinzel model for IP3-mediated CICR, demonstrating calcium wave propagation and defining \\frac{d[Ca^{2+}]}{dt} and \\frac{d[IP_3]}{dt} in LaTeX.']
+```
 
-Input Context: "{}"
-Asserted Output: "An authoritative derivation of the flux equations and calcium dynamics with exact LaTeX mass-balance equations, noting the constraints of single-compartment modeling."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['An authoritative derivation of the flux equations and calcium dynamics with exact LaTeX mass-balance equations, noting the constraints of single-compartment modeling.']
+```

@@ -1,14 +1,3 @@
----
-tags:
-  - catalysis
-  - domain:scientific/chemistry/physical/kinetics
-  - kinetics
-  - microkinetic-modeling
-  - physical-chemistry
-  - skill
-  - thermodynamics
----
-
 # Domain Agent Skills: Scientific Chemistry Physical Kinetics
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: Microkinetic Modeling Architect
-<!-- VALIDATION_METADATA: [{"name": "catalytic_system", "description": "The catalyst structure, surface, or enzymatic active site (e.g., Pt(111), Ru-Macho).", "type": "string"}, {"name": "reaction_network", "description": "The overall reaction network including reactants, intermediates, and products with strict stoichiometry and IUPAC/SMILES notation.", "type": "string"}, {"name": "operating_conditions", "description": "The operating thermodynamic constraints including temperature, pressure, and initial partial pressures/concentrations.", "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "catalytic_system", "description": "The catalyst structure, surface, or enzymatic active site (e.g., Pt(111), Ru-Macho).", "type": "string"}, {"name": "reaction_network", "description": "The overall reaction network including reactants, intermediates, and products with strict stoichiometry and IUPAC/SMILES notation.", "type": "string"}, {"name": "operating_conditions", "description": "The operating thermodynamic constraints including temperature, pressure, and initial partial pressures/concentrations.", "type": "string"}], "metadata": {}} -->
 ### Description
 Generates rigorous microkinetic models for complex catalytic cycles, calculating kinetic rate equations, transition state thermodynamics, and determining rate-determining steps.
 
@@ -66,8 +55,20 @@ Operating Conditions: <operating_conditions>{{ operating_conditions }}</operatin
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "I. Elementary Reaction Network"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['I. Elementary Reaction Network']
+```
 
-Input Context: "{}"
-Asserted Output: "III. Microkinetic Rate Derivation"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['III. Microkinetic Rate Derivation']
+```

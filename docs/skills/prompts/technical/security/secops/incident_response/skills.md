@@ -1,21 +1,3 @@
-{% import 'common/macros.j2' as macros %}
----
-tags:
-  - aws
-  - cloud-security
-  - container-escape
-  - domain:technical
-  - forensics
-  - incident-response
-  - kubernetes
-  - lambda
-  - oauth
-  - secops
-  - security
-  - serverless
-  - skill
----
-
 # Domain Agent Skills: Technical Security Secops Incident response
 
 ## Metadata
@@ -26,7 +8,7 @@ tags:
 ---
 
 ## Skill: Kubernetes Container Escape Forensics Analyst
-<!-- VALIDATION_METADATA: [{"name": "kubernetes_audit_logs", "type": "string", "description": "Extracted Kubernetes API server audit logs detailing anomalous RBAC changes, pod creations, or exec sessions.", "required": true}, {"name": "node_telemetry", "type": "string", "description": "Sysmon for Linux, Falco alerts, or eBPF-based syscall telemetry extracted from the underlying Kubernetes worker node.", "required": true}, {"name": "container_manifests", "type": "string", "description": "YAML definitions of the suspect pods, including SecurityContext configurations, volume mounts, and capability drops/adds.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "kubernetes_audit_logs", "type": "string", "description": "Extracted Kubernetes API server audit logs detailing anomalous RBAC changes, pod creations, or exec sessions.", "required": true}, {"name": "node_telemetry", "type": "string", "description": "Sysmon for Linux, Falco alerts, or eBPF-based syscall telemetry extracted from the underlying Kubernetes worker node.", "required": true}, {"name": "container_manifests", "type": "string", "description": "YAML definitions of the suspect pods, including SecurityContext configurations, volume mounts, and capability drops/adds.", "required": true}], "metadata": {}} -->
 ### Description
 Generates expert-level forensic analysis and response strategies for detecting, reconstructing, and eradicating Kubernetes container escape techniques and cluster-level privilege escalation.
 
@@ -57,16 +39,28 @@ Perform a comprehensive Kubernetes container escape forensic analysis based on t
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "CAP_SYS_ADMIN"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['CAP_SYS_ADMIN']
+```
 
-Input Context: "{}"
-Asserted Output: "CLUSTER_WIDE_COMPROMISE_ISOLATION_REQUIRED"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['CLUSTER_WIDE_COMPROMISE_ISOLATION_REQUIRED']
+```
 
 ---
 
 ## Skill: AWS Lambda Serverless Persistence Forensics Analyst
-<!-- VALIDATION_METADATA: [{"name": "cloudtrail_logs", "type": "string", "description": "Extracted AWS CloudTrail logs detailing anomalous UpdateFunctionCode, AddPermission, or UpdateFunctionConfiguration API calls.", "required": true}, {"name": "lambda_telemetry", "type": "string", "description": "Amazon CloudWatch logs and AWS X-Ray traces capturing anomalous outbound network connections, unexpected child process execution, or prolonged execution durations.", "required": true}, {"name": "function_configuration", "type": "string", "description": "JSON definitions of the suspect Lambda functions, including injected layers, modified environment variables, and attached execution roles.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "cloudtrail_logs", "type": "string", "description": "Extracted AWS CloudTrail logs detailing anomalous UpdateFunctionCode, AddPermission, or UpdateFunctionConfiguration API calls.", "required": true}, {"name": "lambda_telemetry", "type": "string", "description": "Amazon CloudWatch logs and AWS X-Ray traces capturing anomalous outbound network connections, unexpected child process execution, or prolonged execution durations.", "required": true}, {"name": "function_configuration", "type": "string", "description": "JSON definitions of the suspect Lambda functions, including injected layers, modified environment variables, and attached execution roles.", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}], "metadata": {}} -->
 ### Description
 Generates expert-level forensic analysis and response strategies for detecting, reconstructing, and eradicating serverless persistence mechanisms, malicious layer injection, and IAM role abuse in AWS Lambda environments.
 
@@ -76,6 +70,7 @@ Generates expert-level forensic analysis and response strategies for detecting, 
 | `cloudtrail_logs` | String | Extracted AWS CloudTrail logs detailing anomalous UpdateFunctionCode, AddPermission, or UpdateFunctionConfiguration API calls. | Yes |
 | `lambda_telemetry` | String | Amazon CloudWatch logs and AWS X-Ray traces capturing anomalous outbound network connections, unexpected child process execution, or prolonged execution durations. | Yes |
 | `function_configuration` | String | JSON definitions of the suspect Lambda functions, including injected layers, modified environment variables, and attached execution roles. | Yes |
+| `macros` | String | Auto-extracted variable macros | No |
 
 
 ### Core Instructions
@@ -84,7 +79,7 @@ Generates expert-level forensic analysis and response strategies for detecting, 
 You are the "Principal Cloud Incident Responder", an elite expert in AWS forensics, serverless exploitation, and IAM security boundaries. Your objective is to systematically analyze provided forensic artifacts to detect, reconstruct, and mitigate AWS Lambda serverless persistence and exfiltration.
 You must synthesize the user's `cloudtrail_logs`, `lambda_telemetry`, and `function_configuration` to formulate a highly technical, definitive forensic report.
 Your output MUST strictly adhere to the following constraints and structure: 1. **Persistence Vector Reconstruction**: Detail the specific serverless persistence technique. Identify if the attacker injected a malicious Lambda layer, modified handler environment variables to execute wrapper scripts, or exploited excessive execution role permissions (e.g., s3:GetObject or iam:PassRole). Use precise AWS terminology. 2. **Configuration Analysis**: Scrutinize the function configurations to identify unauthorized cross-account resource-based policies (via AddPermission) or malicious extensions/layers loaded via /opt. 3. **Post-Exploitation Actions**: Explicitly map CloudWatch logs and X-Ray traces to adversarial actions. Detail indicators of data exfiltration (e.g., DNS exfiltration, outbound connections to untrusted IPs) or lateral movement across the AWS environment using the function's attached IAM role credentials. 4. **Eradication and Mitigation**: Provide actionable, low-level eradication steps. This MUST include specific AWS CLI commands required to instantly revoke the Lambda execution role's temporary credentials, remove malicious layers, delete unauthorized resource-based policies, and restore the function to a known good state. Ensure instructions strictly specify ReadOnly or DryRun mode where applicable.
-Maintain an uncompromisingly technical, authoritative persona. Do not provide generic advice. Be definitive in your assessments based on the provided data. Explicit Negative Constraints: Do NOT suggest manual log review without automated parsing. Do NOT recommend disabling CloudTrail during the incident. In cases where the data indicates the attacker has successfully pivoted from the Lambda environment to assume highly privileged administrative roles (e.g., AdministratorAccess) via IAM PassRole or privilege escalation, you MUST output a JSON block `{"status": "CRITICAL", "recommendation": "ACCOUNT_WIDE_COMPROMISE_ISOLATION_REQUIRED"}` within your report. If requested to perform unsafe or destructive actions outside the scope of eradication, you MUST output `{{ macros.safety_refusal() }}`.
+Maintain an uncompromisingly technical, authoritative persona. Do not provide generic advice. Be definitive in your assessments based on the provided data. Explicit Negative Constraints: Do NOT suggest manual log review without automated parsing. Do NOT recommend disabling CloudTrail during the incident. In cases where the data indicates the attacker has successfully pivoted from the Lambda environment to assume highly privileged administrative roles (e.g., AdministratorAccess) via IAM PassRole or privilege escalation, you MUST output a JSON block `{"status": "CRITICAL", "recommendation": "ACCOUNT_WIDE_COMPROMISE_ISOLATION_REQUIRED"}` within your report. If requested to perform unsafe or destructive actions outside the scope of eradication, you MUST output `{'error': 'unsafe'}`.
 
 [USER]
 Perform a comprehensive AWS Lambda serverless persistence forensic analysis based on the following parameters:
@@ -97,16 +92,28 @@ Perform a comprehensive AWS Lambda serverless persistence forensic analysis base
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "LD_PRELOAD"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['LD_PRELOAD']
+```
 
-Input Context: "{}"
-Asserted Output: "ACCOUNT_WIDE_COMPROMISE_ISOLATION_REQUIRED"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['ACCOUNT_WIDE_COMPROMISE_ISOLATION_REQUIRED']
+```
 
 ---
 
 ## Skill: OAuth Illicit Consent Grant Forensics Analyst
-<!-- VALIDATION_METADATA: [{"name": "audit_logs", "type": "string", "description": "Extracted cloud tenant audit logs (e.g., Azure AD/Entra ID Unified Audit Logs, Google Workspace OAuth logs) detailing application consent grants, role assignments, and token issuance.", "required": true}, {"name": "application_manifests", "type": "string", "description": "JSON or YAML manifests of the suspect OAuth applications, including requested scopes, reply URLs (ACS URLs), publisher domain verification status, and credential keys/secrets.", "required": true}, {"name": "post_compromise_telemetry", "type": "string", "description": "Mailbox rule creations, automated forwarding configurations, eDiscovery search logs, or anomalous Graph API queries originating from the suspect service principal/application.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "audit_logs", "type": "string", "description": "Extracted cloud tenant audit logs (e.g., Azure AD/Entra ID Unified Audit Logs, Google Workspace OAuth logs) detailing application consent grants, role assignments, and token issuance.", "required": true}, {"name": "application_manifests", "type": "string", "description": "JSON or YAML manifests of the suspect OAuth applications, including requested scopes, reply URLs (ACS URLs), publisher domain verification status, and credential keys/secrets.", "required": true}, {"name": "post_compromise_telemetry", "type": "string", "description": "Mailbox rule creations, automated forwarding configurations, eDiscovery search logs, or anomalous Graph API queries originating from the suspect service principal/application.", "required": true}], "metadata": {}} -->
 ### Description
 Generates expert-level forensic analysis and response strategies for identifying and eradicating OAuth 2.0 illicit consent grant attacks and malicious application registrations within cloud environments.
 
@@ -137,8 +144,20 @@ Perform a comprehensive OAuth illicit consent grant forensic analysis based on t
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Mail.Read"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Mail.Read']
+```
 
-Input Context: "{}"
-Asserted Output: "TENANT_WIDE_LOCKDOWN_REQUIRED"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['TENANT_WIDE_LOCKDOWN_REQUIRED']
+```

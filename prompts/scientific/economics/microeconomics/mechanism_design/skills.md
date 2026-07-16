@@ -1,12 +1,3 @@
----
-tags:
-  - domain:microeconomics/mechanism_design
-  - mechanism-design
-  - microeconomics
-  - skill
-  - theory
----
-
 # Domain Agent Skills: Scientific Economics Microeconomics Mechanism design
 
 ## Metadata
@@ -17,7 +8,7 @@ tags:
 ---
 
 ## Skill: optimal_mechanism_design_architect
-<!-- VALIDATION_METADATA: [{"name": "objective_function", "type": "string", "description": "The designer's objective function (e.g., revenue maximization, social welfare maximization)."}, {"name": "agent_types", "type": "string", "description": "The distribution and characteristics of the agents' types (e.g., continuous type space, independent private values)."}, {"name": "allocation_rule", "type": "string", "description": "The constraints or structure of the allocation rule."}, {"name": "payment_rule", "type": "string", "description": "The constraints or structure of the payment rule."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "objective_function", "type": "string", "description": "The designer's objective function (e.g., revenue maximization, social welfare maximization)."}, {"name": "agent_types", "type": "string", "description": "The distribution and characteristics of the agents' types (e.g., continuous type space, independent private values)."}, {"name": "allocation_rule", "type": "string", "description": "The constraints or structure of the allocation rule."}, {"name": "payment_rule", "type": "string", "description": "The constraints or structure of the payment rule."}], "metadata": {}} -->
 ### Description
 Formulates optimal mechanism design frameworks leveraging the revelation principle, incentive compatibility (IC), individual rationality (IR), and virtual valuation equations.
 
@@ -53,8 +44,20 @@ Provide the full mathematical derivation, including the transformation of the op
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

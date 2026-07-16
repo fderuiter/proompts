@@ -1,14 +1,3 @@
----
-tags:
-  - assembly
-  - domain:microbiology
-  - metagenomic
-  - metagenomics
-  - microbiology
-  - shotgun
-  - skill
----
-
 # Domain Agent Skills: Scientific Microbiology Metagenomics
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: shotgun_metagenomic_assembly_binning_architect
-<!-- VALIDATION_METADATA: [{"name": "sequencing_technology", "type": "string", "description": "The sequencing platform utilized (e.g., Illumina paired-end, PacBio HiFi, Oxford Nanopore) dictating error profiles and read lengths."}, {"name": "environmental_context", "type": "string", "description": "The source of the microbiome sample (e.g., human gut, marine sediment, deep-sea hydrothermal vent), which influences microbial diversity and strain heterogeneity."}, {"name": "assembly_graph_algorithm", "type": "string", "description": "The core algorithm utilized for resolving the metagenomic assembly graph (e.g., de Bruijn graphs, Overlap-Layout-Consensus)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "sequencing_technology", "type": "string", "description": "The sequencing platform utilized (e.g., Illumina paired-end, PacBio HiFi, Oxford Nanopore) dictating error profiles and read lengths."}, {"name": "environmental_context", "type": "string", "description": "The source of the microbiome sample (e.g., human gut, marine sediment, deep-sea hydrothermal vent), which influences microbial diversity and strain heterogeneity."}, {"name": "assembly_graph_algorithm", "type": "string", "description": "The core algorithm utilized for resolving the metagenomic assembly graph (e.g., de Bruijn graphs, Overlap-Layout-Consensus)."}], "metadata": {}} -->
 ### Description
 Architects robust and mathematically rigorous pipelines for the assembly and binning of short-read and long-read shotgun metagenomic data to recover metagenome-assembled genomes (MAGs).
 
@@ -62,5 +51,11 @@ Please generate a comprehensive shotgun metagenomic assembly and binning framewo
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
