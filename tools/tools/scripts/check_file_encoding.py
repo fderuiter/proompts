@@ -61,12 +61,11 @@ def check_file(filepath):
     return errors
 
 def main():
+    from promptops.utils import walk_workspace
     root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
-    ignore_dirs = {".venv", "venv", ".git", "__pycache__", ".tox", ".pytest_cache", "build", "dist"}
     
     all_errors = {}
-    for root, dirs, files in os.walk(root_dir):
-        dirs[:] = [d for d in dirs if d not in ignore_dirs]
+    for root, dirs, files in walk_workspace(root_dir):
         for file in files:
             if file.endswith(".py"):
                 filepath = os.path.join(root, file)

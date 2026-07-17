@@ -20,7 +20,7 @@ from __future__ import annotations
 from pathlib import Path
 import sys
 
-from promptops.utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, OVERVIEW_NAME, _is_valid_file
+from promptops.utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, OVERVIEW_NAME, walk_workspace
 from promptops.sync import DirectoryReconciler
 
 
@@ -72,11 +72,13 @@ def generate_overview(directory: Path, content_cache: dict[Path, bool] | None = 
     """
     title = directory.name.replace("_", " ").title()
     prompt_files: list[Path] = []
-    for pattern in ("*.prompt.md", "*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml", "skills.md"):
-        prompt_files.extend(directory.glob(pattern))
     
-    # Filter out hidden files and invalid paths
-    prompt_files = [f for f in prompt_files if _is_valid_file(f)]
+    # Use walk_workspace for a shallow scan
+    root, dirs, files = next(walk_workspace(directory), (None, [], []))
+    if files:
+        for f in files:
+            if any(f.endswith(ext) for ext in (".prompt.md", ".prompt.yaml", ".prompt.yml", ".workflow.yaml", ".workflow.yml")) or f == "skills.md":
+                prompt_files.append(directory / f)
 
     lines = []
     for file in sorted(prompt_files):
@@ -88,28 +90,28 @@ def generate_overview(directory: Path, content_cache: dict[Path, bool] | None = 
 
     # Scan for subdirectories that have prompts or overviews
     subdirs = []
-    for child in directory.iterdir():
-        if child.is_dir() and not child.name.startswith('.'):
-            # Check if this subdir has prompts recursively or has an overview
-            has_sub_prompts = False
-            if content_cache is not None and child in content_cache:
-                has_sub_prompts = content_cache[child]
-            else:
-                for pattern in ("*.prompt.md", "*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml", "skills.md"):
-                    for f in child.rglob(pattern):
-                        if _is_valid_file(f):
-                            has_sub_prompts = True
-                            break
-                    if has_sub_prompts:
+    for d in dirs:
+        child = directory / d
+        # Check if this subdir has prompts recursively or has an overview
+        has_sub_prompts = False
+        if content_cache is not None and child in content_cache:
+            has_sub_prompts = content_cache[child]
+        else:
+            for sub_root, _, sub_files in walk_workspace(child):
+                for f in sub_files:
+                    if any(f.endswith(ext) for ext in (".prompt.md", ".prompt.yaml", ".prompt.yml", ".workflow.yaml", ".workflow.yml")) or f == "skills.md":
+                        has_sub_prompts = True
                         break
-                if content_cache is not None:
-                    content_cache[child] = has_sub_prompts
+                if has_sub_prompts:
+                    break
+            if content_cache is not None:
+                content_cache[child] = has_sub_prompts
 
-            if has_sub_prompts:
-                # Use the subdirectory name as title, or try to read its overview title?
-                # For simplicity, just use name.
-                title_sd = child.name.replace("_", " ").title()
-                subdirs.append(f"- [{title_sd}/]({child.name}/overview.md)")
+        if has_sub_prompts:
+            # Use the subdirectory name as title, or try to read its overview title?
+            # For simplicity, just use name.
+            title_sd = child.name.replace("_", " ").title()
+            subdirs.append(f"- [{title_sd}/]({child.name}/overview.md)")
 
     if not lines and not subdirs:
         return ""
@@ -182,9 +184,9 @@ def main() -> int:
     def has_content(d: Path) -> bool:
         if d in content_cache:
             return content_cache[d]
-        for pattern in ("*.prompt.md", "*.prompt.yaml", "*.prompt.yml", "*.workflow.yaml", "*.workflow.yml", "skills.md"):
-            for f in d.rglob(pattern):
-                if _is_valid_file(f):
+        for sub_root, _, sub_files in walk_workspace(d):
+            for f in sub_files:
+                if any(f.endswith(ext) for ext in (".prompt.md", ".prompt.yaml", ".prompt.yml", ".workflow.yaml", ".workflow.yml")) or f == "skills.md":
                     content_cache[d] = True
                     return True
         content_cache[d] = False
@@ -198,7 +200,9 @@ def main() -> int:
         reconciler = DirectoryReconciler(root_dir, manage_pattern=OVERVIEW_NAME)
 
         # Include the root_dir itself in the list of directories to process
-        dirs_to_process = [root_dir] + [d for d in root_dir.rglob("*") if d.is_dir()]
+        dirs_to_process = []
+        for root, _, _ in walk_workspace(root_dir):
+            dirs_to_process.append(Path(root))
 
         for directory in dirs_to_process:
             if has_content(directory):
