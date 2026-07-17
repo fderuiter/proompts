@@ -1,6 +1,10 @@
+import socket
 import subprocess
 import time
 from pathlib import Path
+import urllib.request
+import urllib.error
+
 import pytest
 from playwright.sync_api import sync_playwright
 from axe_playwright_python.sync_playwright import Axe
@@ -10,7 +14,6 @@ def streamlit_server():
     repo_root = Path(__file__).resolve().parents[1]
     app_path = repo_root / "studio" / "studio" / "app.py"
 
-    # Start the Streamlit server
     process = subprocess.Popen(
         [
             "uv",
@@ -25,30 +28,34 @@ def streamlit_server():
         ],
         cwd=str(repo_root),
         stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE
+        stderr=subprocess.PIPE,
     )
-    
-    # Wait for the server to start (simple sleep to ensure it's up)
-    import urllib.request
-    import urllib.error
-    
+
     start_time = time.time()
-    while time.time() - start_time < 30:
+    last_error = None
+    while time.time() - start_time < 60:
         try:
-            urllib.request.urlopen("http://localhost:8502", timeout=1)
-            break
-        except urllib.error.URLError:
+            with urllib.request.urlopen("http://localhost:8502", timeout=2) as response:
+                if response.status < 500:
+                    break
+        except (urllib.error.URLError, TimeoutError, ConnectionResetError, socket.timeout) as exc:
+            last_error = exc
             time.sleep(1)
-            
-    if process.poll() is not None:
-        out, err = process.communicate()
-        print(err.decode())
-    
+    else:
+        if process.poll() is not None:
+            out, err = process.communicate()
+            stderr = (err or out).decode("utf-8", errors="replace")
+            raise RuntimeError(f"Streamlit server exited early: {stderr}")
+        raise RuntimeError(f"Streamlit server did not become ready within 60s: {last_error}")
+
     yield "http://localhost:8502"
-    
-    # Teardown
+
     process.terminate()
-    process.wait()
+    try:
+        process.wait(timeout=10)
+    except subprocess.TimeoutExpired:
+        process.kill()
+        process.wait()
 
 def test_dashboard_accessibility(streamlit_server):
     with sync_playwright() as p:
