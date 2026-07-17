@@ -22,7 +22,7 @@ import urllib.parse
 from pathlib import Path
 from typing import List, Tuple, Set
 
-from promptops.utils import iter_markdown_files, ROOT, PROMPTS_DIR, WORKFLOWS_DIR
+from promptops.utils import iter_markdown_files, ROOT, PROMPTS_DIR, WORKFLOWS_DIR, walk_workspace
 
 # Configuration
 DOCS_DIR = ROOT / "docs"
@@ -47,7 +47,12 @@ def get_all_markdown_files() -> List[Path]:
     if WORKFLOWS_DIR.exists():
         files.extend(list(iter_markdown_files(WORKFLOWS_DIR)))
     # Also check root files like README.md, CONTRIBUTING.md
-    files.extend([p for p in ROOT_DIR.glob("*.md") if not p.name.startswith("._")])
+    for root, dirs, filenames in walk_workspace(ROOT_DIR):
+        if Path(root).resolve() == ROOT_DIR.resolve():
+            for f in filenames:
+                if f.endswith(".md"):
+                    files.append(ROOT_DIR / f)
+            break
     return files
 
 def get_anchors_in_file(path: Path) -> Set[str]:
