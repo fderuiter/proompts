@@ -10,6 +10,7 @@ Welcome to the Proompts documentation. Select a category below:
 - [Clinical](clinical.md)
 - [Management](management.md)
 - [Meta](meta.md)
+- [Prompts](prompts.md)
 - [Scientific](scientific.md)
 - [Technical](technical.md)
 - [Workflows](workflows.md)

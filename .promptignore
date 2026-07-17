@@ -14,3 +14,4 @@ env/
 
 # Ignore draft prompts in a specific temp directory (example)
 temp_drafts/
+docs/prompts/
