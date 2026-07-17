@@ -141,7 +141,7 @@ Runs a compaction pass over a conversation and returns a compacted response obje
 *   Keep prompts functionally identical when resuming to avoid behavior drift
 *   Treat compacted items as opaque; don’t parse or depend on internals
 
-For guidance on when and how to compact in production, see the Conversation State guide and Compact a Response page.
+For guidance on when and how to compact in production, see the [Conversation State](https://platform.openai.com/docs/guides/conversation-state) guide and [Compact a Response](https://platform.openai.com/docs/api-reference/responses/compact) page.
 
 **Here is an example:**
 
@@ -232,7 +232,7 @@ Example tool usage section:
 
 This is an area where GPT-5.2 clearly shows strong improvements. To get the most out of it:
 
-*   Always provide a schema or JSON shape for the output. You can use structured outputs for strict schema adherence.
+*   Always provide a schema or JSON shape for the output. You can use [structured outputs](https://platform.openai.com/docs/guides/structured-outputs) for strict schema adherence.
 *   Distinguish between required and optional fields.
 *   Ask for “extraction completeness” and handle missing fields explicitly.
 
@@ -276,7 +276,7 @@ Use the following default mappings when updating to GPT-5.2
 
 *Note that default reasoning level for GPT-5 is medium, and for GPT-5.1 and GPT-5.2 is none.*
 
-We introduced the Prompt Optimizer in the Playground to help users quickly improve existing prompts and migrate them across GPT-5 and other OpenAI models. General steps to migrate to a new model are as follows:
+We introduced the [Prompt Optimizer](https://platform.openai.com/docs/guides/prompt-optimizer) in the [Playground](https://platform.openai.com/playground) to help users quickly improve existing prompts and migrate them across GPT-5 and other OpenAI models. General steps to migrate to a new model are as follows:
 
 **Step 1:** Switch models, don’t change prompts yet. Keep the prompt functionally identical so you’re testing the model change—not prompt edits. Make one change at a time.
 **Step 2:** Pin `reasoning_effort`. Explicitly set GPT-5.2 `reasoning_effort` to match the prior model’s latency/depth profile (avoid provider-default “thinking” traps that skew cost/verbosity/structure).
