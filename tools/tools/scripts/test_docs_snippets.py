@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 
 from promptops.engine import simulate_prompt_execution, run_workflow
-from promptops.utils import ROOT
+from promptops.utils import ROOT, iter_markdown_files
 from promptops.validation import analyze_workflow_dependencies
 
 class CodeBlock:
@@ -37,7 +37,7 @@ def parse_markdown_ast(text):
 
 def main():
     docs_dir = ROOT / "docs"
-    md_files = [f for f in docs_dir.rglob("*.md") if "skills" not in f.parts]
+    md_files = [f for f in iter_markdown_files(docs_dir) if "skills" not in f.parts]
     
     has_errors = False
     
