@@ -16,6 +16,7 @@ class DocItem:
 
 
 
+from promptops.sync import DirectoryReconciler
 from promptops.skill_export import process_skills, detect_skill
 
 def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str = "main", check: bool = False) -> bool:
@@ -27,6 +28,8 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
     if not prompts_path.exists():
         print(f"Directory {prompts_dir} does not exist.")
         return False
+
+    reconciler = DirectoryReconciler(docs_path, dry_run=check)
 
     items = []
     
@@ -55,7 +58,10 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
         if data.get('metadata', {}).get('status') == 'draft':
             continue
             
-        if check and detect_skill(raw_content, data):
+        if detect_skill(raw_content, data):
+            if check:
+                print(f"Drift detected: Unconsolidated skill file found: {path}")
+                sync_ok = False
             continue
 
         title = derive_title(path, data)
@@ -75,15 +81,10 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
             
         content = f"---\ntitle: {title}\n---\n\n# {title}\n\n{desc}\n\n{link_md}\n\n```yaml\n{raw_content}\n```\n"
         
-        if check:
-            if not output_file.exists():
-                print(f"Drift detected: Missing file {output_file}")
-                sync_ok = False
-            elif output_file.read_text(encoding='utf-8') != content:
-                print(f"Drift detected: Content mismatch in {output_file}")
-                sync_ok = False
-        else:
-            output_file.write_text(content, encoding='utf-8')
+        would_write = reconciler.write_file(output_file, content)
+        if check and would_write:
+            print(f"Drift detected: Content mismatch or missing file {output_file}")
+            sync_ok = False
         
         items.append(DocItem(
             title=title,
@@ -113,6 +114,9 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
             except Exception as e:
                 print(f"Error parsing {path} for mermaid generation: {e}")
                 mermaid = ""
+                if check:
+                    print(f"Drift detected: Workflow schema validation failed for {path}: {e}")
+                    sync_ok = False
 
             
             filename = path.stem.replace('.workflow', '') + ".md"
@@ -131,15 +135,10 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
             
             content = f"---\ntitle: {title}\n---\n\n# {title}\n\n{desc}\n\n{mermaid_block}\n{link_md}\n"
             
-            if check:
-                if not output_file.exists():
-                    print(f"Drift detected: Missing workflow file {output_file}")
-                    sync_ok = False
-                elif output_file.read_text(encoding='utf-8') != content:
-                    print(f"Drift detected: Content mismatch in workflow {output_file}")
-                    sync_ok = False
-            else:
-                output_file.write_text(content, encoding='utf-8')
+            would_write = reconciler.write_file(output_file, content)
+            if check and would_write:
+                print(f"Drift detected: Content mismatch or missing workflow {output_file}")
+                sync_ok = False
             
             category = derive_category(path, workflows_path, data)
                 
@@ -183,17 +182,13 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
                 md.append(f"- [{w.title}]({rel_path})")
                 
         content = "\n".join(md)
-        if check:
-            if not out_path.exists():
-                print(f"Drift detected: Missing category file {out_path}")
-                sync_ok = False
-            elif out_path.read_text(encoding='utf-8') != content:
-                print(f"Drift detected: Content mismatch in category {out_path}")
-                sync_ok = False
-        else:
-            out_path.write_text(content, encoding='utf-8')
+        would_write = reconciler.write_file(out_path, content)
+        if check and would_write:
+            print(f"Drift detected: Content mismatch or missing category {out_path}")
+            sync_ok = False
         
 
+    js_dir = docs_path / 'js'
     # --- GENERATE EXPLORER CATALOG ---
     if not check:
         import json
@@ -215,9 +210,8 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
                 "inputSchema": t.inputSchema
             })
             
-        js_dir = docs_path / "js"
         js_dir.mkdir(parents=True, exist_ok=True)
-        (js_dir / "tools_catalog.json").write_text(json.dumps(catalog, indent=2), encoding='utf-8')
+        reconciler.write_file(js_dir / "tools_catalog.json", json.dumps(catalog, indent=2))
         
         # Write explorer.js
         explorer_js = '''
@@ -316,7 +310,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 '''
-        (js_dir / "explorer.js").write_text(explorer_js, encoding='utf-8')
+        reconciler.write_file(js_dir / "explorer.js", explorer_js)
+
+    else:
+        # Register JS files as touched in check mode, since they are generated externally
+        reconciler.touched_files.add((js_dir / "tools_catalog.json").resolve())
+        reconciler.touched_files.add((js_dir / "explorer.js").resolve())
 
     # Generate index.md
     index_path = docs_path / "index.md"
@@ -338,19 +337,22 @@ document.addEventListener("DOMContentLoaded", () => {
         index_md.append(f"- [{category}]({filename})")
         
     content = "\n".join(index_md)
+    would_write = reconciler.write_file(index_path, content)
+    if check and would_write:
+        print(f"Drift detected: Content mismatch or missing index {index_path}")
+        sync_ok = False
+
+    stale_count = reconciler.reconcile()
+    if check and stale_count > 0:
+        print(f"Drift detected: {stale_count} stale files or directories found.")
+        sync_ok = False
+
     if check:
-        if not index_path.exists():
-            print(f"Drift detected: Missing index file {index_path}")
-            sync_ok = False
-        elif index_path.read_text(encoding='utf-8') != content:
-            print(f"Drift detected: Content mismatch in index {index_path}")
-            sync_ok = False
         if sync_ok:
             print("Documentation is up to date.")
         else:
             print("Documentation drift detected.")
     else:
-        index_path.write_text(content, encoding='utf-8')
         print(f"Generated index.md at {index_path}")
         print(f"Documentation generated at {output_dir}")
         
