@@ -287,6 +287,27 @@ def analyze_workflow_dependencies(workflow_file: str, workflow_data: dict, root_
         if unreachable:
             issues.append(f"Disconnected component(s) detected. The following steps are unreachable: {unreachable}")
 
+    # Cycle Detection
+    visited_cycle = set()
+    rec_stack = set()
+    def detect_cycle(node):
+        visited_cycle.add(node)
+        rec_stack.add(node)
+        for neighbor in graph.get(node, []):
+            if neighbor not in visited_cycle:
+                if detect_cycle(neighbor):
+                    return True
+            elif neighbor in rec_stack:
+                return True
+        rec_stack.remove(node)
+        return False
+    
+    for node in step_ids:
+        if node not in visited_cycle:
+            if detect_cycle(node):
+                issues.append("Cyclic dependency (circular loop) detected in workflow steps.")
+                break
+
     # Check Variable Contract
     for step in wf.steps:
         from promptops.utils import ROOT
