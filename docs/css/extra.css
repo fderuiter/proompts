@@ -11,7 +11,8 @@
 .token.prolog,
 .token.doctype,
 .token.cdata,
-.c, .ch, .cm, .cp, .cpf, .c1, .cs {
+.c, .ch, .cm, .cp, .cpf, .c1, .cs,
+.nv, .ow, .na, .gu, .gh {
   color: #595959 !important;
 }
 

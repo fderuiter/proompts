@@ -29,7 +29,20 @@ def streamlit_server():
     )
     
     # Wait for the server to start (simple sleep to ensure it's up)
-    time.sleep(10)
+    import urllib.request
+    import urllib.error
+    
+    start_time = time.time()
+    while time.time() - start_time < 30:
+        try:
+            urllib.request.urlopen("http://localhost:8502", timeout=1)
+            break
+        except urllib.error.URLError:
+            time.sleep(1)
+            
+    if process.poll() is not None:
+        out, err = process.communicate()
+        print(err.decode())
     
     yield "http://localhost:8502"
     
