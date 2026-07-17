@@ -32,6 +32,22 @@ ROOT_DIR = ROOT
 # This is a simple regex and might miss some edge cases, but covers standard markdown links
 LINK_PATTERN = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
 
+# Regex to catch empty parentheses links: [text]() or [text]( )
+EMPTY_LINK_PATTERN = re.compile(r'\[([^\]]+)\]\(\s*\)')
+
+# Regex to catch ellipsis in link targets: [text](https://.../something)
+ELLIPSIS_LINK_PATTERN = re.compile(r'\[([^\]]+)\]\([^)]*\.\.\.[^)]*\)')
+
+# Regex to catch unclosed brackets in links: [text](url without closing parenthesis
+UNCLOSED_LINK_PATTERN = re.compile(r'\[([^\]]+)\]\([^)\s]+[\s]*$')
+
+# Static blocklist of known incorrect or hallucinated domain paths
+BLOCKED_DOMAINS = [
+    "www.claude.com/blog",
+    "docs.anthropic.com/docs/en",
+    "platform.claude.com/cookbook"
+]
+
 def normalize_anchor(anchor: str) -> str:
     """Normalize anchors using simplified GitHub-style formatting."""
     anchor = anchor.strip().lower().replace(' ', '-')
@@ -148,9 +164,36 @@ def main():
             continue
 
         for line_no, line in enumerate(content.splitlines(), start=1):
+            # Check for empty parentheses
+            for match in EMPTY_LINK_PATTERN.finditer(line):
+                print(f"❌ {file_path}:{line_no}\n   [{match.group(1)}]() -> Placeholder link with empty parentheses")
+                broken_links_count += 1
+                
+            # Check for ellipsis in links
+            for match in ELLIPSIS_LINK_PATTERN.finditer(line):
+                print(f"❌ {file_path}:{line_no}\n   [{match.group(1)}](...) -> Placeholder link with ellipsis")
+                broken_links_count += 1
+                
+            # Check for unclosed brackets
+            for match in UNCLOSED_LINK_PATTERN.finditer(line):
+                print(f"❌ {file_path}:{line_no}\n   [{match.group(1)}](... -> Malformed link with unclosed brackets")
+                broken_links_count += 1
+
             for match in LINK_PATTERN.finditer(line):
                 text = match.group(1)
                 link = match.group(2)
+                
+                # Check against blocklist
+                is_blocked = False
+                for domain in BLOCKED_DOMAINS:
+                    if domain in link:
+                        print(f"❌ {file_path}:{line_no}\n   [{text}]({link}) -> Blocked domain or path ({domain})")
+                        broken_links_count += 1
+                        is_blocked = True
+                        break
+                        
+                if is_blocked:
+                    continue
 
                 is_valid, error = check_link(file_path, link, target_anchors_cache)
                 if not is_valid:
