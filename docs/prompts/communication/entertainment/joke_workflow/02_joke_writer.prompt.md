@@ -6,11 +6,14 @@ title: Joke Writer
 
 Writes a joke about a given topic.
 
-[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/entertainment/joke_workflow/02_joke_writer.prompt.yaml)
+
 
 ```yaml
 name: Joke Writer
 description: Writes a joke about a given topic.
+metadata:
+  domain: communication
+  complexity: low
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.7

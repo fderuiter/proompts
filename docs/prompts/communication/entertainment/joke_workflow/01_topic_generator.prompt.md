@@ -6,11 +6,14 @@ title: Topic Generator
 
 Generates a random topic for a joke.
 
-[View Source YAML](https://github.com/fderuiter/proompts/blob/main/prompts/communication/entertainment/joke_workflow/01_topic_generator.prompt.yaml)
+
 
 ```yaml
 name: Topic Generator
 description: Generates a random topic for a joke.
+metadata:
+  domain: communication
+  complexity: low
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.7
