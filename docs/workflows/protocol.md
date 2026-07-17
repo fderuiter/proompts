@@ -31,4 +31,4 @@ graph TD
     linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;
 ```
 
-
+[View Source YAML](https://github.com/fderuiter/proompts/blob/main/workflows/clinical/protocol.workflow.yaml)

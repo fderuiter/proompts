@@ -92,6 +92,7 @@ All prompts must be stored as `.prompt.yaml` or `.prompt.yml` files following th
 
 **Good Example:**
 ```yaml
+name: Good Example
 messages:
   - role: system
     content: |-
@@ -104,6 +105,8 @@ messages:
       2. Evaluate likelihood and severity of each hazard.
       3. Recommend testing strategies and mitigation controls.
       4. Provide a structured summary table.
+testData:
+  - inputs: {}
 ```
 
 ### 2. Meaningful Variables
@@ -186,6 +189,7 @@ Use appropriate YAML block scalars:
 
 **Example:**
 ```yaml
+name: Line Breaks Example
 messages:
   - role: system
     content: |-
@@ -195,6 +199,8 @@ messages:
     content: >
       This text will be folded into a single line.
       Good for paragraphs.
+testData:
+  - inputs: {}
 ```
 
 ### Variable Placeholders

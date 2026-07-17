@@ -55,46 +55,56 @@ def _get_ignore_spec() -> pathspec.PathSpec:
     _IGNORE_SPEC = pathspec.PathSpec.from_lines('gitignore', lines)
     return _IGNORE_SPEC
 
-def _iter_files_with_ignore(root_path: Path, extensions: Tuple[str, ...]) -> Iterator[Path]:
+def walk_workspace(root_path: Union[str, Path]) -> Iterator[Tuple[str, List[str], List[str]]]:
+    """
+    A generator that behaves like os.walk but prunes ignored directories 
+    and files according to .promptignore and common exclusion rules.
+    """
     spec = _get_ignore_spec()
+    root_path_obj = Path(root_path)
     
-    for root, dirs, files in os.walk(root_path):
+    for root, dirs, files in os.walk(root_path_obj):
         current_dir = Path(root)
-        try:
-            rel_current = current_dir.relative_to(ROOT).as_posix()
-        except ValueError:
-            rel_current = current_dir.relative_to(root_path).as_posix()
-            
+        
         # Prune dirs
         valid_dirs = []
         for d in dirs:
-            if d.startswith("._") or d in (".git", ".github", "site", "docs_build"):
+            if d.startswith("._") or d in (".git", ".github", "site", "docs_build", ".venv", "venv", "__pycache__", ".tox", ".pytest_cache", "build", "dist"):
                 continue
             dir_path = current_dir / d
             try:
                 rel_dir = dir_path.relative_to(ROOT).as_posix() + "/"
             except ValueError:
-                rel_dir = dir_path.relative_to(root_path).as_posix() + "/"
+                rel_dir = dir_path.relative_to(root_path_obj).as_posix() + "/"
                 
             if not spec.match_file(rel_dir) and not spec.match_file(rel_dir.rstrip('/')):
                 valid_dirs.append(d)
                 
         dirs[:] = valid_dirs
         
+        valid_files = []
         for f in files:
             if f.startswith("._") or f == ".DS_Store":
-                continue
-            if not any(f.endswith(ext.lstrip("*")) for ext in extensions):
                 continue
                 
             file_path = current_dir / f
             try:
                 rel_file = file_path.relative_to(ROOT).as_posix()
             except ValueError:
-                rel_file = file_path.relative_to(root_path).as_posix()
+                rel_file = file_path.relative_to(root_path_obj).as_posix()
                 
             if not spec.match_file(rel_file):
-                yield file_path
+                valid_files.append(f)
+                
+        yield root, dirs, valid_files
+
+def _iter_files_with_ignore(root_path: Path, extensions: Tuple[str, ...]) -> Iterator[Path]:
+    for root, _, files in walk_workspace(root_path):
+        current_dir = Path(root)
+        for f in files:
+            if not any(f.endswith(ext.lstrip("*")) for ext in extensions):
+                continue
+            yield current_dir / f
 
 # Centralized Governance Paths
 MANIFEST_DIR: Path = ROOT / "promptops" / "governance"

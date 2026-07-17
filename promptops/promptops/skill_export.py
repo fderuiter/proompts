@@ -12,7 +12,11 @@ from pydantic import ValidationError
 def _redact(text: str) -> str:
     if not isinstance(text, str):
         return text
-    return re.sub(r'\b\d{3}-\d{2}-\d{4}\b', '[REDACTED]', text)
+    text = re.sub(r'\b\d{3}-\d{2}-\d{4}\b', '[REDACTED]', text)
+    text = re.sub(r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+', '[REDACTED_EMAIL]', text)
+    text = re.sub(r'(?:\+\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}', '[REDACTED_PHONE]', text)
+    text = re.sub(r'\b(?:\d{4}[-/]\d{1,2}[-/]\d{1,2}|\d{1,2}[-/]\d{1,2}[-/]\d{2,4})\b', '[REDACTED_DATE]', text)
+    return text
 
 def _generate_skill_description(prompt_data: Dict[str, Any]) -> str:
     fallback_desc = prompt_data.get("description", "No description provided.")

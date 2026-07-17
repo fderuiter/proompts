@@ -45,6 +45,9 @@ steps:
     prompt_file: "prompts/technical/software_engineering/lifecycle/02_project_brief_epic.prompt.yaml"
     map_inputs:
       product_brief: "{{steps.generate_brief.output}}"
+testData:
+  - inputs:
+      product_concept: "A new AI tool"
 ```
 
 ### Key Components
@@ -132,6 +135,8 @@ steps:
     prompt_file: prompts/communication/entertainment/joke_workflow/02_joke_writer.prompt.yaml
     map_inputs:
       topic: "{{steps.get_topic.output}}"
+testData:
+  - inputs: {}
 ```
 
 ### Step 4: Run the Simulation

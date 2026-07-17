@@ -82,6 +82,27 @@ def run_evaluators(output_text: str, prompt_evaluators: list) -> str:
             "python": "return not bool(re.search(r'\\b\\d{3}-\\d{2}-\\d{4}\\b', output))", # e.g. SSN
             "action": "redact",
             "redact_pattern": r'\b\d{3}-\d{2}-\d{4}\b'
+        },
+        {
+            "name": "Global PII Scanner - Email",
+            "python": "return not bool(re.search(r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+', output))",
+            "action": "redact",
+            "redact_pattern": r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+',
+            "redact_replacement": "[REDACTED_EMAIL]"
+        },
+        {
+            "name": "Global PII Scanner - Phone",
+            "python": "return not bool(re.search(r'(?:\\+\\d{1,3}[-.\\s]?)?\\(?\\d{3}\\)?[-.\\s]?\\d{3}[-.\\s]?\\d{4}', output))",
+            "action": "redact",
+            "redact_pattern": r'(?:\+\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}',
+            "redact_replacement": "[REDACTED_PHONE]"
+        },
+        {
+            "name": "Global PII Scanner - Date",
+            "python": "return not bool(re.search(r'\\b(?:\\d{4}[-/]\\d{1,2}[-/]\\d{1,2}|\\d{1,2}[-/]\\d{1,2}[-/]\\d{2,4})\\b', output))",
+            "action": "redact",
+            "redact_pattern": r'\b(?:\d{4}[-/]\d{1,2}[-/]\d{1,2}|\d{1,2}[-/]\d{1,2}[-/]\d{2,4})\b',
+            "redact_replacement": "[REDACTED_DATE]"
         }
     ]
     
@@ -127,7 +148,8 @@ def run_evaluators(output_text: str, prompt_evaluators: list) -> str:
             elif action == "redact":
                 logger.info(f"Redacting output due to failed evaluator: {evaluator.get('name')}")
                 pattern = evaluator.get("redact_pattern", r'\b\d{3}-\d{2}-\d{4}\b')
-                output_text = re.sub(pattern, "[REDACTED]", output_text)
+                replacement = evaluator.get("redact_replacement", "[REDACTED]")
+                output_text = re.sub(pattern, replacement, output_text)
             elif action == "flag":
                 logger.warning(f"FLAGGED: Output violated evaluator {evaluator.get('name')}")
             elif action == "self-heal":
