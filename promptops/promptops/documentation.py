@@ -29,7 +29,20 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
         print(f"Directory {prompts_dir} does not exist.")
         return False
 
-    reconciler = DirectoryReconciler(docs_path, dry_run=check)
+    prompts_reconciler = DirectoryReconciler(docs_path / "prompts", dry_run=check)
+    workflows_reconciler = DirectoryReconciler(docs_path / "workflows", dry_run=check)
+    js_reconciler = DirectoryReconciler(docs_path / "js", dry_run=check)
+
+    def write_root_file(path: Path, content: str) -> bool:
+        path = path.resolve()
+        would_write = True
+        if path.exists():
+            if path.read_text(encoding='utf-8') == content:
+                would_write = False
+        if not check and would_write:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(content, encoding='utf-8')
+        return would_write
 
     items = []
     
@@ -81,7 +94,7 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
             
         content = f"---\ntitle: {title}\n---\n\n# {title}\n\n{desc}\n\n{link_md}\n\n```yaml\n{raw_content}\n```\n"
         
-        would_write = reconciler.write_file(output_file, content)
+        would_write = prompts_reconciler.write_file(output_file, content)
         if check and would_write:
             print(f"Drift detected: Content mismatch or missing file {output_file}")
             sync_ok = False
@@ -135,7 +148,7 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
             
             content = f"---\ntitle: {title}\n---\n\n# {title}\n\n{desc}\n\n{mermaid_block}\n{link_md}\n"
             
-            would_write = reconciler.write_file(output_file, content)
+            would_write = workflows_reconciler.write_file(output_file, content)
             if check and would_write:
                 print(f"Drift detected: Content mismatch or missing workflow {output_file}")
                 sync_ok = False
@@ -182,7 +195,7 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
                 md.append(f"- [{w.title}]({rel_path})")
                 
         content = "\n".join(md)
-        would_write = reconciler.write_file(out_path, content)
+        would_write = write_root_file(out_path, content)
         if check and would_write:
             print(f"Drift detected: Content mismatch or missing category {out_path}")
             sync_ok = False
@@ -211,7 +224,7 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
             })
             
         js_dir.mkdir(parents=True, exist_ok=True)
-        reconciler.write_file(js_dir / "tools_catalog.json", json.dumps(catalog, indent=2))
+        js_reconciler.write_file(js_dir / "tools_catalog.json", json.dumps(catalog, indent=2))
         
         # Write explorer.js
         explorer_js = '''
@@ -310,12 +323,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 '''
-        reconciler.write_file(js_dir / "explorer.js", explorer_js)
+        js_reconciler.write_file(js_dir / "explorer.js", explorer_js)
 
     else:
         # Register JS files as touched in check mode, since they are generated externally
-        reconciler.touched_files.add((js_dir / "tools_catalog.json").resolve())
-        reconciler.touched_files.add((js_dir / "explorer.js").resolve())
+        js_reconciler.touched_files.add((js_dir / "tools_catalog.json").resolve())
+        js_reconciler.touched_files.add((js_dir / "explorer.js").resolve())
 
     # Generate index.md
     index_path = docs_path / "index.md"
@@ -337,12 +350,15 @@ document.addEventListener("DOMContentLoaded", () => {
         index_md.append(f"- [{category}]({filename})")
         
     content = "\n".join(index_md)
-    would_write = reconciler.write_file(index_path, content)
+    would_write = write_root_file(index_path, content)
     if check and would_write:
         print(f"Drift detected: Content mismatch or missing index {index_path}")
         sync_ok = False
 
-    stale_count = reconciler.reconcile()
+    stale_count = 0
+    stale_count += prompts_reconciler.reconcile()
+    stale_count += workflows_reconciler.reconcile()
+    stale_count += js_reconciler.reconcile()
     if check and stale_count > 0:
         print(f"Drift detected: {stale_count} stale files or directories found.")
         sync_ok = False
