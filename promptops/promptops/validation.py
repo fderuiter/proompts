@@ -208,11 +208,13 @@ class PromptSchema(BaseModel):
         return self
 
 class EvaluatorRule(BaseModel):
+    """Missing docstring."""
     rule_type: str = Field(...)  # "Contains", "Does Not Contain", "Regex Match", "Length >", "Length <", "Custom Python"
     value: str = Field(...)
 
     @classmethod
     def from_python_expression(cls, expr: str) -> "EvaluatorRule":
+        """Missing docstring."""
         expr_str = expr.strip()
         if expr_str.startswith("len(output) > ") and expr_str[14:].isdigit():
             return cls(rule_type="Length >", value=expr_str[14:])
@@ -232,6 +234,7 @@ class EvaluatorRule(BaseModel):
         return cls(rule_type="Custom Python", value=expr_str)
 
     def to_python_expression(self) -> str:
+        """Missing docstring."""
         if self.rule_type == "Contains":
             return f"'{self.value}' in output"
         elif self.rule_type == "Does Not Contain":
@@ -246,12 +249,14 @@ class EvaluatorRule(BaseModel):
 
 
 class TransitionConstraint(BaseModel):
+    """Missing docstring."""
     variable: Optional[str] = None
     operator: str = "Always"  # "Always", "==", "!=", ">", "<", "Custom Jinja2"
     value: Optional[str] = None
 
     @classmethod
     def from_jinja_expression(cls, expr: str) -> "TransitionConstraint":
+        """Missing docstring."""
         if not expr:
             return cls(operator="Always")
         import re
@@ -264,6 +269,7 @@ class TransitionConstraint(BaseModel):
         return cls(operator="Custom Jinja2", value=expr)
 
     def to_jinja_expression(self) -> str:
+        """Missing docstring."""
         if self.operator == "Always":
             return ""
         if self.operator == "Custom Jinja2":
@@ -530,6 +536,7 @@ def update_last_modified(file_path: Path) -> bool:
     return False
 
 def detect_workflow_redundancies(workflows_data: List[tuple[str, dict]]):
+    """Missing docstring."""
     step_signatures = {}
     mapping_signatures = {}
     sequence_signatures = {}
