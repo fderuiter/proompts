@@ -566,3 +566,26 @@ def resolve_fallback_prompt(path_obj: Path) -> Optional[Dict[str, Any]]:
                 "testData": best_match.get("testData", [])
             }
     return None
+
+def optimize_prompt(text: str) -> str:
+    """
+    Simulates the Prompt Optimizer locally without network calls.
+    Returns an optimized version of the input text.
+    """
+    if not text:
+        return text
+    optimized = text.strip()
+    return f"{optimized}\n\n# Note: Optimized for clarity and instruction following."
+
+def sanitize_prompt(text: str) -> str:
+    """
+    Simulates the Prompt Sanitiser locally without network calls.
+    Removes sensitive placeholders and formatting issues.
+    """
+    if not text:
+        return text
+    text = re.sub(r'https?://[^\s]+', '[REDACTED_URL]', text)
+    text = re.sub(r'(?i)(api[_-]?key)\s*[:=]\s*[A-Za-z0-9_-]+', r'\1=[REDACTED_SECRET]', text)
+    text = re.sub(r'(?i)(password)\s*[:=]\s*[A-Za-z0-9_-]+', r'\1=[REDACTED_SECRET]', text)
+    text = re.sub(r'\[\d+\]', '', text)
+    return text.strip()

@@ -125,7 +125,7 @@ for i, msg in enumerate(st.session_state['messages']):
             st.markdown("**Optimization Proposed Changes (Side-by-Side):**")
             diff_col1, diff_col2 = st.columns(2)
             original = st.session_state['messages'][i]['content']
-            from tools import optimize_prompt
+            from promptops.utils import optimize_prompt
             proposed = optimize_prompt(original)
             
             with diff_col1:
@@ -147,7 +147,7 @@ for i, msg in enumerate(st.session_state['messages']):
             st.markdown("**Sanitization Proposed Changes (Side-by-Side):**")
             diff_col1, diff_col2 = st.columns(2)
             original = st.session_state['messages'][i]['content']
-            from tools import sanitize_prompt
+            from promptops.utils import sanitize_prompt
             proposed = sanitize_prompt(original)
             
             with diff_col1:
