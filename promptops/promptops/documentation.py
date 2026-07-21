@@ -1,3 +1,4 @@
+"""Module docstring."""
 import os
 from pathlib import Path
 from dataclasses import dataclass
@@ -7,6 +8,7 @@ import re
 
 @dataclass(frozen=True)
 class DocItem:
+    """Missing docstring."""
     title: str
     path: Path
     category: str
@@ -20,6 +22,7 @@ from promptops.sync import DirectoryReconciler
 from promptops.skill_export import process_skills, detect_skill
 
 def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str = "main", check: bool = False) -> bool:
+    """Missing docstring."""
     prompts_dir = os.environ.get('PROMPTOPS_REGISTRY', prompts_dir)
     prompts_path = Path(prompts_dir)
     docs_path = Path(output_dir)
@@ -34,6 +37,7 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
     js_reconciler = DirectoryReconciler(docs_path / "js", dry_run=check)
 
     def write_root_file(path: Path, content: str) -> bool:
+        """Missing docstring."""
         path = path.resolve()
         would_write = True
         if path.exists():

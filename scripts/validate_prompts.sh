@@ -46,6 +46,9 @@ uv run promptops docs --check || {
 echo "Checking for dead code..."
 uv run vulture || exit 1
 
+echo "Checking docstrings..."
+uv run python3 tools/tools/scripts/check_docstrings.py || exit 1
+
 echo "Testing documentation snippets simulation..."
 uv run python3 tools/tools/scripts/test_docs_snippets.py || exit 1
 

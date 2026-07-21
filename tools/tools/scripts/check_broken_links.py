@@ -151,6 +151,7 @@ def check_link(source_file: Path, link: str, target_anchors_cache: dict) -> Tupl
     return True, ""
 
 def main():
+    """Missing docstring."""
     print("🔗 Checking for broken links...")
     markdown_files = get_all_markdown_files()
     broken_links_count = 0

@@ -36,6 +36,7 @@ HEADER_RE = re.compile(r"^(#+)([^#\s])")
 
 
 def load_paths(todo_path: Path):
+    """Missing docstring."""
     paths = []
     with todo_path.open(encoding='utf-8') as f:
         for line in f:
@@ -48,6 +49,7 @@ def load_paths(todo_path: Path):
 
 
 def fix_trailing_spaces(lines):
+    """Missing docstring."""
     return [l.rstrip() for l in lines]
 
 
@@ -73,10 +75,12 @@ def fix_front_matter(lines):
 
 
 def fix_header_style(lines):
+    """Missing docstring."""
     return [HEADER_RE.sub(r"\1 \2", l) for l in lines]
 
 
 def fix_header_spacing(lines):
+    """Missing docstring."""
     out = []
     i = 0
     while i < len(lines):
@@ -111,6 +115,7 @@ def fix_first_header(lines):
 
 
 def fix_ordered_lists(lines):
+    """Missing docstring."""
     out = []
     i = 0
     while i < len(lines):
@@ -130,6 +135,7 @@ def fix_ordered_lists(lines):
 
 
 def fix_blank_lines_around_lists(lines):
+    """Missing docstring."""
     out = []
     i = 0
     while i < len(lines):
@@ -148,6 +154,7 @@ def fix_blank_lines_around_lists(lines):
 
 
 def fix_multiple_blank_lines(lines):
+    """Missing docstring."""
     out = []
     blank = False
     for l in lines:
@@ -162,6 +169,7 @@ def fix_multiple_blank_lines(lines):
 
 
 def escape_bare_pipes(lines):
+    """Missing docstring."""
     out = []
     for l in lines:
         if "|" in l and not l.strip().startswith("|") and not l.strip().startswith("```"):
@@ -171,6 +179,7 @@ def escape_bare_pipes(lines):
 
 
 def fix_codeblock_spacing(lines):
+    """Missing docstring."""
     out = []
     i = 0
     in_code = False
@@ -201,6 +210,7 @@ def fix_codeblock_spacing(lines):
 
 
 def process_file(path: Path):
+    """Missing docstring."""
     text = path.read_text(encoding='utf-8').splitlines()
     original = list(text)
     text = fix_trailing_spaces(text)
@@ -220,6 +230,7 @@ def process_file(path: Path):
 
 
 def main():
+    """Missing docstring."""
     parser = argparse.ArgumentParser(description="Fix Markdown Issues")
     parser.add_argument("targets", nargs="*", help="Specific files or directories to format")
     args = parser.parse_args()

@@ -29,3 +29,10 @@ repos:
         language: system
         files: ^(prompts|workflows)/.*
         pass_filenames: false
+
+      - id: check-docstrings
+        name: Check Docstrings
+        entry: uv run python tools/tools/scripts/check_docstrings.py
+        language: system
+        files: ^(promptops/promptops|tools/tools/scripts)/.*\.py$
+        pass_filenames: false

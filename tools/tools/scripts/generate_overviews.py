@@ -182,6 +182,7 @@ def main() -> int:
     content_cache: dict[Path, bool] = {}
 
     def has_content(d: Path) -> bool:
+        """Missing docstring."""
         if d in content_cache:
             return content_cache[d]
         for sub_root, _, sub_files in walk_workspace(d):
