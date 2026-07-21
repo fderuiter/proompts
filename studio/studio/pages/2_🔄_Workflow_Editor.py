@@ -162,22 +162,15 @@ for i, step in enumerate(st.session_state['wf_steps']):
         for e_idx, edge in enumerate(next_edges):
             ecol1, ecol2, ecol3, ecol4 = st.columns([3, 2, 3, 1])
             
+            from promptops.validation import TransitionConstraint
+
             # Logic Builder for condition
             condition_str = edge.get("condition", "")
-            cond_var = ""
-            cond_op = "Always"
-            cond_val = ""
             
-            if condition_str:
-                import re
-                m = re.match(r"\{\%\s*if\s+(.+)\s+(==|!=|>|<|>=|<=)\s+(.+)\s*\%\}true\{\%\s*endif\s*\%\}", condition_str)
-                if m:
-                    cond_var = m.group(1).strip()
-                    cond_op = m.group(2).strip()
-                    cond_val = m.group(3).strip().strip("'\"")
-                else:
-                    cond_op = "Custom Jinja2"
-                    cond_val = condition_str
+            constraint = TransitionConstraint.from_jinja_expression(condition_str)
+            cond_var = constraint.variable or ""
+            cond_op = constraint.operator
+            cond_val = constraint.value or ""
             
             with ecol1:
                 if cond_op == "Custom Jinja2":
@@ -191,7 +184,8 @@ for i, step in enumerate(st.session_state['wf_steps']):
                     selected_val = st.text_input("Value", value=cond_val, key=f"cond_val_{i}_{e_idx}")
                     if target_var:
                         stripped_var = target_var.replace("{{", "").replace("}}", "")
-                        st.session_state['wf_steps'][i]['next'][e_idx]["condition"] = f"{{% if {stripped_var} {selected_op} '{selected_val}' %}}true{{% endif %}}"
+                        new_constraint = TransitionConstraint(variable=stripped_var, operator=selected_op, value=selected_val)
+                        st.session_state['wf_steps'][i]['next'][e_idx]["condition"] = new_constraint.to_jinja_expression()
                 elif selected_op == "Always":
                     if "condition" in st.session_state['wf_steps'][i]['next'][e_idx]:
                         del st.session_state['wf_steps'][i]['next'][e_idx]["condition"]

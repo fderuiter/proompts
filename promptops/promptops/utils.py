@@ -235,8 +235,25 @@ def load_yaml(path: Union[str, Path], raw: bool = False) -> Dict[str, Any]:
 def save_yaml(path: Union[str, Path], data: Dict[str, Any]) -> None:
     path_obj = Path(path)
     path_obj.parent.mkdir(parents=True, exist_ok=True)
-    with path_obj.open('w', encoding='utf-8') as f:
-        yaml.dump(data, f, sort_keys=False, allow_unicode=True, default_flow_style=False)
+    
+    if path_obj.name.endswith(".prompt.md") or path_obj.suffix == ".md":
+        messages = data.get("messages", [])
+        frontmatter_data = {k: v for k, v in data.items() if k != "messages"}
+        
+        frontmatter_str = yaml.dump(frontmatter_data, sort_keys=False, allow_unicode=True, default_flow_style=False)
+        
+        md_content = f"---\n{frontmatter_str}---\n\n"
+        for msg in messages:
+            role = msg.get("role", "user")
+            content = msg.get("content", "")
+            header = "Purpose" if role == "system" else ("Instructions" if role == "user" else role.capitalize())
+            md_content += f"## {header}\n{content}\n\n"
+            
+        with path_obj.open('w', encoding='utf-8') as f:
+            f.write(md_content)
+    else:
+        with path_obj.open('w', encoding='utf-8') as f:
+            yaml.dump(data, f, sort_keys=False, allow_unicode=True, default_flow_style=False)
 
 def _is_valid_file(p: Path) -> bool:
     if p.name.startswith("._") or p.name == ".DS_Store":
