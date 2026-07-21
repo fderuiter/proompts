@@ -43,7 +43,7 @@ async function run() {
     const fileUrl = url.pathToFileURL(file).href;
     console.log(`[${i+1}/${htmlFiles.length}] Scanning ${fileUrl}...`);
     try {
-      await page.goto(fileUrl, { waitUntil: 'domcontentloaded' });
+      await page.goto(fileUrl, { waitUntil: 'load' });
       const results = await new AxeBuilder({ page })
         .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
         .analyze();
