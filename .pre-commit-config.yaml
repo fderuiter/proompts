@@ -16,6 +16,13 @@ repos:
 
   - repo: local
     hooks:
+      - id: check-bypasses
+        name: Check for raw filesystem/YAML bypasses
+        entry: python3 scripts/check_bypasses.py
+        language: python
+        types: [python]
+        pass_filenames: true
+
       - id: promptops-validate
         name: Validate and Format Prompts
         entry: uv run promptops validate --strict
