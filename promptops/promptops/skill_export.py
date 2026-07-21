@@ -212,7 +212,7 @@ def detect_skill(raw_content: str, raw_data: Any) -> bool:
 
 def process_skills(prompts_path: Path, docs_path: Optional[Path] = None):
     print('DEBUG: Entering process_skills')
-    from promptops.utils import iter_prompt_files, load_yaml
+    from promptops.utils import iter_prompt_files, load_yaml, walk_workspace
     from promptops.sync import DirectoryReconciler
     
     print('DEBUG: Start iter_prompt_files')
@@ -249,7 +249,7 @@ def process_skills(prompts_path: Path, docs_path: Optional[Path] = None):
             
     # For docs, copy the persistent manifest files
     if docs_reconciler and docs_path:
-        for root, dirs, files in os.walk(prompts_path):
+        for root, dirs, files in walk_workspace(prompts_path):
             # Exclude standard directories and prevent infinite traversal into docs_path
             dirs[:] = [
                 d for d in dirs
