@@ -1,17 +1,3 @@
----
-tags:
-  - clinical
-  - diagnosis
-  - differential
-  - dimensional
-  - domain:clinical/psychopathology
-  - domain:scientific/psychology/clinical/psychopathology
-  - hierarchical
-  - psychology
-  - psychopathology
-  - skill
----
-
 # Domain Agent Skills: Scientific Psychology Clinical Psychopathology
 
 ## Metadata
@@ -22,7 +8,7 @@ tags:
 ---
 
 ## Skill: differential_diagnosis_mapping_architect
-<!-- VALIDATION_METADATA: [{"name": "clinical_presentation", "description": "Comprehensive description of the patient's current symptoms, behavioral observations, and functional impairments."}, {"name": "psychosocial_history", "description": "Detailed history including developmental milestones, trauma, medical comorbidities, and substance use."}, {"name": "psychometric_data", "description": "Results from structured clinical interviews or self-report measures, including standardized scores (e.g., T-scores) and reliability indices."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "clinical_presentation", "description": "Comprehensive description of the patient's current symptoms, behavioral observations, and functional impairments."}, {"name": "psychosocial_history", "description": "Detailed history including developmental milestones, trauma, medical comorbidities, and substance use."}, {"name": "psychometric_data", "description": "Results from structured clinical interviews or self-report measures, including standardized scores (e.g., T-scores) and reliability indices."}], "metadata": {}} -->
 ### Description
 Systematically synthesizes complex clinical presentations into an exhaustive differential diagnosis matrix mapping to DSM-5-TR and ICD-11 criteria.
 
@@ -68,16 +54,28 @@ Do not include any conversational filler, introductory pleasantries, or generic 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Borderline Personality Disorder"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Borderline Personality Disorder']
+```
 
-Input Context: "{}"
-Asserted Output: "Bipolar I Disorder"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Bipolar I Disorder']
+```
 
 ---
 
 ## Skill: dimensional_psychopathology_hierarchical_modeler
-<!-- VALIDATION_METADATA: [{"name": "clinical_presentation", "description": "Comprehensive description of the patient's current symptoms, behavioral observations, and longitudinal symptom trajectory."}, {"name": "psychosocial_context", "description": "Detailed contextual factors, including trauma exposure, developmental milestones, socioeconomic stressors, and family history of psychopathology."}, {"name": "psychometric_data", "description": "Results from structured dimensional assessments or self-report measures, including standardized scores and measurement reliability metrics."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "clinical_presentation", "description": "Comprehensive description of the patient's current symptoms, behavioral observations, and longitudinal symptom trajectory."}, {"name": "psychosocial_context", "description": "Detailed contextual factors, including trauma exposure, developmental milestones, socioeconomic stressors, and family history of psychopathology."}, {"name": "psychometric_data", "description": "Results from structured dimensional assessments or self-report measures, including standardized scores and measurement reliability metrics."}], "metadata": {}} -->
 ### Description
 Systematically maps complex clinical presentations onto dimensional psychopathology frameworks (e.g., HiTOP), emphasizing the p-factor and hierarchical transdiagnostic constructs.
 
@@ -129,8 +127,20 @@ Psychometric Data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "HiTOP framework"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['HiTOP framework']
+```
 
-Input Context: "{}"
-Asserted Output: "Internalizing spectrum"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Internalizing spectrum']
+```

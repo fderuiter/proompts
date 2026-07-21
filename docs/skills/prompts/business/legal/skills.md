@@ -1,23 +1,3 @@
----
-tags:
-  - acquisitions
-  - automation
-  - compliance
-  - data_flows
-  - document-review
-  - domain:business
-  - domain:business/legal
-  - due_diligence
-  - ediscovery
-  - engineering
-  - intellectual_property
-  - legal
-  - mergers
-  - patents
-  - privacy
-  - skill
----
-
 # Domain Agent Skills: Business Legal
 
 ## Metadata
@@ -28,7 +8,7 @@ tags:
 ---
 
 ## Skill: Mergers and Acquisitions Due Diligence Auditor
-<!-- VALIDATION_METADATA: [{"name": "contract_text", "description": "The text of the contract or data room artifact to analyze.", "required": true}, {"name": "transaction_type", "description": "The type of M&A transaction (e.g., Asset Purchase, Stock Purchase, Merger).", "required": true}, {"name": "jurisdiction", "description": "The applicable legal jurisdiction governing the agreement.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "contract_text", "description": "The text of the contract or data room artifact to analyze.", "required": true}, {"name": "transaction_type", "description": "The type of M&A transaction (e.g., Asset Purchase, Stock Purchase, Merger).", "required": true}, {"name": "jurisdiction", "description": "The applicable legal jurisdiction governing the agreement.", "required": true}], "metadata": {}} -->
 ### Description
 An agent designed to process data room artifacts, flag indemnity risks, and generate risk matrices for asset purchase agreements.
 
@@ -76,13 +56,19 @@ Execute the due diligence audit and generate the Risk Matrix.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Risk Level"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Risk Level']
+```
 
 ---
 
 ## Skill: Intellectual Property Claim Drafter
-<!-- VALIDATION_METADATA: [{"name": "engineering_spec", "description": "The technical engineering specifications or invention disclosure.", "required": true}, {"name": "patent_office", "description": "The target patent office (e.g., USPTO, EPO).", "required": true}, {"name": "claim_type", "description": "The type of claim to draft (e.g., Apparatus, Method, System, Composition of Matter).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "engineering_spec", "description": "The technical engineering specifications or invention disclosure.", "required": true}, {"name": "patent_office", "description": "The target patent office (e.g., USPTO, EPO).", "required": true}, {"name": "claim_type", "description": "The type of claim to draft (e.g., Apparatus, Method, System, Composition of Matter).", "required": true}], "metadata": {}} -->
 ### Description
 A prompt that enforces USPTO or EPO formatting constraints to translate engineering specifications into defensible patent claims.
 
@@ -127,13 +113,19 @@ Draft the patent claims.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "1. An apparatus comprising:"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['1. An apparatus comprising:']
+```
 
 ---
 
 ## Skill: Cross-Border Data Privacy Architect
-<!-- VALIDATION_METADATA: [{"name": "data_flow_diagram", "description": "A textual description or JSON representation of the system's data flows, including origin, storage, processing, and destination.", "required": true}, {"name": "jurisdictions", "description": "A comma-separated list of applicable privacy frameworks (e.g., GDPR, CCPA, PIPEDA).", "required": true}, {"name": "data_types", "description": "The types of PII or sensitive data involved.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "data_flow_diagram", "description": "A textual description or JSON representation of the system's data flows, including origin, storage, processing, and destination.", "required": true}, {"name": "jurisdictions", "description": "A comma-separated list of applicable privacy frameworks (e.g., GDPR, CCPA, PIPEDA).", "required": true}, {"name": "data_types", "description": "The types of PII or sensitive data involved.", "required": true}], "metadata": {}} -->
 ### Description
 A workflow dedicated to mapping data flows against overlapping jurisdictional frameworks (GDPR, CCPA, PIPEDA).
 
@@ -175,13 +167,19 @@ Perform the Cross-Border Data Privacy Assessment.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Standard Contractual Clauses"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Standard Contractual Clauses']
+```
 
 ---
 
 ## Skill: Automated E-Discovery Reviewer
-<!-- VALIDATION_METADATA: [{"name": "document_text", "description": "The raw text of the document under review.", "required": true}, {"name": "matter_description", "description": "A brief summary of the legal matter and the issues at stake.", "required": true}, {"name": "responsive_issues", "description": "A list of specific issues or topics that make a document responsive to the discovery request.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "document_text", "description": "The raw text of the document under review.", "required": true}, {"name": "matter_description", "description": "A brief summary of the legal matter and the issues at stake.", "required": true}, {"name": "responsive_issues", "description": "A list of specific issues or topics that make a document responsive to the discovery request.", "required": true}], "metadata": {}} -->
 ### Description
 Automates the first-pass review of legal documents for relevance, privilege, and key entity extraction during electronic discovery.
 
@@ -250,33 +248,29 @@ Output your analysis strictly in the following JSON schema:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{document_text: 'From: John Smith (CEO)
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['is_responsive']
+```
 
-    To: Jane Doe (General Counsel)
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['is_responsive']
+```
 
-    Date: October 24, 2023
-
-    Subject: Project Alpha Financials
-
-
-    Jane,
-
-    I need your legal advice regarding the recent $50M investment in Project Alpha.
-    Are we exposed to regulatory action given the new SEC guidelines?', matter_description: Investigation
-    into potential securities fraud related to Project Alpha investments., responsive_issues: 1.
-    Financial investments in Project Alpha. 2. Communications regarding SEC guidelines
-    or regulatory exposure.}"
-Asserted Output: "is_responsive": true"
-
-Input Context: "{document_text: 'Lunch menu for the cafeteria next week: Monday is pizza, Tuesday
-    is tacos. The cost of the new pizza oven was $5,000.', matter_description: Investigation
-    into potential securities fraud related to Project Alpha investments., responsive_issues: 1.
-    Financial investments in Project Alpha. 2. Communications regarding SEC guidelines
-    or regulatory exposure.}"
-Asserted Output: "is_responsive": false"
-
-Input Context: "{document_text: "$#@!%^&*()_+ OCR ERROR 0x889F \n1110001010101 \nCORRUPTED DATA STREAM\n\
-    $$$#%@^", matter_description: Investigation into potential securities fraud related
-    to Project Alpha investments., responsive_issues: 1. Financial investments in
-    Project Alpha. 2. Communications regarding SEC guidelines or regulatory exposure.}"
-Asserted Output: ""anomaly_flag": true"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

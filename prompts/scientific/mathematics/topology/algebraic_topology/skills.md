@@ -1,19 +1,3 @@
----
-tags:
-  - algebraic-topology
-  - characteristic
-  - class
-  - domain:pure_mathematics
-  - domain:scientific/mathematics/topology/algebraic_topology
-  - higher
-  - homotopy
-  - mathematics
-  - serre
-  - skill
-  - spectral
-  - topology
----
-
 # Domain Agent Skills: Scientific Mathematics Topology Algebraic topology
 
 ## Metadata
@@ -24,7 +8,7 @@ tags:
 ---
 
 ## Skill: characteristic_class_cobordism_architect
-<!-- VALIDATION_METADATA: [{"name": "manifold_definition", "type": "string", "description": "The abstract topological or smooth manifold definition."}, {"name": "vector_bundle_definition", "type": "string", "description": "The rigorous definition of the vector bundle over the specified manifold."}, {"name": "characteristic_class_type", "type": "string", "description": "The specific type of characteristic class to compute (e.g., Chern, Stiefel-Whitney, Pontryagin, Euler)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "manifold_definition", "type": "string", "description": "The abstract topological or smooth manifold definition."}, {"name": "vector_bundle_definition", "type": "string", "description": "The rigorous definition of the vector bundle over the specified manifold."}, {"name": "characteristic_class_type", "type": "string", "description": "The specific type of characteristic class to compute (e.g., Chern, Stiefel-Whitney, Pontryagin, Euler)."}], "metadata": {}} -->
 ### Description
 Rigorously computes topological characteristic classes (e.g., Stiefel-Whitney, Chern) and evaluates cobordism invariants for complex vector bundles.
 
@@ -55,16 +39,21 @@ Compute the {{ characteristic_class_type }} classes and evaluate the cobordism i
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: serre_spectral_sequence_calculator
-<!-- VALIDATION_METADATA: [{"name": "base_space", "description": "The base space of the fibration"}, {"name": "fiber_space", "description": "The fiber space of the fibration"}, {"name": "total_space", "description": "The total space of the fibration"}, {"name": "coefficient_ring", "description": "The coefficient ring for cohomology"}, {"name": "target_degree", "description": "The maximum cohomology degree to compute"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "base_space", "description": "The base space of the fibration"}, {"name": "fiber_space", "description": "The fiber space of the fibration"}, {"name": "total_space", "description": "The total space of the fibration"}, {"name": "coefficient_ring", "description": "The coefficient ring for cohomology"}, {"name": "target_degree", "description": "The maximum cohomology degree to compute"}], "metadata": {}} -->
 ### Description
 Acts as a Principal Algebraic Topologist to rigorously formulate and compute pages, differentials, and convergence of the Serre Spectral Sequence for complex topological fibrations.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -92,13 +81,19 @@ Provide the $E_2$ page, analyze the differentials up to the $E_\infty$ page, and
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: higher_homotopy_postnikov_tower_architect
-<!-- VALIDATION_METADATA: [{"name": "topological_space", "type": "string", "description": "The complex topological space or spectrum for which higher homotopy groups are being computed."}, {"name": "known_homotopy_groups", "type": "string", "description": "The initial known lower homotopy groups and relevant singular cohomology classes."}, {"name": "target_homotopy_degree", "type": "string", "description": "The degree $n$ of the higher homotopy group $\\pi_n(X)$ to compute."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "topological_space", "type": "string", "description": "The complex topological space or spectrum for which higher homotopy groups are being computed."}, {"name": "known_homotopy_groups", "type": "string", "description": "The initial known lower homotopy groups and relevant singular cohomology classes."}, {"name": "target_homotopy_degree", "type": "string", "description": "The degree $n$ of the higher homotopy group $\\pi_n(X)$ to compute."}], "metadata": {}} -->
 ### Description
 Rigorously calculates higher homotopy groups of topological spaces using Postnikov towers, Serre fibrations, and exact sequences, enforcing strict algebraic topology formalisms and LaTeX formatting.
 
@@ -132,5 +127,11 @@ Construct the Postnikov tower and rigorously calculate the higher homotopy group
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

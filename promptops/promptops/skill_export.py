@@ -140,7 +140,7 @@ def generate_skill_section(prompt_data: Dict[str, Any]) -> str:
             input_ctx = yaml.dump(inputs, sort_keys=False, default_flow_style=True).strip()
         else:
             input_ctx = str(inputs)
-        few_shots.append(f"Input Context: \"{_redact(input_ctx)}\"\nAsserted Output: \"{_redact(str(expected))}\"")
+        few_shots.append(f"**Input Context:**\n```yaml\n{_redact(input_ctx)}\n```\n**Asserted Output:**\n```text\n{_redact(str(expected))}\n```")
 
     few_shot_text = "\n\n".join(few_shots) if few_shots else "None provided."
 

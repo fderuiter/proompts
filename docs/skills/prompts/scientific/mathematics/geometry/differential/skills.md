@@ -1,27 +1,3 @@
----
-tags:
-  - atiyah
-  - curvature
-  - differential
-  - differential-geometry
-  - domain:mathematics
-  - domain:pure_mathematics
-  - domain:scientific/mathematics/geometry/differential
-  - geometry
-  - hodge
-  - lie-theory
-  - mathematics
-  - moment-maps
-  - pseudo
-  - pure-mathematics
-  - riemannian
-  - singer
-  - skill
-  - symplectic-geometry
-  - tensor-analysis
-  - theory
----
-
 # Domain Agent Skills: Scientific Mathematics Geometry Differential
 
 ## Metadata
@@ -32,12 +8,11 @@ tags:
 ---
 
 ## Skill: symplectic_manifold_moment_map_architect
-<!-- VALIDATION_METADATA: [{"name": "symplectic_manifold", "description": "The formal definition of the symplectic manifold $(M, \\\\omega)$.", "required": true}, {"name": "lie_group_action", "description": "The specification of the Lie group $G$ and its Hamiltonian action on $M$.", "required": true}, {"name": "moment_map_task", "description": "The specific task, such as computing the moment map, analyzing the symplectic quotient $M // G$, or verifying equivariance.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "symplectic_manifold", "description": "The formal definition of the symplectic manifold $(M, \\\\omega)$.", "required": true}, {"name": "lie_group_action", "description": "The specification of the Lie group $G$ and its Hamiltonian action on $M$.", "required": true}, {"name": "moment_map_task", "description": "The specific task, such as computing the moment map, analyzing the symplectic quotient $M // G$, or verifying equivariance.", "required": true}], "metadata": {}} -->
 ### Description
 A Principal Research Mathematician designed to rigorously construct and analyze symplectic manifolds,
 Hamiltonian group actions, and their associated moment maps. It formulates symplectic quotients
 (Marsden-Weinstein reduction) and verifies properties like equivariance and the Duistermaat-Heckman theorem.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -80,16 +55,28 @@ Moment Map Task: {{ moment_map_task }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: atiyah_singer_index_theorem_architect
-<!-- VALIDATION_METADATA: [{"name": "MANIFOLD", "type": "string", "description": "The compact, oriented smooth manifold $M$, possibly with boundary or additional structure (e.g., spin, complex), formatted in LaTeX."}, {"name": "ELLIPTIC_OPERATOR", "type": "string", "description": "The elliptic differential (or pseudo-differential) operator $D: \\Gamma(E) \\to \\Gamma(F)$ between vector bundles, formatted in LaTeX."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "MANIFOLD", "type": "string", "description": "The compact, oriented smooth manifold $M$, possibly with boundary or additional structure (e.g., spin, complex), formatted in LaTeX."}, {"name": "ELLIPTIC_OPERATOR", "type": "string", "description": "The elliptic differential (or pseudo-differential) operator $D: \\Gamma(E) \\to \\Gamma(F)$ between vector bundles, formatted in LaTeX."}], "metadata": {}} -->
 ### Description
 Computes rigorous analytical and topological indices of elliptic differential operators on compact manifolds using the Atiyah-Singer Index Theorem.
 
@@ -125,16 +112,21 @@ Perform the rigorous Atiyah-Singer Index Theory analysis.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Riemannian Manifold Curvature Deriver
-<!-- VALIDATION_METADATA: [{"name": "manifold_definition", "description": "A formal description of the manifold and its coordinates (e.g., a 2-sphere with standard spherical coordinates).", "required": true}, {"name": "metric_tensor", "description": "The metric tensor $g_{\\mu\\nu}$ given in coordinates (e.g., $ds^2 = d\\theta^2 + \\sin^2(\\theta) d\\phi^2$).", "required": true}, {"name": "derivations_requested", "description": "Specific curvature quantities to compute (e.g., Christoffel symbols, Riemann tensor, Ricci scalar).", "required": true}, {"name": "computation_request", "description": "Auto-extracted variable computation_request", "required": false}, {"name": "manifold_context", "description": "Auto-extracted variable manifold_context", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "manifold_definition", "description": "A formal description of the manifold and its coordinates (e.g., a 2-sphere with standard spherical coordinates).", "required": true}, {"name": "metric_tensor", "description": "The metric tensor $g_{\\mu\\nu}$ given in coordinates (e.g., $ds^2 = d\\theta^2 + \\sin^2(\\theta) d\\phi^2$).", "required": true}, {"name": "derivations_requested", "description": "Specific curvature quantities to compute (e.g., Christoffel symbols, Riemann tensor, Ricci scalar).", "required": true}, {"name": "computation_request", "description": "Auto-extracted variable computation_request", "required": false}, {"name": "manifold_context", "description": "Auto-extracted variable manifold_context", "required": false}], "metadata": {}} -->
 ### Description
 Systematically computes intrinsic curvature properties (Christoffel symbols, Riemann curvature tensor, Ricci tensor, and scalar curvature) of a specified Riemannian or pseudo-Riemannian manifold based on its metric tensor.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -142,6 +134,8 @@ Systematically computes intrinsic curvature properties (Christoffel symbols, Rie
 | `manifold_definition` | String | A formal description of the manifold and its coordinates (e.g., a 2-sphere with standard spherical coordinates). | Yes |
 | `metric_tensor` | String | The metric tensor $g_{\mu\nu}$ given in coordinates (e.g., $ds^2 = d\theta^2 + \sin^2(\theta) d\phi^2$). | Yes |
 | `derivations_requested` | String | Specific curvature quantities to compute (e.g., Christoffel symbols, Riemann tensor, Ricci scalar). | Yes |
+| `computation_request` | String | Auto-extracted variable computation_request | No |
+| `manifold_context` | String | Auto-extracted variable manifold_context | No |
 
 
 ### Core Instructions
@@ -161,22 +155,30 @@ Proceed with the formal derivations.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{manifold_definition: A 2-dimensional sphere $S^2$ of radius $r$., metric_tensor: $ds^2
-    = r^2 d\theta^2 + r^2 \sin^2\theta d\phi^2$, derivations_requested: 'Christoffel
-    symbols, Riemann tensor, Ricci tensor, and Ricci scalar.'}"
-Asserted Output: "Calculates $\Gamma^\theta_{\phi\phi} = -\sin\theta\cos\theta$, $\Gamma^\phi_{\theta\phi} = \cot\theta$, Ricci scalar $R = \frac{2}{r^2}$."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Calculates $\\Gamma^\\theta_{\\phi\\phi} = -\\sin\\theta\\cos\\theta$, $\\Gamma^\\phi_{\\theta\\phi} = \\cot\\theta$, Ricci scalar $R = \\frac{2}{r^2}$.']
+```
 
-Input Context: "{manifold_definition: 'The upper half-plane $\mathbb{H}$.', metric_tensor: '$ds^2
-    = \frac{dx^2 + dy^2}{y^2}$', derivations_requested: Ricci scalar.}"
-Asserted Output: "Computes the Christoffel symbols and identifies the space as having constant negative scalar curvature $R = -2$."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Computes the Christoffel symbols and identifies the space as having constant negative scalar curvature $R = -2$.']
+```
 
 ---
 
 ## Skill: pseudo_riemannian_tensor_calculus_prover
-<!-- VALIDATION_METADATA: [{"name": "manifold_definition", "type": "string", "description": "The abstract definition or coordinate representation of the smooth pseudo-Riemannian manifold, including its metric tensor.\n"}, {"name": "mathematical_theorem", "type": "string", "description": "The specific tensorial identity, curvature property, or differential theorem to be proven (e.g., the second Bianchi identity).\n"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "manifold_definition", "type": "string", "description": "The abstract definition or coordinate representation of the smooth pseudo-Riemannian manifold, including its metric tensor.\n"}, {"name": "mathematical_theorem", "type": "string", "description": "The specific tensorial identity, curvature property, or differential theorem to be proven (e.g., the second Bianchi identity).\n"}], "metadata": {}} -->
 ### Description
 Generates rigorous mathematical derivations and proofs within pseudo-Riemannian geometry, focusing on tensor calculus, connection coefficients, curvature tensors, and structural identity verifications.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -213,13 +215,19 @@ Construct a rigorous proof for the following geometric theorem on the specified 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Hodge Theory Harmonic Form Architect
-<!-- VALIDATION_METADATA: [{"name": "manifold_definition", "type": "string", "description": "The formal definition of the compact Riemannian or K\u00e4hler manifold, including its dimension and metric tensor structure."}, {"name": "differential_form", "type": "string", "description": "The explicit differential $k$-form $\\omega$ to be analyzed or decomposed."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "manifold_definition", "type": "string", "description": "The formal definition of the compact Riemannian or K\u00e4hler manifold, including its dimension and metric tensor structure."}, {"name": "differential_form", "type": "string", "description": "The explicit differential $k$-form $\\omega$ to be analyzed or decomposed."}], "metadata": {}} -->
 ### Description
 Generates mathematically rigorous derivations of harmonic forms and solutions to the Hodge decomposition theorem on compact Riemannian and Kähler manifolds.
 
@@ -249,5 +257,11 @@ Differential Form: <differential_form>{{ differential_form }}</differential_form
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

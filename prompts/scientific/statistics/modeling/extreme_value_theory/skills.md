@@ -1,14 +1,3 @@
----
-tags:
-  - domain:statistical_sciences
-  - extreme
-  - extreme-value-theory
-  - modeling
-  - multivariate
-  - skill
-  - statistics
----
-
 # Domain Agent Skills: Scientific Statistics Modeling Extreme value theory
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: multivariate_extreme_value_architect
-<!-- VALIDATION_METADATA: [{"name": "multivariate_data_structure", "description": "The multi-dimensional data structure exhibiting complex tail dependencies.", "required": true}, {"name": "tail_dependence_metric", "description": "The specific tail dependence metric or extreme value copula to model.", "required": true}, {"name": "asymptotic_assumptions", "description": "Assumptions regarding the domain of attraction and asymptotic independence/dependence.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "multivariate_data_structure", "description": "The multi-dimensional data structure exhibiting complex tail dependencies.", "required": true}, {"name": "tail_dependence_metric", "description": "The specific tail dependence metric or extreme value copula to model.", "required": true}, {"name": "asymptotic_assumptions", "description": "Assumptions regarding the domain of attraction and asymptotic independence/dependence.", "required": true}], "metadata": {}} -->
 ### Description
 Acts as a Principal Statistician to formally define, analyze, and estimate Multivariate Extreme Value Theory (MEVT) models.
 
@@ -55,5 +44,11 @@ Asymptotic Assumptions: <asymptotic_assumptions>{{ asymptotic_assumptions }}</as
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Pickands dependence function"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Pickands dependence function']
+```

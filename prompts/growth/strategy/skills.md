@@ -1,14 +1,3 @@
----
-tags:
-  - architect
-  - domain:growth/strategy
-  - elasticity
-  - gtm
-  - pricing
-  - regulatory-strategy
-  - skill
----
-
 # Domain Agent Skills: Growth Strategy
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: gtm_pricing_elasticity_architect
-<!-- VALIDATION_METADATA: [{"name": "historical_sales_data", "description": "Historical sales data for enterprise SaaS cohorts across pricing tiers and timeframes."}, {"name": "current_pricing_tiers", "description": "The current pricing tiers, MRR, and feature sets for the enterprise SaaS product."}, {"name": "target_arr_growth", "description": "The targeted Annual Recurring Revenue growth percentage."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "historical_sales_data", "description": "Historical sales data for enterprise SaaS cohorts across pricing tiers and timeframes."}, {"name": "current_pricing_tiers", "description": "The current pricing tiers, MRR, and feature sets for the enterprise SaaS product."}, {"name": "target_arr_growth", "description": "The targeted Annual Recurring Revenue growth percentage."}], "metadata": {}} -->
 ### Description
 Synthesizes enterprise SaaS historical sales data into predictive Go-To-Market (GTM) pricing elasticity matrices.
 
@@ -66,8 +55,20 @@ Execute a critical gap analysis and develop a GTM pricing elasticity matrix for 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A comprehensive GTM pricing elasticity matrix mapping optimal price points for Mid-Market and Enterprise tiers, integrating AARRR constraints, and featuring exact LaTeX financial equations for LTV, ROAS, and Ed."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A comprehensive GTM pricing elasticity matrix mapping optimal price points for Mid-Market and Enterprise tiers, integrating AARRR constraints, and featuring exact LaTeX financial equations for LTV, ROAS, and Ed.']
+```
 
-Input Context: "{}"
-Asserted Output: "An unvarnished, brutal assessment stating that the data is insufficient to generate a reliable elasticity matrix, refusing to hallucinate numbers, while outlining the required mathematical framework (AARRR, LTV, ROAS, Ed in LaTeX) needed once data is available."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['An unvarnished, brutal assessment stating that the data is insufficient to generate a reliable elasticity matrix, refusing to hallucinate numbers, while outlining the required mathematical framework (AARRR, LTV, ROAS, Ed in LaTeX) needed once data is available.']
+```

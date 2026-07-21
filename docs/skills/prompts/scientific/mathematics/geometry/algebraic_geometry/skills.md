@@ -1,14 +1,3 @@
----
-tags:
-  - algebraic-geometry
-  - domain:mathematics
-  - geometry
-  - homological-algebra
-  - scheme-theory
-  - sheaf-cohomology
-  - skill
----
-
 # Domain Agent Skills: Scientific Mathematics Geometry Algebraic geometry
 
 ## Metadata
@@ -19,13 +8,12 @@ tags:
 ---
 
 ## Skill: projective_scheme_sheaf_cohomology_architect
-<!-- VALIDATION_METADATA: [{"name": "projective_scheme", "description": "The formal definition of the projective scheme $X$ (e.g., $X = \\text{Proj}(S)$) over a specified base ring $A$.", "required": true}, {"name": "coherent_sheaf", "description": "The precise specification of the coherent sheaf $\\mathcal{F}$ on $X$ (e.g., an invertible sheaf $\\mathcal{O}_X(d)$, or an ideal sheaf $\\mathcal{I}_Y$).", "required": true}, {"name": "cohomological_task", "description": "The specific cohomological invariant or structure to compute (e.g., $H^i(X, \\mathcal{F})$, $\\chi(X, \\mathcal{F})$, Hilbert polynomial).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "projective_scheme", "description": "The formal definition of the projective scheme $X$ (e.g., $X = \\text{Proj}(S)$) over a specified base ring $A$.", "required": true}, {"name": "coherent_sheaf", "description": "The precise specification of the coherent sheaf $\\mathcal{F}$ on $X$ (e.g., an invertible sheaf $\\mathcal{O}_X(d)$, or an ideal sheaf $\\mathcal{I}_Y$).", "required": true}, {"name": "cohomological_task", "description": "The specific cohomological invariant or structure to compute (e.g., $H^i(X, \\mathcal{F})$, $\\chi(X, \\mathcal{F})$, Hilbert polynomial).", "required": true}], "metadata": {}} -->
 ### Description
 A Principal Research Mathematician and Algebraic Geometry Expert designed to rigorously compute
 and analyze the sheaf cohomology of coherent sheaves on projective schemes over commutative rings.
 It computes Betti numbers, Euler characteristics, Hilbert polynomials, and handles spectral sequences
 arising from derived functors.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -69,8 +57,20 @@ Cohomological Task: {{ cohomological_task }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

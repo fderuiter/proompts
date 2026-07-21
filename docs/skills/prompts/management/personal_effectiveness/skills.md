@@ -1,27 +1,3 @@
----
-tags:
-  - advisor
-  - career
-  - coach
-  - compass
-  - domain:management
-  - eisenhower
-  - financial
-  - health
-  - learning
-  - matrix
-  - mentor
-  - micro-habit
-  - navigator
-  - oracle
-  - path
-  - personal-effectiveness
-  - scenario-based
-  - second-order
-  - skill
-  - thinking
----
-
 # Domain Agent Skills: Management Personal effectiveness
 
 ## Metadata
@@ -32,7 +8,7 @@ tags:
 ---
 
 ## Skill: Scenario-Based Financial Navigator
-<!-- VALIDATION_METADATA: [{"name": "user_data", "description": "demographic and financial details", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "user_data", "description": "demographic and financial details", "required": true}], "metadata": {}} -->
 ### Description
 Generate long-term wealth scenarios and actionable tactics.
 
@@ -68,13 +44,19 @@ Keep the entire reply under 170 words.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{user_data: Sample financial profile}"
-Asserted Output: "Markdown table of projections followed by brief tactics and a caution note."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Markdown table of projections followed by brief tactics and a caution note.']
+```
 
 ---
 
 ## Skill: Second-Order Thinking Oracle
-<!-- VALIDATION_METADATA: [{"name": "decision", "description": "The decision to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "decision", "description": "The decision to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Assess first- and second-order effects of a decision.
 
@@ -111,16 +93,19 @@ Keep the entire response under 140 words and use plain language.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{decision: adopt remote work policy}"
-Asserted Output: "| Now | First-Order Outcome | Second-Order Consequence |
-| 6 months | First-Order Outcome | Second-Order Consequence |
-| 2 years | First-Order Outcome | Second-Order Consequence |
-Net strategic value: 0"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['| Now | First-Order Outcome | Second-Order Consequence |\n| 6 months | First-Order Outcome | Second-Order Consequence |\n| 2 years | First-Order Outcome | Second-Order Consequence |\nNet strategic value: 0']
+```
 
 ---
 
 ## Skill: Eisenhower Matrix Coach
-<!-- VALIDATION_METADATA: [{"name": "tasks", "description": "The task or objective to accomplish", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "tasks", "description": "The task or objective to accomplish", "required": true}], "metadata": {}} -->
 ### Description
 Triage a to-do list using the Eisenhower Matrix.
 
@@ -156,20 +141,19 @@ Keep the entire reply under 150 words.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{tasks: 'Prepare presentation for Monday
-
-    Pay utility bill
-
-    Research vacation destinations
-
-    Organize desk'}"
-Asserted Output: "| ✅ Do Now | 📅 Schedule | ↗ Delegate | 🗑 Delete |
-| --- | --- | --- | --- |"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['| ✅ Do Now | 📅 Schedule | ↗ Delegate | 🗑 Delete |\n| --- | --- | --- | --- |']
+```
 
 ---
 
 ## Skill: Micro-Habit Health Coach
-<!-- VALIDATION_METADATA: [{"name": "user_info", "description": "dietary preferences, equipment, and stress triggers", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "user_info", "description": "dietary preferences, equipment, and stress triggers", "required": true}], "metadata": {}} -->
 ### Description
 Deliver a concise 7-day wellness plan combining meals, movement, and mindset.
 
@@ -205,13 +189,19 @@ Keep the total response under 150 words.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{user_info: Sample preferences and equipment}"
-Asserted Output: "Markdown sections for Meals, Movement, and Mindset followed by the disclaimer."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Markdown sections for Meals, Movement, and Mindset followed by the disclaimer.']
+```
 
 ---
 
 ## Skill: Learning Path Mentor
-<!-- VALIDATION_METADATA: [{"name": "skill_level", "description": "current proficiency", "required": true}, {"name": "weekly_hours", "description": "hours the user can dedicate each week", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "skill_level", "description": "current proficiency", "required": true}, {"name": "weekly_hours", "description": "hours the user can dedicate each week", "required": true}], "metadata": {}} -->
 ### Description
 Design a phased roadmap that guides users toward skill mastery.
 
@@ -249,13 +239,19 @@ Keep output concise.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{skill_level: novice, weekly_hours: 5}"
-Asserted Output: "Markdown roadmap table followed by self-check questions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Markdown roadmap table followed by self-check questions.']
+```
 
 ---
 
 ## Skill: Career Compass Advisor
-<!-- VALIDATION_METADATA: [{"name": "background", "description": "user details and career goals", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "background", "description": "user details and career goals", "required": true}], "metadata": {}} -->
 ### Description
 Map the user's next career move and provide a concise action plan.
 
@@ -291,5 +287,11 @@ Keep the entire response within 150 words.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{background: Sample background and goals}"
-Asserted Output: "Markdown table followed by the action plan."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Markdown table followed by the action plan.']
+```

@@ -1,21 +1,3 @@
----
-tags:
-  - architect
-  - clinical-trial
-  - coach
-  - creator
-  - domain:clinical
-  - gap-analysis
-  - protocol
-  - protocol-design
-  - refinement
-  - reviewer
-  - section
-  - skill
-  - sop
-  - ultimate
----
-
 # Domain Agent Skills: Clinical Protocol Protocol workflow
 
 ## Metadata
@@ -26,7 +8,7 @@ tags:
 ---
 
 ## Skill: Protocol Section Refinement
-<!-- VALIDATION_METADATA: [{"name": "condition", "description": "disease or study condition", "required": true}, {"name": "draft_section", "description": "current text of the protocol section", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "condition", "description": "disease or study condition", "required": true}, {"name": "draft_section", "description": "current text of the protocol section", "required": true}], "metadata": {}} -->
 ### Description
 Improve the eligibility criteria section of an IVD performance trial protocol.
 
@@ -64,15 +46,19 @@ Keep language concise and align with regulatory expectations.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "condition: diabetes
-draft_section: placeholder text
-"
-Asserted Output: "Inclusion"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Inclusion']
+```
 
 ---
 
 ## Skill: Protocol Reviewer and Gap-Analysis Coach
-<!-- VALIDATION_METADATA: [{"name": "protocol_text_or_nct", "description": "full protocol text or clinicaltrials", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "protocol_text_or_nct", "description": "full protocol text or clinicaltrials", "required": true}], "metadata": {}} -->
 ### Description
 Evaluate a clinical-trial protocol for patient experience, site feasibility, and regulatory completeness.
 
@@ -116,14 +102,19 @@ Keep feedback constructive and reference best practice guidelines.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "protocol_text_or_nct: NCT00000000
-"
-Asserted Output: "Table of scores"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Table of scores']
+```
 
 ---
 
 ## Skill: Clinical-Trial Protocol Creator
-<!-- VALIDATION_METADATA: [{"name": "summary_sheet", "description": "one-page study summary with product and design details", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "summary_sheet", "description": "one-page study summary with product and design details", "required": true}], "metadata": {}} -->
 ### Description
 Generate a full clinical-trial protocol from a one-page summary sheet.
 
@@ -171,14 +162,19 @@ Ensure regulatory compliance throughout the draft.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "summary_sheet: Phase I study of investigational hypertension drug
-"
-Asserted Output: "Title Page"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Title Page']
+```
 
 ---
 
 ## Skill: Ultimate SOP Architect
-<!-- VALIDATION_METADATA: [{"name": "process_information", "description": "scope, audience, and regulatory context", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "process_information", "description": "scope, audience, and regulatory context", "required": true}], "metadata": {}} -->
 ### Description
 Create a clear, regulation-compliant standard operating procedure.
 
@@ -229,6 +225,11 @@ Ensure terminology is consistent throughout.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "process_information: basic lab procedure
-"
-Asserted Output: "Purpose / Objective"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Purpose / Objective']
+```

@@ -1,21 +1,3 @@
----
-tags:
-  - audit
-  - data
-  - domain:management
-  - draft
-  - executive
-  - final
-  - generate
-  - glp-compliant
-  - protocol
-  - raw
-  - skill
-  - study
-  - study-director
-  - summary
----
-
 # Domain Agent Skills: Management Study director Study director workflow
 
 ## Metadata
@@ -26,7 +8,7 @@ tags:
 ---
 
 ## Skill: Draft a GLP-Compliant Study Protocol
-<!-- VALIDATION_METADATA: [{"name": "protocol_basics", "description": "any additional study parameters", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "protocol_basics", "description": "any additional study parameters", "required": true}], "metadata": {}} -->
 ### Description
 Produce a detailed study plan that satisfies OECD and FDA GLP regulations.
 
@@ -63,19 +45,19 @@ Output Format:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "protocol_basics: |
-  Test Article: Compound A
-  Species: Sprague-Dawley rats
-  Duration: 28 days
-"
-Asserted Output: "1. Objectives and scientific rationale
-Phase,Risk,Impact,Mitigation
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['1. Objectives and scientific rationale\nPhase,Risk,Impact,Mitigation\n']
+```
 
 ---
 
 ## Skill: Generate an Executive Summary for the Final Report
-<!-- VALIDATION_METADATA: [{"name": "report_sections", "description": "draft CTD modules and tables", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "report_sections", "description": "draft CTD modules and tables", "required": true}], "metadata": {}} -->
 ### Description
 Write a concise executive summary of a non-clinical study report.
 
@@ -111,22 +93,19 @@ Output Format:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "report_sections: |
-  Module 4.2.3: Study design and dose levels
-  Module 4.2.5: Results and discussion
-"
-Asserted Output: "NOAEL: 50 mg/kg
-Checklist:
-- Sign protocol
-- Review deviations
-- Confirm NOAEL
-- Approve submission
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['NOAEL: 50 mg/kg\nChecklist:\n- Sign protocol\n- Review deviations\n- Confirm NOAEL\n- Approve submission\n']
+```
 
 ---
 
 ## Skill: Audit Raw Data and Draft a CAPA Summary
-<!-- VALIDATION_METADATA: [{"name": "data_csv", "description": "raw study data", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "data_csv", "description": "raw study data", "required": true}], "metadata": {}} -->
 ### Description
 Review study data for deviations and produce a corrective-action plan.
 
@@ -162,12 +141,11 @@ Output Format:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "data_csv: |
-  id,weight
-  1,200
-  2,150
-  3,250
-"
-Asserted Output: "| Issue ID | Impact | CAPA |
-| 1 | Low | ... |
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['| Issue ID | Impact | CAPA |\n| 1 | Low | ... |\n']
+```

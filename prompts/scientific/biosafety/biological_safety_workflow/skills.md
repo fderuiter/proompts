@@ -1,20 +1,3 @@
----
-tags:
-  - assessment
-  - biological
-  - biosafety
-  - developer
-  - domain:scientific
-  - expert
-  - plan
-  - regulatory
-  - risk
-  - safety
-  - skill
-  - submission
-  - support
----
-
 # Domain Agent Skills: Scientific Biosafety Biological safety workflow
 
 ## Metadata
@@ -25,7 +8,7 @@ tags:
 ---
 
 ## Skill: Risk Assessment Expert
-<!-- VALIDATION_METADATA: [{"name": "medical_device_type", "description": "description of the device", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "medical_device_type", "description": "description of the device", "required": true}], "metadata": {}} -->
 ### Description
 Provide a comprehensive biocompatibility risk assessment for a specified device.
 
@@ -59,25 +42,28 @@ Markdown table summarizing hazards and mitigations.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{medical_device_type: 'Silicone-coated intravascular catheter for central venous access,
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Markdown table with columns for Hazard, Likelihood, Severity,\nTesting Strategy, and Mitigation Controls. Should reference ISO 10993\nstandards and include specific biological hazards like cytotoxicity,\nsensitization, and thrombogenicity.']
+```
 
-    intended for long-term use (>30 days) in adult patients'}"
-Asserted Output: "Markdown table with columns for Hazard, Likelihood, Severity,
-Testing Strategy, and Mitigation Controls. Should reference ISO 10993
-standards and include specific biological hazards like cytotoxicity,
-sensitization, and thrombogenicity."
-
-Input Context: "{medical_device_type: 'Titanium hip implant with hydroxyapatite coating for
-
-    total hip replacement in osteoarthritis patients'}"
-Asserted Output: "Comprehensive risk assessment table identifying hazards such as
-metal ion release, particulate wear debris, and infection risk.
-Should include ISO 14971 risk management approach."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Comprehensive risk assessment table identifying hazards such as\nmetal ion release, particulate wear debris, and infection risk.\nShould include ISO 14971 risk management approach.']
+```
 
 ---
 
 ## Skill: Regulatory Submission Support
-<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "short summary of the device", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_description", "description": "short summary of the device", "required": true}], "metadata": {}} -->
 ### Description
 Draft regulatory-ready documentation for a medical device submission.
 
@@ -111,13 +97,19 @@ Bullet points and tables suitable for submission documentation.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{device_description: example_device_description}"
-Asserted Output: "Bullet points and tables suitable for submission documentation."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Bullet points and tables suitable for submission documentation.']
+```
 
 ---
 
 ## Skill: Biological Safety Plan Developer
-<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "description and materials of the device", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_description", "description": "description and materials of the device", "required": true}], "metadata": {}} -->
 ### Description
 Create a biological safety plan for the preclinical phase of a new medical device.
 
@@ -152,5 +144,11 @@ Bullet points and headings forming a clear plan.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{device_description: example_device_description}"
-Asserted Output: "Bullet points and headings forming a clear plan."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Bullet points and headings forming a clear plan.']
+```

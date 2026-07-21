@@ -1,74 +1,3 @@
----
-tags:
-  - 21-cfr-312
-  - 510
-  - anda
-  - annex ii
-  - annex iii
-  - api
-  - application
-  - approval
-  - bioequivalence
-  - biologics
-  - bla
-  - cbe
-  - checklist
-  - clinical
-  - clinical-trials
-  - cmc
-  - combination
-  - coverage
-  - ctd
-  - device
-  - dmf
-  - domain:regulatory
-  - domain:regulatory/submissions
-  - ectd
-  - equivalence
-  - eu
-  - exemption
-  - fda
-  - generic-drug
-  - gspr
-  - gudid
-  - hde
-  - humanitarian
-  - ich
-  - ich m4
-  - ide
-  - ind
-  - jurisdiction
-  - m4e
-  - mdr
-  - medicare
-  - nda
-  - notified body
-  - novo
-  - parallel
-  - phase-1
-  - pma
-  - post-approval
-  - premarket
-  - preparation
-  - product
-  - regulatory-affairs
-  - regulatory-submissions
-  - reporting
-  - request
-  - review
-  - rld
-  - rta
-  - skill
-  - small-molecule
-  - submission
-  - submissions
-  - substantial
-  - supplement
-  - technical documentation
-  - type-ii-dmf
-  - udi
----
-
 # Domain Agent Skills: Regulatory Submissions
 
 ## Metadata
@@ -79,7 +8,7 @@ tags:
 ---
 
 ## Skill: ich_m4e_ctd_clinical_overview_architect
-<!-- VALIDATION_METADATA: [{"name": "clinical_efficacy_data", "type": "string", "description": "Aggregated efficacy results from pivotal clinical trials, including primary and secondary endpoints."}, {"name": "clinical_safety_data", "type": "string", "description": "Comprehensive safety profile, including adverse events (AEs), serious adverse events (SAEs), and laboratory abnormalities."}, {"name": "biopharmaceutics_pharmacokinetics", "type": "string", "description": "Summary of biopharmaceutic and pharmacokinetic findings, including absorption, distribution, metabolism, and excretion (ADME) data."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "clinical_efficacy_data", "type": "string", "description": "Aggregated efficacy results from pivotal clinical trials, including primary and secondary endpoints."}, {"name": "clinical_safety_data", "type": "string", "description": "Comprehensive safety profile, including adverse events (AEs), serious adverse events (SAEs), and laboratory abnormalities."}, {"name": "biopharmaceutics_pharmacokinetics", "type": "string", "description": "Summary of biopharmaceutic and pharmacokinetic findings, including absorption, distribution, metabolism, and excretion (ADME) data."}], "metadata": {}} -->
 ### Description
 Synthesizes complex clinical trial data into a rigorously structured, highly authoritative ICH M4E(R2)-compliant CTD Module 2.5 Clinical Overview, incorporating advanced risk-benefit analysis and biostatistical rationale.
 
@@ -129,13 +58,19 @@ Draft a comprehensive ICH M4E(R2) CTD Module 2.5 Clinical Overview using the pro
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Humanitarian Device Exemption (HDE)
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Explain why the health benefit of a HUD outweighs the risk of injury.
 
@@ -171,13 +106,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "HUD designation and risk-benefit analysis of alternatives. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: De Novo Request Preparation
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Generate a summary of risks and mitigations for a De Novo classification request.
 
@@ -213,13 +154,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Probable risks and proposed mitigation measures. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: 510(k) Substantial Equivalence Preparation
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Draft a substantial equivalence comparison and summary between a subject device and predicate(s) to demonstrate safety and effectiveness.
 
@@ -255,13 +202,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Device description, indications for use, technological characteristics, performance data, and predicate device identification. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: Medicare Coverage Request (IDE)
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Prepare a request packet for CMS reimbursement of an IDE study.
 
@@ -297,13 +250,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "FDA IDE approval letter and NCT number. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: Premarket Approval (PMA) Preparation
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Draft a detailed summary of a PMA application, including clinical investigation results and manufacturing history.
 
@@ -339,13 +298,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Clinical results, nonclinical lab data, device characteristics, and marketing history. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: PMA Post-approval Reporting
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Compile a summary of post-approval requirements, including clinical study data, manufacturing changes, and scientific literature.
 
@@ -381,13 +346,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "PMA approval order, study data, change logs, and bibliography of recent literature. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: EU MDR Technical Documentation Architect
-<!-- VALIDATION_METADATA: [{"name": "device_classification", "description": "The risk classification of the device under EU MDR (e.g., Class I, IIa, IIb, III).", "required": true}, {"name": "intended_purpose", "description": "The explicit intended clinical purpose, target patient population, and indications for use.", "required": true}, {"name": "basic_udi_di", "description": "The Basic UDI-DI assigned to the device family.", "required": true}, {"name": "clinical_data_summary", "description": "High-level summary of available clinical data (literature, PMCF, or clinical investigations).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_classification", "description": "The risk classification of the device under EU MDR (e.g., Class I, IIa, IIb, III).", "required": true}, {"name": "intended_purpose", "description": "The explicit intended clinical purpose, target patient population, and indications for use.", "required": true}, {"name": "basic_udi_di", "description": "The Basic UDI-DI assigned to the device family.", "required": true}, {"name": "clinical_data_summary", "description": "High-level summary of available clinical data (literature, PMCF, or clinical investigations).", "required": true}], "metadata": {}} -->
 ### Description
 Formulates rigorous, compliant EU MDR Annex II and III technical documentation for medical devices, ensuring alignment with General Safety and Performance Requirements (GSPRs) and Notified Body expectations.
 
@@ -426,13 +397,19 @@ Provide a comprehensive, section-by-section blueprint detailing the required con
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A highly structured technical documentation blueprint explicitly referencing Annex II/III sections, tailored for a Class IIb implantable device."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A highly structured technical documentation blueprint explicitly referencing Annex II/III sections, tailored for a Class IIb implantable device.']
+```
 
 ---
 
 ## Skill: IDE Application Preparation
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Draft an Investigational Device Exemption (IDE) application, including risk analysis and investigational plans for clinical studies.
 
@@ -468,13 +445,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Investigational plan, report of prior investigations, investigator agreements, and device labeling. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: UDI GUDID Submission
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Prepare a Device Identifier (DI) record for GUDID submission.
 
@@ -510,13 +493,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Device label, packaging levels, and GTIN data. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: New Drug Application (NDA) Architect
-<!-- VALIDATION_METADATA: [{"name": "active_pharmaceutical_ingredient", "description": "The generic name or chemical structure classification of the primary small molecule active ingredient.", "required": true}, {"name": "intended_indication", "description": "The specific therapeutic indication or target disease state for which the drug is seeking FDA approval.", "required": true}, {"name": "clinical_evidence_summary", "description": "A high-level synthesis of pivotal Phase 3 clinical trial outcomes demonstrating safety and efficacy.", "required": true}, {"name": "cmc_overview", "description": "Overview of the Chemistry, Manufacturing, and Controls (CMC) strategy, including synthetic route, drug substance, and drug product specifications.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "active_pharmaceutical_ingredient", "description": "The generic name or chemical structure classification of the primary small molecule active ingredient.", "required": true}, {"name": "intended_indication", "description": "The specific therapeutic indication or target disease state for which the drug is seeking FDA approval.", "required": true}, {"name": "clinical_evidence_summary", "description": "A high-level synthesis of pivotal Phase 3 clinical trial outcomes demonstrating safety and efficacy.", "required": true}, {"name": "cmc_overview", "description": "Overview of the Chemistry, Manufacturing, and Controls (CMC) strategy, including synthetic route, drug substance, and drug product specifications.", "required": true}], "metadata": {}} -->
 ### Description
 Formulates rigorous, compliant FDA New Drug Application (NDA) eCTD submissions for small molecule drugs, ensuring strict adherence to 21 CFR 314 and ICH M4 guidelines.
 
@@ -558,13 +547,19 @@ Construct a rigorous, section-by-section blueprint detailing the exact content r
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A meticulously structured NDA blueprint, rigidly segmented into eCTD Modules 1-5, with specific emphasis on ISE/ISS integration in Module 5 and rigorous small molecule impurity controls in Module 3."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A meticulously structured NDA blueprint, rigidly segmented into eCTD Modules 1-5, with specific emphasis on ISE/ISS integration in Module 5 and rigorous small molecule impurity controls in Module 3.']
+```
 
 ---
 
 ## Skill: RTA Checklist Preparation
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Annotate the RTA checklist with page numbers and sections where requirements are addressed in a 510(k).
 
@@ -600,13 +595,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Draft 510(k) submission and appropriate FDA RTA checklist. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: Parallel Review Request
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Draft an email requesting enrollment in the Parallel Review program.
 
@@ -642,13 +643,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Regulatory history and public health impact statement. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: Combination Product Jurisdiction
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Prepare a Request for Designation (RFD) to identify primary FDA jurisdiction.
 
@@ -684,13 +691,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Product composition and Primary Mode of Action (PMOA). (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: Abbreviated New Drug Application (ANDA) Architect
-<!-- VALIDATION_METADATA: [{"name": "generic_drug_name", "description": "The proposed generic drug name and active pharmaceutical ingredient.", "required": true}, {"name": "reference_listed_drug", "description": "The Reference Listed Drug (RLD) including its NDA number to which bioequivalence is being demonstrated.", "required": true}, {"name": "bioequivalence_summary", "description": "A high-level synthesis of in vivo or in vitro bioequivalence study outcomes.", "required": true}, {"name": "q1_q2_formulation_details", "description": "Details regarding Qualitative (Q1) and Quantitative (Q2) formulation sameness to the RLD.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "generic_drug_name", "description": "The proposed generic drug name and active pharmaceutical ingredient.", "required": true}, {"name": "reference_listed_drug", "description": "The Reference Listed Drug (RLD) including its NDA number to which bioequivalence is being demonstrated.", "required": true}, {"name": "bioequivalence_summary", "description": "A high-level synthesis of in vivo or in vitro bioequivalence study outcomes.", "required": true}, {"name": "q1_q2_formulation_details", "description": "Details regarding Qualitative (Q1) and Quantitative (Q2) formulation sameness to the RLD.", "required": true}], "metadata": {}} -->
 ### Description
 Formulates rigorous, compliant FDA Abbreviated New Drug Application (ANDA) eCTD submissions for generic drugs, ensuring strict adherence to 21 CFR 314 and demonstrating bioequivalence to a Reference Listed Drug (RLD).
 
@@ -732,16 +745,28 @@ Construct a rigorous, section-by-section blueprint detailing the exact content r
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A structured ANDA blueprint highlighting bioequivalence (Module 5), CMC controls (Module 3), and Q1/Q2 sameness without clinical safety/efficacy trials."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A structured ANDA blueprint highlighting bioequivalence (Module 5), CMC controls (Module 3), and Q1/Q2 sameness without clinical safety/efficacy trials.']
+```
 
-Input Context: "{}"
-Asserted Output: "A structured ANDA blueprint covering in vitro/in vivo BE strategies for complex drug-device combinations, emphasizing Module 3 device controls."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A structured ANDA blueprint covering in vitro/in vivo BE strategies for complex drug-device combinations, emphasizing Module 3 device controls.']
+```
 
 ---
 
 ## Skill: FDA Type II Drug Master File (DMF) Architect
-<!-- VALIDATION_METADATA: [{"name": "active_pharmaceutical_ingredient", "description": "The chemical name, structure, and general properties of the Drug Substance (API).", "required": true}, {"name": "manufacturing_process", "description": "A high-level summary of the synthetic route, including starting materials, critical process parameters, and intermediates.", "required": true}, {"name": "impurity_profile", "description": "Summary of the strategy for controlling organic, inorganic, and mutagenic impurities (ICH M7).", "required": true}, {"name": "stability_data", "description": "Overview of the stability studies, container closure system, and proposed retest period.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "active_pharmaceutical_ingredient", "description": "The chemical name, structure, and general properties of the Drug Substance (API).", "required": true}, {"name": "manufacturing_process", "description": "A high-level summary of the synthetic route, including starting materials, critical process parameters, and intermediates.", "required": true}, {"name": "impurity_profile", "description": "Summary of the strategy for controlling organic, inorganic, and mutagenic impurities (ICH M7).", "required": true}, {"name": "stability_data", "description": "Overview of the stability studies, container closure system, and proposed retest period.", "required": true}], "metadata": {}} -->
 ### Description
 Formulates rigorous, compliant FDA Type II Drug Master File (DMF) submissions for Drug Substances (APIs), ensuring strict adherence to FDA guidelines and ICH M4Q eCTD Module 3 formatting.
 
@@ -784,16 +809,28 @@ Construct a rigorous, section-by-section blueprint detailing the exact content r
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A meticulously structured Type II DMF blueprint, rigidly segmented into eCTD Module 3.2.S, with specific emphasis on justifying starting materials (ICH Q11), controlling the palladium catalyst (ICH Q3D), and managing the mutagenic intermediate (ICH M7)."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A meticulously structured Type II DMF blueprint, rigidly segmented into eCTD Module 3.2.S, with specific emphasis on justifying starting materials (ICH Q11), controlling the palladium catalyst (ICH Q3D), and managing the mutagenic intermediate (ICH M7).']
+```
 
-Input Context: "{}"
-Asserted Output: "A structured Type II DMF blueprint covering the complexities of semisynthetic APIs, emphasizing characterization (3.2.S.3) of the complex impurity profile and strict cold-chain stability controls (3.2.S.7)."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A structured Type II DMF blueprint covering the complexities of semisynthetic APIs, emphasizing characterization (3.2.S.3) of the complex impurity profile and strict cold-chain stability controls (3.2.S.7).']
+```
 
 ---
 
 ## Skill: PMA Supplement (CBE)
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Draft a 'Special PMA Supplement - Changes Being Effected' for safety warnings.
 
@@ -829,13 +866,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "New safety information and current labeling. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: Investigational New Drug (IND) Architect
-<!-- VALIDATION_METADATA: [{"name": "drug_substance_overview", "description": "High-level summary of the investigational drug's mechanism of action (MoA), target, and structural class.", "type": "string"}, {"name": "nonclinical_safety_summary", "description": "Summary of GLP pivotal toxicology studies, identifying the NOAEL (No Observed Adverse Effect Level), target organs of toxicity, and reversibility.", "type": "string"}, {"name": "clinical_protocol_design", "description": "Overview of the proposed Phase 1 study, including starting dose rationale, dosing regimen, patient population (or healthy volunteers), and safety monitoring plan.", "type": "string"}, {"name": "cmc_status", "description": "Brief status of Chemistry, Manufacturing, and Controls (CMC) readiness for Phase 1 clinical supply.", "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "drug_substance_overview", "description": "High-level summary of the investigational drug's mechanism of action (MoA), target, and structural class.", "type": "string"}, {"name": "nonclinical_safety_summary", "description": "Summary of GLP pivotal toxicology studies, identifying the NOAEL (No Observed Adverse Effect Level), target organs of toxicity, and reversibility.", "type": "string"}, {"name": "clinical_protocol_design", "description": "Overview of the proposed Phase 1 study, including starting dose rationale, dosing regimen, patient population (or healthy volunteers), and safety monitoring plan.", "type": "string"}, {"name": "cmc_status", "description": "Brief status of Chemistry, Manufacturing, and Controls (CMC) readiness for Phase 1 clinical supply.", "type": "string"}], "metadata": {}} -->
 ### Description
 Formulates rigorous, compliant Investigational New Drug (IND) applications (21 CFR Part 312), explicitly designed to translate preclinical pharmacology/toxicology into safe Phase 1 clinical protocols and prevent FDA clinical holds.
 
@@ -877,13 +920,19 @@ Provide a detailed, section-by-section blueprint focusing heavily on the critica
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A structured IND blueprint emphasizing the MRSD calculation from the dog NOAEL (HED conversion), specific GI and liver toxicity monitoring in the Phase 1 protocol, and confirmation that PIC formulation is appropriate for Phase 1."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A structured IND blueprint emphasizing the MRSD calculation from the dog NOAEL (HED conversion), specific GI and liver toxicity monitoring in the Phase 1 protocol, and confirmation that PIC formulation is appropriate for Phase 1.']
+```
 
 ---
 
 ## Skill: Biologics License Application (BLA) Architect
-<!-- VALIDATION_METADATA: [{"name": "product_type", "description": "The type of biological product (e.g., monoclonal antibody, gene therapy, vaccine, blood product).", "required": true}, {"name": "intended_indication", "description": "The explicit target disease or condition the biologic is intended to treat, prevent, or diagnose.", "required": true}, {"name": "clinical_phase", "description": "Current status of clinical development (e.g., Phase 3 completed, rolling submission).", "required": true}, {"name": "manufacturing_summary", "description": "High-level overview of the Chemistry, Manufacturing, and Controls (CMC) strategy and facility readiness.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "product_type", "description": "The type of biological product (e.g., monoclonal antibody, gene therapy, vaccine, blood product).", "required": true}, {"name": "intended_indication", "description": "The explicit target disease or condition the biologic is intended to treat, prevent, or diagnose.", "required": true}, {"name": "clinical_phase", "description": "Current status of clinical development (e.g., Phase 3 completed, rolling submission).", "required": true}, {"name": "manufacturing_summary", "description": "High-level overview of the Chemistry, Manufacturing, and Controls (CMC) strategy and facility readiness.", "required": true}], "metadata": {}} -->
 ### Description
 Formulates rigorous, compliant FDA Biologics License Application (BLA) eCTD submissions for biological products, ensuring alignment with 21 CFR 600-680 and ICH M4 guidelines.
 
@@ -925,5 +974,11 @@ Provide a detailed, section-by-section blueprint detailing the required content,
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A highly structured BLA blueprint explicitly referencing eCTD Modules 1-5, specifically tailored for a gene therapy product requiring rigorous CMC and long-term follow-up considerations."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A highly structured BLA blueprint explicitly referencing eCTD Modules 1-5, specifically tailored for a gene therapy product requiring rigorous CMC and long-term follow-up considerations.']
+```

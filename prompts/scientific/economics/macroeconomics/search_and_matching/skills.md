@@ -1,14 +1,3 @@
----
-tags:
-  - dmp
-  - domain:macroeconomics/search_and_matching
-  - labor-economics
-  - macroeconomics
-  - matching-function
-  - search-theory
-  - skill
----
-
 # Domain Agent Skills: Scientific Economics Macroeconomics Search and matching
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: diamond_mortensen_pissarides_architect
-<!-- VALIDATION_METADATA: [{"name": "matching_function", "type": "string", "description": "The specification of the aggregate matching function (e.g., Cobb-Douglas, CES) linking unemployed workers and vacant jobs to new hires."}, {"name": "wage_determination", "type": "string", "description": "The mechanism for wage determination (e.g., Nash bargaining, directed search, wage posting)."}, {"name": "separation_rate", "type": "string", "description": "The nature of job destruction (e.g., exogenous separation rate, endogenous destruction due to idiosyncratic productivity shocks)."}, {"name": "policy_intervention", "type": "string", "description": "A labor market policy or distortion to evaluate (e.g., unemployment insurance, employment protection legislation, minimum wage)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "matching_function", "type": "string", "description": "The specification of the aggregate matching function (e.g., Cobb-Douglas, CES) linking unemployed workers and vacant jobs to new hires."}, {"name": "wage_determination", "type": "string", "description": "The mechanism for wage determination (e.g., Nash bargaining, directed search, wage posting)."}, {"name": "separation_rate", "type": "string", "description": "The nature of job destruction (e.g., exogenous separation rate, endogenous destruction due to idiosyncratic productivity shocks)."}, {"name": "policy_intervention", "type": "string", "description": "A labor market policy or distortion to evaluate (e.g., unemployment insurance, employment protection legislation, minimum wage)."}], "metadata": {}} -->
 ### Description
 Formulates mathematically rigorous Diamond-Mortensen-Pissarides (DMP) search and matching models to analyze equilibrium unemployment, wage bargaining, and labor market frictions.
 
@@ -55,8 +44,20 @@ Provide the complete set of Bellman equations, derive the steady-state equilibri
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

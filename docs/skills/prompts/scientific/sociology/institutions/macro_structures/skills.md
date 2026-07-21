@@ -1,14 +1,3 @@
----
-tags:
-  - carceral
-  - domain:sociology/institutions/macro_structures
-  - institutions
-  - macro-structures
-  - skill
-  - sociology
-  - state
----
-
 # Domain Agent Skills: Scientific Sociology Institutions Macro structures
 
 ## Metadata
@@ -19,10 +8,9 @@ tags:
 ---
 
 ## Skill: carceral_state_expansion_modeler
-<!-- VALIDATION_METADATA: [{"name": "demographic_incarceration_data", "description": "Raw demographic and socioeconomic data outlining incarceration rates, recidivism, and targeted population distributions over a specified period."}, {"name": "systemic_institutional_context", "description": "The broader macro-structural context (e.g., specific legislation, policing strategies, sentencing guidelines) driving carceral expansion in the target field."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "demographic_incarceration_data", "description": "Raw demographic and socioeconomic data outlining incarceration rates, recidivism, and targeted population distributions over a specified period."}, {"name": "systemic_institutional_context", "description": "The broader macro-structural context (e.g., specific legislation, policing strategies, sentencing guidelines) driving carceral expansion in the target field."}], "metadata": {}} -->
 ### Description
 Systematically models the systemic, demographic, and structural impacts of the carceral state and mass incarceration on social stratification, utilizing American Sociological Association (ASA) standards and rigorous inequality indices.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -60,8 +48,20 @@ Provide a comprehensive macro-structural analysis. Output must include a rigorou
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "\$G ="
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['\\$G =']
+```
 
-Input Context: "{}"
-Asserted Output: "\$D ="
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['\\$D =']
+```

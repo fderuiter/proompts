@@ -1,37 +1,3 @@
----
-tags:
-  - brst-symmetry
-  - chiral-anomaly
-  - coleman-weinberg
-  - domain:pure_physics
-  - domain:scientific
-  - effective
-  - effective-potential
-  - faddeev-popov
-  - feynman-diagrams
-  - field
-  - fujikawa-method
-  - gauge-theory
-  - green-functions
-  - lagrangian-mechanics
-  - non-equilibrium-dynamics
-  - non-perturbative-methods
-  - particle-physics
-  - path-integral
-  - physics
-  - quantum-field-theory
-  - renormalization-group
-  - schwinger-dyson-equations
-  - schwinger-keldysh
-  - skill
-  - spontaneous-symmetry-breaking
-  - symmetry
-  - theoretical-physics
-  - theory
-  - topological-invariants
-  - ward-takahashi-identities
----
-
 # Domain Agent Skills: Scientific Physics Quantum field theory
 
 ## Metadata
@@ -42,7 +8,7 @@ tags:
 ---
 
 ## Skill: Chiral Anomaly Fujikawa Path Integral Architect
-<!-- VALIDATION_METADATA: [{"name": "gauge_group", "description": "The Lie group under which the fermion fields transform (e.g., U(1) for QED, SU(N) for QCD).", "required": true}, {"name": "fermion_representation", "description": "The representation of the gauge group in which the chiral fermions reside.", "required": true}, {"name": "spacetime_dimension", "description": "The spacetime dimension in which the anomaly is being evaluated (typically even, e.g., d=4, d=2).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "gauge_group", "description": "The Lie group under which the fermion fields transform (e.g., U(1) for QED, SU(N) for QCD).", "required": true}, {"name": "fermion_representation", "description": "The representation of the gauge group in which the chiral fermions reside.", "required": true}, {"name": "spacetime_dimension", "description": "The spacetime dimension in which the anomaly is being evaluated (typically even, e.g., d=4, d=2).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}], "metadata": {}} -->
 ### Description
 Formulates the rigorous derivation of chiral anomalies using Fujikawa's path integral measure evaluation, extracting the anomalous divergence of the axial current via heat-kernel regularization.
 
@@ -52,6 +18,7 @@ Formulates the rigorous derivation of chiral anomalies using Fujikawa's path int
 | `gauge_group` | String | The Lie group under which the fermion fields transform (e.g., U(1) for QED, SU(N) for QCD). | Yes |
 | `fermion_representation` | String | The representation of the gauge group in which the chiral fermions reside. | Yes |
 | `spacetime_dimension` | String | The spacetime dimension in which the anomaly is being evaluated (typically even, e.g., d=4, d=2). | Yes |
+| `user_query` | String | Auto-extracted variable user_query | No |
 
 
 ### Core Instructions
@@ -88,16 +55,28 @@ Spacetime Dimension:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "\frac{e^2}{16\pi^2} \epsilon^{\mu\nu\rho\sigma} F_{\mu\nu} F_{\rho\sigma}"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['\\frac{e^2}{16\\pi^2} \\epsilon^{\\mu\\nu\\rho\\sigma} F_{\\mu\\nu} F_{\\rho\\sigma}']
+```
 
-Input Context: "{}"
-Asserted Output: "\text{tr}(G_{\mu\nu} \tilde{G}^{\mu\nu})"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['\\text{tr}(G_{\\mu\\nu} \\tilde{G}^{\\mu\\nu})']
+```
 
 ---
 
 ## Skill: Ward-Takahashi Identity Path Integral Architect
-<!-- VALIDATION_METADATA: [{"name": "generating_functional", "description": "The explicit mathematical form of the path integral generating functional with source terms.", "required": true}, {"name": "symmetry_transformation", "description": "The continuous local or global symmetry transformation of the fields involved.", "required": true}, {"name": "field_measure", "description": "The functional integration measure of the involved fields.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "generating_functional", "description": "The explicit mathematical form of the path integral generating functional with source terms.", "required": true}, {"name": "symmetry_transformation", "description": "The continuous local or global symmetry transformation of the fields involved.", "required": true}, {"name": "field_measure", "description": "The functional integration measure of the involved fields.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}], "metadata": {}} -->
 ### Description
 Formulates the rigorous derivation of Ward-Takahashi identities from the path integral measure under continuous symmetry transformations, extracting conservation laws and symmetry constraints on n-point Green's functions.
 
@@ -107,6 +86,7 @@ Formulates the rigorous derivation of Ward-Takahashi identities from the path in
 | `generating_functional` | String | The explicit mathematical form of the path integral generating functional with source terms. | Yes |
 | `symmetry_transformation` | String | The continuous local or global symmetry transformation of the fields involved. | Yes |
 | `field_measure` | String | The functional integration measure of the involved fields. | Yes |
+| `user_query` | String | Auto-extracted variable user_query | No |
 
 
 ### Core Instructions
@@ -141,13 +121,19 @@ Field Measure:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "\partial_\mu \langle j^\mu(x) \rangle = \langle \bar{\psi}(x) \gamma^\mu \psi(x) \rangle"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['\\partial_\\mu \\langle j^\\mu(x) \\rangle = \\langle \\bar{\\psi}(x) \\gamma^\\mu \\psi(x) \\rangle']
+```
 
 ---
 
 ## Skill: Coleman-Weinberg Effective Potential Architect
-<!-- VALIDATION_METADATA: [{"name": "classical_potential", "description": "The explicit mathematical form of the classical (tree-level) scalar potential, specifically lacking a negative mass-squared term.", "required": true}, {"name": "field_content", "description": "The full spectrum of fields coupling to the classical scalar background (e.g., scalar, Dirac fermions, gauge bosons) and their interaction Lagrangians.", "required": true}, {"name": "renormalization_condition", "description": "The explicit renormalization conditions (e.g., specifying the renormalization scale M and the values of the potential's derivatives at M).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "classical_potential", "description": "The explicit mathematical form of the classical (tree-level) scalar potential, specifically lacking a negative mass-squared term.", "required": true}, {"name": "field_content", "description": "The full spectrum of fields coupling to the classical scalar background (e.g., scalar, Dirac fermions, gauge bosons) and their interaction Lagrangians.", "required": true}, {"name": "renormalization_condition", "description": "The explicit renormalization conditions (e.g., specifying the renormalization scale M and the values of the potential's derivatives at M).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}], "metadata": {}} -->
 ### Description
 Formulates the rigorous derivation of the one-loop Coleman-Weinberg effective potential, demonstrating dynamical symmetry breaking via radiative corrections in quantum field theories.
 
@@ -157,6 +143,7 @@ Formulates the rigorous derivation of the one-loop Coleman-Weinberg effective po
 | `classical_potential` | String | The explicit mathematical form of the classical (tree-level) scalar potential, specifically lacking a negative mass-squared term. | Yes |
 | `field_content` | String | The full spectrum of fields coupling to the classical scalar background (e.g., scalar, Dirac fermions, gauge bosons) and their interaction Lagrangians. | Yes |
 | `renormalization_condition` | String | The explicit renormalization conditions (e.g., specifying the renormalization scale M and the values of the potential's derivatives at M). | Yes |
+| `user_query` | String | Auto-extracted variable user_query | No |
 
 
 ### Core Instructions
@@ -195,19 +182,30 @@ Renormalization Condition:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "V_{eff} = \frac{\lambda}{4!} \phi^4 + \frac{\lambda^2 \phi^4}{256 \pi^2} \left( \ln \frac{\phi^2}{M^2} - \frac{25}{6} \right)"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['V_{eff} = \\frac{\\lambda}{4!} \\phi^4 + \\frac{\\lambda^2 \\phi^4}{256 \\pi^2} \\left( \\ln \\frac{\\phi^2}{M^2} - \\frac{25}{6} \\right)']
+```
 
-Input Context: "{}"
-Asserted Output: "\frac{3 e^4 \phi^4}{64 \pi^2}"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['\\frac{3 e^4 \\phi^4}{64 \\pi^2}']
+```
 
 ---
 
 ## Skill: effective_field_theory_matching_rg_running_architect
-<!-- VALIDATION_METADATA: [{"name": "uv_lagrangian", "description": "The full, high-energy Lagrangian containing both heavy and light degrees of freedom (LaTeX format)."}, {"name": "light_degrees_of_freedom", "description": "A complete specification of the low-energy particle content and their transformation properties under the relevant gauge groups (LaTeX format)."}, {"name": "matching_scale", "description": "The energy scale at which the heavy degrees of freedom are integrated out, typically the mass of the heavy particle."}, {"name": "loop_order", "description": "The order in perturbation theory at which the matching and anomalous dimensions should be calculated (e.g., 'tree-level', 'one-loop')."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "uv_lagrangian", "description": "The full, high-energy Lagrangian containing both heavy and light degrees of freedom (LaTeX format)."}, {"name": "light_degrees_of_freedom", "description": "A complete specification of the low-energy particle content and their transformation properties under the relevant gauge groups (LaTeX format)."}, {"name": "matching_scale", "description": "The energy scale at which the heavy degrees of freedom are integrated out, typically the mass of the heavy particle."}, {"name": "loop_order", "description": "The order in perturbation theory at which the matching and anomalous dimensions should be calculated (e.g., 'tree-level', 'one-loop')."}], "metadata": {}} -->
 ### Description
 A highly rigorous Theoretical Physics Genesis Architect designed to perform tree-level and one-loop matching of an ultraviolet (UV) complete theory onto an Effective Field Theory (EFT), followed by the derivation and integration of Renormalization Group (RG) equations for the corresponding Wilson coefficients.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -272,16 +270,28 @@ Loop Order for Matching and RGEs:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Callan-Symanzik Beta Function Architect
-<!-- VALIDATION_METADATA: [{"name": "lagrangian_density", "description": "The explicit mathematical form of the bare Lagrangian density, including interaction terms.", "required": true}, {"name": "regularization_scheme", "description": "The specified regularization scheme (e.g., Dimensional Regularization).", "required": true}, {"name": "coupling_constant", "description": "The coupling constant for which the beta function is to be derived.", "required": true}, {"name": "user_input", "description": "Auto-extracted variable user_input", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "lagrangian_density", "description": "The explicit mathematical form of the bare Lagrangian density, including interaction terms.", "required": true}, {"name": "regularization_scheme", "description": "The specified regularization scheme (e.g., Dimensional Regularization).", "required": true}, {"name": "coupling_constant", "description": "The coupling constant for which the beta function is to be derived.", "required": true}, {"name": "user_input", "description": "Auto-extracted variable user_input", "required": false}], "metadata": {}} -->
 ### Description
 Derives Callan-Symanzik equations, calculates beta functions at one-loop order, and analyzes renormalization group flow for theoretical quantum field models.
 
@@ -291,6 +301,7 @@ Derives Callan-Symanzik equations, calculates beta functions at one-loop order, 
 | `lagrangian_density` | String | The explicit mathematical form of the bare Lagrangian density, including interaction terms. | Yes |
 | `regularization_scheme` | String | The specified regularization scheme (e.g., Dimensional Regularization). | Yes |
 | `coupling_constant` | String | The coupling constant for which the beta function is to be derived. | Yes |
+| `user_input` | String | Auto-extracted variable user_input | No |
 
 
 ### Core Instructions
@@ -326,16 +337,28 @@ Coupling Constant:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Schwinger-Dyson Equation Architect
-<!-- VALIDATION_METADATA: [{"name": "target_lagrangian", "description": "The mathematical formulation of the target Lagrangian density (e.g., QED Lagrangian, scalar phi-fourth theory).", "required": true}, {"name": "field_variable", "description": "The specific quantum field variable for which the equation is derived (e.g., fermion field psi, scalar field phi).", "required": true}, {"name": "n_point_function", "description": "The specific n-point Green's function to be targeted (e.g., 2-point propagator, 3-point vertex).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "target_lagrangian", "description": "The mathematical formulation of the target Lagrangian density (e.g., QED Lagrangian, scalar phi-fourth theory).", "required": true}, {"name": "field_variable", "description": "The specific quantum field variable for which the equation is derived (e.g., fermion field psi, scalar field phi).", "required": true}, {"name": "n_point_function", "description": "The specific n-point Green's function to be targeted (e.g., 2-point propagator, 3-point vertex).", "required": true}], "metadata": {}} -->
 ### Description
 A highly specialized theoretical physics prompt for the rigorous mathematical derivation of non-perturbative Schwinger-Dyson equations for n-point Green's functions.
 
@@ -377,16 +400,28 @@ N-Point Function: {{ n_point_function }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Schwinger-Dyson"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Schwinger-Dyson']
+```
 
-Input Context: "{}"
-Asserted Output: "Z[J]"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Z[J]']
+```
 
 ---
 
 ## Skill: Feynman Rule Derivation Architect
-<!-- VALIDATION_METADATA: [{"name": "lagrangian_density", "description": "The explicit mathematical form of the novel interaction Lagrangian density.", "required": true}, {"name": "field_content", "description": "The particle fields involved (e.g., scalar, spinor, vector gauge fields) and their quantum numbers.", "required": true}, {"name": "symmetry_group", "description": "The internal symmetry or gauge group of the theory (e.g., SU(N), U(1)).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "lagrangian_density", "description": "The explicit mathematical form of the novel interaction Lagrangian density.", "required": true}, {"name": "field_content", "description": "The particle fields involved (e.g., scalar, spinor, vector gauge fields) and their quantum numbers.", "required": true}, {"name": "symmetry_group", "description": "The internal symmetry or gauge group of the theory (e.g., SU(N), U(1)).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}], "metadata": {}} -->
 ### Description
 Derives Feynman rules and vertex factors from novel Lagrangians in Quantum Field Theory, applying exact field contractions and rigorous mathematical notation.
 
@@ -396,6 +431,7 @@ Derives Feynman rules and vertex factors from novel Lagrangians in Quantum Field
 | `lagrangian_density` | String | The explicit mathematical form of the novel interaction Lagrangian density. | Yes |
 | `field_content` | String | The particle fields involved (e.g., scalar, spinor, vector gauge fields) and their quantum numbers. | Yes |
 | `symmetry_group` | String | The internal symmetry or gauge group of the theory (e.g., SU(N), U(1)). | Yes |
+| `user_query` | String | Auto-extracted variable user_query | No |
 
 
 ### Core Instructions
@@ -431,16 +467,28 @@ Symmetry Group:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "-i\lambda"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['-i\\lambda']
+```
 
-Input Context: "{}"
-Asserted Output: "-ig\gamma^\mu"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['-ig\\gamma^\\mu']
+```
 
 ---
 
 ## Skill: Schwinger-Keldysh Non-Equilibrium Path Integral Architect
-<!-- VALIDATION_METADATA: [{"name": "lagrangian_density", "description": "The explicit mathematical form of the system's Lagrangian density, including any time-dependent couplings.", "required": true}, {"name": "initial_density_matrix", "description": "The functional form of the initial statistical density matrix $\\rho(t_0)$.", "required": true}, {"name": "observable", "description": "The specific real-time observable or n-point correlation function to be computed.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "lagrangian_density", "description": "The explicit mathematical form of the system's Lagrangian density, including any time-dependent couplings.", "required": true}, {"name": "initial_density_matrix", "description": "The functional form of the initial statistical density matrix $\\rho(t_0)$.", "required": true}, {"name": "observable", "description": "The specific real-time observable or n-point correlation function to be computed.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}], "metadata": {}} -->
 ### Description
 Formulates the rigorous Schwinger-Keldysh (in-in) closed-time path integral formalism to compute real-time Green's functions and analyze non-equilibrium quantum dynamics.
 
@@ -450,6 +498,7 @@ Formulates the rigorous Schwinger-Keldysh (in-in) closed-time path integral form
 | `lagrangian_density` | String | The explicit mathematical form of the system's Lagrangian density, including any time-dependent couplings. | Yes |
 | `initial_density_matrix` | String | The functional form of the initial statistical density matrix $\rho(t_0)$. | Yes |
 | `observable` | String | The specific real-time observable or n-point correlation function to be computed. | Yes |
+| `user_query` | String | Auto-extracted variable user_query | No |
 
 
 ### Core Instructions
@@ -484,16 +533,28 @@ Target Observable:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Z[J_+, J_-]"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Z[J_+, J_-]']
+```
 
-Input Context: "{}"
-Asserted Output: "Keldysh propagator"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Keldysh propagator']
+```
 
 ---
 
 ## Skill: BRST Quantization and Faddeev-Popov Ghost Architect
-<!-- VALIDATION_METADATA: [{"name": "classical_action", "description": "The explicit mathematical form of the classical gauge-invariant action.", "required": true}, {"name": "gauge_transformation", "description": "The infinitesimal gauge transformations of the fields involved.", "required": true}, {"name": "gauge_fixing_condition", "description": "The specific functional form of the gauge-fixing condition (e.g., Lorentz gauge, $R_\\\\xi$ gauge).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "classical_action", "description": "The explicit mathematical form of the classical gauge-invariant action.", "required": true}, {"name": "gauge_transformation", "description": "The infinitesimal gauge transformations of the fields involved.", "required": true}, {"name": "gauge_fixing_condition", "description": "The specific functional form of the gauge-fixing condition (e.g., Lorentz gauge, $R_\\\\xi$ gauge).", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}], "metadata": {}} -->
 ### Description
 Formulates the rigorous BRST quantization of gauge theories, extracting the complete effective Lagrangian including Faddeev-Popov ghost terms and gauge-fixing structures.
 
@@ -503,6 +564,7 @@ Formulates the rigorous BRST quantization of gauge theories, extracting the comp
 | `classical_action` | String | The explicit mathematical form of the classical gauge-invariant action. | Yes |
 | `gauge_transformation` | String | The infinitesimal gauge transformations of the fields involved. | Yes |
 | `gauge_fixing_condition` | String | The specific functional form of the gauge-fixing condition (e.g., Lorentz gauge, $R_\\xi$ gauge). | Yes |
+| `user_query` | String | Auto-extracted variable user_query | No |
 
 
 ### Core Instructions
@@ -538,8 +600,20 @@ Gauge-Fixing Condition:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "s \bar{c}^a = B^a"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['s \\bar{c}^a = B^a']
+```
 
-Input Context: "{}"
-Asserted Output: "s c = 0"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['s c = 0']
+```

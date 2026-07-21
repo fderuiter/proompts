@@ -1,18 +1,3 @@
----
-tags:
-  - algorithmic
-  - analytics
-  - attribution
-  - causal
-  - domain:growth/analytics
-  - incrementality
-  - inference
-  - modeler
-  - multi
-  - skill
-  - touch
----
-
 # Domain Agent Skills: Growth Analytics
 
 ## Metadata
@@ -23,7 +8,7 @@ tags:
 ---
 
 ## Skill: incrementality_causal_inference_modeler
-<!-- VALIDATION_METADATA: [{"name": "experimental_design_data", "type": "string", "description": "Data outlining the holdout groups, test groups, and baseline conversion metrics."}, {"name": "intervention_costs", "type": "string", "description": "Total spend allocated to the marketing intervention being tested."}, {"name": "revenue_metrics", "type": "string", "description": "Average Revenue Per User and Gross Margin data for the test cohorts."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "experimental_design_data", "type": "string", "description": "Data outlining the holdout groups, test groups, and baseline conversion metrics."}, {"name": "intervention_costs", "type": "string", "description": "Total spend allocated to the marketing intervention being tested."}, {"name": "revenue_metrics", "type": "string", "description": "Average Revenue Per User and Gross Margin data for the test cohorts."}], "metadata": {}} -->
 ### Description
 Formulates rigorous causal inference and incrementality testing frameworks to isolate the true causal impact of marketing interventions across the AARRR funnel.
 
@@ -70,13 +55,19 @@ Execute a critical causal inference analysis and incrementality test evaluation 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A comprehensive difference-in-differences analysis calculating the ATE, isolating incremental revenue, and determining iROAS using strict LaTeX formatting, with capital reallocation recommendations."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A comprehensive difference-in-differences analysis calculating the ATE, isolating incremental revenue, and determining iROAS using strict LaTeX formatting, with capital reallocation recommendations.']
+```
 
 ---
 
 ## Skill: algorithmic_multi_touch_attribution_modeler
-<!-- VALIDATION_METADATA: [{"name": "customer_journey_data", "type": "string", "description": "Raw sequence data of customer touchpoints and conversion outcomes."}, {"name": "marketing_channels", "type": "string", "description": "List of active marketing channels and associated spend metrics."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "customer_journey_data", "type": "string", "description": "Raw sequence data of customer touchpoints and conversion outcomes."}, {"name": "marketing_channels", "type": "string", "description": "List of active marketing channels and associated spend metrics."}], "metadata": {}} -->
 ### Description
 Formulates rigorous algorithmic multi-touch attribution (MTA) models using Markov chains and Shapley values to dynamically allocate fractional credit across complex B2B enterprise SaaS marketing touchpoints.
 
@@ -118,5 +109,11 @@ Please output the transition matrix, Shapley value calculations, and your finali
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

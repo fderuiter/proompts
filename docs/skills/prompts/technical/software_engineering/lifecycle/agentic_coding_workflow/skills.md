@@ -1,16 +1,3 @@
----
-tags:
-  - brief
-  - domain:technical
-  - epic
-  - product
-  - project
-  - sdlc
-  - skill
-  - software-engineering
-  - template
----
-
 # Domain Agent Skills: Technical Software engineering Lifecycle Agentic coding workflow
 
 ## Metadata
@@ -21,7 +8,7 @@ tags:
 ---
 
 ## Skill: Project Brief for Epic
-<!-- VALIDATION_METADATA: [{"name": "business_rules", "description": "domain logic", "required": true}, {"name": "data_models", "description": "entities and types", "required": true}, {"name": "key_features", "description": "features or milestones", "required": true}, {"name": "project_description", "description": "summary of the epic", "required": true}, {"name": "success_metrics", "description": "measurements of success", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "business_rules", "description": "domain logic", "required": true}, {"name": "data_models", "description": "entities and types", "required": true}, {"name": "key_features", "description": "features or milestones", "required": true}, {"name": "project_description", "description": "summary of the epic", "required": true}, {"name": "success_metrics", "description": "measurements of success", "required": true}], "metadata": {}} -->
 ### Description
 Summarize a project epic with key features, rules, and success metrics.
 
@@ -63,14 +50,19 @@ Markdown sections titled **Project Description**, **Key Features**, **Technical 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{success_metrics: example_success_metrics, business_rules: example_business_rules,
-  data_models: example_data_models, key_features: example_key_features, project_description: example_project_description}"
-Asserted Output: "Markdown sections titled **Project Description**, **Key Features**, **Technical Entities & Data Models**, **Business Rules & Logic**, **Success Metrics**, and **Additional Implementation Details**."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Markdown sections titled **Project Description**, **Key Features**, **Technical Entities & Data Models**, **Business Rules & Logic**, **Success Metrics**, and **Additional Implementation Details**.']
+```
 
 ---
 
 ## Skill: Product Brief Template
-<!-- VALIDATION_METADATA: [{"name": "architecture", "description": "overview of proposed architecture", "required": true}, {"name": "context_notes", "description": "constraints or risks", "required": true}, {"name": "features", "description": "feature list organised by phase", "required": true}, {"name": "vision", "description": "short statement of the desired end state", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "architecture", "description": "overview of proposed architecture", "required": true}, {"name": "context_notes", "description": "constraints or risks", "required": true}, {"name": "features", "description": "feature list organised by phase", "required": true}, {"name": "vision", "description": "short statement of the desired end state", "required": true}], "metadata": {}} -->
 ### Description
 Outline the high-level vision, features, and architecture for a new software project.
 
@@ -108,6 +100,11 @@ Markdown sections titled **Vision**, **Key Features and Roadmap**, **Overall Arc
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{vision: example_vision, architecture: example_architecture, features: example_features,
-  context_notes: example_context_notes}"
-Asserted Output: "Markdown sections titled **Vision**, **Key Features and Roadmap**, **Overall Architecture**, and **Additional Context**."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Markdown sections titled **Vision**, **Key Features and Roadmap**, **Overall Architecture**, and **Additional Context**.']
+```

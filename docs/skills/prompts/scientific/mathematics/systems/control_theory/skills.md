@@ -1,17 +1,3 @@
----
-tags:
-  - adaptive-control
-  - algorithmic-control
-  - domain:control_theory
-  - mpc
-  - noisy-systems
-  - optimal-control
-  - parameter-estimation
-  - robustness
-  - skill
-  - stochastic-systems
----
-
 # Domain Agent Skills: Scientific Mathematics Systems Control theory
 
 ## Metadata
@@ -22,7 +8,7 @@ tags:
 ---
 
 ## Skill: Adaptive Control Loop Tuning Architect
-<!-- VALIDATION_METADATA: [{"name": "PLANT_DYNAMICS", "description": "Detailed mathematical representation of the unknown or varying plant dynamics (e.g., non-stationary ARMAX models, nonlinear differential equations with time-varying parameters).", "type": "string", "required": true}, {"name": "DISTURBANCE_PROFILE", "description": "Characterization of the noise, unmodeled dynamics, and persistent external disturbances affecting the system.", "type": "string", "required": true}, {"name": "PERFORMANCE_OBJECTIVES", "description": "Control objectives, including reference tracking fidelity, disturbance rejection requirements, and acceptable transient bounds.", "type": "string", "required": true}, {"name": "disturbance_profile", "description": "Auto-extracted variable disturbance_profile", "required": false}, {"name": "performance_objectives", "description": "Auto-extracted variable performance_objectives", "required": false}, {"name": "plant_dynamics", "description": "Auto-extracted variable plant_dynamics", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "PLANT_DYNAMICS", "description": "Detailed mathematical representation of the unknown or varying plant dynamics (e.g., non-stationary ARMAX models, nonlinear differential equations with time-varying parameters).", "type": "string", "required": true}, {"name": "DISTURBANCE_PROFILE", "description": "Characterization of the noise, unmodeled dynamics, and persistent external disturbances affecting the system.", "type": "string", "required": true}, {"name": "PERFORMANCE_OBJECTIVES", "description": "Control objectives, including reference tracking fidelity, disturbance rejection requirements, and acceptable transient bounds.", "type": "string", "required": true}, {"name": "disturbance_profile", "description": "Auto-extracted variable disturbance_profile", "required": false}, {"name": "performance_objectives", "description": "Auto-extracted variable performance_objectives", "required": false}, {"name": "plant_dynamics", "description": "Auto-extracted variable plant_dynamics", "required": false}], "metadata": {}} -->
 ### Description
 Formulates mathematically rigorous adaptive control loop tuning algorithms for highly noisy, non-stationary dynamical systems under persistent disturbances.
 
@@ -32,6 +18,9 @@ Formulates mathematically rigorous adaptive control loop tuning algorithms for h
 | `PLANT_DYNAMICS` | String | Detailed mathematical representation of the unknown or varying plant dynamics (e.g., non-stationary ARMAX models, nonlinear differential equations with time-varying parameters). | Yes |
 | `DISTURBANCE_PROFILE` | String | Characterization of the noise, unmodeled dynamics, and persistent external disturbances affecting the system. | Yes |
 | `PERFORMANCE_OBJECTIVES` | String | Control objectives, including reference tracking fidelity, disturbance rejection requirements, and acceptable transient bounds. | Yes |
+| `disturbance_profile` | String | Auto-extracted variable disturbance_profile | No |
+| `performance_objectives` | String | Auto-extracted variable performance_objectives | No |
+| `plant_dynamics` | String | Auto-extracted variable plant_dynamics | No |
 
 
 ### Core Instructions
@@ -54,16 +43,28 @@ Please formulate the adaptive control architecture for the following scenario:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Robust Parameter Estimation Algorithm"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Robust Parameter Estimation Algorithm']
+```
 
-Input Context: "{}"
-Asserted Output: "ERROR: Constraint violation detected."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['ERROR: Constraint violation detected.']
+```
 
 ---
 
 ## Skill: Stochastic Model Predictive Control (MPC) Architect
-<!-- VALIDATION_METADATA: [{"name": "SYSTEM_DYNAMICS", "description": "Detailed mathematical description of the plant's state-space representation, including nonlinear dynamics, stochastic noise models, and bounded disturbances."}, {"name": "CONTROL_OBJECTIVES", "description": "Definition of the optimization objectives, including stage costs, terminal costs, reference tracking targets, and economic performance metrics."}, {"name": "SYSTEM_CONSTRAINTS", "description": "Specification of control input constraints, state constraints, and probabilistic/chance constraints, detailing acceptable violation probabilities."}, {"name": "control_objectives", "description": "Auto-extracted variable control_objectives", "required": false}, {"name": "system_constraints", "description": "Auto-extracted variable system_constraints", "required": false}, {"name": "system_dynamics", "description": "Auto-extracted variable system_dynamics", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "SYSTEM_DYNAMICS", "description": "Detailed mathematical description of the plant's state-space representation, including nonlinear dynamics, stochastic noise models, and bounded disturbances."}, {"name": "CONTROL_OBJECTIVES", "description": "Definition of the optimization objectives, including stage costs, terminal costs, reference tracking targets, and economic performance metrics."}, {"name": "SYSTEM_CONSTRAINTS", "description": "Specification of control input constraints, state constraints, and probabilistic/chance constraints, detailing acceptable violation probabilities."}, {"name": "control_objectives", "description": "Auto-extracted variable control_objectives", "required": false}, {"name": "system_constraints", "description": "Auto-extracted variable system_constraints", "required": false}, {"name": "system_dynamics", "description": "Auto-extracted variable system_dynamics", "required": false}], "metadata": {}} -->
 ### Description
 Formulates mathematically rigorous, robust, and stochastic Model Predictive Control (MPC) frameworks for complex dynamical systems subject to noise and uncertainty.
 
@@ -73,6 +74,9 @@ Formulates mathematically rigorous, robust, and stochastic Model Predictive Cont
 | `SYSTEM_DYNAMICS` | String | Detailed mathematical description of the plant's state-space representation, including nonlinear dynamics, stochastic noise models, and bounded disturbances. | Yes |
 | `CONTROL_OBJECTIVES` | String | Definition of the optimization objectives, including stage costs, terminal costs, reference tracking targets, and economic performance metrics. | Yes |
 | `SYSTEM_CONSTRAINTS` | String | Specification of control input constraints, state constraints, and probabilistic/chance constraints, detailing acceptable violation probabilities. | Yes |
+| `control_objectives` | String | Auto-extracted variable control_objectives | No |
+| `system_constraints` | String | Auto-extracted variable system_constraints | No |
+| `system_dynamics` | String | Auto-extracted variable system_dynamics | No |
 
 
 ### Core Instructions
@@ -95,8 +99,20 @@ Please formulate the Stochastic MPC architecture for the following scenario:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Probabilistic/Chance Constraints"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Probabilistic/Chance Constraints']
+```
 
-Input Context: "{}"
-Asserted Output: "Optimization Problem over Prediction Horizon"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Optimization Problem over Prediction Horizon']
+```

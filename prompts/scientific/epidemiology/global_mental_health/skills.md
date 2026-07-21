@@ -1,14 +1,3 @@
----
-tags:
-  - domain:epidemiology/global_mental_health
-  - epidemiology
-  - global-mental-health
-  - longitudinal
-  - propagation
-  - skill
-  - trauma
----
-
 # Domain Agent Skills: Scientific Epidemiology Global mental health
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: longitudinal_trauma_propagation_modeler
-<!-- VALIDATION_METADATA: [{"name": "POPULATION_DATASET_SCHEMA", "type": "string", "description": "JSON/CSV schema representing longitudinal behavioral proxies and trauma indicators across millions of rows."}, {"name": "TRAUMA_INCIDENCE_VECTORS", "type": "string", "description": "Initial incidence rates and localized trauma seed vectors."}, {"name": "SPATIAL_TEMPORAL_PARAMETERS", "type": "string", "description": "Environmental, demographic, and temporal constraints for the contagion model."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "POPULATION_DATASET_SCHEMA", "type": "string", "description": "JSON/CSV schema representing longitudinal behavioral proxies and trauma indicators across millions of rows."}, {"name": "TRAUMA_INCIDENCE_VECTORS", "type": "string", "description": "Initial incidence rates and localized trauma seed vectors."}, {"name": "SPATIAL_TEMPORAL_PARAMETERS", "type": "string", "description": "Environmental, demographic, and temporal constraints for the contagion model."}], "metadata": {}} -->
 ### Description
 Models the epidemiological propagation of psychological trauma across massive longitudinal population datasets using advanced spatial-temporal network equations and WHO mental health guidelines.
 
@@ -55,5 +44,11 @@ Generate the trauma propagation model and behavioral mitigation architecture bas
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

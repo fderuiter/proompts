@@ -1,14 +1,3 @@
----
-tags:
-  - algebra
-  - domain:scientific/mathematics/algebra/galois_theory
-  - galois
-  - galois-theory
-  - group
-  - mathematics
-  - skill
----
-
 # Domain Agent Skills: Scientific Mathematics Algebra Galois theory
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: galois_group_resolvent_architect
-<!-- VALIDATION_METADATA: [{"name": "POLYNOMIAL", "type": "string", "description": "The base polynomial equation $f(x)$ whose Galois group is to be determined, formatted in LaTeX."}, {"name": "BASE_FIELD", "type": "string", "description": "The algebraic base field $K$ over which the polynomial is defined, formatted in LaTeX."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "POLYNOMIAL", "type": "string", "description": "The base polynomial equation $f(x)$ whose Galois group is to be determined, formatted in LaTeX."}, {"name": "BASE_FIELD", "type": "string", "description": "The algebraic base field $K$ over which the polynomial is defined, formatted in LaTeX."}], "metadata": {}} -->
 ### Description
 Computes rigorous Galois groups of polynomials over finite extensions and formulates Galois resolvents using symmetric group properties and field automorphisms.
 
@@ -55,5 +44,11 @@ Perform the rigorous Galois theoretic analysis.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

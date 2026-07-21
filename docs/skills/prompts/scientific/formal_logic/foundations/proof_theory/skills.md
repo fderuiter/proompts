@@ -1,18 +1,3 @@
----
-tags:
-  - axiomatic
-  - custom
-  - cut-elimination
-  - domain:scientific
-  - domain:scientific/formal_logic/foundations/proof_theory
-  - formal-logic
-  - foundations
-  - proof-theory
-  - sequent-calculus
-  - skill
-  - structural-proof-theory
----
-
 # Domain Agent Skills: Scientific Formal logic Foundations Proof theory
 
 ## Metadata
@@ -23,7 +8,7 @@ tags:
 ---
 
 ## Skill: custom_axiomatic_system_soundness_evaluator
-<!-- VALIDATION_METADATA: [{"name": "axioms", "description": "The formal set of axioms or axiomatic schemas denoted as $\\Sigma$, explicitly formulated using standard logical syntax.", "required": true}, {"name": "inference_rules", "description": "The set of deductive inference rules denoted as $\\mathcal{R}$ (e.g., $\\frac{\\phi, \\phi \\rightarrow \\psi}{\\psi}$), defining the syntactic derivation ($\\vdash$).", "required": true}, {"name": "formal_semantics", "description": "The semantic structures, valid interpretations, and explicit truth conditions defining the satisfaction relation ($\\vDash$) for the system's language.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "axioms", "description": "The formal set of axioms or axiomatic schemas denoted as $\\Sigma$, explicitly formulated using standard logical syntax.", "required": true}, {"name": "inference_rules", "description": "The set of deductive inference rules denoted as $\\mathcal{R}$ (e.g., $\\frac{\\phi, \\phi \\rightarrow \\psi}{\\psi}$), defining the syntactic derivation ($\\vdash$).", "required": true}, {"name": "formal_semantics", "description": "The semantic structures, valid interpretations, and explicit truth conditions defining the satisfaction relation ($\\vDash$) for the system's language.", "required": true}], "metadata": {}} -->
 ### Description
 Systematically verifies the soundness of custom, user-defined axiomatic systems by rigorously evaluating whether every axiom is a logical validity and whether every inference rule strictly preserves truth under the provided formal semantics.
 
@@ -76,16 +61,28 @@ Please execute a formal soundness evaluation for the following custom axiomatic 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: structural_proof_theory_cut_elimination_architect
-<!-- VALIDATION_METADATA: [{"name": "sequent", "description": "The formal logical sequent to process, denoted rigorously using LaTeX.", "required": true}, {"name": "calculus_system", "description": "Specify whether the derivation is in Classical Sequent Calculus (LK) or Intuitionistic Sequent Calculus (LJ).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "sequent", "description": "The formal logical sequent to process, denoted rigorously using LaTeX.", "required": true}, {"name": "calculus_system", "description": "Specify whether the derivation is in Classical Sequent Calculus (LK) or Intuitionistic Sequent Calculus (LJ).", "required": true}], "metadata": {}} -->
 ### Description
 Automates the execution of rigorous cut-elimination procedures (Gentzen's Hauptsatz) for logical sequents in the Sequent Calculus LK and LJ.
 
@@ -124,11 +121,29 @@ Sequent: {{ sequent }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

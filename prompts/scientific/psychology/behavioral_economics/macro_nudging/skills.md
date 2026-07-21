@@ -1,14 +1,3 @@
----
-tags:
-  - behavioral-economics
-  - domain:behavioral_economics
-  - macro
-  - macro-nudging
-  - population
-  - psychology
-  - skill
----
-
 # Domain Agent Skills: Scientific Psychology Behavioral economics Macro nudging
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: population_macro_nudging_architect
-<!-- VALIDATION_METADATA: [{"name": "policy_objective", "description": "The primary public health, economic, or behavioral goal (e.g., maximizing vaccine uptake, reducing mass energy consumption, increasing localized tax compliance)."}, {"name": "population_schema", "description": "Detailed JSON/CSV schema representing the target population data (e.g., demographic clustering, baseline compliance rates, behavioral phenotypes, and historical reactance scores)."}, {"name": "resource_constraints", "description": "Explicit budgetary, temporal, or logistical constraints limiting the macro-nudge deployment (e.g., SMS cost limits, bounded healthcare personnel, timeframe for intervention)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "policy_objective", "description": "The primary public health, economic, or behavioral goal (e.g., maximizing vaccine uptake, reducing mass energy consumption, increasing localized tax compliance)."}, {"name": "population_schema", "description": "Detailed JSON/CSV schema representing the target population data (e.g., demographic clustering, baseline compliance rates, behavioral phenotypes, and historical reactance scores)."}, {"name": "resource_constraints", "description": "Explicit budgetary, temporal, or logistical constraints limiting the macro-nudge deployment (e.g., SMS cost limits, bounded healthcare personnel, timeframe for intervention)."}], "metadata": {}} -->
 ### Description
 A highly analytical prompt designed to engineer population-scale behavioral macro-nudging architectures, formulating mathematical optimization models to maximize public compliance and minimize reactance using rigorous epidemiological and economic constraints.
 
@@ -65,8 +54,20 @@ Proceed with the mathematical formulation, choice architecture strategy, big dat
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

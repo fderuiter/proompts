@@ -8,9 +8,9 @@ Welcome to the Proompts documentation. Select a category below:
 
 - [Business](business.md)
 - [Clinical](clinical.md)
+- [Communication](communication.md)
 - [Management](management.md)
 - [Meta](meta.md)
-- [Prompts](prompts.md)
 - [Scientific](scientific.md)
 - [Technical](technical.md)
 - [Workflows](workflows.md)

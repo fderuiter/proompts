@@ -1,0 +1,22 @@
+
+.md-tabs__link {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+.md-footer-meta .md-copyright {
+    color: #8a8a8a !important;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata,
+.c, .ch, .cm, .cp, .cpf, .c1, .cs,
+.nv, .ow, .na, .gu, .gh {
+  color: #595959 !important;
+}
+
+.md-typeset a {
+    text-decoration: underline;
+}
+

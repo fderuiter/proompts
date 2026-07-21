@@ -1,18 +1,3 @@
----
-tags:
-  - architect
-  - circuit
-  - cryptography
-  - domain:technical
-  - encryption
-  - fully
-  - homomorphic
-  - migration
-  - post
-  - quantum
-  - skill
----
-
 # Domain Agent Skills: Technical Cryptography
 
 ## Metadata
@@ -23,7 +8,7 @@ tags:
 ---
 
 ## Skill: post_quantum_cryptography_migration_architect
-<!-- VALIDATION_METADATA: [{"name": "current_cryptographic_inventory", "description": "A detailed inventory of currently deployed cryptographic algorithms, protocols, and key lengths (e.g., RSA-2048, ECC, TLS 1.2/1.3)."}, {"name": "target_security_level", "description": "The desired NIST post-quantum security category and specific standardized algorithms to adopt (e.g., ML-KEM, ML-DSA)."}, {"name": "operational_constraints", "description": "Performance, bandwidth, hardware, or legacy system constraints affecting the migration."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "current_cryptographic_inventory", "description": "A detailed inventory of currently deployed cryptographic algorithms, protocols, and key lengths (e.g., RSA-2048, ECC, TLS 1.2/1.3)."}, {"name": "target_security_level", "description": "The desired NIST post-quantum security category and specific standardized algorithms to adopt (e.g., ML-KEM, ML-DSA)."}, {"name": "operational_constraints", "description": "Performance, bandwidth, hardware, or legacy system constraints affecting the migration."}], "metadata": {}} -->
 ### Description
 Acts as a Principal Cryptographer to design a mathematically rigorous and operationally secure migration strategy to Post-Quantum Cryptography (PQC) standards.
 
@@ -68,13 +53,19 @@ Operational Constraints:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: fully_homomorphic_encryption_circuit_architect
-<!-- VALIDATION_METADATA: [{"name": "computational_task", "description": "The plaintext function or logic to be evaluated homomorphically (e.g., matrix multiplication, logistic regression inference, private set intersection)."}, {"name": "performance_latency_constraints", "description": "Acceptable execution time bounds, throughput requirements, and hardware availability (e.g., CPU, GPU acceleration, ASIC constraints)."}, {"name": "precision_data_requirements", "description": "Data types involved (integers, floating point), required precision, and expected depth of the multiplicative circuit."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "computational_task", "description": "The plaintext function or logic to be evaluated homomorphically (e.g., matrix multiplication, logistic regression inference, private set intersection)."}, {"name": "performance_latency_constraints", "description": "Acceptable execution time bounds, throughput requirements, and hardware availability (e.g., CPU, GPU acceleration, ASIC constraints)."}, {"name": "precision_data_requirements", "description": "Data types involved (integers, floating point), required precision, and expected depth of the multiplicative circuit."}], "metadata": {}} -->
 ### Description
 Acts as a Principal Cryptographic Engineer and FHE Specialist to design highly optimized Fully Homomorphic Encryption (FHE) circuits, select appropriate schemes, and manage noise budgets.
 
@@ -129,8 +120,20 @@ Precision & Data Requirements:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

@@ -1,41 +1,3 @@
----
-tags:
-  - analysis
-  - architecture
-  - build
-  - buy
-  - debt
-  - decision
-  - design
-  - disruption
-  - domain:business
-  - domain:business/vp_tech_innovation
-  - elevator
-  - expensive
-  - hype
-  - incident
-  - legacy
-  - matrix
-  - modernization
-  - pitch
-  - post-mortem
-  - preventing
-  - program
-  - radar
-  - reality
-  - report
-  - risk-mitigation
-  - skill
-  - strategy
-  - summary
-  - tech
-  - tech-innovation
-  - technical
-  - technology-strategy
-  - upskilling
-  - vendor-management
----
-
 # Domain Agent Skills: Business Vp tech innovation
 
 ## Metadata
@@ -46,7 +8,7 @@ tags:
 ---
 
 ## Skill: Elevator Pitch for Expensive Tech
-<!-- VALIDATION_METADATA: [{"name": "budget", "description": "Budget details or financial constraints", "required": true}, {"name": "current_problem", "description": "The current problem to use for this prompt", "required": true}, {"name": "specific_tools", "description": "The specific tools to use for this prompt", "required": true}, {"name": "technology", "description": "The technology to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "budget", "description": "Budget details or financial constraints", "required": true}, {"name": "current_problem", "description": "The current problem to use for this prompt", "required": true}, {"name": "specific_tools", "description": "The specific tools to use for this prompt", "required": true}, {"name": "technology", "description": "The technology to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Create a persuasive elevator pitch for expensive technology investments focusing on business outcomes.
 
@@ -77,16 +39,19 @@ I need to convince the CFO to approve a <budget>{{ budget }}</budget> budget for
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "budget: $500k
-technology: Data Lakehouse
-current_problem: our reporting is slow and siloed
-specific_tools: Databricks or Snowflake"
-Asserted Output: "reporting"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['reporting']
+```
 
 ---
 
 ## Skill: Legacy Modernization Strategy
-<!-- VALIDATION_METADATA: [{"name": "budget", "description": "Budget details or financial constraints", "required": true}, {"name": "downtime_limit", "description": "The downtime limit to use for this prompt", "required": true}, {"name": "legacy_system", "description": "The legacy system to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "budget", "description": "Budget details or financial constraints", "required": true}, {"name": "downtime_limit", "description": "The downtime limit to use for this prompt", "required": true}, {"name": "legacy_system", "description": "The legacy system to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Create a phased roadmap for migrating legacy systems to modern architectures.
 
@@ -117,15 +82,19 @@ We need to migrate our legacy <legacy_system>{{ legacy_system }}</legacy_system>
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "legacy_system: on-prem ERP
-downtime_limit: 4 hours
-budget: $500k"
-Asserted Output: "Strangler Fig Pattern"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Strangler Fig Pattern']
+```
 
 ---
 
 ## Skill: Post-Mortem / Incident Report Summary
-<!-- VALIDATION_METADATA: [{"name": "cause", "description": "The cause to use for this prompt", "required": true}, {"name": "post_mortem_details", "description": "The post mortem details to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "cause", "description": "The cause to use for this prompt", "required": true}, {"name": "post_mortem_details", "description": "The post mortem details to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Summarize technical post-mortems for a general company audience.
 
@@ -158,14 +127,19 @@ We just experienced a major outage due to <cause>{{ cause }}</cause>. Summarize 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "cause: a DNS configuration error
-post_mortem_details: Root cause was a typo in the zone file. Fix is automated validation of zone files."
-Asserted Output: "resilient"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['resilient']
+```
 
 ---
 
 ## Skill: Strategic Vendor Lock-In Mitigation Architect
-<!-- VALIDATION_METADATA: [{"name": "PROPOSED_TECH_STACK", "type": "string", "description": "The current or proposed enterprise technology stack, including cloud providers, SaaS, and proprietary platforms.", "required": true}, {"name": "BUSINESS_OBJECTIVES", "type": "string", "description": "The primary business goals and constraints (e.g., time-to-market, budget limits, compliance requirements).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "PROPOSED_TECH_STACK", "type": "string", "description": "The current or proposed enterprise technology stack, including cloud providers, SaaS, and proprietary platforms.", "required": true}, {"name": "BUSINESS_OBJECTIVES", "type": "string", "description": "The primary business goals and constraints (e.g., time-to-market, budget limits, compliance requirements).", "required": true}], "metadata": {}} -->
 ### Description
 Analyzes proposed enterprise technology stacks and architects highly rigorous, multi-vendor interoperability and vendor lock-in mitigation strategies.
 
@@ -206,16 +180,28 @@ Please architect a comprehensive vendor lock-in mitigation strategy for the foll
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Preventing Technical Debt
-<!-- VALIDATION_METADATA: [{"name": "refactoring_percentage", "description": "The refactoring percentage to use for this prompt", "required": true}, {"name": "timeframe", "description": "The timeframe to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "refactoring_percentage", "description": "The refactoring percentage to use for this prompt", "required": true}, {"name": "timeframe", "description": "The timeframe to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Justify technical debt reduction to non-technical stakeholders using financial analogies.
 
@@ -244,14 +230,19 @@ Draft a memo to the CEO and Board explaining 'Technical Debt' using a financial 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "refactoring_percentage: 20%
-timeframe: Q4"
-Asserted Output: "credit cards"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['credit cards']
+```
 
 ---
 
 ## Skill: Upskilling Program Design
-<!-- VALIDATION_METADATA: [{"name": "current_tech", "description": "The current tech to use for this prompt", "required": true}, {"name": "target_tech", "description": "The target tech to use for this prompt", "required": true}, {"name": "team_type", "description": "The team type to use for this prompt", "required": true}, {"name": "timeline", "description": "The project timeline or schedule", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "current_tech", "description": "The current tech to use for this prompt", "required": true}, {"name": "target_tech", "description": "The target tech to use for this prompt", "required": true}, {"name": "team_type", "description": "The team type to use for this prompt", "required": true}, {"name": "timeline", "description": "The project timeline or schedule", "required": true}], "metadata": {}} -->
 ### Description
 Design a technical upskilling curriculum for engineering teams.
 
@@ -283,16 +274,19 @@ I need to transition my <team_type>{{ team_type }}</team_type> team from <curren
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "team_type: backend
-current_tech: Java
-target_tech: Go (Golang)
-timeline: 6 months"
-Asserted Output: "Hackathon"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Hackathon']
+```
 
 ---
 
 ## Skill: Disruption Radar
-<!-- VALIDATION_METADATA: [{"name": "core_product", "description": "The product or offering being discussed", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "core_product", "description": "The product or offering being discussed", "required": true}], "metadata": {}} -->
 ### Description
 Identify emerging threats and startups that could disrupt core products.
 
@@ -320,13 +314,19 @@ Identify 5 startups or emerging technologies that threaten to disrupt our curren
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "core_product: Enterprise CRM"
-Asserted Output: "Likelihood of Success"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Likelihood of Success']
+```
 
 ---
 
 ## Skill: Build vs. Buy Decision Matrix
-<!-- VALIDATION_METADATA: [{"name": "function", "description": "The function to use for this prompt", "required": true}, {"name": "team_capacity", "description": "The team capacity to use for this prompt", "required": true}, {"name": "vendor", "description": "The vendor to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "function", "description": "The function to use for this prompt", "required": true}, {"name": "team_capacity", "description": "The team capacity to use for this prompt", "required": true}, {"name": "vendor", "description": "The vendor to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Create a weighted decision matrix for evaluating build vs. buy options.
 
@@ -357,15 +357,19 @@ We need a solution for <function>{{ function }}</function>. I am debating buildi
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "function: Identity Management
-vendor: Auth0
-team_capacity: 90%"
-Asserted Output: "Total Cost of Ownership"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Total Cost of Ownership']
+```
 
 ---
 
 ## Skill: Hype vs. Reality Analysis
-<!-- VALIDATION_METADATA: [{"name": "industry", "description": "The industry or sector", "required": true}, {"name": "technology", "description": "The technology to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "industry", "description": "The industry or sector", "required": true}, {"name": "technology", "description": "The technology to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Evaluate a specific technology for pragmatic application, cutting through the hype.
 
@@ -427,5 +431,11 @@ Use strict Markdown with the following headers:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{technology: Generative AI for Code, industry: Enterprise SaaS}"
-Asserted Output: "## The Reality"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['## The Reality']
+```

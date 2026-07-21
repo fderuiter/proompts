@@ -1,22 +1,3 @@
----
-tags:
-  - agreement
-  - clinical
-  - cta
-  - domain:clinical
-  - enrollment
-  - forecaster
-  - irb
-  - plan
-  - selection
-  - single
-  - site
-  - site-acquisition
-  - skill
-  - submission
-  - trial
----
-
 # Domain Agent Skills: Clinical Site acquisition
 
 ## Metadata
@@ -27,7 +8,7 @@ tags:
 ---
 
 ## Skill: Clinical Trial Agreement (CTA) Negotiation
-<!-- VALIDATION_METADATA: [{"name": "cta_draft", "description": "The cta draft to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "cta_draft", "description": "The cta draft to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Review CTA for missing clauses.
 
@@ -56,15 +37,19 @@ Markdown CTA Review.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "cta_draft: Standard CTA template.
-"
-Asserted Output: "CTA Review
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['CTA Review\n']
+```
 
 ---
 
 ## Skill: Single IRB (sIRB) Plan Submission
-<!-- VALIDATION_METADATA: [{"name": "grant_details", "description": "The grant details to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "grant_details", "description": "The grant details to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Generate sIRB Plan and communication strategy.
 
@@ -93,15 +78,19 @@ Markdown sIRB Plan.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "grant_details: Multi-site study with 5 centers.
-"
-Asserted Output: "sIRB Plan
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['sIRB Plan\n']
+```
 
 ---
 
 ## Skill: Site Selection and Enrollment Forecaster
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "feasibility_data", "description": "Auto-extracted variable feasibility_data", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "feasibility_data", "description": "Auto-extracted variable feasibility_data", "required": false}], "metadata": {}} -->
 ### Description
 Analyze historical site performance and patient demographics to rank investigative sites and predict enrollment timelines.
 
@@ -109,6 +98,7 @@ Analyze historical site performance and patient demographics to rank investigati
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | `input` | String | The primary input or query text for the prompt | Yes |
+| `feasibility_data` | String | Auto-extracted variable feasibility_data | No |
 
 
 ### Core Instructions
@@ -142,7 +132,11 @@ Input data (site history, demographics, startup timelines) is in `<feasibility_d
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Site A: 5 previous trials, 120% enrollment target met. Urban location. Diverse population.
-Site B: 1 trial, 50% enrollment. Rural.
-Site C: New site. Large database."
-Asserted Output: "Site A"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Site A']
+```

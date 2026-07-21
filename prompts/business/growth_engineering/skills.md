@@ -1,22 +1,3 @@
----
-tags:
-  - aarrr-funnel
-  - attribution-modeling
-  - behavioral-science
-  - data-science
-  - domain:business
-  - financial-modeling
-  - go-to-market
-  - growth-engineering
-  - marketing-automation
-  - performance-marketing
-  - pricing-strategy
-  - product-marketing
-  - retention-strategy
-  - rfm-analysis
-  - skill
----
-
 # Domain Agent Skills: Business Growth engineering
 
 ## Metadata
@@ -27,7 +8,7 @@ tags:
 ---
 
 ## Skill: GTM Pricing Elasticity Architect
-<!-- VALIDATION_METADATA: [{"name": "product_value_proposition", "description": "Detailed breakdown of the core enterprise SaaS product, including unique value metrics, competitive differentiation, and feature gating.", "required": true}, {"name": "target_market_segments", "description": "Definitions of the targeted customer cohorts, including firmographics, current software spend, and alternative solutions.", "required": true}, {"name": "financial_constraints", "description": "Required Gross Margins, Customer Acquisition Costs (CAC), and overall target Return on Ad Spend (ROAS) constraints.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "product_value_proposition", "description": "Detailed breakdown of the core enterprise SaaS product, including unique value metrics, competitive differentiation, and feature gating.", "required": true}, {"name": "target_market_segments", "description": "Definitions of the targeted customer cohorts, including firmographics, current software spend, and alternative solutions.", "required": true}, {"name": "financial_constraints", "description": "Required Gross Margins, Customer Acquisition Costs (CAC), and overall target Return on Ad Spend (ROAS) constraints.", "required": true}], "metadata": {}} -->
 ### Description
 Constructs deeply rigorous Go-To-Market (GTM) pricing elasticity matrices, modeling price sensitivity, optimal revenue maximization points, and willingness-to-pay using advanced econometric frameworks.
 
@@ -75,16 +56,28 @@ Engineer a Go-To-Market pricing elasticity architecture based on the following p
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "GTM Pricing Elasticity Matrix and AARRR integration."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['GTM Pricing Elasticity Matrix and AARRR integration.']
+```
 
-Input Context: "{}"
-Asserted Output: "Usage-based Elasticity Modeling and LTV/CAC calculus."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Usage-based Elasticity Modeling and LTV/CAC calculus.']
+```
 
 ---
 
 ## Skill: Cross-Channel Behavioral Trigger Architect
-<!-- VALIDATION_METADATA: [{"name": "user_telemetry_data", "description": "Detailed behavioral events, engagement scoring, and drop-off points within the application.", "required": true}, {"name": "channel_architecture", "description": "Available touchpoints (e.g., email, in-app modal, SMS, push) and their respective costs/constraints.", "required": true}, {"name": "financial_targets", "description": "Required metrics for Customer Lifetime Value, Customer Acquisition Cost, and Return on Ad Spend constraints.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "user_telemetry_data", "description": "Detailed behavioral events, engagement scoring, and drop-off points within the application.", "required": true}, {"name": "channel_architecture", "description": "Available touchpoints (e.g., email, in-app modal, SMS, push) and their respective costs/constraints.", "required": true}, {"name": "financial_targets", "description": "Required metrics for Customer Lifetime Value, Customer Acquisition Cost, and Return on Ad Spend constraints.", "required": true}], "metadata": {}} -->
 ### Description
 Constructs complex, predictive cross-channel behavioral trigger sequences for enterprise SaaS, optimizing for acquisition, activation, and churn mitigation using advanced behavioral modeling.
 
@@ -132,16 +125,28 @@ Engineer a predictive cross-channel behavioral trigger sequence based on the fol
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Complex behavioral tree and AARRR analysis."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Complex behavioral tree and AARRR analysis.']
+```
 
-Input Context: "{}"
-Asserted Output: "Multi-touch activation sequence with exact threshold mapping."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Multi-touch activation sequence with exact threshold mapping.']
+```
 
 ---
 
 ## Skill: Predictive RFM Churn Mitigation Architect
-<!-- VALIDATION_METADATA: [{"name": "customer_dataset", "description": "Raw cohort data including transaction logs, product usage frequency, support ticket volume, and account tenure.", "required": true}, {"name": "financial_metrics", "description": "Key financial indicators such as ARPU, Gross Margin, and historic Churn Rate.", "required": true}, {"name": "growth_objectives", "description": "Strict retention targets and maximum allowable Customer Acquisition Cost (CAC) vs Lifetime Value (LTV) constraints.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "customer_dataset", "description": "Raw cohort data including transaction logs, product usage frequency, support ticket volume, and account tenure.", "required": true}, {"name": "financial_metrics", "description": "Key financial indicators such as ARPU, Gross Margin, and historic Churn Rate.", "required": true}, {"name": "growth_objectives", "description": "Strict retention targets and maximum allowable Customer Acquisition Cost (CAC) vs Lifetime Value (LTV) constraints.", "required": true}], "metadata": {}} -->
 ### Description
 Constructs deeply rigorous, predictive churn mitigation workflows using advanced Recency-Frequency-Monetary (RFM) analysis and the AARRR funnel for enterprise growth strategy.
 
@@ -189,16 +194,28 @@ Engineer a predictive RFM churn mitigation strategy using the following paramete
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Predictive RFM Churn Mitigation Workflow"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Predictive RFM Churn Mitigation Workflow']
+```
 
-Input Context: "{}"
-Asserted Output: "Predictive RFM Churn Mitigation Workflow"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Predictive RFM Churn Mitigation Workflow']
+```
 
 ---
 
 ## Skill: Algorithmic Multi-Touch Attribution Architect
-<!-- VALIDATION_METADATA: [{"name": "user_journey_data", "description": "Raw clickstream data, ad exposure logs, and conversion event sequences across all marketing channels.", "required": true}, {"name": "channel_costs", "description": "Financial expenditure data for each marketing channel, required for rigorous ROI/ROAS mapping.", "required": true}, {"name": "business_constraints", "description": "The maximum allowable Customer Acquisition Cost (CAC), required payback periods, and specific attribution window lengths.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "user_journey_data", "description": "Raw clickstream data, ad exposure logs, and conversion event sequences across all marketing channels.", "required": true}, {"name": "channel_costs", "description": "Financial expenditure data for each marketing channel, required for rigorous ROI/ROAS mapping.", "required": true}, {"name": "business_constraints", "description": "The maximum allowable Customer Acquisition Cost (CAC), required payback periods, and specific attribution window lengths.", "required": true}], "metadata": {}} -->
 ### Description
 Constructs highly rigorous, algorithmic multi-touch attribution (MTA) models using Markov chains and Shapley values, mapping fractional credit across the AARRR funnel for enterprise performance marketing.
 
@@ -246,8 +263,20 @@ Engineer an algorithmic multi-touch attribution architecture based on the follow
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Algorithmic MTA Architecture using Markov Chains"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Algorithmic MTA Architecture using Markov Chains']
+```
 
-Input Context: "{}"
-Asserted Output: "Algorithmic MTA Architecture using Shapley Values"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Algorithmic MTA Architecture using Shapley Values']
+```

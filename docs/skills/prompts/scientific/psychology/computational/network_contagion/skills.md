@@ -1,33 +1,3 @@
----
-tags:
-  - algorithmic
-  - behavior
-  - behavioral
-  - behavioral addiction
-  - cognitive
-  - computational
-  - computational modeling
-  - domain:computational_psychology
-  - domain:macro_psychology
-  - domain:psychology
-  - domain:scientific
-  - epidemiology
-  - inoculation
-  - mass
-  - media
-  - misinformation
-  - mutation
-  - network contagion
-  - network-contagion
-  - psychogenic
-  - psychology
-  - radicalization
-  - semantic
-  - skill
-  - stochastic
-  - synthetic
----
-
 # Domain Agent Skills: Scientific Psychology Computational Network contagion
 
 ## Metadata
@@ -38,7 +8,7 @@ tags:
 ---
 
 ## Skill: stochastic_radicalization_cascade_modeler
-<!-- VALIDATION_METADATA: [{"name": "radicalization_strain_vector", "description": "A strict JSON schema defining the cognitive extremization parameters, virulence multipliers, and baseline radicalization susceptibility distributions.", "type": "string"}, {"name": "topological_graph_schema", "description": "The CSV/JSON ingestion definition for the massive-scale network (>10M nodes, >500M edges), detailing interaction frequencies, algorithmic acceleration biases, and structural vulnerabilities.", "type": "string"}, {"name": "extremization_collapse_objective", "description": "The desired macro-level systemic intervention target, such as calculating the stochastic critical threshold for cascade collapse or mapping nonlinear intervention friction points.", "type": "string"}, {"name": "collapse_objective", "description": "Auto-extracted variable collapse_objective", "required": false}, {"name": "graph_schema", "description": "Auto-extracted variable graph_schema", "required": false}, {"name": "strain_vector", "description": "Auto-extracted variable strain_vector", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "radicalization_strain_vector", "description": "A strict JSON schema defining the cognitive extremization parameters, virulence multipliers, and baseline radicalization susceptibility distributions.", "type": "string"}, {"name": "topological_graph_schema", "description": "The CSV/JSON ingestion definition for the massive-scale network (>10M nodes, >500M edges), detailing interaction frequencies, algorithmic acceleration biases, and structural vulnerabilities.", "type": "string"}, {"name": "extremization_collapse_objective", "description": "The desired macro-level systemic intervention target, such as calculating the stochastic critical threshold for cascade collapse or mapping nonlinear intervention friction points.", "type": "string"}, {"name": "collapse_objective", "description": "Auto-extracted variable collapse_objective", "required": false}, {"name": "graph_schema", "description": "Auto-extracted variable graph_schema", "required": false}, {"name": "strain_vector", "description": "Auto-extracted variable strain_vector", "required": false}], "metadata": {}} -->
 ### Description
 A highly robust, expert-level prompt designed to mathematically model and simulate nonlinear stochastic radicalization cascades and behavioral extremization trajectories across massive multi-dimensional psychological networks.
 
@@ -48,6 +18,9 @@ A highly robust, expert-level prompt designed to mathematically model and simula
 | `radicalization_strain_vector` | String | A strict JSON schema defining the cognitive extremization parameters, virulence multipliers, and baseline radicalization susceptibility distributions. | Yes |
 | `topological_graph_schema` | String | The CSV/JSON ingestion definition for the massive-scale network (>10M nodes, >500M edges), detailing interaction frequencies, algorithmic acceleration biases, and structural vulnerabilities. | Yes |
 | `extremization_collapse_objective` | String | The desired macro-level systemic intervention target, such as calculating the stochastic critical threshold for cascade collapse or mapping nonlinear intervention friction points. | Yes |
+| `collapse_objective` | String | Auto-extracted variable collapse_objective | No |
+| `graph_schema` | String | Auto-extracted variable graph_schema | No |
+| `strain_vector` | String | Auto-extracted variable strain_vector | No |
 
 
 ### Core Instructions
@@ -83,16 +56,28 @@ Produce the strictly mathematical contagion mapping, big data ingestion pipeline
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: mass_psychogenic_illness_diffusion_modeler
-<!-- VALIDATION_METADATA: [{"name": "mpi_symptomatology_metadata", "description": "A complex JSON schema containing metadata of the mass psychogenic illness, including its psychosomatic symptoms, nocebo severity indices, and transmission vectors."}, {"name": "structural_topological_schema", "description": "Strict CSV/JSON definition mapping >5M nodes (users/citizens) and >50M edges (interactions) including physical proximity, digital density, echo chamber clustering, and baseline psychogenic susceptibility."}, {"name": "epidemic_collapse_intervention", "description": "The targeted macro-level epidemiological objective, such as modeling the network disruption required to force the behavioral reproduction number below 1 or mapping intervention thresholds using network calculus."}, {"name": "intervention", "description": "Auto-extracted variable intervention", "required": false}, {"name": "symptomatology", "description": "Auto-extracted variable symptomatology", "required": false}, {"name": "topological_schema", "description": "Auto-extracted variable topological_schema", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "mpi_symptomatology_metadata", "description": "A complex JSON schema containing metadata of the mass psychogenic illness, including its psychosomatic symptoms, nocebo severity indices, and transmission vectors."}, {"name": "structural_topological_schema", "description": "Strict CSV/JSON definition mapping >5M nodes (users/citizens) and >50M edges (interactions) including physical proximity, digital density, echo chamber clustering, and baseline psychogenic susceptibility."}, {"name": "epidemic_collapse_intervention", "description": "The targeted macro-level epidemiological objective, such as modeling the network disruption required to force the behavioral reproduction number below 1 or mapping intervention thresholds using network calculus."}, {"name": "intervention", "description": "Auto-extracted variable intervention", "required": false}, {"name": "symptomatology", "description": "Auto-extracted variable symptomatology", "required": false}, {"name": "topological_schema", "description": "Auto-extracted variable topological_schema", "required": false}], "metadata": {}} -->
 ### Description
 A highly robust, expert-level prompt designed to computationally model the automated epidemiological diffusion of Mass Psychogenic Illness (MPI) and psychosomatic contagion across digital and physical networks.
 
@@ -102,6 +87,9 @@ A highly robust, expert-level prompt designed to computationally model the autom
 | `mpi_symptomatology_metadata` | String | A complex JSON schema containing metadata of the mass psychogenic illness, including its psychosomatic symptoms, nocebo severity indices, and transmission vectors. | Yes |
 | `structural_topological_schema` | String | Strict CSV/JSON definition mapping >5M nodes (users/citizens) and >50M edges (interactions) including physical proximity, digital density, echo chamber clustering, and baseline psychogenic susceptibility. | Yes |
 | `epidemic_collapse_intervention` | String | The targeted macro-level epidemiological objective, such as modeling the network disruption required to force the behavioral reproduction number below 1 or mapping intervention thresholds using network calculus. | Yes |
+| `intervention` | String | Auto-extracted variable intervention | No |
+| `symptomatology` | String | Auto-extracted variable symptomatology | No |
+| `topological_schema` | String | Auto-extracted variable topological_schema | No |
 
 
 ### Core Instructions
@@ -137,16 +125,28 @@ Produce the strictly mathematical psychosomatic mapping, big data ingestion pipe
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: algorithmic_behavior_echo_chamber_modeler
-<!-- VALIDATION_METADATA: [{"name": "contagion_strain_metadata", "description": "A complex JSON schema containing metadata of the psychological phenomenon, behavior, or misinformation strain propagating in the environment."}, {"name": "algorithmic_environment_schema", "description": "Strict CSV/JSON definition mapping >1M nodes (users) and >100M edges (interactions) including their algorithmic feed recommendation vectors, network graph topology, and baseline homophily parameters."}, {"name": "topological_intervention_goal", "description": "The targeted macro-level epidemiological objective, such as mapping the threshold of contagion collapse or modeling behavioral reproduction stabilization trajectories under systemic changes."}, {"name": "environment_schema", "description": "Auto-extracted variable environment_schema", "required": false}, {"name": "intervention_goal", "description": "Auto-extracted variable intervention_goal", "required": false}, {"name": "strain_metadata", "description": "Auto-extracted variable strain_metadata", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "contagion_strain_metadata", "description": "A complex JSON schema containing metadata of the psychological phenomenon, behavior, or misinformation strain propagating in the environment."}, {"name": "algorithmic_environment_schema", "description": "Strict CSV/JSON definition mapping >1M nodes (users) and >100M edges (interactions) including their algorithmic feed recommendation vectors, network graph topology, and baseline homophily parameters."}, {"name": "topological_intervention_goal", "description": "The targeted macro-level epidemiological objective, such as mapping the threshold of contagion collapse or modeling behavioral reproduction stabilization trajectories under systemic changes."}, {"name": "environment_schema", "description": "Auto-extracted variable environment_schema", "required": false}, {"name": "intervention_goal", "description": "Auto-extracted variable intervention_goal", "required": false}, {"name": "strain_metadata", "description": "Auto-extracted variable strain_metadata", "required": false}], "metadata": {}} -->
 ### Description
 A highly robust, expert-level prompt designed to computationally model the automated propagation of algorithmic social contagion, mapping algorithmic behavior echo chambers and misinformation networks across large-scale population data.
 
@@ -156,6 +156,9 @@ A highly robust, expert-level prompt designed to computationally model the autom
 | `contagion_strain_metadata` | String | A complex JSON schema containing metadata of the psychological phenomenon, behavior, or misinformation strain propagating in the environment. | Yes |
 | `algorithmic_environment_schema` | String | Strict CSV/JSON definition mapping >1M nodes (users) and >100M edges (interactions) including their algorithmic feed recommendation vectors, network graph topology, and baseline homophily parameters. | Yes |
 | `topological_intervention_goal` | String | The targeted macro-level epidemiological objective, such as mapping the threshold of contagion collapse or modeling behavioral reproduction stabilization trajectories under systemic changes. | Yes |
+| `environment_schema` | String | Auto-extracted variable environment_schema | No |
+| `intervention_goal` | String | Auto-extracted variable intervention_goal | No |
+| `strain_metadata` | String | Auto-extracted variable strain_metadata | No |
 
 
 ### Core Instructions
@@ -191,16 +194,28 @@ Produce the strictly mathematical contagion mapping, big data ingestion pipeline
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: algorithmic_misinformation_contagion_modeler
-<!-- VALIDATION_METADATA: [{"name": "multi_modal_data_schema", "description": "Strict JSON/CSV schema definition detailing ingestion parameters for high-frequency social media engagement, behavioral telemetry, and psychometric profiles for >50M agents."}, {"name": "network_virality_factors", "description": "A JSON configuration mapping systemic algorithmic amplification factors (e.g., recommender system biases, engagement thresholds, filter bubble isolation constraints) driving the contagion."}, {"name": "topological_intervention_objective", "description": "The targeted macro-level behavioral stabilization goal, such as modeling the required thresholds to arrest misinformation propagation using targeted cognitive inoculation or algorithmic dampening."}, {"name": "data_schema", "description": "Auto-extracted variable data_schema", "required": false}, {"name": "intervention_objective", "description": "Auto-extracted variable intervention_objective", "required": false}, {"name": "virality_factors", "description": "Auto-extracted variable virality_factors", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "multi_modal_data_schema", "description": "Strict JSON/CSV schema definition detailing ingestion parameters for high-frequency social media engagement, behavioral telemetry, and psychometric profiles for >50M agents."}, {"name": "network_virality_factors", "description": "A JSON configuration mapping systemic algorithmic amplification factors (e.g., recommender system biases, engagement thresholds, filter bubble isolation constraints) driving the contagion."}, {"name": "topological_intervention_objective", "description": "The targeted macro-level behavioral stabilization goal, such as modeling the required thresholds to arrest misinformation propagation using targeted cognitive inoculation or algorithmic dampening."}, {"name": "data_schema", "description": "Auto-extracted variable data_schema", "required": false}, {"name": "intervention_objective", "description": "Auto-extracted variable intervention_objective", "required": false}, {"name": "virality_factors", "description": "Auto-extracted variable virality_factors", "required": false}], "metadata": {}} -->
 ### Description
 A highly robust, expert-level prompt designed to formulate mathematical models and multi-modal big data architectures for predicting the onset, propagation, and virality of algorithmic misinformation contagion across mass global network topologies.
 
@@ -210,6 +225,9 @@ A highly robust, expert-level prompt designed to formulate mathematical models a
 | `multi_modal_data_schema` | String | Strict JSON/CSV schema definition detailing ingestion parameters for high-frequency social media engagement, behavioral telemetry, and psychometric profiles for >50M agents. | Yes |
 | `network_virality_factors` | String | A JSON configuration mapping systemic algorithmic amplification factors (e.g., recommender system biases, engagement thresholds, filter bubble isolation constraints) driving the contagion. | Yes |
 | `topological_intervention_objective` | String | The targeted macro-level behavioral stabilization goal, such as modeling the required thresholds to arrest misinformation propagation using targeted cognitive inoculation or algorithmic dampening. | Yes |
+| `data_schema` | String | Auto-extracted variable data_schema | No |
+| `intervention_objective` | String | Auto-extracted variable intervention_objective | No |
+| `virality_factors` | String | Auto-extracted variable virality_factors | No |
 
 
 ### Core Instructions
@@ -245,16 +263,28 @@ Produce the strictly mathematical contagion mapping, big data ingestion pipeline
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: synthetic_media_epistemic_collapse_modeler
-<!-- VALIDATION_METADATA: [{"name": "synthetic_payload_schema", "description": "Detailed JSON or CSV schema definition characterizing the generative AI synthetic media payload (e.g., deepfake fidelity score, multi-modal semantic coherence, affective arousal indices)."}, {"name": "cognitive_network_topology", "description": "Strict JSON/CSV schema representing the target massive-scale cognitive network (>1M nodes) outlining nodal epistemic baselines, algorithmic feed curation biases, and echo chamber homophily."}, {"name": "systemic_collapse_threshold", "description": "The macro-psychological disruption threshold at which consensual reality fragments within the network, modeled via behavioral reproduction matrices and systemic trust collapse."}, {"name": "collapse_threshold", "description": "Auto-extracted variable collapse_threshold", "required": false}, {"name": "network_topology", "description": "Auto-extracted variable network_topology", "required": false}, {"name": "synthetic_payload", "description": "Auto-extracted variable synthetic_payload", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "synthetic_payload_schema", "description": "Detailed JSON or CSV schema definition characterizing the generative AI synthetic media payload (e.g., deepfake fidelity score, multi-modal semantic coherence, affective arousal indices)."}, {"name": "cognitive_network_topology", "description": "Strict JSON/CSV schema representing the target massive-scale cognitive network (>1M nodes) outlining nodal epistemic baselines, algorithmic feed curation biases, and echo chamber homophily."}, {"name": "systemic_collapse_threshold", "description": "The macro-psychological disruption threshold at which consensual reality fragments within the network, modeled via behavioral reproduction matrices and systemic trust collapse."}, {"name": "collapse_threshold", "description": "Auto-extracted variable collapse_threshold", "required": false}, {"name": "network_topology", "description": "Auto-extracted variable network_topology", "required": false}, {"name": "synthetic_payload", "description": "Auto-extracted variable synthetic_payload", "required": false}], "metadata": {}} -->
 ### Description
 A highly robust, expert-level prompt designed to computationally model the propagation of generative AI synthetic media and its resulting epistemic collapse across massive-scale cognitive networks using epidemiological mathematics and ontological disruption parameters.
 
@@ -264,6 +294,9 @@ A highly robust, expert-level prompt designed to computationally model the propa
 | `synthetic_payload_schema` | String | Detailed JSON or CSV schema definition characterizing the generative AI synthetic media payload (e.g., deepfake fidelity score, multi-modal semantic coherence, affective arousal indices). | Yes |
 | `cognitive_network_topology` | String | Strict JSON/CSV schema representing the target massive-scale cognitive network (>1M nodes) outlining nodal epistemic baselines, algorithmic feed curation biases, and echo chamber homophily. | Yes |
 | `systemic_collapse_threshold` | String | The macro-psychological disruption threshold at which consensual reality fragments within the network, modeled via behavioral reproduction matrices and systemic trust collapse. | Yes |
+| `collapse_threshold` | String | Auto-extracted variable collapse_threshold | No |
+| `network_topology` | String | Auto-extracted variable network_topology | No |
+| `synthetic_payload` | String | Auto-extracted variable synthetic_payload | No |
 
 
 ### Core Instructions
@@ -303,16 +336,28 @@ Produce the strictly mathematical contagion mapping, big data ingestion pipeline
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: cognitive_inoculation_campaign_architect
-<!-- VALIDATION_METADATA: [{"name": "misinformation_vector", "description": "The specific synthetic narrative, synthetic media format, or epistemological threat targeted for pre-emption (e.g., highly realistic deepfake audio inciting electoral panic, algorithmically amplified pseudo-medical conspiracies)."}, {"name": "population_network_schema", "description": "Detailed JSON/CSV schema representing the target population's digital network topology (e.g., node centrality, susceptibility scores, multi-platform homophily indices)."}, {"name": "intervention_constraints", "description": "Logistical, temporal, or ethical constraints limiting the pre-bunking deployment (e.g., 48-hour window before predicted virality, platform API rate limits, risk of backfire effect)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "misinformation_vector", "description": "The specific synthetic narrative, synthetic media format, or epistemological threat targeted for pre-emption (e.g., highly realistic deepfake audio inciting electoral panic, algorithmically amplified pseudo-medical conspiracies)."}, {"name": "population_network_schema", "description": "Detailed JSON/CSV schema representing the target population's digital network topology (e.g., node centrality, susceptibility scores, multi-platform homophily indices)."}, {"name": "intervention_constraints", "description": "Logistical, temporal, or ethical constraints limiting the pre-bunking deployment (e.g., 48-hour window before predicted virality, platform API rate limits, risk of backfire effect)."}], "metadata": {}} -->
 ### Description
 A highly analytical prompt designed to engineer population-scale, multi-platform cognitive inoculation (pre-bunking) campaigns, formulating mathematical contagion models and designing massive-scale data schemas to pre-emptively neutralize synthetic misinformation vectors.
 
@@ -362,16 +407,28 @@ Proceed with the mathematical formulation, inoculation strategy, big data pipeli
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: semantic_mutation_censorship_evasion_modeler
-<!-- VALIDATION_METADATA: [{"name": "contagion_baseline_morphology", "description": "A strict JSON schema detailing the baseline cognitive strain, including its primary semantic vectors, arousal capacity, and initial algorithmic detection markers."}, {"name": "algorithmic_suppression_architecture", "description": "A CSV/JSON schema defining the censorship environment for >1M nodes and >100M edges, mapping moderation heuristic boundaries, detection thresholds, and network centrality of automated moderators."}, {"name": "evolutionary_evasion_objective", "description": "The targeted macro-level modeling objective, such as calculating the mutation probability required to sustain an effective reproduction number > 1 under severe shadow-banning constraints."}, {"name": "baseline_morphology", "description": "Auto-extracted variable baseline_morphology", "required": false}, {"name": "evasion_objective", "description": "Auto-extracted variable evasion_objective", "required": false}, {"name": "suppression_architecture", "description": "Auto-extracted variable suppression_architecture", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "contagion_baseline_morphology", "description": "A strict JSON schema detailing the baseline cognitive strain, including its primary semantic vectors, arousal capacity, and initial algorithmic detection markers."}, {"name": "algorithmic_suppression_architecture", "description": "A CSV/JSON schema defining the censorship environment for >1M nodes and >100M edges, mapping moderation heuristic boundaries, detection thresholds, and network centrality of automated moderators."}, {"name": "evolutionary_evasion_objective", "description": "The targeted macro-level modeling objective, such as calculating the mutation probability required to sustain an effective reproduction number > 1 under severe shadow-banning constraints."}, {"name": "baseline_morphology", "description": "Auto-extracted variable baseline_morphology", "required": false}, {"name": "evasion_objective", "description": "Auto-extracted variable evasion_objective", "required": false}, {"name": "suppression_architecture", "description": "Auto-extracted variable suppression_architecture", "required": false}], "metadata": {}} -->
 ### Description
 A highly robust, expert-level prompt designed to computationally model the automated semantic mutation and evolutionary adaptation of psychological contagions to evade algorithmic censorship within massive-scale networks.
 
@@ -381,6 +438,9 @@ A highly robust, expert-level prompt designed to computationally model the autom
 | `contagion_baseline_morphology` | String | A strict JSON schema detailing the baseline cognitive strain, including its primary semantic vectors, arousal capacity, and initial algorithmic detection markers. | Yes |
 | `algorithmic_suppression_architecture` | String | A CSV/JSON schema defining the censorship environment for >1M nodes and >100M edges, mapping moderation heuristic boundaries, detection thresholds, and network centrality of automated moderators. | Yes |
 | `evolutionary_evasion_objective` | String | The targeted macro-level modeling objective, such as calculating the mutation probability required to sustain an effective reproduction number > 1 under severe shadow-banning constraints. | Yes |
+| `baseline_morphology` | String | Auto-extracted variable baseline_morphology | No |
+| `evasion_objective` | String | Auto-extracted variable evasion_objective | No |
+| `suppression_architecture` | String | Auto-extracted variable suppression_architecture | No |
 
 
 ### Core Instructions
@@ -416,16 +476,28 @@ Produce the strictly mathematical contagion evolution mapping, big data ingestio
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: gamified_behavioral_addiction_contagion_modeler
-<!-- VALIDATION_METADATA: [{"name": "compulsive_behavior_data_schema", "description": "The JSON/CSV schema representing millions of rows of multi-modal big data behavioral proxies for gamified addiction (e.g., erratic application usage kinetics, micro-transaction velocity, dopaminergic feedback loop timestamp clustering).", "required": true, "default": "user_id: string, timestamp: string, micro_transaction_velocity: float, application_usage_kinetic_index: float"}, {"name": "gamification_contagion_parameters", "description": "Parameters defining the variable reward schedules, structural nudges, and epidemiological transmission dynamics of gamified compulsion within the designated network.", "required": true, "default": "variable_reward_ratio: 0.85, structural_nudge_density: 0.60, baseline_transmission_rate: 0.15"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "compulsive_behavior_data_schema", "description": "The JSON/CSV schema representing millions of rows of multi-modal big data behavioral proxies for gamified addiction (e.g., erratic application usage kinetics, micro-transaction velocity, dopaminergic feedback loop timestamp clustering).", "required": true, "default": "user_id: string, timestamp: string, micro_transaction_velocity: float, application_usage_kinetic_index: float"}, {"name": "gamification_contagion_parameters", "description": "Parameters defining the variable reward schedules, structural nudges, and epidemiological transmission dynamics of gamified compulsion within the designated network.", "required": true, "default": "variable_reward_ratio: 0.85, structural_nudge_density: 0.60, baseline_transmission_rate: 0.15"}], "metadata": {}} -->
 ### Description
 A mathematically rigorous, expert-level prompt designed to map and computationally model the epidemiological spread of gamified digital addiction and compulsive behaviors across massive population networks, utilizing WHO/APA macro-level standards and multi-modal behavioral big data proxies.
 
@@ -467,13 +539,19 @@ Output the resulting epidemiological projection, mandatory network mathematics i
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "R_0"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['R_0']
+```
 
 ---
 
 ## Skill: behavioral_epidemiology_social_contagion_modeler
-<!-- VALIDATION_METADATA: [{"name": "population_network_schema", "description": "Detailed JSON or CSV schema definition of the target massive-scale network data (e.g., node attributes, edge weights, metadata including timestamp and geolocation)."}, {"name": "behavioral_phenomenon", "description": "The specific psychological state, behavior, or misinformation strain being modeled (e.g., vaccine hesitancy, algorithmic outrage, mass psychogenic illness)."}, {"name": "structural_constraints", "description": "Structural constraints, platform algorithms, or algorithmic nudges affecting the network (e.g., recommendation feed bias, network homophily factors, censorship/moderation rules)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "population_network_schema", "description": "Detailed JSON or CSV schema definition of the target massive-scale network data (e.g., node attributes, edge weights, metadata including timestamp and geolocation)."}, {"name": "behavioral_phenomenon", "description": "The specific psychological state, behavior, or misinformation strain being modeled (e.g., vaccine hesitancy, algorithmic outrage, mass psychogenic illness)."}, {"name": "structural_constraints", "description": "Structural constraints, platform algorithms, or algorithmic nudges affecting the network (e.g., recommendation feed bias, network homophily factors, censorship/moderation rules)."}], "metadata": {}} -->
 ### Description
 A highly robust, expert-level prompt designed to computationally model the propagation of psychological states, misinformation, and algorithmic social contagion across massive-scale networks using advanced epidemiological frameworks and network mathematics.
 
@@ -519,8 +597,20 @@ Proceed with the mathematical formulation, algorithmic impact assessment, big da
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

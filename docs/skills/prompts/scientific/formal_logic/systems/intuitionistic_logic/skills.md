@@ -1,14 +1,3 @@
----
-tags:
-  - constructive-mathematics
-  - domain:scientific
-  - formal-logic
-  - intuitionistic-logic
-  - natural-deduction
-  - proof-theory
-  - skill
----
-
 # Domain Agent Skills: Scientific Formal logic Systems Intuitionistic logic
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: constructive_intuitionistic_natural_deduction_prover
-<!-- VALIDATION_METADATA: [{"name": "premises", "description": "A list of given premises (if any), strictly formulated in LaTeX propositional or first-order notation.", "required": false}, {"name": "conclusion", "description": "The logical conclusion to be derived, strictly formulated in LaTeX notation.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "premises", "description": "A list of given premises (if any), strictly formulated in LaTeX propositional or first-order notation.", "required": false}, {"name": "conclusion", "description": "The logical conclusion to be derived, strictly formulated in LaTeX notation.", "required": true}], "metadata": {}} -->
 ### Description
 Automates the rigorous generation of natural deduction proofs within Intuitionistic Logic, enforcing constructive constraints and prohibiting non-constructive rules like the Law of Excluded Middle or Double Negation Elimination.
 
@@ -61,11 +50,29 @@ Conclusion: {{ conclusion }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

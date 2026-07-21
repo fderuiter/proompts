@@ -1,25 +1,3 @@
----
-tags:
-  - bioinformatics
-  - complex
-  - computational-chemistry
-  - domain:molecular/proteomics
-  - domain:scientific
-  - down
-  - free
-  - ligand
-  - molecular
-  - molecular-dynamics
-  - network
-  - ppi
-  - protein
-  - proteomics
-  - ptm
-  - skill
-  - structural-biology
-  - top
----
-
 # Domain Agent Skills: Scientific Molecular Proteomics
 
 ## Metadata
@@ -30,7 +8,7 @@ tags:
 ---
 
 ## Skill: complex_ppi_network_mapper
-<!-- VALIDATION_METADATA: [{"name": "protein_target_list", "type": "string", "description": "A comprehensive list or FASTA file of the protein targets under study."}, {"name": "interaction_database", "type": "string", "description": "The reference database for primary interactome data (e.g., STRING, BioGRID)."}, {"name": "kinetic_parameters", "type": "string", "description": "Known binding affinities (Kd) or kinetic rates (kon, koff) for specific nodes."}, {"name": "network_model_type", "type": "string", "description": "The mathematical topology or dynamical model to apply (e.g., Scale-free network, Mass-action kinetics)."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "protein_target_list", "type": "string", "description": "A comprehensive list or FASTA file of the protein targets under study."}, {"name": "interaction_database", "type": "string", "description": "The reference database for primary interactome data (e.g., STRING, BioGRID)."}, {"name": "kinetic_parameters", "type": "string", "description": "Known binding affinities (Kd) or kinetic rates (kon, koff) for specific nodes."}, {"name": "network_model_type", "type": "string", "description": "The mathematical topology or dynamical model to apply (e.g., Scale-free network, Mass-action kinetics)."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}], "metadata": {}} -->
 ### Description
 Acts as a Principal Computational Biologist to mathematically map, analyze, and simulate complex protein-protein interaction (PPI) networks, modeling kinetic binding affinities and network topologies.
 
@@ -41,6 +19,7 @@ Acts as a Principal Computational Biologist to mathematically map, analyze, and 
 | `interaction_database` | String | The reference database for primary interactome data (e.g., STRING, BioGRID). | Yes |
 | `kinetic_parameters` | String | Known binding affinities (Kd) or kinetic rates (kon, koff) for specific nodes. | Yes |
 | `network_model_type` | String | The mathematical topology or dynamical model to apply (e.g., Scale-free network, Mass-action kinetics). | Yes |
+| `constraints` | String | Auto-extracted variable constraints | No |
 
 
 ### Core Instructions
@@ -74,16 +53,28 @@ Provide a comprehensive architectural blueprint of the interactome, detailing ke
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "mass-action"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['mass-action']
+```
 
-Input Context: "{}"
-Asserted Output: "Boolean"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Boolean']
+```
 
 ---
 
 ## Skill: protein_ligand_free_energy_perturbation_architect
-<!-- VALIDATION_METADATA: [{"name": "protein_target", "description": "The specific target protein, including structure source or PDB ID (e.g., SARS-CoV-2 Mpro, PDB 6LU7)."}, {"name": "ligand_series", "description": "The set of congeneric ligands or chemical modifications being evaluated for relative binding free energy differences."}, {"name": "thermodynamic_cycle", "description": "The chosen alchemical transformation pathway and thermodynamic cycle definition (e.g., dual topology, single topology, defining lambda windows)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "protein_target", "description": "The specific target protein, including structure source or PDB ID (e.g., SARS-CoV-2 Mpro, PDB 6LU7)."}, {"name": "ligand_series", "description": "The set of congeneric ligands or chemical modifications being evaluated for relative binding free energy differences."}, {"name": "thermodynamic_cycle", "description": "The chosen alchemical transformation pathway and thermodynamic cycle definition (e.g., dual topology, single topology, defining lambda windows)."}], "metadata": {}} -->
 ### Description
 A Principal Structural Biologist and Lead Computational Chemist agent designed to architect rigorous Free Energy Perturbation (FEP) and Molecular Dynamics (MD) pipelines for predicting protein-ligand binding affinities.
 
@@ -123,16 +114,28 @@ Output the full methodology with LaTeX equations and structural formats defined.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: top_down_proteomics_ptm_mapping_architect
-<!-- VALIDATION_METADATA: [{"name": "intact_mass_spectrum", "type": "string", "description": "The raw or deconvoluted intact mass spectrum data (e.g., mzML, deconvoluted peak list)."}, {"name": "target_protein_sequence", "type": "string", "description": "The canonical FASTA sequence of the target protein being analyzed."}, {"name": "fragmentation_method", "type": "string", "description": "The gas-phase dissociation technique employed (e.g., ECD, ETD, UVPD, HCD)."}, {"name": "expected_ptm_space", "type": "string", "description": "A constrained space of anticipated PTMs to map (e.g., phosphorylation, acetylation, methylation) including mass shifts."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "intact_mass_spectrum", "type": "string", "description": "The raw or deconvoluted intact mass spectrum data (e.g., mzML, deconvoluted peak list)."}, {"name": "target_protein_sequence", "type": "string", "description": "The canonical FASTA sequence of the target protein being analyzed."}, {"name": "fragmentation_method", "type": "string", "description": "The gas-phase dissociation technique employed (e.g., ECD, ETD, UVPD, HCD)."}, {"name": "expected_ptm_space", "type": "string", "description": "A constrained space of anticipated PTMs to map (e.g., phosphorylation, acetylation, methylation) including mass shifts."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}], "metadata": {}} -->
 ### Description
 Acts as a Principal Computational Biologist to model and decipher high-resolution top-down proteomics intact protein mass spectrometry data for combinatorial post-translational modification (PTM) mapping.
 
@@ -143,6 +146,7 @@ Acts as a Principal Computational Biologist to model and decipher high-resolutio
 | `target_protein_sequence` | String | The canonical FASTA sequence of the target protein being analyzed. | Yes |
 | `fragmentation_method` | String | The gas-phase dissociation technique employed (e.g., ECD, ETD, UVPD, HCD). | Yes |
 | `expected_ptm_space` | String | A constrained space of anticipated PTMs to map (e.g., phosphorylation, acetylation, methylation) including mass shifts. | Yes |
+| `constraints` | String | Auto-extracted variable constraints | No |
 
 
 ### Core Instructions
@@ -176,8 +180,20 @@ Provide a comprehensive architectural blueprint of the identified proteoforms, m
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "14,532"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['14,532']
+```
 
-Input Context: "{}"
-Asserted Output: "Phosphorylation"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Phosphorylation']
+```

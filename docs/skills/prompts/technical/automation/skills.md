@@ -1,14 +1,3 @@
----
-tags:
-  - automation
-  - devops
-  - domain:technical
-  - general-purpose
-  - git
-  - skill
-  - task-execution
----
-
 # Domain Agent Skills: Technical Automation
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: Universal Automation Agent
-<!-- VALIDATION_METADATA: [{"name": "task", "description": "Describe the specific action to be automated.", "required": true}, {"name": "context", "description": "Provide the raw data, text, or background information required to complete the task.", "required": true}, {"name": "constraints", "description": "List any strict limitations (e.g., word count, formatting restrictions, tone, forbidden actions).", "required": true}, {"name": "output_format", "description": "Define exactly how the final deliverable should look.", "required": true}, {"name": "thought_process", "description": "Auto-extracted variable thought_process", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "task", "description": "Describe the specific action to be automated.", "required": true}, {"name": "context", "description": "Provide the raw data, text, or background information required to complete the task.", "required": true}, {"name": "constraints", "description": "List any strict limitations (e.g., word count, formatting restrictions, tone, forbidden actions).", "required": true}, {"name": "output_format", "description": "Define exactly how the final deliverable should look.", "required": true}, {"name": "thought_process", "description": "Auto-extracted variable thought_process", "required": false}], "metadata": {}} -->
 ### Description
 An elite, highly adaptable automation agent that executes specific tasks based on strict constraints and context.
 
@@ -30,6 +19,7 @@ An elite, highly adaptable automation agent that executes specific tasks based o
 | `context` | String | Provide the raw data, text, or background information required to complete the task. | Yes |
 | `constraints` | String | List any strict limitations (e.g., word count, formatting restrictions, tone, forbidden actions). | Yes |
 | `output_format` | String | Define exactly how the final deliverable should look. | Yes |
+| `thought_process` | String | Auto-extracted variable thought_process | No |
 
 
 ### Core Instructions
@@ -68,15 +58,19 @@ Input Parameters
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{task: Extract keywords from text., context: Artificial Intelligence is transforming
-    industries by automating tasks and providing insights., constraints: Return exactly
-    3 keywords. Comma separated. Lowercase., output_format: 'keywords: list'}"
-Asserted Output: "artificial intelligence, automation, insights"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['artificial intelligence, automation, insights']
+```
 
 ---
 
 ## Skill: Autonomous Automation Agent Upgrade
-<!-- VALIDATION_METADATA: [] -->
+<!-- VALIDATION_METADATA: {"variables": [], "metadata": {}} -->
 ### Description
 Executes a fully autonomous repository commit and generates a pull request based on the current workspace state.
 
@@ -104,13 +98,19 @@ Execute the autonomous PR update based on the current workspace state.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Commit Standards"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Commit Standards']
+```
 
 ---
 
 ## Skill: Autonomous Automation Agent
-<!-- VALIDATION_METADATA: [{"name": "workspace_state", "description": "The current state of the workspace and operational changes.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "workspace_state", "description": "The current state of the workspace and operational changes.", "required": true}], "metadata": {}} -->
 ### Description
 A Principal DevOps Automation Engineer persona that executes a fully autonomous repository commit and generates a pull request based on the current workspace state.
 
@@ -138,6 +138,11 @@ Current workspace state: {{ workspace_state }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{workspace_state: Modified autonomous_automation_agent.prompt.yaml to include new
-    persona and constraints.}"
-Asserted Output: "Executing autonomous commit and PR generation for workspace state: Modified autonomous_automation_agent.prompt.yaml to include new persona and constraints."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Executing autonomous commit and PR generation for workspace state: Modified autonomous_automation_agent.prompt.yaml to include new persona and constraints.']
+```

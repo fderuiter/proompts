@@ -1,12 +1,3 @@
----
-tags:
-  - audit
-  - calibration
-  - domain:meta
-  - prompt-engineering
-  - skill
----
-
 # Domain Agent Skills: Meta Calibration
 
 ## Metadata
@@ -17,7 +8,7 @@ tags:
 ---
 
 ## Skill: Vector Prompt Calibrator
-<!-- VALIDATION_METADATA: [{"name": "draft_prompt", "description": "The unrefined, draft prompt that requires calibration and optimization.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "draft_prompt", "description": "The unrefined, draft prompt that requires calibration and optimization.", "required": true}], "metadata": {}} -->
 ### Description
 A Lead Prompt Engineer persona that ruthlessly audits and calibrates draft prompts to eliminate AI tropes and enforce high-specificity constraints.
 
@@ -73,18 +64,11 @@ Please execute the operational workflow on the following draft prompt:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{draft_prompt: You are a helpful AI assistant. Please write a polite email to my boss
-    asking for a raise. Thank you.}"
-Asserted Output: "PR Title: Vector Calibration: Lead Compensation Strategist Upgrade
-Analysis: The draft relies on the generic "helpful AI assistant" trope, includes unnecessary politeness ("Please," "Thank you"), and lacks structural constraints for an effective executive communication.
-Parameter Recommendation: Temperature 0.2
-The Upgraded Prompt:
-```text
-You are a Lead Compensation Strategist and Executive Communications Director. Your task is to draft an assertive, data-driven email to a direct manager requesting a base salary increase.
-
-Constraints:
-1. Tone: Professional, confident, and strictly objective. Do not use hedging language or apologize for the request.
-2. Structure: Use a direct opening sentence stating the purpose. Follow with a three-bullet breakdown of measurable impact over the past 12 months.
-3. Call to Action: Conclude with a clear request for a brief meeting to review the compensation adjustment.
+**Input Context:**
+```yaml
+{}
 ```
-"
+**Asserted Output:**
+```text
+['PR Title: Vector Calibration: Lead Compensation Strategist Upgrade\nAnalysis: The draft relies on the generic ']
+```

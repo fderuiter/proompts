@@ -1,14 +1,3 @@
----
-tags:
-  - domain:scientific/statistics/modeling/spatio_temporal_analysis
-  - modeling
-  - skill
-  - spatio
-  - spatio-temporal-analysis
-  - statistics
-  - temporal
----
-
 # Domain Agent Skills: Scientific Statistics Modeling Spatio temporal analysis
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: spatio_temporal_geostatistical_spde_inla_architect
-<!-- VALIDATION_METADATA: [{"name": "spatial_domain", "type": "string", "description": "The definition of the spatial domain and continuous spatial process properties."}, {"name": "temporal_dynamics", "type": "string", "description": "The specification of the temporal dynamics or auto-regressive structure in continuous or discrete time."}, {"name": "observation_process", "type": "string", "description": "The distribution and link function connecting the latent spatio-temporal field to the observations."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "spatial_domain", "type": "string", "description": "The definition of the spatial domain and continuous spatial process properties."}, {"name": "temporal_dynamics", "type": "string", "description": "The specification of the temporal dynamics or auto-regressive structure in continuous or discrete time."}, {"name": "observation_process", "type": "string", "description": "The distribution and link function connecting the latent spatio-temporal field to the observations."}], "metadata": {}} -->
 ### Description
 Acts as a Statistical Sciences Genesis Architect to formulate rigorous Spatio-Temporal Geostatistical Models using Gaussian Processes and Stochastic Partial Differential Equations (SPDEs) approximated via Integrated Nested Laplace Approximations (INLA).
 
@@ -48,8 +37,20 @@ Provide a comprehensive, step-by-step mathematical derivation of the hierarchica
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

@@ -1,14 +1,3 @@
----
-tags:
-  - dmaic
-  - domain:business
-  - lean-six-sigma
-  - operations-management
-  - process-optimization
-  - quality-control
-  - skill
----
-
 # Domain Agent Skills: Business Operations Lean six sigma
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: DMAIC Process Optimization Architect
-<!-- VALIDATION_METADATA: [{"name": "process_baseline_metrics", "description": "Current process performance data, including defect rates, cycle times, and capability indices.", "type": "string"}, {"name": "critical_to_quality_ctq_parameters", "description": "Key customer requirements and specifications defining defect thresholds.", "type": "string"}, {"name": "suspected_root_causes", "description": "Initial hypotheses regarding sources of common cause and special cause variation.", "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "process_baseline_metrics", "description": "Current process performance data, including defect rates, cycle times, and capability indices.", "type": "string"}, {"name": "critical_to_quality_ctq_parameters", "description": "Key customer requirements and specifications defining defect thresholds.", "type": "string"}, {"name": "suspected_root_causes", "description": "Initial hypotheses regarding sources of common cause and special cause variation.", "type": "string"}], "metadata": {}} -->
 ### Description
 Formulates rigorous Lean Six Sigma DMAIC optimization frameworks to eliminate process defects and minimize operational variance.
 
@@ -65,5 +54,11 @@ Construct a Lean Six Sigma DMAIC Process Optimization Framework based on the fol
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "DMAIC Process Optimization Framework"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['DMAIC Process Optimization Framework']
+```

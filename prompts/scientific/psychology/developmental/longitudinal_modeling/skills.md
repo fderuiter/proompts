@@ -1,17 +1,3 @@
----
-tags:
-  - developmental
-  - domain:developmental/longitudinal_modeling
-  - domain:scientific/psychology/developmental/longitudinal_modeling
-  - ecological
-  - growth
-  - latent
-  - longitudinal-modeling
-  - momentary
-  - psychology
-  - skill
----
-
 # Domain Agent Skills: Scientific Psychology Developmental Longitudinal modeling
 
 ## Metadata
@@ -22,7 +8,7 @@ tags:
 ---
 
 ## Skill: latent_growth_curve_modeling_architect
-<!-- VALIDATION_METADATA: [{"name": "longitudinal_construct", "description": "The developmental or psychological construct measured over time (e.g., depressive symptoms, cognitive decline)."}, {"name": "measurement_occasions", "description": "Details of the longitudinal waves or measurement occasions, including exact time spacing and total number of waves."}, {"name": "time_invariant_covariates", "description": "Static predictors hypothesized to influence the initial status (intercept) or rate of change (slope) of the trajectory."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "longitudinal_construct", "description": "The developmental or psychological construct measured over time (e.g., depressive symptoms, cognitive decline)."}, {"name": "measurement_occasions", "description": "Details of the longitudinal waves or measurement occasions, including exact time spacing and total number of waves."}, {"name": "time_invariant_covariates", "description": "Static predictors hypothesized to influence the initial status (intercept) or rate of change (slope) of the trajectory."}], "metadata": {}} -->
 ### Description
 Mathematically formalizes longitudinal developmental trajectories using Latent Growth Curve Modeling (LGCM) and Structural Equation Modeling (SEM).
 
@@ -68,13 +54,19 @@ Do not include conversational filler, introductory pleasantries, or generic advi
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: ecological_momentary_assessment_multilevel_modeler
-<!-- VALIDATION_METADATA: [{"name": "ema_sampling_design", "description": "Details of the Ecological Momentary Assessment protocol, including beep frequency, random versus fixed interval sampling, duration of the study, and non-compliance rates."}, {"name": "dynamic_constructs", "description": "The primary time-varying covariates (Level 1) and between-person traits (Level 2) being measured, including their theoretical operationalization and within-person reliability."}, {"name": "hypothesized_effects", "description": "The specific cross-level interactions, lagged effects, and temporal dynamics hypothesized to explain within-person variance and between-person differences."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "ema_sampling_design", "description": "Details of the Ecological Momentary Assessment protocol, including beep frequency, random versus fixed interval sampling, duration of the study, and non-compliance rates."}, {"name": "dynamic_constructs", "description": "The primary time-varying covariates (Level 1) and between-person traits (Level 2) being measured, including their theoretical operationalization and within-person reliability."}, {"name": "hypothesized_effects", "description": "The specific cross-level interactions, lagged effects, and temporal dynamics hypothesized to explain within-person variance and between-person differences."}], "metadata": {}} -->
 ### Description
 A Lead Psychometrician and Principal Methodologist agent designed to architect rigorous Multilevel Models (MLM) for analyzing intensive longitudinal Ecological Momentary Assessment (EMA) data.
 
@@ -125,8 +117,20 @@ Hypothesized Effects:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "lme4"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['lme4']
+```
 
-Input Context: "{}"
-Asserted Output: "\$ICC\$"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['\\$ICC\\$']
+```

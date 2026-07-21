@@ -1,14 +1,3 @@
----
-tags:
-  - chaos-engineering
-  - distributed-systems
-  - domain:technical/testing
-  - fault-injection
-  - resilience
-  - site-reliability
-  - skill
----
-
 # Domain Agent Skills: Technical Testing
 
 ## Metadata
@@ -19,10 +8,9 @@ tags:
 ---
 
 ## Skill: Chaos Engineering Resilience Architect
-<!-- VALIDATION_METADATA: [{"name": "system_architecture", "description": "Detailed architectural description of the target system, including components, network topology, dependencies, data stores, and load balancers.\n", "required": true}, {"name": "steady_state_metrics", "description": "The key performance indicators (KPIs) and operational metrics that define the system's steady state (e.g., P99 latency < 200ms, error rate < 0.1%).\n", "required": true}, {"name": "failure_hypotheses", "description": "Proposed failure modes or systemic vulnerabilities to test (e.g., zone outage, database split-brain, cascading latency).\n", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "system_architecture", "description": "Detailed architectural description of the target system, including components, network topology, dependencies, data stores, and load balancers.\n", "required": true}, {"name": "steady_state_metrics", "description": "The key performance indicators (KPIs) and operational metrics that define the system's steady state (e.g., P99 latency < 200ms, error rate < 0.1%).\n", "required": true}, {"name": "failure_hypotheses", "description": "Proposed failure modes or systemic vulnerabilities to test (e.g., zone outage, database split-brain, cascading latency).\n", "required": true}], "metadata": {}} -->
 ### Description
 Designs rigorous chaos engineering experiments and fault injection protocols to empirically validate the resilience, error-handling, and self-healing capabilities of distributed systems.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -66,15 +54,11 @@ Architect a comprehensive chaos engineering protocol for the following system:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "<system_architecture>
-Microservices architecture on EKS. API Gateway routing to an Order Service and Payment Service. Order Service publishes to a Kafka topic. Payment Service consumes from Kafka and writes to an Aurora PostgreSQL cluster. Redis is used for distributed locking.
-</system_architecture>
-<steady_state_metrics>
-API Gateway P95 latency < 150ms. Order creation success rate > 99.9%. Kafka consumer lag < 1000 messages.
-</steady_state_metrics>
-<failure_hypotheses>
-1. Aurora PostgreSQL primary writer node failover.
-2. Redis network partition causing distributed lock acquisition timeouts.
-</failure_hypotheses>
-"
-Asserted Output: "1. SYSTEM TOPOLOGY AND STEADY-STATE DEFINITION"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['1. SYSTEM TOPOLOGY AND STEADY-STATE DEFINITION']
+```

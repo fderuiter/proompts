@@ -1,14 +1,3 @@
----
-tags:
-  - critical-frameworks
-  - dialectical
-  - domain:sociology
-  - materialism
-  - skill
-  - sociology
-  - theory
----
-
 # Domain Agent Skills: Scientific Sociology Theory Critical frameworks
 
 ## Metadata
@@ -19,10 +8,9 @@ tags:
 ---
 
 ## Skill: dialectical_materialism_structural_crisis_modeler
-<!-- VALIDATION_METADATA: [{"name": "systemic_context", "description": "A detailed description of the macroeconomic conditions, labor market dynamics, or institutional frameworks experiencing structural crisis.\n"}, {"name": "empirical_indicators", "description": "A set of quantitative or qualitative data points illustrating the contradictions or inequalities within the system (e.g., wage stagnation vs. profit growth, housing commodification rates).\n"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "systemic_context", "description": "A detailed description of the macroeconomic conditions, labor market dynamics, or institutional frameworks experiencing structural crisis.\n"}, {"name": "empirical_indicators", "description": "A set of quantitative or qualitative data points illustrating the contradictions or inequalities within the system (e.g., wage stagnation vs. profit growth, housing commodification rates).\n"}], "metadata": {}} -->
 ### Description
 Systematically generates a highly rigorous structural crisis model through the lens of dialectical materialism, focusing on the contradictions of late-stage capitalism, base/superstructure dynamics, and mechanisms of systemic inequality according to American Sociological Association (ASA) standards.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -48,8 +36,20 @@ Construct a dialectical materialism structural crisis model based on the followi
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

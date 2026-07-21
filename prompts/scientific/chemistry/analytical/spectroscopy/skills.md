@@ -1,14 +1,3 @@
----
-tags:
-  - analytical-chemistry
-  - domain:scientific
-  - mass-spectrometry
-  - nmr
-  - skill
-  - spectroscopy
-  - structural-elucidation
----
-
 # Domain Agent Skills: Scientific Chemistry Analytical Spectroscopy
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: Predictive Multidimensional Spectroscopy Architect
-<!-- VALIDATION_METADATA: [{"name": "molecular_structure", "description": "The molecular structure of the novel compound, provided as an exact SMILES or InChI string.", "required": true}, {"name": "spectroscopic_techniques", "description": "The specific multidimensional spectroscopic techniques to predict (e.g., HMBC, HSQC, COSY, NOESY, HRMS).", "required": true}, {"name": "solvent_system", "description": "The designated deuterated solvent system for NMR analysis (e.g., CDCl3, DMSO-d6, D2O).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "molecular_structure", "description": "The molecular structure of the novel compound, provided as an exact SMILES or InChI string.", "required": true}, {"name": "spectroscopic_techniques", "description": "The specific multidimensional spectroscopic techniques to predict (e.g., HMBC, HSQC, COSY, NOESY, HRMS).", "required": true}, {"name": "solvent_system", "description": "The designated deuterated solvent system for NMR analysis (e.g., CDCl3, DMSO-d6, D2O).", "required": true}], "metadata": {}} -->
 ### Description
 Generates predictive structural modeling and analytical spectral profiles for novel compounds, synthesizing multidimensional NMR and high-resolution mass spectrometry data.
 
@@ -51,10 +40,20 @@ Solvent System: <solvent_system>{{ solvent_system }}</solvent_system>
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{molecular_structure: CC1=CC(=C(C(=C1C)C(C)(C)C)O)C, spectroscopic_techniques: '1H
-    NMR, 13C NMR, HSQC, HMBC, HRMS', solvent_system: CDCl3}"
-Asserted Output: "I. Structural Connectivity Mapping & Exact Mass Analysis"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['I. Structural Connectivity Mapping & Exact Mass Analysis']
+```
 
-Input Context: "{molecular_structure: C1=CC(=CC=C1C(=O)O)NC(=O)C, spectroscopic_techniques: 'COSY,
-    NOESY, 1H NMR, 13C NMR', solvent_system: DMSO-d6}"
-Asserted Output: "II. 1D Spectral Predictions"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['II. 1D Spectral Predictions']
+```

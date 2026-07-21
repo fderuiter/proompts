@@ -1,45 +1,3 @@
----
-tags:
-  - 510
-  - analytical
-  - assessment
-  - automated
-  - bcr-abl
-  - carrier
-  - cgm
-  - chemistry
-  - classification
-  - clinical
-  - companion
-  - compliance
-  - controls
-  - design
-  - device
-  - diagnostic
-  - documentation
-  - domain:regulatory
-  - domain:regulatory/device_specifics
-  - image
-  - labeling
-  - medical-devices
-  - ngs
-  - profiling
-  - reagent
-  - screening
-  - skill
-  - special
-  - strategy
-  - study
-  - system
-  - testing
-  - tests
-  - tumor
-  - validation
-  - verification
-  - virus
-  - zika
----
-
 # Domain Agent Skills: Regulatory Device specifics
 
 ## Metadata
@@ -50,7 +8,7 @@ tags:
 ---
 
 ## Skill: Carrier Screening System 510(k)
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Compile technical information for an autosomal recessive carrier screening gene mutation detection system.
 
@@ -86,13 +44,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Gene list (HUGO), variant coordinates, and clinical validity evidence. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: Design Verification for BCR-ABL Tests
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Outline design verification and validation requirements for a BCR-ABL quantitation test.
 
@@ -128,13 +92,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Variant types, IS conversion methodology, and calibration control data. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: Clinical Chemistry Device Classification
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Identify classification and regulatory requirements (general/special controls) for a clinical chemistry device.
 
@@ -170,13 +140,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Device name and intended use. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: companion_diagnostic_analytical_validation_architect
-<!-- VALIDATION_METADATA: [{"name": "ASSAY_DESCRIPTION", "type": "string", "description": "Detailed description of the CDx assay, including intended use, analyte, technology (e.g., NGS, IHC), and target therapeutic."}, {"name": "SAMPLE_TYPES", "type": "string", "description": "Types of clinical specimens to be tested (e.g., FFPE tissue, plasma/cfDNA)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "ASSAY_DESCRIPTION", "type": "string", "description": "Detailed description of the CDx assay, including intended use, analyte, technology (e.g., NGS, IHC), and target therapeutic."}, {"name": "SAMPLE_TYPES", "type": "string", "description": "Types of clinical specimens to be tested (e.g., FFPE tissue, plasma/cfDNA)."}], "metadata": {}} -->
 ### Description
 Acts as a Principal Regulatory Scientist and IVD Specialist to design rigorous, FDA-compliant analytical validation protocols for Companion Diagnostics (CDx), specifically addressing Next-Generation Sequencing (NGS) and immunohistochemistry (IHC) complexities under 21 CFR 809 and relevant FDA guidance.
 
@@ -219,16 +195,28 @@ Please architect a comprehensive Analytical Validation Protocol for the followin
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Zika Virus Reagent Study Design
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Draft a protocol for analytical performance studies to validate Zika virus serological reagents.
 
@@ -264,13 +252,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Reference material details, cross-reactivity targets, and specimen stability. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: iCGM Clinical Testing Strategy
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Draft a clinical study plan to demonstrate accuracy for an iCGM system.
 
@@ -306,13 +300,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Sensor specifications, target population, and wear period details. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: NGS Tumor Profiling Documentation
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Develop documentation supporting the clinical significance of mutations in an NGS-based tumor profiling panel.
 
@@ -348,13 +348,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Somatic mutations, professional guidelines, and method comparison data. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: Special Controls Labeling Compliance
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Generate mandatory labeling content, including warnings and limitations, for HCV antibody tests.
 
@@ -390,13 +396,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Specimen types, clinical population data, and performance characteristics. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: Automated Image Assessment System 510(k)
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Draft a detailed device description for an automated image assessment system for microbial colonies.
 
@@ -432,5 +444,11 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Technology details, software modules, and expert rules for colony assessment. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```

@@ -1,18 +1,3 @@
----
-tags:
-  - cardinal
-  - domain:scientific/mathematics/foundations/set_theory
-  - forcing
-  - foundations
-  - induction
-  - large
-  - mathematics
-  - poset
-  - set-theory
-  - skill
-  - transfinite
----
-
 # Domain Agent Skills: Scientific Mathematics Foundations Set theory
 
 ## Metadata
@@ -23,10 +8,9 @@ tags:
 ---
 
 ## Skill: transfinite_induction_well_ordering_architect
-<!-- VALIDATION_METADATA: [{"name": "base_structure", "description": "The class or set being well-ordered, or the ordinal hierarchy serving as the foundation of the induction."}, {"name": "inductive_property", "description": "The exact mathematical property or theorem P(\\alpha) to be proven for all ordinals \\alpha."}, {"name": "limit_case_condition", "description": "The specific structural or topological condition to be evaluated at limit ordinals."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "base_structure", "description": "The class or set being well-ordered, or the ordinal hierarchy serving as the foundation of the induction."}, {"name": "inductive_property", "description": "The exact mathematical property or theorem P(\\alpha) to be proven for all ordinals \\alpha."}, {"name": "limit_case_condition", "description": "The specific structural or topological condition to be evaluated at limit ordinals."}], "metadata": {}} -->
 ### Description
 Acts as a Principal Set Theorist to rigorously formulate multi-step proofs using transfinite induction and well-ordering principles over arbitrary ordinal and cardinal structures.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -52,16 +36,19 @@ Provide the complete, step-by-step formal derivation covering the base case, suc
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{base_structure: The Von Neumann universe $V$ stratified by the cumulative hierarchy
-    $V_\alpha$., inductive_property: $V_\alpha$ is a transitive set for all ordinals
-    $\alpha$., limit_case_condition: 'For a limit ordinal $\lambda$, $V_\lambda =
-    \bigcup_{\ beta < \lambda} V_\beta$ preserves transitivity.'}"
-Asserted Output: "Construct a proof showing the base case $V_0=\emptyset$, successor case, and union limit case."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Construct a proof showing the base case $V_0=\\emptyset$, successor case, and union limit case.']
+```
 
 ---
 
 ## Skill: large_cardinal_elementary_embedding_architect
-<!-- VALIDATION_METADATA: [{"name": "domain_model", "description": "The inner model or universe (typically $V$ or $L$) serving as the domain of the elementary embedding."}, {"name": "target_model", "description": "The transitive target model (e.g., $M$) of the elementary embedding."}, {"name": "critical_point", "description": "The cardinal $\\kappa$ which is the critical point of the elementary embedding $j$."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "domain_model", "description": "The inner model or universe (typically $V$ or $L$) serving as the domain of the elementary embedding."}, {"name": "target_model", "description": "The transitive target model (e.g., $M$) of the elementary embedding."}, {"name": "critical_point", "description": "The cardinal $\\kappa$ which is the critical point of the elementary embedding $j$."}], "metadata": {}} -->
 ### Description
 Acts as a Principal Set Theorist and Lead Logician to rigorously define and analyze large cardinal axioms via elementary embeddings, explicitly establishing critical points and derived measures.
 
@@ -89,13 +76,19 @@ Construct a formal, rigorous derivation defining the elementary embedding $j: V 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: forcing_poset_generic_extension_architect
-<!-- VALIDATION_METADATA: [{"name": "ground_model", "description": "The countable transitive ground model (usually denoted M or V) and its properties."}, {"name": "forcing_poset", "description": "The partially ordered set \\mathbb{P} used for forcing, including its conditions and ordering relation."}, {"name": "forcing_statement", "description": "The formal statement to be evaluated in the generic extension M[G]."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "ground_model", "description": "The countable transitive ground model (usually denoted M or V) and its properties."}, {"name": "forcing_poset", "description": "The partially ordered set \\mathbb{P} used for forcing, including its conditions and ordering relation."}, {"name": "forcing_statement", "description": "The formal statement to be evaluated in the generic extension M[G]."}], "metadata": {}} -->
 ### Description
 Acts as a Principal Set Theorist to rigorously define forcing posets, verify the countable chain condition (ccc) or closure properties, and evaluate the truth of statements in generic extensions.
 
@@ -123,5 +116,11 @@ Rigorously define the poset's properties (e.g., ccc or closure), prove cardinal 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

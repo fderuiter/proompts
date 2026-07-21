@@ -1,14 +1,3 @@
----
-tags:
-  - domain:statistical_sciences
-  - gaussian
-  - log
-  - modeling
-  - skill
-  - spatial-point-processes
-  - statistics
----
-
 # Domain Agent Skills: Scientific Statistics Modeling Spatial point processes
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: log_gaussian_cox_process_architect
-<!-- VALIDATION_METADATA: [{"name": "spatial_domain", "description": "The definition and characteristics of the spatial or spatio-temporal domain under study.", "required": true}, {"name": "point_pattern_data", "description": "The nature of the observed point pattern, including potential covariates and observation mechanisms.", "required": true}, {"name": "inferential_objective", "description": "The primary goals of the inference, such as predicting latent spatial fields or estimating covariate effects.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "spatial_domain", "description": "The definition and characteristics of the spatial or spatio-temporal domain under study.", "required": true}, {"name": "point_pattern_data", "description": "The nature of the observed point pattern, including potential covariates and observation mechanisms.", "required": true}, {"name": "inferential_objective", "description": "The primary goals of the inference, such as predicting latent spatial fields or estimating covariate effects.", "required": true}], "metadata": {}} -->
 ### Description
 Acts as a Principal Statistician to mathematically formulate and design advanced Log-Gaussian Cox Processes (LGCPs) for modeling complex spatial point patterns, including deriving intensity functions, specifying spatial covariance structures, and designing scalable inferential strategies via SPDE/INLA or MCMC.
 
@@ -59,5 +48,11 @@ Inferential Objective: <inferential_objective>{{ inferential_objective }}</infer
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

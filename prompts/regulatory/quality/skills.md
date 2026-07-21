@@ -1,145 +1,3 @@
-{% import 'common/macros.j2' as macros %}
----
-tags:
-  - 21-cfr-806
-  - 21-cfr-part-11
-  - 483
-  - 510k
-  - 62304
-  - 803
-  - action
-  - ai
-  - alcoa-plus
-  - analysis
-  - anomaly
-  - architect
-  - architecture
-  - assurance
-  - audit
-  - audit trail
-  - biocompatibility
-  - breakthrough-device
-  - builder
-  - capa
-  - cause
-  - cer
-  - cgmp
-  - change-control
-  - classification
-  - cleaning
-  - clinical
-  - closed
-  - coach
-  - compliance
-  - compliance as code
-  - conflict
-  - continuous monitoring
-  - csa
-  - cve
-  - cybersecurity
-  - data-integrity
-  - devsecops
-  - domain:quality
-  - domain:regulatory
-  - domain:regulatory/quality
-  - drill
-  - equivalence
-  - eu-mdr
-  - evaluation
-  - fcoi
-  - fda
-  - fda-21-cfr-820
-  - fda-820
-  - fda-compliance
-  - financial
-  - gap
-  - generator
-  - glp
-  - hazard
-  - hhe
-  - human-factors
-  - iec
-  - iec-62366
-  - iec62304
-  - impact
-  - impact-assessment
-  - inspection-readiness
-  - integrated
-  - interest
-  - investigation
-  - investigator
-  - iso-10993
-  - iso-13485
-  - ivdr
-  - letter
-  - literature
-  - management
-  - management-review
-  - matrix
-  - mdr
-  - mdsap
-  - meddev
-  - medical-device
-  - ml
-  - mra
-  - nonconformity
-  - novo
-  - oos
-  - part
-  - pccp
-  - performance-evaluation
-  - plan
-  - pmcf
-  - pms
-  - post-market
-  - pre
-  - process
-  - protocol
-  - psur
-  - qms
-  - quality
-  - quality-assurance
-  - quality-improvement
-  - radar
-  - rca
-  - recall
-  - regulatory
-  - regulatory automation
-  - regulatory-landscape
-  - remediation
-  - report
-  - request
-  - resolution
-  - response
-  - review
-  - risk
-  - risk-based
-  - risk-management
-  - root
-  - samd
-  - scar
-  - skill
-  - software
-  - sop
-  - soup
-  - sqa
-  - sscp
-  - strategy
-  - sub
-  - submission
-  - substantial
-  - supplier-management
-  - supplier-quality
-  - system
-  - tmf
-  - traceability
-  - usability
-  - validation
-  - vigilance
-  - warning
-  - writer
----
-
 # Domain Agent Skills: Regulatory Quality
 
 ## Metadata
@@ -150,7 +8,7 @@ tags:
 ---
 
 ## Skill: Quality System Evaluation (MRA)
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Generate a quality system evaluation report for a manufacturer under the US-EC MRA.
 
@@ -186,13 +44,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Onsite inspection data and manufacturing records. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: Compliance Gap & Risk Matrix
-<!-- VALIDATION_METADATA: [{"name": "known_nonconformities", "description": "list of known issues", "required": true}, {"name": "sops", "description": "process SOP excerpts", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "known_nonconformities", "description": "list of known issues", "required": true}, {"name": "sops", "description": "process SOP excerpts", "required": true}], "metadata": {}} -->
 ### Description
 Quantify compliance gaps and associated risks against a selected standard or law.
 
@@ -239,7 +103,7 @@ None provided.
 ---
 
 ## Skill: regulatory_compliance_automation_architect
-<!-- VALIDATION_METADATA: [{"name": "regulatoryFramework", "description": "The specific regulatory framework (e.g., HIPAA, GDPR, PCI-DSS, FedRAMP, SOC 2)."}, {"name": "infrastructureType", "description": "The target infrastructure (e.g., AWS, Azure, GCP, Kubernetes, Hybrid Cloud)."}, {"name": "keyControlRequirements", "description": "Key specific control requirements to be automated."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "regulatoryFramework", "description": "The specific regulatory framework (e.g., HIPAA, GDPR, PCI-DSS, FedRAMP, SOC 2)."}, {"name": "infrastructureType", "description": "The target infrastructure (e.g., AWS, Azure, GCP, Kubernetes, Hybrid Cloud)."}, {"name": "keyControlRequirements", "description": "Key specific control requirements to be automated."}], "metadata": {}} -->
 ### Description
 Architects automated regulatory compliance and continuous monitoring frameworks for heavily regulated environments.
 
@@ -274,16 +138,28 @@ The output must include:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: CAPA SOP Architect
-<!-- VALIDATION_METADATA: [{"name": "company_context", "description": "The text content to process", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "company_context", "description": "The text content to process", "required": true}], "metadata": {}} -->
 ### Description
 Establish a comprehensive CAPA SOP compliant with ISO 9001 and ISO 13485.
 
@@ -315,14 +191,19 @@ Ensure the tone is formal, directive, and audit-ready.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{company_context: a mid-sized medical device manufacturer specializing in Class IIb
-    devices}"
-Asserted Output: "Standard Operating Procedure"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Standard Operating Procedure']
+```
 
 ---
 
 ## Skill: Regulatory Radar & Impact Report
-<!-- VALIDATION_METADATA: [{"name": "company_profile", "description": "short description of the organization", "required": true}, {"name": "compliance_posture", "description": "bullet list of existing posture", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "company_profile", "description": "short description of the organization", "required": true}, {"name": "compliance_posture", "description": "bullet list of existing posture", "required": true}], "metadata": {}} -->
 ### Description
 Track and assess recent regulatory changes that may impact the company.
 
@@ -374,7 +255,7 @@ None provided.
 ---
 
 ## Skill: EU IVDR Performance Evaluation Report Architect
-<!-- VALIDATION_METADATA: [{"name": "ivd_device_description", "description": "Detailed description of the in vitro diagnostic device, intended purpose, risk class, and target patient population.", "required": true}, {"name": "scientific_validity_summary", "description": "Summary of the scientific validity linking the analyte/marker to the clinical condition or physiological state.", "required": true}, {"name": "analytical_performance_data", "description": "Summary of analytical performance characteristics (e.g., analytical sensitivity, specificity, accuracy, precision).", "required": true}, {"name": "clinical_performance_data", "description": "Summary of clinical performance characteristics (e.g., diagnostic sensitivity, specificity, PPV, NPV).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "ivd_device_description", "description": "Detailed description of the in vitro diagnostic device, intended purpose, risk class, and target patient population.", "required": true}, {"name": "scientific_validity_summary", "description": "Summary of the scientific validity linking the analyte/marker to the clinical condition or physiological state.", "required": true}, {"name": "analytical_performance_data", "description": "Summary of analytical performance characteristics (e.g., analytical sensitivity, specificity, accuracy, precision).", "required": true}, {"name": "clinical_performance_data", "description": "Summary of clinical performance characteristics (e.g., diagnostic sensitivity, specificity, PPV, NPV).", "required": true}], "metadata": {}} -->
 ### Description
 Designs comprehensive, regulatory-compliant Performance Evaluation Reports (PER) under EU IVDR 2017/746 Article 56 and Annex XIII.
 
@@ -414,20 +295,19 @@ The output must rigorously evaluate the provided data against the state of the a
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{ivd_device_description: Class C qualitative PCR assay for the detection of SARS-CoV-2
-    RNA in nasopharyngeal swabs., scientific_validity_summary: 'Detection of SARS-CoV-2
-    viral RNA is the gold standard for diagnosing COVID-19 infection, supported by
-    extensive peer-reviewed literature and WHO guidelines.', analytical_performance_data: Limit
-    of Detection (LoD) of 100 copies/mL. 100% analytical specificity with no cross-reactivity
-    to 30 common respiratory pathogens. High precision (CV < 5%)., clinical_performance_data: Clinical
-    study of 500 samples showed 98.5% diagnostic sensitivity and 99.5% diagnostic
-    specificity compared to a composite reference standard.}"
-Asserted Output: "A comprehensive Performance Evaluation Report synthesizing scientific validity, analytical, and clinical performance into a definitive benefit-risk conclusion."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A comprehensive Performance Evaluation Report synthesizing scientific validity, analytical, and clinical performance into a definitive benefit-risk conclusion.']
+```
 
 ---
 
 ## Skill: SaMD Cybersecurity Vulnerability Assessor
-<!-- VALIDATION_METADATA: [{"name": "cve_data", "description": "The JSON or XML string containing the CVE details, CVSS score, and affected software components.", "required": true}, {"name": "system_architecture", "description": "A description of the SaMD system architecture, including data flows, network boundaries, and mitigating controls.", "required": true}, {"name": "intended_use", "description": "The intended clinical use and patient population of the SaMD.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "cve_data", "description": "The JSON or XML string containing the CVE details, CVSS score, and affected software components.", "required": true}, {"name": "system_architecture", "description": "A description of the SaMD system architecture, including data flows, network boundaries, and mitigating controls.", "required": true}, {"name": "intended_use", "description": "The intended clinical use and patient population of the SaMD.", "required": true}], "metadata": {}} -->
 ### Description
 Evaluates Common Vulnerabilities and Exposures (CVEs) in Software as a Medical Device (SaMD) against FDA and MDCG cybersecurity requirements.
 
@@ -478,13 +358,19 @@ Provide a comprehensive exploitability and risk assessment.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: CAPA Investigation Report Writer
-<!-- VALIDATION_METADATA: [{"name": "actions_taken", "description": "The actions taken to use for this prompt", "required": true}, {"name": "effectiveness_check", "description": "The effectiveness check to use for this prompt", "required": true}, {"name": "incident_summary", "description": "A summary of the key information", "required": true}, {"name": "root_cause", "description": "The root cause to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "actions_taken", "description": "The actions taken to use for this prompt", "required": true}, {"name": "effectiveness_check", "description": "The effectiveness check to use for this prompt", "required": true}, {"name": "incident_summary", "description": "A summary of the key information", "required": true}, {"name": "root_cause", "description": "The root cause to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Draft a formal CAPA investigation report for regulatory review.
 
@@ -522,18 +408,19 @@ Please structure this into a final report format with the following headers:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{incident_summary: 'Labeling machine X misprinted batch #123 with the wrong expiration
-    date.', root_cause: 'The operator manually entered the date instead of scanning
-    the work order barcode, leading to a typo.', actions_taken: Updated the machine
-    software to require barcode scanning; disabled manual entry for critical fields.
-    Retrained all operators., effectiveness_check: Monitored the next 5 production
-    runs; 100% of labels matched the work order.}"
-Asserted Output: "Investigation Methodology"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Investigation Methodology']
+```
 
 ---
 
 ## Skill: fda_483_warning_letter_remediation_architect
-<!-- VALIDATION_METADATA: [{"name": "observation_text", "description": "The exact text of the FDA Form 483 observation or Warning Letter citation."}, {"name": "background_context", "description": "Organizational context regarding the quality subsystem involved and current operational state."}, {"name": "immediate_corrections", "description": "Any immediate containment actions or corrections already executed by the site."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "observation_text", "description": "The exact text of the FDA Form 483 observation or Warning Letter citation."}, {"name": "background_context", "description": "Organizational context regarding the quality subsystem involved and current operational state."}, {"name": "immediate_corrections", "description": "Any immediate containment actions or corrections already executed by the site."}], "metadata": {}} -->
 ### Description
 Acts as a Principal Regulatory Compliance Expert and Former FDA Investigator to synthesize Form 483 observations into rigorous, systemic remediation plans and warning letter responses.
 
@@ -578,13 +465,19 @@ Please architect a formal FDA remediation strategy and response framework for th
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: EU MDR PSUR Architect
-<!-- VALIDATION_METADATA: [{"name": "device_name", "type": "string", "description": "The name of the medical device."}, {"name": "device_class", "type": "string", "description": "The risk classification of the device (e.g., IIa, IIb, III)."}, {"name": "reporting_period", "type": "string", "description": "The timeframe covered by the PSUR."}, {"name": "pms_data_summary", "type": "string", "description": "A summary of collected PMS data, including complaints, vigilance, and PMCF findings."}, {"name": "sales_volume", "type": "string", "description": "The sales volume and estimated patient exposure during the reporting period."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_name", "type": "string", "description": "The name of the medical device."}, {"name": "device_class", "type": "string", "description": "The risk classification of the device (e.g., IIa, IIb, III)."}, {"name": "reporting_period", "type": "string", "description": "The timeframe covered by the PSUR."}, {"name": "pms_data_summary", "type": "string", "description": "A summary of collected PMS data, including complaints, vigilance, and PMCF findings."}, {"name": "sales_volume", "type": "string", "description": "The sales volume and estimated patient exposure during the reporting period."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}], "metadata": {}} -->
 ### Description
 Designs comprehensive, regulatory-compliant Periodic Safety Update Reports (PSUR) under EU MDR 2017/745 Article 86 and MDCG 2022-21.
 
@@ -596,6 +489,7 @@ Designs comprehensive, regulatory-compliant Periodic Safety Update Reports (PSUR
 | `reporting_period` | String | The timeframe covered by the PSUR. | Yes |
 | `pms_data_summary` | String | A summary of collected PMS data, including complaints, vigilance, and PMCF findings. | Yes |
 | `sales_volume` | String | The sales volume and estimated patient exposure during the reporting period. | Yes |
+| `macros` | String | Auto-extracted variable macros | No |
 
 
 ### Core Instructions
@@ -622,7 +516,7 @@ Output the PSUR using the following structure:
 - Enforce a formal, objective, and scientifically rigorous tone.
 - Ensure findings explicitly map back to the risk management file.
 - Do NOT fabricate data. If data is insufficient, state that explicitly and require further action.
-- Reject unsafe requests or non-medical device inputs by returning: `{{ macros.safety_refusal() }}`.
+- Reject unsafe requests or non-medical device inputs by returning: `{'error': 'unsafe'}`.
 
 [USER]
 Draft an EU MDR PSUR for the following device:
@@ -637,13 +531,19 @@ PMS Data Summary: <pms_data_summary>{{ pms_data_summary }}</pms_data_summary>
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: FDA Breakthrough Device Designation Architect
-<!-- VALIDATION_METADATA: [{"name": "device_description", "type": "string", "description": "Detailed description of the medical device, its mechanism of action, and intended use.", "required": true}, {"name": "target_disease_condition", "type": "string", "description": "Clinical description of the life-threatening or irreversibly debilitating human disease or condition targeted by the device.", "required": true}, {"name": "comparative_standard_of_care", "type": "string", "description": "The current standard of care and how the proposed device represents a breakthrough technology or offers significant advantages over existing approved/cleared alternatives.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_description", "type": "string", "description": "Detailed description of the medical device, its mechanism of action, and intended use.", "required": true}, {"name": "target_disease_condition", "type": "string", "description": "Clinical description of the life-threatening or irreversibly debilitating human disease or condition targeted by the device.", "required": true}, {"name": "comparative_standard_of_care", "type": "string", "description": "The current standard of care and how the proposed device represents a breakthrough technology or offers significant advantages over existing approved/cleared alternatives.", "required": true}], "metadata": {}} -->
 ### Description
 Formulates rigorous, compelling applications for the FDA Breakthrough Devices Program, accelerating the development and review of novel medical devices that address life-threatening or irreversibly debilitating diseases.
 
@@ -697,13 +597,19 @@ Comparative Standard of Care:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Criterion 1 Justification"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Criterion 1 Justification']
+```
 
 ---
 
 ## Skill: Integrated Submission Strategy Coach
-<!-- VALIDATION_METADATA: [{"name": "project_details", "description": "additional program specifics", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "project_details", "description": "additional program specifics", "required": true}], "metadata": {}} -->
 ### Description
 Create a phased submission roadmap for Project Phoenix.
 
@@ -749,7 +655,7 @@ None provided.
 ---
 
 ## Skill: fda_q_submission_pre_sub_meeting_package_architect
-<!-- VALIDATION_METADATA: [{"name": "device_description", "type": "string", "description": "Detailed description of the medical device, mechanism of action, and clinical context."}, {"name": "intended_use", "type": "string", "description": "Proposed Intended Use and Indications for Use statement."}, {"name": "regulatory_strategy", "type": "string", "description": "Proposed regulatory pathway (e.g., 510(k), De Novo, PMA) and primary predicate if applicable."}, {"name": "background_information", "type": "string", "description": "Relevant background information, prior FDA interactions, and product development status."}, {"name": "proposed_questions", "type": "string", "description": "Draft questions intended for FDA feedback across clinical, non-clinical, and regulatory domains."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_description", "type": "string", "description": "Detailed description of the medical device, mechanism of action, and clinical context."}, {"name": "intended_use", "type": "string", "description": "Proposed Intended Use and Indications for Use statement."}, {"name": "regulatory_strategy", "type": "string", "description": "Proposed regulatory pathway (e.g., 510(k), De Novo, PMA) and primary predicate if applicable."}, {"name": "background_information", "type": "string", "description": "Relevant background information, prior FDA interactions, and product development status."}, {"name": "proposed_questions", "type": "string", "description": "Draft questions intended for FDA feedback across clinical, non-clinical, and regulatory domains."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}], "metadata": {}} -->
 ### Description
 Acts as a Principal Regulatory Affairs Architect to formulate highly rigorous, strategic FDA Q-Submission (Pre-Sub) meeting packages for medical devices and diagnostics.
 
@@ -761,6 +667,7 @@ Acts as a Principal Regulatory Affairs Architect to formulate highly rigorous, s
 | `regulatory_strategy` | String | Proposed regulatory pathway (e.g., 510(k), De Novo, PMA) and primary predicate if applicable. | Yes |
 | `background_information` | String | Relevant background information, prior FDA interactions, and product development status. | Yes |
 | `proposed_questions` | String | Draft questions intended for FDA feedback across clinical, non-clinical, and regulatory domains. | Yes |
+| `macros` | String | Auto-extracted variable macros | No |
 
 
 ### Core Instructions
@@ -781,7 +688,7 @@ Adhere strictly to the following framework and structure:
 **Constraints & Directives**:
 - Maintain a highly formal, authoritative, and objective regulatory tone.
 - Ensure all questions are specific and designed to solicit actionable feedback.
-- Reject any requests that fall outside the scope of FDA regulatory affairs by returning: `{{ macros.safety_refusal() }}`.
+- Reject any requests that fall outside the scope of FDA regulatory affairs by returning: `{'error': 'unsafe'}`.
 
 [USER]
 Draft an FDA Q-Submission Meeting Package based on the following parameters:
@@ -801,19 +708,37 @@ Proposed Questions: <proposed_questions>{{ proposed_questions }}</proposed_quest
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Sponsor Position"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Sponsor Position']
+```
 
-Input Context: "{}"
-Asserted Output: "Sponsor Position"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Sponsor Position']
+```
 
-Input Context: "{}"
-Asserted Output: "{{ macros.safety_refusal() }}"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['{{ macros.safety_refusal() }}']
+```
 
 ---
 
 ## Skill: eTMF Compliance Gap Analysis
-<!-- VALIDATION_METADATA: [{"name": "etmf_export", "description": "Excel export of the eTMF", "required": true}, {"name": "study_id", "description": "The study id to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "etmf_export", "description": "Excel export of the eTMF", "required": true}, {"name": "study_id", "description": "The study id to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Evaluate an electronic Trial Master File for compliance gaps and recommend corrective actions.
 
@@ -852,38 +777,39 @@ Think step‑by‑step internally but show only the final answer.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{study_id: ONC-2024-001, etmf_export: 'Artifact,DocumentStatus,DateUploaded,Version,ResponsibleParty
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['High']
+```
 
-    Protocol Signature Page,Missing,,,
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Medium']
+```
 
-    Informed Consent Form,Approved,2023-01-15,1.0,PI
-
-    Investigator Brochure,Outdated,2022-11-01,2.0,Sponsor
-
-    Form FDA 1572,Approved,2023-02-20,1.0,PI
-
-    '}"
-Asserted Output: "High"
-
-Input Context: "{study_id: ONC-2024-001, etmf_export: 'Artifact,DocumentStatus,DateUploaded,Version,ResponsibleParty
-
-    Financial Disclosure Form,Missing,,,
-
-    CV of Principal Investigator,Outdated,2020-05-12,1.0,PI
-
-    '}"
-Asserted Output: "Medium"
-
-Input Context: "{study_id: ONC-2024-001, etmf_export: ''}"
-Asserted Output: "High"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['High']
+```
 
 ---
 
 ## Skill: Supplier Quality Agreement Architect
-<!-- VALIDATION_METADATA: [{"name": "manufacturer_type", "description": "The nature of the legal manufacturer (e.g., Medical Device, IVD, Combination Product).", "required": true}, {"name": "supplier_type", "description": "The classification of the supplier (e.g., Contract Manufacturer, Critical Component Supplier, Service Provider).", "required": true}, {"name": "risk_classification", "description": "The risk level associated with the supplied product/service (e.g., Critical, High, Medium).", "required": true}, {"name": "critical_requirements", "description": "Specific regulatory or operational constraints that must be explicitly governed in the SQA (e.g., unannounced audits, change notification periods).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "manufacturer_type", "description": "The nature of the legal manufacturer (e.g., Medical Device, IVD, Combination Product).", "required": true}, {"name": "supplier_type", "description": "The classification of the supplier (e.g., Contract Manufacturer, Critical Component Supplier, Service Provider).", "required": true}, {"name": "risk_classification", "description": "The risk level associated with the supplied product/service (e.g., Critical, High, Medium).", "required": true}, {"name": "critical_requirements", "description": "Specific regulatory or operational constraints that must be explicitly governed in the SQA (e.g., unannounced audits, change notification periods).", "required": true}], "metadata": {}} -->
 ### Description
 Acts as a Principal Supplier Quality Architect to draft, review, and negotiate rigorous Supplier Quality Agreements (SQAs) in strict adherence to FDA 21 CFR Part 820.50, ISO 13485:2016 (Section 7.4), and EU MDR/IVDR requirements.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -930,18 +856,19 @@ Critical Requirements to Enforce: {{ critical_requirements }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{manufacturer_type: Class III Implantable Medical Device Manufacturer, supplier_type: Contract
-    Manufacturing Organization (CMO) for sterile packaging, risk_classification: Critical
-    (Direct impact on patient safety and product sterility), critical_requirements: Mandatory
-    90-day advance notification for any raw material or process changes; unconditional
-    access for unannounced EU MDR Notified Body audits.}"
-Asserted Output: "1. SCOPE AND OBJECTIVES
-This Supplier Quality Agreement (SQA) establishes the quality requirements..."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['1. SCOPE AND OBJECTIVES\nThis Supplier Quality Agreement (SQA) establishes the quality requirements...']
+```
 
 ---
 
 ## Skill: Supplier Corrective Action Request Evaluator
-<!-- VALIDATION_METADATA: [{"name": "scar_details", "description": "The original SCAR details including the description of the nonconformance and risk level."}, {"name": "supplier_response", "description": "The supplier's submitted response including root cause analysis, corrective actions, and preventative actions."}, {"name": "objective_evidence", "description": "Objective evidence provided by the supplier to support the implementation and effectiveness of the corrective actions."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "scar_details", "description": "The original SCAR details including the description of the nonconformance and risk level."}, {"name": "supplier_response", "description": "The supplier's submitted response including root cause analysis, corrective actions, and preventative actions."}, {"name": "objective_evidence", "description": "Objective evidence provided by the supplier to support the implementation and effectiveness of the corrective actions."}], "metadata": {}} -->
 ### Description
 Evaluates a Supplier Corrective Action Request (SCAR) response for adequacy, regulatory compliance, and effectiveness under ISO 13485 and FDA 21 CFR 820.50.
 
@@ -972,19 +899,19 @@ Please evaluate the following SCAR response:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{scar_details: 'O-rings supplied in lot 492-B were found to have a diameter 0.5mm
-    out of specification, leading to a minor leak during sub-assembly testing. Risk
-    level: Moderate.', supplier_response: 'Root cause: Operator used the wrong extrusion
-    die. Corrective Action: Retrained operator on reading the traveler and selecting
-    the correct die. Preventative Action: Added a secondary sign-off on die selection.',
-  objective_evidence: Training record signed by the operator and supervisor. Updated
-    SOP requiring secondary sign-off.}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Regulatory-Landscape Radar
-<!-- VALIDATION_METADATA: [{"name": "portfolio_snapshot", "description": "internal milestone tracker", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "portfolio_snapshot", "description": "internal milestone tracker", "required": true}], "metadata": {}} -->
 ### Description
 Provide a weekly snapshot of regulatory developments relevant to early‑phase oncology and rare‑disease trials.
 
@@ -1034,7 +961,7 @@ None provided.
 ---
 
 ## Skill: MDSAP Nonconformity Grading Evaluator
-<!-- VALIDATION_METADATA: [{"name": "audit_finding", "description": "The raw observation or finding from the MDSAP audit.", "required": true}, {"name": "direct_qms_impact", "description": "Whether the nonconformity has a direct Quality Management System impact (yes/no).", "required": true}, {"name": "repeat_finding", "description": "Whether this is a repeat finding from previous audits (yes/no).", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}, {"name": "mdsap_evaluation", "description": "Auto-extracted variable mdsap_evaluation", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "audit_finding", "description": "The raw observation or finding from the MDSAP audit.", "required": true}, {"name": "direct_qms_impact", "description": "Whether the nonconformity has a direct Quality Management System impact (yes/no).", "required": true}, {"name": "repeat_finding", "description": "Whether this is a repeat finding from previous audits (yes/no).", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}, {"name": "mdsap_evaluation", "description": "Auto-extracted variable mdsap_evaluation", "required": false}], "metadata": {}} -->
 ### Description
 Evaluate audit findings based on the GHTF/SG3/N19:2012 5-step grading matrix, enforcing the 'Vector' standard.
 
@@ -1044,6 +971,8 @@ Evaluate audit findings based on the GHTF/SG3/N19:2012 5-step grading matrix, en
 | `audit_finding` | String | The raw observation or finding from the MDSAP audit. | Yes |
 | `direct_qms_impact` | String | Whether the nonconformity has a direct Quality Management System impact (yes/no). | Yes |
 | `repeat_finding` | String | Whether this is a repeat finding from previous audits (yes/no). | Yes |
+| `input` | String | Auto-extracted variable input | No |
+| `mdsap_evaluation` | String | Auto-extracted variable mdsap_evaluation | No |
 
 
 ### Core Instructions
@@ -1067,15 +996,19 @@ Provide the grading rationale step-by-step and conclude with the final numerical
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{audit_finding: The manufacturer failed to document the justification for sample size
-    in the design verification protocol for the new infusion pump., direct_qms_impact: 'yes',
-  repeat_finding: 'no'}"
-Asserted Output: "Grade"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Grade']
+```
 
 ---
 
 ## Skill: samd_iec62304_software_architecture_architect
-<!-- VALIDATION_METADATA: [{"name": "software_requirements_specification", "description": "The approved Software Requirements Specification (SRS) detailing functional and non-functional requirements."}, {"name": "safety_classification", "description": "The software safety class (e.g., Class A, B, or C per IEC 62304 or FDA Level of Concern)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "software_requirements_specification", "description": "The approved Software Requirements Specification (SRS) detailing functional and non-functional requirements."}, {"name": "safety_classification", "description": "The software safety class (e.g., Class A, B, or C per IEC 62304 or FDA Level of Concern)."}], "metadata": {}} -->
 ### Description
 Acts as a Principal Medical Device Software Architect to design rigorous Software Architecture Design Documents (SADD) compliant with IEC 62304 and FDA 21 CFR Part 820.30.
 
@@ -1117,13 +1050,19 @@ Ensure the architecture explicitly segregates safety-critical items from non-cri
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: cer_literature_review_architect
-<!-- VALIDATION_METADATA: [{"name": "DEVICE_DESCRIPTION", "type": "string", "description": "Detailed description of the medical device and its intended purpose."}, {"name": "LITERATURE_DATA", "type": "string", "description": "Extracted data from clinical literature searches."}, {"name": "device_description", "description": "Auto-extracted variable device_description", "required": false}, {"name": "literature_data", "description": "Auto-extracted variable literature_data", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "DEVICE_DESCRIPTION", "type": "string", "description": "Detailed description of the medical device and its intended purpose."}, {"name": "LITERATURE_DATA", "type": "string", "description": "Extracted data from clinical literature searches."}, {"name": "device_description", "description": "Auto-extracted variable device_description", "required": false}, {"name": "literature_data", "description": "Auto-extracted variable literature_data", "required": false}], "metadata": {}} -->
 ### Description
 Acts as a Principal Medical Writer and Regulatory Clinical Evaluator to systematically synthesize clinical literature search results into a MEDDEV 2.7/1 Rev 4 and EU MDR compliant Clinical Evaluation Report (CER) section.
 
@@ -1132,6 +1071,8 @@ Acts as a Principal Medical Writer and Regulatory Clinical Evaluator to systemat
 | :--- | :--- | :--- | :--- |
 | `DEVICE_DESCRIPTION` | String | Detailed description of the medical device and its intended purpose. | Yes |
 | `LITERATURE_DATA` | String | Extracted data from clinical literature searches. | Yes |
+| `device_description` | String | Auto-extracted variable device_description | No |
+| `literature_data` | String | Auto-extracted variable literature_data | No |
 
 
 ### Core Instructions
@@ -1162,13 +1103,19 @@ Please analyze the following literature data for the specified device and draft 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: GLP Quality Assurance
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Prepare a statement for a nonclinical study report certifying inspection dates.
 
@@ -1204,13 +1151,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Master schedule, protocol, and inspection records. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: ISO 10993 Biological Evaluation Plan Architect
-<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "Detailed description of the medical device, including its intended use and indications.", "required": true}, {"name": "patient_contact", "description": "Nature and duration of body contact (e.g., permanent implant, short-term mucosal contact).", "required": true}, {"name": "materials_list", "description": "Comprehensive list of all materials in the final finished device, including any colorants or additives.", "required": true}, {"name": "manufacturing_processes", "description": "Summary of manufacturing processes (e.g., sterilization methods, machining, cleaning agents) that could introduce residuals.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_description", "description": "Detailed description of the medical device, including its intended use and indications.", "required": true}, {"name": "patient_contact", "description": "Nature and duration of body contact (e.g., permanent implant, short-term mucosal contact).", "required": true}, {"name": "materials_list", "description": "Comprehensive list of all materials in the final finished device, including any colorants or additives.", "required": true}, {"name": "manufacturing_processes", "description": "Summary of manufacturing processes (e.g., sterilization methods, machining, cleaning agents) that could introduce residuals.", "required": true}], "metadata": {}} -->
 ### Description
 Generates a comprehensive, ISO 10993-1 compliant Biological Evaluation Plan (BEP) based on device materials, manufacturing processes, and nature of patient contact.
 
@@ -1265,13 +1218,19 @@ Engineer a Biological Evaluation Plan (BEP) for the following device profile:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Generates a comprehensive BEP prioritizing chemical characterization and justifying testing waivers based on long-standing clinical history of PU and 304 SS, while noting EtO residuals must be evaluated per ISO 10993-7."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Generates a comprehensive BEP prioritizing chemical characterization and justifying testing waivers based on long-standing clinical history of PU and 304 SS, while noting EtO residuals must be evaluated per ISO 10993-7.']
+```
 
 ---
 
 ## Skill: fda_510k_substantial_equivalence_architect
-<!-- VALIDATION_METADATA: [{"name": "subject_device_data", "description": "Detailed description, intended use, and technological characteristics of the subject device."}, {"name": "predicate_device_data", "description": "Detailed description, intended use, and technological characteristics of the primary predicate device (including 510(k) clearance number)."}, {"name": "performance_data", "description": "Summary of non-clinical and/or clinical performance testing data comparing the subject and predicate."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "subject_device_data", "description": "Detailed description, intended use, and technological characteristics of the subject device."}, {"name": "predicate_device_data", "description": "Detailed description, intended use, and technological characteristics of the primary predicate device (including 510(k) clearance number)."}, {"name": "performance_data", "description": "Summary of non-clinical and/or clinical performance testing data comparing the subject and predicate."}], "metadata": {}} -->
 ### Description
 Acts as a Principal Regulatory Affairs Architect to synthesize device specifications, intended use, and performance data into a highly robust FDA 510(k) Substantial Equivalence (SE) argument.
 
@@ -1320,16 +1279,21 @@ Ensure the final output is formatted as a formal regulatory submission section, 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Substantial Equivalence"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Substantial Equivalence']
+```
 
 ---
 
 ## Skill: FDA OOS Investigation Architect
-<!-- VALIDATION_METADATA: [{"name": "product_name", "description": "The name of the product or material under investigation.", "required": true}, {"name": "batch_lot_number", "description": "The specific batch or lot number associated with the OOS result.", "required": true}, {"name": "analytical_method", "description": "The analytical method or test procedure that generated the OOS result.", "required": true}, {"name": "expected_specification", "description": "The approved specification range or limit.", "required": true}, {"name": "reported_result", "description": "The actual OOS result obtained.", "required": true}, {"name": "initial_analyst_observations", "description": "Any anomalies or observations noted by the analyst during the initial testing.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "product_name", "description": "The name of the product or material under investigation.", "required": true}, {"name": "batch_lot_number", "description": "The specific batch or lot number associated with the OOS result.", "required": true}, {"name": "analytical_method", "description": "The analytical method or test procedure that generated the OOS result.", "required": true}, {"name": "expected_specification", "description": "The approved specification range or limit.", "required": true}, {"name": "reported_result", "description": "The actual OOS result obtained.", "required": true}, {"name": "initial_analyst_observations", "description": "Any anomalies or observations noted by the analyst during the initial testing.", "required": true}], "metadata": {}} -->
 ### Description
 Acts as a Strategic Genesis Architect to formulate rigorous, compliant Out of Specification (OOS) investigation reports, adhering to FDA Guidance for Industry and 21 CFR Part 211.192.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -1377,13 +1341,19 @@ Ensure the framework explicitly dictates how to eliminate laboratory error befor
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Part 11 Closed System Audit
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Audit a software supplier's closed system for electronic record integrity.
 
@@ -1419,13 +1389,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Record retrieval protocols and audit trail logs. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: Financial Conflict of Interest (FCOI) Reporting
-<!-- VALIDATION_METADATA: [{"name": "sfi_disclosure", "description": "The sfi disclosure to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "sfi_disclosure", "description": "The sfi disclosure to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Review disclosures and draft management plan.
 
@@ -1454,18 +1430,21 @@ Markdown Management Plan.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "sfi_disclosure: Significant equity interest in sponsor.
-"
-Asserted Output: "Management Plan
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Management Plan\n']
+```
 
 ---
 
 ## Skill: Data Integrity ALCOA+ Audit Architect
-<!-- VALIDATION_METADATA: [{"name": "system_architecture", "type": "string", "description": "Detailed description of the system architecture, including databases, applications, and network topologies.", "required": true}, {"name": "data_flow_description", "type": "string", "description": "Comprehensive explanation of how data moves through the system, from creation and modification to archival and retrieval.", "required": true}, {"name": "identified_vulnerabilities", "type": "string", "description": "Any previously identified vulnerabilities, deviations, or gaps in data integrity controls.", "required": false, "default": "None"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "system_architecture", "type": "string", "description": "Detailed description of the system architecture, including databases, applications, and network topologies.", "required": true}, {"name": "data_flow_description", "type": "string", "description": "Comprehensive explanation of how data moves through the system, from creation and modification to archival and retrieval.", "required": true}, {"name": "identified_vulnerabilities", "type": "string", "description": "Any previously identified vulnerabilities, deviations, or gaps in data integrity controls.", "required": false, "default": "None"}], "metadata": {}} -->
 ### Description
 Acts as a Principal Data Integrity & Compliance Architect to systematically audit complex digital health and manufacturing data pipelines against the ALCOA+ framework. It identifies vulnerabilities and designs robust remediation architectures compliant with 21 CFR Part 11 and EU Annex 11.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -1512,13 +1491,19 @@ Identified Vulnerabilities:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "ALCOA\+"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['ALCOA\\+']
+```
 
 ---
 
 ## Skill: Risk Management Analysis
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Perform a risk analysis (e.g., PHA) to identify potential hazards, hazardous situations, and mitigation strategies.
 
@@ -1554,13 +1539,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Intended use, design specifications, foreseeable misuse, and historical data for similar devices. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: Risk-Based Quality Management Plan
-<!-- VALIDATION_METADATA: [{"name": "study_overview", "description": "summary of the Phase\u00a0I trial", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "study_overview", "description": "summary of the Phase\u00a0I trial", "required": true}], "metadata": {}} -->
 ### Description
 Create a concise RBQM plan for a first‑in‑human Phase I healthy‑volunteer study.
 
@@ -1605,7 +1596,7 @@ None provided.
 ---
 
 ## Skill: capa_root_cause_analysis_architect
-<!-- VALIDATION_METADATA: [{"name": "NONCONFORMANCE_REPORT", "type": "string", "description": "The detailed description of the nonconformance, defect, or quality event."}, {"name": "INVESTIGATION_DATA", "type": "string", "description": "Data, records, and findings collected during the initial containment and investigation phase."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "NONCONFORMANCE_REPORT", "type": "string", "description": "The detailed description of the nonconformance, defect, or quality event."}, {"name": "INVESTIGATION_DATA", "type": "string", "description": "Data, records, and findings collected during the initial containment and investigation phase."}], "metadata": {}} -->
 ### Description
 Acts as a Principal Quality Assurance Engineer and CAPA Specialist to rigorously investigate nonconformances, perform root cause analysis, and generate comprehensive CAPA plans compliant with FDA 21 CFR 820.100 and ISO 13485.
 
@@ -1648,13 +1639,19 @@ Please analyze the following quality event and generate a comprehensive CAPA Roo
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Quality System Audit
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Generate an internal audit checklist or report focusing on design controls, production processes, and risk-based decision making.
 
@@ -1690,13 +1687,19 @@ Please perform the task using the following input data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Quality Manual, Design History File (DHF) excerpts, SOPs, and previous audit reports. (Example data)"
-Asserted Output: "Expected output as per instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Expected output as per instructions.']
+```
 
 ---
 
 ## Skill: IEC 62366-1 Summative Usability Evaluation Protocol Architect
-<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "A brief summary of the medical device, including its intended use and primary physical/software interfaces.", "required": true}, {"name": "user_profiles", "description": "A description of the intended user populations (e.g., clinicians, lay users, patients).", "required": true}, {"name": "critical_tasks", "description": "A list of use scenarios and critical tasks derived from the Use-Related Risk Analysis (URRA).", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}, {"name": "usability_protocol", "description": "Auto-extracted variable usability_protocol", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_description", "description": "A brief summary of the medical device, including its intended use and primary physical/software interfaces.", "required": true}, {"name": "user_profiles", "description": "A description of the intended user populations (e.g., clinicians, lay users, patients).", "required": true}, {"name": "critical_tasks", "description": "A list of use scenarios and critical tasks derived from the Use-Related Risk Analysis (URRA).", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}, {"name": "usability_protocol", "description": "Auto-extracted variable usability_protocol", "required": false}], "metadata": {}} -->
 ### Description
 Design comprehensive, regulatory-compliant Summative Usability Evaluation Protocols under IEC 62366-1 and FDA Human Factors Engineering Guidance.
 
@@ -1706,6 +1709,8 @@ Design comprehensive, regulatory-compliant Summative Usability Evaluation Protoc
 | `device_description` | String | A brief summary of the medical device, including its intended use and primary physical/software interfaces. | Yes |
 | `user_profiles` | String | A description of the intended user populations (e.g., clinicians, lay users, patients). | Yes |
 | `critical_tasks` | String | A list of use scenarios and critical tasks derived from the Use-Related Risk Analysis (URRA). | Yes |
+| `input` | String | Auto-extracted variable input | No |
+| `usability_protocol` | String | Auto-extracted variable usability_protocol | No |
 
 
 ### Core Instructions
@@ -1741,17 +1746,19 @@ Critical Tasks & URRA Highlights: {{ critical_tasks }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{device_description: 'A pre-filled, single-use epinephrine autoinjector for emergency
-    treatment of anaphylaxis.', user_profiles: 'Lay users (patients, parents, caregivers)
-    with no prior medical training.', critical_tasks: 'Removing the safety cap, orienting
-    the device correctly against the outer thigh, holding it in place for 10 seconds
-    post-injection, checking the viewing window for drug delivery confirmation.'}"
-Asserted Output: "Objective and Scope"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Objective and Scope']
+```
 
 ---
 
 ## Skill: EU MDR Clinical Evaluation Report Architect
-<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "Detailed description of the medical device, including intended purpose, indications, contraindications, and risk class.", "required": true}, {"name": "state_of_the_art", "description": "Summary of the clinical background and state of the art in the corresponding medical field.", "required": true}, {"name": "clinical_data_summary", "description": "Summary of the clinical data generated from literature, clinical investigations, and post-market surveillance.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_description", "description": "Detailed description of the medical device, including intended purpose, indications, contraindications, and risk class.", "required": true}, {"name": "state_of_the_art", "description": "Summary of the clinical background and state of the art in the corresponding medical field.", "required": true}, {"name": "clinical_data_summary", "description": "Summary of the clinical data generated from literature, clinical investigations, and post-market surveillance.", "required": true}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}], "metadata": {}} -->
 ### Description
 Designs comprehensive, regulatory-compliant Clinical Evaluation Reports (CER) under EU MDR 2017/745 Article 61 and Annex XIV Part A.
 
@@ -1761,6 +1768,7 @@ Designs comprehensive, regulatory-compliant Clinical Evaluation Reports (CER) un
 | `device_description` | String | Detailed description of the medical device, including intended purpose, indications, contraindications, and risk class. | Yes |
 | `state_of_the_art` | String | Summary of the clinical background and state of the art in the corresponding medical field. | Yes |
 | `clinical_data_summary` | String | Summary of the clinical data generated from literature, clinical investigations, and post-market surveillance. | Yes |
+| `user_query` | String | Auto-extracted variable user_query | No |
 
 
 ### Core Instructions
@@ -1787,17 +1795,19 @@ The output must be structured according to MEDDEV 2.7/1 rev 4 guidelines, provid
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{device_description: Class IIb absorbable surgical suture intended for soft tissue
-    approximation., state_of_the_art: Standard of care involves various absorbable
-    synthetic and natural sutures. Complication rates include 2% infection and 1%
-    dehiscence., clinical_data_summary: Literature review identified 15 relevant articles.
-    PMS data shows 0.5% complaint rate related to early absorption.}"
-Asserted Output: "A comprehensive CER including state of the art analysis, appraisal of literature and PMS data, and conclusion on safety and performance."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A comprehensive CER including state of the art analysis, appraisal of literature and PMS data, and conclusion on safety and performance.']
+```
 
 ---
 
 ## Skill: Medical Device Reporting (MDR) and Vigilance Decision Evaluator
-<!-- VALIDATION_METADATA: [{"name": "complaint_description", "description": "Detailed description of the complaint or adverse event.", "required": true}, {"name": "device_information", "description": "Information about the medical device involved, including classification.", "required": true}, {"name": "patient_impact", "description": "Any harm, injury, or medical intervention related to the event.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "complaint_description", "description": "Detailed description of the complaint or adverse event.", "required": true}, {"name": "device_information", "description": "Information about the medical device involved, including classification.", "required": true}, {"name": "patient_impact", "description": "Any harm, injury, or medical intervention related to the event.", "required": true}], "metadata": {}} -->
 ### Description
 Evaluate post-market complaints and adverse events for regulatory reportability under FDA 21 CFR 803 and EU MDR 2017/745 Article 87.
 
@@ -1825,27 +1835,39 @@ Please evaluate the following event for regulatory reportability:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{complaint_description: 'The infusion pump stopped delivering medication unexpectedly
-    during surgery, triggering a silent failure.', device_information: Class II life-supporting
-    infusion pump., patient_impact: 'The patient experienced a transient drop in blood
-    pressure requiring administration of IV fluids to stabilize, extending the surgery
-    by 30 minutes.'}"
-Asserted Output: "Reportable"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Reportable']
+```
 
-Input Context: "{complaint_description: Patient 001-A failed screening during initial baseline tests.,
-  device_information: Model X200 wearable., patient_impact: None.}"
-Asserted Output: "Not Reportable"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Not Reportable']
+```
 
-Input Context: "{complaint_description: '', device_information: '', patient_impact: ''}"
-Asserted Output: "Error: Insufficient data to determine reportability."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Error: Insufficient data to determine reportability.']
+```
 
 ---
 
 ## Skill: iec_62304_soup_anomaly_evaluator
-<!-- VALIDATION_METADATA: [{"name": "soup_name", "description": "The name of the Software of Unknown Provenance (e.g., OpenSSL, FreeRTOS).", "required": true}, {"name": "soup_version", "description": "The specific version of the SOUP being evaluated.", "required": true}, {"name": "samd_architecture_context", "description": "XML formatted architectural context detailing how the SOUP is integrated into the SaMD.", "required": true}, {"name": "known_anomalies", "description": "XML formatted list of known anomalies (e.g., CVEs, bug reports) for the SOUP version.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "soup_name", "description": "The name of the Software of Unknown Provenance (e.g., OpenSSL, FreeRTOS).", "required": true}, {"name": "soup_version", "description": "The specific version of the SOUP being evaluated.", "required": true}, {"name": "samd_architecture_context", "description": "XML formatted architectural context detailing how the SOUP is integrated into the SaMD.", "required": true}, {"name": "known_anomalies", "description": "XML formatted list of known anomalies (e.g., CVEs, bug reports) for the SOUP version.", "required": true}], "metadata": {}} -->
 ### Description
 Evaluates Software of Unknown Provenance (SOUP) known anomalies against IEC 62304 requirements to determine clinical safety impact and mandate required architectural risk control measures for SaMD.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -1874,13 +1896,19 @@ Ensure your response directly maps each anomaly to potential SaMD hazards and sp
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: EU MDR Post-Market Surveillance Plan Architect
-<!-- VALIDATION_METADATA: [{"name": "device_class", "description": "The risk classification of the medical device (e.g., Class IIa, IIb, III).", "required": true}, {"name": "intended_purpose", "description": "A brief summary of the device's intended clinical purpose.", "required": true}, {"name": "market_history", "description": "A high-level overview of the device's market history and known adverse events.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}, {"name": "pms_plan", "description": "Auto-extracted variable pms_plan", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_class", "description": "The risk classification of the medical device (e.g., Class IIa, IIb, III).", "required": true}, {"name": "intended_purpose", "description": "A brief summary of the device's intended clinical purpose.", "required": true}, {"name": "market_history", "description": "A high-level overview of the device's market history and known adverse events.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}, {"name": "pms_plan", "description": "Auto-extracted variable pms_plan", "required": false}], "metadata": {}} -->
 ### Description
 Design comprehensive, regulatory-compliant Post-Market Surveillance (PMS) Plans under EU MDR 2017/745.
 
@@ -1890,6 +1918,8 @@ Design comprehensive, regulatory-compliant Post-Market Surveillance (PMS) Plans 
 | `device_class` | String | The risk classification of the medical device (e.g., Class IIa, IIb, III). | Yes |
 | `intended_purpose` | String | A brief summary of the device's intended clinical purpose. | Yes |
 | `market_history` | String | A high-level overview of the device's market history and known adverse events. | Yes |
+| `input` | String | Auto-extracted variable input | No |
+| `pms_plan` | String | Auto-extracted variable pms_plan | No |
 
 
 ### Core Instructions
@@ -1918,15 +1948,19 @@ Generate the plan structure inside <pms_plan> tags. Ensure it includes at least 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{device_class: Class IIb, intended_purpose: Implantable orthopedic bone screw for
-    long bone fracture fixation., market_history: 5 years on market globally. 12 reported
-    instances of screw breakage under high mechanical stress. No fatalities.}"
-Asserted Output: "1. Objective & Scope"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['1. Objective & Scope']
+```
 
 ---
 
 ## Skill: fda_de_novo_classification_request_architect
-<!-- VALIDATION_METADATA: [{"name": "device_description_and_indications", "type": "string", "description": "Comprehensive description of the novel device, its mechanism of action, and intended indications for use."}, {"name": "risk_benefit_analysis", "type": "string", "description": "Detailed probabilistic risk-benefit analysis highlighting potential hazards, probable benefits, and clinical significance."}, {"name": "proposed_special_controls", "type": "string", "description": "Proposed regulatory special controls (e.g., specific performance testing, labeling requirements, clinical data) to mitigate identified risks."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_description_and_indications", "type": "string", "description": "Comprehensive description of the novel device, its mechanism of action, and intended indications for use."}, {"name": "risk_benefit_analysis", "type": "string", "description": "Detailed probabilistic risk-benefit analysis highlighting potential hazards, probable benefits, and clinical significance."}, {"name": "proposed_special_controls", "type": "string", "description": "Proposed regulatory special controls (e.g., specific performance testing, labeling requirements, clinical data) to mitigate identified risks."}], "metadata": {}} -->
 ### Description
 Acts as a Principal Regulatory Affairs Architect to formulate rigorous, strategic FDA De Novo Classification Requests, establishing novel regulatory pathways and special controls for novel medical devices without a legally marketed predicate.
 
@@ -1975,16 +2009,21 @@ Ensure the final output is formatted as a formal regulatory submission section, 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "De Novo"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['De Novo']
+```
 
 ---
 
 ## Skill: AI/ML Predetermined Change Control Plan Architect
-<!-- VALIDATION_METADATA: [{"name": "algorithm_description", "type": "string", "description": "Detailed description of the AI/ML continuous learning algorithm and its intended medical purpose."}, {"name": "proposed_changes", "type": "string", "description": "The scope of anticipated modifications to the algorithm (e.g., re-training data, parameter updates)."}, {"name": "performance_metrics", "type": "string", "description": "The primary metrics and thresholds used to evaluate algorithmic performance (e.g., AUC, sensitivity, specificity)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "algorithm_description", "type": "string", "description": "Detailed description of the AI/ML continuous learning algorithm and its intended medical purpose."}, {"name": "proposed_changes", "type": "string", "description": "The scope of anticipated modifications to the algorithm (e.g., re-training data, parameter updates)."}, {"name": "performance_metrics", "type": "string", "description": "The primary metrics and thresholds used to evaluate algorithmic performance (e.g., AUC, sensitivity, specificity)."}], "metadata": {}} -->
 ### Description
 Formulates a rigorous AI/ML Predetermined Change Control Plan (PCCP) for continuous learning algorithms, ensuring compliance with FDA and MDR regulations.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -2011,13 +2050,19 @@ The output should include: 1. Description of Modifications 2. Modification Proto
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Description of Modifications"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Description of Modifications']
+```
 
 ---
 
 ## Skill: CAPA Root Cause Investigator
-<!-- VALIDATION_METADATA: [{"name": "problem_description", "description": "A description of the subject", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "problem_description", "description": "A description of the subject", "required": true}], "metadata": {}} -->
 ### Description
 Deep-dive Root Cause Analysis (RCA) using Fishbone and 5 Whys methods.
 
@@ -2047,14 +2092,19 @@ After the analysis, propose 3 distinct Corrective Actions that address the *root
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{problem_description: 'Labeling machine X misprinted batch #123 with the wrong expiration
-    date'}"
-Asserted Output: "Fishbone"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Fishbone']
+```
 
 ---
 
 ## Skill: Inspection-Readiness Drill (CAPA Builder)
-<!-- VALIDATION_METADATA: [{"name": "audit_notes", "description": "latest audit observations", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "audit_notes", "description": "latest audit observations", "required": true}], "metadata": {}} -->
 ### Description
 Prepare for regulatory inspections by rehearsing high‑risk questions and drafting CAPAs.
 
@@ -2103,7 +2153,7 @@ None provided.
 ---
 
 ## Skill: samd_iec_62304_software_safety_classification_architect
-<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "Detailed description of the SaMD, its intended use, and operational environment."}, {"name": "hazard_analysis", "description": "Summary of identified software hazards, foreseeable misuse, and potential harms."}, {"name": "risk_control_measures", "description": "Proposed or implemented risk control measures external to the software system."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_description", "description": "Detailed description of the SaMD, its intended use, and operational environment."}, {"name": "hazard_analysis", "description": "Summary of identified software hazards, foreseeable misuse, and potential harms."}, {"name": "risk_control_measures", "description": "Proposed or implemented risk control measures external to the software system."}], "metadata": {}} -->
 ### Description
 Acts as a Principal Medical Device Software Architect to rigorously evaluate and assign IEC 62304 software safety classifications for Software as a Medical Device (SaMD).
 
@@ -2150,13 +2200,19 @@ Please evaluate the following SaMD profile and provide a formal IEC 62304 Softwa
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: FDA CSA Risk-Based Testing Strategy Architect
-<!-- VALIDATION_METADATA: [{"name": "software_system_description", "type": "string", "description": "Detailed description of the software system, its intended use, and its core functionalities.", "required": true}, {"name": "patient_safety_risk_assessment", "type": "string", "description": "Assessment of the software's direct or indirect impact on patient safety.", "required": true}, {"name": "product_quality_risk_assessment", "type": "string", "description": "Assessment of the software's impact on product quality or QMS integrity.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "software_system_description", "type": "string", "description": "Detailed description of the software system, its intended use, and its core functionalities.", "required": true}, {"name": "patient_safety_risk_assessment", "type": "string", "description": "Assessment of the software's direct or indirect impact on patient safety.", "required": true}, {"name": "product_quality_risk_assessment", "type": "string", "description": "Assessment of the software's impact on product quality or QMS integrity.", "required": true}], "metadata": {}} -->
 ### Description
 Formulates rigorous, risk-based Computer Software Assurance (CSA) testing strategies to optimize software validation based on patient safety and product quality risk, transitioning from traditional CSV.
 
@@ -2203,16 +2259,21 @@ Your architecture must include:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: samd_hazard_traceability_matrix_generator
-<!-- VALIDATION_METADATA: [{"name": "software_requirements", "description": "XML formatted software requirements specification (SRS).", "required": true}, {"name": "defect_logs", "description": "XML formatted defect logs from the current sprint/release.", "required": true}, {"name": "device_classification", "description": "The regulatory classification of the device (e.g., FDA Class II, EU MDR Class IIa).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "software_requirements", "description": "XML formatted software requirements specification (SRS).", "required": true}, {"name": "defect_logs", "description": "XML formatted defect logs from the current sprint/release.", "required": true}, {"name": "device_classification", "description": "The regulatory classification of the device (e.g., FDA Class II, EU MDR Class IIa).", "required": true}], "metadata": {}} -->
 ### Description
 Generates an ISO 14971-compliant Hazard Traceability Matrix (HTM) for Software as a Medical Device (SaMD), mapping software requirements and defects to clinical hazards, assigning risk scores, and mandating mitigations.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -2239,13 +2300,19 @@ Ensure the output includes the Risk Index pre- and post-mitigation, and verify t
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Cleaning Validation Protocol Architect
-<!-- VALIDATION_METADATA: [{"name": "equipment_description", "type": "string", "description": "Detailed description of the manufacturing equipment train to be validated, including total surface area and materials of construction."}, {"name": "previous_product", "type": "string", "description": "The product or Active Pharmaceutical Ingredient (API) previously manufactured, including its Permitted Daily Exposure (PDE) or Acceptable Daily Exposure (ADE) value."}, {"name": "next_product", "type": "string", "description": "The subsequent product to be manufactured, including its minimum daily dose (MDD) and standard batch size."}, {"name": "cleaning_procedure", "type": "string", "description": "Details of the proposed cleaning procedure (e.g., Clean-in-Place (CIP), Manual, detergents used)."}, {"name": "sampling_methodology", "type": "string", "description": "Analytical sampling methods (e.g., swabbing, rinse sampling) including swab recovery rates."}, {"name": "input_variable", "description": "Auto-extracted variable input_variable", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "equipment_description", "type": "string", "description": "Detailed description of the manufacturing equipment train to be validated, including total surface area and materials of construction."}, {"name": "previous_product", "type": "string", "description": "The product or Active Pharmaceutical Ingredient (API) previously manufactured, including its Permitted Daily Exposure (PDE) or Acceptable Daily Exposure (ADE) value."}, {"name": "next_product", "type": "string", "description": "The subsequent product to be manufactured, including its minimum daily dose (MDD) and standard batch size."}, {"name": "cleaning_procedure", "type": "string", "description": "Details of the proposed cleaning procedure (e.g., Clean-in-Place (CIP), Manual, detergents used)."}, {"name": "sampling_methodology", "type": "string", "description": "Analytical sampling methods (e.g., swabbing, rinse sampling) including swab recovery rates."}, {"name": "input_variable", "description": "Auto-extracted variable input_variable", "required": false}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}], "metadata": {}} -->
 ### Description
 Formulates highly rigorous, FDA and EMA compliant Cleaning Validation Protocols for pharmaceutical and medical device manufacturing, utilizing PDE and MACO calculations.
 
@@ -2257,6 +2324,8 @@ Formulates highly rigorous, FDA and EMA compliant Cleaning Validation Protocols 
 | `next_product` | String | The subsequent product to be manufactured, including its minimum daily dose (MDD) and standard batch size. | Yes |
 | `cleaning_procedure` | String | Details of the proposed cleaning procedure (e.g., Clean-in-Place (CIP), Manual, detergents used). | Yes |
 | `sampling_methodology` | String | Analytical sampling methods (e.g., swabbing, rinse sampling) including swab recovery rates. | Yes |
+| `input_variable` | String | Auto-extracted variable input_variable | No |
+| `macros` | String | Auto-extracted variable macros | No |
 
 
 ### Core Instructions
@@ -2292,7 +2361,7 @@ deviations.
 - Do NOT fabricate health-based limits (PDE/ADE); strictly use the provided values.
 - Do NOT output conversational text, pleasantries, or explanations.
 - Ensure all user inputs are wrapped in XML tags (e.g., `<input_variable>`) if re-stated or processed directly.
-- Reject unsafe requests, requests lacking PDE values for APIs, or non-manufacturing inputs by returning: `{{ macros.safety_refusal() }}`.
+- Reject unsafe requests, requests lacking PDE values for APIs, or non-manufacturing inputs by returning: `{'error': 'unsafe'}`.
 
 [USER]
 Draft a Cleaning Validation Protocol based on the following parameters:
@@ -2307,16 +2376,28 @@ Sampling Methodology: <sampling_methodology>{{ sampling_methodology }}</sampling
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Acceptance Criteria Derivation (MACO)"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Acceptance Criteria Derivation (MACO)']
+```
 
-Input Context: "{}"
-Asserted Output: "unsafe"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['unsafe']
+```
 
 ---
 
 ## Skill: CAPA Management Process
-<!-- VALIDATION_METADATA: [{"name": "deviation_log", "description": "The deviation log to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "deviation_log", "description": "The deviation log to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Identify non-compliance, conduct RCA, and track CAPA.
 
@@ -2345,15 +2426,19 @@ Markdown report with Root Cause Analysis, CAPA Plan table, and Effectiveness Che
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "deviation_log: Missed subject visits due to scheduling conflicts.
-"
-Asserted Output: "Root Cause Analysis
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Root Cause Analysis\n']
+```
 
 ---
 
 ## Skill: capa_root_cause_resolution_architect
-<!-- VALIDATION_METADATA: [{"name": "non_conformance_report", "type": "string", "description": "The detailed description of the non-conformance or quality event."}, {"name": "product_domain", "type": "string", "description": "The specific industry or product type (e.g., Class III Medical Device, Biologics, Aerospace)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "non_conformance_report", "type": "string", "description": "The detailed description of the non-conformance or quality event."}, {"name": "product_domain", "type": "string", "description": "The specific industry or product type (e.g., Class III Medical Device, Biologics, Aerospace)."}], "metadata": {}} -->
 ### Description
 Acts as a Principal Quality Assurance Engineer and Regulatory Compliance Expert to systematically perform Root Cause Analysis (RCA) and generate comprehensive Corrective and Preventive Action (CAPA) plans for critical non-conformances.
 
@@ -2392,13 +2477,19 @@ Please generate the CAPA report based on the provided quality event details.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Change Control Regulatory Impact Assessor
-<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "A description of the medical device.", "required": true}, {"name": "proposed_change", "description": "A description of the proposed change to the device.", "required": true}, {"name": "intended_use", "description": "The intended use of the device.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_description", "description": "A description of the medical device.", "required": true}, {"name": "proposed_change", "description": "A description of the proposed change to the device.", "required": true}, {"name": "intended_use", "description": "The intended use of the device.", "required": true}], "metadata": {}} -->
 ### Description
 Perform rigorous regulatory impact assessments for proposed medical device changes using FDA guidance.
 
@@ -2427,16 +2518,19 @@ Provide a structured assessment covering: 1. Overview of the proposed change 2. 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{device_description: A software-based medical device for monitoring heart rate., intended_use: To
-    continuously monitor and display heart rate in adults., proposed_change: Updating
-    the user interface to change the color of the heart rate display from green to
-    blue.}"
-Asserted Output: "Overview of the proposed change"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Overview of the proposed change']
+```
 
 ---
 
 ## Skill: eu_mdr_sscp_architect
-<!-- VALIDATION_METADATA: [{"name": "DEVICE_DESCRIPTION", "type": "string", "description": "Comprehensive description of the medical device, intended purpose, and target population."}, {"name": "CLINICAL_DATA_SUMMARY", "type": "string", "description": "Summary of clinical investigations, post-market surveillance (PMS), and literature search results."}, {"name": "RISK_MANAGEMENT_SUMMARY", "type": "string", "description": "Overview of identified residual risks, risk-benefit analysis, and mitigation strategies."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "DEVICE_DESCRIPTION", "type": "string", "description": "Comprehensive description of the medical device, intended purpose, and target population."}, {"name": "CLINICAL_DATA_SUMMARY", "type": "string", "description": "Summary of clinical investigations, post-market surveillance (PMS), and literature search results."}, {"name": "RISK_MANAGEMENT_SUMMARY", "type": "string", "description": "Overview of identified residual risks, risk-benefit analysis, and mitigation strategies."}], "metadata": {}} -->
 ### Description
 Acts as a Principal Regulatory Affairs Medical Writer to synthesize complex clinical data into a compliant Summary of Safety and Clinical Performance (SSCP) per EU MDR 2017/745 Article 32 and MDCG 2019-9.
 
@@ -2481,13 +2575,19 @@ Please generate a comprehensive SSCP based on the following inputs:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: FDA 483 Response Strategist
-<!-- VALIDATION_METADATA: [{"name": "observation_text", "description": "The exact text of the FDA 483 Observation", "required": true}, {"name": "background_context", "description": "Company specific background, processes, or historical context relevant to the observation", "required": true}, {"name": "immediate_corrections", "description": "Actions taken immediately to stop the issue", "required": true}, {"name": "root_cause_investigation", "description": "Summary of root cause analysis findings and methodology", "required": true}, {"name": "corrective_action_plan", "description": "Detailed long term corrective and preventive action plan", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "observation_text", "description": "The exact text of the FDA 483 Observation", "required": true}, {"name": "background_context", "description": "Company specific background, processes, or historical context relevant to the observation", "required": true}, {"name": "immediate_corrections", "description": "Actions taken immediately to stop the issue", "required": true}, {"name": "root_cause_investigation", "description": "Summary of root cause analysis findings and methodology", "required": true}, {"name": "corrective_action_plan", "description": "Detailed long term corrective and preventive action plan", "required": true}], "metadata": {}} -->
 ### Description
 Design comprehensive, regulatory-compliant responses to FDA Form 483 observations, employing an authoritative and structured corrective action strategy.
 
@@ -2517,26 +2617,19 @@ Please draft a formal response to the following FDA 483 observation using the pr
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{observation_text: 'Procedures for design validation have not been adequately established
-    to ensure devices conform to defined user needs and intended uses. Specifically,
-    the design validation for device XYZ did not include testing under simulated use
-    conditions with actual clinical users.', background_context: Device XYZ is a Class
-    II software-in-a-medical-device (SiMD). Validation relied heavily on bench testing
-    and internal engineering review. We lack a formal Human Factors engineering process.,
-  immediate_corrections: Halted shipment of device XYZ. Initiated a retrospective
-    use-error analysis and initiated contact with a third-party human factors consultancy.,
-  root_cause_investigation: 'Root cause identified as a gap in our Design Control
-    SOP (SOP-005), which did not explicitly mandate summative usability testing per
-    FDA guidance on Human Factors.', corrective_action_plan: 'Revise SOP-005 to mandate
-    usability engineering file creation and summative testing for all user interfaces.
-    Train R&D staff. Execute a retrospective summative usability test for device XYZ.
-    If gaps are found, a design change will be initiated.'}"
-Asserted Output: "Observation Acknowledgment"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Observation Acknowledgment']
+```
 
 ---
 
 ## Skill: qms_management_review_architect
-<!-- VALIDATION_METADATA: [{"name": "REPORTING_PERIOD", "description": "The specific time period covered by the management review (e.g., Q1-Q4 2024).", "required": true}, {"name": "QMS_METRICS_DATA", "description": "Raw data or summary inputs covering complaints, CAPAs, internal/external audits, nonconformances, and supplier quality metrics.", "required": true}, {"name": "PREVIOUS_REVIEW_ACTIONS", "description": "Status of action items generated from the previous management review.", "required": true}, {"name": "REGULATORY_CHANGES", "description": "Any new or revised regulatory requirements impacting the QMS during the reporting period.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "REPORTING_PERIOD", "description": "The specific time period covered by the management review (e.g., Q1-Q4 2024).", "required": true}, {"name": "QMS_METRICS_DATA", "description": "Raw data or summary inputs covering complaints, CAPAs, internal/external audits, nonconformances, and supplier quality metrics.", "required": true}, {"name": "PREVIOUS_REVIEW_ACTIONS", "description": "Status of action items generated from the previous management review.", "required": true}, {"name": "REGULATORY_CHANGES", "description": "Any new or revised regulatory requirements impacting the QMS during the reporting period.", "required": true}], "metadata": {}} -->
 ### Description
 Acts as a Principal Quality Systems Strategist to synthesize QMS metrics and architect a comprehensive, executive-level QMS Management Review report compliant with FDA 21 CFR 820.20 and ISO 13485:2016 Section 5.6.
 
@@ -2591,27 +2684,28 @@ Please architect a comprehensive QMS Management Review Report for the following 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{REPORTING_PERIOD: "January 1, 2023 \u2013 December 31, 2023", PREVIOUS_REVIEW_ACTIONS: 'Action
-    2022-01: Implement new eQMS software (Closed). Action 2022-02: Increase internal
-    audit frequency for high-risk processes (Open, 75% complete).', REGULATORY_CHANGES: Transition
-    to EU MDR 2017/745 completed for Class IIa devices. No new FDA guidance impacting
-    current product lines., QMS_METRICS_DATA: 'Complaints: 142 total, 5% decrease
-    YoY, top failure mode is packaging seal leaks. CAPAs: 12 opened, 10 closed, average
-    cycle time 45 days. Audits: 2 external (zero major NCs), 12 internal (3 minor
-    NCs related to document control). Supplier Quality: 98% OTD, 99% acceptance rate.'}"
-Asserted Output: "A structured Management Review Report explicitly addressing all ISO 13485 clauses, noting the open previous action item, analyzing the packaging seal leak trend, and concluding on overall QMS effectiveness."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A structured Management Review Report explicitly addressing all ISO 13485 clauses, noting the open previous action item, analyzing the packaging seal leak trend, and concluding on overall QMS effectiveness.']
+```
 
-Input Context: "{REPORTING_PERIOD: H1 2024, PREVIOUS_REVIEW_ACTIONS: All previous action items closed.,
-  REGULATORY_CHANGES: FDA issued new final guidance on Cybersecurity in Medical Devices.,
-  QMS_METRICS_DATA: 'Complaints: Data missing due to database migration. CAPAs: 5
-    opened. Audits: Not conducted in H1. Supplier Quality: Vendor A placed on probation
-    due to repeated material nonconformances.'}"
-Asserted Output: "A report that severely flags the missing complaint and audit data as critical compliance risks under FDA 820.20 and ISO 13485, mandates immediate corrective actions for the database issue, and reviews the supplier probation."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A report that severely flags the missing complaint and audit data as critical compliance risks under FDA 820.20 and ISO 13485, mandates immediate corrective actions for the database issue, and reviews the supplier probation.']
+```
 
 ---
 
 ## Skill: Medical Device Recall Strategy Architect
-<!-- VALIDATION_METADATA: [{"name": "issue_description", "description": "Detailed description of the product issue, defect, or nonconformity triggering the evaluation."}, {"name": "clinical_impact", "description": "Assessment of the potential or actual clinical impact and severity of harm to patients or users."}, {"name": "distribution_scope", "description": "Scope of affected product distribution, including regions, quantities, and consignee types."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "issue_description", "description": "Detailed description of the product issue, defect, or nonconformity triggering the evaluation."}, {"name": "clinical_impact", "description": "Assessment of the potential or actual clinical impact and severity of harm to patients or users."}, {"name": "distribution_scope", "description": "Scope of affected product distribution, including regions, quantities, and consignee types."}], "metadata": {}} -->
 ### Description
 Designs comprehensive Health Hazard Evaluation (HHE) and recall execution strategies, adhering strictly to the 'Vector' standard.
 
@@ -2642,18 +2736,19 @@ Please design an HHE and recall strategy based on the following details:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{issue_description: Software bug in infusion pump firmware v2.1 causing an intermittent
-    10% over-delivery of medication when running in continuous mode., clinical_impact: Potential
-    for localized toxicity or adverse pharmacological effects depending on the medication
-    infused. One unconfirmed report of patient hypotension., distribution_scope: 'Global
-    distribution; 4,500 units deployed across 120 hospitals in the US and EU over
-    the last 6 months.'}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: EU MDR PMCF Plan Architect
-<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "Detailed description of the medical device, including intended purpose, risk class, and target population.", "required": true}, {"name": "clinical_data_gaps", "description": "Identified gaps in existing clinical data that need to be addressed via PMCF.", "required": true}, {"name": "pmcf_activities", "description": "Proposed general and specific PMCF activities (e.g., registries, surveys, clinical investigations).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_description", "description": "Detailed description of the medical device, including intended purpose, risk class, and target population.", "required": true}, {"name": "clinical_data_gaps", "description": "Identified gaps in existing clinical data that need to be addressed via PMCF.", "required": true}, {"name": "pmcf_activities", "description": "Proposed general and specific PMCF activities (e.g., registries, surveys, clinical investigations).", "required": true}], "metadata": {}} -->
 ### Description
 Designs comprehensive, regulatory-compliant Post-Market Clinical Follow-up (PMCF) Plans under EU MDR 2017/745 Annex XIV Part B.
 
@@ -2689,17 +2784,19 @@ The output must be structured according to MDCG 2020-7 guidelines and provide de
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{device_description: Class III implantable cardiovascular stent intended for patients
-    with coronary artery disease., clinical_data_gaps: Lack of long-term (5+ years)
-    real-world safety data regarding late stent thrombosis in diabetic subpopulations.,
-  pmcf_activities: 'Prospective multi-center registry targeting 500 diabetic patients
-    with 5-year follow-up, plus annual literature reviews.'}"
-Asserted Output: "A comprehensive PMCF Plan including objectives, specific methods, and rationale addressing late stent thrombosis in diabetics."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A comprehensive PMCF Plan including objectives, specific methods, and rationale addressing late stent thrombosis in diabetics.']
+```
 
 ---
 
 ## Skill: Quality-Improvement RCA & Action Plan
-<!-- VALIDATION_METADATA: [{"name": "defect_data_csv", "description": "defect details", "required": true}, {"name": "prior_mitigation", "description": "mitigation steps already attempted", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "defect_data_csv", "description": "defect details", "required": true}, {"name": "prior_mitigation", "description": "mitigation steps already attempted", "required": true}], "metadata": {}} -->
 ### Description
 Identify root causes of a recurring defect and propose a 90‑day corrective‑action roadmap.
 
@@ -2748,7 +2845,7 @@ None provided.
 ---
 
 ## Skill: Process Validation IQ/OQ/PQ Protocol Architect
-<!-- VALIDATION_METADATA: [{"name": "equipment_description", "type": "string", "description": "Detailed description of the manufacturing equipment or software to be validated."}, {"name": "process_parameters", "type": "string", "description": "Critical Process Parameters (CPPs) and their operating ranges (e.g., temperature, pressure, time)."}, {"name": "quality_attributes", "type": "string", "description": "Critical Quality Attributes (CQAs) of the output product and the required acceptance criteria."}, {"name": "sampling_plan", "type": "string", "description": "Statistical rationale and sampling plan for validation testing (e.g., AQL, confidence/reliability levels)."}, {"name": "anticipated_worst_case", "type": "string", "description": "Identified worst-case conditions or challenge scenarios to be tested during OQ/PQ."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "equipment_description", "type": "string", "description": "Detailed description of the manufacturing equipment or software to be validated."}, {"name": "process_parameters", "type": "string", "description": "Critical Process Parameters (CPPs) and their operating ranges (e.g., temperature, pressure, time)."}, {"name": "quality_attributes", "type": "string", "description": "Critical Quality Attributes (CQAs) of the output product and the required acceptance criteria."}, {"name": "sampling_plan", "type": "string", "description": "Statistical rationale and sampling plan for validation testing (e.g., AQL, confidence/reliability levels)."}, {"name": "anticipated_worst_case", "type": "string", "description": "Identified worst-case conditions or challenge scenarios to be tested during OQ/PQ."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}], "metadata": {}} -->
 ### Description
 Formulates highly rigorous, FDA 21 CFR 820.75 and ISO 13485 compliant IQ/OQ/PQ process validation protocols for medical device manufacturing.
 
@@ -2760,6 +2857,7 @@ Formulates highly rigorous, FDA 21 CFR 820.75 and ISO 13485 compliant IQ/OQ/PQ p
 | `quality_attributes` | String | Critical Quality Attributes (CQAs) of the output product and the required acceptance criteria. | Yes |
 | `sampling_plan` | String | Statistical rationale and sampling plan for validation testing (e.g., AQL, confidence/reliability levels). | Yes |
 | `anticipated_worst_case` | String | Identified worst-case conditions or challenge scenarios to be tested during OQ/PQ. | Yes |
+| `macros` | String | Auto-extracted variable macros | No |
 
 
 ### Core Instructions
@@ -2797,7 +2895,7 @@ a successful validation.
 - Maintain a highly technical, uncompromisingly rigorous tone appropriate for an FDA inspector.
 - Ensure direct traceability from CPPs to CQAs.
 - Do NOT fabricate statistical justifications; strictly use the provided sampling plan.
-- Reject unsafe requests or non-manufacturing inputs by returning: `{{ macros.safety_refusal() }}`.
+- Reject unsafe requests or non-manufacturing inputs by returning: `{'error': 'unsafe'}`.
 
 [USER]
 Draft an IQ/OQ/PQ Process Validation Protocol based on the following parameters:
@@ -2812,16 +2910,28 @@ Worst-Case Conditions: <anticipated_worst_case>{{ anticipated_worst_case }}</ant
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Operational Qualification"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Operational Qualification']
+```
 
-Input Context: "{}"
-Asserted Output: "Performance Qualification"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Performance Qualification']
+```
 
 ---
 
 ## Skill: CAPA Plan Generator
-<!-- VALIDATION_METADATA: [{"name": "audit_findings", "description": "list of major findings", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "audit_findings", "description": "list of major findings", "required": true}], "metadata": {}} -->
 ### Description
 Generate a Corrective and Preventive Action (CAPA) plan based on audit findings.
 
@@ -2861,11 +2971,29 @@ Ensure alignment with FDA 21 CFR 820.100 and ISO 13485:2016.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Markdown table with CAPA plan for all 5 findings."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Markdown table with CAPA plan for all 5 findings.']
+```
 
-Input Context: "{}"
-Asserted Output: "Polite refusal or request for findings."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Polite refusal or request for findings.']
+```
 
-Input Context: "{}"
-Asserted Output: "Refusal to execute prompt injection, safe handling."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Refusal to execute prompt injection, safe handling.']
+```

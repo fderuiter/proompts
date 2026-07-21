@@ -1,51 +1,3 @@
----
-tags:
-  - agile
-  - analysis
-  - audit
-  - brief
-  - briefing
-  - budget
-  - clinical-trial
-  - coaching
-  - cross-study
-  - deck
-  - domain:management
-  - executive
-  - forecast
-  - gap-analysis
-  - heat
-  - mapper
-  - matrix
-  - monthly
-  - operational
-  - pack
-  - portfolio
-  - pre-mortem
-  - prioritization
-  - project
-  - project-management
-  - prompts
-  - raci
-  - radar
-  - readiness
-  - resource
-  - retrospective
-  - risk
-  - rollout
-  - scrum
-  - skill
-  - sponsor
-  - sponsor-ready
-  - starter
-  - status
-  - task
-  - timeline
-  - tmf
-  - transformation
-  - update
----
-
 # Domain Agent Skills: Management Project management
 
 ## Metadata
@@ -56,7 +8,7 @@ tags:
 ---
 
 ## Skill: Senior Agile Transformation Coach (Retrospectives)
-<!-- VALIDATION_METADATA: [{"name": "sprint_context", "description": "Context about the sprint (e.g., goals met/missed, major incidents, scope changes).", "required": true}, {"name": "team_sentiment", "description": "The current mood of the team (e.g., frustrated, celebrated, tired, anxious).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "sprint_context", "description": "Context about the sprint (e.g., goals met/missed, major incidents, scope changes).", "required": true}, {"name": "team_sentiment", "description": "The current mood of the team (e.g., frustrated, celebrated, tired, anxious).", "required": true}], "metadata": {}} -->
 ### Description
 Design a high-impact retrospective agenda tailored to team sentiment and sprint outcomes, focusing on root cause analysis and actionable improvements.
 
@@ -111,15 +63,19 @@ Use Markdown with the following structure:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{sprint_context: We missed the sprint goal because the API specs kept changing. The
-    backend team felt blocked by the frontend team's indecision., team_sentiment: Frustrated
-    and pointing fingers.}"
-Asserted Output: "Agenda for a 'frustrated' team, likely focusing on communication and process. Includes Prime Directive."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["Agenda for a 'frustrated' team, likely focusing on communication and process. Includes Prime Directive."]
+```
 
 ---
 
 ## Skill: Risk and Pre-Mortem Analysis
-<!-- VALIDATION_METADATA: [{"name": "project_name", "description": "`{{ project_summary }}`", "required": true}, {"name": "project_summary", "description": "A summary of the key information", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "project_name", "description": "`{{ project_summary }}`", "required": true}, {"name": "project_summary", "description": "A summary of the key information", "required": true}], "metadata": {}} -->
 ### Description
 Identify early failure points and mitigation strategies for a project or study.
 
@@ -155,14 +111,19 @@ Markdown table summarizing each risk and mitigation.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{project_name: Example Initiative, project_summary: Example summary}"
-Asserted Output: "Table listing potential failures with preventive steps.
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Table listing potential failures with preventive steps.\n']
+```
 
 ---
 
 ## Skill: Executive Sponsor Briefing Deck Outline
-<!-- VALIDATION_METADATA: [{"name": "challenges", "description": "The challenges to use for this prompt", "required": true}, {"name": "kpi_snapshot", "description": "`{{ strategic_wins }}`", "required": true}, {"name": "strategic_wins", "description": "`{{ challenges }}`", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "challenges", "description": "The challenges to use for this prompt", "required": true}, {"name": "kpi_snapshot", "description": "`{{ strategic_wins }}`", "required": true}, {"name": "strategic_wins", "description": "`{{ challenges }}`", "required": true}], "metadata": {}} -->
 ### Description
 Provide a slide-by-slide outline for a quarterly sponsor briefing.
 
@@ -200,14 +161,19 @@ Ordered list of slides in Markdown.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{kpi_snapshot: Example KPIs, strategic_wins: Example wins, challenges: Example challenges}"
-Asserted Output: "Slide outline following a Situation–Complication–Resolution–Ask arc.
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Slide outline following a Situation–Complication–Resolution–Ask arc.\n']
+```
 
 ---
 
 ## Skill: Status Update and Task Prioritization
-<!-- VALIDATION_METADATA: [{"name": "status_notes", "description": "Additional notes, assumptions, or special considerations", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "status_notes", "description": "Additional notes, assumptions, or special considerations", "required": true}], "metadata": {}} -->
 ### Description
 Summarize recent progress and recommend prioritized next actions.
 
@@ -247,14 +213,19 @@ Structured bullet lists using the format above.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{status_notes: Example status details}"
-Asserted Output: "Bullet lists for Completed, Blockers, Next Actions, and Stakeholder Alerts.
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Bullet lists for Completed, Blockers, Next Actions, and Stakeholder Alerts.\n']
+```
 
 ---
 
 ## Skill: Cross-Study Operational Risk Heat Map and Mitigation Plan
-<!-- VALIDATION_METADATA: [{"name": "risk_register", "description": "The risk register to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "risk_register", "description": "The risk register to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Identify and prioritize the top portfolio-level operational risks and propose mitigations.
 
@@ -290,14 +261,19 @@ Output Format:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{risk_register: Example register}"
-Asserted Output: "Tables named Risk-Heat-Map and Mitigation-Plan with an executive summary.
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Tables named Risk-Heat-Map and Mitigation-Plan with an executive summary.\n']
+```
 
 ---
 
 ## Skill: TMF Gap-Analysis and Audit Readiness Check
-<!-- VALIDATION_METADATA: [{"name": "tmf_index", "description": "The tmf index to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "tmf_index", "description": "The tmf index to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Identify missing or outdated Trial Master File documents and propose corrective actions.
 
@@ -331,14 +307,19 @@ Markdown table followed by a numbered action plan.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{tmf_index: Example TMF index}"
-Asserted Output: "Table listing Doc_ID, Gap_Type, and Corrective_Action with action plan.
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Table listing Doc_ID, Gap_Type, and Corrective_Action with action plan.\n']
+```
 
 ---
 
 ## Skill: Portfolio Resource and Budget Forecast
-<!-- VALIDATION_METADATA: [{"name": "enrollment_deltas", "description": "The enrollment deltas to use for this prompt", "required": true}, {"name": "historic_burn_rates", "description": "`{{ enrollment_deltas }}`", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "enrollment_deltas", "description": "The enrollment deltas to use for this prompt", "required": true}, {"name": "historic_burn_rates", "description": "`{{ enrollment_deltas }}`", "required": true}], "metadata": {}} -->
 ### Description
 Generate a rolling 12‑month FTE and budget forecast for active trials.
 
@@ -378,14 +359,19 @@ Markdown table followed by bullet list and calculation notes.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{historic_burn_rates: Sample burn rates, enrollment_deltas: Sample deltas}"
-Asserted Output: "Forecast table with cost, FTE, and variance percentage.
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Forecast table with cost, FTE, and variance percentage.\n']
+```
 
 ---
 
 ## Skill: Sponsor-Ready Monthly Status Brief
-<!-- VALIDATION_METADATA: [{"name": "monthly_notes", "description": "Additional notes, assumptions, or special considerations", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "monthly_notes", "description": "Additional notes, assumptions, or special considerations", "required": true}], "metadata": {}} -->
 ### Description
 Draft a concise, escalation-ready monthly status report for study sponsors.
 
@@ -419,14 +405,19 @@ Markdown document with H2 section headers as listed above.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{monthly_notes: Example monthly notes}"
-Asserted Output: "Document with sections Enrollment, Budget, Milestones, Risks & Mitigations, and Requests/Decisions Needed.
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Document with sections Enrollment, Budget, Milestones, Risks & Mitigations, and Requests/Decisions Needed.\n']
+```
 
 ---
 
 ## Skill: RACI Mapper
-<!-- VALIDATION_METADATA: [{"name": "project_phase", "description": "The project phase to use for this prompt", "required": true}, {"name": "tasks", "description": "The task or objective to accomplish", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "project_phase", "description": "The project phase to use for this prompt", "required": true}, {"name": "tasks", "description": "The task or objective to accomplish", "required": true}], "metadata": {}} -->
 ### Description
 Clarify team responsibilities using a RACI matrix.
 
@@ -463,16 +454,19 @@ Keep the response under 130 words and avoid jargon.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{project_phase: Launch, tasks: 'Design marketing plan - AB
-
-    Build landing page - CD'}"
-Asserted Output: "| Task | R | A | C | I |
-| --- | --- | --- | --- | --- |"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['| Task | R | A | C | I |\n| --- | --- | --- | --- | --- |']
+```
 
 ---
 
 ## Skill: Clinical-Trial Timeline and Risk Radar
-<!-- VALIDATION_METADATA: [{"name": "csv_data", "description": "The data or dataset to analyze", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "csv_data", "description": "The data or dataset to analyze", "required": true}], "metadata": {}} -->
 ### Description
 Evaluate study schedule variance and prioritize mitigation actions.
 
@@ -507,16 +501,19 @@ Markdown table followed by a bullet list of next actions.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{csv_data: 'Task,Planned,Actual,Slack
-
-    Task1,2024-01-01,2024-01-05,2'}"
-Asserted Output: "Table comparing planned versus actual dates and a next actions list.
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Table comparing planned versus actual dates and a next actions list.\n']
+```
 
 ---
 
 ## Skill: Rollout Risk Matrix
-<!-- VALIDATION_METADATA: [{"name": "risk_list", "description": "The risk list to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "risk_list", "description": "The risk list to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Assess rollout risks and propose key mitigation actions.
 
@@ -550,14 +547,19 @@ Markdown table followed by short mitigation actions.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{risk_list: Risk A; Risk B}"
-Asserted Output: "3×3 risk matrix with mitigation actions.
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['3×3 risk matrix with mitigation actions.\n']
+```
 
 ---
 
 ## Skill: Project Starter Pack Prompts
-<!-- VALIDATION_METADATA: [{"name": "alternatives", "description": "`{{ decision_date }}`", "required": true}, {"name": "budget", "description": "`{{ deadline }}`", "required": true}, {"name": "business_outcome", "description": "The business outcome to use for this prompt", "required": true}, {"name": "deadline", "description": "`{{ stakeholders }}`", "required": true}, {"name": "decision", "description": "`{{ alternatives }}`", "required": true}, {"name": "decision_date", "description": "The decision date to use for this prompt", "required": true}, {"name": "feature_area", "description": "`{{ decision }}`", "required": true}, {"name": "project_description", "description": "`{{ budget }}`", "required": true}, {"name": "project_name", "description": "`{{ project_description }}`", "required": true}, {"name": "stakeholders", "description": "`{{ business_outcome }}`", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "alternatives", "description": "`{{ decision_date }}`", "required": true}, {"name": "budget", "description": "`{{ deadline }}`", "required": true}, {"name": "business_outcome", "description": "The business outcome to use for this prompt", "required": true}, {"name": "deadline", "description": "`{{ stakeholders }}`", "required": true}, {"name": "decision", "description": "`{{ alternatives }}`", "required": true}, {"name": "decision_date", "description": "The decision date to use for this prompt", "required": true}, {"name": "feature_area", "description": "`{{ decision }}`", "required": true}, {"name": "project_description", "description": "`{{ budget }}`", "required": true}, {"name": "project_name", "description": "`{{ project_description }}`", "required": true}, {"name": "stakeholders", "description": "`{{ business_outcome }}`", "required": true}], "metadata": {}} -->
 ### Description
 Provide ready-to-copy prompt templates for common project documentation.
 

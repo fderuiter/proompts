@@ -1,21 +1,3 @@
----
-tags:
-  - builder
-  - domain:clinical
-  - email
-  - feasibility-questionnaire
-  - generator
-  - investigator-outreach
-  - landscape
-  - mapping
-  - personalized
-  - prioritization
-  - site
-  - site-acquisition
-  - skill
-  - tailored
----
-
 # Domain Agent Skills: Clinical Site acquisition Site acquisition workflow
 
 ## Metadata
@@ -26,7 +8,7 @@ tags:
 ---
 
 ## Skill: Site Landscape Mapping & Prioritization
-<!-- VALIDATION_METADATA: [{"name": "protocol_summary", "description": "final study synopsis", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "protocol_summary", "description": "final study synopsis", "required": true}], "metadata": {}} -->
 ### Description
 Rank investigative sites for an upcoming study.
 
@@ -64,13 +46,19 @@ Additional notes:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "protocol_summary: Example Phase II oncology study synopsis"
-Asserted Output: "Rank"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Rank']
+```
 
 ---
 
 ## Skill: Personalized Investigator-Outreach Email Generator
-<!-- VALIDATION_METADATA: [{"name": "CRO_NAME", "description": "The name or identifier", "required": true}, {"name": "city_country", "description": "site location", "required": true}, {"name": "investigator_name", "description": "principal investigator's full name", "required": true}, {"name": "recent_relevant_trials", "description": "notable recent trials at the site", "required": true}, {"name": "site_name", "description": "institution or site name", "required": true}, {"name": "sponsor_name", "description": "sponsoring company", "required": true}, {"name": "study_synopsis", "description": "brief summary of the study", "required": true}, {"name": "unique_site_strength", "description": "distinctive capability or resource", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "CRO_NAME", "description": "The name or identifier", "required": true}, {"name": "city_country", "description": "site location", "required": true}, {"name": "investigator_name", "description": "principal investigator's full name", "required": true}, {"name": "recent_relevant_trials", "description": "notable recent trials at the site", "required": true}, {"name": "site_name", "description": "institution or site name", "required": true}, {"name": "sponsor_name", "description": "sponsoring company", "required": true}, {"name": "study_synopsis", "description": "brief summary of the study", "required": true}, {"name": "unique_site_strength", "description": "distinctive capability or resource", "required": true}], "metadata": {}} -->
 ### Description
 Craft a tailored outreach email to potential investigators.
 
@@ -120,19 +108,19 @@ Tone should be professional and collaborative. Keep the email between 180 and 22
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "investigator_name: Dr. Smith
-site_name: City Hospital
-city_country: Chicago, USA
-recent_relevant_trials: Trial A
-unique_site_strength: Dedicated oncology center
-study_synopsis: Phase II lung cancer study
-sponsor_name: ABC Pharma"
-Asserted Output: "{"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['{']
+```
 
 ---
 
 ## Skill: Tailored Feasibility-Questionnaire Builder
-<!-- VALIDATION_METADATA: [{"name": "protocol_summary", "description": "draft study synopsis", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "protocol_summary", "description": "draft study synopsis", "required": true}], "metadata": {}} -->
 ### Description
 Draft a site-feasibility questionnaire to confirm patient availability and operational readiness.
 
@@ -173,5 +161,11 @@ Keep medical acronyms consistent with the protocol. If key details are missing, 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "protocol_summary: Draft Phase II oncology protocol"
-Asserted Output: "Section A"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Section A']
+```

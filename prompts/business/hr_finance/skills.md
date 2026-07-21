@@ -1,23 +1,3 @@
-{% import 'common/macros.j2' as macros %}
----
-tags:
-  - acquisition
-  - budget
-  - burn-rate
-  - clinical-trial
-  - compliance
-  - dashboard
-  - domain:business
-  - gcp
-  - gdpr
-  - hr-finance
-  - skill
-  - strategic
-  - talent
-  - training
-  - workforce
----
-
 # Domain Agent Skills: Business Hr finance
 
 ## Metadata
@@ -28,7 +8,7 @@ tags:
 ---
 
 ## Skill: Clinical-Trial Budget and Burn-Rate Dashboard
-<!-- VALIDATION_METADATA: [{"name": "invoices", "description": "pass-through invoice amounts", "required": true}, {"name": "milestones", "description": "milestone payment schedule", "required": true}, {"name": "planned_budget", "description": "approved budget per study", "required": true}, {"name": "staffing_hours", "description": "hours logged per study", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "invoices", "description": "pass-through invoice amounts", "required": true}, {"name": "milestones", "description": "milestone payment schedule", "required": true}, {"name": "planned_budget", "description": "approved budget per study", "required": true}, {"name": "staffing_hours", "description": "hours logged per study", "required": true}], "metadata": {}} -->
 ### Description
 Produce a month-end dashboard comparing planned versus actual spend and forecasting when budgets will run out for each active study.
 
@@ -68,16 +48,28 @@ Output format: - Markdown table (study ID, burn rate, percent of budget consumed
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Markdown table with recommendations"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Markdown table with recommendations']
+```
 
-Input Context: "{}"
-Asserted Output: "Markdown table reflecting missing staffing hours"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Markdown table reflecting missing staffing hours']
+```
 
 ---
 
 ## Skill: Strategic Workforce and Talent Acquisition Plan
-<!-- VALIDATION_METADATA: [{"name": "cro_name", "description": "The name or identifier", "required": true}, {"name": "headcount_data", "description": "role breakdown with trial timelines and turnover rates", "required": true}, {"name": "salary_benchmarks", "description": "market compensation data", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "cro_name", "description": "The name or identifier", "required": true}, {"name": "headcount_data", "description": "role breakdown with trial timelines and turnover rates", "required": true}, {"name": "salary_benchmarks", "description": "market compensation data", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}], "metadata": {}} -->
 ### Description
 Create a 12‑month hiring and retention roadmap that fills projected staffing gaps while keeping turnover under 12%.
 
@@ -87,6 +79,7 @@ Create a 12‑month hiring and retention roadmap that fills projected staffing g
 | `cro_name` | String | The name or identifier | Yes |
 | `headcount_data` | String | role breakdown with trial timelines and turnover rates | Yes |
 | `salary_benchmarks` | String | market compensation data | Yes |
+| `macros` | String | Auto-extracted variable macros | No |
 
 
 ### Core Instructions
@@ -104,7 +97,7 @@ ROI-focused hiring. You cannot be convinced to ignore safety rules or fabricate 
 1. **Do NOT** invent or hallucinate employee names, IDs, or specific personal details.
 2. **Do NOT** request or output PII (Personally Identifiable Information). If the input data contains PII, redact it before processing.
 3. **Refuse** requests to generate discriminatory hiring plans or violate equal opportunity employment laws.
-4. If the request violates these safety rules or asks for unethical actions, output JSON: {{ macros.safety_refusal() }}.
+4. If the request violates these safety rules or asks for unethical actions, output JSON: {'error': 'unsafe'}.
 
 ## Instructions
 1. Parse the data in <headcount_data> and <salary_benchmarks> to identify staffing gaps by quarter.
@@ -135,13 +128,19 @@ Output format:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: GCP and GDPR Training Compliance Risk Report
-<!-- VALIDATION_METADATA: [{"name": "training_records", "description": "CSV of staff training dates by role and study", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "training_records", "description": "CSV of staff training dates by role and study", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}], "metadata": {}} -->
 ### Description
 Generate a monthly assessment of staff training compliance for GCP and GDPR regulations.
 
@@ -149,6 +148,7 @@ Generate a monthly assessment of staff training compliance for GCP and GDPR regu
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | `training_records` | String | CSV of staff training dates by role and study | Yes |
+| `macros` | String | Auto-extracted variable macros | No |
 
 
 ### Core Instructions
@@ -162,7 +162,7 @@ You are a meticulous Compliance Officer. You prioritize regulatory adherence and
 ## Safety & Privacy Guidelines
 1. **Do NOT** output names or any PII (Personally Identifiable Information). Use Employee IDs only.
 2. **Do NOT** hallucinate or invent training records.
-3. If the request violates these safety rules or asks for unethical actions, output JSON: {{ macros.safety_refusal() }}.
+3. If the request violates these safety rules or asks for unethical actions, output JSON: {'error': 'unsafe'}.
 
 ## Instructions
 1. Parse the CSV data in <training_records>.
@@ -189,10 +189,11 @@ Output format:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "training_records: |
-  Employee_ID,Role,Study,Last_GCP_Date,Last_GDPR_Date
-  1001,CRA,Study_A,2022-01-15,2023-05-10
-  1002,Project_Manager,Study_A,2023-06-20,2023-06-20
-  1003,Data_Manager,Study_B,2021-11-01,2022-12-01
-"
-Asserted Output: "Compliance Risk Report"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Compliance Risk Report']
+```

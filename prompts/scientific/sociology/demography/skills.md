@@ -1,17 +1,3 @@
----
-tags:
-  - demography
-  - domain:scientific/sociology/demography
-  - intergenerational
-  - mobility
-  - residential
-  - segregation
-  - skill
-  - social
-  - sociology
-  - spatial
----
-
 # Domain Agent Skills: Scientific Sociology Demography
 
 ## Metadata
@@ -22,7 +8,7 @@ tags:
 ---
 
 ## Skill: intergenerational_social_mobility_markov_modeler
-<!-- VALIDATION_METADATA: [{"name": "occupational_strata", "type": "string", "description": "A definition of the occupational categories or social strata (e.g., upper, middle, lower)."}, {"name": "empirical_transition_data", "type": "string", "description": "Raw empirical frequencies or probabilities representing intergenerational status transitions from fathers to sons/daughters."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "occupational_strata", "type": "string", "description": "A definition of the occupational categories or social strata (e.g., upper, middle, lower)."}, {"name": "empirical_transition_data", "type": "string", "description": "Raw empirical frequencies or probabilities representing intergenerational status transitions from fathers to sons/daughters."}], "metadata": {}} -->
 ### Description
 A Principal Sociologist and Lead Demographer agent designed to formulate and analyze intergenerational social mobility using Markov chain matrices.
 
@@ -66,13 +52,19 @@ Using the following empirical transition data:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: residential_segregation_spatial_inequality_modeler
-<!-- VALIDATION_METADATA: [{"name": "demographic_data", "type": "string", "description": "Raw census tract or neighborhood-level demographic population data for multiple groups."}, {"name": "focal_city", "type": "string", "description": "The urban area or metropolitan statistical area (MSA) being analyzed."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "demographic_data", "type": "string", "description": "Raw census tract or neighborhood-level demographic population data for multiple groups."}, {"name": "focal_city", "type": "string", "description": "The urban area or metropolitan statistical area (MSA) being analyzed."}], "metadata": {}} -->
 ### Description
 A Principal Sociologist and Urban Demographer agent designed to rigorously analyze residential segregation, calculate spatial inequality indices, and model structural impacts using ASA standards.
 
@@ -115,5 +107,11 @@ Using the following tract-level demographic dataset:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

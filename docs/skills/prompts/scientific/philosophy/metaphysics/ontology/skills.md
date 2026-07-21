@@ -1,19 +1,3 @@
----
-tags:
-  - composition
-  - dialectical-synthesis
-  - domain:philosophy
-  - domain:scientific
-  - formal-philosophy
-  - grounding
-  - mereological
-  - metaphysical
-  - metaphysics
-  - ontology
-  - philosophy
-  - skill
----
-
 # Domain Agent Skills: Scientific Philosophy Metaphysics Ontology
 
 ## Metadata
@@ -24,7 +8,7 @@ tags:
 ---
 
 ## Skill: Metaphysical Dialectical Synthesizer
-<!-- VALIDATION_METADATA: [{"name": "thesis_framework", "description": "The first metaphysical framework (Thesis).", "required": true}, {"name": "antithesis_framework", "description": "The opposing, mutually exclusive metaphysical framework (Antithesis).", "required": true}, {"name": "antithesis", "description": "Auto-extracted variable antithesis", "required": false}, {"name": "thesis", "description": "Auto-extracted variable thesis", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "thesis_framework", "description": "The first metaphysical framework (Thesis).", "required": true}, {"name": "antithesis_framework", "description": "The opposing, mutually exclusive metaphysical framework (Antithesis).", "required": true}, {"name": "antithesis", "description": "Auto-extracted variable antithesis", "required": false}, {"name": "thesis", "description": "Auto-extracted variable thesis", "required": false}], "metadata": {}} -->
 ### Description
 Systematically executes a rigorous dialectical synthesis of mutually exclusive metaphysical frameworks, avoiding informal fallacies and ensuring logical validity.
 
@@ -33,6 +17,8 @@ Systematically executes a rigorous dialectical synthesis of mutually exclusive m
 | :--- | :--- | :--- | :--- |
 | `thesis_framework` | String | The first metaphysical framework (Thesis). | Yes |
 | `antithesis_framework` | String | The opposing, mutually exclusive metaphysical framework (Antithesis). | Yes |
+| `antithesis` | String | Auto-extracted variable antithesis | No |
+| `thesis` | String | Auto-extracted variable thesis | No |
 
 
 ### Core Instructions
@@ -68,16 +54,28 @@ Execute a rigorous dialectical synthesis for the following mutually exclusive me
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Formal Deconstruction"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Formal Deconstruction']
+```
 
-Input Context: "{}"
-Asserted Output: "Dialectical Synthesis"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Dialectical Synthesis']
+```
 
 ---
 
 ## Skill: mereological_composition_analyzer
-<!-- VALIDATION_METADATA: [{"name": "CANDIDATE_OBJECTS", "type": "string", "description": "The distinct entities or regions ($x_1, x_2, \\dots, x_n$) hypothesized to compose a further object."}, {"name": "COMPOSITION_PRINCIPLE", "type": "string", "description": "The targeted mereological principle governing composition (e.g., Unrestricted Mereological Composition, Organicism, Nihilism, Contact)."}, {"name": "MEREOLOGICAL_SYSTEM", "type": "string", "description": "The formal axiomatization being applied (e.g., Classical Extensional Mereology (CEM), Ground Mereology (M))."}, {"name": "candidate_objects", "description": "Auto-extracted variable candidate_objects", "required": false}, {"name": "composition_principle", "description": "Auto-extracted variable composition_principle", "required": false}, {"name": "mereological_system", "description": "Auto-extracted variable mereological_system", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "CANDIDATE_OBJECTS", "type": "string", "description": "The distinct entities or regions ($x_1, x_2, \\dots, x_n$) hypothesized to compose a further object."}, {"name": "COMPOSITION_PRINCIPLE", "type": "string", "description": "The targeted mereological principle governing composition (e.g., Unrestricted Mereological Composition, Organicism, Nihilism, Contact)."}, {"name": "MEREOLOGICAL_SYSTEM", "type": "string", "description": "The formal axiomatization being applied (e.g., Classical Extensional Mereology (CEM), Ground Mereology (M))."}, {"name": "candidate_objects", "description": "Auto-extracted variable candidate_objects", "required": false}, {"name": "composition_principle", "description": "Auto-extracted variable composition_principle", "required": false}, {"name": "mereological_system", "description": "Auto-extracted variable mereological_system", "required": false}], "metadata": {}} -->
 ### Description
 A highly rigorous prompt designed to systematically formalize and evaluate part-whole relations using formal mereology and principles of restricted or unrestricted composition.
 
@@ -87,6 +85,9 @@ A highly rigorous prompt designed to systematically formalize and evaluate part-
 | `CANDIDATE_OBJECTS` | String | The distinct entities or regions ($x_1, x_2, \dots, x_n$) hypothesized to compose a further object. | Yes |
 | `COMPOSITION_PRINCIPLE` | String | The targeted mereological principle governing composition (e.g., Unrestricted Mereological Composition, Organicism, Nihilism, Contact). | Yes |
 | `MEREOLOGICAL_SYSTEM` | String | The formal axiomatization being applied (e.g., Classical Extensional Mereology (CEM), Ground Mereology (M)). | Yes |
+| `candidate_objects` | String | Auto-extracted variable candidate_objects | No |
+| `composition_principle` | String | Auto-extracted variable composition_principle | No |
+| `mereological_system` | String | Auto-extracted variable mereological_system | No |
 
 
 ### Core Instructions
@@ -120,16 +121,28 @@ Execute the systematic formalization and analysis of this mereological compositi
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Formalization of the Plurality"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Formalization of the Plurality']
+```
 
-Input Context: "{}"
-Asserted Output: "Application of the Composition Principle"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Application of the Composition Principle']
+```
 
 ---
 
 ## Skill: metaphysical_grounding_fundamentality_formalizer
-<!-- VALIDATION_METADATA: [{"name": "FUNDAMENTAL_ENTITIES", "type": "string", "description": "The set of entities or facts postulated to be absolutely fundamental or independent ($\\Delta$)."}, {"name": "DERIVATIVE_ENTITIES", "type": "string", "description": "The set of entities or facts postulated to be grounded in or dependent upon the fundamental entities ($\\Gamma$)."}, {"name": "GROUNDING_FRAMEWORK", "type": "string", "description": "The specific metaphysical framework of grounding and dependence being applied (e.g., Strict Partial Order Grounding, Existential Dependence, Essential Dependence)."}, {"name": "derivative_entities", "description": "Auto-extracted variable derivative_entities", "required": false}, {"name": "fundamental_entities", "description": "Auto-extracted variable fundamental_entities", "required": false}, {"name": "grounding_framework", "description": "Auto-extracted variable grounding_framework", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "FUNDAMENTAL_ENTITIES", "type": "string", "description": "The set of entities or facts postulated to be absolutely fundamental or independent ($\\Delta$)."}, {"name": "DERIVATIVE_ENTITIES", "type": "string", "description": "The set of entities or facts postulated to be grounded in or dependent upon the fundamental entities ($\\Gamma$)."}, {"name": "GROUNDING_FRAMEWORK", "type": "string", "description": "The specific metaphysical framework of grounding and dependence being applied (e.g., Strict Partial Order Grounding, Existential Dependence, Essential Dependence)."}, {"name": "derivative_entities", "description": "Auto-extracted variable derivative_entities", "required": false}, {"name": "fundamental_entities", "description": "Auto-extracted variable fundamental_entities", "required": false}, {"name": "grounding_framework", "description": "Auto-extracted variable grounding_framework", "required": false}], "metadata": {}} -->
 ### Description
 A highly rigorous prompt designed to systematically formalize and evaluate relationships of metaphysical grounding, ontological dependence, and fundamentality between entities or facts.
 
@@ -139,6 +152,9 @@ A highly rigorous prompt designed to systematically formalize and evaluate relat
 | `FUNDAMENTAL_ENTITIES` | String | The set of entities or facts postulated to be absolutely fundamental or independent ($\Delta$). | Yes |
 | `DERIVATIVE_ENTITIES` | String | The set of entities or facts postulated to be grounded in or dependent upon the fundamental entities ($\Gamma$). | Yes |
 | `GROUNDING_FRAMEWORK` | String | The specific metaphysical framework of grounding and dependence being applied (e.g., Strict Partial Order Grounding, Existential Dependence, Essential Dependence). | Yes |
+| `derivative_entities` | String | Auto-extracted variable derivative_entities | No |
+| `fundamental_entities` | String | Auto-extracted variable fundamental_entities | No |
+| `grounding_framework` | String | Auto-extracted variable grounding_framework | No |
 
 
 ### Core Instructions
@@ -174,8 +190,20 @@ Execute the systematic formalization and analysis of this metaphysical grounding
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Formalization of Entities"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Formalization of Entities']
+```
 
-Input Context: "{}"
-Asserted Output: "Application of the Grounding Relation"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Application of the Grounding Relation']
+```

@@ -1,14 +1,3 @@
----
-tags:
-  - domain:quantitative/psychometrics
-  - equation
-  - modeling
-  - psychology
-  - quantitative
-  - skill
-  - structural
----
-
 # Domain Agent Skills: Scientific Psychology Quantitative
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: structural_equation_modeling_architect
-<!-- VALIDATION_METADATA: [{"name": "theoretical_constructs", "description": "Description of the latent psychological constructs to be modeled."}, {"name": "hypothesized_paths", "description": "The hypothesized structural relationships between the constructs."}, {"name": "observed_indicators", "description": "The manifest variables mapping to each latent construct."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "theoretical_constructs", "description": "Description of the latent psychological constructs to be modeled."}, {"name": "hypothesized_paths", "description": "The hypothesized structural relationships between the constructs."}, {"name": "observed_indicators", "description": "The manifest variables mapping to each latent construct."}], "metadata": {}} -->
 ### Description
 Designs rigorous Structural Equation Models (SEM) for latent psychological constructs, providing lavaan/Mplus syntax and fit evaluation criteria.
 
@@ -64,5 +53,11 @@ Do not include any pleasantries, conversational filler, or generic advice. Outpu
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "lavaan"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['lavaan']
+```

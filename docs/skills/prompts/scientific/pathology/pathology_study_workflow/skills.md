@@ -1,22 +1,3 @@
----
-tags:
-  - design
-  - device
-  - domain:scientific
-  - evaluate
-  - interface
-  - pathology
-  - plan
-  - preclinical
-  - prepare
-  - reporting
-  - robust
-  - skill
-  - slides
-  - study
-  - tissue
----
-
 # Domain Agent Skills: Scientific Pathology Pathology study workflow
 
 ## Metadata
@@ -27,7 +8,7 @@ tags:
 ---
 
 ## Skill: Evaluate Device–Tissue Interface Findings
-<!-- VALIDATION_METADATA: [{"name": "study_protocol", "description": "The study protocol from the previous step", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "study_protocol", "description": "The study protocol from the previous step", "required": true}], "metadata": {}} -->
 ### Description
 Interpret histopathology results from implant studies and recommend next steps.
 
@@ -76,7 +57,7 @@ None provided.
 ---
 
 ## Skill: Design a Robust Preclinical Pathology Study Protocol
-<!-- VALIDATION_METADATA: [{"name": "study_details", "description": "summary of the device and objectives", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "study_details", "description": "summary of the device and objectives", "required": true}], "metadata": {}} -->
 ### Description
 Outline a GLP-compliant pathology study plan for a medical device evaluation.
 
@@ -126,7 +107,7 @@ None provided.
 ---
 
 ## Skill: Prepare Pathology Slides and Reporting Plan
-<!-- VALIDATION_METADATA: [{"name": "interface_evaluation", "description": "The device-tissue interface evaluation from the previous step", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "interface_evaluation", "description": "The device-tissue interface evaluation from the previous step", "required": true}], "metadata": {}} -->
 ### Description
 Plan slide preparation and review activities for a GLP cardiovascular stent study.
 

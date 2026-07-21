@@ -1,14 +1,3 @@
----
-tags:
-  - clinical operations
-  - clinical trials
-  - domain:clinical/clinical_operations
-  - ich e6(r2)
-  - quality management
-  - risk-based monitoring
-  - skill
----
-
 # Domain Agent Skills: Clinical Clinical operations
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: risk_based_monitoring_strategist
-<!-- VALIDATION_METADATA: [{"name": "PROTOCOL_SYNOPSIS", "description": "A brief summary of the clinical trial protocol."}, {"name": "CRITICAL_DATA_VARIABLES", "description": "Key data points required for the study."}, {"name": "KNOWN_RISK_FACTORS", "description": "Identified risks associated with the clinical trial."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "PROTOCOL_SYNOPSIS", "description": "A brief summary of the clinical trial protocol."}, {"name": "CRITICAL_DATA_VARIABLES", "description": "Key data points required for the study."}, {"name": "KNOWN_RISK_FACTORS", "description": "Identified risks associated with the clinical trial."}], "metadata": {}} -->
 ### Description
 A Principal Clinical Operations Risk-Based Monitoring (RBM) Strategist that designs adaptive, risk-proportionate clinical trial monitoring plans in compliance with ICH E6(R2) guidelines.
 
@@ -67,5 +56,11 @@ Please design a Risk-Based Monitoring Strategy for the following clinical trial:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

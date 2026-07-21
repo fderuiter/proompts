@@ -1,14 +1,3 @@
----
-tags:
-  - computability
-  - degree
-  - domain:scientific/formal_logic/computability/recursion_theory
-  - formal-logic
-  - recursion-theory
-  - skill
-  - turing
----
-
 # Domain Agent Skills: Scientific Formal logic Computability Recursion theory
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: turing_degree_reduction_evaluator
-<!-- VALIDATION_METADATA: [{"name": "source_set", "description": "The formal definition of the set $A$ (e.g., $HALT$, $K$) whose computability or Turing degree is being evaluated.", "required": true}, {"name": "target_set", "description": "The formal definition of the target set $B$ to which $A$ is being reduced.", "required": true}, {"name": "reduction_type", "description": "The type of reduction to construct or evaluate, typically Many-One Reduction ($\\leq_m$) or Turing Reduction ($\\leq_T$).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "source_set", "description": "The formal definition of the set $A$ (e.g., $HALT$, $K$) whose computability or Turing degree is being evaluated.", "required": true}, {"name": "target_set", "description": "The formal definition of the target set $B$ to which $A$ is being reduced.", "required": true}, {"name": "reduction_type", "description": "The type of reduction to construct or evaluate, typically Many-One Reduction ($\\leq_m$) or Turing Reduction ($\\leq_T$).", "required": true}], "metadata": {}} -->
 ### Description
 Systematically formalizes and evaluates Turing reductions and many-one reductions between formal sets to classify their computational complexity and Turing degrees.
 
@@ -70,8 +59,20 @@ Please execute a formal computability reduction evaluation for the following con
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

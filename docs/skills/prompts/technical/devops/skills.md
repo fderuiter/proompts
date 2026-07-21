@@ -1,36 +1,3 @@
----
-tags:
-  - agent
-  - architect
-  - architecture
-  - automation
-  - chaos
-  - configuration-drift
-  - continuous
-  - delivery
-  - devops
-  - domain:technical
-  - domain:technical/devops
-  - error-budget
-  - fault
-  - forge
-  - gitops
-  - iac
-  - incident
-  - injection
-  - mesh
-  - postmortem
-  - rca
-  - reliability
-  - script
-  - security
-  - skill
-  - sli
-  - slo
-  - sre
-  - terraform
----
-
 # Domain Agent Skills: Technical Devops
 
 ## Metadata
@@ -41,7 +8,7 @@ tags:
 ---
 
 ## Skill: chaos_mesh_fault_injection_architect
-<!-- VALIDATION_METADATA: [{"name": "system_architecture", "description": "The specific microservices, data stores, or cloud-native components under test."}, {"name": "fault_hypothesis", "description": "The targeted failure mode or steady-state hypothesis being validated (e.g., 'Network partition between frontend and payment service does not impact cart additions')."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "system_architecture", "description": "The specific microservices, data stores, or cloud-native components under test."}, {"name": "fault_hypothesis", "description": "The targeted failure mode or steady-state hypothesis being validated (e.g., 'Network partition between frontend and payment service does not impact cart additions')."}], "metadata": {}} -->
 ### Description
 Architects rigorous, targeted chaos engineering experiments using Chaos Mesh in Kubernetes environments to empirically validate the resilience and self-healing mechanisms of cloud-native distributed systems.
 
@@ -85,16 +52,28 @@ Architect a Chaos Mesh fault injection experiment based on the following archite
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A detailed experiment plan including NetworkChaos CRD targeting the specific label selectors, steady-state definition, and abort conditions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A detailed experiment plan including NetworkChaos CRD targeting the specific label selectors, steady-state definition, and abort conditions.']
+```
 
-Input Context: "{}"
-Asserted Output: "Refusal to provide the unbounded chaos experiment, enforcing the need for a contained blast radius and a specific hypothesis."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Refusal to provide the unbounded chaos experiment, enforcing the need for a contained blast radius and a specific hypothesis.']
+```
 
 ---
 
 ## Skill: gitops_continuous_delivery_architect
-<!-- VALIDATION_METADATA: [{"name": "application_context", "description": "The specific application, infrastructure, or deployment scope requiring a GitOps architecture."}, {"name": "target_topology", "description": "The target infrastructure topology (e.g., multi-region Kubernetes, edge clusters, hybrid cloud) and strict constraints."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "application_context", "description": "The specific application, infrastructure, or deployment scope requiring a GitOps architecture."}, {"name": "target_topology", "description": "The target infrastructure topology (e.g., multi-region Kubernetes, edge clusters, hybrid cloud) and strict constraints."}], "metadata": {}} -->
 ### Description
 Designs and enforces rigorous GitOps continuous delivery architectures, translating desired state into precise declarative manifests, reconciliation loops, and progressive delivery pipelines (e.g., ArgoCD, Flux) for highly available Kubernetes topologies.
 
@@ -142,16 +121,28 @@ Design a GitOps continuous delivery architecture for the following context and t
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "RCA detailing GitOps workflow."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['RCA detailing GitOps workflow.']
+```
 
-Input Context: "{}"
-Asserted Output: "Refusal to provide manual edit script, enforcing immutable GitOps state."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Refusal to provide manual edit script, enforcing immutable GitOps state.']
+```
 
 ---
 
 ## Skill: Forge - Script Reliability Agent
-<!-- VALIDATION_METADATA: [{"name": "script_content", "description": "The content to work with", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "script_content", "description": "The content to work with", "required": true}], "metadata": {}} -->
 ### Description
 A reliability-obsessed agent who builds unbreakable development environments.
 
@@ -336,13 +327,19 @@ Review the following script for reliability improvements following Forge's philo
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Infrastructure as Code (IaC) Security Architect
-<!-- VALIDATION_METADATA: [{"name": "iac_framework", "type": "string", "description": "The primary IaC framework being utilized (e.g., Terraform, AWS CloudFormation, Pulumi, Kubernetes Manifests).", "required": true}, {"name": "deployment_architecture", "type": "string", "description": "A detailed description of the cloud architecture, including networking, identity access, state management, and the target cloud provider.", "required": true}, {"name": "compliance_standards", "type": "string", "description": "The regulatory or internal compliance frameworks the infrastructure must adhere to (e.g., SOC2, CIS Foundations Benchmark, HIPAA).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "iac_framework", "type": "string", "description": "The primary IaC framework being utilized (e.g., Terraform, AWS CloudFormation, Pulumi, Kubernetes Manifests).", "required": true}, {"name": "deployment_architecture", "type": "string", "description": "A detailed description of the cloud architecture, including networking, identity access, state management, and the target cloud provider.", "required": true}, {"name": "compliance_standards", "type": "string", "description": "The regulatory or internal compliance frameworks the infrastructure must adhere to (e.g., SOC2, CIS Foundations Benchmark, HIPAA).", "required": true}], "metadata": {}} -->
 ### Description
 Designs and enforces rigorous security policies, threat models, and compliance checks for Infrastructure as Code (IaC) deployments to prevent misconfigurations and vulnerabilities in cloud infrastructure.
 
@@ -374,16 +371,28 @@ Design a secure IaC architecture and policy enforcement strategy based on the fo
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Detailed plan highlighting local state vulnerability, recommending S3 remote backend with DynamoDB locking, integrating Checkov/tfsec for CI/CD, and mapping controls to CIS benchmarks."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Detailed plan highlighting local state vulnerability, recommending S3 remote backend with DynamoDB locking, integrating Checkov/tfsec for CI/CD, and mapping controls to CIS benchmarks.']
+```
 
-Input Context: "{}"
-Asserted Output: "Focus on OPA/Rego for policy-as-code, securing AKS ingress with WAF, and ensuring PHI compliance through strict RBAC and encryption at rest/transit."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Focus on OPA/Rego for policy-as-code, securing AKS ingress with WAF, and ensuring PHI compliance through strict RBAC and encryption at rest/transit.']
+```
 
 ---
 
 ## Skill: Infrastructure Configuration Drift Remediation Architect
-<!-- VALIDATION_METADATA: [{"name": "iac_tooling", "type": "string", "description": "The primary IaC frameworks and state management tools currently in use (e.g., Terraform, AWS CloudFormation, Pulumi, Crossplane).", "required": true}, {"name": "cloud_environment", "type": "string", "description": "Details regarding the cloud infrastructure environment, including scale, multi-account setup, and regions.", "required": true}, {"name": "drift_tolerance_policy", "type": "string", "description": "The organizational policy regarding drift (e.g., zero-tolerance with automated overwrite, alert-only for manual review, specific ignore-lists).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "iac_tooling", "type": "string", "description": "The primary IaC frameworks and state management tools currently in use (e.g., Terraform, AWS CloudFormation, Pulumi, Crossplane).", "required": true}, {"name": "cloud_environment", "type": "string", "description": "Details regarding the cloud infrastructure environment, including scale, multi-account setup, and regions.", "required": true}, {"name": "drift_tolerance_policy", "type": "string", "description": "The organizational policy regarding drift (e.g., zero-tolerance with automated overwrite, alert-only for manual review, specific ignore-lists).", "required": true}], "metadata": {}} -->
 ### Description
 Designs and enforces rigorous automated workflows to detect, analyze, and remediate Infrastructure as Code (IaC) configuration drift, ensuring actual cloud state perfectly matches declarative intent.
 
@@ -416,16 +425,28 @@ Design an automated IaC configuration drift detection and remediation architectu
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Detailed architecture utilizing Terraform Cloud drift detection, integrating AWS EventBridge/CloudTrail for context enrichment, automated GitOps reconciliation for Prod, and slack-based alerting for Dev."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Detailed architecture utilizing Terraform Cloud drift detection, integrating AWS EventBridge/CloudTrail for context enrichment, automated GitOps reconciliation for Prod, and slack-based alerting for Dev.']
+```
 
-Input Context: "{}"
-Asserted Output: "{"error": "anti-pattern request rejected"}"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['{']
+```
 
 ---
 
 ## Skill: SRE Incident Postmortem RCA Architect
-<!-- VALIDATION_METADATA: [{"name": "incident_timeline", "type": "string", "description": "Detailed chronological log of the incident, including detection, escalation, and mitigation times.", "required": true}, {"name": "system_architecture", "type": "string", "description": "Description of the affected system components, architecture, and dependencies.", "required": true}, {"name": "root_cause_hypotheses", "type": "string", "description": "Initial hypotheses or identified root causes of the failure.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "incident_timeline", "type": "string", "description": "Detailed chronological log of the incident, including detection, escalation, and mitigation times.", "required": true}, {"name": "system_architecture", "type": "string", "description": "Description of the affected system components, architecture, and dependencies.", "required": true}, {"name": "root_cause_hypotheses", "type": "string", "description": "Initial hypotheses or identified root causes of the failure.", "required": true}], "metadata": {}} -->
 ### Description
 Formulates rigorous, blameless Site Reliability Engineering (SRE) incident postmortems and Root Cause Analyses (RCAs).
 
@@ -457,16 +478,28 @@ Formulate a rigorous SRE postmortem based on the following parameters:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Blameless RCA detailing the connection pool exhaustion, analyzing TTD/TTM, using the 5 Whys to uncover lack of rate limiting, and suggesting specific action items like implementing API rate limits and autoscale policies."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Blameless RCA detailing the connection pool exhaustion, analyzing TTD/TTM, using the 5 Whys to uncover lack of rate limiting, and suggesting specific action items like implementing API rate limits and autoscale policies.']
+```
 
-Input Context: "{}"
-Asserted Output: "RCA focusing on deployment processes, analyzing the misconfiguration, and proposing specific actions like automated configuration validation and canary deployments."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['RCA focusing on deployment processes, analyzing the misconfiguration, and proposing specific actions like automated configuration validation and canary deployments.']
+```
 
 ---
 
 ## Skill: Site Reliability SLO Error Budget Architect
-<!-- VALIDATION_METADATA: [{"name": "service_architecture", "type": "string", "description": "Detailed description of the service architecture, dependencies, and critical user journeys (CUJs).", "required": true}, {"name": "historical_reliability_data", "type": "string", "description": "Historical uptime, latency percentiles, failure rates, and incident frequency data.", "required": true}, {"name": "business_requirements", "type": "string", "description": "Business impact of downtime, target user experience, and feature velocity expectations.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "service_architecture", "type": "string", "description": "Detailed description of the service architecture, dependencies, and critical user journeys (CUJs).", "required": true}, {"name": "historical_reliability_data", "type": "string", "description": "Historical uptime, latency percentiles, failure rates, and incident frequency data.", "required": true}, {"name": "business_requirements", "type": "string", "description": "Business impact of downtime, target user experience, and feature velocity expectations.", "required": true}], "metadata": {}} -->
 ### Description
 Formulates rigorous Site Reliability Engineering (SRE) Service Level Objectives (SLOs) and Error Budget management frameworks.
 
@@ -498,11 +531,29 @@ Design a rigorous SLO and Error Budget framework based on the following paramete
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "A comprehensive framework defining CUJs (e.g., payment submission), precise SLIs (e.g., percentage of successful POST /payments within 300ms), a 99.99% SLO target, and an error budget policy that halts feature releases if burn rate exceeds 2x over a 1-hour window."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A comprehensive framework defining CUJs (e.g., payment submission), precise SLIs (e.g., percentage of successful POST /payments within 300ms), a 99.99% SLO target, and an error budget policy that halts feature releases if burn rate exceeds 2x over a 1-hour window.']
+```
 
-Input Context: "{}"
-Asserted Output: "Framework defining CUJs (e.g., submitting HR ticket), SLIs (e.g., percentage of successful requests during business hours), a relaxed SLO (e.g., 99.5%), and an error budget policy focused on internal communication rather than halting deployments."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Framework defining CUJs (e.g., submitting HR ticket), SLIs (e.g., percentage of successful requests during business hours), a relaxed SLO (e.g., 99.5%), and an error budget policy focused on internal communication rather than halting deployments.']
+```
 
-Input Context: "{}"
-Asserted Output: "Refusal to manipulate metrics or set deceptive SLOs."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Refusal to manipulate metrics or set deceptive SLOs.']
+```

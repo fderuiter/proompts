@@ -1,14 +1,3 @@
----
-tags:
-  - asymmetric-synthesis
-  - catalysis
-  - domain:scientific/chemistry/organic/asymmetric_synthesis
-  - organic-chemistry
-  - skill
-  - stereochemistry
-  - transition-state
----
-
 # Domain Agent Skills: Scientific Chemistry Organic Asymmetric synthesis
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: Enantioselective Catalytic Mechanism Architect
-<!-- VALIDATION_METADATA: [{"name": "catalyst_structure", "description": "The complete structure of the chiral catalyst (e.g., MacMillan imidazolidinone, BINAP-Ru, squaramide organocatalyst) using IUPAC name or SMILES/InChI.", "required": true}, {"name": "substrates", "description": "The prochiral substrates involved in the reaction using exact SMILES or InChI strings.", "required": true}, {"name": "conditions", "description": "Reaction conditions including solvent system, temperature, and specific additives (e.g., base, molecular sieves).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "catalyst_structure", "description": "The complete structure of the chiral catalyst (e.g., MacMillan imidazolidinone, BINAP-Ru, squaramide organocatalyst) using IUPAC name or SMILES/InChI.", "required": true}, {"name": "substrates", "description": "The prochiral substrates involved in the reaction using exact SMILES or InChI strings.", "required": true}, {"name": "conditions", "description": "Reaction conditions including solvent system, temperature, and specific additives (e.g., base, molecular sieves).", "required": true}], "metadata": {}} -->
 ### Description
 Generates rigorous transition state models and kinetic pathways for enantioselective catalytic mechanisms, utilizing exact stereochemical constraints and non-covalent interactions.
 
@@ -60,12 +49,20 @@ Conditions: <conditions>{{ conditions }}</conditions>
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{catalyst_structure: '(2S,5S)-5-benzyl-2-tert-butyl-3-methylimidazolidin-4-one', substrates: 'C=CC=O
-    (Acrolein), C1=CC=CC=C1 (Cyclopentadiene)', conditions: 'T = 253 K, MeOH/H2O (95:5),
-    10 mol% TFA cocatalyst'}"
-Asserted Output: "I. Catalyst Activation & Substrate Pre-Organization"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['I. Catalyst Activation & Substrate Pre-Organization']
+```
 
-Input Context: "{catalyst_structure: '1-(3,5-bis(trifluoromethyl)phenyl)-3-((1R,2R)-2-(dimethylamino)cyclohexyl)thiourea',
-  substrates: 'O=C=NC1=CC=CC=C1 (Phenyl isocyanate), CC(C)(C)OC(=O)C(F)(F)F (Boc-protected
-    imine)', conditions: 'T = 298 K, Toluene, 4A molecular sieves'}"
-Asserted Output: "III. Origin of Stereocontrol"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['III. Origin of Stereocontrol']
+```

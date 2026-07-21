@@ -1,14 +1,3 @@
----
-tags:
-  - domain:scientific
-  - formal-verification
-  - intuitionistic-logic
-  - logic
-  - natural-deduction
-  - proof-theory
-  - skill
----
-
 # Domain Agent Skills: Scientific Philosophy Logic Foundations Proof theory
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: Intuitionistic Logic Natural Deduction Prover
-<!-- VALIDATION_METADATA: [{"name": "premises", "description": "A comma-separated list of premises in first-order intuitionistic logic using standard LaTeX notation. If there are no premises (i.e., proving a theorem), state 'None'.", "required": true}, {"name": "conclusion", "description": "The target conclusion to be proven from the premises in first-order intuitionistic logic using standard LaTeX notation.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "premises", "description": "A comma-separated list of premises in first-order intuitionistic logic using standard LaTeX notation. If there are no premises (i.e., proving a theorem), state 'None'.", "required": true}, {"name": "conclusion", "description": "The target conclusion to be proven from the premises in first-order intuitionistic logic using standard LaTeX notation.", "required": true}], "metadata": {}} -->
 ### Description
 Systematically generates formal natural deduction proofs in intuitionistic logic, explicitly avoiding the Law of Excluded Middle and Double Negation Elimination.
 
@@ -70,8 +59,20 @@ Conclusion: <conclusion>{{ conclusion }}</conclusion>
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "### Proof Construction"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['### Proof Construction']
+```
 
-Input Context: "{}"
-Asserted Output: "{"error": "intuitionistically invalid"}"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['{']
+```

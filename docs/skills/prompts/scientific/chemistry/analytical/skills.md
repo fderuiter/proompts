@@ -1,14 +1,3 @@
----
-tags:
-  - analytical-chemistry
-  - domain:scientific/chemistry/analytical
-  - hrms
-  - nmr
-  - skill
-  - spectroscopy
-  - structure-elucidation
----
-
 # Domain Agent Skills: Scientific Chemistry Analytical
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: multidimensional_nmr_hrms_structure_elucidator
-<!-- VALIDATION_METADATA: [{"name": "molecular_formula", "description": "The chemical formula of the unknown compound, derived from HRMS data (e.g., C15H22O3).", "required": true}, {"name": "hrms_fragmentation_data", "description": "HRMS spectral peaks including m/z values, relative abundances, and potential neutral losses.", "required": true}, {"name": "nmr_data", "description": "Raw 1D (1H, 13C) and 2D (COSY, HSQC, HMBC, NOESY) NMR spectral data including chemical shifts, multiplicities, integration, and coupling constants.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "molecular_formula", "description": "The chemical formula of the unknown compound, derived from HRMS data (e.g., C15H22O3).", "required": true}, {"name": "hrms_fragmentation_data", "description": "HRMS spectral peaks including m/z values, relative abundances, and potential neutral losses.", "required": true}, {"name": "nmr_data", "description": "Raw 1D (1H, 13C) and 2D (COSY, HSQC, HMBC, NOESY) NMR spectral data including chemical shifts, multiplicities, integration, and coupling constants.", "required": true}], "metadata": {}} -->
 ### Description
 Systematically deduces and fully elucidates complex molecular structures using raw multi-dimensional NMR (1D, COSY, HSQC, HMBC, NOESY) and high-resolution mass spectrometry (HRMS) fragmentation data.
 
@@ -62,17 +51,20 @@ NMR Data (1D/2D): <nmr_data>{{ nmr_data }}</nmr_data>
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{molecular_formula: C9H8O4, hrms_fragmentation_data: 'm/z 180.0423 [M+H]+, major fragments
-    at m/z 162.0317 (-H2O), 138.0311 (-C2H2O), 120.0205 (-CO2).', nmr_data: "1H NMR\
-    \ (400 MHz, DMSO-d6): \u03B4 12.00 (br s, 1H), 7.50 (d, J = 8.0 Hz, 1H), 7.20\
-    \ (d, J = 8.0 Hz, 1H), 6.90 (t, J = 8.0 Hz, 1H), 2.25 (s, 3H). 13C NMR (100 MHz,\
-    \ DMSO-d6): \u03B4 168.5, 165.2, 150.1, 133.4, 131.2, 126.0, 123.5, 116.2, 21.0.\
-    \ HMBC shows correlation from methyl protons to carbonyl carbon at 168.5."}"
-Asserted Output: "Acetylsalicylic acid"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Acetylsalicylic acid']
+```
 
-Input Context: "{molecular_formula: C8H10N4O2, hrms_fragmentation_data: 'm/z 195.0882 [M+H]+, fragments
-    at m/z 138.0410, 109.0285.', nmr_data: "1H NMR (400 MHz, CDCl3): \u03B4 7.51 (s,\
-    \ 1H), 3.99 (s, 3H), 3.58 (s, 3H), 3.40 (s, 3H). 13C NMR (100 MHz, CDCl3): \u03B4\
-    \ 155.4, 151.6, 148.8, 141.4, 107.6, 33.6, 29.7, 27.9. HMBC correlations confirm\
-    \ N-methyl positions on the purine ring system."}"
-Asserted Output: "Caffeine"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Caffeine']
+```

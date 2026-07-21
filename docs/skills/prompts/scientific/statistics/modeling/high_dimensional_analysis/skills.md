@@ -1,14 +1,3 @@
----
-tags:
-  - dimensional
-  - domain:scientific/statistics/modeling/high_dimensional_analysis
-  - high
-  - high-dimensional-analysis
-  - modeling
-  - skill
-  - statistics
----
-
 # Domain Agent Skills: Scientific Statistics Modeling High dimensional analysis
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: high_dimensional_sparse_regression_architect
-<!-- VALIDATION_METADATA: [{"name": "penalty_function", "type": "string", "description": "The specific penalty function to employ (e.g., SCAD, MCP, Elastic Net)."}, {"name": "optimization_algorithm", "type": "string", "description": "The numerical optimization strategy to resolve the penalized likelihood (e.g., Coordinate Descent, ADMM)."}, {"name": "theoretical_properties", "type": "string", "description": "Theoretical assurances required, such as oracle properties or variable selection consistency."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "penalty_function", "type": "string", "description": "The specific penalty function to employ (e.g., SCAD, MCP, Elastic Net)."}, {"name": "optimization_algorithm", "type": "string", "description": "The numerical optimization strategy to resolve the penalized likelihood (e.g., Coordinate Descent, ADMM)."}, {"name": "theoretical_properties", "type": "string", "description": "Theoretical assurances required, such as oracle properties or variable selection consistency."}], "metadata": {}} -->
 ### Description
 Acts as a Statistical Sciences Genesis Architect to formulate rigorous, high-dimensional sparse regression models, specifically handling non-convex penalties (e.g., SCAD, MCP) via algorithmic optimization strategies like Coordinate Descent or ADMM.
 
@@ -48,8 +37,20 @@ Provide a comprehensive, step-by-step mathematical derivation of the penalized o
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

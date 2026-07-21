@@ -1,25 +1,3 @@
----
-tags:
-  - approximate
-  - architect
-  - bayesian
-  - bayesian-methods
-  - dirichlet
-  - domain:scientific/statistics/inference/bayesian_methods
-  - domain:statistical_sciences
-  - gaussian
-  - hamiltonian
-  - hierarchical
-  - inference
-  - jump
-  - monte
-  - process
-  - reversible
-  - skill
-  - statistics
-  - variational
----
-
 # Domain Agent Skills: Scientific Statistics Inference Bayesian methods
 
 ## Metadata
@@ -30,7 +8,7 @@ tags:
 ---
 
 ## Skill: bayesian_hierarchical_model_architect
-<!-- VALIDATION_METADATA: [{"name": "data_structure", "description": "The underlying data structure.", "required": true}, {"name": "inferential_goal", "description": "The inferential goal of the model.", "required": true}, {"name": "prior_knowledge", "description": "Prior knowledge or assumptions for the model.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "data_structure", "description": "The underlying data structure.", "required": true}, {"name": "inferential_goal", "description": "The inferential goal of the model.", "required": true}, {"name": "prior_knowledge", "description": "Prior knowledge or assumptions for the model.", "required": true}], "metadata": {}} -->
 ### Description
 Acts as a Principal Statistician to design and formulate complex Bayesian hierarchical models with custom priors and MCMC sampling strategies.
 
@@ -65,13 +43,19 @@ Prior Knowledge: <prior_knowledge>{{ prior_knowledge }}</prior_knowledge>
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Hamiltonian Monte Carlo"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Hamiltonian Monte Carlo']
+```
 
 ---
 
 ## Skill: variational_inference_architect
-<!-- VALIDATION_METADATA: [{"name": "model_structure", "description": "The underlying Bayesian model structure (e.g., latent variable model, hierarchical model).", "required": true}, {"name": "data_characteristics", "description": "Characteristics of the dataset, such as dimensionality, sparsity, and scale.", "required": true}, {"name": "inference_objectives", "description": "Specific goals for the VI approximation (e.g., mean-field, structured, normalizing flows).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "model_structure", "description": "The underlying Bayesian model structure (e.g., latent variable model, hierarchical model).", "required": true}, {"name": "data_characteristics", "description": "Characteristics of the dataset, such as dimensionality, sparsity, and scale.", "required": true}, {"name": "inference_objectives", "description": "Specific goals for the VI approximation (e.g., mean-field, structured, normalizing flows).", "required": true}], "metadata": {}} -->
 ### Description
 Acts as a Principal Statistician to design and formulate complex Variational Inference (VI) approximations for scalable Bayesian analysis.
 
@@ -109,16 +93,28 @@ Inference Objectives: <inference_objectives>{{ inference_objectives }}</inferenc
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "ELBO"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['ELBO']
+```
 
-Input Context: "{}"
-Asserted Output: "reparameterization"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['reparameterization']
+```
 
 ---
 
 ## Skill: gaussian_process_regression_architect
-<!-- VALIDATION_METADATA: [{"name": "covariance_structure", "description": "The targeted kernel function representing the prior beliefs about the function's smoothness, periodicity, or stationarity.", "required": true}, {"name": "likelihood_model", "description": "The observation model mapping the latent Gaussian process to the observed data, particularly emphasizing non-Gaussian or heteroscedastic noise.", "required": true}, {"name": "computational_scaling", "description": "The strategy for approximating the inversion of the dense $N \times N$ covariance matrix for large-scale data.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "covariance_structure", "description": "The targeted kernel function representing the prior beliefs about the function's smoothness, periodicity, or stationarity.", "required": true}, {"name": "likelihood_model", "description": "The observation model mapping the latent Gaussian process to the observed data, particularly emphasizing non-Gaussian or heteroscedastic noise.", "required": true}, {"name": "computational_scaling", "description": "The strategy for approximating the inversion of the dense $N \times N$ covariance matrix for large-scale data.", "required": true}], "metadata": {}} -->
 ### Description
 Acts as a Principal Statistician to design highly robust, mathematically rigorous Gaussian Process Regression (GPR) methodologies for non-parametric Bayesian inference over continuous function spaces.
 
@@ -157,13 +153,19 @@ Formulate a Gaussian Process Regression inference architecture for the following
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "marginal log-likelihood"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['marginal log-likelihood']
+```
 
 ---
 
 ## Skill: dirichlet_process_mixture_architect
-<!-- VALIDATION_METADATA: [{"name": "data_structure", "description": "The nature and dimensionality of the observational data to be clustered.", "required": true}, {"name": "base_distribution", "description": "The choice of the base distribution $G_0$ for the mixture components.", "required": true}, {"name": "mcmc_strategy", "description": "The specific Markov Chain Monte Carlo (MCMC) algorithm to be used (e.g., Gibbs sampling, slice sampling).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "data_structure", "description": "The nature and dimensionality of the observational data to be clustered.", "required": true}, {"name": "base_distribution", "description": "The choice of the base distribution $G_0$ for the mixture components.", "required": true}, {"name": "mcmc_strategy", "description": "The specific Markov Chain Monte Carlo (MCMC) algorithm to be used (e.g., Gibbs sampling, slice sampling).", "required": true}], "metadata": {}} -->
 ### Description
 Acts as a Principal Statistician to formulate mathematically rigorous Nonparametric Bayesian models utilizing Dirichlet Process Mixture Models (DPMM) for cluster identification.
 
@@ -198,13 +200,19 @@ MCMC Strategy: <mcmc_strategy>{{ mcmc_strategy }}</mcmc_strategy>
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Chinese Restaurant Process"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Chinese Restaurant Process']
+```
 
 ---
 
 ## Skill: hamiltonian_monte_carlo_architect
-<!-- VALIDATION_METADATA: [{"name": "target_posterior", "type": "string", "description": "The unnormalized target log-posterior density function and associated parameter space topology."}, {"name": "kinetic_energy_metric", "type": "string", "description": "The kinetic energy function and mass matrix specification (e.g., Euclidean, Riemannian manifold) governing the auxiliary momentum variables."}, {"name": "numerical_integration", "type": "string", "description": "The symplectic integrator constraints, leapfrog step-size adaptation schemes, and dynamic trajectory termination criteria (e.g., NUTS criteria)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "target_posterior", "type": "string", "description": "The unnormalized target log-posterior density function and associated parameter space topology."}, {"name": "kinetic_energy_metric", "type": "string", "description": "The kinetic energy function and mass matrix specification (e.g., Euclidean, Riemannian manifold) governing the auxiliary momentum variables."}, {"name": "numerical_integration", "type": "string", "description": "The symplectic integrator constraints, leapfrog step-size adaptation schemes, and dynamic trajectory termination criteria (e.g., NUTS criteria)."}], "metadata": {}} -->
 ### Description
 Acts as a Principal Statistician to mathematically formulate and rigorously design Hamiltonian Monte Carlo (HMC) and No-U-Turn Sampler (NUTS) algorithms for high-dimensional Bayesian inference, optimizing symplectic integration and dynamic trajectory lengths across complex posterior geometries.
 
@@ -233,16 +241,28 @@ Provide a comprehensive, step-by-step mathematical derivation of the Hamiltonian
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: approximate_bayesian_computation_architect
-<!-- VALIDATION_METADATA: [{"name": "data_generating_process", "description": "The structural definition and computational mechanism of the generative model.", "required": true}, {"name": "summary_statistics", "description": "The set of chosen summary statistics for dimensionality reduction.", "required": true}, {"name": "distance_metric", "description": "The mathematical distance metric for comparing simulated and observed data.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "data_generating_process", "description": "The structural definition and computational mechanism of the generative model.", "required": true}, {"name": "summary_statistics", "description": "The set of chosen summary statistics for dimensionality reduction.", "required": true}, {"name": "distance_metric", "description": "The mathematical distance metric for comparing simulated and observed data.", "required": true}], "metadata": {}} -->
 ### Description
 Acts as a Principal Statistician to design and formulate mathematically rigorous Approximate Bayesian Computation (ABC) algorithms for likelihood-free inference.
 
@@ -280,13 +300,19 @@ Distance Metric: <distance_metric>{{ distance_metric }}</distance_metric>
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "ABC-SMC"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['ABC-SMC']
+```
 
 ---
 
 ## Skill: reversible_jump_mcmc_architect
-<!-- VALIDATION_METADATA: [{"name": "model_space", "description": "The set of candidate mathematical models, parameterizing their distinct dimensions and structural assumptions.", "required": true}, {"name": "jump_proposals", "description": "The specific trans-dimensional moves (e.g., birth/death, split/merge) connecting the parameter spaces.", "required": true}, {"name": "target_posterior", "description": "The overarching target distribution spanning the union of all model-specific parameter spaces.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "model_space", "description": "The set of candidate mathematical models, parameterizing their distinct dimensions and structural assumptions.", "required": true}, {"name": "jump_proposals", "description": "The specific trans-dimensional moves (e.g., birth/death, split/merge) connecting the parameter spaces.", "required": true}, {"name": "target_posterior", "description": "The overarching target distribution spanning the union of all model-specific parameter spaces.", "required": true}], "metadata": {}} -->
 ### Description
 Acts as a Principal Statistician to systematically design and formulate Reversible Jump Markov Chain Monte Carlo (RJMCMC) algorithms for trans-dimensional Bayesian model selection.
 
@@ -325,5 +351,11 @@ Formulate a trans-dimensional RJMCMC sampling architecture for the following sce
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Jacobian determinant"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Jacobian determinant']
+```

@@ -1,15 +1,3 @@
----
-tags:
-  - alchemy
-  - domain:lifestyle
-  - experimental
-  - finance
-  - hft
-  - mycology
-  - skill
-  - surreal
----
-
 # Domain Agent Skills: Lifestyle Fungal financial alchemy
 
 ## Metadata
@@ -20,10 +8,9 @@ tags:
 ---
 
 ## Skill: Myco-Alchemical Arbitrageur
-<!-- VALIDATION_METADATA: [{"name": "market_feed", "description": "A snippet of raw market data, ticker symbols, or news sentiment (e.g., \"BTC -5%, Gold Flat\").", "required": true}, {"name": "decomposition_rate", "description": "The speed at which market information \"rots\" (volatility/decay factor).", "required": true}, {"name": "transmutation_goal", "description": "The desired alchemical outcome (e.g., \"Lead into Gold\", \"Fiat into Crypto\", \"Chaos into Order\").", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "market_feed", "description": "A snippet of raw market data, ticker symbols, or news sentiment (e.g., \"BTC -5%, Gold Flat\").", "required": true}, {"name": "decomposition_rate", "description": "The speed at which market information \"rots\" (volatility/decay factor).", "required": true}, {"name": "transmutation_goal", "description": "The desired alchemical outcome (e.g., \"Lead into Gold\", \"Fiat into Crypto\", \"Chaos into Order\").", "required": true}], "metadata": {}} -->
 ### Description
 An experimental High-Frequency Trading (HFT) entity that perceives market data as organic decay and executes arbitrage strategies using the principles of Medieval Alchemy and fungal mycelial growth.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -70,7 +57,11 @@ Perform the Great Work on this substrate:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{market_feed: 'Tech stocks crashing, Gold rallying, heavy volume in put options.',
-  decomposition_rate: High - panic selling is accelerating decay., transmutation_goal: Extract
-    stability from chaos (Hedge protection).}"
-Asserted Output: "A strategy describing the consumption of 'rotting' tech equity to fuel the 'calcification' of Gold positions, executed via a spread of fungal spores in the derivatives market."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["A strategy describing the consumption of 'rotting' tech equity to fuel the 'calcification' of Gold positions, executed via a spread of fungal spores in the derivatives market."]
+```

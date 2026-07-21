@@ -1,17 +1,3 @@
----
-tags:
-  - clinical
-  - data-management
-  - domain:clinical
-  - etl
-  - mapping
-  - pipeline
-  - review
-  - skill
-  - spec
-  - transformation
----
-
 # Domain Agent Skills: Clinical Data management Data management etl workflow
 
 ## Metadata
@@ -22,7 +8,7 @@ tags:
 ---
 
 ## Skill: Clinical ETL Pipeline Review
-<!-- VALIDATION_METADATA: [{"name": "etl_qc_plan", "description": "The etl qc plan to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "etl_qc_plan", "description": "The etl qc plan to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Review the clinical ETL pipeline for accuracy and efficiency.
 
@@ -49,13 +35,19 @@ Based on this QC plan, and the implied mapping specification, review the entire 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Assess pipeline stages for bottlenecks."
-Asserted Output: "Identifies slow transformations and load issues."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Identifies slow transformations and load issues.']
+```
 
 ---
 
 ## Skill: Clinical ETL Mapping Spec
-<!-- VALIDATION_METADATA: [{"name": "etl_requirements", "description": "The requirements or specifications", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "etl_requirements", "description": "The requirements or specifications", "required": true}], "metadata": {}} -->
 ### Description
 Create an ETL mapping specification for clinical data.
 
@@ -82,13 +74,19 @@ Based on these requirements, create a detailed ETL mapping specification.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Map source patient records to target schema fields."
-Asserted Output: "Includes field-to-field mappings."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Includes field-to-field mappings.']
+```
 
 ---
 
 ## Skill: Clinical ETL Transformation QC
-<!-- VALIDATION_METADATA: [{"name": "etl_mapping_spec", "description": "The etl mapping spec to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "etl_mapping_spec", "description": "The etl mapping spec to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Define quality checks for clinical ETL transformations.
 
@@ -115,5 +113,11 @@ Based on this specification, define a comprehensive set of quality checks for th
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "List QC checks for transforming lab results data."
-Asserted Output: "Mentions range validations and format consistency."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Mentions range validations and format consistency.']
+```

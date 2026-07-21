@@ -1,17 +1,3 @@
----
-tags:
-  - advanced
-  - chemistry
-  - domain:scientific
-  - domain:scientific/chemistry/organic/retrosynthesis
-  - molecular-design
-  - organic
-  - retrosynthesis
-  - retrosynthetic
-  - skill
-  - synthesis
----
-
 # Domain Agent Skills: Scientific Chemistry Organic Retrosynthesis
 
 ## Metadata
@@ -22,7 +8,7 @@ tags:
 ---
 
 ## Skill: multi_step_retrosynthetic_pathway_architect
-<!-- VALIDATION_METADATA: [{"name": "target_molecule_smiles", "description": "SMILES string of the target molecule for retrosynthetic analysis.", "required": true}, {"name": "synthetic_constraints", "description": "Constraints on the synthesis (e.g., maximum steps, starting material availability, cost, yield requirements).", "required": false, "default": "Maximize overall yield; minimize steps; prefer commercially available starting materials."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "target_molecule_smiles", "description": "SMILES string of the target molecule for retrosynthetic analysis.", "required": true}, {"name": "synthetic_constraints", "description": "Constraints on the synthesis (e.g., maximum steps, starting material availability, cost, yield requirements).", "required": false, "default": "Maximize overall yield; minimize steps; prefer commercially available starting materials."}], "metadata": {}} -->
 ### Description
 A Chemical Sciences Genesis Architect prompt for generating multi-step retrosynthetic pathways with rigorous yield optimization.
 
@@ -71,13 +57,19 @@ Constraints: {{ synthetic_constraints }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Synthesis plan for 4-tert-butylbenzoic acid"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Synthesis plan for 4-tert-butylbenzoic acid']
+```
 
 ---
 
 ## Skill: advanced_retrosynthetic_pathway_generator
-<!-- VALIDATION_METADATA: [{"name": "target_molecule", "type": "string", "description": "Target molecule specified in strict IUPAC nomenclature, SMILES, or InChI string."}, {"name": "starting_materials_constraints", "type": "string", "description": "Constraints on starting materials, such as cost limits, commercial availability, or specific chiral pool requirements."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "target_molecule", "type": "string", "description": "Target molecule specified in strict IUPAC nomenclature, SMILES, or InChI string."}, {"name": "starting_materials_constraints", "type": "string", "description": "Constraints on starting materials, such as cost limits, commercial availability, or specific chiral pool requirements."}], "metadata": {}} -->
 ### Description
 Generates highly optimized, multi-step retrosynthetic pathways for complex organic molecules, evaluating thermodynamic feasibility, step-yield optimization, and stereochemical control.
 
@@ -113,5 +105,11 @@ Constraints: <starting_materials_constraints>{{ starting_materials_constraints }
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

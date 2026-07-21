@@ -11,6 +11,9 @@ Writes a joke about a given topic.
 ```yaml
 name: Joke Writer
 description: Writes a joke about a given topic.
+metadata:
+  domain: communication
+  complexity: low
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.7

@@ -1,22 +1,3 @@
----
-tags:
-  - advanced
-  - architecture
-  - concurrency
-  - developer
-  - domain:technical
-  - hexagonal
-  - mastery
-  - optimization
-  - performance
-  - principal
-  - programming-languages
-  - python
-  - senior
-  - skill
-  - testing
----
-
 # Domain Agent Skills: Technical Languages Python
 
 ## Metadata
@@ -27,7 +8,7 @@ tags:
 ---
 
 ## Skill: Python Performance Optimization
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 A Senior-level guide to optimizing Python code, focusing on profiling, memory management, and GIL workarounds.
 
@@ -107,18 +88,19 @@ def heavy_computation(data):
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "def find_duplicates(large_list):
-    duplicates = []
-    for item in large_list:
-        if large_list.count(item) > 1: # O(n^2) complexity!
-            duplicates.append(item)
-    return duplicates"
-Asserted Output: "## ⏱️ Performance Analysis"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['## ⏱️ Performance Analysis']
+```
 
 ---
 
 ## Skill: Principal Python Developer
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 A Principal Engineer's guide to Python development, focusing on architecture, decoupling, robustness, concurrency, and observability.
 
@@ -214,20 +196,19 @@ You must use the following Markdown structure:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "class EmailSender:
-    def send(self, to, body):
-        pass
-
-class SendGrid(EmailSender):
-    def send(self, to, body):
-        # logic
-        pass"
-Asserted Output: "## 🔬 Analysis"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['## 🔬 Analysis']
+```
 
 ---
 
 ## Skill: Senior Python Developer
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 A Senior Developer's guide to Python execution, focusing on idiomatic code, maintainability, and code stewardship.
 
@@ -313,16 +294,19 @@ def process_large_file(filename: str) -> Iterator[str]:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "def get_users_with_profiles(session):
-    users = session.query(User).all()
-    for user in users:
-        print(user.profile.bio) # N+1 problem"
-Asserted Output: "## 🔬 Code Analysis"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['## 🔬 Code Analysis']
+```
 
 ---
 
 ## Skill: Python Concurrency Mastery
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 A Principal-level guide to mastering Python concurrency, focusing on AsyncIO, Structured Concurrency, and Multiprocessing safety.
 
@@ -410,17 +394,19 @@ async def safe_concurrent_execution():
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "import asyncio
-
-async def main():
-    # Risk: If task1 fails, task2 keeps running forever
-    await asyncio.gather(task1(), task2())"
-Asserted Output: "## 🔬 Concurrency Analysis"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['## 🔬 Concurrency Analysis']
+```
 
 ---
 
 ## Skill: Python Hexagonal Architecture
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 A Principal-level guide to decoupling Python systems using Hexagonal Architecture, Protocols, and Dependency Injection.
 
@@ -510,20 +496,19 @@ class SmtpSender:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "import requests
-
-class UserService:
-    def register(self, email):
-        # Tightly coupled to Mailgun API
-        resp = requests.post("https://api.mailgun.net/...", data={"to": email})
-        if resp.status_code != 200:
-            raise Exception("Failed")"
-Asserted Output: "## 🔬 Architectural Analysis"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['## 🔬 Architectural Analysis']
+```
 
 ---
 
 ## Skill: Advanced Python Testing
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 A comprehensive guide to Python testing, covering Pytest fixtures, Property-Based Testing (Hypothesis), and Mutation Testing.
 
@@ -610,9 +595,11 @@ def db_session():
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "def add(a, b):
-    return a + b
-
-def test_add():
-    assert add(1, 2) == 3 # Weak test: only checks one case"
-Asserted Output: "## 🔬 Test Strategy Analysis"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['## 🔬 Test Strategy Analysis']
+```

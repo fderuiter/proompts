@@ -1,20 +1,3 @@
----
-tags:
-  - adoption
-  - byod
-  - design
-  - domain:clinical
-  - epro
-  - form
-  - optimize
-  - patient-centric
-  - plan
-  - pro
-  - skill
-  - sponsors
-  - workflow
----
-
 # Domain Agent Skills: Clinical Epro Epro workflow
 
 ## Metadata
@@ -25,7 +8,7 @@ tags:
 ---
 
 ## Skill: Optimize ePRO Form Design
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Improve ePRO form usability and data quality.
 
@@ -56,14 +39,19 @@ Focus on clarity and ease of use to maximize patient compliance.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Need to improve ePRO form for fatigue tracking.
-"
-Asserted Output: "Design groups items across screens with validation and onboarding tips."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Design groups items across screens with validation and onboarding tips.']
+```
 
 ---
 
 ## Skill: ePRO Adoption Plan for Sponsors
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Outline a six-month plan for rolling out ePRO across multiple sites.
 
@@ -94,14 +82,19 @@ Highlight risks such as varying site readiness or device availability.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Outline deployment plan for global trial.
-"
-Asserted Output: "Timeline covers vendor selection, training, and metrics monitoring."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Timeline covers vendor selection, training, and metrics monitoring.']
+```
 
 ---
 
 ## Skill: Patient-Centric BYOD ePRO Workflow
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}], "metadata": {}} -->
 ### Description
 Design a streamlined ePRO workflow that supports a BYOD model and maximizes patient compliance.
 
@@ -131,6 +124,11 @@ Confirm any assumptions about platform capabilities or security requirements bef
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Design a BYOD workflow for 100 patients over 6 months.
-"
-Asserted Output: "Plan outlines BYOD setup steps, UX flow, IWRS integration, and data security."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Plan outlines BYOD setup steps, UX flow, IWRS integration, and data security.']
+```

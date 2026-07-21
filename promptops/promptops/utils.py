@@ -438,9 +438,11 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
         few_shot_match = re.search(r'### Few-Shot Assertions\n(.*)', body, re.DOTALL)
         if few_shot_match:
             few_shots_text = few_shot_match.group(1).strip()
-            # simple parser for Input Context: "..." \n Asserted Output: "..."
-            import ast
-            blocks = re.findall(r'Input Context:\s*"(.*?)"\nAsserted Output:\s*"(.*?)"', few_shots_text, re.DOTALL)
+            # Try new format with code blocks first
+            blocks = re.findall(r'\*\*Input Context:\*\*\n```yaml\n(.*?)\n```\n\*\*Asserted Output:\*\*\n```text\n(.*?)\n```', few_shots_text, re.DOTALL)
+            if not blocks:
+                # Fallback for old format
+                blocks = re.findall(r'Input Context:\s*"(.*?)"\nAsserted Output:\s*"(.*?)"', few_shots_text, re.DOTALL)
             for inp_str, out_str in blocks:
                 try:
                     inp_dict = yaml.safe_load(inp_str)

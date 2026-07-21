@@ -1,22 +1,3 @@
----
-tags:
-  - analysis
-  - brief
-  - data-quality
-  - domain:management
-  - draft
-  - executive
-  - heat
-  - interim
-  - map
-  - plan
-  - results
-  - risk
-  - skill
-  - statistical
-  - statistics
----
-
 # Domain Agent Skills: Management Vp statistics Vp statistics workflow
 
 ## Metadata
@@ -27,7 +8,7 @@ tags:
 ---
 
 ## Skill: Data-Quality Risk Heat Map
-<!-- VALIDATION_METADATA: [{"name": "query_log", "description": "open and closed queries", "required": true}, {"name": "raw_eds_dump", "description": "patient-level dataset", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "query_log", "description": "open and closed queries", "required": true}, {"name": "raw_eds_dump", "description": "patient-level dataset", "required": true}], "metadata": {}} -->
 ### Description
 Assess site-level data quality and recommend mitigation actions.
 
@@ -76,13 +57,19 @@ Output Format:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{raw_eds_dump: sample_dataset, query_log: sample_query_log}"
-Asserted Output: "Markdown table of top ten high-risk sites."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Markdown table of top ten high-risk sites.']
+```
 
 ---
 
 ## Skill: Interim Results Executive Brief
-<!-- VALIDATION_METADATA: [{"name": "analysis_results", "description": "PDF with interim results", "required": true}, {"name": "safety_listings", "description": "safety listings spreadsheet", "required": true}, {"name": "statistical_plan", "description": "latest Statistical Analysis Plan", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "analysis_results", "description": "PDF with interim results", "required": true}, {"name": "safety_listings", "description": "safety listings spreadsheet", "required": true}, {"name": "statistical_plan", "description": "latest Statistical Analysis Plan", "required": true}], "metadata": {}} -->
 ### Description
 Summarize interim analysis findings for cross-functional leadership.
 
@@ -131,14 +118,19 @@ Markdown document with headings:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{analysis_results: example_analysis_results, statistical_plan: example_statistical_plan,
-  safety_listings: example_safety_listings}"
-Asserted Output: "Markdown headings **Introduction**, **Key Findings**, **Risk Assessment**, and **Recommended Actions**."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Markdown headings **Introduction**, **Key Findings**, **Risk Assessment**, and **Recommended Actions**.']
+```
 
 ---
 
 ## Skill: Statistical Analysis Plan Draft Builder
-<!-- VALIDATION_METADATA: [{"name": "protocol_synopsis", "description": "protocol synopsis text", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "protocol_synopsis", "description": "protocol synopsis text", "required": true}], "metadata": {}} -->
 ### Description
 Create the initial draft of a Statistical Analysis Plan (SAP) for a Phase II oncology trial.
 
@@ -189,5 +181,11 @@ Markdown document with sections:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{protocol_synopsis: example_protocol_synopsis}"
-Asserted Output: "Markdown sections for Objectives and estimands and Analysis populations."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Markdown sections for Objectives and estimands and Analysis populations.']
+```

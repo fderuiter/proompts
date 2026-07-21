@@ -1,17 +1,3 @@
----
-tags:
-  - assembly
-  - cdisc
-  - concepts
-  - domain:clinical
-  - metadata
-  - objectives
-  - protocol
-  - skill
-  - usdm
-  - workflow
----
-
 # Domain Agent Skills: Clinical Protocol Usdm workflow
 
 ## Metadata
@@ -22,7 +8,7 @@ tags:
 ---
 
 ## Skill: Protocol to USDM Stage 5 - Assembly
-<!-- VALIDATION_METADATA: [{"name": "metadata_json", "description": "Output from Stage 1.", "required": true}, {"name": "rationale_json", "description": "Output from Stage 2.", "required": true}, {"name": "workflow_json", "description": "Output from Stage 3.", "required": true}, {"name": "concepts_json", "description": "Output from Stage 4.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "metadata_json", "description": "Output from Stage 1.", "required": true}, {"name": "rationale_json", "description": "Output from Stage 2.", "required": true}, {"name": "workflow_json", "description": "Output from Stage 3.", "required": true}, {"name": "concepts_json", "description": "Output from Stage 4.", "required": true}], "metadata": {}} -->
 ### Description
 Assemble the final USDM JSON from previous stages.
 
@@ -77,22 +63,19 @@ Produce **only** the final JSON object. Do not add conversational text.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "metadata_json: '{"study_meta": {"id": "123"}}'
-rationale_json: '{"criteria": []}'
-workflow_json: '{"encounters": []}'
-concepts_json: '{"biomedicalConcepts": []}'
-"
-Asserted Output: "{
-  "study": {
-    "id": "123"
-  }
-}
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['{\n  ']
+```
 
 ---
 
 ## Skill: Protocol to USDM Stage 1 - Metadata
-<!-- VALIDATION_METADATA: [{"name": "protocol_text", "description": "The full text or synopsis of the protocol.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "protocol_text", "description": "The full text or synopsis of the protocol.", "required": true}], "metadata": {}} -->
 ### Description
 Extract Study Level Metadata and Design from Protocol.
 
@@ -142,19 +125,19 @@ Return a JSON snippet with the following structure. **Assign a unique ID (e.g., 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "protocol_text: "Protocol 123: A Phase 2 Study for Hypertension. Parallel design with Placebo and Drug X."
-"
-Asserted Output: "{
-  "study_meta": {
-    "id": "Protocol 123"
-  }
-}
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['{\n  ']
+```
 
 ---
 
 ## Skill: Protocol to USDM Stage 2 - Rationale
-<!-- VALIDATION_METADATA: [{"name": "protocol_objectives_text", "description": "The Objectives, Endpoints, and Eligibility sections of the protocol.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "protocol_objectives_text", "description": "The Objectives, Endpoints, and Eligibility sections of the protocol.", "required": true}], "metadata": {}} -->
 ### Description
 Extract Objectives, Endpoints, and Eligibility Criteria.
 
@@ -201,19 +184,19 @@ Return a JSON snippet. **Link Endpoints to their parent Objective using `objecti
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "protocol_objectives_text: "Primary Objective: To assess safety. Endpoint: Adverse events. Inclusion: Age > 18."
-"
-Asserted Output: "{
-  "objectives": [
-    { "level": "Primary" }
-  ]
-}
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['{\n  ']
+```
 
 ---
 
 ## Skill: Protocol to USDM Stage 3 - Workflow
-<!-- VALIDATION_METADATA: [{"name": "protocol_soa_text", "description": "The Schedule of Activities table or text.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "protocol_soa_text", "description": "The Schedule of Activities table or text.", "required": true}], "metadata": {}} -->
 ### Description
 Extract Encounters and Activities from Schedule of Activities.
 
@@ -261,22 +244,19 @@ Return a JSON snippet:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "protocol_soa_text: "Visit 1 (Day 1): Informed Consent, Vitals. Visit 2 (Day 7): Vitals."
-"
-Asserted Output: "{
-  "encounters": [
-    { "name": "Visit 1" }
-  ]
-}
-
-
-
-"workflow_matrix": {}"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['{\n  ']
+```
 
 ---
 
 ## Skill: Protocol to USDM Stage 4 - Concepts
-<!-- VALIDATION_METADATA: [{"name": "activities_json", "description": "The JSON list of Activities from Stage 3.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "activities_json", "description": "The JSON list of Activities from Stage 3.", "required": true}], "metadata": {}} -->
 ### Description
 Map Activities to Biomedical Concepts.
 
@@ -321,11 +301,11 @@ Return a JSON snippet linking Activity IDs to Biomedical Concept definitions:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "activities_json: '[{"id": "ACT_01", "name": "Blood Pressure"}]'
-"
-Asserted Output: "{
-  "biomedicalConcepts": [
-    { "activityId": "ACT_01" }
-  ]
-}
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['{\n  ']
+```

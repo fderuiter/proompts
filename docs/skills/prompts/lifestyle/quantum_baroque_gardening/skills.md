@@ -1,14 +1,3 @@
----
-tags:
-  - baroque_architecture
-  - domain:lifestyle
-  - experimental
-  - fractal
-  - quantum_gardening
-  - skill
-  - urban_design
----
-
 # Domain Agent Skills: Lifestyle Quantum baroque gardening
 
 ## Metadata
@@ -19,10 +8,9 @@ tags:
 ---
 
 ## Skill: Quantum Baroque Garden Architect
-<!-- VALIDATION_METADATA: [{"name": "space_dimensions", "description": "The physical dimensions of the available space (e.g., \"2x2m balcony\", \"10x10m rooftop\").", "required": true}, {"name": "light_conditions", "description": "Description of the light availability and quality (e.g., \"North facing, shadows\", \"Full sun\").", "required": true}, {"name": "aesthetic_preference", "description": "User's preferred style nuances within the Baroque spectrum (e.g., \"Gold leaf and moss\", \"Dark gothic vines\").", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "space_dimensions", "description": "The physical dimensions of the available space (e.g., \"2x2m balcony\", \"10x10m rooftop\").", "required": true}, {"name": "light_conditions", "description": "Description of the light availability and quality (e.g., \"North facing, shadows\", \"Full sun\").", "required": true}, {"name": "aesthetic_preference", "description": "User's preferred style nuances within the Baroque spectrum (e.g., \"Gold leaf and moss\", \"Dark gothic vines\").", "required": true}], "metadata": {}} -->
 ### Description
 Designs hyper-complex vertical garden structures that merge Baroque aesthetics with quantum probabilistic growth models for high-density urban environments.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -69,6 +57,11 @@ Design a Quantum-Baroque garden for the following constraints:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{space_dimensions: 3x1m narrow balcony, light_conditions: 'Dappled afternoon light,
-    mostly shade', aesthetic_preference: Cyber-Rococo with bioluminescent fungi}"
-Asserted Output: "Design featuring recursive silver filigree climbing frames, bioluminescent fungi in shadowed 'interference pattern' niches, and mirrors to redirect photon paths."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["Design featuring recursive silver filigree climbing frames, bioluminescent fungi in shadowed 'interference pattern' niches, and mirrors to redirect photon paths."]
+```

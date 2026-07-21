@@ -1,14 +1,3 @@
----
-tags:
-  - domain:scientific/formal_logic/non_classical/modal_logic
-  - epistemic
-  - formal-logic
-  - modal
-  - modal-logic
-  - non-classical
-  - skill
----
-
 # Domain Agent Skills: Scientific Formal logic Non classical Modal logic
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: epistemic_modal_logic_kripke_evaluator
-<!-- VALIDATION_METADATA: [{"name": "kripke_model", "description": "A formal definition of the Kripke model $\\mathcal{M} = \\langle W, R_1, \\dots, R_n, V \\rangle$, including the set of worlds $W$, accessibility relations $R_i$ for each agent $i$, and the valuation function $V$.", "required": true}, {"name": "formula", "description": "The epistemic modal logic formula $\\phi$ to evaluate, using strictly LaTeX formatted modal operators such as $K_i$ (agent $i$ knows), $C_G$ (common knowledge), and $E_G$ (everybody knows).", "required": true}, {"name": "evaluation_world", "description": "The specific world $w \\in W$ at which to evaluate the truth of the formula $\\mathcal{M}, w \\vDash \\phi$.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "kripke_model", "description": "A formal definition of the Kripke model $\\mathcal{M} = \\langle W, R_1, \\dots, R_n, V \\rangle$, including the set of worlds $W$, accessibility relations $R_i$ for each agent $i$, and the valuation function $V$.", "required": true}, {"name": "formula", "description": "The epistemic modal logic formula $\\phi$ to evaluate, using strictly LaTeX formatted modal operators such as $K_i$ (agent $i$ knows), $C_G$ (common knowledge), and $E_G$ (everybody knows).", "required": true}, {"name": "evaluation_world", "description": "The specific world $w \\in W$ at which to evaluate the truth of the formula $\\mathcal{M}, w \\vDash \\phi$.", "required": true}], "metadata": {}} -->
 ### Description
 Systematically evaluates multi-agent epistemic modal formulas within specified Kripke structures (models), performing rigorous truth condition checks and model checking.
 
@@ -71,8 +60,20 @@ Please execute a formal Kripke model evaluation for the following epistemic conf
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

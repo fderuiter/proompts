@@ -1,14 +1,3 @@
----
-tags:
-  - bottleneck-optimization
-  - domain:business
-  - drum-buffer-rope
-  - operations
-  - skill
-  - theory-of-constraints
-  - throughput-accounting
----
-
 # Domain Agent Skills: Business Operations
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: Theory of Constraints Throughput Architect
-<!-- VALIDATION_METADATA: [{"name": "system_topology", "description": "Detailed mapping of the operational workflow, including process steps, interconnected dependencies, and current cycle times.", "required": true}, {"name": "capacity_and_demand_data", "description": "Current throughput metrics, workstation capacities, setup times, and external market demand profiles.", "required": true}, {"name": "financial_parameters", "description": "Throughput revenue data, totally variable costs (TVC), and operating expenses (OE) required for Throughput Accounting calculations.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "system_topology", "description": "Detailed mapping of the operational workflow, including process steps, interconnected dependencies, and current cycle times.", "required": true}, {"name": "capacity_and_demand_data", "description": "Current throughput metrics, workstation capacities, setup times, and external market demand profiles.", "required": true}, {"name": "financial_parameters", "description": "Throughput revenue data, totally variable costs (TVC), and operating expenses (OE) required for Throughput Accounting calculations.", "required": true}], "metadata": {}} -->
 ### Description
 Formulates rigorous Theory of Constraints (ToC) throughput optimization architectures, identifying and exploiting systemic bottlenecks using Drum-Buffer-Rope scheduling and Throughput Accounting.
 
@@ -51,5 +40,11 @@ Design a Theory of Constraints optimization architecture based on the following 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Calculates Throughput Accounting metrics and identifies Assembly as the constraint requiring DBR implementation."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Calculates Throughput Accounting metrics and identifies Assembly as the constraint requiring DBR implementation.']
+```

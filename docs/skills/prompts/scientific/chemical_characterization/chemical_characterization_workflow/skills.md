@@ -1,19 +1,3 @@
----
-tags:
-  - assess
-  - chemical-characterization
-  - chemistry
-  - design
-  - domain:scientific
-  - interpret
-  - regulatory
-  - risk
-  - skill
-  - study
-  - summary
-  - write
----
-
 # Domain Agent Skills: Scientific Chemical characterization Chemical characterization workflow
 
 ## Metadata
@@ -24,7 +8,7 @@ tags:
 ---
 
 ## Skill: Interpret the Chemistry & Assess Risk
-<!-- VALIDATION_METADATA: [{"name": "body_weight", "description": "The body weight to use for this prompt", "required": true}, {"name": "device_dose", "description": "The device dose to use for this prompt", "required": true}, {"name": "study_results", "description": "The study results to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "body_weight", "description": "The body weight to use for this prompt", "required": true}, {"name": "device_dose", "description": "The device dose to use for this prompt", "required": true}, {"name": "study_results", "description": "The study results to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Act as a board-certified toxicologist.
 
@@ -66,13 +50,19 @@ Return a markdown table of results followed by a concise narrative. If any requi
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: ""
-Asserted Output: "Completion follows instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Completion follows instructions.']
+```
 
 ---
 
 ## Skill: Design the Study
-<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "A description of the subject", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_description", "description": "A description of the subject", "required": true}], "metadata": {}} -->
 ### Description
 You are a senior analytical chemist specializing in medical-device Extractables & Leachables (E&L). Using ISO 10993-18:2020 and FDA’s 2024 draft “Chemical Analysis for Biocompatibility Assessment,” create a detailed test plan for an exhaustive extractables study and a simulated-use leachables study of a device. Your plan must:
 
@@ -108,13 +98,19 @@ Think step-by-step and deliver the output as a numbered outline.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: ""
-Asserted Output: "Completion follows instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Completion follows instructions.']
+```
 
 ---
 
 ## Skill: Write the Regulatory Summary
-<!-- VALIDATION_METADATA: [{"name": "risk_assessment_summary", "description": "A summary of the key information", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "risk_assessment_summary", "description": "A summary of the key information", "required": true}], "metadata": {}} -->
 ### Description
 You are a regulatory-affairs specialist drafting the Chemical Characterization section of a 510(k).
 
@@ -148,5 +144,11 @@ After the summary, list any remaining inputs you require from me.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: ""
-Asserted Output: "Completion follows instructions."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Completion follows instructions.']
+```

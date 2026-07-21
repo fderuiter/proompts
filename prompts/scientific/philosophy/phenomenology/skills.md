@@ -1,14 +1,3 @@
----
-tags:
-  - domain:scientific/philosophy/phenomenology
-  - engine
-  - phenomenological
-  - phenomenology
-  - philosophy
-  - reduction
-  - skill
----
-
 # Domain Agent Skills: Scientific Philosophy Phenomenology
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: phenomenological_reduction_engine
-<!-- VALIDATION_METADATA: [{"name": "LIVED_EXPERIENCE", "description": "The specific first-person account or lived experience to be analyzed (e.g., the perception of a failing tool, the feeling of acute anxiety).", "required": true}, {"name": "TARGET_PHENOMENON", "description": "The core phenomenon embedded within the lived experience that is the focus of the reduction.", "required": true}, {"name": "lived_experience", "description": "Auto-extracted variable lived_experience", "required": false}, {"name": "target_phenomenon", "description": "Auto-extracted variable target_phenomenon", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "LIVED_EXPERIENCE", "description": "The specific first-person account or lived experience to be analyzed (e.g., the perception of a failing tool, the feeling of acute anxiety).", "required": true}, {"name": "TARGET_PHENOMENON", "description": "The core phenomenon embedded within the lived experience that is the focus of the reduction.", "required": true}, {"name": "lived_experience", "description": "Auto-extracted variable lived_experience", "required": false}, {"name": "target_phenomenon", "description": "Auto-extracted variable target_phenomenon", "required": false}], "metadata": {}} -->
 ### Description
 A highly rigorous prompt designed to systematically deconstruct first-person experiences using Husserlian phenomenological reduction, isolating eidetic invariants while bracketing naturalistic assumptions.
 
@@ -28,6 +17,8 @@ A highly rigorous prompt designed to systematically deconstruct first-person exp
 | :--- | :--- | :--- | :--- |
 | `LIVED_EXPERIENCE` | String | The specific first-person account or lived experience to be analyzed (e.g., the perception of a failing tool, the feeling of acute anxiety). | Yes |
 | `TARGET_PHENOMENON` | String | The core phenomenon embedded within the lived experience that is the focus of the reduction. | Yes |
+| `lived_experience` | String | Auto-extracted variable lived_experience | No |
+| `target_phenomenon` | String | Auto-extracted variable target_phenomenon | No |
 
 
 ### Core Instructions
@@ -59,8 +50,20 @@ Execute the systematic phenomenological reduction of this experience.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Phenomenological Epoch"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Phenomenological Epoch']
+```
 
-Input Context: "{}"
-Asserted Output: "Eidetic Reduction"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Eidetic Reduction']
+```

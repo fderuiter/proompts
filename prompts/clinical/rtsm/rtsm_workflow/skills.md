@@ -1,22 +1,3 @@
----
-tags:
-  - create
-  - design
-  - domain:clinical
-  - drug
-  - forecast
-  - mitigation
-  - monitoring
-  - patient-centered
-  - randomization
-  - risk-based
-  - rtsm
-  - scheme
-  - site-level
-  - skill
-  - supply
----
-
 # Domain Agent Skills: Clinical Rtsm Rtsm workflow
 
 ## Metadata
@@ -27,7 +8,7 @@ tags:
 ---
 
 ## Skill: Design a Patient-Centered Randomization Scheme
-<!-- VALIDATION_METADATA: [{"name": "study_parameters", "description": "any additional trial details", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "study_parameters", "description": "any additional trial details", "required": true}], "metadata": {}} -->
 ### Description
 Create a randomization scheme that balances patient needs with logistical simplicity.
 
@@ -77,13 +58,19 @@ Ensure the scheme is ready for RTSM vendor implementation.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{study_parameters: example_study_parameters}"
-Asserted Output: "4-bullet executive summary and specification table."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['4-bullet executive summary and specification table.']
+```
 
 ---
 
 ## Skill: Forecast Site-Level Drug Supply & Resupply Strategy
-<!-- VALIDATION_METADATA: [{"name": "trial_enrollment", "description": "actual enrollment data if available", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "trial_enrollment", "description": "actual enrollment data if available", "required": true}], "metadata": {}} -->
 ### Description
 Plan site-level drug supply and resupply for an adaptive trial.
 
@@ -131,13 +118,19 @@ Omit internal reasoning; provide only the final deliverable.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{trial_enrollment: example_enrollment}"
-Asserted Output: "Markdown table, ASCII timeline, and rationale paragraph."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Markdown table, ASCII timeline, and rationale paragraph.']
+```
 
 ---
 
 ## Skill: Create a Risk-Based Monitoring & Mitigation SOP for RTSM
-<!-- VALIDATION_METADATA: [{"name": "existing_sop", "description": "any current procedures", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "existing_sop", "description": "any current procedures", "required": true}], "metadata": {}} -->
 ### Description
 Draft a standard operating procedure for risk‑based monitoring and mitigation in RTSM operations.
 
@@ -177,5 +170,11 @@ Avoid internal reasoning in the output.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{existing_sop: example_sop}"
-Asserted Output: "Markdown table, mitigation procedures, and flowchart description."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Markdown table, mitigation procedures, and flowchart description.']
+```

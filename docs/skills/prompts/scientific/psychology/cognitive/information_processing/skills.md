@@ -1,17 +1,3 @@
----
-tags:
-  - bias
-  - cognitive
-  - detection
-  - domain:cognitive/information_processing
-  - domain:scientific/psychology/cognitive/information_processing
-  - information-processing
-  - mitigation
-  - psychology
-  - signal
-  - skill
----
-
 # Domain Agent Skills: Scientific Psychology Cognitive Information processing
 
 ## Metadata
@@ -22,7 +8,7 @@ tags:
 ---
 
 ## Skill: signal_detection_theory_architect
-<!-- VALIDATION_METADATA: [{"name": "experimental_task", "description": "Description of the cognitive, perceptual, or diagnostic task being evaluated."}, {"name": "stimulus_conditions", "description": "Details of the signal and noise distributions, including stimulus intensities or diagnostic prevalence rates."}, {"name": "payoff_matrix", "description": "Cost-benefit matrix defining the utilities of Hits, Misses, False Alarms, and Correct Rejections."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "experimental_task", "description": "Description of the cognitive, perceptual, or diagnostic task being evaluated."}, {"name": "stimulus_conditions", "description": "Details of the signal and noise distributions, including stimulus intensities or diagnostic prevalence rates."}, {"name": "payoff_matrix", "description": "Cost-benefit matrix defining the utilities of Hits, Misses, False Alarms, and Correct Rejections."}], "metadata": {}} -->
 ### Description
 Designs highly rigorous Signal Detection Theory (SDT) analytical frameworks, separating perceptual sensitivity (d') from response bias (beta/C) in complex cognitive and diagnostic tasks.
 
@@ -67,16 +53,28 @@ Do not include any pleasantries, conversational filler, or generic advice. Outpu
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "d'"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["d'"]
+```
 
-Input Context: "{}"
-Asserted Output: "ROC"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['ROC']
+```
 
 ---
 
 ## Skill: cognitive_bias_mitigation_architect
-<!-- VALIDATION_METADATA: [{"name": "decision_making_context", "description": "Detailed description of the complex decision-making environment, including available information, time constraints, and potential outcomes or payoffs."}, {"name": "cognitive_vulnerabilities", "description": "Hypothesized cognitive biases, heuristics, or decision-making errors (e.g., base-rate neglect, confirmation bias, anchoring) present in the current process."}, {"name": "statistical_base_rates", "description": "Empirical priors, statistical base rates, and hit/miss probability distributions associated with the decision matrix."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "decision_making_context", "description": "Detailed description of the complex decision-making environment, including available information, time constraints, and potential outcomes or payoffs."}, {"name": "cognitive_vulnerabilities", "description": "Hypothesized cognitive biases, heuristics, or decision-making errors (e.g., base-rate neglect, confirmation bias, anchoring) present in the current process."}, {"name": "statistical_base_rates", "description": "Empirical priors, statistical base rates, and hit/miss probability distributions associated with the decision matrix."}], "metadata": {}} -->
 ### Description
 A highly robust, expert-level prompt designed to computationally model and systematically mitigate cognitive biases and heuristics in complex decision-making frameworks under uncertainty using Signal Detection Theory and Bayesian updating.
 
@@ -121,8 +119,20 @@ Do not include any conversational filler, introductory pleasantries, or generic 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Discriminability $d'$"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["Discriminability $d'$"]
+```
 
-Input Context: "{}"
-Asserted Output: "Bayesian updating"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Bayesian updating']
+```

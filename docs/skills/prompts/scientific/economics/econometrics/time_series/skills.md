@@ -1,19 +1,3 @@
----
-tags:
-  - bayesian
-  - bvar
-  - domain:econometrics/time_series
-  - dynamic-factor-models
-  - econometrics
-  - forecasting
-  - macroeconomics
-  - nowcasting
-  - skill
-  - state-space
-  - svar
-  - time-series
----
-
 # Domain Agent Skills: Scientific Economics Econometrics Time series
 
 ## Metadata
@@ -24,7 +8,7 @@ tags:
 ---
 
 ## Skill: bayesian_vector_autoregression_architect
-<!-- VALIDATION_METADATA: [{"name": "endogenous_variables", "type": "string", "description": "List of endogenous macroeconomic variables to be modeled (e.g., Log Real GDP, Inflation, Policy Rate)."}, {"name": "prior_specification", "type": "string", "description": "The choice of Bayesian prior distributions for the VAR parameters (e.g., Minnesota prior, Normal-Wishart, Independent Normal-Wishart)."}, {"name": "structural_identification", "type": "string", "description": "Strategy for identifying structural shocks from the reduced form (e.g., recursive Cholesky, sign restrictions, zero and sign restrictions)."}, {"name": "forecast_horizon", "type": "string", "description": "The desired horizon for unconditional forecasting or impulse response analysis."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "endogenous_variables", "type": "string", "description": "List of endogenous macroeconomic variables to be modeled (e.g., Log Real GDP, Inflation, Policy Rate)."}, {"name": "prior_specification", "type": "string", "description": "The choice of Bayesian prior distributions for the VAR parameters (e.g., Minnesota prior, Normal-Wishart, Independent Normal-Wishart)."}, {"name": "structural_identification", "type": "string", "description": "Strategy for identifying structural shocks from the reduced form (e.g., recursive Cholesky, sign restrictions, zero and sign restrictions)."}, {"name": "forecast_horizon", "type": "string", "description": "The desired horizon for unconditional forecasting or impulse response analysis."}], "metadata": {}} -->
 ### Description
 Formulates rigorous Bayesian Vector Autoregression (BVAR) models for macroeconomic forecasting and structural analysis, incorporating prior specification, posterior inference, and structural identification.
 
@@ -64,16 +48,28 @@ Provide the full mathematical specification of the reduced-form VAR, the explici
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: structural_vector_autoregression_architect
-<!-- VALIDATION_METADATA: [{"name": "endogenous_variables", "type": "string", "description": "List of endogenous macroeconomic variables (e.g., GDP growth, inflation, interest rate)."}, {"name": "identification_scheme", "type": "string", "description": "The structural identification strategy (e.g., Cholesky decomposition, Blanchard-Quah long-run restrictions, sign restrictions)."}, {"name": "exogenous_shocks", "type": "string", "description": "The structural shocks to be identified (e.g., monetary policy shock, technology shock)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "endogenous_variables", "type": "string", "description": "List of endogenous macroeconomic variables (e.g., GDP growth, inflation, interest rate)."}, {"name": "identification_scheme", "type": "string", "description": "The structural identification strategy (e.g., Cholesky decomposition, Blanchard-Quah long-run restrictions, sign restrictions)."}, {"name": "exogenous_shocks", "type": "string", "description": "The structural shocks to be identified (e.g., monetary policy shock, technology shock)."}], "metadata": {}} -->
 ### Description
 Formulates rigorous Structural Vector Autoregression (SVAR) models for macroeconomic shock identification, providing identification schemes, impulse response functions (IRFs), and variance decompositions.
 
@@ -109,16 +105,28 @@ Provide the full structural mapping, the explicit restrictions matrix, and the t
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: mixed_frequency_dynamic_factor_nowcasting_architect
-<!-- VALIDATION_METADATA: [{"name": "observation_frequencies", "type": "string", "description": "The mix of data frequencies being integrated (e.g., daily financial variables, monthly industrial production, quarterly GDP)."}, {"name": "factor_structure", "type": "string", "description": "The assumed structure of the unobserved latent factors driving the macroeconomy (e.g., single global factor, block-specific factors)."}, {"name": "state_space_formulation", "type": "string", "description": "The specific state-space representation and assumptions regarding the idiosyncratic error dynamics (e.g., AR(1) idiosyncratic errors, exact versus approximate factor models)."}, {"name": "estimation_methodology", "type": "string", "description": "The econometric approach for parameter estimation and latent state filtering (e.g., Kalman filter with Maximum Likelihood via EM algorithm, Bayesian Gibbs sampling)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "observation_frequencies", "type": "string", "description": "The mix of data frequencies being integrated (e.g., daily financial variables, monthly industrial production, quarterly GDP)."}, {"name": "factor_structure", "type": "string", "description": "The assumed structure of the unobserved latent factors driving the macroeconomy (e.g., single global factor, block-specific factors)."}, {"name": "state_space_formulation", "type": "string", "description": "The specific state-space representation and assumptions regarding the idiosyncratic error dynamics (e.g., AR(1) idiosyncratic errors, exact versus approximate factor models)."}, {"name": "estimation_methodology", "type": "string", "description": "The econometric approach for parameter estimation and latent state filtering (e.g., Kalman filter with Maximum Likelihood via EM algorithm, Bayesian Gibbs sampling)."}], "metadata": {}} -->
 ### Description
 Formulates rigorous Mixed-Frequency Dynamic Factor Models (MF-DFM) for high-frequency macroeconomic nowcasting to handle ragged-edge data and state-space estimation.
 
@@ -154,8 +162,20 @@ Provide the complete mathematical formulation of the state-space system, the pre
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

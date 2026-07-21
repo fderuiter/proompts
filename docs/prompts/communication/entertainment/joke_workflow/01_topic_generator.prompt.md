@@ -11,6 +11,9 @@ Generates a random topic for a joke.
 ```yaml
 name: Topic Generator
 description: Generates a random topic for a joke.
+metadata:
+  domain: communication
+  complexity: low
 model: gpt-4o-mini
 modelParameters:
   temperature: 0.7

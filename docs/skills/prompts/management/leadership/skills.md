@@ -1,23 +1,3 @@
----
-tags:
-  - 90-day
-  - alignment
-  - biostatistics
-  - clinical-operations
-  - communication-matrix
-  - culture
-  - domain:management
-  - governance
-  - innovation
-  - leadership
-  - onboarding
-  - operational-excellence
-  - plan
-  - reflection
-  - skill
-  - strategic
----
-
 # Domain Agent Skills: Management Leadership
 
 ## Metadata
@@ -28,7 +8,7 @@ tags:
 ---
 
 ## Skill: Operational Excellence Communication Framework
-<!-- VALIDATION_METADATA: [{"name": "current_processes", "description": "description of existing communication practices and pain points", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "current_processes", "description": "description of existing communication practices and pain points", "required": true}], "metadata": {}} -->
 ### Description
 improved collaboration strategy between Business Development, Clinical Operations, and Data Management using industry-standard governance.
 
@@ -76,13 +56,19 @@ Analyze the `<current_processes>` provided and output a strategic communication 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Strategic Alignment and Innovation
-<!-- VALIDATION_METADATA: [{"name": "current_operations", "description": "summary of existing trial processes", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "current_operations", "description": "summary of existing trial processes", "required": true}], "metadata": {}} -->
 ### Description
 Develop a roadmap that aligns global trial operations with emerging industry trends.
 
@@ -119,7 +105,7 @@ None provided.
 ---
 
 ## Skill: 90-Day Biostatistics Onboarding Plan
-<!-- VALIDATION_METADATA: [{"name": "cohort_size", "description": "number of hires per onboarding cohort", "required": true}, {"name": "therapeutic_focus", "description": "dominant therapeutic areas", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "cohort_size", "description": "number of hires per onboarding cohort", "required": true}, {"name": "therapeutic_focus", "description": "dominant therapeutic areas", "required": true}], "metadata": {}} -->
 ### Description
 Design a structured program to move new statisticians from orientation to productive project work in 90 days.
 
@@ -159,7 +145,7 @@ None provided.
 ---
 
 ## Skill: Leadership Reflection and Culture
-<!-- VALIDATION_METADATA: [{"name": "current_values", "description": "existing leadership values or mission statements", "required": true}, {"name": "team_context", "description": "specific challenges, recent feedback, or incidents (e.g., missed endpoints, high turnover)", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "current_values", "description": "existing leadership values or mission statements", "required": true}, {"name": "team_context", "description": "specific challenges, recent feedback, or incidents (e.g., missed endpoints, high turnover)", "required": true}], "metadata": {}} -->
 ### Description
 Assess leadership values and identify actions to strengthen team cohesion.
 

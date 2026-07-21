@@ -1,14 +1,3 @@
----
-tags:
-  - dialectical
-  - domain:philosophy
-  - metaphysical
-  - metaphysics
-  - philosophy
-  - skill
-  - synthesizer
----
-
 # Domain Agent Skills: Scientific Philosophy Metaphysics
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: dialectical_metaphysical_synthesizer
-<!-- VALIDATION_METADATA: [{"name": "FRAMEWORK_A", "type": "string", "description": "The first metaphysical framework (e.g., Substance Dualism)."}, {"name": "FRAMEWORK_B", "type": "string", "description": "The second, mutually exclusive metaphysical framework (e.g., Physicalist Monism)."}, {"name": "CONTEXT", "type": "string", "description": "The specific philosophical problem to address (e.g., The Hard Problem of Consciousness)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "FRAMEWORK_A", "type": "string", "description": "The first metaphysical framework (e.g., Substance Dualism)."}, {"name": "FRAMEWORK_B", "type": "string", "description": "The second, mutually exclusive metaphysical framework (e.g., Physicalist Monism)."}, {"name": "CONTEXT", "type": "string", "description": "The specific philosophical problem to address (e.g., The Hard Problem of Consciousness)."}], "metadata": {}} -->
 ### Description
 Synthesizes mutually exclusive metaphysical frameworks through rigorous dialectical logic.
 
@@ -59,5 +48,11 @@ Context: <CONTEXT>{{ CONTEXT }}</CONTEXT>
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

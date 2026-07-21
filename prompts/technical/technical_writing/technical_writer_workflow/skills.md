@@ -1,22 +1,3 @@
----
-tags:
-  - brochure
-  - changes
-  - csr
-  - domain:technical
-  - investigator
-  - problem
-  - reporting
-  - results
-  - sae
-  - safety
-  - section
-  - skill
-  - summary
-  - technical-writing
-  - unanticipated
----
-
 # Domain Agent Skills: Technical Technical writing Technical writer workflow
 
 ## Metadata
@@ -27,7 +8,7 @@ tags:
 ---
 
 ## Skill: CSR Results and Safety Section
-<!-- VALIDATION_METADATA: [] -->
+<!-- VALIDATION_METADATA: {"variables": [], "metadata": {}} -->
 ### Description
 Draft Sections 11 and 12 of an ICH E3 clinical study report.
 
@@ -65,14 +46,19 @@ Output Format:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Efficacy Evaluation
-Safety Evaluation"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Efficacy Evaluation\nSafety Evaluation']
+```
 
 ---
 
 ## Skill: Investigator's Brochure Summary of Changes
-<!-- VALIDATION_METADATA: [] -->
+<!-- VALIDATION_METADATA: {"variables": [], "metadata": {}} -->
 ### Description
 Produce a detailed summary of changes for the annual Investigator’s Brochure update.
 
@@ -109,14 +95,19 @@ Output Format:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "| Section | Old text | New text | Rationale |
-| --- | --- | --- | --- |"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['| Section | Old text | New text | Rationale |\n| --- | --- | --- | --- |']
+```
 
 ---
 
 ## Skill: SAE and Unanticipated Problem Reporting SOP
-<!-- VALIDATION_METADATA: [{"name": "study_context", "description": "specific details about the study (phase, indication, sites)", "required": true}, {"name": "sponsor_requirements", "description": "specific reporting timelines or requirements from the sponsor", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "study_context", "description": "specific details about the study (phase, indication, sites)", "required": true}, {"name": "sponsor_requirements", "description": "specific reporting timelines or requirements from the sponsor", "required": false}], "metadata": {}} -->
 ### Description
 Develop a standard operating procedure for reporting serious adverse events and unanticipated problems.
 
@@ -177,16 +168,11 @@ Do not include conversational filler ("Here is the SOP...").
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{study_context: Phase III multi-site oncology trial (Protocol ONC-2024-001) involving
-    investigational drug X., sponsor_requirements: Report all SAEs within 24 hours
-    via the EDC system. Fatal events require immediate phone call to Medical Monitor.}"
-Asserted Output: "1. Purpose
-2. Scope
-3. Definitions
-ONC-2024-001
-
-Purpose
-# Purpose
-1. Purpose
-2. Scope
-3. Definitions"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['1. Purpose\n2. Scope\n3. Definitions\nONC-2024-001\n\nPurpose\n# Purpose\n1. Purpose\n2. Scope\n3. Definitions']
+```

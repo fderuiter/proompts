@@ -1,22 +1,3 @@
----
-tags:
-  - alignment
-  - capture
-  - cdash
-  - data
-  - design
-  - domain:clinical
-  - electronic
-  - error
-  - forms
-  - implementation
-  - interoperability
-  - optimization
-  - prevention
-  - semantic
-  - skill
----
-
 # Domain Agent Skills: Clinical Forms
 
 ## Metadata
@@ -27,7 +8,7 @@ tags:
 ---
 
 ## Skill: Semantic Interoperability Optimization
-<!-- VALIDATION_METADATA: [{"name": "crf_metadata", "description": "Terminology catalogs (LOINC, SNOMED CT, UCUM): `{{ terminology_catalogs }}`", "required": true}, {"name": "terminology_catalogs", "description": "The terminology catalogs to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "crf_metadata", "description": "Terminology catalogs (LOINC, SNOMED CT, UCUM): `{{ terminology_catalogs }}`", "required": true}, {"name": "terminology_catalogs", "description": "The terminology catalogs to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Bind clinical concepts in CRF questions to LOINC, SNOMED CT, or UCUM.
 
@@ -58,16 +39,19 @@ Markdown Semantic Mapping Table (Question | Concept | LOINC Code | UCUM Unit).
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "crf_metadata: "Systolic Blood Pressure"
-terminology_catalogs: "LOINC 8480-6"
-"
-Asserted Output: "| Question | Concept | LOINC Code |
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['| Question | Concept | LOINC Code |\n']
+```
 
 ---
 
 ## Skill: Electronic Data Capture Implementation
-<!-- VALIDATION_METADATA: [{"name": "dcp", "description": "The dcp to use for this prompt", "required": true}, {"name": "dmp", "description": "Data Clean Plan (DCP): `{{ dcp }}`", "required": true}, {"name": "protocol", "description": "Data Management Plan (DMP): `{{ dmp }}`", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "dcp", "description": "The dcp to use for this prompt", "required": true}, {"name": "dmp", "description": "Data Clean Plan (DCP): `{{ dcp }}`", "required": true}, {"name": "protocol", "description": "Data Management Plan (DMP): `{{ dmp }}`", "required": true}], "metadata": {}} -->
 ### Description
 Design eCRFs with built-in edit checks and automation.
 
@@ -100,17 +84,19 @@ Markdown eCRF Specification (Field | Type | Logic/Check).
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "protocol: "Collect Systolic BP. Range 80-200."
-dmp: "Standard checks apply."
-dcp: "Query if out of range."
-"
-Asserted Output: "| Field | Type | Logic/Check |
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['| Field | Type | Logic/Check |\n']
+```
 
 ---
 
 ## Skill: CDASH Alignment
-<!-- VALIDATION_METADATA: [{"name": "cdash_guide", "description": "The cdash guide to use for this prompt", "required": true}, {"name": "crf_draft", "description": "CDASH User Guide: `{{ cdash_guide }}`", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "cdash_guide", "description": "The cdash guide to use for this prompt", "required": true}, {"name": "crf_draft", "description": "CDASH User Guide: `{{ cdash_guide }}`", "required": true}], "metadata": {}} -->
 ### Description
 Standardize clinical data collection fields using CDASH models.
 
@@ -141,16 +127,19 @@ Markdown CDASH Alignment Table (Draft Field -> CDASH Variable -> Question Text).
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "crf_draft: "Patient Height in inches."
-cdash_guide: "Use VS.VSORRES, VS.VSORRESU."
-"
-Asserted Output: "| Draft Field | CDASH Variable |
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['| Draft Field | CDASH Variable |\n']
+```
 
 ---
 
 ## Skill: Design Error Prevention
-<!-- VALIDATION_METADATA: [{"name": "crf_draft", "description": "Study Protocol: `{{ protocol }}`", "required": true}, {"name": "endpoints", "description": "Study Hypothesis: `{{ hypothesis }}`", "required": true}, {"name": "hypothesis", "description": "The hypothesis to use for this prompt", "required": true}, {"name": "protocol", "description": "Safety and efficacy endpoints: `{{ endpoints }}`", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "crf_draft", "description": "Study Protocol: `{{ protocol }}`", "required": true}, {"name": "endpoints", "description": "Study Hypothesis: `{{ hypothesis }}`", "required": true}, {"name": "hypothesis", "description": "The hypothesis to use for this prompt", "required": true}, {"name": "protocol", "description": "Safety and efficacy endpoints: `{{ endpoints }}`", "required": true}], "metadata": {}} -->
 ### Description
 Review and optimize CRF layout to avoid duplication and non-essential fields.
 
@@ -185,10 +174,11 @@ Markdown Optimization Report (Field | Issue | Recommendation).
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "crf_draft: "Field: Height (cm) at Visit 1 and Visit 2."
-protocol: "Height only needed at baseline."
-endpoints: "Weight change."
-hypothesis: "Drug reduces weight."
-"
-Asserted Output: "| Field | Issue | Recommendation |
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['| Field | Issue | Recommendation |\n']
+```

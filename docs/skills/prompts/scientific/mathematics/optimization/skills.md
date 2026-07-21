@@ -1,24 +1,3 @@
----
-tags:
-  - column-generation
-  - dantzig-wolfe-decomposition
-  - domain:optimization
-  - global-optimization
-  - large-scale-optimization
-  - mathematical-programming
-  - min-max
-  - multi-objective
-  - operations-research
-  - polynomial-optimization
-  - robust-optimization
-  - semidefinite-programming
-  - skill
-  - stochastic-modeling
-  - sum-of-squares
-  - uncertainty-quantification
-  - uncertainty-sets
----
-
 # Domain Agent Skills: Scientific Mathematics Optimization
 
 ## Metadata
@@ -29,7 +8,7 @@ tags:
 ---
 
 ## Skill: Stochastic Multi-Objective Optimization Architect
-<!-- VALIDATION_METADATA: [{"name": "SCENARIO_DESCRIPTION", "description": "Detailed description of the operations research or systems engineering problem, including constraints and objectives."}, {"name": "UNCERTAINTY_SOURCES", "description": "Detailed explanation of the stochastic elements and sources of deep uncertainty affecting the model parameters."}, {"name": "DECISION_VARIABLES", "description": "Description of the continuous, integer, or binary decision variables to be determined by the model."}, {"name": "decision_variables", "description": "Auto-extracted variable decision_variables", "required": false}, {"name": "scenario_description", "description": "Auto-extracted variable scenario_description", "required": false}, {"name": "uncertainty_sources", "description": "Auto-extracted variable uncertainty_sources", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "SCENARIO_DESCRIPTION", "description": "Detailed description of the operations research or systems engineering problem, including constraints and objectives."}, {"name": "UNCERTAINTY_SOURCES", "description": "Detailed explanation of the stochastic elements and sources of deep uncertainty affecting the model parameters."}, {"name": "DECISION_VARIABLES", "description": "Description of the continuous, integer, or binary decision variables to be determined by the model."}, {"name": "decision_variables", "description": "Auto-extracted variable decision_variables", "required": false}, {"name": "scenario_description", "description": "Auto-extracted variable scenario_description", "required": false}, {"name": "uncertainty_sources", "description": "Auto-extracted variable uncertainty_sources", "required": false}], "metadata": {}} -->
 ### Description
 Formulates robust, multi-objective stochastic optimization models for complex operations research scenarios involving deep uncertainty.
 
@@ -39,6 +18,9 @@ Formulates robust, multi-objective stochastic optimization models for complex op
 | `SCENARIO_DESCRIPTION` | String | Detailed description of the operations research or systems engineering problem, including constraints and objectives. | Yes |
 | `UNCERTAINTY_SOURCES` | String | Detailed explanation of the stochastic elements and sources of deep uncertainty affecting the model parameters. | Yes |
 | `DECISION_VARIABLES` | String | Description of the continuous, integer, or binary decision variables to be determined by the model. | Yes |
+| `decision_variables` | String | Auto-extracted variable decision_variables | No |
+| `scenario_description` | String | Auto-extracted variable scenario_description | No |
+| `uncertainty_sources` | String | Auto-extracted variable uncertainty_sources | No |
 
 
 ### Core Instructions
@@ -60,16 +42,28 @@ Please formulate the stochastic optimization model for the following scenario:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Sets and Indices"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Sets and Indices']
+```
 
-Input Context: "{}"
-Asserted Output: "Multi-Objective Formulation"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Multi-Objective Formulation']
+```
 
 ---
 
 ## Skill: Polynomial Optimization SDP Relaxation Architect
-<!-- VALIDATION_METADATA: [{"name": "POLYNOMIAL_OBJECTIVE", "description": "Detailed description of the non-convex polynomial objective function to be minimized or maximized."}, {"name": "POLYNOMIAL_CONSTRAINTS", "description": "Detailed description of the semi-algebraic set defining the feasible region (inequalities and equations)."}, {"name": "RELAXATION_ORDER", "description": "The desired hierarchy relaxation order (d) or an analysis of how to determine the optimal order based on degree and sparsity."}, {"name": "polynomial_constraints", "description": "Auto-extracted variable polynomial_constraints", "required": false}, {"name": "polynomial_objective", "description": "Auto-extracted variable polynomial_objective", "required": false}, {"name": "relaxation_order", "description": "Auto-extracted variable relaxation_order", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "POLYNOMIAL_OBJECTIVE", "description": "Detailed description of the non-convex polynomial objective function to be minimized or maximized."}, {"name": "POLYNOMIAL_CONSTRAINTS", "description": "Detailed description of the semi-algebraic set defining the feasible region (inequalities and equations)."}, {"name": "RELAXATION_ORDER", "description": "The desired hierarchy relaxation order (d) or an analysis of how to determine the optimal order based on degree and sparsity."}, {"name": "polynomial_constraints", "description": "Auto-extracted variable polynomial_constraints", "required": false}, {"name": "polynomial_objective", "description": "Auto-extracted variable polynomial_objective", "required": false}, {"name": "relaxation_order", "description": "Auto-extracted variable relaxation_order", "required": false}], "metadata": {}} -->
 ### Description
 Formulates highly rigorous, computationally tractable exact global optimization models using Lasserre's Sum-of-Squares (SOS) and moment hierarchies for non-convex polynomial programming problems.
 
@@ -79,6 +73,9 @@ Formulates highly rigorous, computationally tractable exact global optimization 
 | `POLYNOMIAL_OBJECTIVE` | String | Detailed description of the non-convex polynomial objective function to be minimized or maximized. | Yes |
 | `POLYNOMIAL_CONSTRAINTS` | String | Detailed description of the semi-algebraic set defining the feasible region (inequalities and equations). | Yes |
 | `RELAXATION_ORDER` | String | The desired hierarchy relaxation order (d) or an analysis of how to determine the optimal order based on degree and sparsity. | Yes |
+| `polynomial_constraints` | String | Auto-extracted variable polynomial_constraints | No |
+| `polynomial_objective` | String | Auto-extracted variable polynomial_objective | No |
+| `relaxation_order` | String | Auto-extracted variable relaxation_order | No |
 
 
 ### Core Instructions
@@ -100,16 +97,28 @@ Please formulate the SDP relaxation for the following polynomial optimization sc
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Moment and Localizing Matrices"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Moment and Localizing Matrices']
+```
 
-Input Context: "{}"
-Asserted Output: "Sparsity Exploitation"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Sparsity Exploitation']
+```
 
 ---
 
 ## Skill: Dantzig-Wolfe Column Generation Architect
-<!-- VALIDATION_METADATA: [{"name": "COMPACT_FORMULATION", "description": "Detailed description of the original compact integer/linear programming problem with complicating constraints and block-angular structure."}, {"name": "BLOCK_STRUCTURE", "description": "Specification of the independent block structures or subproblem definitions that allow for decomposition."}, {"name": "PRICING_LOGIC", "description": "Details regarding the generation of new columns, the structure of the pricing subproblem(s), and the calculation of reduced costs."}, {"name": "block_structure", "description": "Auto-extracted variable block_structure", "required": false}, {"name": "compact_formulation", "description": "Auto-extracted variable compact_formulation", "required": false}, {"name": "pricing_logic", "description": "Auto-extracted variable pricing_logic", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "COMPACT_FORMULATION", "description": "Detailed description of the original compact integer/linear programming problem with complicating constraints and block-angular structure."}, {"name": "BLOCK_STRUCTURE", "description": "Specification of the independent block structures or subproblem definitions that allow for decomposition."}, {"name": "PRICING_LOGIC", "description": "Details regarding the generation of new columns, the structure of the pricing subproblem(s), and the calculation of reduced costs."}, {"name": "block_structure", "description": "Auto-extracted variable block_structure", "required": false}, {"name": "compact_formulation", "description": "Auto-extracted variable compact_formulation", "required": false}, {"name": "pricing_logic", "description": "Auto-extracted variable pricing_logic", "required": false}], "metadata": {}} -->
 ### Description
 Formulates highly rigorous Dantzig-Wolfe decomposition and Column Generation models for large-scale, block-angular integer and linear programming problems.
 
@@ -119,6 +128,9 @@ Formulates highly rigorous Dantzig-Wolfe decomposition and Column Generation mod
 | `COMPACT_FORMULATION` | String | Detailed description of the original compact integer/linear programming problem with complicating constraints and block-angular structure. | Yes |
 | `BLOCK_STRUCTURE` | String | Specification of the independent block structures or subproblem definitions that allow for decomposition. | Yes |
 | `PRICING_LOGIC` | String | Details regarding the generation of new columns, the structure of the pricing subproblem(s), and the calculation of reduced costs. | Yes |
+| `block_structure` | String | Auto-extracted variable block_structure | No |
+| `compact_formulation` | String | Auto-extracted variable compact_formulation | No |
+| `pricing_logic` | String | Auto-extracted variable pricing_logic | No |
 
 
 ### Core Instructions
@@ -140,16 +152,28 @@ Please formulate the Dantzig-Wolfe Column Generation model for the following sce
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Pricing Subproblem"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Pricing Subproblem']
+```
 
-Input Context: "{}"
-Asserted Output: "Restricted Master Problem (RMP)"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Restricted Master Problem (RMP)']
+```
 
 ---
 
 ## Skill: Robust Optimization Min-Max Architect
-<!-- VALIDATION_METADATA: [{"name": "NOMINAL_PROBLEM", "description": "Detailed description of the nominal deterministic optimization problem, including the objective function and constraints."}, {"name": "UNCERTAIN_PARAMETERS", "description": "Detailed description of the parameters subject to uncertainty and their bounds or intervals."}, {"name": "UNCERTAINTY_SET_GEOMETRY", "description": "Specification of the geometry of the uncertainty set (e.g., box, polyhedral, ellipsoidal, budgeted/Bertsimas-Sim) modeling the parameter variations."}, {"name": "nominal_problem", "description": "Auto-extracted variable nominal_problem", "required": false}, {"name": "uncertain_parameters", "description": "Auto-extracted variable uncertain_parameters", "required": false}, {"name": "uncertainty_set_geometry", "description": "Auto-extracted variable uncertainty_set_geometry", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "NOMINAL_PROBLEM", "description": "Detailed description of the nominal deterministic optimization problem, including the objective function and constraints."}, {"name": "UNCERTAIN_PARAMETERS", "description": "Detailed description of the parameters subject to uncertainty and their bounds or intervals."}, {"name": "UNCERTAINTY_SET_GEOMETRY", "description": "Specification of the geometry of the uncertainty set (e.g., box, polyhedral, ellipsoidal, budgeted/Bertsimas-Sim) modeling the parameter variations."}, {"name": "nominal_problem", "description": "Auto-extracted variable nominal_problem", "required": false}, {"name": "uncertain_parameters", "description": "Auto-extracted variable uncertain_parameters", "required": false}, {"name": "uncertainty_set_geometry", "description": "Auto-extracted variable uncertainty_set_geometry", "required": false}], "metadata": {}} -->
 ### Description
 Formulates highly rigorous exact robust counterparts for optimization problems subject to bounded parameter uncertainty, transforming intractable semi-infinite programs into computationally tractable deterministic equivalents.
 
@@ -159,6 +183,9 @@ Formulates highly rigorous exact robust counterparts for optimization problems s
 | `NOMINAL_PROBLEM` | String | Detailed description of the nominal deterministic optimization problem, including the objective function and constraints. | Yes |
 | `UNCERTAIN_PARAMETERS` | String | Detailed description of the parameters subject to uncertainty and their bounds or intervals. | Yes |
 | `UNCERTAINTY_SET_GEOMETRY` | String | Specification of the geometry of the uncertainty set (e.g., box, polyhedral, ellipsoidal, budgeted/Bertsimas-Sim) modeling the parameter variations. | Yes |
+| `nominal_problem` | String | Auto-extracted variable nominal_problem | No |
+| `uncertain_parameters` | String | Auto-extracted variable uncertain_parameters | No |
+| `uncertainty_set_geometry` | String | Auto-extracted variable uncertainty_set_geometry | No |
 
 
 ### Core Instructions
@@ -180,8 +207,20 @@ Please formulate the deterministic robust counterpart for the following scenario
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Deterministic Robust Counterpart"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Deterministic Robust Counterpart']
+```
 
-Input Context: "{}"
-Asserted Output: "Inner Maximization Problem"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Inner Maximization Problem']
+```

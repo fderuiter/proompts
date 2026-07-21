@@ -1,14 +1,3 @@
----
-tags:
-  - causal
-  - causal-inference
-  - design
-  - domain:scientific/statistics/design/causal_inference
-  - inference
-  - skill
-  - statistics
----
-
 # Domain Agent Skills: Scientific Statistics Design Causal inference
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: causal_inference_dag_architect
-<!-- VALIDATION_METADATA: [{"name": "research_question", "type": "string", "description": "The core causal question to be answered."}, {"name": "variables_list", "type": "string", "description": "A list of known variables, including exposures, outcomes, and potential confounders/colliders."}, {"name": "assumptions", "type": "string", "description": "Domain-specific assumptions regarding temporal ordering and unmeasured confounding."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "research_question", "type": "string", "description": "The core causal question to be answered."}, {"name": "variables_list", "type": "string", "description": "A list of known variables, including exposures, outcomes, and potential confounders/colliders."}, {"name": "assumptions", "type": "string", "description": "Domain-specific assumptions regarding temporal ordering and unmeasured confounding."}], "metadata": {}} -->
 ### Description
 Acts as a Principal Causal Inference Methodologist to design rigorous counterfactual frameworks and Directed Acyclic Graphs (DAGs) for observational data analysis.
 
@@ -48,5 +37,11 @@ Provide a comprehensive DAG structure, identify structural equations, formulate 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

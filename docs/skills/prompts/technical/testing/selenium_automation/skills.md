@@ -1,47 +1,3 @@
----
-tags:
-  - advanced
-  - architecture
-  - best
-  - configuration
-  - conversion
-  - cross-browser
-  - custom
-  - data-driven
-  - design
-  - domain:technical
-  - driver
-  - environment
-  - execution
-  - explicit
-  - framework
-  - grid
-  - implementation
-  - infrastructure
-  - maintenance
-  - maven
-  - migration
-  - optimization
-  - owasp
-  - page
-  - parallel
-  - patterns
-  - practices
-  - project
-  - python
-  - reporting
-  - script
-  - security
-  - selenium
-  - skill
-  - strategy
-  - synchronization
-  - test
-  - testing
-  - web
-  - zap
----
-
 # Domain Agent Skills: Technical Testing Selenium automation
 
 ## Metadata
@@ -52,7 +8,7 @@ tags:
 ---
 
 ## Skill: Security Testing: OWASP ZAP Integration
-<!-- VALIDATION_METADATA: [] -->
+<!-- VALIDATION_METADATA: {"variables": [], "metadata": {}} -->
 ### Description
 Configure Selenium to route traffic through the OWASP ZAP proxy for security scanning.
 
@@ -75,13 +31,19 @@ Configure Chrome WebDriver to proxy through ZAP (localhost:8888) and ignore SSL 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "N/A (Static request)"
-Asserted Output: "setProxy"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['setProxy']
+```
 
 ---
 
 ## Skill: Synchronization Strategy: Explicit Waits
-<!-- VALIDATION_METADATA: [{"name": "code_snippet", "description": "The source code to analyze or modify", "required": true}, {"name": "code", "description": "Auto-extracted variable code", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "code_snippet", "description": "The source code to analyze or modify", "required": true}, {"name": "code", "description": "Auto-extracted variable code", "required": false}], "metadata": {}} -->
 ### Description
 Replace brittle Thread.sleep() calls with dynamic Explicit or Fluent waits.
 
@@ -89,6 +51,7 @@ Replace brittle Thread.sleep() calls with dynamic Explicit or Fluent waits.
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | `code_snippet` | String | The source code to analyze or modify | Yes |
+| `code` | String | Auto-extracted variable code | No |
 
 
 ### Core Instructions
@@ -108,16 +71,19 @@ Refactor the following code to use Explicit Waits:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "code_snippet: |
-  driver.findElement(By.id("submit")).click();
-  Thread.sleep(5000);
-  driver.findElement(By.id("result")).getText();"
-Asserted Output: "WebDriverWait wait"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['WebDriverWait wait']
+```
 
 ---
 
 ## Skill: Selenium Migration: Script Conversion
-<!-- VALIDATION_METADATA: [{"name": "package_name", "description": "The name or identifier", "required": true}, {"name": "selenese_code", "description": "The source code to analyze or modify", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "package_name", "description": "The name or identifier", "required": true}, {"name": "selenese_code", "description": "The source code to analyze or modify", "required": true}], "metadata": {}} -->
 ### Description
 Translate recorded browser actions (Selenese) from Selenium IDE into structured Java test scripts.
 
@@ -149,18 +115,19 @@ Convert the following Selenese code/script to a robust Java Selenium test class.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "selenese_code: |
-  open /login
-  type id=user admin
-  type id=pass secret
-  click id=submit
-package_name: com.example.tests"
-Asserted Output: "public class LoginTest {"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['public class LoginTest {']
+```
 
 ---
 
 ## Skill: Driver Configuration: WebDriver Initialization
-<!-- VALIDATION_METADATA: [{"name": "browser", "description": "The target browser (e.g., Chrome, Firefox)", "required": true}, {"name": "proxy_url", "description": "The URL to process or reference", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "browser", "description": "The target browser (e.g., Chrome, Firefox)", "required": true}, {"name": "proxy_url", "description": "The URL to process or reference", "required": true}], "metadata": {}} -->
 ### Description
 Initialize and configure WebDriver instances with specific browser options.
 
@@ -187,14 +154,19 @@ Proxy: {{ proxy_url }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "browser: Chrome
-proxy_url: localhost:8080"
-Asserted Output: "ChromeOptions"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['ChromeOptions']
+```
 
 ---
 
 ## Skill: Framework Best Practices: Locator Strategy
-<!-- VALIDATION_METADATA: [{"name": "locators", "description": "The locators to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "locators", "description": "The locators to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Transition from brittle XPaths to robust locators like ID or CSS selectors.
 
@@ -221,14 +193,19 @@ Optimize the following Selenium locators for stability.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "locators: |
-  driver.findElement(By.xpath("//div[3]/span[2]"));"
-Asserted Output: "By.id"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['By.id']
+```
 
 ---
 
 ## Skill: Architecture Design: Page Object Model
-<!-- VALIDATION_METADATA: [{"name": "html_source", "description": "The html source to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "html_source", "description": "The html source to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Implement the Page Object Model pattern to separate UI locators from test logic.
 
@@ -255,16 +232,19 @@ Create a POM class for the following page source/spec:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "html_source: |
-  <input id='username'>
-  <input id='password'>
-  <button id='login'>Login</button>"
-Asserted Output: "@FindBy(id = "username")"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['@FindBy(id = ']
+```
 
 ---
 
 ## Skill: Advanced Design Patterns: Fluent Interface
-<!-- VALIDATION_METADATA: [{"name": "java_class", "description": "The java class to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "java_class", "description": "The java class to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Extend Page Objects with method chaining to create a more readable test API.
 
@@ -291,15 +271,19 @@ Refactor the following Page Object to use a Fluent Interface.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "java_class: |
-  public void setUsername(String u) { ... }
-  public void setPassword(String p) { ... }"
-Asserted Output: "public LoginPage setUsername"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['public LoginPage setUsername']
+```
 
 ---
 
 ## Skill: Cross-Browser Infrastructure: Selenium Grid
-<!-- VALIDATION_METADATA: [{"name": "browser_count", "description": "The browser count to use for this prompt", "required": true}, {"name": "grid_version", "description": "The grid version to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "browser_count", "description": "The browser count to use for this prompt", "required": true}, {"name": "grid_version", "description": "The grid version to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Configure a Selenium Grid Hub and Nodes to distribute test execution.
 
@@ -323,14 +307,19 @@ Provide instructions for setting up Selenium Grid {{ grid_version }} with {{ bro
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "grid_version: 4
-browser_count: 2"
-Asserted Output: "java -jar selenium-server"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['java -jar selenium-server']
+```
 
 ---
 
 ## Skill: Test Environment: Python & Selenium Base
-<!-- VALIDATION_METADATA: [] -->
+<!-- VALIDATION_METADATA: {"variables": [], "metadata": {}} -->
 ### Description
 Install the Selenium Base framework and environment using the Python package manager.
 
@@ -353,13 +342,19 @@ Provide instructions to set up SeleniumBase in a python virtual environment.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "N/A"
-Asserted Output: "pip install seleniumbase"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['pip install seleniumbase']
+```
 
 ---
 
 ## Skill: Framework Implementation: Data-Driven Testing
-<!-- VALIDATION_METADATA: [] -->
+<!-- VALIDATION_METADATA: {"variables": [], "metadata": {}} -->
 ### Description
 Utilize data providers to execute the same test logic with multiple sets of data.
 
@@ -382,13 +377,19 @@ Create a data-driven test for login functionality using TestNG DataProvider.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "N/A"
-Asserted Output: "@DataProvider"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['@DataProvider']
+```
 
 ---
 
 ## Skill: Project Configuration: Maven Setup
-<!-- VALIDATION_METADATA: [{"name": "java_version", "description": "The java version to use for this prompt", "required": true}, {"name": "test_framework", "description": "The test framework to use for this prompt", "required": true}, {"name": "artifactId", "description": "Auto-extracted variable artifactId", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "java_version", "description": "The java version to use for this prompt", "required": true}, {"name": "test_framework", "description": "The test framework to use for this prompt", "required": true}, {"name": "artifactId", "description": "Auto-extracted variable artifactId", "required": false}], "metadata": {}} -->
 ### Description
 Set up a Maven project structure and pom.xml file with necessary Selenium client libraries.
 
@@ -397,6 +398,7 @@ Set up a Maven project structure and pom.xml file with necessary Selenium client
 | :--- | :--- | :--- | :--- |
 | `java_version` | String | The java version to use for this prompt | Yes |
 | `test_framework` | String | The test framework to use for this prompt | Yes |
+| `artifactId` | String | Auto-extracted variable artifactId | No |
 
 
 ### Core Instructions
@@ -415,14 +417,19 @@ Test Framework: {{ test_framework }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "java_version: 11
-test_framework: testng"
-Asserted Output: "<artifactId>selenium-java</artifactId>"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['<artifactId>selenium-java</artifactId>']
+```
 
 ---
 
 ## Skill: Reporting and Maintenance: Custom Reports
-<!-- VALIDATION_METADATA: [{"name": "framework", "description": "The testing framework (e.g., TestNG, JUnit)", "required": true}, {"name": "report_format", "description": "The report format to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "framework", "description": "The testing framework (e.g., TestNG, JUnit)", "required": true}, {"name": "report_format", "description": "The report format to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Integrate reporting libraries and screenshot utilities to capture execution evidence.
 
@@ -449,14 +456,19 @@ Report Format: {{ report_format }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "framework: TestNG
-report_format: PDF"
-Asserted Output: "implements ITestListener"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['implements ITestListener']
+```
 
 ---
 
 ## Skill: Execution Optimization: Parallel Testing
-<!-- VALIDATION_METADATA: [{"name": "language", "description": "The programming or natural language to use", "required": true}, {"name": "WebDriver", "description": "Auto-extracted variable WebDriver", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "language", "description": "The programming or natural language to use", "required": true}, {"name": "WebDriver", "description": "Auto-extracted variable WebDriver", "required": false}], "metadata": {}} -->
 ### Description
 Configure the automation suite to execute multiple tests simultaneously.
 
@@ -464,6 +476,7 @@ Configure the automation suite to execute multiple tests simultaneously.
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | `language` | String | The programming or natural language to use | Yes |
+| `WebDriver` | String | Auto-extracted variable WebDriver | No |
 
 
 ### Core Instructions
@@ -483,5 +496,11 @@ Create a parallel execution configuration for TestNG and a thread-safe WebDriver
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "language: Java"
-Asserted Output: "ThreadLocal<WebDriver>"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['ThreadLocal<WebDriver>']
+```

@@ -1,14 +1,3 @@
----
-tags:
-  - domain:statistical_sciences
-  - hidden
-  - markov
-  - markov-processes
-  - skill
-  - statistics
-  - stochastic
----
-
 # Domain Agent Skills: Scientific Statistics Stochastic Markov processes
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: hidden_markov_model_architect
-<!-- VALIDATION_METADATA: [{"name": "observation_sequence", "description": "The sequence of observed data vectors.", "required": true}, {"name": "state_space_dimensionality", "description": "The number of hidden states in the Markov chain.", "required": true}, {"name": "emission_distribution_type", "description": "The parametric family of the state-conditional emission probability distributions.", "required": true}, {"name": "directives", "description": "Auto-extracted variable directives", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "observation_sequence", "description": "The sequence of observed data vectors.", "required": true}, {"name": "state_space_dimensionality", "description": "The number of hidden states in the Markov chain.", "required": true}, {"name": "emission_distribution_type", "description": "The parametric family of the state-conditional emission probability distributions.", "required": true}, {"name": "directives", "description": "Auto-extracted variable directives", "required": false}, {"name": "persona", "description": "Auto-extracted variable persona", "required": false}], "metadata": {}} -->
 ### Description
 Acts as a Principal Statistician to derive maximum likelihood estimation architectures for continuous-density Hidden Markov Models using the Baum-Welch algorithm and EM methodology.
 
@@ -29,6 +18,8 @@ Acts as a Principal Statistician to derive maximum likelihood estimation archite
 | `observation_sequence` | String | The sequence of observed data vectors. | Yes |
 | `state_space_dimensionality` | String | The number of hidden states in the Markov chain. | Yes |
 | `emission_distribution_type` | String | The parametric family of the state-conditional emission probability distributions. | Yes |
+| `directives` | String | Auto-extracted variable directives | No |
+| `persona` | String | Auto-extracted variable persona | No |
 
 
 ### Core Instructions
@@ -67,5 +58,11 @@ Construct the inference methodology for the following continuous-density HMM con
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Baum-Welch"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Baum-Welch']
+```

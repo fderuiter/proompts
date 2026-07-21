@@ -1,24 +1,3 @@
----
-tags:
-  - case
-  - design
-  - discovery
-  - domain:technical
-  - e2e
-  - factors
-  - human
-  - plan
-  - risk-based
-  - skill
-  - study
-  - suite
-  - template
-  - test
-  - testing
-  - validation
-  - verification
----
-
 # Domain Agent Skills: Technical Testing Testing workflow
 
 ## Metadata
@@ -29,7 +8,7 @@ tags:
 ---
 
 ## Skill: Design Verification Test Plan
-<!-- VALIDATION_METADATA: [{"name": "device_name", "description": "name of the device", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_name", "description": "name of the device", "required": true}], "metadata": {}} -->
 ### Description
 Create a complete test plan for verifying that a medical device meets its design requirements.
 
@@ -68,15 +47,19 @@ Output Format:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "device_name: Wearable Glucose Monitor
-"
-Asserted Output: "Introduction
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Introduction\n']
+```
 
 ---
 
 ## Skill: Risk-Based Test Case Suite
-<!-- VALIDATION_METADATA: [{"name": "device_name", "description": "name of the device", "required": true}, {"name": "hazard_analysis_table", "description": "hazard analysis data", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_name", "description": "name of the device", "required": true}, {"name": "hazard_analysis_table", "description": "hazard analysis data", "required": true}], "metadata": {}} -->
 ### Description
 Generate a test-case suite prioritizing controls for high and medium residual risks.
 
@@ -113,18 +96,19 @@ Output Format:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "device_name: Cardiac Monitor
-hazard_analysis_table: |
-  Hazard_ID | Hazard | Control
-  H1        | Battery failure | Backup battery
-"
-Asserted Output: "Risk-Control Traceability Matrix
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Risk-Control Traceability Matrix\n']
+```
 
 ---
 
 ## Skill: E2E Test Discovery Template
-<!-- VALIDATION_METADATA: [{"name": "business_goal", "description": "overall objective", "required": true}, {"name": "languages_frameworks", "description": "The programming or natural language to use", "required": true}, {"name": "project_name", "description": "name of the project", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "business_goal", "description": "overall objective", "required": true}, {"name": "languages_frameworks", "description": "The programming or natural language to use", "required": true}, {"name": "project_name", "description": "name of the project", "required": true}], "metadata": {}} -->
 ### Description
 Guide a model to analyze a codebase and produce a comprehensive end‑to‑end test plan.
 
@@ -178,17 +162,19 @@ Markdown report with sections:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "project_name: Cartify
-languages_frameworks: Django, React
-business_goal: Enable online shopping for users
-"
-Asserted Output: "Repository Overview
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Repository Overview\n']
+```
 
 ---
 
 ## Skill: Human Factors Validation Study Protocol
-<!-- VALIDATION_METADATA: [{"name": "class", "description": "device class", "required": true}, {"name": "device_name", "description": "name of the device", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "class", "description": "device class", "required": true}, {"name": "device_name", "description": "name of the device", "required": true}], "metadata": {}} -->
 ### Description
 Draft a user validation study protocol for a medical device.
 
@@ -235,8 +221,11 @@ Output Format:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "device_name: Smart Inhaler
-class: II
-"
-Asserted Output: "Purpose and regulatory basis
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Purpose and regulatory basis\n']
+```

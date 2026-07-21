@@ -1,24 +1,3 @@
----
-tags:
-  - 13c
-  - analysis
-  - bioinformatics
-  - cellular
-  - control
-  - domain:cellular/metabolism
-  - domain:scientific
-  - genome
-  - kinetics
-  - mathematical-biology
-  - metabolic
-  - metabolism
-  - non
-  - scale
-  - skill
-  - stationary
-  - systems-biology
----
-
 # Domain Agent Skills: Scientific Cellular Metabolism
 
 ## Metadata
@@ -29,7 +8,7 @@ tags:
 ---
 
 ## Skill: metabolic_control_analysis_architect
-<!-- VALIDATION_METADATA: [{"name": "metabolic_pathway", "description": "The complex biochemical pathway to be analyzed (e.g., Glycolysis, TCA cycle)."}, {"name": "key_enzymes", "description": "The specific enzymes targeted for flux control and elasticity analysis."}, {"name": "steady_state_conditions", "description": "Environmental and cellular boundary conditions for the steady-state assumption."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "metabolic_pathway", "description": "The complex biochemical pathway to be analyzed (e.g., Glycolysis, TCA cycle)."}, {"name": "key_enzymes", "description": "The specific enzymes targeted for flux control and elasticity analysis."}, {"name": "steady_state_conditions", "description": "Environmental and cellular boundary conditions for the steady-state assumption."}], "metadata": {}} -->
 ### Description
 A Principal Systems Biologist and Metabolic Engineer to formulate rigorous Metabolic Control Analysis (MCA) frameworks, computing flux control and elasticity coefficients using steady-state kinetic modeling and advanced differential equations.
 
@@ -67,16 +46,28 @@ Derive the rate equations, determine the elasticity coefficients, and construct 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: non_stationary_13c_metabolic_flux_analysis_architect
-<!-- VALIDATION_METADATA: [{"name": "isotope_labeling_data", "type": "string", "description": "Dynamic time-series mass isotopomer distribution (MID) data acquired via LC-MS/MS or GC-MS."}, {"name": "carbon_atom_transitions", "type": "string", "description": "The defined atom transition network mapping carbon backbones through the specific biochemical pathways."}, {"name": "physiological_steady_state", "type": "string", "description": "The macroscopic physiological parameters defining the steady state (e.g., cell dry weight, specific growth rate, substrate uptake)."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}, {"name": "input_wrapper", "description": "Auto-extracted variable input_wrapper", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "isotope_labeling_data", "type": "string", "description": "Dynamic time-series mass isotopomer distribution (MID) data acquired via LC-MS/MS or GC-MS."}, {"name": "carbon_atom_transitions", "type": "string", "description": "The defined atom transition network mapping carbon backbones through the specific biochemical pathways."}, {"name": "physiological_steady_state", "type": "string", "description": "The macroscopic physiological parameters defining the steady state (e.g., cell dry weight, specific growth rate, substrate uptake)."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}, {"name": "input_wrapper", "description": "Auto-extracted variable input_wrapper", "required": false}], "metadata": {}} -->
 ### Description
 Acts as a Principal Systems Biologist to rigorously formulate and solve Non-Stationary 13C Metabolic Flux Analysis (INST-13C-MFA) systems for determining intracellular fluxes from dynamic isotopic labeling data.
 
@@ -86,6 +77,8 @@ Acts as a Principal Systems Biologist to rigorously formulate and solve Non-Stat
 | `isotope_labeling_data` | String | Dynamic time-series mass isotopomer distribution (MID) data acquired via LC-MS/MS or GC-MS. | Yes |
 | `carbon_atom_transitions` | String | The defined atom transition network mapping carbon backbones through the specific biochemical pathways. | Yes |
 | `physiological_steady_state` | String | The macroscopic physiological parameters defining the steady state (e.g., cell dry weight, specific growth rate, substrate uptake). | Yes |
+| `constraints` | String | Auto-extracted variable constraints | No |
+| `input_wrapper` | String | Auto-extracted variable input_wrapper | No |
 
 
 ### Core Instructions
@@ -124,16 +117,28 @@ Provide the comprehensive architectural and mathematical blueprint for estimatin
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: genome_scale_metabolic_flux_modeler
-<!-- VALIDATION_METADATA: [{"name": "metabolic_network", "type": "string", "description": "The stoichiometric matrix or biochemical reaction network defining the cellular metabolism."}, {"name": "objective_function", "type": "string", "description": "The targeted biological objective for optimization (e.g., biomass maximization, target metabolite overproduction)."}, {"name": "environmental_constraints", "type": "string", "description": "Nutrient availability, exchange reaction bounds, and thermodynamic constraints defining the simulation environment."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "metabolic_network", "type": "string", "description": "The stoichiometric matrix or biochemical reaction network defining the cellular metabolism."}, {"name": "objective_function", "type": "string", "description": "The targeted biological objective for optimization (e.g., biomass maximization, target metabolite overproduction)."}, {"name": "environmental_constraints", "type": "string", "description": "Nutrient availability, exchange reaction bounds, and thermodynamic constraints defining the simulation environment."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}], "metadata": {}} -->
 ### Description
 Acts as a Principal Systems Biologist to systematically formulate, analyze, and optimize Genome-Scale Metabolic Models (GEMs) using Flux Balance Analysis (FBA) and advanced constraint-based methods.
 
@@ -143,6 +148,7 @@ Acts as a Principal Systems Biologist to systematically formulate, analyze, and 
 | `metabolic_network` | String | The stoichiometric matrix or biochemical reaction network defining the cellular metabolism. | Yes |
 | `objective_function` | String | The targeted biological objective for optimization (e.g., biomass maximization, target metabolite overproduction). | Yes |
 | `environmental_constraints` | String | Nutrient availability, exchange reaction bounds, and thermodynamic constraints defining the simulation environment. | Yes |
+| `constraints` | String | Auto-extracted variable constraints | No |
 
 
 ### Core Instructions
@@ -175,8 +181,20 @@ Provide the comprehensive architectural and mathematical blueprint for the const
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

@@ -1,29 +1,3 @@
-{% import 'common/macros.j2' as macros %}
----
-tags:
-  - anomalous_diffusion
-  - computational-fluid-dynamics
-  - computational-physics
-  - computational_mathematics
-  - discontinuous-galerkin
-  - domain:applied_mathematics
-  - domain:numerical_methods
-  - fractional_calculus
-  - geometric-integration
-  - hamiltonian-mechanics
-  - hyperbolic-systems
-  - mathematics
-  - numerical
-  - numerical-methods
-  - numerical_analysis
-  - partial-differential-equations
-  - pde
-  - shock-capturing
-  - skill
-  - stiff
-  - symplectic-methods
----
-
 # Domain Agent Skills: Scientific Mathematics Numerical methods
 
 ## Metadata
@@ -34,7 +8,7 @@ tags:
 ---
 
 ## Skill: fractional_calculus_pde_modeler
-<!-- VALIDATION_METADATA: [{"name": "fractional_pde_system", "type": "string", "description": "The governing fractional partial differential equation system formatted in strict LaTeX."}, {"name": "fractional_operator_definition", "type": "string", "description": "The specific definition of the fractional derivative used (e.g., Caputo, Riemann-Liouville, Riesz) and its order."}, {"name": "boundary_initial_conditions", "type": "string", "description": "Initial conditions and potentially non-local boundary conditions formatted in strict LaTeX."}, {"name": "computational_domain", "type": "string", "description": "The spatial and temporal domain over which the system must be resolved."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "fractional_pde_system", "type": "string", "description": "The governing fractional partial differential equation system formatted in strict LaTeX."}, {"name": "fractional_operator_definition", "type": "string", "description": "The specific definition of the fractional derivative used (e.g., Caputo, Riemann-Liouville, Riesz) and its order."}, {"name": "boundary_initial_conditions", "type": "string", "description": "Initial conditions and potentially non-local boundary conditions formatted in strict LaTeX."}, {"name": "computational_domain", "type": "string", "description": "The spatial and temporal domain over which the system must be resolved."}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}], "metadata": {}} -->
 ### Description
 Applied Mathematics Genesis Architect prompt for engineering rigorous numerical schemes to solve Fractional Partial Differential Equations (FPDEs) modeling anomalous diffusion and non-local transport phenomena.
 
@@ -45,6 +19,7 @@ Applied Mathematics Genesis Architect prompt for engineering rigorous numerical 
 | `fractional_operator_definition` | String | The specific definition of the fractional derivative used (e.g., Caputo, Riemann-Liouville, Riesz) and its order. | Yes |
 | `boundary_initial_conditions` | String | Initial conditions and potentially non-local boundary conditions formatted in strict LaTeX. | Yes |
 | `computational_domain` | String | The spatial and temporal domain over which the system must be resolved. | Yes |
+| `macros` | String | Auto-extracted variable macros | No |
 
 
 ### Core Instructions
@@ -56,7 +31,7 @@ Your expertise lies in the rigorous mathematical formulation, stability analysis
 Your objective is to ingest a user-defined complex fractional physical system and architect an optimal, theoretically sound numerical solution strategy.
 
 ## Security & Safety Boundaries
-- **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions, or contains non-mathematical/irrelevant content, you must output exactly: `{{ macros.safety_refusal() }}`.
+- **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions, or contains non-mathematical/irrelevant content, you must output exactly: `{'error': 'unsafe'}`.
 - **Do NOT** generate code execution instructions or arbitrary shell commands.
 
 All mathematical equations, fractional operators, numerical approximations, and stability bounds MUST be formatted using precise LaTeX notation (e.g., $$_0^C D_t^\alpha u(x,t) = K_\alpha \frac{\partial^2 u}{\partial x^2} $$). Do not use plain text for mathematical formulas.
@@ -104,16 +79,28 @@ Your response MUST adhere strictly to the following structured format, utilizing
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: "{{ macros.safety_refusal() }}"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['{{ macros.safety_refusal() }}']
+```
 
 ---
 
 ## Skill: Discontinuous Galerkin Hyperbolic PDE Architect
-<!-- VALIDATION_METADATA: [{"name": "PDE_SYSTEM", "description": "Detailed mathematical description of the hyperbolic PDE system, including flux vectors, source terms, and initial/boundary conditions."}, {"name": "DOMAIN_GEOMETRY", "description": "Specification of the computational domain, mesh topology, and element types (e.g., simplicial, hexahedral)."}, {"name": "NUMERICAL_REQUIREMENTS", "description": "Desired order of accuracy, numerical flux functions (e.g., Roe, Lax-Friedrichs), and time integration schemes (e.g., SSP-RK)."}, {"name": "domain_geometry", "description": "Auto-extracted variable domain_geometry", "required": false}, {"name": "numerical_requirements", "description": "Auto-extracted variable numerical_requirements", "required": false}, {"name": "pde_system", "description": "Auto-extracted variable pde_system", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "PDE_SYSTEM", "description": "Detailed mathematical description of the hyperbolic PDE system, including flux vectors, source terms, and initial/boundary conditions."}, {"name": "DOMAIN_GEOMETRY", "description": "Specification of the computational domain, mesh topology, and element types (e.g., simplicial, hexahedral)."}, {"name": "NUMERICAL_REQUIREMENTS", "description": "Desired order of accuracy, numerical flux functions (e.g., Roe, Lax-Friedrichs), and time integration schemes (e.g., SSP-RK)."}, {"name": "domain_geometry", "description": "Auto-extracted variable domain_geometry", "required": false}, {"name": "numerical_requirements", "description": "Auto-extracted variable numerical_requirements", "required": false}, {"name": "pde_system", "description": "Auto-extracted variable pde_system", "required": false}], "metadata": {}} -->
 ### Description
 Engineers robust Discontinuous Galerkin (DG) schemes for solving non-linear hyperbolic partial differential equations with shock capturing.
 
@@ -123,6 +110,9 @@ Engineers robust Discontinuous Galerkin (DG) schemes for solving non-linear hype
 | `PDE_SYSTEM` | String | Detailed mathematical description of the hyperbolic PDE system, including flux vectors, source terms, and initial/boundary conditions. | Yes |
 | `DOMAIN_GEOMETRY` | String | Specification of the computational domain, mesh topology, and element types (e.g., simplicial, hexahedral). | Yes |
 | `NUMERICAL_REQUIREMENTS` | String | Desired order of accuracy, numerical flux functions (e.g., Roe, Lax-Friedrichs), and time integration schemes (e.g., SSP-RK). | Yes |
+| `domain_geometry` | String | Auto-extracted variable domain_geometry | No |
+| `numerical_requirements` | String | Auto-extracted variable numerical_requirements | No |
+| `pde_system` | String | Auto-extracted variable pde_system | No |
 
 
 ### Core Instructions
@@ -144,16 +134,28 @@ Please architect the Discontinuous Galerkin scheme for the following problem set
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Continuous Formulation"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Continuous Formulation']
+```
 
-Input Context: "{}"
-Asserted Output: "Spatial Discretization & Weak Form"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Spatial Discretization & Weak Form']
+```
 
 ---
 
 ## Skill: stiff_pde_numerical_stability_architect
-<!-- VALIDATION_METADATA: [{"name": "pde_system", "description": "The stiff PDE system to analyze, described mathematically using LaTeX notation."}, {"name": "boundary_conditions", "description": "The associated boundary and initial conditions for the PDE system."}, {"name": "spatial_domain", "description": "The spatial domain over which the PDE is defined (e.g., 1D, 2D, 3D, complex geometry)."}, {"name": "target_accuracy", "description": "The desired order of accuracy for the numerical scheme (e.g., second-order in space, third-order in time)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "pde_system", "description": "The stiff PDE system to analyze, described mathematically using LaTeX notation."}, {"name": "boundary_conditions", "description": "The associated boundary and initial conditions for the PDE system."}, {"name": "spatial_domain", "description": "The spatial domain over which the PDE is defined (e.g., 1D, 2D, 3D, complex geometry)."}, {"name": "target_accuracy", "description": "The desired order of accuracy for the numerical scheme (e.g., second-order in space, third-order in time)."}], "metadata": {}} -->
 ### Description
 Applied Mathematics Genesis Architect prompt for generating rigorous numerical stability analyses and optimal discretization schemes for stiff Partial Differential Equations (PDEs).
 
@@ -217,16 +219,28 @@ Architect an optimal numerical scheme and conduct a rigorous stability analysis 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Symplectic Integrator Hamiltonian Systems Architect
-<!-- VALIDATION_METADATA: [{"name": "HAMILTONIAN_FUNCTION", "description": "The mathematical expression of the Hamiltonian $H(q, p)$, defining the kinetic and potential energy of the system."}, {"name": "TIME_DOMAIN_CONSTRAINTS", "description": "Specifications regarding the total integration time, required time step sizes, and frequency of solution output."}, {"name": "CONSERVATION_TOLERANCES", "description": "Strict numerical tolerances for the conservation of energy, phase-space volume, and other integrals of motion (e.g., angular momentum)."}, {"name": "conservation_tolerances", "description": "Auto-extracted variable conservation_tolerances", "required": false}, {"name": "hamiltonian_function", "description": "Auto-extracted variable hamiltonian_function", "required": false}, {"name": "time_domain_constraints", "description": "Auto-extracted variable time_domain_constraints", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "HAMILTONIAN_FUNCTION", "description": "The mathematical expression of the Hamiltonian $H(q, p)$, defining the kinetic and potential energy of the system."}, {"name": "TIME_DOMAIN_CONSTRAINTS", "description": "Specifications regarding the total integration time, required time step sizes, and frequency of solution output."}, {"name": "CONSERVATION_TOLERANCES", "description": "Strict numerical tolerances for the conservation of energy, phase-space volume, and other integrals of motion (e.g., angular momentum)."}, {"name": "conservation_tolerances", "description": "Auto-extracted variable conservation_tolerances", "required": false}, {"name": "hamiltonian_function", "description": "Auto-extracted variable hamiltonian_function", "required": false}, {"name": "time_domain_constraints", "description": "Auto-extracted variable time_domain_constraints", "required": false}], "metadata": {}} -->
 ### Description
 Formulates structure-preserving numerical methods for long-term integration of complex Hamiltonian systems, ensuring energy and momentum conservation.
 
@@ -236,6 +250,9 @@ Formulates structure-preserving numerical methods for long-term integration of c
 | `HAMILTONIAN_FUNCTION` | String | The mathematical expression of the Hamiltonian $H(q, p)$, defining the kinetic and potential energy of the system. | Yes |
 | `TIME_DOMAIN_CONSTRAINTS` | String | Specifications regarding the total integration time, required time step sizes, and frequency of solution output. | Yes |
 | `CONSERVATION_TOLERANCES` | String | Strict numerical tolerances for the conservation of energy, phase-space volume, and other integrals of motion (e.g., angular momentum). | Yes |
+| `conservation_tolerances` | String | Auto-extracted variable conservation_tolerances | No |
+| `hamiltonian_function` | String | Auto-extracted variable hamiltonian_function | No |
+| `time_domain_constraints` | String | Auto-extracted variable time_domain_constraints | No |
 
 
 ### Core Instructions
@@ -286,8 +303,20 @@ Please architect the symplectic numerical method for the following Hamiltonian s
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Equations of Motion"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Equations of Motion']
+```
 
-Input Context: "{}"
-Asserted Output: "Geometric Properties & Proofs"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Geometric Properties & Proofs']
+```

@@ -1,23 +1,3 @@
----
-tags:
-  - chain
-  - domain:business
-  - domain:business/operations
-  - domain:business/operations/supply_chain
-  - global
-  - logistics
-  - mathematical-modeling
-  - network-optimization
-  - operations
-  - operations-research
-  - reverse-logistics
-  - risk-management
-  - skill
-  - stochastic-optimization
-  - supply
-  - supply-chain
----
-
 # Domain Agent Skills: Business Operations Supply chain
 
 ## Metadata
@@ -28,7 +8,7 @@ tags:
 ---
 
 ## Skill: Supply Chain Network Topology Optimization Architect
-<!-- VALIDATION_METADATA: [{"name": "demand_nodes_and_volumes", "description": "Detail the spatial distribution of demand nodes (markets, customers) and their projected volume requirements, including seasonality and volatility parameters.", "required": true, "type": "string"}, {"name": "candidate_facility_locations", "description": "Provide candidate facility locations (plants, distribution centers), including fixed establishment costs, variable processing costs, and maximum capacity limits.", "required": true, "type": "string"}, {"name": "transportation_and_flow_constraints", "description": "Specify multi-echelon transportation costs, lead times, modal constraints, and flow conservation requirements across the network.", "required": true, "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "demand_nodes_and_volumes", "description": "Detail the spatial distribution of demand nodes (markets, customers) and their projected volume requirements, including seasonality and volatility parameters.", "required": true, "type": "string"}, {"name": "candidate_facility_locations", "description": "Provide candidate facility locations (plants, distribution centers), including fixed establishment costs, variable processing costs, and maximum capacity limits.", "required": true, "type": "string"}, {"name": "transportation_and_flow_constraints", "description": "Specify multi-echelon transportation costs, lead times, modal constraints, and flow conservation requirements across the network.", "required": true, "type": "string"}], "metadata": {}} -->
 ### Description
 Architects mathematically rigorous supply chain network topologies, optimizing facility location, capacity allocation, and distribution flows under multi-echelon constraints using mixed-integer linear programming (MILP) frameworks.
 
@@ -74,16 +54,28 @@ Architect a Supply Chain Network Topology Optimization strategy based on the fol
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Network Design Matrix"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Network Design Matrix']
+```
 
-Input Context: "{}"
-Asserted Output: "MILP Objective Function"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['MILP Objective Function']
+```
 
 ---
 
 ## Skill: Stochastic Reverse Logistics Optimization Architect
-<!-- VALIDATION_METADATA: [{"name": "return_volume_distributions", "description": "Detail the stochastic distributions of product return volumes across different geographic nodes and time horizons, including seasonal variations and condition probabilities.", "required": true, "type": "string"}, {"name": "processing_center_capabilities", "description": "Specify the candidate refurbishment and recycling center locations, their fixed and variable operational costs, capacities, and recovery yields.", "required": true, "type": "string"}, {"name": "secondary_market_demand", "description": "Outline the stochastic demand profiles and pricing dynamics for refurbished goods and recycled raw materials in secondary markets.", "required": true, "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "return_volume_distributions", "description": "Detail the stochastic distributions of product return volumes across different geographic nodes and time horizons, including seasonal variations and condition probabilities.", "required": true, "type": "string"}, {"name": "processing_center_capabilities", "description": "Specify the candidate refurbishment and recycling center locations, their fixed and variable operational costs, capacities, and recovery yields.", "required": true, "type": "string"}, {"name": "secondary_market_demand", "description": "Outline the stochastic demand profiles and pricing dynamics for refurbished goods and recycled raw materials in secondary markets.", "required": true, "type": "string"}], "metadata": {}} -->
 ### Description
 Architects mathematically rigorous, stochastic reverse logistics network models to optimize product returns, refurbishment, and end-of-life disposal under high uncertainty using Stochastic Mixed-Integer Linear Programming (SMILP).
 
@@ -135,22 +127,39 @@ Architect a Stochastic Reverse Logistics Optimization strategy based on the foll
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Stochastic optimization model for EU electronics reverse logistics."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Stochastic optimization model for EU electronics reverse logistics.']
+```
 
-Input Context: "{}"
-Asserted Output: "{"error": "unsafe_or_invalid_request"}"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['{']
+```
 
-Input Context: "{}"
-Asserted Output: "Robust SMILP formulation addressing extreme stochasticity and spot market sales."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Robust SMILP formulation addressing extreme stochasticity and spot market sales.']
+```
 
 ---
 
 ## Skill: Global Supply Chain Resilience Architect
-<!-- VALIDATION_METADATA: [{"name": "network_topology", "description": "Current global supply chain nodes, capacities, and transit routes.", "required": true}, {"name": "disruption_scenario", "description": "Specific geopolitical or operational disruptions (e.g., tariffs, port closures).", "required": true}, {"name": "financial_constraints", "description": "Budget limitations, working capital constraints, and targeted service levels.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "network_topology", "description": "Current global supply chain nodes, capacities, and transit routes.", "required": true}, {"name": "disruption_scenario", "description": "Specific geopolitical or operational disruptions (e.g., tariffs, port closures).", "required": true}, {"name": "financial_constraints", "description": "Budget limitations, working capital constraints, and targeted service levels.", "required": true}], "metadata": {}} -->
 ### Description
 Designs highly rigorous, quantitative supply chain network optimization models to mitigate geopolitical duress, port strikes, tariffs, and route closures using advanced operations research frameworks.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -179,16 +188,28 @@ Construct a Global Supply Chain Resilience Optimization Model based on the follo
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Global Supply Chain Resilience Optimization Model"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Global Supply Chain Resilience Optimization Model']
+```
 
-Input Context: "{}"
-Asserted Output: "Global Supply Chain Resilience Optimization Model"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Global Supply Chain Resilience Optimization Model']
+```
 
 ---
 
 ## Skill: global_supply_chain_geopolitical_duress_architect
-<!-- VALIDATION_METADATA: [{"name": "CURRENT_NETWORK_TOPOLOGY", "type": "string", "description": "Current state of the supply chain network, nodes, edges, and dependencies."}, {"name": "GEOPOLITICAL_SHOCKS", "type": "string", "description": "Specific geopolitical events (e.g., embargoes, tariffs, conflict zones) disrupting the network."}, {"name": "COST_CONSTRAINTS", "type": "string", "description": "Financial constraints, working capital limits, and acceptable margin compression."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "CURRENT_NETWORK_TOPOLOGY", "type": "string", "description": "Current state of the supply chain network, nodes, edges, and dependencies."}, {"name": "GEOPOLITICAL_SHOCKS", "type": "string", "description": "Specific geopolitical events (e.g., embargoes, tariffs, conflict zones) disrupting the network."}, {"name": "COST_CONSTRAINTS", "type": "string", "description": "Financial constraints, working capital limits, and acceptable margin compression."}], "metadata": {}} -->
 ### Description
 Formulates robust, mathematically rigorous global supply chain rerouting and resilience frameworks under severe geopolitical shocks and trade duress.
 
@@ -222,5 +243,11 @@ Please formulate an optimized supply chain network topology given the specified 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

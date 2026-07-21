@@ -1,14 +1,3 @@
----
-tags:
-  - behavioral
-  - domain:scientific/psychology/quantitative/experimental_design
-  - experimental-design
-  - multifactorial
-  - psychology
-  - quantitative
-  - skill
----
-
 # Domain Agent Skills: Scientific Psychology Quantitative Experimental design
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: multifactorial_behavioral_intervention_architect
-<!-- VALIDATION_METADATA: [{"name": "intervention_constructs", "type": "string", "description": "The theoretically driven independent variables (factors) and their respective levels."}, {"name": "target_outcomes", "type": "string", "description": "The primary and secondary dependent behavioral or cognitive measures."}, {"name": "population_constraints", "type": "string", "description": "Sample size limitations, demographic restrictions, or expected attrition rates."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "intervention_constructs", "type": "string", "description": "The theoretically driven independent variables (factors) and their respective levels."}, {"name": "target_outcomes", "type": "string", "description": "The primary and secondary dependent behavioral or cognitive measures."}, {"name": "population_constraints", "type": "string", "description": "Sample size limitations, demographic restrictions, or expected attrition rates."}], "metadata": {}} -->
 ### Description
 A Principal Quantitative Psychologist designed to formulate rigorous, high-powered multifactorial experimental designs for complex behavioral interventions, optimizing for construct validity and statistical control.
 
@@ -75,8 +64,20 @@ Population Constraints:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

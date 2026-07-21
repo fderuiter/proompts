@@ -1,19 +1,3 @@
----
-tags:
-  - anomaly
-  - clinical
-  - data
-  - detection
-  - development
-  - domain:clinical
-  - evaluation
-  - monitoring
-  - plan
-  - rbqm
-  - risk-based
-  - skill
----
-
 # Domain Agent Skills: Clinical Monitoring
 
 ## Metadata
@@ -24,7 +8,7 @@ tags:
 ---
 
 ## Skill: Clinical Monitoring Plan Development
-<!-- VALIDATION_METADATA: [{"name": "trial_details", "description": "The trial details to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "trial_details", "description": "The trial details to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Draft a risk-based Clinical Monitoring Plan.
 
@@ -53,15 +37,19 @@ Markdown Clinical Monitoring Plan.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "trial_details: Multicenter Phase II trial.
-"
-Asserted Output: "Clinical Monitoring Plan
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Clinical Monitoring Plan\n']
+```
 
 ---
 
 ## Skill: Risk-Based Monitoring Data Evaluation
-<!-- VALIDATION_METADATA: [{"name": "clinical_data", "description": "Monitoring Plan template: `{{ monitoring_plan }}`", "required": true}, {"name": "monitoring_plan", "description": "Study Risk Assessment: `{{ risk_assessment }}`", "required": true}, {"name": "risk_assessment", "description": "The risk assessment to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "clinical_data", "description": "Monitoring Plan template: `{{ monitoring_plan }}`", "required": true}, {"name": "monitoring_plan", "description": "Study Risk Assessment: `{{ risk_assessment }}`", "required": true}, {"name": "risk_assessment", "description": "The risk assessment to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Remote evaluation of accumulating trial data to identify outliers and data integrity problems.
 
@@ -94,17 +82,19 @@ Markdown RBM Evaluation Report (Finding | Risk Level | Action).
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "clinical_data: "Site 001: 100% perfect data entry."
-monitoring_plan: "Check for lack of variability."
-risk_assessment: "High risk of fraud."
-"
-Asserted Output: "| Finding | Risk Level | Action |
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['| Finding | Risk Level | Action |\n']
+```
 
 ---
 
 ## Skill: RBQM Anomaly Detection
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "site_data", "description": "Auto-extracted variable site_data", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "site_data", "description": "Auto-extracted variable site_data", "required": false}], "metadata": {}} -->
 ### Description
 Identify data outliers, anomalies, and atypical patient patterns in real-time across clinical trial datasets to flag potential risks or misconduct.
 
@@ -112,6 +102,7 @@ Identify data outliers, anomalies, and atypical patient patterns in real-time ac
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | `input` | String | The primary input or query text for the prompt | Yes |
+| `site_data` | String | Auto-extracted variable site_data | No |
 
 
 ### Core Instructions
@@ -146,9 +137,11 @@ Input data is provided in `<site_data>` tags.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "Site 001:
-- BP readings for all 50 visits are exactly 120/80.
-- Consent Date: 2023-01-10. Visit 1: 2023-01-09.
-Site 002:
-- Normal variance in BP. Dates chronological."
-Asserted Output: "120/80"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['120/80']
+```

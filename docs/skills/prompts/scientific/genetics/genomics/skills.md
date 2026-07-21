@@ -1,30 +1,3 @@
----
-tags:
-  - assembly
-  - cas9
-  - chromatin
-  - conformation
-  - crispr
-  - domain:genetics/genomics
-  - domain:genomics
-  - epigenetic
-  - genetics
-  - genomics
-  - graph
-  - gwas
-  - hic
-  - hmm
-  - metagenomic
-  - methylation
-  - off
-  - pangenome
-  - polygenic
-  - risk
-  - skill
-  - structural
-  - taxonomic
----
-
 # Domain Agent Skills: Scientific Genetics Genomics
 
 ## Metadata
@@ -35,7 +8,7 @@ tags:
 ---
 
 ## Skill: metagenomic_assembly_taxonomic_binning_architect
-<!-- VALIDATION_METADATA: [{"name": "environment_type", "type": "string", "description": "The environmental source of the microbiome (e.g., human gut, deep-sea hydrothermal vent, soil rhizosphere)."}, {"name": "sequencing_technology", "type": "string", "description": "The sequencing platform and strategy used (e.g., Illumina NovaSeq short-read, PacBio HiFi long-read, Oxford Nanopore)."}, {"name": "read_depth", "type": "string", "description": "The approximate sequencing depth or coverage expected per sample."}, {"name": "taxonomic_resolution_target", "type": "string", "description": "The desired level of taxonomic classification (e.g., strain-level, species-level)."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "environment_type", "type": "string", "description": "The environmental source of the microbiome (e.g., human gut, deep-sea hydrothermal vent, soil rhizosphere)."}, {"name": "sequencing_technology", "type": "string", "description": "The sequencing platform and strategy used (e.g., Illumina NovaSeq short-read, PacBio HiFi long-read, Oxford Nanopore)."}, {"name": "read_depth", "type": "string", "description": "The approximate sequencing depth or coverage expected per sample."}, {"name": "taxonomic_resolution_target", "type": "string", "description": "The desired level of taxonomic classification (e.g., strain-level, species-level)."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}], "metadata": {}} -->
 ### Description
 Acts as a Principal Computational Biologist to architect scalable, high-resolution metagenomic assembly and taxonomic binning pipelines for complex environmental microbiomes.
 
@@ -46,6 +19,7 @@ Acts as a Principal Computational Biologist to architect scalable, high-resoluti
 | `sequencing_technology` | String | The sequencing platform and strategy used (e.g., Illumina NovaSeq short-read, PacBio HiFi long-read, Oxford Nanopore). | Yes |
 | `read_depth` | String | The approximate sequencing depth or coverage expected per sample. | Yes |
 | `taxonomic_resolution_target` | String | The desired level of taxonomic classification (e.g., strain-level, species-level). | Yes |
+| `constraints` | String | Auto-extracted variable constraints | No |
 
 
 ### Core Instructions
@@ -79,16 +53,28 @@ Provide the comprehensive pipeline architecture, detailing quality control, asse
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: chromatin_conformation_hic_contact_map_architect
-<!-- VALIDATION_METADATA: [{"name": "resolution", "type": "string", "description": "The bin size or resolution of the Hi-C data (e.g., 5kb, 10kb, 1mb)."}, {"name": "normalization_method", "type": "string", "description": "The mathematical normalization strategy to correct for experimental biases (e.g., ICE, KR)."}, {"name": "structural_target", "type": "string", "description": "The primary genomic structural feature to identify (e.g., TADs, A/B compartments, chromatin loops)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "resolution", "type": "string", "description": "The bin size or resolution of the Hi-C data (e.g., 5kb, 10kb, 1mb)."}, {"name": "normalization_method", "type": "string", "description": "The mathematical normalization strategy to correct for experimental biases (e.g., ICE, KR)."}, {"name": "structural_target", "type": "string", "description": "The primary genomic structural feature to identify (e.g., TADs, A/B compartments, chromatin loops)."}], "metadata": {}} -->
 ### Description
 Designs robust, mathematically rigorous analytical architectures for modeling 3D genome conformation and analyzing high-resolution Hi-C contact matrices.
 
@@ -132,13 +118,19 @@ Provide the complete architectural blueprint and the underlying biophysical math
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: gwas_polygenic_risk_score_architect
-<!-- VALIDATION_METADATA: [{"name": "gwas_summary_statistics", "type": "string", "description": "The input Genome-Wide Association Study (GWAS) summary statistics including effect sizes, standard errors, and p-values (e.g., PLINK or VCF format)."}, {"name": "linkage_disequilibrium_reference", "type": "string", "description": "The reference panel used for modeling Linkage Disequilibrium (LD) structure (e.g., 1000 Genomes Project)."}, {"name": "target_phenotype", "type": "string", "description": "The complex trait or disease architecture being modeled (e.g., Type 2 Diabetes, Schizophrenia)."}, {"name": "statistical_methodology", "type": "string", "description": "The algorithmic approach for PRS computation (e.g., LDpred2, PRS-CS, or Clumping and Thresholding)."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "gwas_summary_statistics", "type": "string", "description": "The input Genome-Wide Association Study (GWAS) summary statistics including effect sizes, standard errors, and p-values (e.g., PLINK or VCF format)."}, {"name": "linkage_disequilibrium_reference", "type": "string", "description": "The reference panel used for modeling Linkage Disequilibrium (LD) structure (e.g., 1000 Genomes Project)."}, {"name": "target_phenotype", "type": "string", "description": "The complex trait or disease architecture being modeled (e.g., Type 2 Diabetes, Schizophrenia)."}, {"name": "statistical_methodology", "type": "string", "description": "The algorithmic approach for PRS computation (e.g., LDpred2, PRS-CS, or Clumping and Thresholding)."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}], "metadata": {}} -->
 ### Description
 Acts as a Principal Statistical Geneticist to design robust, mathematically rigorous Polygenic Risk Score (PRS) predictive models integrating GWAS summary statistics and linkage disequilibrium architecture.
 
@@ -149,6 +141,7 @@ Acts as a Principal Statistical Geneticist to design robust, mathematically rigo
 | `linkage_disequilibrium_reference` | String | The reference panel used for modeling Linkage Disequilibrium (LD) structure (e.g., 1000 Genomes Project). | Yes |
 | `target_phenotype` | String | The complex trait or disease architecture being modeled (e.g., Type 2 Diabetes, Schizophrenia). | Yes |
 | `statistical_methodology` | String | The algorithmic approach for PRS computation (e.g., LDpred2, PRS-CS, or Clumping and Thresholding). | Yes |
+| `constraints` | String | Auto-extracted variable constraints | No |
 
 
 ### Core Instructions
@@ -182,16 +175,28 @@ Provide the comprehensive architectural blueprint, mathematical foundations, and
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "posterior"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['posterior']
+```
 
-Input Context: "{}"
-Asserted Output: "heritability"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['heritability']
+```
 
 ---
 
 ## Skill: epigenetic_methylation_hmm_architect
-<!-- VALIDATION_METADATA: [{"name": "bisulfite_sequencing_data", "type": "string", "description": "The raw or processed bisulfite sequencing data (e.g., FASTQ, BAM, or bedGraph format)."}, {"name": "genomic_context", "type": "string", "description": "The specific genomic regions of interest (e.g., CpG islands, promoters, enhancers) and their coordinates."}, {"name": "hidden_states", "type": "string", "description": "The defined hidden states for the HMM (e.g., unmethylated, partially methylated, fully methylated)."}, {"name": "emission_distribution", "type": "string", "description": "The probability distribution modeling the emission probabilities of observed methylation counts (e.g., Beta-Binomial)."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "bisulfite_sequencing_data", "type": "string", "description": "The raw or processed bisulfite sequencing data (e.g., FASTQ, BAM, or bedGraph format)."}, {"name": "genomic_context", "type": "string", "description": "The specific genomic regions of interest (e.g., CpG islands, promoters, enhancers) and their coordinates."}, {"name": "hidden_states", "type": "string", "description": "The defined hidden states for the HMM (e.g., unmethylated, partially methylated, fully methylated)."}, {"name": "emission_distribution", "type": "string", "description": "The probability distribution modeling the emission probabilities of observed methylation counts (e.g., Beta-Binomial)."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}], "metadata": {}} -->
 ### Description
 Acts as a Principal Epigeneticist and Lead Computational Biologist to probabilistically model DNA methylation states and identify differentially methylated regions (DMRs) using Hidden Markov Models (HMM).
 
@@ -202,6 +207,7 @@ Acts as a Principal Epigeneticist and Lead Computational Biologist to probabilis
 | `genomic_context` | String | The specific genomic regions of interest (e.g., CpG islands, promoters, enhancers) and their coordinates. | Yes |
 | `hidden_states` | String | The defined hidden states for the HMM (e.g., unmethylated, partially methylated, fully methylated). | Yes |
 | `emission_distribution` | String | The probability distribution modeling the emission probabilities of observed methylation counts (e.g., Beta-Binomial). | Yes |
+| `constraints` | String | Auto-extracted variable constraints | No |
 
 
 ### Core Instructions
@@ -235,16 +241,28 @@ Provide a highly rigorous mathematical formulation of the HMM tailored for these
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Beta-Binomial"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Beta-Binomial']
+```
 
-Input Context: "{}"
-Asserted Output: "Binomial"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Binomial']
+```
 
 ---
 
 ## Skill: crispr_cas9_off_target_predictive_modeler
-<!-- VALIDATION_METADATA: [{"name": "target_sequence", "type": "string", "description": "The primary 20nt sgRNA target sequence (5' to 3')."}, {"name": "pam_sequence", "type": "string", "description": "The Protospacer Adjacent Motif (PAM) sequence (e.g., NGG)."}, {"name": "genome_assembly", "type": "string", "description": "The reference genome assembly (e.g., hg38, mm10)."}, {"name": "mismatch_tolerance", "type": "integer", "description": "Maximum number of allowed mismatches for probabilistic scoring."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "target_sequence", "type": "string", "description": "The primary 20nt sgRNA target sequence (5' to 3')."}, {"name": "pam_sequence", "type": "string", "description": "The Protospacer Adjacent Motif (PAM) sequence (e.g., NGG)."}, {"name": "genome_assembly", "type": "string", "description": "The reference genome assembly (e.g., hg38, mm10)."}, {"name": "mismatch_tolerance", "type": "integer", "description": "Maximum number of allowed mismatches for probabilistic scoring."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}], "metadata": {}} -->
 ### Description
 Acts as a Principal Computational Geneticist to probabilistically model and predict CRISPR-Cas9 off-target cleavage sites using genomic context and thermodynamic parameters.
 
@@ -255,6 +273,7 @@ Acts as a Principal Computational Geneticist to probabilistically model and pred
 | `pam_sequence` | String | The Protospacer Adjacent Motif (PAM) sequence (e.g., NGG). | Yes |
 | `genome_assembly` | String | The reference genome assembly (e.g., hg38, mm10). | Yes |
 | `mismatch_tolerance` | String | Maximum number of allowed mismatches for probabilistic scoring. | Yes |
+| `constraints` | String | Auto-extracted variable constraints | No |
 
 
 ### Core Instructions
@@ -288,16 +307,28 @@ Provide a comprehensive probabilistic evaluation of off-target risks, detailing 
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "CFD"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['CFD']
+```
 
-Input Context: "{}"
-Asserted Output: "probability"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['probability']
+```
 
 ---
 
 ## Skill: pangenome_graph_structural_variant_architect
-<!-- VALIDATION_METADATA: [{"name": "reference_graph_format", "type": "string", "description": "The targeted Graphical Fragment Assembly format or indexing scheme (e.g., GFA, VG, GBZ) used to encode the pangenome."}, {"name": "long_read_sequencing_technology", "type": "string", "description": "The specific third-generation sequencing chemistry applied (e.g., PacBio HiFi, Oxford Nanopore Q20+)."}, {"name": "structural_variant_types", "type": "string", "description": "The complex structural variation architecture to identify (e.g., non-reference insertions, large inversions, complex tandem duplications)."}, {"name": "graph_alignment_algorithm", "type": "string", "description": "The computational method or mapping algorithm utilized for long-read-to-graph alignment (e.g., minigraph-cactus, VG Giraffe)."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "reference_graph_format", "type": "string", "description": "The targeted Graphical Fragment Assembly format or indexing scheme (e.g., GFA, VG, GBZ) used to encode the pangenome."}, {"name": "long_read_sequencing_technology", "type": "string", "description": "The specific third-generation sequencing chemistry applied (e.g., PacBio HiFi, Oxford Nanopore Q20+)."}, {"name": "structural_variant_types", "type": "string", "description": "The complex structural variation architecture to identify (e.g., non-reference insertions, large inversions, complex tandem duplications)."}, {"name": "graph_alignment_algorithm", "type": "string", "description": "The computational method or mapping algorithm utilized for long-read-to-graph alignment (e.g., minigraph-cactus, VG Giraffe)."}, {"name": "constraints", "description": "Auto-extracted variable constraints", "required": false}], "metadata": {}} -->
 ### Description
 Acts as a Lead Computational Biologist to architect mathematically rigorous pangenome graph workflows for the high-resolution detection and analysis of complex structural variants using long-read sequencing.
 
@@ -308,6 +339,7 @@ Acts as a Lead Computational Biologist to architect mathematically rigorous pang
 | `long_read_sequencing_technology` | String | The specific third-generation sequencing chemistry applied (e.g., PacBio HiFi, Oxford Nanopore Q20+). | Yes |
 | `structural_variant_types` | String | The complex structural variation architecture to identify (e.g., non-reference insertions, large inversions, complex tandem duplications). | Yes |
 | `graph_alignment_algorithm` | String | The computational method or mapping algorithm utilized for long-read-to-graph alignment (e.g., minigraph-cactus, VG Giraffe). | Yes |
+| `constraints` | String | Auto-extracted variable constraints | No |
 
 
 ### Core Instructions
@@ -342,8 +374,20 @@ Provide the comprehensive computational blueprint, graph mathematical foundation
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "dynamic programming"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['dynamic programming']
+```
 
-Input Context: "{}"
-Asserted Output: "alignment"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['alignment']
+```

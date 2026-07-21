@@ -1,14 +1,3 @@
----
-tags:
-  - clinical
-  - domain:scientific/psychology/clinical/treatment_planning
-  - evidence
-  - intervention
-  - psychology
-  - skill
-  - treatment-planning
----
-
 # Domain Agent Skills: Scientific Psychology Clinical Treatment planning
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: evidence_based_intervention_architect
-<!-- VALIDATION_METADATA: [{"name": "clinical_formulation", "description": "Comprehensive diagnostic synthesis, encompassing DSM-5-TR / ICD-11 classifications, presenting symptoms, and biopsychosocial etiology."}, {"name": "baseline_psychometrics", "description": "Initial pre-treatment psychometric assessment data, including specific test scores, $T$-scores, reliability coefficients, and standard error of measurement."}, {"name": "acute_risk_factors", "description": "Current situational factors, including lethality risk (e.g., suicidal ideation, non-suicidal self-injury, violence potential), safeguarding needs, and socio-environmental instability."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "clinical_formulation", "description": "Comprehensive diagnostic synthesis, encompassing DSM-5-TR / ICD-11 classifications, presenting symptoms, and biopsychosocial etiology."}, {"name": "baseline_psychometrics", "description": "Initial pre-treatment psychometric assessment data, including specific test scores, $T$-scores, reliability coefficients, and standard error of measurement."}, {"name": "acute_risk_factors", "description": "Current situational factors, including lethality risk (e.g., suicidal ideation, non-suicidal self-injury, violence potential), safeguarding needs, and socio-environmental instability."}], "metadata": {}} -->
 ### Description
 Translates complex multi-axial clinical formulations into rigorous, empirically-supported psychotherapeutic treatment protocols (e.g., CBT, DBT) with structured outcome tracking and risk management algorithms.
 
@@ -65,8 +54,20 @@ Do not include any conversational filler, pleasantries, or generic platitudes. O
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "CBT"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['CBT']
+```
 
-Input Context: "{}"
-Asserted Output: "DBT"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['DBT']
+```

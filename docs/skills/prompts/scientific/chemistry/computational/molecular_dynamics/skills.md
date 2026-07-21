@@ -1,21 +1,3 @@
----
-tags:
-  - biophysics
-  - computational-chemistry
-  - domain:scientific/chemistry/computational/molecular_dynamics
-  - enhanced-sampling
-  - fep
-  - free-energy
-  - free-energy-surface
-  - kinetics
-  - metadynamics
-  - molecular-dynamics
-  - physical-chemistry
-  - replica-exchange
-  - skill
-  - steered-molecular-dynamics
----
-
 # Domain Agent Skills: Scientific Chemistry Computational Molecular dynamics
 
 ## Metadata
@@ -26,7 +8,7 @@ tags:
 ---
 
 ## Skill: Free Energy Perturbation Architect
-<!-- VALIDATION_METADATA: [{"name": "receptor", "description": "The biomolecular receptor or host system, typically represented by a PDB ID or sequence.", "required": true}, {"name": "reference_ligand", "description": "The reference ligand in strict IUPAC nomenclature, SMILES, or InChI string.", "required": true}, {"name": "target_ligand", "description": "The perturbed target ligand in strict IUPAC nomenclature, SMILES, or InChI string.", "required": true}, {"name": "conditions", "description": "Thermodynamic state parameters (e.g., Temperature, Pressure, Solvent model, Ion concentration).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "receptor", "description": "The biomolecular receptor or host system, typically represented by a PDB ID or sequence.", "required": true}, {"name": "reference_ligand", "description": "The reference ligand in strict IUPAC nomenclature, SMILES, or InChI string.", "required": true}, {"name": "target_ligand", "description": "The perturbed target ligand in strict IUPAC nomenclature, SMILES, or InChI string.", "required": true}, {"name": "conditions", "description": "Thermodynamic state parameters (e.g., Temperature, Pressure, Solvent model, Ion concentration).", "required": true}], "metadata": {}} -->
 ### Description
 Generates rigorous molecular dynamics simulation protocols for alchemical Free Energy Perturbation (FEP) calculations to predict relative binding free energies.
 
@@ -66,22 +48,30 @@ Conditions: <conditions>{{ conditions }}</conditions>
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{receptor: 'PDB: 1XYZ', reference_ligand: CC1=CC=CC=C1 (Toluene), target_ligand: ClC1=CC=CC=C1
-    (Chlorobenzene), conditions: 'T = 298.15 K, 1 atm, TIP3P water, 0.15 M NaCl'}"
-Asserted Output: "I. System Preparation & Force Field Parameterization"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['I. System Preparation & Force Field Parameterization']
+```
 
-Input Context: "{receptor: Human Serum Albumin (HSA), reference_ligand: CC(=O)OC1=CC=CC=C1C(=O)O (Aspirin),
-  target_ligand: CC(C)CC1=CC=C(C=C1)C(C)C(=O)O (Ibuprofen), conditions: 'T = 310 K,
-    1 atm, OPC water model'}"
-Asserted Output: "III. Alchemical Transformation Schedule"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['III. Alchemical Transformation Schedule']
+```
 
 ---
 
 ## Skill: Steered Molecular Dynamics Unbinding Architect
-<!-- VALIDATION_METADATA: [{"name": "macromolecular_target", "description": "The primary macromolecular target (e.g., protein, nucleic acid) specified by strict PDB ID, UniProt ID, or sequence.", "required": true}, {"name": "ligand", "description": "The bound ligand or small molecule, specified by exact IUPAC nomenclature, SMILES, or InChI string.", "required": true}, {"name": "conditions", "description": "Thermodynamic state parameters and simulation environment (e.g., Temperature, Pressure, Solvent model, Ionic strength).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "macromolecular_target", "description": "The primary macromolecular target (e.g., protein, nucleic acid) specified by strict PDB ID, UniProt ID, or sequence.", "required": true}, {"name": "ligand", "description": "The bound ligand or small molecule, specified by exact IUPAC nomenclature, SMILES, or InChI string.", "required": true}, {"name": "conditions", "description": "Thermodynamic state parameters and simulation environment (e.g., Temperature, Pressure, Solvent model, Ionic strength).", "required": true}], "metadata": {}} -->
 ### Description
 Generates rigorous steered molecular dynamics (SMD) simulation protocols for calculating protein-ligand unbinding kinetics, work distributions, and rupture forces using non-equilibrium physics and advanced reaction coordinate definitions.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -117,18 +107,28 @@ Conditions: <conditions>{{ conditions }}</conditions>
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{macromolecular_target: 'PDB: 1STP (Streptavidin)', ligand: Biotin, conditions: 'T
-    = 300 K, 1 atm, TIP3P water, 0.15 M NaCl'}"
-Asserted Output: "I. System Preparation & Thermodynamic Equilibration"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['I. System Preparation & Thermodynamic Equilibration']
+```
 
-Input Context: "{macromolecular_target: 'PDB: 3CLN (Calmodulin)', ligand: Ca2+ (Calcium ion), conditions: 'T
-    = 298.15 K, 1 atm, explicit solvent'}"
-Asserted Output: "IV. Non-Equilibrium Work & Free Energy Reconstruction"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['IV. Non-Equilibrium Work & Free Energy Reconstruction']
+```
 
 ---
 
 ## Skill: Metadynamics Free Energy Surface Architect
-<!-- VALIDATION_METADATA: [{"name": "molecular_system", "description": "The primary molecular system, biomolecular complex, or reaction environment in strict IUPAC, SMILES, InChI, or PDB notation.", "required": true}, {"name": "collective_variables", "description": "The precise collective variables (CVs) to be biased (e.g., specific dihedral angles, distances, or coordination numbers).", "required": true}, {"name": "conditions", "description": "Thermodynamic state parameters (e.g., Temperature, Pressure, Solvent model).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "molecular_system", "description": "The primary molecular system, biomolecular complex, or reaction environment in strict IUPAC, SMILES, InChI, or PDB notation.", "required": true}, {"name": "collective_variables", "description": "The precise collective variables (CVs) to be biased (e.g., specific dihedral angles, distances, or coordination numbers).", "required": true}, {"name": "conditions", "description": "Thermodynamic state parameters (e.g., Temperature, Pressure, Solvent model).", "required": true}], "metadata": {}} -->
 ### Description
 Generates rigorous metadynamics simulation protocols for exploring complex free energy surfaces and identifying transition states.
 
@@ -166,19 +166,28 @@ Conditions: <conditions>{{ conditions }}</conditions>
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{molecular_system: CC(=O)NC1=CC=C(O)C=C1 (Paracetamol), collective_variables: Torsion
-    angle of the amide bond, conditions: 'T = 298.15 K, 1 atm, TIP3P water'}"
-Asserted Output: "I. System Preparation & Equilibration"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['I. System Preparation & Equilibration']
+```
 
-Input Context: "{molecular_system: 'PDB: 2RH1 (beta-2 adrenergic receptor)', collective_variables: Distance
-    between TM3 and TM6 intracellular ends, conditions: 'T = 310 K, 1 atm, POPC lipid
-    bilayer, 0.15 M KCl'}"
-Asserted Output: "III. Well-Tempered Metadynamics Protocol"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['III. Well-Tempered Metadynamics Protocol']
+```
 
 ---
 
 ## Skill: Temperature Replica Exchange Molecular Dynamics Architect
-<!-- VALIDATION_METADATA: [{"name": "molecular_system", "description": "The primary molecular system, protein complex, or polymer in strict IUPAC, SMILES, InChI, or PDB notation.", "required": true}, {"name": "temperature_range", "description": "The precise lower and upper bounds of the temperature range to be sampled (e.g., 300 K to 500 K).", "required": true}, {"name": "conditions", "description": "Solvent model, ionic strength, pressure, and exchange attempt frequency.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "molecular_system", "description": "The primary molecular system, protein complex, or polymer in strict IUPAC, SMILES, InChI, or PDB notation.", "required": true}, {"name": "temperature_range", "description": "The precise lower and upper bounds of the temperature range to be sampled (e.g., 300 K to 500 K).", "required": true}, {"name": "conditions", "description": "Solvent model, ionic strength, pressure, and exchange attempt frequency.", "required": true}], "metadata": {}} -->
 ### Description
 Generates rigorous Temperature Replica Exchange Molecular Dynamics (T-REMD) simulation protocols for enhanced conformational sampling of complex biomolecules crossing high free-energy barriers.
 
@@ -217,11 +226,20 @@ Conditions: <conditions>{{ conditions }}</conditions>
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{molecular_system: 'PDB: 1UBQ (Ubiquitin)', temperature_range: 280 K to 450 K, conditions: 'TIP3P
-    water, 0.15 M NaCl, 1 atm, exchange attempts every 2 ps'}"
-Asserted Output: "II. Temperature Ladder & Exchange Protocol"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['II. Temperature Ladder & Exchange Protocol']
+```
 
-Input Context: "{molecular_system: CC(C)CC1C(=O)NC(C(=O)N1)C(C)C (Cyclic dipeptide), temperature_range: 300
-    K to 600 K, conditions: 'Implicit solvent (GB), zero pressure, exchange attempts
-    every 1 ps'}"
-Asserted Output: "IV. Convergence & Thermodynamic Reweighting"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['IV. Convergence & Thermodynamic Reweighting']
+```

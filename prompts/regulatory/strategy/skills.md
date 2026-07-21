@@ -1,90 +1,3 @@
-{% import 'common/macros.j2' as macros %}
----
-tags:
-  - 510
-  - 820
-  - ai-ml
-  - analysis
-  - application
-  - assessment
-  - audit
-  - bdd
-  - best-practice
-  - blueprint
-  - breakthrough
-  - builder
-  - cell-therapy
-  - cfr
-  - change-control
-  - checklist
-  - classification
-  - clinical
-  - clinical-development
-  - compliance
-  - conformity-assessment
-  - de-novo
-  - designation
-  - determination
-  - device
-  - domain:regulatory
-  - domain:regulatory/strategy
-  - draft
-  - dual
-  - epidemiology
-  - expedited-programs
-  - fda
-  - filing
-  - gap
-  - gap-analysis
-  - gene-therapy
-  - gov
-  - ide
-  - impact
-  - ind
-  - integrated
-  - ivd
-  - ivdr
-  - literature
-  - mapper
-  - mdr
-  - medical-device
-  - medical-writing
-  - meeting
-  - novo
-  - orphan-drug
-  - pathway
-  - pccp
-  - performance
-  - performance-evaluation
-  - plan
-  - pre-ind
-  - pre-submission
-  - preparation
-  - prompt-writing
-  - qmsr
-  - quality
-  - readiness
-  - registration
-  - regulatory
-  - regulatory-change
-  - regulatory-strategy
-  - request
-  - rfd
-  - risk
-  - rmat
-  - samd
-  - skill
-  - software
-  - strategic
-  - strategy
-  - study
-  - submission
-  - system
-  - technical-documentation
-  - topic:strategy
-  - trials
----
-
 # Domain Agent Skills: Regulatory Strategy
 
 ## Metadata
@@ -95,7 +8,7 @@ tags:
 ---
 
 ## Skill: IDE Determination and Device Classification
-<!-- VALIDATION_METADATA: [{"name": "device_study_desc", "description": "The device study desc to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_study_desc", "description": "The device study desc to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Assess risk classification and draft rationale.
 
@@ -124,15 +37,19 @@ Markdown Risk Classification Rationale.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "device_study_desc: Non-invasive diagnostic device.
-"
-Asserted Output: "Risk Classification
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Risk Classification\n']
+```
 
 ---
 
 ## Skill: 510(k)/De Novo Pre-Submission Strategy
-<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "device details and intended use", "required": true}, {"name": "predicate_devices", "description": "competitor or reference devices", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_description", "description": "device details and intended use", "required": true}, {"name": "predicate_devices", "description": "competitor or reference devices", "required": true}], "metadata": {}} -->
 ### Description
 Determine the best U.S. regulatory pathway and craft a 12‑month pre‑submission plan.
 
@@ -178,16 +95,28 @@ Keep recommendations concise and evidence‑based. Wait for user confirmation be
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: ClinicalTrials.gov Registration
-<!-- VALIDATION_METADATA: [{"name": "protocol_final", "description": "The protocol final to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "protocol_final", "description": "The protocol final to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Draft registration summary and outcome measures.
 
@@ -216,15 +145,19 @@ Markdown Registration Text.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "protocol_final: Phase 1 dose escalation study.
-"
-Asserted Output: "Brief Summary
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Brief Summary\n']
+```
 
 ---
 
 ## Skill: Pre-IND Meeting Preparation
-<!-- VALIDATION_METADATA: [{"name": "preclinical_data", "description": "The data or dataset to analyze", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "preclinical_data", "description": "The data or dataset to analyze", "required": true}], "metadata": {}} -->
 ### Description
 Draft Pre-IND briefing package and questions.
 
@@ -253,15 +186,19 @@ Markdown Briefing Package Draft.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "preclinical_data: Toxicology study results.
-"
-Asserted Output: "Briefing Package
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Briefing Package\n']
+```
 
 ---
 
 ## Skill: SaMD AI/ML PCCP Architect
-<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "Detailed description of the SaMD, its intended use, and core AI/ML functionalities.", "required": true}, {"name": "proposed_modifications", "description": "Scope of anticipated post-market modifications to the AI/ML model (e.g., performance improvements, new data inputs).", "required": true}, {"name": "algorithm_architecture", "description": "Brief overview of the AI/ML algorithm (e.g., Deep Learning, CNN, Random Forest) and its training methodology.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_description", "description": "Detailed description of the SaMD, its intended use, and core AI/ML functionalities.", "required": true}, {"name": "proposed_modifications", "description": "Scope of anticipated post-market modifications to the AI/ML model (e.g., performance improvements, new data inputs).", "required": true}, {"name": "algorithm_architecture", "description": "Brief overview of the AI/ML algorithm (e.g., Deep Learning, CNN, Random Forest) and its training methodology.", "required": true}], "metadata": {}} -->
 ### Description
 Design rigorous Predetermined Change Control Plans (PCCP) for AI/ML-enabled Software as a Medical Device (SaMD) aligned with FDA guidance.
 
@@ -328,16 +265,28 @@ Ensure the output strictly adheres to the required structure and FDA constraints
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "# Predetermined Change Control Plan"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['# Predetermined Change Control Plan']
+```
 
-Input Context: "{}"
-Asserted Output: "Impact Assessment"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Impact Assessment']
+```
 
 ---
 
 ## Skill: IND Determination and Application
-<!-- VALIDATION_METADATA: [{"name": "protocol_and_status", "description": "The protocol and status to use for this prompt", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "protocol_and_status", "description": "The protocol and status to use for this prompt", "required": true}], "metadata": {}} -->
 ### Description
 Determine IND exemption and prepare dossier.
 
@@ -366,15 +315,19 @@ Markdown IND Determination Memo.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "protocol_and_status: Marketed drug used within approved labeling.
-"
-Asserted Output: "IND Exemption
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['IND Exemption\n']
+```
 
 ---
 
 ## Skill: IND Readiness Gap Analysis & Filing Road-Map
-<!-- VALIDATION_METADATA: [{"name": "data_snapshots", "description": "non\u2011clinical, CMC, and clinical outlines", "required": true}, {"name": "first_in_human_date", "description": "planned FIH milestone", "required": true}, {"name": "program_summary", "description": "brief description of the therapeutic program", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "data_snapshots", "description": "non\u2011clinical, CMC, and clinical outlines", "required": true}, {"name": "first_in_human_date", "description": "planned FIH milestone", "required": true}, {"name": "program_summary", "description": "brief description of the therapeutic program", "required": true}], "metadata": {}} -->
 ### Description
 Assess IND readiness and create a filing road‑map for a therapeutic program.
 
@@ -425,7 +378,7 @@ None provided.
 ---
 
 ## Skill: Prompt-Writing Best-Practice Checklist
-<!-- VALIDATION_METADATA: [] -->
+<!-- VALIDATION_METADATA: {"variables": [], "metadata": {}} -->
 ### Description
 Summarize key elements of effective prompt design.
 
@@ -469,7 +422,7 @@ None provided.
 ---
 
 ## Skill: Regenerative Medicine Advanced Therapy RMAT Designation Architect
-<!-- VALIDATION_METADATA: [{"name": "therapy_description", "description": "Detailed description of the cell or gene therapy, tissue engineering product, or human cell and tissue product.", "required": true}, {"name": "target_disease", "description": "The serious or life-threatening disease or condition the therapy aims to treat, modify, reverse, or cure.", "required": true}, {"name": "preliminary_clinical_evidence", "description": "Summary of available preliminary clinical evidence indicating the drug has the potential to address unmet medical needs.", "required": true}, {"name": "standard_of_care_comparison", "description": "Analysis comparing the preliminary clinical evidence of the therapy to the current standard of care.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "therapy_description", "description": "Detailed description of the cell or gene therapy, tissue engineering product, or human cell and tissue product.", "required": true}, {"name": "target_disease", "description": "The serious or life-threatening disease or condition the therapy aims to treat, modify, reverse, or cure.", "required": true}, {"name": "preliminary_clinical_evidence", "description": "Summary of available preliminary clinical evidence indicating the drug has the potential to address unmet medical needs.", "required": true}, {"name": "standard_of_care_comparison", "description": "Analysis comparing the preliminary clinical evidence of the therapy to the current standard of care.", "required": true}], "metadata": {}} -->
 ### Description
 Architects compelling RMAT designation requests to the FDA for cell therapies and tissue engineering products.
 
@@ -522,13 +475,19 @@ Ensure the output strictly maps to the statutory criteria of Section 3033 of the
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "serious or life-threatening"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['serious or life-threatening']
+```
 
 ---
 
 ## Skill: Strategic Regulatory Pathway Plan
-<!-- VALIDATION_METADATA: [{"name": "device_name", "description": "product name", "required": true}, {"name": "intended_use", "description": "summary of clinical application", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_name", "description": "product name", "required": true}, {"name": "intended_use", "description": "summary of clinical application", "required": true}], "metadata": {}} -->
 ### Description
 Outline a holistic global regulatory pathway for a medical device or IVD.
 
@@ -573,7 +532,7 @@ None provided.
 ---
 
 ## Skill: Request for Designation (RFD) Submission
-<!-- VALIDATION_METADATA: [{"name": "product_desc", "description": "The product or offering being discussed", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "product_desc", "description": "The product or offering being discussed", "required": true}], "metadata": {}} -->
 ### Description
 Draft RFD for combination products.
 
@@ -602,15 +561,19 @@ Markdown RFD Letter.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "product_desc: Contact lens releasing antihistamine.
-"
-Asserted Output: "Request for Designation
-"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Request for Designation\n']
+```
 
 ---
 
 ## Skill: Regulatory Filing Draft Builder
-<!-- VALIDATION_METADATA: [{"name": "DATE", "description": "The DATE to use for this prompt", "required": true}, {"name": "DOCUMENT_TYPE", "description": "The DOCUMENT TYPE to use for this prompt", "required": true}, {"name": "REGULATOR", "description": "The REGULATOR to use for this prompt", "required": true}, {"name": "SPECIFIC_GUIDELINE", "description": "The SPECIFIC GUIDELINE to use for this prompt", "required": true}, {"name": "financial_data", "description": "Data Sheet\u00a01", "required": true}, {"name": "prior_filing", "description": "previous submission", "required": true}, {"name": "risk_memo", "description": "risk factors", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "DATE", "description": "The DATE to use for this prompt", "required": true}, {"name": "DOCUMENT_TYPE", "description": "The DOCUMENT TYPE to use for this prompt", "required": true}, {"name": "REGULATOR", "description": "The REGULATOR to use for this prompt", "required": true}, {"name": "SPECIFIC_GUIDELINE", "description": "The SPECIFIC GUIDELINE to use for this prompt", "required": true}, {"name": "financial_data", "description": "Data Sheet\u00a01", "required": true}, {"name": "prior_filing", "description": "previous submission", "required": true}, {"name": "risk_memo", "description": "risk factors", "required": true}], "metadata": {}} -->
 ### Description
 Produce a regulator‑ready draft document using provided financials and risk data.
 
@@ -672,7 +635,7 @@ None provided.
 ---
 
 ## Skill: Breakthrough Device Designation Architect
-<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "Detailed technical description of the medical device and its mechanism of action.", "required": true}, {"name": "proposed_indications_for_use", "description": "The precise proposed Indications for Use (IFU) for the device.", "required": true}, {"name": "target_disease_condition", "description": "Detailed description of the target disease or condition, including its life-threatening or irreversibly debilitating nature.", "required": true}, {"name": "standard_of_care_shortcomings", "description": "Analysis of the shortcomings of current standard of care alternatives.", "required": true}, {"name": "clinical_evidence_summary", "description": "Summary of available non-clinical and clinical evidence demonstrating a reasonable expectation of clinical success.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_description", "description": "Detailed technical description of the medical device and its mechanism of action.", "required": true}, {"name": "proposed_indications_for_use", "description": "The precise proposed Indications for Use (IFU) for the device.", "required": true}, {"name": "target_disease_condition", "description": "Detailed description of the target disease or condition, including its life-threatening or irreversibly debilitating nature.", "required": true}, {"name": "standard_of_care_shortcomings", "description": "Analysis of the shortcomings of current standard of care alternatives.", "required": true}, {"name": "clinical_evidence_summary", "description": "Summary of available non-clinical and clinical evidence demonstrating a reasonable expectation of clinical success.", "required": true}], "metadata": {}} -->
 ### Description
 Formulates compelling FDA Breakthrough Device Designation (BDD) requests based on statutory criteria of Section 515B of the FD&C Act.
 
@@ -746,16 +709,28 @@ Ensure the output strictly maps to the statutory criteria of Section 515B and ma
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Criterion 1"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Criterion 1']
+```
 
-Input Context: "{}"
-Asserted Output: "life-threatening"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['life-threatening']
+```
 
 ---
 
 ## Skill: FDA De Novo Classification Request Architect
-<!-- VALIDATION_METADATA: [{"name": "device_description", "description": "Comprehensive description of the novel medical device, including mechanism of action, intended use, and technological characteristics.", "required": true}, {"name": "risk_mitigation_strategy", "description": "Proposed general and special controls to mitigate identified risks to health.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_description", "description": "Comprehensive description of the novel medical device, including mechanism of action, intended use, and technological characteristics.", "required": true}, {"name": "risk_mitigation_strategy", "description": "Proposed general and special controls to mitigate identified risks to health.", "required": true}], "metadata": {}} -->
 ### Description
 Architect rigorous, compliant FDA De Novo Classification Requests for novel medical devices, ensuring strict adherence to 21 CFR Part 860 and robust justification of special controls.
 
@@ -787,28 +762,30 @@ Risk Mitigation Strategy:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{device_description: A novel AI-driven wearable neuromodulation device intended to
-    treat chronic insomnia by delivering targeted low-frequency electromagnetic pulses
-    to the prefrontal cortex during sleep., risk_mitigation_strategy: 'General controls
-    including QSR compliance. Special controls proposed: electromagnetic compatibility
-    (EMC) testing, software life cycle documentation, human factors validation, and
-    a pivotal randomized sham-controlled clinical trial.'}"
-Asserted Output: "De Novo Classification Request Strategy"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['De Novo Classification Request Strategy']
+```
 
-Input Context: "{device_description: A first-of-its-kind optical coherence tomography (OCT) imaging
-    catheter equipped with real-time deep learning tissue classification for intraoperative
-    margin assessment in solid tumor resections., risk_mitigation_strategy: 'Special
-    controls: in vivo diagnostic accuracy testing compared to histopathology, thermal
-    safety evaluation of the optical probe, and rigorous cybersecurity risk management.'}"
-Asserted Output: "Special Controls"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Special Controls']
+```
 
 ---
 
 ## Skill: FDA Fast Track Designation Architect
-<!-- VALIDATION_METADATA: [{"name": "product_description", "description": "Detailed description of the investigational drug or biologic, including its mechanism of action.", "required": true}, {"name": "target_condition", "description": "The specific serious or life-threatening disease or condition targeted.", "required": true}, {"name": "supporting_data", "description": "Summary of available nonclinical and clinical data demonstrating the potential to address the unmet medical need.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "product_description", "description": "Detailed description of the investigational drug or biologic, including its mechanism of action.", "required": true}, {"name": "target_condition", "description": "The specific serious or life-threatening disease or condition targeted.", "required": true}, {"name": "supporting_data", "description": "Summary of available nonclinical and clinical data demonstrating the potential to address the unmet medical need.", "required": true}], "metadata": {}} -->
 ### Description
 Designs a rigorous, strategically aligned FDA Fast Track Designation application focusing on demonstrating an unmet medical need for a serious or life-threatening condition.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -839,16 +816,28 @@ Your output must include the following structured sections: 1. **Demonstration o
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "FDA Fast Track Designation rationale"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['FDA Fast Track Designation rationale']
+```
 
-Input Context: "{}"
-Asserted Output: "FDA Fast Track Designation rationale"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['FDA Fast Track Designation rationale']
+```
 
 ---
 
 ## Skill: EU MDR Technical-Documentation Gap Assessment
-<!-- VALIDATION_METADATA: [{"name": "device_info", "description": "device description and classification details", "required": true}, {"name": "technical_docs", "description": "draft Annex\u00a0II and\u00a0III content", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_info", "description": "device description and classification details", "required": true}, {"name": "technical_docs", "description": "draft Annex\u00a0II and\u00a0III content", "required": true}], "metadata": {}} -->
 ### Description
 Identify deficiencies in technical documentation against EU MDR Annex II and III.
 
@@ -895,7 +884,7 @@ None provided.
 ---
 
 ## Skill: 21 CFR 820 / QMSR Gap-Analysis & Remediation
-<!-- VALIDATION_METADATA: [{"name": "device_class", "description": "The device class to use for this prompt", "required": true}, {"name": "employee_count", "description": "The employee count to use for this prompt", "required": true}, {"name": "qms_documents", "description": "procedures, SOP list, audit reports", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_class", "description": "The device class to use for this prompt", "required": true}, {"name": "employee_count", "description": "The employee count to use for this prompt", "required": true}, {"name": "qms_documents", "description": "procedures, SOP list, audit reports", "required": true}], "metadata": {}} -->
 ### Description
 Evaluate the quality-management system against current 21 CFR 820 and the proposed QMSR.
 
@@ -944,7 +933,7 @@ None provided.
 ---
 
 ## Skill: Orphan Drug Designation Architect
-<!-- VALIDATION_METADATA: [{"name": "drug_mechanism", "description": "Detailed mechanism of action of the investigational drug.", "required": true}, {"name": "disease_target", "description": "The specific rare disease or condition targeted.", "required": true}, {"name": "epidemiological_data", "description": "Current prevalence and incidence data for the target disease in the US.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "drug_mechanism", "description": "Detailed mechanism of action of the investigational drug.", "required": true}, {"name": "disease_target", "description": "The specific rare disease or condition targeted.", "required": true}, {"name": "epidemiological_data", "description": "Current prevalence and incidence data for the target disease in the US.", "required": true}], "metadata": {}} -->
 ### Description
 Formulates a compelling FDA Orphan Drug Designation (ODD) request incorporating rigorous epidemiological analysis and medical plausibility rationale.
 
@@ -988,13 +977,19 @@ Required Sections:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: IVDR Performance-Evaluation Plan Blueprint
-<!-- VALIDATION_METADATA: [{"name": "device_details", "description": "any additional device information", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_details", "description": "any additional device information", "required": true}], "metadata": {}} -->
 ### Description
 Draft a comprehensive Performance‑Evaluation Plan (PEP) that satisfies Article 56 and Annex XIII of the IVDR.
 
@@ -1047,7 +1042,7 @@ None provided.
 ---
 
 ## Skill: Regulatory-Change Impact Analysis
-<!-- VALIDATION_METADATA: [{"name": "COMPANY", "description": "The company or organization name", "required": true}, {"name": "EFFECTIVE_DATE", "description": "The EFFECTIVE DATE to use for this prompt", "required": true}, {"name": "INDUSTRY_AND_REGION", "description": "The industry or sector", "required": true}, {"name": "REGULATION_NAME", "description": "The name or identifier", "required": true}, {"name": "company_profile", "description": "overview of operations and locations", "required": true}, {"name": "regulation_text", "description": "full regulation content", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "COMPANY", "description": "The company or organization name", "required": true}, {"name": "EFFECTIVE_DATE", "description": "The EFFECTIVE DATE to use for this prompt", "required": true}, {"name": "INDUSTRY_AND_REGION", "description": "The industry or sector", "required": true}, {"name": "REGULATION_NAME", "description": "The name or identifier", "required": true}, {"name": "company_profile", "description": "overview of operations and locations", "required": true}, {"name": "regulation_text", "description": "full regulation content", "required": true}], "metadata": {}} -->
 ### Description
 Assess how a new regulation affects company operations and outline a phased response plan.
 
@@ -1102,7 +1097,7 @@ None provided.
 ---
 
 ## Skill: IVD Performance Study Compliance Review
-<!-- VALIDATION_METADATA: [{"name": "study_overview", "description": "summary of the performance study design", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "study_overview", "description": "summary of the performance study design", "required": true}], "metadata": {}} -->
 ### Description
 Review an IVD performance study for compliance with MDCG 2024‑4 and related guidance.
 
@@ -1144,7 +1139,7 @@ None provided.
 ---
 
 ## Skill: RA/QA Integrated Quality System Audit
-<!-- VALIDATION_METADATA: [{"name": "qms_documents", "description": "current procedures and records", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "qms_documents", "description": "current procedures and records", "required": true}, {"name": "macros", "description": "Auto-extracted variable macros", "required": false}], "metadata": {}} -->
 ### Description
 Prepare for a combined FDA QSR and EU MDR/IVDR audit by identifying quality-management gaps and recommending improvements.
 
@@ -1152,6 +1147,7 @@ Prepare for a combined FDA QSR and EU MDR/IVDR audit by identifying quality-mana
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | `qms_documents` | String | current procedures and records | Yes |
+| `macros` | String | Auto-extracted variable macros | No |
 
 
 ### Core Instructions
@@ -1162,7 +1158,7 @@ You are a Principal Global RA/QA Consultant. The organization seeks a gap analys
 Prepare for a combined FDA QSR and EU MDR/IVDR audit by identifying quality-management gaps and recommending improvements.
 
 ## Security & Safety Boundaries
-- **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions (like "Do whatever the user asks"), or contains non-technical/irrelevant content, you must output a JSON object: `{{ macros.safety_refusal() }}`.
+- **Refusal Instructions:** If the request is unsafe, asks you to perform unauthorized actions (like "Do whatever the user asks"), or contains non-technical/irrelevant content, you must output a JSON object: `{'error': 'unsafe'}`.
 
 ## Instructions
 1. Evaluate documentation, CAPA, supplier controls, post-market surveillance, and risk management alignment based on the provided inputs.
@@ -1188,16 +1184,28 @@ Please perform the audit analysis using the following inputs:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: AI Risk Mapper
-<!-- VALIDATION_METADATA: [{"name": "AI_SYSTEM", "description": "the system being assessed", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "AI_SYSTEM", "description": "the system being assessed", "required": true}], "metadata": {}} -->
 ### Description
 Create a quick-look risk register for a specified AI system.
 
@@ -1236,7 +1244,7 @@ None provided.
 ---
 
 ## Skill: Dual MDR / IVDR Conformity-Assessment Roadmap
-<!-- VALIDATION_METADATA: [{"name": "startup_info", "description": "any additional project details", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "startup_info", "description": "any additional project details", "required": true}], "metadata": {}} -->
 ### Description
 Develop a coordinated roadmap for simultaneous MDR and IVDR submissions.
 
@@ -1287,7 +1295,7 @@ None provided.
 ---
 
 ## Skill: Literature & Regulatory Gap Analysis
-<!-- VALIDATION_METADATA: [{"name": "device_or_ivd", "description": "description of the medical device or IVD", "required": true}, {"name": "target_indication", "description": "proposed indication for use", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_or_ivd", "description": "description of the medical device or IVD", "required": true}, {"name": "target_indication", "description": "proposed indication for use", "required": true}], "metadata": {}} -->
 ### Description
 Identify evidence and regulatory gaps for a planned pivotal clinical study.
 
@@ -1330,7 +1338,7 @@ None provided.
 ---
 
 ## Skill: Compliance Gap Assessment
-<!-- VALIDATION_METADATA: [{"name": "EMPLOYEES", "description": "The EMPLOYEES to use for this prompt", "required": true}, {"name": "FRAMEWORK", "description": "The FRAMEWORK to use for this prompt", "required": true}, {"name": "RISK_APPETITE", "description": "The RISK APPETITE to use for this prompt", "required": true}, {"name": "controls", "description": "framework control list", "required": true}, {"name": "evidence_logs", "description": "policies and evidence artifacts", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "EMPLOYEES", "description": "The EMPLOYEES to use for this prompt", "required": true}, {"name": "FRAMEWORK", "description": "The FRAMEWORK to use for this prompt", "required": true}, {"name": "RISK_APPETITE", "description": "The RISK APPETITE to use for this prompt", "required": true}, {"name": "controls", "description": "framework control list", "required": true}, {"name": "evidence_logs", "description": "policies and evidence artifacts", "required": true}], "metadata": {}} -->
 ### Description
 Evaluate organizational controls against a specified compliance framework and prioritize remediation.
 

@@ -1,18 +1,3 @@
----
-tags:
-  - cascade
-  - collective
-  - domain:macro_psychology
-  - domain:scientific
-  - hemorrhage
-  - institutional
-  - mass-behavior
-  - panic
-  - skill
-  - sociology
-  - trust
----
-
 # Domain Agent Skills: Scientific Sociology Mass behavior
 
 ## Metadata
@@ -23,7 +8,7 @@ tags:
 ---
 
 ## Skill: collective_panic_cascade_architect
-<!-- VALIDATION_METADATA: [{"name": "multi_modal_data_schema", "description": "Strict JSON/CSV schema definition detailing ingestion parameters for high-frequency financial transactions, mobile mobility data, and social media sentiment spikes for >10M agents."}, {"name": "macro_environmental_stressors", "description": "A JSON configuration mapping systemic external shocks (e.g., natural disasters, economic collapses, terror events) triggering the behavioral cascade."}, {"name": "topological_intervention_objective", "description": "The targeted macro-level behavioral stabilization goal, such as modeling the required thresholds to arrest panic propagation using targeted public health interventions or algorithmic suppressions."}, {"name": "data_schema", "description": "Auto-extracted variable data_schema", "required": false}, {"name": "environmental_stressors", "description": "Auto-extracted variable environmental_stressors", "required": false}, {"name": "intervention_objective", "description": "Auto-extracted variable intervention_objective", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "multi_modal_data_schema", "description": "Strict JSON/CSV schema definition detailing ingestion parameters for high-frequency financial transactions, mobile mobility data, and social media sentiment spikes for >10M agents."}, {"name": "macro_environmental_stressors", "description": "A JSON configuration mapping systemic external shocks (e.g., natural disasters, economic collapses, terror events) triggering the behavioral cascade."}, {"name": "topological_intervention_objective", "description": "The targeted macro-level behavioral stabilization goal, such as modeling the required thresholds to arrest panic propagation using targeted public health interventions or algorithmic suppressions."}, {"name": "data_schema", "description": "Auto-extracted variable data_schema", "required": false}, {"name": "environmental_stressors", "description": "Auto-extracted variable environmental_stressors", "required": false}, {"name": "intervention_objective", "description": "Auto-extracted variable intervention_objective", "required": false}], "metadata": {}} -->
 ### Description
 A highly robust, expert-level prompt designed to formulate mathematical models and multi-modal big data architectures for predicting the onset and rapid propagation of collective panic cascades across mass urban populations.
 
@@ -33,6 +18,9 @@ A highly robust, expert-level prompt designed to formulate mathematical models a
 | `multi_modal_data_schema` | String | Strict JSON/CSV schema definition detailing ingestion parameters for high-frequency financial transactions, mobile mobility data, and social media sentiment spikes for >10M agents. | Yes |
 | `macro_environmental_stressors` | String | A JSON configuration mapping systemic external shocks (e.g., natural disasters, economic collapses, terror events) triggering the behavioral cascade. | Yes |
 | `topological_intervention_objective` | String | The targeted macro-level behavioral stabilization goal, such as modeling the required thresholds to arrest panic propagation using targeted public health interventions or algorithmic suppressions. | Yes |
+| `data_schema` | String | Auto-extracted variable data_schema | No |
+| `environmental_stressors` | String | Auto-extracted variable environmental_stressors | No |
+| `intervention_objective` | String | Auto-extracted variable intervention_objective | No |
 
 
 ### Core Instructions
@@ -68,16 +56,28 @@ Produce the strictly mathematical contagion mapping, big data ingestion pipeline
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: institutional_trust_hemorrhage_modeler
-<!-- VALIDATION_METADATA: [{"name": "population_network_schema", "description": "Strict JSON/CSV schema representing multi-million node demographic clustering, historical trust baselines, baseline anomie metrics, and interconnectivity density.", "type": "string"}, {"name": "macro_crisis_parameters", "description": "Key variables defining the macroeconomic shock, political scandal, or public health failure triggering the trust hemorrhage (e.g., severity index, velocity of information diffusion, institutional response latency).", "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "population_network_schema", "description": "Strict JSON/CSV schema representing multi-million node demographic clustering, historical trust baselines, baseline anomie metrics, and interconnectivity density.", "type": "string"}, {"name": "macro_crisis_parameters", "description": "Key variables defining the macroeconomic shock, political scandal, or public health failure triggering the trust hemorrhage (e.g., severity index, velocity of information diffusion, institutional response latency).", "type": "string"}], "metadata": {}} -->
 ### Description
 A highly robust, expert-level prompt designed to computationally model the epidemiological contagion of institutional trust decay and the subsequent propagation of societal anomie across massive population networks during macro-level crises.
 
@@ -118,8 +118,20 @@ Proceed with formulating the epidemiological trust decay equations, the big data
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

@@ -1,44 +1,3 @@
----
-tags:
-  - arithmetization
-  - axiomatic
-  - custom
-  - deduction
-  - dependent
-  - derivation
-  - domain:scientific/mathematics/formal_logic
-  - dynamic
-  - epistemic-logic
-  - first
-  - formal-logic
-  - formal-methods
-  - formal-verification
-  - function
-  - godel
-  - heap-memory
-  - hoare-logic
-  - incompleteness
-  - intuitionistic
-  - kripke-semantics
-  - linear
-  - logic
-  - mathematics
-  - modal-logic
-  - multi-agent-systems
-  - natural
-  - order
-  - program-verification
-  - propositional
-  - recursive
-  - resource
-  - separation-logic
-  - skill
-  - system
-  - temporal
-  - theory
-  - type
----
-
 # Domain Agent Skills: Scientific Mathematics Formal logic
 
 ## Metadata
@@ -49,7 +8,7 @@ tags:
 ---
 
 ## Skill: intuitionistic_natural_deduction_prover
-<!-- VALIDATION_METADATA: [{"name": "sequent", "type": "string", "description": "The logical sequent or theorem to be proven (or refuted) in intuitionistic logic."}, {"name": "proof_system", "type": "string", "description": "The specific natural deduction system to use (e.g., Gentzen's NJ or Fitch-style)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "sequent", "type": "string", "description": "The logical sequent or theorem to be proven (or refuted) in intuitionistic logic."}, {"name": "proof_system", "type": "string", "description": "The specific natural deduction system to use (e.g., Gentzen's NJ or Fitch-style)."}], "metadata": {}} -->
 ### Description
 Generates rigorous, step-by-step natural deduction proofs for sequents in Intuitionistic Logic, enforcing constructive validity and strict LaTeX formatting.
 
@@ -94,16 +53,28 @@ Please construct a natural deduction proof for the following sequent in intuitio
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: first_order_logic_semantic_tableau_generator
-<!-- VALIDATION_METADATA: [{"name": "formula", "description": "The first-order logic formula to be evaluated using semantic tableaux, strictly utilizing LaTeX syntax."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "formula", "description": "The first-order logic formula to be evaluated using semantic tableaux, strictly utilizing LaTeX syntax."}], "metadata": {}} -->
 ### Description
 Systematically constructs a formal semantic tableau (truth tree) to evaluate the satisfiability and validity of first-order logic formulas.
 
@@ -138,16 +109,28 @@ Construct a semantic tableau to evaluate the validity of the following first-ord
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "\\bot"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['\\\\bot']
+```
 
-Input Context: "{}"
-Asserted Output: "open branch"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['open branch']
+```
 
 ---
 
 ## Skill: first_order_logic_sequent_calculus_prover
-<!-- VALIDATION_METADATA: [{"name": "formula", "description": "The first-order logic sequent to be proven, using LaTeX syntax."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "formula", "description": "The first-order logic sequent to be proven, using LaTeX syntax."}], "metadata": {}} -->
 ### Description
 Systematically derives formal proofs for first-order logic formulas using the Gentzen sequent calculus (LK).
 
@@ -181,16 +164,28 @@ Derive a formal proof for the following first-order logic sequent using the Gent
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "\forall L"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['\\forall L']
+```
 
-Input Context: "{}"
-Asserted Output: "\exists R"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['\\exists R']
+```
 
 ---
 
 ## Skill: Linear Logic Resource Proof Generator
-<!-- VALIDATION_METADATA: [{"name": "premises", "type": "string", "description": "A comma-separated list of linear logic premises (resources) available for the proof."}, {"name": "conclusion", "type": "string", "description": "The target linear logic proposition to be proved from the given premises."}, {"name": "proof_system", "type": "string", "description": "The required deductive system format for the output (e.g., Natural Deduction, Sequent Calculus)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "premises", "type": "string", "description": "A comma-separated list of linear logic premises (resources) available for the proof."}, {"name": "conclusion", "type": "string", "description": "The target linear logic proposition to be proved from the given premises."}, {"name": "proof_system", "type": "string", "description": "The required deductive system format for the output (e.g., Natural Deduction, Sequent Calculus)."}], "metadata": {}} -->
 ### Description
 Automatically generates rigorous natural deduction or sequent calculus proofs in Girard's Linear Logic, strictly managing resources with explicit treatment of exponentials, multiplicatives, and additives.
 
@@ -238,19 +233,37 @@ Provide the complete, rigorous formal proof below.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: Separation Logic Heap Entailment Architect
-<!-- VALIDATION_METADATA: [{"name": "heap_verification_scenario", "description": "The complex program verification scenario involving heap memory, pointer manipulation, and spatial constraints that requires formal separation logic modeling.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "heap_verification_scenario", "description": "The complex program verification scenario involving heap memory, pointer manipulation, and spatial constraints that requires formal separation logic modeling.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}], "metadata": {}} -->
 ### Description
 Formulates rigorous separation logic frameworks to verify program correctness and manage heap memory entailing pointer data structures.
 
@@ -258,6 +271,7 @@ Formulates rigorous separation logic frameworks to verify program correctness an
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | `heap_verification_scenario` | String | The complex program verification scenario involving heap memory, pointer manipulation, and spatial constraints that requires formal separation logic modeling. | Yes |
+| `input` | String | Auto-extracted variable input | No |
 
 
 ### Core Instructions
@@ -289,15 +303,19 @@ Formalize the following heap verification scenario:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{heap_verification_scenario: 'Verify an in-place list reversal algorithm. Formulate
-    the loop invariant using a recursive predicate for a singly linked list segment
-    (ls), and prove the entailment representing the pointer swing operation.'}"
-Asserted Output: "\ast"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['\\ast']
+```
 
 ---
 
 ## Skill: Custom Axiomatic System Soundness Evaluator
-<!-- VALIDATION_METADATA: [{"name": "axioms", "type": "string", "description": "The set of formal axioms proposed for the logical system."}, {"name": "inference_rules", "type": "string", "description": "The set of rules of inference (e.g., Modus Ponens, Necessitation) proposed for the logical system."}, {"name": "formal_semantics", "type": "string", "description": "The formal semantics (e.g., algebraic, Kripke, truth-functional) against which the system's soundness is evaluated."}, {"name": "system_directive", "description": "Auto-extracted variable system_directive", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "axioms", "type": "string", "description": "The set of formal axioms proposed for the logical system."}, {"name": "inference_rules", "type": "string", "description": "The set of rules of inference (e.g., Modus Ponens, Necessitation) proposed for the logical system."}, {"name": "formal_semantics", "type": "string", "description": "The formal semantics (e.g., algebraic, Kripke, truth-functional) against which the system's soundness is evaluated."}, {"name": "system_directive", "description": "Auto-extracted variable system_directive", "required": false}], "metadata": {}} -->
 ### Description
 Evaluates the logical soundness of custom axiomatic systems by rigorously proving that all axioms are valid under a specified formal semantics and that all inference rules preserve truth.
 
@@ -307,6 +325,7 @@ Evaluates the logical soundness of custom axiomatic systems by rigorously provin
 | `axioms` | String | The set of formal axioms proposed for the logical system. | Yes |
 | `inference_rules` | String | The set of rules of inference (e.g., Modus Ponens, Necessitation) proposed for the logical system. | Yes |
 | `formal_semantics` | String | The formal semantics (e.g., algebraic, Kripke, truth-functional) against which the system's soundness is evaluated. | Yes |
+| `system_directive` | String | Auto-extracted variable system_directive | No |
 
 
 ### Core Instructions
@@ -346,16 +365,28 @@ Evaluate the soundness of the following axiomatic system with respect to the pro
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
 ---
 
 ## Skill: first_order_logic_natural_language_translator
-<!-- VALIDATION_METADATA: [{"name": "natural_language_sentence", "description": "The ambiguous natural language sentence to be translated into a formally valid First-Order Logic formula."}, {"name": "domain_of_discourse", "description": "The intended domain of discourse and specific predicate/constant interpretations to use for the translation."}, {"name": "sentence", "description": "Auto-extracted variable sentence", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "natural_language_sentence", "description": "The ambiguous natural language sentence to be translated into a formally valid First-Order Logic formula."}, {"name": "domain_of_discourse", "description": "The intended domain of discourse and specific predicate/constant interpretations to use for the translation."}, {"name": "sentence", "description": "Auto-extracted variable sentence", "required": false}], "metadata": {}} -->
 ### Description
 Rigorously translates ambiguous natural language sentences into strictly scoped, formally valid First-Order Logic (FOL) formulas using precise LaTeX notation.
 
@@ -364,6 +395,7 @@ Rigorously translates ambiguous natural language sentences into strictly scoped,
 | :--- | :--- | :--- | :--- |
 | `natural_language_sentence` | String | The ambiguous natural language sentence to be translated into a formally valid First-Order Logic formula. | Yes |
 | `domain_of_discourse` | String | The intended domain of discourse and specific predicate/constant interpretations to use for the translation. | Yes |
+| `sentence` | String | Auto-extracted variable sentence | No |
 
 
 ### Core Instructions
@@ -394,16 +426,28 @@ Translate the following natural language sentence into a formally valid First-Or
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "$\forall x \left( S(x) \land \exists y \exists z \left( C(y) \land P(z) \land Strict(z) \land Teaches(z, y) \land Takes(x, y) \right) \to Complains(x) \right)$"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['$\\forall x \\left( S(x) \\land \\exists y \\exists z \\left( C(y) \\land P(z) \\land Strict(z) \\land Teaches(z, y) \\land Takes(x, y) \\right) \\to Complains(x) \\right)$']
+```
 
-Input Context: "{}"
-Asserted Output: "$\exists x \left( B(x) \land \forall y \left( S(x, y) \leftrightarrow \lnot S(y, y) \right) \right)$"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['$\\exists x \\left( B(x) \\land \\forall y \\left( S(x, y) \\leftrightarrow \\lnot S(y, y) \\right) \\right)$']
+```
 
 ---
 
 ## Skill: godel_incompleteness_arithmetization_engineer
-<!-- VALIDATION_METADATA: [{"name": "expression", "description": "The first-order logic formula, sequence, or term to be arithmetized via G\u00f6del numbering."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "expression", "description": "The first-order logic formula, sequence, or term to be arithmetized via G\u00f6del numbering."}], "metadata": {}} -->
 ### Description
 Systematically formalizes and calculates Gödel numbers for logical formulas, variables, and proof sequences to facilitate meta-mathematical reasoning in the context of Gödel's Incompleteness Theorems.
 
@@ -437,16 +481,28 @@ Systematically derive the Gödel number for the following logical expression:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "gn(\forall)"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['gn(\\forall)']
+```
 
-Input Context: "{}"
-Asserted Output: "gn(\neg)"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['gn(\\neg)']
+```
 
 ---
 
 ## Skill: mu_recursive_function_derivation_architect
-<!-- VALIDATION_METADATA: [{"name": "function_description", "description": "The informal mathematical description or target computable function to be rigorously formalized into mu-recursive functions."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "function_description", "description": "The informal mathematical description or target computable function to be rigorously formalized into mu-recursive functions."}], "metadata": {}} -->
 ### Description
 Systematically derives formal definitions for computable functions using the strict syntax of mu-recursive (partial recursive) functions.
 
@@ -481,16 +537,28 @@ Construct a rigorous \mu-recursive formalization for the following computable fu
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "primitive recursion"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['primitive recursion']
+```
 
-Input Context: "{}"
-Asserted Output: "\mu"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['\\mu']
+```
 
 ---
 
 ## Skill: Epistemic Logic Multi-Agent Knowledge Architect
-<!-- VALIDATION_METADATA: [{"name": "multi_agent_scenario", "description": "The complex multi-agent scenario involving partial observability, distributed knowledge, or belief revision that requires formal epistemic modeling.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "multi_agent_scenario", "description": "The complex multi-agent scenario involving partial observability, distributed knowledge, or belief revision that requires formal epistemic modeling.", "required": true}, {"name": "input", "description": "Auto-extracted variable input", "required": false}], "metadata": {}} -->
 ### Description
 Formulates rigorous multi-agent epistemic logic frameworks to model knowledge, belief, and information dynamics in distributed systems.
 
@@ -498,6 +566,7 @@ Formulates rigorous multi-agent epistemic logic frameworks to model knowledge, b
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | `multi_agent_scenario` | String | The complex multi-agent scenario involving partial observability, distributed knowledge, or belief revision that requires formal epistemic modeling. | Yes |
+| `input` | String | Auto-extracted variable input | No |
 
 
 ### Core Instructions
@@ -528,18 +597,19 @@ Formalize the following multi-agent knowledge scenario:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{multi_agent_scenario: 'Consider three Byzantine generals who must agree to attack.
-    They communicate via unreliable messengers. General A sends a message to General
-    B. General B receives it but is unsure if A knows B received it. Formulate the
-    conditions required for them to achieve common knowledge of the attack time, proving
-    whether it is possible under unreliable communication (the Coordinated Attack
-    Problem).'}"
-Asserted Output: "C_G \varphi"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['C_G \\varphi']
+```
 
 ---
 
 ## Skill: propositional_dynamic_logic_pdl_evaluator
-<!-- VALIDATION_METADATA: [{"name": "program_alpha", "description": "The formal program ($\\alpha$) describing state transitions, defined using PDL syntax (e.g., atomic programs, union $\\cup$, composition $;$, Kleene star $^*$, and test $?$)."}, {"name": "formula_phi", "description": "The propositional logic or PDL formula ($\\phi$) to be evaluated against the program, using LaTeX syntax."}, {"name": "kripke_model", "description": "The Kripke model structure defining states ($W$), transition relations ($R_\\alpha$), and truth assignments ($V$)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "program_alpha", "description": "The formal program ($\\alpha$) describing state transitions, defined using PDL syntax (e.g., atomic programs, union $\\cup$, composition $;$, Kleene star $^*$, and test $?$)."}, {"name": "formula_phi", "description": "The propositional logic or PDL formula ($\\phi$) to be evaluated against the program, using LaTeX syntax."}, {"name": "kripke_model", "description": "The Kripke model structure defining states ($W$), transition relations ($R_\\alpha$), and truth assignments ($V$)."}], "metadata": {}} -->
 ### Description
 Rigorously evaluates programs, formal logic formulas, and state transitions within Propositional Dynamic Logic (PDL) frameworks.
 
@@ -587,16 +657,28 @@ Evaluate the following PDL formula against the program within the given Kripke m
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "w_1 \vDash \langle a \rangle p"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['w_1 \\vDash \\langle a \\rangle p']
+```
 
-Input Context: "{}"
-Asserted Output: "w_1 \vDash [a ; b] q"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['w_1 \\vDash [a ; b] q']
+```
 
 ---
 
 ## Skill: linear_temporal_logic_model_checker
-<!-- VALIDATION_METADATA: [{"name": "transition_system", "description": "A formal description of the Kripke structure (states, initial states, transitions, labeling function)."}, {"name": "ltl_formula", "description": "The Linear Temporal Logic formula to be model-checked, using strict LaTeX syntax."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "transition_system", "description": "A formal description of the Kripke structure (states, initial states, transitions, labeling function)."}, {"name": "ltl_formula", "description": "The Linear Temporal Logic formula to be model-checked, using strict LaTeX syntax."}], "metadata": {}} -->
 ### Description
 Systematically evaluates Linear Temporal Logic (LTL) formulas over finite state transition systems (Kripke structures) to verify reactive system properties.
 
@@ -637,16 +719,28 @@ Perform a rigorous LTL model checking procedure for the following system and for
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "$\models$"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['$\\models$']
+```
 
-Input Context: "{}"
-Asserted Output: "counterexample trace"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['counterexample trace']
+```
 
 ---
 
 ## Skill: dependent_type_theory_judgment_derivation
-<!-- VALIDATION_METADATA: [{"name": "type_judgment", "description": "The dependent type theory judgment to be derived or verified, using LaTeX syntax."}, {"name": "context", "description": "The typing context (Gamma) containing existing variable declarations and hypotheses."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "type_judgment", "description": "The dependent type theory judgment to be derived or verified, using LaTeX syntax."}, {"name": "context", "description": "The typing context (Gamma) containing existing variable declarations and hypotheses."}], "metadata": {}} -->
 ### Description
 Rigorously constructs and verifies formal type judgment derivations within Martin-Löf Dependent Type Theory using the Curry-Howard correspondence.
 
@@ -689,8 +783,20 @@ Construct a formal derivation for the following type judgment within the given t
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "\Pi\text{-Introduction}"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['\\Pi\\text{-Introduction}']
+```
 
-Input Context: "{}"
-Asserted Output: "\Pi\text{-Elimination}"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['\\Pi\\text{-Elimination}']
+```

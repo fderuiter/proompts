@@ -1,31 +1,3 @@
----
-tags:
-  - analysis
-  - checker
-  - clin
-  - clinical-outcome-assessment
-  - content
-  - domain:scientific
-  - equivalence
-  - generator
-  - guide
-  - interview
-  - manual
-  - mcid
-  - methodology
-  - migration
-  - pro
-  - psychometric
-  - qualitative
-  - reliability
-  - research
-  - skill
-  - summary
-  - user
-  - validation
-  - validity
----
-
 # Domain Agent Skills: Scientific Coa
 
 ## Metadata
@@ -36,7 +8,7 @@ tags:
 ---
 
 ## Skill: Qualitative Interview Guide Generator
-<!-- VALIDATION_METADATA: [{"name": "areas_of_interest", "description": "The areas of interest to use for this prompt", "required": true}, {"name": "disease", "description": "The disease to use for this prompt", "required": true}, {"name": "pro_instrument", "description": "The pro instrument to use for this prompt", "required": true}, {"name": "target_disease", "description": "Auto-extracted variable target_disease", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "areas_of_interest", "description": "The areas of interest to use for this prompt", "required": true}, {"name": "disease", "description": "The disease to use for this prompt", "required": true}, {"name": "pro_instrument", "description": "The pro instrument to use for this prompt", "required": true}, {"name": "target_disease", "description": "Auto-extracted variable target_disease", "required": false}], "metadata": {}} -->
 ### Description
 Draft a qualitative patient interview guide for concept elicitation and cognitive debriefing.
 
@@ -46,6 +18,7 @@ Draft a qualitative patient interview guide for concept elicitation and cognitiv
 | `areas_of_interest` | String | The areas of interest to use for this prompt | Yes |
 | `disease` | String | The disease to use for this prompt | Yes |
 | `pro_instrument` | String | The pro instrument to use for this prompt | Yes |
+| `target_disease` | String | Auto-extracted variable target_disease | No |
 
 
 ### Core Instructions
@@ -85,16 +58,19 @@ Please generate the interview guide.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "disease: Rheumatoid Arthritis
-areas_of_interest: Morning stiffness, hand dexterity, fatigue
-pro_instrument: HAQ-DI (Health Assessment Questionnaire - Disability Index)
-"
-Asserted Output: "A structured interview guide with concept elicitation questions about stiffness/dexterity and debriefing for HAQ-DI."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A structured interview guide with concept elicitation questions about stiffness/dexterity and debriefing for HAQ-DI.']
+```
 
 ---
 
 ## Skill: Psychometric Validation Methodology
-<!-- VALIDATION_METADATA: [{"name": "dataset_description", "description": "The data or dataset to analyze", "required": true}, {"name": "instrument_name", "description": "The name or identifier", "required": true}, {"name": "target_population", "description": "The target population to use for this prompt", "required": true}, {"name": "coa_instrument", "description": "Auto-extracted variable coa_instrument", "required": false}, {"name": "dataset_characteristics", "description": "Auto-extracted variable dataset_characteristics", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "dataset_description", "description": "The data or dataset to analyze", "required": true}, {"name": "instrument_name", "description": "The name or identifier", "required": true}, {"name": "target_population", "description": "The target population to use for this prompt", "required": true}, {"name": "coa_instrument", "description": "Auto-extracted variable coa_instrument", "required": false}, {"name": "dataset_characteristics", "description": "Auto-extracted variable dataset_characteristics", "required": false}], "metadata": {}} -->
 ### Description
 Apply Rasch and IRT models for COA validation and psychometric evidence generation.
 
@@ -104,6 +80,8 @@ Apply Rasch and IRT models for COA validation and psychometric evidence generati
 | `dataset_description` | String | The data or dataset to analyze | Yes |
 | `instrument_name` | String | The name or identifier | Yes |
 | `target_population` | String | The target population to use for this prompt | Yes |
+| `coa_instrument` | String | Auto-extracted variable coa_instrument | No |
+| `dataset_characteristics` | String | Auto-extracted variable dataset_characteristics | No |
 
 
 ### Core Instructions
@@ -142,16 +120,19 @@ Generate the psychometric validation plan and mock analysis.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "instrument_name: Dyspnea Daily Diary (10 items)
-target_population: COPD patients
-dataset_description: N=200, items scored 0-4 (None to Severe). Need to confirm unidimensionality and remove misfitting items.
-"
-Asserted Output: "A plan/report covering Rasch analysis (fit statistics), PCA of residuals, and reliability (Cronbach's alpha > 0.7)."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["A plan/report covering Rasch analysis (fit statistics), PCA of residuals, and reliability (Cronbach's alpha > 0.7)."]
+```
 
 ---
 
 ## Skill: Content Validity & Reliability Analysis
-<!-- VALIDATION_METADATA: [{"name": "clinro_description", "description": "A description of the subject", "required": true}, {"name": "disease", "description": "The disease to use for this prompt", "required": true}, {"name": "interview_data", "description": "The data or dataset to analyze", "required": true}, {"name": "clinro_instrument_description", "description": "Auto-extracted variable clinro_instrument_description", "required": false}, {"name": "target_disease", "description": "Auto-extracted variable target_disease", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "clinro_description", "description": "A description of the subject", "required": true}, {"name": "disease", "description": "The disease to use for this prompt", "required": true}, {"name": "interview_data", "description": "The data or dataset to analyze", "required": true}, {"name": "clinro_instrument_description", "description": "Auto-extracted variable clinro_instrument_description", "required": false}, {"name": "target_disease", "description": "Auto-extracted variable target_disease", "required": false}], "metadata": {}} -->
 ### Description
 Analyze clinician interview transcripts for content validity and plan inter-rater reliability.
 
@@ -161,6 +142,8 @@ Analyze clinician interview transcripts for content validity and plan inter-rate
 | `clinro_description` | String | A description of the subject | Yes |
 | `disease` | String | The disease to use for this prompt | Yes |
 | `interview_data` | String | The data or dataset to analyze | Yes |
+| `clinro_instrument_description` | String | Auto-extracted variable clinro_instrument_description | No |
+| `target_disease` | String | Auto-extracted variable target_disease | No |
 
 
 ### Core Instructions
@@ -198,19 +181,19 @@ Please generate the analysis and statistical plan.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "disease: Atopic Dermatitis
-clinro_description: Investigator Global Assessment (IGA) scale (0-4 clear to severe)
-interview_data: |
-  Dr. A: Main signs are erythema and induration. Need to distinguish between excoriation and erosion.
-  Dr. B: Erythema is key. Often see lichenification. Need clear definitions for 'moderate' vs 'severe'.
-  Dr. C: Erythema, induration/papulation are the drivers. Lichenification seen in chronic cases.
-"
-Asserted Output: "Identification of erythema, induration, lichenification. Plan for Cohen's Kappa or ICC for the IGA score."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["Identification of erythema, induration, lichenification. Plan for Cohen's Kappa or ICC for the IGA score."]
+```
 
 ---
 
 ## Skill: MCID Research and Summary
-<!-- VALIDATION_METADATA: [{"name": "disease_area", "description": "The disease area to use for this prompt", "required": true}, {"name": "tools", "description": "The tools to use for this prompt", "required": true}, {"name": "measurement_tools", "description": "Auto-extracted variable measurement_tools", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "disease_area", "description": "The disease area to use for this prompt", "required": true}, {"name": "tools", "description": "The tools to use for this prompt", "required": true}, {"name": "measurement_tools", "description": "Auto-extracted variable measurement_tools", "required": false}], "metadata": {}} -->
 ### Description
 Research and summarize Minimal Clinically Important Differences (MCIDs) for measurement tools.
 
@@ -219,6 +202,7 @@ Research and summarize Minimal Clinically Important Differences (MCIDs) for meas
 | :--- | :--- | :--- | :--- |
 | `disease_area` | String | The disease area to use for this prompt | Yes |
 | `tools` | String | The tools to use for this prompt | Yes |
+| `measurement_tools` | String | Auto-extracted variable measurement_tools | No |
 
 
 ### Core Instructions
@@ -251,15 +235,19 @@ Generate the MCID summary table.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "tools: UPDRS Part III (Motor Examination), PDQ-39 (Parkinson's Disease Questionnaire)
-disease_area: Parkinson's Disease
-"
-Asserted Output: "A table with rows for UPDRS Part III and PDQ-39, including their MCID values (e.g., ~2.5-5 points for UPDRS III)."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['A table with rows for UPDRS Part III and PDQ-39, including their MCID values (e.g., ~2.5-5 points for UPDRS III).']
+```
 
 ---
 
 ## Skill: ClinRO User Manual Generator
-<!-- VALIDATION_METADATA: [{"name": "clinro_name", "description": "The name or identifier", "required": true}, {"name": "measurement_type", "description": "The measurement type to use for this prompt", "required": true}, {"name": "requirements", "description": "The requirements or specifications", "required": true}, {"name": "clinro_instrument", "description": "Auto-extracted variable clinro_instrument", "required": false}, {"name": "specific_requirements", "description": "Auto-extracted variable specific_requirements", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "clinro_name", "description": "The name or identifier", "required": true}, {"name": "measurement_type", "description": "The measurement type to use for this prompt", "required": true}, {"name": "requirements", "description": "The requirements or specifications", "required": true}, {"name": "clinro_instrument", "description": "Auto-extracted variable clinro_instrument", "required": false}, {"name": "specific_requirements", "description": "Auto-extracted variable specific_requirements", "required": false}], "metadata": {}} -->
 ### Description
 Draft a standardized user manual for ClinRO administration and training.
 
@@ -269,6 +257,8 @@ Draft a standardized user manual for ClinRO administration and training.
 | `clinro_name` | String | The name or identifier | Yes |
 | `measurement_type` | String | The measurement type to use for this prompt | Yes |
 | `requirements` | String | The requirements or specifications | Yes |
+| `clinro_instrument` | String | Auto-extracted variable clinro_instrument | No |
+| `specific_requirements` | String | Auto-extracted variable specific_requirements | No |
 
 
 ### Core Instructions
@@ -306,16 +296,19 @@ Draft the user manual section.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "clinro_name: Psoriasis Area and Severity Index (PASI)
-measurement_type: Lesion area and severity (erythema, induration, scaling)
-requirements: Must be done in natural light, patient standing.
-"
-Asserted Output: "Instructions on assessing area percentage, severity scoring (0-4), and body positioning under natural light."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Instructions on assessing area percentage, severity scoring (0-4), and body positioning under natural light.']
+```
 
 ---
 
 ## Skill: ePRO Migration Equivalence Checker
-<!-- VALIDATION_METADATA: [{"name": "device_type", "description": "The device type to use for this prompt", "required": true}, {"name": "features", "description": "The features to use for this prompt", "required": true}, {"name": "paper_instrument_name", "description": "The name or identifier", "required": true}, {"name": "electronic_device", "description": "Auto-extracted variable electronic_device", "required": false}, {"name": "key_features_to_migrate", "description": "Auto-extracted variable key_features_to_migrate", "required": false}, {"name": "original_instrument", "description": "Auto-extracted variable original_instrument", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "device_type", "description": "The device type to use for this prompt", "required": true}, {"name": "features", "description": "The features to use for this prompt", "required": true}, {"name": "paper_instrument_name", "description": "The name or identifier", "required": true}, {"name": "electronic_device", "description": "Auto-extracted variable electronic_device", "required": false}, {"name": "key_features_to_migrate", "description": "Auto-extracted variable key_features_to_migrate", "required": false}, {"name": "original_instrument", "description": "Auto-extracted variable original_instrument", "required": false}], "metadata": {}} -->
 ### Description
 Assess measurement equivalence for migrating paper-based PRO instruments to electronic modes.
 
@@ -325,6 +318,9 @@ Assess measurement equivalence for migrating paper-based PRO instruments to elec
 | `device_type` | String | The device type to use for this prompt | Yes |
 | `features` | String | The features to use for this prompt | Yes |
 | `paper_instrument_name` | String | The name or identifier | Yes |
+| `electronic_device` | String | Auto-extracted variable electronic_device | No |
+| `key_features_to_migrate` | String | Auto-extracted variable key_features_to_migrate | No |
+| `original_instrument` | String | Auto-extracted variable original_instrument | No |
 
 
 ### Core Instructions
@@ -360,8 +356,11 @@ Generate the equivalence checklist and recommendations.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "paper_instrument_name: EQ-5D-5L (Paper)
-device_type: Smartphone (BYOD)
-features: Vertical Visual Analog Scale (VAS) for health state (0-100), 5-level Likert items.
-"
-Asserted Output: "Checklist addressing VAS length consistency on different screen sizes and 'one item per screen' layout recommendations."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+["Checklist addressing VAS length consistency on different screen sizes and 'one item per screen' layout recommendations."]
+```

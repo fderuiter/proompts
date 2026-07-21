@@ -80,7 +80,11 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
         title = derive_title(path, data)
         desc = data.get('description', 'No description provided.')
         
-        rel_to_prompts = path.relative_to(prompts_path)
+        try:
+            rel_to_prompts = path.relative_to(prompts_path / "prompts")
+        except ValueError:
+            rel_to_prompts = path.relative_to(prompts_path)
+            
         output_file = out_prompts_dir / rel_to_prompts.with_suffix(".md")
         
         if not check:

@@ -1,14 +1,3 @@
----
-tags:
-  - domain:scientific/statistics/modeling/survival_analysis
-  - joint
-  - longitudinal
-  - modeling
-  - skill
-  - statistics
-  - survival-analysis
----
-
 # Domain Agent Skills: Scientific Statistics Modeling Survival analysis
 
 ## Metadata
@@ -19,7 +8,7 @@ tags:
 ---
 
 ## Skill: joint_longitudinal_survival_architect
-<!-- VALIDATION_METADATA: [{"name": "longitudinal_submodel", "type": "string", "description": "The specification of the longitudinal mixed-effects submodel."}, {"name": "survival_submodel", "type": "string", "description": "The specification of the time-to-event survival submodel (e.g., Cox proportional hazards)."}, {"name": "association_structure", "type": "string", "description": "The shared parameter formulation linking the two submodels (e.g., current value, slope, cumulative effect)."}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "longitudinal_submodel", "type": "string", "description": "The specification of the longitudinal mixed-effects submodel."}, {"name": "survival_submodel", "type": "string", "description": "The specification of the time-to-event survival submodel (e.g., Cox proportional hazards)."}, {"name": "association_structure", "type": "string", "description": "The shared parameter formulation linking the two submodels (e.g., current value, slope, cumulative effect)."}], "metadata": {}} -->
 ### Description
 Acts as a Statistical Sciences Genesis Architect to formulate rigorous Joint Models for Longitudinal and Time-to-Event Data, specifically specifying the shared parameter framework linking mixed-effects submodels and hazard submodels.
 
@@ -48,8 +37,20 @@ Provide a comprehensive, step-by-step mathematical derivation of the longitudina
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

@@ -1,14 +1,3 @@
----
-tags:
-  - analysis
-  - banach-spaces
-  - domain:mathematics
-  - functional-analysis
-  - operator-theory
-  - skill
-  - spectral-theory
----
-
 # Domain Agent Skills: Scientific Mathematics Analysis Functional analysis
 
 ## Metadata
@@ -19,12 +8,11 @@ tags:
 ---
 
 ## Skill: banach_space_operator_architect
-<!-- VALIDATION_METADATA: [{"name": "space_structure", "description": "The underlying topological vector spaces (e.g., Banach, Hilbert, Frechet).", "required": true}, {"name": "operator_definition", "description": "The explicit definition or properties of the operator(s) in question.", "required": true}, {"name": "theorem_conjecture", "description": "The specific property, theorem, or spectral mapping to prove or disprove.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "space_structure", "description": "The underlying topological vector spaces (e.g., Banach, Hilbert, Frechet).", "required": true}, {"name": "operator_definition", "description": "The explicit definition or properties of the operator(s) in question.", "required": true}, {"name": "theorem_conjecture", "description": "The specific property, theorem, or spectral mapping to prove or disprove.", "required": true}], "metadata": {}} -->
 ### Description
 A Principal Research Mathematician and Functional Analysis Expert designed to rigorously formalize
 and prove properties of bounded and unbounded linear operators on Banach and Hilbert spaces.
 It handles complex spectral theory derivations, operator topologies, and functional calculus.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
@@ -65,8 +53,20 @@ Theorem/Conjecture: {{ theorem_conjecture }}
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```
 
-Input Context: "{}"
-Asserted Output: ""
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['']
+```

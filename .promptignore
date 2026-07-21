@@ -11,6 +11,7 @@ site/
 docs_build/
 .venv/
 env/
+node_modules/
 
 # Ignore draft prompts in a specific temp directory (example)
 temp_drafts/

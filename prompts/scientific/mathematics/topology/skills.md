@@ -1,14 +1,3 @@
----
-tags:
-  - counterexample
-  - domain:mathematics
-  - logic
-  - proof
-  - pure-mathematics
-  - skill
-  - topology
----
-
 # Domain Agent Skills: Scientific Mathematics Topology
 
 ## Metadata
@@ -19,16 +8,16 @@ tags:
 ---
 
 ## Skill: Topological Counterexample Generator
-<!-- VALIDATION_METADATA: [{"name": "conjecture", "description": "The false conjecture or property requirement for which a topological counterexample is needed.", "required": true}, {"name": "constraints", "description": "Specific constraints the counterexample space must satisfy (e.g., must be Hausdorff but not regular, must have an uncountable basis).", "required": false}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "conjecture", "description": "The false conjecture or property requirement for which a topological counterexample is needed.", "required": true}, {"name": "constraints", "description": "Specific constraints the counterexample space must satisfy (e.g., must be Hausdorff but not regular, must have an uncountable basis).", "required": false}, {"name": "user_query", "description": "Auto-extracted variable user_query", "required": false}], "metadata": {}} -->
 ### Description
 Generates precise, logically rigorous counterexamples in point-set, algebraic, or differential topology to disprove false conjectures or illustrate nuanced separation axioms, compactness properties, and connectedness behavior.
-
 
 ### Execution Context (Inputs)
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | `conjecture` | String | The false conjecture or property requirement for which a topological counterexample is needed. | Yes |
 | `constraints` | String | Specific constraints the counterexample space must satisfy (e.g., must be Hausdorff but not regular, must have an uncountable basis). | No |
+| `user_query` | String | Auto-extracted variable user_query | No |
 
 
 ### Core Instructions
@@ -47,10 +36,20 @@ Conjecture / Requirement: {{ conjecture }} Constraints: {{ constraints }} </user
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{conjecture: Every compact topological space is Hausdorff., constraints: The space
-    must be finite.}"
-Asserted Output: "Construct a finite topological space that is compact but not Hausdorff, such as the Sierpinski space."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Construct a finite topological space that is compact but not Hausdorff, such as the Sierpinski space.']
+```
 
-Input Context: "{conjecture: 'Every separable, Hausdorff space is second-countable.', constraints: Consider
-    the Sorgenfrey line or the Moore plane.}"
-Asserted Output: "Construct the Sorgenfrey line, prove it is separable and Hausdorff, and prove it is not second-countable."
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Construct the Sorgenfrey line, prove it is separable and Hausdorff, and prove it is not second-countable.']
+```

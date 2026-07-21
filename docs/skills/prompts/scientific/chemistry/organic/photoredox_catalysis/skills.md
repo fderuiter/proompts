@@ -1,13 +1,3 @@
----
-tags:
-  - domain:scientific/chemistry/organic/photoredox_catalysis
-  - organic-synthesis
-  - photoredox-catalysis
-  - physical-organic-chemistry
-  - single-electron-transfer
-  - skill
----
-
 # Domain Agent Skills: Scientific Chemistry Organic Photoredox catalysis
 
 ## Metadata
@@ -18,7 +8,7 @@ tags:
 ---
 
 ## Skill: Visible Light Photoredox Pathway Architect
-<!-- VALIDATION_METADATA: [{"name": "photocatalyst", "description": "The visible-light photocatalyst (e.g., [Ru(bpy)3]2+, fac-Ir(ppy)3) or organic dye.", "required": true}, {"name": "substrates", "description": "The primary substrates involved in the transformation (strict IUPAC or SMILES format).", "required": true}, {"name": "coreactants", "description": "Sacrificial electron donors/acceptors, HAT agents, or co-catalysts present in the system.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "photocatalyst", "description": "The visible-light photocatalyst (e.g., [Ru(bpy)3]2+, fac-Ir(ppy)3) or organic dye.", "required": true}, {"name": "substrates", "description": "The primary substrates involved in the transformation (strict IUPAC or SMILES format).", "required": true}, {"name": "coreactants", "description": "Sacrificial electron donors/acceptors, HAT agents, or co-catalysts present in the system.", "required": true}], "metadata": {}} -->
 ### Description
 Formulates advanced visible-light photoredox catalytic cycles, calculating redox potentials, thermodynamic feasibility, and predicting radical intermediate pathways for complex transformations.
 
@@ -58,12 +48,20 @@ Coreactants: <coreactants>{{ coreactants }}</coreactants>
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{photocatalyst: fac-Ir(ppy)3, substrates: CC(=O)C1=CC=C(C=C1)Br (4-Bromoacetophenone)
-    and C1=CC=CN=C1 (Pyridine), coreactants: 'N,N-Diisopropylethylamine (DIPEA) as
-    sacrificial electron donor'}"
-Asserted Output: "I. Photophysical Parameters & System Thermodynamics"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['I. Photophysical Parameters & System Thermodynamics']
+```
 
-Input Context: "{photocatalyst: '[Ru(bpy)3]2+', substrates: 'CC(C)(C)C(=O)O[N+]1=CC=CC=C1 (N-Acyloxyphthalimide
-    derivative)', coreactants: 'Ascorbic acid as electron donor, visible light irradiation
-    (450 nm)'}"
-Asserted Output: "III. Radical Generation & Propagation Mechanism"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['III. Radical Generation & Propagation Mechanism']
+```

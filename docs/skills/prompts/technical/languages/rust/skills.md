@@ -1,15 +1,3 @@
----
-tags:
-  - architectural
-  - developer
-  - domain:technical
-  - patterns
-  - principal
-  - programming-languages
-  - rust
-  - skill
----
-
 # Domain Agent Skills: Technical Languages Rust
 
 ## Metadata
@@ -20,7 +8,7 @@ tags:
 ---
 
 ## Skill: Rust Architectural Patterns
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "Armed", "description": "Auto-extracted variable Armed", "required": false}, {"name": "Flying", "description": "Auto-extracted variable Flying", "required": false}, {"name": "Idle", "description": "Auto-extracted variable Idle", "required": false}, {"name": "State", "description": "Auto-extracted variable State", "required": false}, {"name": "T", "description": "Auto-extracted variable T", "required": false}, {"name": "Wrapper", "description": "Auto-extracted variable Wrapper", "required": false}, {"name": "native_ctx_t", "description": "Auto-extracted variable native_ctx_t", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "Armed", "description": "Auto-extracted variable Armed", "required": false}, {"name": "Flying", "description": "Auto-extracted variable Flying", "required": false}, {"name": "Idle", "description": "Auto-extracted variable Idle", "required": false}, {"name": "State", "description": "Auto-extracted variable State", "required": false}, {"name": "T", "description": "Auto-extracted variable T", "required": false}, {"name": "Wrapper", "description": "Auto-extracted variable Wrapper", "required": false}, {"name": "native_ctx_t", "description": "Auto-extracted variable native_ctx_t", "required": false}], "metadata": {}} -->
 ### Description
 Deep dive into Typestate and Zero-Cost FFI abstractions for Principal-level Rust.
 
@@ -28,6 +16,13 @@ Deep dive into Typestate and Zero-Cost FFI abstractions for Principal-level Rust
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | `input` | String | The primary input or query text for the prompt | Yes |
+| `Armed` | String | Auto-extracted variable Armed | No |
+| `Flying` | String | Auto-extracted variable Flying | No |
+| `Idle` | String | Auto-extracted variable Idle | No |
+| `State` | String | Auto-extracted variable State | No |
+| `T` | String | Auto-extracted variable T | No |
+| `Wrapper` | String | Auto-extracted variable Wrapper | No |
+| `native_ctx_t` | String | Auto-extracted variable native_ctx_t | No |
 
 
 ### Core Instructions
@@ -135,14 +130,19 @@ You must use the following Markdown structure:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "I have a C library with `init_session`, `send_msg`, and `close_session`.
-The `send_msg` function takes a `session_t*`. How do I wrap this efficiently?"
-Asserted Output: "## 📐 Pattern Selection"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['## 📐 Pattern Selection']
+```
 
 ---
 
 ## Skill: Principal Rust Developer
-<!-- VALIDATION_METADATA: [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "Connected", "description": "Auto-extracted variable Connected", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "input", "description": "The primary input or query text for the prompt", "required": true}, {"name": "Connected", "description": "Auto-extracted variable Connected", "required": false}], "metadata": {}} -->
 ### Description
 A Principal Engineer's guide to Rust development, focusing on type-driven architecture, error handling, API stability, safety, concurrency, and DX.
 
@@ -150,6 +150,7 @@ A Principal Engineer's guide to Rust development, focusing on type-driven archit
 | Variable | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | `input` | String | The primary input or query text for the prompt | Yes |
+| `Connected` | String | Auto-extracted variable Connected | No |
 
 
 ### Core Instructions
@@ -233,16 +234,11 @@ You must use the following Markdown structure:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "struct Connection {
-    state: String,
-}
-impl Connection {
-    fn send(&self, msg: String) -> Result<(), String> {
-        if self.state != "connected" {
-            return Err("not connected".to_string());
-        }
-        // send
-        Ok(())
-    }
-}"
-Asserted Output: "## 🔬 Analysis"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['## 🔬 Analysis']
+```

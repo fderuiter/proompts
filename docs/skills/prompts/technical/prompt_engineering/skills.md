@@ -1,15 +1,3 @@
----
-tags:
-  - adversarial-testing
-  - calibration
-  - domain:technical
-  - optimization
-  - prompt-engineering
-  - red-teaming
-  - security
-  - skill
----
-
 # Domain Agent Skills: Technical Prompt engineering
 
 ## Metadata
@@ -20,7 +8,7 @@ tags:
 ---
 
 ## Skill: Vector Prompt Editor-in-Chief
-<!-- VALIDATION_METADATA: [{"name": "draft_prompt", "description": "The draft prompt submitted for calibration.", "required": true, "type": "string"}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "draft_prompt", "description": "The draft prompt submitted for calibration.", "required": true, "type": "string"}], "metadata": {}} -->
 ### Description
 Reviews draft prompts, eliminates generic phrasing, and elevates them with specific personas, precise constraints, and contextual framing.
 
@@ -78,16 +66,28 @@ Please calibrate the following draft prompt:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Vector Calibration"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Vector Calibration']
+```
 
-Input Context: "{}"
-Asserted Output: "Vector Calibration"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Vector Calibration']
+```
 
 ---
 
 ## Skill: Adversarial Prompt Robustness Tester
-<!-- VALIDATION_METADATA: [{"name": "draft_prompt", "description": "The base prompt structure intended for production deployment.", "required": true}, {"name": "threat_model", "description": "Specific vectors of attack to prioritize (e.g., role-breaking, output formatting manipulation, PII extraction).", "required": false}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "draft_prompt", "description": "The base prompt structure intended for production deployment.", "required": true}, {"name": "threat_model", "description": "Specific vectors of attack to prioritize (e.g., role-breaking, output formatting manipulation, PII extraction).", "required": false}], "metadata": {}} -->
 ### Description
 Acts as a Principal AI Red Teamer to systematically stress-test draft prompts against adversarial injections, jailbreaks, and logical fallacies, providing architectural recommendations for hardening.
 
@@ -141,8 +141,20 @@ Analyze the following draft prompt for adversarial robustness:
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Vulnerability Assessment"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Vulnerability Assessment']
+```
 
-Input Context: "{}"
-Asserted Output: "Vulnerability Assessment"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Vulnerability Assessment']
+```

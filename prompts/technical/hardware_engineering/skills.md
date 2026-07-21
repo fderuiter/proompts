@@ -1,18 +1,3 @@
----
-tags:
-  - control_systems
-  - domain:technical
-  - electronics
-  - engineering
-  - fea
-  - hardware
-  - mechatronics
-  - pcb
-  - robotics
-  - simulation
-  - skill
----
-
 # Domain Agent Skills: Technical Hardware engineering
 
 ## Metadata
@@ -23,7 +8,7 @@ tags:
 ---
 
 ## Skill: Mechatronics Control Systems Architect
-<!-- VALIDATION_METADATA: [{"name": "mechanical_plant", "description": "Description of the physical system being controlled (e.g., robotic arm joint, drone quadcopter, inverted pendulum), including mass, inertia, and friction characteristics.", "required": true}, {"name": "actuators_and_sensors", "description": "Details on the motors/actuators and the sensors providing feedback (e.g., BLDC motor with 12-bit absolute encoder, IMU).", "required": true}, {"name": "control_objective", "description": "The goal of the control system (e.g., fast step response with <5% overshoot, steady-state error <0.1 deg, disturbance rejection).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "mechanical_plant", "description": "Description of the physical system being controlled (e.g., robotic arm joint, drone quadcopter, inverted pendulum), including mass, inertia, and friction characteristics.", "required": true}, {"name": "actuators_and_sensors", "description": "Details on the motors/actuators and the sensors providing feedback (e.g., BLDC motor with 12-bit absolute encoder, IMU).", "required": true}, {"name": "control_objective", "description": "The goal of the control system (e.g., fast step response with <5% overshoot, steady-state error <0.1 deg, disturbance rejection).", "required": true}], "metadata": {}} -->
 ### Description
 A workflow bridging mechanical systems with software logic (PID controller tuning, actuator timing algorithms).
 
@@ -61,13 +46,19 @@ Design the control system architecture.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Cascaded"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Cascaded']
+```
 
 ---
 
 ## Skill: Finite Element Analysis (FEA) Interpreter
-<!-- VALIDATION_METADATA: [{"name": "simulation_type", "description": "The type of FEA performed (e.g., Static Structural, Steady-State Thermal, Modal Analysis).", "required": true}, {"name": "material_properties", "description": "The material properties of the analyzed part (e.g., Yield Strength, Young's Modulus, Thermal Conductivity).", "required": true}, {"name": "simulation_results", "description": "The numerical or textual outputs from the FEA solver (e.g., max Von Mises stress, max deflection, natural frequencies).", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "simulation_type", "description": "The type of FEA performed (e.g., Static Structural, Steady-State Thermal, Modal Analysis).", "required": true}, {"name": "material_properties", "description": "The material properties of the analyzed part (e.g., Yield Strength, Young's Modulus, Thermal Conductivity).", "required": true}, {"name": "simulation_results", "description": "The numerical or textual outputs from the FEA solver (e.g., max Von Mises stress, max deflection, natural frequencies).", "required": true}], "metadata": {}} -->
 ### Description
 An agent that analyzes stress, thermal, and vibration simulation outputs to recommend geometric optimizations for mechanical parts.
 
@@ -112,13 +103,19 @@ Analyze these results and recommend geometric optimizations.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "Von Mises"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['Von Mises']
+```
 
 ---
 
 ## Skill: PCB Layout Topology Reviewer
-<!-- VALIDATION_METADATA: [{"name": "pcb_specifications", "description": "Details about the PCB (layer count, stackup, trace widths, key components like MCUs or Switching Regulators).", "required": true}, {"name": "signal_types", "description": "Information on the high-speed, RF, analog, or power signals present on the board.", "required": true}, {"name": "layout_description", "description": "A textual description of how the components are placed and traces are routed, specifically regarding critical nets and ground planes.", "required": true}] -->
+<!-- VALIDATION_METADATA: {"variables": [{"name": "pcb_specifications", "description": "Details about the PCB (layer count, stackup, trace widths, key components like MCUs or Switching Regulators).", "required": true}, {"name": "signal_types", "description": "Information on the high-speed, RF, analog, or power signals present on the board.", "required": true}, {"name": "layout_description", "description": "A textual description of how the components are placed and traces are routed, specifically regarding critical nets and ground planes.", "required": true}], "metadata": {}} -->
 ### Description
 A prompt designed to evaluate printed circuit board schematics for signal integrity, electromagnetic interference (EMI), and thermal dissipation compliance.
 
@@ -162,5 +159,11 @@ Conduct the PCB layout review based on these parameters.
 Expected JSON/YAML structure matching the schema rules.
 
 ### Few-Shot Assertions
-Input Context: "{}"
-Asserted Output: "return path"
+**Input Context:**
+```yaml
+{}
+```
+**Asserted Output:**
+```text
+['return path']
+```
