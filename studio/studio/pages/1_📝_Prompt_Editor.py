@@ -1,22 +1,25 @@
 import os
-import json
 import streamlit as st
 import pandas as pd
 
 from promptops.validation import PromptSchema
-from pydantic import ValidationError
 
 st.set_page_config(page_title="Prompt Editor", layout="wide")
 st.title("Prompt Editor")
 
-from promptops.utils import ROOT, iter_prompt_files
+from studio.helpers import (
+    render_schema_form, 
+    load_asset_data, 
+    validate_and_save_asset,
+    get_relative_asset_paths
+)
+from promptops.utils import ROOT
 base_dir = str(ROOT)
-prompt_files = [os.path.relpath(str(f), base_dir) for f in iter_prompt_files() if str(f).endswith('.prompt.md')]
+prompt_files = get_relative_asset_paths("prompt", extensions=[".prompt.md"])
 
 selected_file = st.selectbox("Select a prompt to edit", ["Create New..."] + prompt_files)
 
 from typing import Dict, Any
-from promptops.utils import load_yaml, save_yaml
 
 if selected_file == "Create New...":
     st.subheader("Create New Prompt")
@@ -41,47 +44,15 @@ if selected_file == "Create New...":
 else:
     new_file_path = selected_file
     file_path = os.path.join(base_dir, selected_file)
-    try:
-        data = load_yaml(file_path, raw=True)
-    except Exception as e:
-        st.error(f"Failed to load file: {e}")
+    data = load_asset_data(file_path)
+    if not data:
         st.stop()
 st.subheader(f"Editing: {selected_file}")
 
 # Dynamically generate basic fields from schema
-schema = PromptSchema.model_json_schema()
-properties = schema.get("properties", {})
 skip_fields = ["variables", "messages", "testData", "evaluators", "modelParameters", "tools", "output_schema", "last_modified"]
 
-for field_name, field_info in properties.items():
-    if field_name in skip_fields:
-        continue
-        
-    val = data.get(field_name, "")
-    label = field_info.get("title", field_name)
-    
-    if field_name == "metadata":
-        st.subheader("Metadata")
-        if "metadata" not in data or not data["metadata"]:
-            data["metadata"] = {}
-        meta_schema = schema.get("$defs", {}).get("PromptMetadata", {}).get("properties", {})
-        for m_key, m_info in meta_schema.items():
-            m_val = data["metadata"].get(m_key, m_info.get("default", ""))
-            if m_info.get("type") == "boolean":
-                data["metadata"][m_key] = st.checkbox(m_info.get("title", m_key), value=bool(m_val), key=f"meta_{m_key}")
-            elif m_info.get("type") == "array":
-                m_val_str = ", ".join(m_val) if isinstance(m_val, list) else ""
-                res = st.text_input(m_info.get("title", m_key), value=m_val_str, key=f"meta_{m_key}")
-                data["metadata"][m_key] = [x.strip() for x in res.split(",") if x.strip()]
-            else:
-                data["metadata"][m_key] = st.text_input(m_info.get("title", m_key), value=m_val, key=f"meta_{m_key}")
-    elif field_info.get("type") == "string":
-        if field_name == "description":
-            data[field_name] = st.text_area(label, value=val)
-        else:
-            data[field_name] = st.text_input(label, value=val)
-    elif field_info.get("type") == "boolean":
-        data[field_name] = st.checkbox(label, value=bool(val))
+data = render_schema_form(PromptSchema, data, skip_fields=skip_fields)
 
 st.subheader("Model Parameters")
 model_params = data.get('modelParameters', {})
@@ -123,7 +94,7 @@ for i, msg in enumerate(st.session_state['messages']):
             st.markdown("**Optimization Proposed Changes (Side-by-Side):**")
             diff_col1, diff_col2 = st.columns(2)
             original = st.session_state['messages'][i]['content']
-            from tools import optimize_prompt
+            from promptops.utils import optimize_prompt
             proposed = optimize_prompt(original)
             
             with diff_col1:
@@ -145,7 +116,7 @@ for i, msg in enumerate(st.session_state['messages']):
             st.markdown("**Sanitization Proposed Changes (Side-by-Side):**")
             diff_col1, diff_col2 = st.columns(2)
             original = st.session_state['messages'][i]['content']
-            from tools import sanitize_prompt
+            from promptops.utils import sanitize_prompt
             proposed = sanitize_prompt(original)
             
             with diff_col1:
@@ -223,30 +194,12 @@ for i, ev in enumerate(st.session_state['evaluators']):
         with col2:
             st.markdown("**Logic Builder**")
             
-            # Pre-parse common patterns from existing python strings
-            py_logic = ev.get('python', '')
-            eval_type = "Custom Python"
-            eval_target = ""
-            eval_value = ""
+            from promptops.validation import EvaluatorRule
             
-            if py_logic.startswith("len(output) > ") and py_logic[14:].isdigit():
-                eval_type = "Length >"
-                eval_value = py_logic[14:]
-            elif py_logic.startswith("len(output) < ") and py_logic[14:].isdigit():
-                eval_type = "Length <"
-                eval_value = py_logic[14:]
-            elif " in output" in py_logic and py_logic.startswith("'") and py_logic.split("'")[1]:
-                eval_type = "Contains"
-                eval_value = py_logic.split("'")[1]
-            elif " not in output" in py_logic and py_logic.startswith("'"):
-                eval_type = "Does Not Contain"
-                eval_value = py_logic.split("'")[1]
-            elif py_logic.startswith("re.search(") and "output" in py_logic:
-                eval_type = "Regex Match"
-                try:
-                    eval_value = py_logic.split("r'")[1].split("',")[0]
-                except:
-                    eval_value = ""
+            py_logic = ev.get('python', '')
+            rule = EvaluatorRule.from_python_expression(py_logic)
+            eval_type = rule.rule_type
+            eval_value = rule.value
             
             subcol1, subcol2 = st.columns(2)
             with subcol1:
@@ -255,16 +208,8 @@ for i, ev in enumerate(st.session_state['evaluators']):
             with subcol2:
                 if sel_type != "Custom Python":
                     val = st.text_input("Value", value=eval_value, key=f"ev_val_{i}")
-                    if sel_type == "Contains":
-                        st.session_state['evaluators'][i]['python'] = f"'{val}' in output"
-                    elif sel_type == "Does Not Contain":
-                        st.session_state['evaluators'][i]['python'] = f"'{val}' not in output"
-                    elif sel_type == "Regex Match":
-                        st.session_state['evaluators'][i]['python'] = f"re.search(r'{val}', output)"
-                    elif sel_type == "Length >":
-                        st.session_state['evaluators'][i]['python'] = f"len(output) > {val if val.isdigit() else 0}"
-                    elif sel_type == "Length <":
-                        st.session_state['evaluators'][i]['python'] = f"len(output) < {val if val.isdigit() else 0}"
+                    new_rule = EvaluatorRule(rule_type=sel_type, value=val)
+                    st.session_state['evaluators'][i]['python'] = new_rule.to_python_expression()
                 else:
                     st.session_state['evaluators'][i]['python'] = st.text_area("Custom Python", value=py_logic, key=f"ev_py_{i}")
         with col3:
@@ -280,23 +225,12 @@ if st.button("Save Changes", type="primary"):
     if not new_file_path.endswith('.prompt.md'):
         st.error("File path must end with .prompt.md")
     else:
-        try:
-            data['modelParameters'].update({"temperature": temperature, "max_tokens": max_tokens})
-            data['variables'] = edited_var_df.to_dict('records')
-            data['messages'] = st.session_state['messages']
-            data['testData'] = st.session_state['testData']
-            data['evaluators'] = st.session_state['evaluators']
+        data['modelParameters'].update({"temperature": temperature, "max_tokens": max_tokens})
+        data['variables'] = edited_var_df.to_dict('records')
+        data['messages'] = st.session_state['messages']
+        data['testData'] = st.session_state['testData']
+        data['evaluators'] = st.session_state['evaluators']
+        
+        full_path = os.path.join(base_dir, new_file_path)
+        validate_and_save_asset(full_path, data, PromptSchema, success_message="Saved successfully and validated!")
 
-            
-            # Real-time validation
-            PromptSchema(**data)
-            
-            full_path = os.path.join(base_dir, new_file_path)
-            save_yaml(full_path, data)
-            st.success("Saved successfully and validated!")
-        except json.JSONDecodeError as e:
-            st.error(f"JSON Parsing Error: {e}")
-        except ValidationError as e:
-            st.error("Validation Error: " + str(e))
-        except Exception as e:
-            st.error(f"Error: {e}")

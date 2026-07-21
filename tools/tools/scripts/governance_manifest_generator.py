@@ -16,13 +16,13 @@ import json
 import hashlib
 import re
 from datetime import datetime, timezone
-import yaml
 
 # Ensure we can import from the current directory
 try:
     from promptops.utils import (
         iter_prompt_files, 
         load_yaml, 
+        save_yaml,
         ROOT,
         MANIFEST_DIR,
         MANIFEST_FILE,
@@ -64,10 +64,8 @@ def generate_kb():
                 }
             }
         }
-        with open(KB_FILE, 'w', encoding='utf-8') as f:
-            yaml.dump(kb, f)
-    with open(KB_FILE, 'r', encoding='utf-8') as f:
-        return yaml.safe_load(f)
+        save_yaml(KB_FILE, kb)
+    return load_yaml(KB_FILE)
 
 def hash_file(path):
     h = hashlib.sha256()

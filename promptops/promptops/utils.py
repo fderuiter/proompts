@@ -234,8 +234,25 @@ def load_yaml(path: Union[str, Path], raw: bool = False) -> Dict[str, Any]:
 def save_yaml(path: Union[str, Path], data: Dict[str, Any]) -> None:
     path_obj = Path(path)
     path_obj.parent.mkdir(parents=True, exist_ok=True)
-    with path_obj.open('w', encoding='utf-8') as f:
-        yaml.dump(data, f, sort_keys=False, allow_unicode=True, default_flow_style=False)
+    
+    if path_obj.name.endswith(".prompt.md") or path_obj.suffix == ".md":
+        messages = data.get("messages", [])
+        frontmatter_data = {k: v for k, v in data.items() if k != "messages"}
+        
+        frontmatter_str = yaml.dump(frontmatter_data, sort_keys=False, allow_unicode=True, default_flow_style=False)
+        
+        md_content = f"---\n{frontmatter_str}---\n\n"
+        for msg in messages:
+            role = msg.get("role", "user")
+            content = msg.get("content", "")
+            header = "Purpose" if role == "system" else ("Instructions" if role == "user" else role.capitalize())
+            md_content += f"## {header}\n{content}\n\n"
+            
+        with path_obj.open('w', encoding='utf-8') as f:
+            f.write(md_content)
+    else:
+        with path_obj.open('w', encoding='utf-8') as f:
+            yaml.dump(data, f, sort_keys=False, allow_unicode=True, default_flow_style=False)
 
 def _is_valid_file(p: Path) -> bool:
     if p.name.startswith("._") or p.name == ".DS_Store":
@@ -565,3 +582,26 @@ def resolve_fallback_prompt(path_obj: Path) -> Optional[Dict[str, Any]]:
                 "testData": best_match.get("testData", [])
             }
     return None
+
+def optimize_prompt(text: str) -> str:
+    """
+    Simulates the Prompt Optimizer locally without network calls.
+    Returns an optimized version of the input text.
+    """
+    if not text:
+        return text
+    optimized = text.strip()
+    return f"{optimized}\n\n# Note: Optimized for clarity and instruction following."
+
+def sanitize_prompt(text: str) -> str:
+    """
+    Simulates the Prompt Sanitiser locally without network calls.
+    Removes sensitive placeholders and formatting issues.
+    """
+    if not text:
+        return text
+    text = re.sub(r'https?://[^\s]+', '[REDACTED_URL]', text)
+    text = re.sub(r'(?i)(api[_-]?key)\s*[:=]\s*[A-Za-z0-9_-]+', r'\1=[REDACTED_SECRET]', text)
+    text = re.sub(r'(?i)(password)\s*[:=]\s*[A-Za-z0-9_-]+', r'\1=[REDACTED_SECRET]', text)
+    text = re.sub(r'\[\d+\]', '', text)
+    return text.strip()
