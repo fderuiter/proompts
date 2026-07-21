@@ -82,7 +82,6 @@ pip install -r requirements.txt
 | **`test_fix_markdown_issues.py`** | 🐍 Python | No description provided. |
 | **`test_generate_overviews.py`** | 🐍 Python | Test metadata extraction when 'name' is present in YAML. |
 | **`test_generate_search_index.py`** | 🐍 Python | No description provided. |
-| **`test_print.py`** | 🐍 Python | No description provided. |
 | **`test_workflows.py`** | 🐍 Python | Test Workflows Script |
 
 ## Core Simulation & Governance Scripts
