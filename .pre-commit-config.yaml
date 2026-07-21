@@ -1,3 +1,4 @@
+exclude: '(?x)(^|/)(experimental|workshops?|drafts?|temp_drafts)(/|$)'
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
@@ -16,6 +17,13 @@ repos:
 
   - repo: local
     hooks:
+      - id: check-bypasses
+        name: Check for raw filesystem/YAML bypasses
+        entry: python3 scripts/check_bypasses.py
+        language: python
+        types: [python]
+        pass_filenames: true
+
       - id: promptops-validate
         name: Validate and Format Prompts
         entry: uv run promptops validate --strict
@@ -36,3 +44,18 @@ repos:
         language: system
         files: ^(promptops/promptops|tools/tools/scripts)/.*\.py$
         pass_filenames: false
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.3.4
+    hooks:
+      - id: ruff
+        args: [ --config=promptops/ruff.toml ]
+        files: ^promptops/.*\.py$
+      - id: ruff
+        name: ruff (tools)
+        args: [ --config=tools/ruff.toml ]
+        files: ^tools/.*\.py$
+      - id: ruff
+        name: ruff (studio)
+        args: [ --config=studio/ruff.toml ]
+        files: ^studio/.*\.py$

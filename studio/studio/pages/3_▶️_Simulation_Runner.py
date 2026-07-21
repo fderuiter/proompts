@@ -8,7 +8,8 @@ import time
 import logging
 import io
 
-from promptops.utils import ROOT, load_yaml, iter_workflow_files, iter_prompt_files
+from promptops.utils import ROOT
+from studio.helpers import render_file_selector, load_asset_data
 from promptops.engine import run_workflow, simulate_prompt_execution
 from promptops.console import ConsoleInterface, set_console
 from streamlit.runtime.scriptrunner import add_script_run_ctx
@@ -36,15 +37,13 @@ class StreamlitThreadConsole(ConsoleInterface):
                 pass
 
 base_dir = str(ROOT)
-workflow_files = [os.path.relpath(str(f), base_dir) for f in iter_workflow_files()]
-prompt_files = [os.path.relpath(str(f), base_dir) for f in iter_prompt_files()]
 
 asset_type = st.radio("Asset Type to Simulate", ["Prompt", "Workflow"])
 
 if asset_type == "Prompt":
-    selected_file = st.selectbox("Select a prompt to simulate", prompt_files)
+    selected_file = render_file_selector("prompt", key="sim_prompt")
 else:
-    selected_file = st.selectbox("Select a workflow to simulate", workflow_files)
+    selected_file = render_file_selector("workflow", key="sim_workflow")
 
 st.sidebar.subheader("Engine Options")
 chaos_mode = st.sidebar.checkbox("Enable Chaos Mode (Simulate 429 errors & latency)", value=False)
@@ -62,7 +61,7 @@ if 'sim_state' not in st.session_state:
 
 if selected_file:
     file_path = os.path.join(base_dir, selected_file)
-    data = load_yaml(file_path) or {}
+    data = load_asset_data(file_path, raw=False)
     
     st.subheader("Global Inputs")
     initial_inputs = {}

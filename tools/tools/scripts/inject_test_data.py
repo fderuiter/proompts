@@ -11,18 +11,16 @@ HOW TO USE:
 python3 tools/tools/scripts/inject_test_data.py
 """
 
-import yaml
 from pathlib import Path
 import re
 
-from promptops.utils import iter_workflow_files
+from promptops.utils import iter_workflow_files, load_yaml, save_yaml
 
 ROOT_DIR = Path(__file__).resolve().parents[3]
 workflows = iter_workflow_files(ROOT_DIR)
 
 for wf in workflows:
-    with open(wf, 'r', encoding='utf-8') as f:
-        data = yaml.safe_load(f)
+    data = load_yaml(wf)
     
     if 'testData' not in data:
         print(f"Injecting testData into {wf}")
@@ -46,6 +44,5 @@ for wf in workflows:
             }
         ]
         
-        with open(wf, 'w', encoding='utf-8') as f:
-            yaml.dump(data, f, sort_keys=False)
+        save_yaml(wf, data)
 

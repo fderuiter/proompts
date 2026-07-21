@@ -17,6 +17,11 @@ npm install || exit 1
 echo "Running static accessibility scanner..."
 node scripts/accessibility-scan.js || exit 1
 
+echo "Running workspace boundary static checks..."
+uv run ruff check promptops/ --config promptops/ruff.toml || exit 1
+uv run ruff check tools/ --config tools/ruff.toml || exit 1
+uv run ruff check studio/ --config studio/ruff.toml || exit 1
+
 echo "Running YAML syntax validation..."
 uv run yamllint --strict . || exit 1
 

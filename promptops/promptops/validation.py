@@ -207,6 +207,72 @@ class PromptSchema(BaseModel):
                     pass
         return self
 
+class EvaluatorRule(BaseModel):
+    rule_type: str = Field(...)  # "Contains", "Does Not Contain", "Regex Match", "Length >", "Length <", "Custom Python"
+    value: str = Field(...)
+
+    @classmethod
+    def from_python_expression(cls, expr: str) -> "EvaluatorRule":
+        expr_str = expr.strip()
+        if expr_str.startswith("len(output) > ") and expr_str[14:].isdigit():
+            return cls(rule_type="Length >", value=expr_str[14:])
+        elif expr_str.startswith("len(output) < ") and expr_str[14:].isdigit():
+            return cls(rule_type="Length <", value=expr_str[14:])
+        elif " in output" in expr_str and expr_str.startswith("'") and expr_str.split("'")[1]:
+            if " not in output" in expr_str:
+                return cls(rule_type="Does Not Contain", value=expr_str.split("'")[1])
+            return cls(rule_type="Contains", value=expr_str.split("'")[1])
+        elif expr_str.startswith("re.search(") and "output" in expr_str:
+            try:
+                # e.g., re.search(r'pattern', output)
+                pattern = expr_str.split("r'")[1].split("',")[0]
+                return cls(rule_type="Regex Match", value=pattern)
+            except Exception:
+                pass
+        return cls(rule_type="Custom Python", value=expr_str)
+
+    def to_python_expression(self) -> str:
+        if self.rule_type == "Contains":
+            return f"'{self.value}' in output"
+        elif self.rule_type == "Does Not Contain":
+            return f"'{self.value}' not in output"
+        elif self.rule_type == "Regex Match":
+            return f"re.search(r'{self.value}', output)"
+        elif self.rule_type == "Length >":
+            return f"len(output) > {self.value if self.value.isdigit() else 0}"
+        elif self.rule_type == "Length <":
+            return f"len(output) < {self.value if self.value.isdigit() else 0}"
+        return self.value
+
+
+class TransitionConstraint(BaseModel):
+    variable: Optional[str] = None
+    operator: str = "Always"  # "Always", "==", "!=", ">", "<", "Custom Jinja2"
+    value: Optional[str] = None
+
+    @classmethod
+    def from_jinja_expression(cls, expr: str) -> "TransitionConstraint":
+        if not expr:
+            return cls(operator="Always")
+        import re
+        m = re.match(r"\{\%\s*if\s+(.+)\s+(==|!=|>|<|>=|<=)\s+(.+)\s*\%\}true\{\%\s*endif\s*\%\}", expr)
+        if m:
+            var_name = m.group(1).strip()
+            op = m.group(2).strip()
+            val = m.group(3).strip().strip("'\"")
+            return cls(variable=var_name, operator=op, value=val)
+        return cls(operator="Custom Jinja2", value=expr)
+
+    def to_jinja_expression(self) -> str:
+        if self.operator == "Always":
+            return ""
+        if self.operator == "Custom Jinja2":
+            return self.value or ""
+        if not self.variable:
+            return ""
+        val = self.value or ""
+        return f"{{% if {self.variable} {self.operator} '{val}' %}}true{{% endif %}}"
+
 class WorkflowInput(BaseModel):
     """Missing docstring."""
     name: str = Field(...)
@@ -237,8 +303,17 @@ class WorkflowSchema(BaseModel):
     steps: List[WorkflowStep] = Field(...)
     testData: Optional[List[Any]] = Field(None)
 
-def analyze_workflow_dependencies(workflow_file: str, workflow_data: dict, root_dir: str) -> List[str]:
+def analyze_workflow_dependencies(workflow_file: str, workflow_data: dict, root_dir: str, call_stack: Optional[Set[str]] = None) -> List[str]:
     """Missing docstring."""
+    if call_stack is None:
+        call_stack = set()
+    
+    abs_workflow_file = os.path.abspath(workflow_file)
+    if abs_workflow_file in call_stack:
+        return [f"Circular sub-workflow dependency detected involving: {abs_workflow_file}"]
+    
+    current_call_stack = call_stack | {abs_workflow_file}
+    
     issues = []
     try:
         wf = WorkflowSchema(**workflow_data)
@@ -364,12 +439,25 @@ def analyze_workflow_dependencies(workflow_file: str, workflow_data: dict, root_
                 issues.append(f"Step '{step.step_id}' references missing prompt file or skill: {step.prompt_file}")
                 continue
         else:
-            try:
-                prompt_schema = PromptSchema(**prompt_content)
-                required_vars = {v.name for v in prompt_schema.variables if v.required}
-            except ValidationError:
-                issues.append(f"Step '{step.step_id}' references invalid prompt file: {step.prompt_file}")
-                continue
+            is_workflow = step.prompt_file.endswith('.workflow.yaml') or step.prompt_file.endswith('.workflow.yml')
+            if is_workflow:
+                try:
+                    wf_schema = WorkflowSchema(**prompt_content)
+                    required_vars = {v.name for v in wf_schema.inputs}
+                    sub_issues = analyze_workflow_dependencies(prompt_path, prompt_content, root_dir, current_call_stack)
+                    for issue in sub_issues:
+                        if "Circular sub-workflow dependency" in issue:
+                            issues.append(issue)
+                except ValidationError:
+                    issues.append(f"Step '{step.step_id}' references invalid workflow file: {step.prompt_file}")
+                    continue
+            else:
+                try:
+                    prompt_schema = PromptSchema(**prompt_content)
+                    required_vars = {v.name for v in prompt_schema.variables if v.required}
+                except ValidationError:
+                    issues.append(f"Step '{step.step_id}' references invalid prompt file: {step.prompt_file}")
+                    continue
         
         def flatten_keys(d, parent_key=''):
             """Missing docstring."""
@@ -440,6 +528,59 @@ def update_last_modified(file_path: Path) -> bool:
         console.info(f"Updated last_modified in {file_path}")
         return True
     return False
+
+def detect_workflow_redundancies(workflows_data: List[tuple[str, dict]]):
+    step_signatures = {}
+    mapping_signatures = {}
+    sequence_signatures = {}
+
+    for file_path, content in workflows_data:
+        steps = content.get('steps', [])
+        seq = []
+        for i, step in enumerate(steps):
+            prompt_file = step.get('prompt_file')
+            map_inputs = step.get('map_inputs', {})
+            
+            # Step block signature
+            step_sig = json.dumps({"prompt_file": prompt_file, "map_inputs": map_inputs}, sort_keys=True)
+            seq.append(step_sig)
+            
+            if step_sig not in step_signatures:
+                step_signatures[step_sig] = []
+            step_signatures[step_sig].append((file_path, step.get('step_id')))
+            
+            # Mapping block signature (only if non-empty)
+            if map_inputs:
+                map_sig = json.dumps(map_inputs, sort_keys=True)
+                if map_sig not in mapping_signatures:
+                    mapping_signatures[map_sig] = []
+                mapping_signatures[map_sig].append((file_path, step.get('step_id')))
+        
+        # Sequence signatures (pairs of adjacent steps)
+        for i in range(len(seq) - 1):
+            seq_sig = f"{seq[i]}|||{seq[i+1]}"
+            if seq_sig not in sequence_signatures:
+                sequence_signatures[seq_sig] = []
+            sequence_signatures[seq_sig].append((file_path, steps[i].get('step_id'), steps[i+1].get('step_id')))
+
+    for sig, occurrences in step_signatures.items():
+        if len(occurrences) > 1:
+            files = list(set([o[0] for o in occurrences]))
+            if len(files) > 1:
+                console.warn(f"Duplicate step definition found across workflows: {files}. Consider extracting to a sub-workflow.")
+
+    for sig, occurrences in mapping_signatures.items():
+        if len(occurrences) > 1:
+            files = list(set([o[0] for o in occurrences]))
+            if len(files) > 1:
+                console.warn(f"Duplicate mapping block found across workflows: {files}. Consider consolidating.")
+
+    for sig, occurrences in sequence_signatures.items():
+        if len(occurrences) > 1:
+            files = list(set([o[0] for o in occurrences]))
+            if len(files) > 1:
+                console.warn(f"Duplicated step sequence found across workflows: {files}. Consider converting to a sub-workflow.")
+
 
 def validate_prompts(directory: str, strict: bool = False, files: Optional[List[str]] = None) -> bool:
     """Missing docstring."""
@@ -513,6 +654,7 @@ def validate_prompts(directory: str, strict: bool = False, files: Optional[List[
 
 
     # Validate Workflows
+    all_workflows = []
     for file_path in iter_workflow_files(dir_path):
         # Collect directory to check hygiene later
         path = file_path.parent
@@ -535,6 +677,8 @@ def validate_prompts(directory: str, strict: bool = False, files: Optional[List[
             
         if content.get('metadata', {}).get('status') == 'draft':
             continue
+            
+        all_workflows.append((str(file_path), content))
             
         issues = analyze_workflow_dependencies(str(file_path), content, dir_path)
         if issues:
@@ -562,6 +706,8 @@ def validate_prompts(directory: str, strict: bool = False, files: Optional[List[
                 except Exception as e:
                     console.error(f"Simulation failed on {file_path}: {e}")
                     ok = False
+
+    detect_workflow_redundancies(all_workflows)
 
     # Validate Skill Manifests
     from promptops.utils import iter_skill_manifests, parse_skill_manifest

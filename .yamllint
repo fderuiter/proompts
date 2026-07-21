@@ -13,3 +13,9 @@ ignore: |
   .tox/
   **/__pycache__/
   node_modules/
+  experimental/
+  workshop/
+  workshops/
+  draft/
+  drafts/
+  temp_drafts/
