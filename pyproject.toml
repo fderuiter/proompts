@@ -40,5 +40,5 @@ dev = [
 
 [tool.vulture]
 paths = [".", "scripts/", "promptops", "tools", "studio"]
-exclude = [".venv", "build", "dist", ".git", ".github", ".vscode", "scripts/apply_refactor.py"]
+exclude = [".venv", "build", "dist", ".git", ".github", ".vscode"]
 min_confidence = 70
