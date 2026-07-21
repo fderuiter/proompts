@@ -23,25 +23,33 @@ graph TD
     %% Define Nodes
     A[Developer Commits] -->|Triggers| B(validate_prompts.sh)
 
-    subgraph "Validation Phase"
-        C1[check_prompts.py]
-        C2[validate_prompt_schema.py]
-        C3[yamllint]
+    subgraph "Testing & QA"
+        C1[pytest]
+        C2[vulture]
+        C3[accessibility-scan.js]
     end
 
-    subgraph "Documentation Phase"
-        D1[update_docs_index.py]
-        D2[generate_docs.py]
-        D3[check_broken_links.py]
+    subgraph "Validation"
+        D1[promptops validate]
+        D2[test_docs_snippets.py]
+        D3[check_file_encoding.py]
     end
 
-    B -->|1. Validates| C1
-    B -->|2. Validates| C2
-    B -->|3. Validates| C3
+    subgraph "Documentation & Compliance"
+        E1[promptops docs]
+        E2[governance_manifest_generator.py]
+        E3[check_broken_links.py]
+    end
 
-    B -->|4. Updates| D1
-    B -->|5. Generates| D2
-    B -->|6. Scans| D3
+    B --> C1
+    B --> C2
+    B --> C3
+    B --> D1
+    B --> D2
+    B --> D3
+    B --> E1
+    B --> E2
+    B --> E3
 
     classDef default fill:#f9f9f9,stroke:#333,stroke-width:1px;
     classDef highlight fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
@@ -61,13 +69,15 @@ pip install -r requirements.txt
 | Path | Type | Description |
 | :--- | :--- | :--- |
 | **`check_broken_links.py`** | 🐍 Python | Broken Link Checker |
+| **`check_file_encoding.py`** | 🐍 Python | Check File Encoding Script |
 | **`enrich_prompts.py`** | 🐍 Python | Enrich Prompt Files - Automation Script |
 | **`fix_markdown_issues.py`** | 🐍 Python | Fix Markdown Issues Script |
 | **`generate_overviews.py`** | 🐍 Python | Generate Overviews Script |
 | **`generate_search_index.py`** | 🐍 Python | Generate Search Index Script |
 | **`governance_manifest_generator.py`** | 🐍 Python | This script scans prompt files and generates a regulatory compliance manifest (`compliance_manifest.json`) and a gap report (`gap_report.json`) against predefined standards like 21 CFR Part 11 and ISO 13485. |
-| **`inject_test_data.py`** | 🐍 Python | This script scans all `.workflow.yaml` files in the `workflows/` directory. If a workflow is missing the `testData` field, it automatically inspects the required inputs from the step mappings and injects a mock `testData` block. > [!WARNING] > Manual Setup Required: > This script currently hardcodes the target path as `/app/workflows/`, which is not a standard repository directory unless you are running inside a specific container structure. You must manually ensure this path exists or modify the script locally before execution. |
+| **`inject_test_data.py`** | 🐍 Python | This script scans all `.workflow.yaml` files in the `workflows/` directory. If a workflow is missing the `testData` field, it automatically inspects the required inputs from the step mappings and injects a mock `testData` block. |
 | **`test_check_broken_links.py`** | 🐍 Python | No description provided. |
+| **`test_docs_snippets.py`** | 🐍 Python | Documentation Snippet Test Script |
 | **`test_enrich_prompts.py`** | 🐍 Python | Test with an empty dictionary. |
 | **`test_fix_markdown_issues.py`** | 🐍 Python | No description provided. |
 | **`test_generate_overviews.py`** | 🐍 Python | Test metadata extraction when 'name' is present in YAML. |
