@@ -218,7 +218,16 @@ class WorkflowSchema(BaseModel):
     steps: List[WorkflowStep] = Field(...)
     testData: Optional[List[Any]] = Field(None)
 
-def analyze_workflow_dependencies(workflow_file: str, workflow_data: dict, root_dir: str) -> List[str]:
+def analyze_workflow_dependencies(workflow_file: str, workflow_data: dict, root_dir: str, call_stack: Optional[Set[str]] = None) -> List[str]:
+    if call_stack is None:
+        call_stack = set()
+    
+    abs_workflow_file = os.path.abspath(workflow_file)
+    if abs_workflow_file in call_stack:
+        return [f"Circular sub-workflow dependency detected involving: {abs_workflow_file}"]
+    
+    current_call_stack = call_stack | {abs_workflow_file}
+    
     issues = []
     try:
         wf = WorkflowSchema(**workflow_data)
@@ -343,12 +352,25 @@ def analyze_workflow_dependencies(workflow_file: str, workflow_data: dict, root_
                 issues.append(f"Step '{step.step_id}' references missing prompt file or skill: {step.prompt_file}")
                 continue
         else:
-            try:
-                prompt_schema = PromptSchema(**prompt_content)
-                required_vars = {v.name for v in prompt_schema.variables if v.required}
-            except ValidationError:
-                issues.append(f"Step '{step.step_id}' references invalid prompt file: {step.prompt_file}")
-                continue
+            is_workflow = step.prompt_file.endswith('.workflow.yaml') or step.prompt_file.endswith('.workflow.yml')
+            if is_workflow:
+                try:
+                    wf_schema = WorkflowSchema(**prompt_content)
+                    required_vars = {v.name for v in wf_schema.inputs}
+                    sub_issues = analyze_workflow_dependencies(prompt_path, prompt_content, root_dir, current_call_stack)
+                    for issue in sub_issues:
+                        if "Circular sub-workflow dependency" in issue:
+                            issues.append(issue)
+                except ValidationError:
+                    issues.append(f"Step '{step.step_id}' references invalid workflow file: {step.prompt_file}")
+                    continue
+            else:
+                try:
+                    prompt_schema = PromptSchema(**prompt_content)
+                    required_vars = {v.name for v in prompt_schema.variables if v.required}
+                except ValidationError:
+                    issues.append(f"Step '{step.step_id}' references invalid prompt file: {step.prompt_file}")
+                    continue
         
         def flatten_keys(d, parent_key=''):
             items = []
@@ -417,6 +439,59 @@ def update_last_modified(file_path: Path) -> bool:
         console.info(f"Updated last_modified in {file_path}")
         return True
     return False
+
+def detect_workflow_redundancies(workflows_data: List[tuple[str, dict]]):
+    step_signatures = {}
+    mapping_signatures = {}
+    sequence_signatures = {}
+
+    for file_path, content in workflows_data:
+        steps = content.get('steps', [])
+        seq = []
+        for i, step in enumerate(steps):
+            prompt_file = step.get('prompt_file')
+            map_inputs = step.get('map_inputs', {})
+            
+            # Step block signature
+            step_sig = json.dumps({"prompt_file": prompt_file, "map_inputs": map_inputs}, sort_keys=True)
+            seq.append(step_sig)
+            
+            if step_sig not in step_signatures:
+                step_signatures[step_sig] = []
+            step_signatures[step_sig].append((file_path, step.get('step_id')))
+            
+            # Mapping block signature (only if non-empty)
+            if map_inputs:
+                map_sig = json.dumps(map_inputs, sort_keys=True)
+                if map_sig not in mapping_signatures:
+                    mapping_signatures[map_sig] = []
+                mapping_signatures[map_sig].append((file_path, step.get('step_id')))
+        
+        # Sequence signatures (pairs of adjacent steps)
+        for i in range(len(seq) - 1):
+            seq_sig = f"{seq[i]}|||{seq[i+1]}"
+            if seq_sig not in sequence_signatures:
+                sequence_signatures[seq_sig] = []
+            sequence_signatures[seq_sig].append((file_path, steps[i].get('step_id'), steps[i+1].get('step_id')))
+
+    for sig, occurrences in step_signatures.items():
+        if len(occurrences) > 1:
+            files = list(set([o[0] for o in occurrences]))
+            if len(files) > 1:
+                console.warn(f"Duplicate step definition found across workflows: {files}. Consider extracting to a sub-workflow.")
+
+    for sig, occurrences in mapping_signatures.items():
+        if len(occurrences) > 1:
+            files = list(set([o[0] for o in occurrences]))
+            if len(files) > 1:
+                console.warn(f"Duplicate mapping block found across workflows: {files}. Consider consolidating.")
+
+    for sig, occurrences in sequence_signatures.items():
+        if len(occurrences) > 1:
+            files = list(set([o[0] for o in occurrences]))
+            if len(files) > 1:
+                console.warn(f"Duplicated step sequence found across workflows: {files}. Consider converting to a sub-workflow.")
+
 
 def validate_prompts(directory: str, strict: bool = False, files: Optional[List[str]] = None) -> bool:
     ok = True
@@ -489,6 +564,7 @@ def validate_prompts(directory: str, strict: bool = False, files: Optional[List[
 
 
     # Validate Workflows
+    all_workflows = []
     for file_path in iter_workflow_files(dir_path):
         # Collect directory to check hygiene later
         path = file_path.parent
@@ -511,6 +587,8 @@ def validate_prompts(directory: str, strict: bool = False, files: Optional[List[
             
         if content.get('metadata', {}).get('status') == 'draft':
             continue
+            
+        all_workflows.append((str(file_path), content))
             
         issues = analyze_workflow_dependencies(str(file_path), content, dir_path)
         if issues:
@@ -538,6 +616,8 @@ def validate_prompts(directory: str, strict: bool = False, files: Optional[List[
                 except Exception as e:
                     console.error(f"Simulation failed on {file_path}: {e}")
                     ok = False
+
+    detect_workflow_redundancies(all_workflows)
 
     # Validate Skill Manifests
     from promptops.utils import iter_skill_manifests, parse_skill_manifest

@@ -380,8 +380,10 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
              if os.path.exists(alt_prompt_file):
                  prompt_file = alt_prompt_file
 
+        is_workflow = prompt_file.endswith('.workflow.yaml') or prompt_file.endswith('.workflow.yml')
+
         prompt_data = load_yaml(prompt_file) if os.path.exists(prompt_file) else {}
-        if not prompt_data:
+        if not is_workflow and not prompt_data:
             path_obj = Path(prompt_file)
             from promptops.utils import resolve_fallback_prompt
             prompt_data = resolve_fallback_prompt(path_obj)
@@ -397,10 +399,17 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
         for var_name, template in step.get('map_inputs', {}).items():
             prompt_inputs[var_name] = resolve_value(template, workflow_state, strict_mode)
 
-        logger.debug(f"Resolved prompt inputs: {list(prompt_inputs.keys())}")
+        logger.debug(f"Resolved inputs: {list(prompt_inputs.keys())}")
         console.step_header(f"Simulating Step: {step_id} (Iteration {execution_counts[step_id] + 1})")
 
-        output = simulate_prompt_execution(prompt_data, prompt_inputs, prompt_file=prompt_file, strict_mode=strict_mode, chaos_mode=chaos_mode, fidelity_report=fidelity_report)
+        if is_workflow:
+            logger.info(f"Executing nested workflow: {prompt_file}")
+            # Ensure we pass the checkpoint variables implicitly if needed?
+            # Actually just recursively run
+            sub_workflow_state = run_workflow(prompt_file, prompt_inputs, verbose=verbose, strict_mode=strict_mode, chaos_mode=chaos_mode, fidelity_report=fidelity_report)
+            output = sub_workflow_state
+        else:
+            output = simulate_prompt_execution(prompt_data, prompt_inputs, prompt_file=prompt_file, strict_mode=strict_mode, chaos_mode=chaos_mode, fidelity_report=fidelity_report)
 
         if step_id not in workflow_state['steps']:
             workflow_state['steps'][step_id] = {'output': output, 'history': [output], 'iterations': 1}
