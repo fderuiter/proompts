@@ -21,10 +21,11 @@ python3 tools/tools/scripts/fix_markdown_issues.py
 
 from __future__ import annotations
 
+import argparse
 from pathlib import Path
 import re
 
-from promptops.utils import ROOT
+from promptops.utils import ROOT, iter_markdown_files
 
 TODO_FILE = "todo_fix.md"
 
@@ -39,7 +40,9 @@ def load_paths(todo_path: Path):
     with todo_path.open(encoding='utf-8') as f:
         for line in f:
             line = line.strip()
-            if line.startswith("- ./") and line.endswith(".md"):
+            if line.startswith("- [ ] ./") and line.endswith(".md"):
+                paths.append(line[8:])
+            elif line.startswith("- ./") and line.endswith(".md"):
                 paths.append(line[3:])
     return paths
 
@@ -217,17 +220,59 @@ def process_file(path: Path):
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Fix Markdown Issues")
+    parser.add_argument("targets", nargs="*", help="Specific files or directories to format")
+    args = parser.parse_args()
+
+    if args.targets:
+        targets = []
+        for t in args.targets:
+            p = Path(t).resolve()
+            if p.is_dir():
+                targets.extend(iter_markdown_files(p))
+            elif p.is_file() and p.name.endswith(".md"):
+                targets.append(p)
+            elif not p.exists():
+                print(f"Target not found: {t}")
+        
+        changed = False
+        for p in targets:
+            if p.exists():
+                if process_file(p):
+                    try:
+                        rel = p.relative_to(ROOT)
+                    except ValueError:
+                        rel = p
+                    print(f"Fixed ./{rel}")
+                    changed = True
+        if not changed:
+            print("No changes made.")
+        return
+
     todo_path = ROOT / TODO_FILE
     if not todo_path.exists():
-        print(f"{TODO_FILE} not found")
+        markdown_files = list(iter_markdown_files(ROOT))
+        if not markdown_files:
+            print("No markdown files found to format.")
+            return
+        
+        with todo_path.open("w", encoding="utf-8") as f:
+            for mf in markdown_files:
+                try:
+                    rel = mf.relative_to(ROOT)
+                except ValueError:
+                    rel = mf
+                f.write(f"- [ ] ./{rel}\n")
+        print(f"Created {TODO_FILE} with discovered markdown files. Please review and run again.")
         return
+
     paths = load_paths(todo_path)
     changed = False
     for rel in paths:
-        p = Path(rel)
+        p = ROOT / rel
         if p.exists():
             if process_file(p):
-                print(f"Fixed {rel}")
+                print(f"Fixed ./{rel}")
                 changed = True
     if not changed:
         print("No changes made.")
