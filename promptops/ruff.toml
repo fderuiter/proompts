@@ -1,0 +1,6 @@
+[lint]
+select = ["TID251"]
+
+[lint.flake8-tidy-imports.banned-api]
+"tools".msg = "Boundary violation: Cannot import tools from core toolkit"
+"studio".msg = "Boundary violation: Cannot import studio from core toolkit"
