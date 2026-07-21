@@ -6,14 +6,15 @@ This document is auto-generated from the CLI definition. Do not edit manually.
 
 ```text
 usage: promptops [-h]
-                 {init,validate,simulate,docs,agent,vibe,workflow,search,export-schemas,generate-cli-docs}
+                 {init,verify,validate,simulate,docs,agent,vibe,workflow,search,export-schemas,generate-cli-docs}
                  ...
 
 PromptOps Toolkit CLI
 
 positional arguments:
-  {init,validate,simulate,docs,agent,vibe,workflow,search,export-schemas,generate-cli-docs}
+  {init,verify,validate,simulate,docs,agent,vibe,workflow,search,export-schemas,generate-cli-docs}
     init                Initialize PromptOps in the current repository
+    verify              Run the central verification script locally
     validate            Validate prompt files
     simulate            Simulate a prompt
     docs                Generate prompt documentation
@@ -33,6 +34,16 @@ options:
 
 ```text
 usage: promptops init [-h]
+
+options:
+  -h, --help  show this help message and exit
+
+```
+
+### `promptops verify`
+
+```text
+usage: promptops verify [-h]
 
 options:
   -h, --help  show this help message and exit

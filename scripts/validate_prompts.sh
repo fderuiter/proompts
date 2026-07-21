@@ -5,14 +5,19 @@
 cd "$(dirname "$0")/.."
 
 echo "Running test suite..."
-uv run playwright install --with-deps chromium || exit 1
+if [ "${SKIP_SETUP:-0}" != "1" ]; then
+    echo "Installing Playwright dependencies..."
+    uv run playwright install --with-deps chromium || exit 1
+fi
 uv run pytest || exit 1
 
 echo "Building static HTML docs..."
 uv run mkdocs build --clean --strict || exit 1
 
-echo "Installing Node.js dependencies..."
-npm install || exit 1
+if [ "${SKIP_SETUP:-0}" != "1" ]; then
+    echo "Installing Node.js dependencies..."
+    npm install || exit 1
+fi
 
 echo "Running static accessibility scanner..."
 node scripts/accessibility-scan.js || exit 1

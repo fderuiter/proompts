@@ -36,39 +36,50 @@ async function run() {
   const context = await browser.newContext();
   let hasViolations = false;
   
-  const CONCURRENCY = 8;
-  const page = await context.newPage();
-  for (let i = 0; i < htmlFiles.length; i++) {
-    const file = htmlFiles[i];
-    const fileUrl = url.pathToFileURL(file).href;
-    console.log(`[${i+1}/${htmlFiles.length}] Scanning ${fileUrl}...`);
-    try {
-      await page.goto(fileUrl, { waitUntil: 'load' });
-      const results = await new AxeBuilder({ page })
-        .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-        .analyze();
+  const CONCURRENCY = 16;
+  let i = 0;
+  
+  async function worker() {
+    const page = await context.newPage();
+    while (i < htmlFiles.length) {
+      const currentIndex = i++;
+      const file = htmlFiles[currentIndex];
+      const fileUrl = url.pathToFileURL(file).href;
+      console.log(`[${currentIndex+1}/${htmlFiles.length}] Scanning ${fileUrl}...`);
+      try {
+        await page.goto(fileUrl, { waitUntil: 'load', timeout: 30000 });
+        const results = await new AxeBuilder({ page })
+          .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+          .analyze();
 
-      if (results.violations.length > 0) {
-        hasViolations = true;
-        console.error(`\nAccessibility violations found in ${fileUrl}:`);
-        for (const violation of results.violations) {
-          console.error(`\nRule: ${violation.id} (${violation.impact})`);
-          console.error(`Description: ${violation.description}`);
-          console.error(`Help URL: ${violation.helpUrl}`);
-          for (const node of violation.nodes) {
-            console.error(`  - Target: ${node.target.join(', ')}`);
-            console.error(`    HTML: ${node.html}`);
-            if (node.failureSummary) {
-              console.error(`    Summary: ${node.failureSummary}`);
+        if (results.violations.length > 0) {
+          hasViolations = true;
+          console.error(`\nAccessibility violations found in ${fileUrl}:`);
+          for (const violation of results.violations) {
+            console.error(`\nRule: ${violation.id} (${violation.impact})`);
+            console.error(`Description: ${violation.description}`);
+            console.error(`Help URL: ${violation.helpUrl}`);
+            for (const node of violation.nodes) {
+              console.error(`  - Target: ${node.target.join(', ')}`);
+              console.error(`    HTML: ${node.html}`);
+              if (node.failureSummary) {
+                console.error(`    Summary: ${node.failureSummary}`);
+              }
             }
           }
         }
+      } catch (err) {
+        console.error(`Error scanning ${fileUrl}:`, err);
       }
-    } catch (err) {
-      console.error(`Error scanning ${fileUrl}:`, err);
     }
+    await page.close();
   }
-  await page.close();
+
+  const workers = [];
+  for (let w = 0; w < CONCURRENCY; w++) {
+    workers.push(worker());
+  }
+  await Promise.all(workers);
 
   await browser.close();
 
