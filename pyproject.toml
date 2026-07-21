@@ -34,6 +34,7 @@ dev = [
     "mypy>=1.19.1",
     "playwright>=1.61.0",
     "pytest>=8.4.2",
+    "ruff>=0.1.0",
     "vulture>=2.16",
     "yamllint>=1.37.1",
 ]
@@ -42,3 +43,19 @@ dev = [
 paths = [".", "scripts/", "promptops", "tools", "studio"]
 exclude = [".venv", "build", "dist", ".git", ".github", ".vscode"]
 min_confidence = 70
+
+[tool.ruff]
+# Respect standard exclusions (add any repo-specific ones if necessary)
+exclude = [
+    ".git",
+    ".venv",
+    "venv",
+    "node_modules",
+    "build",
+    "dist"
+]
+
+[tool.ruff.lint]
+# Select rules: F401 (unused import) and F841 (unused variable)
+select = ["F401", "F841"]
+fixable = ["F401", "F841"]

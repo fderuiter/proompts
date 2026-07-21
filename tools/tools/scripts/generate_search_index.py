@@ -16,8 +16,6 @@ python3 tools/tools/scripts/generate_search_index.py
 """
 
 import json
-import sys
-from pathlib import Path
 
 
 from promptops.utils import ROOT, iter_prompt_files, iter_workflow_files, load_yaml, iter_skill_manifests, parse_skill_manifest

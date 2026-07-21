@@ -1,7 +1,6 @@
 from streamlit.testing.v1 import AppTest
 from pathlib import Path
 import os
-import shutil
 
 STUDIO_DIR = Path(__file__).parent.parent / "studio"
 ROOT_DIR = Path(__file__).parent.parent

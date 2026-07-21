@@ -12,19 +12,15 @@ HOW TO USE:
 python3 tools/tools/scripts/governance_manifest_generator.py
 """
 
-from typing import Any
 import json
 import hashlib
 import re
 from datetime import datetime, timezone
-from pathlib import Path
-import sys
 import yaml
 
 # Ensure we can import from the current directory
 try:
     from promptops.utils import (
-        PROMPTS_DIR, 
         iter_prompt_files, 
         load_yaml, 
         ROOT,

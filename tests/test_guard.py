@@ -1,9 +1,6 @@
 import unittest
-import json
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 
-import sys
-from pathlib import Path
 
 from promptops.guard import guard, ProomptsValidationError  # type: ignore
 

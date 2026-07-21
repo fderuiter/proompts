@@ -16,6 +16,13 @@ repos:
 
   - repo: local
     hooks:
+      - id: ruff-prune
+        name: Auto-prune Unused Imports and Variables
+        entry: uv run ruff check --select F401,F841 --fix
+        language: system
+        types: [python]
+        stages: [commit]
+
       - id: promptops-validate
         name: Validate and Format Prompts
         entry: uv run promptops validate --strict

@@ -1,6 +1,4 @@
-import sys
 import os
-import yaml
 import json
 import streamlit as st
 import pandas as pd

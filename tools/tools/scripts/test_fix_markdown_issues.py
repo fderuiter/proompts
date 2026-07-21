@@ -1,6 +1,4 @@
 import unittest
-import sys
-from pathlib import Path
 
 
 from tools.scripts.fix_markdown_issues import fix_trailing_spaces, fix_codeblock_spacing, fix_header_style

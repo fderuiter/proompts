@@ -1,7 +1,5 @@
 import argparse
 import sys
-import os
-import json
 import logging
 from promptops.validation import validate_prompts
 from promptops.simulation import simulate_prompt
@@ -51,7 +49,7 @@ def get_parser():
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     # Init
-    init_parser = subparsers.add_parser("init", help="Initialize PromptOps in the current repository")
+    subparsers.add_parser("init", help="Initialize PromptOps in the current repository")
 
     # Validate
     validate_parser = subparsers.add_parser("validate", help="Validate prompt files")
@@ -275,7 +273,6 @@ def main():
             console.info(f"- Latency Simulated: {'Yes' if fidelity_report['latency_simulated'] else 'No'}")
     elif args.command == "generate-cli-docs":
         # Generate markdown documentation for the parser
-        import io
         out = []
         out.append("# PromptOps CLI Reference\n")
         out.append("This document is auto-generated from the CLI definition. Do not edit manually.\n")

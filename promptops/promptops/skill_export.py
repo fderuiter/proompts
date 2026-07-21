@@ -2,9 +2,8 @@ import os
 import json
 import re
 from pathlib import Path
-from typing import Dict, Any, Set, List, Optional
+from typing import Dict, Any, List, Optional
 import yaml
-from pydantic import ValidationError
 
 # To avoid circular imports, we don't import PromptSchema here if not needed
 # or we import it inside functions.

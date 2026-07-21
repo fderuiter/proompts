@@ -1,7 +1,5 @@
 import sys
 import json
-import re
-import hashlib
 from pathlib import Path
 from typing import Tuple, List, Dict, Any
 

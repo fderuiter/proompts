@@ -6,8 +6,7 @@ import yaml
 import pathspec
 from typing import Iterator, Dict, Any, List, Optional, Set, Union, Tuple
 
-from jinja2.sandbox import SandboxedEnvironment
-from jinja2 import FileSystemLoader, Undefined, meta, Environment
+from jinja2 import Undefined, meta, Environment
 
 class KeepUndefined(Undefined):
     def __getattr__(self, name):
@@ -229,7 +228,7 @@ def load_yaml(path: Union[str, Path], raw: bool = False) -> Dict[str, Any]:
         return {}
     except FileNotFoundError:
         return {}
-    except Exception as e:
+    except Exception:
         return {}
 
 def save_yaml(path: Union[str, Path], data: Dict[str, Any]) -> None:
@@ -412,7 +411,7 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
                 instructions = '{% import "common/macros.j2" as macros %}\n' + instructions
             template = env.from_string(instructions)
             instructions = template.render()
-        except Exception as e:
+        except Exception:
             pass
 
         # Split instructions into messages
