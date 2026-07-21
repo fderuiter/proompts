@@ -37,3 +37,4 @@ extra_css:
 
 extra_javascript:
   - js/explorer.js
+  - js/fix-accessibility.js
