@@ -225,30 +225,12 @@ for i, ev in enumerate(st.session_state['evaluators']):
         with col2:
             st.markdown("**Logic Builder**")
             
-            # Pre-parse common patterns from existing python strings
-            py_logic = ev.get('python', '')
-            eval_type = "Custom Python"
-            eval_target = ""
-            eval_value = ""
+            from promptops.validation import EvaluatorRule
             
-            if py_logic.startswith("len(output) > ") and py_logic[14:].isdigit():
-                eval_type = "Length >"
-                eval_value = py_logic[14:]
-            elif py_logic.startswith("len(output) < ") and py_logic[14:].isdigit():
-                eval_type = "Length <"
-                eval_value = py_logic[14:]
-            elif " in output" in py_logic and py_logic.startswith("'") and py_logic.split("'")[1]:
-                eval_type = "Contains"
-                eval_value = py_logic.split("'")[1]
-            elif " not in output" in py_logic and py_logic.startswith("'"):
-                eval_type = "Does Not Contain"
-                eval_value = py_logic.split("'")[1]
-            elif py_logic.startswith("re.search(") and "output" in py_logic:
-                eval_type = "Regex Match"
-                try:
-                    eval_value = py_logic.split("r'")[1].split("',")[0]
-                except:
-                    eval_value = ""
+            py_logic = ev.get('python', '')
+            rule = EvaluatorRule.from_python_expression(py_logic)
+            eval_type = rule.rule_type
+            eval_value = rule.value
             
             subcol1, subcol2 = st.columns(2)
             with subcol1:
@@ -257,16 +239,8 @@ for i, ev in enumerate(st.session_state['evaluators']):
             with subcol2:
                 if sel_type != "Custom Python":
                     val = st.text_input("Value", value=eval_value, key=f"ev_val_{i}")
-                    if sel_type == "Contains":
-                        st.session_state['evaluators'][i]['python'] = f"'{val}' in output"
-                    elif sel_type == "Does Not Contain":
-                        st.session_state['evaluators'][i]['python'] = f"'{val}' not in output"
-                    elif sel_type == "Regex Match":
-                        st.session_state['evaluators'][i]['python'] = f"re.search(r'{val}', output)"
-                    elif sel_type == "Length >":
-                        st.session_state['evaluators'][i]['python'] = f"len(output) > {val if val.isdigit() else 0}"
-                    elif sel_type == "Length <":
-                        st.session_state['evaluators'][i]['python'] = f"len(output) < {val if val.isdigit() else 0}"
+                    new_rule = EvaluatorRule(rule_type=sel_type, value=val)
+                    st.session_state['evaluators'][i]['python'] = new_rule.to_python_expression()
                 else:
                     st.session_state['evaluators'][i]['python'] = st.text_area("Custom Python", value=py_logic, key=f"ev_py_{i}")
         with col3:

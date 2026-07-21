@@ -193,6 +193,72 @@ class PromptSchema(BaseModel):
                     pass
         return self
 
+class EvaluatorRule(BaseModel):
+    rule_type: str = Field(...)  # "Contains", "Does Not Contain", "Regex Match", "Length >", "Length <", "Custom Python"
+    value: str = Field(...)
+
+    @classmethod
+    def from_python_expression(cls, expr: str) -> "EvaluatorRule":
+        expr_str = expr.strip()
+        if expr_str.startswith("len(output) > ") and expr_str[14:].isdigit():
+            return cls(rule_type="Length >", value=expr_str[14:])
+        elif expr_str.startswith("len(output) < ") and expr_str[14:].isdigit():
+            return cls(rule_type="Length <", value=expr_str[14:])
+        elif " in output" in expr_str and expr_str.startswith("'") and expr_str.split("'")[1]:
+            if " not in output" in expr_str:
+                return cls(rule_type="Does Not Contain", value=expr_str.split("'")[1])
+            return cls(rule_type="Contains", value=expr_str.split("'")[1])
+        elif expr_str.startswith("re.search(") and "output" in expr_str:
+            try:
+                # e.g., re.search(r'pattern', output)
+                pattern = expr_str.split("r'")[1].split("',")[0]
+                return cls(rule_type="Regex Match", value=pattern)
+            except Exception:
+                pass
+        return cls(rule_type="Custom Python", value=expr_str)
+
+    def to_python_expression(self) -> str:
+        if self.rule_type == "Contains":
+            return f"'{self.value}' in output"
+        elif self.rule_type == "Does Not Contain":
+            return f"'{self.value}' not in output"
+        elif self.rule_type == "Regex Match":
+            return f"re.search(r'{self.value}', output)"
+        elif self.rule_type == "Length >":
+            return f"len(output) > {self.value if self.value.isdigit() else 0}"
+        elif self.rule_type == "Length <":
+            return f"len(output) < {self.value if self.value.isdigit() else 0}"
+        return self.value
+
+
+class TransitionConstraint(BaseModel):
+    variable: Optional[str] = None
+    operator: str = "Always"  # "Always", "==", "!=", ">", "<", "Custom Jinja2"
+    value: Optional[str] = None
+
+    @classmethod
+    def from_jinja_expression(cls, expr: str) -> "TransitionConstraint":
+        if not expr:
+            return cls(operator="Always")
+        import re
+        m = re.match(r"\{\%\s*if\s+(.+)\s+(==|!=|>|<|>=|<=)\s+(.+)\s*\%\}true\{\%\s*endif\s*\%\}", expr)
+        if m:
+            var_name = m.group(1).strip()
+            op = m.group(2).strip()
+            val = m.group(3).strip().strip("'\"")
+            return cls(variable=var_name, operator=op, value=val)
+        return cls(operator="Custom Jinja2", value=expr)
+
+    def to_jinja_expression(self) -> str:
+        if self.operator == "Always":
+            return ""
+        if self.operator == "Custom Jinja2":
+            return self.value or ""
+        if not self.variable:
+            return ""
+        val = self.value or ""
+        return f"{{% if {self.variable} {self.operator} '{val}' %}}true{{% endif %}}"
+
 class WorkflowInput(BaseModel):
     name: str = Field(...)
     description: Optional[str] = Field(None)
