@@ -13,7 +13,7 @@ This document provides the tribal knowledge, technical constraints, and operatio
 **Core Technologies**:
 - **Data Format**: YAML (`.prompt.yaml`, `.workflow.yaml`)
 - **Validation**: Python 3.x
-- **Documentation**: Jekyll (Markdown)
+- **Documentation**: MkDocs (Markdown)
 - **CI/CD**: GitHub Actions
 
 **Key Dependencies**: `pyyaml`, `yamllint`, `pydantic`, `jinja2`, `pytest`
@@ -40,11 +40,7 @@ python3 tools/tools/scripts/validate_prompt_schema.py
 yamllint .
 ```
 
-### Documentation
-```bash
-# Generate documentation indices and overviews
-python3 tools/tools/scripts/generate_docs.py
-```
+
 
 ## 3. Testing & Validation
 

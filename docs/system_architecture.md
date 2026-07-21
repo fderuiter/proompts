@@ -23,7 +23,6 @@ graph TD
         D1(check_prompts.py)
         D2(validate_prompt_schema.py)
         D3(promptops workflow)
-        D4(generate_docs.py)
     end
 
     %% Flow of Validation
@@ -31,16 +30,11 @@ graph TD
     C1 -->|Schema Checked by| D2
     C2 -->|Simulated by| D3
 
-    %% Output
-    C1 -->|Generates| D4
-    C2 -->|Generates| D4
-
     subgraph "Output Artifacts"
         E1["docs/<br>(Markdown site)"]
         E2[Simulation Logs]
     end
 
-    D4 -->|Builds| E1
     D3 -->|Outputs| E2
 
     classDef default fill:#f9f9f9,stroke:#333,stroke-width:1px;
@@ -79,7 +73,6 @@ A comprehensive suite of scripts ensures repository health and consistency.
 
 ### 5. Documentation Generation
 Documentation is treated as a first-class build artifact, automatically generated from the source code.
-- **`generate_docs.py`**: Scans the repository to build the static site structure in `docs/`.
 - **`promptops docs`**: Regenerates the main `docs/index.md` based on current prompt metadata.
 - **Workflow Diagrams**: Integrated into the documentation generation process, visualizing `.workflow.yaml` files using Mermaid.js.
 
@@ -88,4 +81,4 @@ Documentation is treated as a first-class build artifact, automatically generate
 - **`prompts/`**: The source of truth for all prompt definitions, with discovery driven by metadata tags rather than deep directory nesting.
 - **`workflows/`**: Workflow definitions that orchestrate prompts.
 - **`tools/tools/scripts/`**: The build, validation, and maintenance toolchain.
-- **`docs/`**: The generated documentation site (Jekyll-ready).
+- **`docs/`**: The generated documentation site (MkDocs-ready).

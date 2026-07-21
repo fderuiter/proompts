@@ -1,6 +1,6 @@
 # proompts
 
-[![Deploy Jekyll site](https://github.com/fderuiter/proompts/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/deploy-pages.yml)
+[![Deploy MkDocs site](https://github.com/fderuiter/proompts/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/deploy-pages.yml)
 [![YAML Validation](https://github.com/fderuiter/proompts/actions/workflows/yaml-validation.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/yaml-validation.yml)
 [![Repository Checks](https://github.com/fderuiter/proompts/actions/workflows/repo-checks.yml/badge.svg)](https://github.com/fderuiter/proompts/actions/workflows/repo-checks.yml)
 
@@ -128,8 +128,6 @@ This script runs the following checks:
 - `cleanup_mac_files`: Removes macOS metadata files (`._*`) to ensure a clean state.
 - `check_prompts`: Verifies file naming conventions and directory structure.
 - `validate_prompt_schema`: Ensures prompts follow the required schema (e.g., `messages`, `testData`).
-- `update_docs_index`: Checks if the documentation index is up-to-date.
-- `generate_docs`: Generates category and workflow documentation pages.
 - `check_broken_links`: Scans for broken internal links in documentation.
 - `yamllint`: Lints YAML files for formatting.
 

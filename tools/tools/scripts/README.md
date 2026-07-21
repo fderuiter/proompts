@@ -30,8 +30,6 @@ graph TD
     end
 
     subgraph "Documentation Phase"
-        D1[update_docs_index.py]
-        D2[generate_docs.py]
         D3[check_broken_links.py]
     end
 
@@ -39,9 +37,7 @@ graph TD
     B -->|2. Validates| C2
     B -->|3. Validates| C3
 
-    B -->|4. Updates| D1
-    B -->|5. Generates| D2
-    B -->|6. Scans| D3
+    B -->|4. Scans| D3
 
     classDef default fill:#f9f9f9,stroke:#333,stroke-width:1px;
     classDef highlight fill:#e1f5fe,stroke:#01579b,stroke-width:2px;

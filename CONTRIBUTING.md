@@ -85,7 +85,6 @@ Run the master script from the repository root:
 *   `cleanup_mac_files`: Removes hidden macOS files (`._*`) that break parsing.
 *   `check_prompts`: Validates naming conventions and directory structures.
 *   `validate_prompt_schema`: Ensures your YAML matches the Pydantic schema (checks for missing fields or empty `testData`).
-*   `generate_docs` & `update_docs_index`: Generate the Markdown documentation site artifacts used in CI builds.
 *   `yamllint`: Checks for formatting issues.
 
 ### Step 4: Submit Your Pull Request
