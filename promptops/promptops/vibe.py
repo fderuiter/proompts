@@ -1,12 +1,9 @@
 import json
 import os
-import sys
-import time
 import urllib.request
 import urllib.error
 from datetime import datetime
 from pathlib import Path
-import yaml
 
 from promptops.utils import ROOT, iter_prompt_files, iter_skill_manifests, parse_skill_manifest, load_yaml, derive_category
 
@@ -31,18 +28,6 @@ class VibeMonitor:
             prompts.append((sm, "manifest"))
             
         return prompts
-
-    def _extract_synthetic_data(self, data):
-        test_data = data.get("testData", [])
-        if test_data and isinstance(test_data, list):
-            # could be variables list or just dict
-            first = test_data[0]
-            if "variables" in first:
-                return first["variables"]
-            if "inputs" in first:
-                return first["inputs"]
-            return first
-        return {"mock": "synthetic mock data"}
 
     def _call_llm(self, prompt_text: str):
         if not self.api_key:

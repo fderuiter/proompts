@@ -35,7 +35,6 @@ graph TD
 
     subgraph "The Engine Room (scripts/)"
         D1(validate_prompts.sh)
-        D2(apply_refactor.py)
     end
 
     %% Flow of Validation
