@@ -4,10 +4,6 @@ inject_test_data.py: Data Injection Utility
 WHAT:
 This script scans all `.workflow.yaml` files in the `workflows/` directory. If a workflow is missing the `testData` field, it automatically inspects the required inputs from the step mappings and injects a mock `testData` block.
 
-> [!WARNING]
-> Manual Setup Required:
-> This script currently hardcodes the target path as `/app/workflows/`, which is not a standard repository directory unless you are running inside a specific container structure. You must manually ensure this path exists or modify the script locally before execution.
-
 WHY:
 Ensures all workflows have baseline test data for simulation and validation without requiring manual data entry for every single required input.
 

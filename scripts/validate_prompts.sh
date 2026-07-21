@@ -17,6 +17,9 @@ npm install || exit 1
 echo "Running static accessibility scanner..."
 node scripts/accessibility-scan.js || exit 1
 
+echo "Running YAML syntax validation..."
+uv run yamllint --strict . || exit 1
+
 echo "Validating prompts and workflows with CLI..."
 uv run promptops validate --strict || exit 1
 

@@ -1,5 +1,15 @@
+extends: default
+
+rules:
+  line-length: disable
+  document-start: disable
+  truthy: disable
+  indentation:
+    spaces: consistent
+    indent-sequences: consistent
+
 ignore: |
   .venv/
   .tox/
   **/__pycache__/
-
+  node_modules/

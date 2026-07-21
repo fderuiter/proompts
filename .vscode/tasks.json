@@ -4,11 +4,18 @@
     {
       "label": "Simulate Workflow",
       "type": "shell",
-      "command": "python3",
+      "command": "${command:python.interpreterPath}",
       "args": [
-        "promptops workflow",
+        "-m",
+        "promptops.cli",
+        "workflow",
         "${file}"
       ],
+      "options": {
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}/promptops"
+        }
+      },
       "group": {
         "kind": "test",
         "isDefault": true
@@ -23,7 +30,7 @@
     {
       "label": "Enrich Prompt",
       "type": "shell",
-      "command": "python3",
+      "command": "${command:python.interpreterPath}",
       "args": [
         "tools/tools/scripts/enrich_prompts.py",
         "${file}"

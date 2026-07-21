@@ -34,3 +34,6 @@ search.json
 
 ._*
 
+
+# Simulation Checkpoints
+.checkpoints/

@@ -5,12 +5,16 @@
       "name": "Simulate Workflow",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}/promptops workflow",
+      "module": "promptops.cli",
       "args": [
+        "workflow",
         "${file}"
       ],
       "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}"
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/promptops"
+      }
     },
     {
       "name": "Enrich Prompt",
