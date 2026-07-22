@@ -333,10 +333,24 @@ document.addEventListener("DOMContentLoaded", () => {
 '''
         js_reconciler.write_file(js_dir / "explorer.js", explorer_js)
 
+        # Write fix-accessibility.js
+        fix_accessibility_js = '''
+const disableHiddenPaletteInputs = () => {
+  document.querySelectorAll('input.md-option[aria-hidden="true"]').forEach((el) => {
+    el.disabled = true;
+    el.tabIndex = -1;
+  });
+};
+document.addEventListener("DOMContentLoaded", disableHiddenPaletteInputs);
+document.addEventListener("pjax:complete", disableHiddenPaletteInputs);
+'''
+        js_reconciler.write_file(js_dir / "fix-accessibility.js", fix_accessibility_js)
+
     else:
         # Register JS files as touched in check mode, since they are generated externally
         js_reconciler.touched_files.add((js_dir / "tools_catalog.json").resolve())
         js_reconciler.touched_files.add((js_dir / "explorer.js").resolve())
+        js_reconciler.touched_files.add((js_dir / "fix-accessibility.js").resolve())
 
     # Generate index.md
     index_path = docs_path / "index.md"
